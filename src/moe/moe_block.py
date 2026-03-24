@@ -9,16 +9,16 @@ class MoEBlock(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.dim = cfg.dim
-        self.hidden_dim = getattr(cfg, "moe_hidden_dim", cfg.dim * 4)
-        self.shared_num_experts = getattr(cfg, "moe_shared_num_experts", 0)
-        self.num_experts = getattr(cfg, "moe_num_experts", 4)
-        self.top_k = getattr(cfg, "moe_top_k", 2)
-        self.record_expert_hist = getattr(cfg, "moe_record_expert_hist", True)
+        self.hidden_dim = getattr(cfg.moe, "hidden_dim", cfg.dim * 4)
+        self.shared_num_experts = getattr(cfg.moe, "shared_num_experts", 0)
+        self.num_experts = getattr(cfg.moe, "num_experts", 4)
+        self.top_k = getattr(cfg.moe, "top_k", 2)
+        self.record_expert_hist = getattr(cfg.moe, "record_expert_hist", True)
         self.last_expert_hist = None
         if self.top_k < 1:
-            raise ValueError("cfg.moe_top_k must be >= 1")
+            raise ValueError("cfg.moe.top_k must be >= 1")
         self.router = nn.Linear(self.dim, self.num_experts, bias=False)
-        self.ffn = getattr(cfg, "moe_ffn", "gelu")
+        self.ffn = getattr(cfg.moe, "ffn", "gelu")
         if self.ffn == "gelu":
             self.experts = nn.ModuleList([
                 nn.Sequential(
@@ -30,11 +30,11 @@ class MoEBlock(nn.Module):
             ])
         elif self.ffn == "swiglu":
             self.experts = nn.ModuleList([
-                SwiGLU(self.dim, self.hidden_dim, cfg.dropout * 4)
+                SwiGLU(self.dim, self.hidden_dim, cfg.dropout)
                 for _ in range(self.num_experts + self.shared_num_experts)
             ])
         else:
-            raise ValueError(f"cfg.moe_ffn has unsupported type: {self.ffn}")
+            raise ValueError(f"cfg.moe.ffn has unsupported type: {self.ffn}")
 
     def calculate_aux_loss(self, router_probs, selected_experts):
         """

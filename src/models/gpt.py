@@ -7,7 +7,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
-        self.aux_loss_weight = getattr(cfg, "aux_loss_weight", 1.0)
+        moe_cfg = getattr(cfg, "moe", None)
+        self.aux_loss_weight = getattr(moe_cfg, "aux_loss_weight", getattr(cfg, "aux_loss_weight", 1.0))
         self.transformer = nn.ModuleDict({
             "wte": nn.Embedding(cfg.vocab_size, cfg.dim),
             "wpe": nn.Embedding(cfg.block_size, cfg.dim),
