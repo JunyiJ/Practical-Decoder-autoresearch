@@ -15,10 +15,12 @@ from src.moe.moe_block import MoEBlock
 def _build_cfg(num_experts: int, top_k: int, dim: int = 4, moe_hidden_dim: int = 8) -> SimpleNamespace:
     return SimpleNamespace(
         dim=dim,
-        moe_hidden_dim=moe_hidden_dim,
-        moe_num_experts=num_experts,
-        moe_top_k=top_k,
         dropout=0.0,
+        moe=SimpleNamespace(
+            hidden_dim=moe_hidden_dim,
+            num_experts=num_experts,
+            top_k=top_k,
+        ),
     )
 
 
@@ -65,5 +67,5 @@ def test_moe_routes_to_single_expert_and_aux_loss() -> None:
         dtype=aux.dtype,
         device=aux.device,
     )
-    expected_aux = cfg.moe_num_experts * torch.softmax(logits, dim=0)[0]
+    expected_aux = cfg.moe.num_experts * torch.softmax(logits, dim=0)[0]
     torch.testing.assert_close(aux, expected_aux, rtol=1e-6, atol=1e-7)
