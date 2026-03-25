@@ -193,7 +193,7 @@ def run_training(cfg: DictConfig) -> dict:
         model.train()
         iter_start = time.perf_counter()
         xb, yb = loader.get_batch('train')
-        logits, loss = model(xb, yb)
+        logits, loss, train_loss_breakdown = model(xb, yb, return_loss_breakdown=True)
         optimizer.zero_grad(set_to_none=True)
         loss.backward()
         optimizer.step()
@@ -206,16 +206,29 @@ def run_training(cfg: DictConfig) -> dict:
             cuda_usage = _get_cuda_usage(device)
             model.eval()
             eval_losses = 0.0
+            eval_aux_losses = 0.0
+            saw_eval_aux_loss = False
             with torch.no_grad():
                 for _ in range(eval_iters):
                     x_eval, y_eval = loader.get_batch('val')
-                    _, eval_loss = model(x_eval, y_eval)
+                    _, eval_loss, eval_loss_breakdown = model(
+                        x_eval,
+                        y_eval,
+                        include_aux_loss=False,
+                        return_loss_breakdown=True,
+                    )
                     eval_losses += eval_loss.item()
+                    if eval_loss_breakdown["aux_loss"] is not None:
+                        saw_eval_aux_loss = True
+                        eval_aux_losses += eval_loss_breakdown["aux_loss"].item()
             avg_eval_loss = eval_losses / eval_iters
+            avg_eval_aux_loss = (eval_aux_losses / eval_iters) if saw_eval_aux_loss else None
             ppl = math.exp(avg_eval_loss)
             moe_usage = _summarize_moe_usage(model)
+            train_ce_loss = train_loss_breakdown["ce_loss"]
+            train_aux_loss = train_loss_breakdown["aux_loss"]
 
-            if accel_mb is None:
+            if train_aux_loss is None and accel_mb is None:
                 log.info(
                     "Step %d: Loss %.4f | val %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB",
                     iter,
@@ -226,12 +239,41 @@ def run_training(cfg: DictConfig) -> dict:
                     elapsed,
                     rss_mb,
                 )
-            else:
+            elif train_aux_loss is None:
                 log.info(
                     "Step %d: Loss %.4f | val %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB | accel %.1f MB",
                     iter,
                     loss.item(),
                     avg_eval_loss,
+                    ppl,
+                    iter_time,
+                    elapsed,
+                    rss_mb,
+                    accel_mb,
+                )
+            elif accel_mb is None:
+                log.info(
+                    "Step %d: Loss %.4f | ce %.4f | aux %.4f | val_ce %.4f | val_aux %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB",
+                    iter,
+                    loss.item(),
+                    train_ce_loss.item(),
+                    train_aux_loss.item(),
+                    avg_eval_loss,
+                    0.0 if avg_eval_aux_loss is None else avg_eval_aux_loss,
+                    ppl,
+                    iter_time,
+                    elapsed,
+                    rss_mb,
+                )
+            else:
+                log.info(
+                    "Step %d: Loss %.4f | ce %.4f | aux %.4f | val_ce %.4f | val_aux %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB | accel %.1f MB",
+                    iter,
+                    loss.item(),
+                    train_ce_loss.item(),
+                    train_aux_loss.item(),
+                    avg_eval_loss,
+                    0.0 if avg_eval_aux_loss is None else avg_eval_aux_loss,
                     ppl,
                     iter_time,
                     elapsed,
@@ -256,7 +298,12 @@ def run_training(cfg: DictConfig) -> dict:
             metric = {
                 "step": iter,
                 "train_loss": float(loss.item()),
+                "train_total_loss": float(loss.item()),
+                "train_ce_loss": float(train_ce_loss.item()),
+                "train_aux_loss": None if train_aux_loss is None else float(train_aux_loss.item()),
                 "val_loss": float(avg_eval_loss),
+                "val_ce_loss": float(avg_eval_loss),
+                "val_aux_loss": None if avg_eval_aux_loss is None else float(avg_eval_aux_loss),
                 "ppl": float(ppl),
                 "iter_time_sec": float(iter_time),
                 "elapsed_time_sec": float(elapsed),

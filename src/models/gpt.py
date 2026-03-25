@@ -18,7 +18,15 @@ class GPT(nn.Module):
         self.lm_head = nn.Linear(cfg.dim, cfg.vocab_size, bias=False)
         self.enable_rope = (getattr(cfg, "rope", 0) == 1)
 
-    def forward(self, idx, targets=None, cache=None, start_pos=0):
+    def forward(
+        self,
+        idx,
+        targets=None,
+        cache=None,
+        start_pos=0,
+        include_aux_loss=True,
+        return_loss_breakdown=False,
+    ):
         b, t = idx.size()
         if start_pos + t > self.cfg.block_size:
             raise ValueError(
@@ -45,9 +53,20 @@ class GPT(nn.Module):
         logits = self.lm_head(x)
 
         loss = None
+        ce_loss = None
+        aux_loss = None
         if targets is not None:
-            loss = nn.functional.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
+            ce_loss = nn.functional.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
+            loss = ce_loss
             if aux_losses:
-                loss += self.aux_loss_weight * (sum(aux_losses) / len(aux_losses))
-        
+                aux_loss = sum(aux_losses) / len(aux_losses)
+                if include_aux_loss:
+                    loss = loss + self.aux_loss_weight * aux_loss
+
+        if return_loss_breakdown:
+            return logits, loss, {
+                "ce_loss": ce_loss,
+                "aux_loss": aux_loss,
+                "total_loss": loss,
+            }
         return logits, loss

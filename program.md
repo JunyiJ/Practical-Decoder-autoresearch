@@ -73,7 +73,7 @@ On CUDA systems, include CUDA utilization and memory usage in the evaluation whe
 
 Research should happen in two stages:
 
-1. Mac or non-CUDA stage: short screening runs only. The training script runs for a fixed time budget of 5 minutes (wall clock training time, excluding startup/compilation).
+1. Mac or non-CUDA stage: short screening runs only. The training script runs for a fixed time budget of 20 minutes (wall clock training time, excluding startup/compilation).
 2. CUDA stage: promote promising configs into longer confirmation runs. The training script runs for a fixed time budget of 10 minutes (wall clock training time, excluding startup/compilation). 
 
 If the current machine is a Mac mini or otherwise non-CUDA, keep runs short and treat them as screening only. Do not make strong final claims from these results.
@@ -151,7 +151,7 @@ The summary page should have one row per run with:
 
 After setup, operate autonomously until interrupted.
 
-Loop:
+Loop FOREVER:
 
 1. Inspect current results and identify the best kept configuration so far.
 2. Choose the next experiment.
@@ -167,6 +167,8 @@ Loop:
 12. Decide whether to keep building from this branch or revert to a stronger parent for the next branch.
 
 The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
+
+Don't stop and I'll let you know when to stop.
 
 ## Search policy
 

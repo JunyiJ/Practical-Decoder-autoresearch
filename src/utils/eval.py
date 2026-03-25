@@ -35,7 +35,7 @@ def evaluate(model: GPT, loader: TinyDataLoader, eval_iters: int) -> tuple[float
     losses = []
     for _ in range(eval_iters):
         xb, yb = loader.get_batch("val")
-        _, loss = model(xb, yb)
+        _, loss = model(xb, yb, include_aux_loss=False)
         losses.append(loss.item())
     avg_loss = sum(losses) / len(losses)
     ppl = math.exp(avg_loss)
