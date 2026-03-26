@@ -23,10 +23,10 @@ model:
   ffn: "swiglu"
   
   moe:
-    num_experts: 2
+    num_experts: 1
     shared_num_experts: 0
     top_k: 1
-    aux_loss_weight: 0.001
+    aux_loss_weight: 0.0
     ffn: "swiglu"
 
 training:
