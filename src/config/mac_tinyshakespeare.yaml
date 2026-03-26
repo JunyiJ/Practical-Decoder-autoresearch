@@ -8,7 +8,7 @@ model:
   n_heads: 8
   vocab_size: 50257 # Default GPT-2 vocab
   block_size: 512
-  dropout: 0.2
+  dropout: 0.35
   rope: 1
   norm_type: "rmsnorm"
   # mla specific params
@@ -23,7 +23,7 @@ model:
   ffn: "swiglu"
   
   moe:
-    num_experts: 4
+    num_experts: 2
     shared_num_experts: 0
     top_k: 1
     aux_loss_weight: 0.001
