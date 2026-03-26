@@ -23,7 +23,7 @@ model:
   ffn: "swiglu"
   
   moe:
-    num_experts: 4
+    num_experts: 2
     shared_num_experts: 0
     top_k: 1
     aux_loss_weight: 0.001
@@ -31,7 +31,7 @@ model:
 
 training:
   batch_size: 32
-  learning_rate: 8e-4
+  learning_rate: 9e-4
   max_iters: 5000
   weight_decay: 0.1
   grad_clip: 1.0
