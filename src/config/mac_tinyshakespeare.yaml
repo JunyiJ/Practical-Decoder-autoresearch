@@ -1,50 +1,42 @@
-# src/llm_lab/config/mac_tinyshakespeare.yaml
 data:
-  path: "data/raw/shakespeare.txt"
-
+  path: data/raw/shakespeare.txt
 model:
   dim: 256
   n_layers: 6
   n_heads: 8
-  vocab_size: 50257 # Default GPT-2 vocab
+  vocab_size: 50257
   block_size: 512
-  dropout: 0.2
+  dropout: 0.15
   rope: 1
-  norm_type: "rmsnorm"
-  # mla specific params
+  norm_type: rmsnorm
   dimckv: 32
   dimcq: 64
   head_dim_r: 8
-  
-  # Swappable components
-  attn_type: "mha" # options: mha, gqa, mla
-  n_kv_heads: 8    # for GQA: set to 1 or 2
-  mlp_type: "moe" # options: dense, moe
-  ffn: "swiglu"
-  
+  attn_type: mha
+  n_kv_heads: 8
+  mlp_type: dense
+  ffn: swiglu
   moe:
     num_experts: 1
     shared_num_experts: 0
     top_k: 1
     aux_loss_weight: 0.0
-    ffn: "swiglu"
-
+    ffn: swiglu
 training:
   batch_size: 32
-  learning_rate: 8e-4
+  learning_rate: 0.0008
   max_iters: 5000
-  weight_decay: 0.1
+  weight_decay: 0.05
   grad_clip: 1.0
-  device: "mps" # Change to "cuda" on RunPod
-  checkpoint_dir: "checkpoints"
+  device: mps
+  checkpoint_dir: checkpoints
   checkpoint_every: 500
-
 hydra:
   job_logging:
     version: 1
     formatters:
       simple:
-        format: "[%(asctime)s][%(name)s][%(levelname)s] - %(message)s"
+        format: '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'
     handlers:
       console:
         class: logging.StreamHandler
@@ -56,5 +48,7 @@ hydra:
         filename: ${hydra.runtime.output_dir}/train.log
     root:
       level: INFO
-      handlers: [console, file]
+      handlers:
+      - console
+      - file
     disable_existing_loggers: false
