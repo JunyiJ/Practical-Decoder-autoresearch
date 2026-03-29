@@ -12,9 +12,9 @@ model:
   dimckv: 32
   dimcq: 64
   head_dim_r: 8
-  attn_type: mha
+  attn_type: mla
   n_kv_heads: 8
-  mlp_type: moe
+  mlp_type: dense
   ffn: swiglu
   moe:
     num_experts: 1
