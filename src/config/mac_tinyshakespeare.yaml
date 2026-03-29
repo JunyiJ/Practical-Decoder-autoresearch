@@ -12,9 +12,9 @@ model:
   dimckv: 32
   dimcq: 64
   head_dim_r: 8
-  attn_type: mha
+  attn_type: mla
   n_kv_heads: 8
-  mlp_type: moe
+  mlp_type: dense
   ffn: swiglu
   moe:
     num_experts: 1
@@ -26,7 +26,7 @@ training:
   batch_size: 32
   learning_rate: 0.0008
   max_iters: 5000
-  weight_decay: 0.05
+  weight_decay: 0.03
   grad_clip: 1.0
   device: mps
   checkpoint_dir: checkpoints
