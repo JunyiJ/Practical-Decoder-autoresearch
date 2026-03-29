@@ -6,7 +6,7 @@ model:
   n_heads: 8
   vocab_size: 50257
   block_size: 512
-  dropout: 0.15
+  dropout: 0.12
   rope: 1
   norm_type: rmsnorm
   dimckv: 32
@@ -26,7 +26,7 @@ training:
   batch_size: 32
   learning_rate: 0.0008
   max_iters: 5000
-  weight_decay: 0.05
+  weight_decay: 0.03
   grad_clip: 1.0
   device: mps
   checkpoint_dir: checkpoints
