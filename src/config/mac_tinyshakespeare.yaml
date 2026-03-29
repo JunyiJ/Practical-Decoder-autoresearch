@@ -14,7 +14,7 @@ model:
   head_dim_r: 8
   attn_type: mha
   n_kv_heads: 8
-  mlp_type: moe
+  mlp_type: dense
   ffn: swiglu
   moe:
     num_experts: 1
