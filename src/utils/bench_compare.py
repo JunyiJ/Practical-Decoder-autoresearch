@@ -12,6 +12,8 @@ from omegaconf import OmegaConf
 from ..attention.cache import KVCache
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
+from .checkpoint import read_checkpoint
+from .device import synchronize_device, reset_peak_memory, memory_measurement
 
 try:
     import psutil
@@ -73,6 +75,12 @@ def _generate(
 ) -> torch.Tensor:
     if max_new_tokens <= 0:
         return idx
+    if idx.size(1) == 0:
+        raise ValueError("Prompt must be non-empty.")
+    if top_k is not None and top_k < 1:
+        raise ValueError("top_k must be >= 1")
+    if cache is not None and idx.size(1) + max_new_tokens - 1 > model.cfg.block_size:
+        raise ValueError("Requested generation exceeds KV cache capacity; reduce tokens or disable cache.")
     if temperature <= 0:
         raise ValueError("temperature must be > 0")
 
@@ -114,7 +122,7 @@ def _load_model(
     data_path: str,
     device: str,
 ) -> tuple[GPT, OmegaConf, TinyDataLoader]:
-    ckpt = torch.load(checkpoint, map_location=device)
+    ckpt = read_checkpoint(checkpoint, map_location=device)
     if "cfg" not in ckpt:
         raise ValueError(f"Checkpoint missing cfg: {checkpoint}")
     cfg = OmegaConf.create(ckpt["cfg"])
@@ -141,6 +149,8 @@ def _benchmark(
     top_k: Optional[int],
     greedy: bool,
 ) -> tuple[float, float]:
+    if max_new_tokens < 1:
+        raise ValueError("max_new_tokens must be >= 1")
     if enable_cache:
         max_allowed = cfg.model.block_size - idx.size(1)
         if max_allowed <= 0:
@@ -151,6 +161,7 @@ def _benchmark(
                 "due to block_size limit with KV cache."
             )
             max_new_tokens = max_allowed
+    reset_peak_memory(idx.device)
     caches = None
     if enable_cache and cfg.model.attn_type in ("mha", "gqa", "mla"):
         n_kv_heads = cfg.model.n_kv_heads if cfg.model.attn_type == "gqa" else cfg.model.n_heads
@@ -169,7 +180,7 @@ def _benchmark(
     _generate(
         model,
         idx,
-        max_new_tokens=5,
+        max_new_tokens=min(5, max_new_tokens),
         temperature=temperature,
         top_k=top_k,
         cache=caches,
@@ -179,7 +190,7 @@ def _benchmark(
         for cache in caches:
             cache.reset()
 
-    start_mem = _get_mem_usage(idx.device)
+    synchronize_device(idx.device)
     start_time = time.perf_counter()
     _generate(
         model,
@@ -190,13 +201,13 @@ def _benchmark(
         cache=caches,
         greedy=greedy,
     )
+    synchronize_device(idx.device)
     end_time = time.perf_counter()
-    end_mem = _get_mem_usage(idx.device)
+    memory_mb, _ = memory_measurement(idx.device)
 
     total_time = max(end_time - start_time, 1e-9)
-    tokens_sec = max_new_tokens / total_time
-    mem_delta = end_mem - start_mem
-    return tokens_sec, mem_delta
+    tokens_sec = idx.size(0) * max_new_tokens / total_time
+    return tokens_sec, memory_mb
 
 
 def main() -> None:
@@ -255,7 +266,8 @@ def main() -> None:
     )
 
     cache_label = "on" if args.enable_cache else "off"
-    print("| Model | Cache | Tokens/sec | Mem MB |")
+    _, memory_label = memory_measurement(device)
+    print(f"| Model | Cache | Tokens/sec | {memory_label} |")
     print("| --- | --- | ---: | ---: |")
     print(f"| MHA | {cache_label} | {mha_tokens_sec:.2f} | {mha_mem:.2f} |")
     print(f"| GQA | {cache_label} | {gqa_tokens_sec:.2f} | {gqa_mem:.2f} |")

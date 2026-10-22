@@ -16,6 +16,7 @@ from omegaconf import OmegaConf
 
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
+from .checkpoint import read_checkpoint
 
 
 def _select_device(requested: Optional[str]) -> str:
@@ -31,6 +32,8 @@ def _select_device(requested: Optional[str]) -> str:
 
 @torch.no_grad()
 def evaluate(model: GPT, loader: TinyDataLoader, eval_iters: int) -> tuple[float, float]:
+    if eval_iters < 1:
+        raise ValueError("eval_iters must be >= 1")
     model.eval()
     losses = []
     for _ in range(eval_iters):
@@ -51,7 +54,7 @@ def main() -> None:
     args = parser.parse_args()
 
     device = _select_device(args.device)
-    ckpt = torch.load(args.checkpoint, map_location=device)
+    ckpt = read_checkpoint(args.checkpoint, map_location=device)
     if "cfg" not in ckpt:
         raise ValueError("Checkpoint missing cfg; cannot reconstruct model.")
     cfg = OmegaConf.create(ckpt["cfg"])

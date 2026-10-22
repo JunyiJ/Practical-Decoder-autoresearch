@@ -11,6 +11,8 @@ from omegaconf import OmegaConf
 
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
+from .checkpoint import read_checkpoint
+from .device import synchronize_device, reset_peak_memory, memory_measurement
 from ..attention.cache import KVCache
 
 try:
@@ -73,6 +75,12 @@ def generate(
 ) -> torch.Tensor:
     if max_new_tokens <= 0:
         return idx
+    if idx.size(1) == 0:
+        raise ValueError("Prompt must be non-empty.")
+    if top_k is not None and top_k < 1:
+        raise ValueError("top_k must be >= 1")
+    if cache is not None and idx.size(1) + max_new_tokens - 1 > model.cfg.block_size:
+        raise ValueError("Requested generation exceeds KV cache capacity; reduce tokens or disable cache.")
     if temperature <= 0:
         raise ValueError("temperature must be > 0")
 
@@ -110,34 +118,37 @@ def generate(
 
 @torch.no_grad()
 def benchmark_generate(model, idx, max_new_tokens, **kwargs):
+    if max_new_tokens < 1:
+        raise ValueError("max_new_tokens must be >= 1")
     device = idx.device
     
+    reset_peak_memory(device)
     # --- Warmup ---
-    _ = generate(model, idx, max_new_tokens=5, **kwargs)
+    _ = generate(model, idx, max_new_tokens=min(5, max_new_tokens), **kwargs)
     if kwargs.get("cache"):
         for c in kwargs["cache"]: c.reset()
 
     # --- Benchmark Start ---
+    synchronize_device(idx.device)
     start_time = time.perf_counter()
-    start_mem = get_mem_usage(device)
     
     output = generate(model, idx, max_new_tokens=max_new_tokens, **kwargs)
     
+    synchronize_device(idx.device)
     end_time = time.perf_counter()
-    end_mem = get_mem_usage(device)
+    memory_mb, memory_label = memory_measurement(device)
     
     # Metrics calculation
     total_time = end_time - start_time
-    tokens_sec = max_new_tokens / total_time
+    tokens_sec = idx.size(0) * max_new_tokens / total_time
     ms_per_token = (total_time / max_new_tokens) * 1000
-    mem_delta = end_mem - start_mem
     
     print(f"\n{'='*30}")
     print(f"BENCHMARK RESULTS ({model.cfg.attn_type.upper()})")
     print(f"{'='*30}")
     print(f"Throughput:      {tokens_sec:.2f} tokens/sec")
     print(f"Latency:         {ms_per_token:.2f} ms/token")
-    print(f"Peak Cache Mem:  {mem_delta:.2f} MB")
+    print(f"{memory_label}: {memory_mb:.2f}")
     print(f"{'='*30}\n")
     
     return output
@@ -162,7 +173,7 @@ def main() -> None:
         torch.manual_seed(args.seed)
         if torch.cuda.is_available():
             torch.cuda.manual_seed_all(args.seed)
-    ckpt = torch.load(args.checkpoint, map_location=device)
+    ckpt = read_checkpoint(args.checkpoint, map_location=device)
     if "cfg" not in ckpt:
         raise ValueError("Checkpoint missing cfg; cannot reconstruct model.")
     cfg = OmegaConf.create(ckpt["cfg"])

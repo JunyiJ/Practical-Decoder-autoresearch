@@ -63,26 +63,19 @@ class MLA(nn.Module):
         else:
             r_q = c_q_r
             r_k = k_r
-        # [b, n_heads, s, head_dim_r] => [b, s, head_dim_r * n_heads]
-        r_q = r_q.transpose(1, 2).contiguous().view(b, s, -1)
-        # [b, 1, s, head_dim_r] => [b, s, head_dim_r]
+        # Cache the shared rotary key and compressed KV, not expanded heads.
         r_k = r_k.squeeze(1)
         if cache is not None:
             c_kv, r_k = cache.update(c_kv, r_k, start_pos)
-        # concat([b, s, head_dim x n_heads], [b, s, head_dim_r x n_heads]) => [b, s, (head_dim + head_dim_r) * n_heads]
-        q = torch.concat([self.uq(c_q), r_q], dim=-1)
         total_len = c_kv.size(1)
-        # [b, total_len, head_dim x n_heads]
-        k_base = self.uk(c_kv)
-        v = self.uv(c_kv)
-        # [b, total_len, head_dim_r x n_heads]
-        r_k = r_k.unsqueeze(2).expand(-1, -1, self.n_heads, -1).contiguous().view(b, total_len, -1)
-        # concat([b, total_len, head_dim x n_heads], [b, total_len, head_dim_r x n_heads]) => [b, total_len, (head_dim + head_dim_r) * n_heads]
-        k = torch.concat([k_base, r_k], dim=-1)
-
-        q = q.view(b, s, self.n_heads, -1).transpose(1, 2)
-        k = k.view(b, total_len, self.n_heads, -1).transpose(1, 2)
-        v = v.view(b, total_len, self.n_heads, -1).transpose(1, 2)
+        q_base = self.uq(c_q).view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
+        k_base = self.uk(c_kv).view(b, total_len, self.n_heads, self.head_dim).transpose(1, 2)
+        v = self.uv(c_kv).view(b, total_len, self.n_heads, self.head_dim).transpose(1, 2)
+        # Concatenate within each head; concatenating flattened projections first
+        # would mix content and rotary features across different heads.
+        q = torch.cat([q_base, r_q], dim=-1)
+        k_rotary = r_k.unsqueeze(1).expand(-1, self.n_heads, -1, -1)
+        k = torch.cat([k_base, k_rotary], dim=-1)
 
         # [b, n_heads, s, s]
         att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim + self.head_dim_r)

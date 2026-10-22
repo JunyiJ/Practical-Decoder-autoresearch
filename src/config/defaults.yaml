@@ -18,6 +18,9 @@ model:
     aux_loss_weight: 0.01
 
 training:
+  seed: 0
+  max_train_seconds: null # Cumulative training-step time; excludes evaluation/checkpointing
+  resume_from: null
   batch_size: 32
   learning_rate: 6e-4
   max_iters: 1000

@@ -4,7 +4,7 @@ from torch.utils.data import Dataset
 
 
 class TinyDataLoader:
-    def __init__(self, data_path, batch_size, block_size, device):
+    def __init__(self, data_path, batch_size, block_size, device, seed=0):
         with open(data_path, 'r', encoding='utf-8') as f:
             text = f.read()
 
@@ -22,13 +22,19 @@ class TinyDataLoader:
         self.batch_size = batch_size
         self.block_size = block_size
         self.device = device
+        self.generators = {
+            'train': torch.Generator().manual_seed(seed),
+            'val': torch.Generator().manual_seed(seed + 1),
+        }
 
     def get_batch(self, split='train'):
+        if split not in self.generators:
+            raise ValueError("split must be 'train' or 'val'")
         data = self.train_data if split == "train" else self.val_data
-        max_start = len(data) - self.block_size - 1
+        max_start = len(data) - self.block_size
         if max_start <= 0:
             raise ValueError("Dataset is too small for the configured block_size")
-        ix = torch.randint(max_start, (self.batch_size,))
+        ix = torch.randint(max_start, (self.batch_size,), generator=self.generators[split])
 
         x = torch.stack([data[i:i+self.block_size] for i in ix])
         y = torch.stack([data[i+1:i+self.block_size+1] for i in ix])
@@ -38,7 +44,7 @@ class TinyDataLoader:
         return "".join([self.itos[int(i)] for i in ids])
 
 class TextDataset(Dataset):
-    def __init__(self, data_path, batch_size, block_size, device):
+    def __init__(self, data_path, batch_size, block_size, device, seed=0):
         with open(data_path, 'r', encoding='utf-8') as f:
             text = f.read()
         self.enc = tiktoken.get_encoding("gpt2")
@@ -50,9 +56,13 @@ class TextDataset(Dataset):
         self.batch_size = batch_size
         self.block_size = block_size
         self.device = device
+        self.generators = {
+            'train': torch.Generator().manual_seed(seed),
+            'val': torch.Generator().manual_seed(seed + 1),
+        }
 
     def __len__(self):
-        return len(self.data) - self.block_size
+        return max(0, len(self.data) - self.block_size)
 
     def __getitem__(self, idx):
         chunk = self.data[idx: idx + self.block_size + 1]
@@ -65,11 +75,13 @@ class TextDataset(Dataset):
         return self.enc.n_vocab
 
     def get_batch(self, split="train"):
+        if split not in self.generators:
+            raise ValueError("split must be 'train' or 'val'")
         data = self.train_data if split == "train" else self.val_data
-        max_start = len(data) - self.block_size - 1
+        max_start = len(data) - self.block_size
         if max_start <= 0:
             raise ValueError("Dataset is too small for the configured block_size")
-        ix = torch.randint(max_start, (self.batch_size,))
+        ix = torch.randint(max_start, (self.batch_size,), generator=self.generators[split])
 
         x = torch.stack([data[i:i+self.block_size] for i in ix])
         y = torch.stack([data[i+1:i+self.block_size+1] for i in ix])

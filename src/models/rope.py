@@ -8,7 +8,7 @@ def precompute_freqs_cis(dim: int, end: int, theta: float = 10000.0):
     """
     # base.exp(-2i/d)
     i = torch.arange(0, dim, 2)[: (dim//2)].float()
-    freqs = 1.0 / (theta ** (2 * i / dim))
+    freqs = 1.0 / (theta ** (i / dim))
     t = torch.arange(end, device=freqs.device)
     freqs = torch.outer(t, freqs).float()  # (max_seq_len, head_dim/2)
     return torch.cos(freqs), torch.sin(freqs)

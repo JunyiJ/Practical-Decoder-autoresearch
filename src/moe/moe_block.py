@@ -15,8 +15,10 @@ class MoEBlock(nn.Module):
         self.top_k = getattr(cfg.moe, "top_k", 2)
         self.record_expert_hist = getattr(cfg.moe, "record_expert_hist", True)
         self.last_expert_hist = None
-        if self.top_k < 1:
-            raise ValueError("cfg.moe.top_k must be >= 1")
+        if self.num_experts < 1 or not 1 <= self.top_k <= self.num_experts:
+            raise ValueError("Require num_experts >= 1 and 1 <= top_k <= num_experts")
+        if self.shared_num_experts < 0:
+            raise ValueError("shared_num_experts must be >= 0")
         self.router = nn.Linear(self.dim, self.num_experts, bias=False)
         self.ffn = getattr(cfg.moe, "ffn", "gelu")
         if self.ffn == "gelu":
@@ -54,7 +56,7 @@ class MoEBlock(nn.Module):
         x shape: (batch_size, seq_len, hidden_dim)
         """
         b, s, d = x.shape
-        x_flat = x.view(-1, d)
+        x_flat = x.reshape(-1, d)
         final_output = torch.zeros_like(x_flat)
         router_x = self.router(x_flat)
         router_probs = F.softmax(router_x, dim=-1)

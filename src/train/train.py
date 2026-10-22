@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import hashlib
 import math
 import logging
 import shutil
@@ -10,12 +11,14 @@ import resource
 
 import hydra
 from hydra.utils import to_absolute_path
-from omegaconf import DictConfig
+from omegaconf import DictConfig, OmegaConf
 import torch
 from datetime import datetime
 from ..models.gpt import GPT
+from ..utils.device import synchronize_device
 from ..data.loaders import TinyDataLoader, TextDataset
-from ..utils.checkpoint import save_checkpoint
+from ..utils.checkpoint import (save_checkpoint, read_checkpoint,
+                                capture_training_state, restore_training_state)
 from ..moe.moe_block import MoEBlock
 
 log = logging.getLogger(__name__)
@@ -31,7 +34,7 @@ def _get_rss_mb() -> float:
 
 def _get_accel_mem_mb(device: str) -> float | None:
     if device.startswith("cuda") and torch.cuda.is_available():
-        return torch.cuda.max_memory_allocated() / (1024 * 1024)
+        return torch.cuda.max_memory_allocated(device) / (1024 * 1024)
     if device == "mps" and hasattr(torch, "mps"):
         current = getattr(torch.mps, "current_allocated_memory", None)
         if callable(current):
@@ -156,6 +159,10 @@ def run_training(cfg: DictConfig) -> dict:
     metrics_path = Path(to_absolute_path(metrics_file)) if metrics_file else None
     summary_path = Path(to_absolute_path(summary_file)) if summary_file else None
 
+    seed = int(getattr(cfg.training, "seed", 0))
+    torch.manual_seed(seed)
+    if cfg.training.max_iters < 1:
+        raise ValueError("training.max_iters must be >= 1")
     device = cfg.training.device
     if device == "mps" and not torch.backends.mps.is_available():
         device = "cpu"
@@ -163,7 +170,8 @@ def run_training(cfg: DictConfig) -> dict:
         data_path=to_absolute_path(cfg.data.path),
         batch_size = cfg.training.batch_size,
         block_size = cfg.model.block_size,
-        device = device
+        device = device,
+        seed = seed,
     )
     # The tiktokenizer doesn't work well for mini-shakspear dataset because the training
     # data is too limited to learn a big vocab as tiktokenizer
@@ -180,30 +188,87 @@ def run_training(cfg: DictConfig) -> dict:
         lr=cfg.training.learning_rate,
         weight_decay=cfg.training.weight_decay,
     )
-    checkpoint_dir = to_absolute_path(cfg.training.checkpoint_dir)
+    checkpoint_dir = to_absolute_path(cfg.training.checkpoint_dir) if cfg.training.checkpoint_dir else None
     checkpoint_every = cfg.training.checkpoint_every
     if checkpoint_dir:
         Path(checkpoint_dir).mkdir(parents=True, exist_ok=True)
     log.info("Starting training: %s + %s on %s", cfg.model.attn_type, cfg.model.mlp_type, device)
 
-    start_time = time.perf_counter()
+    budget = getattr(cfg.training, "max_train_seconds", None)
+    if budget is not None and (not math.isfinite(float(budget)) or float(budget) <= 0):
+        raise ValueError("max_train_seconds must be positive or null")
+    contract = {
+        "model": OmegaConf.to_container(cfg.model, resolve=True),
+        "data_sha256": hashlib.sha256(Path(to_absolute_path(cfg.data.path)).read_bytes()).hexdigest(),
+        "torch_version": str(torch.__version__), "device": str(device),
+        "training": {key: getattr(cfg.training, key, default) for key, default in
+                     [("batch_size", None), ("learning_rate", None), ("weight_decay", None),
+                      ("grad_clip", 0.0), ("seed", 0), ("eval_iters", 100)]},
+    }
     metrics = []
+    completed_steps = 0
+    training_seconds = 0.0
+    best_metric = None
+    best_checkpoint_path = None
+    resume = getattr(cfg.training, "resume_from", None)
+    if resume:
+        ckpt = read_checkpoint(to_absolute_path(resume), map_location='cpu')
+        state = ckpt.get('training_state')
+        if state is None or state.get('contract') != contract:
+            raise ValueError("Resume requires matching model, data, optimizer, device, PyTorch and evaluation settings")
+        model.load_state_dict(ckpt['model_state'])
+        optimizer.load_state_dict(ckpt['optimizer_state'])
+        completed_steps = int(ckpt['step'])
+        training_seconds = state['training_seconds']
+        metrics = state['metrics']
+        best_metric = state['best_metric']
+        best_checkpoint_path = state['best_checkpoint']
+        restore_training_state(state, loader, device)
+
+    def save_run(path):
+        state = capture_training_state(
+            loader, device, contract=contract, training_seconds=training_seconds,
+            metrics=metrics, best_metric=best_metric, best_checkpoint=best_checkpoint_path,
+        )
+        save_checkpoint(path, model, optimizer=optimizer, step=completed_steps,
+                        cfg=cfg, training_state=state)
+
+    if str(device).startswith('cuda'):
+        torch.cuda.reset_peak_memory_stats(device)
+    start_time = time.perf_counter()
     final_checkpoint_path = None
-    for iter in range(cfg.training.max_iters):
+    stop_reason = "max_iters"
+    for iter in range(completed_steps, cfg.training.max_iters):
+        if budget is not None and training_seconds >= budget:
+            stop_reason = "time_budget"
+            break
         model.train()
+        synchronize_device(device)
         iter_start = time.perf_counter()
         xb, yb = loader.get_batch('train')
         logits, loss, train_loss_breakdown = model(xb, yb, return_loss_breakdown=True)
         optimizer.zero_grad(set_to_none=True)
+        if not torch.isfinite(loss).item():
+            raise FloatingPointError("Nonfinite training loss")
         loss.backward()
+        grad_clip = float(getattr(cfg.training, "grad_clip", 0.0))
+        if grad_clip > 0:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip, error_if_nonfinite=True)
         optimizer.step()
+        synchronize_device(device)
         iter_time = time.perf_counter() - iter_start
+        completed_steps = iter + 1
+        training_seconds += iter_time
+        budget_reached = budget is not None and training_seconds >= budget
 
-        if iter % eval_every == 0 or iter == cfg.training.max_iters - 1:
+        if iter % eval_every == 0 or iter == cfg.training.max_iters - 1 or budget_reached:
             elapsed = time.perf_counter() - start_time
             rss_mb = _get_rss_mb()
             accel_mb = _get_accel_mem_mb(device)
             cuda_usage = _get_cuda_usage(device)
+            # Snapshot training routing before evaluation overwrites the histograms.
+            moe_usage = _summarize_moe_usage(model)
+            loader.generators['val'].manual_seed(seed + 1)
             model.eval()
             eval_losses = 0.0
             eval_aux_losses = 0.0
@@ -224,7 +289,6 @@ def run_training(cfg: DictConfig) -> dict:
             avg_eval_loss = eval_losses / eval_iters
             avg_eval_aux_loss = (eval_aux_losses / eval_iters) if saw_eval_aux_loss else None
             ppl = math.exp(avg_eval_loss)
-            moe_usage = _summarize_moe_usage(model)
             train_ce_loss = train_loss_breakdown["ce_loss"]
             train_aux_loss = train_loss_breakdown["aux_loss"]
 
@@ -297,6 +361,7 @@ def run_training(cfg: DictConfig) -> dict:
 
             metric = {
                 "step": iter,
+                "tokens_processed": (iter + 1) * cfg.training.batch_size * cfg.model.block_size,
                 "train_loss": float(loss.item()),
                 "train_total_loss": float(loss.item()),
                 "train_ce_loss": float(train_ce_loss.item()),
@@ -307,6 +372,9 @@ def run_training(cfg: DictConfig) -> dict:
                 "ppl": float(ppl),
                 "iter_time_sec": float(iter_time),
                 "elapsed_time_sec": float(elapsed),
+                "training_time_sec": training_seconds,
+                "accel_mem_kind": "cuda_peak_allocated" if str(device).startswith('cuda') else "mps_current_allocated" if device == 'mps' else None,
+                "rss_kind": "process_lifetime_peak",
                 "rss_mb": float(rss_mb),
                 "accel_mem_mb": None if accel_mb is None else float(accel_mb),
                 "device": device,
@@ -314,32 +382,25 @@ def run_training(cfg: DictConfig) -> dict:
                 "moe_usage": moe_usage,
             }
             metrics.append(metric)
+            if best_metric is None or metric['val_loss'] < best_metric['val_loss']:
+                best_metric = metric
+                if checkpoint_dir:
+                    best_checkpoint_path = str(Path(checkpoint_dir) / f"best_{completed_steps:06d}_{time.time_ns()}.pt")
+                    save_run(best_checkpoint_path)
             if metrics_path is not None:
                 _append_metric(metrics_path, metric)
-        if checkpoint_dir and checkpoint_every > 0 and (iter + 1) % checkpoint_every == 0:
-            stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            ckpt_path = Path(checkpoint_dir) / f"step_{iter + 1:06d}_{stamp}.pt"
-            save_checkpoint(
-                ckpt_path,
-                model,
-                optimizer=optimizer,
-                step=iter + 1,
-                cfg=cfg,
-            )
+        if checkpoint_dir and checkpoint_every > 0 and completed_steps % checkpoint_every == 0:
+            ckpt_path = Path(checkpoint_dir) / f"step_{completed_steps:06d}_{time.time_ns()}.pt"
+            save_run(ckpt_path)
             final_checkpoint_path = str(ckpt_path)
+        if budget_reached:
+            stop_reason = "time_budget"
+            break
     if checkpoint_dir:
-        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        ckpt_path = Path(checkpoint_dir) / f"final_{stamp}.pt"
-        save_checkpoint(
-            ckpt_path,
-            model,
-            optimizer=optimizer,
-            step=cfg.training.max_iters,
-            cfg=cfg,
-        )
+        ckpt_path = Path(checkpoint_dir) / f"final_{completed_steps:06d}_{time.time_ns()}.pt"
+        save_run(ckpt_path)
         final_checkpoint_path = str(ckpt_path)
 
-    best_metric = min(metrics, key=lambda item: item["val_loss"]) if metrics else None
     result = {
         "device": device,
         "metrics": metrics,
@@ -347,6 +408,10 @@ def run_training(cfg: DictConfig) -> dict:
         "final_metric": metrics[-1] if metrics else None,
         "final_checkpoint": final_checkpoint_path,
         "max_iters": int(cfg.training.max_iters),
+        "completed_steps": completed_steps,
+        "training_time_sec": training_seconds,
+        "stop_reason": stop_reason,
+        "best_checkpoint": best_checkpoint_path,
         "eval_every": eval_every,
         "eval_iters": eval_iters,
     }

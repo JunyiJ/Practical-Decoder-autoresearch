@@ -73,8 +73,10 @@ On CUDA systems, include CUDA utilization and memory usage in the evaluation whe
 
 Research should happen in two stages:
 
-1. Mac or non-CUDA stage: short screening runs only. The training script runs for a fixed time budget of 20 minutes (wall clock training time, excluding startup/compilation).
-2. CUDA stage: promote promising configs into longer confirmation runs. The training script runs for a fixed time budget of 10 minutes (wall clock training time, excluding startup/compilation). 
+1. Mac or non-CUDA stage: short screening runs only. Set `training.max_train_seconds=1200` for a 20-minute cumulative training-step budget.
+2. CUDA stage: promote promising configs into longer confirmation runs. Set `training.max_train_seconds=600` for a 10-minute cumulative training-step budget.
+
+The trainer stops at the first of `max_iters` or the time budget. The budget excludes evaluation and checkpoint I/O, includes first-step overhead, and is checked after each complete optimizer step (so it may overshoot by one step). It persists across resume. Use `training.max_train_seconds=null` for fixed-token comparisons.
 
 If the current machine is a Mac mini or otherwise non-CUDA, keep runs short and treat them as screening only. Do not make strong final claims from these results.
 
@@ -97,6 +99,7 @@ For local screening runs, use short overrides at launch time so the committed co
 ```bash
 python -m src.train.train \
   training.max_iters=200 \
+  training.max_train_seconds=1200 \
   +training.eval_every=50 \
   +training.eval_iters=25 \
   +training.metrics_file=research_runs/<tag>/<run_id>/metrics.jsonl \
@@ -123,7 +126,7 @@ For every experiment, create `research_runs/<tag>/<run_id>/report.md` with:
    - val loss snapshots
 5. Resource usage:
    - RSS memory
-   - accelerator memory
+   - accelerator memory, labeled with its measurement kind: CUDA peak allocated, MPS current allocated (not peak); RSS is a process-lifetime peak
    - CUDA utilization and memory if on CUDA
 6. MoE diagnostics when applicable:
    - aggregate expert usage
@@ -198,7 +201,7 @@ When a direction looks promising, test follow-ups around it. When a direction st
 
 ## Keep or discard
 
-Prefer simplicity when results are close.
+Prefer simplicity when results are close. Use `best_checkpoint` from the training summary to locate the weights corresponding to `best_metric`; the final checkpoint may have worse validation loss.
 
 Keep a change if:
 
