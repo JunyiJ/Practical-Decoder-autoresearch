@@ -1,5 +1,9 @@
 # A local MLE research team
 
+For copyable setup, launch, resume, and knowledge-reuse commands, start with
+**[Start and continue auto-research](START_HERE.md)**. This page explains the
+roles, experiment protocol, and evidence rules in more detail.
+
 This system predicts a research idea's quality and resource effects, turns it
 into an isolated code/config candidate, compares it against a fixed baseline,
 and records results and lessons about transfer to larger model widths.
@@ -249,8 +253,8 @@ and empirical improvement remain unverified.
 
 Initialization requires a **clean committed repository**, including the reviewed
 team implementation. This prevents uncommitted preparation code from being
-silently omitted. The controller never commits it for you. Current implementation
-changes remain local until the user requests a commit.
+silently omitted. The controller never commits it for you; commit reviewed
+source/configuration changes before initializing.
 
 Once the prerequisite is satisfied, prepare without calling Codex or training:
 

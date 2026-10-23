@@ -1,5 +1,9 @@
 # Bounded MLE experiment harness
 
+For the multi-agent auto-research loop, see **[Start and continue auto-research](START_HERE.md)**,
+including fresh setup, campaign resume, and reuse of the local knowledge bank.
+This page covers the standalone learning-rate study.
+
 The coding agent supplies hypotheses and interprets results. This harness
 executes one declared experiment, preserves evidence, and prevents incomplete
 runs or larger-width feedback from changing the small-width selection.
