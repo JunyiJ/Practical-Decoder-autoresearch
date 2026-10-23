@@ -1,0 +1,43 @@
+version: 1
+name: mac-mle-continuous-long
+objective: >-
+  Confirm whether short-budget improvements persist at 3000 steps, then explore
+  small, explainable model-code or configuration changes at width 64 and measure
+  unchanged transfer to widths 128 and 256. For the first iteration, change only
+  training.learning_rate from baseline 0.0006 to 0.002, retaining the frozen paired
+  seeds and all other settings. This is a longer-horizon check motivated by prior
+  300-step results, not independent-seed replication. Before training, predict
+  final-budget quality and resource effects; freeze the local winner using only
+  width-64 validation. Inspect intermediate validation curves as descriptive
+  evidence of continuing improvement, plateau, or overfitting, but do not replace
+  the final-budget endpoint with the best intermediate checkpoint. Never call
+  3000 steps convergence solely because the budget ended. Compare historical
+  results only within their recorded horizons and label cross-iteration ranking
+  adaptive development. Keep held-out test data closed. Use prior successes,
+  failures and recovered learnings from the shared knowledge bank. If curves
+  still improve materially, record a recommendation for a separately frozen
+  longer-horizon campaign; agents must not alter this campaign's token budget.
+repository: .
+base_ref: HEAD
+base_plan: research/mac_lr_transfer_long.yaml
+knowledge_bank: research_state/knowledge
+continuous:
+  target_hours: 48 # Informational minimum target; no automatic stop at this time.
+  min_free_disk_mb: 1024 # Pause without deleting evidence if space falls below this.
+runtime:
+  executable: codex
+  model: null
+  web_search: true
+limits:
+  max_iterations: null
+  max_agent_calls: null
+  agent_seconds: 600
+  total_agent_seconds: null
+  agent_output_mb: 64
+  local_test_seconds: 120
+  total_training_seconds: null
+local_tests:
+  - tests/test_mha.py
+  - tests/test_rope.py
+  - tests/test_gpt_loss.py
+  - tests/test_moe.py

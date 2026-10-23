@@ -404,3 +404,34 @@ training configuration; `training.max_iters` is the new **total** step target.
 See [individual training budgets and checkpoint resume](../README.md#individual-training-budgets-and-checkpoint-resume).
 This is separate from continuing a research campaign: team comparisons require
 fresh initialization and do not use manual checkpoint continuation as a retry.
+
+## Longer-horizon confirmation
+
+The 300-step starter is a cheap fixed-token screen, not a convergence criterion.
+A high learning rate can improve its final loss by learning faster while losing
+its advantage later. Use `team_mac_continuous_long.yaml` for a separate continuous
+campaign with `mac_lr_transfer_long.yaml`: 3,000 steps, evaluation every 300 steps,
+and otherwise the same batch/context, paired seeds, baseline LR and scoring rule.
+This processes 3,072,000 training characters per arm. Evaluation remains 30 fixed
+validation batches. The first proposal is LR 0.002 versus 0.0006, checking whether
+the earlier candidate survives a tenfold training horizon. Reusing seeds helps
+compare horizons but does not provide an independent-seed replication.
+
+Request a graceful stop and wait for the previous campaign to pause before
+switching profiles. Commit configuration changes and initialize a new unique
+campaign; never edit a frozen campaign's budget or rerun its completed trials.
+Use the same knowledge bank and retain the old campaign as evidence.
+
+```bash
+python -m src.research.team init --config research/team_mac_continuous_long.yaml --output research_runs/long-001
+python -m src.research.team run --campaign research_runs/long-001 --run-agents --allow-training
+```
+
+The new profile retains the continuous 48-hour informational target, unlimited
+aggregate iterations, 600-second trial cap and 7,200-second suite cap. Runtime
+scaling is only an estimate; a timeout remains incomplete evidence. Curves can
+show ongoing improvement or overfitting, but 3,000 steps alone cannot establish
+convergence. Use final-budget scores for selection, inspect curves descriptively,
+and keep rankings separated by horizon. A later longer-budget or independent-seed
+confirmation needs its own frozen protocol. Continuous exploration never opens
+the held-out test split.

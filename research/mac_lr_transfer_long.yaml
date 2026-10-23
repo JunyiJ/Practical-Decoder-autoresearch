@@ -1,0 +1,37 @@
+version: 1
+purpose: research
+name: mac-lr-transfer-long
+hypothesis: A learning rate selected at width 64 improves over 0.0006 at widths 128 and 256 under the same character-token budget.
+device: mps
+data:
+  path: data/raw/shakespeare.txt
+  train_fraction: 0.8
+  val_fraction: 0.1
+model:
+  n_layers: 2
+  head_dim: 32 # Held constant; number of heads grows with width.
+  dropout: 0.0
+  norm_type: rmsnorm
+training:
+  max_iters: 3000 # Tenfold horizon check; not a convergence guarantee.
+  batch_size: 8
+  block_size: 128
+  weight_decay: 0.1
+  grad_clip: 1.0
+  eval_every: 300 # Ten learning-curve checkpoints over the run.
+  eval_iters: 30
+  cpu_threads: 4
+widths: [64, 128, 256]
+learning_rates: [0.0001, 0.0003, 0.0006, 0.001, 0.003]
+baseline_lr: 0.0006
+screen_seed: 0
+seeds: [11, 22, 33]
+eval_seed: 2026
+min_improvement: 0.005 # Nats/character; all paired seed deltas must also be negative.
+limits:
+  max_trials: 41 # 23 training + at most 18 held-out evaluations; failures count.
+  session_seconds: 7200 # Active whole-process time, including evaluation and I/O.
+  trial_seconds: 600
+  max_disk_mb: 2048 # Sampled output-directory cap, not an OS filesystem quota.
+  max_failures: 4
+  max_consecutive_failures: 2
