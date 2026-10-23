@@ -327,3 +327,38 @@ model code would require stronger process/container isolation and resource contr
 The [single-study LR harness](README.md) remains available for fixed LR-transfer
 experiments without agents. Use the team for proposing and implementing new
 model/config candidates.
+
+## Controlled configuration evolution
+
+The longer-horizon continuous profile enables a small evolutionary population.
+The controller retains up to four distinct successful configurations from the
+same frozen campaign, ranked only by width-64 final validation CE. Transfer
+results never determine parent selection. Cross-campaign and shorter-horizon
+records remain useful background, but cannot enter this population. A genotype
+is the complete set of effective tunable overrides relative to the fixed baseline.
+
+Each generation has an immutable plan registered with its prediction:
+
+- Mutation starts from a selected parent and changes one or at most two settings.
+  One-setting ablations are encouraged when component contributions are unclear.
+- Every fourth generation explores from the baseline, keeping room for alternatives.
+- The preceding generation attempts crossover when another parent offers a
+  non-conflicting setting. It adds at most two such settings, retains primary
+  parent values at conflicting settings, and tests that exact recipe without
+  further mutation. If no disjoint setting exists, it uses bounded mutation.
+- Initial confirmation remains LR 0.002 versus 0.0006 at 3,000 steps.
+
+This mode supports configuration changes, including model settings exposed by
+config_overrides; it rejects source edits because arbitrary source inheritance
+is not implemented. The coder must supply the complete child overrides.
+Population selection, mutation counts, and exact crossover are controller-enforced.
+The fixed baseline, paired seeds, token budget, metric, local selection rule and
+held-out restrictions remain unchanged. Each suite still runs 18 fresh trials.
+
+The evidence report and knowledge result also contain lineage and descriptive
+child-minus-parent CE comparisons at each width using saved parent trials.
+These are historical adaptive comparisons, not fresh randomized parent controls.
+Missing pairs yield no aggregate parent delta. Parent report digests are frozen
+and checked. A joint configuration's success does not prove each component helps
+individually or establish synergy; those claims need separate ablation controls.
+Repeated validation selection is adaptive development, not independent confirmation.

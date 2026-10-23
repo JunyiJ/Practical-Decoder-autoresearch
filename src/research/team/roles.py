@@ -222,6 +222,21 @@ Generate ONE falsifiable intervention for the next iteration. Prefer an isolated
 config or code change that fits the frozen token/time/memory budget and can be
 compared with the baseline using paired seeds. Do not bundle architecture,
 optimizer, data, and evaluation changes into an uninterpretable trial.
+When iteration.evolution is present, follow its frozen generation plan instead:
+propose a CONFIGURATION child from inherited_genotype. For mutate/explore, change
+one or at most max_mutations effective configuration paths; a one-locus change or
+ablation is preferred for attribution. Previously supported components may be
+retained together. For crossover, test the exact inherited_genotype with no
+additional mutation. Conflicting loci retain the primary parent's value. Read
+parent evidence and cite its result IDs in based_on. A supported joint genotype
+does not prove every component helps independently; do not invent independent
+component evidence or synergy. Population membership uses small-width evidence
+only; larger-width results are diagnostic, never population fitness. Shorter
+horizon history motivates proposals but is not a population member. Retain the
+fixed baseline comparison. Periodic explore generations start from baseline.
+Do not propose source edits in configuration evolution. All protocol settings
+remain protected. If the objective requests a first-iteration confirmation,
+perform it before exploring new mutations.
 
 Use reasoning and, when available, web search to find relevant primary literature
 (original papers, author repositories, official documentation). Cite only sources
@@ -285,6 +300,11 @@ seed lists, promotion rules, or evaluator tests. Config files must not override
 these frozen controls. Keep the GPT interface and its expected output shapes,
 loss semantics, and cache behavior compatible with the trusted training code.
 
+When iteration.evolution is present, implement its inherited_genotype PLUS the
+approved bounded mutation using the COMPLETE set of config_overrides relative to
+the fixed baseline. Inherited fields are not applied automatically. A crossover
+must equal inherited_genotype exactly. Do not edit src/ files in this mode.
+
 Use config_overrides for requested tunable config changes; each path is a dotted
 configuration key and value_json is the JSON serialization of its value (for
 example path='training.learning_rate', value_json='0.0003'). The coordinator
@@ -336,7 +356,11 @@ Return only ready and reasons.
     "evaluator": """Role: evaluator and scientific critic.
 
 Interpret the coordinator's deterministic metrics and paired comparisons against
-the preregistered objective. Keep small-model improvement, larger-width transfer,
+the preregistered objective. If report.evolution is present, discuss the child's
+historical paired comparison with its parents separately from the fresh fixed
+baseline comparison. These adaptive parent observations are not new randomized
+controls. Recommend one-locus ablations before attributing a joint gain to any
+component or synergy. Keep small-model improvement, larger-width transfer,
 new-family transfer, and held-out evaluation distinct. Account for missing or
 failed runs, seed variability, fixed-token versus fixed-time comparisons,
 unequal budgets, tiny corpus limitations, and source/model/version mismatches.

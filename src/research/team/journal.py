@@ -32,7 +32,8 @@ def _prediction_contract(state, iteration):
             "plan_sha256": digest(state["plan"]),
             "targets": _targets(state), "seeds": state["plan"]["seeds"],
             "prediction": validate_prediction(iteration["idea"]["prediction"], _targets(state)),
-            "metrics": METRICS}
+            "metrics": METRICS,
+            **({"evolution": iteration["evolution"]} if "evolution" in state.get("config", {}) else {})}
 
 
 def register_prediction(bank, state, iteration, directory: Path):
@@ -104,7 +105,8 @@ def record_results(bank, state, iteration, directory: Path):
         "related_ids": [iteration["execution_id"], iteration["prediction_id"], *trials],
         "artifacts": [evidence, artifact(directory / "prediction-check.json")],
         "details": {"performance": report.get("performance", []), "prediction_check": iteration["prediction_check"],
-                    "stop_reason": report.get("stop_reason"), "evidence_integrity": report.get("evidence_integrity")}})
+                    "stop_reason": report.get("stop_reason"), "evidence_integrity": report.get("evidence_integrity"),
+                    **({"evolution": report["evolution"]} if "evolution" in report else {})}})
 
 
 class LearningEvidenceError(ValueError):

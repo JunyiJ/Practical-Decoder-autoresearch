@@ -29,6 +29,7 @@ from .roles import build_prompt
 from .runtime import prepare_call, run_call
 from .control import run_control
 from .host import inspect_host
+from .evolution import validate_settings, plan_generation, validate_child, compare_parents
 from .suite import describe_suite, run_suite, validate_suite
 from .workspace import create_workspace, freeze_workspace, inspect_workspace, source_digest
 
@@ -59,7 +60,7 @@ raise SystemExit(pytest.main(['-q', *sys.argv[1:]]))
 def load_config(path: Path) -> dict:
     cfg = OmegaConf.to_container(OmegaConf.load(path), resolve=True)
     required = {"version", "name", "objective", "repository", "base_ref", "base_plan", "knowledge_bank", "runtime", "limits", "local_tests"}
-    if not isinstance(cfg, dict) or set(cfg) - {"continuous"} != required or cfg["version"] != 1:
+    if not isinstance(cfg, dict) or set(cfg) - {"continuous", "evolution"} != required or cfg["version"] != 1:
         raise ValueError("Invalid team config; use research/team_mac.yaml as the schema")
     if not re.fullmatch(r"[a-zA-Z0-9_-]+", str(cfg["name"])) or not str(cfg["objective"]).strip():
         raise ValueError("Set a short name and a concrete objective")
@@ -84,6 +85,8 @@ def load_config(path: Path) -> dict:
                 raise ValueError(f"continuous.{key} must be finite and positive")
         if any(cfg["limits"][key] is not None for key in unlimited):
             raise ValueError("Continuous campaigns require null aggregate limits; per-call and per-suite limits remain finite")
+    if "evolution" in cfg:
+        validate_settings(cfg["evolution"])
     for key, value in cfg["limits"].items():
         if "continuous" in cfg and key in unlimited and value is None:
             continue
@@ -196,6 +199,8 @@ def _current(state: dict) -> dict | None:
         state["status"] = "completed"
         return None
     iteration = {"id": f"iteration-{len(state['iterations']) + 1:03d}", "stage": "idea", "created_at": utc_now()}
+    if "evolution" in state["config"]:
+        iteration["evolution"] = plan_generation(state)
     state["iterations"].append(iteration)
     return iteration
 
@@ -397,6 +402,8 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
                 state["training_seconds"] = previous + time.monotonic() - started
                 report["performance"] = summarize_performance(spec, report.get("records", []),
                                                              integrity=report.get("evidence_integrity", True))
+                if "evolution" in iteration:
+                    report["evolution"] = compare_parents(state, iteration, report)
                 iteration["report"] = report
                 atomic_json(directory / "evidence.json", report)
                 prediction = verify_prediction(state, iteration)
@@ -443,6 +450,8 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
                 call.update(status="completed", duration_seconds=receipt["duration_seconds"], usage=receipt["usage"], completed_at=utc_now())
                 result = receipt["response"]
                 if phase == "idea":
+                    if "evolution" in iteration and result["change_kind"] != "config":
+                        raise ValueError("Evolution requires a configuration proposal")
                     iteration["idea"] = result
                     _record_idea(bank, state, iteration, result, call_dir / "response.json")
                     register_prediction(bank, state, iteration, directory)
@@ -453,6 +462,7 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
                     workspace = Path(iteration["workspace"]["path"])
                     inspected = inspect_workspace(workspace, state["baseline"]["base_commit"])
                     iteration["candidate_config"] = apply_overrides(state["baseline_config"], result["config_overrides"])
+                    validate_child(state, iteration, inspected["changes"])
                     model_changed = any(change["path"].startswith(("src/models/", "src/attention/", "src/moe/")) for change in inspected["changes"])
                     if not model_changed and iteration["candidate_config"] == state["baseline_config"]:
                         raise ValueError("Candidate makes no code or configuration change")

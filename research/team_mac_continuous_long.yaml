@@ -1,5 +1,5 @@
 version: 1
-name: mac-mle-continuous-long
+name: mac-mle-evolution-long
 objective: >-
   Confirm whether short-budget improvements persist at 3000 steps, then explore
   small, explainable model-code or configuration changes at width 64 and measure
@@ -17,6 +17,15 @@ objective: >-
   failures and recovered learnings from the shared knowledge bank. If curves
   still improve materially, record a recommendation for a separately frozen
   longer-horizon campaign; agents must not alter this campaign's token budget.
+  Follow the frozen evolutionary generation plan. Retain useful combinations,
+  mutate one or two configuration settings at a time, and use exact crossover
+  when scheduled. Prefer one-setting ablations when component contributions are
+  uncertain. Preserve resource tradeoffs and failed lineages. No synergy claim
+  without dedicated controls, and no independent-replication claim from reused seeds.
+evolution:
+  population_size: 4
+  max_mutations: 2
+  explore_every: 4
 repository: .
 base_ref: HEAD
 base_plan: research/mac_lr_transfer_long.yaml
