@@ -107,15 +107,34 @@ def record_results(bank, state, iteration, directory: Path):
                     "stop_reason": report.get("stop_reason"), "evidence_integrity": report.get("evidence_integrity")}})
 
 
+class LearningEvidenceError(ValueError):
+    """A completed evaluator response used citations outside this iteration."""
+
+
+def learning_evidence_catalog(iteration):
+    """Include both local identifiers and the records produced by record_results.
+
+    Only this iteration's recorded result/trial IDs are allowed. Other bank
+    entries (including literature, predictions and older results) are not aliases.
+    """
+    report = iteration.get("report", {})
+    return {"metric_ids": [row["id"] for row in report.get("performance", [])],
+            "trial_ids": [row["trial_id"] for row in report.get("records", [])],
+            "result_record_ids": [iteration["result_id"]] if iteration.get("result_id") else [],
+            "trial_record_ids": list(iteration.get("trial_ids", []))}
+
+
 def validate_learning_evidence(iteration, result):
-    available = {row["id"] for row in iteration["report"].get("performance", [])}
-    available.update(row["trial_id"] for row in iteration["report"].get("records", []))
+    available = {identity for values in learning_evidence_catalog(iteration).values() for identity in values}
     for lesson in result["learnings"]:
         if not lesson["evidence_ids"] or set(lesson["evidence_ids"]) - available:
-            raise ValueError("Learning cites missing performance or trial evidence IDs")
+            invalid = sorted(set(lesson["evidence_ids"]) - available)
+            raise LearningEvidenceError(f"Learning cites missing performance or trial evidence IDs: {invalid}. "
+                                        f"Choose at least one ID from the current evidence_catalog: {sorted(available)}")
 
 
-def record_learnings(bank, state, iteration, result, directory: Path, response_path: Path, outcome: str):
+def record_learnings(bank, state, iteration, result, directory: Path, response_path: Path, outcome: str,
+                    *, evidence_path: Path | None = None):
     validate_learning_evidence(iteration, result)
     # A supported intervention does not establish every explanation, resource
     # claim, or proposed mechanism in an agent's narrative.
@@ -135,7 +154,7 @@ def record_learnings(bank, state, iteration, result, directory: Path, response_p
             "summary": lesson["finding"], "outcome": learning_status, "created_by": "evaluator-agent",
             "scope": document["scope"],
             "related_ids": [iteration["prediction_id"], iteration["result_id"], iteration["evaluation_id"]],
-            "artifacts": [artifact(path), artifact(response_path), artifact(directory / "evidence.json")],
+            "artifacts": [artifact(path), artifact(response_path), artifact(evidence_path or directory / "evidence.json")],
             "details": {**lesson, "interpretation_not_proof_of_mechanism": True}}))
 
 

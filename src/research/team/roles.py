@@ -368,8 +368,13 @@ Return at least one structured learning with finding, explanation, limitation,
 next_action, evidence_ids, and confidence. Explain what the experiment taught,
 why it may have happened, the measured scope and uncertainty, and a falsifiable
 next step. Distinguish an observed fact from a causal interpretation. Cite only
-actual metric/trial evidence IDs provided in context; every learning requires at
-least one such ID, and the coordinator checks them. Do not invent evidence IDs or
+IDs listed in the top-level evidence_catalog; every learning requires at least
+one such ID, and the coordinator checks them. Prefer actual metric/trial evidence IDs.
+The current iteration's result_record_ids and trial_record_ids are also valid;
+these are knowledge-bank records of the same measurements. Other knowledge-bank
+IDs are not eligible empirical citations. If iteration.evaluation_feedback is
+present, correct the rejected references using this catalog; preserve the
+measurements and scientific scope. Do not invent evidence IDs or
 substitute unsupported literature claims for local results. If runs are missing
 or failed, formulate a limited lesson from the recorded failure/incompleteness
 evidence instead of fabricating a model-performance conclusion. Lessons apply to

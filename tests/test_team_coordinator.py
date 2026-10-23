@@ -262,6 +262,9 @@ def test_invented_learning_evidence_cannot_enter_evaluation_records(campaign):
     replies["evaluator"]["learnings"][0]["evidence_ids"] = ["imaginary-trial"]
     install_fake_handoffs(campaign, replies=replies)
     advance_to(campaign, "evaluator")
+    for _ in range(2):
+        retry = coordinator.advance(campaign["output"], run_agents=True)
+        assert retry["status"] == "ready_for_evaluator"
     state = coordinator.advance(campaign["output"], run_agents=True)
     assert state["status"] == "needs_attention"
     bank = KnowledgeBank(campaign["config"]["knowledge_bank"])

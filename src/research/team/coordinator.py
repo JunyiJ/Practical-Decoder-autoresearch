@@ -21,7 +21,8 @@ from ..runner import atomic_json, session_lock, terminate
 from .knowledge import KnowledgeBank
 from .history import export_history
 from .journal import (register_prediction, verify_prediction, record_results, record_learnings,
-                      record_failure_learning, validate_learning_evidence, utc_now)
+                      record_failure_learning, validate_learning_evidence, utc_now,
+                      learning_evidence_catalog, LearningEvidenceError)
 from .performance import summarize_performance
 from .predictions import METRICS, compare_prediction
 from .roles import build_prompt
@@ -219,6 +220,7 @@ def _context(state: dict, iteration: dict) -> dict:
             "limits": state["config"]["limits"], "local_tests": state["config"]["local_tests"],
             "environment": "16 GB Mac mini target; no assumption that this host is that machine",
             "host_preflight": state.get("host_preflight"),
+            "evidence_catalog": learning_evidence_catalog(iteration),
             "training_policy": "Codex roles never train; only the bounded Python executor may train when explicitly enabled."}
 
 
@@ -491,6 +493,20 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
                     iteration["completed_at"] = utc_now()
                 state["status"] = "ready_for_" + iteration["stage"]
         except (Exception, KeyboardInterrupt) as exc:
+            if phase == "evaluator" and isinstance(exc, LearningEvidenceError):
+                # Repair citation-only mistakes without repeating the training suite.
+                # Every attempt consumes the ordinary agent call/time budgets.
+                rejected = iteration.setdefault("evaluation_rejections", [])
+                rejection_path = call_dir / "evidence-rejection.json"
+                atomic_json(rejection_path, {"error": str(exc), "response": artifact(call_dir / "response.json"),
+                                            "evidence_catalog": learning_evidence_catalog(iteration)})
+                call["evaluation_status"] = "rejected_evidence"
+                rejected.append(artifact(rejection_path))
+                if len(rejected) <= 2:
+                    iteration["evaluation_feedback"] = str(exc)
+                    state["status"] = "ready_for_evaluator"
+                    _save(output, state)
+                    return state
             if state["agent_calls"] and state["agent_calls"][-1]["status"] == "running":
                 state["agent_calls"][-1].update(status="failed", error=str(exc))
             iteration.update(stage="failed", failed_phase=phase, error=str(exc) or "Interrupted")

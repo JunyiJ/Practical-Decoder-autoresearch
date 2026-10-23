@@ -9,6 +9,7 @@ from .coordinator import (advance, artifact, init_campaign, load_config,
                           prepare_next, run_campaign)
 from .knowledge import KnowledgeBank
 from .control import request_stop
+from .recovery import recover_evaluation
 from .history import export_history
 from ..runner import session_lock
 
@@ -39,7 +40,7 @@ def main(argv=None):
     init = commands.add_parser("init", help="Create committed baseline snapshots; no agents or training")
     init.add_argument("--config", type=Path, default=Path("research/team_mac.yaml"))
     init.add_argument("--output", type=Path, required=True)
-    for name in ("status", "report", "prepare", "advance", "run", "stop"):
+    for name in ("status", "report", "prepare", "advance", "run", "stop", "recover-evaluation"):
         command = commands.add_parser(name)
         command.add_argument("--campaign", type=Path, required=True)
         if name in {"advance", "run"}:
@@ -69,6 +70,8 @@ def main(argv=None):
             result = json.loads((args.campaign / "campaign.json").read_text())
         elif args.command == "stop":
             result = request_stop(args.campaign)
+        elif args.command == "recover-evaluation":
+            result = recover_evaluation(args.campaign)
         elif args.command == "report":
             with session_lock(args.campaign):
                 state = json.loads((args.campaign / "campaign.json").read_text())

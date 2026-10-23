@@ -286,10 +286,31 @@ agent or a standalone `advance` local test can fail the
 phase. An interruption caught inside the training suite can yield incomplete
 evidence and let the outer loop proceed to evaluation instead of pausing.
 
-There is currently no CLI command to retry a failed phase, resume a partially
+There is no general CLI command to retry a failed phase, resume a partially
 trained team trial, clear an interrupted handoff, or extend an existing budget.
 An abrupt termination can leave a running marker or a training reservation that
 blocks automatic continuation. Reserved time remains charged conservatively.
+
+Evaluator citations can use metric/trial IDs or the current iteration's result
+and trial knowledge-bank IDs, all listed in `evidence_catalog`. Unknown IDs
+trigger up to two correction attempts, within the existing agent-call and time
+limits. Each rejected response and validation error is retained in its call
+directory; no training is repeated. A third rejection stops for inspection.
+
+For an older campaign stopped solely by citation validation, the saved response
+can be recovered if its references are valid under this catalog:
+
+```bash
+python -m src.research.team recover-evaluation --campaign research_runs/continuous-001
+```
+
+This command verifies the saved prediction, result/trial records, report hashes,
+and evaluator receipt. It launches no agents or training. It appends the recovered
+evaluation and learnings to the same knowledge bank and writes
+`iteration-NNN/recovered-evaluation/recovery.json`. The original failed state,
+response, budgets, metrics and failure records stay unchanged. Start a **new
+campaign with the same knowledge bank** to continue research after a controller
+fix. This command cannot repair invented citations or recover incomplete training.
 
 For `needs_attention`, an exhausted budget, or an interrupted-run error:
 
