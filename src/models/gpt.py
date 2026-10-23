@@ -1,3 +1,4 @@
+import math
 import torch
 import torch.nn as nn
 
@@ -16,6 +17,22 @@ class GPT(nn.Module):
             "ln_f": nn.LayerNorm(cfg.dim)
         })
         self.lm_head = nn.Linear(cfg.dim, cfg.vocab_size, bias=False)
+        parameterization = getattr(cfg, 'parameterization', 'sp')
+        if parameterization not in {'sp', 'mup'}:
+            raise ValueError('parameterization must be sp or mup')
+        base_width = getattr(cfg, 'base_width', 64)
+        if isinstance(base_width, bool) or not isinstance(base_width, int) or base_width < 1:
+            raise ValueError('base_width must be a positive integer')
+        self.width_mult = cfg.dim / base_width if parameterization == 'mup' else 1.0
+        # Default hidden fan-in initialization already has the required scaling.
+        # Readout initialization has width-independent std in these coordinates;
+        # the forward multiplier makes its effective std scale as 1/width.
+        if parameterization == 'mup':
+            with torch.no_grad():
+                self.lm_head.weight.mul_(math.sqrt(self.width_mult))
+                for module in self.transformer.h.modules():
+                    if isinstance(module, nn.Linear) and module.bias is not None:
+                        module.bias.mul_(math.sqrt(self.width_mult))
         self.enable_rope = (getattr(cfg, "rope", 0) == 1)
 
     def forward(
@@ -50,7 +67,7 @@ class GPT(nn.Module):
             if block_aux_loss is not None:
                 aux_losses.append(block_aux_loss)
         x = self.transformer.ln_f(x)
-        logits = self.lm_head(x)
+        logits = self.lm_head(x) / self.width_mult
 
         loss = None
         ce_loss = None

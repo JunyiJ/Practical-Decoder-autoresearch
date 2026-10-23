@@ -65,7 +65,8 @@ This team supports model source changes and explicit configuration overrides,
 beyond the standalone LR sweep in [README.md](README.md). Candidate edits are
 allowed under `src/models/`, `src/attention/`, `src/moe/`, `src/config/`, and
 `tests/`. Model settings can vary; supported training overrides are learning
-rate, weight decay, and gradient clipping. Models must still construct and pass
+rate, weight decay, gradient clipping, optimizer (`adamw` or `muon`), and
+weight-decay mode (`conventional` or `independent`). Models must still construct and pass
 the relevant local tests.
 
 Trainer, data pipeline, evaluation, controller, and dependencies remain fixed
@@ -73,9 +74,12 @@ between arms. The corpus/splits, context length, token budget, paired seeds,
 evaluation settings, and device are shared. Width and head-count schedules are
 controlled by the suite so candidates cannot silently shrink a transfer target.
 
-Changing optimizer implementations or adding optimizer parameter groups is not
-supported by this candidate boundary. Full μP or Muon support needs a separately
-reviewed trainer/protocol extension. Existing MoE model code can be studied, but
+Optimizer implementations and parameter groups remain protected trainer code.
+The reviewed optimizer-transfer extension supports `model.parameterization: mup`
+with `model.base_width: 64` for dense GELU MHA, and a Muon/AdamW hybrid. See
+[Optimizer transfer](OPTIMIZER_TRANSFER.md) for exact scaling, coefficient units,
+and the bounded controlled study. Do not apply Adam's inverse-width multiplier
+to Muon in addition to its implemented scaling. Existing MoE model code can be studied, but
 no MoE transfer result follows merely from enabling it.
 
 ## Transfer protocol

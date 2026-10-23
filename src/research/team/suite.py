@@ -25,7 +25,7 @@ from .performance import summarize_performance
 
 
 ARMS = ("baseline", "candidate")
-TUNABLE_TRAINING = {"learning_rate", "weight_decay", "grad_clip"}
+TUNABLE_TRAINING = {"learning_rate", "weight_decay", "grad_clip", "optimizer", "decay_mode"}
 RUNTIME_TRAINING = {"seed", "eval_seed", "strict_device", "checkpoint_dir", "checkpoint_every",
                     "metrics_file", "summary_file", "keep_best_checkpoint", "resume_from", "max_train_seconds"}
 SHARED_TRAINING = {"max_iters", "batch_size", "eval_every", "eval_iters", "device", "cpu_threads"}
@@ -174,7 +174,13 @@ def validate_suite(spec: dict) -> dict:
             raise ValueError("Device must be cpu, mps, cuda or cuda:N")
         train.setdefault("weight_decay", 0.0)
         train.setdefault("grad_clip", 0.0)
-        for key in TUNABLE_TRAINING:
+        for key, allowed, default in [('optimizer', {'adamw', 'muon'}, 'adamw'),
+                                      ('decay_mode', {'conventional', 'independent'}, 'conventional')]:
+            if train.get(key, default) not in allowed:
+                raise ValueError(f'Unsupported training.{key}')
+        if train.get('decay_mode') == 'independent' and train['weight_decay'] >= 1:
+            raise ValueError('Independent per-step decay must be < 1')
+        for key in TUNABLE_TRAINING - {'optimizer', 'decay_mode'}:
             _number(train.get(key), f"training.{key}", zero=key != "learning_rate")
         if train.get("resume_from") is not None or train.get("max_train_seconds") is not None:
             raise ValueError("Trials must start fresh and use the full fixed-token budget")

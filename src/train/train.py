@@ -15,6 +15,7 @@ from omegaconf import DictConfig, OmegaConf
 import torch
 from datetime import datetime
 from ..models.gpt import GPT
+from .optimizers import build_optimizer, optimizer_options
 from ..utils.device import synchronize_device
 from ..data.loaders import TinyDataLoader, TextDataset
 from ..utils.checkpoint import (save_checkpoint, read_checkpoint,
@@ -175,7 +176,9 @@ def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
 
 
 def _training_contract(cfg: DictConfig, device: str, loader: TinyDataLoader) -> dict:
+    options = optimizer_options(cfg.training)
     return {
+        **({'optimizer_contract': options} if options != {'optimizer': 'adamw', 'decay_mode': 'conventional'} or getattr(cfg.model, 'parameterization', 'sp') != 'sp' else {}),
         'model': OmegaConf.to_container(cfg.model, resolve=True),
         'data_sha256': hashlib.sha256(Path(to_absolute_path(cfg.data.path)).read_bytes()).hexdigest(),
         'data_split': {'train_fraction': loader.train_fraction, 'val_fraction': loader.val_fraction},
@@ -277,11 +280,7 @@ def run_training(cfg: DictConfig) -> dict:
     # )
     cfg.model.vocab_size = loader.vocab_size
     model = GPT(cfg.model).to(device)
-    optimizer = torch.optim.AdamW(
-        model.parameters(),
-        lr=cfg.training.learning_rate,
-        weight_decay=cfg.training.weight_decay,
-    )
+    optimizer = build_optimizer(model, cfg.training)
     checkpoint_dir = to_absolute_path(cfg.training.checkpoint_dir) if cfg.training.checkpoint_dir else None
     checkpoint_every = cfg.training.checkpoint_every
     if checkpoint_dir:

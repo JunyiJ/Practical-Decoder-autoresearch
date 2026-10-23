@@ -173,9 +173,9 @@ def apply_overrides(config: dict, overrides: list[dict]) -> dict:
         if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)+", path) or path in seen:
             raise ValueError(f"Invalid or duplicate config path: {path}")
         seen.add(path)
-        if not (path.startswith("model.") or path in {"training.learning_rate", "training.weight_decay", "training.grad_clip"}):
+        if not (path.startswith("model.") or path in {"training.learning_rate", "training.weight_decay", "training.grad_clip", "training.optimizer", "training.decay_mode"}):
             raise ValueError(f"Protected experimental setting: {path}")
-        if path in {"model.dim", "model.n_heads", "model.block_size", "model.vocab_size"}:
+        if path in {"model.dim", "model.n_heads", "model.block_size", "model.vocab_size", "model.base_width"}:
             raise ValueError(f"Target/protocol controls {path}; the candidate cannot change it")
         value = json.loads(override["value_json"])
         digest(value)  # Reject NaN/Infinity accepted by Python's JSON decoder.
