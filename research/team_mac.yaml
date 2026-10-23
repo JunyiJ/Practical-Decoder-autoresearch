@@ -1,0 +1,24 @@
+version: 1
+name: mac-mle-team
+objective: Find a small, explainable model-code or configuration improvement that survives transfer from width 64 to widths 128 and 256 at the same training-token budget.
+repository: .
+base_ref: HEAD
+base_plan: research/mac_lr_transfer.yaml
+knowledge_bank: research_state/knowledge # Local directory of JSON records; created on first use.
+runtime:
+  executable: codex
+  model: null # Inherit the user's configured Codex model.
+  web_search: true # Idea agent only; source claims must be cited.
+limits:
+  max_iterations: 3
+  max_agent_calls: 12
+  agent_seconds: 600
+  total_agent_seconds: 3600
+  agent_output_mb: 64
+  local_test_seconds: 120
+  total_training_seconds: 7200
+local_tests:
+  - tests/test_mha.py
+  - tests/test_rope.py
+  - tests/test_gpt_loss.py
+  - tests/test_moe.py

@@ -147,6 +147,108 @@ def _append_metric(metric_path: Path, metric: dict) -> None:
         fh.write(json.dumps(metric, sort_keys=True) + "\n")
 
 
+def _resolve_device(cfg: DictConfig) -> str:
+    device = str(cfg.training.device)
+    kind = torch.device(device).type
+    unavailable = ((kind == 'mps' and not torch.backends.mps.is_available())
+                   or (kind == 'cuda' and not torch.cuda.is_available()))
+    if unavailable:
+        if getattr(cfg.training, 'strict_device', False):
+            raise RuntimeError(f"Requested device {device!r} is unavailable; strict_device forbids CPU fallback")
+        if kind == 'mps':  # Preserve the legacy MPS fallback only.
+            device = 'cpu'
+    return device
+
+
+def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
+    seed = int(getattr(cfg.training, 'seed', 0))
+    return TinyDataLoader(
+        data_path=to_absolute_path(cfg.data.path),
+        batch_size=cfg.training.batch_size,
+        block_size=cfg.model.block_size,
+        device=device,
+        seed=seed,
+        train_fraction=getattr(cfg.data, 'train_fraction', .9),
+        val_fraction=getattr(cfg.data, 'val_fraction', .1),
+        eval_seed=getattr(cfg.training, 'eval_seed', seed + 1),
+    )
+
+
+def _training_contract(cfg: DictConfig, device: str, loader: TinyDataLoader) -> dict:
+    return {
+        'model': OmegaConf.to_container(cfg.model, resolve=True),
+        'data_sha256': hashlib.sha256(Path(to_absolute_path(cfg.data.path)).read_bytes()).hexdigest(),
+        'data_split': {'train_fraction': loader.train_fraction, 'val_fraction': loader.val_fraction},
+        'eval_seed': loader.eval_seed,
+        'torch_version': str(torch.__version__), 'device': str(device),
+        'training': {key: getattr(cfg.training, key, default) for key, default in
+                     [('batch_size', None), ('learning_rate', None), ('weight_decay', None),
+                      ('grad_clip', 0.0), ('seed', 0), ('eval_iters', 100)]},
+    }
+
+
+def _contracts_match(saved: dict | None, expected: dict) -> bool:
+    if not isinstance(saved, dict):
+        return False
+    # Corrected version-2 checkpoints from before configurable splits used
+    # exactly 90/10 and seed+1. Fill only those legacy defaults, never silently
+    # accept a changed research split or shared evaluation seed.
+    normalized = dict(saved)
+    normalized.setdefault('data_split', {'train_fraction': .9, 'val_fraction': .1})
+    normalized.setdefault('eval_seed', normalized.get('training', {}).get('seed', 0) + 1)
+    return normalized == expected
+
+
+def _evaluate(model: GPT, loader: TinyDataLoader, split: str, eval_iters: int) -> tuple[float, float | None]:
+    if split not in loader.generators:
+        raise ValueError(f"Evaluation split {split!r} is unavailable")
+    if eval_iters < 1:
+        raise ValueError('eval_iters must be >= 1')
+    loader.generators[split].manual_seed(loader.eval_seed + (split == 'test'))
+    model.eval()
+    losses = 0.0
+    aux_losses = 0.0
+    saw_aux = False
+    with torch.no_grad():
+        for _ in range(eval_iters):
+            x, y = loader.get_batch(split)
+            _, loss, breakdown = model(x, y, include_aux_loss=False, return_loss_breakdown=True)
+            if not torch.isfinite(loss).item():
+                raise FloatingPointError(f"Nonfinite {split} loss")
+            losses += loss.item()
+            if breakdown['aux_loss'] is not None:
+                if not torch.isfinite(breakdown['aux_loss']).item():
+                    raise FloatingPointError(f"Nonfinite {split} auxiliary loss")
+                saw_aux = True
+                aux_losses += breakdown['aux_loss'].item()
+    return losses / eval_iters, aux_losses / eval_iters if saw_aux else None
+
+
+def evaluate_checkpoint(cfg: DictConfig, checkpoint_path: str | Path,
+                        split: str = 'test', eval_iters: int | None = None) -> dict:
+    """Score a frozen checkpoint on a named split; training never calls this on test."""
+    if split not in ('val', 'test'):
+        raise ValueError("Evaluation split must be 'val' or 'test'")
+    cfg = OmegaConf.create(OmegaConf.to_container(cfg, resolve=True))
+    device = _resolve_device(cfg)
+    loader = _make_loader(cfg, device)
+    cfg.model.vocab_size = loader.vocab_size
+    checkpoint = read_checkpoint(to_absolute_path(str(checkpoint_path)), map_location='cpu')
+    contract = _training_contract(cfg, device, loader)
+    if not _contracts_match(checkpoint.get('training_state', {}).get('contract'), contract):
+        raise ValueError('Checkpoint evaluation requires matching model, data, device, PyTorch and evaluation settings')
+    model = GPT(cfg.model).to(device)
+    model.load_state_dict(checkpoint['model_state'])
+    count = int(getattr(cfg.training, 'eval_iters', 100) if eval_iters is None else eval_iters)
+    loss, aux_loss = _evaluate(model, loader, split, count)
+    return {
+        'split': split, 'loss': loss, 'ce_loss': loss, 'aux_loss': aux_loss,
+        'eval_iters': count, 'eval_seed': loader.eval_seed + (split == 'test'),
+        'tokens_evaluated': count * cfg.training.batch_size * cfg.model.block_size,
+        'checkpoint_step': int(checkpoint['step']), 'device': device,
+    }
+
+
 def run_training(cfg: DictConfig) -> dict:
     eval_every = int(getattr(cfg.training, "eval_every", 400))
     eval_iters = int(getattr(cfg.training, "eval_iters", 100))
@@ -163,16 +265,8 @@ def run_training(cfg: DictConfig) -> dict:
     torch.manual_seed(seed)
     if cfg.training.max_iters < 1:
         raise ValueError("training.max_iters must be >= 1")
-    device = cfg.training.device
-    if device == "mps" and not torch.backends.mps.is_available():
-        device = "cpu"
-    loader = TinyDataLoader(
-        data_path=to_absolute_path(cfg.data.path),
-        batch_size = cfg.training.batch_size,
-        block_size = cfg.model.block_size,
-        device = device,
-        seed = seed,
-    )
+    device = _resolve_device(cfg)
+    loader = _make_loader(cfg, device)
     # The tiktokenizer doesn't work well for mini-shakspear dataset because the training
     # data is too limited to learn a big vocab as tiktokenizer
     # loader = TextDataset(
@@ -197,14 +291,7 @@ def run_training(cfg: DictConfig) -> dict:
     budget = getattr(cfg.training, "max_train_seconds", None)
     if budget is not None and (not math.isfinite(float(budget)) or float(budget) <= 0):
         raise ValueError("max_train_seconds must be positive or null")
-    contract = {
-        "model": OmegaConf.to_container(cfg.model, resolve=True),
-        "data_sha256": hashlib.sha256(Path(to_absolute_path(cfg.data.path)).read_bytes()).hexdigest(),
-        "torch_version": str(torch.__version__), "device": str(device),
-        "training": {key: getattr(cfg.training, key, default) for key, default in
-                     [("batch_size", None), ("learning_rate", None), ("weight_decay", None),
-                      ("grad_clip", 0.0), ("seed", 0), ("eval_iters", 100)]},
-    }
+    contract = _training_contract(cfg, device, loader)
     metrics = []
     completed_steps = 0
     training_seconds = 0.0
@@ -214,7 +301,7 @@ def run_training(cfg: DictConfig) -> dict:
     if resume:
         ckpt = read_checkpoint(to_absolute_path(resume), map_location='cpu')
         state = ckpt.get('training_state')
-        if state is None or state.get('contract') != contract:
+        if state is None or not _contracts_match(state.get('contract'), contract):
             raise ValueError("Resume requires matching model, data, optimizer, device, PyTorch and evaluation settings")
         model.load_state_dict(ckpt['model_state'])
         optimizer.load_state_dict(ckpt['optimizer_state'])
@@ -268,26 +355,7 @@ def run_training(cfg: DictConfig) -> dict:
             cuda_usage = _get_cuda_usage(device)
             # Snapshot training routing before evaluation overwrites the histograms.
             moe_usage = _summarize_moe_usage(model)
-            loader.generators['val'].manual_seed(seed + 1)
-            model.eval()
-            eval_losses = 0.0
-            eval_aux_losses = 0.0
-            saw_eval_aux_loss = False
-            with torch.no_grad():
-                for _ in range(eval_iters):
-                    x_eval, y_eval = loader.get_batch('val')
-                    _, eval_loss, eval_loss_breakdown = model(
-                        x_eval,
-                        y_eval,
-                        include_aux_loss=False,
-                        return_loss_breakdown=True,
-                    )
-                    eval_losses += eval_loss.item()
-                    if eval_loss_breakdown["aux_loss"] is not None:
-                        saw_eval_aux_loss = True
-                        eval_aux_losses += eval_loss_breakdown["aux_loss"].item()
-            avg_eval_loss = eval_losses / eval_iters
-            avg_eval_aux_loss = (eval_aux_losses / eval_iters) if saw_eval_aux_loss else None
+            avg_eval_loss, avg_eval_aux_loss = _evaluate(model, loader, 'val', eval_iters)
             ppl = math.exp(avg_eval_loss)
             train_ce_loss = train_loss_breakdown["ce_loss"]
             train_aux_loss = train_loss_breakdown["aux_loss"]
@@ -384,7 +452,7 @@ def run_training(cfg: DictConfig) -> dict:
             metrics.append(metric)
             if best_metric is None or metric['val_loss'] < best_metric['val_loss']:
                 best_metric = metric
-                if checkpoint_dir:
+                if checkpoint_dir and getattr(cfg.training, 'keep_best_checkpoint', True):
                     best_checkpoint_path = str(Path(checkpoint_dir) / f"best_{completed_steps:06d}_{time.time_ns()}.pt")
                     save_run(best_checkpoint_path)
             if metrics_path is not None:

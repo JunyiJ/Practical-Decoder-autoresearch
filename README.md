@@ -8,8 +8,48 @@ A repo to implement the decoder-only GPT-style model and play around with differ
 ## To generate with the trained checkpoint
 `python -m src.utils.generate --checkpoint checkpoints/final.pt --data-path data/raw/shakespeare.txt --prompt "To be, or not to be" --device mps`
 
-## To run autonomous config research
-Point your coding agent at [program.md](program.md). The agent loop is config-only to start: it mutates `src/config/mac_tinyshakespeare.yaml`, creates per-experiment git branches, runs short screening experiments, and writes untracked reports and summaries.
+## MLE research team
+
+The [multi-agent protocol](research/TEAM.md) uses separate Codex CLI roles for
+idea generation, code changes, execution preflight, and evaluation. A shared
+folder of JSON records retains literature, past attempts, failures, and scoped
+results and learnings. Each iteration registers quality, throughput, and memory
+predictions before implementation. A deterministic controller tests isolated model/config candidates
+against a fixed baseline, freezes the small-model decision, and checks whether
+the effect survives larger widths. It compares forecasts with observations and
+exports chronological JSON/CSV/Markdown histories of ideas, trials, performance,
+costs, failures, and learnings for future iterations.
+
+The bank defaults to `research_state/knowledge/` and is created on first use.
+It uses ordinary local files, with no database setup, account, server, or paid
+storage service. Agent and training compute are separate and remain disabled
+during preparation.
+
+The [16 GB Mac campaign](research/team_mac.yaml) targets widths 64/128/256 with
+paired seeds and fixed training-token budgets. It supports model-code changes
+and LR/weight-decay/clipping overrides. Full μP and Muon optimizer integration
+remain future protocol extensions.
+
+**Current mode: preparation only. No Codex research agents or training have been
+launched for this team.** Read [program.md](program.md) for agent instructions and
+[TEAM.md](research/TEAM.md) for setup, commands, limits, and evidence rules.
+Campaign initialization requires the reviewed implementation to be committed in
+a clean source repository; initialization calls no model and starts no training.
+
+## Standalone learning-rate studies
+
+The existing [LR protocol and harness](research/README.md) remain available for
+bounded LR sweeps, small-width screening, paired-seed confirmation, larger-width
+transfer, and held-out audit without running research agents.
+
+Preview the matrix without training:
+
+```bash
+python -m src.research.runner plan --config research/mac_lr_transfer.yaml
+```
+
+Reports, logs, and checkpoints stay in ignored `research_runs/` directories.
+Neither workflow commits or pushes changes automatically.
 
 ## Budgets and resumption
 
