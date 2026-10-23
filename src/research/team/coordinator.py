@@ -8,6 +8,7 @@ import json
 import math
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -25,6 +26,8 @@ from .performance import summarize_performance
 from .predictions import METRICS, compare_prediction
 from .roles import build_prompt
 from .runtime import prepare_call, run_call
+from .control import run_control
+from .host import inspect_host
 from .suite import describe_suite, run_suite, validate_suite
 from .workspace import create_workspace, freeze_workspace, inspect_workspace, source_digest
 
@@ -55,7 +58,7 @@ raise SystemExit(pytest.main(['-q', *sys.argv[1:]]))
 def load_config(path: Path) -> dict:
     cfg = OmegaConf.to_container(OmegaConf.load(path), resolve=True)
     required = {"version", "name", "objective", "repository", "base_ref", "base_plan", "knowledge_bank", "runtime", "limits", "local_tests"}
-    if not isinstance(cfg, dict) or set(cfg) != required or cfg["version"] != 1:
+    if not isinstance(cfg, dict) or set(cfg) - {"continuous"} != required or cfg["version"] != 1:
         raise ValueError("Invalid team config; use research/team_mac.yaml as the schema")
     if not re.fullmatch(r"[a-zA-Z0-9_-]+", str(cfg["name"])) or not str(cfg["objective"]).strip():
         raise ValueError("Set a short name and a concrete objective")
@@ -70,7 +73,19 @@ def load_config(path: Path) -> dict:
     limit_keys = {"max_iterations", "max_agent_calls", "agent_seconds", "total_agent_seconds", "agent_output_mb", "local_test_seconds", "total_training_seconds"}
     if set(cfg["limits"]) != limit_keys:
         raise ValueError("Invalid campaign limits")
+    unlimited = {"max_iterations", "max_agent_calls", "total_agent_seconds", "total_training_seconds"}
+    if "continuous" in cfg:
+        settings = cfg["continuous"]
+        if not isinstance(settings, dict) or set(settings) != {"target_hours", "min_free_disk_mb"}:
+            raise ValueError("continuous requires target_hours and min_free_disk_mb")
+        for key, value in settings.items():
+            if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
+                raise ValueError(f"continuous.{key} must be finite and positive")
+        if any(cfg["limits"][key] is not None for key in unlimited):
+            raise ValueError("Continuous campaigns require null aggregate limits; per-call and per-suite limits remain finite")
     for key, value in cfg["limits"].items():
+        if "continuous" in cfg and key in unlimited and value is None:
+            continue
         if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
             raise ValueError(f"limits.{key} must be finite and positive")
         if key.startswith("max_") and not isinstance(value, int):
@@ -175,7 +190,8 @@ def apply_overrides(config: dict, overrides: list[dict]) -> dict:
 def _current(state: dict) -> dict | None:
     if state["iterations"] and state["iterations"][-1]["stage"] != "completed":
         return state["iterations"][-1]
-    if len(state["iterations"]) >= state["config"]["limits"]["max_iterations"]:
+    maximum = state["config"]["limits"]["max_iterations"]
+    if maximum is not None and len(state["iterations"]) >= maximum:
         state["status"] = "completed"
         return None
     iteration = {"id": f"iteration-{len(state['iterations']) + 1:03d}", "stage": "idea", "created_at": utc_now()}
@@ -202,6 +218,7 @@ def _context(state: dict, iteration: dict) -> dict:
             "exploration_reports": state.get("reports", {}),
             "limits": state["config"]["limits"], "local_tests": state["config"]["local_tests"],
             "environment": "16 GB Mac mini target; no assumption that this host is that machine",
+            "host_preflight": state.get("host_preflight"),
             "training_policy": "Codex roles never train; only the bounded Python executor may train when explicitly enabled."}
 
 
@@ -318,10 +335,21 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
     output = output.resolve()
     with session_lock(output) as lock_fd:
         state = json.loads((output / "campaign.json").read_text())
+        if (output / "STOP").exists():
+            state["status"] = "paused"
+            _save(output, state)
+            return state
         if source_digest(Path(state["config"]["repository"])) != state["controller_sha256"]:
             raise ValueError("Controller source changed; start a new campaign from the reviewed revision")
         if any(call["status"] == "running" for call in state["agent_calls"]):
             raise ValueError("Interrupted agent handoff requires inspection; its time reservation remains charged")
+        continuous = state["config"].get("continuous")
+        if continuous and shutil.disk_usage(output).free < continuous["min_free_disk_mb"] * 1024**2:
+            state["status"] = "insufficient_disk_space"
+            _save(output, state)
+            return state
+        if "run_started_at" not in state:
+            state["run_started_at"] = utc_now()
         iteration = _current(state)
         if iteration is None or iteration["stage"] == "failed":
             _save(output, state)
@@ -332,6 +360,9 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
         directory.mkdir(parents=True, exist_ok=True)
         phase = iteration["stage"]
         try:
+            if not state.get("host_preflight") or phase in {"executor", "train"}:
+                state["host_preflight"] = {**inspect_host(state["baseline_config"]["training"]["device"]),
+                                           "checked_at": utc_now()}
             if phase != "idea":
                 verify_prediction(state, iteration)
             if phase == "train":
@@ -341,7 +372,9 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
                     return state
                 if iteration.get("training_started"):
                     raise ValueError("Interrupted suite requires inspection before restarting; its reserved training time remains charged")
-                remaining = limits["total_training_seconds"] - state["training_seconds"]
+                total = limits["total_training_seconds"]
+                remaining = (iteration["suite"]["limits"]["session_seconds"] if total is None
+                             else total - state["training_seconds"])
                 if remaining <= 0:
                     state["status"] = "training_budget_exhausted"
                     _save(output, state)
@@ -380,11 +413,12 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
                 iteration["stage"] = "evaluator"
                 state["status"] = "ready_for_evaluator"
             else:
-                if len(state["agent_calls"]) >= limits["max_agent_calls"]:
+                if limits["max_agent_calls"] is not None and len(state["agent_calls"]) >= limits["max_agent_calls"]:
                     state["status"] = "agent_call_budget_exhausted"
                     _save(output, state)
                     return state
-                remaining = limits["total_agent_seconds"] - state["agent_seconds"]
+                total = limits["total_agent_seconds"]
+                remaining = limits["agent_seconds"] if total is None else total - state["agent_seconds"]
                 if remaining <= 0:
                     state["status"] = "agent_time_budget_exhausted"
                     _save(output, state)
@@ -398,7 +432,7 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
                 state["agent_seconds"] += allowance
                 _save(output, state)
                 started = time.monotonic()
-                receipt = run_call(phase, build_prompt(phase, _context(state, iteration)), _role_cwd(state, iteration), call_dir,
+                receipt = run_call(phase, build_prompt(phase, _context(state, iteration), training_authorized=allow_training), _role_cwd(state, iteration), call_dir,
                                    state["config"]["runtime"], allow_agents=True, timeout=allowance,
                                    max_output_mb=limits["agent_output_mb"], lock_fd=lock_fd)
                 if source_digest(Path(state["config"]["repository"])) != state["controller_sha256"]:
@@ -471,10 +505,13 @@ def advance(output: Path, *, run_agents=False, allow_training=False) -> dict:
         return state
 
 
-def run_campaign(output: Path, *, run_agents=False, allow_training=False) -> dict:
+def run_campaign(output: Path, *, run_agents=False, allow_training=False, resume=False) -> dict:
     if not run_agents:
+        if resume:
+            raise ValueError("Resuming execution requires --run-agents")
         return prepare_next(output)
-    while True:
-        state = advance(output, run_agents=True, allow_training=allow_training)
-        if state["status"] in {"completed", "needs_attention", "awaiting_training_authorization", "training_budget_exhausted", "agent_call_budget_exhausted", "agent_time_budget_exhausted"}:
-            return state
+    with run_control(output, resume=resume):
+        while True:
+            state = advance(output, run_agents=True, allow_training=allow_training)
+            if state["status"] in {"completed", "needs_attention", "awaiting_training_authorization", "training_budget_exhausted", "agent_call_budget_exhausted", "agent_time_budget_exhausted", "paused", "insufficient_disk_space"}:
+                return state

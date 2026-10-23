@@ -11,6 +11,13 @@ Four separate Codex CLI roles share an append-only knowledge bank;
 a deterministic controller owns transitions, budgets, training, and numerical
 decisions.
 
+For continuous operation, `team_mac_continuous.yaml` removes aggregate caps and
+sets an informational 48-hour target, continuing until a human stop request or
+an operational failure. Per-call and per-suite limits remain finite. `stop`
+pauses the `run` loop after its active phase; `run --resume` explicitly continues.
+Continuous campaigns retain all learnings and disable automatic held-out auditing.
+See [continuous research](START_HERE.md#continuous-research-until-human-stop).
+
 **Current mode is preparation only. The team and training have not been launched.**
 The commands below describe later operation. Building this system does not
 authorize a model call, a training smoke, or a research run.

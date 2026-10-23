@@ -1,0 +1,27 @@
+version: 1
+name: mac-mle-continuous
+objective: Find small, explainable model-code or configuration improvements at width 64, measure their unchanged transfer to widths 128 and 256 at the same training-token budget, and use recorded outcomes and failures to choose subsequent ideas.
+repository: .
+base_ref: HEAD
+base_plan: research/mac_lr_transfer.yaml
+knowledge_bank: research_state/knowledge
+continuous:
+  target_hours: 48 # Informational minimum target; no automatic stop at this time.
+  min_free_disk_mb: 1024 # Pause without deleting evidence if space falls below this.
+runtime:
+  executable: codex
+  model: null
+  web_search: true
+limits:
+  max_iterations: null
+  max_agent_calls: null
+  agent_seconds: 600
+  total_agent_seconds: null
+  agent_output_mb: 64
+  local_test_seconds: 120
+  total_training_seconds: null
+local_tests:
+  - tests/test_mha.py
+  - tests/test_rope.py
+  - tests/test_gpt_loss.py
+  - tests/test_moe.py

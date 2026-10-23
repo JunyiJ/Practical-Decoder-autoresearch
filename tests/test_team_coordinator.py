@@ -23,6 +23,7 @@ def campaign(tmp_path, monkeypatch):
     monkeypatch.setattr(coordinator, "run_suite", forbidden)
     monkeypatch.setattr(coordinator, "_local_tests", forbidden)
     monkeypatch.setattr(coordinator, "source_digest", lambda root: "a" * 64)
+    monkeypatch.setattr(coordinator, "inspect_host", lambda device: {"device": device, "device_available": True})
     config = {"version": 1, "name": "fixture", "objective": "Check paired transfer.",
         "repository": str(tmp_path / "repo"), "base_ref": "HEAD", "base_plan": str(tmp_path / "plan.yaml"),
         "knowledge_bank": str(tmp_path / "knowledge"),

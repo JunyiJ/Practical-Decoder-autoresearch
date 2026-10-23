@@ -15,6 +15,7 @@ explicitly choose to start them; writing this guide does not authorize a run.
 | First run on a Mac mini | [Set up the machine](#1-set-up-the-machine) |
 | Inspect the proposed workflow without running it | [Prepare a campaign](#3-prepare-a-new-campaign) |
 | Start the agents and training | [Execute](#4-execute-when-ready) |
+| Run continuously for 48 hours and beyond | [Continuous research](#continuous-research-until-human-stop) |
 | Continue a campaign between phases | [Resume the same campaign](#6-resume-the-same-campaign) |
 | Start another experiment using earlier learnings | [Reuse the knowledge bank](#7-start-a-new-campaign-with-previous-knowledge) |
 | Recover from a failure or interruption | [Recovery limits](#recovery-limits) |
@@ -172,6 +173,62 @@ Omit `--allow-training` to keep that phase gated. Without `--run-agents`, both
 `run` and `advance` only prepare the next handoff, even if `--allow-training`
 is present. Training runs serially; avoid competing campaigns on one Mac.
 
+### Continuous research until human stop
+
+Use `research/team_mac_continuous.yaml` for an ongoing campaign. It records a
+**48-hour target**, continues beyond 48 hours, and has **no aggregate iteration,
+agent-call, agent-time, or training-time cutoff**. The original `team_mac.yaml`
+remains the bounded three-iteration option. Select the mode before initialization;
+do not edit the frozen settings of an existing campaign.
+
+```bash
+python -m src.research.team init --config research/team_mac_continuous.yaml --output research_runs/continuous-001
+python -m src.research.team run --campaign research_runs/continuous-001 --run-agents --allow-training
+```
+
+Every iteration reads prior learnings, registers its prediction, compares paired
+baseline/candidate runs at width 64, freezes that choice, then tests the unchanged
+intervention at widths 128 and 256. Larger widths cannot revise the small-width
+choice. All iterations compare with the fixed campaign baseline; learning reuse
+does not automatically promote candidate code or carry pretrained weights forward.
+Both successful and unsuccessful local candidates are measured at larger widths.
+Continuous mode never automatically audits the held-out test split: it has no
+predeclared final iteration. Repeated validation/transfer measurements remain
+development evidence, not fresh confirmation.
+
+Per-call deadlines, local-test deadlines, and per-suite trial/time/disk/failure
+limits remain finite. Total consumption is recorded cumulatively. The controller
+checks the requested device and records software/host availability before agent
+execution and again at preflight/training. These checks do not prove that every
+candidate operation works or impose a hard RAM quota. Execution failures stop
+with preserved evidence and require inspection. Free space below
+`continuous.min_free_disk_mb` pauses new work; free space without deleting evidence
+and reissue `run` to continue. Neither failure nor low space is silently retried.
+The 48-hour target is not a guarantee of uninterrupted operation.
+
+From another terminal, request a clean human stop:
+
+```bash
+python -m src.research.team stop --campaign research_runs/continuous-001
+```
+
+`run` also converts Ctrl-C/SIGINT and SIGTERM into the same durable `STOP` request.
+The active phase finishes and its evidence is saved before status becomes `paused`.
+A training phase is the entire paired suite, so stopping can take up to its
+remaining suite deadline. Killing the process with SIGKILL, losing power, or
+interrupting a standalone `advance` call still has the recovery limitations below.
+
+Resume a human-paused campaign explicitly, with its original source and environment:
+
+```bash
+python -m src.research.team run --campaign research_runs/continuous-001 --resume --run-agents --allow-training
+```
+
+A plain `run` or `advance` respects an existing `STOP` file. `--resume` clears
+only that request, without changing budgets, failed phases, or running markers.
+A second `run` cannot start while the first loop is active. Keep the machine awake
+for unattended operation; on macOS, prefix the run command with `caffeinate -i`.
+
 ## 5. Read the results and learnings
 
 These commands inspect state and regenerate reports without agents or training:
@@ -202,7 +259,8 @@ character-level experiment, not proof of transfer to a production LLM. See
 
 ## 6. Resume the same campaign
 
-There is **no `resume` subcommand or `--resume` flag**. At a clean phase boundary,
+There is **no `resume` subcommand**. Use `run --resume` only to clear a human stop
+request. Otherwise, at a clean phase boundary,
 reactivate the same environment, inspect status, and reuse the same campaign:
 
 ```bash
@@ -222,8 +280,9 @@ the study requires a new campaign and output directory.
 
 ### Recovery limits
 
-**Stop between successful `advance` calls for a resumable pause. Ctrl-C is not a
-supported pause mechanism.** Interrupting an agent or local test can fail the
+**Use `stop` with the `run` loop, or stop between successful `advance` calls, for
+a resumable pause.** Ctrl-C/SIGTERM are graceful only for `run`; interrupting an
+agent or a standalone `advance` local test can fail the
 phase. An interruption caught inside the training suite can yield incomplete
 evidence and let the outer loop proceed to evaluation instead of pausing.
 

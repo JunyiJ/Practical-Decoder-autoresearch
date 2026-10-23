@@ -8,6 +8,7 @@ from pathlib import Path
 from .coordinator import (advance, artifact, init_campaign, load_config,
                           prepare_next, run_campaign)
 from .knowledge import KnowledgeBank
+from .control import request_stop
 from .history import export_history
 from ..runner import session_lock
 
@@ -38,12 +39,14 @@ def main(argv=None):
     init = commands.add_parser("init", help="Create committed baseline snapshots; no agents or training")
     init.add_argument("--config", type=Path, default=Path("research/team_mac.yaml"))
     init.add_argument("--output", type=Path, required=True)
-    for name in ("status", "report", "prepare", "advance", "run"):
+    for name in ("status", "report", "prepare", "advance", "run", "stop"):
         command = commands.add_parser(name)
         command.add_argument("--campaign", type=Path, required=True)
         if name in {"advance", "run"}:
             command.add_argument("--run-agents", action="store_true", help="Explicitly execute bounded Codex CLI roles")
             command.add_argument("--allow-training", action="store_true", help="Enable the separate bounded training executor")
+        if name == "run":
+            command.add_argument("--resume", action="store_true", help="Clear a human stop request and continue from its saved phase")
     knowledge = commands.add_parser("knowledge")
     operations = knowledge.add_subparsers(dest="operation", required=True)
     for name in ("add", "search", "export", "import-report"):
@@ -64,6 +67,8 @@ def main(argv=None):
             result = init_campaign(load_config(args.config), args.output)
         elif args.command == "status":
             result = json.loads((args.campaign / "campaign.json").read_text())
+        elif args.command == "stop":
+            result = request_stop(args.campaign)
         elif args.command == "report":
             with session_lock(args.campaign):
                 state = json.loads((args.campaign / "campaign.json").read_text())
@@ -72,7 +77,8 @@ def main(argv=None):
             result = prepare_next(args.campaign)
         elif args.command in {"advance", "run"}:
             function = advance if args.command == "advance" else run_campaign
-            result = function(args.campaign, run_agents=args.run_agents, allow_training=args.allow_training)
+            extra = {"resume": args.resume} if args.command == "run" else {}
+            result = function(args.campaign, run_agents=args.run_agents, allow_training=args.allow_training, **extra)
         else:
             bank = KnowledgeBank(args.bank)
             if args.operation == "add":
@@ -90,11 +96,13 @@ def main(argv=None):
             else:
                 result = {"id": import_report(bank, args.report)}
         if isinstance(result, dict) and "iterations" in result:
-            result = {"status": result["status"], "iterations": [{k: iteration.get(k) for k in ("id", "stage", "idea_id", "prediction_id", "result_id", "evaluation_id", "learning_ids", "failure_learning_id", "error")} for iteration in result["iterations"]],
+            result = {"status": result["status"], "continuous": result.get("config", {}).get("continuous"),
+                      "run_started_at": result.get("run_started_at"), "stop_requested": (args.campaign / "STOP").exists() if hasattr(args, "campaign") else False,
+                      "iterations": [{k: iteration.get(k) for k in ("id", "stage", "idea_id", "prediction_id", "result_id", "evaluation_id", "learning_ids", "failure_learning_id", "error")} for iteration in result["iterations"]],
                       "agent_calls": len(result["agent_calls"]), "agent_seconds": result["agent_seconds"], "training_seconds": result["training_seconds"],
                       "knowledge_bank": result["config"]["knowledge_bank"], "reports": result.get("reports", {})}
         print(json.dumps(result, indent=2, ensure_ascii=False))
-        if isinstance(result, dict) and result.get("status") in {"needs_attention", "training_budget_exhausted", "agent_call_budget_exhausted", "agent_time_budget_exhausted"}:
+        if isinstance(result, dict) and result.get("status") in {"needs_attention", "training_budget_exhausted", "agent_call_budget_exhausted", "agent_time_budget_exhausted", "insufficient_disk_space"}:
             return 2
     except (ValueError, OSError, RuntimeError, KeyError) as exc:
         parser.exit(2, f"Error: {exc}\n")
