@@ -7,7 +7,7 @@ class KVCache(nn.Module):
     def __init__(self, cfg, device, batch_size=None, dtype=None, n_kv_heads=None):
         super().__init__()
         self.attn_type = getattr(cfg.model, "attn_type", None)
-        self.is_mla = self.attn_type == "mla"
+        self.is_mla = self.attn_type in {"mla", "gated_mla"}
         if self.attn_type == "gqa":
             expected = kv_head_count(cfg.model)
             if n_kv_heads is not None and n_kv_heads != expected:

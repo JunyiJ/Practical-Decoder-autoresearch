@@ -5,6 +5,13 @@ A repo to implement the decoder-only GPT-style model and play around with differ
 ## To train the model
 `python -m src.train.train`
 
+Select sigmoid-gated MLA with decoupled RoPE using
+`model.attn_type=gated_mla` and `model.rope=1` (use `+model.rope=1` if the
+configuration has no `rope` field). The gate acts on each attention output
+channel before the output projection. Cached generation stores compressed KV
+latents and shared rotary keys, as with standard MLA. This variant retains RoPE;
+it does not reproduce Kimi K3's NoPE/KDA hybrid architecture.
+
 ## To generate with the trained checkpoint
 
 Replace the checkpoint argument with an actual saved `final_<steps>_<timestamp>.pt` file:
