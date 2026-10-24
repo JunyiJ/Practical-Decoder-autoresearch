@@ -2,7 +2,7 @@ import torch.nn as nn
 
 from ..attention.mha import MHA
 from ..attention.gqa import GQA
-from ..attention.mla import MLA
+from ..attention.mla import MLA, GatedMLA
 from ..moe.moe_block import MoEBlock
 
 from .rope import precompute_freqs_cis
@@ -33,6 +33,8 @@ class TransformerBlock(nn.Module):
             self.attn = GQA(cfg)
         elif cfg.attn_type == "mla":
             self.attn = MLA(cfg)
+        elif cfg.attn_type == "gated_mla":
+            self.attn = GatedMLA(cfg)
         else:
             raise ValueError(f"Unknown attn_type: {cfg.attn_type}")
         # TODO add more variants later
@@ -69,7 +71,7 @@ class TransformerBlock(nn.Module):
             raise ValueError(f"Unknown mlp_type: {cfg.mlp_type}")
         self.enable_rope = (getattr(cfg, "rope", 0) == 1)
         if self.enable_rope:
-            head_dim = self.head_dim_r if cfg.attn_type == "mla" else self.head_dim
+            head_dim = self.head_dim_r if cfg.attn_type in {"mla", "gated_mla"} else self.head_dim
             if head_dim % 2 != 0:
                 raise ValueError("head_dim must be even when rope is enabled")
             freq_cos, freq_sin = precompute_freqs_cis(head_dim, cfg.block_size)

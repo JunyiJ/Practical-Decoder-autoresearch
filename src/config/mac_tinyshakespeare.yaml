@@ -17,7 +17,7 @@ model:
   head_dim_r: 8
   
   # Swappable components
-  attn_type: "gqa" # options: mha, gqa, mla
+  attn_type: "gqa" # options: mha, gqa, mla, gated_mla
   n_kv_heads: 2    # for GQA: set to 1 or 2
   mlp_type: "dense" # options: dense, moe
   
