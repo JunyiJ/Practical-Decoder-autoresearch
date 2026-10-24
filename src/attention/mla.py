@@ -5,13 +5,25 @@ import torch.nn as nn
 
 from ..models.rope import apply_rotary_emb
 
+
+def latent_dimensions(cfg):
+    """One contract for attention projections and their inference cache."""
+    policy = getattr(cfg, 'attention_width_policy', None)
+    if policy is not None:
+        if (policy != 'mla_quarter_head32' or cfg.dim not in {64,128,256}
+                or cfg.n_heads != cfg.dim // 32
+                or any(hasattr(cfg, k) for k in ['dimckv','dimcq','head_dim_r','n_kv_heads','n_groups'])):
+            raise ValueError('mla_quarter_head32 requires widths64/128/256, head32 and no latent/rotary/KV overrides')
+        return cfg.dim // 4, cfg.dim // 4
+    return getattr(cfg, 'dimcq', cfg.dim // 10), getattr(cfg, 'dimckv', cfg.dim // 10)
+
+
 # https://arxiv.org/abs/2405.04434
 class MLA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.dim = cfg.dim
-        self.dimc_kv = getattr(cfg, "dimckv", self.dim // 10)
-        self.dimc_q = getattr(cfg, "dimcq", self.dim // 10)
+        self.dimc_q, self.dimc_kv = latent_dimensions(cfg)
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
             raise ValueError(f"cfg.dim must be divisible by cfg.n_heads (got {self.dim}, {self.n_heads})")

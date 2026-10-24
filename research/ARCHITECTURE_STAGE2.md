@@ -578,3 +578,100 @@ initialization, optimizer/scaling and finite parameter/runtime budget review.
 Evidence: [report](../research_runs/architecture-stage2e-001/report.json),
 [selection](../research_runs/architecture-stage2e-001/selection.json),
 [review](../research_runs/architecture-stage2e-001/review.json).
+
+### Stage 2F: quarter-width MLA at fixed four-layer depth
+
+Stage 2E is closed. This finite round compares the repository's MLA implementation
+with MHA on four-layer SwiGLU, keeping the winning depth and per-layer FFN fixed.
+It retains the original two-layer GELU .002 reference, cheaper two-layer SwiGLU
+.0025 reference, and four-layer SwiGLU/MHA .0025 incumbent. Four-layer MHA and
+four-layer MLA each receive LR .0015/.002/.0025. Fresh development seeds are
+1011/1022/1033; widths 64/128/256, 3000 updates, batch 8, context 128 and validation
+seed 2026 are unchanged. No test evaluation or LR-grid extension is allowed.
+
+The explicit `attention_width_policy=mla_quarter_head32` sets both query and
+joint-KV latent dimensions to d/4 (16/32/64), with d/32 heads, content head width 32,
+rotary head width 32 and value head width 32. Manual `dimcq`, `dimckv`, `head_dim_r`,
+KV-head and group overrides are rejected. Under the Muon/muP contract it is
+allowed only for four-layer bias-free SwiGLU21/8, base64 and
+`depth_width_policy=depth4_unscaled`. Attention and cache use the same latent
+shape resolver. Legacy MLA without this policy keeps its historical dimensions.
+
+The implementation down-projects Q and joint KV, then up-projects content Q/K/V
+and rotary Q. The rotary key is a separate shared 32-row projection from d.
+Within each head it concatenates content and rotary features and divides scores
+by sqrt(64); MHA uses sqrt(32). It keeps biases in attention, fan-in initialization,
+unscaled residual branches, RMSNorm, final LayerNorm, RoPE and zero dropout.
+This changes feature decomposition, score scale, projection shape, initialization
+draws and parameter count together; it is not a pure compression ablation.
+The low-rank KV and decoupled rotary idea is described in
+[DeepSeek-V2, section 2.1](https://arxiv.org/html/2405.04434v5#S2.SS1).
+Our tiny biased implementation and ratios are not a replication of that model.
+Its optimized inference claims do not establish speedups here: this implementation
+expands compressed content keys/values on each cache forward, without weight
+absorption. Cache equivalence is a correctness test, not an inference benchmark.
+
+Initialization remains PyTorch fan-in for every projection. At the same seed,
+embeddings match but downstream blocks/readout need not match after the changed
+attention draws. Hidden linear biases retain sqrt(d/64) scaling; readout init and
+forward retain their existing sqrt(d/64) and 1/(d/64) factors. There is no new
+latent, depth, residual or attention-temperature scaling factor. All hidden 2-D
+weights, including down/up/rotary matrices, use Muon with baseLR/sqrt(d/64) and
+its RMS-matching .2*sqrt(max(rows,cols)); vectors/embedding/readout use AdamW at
+baseLR. Independent decay .00006 and clipping1 remain unchanged.
+
+The square and d-by-d/4 matrices have fixed aspect ratios as width changes.
+The rotary key matrix is 32-by-d and does **not** have fixed aspect ratio. Its
+max dimension is d, so the explicit RMS factor still cancels the width LR factor
+algebraically over these three widths. This says nothing about equal update
+statistics for a fixed-row projection or validated infinite-width MLA muP.
+Its spectral geometry and the factorized attention paths differ from fused MHA;
+we retain this finite optimizer recipe with equal bounded LR tuning, not a
+claim of theoretically optimal or architecture-invariant scaling.
+
+MLA attention matrix weights total 2.5d²+32d, versus MHA 4d². Attention biases
+are 5.5d+32 versus 4d. With four layers, the model totals are
+196864/733568/2826880 versus MHA212736/814592/3185664, reductions of about
+7.46%/9.95%/11.26%. All parameters participate in dense training; there is no
+expert routing or auxiliary objective. The persistent inference cache stores
+d/4+32 elements per token/layer versus 2d for MHA (calculated shape counts only).
+Training still expands per-head keys/values and builds attention scores; neither
+these counts nor fewer parameters imply lower measured time or peak memory.
+Report full-trial training time and RSS, separating them from short checks and
+from analytic counts. RSS is not peak accelerator memory.
+
+Exactly 57 serial trials: 27 local width 64 (three fixed families times 3 seeds plus
+two tuned families times 3 LRs times 3 seeds), then 30 transfer (five families times
+three seeds times two widths). Select each tuned LR by lowest final mean CE,
+tie lower LR. MLA replaces the incumbent only if its width 64 mean delta is
+strictly below −.005 and every seed is negative against ALL four comparators:
+original GELU, cheaper two-layer SwiGLU, fixed four-layer incumbent and equally
+tuned four-layer MHA. Otherwise retain the incumbent. Freeze before transfer;
+all larger-width comparisons are diagnostic. Preserve both repeated MHA arms
+if the same recipe is selected. Adaptive validation remains distinct from holdout.
+
+Limits: 600 seconds/trial, 4 hours/round, 4 GiB output, first failure stops, no
+automatic retry, STOP at trial boundaries, one training worker on this Mac.
+Short serial actual MPS train/checkpoint checks at all widths must pass before
+preregistration; their runtime informs feasibility only, not quality. CPU checks
+cover projected-attention algebra, causal prefixes, cache/full equivalence,
+all-projection finite gradients, checkpoint continuation, initialization scope,
+parameter counts/optimizer groups, rejection guards and all 57 real request
+contracts through the serial engine. Run the complete repository test suite.
+Freeze clean committed source, corpus and the full append-only bank snapshot.
+Use `src.research.mla_study` and a new unique output directory. Stage 1 and 2A–2E
+stay closed; MoE needs its own later routing/scaling/runtime protocol.
+
+Stage2F prelaunch validation: all544 repository tests passed, including20 focused
+MLA tests; three serial12-update actual MPS training/checkpoint evaluations passed.
+The cache allocator was aligned with the explicit latent-width resolver before
+these checks. An existing error-message regex failed the first full run; its
+expected GELU/SiLU wording was restored, then the complete suite passed. No
+historical evidence changed. These are correctness checks, not quality results.
+Short training times were1.141/.496/.624 seconds at widths64/128/256. Linear
+3000-update extrapolations are285/124/156 seconds, with startup overhead distorting
+the smallest-width result. Applying that proxy to all57 trials gives about3.31hours
+before evaluation/process overhead; historical MHA times are lower. This is only
+a feasibility estimate under the unchanged600-second/4-hour hard caps. Saved
+checkpoint-size extrapolation is about482MB,603MB with25% margin, below4GiB
+before small logs. Full-run timing and disk enforcement remain authoritative.

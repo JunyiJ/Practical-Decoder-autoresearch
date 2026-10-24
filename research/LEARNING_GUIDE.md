@@ -731,6 +731,25 @@ Evidence: [report](../research_runs/architecture-stage2e-001/report.json),
 [selection](../research_runs/architecture-stage2e-001/selection.json),
 [review](../research_runs/architecture-stage2e-001/review.json).
 
+### Next controlled comparison: MLA at the winning depth
+
+Stage 2F holds four-layer SwiGLU fixed and compares MHA with the repository's
+MLA: query/KV latent dimensions d/4, content and rotary head widths 32. Original
+GELU and cheaper two-layer SwiGLU remain references alongside the fixed four-layer
+incumbent. Both four-layer attention families get equal bounded LR tuning.
+
+MLA has fewer parameters here, but adds factorized projections and a shared
+rotary key. That key matrix has fixed 32 rows while model width grows, so the
+existing fixed-aspect-ratio argument is insufficient. The explicit optimizer
+factor cancels width algebraically, but feature/update statistics and optimal
+LR transfer remain empirical questions. Different initialization draws, score
+scaling and projection shapes prevent pure compression attribution.
+
+The [stage2F protocol](ARCHITECTURE_STAGE2.md) declares exactly 57 trials and
+separates parameter/cache calculations, short correctness checks and eventual
+quality/runtime measurements. It does not predict an inference speedup or reuse
+the paper's performance claims. Held-out test remains closed.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).

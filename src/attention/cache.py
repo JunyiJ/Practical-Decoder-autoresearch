@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+from .mla import latent_dimensions
 
 class KVCache(nn.Module):
     def __init__(self, cfg, device, batch_size=None, dtype=None, n_kv_heads=None):
@@ -13,7 +14,7 @@ class KVCache(nn.Module):
         if batch_size is None:
             batch_size = getattr(cfg.training, "batch_size", 1)
         if self.is_mla:
-            dimc_kv = getattr(cfg.model, "dimckv", cfg.model.dim // 10)
+            _, dimc_kv = latent_dimensions(cfg.model)
             head_dim_r = getattr(cfg.model, "head_dim_r", cfg.model.dim // cfg.model.n_heads)
             c_cache_shape = (batch_size, cfg.model.block_size, dimc_kv)
             r_cache_shape = (batch_size, cfg.model.block_size, head_dim_r)
