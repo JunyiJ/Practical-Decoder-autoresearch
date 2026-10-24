@@ -510,3 +510,52 @@ def test_each_handoff_retains_its_snapshot_when_bank_grows(campaign):
     assert new_id not in before.decode()
     assert new_id in Path(second["path"]).read_text()
     assert coordinator._context(state, {"id": "iteration-001", "stage": "idea"})["knowledge_snapshot"] == second
+
+
+def test_explicit_optimizer_baseline_is_frozen_without_changing_protocol(campaign, tmp_path):
+    config = deepcopy(campaign['config'])
+    config['baseline_options'] = {'optimizer': 'muon', 'decay_mode': 'independent', 'parameterization': 'mup'}
+    state = coordinator.init_campaign(config, tmp_path / 'optimizer-campaign')
+    baseline = state['baseline_config']
+    assert baseline['training']['optimizer'] == 'muon'
+    assert baseline['training']['decay_mode'] == 'independent'
+    assert baseline['model']['parameterization'] == 'mup'
+    assert baseline['model']['base_width'] == 64
+    assert baseline['data'] == campaign['base_config']['data']
+    assert baseline['training']['max_iters'] == campaign['base_config']['training']['max_iters']
+    assert state['plan'] == campaign['plan']
+    assert 'optimizer' not in campaign['state']['baseline_config']['training']
+    assert 'parameterization' not in campaign['state']['baseline_config']['model']
+    assert campaign['events']['suites'] == []
+    saved = json.loads((tmp_path / 'optimizer-campaign/campaign.json').read_text())
+    assert saved['baseline_config'] == baseline
+    candidate = coordinator.apply_overrides(baseline, [{'path': 'training.weight_decay', 'value_json': '0'}])
+    assert candidate['training']['optimizer'] == 'muon'
+    assert candidate['model']['parameterization'] == 'mup'
+    assert baseline['training']['weight_decay'] == .1
+
+
+@pytest.mark.parametrize('options', [None, {}, {'optimizer': 'muon'},
+    {'optimizer': 'sgd', 'decay_mode': 'independent', 'parameterization': 'mup'},
+    {'optimizer': 'muon', 'decay_mode': 'bad', 'parameterization': 'mup'},
+    {'optimizer': 'muon', 'decay_mode': 'independent', 'parameterization': 'bad'},
+    {'optimizer': 'muon', 'decay_mode': 'independent', 'parameterization': 'mup', 'max_iters': 1}])
+def test_invalid_baseline_options_rejected_before_workspaces(campaign, tmp_path, options):
+    config = deepcopy(campaign['config']); config['baseline_options'] = options
+    path = tmp_path / 'options.yaml'; path.write_text(json.dumps(config))
+    with pytest.raises(ValueError, match='baseline_options'):
+        coordinator.load_config(path)
+    count = len(campaign['events']['workspaces'])
+    with pytest.raises(ValueError, match='baseline_options'):
+        coordinator.init_campaign(config, tmp_path / 'invalid-options')
+    assert len(campaign['events']['workspaces']) == count
+
+
+def test_independent_baseline_rejects_invalid_decay_before_workspaces(campaign, tmp_path):
+    config = deepcopy(campaign['config'])
+    config['baseline_options'] = {'optimizer': 'muon', 'decay_mode': 'independent', 'parameterization': 'mup'}
+    campaign['base_config']['training']['weight_decay'] = 1
+    count = len(campaign['events']['workspaces'])
+    with pytest.raises(ValueError, match='Independent baseline decay'):
+        coordinator.init_campaign(config, tmp_path / 'invalid-decay')
+    assert len(campaign['events']['workspaces']) == count

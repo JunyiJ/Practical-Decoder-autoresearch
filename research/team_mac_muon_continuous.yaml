@@ -1,0 +1,55 @@
+version: 1
+name: mac-mle-muon-evolution
+objective: 'Improve the measured Muon/AdamW hybrid muP baseline with base LR .002
+  and independent per-step decay .00006. Baseline is fixed-depth dense GELU MHA with
+  muP base_width64, 3000 updates, widths64/128/256 and paired seeds11/22/33. Read
+  the shared bank: both optimizer studies are complete. Higher-LR Adam muP with independent
+  decay improved at LR .004 but remained behind observed Muon; this is adaptive development,
+  not a fully optimized optimizer comparison. Muon muP versus SP has mixed incremental
+  evidence. First iteration: change only training.weight_decay from .00006 to 0 as
+  a component ablation; retain the rest of the baseline. Then follow the frozen evolutionary
+  plan: retain useful combinations, mutate one or two allowed settings, use exact
+  crossover when scheduled, and favor single-setting controls when attribution is
+  uncertain. Remain within supported dense GELU MHA and fixed-depth scope for these
+  optimizer scaling rules. Do not introduce MoE, other FFNs, head-dimension/depth
+  changes or additional optimizer code. All candidate overrides are relative to this
+  Muon baseline, not the old Adam baseline. Predict quality/time/memory before training.
+  Freeze the local winner from width64 final-budget validation alone before larger
+  results. Record failures and resource tradeoffs. Preserve the token budget, corpus,
+  paired seeds, validation protocol and closed held-out test. Inspect curves descriptively
+  but do not select a best intermediate checkpoint or call 3000 updates convergence.
+  Cross-iteration/parent rankings are adaptive historical comparisons; no synergy,
+  independent replication or universal-optimum claim. Carry prior successes, failures
+  and recovered learnings forward; do not repeat the entire optimizer grid.'
+evolution:
+  population_size: 4
+  max_mutations: 2
+  explore_every: 4
+repository: .
+base_ref: HEAD
+base_plan: research/mac_muon_transfer_long.yaml
+knowledge_bank: research_state/knowledge
+continuous:
+  target_hours: 48
+  min_free_disk_mb: 1024
+runtime:
+  executable: codex
+  model: null
+  web_search: true
+limits:
+  max_iterations: null
+  max_agent_calls: null
+  agent_seconds: 600
+  total_agent_seconds: null
+  agent_output_mb: 64
+  local_test_seconds: 120
+  total_training_seconds: null
+local_tests:
+- tests/test_mha.py
+- tests/test_rope.py
+- tests/test_gpt_loss.py
+- tests/test_moe.py
+baseline_options:
+  optimizer: muon
+  decay_mode: independent
+  parameterization: mup

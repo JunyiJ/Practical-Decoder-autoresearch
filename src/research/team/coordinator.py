@@ -60,7 +60,7 @@ raise SystemExit(pytest.main(['-q', *sys.argv[1:]]))
 def load_config(path: Path) -> dict:
     cfg = OmegaConf.to_container(OmegaConf.load(path), resolve=True)
     required = {"version", "name", "objective", "repository", "base_ref", "base_plan", "knowledge_bank", "runtime", "limits", "local_tests"}
-    if not isinstance(cfg, dict) or set(cfg) - {"continuous", "evolution"} != required or cfg["version"] != 1:
+    if not isinstance(cfg, dict) or set(cfg) - {"continuous", "evolution", "baseline_options"} != required or cfg["version"] != 1:
         raise ValueError("Invalid team config; use research/team_mac.yaml as the schema")
     if not re.fullmatch(r"[a-zA-Z0-9_-]+", str(cfg["name"])) or not str(cfg["objective"]).strip():
         raise ValueError("Set a short name and a concrete objective")
@@ -87,6 +87,8 @@ def load_config(path: Path) -> dict:
             raise ValueError("Continuous campaigns require null aggregate limits; per-call and per-suite limits remain finite")
     if "evolution" in cfg:
         validate_settings(cfg["evolution"])
+    if "baseline_options" in cfg:
+        validate_baseline_options(cfg["baseline_options"])
     for key, value in cfg["limits"].items():
         if "continuous" in cfg and key in unlimited and value is None:
             continue
@@ -97,6 +99,18 @@ def load_config(path: Path) -> dict:
     if not isinstance(cfg["local_tests"], list) or not cfg["local_tests"]:
         raise ValueError("Specify baseline local_tests")
     return cfg
+
+
+def validate_baseline_options(options):
+    """Reviewed optimizer families only; data, targets and budgets stay protected."""
+    choices = {"optimizer": {"adamw", "muon"},
+               "decay_mode": {"conventional", "independent"},
+               "parameterization": {"sp", "mup"}}
+    if not isinstance(options, dict) or set(options) != set(choices):
+        raise ValueError("baseline_options requires optimizer, decay_mode and parameterization")
+    for key, allowed in choices.items():
+        if not isinstance(options[key], str) or options[key] not in allowed:
+            raise ValueError(f"Invalid baseline_options.{key}")
 
 
 def artifact(path: Path) -> dict:
@@ -145,6 +159,15 @@ def init_campaign(config: dict, output: Path) -> dict:
         raise ValueError("Use a new empty campaign directory")
     repo = Path(config["repository"])
     plan = load_plan(config["base_plan"])
+    cfg = training_config(plan, trial_spec("confirm", plan["widths"][0], plan["seeds"][0], plan["baseline_lr"]), output / "unused")
+    cfg["training"]["cpu_threads"] = plan["training"]["cpu_threads"]
+    if "baseline_options" in config:
+        options = config["baseline_options"]
+        validate_baseline_options(options)
+        if options["decay_mode"] == "independent" and cfg["training"]["weight_decay"] >= 1:
+            raise ValueError("Independent baseline decay must be < 1 per step")
+        cfg["training"].update(optimizer=options["optimizer"], decay_mode=options["decay_mode"])
+        cfg["model"].update(parameterization=options["parameterization"], base_width=64)
     # The clean-root guard in create_workspace prevents accidentally using an
     # old commit while the controller implementation is still uncommitted.
     key = config["name"] + "-" + digest(str(output))[:8]
@@ -154,8 +177,6 @@ def init_campaign(config: dict, output: Path) -> dict:
     frozen = freeze_workspace(Path(base["path"]), output / "baseline", base["base_commit"])
     if not (Path(frozen["path"]) / "src/research/worker.py").is_file():
         raise ValueError("Committed baseline lacks the research worker; commit the reviewed harness first")
-    cfg = training_config(plan, trial_spec("confirm", plan["widths"][0], plan["seeds"][0], plan["baseline_lr"]), output / "unused")
-    cfg["training"]["cpu_threads"] = plan["training"]["cpu_threads"]
     state = {"version": 1, "created_at": utc_now(), "config": config, "plan": plan,
              "controller_sha256": source_digest(repo), "key": key,
              "workspaces": str(workspaces), "baseline": frozen, "baseline_config": cfg,

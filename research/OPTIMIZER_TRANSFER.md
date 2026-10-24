@@ -114,3 +114,27 @@ mean fixed compute, and 3,000 steps do not establish convergence.
 
 The matrix-optimizer paper's inverse-width decay result concerns compute-optimal
 scaling. This first fixed-token study does not import that rule automatically.
+
+## Completed rounds and continued research
+
+The initial 99-trial round and 39-trial bounded Adam LR follow-up are complete.
+The learning guide records their measured results and limits. The strongest
+observed transferable recipe remains Muon hybrid + muP, LR .002 and independent
+decay .00006. Its incremental muP benefit over SP Muon remains mixed by seed.
+
+`team_mac_muon_continuous.yaml` starts a new continuous evolutionary campaign
+using that recipe as its fixed baseline. The optional team `baseline_options`
+mapping explicitly declares `optimizer`, `decay_mode` and `parameterization`.
+Only supported enum values are accepted; muP base width is fixed to 64. LR and
+decay coefficient come from `mac_muon_transfer_long.yaml`. These options are
+applied once before freezing the campaign baseline and do not change the narrow
+standalone LR-sweep protocol. Existing profiles without this mapping retain
+their old baseline behavior. The corpus, token budget, target schedule, seeds,
+finite per-call/suite limits, 48-hour informational target and uncapped aggregate
+protocol remain controlled. Continuous exploration keeps held-out test closed.
+
+The first candidate is a zero-decay component ablation. Later candidates use
+one or two configuration mutations and scheduled crossover, preserving the
+supported fixed-depth dense GELU MHA scope. All candidate overrides are relative
+to the new Muon baseline. Historical optimizer rankings remain adaptive
+development, not independent replication or proof of a universal optimum.
