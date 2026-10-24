@@ -291,6 +291,10 @@ This experiment did reveal a resource tradeoff: LayerNorm increased recorded tra
 
 Together with iteration 4, both tested alternatives, 0.5 and 2.0, failed to replace the working clipping threshold of 1.0. This supports retaining the control in this search, not calling it optimal. The small effects at 2.0 do not prove equivalence or that clipping rarely activates: gradient norms and clipping frequencies were not measured. These remain adaptive comparisons using three reused development seeds. [Iteration 6 evidence](../research_runs/continuous-20261023-005/iteration-006/evidence.json) and [three evaluator learnings](../research_runs/continuous-20261023-005/iteration-006/learnings.json).
 
+**Seventh Muon suite: a modest learning-rate increase.** We changed only the base learning rate from .002 to .0025, retaining μP and the hybrid optimizer's existing group-scaling rules. All 18 trials completed at 3,000 updates and their checkpoint hashes were verified. Candidate-minus-baseline mean CE was **+.000195 / +.001365 / +.001277** at widths 64/128/256. At each width, two paired seeds worsened and one improved. The frozen width-64 rule retains LR .002; neither larger width passed the improvement criterion.
+
+Mean throughput changes were +.04%, +.20%, and −.23%, while mean process RSS changes were below .11% in magnitude. These small changes establish no resource advantage. This comparison tests one nearby learning rate under the existing fixed-budget protocol; it neither proves .002 optimal nor establishes equivalence between the rates. Reused seeds and validation data make this adaptive development, with the test holdout closed. [Iteration 7 evidence](../research_runs/continuous-20261023-005/iteration-007/evidence.json).
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).
