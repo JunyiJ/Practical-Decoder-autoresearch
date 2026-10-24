@@ -750,6 +750,67 @@ separates parameter/cache calculations, short correctness checks and eventual
 quality/runtime measurements. It does not predict an inference speedup or reuse
 the paper's performance claims. Held-out test remains closed.
 
+### Completed stage 2F: MLA does not replace four-layer MHA
+
+All 57 serial trials completed on historical source
+`5dd790d51f7ee30c44f3633c00648d227ab0f1e8`. Checkpoint hashes, saved layer/head/latent
+and projection shapes, parameter counts, requests/results, runtime, frozen local
+selection, report aggregates, corpus and full-bank snapshot were verified before
+updating the checkout. The held-out test remains closed.
+
+Both tuned families selected base LR .0025 at the frozen grid boundary; the grid
+is closed. At width64, MLA is worse on every paired seed than both fixed and tuned
+four-layer MHA: mean CE differences +.018238 and +.013924. It fails the replacement
+rule. Four-layer SwiGLU/MHA remains the quality incumbent; cheaper two-layer
+SwiGLU and original GELU remain references.
+
+| Family | Selected LR | CE width64 | CE width128 | CE width256 |
+| --- | ---: | ---: | ---: | ---: |
+| Original two-layer GELU | .002 | 1.658560 | 1.573045 | 1.538094 |
+| Cheaper two-layer SwiGLU | .0025 | 1.641669 | 1.562098 | 1.519259 |
+| Fixed four-layer MHA | .0025 | 1.579393 | 1.518302 | 1.506017 |
+| Tuned four-layer MHA | .0025 | 1.583707 | 1.517095 | 1.504022 |
+| Tuned four-layer MLA | .0025 | 1.597631 | 1.521783 | 1.498427 |
+
+MLA minus tuned MHA is +.013924 / +.004688 / -.005595 at widths64/128/256.
+At128, seeds1022/1033 worsen; at256, seed1033 worsens by+.001803 despite the lower
+mean. Against fixed MHA, width256 mean is-.007589 with seed1033+.002252.
+Neither larger width passes the all-seed rule against either four-layer reference.
+The lower width256 mean is a useful diagnostic, not permission to revise local
+selection or an established architecture-by-width mechanism.
+
+Fixed and tuned MHA use identical selected recipes but are separate runs.
+Tuned-minus-fixed means are+.004314 / -.001207 / -.001994; keep both references.
+There is no identified cause for these repeat differences or claim of exact
+training reproducibility. Both four-layer MHA arms beat the original GELU and
+cheaper two-layer SwiGLU on every paired seed at every tested width.
+
+MLA's mean training times are86.62 / 101.64 / 131.04 seconds, versus tuned MHA
+54.52 / 60.81 / 127.77: increases of58.88% / 67.14% / 2.55%. Historical total
+parameter counts are196864 / 733568 / 2826880, about7.46% / 9.95% / 11.26% fewer
+than four-layer MHA. Fewer parameters did not yield faster measured training.
+These timings are observations on this Mac, not inference benchmarks or equal
+compute comparisons. Projection shapes, initialization draws and attention score
+decomposition change together; this is not a pure latent-compression effect or
+DeepSeek replication. Finite width-scaling algebra does not validate MLA muP.
+
+An agent maintenance stop after trial50 allowed the human-requested RoPE table
+repair to be tested separately. Only the seven unfinished trials resumed, on the
+unchanged original source and plan. No completed trial was rerun. The repaired
+source `7577129` was adopted only after this full study audit. Historical counts
+include the dormant position table; new runs omit it and use fresh initialization.
+The fix and its 552 tests/three short MPS checks establish correctness, not new
+quality evidence.
+
+Evidence: [report](../research_runs/architecture-stage2f-001/report.json),
+[selection](../research_runs/architecture-stage2f-001/selection.json), and
+[review](../research_runs/architecture-stage2f-001/review.json).
+
+Next: the authorized saved-checkpoint full-validation audit, with paired text-block
+uncertainty, no retraining and no held-out test. Context/batch robustness is the
+next research priority. A compact interaction design was recommended in discussion
+but has not yet been frozen or launched; no MoE launch is planned.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).
