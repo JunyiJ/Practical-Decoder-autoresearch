@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 
 from .blocks import TransformerBlock
+from .rope import resolve_position_encoding
 
 class GPT(nn.Module):
     def __init__(self, cfg):
@@ -10,9 +11,10 @@ class GPT(nn.Module):
         self.cfg = cfg
         moe_cfg = getattr(cfg, "moe", None)
         self.aux_loss_weight = getattr(moe_cfg, "aux_loss_weight", getattr(cfg, "aux_loss_weight", 1.0))
-        self.enable_rope = (getattr(cfg, "rope", 0) == 1)
+        self.position_encoding = resolve_position_encoding(cfg)
+        self.enable_rope = self.position_encoding == "rope"
         embeddings = {"wte": nn.Embedding(cfg.vocab_size, cfg.dim)}
-        if not self.enable_rope:
+        if self.position_encoding == "learned":
             embeddings["wpe"] = nn.Embedding(cfg.block_size, cfg.dim)
         self.transformer = nn.ModuleDict({
             **embeddings,
@@ -52,7 +54,7 @@ class GPT(nn.Module):
                 f"Sequence length {t} with start_pos {start_pos} exceeds block_size {self.cfg.block_size}"
             )
         token_emb = self.transformer.wte(idx)
-        if not self.enable_rope:
+        if self.position_encoding == "learned":
             pos = torch.arange(start_pos, start_pos + t, device=idx.device)
             pos_emb = self.transformer.wpe(pos)
             x = token_emb + pos_emb

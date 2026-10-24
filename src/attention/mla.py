@@ -3,7 +3,7 @@ import math
 import torch
 import torch.nn as nn
 
-from ..models.rope import apply_rotary_emb
+from ..models.rope import apply_rotary_emb, resolve_position_encoding
 
 
 def latent_dimensions(cfg):
@@ -106,7 +106,7 @@ class MLA(nn.Module):
 
 
 class GatedMLA(nn.Module):
-    """MLA with decoupled RoPE and a channel-wise sigmoid output gate."""
+    """MLA with optional decoupled RoPE and a channel-wise sigmoid gate."""
 
     def __init__(self, cfg):
         super().__init__()
@@ -117,6 +117,7 @@ class GatedMLA(nn.Module):
             raise ValueError(f"cfg.dim must be divisible by cfg.n_heads (got {self.dim}, {self.n_heads})")
         self.head_dim = self.dim // self.n_heads
         self.head_dim_r = getattr(cfg, "head_dim_r", self.head_dim)
+        self.enable_rope = resolve_position_encoding(cfg, attn_type="gated_mla") == "rope"
 
         attn_bias = getattr(cfg, "attn_bias", True)
         drop = getattr(cfg, "dropout", 0.0)
@@ -156,7 +157,7 @@ class GatedMLA(nn.Module):
         c_q_r = self.qr(c_q).view(b, s, self.n_heads, -1).transpose(1, 2)
         # [b, s, head_dim_r] => [b, 1, s, head_dim_r]
         k_r = self.kr(x).unsqueeze(1)
-        if freq_cos is not None and freq_sin is not None:
+        if self.enable_rope and freq_cos is not None and freq_sin is not None:
             cos = freq_cos[start_pos:start_pos + s].to(device=c_q.device, dtype=c_q.dtype)
             sin = freq_sin[start_pos:start_pos + s].to(device=c_q.device, dtype=c_q.dtype)
             r_q = apply_rotary_emb(c_q_r, cos, sin)
