@@ -116,7 +116,8 @@ def summarize(plan,state):
               'Full training horizons are fixed, not convergence- or compute-matched.']}
 
 
-def run(plan,output):
+def run(plan,output,*,suite_builder=suite_spec,job_builder=local_jobs,
+        selection_builder=freeze_selection,report_builder=summarize):
     output=Path(output).resolve(); output.mkdir(parents=True,exist_ok=True)
     with session_lock(output) as lock_fd:
         path=output/'state.json'
@@ -141,7 +142,7 @@ def run(plan,output):
             if len(state['records'])>=plan['max_trials']: raise ValueError('Trial budget exhausted')
             remaining=plan['session_seconds']-prior-(time.monotonic()-start)
             if remaining<=0: raise ValueError('Study time budget exhausted')
-            spec=suite_spec(plan,family,lr); _preflight(spec); contract=_fingerprint(spec)
+            spec=suite_builder(plan,family,lr); _preflight(spec); contract=_fingerprint(spec)
             if state.setdefault('runtime',contract['runtime']) != contract['runtime']:
                 raise ValueError('Study runtime changed')
             _verify_checkpoints(state['records'],output)
@@ -169,9 +170,9 @@ def run(plan,output):
             finally:
                 row['duration_seconds']=time.monotonic()-before; save()
         try:
-            for job in local_jobs(plan): trial(job)
+            for job in job_builder(plan): trial(job)
             local=[r for r in state['records'] if r['width']==64]
-            selected=freeze_selection(plan,local)
+            selected=selection_builder(plan,local)
             if state['selection'] is None:
                 state['selection']=selected
                 atomic_json(output/'selection.json',selected)
@@ -180,13 +181,13 @@ def run(plan,output):
             elif state['selection']!=selected or json.loads((output/'selection.json').read_text())!=selected:
                 raise ValueError('Frozen small-width selection changed')
             for width in plan['widths'][1:]:
-                for seed in plan['seeds']:
+                for seed_index,seed in enumerate(plan['seeds']):
                     families=list(plan['families'])
-                    if seed==22: families.reverse()
+                    if seed_index % 2: families.reverse()
                     for family in families:
                         trial((family,state['selection']['choices'][family]['lr'],width,seed))
             _verify_checkpoints(state['records'],output)
-            atomic_json(output/'report.json',summarize(plan,state))
+            atomic_json(output/'report.json',report_builder(plan,state))
             state['status']='completed'
         except BaseException as exc:
             state['status']='paused' if isinstance(exc,InterruptedError) else 'failed'

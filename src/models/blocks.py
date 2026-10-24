@@ -39,10 +39,10 @@ class TransformerBlock(nn.Module):
         self.hidden_dim = getattr(cfg, "hidden_dim", cfg.dim * 4)
         if cfg.mlp_type == "dense":
             self.ffn = getattr(cfg, "ffn", "gelu")
-            if self.ffn == "gelu":
+            if self.ffn in {"gelu", "silu"}:
                 self.mlp = nn.Sequential(
                     nn.Linear(self.dim, self.hidden_dim),
-                    nn.GELU(),
+                    nn.GELU() if self.ffn == "gelu" else nn.SiLU(),
                     nn.Linear(self.hidden_dim, self.dim),
                     nn.Dropout(cfg.dropout)
                 )

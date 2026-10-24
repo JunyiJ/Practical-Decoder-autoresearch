@@ -71,9 +71,9 @@ def build_optimizer(model, training):
     muon = opts['optimizer'] == 'muon'
     if mup or muon:
         if (model.cfg.attn_type != 'mha' or model.cfg.mlp_type != 'dense'
-                or getattr(model.cfg, 'ffn', 'gelu') != 'gelu'
+                or getattr(model.cfg, 'ffn', 'gelu') not in {'gelu', 'silu'}
                 or getattr(model.cfg, 'hidden_dim', 4 * model.cfg.dim) != 4 * model.cfg.dim):
-            raise ValueError('Optimizer width study supports dense GELU MHA with hidden_dim=4*dim only')
+            raise ValueError('Optimizer width study supports dense GELU/SiLU MHA with hidden_dim=4*dim only')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:
         return torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=wd)

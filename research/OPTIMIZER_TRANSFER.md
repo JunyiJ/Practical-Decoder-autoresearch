@@ -138,3 +138,13 @@ one or two configuration mutations and scheduled crossover, preserving the
 supported fixed-depth dense GELU MHA scope. All candidate overrides are relative
 to the new Muon baseline. Historical optimizer rankings remain adaptive
 development, not independent replication or proof of a universal optimum.
+
+## Stage-1 closure and reviewed activation extension
+
+Stage 1 is concluded by human request. Its historical studies and paused campaigns
+retain their original contracts. The reviewed stage-2 extension permits dense
+SiLU MHA alongside GELU, with hidden_dim=4*dim and unchanged optimizer grouping,
+initialization and width multipliers. This is a narrow implementation extension,
+not evidence of SiLU quality or a general scaling guarantee. Gated FFNs, changed
+attention families and MoE remain outside this optimizer contract. See
+[Architecture stage 2](ARCHITECTURE_STAGE2.md).
