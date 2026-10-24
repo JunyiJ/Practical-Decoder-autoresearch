@@ -315,3 +315,45 @@ Correctness checks are not quality evidence. Freeze clean source, plan and full
 bank snapshot, then execute `python -m src.research.head_study --plan PLAN --output
 NEW_RUN --allow-training`. Historical study evidence and source contracts remain
 unchanged, and the human-stopped stage1 campaign remains stopped.
+
+### Completed stage 2C: retain head32; head16 gains are inconsistent and slower
+
+All 48 trials, checkpoint hashes, per-family worker head counts, frozen selection,
+report aggregates and source/corpus/runtime/knowledge contracts were verified.
+Mean final validation CE at 3000 updates on development seeds 111/222/333:
+
+| Arm | LR | Width 64 | Width 128 | Width 256 |
+| --- | --- | --- | --- | --- |
+| Original GELU head32 | .002 | 1.649678 | 1.567840 | 1.534493 |
+| Fixed SwiGLU head32 incumbent | .0025 | 1.639925 | 1.560148 | 1.533336 |
+| Tuned SwiGLU head32 | .0025 | 1.639156 | 1.559536 | 1.529393 |
+| Tuned SwiGLU head16 | .0025 | 1.633562 | 1.559925 | 1.527879 |
+
+The frozen local winner remains the head32 incumbent. Head16's width 64 mean
+improved by −.006363 versus the incumbent and−.005594 versus tuned head32, but
+seed 333 worsened by +.002028 / +.001835. It failed the all-negative-pair condition.
+Both tuned families chose the upper LR boundary; no grid extension is planned.
+
+At 128, head16 versus tuned head32 changed mean CE by +.000389 with mixed seeds.
+At 256 it improved by −.001514, again with mixed seeds. Neither comparison passes.
+Head16 versus the fixed incumbent at 256 did pass (mean−.005456, every seed better),
+but **the separately trained tuned head32 arm uses the same .0025 recipe** and
+produces a different comparison. The two head32 repeat means differ by .000768 /
+.000612 / .003943 at 64/128/256; width 256 seed 111 differs by .007560. Preserve both
+runs. The threshold-sensitive result is not evidence of an independently robust
+head16 advantage, and larger-width diagnostics cannot revise local selection.
+This round does not establish the cause of repeated-run variation.
+
+Head16 took 36.01 / 60.80 / 74.10 mean training seconds versus 33.45 / 54.73 / 67.10
+for tuned head32: **7.65% / 11.10% / 10.43% longer**. Parameter counts are identical;
+more heads still change intermediate tensors and execution cost. No equal-time
+quality experiment was run. Process RSS differences were small and do not measure
+peak accelerator demand. The repeated SwiGLU incumbent beat GELU on all 64/128
+seeds, but width 256 remained mixed; this is additional adaptive development
+evidence, not independent held-out confirmation.
+
+Evidence: `research_runs/architecture-stage2c-001/{plan,selection,report,review}.json`.
+The most promising recipe remains bias-free SwiGLU 21/8, MHA head32, Muon/AdamW+muP,
+LR .0025 and independent decay .00006, with the original GELU recipe retained as a
+reference. Next is a separately reviewed grouped-query attention comparison;
+no GQA/MLA, depth or MoE claim follows from this head-partition experiment.
