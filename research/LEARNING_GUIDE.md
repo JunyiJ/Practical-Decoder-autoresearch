@@ -665,6 +665,22 @@ The most promising incumbent remains bias-free SwiGLU 21/8, MHA head32,
 Muon/AdamW+muP, LR .0025 and independent decay .00006. Next is a separately
 reviewed depth comparison; width scaling alone does not validate depth scaling.
 
+### Next controlled comparison: adding transformer layers
+
+Stage 2E compares two and four SwiGLU/MHA layers at widths 64/128/256. Each block
+keeps the same attention, FFN, normalization and residual coefficients. The
+four-layer model has about 85–96% more total parameters; equal training tokens
+will not mean equal elapsed compute. Both depths receive the same three-LR
+screen, with fixed original GELU and SwiGLU references retained.
+
+Width and depth are separate scaling axes. Our existing muP/Muon width factors
+apply within each fixed-depth family. We do not introduce or claim a validated
+depth-normalization rule: four layers use the existing unscaled residual sums
+and fan-in initialization. Adding layers changes residual accumulation, readout
+RNG draws and the parameter set subject to clipping. Short correctness checks
+cannot predict full-horizon quality. See the [depth protocol](ARCHITECTURE_STAGE2.md)
+for the frozen selection rule, parameter calculation and resource limits.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).

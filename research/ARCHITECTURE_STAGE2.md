@@ -463,3 +463,68 @@ Evidence: `research_runs/architecture-stage2d-001/{plan,selection,report,review}
 The most promising incumbent remains bias-free SwiGLU 21/8, MHA head32,
 Muon/AdamW+muP, LR .0025 and independent decay .00006. Next is a separately
 reviewed depth comparison; width scaling alone does not validate depth scaling.
+
+### Stage 2E: two versus four layers, with unscaled residual branches
+
+This round asks whether adding two transformer blocks improves quality enough to
+justify the additional capacity and training time at a fixed token budget. It
+keeps the original two-layer GELU/MHA reference at LR .002 and fixed two-layer
+SwiGLU/MHA incumbent at LR .0025. Two-layer and four-layer SwiGLU/MHA each get
+LR .0015/.002/.0025, fresh development seeds 777/888/999, and 3000 updates.
+All SwiGLU blocks keep head dimension 32, MHA, RoPE, RMSNorm, bias-free FFN with
+hidden width 21d/8, zero dropout, clipping 1 and independent decay .00006.
+Batch size 8, context 128 and validation settings remain fixed. Held-out test
+stays closed. Neither attention nor the per-layer FFN shape changes.
+
+The explicit `depth_width_policy=depth4_unscaled` permits exactly four layers,
+SwiGLU 21/8, MHA head32, base width 64, and widths 64/128/256. It rejects GQA,
+head16, KV overrides, other depths and unnamed depth policies. Existing
+historical two-layer SwiGLU configurations keep their original contract.
+
+**Depth and width are separate axes.** At both depths, each branch is still
+`x + attention(norm(x))` followed by `x + FFN(norm(x))`. There is no new 1/L or
+1/sqrt(L) residual multiplier, no depth-dependent LR factor and no output-weight
+rescaling with depth. Hidden matrices retain fan-in initialization; muP's hidden
+bias, readout initialization and logits factors depend only on d/64. Each
+fixed-depth family uses hidden Muon LR base/sqrt(d/64), with its existing
+RMS-matching shape factor; nonmatrix parameters/readout/embeddings use AdamW at
+base LR. The matrix aspect ratios are unchanged across depth and width, so the
+width-factor cancellation remains algebraically valid within either family.
+This does not prove depth-invariant feature updates, an optimal transferred LR,
+stability at arbitrary depth or an infinite-depth parameterization.
+
+Adding layers changes residual accumulation and the number of trained matrices.
+Under a matched seed, the first two blocks initially match, but the later blocks
+are fresh and the readout draws occur later in the RNG stream. Initialization
+is therefore not identical across full models. Global norm clipping can also
+interact with the larger parameter set. The comparison evaluates the complete
+recipe; it does not isolate depth from capacity or guarantee equal optimization
+dynamics. No partial weight transplant or warm start is used.
+
+A SwiGLU/MHA block contains 95d²/8 + 6d parameters. Adding two blocks gives total
+counts 212736/814592/3185664 versus 114688/423936/1626112 for two layers: about
+85.5%/92.2%/95.9% more. Embeddings, readout and the unused position table remain
+shared in shape. This is neither matched capacity nor equal elapsed compute.
+Training time and process RSS will be reported; process RSS is not peak
+accelerator memory. Short finite-gradient/checkpoint checks establish only
+execution correctness, not quality or full-horizon stability.
+
+The frozen plan has exactly 48 serial trials: 24 width-64 screens and 24 transfer
+trials at widths 128/256. For each tuned family select the lowest mean final CE
+(tie: lower LR). Four layers replace the incumbent only if width-64 mean paired
+CE delta is strictly below -.005 and every seed improves versus all three
+comparators: original GELU, fixed SwiGLU and tuned two-layer SwiGLU. Freeze the
+selection before transfer. Otherwise retain the prior incumbent, without claiming
+new confirmation. A larger model passing this quality rule still requires an
+explicit resource tradeoff; it is not an automatic efficiency winner. Do not
+extend the grid or revise selection after seeing larger-width results.
+
+Limits remain 600 seconds per trial, 4 hours per round, 4 GiB output, one failure
+stops, no automatic retry. This bounded round is part of the ongoing effort,
+not an aggregate research cap. Verify all-width counts, initialization scope,
+optimizer groups, gradients through every block, causality, checkpoint
+continuation, policy rejection and depth propagation through all 48 requests.
+Run repository tests plus three short actual MPS train/checkpoint checks. Bind
+clean committed source, corpus, and the full shared bank into the read-only plan.
+Launch `python -m src.research.depth_study --plan PLAN --output NEW_RUN --allow-training`.
+Prior stages remain closed; no human-stopped campaign resumes.

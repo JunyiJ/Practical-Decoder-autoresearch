@@ -76,7 +76,11 @@ def build_optimizer(model, training):
                  and getattr(cfg, 'hidden_dim', 4 * cfg.dim) == 4 * cfg.dim)
         gated = (policy == 'swiglu_21_8' and getattr(cfg, 'ffn', 'gelu') == 'swiglu'
                  and cfg.dim in {64,128,256} and getattr(cfg, 'base_width',64) == 64
-                 and cfg.n_layers == 2
+                 and ((cfg.n_layers == 2 and not hasattr(cfg, 'depth_width_policy'))
+                      or (cfg.n_layers == 4 and getattr(cfg, 'depth_width_policy', None) == 'depth4_unscaled'
+                          and cfg.attn_type == 'mha' and cfg.n_heads == cfg.dim // 32
+                          and getattr(cfg, 'attention_width_policy', 'mha_head32') == 'mha_head32'
+                          and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups')))
                  and ((getattr(cfg, 'attention_width_policy', 'mha_head32') == 'mha_head32' and cfg.n_heads == cfg.dim // 32)
                       or (getattr(cfg, 'attention_width_policy', None) == 'mha_head16' and cfg.n_heads == cfg.dim // 16)
                       or (getattr(cfg, 'attention_width_policy', None) == 'gqa_half_head32' and cfg.n_heads == cfg.dim // 32))
