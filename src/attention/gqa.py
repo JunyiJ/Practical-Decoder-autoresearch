@@ -14,7 +14,13 @@ class GQA(nn.Module):
         if self.dim % self.n_heads != 0:
             raise ValueError("cfg.dim must be divisible by cfg.n_heads")
         self.head_dim = self.dim // self.n_heads
-        self.n_kv_heads = getattr(cfg, "n_kv_heads", getattr(cfg, "n_groups", self.n_heads))
+        if getattr(cfg, "attention_width_policy", None) == "gqa_half_head32":
+            if (self.dim not in {64, 128, 256} or self.head_dim != 32
+                    or hasattr(cfg, "n_kv_heads") or hasattr(cfg, "n_groups")):
+                raise ValueError("gqa_half_head32 requires supported widths, head32, no KV override")
+            self.n_kv_heads = self.n_heads // 2
+        else:
+            self.n_kv_heads = getattr(cfg, "n_kv_heads", getattr(cfg, "n_groups", self.n_heads))
         if self.n_heads % self.n_kv_heads != 0:
             raise ValueError("cfg.n_heads must be divisible by cfg.n_kv_heads")
         self.group_factor = self.n_heads // self.n_kv_heads

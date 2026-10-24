@@ -357,3 +357,63 @@ The most promising recipe remains bias-free SwiGLU 21/8, MHA head32, Muon/AdamW+
 LR .0025 and independent decay .00006, with the original GELU recipe retained as a
 reference. Next is a separately reviewed grouped-query attention comparison;
 no GQA/MLA, depth or MoE claim follows from this head-partition experiment.
+
+### Stage 2D: GQA with two query heads per KV head
+
+This bounded round retains both the original GELU/MHA reference (LR .002) and
+fixed SwiGLU/MHA incumbent (LR .0025). It separately tunes SwiGLU/MHA and
+SwiGLU/GQA over LR .0015/.002/.0025, using fresh development seeds 444/555/666.
+All arms use two layers, query head dimension 32, RoPE, the same Muon/AdamW hybrid
+with muP base width 64, independent decay .00006, clipping 1, zero dropout,
+3000 updates, batch 8 and context 128. SwiGLU remains bias-free with hidden width
+21d/8. No simultaneous FFN or query-head change is made among the SwiGLU arms.
+
+The explicit `attention_width_policy=gqa_half_head32` derives KV heads from each
+trial width; manual `n_kv_heads`/`n_groups` overrides are rejected. At widths
+64/128/256, query heads are 2/4/8 and KV heads are 1/2/4. Each KV head serves two
+query heads. This preserves fixed projection aspect ratios as width grows;
+keeping one KV head at every width would be a different experiment.
+
+The existing GQA implementation uses a fused QKV projection and broadcast grouped
+matmuls. Its QKV weight shape is 2d × d versus MHA's 3d × d; output projection is
+unchanged. With biases enabled, each of two layers saves d²+d parameters. Total
+GQA parameters are 106368/390912/1494528 versus SwiGLU/MHA's
+114688/423936/1626112 (including the unused learned position table). Thus this is
+a capacity/runtime tradeoff, not a parameter-matched or equal-compute comparison.
+Stored K/V head tensors halve; attention scores still have the same number of
+query heads. No inference latency or KV-cache benchmark is included, and process
+RSS is not peak accelerator memory. Measure actual training time and RSS.
+
+Initialization remains fan-in scaled for hidden matrices; muP scales hidden
+biases by sqrt(d/64), readout initialization by sqrt(d/64), and logits by 64/d.
+Different QKV shapes consume different random draws, so equal seeds do not imply
+identical initializations. All hidden 2D weights, including fused QKV, use Muon;
+other parameters use AdamW. For m=d/64, Muon's hidden LR is base LR/sqrt(m).
+The RMS-matching multiplier is .2 sqrt(max(rows, cols)); its product with the LR
+is width-invariant within each fixed shape family. At QKV it is
+base LR × .2 sqrt(128) for GQA versus base LR × .2 sqrt(192) for MHA. The ratio
+sqrt(2/3) is retained, not silently compensated. Equal bounded LR tuning gives
+both families the same search budget; it cannot establish an optimal transfer
+rule, identical activation statistics or a pure causal effect of KV sharing.
+
+There are exactly 48 serial trials: 24 width-64 screening trials followed by 24
+transfer trials at widths 128/256. Select each tuned family's LR by lowest mean
+final-budget width-64 CE (tie: lower LR). GQA replaces the incumbent only if its
+mean paired CE delta is strictly below -.005 and every seed delta is negative
+against **all three** comparators: original GELU, fixed SwiGLU, tuned MHA. Freeze
+that decision before transfer. Otherwise retain the prior incumbent without
+claiming this round newly confirms it. Report both fixed and tuned MHA repeats
+separately if they choose the same recipe; do not pool away repeat variation.
+Do not expand the grid if a boundary LR wins. Held-out test remains closed.
+
+Limits: 600 seconds per trial, 4 hours per round, 4 GiB output, first failure
+stops, no automatic retry. This is a bounded round within the ongoing research
+protocol, not an aggregate cap on the effort. Prior stages remain closed.
+
+Before launch, check all-width parameter counts and optimizer groups, finite
+causal gradients, checkpoint continuation, unsupported-config rejection, real
+request propagation through all 48 jobs and frozen selection before transfer.
+Run repository tests and three short actual MPS training/checkpoint checks.
+These are implementation checks, not quality evidence. Bind clean committed
+source, corpus, and the full shared knowledge snapshot to a new read-only plan;
+launch `python -m src.research.gqa_study --plan PLAN --output NEW_RUN --allow-training`.

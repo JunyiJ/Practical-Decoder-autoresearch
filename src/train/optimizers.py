@@ -78,10 +78,15 @@ def build_optimizer(model, training):
                  and cfg.dim in {64,128,256} and getattr(cfg, 'base_width',64) == 64
                  and cfg.n_layers == 2
                  and ((getattr(cfg, 'attention_width_policy', 'mha_head32') == 'mha_head32' and cfg.n_heads == cfg.dim // 32)
-                      or (getattr(cfg, 'attention_width_policy', None) == 'mha_head16' and cfg.n_heads == cfg.dim // 16))
+                      or (getattr(cfg, 'attention_width_policy', None) == 'mha_head16' and cfg.n_heads == cfg.dim // 16)
+                      or (getattr(cfg, 'attention_width_policy', None) == 'gqa_half_head32' and cfg.n_heads == cfg.dim // 32))
                  and not hasattr(cfg, 'hidden_dim') and getattr(cfg, 'ffn_bias',False) is False)
-        if cfg.attn_type != 'mha' or cfg.mlp_type != 'dense' or not (dense or gated):
-            raise ValueError('Optimizer width study supports dense GELU/SiLU 4x MHA or explicit swiglu_21_8 contract only')
+        attention_policy = getattr(cfg, 'attention_width_policy', 'mha_head32')
+        attention_ok = (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
+            gated and cfg.attn_type == 'gqa' and attention_policy == 'gqa_half_head32'
+            and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups'))
+        if not attention_ok or cfg.mlp_type != 'dense' or not (dense or gated):
+            raise ValueError('Optimizer width study supports dense GELU/SiLU 4x MHA or explicit SwiGLU MHA/GQA width contract only')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:
         return torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=wd)

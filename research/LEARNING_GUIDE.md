@@ -602,6 +602,23 @@ LR .0025 and independent decay .00006, with the original GELU recipe retained as
 reference. Next is a separately reviewed grouped-query attention comparison;
 no GQA/MLA, depth or MoE claim follows from this head-partition experiment.
 
+### Next controlled comparison: grouped-query attention
+
+Stage 2D keeps the SwiGLU FFN and query head dimension 32 fixed while sharing
+one key/value head between two query heads. At widths 64/128/256 that means
+2/4/8 query heads and 1/2/4 KV heads. The fused QKV matrix shrinks from 3d × d
+to 2d × d, saving 2(d²+d) parameters across two layers. It also changes Muon's
+matrix-shape multiplier; this is explicitly included in the implementation
+contract. Equal LR tuning for MHA and GQA and the original fixed references
+help assess the resulting recipe, but do not isolate KV sharing from every
+parameter/initialization effect. No quality or speed improvement is assumed.
+
+The [stage 2D protocol](ARCHITECTURE_STAGE2.md) freezes 48 serial trials, fresh
+development seeds 444/555/666, and selection at width 64 before larger-width
+results. Synthetic tests and short MPS checkpoint checks establish correctness
+only. Attention scores still use all query heads; halving KV heads does not
+promise halving total memory or elapsed training time.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).
