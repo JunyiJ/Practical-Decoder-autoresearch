@@ -5,12 +5,20 @@ A repo to implement the decoder-only GPT-style model and play around with differ
 ## To train the model
 `python -m src.train.train`
 
-Select sigmoid-gated MLA with decoupled RoPE using
-`model.attn_type=gated_mla` and `model.rope=1` (use `+model.rope=1` if the
-configuration has no `rope` field). The gate acts on each attention output
-channel before the output projection. Cached generation stores compressed KV
-latents and shared rotary keys, as with standard MLA. This variant retains RoPE;
-it does not reproduce Kimi K3's NoPE/KDA hybrid architecture.
+Select sigmoid-gated MLA with `model.attn_type=gated_mla`. Set
+`+model.enable_rope=true` to enable decoupled RoPE or
+`+model.enable_rope=false` for no explicit positional encoding. This boolean
+overrides `model.rope` for gated MLA throughout model construction and attention;
+the disabled mode creates neither rotary frequency tables nor learned position
+embeddings. Omit `+` if `enable_rope` is already present in the configuration.
+Without the override, the legacy behavior is preserved: `model.rope=1` selects
+RoPE, while `model.rope=0` (or an absent field) selects learned positions.
+
+The sigmoid gate acts on each attention output channel before the output
+projection. Both modes retain the same projections, attention scale, and cache
+layout: compressed KV latents plus shared keys. With RoPE disabled, the shared
+keys and corresponding query features are unrotated content features. This
+option does not introduce Kimi K3's KDA hybrid architecture.
 
 ## To generate with the trained checkpoint
 

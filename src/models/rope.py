@@ -1,5 +1,22 @@
 import torch
 
+
+def resolve_position_encoding(cfg, *, attn_type=None):
+    """Resolve the model-wide mode while preserving legacy `rope` configs.
+
+    Gated MLA's explicit boolean override selects RoPE or no positional
+    encoding. Without the override, `rope=0` retains learned positions.
+    """
+    if attn_type is None:
+        attn_type = getattr(cfg, "attn_type", None)
+    if attn_type == "gated_mla" and hasattr(cfg, "enable_rope"):
+        enabled = cfg.enable_rope
+        if not isinstance(enabled, bool):
+            raise ValueError("enable_rope must be boolean for gated_mla")
+        return "rope" if enabled else "none"
+    return "rope" if getattr(cfg, "rope", 0) == 1 else "learned"
+
+
 def precompute_freqs_cis(dim: int, end: int, theta: float = 10000.0):
     """
     Precompute the frequency tensor for complex exponential (cos + i*sin).
