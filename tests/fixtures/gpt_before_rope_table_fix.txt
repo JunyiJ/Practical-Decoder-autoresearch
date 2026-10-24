@@ -1,0 +1,89 @@
+import math
+import torch
+import torch.nn as nn
+
+from .blocks import TransformerBlock
+
+class GPT(nn.Module):
+    def __init__(self, cfg):
+        super().__init__()
+        self.cfg = cfg
+        moe_cfg = getattr(cfg, "moe", None)
+        self.aux_loss_weight = getattr(moe_cfg, "aux_loss_weight", getattr(cfg, "aux_loss_weight", 1.0))
+        self.transformer = nn.ModuleDict({
+            "wte": nn.Embedding(cfg.vocab_size, cfg.dim),
+            "wpe": nn.Embedding(cfg.block_size, cfg.dim),
+            "h": nn.ModuleList([TransformerBlock(cfg) for _ in range(cfg.n_layers)]),
+            "ln_f": nn.LayerNorm(cfg.dim)
+        })
+        self.lm_head = nn.Linear(cfg.dim, cfg.vocab_size, bias=False)
+        parameterization = getattr(cfg, 'parameterization', 'sp')
+        if parameterization not in {'sp', 'mup'}:
+            raise ValueError('parameterization must be sp or mup')
+        base_width = getattr(cfg, 'base_width', 64)
+        if isinstance(base_width, bool) or not isinstance(base_width, int) or base_width < 1:
+            raise ValueError('base_width must be a positive integer')
+        self.width_mult = cfg.dim / base_width if parameterization == 'mup' else 1.0
+        # Default hidden fan-in initialization already has the required scaling.
+        # Readout initialization has width-independent std in these coordinates;
+        # the forward multiplier makes its effective std scale as 1/width.
+        if parameterization == 'mup':
+            with torch.no_grad():
+                self.lm_head.weight.mul_(math.sqrt(self.width_mult))
+                for module in self.transformer.h.modules():
+                    if isinstance(module, nn.Linear) and module.bias is not None:
+                        module.bias.mul_(math.sqrt(self.width_mult))
+        self.enable_rope = (getattr(cfg, "rope", 0) == 1)
+
+    def forward(
+        self,
+        idx,
+        targets=None,
+        cache=None,
+        start_pos=0,
+        include_aux_loss=True,
+        return_loss_breakdown=False,
+    ):
+        b, t = idx.size()
+        if start_pos + t > self.cfg.block_size:
+            raise ValueError(
+                f"Sequence length {t} with start_pos {start_pos} exceeds block_size {self.cfg.block_size}"
+            )
+        token_emb = self.transformer.wte(idx)
+        if not self.enable_rope:
+            pos = torch.arange(start_pos, start_pos + t, device=idx.device)
+            pos_emb = self.transformer.wpe(pos)
+            x = token_emb + pos_emb
+        else:
+            x = token_emb
+        aux_losses = []
+        if cache is not None and not isinstance(cache, (list, tuple)):
+            raise TypeError("cache must be a list/tuple of per-layer KVCache objects")
+        if cache is not None and len(cache) != len(self.transformer.h):
+            raise ValueError("cache length must match number of transformer blocks")
+        for layer_idx, block in enumerate(self.transformer.h):
+            layer_cache = None if cache is None else cache[layer_idx]
+            x, block_aux_loss = block(x, layer_cache, start_pos)
+            if block_aux_loss is not None:
+                aux_losses.append(block_aux_loss)
+        x = self.transformer.ln_f(x)
+        logits = self.lm_head(x) / self.width_mult
+
+        loss = None
+        ce_loss = None
+        aux_loss = None
+        if targets is not None:
+            ce_loss = nn.functional.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
+            loss = ce_loss
+            if aux_losses:
+                aux_loss = sum(aux_losses) / len(aux_losses)
+                if include_aux_loss:
+                    loss = loss + self.aux_loss_weight * aux_loss
+
+        if return_loss_breakdown:
+            return logits, loss, {
+                "ce_loss": ce_loss,
+                "aux_loss": aux_loss,
+                "total_loss": loss,
+            }
+        return logits, loss

@@ -10,9 +10,12 @@ class GPT(nn.Module):
         self.cfg = cfg
         moe_cfg = getattr(cfg, "moe", None)
         self.aux_loss_weight = getattr(moe_cfg, "aux_loss_weight", getattr(cfg, "aux_loss_weight", 1.0))
+        self.enable_rope = (getattr(cfg, "rope", 0) == 1)
+        embeddings = {"wte": nn.Embedding(cfg.vocab_size, cfg.dim)}
+        if not self.enable_rope:
+            embeddings["wpe"] = nn.Embedding(cfg.block_size, cfg.dim)
         self.transformer = nn.ModuleDict({
-            "wte": nn.Embedding(cfg.vocab_size, cfg.dim),
-            "wpe": nn.Embedding(cfg.block_size, cfg.dim),
+            **embeddings,
             "h": nn.ModuleList([TransformerBlock(cfg) for _ in range(cfg.n_layers)]),
             "ln_f": nn.LayerNorm(cfg.dim)
         })
@@ -33,7 +36,6 @@ class GPT(nn.Module):
                 for module in self.transformer.h.modules():
                     if isinstance(module, nn.Linear) and module.bias is not None:
                         module.bias.mul_(math.sqrt(self.width_mult))
-        self.enable_rope = (getattr(cfg, "rope", 0) == 1)
 
     def forward(
         self,

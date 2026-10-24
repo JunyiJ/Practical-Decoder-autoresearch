@@ -19,7 +19,7 @@ def test_mla_shapes_counts_initialization_optimizer_gradients_checkpoint_causali
     assert (att.dimc_q,att.dimc_kv,att.head_dim,att.head_dim_r)==(w//4,w//4,32,32)
     assert att.dkv.weight.shape==(w//4,w) and att.kr.weight.shape==(32,w)
     assert att.qr.weight.shape==(w,w//4)
-    assert sum(p.numel() for p in model.parameters())=={64:196864,128:733568,256:2826880}[w]
+    assert sum(p.numel() for p in model.parameters())=={64:196864,128:733568,256:2826880}[w] - 128*w
     # The fixed-row rotary projection retains fan-in weight initialization and
     # width-scaled bias. Unlike other matrices, its aspect ratio changes.
     assert att.kr.weight.abs().max() <= 1/math.sqrt(w)

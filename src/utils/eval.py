@@ -16,7 +16,7 @@ from omegaconf import OmegaConf
 
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
-from .checkpoint import read_checkpoint
+from .checkpoint import read_checkpoint, load_model_weights
 
 
 def _select_device(requested: Optional[str]) -> str:
@@ -67,7 +67,7 @@ def main() -> None:
     )
     cfg.model.vocab_size = loader.vocab_size
     model = GPT(cfg.model).to(device)
-    model.load_state_dict(ckpt["model_state"])
+    load_model_weights(model, ckpt)
 
     avg_loss, ppl = evaluate(model, loader, args.eval_iters)
     print(f"val_loss={avg_loss:.4f} val_ppl={ppl:.2f}")

@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import torch
+import warnings
 
 
 def save_checkpoint(
@@ -15,7 +16,7 @@ def save_checkpoint(
     training_state: Optional[dict] = None,
 ) -> None:
     ckpt_path = Path(path)
-    ckpt = {"model_state": model.state_dict(), "model_math_version": 2}
+    ckpt = {"model_state": model.state_dict(), "model_math_version": 2, "parameter_layout_version": 2}
     if training_state is not None:
         ckpt["training_state"] = training_state
     if optimizer is not None:
@@ -43,10 +44,31 @@ def load_checkpoint(
     map_location: Optional[str | torch.device] = None,
 ) -> dict:
     ckpt = read_checkpoint(path, map_location=map_location)
-    model.load_state_dict(ckpt["model_state"])
+    load_model_weights(model, ckpt, for_resume=optimizer is not None)
     if optimizer is not None and "optimizer_state" in ckpt:
         optimizer.load_state_dict(ckpt["optimizer_state"])
     return ckpt
+
+
+def load_model_weights(model, checkpoint, *, for_resume=False):
+    """Load strictly; discard only the historical unused RoPE position table.
+
+    This in-memory inference adapter never rewrites the checkpoint. Its active
+    weights and forward math are unchanged. Legacy optimizer parameter groups
+    include the removed table, so training continuation requires original source.
+    """
+    state = checkpoint['model_state']
+    key = 'transformer.wpe.weight'
+    if getattr(model, 'enable_rope', False) and key in state:
+        if for_resume:
+            raise ValueError('Legacy RoPE checkpoint includes an unused position table; resume with its original source. New training must use a new run.')
+        saved = checkpoint.get('cfg', {}).get('model', {})
+        if saved.get('rope') != 1 or tuple(state[key].shape) != (model.cfg.block_size, model.cfg.dim):
+            raise ValueError('Unexpected legacy RoPE position-table contract')
+        state = dict(state)
+        del state[key]
+        warnings.warn('Loading historical RoPE weights without the unused position table; checkpoint is unchanged.', UserWarning, stacklevel=2)
+    return model.load_state_dict(state, strict=True)
 
 
 def read_checkpoint(path, map_location='cpu'):

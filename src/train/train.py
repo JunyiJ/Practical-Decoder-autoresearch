@@ -18,7 +18,7 @@ from ..models.gpt import GPT
 from .optimizers import build_optimizer, optimizer_options
 from ..utils.device import synchronize_device
 from ..data.loaders import TinyDataLoader, TextDataset
-from ..utils.checkpoint import (save_checkpoint, read_checkpoint,
+from ..utils.checkpoint import (save_checkpoint, read_checkpoint, load_model_weights,
                                 capture_training_state, restore_training_state)
 from ..moe.moe_block import MoEBlock
 
@@ -241,7 +241,7 @@ def evaluate_checkpoint(cfg: DictConfig, checkpoint_path: str | Path,
     if not _contracts_match(checkpoint.get('training_state', {}).get('contract'), contract):
         raise ValueError('Checkpoint evaluation requires matching model, data, device, PyTorch and evaluation settings')
     model = GPT(cfg.model).to(device)
-    model.load_state_dict(checkpoint['model_state'])
+    load_model_weights(model, checkpoint)
     count = int(getattr(cfg.training, 'eval_iters', 100) if eval_iters is None else eval_iters)
     loss, aux_loss = _evaluate(model, loader, split, count)
     return {
@@ -302,7 +302,7 @@ def run_training(cfg: DictConfig) -> dict:
         state = ckpt.get('training_state')
         if state is None or not _contracts_match(state.get('contract'), contract):
             raise ValueError("Resume requires matching model, data, optimizer, device, PyTorch and evaluation settings")
-        model.load_state_dict(ckpt['model_state'])
+        load_model_weights(model, ckpt, for_resume=True)
         optimizer.load_state_dict(ckpt['optimizer_state'])
         completed_steps = int(ckpt['step'])
         training_seconds = state['training_seconds']

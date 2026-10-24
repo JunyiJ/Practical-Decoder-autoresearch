@@ -11,7 +11,7 @@ from omegaconf import OmegaConf
 
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
-from .checkpoint import read_checkpoint
+from .checkpoint import read_checkpoint, load_model_weights
 from .device import synchronize_device, reset_peak_memory, memory_measurement
 from ..attention.cache import KVCache
 
@@ -187,7 +187,7 @@ def main() -> None:
     cfg.model.vocab_size = loader.vocab_size
 
     model = GPT(cfg.model).to(device)
-    model.load_state_dict(ckpt["model_state"])
+    load_model_weights(model, ckpt)
     model.eval()
 
     idx = _encode(args.prompt, loader.stoi).unsqueeze(0).to(device)
