@@ -736,3 +736,32 @@ Next: the authorized saved-checkpoint full-validation audit, with paired text-bl
 uncertainty, no retraining and no held-out test. Context/batch robustness is the
 next research priority. A compact interaction design was recommended in discussion
 but has not yet been frozen or launched; no MoE launch is planned.
+
+## Prospective efficiency selection after human steering
+
+The human now permits adopting GQA or MLA with a small quality loss when measured
+inference savings justify it. Future selection therefore includes a quality
+non-inferiority objective alongside the existing quality incumbent. Historical
+stage 2D/2F decisions remain frozen; neither is retroactively declared a winner.
+
+A proposed margin is +0.01 validation CE nats/token (exp(.01)-1, about 1.005%
+higher perplexity). This is a provisional preference, not an established universal
+threshold or a frozen protocol. The exact margin, matched comparator, uncertainty
+rule and minimum useful inference benefit must be specified before new selection.
+Report paired seeds separately from conditional text-block intervals; the latter
+do not quantify training-seed variation. Assess each intended width/context rather
+than averaging away a harmful setting.
+
+Measure prefill and cached decode separately on matching prompts, lengths,
+batches, precision and hardware. Record warmed-up synchronized latency/throughput,
+actual KV-cache bytes and peak device memory. Training speed, theoretical cache
+sizes and parameter counts do not establish deployment savings. A reduction in
+memory can be useful even without a latency gain; report the actual tradeoff.
+
+The completed full-validation audit makes width256 MLA an efficiency candidate:
+its mean CE is .007100 below tuned four-layer MHA, with all three paired seeds
+better. Width64 is .013453 worse and width128 is .006146 worse on average. These
+are adaptive diagnostics, not approval to deploy or proof of non-inferiority.
+Fresh context controls still require the repaired RoPE initialization. The next
+training grid remains unfrozen; this policy does not authorize extending closed
+grids or launching MoE.
