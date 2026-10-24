@@ -103,6 +103,47 @@ cap or authorize an indefinite LR grid. Autonomous maintenance expires at the
 previously authorized time, October25 1:32 PM Pacific; healthy runs are not killed
 solely because that window ends.
 
+### Completed stage 2A: activation and learning-rate transfer
+
+All **39 trials** completed and were reviewed against checkpoint hashes, worker results,
+frozen selection, source/corpus/runtime contracts and recomputed report aggregates.
+Mean final validation CE at 3000 updates (three fresh development seeds44/55/66):
+
+| Arm | Frozen LR | Width64 | Width128 | Width256 |
+| --- | --- | --- | --- | --- |
+| Fixed GELU control | .002 | 1.659749 | 1.573942 | **1.520457** |
+| Equally tuned GELU | .0025 | **1.647783** | **1.571541** | 1.525777 |
+| Tuned SiLU | .0025 | 1.659710 | 1.576024 | 1.521624 |
+
+**Keep the exact stage-1 control.** SiLU failed the predeclared width64 architecture
+rule: its mean delta was −.000039 against fixed GELU (one seed worse), and +.011928
+against tuned GELU (all three worse). At widths128/256 its deltas against fixed
+control were +.002082 / +.001168, both mixed by seed. SiLU was better than tuned
+GELU on every width256 seed, but the mean −.004153 missed the .005 threshold;
+transfer diagnostics cannot change the frozen architecture decision.
+
+The GELU LR change is a useful transfer counterexample: .0025 improved over .002
+by .011966 at width64 and .002401 at width128, then worsened by .005320 at width256.
+All three paired seeds followed each direction. Width scaling does not guarantee
+that a locally preferred LR preserves its advantage at larger widths. This does
+not invalidate muP in general or identify the optimal LR at any width.
+
+Mean training seconds for control / tuned GELU / SiLU were 32.23 / 32.48 / 32.35
+at width64, 51.26 / 51.00 / 51.84 at width128, and 66.40 / 66.41 / 66.36 at width256.
+Process peak RSS means ranged from 472.1 to 475.6 MiB. These small observed time
+and RSS differences do not establish a reliable speed advantage; RSS is not peak
+accelerator memory. Equal token budgets and shapes are not equal measured compute.
+
+Both tuned families selected the upper grid boundary; no grid extension is planned.
+The validation split remains adaptively reused, despite fresh training seeds; test
+was never opened. Historical control scores use different seeds and must not be
+pooled as independent replication. Correctness tests and short smoke runs remain
+separate from these measured quality results.
+
+Evidence: `research_runs/architecture-stage2a-001/{plan,selection,report,review}.json`.
+Next is a separately preregistered gated-FFN round, after parameter-budget,
+bias/initialization, optimizer-aspect-ratio and execution checks. Stage1 stays stopped.
+
 ## Subsequent rounds
 
 After reviewing 2A, test gated FFNs with explicit near-matched parameter budgets
