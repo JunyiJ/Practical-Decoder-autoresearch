@@ -269,6 +269,16 @@ Positive differences mean worse loss. All three seeds worsened at widths 64 and 
 
 **Second Muon iteration: doubling independent decay** from .00006 to .00012 also failed the frozen width-64 improvement rule. All 18 trials completed. Candidate-minus-baseline mean CE was **+.005433 / +.005246 / −.000802** at widths 64/128/256. Every seed worsened at64 and128; width256 had two improvements and one regression, with mean improvement smaller than the .005 threshold. The baseline was already selected from width64, so larger-width results cannot promote this candidate. Throughput and process RSS changed by less than .31% and .08% respectively in the paired means; these small observations do not establish a resource advantage. Compared with the first zero-decay ablation, we now have evidence against both removing and doubling the current decay in this fixed-budget local search. This retains .00006 as the working control, not as a proven optimum. [Iteration2 evidence](../research_runs/continuous-20261023-005/iteration-002/evidence.json).
 
+**Third Muon iteration: 5% attention-probability dropout.** We changed only `model.attn_dropout` from 0 to .05 and completed all 18 trials at 3,000 updates. This drops attention probabilities during training; it is not a change to every dropout setting in the model.
+
+| Width | Baseline mean CE | Dropout mean CE | Candidate minus baseline | Paired-seed result |
+|---|---:|---:|---:|---|
+| 64 | 1.645867 | 1.657164 | +.011296 | All three worsened |
+| 128 | 1.559394 | 1.558715 | −.000678 | Two improved, one worsened |
+| 256 | 1.524287 | 1.521629 | −.002658 | All three improved, but below the .005 improvement threshold |
+
+The frozen width-64 rule retained the baseline before transfer. Larger-width measurements cannot retroactively promote the candidate. The width-256 result is a small measured benefit at this setting, but does not establish a general width interaction or a failure of μP. Throughput fell on every paired seed, with mean changes of −2.80%, −3.79%, and −2.82% at widths 64, 128, and 256. Process RSS changes were small and inconsistent across seeds, so we do not infer a memory advantage. The working recipe remains Muon/AdamW + μP, LR .002, independent decay .00006, and attention dropout 0. These are adaptive development results on reused validation data, not held-out confirmation. [Iteration 3 evidence](../research_runs/continuous-20261023-005/iteration-003/evidence.json) and [evaluator learnings](../research_runs/continuous-20261023-005/iteration-003/learnings.json).
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).
