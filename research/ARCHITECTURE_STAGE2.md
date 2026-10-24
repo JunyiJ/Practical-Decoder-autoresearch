@@ -774,3 +774,10 @@ historical RoPE adapter. All570 project tests and nine serial MPS saved-weight
 cached/full-logit checks pass (maximum absolute difference8.11e-6). These establish
 correctness, not speed or quality. The bounded saved-checkpoint inference protocol
 is drafted in `research/INFERENCE_EFFICIENCY_PROTOCOL.md`; no benchmark is launched.
+
+## Completed inference diagnostic
+
+The24-pair saved-checkpoint inference diagnostic is complete and reviewed.
+See [measured inference tradeoffs](INFERENCE_EFFICIENCY_RESULTS.md). Cache savings
+and timing are separate observations; historical selections remain frozen.
+No training or test access occurred.
