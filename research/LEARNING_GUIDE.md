@@ -602,7 +602,7 @@ LR .0025 and independent decay .00006, with the original GELU recipe retained as
 reference. Next is a separately reviewed grouped-query attention comparison;
 no GQA/MLA, depth or MoE claim follows from this head-partition experiment.
 
-### Next controlled comparison: grouped-query attention
+### Stage 2D design: grouped-query attention
 
 Stage 2D keeps the SwiGLU FFN and query head dimension 32 fixed while sharing
 one key/value head between two query heads. At widths 64/128/256 that means
@@ -618,6 +618,52 @@ development seeds 444/555/666, and selection at width 64 before larger-width
 results. Synthetic tests and short MPS checkpoint checks establish correctness
 only. Attention scores still use all query heads; halving KV heads does not
 promise halving total memory or elapsed training time.
+
+### Completed stage 2D: GQA is smaller and modestly faster, but does not replace MHA
+
+All 48 checkpoint hashes, saved QKV shapes, worker requests/results, frozen
+selection, report aggregates and source/corpus/runtime/knowledge contracts were
+verified. Mean final validation CE at 3000 updates on development seeds 444/555/666:
+
+| Arm | Selected LR | Width 64 | Width 128 | Width 256 |
+| --- | --- | --- | --- | --- |
+| Original GELU/MHA reference | .002 | 1.661810 | 1.569754 | 1.522443 |
+| Fixed SwiGLU/MHA incumbent | .0025 | 1.647115 | 1.558650 | 1.521123 |
+| Tuned SwiGLU/MHA | .002 | 1.646205 | 1.559586 | 1.521749 |
+| Tuned SwiGLU/GQA | .0025 | 1.643881 | 1.560941 | 1.522255 |
+
+GQA's frozen width-64 mean deltas were −.003234 versus the incumbent and
+−.002325 versus tuned MHA; seed 666 worsened by +.003501 and +.001727 respectively.
+It failed both the mean threshold and all-seed requirement. GQA chose the upper
+LR boundary; MHA chose the interior .002. The grid remains closed, and the
+prior SwiGLU/MHA .0025 incumbent is retained. This does not declare its LR
+universally optimal or revise the historical stage-2B selection.
+
+At widths 128/256, GQA's mean CE was worse than the incumbent by +.002291/+.001133
+and worse than tuned MHA by +.001356/+.000506; every comparison had mixed seed
+signs. At width 256, GQA versus tuned MHA ranged from −.009231 to +.011184 across
+seeds. GQA beat the original GELU reference under the rule at widths 64/128,
+but not at 256. The original reference alone would therefore overstate the case
+for changing attention: the stronger SwiGLU/MHA comparator matters.
+
+GQA mean training times were 32.24/53.57/63.94 seconds versus tuned MHA's
+33.47/54.16/67.07: **3.68%/1.09%/4.65% faster**. GQA had about 7.3–8.1% fewer
+total parameters under this contract. RSS did not fall consistently; process
+RSS is not accelerator memory. These measurements support a modest training
+speed/capacity tradeoff, not a quality win, statistical equivalence, an inference
+speed claim or superiority at an equal wall-clock budget. Shape-dependent Muon
+updates, initialization draws and parameter counts differ as preregistered.
+
+The repeated fixed SwiGLU incumbent again beat GELU on every seed at 64/128,
+with mixed results at 256. This adds adaptive development evidence while leaving
+the largest-width uncertainty intact. Tuned MHA selected .002 here, so its
+transfer results and the fixed .0025 reference are different recipes; do not
+label them identical-recipe repeats or pool their measurements.
+
+Evidence: `research_runs/architecture-stage2d-001/{plan,selection,report,review}.json`.
+The most promising incumbent remains bias-free SwiGLU 21/8, MHA head32,
+Muon/AdamW+muP, LR .0025 and independent decay .00006. Next is a separately
+reviewed depth comparison; width scaling alone does not validate depth scaling.
 
 ## 11 How to audit a claim yourself
 
