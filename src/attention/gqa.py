@@ -6,6 +6,23 @@ import torch.nn as nn
 from ..models.rope import apply_rotary_emb
 
 
+def kv_head_count(cfg):
+    """Resolve the same KV-head contract for attention and cache allocation."""
+    heads = getattr(cfg, "n_heads", 1)
+    if cfg.dim % heads != 0:
+        raise ValueError("cfg.dim must be divisible by cfg.n_heads")
+    if getattr(cfg, "attention_width_policy", None) == "gqa_half_head32":
+        if (cfg.dim not in {64, 128, 256} or cfg.dim // heads != 32
+                or hasattr(cfg, "n_kv_heads") or hasattr(cfg, "n_groups")):
+            raise ValueError("gqa_half_head32 requires supported widths, head32, no KV override")
+        count = heads // 2
+    else:
+        count = getattr(cfg, "n_kv_heads", getattr(cfg, "n_groups", heads))
+    if count < 1 or heads % count != 0:
+        raise ValueError("cfg.n_heads must be divisible by positive cfg.n_kv_heads")
+    return count
+
+
 class GQA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
@@ -14,15 +31,7 @@ class GQA(nn.Module):
         if self.dim % self.n_heads != 0:
             raise ValueError("cfg.dim must be divisible by cfg.n_heads")
         self.head_dim = self.dim // self.n_heads
-        if getattr(cfg, "attention_width_policy", None) == "gqa_half_head32":
-            if (self.dim not in {64, 128, 256} or self.head_dim != 32
-                    or hasattr(cfg, "n_kv_heads") or hasattr(cfg, "n_groups")):
-                raise ValueError("gqa_half_head32 requires supported widths, head32, no KV override")
-            self.n_kv_heads = self.n_heads // 2
-        else:
-            self.n_kv_heads = getattr(cfg, "n_kv_heads", getattr(cfg, "n_groups", self.n_heads))
-        if self.n_heads % self.n_kv_heads != 0:
-            raise ValueError("cfg.n_heads must be divisible by cfg.n_kv_heads")
+        self.n_kv_heads = kv_head_count(cfg)
         self.group_factor = self.n_heads // self.n_kv_heads
 
 

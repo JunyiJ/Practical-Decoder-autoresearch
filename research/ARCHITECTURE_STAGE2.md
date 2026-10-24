@@ -765,3 +765,12 @@ are adaptive diagnostics, not approval to deploy or proof of non-inferiority.
 Fresh context controls still require the repaired RoPE initialization. The next
 training grid remains unfrozen; this policy does not authorize extending closed
 grids or launching MoE.
+
+The inference preparation uncovered and repaired a GQA cache contract mismatch:
+the studied policy derives KV heads, while generation previously required an
+explicit field and direct cache creation defaulted to query-head count. Attention
+and cache now share a resolver. The older benchmark loader also uses the strict
+historical RoPE adapter. All570 project tests and nine serial MPS saved-weight
+cached/full-logit checks pass (maximum absolute difference8.11e-6). These establish
+correctness, not speed or quality. The bounded saved-checkpoint inference protocol
+is drafted in `research/INFERENCE_EFFICIENCY_PROTOCOL.md`; no benchmark is launched.

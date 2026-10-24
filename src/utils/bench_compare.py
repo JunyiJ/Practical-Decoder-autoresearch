@@ -12,7 +12,7 @@ from omegaconf import OmegaConf
 from ..attention.cache import KVCache
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
-from .checkpoint import read_checkpoint
+from .checkpoint import read_checkpoint, load_model_weights
 from .device import synchronize_device, reset_peak_memory, memory_measurement
 
 try:
@@ -134,7 +134,7 @@ def _load_model(
     )
     cfg.model.vocab_size = loader.vocab_size
     model = GPT(cfg.model).to(device)
-    model.load_state_dict(ckpt["model_state"])
+    load_model_weights(model, ckpt)
     model.eval()
     return model, cfg, loader
 
@@ -164,14 +164,12 @@ def _benchmark(
     reset_peak_memory(idx.device)
     caches = None
     if enable_cache and cfg.model.attn_type in ("mha", "gqa", "mla"):
-        n_kv_heads = cfg.model.n_kv_heads if cfg.model.attn_type == "gqa" else cfg.model.n_heads
         caches = [
             KVCache(
                 cfg,
                 idx.device,
                 batch_size=idx.size(0),
                 dtype=next(model.parameters()).dtype,
-                n_kv_heads=n_kv_heads,
             )
             for _ in range(cfg.model.n_layers)
         ]

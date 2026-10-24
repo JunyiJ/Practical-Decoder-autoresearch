@@ -1,12 +1,18 @@
 import torch
 import torch.nn as nn
 from .mla import latent_dimensions
+from .gqa import kv_head_count
 
 class KVCache(nn.Module):
     def __init__(self, cfg, device, batch_size=None, dtype=None, n_kv_heads=None):
         super().__init__()
         self.attn_type = getattr(cfg.model, "attn_type", None)
         self.is_mla = self.attn_type == "mla"
+        if self.attn_type == "gqa":
+            expected = kv_head_count(cfg.model)
+            if n_kv_heads is not None and n_kv_heads != expected:
+                raise ValueError("Cache KV heads must match GQA attention")
+            n_kv_heads = expected
         if n_kv_heads is None:
             n_kv_heads = getattr(cfg.model, "n_kv_heads", cfg.model.n_heads)
             if getattr(cfg.model, "attn_type", None) == "mha":
