@@ -209,3 +209,46 @@ shared-bank snapshot from clean committed source. Execute through
 `python -m src.research.gated_study --plan PLAN --output NEW_RUN --allow-training`.
 Expected quality and runtime differences are unquantified; report measured CE,
 training time and process RSS, all failed trials and all transfer reversals.
+
+### Completed stage 2B: SwiGLU wins locally, with mixed largest-width transfer
+
+All39 trials completed and were reviewed against final checkpoint hashes, worker
+result contracts, frozen local selection, report aggregates, source/corpus/runtime
+and the full shared-knowledge snapshot. Mean final validation CE at3000 updates:
+
+| Arm | Frozen LR | Width64 | Width128 | Width256 |
+| --- | --- | --- | --- | --- |
+| Fixed GELU control | .002 | 1.656103 | 1.575256 | 1.528558 |
+| Bias-free dense SiLU | .0025 | 1.658701 | 1.571751 | 1.536284 |
+| **Bias-free SwiGLU** | **.0025** | **1.637745** | **1.553588** | **1.523561** |
+
+SwiGLU passed the frozen width64 selection rule against both comparators.
+Its mean deltas versus fixed GELU were−.018358 / −.021668 / −.004997245 at
+widths64/128/256. Every seed improved at64/128. At256, seed77 worsened by+.001391,
+seed88 improved by−.001545, and seed99 improved by−.014838. Thus **width256 does
+not pass the support rule**: the unrounded mean also narrowly misses−.005.
+Rounding it to−.005 cannot turn this into a success, and the positive seed would
+still fail. The local winner stays frozen; transfer does not retroactively alter it.
+
+Against the equally tuned bias-free dense SiLU comparator, SwiGLU improved every
+seed at all three widths, with mean deltas−.020955 / −.018163 / −.012722.
+That makes SwiGLU the most promising observed architecture in this development
+round. It does not establish uniformly supported superiority over the original
+GELU control at all widths. The original recipe remains an explicit reference;
+its historical best-config record is preserved separately.
+
+SwiGLU mean training time was33.41 / 54.72 / 67.10 seconds, about2.96% / 3.97% /
+1.70% longer than the fixed control's32.45 / 52.63 / 65.98 seconds. This is a
+fixed-token quality/time tradeoff, not evidence from equal-time training. Peak
+process RSS means were471.31 / 473.40 / 475.38 MiB versus471.58 / 472.74 / 474.17.
+Process RSS is not peak accelerator allocation. Parameter-count reductions did
+not produce a measured training-speed win in this round.
+
+Both tuned arms selected the upper LR grid boundary; no extension of this completed
+grid is planned. Fresh seeds77/88/99 remain development seeds on the reused
+validation split. No held-out test was consumed. The change combines gating,
+hidden ratio and different initialization draws; comparison to fixed GELU also
+changes FFN bias and activation. Do not attribute the result to gating alone.
+Evidence: `research_runs/architecture-stage2b-001/{plan,selection,report,review}.json`.
+The next attention/head round requires its own scaling and resource review and
+preregistration. Neither previous stage nor completed grid will be restarted.
