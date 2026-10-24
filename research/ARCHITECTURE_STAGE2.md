@@ -744,10 +744,10 @@ inference savings justify it. Future selection therefore includes a quality
 non-inferiority objective alongside the existing quality incumbent. Historical
 stage 2D/2F decisions remain frozen; neither is retroactively declared a winner.
 
-A proposed margin is +0.01 validation CE nats/token (exp(.01)-1, about 1.005%
-higher perplexity). This is a provisional preference, not an established universal
-threshold or a frozen protocol. The exact margin, matched comparator, uncertainty
-rule and minimum useful inference benefit must be specified before new selection.
+The human accepted a maximum loss of +0.01 validation CE nats/token (exp(.01)-1,
+about 1.005% higher perplexity). This is a decision preference, not an established
+universal threshold. The matched comparator, uncertainty rule and minimum useful
+inference benefit must still be frozen before new selection.
 Report paired seeds separately from conditional text-block intervals; the latter
 do not quantify training-seed variation. Assess each intended width/context rather
 than averaging away a harmful setting.
