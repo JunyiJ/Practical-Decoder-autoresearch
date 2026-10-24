@@ -543,6 +543,23 @@ Evidence: `research_runs/architecture-stage2b-001/{plan,selection,report,review}
 The next attention/head round requires its own scaling and resource review and
 preregistration. Neither previous stage nor completed grid will be restarted.
 
+### Stage 2C: change attention head size while keeping the FFN fixed
+
+The next bounded round compares SwiGLU with MHA head dimensions16 and32. QKV/output
+matrix shapes, parameter counts and initial parameter tensors are identical at
+paired seeds, as are optimizer groups. Head16 has twice as many heads at each
+width. Its attention scores divide by4 instead of sqrt32, and its RoPE frequency
+basis changes. These are parts of the head-size change; we cannot attribute a
+result to one of them alone. Attention-score tensors double in element count,
+which does not imply twice the total memory or time.
+
+Keep both the original GELU .002 reference and fixed SwiGLU .0025 incumbent.
+Give head16 and head32 equal LR screens .0015/.002/.0025 on development seeds
+111/222/333. The48-trial plan freezes choices after24 width64 runs, before24
+transfer runs. A head16 replacement must pass the mean/all-seed rule against all
+three comparators. See the [round2C protocol](ARCHITECTURE_STAGE2.md). This tests
+head partition within MHA; GQA/MLA, depth and MoE are separate future rounds.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).

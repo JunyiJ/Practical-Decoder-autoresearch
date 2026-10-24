@@ -149,7 +149,7 @@ def run(plan,output,*,suite_builder=suite_spec,job_builder=local_jobs,
             directory=output/'trials'/tid; directory.mkdir(parents=True,exist_ok=False)
             row={'family':family,'lr':lr,'width':width,'seed':seed,'trial_id':tid,
                  'arm':'candidate','stage':'local' if width==64 else 'transfer',
-                 'target':f'width-{width}','n_heads':width//32,'status':'running'}
+                 'target':f'width-{width}','n_heads':width//plan.get('head_dimensions',{}).get(family,32),'status':'running'}
             request=_request(spec,row,directory); atomic_json(directory/'request.json',request)
             state['records'].append(row); allowance=min(remaining,plan['trial_seconds']); save(allowance)
             before=time.monotonic()

@@ -252,3 +252,66 @@ changes FFN bias and activation. Do not attribute the result to gating alone.
 Evidence: `research_runs/architecture-stage2b-001/{plan,selection,report,review}.json`.
 The next attention/head round requires its own scaling and resource review and
 preregistration. Neither previous stage nor completed grid will be restarted.
+
+## Round 2C preregistration: MHA head dimension on the SwiGLU incumbent
+
+Round2B is closed. Its SwiGLU local winner is the incumbent, with mixed width256
+transfer versus the original GELU reference. Round2C changes only the MHA head
+partition within the SwiGLU recipe when comparing equal LRs. It does not change
+FFN, depth, projection dimensions, parameter count, biases, dropout or optimizer.
+Original GELU remains a separate reference, not the new attention comparator.
+
+| Family | FFN | Head dimension | Base LR |
+| --- | --- | --- | --- |
+| control | Original GELU | 32 | .002 fixed |
+| incumbent | Bias-free SwiGLU21/8 | 32 | .0025 fixed |
+| head32_tuned | Bias-free SwiGLU21/8 | 32 | .0015/.002/.0025 |
+| head16 | Bias-free SwiGLU21/8 | 16 | .0015/.002/.0025 |
+
+Fresh development seeds111/222/333; validation seed2026; same corpus/splits,
+3000updates, batch8, context128, eval30 batches/every300; no held-out test.
+There are24 width64 trials (two fixed references plus two three-LR screens).
+Select each tuned LR by lowest final mean validation CE, ties lower LR, then
+freeze before24 transfer trials at widths128/256. Head16 replaces the incumbent
+only if mean paired CE delta <−.005 and all seeds improve versus EACH of fixed
+GELU, fixed SwiGLU and tuned head32. Otherwise retain the prior incumbent without
+claiming it passed a new confirmation test. Report all contrasts and reversals.
+The separately repeated incumbent and tuned-head32 runs at.0025 are deliberate;
+small numeric differences are not exact-reproducibility evidence.
+
+Exactly48 serial trials,600seconds/trial,four hours/round,4GiB outputs; first failure
+stops, STOP at trial boundary, no retry or grid expansion. These are finite rounds
+within the ongoing research effort, not an aggregate exploration cap.
+
+At widths64/128/256, head32 gives2/4/8 heads; head16 gives4/8/16. Packed QKV and
+output projections have identical shapes and initialized parameter tensors for
+paired seeds across SwiGLU arms. Optimizer groups, fan-in initialization, readout
+scaling and independent decay remain identical. RoPE buffers differ: head16 has
+8 frequency pairs per head, head32 has16. Scores divide by sqrt16=4 versus
+sqrt32≈5.657. These are intended consequences of head dimension, not independently
+isolated mechanisms. We do not change the attention scale to manufacture equality.
+
+Within each family head dimension stays fixed as width grows. Matrix aspect ratios
+and the existing Muon LR/RMS-factor cancellation remain unchanged. This checks
+implementation consistency only; it does not prove optimal LR transfer or a
+head-number scaling theorem. Head16 is allowed only by the explicit
+`attention_width_policy=mha_head16` with the narrow two-layer SwiGLU contract.
+Other head dimensions and attention architectures remain unsupported for that
+contract. The study worker now takes each family's head dimension from the frozen
+plan instead of assuming32, with a regression check at both local/transfer stages.
+
+All SwiGLU arms have114688/423936/1626112 parameters. At fixed batch/context,
+head16 doubles attention-score tensor elements relative to head32; this is not
+a claim of doubling total memory or runtime. Measure process RSS and training
+time; the GEMM shapes and softmax workload differ despite identical parameters.
+Quality and runtime effects are unquantified in advance. Fresh seeds still reuse
+adaptive validation, not independent held-out confirmation. No GQA, MLA, depth or
+MoE comparison is included. Those require separate scaling and budget reviews.
+
+Before launch: parameter/init/group equality, finite gradients, causal behavior,
+protocol drift rejection, serial48-trial selection ordering/head propagation and
+full repository tests; three short actual MPS train/checkpoint checks at head16.
+Correctness checks are not quality evidence. Freeze clean source, plan and full
+bank snapshot, then execute `python -m src.research.head_study --plan PLAN --output
+NEW_RUN --allow-training`. Historical study evidence and source contracts remain
+unchanged, and the human-stopped stage1 campaign remains stopped.

@@ -76,7 +76,9 @@ def build_optimizer(model, training):
                  and getattr(cfg, 'hidden_dim', 4 * cfg.dim) == 4 * cfg.dim)
         gated = (policy == 'swiglu_21_8' and getattr(cfg, 'ffn', 'gelu') == 'swiglu'
                  and cfg.dim in {64,128,256} and getattr(cfg, 'base_width',64) == 64
-                 and cfg.n_layers == 2 and cfg.n_heads == cfg.dim // 32
+                 and cfg.n_layers == 2
+                 and ((getattr(cfg, 'attention_width_policy', 'mha_head32') == 'mha_head32' and cfg.n_heads == cfg.dim // 32)
+                      or (getattr(cfg, 'attention_width_policy', None) == 'mha_head16' and cfg.n_heads == cfg.dim // 16))
                  and not hasattr(cfg, 'hidden_dim') and getattr(cfg, 'ffn_bias',False) is False)
         if cfg.attn_type != 'mha' or cfg.mlp_type != 'dense' or not (dense or gated):
             raise ValueError('Optimizer width study supports dense GELU/SiLU 4x MHA or explicit swiglu_21_8 contract only')
