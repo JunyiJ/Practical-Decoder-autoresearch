@@ -36,14 +36,27 @@ class TransformerBlock(nn.Module):
         else:
             raise ValueError(f"Unknown attn_type: {cfg.attn_type}")
         # TODO add more variants later
-        self.hidden_dim = getattr(cfg, "hidden_dim", cfg.dim * 4)
+        policy = getattr(cfg, "ffn_width_policy", "dense_4x")
+        if policy == "swiglu_21_8":
+            if (cfg.mlp_type != "dense" or getattr(cfg, "ffn", "gelu") != "swiglu"
+                    or cfg.dim % 64 or hasattr(cfg, "hidden_dim")
+                    or getattr(cfg, "ffn_bias", False) is not False):
+                raise ValueError("swiglu_21_8 requires bias-free SwiGLU, width multiple of64, no hidden_dim")
+            self.hidden_dim = 21 * cfg.dim // 8
+        elif policy == "dense_4x":
+            self.hidden_dim = getattr(cfg, "hidden_dim", cfg.dim * 4)
+        else:
+            raise ValueError("Unknown ffn_width_policy")
+        ffn_bias = getattr(cfg, "ffn_bias", True)
+        if not isinstance(ffn_bias, bool):
+            raise ValueError("ffn_bias must be boolean")
         if cfg.mlp_type == "dense":
             self.ffn = getattr(cfg, "ffn", "gelu")
             if self.ffn in {"gelu", "silu"}:
                 self.mlp = nn.Sequential(
-                    nn.Linear(self.dim, self.hidden_dim),
+                    nn.Linear(self.dim, self.hidden_dim, bias=ffn_bias),
                     nn.GELU() if self.ffn == "gelu" else nn.SiLU(),
-                    nn.Linear(self.hidden_dim, self.dim),
+                    nn.Linear(self.hidden_dim, self.dim, bias=ffn_bias),
                     nn.Dropout(cfg.dropout)
                 )
             elif self.ffn == "swiglu":

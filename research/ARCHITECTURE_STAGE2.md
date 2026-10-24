@@ -155,3 +155,57 @@ parameters; rounding, bias counts and changed matrix aspect ratios must be
 reported. MoE needs both total/active parameter counts, routing/load-balance
 metrics and measured runtime. Do not enable those families by bypassing the current
 guards or claim width-only scaling establishes depth/expert scaling.
+
+## Round 2B preregistration: bias-free dense SiLU versus gated SwiGLU
+
+Round2A is closed. Round2B retains the exact GELU LR.002 control and compares two
+new equal-tuning families: bias-free dense SiLU (hidden width4d) and bias-free
+SwiGLU (hidden width21d/8). Each receives LR.0015/.002/.0025, fresh development
+seeds77/88/99, and the same 3000-update, batch8, context128 validation protocol.
+Run21 width64 screens, freeze the lowest-final-mean-CE LR for each family, then
+18 diagnostic transfer trials at widths128/256. SwiGLU replaces the control only
+if width64 mean delta <−.005 and every pair improves against BOTH fixed GELU and
+selected bias-free dense SiLU. Otherwise retain control. No transfer-informed
+selection, test access, automatic retry or grid extension. Limits remain39 trials,
+600seconds/trial, four hours/round,4GiB outputs, first failure stops; serial MPS.
+
+This comparator controls FFN bias presence and the SiLU nonlinearity, but is a
+comparison of two FFN designs, not a pure isolated multiplication experiment.
+SwiGLU computes down(SiLU(gate(x))*up(x)); its third matrix and narrower hidden
+space are intentional. Both new families omit FFN biases. The original control
+retains biases, so a comparison against it combines FFN structure/activation/bias
+changes. No new bias removal is applied to attention or normalization.
+
+The dense FFN has8d² matrix weights; SwiGLU has3d(21d/8)=63d²/8, **1.5625% fewer**.
+Hidden widths168/336/672 preserve exact aspect ratio21/8 at d64/128/256 without
+per-width rounding. Choosing the exact ratio8/3 would require rounding at these
+widths; the chosen near match avoids that additional scaling change. Total model
+parameter counts (including the unused learned position table) are reported in
+`research_state/stage2b-validation/mps-correctness.json`. These are near-matched
+parameter budgets and equal tokens, not equal FLOPs or elapsed time.
+
+Initialization remains PyTorch Linear's fan-in initialization for all projections,
+with no extra gate multiplier. The existing muP readout and hidden-bias conventions
+remain. Added/removed matrices and biases change RNG consumption: paired seeds do
+NOT imply identical initial tensors across architectures. No transplant of shared
+weights is used. Gate multiplication changes activation statistics; finite-gradient
+checks do not prove identical signal propagation or optimal learning-rate transfer.
+
+The explicit `swiglu_21_8` optimizer contract permits only two-layer dense MHA,
+base64, widths64/128/256 and head dimension32, without a hidden_dim override.
+Every hidden FFN matrix uses Muon; embeddings/readout/vectors retain AdamW.
+Within this fixed aspect ratio, hidden LR scales as1/sqrt(d/64) and the Muon
+RMS-adjustment factor .2*sqrt(max(rows,cols)) scales as sqrt(d/64), so their product
+is width-independent for each matrix type. The base factor differs from dense4x;
+that difference is not silently normalized away. Equal bounded LR screens help
+compare recipes, but do not prove optimality or architecture-invariant updates.
+Independent decay .00006 and clipping1 remain unchanged. No depth/expert rule is
+inferred. Unsupported shapes, policies and architectures remain rejected.
+
+Before launch: focused gradient/causality/count/scaling/checkpoint-resume tests,
+repository tests, and six short actual MPS train/checkpoint-evaluation checks must
+pass. Short checks are correctness evidence only. Freeze a new plan and complete
+shared-bank snapshot from clean committed source. Execute through
+`python -m src.research.gated_study --plan PLAN --output NEW_RUN --allow-training`.
+Expected quality and runtime differences are unquantified; report measured CE,
+training time and process RSS, all failed trials and all transfer reversals.

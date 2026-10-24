@@ -70,10 +70,16 @@ def build_optimizer(model, training):
     mup = getattr(model.cfg, 'parameterization', 'sp') == 'mup'
     muon = opts['optimizer'] == 'muon'
     if mup or muon:
-        if (model.cfg.attn_type != 'mha' or model.cfg.mlp_type != 'dense'
-                or getattr(model.cfg, 'ffn', 'gelu') not in {'gelu', 'silu'}
-                or getattr(model.cfg, 'hidden_dim', 4 * model.cfg.dim) != 4 * model.cfg.dim):
-            raise ValueError('Optimizer width study supports dense GELU/SiLU MHA with hidden_dim=4*dim only')
+        cfg = model.cfg
+        policy = getattr(cfg, 'ffn_width_policy', 'dense_4x')
+        dense = (policy == 'dense_4x' and getattr(cfg, 'ffn', 'gelu') in {'gelu', 'silu'}
+                 and getattr(cfg, 'hidden_dim', 4 * cfg.dim) == 4 * cfg.dim)
+        gated = (policy == 'swiglu_21_8' and getattr(cfg, 'ffn', 'gelu') == 'swiglu'
+                 and cfg.dim in {64,128,256} and getattr(cfg, 'base_width',64) == 64
+                 and cfg.n_layers == 2 and cfg.n_heads == cfg.dim // 32
+                 and not hasattr(cfg, 'hidden_dim') and getattr(cfg, 'ffn_bias',False) is False)
+        if cfg.attn_type != 'mha' or cfg.mlp_type != 'dense' or not (dense or gated):
+            raise ValueError('Optimizer width study supports dense GELU/SiLU 4x MHA or explicit swiglu_21_8 contract only')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:
         return torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=wd)

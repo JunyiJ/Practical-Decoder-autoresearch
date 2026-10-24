@@ -482,6 +482,24 @@ Evidence: `research_runs/architecture-stage2a-001/{plan,selection,report,review}
 Next is a separately preregistered gated-FFN round, after parameter-budget,
 bias/initialization, optimizer-aspect-ratio and execution checks. Stage1 stays stopped.
 
+### Stage 2B: gated FFNs, with explicit budget and scaling controls
+
+The next round compares bias-free dense SiLU with bias-free SwiGLU, retaining the
+original GELU control. Dense hidden widths are256/512/1024; SwiGLU widths are
+168/336/672. Its three projection matrices contain1.5625% fewer FFN weights than
+the dense comparator's two. Total model counts are115712/428032/1642496 for
+bias-free dense SiLU and114688/423936/1626112 for SwiGLU, versus the fixed GELU
+control's116352/429312/1645056. The unused learned-position table is included.
+
+Both new families receive LR.0015/.002/.0025 and fresh development seeds77/88/99.
+There are21 local and18 transfer trials; a SwiGLU replacement must beat BOTH
+comparators at width64 under the frozen mean/all-seed rule. Equal tokens and
+near-matched parameters do not mean equal compute. Removing biases and changing
+matrix shapes changes initialization draws; paired seeds do not give identical
+initial weights. Six three-update MPS/checkpoint checks passed, but establish only
+correct execution, not quality. The [round2B protocol](ARCHITECTURE_STAGE2.md)
+explains the fixed21/8 aspect ratio and its narrowly supported width contract.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).
