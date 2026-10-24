@@ -117,7 +117,11 @@ def summarize(plan,state):
 
 
 def run(plan,output,*,suite_builder=suite_spec,job_builder=local_jobs,
-        selection_builder=freeze_selection,report_builder=summarize):
+        selection_builder=freeze_selection,report_builder=summarize,
+        launcher=None,result_adapter=None,completion_jobs=None):
+    launch = _launch if launcher is None else launcher
+    initial_jobs = list(job_builder(plan))
+    initial_keys = set(initial_jobs)
     output=Path(output).resolve(); output.mkdir(parents=True,exist_ok=True)
     with session_lock(output) as lock_fd:
         path=output/'state.json'
@@ -148,13 +152,13 @@ def run(plan,output,*,suite_builder=suite_spec,job_builder=local_jobs,
             _verify_checkpoints(state['records'],output)
             directory=output/'trials'/tid; directory.mkdir(parents=True,exist_ok=False)
             row={'family':family,'lr':lr,'width':width,'seed':seed,'trial_id':tid,
-                 'arm':'candidate','stage':'local' if width==64 else 'transfer',
+                 'arm':'candidate','stage':('local' if job in initial_keys else 'confirmation') if completion_jobs else ('local' if width==64 else 'transfer'),
                  'target':f'width-{width}','n_heads':width//plan.get('head_dimensions',{}).get(family,32),'status':'running'}
             request=_request(spec,row,directory); atomic_json(directory/'request.json',request)
             state['records'].append(row); allowance=min(remaining,plan['trial_seconds']); save(allowance)
             before=time.monotonic()
             try:
-                status,error=_launch(directory/'request.json',output,allowance,plan['max_disk_mb'],lock_fd,root=plan['source_root'])
+                status,error=launch(directory/'request.json',output,allowance,plan['max_disk_mb'],lock_fd,root=plan['source_root'])
                 row.update(status=status,error=error)
                 if _fingerprint(spec)!=contract: raise ValueError('Evidence changed during trial')
                 if status!='completed': raise RuntimeError(f'{tid}: {error}')
@@ -165,13 +169,15 @@ def run(plan,output,*,suite_builder=suite_spec,job_builder=local_jobs,
                     'cpu_threads':request['cpu_threads'],'requested_device':cfg['training']['device']}:
                     raise ValueError('Worker runtime changed')
                 row.update(checked)
+                if result_adapter is not None:
+                    row.update(result_adapter(raw, row, request, directory))
             except BaseException as exc:
                 row.update(status='failed',error=str(exc)); raise
             finally:
                 row['duration_seconds']=time.monotonic()-before; save()
         try:
-            for job in job_builder(plan): trial(job)
-            local=[r for r in state['records'] if r['width']==64]
+            for job in initial_jobs: trial(job)
+            local=[r for r in state['records'] if (r['family'],r['lr'],r['width'],r['seed']) in initial_keys]
             selected=selection_builder(plan,local)
             if state['selection'] is None:
                 state['selection']=selected
@@ -180,12 +186,15 @@ def run(plan,output,*,suite_builder=suite_spec,job_builder=local_jobs,
                 save()
             elif state['selection']!=selected or json.loads((output/'selection.json').read_text())!=selected:
                 raise ValueError('Frozen small-width selection changed')
-            for width in plan['widths'][1:]:
-                for seed_index,seed in enumerate(plan['seeds']):
-                    families=list(plan['families'])
-                    if seed_index % 2: families.reverse()
-                    for family in families:
-                        trial((family,state['selection']['choices'][family]['lr'],width,seed))
+            if completion_jobs is not None:
+                for job in completion_jobs(plan,state['selection']): trial(tuple(job))
+            else:
+                for width in plan['widths'][1:]:
+                    for seed_index,seed in enumerate(plan['seeds']):
+                        families=list(plan['families'])
+                        if seed_index % 2: families.reverse()
+                        for family in families:
+                            trial((family,state['selection']['choices'][family]['lr'],width,seed))
             _verify_checkpoints(state['records'],output)
             atomic_json(output/'report.json',report_builder(plan,state))
             state['status']='completed'

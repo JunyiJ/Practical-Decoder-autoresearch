@@ -34,6 +34,14 @@ def _get_batch(loader, split):
     if split not in loader.splits:
         raise ValueError(f"split must be one of {tuple(loader.splits)}")
     data = loader.splits[split]
+    if split == 'train' and getattr(loader, 'batch_layout', 'independent') == 'paired_blocks512':
+        max_start = len(data) - 512
+        if max_start <= 0:
+            raise ValueError('Training split too small for paired 512-token blocks')
+        starts = torch.randint(max_start, (2,), generator=loader.generators[split])
+        x = torch.stack([data[i:i+512] for i in starts]).reshape(loader.batch_size, loader.block_size)
+        y = torch.stack([data[i+1:i+513] for i in starts]).reshape(loader.batch_size, loader.block_size)
+        return x.to(loader.device), y.to(loader.device)
     max_start = len(data) - loader.block_size
     if max_start <= 0:
         raise ValueError(f"Dataset split {split!r} is too small for the configured block_size")
@@ -45,7 +53,12 @@ def _get_batch(loader, split):
 
 class TinyDataLoader:
     def __init__(self, data_path, batch_size, block_size, device, seed=0,
-                 train_fraction=.9, val_fraction=.1, eval_seed=None):
+                 train_fraction=.9, val_fraction=.1, eval_seed=None, batch_layout='independent'):
+        if batch_layout not in {'independent', 'paired_blocks512'}:
+            raise ValueError('Unknown batch_layout')
+        if batch_layout == 'paired_blocks512' and (block_size not in {128,256,512} or batch_size*block_size != 1024):
+            raise ValueError('paired_blocks512 requires context128/256/512 and1024 targets/update')
+        self.batch_layout = batch_layout
         with open(data_path, 'r', encoding='utf-8') as f:
             text = f.read()
 
@@ -99,5 +112,4 @@ class TextDataset(Dataset):
         if isinstance(ids, torch.Tensor):
             ids = ids.tolist()
         return self.enc.decode(ids)
-
 

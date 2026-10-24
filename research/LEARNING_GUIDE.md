@@ -980,6 +980,38 @@ its missing uncertainty/benefit acceptance rules or reopen historical selection.
 
 Evidence: [plan](../research_runs/inference-efficiency-001/plan.json), [report](../research_runs/inference-efficiency-001/report.json), [review](../research_runs/inference-efficiency-001/review.json).
 
+### Prospective depth, attention and context interactions
+
+The next bounded round uses a complete 2 × 2 × 2 design: two/four layers,
+MHA/GQA, and training context128/512. Each update contains the same1,024 target
+positions across contexts: two sampled512-token chunks are split into shorter
+examples for context128. This removes a training-text mismatch while deliberately
+changing available context. The new sampler changes example correlations, so all
+controls are fresh and historical results are not pooled with this round.
+
+Eight width64 LR screens use two development seeds. Their choices are frozen
+before three fresh confirmation seeds at widths64 and256. Identical selected and
+fixed reference recipes share a checkpoint by a prospective alias rule. The
+finite budget is102–114 trials, each3,000 updates, with an eight-hour/4-GiB cap.
+The primary score covers every validation target at common context128; native
+context scoring is secondary. Context256 and the separate batch-size study remain
+bounded follow-ups. No MoE is launched.
+
+GQA quality eligibility uses the accepted+.01 CE ceiling versus matched-depth/
+context MHA: mean, every paired seed, and each conditional text-bootstrap upper
+bound must pass. This does not prove population non-inferiority or automatically
+replace the historical quality incumbent; deployment requires matched inference
+measurement for the new setting. Screening contrasts at common LR and confirmation
+contrasts between separately tuned recipes are labeled separately.
+
+The implementation passed608 tests, serial MPS short training/checkpoint/full-
+validation checks, and the isolated worker check. These checks establish correctness,
+not new quality findings. Short-pilot extrapolation gives about5.9 hours and1.2 GiB
+including checkpoint margin; these estimates do not relax the hard caps. The source
+is isolated from concurrent human GatedMLA edits. See
+[the protocol](CONTEXT_INTERACTION_PROTOCOL.md) for seeds, limits, scaling, aliases,
+uncertainty and remaining inference requirements.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).

@@ -86,7 +86,10 @@ def build_optimizer(model, training):
                       or (cfg.n_layers == 4 and getattr(cfg, 'depth_width_policy', None) == 'depth4_unscaled'
                           and (mla or (cfg.attn_type == 'mha' and cfg.n_heads == cfg.dim // 32
                           and getattr(cfg, 'attention_width_policy', 'mha_head32') == 'mha_head32'))
-                          and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups')))
+                          and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups'))
+                      or (cfg.n_layers == 4 and getattr(cfg, 'depth_width_policy', None) == 'depth4_gqa_unscaled'
+                          and cfg.attn_type == 'gqa' and cfg.n_heads == cfg.dim // 32
+                          and getattr(cfg, 'attention_width_policy', None) == 'gqa_half_head32'))
                  and ((getattr(cfg, 'attention_width_policy', 'mha_head32') == 'mha_head32' and cfg.n_heads == cfg.dim // 32)
                       or (getattr(cfg, 'attention_width_policy', None) == 'mha_head16' and cfg.n_heads == cfg.dim // 16)
                       or (getattr(cfg, 'attention_width_policy', None) == 'gqa_half_head32' and cfg.n_heads == cfg.dim // 32)

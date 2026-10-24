@@ -165,11 +165,16 @@ def validate_suite(spec: dict) -> dict:
             raise ValueError("dropout must be < 1")
         if model.get("rope", 0) == 1 and any(t["width"] // t["n_heads"] % 2 for t in targets):
             raise ValueError("RoPE requires an even head dimension")
-        unknown = set(train) - SHARED_TRAINING - TUNABLE_TRAINING - RUNTIME_TRAINING
+        unknown = set(train) - SHARED_TRAINING - TUNABLE_TRAINING - RUNTIME_TRAINING - {'batch_layout'}
         if unknown:
             raise ValueError(f"Unsupported training fields: {sorted(unknown)}")
         for key in SHARED_TRAINING - {"device"}:
             _number(train.get(key), f"training.{key}", integer=True)
+        if train.get('batch_layout', 'independent') not in {'independent', 'paired_blocks512'}:
+            raise ValueError('Unsupported training.batch_layout')
+        if train.get('batch_layout') == 'paired_blocks512' and (
+                model['block_size'] not in {128,256,512} or train['batch_size']*model['block_size'] != 1024):
+            raise ValueError('paired_blocks512 requires context128/256/512 and1024 targets/update')
         if not isinstance(train.get("device"), str) or not re.fullmatch(r"cpu|mps|cuda(?::[0-9]+)?", train["device"]):
             raise ValueError("Device must be cpu, mps, cuda or cuda:N")
         train.setdefault("weight_decay", 0.0)
@@ -193,6 +198,8 @@ def validate_suite(spec: dict) -> dict:
         raise ValueError("Both arms must use identical data, splits, tokenizer and context length")
     if any(base["training"][key] != candidate["training"][key] for key in SHARED_TRAINING):
         raise ValueError("Both arms must use identical token budgets, evaluation settings, threads and device")
+    if base['training'].get('batch_layout', 'independent') != candidate['training'].get('batch_layout', 'independent'):
+        raise ValueError('Both arms must use identical batch layout')
     digest(spec)  # Reject non-JSON or NaN model config values before recording.
     return spec
 
@@ -349,11 +356,11 @@ def _report(state):
                         "No paired score from a failed, missing or incomplete trial is treated as evidence."]}
 
 
-def _launch(request_path, output, timeout, disk_limit, lock_fd, *, root):
+def _launch(request_path, output, timeout, disk_limit, lock_fd, *, root, bootstrap=WORKER_BOOTSTRAP):
     started = time.monotonic()
     # Inherit an advisory lock so a surviving child prevents a competing resume.
     with (request_path.parent / "worker.log").open("w") as log:
-        process = subprocess.Popen([sys.executable, "-c", WORKER_BOOTSTRAP, "--request", str(request_path)],
+        process = subprocess.Popen([sys.executable, "-c", bootstrap, "--request", str(request_path)],
                                    cwd=root, stdout=log, stderr=subprocess.STDOUT,
                                    start_new_session=True, pass_fds=(lock_fd,))
         try:

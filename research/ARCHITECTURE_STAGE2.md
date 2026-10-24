@@ -781,3 +781,11 @@ The24-pair saved-checkpoint inference diagnostic is complete and reviewed.
 See [measured inference tradeoffs](INFERENCE_EFFICIENCY_RESULTS.md). Cache savings
 and timing are separate observations; historical selections remain frozen.
 No training or test access occurred.
+
+## Next bounded interaction protocol
+
+See [depth, GQA and context interactions](CONTEXT_INTERACTION_PROTOCOL.md).
+Fresh paired-target controls, screening/confirmation seed separation and shared
+reference aliases address interactions without reopening historical selections.
+The accepted+.01 quality ceiling is an operational eligibility rule; matched new
+inference evidence is still required before adoption.

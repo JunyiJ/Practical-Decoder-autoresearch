@@ -172,12 +172,14 @@ def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
         train_fraction=getattr(cfg.data, 'train_fraction', .9),
         val_fraction=getattr(cfg.data, 'val_fraction', .1),
         eval_seed=getattr(cfg.training, 'eval_seed', seed + 1),
+        batch_layout=getattr(cfg.training, 'batch_layout', 'independent'),
     )
 
 
 def _training_contract(cfg: DictConfig, device: str, loader: TinyDataLoader) -> dict:
     options = optimizer_options(cfg.training)
     return {
+        **({'batch_layout': loader.batch_layout} if getattr(loader, 'batch_layout', 'independent') != 'independent' else {}),
         **({'optimizer_contract': options} if options != {'optimizer': 'adamw', 'decay_mode': 'conventional'} or getattr(cfg.model, 'parameterization', 'sp') != 'sp' else {}),
         'model': OmegaConf.to_container(cfg.model, resolve=True),
         'data_sha256': hashlib.sha256(Path(to_absolute_path(cfg.data.path)).read_bytes()).hexdigest(),
