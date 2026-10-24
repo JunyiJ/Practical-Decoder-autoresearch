@@ -1,6 +1,6 @@
-# Saved-checkpoint inference efficiency diagnostic (draft)
+# Saved-checkpoint inference efficiency diagnostic
 
-Status: protocol preparation, not a frozen run or adoption decision. Human
+Status: bounded diagnostic protocol; launch requires the frozen JSON plan. Human
 accepted +0.01 CE nats/token as the quality-loss ceiling. Historical architecture
 selections and the completed full-validation audit remain closed. No training,
 optimizer resume, checkpoint rewrite or held-out test access is needed here.
@@ -22,7 +22,7 @@ teacher-forced continuation tokens, so model outputs cannot change the workload.
 No quality claim follows from these timing inputs. A future long-context study
 must train fresh models and establish its own workload contract.
 
-Proposed measurement loop: three unscored warmups per model and nine measured
+Measurement loop: three unscored warmups per model and nine measured
 paired repetitions, alternating reference-first and candidate-first. Both models
 may be resident to allow alternation; report that fact and do not interpret pooled
 allocator readings as isolated model memory. Time synchronized prefill separately
@@ -51,11 +51,10 @@ in-memory adapter; saved bytes remain unchanged.
 
 Before freezing: focused and full tests, actual serial MPS correctness pilots,
 checkpoint/source/corpus/runtime/full-knowledge hashes, reviewed clean committed
-and pushed source. Proposed hard caps:120 seconds per paired workload, one hour
+and pushed source. Hard caps:120 seconds per paired workload, one hour
 for the round,512 MiB output, one worker, first failure stops, no automatic retry.
 A uniquely named readonly plan must define the exact panel, order and raw result
-contract; resource limits are not permission to extend the panel. Do not launch
-from this Markdown draft alone.
+contract; resource limits are not permission to extend the panel. Launch only from the verified readonly JSON plan, not this Markdown alone.
 
 Initially report descriptive efficiency evidence. For the subsequent prospective
 adoption protocol, use the human's +.01 quality ceiling and a predeclared meaningful
@@ -80,10 +79,26 @@ missing field, while direct cache construction defaulted to all query heads.
 The repair shares the attention resolver with the cache and rejects an explicit
 cache head count inconsistent with attention. It preserves trained parameter
 shapes and does not change historical training results. The standalone comparison
-loader must also use the existing historical RoPE weight adapter.
+loader now uses the existing historical RoPE weight adapter.
 
 Validation of the repair:570 project tests and nine serial saved-weight MPS
 checks passed; maximum cached/full-logit error8.11e-6. Initial unscoped pytest
 collected archived test copies and failed; explicit `pytest tests` resolved
-collection without touching historical evidence. Timing protocol implementation
-and its own pilot remain outstanding.
+collection without touching historical evidence. The timing implementation is `src.research.inference_bench`; its focused tests
+cover paired ratios, cache accounting, result tampering and fixed panel selection.
+The actual MPS pilot is recorded separately before freezing.
+
+Numerical correctness tolerance is absolute1e-4 and relative2e-5 for FP32
+MPS cached/full logits. Raw maximum absolute errors are retained. Timing
+repetitions retain both models resident and run with gradients disabled. Decode
+throughput counts processed teacher-forced continuation tokens; token sampling,
+network/server overhead and end-to-end time to first token are outside scope.
+The interval of decode positions is [prompt, prompt+decode), giving exactly
+32 or64 single-token forward calls per repetition.
+
+Prelaunch validation:583 project tests passed. The two width256/batch8/64+64
+MPS pilots completed in6.16 and7.51 wall seconds respectively (GQA/MHA and
+MLA/MHA), with all cached/full checks passing and immutable checkpoint hashes.
+Pilot timing samples are excluded from the diagnostic report. The120-second
+per-job bound leaves substantial headroom in these feasibility checks; no runtime
+guarantee is inferred for another machine or workload.
