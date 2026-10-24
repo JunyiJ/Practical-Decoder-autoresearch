@@ -257,6 +257,16 @@ The [synthetic MPS diagnostic record](../research_state/optimizer-checks-2026102
 
 Read the [exact protocol](OPTIMIZER_TRANSFER.md) and [study driver](../src/research/optimizer_study.py). Correctness validation currently includes 438 passing repository tests and finite synthetic MPS checks for both optimizers and parameterizations at all three widths. Synthetic checks are separate from the quality measurements in this round.
 
+**First MLE ablation after the optimizer study:** removing independent decay from the Muon μP recipe did not improve quality. All 18 paired training trials completed; the only changed setting was decay .00006 → 0.
+
+| Width | Decay .00006 mean CE | Zero-decay mean CE | Zero minus baseline |
+| --- | ---: | ---: | ---: |
+| 64 | 1.646262 | 1.649774 | +.003513 |
+| 128 | 1.559252 | 1.562944 | +.003692 |
+| 256 | 1.523766 | 1.530401 | +.006635 |
+
+Positive differences mean worse loss. All three seeds worsened at widths 64 and 256; two worsened at width 128. The frozen width-64 choice retained the baseline before the larger results arrived. Because the candidate never won locally, the controller labels overall transfer **not applicable**; larger-width comparisons are diagnostic. Width-256 throughput improved about .96% while quality worsened, and process peak RSS stayed approximately unchanged. This is a conditional result for this recipe and budget, not proof that decay always helps or that .00006 is optimal. Four evaluator learnings entered the shared bank, and the next iteration continued automatically. [Evidence](../research_runs/continuous-20261023-005/iteration-001/evidence.json) · [Interpretation and limitations](../research_runs/continuous-20261023-005/iteration-001/learnings.json).
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).
