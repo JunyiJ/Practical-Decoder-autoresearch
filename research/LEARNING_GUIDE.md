@@ -665,7 +665,7 @@ The most promising incumbent remains bias-free SwiGLU 21/8, MHA head32,
 Muon/AdamW+muP, LR .0025 and independent decay .00006. Next is a separately
 reviewed depth comparison; width scaling alone does not validate depth scaling.
 
-### Next controlled comparison: adding transformer layers
+### Stage 2E design: adding transformer layers
 
 Stage 2E compares two and four SwiGLU/MHA layers at widths 64/128/256. Each block
 keeps the same attention, FFN, normalization and residual coefficients. The
@@ -680,6 +680,56 @@ and fan-in initialization. Adding layers changes residual accumulation, readout
 RNG draws and the parameter set subject to clipping. Short correctness checks
 cannot predict full-horizon quality. See the [depth protocol](ARCHITECTURE_STAGE2.md)
 for the frozen selection rule, parameter calculation and resource limits.
+
+### Stage 2E measured conclusion: four layers win, with a resource cost
+
+All 48 preregistered trials completed and passed checkpoint-hash, saved layer/shape,
+parameter-count, request/result, source/corpus/runtime, full-bank snapshot,
+frozen-selection and aggregate verification. No training was rerun for review.
+Both tuned depths chose LR .0025 at the grid boundary; the grid is closed.
+
+| Recipe | LR | CE64 | CE128 | CE256 |
+|---|---:|---:|---:|---:|
+| Original two-layer GELU/MHA | .002 | 1.661662 | 1.580095 | 1.535058 |
+| Fixed two-layer SwiGLU/MHA | .0025 | 1.646487 | 1.559472 | 1.534609 |
+| Tuned two-layer SwiGLU/MHA | .0025 | 1.645470 | 1.561114 | 1.529471 |
+| Four-layer SwiGLU/MHA | .0025 | **1.583606** | **1.516719** | **1.506713** |
+
+Four layers passed the frozen width-64 rule against all three references.
+Its mean CE deltas versus the fixed SwiGLU incumbent were
+−.062881/−.042753/−.027896 at widths 64/128/256; versus tuned two layers they were
+−.061863/−.044395/−.022758. Every paired seed improved against every comparator
+at every tested width, and all mean differences passed −.005. Larger-width
+results support this frozen selection; they did not revise it.
+
+The gain uses more resources. Four-layer parameter counts are
+212736/814592/3185664, about 85.5%/92.2%/95.9% above two layers. Mean training
+seconds were 55.040/63.150/125.819 versus 33.421/54.142/67.025 for tuned two layers:
+**+64.69%/+16.64%/+87.72%**. These are measured timings, not a smooth scaling law
+or equal-compute comparison. Mean lifetime peak process RSS was
+472.93/475.14/481.46 MiB versus 471.74/472.38/475.28 MiB; RSS is not peak accelerator
+memory. No inference-speed or efficiency-optimum claim follows.
+
+The fixed and tuned two-layer arms selected the same recipe but differ on repeat:
+tuned-minus-fixed mean CE was −.001018/+.001642/−.005138. At width 256, seed 777
+alone differed by−.013150. Both references remain recorded; no exact numerical
+reproducibility or identified cause is claimed. The four-layer gain survives
+comparison with both. The fixed two-layer arm still had mixed width 256 support
+against original GELU, while its tuned repeat passed the rule there.
+
+Four-layer bias-free SwiGLU 21/8, MHA head32, Muon/AdamW with muP base64,
+LR .0025, independent decay .00006, clipping 1 and unscaled residual branches is
+now the most promising observed **quality** recipe in this development setting.
+The two-layer SwiGLU recipe remains a cheaper reference and original GELU is
+preserved. This is adaptive Shakespeare validation with seeds 777/888/999 and
+3000 updates, not independent held-out confirmation, a universal optimum,
+matched capacity, pure depth causality or validated infinite-depth muP.
+Stage 2E is closed. Future MoE/MLA work requires its own implementation,
+initialization, optimizer/scaling and finite parameter/runtime budget review.
+
+Evidence: [report](../research_runs/architecture-stage2e-001/report.json),
+[selection](../research_runs/architecture-stage2e-001/selection.json),
+[review](../research_runs/architecture-stage2e-001/review.json).
 
 ## 11 How to audit a claim yourself
 
