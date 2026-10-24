@@ -4,7 +4,7 @@
 
 This project asks a practical question: **can we find a useful training recipe cheaply at width 64, then carry it to widths 128 and 256 without retuning?** You will understand it best by following the chain from a character prediction, through a parameter update, to a controlled comparison. The aim is to be able to explain why an experiment was designed, reconstruct its result from the files, and identify what the result does not establish.
 
-The completed experiments already teach an important lesson: the recipe with the lowest small-model loss can fail at a larger width. Our new independent-decay, μP and Muon study is designed to investigate that problem. At this edition's cutoff, that study is running; its numerical conclusions are not yet available. The original MLE agent loop is deliberately paused after its fifth completed long-budget iteration.
+The completed experiments already teach an important lesson: the recipe with the lowest small-model loss can fail at a larger width. Our independent-decay, μP and Muon study has now completed all 99 trials. Muon with μP and independent decay improved every paired seed against the fresh reference at widths 64, 128 and 256. μP's additional benefit over standard Muon is less certain. The original MLE agent loop remains deliberately paused for one bounded follow-up of Adam's learning-rate boundary, then resumes from the measured findings.
 
 **Suggested route:** read sections 1–4 to understand pretraining, sections 5–8 to understand the optimizer changes, then sections 9–12 to practice reading the evidence. The exercises include answers so you can test your explanation before checking it.
 
@@ -202,9 +202,9 @@ The earlier 300-step work also found width-dependent reversals. Moving to 3,000 
 
 The controller preserves reports, failed attempts and evaluator recoveries. A previous interpretation failure was recovered from saved evidence rather than rerunning completed training. That is an operational repair, not a new independent experimental replication.
 
-## 10 The controlled round now running
+## 10 What the completed optimizer round teaches
 
-The new round has six experimental families plus a fresh reference:
+The completed round tested six experimental families plus a fresh reference:
 
 | Family | Optimizer | Parameterization | Decay |
 | --- | --- | --- | --- |
@@ -216,11 +216,36 @@ The new round has six experimental families plus a fresh reference:
 | F | Muon–AdamW | μP | Independent 0.00006 |
 | Reference | AdamW | SP | Zero, fixed LR 0.002 |
 
-A–F each screen base LRs 0.001, 0.002 and 0.003 at width 64 with the same three seeds and 3,000-step horizon. That is 54 local trials; the reference adds 3. Once those 57 trials finish, all six LR choices are frozen before any transfer result is observed. Each selected family and the reference then receive six larger-width runs, adding 42 trials. Total planned: **99 serial training trials**.
+A–F each screened base LRs 0.001, 0.002 and 0.003 at width 64 with the same three seeds and 3,000-step horizon. That is 54 local trials; the reference adds 3. After those 57 trials, all six LR choices were frozen before any transfer result was observed. Each selected family and the reference then received six larger-width runs, adding 42 trials. Total completed: **99 serial training trials**, with all checkpoint hashes, frozen selections, source/corpus hashes and report aggregates verified.
 
 This is deliberately different from the agent loop's 18-trial iteration. The controlled round compares predefined families and tunes them with the same small-width LR budget. It is not an evolutionary search and it does not launch research agents to change recipes mid-round.
 
 The design can test how these selected recipes perform and whether the μP/decay combination helps within the measured setup. It does not map the full large-width LR optimum because it does not sweep LR at larger widths. It also does not optimize the decay coefficient independently for each optimizer. A selected boundary LR is a reason to extend a future frozen grid, not evidence that the optimizer's best LR has been found.
+
+
+The final measured validation cross-entropy is below. Each cell averages three seeds at 3,000 updates; lower is better. These are **final-budget endpoints, not converged losses**.
+
+| Recipe | Selected base LR | Width 64 | Width 128 | Width 256 |
+| --- | ---: | ---: | ---: | ---: |
+| Adam SP, conventional decay | .003 | 1.697775 | 1.622245 | 1.591768 |
+| Adam μP, conventional decay | .003 | 1.697776 | 1.606847 | 1.569218 |
+| Adam SP, independent decay | .003 | 1.685782 | 1.610236 | 1.599959 |
+| Adam μP, independent decay | .003 | 1.685784 | 1.605934 | 1.572956 |
+| Muon SP, independent decay | .002 | 1.646208 | 1.562756 | 1.533617 |
+| Muon μP, independent decay | .002 | **1.646054** | **1.559346** | **1.523978** |
+| Fresh Adam SP, zero decay reference | .002 fixed | 1.693263 | 1.620936 | 1.584907 |
+
+**First learning: the Muon recipe is a useful measured starting point.** Its μP version improves mean CE relative to the fresh reference by 0.047208, 0.061590 and 0.060928 at widths 64, 128 and 256. Every paired seed improves at every width. This passes the declared practical support rule; it is not a statistical significance test. The family LR was chosen from width 64 before transfer. The tiny base-width difference between SP and μP is not evidence of a meaningful μP advantage: they are theoretically equivalent there, with small numerical differences in execution.
+
+**Second learning: separate “Muon works here” from “μP adds a robust gain to Muon.”** At width 256, Muon μP minus Muon SP is −0.009638 mean CE, but the three paired differences are +0.000074, −0.011491 and −0.017498. At width 128 the mean is −0.003410, with two positive pairs. Thus the average favors μP, while a consistent incremental gain is not established. For Adam at width 256, μP improves every pair relative to SP under both tested decay modes: means −0.022550 with conventional decay and −0.027003 with independent decay. These are package comparisons involving initialization, output scaling and parameter-group learning rates. Conventional decay also changes with group LR, so that contrast does not isolate a pure parameterization mechanism.
+
+**Third learning: independent decay is a control mechanism, not an automatic quality improvement.** It improves Adam's small-width mean under this coefficient choice. At width 256, however, conventional Adam μP scores 1.569218 versus independent Adam μP's 1.572956. Fixing shrinkage across LR changes makes an intervention easier to interpret; it does not prove that the chosen shrinkage is optimal.
+
+**Resource tradeoff:** Muon μP takes mean training times of 33.91 / 51.91 / 66.11 seconds across the three widths; the fresh Adam reference takes 31.92 / 48.44 / 66.17 seconds. Those observed changes are approximately +6.3%, +7.2%, and −0.1%. Mean process peak RSS is about 473 / 474 / 477 MiB versus 471 / 471 / 473 MiB. These are this Mac's measurements, not isolated causal throughput estimates, total unified-memory use, or compute-matched comparisons.
+
+**Why one more bounded round?** Every Adam family selected .003, the upper edge of the original grid. Before attributing the remaining gap to optimizer choice, a separately frozen follow-up tests Adam μP with conventional and independent decay at .002, .004 and .006, plus the fixed .002 zero-decay reference. This is 21 width-64 trials followed by 18 frozen-choice transfer trials: **39 total**, again with seeds 11/22/33 and 3,000 updates. It directly probes above the original boundary while retaining a lower anchor. The original .003 measurements and selection remain unchanged. This is adaptive development, not fresh-seed confirmation; it is one finite follow-up, not an endless tuning loop. MLE resumes after reviewing it, carrying both successes and failures forward.
+
+Read the [full measured matrix](../research_runs/optimizer-transfer-001/report.json), [paired-contrast review](../research_runs/optimizer-transfer-001/review.json), and [best-observed recipe](../research_state/best-observed-config.json). The strongest recipe so far is provisional; there is no universal optimum claim. No held-out test data was consumed.
 
 The [synthetic MPS diagnostic record](../research_state/optimizer-checks-20261023.json) preserves the early-update checks.
 
@@ -234,7 +259,7 @@ Start from one `evidence.json` under `research_runs/continuous-20261023-004/iter
 
 Next open the corresponding `suite/trials/.../request.json`. This freezes the actual configuration, seed and output locations. `metrics.jsonl` gives the learning curve; `result.json` gives the endpoint and timing; `worker.log` shows the process output. A final checkpoint is hashed so later edits or substitution can be detected.
 
-For the optimizer round, `research_state/optimizer-study-plan.json` freezes source commit, source hash, corpus hash, grid, seeds and budgets. `research_runs/optimizer-transfer-001/selection.json` will record the small-width choices once screening completes. `report.json` appears only after the full round finishes. Do not treat its absence during training as a failure.
+For the optimizer round, `research_state/optimizer-study-plan.json` freezes source commit, source hash, corpus hash, grid, seeds and budgets. `research_runs/optimizer-transfer-001/selection.json` records the frozen small-width choices. Its completed `report.json` contains the full measured matrix. The follow-up has its own plan and output directory; it cannot revise the first round. During a running round, the final report appears only after all trials finish.
 
 The durable knowledge bank is under `research_state/knowledge/entries/`. Numerical results, literature claims and evaluator interpretations are separate records. An evaluator can propose a mechanism; it cannot override the measured selection criterion. When a claim changes, append a correction linked to the prior evidence rather than rewriting history.
 
