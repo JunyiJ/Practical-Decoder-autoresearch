@@ -1091,22 +1091,20 @@ The historical four-layer SwiGLU/MHA quality incumbent remains unchanged. Any fu
 
 Full per-seed/workload table: [context inference results](CONTEXT_INFERENCE_RESULTS.md). No completed job was rerun.
 
-### Context256 follow-up: a fresh middle-context comparison
+### Completed middle-context follow-up: local neutrality does not transfer
 
-The next bounded protocol compares four-layer SwiGLU/MHA at contexts128/256/512
-with batches8/4/2, identical flattened training targets and3000 updates. It uses
-fresh screening seeds2041/2042 and confirmation seeds2051/2052/2053, with all LR
-choices frozen at width64 before width256. Fresh original GELU, cheaper two-layer
-SwiGLU and fixed four-layer references keep the comparisons interpretable on the
-current source. Exact matching selected/fixed recipes alias prospectively.
+Context256 follow-up54/54 reviewed. Frozen LRs: context128 .005 boundary, contexts256/512 .0025 interior. Context256 versus128 is near-neutral under the frozen +.01 common-eval128 rule at width64 (+.001743, mixed seeds), but worse at256 (+.019001, every seed beyond+.01). Context512 is worse than128 at both widths (+.017166/+.029220, every seed beyond+.01) and worse than256 (+.015423/+.010219). Context128 .005 versus fixed .0025 is+.000427 at64 and-.005435 at256, mixed seeds at both widths. Historical quality incumbent retained; no grid extension, test access or completed-trial rerun.
 
-The cap is48–54 distinct trials, six hours and2GiB. A historical-duration proxy
-is2.38hours and639MiB of checkpoints with margin; those are planning estimates.
-All666 tests and four short serial MPS correctness pilots passed. No new quality
-finding exists yet. The test split stays closed, and historical selections stay
-frozen. Primary full-validation context128 and native-context scores answer
-different questions and will remain separate. See the
-[complete context256 protocol](CONTEXT256_PROTOCOL.md).
+| Recipe | LR | CE64 | CE256 | Training seconds64 | Training seconds256 |
+|---|---:|---:|---:|---:|---:|
+| d4_mha_c128 | 0.005 | 1.599709 | 1.510641 | 54.85 | 125.73 |
+| d4_mha_c256 | 0.0025 | 1.601452 | 1.529642 | 59.07 | 137.69 |
+| d4_mha_c512 | 0.0025 | 1.616875 | 1.539860 | 66.65 | 164.03 |
+| gelu_reference | 0.002 | 1.667809 | 1.546304 | 32.15 | 65.88 |
+| shallow_reference | 0.0025 | 1.663014 | 1.540596 | 32.93 | 66.96 |
+| deep_reference | 0.0025 | 1.599282 | 1.516076 | 54.82 | 125.62 |
+
+The primary score always uses evaluation context128; native256/512 scores change boundaries and history. Tuned context contrasts include LR choice. Conditional text uncertainty is not population seed uncertainty. Longer contexts also cost more training time, so this is not an inference-efficiency result. [Complete results and paired contrasts](CONTEXT256_RESULTS.md). Batch sensitivity remains a separate finite follow-up.
 
 ## 11 How to audit a claim yourself
 

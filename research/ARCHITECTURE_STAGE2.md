@@ -798,3 +798,8 @@ All114 trials are completed and reviewed; see [context interaction results](CONT
 ## Completed context inference follow-up
 
 All 36 paired workloads and 18 saved checkpoints are reviewed; see [context inference results](CONTEXT_INFERENCE_RESULTS.md). The three quality-eligible width 256 GQA settings halve actual KV-cache storage but none passes the prospective all-seed/workload latency guard. Two-layer/context128 fails upper-quartile variability; contexts512 also have median decode regressions above 5%. No automatic adoption or historical quality change. Preserve all raw timings and gates; do not rerun completed jobs or revise thresholds after results. Context256 and batch follow-ups remain separate bounded studies.
+
+
+## Completed context256 follow-up
+
+All 54 trials are completed and reviewed; see [context256 results](CONTEXT256_RESULTS.md). Context256 versus128 passes the prospective +.01 common-eval128 rule at width64 (+.001743, mixed seeds), but fails at256 (+.019001, every seed beyond+.01). Context512 loses to128 at both widths (+.017166/+.029220) and to256 (+.015423/+.010219). Context128 selected .005 boundary;256/512 selected .0025 interior. Tuned contrasts include LR choice; fixed .0025 screening contrasts are reported separately. Native scores use different boundaries/history. Historical four-layer MHA .0025 remains the quality incumbent. Keep all choices and evidence frozen; no completed-trial reruns or grid extension. Batch sensitivity requires a separate finite protocol, scaling and budget review; no MoE.
