@@ -1362,3 +1362,36 @@ Output-gating completed 36 physical trajectories and 72 correlated raw/H200 endp
 Learned gating improves every fresh width-256 seed versus static-half, but its mean gain versus unchanged attention is only 0.000689 CE and one seed worsens. At width 64 both gated arms have worse confirmation means than unchanged attention. The learned arm adds 6.9%/0.8% measured training time at widths 64/256. These results do not justify replacement. The static-half screening winner had already failed the every-seed rule, so the retention decision was frozen before confirmation.
 
 Continue with the separate SwiGLU-product RMSNorm/LayerNorm comparison. Keep unchanged attention and LR 0.005 as the common reference resolved from the completed review. Full model/trainer tests, serial MPS checks, resource review and a new finite registration must pass before launch.
+
+
+## Testing normalization inside the SwiGLU feed-forward branch
+
+The next experiment normalizes the product of the activated gate and value
+projection, immediately before the down projection. Compare unchanged features,
+RMS normalization and LayerNorm over each token's hidden features. Existing block
+and final norms remain the same. RMS normalization rescales by the feature root
+mean square; LayerNorm also subtracts the feature mean and adds a learned bias.
+Their difference therefore does not isolate centering alone. Both change feature
+and gradient magnitudes, so a quality difference would not by itself identify a
+mechanism.
+
+This is a limited adaptation motivated by NormFormer's FFN activation norm,
+not a replication of its full architecture. Our earlier block-norm and QK-norm
+experiments changed other locations. Their results do not settle this question.
+The new gain/bias vectors use AdamW at base LR, while hidden matrices retain the
+existing Muon width factors. Extra parameters and compute are reported explicitly.
+
+[The finite FFN hidden-normalization protocol](FFN_HIDDEN_NORM_PROTOCOL.md) uses
+the final reviewed unchanged-attention incumbent, LR 0.005, 3,000 updates,
+cooldown starting at 2,000 and H200 returned weights. Three arms receive equal
+bounded LR tuning at width 64, then fresh-seed confirmation at widths 64 and 256.
+The best eligible local arm is frozen before confirmation; no fallback to another
+arm or larger-width reselection is allowed. Prospective exact reference aliases
+yield 36 or 42 physical trajectories and 72 or 84 correlated raw/H200 outputs.
+
+All 1,485 source-matched CPU tests passed, including 14 actual training/resume
+cases. The independent primitive and full-FFN gradient checks, default/RNG
+compatibility, optimizer roles, causal cached decoding and strict checkpoint
+contracts are covered. Six actual serial MPS pilots and independent resource
+review remain prerequisites to a new unique registration. These correctness
+checks are not model-quality findings. The held-out test stays closed.

@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .ffn_hidden_norm import validate_ffn_hidden_norm_contract
+        validate_ffn_hidden_norm_contract(cfg)
         from ..attention.output_gate import validate_output_gate_contract
         validate_output_gate_contract(cfg)
         from ..attention.qk_norm import resolve_qk_norm, validate_qkrms_contract

@@ -11,6 +11,8 @@ from .mlp import SwiGLU
 class TransformerBlock(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        from .ffn_hidden_norm import validate_ffn_hidden_norm_contract, resolve_ffn_hidden_norm
+        validate_ffn_hidden_norm_contract(cfg)
         self.dim = cfg.dim
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
@@ -71,7 +73,8 @@ class TransformerBlock(nn.Module):
                     nn.Dropout(cfg.dropout)
                 )
             elif self.ffn == "swiglu":
-                self.mlp = SwiGLU(self.dim, self.hidden_dim, cfg.dropout)
+                self.mlp = SwiGLU(self.dim, self.hidden_dim, cfg.dropout,
+                                  hidden_norm=resolve_ffn_hidden_norm(cfg))
             else:
                 raise ValueError(f"cfg.ffn has unsupported type: {self.ffn}")
         elif cfg.mlp_type == "moe":

@@ -900,3 +900,16 @@ Output-gating completed 36 physical trajectories and 72 correlated raw/H200 endp
 Learned gating improves every fresh width-256 seed versus static-half, but its mean gain versus unchanged attention is only 0.000689 CE and one seed worsens. At width 64 both gated arms have worse confirmation means than unchanged attention. The learned arm adds 6.9%/0.8% measured training time at widths 64/256. These results do not justify replacement. The static-half screening winner had already failed the every-seed rule, so the retention decision was frozen before confirmation.
 
 Continue with the separate SwiGLU-product RMSNorm/LayerNorm comparison. Keep unchanged attention and LR 0.005 as the common reference resolved from the completed review. Full model/trainer tests, serial MPS checks, resource review and a new finite registration must pass before launch.
+
+
+### Separate FFN hidden-normalization protocol
+
+The [SwiGLU-product normalization protocol](FFN_HIDDEN_NORM_PROTOCOL.md) resolves
+unchanged standard MHA and reference LR 0.005 from the final output-gate review.
+Compare no normalization, RMSNorm and LayerNorm immediately before the down
+projection, with explicit vector optimizer/width/epsilon/bias and checkpoint
+contracts. The full 1,485-case CPU suite passed, including 14 actual trainer
+cases. Require six serial MPS pilots, bounded resource estimates, clean committed
+source and a unique finite registration before launch. This adaptation changes
+feature geometry and does not inherit an optimal LR-transfer guarantee. Preserve
+all completed studies and permanent stop 006; continue the human quality goal.
