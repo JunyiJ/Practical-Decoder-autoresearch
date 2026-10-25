@@ -1091,6 +1091,23 @@ The historical four-layer SwiGLU/MHA quality incumbent remains unchanged. Any fu
 
 Full per-seed/workload table: [context inference results](CONTEXT_INFERENCE_RESULTS.md). No completed job was rerun.
 
+### Context256 follow-up: a fresh middle-context comparison
+
+The next bounded protocol compares four-layer SwiGLU/MHA at contexts128/256/512
+with batches8/4/2, identical flattened training targets and3000 updates. It uses
+fresh screening seeds2041/2042 and confirmation seeds2051/2052/2053, with all LR
+choices frozen at width64 before width256. Fresh original GELU, cheaper two-layer
+SwiGLU and fixed four-layer references keep the comparisons interpretable on the
+current source. Exact matching selected/fixed recipes alias prospectively.
+
+The cap is48–54 distinct trials, six hours and2GiB. A historical-duration proxy
+is2.38hours and639MiB of checkpoints with margin; those are planning estimates.
+All666 tests and four short serial MPS correctness pilots passed. No new quality
+finding exists yet. The test split stays closed, and historical selections stay
+frozen. Primary full-validation context128 and native-context scores answer
+different questions and will remain separate. See the
+[complete context256 protocol](CONTEXT256_PROTOCOL.md).
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).
