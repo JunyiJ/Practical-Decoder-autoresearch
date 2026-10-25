@@ -803,3 +803,16 @@ All 36 paired workloads and 18 saved checkpoints are reviewed; see [context infe
 ## Completed context256 follow-up
 
 All 54 trials are completed and reviewed; see [context256 results](CONTEXT256_RESULTS.md). Context256 versus128 passes the prospective +.01 common-eval128 rule at width64 (+.001743, mixed seeds), but fails at256 (+.019001, every seed beyond+.01). Context512 loses to128 at both widths (+.017166/+.029220) and to256 (+.015423/+.010219). Context128 selected .005 boundary;256/512 selected .0025 interior. Tuned contrasts include LR choice; fixed .0025 screening contrasts are reported separately. Native scores use different boundaries/history. Historical four-layer MHA .0025 remains the quality incumbent. Keep all choices and evidence frozen; no completed-trial reruns or grid extension. Batch sensitivity requires a separate finite protocol, scaling and budget review; no MoE.
+
+
+## October25 renewed continuing quality objective (supersedes MoE deferral)
+
+The human instructed: “the goal is to improve the model quality, try anything you
+can to do it!!! don't stop before human interruption”. MoE and subsequent algorithm
+evolution are authorized; prior No MoE clauses and the earlier time expiry are
+superseded. Preserve permanent stop006 and every completed evidence contract.
+Finite source/scaling/resource-reviewed rounds continue until human interruption.
+The next round is [MoE versus active/total-capacity dense comparators](MOE_QUALITY_PROTOCOL.md).
+All controls are fresh, primary kimi stays separate, holdout remains closed, and
+pilot/test results do not constitute research quality evidence. On completion,
+audit and document findings, then prepare the next justified finite experiment.

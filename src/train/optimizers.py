@@ -95,11 +95,23 @@ def build_optimizer(model, training):
                       or (getattr(cfg, 'attention_width_policy', None) == 'gqa_half_head32' and cfg.n_heads == cfg.dim // 32)
                       or mla)
                  and not hasattr(cfg, 'hidden_dim') and getattr(cfg, 'ffn_bias',False) is False)
+        wide_dense = (cfg.mlp_type == 'dense' and policy == 'swiglu_21_4'
+            and getattr(cfg,'ffn',None) == 'swiglu' and cfg.dim in {64,128,256}
+            and getattr(cfg,'base_width',None) == 64 and cfg.n_layers == 4
+            and getattr(cfg,'depth_width_policy',None) == 'depth4_wide_unscaled'
+            and cfg.attn_type == 'mha' and cfg.n_heads == cfg.dim//32
+            and getattr(cfg,'attention_width_policy',None) == 'mha_head32'
+            and getattr(cfg,'ffn_bias',None) is False
+            and not any(hasattr(cfg,k) for k in ('hidden_dim','n_kv_heads','n_groups','moe')))
+        moe = cfg.mlp_type == 'moe'
+        if moe:
+            from ..moe.scaling import validate_moe_contract
+            validate_moe_contract(cfg)
         attention_policy = getattr(cfg, 'attention_width_policy', 'mha_head32')
         attention_ok = (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
             gated and cfg.attn_type == 'gqa' and attention_policy == 'gqa_half_head32'
             and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups')) or (gated and mla)
-        if not attention_ok or cfg.mlp_type != 'dense' or not (dense or gated):
+        if not attention_ok or not (moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense))):
             raise ValueError('Optimizer width study requires dense GELU/SiLU MHA or an explicit SwiGLU MHA/GQA/MLA width contract')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:
@@ -107,7 +119,11 @@ def build_optimizer(model, training):
     mult = model.width_mult if mup else 1.0
     adam, matrices = [], []
     for name, param in model.named_parameters():
-        hidden = name.startswith('transformer.h.') and param.ndim == 2
+        # Router output dimension is fixed at four, unlike expert hidden axes.
+        router = (getattr(model.cfg, 'mlp_type', 'dense') == 'moe'
+                  and getattr(getattr(model.cfg, 'moe', None), 'width_policy', None) == 'moe4_top2_half_readout'
+                  and name.endswith('.mlp.router.weight'))
+        hidden = name.startswith('transformer.h.') and param.ndim == 2 and not router
         scale = (1 / math.sqrt(mult) if muon else 1 / mult) if hidden else 1.0
         group = {'params': [param], 'lr': lr * scale, 'weight_decay': 0.0 if independent else wd,
                  'parameter_names': [name], 'width_lr_scale': scale}

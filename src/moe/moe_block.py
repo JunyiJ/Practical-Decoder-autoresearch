@@ -1,3 +1,4 @@
+import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,7 +10,13 @@ class MoEBlock(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.dim = cfg.dim
-        self.hidden_dim = getattr(cfg.moe, "hidden_dim", cfg.dim * 4)
+        self.router_width_mult = 1.0
+        if getattr(cfg.moe, 'width_policy', None) == 'moe4_top2_half_readout':
+            from .scaling import validate_moe_contract
+            self.hidden_dim = validate_moe_contract(cfg)
+            self.router_width_mult = cfg.dim / cfg.base_width
+        else:
+            self.hidden_dim = getattr(cfg.moe, "hidden_dim", cfg.dim * 4)
         self.shared_num_experts = getattr(cfg.moe, "shared_num_experts", 0)
         self.num_experts = getattr(cfg.moe, "num_experts", 4)
         self.top_k = getattr(cfg.moe, "top_k", 2)
@@ -20,6 +27,11 @@ class MoEBlock(nn.Module):
         if self.shared_num_experts < 0:
             raise ValueError("shared_num_experts must be >= 0")
         self.router = nn.Linear(self.dim, self.num_experts, bias=False)
+        # The fixed expert-count router is an output-like projection, not a
+        # hidden matrix with both axes scaling. Its Adam LR stays constant.
+        if self.router_width_mult != 1:
+            with torch.no_grad():
+                self.router.weight.mul_(math.sqrt(self.router_width_mult))
         self.ffn = getattr(cfg.moe, "ffn", "gelu")
         if self.ffn == "gelu":
             self.experts = nn.ModuleList([
@@ -58,7 +70,7 @@ class MoEBlock(nn.Module):
         b, s, d = x.shape
         x_flat = x.reshape(-1, d)
         final_output = torch.zeros_like(x_flat)
-        router_x = self.router(x_flat)
+        router_x = self.router(x_flat) / self.router_width_mult
         router_probs = F.softmax(router_x, dim=-1)
         top_k_values, top_k_indices = torch.topk(router_probs, self.top_k, dim=-1)
         top_k_probs = top_k_values / top_k_values.sum(dim=-1, keepdim=True)

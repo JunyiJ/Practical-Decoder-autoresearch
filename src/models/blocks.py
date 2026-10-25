@@ -45,6 +45,15 @@ class TransformerBlock(nn.Module):
                     or getattr(cfg, "ffn_bias", False) is not False):
                 raise ValueError("swiglu_21_8 requires bias-free SwiGLU, width multiple of64, no hidden_dim")
             self.hidden_dim = 21 * cfg.dim // 8
+        elif policy == "swiglu_21_4":
+            if (cfg.mlp_type != "dense" or getattr(cfg,"ffn",None) != "swiglu"
+                    or cfg.dim not in {64,128,256} or hasattr(cfg,"hidden_dim")
+                    or getattr(cfg,"ffn_bias",None) is not False):
+                raise ValueError("swiglu_21_4 requires explicit bias-free wide dense SwiGLU")
+            self.hidden_dim = 21 * cfg.dim // 4
+        elif policy == "moe_swiglu_21_16":
+            from ..moe.scaling import validate_moe_contract
+            self.hidden_dim = validate_moe_contract(cfg)
         elif policy == "dense_4x":
             self.hidden_dim = getattr(cfg, "hidden_dim", cfg.dim * 4)
         else:

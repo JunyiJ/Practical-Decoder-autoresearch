@@ -1166,3 +1166,36 @@ A practical notebook entry has five sentences: **hypothesis; frozen intervention
 5. Read [the weight-decay transfer study](https://arxiv.org/html/2510.19093v2) and [the matrix-optimizer transfer study](https://arxiv.org/html/2512.05620v1) as empirical arguments with specific setups. Ask which conditions match our fixed-token character-model experiment and which do not.
 
 You are ready to explain this project when you can trace one number in the results table back to its three final validation scores, derive the decay units, identify which parameter groups receive each optimizer, and state why a small-model winner can still fail the transfer test.
+
+
+## Continuing quality evolution: first MoE round
+
+On October25 the human renewed the goal: improve model quality through continuing
+algorithm research until interruption. This supersedes the earlier MoE deferral
+and authorization expiry. Completed rounds stay frozen; they are evidence for
+choosing new finite rounds rather than a reason to idle.
+
+The next experiment compares four-layer MHA with ordinary dense SwiGLU, twice-width
+SwiGLU, and four half-width SwiGLU experts with two selected per token. At widths64
+and256, MoE stores334,592 and5,221,376 parameters and activates205,568 and3,156,992
+per token, respectively, including the router. Ordinary dense stores/activates
+204,544 and3,152,896; wider dense stores/activates333,568 and5,217,280. This count
+calculation separates stored capacity from active weights; it does not predict
+measured speed or model quality.
+
+The fixed-four-output router uses an explicit output-like initialization/Adam
+scaling convention; expert/attention hidden matrices retain Muon width scaling.
+The auxiliary balancing coefficient is fixed at.01, and validation ranks pure CE.
+A dense oracle checks sparse forward/gradient correctness; CPU checkpoint
+continuation, causal prefixes, exact optimizer groups and serial MPS pilots test
+implementation. These are synthetic correctness/resource checks, not evidence
+that MoE improves language modeling or that its LR transfers optimally.
+
+The [finite MoE protocol](MOE_QUALITY_PROTOCOL.md) specifies18 width64 screens,
+independent LR choices, fresh confirmation at widths64/256, shared exact reference
+aliases, and at most54 trials. Quality conclusions await completed reviewed
+research. The historical quality incumbent and all past results are preserved.
+After this round, review the evidence and pursue the next justified quality
+experiment; promising directions include training schedules and token budgets,
+normalization/residual initialization, and further expert/routing designs. These
+are proposals, not currently frozen grids or claims of improvement.
