@@ -57,6 +57,9 @@ class HybridOptimizer:
             raise ValueError('Optimizer composition or independent decay changed')
         for opt, saved in zip(self.optimizers, state['optimizers']):
             opt.load_state_dict(saved)
+        # Child load_state_dict replaces group dictionaries. Scheduling and
+        # independent decay must observe the actual child optimizer groups.
+        self.param_groups = [g for opt in self.optimizers for g in opt.param_groups]
 
 
 def build_optimizer(model, training):

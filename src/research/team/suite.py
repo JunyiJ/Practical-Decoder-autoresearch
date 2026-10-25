@@ -165,9 +165,13 @@ def validate_suite(spec: dict) -> dict:
             raise ValueError("dropout must be < 1")
         if model.get("rope", 0) == 1 and any(t["width"] // t["n_heads"] % 2 for t in targets):
             raise ValueError("RoPE requires an even head dimension")
-        unknown = set(train) - SHARED_TRAINING - TUNABLE_TRAINING - RUNTIME_TRAINING - {'batch_layout'}
+        unknown = set(train) - SHARED_TRAINING - TUNABLE_TRAINING - RUNTIME_TRAINING - {'batch_layout', 'lr_schedule'}
         if unknown:
             raise ValueError(f"Unsupported training fields: {sorted(unknown)}")
+        if 'lr_schedule' in train:
+            from omegaconf import OmegaConf
+            from ...train.lr_schedule import schedule_contract
+            schedule_contract(OmegaConf.create(train))
         for key in SHARED_TRAINING - {"device"}:
             _number(train.get(key), f"training.{key}", integer=True)
         if train.get('batch_layout', 'independent') not in {'independent', 'paired_blocks512', 'paired_batch512'}:

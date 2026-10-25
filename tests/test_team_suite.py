@@ -45,6 +45,15 @@ def specification(tmp_path, monkeypatch):
     return spec
 
 
+def test_schedule_contract_validation(specification):
+    spec = copy.deepcopy(specification)
+    train = spec['candidate']['config']['training']
+    train['lr_schedule'] = {'kind': 'cosine', 'total_steps': 4, 'min_ratio': .1}
+    assert suite.validate_suite(spec)['candidate']['config']['training']['lr_schedule'] == train['lr_schedule']
+    train['lr_schedule']['total_steps'] = 5
+    with pytest.raises(ValueError, match='total_steps'): suite.validate_suite(spec)
+
+
 def fake_launcher(monkeypatch, *, deltas=None, fail=None, partial=None, mutate=None):
     calls = []
     deltas = deltas or {16: -.1, 32: -.05}

@@ -16,6 +16,7 @@ import torch
 from datetime import datetime
 from ..models.gpt import GPT
 from .optimizers import build_optimizer, optimizer_options
+from .lr_schedule import LearningRateSchedule, schedule_contract
 from ..utils.device import synchronize_device
 from ..data.loaders import TinyDataLoader, TextDataset
 from ..utils.checkpoint import (save_checkpoint, read_checkpoint, load_model_weights,
@@ -178,7 +179,9 @@ def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
 
 def _training_contract(cfg: DictConfig, device: str, loader: TinyDataLoader) -> dict:
     options = optimizer_options(cfg.training)
+    schedule = schedule_contract(cfg.training)
     return {
+        **({'lr_schedule': schedule} if schedule is not None else {}),
         **({'batch_layout': loader.batch_layout} if getattr(loader, 'batch_layout', 'independent') != 'independent' else {}),
         **({'optimizer_contract': options} if options != {'optimizer': 'adamw', 'decay_mode': 'conventional'} or getattr(cfg.model, 'parameterization', 'sp') != 'sp' else {}),
         'model': OmegaConf.to_container(cfg.model, resolve=True),
@@ -283,6 +286,8 @@ def run_training(cfg: DictConfig) -> dict:
     cfg.model.vocab_size = loader.vocab_size
     model = GPT(cfg.model).to(device)
     optimizer = build_optimizer(model, cfg.training)
+    # Capture configured base rates before loading any scheduled checkpoint.
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
     checkpoint_dir = to_absolute_path(cfg.training.checkpoint_dir) if cfg.training.checkpoint_dir else None
     checkpoint_every = cfg.training.checkpoint_every
     if checkpoint_dir:
@@ -342,6 +347,7 @@ def run_training(cfg: DictConfig) -> dict:
         grad_clip = float(getattr(cfg.training, "grad_clip", 0.0))
         if grad_clip > 0:
             torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip, error_if_nonfinite=True)
+        lr_multiplier = lr_schedule.apply(iter)
         optimizer.step()
         synchronize_device(device)
         iter_time = time.perf_counter() - iter_start
@@ -429,6 +435,10 @@ def run_training(cfg: DictConfig) -> dict:
                     log.info("MoE expert usage (layer %d): %s", layer_usage["layer_idx"], layer_usage_str)
 
             metric = {
+                **({'lr_multiplier': lr_multiplier,
+                    'base_learning_rate': float(cfg.training.learning_rate),
+                    'scheduled_learning_rate': float(cfg.training.learning_rate) * lr_multiplier}
+                   if lr_multiplier is not None else {}),
                 "step": iter,
                 "tokens_processed": (iter + 1) * cfg.training.batch_size * cfg.model.block_size,
                 "train_loss": float(loss.item()),

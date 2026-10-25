@@ -146,6 +146,33 @@ def validate_result(result: dict, request: dict, plan: dict, directory: Path) ->
                 or tokens != steps * plan["training"]["batch_size"] * plan["training"]["block_size"]):
             raise ValueError("Incomplete fixed-token trial; partial/best-checkpoint scores cannot rank")
         metric = final["val_ce_loss"]
+        if request['config']['training'].get('lr_schedule') is not None:
+            from omegaconf import OmegaConf
+            from ..train.lr_schedule import schedule_contract, multiplier
+            training = request['config']['training']
+            schedule = schedule_contract(OmegaConf.create(training))
+            metrics = result.get('metrics')
+            if not isinstance(metrics, list) or not metrics or metrics[-1] != final:
+                raise ValueError('Scheduled trial requires its complete metric records')
+            expected_steps=sorted(set(range(0,steps,training['eval_every']))|{steps-1})
+            if [row.get('step') for row in metrics]!=expected_steps:
+                raise ValueError('Scheduled trial has missing or extra metric updates')
+            previous = -1
+            for row in metrics:
+                step = row.get('step')
+                if type(step) is not int or not previous < step < steps:
+                    raise ValueError('Invalid scheduled metric update index')
+                previous = step
+                ratio = multiplier(schedule, step)
+                values = {'lr_multiplier': ratio,
+                          'base_learning_rate': training['learning_rate'],
+                          'scheduled_learning_rate': training['learning_rate'] * ratio}
+                for key, expected_value in values.items():
+                    actual = row.get(key)
+                    if (isinstance(actual, bool) or not isinstance(actual, (int, float))
+                            or not math.isfinite(actual)
+                            or not math.isclose(actual, expected_value, rel_tol=0, abs_tol=1e-12)):
+                        raise ValueError('Scheduled learning rate differs from frozen request')
         checkpoint = Path(result["final_checkpoint"]).resolve()
         if not checkpoint.is_relative_to(directory.resolve()) or not checkpoint.is_file():
             raise ValueError("Missing or out-of-trial final checkpoint")
