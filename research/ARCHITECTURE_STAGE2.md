@@ -816,3 +816,10 @@ The next round is [MoE versus active/total-capacity dense comparators](MOE_QUALI
 All controls are fresh, primary kimi stays separate, holdout remains closed, and
 pilot/test results do not constitute research quality evidence. On completion,
 audit and document findings, then prepare the next justified finite experiment.
+
+
+## Completed MoE quality001
+
+MoE quality001 completed and reviewed48/48. All three families selected LR.0025 inside the frozen grid. MoE was the width64 screen winner. Fresh confirmation MoE-minus-dense mean CE is -0.031764/+0.002608 at widths64/256. The frozen winner fails the complete adoption rule; the historical dense quality incumbent is retained. Wider dense and MoE use additional stored capacity; comparisons are equal-token recipes, not equal compute or pure routing effects. Test split stays closed.
+
+Wider dense improves every confirmation seed at both widths, but it was not the frozen screen winner; preserve this observation without post-hoc promotion. The next finite round compares learning-rate schedules on the retained dense incumbent, with fresh controls and its own source, scaling and resource checks. Later capacity/routing follow-ups may build on these findings. [Full MoE results](MOE_QUALITY_RESULTS.md). No completed study or permanent stop006 resumes. The continuing human quality goal stays active.

@@ -1168,34 +1168,16 @@ A practical notebook entry has five sentences: **hypothesis; frozen intervention
 You are ready to explain this project when you can trace one number in the results table back to its three final validation scores, derive the decay units, identify which parameter groups receive each optimizer, and state why a small-model winner can still fail the transfer test.
 
 
-## Continuing quality evolution: first MoE round
+## Completed MoE quality round
 
-On October25 the human renewed the goal: improve model quality through continuing
-algorithm research until interruption. This supersedes the earlier MoE deferral
-and authorization expiry. Completed rounds stay frozen; they are evidence for
-choosing new finite rounds rather than a reason to idle.
+MoE quality001 completed and reviewed48/48. All three families selected LR.0025 inside the frozen grid. MoE was the width64 screen winner. Fresh confirmation MoE-minus-dense mean CE is -0.031764/+0.002608 at widths64/256. The frozen winner fails the complete adoption rule; the historical dense quality incumbent is retained. Wider dense and MoE use additional stored capacity; comparisons are equal-token recipes, not equal compute or pure routing effects. Test split stays closed.
 
-The next experiment compares four-layer MHA with ordinary dense SwiGLU, twice-width
-SwiGLU, and four half-width SwiGLU experts with two selected per token. At widths64
-and256, MoE stores334,592 and5,221,376 parameters and activates205,568 and3,156,992
-per token, respectively, including the router. Ordinary dense stores/activates
-204,544 and3,152,896; wider dense stores/activates333,568 and5,217,280. This count
-calculation separates stored capacity from active weights; it does not predict
-measured speed or model quality.
+| Recipe | LR | CE64 | CE256 | Training seconds64 | Training seconds256 |
+|---|---:|---:|---:|---:|---:|
+| dense | 0.0025 | 1.600833 | 1.515562 | 54.16 | 126.28 |
+| dense_wide | 0.0025 | 1.572029 | 1.510540 | 59.07 | 176.43 |
+| moe4_top2 | 0.0025 | 1.569069 | 1.518170 | 136.76 | 225.66 |
+| gelu_reference | 0.002 | 1.675995 | 1.542497 | 31.61 | 65.90 |
+| shallow_reference | 0.0025 | 1.652372 | 1.531293 | 32.50 | 66.93 |
 
-The fixed-four-output router uses an explicit output-like initialization/Adam
-scaling convention; expert/attention hidden matrices retain Muon width scaling.
-The auxiliary balancing coefficient is fixed at.01, and validation ranks pure CE.
-A dense oracle checks sparse forward/gradient correctness; CPU checkpoint
-continuation, causal prefixes, exact optimizer groups and serial MPS pilots test
-implementation. These are synthetic correctness/resource checks, not evidence
-that MoE improves language modeling or that its LR transfers optimally.
-
-The [finite MoE protocol](MOE_QUALITY_PROTOCOL.md) specifies18 width64 screens,
-independent LR choices, fresh confirmation at widths64/256, shared exact reference
-aliases, and at most54 trials. Quality conclusions await completed reviewed
-research. The historical quality incumbent and all past results are preserved.
-After this round, review the evidence and pursue the next justified quality
-experiment; promising directions include training schedules and token budgets,
-normalization/residual initialization, and further expert/routing designs. These
-are proposals, not currently frozen grids or claims of improvement.
+MoE improves locally but fails width256 transfer. Wider dense remains a promising later candidate; the frozen screen winner is not revised. Equal tokens do not mean equal compute. [Complete MoE results and paired evidence](MOE_QUALITY_RESULTS.md).
