@@ -866,3 +866,11 @@ Continue with the separately prepared QK RMS normalization comparison. The final
 ### QK RMS finite protocol
 
 The [QK RMS protocol](QKNORM_QUALITY_PROTOCOL.md) resolves the retained 3,000-update/start-2,000/H200 recipe from the final horizon review. It compares standard and per-head Q/K RMS MHA with equal finite LR tuning, a winner frozen before fresh 64/256 confirmation, and exact prospective reference aliases. The complete CPU suite passed 1,116 cases. Actual serial MPS checks, resource gates, clean committed source and a new unique registration still govern launch; no quality gain is assumed. Continue the human quality objective after this round without reopening closed studies.
+
+
+## Completed QK normalization quality001
+
+QK normalization completed 24 physical training trajectories and 48 correlated raw/H200 endpoints, all independently reviewed. Both families selected LR 0.005 at the upper grid boundary. QK RMS screening improved mean CE by 0.004858576, short of the frozen >0.005 criterion; incumbent retention was frozen before confirmation. Fresh QK-minus-standard H200 mean deltas at widths 64/256 are -0.005274/+0.007981. The unchanged MHA, 3,000 updates, cooldown starting at 2,000, H200 incumbent remains; no grid extension or posthoc adoption.
+The fresh confirmation improves all three seeds at width 64 but worsens all three at width 256. The width-256 mean regression is +0.007981 CE, with positive conditional text intervals at all three block sizes. The width-64 mean gain is −0.005274, with negative intervals. This reinforces the need for width confirmation; normalization is not adopted.
+
+[Complete QK results](QKNORM_QUALITY_RESULTS.md). All24raw/24derived checkpoints and the entire report/bootstrap passed independent audit. Continue with the separately prepared three-arm MHA output-gate experiment after actualCPU/full-suite/serialMPS/resource checks and a fresh finite preregistration. Retain standard MHA,3,000updates/start2,000/H200 from this final decision. Keep all closed studies and permanent human stop006 closed.

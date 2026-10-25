@@ -1296,10 +1296,21 @@ The validation seed is reset before each logging evaluation: 30 batches × 8 exa
 Evidence: `research_state/horizon-validation/late-curve-diagnostic.json`; knowledge `kb_475b507e9ad05402787bcffe34e246b27c062295a299dfb5799f3b6e32a9da0e`.
 
 
-## Query/key RMS normalization as the next finite question
+## Query/key RMS normalization: the prospective question
 
 The horizon result retains the 3,000-update, start-2,000 cooldown recipe with H200 returned weights. The next comparison changes only the attention normalization contract: separate learned 32-element RMS gains for queries and keys, shared across heads and applied before RoPE. Values and the existing attention scale stay unchanged. This adds 256 parameters; vector gains use AdamW at the base learning rate, while hidden matrices retain their Muon width factors.
 
 [The QK normalization protocol](QKNORM_QUALITY_PROTOCOL.md) gives standard and normalized MHA equal tuning over peak learning rates 0.00125, 0.0025 and 0.005. Twelve width-64 screening trajectories freeze both learning rates and the only candidate eligible for adoption. Fresh confirmation uses seeds 2191, 2192 and 2193 at widths 64 and 256. Exact matching standard references may be prospectively aliased; the round contains 24 or 30 physical trajectories and 48 or 60 correlated raw/H200 outputs.
 
-The normalized candidate must beat both equally tuned standard MHA and the fixed incumbent. If normalization fails the local rule, an improved standard learning rate can be frozen instead; this decision is made before confirmation, never as a fallback after seeing larger-width results. Replacement requires the frozen mean-gain, every-seed and conditional-text-interval rules at both widths. All hypotheses remain untested for model quality until this new registered round produces evidence. The complete 1,116-case CPU suite passed; actual serial MPS correctness, resource checks and unique preregistration are required before launch. Pilot results are excluded from quality rankings.
+The normalized candidate must beat both equally tuned standard MHA and the fixed incumbent. If normalization fails the local rule, an improved standard learning rate can be frozen instead; this decision is made before confirmation, never as a fallback after seeing larger-width results. Replacement requires the frozen mean-gain, every-seed and conditional-text-interval rules at both widths. The complete 1,116-case CPU suite and four serial MPS correctness pilots passed before registration. Pilot results are excluded from quality rankings. The completed round and its independently reviewed findings follow below.
+
+
+## Completed QK normalization quality round
+
+QK normalization completed 24 physical training trajectories and 48 correlated raw/H200 endpoints, all independently reviewed. Both families selected LR 0.005 at the upper grid boundary. QK RMS screening improved mean CE by 0.004858576, short of the frozen >0.005 criterion; incumbent retention was frozen before confirmation. Fresh QK-minus-standard H200 mean deltas at widths 64/256 are -0.005274/+0.007981. The unchanged MHA, 3,000 updates, cooldown starting at 2,000, H200 incumbent remains; no grid extension or posthoc adoption.
+
+[Complete QK normalization results and costs](QKNORM_QUALITY_RESULTS.md). Adaptive validation; all 48 checkpoints and the complete report independently audited, with the holdout closed.
+
+The fresh confirmation improves all three seeds at width 64 but worsens all three at width 256. The width-256 mean regression is +0.007981 CE, with positive conditional text intervals at all three block sizes. The width-64 mean gain is −0.005274, with negative intervals. This reinforces the need for width confirmation; normalization is not adopted.
+
+The next finite hypothesis compares learned headwise attention-output gating with unchanged attention and a fixed-half amplitude control. It requires a final-QK-derived backbone, actual training/resume checks, the full project suite, six serial MPS pilots and a new source contract before launch.
