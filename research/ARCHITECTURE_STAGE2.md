@@ -874,3 +874,18 @@ QK normalization completed 24 physical training trajectories and 48 correlated r
 The fresh confirmation improves all three seeds at width 64 but worsens all three at width 256. The width-256 mean regression is +0.007981 CE, with positive conditional text intervals at all three block sizes. The width-64 mean gain is −0.005274, with negative intervals. This reinforces the need for width confirmation; normalization is not adopted.
 
 [Complete QK results](QKNORM_QUALITY_RESULTS.md). All24raw/24derived checkpoints and the entire report/bootstrap passed independent audit. Continue with the separately prepared three-arm MHA output-gate experiment after actualCPU/full-suite/serialMPS/resource checks and a fresh finite preregistration. Retain standard MHA,3,000updates/start2,000/H200 from this final decision. Keep all closed studies and permanent human stop006 closed.
+
+
+### Separate output-gate quality protocol
+
+Use [the output-gate protocol](OUTPUT_GATE_QUALITY_PROTOCOL.md) after the final QK
+review, which retains standard MHA at LR 0.005, 3,000 updates, cooldown starting at
+2,000 and H200 returned weights. Compare unchanged weighted values, constant-half
+values and a zero-initialized learned per-query/head sigmoid gate. Keep the human
+GatedMLA and primary kimi/KDA work untouched. The explicit
+`mha_head32_output_gate` policy covers matrix shape, zero initialization, Muon
+width factors and unchanged cache behavior; it is not a proof of optimal muP
+transfer. Require the full CPU suite, six serial MPS pilots and independent
+resource audit before one finite 36/42-trajectory registration. Preserve all
+closed studies, frozen choices and permanent human stop 006. Continue the human
+quality objective after this round.

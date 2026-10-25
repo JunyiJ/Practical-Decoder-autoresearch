@@ -5,6 +5,7 @@ import torch.nn as nn
 
 from ..models.rope import apply_rotary_emb
 from .qk_norm import make_qk_norms, resolve_qk_norm
+from .output_gate import make_output_gate, resolve_output_gate
 
 
 class ScaledAttention(nn.Module):
@@ -36,6 +37,8 @@ class MHA_NAIVE(nn.Module):
         super().__init__()
         if resolve_qk_norm(cfg) != 'none':
             raise ValueError('QK normalization is implemented only in fused MHA')
+        if resolve_output_gate(cfg) != 'none':
+            raise ValueError('Output gating is implemented only in fused MHA')
         self.dim = cfg.dim
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
@@ -78,6 +81,7 @@ class MHA(nn.Module):
         self.attn_dropout = nn.Dropout(attn_drop)
         self.out_dropout = nn.Dropout(drop)
         self.q_norm, self.k_norm = make_qk_norms(cfg)
+        self.output_gate = make_output_gate(cfg)
 
         self.max_seq_len = getattr(cfg, "block_size", None)
         if self.causal and self.max_seq_len is not None:
@@ -119,6 +123,8 @@ class MHA(nn.Module):
         att = self.attn_dropout(att)
 
         y = att @ v
+        if self.output_gate is not None:
+            y = self.output_gate(x, y)
         y = y.transpose(1, 2).contiguous().view(b, s, d)
         y = self.out_dropout(self.out(y))
         return y, None

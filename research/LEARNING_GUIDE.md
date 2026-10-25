@@ -1314,3 +1314,40 @@ QK normalization completed 24 physical training trajectories and 48 correlated r
 The fresh confirmation improves all three seeds at width 64 but worsens all three at width 256. The width-256 mean regression is +0.007981 CE, with positive conditional text intervals at all three block sizes. The width-64 mean gain is −0.005274, with negative intervals. This reinforces the need for width confirmation; normalization is not adopted.
 
 The next finite hypothesis compares learned headwise attention-output gating with unchanged attention and a fixed-half amplitude control. It requires a final-QK-derived backbone, actual training/resume checks, the full project suite, six serial MPS pilots and a new source contract before launch.
+
+
+## Attention-output gating and its amplitude control
+
+The completed QK round retains standard MHA. The next bounded hypothesis changes
+what each attention head passes to the output projection. A learned sigmoid gate
+uses the current query's normalized input to scale that head's weighted-value
+output. A separate matrix predicts one gate per query and head; it adds no KV
+cache entries and does not change past keys or values.
+
+| Arm | Weighted-value output passed onward | Extra parameters at widths 64 / 256 |
+|---|---|---:|
+| Unchanged | Y | 0 / 0 |
+| Fixed-half | 0.5 × Y | 0 / 0 |
+| Learned headwise sigmoid | sigmoid(X Wgᵀ) × Y | 512 / 8,192 |
+
+The learned gate matrix starts at zero without drawing random numbers, making its
+initial output identical to the fixed-half arm. The shared model weights and
+training samples start identically across arms. This control distinguishes a
+benefit from learned gating from a benefit caused by initial attenuation. The
+output-projection bias remains unchanged, so fixed-half does not halve the entire
+attention residual branch. Parameter counts and compute differ once a gate is
+learned; quality gains alone would not identify sparsity or attention-sink removal.
+
+[The output-gate protocol](OUTPUT_GATE_QUALITY_PROTOCOL.md) fixes the retained
+3,000-update, start-2,000 cooldown and H200 returned weights. Eighteen width-64
+screening trajectories tune three learning rates equally for all arms and freeze
+the only candidate eligible for adoption. Fresh confirmation at widths 64 and 256
+then tests the frozen choice. Exact reference aliases yield 36 or 42 physical
+trajectories, with twice as many correlated raw/H200 endpoints. Learned-minus-fixed
+half remains a separate reported contrast. There is no alternative fallback,
+grid extension or larger-width reselection.
+
+All 1,265 project CPU tests passed, including eight actual output-gate
+training/resume cases and independent gate math and controller checks. Six serial
+MPS pilots, independent resource review, clean source and unique preregistration
+remain launch gates. Correctness checks are not measured model-quality gains.

@@ -74,6 +74,8 @@ def build_optimizer(model, training):
     muon = opts['optimizer'] == 'muon'
     if mup or muon:
         cfg = model.cfg
+        from ..attention.output_gate import validate_output_gate_contract
+        validate_output_gate_contract(cfg)
         from ..attention.qk_norm import resolve_qk_norm, validate_qkrms_contract
         qkrms = (resolve_qk_norm(cfg) != 'none'
                  or getattr(cfg, 'depth_width_policy', None) == 'depth4_qkrms_unscaled'
@@ -132,6 +134,8 @@ def build_optimizer(model, training):
     mult = model.width_mult if mup else 1.0
     adam, matrices = [], []
     for name, param in model.named_parameters():
+        # Headwise output-gate projections have two width-scaled axes and use
+        # the hidden-matrix rule. Their zero initialization adds no RNG draws.
         # Q/K RMS gains are vectors shared across heads. They stay in AdamW
         # at base LR, with the same independent decay as other learned vectors.
         # Router output dimension is fixed at four, unlike expert hidden axes.
