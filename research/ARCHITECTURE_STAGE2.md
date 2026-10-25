@@ -913,3 +913,14 @@ cases. Require six serial MPS pilots, bounded resource estimates, clean committe
 source and a unique finite registration before launch. This adaptation changes
 feature geometry and does not inherit an optimal LR-transfer guarantee. Preserve
 all completed studies and permanent stop 006; continue the human quality goal.
+
+
+## Completed FFN hidden-normalization quality round
+
+SwiGLU hidden-normalization completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Frozen choices: none LR 0.005, rms LR 0.005, layer LR 0.005; eligible winner: incumbent_unchanged. Fresh H200 deltas at widths 64/256: RMS minus unchanged -0.000775/-0.003438; LayerNorm minus unchanged -0.002675/-0.002503; LayerNorm minus RMS -0.001900/+0.000935. The complete frozen adoption rule is not met; retain the prior incumbent.
+
+Both normalization variants have lower confirmation means at both widths, but seed 2231 worsens at width 64 and seed 2233 worsens at width 256. Width-256 RMS improves the mean by 0.003438 CE, below the 0.005 threshold; its 4,096-token conditional text interval is negative despite the mixed seeds. That interval does not measure seed-population uncertainty. RMS adds 15.25%/12.45% measured training time at widths 64/256; LayerNorm adds 2.90%/3.31%. Neither variant is adopted. All arms selected the upper LR boundary, which remains closed.
+
+[Complete paired results and costs](FFN_HIDDEN_NORM_RESULTS.md). All 36 raw and 36 H200 checkpoints, frozen choices, aliases, optimizer/RNG/model contracts, coverage and the complete report/bootstrap passed independent review. Adaptive validation; holdout remains closed.
+
+Continue with a separate finite independent-decay experiment on the retained unchanged-FFN, standard-MHA, 3,000-update/cooldown/H200 recipe. The separate prototype compares coefficients 0.00002, 0.00006 and 0.00018 with equal bounded LR tuning and fresh seeds. Require final predecessor resolution, actual optimizer/trainer tests, the full CPU suite, serial MPS pilots, resource checks, clean committed source and a new preregistration before launch. This does not reopen the old two-layer decay studies.
