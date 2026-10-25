@@ -1067,6 +1067,30 @@ The sampler and RoPE source require fresh controls; historical measurements are 
 
 Evidence: `research_runs/context-interaction-001/{plan,selection,report,review}.json`; screening freeze review is retained. The primary human `kimi` branch and GatedMLA edits were kept separate.
 
+### Matched inference follow-up: half the cache is not a guaranteed speedup
+
+Every tested GQA setting halves actual allocated and logically used KV-cache storage at matched capacity. None passes the prospective operational efficiency gate across every seed and workload. No setting gives the required 10% decode speed benefit throughout the panel. The memory benefit is real, but the guard against latency regressions/variability fails. This does not prove GQA is slower on every workload or unsuitable for a different memory-constrained deployment.
+
+| GQA setting, width 256 | Prefill median change range | Decode median change range | Allocated KV change | Pass all-workload latency guard |
+|---|---:|---:|---:|---|
+| d2_gqa_c128 | -2.90% to +4.58% | -0.31% to +4.76% | -50% | no |
+| d2_gqa_c512 | -4.03% to +2.48% | -3.11% to +9.32% | -50% | no |
+| d4_gqa_c512 | -5.54% to +0.53% | -4.81% to +8.42% | -50% | no |
+
+Ranges span the 12 individual seed/workload median paired ratios per setting. They are descriptive ranges, not confidence intervals. Lower time is better; throughput reciprocates time. At batch 8/full capacity, MHA→GQA cache allocation is 4→2 MiB for 2L128, 16→8 MiB for 2L512 and 32→16 MiB for 4L512. Cache storage is only one part of total memory.
+
+The two-layer context128 setting keeps every prefill/decode median within the 5% latency guard, but fails its upper-quartile guard. For seed 2033/B1/P32, decode median is +4.76% and its upper quartile is +39.98%. Longer-context settings also contain median decode regressions beyond 5%; the worst are +9.32% for 2L512 and +8.42% for 4L512. Preserve the variability rather than selecting favorable repetitions or rerunning completed cells.
+
+**Acceptance and interpretation.**
+
+The human accepted +.01 CE nats/token as the quality ceiling. These three settings previously met the common-evaluation-context128 rule requiring mean, every paired seed and all three conditional text-bootstrap upper bounds ≤ +.01. That is operational quality eligibility on adaptive validation; it does not establish population or native512 non-inferiority.
+
+Before pilots/timing, this diagnostic froze engineering gates: every seed and workload must have median paired decode ratio ≤ .90 and upper quartile ≤ 1 for speed benefit, or actual allocated cache ratio ≤ .75 for memory benefit. Both routes also require every prefill/decode median ≤ 1.05 and upper quartile ≤ 1.10. All settings pass the memory criterion but fail the common latency guard. These numerical timing thresholds are prospective engineering choices under the authorized objective, not human-specified tolerances or statistical confidence claims. No thresholds were revised after results.
+
+The historical four-layer SwiGLU/MHA quality incumbent remains unchanged. Any future adoption with a different workload, memory constraint or latency tolerance needs an explicit prospective decision; these measurements must remain intact. Context256 and batch sensitivity are separate bounded follow-ups, not extensions or reruns of this panel.
+
+Full per-seed/workload table: [context inference results](CONTEXT_INFERENCE_RESULTS.md). No completed job was rerun.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).

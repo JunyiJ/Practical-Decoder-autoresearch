@@ -793,3 +793,8 @@ inference evidence is still required before adoption.
 ## Completed context interaction round
 
 All114 trials are completed and reviewed; see [context interaction results](CONTEXT_INTERACTION_RESULTS.md). Three width256 GQA cells meet the frozen +.01 operational quality rule, none at64; four-layer GQA128 loses+.019204 CE versus matched MHA. Four-layer depth improves every matched seed; context512 training worsens mean common-context128 scores in all eight comparisons. Native512 is secondary and uses different evaluation boundaries. New matched inference measurements remain required; the historical quality incumbent stays unchanged. Preserve frozen LRs, all evidence and the human kimi branch. No grid extension or completed-trial rerun. Context256 and batch studies remain separately bounded follow-ups; no MoE.
+
+
+## Completed context inference follow-up
+
+All 36 paired workloads and 18 saved checkpoints are reviewed; see [context inference results](CONTEXT_INFERENCE_RESULTS.md). The three quality-eligible width 256 GQA settings halve actual KV-cache storage but none passes the prospective all-seed/workload latency guard. Two-layer/context128 fails upper-quartile variability; contexts512 also have median decode regressions above 5%. No automatic adoption or historical quality change. Preserve all raw timings and gates; do not rerun completed jobs or revise thresholds after results. Context256 and batch follow-ups remain separate bounded studies.
