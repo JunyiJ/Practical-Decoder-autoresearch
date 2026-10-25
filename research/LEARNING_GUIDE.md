@@ -1106,6 +1106,28 @@ Context256 follow-up54/54 reviewed. Frozen LRs: context128 .005 boundary, contex
 
 The primary score always uses evaluation context128; native256/512 scores change boundaries and history. Tuned context contrasts include LR choice. Conditional text uncertainty is not population seed uncertainty. Longer contexts also cost more training time, so this is not an inference-efficiency result. [Complete results and paired contrasts](CONTEXT256_RESULTS.md). Batch sensitivity remains a separate finite follow-up.
 
+### Batch sensitivity: equal tokens, fewer updates
+
+The separate batch8/16/32 round uses context128 and four-layer SwiGLU/MHA,
+with3000/1500/750 updates:3,072,000 targets per trial. Larger batches group the
+same ordered token stream. Independent decay is adjusted to match nominal
+cumulative shrinkage, while momentum and clipping retain their per-update
+settings. Their token time scale changes, so this compares whole batch recipes;
+it does not isolate gradient noise or hold optimizer dynamics fixed.
+
+Each batch receives the same finite LR grid, with18 width64 screening runs on
+seeds2061/2062 and all choices frozen before fresh2071/2072/2073 confirmation
+at widths64/256. Fresh GELU, cheaper SwiGLU and fixed four-layer B8 references
+bring the total to48–54 distinct trials through prospective exact aliases.
+Primary full-validation128 always uses batch8 and111,538 targets. Sampled
+training-log panels differ with batch size and cannot select the LR.
+
+All681 tests and six serial MPS train/reload/full-validation correctness pilots
+passed. The historical feasibility proxy is1.87hours and626MiB with checkpoint
+margin; these are planning estimates, not measured full-study costs. No quality
+finding exists yet. Read the [bounded batch protocol](BATCH_SENSITIVITY_PROTOCOL.md).
+Historical selections and held-out reservations remain unchanged.
+
 ## 11 How to audit a claim yourself
 
 For a concrete starting point, open the [fifth iteration’s evidence](../research_runs/continuous-20261023-004/iteration-005/evidence.json) and [saved learnings](../research_runs/continuous-20261023-004/iteration-005/learnings.json).

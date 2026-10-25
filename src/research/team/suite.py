@@ -170,13 +170,16 @@ def validate_suite(spec: dict) -> dict:
             raise ValueError(f"Unsupported training fields: {sorted(unknown)}")
         for key in SHARED_TRAINING - {"device"}:
             _number(train.get(key), f"training.{key}", integer=True)
-        if train.get('batch_layout', 'independent') not in {'independent', 'paired_blocks512'}:
+        if train.get('batch_layout', 'independent') not in {'independent', 'paired_blocks512', 'paired_batch512'}:
             raise ValueError('Unsupported training.batch_layout')
         if train.get('batch_layout') == 'paired_blocks512' and (
                 model['block_size'] not in {128,256,512} or train['batch_size']*model['block_size'] != 1024):
             raise ValueError('paired_blocks512 requires context128/256/512 and1024 targets/update')
         if not isinstance(train.get("device"), str) or not re.fullmatch(r"cpu|mps|cuda(?::[0-9]+)?", train["device"]):
             raise ValueError("Device must be cpu, mps, cuda or cuda:N")
+        if train.get('batch_layout') == 'paired_batch512' and (
+                model['block_size'] != 128 or train['batch_size'] not in {8,16,32}):
+            raise ValueError('paired_batch512 requires context128 and batch8/16/32')
         train.setdefault("weight_decay", 0.0)
         train.setdefault("grad_clip", 0.0)
         for key, allowed, default in [('optimizer', {'adamw', 'muon'}, 'adamw'),
