@@ -1198,3 +1198,42 @@ Schedule quality001 completed and reviewed 48/48. Frozen peak LRs: constant 0.00
 Cosine and cooldown finish at 10% of their selected peak; constant remains at peak. No warmup or restarts. Independent decay stays at .00006 each step; LR integral and relative gradient/shrinkage balance differ. No boundary grid is extended.
 
 [Complete schedule results and paired evidence](SCHEDULE_QUALITY_RESULTS.md). All findings remain adaptive validation with conditional text uncertainty.
+
+## Completed dense capacity quality round
+
+The four-layer cooldown model remains the quality incumbent. Both larger models improve every fresh seed at width 64, but neither reaches the required mean gain at width 256, and each worsens seed 2132. Six layers costs 46.94% more training time at width 256; the wider four-layer FFN costs 40.47% more. Their conditional text intervals versus standard four layers include zero at width 256. These findings do not establish a useful quality replacement at the larger tested width.
+
+Capacity study completed and reviewed 54/54. Frozen peak LRs: dense4 0.005 (boundary), wide4 0.005 (boundary), dense6 0.005 (boundary). The frozen screen winner was dense6; its tuned-dense4 CE deltas at widths 64/256 are -0.028180/-0.000674. It fails the complete adoption rule, so the prior incumbent remains. All selected models use final-third cooldown, 3,000 updates and 3,072,000 targets, with different capacity and compute. Held-out test remains closed.
+
+| Recipe | Peak LR | Schedule | CE64 | CE256 | Train seconds 64 | Train seconds 256 | Parameters 64 | Parameters 256 |
+|---|---:|---|---:|---:|---:|---:|---:|---:|
+| dense4 | 0.005 | linear_cooldown | 1.521006 | 1.448704 | 54.59 | 125.54 | 204,544 | 3,152,896 |
+| wide4 | 0.005 | linear_cooldown | 1.496944 | 1.446780 | 59.84 | 176.34 | 333,568 | 5,217,280 |
+| dense6 | 0.005 | linear_cooldown | 1.492826 | 1.448030 | 76.39 | 184.46 | 302,592 | 4,712,448 |
+| gelu_reference | 0.002 | constant | 1.678178 | 1.550864 | 31.83 | 65.85 | 108,160 | 1,612,288 |
+| shallow_reference | 0.0025 | constant | 1.658799 | 1.542714 | 33.01 | 67.00 | 106,496 | 1,593,344 |
+| deep_reference | 0.0025 | constant | 1.600382 | 1.522545 | 54.69 | 125.73 | 204,544 | 3,152,896 |
+| incumbent_reference (alias of dense4) | 0.005 | linear_cooldown | 1.521006 | 1.448704 | 54.59 | 125.54 | 204,544 | 3,152,896 |
+
+The selected models share context 128, batch 8, paired_blocks512 sampling, Muon/AdamW muP base 64, head 32 MHA, bias-free SwiGLU, unscaled residuals and independent per-step decay 0.00006. Wider four-layer FFNs use hidden width 21d/4; standard four/six-layer FFNs use 21d/8. The six-layer policy is explicitly depth6_dense_unscaled; algebraic width factors do not establish optimal depth/LR transfer. Cooldown starts at zero-based update 2,000 and ends at 10% of peak. No boundary grid is extended.
+
+[Complete capacity results and paired evidence](CAPACITY_QUALITY_RESULTS.md). Findings remain adaptive validation with conditional text uncertainty.
+
+## Late learning-curve diagnostic from saved schedule logs
+
+Previously completed cooldown trajectories improve on their fixed sampled validation panel over completed updates 2,701→3,000 in every seed at both widths. Mean changes at widths 64/256 are -0.031105/-0.020378. The learning rate also decreases during this interval; this supports considering a separate finite budget/schedule question, not an extrapolated improvement or reopening the completed study.
+
+This analysis reads existing logs only. Validation uses the same sampled panel at each point: seed 2026 is reset before each evaluation, with 30 batches × 8 examples × 128 targets = 30,720 scored targets. Overlap and repeated targets are possible. The final primary evaluation still covers all 111,538 validation targets once, and all earlier choices remain frozen.
+
+| Schedule | Width | Sampled CE at update 2,701 | Sampled CE at update 3,000 | Mean change | Every seed improves |
+|---|---:|---:|---:|---:|---|
+| constant | 64 | 1.598779 | 1.587404 | -0.011375 | Yes |
+| constant | 256 | 1.505688 | 1.504792 | -0.000896 | No |
+| cosine | 64 | 1.529444 | 1.521385 | -0.008059 | Yes |
+| cosine | 256 | 1.444390 | 1.445743 | +0.001353 | No |
+| linear_cooldown | 64 | 1.543877 | 1.512771 | -0.031105 | Yes |
+| linear_cooldown | 256 | 1.446559 | 1.426181 | -0.020378 | Yes |
+
+The cooldown’s falling loss motivates considering a later finite training-budget or cooldown-shape experiment. It does not predict a gain from simply continuing these checkpoints: additional updates and a changing learning rate are confounded. The current averaging follow-up remains the next prepared round. Any later experiment needs its own fresh seeds and finite prospective protocol.
+
+Evidence: `research_state/schedule-validation/late-curve-diagnostic.json`; knowledge `kb_515dd8687f458de37efcb88b39abd1d726c5fb712f55a531178928c064954479`. No new training, scoring, holdout access or incumbent change.
