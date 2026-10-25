@@ -1106,27 +1106,22 @@ Context256 follow-up54/54 reviewed. Frozen LRs: context128 .005 boundary, contex
 
 The primary score always uses evaluation context128; native256/512 scores change boundaries and history. Tuned context contrasts include LR choice. Conditional text uncertainty is not population seed uncertainty. Longer contexts also cost more training time, so this is not an inference-efficiency result. [Complete results and paired contrasts](CONTEXT256_RESULTS.md). Batch sensitivity remains a separate finite follow-up.
 
-### Batch sensitivity: equal tokens, fewer updates
+### Completed batch study: training speed improves, quality tolerance depends on width
 
-The separate batch8/16/32 round uses context128 and four-layer SwiGLU/MHA,
-with3000/1500/750 updates:3,072,000 targets per trial. Larger batches group the
-same ordered token stream. Independent decay is adjusted to match nominal
-cumulative shrinkage, while momentum and clipping retain their per-update
-settings. Their token time scale changes, so this compares whole batch recipes;
-it does not isolate gradient noise or hold optimizer dynamics fixed.
+Batch sensitivity 48/48 reviewed: B8 selected LR .0025 interior; B16/B32 .005 upper boundary, no extension. At width 64, B16/B32 minus B8 mean CE +.007709/+.005601 but both fail the +.01 rule because seeds 2072/2073 exceed the margin. At width 256 both pass: means -.002558/-.002290, mixed seed signs. B32 versus B16 passes both widths. B16 training time changes -36.03/-23.73%, B32 -61.27/-31.85% at widths 64/256. Equal 3072000 targets with 3000/1500/750 updates and matched nominal cumulative decay; not a pure batch effect, equal compute, population non-inferiority or inference result. Historical quality incumbent retained.
 
-Each batch receives the same finite LR grid, with18 width64 screening runs on
-seeds2061/2062 and all choices frozen before fresh2071/2072/2073 confirmation
-at widths64/256. Fresh GELU, cheaper SwiGLU and fixed four-layer B8 references
-bring the total to48–54 distinct trials through prospective exact aliases.
-Primary full-validation128 always uses batch8 and111,538 targets. Sampled
-training-log panels differ with batch size and cannot select the LR.
+| Recipe | LR | CE64 | CE256 | Training seconds64 | Training seconds256 |
+|---|---:|---:|---:|---:|---:|
+| d4_mha_b8 | 0.0025 | 1.588912 | 1.512314 | 54.13 | 125.91 |
+| d4_mha_b16 | 0.005 | 1.596620 | 1.509756 | 34.63 | 96.03 |
+| d4_mha_b32 | 0.005 | 1.594512 | 1.510024 | 20.96 | 85.80 |
+| gelu_reference | 0.002 | 1.670114 | 1.537752 | 31.57 | 66.07 |
+| shallow_reference | 0.0025 | 1.652344 | 1.531839 | 32.85 | 67.15 |
 
-All681 tests and six serial MPS train/reload/full-validation correctness pilots
-passed. The historical feasibility proxy is1.87hours and626MiB with checkpoint
-margin; these are planning estimates, not measured full-study costs. No quality
-finding exists yet. Read the [bounded batch protocol](BATCH_SENSITIVITY_PROTOCOL.md).
-Historical selections and held-out reservations remain unchanged.
+The fixed four-layer B8 reference is exactly the selected B8 row through the frozen alias; this is not an independent repeat. Every selected four-layer recipe beats the original GELU and cheaper two-layer SwiGLU references on every confirmation seed at both widths.
+
+B16/B32 fail the per-seed quality margin at width 64 but pass at 256. This is an equal-token recipe comparison with different LR choices, update counts and per-update decay; betas/momentum retain their per-update time scales. Conditional text intervals are not population seed uncertainty. Training speed is not inference speed. The historical quality incumbent remains unchanged. [Complete batch results, seed deltas and resource diagnostics](BATCH_SENSITIVITY_RESULTS.md).
+
 
 ## 11 How to audit a claim yourself
 
