@@ -861,3 +861,8 @@ Longer training helped every fresh seed at width 64 but worsened every fresh see
 All 24 raw and 24 derived checkpoints, requests/results, optimizer/RNG/schedule/snapshot/model-shape/coverage contracts, frozen selection and the complete report/bootstrap were independently reviewed. [Full horizon results](HORIZON_QUALITY_RESULTS.md). Keep all completed studies and permanent stop 006 closed.
 
 Continue with the separately prepared QK RMS normalization comparison. The final decision resolves its common backbone to 3,000 updates, cooldown starting at 2,000 and H200 returned weights. Equal bounded LR tuning, fresh seeds, explicit normalization/optimizer/cache contracts, the full CPU suite, actual serial MPS pilots and resource gates remain required before a new unique registration. No larger-width reselection or old-grid extension.
+
+
+### QK RMS finite protocol
+
+The [QK RMS protocol](QKNORM_QUALITY_PROTOCOL.md) resolves the retained 3,000-update/start-2,000/H200 recipe from the final horizon review. It compares standard and per-head Q/K RMS MHA with equal finite LR tuning, a winner frozen before fresh 64/256 confirmation, and exact prospective reference aliases. The complete CPU suite passed 1,116 cases. Actual serial MPS checks, resource gates, clean committed source and a new unique registration still govern launch; no quality gain is assumed. Continue the human quality objective after this round without reopening closed studies.

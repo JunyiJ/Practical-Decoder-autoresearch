@@ -74,6 +74,12 @@ def build_optimizer(model, training):
     muon = opts['optimizer'] == 'muon'
     if mup or muon:
         cfg = model.cfg
+        from ..attention.qk_norm import resolve_qk_norm, validate_qkrms_contract
+        qkrms = (resolve_qk_norm(cfg) != 'none'
+                 or getattr(cfg, 'depth_width_policy', None) == 'depth4_qkrms_unscaled'
+                 or getattr(cfg, 'attention_width_policy', None) == 'mha_head32_qkrms')
+        if qkrms:
+            validate_qkrms_contract(cfg)
         mla = (cfg.attn_type == 'mla'
                and getattr(cfg, 'attention_width_policy', None) == 'mla_quarter_head32'
                and cfg.dim in {64,128,256} and cfg.n_heads == cfg.dim // 32
@@ -115,10 +121,10 @@ def build_optimizer(model, training):
             from ..moe.scaling import validate_moe_contract
             validate_moe_contract(cfg)
         attention_policy = getattr(cfg, 'attention_width_policy', 'mha_head32')
-        attention_ok = (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
+        attention_ok = qkrms or (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
             gated and cfg.attn_type == 'gqa' and attention_policy == 'gqa_half_head32'
             and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups')) or (gated and mla)
-        if not attention_ok or not (moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense or deep_dense))):
+        if not attention_ok or not (qkrms or moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense or deep_dense))):
             raise ValueError('Optimizer width study requires dense GELU/SiLU MHA or an explicit SwiGLU MHA/GQA/MLA width contract')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:
@@ -126,6 +132,8 @@ def build_optimizer(model, training):
     mult = model.width_mult if mup else 1.0
     adam, matrices = [], []
     for name, param in model.named_parameters():
+        # Q/K RMS gains are vectors shared across heads. They stay in AdamW
+        # at base LR, with the same independent decay as other learned vectors.
         # Router output dimension is fixed at four, unlike expert hidden axes.
         router = (getattr(model.cfg, 'mlp_type', 'dense') == 'moe'
                   and getattr(getattr(model.cfg, 'moe', None), 'width_policy', None) == 'moe4_top2_half_readout'

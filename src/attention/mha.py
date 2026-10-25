@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 
 from ..models.rope import apply_rotary_emb
+from .qk_norm import make_qk_norms, resolve_qk_norm
 
 
 class ScaledAttention(nn.Module):
@@ -33,6 +34,8 @@ class ScaledAttention(nn.Module):
 class MHA_NAIVE(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        if resolve_qk_norm(cfg) != 'none':
+            raise ValueError('QK normalization is implemented only in fused MHA')
         self.dim = cfg.dim
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
@@ -74,6 +77,7 @@ class MHA(nn.Module):
         self.out = nn.Linear(self.dim, self.dim, bias=attn_bias)
         self.attn_dropout = nn.Dropout(attn_drop)
         self.out_dropout = nn.Dropout(drop)
+        self.q_norm, self.k_norm = make_qk_norms(cfg)
 
         self.max_seq_len = getattr(cfg, "block_size", None)
         if self.causal and self.max_seq_len is not None:
@@ -95,6 +99,8 @@ class MHA(nn.Module):
         q = q.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
         k = k.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
         v = v.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
+        if self.q_norm is not None:
+            q, k = self.q_norm(q), self.k_norm(k)
         if freq_cos is not None and freq_sin is not None:
             cos = freq_cos[start_pos:start_pos + s].to(device=q.device, dtype=q.dtype)
             sin = freq_sin[start_pos:start_pos + s].to(device=q.device, dtype=q.dtype)

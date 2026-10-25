@@ -9,6 +9,12 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from ..attention.qk_norm import resolve_qk_norm, validate_qkrms_contract
+        qk_kind = resolve_qk_norm(cfg)
+        if (qk_kind != 'none'
+                or getattr(cfg, 'depth_width_policy', None) == 'depth4_qkrms_unscaled'
+                or getattr(cfg, 'attention_width_policy', None) == 'mha_head32_qkrms'):
+            validate_qkrms_contract(cfg)
         if getattr(cfg, 'depth_width_policy', None) == 'depth6_dense_unscaled':
             from .depth_scaling import validate_depth6_dense_contract
             validate_depth6_dense_contract(cfg)

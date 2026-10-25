@@ -1274,3 +1274,32 @@ Longer training helped every fresh seed at width 64 but worsened every fresh see
 | long6000_fixedtail | 6000 | 5000 | 6144000 | 1.481838 | 1.477672 | 1.490269 | 1.510866 |
 
 [Complete horizon results and costs](HORIZON_QUALITY_RESULTS.md). More training tokens and compute; adaptive validation, with the holdout closed.
+
+
+## Saved-log diagnostic after the horizon result
+
+The saved online-validation logs show a reversal at width 256. Over the final 299 updates, the 3,000-update control improves every seed (mean change −0.020214), while both 6,000-update recipes worsen every seed (stretched +0.009415; fixed tail +0.005838). All three recipes still improve every seed at width 64 over their final 299 updates. These diagnostics describe the width-dependent behavior without identifying its cause or changing the final H200 selection.
+
+All rows compare the final 299 updates on the same sampled online-validation panel within a trajectory. They do not replace full-validation H200 scores or select an earlier checkpoint.
+
+| Recipe | Width | Completed updates | Sampled CE before | Sampled CE final | Mean change | Every seed improves | Every seed worsens |
+|---|---:|---|---:|---:|---:|---|---|
+| control3000 | 64 | 2701 to 3000 | 1.536736 | 1.504725 | -0.032012 | True | False |
+| long6000_stretched | 64 | 5701 to 6000 | 1.478511 | 1.466146 | -0.012365 | True | False |
+| long6000_fixedtail | 64 | 5701 to 6000 | 1.494255 | 1.472450 | -0.021805 | True | False |
+| control3000 | 256 | 2701 to 3000 | 1.444256 | 1.424042 | -0.020214 | True | False |
+| long6000_stretched | 256 | 5701 to 6000 | 1.503628 | 1.513043 | +0.009415 | False | True |
+| long6000_fixedtail | 256 | 5701 to 6000 | 1.480369 | 1.486207 | +0.005838 | False | True |
+
+The validation seed is reset before each logging evaluation: 30 batches × 8 examples × 128 targets = 30,720 scored targets, with possible overlap. Online training losses are changing single minibatches, so this does not measure a fixed train/validation gap or establish overfitting as the cause. Schedule, update count and cumulative decay are confounded. All earlier choices stay frozen. No model work or holdout access.
+
+Evidence: `research_state/horizon-validation/late-curve-diagnostic.json`; knowledge `kb_475b507e9ad05402787bcffe34e246b27c062295a299dfb5799f3b6e32a9da0e`.
+
+
+## Query/key RMS normalization as the next finite question
+
+The horizon result retains the 3,000-update, start-2,000 cooldown recipe with H200 returned weights. The next comparison changes only the attention normalization contract: separate learned 32-element RMS gains for queries and keys, shared across heads and applied before RoPE. Values and the existing attention scale stay unchanged. This adds 256 parameters; vector gains use AdamW at the base learning rate, while hidden matrices retain their Muon width factors.
+
+[The QK normalization protocol](QKNORM_QUALITY_PROTOCOL.md) gives standard and normalized MHA equal tuning over peak learning rates 0.00125, 0.0025 and 0.005. Twelve width-64 screening trajectories freeze both learning rates and the only candidate eligible for adoption. Fresh confirmation uses seeds 2191, 2192 and 2193 at widths 64 and 256. Exact matching standard references may be prospectively aliased; the round contains 24 or 30 physical trajectories and 48 or 60 correlated raw/H200 outputs.
+
+The normalized candidate must beat both equally tuned standard MHA and the fixed incumbent. If normalization fails the local rule, an improved standard learning rate can be frozen instead; this decision is made before confirmation, never as a fallback after seeing larger-width results. Replacement requires the frozen mean-gain, every-seed and conditional-text-interval rules at both widths. All hypotheses remain untested for model quality until this new registered round produces evidence. The complete 1,116-case CPU suite passed; actual serial MPS correctness, resource checks and unique preregistration are required before launch. Pilot results are excluded from quality rankings.
