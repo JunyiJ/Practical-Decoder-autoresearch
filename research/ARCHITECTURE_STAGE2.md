@@ -837,3 +837,12 @@ Capacity study completed and reviewed 54/54. Frozen peak LRs: dense4 0.005 (boun
 [Full capacity results](CAPACITY_QUALITY_RESULTS.md). The next prospective experiment compares raw and spaced-tail averaged weights from eight fresh trajectories on the recipe resolved from this final audited adoption. It requires actual trainer/export/resume tests, the full project suite, serial MPS correctness/resource pilots, clean source and a unique finite preregistration before launch. Final averaged checkpoints cannot independently reconstruct every historical online snapshot; synthetic recurrence checks and the frozen trainer contract must be distinguished from model-quality measurements. All closed studies and permanent human stop006 remain closed. The continuing human quality objective remains active.
 
 The next averaging round therefore uses the retained standard four-layer cooldown recipe at peak LR 0.005. Its fresh paired endpoints test averaging without changing the online training recipe.
+
+
+## Completed averaging quality001
+
+The frozen 200-update half-life average improved every fresh confirmation seed at both widths and passed every prospective quality gate. Mean validation CE changed by −0.005398 at width 64 and −0.016797 at width 256. It becomes the current observed returned-weight incumbent; the online training recipe remains the four-layer cooldown model.
+
+All 8 raw and 24 derived checkpoints, raw contracts, full coverage, frozen selection and complete report/bootstrap were independently reviewed before documentation. [Full averaging results](AVERAGING_QUALITY_RESULTS.md). Averages are inference-only; raw parents retain the resumable optimizer. The MPS prerequisite failure and direct-arithmetic repair remain preserved, with independent trajectory differences explicitly reported.
+
+Prepare the separate finite 3,000 versus 6,000-update cooldown experiment from this adopted half-life 200 policy. It still needs source, scaling, tests, actual serial MPS and resource gates before a new unique registration. Keep all closed studies and permanent stop 006 closed; continue the human quality objective.

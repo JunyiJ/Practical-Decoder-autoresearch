@@ -1237,3 +1237,19 @@ This analysis reads existing logs only. Validation uses the same sampled panel a
 The cooldown’s falling loss motivates considering a later finite training-budget or cooldown-shape experiment. It does not predict a gain from simply continuing these checkpoints: additional updates and a changing learning rate are confounded. The current averaging follow-up remains the next prepared round. Any later experiment needs its own fresh seeds and finite prospective protocol.
 
 Evidence: `research_state/schedule-validation/late-curve-diagnostic.json`; knowledge `kb_515dd8687f458de37efcb88b39abd1d726c5fb712f55a531178928c064954479`. No new training, scoring, holdout access or incumbent change.
+
+
+## Completed spaced-tail averaging quality round
+
+The frozen 200-update half-life average improved every fresh confirmation seed at both widths and passed every prospective quality gate. Mean validation CE changed by −0.005398 at width 64 and −0.016797 at width 256. It becomes the current observed returned-weight incumbent; the online training recipe remains the four-layer cooldown model.
+
+| Returned weights | CE at width 64 | CE at width 256 |
+|---|---:|---:|
+| Raw endpoint | 1.523733 | 1.450487 |
+| EMA half-life 10 | 1.523188 | 1.449914 |
+| EMA half-life 50 | 1.519801 | 1.445310 |
+| EMA half-life 200 (frozen choice) | 1.518335 | 1.433690 |
+
+The frozen choice improved all three fresh seeds at both widths, with all conditional text interval upper bounds below zero. Eight trajectories produce 32 correlated endpoints; this does not add independent training seeds. Averages never affect online optimization, and their checkpoints are inference-only. Preserve raw parents for optimizer continuation. The original failed MPS prerequisite and its direct arithmetic repair remain documented. No full independent MPS reproducibility or holdout claim.
+
+[Complete averaging results, costs and repair lineage](AVERAGING_QUALITY_RESULTS.md). The next bounded training-budget/cooldown question is being prepared from this final reviewed decision.
