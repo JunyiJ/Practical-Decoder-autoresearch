@@ -789,3 +789,7 @@ Fresh paired-target controls, screening/confirmation seed separation and shared
 reference aliases address interactions without reopening historical selections.
 The accepted+.01 quality ceiling is an operational eligibility rule; matched new
 inference evidence is still required before adoption.
+
+## Completed context interaction round
+
+All114 trials are completed and reviewed; see [context interaction results](CONTEXT_INTERACTION_RESULTS.md). Three width256 GQA cells meet the frozen +.01 operational quality rule, none at64; four-layer GQA128 loses+.019204 CE versus matched MHA. Four-layer depth improves every matched seed; context512 training worsens mean common-context128 scores in all eight comparisons. Native512 is secondary and uses different evaluation boundaries. New matched inference measurements remain required; the historical quality incumbent stays unchanged. Preserve frozen LRs, all evidence and the human kimi branch. No grid extension or completed-trial rerun. Context256 and batch studies remain separately bounded follow-ups; no MoE.
