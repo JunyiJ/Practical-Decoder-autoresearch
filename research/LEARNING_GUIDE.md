@@ -1253,3 +1253,9 @@ The frozen 200-update half-life average improved every fresh confirmation seed a
 The frozen choice improved all three fresh seeds at both widths, with all conditional text interval upper bounds below zero. Eight trajectories produce 32 correlated endpoints; this does not add independent training seeds. Averages never affect online optimization, and their checkpoints are inference-only. Preserve raw parents for optimizer continuation. The original failed MPS prerequisite and its direct arithmetic repair remain documented. No full independent MPS reproducibility or holdout claim.
 
 [Complete averaging results, costs and repair lineage](AVERAGING_QUALITY_RESULTS.md). The next bounded training-budget/cooldown question is being prepared from this final reviewed decision.
+
+## Longer training after the averaging result
+
+The next finite question is whether more training improves the adopted four-layer cooldown model with H200 returned weights. [The horizon protocol](HORIZON_QUALITY_PROTOCOL.md) fixes peak LR at 0.005 and compares fresh 3,000-update controls with 6,000-update recipes whose cooldown starts at 4,000 or 5,000. Six width-64 screening runs freeze the only candidate eligible for adoption before 18 fresh confirmation runs at widths 64 and 256.
+
+Longer training doubles the token budget and applies independent decay more times. Stretching cooldown also changes the duration of averaging; the half-life stays fixed at 200 optimizer updates. Raw endpoints remain a diagnostic. Any quality gain must be read alongside the added training cost, rather than treated as an equal-compute improvement. The protocol has source, test, device and resource gates before its unique preregistration; no longer-horizon quality finding exists yet.

@@ -846,3 +846,7 @@ The frozen 200-update half-life average improved every fresh confirmation seed a
 All 8 raw and 24 derived checkpoints, raw contracts, full coverage, frozen selection and complete report/bootstrap were independently reviewed before documentation. [Full averaging results](AVERAGING_QUALITY_RESULTS.md). Averages are inference-only; raw parents retain the resumable optimizer. The MPS prerequisite failure and direct-arithmetic repair remain preserved, with independent trajectory differences explicitly reported.
 
 Prepare the separate finite 3,000 versus 6,000-update cooldown experiment from this adopted half-life 200 policy. It still needs source, scaling, tests, actual serial MPS and resource gates before a new unique registration. Keep all closed studies and permanent stop 006 closed; continue the human quality objective.
+
+### Separate horizon protocol after averaging adoption
+
+Averaging-quality-001 is closed with H200 adopted. Prepare [horizon-quality-001](HORIZON_QUALITY_PROTOCOL.md) as a new finite 24-trajectory round: fixed 4L MHA/SwiGLU, peak LR .005, 3,000 updates versus two 6,000-update cooldown shapes, H200 returned weights and raw diagnostics. Extra tokens/compute/cumulative decay and averaging duration are explicit. No old trial continuation, LR-grid extension or larger-width reselection. Require the complete CPU tests, serial MPS pilots, resource forecast, full shared bank and clean committed/pushed source before registration. Continue quality evolution after the round under the latest human authorization.
