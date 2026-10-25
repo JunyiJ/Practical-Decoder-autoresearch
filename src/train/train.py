@@ -17,6 +17,7 @@ from datetime import datetime
 from ..models.gpt import GPT
 from .optimizers import build_optimizer, optimizer_options
 from .lr_schedule import LearningRateSchedule, schedule_contract
+from .weight_averaging import TailWeightAverages, averaging_contract
 from ..utils.device import synchronize_device
 from ..data.loaders import TinyDataLoader, TextDataset
 from ..utils.checkpoint import (save_checkpoint, read_checkpoint, load_model_weights,
@@ -180,7 +181,9 @@ def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
 def _training_contract(cfg: DictConfig, device: str, loader: TinyDataLoader) -> dict:
     options = optimizer_options(cfg.training)
     schedule = schedule_contract(cfg.training)
+    averaging = averaging_contract(cfg.training)
     return {
+        **({'weight_averaging': averaging} if averaging is not None else {}),
         **({'lr_schedule': schedule} if schedule is not None else {}),
         **({'batch_layout': loader.batch_layout} if getattr(loader, 'batch_layout', 'independent') != 'independent' else {}),
         **({'optimizer_contract': options} if options != {'optimizer': 'adamw', 'decay_mode': 'conventional'} or getattr(cfg.model, 'parameterization', 'sp') != 'sp' else {}),
@@ -288,6 +291,7 @@ def run_training(cfg: DictConfig) -> dict:
     optimizer = build_optimizer(model, cfg.training)
     # Capture configured base rates before loading any scheduled checkpoint.
     lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+    weight_averages = TailWeightAverages(model, cfg.training)
     checkpoint_dir = to_absolute_path(cfg.training.checkpoint_dir) if cfg.training.checkpoint_dir else None
     checkpoint_every = cfg.training.checkpoint_every
     if checkpoint_dir:
@@ -317,12 +321,15 @@ def run_training(cfg: DictConfig) -> dict:
         best_metric = state['best_metric']
         best_checkpoint_path = state['best_checkpoint']
         restore_training_state(state, loader, device)
+        weight_averages.load_state_dict(state.get('weight_averaging_state'), completed_steps)
 
     def save_run(path):
         state = capture_training_state(
             loader, device, contract=contract, training_seconds=training_seconds,
             metrics=metrics, best_metric=best_metric, best_checkpoint=best_checkpoint_path,
         )
+        if weight_averages.spec is not None:
+            state['weight_averaging_state'] = weight_averages.state_dict()
         save_checkpoint(path, model, optimizer=optimizer, step=completed_steps,
                         cfg=cfg, training_state=state)
 
@@ -349,6 +356,7 @@ def run_training(cfg: DictConfig) -> dict:
             torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip, error_if_nonfinite=True)
         lr_multiplier = lr_schedule.apply(iter)
         optimizer.step()
+        weight_averages.update(iter + 1)
         synchronize_device(device)
         iter_time = time.perf_counter() - iter_start
         completed_steps = iter + 1
@@ -435,6 +443,8 @@ def run_training(cfg: DictConfig) -> dict:
                     log.info("MoE expert usage (layer %d): %s", layer_usage["layer_idx"], layer_usage_str)
 
             metric = {
+                **({'averaging_snapshots': weight_averages.snapshots}
+                   if weight_averages.spec is not None else {}),
                 **({'lr_multiplier': lr_multiplier,
                     'base_learning_rate': float(cfg.training.learning_rate),
                     'scheduled_learning_rate': float(cfg.training.learning_rate) * lr_multiplier}
@@ -494,6 +504,9 @@ def run_training(cfg: DictConfig) -> dict:
         "eval_every": eval_every,
         "eval_iters": eval_iters,
     }
+    if weight_averages.spec is not None:
+        result['weight_averaging'] = dict(spec=weight_averages.spec,
+            completed_steps=weight_averages.completed_steps, snapshots=weight_averages.snapshots)
     if summary_path is not None:
         summary_path.parent.mkdir(parents=True, exist_ok=True)
         with summary_path.open("w", encoding="utf-8") as fh:
