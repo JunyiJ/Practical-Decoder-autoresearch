@@ -1181,3 +1181,20 @@ MoE quality001 completed and reviewed48/48. All three families selected LR.0025 
 | shallow_reference | 0.0025 | 1.652372 | 1.531293 | 32.50 | 66.93 |
 
 MoE improves locally but fails width256 transfer. Wider dense remains a promising later candidate; the frozen screen winner is not revised. Equal tokens do not mean equal compute. [Complete MoE results and paired evidence](MOE_QUALITY_RESULTS.md).
+
+## Completed schedule quality round
+
+Schedule quality001 completed and reviewed 48/48. Frozen peak LRs: constant 0.0025 (interior), cosine 0.005 (boundary), linear_cooldown 0.005 (boundary). The frozen screen winner was linear_cooldown; its tuned-constant CE deltas at widths 64/256 are -0.071693/-0.075062. It passes the complete mean gain >.005 and every-seed improvement rule versus tuned constant and fixed deep incumbent at both widths, and becomes the most promising observed quality recipe. All models used the same four-layer dense MHA SwiGLU architecture, 3,000 updates and 3,072,000 targets; LR integrals and update/decay balance differ. Held-out test remains closed.
+
+| Recipe | Peak LR | Schedule | CE64 | CE256 | Train seconds at 64 | Train seconds at 256 |
+|---|---:|---|---:|---:|---:|---:|
+| constant | 0.0025 | constant | 1.600278 | 1.521010 | 53.79 | 132.92 |
+| cosine | 0.005 | cosine | 1.534071 | 1.461622 | 53.84 | 129.68 |
+| linear_cooldown | 0.005 | linear_cooldown | 1.528585 | 1.445948 | 53.62 | 131.57 |
+| gelu_reference | 0.002 | constant | 1.679492 | 1.549335 | 31.67 | 69.38 |
+| shallow_reference | 0.0025 | constant | 1.666460 | 1.541795 | 32.82 | 70.56 |
+| deep_reference (alias of constant) | 0.0025 | constant | 1.600278 | 1.521010 | 53.79 | 132.92 |
+
+Cosine and cooldown finish at 10% of their selected peak; constant remains at peak. No warmup or restarts. Independent decay stays at .00006 each step; LR integral and relative gradient/shrinkage balance differ. No boundary grid is extended.
+
+[Complete schedule results and paired evidence](SCHEDULE_QUALITY_RESULTS.md). All findings remain adaptive validation with conditional text uncertainty.
