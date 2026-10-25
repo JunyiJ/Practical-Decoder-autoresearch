@@ -850,3 +850,14 @@ Prepare the separate finite 3,000 versus 6,000-update cooldown experiment from t
 ### Separate horizon protocol after averaging adoption
 
 Averaging-quality-001 is closed with H200 adopted. Prepare [horizon-quality-001](HORIZON_QUALITY_PROTOCOL.md) as a new finite 24-trajectory round: fixed 4L MHA/SwiGLU, peak LR .005, 3,000 updates versus two 6,000-update cooldown shapes, H200 returned weights and raw diagnostics. Extra tokens/compute/cumulative decay and averaging duration are explicit. No old trial continuation, LR-grid extension or larger-width reselection. Require the complete CPU tests, serial MPS pilots, resource forecast, full shared bank and clean committed/pushed source before registration. Continue quality evolution after the round under the latest human authorization.
+
+
+## Completed horizon quality001
+
+The horizon study completed 24 training trajectories and 48 correlated raw/H200 outputs, all independently reviewed. Frozen candidate: long6000_stretched. H200 mean validation CE changes at widths 64/256 versus fresh 3,000-update controls: -0.036435/+0.079981. It does not pass the complete frozen adoption rule; retain the prior 3,000-update H200 incumbent.
+
+Longer training helped every fresh seed at width 64 but worsened every fresh seed at width 256, for both cooldown recipes. The fixed-tail recipe was less harmful at width 256 (mean CE change +0.048263 versus control), but still failed replacement. Both longer recipes used about twice the measured training time. This reversal is evidence against transferring this training-budget change from small width without confirmation; it does not identify overfitting, cumulative decay or cooldown shape as the sole cause. The 3,000-update H200 incumbent is retained.
+
+All 24 raw and 24 derived checkpoints, requests/results, optimizer/RNG/schedule/snapshot/model-shape/coverage contracts, frozen selection and the complete report/bootstrap were independently reviewed. [Full horizon results](HORIZON_QUALITY_RESULTS.md). Keep all completed studies and permanent stop 006 closed.
+
+Continue with the separately prepared QK RMS normalization comparison. The final decision resolves its common backbone to 3,000 updates, cooldown starting at 2,000 and H200 returned weights. Equal bounded LR tuning, fresh seeds, explicit normalization/optimizer/cache contracts, the full CPU suite, actual serial MPS pilots and resource gates remain required before a new unique registration. No larger-width reselection or old-grid extension.

@@ -1258,4 +1258,19 @@ The frozen choice improved all three fresh seeds at both widths, with all condit
 
 The next finite question is whether more training improves the adopted four-layer cooldown model with H200 returned weights. [The horizon protocol](HORIZON_QUALITY_PROTOCOL.md) fixes peak LR at 0.005 and compares fresh 3,000-update controls with 6,000-update recipes whose cooldown starts at 4,000 or 5,000. Six width-64 screening runs freeze the only candidate eligible for adoption before 18 fresh confirmation runs at widths 64 and 256.
 
-Longer training doubles the token budget and applies independent decay more times. Stretching cooldown also changes the duration of averaging; the half-life stays fixed at 200 optimizer updates. Raw endpoints remain a diagnostic. Any quality gain must be read alongside the added training cost, rather than treated as an equal-compute improvement. The protocol has source, test, device and resource gates before its unique preregistration; no longer-horizon quality finding exists yet.
+Longer training doubles the token budget and applies independent decay more times. Stretching cooldown also changes the duration of averaging; the half-life stays fixed at 200 optimizer updates. Raw endpoints remain a diagnostic. Any quality gain must be read alongside the added training cost, rather than treated as an equal-compute improvement. The protocol has source, test, device and resource gates before its unique preregistration; the completed findings follow below.
+
+
+## Completed horizon and cooldown quality round
+
+The horizon study completed 24 training trajectories and 48 correlated raw/H200 outputs, all independently reviewed. Frozen candidate: long6000_stretched. H200 mean validation CE changes at widths 64/256 versus fresh 3,000-update controls: -0.036435/+0.079981. It does not pass the complete frozen adoption rule; retain the prior 3,000-update H200 incumbent.
+
+Longer training helped every fresh seed at width 64 but worsened every fresh seed at width 256, for both cooldown recipes. The fixed-tail recipe was less harmful at width 256 (mean CE change +0.048263 versus control), but still failed replacement. Both longer recipes used about twice the measured training time. This reversal is evidence against transferring this training-budget change from small width without confirmation; it does not identify overfitting, cumulative decay or cooldown shape as the sole cause. The 3,000-update H200 incumbent is retained.
+
+| Recipe | Updates | Cooldown start | Targets | H200 CE64 | H200 CE256 | Raw CE64 | Raw CE256 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| control3000 | 3000 | 2000 | 3072000 | 1.514926 | 1.429409 | 1.519862 | 1.443889 |
+| long6000_stretched | 6000 | 4000 | 6144000 | 1.478490 | 1.509390 | 1.485608 | 1.538587 |
+| long6000_fixedtail | 6000 | 5000 | 6144000 | 1.481838 | 1.477672 | 1.490269 | 1.510866 |
+
+[Complete horizon results and costs](HORIZON_QUALITY_RESULTS.md). More training tokens and compute; adaptive validation, with the holdout closed.
