@@ -113,10 +113,12 @@ def evaluate_job(job):
             raise ValueError('Checkpoint changed')
         saved = read_checkpoint(path);cfg = OmegaConf.create(saved['cfg'])
         if (saved['step'] != 3000 or cfg.model.dim != job['width']
-                or cfg.model.n_layers != job['layers'] or cfg.model.block_size != 128
+                or cfg.model.n_layers != job['layers'] or cfg.model.block_size != job['capacity']
                 or cfg.training.seed != job['seed'] or cfg.model.dropout != 0
                 or cfg.data.train_fraction != .8 or cfg.data.val_fraction != .1):
             raise ValueError('Checkpoint configuration mismatch')
+        if 'cfg_sha256' in spec and digest(saved['cfg']) != spec['cfg_sha256']:
+            raise ValueError('Saved configuration changed')
         if file_digest(Path(cfg.data.path)) != job['data_sha256']:
             raise ValueError('Corpus changed')
         loader = _make_loader(cfg, 'mps')
@@ -130,6 +132,7 @@ def evaluate_job(job):
         panel = tokens
         model = GPT(cfg.model).to('mps').eval();load_model_weights(model, saved)
         expected_type = 'mha' if role == 'reference' else ('gqa' if job['models'][role]['family'] == 'gqa_half' else 'mla')
+        expected_type = spec.get('attention', expected_type)
         if cfg.model.attn_type != expected_type:
             raise ValueError('Attention family mismatch')
         cache = make_caches(model, cfg, job['batch'])
@@ -139,7 +142,7 @@ def evaluate_job(job):
             torch.testing.assert_close(cached, full, atol=job['atol'], rtol=job['rtol'])
             correctness[role] = {'max_absolute_logit_error': float((cached-full).abs().max().item()),
                                  'cache_allocated_bytes': cache_bytes(cache),
-                                 'cache_logical_used_bytes': cache_bytes(cache)*length//128}
+                                 'cache_logical_used_bytes': cache_bytes(cache)*length//job['capacity']}
         models[role], caches[role] = model, cache
         del saved, full, cached, loader
     for _ in range(job['warmups']):
@@ -176,9 +179,11 @@ def validate_result(job, result):
     w, b, l = job['width'], job['batch'], job['layers']
     for role, value in result['correctness'].items():
         channels = 2*w if role == 'reference' else (w if job['models'][role]['family']=='gqa_half' else w//4+32)
-        expected = l*b*128*channels*4
+        if job['models'][role].get('attention') == 'gqa':
+            channels = w
+        expected = l*b*job['capacity']*channels*4
         if (value['cache_allocated_bytes'] != expected
-                or value['cache_logical_used_bytes'] != expected*(job['prompt']+job['decode'])//128
+                or value['cache_logical_used_bytes'] != expected*(job['prompt']+job['decode'])//job['capacity']
                 or not math.isfinite(value['max_absolute_logit_error']) or value['max_absolute_logit_error'] < 0):
             raise ValueError('Cache/correctness result mismatch')
     if set(result['correctness']) != {'reference', 'candidate'}:
@@ -226,8 +231,9 @@ def build_report(plan, records):
             'scope':'Adaptive saved-checkpoint implementation diagnostic; teacher-forced sequential decoding, not serving throughput or quality selection. Current MPS allocation is not peak memory.'}
 
 
-def run(plan, output):
-    output=Path(output).resolve();output.mkdir(exist_ok=True,parents=True);verify_plan(plan)
+def run(plan, output, *, backend=None):
+    backend = backend or sys.modules[__name__]
+    output=Path(output).resolve();output.mkdir(exist_ok=True,parents=True);backend.verify_plan(plan)
     with session_lock(output) as lock_fd:
         state_path=output/'state.json'
         state=json.loads(state_path.read_text()) if state_path.exists() else dict(plan_sha256=digest(plan),records=[],status='running',active_seconds=0.)
@@ -247,12 +253,12 @@ def run(plan, output):
                 if (output/'STOP').exists():raise InterruptedError('Boundary stop')
                 remaining=plan['session_seconds']-prior-(time.monotonic()-start)
                 if remaining<=0:raise TimeoutError('Round budget exhausted')
-                allowance=min(remaining,plan['job_seconds']);verify_plan(plan,False)
+                allowance=min(remaining,plan['job_seconds']);backend.verify_plan(plan,False)
                 row=dict(job,status='running');state['records'].append(row);save(allowance)
                 directory=output/job['id'];directory.mkdir(exist_ok=False);atomic_json(directory/'request.json',job)
                 before=time.monotonic()
                 with (directory/'worker.log').open('w') as log:
-                    proc=subprocess.Popen([sys.executable,'-m','src.research.inference_bench','worker','--request',str(directory/'request.json')],cwd=plan['source_root'],stdout=log,stderr=subprocess.STDOUT,start_new_session=True,pass_fds=(lock_fd,))
+                    proc=subprocess.Popen([sys.executable,'-m',backend.WORKER_MODULE if hasattr(backend, 'WORKER_MODULE') else 'src.research.inference_bench','worker','--request',str(directory/'request.json')],cwd=plan['source_root'],stdout=log,stderr=subprocess.STDOUT,start_new_session=True,pass_fds=(lock_fd,))
                     try:
                         while proc.poll() is None:
                             if time.monotonic()-before>allowance or disk_mb(output)>plan['max_disk_mb']:
@@ -261,10 +267,10 @@ def run(plan, output):
                         if proc.returncode:raise RuntimeError(f'Worker failed: {job["id"]}')
                     except BaseException:
                         terminate(proc);raise
-                raw=json.loads((directory/'result.json').read_text());validate_result(job,raw)
+                raw=json.loads((directory/'result.json').read_text());backend.validate_result(job,raw)
                 row.update(raw,status='completed',duration_seconds=time.monotonic()-before,
                            result_sha256=file_digest(directory/'result.json'));save()
-            verify_plan(plan);atomic_json(output/'report.json',build_report(plan,state['records']));state['status']='completed'
+            backend.verify_plan(plan);atomic_json(output/'report.json',backend.build_report(plan,state['records']));state['status']='completed'
         except BaseException as exc:
             state.update(status='paused' if isinstance(exc,InterruptedError) else 'failed',error=str(exc));raise
         finally:save()
