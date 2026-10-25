@@ -889,3 +889,14 @@ transfer. Require the full CPU suite, six serial MPS pilots and independent
 resource audit before one finite 36/42-trajectory registration. Preserve all
 closed studies, frozen choices and permanent human stop 006. Continue the human
 quality objective after this round.
+
+
+## Completed attention-output gating quality round
+
+Output-gating completed 36 physical trajectories and 72 correlated raw/H200 endpoints, all independently reviewed. All three arms selected LR 0.005 at the upper boundary. Static-half had the best screening mean, improving CE by 0.006703611, but seed 2202 worsened by +0.000584166; incumbent retention was frozen before confirmation. Fresh H200 mean differences at widths 64/256: static-half minus unchanged +0.004553/+0.006444, learned minus unchanged +0.002581/-0.000689, learned minus static-half -0.001972/-0.007133. Retain unchanged MHA, 3,000 updates, cooldown starting at 2,000, and H200; no grid extension or posthoc promotion.
+
+[Complete output-gating results and costs](OUTPUT_GATE_QUALITY_RESULTS.md). Adaptive validation; all 72 checkpoints and complete report independently audited, with the holdout closed.
+
+Learned gating improves every fresh width-256 seed versus static-half, but its mean gain versus unchanged attention is only 0.000689 CE and one seed worsens. At width 64 both gated arms have worse confirmation means than unchanged attention. The learned arm adds 6.9%/0.8% measured training time at widths 64/256. These results do not justify replacement. The static-half screening winner had already failed the every-seed rule, so the retention decision was frozen before confirmation.
+
+Continue with the separate SwiGLU-product RMSNorm/LayerNorm comparison. Keep unchanged attention and LR 0.005 as the common reference resolved from the completed review. Full model/trainer tests, serial MPS checks, resource review and a new finite registration must pass before launch.
