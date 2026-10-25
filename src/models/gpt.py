@@ -9,6 +9,9 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        if getattr(cfg, 'depth_width_policy', None) == 'depth6_dense_unscaled':
+            from .depth_scaling import validate_depth6_dense_contract
+            validate_depth6_dense_contract(cfg)
         moe_cfg = getattr(cfg, "moe", None)
         self.aux_loss_weight = getattr(moe_cfg, "aux_loss_weight", getattr(cfg, "aux_loss_weight", 1.0))
         self.position_encoding = resolve_position_encoding(cfg)

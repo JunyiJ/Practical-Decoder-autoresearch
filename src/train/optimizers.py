@@ -106,6 +106,10 @@ def build_optimizer(model, training):
             and getattr(cfg,'attention_width_policy',None) == 'mha_head32'
             and getattr(cfg,'ffn_bias',None) is False
             and not any(hasattr(cfg,k) for k in ('hidden_dim','n_kv_heads','n_groups','moe')))
+        deep_dense = getattr(cfg, 'depth_width_policy', None) == 'depth6_dense_unscaled'
+        if deep_dense:
+            from ..models.depth_scaling import validate_depth6_dense_contract
+            validate_depth6_dense_contract(cfg)
         moe = cfg.mlp_type == 'moe'
         if moe:
             from ..moe.scaling import validate_moe_contract
@@ -114,7 +118,7 @@ def build_optimizer(model, training):
         attention_ok = (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
             gated and cfg.attn_type == 'gqa' and attention_policy == 'gqa_half_head32'
             and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups')) or (gated and mla)
-        if not attention_ok or not (moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense))):
+        if not attention_ok or not (moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense or deep_dense))):
             raise ValueError('Optimizer width study requires dense GELU/SiLU MHA or an explicit SwiGLU MHA/GQA/MLA width contract')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:
