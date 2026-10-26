@@ -965,3 +965,19 @@ Decay-quality-001 is closed and reviewed; retain the four-layer MHA/SwiGLU coold
 The [input-scale results](EMBEDDING_SCALE_RESULTS.md) retain the existing unit-scale MHA/H200 incumbent after 36 trajectories and 72 audited checkpoints. Smaller scales worsen every fresh width-64 seed; their lower width-256 means include a worse seed and cannot override failed frozen local eligibility. No grid extension or historical pooling.
 
 Next prepare a separate finite final-normalization comparison: affine LayerNorm, bias-free LayerNorm and RMSNorm with matched epsilon 1e-5, exact audited scale 1/LR 0.005 inheritance, and fresh controls. The implementation and all 2,272 CPU cases now pass, including twelve actual geometry/trainer cases. Serial MPS, resource review and preregistration remain required; no final-normalization quality result exists yet. Removing the final bias changes parameter groups, and normalization changes gradients; existing width algebra is not an optimal-transfer guarantee. Keep all prior studies closed and continue the human quality goal.
+
+## Completed final readout normalization round
+
+All 36 physical trajectories and 72 correlated raw/H200 checkpoints passed the complete independent audit on frozen source `43b9a42b820430ca9a242fc2b142e66cd65be93c`. The full report, conditional text bootstraps, private sampler RNG, optimizer groups and steps, schedules, H200 lineage, exact aliases and 111,538-target coverage were reconstructed without rerunning training or scoring.
+
+| Final norm | Selected peak LR | H200 CE at width 64 | H200 CE at width 256 | Delta versus affine, 64 / 256 |
+|---|---:|---:|---:|---:|
+| Affine LayerNorm | 0.005 | 1.520548 | 1.437485 | 0 / 0 |
+| Bias-free LayerNorm | 0.01 | 1.519476 | 1.430699 | −0.001072 / −0.006786 |
+| RMSNorm | 0.005 | 1.519448 | 1.438652 | −0.001101 / +0.001167 |
+
+Affine LayerNorm was the best screen recipe and matched the incumbent, so retention was frozen before confirmation. Both alternatives worsened seed 2331 at width 64. Bias-free LayerNorm's width-256 mean improved more than 0.005, but seed 2331 worsened by 0.000973; its negative text interval does not estimate training-seed uncertainty or override selection. RMSNorm had mixed width-256 seeds and a worse mean. The six fixed-reference cells are exact affine aliases, not repeated controls. No alternative promotion or grid extension is allowed.
+
+Retain affine final LayerNorm, unit input scale, four-layer MHA/SwiGLU, peak LR 0.005, independent decay 0.00006, no warmup, cooldown over 3,000 updates and H200 returned weights. Bias-free LayerNorm uses a different tuned peak LR, so its selected contrast is not an isolated bias-removal effect. Timing differences below 1% are descriptive, not equivalence or serving evidence. Adaptive validation and the closed holdout remain explicit.
+
+[Full results, paired seeds, fixed-LR screens and measured costs](READOUT_NORMALIZATION_RESULTS.md). The distinct output-bias proposal is under preparation and has not launched.

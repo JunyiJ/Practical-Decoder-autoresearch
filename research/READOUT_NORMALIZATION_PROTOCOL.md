@@ -1,6 +1,6 @@
 # Final readout normalization quality protocol
 
-Status: implemented and CPU-verified on isolated research source; serial MPS and resource gates remain before registration or launch. All 2,272 collected project cases passed, including twelve actual final-normalization geometry/training/resume cases and 204 new metadata/controller/audit cases. These establish CPU correctness, not quality or MPS behavior. The completed embedding-scale review retained input scale 1, peak LR 0.005, independent decay 0.00006 and zero warmup on the four-layer MHA/cooldown/H200 incumbent. All closed studies and permanent stop006 remain closed; the human quality objective continues.
+Status: completed and independently reviewed: 36 physical trajectories and 72 correlated raw/H200 checkpoints. All 2,272 CPU cases and six serial MPS pilots passed before registration. The full final audit retained the prior affine-LayerNorm incumbent; see [completed results](READOUT_NORMALIZATION_RESULTS.md). The original frozen protocol and source remain bound in the run plan. All older studies and permanent stop006 remain closed; quality research continues until human interruption.
 
 ## Question and inherited recipe
 
