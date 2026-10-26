@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .embedding_scale import resolve_input_scale
+        self.input_embedding_scale = resolve_input_scale(cfg)
         from ..attention.kda_scaling import has_kda_policy, validate_kda_contract
         if has_kda_policy(cfg):
             validate_kda_contract(cfg)
@@ -70,6 +72,9 @@ class GPT(nn.Module):
                 f"Sequence length {t} with start_pos {start_pos} exceeds block_size {self.cfg.block_size}"
             )
         token_emb = self.transformer.wte(idx)
+        # Keep legacy and explicit-unit forward paths exactly unchanged.
+        if self.input_embedding_scale != 1.:
+            token_emb = token_emb * self.input_embedding_scale
         if self.position_encoding == "learned":
             pos = torch.arange(start_pos, start_pos + t, device=idx.device)
             pos_emb = self.transformer.wpe(pos)

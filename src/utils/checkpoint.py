@@ -57,6 +57,8 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
     weights and forward math are unchanged. Legacy optimizer parameter groups
     include the removed table, so training continuation requires original source.
     """
+    from ..models.embedding_scale import validate_input_scale_load
+    validate_input_scale_load(model, checkpoint)
     if for_resume and 'averaged_weights' in checkpoint:
         raise ValueError('Averaged inference weights cannot resume the online optimizer; use the raw parent checkpoint')
     state = checkpoint['model_state']

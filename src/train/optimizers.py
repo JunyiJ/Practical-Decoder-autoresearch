@@ -63,6 +63,8 @@ class HybridOptimizer:
 
 
 def build_optimizer(model, training):
+    from ..models.embedding_scale import input_scale_contract
+    input_scale_contract(model.cfg)
     opts = optimizer_options(training)
     lr, wd = float(training.learning_rate), float(training.weight_decay)
     if not math.isfinite(lr) or lr < 0 or not math.isfinite(wd) or wd < 0:
