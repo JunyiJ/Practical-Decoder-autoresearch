@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .value_residual import value_residual_signature
+        self.value_residual_signature = value_residual_signature(cfg)
         from .residual_gain import residual_gain_signature
         self.residual_gain_signature = residual_gain_signature(cfg)
         from .gated_activation import gated_activation_signature
@@ -54,6 +56,9 @@ class GPT(nn.Module):
             "h": nn.ModuleList([TransformerBlock(cfg) for _ in range(cfg.n_layers)]),
             "ln_f": build_readout_norm(cfg)
         })
+        if self.value_residual_signature is not None:
+            for i, block in enumerate(self.transformer.h):
+                block.attn.value_residual_layer = i
         self.lm_head = nn.Linear(cfg.dim, cfg.vocab_size, bias=False)
         parameterization = getattr(cfg, 'parameterization', 'sp')
         if parameterization not in {'sp', 'mup'}:
@@ -112,9 +117,19 @@ class GPT(nn.Module):
             raise TypeError("cache must be a list/tuple of per-layer KVCache objects")
         if cache is not None and len(cache) != len(self.transformer.h):
             raise ValueError("cache length must match number of transformer blocks")
+        first_layer_value = None  # This invocation's new token/chunk only; autograd remains attached.
+        reuse_values = self.value_residual_signature is not None and self.value_residual_signature[0] != 'local'
         for layer_idx, block in enumerate(self.transformer.h):
             layer_cache = None if cache is None else cache[layer_idx]
-            x, block_aux_loss = block(x, layer_cache, start_pos)
+            if reuse_values:
+                x, block_aux_loss, raw_value = block(
+                    x, layer_cache, start_pos,
+                    first_layer_value=first_layer_value, return_raw_value=True,
+                )
+                if layer_idx == 0:
+                    first_layer_value = raw_value
+            else:
+                x, block_aux_loss = block(x, layer_cache, start_pos)
             if block_aux_loss is not None:
                 aux_losses.append(block_aux_loss)
         x = self.transformer.ln_f(x)

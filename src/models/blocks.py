@@ -105,9 +105,19 @@ class TransformerBlock(nn.Module):
         from .residual_gain import install_residual_gains
         install_residual_gains(self, cfg)
 
-    def forward(self, x, cache=None, start_pos=0):
+    def forward(self, x, cache=None, start_pos=0, *, first_layer_value=None, return_raw_value=False):
         residual = x
-        x, _ = self.attn(self.ln1(x), cache=cache, start_pos=start_pos, freq_cos=self.freq_cos, freq_sin=self.freq_sin)
+        if return_raw_value:
+            x, raw_value = self.attn(
+                self.ln1(x), cache=cache, start_pos=start_pos,
+                freq_cos=self.freq_cos, freq_sin=self.freq_sin,
+                first_layer_value=first_layer_value, return_raw_value=True,
+            )
+        else:
+            x, _ = self.attn(
+                self.ln1(x), cache=cache, start_pos=start_pos,
+                freq_cos=self.freq_cos, freq_sin=self.freq_sin,
+            )
         from .residual_gain import apply_residual_gain
         # Scale complete projected branch, including its output bias.
         x = residual + apply_residual_gain(self, x, 'attention')
@@ -121,4 +131,6 @@ class TransformerBlock(nn.Module):
         if isinstance(mlp_out, tuple):
             mlp_out, aux_loss = mlp_out
         x = x + apply_residual_gain(self, mlp_out, 'ffn')
+        if return_raw_value:
+            return x, aux_loss, raw_value
         return x, aux_loss

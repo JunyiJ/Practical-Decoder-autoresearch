@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 
 from ..models.rope import apply_rotary_emb
+from ..models.value_residual import value_residual_contract, resolve_value_residual, mix_values
 from ..models.attention_scale import attention_scale_contract, resolve_attention_scale
 from .qk_norm import make_qk_norms, resolve_qk_norm
 from .output_gate import make_output_gate, resolve_output_gate
@@ -36,6 +37,8 @@ class ScaledAttention(nn.Module):
 class MHA_NAIVE(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        if value_residual_contract(cfg) is not None:
+            raise ValueError('Value reuse is implemented only in fused MHA')
         if attention_scale_contract(cfg) is not None:
             raise ValueError('Explicit attention scaling is implemented only in fused MHA')
         if resolve_qk_norm(cfg) != 'none':
@@ -69,6 +72,8 @@ class MHA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.attention_logit_scale = resolve_attention_scale(cfg)
+        self.value_residual_kind = resolve_value_residual(cfg)
+        self.value_residual_layer = 0
         self.dim = cfg.dim
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
@@ -99,7 +104,8 @@ class MHA(nn.Module):
             self.causal_mask = torch.tril(torch.ones(s, s, device=device, dtype=torch.bool))
         return self.causal_mask[:s, :s]
 
-    def forward(self, x, cache=None, start_pos=0, freq_cos=None, freq_sin=None):
+    def forward(self, x, cache=None, start_pos=0, freq_cos=None, freq_sin=None,
+                first_layer_value=None, return_raw_value=False):
         b, s, d = x.size()
         qkv = self.qkv(x)
         q, k, v = qkv.chunk(3, dim=-1)
@@ -107,6 +113,9 @@ class MHA(nn.Module):
         q = q.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
         k = k.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
         v = v.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
+        raw_value = v
+        if self.value_residual_kind != 'local':
+            v = mix_values(v, first_layer_value, self.value_residual_kind, self.value_residual_layer)
         if self.q_norm is not None:
             q, k = self.q_norm(q), self.k_norm(k)
         if freq_cos is not None and freq_sin is not None:
@@ -133,4 +142,4 @@ class MHA(nn.Module):
             y = self.output_gate(x, y)
         y = y.transpose(1, 2).contiguous().view(b, s, d)
         y = self.out_dropout(self.out(y))
-        return y, None
+        return y, raw_value if return_raw_value else None
