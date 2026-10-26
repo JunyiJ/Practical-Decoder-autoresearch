@@ -933,3 +933,23 @@ The separate [decay protocol](DECAY_QUALITY_PROTOCOL.md) compares per-update coe
 The coefficient acts once before each inner optimizer update, independently of scheduled LR. With gradient updates omitted, the nominal remaining weight after 3,000 steps is about 0.941764, 0.835266 or 0.582720 for the weak, anchor and strong arms. These are algebraic illustrations, not predictions of model norms or validation loss. Tuned confirmation contrasts include the selected LR as well as decay.
 
 All 1,608 CPU cases passed, including six actual trainer/resume cases and seven independent optimizer-algebra checks. The implementation changes no model or optimizer arithmetic. Six serial MPS pilots, resource review, clean committed source and a unique frozen registration remain required before research launch. The held-out test stays closed.
+
+## Completed independent-decay quality round
+
+Independent-decay comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Frozen choices: anchor LR 0.005, weak LR 0.005, strong LR 0.005; eligible winner: incumbent_unchanged. Fresh H200 deltas at widths 64/256: Weak decay minus anchor +0.004269/+0.003997; Strong decay minus anchor -0.001221/-0.010659; Strong decay minus weak -0.005491/-0.014657. The complete frozen adoption rule is not met; retain the prior incumbent.
+
+All arms selected LR 0.005 at the fixed upper boundary. Strong decay's screening mean improved by 0.002842 CE, below the required 0.005 gain, so retention was frozen before confirmation. At width 64, strong-minus-anchor confirmation deltas are -0.002225 / +0.002907 / -0.004346: a lower mean with mixed seeds. At width 256, the three deltas are -0.012610 / -0.012248 / -0.007120, and all conditional text intervals are negative. This is a promising measured width-specific result; it does not retroactively qualify the locally ineligible candidate or change the incumbent.
+
+| Independent decay | H200 CE64 | H200 CE256 | Outcome under the frozen rule |
+|---|---:|---:|---|
+| Anchor 0.00006 | 1.518961 | 1.432232 | Retained |
+| Weak 0.00002 | 1.523230 | 1.436229 | Every fresh seed worse at both widths |
+| Strong 0.00018 | 1.517739 | 1.421573 | Width-256 support; mixed width-64 seeds; no adoption |
+
+Strong decay also beats weak decay on every fresh seed at both widths. Measured training times differ by less than 0.4% from the anchor in this round; that does not establish compute equivalence or inference speed. All coefficients share 3,000 updates, 3,072,000 targets, cooldown from update 2,000 and H200 averaging. Nominal cumulative shrinkage remains an algebraic calculation, not an identified quality mechanism.
+
+[Full paired results, raw diagnostics, intervals and costs](DECAY_QUALITY_RESULTS.md). All 36 raw and 36 H200 checkpoints, saved configurations, optimizer slots/steps/factors, exact private sampler/test RNG, schedule/snapshot counters, complete validation coverage, frozen choices, aliases and report/bootstrap were independently verified. Six fixed-reference cells prospectively alias the selected anchor; they are not independent repeats. Controller active time was 2,813.93 seconds, with 530.42 MiB before review. Adaptive validation; the held-out test remains closed.
+
+Historical source is `267284b002decacf102a7dc2c953ff926c9ae5ef`. The human KDA merge was integrated only after this original-source audit. Later root changes do not alter the preserved study evidence. The earlier prelaunch paragraphs above are historical preparation records; this completed review supersedes their pending status.
+
+Continue with KDA feasibility on a separate explicit width/optimizer contract and fresh MHA controls. Its draft compares all-KDA with MHA under the retained decay 0.00006 and H200 recipe; it is not a reproduction of a hybrid architecture. Ninety-nine synthetic controller, predecessor, resource and report-audit cases pass, and the actual launch guard rejected execution while decay was active. Actual KDA model/gradient/trainer tests, the complete CPU suite, four serial MPS pilots and a bounded resource forecast remain required. No KDA quality run is registered or launched. Preserve every closed study and permanent stop 006; continue the human quality objective until interruption.
