@@ -1,6 +1,6 @@
 # Learning LLM pretraining through our optimizer transfer project
 
-**Latest reviewed result, October 26:** the independent-decay round is complete. Stronger decay helps every fresh seed at width 256 but fails the frozen replacement rule at width 64; the four-layer MHA/SwiGLU, cooldown/H200, LR 0.005 and decay 0.00006 incumbent remains. See the completed-round section at the end. Earlier sections explain the historical two-layer baseline and successive experiments. KDA model validation is next; research continues until human interruption.
+**Latest reviewed result, October 26:** KDA quality001 is complete and independently reviewed. The tested KDA adaptation worsened mean validation CE at widths 64 and 256 and took substantially longer to train. The four-layer MHA/SwiGLU, cooldown/H200, LR 0.005 and decay 0.00006 incumbent remains. See the completed KDA section at the end. Earlier preparation paragraphs are historical. A distinct warmup experiment is being validated next; research continues until human interruption.
 
 **A project walkthrough and lab notebook · October 23, 2026**
 
@@ -1445,3 +1445,18 @@ The separate [KDA protocol](KDA_QUALITY_PROTOCOL.md) compares four layers of the
 All 1,729 project CPU tests passed on the integrated source: 58 KDA reference/model/optimizer/gradient/trainer cases and 1,671 remaining regression cases. The actual KDA trainer checks cover widths64/256, exact CPU resume, private sampler RNG, strict finite optimizer states, raw/H200 noninterference, derived checkpoints and cached/full logits. This is correctness evidence, not a quality result or an MPS measurement. The audit parser initially mistook passing negative-fixture names containing `[failed]` for execution failures; its status parsing was corrected without rerunning tests or changing source/logs.
 
 Four serial, bounded MPS pilots and an independent resource review remain required before registration. The final-reviewed common recipe retains LR0.005, independent decay0.00006, 3,000-update cooldown and H200; both families receive the same finite LR tuning and fresh controls. A failure of feasibility stops this proposed launch, with its evidence preserved. No KDA quality run has launched.
+
+## Completed KDA quality round
+
+All 24 physical trajectories and 48 correlated raw/H200 checkpoints passed independent review. Both families selected LR 0.005 at the frozen upper boundary. MHA won the screening comparison and exactly matched the incumbent, so replacement eligibility failed before confirmation; no later result changes that selection.
+
+| Fresh confirmation | H200 CE64 | H200 CE256 | Training time relative to MHA, 64/256 |
+|---|---:|---:|---:|
+| MHA / incumbent alias | 1.522230 | 1.431696 | 1.00 / 1.00 |
+| KDA | 1.527077 | 1.439532 | 7.44 / 4.45 |
+
+KDA-minus-MHA mean deltas were +0.004848 and +0.007836 CE. Width 64 had one improving and two worsening seeds; width 256 had three worsening seeds. All three conditional text intervals were positive at both widths. The raw checkpoint diagnostic also had worse means. The prior MHA/H200 incumbent remains. These measurements concern the local all-KDA adaptation, equal 3,000 updates and 3,072,000 targets; they do not establish equal compute, serving speed, optimal KDA scaling or performance of a hybrid architecture.
+
+[Complete paired results, fixed-LR screens, raw diagnostics and costs](KDA_QUALITY_RESULTS.md). All checkpoint hashes, saved shapes, optimizer slots/factors/steps, sampler/test RNG, cooldown/H200 contracts, full 111,538-target coverage, frozen selection, six prospective reference aliases and complete report/bootstrap were verified. Controller active time was 6,547.45 seconds (1.82 hours), with 376.08 MiB before review. The historical study source is `b254d13a234b5d9075c802dbaa1e32f195553267`; later source changes do not alter this evidence. No training or evaluation was rerun. Adaptive validation; holdout remains closed.
+
+The next distinct proposal compares no warmup with 100- and 300-update warmups on the final-reviewed MHA incumbent, holding the inherited peak LR, decay, total updates, cooldown and H200 policy fixed. Its metadata/controller tests passed in a separate prototype; actual trainer tests, full regression tests, serial MPS pilots, resource review and new preregistration remain required. No warmup quality run is launched. All earlier studies stay closed, including permanent human stop 006.
