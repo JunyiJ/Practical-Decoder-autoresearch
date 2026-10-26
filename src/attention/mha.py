@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 
 from ..models.rope import apply_rotary_emb
+from ..models.attention_scale import attention_scale_contract, resolve_attention_scale
 from .qk_norm import make_qk_norms, resolve_qk_norm
 from .output_gate import make_output_gate, resolve_output_gate
 
@@ -35,6 +36,8 @@ class ScaledAttention(nn.Module):
 class MHA_NAIVE(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        if attention_scale_contract(cfg) is not None:
+            raise ValueError('Explicit attention scaling is implemented only in fused MHA')
         if resolve_qk_norm(cfg) != 'none':
             raise ValueError('QK normalization is implemented only in fused MHA')
         if resolve_output_gate(cfg) != 'none':
@@ -65,6 +68,7 @@ class MHA_NAIVE(nn.Module):
 class MHA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        self.attention_logit_scale = resolve_attention_scale(cfg)
         self.dim = cfg.dim
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
@@ -114,6 +118,8 @@ class MHA(nn.Module):
             k, v = cache.update(k, v, start_pos)
 
         att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)
+        if self.attention_logit_scale != 1.:
+            att = att * self.attention_logit_scale
         if self.causal:
             total_len = k.size(-2)
             mask = self._get_causal_mask(total_len, x.device)

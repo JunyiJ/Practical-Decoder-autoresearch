@@ -63,6 +63,8 @@ class HybridOptimizer:
 
 
 def build_optimizer(model, training):
+    from ..models.attention_scale import validate_attention_scale_model
+    validate_attention_scale_model(model)
     from ..models.residual_topology import validate_residual_topology_model
     validate_residual_topology_model(model)
     from ..models.weight_tying import validate_weight_tying_model

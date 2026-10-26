@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .attention_scale import attention_scale_signature
+        self.attention_scale_signature = attention_scale_signature(cfg)
         from .residual_topology import residual_topology_signature
         self.residual_topology_signature = residual_topology_signature(cfg)
         from .weight_tying import weight_tying_signature, readout_scale
