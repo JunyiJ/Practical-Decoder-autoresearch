@@ -1468,3 +1468,20 @@ The separate [warmup protocol](WARMUP_QUALITY_PROTOCOL.md) compares no warmup wi
 All 1,891 project CPU cases passed on the integrated source. Eight actual MHA/KDA trainer cases at widths 64/256 and shortened warmups 2/4 verified exact resume inside warmup, at its peak and during cooldown; optimizer state, independent decay, private train/validation/test RNG, passive H200 and strict derived weights were checked. The remaining 1,883 regression cases also passed. Independent case-ID and source/test-hash review verified exact coverage without duplicates or skips. Two optional pytest-cache write warnings were preserved; no test failure or rerun occurred.
 
 Six serial MPS pilots, an independent saved-checkpoint/resource audit, clean published source and a new unique preregistration remain required. No warmup quality run is launched, and these CPU correctness results say nothing about quality gains. Earlier completed studies remain closed; the continuing quality objective stays active until human interruption.
+
+
+## Completed warmup quality round
+
+All 24 physical trajectories and 48 correlated raw/H200 checkpoints passed independent review. The no-warmup MHA/cooldown/H200 incumbent remains. The 100-update warmup passed its two-seed width-64 screen, but the fresh three-seed confirmation did not meet the frozen mean-gain and every-seed requirements at either width.
+
+| Fresh confirmation, peak LR 0.005 | H200 CE64 | H200 CE256 |
+|---|---:|---:|
+| No warmup | 1.514762 | 1.428944 |
+| 100-update warmup | 1.510299 | 1.428140 |
+| 300-update warmup | 1.515234 | 1.429972 |
+
+The 100-update warmup’s paired mean deltas were −0.004462 / −0.000805 CE. Seed 2292 worsened by +0.001030 at width 64, and seed 2293 worsened by +0.003743 at width 256. Width-64 conditional text intervals were negative, yet the mean gain was below 0.005 and a seed worsened. Text uncertainty conditional on the observed seeds cannot replace evidence across seeds. The 300-update warmup had slightly worse means at both widths. Training times differed by less than 0.2% in this round.
+
+[Full paired results, raw diagnostics, fixed-LR screens and costs](WARMUP_QUALITY_RESULTS.md). The audit verified all saved configurations/shapes, optimizer slots and steps, private train/validation/test RNG, warmup/cooldown/H200 counters, full 111,538-target coverage, frozen selection and independently reconstructed report/bootstrap. Controller active time was 2,096.64 seconds (0.58 hours), with 488.92 MiB before review. Historical source is `69272ce1c72f6d19cb583773d31687a31f191dd8`. No training or evaluation rerun; holdout remains closed. Earlier preparation paragraphs are historical and this completion supersedes their pending status.
+
+Next, test input embedding multipliers 1, 0.5 and 0.25 on the retained no-warmup recipe with equal bounded LR tuning and fresh controls. The separate prototype and arithmetic/report gates are prepared; actual model/resume tests, the full CPU suite, serial MPS correctness and resource gates, reviewed published source and a new finite preregistration are still required. No embedding-scale quality run has launched. This changes the input contribution to the residual stream and embedding gradients, not parameter shapes or initialization; a quality gain is unmeasured. All closed studies and the permanent human stop on campaign006 remain preserved. Research continues until human interruption.

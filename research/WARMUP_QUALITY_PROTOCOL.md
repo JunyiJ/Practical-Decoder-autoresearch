@@ -127,3 +127,8 @@ audit every request/result/raw/H200 hash, saved model/optimizer/schedule/sampler
 step/token/coverage contract, frozen manifest, aggregates/bootstrap and decision.
 Append findings and update best-config context and the readable guide before the
 next distinct round. All closed studies and permanent stop006 stay closed.
+
+
+## Completed study
+
+`warmup-quality-001` completed all 24 trajectories and 48 correlated raw/H200 outputs on historical source `69272ce1c72f6d19cb583773d31687a31f191dd8`. The complete independent checkpoint and report review retained the no-warmup incumbent. [Full results and limitations](WARMUP_QUALITY_RESULTS.md). Preparation statements above describe the prelaunch state; the frozen run plan and historical source remain authoritative. No grid extension or completed-trial rerun.
