@@ -19,6 +19,20 @@ class KVCache(nn.Module):
                 n_kv_heads = cfg.model.n_heads
         if batch_size is None:
             batch_size = getattr(cfg.training, "batch_size", 1)
+        if self.attn_type == "kda":
+            heads = cfg.model.n_heads
+            head_dim = cfg.model.dim // heads
+            self.max_seq_len = cfg.model.block_size
+            self.position = 0
+            state_dtype = torch.float64 if dtype == torch.float64 else torch.float32
+            self.register_buffer("state", torch.zeros(
+                batch_size, heads, head_dim, head_dim, device=device, dtype=state_dtype))
+            for name in ("q", "k", "v"):
+                self.register_buffer(name + "_history", torch.zeros(
+                    batch_size, cfg.model.dim, 3, device=device, dtype=dtype))
+            self.k_cache = None
+            self.v_cache = None
+            return
         if self.is_mla:
             _, dimc_kv = latent_dimensions(cfg.model)
             head_dim_r = getattr(cfg.model, "head_dim_r", cfg.model.dim // cfg.model.n_heads)
@@ -44,6 +58,8 @@ class KVCache(nn.Module):
         """
         k_new, v_new: (Batch, Num_Heads, Seq_Len_New, Head_Dim)
         """
+        if self.attn_type == "kda":
+            raise ValueError("KDA updates recurrent state and convolution history directly")
         if self.is_mla:
             c_new = k_new
             r_new = v_new
@@ -62,6 +78,12 @@ class KVCache(nn.Module):
 
 
     def reset(self):
+        if self.attn_type == "kda":
+            self.state.zero_()
+            for name in ("q", "k", "v"):
+                getattr(self, name + "_history").zero_()
+            self.position = 0
+            return
         if self.is_mla:
             self.c_cache.zero_()
             self.r_cache.zero_()

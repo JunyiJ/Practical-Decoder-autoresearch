@@ -163,7 +163,7 @@ def _benchmark(
             max_new_tokens = max_allowed
     reset_peak_memory(idx.device)
     caches = None
-    if enable_cache and cfg.model.attn_type in ("mha", "gqa", "mla", "gated_mla"):
+    if enable_cache and cfg.model.attn_type in ("mha", "gqa", "mla", "gated_mla", "kda"):
         caches = [
             KVCache(
                 cfg,

@@ -192,7 +192,7 @@ def main() -> None:
 
     idx = _encode(args.prompt, loader.stoi).unsqueeze(0).to(device)
     caches = None
-    if args.enable_cache and cfg.model.attn_type in ("gqa", "mha", "mla", "gated_mla"):
+    if args.enable_cache and cfg.model.attn_type in ("gqa", "mha", "mla", "gated_mla", "kda"):
         caches = [
             KVCache(
                 cfg,
