@@ -1579,3 +1579,18 @@ Tied-minus-matched means were −0.002778 / −0.000462, with one worse seed at 
 Retain the historical untied, no-bias, affine-final-LayerNorm, unit-input MHA4/SwiGLU21D/8 recipe: LR 0.005, independent decay 0.00006, zero warmup, 3,000-update cooldown and H200 returned weights. Six fixed-reference cells prospectively alias legacy confirmation; they are not independent repeats. Training-time changes were below 0.32%, descriptive only. Active time was 2,801.36 seconds (0.78 hours), with 529.17 MiB before review. Adaptive validation, no holdout, no historical pooling or grid extension.
 
 [Full paired results, raw diagnostics, fixed-LR screens and costs](WEIGHT_TYING_RESULTS.md). The separate parallel-block prototype keeps two existing normalizers but feeds the FFN from the original residual. Its 193 metadata checks pass; 18 actual geometry/trainer cases, full regression, four serial MPS pilots, independent resource review, source publication and new finite preregistration remain required. Its CPU driver bounds temporary checkpoint retention by preserving hash inventories and deleting only fully passed new test batches; failed evidence stays preserved. Continue the quality objective until human interruption; all closed studies and permanent stop 006 remain preserved.
+
+
+## Completed parallel-block round
+
+Serial versus parallel separate-norm residual blocks completed 24 physical trajectories and 48 correlated raw/H200 outputs, independently reviewed. Common inherited table kind legacy_untied; warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas for parallel versus tuned serial: +0.026757/+0.013555. Retain the prior incumbent under the complete frozen rule.
+
+[Full paired results and costs](PARALLEL_BLOCK_RESULTS.md). Adaptive validation; no holdout.
+
+## Interpretation and decision
+
+Serial selected peak LR 0.005 (interior); parallel selected 0.01 (upper boundary). The best screening recipe was the unchanged serial incumbent, so retention was frozen before confirmation. Parallel then worsened H200 and raw loss on every fresh seed at both widths; every conditional text interval was positive. At all three fixed learning rates, parallel also worsened both screening seeds. Selected-recipe confirmation compares different learning rates and does not isolate topology alone. The grid is closed.
+
+Six fixed-reference cells prospectively alias the selected serial cells; their zero contrasts are identities, not independent repeated evidence. Fresh controls are not pooled with historical studies. Training-time differences were −0.21% at width 64 and +0.09% at width 256, descriptive measurements without a speed or equivalence claim. The retained recipe remains serial, untied, no output bias, affine final LayerNorm, unit input scale, peak LR 0.005, independent decay 0.00006, zero warmup, 3000-update cooldown and H200 returned weights.
+
+Before this run, all 3030 CPU cases and four serial MPS pilots passed. Final auditing independently checked all 24 raw and 24 H200 checkpoints, optimizer and RNG contracts, full validation coverage, selection, aliases and every reported bootstrap. The original auditor passed on the frozen source after both controller and worker exited.
