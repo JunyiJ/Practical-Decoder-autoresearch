@@ -39,3 +39,8 @@ Project the worst42-run case from actual pilots with50% margin. Require fit with
 Before launch, review all source/default/scaling contracts; commit and publish clean tested source; bind actual prerequisite evidence, corpus/prior, final predecessor and full knowledge snapshot in a new unique readonly plan. Preserve all older studies and permanent stop006. At completion, independently audit every request/result/raw/derived hash, prior/shape/optimizer/RNG/step/token/schedule/H200/coverage contract, frozen choices/aliases and entire report/bootstrap before recording findings, updating the guide or adopting a recipe.
 
 Literature motivation: Meister et al., [A Natural Bias](https://arxiv.org/html/2212.09686v2), main sections2–8 consulted during preparation. Their machine-translation/subword/label-smoothing and output-matrix-rescaling setting motivates investigating output geometry only. This local character-model experiment is not a replication and assumes no quality benefit.
+
+
+## Completed execution record
+
+The prerequisite gates were completed and this protocol subsequently ran as output-bias-quality-001 on source `3013f45a37cd5889bf340be54cf027ccc91a30a8`. All 42 physical trajectories and 84 correlated raw/H200 checkpoints passed the full independent completion audit. The frozen screen retained the incumbent; confirmation does not change that decision. [Results and interpretation](OUTPUT_BIAS_RESULTS.md). Earlier prospective status text records the preparation stage. No grid extension or completed-trial rerun.

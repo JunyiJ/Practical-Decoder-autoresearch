@@ -981,3 +981,23 @@ Affine LayerNorm was the best screen recipe and matched the incumbent, so retent
 Retain affine final LayerNorm, unit input scale, four-layer MHA/SwiGLU, peak LR 0.005, independent decay 0.00006, no warmup, cooldown over 3,000 updates and H200 returned weights. Bias-free LayerNorm uses a different tuned peak LR, so its selected contrast is not an isolated bias-removal effect. Timing differences below 1% are descriptive, not equivalence or serving evidence. Adaptive validation and the closed holdout remain explicit.
 
 [Full results, paired seeds, fixed-LR screens and measured costs](READOUT_NORMALIZATION_RESULTS.md). The distinct output-bias proposal is under preparation and has not launched.
+
+
+## Completed vocabulary output-bias round
+
+The round completed **42 physical trajectories and 84 correlated raw/H200 checkpoints**. All hashes, saved configurations, training-only prior, model shapes, optimizer slots/steps, private train/reset-validation/untouched-test RNG, cooldown, H200 lineage, full 111,538-target coverage, frozen selection and full report/bootstrap passed independent review on source `3013f45a37cd5889bf340be54cf027ccc91a30a8`. No training or scoring was rerun. Earlier preparation and launch paragraphs are historical.
+
+| Output bias | Frozen peak LR | H200 CE, width 64 | H200 CE, width 256 |
+|---|---:|---:|---:|
+| None, tuned | 0.01 | 1.513881 | 1.423426 |
+| Learned, zero initialization | 0.01 | 1.515113 | 1.426918 |
+| Learned, training unigram initialization | 0.005 | 1.509011 | 1.432221 |
+| None, fixed incumbent | 0.005 | 1.513636 | 1.432051 |
+
+Train-unigram was best in screening, but its gain of 0.004951322 against tuned no-bias fell below the frozen 0.005 requirement. Retention was fixed before confirmation. Fresh unigram-minus-tuned-no-bias means are −0.004870 / +0.008795 at widths 64 / 256: seed 2352 worsens at width 64, and every seed worsens at width 256. Learned-zero also worsens every width-256 seed versus tuned no-bias. Unigram beats zero on every width-64 seed but loses on every width-256 seed; the selected LRs differ.
+
+The tuned no-bias LR 0.01 recipe gains 0.008625 at width 256 versus fixed LR 0.005, with every seed better, but its width-64 mean worsens by 0.000244 and seeds are mixed. This is a measured width-specific LR finding, not an adopted replacement. Retain no bias, affine final LayerNorm, unit input scale, MHA4/SwiGLU21D/8, LR 0.005, independent decay 0.00006, zero warmup, 3,000-update cooldown and H200 returned weights.
+
+There are no reference aliases in this round; all six fixed-incumbent confirmation runs are distinct. Training-prefix counts are not sampler-weighted targets; the existing global character alphabet remains disclosed. Conditional text intervals do not estimate training-seed uncertainty. No fallback, boundary extension, holdout access or historical pooling. Active time was 3,398.87 seconds (0.94 hours), with 687.04 MiB before review. Timing differences below 0.6% do not establish speed equivalence.
+
+[Full paired results, fixed-LR screens, raw diagnostics and costs](OUTPUT_BIAS_RESULTS.md). The separate scaled table-sharing prototype compares legacy, a matched untied control and a shared table. Its 280 metadata tests pass, but 24 actual geometry/trainer cases, full regression, serial MPS pilots, independent resource checks and new preregistration remain required. It has not launched. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
