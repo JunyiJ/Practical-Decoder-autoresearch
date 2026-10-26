@@ -44,6 +44,9 @@ def input_scale_contract(cfg):
         'output_gate_width_policy','ffn_hidden_norm','ffn_norm_width_policy')
     if any(_has(cfg, k) for k in forbidden):
         raise ValueError('Input embedding scale rejects unreviewed combined overrides')
+    if any(_has(cfg, k) for k in ('readout_norm_kind', 'readout_norm_width_policy', 'readout_norm_epsilon')):
+        from .readout_norm import readout_norm_contract
+        readout_norm_contract(cfg)
     return dict(input_width_policy=POLICY, input_embedding_scale=float(scale))
 
 

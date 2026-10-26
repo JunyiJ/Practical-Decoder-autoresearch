@@ -11,6 +11,8 @@ class GPT(nn.Module):
         self.cfg = cfg
         from .embedding_scale import resolve_input_scale
         self.input_embedding_scale = resolve_input_scale(cfg)
+        from .readout_norm import readout_norm_signature, build_readout_norm
+        self.readout_norm_signature = readout_norm_signature(cfg)
         from ..attention.kda_scaling import has_kda_policy, validate_kda_contract
         if has_kda_policy(cfg):
             validate_kda_contract(cfg)
@@ -37,7 +39,7 @@ class GPT(nn.Module):
         self.transformer = nn.ModuleDict({
             **embeddings,
             "h": nn.ModuleList([TransformerBlock(cfg) for _ in range(cfg.n_layers)]),
-            "ln_f": nn.LayerNorm(cfg.dim)
+            "ln_f": build_readout_norm(cfg)
         })
         self.lm_head = nn.Linear(cfg.dim, cfg.vocab_size, bias=False)
         parameterization = getattr(cfg, 'parameterization', 'sp')
