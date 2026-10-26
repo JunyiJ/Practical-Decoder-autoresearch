@@ -9,6 +9,9 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .weight_tying import weight_tying_signature, readout_scale
+        self.weight_tying_signature = weight_tying_signature(cfg)
+        self.table_readout_scale = readout_scale(cfg)
         from .output_bias import output_bias_signature, build_output_bias
         self.output_bias_signature = output_bias_signature(cfg)
         from .embedding_scale import resolve_input_scale
@@ -63,6 +66,14 @@ class GPT(nn.Module):
 
         # Allocate only after all shared weights; tensor construction consumes no RNG.
         self.output_bias = build_output_bias(cfg)
+        # Consume all legacy initialization draws before cloning/removing the head.
+        # The shared table has one canonical parameter/state/shadow entry.
+        tying = None if self.weight_tying_signature is None else self.weight_tying_signature[0]
+        if tying == 'matched_untied':
+            with torch.no_grad():
+                self.lm_head.weight.copy_(self.transformer.wte.weight)
+        elif tying == 'scaled_tied':
+            self.lm_head = None
 
     def forward(
         self,
@@ -99,7 +110,13 @@ class GPT(nn.Module):
             if block_aux_loss is not None:
                 aux_losses.append(block_aux_loss)
         x = self.transformer.ln_f(x)
-        logits = self.lm_head(x) / self.width_mult
+        tying = None if self.weight_tying_signature is None else self.weight_tying_signature[0]
+        if tying == 'scaled_tied':
+            logits = nn.functional.linear(x, self.transformer.wte.weight) * self.table_readout_scale / self.width_mult
+        elif tying == 'matched_untied':
+            logits = self.lm_head(x) * self.table_readout_scale / self.width_mult
+        else:
+            logits = self.lm_head(x) / self.width_mult
         if self.output_bias is not None:
             logits = logits + self.output_bias
 

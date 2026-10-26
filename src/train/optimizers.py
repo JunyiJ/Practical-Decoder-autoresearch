@@ -63,6 +63,8 @@ class HybridOptimizer:
 
 
 def build_optimizer(model, training):
+    from ..models.weight_tying import validate_weight_tying_model
+    validate_weight_tying_model(model)
     from ..models.embedding_scale import input_scale_contract
     input_scale_contract(model.cfg)
     from ..models.readout_norm import readout_norm_contract
