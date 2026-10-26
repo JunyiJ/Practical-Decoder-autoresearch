@@ -9,6 +9,9 @@ def resolve_position_encoding(cfg, *, attn_type=None):
     """
     if attn_type is None:
         attn_type = getattr(cfg, "attn_type", None)
+    if attn_type == "kda":
+        # KDA supplies position-sensitive mixing through convolution/recurrence.
+        return "none"
     if attn_type == "gated_mla" and hasattr(cfg, "enable_rope"):
         enabled = cfg.enable_rope
         if not isinstance(enabled, bool):

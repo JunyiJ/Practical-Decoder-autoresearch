@@ -3,6 +3,7 @@ import torch.nn as nn
 from ..attention.mha import MHA
 from ..attention.gqa import GQA
 from ..attention.mla import MLA, GatedMLA
+from ..attention.kda import KDA
 from ..moe.moe_block import MoEBlock
 
 from .rope import precompute_freqs_cis, resolve_position_encoding
@@ -37,6 +38,8 @@ class TransformerBlock(nn.Module):
             self.attn = MLA(cfg)
         elif cfg.attn_type == "gated_mla":
             self.attn = GatedMLA(cfg)
+        elif cfg.attn_type == "kda":
+            self.attn = KDA(cfg)
         else:
             raise ValueError(f"Unknown attn_type: {cfg.attn_type}")
         # TODO add more variants later

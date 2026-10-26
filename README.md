@@ -20,6 +20,25 @@ layout: compressed KV latents plus shared keys. With RoPE disabled, the shared
 keys and corresponding query features are unrotated content features. This
 option does not introduce Kimi K3's KDA hybrid architecture.
 
+Select `model.attn_type=kda` for a sequential Kimi Delta Attention reference
+implementation using the [Kimi K3 recurrence and gates](https://arxiv.org/html/2607.24653v2#S2.SS1.SSS1).
+It applies causal depthwise convolutions, SiLU, normalized queries/keys,
+sigmoid write strengths, channel-wise bounded decay, and head-wise RMSNorm
+before the full-rank sigmoid output gate. KDA supplies positional mixing through
+convolution and recurrence, so this model type uses neither RoPE nor learned
+position embeddings, regardless of the legacy `rope` setting. Only causal
+attention is supported. `dropout` applies after the output projection;
+`attn_dropout` does not apply to this recurrent operator.
+
+Cached KDA generation stores a fixed-size recurrent matrix and the previous
+three projected inputs for each Q/K/V convolution. Use eval mode with gradients
+disabled, append contiguous chunks, and reset caches before a new sequence.
+The model still enforces `block_size` as a generation limit. Recurrence and
+normalization use FP32 under mixed precision. This implementation retains
+PyTorch's default linear/convolution initialization (except the zero-initialized
+per-head decay scale); it does not reproduce the paper's full initialization or
+training recipe, optimized kernels, or a hybrid KDA/MLA layer schedule.
+
 ## To generate with the trained checkpoint
 
 Replace the checkpoint argument with an actual saved `final_<steps>_<timestamp>.pt` file:
