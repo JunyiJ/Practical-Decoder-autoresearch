@@ -1648,3 +1648,28 @@ All arms have the same three bias-free matrices, hidden width 21d/8, initializat
 Measured GEGLU training time changes by +0.10% / +0.60% and ReGLU by −1.36% / +0.32% at widths 64 / 256. These are descriptive measurements, not serving-speed or equivalence claims. All arms use equal 3,000 updates and 3,072,000 targets.
 
 The round used 2,816.62 active seconds (0.78 hours) and 530.90 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](GATED_ACTIVATION_RESULTS.md). The next distinct proposal compares unit, static 0.1 and learned channel gains on both complete residual branches. Its 554 metadata checks and 1,296 independent NumPy directional checks pass; 25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It must inherit this final retained SwiGLU/half-attention/LR 0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
+
+
+## Completed complete-branch residual gain round
+
+The original completion auditor verified **36 physical trajectories and 72 correlated raw/H200 checkpoints** on frozen source `5622e4b66745397764284500b9504fe71bec150d`, after the controller and worker exited. All checkpoint/request/result hashes, gain and inherited-model semantics, parameter shapes, optimizer slots/steps/width factors, independent decay, private train/reset-validation/untouched-test RNG, cooldown/H200 explicit gain shadows, full 111,538-target coverage, frozen selection/aliases and the complete report/bootstrap were independently checked. No training or scoring rerun. Earlier preparation paragraphs are historical.
+
+| Residual gain | Frozen peak LR | H200 CE, width 64 | H200 CE, width 256 |
+|---|---:|---:|---:|
+| unit | 0.01 | 1.507867 | 1.420070 |
+| static_tenth | 0.01 | 1.529604 | 1.449791 |
+| learned_tenth | 0.01 | 1.534743 | 1.440380 |
+
+## Interpretation and retained recipe
+
+Retain the existing unit-gain SwiGLU model with attention-logit scale 0.5 and peak LR 0.01. Unit gain was the best screen and exactly matched the fixed incumbent, so retention was frozen before confirmation. All three arms selected the upper LR boundary 0.01; no grid extension or larger-width reselection follows.
+
+Static 0.1 gains worsen every fresh seed at both widths: mean H200 CE increases by 0.021737240 at width 64 and 0.029720798 at width 256. Learned gains initialized at 0.1 also worsen every seed, by 0.026876334 / 0.020310062. All three conditional text intervals are positive for both comparisons at both widths. The 4,096-token intervals are [+0.019317582, +0.024249675] / [+0.026456747, +0.032853595] for static minus unit, and [+0.024605299, +0.029025154] / [+0.016687804, +0.024218942] for learned minus unit.
+
+Learned minus static is +0.005139094 at width 64 with mixed seeds, and −0.009410736 at width 256 with every seed improving. The latter contrast does not qualify either attenuated recipe against the unit-gain incumbent. It was a separate explanatory comparison, not an additional adoption gate. Conditional text intervals condition on these trained seeds and reused validation text; they do not quantify training-seed population uncertainty.
+
+Selected LRs are identical in this round. The differences therefore do not include a selected-LR difference, although residual attenuation and learned parameters change gradients, optimizer histories and effective updates. Static and learned gains initially match, with learned gains adding 512 / 2,048 parameters at widths 64 / 256. Both complete post-projection branches include their biases; learned gains remain explicit in H200 checkpoints and are never folded into projections. This is not an isolated mechanism, LayerScale replication or optimal muP-transfer claim.
+
+Static training time increases by 0.52% / 0.20%, and learned-gain time by 7.68% / 4.25%. These are descriptive training measurements, not serving-speed or equivalence claims. All arms use equal 3,000 updates and 3,072,000 targets. Six fixed-reference cells prospectively alias unit-gain trajectories and are not independent repeated controls. No historical control pooling, holdout access, training/scoring rerun or alternative promotion occurred.
+
+The round used 2887.83 active seconds (0.80 hours) and 531.32 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](RESIDUAL_GAIN_RESULTS.md). The next distinct proposal compares local values, half local values, and half local plus half first-layer values in upper attention layers. Its 395 metadata cases and 396 independent NumPy directional checks pass; 25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It must inherit this final unit-gain/SwiGLU/half-attention/LR 0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
