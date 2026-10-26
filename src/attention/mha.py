@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 
 from ..models.rope import apply_rotary_emb
+from ..models.position_family import resolve_position_family, slopes_for_heads, add_alibi_bias
 from ..models.value_residual import value_residual_contract, resolve_value_residual, mix_values
 from ..models.attention_scale import attention_scale_contract, resolve_attention_scale
 from .qk_norm import make_qk_norms, resolve_qk_norm
@@ -37,6 +38,8 @@ class ScaledAttention(nn.Module):
 class MHA_NAIVE(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        if resolve_position_family(cfg) is not None:
+            raise ValueError('Position family is implemented only in fused MHA')
         if value_residual_contract(cfg) is not None:
             raise ValueError('Value reuse is implemented only in fused MHA')
         if attention_scale_contract(cfg) is not None:
@@ -71,6 +74,8 @@ class MHA_NAIVE(nn.Module):
 class MHA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        self.position_family_kind = resolve_position_family(cfg)
+        self.position_slopes = slopes_for_heads(cfg.n_heads) if self.position_family_kind == 'alibi' else ()
         self.attention_logit_scale = resolve_attention_scale(cfg)
         self.value_residual_kind = resolve_value_residual(cfg)
         self.value_residual_layer = 0
@@ -118,6 +123,12 @@ class MHA(nn.Module):
             v = mix_values(v, first_layer_value, self.value_residual_kind, self.value_residual_layer)
         if self.q_norm is not None:
             q, k = self.q_norm(q), self.k_norm(k)
+        if self.position_family_kind is not None:
+            if type(start_pos) is not int or start_pos < 0:
+                raise ValueError('Explicit position offset must be a nonnegative integer')
+            wants_rope = self.position_family_kind == 'rope'
+            if ((freq_cos is not None) != wants_rope or (freq_sin is not None) != wants_rope):
+                raise ValueError('Explicit position family and supplied rotary frequencies disagree')
         if freq_cos is not None and freq_sin is not None:
             cos = freq_cos[start_pos:start_pos + s].to(device=q.device, dtype=q.dtype)
             sin = freq_sin[start_pos:start_pos + s].to(device=q.device, dtype=q.dtype)
@@ -129,10 +140,14 @@ class MHA(nn.Module):
         att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)
         if self.attention_logit_scale != 1.:
             att = att * self.attention_logit_scale
+        if self.position_family_kind == 'alibi':
+            att = add_alibi_bias(att, self.position_slopes, start_pos,
+                                 key_start_pos=0 if cache is not None else start_pos)
         if self.causal:
             total_len = k.size(-2)
             mask = self._get_causal_mask(total_len, x.device)
-            mask = mask[start_pos:start_pos + s, :total_len]
+            mask_start = 0 if self.position_family_kind is not None and cache is None else start_pos
+            mask = mask[mask_start:mask_start + s, :total_len]
             att = att.masked_fill(~mask, float("-inf"))
         att = torch.softmax(att, dim=-1)
         att = self.attn_dropout(att)

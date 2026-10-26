@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .position_family import position_family_signature
+        self.position_family_signature = position_family_signature(cfg)
         from .value_residual import value_residual_signature
         self.value_residual_signature = value_residual_signature(cfg)
         from .residual_gain import residual_gain_signature

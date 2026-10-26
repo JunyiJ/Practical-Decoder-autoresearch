@@ -7,6 +7,12 @@ def resolve_position_encoding(cfg, *, attn_type=None):
     Gated MLA's explicit boolean override selects RoPE or no positional
     encoding. Without the override, `rope=0` retains learned positions.
     """
+    from .position_family import resolve_position_family
+    family = resolve_position_family(cfg)
+    if family is not None:
+        if attn_type not in (None, 'mha'):
+            raise ValueError('Named position family requires fused MHA')
+        return family
     if attn_type is None:
         attn_type = getattr(cfg, "attn_type", None)
     if attn_type == "kda":
