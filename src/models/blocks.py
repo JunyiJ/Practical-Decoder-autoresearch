@@ -16,6 +16,8 @@ class TransformerBlock(nn.Module):
         self.residual_topology_kind = resolve_residual_topology(cfg)
         from .ffn_hidden_norm import validate_ffn_hidden_norm_contract, resolve_ffn_hidden_norm
         validate_ffn_hidden_norm_contract(cfg)
+        from .gated_activation import resolve_gated_activation
+        gate_activation = resolve_gated_activation(cfg)
         self.dim = cfg.dim
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
@@ -79,7 +81,8 @@ class TransformerBlock(nn.Module):
                 )
             elif self.ffn == "swiglu":
                 self.mlp = SwiGLU(self.dim, self.hidden_dim, cfg.dropout,
-                                  hidden_norm=resolve_ffn_hidden_norm(cfg))
+                                  hidden_norm=resolve_ffn_hidden_norm(cfg),
+                                  gate_activation=gate_activation)
             else:
                 raise ValueError(f"cfg.ffn has unsupported type: {self.ffn}")
         elif cfg.mlp_type == "moe":
