@@ -1560,3 +1560,22 @@ The tuned no-bias LR 0.01 recipe gains 0.008625 at width 256 versus fixed LR 0.0
 There are no reference aliases in this round; all six fixed-incumbent confirmation runs are distinct. Training-prefix counts are not sampler-weighted targets; the existing global character alphabet remains disclosed. Conditional text intervals do not estimate training-seed uncertainty. No fallback, boundary extension, holdout access or historical pooling. Active time was 3,398.87 seconds (0.94 hours), with 687.04 MiB before review. Timing differences below 0.6% do not establish speed equivalence.
 
 [Full paired results, fixed-LR screens, raw diagnostics and costs](OUTPUT_BIAS_RESULTS.md). The separate scaled table-sharing prototype compares legacy, a matched untied control and a shared table. Its 280 metadata tests pass, but 24 actual geometry/trainer cases, full regression, serial MPS pilots, independent resource checks and new preregistration remain required. It has not launched. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
+
+
+## Completed scaled table-sharing round
+
+All **36 physical trajectories and 72 correlated raw/H200 checkpoints** passed the original completion audit on frozen source `8b636636c7c4b1f800821eb290e5ad365326b8d4`. Every request/result and checkpoint hash, saved configuration, canonical table, optimizer slots/steps/width factors, private train/reset-validation/untouched-test RNG, cooldown/H200 lineage, 111,538-target coverage, frozen selection and complete report/bootstrap was verified without training or scoring reruns. Earlier preparation paragraphs are historical.
+
+| Table recipe | Frozen peak LR | H200 CE, width 64 | H200 CE, width 256 |
+|---|---:|---:|---:|
+| Legacy untied | 0.005 | 1.522497 | 1.433955 |
+| Matched untied | 0.005 | 1.525722 | 1.430090 |
+| Scaled tied | 0.005 | 1.522944 | 1.429627 |
+
+All three LRs were interior selections. Legacy was best in screening and exactly matched the incumbent, freezing retention before confirmation. On fresh seeds 2371/2372/2373, matched-minus-legacy means were +0.003225 / −0.003865 at widths 64 / 256, with mixed seeds at both widths. Tied-minus-legacy was +0.000447 / −0.004328: two width-64 seeds worsened, while all three width-256 seeds improved. The latter gain remains below 0.005 and cannot reopen the frozen selection.
+
+Tied-minus-matched means were −0.002778 / −0.000462, with one worse seed at each width. Its negative width-64 conditional text interval does not establish training-seed consistency. All three recipes use the same selected peak LR here. Matched versus legacy changes the initial readout distribution, correlation and optimizer coordinates; tying then combines lookup/output gradients and AdamW histories. These comparisons do not isolate a single cause or establish optimal muP transfer.
+
+Retain the historical untied, no-bias, affine-final-LayerNorm, unit-input MHA4/SwiGLU21D/8 recipe: LR 0.005, independent decay 0.00006, zero warmup, 3,000-update cooldown and H200 returned weights. Six fixed-reference cells prospectively alias legacy confirmation; they are not independent repeats. Training-time changes were below 0.32%, descriptive only. Active time was 2,801.36 seconds (0.78 hours), with 529.17 MiB before review. Adaptive validation, no holdout, no historical pooling or grid extension.
+
+[Full paired results, raw diagnostics, fixed-LR screens and costs](WEIGHT_TYING_RESULTS.md). The separate parallel-block prototype keeps two existing normalizers but feeds the FFN from the original residual. Its 193 metadata checks pass; 18 actual geometry/trainer cases, full regression, four serial MPS pilots, independent resource review, source publication and new finite preregistration remain required. Its CPU driver bounds temporary checkpoint retention by preserving hash inventories and deleting only fully passed new test batches; failed evidence stays preserved. Continue the quality objective until human interruption; all closed studies and permanent stop 006 remain preserved.

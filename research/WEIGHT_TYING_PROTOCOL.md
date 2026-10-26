@@ -33,3 +33,8 @@ Required before launch: final predecessor audit; reviewed source integration; ac
 All2819 collected CPU cases passed with exact case-ID coverage:24 actual geometry/trainer cases,2471 other cases before an environmental disk-full interruption, and324 recovered cases. The interrupted legacy warmup checkpoint-save attempt and driver status-write failure are preserved. Only failed or unexecuted cases were resumed after removing temporary checkpoints from an earlier fully passed test suite; no successful case was repeated and no model/test source changed. The failed test directory and all research evidence remain intact. The24 actual cases took150.00s; a complete total test duration is unavailable because the interrupted partition produced no final timing summary. The280 weight-tying metadata cases are included in2819, not additional cases. Six serial MPS pilots and independent resource/checkpoint/math gates remain pending. No model-quality result is claimed.
 
 Motivation: Press and Wolf, EACL2017, [Using the Output Embedding to Improve Language Models](https://aclanthology.org/E17-2025.pdf), abstract and sections1–4.2 read. Their recurrent/translation findings motivate this controlled local hypothesis; this character Transformer, scaling and optimizer design is not a reproduction.
+
+
+## Completion status
+
+This closed study completed 36 physical trajectories and 72 correlated raw/H200 outputs. All evidence and the complete report passed independent audit on the frozen implementation. The incumbent remains unchanged. [Final results](WEIGHT_TYING_RESULTS.md) supersede historical pending-gate prose above; no grid is extended.
