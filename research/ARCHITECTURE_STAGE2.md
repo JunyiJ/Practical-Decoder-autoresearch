@@ -1141,3 +1141,47 @@ Layer1 is unchanged. Upper layers mix only the newly projected values; the raw f
 Half-local training time increases by 0.61% / 0.19%, and first-value blending by 1.25% / 0.87%. These are descriptive training measurements, not inference-speed or equivalence claims. All arms use equal3,000 updates and3,072,000 targets. Six fixed-reference cells prospectively alias local-value trajectories; they are not independent repeats. No historical control pooling, holdout access, training/scoring rerun or alternative promotion occurred. The first MPS prerequisite's device-string failure, reuse of its already-completed training/scoring, and the later registration-schema repair remain preserved and bound in the preregistered evidence.
 
 The round used 2842.15 active seconds (0.79 hours) and 530.92 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](VALUE_RESIDUAL_RESULTS.md). The next distinct proposal compares RoPE, no explicit positional encoding and ALiBi at the same context128. Its496 metadata cases and2,376 independent NumPy directional checks pass;25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It inherits only this final local-value/unit-gain/SiLU/half-attention/LR0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop006 remain preserved.
+
+
+## Completed positional-family round
+
+The original completion auditor verified **36 physical trajectories and72 correlated raw/H200 checkpoints** on frozen source `7c2c6d5a82c20009f0b31f9b8227558004dd96c5`, after the controller and worker exited. All checkpoint/request/result hashes, position and inherited semantics, shapes, optimizer slots/steps/width factors, independent decay, private train/reset-validation/untouched-test RNG, cooldown/H200 shadows, full111,538-target coverage, frozen selection/aliases and complete report/bootstrap were independently checked. No training or scoring rerun. Earlier preparation paragraphs are historical.
+
+| Position family | Frozen peak LR | H200 CE, width64 | H200 CE, width256 |
+|---|---:|---:|---:|
+| rope | 0.01 | 1.516183 | 1.426079 |
+| nope | 0.01 | 1.640704 | 1.489163 |
+| alibi | 0.01 | 1.608311 | 1.433052 |
+
+## Interpretation and retained recipe
+
+Retain RoPE with local attention values, unit outer gains, SwiGLU, attention-logit scale0.5 and peak LR0.01. RoPE was the best screen and exactly matched the fixed incumbent, so retention was frozen before confirmation. All three families selected LR0.01 at the upper boundary. No grid extension or larger-width reselection follows.
+
+No explicit position minus RoPE:
+
+- Width64: mean +0.124521092; every seed worse; seeds2491/2492/2493 +0.150288282/+0.110159242/+0.113115752; 4,096-token conditional interval [+0.117085876, +0.131500713]; all three conditional text intervals positive.
+- Width256: mean +0.063084358; every seed worse; seeds2491/2492/2493 +0.063806707/+0.062449468/+0.062996900; 4,096-token conditional interval [+0.056522236, +0.068892507]; all three conditional text intervals positive.
+
+ALiBi minus RoPE:
+
+- Width64: mean +0.092128039; every seed worse; seeds2491/2492/2493 +0.103184531/+0.094596176/+0.078603410; 4,096-token conditional interval [+0.084312615, +0.099473631]; all three conditional text intervals positive.
+- Width256: mean +0.006973779; every seed worse; seeds2491/2492/2493 +0.007309636/+0.004770165/+0.008841537; 4,096-token conditional interval [+0.003082031, +0.010596149]; all three conditional text intervals positive.
+
+ALiBi minus no explicit position:
+
+- Width64: mean -0.032393053; every seed better; seeds2491/2492/2493 -0.047103752/-0.015563066/-0.034512343; 4,096-token conditional interval [-0.035115298, -0.029708483]; all three conditional text intervals negative.
+- Width256: mean -0.056110579; every seed better; seeds2491/2492/2493 -0.056497070/-0.057679303/-0.054155363; 4,096-token conditional interval [-0.060244414, -0.051369589]; all three conditional text intervals negative.
+
+All selected peak LRs are identical, so these particular confirmation contrasts do not include different selected LRs. Position families nevertheless change functions, gradients and optimizer trajectories. ALiBi minus NoPE is a separate contrast, not an additional adoption gate or evidence of superiority to RoPE. These results apply to context128; no context-length extrapolation or isolated positional mechanism is established. Conditional text intervals condition on these trained seeds and reused validation text; they are not seed-population intervals or an independent holdout.
+
+NoPE has no explicit positional input, but its causal mask remains order dependent. ALiBi adds fixed negative-distance slopes AFTER the inherited content-attention scale. The fixed head repertoire changes with width. RoPE alone has deterministic frequency buffers; all families share trainable parameter shapes and initialization draws. Legacy rope0 outside the named policy still means learned positions. Actual CPU/MPS prerequisites verified gradients, full/token/uneven/reset/interleaved caches and nonzero offsets. Final checkpoints cannot independently reconstruct every historical bias-placement/cache operation or all101 online averaging snapshots.
+
+The first MPS prerequisite's ideal-FP64 versus declared-FP32 frequency-oracle mismatch remains preserved. The repaired independent oracle reproduced the declared FP32 reciprocal-power and outer-product arithmetic without loosening numerical tolerances. Already-completed first-cell training/scoring was reused byte-for-byte; only unfinished checks and the other five cells ran. The metadata bank-path correction and original incomplete single-entry snapshot remain preserved; registration used the complete canonical bank.
+
+nope training-time changes versus RoPE at widths64/256: -11.95%/-7.08%. These are descriptive training measurements, not inference-speed claims.
+
+alibi training-time changes versus RoPE at widths64/256: +4.39%/-0.06%. These are descriptive training measurements, not inference-speed claims.
+
+All arms use equal3,000 updates and3,072,000 targets, not equal compute. Six fixed-reference cells prospectively alias RoPE trajectories and are not independent repeats. No historical control pooling, holdout access, training/scoring rerun or alternative promotion occurred.
+
+The round used 2754.99 active seconds (0.77 hours) and 527.82 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](POSITION_QUALITY_RESULTS.md). The next distinct proposal compares training-only output log-normalizer penalties while keeping all validation pure cross-entropy. Its535 metadata cases passed;27 actual model/trainer/evaluator cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It inherits only the final reviewed recipe. Continue quality research until human interruption; all closed studies and permanent stop006 remain preserved.
