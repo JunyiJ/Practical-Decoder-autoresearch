@@ -9,3 +9,8 @@ Resolve the entire inherited recipe only from FINAL reviewed parallel-block resu
 Same3000updates3072000targets,ctx128B8pairedblocks512,cooldown/H200101/full111538coverage,bootstrap2048/4096/8192with2000drawsseed20261024. FixedLRscreens separate from tunedrecipe confirmation. Q/K weights may compensate for scale, but update trajectories and clipping need not match; no isolated-mechanism or optimalmuPclaim.
 
 Before registration require actual independent forward/all-gradient/initRNG/cache/semanticload/optimizer/resume/H200 checks, fullCPUregression with bounded temporarycheckpoint retention, sixserialMPSupperLR.01pilots and independent checkpoint-bound maskedattention math/resource audit, clean reviewed source publication, complete knowledge/freshseedscan and newuniqueplan. Existinghard42trials2400s/job21600s/round4096MiBartifact/sampleRSS4096/currentMPSdriver6144 remain; firstfailurestop/noautoretry. Allpriorstudiesclosed.
+
+
+## Completed execution record
+
+This protocol ran as attention-scale-quality-001 on source `53302eb5ff0674a0babdabce24183dc952436c6a`. All 36 physical trajectories and 72 correlated raw/H200 checkpoints passed the original independent completion audit. The frozen half-scale candidate at peak LR 0.01 passed the full both-width rule and is adopted. Earlier preparation/status prose is historical. [Results and interpretation](ATTENTION_SCALE_RESULTS.md). No grid extension, holdout access or completed-trial rerun.

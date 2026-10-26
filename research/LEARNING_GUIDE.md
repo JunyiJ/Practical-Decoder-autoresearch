@@ -1594,3 +1594,30 @@ Serial selected peak LR 0.005 (interior); parallel selected 0.01 (upper boundary
 Six fixed-reference cells prospectively alias the selected serial cells; their zero contrasts are identities, not independent repeated evidence. Fresh controls are not pooled with historical studies. Training-time differences were −0.21% at width 64 and +0.09% at width 256, descriptive measurements without a speed or equivalence claim. The retained recipe remains serial, untied, no output bias, affine final LayerNorm, unit input scale, peak LR 0.005, independent decay 0.00006, zero warmup, 3000-update cooldown and H200 returned weights.
 
 Before this run, all 3030 CPU cases and four serial MPS pilots passed. Final auditing independently checked all 24 raw and 24 H200 checkpoints, optimizer and RNG contracts, full validation coverage, selection, aliases and every reported bootstrap. The original auditor passed on the frozen source after both controller and worker exited.
+
+
+## Completed attention-logit scaling round
+
+The original completion auditor verified **36 physical trajectories and 72 correlated raw/H200 checkpoints** on frozen source `53302eb5ff0674a0babdabce24183dc952436c6a`, after the controller and worker exited. All hashes, scalar and inherited-model contracts, optimizer slots/steps/width factors, private train/reset-validation/untouched-test RNG, cooldown/H200 shadows, 111,538-target coverage, frozen selection/aliases and full report/bootstrap were independently checked. No training or scoring rerun. Earlier preparation paragraphs are historical.
+
+| Attention-logit multiplier | Frozen peak LR | H200 CE, width 64 | H200 CE, width 256 |
+|---|---:|---:|---:|
+| 1, baseline | 0.005 | 1.516008 | 1.432911 |
+| 0.5, adopted | 0.01 | 1.509797 | 1.423060 |
+| 2 | 0.005 | 1.521700 | 1.433846 |
+
+## Interpretation and adopted recipe
+
+Adopt attention-logit multiplier **0.5 with peak LR 0.01**, keeping the reviewed four-layer MHA/SwiGLU backbone, independent decay 0.00006, zero warmup, 3,000-update cooldown starting at 2,000, and H200 inference weights. Half-strength scores were eligible in screening and then passed every frozen confirmation requirement against both tuned baseline and the fixed incumbent at widths 64 and 256. The old incumbent is archived; its historical findings are unchanged.
+
+Fresh H200 mean CE improves from 1.516007823 to 1.509797344 at width 64, and from 1.432910572 to 1.423059505 at width 256. Half-minus-baseline paired seed deltas are −0.000108423 / −0.012046134 / −0.006476880 at width 64 and −0.009109756 / −0.004908308 / −0.015535138 at width 256. Every seed is negative, and mean gains 0.006210479 / 0.009851067 exceed 0.005. The rule requires a mean gain above 0.005 and improvement on every seed; it does not require each seed's gain to exceed 0.005. In particular, width-64 seed 2411 improves only slightly.
+
+All three conditional text-bootstrap upper bounds are negative at both widths. The 4,096-token intervals are [−0.009015252, −0.003271856] and [−0.011971762, −0.007767043]. These intervals condition on the trained seeds and reused validation text; they do not establish training-seed population uncertainty or independent holdout generalization.
+
+Baseline and double selected LR 0.005, while half selected the upper grid boundary 0.01. The confirmation gain is a selected-recipe result, including that LR difference, not an isolated causal effect of the score multiplier. The separate fixed-LR 0.005 screen also favored half by 0.009554228 on average, with both screening seeds improving; those two screening runs are not fresh fixed-LR confirmation. No boundary extension or retrospective reselection follows.
+
+Double-strength scores worsen every fresh width-64 seed, mean +0.005692578, and have mixed width-256 seeds with mean +0.000935324 and intervals containing zero. Only the frozen half candidate is adopted. Six fixed-incumbent cells prospectively alias selected baseline trajectories; these are identities, not six independent repeated controls. No historical control pooling, holdout access or training/scoring rerun occurred.
+
+Half's measured training time is 0.85% / 0.79% higher at widths 64 / 256. These are descriptive measurements, not a speed-equivalence or serving-performance finding. All arms use equal 3,000 updates and 3,072,000 targets; changed scores, gradients, clipping and LR can change optimization paths. There is no diagnosed entropy-collapse mechanism or optimal muP-transfer claim.
+
+The round used 2,812.65 active seconds (0.78 hours) and 530.89 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](ATTENTION_SCALE_RESULTS.md). The next distinct proposal compares SwiGLU, exact-erf GEGLU and ReGLU at unchanged three-matrix shapes. Its 318 metadata checks and independent NumPy formula checks pass; 25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It must inherit this final adopted half-scale/LR 0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
