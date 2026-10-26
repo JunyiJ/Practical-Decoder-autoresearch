@@ -1114,3 +1114,30 @@ Selected LRs are identical in this round. The differences therefore do not inclu
 Static training time increases by 0.52% / 0.20%, and learned-gain time by 7.68% / 4.25%. These are descriptive training measurements, not serving-speed or equivalence claims. All arms use equal 3,000 updates and 3,072,000 targets. Six fixed-reference cells prospectively alias unit-gain trajectories and are not independent repeated controls. No historical control pooling, holdout access, training/scoring rerun or alternative promotion occurred.
 
 The round used 2887.83 active seconds (0.80 hours) and 531.32 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](RESIDUAL_GAIN_RESULTS.md). The next distinct proposal compares local values, half local values, and half local plus half first-layer values in upper attention layers. Its 395 metadata cases and 396 independent NumPy directional checks pass; 25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It must inherit this final unit-gain/SwiGLU/half-attention/LR 0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
+
+
+## Completed first-layer value reuse round
+
+The original completion auditor verified **36 physical trajectories and72 correlated raw/H200 checkpoints** on frozen source `c2c8498a7f18735c3e0cb68d355a7ee587377aa4`, after the controller and worker exited. All checkpoint/request/result hashes, value and inherited-model semantics, shapes, optimizer slots/steps/width factors, independent decay, private train/reset-validation/untouched-test RNG, cooldown/H200 shadows, full111,538-target coverage, frozen selection/aliases and complete report/bootstrap were independently checked. No training or scoring rerun. Earlier preparation paragraphs are historical.
+
+| Value family | Frozen peak LR | H200 CE, width64 | H200 CE, width256 |
+|---|---:|---:|---:|
+| local | 0.01 | 1.513767 | 1.423661 |
+| local_half | 0.01 | 1.517391 | 1.426245 |
+| first_blend | 0.005 | 1.521986 | 1.437396 |
+
+## Interpretation and retained recipe
+
+Retain local attention values with unit outer gains, SwiGLU, attention-logit scale 0.5 and peak LR 0.01. Local values were the best screen and exactly matched the fixed incumbent, so retention was frozen before confirmation. Local and half-local selected LR 0.01 at the upper boundary; first-value blending selected the interior LR 0.005. No grid extension or larger-width reselection follows.
+
+First-value blending worsens H200 validation CE for every fresh seed at both widths: mean increases are 0.008218977 at width 64 and 0.013734169 at width 256. The 4,096-token conditional intervals are [+0.005655377, +0.010938883] and [+0.011893968, +0.015717928]; all three block-size intervals are positive. Width64 seed2471 worsens by only 0.000106467, which is still in the unfavorable direction.
+
+Half-local values worsen the means by 0.003624579 / 0.002583844, with mixed seeds at both widths: seed2472 improves while2471 and2473 worsen. All three conditional text intervals are positive despite this seed disagreement. These intervals condition on the trained seeds and reused text; they are not training-seed population intervals. Blending minus half-local is +0.004594398 at width64 with mixed seeds, and +0.011150325 at width256 with every seed worse. This separate contrast is not an additional adoption gate.
+
+Blending and the controls selected different peak LRs, so their confirmation contrasts measure selected recipes, not an isolated value-reuse mechanism. At fixed LR0.005 in the separate screening panel, blending minus local is +0.004863212 with both seeds worse. Half-local versus local uses the same selected LR0.01. No attention-concentration diagnosis or paper reproduction follows from these results.
+
+Layer1 is unchanged. Upper layers mix only the newly projected values; the raw first-layer value includes its projection bias and remains attached to all four gradient roles. No trainable parameters, initialization draws or cache-shape savings are added. Actual CPU/MPS prerequisites independently verified coupled gradients and full/token/uneven/reset/interleaved caches. Final checkpoint auditing verifies saved semantics and endpoint tensors; it cannot reconstruct every historical graph operation or all101 online averaging snapshots.
+
+Half-local training time increases by 0.61% / 0.19%, and first-value blending by 1.25% / 0.87%. These are descriptive training measurements, not inference-speed or equivalence claims. All arms use equal3,000 updates and3,072,000 targets. Six fixed-reference cells prospectively alias local-value trajectories; they are not independent repeats. No historical control pooling, holdout access, training/scoring rerun or alternative promotion occurred. The first MPS prerequisite's device-string failure, reuse of its already-completed training/scoring, and the later registration-schema repair remain preserved and bound in the preregistered evidence.
+
+The round used 2842.15 active seconds (0.79 hours) and 530.92 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](VALUE_RESIDUAL_RESULTS.md). The next distinct proposal compares RoPE, no explicit positional encoding and ALiBi at the same context128. Its496 metadata cases and2,376 independent NumPy directional checks pass;25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It inherits only this final local-value/unit-gain/SiLU/half-attention/LR0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop006 remain preserved.
