@@ -17,7 +17,9 @@ def schedule_contract(training):
     kind = spec.get('kind')
     keys = {'constant': {'kind'},
             'cosine': {'kind', 'total_steps', 'min_ratio'},
-            'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'}}
+            'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+            'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                       'warmup_steps', 'initial_ratio'}}
     if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
         raise ValueError('Unknown schedule or invalid schedule fields')
     if kind == 'constant':
@@ -29,10 +31,18 @@ def schedule_contract(training):
     if (isinstance(floor, bool) or not isinstance(floor, (int, float))
             or not math.isfinite(floor) or not 0 < floor <= 1):
         raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
-    if kind == 'linear_cooldown':
+    if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
         start = spec['start_step']
         if type(start) is not int or not 0 <= start < total - 1:
             raise ValueError('Cooldown start_step must be before the final update')
+    if kind == 'warmup_linear_cooldown':
+        warmup = spec['warmup_steps']
+        initial = spec['initial_ratio']
+        if type(warmup) is not int or not 2 <= warmup <= spec['start_step'] + 1:
+            raise ValueError('Warmup requires at least two updates and must end before cooldown')
+        if (isinstance(initial, bool) or not isinstance(initial, (int, float))
+                or not math.isfinite(initial) or not 0 < initial < 1):
+            raise ValueError('Warmup initial_ratio must be finite and in (0, 1)')
     return spec
 
 
@@ -52,6 +62,13 @@ def multiplier(spec, step):
         return float(floor)
     if spec['kind'] == 'cosine':
         return floor + (1 - floor) * (1 + math.cos(math.pi * step / last)) / 2
+    if spec['kind'] == 'warmup_linear_cooldown' and step < spec['warmup_steps']:
+        # Exactly warmup_steps updates: first at initial_ratio, last at peak.
+        # The peak endpoint is explicit to support independent persisted audits.
+        if step == spec['warmup_steps'] - 1:
+            return 1.0
+        initial = spec['initial_ratio']
+        return initial + (1 - initial) * step / (spec['warmup_steps'] - 1)
     start = spec['start_step']
     return 1.0 if step <= start else 1 - (1 - floor) * (step - start) / (last - start)
 
