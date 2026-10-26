@@ -958,3 +958,10 @@ Continue with KDA feasibility on a separate explicit width/optimizer contract an
 ## KDA implementation gate after reviewed decay
 
 Decay-quality-001 is closed and reviewed; retain the four-layer MHA/SwiGLU cooldown/H200 incumbent at LR0.005 and independent decay0.00006. The KDA named width policy and finite controller are integrated separately from the human checkout. All1,729 CPU cases passed, including58 KDA reference/geometry/gradient/optimizer/trainer cases and the full remaining regression suite. Require four actual serialMPS pilots, independent shape/optimizer/coverage/cache/resource review, clean published source and unique preregistration before launching [the KDA comparison](KDA_QUALITY_PROTOCOL.md). No KDA quality result exists yet. Preserve the human default KDA behavior, every closed study and permanent stop006.
+
+
+## Completed input-scale quality round and next candidate
+
+The [input-scale results](EMBEDDING_SCALE_RESULTS.md) retain the existing unit-scale MHA/H200 incumbent after 36 trajectories and 72 audited checkpoints. Smaller scales worsen every fresh width-64 seed; their lower width-256 means include a worse seed and cannot override failed frozen local eligibility. No grid extension or historical pooling.
+
+Next prepare a separate finite final-normalization comparison: affine LayerNorm, bias-free LayerNorm and RMSNorm with matched epsilon 1e-5, exact audited scale 1/LR 0.005 inheritance, and fresh controls. The prototype/controller/protocol and synthetic checks exist separately; actual CPU/regression/MPS/resource/publication/preregistration gates remain. Removing the final bias changes parameter groups, and normalization changes gradients; existing width algebra is not an optimal-transfer guarantee. Keep all prior studies closed and continue the human quality goal.

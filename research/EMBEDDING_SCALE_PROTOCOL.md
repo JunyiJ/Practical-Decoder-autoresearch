@@ -106,13 +106,22 @@ pilot jobs and keep measurements out of research rankings. CPU-only metadata
 checks cannot substitute for these actual model gates. No competing model work.
 
 Provisional execution caps:42trials,2400s/job,21600s/round,4096MiB artifacts.
-Separate prerequisite pilot memory gates:4096MiB process RSS and6144MiB sampled
-current MPS driver allocation(notpeak). These are screening thresholds, not
-OS-enforced or continuously monitored runtime memory caps. The worker watchdog
-enforces wall time and samples output disk usage. Pilot extrapolation must fit with50percent time/artifact margin;
+Memory clarification recorded during the run: the inherited worker bootstrap also
+starts a nominal 0.5-second watchdog sampling process peak RSS (4096 MiB) and
+current MPS driver allocation (6144 MiB, not peak). It exits on a sampled limit
+breach or guard error; the controller stops without automatic retry. The controller
+also bounds wall time and samples output disk usage. Earlier pilot-only wording
+was incomplete; source, thresholds, frozen plan and training never changed.
+Sampling is not instantaneous or total-system memory enforcement. Pilot
+extrapolation must fit with 50 percent time/artifact margin;
 there is no resource estimate yet. Oneworker, firstfailurestop. Freeze tested,
 reviewed, clean committed/pushed source, corpus/runtime, completedpredecessorreview,
 exact selectedschedule, all seeds, finite caps and fullknowledge snapshot before
 one uniquely named launch. Final independent audit must cover all checkpoints,
 raw requests/results/config/sampler/RNG/optimizer/shapes/steps/tokens/H200/coverage,
 selection/aliases, complete report and independently reconstructed bootstrap.
+
+
+## Completed evidence and documentation clarification
+
+`embedding-scale-quality-001` completed 36 physical trajectories and 72 correlated raw/H200 outputs. All checkpoint payloads/hashes and the entire report passed independent review on historical source `1dadecddd57060aecf1910cb3553d11b90ff0c1a` before this documentation update. The incumbent is retained; [paired findings and limitations](EMBEDDING_SCALE_RESULTS.md). The original source and frozen run plan preserve the historical contract. Later documentation does not change evidence or selections.

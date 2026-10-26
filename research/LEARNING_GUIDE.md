@@ -1493,4 +1493,23 @@ The [input-scale protocol](EMBEDDING_SCALE_PROTOCOL.md) compares multipliers 1, 
 
 All 2,056 collected CPU cases passed, including twelve actual width-64/256 geometry and training/resume cases and 153 metadata/controller/audit cases. The checks cover unchanged initialization/RNG/parameter shapes, an independent forward and gradient reference, causal cached logits, exact resume, optimizer slots/factors, private sampler RNG, passive H200 and rejection of mismatched input-scale checkpoint semantics. These establish CPU correctness, not model-quality gains or MPS behavior.
 
-Six serial MPS pilots at the upper grid LR 0.01, an independent resource/checkpoint review, clean published source and a new finite preregistration remain required. The round allows 36 or 42 physical trajectories with prospective exact reference aliases. Worker limits bound time and sampled disk usage; RSS/current MPS allocation thresholds are pilot screening gates, not continuously enforced memory caps. No earlier study is reopened, and held-out test data remain closed.
+Six serial MPS pilots at the upper grid LR 0.01, an independent resource/checkpoint review, clean published source and a new finite preregistration remain required. The round allows 36 or 42 physical trajectories with prospective exact reference aliases. The inherited worker also samples process peak RSS and current MPS driver allocation every 0.5 seconds, with 4,096/6,144 MiB limits. Earlier pilot-only wording was incomplete; source and training were unchanged. Sampling is not instantaneous or total-system enforcement. No earlier study is reopened, and held-out test data remain closed.
+
+
+## Input embedding scale: completed quality evidence
+
+The input-scale round completed **36 physical trajectories and 72 correlated raw/H200 outputs**. Its full audit passed before documentation. The earlier preparation paragraphs are historical; this completion supersedes their pending status. Retain the historical H200 incumbent with unit input scale, base LR 0.005 and no warmup.
+
+| Input scale | Frozen LR | Fresh H200 CE, width 64 | Fresh H200 CE, width 256 |
+|---|---:|---:|---:|
+| 1 (incumbent and tuned control) | 0.005 | 1.506894 | 1.433154 |
+| 0.5 | 0.005 | 1.511590 | 1.428513 |
+| 0.25 | 0.0025 | 1.520590 | 1.430914 |
+
+Half-scale improved both screening seeds, but its mean gain of 0.003713 was below the frozen 0.005 requirement. On fresh seeds 2311/2312/2313, both smaller scales worsen every width-64 seed: mean deltas +0.004697 and +0.013697. At width 256, half-scale has a lower mean (-0.004641), but seed 2311 worsens by +0.006323. Its negative conditional text intervals do not establish consistent improvement across seeds. Quarter-scale has a smaller mean improvement (-0.002240), mixed seeds, and text intervals containing zero. No alternative qualifies and no grid is extended.
+
+The fixed-LR screens change direction across LRs, reinforcing the need for matched tuning. Fresh controls are not pooled with historical scores. Six fixed-reference cells prospectively alias selected unit-scale runs, rather than providing independent repeats. Training times differ by less than 0.26% here; this does not establish speed equivalence or inference benefit.
+
+[Complete paired results, raw diagnostics, fixed-LR screens and costs](EMBEDDING_SCALE_RESULTS.md). All 72 checkpoint hashes/payloads, configurations/shapes, optimizer slots/steps, private train/reset-validation/untouched-test RNG, cooldown/H200 contracts, full 111,538-target coverage, frozen choices/aliases, and independently reconstructed report/bootstrap passed review. Active time was 2,808.85 seconds (0.78 hours), with 530.44 MiB before review. Historical source: `1dadecddd57060aecf1910cb3553d11b90ff0c1a`. No training or scoring rerun; holdout stays closed.
+
+A separate final readout-normalization prototype now compares affine LayerNorm, bias-free LayerNorm and RMSNorm, all at epsilon 1e-5. Metadata and synthetic arithmetic checks pass, but actual CPU/model integration, full regression, six serial MPS pilots, resource checks, clean published source and finite preregistration remain required. The final audited predecessor resolves unchanged scale 1 and LR 0.005. Continue quality research until human interruption; all closed studies and permanent stop006 stay preserved.
