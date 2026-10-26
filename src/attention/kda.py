@@ -17,7 +17,8 @@ class KDA(nn.Module):
         if self.n_heads < 1 or self.dim < 1 or self.dim % self.n_heads != 0:
             raise ValueError("dim and n_heads must be positive, with dim divisible by n_heads")
         self.head_dim = self.dim // self.n_heads
-        self.dim_alpha = getattr(cfg, "dim_alpha", max(1, self.head_dim // 4))
+        from .kda_scaling import resolve_alpha_dimension
+        self.dim_alpha = resolve_alpha_dimension(cfg)
         if self.dim_alpha < 1:
             raise ValueError("dim_alpha must be positive")
         if not getattr(cfg, "causal", True):

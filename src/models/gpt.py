@@ -9,6 +9,9 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from ..attention.kda_scaling import has_kda_policy, validate_kda_contract
+        if has_kda_policy(cfg):
+            validate_kda_contract(cfg)
         from .ffn_hidden_norm import validate_ffn_hidden_norm_contract
         validate_ffn_hidden_norm_contract(cfg)
         from ..attention.output_gate import validate_output_gate_contract

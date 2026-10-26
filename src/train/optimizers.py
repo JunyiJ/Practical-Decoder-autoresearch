@@ -74,6 +74,10 @@ def build_optimizer(model, training):
     muon = opts['optimizer'] == 'muon'
     if mup or muon:
         cfg = model.cfg
+        from ..attention.kda_scaling import has_kda_policy, validate_kda_contract
+        kda = cfg.attn_type == 'kda' or has_kda_policy(cfg)
+        if kda:
+            validate_kda_contract(cfg)
         from ..models.ffn_hidden_norm import validate_ffn_hidden_norm_contract
         validate_ffn_hidden_norm_contract(cfg)
         from ..attention.output_gate import validate_output_gate_contract
@@ -125,10 +129,10 @@ def build_optimizer(model, training):
             from ..moe.scaling import validate_moe_contract
             validate_moe_contract(cfg)
         attention_policy = getattr(cfg, 'attention_width_policy', 'mha_head32')
-        attention_ok = qkrms or (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
+        attention_ok = kda or qkrms or (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
             gated and cfg.attn_type == 'gqa' and attention_policy == 'gqa_half_head32'
             and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups')) or (gated and mla)
-        if not attention_ok or not (qkrms or moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense or deep_dense))):
+        if not attention_ok or not (kda or qkrms or moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense or deep_dense))):
             raise ValueError('Optimizer width study requires dense GELU/SiLU MHA or an explicit SwiGLU MHA/GQA/MLA width contract')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:
@@ -136,6 +140,10 @@ def build_optimizer(model, training):
     mult = model.width_mult if mup else 1.0
     adam, matrices = [], []
     for name, param in model.named_parameters():
+        # Under the explicit KDA policy, all 2D block projections have two
+        # width-scaled axes. Depthwise Conv1d [D,1,4], per-head A, shared
+        # head RMS gains and biases stay in AdamW at base LR. Do not flatten
+        # the convolutions into matrices or silently accept fixed-alpha KDA.
         # Headwise output-gate projections have two width-scaled axes and use
         # the hidden-matrix rule. Their zero initialization adds no RNG draws.
         # Q/K RMS gains are vectors shared across heads. They stay in AdamW
