@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .output_bias import output_bias_signature, build_output_bias
+        self.output_bias_signature = output_bias_signature(cfg)
         from .embedding_scale import resolve_input_scale
         self.input_embedding_scale = resolve_input_scale(cfg)
         from .readout_norm import readout_norm_signature, build_readout_norm
@@ -59,6 +61,9 @@ class GPT(nn.Module):
                     if isinstance(module, nn.Linear) and module.bias is not None:
                         module.bias.mul_(math.sqrt(self.width_mult))
 
+        # Allocate only after all shared weights; tensor construction consumes no RNG.
+        self.output_bias = build_output_bias(cfg)
+
     def forward(
         self,
         idx,
@@ -95,6 +100,8 @@ class GPT(nn.Module):
                 aux_losses.append(block_aux_loss)
         x = self.transformer.ln_f(x)
         logits = self.lm_head(x) / self.width_mult
+        if self.output_bias is not None:
+            logits = logits + self.output_bias
 
         loss = None
         ce_loss = None

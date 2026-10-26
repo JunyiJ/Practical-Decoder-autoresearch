@@ -244,6 +244,8 @@ def evaluate_checkpoint(cfg: DictConfig, checkpoint_path: str | Path,
     device = _resolve_device(cfg)
     loader = _make_loader(cfg, device)
     cfg.model.vocab_size = loader.vocab_size
+    from ..models.output_bias import validate_output_bias_training_data
+    validate_output_bias_training_data(cfg.model, loader, to_absolute_path(cfg.data.path))
     checkpoint = read_checkpoint(to_absolute_path(str(checkpoint_path)), map_location='cpu')
     contract = _training_contract(cfg, device, loader)
     if not _contracts_match(checkpoint.get('training_state', {}).get('contract'), contract):
@@ -287,6 +289,8 @@ def run_training(cfg: DictConfig) -> dict:
     #     device = device
     # )
     cfg.model.vocab_size = loader.vocab_size
+    from ..models.output_bias import validate_output_bias_training_data
+    validate_output_bias_training_data(cfg.model, loader, to_absolute_path(cfg.data.path))
     model = GPT(cfg.model).to(device)
     optimizer = build_optimizer(model, cfg.training)
     # Capture configured base rates before loading any scheduled checkpoint.

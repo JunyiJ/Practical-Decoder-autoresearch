@@ -57,6 +57,8 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
     weights and forward math are unchanged. Legacy optimizer parameter groups
     include the removed table, so training continuation requires original source.
     """
+    from ..models.output_bias import validate_output_bias_load
+    validate_output_bias_load(model, checkpoint)
     from ..models.embedding_scale import validate_input_scale_load
     validate_input_scale_load(model, checkpoint)
     from ..models.readout_norm import validate_readout_norm_load

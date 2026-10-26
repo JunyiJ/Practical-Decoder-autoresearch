@@ -67,6 +67,8 @@ def build_optimizer(model, training):
     input_scale_contract(model.cfg)
     from ..models.readout_norm import readout_norm_contract
     readout_norm_contract(model.cfg)
+    from ..models.output_bias import output_bias_contract
+    output_bias_contract(model.cfg)
     opts = optimizer_options(training)
     lr, wd = float(training.learning_rate), float(training.weight_decay)
     if not math.isfinite(lr) or lr < 0 or not math.isfinite(wd) or wd < 0:
