@@ -12,6 +12,8 @@ from .mlp import SwiGLU
 class TransformerBlock(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        from .residual_topology import resolve_residual_topology
+        self.residual_topology_kind = resolve_residual_topology(cfg)
         from .ffn_hidden_norm import validate_ffn_hidden_norm_contract, resolve_ffn_hidden_norm
         validate_ffn_hidden_norm_contract(cfg)
         self.dim = cfg.dim
@@ -100,7 +102,10 @@ class TransformerBlock(nn.Module):
         residual = x
         x, _ = self.attn(self.ln1(x), cache=cache, start_pos=start_pos, freq_cos=self.freq_cos, freq_sin=self.freq_sin)
         x = residual + x
-        mlp_out = self.mlp(self.ln2(x))
+        if self.residual_topology_kind == 'parallel_separate_norms':
+            mlp_out = self.mlp(self.ln2(residual))
+        else:
+            mlp_out = self.mlp(self.ln2(x))
 
         # MoE aux loss if present
         aux_loss = None
