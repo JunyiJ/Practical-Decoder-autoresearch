@@ -1621,3 +1621,30 @@ Double-strength scores worsen every fresh width-64 seed, mean +0.005692578, and 
 Half's measured training time is 0.85% / 0.79% higher at widths 64 / 256. These are descriptive measurements, not a speed-equivalence or serving-performance finding. All arms use equal 3,000 updates and 3,072,000 targets; changed scores, gradients, clipping and LR can change optimization paths. There is no diagnosed entropy-collapse mechanism or optimal muP-transfer claim.
 
 The round used 2,812.65 active seconds (0.78 hours) and 530.89 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](ATTENTION_SCALE_RESULTS.md). The next distinct proposal compares SwiGLU, exact-erf GEGLU and ReGLU at unchanged three-matrix shapes. Its 318 metadata checks and independent NumPy formula checks pass; 25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It must inherit this final adopted half-scale/LR 0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
+
+
+## Completed gated FFN activation round
+
+The original completion auditor verified **36 physical trajectories and 72 correlated raw/H200 checkpoints** on frozen source `570a0fc35f6ab1139dece4f302ffc148a4a6fa41`, after the controller and worker exited. All hashes, activation and inherited-model contracts, optimizer slots/steps/width factors, private train/reset-validation/untouched-test RNG, cooldown/H200 shadows, full 111,538-target coverage, frozen selection/aliases and complete report/bootstrap were independently checked. No training or scoring rerun. Earlier preparation paragraphs are historical.
+
+| Gate activation | Frozen peak LR | H200 CE, width 64 | H200 CE, width 256 |
+|---|---:|---:|---:|
+| SwiGLU, retained | 0.01 | 1.511098 | 1.425151 |
+| GEGLU | 0.005 | 1.510694 | 1.431937 |
+| ReGLU | 0.005 | 1.518196 | 1.431728 |
+
+## Interpretation and retained recipe
+
+Retain **SwiGLU with attention-logit scale 0.5 and peak LR 0.01**, the previously adopted four-layer MHA recipe, independent decay 0.00006, zero warmup, 3,000-update cooldown starting at 2,000, and H200 inference weights. GEGLU was the lowest screening mean, but its 0.002782548 gain versus tuned SwiGLU fell below the required 0.005. Retention was therefore frozen before fresh confirmation; no alternative promotion or threshold change follows.
+
+Fresh H200 means at widths 64 / 256 are SwiGLU 1.511098040 / 1.425150793, GEGLU 1.510693884 / 1.431936621, and ReGLU 1.518195822 / 1.431728243. GEGLU-minus-SwiGLU is −0.000404156 at width 64, with seed deltas −0.000628967 / +0.002054515 / −0.002638015, and +0.006785828 at width 256, with every seed worse: +0.012424184 / +0.004164474 / +0.003768827. Its width-64 conditional text intervals include zero; all three width-256 intervals are positive. The 4,096-token intervals are [−0.005103039, +0.004022233] and [+0.003838367, +0.009711387].
+
+ReGLU worsens every fresh seed at both widths, mean +0.007097782 / +0.006577450 versus SwiGLU, with all three conditional text intervals positive. ReGLU-minus-GEGLU is +0.007501938 at width 64 with every seed worse, and −0.000208378 at width 256 with mixed seeds and intervals including zero. Raw outputs remain correlated diagnostics; they do not replace the H200 decision endpoint.
+
+SwiGLU selected LR 0.01 at the upper boundary, while GEGLU and ReGLU selected interior LR 0.005. These are selected-recipe comparisons including LR choice, not isolated activation effects. The separate fixed-LR 0.005 screen favored GEGLU by 0.006364440 on average with both screening seeds improving; that does not override the tuned comparator or constitute fresh fixed-LR confirmation. No grid extension, fallback or larger-width reselection occurred.
+
+All arms have the same three bias-free matrices, hidden width 21d/8, initialization draws and parameter counts, but their initial functions, gradients and optimization paths differ. This is not a T5 replication or empirical proof of optimal muP transfer. Six fixed-incumbent cells prospectively alias SwiGLU trajectories and are not independent repeated controls. No historical control pooling, holdout access or completed-training/scoring rerun occurred. Conditional text intervals do not represent training-seed population uncertainty.
+
+Measured GEGLU training time changes by +0.10% / +0.60% and ReGLU by −1.36% / +0.32% at widths 64 / 256. These are descriptive measurements, not serving-speed or equivalence claims. All arms use equal 3,000 updates and 3,072,000 targets.
+
+The round used 2,816.62 active seconds (0.78 hours) and 530.90 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](GATED_ACTIVATION_RESULTS.md). The next distinct proposal compares unit, static 0.1 and learned channel gains on both complete residual branches. Its 554 metadata checks and 1,296 independent NumPy directional checks pass; 25 actual model/trainer cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It must inherit this final retained SwiGLU/half-attention/LR 0.01 recipe. Continue quality research until human interruption; all closed studies and permanent stop 006 remain preserved.
