@@ -924,3 +924,12 @@ Both normalization variants have lower confirmation means at both widths, but se
 [Complete paired results and costs](FFN_HIDDEN_NORM_RESULTS.md). All 36 raw and 36 H200 checkpoints, frozen choices, aliases, optimizer/RNG/model contracts, coverage and the complete report/bootstrap passed independent review. Adaptive validation; holdout remains closed.
 
 Continue with a separate finite independent-decay experiment on the retained unchanged-FFN, standard-MHA, 3,000-update/cooldown/H200 recipe. The separate prototype compares coefficients 0.00002, 0.00006 and 0.00018 with equal bounded LR tuning and fresh seeds. Require final predecessor resolution, actual optimizer/trainer tests, the full CPU suite, serial MPS pilots, resource checks, clean committed source and a new preregistration before launch. This does not reopen the old two-layer decay studies.
+
+
+## Independent decay on the current recipe
+
+The separate [decay protocol](DECAY_QUALITY_PROTOCOL.md) compares per-update coefficients 0.00002, 0.00006 and 0.00018 on the final-reviewed unchanged-FFN, standard-MHA, four-layer SwiGLU/cooldown/H200 recipe. The old 0.00006 anchor was tested with a different two-layer recipe; those studies remain closed and their scores are not pooled. This new round gives all three coefficients the same finite LR search and freezes choices before fresh width confirmation.
+
+The coefficient acts once before each inner optimizer update, independently of scheduled LR. With gradient updates omitted, the nominal remaining weight after 3,000 steps is about 0.941764, 0.835266 or 0.582720 for the weak, anchor and strong arms. These are algebraic illustrations, not predictions of model norms or validation loss. Tuned confirmation contrasts include the selected LR as well as decay.
+
+All 1,608 CPU cases passed, including six actual trainer/resume cases and seven independent optimizer-algebra checks. The implementation changes no model or optimizer arithmetic. Six serial MPS pilots, resource review, clean committed source and a unique frozen registration remain required before research launch. The held-out test stays closed.
