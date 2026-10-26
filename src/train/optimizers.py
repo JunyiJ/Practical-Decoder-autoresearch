@@ -63,6 +63,8 @@ class HybridOptimizer:
 
 
 def build_optimizer(model, training):
+    from ..models.residual_gain import validate_residual_gain_model
+    validate_residual_gain_model(model)
     from ..models.gated_activation import validate_gated_activation_model
     validate_gated_activation_model(model)
     from ..models.attention_scale import validate_attention_scale_model
@@ -163,6 +165,7 @@ def build_optimizer(model, training):
         # Q/K RMS gains are vectors shared across heads. They stay in AdamW
         # at base LR, with the same independent decay as other learned vectors.
         # Router output dimension is fixed at four, unlike expert hidden axes.
+        # Residual channel gains are 1D: one AdamW base-LR state/decay each.
         router = (getattr(model.cfg, 'mlp_type', 'dense') == 'moe'
                   and getattr(getattr(model.cfg, 'moe', None), 'width_policy', None) == 'moe4_top2_half_readout'
                   and name.endswith('.mlp.router.weight'))

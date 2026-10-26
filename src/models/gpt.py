@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .residual_gain import residual_gain_signature
+        self.residual_gain_signature = residual_gain_signature(cfg)
         from .gated_activation import gated_activation_signature
         self.gated_activation_signature = gated_activation_signature(cfg)
         from .attention_scale import attention_scale_signature

@@ -57,6 +57,8 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
     weights and forward math are unchanged. Legacy optimizer parameter groups
     include the removed table, so training continuation requires original source.
     """
+    from ..models.residual_gain import validate_residual_gain_load
+    validate_residual_gain_load(model, checkpoint)
     from ..models.gated_activation import validate_gated_activation_load
     validate_gated_activation_load(model, checkpoint)
     from ..models.attention_scale import validate_attention_scale_load

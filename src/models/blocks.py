@@ -101,10 +101,16 @@ class TransformerBlock(nn.Module):
             self.freq_cos = None
             self.freq_sin = None
 
+        # Constant construction after shared modules consumes no random draws.
+        from .residual_gain import install_residual_gains
+        install_residual_gains(self, cfg)
+
     def forward(self, x, cache=None, start_pos=0):
         residual = x
         x, _ = self.attn(self.ln1(x), cache=cache, start_pos=start_pos, freq_cos=self.freq_cos, freq_sin=self.freq_sin)
-        x = residual + x
+        from .residual_gain import apply_residual_gain
+        # Scale complete projected branch, including its output bias.
+        x = residual + apply_residual_gain(self, x, 'attention')
         if self.residual_topology_kind == 'parallel_separate_norms':
             mlp_out = self.mlp(self.ln2(residual))
         else:
@@ -114,5 +120,5 @@ class TransformerBlock(nn.Module):
         aux_loss = None
         if isinstance(mlp_out, tuple):
             mlp_out, aux_loss = mlp_out
-        x = x + mlp_out
+        x = x + apply_residual_gain(self, mlp_out, 'ffn')
         return x, aux_loss
