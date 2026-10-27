@@ -92,6 +92,14 @@ the historical all-KDA result as a hybrid test. See the checked
 [attention roadmap and primary-paper findings](TOKENIZER_ATTENTION_ROADMAP.md).
 The active LR experiment and its selection rule are unchanged.
 
+The latest human steering makes architecture a central research objective:
+attention/hybrids, sparse and shared experts, activations, normalization,
+residual topology/scaling, depth/width allocation and embedding/readout design.
+The [architecture agenda](TOKENIZER_ARCHITECTURE_ROADMAP.md) records structural
+hypotheses, comparison controls and scheduling. The current baseline check leads
+to architecture rounds with bounded supporting tuning, rather than repeated
+hyperparameter-only sweeps. These are planned comparisons, not measured gains.
+
 ## Active quality round
 
 `research_runs/tokenizer-quality-001` is running one MPS worker at a time. Its
@@ -147,13 +155,16 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | screen | 64 | 2601 | 0.0025 | 5.276655 | 5.220207 | 2.314529 | 256.24 |
 | screen | 64 | 2602 | 0.0025 | 5.284148 | 5.232680 | 2.320060 | 256.35 |
 | screen | 64 | 2602 | 0.005 | 5.572239 | 5.458199 | 2.420050 | 256.87 |
+| screen | 64 | 2602 | 0.01 | 5.754487 | 5.554708 | 2.462840 | 260.03 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
 - screen, width64, seed2601, LR0.005: -0.168575 CE.
 - screen, width64, seed2601, LR0.0025: -0.390637 CE.
+- screen, width64, seed2602, LR0.0025: -0.322028 CE.
+- screen, width64, seed2602, LR0.005: -0.096509 CE.
 
-Screening is not complete; there is no frozen winner yet.
+Frozen screening choice: LR0.0025. Confirmation results cannot change this choice.
 
 Single-seed signs are preliminary. The controller remains serial, the source
 and data contract are frozen, and test loss remains closed.

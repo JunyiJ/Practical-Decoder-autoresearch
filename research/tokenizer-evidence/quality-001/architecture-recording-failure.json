@@ -1,0 +1,9 @@
+{
+  "scope": "Metadata recording only; training and frozen source unaffected.",
+  "failures": [
+    "Architecture knowledge recording passed a str to file_digest, which requires pathlib.Path; AttributeError: 'str' object has no attribute 'open'.",
+    "Second attempt used unsupported outcome planned; ValueError: Unknown entry outcome: planned."
+  ],
+  "partial_effects": "Selection and audit saved before first failure; architecture knowledge/state updates had not happened. Trial publication succeeded.",
+  "resolution": "Inspected knowledge schema, used pathlib.Path and allowed outcome untried; completed knowledge/state recording. No training or scoring rerun."
+}

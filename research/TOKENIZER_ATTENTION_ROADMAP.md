@@ -6,6 +6,11 @@ quality is better or neutral because inference cost matters; investigate Kimi's
 new attention experiments after the current tokenizer LR round. It does not
 change the already-frozen LR-only plan or rewrite historical study decisions.
 
+The subsequent human instruction also requires broad architecture research.
+This attention work is one part of the [architecture agenda](TOKENIZER_ARCHITECTURE_ROADMAP.md),
+which includes MoE, activations, normalization, residuals, depth and readout.
+Attention parameter refinements must not indefinitely displace those families.
+
 ## Adoption objective
 
 Treat quality and inference cost as separate measured objectives. GQA/MLA need
