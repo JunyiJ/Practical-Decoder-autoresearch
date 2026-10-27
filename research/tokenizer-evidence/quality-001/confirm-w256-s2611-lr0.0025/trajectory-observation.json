@@ -1,0 +1,17 @@
+{
+  "trial": "confirm-w256-s2611-lr0.0025",
+  "scope": "Single completed trajectory; sampled validation diagnostic, not full-validation checkpoint selection or a paired LR conclusion.",
+  "sampled_validation_min": {
+    "step": 600,
+    "ce": 4.687503147125244
+  },
+  "sampled_validation_final": {
+    "step": 2999,
+    "ce": 6.205675411224365
+  },
+  "last_training_minibatch_ce": 0.3098601698875427,
+  "full_validation_raw_ce": 6.426975920546348,
+  "full_validation_h200_ce": 6.322958871943571,
+  "interpretation": "Strong late validation degradation as training minibatch loss falls. Consistent with overfitting under the inherited horizon, but does not isolate horizon, schedule, capacity or regularization. A separate prospective shorter-horizon comparison is justified; no retroactive early checkpoint selection, schedule change or adoption.",
+  "next": "Finish frozen paired LR confirmation; consider horizon/schedule evidence alongside architecture proposals at the round boundary."
+}

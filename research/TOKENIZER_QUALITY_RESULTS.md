@@ -154,6 +154,24 @@ confirmation means. Width256 confirmation is now running serially. Adoption
 still requires those results and the full frozen conditional-text checks; the
 small-width result alone does not establish transfer. Test loss remains closed.
 
+## First width256 trajectory: validation degradation warning
+
+The completed LR0.0025 seed2611 trajectory passed the saved-artifact audit,
+including finite model/optimizer tensors, schedule, sampler and checkpoint
+contracts. Its full-validation H200 CE is 6.322959;
+raw endpoint CE is 6.426976. Its paired LR0.01 baseline
+is still running, so this is not a conclusion about the LR change at width256.
+
+On the fixed sampled-validation diagnostic, CE reached 4.687503
+at step600 and rose to 6.205675 at step2999;
+the last training minibatch CE was 0.309860. This strengthens
+the warning about the inherited training horizon. It is consistent with
+an overfitting pattern, but does not isolate horizon, schedule, capacity or
+regularization as the cause. Sampled validation differs from the full endpoint
+panel, and its minimum is not an eligible checkpoint selector. Finish the
+frozen comparison, then weigh a prospective shorter-horizon/schedule experiment
+alongside the architecture agenda. No active trial or adoption rule changes.
+
 ## Reviewed round progress
 
 Only completed, saved-artifact-reviewed trajectories appear below. All use
@@ -175,6 +193,7 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | confirm | 64 | 2612 | 0.0025 | 5.279965 | 5.229425 | 2.318616 | 258.04 |
 | confirm | 64 | 2613 | 0.0025 | 5.260866 | 5.210149 | 2.310070 | 257.00 |
 | confirm | 64 | 2613 | 0.01 | 5.761821 | 5.563192 | 2.466602 | 256.72 |
+| confirm | 256 | 2611 | 0.0025 | 6.426976 | 6.322959 | 2.803466 | 519.92 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
