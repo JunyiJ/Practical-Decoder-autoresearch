@@ -1,4 +1,7 @@
 # Practical-Decoder
+
+> **Human stop, 2026-10-27:** Research is paused. Read [the research handoff](research/RESEARCH_HANDOFF.md) for validated findings, the exact incumbent, unfinished null-attention work and explicit restart/reproduction procedures. Older launch/continue wording below is historical and does not authorize execution.
+
 A repo to implement the decoder-only GPT-style model and play around with different attention mechanism and MoE structures
 
 
@@ -68,11 +71,9 @@ during preparation.
 
 The [16 GB Mac campaign](research/team_mac.yaml) targets widths 64/128/256 with
 paired seeds and fixed training-token budgets. It supports model-code changes
-and LR/weight-decay/clipping overrides. Full μP and Muon optimizer integration
-remain future protocol extensions.
+and LR/weight-decay/clipping overrides. Reviewed μP and Muon implementations and completed results now exist; see the handoff for the retained recipe.
 
-**Current mode: preparation only. No Codex research agents or training have been
-launched for this team.** Read [program.md](program.md) for agent instructions and
+**Current mode: human-stopped after completed research. No automatic restart is authorized.** Read [program.md](program.md) for agent instructions and
 [TEAM.md](research/TEAM.md) for setup, commands, limits, and evidence rules.
 Campaign initialization requires the reviewed implementation to be committed in
 a clean source repository; initialization calls no model and starts no training.

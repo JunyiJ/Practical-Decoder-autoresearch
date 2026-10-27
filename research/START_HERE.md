@@ -1,5 +1,7 @@
 # Start and continue auto-research
 
+> **Current status — human-stopped on 2026-10-27.** Read [the research handoff](RESEARCH_HANDOFF.md) before acting. It supersedes historical continue/launch/preparation status below. Research, prerequisite model validation and automated iteration require a new explicit human instruction. Campaign006 remains permanently stopped.
+
 This guide runs the local Codex CLI research team: propose an idea, predict its
 quality and resource effects, implement it, train paired baseline/candidate
 models, evaluate transfer across widths, and save the results and learnings.

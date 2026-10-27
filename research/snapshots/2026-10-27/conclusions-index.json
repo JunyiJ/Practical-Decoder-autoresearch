@@ -1,0 +1,450 @@
+[
+  {
+    "file": "research_state/attention-scale-quality-conclusion.json",
+    "sha256": "977d3854c78a5d2b70228ff0b85b0c9be31e8cf3b4ebfa4a5eacad2925440a30",
+    "summary": "Fixed attention-logit scaling comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: half. Fresh H200 width64/256 deltas versus tuned baseline: half-scale -0.006210/-0.009851; double-scale +0.005693/+0.000935. Adopt the frozen half recipe after both-width support.",
+    "result_id": "kb_79cd2f5f81a48a6542e9f7a9e29f88d3a6b0c6af7d1c1c0bf5aa3053a92611b0",
+    "quality_decision": {
+      "frozen_screen_winner": "half",
+      "qualifies_for_incumbent_replacement": true
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/attention-scale-quality-001/review.json"
+  },
+  {
+    "file": "research_state/averaging-conclusion.json",
+    "sha256": "36c4f92f846210d4e8d2133c3b648a186d8b73be9abcf180c6014cae42b45734",
+    "summary": "Averaging quality001 completed and independently reviewed8trajectories/32correlatedmodeloutputs. Frozen half-life200; selected averaged-minus-raw CE64/256 -0.005398/-0.016797. It passes the frozen local and both-width mean/everyseed/allconditionaltextinterval rules and becomes the observed returned-weight incumbent.",
+    "result_id": "kb_297e2dca399a3a438b7205016233e75d94f8a28b702ed6d8012ea24f9d227135",
+    "quality_decision": {
+      "frozen_half_life": 200,
+      "qualifies_for_incumbent_replacement": true
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/averaging-quality-001/review.json"
+  },
+  {
+    "file": "research_state/batch-conclusion.json",
+    "sha256": "56495ebea5dc8dcd1799c0fcbf22bce4e21c0ec5e04a5e4cb787497c6fff829d",
+    "summary": "Batch sensitivity48/48 reviewed: B8 selected LR .0025 interior; B16/B32 .005 upper boundary, no extension. At width64, B16/B32 minusB8 mean CE +.007709/+.005601 but both fail the +.01 rule because seeds2072/2073 exceed the margin. At width256 both pass: means -.002558/-.002290, mixed seed signs. B32 versusB16 passes both widths. B16 training time changes -36.03/-23.73%, B32 -61.27/-31.85% at widths64/256. Equal3072000 targets with3000/1500/750 updates and matched nominal cumulative decay; not a pure batch effect, equal compute, population non-inferiority or inference result. Historical quality incumbent retained.",
+    "result_id": "kb_b1ff2c19f9435878b28fb3affcf3b7d0f93a8b674fa30124d5a7b9c3fe29a622",
+    "quality_decision": null,
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/batch-sensitivity-001/review.json"
+  },
+  {
+    "file": "research_state/capacity-conclusion.json",
+    "sha256": "eaff0f391e53369a977dbc453f7249073e28808992fd7f9ad94bf499b8772f3f",
+    "summary": "Capacity quality001 completed and reviewed 54/54. Frozen peak LRs: dense4 0.005 (boundary), wide4 0.005 (boundary), dense6 0.005 (boundary). The frozen screen winner was dense6; its tuned-dense4 CE deltas at widths64/256 are -0.028180/-0.000674. It fails the complete adoption rule, so the prior incumbent remains. All selected models use final-third cooldown,3000 updates and3,072,000 targets, with different capacity and compute. Held-out test remains closed.",
+    "result_id": "kb_6a735434738e5676e68fb3a6b05d2151848534215a085f395900aec63aee9a68",
+    "quality_decision": {
+      "frozen_screen_winner": "dense6",
+      "qualifies_for_incumbent_replacement": false,
+      "confirmation_checks": [
+        {
+          "width": 64,
+          "reference": "dense4",
+          "mean_delta": -0.028179661605890242,
+          "paired_seed_deltas": {
+            "2131": -0.022326037435049573,
+            "2132": -0.03596299010614912,
+            "2133": -0.026249957276471614
+          },
+          "supported": true
+        },
+        {
+          "width": 64,
+          "reference": "incumbent_reference",
+          "mean_delta": -0.028179661605890242,
+          "paired_seed_deltas": {
+            "2131": -0.022326037435049573,
+            "2132": -0.03596299010614912,
+            "2133": -0.026249957276471614
+          },
+          "supported": true
+        },
+        {
+          "width": 64,
+          "reference": "deep_reference",
+          "mean_delta": -0.10755578344684392,
+          "paired_seed_deltas": {
+            "2131": -0.09833980939762133,
+            "2132": -0.11963431236064426,
+            "2133": -0.10469322858226615
+          },
+          "supported": true
+        },
+        {
+          "width": 256,
+          "reference": "dense4",
+          "mean_delta": -0.0006739529216516772,
+          "paired_seed_deltas": {
+            "2131": -0.0046379316249194336,
+            "2132": 0.011781635424814807,
+            "2133": -0.009165562564851681
+          },
+          "supported": false
+        },
+        {
+          "width": 256,
+          "reference": "incumbent_reference",
+          "mean_delta": -0.0006739529216516772,
+          "paired_seed_deltas": {
+            "2131": -0.0046379316249194336,
+            "2132": 0.011781635424814807,
+            "2133": -0.009165562564851681
+          },
+          "supported": false
+        },
+        {
+          "width": 256,
+          "reference": "deep_reference",
+          "mean_delta": -0.07451437481086373,
+          "paired_seed_deltas": {
+            "2131": -0.08316217554917382,
+            "2132": -0.06189613099148339,
+            "2133": -0.0784848178919344
+          },
+          "supported": true
+        }
+      ],
+      "rule": "Only the width64 screen winner can qualify; confirmation mean gain>.005 and every seed improves at widths64 and256 versus tuned dense4, fixed reviewed incumbent and original deep dense constant reference.",
+      "limitations": "Adaptive validation; conditional text bootstrap is descriptive, not independent seed uncertainty or holdout. No larger-width reselection."
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/capacity-quality-001/review.json"
+  },
+  {
+    "file": "research_state/context-inference-conclusion.json",
+    "sha256": "af415045e3e1c5c35d185c9e302ec88c9e4971c0ad85a269e091b2b871658eb8",
+    "summary": "All36 context inference jobs reviewed (18 saved models,324 paired repetitions,399.19seconds,no training). All three width256 GQA settings halve allocated/logical KV-cache storage but fail the prospectively frozen all-seed/workload latency guard;none meets the10%decode benefit across all workloads. Decode median changes range -0.31% to+4.76% for2L128,-3.11% to+9.32% for2L512,-4.81% to+8.42% for4L512.2L128 fails on upper-quartile variability despite every median within5%;long-context cells also have median regressions>5%. No automatic adoption;historical quality incumbent unchanged.",
+    "result_id": "kb_b5512bbe8a3a2d4ad2bb9dbdb9a8cc8592153213b3204e5068c8666c6453a360",
+    "quality_decision": null,
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/context-inference-001/review.json"
+  },
+  {
+    "file": "research_state/context-interaction-conclusion.json",
+    "sha256": "fd503ddbfee546c7c1e9c1523777b6bfbe797ca3fd098bb24ef64f5a3ae4cd91",
+    "summary": "Context interaction114 trials reviewed. No width64 GQA cell meets the frozen +.01 operational quality rule; width256 two-layer GQA at128/512 and four-layer GQA at512 meet it, but four-layer GQA at128 loses+.019204 CE with every seed beyond+.01. Four-layer depth improves every paired seed in all matched attention/context cells at both widths. Context512 training has worse mean common-context128 CE in all eight comparisons; native512 scores remain separate. Matched new inference savings unmeasured; historical incumbent retained.",
+    "result_id": "kb_117c97dfeee6a8db25365dfe3bbb1ed96ae5d352b11315e26ffd004159211368",
+    "quality_decision": null,
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/context-interaction-001/review.json"
+  },
+  {
+    "file": "research_state/context256-conclusion.json",
+    "sha256": "7916c28ee0683e38da904e3d3fe1786adfd2536ce0cc909b9d240dffdf610be4",
+    "summary": "Context256 follow-up54/54 reviewed. Frozen LRs: context128 .005 boundary, contexts256/512 .0025 interior. Context256 versus128 is near-neutral under the frozen +.01 common-eval128 rule at width64 (+.001743, mixed seeds), but worse at256 (+.019001, every seed beyond+.01). Context512 is worse than128 at both widths (+.017166/+.029220, every seed beyond+.01) and worse than256 (+.015423/+.010219). Context128 .005 versus fixed .0025 is+.000427 at64 and-.005435 at256, mixed seeds at both widths. Historical quality incumbent retained; no grid extension, test access or completed-trial rerun.",
+    "result_id": "kb_d91505192ed3a2498401f35382c6f55987efd969d97c229140ed6812c1bc7bef",
+    "quality_decision": null,
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/context256-followup-001/review.json"
+  },
+  {
+    "file": "research_state/decay-quality-conclusion.json",
+    "sha256": "e282787292d59bd069e7fd1f2544039fb2b26391a9c32a03015a2e202706accd",
+    "summary": "Independent-decay comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Frozen choices: anchor LR 0.005, weak LR 0.005, strong LR 0.005; eligible winner: incumbent_unchanged. Fresh H200 deltas at widths 64/256: Weak decay minus anchor +0.004269/+0.003997; Strong decay minus anchor -0.001221/-0.010659; Strong decay minus weak -0.005491/-0.014657. The complete frozen adoption rule is not met; retain the prior incumbent.",
+    "result_id": "kb_c1de5a623f18adcc0a078ff33fcc7de3a896e36090d683c19ff744bf8fc0cf2e",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/decay-quality-001/review.json"
+  },
+  {
+    "file": "research_state/embedding-scale-quality-conclusion.json",
+    "sha256": "a93cb0dc69c830ffeaebde2a94e1db23b731956f891841523d96bdbbe1faa1ae",
+    "summary": "Input embedding scale comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned unit-scale baseline: half +0.004697/-0.004641; quarter +0.013697/-0.002240. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_eafb07ff1bc9a39a32fb5e22d7857305459684b180a325529931a5eb009acb56",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/embedding-scale-quality-001/review.json"
+  },
+  {
+    "file": "research_state/ffn-hidden-norm-conclusion.json",
+    "sha256": "cc897044dd9a488216cab87862997ea966cd53f1e3be971d341cc7701ef46760",
+    "summary": "SwiGLU hidden-normalization completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Frozen choices: none LR 0.005, rms LR 0.005, layer LR 0.005; eligible winner: incumbent_unchanged. Fresh H200 deltas at widths 64/256: RMS minus unchanged -0.000775/-0.003438; LayerNorm minus unchanged -0.002675/-0.002503; LayerNorm minus RMS -0.001900/+0.000935. The complete frozen adoption rule is not met; retain the prior incumbent.",
+    "result_id": "kb_4b4d9bebe6865cab1d14608767859ac2d7b18ac11ae373aeef62eaebf43ab045",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/ffn-hidden-norm-quality-001/review.json"
+  },
+  {
+    "file": "research_state/gated-activation-quality-conclusion.json",
+    "sha256": "9f17a0a7a0d6950fceb33a7b7725100785d161983f9b1adf67b4a840c62c38b5",
+    "summary": "Gated FFN activation comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned SwiGLU: GEGLU -0.000404/+0.006786; ReGLU +0.007098/+0.006577. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_ee2cfb969a8029e552f6d178506d7e9e6c8eeb69e45ae104122e2b05aa2c757b",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/gated-activation-quality-001/review.json"
+  },
+  {
+    "file": "research_state/horizon-conclusion.json",
+    "sha256": "02b735c625a27093ef058c666a1253f6269aa1a03f9ca65b7a83e416246c7d22",
+    "summary": "The horizon study completed 24 training trajectories and 48 correlated raw/H200 outputs, all independently reviewed. Frozen candidate: long6000_stretched. H200 mean validation CE changes at widths 64/256 versus fresh 3,000-update controls: -0.036435/+0.079981. It does not pass the complete frozen adoption rule; retain the prior 3,000-update H200 incumbent.",
+    "result_id": "kb_0d878166b1ec83ae3d35aa1090e4ee544a46b1283463a810a51da0e1cc82cc3f",
+    "quality_decision": {
+      "frozen_screen_winner": "long6000_stretched",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/horizon-quality-001/review.json"
+  },
+  {
+    "file": "research_state/kda-quality-conclusion.json",
+    "sha256": "50f064b94ffef0ffbcdf5cfa643125a26740d06f5e25b71c18184f58f1bb9315",
+    "summary": "KDA comparison completed 24 physical trajectories and 48 correlated raw/H200 outputs, independently reviewed. Frozen choices: mha LR 0.005, kda LR 0.005; eligible winner: incumbent_unchanged. Fresh H200 KDA-minus-MHA deltas at widths64/256: +0.004848/+0.007836. The complete frozen adoption rule is not met; retain the prior incumbent.",
+    "result_id": "kb_efc90606f2c734ba312f765148f9524885a4be1439dafe1765079d12ef3d7aa7",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/kda-quality-001/review.json"
+  },
+  {
+    "file": "research_state/logit-z-quality-conclusion.json",
+    "sha256": "ff74073565e10ed845145e168d1f9405d8e64c6d91853f5a95adac03c2d65200",
+    "summary": "Logit-z objective comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned zero-penalty control: lambda1e-4 -0.005551/-0.001172; lambda1e-3 -0.002380/-0.004684. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_78ee39c6d3c927c76877e8f4559b47919fe4e794295b07fb200db9f4728de1c6",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/logit-z-quality-001/review.json"
+  },
+  {
+    "file": "research_state/moe-conclusion.json",
+    "sha256": "bd112b3c88119d86f66ac1f166bbdb2b32caf9cc370081fcc3cd5e46bd51f93f",
+    "summary": "MoE quality001 completed and reviewed48/48. All three families selected LR.0025 inside the frozen grid. MoE was the width64 screen winner. Fresh confirmation MoE-minus-dense mean CE is -0.031764/+0.002608 at widths64/256. The frozen winner fails the complete adoption rule; the historical dense quality incumbent is retained. Wider dense and MoE use additional stored capacity; comparisons are equal-token recipes, not equal compute or pure routing effects. Test split stays closed.",
+    "result_id": "kb_d0c34e1507f736aee3cbcc38a410480edb35bd788bb0f104a3be81dd8f86c0c7",
+    "quality_decision": {
+      "frozen_screen_winner": "moe4_top2",
+      "qualifies_for_incumbent_replacement": false,
+      "confirmation_checks": [
+        {
+          "width": 64,
+          "reference": "dense",
+          "mean_delta": -0.03176426126117048,
+          "paired_seed_deltas": {
+            "2091": -0.026851986659220062,
+            "2092": -0.040456773366017273,
+            "2093": -0.027984023758274246
+          },
+          "supported": true
+        },
+        {
+          "width": 64,
+          "reference": "deep_reference",
+          "mean_delta": -0.03176426126117048,
+          "paired_seed_deltas": {
+            "2091": -0.026851986659220062,
+            "2092": -0.040456773366017273,
+            "2093": -0.027984023758274246
+          },
+          "supported": true
+        },
+        {
+          "width": 256,
+          "reference": "dense",
+          "mean_delta": 0.002607632484932319,
+          "paired_seed_deltas": {
+            "2091": 0.006216387546871038,
+            "2092": 0.0032917443932414248,
+            "2093": -0.0016852344853155454
+          },
+          "supported": false
+        },
+        {
+          "width": 256,
+          "reference": "deep_reference",
+          "mean_delta": 0.002607632484932319,
+          "paired_seed_deltas": {
+            "2091": 0.006216387546871038,
+            "2092": 0.0032917443932414248,
+            "2093": -0.0016852344853155454
+          },
+          "supported": false
+        }
+      ],
+      "rule": "Only the width64 screen winner can qualify; confirmation mean gain>.005 and every seed improves at widths64 and256 versus tuned dense and fixed deep reference.",
+      "limitations": "Adaptive validation; conditional text bootstrap is descriptive, not independent seed uncertainty or holdout. No larger-width reselection."
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/moe-quality-001/review.json"
+  },
+  {
+    "file": "research_state/output-bias-quality-conclusion.json",
+    "sha256": "f95448aec2e76f123bc083ae3f531e2ea4320abe62fdef59a95612f5a687cd9f",
+    "summary": "Vocabulary output-bias comparison completed 42 physical trajectories and 84 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned no-bias baseline: learned-zero +0.001232/+0.003492; learned train-unigram -0.004870/+0.008795. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_4155e219df0a530c36865599863bd0eb55a28bfb4e227486601ac246090a8d89",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-bias-quality-001/review.json"
+  },
+  {
+    "file": "research_state/output-gate-conclusion.json",
+    "sha256": "c49a58745f86a562f7bcdb6fd1f9517bbfc28e0190b2ac03fe6d36295bd0afd4",
+    "summary": "Output-gating completed 36 physical trajectories and 72 correlated raw/H200 endpoints, all independently reviewed. All three arms selected LR 0.005 at the upper boundary. Static-half had the best screening mean, improving CE by 0.006703611, but seed 2202 worsened by +0.000584166; incumbent retention was frozen before confirmation. Fresh H200 mean differences at widths 64/256: static-half minus unchanged +0.004553/+0.006444, learned minus unchanged +0.002581/-0.000689, learned minus static-half -0.001972/-0.007133. Retain unchanged MHA, 3,000 updates, cooldown starting at 2,000, and H200; no grid extension or posthoc promotion.",
+    "result_id": "kb_8e576a1e5481fc9c450caea48c026f1970fa74af7d69cea5a2afdb2597761c6d",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-gate-quality-001/review.json"
+  },
+  {
+    "file": "research_state/parallel-block-quality-conclusion.json",
+    "sha256": "daffe82da0d06bfa1b1d203da6a922b250bf61414af1097e4d96461ac2d84e72",
+    "summary": "Serial versus parallel separate-norm residual blocks completed 24 physical trajectories and 48 correlated raw/H200 outputs, independently reviewed. Common inherited table kind legacy_untied; warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas for parallel versus tuned serial: +0.026757/+0.013555. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_a45549683e77c85173f2340bbf8b3b0bd5f6fdbdb995e437f61c5aeabd653031",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/parallel-block-quality-001/review.json"
+  },
+  {
+    "file": "research_state/position-quality-conclusion.json",
+    "sha256": "4c0a70339bc705b7b56bde66e0b2f9c9a83c89270da8eaf1cd963cecb7999726",
+    "summary": "Position-family comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned RoPE: No explicit position +0.124521/+0.063084; ALiBi +0.092128/+0.006974. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_10c48e5cb5febe97dd32c193aa36c62a2830f5223e79695b179a05c3d0b7b9b5",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/position-quality-001/review.json"
+  },
+  {
+    "file": "research_state/qknorm-conclusion.json",
+    "sha256": "f20a454908799ed85790545f3d690ff25f976a0a2b357d35909d9f28b6c62279",
+    "summary": "QK normalization completed 24 physical training trajectories and 48 correlated raw/H200 endpoints, all independently reviewed. Both families selected LR 0.005 at the upper grid boundary. QK RMS screening improved mean CE by 0.004858576, short of the frozen >0.005 criterion; incumbent retention was frozen before confirmation. Fresh QK-minus-standard H200 mean deltas at widths 64/256 are -0.005274/+0.007981. The unchanged MHA, 3,000 updates, cooldown starting at 2,000, H200 incumbent remains; no grid extension or posthoc adoption.",
+    "result_id": "kb_32f17c4c75d8825a53cf1d8f6bd8eb54fe19b0f324d992163e2a01d24c52744c",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/qknorm-quality-001/review.json"
+  },
+  {
+    "file": "research_state/readout-norm-quality-conclusion.json",
+    "sha256": "2fe78d6837e5f2e56035efa739cf14e8cf4cc20b49e33727680dff2fd33f8bd5",
+    "summary": "Final readout normalization comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned affine LayerNorm: bias-free LayerNorm -0.001072/-0.006786; RMSNorm -0.001101/+0.001167. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_f6907bd9b2544ce7a50ba862b0ca94bbeee2698381b0dbf32692d139bd6205a1",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/readout-norm-quality-001/review.json"
+  },
+  {
+    "file": "research_state/residual-gain-quality-conclusion.json",
+    "sha256": "1e21031c92e526ab9c7b8ce207b23fb3dfe7a066254d500590d8e5713066c983",
+    "summary": "Complete-branch residual gain comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned Unit gain: Static 0.1 +0.021737/+0.029721; Learned 0.1 +0.026876/+0.020310. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_6169eeca230e3dcd46f4f4f5006fd33907e1aaf109dedef5bc5a6a260d935c49",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/residual-gain-quality-001/review.json"
+  },
+  {
+    "file": "research_state/schedule-conclusion.json",
+    "sha256": "950157317f4b7d8e8385bf8595c380f8fa8bd82bec69abdfdd3db1ae0f66a891",
+    "summary": "Schedule quality001 completed and reviewed 48/48. Frozen peak LRs: constant 0.0025 (interior), cosine 0.005 (boundary), linear_cooldown 0.005 (boundary). The frozen screen winner was linear_cooldown; its tuned-constant CE deltas at widths64/256 are -0.071693/-0.075062. It passes the complete mean>.005 and every-seed improvement rule versus tuned constant and fixed deep incumbent at both widths, and becomes the most promising observed quality recipe. All models used the same four-layer dense MHA SwiGLU architecture,3000 updates and3,072,000 targets; LR integrals and update/decay balance differ. Held-out test remains closed.",
+    "result_id": "kb_c6a54b5a4fd0d7ef57510cdad7fb7d5072d26235a795961177913ca3bea3bcbd",
+    "quality_decision": {
+      "frozen_screen_winner": "linear_cooldown",
+      "qualifies_for_incumbent_replacement": true,
+      "confirmation_checks": [
+        {
+          "width": 64,
+          "reference": "constant",
+          "mean_delta": -0.07169306485073135,
+          "paired_seed_deltas": {
+            "2111": -0.06618517046755445,
+            "2112": -0.07023540888394053,
+            "2113": -0.07865861520069872
+          },
+          "supported": true
+        },
+        {
+          "width": 64,
+          "reference": "deep_reference",
+          "mean_delta": -0.07169306485073135,
+          "paired_seed_deltas": {
+            "2111": -0.06618517046755445,
+            "2112": -0.07023540888394053,
+            "2113": -0.07865861520069872
+          },
+          "supported": true
+        },
+        {
+          "width": 256,
+          "reference": "constant",
+          "mean_delta": -0.07506203414823785,
+          "paired_seed_deltas": {
+            "2111": -0.07613182938067298,
+            "2112": -0.07501628951094585,
+            "2113": -0.07403798355309443
+          },
+          "supported": true
+        },
+        {
+          "width": 256,
+          "reference": "deep_reference",
+          "mean_delta": -0.07506203414823785,
+          "paired_seed_deltas": {
+            "2111": -0.07613182938067298,
+            "2112": -0.07501628951094585,
+            "2113": -0.07403798355309443
+          },
+          "supported": true
+        }
+      ],
+      "rule": "Only the width64 screen winner can qualify; confirmation mean gain>.005 and every seed improves at widths64 and256 versus tuned constant, fixed incumbent and fixed deep dense reference.",
+      "limitations": "Adaptive validation; conditional text bootstrap is descriptive, not independent seed uncertainty or holdout. No larger-width reselection."
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/schedule-quality-001/review.json"
+  },
+  {
+    "file": "research_state/stage1-conclusion.json",
+    "sha256": "455322a76b18349f471bfd0f09f0158f48bf0f8f4fb636fb53c3f1805c05ad22",
+    "summary": null,
+    "result_id": null,
+    "quality_decision": null,
+    "review": null
+  },
+  {
+    "file": "research_state/value-residual-quality-conclusion.json",
+    "sha256": "af3c9ed958160b006377e98d36684719d4b359616d149d44d79d88b3d504cd17",
+    "summary": "First-layer value reuse comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned Local values: Half local +0.003625/+0.002584; First-value blend +0.008219/+0.013734. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_95cf001351fe762d1eea3f24432963e1ff4c69b1f41d78a6d6da7d6f5120d35e",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/value-residual-quality-001/review.json"
+  },
+  {
+    "file": "research_state/warmup-quality-conclusion.json",
+    "sha256": "ec22bbd159e98a235622e325239f4da669138ef10681e7cafa3bb1effc8f31e2",
+    "summary": "Warmup comparison completed24 physical trajectories and48 correlated raw/H200 outputs, independently reviewed. Fixed peak LR0.005, common MHA backbone. Frozen eligible winner: warmup100. Fresh H200 width64/256 deltas versus baseline: warmup100 -0.004462/-0.000805; warmup300 +0.000473/+0.001027. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_f682fa7cf84d4b37c5c35a7ae2d69ad7b054652d96e082edbfcf96b9cefb8c90",
+    "quality_decision": {
+      "frozen_screen_winner": "warmup100",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/warmup-quality-001/review.json"
+  },
+  {
+    "file": "research_state/weight-tying-quality-conclusion.json",
+    "sha256": "590ae66e457e61d5753c08799d0115572d3f08a743de82c3fdffbfdc6c0c9d69",
+    "summary": "Scaled table-sharing comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned legacy baseline: matched-untied +0.003225/-0.003865; scaled-tied +0.000447/-0.004328. Retain the prior incumbent under the complete frozen rule.",
+    "result_id": "kb_56328c82e5551e2e07b74d28883511b4c2d48c6015a3219faa77f61275e80062",
+    "quality_decision": {
+      "frozen_screen_winner": "incumbent_unchanged",
+      "qualifies_for_incumbent_replacement": false
+    },
+    "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/weight-tying-quality-001/review.json"
+  }
+]

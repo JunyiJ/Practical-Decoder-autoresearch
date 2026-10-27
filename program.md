@@ -1,15 +1,15 @@
 # MLE research agent protocol
 
+> **Current status — human-stopped on 2026-10-27.** Read [the research handoff](research/RESEARCH_HANDOFF.md) before acting. It supersedes historical continue/launch/preparation status below. Research, prerequisite model validation and automated iteration require a new explicit human instruction. Campaign006 remains permanently stopped.
+
 Read [research/TEAM.md](research/TEAM.md), the campaign specification, your role
 prompt, and relevant knowledge-bank records before acting. Separate Codex CLI
 roles provide reasoning; the controller owns state and numerical decisions. The
 standalone [LR harness](research/README.md) is also retained.
 
-**Current operating mode: preparation only. Do not launch research Codex agents,
-training, a training smoke, or a research campaign until the user requests that
-execution.** Static checks, unit tests with mocked training, and temporary Git
-fixture tests are allowed. This restriction comes from the user's request to
-generate the protocol and harness without running them.
+**Current operating mode: stopped by the human.** Do not launch agents, training, model validation, scoring or campaigns without a new explicit instruction. The historical role workflow below is reference material; it does not automatically authorize delegation. Preserve completed studies and the human's primary checkout.
+
+Reviewed μP/Muon and many later model policies are already implemented. The earlier AdamW-only scope below describes the original team harness, not the current retained recipe.
 
 ## Research objective
 

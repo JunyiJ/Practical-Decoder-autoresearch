@@ -1,5 +1,7 @@
 # Bounded MLE experiment harness
 
+> **Current status — human-stopped on 2026-10-27.** Read [the research handoff](RESEARCH_HANDOFF.md) before acting. It supersedes historical continue/launch/preparation status below. Research, prerequisite model validation and automated iteration require a new explicit human instruction. Campaign006 remains permanently stopped.
+
 For the multi-agent auto-research loop, see **[Start and continue auto-research](START_HERE.md)**,
 including fresh setup, campaign resume, and reuse of the local knowledge bank.
 This page covers the standalone learning-rate study.
@@ -9,8 +11,7 @@ executes one declared experiment, preserves evidence, and prevents incomplete
 runs or larger-width feedback from changing the small-width selection.
 It runs locally without an LLM API or an experiment-tracking service.
 
-**Prepared, not launched:** the real-corpus Mac study has not been run. The user
-requested that execution wait. Commands below are instructions for a later run.
+**Historical starter protocol:** many later studies have completed. The human has now stopped iteration. Commands below describe the original harness and must not be mistaken for the current incumbent or authorization to run.
 
 ## First study
 

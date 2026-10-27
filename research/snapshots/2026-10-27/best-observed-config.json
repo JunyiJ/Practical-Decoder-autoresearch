@@ -1,0 +1,777 @@
+{
+  "label": "Most promising observed recipe: four-layer MHA/SwiGLU, half, H200",
+  "baseline_commit": "53302eb5ff0674a0babdabce24183dc952436c6a",
+  "baseline_config": {
+    "data": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/data/raw/shakespeare.txt",
+      "train_fraction": 0.8,
+      "val_fraction": 0.1
+    },
+    "model": {
+      "attention_logit_scale": 0.5,
+      "attention_logit_scale_width_policy": "mha4_fixed_attention_logit_scale",
+      "attention_width_policy": "mha_head32",
+      "attn_dropout": 0.0,
+      "attn_type": "mha",
+      "base_width": 64,
+      "block_size": 128,
+      "depth_width_policy": "depth4_unscaled",
+      "dim": 64,
+      "dropout": 0.0,
+      "ffn": "swiglu",
+      "ffn_bias": false,
+      "ffn_width_policy": "swiglu_21_8",
+      "input_embedding_scale": 1.0,
+      "input_width_policy": "mha4_input_scale",
+      "mlp_type": "dense",
+      "n_heads": 2,
+      "n_layers": 4,
+      "norm_type": "rmsnorm",
+      "output_bias_kind": "none",
+      "output_bias_prior": {
+        "alphabet": [
+          "\n",
+          " ",
+          "!",
+          "$",
+          "&",
+          "'",
+          ",",
+          "-",
+          ".",
+          "3",
+          ":",
+          ";",
+          "?",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ],
+        "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+        "counts": [
+          31496,
+          136181,
+          1738,
+          1,
+          3,
+          5044,
+          15814,
+          1563,
+          6088,
+          27,
+          7966,
+          2857,
+          1902,
+          5858,
+          2128,
+          3044,
+          1697,
+          4926,
+          1561,
+          2062,
+          2421,
+          8956,
+          301,
+          1214,
+          3161,
+          2405,
+          3793,
+          3946,
+          972,
+          229,
+          4007,
+          3664,
+          5280,
+          2690,
+          549,
+          2983,
+          111,
+          1534,
+          161,
+          44055,
+          9109,
+          12582,
+          25300,
+          76209,
+          12722,
+          10885,
+          41545,
+          36167,
+          520,
+          5685,
+          26918,
+          17668,
+          39041,
+          52734,
+          8693,
+          511,
+          39267,
+          39928,
+          53896,
+          21245,
+          6230,
+          14056,
+          428,
+          16286,
+          302
+        ],
+        "counts_sha256": "c749ff9309821b31f3d4918799140a5578d31f6e1ee86173614947caf2f25d7d",
+        "initial_values": [
+          2.1753967622277286,
+          3.6394966854182025,
+          -0.7211853056010389,
+          -7.489103639395378,
+          -6.795956458835432,
+          0.3439021128323869,
+          1.4864633157844267,
+          -0.8272488988500655,
+          0.5319883236532519,
+          -4.850046309780119,
+          0.8008124694250442,
+          -0.2243734614655093,
+          -0.631063952659173,
+          0.49348339958946674,
+          -0.5188431550618429,
+          -0.16099463981132445,
+          -0.7450444530840299,
+          0.3202347425886414,
+          -0.8285284895556906,
+          -0.5503343068840705,
+          -0.38990189584228485,
+          0.9179398085198729,
+          -2.4718238025804524,
+          -1.0797514641806734,
+          -0.12329080218590516,
+          -0.39652992342069826,
+          0.05892533053963778,
+          0.0984602557075247,
+          -1.3018667377693172,
+          -2.7441715110321265,
+          0.11379682280937864,
+          0.024332794365429677,
+          0.3896199327516108,
+          -0.28458266922841613,
+          -1.872332541728806,
+          -0.18123085863167088,
+          -3.463751948660228,
+          -0.8459651599340248,
+          -3.0946544847229376,
+          2.510966010986995,
+          0.934877170298682,
+          1.2578511556366454,
+          1.9563483796708696,
+          3.058997146704841,
+          1.268915838187378,
+          1.1129820190388235,
+          2.452305706139308,
+          2.313679209019119,
+          -1.9265007782019552,
+          0.4635114722556226,
+          2.0183368160108452,
+          1.597316150661328,
+          2.3901424487677168,
+          2.6907838307553926,
+          0.8881375915934155,
+          -1.9439261949158144,
+          2.3959143968570897,
+          2.412607335961646,
+          2.7125792767656804,
+          1.7816731013846367,
+          0.5550412925888999,
+          1.368624951376444,
+          -2.120793901027305,
+          1.515871702618239,
+          -2.4685180144459533
+        ],
+        "initial_values_sha256": "81720a25ca893a9575ae58e7a03ee6ef30e2647f5926cafb6b7e23383941c14f",
+        "prior_sha256": "f85c89f0b113ccb0d2031dbd99d2772c8e9b219b171d8c4524b45f0a9d1aec45",
+        "pseudocount": 1,
+        "token_count": 1115394,
+        "tokenizer": "TinyDataLoader.sorted_global_characters.universal_newlines.v1",
+        "train_end": 892315,
+        "train_fraction": 0.8,
+        "val_end": 1003854,
+        "val_fraction": 0.1,
+        "version": 1
+      },
+      "output_bias_width_policy": "mha4_train_bound_output_bias",
+      "parameterization": "mup",
+      "readout_norm_epsilon": 1e-05,
+      "readout_norm_kind": "layer_affine",
+      "readout_norm_width_policy": "mha4_readout_norm",
+      "residual_topology_kind": "serial",
+      "residual_topology_width_policy": "mha4_separate_norm_residual_topology",
+      "rope": 1,
+      "vocab_size": 65,
+      "weight_tying_kind": "legacy_untied",
+      "weight_tying_width_policy": "mha4_scaled_table_sharing"
+    },
+    "training": {
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "cpu_threads": 4,
+      "decay_mode": "independent",
+      "device": "mps",
+      "eval_every": 300,
+      "eval_iters": 30,
+      "grad_clip": 1.0,
+      "learning_rate": 0.01,
+      "lr_schedule": {
+        "kind": "linear_cooldown",
+        "min_ratio": 0.1,
+        "start_step": 2000,
+        "total_steps": 3000
+      },
+      "max_iters": 3000,
+      "optimizer": "muon",
+      "weight_averaging": {
+        "half_lives": [
+          200
+        ],
+        "interval": 10,
+        "kind": "spaced_tail_ema",
+        "start_step": 2000,
+        "total_steps": 3000
+      },
+      "weight_decay": 6e-05
+    }
+  },
+  "config_overrides": [],
+  "reference_overrides": {},
+  "source_campaign": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/attention-scale-quality-001",
+  "source_iteration": null,
+  "evidence_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/attention-scale-quality-001/report.json",
+  "source_contract": {
+    "source_sha256": "acf88beada7a72783a0329efcb7845e34b53f2cb8c53172836c306c5c9919393",
+    "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
+  },
+  "previous_best": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/best-observed-before-attention-scale-quality001.json",
+    "sha256": "da41b025b621fdcd17b2bee2af78b3bee452efd05b295241fd2c6297af3dbb17",
+    "result_id": "kb_297e2dca399a3a438b7205016233e75d94f8a28b702ed6d8012ea24f9d227135"
+  },
+  "returned_weights": {
+    "kind": "spaced_tail_ema",
+    "half_life": 200,
+    "purpose": "inference_only_not_optimizer_resume",
+    "raw_training_parent_required": true,
+    "observed_training_config_has_three_shadows": false
+  },
+  "selection": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/attention-scale-quality-001/selection.json",
+    "family": "half",
+    "attention_family": "mha",
+    "input_embedding_scale": 1.0,
+    "attention_logit_scale": 0.5,
+    "attention_logit_scale_width_policy": "mha4_fixed_attention_logit_scale",
+    "residual_topology_kind": "serial",
+    "residual_topology_width_policy": "mha4_separate_norm_residual_topology",
+    "weight_tying_kind": "legacy_untied",
+    "weight_tying_width_policy": "mha4_scaled_table_sharing",
+    "output_bias_kind": "none",
+    "output_bias_width_policy": "mha4_train_bound_output_bias",
+    "output_bias_prior_sha256": "f85c89f0b113ccb0d2031dbd99d2772c8e9b219b171d8c4524b45f0a9d1aec45",
+    "readout_norm_kind": "layer_affine",
+    "readout_norm_width_policy": "mha4_readout_norm",
+    "readout_norm_epsilon": 1e-05,
+    "warmup_steps": 0,
+    "learning_rate": 0.01,
+    "independent_decay": 6e-05,
+    "rule": "Only frozen eligible recipe; mean gain>.005, every seed negative and all text upper bounds<0 versus fixed incumbent and tuned baseline for changed attention scale at both widths"
+  },
+  "quality_decision": {
+    "frozen_screen_winner": "half",
+    "qualifies_for_incumbent_replacement": true
+  },
+  "local_outcome": "supported",
+  "transfer_outcome": "supported_at_tested_widths",
+  "metrics": [
+    {
+      "target": "width-64",
+      "metric": "full_validation_context128_ce_delta",
+      "candidate_mean": 1.509797344196737,
+      "baseline_mean": 1.516007823297129,
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261024,
+      "conditional_text_bootstrap_95pct": [
+        -0.008728754649897702,
+        -0.0035731334083074213
+      ],
+      "mean_delta": -0.006210479100392128,
+      "paired_seed_deltas": {
+        "2411": -0.00010842331495242163,
+        "2412": -0.012046134428178368,
+        "2413": -0.006476879558045434
+      },
+      "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+      "text_block_count": 55,
+      "text_block_tokens": 2048
+    },
+    {
+      "target": "width-256",
+      "metric": "full_validation_context128_ce_delta",
+      "candidate_mean": 1.4230595045676793,
+      "baseline_mean": 1.4329105719132393,
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261024,
+      "conditional_text_bootstrap_95pct": [
+        -0.012067908264414898,
+        -0.007645473553074618
+      ],
+      "mean_delta": -0.009851067345560417,
+      "paired_seed_deltas": {
+        "2411": -0.00910975561935179,
+        "2412": -0.0049083080466147955,
+        "2413": -0.015535138370713852
+      },
+      "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+      "text_block_count": 55,
+      "text_block_tokens": 2048
+    }
+  ],
+  "comparators": {
+    "baseline": {
+      "64": {
+        "H200": 1.516007823297129,
+        "raw": 1.5235582779995729
+      },
+      "256": {
+        "H200": 1.4329105719132393,
+        "raw": 1.4485739129157513
+      }
+    },
+    "half": {
+      "64": {
+        "H200": 1.509797344196737,
+        "raw": 1.5187226928514843
+      },
+      "256": {
+        "H200": 1.4230595045676793,
+        "raw": 1.4407626279975259
+      }
+    },
+    "double": {
+      "64": {
+        "H200": 1.521700401292374,
+        "raw": 1.5303728594140977
+      },
+      "256": {
+        "H200": 1.4338458955599263,
+        "raw": 1.4478939986565182
+      }
+    },
+    "incumbent_reference": {
+      "64": {
+        "H200": 1.516007823297129,
+        "raw": 1.5235582779995729
+      },
+      "256": {
+        "H200": 1.4329105719132393,
+        "raw": 1.4485739129157513
+      }
+    }
+  },
+  "training_cost": {
+    "baseline": {
+      "64": {
+        "mean_training_seconds": 54.85611227837702,
+        "mean_trajectory_wall_seconds": 58.91981219438215,
+        "mean_sampled_rss_mb": 475.4166666666667,
+        "training_time_ratio_vs_baseline": 1.0
+      },
+      "256": {
+        "mean_training_seconds": 125.45459839142859,
+        "mean_trajectory_wall_seconds": 133.58527406957,
+        "mean_sampled_rss_mb": 484.1927083333333,
+        "training_time_ratio_vs_baseline": 1.0
+      }
+    },
+    "half": {
+      "64": {
+        "mean_training_seconds": 55.32316350533316,
+        "mean_trajectory_wall_seconds": 59.41652752676358,
+        "mean_sampled_rss_mb": 475.015625,
+        "training_time_ratio_vs_baseline": 1.0085141146092529
+      },
+      "256": {
+        "mean_training_seconds": 126.4484348880748,
+        "mean_trajectory_wall_seconds": 134.30786837513247,
+        "mean_sampled_rss_mb": 484.0729166666667,
+        "training_time_ratio_vs_baseline": 1.007921881775472
+      }
+    },
+    "double": {
+      "64": {
+        "mean_training_seconds": 55.25816321000457,
+        "mean_trajectory_wall_seconds": 59.35370902810246,
+        "mean_sampled_rss_mb": 475.1197916666667,
+        "training_time_ratio_vs_baseline": 1.0073291911316513
+      },
+      "256": {
+        "mean_training_seconds": 126.56444454099983,
+        "mean_trajectory_wall_seconds": 134.65475501430532,
+        "mean_sampled_rss_mb": 484.6927083333333,
+        "training_time_ratio_vs_baseline": 1.0088465960100437
+      }
+    },
+    "incumbent_reference": {
+      "64": {
+        "mean_training_seconds": 54.85611227837702,
+        "mean_trajectory_wall_seconds": 58.91981219438215,
+        "mean_sampled_rss_mb": 475.4166666666667,
+        "training_time_ratio_vs_baseline": 1.0
+      },
+      "256": {
+        "mean_training_seconds": 125.45459839142859,
+        "mean_trajectory_wall_seconds": 133.58527406957,
+        "mean_sampled_rss_mb": 484.1927083333333,
+        "training_time_ratio_vs_baseline": 1.0
+      }
+    }
+  },
+  "training_steps": 3000,
+  "widths": [
+    64,
+    256
+  ],
+  "seeds": [
+    2411,
+    2412,
+    2413
+  ],
+  "holdout_consumed": false,
+  "stage1_control_retained_as_reference": true,
+  "ranking_scope": "Adaptive development on reused validation; conditional text intervals are not seed-population uncertainty, independent holdout or adjusted significance.",
+  "limitations": [
+    "Adaptive development on reused validation; conditional text intervals are not seed-population uncertainty, independent holdout or adjusted significance.",
+    "36 physical trajectories yield 72 correlated raw/H200 endpoints. Reference aliases {'incumbent_reference': 'baseline'} were declared prospectively and are not independent repeated controls; no historical pooling.",
+    "Only the frozen eligible width64 winner can be adopted; no alternate fallback, larger-width reselection, grid extension or completed-trial rerun.",
+    "Equal finite LR tuning; selected-recipe contrasts include LR choice. A tuned baseline-only gain is attributed to LR selection, not attention scaling. Fixed-LR screens are separate.",
+    "Equal 3000 updates and 3072000 targets, common final-reviewed residual topology/table/bias/prior/norm/input, warmup/cooldown/H200 and independent decay. Fixed1/.5/2 multiplier is applied once to post-RoPE QK/sqrt32 before causal masking and softmax. Unit path preserves historical arithmetic; cached K/V stay unscaled. Parameter layout and construction RNG are unchanged, but gradients, clipping and optimization paths can differ. Q/K weights can adapt. No diagnosed entropy collapse, isolated mechanism, paper replication or optimal muP transfer is claimed. Double-minus-half is reported separately.",
+    "Measured training time is separate from quality; no equal-compute, serving-speed or peak-accelerator-memory claim.",
+    "Final H200 tensors equal saved raw-parent shadows; endpoint evidence cannot reconstruct every historical snapshot. Earlier MPS reproducibility failures remain preserved without an identified cause.",
+    "H200 checkpoints are inference-only; resume optimizer training only from their raw parent."
+  ],
+  "learning_ids": [],
+  "subsequent_algorithm_studies": [
+    {
+      "campaign": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/gated-activation-quality-001",
+      "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/gated-activation-quality-001/review.json",
+      "summary": "Gated FFN activation comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned SwiGLU: GEGLU -0.000404/+0.006786; ReGLU +0.007098/+0.006577. Retain the prior incumbent under the complete frozen rule.",
+      "means": {
+        "swiglu": {
+          "64": {
+            "H200": 1.511098040107728,
+            "raw": 1.5201358076714986
+          },
+          "256": {
+            "H200": 1.4251507926739504,
+            "raw": 1.442388963361112
+          }
+        },
+        "geglu": {
+          "64": {
+            "H200": 1.510693884491969,
+            "raw": 1.5170883042086476
+          },
+          "256": {
+            "H200": 1.4319366207563033,
+            "raw": 1.449938134685495
+          }
+        },
+        "reglu": {
+          "64": {
+            "H200": 1.5181958224220893,
+            "raw": 1.5257037492458645
+          },
+          "256": {
+            "H200": 1.4317282426344986,
+            "raw": 1.4467671280112928
+          }
+        },
+        "incumbent_reference": {
+          "64": {
+            "H200": 1.511098040107728,
+            "raw": 1.5201358076714986
+          },
+          "256": {
+            "H200": 1.4251507926739504,
+            "raw": 1.442388963361112
+          }
+        }
+      },
+      "quality_decision": {
+        "frozen_screen_winner": "incumbent_unchanged",
+        "qualifies_for_incumbent_replacement": false
+      },
+      "result_id": "kb_ee2cfb969a8029e552f6d178506d7e9e6c8eeb69e45ae104122e2b05aa2c757b"
+    },
+    {
+      "campaign": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/residual-gain-quality-001",
+      "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/residual-gain-quality-001/review.json",
+      "summary": "Complete-branch residual gain comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned Unit gain: Static 0.1 +0.021737/+0.029721; Learned 0.1 +0.026876/+0.020310. Retain the prior incumbent under the complete frozen rule.",
+      "means": {
+        "unit": {
+          "64": {
+            "H200": 1.507866858833309,
+            "raw": 1.5137549179261738
+          },
+          "256": {
+            "H200": 1.4200699041023765,
+            "raw": 1.4357131095942368
+          }
+        },
+        "static_tenth": {
+          "64": {
+            "H200": 1.5296040989194026,
+            "raw": 1.534389284336999
+          },
+          "256": {
+            "H200": 1.4497907019799912,
+            "raw": 1.4597106987005897
+          }
+        },
+        "learned_tenth": {
+          "64": {
+            "H200": 1.5347431932046485,
+            "raw": 1.5400850839736724
+          },
+          "256": {
+            "H200": 1.4403799656521405,
+            "raw": 1.4557352805653572
+          }
+        },
+        "incumbent_reference": {
+          "64": {
+            "H200": 1.507866858833309,
+            "raw": 1.5137549179261738
+          },
+          "256": {
+            "H200": 1.4200699041023765,
+            "raw": 1.4357131095942368
+          }
+        }
+      },
+      "quality_decision": {
+        "frozen_screen_winner": "incumbent_unchanged",
+        "qualifies_for_incumbent_replacement": false
+      },
+      "result_id": "kb_6169eeca230e3dcd46f4f4f5006fd33907e1aaf109dedef5bc5a6a260d935c49"
+    },
+    {
+      "campaign": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/value-residual-quality-001",
+      "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/value-residual-quality-001/review.json",
+      "summary": "First-layer value reuse comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned Local values: Half local +0.003625/+0.002584; First-value blend +0.008219/+0.013734. Retain the prior incumbent under the complete frozen rule.",
+      "means": {
+        "local": {
+          "64": {
+            "H200": 1.513766654731849,
+            "raw": 1.518822889862212
+          },
+          "256": {
+            "H200": 1.423661399595711,
+            "raw": 1.4372723179089233
+          }
+        },
+        "local_half": {
+          "64": {
+            "H200": 1.5173912342245468,
+            "raw": 1.5215361395183828
+          },
+          "256": {
+            "H200": 1.4262452437621191,
+            "raw": 1.4413364062783305
+          }
+        },
+        "first_blend": {
+          "64": {
+            "H200": 1.5219856317277547,
+            "raw": 1.525475339449555
+          },
+          "256": {
+            "H200": 1.4373955686573479,
+            "raw": 1.4517178955670254
+          }
+        },
+        "incumbent_reference": {
+          "64": {
+            "H200": 1.513766654731849,
+            "raw": 1.518822889862212
+          },
+          "256": {
+            "H200": 1.423661399595711,
+            "raw": 1.4372723179089233
+          }
+        }
+      },
+      "quality_decision": {
+        "frozen_screen_winner": "incumbent_unchanged",
+        "qualifies_for_incumbent_replacement": false
+      },
+      "result_id": "kb_95cf001351fe762d1eea3f24432963e1ff4c69b1f41d78a6d6da7d6f5120d35e"
+    },
+    {
+      "campaign": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/position-quality-001",
+      "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/position-quality-001/review.json",
+      "summary": "Position-family comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned RoPE: No explicit position +0.124521/+0.063084; ALiBi +0.092128/+0.006974. Retain the prior incumbent under the complete frozen rule.",
+      "means": {
+        "rope": {
+          "64": {
+            "H200": 1.5161827876293021,
+            "raw": 1.522147497262005
+          },
+          "256": {
+            "H200": 1.4260785226429853,
+            "raw": 1.4430605484458703
+          }
+        },
+        "nope": {
+          "64": {
+            "H200": 1.6407038798730864,
+            "raw": 1.6486491624277817
+          },
+          "256": {
+            "H200": 1.4891628810438045,
+            "raw": 1.5006968566787382
+          }
+        },
+        "alibi": {
+          "64": {
+            "H200": 1.6083108265561703,
+            "raw": 1.6161067264353852
+          },
+          "256": {
+            "H200": 1.4330523020990946,
+            "raw": 1.4499543629090397
+          }
+        },
+        "incumbent_reference": {
+          "64": {
+            "H200": 1.5161827876293021,
+            "raw": 1.522147497262005
+          },
+          "256": {
+            "H200": 1.4260785226429853,
+            "raw": 1.4430605484458703
+          }
+        }
+      },
+      "quality_decision": {
+        "frozen_screen_winner": "incumbent_unchanged",
+        "qualifies_for_incumbent_replacement": false
+      },
+      "result_id": "kb_10c48e5cb5febe97dd32c193aa36c62a2830f5223e79695b179a05c3d0b7b9b5"
+    },
+    {
+      "campaign": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/logit-z-quality-001",
+      "review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/logit-z-quality-001/review.json",
+      "summary": "Logit-z objective comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned zero-penalty control: lambda1e-4 -0.005551/-0.001172; lambda1e-3 -0.002380/-0.004684. Retain the prior incumbent under the complete frozen rule.",
+      "means": {
+        "none": {
+          "64": {
+            "H200": 1.515571303046873,
+            "raw": 1.521296248112345
+          },
+          "256": {
+            "H200": 1.4280354729152955,
+            "raw": 1.445966397438629
+          }
+        },
+        "z1e4": {
+          "64": {
+            "H200": 1.5100199926330338,
+            "raw": 1.5153956132697288
+          },
+          "256": {
+            "H200": 1.426863895064565,
+            "raw": 1.4433413440889327
+          }
+        },
+        "z1e3": {
+          "64": {
+            "H200": 1.513191109716373,
+            "raw": 1.5188235532415983
+          },
+          "256": {
+            "H200": 1.423351679689356,
+            "raw": 1.4421610491056551
+          }
+        },
+        "incumbent_reference": {
+          "64": {
+            "H200": 1.515571303046873,
+            "raw": 1.521296248112345
+          },
+          "256": {
+            "H200": 1.4280354729152955,
+            "raw": 1.445966397438629
+          }
+        }
+      },
+      "quality_decision": {
+        "frozen_screen_winner": "incumbent_unchanged",
+        "qualifies_for_incumbent_replacement": false
+      },
+      "result_id": "kb_78ee39c6d3c927c76877e8f4559b47919fe4e794295b07fb200db9f4728de1c6"
+    }
+  ],
+  "constant_reference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/best-observed-before-schedule-quality001.json",
+    "description": "Prior four-layer dense constant LR.0025; original GELU and cheaper two-layer reference retained"
+  },
+  "raw_cooldown_reference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/best-observed-before-averaging-quality001.json",
+    "description": "Prior online four-layer cooldown endpoint preserved; raw parents remain resumable"
+  },
+  "result_id": "kb_79cd2f5f81a48a6542e9f7a9e29f88d3a6b0c6af7d1c1c0bf5aa3053a92611b0",
+  "last_reviewed_at": "2026-10-27T01:47:15.873429+00:00"
+}

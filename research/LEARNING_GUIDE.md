@@ -1,5 +1,7 @@
 # Learning LLM pretraining through our optimizer transfer project
 
+> **Current status — human-stopped on 2026-10-27.** Read [the research handoff](RESEARCH_HANDOFF.md) before acting. It supersedes historical continue/launch/preparation status below. Research, prerequisite model validation and automated iteration require a new explicit human instruction. Campaign006 remains permanently stopped.
+
 **Latest reviewed result, October 26:** KDA quality001 is complete and independently reviewed. The tested KDA adaptation worsened mean validation CE at widths 64 and 256 and took substantially longer to train. The four-layer MHA/SwiGLU, cooldown/H200, LR 0.005 and decay 0.00006 incumbent remains. See the completed KDA section at the end. Earlier preparation paragraphs are historical. A distinct warmup experiment is being validated next; research continues until human interruption.
 
 **A project walkthrough and lab notebook · October 23, 2026**
