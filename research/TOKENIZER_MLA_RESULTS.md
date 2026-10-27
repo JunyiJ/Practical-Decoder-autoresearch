@@ -75,7 +75,9 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | confirm | mha | 2911 | 0.00125 | 4.738932 | 4.744072 | 205.45 |
 | confirm | mla | 2911 | 0.00125 | 4.704028 | 4.706850 | 219.75 |
 | confirm | mla | 2912 | 0.00125 | 4.694593 | 4.703851 | 220.79 |
+| confirm | mha | 2912 | 0.00125 | 4.727290 | 4.734112 | 204.69 |
 
 Frozen family LRs: {'mha': 0.00125, 'mla': 0.00125}.
 
 - Seed2911, MLA minus MHA H200 CE: -0.037222.
+- Seed2912, MLA minus MHA H200 CE: -0.030261.
