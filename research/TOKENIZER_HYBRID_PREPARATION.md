@@ -108,3 +108,22 @@ Standalone schedule, LR and regularization studies remain first-class options;
 attention parameter refinement must not indefinitely displace those questions.
 Historical all-KDA character results remain prior evidence only. Test closed,
 one local worker, no paid compute, no subagents, all previous stop markers intact.
+
+## Completed hybrid MPS pilot and finite follow-up
+
+The20-update width64 MPS pilot passed saved-artifact review:3 H200 snapshots,
+finite optimizer/model tensors, exact config and parent hashes, training-sampler
+replay and untouched test RNG. Raw/H200 pair132348300bytes; training3.257seconds.
+Batch1/8 full-versus-cached maximum errors8.35e-7/5.97e-7; actual state56064bytes
+per example, including all three recurrent matrices and convolution histories.
+This is feasibility evidence only. The audit helper initially assumed a raw
+checkpoint top-level tokenizer field; it was corrected to training_state.contract
+and the failure recorded. Neither training nor its artifacts were changed.
+See [pilot audit](tokenizer-evidence/hybrid-pilot-001/review.json).
+
+The [finite width64 protocol](TOKENIZER_HYBRID_PROTOCOL.md) tunes all three
+layouts equally, then confirms hybrid versus the stronger screened homogeneous
+control on three fresh seeds. This produces12 trials and a scoped comparison
+only against that selected control. Two synthetic MPS optimizer updates for
+each homogeneous control remain a prelaunch gate. Nine controller/benchmark
+tests pass; existing model source remains identical to the audited pilot.

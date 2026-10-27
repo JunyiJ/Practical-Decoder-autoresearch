@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "steps": 20,
+  "ema_snapshots": 3,
+  "result_sha256": "ca746bce50eae083d142774d93c3e8680415de6d001d7b0c248c47249f023251",
+  "raw_sha256": "9d3fb7ffff7748c1de4515069b20610b31d2fe2bb7af7b588fb3993237a9d9ed",
+  "h200_sha256": "087447d64351f16af30a35ac09b8fc08a200bec9e9e4eb0f58f08af27300ae80",
+  "training_seconds": 3.2571849962696433,
+  "checkpoint_pair_bytes": 132348300,
+  "output_bytes": 132378425,
+  "cache_checks": [
+    {
+      "allocated_cache_bytes": 56064,
+      "batch": 1,
+      "max_absolute_error": 8.344650268554688e-07,
+      "per_layer_cache_bytes": [
+        10496,
+        10496,
+        10496,
+        24576
+      ]
+    },
+    {
+      "allocated_cache_bytes": 448512,
+      "batch": 8,
+      "max_absolute_error": 5.960464477539062e-07,
+      "per_layer_cache_bytes": [
+        83968,
+        83968,
+        83968,
+        196608
+      ]
+    }
+  ],
+  "train_sampler_replayed": true,
+  "test_rng_untouched": true,
+  "scope": "Feasibility only, no quality ranking or adoption; source/runtime/recipe/protocol/corpus/helper verified."
+}

@@ -1,0 +1,5 @@
+{
+  "failure": "Initial saved-artifact audit raised KeyError: tokenizer_contract on the raw checkpoint.",
+  "cause": "Audit helper incorrectly assumed the averaged export top-level schema for raw training checkpoints.",
+  "correction": "Read raw training_state.contract.tokenizer; require equality with averaged tokenizer_contract and loader identity. Training and artifacts were not rerun or changed."
+}
