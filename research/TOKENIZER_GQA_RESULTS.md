@@ -59,6 +59,7 @@ review are also required. The test holdout remains closed.
 | Stage | Family | Width | Seed | LR | Raw CE | H200 CE | Training seconds |
 |---|---|---:|---:|---:|---:|---:|---:|
 | screen | mha | 64 | 2701 | 0.0025 | 5.283691 | 5.229085 | 254.43 |
+| screen | mha | 64 | 2701 | 0.00125 | 4.964187 | 4.950018 | 254.70 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
