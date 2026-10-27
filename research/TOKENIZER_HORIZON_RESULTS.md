@@ -36,4 +36,9 @@ the8GiB reserve. [Resource review](tokenizer-evidence/horizon-pilot-001/resource
 
 ## Reviewed trajectories
 
-No completed quality trajectories yet.
+Only completed, artifact-reviewed records appear here. Test remains closed.
+
+| Stage | Seed | Updates | Raw CE | H200 CE | Training seconds |
+|---|---:|---:|---:|---:|---:|
+
+Screening incomplete; no duration selected.
