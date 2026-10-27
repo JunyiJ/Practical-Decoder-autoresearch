@@ -159,8 +159,10 @@ small-width result alone does not establish transfer. Test loss remains closed.
 The completed LR0.0025 seed2611 trajectory passed the saved-artifact audit,
 including finite model/optimizer tensors, schedule, sampler and checkpoint
 contracts. Its full-validation H200 CE is 6.322959;
-raw endpoint CE is 6.426976. Its paired LR0.01 baseline
-is still running, so this is not a conclusion about the LR change at width256.
+raw endpoint CE is 6.426976. Its paired LR0.01 baseline has now completed
+and passed audit at H200 CE7.094273. The paired difference is -0.771314 CE,
+favoring LR0.0025 on this seed. Two more width256 pairs and the frozen interval
+checks remain outstanding; this is not yet a width256 adoption conclusion.
 
 On the fixed sampled-validation diagnostic, CE reached 4.687503
 at step600 and rose to 6.205675 at step2999;
@@ -194,6 +196,7 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | confirm | 64 | 2613 | 0.0025 | 5.260866 | 5.210149 | 2.310070 | 257.00 |
 | confirm | 64 | 2613 | 0.01 | 5.761821 | 5.563192 | 2.466602 | 256.72 |
 | confirm | 256 | 2611 | 0.0025 | 6.426976 | 6.322959 | 2.803466 | 519.92 |
+| confirm | 256 | 2611 | 0.01 | 7.410883 | 7.094273 | 3.145450 | 513.40 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
@@ -204,6 +207,7 @@ Paired H200 differences versus LR0.01 within the same stage, width and seed:
 - confirm, width64, seed2611, LR0.0025: -0.353905 CE.
 - confirm, width64, seed2612, LR0.0025: -0.335515 CE.
 - confirm, width64, seed2613, LR0.0025: -0.353043 CE.
+- confirm, width256, seed2611, LR0.0025: -0.771314 CE.
 
 Frozen screening choice: LR0.0025. Confirmation results cannot change this choice.
 
