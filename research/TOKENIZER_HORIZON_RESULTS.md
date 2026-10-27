@@ -85,6 +85,7 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | confirm | 2811 | 1200 | 4.736564 | 4.745014 | 202.62 |
 | confirm | 2812 | 1200 | 4.737855 | 4.755463 | 200.56 |
 | confirm | 2812 | 3000 | 5.532091 | 5.450113 | 506.23 |
+| confirm | 2813 | 3000 | 5.543201 | 5.459431 | 505.56 |
 
 Frozen selection: 1200 updates.
 
