@@ -1,7 +1,38 @@
 # GPT-2 tokenizer quality results
 
 Updated October26,2026 (Los Angeles). The new campaign is running under the
-human's instruction to continue until interruption. The first full baseline is complete; no candidate improvement has been established yet. Follow the [frozen protocol](TOKENIZER_QUALITY_PROTOCOL.md).
+human's instruction to continue until interruption. The first finite round is complete: LR0.0025 is adopted under the frozen validation rule. Follow the [frozen protocol](TOKENIZER_QUALITY_PROTOCOL.md).
+
+## Completed LR transfer round: adopt LR0.0025
+
+All18 trajectories and their raw/H200 checkpoints passed saved-artifact review.
+Both controller and worker exited. The final review verified unchanged source,
+runtime and corpus, exact saved results/requests/checkpoint hashes, frozen
+selection, and separately recomputed all six conditional text-block intervals.
+This is same-agent review, not an independent reviewer or test evaluation.
+
+| Width | Baseline LR0.01 mean H200 CE | Adopted LR0.0025 mean H200 CE | Paired mean difference | 4096-token conditional interval |
+|---|---:|---:|---:|---|
+| 64 | 5.562136 | 5.214648 | -0.347488 | [-0.397065, -0.304287] |
+| 256 | 7.082105 | 6.309554 | -0.772551 | [-0.821903, -0.726952] |
+
+All three fresh seeds favor the candidate at each width. All predeclared
+2048/4096/8192-token interval upper bounds are negative. Adopt only the LR
+change; retain the inherited architecture,3000 updates and H200. This is a
+local adaptive-validation result, not a general optimum or holdout improvement.
+The larger model's worse absolute endpoint and late validation degradation
+remain unresolved; lower LR does not solve that pattern. Training totaled
+6170.17seconds across18 trials. Checkpoints and failure evidence are preserved.
+
+Next: prepare a finite GQA-versus-MHA comparison with the same explicit0.5 score
+multiplier, equal bounded LR tuning, fresh confirmation and the predeclared
+quality-neutral inference-memory route. Keep the horizon/schedule hypothesis
+active for a subsequent controlled comparison; architecture and HP research both
+remain priorities. No next training launches before correctness/resource gates
+and a frozen plan. [Final review](tokenizer-evidence/quality-001/final-review.json)
+and [adopted recipe](tokenizer-evidence/quality-001/adopted-recipe.json).
+
+Earlier progress sections below are a chronological record of this round.
 
 ## Synced baseline and implementation
 
@@ -102,9 +133,9 @@ tuning or imposing architecture-only ordering. Both remain first-class research
 directions; evidence determines the next finite round. These are planned
 comparisons, not measured gains.
 
-## Active quality round
+## Quality round execution (historical)
 
-`research_runs/tokenizer-quality-001` is running one MPS worker at a time. Its
+`research_runs/tokenizer-quality-001` ran one MPS worker at a time. Its
 [frozen plan](tokenizer-evidence/quality-001/plan.json) compares peak LRs0.01,
 0.005 and0.0025 with paired screen seeds2601/2602 at width64,3,000 updates each.
 The selected recipe is frozen before fresh-seed confirmation at widths64/256.
@@ -180,8 +211,8 @@ alongside the architecture agenda. No active trial or adoption rule changes.
 
 Only completed, saved-artifact-reviewed trajectories appear below. All use
 3,000 updates, the same GPT-2 tokenizer and full-validation H200 endpoint.
-This is a partial adaptive-validation comparison; no candidate is adopted
-until the frozen screening and fresh-seed/width confirmation rule passes.
+The full adaptive-validation comparison passed the frozen rule; LR0.0025 is
+adopted. Historical intermediate interpretations above remain scoped to their dates.
 
 | Stage | Width | Seed | Peak LR | Raw CE | H200 CE | H200 bits/byte | Training seconds |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -202,6 +233,7 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | confirm | 256 | 2612 | 0.01 | 7.355854 | 7.099229 | 3.147648 | 517.47 |
 | confirm | 256 | 2612 | 0.0025 | 6.404070 | 6.305714 | 2.795820 | 508.44 |
 | confirm | 256 | 2613 | 0.0025 | 6.402215 | 6.299989 | 2.793282 | 510.67 |
+| confirm | 256 | 2613 | 0.01 | 7.310382 | 7.052812 | 3.127068 | 515.06 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
@@ -214,6 +246,7 @@ Paired H200 differences versus LR0.01 within the same stage, width and seed:
 - confirm, width64, seed2613, LR0.0025: -0.353043 CE.
 - confirm, width256, seed2611, LR0.0025: -0.771314 CE.
 - confirm, width256, seed2612, LR0.0025: -0.793514 CE.
+- confirm, width256, seed2613, LR0.0025: -0.752824 CE.
 
 Frozen screening choice: LR0.0025. Confirmation results cannot change this choice.
 

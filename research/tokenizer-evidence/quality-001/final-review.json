@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "scope": "Same-agent final saved-artifact audit with separately recomputed block resampling arithmetic; no training/scoring rerun. Not independent reviewer, test evidence or seed-population uncertainty.",
+  "plan_file_sha256": "991153513868fbb4ad582cff6b8e0f84f2fdb26d2ae3bc3b3ce8b71374fa9f09",
+  "plan_canonical_sha256": "9bae29bf63908314f6592c44c69514bbd50bb7c6c420d6f1365a223c01f45c47",
+  "state_sha256": "81df4594bee9e1f454c8199856e39269f6c8c325c42983d06bf78567f48823d6",
+  "source_unchanged": true,
+  "runtime_unchanged": true,
+  "corpus_unchanged": true,
+  "reviewed_trials": 18,
+  "adopted": true,
+  "selected_lr": 0.0025,
+  "comparisons": [
+    {
+      "width": 64,
+      "candidate_mean_ce": 5.214648135519582,
+      "baseline_mean_ce": 5.562135895443537,
+      "mean_delta": -0.347487759923955,
+      "paired_seed_deltas": [
+        -0.3539051638986441,
+        -0.33551539784314865,
+        -0.35304271803007303
+      ],
+      "intervals": [
+        {
+          "block_tokens": 2048,
+          "conditional_interval": [
+            -0.3834965669772435,
+            -0.3129489589540969
+          ]
+        },
+        {
+          "block_tokens": 4096,
+          "conditional_interval": [
+            -0.39706462148364136,
+            -0.30428697063799687
+          ]
+        },
+        {
+          "block_tokens": 8192,
+          "conditional_interval": [
+            -0.41815623296708965,
+            -0.2976377214594493
+          ]
+        }
+      ],
+      "passes": true
+    },
+    {
+      "width": 256,
+      "candidate_mean_ce": 6.309554020855746,
+      "baseline_mean_ce": 7.082104537278725,
+      "mean_delta": -0.7725505164229789,
+      "paired_seed_deltas": [
+        -0.7713136652093091,
+        -0.7935141917055475,
+        -0.7528236923540801
+      ],
+      "intervals": [
+        {
+          "block_tokens": 2048,
+          "conditional_interval": [
+            -0.813322476571463,
+            -0.7354791830918135
+          ]
+        },
+        {
+          "block_tokens": 4096,
+          "conditional_interval": [
+            -0.8219033997370238,
+            -0.7269521655216947
+          ]
+        },
+        {
+          "block_tokens": 8192,
+          "conditional_interval": [
+            -0.83514534610066,
+            -0.736276562602213
+          ]
+        }
+      ],
+      "passes": true
+    }
+  ],
+  "total_training_seconds": 6170.172499184497
+}
