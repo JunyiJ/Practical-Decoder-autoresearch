@@ -161,8 +161,10 @@ including finite model/optimizer tensors, schedule, sampler and checkpoint
 contracts. Its full-validation H200 CE is 6.322959;
 raw endpoint CE is 6.426976. Its paired LR0.01 baseline has now completed
 and passed audit at H200 CE7.094273. The paired difference is -0.771314 CE,
-favoring LR0.0025 on this seed. Two more width256 pairs and the frozen interval
-checks remain outstanding; this is not yet a width256 adoption conclusion.
+favoring LR0.0025 on this seed. The second width256 pair also passed audit:
+candidate H200 CE6.305714 versus baseline7.099229, difference -0.793514.
+One more width256 pair and the frozen interval checks remain outstanding;
+this is not yet a width256 adoption conclusion.
 
 On the fixed sampled-validation diagnostic, CE reached 4.687503
 at step600 and rose to 6.205675 at step2999;
@@ -198,6 +200,7 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | confirm | 256 | 2611 | 0.0025 | 6.426976 | 6.322959 | 2.803466 | 519.92 |
 | confirm | 256 | 2611 | 0.01 | 7.410883 | 7.094273 | 3.145450 | 513.40 |
 | confirm | 256 | 2612 | 0.01 | 7.355854 | 7.099229 | 3.147648 | 517.47 |
+| confirm | 256 | 2612 | 0.0025 | 6.404070 | 6.305714 | 2.795820 | 508.44 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
@@ -209,6 +212,7 @@ Paired H200 differences versus LR0.01 within the same stage, width and seed:
 - confirm, width64, seed2612, LR0.0025: -0.335515 CE.
 - confirm, width64, seed2613, LR0.0025: -0.353043 CE.
 - confirm, width256, seed2611, LR0.0025: -0.771314 CE.
+- confirm, width256, seed2612, LR0.0025: -0.793514 CE.
 
 Frozen screening choice: LR0.0025. Confirmation results cannot change this choice.
 
