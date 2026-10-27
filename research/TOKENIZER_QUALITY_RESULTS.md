@@ -83,6 +83,15 @@ These are implementation/validation failures, not failed quality comparisons.
 Original logs and metadata are checked in under [pilot evidence](tokenizer-evidence/pilots-001/).
 Binary training checkpoints remain in local ignored `research_runs/`.
 
+## Updated research direction
+
+The human has directed inference-aware GQA/MLA adoption: better or neutral
+quality can qualify when measured inference cost improves. The follow-up also
+prioritizes Kimi-style KDA/KDA/KDA/MLA with bounded tuning, rather than treating
+the historical all-KDA result as a hybrid test. See the checked
+[attention roadmap and primary-paper findings](TOKENIZER_ATTENTION_ROADMAP.md).
+The active LR experiment and its selection rule are unchanged.
+
 ## Active quality round
 
 `research_runs/tokenizer-quality-001` is running one MPS worker at a time. Its
@@ -137,6 +146,7 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | screen | 64 | 2601 | 0.005 | 5.583362 | 5.442269 | 2.412987 | 254.96 |
 | screen | 64 | 2601 | 0.0025 | 5.276655 | 5.220207 | 2.314529 | 256.24 |
 | screen | 64 | 2602 | 0.0025 | 5.284148 | 5.232680 | 2.320060 | 256.35 |
+| screen | 64 | 2602 | 0.005 | 5.572239 | 5.458199 | 2.420050 | 256.87 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
