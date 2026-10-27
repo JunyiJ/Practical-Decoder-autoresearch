@@ -1,0 +1,46 @@
+{
+  "artifacts": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_QUALITY_PROTOCOL.md",
+      "sha256": "fe24fa444a06b4070e13dc1eb89262b4029f6c3980fba11e4f1ae6968fba3948"
+    }
+  ],
+  "created_by": "Codex tokenizer campaign",
+  "details": {
+    "confidence": "low",
+    "confirmation_seeds": [
+      2611,
+      2612,
+      2613
+    ],
+    "cost_forecast": null,
+    "old_campaigns": "closed",
+    "prior_synced_commit": "ce274e5",
+    "quality_gain_forecast": null,
+    "screen_lrs": [
+      0.01,
+      0.005,
+      0.0025
+    ],
+    "screen_seeds": [
+      2601,
+      2602
+    ]
+  },
+  "kind": "prediction",
+  "outcome": "untried",
+  "related_ids": [],
+  "scope": {
+    "heldout_test": "closed",
+    "tokenizer": "gpt2",
+    "widths": [
+      64,
+      256
+    ]
+  },
+  "sources": [],
+  "summary": "Test lower peak learning rates against inherited 0.01 on GPT-2 subwords. Expected quality direction is uncertain; changing vocabulary alters embedding/readout parameter count and text exposure. Freeze paired seeds and confirm transfer at width256.",
+  "title": "GPT-2 BPE learning-rate transfer from the final character incumbent",
+  "id": "kb_5ee6bf85438aa76cfec0fee930e9e116e56cecf2e8ac9b9d310a8c4f3fa06452",
+  "created_at": "2026-10-27T03:20:08.790678Z"
+}

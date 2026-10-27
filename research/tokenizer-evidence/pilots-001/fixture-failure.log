@@ -1,0 +1,51 @@
+..F..................................................................... [ 28%]
+........................................................................ [ 56%]
+........................................................................ [ 85%]
+......................................                                   [100%]
+=================================== FAILURES ===================================
+______________________ test_paired_layout_and_private_rng ______________________
+
+cfg = {'data': {'path': '/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pytest-of-junyi/pytest-137/test_paired_lay...t_and_private0/checkpoints', 'checkpoint_every': 0, 'keep_best_checkpoint': False, 'batch_layout': 'paired_blocks512'}}
+
+    def test_paired_layout_and_private_rng(cfg):
+        cfg.model.block_size=128;cfg.training.batch_size=8;cfg.training.batch_layout='paired_blocks512'
+        a=_make_loader(cfg,'cpu');b=_make_loader(cfg,'cpu')
+        test_rng=a.generators['test'].get_state().clone()
+        for _ in range(2):
+            x,y=a.get_batch('train');bx,by=b.get_batch('train')
+            assert x.shape==(8,128) and torch.equal(x,bx) and torch.equal(y,by)
+>       a.get_batch('val')
+
+tests/test_tokenizer_training.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/data/loaders.py:155: in get_batch
+    return _get_batch(self, split)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+loader = <src.data.loaders.TextDataset object at 0x10e9c9bd0>, split = 'val'
+
+    def _get_batch(loader, split):
+        if split not in loader.splits:
+            raise ValueError(f"split must be one of {tuple(loader.splits)}")
+        data = loader.splits[split]
+        if split == 'train' and getattr(loader, 'batch_layout', 'independent') in {'paired_blocks512', 'paired_batch512'}:
+            max_start = len(data) - 512
+            if max_start <= 0:
+                raise ValueError('Training split too small for paired 512-token blocks')
+            # Fixed two-block draws preserve the token stream across batch grouping.
+            groups = loader.batch_size * loader.block_size // 1024
+            starts = torch.cat([torch.randint(max_start, (2,), generator=loader.generators[split])
+                                for _ in range(groups)])
+            x = torch.stack([data[i:i+512] for i in starts]).reshape(loader.batch_size, loader.block_size)
+            y = torch.stack([data[i+1:i+513] for i in starts]).reshape(loader.batch_size, loader.block_size)
+            return x.to(loader.device), y.to(loader.device)
+        max_start = len(data) - loader.block_size
+        if max_start <= 0:
+>           raise ValueError(f"Dataset split {split!r} is too small for the configured block_size")
+E           ValueError: Dataset split 'val' is too small for the configured block_size
+
+src/data/loaders.py:53: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_training.py::test_paired_layout_and_private_rng
+1 failed, 253 passed in 1.98s

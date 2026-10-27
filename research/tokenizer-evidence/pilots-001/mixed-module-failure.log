@@ -1,0 +1,36 @@
+........................................................................ [ 21%]
+........................................................................ [ 43%]
+........................................................................ [ 65%]
+........................................................................ [ 86%]
+................................F...........                             [100%]
+=================================== FAILURES ===================================
+_____________ test_benchmark_near_cache_limit_uses_bounded_warmup ______________
+
+    def test_benchmark_near_cache_limit_uses_bounded_warmup():
+        from src.models.gpt import GPT
+>       from src.utils.bench_compare import _benchmark
+
+tests/test_review_regressions.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import annotations
+    
+    import argparse
+    import resource
+    import sys
+    import time
+    from typing import Optional
+    
+    import torch
+    from omegaconf import OmegaConf
+    
+    from ..attention.cache import KVCache
+    from ..data.loaders import TinyDataLoader
+    from ..models.gpt import GPT
+>   from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
+E   ImportError: cannot import name 'checkpoint_loader' from 'src.utils.checkpoint' (/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/utils/checkpoint.py)
+
+src/utils/bench_compare.py:15: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_review_regressions.py::test_benchmark_near_cache_limit_uses_bounded_warmup
+1 failed, 331 passed in 170.88s (0:02:50)
