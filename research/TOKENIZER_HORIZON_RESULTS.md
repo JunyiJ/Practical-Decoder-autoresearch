@@ -76,6 +76,7 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | screen | 2801 | 3000 | 5.560157 | 5.475618 | 507.23 |
 | confirm | 2811 | 3000 | 5.566267 | 5.482465 | 499.94 |
 | confirm | 2811 | 1200 | 4.736564 | 4.745014 | 202.62 |
+| confirm | 2812 | 1200 | 4.737855 | 4.755463 | 200.56 |
 
 Frozen selection: 1200 updates.
 
