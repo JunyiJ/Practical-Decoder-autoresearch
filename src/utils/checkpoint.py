@@ -73,6 +73,8 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
     weights and forward math are unchanged. Legacy optimizer parameter groups
     include the removed table, so training continuation requires original source.
     """
+    if for_resume and 'averaged_weights' in checkpoint:
+        raise ValueError('Averaged inference weights cannot resume the online optimizer; use the raw parent checkpoint')
     from ..models.tokenizer_architecture import validate_architecture_load
     validate_architecture_load(model, checkpoint)
     from ..models.logit_z import validate_logit_z_load
@@ -97,8 +99,6 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
     validate_input_scale_load(model, checkpoint)
     from ..models.readout_norm import validate_readout_norm_load
     validate_readout_norm_load(model, checkpoint)
-    if for_resume and 'averaged_weights' in checkpoint:
-        raise ValueError('Averaged inference weights cannot resume the online optimizer; use the raw parent checkpoint')
     state = checkpoint['model_state']
     key = 'transformer.wpe.weight'
     if getattr(model, 'enable_rope', False) and key in state:

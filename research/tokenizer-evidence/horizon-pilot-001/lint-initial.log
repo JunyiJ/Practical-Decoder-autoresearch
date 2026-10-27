@@ -1,0 +1,284 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/research/tokenizer_horizon_study.py:2:1
+   |
+ 1 |   """Finite width256 GQA duration/schedule experiment after the reviewed GQA round."""
+ 2 | / import argparse
+ 3 | | import copy
+ 4 | | import json
+ 5 | | import os
+ 6 | | from pathlib import Path
+ 7 | | import shutil
+ 8 | | import signal
+ 9 | | import subprocess
+10 | | import sys
+11 | |
+12 | | from .protocol import digest, file_digest
+13 | | from .runner import atomic_json, session_lock, source_fingerprint
+14 | | from .tokenizer_study import ROOT, runtime_identity, worker
+15 | | from ..models.tokenizer_architecture import architecture_contract
+   | |_________________________________________________________________^
+16 |
+17 |   RECIPE = ROOT/'research/tokenizer-evidence/gqa-001/adopted-width256-serving-recipe.json'
+   |
+help: Organize imports
+   |
+5  | import os
+   - from pathlib import Path
+6  | import shutil
+7  | import signal
+8  | import subprocess
+9  | import sys
+10 + from pathlib import Path
+11 |
+12 + from ..models.tokenizer_architecture import architecture_contract
+13 | from .protocol import digest, file_digest
+14 | from .runner import atomic_json, session_lock, source_fingerprint
+15 | from .tokenizer_study import ROOT, runtime_identity, worker
+   - from ..models.tokenizer_architecture import architecture_contract
+16 |
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_horizon_study.py:45:13
+   |
+43 |             rows += [('confirm',s,n) for i,s in enumerate(plan['confirm_seeds'])
+44 |                      for n in ((3000,selection) if i%2==0 else (selection,3000))]
+45 |     return [dict(id=f'{stage}-gqa-w256-s{s}-n{n}',stage=stage,family='gqa',width=256,seed=s,steps=n,lr=.00125)
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+46 |             for stage,s,n in rows]
+   |
+help: Rewrite as a literal
+   |
+44 |                      for n in ((3000,selection) if i%2==0 else (selection,3000))]
+   -     return [dict(id=f'{stage}-gqa-w256-s{s}-n{n}',stage=stage,family='gqa',width=256,seed=s,steps=n,lr=.00125)
+45 +     return [{'id': f'{stage}-gqa-w256-s{s}-n{n}','stage': stage,'family': 'gqa','width': 256,'seed': s,'steps': n,'lr': .00125}
+46 |             for stage,s,n in rows]
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_horizon_study.py:60:16
+   |
+58 | def conclusion(records, selection, plan):
+59 |     if selection == 3000:
+60 |         return dict(adopted=False,reason='No shorter screen candidate met the frozen gain threshold.',intervals=[])
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+61 |     from .coverage_eval import paired_blocks
+62 |     fresh = [r for r in records if r['stage']=='confirm']
+   |
+help: Rewrite as a literal
+   |
+59 |     if selection == 3000:
+   -         return dict(adopted=False,reason='No shorter screen candidate met the frozen gain threshold.',intervals=[])
+60 +         return {'adopted': False,'reason': 'No shorter screen candidate met the frozen gain threshold.','intervals': []}
+61 |     from .coverage_eval import paired_blocks
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_horizon_study.py:73:12
+   |
+71 |       passes = (intervals[0]['mean_delta'] < -.02 and all(d<0 for d in intervals[0]['paired_seed_deltas'].values())
+72 |                 and all(p['conditional_text_bootstrap_95pct'][1]<0 for p in intervals))
+73 |       return dict(adopted=False,quality_eligible=passes,selected_steps=selection,intervals=intervals,
+   |  ____________^
+74 | |                 reason='Eligibility only; complete artifact review before scoped schedule adoption. Test closed.')
+   | |__________________________________________________________________________________________________________________^
+help: Rewrite as a literal
+   |
+72 |               and all(p['conditional_text_bootstrap_95pct'][1]<0 for p in intervals))
+   -     return dict(adopted=False,quality_eligible=passes,selected_steps=selection,intervals=intervals,
+   -                 reason='Eligibility only; complete artifact review before scoped schedule adoption. Test closed.')
+73 +     return {'adopted': False,'quality_eligible': passes,'selected_steps': selection,'intervals': intervals,
+74 +                 'reason': 'Eligibility only; complete artifact review before scoped schedule adoption. Test closed.'}
+75 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_horizon_study.py:82:12
+   |
+80 |       output.mkdir(parents=True,exist_ok=False)
+81 |       cfg = config(output/'template',2791 if pilot else 2801,60 if pilot else 3000)
+82 |       plan = dict(version=1,pilot=pilot,source=source_fingerprint(),runtime=runtime_identity(),
+   |  ____________^
+83 | |                 git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+84 | |                 config=cfg,durations=list(DURATIONS),confirm_seeds=[2811,2812,2813],
+85 | |                 recipe_sha256=file_digest(RECIPE),protocol_sha256=file_digest(PROTOCOL),
+86 | |                 corpus_sha256=file_digest(Path(cfg['data']['path'])),job_seconds=600 if pilot else 7200,
+87 | |                 min_free_disk_mb=8192,max_output_mb=1024 if pilot else 6144)
+   | |____________________________________________________________________________^
+88 |       if not pilot:
+89 |           resource = ROOT/'research/tokenizer-evidence/horizon-pilot-001/resource-review.json'
+   |
+help: Rewrite as a literal
+   |
+81 |     cfg = config(output/'template',2791 if pilot else 2801,60 if pilot else 3000)
+   -     plan = dict(version=1,pilot=pilot,source=source_fingerprint(),runtime=runtime_identity(),
+   -                 git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+   -                 config=cfg,durations=list(DURATIONS),confirm_seeds=[2811,2812,2813],
+   -                 recipe_sha256=file_digest(RECIPE),protocol_sha256=file_digest(PROTOCOL),
+   -                 corpus_sha256=file_digest(Path(cfg['data']['path'])),job_seconds=600 if pilot else 7200,
+   -                 min_free_disk_mb=8192,max_output_mb=1024 if pilot else 6144)
+82 +     plan = {'version': 1,'pilot': pilot,'source': source_fingerprint(),'runtime': runtime_identity(),
+83 +                 'git_commit': subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+84 +                 'config': cfg,'durations': list(DURATIONS),'confirm_seeds': [2811,2812,2813],
+85 +                 'recipe_sha256': file_digest(RECIPE),'protocol_sha256': file_digest(PROTOCOL),
+86 +                 'corpus_sha256': file_digest(Path(cfg['data']['path'])),'job_seconds': 600 if pilot else 7200,
+87 +                 'min_free_disk_mb': 8192,'max_output_mb': 1024 if pilot else 6144}
+88 |     if not pilot:
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_horizon_study.py:95:37
+   |
+93 |         plan['resource_review_sha256']=file_digest(resource)
+94 |     atomic_json(output/'plan.json',plan)
+95 |     atomic_json(output/'state.json',dict(status='prepared',selection=None,records=[],plan_sha256=digest(plan)))
+   |                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+96 |     return plan
+   |
+help: Rewrite as a literal
+   |
+94 |     atomic_json(output/'plan.json',plan)
+   -     atomic_json(output/'state.json',dict(status='prepared',selection=None,records=[],plan_sha256=digest(plan)))
+95 +     atomic_json(output/'state.json',{'status': 'prepared','selection': None,'records': [],'plan_sha256': digest(plan)})
+96 |     return plan
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/tokenizer_horizon_study.py:123:57
+    |
+121 | …     if not plan['pilot'] and state['selection'] is None:
+122 | …         state['selection']=choose(state['records'],plan)
+123 | …         atomic_json(output/'selection.json',dict(selected_steps=state['selection']))
+    |                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+124 | …         atomic_json(output/'state.json',state);continue
+125 | …     state.update(status='completed',active=None,conclusion=None if plan['pilot'] else conclusion(state['records'],state['selection'…
+    |
+help: Rewrite as a literal
+    |
+122 |                     state['selection']=choose(state['records'],plan)
+    -                     atomic_json(output/'selection.json',dict(selected_steps=state['selection']))
+123 +                     atomic_json(output/'selection.json',{'selected_steps': state['selection']})
+124 |                     atomic_json(output/'state.json',state);continue
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/tokenizer_horizon_study.py:131:46
+    |
+129 |             spec=pending[0];trial=output/spec['id'];trial.mkdir(exist_ok=False)
+130 |             cfg=config(trial,spec['seed'],spec['steps'])
+131 |             atomic_json(trial/'request.json',dict(spec=spec,config=cfg,result_path=str(trial/'result.json')))
+    |                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+132 |             state.update(status='running',active=spec,controller_pid=os.getpid());atomic_json(output/'state.json',state)
+133 |             print('START '+spec['id'],flush=True)
+    |
+help: Rewrite as a literal
+    |
+130 |             cfg=config(trial,spec['seed'],spec['steps'])
+    -             atomic_json(trial/'request.json',dict(spec=spec,config=cfg,result_path=str(trial/'result.json')))
+131 +             atomic_json(trial/'request.json',{'spec': spec,'config': cfg,'result_path': str(trial/'result.json')})
+132 |             state.update(status='running',active=spec,controller_pid=os.getpid());atomic_json(output/'state.json',state)
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/tokenizer_horizon_study.py:157:56
+    |
+155 |         try:run(output)
+156 |         except Exception as error:
+157 |             atomic_json(output/'controller-error.json',dict(error=type(error).__name__,message=str(error)));raise
+    |                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Rewrite as a literal
+    |
+156 |         except Exception as error:
+    -             atomic_json(output/'controller-error.json',dict(error=type(error).__name__,message=str(error)));raise
+157 +             atomic_json(output/'controller-error.json',{'error': type(error).__name__,'message': str(error)});raise
+158 |
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_tokenizer_horizon.py:1:1
+   |
+ 1 | / import copy
+ 2 | | import json
+ 3 | |
+ 4 | | import pytest
+ 5 | | import torch
+ 6 | | from omegaconf import OmegaConf
+ 7 | |
+ 8 | | from src.research.tokenizer_horizon_study import RECIPE, config, specs, choose, conclusion
+ 9 | | from src.train.lr_schedule import schedule_contract, multiplier
+10 | | from src.train.weight_averaging import TailWeightAverages
+   | |_________________________________________________________^
+help: Organize imports
+   |
+7  |
+   - from src.research.tokenizer_horizon_study import RECIPE, config, specs, choose, conclusion
+   - from src.train.lr_schedule import schedule_contract, multiplier
+8  + from src.research.tokenizer_horizon_study import (
+9  +     RECIPE,
+10 +     choose,
+11 +     conclusion,
+12 +     config,
+13 +     specs,
+14 + )
+15 + from src.train.lr_schedule import multiplier, schedule_contract
+16 | from src.train.weight_averaging import TailWeightAverages
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_tokenizer_horizon.py:35:12
+   |
+34 | …cord(stage,seed,steps,ce):
+35 | …turn dict(stage=stage,seed=seed,steps=steps,h200=dict(mean_ce=ce,context=128,block_tokens=2048,block_target_counts=[2048,2048],block_loss_sums=[ce*2048,ce*2048]))
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Rewrite as a literal
+   |
+34 | def record(stage,seed,steps,ce):
+   -     return dict(stage=stage,seed=seed,steps=steps,h200=dict(mean_ce=ce,context=128,block_tokens=2048,block_target_counts=[2048,2048],block_loss_sums=[ce*2048,ce*2048]))
+35 +     return {'stage': stage,'seed': seed,'steps': steps,'h200': dict(mean_ce=ce,context=128,block_tokens=2048,block_target_counts=[2048,2048],block_loss_sums=[ce*2048,ce*2048])}
+36 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_tokenizer_horizon.py:35:56
+   |
+34 | …
+35 | …teps,h200=dict(mean_ce=ce,context=128,block_tokens=2048,block_target_counts=[2048,2048],block_loss_sums=[ce*2048,ce*2048]))
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Rewrite as a literal
+   |
+34 | def record(stage,seed,steps,ce):
+   -     return dict(stage=stage,seed=seed,steps=steps,h200=dict(mean_ce=ce,context=128,block_tokens=2048,block_target_counts=[2048,2048],block_loss_sums=[ce*2048,ce*2048]))
+35 +     return dict(stage=stage,seed=seed,steps=steps,h200={'mean_ce': ce,'context': 128,'block_tokens': 2048,'block_target_counts': [2048,2048],'block_loss_sums': [ce*2048,ce*2048]})
+36 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_tokenizer_horizon.py:39:10
+   |
+38 | def test_selection_needs_exact_screen_and_confirm_seeds():
+39 |     plan=dict(pilot=False,durations=[1200,1800,3000],confirm_seeds=[2811,2812,2813])
+   |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+40 |     rows=[record('screen',2801,n,v) for n,v in [(1200,4.),(1800,4.),(3000,5.)]]
+41 |     assert choose(rows,plan)==1200
+   |
+help: Rewrite as a literal
+   |
+38 | def test_selection_needs_exact_screen_and_confirm_seeds():
+   -     plan=dict(pilot=False,durations=[1200,1800,3000],confirm_seeds=[2811,2812,2813])
+39 +     plan={'pilot': False,'durations': [1200,1800,3000],'confirm_seeds': [2811,2812,2813]}
+40 |     rows=[record('screen',2801,n,v) for n,v in [(1200,4.),(1800,4.),(3000,5.)]]
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+Found 13 errors.
+[*] 2 fixable with `--fix` (11 unsafe fixes available with `--fix --unsafe-fixes`).

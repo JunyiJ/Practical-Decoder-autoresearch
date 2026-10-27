@@ -1,0 +1,29 @@
+........................................................................ [ 69%]
+...............F...............                                          [100%]
+=================================== FAILURES ===================================
+______ test_inference_average_is_explicitly_rejected_for_optimizer_resume ______
+
+    def test_inference_average_is_explicitly_rejected_for_optimizer_resume():
+        from src.utils.checkpoint import load_model_weights
+        with pytest.raises(ValueError,match='Averaged inference weights'):
+>           load_model_weights(Parameters(),{'averaged_weights':{},'model_state':{}},for_resume=True)
+
+tests/test_weight_averaging.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/utils/checkpoint.py:77: in load_model_weights
+    validate_architecture_load(model, checkpoint)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = <test_weight_averaging.Parameters object at 0x111aa7a10>
+checkpoint = {'averaged_weights': {}, 'model_state': {}}
+
+    def validate_architecture_load(model, checkpoint):
+        saved = _get(checkpoint.get('cfg', {}), 'model', {})
+>       if architecture_contract(model.cfg) != architecture_contract(saved):
+                                 ^^^^^^^^^
+E       AttributeError: 'Parameters' object has no attribute 'cfg'
+
+src/models/tokenizer_architecture.py:72: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_weight_averaging.py::test_inference_average_is_explicitly_rejected_for_optimizer_resume
+1 failed, 102 passed in 158.16s (0:02:38)
