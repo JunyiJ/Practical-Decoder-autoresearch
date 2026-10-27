@@ -1,7 +1,9 @@
 # Tokenizer MLA results
 
-No quality results yet. The completed horizon round adopted the shorter GQA
-recipe; this next round evaluates an MLA architecture using a fresh MHA control.
+All four screening trials passed artifact review. Both MHA and MLA selected
+LR0.00125; fresh paired confirmation is running. No adoption decision yet.
+The completed horizon round adopted the shorter GQA recipe; this round
+evaluates an MLA architecture using a fresh MHA control.
 See [prospective protocol](TOKENIZER_MLA_PROTOCOL.md).
 
 MLA support passed63 CPU checks (22.82seconds), then one source-frozen60-step
@@ -45,9 +47,20 @@ Failure logs and all checkpoints are retained. Test remains closed.
 The ten-trial quality run started successfully on October27,2026. Frozen source
 commit5276412, plan recorded in f22616a; plan SHA256
 afb45c98f9185f8f659577ac7c1326140aa42349047be956c4ade06edac8ea10.
-The first MHA screening worker is active under the single-worker lock. Full
-remaining-trial storage projection passed before launch. No completed quality
-results or adoption claim yet. The heartbeat now follows this round's helpers.
+Full remaining-trial storage projection passed before launch. The controller
+continues under the single-worker lock; source remains frozen.
+
+## Screening review
+
+Seed2901 selected LR0.00125 independently in each family: MHA H200 CE4.746541
+versus4.825638 at LR0.0025, and MLA4.723452 versus4.809730. The frozen
+lowest-endpoint rule therefore selects the same LR for both. Saved tensor,
+optimizer, checkpoint lineage, validation arithmetic and sampler checks passed
+for all four trials; the test RNG is untouched. The selected screen difference
+is MLA minus MHA -0.023089nats/token, descriptive single-seed selection evidence
+only. Fresh seeds2911/2912/2913, the declared neutrality gates and serial cached
+inference measurements remain required before any adoption. See the
+[selection audit](tokenizer-evidence/mla-001/screen-review.json).
 
 ## Reviewed trajectories
 
@@ -57,5 +70,7 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 |---|---|---:|---:|---:|---:|---:|
 | screen | mha | 2901 | 0.00125 | 4.742776 | 4.746541 | 204.96 |
 | screen | mha | 2901 | 0.0025 | 4.934339 | 4.825638 | 202.56 |
+| screen | mla | 2901 | 0.0025 | 4.907554 | 4.809730 | 219.80 |
+| screen | mla | 2901 | 0.00125 | 4.719903 | 4.723452 | 219.20 |
 
-Screening incomplete; family LRs not yet selected.
+Frozen family LRs: {'mha': 0.00125, 'mla': 0.00125}.
