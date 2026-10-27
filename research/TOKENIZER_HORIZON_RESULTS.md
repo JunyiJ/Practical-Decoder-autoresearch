@@ -27,7 +27,12 @@ EMA recurrence and resume across all durations, complete selection panels,
 duplicate/incomplete confirmation rejection and failed-candidate retention.
 Successful temporary test fixtures were cleared after preserving a manifest
 and logs; no research checkpoints were deleted. The60-step serial MPS pilot
-and disk-headroom review remain prerequisites for freezing the quality plan.
+completed and passed saved-artifact review, including3 EMA snapshots, exact
+training sampler replay, untouched test RNG, finite weights/optimizer state,
+parent hashes and full validation arithmetic. It is feasibility evidence only.
+Its raw/H200 pair uses560602508bytes; nine pairs with50% headroom project
+7568133858bytes. The measured free space passed that projection plus
+the8GiB reserve. [Resource review](tokenizer-evidence/horizon-pilot-001/resource-review.json).
 
 ## Reviewed trajectories
 
