@@ -112,7 +112,10 @@ retrospective minimum is not an adopted checkpoint or proven optimal horizon.
 The trajectory is consistent with the earlier late-validation degradation even
 at the lower LR, supporting a prospective horizon/schedule experiment. It does
 not isolate a causal mechanism. Complete the frozen architecture comparison
-before changing the training recipe; the paired GQA run is still pending.
+before changing the training recipe. The paired GQA run subsequently passed
+artifact review with H200 CE5.459145, a -0.061297 difference versus MHA.
+This first width256 pair does not establish improvement or neutrality; finish
+the other two pairs and the frozen quality/cost review.
 
 ## Reviewed quality trajectories
 
@@ -137,6 +140,7 @@ review are also required. The test holdout remains closed.
 | confirm | mha | 64 | 2713 | 0.00125 | 4.960276 | 4.953354 | 255.46 |
 | confirm | gqa | 64 | 2713 | 0.00125 | 4.949657 | 4.943288 | 254.46 |
 | confirm | mha | 256 | 2711 | 0.00125 | 5.601754 | 5.520442 | 509.48 |
+| confirm | gqa | 256 | 2711 | 0.00125 | 5.542281 | 5.459145 | 505.40 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
@@ -147,5 +151,6 @@ Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 - confirm, width64, seed2711, GQA LR0.00125 / MHA LR0.00125: +0.023516.
 - confirm, width64, seed2712, GQA LR0.00125 / MHA LR0.00125: +0.040203.
 - confirm, width64, seed2713, GQA LR0.00125 / MHA LR0.00125: -0.010066.
+- confirm, width256, seed2711, GQA LR0.00125 / MHA LR0.00125: -0.061297.
 
 Frozen family LR selection: {'gqa': 0.00125, 'mha': 0.00125}
