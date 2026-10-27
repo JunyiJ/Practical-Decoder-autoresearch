@@ -9,7 +9,34 @@ Compare1200/1800/3000 updates with cooldown and EMA start at two-thirds of each
 horizon. This is a combined schedule recipe change, not isolated duration.
 One screen seed selects at most one candidate; three fresh paired seeds must
 confirm it before adoption. General MHA and width64 baselines remain outside
-this comparison. All old stop markers stay closed. Screening is complete; fresh confirmation is pending.
+this comparison. All old stop markers stay closed. All nine trials and the final artifact review are complete.
+
+## Final decision
+
+Adopt the1200-update recipe for width256 GQA LR0.00125, with linear cooldown
+and H200 EMA starting at800 updates. All three fresh pairs favor it: mean full
+validation H200 CE4.753151 versus5.464003 at3000, a -0.710852-nat/token delta.
+Seed deltas are -0.737451, -0.694650 and -0.700454. Separately recomputed
+conditional text-bootstrap95% intervals remain below zero at2048,4096 and8192
+blocks; the4096 interval is[-0.775624,-0.655858]. These intervals condition on
+the trained seeds and reused validation text; they are not independent-test or
+training-seed population uncertainty.
+
+Mean training time was201.73 versus503.91seconds, about60.0% lower; sampled
+target exposure fell60%. This adopts the combined horizon/cooldown/EMA-window
+recipe, not a causal claim about duration alone or a claim that1200 is optimal.
+The general MHA and width64 baselines remain separate. Inference geometry is
+unchanged. All checkpoint hashes, nine artifact reviews, source/runtime/recipe/
+protocol/corpus/resource identities and the frozen selection were checked.
+Test remains closed. [Final review](tokenizer-evidence/horizon-001/final-review.json)
+and [adopted recipe](tokenizer-evidence/horizon-001/adopted-width256-gqa-recipe.json).
+
+The next structural priority is MLA: explicitly validate score scaling, latent
+cache geometry and optimizer/checkpoint contracts before a bounded comparison.
+Use the new schedule as a candidate training regime; do not assume an untested
+MLA or MHA configuration inherits this GQA-specific result. Keep the3:1 KDA/MLA
+hybrid and broader MoE/activation/norm/residual backlog active. Storage must pass
+a new prospective headroom check; no historical checkpoint deletion is allowed.
 
 ## Prerequisites
 
@@ -86,8 +113,10 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | confirm | 2812 | 1200 | 4.737855 | 4.755463 | 200.56 |
 | confirm | 2812 | 3000 | 5.532091 | 5.450113 | 506.23 |
 | confirm | 2813 | 3000 | 5.543201 | 5.459431 | 505.56 |
+| confirm | 2813 | 1200 | 4.751947 | 4.758977 | 202.02 |
 
 Frozen selection: 1200 updates.
 
 - Seed2811, candidate minus3000 H200 CE: -0.737451.
 - Seed2812, candidate minus3000 H200 CE: -0.694650.
+- Seed2813, candidate minus3000 H200 CE: -0.700454.

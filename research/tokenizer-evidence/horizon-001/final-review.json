@@ -1,0 +1,53 @@
+{
+  "status": "completed",
+  "adopted": true,
+  "selected_steps": 1200,
+  "mean_h200_ce": {
+    "1200": 4.753151027625648,
+    "3000": 5.464003005913636
+  },
+  "paired_seed_deltas": {
+    "2811": -0.7374513219341994,
+    "2812": -0.69465046219059,
+    "2813": -0.700454150739171
+  },
+  "mean_delta": -0.7108519782879869,
+  "intervals": [
+    {
+      "text_block_tokens": 2048,
+      "conditional_text_bootstrap_95pct": [
+        -0.7634171495132774,
+        -0.6637600314077525
+      ]
+    },
+    {
+      "text_block_tokens": 4096,
+      "conditional_text_bootstrap_95pct": [
+        -0.7756243018973926,
+        -0.6558579719310365
+      ]
+    },
+    {
+      "text_block_tokens": 8192,
+      "conditional_text_bootstrap_95pct": [
+        -0.7987987915449424,
+        -0.6519686743041891
+      ]
+    }
+  ],
+  "mean_training_seconds": {
+    "1200": 201.73488210110614,
+    "3000": 503.91159252698225
+  },
+  "training_time_reduction": 0.5996621528600692,
+  "sampled_targets": {
+    "1200": 1228800,
+    "3000": 3072000
+  },
+  "target_reduction": 0.6,
+  "all_nine_artifact_reviews_passed": true,
+  "source_runtime_protocol_recipe_corpus_resource_unchanged": true,
+  "total_training_seconds": 3127.3625989416614,
+  "scope": "Adopt the combined 1200-update/cooldown-start800/H200-tail-start800 recipe only for width256 GQA LR0.00125. General MHA and width64 recipes unchanged. Same architecture and inference cache; no new inference-cost claim.",
+  "limitations": "Same-agent audit with separately recomputed interval arithmetic. Adaptive validation, three fresh seeds, conditional text intervals are not seed-population uncertainty or independent test evidence. Does not isolate duration, cooldown or EMA window. Test closed."
+}
