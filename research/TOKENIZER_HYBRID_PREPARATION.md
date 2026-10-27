@@ -127,3 +127,17 @@ control on three fresh seeds. This produces12 trials and a scoped comparison
 only against that selected control. Two synthetic MPS optimizer updates for
 each homogeneous control remain a prelaunch gate. Nine controller/benchmark
 tests pass; existing model source remains identical to the audited pilot.
+
+Both homogeneous controls passed their separately frozen MPS preflight002:
+two optimizer updates, finite loss/gradients/optimizer state, and cached/full
+logit agreement at batch1/8 (maximum error1.08e-6). Actual state per example is
+98304bytes for all-gated-MLA and41984bytes for all-KDA. Together with the hybrid's
+56064bytes, this predicts42.97% state savings against all-gated-MLA, but33.54%
+more state than all-KDA at context128; final trained-checkpoint measurements
+remain required. These are allocated-state observations, not latency results.
+
+Preflight001 failed before its first optimizer update because its synthetic
+target slice was noncontiguous. The original plan/helper/log/state remain saved.
+Preflight002 uses contiguous batches, matching the actual training loader.
+No quality run was retried. The finite12-trial width64 projection is1857627228
+bytes plus4MiB overhead and8GiB reserve, checked again at every launch.
