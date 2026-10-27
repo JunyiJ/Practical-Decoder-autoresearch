@@ -143,6 +143,17 @@ LR round; no early-checkpoint selection or retrospective budget change is made.
 The first baseline was followed by the lower-LR trials and the second paired
 seed. The current reviewed partial comparison appears below.
 
+## Width64 fresh-seed confirmation complete
+
+All three fresh width64 pairs passed saved-artifact audits. LR0.0025 mean H200
+CE is 5.214648, versus 5.562136 for LR0.01: mean difference
+-0.347488, with all three seeds favoring the candidate. The ratio of
+perplexities computed from mean CE is 0.706461; this is not
+an average of per-seed perplexities. No screening seeds are pooled into these
+confirmation means. Width256 confirmation is now running serially. Adoption
+still requires those results and the full frozen conditional-text checks; the
+small-width result alone does not establish transfer. Test loss remains closed.
+
 ## Reviewed round progress
 
 Only completed, saved-artifact-reviewed trajectories appear below. All use
@@ -163,6 +174,7 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | confirm | 64 | 2612 | 0.01 | 5.759009 | 5.564940 | 2.467377 | 258.32 |
 | confirm | 64 | 2612 | 0.0025 | 5.279965 | 5.229425 | 2.318616 | 258.04 |
 | confirm | 64 | 2613 | 0.0025 | 5.260866 | 5.210149 | 2.310070 | 257.00 |
+| confirm | 64 | 2613 | 0.01 | 5.761821 | 5.563192 | 2.466602 | 256.72 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
@@ -172,6 +184,7 @@ Paired H200 differences versus LR0.01 within the same stage, width and seed:
 - screen, width64, seed2602, LR0.005: -0.096509 CE.
 - confirm, width64, seed2611, LR0.0025: -0.353905 CE.
 - confirm, width64, seed2612, LR0.0025: -0.335515 CE.
+- confirm, width64, seed2613, LR0.0025: -0.353043 CE.
 
 Frozen screening choice: LR0.0025. Confirmation results cannot change this choice.
 
