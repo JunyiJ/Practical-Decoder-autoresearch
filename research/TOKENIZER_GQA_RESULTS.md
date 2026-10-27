@@ -74,6 +74,17 @@ The known horizon/schedule concern also remains unresolved. Final cached
 inference measurements are still required before adoption.
 [Screening audit](tokenizer-evidence/gqa-001/screen-review.json).
 
+## First fresh width64 pair exceeds the neutrality margin
+
+Seed2711 at the frozen LR0.00125 scored MHA4.950808 and GQA4.974324 H200 CE,
+a GQA-minus-MHA difference of +0.023516 nats/token. Both artifacts passed review.
+This exceeds the predeclared +0.01 per-seed bound, so the width64 variant fails
+one necessary adoption condition in this round. Do not relax that rule after
+seeing the result. It is not a population-level claim that GQA is worse.
+The remaining frozen trials continue to characterize the other seeds and the
+separate width256 decision; full mean/interval and inference-cost reviews remain
+outstanding. No source, tuning grid or selection changes follow this observation.
+
 ## Reviewed quality trajectories
 
 Only completed, artifact-reviewed trajectories appear here. Quality eligibility
@@ -91,6 +102,7 @@ review are also required. The test holdout remains closed.
 | screen | mha | 64 | 2702 | 0.00125 | 4.952350 | 4.943188 | 254.78 |
 | screen | mha | 64 | 2702 | 0.0025 | 5.265823 | 5.208587 | 254.70 |
 | confirm | mha | 64 | 2711 | 0.00125 | 4.963383 | 4.950808 | 253.68 |
+| confirm | gqa | 64 | 2711 | 0.00125 | 4.982797 | 4.974324 | 254.33 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
@@ -98,5 +110,6 @@ Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 - screen, width64, seed2701, GQA LR0.00125 / MHA LR0.00125: -0.001825.
 - screen, width64, seed2702, GQA LR0.00125 / MHA LR0.00125: +0.013444.
 - screen, width64, seed2702, GQA LR0.0025 / MHA LR0.0025: +0.003620.
+- confirm, width64, seed2711, GQA LR0.00125 / MHA LR0.00125: +0.023516.
 
 Frozen family LR selection: {'gqa': 0.00125, 'mha': 0.00125}
