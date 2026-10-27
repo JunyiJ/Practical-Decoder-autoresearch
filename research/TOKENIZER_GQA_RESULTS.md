@@ -74,18 +74,32 @@ The known horizon/schedule concern also remains unresolved. Final cached
 inference measurements are still required before adoption.
 [Screening audit](tokenizer-evidence/gqa-001/screen-review.json).
 
-## First fresh width64 pair exceeds the neutrality margin
+## Completed width64 confirmation: quality gate fails
 
-Seed2711 at the frozen LR0.00125 scored MHA4.950808 and GQA4.974324 H200 CE,
-a GQA-minus-MHA difference of +0.023516 nats/token. Both artifacts passed review.
-This exceeds the predeclared +0.01 per-seed bound, so the width64 variant fails
-one necessary adoption condition in this round. Do not relax that rule after
-seeing the result. It is not a population-level claim that GQA is worse.
-The second audited pair, seed2712, also exceeds the bound: MHA4.937129 versus
-GQA4.977332, difference +0.040203. Full three-seed analysis remains pending.
-The remaining frozen trials continue to characterize the other seeds and the
-separate width256 decision; full mean/interval and inference-cost reviews remain
-outstanding. No source, tuning grid or selection changes follow this observation.
+All six fresh width64 trajectories passed artifact review. At LR0.00125,
+mean H200 CE is MHA4.947097 versus GQA4.964981, a +0.017884-nat difference.
+The paired seed differences are +0.023516, +0.040203 and -0.010066. The mean
+and two seeds exceed the frozen +0.01 margin; all conditional text-bootstrap
+upper bounds also exceed it. Width64 GQA is not adopted under this rule.
+
+| Text-block tokens | Conditional 95% interval for GQA minus MHA |
+|---:|---|
+| 2048 | [+0.008256, +0.027745] |
+| 4096 | [+0.007822, +0.028360] |
+| 8192 | [+0.006359, +0.031489] |
+
+Intervals were separately recomputed from audited saved loss sums, with no
+rescoring. They condition on these three models and the reused validation text;
+they are not training-seed uncertainty or independent holdout evidence. One seed
+favors GQA, so do not present this as uniform degradation or evidence against
+all GQA designs. The width64 setting is two query heads sharing one KV head;
+width256 uses eight query heads and four KV heads and has its own decision.
+
+The frozen width256 trials continue. Final inference measurements remain
+pending and will document tradeoffs, but cache savings cannot reverse this
+failed quality gate. Retain the general baseline and the existing horizon,
+MLA and Kimi hybrid hypotheses. Test holdout remains closed.
+[Width64 confirmation audit](tokenizer-evidence/gqa-001/width64-confirmation-review.json).
 
 ## Reviewed quality trajectories
 
@@ -107,6 +121,8 @@ review are also required. The test holdout remains closed.
 | confirm | gqa | 64 | 2711 | 0.00125 | 4.982797 | 4.974324 | 254.33 |
 | confirm | gqa | 64 | 2712 | 0.00125 | 4.994932 | 4.977332 | 253.64 |
 | confirm | mha | 64 | 2712 | 0.00125 | 4.955060 | 4.937129 | 253.90 |
+| confirm | mha | 64 | 2713 | 0.00125 | 4.960276 | 4.953354 | 255.46 |
+| confirm | gqa | 64 | 2713 | 0.00125 | 4.949657 | 4.943288 | 254.46 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
@@ -116,5 +132,6 @@ Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 - screen, width64, seed2702, GQA LR0.0025 / MHA LR0.0025: +0.003620.
 - confirm, width64, seed2711, GQA LR0.00125 / MHA LR0.00125: +0.023516.
 - confirm, width64, seed2712, GQA LR0.00125 / MHA LR0.00125: +0.040203.
+- confirm, width64, seed2713, GQA LR0.00125 / MHA LR0.00125: -0.010066.
 
 Frozen family LR selection: {'gqa': 0.00125, 'mha': 0.00125}

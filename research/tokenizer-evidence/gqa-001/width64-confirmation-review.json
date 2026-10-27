@@ -1,0 +1,65 @@
+{
+  "width": 64,
+  "completed_fresh_trials": 6,
+  "mean_h200_ce": {
+    "mha": 4.947097225671245,
+    "gqa": 4.964981421639366
+  },
+  "intervals": [
+    {
+      "mean_delta": 0.017884195968121946,
+      "paired_seed_deltas": {
+        "2711": 0.023515536991508768,
+        "2712": 0.04020275440384147,
+        "2713": -0.010065703490984568
+      },
+      "text_block_tokens": 2048,
+      "text_block_count": 17,
+      "conditional_text_bootstrap_95pct": [
+        0.008255810841274781,
+        0.027745483797723694
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261024,
+      "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test."
+    },
+    {
+      "mean_delta": 0.017884195968121946,
+      "paired_seed_deltas": {
+        "2711": 0.023515536991508768,
+        "2712": 0.04020275440384147,
+        "2713": -0.010065703490984568
+      },
+      "text_block_tokens": 4096,
+      "text_block_count": 9,
+      "conditional_text_bootstrap_95pct": [
+        0.007822076225527441,
+        0.02836044965786377
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261024,
+      "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test."
+    },
+    {
+      "mean_delta": 0.017884195968121946,
+      "paired_seed_deltas": {
+        "2711": 0.023515536991508768,
+        "2712": 0.04020275440384147,
+        "2713": -0.010065703490984568
+      },
+      "text_block_tokens": 8192,
+      "text_block_count": 5,
+      "conditional_text_bootstrap_95pct": [
+        0.0063586612382885346,
+        0.03148940540134542
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261024,
+      "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test."
+    }
+  ],
+  "quality_eligible": false,
+  "adopted": false,
+  "reason": "Mean and two individual seed deltas exceed frozen +0.01 margin; conditional interval upper bounds also exceed it.",
+  "review": "Same-agent recomputation from audited saved validation losses; no rescoring, no test evaluation. Width256 and fresh-checkpoint inference cost review pending."
+}
