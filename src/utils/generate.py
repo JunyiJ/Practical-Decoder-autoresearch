@@ -12,7 +12,7 @@ from omegaconf import OmegaConf
 from ..models.gpt import GPT
 from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
 from .device import synchronize_device, reset_peak_memory, memory_measurement
-from ..attention.cache import KVCache
+from ..attention.cache import KVCache, build_caches
 
 try:
     import psutil
@@ -185,16 +185,8 @@ def main() -> None:
 
     idx = torch.tensor(loader.encode(args.prompt), dtype=torch.long).unsqueeze(0).to(device)
     caches = None
-    if args.enable_cache and cfg.model.attn_type in ("gqa", "mha", "mla", "gated_mla", "kda"):
-        caches = [
-            KVCache(
-                cfg,
-                device,
-                batch_size=idx.size(0),
-                dtype=next(model.parameters()).dtype,
-            )
-            for _ in range(cfg.model.n_layers)
-        ]
+    if args.enable_cache and cfg.model.attn_type in ("gqa", "mha", "mla", "gated_mla", "kda", "hybrid"):
+        caches = build_caches(cfg, device, batch_size=idx.size(0), dtype=next(model.parameters()).dtype)
     out = generate(
         model,
         idx,

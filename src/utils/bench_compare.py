@@ -9,7 +9,7 @@ from typing import Optional
 import torch
 from omegaconf import OmegaConf
 
-from ..attention.cache import KVCache
+from ..attention.cache import KVCache, build_caches
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
 from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
@@ -157,16 +157,8 @@ def _benchmark(
             max_new_tokens = max_allowed
     reset_peak_memory(idx.device)
     caches = None
-    if enable_cache and cfg.model.attn_type in ("mha", "gqa", "mla", "gated_mla", "kda"):
-        caches = [
-            KVCache(
-                cfg,
-                idx.device,
-                batch_size=idx.size(0),
-                dtype=next(model.parameters()).dtype,
-            )
-            for _ in range(cfg.model.n_layers)
-        ]
+    if enable_cache and cfg.model.attn_type in ("mha", "gqa", "mla", "gated_mla", "kda", "hybrid"):
+        caches = build_caches(cfg, idx.device, batch_size=idx.size(0), dtype=next(model.parameters()).dtype)
 
     # Warmup
     _generate(

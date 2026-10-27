@@ -8,6 +8,10 @@ from ..models.rope import apply_rotary_emb, resolve_position_encoding
 
 def latent_dimensions(cfg):
     """One contract for attention projections and their inference cache."""
+    from ..models.tokenizer_hybrid import hybrid_contract
+    hybrid = hybrid_contract(cfg)
+    if hybrid is not None:
+        return hybrid['latent_rank'], hybrid['latent_rank']
     policy = getattr(cfg, 'attention_width_policy', None)
     if policy is not None:
         if (policy != 'mla_quarter_head32' or cfg.dim not in {64,128,256}
@@ -114,6 +118,8 @@ class GatedMLA(nn.Module):
 
     def __init__(self, cfg):
         super().__init__()
+        from ..models.attention_scale import resolve_attention_scale
+        self.attention_logit_scale = resolve_attention_scale(cfg)
         self.dim = cfg.dim
         self.dimc_q, self.dimc_kv = latent_dimensions(cfg)
         self.n_heads = getattr(cfg, "n_heads", 1)
@@ -185,6 +191,8 @@ class GatedMLA(nn.Module):
 
         # [b, n_heads, s, s]
         att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim + self.head_dim_r)
+        if self.attention_logit_scale != 1.:
+            att = att * self.attention_logit_scale
         if self.causal:
             total_len = k.size(-2)
             mask = self._get_causal_mask(total_len, x.device)

@@ -15,7 +15,7 @@ from omegaconf import OmegaConf
 from .protocol import digest, file_digest
 from .runner import atomic_json, disk_mb, session_lock, terminate
 from .team.suite import source_digest
-from ..attention.cache import KVCache
+from ..attention.cache import build_caches
 from ..models.gpt import GPT
 from ..train.train import _make_loader, _training_contract, _contracts_match
 from ..utils.checkpoint import read_checkpoint, load_model_weights
@@ -53,8 +53,8 @@ def cache_bytes(caches):
 
 
 def make_caches(model, cfg, batch):
-    return [KVCache(cfg, next(model.parameters()).device, batch_size=batch,
-                    dtype=next(model.parameters()).dtype) for _ in model.transformer.h]
+    return build_caches(cfg, next(model.parameters()).device, batch_size=batch,
+                        dtype=next(model.parameters()).dtype)
 
 
 @torch.no_grad()

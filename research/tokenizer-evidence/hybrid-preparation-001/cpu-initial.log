@@ -1,0 +1,86 @@
+...F...F............                                                     [100%]
+=================================== FAILURES ===================================
+______ test_nope_layout_cache_causality_reset_and_optimizer[layout0-256] _______
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pytest-of-junyi/pytest-0/test_nope_layout_cache_causali1')
+width = 256, layout = ('kda', 'kda', 'kda', 'gated_mla')
+
+    @pytest.mark.parametrize('width', [64, 256])
+    @pytest.mark.parametrize('layout', LAYOUTS)
+    def test_nope_layout_cache_causality_reset_and_optimizer(tmp_path, width, layout):
+        torch.set_num_threads(1)
+        cfg = hybrid_config(tmp_path, width, layout)
+        model = GPT(cfg.model).eval()
+        validate_architecture_model(model)
+        assert model.position_encoding == 'none' and 'wpe' not in model.transformer
+        assert all(not b.enable_rope for b in model.transformer.h)
+        optimizer = build_optimizer(model, cfg.training)
+        names = []
+        for group in optimizer.param_groups:
+            name, p = group['parameter_names'][0], group['params'][0]
+            scale = 1/math.sqrt(width/64) if name.startswith('transformer.h.') and p.ndim == 2 else 1.
+            assert group['lr'] == pytest.approx(cfg.training.learning_rate*scale)
+            names.append(name)
+        assert len(names) == len(set(names)) == len(list(model.parameters()))
+        assert optimizer.decay == .00006
+        ids = torch.arange(13).unsqueeze(0).repeat(2, 1)+100
+        caches = build_caches(cfg, 'cpu', batch_size=2)
+        other = build_caches(cfg, 'cpu', batch_size=2)
+        with torch.no_grad():
+            full = model(ids)[0]
+            parts = []
+            for lo, hi in ((0, 3), (3, 7), (7, 13)):
+                parts.append(model(ids[:, lo:hi], cache=caches, start_pos=lo)[0])
+                model(ids[:, lo:hi]+10, cache=other, start_pos=lo)
+>           torch.testing.assert_close(torch.cat(parts, 1), full, rtol=2e-5, atol=2e-6)
+E           AssertionError: Tensor-likes are not close!
+E           
+E           Mismatched elements: 13 / 1306682 (0.0%)
+E           Greatest absolute difference: 2.9709190130233765e-06 at index (0, 4, 12788) (up to 2e-06 allowed)
+E           Greatest relative difference: 0.004162973258644342 at index (0, 4, 34523) (up to 2e-05 allowed)
+
+tests/test_tokenizer_hybrid.py:92: AssertionError
+______ test_nope_layout_cache_causality_reset_and_optimizer[layout2-256] _______
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pytest-of-junyi/pytest-0/test_nope_layout_cache_causali5')
+width = 256, layout = ('kda', 'kda', 'kda', 'kda')
+
+    @pytest.mark.parametrize('width', [64, 256])
+    @pytest.mark.parametrize('layout', LAYOUTS)
+    def test_nope_layout_cache_causality_reset_and_optimizer(tmp_path, width, layout):
+        torch.set_num_threads(1)
+        cfg = hybrid_config(tmp_path, width, layout)
+        model = GPT(cfg.model).eval()
+        validate_architecture_model(model)
+        assert model.position_encoding == 'none' and 'wpe' not in model.transformer
+        assert all(not b.enable_rope for b in model.transformer.h)
+        optimizer = build_optimizer(model, cfg.training)
+        names = []
+        for group in optimizer.param_groups:
+            name, p = group['parameter_names'][0], group['params'][0]
+            scale = 1/math.sqrt(width/64) if name.startswith('transformer.h.') and p.ndim == 2 else 1.
+            assert group['lr'] == pytest.approx(cfg.training.learning_rate*scale)
+            names.append(name)
+        assert len(names) == len(set(names)) == len(list(model.parameters()))
+        assert optimizer.decay == .00006
+        ids = torch.arange(13).unsqueeze(0).repeat(2, 1)+100
+        caches = build_caches(cfg, 'cpu', batch_size=2)
+        other = build_caches(cfg, 'cpu', batch_size=2)
+        with torch.no_grad():
+            full = model(ids)[0]
+            parts = []
+            for lo, hi in ((0, 3), (3, 7), (7, 13)):
+                parts.append(model(ids[:, lo:hi], cache=caches, start_pos=lo)[0])
+                model(ids[:, lo:hi]+10, cache=other, start_pos=lo)
+>           torch.testing.assert_close(torch.cat(parts, 1), full, rtol=2e-5, atol=2e-6)
+E           AssertionError: Tensor-likes are not close!
+E           
+E           Mismatched elements: 2 / 1306682 (0.0%)
+E           Greatest absolute difference: 2.3189932107925415e-06 at index (1, 11, 30724) (up to 2e-06 allowed)
+E           Greatest relative difference: 0.00020811674767173827 at index (1, 11, 39446) (up to 2e-05 allowed)
+
+tests/test_tokenizer_hybrid.py:92: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_hybrid.py::test_nope_layout_cache_causality_reset_and_optimizer[layout0-256]
+FAILED tests/test_tokenizer_hybrid.py::test_nope_layout_cache_causality_reset_and_optimizer[layout2-256]
+2 failed, 18 passed in 11.02s

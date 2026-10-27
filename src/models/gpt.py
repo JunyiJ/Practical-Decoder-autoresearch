@@ -59,7 +59,7 @@ class GPT(nn.Module):
             embeddings["wpe"] = nn.Embedding(cfg.block_size, cfg.dim)
         self.transformer = nn.ModuleDict({
             **embeddings,
-            "h": nn.ModuleList([TransformerBlock(cfg) for _ in range(cfg.n_layers)]),
+            "h": nn.ModuleList([TransformerBlock(cfg, layer_index=i) for i in range(cfg.n_layers)]),
             "ln_f": build_readout_norm(cfg)
         })
         if self.value_residual_signature is not None:
@@ -126,6 +126,9 @@ class GPT(nn.Module):
             raise TypeError("cache must be a list/tuple of per-layer KVCache objects")
         if cache is not None and len(cache) != len(self.transformer.h):
             raise ValueError("cache length must match number of transformer blocks")
+        if cache is not None:
+            from .tokenizer_hybrid import validate_hybrid_caches
+            validate_hybrid_caches(self, cache, b, start_pos)
         first_layer_value = None  # This invocation's new token/chunk only; autograd remains attached.
         reuse_values = self.value_residual_signature is not None and self.value_residual_signature[0] != 'local'
         for layer_idx, block in enumerate(self.transformer.h):

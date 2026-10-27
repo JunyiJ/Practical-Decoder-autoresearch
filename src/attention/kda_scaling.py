@@ -15,6 +15,10 @@ def has_kda_policy(cfg):
 
 
 def resolve_alpha_dimension(cfg):
+    from ..models.tokenizer_hybrid import hybrid_contract
+    hybrid = hybrid_contract(cfg)
+    if hybrid is not None:
+        return hybrid['kda_alpha_rank']
     if has_kda_policy(cfg):
         validate_kda_contract(cfg)
         return cfg.dim // 4

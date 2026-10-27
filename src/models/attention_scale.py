@@ -46,7 +46,12 @@ def validate_attention_scale_model(model):
     if signature is not None and len(blocks) != 4:
         raise ValueError('Attention scale requires four reviewed blocks')
     value = resolve_attention_scale(cfg)
+    from .tokenizer_hybrid import hybrid_contract
+    hybrid = hybrid_contract(cfg)
     for block in blocks:
+        if hybrid is not None and block.attention_family == 'kda':
+            # KDA has no softmax logits; the declared multiplier applies to global layers only.
+            continue
         if getattr(block.attn, 'attention_logit_scale', 1.) != value:
             raise ValueError('Constructed attention scalar differs from model contract')
 

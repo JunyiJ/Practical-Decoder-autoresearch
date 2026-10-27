@@ -7,7 +7,7 @@ import time
 import torch
 from omegaconf import OmegaConf
 
-from ..attention.cache import KVCache
+from ..attention.cache import build_caches
 from ..models.gpt import GPT
 from ..utils.checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
 from .memory_guard import start_memory_guard
@@ -23,7 +23,7 @@ def buffer_bytes(caches):
 def check_cached(model, cfg, ids):
     ids=ids[:,:12]
     full=model(ids)[0]
-    caches=[KVCache(cfg,ids.device,batch_size=len(ids),dtype=torch.float32) for _ in range(4)]
+    caches=build_caches(cfg,ids.device,batch_size=len(ids),dtype=torch.float32)
     chunks=[model(ids[:,lo:hi],cache=caches,start_pos=lo)[0] for lo,hi in ((0,3),(3,7),(7,12))]
     torch.testing.assert_close(torch.cat(chunks,dim=1),full,rtol=3e-4,atol=3e-5)
     return float((torch.cat(chunks,dim=1)-full).abs().max())
@@ -31,7 +31,7 @@ def check_cached(model, cfg, ids):
 
 @torch.no_grad()
 def timed(model, cfg, ids):
-    cache=[KVCache(cfg,ids.device,batch_size=len(ids),dtype=torch.float32) for _ in range(4)]
+    cache=build_caches(cfg,ids.device,batch_size=len(ids),dtype=torch.float32)
     torch.mps.synchronize();started=time.perf_counter()
     output=model(ids[:,:32],cache=cache)[0]
     torch.mps.synchronize();prefill=time.perf_counter()-started

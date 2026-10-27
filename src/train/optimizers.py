@@ -98,6 +98,8 @@ def build_optimizer(model, training):
     muon = opts['optimizer'] == 'muon'
     if mup or muon:
         cfg = model.cfg
+        from ..models.tokenizer_hybrid import hybrid_contract
+        hybrid = hybrid_contract(cfg) is not None
         from ..attention.kda_scaling import has_kda_policy, validate_kda_contract
         kda = cfg.attn_type == 'kda' or has_kda_policy(cfg)
         if kda:
@@ -153,10 +155,10 @@ def build_optimizer(model, training):
             from ..moe.scaling import validate_moe_contract
             validate_moe_contract(cfg)
         attention_policy = getattr(cfg, 'attention_width_policy', 'mha_head32')
-        attention_ok = kda or qkrms or (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
+        attention_ok = hybrid or kda or qkrms or (cfg.attn_type == 'mha' and attention_policy in {'mha_head32', 'mha_head16'}) or (
             gated and cfg.attn_type == 'gqa' and attention_policy == 'gqa_half_head32'
             and not hasattr(cfg, 'n_kv_heads') and not hasattr(cfg, 'n_groups')) or (gated and mla)
-        if not attention_ok or not (kda or qkrms or moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense or deep_dense))):
+        if not attention_ok or not (hybrid or kda or qkrms or moe or (cfg.mlp_type == 'dense' and (dense or gated or wide_dense or deep_dense))):
             raise ValueError('Optimizer width study requires dense GELU/SiLU MHA or an explicit SwiGLU MHA/GQA/MLA width contract')
     # Preserve the historical optimizer and checkpoint format in default mode.
     if not mup and not muon and not independent:

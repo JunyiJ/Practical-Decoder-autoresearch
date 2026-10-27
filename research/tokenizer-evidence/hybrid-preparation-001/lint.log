@@ -1,0 +1,931 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/attention/cache.py:1:1
+  |
+1 | / import torch
+2 | | import torch.nn as nn
+3 | | from .mla import latent_dimensions
+4 | | from .gqa import kv_head_count
+  | |______________________________^
+5 |
+6 |   class KVCache(nn.Module):
+  |
+help: Organize imports
+  |
+2 | import torch.nn as nn
+3 +
+4 + from .gqa import kv_head_count
+5 | from .mla import latent_dimensions
+  - from .gqa import kv_head_count
+6 |
+7 +
+8 | class KVCache(nn.Module):
+  |
+
+PLR0402 [*] Use `from torch import nn` in lieu of alias
+ --> src/attention/cache.py:2:8
+  |
+1 | import torch
+2 | import torch.nn as nn
+  |        ^^^^^^^^^^^^^^
+3 | from .mla import latent_dimensions
+4 | from .gqa import kv_head_count
+  |
+help: Replace with `from torch import nn`
+  |
+1 | import torch
+  - import torch.nn as nn
+2 + from torch import nn
+3 | from .mla import latent_dimensions
+  |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/attention/kda_scaling.py:29:16
+   |
+28 |   def validate_kda_contract(cfg):
+29 |       required = dict(attn_type='kda', n_layers=4, mlp_type='dense', ffn='swiglu',
+   |  ________________^
+30 | |                     ffn_width_policy='swiglu_21_8', ffn_bias=False,
+31 | |                     attention_width_policy=POLICY, depth_width_policy=DEPTH_POLICY,
+32 | |                     parameterization='mup', base_width=64, norm_type='rmsnorm',
+33 | |                     rope=0, dropout=0., attn_dropout=0., block_size=128,
+34 | |                     attn_bias=True, causal=True)
+   | |________________________________________________^
+35 |       if any(getattr(cfg, key, None) != value for key, value in required.items()):
+36 |           raise ValueError('KDA requires the reviewed explicit four-layer recipe')
+   |
+help: Rewrite as a literal
+   |
+28 | def validate_kda_contract(cfg):
+   -     required = dict(attn_type='kda', n_layers=4, mlp_type='dense', ffn='swiglu',
+   -                     ffn_width_policy='swiglu_21_8', ffn_bias=False,
+   -                     attention_width_policy=POLICY, depth_width_policy=DEPTH_POLICY,
+   -                     parameterization='mup', base_width=64, norm_type='rmsnorm',
+   -                     rope=0, dropout=0., attn_dropout=0., block_size=128,
+   -                     attn_bias=True, causal=True)
+29 +     required = {'attn_type': 'kda', 'n_layers': 4, 'mlp_type': 'dense', 'ffn': 'swiglu',
+30 +                     'ffn_width_policy': 'swiglu_21_8', 'ffn_bias': False,
+31 +                     'attention_width_policy': POLICY, 'depth_width_policy': DEPTH_POLICY,
+32 +                     'parameterization': 'mup', 'base_width': 64, 'norm_type': 'rmsnorm',
+33 +                     'rope': 0, 'dropout': 0., 'attn_dropout': 0., 'block_size': 128,
+34 +                     'attn_bias': True, 'causal': True}
+35 |     if any(getattr(cfg, key, None) != value for key, value in required.items()):
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/attention/kda_scaling.py:53:12
+   |
+51 |           raise ValueError('KDA policy rejects unreviewed overrides')
+52 |       d, h, a = cfg.dim, cfg.n_heads, cfg.dim // 4
+53 |       return dict(attention_parameters_per_layer=5*d*d + d*h + 2*d*a + 16*d + 2*h + 32,
+   |  ____________^
+54 | |                 recurrent_elements_per_layer_per_example=32*d,
+55 | |                 convolution_history_elements_per_layer_per_example=9*d)
+   | |_______________________________________________________________________^
+help: Rewrite as a literal
+   |
+52 |     d, h, a = cfg.dim, cfg.n_heads, cfg.dim // 4
+   -     return dict(attention_parameters_per_layer=5*d*d + d*h + 2*d*a + 16*d + 2*h + 32,
+   -                 recurrent_elements_per_layer_per_example=32*d,
+   -                 convolution_history_elements_per_layer_per_example=9*d)
+53 +     return {'attention_parameters_per_layer': 5*d*d + d*h + 2*d*a + 16*d + 2*h + 32,
+54 +                 'recurrent_elements_per_layer_per_example': 32*d,
+55 +                 'convolution_history_elements_per_layer_per_example': 9*d}
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/models/attention_scale.py:22:16
+   |
+20 |         if architecture_contract(cfg) is None:
+21 |             raise ValueError('Tokenizer score scaling requires its explicit backbone')
+22 |         return dict(attention_logit_scale=float(value), attention_logit_scale_width_policy=SCORE_POLICY)
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+23 |     if isinstance(value, bool) or not isinstance(value, (int, float)) or value not in SCALES or _get(cfg, FIELDS[1]) != POLICY:
+24 |         raise ValueError('Attention scale requires explicit reviewed scalar and policy')
+   |
+help: Rewrite as a literal
+   |
+21 |             raise ValueError('Tokenizer score scaling requires its explicit backbone')
+   -         return dict(attention_logit_scale=float(value), attention_logit_scale_width_policy=SCORE_POLICY)
+22 +         return {'attention_logit_scale': float(value), 'attention_logit_scale_width_policy': SCORE_POLICY}
+23 |     if isinstance(value, bool) or not isinstance(value, (int, float)) or value not in SCALES or _get(cfg, FIELDS[1]) != POLICY:
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/models/attention_scale.py:30:12
+   |
+28 |     if any(_has(cfg, k) for k in ('attention_temperature', 'attn_scale', 'softmax_scale', 'qk_scale', 'logit_softcap', 'learned_temper…
+29 |         raise ValueError('Attention scale rejects unreviewed score overrides')
+30 |     return dict(attention_logit_scale=float(value), attention_logit_scale_width_policy=POLICY)
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+31 |
+32 | def attention_scale_signature(cfg):
+   |
+help: Rewrite as a literal
+   |
+29 |         raise ValueError('Attention scale rejects unreviewed score overrides')
+   -     return dict(attention_logit_scale=float(value), attention_logit_scale_width_policy=POLICY)
+30 +     return {'attention_logit_scale': float(value), 'attention_logit_scale_width_policy': POLICY}
+31 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/models/blocks.py:1:1
+   |
+ 1 | / import torch.nn as nn
+ 2 | |
+ 3 | | from ..attention.mha import MHA
+ 4 | | from ..attention.gqa import GQA
+ 5 | | from ..attention.mla import MLA, GatedMLA
+ 6 | | from ..attention.kda import KDA
+ 7 | | from ..moe.moe_block import MoEBlock
+ 8 | |
+ 9 | | from .rope import precompute_freqs_cis, resolve_position_encoding
+10 | | from .mlp import SwiGLU
+   | |_______________________^
+11 |
+12 |   class TransformerBlock(nn.Module):
+   |
+help: Organize imports
+   |
+2  |
+3  + from ..attention.gqa import GQA
+4  + from ..attention.kda import KDA
+5  | from ..attention.mha import MHA
+   - from ..attention.gqa import GQA
+6  | from ..attention.mla import MLA, GatedMLA
+   - from ..attention.kda import KDA
+7  | from ..moe.moe_block import MoEBlock
+8  + from .mlp import SwiGLU
+9  + from .rope import precompute_freqs_cis, resolve_position_encoding
+10 |
+   - from .rope import precompute_freqs_cis, resolve_position_encoding
+   - from .mlp import SwiGLU
+11 |
+   |
+
+PLR0402 [*] Use `from torch import nn` in lieu of alias
+ --> src/models/blocks.py:1:8
+  |
+1 | import torch.nn as nn
+  |        ^^^^^^^^^^^^^^
+2 |
+3 | from ..attention.mha import MHA
+  |
+help: Replace with `from torch import nn`
+  |
+  - import torch.nn as nn
+1 + from torch import nn
+2 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/models/blocks.py:20:9
+   |
+18 |         from .residual_topology import resolve_residual_topology
+19 |         self.residual_topology_kind = resolve_residual_topology(cfg)
+20 |         from .ffn_hidden_norm import validate_ffn_hidden_norm_contract, resolve_ffn_hidden_norm
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+21 |         validate_ffn_hidden_norm_contract(cfg)
+22 |         from .gated_activation import resolve_gated_activation
+   |
+help: Organize imports
+   |
+19 |         self.residual_topology_kind = resolve_residual_topology(cfg)
+   -         from .ffn_hidden_norm import validate_ffn_hidden_norm_contract, resolve_ffn_hidden_norm
+20 +         from .ffn_hidden_norm import (
+21 +             resolve_ffn_hidden_norm,
+22 +             validate_ffn_hidden_norm_contract,
+23 +         )
+24 |         validate_ffn_hidden_norm_contract(cfg)
+   |
+
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src/models/blocks.py:75:13
+   |
+73 |         ffn_bias = getattr(cfg, "ffn_bias", True)
+74 |         if not isinstance(ffn_bias, bool):
+75 |             raise ValueError("ffn_bias must be boolean")
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+76 |         if cfg.mlp_type == "dense":
+77 |             self.ffn = getattr(cfg, "ffn", "gelu")
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/models/gpt.py:1:1
+  |
+1 | / import math
+2 | | import torch
+3 | | import torch.nn as nn
+4 | |
+5 | | from .blocks import TransformerBlock
+6 | | from .rope import resolve_position_encoding
+  | |___________________________________________^
+7 |
+8 |   class GPT(nn.Module):
+  |
+help: Organize imports
+   |
+1  | import math
+2  +
+3  | import torch
+--------------------------------------------------------------------------------
+8  |
+9  +
+10 | class GPT(nn.Module):
+   |
+
+PLR0402 [*] Use `from torch import nn` in lieu of alias
+ --> src/models/gpt.py:3:8
+  |
+1 | import math
+2 | import torch
+3 | import torch.nn as nn
+  |        ^^^^^^^^^^^^^^
+4 |
+5 | from .blocks import TransformerBlock
+  |
+help: Replace with `from torch import nn`
+  |
+2 | import torch
+  - import torch.nn as nn
+3 + from torch import nn
+4 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/models/gpt.py:28:9
+   |
+26 |         from .residual_topology import residual_topology_signature
+27 |         self.residual_topology_signature = residual_topology_signature(cfg)
+28 |         from .weight_tying import weight_tying_signature, readout_scale
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29 |         self.weight_tying_signature = weight_tying_signature(cfg)
+30 |         self.table_readout_scale = readout_scale(cfg)
+   |
+help: Organize imports
+   |
+27 |         self.residual_topology_signature = residual_topology_signature(cfg)
+   -         from .weight_tying import weight_tying_signature, readout_scale
+28 +         from .weight_tying import readout_scale, weight_tying_signature
+29 |         self.weight_tying_signature = weight_tying_signature(cfg)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/models/gpt.py:31:9
+   |
+29 |         self.weight_tying_signature = weight_tying_signature(cfg)
+30 |         self.table_readout_scale = readout_scale(cfg)
+31 |         from .output_bias import output_bias_signature, build_output_bias
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+32 |         self.output_bias_signature = output_bias_signature(cfg)
+33 |         from .embedding_scale import resolve_input_scale
+   |
+help: Organize imports
+   |
+30 |         self.table_readout_scale = readout_scale(cfg)
+   -         from .output_bias import output_bias_signature, build_output_bias
+31 +         from .output_bias import build_output_bias, output_bias_signature
+32 |         self.output_bias_signature = output_bias_signature(cfg)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/models/gpt.py:35:9
+   |
+33 |         from .embedding_scale import resolve_input_scale
+34 |         self.input_embedding_scale = resolve_input_scale(cfg)
+35 |         from .readout_norm import readout_norm_signature, build_readout_norm
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+36 |         self.readout_norm_signature = readout_norm_signature(cfg)
+37 |         from ..attention.kda_scaling import has_kda_policy, validate_kda_contract
+   |
+help: Organize imports
+   |
+34 |         self.input_embedding_scale = resolve_input_scale(cfg)
+   -         from .readout_norm import readout_norm_signature, build_readout_norm
+35 +         from .readout_norm import build_readout_norm, readout_norm_signature
+36 |         self.readout_norm_signature = readout_norm_signature(cfg)
+   |
+
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src/models/tokenizer_hybrid.py:38:13
+   |
+36 |         from omegaconf import ListConfig
+37 |         if not isinstance(layout, ListConfig):
+38 |             raise ValueError('Hybrid layout must be a four-layer sequence')
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+39 |     layout = tuple(layout)
+40 |     if layout not in LAYOUTS:
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/models/tokenizer_hybrid.py:42:12
+   |
+40 |       if layout not in LAYOUTS:
+41 |           raise ValueError('Undeclared hybrid/control layout')
+42 |       return dict(policy=POLICY, family='hybrid', layout=layout, width=width, heads=heads,
+   |  ____________^
+43 | |                 position='none', score_scale=.5, latent_rank=width//4, shared_key_dim=32,
+44 | |                 kda_alpha_rank=width//4, kda_conv=4, kda_g_min=-5., kda_output_gate='full_rank',
+45 | |                 prior_sha256=get(get(cfg, 'output_bias_prior'), 'prior_sha256'))
+   | |________________________________________________________________________________^
+help: Rewrite as a literal
+   |
+41 |         raise ValueError('Undeclared hybrid/control layout')
+   -     return dict(policy=POLICY, family='hybrid', layout=layout, width=width, heads=heads,
+   -                 position='none', score_scale=.5, latent_rank=width//4, shared_key_dim=32,
+   -                 kda_alpha_rank=width//4, kda_conv=4, kda_g_min=-5., kda_output_gate='full_rank',
+   -                 prior_sha256=get(get(cfg, 'output_bias_prior'), 'prior_sha256'))
+42 +     return {'policy': POLICY, 'family': 'hybrid', 'layout': layout, 'width': width, 'heads': heads,
+43 +                 'position': 'none', 'score_scale': .5, 'latent_rank': width//4, 'shared_key_dim': 32,
+44 +                 'kda_alpha_rank': width//4, 'kda_conv': 4, 'kda_g_min': -5., 'kda_output_gate': 'full_rank',
+45 +                 'prior_sha256': get(get(cfg, 'output_bias_prior'), 'prior_sha256')}
+46 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/models/tokenizer_hybrid.py:58:5
+   |
+57 |   def validate_hybrid_model(model, contract):
+58 | /     from torch import nn
+59 | |     from ..attention.kda import KDA
+60 | |     from ..attention.mla import GatedMLA
+   | |________________________________________^
+61 |       if (len(model.transformer.h) != 4 or 'wpe' in model.transformer
+62 |               or model.position_encoding != 'none' or model.enable_rope
+   |
+help: Organize imports
+   |
+58 |     from torch import nn
+59 +
+60 |     from ..attention.kda import KDA
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/research/inference_bench.py:2:1
+   |
+ 1 |   """Bounded paired cached-inference diagnostic using immutable saved checkpoints."""
+ 2 | / import argparse
+ 3 | | import json
+ 4 | | import math
+ 5 | | import os
+ 6 | | from pathlib import Path
+ 7 | | import subprocess
+ 8 | | import sys
+ 9 | | import time
+10 | |
+11 | | import numpy as np
+12 | | import torch
+13 | | from omegaconf import OmegaConf
+14 | |
+15 | | from .protocol import digest, file_digest
+16 | | from .runner import atomic_json, disk_mb, session_lock, terminate
+17 | | from .team.suite import source_digest
+18 | | from ..attention.cache import build_caches
+19 | | from ..models.gpt import GPT
+20 | | from ..train.train import _make_loader, _training_contract, _contracts_match
+21 | | from ..utils.checkpoint import read_checkpoint, load_model_weights
+22 | | from ..utils.device import synchronize_device
+   | |_____________________________________________^
+23 |
+24 |   PANEL = [('architecture-stage2d-001', 'gqa_half', 444, 2),
+   |
+help: Organize imports
+   |
+5  | import os
+   - from pathlib import Path
+6  | import subprocess
+7  | import sys
+8  | import time
+9  + from pathlib import Path
+10 |
+--------------------------------------------------------------------------------
+14 |
+15 + from ..attention.cache import build_caches
+16 + from ..models.gpt import GPT
+17 + from ..train.train import _contracts_match, _make_loader, _training_contract
+18 + from ..utils.checkpoint import load_model_weights, read_checkpoint
+19 + from ..utils.device import synchronize_device
+20 | from .protocol import digest, file_digest
+21 | from .runner import atomic_json, disk_mb, session_lock, terminate
+22 | from .team.suite import source_digest
+   - from ..attention.cache import build_caches
+   - from ..models.gpt import GPT
+   - from ..train.train import _make_loader, _training_contract, _contracts_match
+   - from ..utils.checkpoint import read_checkpoint, load_model_weights
+   - from ..utils.device import synchronize_device
+23 |
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/inference_bench.py:43:33
+   |
+41 |               for batch in [1, 8]:
+42 |                   for length in [32, 64]:
+43 |                       jobs.append(dict(id=f'{candidate}_w{width}_b{batch}_p{length}',
+   |  _________________________________^
+44 | |                         study=study, width=width, seed=seed, layers=layers, models=models,
+45 | |                         batch=batch, prompt=length, decode=length, capacity=128,
+46 | |                         warmups=3, repeats=9, first_role_offset=len(jobs)%2,
+47 | |                         atol=1e-4, rtol=2e-5))
+   | |_____________________________________________^
+48 |       return jobs
+   |
+help: Rewrite as a literal
+   |
+42 |                 for length in [32, 64]:
+   -                     jobs.append(dict(id=f'{candidate}_w{width}_b{batch}_p{length}',
+   -                         study=study, width=width, seed=seed, layers=layers, models=models,
+   -                         batch=batch, prompt=length, decode=length, capacity=128,
+   -                         warmups=3, repeats=9, first_role_offset=len(jobs)%2,
+   -                         atol=1e-4, rtol=2e-5))
+43 +                     jobs.append({'id': f'{candidate}_w{width}_b{batch}_p{length}',
+44 +                         'study': study, 'width': width, 'seed': seed, 'layers': layers, 'models': models,
+45 +                         'batch': batch, 'prompt': length, 'decode': length, 'capacity': 128,
+46 +                         'warmups': 3, 'repeats': 9, 'first_role_offset': len(jobs)%2,
+47 +                         'atol': 1e-4, 'rtol': 2e-5})
+48 |     return jobs
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/inference_bench.py:92:25
+   |
+90 |               raise ValueError('Nonpositive or nonfinite timing')
+91 |           ratios = a/b
+92 |           result[phase] = dict(candidate_median_seconds=float(np.median(a)),
+   |  _________________________^
+93 | |                             reference_median_seconds=float(np.median(b)),
+94 | |                             paired_ratio_median=float(np.median(ratios)),
+95 | |                             paired_ratio_iqr=np.quantile(ratios, [.25, .75]).tolist())
+   | |______________________________________________________________________________________^
+96 |           if phase == 'decode':
+97 |               result[phase]['candidate_ms_per_step'] = float(np.median(a)*1000/job['decode'])
+   |
+help: Rewrite as a literal
+   |
+91 |         ratios = a/b
+   -         result[phase] = dict(candidate_median_seconds=float(np.median(a)),
+   -                             reference_median_seconds=float(np.median(b)),
+   -                             paired_ratio_median=float(np.median(ratios)),
+   -                             paired_ratio_iqr=np.quantile(ratios, [.25, .75]).tolist())
+92 +         result[phase] = {'candidate_median_seconds': float(np.median(a)),
+93 +                             'reference_median_seconds': float(np.median(b)),
+94 +                             'paired_ratio_median': float(np.median(ratios)),
+95 +                             'paired_ratio_iqr': np.quantile(ratios, [.25, .75]).tolist()}
+96 |         if phase == 'decode':
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/inference_bench.py:161:12
+    |
+159 |           if file_digest(Path(spec['checkpoint'])) != spec['checkpoint_sha256']:
+160 |               raise ValueError('Checkpoint changed during benchmark')
+161 |       return dict(job_sha256=digest(job), device='mps', torch=str(torch.__version__), cpu_threads=4,
+    |  ____________^
+162 | |                 dtype='float32', both_models_resident=True, holdout_consumed=False,
+163 | |                 peak_device_memory_bytes=None, mps_current_allocated_bytes=torch.mps.current_allocated_memory(),
+164 | |                 correctness=correctness, measurements=measurements, summary=summarize_pair(job, measurements))
+    | |______________________________________________________________________________________________________________^
+help: Rewrite as a literal
+    |
+160 |             raise ValueError('Checkpoint changed during benchmark')
+    -     return dict(job_sha256=digest(job), device='mps', torch=str(torch.__version__), cpu_threads=4,
+    -                 dtype='float32', both_models_resident=True, holdout_consumed=False,
+    -                 peak_device_memory_bytes=None, mps_current_allocated_bytes=torch.mps.current_allocated_memory(),
+    -                 correctness=correctness, measurements=measurements, summary=summarize_pair(job, measurements))
+161 +     return {'job_sha256': digest(job), 'device': 'mps', 'torch': str(torch.__version__), 'cpu_threads': 4,
+162 +                 'dtype': 'float32', 'both_models_resident': True, 'holdout_consumed': False,
+163 +                 'peak_device_memory_bytes': None, 'mps_current_allocated_bytes': torch.mps.current_allocated_memory(),
+164 +                 'correctness': correctness, 'measurements': measurements, 'summary': summarize_pair(job, measurements)}
+165 |
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/inference_bench.py:197:28
+    |
+195 |     if (plan['job_seconds'], plan['session_seconds'], plan['max_disk_mb'], plan['max_jobs']) != (120,3600,512,24):
+196 |         raise ValueError('Frozen limits changed')
+197 |     if (plan['runtime'] != dict(torch=str(torch.__version__),device='mps',cpu_threads=4)
+    |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+198 |             or os.environ.get('PYTORCH_ENABLE_MPS_FALLBACK') == '1'):
+199 |         raise ValueError('Runtime changed')
+    |
+help: Rewrite as a literal
+    |
+196 |         raise ValueError('Frozen limits changed')
+    -     if (plan['runtime'] != dict(torch=str(torch.__version__),device='mps',cpu_threads=4)
+197 +     if (plan['runtime'] != {'torch': str(torch.__version__),'device': 'mps','cpu_threads': 4}
+198 |             or os.environ.get('PYTORCH_ENABLE_MPS_FALLBACK') == '1'):
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/inference_bench.py:239:78
+    |
+237 | …
+238 | …
+239 | …if state_path.exists() else dict(plan_sha256=digest(plan),records=[],status='running',active_seconds=0.)
+    |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+240 | …se ValueError('Frozen plan changed')
+241 | …
+    |
+help: Rewrite as a literal
+    |
+238 |         state_path=output/'state.json'
+    -         state=json.loads(state_path.read_text()) if state_path.exists() else dict(plan_sha256=digest(plan),records=[],status='running',active_seconds=0.)
+239 +         state=json.loads(state_path.read_text()) if state_path.exists() else {'plan_sha256': digest(plan),'records': [],'status': 'running','active_seconds': 0.}
+240 |         if state['plan_sha256']!=digest(plan):raise ValueError('Frozen plan changed')
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/research/tokenizer_attention_bench.py:2:1
+   |
+ 1 |   """Paired cached MPS timing for two reviewed tokenizer checkpoints."""
+ 2 | / import argparse
+ 3 | | import gc
+ 4 | | from pathlib import Path
+ 5 | | import time
+ 6 | |
+ 7 | | import torch
+ 8 | | from omegaconf import OmegaConf
+ 9 | |
+10 | | from ..attention.cache import build_caches
+11 | | from ..models.gpt import GPT
+12 | | from ..utils.checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
+13 | | from .memory_guard import start_memory_guard
+14 | | from .protocol import file_digest
+15 | | from .runner import atomic_json
+   | |_______________________________^
+help: Organize imports
+   |
+3  | import gc
+4  + import time
+5  | from pathlib import Path
+   - import time
+6  |
+--------------------------------------------------------------------------------
+11 | from ..models.gpt import GPT
+   - from ..utils.checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
+12 + from ..utils.checkpoint import checkpoint_loader, load_model_weights, read_checkpoint
+13 | from .memory_guard import start_memory_guard
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_attention_bench.py:44:12
+   |
+42 |           del output
+43 |       torch.mps.synchronize();decode=time.perf_counter()-started
+44 |       return dict(prefill_seconds=prefill,decode_seconds=decode,
+   |  ____________^
+45 | |                 decode_tokens_per_second=64*len(ids)/decode,kv_bytes=buffer_bytes(cache),
+46 | |                 observed_mps_current_bytes=torch.mps.current_allocated_memory(),
+47 | |                 observed_mps_driver_bytes=torch.mps.driver_allocated_memory())
+   | |______________________________________________________________________________^
+help: Rewrite as a literal
+   |
+43 |     torch.mps.synchronize();decode=time.perf_counter()-started
+   -     return dict(prefill_seconds=prefill,decode_seconds=decode,
+   -                 decode_tokens_per_second=64*len(ids)/decode,kv_bytes=buffer_bytes(cache),
+   -                 observed_mps_current_bytes=torch.mps.current_allocated_memory(),
+   -                 observed_mps_driver_bytes=torch.mps.driver_allocated_memory())
+44 +     return {'prefill_seconds': prefill,'decode_seconds': decode,
+45 +                 'decode_tokens_per_second': 64*len(ids)/decode,'kv_bytes': buffer_bytes(cache),
+46 +                 'observed_mps_current_bytes': torch.mps.current_allocated_memory(),
+47 +                 'observed_mps_driver_bytes': torch.mps.driver_allocated_memory()}
+48 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_attention_bench.py:65:26
+   |
+63 |           model=GPT(cfg.model).to('mps').eval();load_model_weights(model,c)
+64 |           models[family]=model;configs[family]=cfg
+65 |           metadata[family]=dict(checkpoint=str(path.resolve()),sha256=file_digest(path),
+   |  __________________________^
+66 | |                               width=cfg.model.dim,parameters=sum(p.numel() for p in model.parameters()),
+67 | |                               parameter_bytes=sum(p.numel()*p.element_size() for p in model.parameters()))
+   | |__________________________________________________________________________________________________________^
+68 |           del c,loader;gc.collect()
+69 |       if configs['mha'].model.dim!=configs[candidate_family].model.dim:raise ValueError('Different widths')
+   |
+help: Rewrite as a literal
+   |
+64 |         models[family]=model;configs[family]=cfg
+   -         metadata[family]=dict(checkpoint=str(path.resolve()),sha256=file_digest(path),
+   -                               width=cfg.model.dim,parameters=sum(p.numel() for p in model.parameters()),
+   -                               parameter_bytes=sum(p.numel()*p.element_size() for p in model.parameters()))
+65 +         metadata[family]={'checkpoint': str(path.resolve()),'sha256': file_digest(path),
+66 +                               'width': cfg.model.dim,'parameters': sum(p.numel() for p in model.parameters()),
+67 +                               'parameter_bytes': sum(p.numel()*p.element_size() for p in model.parameters())}
+68 |         del c,loader;gc.collect()
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_attention_bench.py:75:32
+   |
+73 |         for family in ('mha',candidate_family):
+74 |             error=check_cached(models[family],configs[family],ids)
+75 |             correctness.append(dict(batch=batch,family=family,max_absolute_error=error))
+   |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+76 |             for _ in range(2):timed(models[family],configs[family],ids)
+77 |         for repeat in range(8):
+   |
+help: Rewrite as a literal
+   |
+74 |             error=check_cached(models[family],configs[family],ids)
+   -             correctness.append(dict(batch=batch,family=family,max_absolute_error=error))
+75 +             correctness.append({'batch': batch,'family': family,'max_absolute_error': error})
+76 |             for _ in range(2):timed(models[family],configs[family],ids)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_attention_bench.py:80:12
+   |
+78 |               for family in (('mha',candidate_family) if repeat%2==0 else (candidate_family,'mha')):
+79 |                   rows.append(dict(batch=batch,repeat=repeat,family=family,**timed(models[family],configs[family],ids)))
+80 |       result=dict(status='completed',device='mps',dtype='float32',metadata=metadata,
+   |  ____________^
+81 | |                 fixed_train_token_ids=fixed.tolist(),prompt_tokens=32,decode_tokens=64,
+82 | |                 warmups=2,repeats=8,correctness=correctness,records=rows,
+83 | |                 scope='Two models resident; model loading/cache allocation outside timing. Memory observations are not single-model deployment peaks. Teacher-forced fixed training text; no test access or quality selection.')
+   | |________________________________________________________________________________________________________________________________________________________________________________________________________________________________^
+84 |       atomic_json(output,result)
+85 |       return result
+   |
+help: Rewrite as a literal
+   |
+79 |                 rows.append(dict(batch=batch,repeat=repeat,family=family,**timed(models[family],configs[family],ids)))
+   -     result=dict(status='completed',device='mps',dtype='float32',metadata=metadata,
+   -                 fixed_train_token_ids=fixed.tolist(),prompt_tokens=32,decode_tokens=64,
+   -                 warmups=2,repeats=8,correctness=correctness,records=rows,
+   -                 scope='Two models resident; model loading/cache allocation outside timing. Memory observations are not single-model deployment peaks. Teacher-forced fixed training text; no test access or quality selection.')
+80 +     result={'status': 'completed','device': 'mps','dtype': 'float32','metadata': metadata,
+81 +                 'fixed_train_token_ids': fixed.tolist(),'prompt_tokens': 32,'decode_tokens': 64,
+82 +                 'warmups': 2,'repeats': 8,'correctness': correctness,'records': rows,
+83 +                 'scope': 'Two models resident; model loading/cache allocation outside timing. Memory observations are not single-model deployment peaks. Teacher-forced fixed training text; no test access or quality selection.'}
+84 |     atomic_json(output,result)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/train/optimizers.py:9:1
+   |
+ 7 |   readout uses an explicit 1/width forward multiplier and constant optimizer LR.
+ 8 |   """
+ 9 | / import math
+10 | | import torch
+   | |____________^
+help: Organize imports
+   |
+9  | import math
+10 +
+11 | import torch
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/utils/bench_compare.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import argparse
+ 4 | | import resource
+ 5 | | import sys
+ 6 | | import time
+ 7 | | from typing import Optional
+ 8 | |
+ 9 | | import torch
+10 | | from omegaconf import OmegaConf
+11 | |
+12 | | from ..attention.cache import KVCache, build_caches
+13 | | from ..data.loaders import TinyDataLoader
+14 | | from ..models.gpt import GPT
+15 | | from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
+16 | | from .device import synchronize_device, reset_peak_memory, memory_measurement
+   | |_____________________________________________________________________________^
+17 |
+18 |   try:
+   |
+help: Organize imports
+   |
+14 | from ..models.gpt import GPT
+   - from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
+   - from .device import synchronize_device, reset_peak_memory, memory_measurement
+15 + from .checkpoint import checkpoint_loader, load_model_weights, read_checkpoint
+16 + from .device import memory_measurement, reset_peak_memory, synchronize_device
+17 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> src/utils/bench_compare.py:24:31
+   |
+24 | def _select_device(requested: Optional[str]) -> str:
+   |                               ^^^^^^^^^^^^^
+25 |     if requested is None:
+26 |         return "cpu"
+   |
+help: Convert to `X | None`
+   |
+23 |
+   - def _select_device(requested: Optional[str]) -> str:
+24 + def _select_device(requested: str | None) -> str:
+25 |     if requested is None:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> src/utils/bench_compare.py:72:12
+   |
+70 |     max_new_tokens: int,
+71 |     temperature: float = 1.0,
+72 |     top_k: Optional[int] = None,
+   |            ^^^^^^^^^^^^^
+73 |     cache: Optional[list[KVCache]] = None,
+74 |     greedy: bool = False,
+   |
+help: Convert to `X | None`
+   |
+71 |     temperature: float = 1.0,
+   -     top_k: Optional[int] = None,
+72 +     top_k: int | None = None,
+73 |     cache: Optional[list[KVCache]] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> src/utils/bench_compare.py:73:12
+   |
+71 |     temperature: float = 1.0,
+72 |     top_k: Optional[int] = None,
+73 |     cache: Optional[list[KVCache]] = None,
+   |            ^^^^^^^^^^^^^^^^^^^^^^^
+74 |     greedy: bool = False,
+75 | ) -> torch.Tensor:
+   |
+help: Convert to `X | None`
+   |
+72 |     top_k: Optional[int] = None,
+   -     cache: Optional[list[KVCache]] = None,
+73 +     cache: list[KVCache] | None = None,
+74 |     greedy: bool = False,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> src/utils/bench_compare.py:143:12
+    |
+141 |     enable_cache: bool,
+142 |     temperature: float,
+143 |     top_k: Optional[int],
+    |            ^^^^^^^^^^^^^
+144 |     greedy: bool,
+145 | ) -> tuple[float, float]:
+    |
+help: Convert to `X | None`
+    |
+142 |     temperature: float,
+    -     top_k: Optional[int],
+143 +     top_k: int | None,
+144 |     greedy: bool,
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/utils/generate.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import argparse
+ 4 | | import time
+ 5 | | import resource
+ 6 | | import sys
+ 7 | | from typing import Optional
+ 8 | |
+ 9 | | import torch
+10 | | from omegaconf import OmegaConf
+11 | |
+12 | | from ..models.gpt import GPT
+13 | | from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
+14 | | from .device import synchronize_device, reset_peak_memory, memory_measurement
+15 | | from ..attention.cache import KVCache, build_caches
+   | |___________________________________________________^
+16 |
+17 |   try:
+   |
+help: Organize imports
+   |
+3  | import argparse
+   - import time
+4  | import resource
+5  | import sys
+6  + import time
+7  | from typing import Optional
+--------------------------------------------------------------------------------
+11 |
+12 + from ..attention.cache import KVCache, build_caches
+13 | from ..models.gpt import GPT
+   - from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
+   - from .device import synchronize_device, reset_peak_memory, memory_measurement
+   - from ..attention.cache import KVCache, build_caches
+14 + from .checkpoint import checkpoint_loader, load_model_weights, read_checkpoint
+15 + from .device import memory_measurement, reset_peak_memory, synchronize_device
+16 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> src/utils/generate.py:22:31
+   |
+20 |     psutil = None
+21 |
+22 | def _select_device(requested: Optional[str]) -> str:
+   |                               ^^^^^^^^^^^^^
+23 |     if requested is None:
+24 |         return "cpu"
+   |
+help: Convert to `X | None`
+   |
+21 |
+   - def _select_device(requested: Optional[str]) -> str:
+22 + def _select_device(requested: str | None) -> str:
+23 |     if requested is None:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> src/utils/generate.py:71:12
+   |
+69 |     max_new_tokens: int,
+70 |     temperature: float = 1.0,
+71 |     top_k: Optional[int] = None,
+   |            ^^^^^^^^^^^^^
+72 |     cache: Optional[list[KVCache]] = None,
+73 |     greedy: bool = False,
+   |
+help: Convert to `X | None`
+   |
+70 |     temperature: float = 1.0,
+   -     top_k: Optional[int] = None,
+71 +     top_k: int | None = None,
+72 |     cache: Optional[list[KVCache]] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> src/utils/generate.py:72:12
+   |
+70 |     temperature: float = 1.0,
+71 |     top_k: Optional[int] = None,
+72 |     cache: Optional[list[KVCache]] = None,
+   |            ^^^^^^^^^^^^^^^^^^^^^^^
+73 |     greedy: bool = False,
+74 | ) -> torch.Tensor:
+   |
+help: Convert to `X | None`
+   |
+71 |     top_k: Optional[int] = None,
+   -     cache: Optional[list[KVCache]] = None,
+72 +     cache: list[KVCache] | None = None,
+73 |     greedy: bool = False,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_tokenizer_hybrid.py:2:1
+   |
+ 1 |   """NoPE layerwise tokenizer contracts; synthetic checks, not quality evidence."""
+ 2 | / import copy
+ 3 | | import math
+ 4 | |
+ 5 | | import pytest
+ 6 | | import torch
+ 7 | | from omegaconf import OmegaConf
+ 8 | |
+ 9 | | from src.attention.cache import KVCache, build_caches
+10 | | from src.models.gpt import GPT
+11 | | from src.models.tokenizer_architecture import architecture_contract, validate_architecture_model
+12 | | from src.models.tokenizer_hybrid import POLICY, GEOMETRY, LAYOUTS
+13 | | from src.research.tokenizer_attention_study import config
+14 | | from src.train.optimizers import build_optimizer
+15 | | from src.train.train import run_training
+16 | | from src.train.weight_averaging import export_averaged_checkpoint
+17 | | from src.utils.checkpoint import load_model_weights, read_checkpoint
+18 | | from tests.test_kda import matrix_reference
+   | |___________________________________________^
+help: Organize imports
+   |
+10 | from src.models.gpt import GPT
+   - from src.models.tokenizer_architecture import architecture_contract, validate_architecture_model
+   - from src.models.tokenizer_hybrid import POLICY, GEOMETRY, LAYOUTS
+11 + from src.models.tokenizer_architecture import (
+12 +     architecture_contract,
+13 +     validate_architecture_model,
+14 + )
+15 + from src.models.tokenizer_hybrid import GEOMETRY, LAYOUTS, POLICY
+16 | from src.research.tokenizer_attention_study import config
+   |
+
+Found 40 errors.
+[*] 24 fixable with `--fix` (14 unsafe fixes available with `--fix --unsafe-fixes`).

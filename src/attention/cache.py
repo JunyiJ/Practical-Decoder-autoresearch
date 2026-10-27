@@ -4,9 +4,16 @@ from .mla import latent_dimensions
 from .gqa import kv_head_count
 
 class KVCache(nn.Module):
-    def __init__(self, cfg, device, batch_size=None, dtype=None, n_kv_heads=None):
+    def __init__(self, cfg, device, batch_size=None, dtype=None, n_kv_heads=None, layer_index=None):
         super().__init__()
-        self.attn_type = getattr(cfg.model, "attn_type", None)
+        from ..models.tokenizer_hybrid import hybrid_contract, layer_family
+        self.hybrid_signature = hybrid_contract(cfg.model)
+        self.layer_index = layer_index
+        self.attn_type = layer_family(cfg.model, layer_index)
+        if self.hybrid_signature is not None:
+            if n_kv_heads is not None:
+                raise ValueError('Hybrid cache rejects KV head overrides')
+            self.position = 0
         self.is_mla = self.attn_type in {"mla", "gated_mla"}
         if self.attn_type == "gqa":
             expected = kv_head_count(cfg.model)
@@ -63,11 +70,15 @@ class KVCache(nn.Module):
         if self.is_mla:
             c_new = k_new
             r_new = v_new
+            if self.hybrid_signature is not None and start_pos != self.position:
+                raise ValueError('Hybrid cache requires contiguous positions')
             end_pos = start_pos + c_new.size(1)
             if end_pos > self.c_cache.size(1):
                 raise ValueError("Cache size exceeded; increase block_size or reset cache.")
             self.c_cache[:, start_pos:end_pos, :] = c_new
             self.r_cache[:, start_pos:end_pos, :] = r_new
+            if self.hybrid_signature is not None:
+                self.position = end_pos
             return self.c_cache[:, :end_pos, :], self.r_cache[:, :end_pos, :]
         end_pos = start_pos + k_new.size(2)
         if end_pos > self.k_cache.size(2):
@@ -87,6 +98,14 @@ class KVCache(nn.Module):
         if self.is_mla:
             self.c_cache.zero_()
             self.r_cache.zero_()
+            if self.hybrid_signature is not None:
+                self.position = 0
             return
         self.k_cache.zero_()
         self.v_cache.zero_()
+
+
+def build_caches(cfg, device, batch_size=None, dtype=None):
+    """Build cache state from the same validated layer layout as the model."""
+    return [KVCache(cfg, device, batch_size=batch_size, dtype=dtype, layer_index=i)
+            for i in range(cfg.model.n_layers)]

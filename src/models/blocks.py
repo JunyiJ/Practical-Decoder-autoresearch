@@ -10,8 +10,11 @@ from .rope import precompute_freqs_cis, resolve_position_encoding
 from .mlp import SwiGLU
 
 class TransformerBlock(nn.Module):
-    def __init__(self, cfg):
+    def __init__(self, cfg, layer_index=None):
         super().__init__()
+        from .tokenizer_hybrid import layer_family
+        self.layer_index = layer_index
+        self.attention_family = layer_family(cfg, layer_index)
         from .residual_topology import resolve_residual_topology
         self.residual_topology_kind = resolve_residual_topology(cfg)
         from .ffn_hidden_norm import validate_ffn_hidden_norm_contract, resolve_ffn_hidden_norm
@@ -34,15 +37,15 @@ class TransformerBlock(nn.Module):
         else:
             raise ValueError(f"Unknown norm_type: {cfg.norm_type}")
 
-        if cfg.attn_type == "mha":
+        if self.attention_family == "mha":
             self.attn = MHA(cfg)
-        elif cfg.attn_type == "gqa":
+        elif self.attention_family == "gqa":
             self.attn = GQA(cfg)
-        elif cfg.attn_type == "mla":
+        elif self.attention_family == "mla":
             self.attn = MLA(cfg)
-        elif cfg.attn_type == "gated_mla":
+        elif self.attention_family == "gated_mla":
             self.attn = GatedMLA(cfg)
-        elif cfg.attn_type == "kda":
+        elif self.attention_family == "kda":
             self.attn = KDA(cfg)
         else:
             raise ValueError(f"Unknown attn_type: {cfg.attn_type}")

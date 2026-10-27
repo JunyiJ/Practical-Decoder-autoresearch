@@ -38,24 +38,25 @@ stores latent plus shared key. A latent-only formulation/absorption is a
 separate implementation and geometry change; do not silently claim its cache
 savings for this baseline.
 
-## Read-only implementation findings and next edits
+## Implementation and prerequisite review
 
-GPT currently constructs every block from one global attention config, and
-cache callers repeat the same global KVCache config. Add a validated immutable
-per-layer layout, derive each block's local config and build matching caches.
+Before this change, GPT constructed every block from one global attention
+family and cache callers repeated the global family. The new exact contract
+now binds a validated layer layout; each block and cache resolves its family
+from that shared contract, with matching per-layer state construction.
 The top-level checkpoint signature must include the entire layout, positions,
 geometry and gate semantics. Reject swapped or incompatible cache layouts,
 noncontiguous recurrent offsets and mutated configs. Keep historical contracts
 and old checkpoint semantics unchanged.
 
-`GatedMLA` already has a full-rank channel gate and an explicit `enable_rope`
-switch, but does not consume the score multiplier. The current tokenizer
-architecture validator allows only MHA/GQA/RoPE MLA; introduce a new exact
-hybrid contract rather than loosening the old ones. KDA's historical geometry
-validator assumes four identical KDA layers. New per-layer configs must bind
-alpha/head dimensions without bypassing the old study guards. Optimizer
-parameter roles must be resolved per actual block type, including convolution,
-norm, decay A/bias and gated-MLA projections. Preserve canonical parameter names
+`GatedMLA` now consumes the declared score multiplier, preserving1.0 for legacy
+configs. A separate `tokenizer_k3_hybrid_nope_v1` contract binds3:1, all-KDA
+and all-gated-MLA layouts without loosening old tokenizer or KDA contracts.
+The top-level config retains the whole layout and each block's index/family is
+validated. NoPE is explicit for all layers, with no positional table fallback.
+Optimizer validation accepts only the new exact backbone; actual2D block
+projections use the hidden-matrix rule while convolution kernels and vectors
+retain AdamW base LR. Canonical parameter names and tensor layout are preserved
 for strict optimizer/resume and H200 state continuity.
 
 Required checks: independent recurrence/gated-attention equations and gradients;
@@ -65,6 +66,25 @@ and learned position tables; exact tokenizer/optimizer/checkpoint/resume/EMA
 contracts; old-family regression checks. CPU synthetic checks precede serial
 MPS feasibility pilots. Freeze a pilot plan, source and resource projection
 before running any pilot; pilot CE cannot select a quality winner.
+
+Completed CPU validation:163 checks passed in33.16seconds across hybrid and
+existing tokenizer MHA/GQA/MLA, historical KDA/gated-MLA and cache suites.
+This includes strict FP64 full/chunked/tokenwise cache parity and independently
+computed attention equations/gradients, plus exact real training resume and
+averaged-checkpoint/tokenizer loading. The initial18-pass/2-failure log is
+preserved: FP32 projection rounding at width256 exceeded the initial2e-6
+absolute tolerance by2.3–3.0e-6; stricter FP64 checks distinguished this from a
+state/equation error. FP32 tolerance is now1e-5 absolute/2e-5 relative, frozen
+before the MPS pilot. Nine focused contract checks passed after a type-error
+cleanup, and three pilot guard/configuration checks passed. Counts overlap.
+New implementation/test files pass lint; the broader touched-file lint log
+also records existing style findings, without unrelated formatting churn.
+Completed temporary pytest fixtures were cleared after preserving pass/failure
+logs and a file manifest; no research checkpoints were removed.
+
+The [pilot protocol](TOKENIZER_HYBRID_PILOT_PROTOCOL.md) fixes one20-update
+width64 run and MPS cache checks. Width256 CPU contracts are validated, but no
+width256 training or quality transfer is claimed.
 
 ## Resource gate and experiment choice
 

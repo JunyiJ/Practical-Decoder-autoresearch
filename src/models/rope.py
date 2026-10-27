@@ -7,6 +7,9 @@ def resolve_position_encoding(cfg, *, attn_type=None):
     Gated MLA's explicit boolean override selects RoPE or no positional
     encoding. Without the override, `rope=0` retains learned positions.
     """
+    from .tokenizer_hybrid import hybrid_contract
+    if hybrid_contract(cfg) is not None:
+        return 'none'
     from .position_family import resolve_position_family
     family = resolve_position_family(cfg)
     if family is not None:

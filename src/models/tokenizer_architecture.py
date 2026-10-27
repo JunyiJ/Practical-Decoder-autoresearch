@@ -20,6 +20,10 @@ def _get(cfg, key, default=None):
 
 
 def architecture_contract(cfg):
+    from .tokenizer_hybrid import hybrid_contract
+    hybrid = hybrid_contract(cfg)
+    if hybrid is not None:
+        return hybrid
     if _get(cfg, 'tokenizer_architecture_policy') is None:
         return None
     policy = _get(cfg, 'tokenizer_architecture_policy')
@@ -58,6 +62,10 @@ def validate_architecture_model(model):
     if getattr(model, 'tokenizer_architecture_signature', None) != contract:
         raise ValueError('Constructed tokenizer architecture differs from mutable config')
     if contract is None:
+        return
+    if contract['family'] == 'hybrid':
+        from .tokenizer_hybrid import validate_hybrid_model
+        validate_hybrid_model(model, contract)
         return
     from torch import nn
 
