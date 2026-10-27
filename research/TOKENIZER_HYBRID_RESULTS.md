@@ -1,12 +1,10 @@
 # Tokenizer NoPE hybrid results
 
-October27,2026. Preparation complete for a finite width64 hybrid comparison;
-no quality result or adoption yet. See [protocol](TOKENIZER_HYBRID_PROTOCOL.md)
-and [implementation/pilot evidence](TOKENIZER_HYBRID_PREPARATION.md).
+The finite width64 comparison is running. 0 completed quality trials have passed saved-artifact audit. No adoption yet. See [protocol](TOKENIZER_HYBRID_PROTOCOL.md).
 
-The20-update hybrid feasibility pilot passed. Controller and benchmark tests
-passed9 checks. Both homogeneous-control MPS checks and prospective storage review passed.
-The initial check failed before any optimizer update because its target slice
-was noncontiguous; its log and plan were preserved, and a separately frozen
-input-harness correction passed without changing model math. All prior LR/GQA/horizon/MLA rounds remain closed.
-Test loss remains closed and every research checkpoint is preserved.
+| Stage | Family | Seed | LR | H200 CE | Training seconds |
+|---|---|---:|---:|---:|---:|
+
+The hybrid is a four-layer dense NoPE KDA/KDA/KDA/gated-MLA adaptation. All three layouts receive equal two-LR screening; only hybrid and the selected homogeneous control receive fresh confirmation. Screening alone establishes no improvement. Quality gates require all fresh pairs and conditional intervals; final serial cache/cost measurements and artifact review are required before adoption.
+
+All research checkpoints and preflight failure evidence are preserved. Test loss remains closed; this is adaptive validation evidence at width64 only. The earlier width256 GQA and RoPE MLA options remain separate.
