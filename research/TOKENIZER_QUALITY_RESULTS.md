@@ -121,5 +121,28 @@ overfitting, LR, schedule or repeated text exposure as the cause. A shorter
 horizon is a justified candidate for a subsequent finite experiment after this
 LR round; no early-checkpoint selection or retrospective budget change is made.
 
-The same-seed LR0.005 trial is now running, followed by0.0025 and the second
-paired seed. All planned screen trials remain in the frozen comparison.
+The first baseline was followed by the lower-LR trials and the second paired
+seed. The current reviewed partial comparison appears below.
+
+## Reviewed round progress
+
+Only completed, saved-artifact-reviewed trajectories appear below. All use
+3,000 updates, the same GPT-2 tokenizer and full-validation H200 endpoint.
+This is a partial adaptive-validation comparison; no candidate is adopted
+until the frozen screening and fresh-seed/width confirmation rule passes.
+
+| Stage | Width | Seed | Peak LR | Raw CE | H200 CE | H200 bits/byte | Training seconds |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| screen | 64 | 2601 | 0.01 | 5.859556 | 5.610844 | 2.487729 | 254.74 |
+| screen | 64 | 2601 | 0.005 | 5.583362 | 5.442269 | 2.412987 | 254.96 |
+| screen | 64 | 2601 | 0.0025 | 5.276655 | 5.220207 | 2.314529 | 256.24 |
+
+Paired H200 differences versus LR0.01 within the same stage, width and seed:
+
+- screen, width64, seed2601, LR0.005: -0.168575 CE.
+- screen, width64, seed2601, LR0.0025: -0.390637 CE.
+
+Screening is not complete; there is no frozen winner yet.
+
+Single-seed signs are preliminary. The controller remains serial, the source
+and data contract are frozen, and test loss remains closed.
