@@ -50,6 +50,30 @@ tests architecture under the inherited3000-update budget. A horizon/schedule
 comparison remains active in the backlog alongside MLA, the Kimi hybrid and other
 architecture families. The test holdout stays closed.
 
+## Completed screening and frozen confirmation choices
+
+All eight screening trajectories passed saved-artifact review. A separate
+recomputation verified the controller's selection: both MHA and GQA use
+LR0.00125 for the twelve fresh confirmation trajectories. Source, runtime,
+protocol and corpus match the frozen plan. This is same-agent review.
+
+| Family | Mean H200 CE at LR0.0025 | Mean H200 CE at LR0.00125 |
+|---|---:|---:|
+| MHA | 5.218836 | 4.946603 |
+| GQA | 5.212367 | 4.952413 |
+
+Both choices lie at the lower grid boundary, so the best LR remains unresolved.
+Do not expand this frozen round or replace the general LR0.0025 incumbent from
+these screens. Fresh confirmation compares both architectures at the same LR.
+The fixed-LR GQA-minus-MHA mean changes from -0.006469 at LR0.0025 to +0.005810
+at LR0.00125; paired seed differences have mixed signs at each LR. One lower-LR
+screen difference is +0.013444, above the prospective +0.01 margin. Screening
+does not establish neutrality or failure of the fresh-confirmation gate.
+This sensitivity supports retaining fair tuning in architecture comparisons.
+The known horizon/schedule concern also remains unresolved. Final cached
+inference measurements are still required before adoption.
+[Screening audit](tokenizer-evidence/gqa-001/screen-review.json).
+
 ## Reviewed quality trajectories
 
 Only completed, artifact-reviewed trajectories appear here. Quality eligibility
@@ -65,11 +89,13 @@ review are also required. The test holdout remains closed.
 | screen | gqa | 64 | 2702 | 0.00125 | 4.969298 | 4.956633 | 254.48 |
 | screen | gqa | 64 | 2702 | 0.0025 | 5.270827 | 5.212207 | 254.04 |
 | screen | mha | 64 | 2702 | 0.00125 | 4.952350 | 4.943188 | 254.78 |
+| screen | mha | 64 | 2702 | 0.0025 | 5.265823 | 5.208587 | 254.70 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
 - screen, width64, seed2701, GQA LR0.0025 / MHA LR0.0025: -0.016558.
 - screen, width64, seed2701, GQA LR0.00125 / MHA LR0.00125: -0.001825.
 - screen, width64, seed2702, GQA LR0.00125 / MHA LR0.00125: +0.013444.
+- screen, width64, seed2702, GQA LR0.0025 / MHA LR0.0025: +0.003620.
 
-Screening incomplete; no frozen family LR choices yet.
+Frozen family LR selection: {'gqa': 0.00125, 'mha': 0.00125}

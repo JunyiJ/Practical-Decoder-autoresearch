@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "scope": "Same-agent separate recomputation of screening selection from audited results; not independent confirmation.",
+  "screen_trials": 8,
+  "means": {
+    "mha": {
+      "0.0025": 5.218835919434142,
+      "0.00125": 4.946603333532186
+    },
+    "gqa": {
+      "0.0025": 5.212367131238773,
+      "0.00125": 4.952412925273607
+    }
+  },
+  "selected": {
+    "mha": 0.00125,
+    "gqa": 0.00125
+  },
+  "fixed_lr_pairs": {
+    "0.0025": {
+      "seeds": [
+        2701,
+        2702
+      ],
+      "gqa_minus_mha": [
+        -0.016557587201980972,
+        0.003620010811245855
+      ],
+      "mean": -0.0064687881953675586
+    },
+    "0.00125": {
+      "seeds": [
+        2701,
+        2702
+      ],
+      "gqa_minus_mha": [
+        -0.0018250372772614654,
+        0.013444220760101544
+      ],
+      "mean": 0.005809591741420039
+    }
+  },
+  "source_runtime_protocol_corpus_unchanged": true,
+  "boundary_choice": true,
+  "adopted": false,
+  "note": "Both choices at lower grid boundary, not optimum. Fresh confirmation and inference review required; general incumbent remains LR0.0025."
+}
