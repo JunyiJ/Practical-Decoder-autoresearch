@@ -1185,3 +1185,48 @@ alibi training-time changes versus RoPE at widths64/256: +4.39%/-0.06%. These ar
 All arms use equal3,000 updates and3,072,000 targets, not equal compute. Six fixed-reference cells prospectively alias RoPE trajectories and are not independent repeats. No historical control pooling, holdout access, training/scoring rerun or alternative promotion occurred.
 
 The round used 2754.99 active seconds (0.77 hours) and 527.82 MiB before review. [Full paired results, raw diagnostics, fixed-LR screens and costs](POSITION_QUALITY_RESULTS.md). The next distinct proposal compares training-only output log-normalizer penalties while keeping all validation pure cross-entropy. Its535 metadata cases passed;27 actual model/trainer/evaluator cases, full bounded regression, six serial MPS pilots and resource/publication/preregistration gates remain required. It inherits only the final reviewed recipe. Continue quality research until human interruption; all closed studies and permanent stop006 remain preserved.
+
+## Completed logit-z objective round
+
+Logit-z objective comparison completed 36 physical trajectories and 72 correlated raw/H200 outputs, independently reviewed. Common warmup 0 updates. Frozen eligible winner: incumbent_unchanged. Fresh H200 width64/256 deltas versus tuned zero-penalty control: lambda1e-4 -0.005551/-0.001172; lambda1e-3 -0.002380/-0.004684. Retain the prior incumbent under the complete frozen rule.
+
+Retain the zero-penalty incumbent: RoPE/local values/unit gains/SiLU, attention scale0.5 and peak LR0.01. Screening selected zero and lambda0.001 at LR0.01 (upper boundary), and lambda0.0001 at LR0.005 (interior). Zero was the best screen and exactly matched the fixed incumbent, so retention was frozen before fresh confirmation. No larger-width promotion or grid extension follows.
+
+| Objective | Selected peak LR | Fresh H200 CE64 | Fresh H200 CE256 |
+|---|---:|---:|---:|
+| none | 0.01 | 1.515571303 | 1.428035473 |
+| z1e4 | 0.005 | 1.510019993 | 1.426863895 |
+| z1e3 | 0.01 | 1.513191110 | 1.423351680 |
+
+Lambda0.0001 minus zero:
+
+- Width64: mean -0.005551310; mixed seeds; seeds2511/2512/2513 -0.009697821/-0.012643634/+0.005687525; 4,096-token conditional interval [-0.008139098, -0.003084299]; all three text intervals negative.
+- Width256: mean -0.001171578; mixed seeds; seeds2511/2512/2513 -0.002356551/+0.006333162/-0.007491344; 4,096-token conditional interval [-0.005810937, +0.002659157]; text intervals do not uniformly exclude zero.
+
+Lambda0.001 minus zero:
+
+- Width64: mean -0.002380193; mixed seeds; seeds2511/2512/2513 -0.004123911/-0.003156224/+0.000139554; 4,096-token conditional interval [-0.005543544, +0.000441937]; text intervals do not uniformly exclude zero.
+- Width256: mean -0.004683793; mixed seeds; seeds2511/2512/2513 -0.005402021/+0.003097801/-0.011747159; 4,096-token conditional interval [-0.008120289, -0.001608820]; all three text intervals negative.
+
+Lambda0.001 minus lambda0.0001:
+
+- Width64: mean +0.003171117; mixed seeds; seeds2511/2512/2513 +0.005573911/+0.009487411/-0.005547970; 4,096-token conditional interval [-0.000206288, +0.006834221]; text intervals do not uniformly exclude zero.
+- Width256: mean -0.003512215; every seed better; seeds2511/2512/2513 -0.003045470/-0.003235360/-0.004255816; 4,096-token conditional interval [-0.006509739, -0.000454377]; all three text intervals negative.
+
+Both penalties improve fresh mean CE at both widths, but each worsens seed2513 at width64 and seed2512 at width256. Lambda0.0001 meets the mean-gain threshold only at width64; lambda0.001 stays below0.005 at both widths. Negative conditional text intervals for lambda0.0001 at width64 and lambda0.001 at width256 do not remove training-seed failures. These intervals condition on the trained seeds and reused validation text, not seed-population uncertainty or a holdout.
+
+The selected lambda0.0001 recipe uses a different LR from zero and lambda0.001; its confirmation contrasts combine objective and LR choices. The nine fixed-LR screen contrasts are reported separately. Lambda0.001 versus lambda0.0001 improves every fresh width256 seed, but is a separate contrast and not an alternative adoption route. No isolated regularization mechanism, diagnosed instability, confidence effect or optimal muP claim follows.
+
+The penalty is applied once to mean squared logsumexp of final FP32 logits on the CE-valid targets. It changes under a common logit shift, while CE does not. All sampled/full validation, selection and adoption use pure CE. Training CE, logZ statistics, weighted penalty and total are recorded separately. Zero preserves exact historical CE arithmetic and null logZ diagnostics. No new learned parameters or initialization draws were introduced.
+
+All72 saved checkpoint/request/result/hash/config/objective/optimizer/RNG/schedule/H200/full111538-target coverage contracts and the entire report, frozen selection, six aliases and all primary/raw bootstrap intervals passed independent final review on the frozen source before documentation. Final endpoints cannot reconstruct every historical objective call, penalty exclusion, cache operation or101 EMA snapshots; the actual CPU/MPS prerequisite evidence remains necessary.
+
+CPU prerequisite failures remain preserved: an atomic-file monitoring race left one completed test worker with unavailable OS exit code and a monitoring gap; a later continuation counted retained failed scratch in its active budget. Reviewed continuations excluded successful cases and stayed within original budgets. All5689 unique assertions passed, but four interrupted-prefix test durations and their warning summary remain unavailable; no monolithic exit0 or whole-suite zero-warning claim is made. The MPS prerequisite reviewer duplicate-width metadata failure and its recorder indentation failure are preserved; the repaired reviewer checked the same six fresh pilots without retraining or rescoring.
+
+z1e4 descriptive training-time changes versus zero at widths64/256: +5.60%/+2.25%. These are training measurements, not inference-speed claims.
+
+z1e3 descriptive training-time changes versus zero at widths64/256: +5.58%/+2.13%. These are training measurements, not inference-speed claims.
+
+The round used 3005.89 active seconds (0.83 hours) and 531.39 MiB before review. All arms use3,000 updates and3,072,000 targets, not equal compute. Six fixed-reference cells alias zero-penalty trajectories prospectively and are not independent repeats. No historical pooling, holdout access, training/scoring rerun or posthoc promotion occurred. [Full results, fixed-LR screens and costs](LOGIT_Z_RESULTS.md).
+
+Next separate preparation compares standard softmax, visible-prefix attenuation and fixed-zero null attention. Its256 metadata/scalar/controller checks passed;28 actual model/trainer cases remain unexecuted. Final logit review now retains the zero objective, but source integration, bounded CPU validation, fresh serial MPS and resource/publication/preregistration gates remain required. All old studies and permanent stop006 stay closed; quality research continues until human interruption.
