@@ -34,6 +34,11 @@ and [adopted recipe](tokenizer-evidence/quality-001/adopted-recipe.json).
 
 Earlier progress sections below are a chronological record of this round.
 
+The GQA follow-up has passed CPU, serial MPS and resource prerequisites. See
+[GQA results and current progress](TOKENIZER_GQA_RESULTS.md) and its
+[finite protocol](TOKENIZER_GQA_PROTOCOL.md). Both architecture and HP hypotheses
+remain in the campaign agenda.
+
 ## Synced baseline and implementation
 
 GitHub was fast-forwarded from `63d3970` to `ce274e5` (28 commits). The final

@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "scope": "Same-agent saved-artifact pilot/timing audit. Feasibility only; no quality adoption.",
+  "source_commit": "dbc4d9f6e9019fdd8efa7ea445c80bd7eb15a91f",
+  "source_unchanged": true,
+  "cpu_tests": 140,
+  "pilots": [
+    {
+      "family": "mha",
+      "width": 64,
+      "parameters": 6629120,
+      "training_seconds": 3.9628728283569217,
+      "checkpoint_bytes": 132048652
+    },
+    {
+      "family": "gqa",
+      "width": 64,
+      "parameters": 6612480,
+      "training_seconds": 3.327081248164177,
+      "checkpoint_bytes": 131781388
+    },
+    {
+      "family": "mha",
+      "width": 256,
+      "parameters": 28851200,
+      "training_seconds": 6.832103667780757,
+      "checkpoint_bytes": 564817292
+    },
+    {
+      "family": "gqa",
+      "width": 256,
+      "parameters": 28588032,
+      "training_seconds": 6.906837126240134,
+      "checkpoint_bytes": 560602508
+    }
+  ],
+  "timing_feasibility": [
+    {
+      "width": 64,
+      "batch": 1,
+      "kv_reduction": 0.5,
+      "mha_median_decode_seconds": 0.166680708527565,
+      "gqa_median_decode_seconds": 0.1877312706783414
+    },
+    {
+      "width": 64,
+      "batch": 8,
+      "kv_reduction": 0.5,
+      "mha_median_decode_seconds": 0.16636589588597417,
+      "gqa_median_decode_seconds": 0.17023637471720576
+    },
+    {
+      "width": 256,
+      "batch": 1,
+      "kv_reduction": 0.5,
+      "mha_median_decode_seconds": 0.1707764994353056,
+      "gqa_median_decode_seconds": 0.17062685452401638
+    },
+    {
+      "width": 256,
+      "batch": 8,
+      "kv_reduction": 0.5,
+      "mha_median_decode_seconds": 0.17350243730470538,
+      "gqa_median_decode_seconds": 0.17939814506098628
+    }
+  ],
+  "quality_projected_bytes": 5223069680,
+  "quality_with_50pct_headroom": 7834604520.0,
+  "free_bytes": 22570409984,
+  "min_reserve_bytes": 8589934592
+}
