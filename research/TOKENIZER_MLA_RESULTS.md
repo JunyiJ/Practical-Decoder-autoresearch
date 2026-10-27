@@ -74,6 +74,7 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | screen | mla | 2901 | 0.00125 | 4.719903 | 4.723452 | 219.20 |
 | confirm | mha | 2911 | 0.00125 | 4.738932 | 4.744072 | 205.45 |
 | confirm | mla | 2911 | 0.00125 | 4.704028 | 4.706850 | 219.75 |
+| confirm | mla | 2912 | 0.00125 | 4.694593 | 4.703851 | 220.79 |
 
 Frozen family LRs: {'mha': 0.00125, 'mla': 0.00125}.
 
