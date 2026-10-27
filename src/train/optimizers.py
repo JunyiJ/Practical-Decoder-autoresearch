@@ -63,6 +63,8 @@ class HybridOptimizer:
 
 
 def build_optimizer(model, training):
+    from ..models.null_attention import validate_null_attention_model
+    validate_null_attention_model(model)
     from ..models.logit_z import validate_logit_z_model
     validate_logit_z_model(model)
     from ..models.position_family import validate_position_family_model

@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .null_attention import null_attention_signature
+        self.null_attention_signature = null_attention_signature(cfg)
         from .logit_z import logit_z_signature
         self.logit_z_signature = logit_z_signature(cfg)
         from .position_family import position_family_signature
@@ -102,6 +104,8 @@ class GPT(nn.Module):
         return_loss_breakdown=False,
         include_training_objective=False,
     ):
+        from .null_attention import validate_null_attention_model
+        validate_null_attention_model(self)
         from .logit_z import objective_requested
         objective = objective_requested(self, include_training_objective, targets)
         b, t = idx.size()

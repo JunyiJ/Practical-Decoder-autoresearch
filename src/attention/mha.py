@@ -3,6 +3,7 @@ import math
 import torch
 import torch.nn as nn
 
+from ..models.null_attention import null_attention_signature, resolve_null_attention, normalize_attention
 from ..models.rope import apply_rotary_emb
 from ..models.position_family import resolve_position_family, slopes_for_heads, add_alibi_bias
 from ..models.value_residual import value_residual_contract, resolve_value_residual, mix_values
@@ -38,6 +39,8 @@ class ScaledAttention(nn.Module):
 class MHA_NAIVE(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        if null_attention_signature(cfg) is not None:
+            raise ValueError('Null attention is implemented only in fused MHA')
         if resolve_position_family(cfg) is not None:
             raise ValueError('Position family is implemented only in fused MHA')
         if value_residual_contract(cfg) is not None:
@@ -74,6 +77,8 @@ class MHA_NAIVE(nn.Module):
 class MHA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
+        self.null_attention_signature = null_attention_signature(cfg)
+        self.null_attention_kind = resolve_null_attention(cfg)
         self.position_family_kind = resolve_position_family(cfg)
         self.position_slopes = slopes_for_heads(cfg.n_heads) if self.position_family_kind == 'alibi' else ()
         self.attention_logit_scale = resolve_attention_scale(cfg)
@@ -149,7 +154,10 @@ class MHA(nn.Module):
             mask_start = 0 if self.position_family_kind is not None and cache is None else start_pos
             mask = mask[mask_start:mask_start + s, :total_len]
             att = att.masked_fill(~mask, float("-inf"))
-        att = torch.softmax(att, dim=-1)
+        if self.null_attention_kind == 'standard':
+            att = torch.softmax(att, dim=-1)
+        else:
+            att = normalize_attention(att, mask, self.null_attention_kind)
         att = self.attn_dropout(att)
 
         y = att @ v
