@@ -1,0 +1,177 @@
+{
+  "status": "completed",
+  "adopted": true,
+  "quality_eligible": true,
+  "memory_eligible": true,
+  "mean_h200_ce": {
+    "mha": 4.7395403117588595,
+    "mla": 4.707100126116551
+  },
+  "paired_seed_deltas": {
+    "2911": -0.037221750531300835,
+    "2912": -0.030260648339706542,
+    "2913": -0.02983815805592105
+  },
+  "mean_delta": -0.03244018564230947,
+  "intervals": [
+    {
+      "text_block_tokens": 2048,
+      "conditional_text_bootstrap_95pct": [
+        -0.03628555117447214,
+        -0.02835704841423539
+      ]
+    },
+    {
+      "text_block_tokens": 4096,
+      "conditional_text_bootstrap_95pct": [
+        -0.03714176897002281,
+        -0.027935096201748708
+      ]
+    },
+    {
+      "text_block_tokens": 8192,
+      "conditional_text_bootstrap_95pct": [
+        -0.035610407385929375,
+        -0.029684619740596104
+      ]
+    }
+  ],
+  "pair_cache_measurements": [
+    {
+      "seed": 2911,
+      "batch": 1,
+      "kv_bytes": {
+        "mha": 1048576,
+        "mla": 196608
+      },
+      "reduction": 0.8125
+    },
+    {
+      "seed": 2911,
+      "batch": 8,
+      "kv_bytes": {
+        "mha": 8388608,
+        "mla": 1572864
+      },
+      "reduction": 0.8125
+    },
+    {
+      "seed": 2912,
+      "batch": 1,
+      "kv_bytes": {
+        "mha": 1048576,
+        "mla": 196608
+      },
+      "reduction": 0.8125
+    },
+    {
+      "seed": 2912,
+      "batch": 8,
+      "kv_bytes": {
+        "mha": 8388608,
+        "mla": 1572864
+      },
+      "reduction": 0.8125
+    },
+    {
+      "seed": 2913,
+      "batch": 1,
+      "kv_bytes": {
+        "mha": 1048576,
+        "mla": 196608
+      },
+      "reduction": 0.8125
+    },
+    {
+      "seed": 2913,
+      "batch": 8,
+      "kv_bytes": {
+        "mha": 8388608,
+        "mla": 1572864
+      },
+      "reduction": 0.8125
+    }
+  ],
+  "inference": [
+    {
+      "batch": 1,
+      "arms": {
+        "mha": {
+          "kv_bytes": 1048576,
+          "parameter_bytes": 115404800,
+          "median_prefill_seconds": 0.007046250160783529,
+          "median_decode_seconds": 0.18474558275192976,
+          "median_decode_tokens_per_second": 346.42235893466227,
+          "decode_seconds_range": [
+            0.1762792905792594,
+            0.22797483298927546
+          ],
+          "observed_mps_current_bytes_range": [
+            234548992,
+            238087936
+          ]
+        },
+        "mla": {
+          "kv_bytes": 196608,
+          "parameter_bytes": 113969664,
+          "median_prefill_seconds": 0.008216729387640953,
+          "median_decode_seconds": 0.22340975049883127,
+          "median_decode_tokens_per_second": 286.4691467540183,
+          "decode_seconds_range": [
+            0.2168342499062419,
+            0.2682906249538064
+          ],
+          "observed_mps_current_bytes_range": [
+            233697024,
+            235990784
+          ]
+        }
+      },
+      "decode_median_ratio": 1.2092833136845198
+    },
+    {
+      "batch": 8,
+      "arms": {
+        "mha": {
+          "kv_bytes": 8388608,
+          "parameter_bytes": 115404800,
+          "median_prefill_seconds": 0.013293958269059658,
+          "median_decode_seconds": 0.18857485381886363,
+          "median_decode_tokens_per_second": 2715.1127362095654,
+          "decode_seconds_range": [
+            0.1761810826137662,
+            0.2357218749821186
+          ],
+          "observed_mps_current_bytes_range": [
+            241894400,
+            286262272
+          ]
+        },
+        "mla": {
+          "kv_bytes": 1572864,
+          "parameter_bytes": 113969664,
+          "median_prefill_seconds": 0.01354681234806776,
+          "median_decode_seconds": 0.23297622939571738,
+          "median_decode_tokens_per_second": 2197.649970513723,
+          "decode_seconds_range": [
+            0.22272612527012825,
+            0.29163066763430834
+          ],
+          "observed_mps_current_bytes_range": [
+            235078656,
+            255001600
+          ]
+        }
+      },
+      "decode_median_ratio": 1.2354575632841465
+    }
+  ],
+  "selected_learning_rates": {
+    "mha": 0.00125,
+    "mla": 0.00125
+  },
+  "all_ten_artifact_reviews_passed": true,
+  "source_runtime_protocol_recipe_corpus_resource_unchanged": true,
+  "scope": "Scoped width256 quarter-latent RoPE MLA LR0.00125, 1200 updates/cooldown and H200 start800, versus equally tuned fresh MHA. Does not replace or compare against adopted GQA; general MHA and width64 remain separate.",
+  "limitations": "Same-agent audit with separately recomputed conditional text intervals. Adaptive validation, three fresh seeds, not independent test or seed-population uncertainty. FP32 MPS context128, training-text teacher forcing, two models resident. KV savings are not total memory or cloud-price savings. Report latency separately; test closed."
+}
