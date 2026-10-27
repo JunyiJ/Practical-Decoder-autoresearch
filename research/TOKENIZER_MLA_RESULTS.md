@@ -56,5 +56,6 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | Stage | Family | Seed | LR | Raw CE | H200 CE | Training seconds |
 |---|---|---:|---:|---:|---:|---:|
 | screen | mha | 2901 | 0.00125 | 4.742776 | 4.746541 | 204.96 |
+| screen | mha | 2901 | 0.0025 | 4.934339 | 4.825638 | 202.56 |
 
 Screening incomplete; family LRs not yet selected.
