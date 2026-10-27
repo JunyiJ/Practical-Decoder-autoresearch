@@ -49,5 +49,7 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 
 | Stage | Seed | Updates | Raw CE | H200 CE | Training seconds |
 |---|---:|---:|---:|---:|---:|
+| screen | 2801 | 1200 | 4.733485 | 4.745174 | 201.75 |
+| screen | 2801 | 1800 | 4.836779 | 4.784553 | 301.44 |
 
 Screening incomplete; no duration selected.
