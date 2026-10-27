@@ -126,3 +126,86 @@ reserve to make it fit. Once resources permit, choose and freeze the scope;
 then validate the estimate against measured pilot files and recheck the entire
 remaining allocation before each serial launch. Broad architecture and standalone
 HP candidates remain available under the same evidence and resource requirements.
+
+## Prospective comparison design (October27,19:49UTC)
+
+This design resolves statistical and control choices while storage is blocked.
+It is not an executable/source-frozen protocol. Choose one width, validate all
+three pilots, and freeze the runner, exact requests and remaining allocation
+before quality dispatch. Changes to this design must be recorded before observing
+new quality results, rather than selected after seeing a favorable comparison.
+
+Table sharing remains the next prepared hypothesis because vocabulary matrices
+dominate these models and its correctness checks are complete. The equal LR
+screen is a first-class optimization question within this structural comparison.
+Standalone schedule/regularization studies remain valid, but would not answer
+whether the enlarged vocabulary makes sharing useful. MoE is deferred pending
+its routed/total-capacity accounting and tokenizer contract validation; activation,
+normalization, residual and depth comparisons remain untested alternatives. This
+choice does not establish a rigid queue or reopen a closed attention experiment.
+
+Prefer width256 for direct relevance to the retained GQA serving recipe. Width64
+may be selected prospectively if only its complete panel fits, with an explicit
+scope decision before any pilot. Never select a width from new pilot CE. The
+width64 case uses the same 1200-update schedule as a common experimental setting;
+that horizon has not been independently adopted at width64. Do not pool widths.
+
+Use all three arms, independently tuned over peak LR0.00125/0.0025. Screen each
+arm/rate once at seed3301 (six trajectories); select the lower full-validation
+H200 CE separately for each arm, breaking an exact tie with the lower LR. Freeze
+all three choices before nine fresh confirmation trajectories: each arm at its
+selected rate and seeds3311/3312/3313. Thus a favorable screen never eliminates
+either control, and confirmation cannot reselect LR. Use cyclic arm order across
+confirmation seeds; declare the exact six-screen order in the executable plan.
+These seed IDs had no matches in saved request/plan/recipe seed fields at this
+review; check the campaign inventory again at freeze time.
+
+Keep1200 updates, batch8, context128, paired512 sampling, cooldown800–1200 to0.1,
+H200 start800/interval10, and the inherited optimizer/decay configuration. The
+comparison matches target-token exposure, not total parameters or elapsed time.
+Full-validation H200 CE is the only quality selector; raw CE, BPB, samples,
+training time and sampled-validation curves are diagnostics. Keep test loss closed.
+
+For each fresh-seed pair define delta as candidate minus control H200 CE. The
+strict quality rule is mean delta below−0.02, every seed below0, and upper95%
+conditional-text bootstrap bounds below0 at blocks2048/4096/8192 (2000 draws,
+seed20261024, resampling paired text blocks jointly across the three seeds).
+The neutrality rule instead requires the mean, every seed, and every corresponding
+upper bound to be at most+0.01. This margin is an agent-chosen prospective
+engineering convention for this table experiment, not a human numeric tolerance.
+These are conditional engineering gates under adaptive validation reuse, not
+seed-population confidence or a multiple-comparison-adjusted significance claim.
+
+The legacy arm is the deployment reference; matched untied is a required
+mechanistic control. A tied quality-improvement claim requires the strict rule
+against both controls. A tied memory/quality tradeoff requires neutrality against
+both controls and at least30% smaller measured unique resident FP32 parameter
+storage against each, at the selected width. Measure storage from loaded H200
+tensors, deduplicating actual storage; theoretical counts alone do not pass the
+cost gate. This is a parameter-memory claim, not a reduction in KV cache, whole
+process RSS, peak working memory or cloud cost. Report those separately. A matched
+untied recipe may qualify only through the strict rule against legacy, since it
+has no prospective parameter-memory advantage. If both recipes qualify, retain
+their distinct scoped tradeoffs rather than declaring a universal winner.
+
+Before any adoption, measure all three fresh-seed model triples serially on the
+same FP32 MPS context128 workload: batch1/8, first96 training tokens,32-token
+prefill and64 teacher-forced decode steps. Use two warmups and eight synchronized
+rotating-order measurements per seed and batch. Check full/cached equivalence
+first. Report per-seed and median prefill/decode, actual parameter/cache bytes,
+and working-memory observations; no speed gate is imposed on the memory route.
+Do not infer achievable maximum batch size from these two measured batches.
+
+Three separate20-update pilots at seed3291/LR0.00125 will check correctness and
+resource costs only, retaining raw/H200 pairs with a short EMA tail declared in
+their frozen plan. They cannot rank arms or select width/rate. Their measured
+bytes must validate or increase the existing conservative allowances. The pilot
+and quality runners still require explicit600s/7200s timeouts, RSS4GiB/MPS-driver
+6GiB sampled guards, four CPU threads, no fallback, one worker, immutable source
+and data identities, exclusive trial directories, and fail-stop behavior.
+Preserve all failed artifacts; no automatic retries or replacement seeds.
+
+Outstanding work is the storage-feasible scope decision, pilot runner and source
+freeze, reviewed MPS correctness/resource evidence, and executable quality/timing
+plans with tested selection and guard logic. No training was launched by this
+design review, and no new model-quality evidence or adoption is claimed.
