@@ -39,3 +39,12 @@ the8GiB free-space reserve is retained and checked against all remaining trials.
 A global lock prevents a second training or timing worker. Source/runtime,
 protocol/recipe/corpus and pilot/resource evidence are hashed into the plan.
 Failure logs and all checkpoints are retained. Test remains closed.
+
+## Launch
+
+The ten-trial quality run started successfully on October27,2026. Frozen source
+commit5276412, plan recorded in f22616a; plan SHA256
+afb45c98f9185f8f659577ac7c1326140aa42349047be956c4ade06edac8ea10.
+The first MHA screening worker is active under the single-worker lock. Full
+remaining-trial storage projection passed before launch. No completed quality
+results or adoption claim yet. The heartbeat now follows this round's helpers.
