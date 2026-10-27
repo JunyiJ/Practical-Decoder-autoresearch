@@ -129,9 +129,12 @@ def validate_prior(prior, vocab_size):
 
 def output_bias_contract(cfg):
     if not any(_has(cfg,k) for k in FIELDS): return None
-    if _get(cfg, 'output_bias_width_policy') == TOKENIZER_POLICY:
+    from .tokenizer_architecture import BIAS_POLICY, architecture_contract
+    tokenizer_policy = _get(cfg, 'output_bias_width_policy')
+    if tokenizer_policy in (TOKENIZER_POLICY, BIAS_POLICY):
         from .readout_norm import readout_norm_contract
-        if _get(cfg, 'output_bias_kind') != 'none' or readout_norm_contract(cfg) is None:
+        backbone = architecture_contract(cfg) if tokenizer_policy == BIAS_POLICY else readout_norm_contract(cfg)
+        if _get(cfg, 'output_bias_kind') != 'none' or backbone is None:
             raise ValueError('Tokenizer policy requires absent output bias and inherited readout')
         raw = _get(cfg, 'output_bias_prior')
         # OmegaConf containers must be normalized before hashing.
@@ -143,7 +146,7 @@ def output_bias_contract(cfg):
                 or p['tokenizer']['vocab_size'] != _get(cfg, 'vocab_size')
                 or p['tokenizer']['name'] != 'gpt2' or p['tokenizer']['split_unit'] != 'raw_text'):
             raise ValueError('Invalid tokenizer no-bias binding')
-        return dict(output_bias_kind='none', output_bias_width_policy=TOKENIZER_POLICY, output_bias_prior=p)
+        return dict(output_bias_kind='none', output_bias_width_policy=tokenizer_policy, output_bias_prior=p)
     if _get(cfg,'output_bias_kind') not in KINDS or _get(cfg,'output_bias_width_policy') != POLICY:
         raise ValueError('Output bias requires its explicit reviewed kind and policy')
     from .readout_norm import readout_norm_contract
@@ -180,7 +183,8 @@ def validate_output_bias_training_data(cfg, loader, data_path):
     """Check binding before any model construction; never sample a split."""
     c = output_bias_contract(cfg)
     if c is None: return
-    if c['output_bias_width_policy'] == TOKENIZER_POLICY:
+    from .tokenizer_architecture import BIAS_POLICY
+    if c['output_bias_width_policy'] in (TOKENIZER_POLICY, BIAS_POLICY):
         if not hasattr(loader, 'tokenizer_contract') or tokenizer_no_bias_prior(loader, data_path) != c['output_bias_prior']:
             raise ValueError('Declared tokenizer prior differs from actual training corpus/split')
         return

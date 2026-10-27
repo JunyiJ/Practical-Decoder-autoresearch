@@ -27,6 +27,8 @@ class GQA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.dim = cfg.dim
+        from ..models.attention_scale import resolve_attention_scale
+        self.attention_logit_scale = resolve_attention_scale(cfg)
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
             raise ValueError("cfg.dim must be divisible by cfg.n_heads")
@@ -85,6 +87,8 @@ class GQA(nn.Module):
             # k = k.reshape(b, self.n_heads, k_len, self.head_dim)
             # v = v.reshape(b, self.n_heads, k_len, self.head_dim)
         attn_score = torch.matmul(q, k_view.transpose(-2, -1)) / math.sqrt(self.head_dim)
+        if self.attention_logit_scale != 1.:
+            attn_score = attn_score * self.attention_logit_scale
         if self.causal:
             total_len = k.size(-2)
             causal_mask = self._get_causal_mask(total_len, x.device)

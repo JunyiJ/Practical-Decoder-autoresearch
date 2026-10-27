@@ -15,6 +15,11 @@ def attention_scale_contract(cfg):
     if not any(_has(cfg, k) for k in FIELDS):
         return None
     value = _get(cfg, FIELDS[0])
+    from .tokenizer_architecture import SCORE_POLICY, architecture_contract
+    if _get(cfg, FIELDS[1]) == SCORE_POLICY:
+        if architecture_contract(cfg) is None:
+            raise ValueError('Tokenizer score scaling requires its explicit backbone')
+        return dict(attention_logit_scale=float(value), attention_logit_scale_width_policy=SCORE_POLICY)
     if isinstance(value, bool) or not isinstance(value, (int, float)) or value not in SCALES or _get(cfg, FIELDS[1]) != POLICY:
         raise ValueError('Attention scale requires explicit reviewed scalar and policy')
     from .residual_topology import residual_topology_contract
@@ -26,7 +31,7 @@ def attention_scale_contract(cfg):
 
 def attention_scale_signature(cfg):
     c = attention_scale_contract(cfg)
-    return None if c is None else (c['attention_logit_scale'], POLICY)
+    return None if c is None else (c['attention_logit_scale'], c['attention_logit_scale_width_policy'])
 
 def resolve_attention_scale(cfg):
     c = attention_scale_contract(cfg)

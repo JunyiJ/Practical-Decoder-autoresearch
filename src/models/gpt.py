@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .tokenizer_architecture import architecture_contract
+        self.tokenizer_architecture_signature = architecture_contract(cfg)
         from .logit_z import logit_z_signature
         self.logit_z_signature = logit_z_signature(cfg)
         from .position_family import position_family_signature

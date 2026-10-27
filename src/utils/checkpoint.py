@@ -73,6 +73,8 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
     weights and forward math are unchanged. Legacy optimizer parameter groups
     include the removed table, so training continuation requires original source.
     """
+    from ..models.tokenizer_architecture import validate_architecture_load
+    validate_architecture_load(model, checkpoint)
     from ..models.logit_z import validate_logit_z_load
     validate_logit_z_load(model, checkpoint)
     from ..models.position_family import validate_position_family_load
