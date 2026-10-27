@@ -90,6 +90,7 @@ review are also required. The test holdout remains closed.
 | screen | gqa | 64 | 2702 | 0.0025 | 5.270827 | 5.212207 | 254.04 |
 | screen | mha | 64 | 2702 | 0.00125 | 4.952350 | 4.943188 | 254.78 |
 | screen | mha | 64 | 2702 | 0.0025 | 5.265823 | 5.208587 | 254.70 |
+| confirm | mha | 64 | 2711 | 0.00125 | 4.963383 | 4.950808 | 253.68 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
