@@ -81,6 +81,8 @@ a GQA-minus-MHA difference of +0.023516 nats/token. Both artifacts passed review
 This exceeds the predeclared +0.01 per-seed bound, so the width64 variant fails
 one necessary adoption condition in this round. Do not relax that rule after
 seeing the result. It is not a population-level claim that GQA is worse.
+The second audited pair, seed2712, also exceeds the bound: MHA4.937129 versus
+GQA4.977332, difference +0.040203. Full three-seed analysis remains pending.
 The remaining frozen trials continue to characterize the other seeds and the
 separate width256 decision; full mean/interval and inference-cost reviews remain
 outstanding. No source, tuning grid or selection changes follow this observation.
@@ -104,6 +106,7 @@ review are also required. The test holdout remains closed.
 | confirm | mha | 64 | 2711 | 0.00125 | 4.963383 | 4.950808 | 253.68 |
 | confirm | gqa | 64 | 2711 | 0.00125 | 4.982797 | 4.974324 | 254.33 |
 | confirm | gqa | 64 | 2712 | 0.00125 | 4.994932 | 4.977332 | 253.64 |
+| confirm | mha | 64 | 2712 | 0.00125 | 4.955060 | 4.937129 | 253.90 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
@@ -112,5 +115,6 @@ Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 - screen, width64, seed2702, GQA LR0.00125 / MHA LR0.00125: +0.013444.
 - screen, width64, seed2702, GQA LR0.0025 / MHA LR0.0025: +0.003620.
 - confirm, width64, seed2711, GQA LR0.00125 / MHA LR0.00125: +0.023516.
+- confirm, width64, seed2712, GQA LR0.00125 / MHA LR0.00125: +0.040203.
 
 Frozen family LR selection: {'gqa': 0.00125, 'mha': 0.00125}
