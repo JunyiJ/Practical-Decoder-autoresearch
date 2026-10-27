@@ -25,7 +25,7 @@ RATES = (.00125, .0025)
 SEEDS = (3011, 3012, 3013)
 FAMILIES = ('hybrid', 'gated_mla', 'kda')
 LAYOUT = dict(zip(FAMILIES, LAYOUTS))
-PREFLIGHT = ROOT/'research/tokenizer-evidence/hybrid-preparation-001/control-preflight.json'
+PREFLIGHT = ROOT/'research/tokenizer-evidence/hybrid-preparation-001/control-preflight-v2.json'
 
 
 def config(output, family, seed, lr):
@@ -123,7 +123,7 @@ def verify_pilot():
     preflight = json.loads(PREFLIGHT.read_text())
     if (preflight['status'] != 'passed' or preflight['source'] != current
             or preflight['protocol_sha256'] != file_digest(PROTOCOL)
-            or preflight['helper_sha256'] != file_digest(PREFLIGHT.with_name('control_preflight.py'))):
+            or preflight['helper_sha256'] != file_digest(PREFLIGHT.with_name('control_preflight_v2.py'))):
         raise ValueError('Missing or changed MPS control preflight')
     if plan['runtime'] != runtime_identity() or preflight['runtime'] != runtime_identity():
         raise ValueError('Pilot runtime changed')

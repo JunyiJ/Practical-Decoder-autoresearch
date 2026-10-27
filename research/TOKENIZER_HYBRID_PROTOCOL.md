@@ -96,3 +96,14 @@ resource-driven; width256 quality is untested. Broad MoE, activations, norms,
 residual/depth/readout and standalone HP hypotheses remain first-class next-round
 options; evaluate them after this finite panel rather than extending attention
 search indefinitely.
+
+## Prelaunch feasibility correction (before any quality training)
+
+Control preflight001 failed before its first optimizer update: slicing the fixed
+batch produced noncontiguous targets, while the existing GPT loss path calls
+view. Preserve its helper, plan, worker log and failed state. The normal training
+loader already supplies contiguous targets. Freeze a new preflight002 with
+explicit contiguous input/target batches; same two controls, seeds and checks.
+This is a reviewed harness correction, not a silent retry or a failed quality
+trajectory. No architecture/source math or quality selection rule changes.
+The quality controller binds the separate v2 preflight result.

@@ -1,0 +1,8 @@
+{
+  "status": "reviewed_harness_failure",
+  "failed_run": "research_runs/tokenizer-hybrid-control-preflight-001",
+  "completed_optimizer_updates": 0,
+  "error": "Noncontiguous target slice failed GPT targets.view in loss computation",
+  "scope": "No quality trial and no checkpoint produced. Original logs/helper/plan retained.",
+  "correction": "New preflight002 supplies contiguous inputs and targets, matching normal loader contract. Same controls/seeds, new frozen helper/plan; no model math change."
+}
