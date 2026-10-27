@@ -9,7 +9,7 @@ Compare1200/1800/3000 updates with cooldown and EMA start at two-thirds of each
 horizon. This is a combined schedule recipe change, not isolated duration.
 One screen seed selects at most one candidate; three fresh paired seeds must
 confirm it before adoption. General MHA and width64 baselines remain outside
-this comparison. All old stop markers stay closed. No quality result yet.
+this comparison. All old stop markers stay closed. Screening is complete; fresh confirmation is pending.
 
 ## Prerequisites
 
@@ -43,6 +43,19 @@ Preserved the failure log; corrected only the launcher executable to the absolut
 virtual-environment path without resolving its symlink. Source and frozen plan
 are unchanged. This is an environment launch failure, not model-quality evidence.
 
+## Screening review
+
+All three seed2801 trajectories passed artifact checks. The frozen rule selected
+1200 updates: H200 CE4.745174 versus4.784553 at1800 and5.475618 at3000
+(candidate minus control: -0.730444 nats/token). This single seed selects a
+candidate; it does not establish a reproducible improvement. The selected recipe
+uses60% fewer training targets than3000, with proportionally earlier cooldown
+and a shorter EMA window. These components are not isolated by this comparison.
+Fresh paired seeds2811/2812/2813 are now running serially; all gates and final
+artifact review remain required before adoption. Source/runtime, recipe,
+protocol, corpus, resource review and plan hashes remain unchanged.
+[Screen review](tokenizer-evidence/horizon-001/screen-review.json).
+
 ## Reviewed trajectories
 
 Only completed, artifact-reviewed records appear here. Test remains closed.
@@ -51,5 +64,6 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 |---|---:|---:|---:|---:|---:|
 | screen | 2801 | 1200 | 4.733485 | 4.745174 | 201.75 |
 | screen | 2801 | 1800 | 4.836779 | 4.784553 | 301.44 |
+| screen | 2801 | 3000 | 5.560157 | 5.475618 | 507.23 |
 
-Screening incomplete; no duration selected.
+Frozen selection: 1200 updates.
