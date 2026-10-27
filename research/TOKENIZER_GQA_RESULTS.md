@@ -64,10 +64,12 @@ review are also required. The test holdout remains closed.
 | screen | gqa | 64 | 2701 | 0.00125 | 4.956483 | 4.948193 | 254.50 |
 | screen | gqa | 64 | 2702 | 0.00125 | 4.969298 | 4.956633 | 254.48 |
 | screen | gqa | 64 | 2702 | 0.0025 | 5.270827 | 5.212207 | 254.04 |
+| screen | mha | 64 | 2702 | 0.00125 | 4.952350 | 4.943188 | 254.78 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
 - screen, width64, seed2701, GQA LR0.0025 / MHA LR0.0025: -0.016558.
 - screen, width64, seed2701, GQA LR0.00125 / MHA LR0.00125: -0.001825.
+- screen, width64, seed2702, GQA LR0.00125 / MHA LR0.00125: +0.013444.
 
 Screening incomplete; no frozen family LR choices yet.
