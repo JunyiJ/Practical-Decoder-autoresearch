@@ -63,4 +63,3 @@ Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
 
 Screening incomplete; no frozen family LR choices yet.
-

@@ -32,7 +32,7 @@ for a in rows:
     if controls:
         b=controls[0];text.append(f"- {a['stage']}, width{a['width']}, seed{a['seed']}, GQA LR{a['lr']:g} / MHA LR{b['lr']:g}: {a['h200']['mean_ce']-b['h200']['mean_ce']:+.6f}.")
 text+=['',f"Frozen family LR selection: {state['selection']}" if state.get('selection') else 'Screening incomplete; no frozen family LR choices yet.','']
-report=Path('research/TOKENIZER_GQA_RESULTS.md');body=report.read_text().split('\n## Reviewed quality trajectories')[0];report.write_text(body+'\n'+'\n'.join(text)+'\n')
+report=Path('research/TOKENIZER_GQA_RESULTS.md');body=report.read_text().split('\n## Reviewed quality trajectories')[0];report.write_text((body+'\n'+'\n'.join(text)).rstrip()+'\n')
 ids=[]
 for r in new:
     p=run/r['id']/'result.json'
