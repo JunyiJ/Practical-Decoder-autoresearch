@@ -1,0 +1,221 @@
+FF........F                                                              [100%]
+=================================== FAILURES ===================================
+__________ test_initialization_gradient_roles_cache_and_optimizer[64] __________
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pytest-of-junyi/pytest-7/test_initialization_gradient_r0')
+width = 64
+
+    @pytest.mark.parametrize('width', [64, 256])
+    def test_initialization_gradient_roles_cache_and_optimizer(tmp_path, width):
+        torch.set_num_threads(1)
+        models = []; rngs = []
+        for kind in KINDS:
+            torch.manual_seed(3201)
+            models.append(GPT(config(tmp_path, kind, width).model))
+            rngs.append(torch.get_rng_state())
+        legacy, matched, tied = models
+        assert all(torch.equal(rngs[0], r) for r in rngs)
+        base = json.loads(RECIPE.read_text())['config']['model'];base.update(dim=width,n_heads=width//32)
+        torch.manual_seed(3201);original=GPT(OmegaConf.create(base))
+        assert torch.equal(torch.get_rng_state(),rngs[0])
+        assert all(torch.equal(v, original.state_dict()[k]) for k,v in legacy.state_dict().items())
+        del original
+        assert torch.equal(matched.lm_head.weight, matched.transformer.wte.weight)
+        assert matched.lm_head.weight.data_ptr() != matched.transformer.wte.weight.data_ptr()
+        assert tied.lm_head is None and 'lm_head.weight' not in tied.state_dict()
+        assert sum(p.numel() for p in matched.parameters())-sum(p.numel() for p in tied.parameters())==50257*width
+        for k,v in tied.state_dict().items():assert torch.equal(v, matched.state_dict()[k])
+        x=torch.tensor([[100,200,300,400]]);y=x+1
+        with torch.no_grad():
+            for model in models:
+>               model.eval();cache=build_caches(model.cfg,'cpu',batch_size=1)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_tables.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/attention/cache.py:111: in build_caches
+    for i in range(cfg.model.n_layers)]
+                   ^^^^^^^^^
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:355: in __getattr__
+    self._format_and_raise(
+.venv/lib/python3.13/site-packages/omegaconf/base.py:231: in _format_and_raise
+    format_and_raise(
+.venv/lib/python3.13/site-packages/omegaconf/_utils.py:899: in format_and_raise
+    _raise(ex, cause)
+.venv/lib/python3.13/site-packages/omegaconf/_utils.py:797: in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:351: in __getattr__
+    return self._get_impl(
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:442: in _get_impl
+    node = self._get_child(
+.venv/lib/python3.13/site-packages/omegaconf/basecontainer.py:73: in _get_child
+    child = self._get_node(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = {'attention_logit_scale': 0.5, 'attention_logit_scale_width_policy': 'tokenizer_mha_gqa_score_v1', 'attention_width_po...ze': 50257, 'weight_tying_kind': 'legacy_untied', 'weight_tying_width_policy': 'tokenizer_gqa_scaled_table_sharing_v1'}
+key = 'model', validate_access = True, validate_key = False
+throw_on_missing_value = False, throw_on_missing_key = True
+
+    def _get_node(
+        self,
+        key: DictKeyType,
+        validate_access: bool = True,
+        validate_key: bool = True,
+        throw_on_missing_value: bool = False,
+        throw_on_missing_key: bool = False,
+    ) -> Optional[Node]:
+        try:
+            key = self._validate_and_normalize_key(key)
+        except KeyValidationError:
+            if validate_access and validate_key:
+                raise
+            else:
+                if throw_on_missing_key:
+                    raise ConfigAttributeError
+                else:
+                    return None
+    
+        if validate_access:
+            self._validate_get(key)
+    
+        value: Optional[Node] = self.__dict__["_content"].get(key)
+        if value is None:
+            if throw_on_missing_key:
+>               raise ConfigKeyError(f"Missing key {key!s}")
+E               omegaconf.errors.ConfigAttributeError: Missing key model
+E                   full_key: model.model
+E                   object_type=dict
+
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:480: ConfigAttributeError
+_________ test_initialization_gradient_roles_cache_and_optimizer[256] __________
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pytest-of-junyi/pytest-7/test_initialization_gradient_r1')
+width = 256
+
+    @pytest.mark.parametrize('width', [64, 256])
+    def test_initialization_gradient_roles_cache_and_optimizer(tmp_path, width):
+        torch.set_num_threads(1)
+        models = []; rngs = []
+        for kind in KINDS:
+            torch.manual_seed(3201)
+            models.append(GPT(config(tmp_path, kind, width).model))
+            rngs.append(torch.get_rng_state())
+        legacy, matched, tied = models
+        assert all(torch.equal(rngs[0], r) for r in rngs)
+        base = json.loads(RECIPE.read_text())['config']['model'];base.update(dim=width,n_heads=width//32)
+        torch.manual_seed(3201);original=GPT(OmegaConf.create(base))
+        assert torch.equal(torch.get_rng_state(),rngs[0])
+        assert all(torch.equal(v, original.state_dict()[k]) for k,v in legacy.state_dict().items())
+        del original
+        assert torch.equal(matched.lm_head.weight, matched.transformer.wte.weight)
+        assert matched.lm_head.weight.data_ptr() != matched.transformer.wte.weight.data_ptr()
+        assert tied.lm_head is None and 'lm_head.weight' not in tied.state_dict()
+        assert sum(p.numel() for p in matched.parameters())-sum(p.numel() for p in tied.parameters())==50257*width
+        for k,v in tied.state_dict().items():assert torch.equal(v, matched.state_dict()[k])
+        x=torch.tensor([[100,200,300,400]]);y=x+1
+        with torch.no_grad():
+            for model in models:
+>               model.eval();cache=build_caches(model.cfg,'cpu',batch_size=1)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_tables.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/attention/cache.py:111: in build_caches
+    for i in range(cfg.model.n_layers)]
+                   ^^^^^^^^^
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:355: in __getattr__
+    self._format_and_raise(
+.venv/lib/python3.13/site-packages/omegaconf/base.py:231: in _format_and_raise
+    format_and_raise(
+.venv/lib/python3.13/site-packages/omegaconf/_utils.py:899: in format_and_raise
+    _raise(ex, cause)
+.venv/lib/python3.13/site-packages/omegaconf/_utils.py:797: in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:351: in __getattr__
+    return self._get_impl(
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:442: in _get_impl
+    node = self._get_child(
+.venv/lib/python3.13/site-packages/omegaconf/basecontainer.py:73: in _get_child
+    child = self._get_node(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = {'attention_logit_scale': 0.5, 'attention_logit_scale_width_policy': 'tokenizer_mha_gqa_score_v1', 'attention_width_po...ze': 50257, 'weight_tying_kind': 'legacy_untied', 'weight_tying_width_policy': 'tokenizer_gqa_scaled_table_sharing_v1'}
+key = 'model', validate_access = True, validate_key = False
+throw_on_missing_value = False, throw_on_missing_key = True
+
+    def _get_node(
+        self,
+        key: DictKeyType,
+        validate_access: bool = True,
+        validate_key: bool = True,
+        throw_on_missing_value: bool = False,
+        throw_on_missing_key: bool = False,
+    ) -> Optional[Node]:
+        try:
+            key = self._validate_and_normalize_key(key)
+        except KeyValidationError:
+            if validate_access and validate_key:
+                raise
+            else:
+                if throw_on_missing_key:
+                    raise ConfigAttributeError
+                else:
+                    return None
+    
+        if validate_access:
+            self._validate_get(key)
+    
+        value: Optional[Node] = self.__dict__["_content"].get(key)
+        if value is None:
+            if throw_on_missing_key:
+>               raise ConfigKeyError(f"Missing key {key!s}")
+E               omegaconf.errors.ConfigAttributeError: Missing key model
+E                   full_key: model.model
+E                   object_type=dict
+
+.venv/lib/python3.13/site-packages/omegaconf/dictconfig.py:480: ConfigAttributeError
+___________ test_real_resume_and_ema_with_bounded_temporary_storage ____________
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pytest-of-junyi/pytest-7/test_real_resume_and_ema_with_0')
+
+    def test_real_resume_and_ema_with_bounded_temporary_storage(tmp_path):
+        # Three temporary tied-width64 raw checkpoints plus one EMA fit in190MiB.
+        # These disposable test fixtures are removed on success; research checkpoints are untouched.
+        if shutil.disk_usage(tmp_path).free < 8*1024**3+190*1024**2:
+            pytest.skip('Insufficient headroom above research reserve for CPU checkpoint prerequisite')
+        torch.set_num_threads(1);root=tmp_path/'table-resume';root.mkdir()
+>       cfg=config(root/'full');full=run_training(cfg);expected=read_checkpoint(full['final_checkpoint'])
+                                     ^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_tables.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/train/train.py:288: in run_training
+    loader = _make_loader(cfg, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/train/train.py:172: in _make_loader
+    return loader_class(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.data.loaders.TextDataset object at 0x1100af770>
+data_path = '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/data/raw/shakespeare.txt'
+batch_size = 2, block_size = 128, device = 'cpu', seed = 3201
+train_fraction = 0.8, val_fraction = 0.1, eval_seed = 2026
+batch_layout = 'paired_blocks512', split_unit = 'raw_text'
+
+    def __init__(self, data_path, batch_size, block_size, device, seed=0,
+                 train_fraction=.9, val_fraction=.1, eval_seed=None,
+                 batch_layout='independent', split_unit='tokens'):
+        if batch_layout not in {'independent', 'paired_blocks512', 'paired_batch512'}:
+            raise ValueError('Unknown batch_layout')
+        if batch_layout == 'paired_blocks512' and (block_size not in {128,256,512} or batch_size*block_size != 1024):
+>           raise ValueError('paired_blocks512 requires context128/256/512 and1024 targets/update')
+E           ValueError: paired_blocks512 requires context128/256/512 and1024 targets/update
+
+src/data/loaders.py:101: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_tables.py::test_initialization_gradient_roles_cache_and_optimizer[64]
+FAILED tests/test_tokenizer_tables.py::test_initialization_gradient_roles_cache_and_optimizer[256]
+FAILED tests/test_tokenizer_tables.py::test_real_resume_and_ema_with_bounded_temporary_storage
+3 failed, 8 passed in 1.48s

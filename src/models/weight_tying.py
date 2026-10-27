@@ -22,7 +22,12 @@ def _has(cfg, key):
 
 def weight_tying_contract(cfg):
     if not any(_has(cfg, k) for k in FIELDS): return None
-    if (_get(cfg, FIELDS[0]) not in KINDS or _get(cfg, FIELDS[1]) != POLICY):
+    from .tokenizer_tables import POLICY as TOKENIZER_POLICY, table_contract
+    policy = _get(cfg, FIELDS[1])
+    if policy == TOKENIZER_POLICY:
+        if table_contract(cfg) is None:
+            raise ValueError('Tokenizer table sharing requires its explicit architecture')
+    if (_get(cfg, FIELDS[0]) not in KINDS or policy not in (POLICY, TOKENIZER_POLICY)):
         raise ValueError('Table sharing requires its explicit kind and policy')
     from .output_bias import output_bias_contract
     if output_bias_contract(cfg) is None:
@@ -30,14 +35,14 @@ def weight_tying_contract(cfg):
     if any(_has(cfg, k) for k in ('readout_scale', 'weight_tying_scale', 'shared_table_scale',
                                  'output_init_std', 'readout_init_std')):
         raise ValueError('Table sharing rejects independent scale or initialization overrides')
-    # Inherited readout contract already binds dense MHA4/head32/Swi21D/8,
-    # RMS blocks/RoPE/unscaled/base64/width64,128,256 and rejects old tie flags.
-    return dict(weight_tying_kind=_get(cfg, FIELDS[0]), weight_tying_width_policy=POLICY)
+    # The inherited readout contract binds each policy's reviewed backbone,
+    # normalization, width set, tokenizer/prior and rejection of old tie flags.
+    return dict(weight_tying_kind=_get(cfg, FIELDS[0]), weight_tying_width_policy=policy)
 
 
 def weight_tying_signature(cfg):
     c = weight_tying_contract(cfg)
-    return None if c is None else (c['weight_tying_kind'], POLICY, 64)
+    return None if c is None else (c['weight_tying_kind'], c['weight_tying_width_policy'], 64)
 
 
 def readout_scale(cfg):

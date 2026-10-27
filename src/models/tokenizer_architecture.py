@@ -24,6 +24,10 @@ def architecture_contract(cfg):
     hybrid = hybrid_contract(cfg)
     if hybrid is not None:
         return hybrid
+    from .tokenizer_tables import table_contract
+    tables = table_contract(cfg)
+    if tables is not None:
+        return tables
     if _get(cfg, 'tokenizer_architecture_policy') is None:
         return None
     policy = _get(cfg, 'tokenizer_architecture_policy')
@@ -76,7 +80,8 @@ def validate_architecture_model(model):
     if len(model.transformer.h) != 4 or hasattr(model.transformer, 'wpe'):
         raise ValueError('Tokenizer architecture layer/position table mismatch')
     if (type(model.transformer.ln_f) is not nn.LayerNorm or model.transformer.ln_f.eps != 1e-5
-            or model.transformer.ln_f.bias is None or model.lm_head is None
+            or model.transformer.ln_f.bias is None
+            or (model.lm_head is None) != (contract.get('table_kind') == 'scaled_tied')
             or model.output_bias is not None or model.input_embedding_scale != 1.):
         raise ValueError('Tokenizer architecture readout/input semantics mismatch')
     for block in model.transformer.h:

@@ -1,0 +1,31 @@
+{
+  "status": "cpu_preparation_reviewed_storage_needed",
+  "created_at": "2026-10-27T10:57:37.165065+00:00",
+  "training_launched": false,
+  "quality_claim": null,
+  "cpu_corrected": {
+    "passed": 11,
+    "log": "cpu-corrected.log"
+  },
+  "regressions": {
+    "passed": 76,
+    "deselected": 3,
+    "log": "regression.log"
+  },
+  "cpu_final": {
+    "passed": 10,
+    "skipped": 1,
+    "reason": "disk headroom below 8GiB reserve plus190MiB temporary fixture allowance",
+    "log": "cpu-final.log"
+  },
+  "free_bytes": 8779014144,
+  "reserve_bytes": 8589934592,
+  "source_sha256": {
+    "src/models/tokenizer_tables.py": "0d946deb390b717aa76281fafee61722bea269be636afe472bed85a193dfcb92",
+    "src/models/tokenizer_architecture.py": "7d9f2c42736a562033d7f456d61675f328d2a49bedf6079eb68d0997d5cc9fa6",
+    "src/models/weight_tying.py": "c7bb966e9c01811aaf0636c0e657d1c1c0baa2403870f886fb70c44d3064151e",
+    "tests/test_tokenizer_tables.py": "a23f462f41ac5cbcceb0770a16446f90d0a9682d3c15d1fbedb4af587f0d6d14"
+  },
+  "failure_log": "cpu-initial.log",
+  "limits": "No MPS or quality evidence. Initial fixture failures preserved. Final resume skip does not replace earlier successful corrected-suite resume."
+}

@@ -54,3 +54,36 @@ provide an external checkpoint location. Continue CPU preparation; do not lower
 the reserve, delete research evidence, or treat silence as storage authorization.
 The final width/panel and remaining-trial projection will be frozen only after
 actual available storage and measured pilot costs are known.
+
+## Implementation and CPU review
+
+The distinct `tokenizer_gqa_scaled_table_sharing_v1` contract now supports the
+three declared arms at widths 64 and 256. It delegates the unchanged GQA fields
+to the existing exact architecture validator and binds table policy/kind into
+model and checkpoint signatures. Historical character contracts remain separate.
+
+The corrected targeted suite passed all 11 checks, including exact three-update
+CPU resume, sampler RNG and H200 export/load with the GPT-2 binding. Width 64/256
+checks cover preserved initialization draws and legacy weights, matched/tied
+logits, the FP64 sum of lookup/readout gradients, a single canonical table and
+AdamW state, analytical first-update decay, causal/cache outputs and rejection
+of incompatible metadata. Sharing removes exactly 50,257 times width parameters;
+this is a parameter count, not a measured quality or latency benefit.
+
+The initial suite had three fixture failures: two calls supplied only the model
+config to a cache factory requiring the full config, and the resume fixture used
+batch size 2 despite the inherited paired-block layout requiring batch size 8.
+Both were corrected; the original failure log is retained. Existing attention,
+MLA, hybrid and character table geometry regressions passed 76 checks. Three
+existing disk-heavy resume tests were deliberately deselected; the new BPE table
+resume test ran successfully in the targeted suite. A final pass after adding
+namespace-config compatibility passed 10 checks and skipped the same table resume
+fixture because available space had dropped below its prospective 190 MiB
+allowance above the 8 GiB reserve. The earlier successful resume evidence is
+retained; the skip is not counted as another pass. Only successful disposable
+CPU test checkpoints were removed, never research checkpoints.
+
+Logs and source hashes are in `tokenizer-evidence/table-preparation-001/`.
+No MPS pilot or quality experiment has been launched. Remaining prerequisites
+are a storage-feasible frozen pilot, its raw/H200 artifact review and measured
+resource costs, followed by a finite equally tuned quality/cost protocol.
