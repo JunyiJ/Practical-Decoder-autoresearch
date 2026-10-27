@@ -1,8 +1,7 @@
 # GPT-2 tokenizer quality results
 
 Updated October26,2026 (Los Angeles). The new campaign is running under the
-human's instruction to continue until interruption. No subword quality
-improvement has been established yet. Follow the [frozen protocol](TOKENIZER_QUALITY_PROTOCOL.md).
+human's instruction to continue until interruption. The first full baseline is complete; no candidate improvement has been established yet. Follow the [frozen protocol](TOKENIZER_QUALITY_PROTOCOL.md).
 
 ## Synced baseline and implementation
 
@@ -96,3 +95,31 @@ The current chat's five-minute heartbeat continues review, records learnings,
 checks in results and advances to new justified finite rounds until human stop.
 It reports substantive changes or failures and stays quiet when nothing changes.
 The old character/null heartbeat remains paused, and campaign006 remains stopped.
+
+## First completed baseline: screening seed2601
+
+The width64 inherited LR0.01 trajectory completed all3,000 updates. It passed
+the saved-artifact audit: config/tokenizer/request/checkpoint hashes, finite
+model and optimizer tensors, optimizer step counts and independent decay,
+101 EMA snapshots, training sampler replay, untouched test RNG, and exact
+validation coverage/CE/BPB arithmetic. No training or scoring was rerun.
+
+| Recipe | Raw validation CE | H200 validation CE | H200 bits/byte | Training time | Worker wall time |
+|---|---:|---:|---:|---:|---:|
+| Width64, seed2601, LR0.01 | 5.859556 | 5.610844 | 2.487729 | 254.74s | 262.21s |
+
+These are subword-token losses from one screening seed, not a final quality
+comparison. H200 improves this trajectory's raw endpoint by0.248712 CE, a
+correlated diagnostic rather than an independent experiment. The fixed sample
+is readable Shakespeare-like dialogue but has grammatical and semantic defects;
+it is not a quality selector.
+
+On the separate fixed sampled-validation panel, CE fell to4.8580 at update600
+then rose to5.6499 at update2999 while training-minibatch loss fell. This is a
+validation-degradation warning under the inherited budget. It does not isolate
+overfitting, LR, schedule or repeated text exposure as the cause. A shorter
+horizon is a justified candidate for a subsequent finite experiment after this
+LR round; no early-checkpoint selection or retrospective budget change is made.
+
+The same-seed LR0.005 trial is now running, followed by0.0025 and the second
+paired seed. All planned screen trials remain in the frozen comparison.
