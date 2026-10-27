@@ -1,11 +1,13 @@
 # Tokenizer NoPE hybrid results
 
-The finite width64 comparison is running. 2 completed quality trials have passed saved-artifact audit. No adoption yet. See [protocol](TOKENIZER_HYBRID_PROTOCOL.md).
+The finite width64 comparison is running. 4 completed quality trials have passed saved-artifact audit. No adoption yet. See [protocol](TOKENIZER_HYBRID_PROTOCOL.md).
 
 | Stage | Family | Seed | LR | H200 CE | Training seconds |
 |---|---|---:|---:|---:|---:|
 | screen | hybrid | 3001 | 0.00125 | 4.954479 | 168.87 |
 | screen | hybrid | 3001 | 0.0025 | 4.961288 | 171.62 |
+| screen | gated_mla | 3001 | 0.0025 | 5.027217 | 112.39 |
+| screen | gated_mla | 3001 | 0.00125 | 5.050826 | 113.10 |
 
 The hybrid is a four-layer dense NoPE KDA/KDA/KDA/gated-MLA adaptation. All three layouts receive equal two-LR screening; only hybrid and the selected homogeneous control receive fresh confirmation. Screening alone establishes no improvement. Quality gates require all fresh pairs and conditional intervals; final serial cache/cost measurements and artifact review are required before adoption.
 
