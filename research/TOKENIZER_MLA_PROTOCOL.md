@@ -60,7 +60,7 @@ character/subword CE comparison. Historical stop markers remain closed.
 
 One serial local MPS worker/four CPU threads. Freeze source/runtime/protocol/
 recipe/corpus/plan. Quality process cap7200seconds, RSS4GiB/MPS driver6GiB,
-round output cap6GiB and free disk reserve8GiB. Before launch project all ten
+round output cap7GiB and free disk reserve8GiB. Before launch project all ten
 raw/H200 pairs using the larger measured MLA pilot or preserved width256 MHA
 pair, plus15% storage overhead and the separate8GiB reserve. Recheck full
 remaining storage and one-trial headroom at each launch. Do not delete research
@@ -70,3 +70,7 @@ resource projection is evidence, not authorization to ignore later disk changes.
 Next structural priority remains3:1 KDA/MLA with explicit NoPE and per-layer
 cache/state semantics. Broader MoE, activation, normalization, residual, depth
 and readout studies remain active alongside HP tuning.
+
+Prelaunch storage clarification: the cap is7GiB because the measured ten-pair
+projection plus15% overhead is6.05GiB, slightly above a6GiB cap. The separate
+8GiB free-space reserve is unchanged. This correction precedes all quality trials.

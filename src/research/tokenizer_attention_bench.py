@@ -47,11 +47,13 @@ def timed(model, cfg, ids):
                 observed_mps_driver_bytes=torch.mps.driver_allocated_memory())
 
 
-def benchmark(mha, gqa, output):
+def benchmark(mha, candidate, output, candidate_family='gqa'):
+    if candidate_family not in ('gqa', 'mla'):
+        raise ValueError('Unsupported tokenizer benchmark candidate')
     if not torch.backends.mps.is_available():raise RuntimeError('MPS required')
     torch.set_num_threads(4);start_memory_guard()
     models={};configs={};metadata={};fixed=None
-    for family,path in [('mha',mha),('gqa',gqa)]:
+    for family,path in [('mha',mha),(candidate_family,candidate)]:
         c=read_checkpoint(path);cfg=OmegaConf.create(c['cfg'])
         if cfg.model.attn_type!=family:raise ValueError('Checkpoint family mismatch')
         loader=checkpoint_loader(cfg,c,cfg.data.path,'cpu')
@@ -64,16 +66,16 @@ def benchmark(mha, gqa, output):
                               width=cfg.model.dim,parameters=sum(p.numel() for p in model.parameters()),
                               parameter_bytes=sum(p.numel()*p.element_size() for p in model.parameters()))
         del c,loader;gc.collect()
-    if configs['mha'].model.dim!=configs['gqa'].model.dim:raise ValueError('Different widths')
+    if configs['mha'].model.dim!=configs[candidate_family].model.dim:raise ValueError('Different widths')
     rows=[];correctness=[]
     for batch in (1,8):
         ids=fixed.unsqueeze(0).repeat(batch,1).to('mps')
-        for family in ('mha','gqa'):
+        for family in ('mha',candidate_family):
             error=check_cached(models[family],configs[family],ids)
             correctness.append(dict(batch=batch,family=family,max_absolute_error=error))
             for _ in range(2):timed(models[family],configs[family],ids)
         for repeat in range(8):
-            for family in (('mha','gqa') if repeat%2==0 else ('gqa','mha')):
+            for family in (('mha',candidate_family) if repeat%2==0 else (candidate_family,'mha')):
                 rows.append(dict(batch=batch,repeat=repeat,family=family,**timed(models[family],configs[family],ids)))
     result=dict(status='completed',device='mps',dtype='float32',metadata=metadata,
                 fixed_train_token_ids=fixed.tolist(),prompt_tokens=32,decode_tokens=64,
@@ -84,10 +86,13 @@ def benchmark(mha, gqa, output):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--mha',type=Path,required=True);p.add_argument('--gqa',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
+    p=argparse.ArgumentParser();p.add_argument('--mha',type=Path,required=True)
+    group=p.add_mutually_exclusive_group(required=True)
+    group.add_argument('--gqa',type=Path);group.add_argument('--mla',type=Path)
+    p.add_argument('--output',type=Path,required=True)
     a=p.parse_args()
     if a.output.exists():raise FileExistsError(a.output)
-    benchmark(a.mha,a.gqa,a.output)
+    benchmark(a.mha,a.mla if a.mla is not None else a.gqa,a.output,'mla' if a.mla is not None else 'gqa')
 
 
 if __name__=='__main__':main()

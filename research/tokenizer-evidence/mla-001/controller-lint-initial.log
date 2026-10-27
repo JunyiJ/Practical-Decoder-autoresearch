@@ -1,0 +1,253 @@
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_mla_study.py:47:13
+   |
+45 |           rows += [('confirm', seed, family, selection[family]) for i, seed in enumerate(SEEDS)
+46 |                    for family in (('mha', 'mla') if i % 2 == 0 else ('mla', 'mha'))]
+47 |       return [dict(id=f'{stage}-{family}-w256-s{seed}-lr{lr:g}', stage=stage, family=family,
+   |  _____________^
+48 | |                  seed=seed, lr=lr, width=256, steps=1200) for stage, seed, family, lr in rows]
+   | |_________________________________________________________^
+help: Rewrite as a literal
+   |
+46 |                  for family in (('mha', 'mla') if i % 2 == 0 else ('mla', 'mha'))]
+   -     return [dict(id=f'{stage}-{family}-w256-s{seed}-lr{lr:g}', stage=stage, family=family,
+   -                  seed=seed, lr=lr, width=256, steps=1200) for stage, seed, family, lr in rows]
+47 +     return [{'id': f'{stage}-{family}-w256-s{seed}-lr{lr:g}', 'stage': stage, 'family': family,
+48 +                  'seed': seed, 'lr': lr, 'width': 256, 'steps': 1200} for stage, seed, family, lr in rows]
+49 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/research/tokenizer_mla_study.py:80:12
+   |
+78 |                   and all(d <= .01 for d in intervals[0]['paired_seed_deltas'].values())
+79 |                   and all(i['conditional_text_bootstrap_95pct'][1] <= .01 for i in intervals))
+80 |       return dict(adopted=False, quality_eligible=eligible, intervals=intervals,
+   |  ____________^
+81 | |                 reason='Quality gate only. All serial cache/timing measurements and artifact review required; test closed.')
+   | |____________________________________________________________________________________________________________________________^
+help: Rewrite as a literal
+   |
+79 |                 and all(i['conditional_text_bootstrap_95pct'][1] <= .01 for i in intervals))
+   -     return dict(adopted=False, quality_eligible=eligible, intervals=intervals,
+   -                 reason='Quality gate only. All serial cache/timing measurements and artifact review required; test closed.')
+80 +     return {'adopted': False, 'quality_eligible': eligible, 'intervals': intervals,
+81 +                 'reason': 'Quality gate only. All serial cache/timing measurements and artifact review required; test closed.'}
+82 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+SIM102 Use a single `if` statement instead of nested `if` statements
+   --> src/research/tokenizer_mla_study.py:98:9
+    |
+ 96 |       current = source_fingerprint()
+ 97 |       for name, value in plan['source'].items():
+ 98 | /         if (name.startswith(('src/attention/', 'src/models/', 'src/train/', 'src/data/', 'src/utils/'))
+ 99 | |                 or name in ('requirements.txt', 'src/research/tokenizer_study.py', 'src/research/coverage_eval.py')):
+100 | |             if current.get(name) != value:
+    | |__________________________________________^
+101 |                   raise ValueError('Pilot model/training/evaluation source changed')
+102 |       review = json.loads((PILOT/'review.json').read_text())
+    |
+help: Combine `if` statements using `and`
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/tokenizer_mla_study.py:120:12
+    |
+118 |       pair = max(resource['mla_pilot_pair_bytes'], resource['largest_preserved_width256_mha_pair_bytes'])
+119 |       cfg = config(output/'template', 'mha', 2901, RATES[0])
+120 |       plan = dict(version=1, source=source_fingerprint(), runtime=runtime_identity(), config=cfg,
+    |  ____________^
+121 | |                 source_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+122 | |                 recipe_sha256=file_digest(RECIPE), protocol_sha256=file_digest(PROTOCOL),
+123 | |                 corpus_sha256=file_digest(Path(cfg['data']['path'])), resource_review_sha256=file_digest(RESOURCE),
+124 | |                 pilot_review_sha256=file_digest(PILOT/'review.json'),
+125 | |                 max_trials=10, steps=1200, screen_seed=2901, confirm_seeds=list(SEEDS),
+126 | |                 learning_rates=list(RATES), neutrality_margin=.01, min_cache_reduction=.6,
+127 | |                 job_seconds=7200, reserve_bytes=8*1024**3, max_output_bytes=7*1024**3,
+128 | |                 per_trial_budget_bytes=math.ceil(pair*1.15))
+    | |____________________________________________________________^
+129 |       check_budget(plan, 0, 0, shutil.disk_usage(ROOT).free)
+130 |       output.mkdir(exist_ok=False)
+    |
+help: Rewrite as a literal
+    |
+119 |     cfg = config(output/'template', 'mha', 2901, RATES[0])
+    -     plan = dict(version=1, source=source_fingerprint(), runtime=runtime_identity(), config=cfg,
+    -                 source_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+    -                 recipe_sha256=file_digest(RECIPE), protocol_sha256=file_digest(PROTOCOL),
+    -                 corpus_sha256=file_digest(Path(cfg['data']['path'])), resource_review_sha256=file_digest(RESOURCE),
+    -                 pilot_review_sha256=file_digest(PILOT/'review.json'),
+    -                 max_trials=10, steps=1200, screen_seed=2901, confirm_seeds=list(SEEDS),
+    -                 learning_rates=list(RATES), neutrality_margin=.01, min_cache_reduction=.6,
+    -                 job_seconds=7200, reserve_bytes=8*1024**3, max_output_bytes=7*1024**3,
+    -                 per_trial_budget_bytes=math.ceil(pair*1.15))
+120 +     plan = {'version': 1, 'source': source_fingerprint(), 'runtime': runtime_identity(), 'config': cfg,
+121 +                 'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+122 +                 'recipe_sha256': file_digest(RECIPE), 'protocol_sha256': file_digest(PROTOCOL),
+123 +                 'corpus_sha256': file_digest(Path(cfg['data']['path'])), 'resource_review_sha256': file_digest(RESOURCE),
+124 +                 'pilot_review_sha256': file_digest(PILOT/'review.json'),
+125 +                 'max_trials': 10, 'steps': 1200, 'screen_seed': 2901, 'confirm_seeds': list(SEEDS),
+126 +                 'learning_rates': list(RATES), 'neutrality_margin': .01, 'min_cache_reduction': .6,
+127 +                 'job_seconds': 7200, 'reserve_bytes': 8*1024**3, 'max_output_bytes': 7*1024**3,
+128 +                 'per_trial_budget_bytes': math.ceil(pair*1.15)}
+129 |     check_budget(plan, 0, 0, shutil.disk_usage(ROOT).free)
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/tokenizer_mla_study.py:132:38
+    |
+130 |     output.mkdir(exist_ok=False)
+131 |     atomic_json(output/'plan.json', plan)
+132 |     atomic_json(output/'state.json', dict(status='prepared', selection=None, records=[], plan_sha256=digest(plan)))
+    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+133 |     return plan
+    |
+help: Rewrite as a literal
+    |
+131 |     atomic_json(output/'plan.json', plan)
+    -     atomic_json(output/'state.json', dict(status='prepared', selection=None, records=[], plan_sha256=digest(plan)))
+132 +     atomic_json(output/'state.json', {'status': 'prepared', 'selection': None, 'records': [], 'plan_sha256': digest(plan)})
+133 |     return plan
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/tokenizer_mla_study.py:176:47
+    |
+174 |             spec = queue[0]; trial = output/spec['id']; trial.mkdir(exist_ok=False)
+175 |             cfg = config(trial, spec['family'], spec['seed'], spec['lr'])
+176 |             atomic_json(trial/'request.json', dict(spec=spec, config=cfg, result_path=str(trial/'result.json')))
+    |                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+177 |             state.update(status='running', active=spec, controller_pid=os.getpid()); atomic_json(output/'state.json', state)
+178 |             print('START '+spec['id'], flush=True)
+    |
+help: Rewrite as a literal
+    |
+175 |             cfg = config(trial, spec['family'], spec['seed'], spec['lr'])
+    -             atomic_json(trial/'request.json', dict(spec=spec, config=cfg, result_path=str(trial/'result.json')))
+176 +             atomic_json(trial/'request.json', {'spec': spec, 'config': cfg, 'result_path': str(trial/'result.json')})
+177 |             state.update(status='running', active=spec, controller_pid=os.getpid()); atomic_json(output/'state.json', state)
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/research/tokenizer_mla_study.py:211:57
+    |
+209 |             run(output)
+210 |         except Exception as error:
+211 |             atomic_json(output/'controller-error.json', dict(error=type(error).__name__, message=str(error)))
+    |                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+212 |             raise
+    |
+help: Rewrite as a literal
+    |
+210 |         except Exception as error:
+    -             atomic_json(output/'controller-error.json', dict(error=type(error).__name__, message=str(error)))
+211 +             atomic_json(output/'controller-error.json', {'error': type(error).__name__, 'message': str(error)})
+212 |             raise
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_tokenizer_mla_study.py:2:1
+   |
+ 1 |   """Finite panel, safety budgets, and explicit MLA benchmark family prerequisites."""
+ 2 | / import copy
+ 3 | | import json
+ 4 | | from pathlib import Path
+ 5 | | from types import SimpleNamespace
+ 6 | |
+ 7 | | import pytest
+ 8 | | import torch
+ 9 | | from omegaconf import OmegaConf
+10 | |
+11 | | from src.research import tokenizer_mla_study as study
+12 | | from src.research import tokenizer_attention_bench as bench
+   | |___________________________________________________________^
+help: Organize imports
+   |
+10 |
+11 + from src.research import tokenizer_attention_bench as bench
+12 | from src.research import tokenizer_mla_study as study
+   - from src.research import tokenizer_attention_bench as bench
+13 |
+   |
+
+F401 [*] `omegaconf.OmegaConf` imported but unused
+  --> tests/test_tokenizer_mla_study.py:9:23
+   |
+ 7 | import pytest
+ 8 | import torch
+ 9 | from omegaconf import OmegaConf
+   |                       ^^^^^^^^^
+10 |
+11 | from src.research import tokenizer_mla_study as study
+   |
+help: Remove unused import: `omegaconf.OmegaConf`
+  |
+8 | import torch
+  - from omegaconf import OmegaConf
+9 |
+  |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_tokenizer_mla_study.py:16:48
+   |
+15 |   def row(spec, ce):
+16 |       return dict(spec, status='completed', h200=dict(mean_ce=ce, context=128, block_tokens=2048,
+   |  ________________________________________________^
+17 | |                 block_target_counts=[2048]*4, block_loss_sums=[2048*ce]*4))
+   | |__________________________________________________________________________^
+help: Rewrite as a literal
+   |
+15 | def row(spec, ce):
+   -     return dict(spec, status='completed', h200=dict(mean_ce=ce, context=128, block_tokens=2048,
+   -                 block_target_counts=[2048]*4, block_loss_sums=[2048*ce]*4))
+16 +     return dict(spec, status='completed', h200={'mean_ce': ce, 'context': 128, 'block_tokens': 2048,
+17 +                 'block_target_counts': [2048]*4, 'block_loss_sums': [2048*ce]*4})
+18 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_tokenizer_mla_study.py:46:12
+   |
+45 | def test_storage_reserves_all_remaining_trials():
+46 |     plan = dict(reserve_bytes=8000, max_output_bytes=7000, per_trial_budget_bytes=600)
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+47 |     study.check_budget(plan,0,10,14000)
+48 |     with pytest.raises(RuntimeError): study.check_budget(plan,0,10,13999)
+   |
+help: Rewrite as a literal
+   |
+45 | def test_storage_reserves_all_remaining_trials():
+   -     plan = dict(reserve_bytes=8000, max_output_bytes=7000, per_trial_budget_bytes=600)
+46 +     plan = {'reserve_bytes': 8000, 'max_output_bytes': 7000, 'per_trial_budget_bytes': 600}
+47 |     study.check_budget(plan,0,10,14000)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_tokenizer_mla_study.py:97:16
+   |
+95 |     def timed(model,cfg,ids):
+96 |         calls.append((len(ids),model.family))
+97 |         return dict(prefill_seconds=.01,decode_seconds=.1,kv_bytes=100)
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+98 |     monkeypatch.setattr(bench,'timed',timed)
+99 |     result=bench.benchmark(tmp_path/'mha.pt',tmp_path/f'{candidate}.pt',tmp_path/'bench.json',candidate)
+   |
+help: Rewrite as a literal
+   |
+96 |         calls.append((len(ids),model.family))
+   -         return dict(prefill_seconds=.01,decode_seconds=.1,kv_bytes=100)
+97 +         return {'prefill_seconds': .01,'decode_seconds': .1,'kv_bytes': 100}
+98 |     monkeypatch.setattr(bench,'timed',timed)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+Found 12 errors.
+[*] 2 fixable with `--fix` (9 unsafe fixes available with `--fix --unsafe-fixes`).

@@ -1,6 +1,6 @@
 # Tokenizer MLA results
 
-No quality trials yet. The completed horizon round adopted the shorter GQA
+No quality results yet. The completed horizon round adopted the shorter GQA
 recipe; this next round evaluates an MLA architecture using a fresh MHA control.
 See [prospective protocol](TOKENIZER_MLA_PROTOCOL.md).
 
@@ -21,5 +21,21 @@ projection includes the larger preserved width256 MHA pair,15% overhead and a
 separate8GiB reserve. [Resource review](tokenizer-evidence/mla-pilot-001/resource-review.json).
 Completed temporary pytest fixtures were cleared only after saving logs and a
 manifest; no research checkpoints were removed. All prior failures remain
-preserved. Quality controller and MLA-specific benchmark integration are next;
-no quality launch until their tests and source freeze pass.
+preserved. Quality controller and MLA-specific benchmark integration are complete. The
+initial41-test suite passed, followed by7 focused controller/guard checks,
+including serial ten-trial progression, frozen selection, STOP behavior and
+no restart of completed runs. The suites overlap; counts are not additive.
+The benchmark retains GQA labels for legacy calls and uses explicit MLA labels
+for the new comparison. Arithmetic/cache implementation remains unchanged
+from the passed MPS pilot. Source freeze and fresh disk projection precede launch.
+
+## Quality launch prerequisites
+
+The quality protocol contains four width256 screening trials (one seed, two LRs
+per family) and six fresh confirmation trials. Quality eligibility is separate
+from inference memory/latency measurement and final adoption review. The7GiB
+output cap accommodates the measured ten-pair projection plus15% overhead;
+the8GiB free-space reserve is retained and checked against all remaining trials.
+A global lock prevents a second training or timing worker. Source/runtime,
+protocol/recipe/corpus and pilot/resource evidence are hashed into the plan.
+Failure logs and all checkpoints are retained. Test remains closed.
