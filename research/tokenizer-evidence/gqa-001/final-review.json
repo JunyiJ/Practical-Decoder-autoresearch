@@ -1,0 +1,249 @@
+{
+  "status": "completed",
+  "quality": [
+    {
+      "intervals": [
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.008255810841274781,
+            0.027745483797723694
+          ],
+          "mean_delta": 0.017884195968121946,
+          "paired_seed_deltas": {
+            "2711": 0.023515536991508768,
+            "2712": 0.04020275440384147,
+            "2713": -0.010065703490984568
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 17,
+          "text_block_tokens": 2048
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.007822076225527441,
+            0.02836044965786377
+          ],
+          "mean_delta": 0.017884195968121946,
+          "paired_seed_deltas": {
+            "2711": 0.023515536991508768,
+            "2712": 0.04020275440384147,
+            "2713": -0.010065703490984568
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 9,
+          "text_block_tokens": 4096
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.0063586612382885346,
+            0.03148940540134542
+          ],
+          "mean_delta": 0.017884195968121946,
+          "paired_seed_deltas": {
+            "2711": 0.023515536991508768,
+            "2712": 0.04020275440384147,
+            "2713": -0.010065703490984568
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 5,
+          "text_block_tokens": 8192
+        }
+      ],
+      "quality_eligible": false,
+      "width": 64,
+      "mean_h200_ce": {
+        "mha": 4.947097225671245,
+        "gqa": 4.964981421639366
+      }
+    },
+    {
+      "intervals": [
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            -0.0729113998032415,
+            -0.03770372523415061
+          ],
+          "mean_delta": -0.05492903968910069,
+          "paired_seed_deltas": {
+            "2711": -0.06129742090676338,
+            "2712": -0.07631853891677576,
+            "2713": -0.02717115924376401
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 17,
+          "text_block_tokens": 2048
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            -0.06982862480586506,
+            -0.0399095541868699
+          ],
+          "mean_delta": -0.0549290396891007,
+          "paired_seed_deltas": {
+            "2711": -0.06129742090676338,
+            "2712": -0.07631853891677576,
+            "2713": -0.02717115924376401
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 9,
+          "text_block_tokens": 4096
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            -0.06974164582067892,
+            -0.03979839528621465
+          ],
+          "mean_delta": -0.0549290396891007,
+          "paired_seed_deltas": {
+            "2711": -0.06129742090676338,
+            "2712": -0.07631853891677576,
+            "2713": -0.02717115924376401
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 5,
+          "text_block_tokens": 8192
+        }
+      ],
+      "quality_eligible": true,
+      "width": 256,
+      "mean_h200_ce": {
+        "mha": 5.500381175899305,
+        "gqa": 5.4454521362102035
+      }
+    }
+  ],
+  "inference": [
+    {
+      "width": 64,
+      "batch": 1,
+      "arms": {
+        "mha": {
+          "kv_bytes": 262144,
+          "parameter_bytes": 26516480,
+          "median_prefill_seconds": 0.005036541726440191,
+          "median_decode_seconds": 0.1698116664774716,
+          "decode_seconds_range": [
+            0.16307066660374403,
+            0.22322979010641575
+          ]
+        },
+        "gqa": {
+          "kv_bytes": 131072,
+          "parameter_bytes": 26449920,
+          "median_prefill_seconds": 0.0049827913753688335,
+          "median_decode_seconds": 0.17443620832636952,
+          "decode_seconds_range": [
+            0.16616379097104073,
+            0.21060854196548462
+          ]
+        }
+      },
+      "kv_reduction": 0.5,
+      "decode_median_ratio": 1.0272333576651604
+    },
+    {
+      "width": 64,
+      "batch": 8,
+      "arms": {
+        "mha": {
+          "kv_bytes": 2097152,
+          "parameter_bytes": 26516480,
+          "median_prefill_seconds": 0.007509707938879728,
+          "median_decode_seconds": 0.17102841706946492,
+          "decode_seconds_range": [
+            0.1616975413635373,
+            0.19774462562054396
+          ]
+        },
+        "gqa": {
+          "kv_bytes": 1048576,
+          "parameter_bytes": 26449920,
+          "median_prefill_seconds": 0.007775790989398956,
+          "median_decode_seconds": 0.17538875015452504,
+          "decode_seconds_range": [
+            0.16636270843446255,
+            0.22651204094290733
+          ]
+        }
+      },
+      "kv_reduction": 0.5,
+      "decode_median_ratio": 1.0254947871223594
+    },
+    {
+      "width": 256,
+      "batch": 1,
+      "arms": {
+        "mha": {
+          "kv_bytes": 1048576,
+          "parameter_bytes": 115404800,
+          "median_prefill_seconds": 0.006900666281580925,
+          "median_decode_seconds": 0.17408193740993738,
+          "decode_seconds_range": [
+            0.1719438750296831,
+            0.21069341525435448
+          ]
+        },
+        "gqa": {
+          "kv_bytes": 524288,
+          "parameter_bytes": 114352128,
+          "median_prefill_seconds": 0.006948000285774469,
+          "median_decode_seconds": 0.17607075022533536,
+          "decode_seconds_range": [
+            0.17380004189908504,
+            0.2006666250526905
+          ]
+        }
+      },
+      "kv_reduction": 0.5,
+      "decode_median_ratio": 1.0114245788218372
+    },
+    {
+      "width": 256,
+      "batch": 8,
+      "arms": {
+        "mha": {
+          "kv_bytes": 8388608,
+          "parameter_bytes": 115404800,
+          "median_prefill_seconds": 0.011899895500391722,
+          "median_decode_seconds": 0.1759773539379239,
+          "decode_seconds_range": [
+            0.17251712549477816,
+            0.2048991248011589
+          ]
+        },
+        "gqa": {
+          "kv_bytes": 4194304,
+          "parameter_bytes": 114352128,
+          "median_prefill_seconds": 0.011353687848895788,
+          "median_decode_seconds": 0.17997227096930146,
+          "decode_seconds_range": [
+            0.17798170819878578,
+            0.2384227504953742
+          ]
+        }
+      },
+      "kv_reduction": 0.5,
+      "decode_median_ratio": 1.0227013132200338
+    }
+  ],
+  "adoption": {
+    "64": false,
+    "256": true
+  },
+  "scope": "Adopt width256 half-KV GQA at LR0.00125 as a scoped serving recipe versus equally tuned MHA at LR0.00125. Retain general MHA LR0.0025 incumbent; no fresh LR0.00125-vs0.0025 general baseline adoption. Short context128 Mac MPS FP32 evidence only; test closed.",
+  "limitations": "Same-agent artifact review and separately recomputed conditional text intervals; adaptive validation, not independent seed-population or test evidence. Timing uses two resident models, fixed training tokens, 32 prefill +64 decode, 24 measured repeats per family/batch across three checkpoints; KV allocation reductions are not total-memory or cloud-cost savings. GQA decodes slightly slower here.",
+  "source_runtime_protocol_corpus_unchanged": true,
+  "training_seconds": 6600.20462410897
+}

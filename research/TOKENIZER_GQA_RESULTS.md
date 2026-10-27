@@ -3,7 +3,48 @@
 The [finite protocol](TOKENIZER_GQA_PROTOCOL.md) compares MHA and half-KV-head
 GQA on the adopted GPT-2 tokenizer backbone. The previous LR round adopted
 0.0025; this round gives each family equal tuning at0.0025/0.00125 before fresh
-confirmation. No GQA quality result or adoption is established yet.
+confirmation. The round is complete: adopt width256 GQA as a scoped serving recipe; retain MHA at width64.
+
+## Completed round and inference review
+
+All20 trials and six fresh-checkpoint inference comparisons completed. All saved
+artifacts passed review; source/runtime/protocol/corpus stayed frozen. The three
+width256 seed deltas are -0.061297, -0.076319 and -0.027171 nats/token. Mean
+H200 CE is5.500381 for MHA versus5.445452 for GQA. The4096-token conditional
+95% interval is[-0.069829,-0.039910]; all declared quality checks pass. Width64
+fails as detailed below. Test loss remains closed.
+
+Final MPS FP32 timings used three checkpoint pairs, batches1/8,32 prompt tokens
+and64 teacher-forced decode steps, two warmups and eight paired repeats each.
+Full/cached checks passed for every model and batch (maximum absolute error
+0.000023842). Actual cache allocation is halved at each width and batch.
+
+| Width | Batch | MHA / GQA KV bytes | MHA / GQA median decode seconds |
+|---:|---:|---:|---:|
+|64|1|262144 / 131072|0.169812 / 0.174436|
+|64|8|2097152 / 1048576|0.171028 / 0.175389|
+|256|1|1048576 / 524288|0.174082 / 0.176071|
+|256|8|8388608 / 4194304|0.175977 / 0.179972|
+
+Adopt half-KV GQA at width256 and LR0.00125 as a scoped serving recipe relative
+to equally tuned MHA at LR0.00125. Its50% KV saving passes the40% route despite
+observed1.14%/2.27% slower median decode at batches1/8. At context128 the absolute
+cache savings are0.5MiB/4MiB, not a halving of total application memory. Timing
+uses two resident models and has outliers; no guaranteed speed, peak-memory,
+long-context, cloud-cost or production claim follows. Width64 is not adopted.
+The general MHA LR0.0025 incumbent is not replaced by an untested fresh LR-only
+comparison. Training totaled6600.20seconds; all checkpoints are preserved.
+
+[Final review](tokenizer-evidence/gqa-001/final-review.json),
+[width256 serving recipe](tokenizer-evidence/gqa-001/adopted-width256-serving-recipe.json),
+and [raw inference records](tokenizer-evidence/gqa-001/final-inference/).
+
+Next finite hypothesis: shorten the width256 GQA training schedule, with
+prospective duration choices and fresh confirmation. Repeated late validation
+degradation at multiple LRs motivates this HP round before further attention
+comparisons. MLA and3:1 KDA/MLA remain the next structural priorities; MoE,
+activation, normalization and residual alternatives remain in the broader agenda.
+This does not change or reopen the completed GQA experiment.
 
 ## Prerequisites completed
 
@@ -144,6 +185,7 @@ review are also required. The test holdout remains closed.
 | confirm | gqa | 256 | 2712 | 0.00125 | 5.528917 | 5.434492 | 505.62 |
 | confirm | mha | 256 | 2712 | 0.00125 | 5.605393 | 5.510811 | 509.29 |
 | confirm | mha | 256 | 2713 | 0.00125 | 5.557112 | 5.469891 | 506.29 |
+| confirm | gqa | 256 | 2713 | 0.00125 | 5.522909 | 5.442720 | 503.35 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
@@ -156,5 +198,6 @@ Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 - confirm, width64, seed2713, GQA LR0.00125 / MHA LR0.00125: -0.010066.
 - confirm, width256, seed2711, GQA LR0.00125 / MHA LR0.00125: -0.061297.
 - confirm, width256, seed2712, GQA LR0.00125 / MHA LR0.00125: -0.076319.
+- confirm, width256, seed2713, GQA LR0.00125 / MHA LR0.00125: -0.027171.
 
 Frozen family LR selection: {'gqa': 0.00125, 'mha': 0.00125}
