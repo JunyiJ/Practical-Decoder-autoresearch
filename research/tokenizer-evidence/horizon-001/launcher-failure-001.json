@@ -1,0 +1,8 @@
+{
+  "stage": "detached_launcher_before_controller_import",
+  "error": "ModuleNotFoundError: omegaconf",
+  "cause": "Path.resolve followed .venv/bin/python symlink to system executable, bypassing virtual environment",
+  "correction": "Use absolute .venv/bin/python path without resolving the executable symlink",
+  "trial_created": false,
+  "source_or_plan_changed": false
+}

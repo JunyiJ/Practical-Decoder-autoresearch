@@ -34,6 +34,15 @@ Its raw/H200 pair uses560602508bytes; nine pairs with50% headroom project
 7568133858bytes. The measured free space passed that projection plus
 the8GiB reserve. [Resource review](tokenizer-evidence/horizon-pilot-001/resource-review.json).
 
+## Launcher failure and correction
+
+The first detached launcher resolved the virtual-environment Python symlink to
+the system executable, causing an `omegaconf` import failure before controller
+startup. The saved state remained prepared with no trials or checkpoints.
+Preserved the failure log; corrected only the launcher executable to the absolute
+virtual-environment path without resolving its symlink. Source and frozen plan
+are unchanged. This is an environment launch failure, not model-quality evidence.
+
 ## Reviewed trajectories
 
 Only completed, artifact-reviewed records appear here. Test remains closed.
