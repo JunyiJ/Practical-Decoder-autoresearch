@@ -101,6 +101,19 @@ failed quality gate. Retain the general baseline and the existing horizon,
 MLA and Kimi hybrid hypotheses. Test holdout remains closed.
 [Width64 confirmation audit](tokenizer-evidence/gqa-001/width64-confirmation-review.json).
 
+## Width256 trajectory warning persists at LR0.00125
+
+The first completed width256 MHA confirmation (seed2711) passed artifact review:
+full-validation raw CE5.601754 and H200 CE5.520442. Its sampled validation loss
+was lowest among logged evaluations at step1200 (4.638358), then rose to5.394212
+at step2999 while the logged training minibatch CE fell from3.235198 to0.968407.
+These sampled diagnostics are not the full-validation endpoint metric, and the
+retrospective minimum is not an adopted checkpoint or proven optimal horizon.
+The trajectory is consistent with the earlier late-validation degradation even
+at the lower LR, supporting a prospective horizon/schedule experiment. It does
+not isolate a causal mechanism. Complete the frozen architecture comparison
+before changing the training recipe; the paired GQA run is still pending.
+
 ## Reviewed quality trajectories
 
 Only completed, artifact-reviewed trajectories appear here. Quality eligibility
@@ -123,6 +136,7 @@ review are also required. The test holdout remains closed.
 | confirm | mha | 64 | 2712 | 0.00125 | 4.955060 | 4.937129 | 253.90 |
 | confirm | mha | 64 | 2713 | 0.00125 | 4.960276 | 4.953354 | 255.46 |
 | confirm | gqa | 64 | 2713 | 0.00125 | 4.949657 | 4.943288 | 254.46 |
+| confirm | mha | 256 | 2711 | 0.00125 | 5.601754 | 5.520442 | 509.48 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
