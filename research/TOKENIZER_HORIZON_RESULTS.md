@@ -65,6 +65,13 @@ This is one of three required fresh pairs, so there is no adoption decision or
 reproducible-improvement claim yet. The effect remains a combined duration,
 cooldown and EMA-window comparison. Seed2812 is underway serially.
 
+## Second fresh pair (incomplete confirmation)
+
+Seed2812 also favors1200 updates: H200 CE4.755463 versus5.450113 at3000,
+a paired delta of -0.694650 nats/token. Both artifacts passed review. Two of
+three required fresh pairs are complete; the third is underway. No adoption
+or completed-round conclusion is made before that pair and the final audit.
+
 ## Reviewed trajectories
 
 Only completed, artifact-reviewed records appear here. Test remains closed.
@@ -77,7 +84,9 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | confirm | 2811 | 3000 | 5.566267 | 5.482465 | 499.94 |
 | confirm | 2811 | 1200 | 4.736564 | 4.745014 | 202.62 |
 | confirm | 2812 | 1200 | 4.737855 | 4.755463 | 200.56 |
+| confirm | 2812 | 3000 | 5.532091 | 5.450113 | 506.23 |
 
 Frozen selection: 1200 updates.
 
 - Seed2811, candidate minus3000 H200 CE: -0.737451.
+- Seed2812, candidate minus3000 H200 CE: -0.694650.
