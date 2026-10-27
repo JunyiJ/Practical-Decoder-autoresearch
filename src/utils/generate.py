@@ -9,9 +9,8 @@ from typing import Optional
 import torch
 from omegaconf import OmegaConf
 
-from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
-from .checkpoint import read_checkpoint, load_model_weights
+from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
 from .device import synchronize_device, reset_peak_memory, memory_measurement
 from ..attention.cache import KVCache
 
@@ -178,19 +177,13 @@ def main() -> None:
         raise ValueError("Checkpoint missing cfg; cannot reconstruct model.")
     cfg = OmegaConf.create(ckpt["cfg"])
 
-    loader = TinyDataLoader(
-        data_path=args.data_path,
-        batch_size=1,
-        block_size=cfg.model.block_size,
-        device=device,
-    )
-    cfg.model.vocab_size = loader.vocab_size
+    loader = checkpoint_loader(cfg, ckpt, args.data_path, device)
 
     model = GPT(cfg.model).to(device)
     load_model_weights(model, ckpt)
     model.eval()
 
-    idx = _encode(args.prompt, loader.stoi).unsqueeze(0).to(device)
+    idx = torch.tensor(loader.encode(args.prompt), dtype=torch.long).unsqueeze(0).to(device)
     caches = None
     if args.enable_cache and cfg.model.attn_type in ("gqa", "mha", "mla", "gated_mla", "kda"):
         caches = [

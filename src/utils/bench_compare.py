@@ -12,7 +12,7 @@ from omegaconf import OmegaConf
 from ..attention.cache import KVCache
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
-from .checkpoint import read_checkpoint, load_model_weights
+from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
 from .device import synchronize_device, reset_peak_memory, memory_measurement
 
 try:
@@ -126,13 +126,7 @@ def _load_model(
     if "cfg" not in ckpt:
         raise ValueError(f"Checkpoint missing cfg: {checkpoint}")
     cfg = OmegaConf.create(ckpt["cfg"])
-    loader = TinyDataLoader(
-        data_path=data_path,
-        batch_size=1,
-        block_size=cfg.model.block_size,
-        device=device,
-    )
-    cfg.model.vocab_size = loader.vocab_size
+    loader = checkpoint_loader(cfg, ckpt, data_path, device)
     model = GPT(cfg.model).to(device)
     load_model_weights(model, ckpt)
     model.eval()
@@ -237,8 +231,8 @@ def main() -> None:
 
     if args.batch_size <= 0:
         raise ValueError("batch_size must be > 0")
-    mha_prompt = _encode(args.prompt, mha_loader.stoi).unsqueeze(0)
-    gqa_prompt = _encode(args.prompt, gqa_loader.stoi).unsqueeze(0)
+    mha_prompt = torch.tensor(mha_loader.encode(args.prompt), dtype=torch.long).unsqueeze(0)
+    gqa_prompt = torch.tensor(gqa_loader.encode(args.prompt), dtype=torch.long).unsqueeze(0)
     mha_idx = mha_prompt.expand(args.batch_size, -1).contiguous().to(device)
     gqa_idx = gqa_prompt.expand(args.batch_size, -1).contiguous().to(device)
 

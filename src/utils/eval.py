@@ -16,7 +16,7 @@ from omegaconf import OmegaConf
 
 from ..data.loaders import TinyDataLoader
 from ..models.gpt import GPT
-from .checkpoint import read_checkpoint, load_model_weights
+from .checkpoint import read_checkpoint, load_model_weights, checkpoint_loader
 
 
 def _select_device(requested: Optional[str]) -> str:
@@ -46,7 +46,7 @@ def evaluate(model: GPT, loader: TinyDataLoader, eval_iters: int) -> tuple[float
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Evaluate a checkpoint on TinyDataLoader.")
+    parser = argparse.ArgumentParser(description="Evaluate a checkpoint with its saved tokenizer and data split.")
     parser.add_argument("--checkpoint", required=True, help="Path to checkpoint file.")
     parser.add_argument("--data-path", required=True, help="Path to training text (for vocab).")
     parser.add_argument("--eval-iters", type=int, default=100)
@@ -59,13 +59,7 @@ def main() -> None:
         raise ValueError("Checkpoint missing cfg; cannot reconstruct model.")
     cfg = OmegaConf.create(ckpt["cfg"])
 
-    loader = TinyDataLoader(
-        data_path=args.data_path,
-        batch_size=cfg.training.batch_size,
-        block_size=cfg.model.block_size,
-        device=device,
-    )
-    cfg.model.vocab_size = loader.vocab_size
+    loader = checkpoint_loader(cfg, ckpt, args.data_path, device)
     model = GPT(cfg.model).to(device)
     load_model_weights(model, ckpt)
 

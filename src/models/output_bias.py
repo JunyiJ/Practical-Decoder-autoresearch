@@ -13,6 +13,17 @@ import math
 POLICY = 'mha4_train_bound_output_bias'
 KINDS = ('none', 'learned_zero', 'learned_train_unigram')
 FIELDS = ('output_bias_kind', 'output_bias_width_policy', 'output_bias_prior')
+TOKENIZER_POLICY = 'mha4_tokenizer_no_output_bias'
+
+
+def tokenizer_no_bias_prior(loader, data_path):
+    """Compact binding for an explicitly absent bias with a subword vocabulary."""
+    from pathlib import Path
+    body = dict(version=2, tokenizer=dict(loader.tokenizer_contract),
+                corpus_sha256=hashlib.sha256(Path(data_path).read_bytes()).hexdigest(),
+                train_fraction=loader.train_fraction, val_fraction=loader.val_fraction,
+                train_ids_sha256=digest(loader.train_data.tolist()))
+    return dict(body, prior_sha256=digest(body))
 
 
 def _get(cfg, key, default=None):
@@ -118,6 +129,21 @@ def validate_prior(prior, vocab_size):
 
 def output_bias_contract(cfg):
     if not any(_has(cfg,k) for k in FIELDS): return None
+    if _get(cfg, 'output_bias_width_policy') == TOKENIZER_POLICY:
+        from .readout_norm import readout_norm_contract
+        if _get(cfg, 'output_bias_kind') != 'none' or readout_norm_contract(cfg) is None:
+            raise ValueError('Tokenizer policy requires absent output bias and inherited readout')
+        raw = _get(cfg, 'output_bias_prior')
+        # OmegaConf containers must be normalized before hashing.
+        from omegaconf import OmegaConf
+        p = OmegaConf.to_container(raw, resolve=True) if OmegaConf.is_config(raw) else dict(raw)
+        body = {k: v for k, v in p.items() if k != 'prior_sha256'}
+        if (set(body) != {'version', 'tokenizer', 'corpus_sha256', 'train_fraction', 'val_fraction', 'train_ids_sha256'}
+                or p['version'] != 2 or p['prior_sha256'] != digest(body)
+                or p['tokenizer']['vocab_size'] != _get(cfg, 'vocab_size')
+                or p['tokenizer']['name'] != 'gpt2' or p['tokenizer']['split_unit'] != 'raw_text'):
+            raise ValueError('Invalid tokenizer no-bias binding')
+        return dict(output_bias_kind='none', output_bias_width_policy=TOKENIZER_POLICY, output_bias_prior=p)
     if _get(cfg,'output_bias_kind') not in KINDS or _get(cfg,'output_bias_width_policy') != POLICY:
         raise ValueError('Output bias requires its explicit reviewed kind and policy')
     from .readout_norm import readout_norm_contract
@@ -130,7 +156,7 @@ def output_bias_contract(cfg):
 
 def output_bias_signature(cfg):
     c = output_bias_contract(cfg)
-    return None if c is None else (c['output_bias_kind'], POLICY, c['output_bias_prior']['prior_sha256'])
+    return None if c is None else (c['output_bias_kind'], c['output_bias_width_policy'], c['output_bias_prior']['prior_sha256'])
 
 
 def build_output_bias(cfg):
@@ -154,6 +180,10 @@ def validate_output_bias_training_data(cfg, loader, data_path):
     """Check binding before any model construction; never sample a split."""
     c = output_bias_contract(cfg)
     if c is None: return
+    if c['output_bias_width_policy'] == TOKENIZER_POLICY:
+        if not hasattr(loader, 'tokenizer_contract') or tokenizer_no_bias_prior(loader, data_path) != c['output_bias_prior']:
+            raise ValueError('Declared tokenizer prior differs from actual training corpus/split')
+        return
     from pathlib import Path
     p = build_training_prior(Path(data_path).read_bytes(), loader.train_fraction, loader.val_fraction)
     if p != c['output_bias_prior']:

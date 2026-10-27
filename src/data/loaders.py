@@ -1,4 +1,7 @@
 import math
+import hashlib
+import importlib.metadata
+import json
 
 import tiktoken
 import torch
@@ -85,17 +88,55 @@ class TinyDataLoader:
     def decode(self, ids):
         return "".join([self.itos[int(i)] for i in ids])
 
+    def encode(self, text):
+        return [self.stoi[c] for c in text]
+
 class TextDataset(Dataset):
     def __init__(self, data_path, batch_size, block_size, device, seed=0,
-                 train_fraction=.9, val_fraction=.1, eval_seed=None):
+                 train_fraction=.9, val_fraction=.1, eval_seed=None,
+                 batch_layout='independent', split_unit='tokens'):
+        if batch_layout not in {'independent', 'paired_blocks512', 'paired_batch512'}:
+            raise ValueError('Unknown batch_layout')
+        if batch_layout == 'paired_blocks512' and (block_size not in {128,256,512} or batch_size*block_size != 1024):
+            raise ValueError('paired_blocks512 requires context128/256/512 and1024 targets/update')
+        if batch_layout == 'paired_batch512' and (block_size != 128 or batch_size not in {8,16,32}):
+            raise ValueError('paired_batch512 requires context128 and batch8/16/32')
+        if split_unit not in {'tokens', 'raw_text'}:
+            raise ValueError('Unknown split_unit')
+        self.batch_layout = batch_layout
         with open(data_path, 'r', encoding='utf-8') as f:
             text = f.read()
         self.enc = tiktoken.get_encoding("gpt2")
-        self.data = torch.tensor(self.enc.encode(text), dtype=torch.long)
         self.batch_size = batch_size
         self.block_size = block_size
         self.device = device
-        _configure_splits(self, self.data, train_fraction, val_fraction, seed, eval_seed)
+        if split_unit == 'tokens':  # Preserve the old standalone loader API.
+            self.data = torch.tensor(self.enc.encode(text), dtype=torch.long)
+            _configure_splits(self, self.data, train_fraction, val_fraction, seed, eval_seed)
+        else:
+            # Freeze raw-text boundaries before BPE, so no merge crosses splits.
+            _configure_splits(self, text, train_fraction, val_fraction, seed, eval_seed)
+            self.split_texts = dict(self.splits)
+            self.splits = {k: torch.tensor(self.encode(v), dtype=torch.long)
+                           for k, v in self.split_texts.items()}
+            self.train_data, self.val_data = self.splits['train'], self.splits['val']
+            if 'test' in self.splits:
+                self.test_data = self.splits['test']
+            self.data = torch.cat(list(self.splits.values()))
+        # Bind checkpoints to the actual vocabulary, regex, implementation and splits.
+        # Old test doubles have no vocabulary internals; factory runs always use tiktoken.
+        if hasattr(self.enc, '_mergeable_ranks'):
+            ranks = [(token.hex(), rank) for token, rank in self.enc._mergeable_ranks.items()]
+            spec = dict(name='gpt2', implementation='tiktoken',
+                        version=importlib.metadata.version('tiktoken'),
+                        vocabulary_sha256=hashlib.sha256(json.dumps(sorted(ranks)).encode()).hexdigest(),
+                        pattern=self.enc._pat_str, special_tokens=self.enc._special_tokens,
+                        special_token_policy='ordinary_text', split_unit=split_unit,
+                        vocab_size=self.vocab_size)
+            self.tokenizer_contract = spec
+
+    def encode(self, text):
+        return self.enc.encode(text, disallowed_special=())
 
     def __len__(self):
         return max(0, len(self.data) - self.block_size)
@@ -117,4 +158,3 @@ class TextDataset(Dataset):
         if isinstance(ids, torch.Tensor):
             ids = ids.tolist()
         return self.enc.decode(ids)
-

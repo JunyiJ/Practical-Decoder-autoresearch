@@ -165,7 +165,11 @@ def _resolve_device(cfg: DictConfig) -> str:
 
 def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
     seed = int(getattr(cfg.training, 'seed', 0))
-    return TinyDataLoader(
+    tokenizer = getattr(cfg.data, 'tokenizer', 'char')
+    if tokenizer not in {'char', 'gpt2'}:
+        raise ValueError('data.tokenizer must be char or gpt2')
+    loader_class = TinyDataLoader if tokenizer == 'char' else TextDataset
+    return loader_class(
         data_path=to_absolute_path(cfg.data.path),
         batch_size=cfg.training.batch_size,
         block_size=cfg.model.block_size,
@@ -175,6 +179,7 @@ def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
         val_fraction=getattr(cfg.data, 'val_fraction', .1),
         eval_seed=getattr(cfg.training, 'eval_seed', seed + 1),
         batch_layout=getattr(cfg.training, 'batch_layout', 'independent'),
+        **({'split_unit': 'raw_text'} if tokenizer == 'gpt2' else {}),
     )
 
 
@@ -183,6 +188,7 @@ def _training_contract(cfg: DictConfig, device: str, loader: TinyDataLoader) -> 
     schedule = schedule_contract(cfg.training)
     averaging = averaging_contract(cfg.training)
     return {
+        **({'tokenizer': loader.tokenizer_contract} if hasattr(loader, 'tokenizer_contract') else {}),
         **({'weight_averaging': averaging} if averaging is not None else {}),
         **({'lr_schedule': schedule} if schedule is not None else {}),
         **({'batch_layout': loader.batch_layout} if getattr(loader, 'batch_layout', 'independent') != 'independent' else {}),
@@ -280,14 +286,6 @@ def run_training(cfg: DictConfig) -> dict:
         raise ValueError("training.max_iters must be >= 1")
     device = _resolve_device(cfg)
     loader = _make_loader(cfg, device)
-    # The tiktokenizer doesn't work well for mini-shakspear dataset because the training
-    # data is too limited to learn a big vocab as tiktokenizer
-    # loader = TextDataset(
-    #     data_path=to_absolute_path(cfg.data.path),
-    #     batch_size = cfg.training.batch_size,
-    #     block_size = cfg.model.block_size,
-    #     device = device
-    # )
     cfg.model.vocab_size = loader.vocab_size
     from ..models.output_bias import validate_output_bias_training_data
     validate_output_bias_training_data(cfg.model, loader, to_absolute_path(cfg.data.path))

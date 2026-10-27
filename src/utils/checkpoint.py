@@ -50,6 +50,22 @@ def load_checkpoint(
     return ckpt
 
 
+def checkpoint_loader(cfg, checkpoint, data_path, device):
+    """Rebuild the saved tokenizer/splits and reject changed vocabulary semantics."""
+    from ..train.train import _make_loader
+    from ..models.output_bias import validate_output_bias_training_data
+    cfg.data.path = str(data_path)
+    loader = _make_loader(cfg, device)
+    if cfg.model.vocab_size != loader.vocab_size:
+        raise ValueError('Checkpoint vocabulary differs from tokenizer')
+    saved = checkpoint.get('training_state', {}).get('contract', {}).get('tokenizer')
+    saved = checkpoint.get('tokenizer_contract', saved)
+    if saved != getattr(loader, 'tokenizer_contract', None):
+        raise ValueError('Checkpoint tokenizer identity differs from current tokenizer')
+    validate_output_bias_training_data(cfg.model, loader, str(data_path))
+    return loader
+
+
 def load_model_weights(model, checkpoint, *, for_resume=False):
     """Load strictly; discard only the historical unused RoPE position table.
 

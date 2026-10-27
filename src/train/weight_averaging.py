@@ -180,6 +180,9 @@ def derived_checkpoint_payload(parent_path, half_life):
                        parameter_names=[name for name, _ in tracker.parameters],
                        purpose='inference_only_not_optimizer_resume'),
                    parent_checkpoint=dict(path=str(parent), sha256=parent_sha))
+    tokenizer = raw['training_state']['contract'].get('tokenizer')
+    if tokenizer is not None:
+        payload['tokenizer_contract'] = copy.deepcopy(tokenizer)
     if sha(parent) != parent_sha:
         raise ValueError('Raw parent changed during averaging export')
     return payload
