@@ -56,6 +56,15 @@ artifact review remain required before adoption. Source/runtime, recipe,
 protocol, corpus, resource review and plan hashes remain unchanged.
 [Screen review](tokenizer-evidence/horizon-001/screen-review.json).
 
+## First fresh pair (incomplete confirmation)
+
+Seed2811 favors the selected1200-update recipe: H200 CE4.745014 versus
+5.482465 at3000 (delta -0.737451 nats/token). Measured training time was
+202.62 versus499.94seconds, about59.5% less. Both artifacts passed review.
+This is one of three required fresh pairs, so there is no adoption decision or
+reproducible-improvement claim yet. The effect remains a combined duration,
+cooldown and EMA-window comparison. Seed2812 is underway serially.
+
 ## Reviewed trajectories
 
 Only completed, artifact-reviewed records appear here. Test remains closed.
@@ -66,5 +75,8 @@ Only completed, artifact-reviewed records appear here. Test remains closed.
 | screen | 2801 | 1800 | 4.836779 | 4.784553 | 301.44 |
 | screen | 2801 | 3000 | 5.560157 | 5.475618 | 507.23 |
 | confirm | 2811 | 3000 | 5.566267 | 5.482465 | 499.94 |
+| confirm | 2811 | 1200 | 4.736564 | 4.745014 | 202.62 |
 
 Frozen selection: 1200 updates.
+
+- Seed2811, candidate minus3000 H200 CE: -0.737451.
