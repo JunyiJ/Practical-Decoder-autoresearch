@@ -49,3 +49,18 @@ separately. The known late-validation degradation remains unresolved: this round
 tests architecture under the inherited3000-update budget. A horizon/schedule
 comparison remains active in the backlog alongside MLA, the Kimi hybrid and other
 architecture families. The test holdout stays closed.
+
+## Reviewed quality trajectories
+
+Only completed, artifact-reviewed trajectories appear here. Quality eligibility
+alone does not adopt GQA: cached correctness, measured inference cost and final
+review are also required. The test holdout remains closed.
+
+| Stage | Family | Width | Seed | LR | Raw CE | H200 CE | Training seconds |
+|---|---|---:|---:|---:|---:|---:|---:|
+
+Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
+
+
+Screening incomplete; no frozen family LR choices yet.
+
