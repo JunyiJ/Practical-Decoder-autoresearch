@@ -48,3 +48,13 @@ afb45c98f9185f8f659577ac7c1326140aa42349047be956c4ade06edac8ea10.
 The first MHA screening worker is active under the single-worker lock. Full
 remaining-trial storage projection passed before launch. No completed quality
 results or adoption claim yet. The heartbeat now follows this round's helpers.
+
+## Reviewed trajectories
+
+Only completed, artifact-reviewed records appear here. Test remains closed.
+
+| Stage | Family | Seed | LR | Raw CE | H200 CE | Training seconds |
+|---|---|---:|---:|---:|---:|---:|
+| screen | mha | 2901 | 0.00125 | 4.742776 | 4.746541 | 204.96 |
+
+Screening incomplete; family LRs not yet selected.
