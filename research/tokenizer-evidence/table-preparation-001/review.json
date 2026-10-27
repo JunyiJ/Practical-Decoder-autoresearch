@@ -27,5 +27,14 @@
     "tests/test_tokenizer_tables.py": "a23f462f41ac5cbcceb0770a16446f90d0a9682d3c15d1fbedb4af587f0d6d14"
   },
   "failure_log": "cpu-initial.log",
-  "limits": "No MPS or quality evidence. Initial fixture failures preserved. Final resume skip does not replace earlier successful corrected-suite resume."
+  "limits": "No MPS or quality evidence. Initial fixture failures preserved. Final resume skip does not replace earlier successful corrected-suite resume.",
+  "cpu_storage_recheck": {
+    "passed": 11,
+    "skipped": 0,
+    "seconds": 6.71,
+    "log": "cpu-storage-recheck.log",
+    "reason": "Actual free space temporarily increased above the unchanged fixture guard; explicit prerequisite rerun."
+  },
+  "storage_projection": "storage-projection.json",
+  "storage_limitation": "Observed free-space increase was transient; neither prospective panel fits the later observation. No MPS pilot or quality launch."
 }

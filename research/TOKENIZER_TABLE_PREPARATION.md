@@ -87,3 +87,42 @@ Logs and source hashes are in `tokenizer-evidence/table-preparation-001/`.
 No MPS pilot or quality experiment has been launched. Remaining prerequisites
 are a storage-feasible frozen pilot, its raw/H200 artifact review and measured
 resource costs, followed by a finite equally tuned quality/cost protocol.
+
+## Storage recheck and panel accounting (October27,16:03–16:08UTC)
+
+An observed increase to11,221,049,344 free bytes (10.45GiB) allowed a deliberate
+rerun of the previously skipped CPU fixture. The complete suite passed11 checks
+in6.71s, including exact resume and H200 load. This is new CPU evidence only;
+the earlier failures and skip remain recorded in their original logs. Successful
+disposable CPU fixtures were removed by the test as designed. No research
+checkpoint was removed and no MPS worker was started.
+
+The free-space increase was transient. During the subsequent prospective
+accounting, available space was8,738,013,184 bytes (8.14GiB). Do not dispatch from
+an earlier free-space observation. The pending storage request remains open;
+no human response or external destination has arrived.
+
+`storage_projection.py` and `storage-projection.json` record an explicit possible
+panel: three retained pilots, two LR screening trials per arm and three fresh
+confirmation trials per arm (15 quality trials). This is storage accounting,
+not a frozen quality plan: rates, seeds, adoption criteria and pilot validation
+must still be declared before training. The tensor bound charges five FP32
+copies of every parameter for raw plus H200 storage (model, EMA, two optimizer
+states and exported model), conservatively charging two states even to Muon
+matrices. Add15% plus2MiB per trial and4MiB for round metadata. It assumes one
+raw/H200 pair per trial, one EMA half-life and no periodic/best checkpoints.
+
+| Width | Untied parameters | Tied parameters | Pilot + quality output allowance | Required free bytes including8GiB reserve |
+|---|---:|---:|---:|---:|
+|64|6,612,480|3,396,032|2,335,639,936|10,925,574,528 (10.18GiB)|
+|256|28,588,032|15,722,240|10,101,908,992|18,691,843,584 (17.41GiB)|
+
+Neither panel fits the later observation. The earlier request for roughly5GiB
+was a general estimate, not a promise that a full width256 panel would fit.
+Width64 would be a scoped table-sharing investigation, with no transfer to
+width256 and no reversal of the closed width64 GQA-versus-MHA conclusion.
+Do not silently narrow the panel, omit controls, delete artifacts or lower the
+reserve to make it fit. Once resources permit, choose and freeze the scope;
+then validate the estimate against measured pilot files and recheck the entire
+remaining allocation before each serial launch. Broad architecture and standalone
+HP candidates remain available under the same evidence and resource requirements.
