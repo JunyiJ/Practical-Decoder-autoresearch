@@ -96,9 +96,11 @@ The latest human steering makes architecture a central research objective:
 attention/hybrids, sparse and shared experts, activations, normalization,
 residual topology/scaling, depth/width allocation and embedding/readout design.
 The [architecture agenda](TOKENIZER_ARCHITECTURE_ROADMAP.md) records structural
-hypotheses, comparison controls and scheduling. The current baseline check leads
-to architecture rounds with bounded supporting tuning, rather than repeated
-hyperparameter-only sweeps. These are planned comparisons, not measured gains.
+hypotheses, comparison controls and scheduling. The human clarified that this
+means architecture exploration alongside hyperparameter tuning, not replacing
+tuning or imposing architecture-only ordering. Both remain first-class research
+directions; evidence determines the next finite round. These are planned
+comparisons, not measured gains.
 
 ## Active quality round
 

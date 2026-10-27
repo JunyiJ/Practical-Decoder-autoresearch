@@ -2,15 +2,17 @@
 
 Human steering, October 26, 2026 (Los Angeles): research must explore model
 architecture, including attention, MoE, activation, normalization and residual
-layers, rather than concentrating on hyperparameter tuning. This governs future
+layers, alongside hyperparameter tuning. The human clarified: "not only focus
+on HP tuning." Both are first-class research directions; this is not a mandate
+to replace tuning with architecture work. This governs future
 rounds alongside the [attention roadmap](TOKENIZER_ATTENTION_ROADMAP.md).
 The running, frozen LR transfer experiment finishes unchanged to establish a
-reviewed subword baseline. Its completion must lead to structural experiments,
-not another automatic LR grid or horizon sweep.
+reviewed subword baseline. Choose subsequent architecture or hyperparameter
+experiments from evidence, while ensuring meaningful architectural exploration.
 
 ## Scheduling and decisions
 
-The first architecture phase is inference-aware GQA/MLA, followed by the Kimi
+The proposed architecture sequence is inference-aware GQA/MLA, followed by the Kimi
 KDA/KDA/KDA/MLA hybrid. Then prioritize a finite sparse-versus-dense FFN study
 and a finite activation/normalization/residual study, choosing each specific
 hypothesis from reviewed evidence and implementation feasibility. Do not let
@@ -19,12 +21,15 @@ After each completed architecture round, explicitly review the next untested
 family below. Record why it is selected, deferred or rejected; this agenda is
 not permission to launch all candidates at once.
 
-Each round needs a concrete structural hypothesis, exact equations and layout,
+Each round needs a concrete hypothesis, exact configuration and, for architecture
+changes, equations and layout,
 matched controls, resource pilots, a frozen finite plan, fresh-seed confirmation
 and an adoption rule declared before results. Use equally bounded optimization
-tuning to avoid handicapping a family. Standalone hyperparameter rounds require
-a specific diagnosed issue and an explicit reason to defer architecture work.
-Fix correctness or resource failures before returning to architecture research;
+tuning to avoid handicapping a family. Standalone hyperparameter rounds remain
+valid when motivated by evidence, including LR, schedule, horizon and regularization
+questions. No architecture-only ordering or extra permission is required. Review
+both kinds of hypotheses at each round boundary and record the selection rationale.
+Fix correctness or resource failures before continuing research;
 preserve the failed evidence. Implementation tests do not establish quality.
 
 ## Architecture families and discriminating comparisons
@@ -76,4 +81,5 @@ checkpoint/resume and EMA behavior before serial MPS pilots. Freeze source
 before each finite training round; preserve checkpoints and raw evidence.
 Continue with one local worker and bounded disk, memory and time guards. Publish
 completed iterations, substantive learnings and failures, then advance to the
-next evidence-driven structural hypothesis until the human stops the campaign.
+next evidence-driven architecture or hyperparameter hypothesis until the human
+stops the campaign.
