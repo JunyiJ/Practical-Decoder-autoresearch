@@ -1,0 +1,186 @@
+{
+  "status": "completed",
+  "adopted": false,
+  "strict_quality_gate": false,
+  "neutral_quality_gate": false,
+  "memory_eligible": false,
+  "mean_h200_ce": {
+    "kda": 4.932662208660792,
+    "hybrid": 4.94503608601842
+  },
+  "paired_seed_deltas": {
+    "3011": 0.008523007372158276,
+    "3012": 0.014495227485952888,
+    "3013": 0.014103397214772606
+  },
+  "mean_delta": 0.012373877357627924,
+  "intervals": [
+    {
+      "text_block_tokens": 2048,
+      "conditional_text_bootstrap_95pct": [
+        0.0037321597999038707,
+        0.021186859101151544
+      ]
+    },
+    {
+      "text_block_tokens": 4096,
+      "conditional_text_bootstrap_95pct": [
+        0.004802379551366651,
+        0.019795295091190473
+      ]
+    },
+    {
+      "text_block_tokens": 8192,
+      "conditional_text_bootstrap_95pct": [
+        0.005825263505681543,
+        0.017638698714937166
+      ]
+    }
+  ],
+  "pair_cache_measurements": [
+    {
+      "seed": 3011,
+      "batch": 1,
+      "kv_bytes": {
+        "kda": 41984,
+        "hybrid": 56064
+      },
+      "reduction": -0.33536585365853666
+    },
+    {
+      "seed": 3011,
+      "batch": 8,
+      "kv_bytes": {
+        "kda": 335872,
+        "hybrid": 448512
+      },
+      "reduction": -0.33536585365853666
+    },
+    {
+      "seed": 3012,
+      "batch": 1,
+      "kv_bytes": {
+        "kda": 41984,
+        "hybrid": 56064
+      },
+      "reduction": -0.33536585365853666
+    },
+    {
+      "seed": 3012,
+      "batch": 8,
+      "kv_bytes": {
+        "kda": 335872,
+        "hybrid": 448512
+      },
+      "reduction": -0.33536585365853666
+    },
+    {
+      "seed": 3013,
+      "batch": 1,
+      "kv_bytes": {
+        "kda": 41984,
+        "hybrid": 56064
+      },
+      "reduction": -0.33536585365853666
+    },
+    {
+      "seed": 3013,
+      "batch": 8,
+      "kv_bytes": {
+        "kda": 335872,
+        "hybrid": 448512
+      },
+      "reduction": -0.33536585365853666
+    }
+  ],
+  "inference": [
+    {
+      "batch": 1,
+      "arms": {
+        "kda": {
+          "kv_bytes": 41984,
+          "parameter_bytes": 26629696,
+          "median_prefill_seconds": 0.0120536875911057,
+          "median_decode_seconds": 0.10128170857205987,
+          "median_decode_tokens_per_second": 631.9008991960226,
+          "decode_seconds_range": [
+            0.09844616707414389,
+            0.10342633351683617
+          ],
+          "observed_mps_current_bytes_range": [
+            54261504,
+            59351296
+          ]
+        },
+        "hybrid": {
+          "kv_bytes": 56064,
+          "parameter_bytes": 26602160,
+          "median_prefill_seconds": 0.012234666850417852,
+          "median_decode_seconds": 0.22298102034255862,
+          "median_decode_tokens_per_second": 287.0199789667301,
+          "decode_seconds_range": [
+            0.21788024995476007,
+            0.25322441570460796
+          ],
+          "observed_mps_current_bytes_range": [
+            54275584,
+            59463424
+          ]
+        }
+      },
+      "decode_median_ratio": 2.201592207381772
+    },
+    {
+      "batch": 8,
+      "arms": {
+        "kda": {
+          "kv_bytes": 335872,
+          "parameter_bytes": 26629696,
+          "median_prefill_seconds": 0.015120270662009716,
+          "median_decode_seconds": 0.10144933313131332,
+          "median_decode_tokens_per_second": 5046.854944825702,
+          "decode_seconds_range": [
+            0.09960675053298473,
+            0.10500833299010992
+          ],
+          "observed_mps_current_bytes_range": [
+            54560768,
+            134869504
+          ]
+        },
+        "hybrid": {
+          "kv_bytes": 448512,
+          "parameter_bytes": 26602160,
+          "median_prefill_seconds": 0.015023916494101286,
+          "median_decode_seconds": 0.22787487460300326,
+          "median_decode_tokens_per_second": 2246.884238010602,
+          "decode_seconds_range": [
+            0.22224749997258186,
+            0.26393849961459637
+          ],
+          "observed_mps_current_bytes_range": [
+            54673408,
+            135318016
+          ]
+        }
+      },
+      "decode_median_ratio": 2.2461939134488746
+    }
+  ],
+  "selected_learning_rates": {
+    "hybrid": 0.00125,
+    "gated_mla": 0.0025,
+    "kda": 0.00125
+  },
+  "all_twelve_artifact_reviews_passed": true,
+  "source_runtime_protocol_recipe_corpus_resource_unchanged": true,
+  "scope": "Width64 dense four-layer NoPE KDA/KDA/KDA/gated-MLA versus the selected all-KDA control, both LR0.00125,1200updates/cooldown/H200start800. Only this topology/geometry/budget is tested. No confirmed comparison against all-gated-MLA, GQA, RoPE MLA or MHA and no width256 transfer.",
+  "limitations": "Same-agent audit with separately recomputed conditional text intervals. Adaptive validation, three fresh seeds, not independent test or seed-population uncertainty. FP32 MPS context128, training-text teacher forcing, two models resident. KV savings are not total memory or cloud-price savings. Report latency separately; test closed.",
+  "training_seconds_mean": {
+    "hybrid": 171.96880608828118,
+    "kda": 200.74318995078406
+  },
+  "output_bytes": 1588592602,
+  "free_disk_bytes_at_review": 8868978688,
+  "checkpoint_count": 24
+}

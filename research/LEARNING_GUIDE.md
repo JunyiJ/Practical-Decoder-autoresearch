@@ -1791,3 +1791,27 @@ z1e3 descriptive training-time changes versus zero at widths64/256: +5.58%/+2.13
 The round used 3005.89 active seconds (0.83 hours) and 531.39 MiB before review. All arms use3,000 updates and3,072,000 targets, not equal compute. Six fixed-reference cells alias zero-penalty trajectories prospectively and are not independent repeats. No historical pooling, holdout access, training/scoring rerun or posthoc promotion occurred. [Full results, fixed-LR screens and costs](LOGIT_Z_RESULTS.md).
 
 Next separate preparation compares standard softmax, visible-prefix attenuation and fixed-zero null attention. Its256 metadata/scalar/controller checks passed;28 actual model/trainer cases remain unexecuted. Final logit review now retains the zero objective, but source integration, bounded CPU validation, fresh serial MPS and resource/publication/preregistration gates remain required. All old studies and permanent stop006 stay closed; quality research continues until human interruption.
+
+
+## Tokenizer NoPE hybrid: completed, not adopted (October27,2026)
+
+The width64 dense KDA/KDA/KDA/gated-MLA adaptation failed its prospective
+quality gates versus equally tuned fresh all-KDA. Three-seed mean H200 CE
+4.945036 versus4.932662, delta+0.012374, with every seed favoring all-KDA.
+The conditional4096-token interval is[+0.004802,+0.019795]; test remained closed.
+Only the selected homogeneous control received fresh confirmation, so this
+does not rank all-KDA against retained GQA, RoPE MLA or MHA. No width transfer
+or rejection of Kimi hybrids generally follows from this small local panel.
+
+Actual hybrid state was33.54% larger and median64-token decode2.202x/2.246x
+slower at batch1/8 on FP32 MPS context128, despite faster training. Cache/state,
+training throughput and decode latency are distinct objectives. Count all
+recurrent and convolution histories, not just global KV arrays. The unabsorbed
+NoPE gated-MLA and sequential KDA implementation are not optimized-kernel
+measurements. All12quality records, three timing pairs and24quality checkpoints
+were audited and preserved. [Results and scope](TOKENIZER_HYBRID_RESULTS.md).
+
+Next, investigate embedding/readout sharing under the larger BPE tables with
+matched controls and bounded fair tuning. Do not silently reuse the old
+character-only table contract. Additional checkpoint storage is required before
+new multi-seed training; maintain the8GiB reserve and preserve prior evidence.
