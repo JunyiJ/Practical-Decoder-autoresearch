@@ -142,6 +142,7 @@ review are also required. The test holdout remains closed.
 | confirm | mha | 256 | 2711 | 0.00125 | 5.601754 | 5.520442 | 509.48 |
 | confirm | gqa | 256 | 2711 | 0.00125 | 5.542281 | 5.459145 | 505.40 |
 | confirm | gqa | 256 | 2712 | 0.00125 | 5.528917 | 5.434492 | 505.62 |
+| confirm | mha | 256 | 2712 | 0.00125 | 5.605393 | 5.510811 | 509.29 |
 
 Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 
@@ -153,5 +154,6 @@ Paired GQA minus MHA H200 CE (fixed-LR screens; selected-recipe confirmation):
 - confirm, width64, seed2712, GQA LR0.00125 / MHA LR0.00125: +0.040203.
 - confirm, width64, seed2713, GQA LR0.00125 / MHA LR0.00125: -0.010066.
 - confirm, width256, seed2711, GQA LR0.00125 / MHA LR0.00125: -0.061297.
+- confirm, width256, seed2712, GQA LR0.00125 / MHA LR0.00125: -0.076319.
 
 Frozen family LR selection: {'gqa': 0.00125, 'mha': 0.00125}
