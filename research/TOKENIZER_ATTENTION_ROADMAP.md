@@ -88,6 +88,26 @@ and timing panels do not become fresh tokenizer evidence.
 
 ## Planned sequence and tuning axes
 
+### Implementation preparation checked during the LR round
+
+Read-only inspection of the frozen source found that MHA applies the inherited
+extra `attention_logit_scale=0.5`, while `src/attention/gqa.py` and
+`src/attention/mla.py` do not consume that field. Their dimensional score
+normalization is not this extra multiplier. A new comparison must explicitly
+implement and test the declared multiplier in full and cached attention paths,
+or declare a separately controlled scaling difference. Changing `attn_type`
+alone cannot establish a controlled architecture comparison.
+
+The tokenizer no-output-bias contract calls `readout_norm_contract`, whose
+inherited backbone requires MHA and rejects GQA/MLA geometry overrides. The
+optimizer already has historical GQA/MLA cases, but those do not authorize the
+complete current tokenizer backbone. Add narrowly defined new contracts across
+these dependencies, preserving the old validators and checkpoint semantics.
+Before training, test actual attention arithmetic, cache parity, parameter
+grouping/scaling and rejection of unsupported combinations. This is an
+implementation finding, not measured evidence against GQA or MLA; no active
+source was changed or additional worker launched for this inspection.
+
 Finish the current paired LR screen and confirmation, then resolve its audited
 subword baseline. Prioritize a new inference-aware GQA/MLA comparison and a3:1
 hybrid implementation/comparison. Keep the shorter-horizon warning in the
