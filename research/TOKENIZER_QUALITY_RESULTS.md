@@ -197,6 +197,7 @@ until the frozen screening and fresh-seed/width confirmation rule passes.
 | confirm | 64 | 2613 | 0.01 | 5.761821 | 5.563192 | 2.466602 | 256.72 |
 | confirm | 256 | 2611 | 0.0025 | 6.426976 | 6.322959 | 2.803466 | 519.92 |
 | confirm | 256 | 2611 | 0.01 | 7.410883 | 7.094273 | 3.145450 | 513.40 |
+| confirm | 256 | 2612 | 0.01 | 7.355854 | 7.099229 | 3.147648 | 517.47 |
 
 Paired H200 differences versus LR0.01 within the same stage, width and seed:
 
