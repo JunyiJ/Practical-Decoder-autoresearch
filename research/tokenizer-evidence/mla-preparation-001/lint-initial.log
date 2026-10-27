@@ -1,0 +1,130 @@
+PLR0402 [*] Use `from torch import nn` in lieu of alias
+ --> src/attention/mla.py:4:8
+  |
+3 | import torch
+4 | import torch.nn as nn
+  |        ^^^^^^^^^^^^^^
+5 |
+6 | from ..models.rope import apply_rotary_emb, resolve_position_encoding
+  |
+help: Replace with `from torch import nn`
+  |
+3 | import torch
+  - import torch.nn as nn
+4 + from torch import nn
+5 |
+  |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/models/tokenizer_architecture.py:8:9
+   |
+ 6 |   SCORE_POLICY = 'tokenizer_mha_gqa_score_v1'
+ 7 |   BIAS_POLICY = 'tokenizer_attention_no_output_bias'
+ 8 |   FIXED = dict(tokenizer_architecture_policy=POLICY, n_layers=4, mlp_type='dense',
+   |  _________^
+ 9 | |              ffn='swiglu', ffn_bias=False, ffn_width_policy='swiglu_21_8',
+10 | |              parameterization='mup', base_width=64, norm_type='rmsnorm', rope=1,
+11 | |              dropout=0., attn_dropout=0., block_size=128, vocab_size=50257,
+12 | |              attention_logit_scale=.5, attention_logit_scale_width_policy=SCORE_POLICY,
+13 | |              output_bias_kind='none', output_bias_width_policy=BIAS_POLICY)
+   | |___________________________________________________________________________^
+14 |   VARIABLE = {'dim', 'n_heads', 'attn_type', 'attention_width_policy',
+15 |               'depth_width_policy', 'output_bias_prior'}
+   |
+help: Rewrite as a literal
+   |
+7  | BIAS_POLICY = 'tokenizer_attention_no_output_bias'
+   - FIXED = dict(tokenizer_architecture_policy=POLICY, n_layers=4, mlp_type='dense',
+   -              ffn='swiglu', ffn_bias=False, ffn_width_policy='swiglu_21_8',
+   -              parameterization='mup', base_width=64, norm_type='rmsnorm', rope=1,
+   -              dropout=0., attn_dropout=0., block_size=128, vocab_size=50257,
+   -              attention_logit_scale=.5, attention_logit_scale_width_policy=SCORE_POLICY,
+   -              output_bias_kind='none', output_bias_width_policy=BIAS_POLICY)
+8  + FIXED = {'tokenizer_architecture_policy': POLICY, 'n_layers': 4, 'mlp_type': 'dense',
+9  +              'ffn': 'swiglu', 'ffn_bias': False, 'ffn_width_policy': 'swiglu_21_8',
+10 +              'parameterization': 'mup', 'base_width': 64, 'norm_type': 'rmsnorm', 'rope': 1,
+11 +              'dropout': 0., 'attn_dropout': 0., 'block_size': 128, 'vocab_size': 50257,
+12 +              'attention_logit_scale': .5, 'attention_logit_scale_width_policy': SCORE_POLICY,
+13 +              'output_bias_kind': 'none', 'output_bias_width_policy': BIAS_POLICY}
+14 | VARIABLE = {'dim', 'n_heads', 'attn_type', 'attention_width_policy',
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/models/tokenizer_architecture.py:52:12
+   |
+50 |       # Output-bias validation separately checks the complete tokenizer/data binding.
+51 |       prior = _get(cfg, 'output_bias_prior')
+52 |       return dict(policy=policy, family=family, width=width, heads=heads,
+   |  ____________^
+53 | |                 score_scale=.5, prior_sha256=_get(prior, 'prior_sha256'))
+   | |_________________________________________________________________________^
+help: Rewrite as a literal
+   |
+51 |     prior = _get(cfg, 'output_bias_prior')
+   -     return dict(policy=policy, family=family, width=width, heads=heads,
+   -                 score_scale=.5, prior_sha256=_get(prior, 'prior_sha256'))
+52 +     return {'policy': policy, 'family': family, 'width': width, 'heads': heads,
+53 +                 'score_scale': .5, 'prior_sha256': _get(prior, 'prior_sha256')}
+54 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/models/tokenizer_architecture.py:62:5
+   |
+60 |       if contract is None:
+61 |           return
+62 | /     from torch import nn
+63 | |     from ..attention.mha import MHA
+64 | |     from ..attention.gqa import GQA
+65 | |     from ..attention.mla import MLA
+   | |___________________________________^
+66 |       expected = {'mha': MHA, 'gqa': GQA, 'mla': MLA}[contract['family']]
+67 |       if len(model.transformer.h) != 4 or hasattr(model.transformer, 'wpe'):
+   |
+help: Organize imports
+   |
+62 |     from torch import nn
+   -     from ..attention.mha import MHA
+63 +
+64 |     from ..attention.gqa import GQA
+65 +     from ..attention.mha import MHA
+66 |     from ..attention.mla import MLA
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_tokenizer_mla.py:2:1
+   |
+ 1 |   """MLA tokenizer prerequisites; no quality measurements or holdout scoring."""
+ 2 | / import copy
+ 3 | | import math
+ 4 | |
+ 5 | | import pytest
+ 6 | | import torch
+ 7 | | from omegaconf import OmegaConf
+ 8 | |
+ 9 | | from src.attention.cache import KVCache
+10 | | from src.models.gpt import GPT
+11 | | from src.models.rope import apply_rotary_emb
+12 | | from src.models.tokenizer_architecture import MLA_POLICY, architecture_contract, validate_architecture_model
+13 | | from src.research.tokenizer_attention_study import config
+14 | | from src.train.optimizers import build_optimizer
+15 | | from src.train.train import run_training
+16 | | from src.train.weight_averaging import export_averaged_checkpoint
+17 | | from src.utils.checkpoint import load_model_weights, read_checkpoint
+   | |____________________________________________________________________^
+help: Organize imports
+   |
+11 | from src.models.rope import apply_rotary_emb
+   - from src.models.tokenizer_architecture import MLA_POLICY, architecture_contract, validate_architecture_model
+12 + from src.models.tokenizer_architecture import (
+13 +     MLA_POLICY,
+14 +     architecture_contract,
+15 +     validate_architecture_model,
+16 + )
+17 | from src.research.tokenizer_attention_study import config
+   |
+
+Found 5 errors.
+[*] 3 fixable with `--fix` (2 unsafe fixes available with `--fix --unsafe-fixes`).

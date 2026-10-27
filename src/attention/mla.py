@@ -1,7 +1,7 @@
 import math
 
 import torch
-import torch.nn as nn
+from torch import nn
 
 from ..models.rope import apply_rotary_emb, resolve_position_encoding
 
@@ -23,6 +23,8 @@ class MLA(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.dim = cfg.dim
+        from ..models.attention_scale import resolve_attention_scale
+        self.attention_logit_scale = resolve_attention_scale(cfg)
         self.dimc_q, self.dimc_kv = latent_dimensions(cfg)
         self.n_heads = getattr(cfg, "n_heads", 1)
         if self.dim % self.n_heads != 0:
@@ -91,6 +93,8 @@ class MLA(nn.Module):
 
         # [b, n_heads, s, s]
         att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim + self.head_dim_r)
+        if self.attention_logit_scale != 1.:
+            att = att * self.attention_logit_scale
         if self.causal:
             total_len = k.size(-2)
             mask = self._get_causal_mask(total_len, x.device)
