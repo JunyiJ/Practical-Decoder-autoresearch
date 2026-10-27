@@ -9,6 +9,8 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .logit_z import logit_z_signature
+        self.logit_z_signature = logit_z_signature(cfg)
         from .position_family import position_family_signature
         self.position_family_signature = position_family_signature(cfg)
         from .value_residual import value_residual_signature
@@ -98,7 +100,10 @@ class GPT(nn.Module):
         start_pos=0,
         include_aux_loss=True,
         return_loss_breakdown=False,
+        include_training_objective=False,
     ):
+        from .logit_z import objective_requested
+        objective = objective_requested(self, include_training_objective, targets)
         b, t = idx.size()
         if start_pos + t > self.cfg.block_size:
             raise ValueError(
@@ -148,9 +153,13 @@ class GPT(nn.Module):
         loss = None
         ce_loss = None
         aux_loss = None
+        objective_breakdown = {}
         if targets is not None:
             ce_loss = nn.functional.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
             loss = ce_loss
+            if objective is not None:
+                from .logit_z import training_logit_z
+                loss, objective_breakdown = training_logit_z(logits, targets, ce_loss, objective)
             if aux_losses:
                 aux_loss = sum(aux_losses) / len(aux_losses)
                 if include_aux_loss:
@@ -161,5 +170,6 @@ class GPT(nn.Module):
                 "ce_loss": ce_loss,
                 "aux_loss": aux_loss,
                 "total_loss": loss,
+                **objective_breakdown,
             }
         return logits, loss

@@ -63,6 +63,8 @@ class HybridOptimizer:
 
 
 def build_optimizer(model, training):
+    from ..models.logit_z import validate_logit_z_model
+    validate_logit_z_model(model)
     from ..models.position_family import validate_position_family_model
     validate_position_family_model(model)
     from ..models.value_residual import validate_value_residual_model

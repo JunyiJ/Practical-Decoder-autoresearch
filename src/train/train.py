@@ -350,7 +350,9 @@ def run_training(cfg: DictConfig) -> dict:
         synchronize_device(device)
         iter_start = time.perf_counter()
         xb, yb = loader.get_batch('train')
-        logits, loss, train_loss_breakdown = model(xb, yb, return_loss_breakdown=True)
+        objective_kwargs = ({"include_training_objective": True}
+                            if getattr(model, "logit_z_signature", None) is not None else {})
+        logits, loss, train_loss_breakdown = model(xb, yb, return_loss_breakdown=True, **objective_kwargs)
         optimizer.zero_grad(set_to_none=True)
         if not torch.isfinite(loss).item():
             raise FloatingPointError("Nonfinite training loss")
@@ -431,6 +433,11 @@ def run_training(cfg: DictConfig) -> dict:
                     rss_mb,
                     accel_mb,
                 )
+            if "logit_z_coefficient" in train_loss_breakdown:
+                log.info("Training objective: ce %.6f | logit_z_coefficient %.6g | logit_z_squared_mean %s | logit_z_penalty %s | logit_z_mean %s | total %.6f",
+                         train_ce_loss.item(), train_loss_breakdown["logit_z_coefficient"],
+                         *[None if train_loss_breakdown[k] is None else train_loss_breakdown[k].item()
+                           for k in ("logit_z_squared_mean", "logit_z_penalty", "logit_z_mean")], loss.item())
             if cuda_usage is not None:
                 log.info(
                     "CUDA usage (gpu %d): util %.1f%% | used %.1f / %.1f MB",
@@ -474,6 +481,11 @@ def run_training(cfg: DictConfig) -> dict:
                 "cuda": cuda_usage,
                 "moe_usage": moe_usage,
             }
+            if "logit_z_coefficient" in train_loss_breakdown:
+                metric["train_logit_z_coefficient"] = train_loss_breakdown["logit_z_coefficient"]
+                for key in ("logit_z_squared_mean", "logit_z_penalty", "logit_z_mean"):
+                    value = train_loss_breakdown[key]
+                    metric["train_" + key] = None if value is None else float(value.item())
             metrics.append(metric)
             if best_metric is None or metric['val_loss'] < best_metric['val_loss']:
                 best_metric = metric
