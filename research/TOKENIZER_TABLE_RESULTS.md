@@ -67,3 +67,15 @@ controls remain in all three fresh confirmation seeds. No additional LR is added
 Tied raw/H200 pairs were303,285,837/303,285,773 bytes, below the363,708,672-byte
 allowance. Untied pairs remained560,603,788 bytes, below659,621,888. The full
 remaining allocation fits above8GiB reserve. Source and test holdout stay frozen.
+
+## Fresh confirmation progress
+
+1 of nine confirmation trajectories have completed and passed the saved-artifact
+review. This is an incomplete panel; no paired quality gate or adoption is declared.
+
+| Seed | Arm | Selected LR | Raw CE | H200 CE |
+|---:|---|---:|---:|---:|
+| 3311 | legacy_untied | 0.00125 | 4.738458 | 4.742336 |
+
+All independent LR selections remain frozen. Source/runtime/data provenance and
+remaining disk allocations pass; the serial worker continues. Test loss is closed.
