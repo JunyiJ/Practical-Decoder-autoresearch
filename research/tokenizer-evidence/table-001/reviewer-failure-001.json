@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-28T02:28:10.993428+00:00",
+  "status": "reviewer_assertion_failed",
+  "error": "Counted all model_state elements as trainable parameters, including eight persistent RoPE cosine/sine buffers.",
+  "reported_parameters": 28588032,
+  "state_elements": 28604416,
+  "buffer_elements": 16384,
+  "training_failure": false,
+  "correction": "Count saved canonical EMA parameter_names; separately assert the remaining eight known RoPE buffers. Preserve training source and results."
+}

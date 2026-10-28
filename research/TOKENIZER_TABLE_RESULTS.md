@@ -21,3 +21,23 @@ The frozen [protocol](TOKENIZER_TABLE_PROTOCOL.md) requires six independent LR
 screens followed by nine fresh confirmation trajectories, retaining both untied
 controls. Quality and measured inference review are still outstanding. No table
 recipe is adopted. The closed test holdout remains unused.
+
+## First completed screens (October28,02:28UTC review)
+
+The two legacy_untied screens completed at seed3301. H200 CE is4.763301 at
+LR0.00125 and4.812186 at0.0025. These are single-seed screening observations,
+not fresh confirmation or a table-sharing comparison. All three independent
+rate choices will be persisted only after the six screens finish.
+
+Both raw/H200 pairs passed checkpoint hashes, exact request/config/tokenizer
+lineage,1200-step/41-snapshot checks and saved full-validation arithmetic checks.
+Each pair is560,603,788 bytes, below its659,621,888-byte per-trial allowance.
+The entire remaining panel fits above the8GiB reserve; one MPS worker continues.
+
+The initial metadata reviewer incorrectly counted persistent RoPE sine/cosine
+buffers as trainable parameters and asserted before publishing a review. The
+16,384-element discrepancy was diagnosed and the reviewer now counts saved
+canonical EMA parameter names while checking the eight expected buffers separately.
+`reviewer-failure-001.json` retains this review failure. The corrected review
+passed; no training source, result, checkpoint, selection rule or worker changed.
+This metadata/hash review does not recompute model losses or tensor finiteness.
