@@ -1775,3 +1775,39 @@ retry, closed-controller rerun or holdout evaluation occurred. The27-trajectory
 campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-acceptance-v2-component-review.json`.
+
+
+## October 28 serial LR parent transition
+
+The new callable parent controller prepares, seals, dispatches and independently
+accepts exactly one LR slot. Tests exercise two-slot and all-nine-slot sequences,
+retain prior evidence unchanged, and stop before selection or cleanup. Historical
+completion receipts bind ordered predecessors, saved parent/child identities,
+startup/readiness/launch/terminal/worker hashes, finished parent and child guards,
+original limits and actual trial/log byte counts. A later parent can have a
+different PID or inherited descriptors; the next startup still independently
+replays the complete scientific prefix, pilot cleanup history and future storage.
+
+Preparation and post-child review have separate1800s guards. Preparation finishes
+before sealing. During the child, a cooperative parent resource callback raises
+through the7200s process supervisor, which terminates and reaps its owned group.
+No hard-exit parent watchdog surrounds a live child. Tiny real subprocess tests
+verify this failure path. The child time/RSS/MPS, full storage and8GiB reserve
+gates are unchanged. Failures and partial/completed attempts cannot retry.
+
+Initial99 tests passed; one sequential fixture failed because its later-slot
+module still referenced the real projection instead of the synthetic frozen
+copy. Correcting that fixture yielded70 passing controller/process tests in40.88s.
+After strengthening historical terminal-limit/census checks, all30 controller
+tests passed in43.67s. The33 independent acceptance checks passed in the initial
+run. All logs and240s/4GiB/8GiB actual CPU/disk guard observations, including the
+fixture failure, are retained. Scientific child execution and PIDs are mocked;
+this establishes controller behavior, not model correctness or quality.
+
+Next implement saved LR/rank selection transitions and their audited cleanup,
+rank/fresh dispatch and inference orchestration. Actual nine numerical/input
+cases and measured pilots remain unresolved; the failed combined fixture stays
+closed. No research training/MPS launch, checkpoint deletion, closed-controller
+rerun or holdout evaluation occurred. The27-trajectory campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-dispatch-v2-component-review.json`.

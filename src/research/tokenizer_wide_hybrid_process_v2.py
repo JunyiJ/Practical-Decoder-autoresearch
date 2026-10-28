@@ -28,13 +28,14 @@ def _encoded_size(value):
 
 
 def run_process(writer,stage,slot,argv,cwd,*,required_free_bytes,output_limit_bytes,
-                log_limit_bytes=LOG_LIMIT,timeout_seconds=None,poll_seconds=.2):
+                log_limit_bytes=LOG_LIMIT,timeout_seconds=None,poll_seconds=.2,parent_check=None):
     """Fresh single child, bounded merged stdout/stderr, no shell or retry.
 
     Shorter limits support isolated tests; scientific acceptance independently
     requires the exact frozen pilot/quality/inference limits. Partial logs and
     mutable control state survive hard interruption; terminal evidence is exclusive.
     """
+    if parent_check is not None and not callable(parent_check):raise ValueError('Callable parent check required')
     if not isinstance(writer,MetadataWriter):raise ValueError('Bounded campaign writer required')
     valid=(stage=='pilots' and type(slot) is int and 0<=slot<3 or
            stage=='quality' and type(slot) is int and 0<=slot<24 or
@@ -69,6 +70,9 @@ def run_process(writer,stage,slot,argv,cwd,*,required_free_bytes,output_limit_by
     log_bytes=0
 
     def observe(initial=False):
+        # A caller resource failure must use this supervisor's owned-child
+        # termination/reaping path, never a hard-exit watchdog around Popen.
+        if parent_check is not None:parent_check()
         with writer._serialized():
             if (writer.root/'STOP').exists() or (writer.root/'STOP').is_symlink():
                 raise RuntimeError('Campaign STOP requested')

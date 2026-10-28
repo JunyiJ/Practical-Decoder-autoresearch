@@ -242,3 +242,22 @@ def test_pipe_setup_failure_records_spawned_pid_and_reaps_child(writer,monkeypat
     with pytest.raises(OSError,match='pipe setup'):run(writer,'import time;time.sleep(30)')
     assert type(report(writer)['pid']) is int
     assert report(writer)['status']=='failed' and not process._group_exists(report(writer)['pid'])
+
+
+def test_parent_resource_callback_failure_reaps_owned_child(writer):
+    calls=[]
+    def check():
+        calls.append(True)
+        control=writer.root/'control/process-quality-00.json'
+        if control.exists() and json.loads(control.read_text()).get('pid'):
+            raise RuntimeError('synthetic parent RSS crossed')
+    with pytest.raises(RuntimeError,match='parent RSS'):
+        run(writer,'import time;time.sleep(30)',parent_check=check)
+    assert len(calls)>=3 and report(writer)['status']=='failed'
+    assert report(writer)['returncode']<0 and not process._group_exists(report(writer)['pid'])
+    with pytest.raises(FileExistsError):run(writer,'pass')
+
+
+def test_invalid_parent_callback_precedes_mutation(writer):
+    with pytest.raises(ValueError,match='Callable parent'):run(writer,'pass',parent_check=1)
+    assert not (writer.root/'evidence/quality/00').exists()

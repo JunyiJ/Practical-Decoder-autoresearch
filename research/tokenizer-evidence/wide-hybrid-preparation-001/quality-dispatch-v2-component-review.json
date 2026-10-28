@@ -1,0 +1,66 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T20:37:46.747950+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-dispatch-v2-final-guard.json": "7c4fcc77433092b473f9072190bd283d1218324afb3a24c9a85b0da8bd3cfc3c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-dispatch-v2-final-tests.log": "5d9e04d3ed674755ec891838c1019a60df3a1883a6522a85c648cf90cdc10040",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-dispatch-v2-guard.json": "1279e1955eb1e7995beb927b1afcb0a7015db014d181d0ec5d5f2cef3a689973",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-dispatch-v2-repaired-guard.json": "dcdd37ecf0427dae0c16be0ff2cc2395d0957add8b44a6df9e9ecbf3e842028e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-dispatch-v2-repaired-tests.log": "0bd76ed4ee24106f1667670ac00ce0e14c79fe1185265bb3c93665fe3ff94f60",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-dispatch-v2-tests.log": "7053581218e925206da2b03074110a4b65348031958f2c285547854e5e0bc6c0",
+    "src/research/tokenizer_wide_hybrid_process_v2.py": "b609dd9ad594c2dc7dd1bf7883054fa15d79db5d3a8246aad0d250ab0a8c4737",
+    "src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py": "070d518adf7754541cec6ea8cfa895822b3507d80955c2039ddaccb8cb28f549",
+    "tests/test_tokenizer_wide_hybrid_process_v2.py": "6d45e59c2d9156db993903ef5ef40b22eb75cc718514839b8bca1ca67e7c9842",
+    "tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py": "d3402ec792ccf13b0d3f71389f9e463275e3a405c67345884ecb1a08082f7e80",
+    "tests/test_tokenizer_wide_hybrid_quality_dispatch_v2.py": "247517db5ca24cfd15e8eca141c4a9e83e25585522bf775fb8032bb87e1cc464"
+  },
+  "findings": [
+    "Callable run_lr_once prepares, seals, dispatches via the exact child CLI and independently accepts one LR slot. Two-slot and all-nine-slot synthetic sequences retain earlier evidence byte-for-byte; each returns an immutable completion receipt without selection, cleanup or next-stage credit. There is no campaign run CLI or automatic launch loop.",
+    "Preparation and post-child review use separate1800s/4GiB/8GiB guards. Preparation finishes before readiness binds its controls. No hard-exit parent watchdog runs around a live child. The7200s subprocess supervisor now accepts a cooperative parent resource callback; parent RSS/disk/time exceptions use its owned-group termination/reaping path. Child7200s/4GiB RSS/6GiB MPS limits and full future storage gates remain unchanged.",
+    "Historical completion receipts bind the ordered earlier receipts, startup/readiness hashes, actual saved parent PID, child launch/terminal/worker hashes, parent preparation/child/review guards, readiness/entry guards, original process limits and actual self-inclusive trial/log byte census. A later parent need not have the earlier PID or inherited descriptor numbers. Startup still independently reaudits the entire scientific prefix, pilot deletion history and remaining capacity.",
+    "Failed, partial and already-attempted transitions cannot retry. Synthetic preparation, seal, process, monitor, review, publication and evidence-tamper failures retain their records and block continuation. Real tiny non-training subprocess tests confirm a parent callback failure kills/reaps the owned child and preserves terminal failure evidence.",
+    "Initial99 tests passed and one sequential fixture correctly failed the later frozen-projection check: the first-slot fixture had not installed its projection copy for the later-slot module. Corrected only that fixture binding; retained the original log/guard. The expanded70 controller/process tests passed, including all-nine-slot sequencing. After adding stricter historical terminal/census checks, all30 controller tests passed. The33 acceptance tests also passed in the initial run after extracting the shared synthetic completion helper."
+  ],
+  "free_bytes_observed": 30612643840,
+  "guard": {
+    "elapsed_seconds": 44.06048808246851,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 240
+    },
+    "observation": {
+      "free_bytes": 30613045248,
+      "peak_rss_bytes": 240189440
+    },
+    "pid": 88955,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_quality_dispatch_v2_component_review",
+  "limitations": [
+    "All scientific plans, prerequisite records, checkpoints and child PIDs in controller integration fixtures are synthetic; the scientific child body is mocked. Tiny real process tests do not train or use MPS. No real research child CLI was launched.",
+    "The27-trajectory campaign remains unfrozen. Actual nine numerical/input cases and measured pilot prerequisites remain unresolved; the failed combined numerical fixture stays closed. Saved LR/rank selection transitions, rank/fresh dispatch and boundary cleanup/inference orchestration still require implementation and tests.",
+    "No research model training/MPS launch, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or holdout evaluation occurred. No quality result or adoption follows from these tests. Current free-space observation is not launch authorization."
+  ],
+  "status": "serial_lr_controller_tested_campaign_unfrozen",
+  "validation": {
+    "final_controller": {
+      "failed": 0,
+      "passed": 30,
+      "seconds": 43.67
+    },
+    "initial": {
+      "failed": 1,
+      "passed": 99,
+      "seconds": 68.13
+    },
+    "repaired": {
+      "failed": 0,
+      "passed": 70,
+      "seconds": 40.88
+    }
+  }
+}

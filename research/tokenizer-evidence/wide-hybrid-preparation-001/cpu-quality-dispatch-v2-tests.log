@@ -1,0 +1,40 @@
+F....................................................................... [ 72%]
+............................                                             [100%]
+=================================== FAILURES ===================================
+____________ test_two_serial_slots_full_prefix_review_and_no_retry _____________
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10bd7bcb0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bd39940>
+
+    def test_two_serial_slots_full_prefix_review_and_no_retry(writer,monkeypatch):
+        args,calls=setup(writer,monkeypatch)
+        first=dispatch.run_lr_once(slot=0,**args)
+        before=dispatch.acceptance._inventory(writer.root/'evidence')
+        with pytest.raises(ValueError,match='cannot be retried'):dispatch.run_lr_once(slot=0,**args)
+        assert dispatch.acceptance._inventory(writer.root/'evidence')==before
+>       second=dispatch.run_lr_once(slot=1,**args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_dispatch_v2.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py:141: in run_lr_once
+    readiness.later.prepare_lr_request(writer,slot,plan_sha256,**args))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_lr_startup_v2.py:73: in prepare_lr_request
+    bound,requests=_frozen(writer,slot,plan_sha256,projection_ref)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_lr_startup_v2.py:38: in _frozen
+    _require(projection_ref['path'].startswith('meta/')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'LR startup projection differs from frozen copy'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: LR startup projection differs from frozen copy
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_dispatch_v2.py::test_two_serial_slots_full_prefix_review_and_no_retry
+1 failed, 99 passed in 68.13s (0:01:08)

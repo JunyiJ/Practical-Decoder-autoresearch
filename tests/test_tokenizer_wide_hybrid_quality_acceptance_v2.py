@@ -28,6 +28,11 @@ def setup(writer,monkeypatch,slot=1):
         startup=accept.readiness.first.prepare_first_quality_request(**options)
     else:startup=prepared(writer,monkeypatch,slot)
     ready=accept.readiness.seal_quality_readiness(writer,slot,startup)
+    return complete(writer,monkeypatch,slot,startup,ready)
+
+
+def complete(writer,monkeypatch,slot,startup,ready):
+    root=writer.root/'evidence'
     start=json.loads((root/startup['path']).read_text());seal=json.loads((root/ready['path']).read_text())
     bound,_,_=accept.readiness._bound(writer,slot,start)
     plan=json.loads((root/'meta/plan.json').read_text())
