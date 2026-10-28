@@ -1281,3 +1281,33 @@ wiring. Actual nine-case numerical/input reviews and measured pilots remain
 outstanding. No research weights were deleted or real trials launched.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-execution-v2-component-review.json`.
+
+## October 28 per-pilot acceptance and successful worker provenance
+
+Pilot acceptance now requires the successful worker report and exact references
+to its attempt, training outputs, evaluation attempt, result, cache audit and
+resource report. The review checks plan/request/slot/projection/allowance identity,
+training raw/H200 size/hash/path receipts, summary/metrics agreement, evaluation
+input-file bindings and the frozen descriptive sample settings. Missing producer
+records cannot be replaced by a completed result or resource flag alone.
+
+A new read-only prefix review applies the same full per-pilot audits to the first
+one, two or three completed pilots, returning checkpoint-pair/evidence bindings
+for idle storage acceptance. Prefix review produces no cleanup manifest and no
+stage, dispatch or deletion authorization. The full three-pilot boundary remains
+required for a candidate pilot cleanup manifest. A later unreviewed pilot slot
+blocks prefix acceptance instead of being ignored.
+
+Validation:108 initial and265 final tests passed. The final suite took7.70s with
+peak RSS241,385,472bytes under180s/4GiB/8GiB outer guards. Semantic mutation tests
+refresh downstream hashes so that changed worker identities, claims, checkpoint
+receipts and evaluation bindings must fail on their contents. All evidence is
+synthetic; no model, numerical or actual pilot success is claimed.
+
+Next implement the immutable startup transition using prefix acceptance plus the
+idle full-campaign storage gate before creating the next request/process slot,
+then recheck actual disk immediately before dispatch. Complete controller,
+cleanup-chain and inference wiring and actual nine-case numerical/input/measured
+pilot prerequisites remain outstanding. No real trial or cleanup was launched.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-prefix-v2-component-review.json`.

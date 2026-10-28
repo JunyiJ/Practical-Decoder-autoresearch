@@ -18,7 +18,7 @@ def write(root,name,value):
     return dict(path=name,sha256=file_digest(path))
 
 
-def fixture(root):
+def fixture(root,count=3):
     projection=json.loads((Path(__file__).resolve().parents[1]/'research/tokenizer-evidence/wide-hybrid-preparation-001/rank-storage-projection.json').read_text())
     pref=write(root,'meta/projection.json',projection)
     corpus=write(root,'meta/corpus.txt',b'synthetic corpus, no actual training data')
@@ -31,7 +31,7 @@ def fixture(root):
                for f in ('hybrid','gated_mla','kda') for d in (8,4,2)],artifacts={trace['path']:trace['sha256']})
     nref=write(root,'meta/numerical.json',numeric)
     tokenizer={'synthetic':True};token_sha=digest('96 synthetic training IDs');requests=[];evidence={}
-    for i,spec in enumerate(specs()):
+    for i,spec in enumerate(specs()[:count]):
         stem=f'pilots/{i:02d}';trial=root/stem
         request=dict(spec=spec,config={'data':{'path':str(root/corpus['path'])},'fixture_only':True},result_path=str(trial/'result.json'))
         requests.append(request);rq=write(root,stem+'/request.json',request)
@@ -45,8 +45,9 @@ def fixture(root):
                 bits_per_byte=5.*34278/111536/math.log(2),perplexity=math.exp(5),
                 checkpoint=str(root/pair[role]['path']),checkpoint_sha256=pair[role]['sha256'])
         result=dict(spec,status='completed',holdout_consumed=False,request_sha256=rq['sha256'],
-            training=dict(completed_steps=20,weight_averaging=dict(snapshots=8),final_checkpoint=str(root/pair['raw']['path'])),
+            training=dict(completed_steps=20,metrics=[],weight_averaging=dict(snapshots=8),final_checkpoint=str(root/pair['raw']['path'])),
             raw=score('raw'),h200=score('h200'))
+        result['h200'].update(sample='synthetic sample',sample_settings=audit.SAMPLE_SETTINGS)
         rs=write(root,stem+'/result.json',result)
         files={str(root/rq['path']):rq['sha256'],str(root/rs['path']):rs['sha256'],
                **{str(root/ref['path']):ref['sha256'] for ref in pair.values()}}
@@ -81,6 +82,31 @@ def fixture(root):
             required_free_bytes=30_631_281_412,observation=dict(free_bytes=40*1024**3,output_bytes=5000,log_bytes=30))
         refs=[rq,rs,er,cache_ref,attempt,write(root,stem+'/resource-audit.json',resource),
               write(root,stem+'/process/process.json',process),write(root,stem+'/process/worker.log',b'synthetic process log')]
+        allowance=row['per_trajectory_allowance_bytes']
+        training_attempt=write(root,stem+'/training-attempt.json',dict(kind='wide_hybrid_training_outputs_v2',
+            status='started',config_sha256=digest(request['config']),checkpoint_allowance_bytes=allowance))
+        training=write(root,stem+'/training-outputs.json',dict(kind='wide_hybrid_training_outputs_v2',
+            status='completed',config_sha256=digest(request['config']),numerical_audits_passed=False,dispatch_authorized=False,
+            **{k:dict(path=str(root/v['path']),size=(root/v['path']).stat().st_size,sha256=v['sha256']) for k,v in pair.items()}))
+        summary=write(root,stem+'/training-summary.json',result['training'])
+        metrics=write(root,stem+'/metrics.jsonl',b'')
+        eval_files={str(root/rq['path']):rq['sha256'],str(root/training['path']):training['sha256'],
+            str(root/summary['path']):summary['sha256'],str(root/corpus['path']):corpus['sha256'],
+            **{str(root/v['path']):v['sha256'] for v in pair.values()}}
+        evaluation=write(root,stem+'/evaluation-attempt.json',dict(kind='wide_hybrid_evaluation_v2',status='started',
+            request_sha256=rq['sha256'],training_outputs_sha256=training['sha256'],
+            training_contract_sha256=digest('synthetic contract'),training_token_sha256=token_sha,
+            files=eval_files,sample_settings=audit.SAMPLE_SETTINGS))
+        worker_attempt=write(root,stem+'/worker-attempt.json',dict(kind='wide_hybrid_pilot_execution_v2',status='started',
+            slot=i,plan_sha256=context['plan_sha256'],request_sha256=rq['sha256'],projection_ref=pref,
+            checkpoint_allowance_bytes=allowance,dispatch_authorized=False))
+        resource_ref=next(ref for ref in refs if ref['path']==stem+'/resource-audit.json')
+        worker=write(root,stem+'/worker-outputs.json',dict(kind='wide_hybrid_pilot_execution_v2',
+            status='pilot_outputs_complete_pending_independent_stage_review',slot=i,
+            plan_sha256=context['plan_sha256'],request_sha256=rq['sha256'],attempt=worker_attempt,
+            artifacts=dict(training_outputs=training,evaluation_attempt=evaluation,result=rs,cache=cache_ref,resources=resource_ref),
+            adopted=False,dispatch_authorized=False,stage_audits_bound=False))
+        refs += [training_attempt,training,summary,metrics,evaluation,worker_attempt,worker]
         evidence.update({ref['path']:ref['sha256'] for ref in refs})
     return dict(root=root,context=context,requests=requests,evidence=evidence,numerical_ref=nref,
                 projection_ref=pref,tokenizer=tokenizer,training_token_sha256=token_sha)
@@ -172,3 +198,60 @@ def test_bound_failed_training_or_evaluation_cannot_pass_pilots(tmp_path,name):
     ref=write(tmp_path,'pilots/00/'+name,{'status':'failed'})
     args['evidence'][ref['path']]=ref['sha256']
     with pytest.raises(ValueError,match='Failed or partial'):audit.bind_pilot_boundary(**args)
+
+
+@pytest.mark.parametrize('count',[1,2,3])
+def test_ordered_prefix_has_no_cleanup_manifest_or_dispatch_credit(tmp_path,count):
+    args=fixture(tmp_path,count)
+    report=audit.bind_pilot_prefix(**args)
+    assert report['completed_pilot_count']==count and report['prefix_audits_bound']
+    assert report['manifest'] is None and report['stage_audits_bound'] is False
+    assert not report['deletion_authorized'] and not report['dispatch_authorized']
+    assert set(report['checkpoint_pairs'])=={f'pilot/{i:02d}' for i in range(count)}
+    if count<3:
+        with pytest.raises(ValueError):audit.bind_pilot_boundary(**args)
+
+
+def test_prefix_does_not_ignore_later_unreviewed_attempt(tmp_path):
+    args=fixture(tmp_path,1)
+    write(tmp_path,'pilots/01/request.json',{'pending':True})
+    with pytest.raises(ValueError,match='Unreviewed pilot slot'):audit.bind_pilot_prefix(**args)
+
+
+@pytest.mark.parametrize('name',['worker-outputs.json','worker-attempt.json','training-outputs.json',
+    'training-attempt.json','training-summary.json','evaluation-attempt.json','metrics.jsonl'])
+def test_successful_producer_provenance_is_mandatory(tmp_path,name):
+    args=fixture(tmp_path,1);args['evidence'].pop('pilots/00/'+name)
+    with pytest.raises(ValueError):audit.bind_pilot_prefix(**args)
+
+
+@pytest.mark.parametrize('bad',['worker_kind','worker_status','worker_slot','worker_plan','worker_claim',
+    'worker_refs','worker_attempt','training_attempt','training_pair','training_claim','summary','metrics',
+    'eval_kind','eval_request','eval_training','eval_contract','eval_tokens','eval_files','eval_sample'])
+def test_changed_successful_provenance_cannot_pass_prefix(tmp_path,bad):
+    args=fixture(tmp_path,1);stem='pilots/00/'
+    if bad.startswith('worker_'):
+        if bad=='worker_attempt':change(args,stem+'worker-attempt.json',lambda x:x.update(checkpoint_allowance_bytes=1))
+        else:
+            key,value={'worker_kind':('kind','old'),'worker_status':('status','failed'),
+                'worker_slot':('slot',True),'worker_plan':('plan_sha256','0'*64),
+                'worker_claim':('dispatch_authorized',True),'worker_refs':('artifacts',{})}[bad]
+            change(args,stem+'worker-outputs.json',lambda x:x.update({key:value}))
+    elif bad=='training_attempt':change(args,stem+'training-attempt.json',lambda x:x.update(config_sha256='0'*64))
+    elif bad=='training_pair':change(args,stem+'training-outputs.json',lambda x:x['raw'].update(size=1))
+    elif bad=='training_claim':change(args,stem+'training-outputs.json',lambda x:x.update(numerical_audits_passed=True))
+    elif bad=='summary':change(args,stem+'training-summary.json',lambda x:x.update(completed_steps=19))
+    elif bad=='metrics':
+        ref=write(tmp_path,stem+'metrics.jsonl',b'{"step":0}\n');args['evidence'][ref['path']]=ref['sha256']
+    else:
+        key,value={'eval_kind':('kind','old'),'eval_request':('request_sha256','0'*64),
+            'eval_training':('training_outputs_sha256','0'*64),'eval_contract':('training_contract_sha256','bad'),
+            'eval_tokens':('training_token_sha256','0'*64),'eval_files':('files',{}),'eval_sample':('sample_settings',{})}[bad]
+        change(args,stem+'evaluation-attempt.json',lambda x:x.update({key:value}))
+    if not bad.startswith('worker_') or bad=='worker_attempt':
+        worker_path=stem+'worker-outputs.json'
+        worker=json.loads((tmp_path/worker_path).read_text())
+        for ref in list(worker['artifacts'].values())+[worker['attempt']]:
+            ref['sha256']=args['evidence'][ref['path']]
+        ref=write(tmp_path,worker_path,worker);args['evidence'][ref['path']]=ref['sha256']
+    with pytest.raises(ValueError):audit.bind_pilot_prefix(**args)

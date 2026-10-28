@@ -1,0 +1,45 @@
+{
+  "status": "pilot_prefix_and_successful_worker_provenance_bound_synthetic_tests",
+  "created_at": "2026-10-28T18:27:58.738750+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_pilot_audit_v2.py": "a8349be598ff6818e4256fc79333ad6a751774e197dd8b31191643dbc5f05787",
+    "tests/test_tokenizer_wide_hybrid_pilot_audit_v2.py": "3e4ad174a92145dd75fa20ce42af6492dab3bab4f64df2b1b22d344d3a15d071",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-prefix-v2-final-guard.json": "fcab27734fab785f168709e8dc5890434d49d3b76092f7540247f196f2e17eaa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-prefix-v2-final-tests.log": "0dab76a383878840cd0116d02a3d21cec6305658f87fd6cf5babfcb918b3d560",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-prefix-v2-guard.json": "c1e29484c93a18b3b9e9c307dc5bb011e2f867969becb5e8919c2efe1b2b5845",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-prefix-v2-tests.log": "6adb58178bda80c9ecfc0fd50f396675497b50b22a981fb885d6a58b86e422a6"
+  },
+  "tests": {
+    "initial_passed": 108,
+    "final_passed": 265
+  },
+  "final_guard": {
+    "elapsed_seconds": 8.396832291968167,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30646140928,
+      "peak_rss_bytes": 241385472
+    },
+    "pid": 77396,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30644748288,
+  "findings": [
+    "Pilot review now requires the exact successful worker report and attempt, including plan/request/slot/projection/allowance identities and exact training/evaluation/result/cache/resource references. False dispatch/adoption/stage claims are enforced.",
+    "Training attempt and completion identities, raw/H200 path/size/hash receipts, summary equality and metrics trace equality are bound to the independently reviewed result. Evaluation attempt must bind the exact request, completed training outputs, summary, corpus and raw/H200 files, frozen96-token identity and descriptive sample settings.",
+    "The same complete per-pilot audits can now review an ordered nonempty prefix of1,2 or3 pilots. Prefix review returns verified checkpoint-pair/evidence bindings for subsequent idle storage acceptance, but has no cleanup manifest or stage-completion/dispatch/deletion credit.",
+    "The existing three-pilot boundary still requires all three completed pilots before compiling the candidate cleanup manifest. Unexpected later pilot slot directories are refused rather than ignored.",
+    "Mutation tests update downstream worker reference hashes to ensure semantic identity/claims/lineage rejection, not just stale-hash detection. Missing successful producer records, omitted metrics, altered sample settings, partial prefixes and later unreviewed attempts are covered."
+  ],
+  "limitations": [
+    "Tests use synthetic saved records and tiny files; they do not establish actual numerical, training, cache or resource measurements. Reviewing saved provenance cannot replace execution of the underlying audits.",
+    "Frozen campaign identity, complete current inventory, idle full-future-storage acceptance, startup transition, immediate predispatch disk recheck and bounded process/worker integration remain controller responsibilities. The new prefix API does not dispatch or delete.",
+    "Next implement the immutable startup transition using this prefix review and the existing idle storage gate, then finish controller/stage/cleanup-chain/inference wiring. Actual9 rank numerical cases, input review and measured pilots remain outstanding.",
+    "No real training/MPS operation, research checkpoint deletion, plan freeze, scientific-rule change, storage-guard bypass, failed numerical-fixture retry or closed-campaign rerun occurred."
+  ]
+}

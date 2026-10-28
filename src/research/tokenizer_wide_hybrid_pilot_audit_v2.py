@@ -23,8 +23,75 @@ from .tokenizer_wide_hybrid_resources import EVENT_LIMIT, verify_pilot_events
 from .tokenizer_wide_hybrid_scores import _score
 
 
-def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
-                        projection_ref, tokenizer, training_token_sha256):
+SAMPLE_SETTINGS=dict(prompt='ROMEO:\n',seed=12345,temperature=.8,top_k=40,new_tokens=96)
+
+
+def _worker_review(root,stem,index,context,request,result,pair,bound,projection_ref,token_sha,allowance):
+    names={k:stem+'/'+name for k,name in dict(worker='worker-outputs.json',attempt='worker-attempt.json',
+        training='training-outputs.json',training_attempt='training-attempt.json',summary='training-summary.json',
+        evaluation='evaluation-attempt.json').items()}
+    docs={k:_load(root,name,bound) for k,name in names.items()}
+    def ref(name):return dict(path=name,sha256=bound[name])
+    rqsha=bound[stem+'/request.json'];worker=docs['worker']
+    _require(worker.get('kind')=='wide_hybrid_pilot_execution_v2'
+             and worker.get('status')=='pilot_outputs_complete_pending_independent_stage_review'
+             and type(worker.get('slot')) is int and worker['slot']==index
+             and worker.get('plan_sha256')==context['plan_sha256'] and worker.get('request_sha256')==rqsha
+             and worker.get('adopted') is False and worker.get('dispatch_authorized') is False
+             and worker.get('stage_audits_bound') is False,'Completed worker identity/claims differ')
+    artifacts=dict(training_outputs=ref(names['training']),evaluation_attempt=ref(names['evaluation']),
+                   result=ref(stem+'/result.json'),cache=ref(stem+'/audit.json'),resources=ref(stem+'/resource-audit.json'))
+    _require(digest(worker.get('artifacts'))==digest(artifacts)
+             and digest(worker.get('attempt'))==digest(ref(names['attempt'])),'Worker producer references differ')
+    expected_attempt=dict(kind='wide_hybrid_pilot_execution_v2',status='started',slot=index,
+        plan_sha256=context['plan_sha256'],request_sha256=rqsha,projection_ref=projection_ref,
+        checkpoint_allowance_bytes=allowance,dispatch_authorized=False)
+    _require(digest(docs['attempt'])==digest(expected_attempt),'Worker attempt binding differs')
+    cfgsha=digest(request['config']);training=docs['training']
+    _require(digest(docs['training_attempt'])==digest(dict(kind='wide_hybrid_training_outputs_v2',
+        status='started',config_sha256=cfgsha,checkpoint_allowance_bytes=allowance)),
+        'Training attempt binding differs')
+    _require(training.get('kind')=='wide_hybrid_training_outputs_v2' and training.get('status')=='completed'
+             and training.get('config_sha256')==cfgsha and training.get('numerical_audits_passed') is False
+             and training.get('dispatch_authorized') is False,'Training output identity/claims differ')
+    for role,entry in pair.items():
+        _require(digest(training.get(role))==digest(dict(entry,path=str(root/entry['path']))),
+                 'Training checkpoint receipt differs')
+    _require(digest(docs['summary'])==digest(result['training']),'Training summary/result differ')
+    metric_name=stem+'/metrics.jsonl'
+    _require(metric_name in bound,'Training metrics binding missing')
+    metric_path=_check_file(root,metric_name,bound[metric_name])
+    _require(metric_path.stat().st_size<=256*1024,'Training metrics exceed group cap')
+    metrics=[json.loads(line) for line in metric_path.read_text().splitlines()]
+    _require(digest(metrics)==digest(result['training'].get('metrics')),'Training metric trace differs')
+    evaluation=docs['evaluation'];_sha(evaluation.get('training_contract_sha256'))
+    expected_files={str(root/(stem+'/request.json')):rqsha,
+        str(root/names['training']):bound[names['training']],str(root/names['summary']):bound[names['summary']],
+        str(Path(request['config']['data']['path']).resolve()):context['corpus_sha256'],
+        **{str(root/entry['path']):entry['sha256'] for entry in pair.values()}}
+    _require(evaluation.get('kind')=='wide_hybrid_evaluation_v2' and evaluation.get('status')=='started'
+             and evaluation.get('request_sha256')==rqsha
+             and evaluation.get('training_outputs_sha256')==bound[names['training']]
+             and evaluation.get('training_token_sha256')==token_sha
+             and digest(evaluation.get('files'))==digest(expected_files)
+             and digest(evaluation.get('sample_settings'))==digest(SAMPLE_SETTINGS),
+             'Evaluation attempt provenance differs')
+    _require(digest(result['h200'].get('sample_settings'))==digest(SAMPLE_SETTINGS)
+             and isinstance(result['h200'].get('sample'),str),'Descriptive sample settings differ')
+
+
+def bind_pilot_boundary(root, **kwargs):
+    """Require all three pilots before constructing a candidate cleanup manifest."""
+    return _bind_pilots(root,complete=True,**kwargs)
+
+
+def bind_pilot_prefix(root, **kwargs):
+    """Review an ordered nonempty completed prefix; never compile cleanup credit."""
+    return _bind_pilots(root,complete=False,**kwargs)
+
+
+def _bind_pilots(root, *, context, requests, evidence, numerical_ref,
+                 projection_ref, tokenizer, training_token_sha256, complete):
     """Bind all three pilot pairs before compiling a candidate cleanup manifest.
 
     root is the immutable evidence directory. No storage or deletion credit is
@@ -37,7 +104,12 @@ def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
     for sha in context.values():_sha(sha)
     _sha(training_token_sha256)
     _require(isinstance(tokenizer,dict) and bool(tokenizer),'Frozen tokenizer required')
-    _require(isinstance(requests,list) and len(requests)==3,'Exactly three frozen pilot requests required')
+    _require(isinstance(requests,list) and (len(requests)==3 if complete else 1<=len(requests)<=3),
+             'Exactly three pilots or a nonempty ordered prefix required')
+    pilot_root=_path(root,'pilots')
+    _require(pilot_root.is_dir() and all(not p.is_symlink() and p.is_dir()
+             and p.name in {f'{i:02d}' for i in range(len(requests))} for p in pilot_root.iterdir()),
+             'Unreviewed pilot slot outside completed prefix')
     bound=dict(evidence)
     def add(name,sha):
         _require(name not in bound or bound[name]==sha,'Conflicting evidence hashes')
@@ -151,9 +223,10 @@ def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
         _require(names['log'] in bound,'Pilot process log binding missing')
         _require(_check_file(root,names['log'],bound[names['log']]).stat().st_size<=PILOT_RESOURCE_LIMITS['log_limit_bytes'],
                  'Pilot process log cap exceeded')
+        _worker_review(root,stem,index,context,request,result,pair,bound,projection_ref,training_token_sha256,allowance)
         records.append(dict(spec,status='completed',ce=result['h200']['mean_ce']));pairs[index]=pair
-    manifest=planned_manifest('pilot',records,None,None,pairs,bound)
-    weights={e['path']:e for e in manifest['delete']};found=set()
+    manifest=planned_manifest('pilot',records,None,None,pairs,bound) if complete else None
+    weights={e['path']:e for pair in pairs.values() for e in pair.values()};found=set()
     for trial in trial_dirs:
         for path in trial.rglob('*'):
             _require(not path.is_symlink(),'Symlink in pilot evidence')
@@ -166,7 +239,9 @@ def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
     for name,entry in weights.items():_check_file(root,name,entry['sha256'],entry['size'])
     for corpus in corpora:
         _require(file_digest(corpus)==context['corpus_sha256'],'Pilot corpus changed during review')
-    return dict(manifest=manifest,records=records,stage_audits_bound=True,stage_inventory_complete=True,
+    return dict(manifest=manifest,records=records,stage_audits_bound=complete,stage_inventory_complete=complete,
+        prefix_audits_bound=True,completed_pilot_count=len(records),evidence=bound,
+        checkpoint_pairs={f'pilot/{i:02d}':pair for i,pair in pairs.items()},
         numerical_review_bound=True,measured_pilot_reviews_bound=True,
         frozen_plan_verified=False,current_storage_fit_verified=False,
         inventory_completeness_verified=False,deletion_authorized=False,dispatch_authorized=False)
