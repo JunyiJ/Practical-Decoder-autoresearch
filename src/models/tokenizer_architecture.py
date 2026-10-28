@@ -3,6 +3,9 @@ from collections.abc import Mapping
 
 POLICY = 'tokenizer_mha_gqa_v1'
 MLA_POLICY = 'tokenizer_mla_quarter_rope_v1'
+WIDE_GQA_POLICY = 'tokenizer_wide_gqa_half_rope_v1'
+WIDE_MLA_POLICY = 'tokenizer_wide_mla_quarter_rope_v1'
+WIDE_POLICIES = (WIDE_GQA_POLICY, WIDE_MLA_POLICY)
 SCORE_POLICY = 'tokenizer_mha_gqa_score_v1'
 BIAS_POLICY = 'tokenizer_attention_no_output_bias'
 FIXED = {'tokenizer_architecture_policy': POLICY, 'n_layers': 4, 'mlp_type': 'dense',
@@ -31,7 +34,7 @@ def architecture_contract(cfg):
     if _get(cfg, 'tokenizer_architecture_policy') is None:
         return None
     policy = _get(cfg, 'tokenizer_architecture_policy')
-    if policy not in (POLICY, MLA_POLICY):
+    if policy not in (POLICY, MLA_POLICY, *WIDE_POLICIES):
         raise ValueError('Unknown tokenizer architecture policy')
     keys = set(cfg.keys()) if hasattr(cfg, 'keys') else set(vars(cfg))
     if keys != set(FIXED) | VARIABLE:
@@ -43,9 +46,12 @@ def architecture_contract(cfg):
         if type(actual) is not type(value) or actual != value:
             raise ValueError(f'Tokenizer architecture changed fixed field {key}')
     width, heads, family = (_get(cfg, k) for k in ('dim', 'n_heads', 'attn_type'))
-    if type(width) is not int or width not in (64, 256) or type(heads) is not int or heads != width // 32:
-        raise ValueError('Tokenizer architecture requires widths64/256 and head32')
-    if policy == MLA_POLICY:
+    widths = (512, 1024) if policy in WIDE_POLICIES else (64, 256)
+    if type(width) is not int or width not in widths or type(heads) is not int or heads != width // 32:
+        raise ValueError(f'Tokenizer architecture requires widths{widths} and head32')
+    if policy == WIDE_GQA_POLICY and family != 'gqa':
+        raise ValueError('Wide GQA policy requires GQA')
+    if policy in (MLA_POLICY, WIDE_MLA_POLICY):
         if family != 'mla':
             raise ValueError('Tokenizer MLA policy requires MLA')
         attention, depth = 'mla_quarter_head32', 'depth4_unscaled'
@@ -59,6 +65,11 @@ def architecture_contract(cfg):
     prior = _get(cfg, 'output_bias_prior')
     return {'policy': policy, 'family': family, 'width': width, 'heads': heads,
                 'score_scale': .5, 'prior_sha256': _get(prior, 'prior_sha256')}
+
+
+def wide_architecture_contract(cfg):
+    """Validate the complete new backbone before widening a geometry guard."""
+    return architecture_contract(cfg) if _get(cfg, 'tokenizer_architecture_policy') in WIDE_POLICIES else None
 
 
 def validate_architecture_model(model):
@@ -85,6 +96,11 @@ def validate_architecture_model(model):
             or model.output_bias is not None or model.input_embedding_scale != 1.):
         raise ValueError('Tokenizer architecture readout/input semantics mismatch')
     for block in model.transformer.h:
+        if contract['family'] == 'gqa' and (
+                block.attn.n_heads != contract['heads']
+                or block.attn.n_kv_heads != contract['heads']//2
+                or block.attn.head_dim != 32 or block.attn.group_factor != 2):
+            raise ValueError('Tokenizer GQA head geometry mismatch')
         if contract['family'] == 'mla' and (
                 block.attn.dimc_q != contract['width']//4
                 or block.attn.dimc_kv != contract['width']//4

@@ -12,7 +12,11 @@ def kv_head_count(cfg):
     if cfg.dim % heads != 0:
         raise ValueError("cfg.dim must be divisible by cfg.n_heads")
     if getattr(cfg, "attention_width_policy", None) == "gqa_half_head32":
-        if (cfg.dim not in {64, 128, 256} or cfg.dim // heads != 32
+        from ..models.tokenizer_architecture import wide_architecture_contract
+        wide = wide_architecture_contract(cfg)
+        if wide is not None and wide['family'] != 'gqa':
+            raise ValueError('Wide GQA geometry requires its own backbone')
+        if ((cfg.dim not in {64, 128, 256} and wide is None) or cfg.dim // heads != 32
                 or hasattr(cfg, "n_kv_heads") or hasattr(cfg, "n_groups")):
             raise ValueError("gqa_half_head32 requires supported widths, head32, no KV override")
         count = heads // 2

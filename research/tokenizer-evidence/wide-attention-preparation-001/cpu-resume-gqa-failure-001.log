@@ -1,0 +1,85 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_width512_real_trainer_in_memory_resume_and_ema[gqa] ___________
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pytest-of-junyi/pytest-19/test_width512_real_trainer_in_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10e37fce0>
+family = 'gqa'
+
+    @pytest.mark.parametrize('family',['gqa','mla'])
+    def test_width512_real_trainer_in_memory_resume_and_ema(tmp_path,monkeypatch,family):
+        # Intercept disk I/O only; real trainer, tokenizer, sampler, schedule, optimizer,
+        # serialization/read_checkpoint and EMA. MPS pilots must separately test files/export.
+        import src.train.train as training
+        torch.set_num_threads(2)
+        cfg=OmegaConf.create(config(tmp_path,family,steps=2,seed=3381,device='cpu'))
+        cfg.training.weight_averaging.interval=1;cfg.training.eval_iters=1;cfg.training.eval_every=2
+        full_hash=None;partial=io.BytesIO();mode='full';results=[]
+        def save(path,model,optimizer,step,cfg,training_state):
+            nonlocal full_hash
+            payload=dict(model_state=model.state_dict(),optimizer_state=optimizer.state_dict(),step=step,
+                cfg=OmegaConf.to_container(cfg),training_state=training_state,model_math_version=2,parameter_layout_version=2)
+            if mode=='partial':
+                assert step==1;torch.save(payload,partial);return
+            current=tree_hash(dict(model=payload['model_state'],optimizer=payload['optimizer_state'],
+                ema=training_state['weight_averaging_state'],rng=training_state['torch_rng'],loader=training_state['loader_rng']))
+            if mode=='full':full_hash=current
+            else:
+                assert current==full_hash
+                wa=training_state['weight_averaging_state'];assert wa['snapshots']==2
+                derived=dict(cfg=payload['cfg'],model_state=dict(payload['model_state']),averaged_weights={'half_life':200},tokenizer_contract=training_state['contract']['tokenizer'])
+                derived['model_state'].update(wa['averages']['200'])
+                load_model_weights(model,derived)
+                with pytest.raises(ValueError):load_model_weights(model,derived,for_resume=True)
+                assert derived['tokenizer_contract']['name']=='gpt2'
+            results.append(step)
+        monkeypatch.setattr(training,'save_checkpoint',save)
+>       assert training.run_training(cfg)['completed_steps']==2;gc.collect()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/train/train.py:295: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'paired_blocks512', 'batch_size': 8, 'checkpoint_dir': '/private/var/folders/kq/88lvc8ps3s5_4jpn83v68...alf_lives': [200], 'interval': 1, 'kind': 'spaced_tail_ema', 'start_step': 1, 'total_steps': 2}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+src/train/lr_schedule.py:37: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide.py::test_width512_real_trainer_in_memory_resume_and_ema[gqa]
+1 failed in 1.06s

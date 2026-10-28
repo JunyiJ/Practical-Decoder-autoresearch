@@ -14,10 +14,14 @@ def latent_dimensions(cfg):
         return hybrid['latent_rank'], hybrid['latent_rank']
     policy = getattr(cfg, 'attention_width_policy', None)
     if policy is not None:
-        if (policy != 'mla_quarter_head32' or cfg.dim not in {64,128,256}
+        from ..models.tokenizer_architecture import wide_architecture_contract
+        wide = wide_architecture_contract(cfg)
+        if wide is not None and wide['family'] != 'mla':
+            raise ValueError('Wide MLA geometry requires its own backbone')
+        if (policy != 'mla_quarter_head32' or (cfg.dim not in {64,128,256} and wide is None)
                 or cfg.n_heads != cfg.dim // 32
                 or any(hasattr(cfg, k) for k in ['dimckv','dimcq','head_dim_r','n_kv_heads','n_groups'])):
-            raise ValueError('mla_quarter_head32 requires widths64/128/256, head32 and no latent/rotary/KV overrides')
+            raise ValueError('mla_quarter_head32 requires reviewed widths, head32 and no latent/rotary/KV overrides')
         return cfg.dim // 4, cfg.dim // 4
     return getattr(cfg, 'dimcq', cfg.dim // 10), getattr(cfg, 'dimckv', cfg.dim // 10)
 

@@ -70,3 +70,18 @@ Compute the full panel storage projection and CPU correctness/resume/EMA checks
 before frozen serial pilots; validate actual pilot costs before quality dispatch.
 All old controllers, stop markers and cleanup manifests stay closed/authoritative.
 The test holdout stays closed. Broad architecture and HP exploration remain active.
+
+## Implementation preparation, October28
+
+Explicit wider-only policies now cover GQA/MLA at512/1024 while historical
+policies still reject those widths. Meta-device geometry/optimizer accounting
+finds62,877,696 GQA and62,424,192 MLA parameters at512; at1024 these are
+148,561,920 and146,606,208. This is allocation/count verification, not tested
+width1024 numerical training or serving correctness. Full retained14-trajectory
+projections with reserve are32,836,217,809 and65,654,375,377 bytes respectively.
+Measured available space at accounting was about35.76GB; only512 fits.
+See `tokenizer-evidence/wide-attention-preparation-001/storage-projection.json`.
+CPU continuation fixtures use in-memory serialization to avoid consuming the
+retained research-checkpoint budget. Pilot protocol is separately recorded in
+TOKENIZER_WIDE_ATTENTION_PILOT_PROTOCOL.md; no quality result follows from CPU
+checks or resource feasibility. Actual disk exports are verified by those pilots.

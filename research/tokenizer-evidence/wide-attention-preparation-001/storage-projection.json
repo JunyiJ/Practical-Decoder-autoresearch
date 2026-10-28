@@ -1,0 +1,51 @@
+{
+  "status": "prospective_accounting_not_launch_plan",
+  "at": "2026-10-28T03:34:17.216327+00:00",
+  "free_bytes": 35669565440,
+  "reserve_bytes": 8589934592,
+  "records": [
+    {
+      "width": 512,
+      "family": "gqa",
+      "parameters": 62877696,
+      "parameter_bytes": 251510784,
+      "cache_bytes_batch1": 1048576,
+      "raw_h200_tensor_upper_bytes": 1509064704,
+      "per_trial_allowance_bytes": 1737836135
+    },
+    {
+      "width": 512,
+      "family": "mla",
+      "parameters": 62424192,
+      "parameter_bytes": 249696768,
+      "cache_bytes_batch1": 327680,
+      "raw_h200_tensor_upper_bytes": 1498180608,
+      "per_trial_allowance_bytes": 1725319424
+    },
+    {
+      "width": 1024,
+      "family": "gqa",
+      "parameters": 148561920,
+      "parameter_bytes": 594247680,
+      "cache_bytes_batch1": 2097152,
+      "raw_h200_tensor_upper_bytes": 3565486080,
+      "per_trial_allowance_bytes": 4102720717
+    },
+    {
+      "width": 1024,
+      "family": "mla",
+      "parameters": 146606208,
+      "parameter_bytes": 586424832,
+      "cache_bytes_batch1": 589824,
+      "raw_h200_tensor_upper_bytes": 3518548992,
+      "per_trial_allowance_bytes": 4048743066
+    }
+  ],
+  "panels": {
+    "512": 32836217809,
+    "1024": 65654375377
+  },
+  "panel_description": "Two retained pilots, six LR screens, six fresh confirmations: seven trajectories per family. CPU continuation fixtures serialized only in memory. No MPS measurement or quality claim.",
+  "accounting": "24 bytes/parameter conservative tensor bound, plus2MiB metadata per trajectory, then15% headroom; additional4MiB round metadata and8GiB reserve.",
+  "helper_sha256": "e27c824ba977a6af2c9bf6c574d22e0da60db7c18c48ec265f2f6ef73bf6094c"
+}

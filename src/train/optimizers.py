@@ -114,9 +114,11 @@ def build_optimizer(model, training):
                  or getattr(cfg, 'attention_width_policy', None) == 'mha_head32_qkrms')
         if qkrms:
             validate_qkrms_contract(cfg)
+        from ..models.tokenizer_architecture import wide_architecture_contract
+        wide_tokenizer = wide_architecture_contract(cfg) is not None
         mla = (cfg.attn_type == 'mla'
                and getattr(cfg, 'attention_width_policy', None) == 'mla_quarter_head32'
-               and cfg.dim in {64,128,256} and cfg.n_heads == cfg.dim // 32
+               and (cfg.dim in {64,128,256} or wide_tokenizer) and cfg.n_heads == cfg.dim // 32
                and cfg.n_layers == 4
                and getattr(cfg, 'depth_width_policy', None) == 'depth4_unscaled'
                and not any(hasattr(cfg,k) for k in ['dimckv','dimcq','head_dim_r','n_kv_heads','n_groups']))
@@ -124,7 +126,7 @@ def build_optimizer(model, training):
         dense = (policy == 'dense_4x' and getattr(cfg, 'ffn', 'gelu') in {'gelu', 'silu'}
                  and getattr(cfg, 'hidden_dim', 4 * cfg.dim) == 4 * cfg.dim)
         gated = (policy == 'swiglu_21_8' and getattr(cfg, 'ffn', 'gelu') == 'swiglu'
-                 and cfg.dim in {64,128,256} and getattr(cfg, 'base_width',64) == 64
+                 and (cfg.dim in {64,128,256} or wide_tokenizer) and getattr(cfg, 'base_width',64) == 64
                  and ((cfg.n_layers == 2 and not hasattr(cfg, 'depth_width_policy'))
                       or (cfg.n_layers == 4 and getattr(cfg, 'depth_width_policy', None) == 'depth4_unscaled'
                           and (mla or (cfg.attn_type == 'mha' and cfg.n_heads == cfg.dim // 32

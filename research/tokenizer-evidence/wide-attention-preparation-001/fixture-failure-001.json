@@ -1,0 +1,5 @@
+{
+  "scope": "CPU fixture, before optimizer updates; no MPS pilot or quality work",
+  "error": "Two-update fixture places cooldown at final update and violates schedule contract",
+  "correction": "Use four updates, cooldown start2 and EMAstart1/interval1 to test continuation of initialized EMA. Retain original failed log. Production1200-update recipe unchanged."
+}
