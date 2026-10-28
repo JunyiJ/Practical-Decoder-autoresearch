@@ -55,7 +55,7 @@ def _stop(process):
 
 def run_process(argv, cwd, output, lock_fds, *, required_free_bytes,
                 output_limit_bytes, log_limit_bytes=4*1024**2,
-                timeout_seconds=7200, poll_seconds=.2):
+                timeout_seconds=7200, poll_seconds=.2, watch_root=None):
     """One fresh process; exceptions are retained and never retried here.
 
     required_free_bytes includes all remaining arms plus the 8GiB reserve at
@@ -81,6 +81,9 @@ def run_process(argv, cwd, output, lock_fds, *, required_free_bytes,
             raise ValueError('Invalid inherited lock descriptor')
         os.fstat(fd)
     output = Path(output).absolute(); cwd = Path(cwd).resolve()
+    watch_root = Path(watch_root).resolve() if watch_root is not None else output
+    if not output.resolve().is_relative_to(watch_root.resolve()):
+        raise ValueError('Process output must lie inside watched trial root')
     output.mkdir(exist_ok=False)  # terminal even for previous success/failure
     journal = output/'process.json'
     state = dict(status='preflight', argv=list(argv), pid=None, returncode=None,
@@ -96,7 +99,9 @@ def run_process(argv, cwd, output, lock_fds, *, required_free_bytes,
             stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
         temporary.replace(journal)
     def check(initial=False):
-        sample = snapshot(output); state['observation'] = sample
+        sample = snapshot(watch_root)
+        sample['log_bytes'] = (output/'worker.log').stat().st_size if (output/'worker.log').exists() else 0
+        state['observation'] = sample
         if sample['free_bytes'] < (required_free_bytes if initial else RESERVE):
             raise RuntimeError('Insufficient disk for remaining allocations' if initial else 'Disk reserve crossed')
         if sample['log_bytes'] > log_limit_bytes or sample['output_bytes'] > output_limit_bytes:

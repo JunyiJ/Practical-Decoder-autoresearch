@@ -1,0 +1,51 @@
+{
+  "status": "mocked_quality_integration_passed_not_launch_ready",
+  "at": "2026-10-28T06:19:24.876112+00:00",
+  "checks": 38,
+  "integration_checks": 20,
+  "process_runner_checks": 18,
+  "initial_checks": 37,
+  "guard": {
+    "elapsed_seconds": 3.584476917050779,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17522438144,
+      "peak_rss_bytes": 230064128
+    },
+    "pid": 53072,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "24 synthetic quality records through integrated stages and frozen-input checks",
+    "prerequisite source/runtime/corpus and underlying artifact bindings",
+    "saved choices and reviewed prior artifacts rechecked",
+    "full remaining-allocation preflight and per-trial watch root",
+    "failure and STOP terminate further dispatch without resume",
+    "inherited open-file description retains lock after parent closes"
+  ],
+  "real_quality_dispatch": false,
+  "real_prerequisite_reviews_created": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Training dispatch and score adapter mocked in controller tests; separate adapter checks remain evidence",
+    "No MPS end-to-end validation",
+    "No pilot/inference controllers or valid full numerical/resource reviews yet",
+    "Full storage fit still unavailable"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_driver.py": "eec8b41d823cb478e159a50b215ed61ccb829d9a5a621d345cecfe8ab9232316",
+    "tests/test_tokenizer_wide_hybrid_driver.py": "3432d875f9526b894f15e1710a346b9a4740a676b665df6af65e0e15089ba52b",
+    "src/research/tokenizer_serial_process.py": "6a4dd8679747a94fd2e58b9f0592011f881a5c8cb2b8394b89adcd79ddb683c3",
+    "tests/test_tokenizer_serial_process.py": "485c56f12a80a2abde66c086916e6ec4f8dd0e7192c0b021a2332e8dc9bab2a2",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-integration-tests.log": "5bd2316a92710a0549343dfeb74290927172491ca01d43705bce1c1c4c60b5ac",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-integration-guard.json": "2abf51ac43b6e48e6e692a348b5ed08c77aac5c076c1393da703cc3e64a7a68d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-integration-final-tests.log": "926e310ae921ce02507e8bb356033dab57467734b3b49c99462adcc60c791967",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-integration-final-guard.json": "c77aa071674f395bfbece6e85d147efa929653676cd14e320e88f9982708c283"
+  }
+}

@@ -235,3 +235,30 @@ Production pilot/quality/inference integration still needs source/runtime/data
 binding, the score adapter, all remaining-arm accounting and finite freeze.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/process-runner-review.json`.
 No storage gate, historical controller or failed continuation fixture changed.
+
+## Prospective quality-controller integration
+
+The new quality driver connects exact-prefix scheduling, immutable LR/rank
+selections, a shared worker/run lock, full remaining-arm accounting, the bounded
+subprocess primitive and the saved-score metadata adapter. It has no prepare or
+freeze command. Drafts, changed source/runtime/protocol/projection/corpus/recipe,
+missing numerical/pilot reviews or unfrozen underlying prerequisite artifacts
+are rejected before any dispatch. Every previous reviewed request/result and
+checkpoint hash is rechecked before further work. Completion remains pending
+tensor-value and serving audits and never automatically adopts a recipe.
+
+Thirty-eight checks passed in3.44s:20 controller integration cases with mocked
+dispatch/score review and18 tiny-process runner checks. Peak test-parent RSS was
+230,064,128bytes. Synthetic plan reviews are test fixtures, not campaign evidence.
+The integration caught two engineering details: process output guards now count
+the entire trial directory including sibling checkpoints, and the new controller
+closes lock descriptors without an explicit unlock so a child descriptor retains
+exclusion if cleanup is uncertain. A descriptor-inheritance test verifies this.
+Historical controllers and their source files remain unchanged.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-integration-review.json`.
+This does not establish MPS end-to-end correctness. No frozen new campaign plan,
+passing full numerical review or resource pilot review exists; local storage
+still fails the complete panel projection. Pilot/inference controllers, those
+reviews, actual resources and final freeze remain required. No training or failed
+continuation retry ran, and no new quality result exists.

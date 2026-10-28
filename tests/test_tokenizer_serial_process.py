@@ -140,3 +140,12 @@ def test_cleanup_diagnostic_cannot_hide_original_failure(tmp_path, monkeypatch):
     assert s['status'] == 'failed' and 'code 3' in s['error']
     assert 'synthetic cleanup observer failure' in s['cleanup_error']
     assert not p._group_exists(s['pid'])
+
+
+def test_watched_trial_includes_sibling_checkpoint_output(tmp_path):
+    with locks(tmp_path) as fds:
+        with pytest.raises(RuntimeError, match='output limit'):
+            run(tmp_path, fds, "from pathlib import Path; Path('checkpoint.bin').write_bytes(b'x'*70000)",
+                watch_root=tmp_path)
+    assert state(tmp_path)['status'] == 'failed'
+    assert (tmp_path/'checkpoint.bin').stat().st_size == 70000
