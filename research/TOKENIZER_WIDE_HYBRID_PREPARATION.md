@@ -103,3 +103,11 @@ process memory, not an MPS training measurement. Preserve
 `cpu-resource-failure-001.json`; no numerical retry or MPS launch followed.
 Review fixture lifetime and a separately recorded validation procedure before
 further numerical work. The wider anchor is not launch-ready.
+
+The failure review now identifies overlapping serialized checkpoint, deserialized
+checkpoint and EMA lifetimes as hypotheses to investigate, without asserting a
+measured cause. A separate opt-in CPU guard preserves observations outside pytest
+capture;11 lightweight guard checks passed. See
+`tokenizer-evidence/wide-hybrid-preparation-001/cpu-failure-review-001.md`.
+This diagnostic work does not complete the two missing continuation checks or
+authorize rerunning the failed fixture. No further numerical attempt has run.
