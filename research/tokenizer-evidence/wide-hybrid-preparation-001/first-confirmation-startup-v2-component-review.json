@@ -1,0 +1,60 @@
+{
+  "adopted": false,
+  "base_commit": "5b0ad432a99f440159862bd4bd03bf669aa0dc51",
+  "created_at": "2026-10-28T23:37:55.625899+00:00",
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-compact-v2-guard.json": "74837031215721a348c8cc8fe6f6b97008fb63bfe8b3819ecbe9ea659deec1ec",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-compact-v2-tests.log": "33639967651fe55171e85569b4a956db71705ee8baf867821054b7bd5d1b5498",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-startup-v2-guard.json": "0f8f4e65349d9e792783eadcb249b043a9cf4c55e81db178baeb7fe54cc971b9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-startup-v2-tests.log": "fff5397837c4a1e90749b7d83d2ff0260a1c155ee1eb03f9519fd8eaf9916a21",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-compact-v2-census.json": "89e848796d7c7735b1451319664200c3d9f3a0dbf5eca7de99224485a8946f4c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-startup-v2-census.json": "76046f4b35c6bd54466f5198c9ff4bc13b924f4e8ef9cbf4f4bb2d96a7ddda67",
+    "src/research/tokenizer_wide_hybrid_first_confirmation_startup_v2.py": "b709a14aceb4d180161468946ade5763023f2b9dd46e9d52c888d924d836cb20",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_startup_v2.py": "194d2af58999974e031dc30d2d23beb5c4a451022743ab1eb7c553f44418be6d"
+  },
+  "findings": [
+    "First-fresh preparation supports only slot15. It rebinds independently frozen conditional requests, original pilot/LR/rank cleanup and transport history, persisted LR/rank choices and all selected screen identities. Producer/tensor/resource/validation/numerical/input/corpus audits and complete remaining-capacity checks precede request creation. No child is launched or dispatch authorization granted.",
+    "Read-only startup verification reconstructs the pending request without completed-record or checkpoint credit. It verifies historical choices, source, all retained checkpoints, cumulative receipts, exact current inventory and current/future capacity, then repeats locks, guards, file census and free-space checks.",
+    "The initial fixture receipt repeated91589 bytes of history. The final receipt is5073 bytes, using immutable reference-bound digests for completed records, checkpoint pairs, cleanup stages and frozen files. Verification reconstructs and compares all those values; rehashed forged digests are rejected. No evidence is rewritten or dropped.",
+    "Low-space and source-change failures before/after request creation preserve existing evidence, retain the attempted/partial request where applicable, publish failure without a successful receipt and reject retry. The fixture retains all six selected checkpoint files; no fresh weights exist.",
+    "All14 initial tests and all11 targeted post-compaction rechecks passed. Both CPU/time/disk guards finished normally, with no test or driver failures. Initial and final census evidence are both retained."
+  ],
+  "free_bytes_observed": 30354206720,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_first_confirmation_startup_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Only first-fresh slot15 request preparation and read-only verification are implemented here. Fresh readiness, child entry, parent acceptance, serial dispatch, subsequent fresh transport binding and inference integration remain unfinished. No later fresh slot can use this component.",
+    "Synthetic byte/config metadata fixtures only; no numerical or quality evidence. Actual nine rank-policy optimizer/update/resume/EMA cases, actual96-token training input trace and measured pilot checks remain unresolved. The failed combined numerical fixture and all closed controllers remain closed.",
+    "The census omits complete fresh controller and inference metadata and does not prove a full real panel fit. Recheck complete actual high-water/storage and metadata gates before freeze. No research checkpoint removal, model training/MPS, test-holdout evaluation, paid compute or subagents. Caps/reserve/rates/seeds/order/quality gates unchanged."
+  ],
+  "maximum_observed_rss_bytes": 243744768,
+  "next_action": "Read first-confirmation-startup-v2-component-review.json. First-fresh slot15 preparation and read-only verification are tested, with compact immutable history digests. Next integrate fresh readiness/child entry/parent acceptance and serial dispatch; later slots16..23 must independently bind earlier fresh transport receipts before preparation. Complete inference integration and full actual metadata accounting before freeze. Actual nine numerical/input/measured-pilot prerequisites unresolved; failed combined fixture and all closed campaigns remain closed. Preserve existing caps, reserve and complete future-capacity checks; no MPS launch.",
+  "status": "first_fresh_preparation_tested_campaign_unfrozen",
+  "synthetic": {
+    "completed_fresh": 0,
+    "file_count": 511,
+    "full_real_panel_fit_proven": false,
+    "initial_startup_bytes": 91589,
+    "live_checkpoint_files": 6,
+    "meta_bytes": 1442712,
+    "meta_cap_bytes": 2097152,
+    "startup_bytes": 5073,
+    "total_metadata_bytes": 1986094
+  },
+  "tests": [
+    {
+      "guard": "finished",
+      "passed": 14,
+      "scope": "Initial first-fresh preparation/verification, exact slot types, full history/live-anchor/storage gates, forged receipts and three failure cases with no retry",
+      "seconds": 295.65
+    },
+    {
+      "deselected": 3,
+      "guard": "finished",
+      "passed": 11,
+      "scope": "After compact history references: complete startup/verification and corruption/storage checks plus exact supported-slot checks; three previously passed failure cases deselected",
+      "seconds": 89.63
+    }
+  ]
+}

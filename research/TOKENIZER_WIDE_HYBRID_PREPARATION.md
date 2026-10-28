@@ -2276,3 +2276,36 @@ weights were removed, no training/MPS or test-holdout evaluation ran, and the
 campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/confirmation-history-v2-component-review.json`.
+
+
+## October 28 first fresh-confirmation startup
+
+A new v2 component prepares only the first fresh request, slot15, after full
+retained-history, selected-screen producer/tensor/resource/validation, frozen
+request, numerical/input and complete remaining-storage checks. Its read-only
+verifier reconstructs the pending request without completed-trial or checkpoint
+credit, rechecks original identities and current capacity, and rejects changed
+evidence or forged receipts. It launches no child and grants no dispatch credit.
+Later fresh slots require earlier fresh transport receipts and remain unsupported
+by this first-slot component.
+
+All14 initial tests passed in295.65s, including insufficient space and source
+changes before/after request creation. Failed attempts retain their evidence,
+publish no successful receipt and cannot retry. The first synthetic receipt
+was91,589 bytes because it repeated history. Replacing that repetition with
+immutable reference-bound hashes reduced the receipt to5,073 bytes; all11
+targeted post-compaction checks passed in89.63s. Verification reconstructs the
+records, pairs, cleanup stages and frozen files and rejects forged hashes.
+Both CPU/time/disk guards finished normally, maximum observed RSS243,744,768
+bytes, with no test or driver failures. Both census versions are preserved.
+
+The final disposable fixture has1,442,712/2,097,152 bytes in the meta group,
+1,986,094 total metadata bytes and511 files. Six selected checkpoint files
+remain; zero fresh trials completed. This is not a full real-panel fit proof.
+Next integrate fresh readiness/child/parent transport and serial dispatch,
+then inference and full actual metadata accounting. Actual numerical/input/
+measured-pilot prerequisites remain unresolved. No research checkpoints were
+deleted and no training/MPS or test-holdout evaluation ran; the campaign remains
+unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-startup-v2-component-review.json`.
