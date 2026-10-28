@@ -33,10 +33,10 @@ in for disk export checks; both were completed separately.
 
 ## Reviewed screening progress
 
-October28,04:14UTC: three GQA screens and one MLA screen completed1200updates. Checkpoint
+October28,04:19UTC: three GQA screens and two MLA screens completed1200updates. Checkpoint
 hashes, exact config/tokenizer/EMA lineage, parameter counts and saved validation
 arithmetic passed review. Full tensor-finiteness/EMA equality audit remains due
-after all quality trials, before timing. The second MLA screen is running serially.
+after all quality trials, before timing. The final MLA screen is running serially.
 
 | Family | Seed | LR | Raw CE | H200 CE | Training seconds | Raw/H200 bytes |
 |---|---:|---:|---:|---:|---:|---:|
@@ -44,6 +44,7 @@ after all quality trials, before timing. The second MLA screen is running serial
 | GQA | 3401 | 0.00125 | 4.704309 | 4.709348 | 423.57 | 1,212,186,892 |
 | GQA | 3401 | 0.0025 | 4.996874 | 4.883027 | 421.32 | 1,212,186,892 |
 | MLA | 3401 | 0.0025 | 4.959769 | 4.842255 | 415.56 | 1,205,038,972 |
+| MLA | 3401 | 0.00125 | 4.651238 | 4.649909 | 415.38 | 1,205,039,036 |
 
 These screens establish completion within the resource allowances for these
 configurations only. LR0.00125 has the lowest H200 CE in this GQA screen grid;
