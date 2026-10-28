@@ -1,0 +1,49 @@
+{
+  "status": "synthetic_serial_simulation_passed_not_production_launcher",
+  "at": "2026-10-28T06:05:29.527570+00:00",
+  "checks": 50,
+  "new_simulation_checks": 21,
+  "rules_regressions": 29,
+  "guard": {
+    "elapsed_seconds": 0.3780035004019737,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 17521025024,
+      "peak_rss_bytes": 67518464
+    },
+    "pid": 52450,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "24 synthetic quality records with exact prefix/order",
+    "exclusive global/local locks in temporary fixture directories",
+    "durable stage selections before later callbacks",
+    "simulated timeouts and interruptions preserve active trial and completed prefix",
+    "STOP pauses at boundary; all existing directories refuse restart",
+    "changed identity/selection and incomplete/duplicate records rejected"
+  ],
+  "subprocesses_started": 0,
+  "model_or_corpus_loaded": false,
+  "checkpoint_written": false,
+  "failed_fixture_retry": false,
+  "limitations": [
+    "Synthetic callbacks only; no production launch-path validation",
+    "No physical crash/power-loss test despite flush/fsync writes",
+    "Pilot and inference controllers still required",
+    "Production resource watchdog and frozen provenance/score binding incomplete",
+    "Storage fit and model optimizer/resume/EMA prerequisites unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_simulation.py": "5417281a2b33eb0880ba16009b3dec3b4cfc09d8432c315d659f8cd415902ae2",
+    "tests/test_tokenizer_wide_hybrid_simulation.py": "696175fa96c6a607c282c508fcd66a60e76f08f0474b9f0c7e30e4f9fffc2540",
+    "src/research/tokenizer_wide_hybrid_rules.py": "7fc5638cccc2c73407384d9d615bdebe5ac448593fdb2afb0ac3e9d2fb7a954a",
+    "tests/test_tokenizer_wide_hybrid_rules.py": "5ef3611ee17fd80a772081a72848d6439a511004114da807cc25b8cbacbab2e5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-controller-simulation-tests.log": "35c46e0118772a5a7b25161bebf3ec06ad738f4265f5dcca370432d45ed0e4e9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-controller-simulation-guard.json": "d82114d638d191794e754f5cadcc9d13da228934bc2cb232649645240cd98a4d"
+  }
+}

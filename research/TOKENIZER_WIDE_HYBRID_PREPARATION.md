@@ -196,3 +196,22 @@ finiteness, exact EMA values, optimizer state correctness or continuation. The
 controller still must bind expected inputs to frozen source/runtime/data and
 persisted selections, serialize worker dispatch, and require separate tensor and
 serving audits before adoption. No MPS launch or failed-guard retry occurred.
+
+## Serial stage and persistence simulation
+
+Twenty-one new controller-stage simulations plus29 rule regressions passed
+(50 checks,0.27s; peak process RSS67,518,464bytes). The simulation executes24
+synthetic scalar quality records in the prospective order, persists LR/rank
+choices before subsequent callbacks and checks the exact completed prefix.
+Exclusive global/local locks, changed provenance/selection, incomplete or
+duplicate records, boundary STOP, interruptions and simulated timeouts at each
+stage boundary are covered. Existing run directories are never resumed or
+overwritten; failure preserves the active trial and completed prefix. State and
+selection writes flush/fsync, with selections published exclusively.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/controller-simulation-review.json`.
+This is a small isolated synthetic driver, not a tested MPS launcher. It starts
+no subprocess, loads no corpus/model and produces no checkpoint. Resource pilots,
+production subprocess/watchdog integration, frozen provenance/score adapter
+binding, actual filesystem fit and unresolved numerical prerequisites remain.
+All failures and closed campaigns remain preserved; no launch gate changed.
