@@ -199,3 +199,25 @@ triples for panel summaries. Evaluate the previously declared state-saving gate
 against both controls at every seed/batch, with exact integer byte arithmetic.
 Latency summaries have no speed-win gate; neither a timing audit nor its memory
 gate can adopt a recipe without the quality and complete-artifact requirements.
+
+The prospective real correctness callback now specifies full forward logits for
+all96 input tokens versus a cached32-token prefill followed by64 one-token calls.
+Compare each cached chunk to the corresponding full logits with rtol3e-4 and
+atol3e-5, rejecting nonfinite FP32 logits. Reset all layer caches and replay the
+same complete sequence once more against the same reference. Record the maximum
+absolute error across both passes. These are prospective numerical tolerances;
+they must pass on the actual selected models, not merely synthetic fixtures.
+Checking chunks individually avoids retaining a second concatenated96-token
+logit tensor while the full reference is resident.
+
+Each timed call constructs fresh layer caches before synchronization and the
+start clock. Prefill timing includes its model call and ending synchronization;
+decode timing includes64 sequential teacher-forced one-token calls and a final
+synchronization, without per-token synchronization. Input construction, cache
+allocation, state-storage counting and allocator queries remain outside timed
+intervals. The strict adapter requires MPS availability without CPU fallback,
+all three explicit width512 NoPE rank-policy models in eval mode, matching model
+and cache configurations, MPS FP32 parameters and floating buffers, and the
+independently expected token hash. This adapter does not load/check checkpoints,
+start a watchdog, hold worker locks or authorize a launch; the guarded wrapper
+must supply those prerequisites and provenance checks.

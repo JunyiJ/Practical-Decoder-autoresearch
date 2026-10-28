@@ -307,3 +307,26 @@ prove the numerical correctness callbacks or MPS behavior. Provenance-verified
 model loading, real cache/timing callbacks, guarded serial wrappers, numerical
 prerequisites, resource pilots, storage fit and final freeze remain open. No
 closed controller, failure record, reserve or test-holdout boundary changed.
+
+## Cached correctness and timing callback preparation
+
+Sixteen new tiny deterministic recurrence/adapter-rejection checks and53 timing
+contract/audit regressions passed (69 total,0.70s; peak process RSS275,578,880bytes).
+The synthetic recurrence has two output logits and no trained parameters; it is
+not a campaign architecture or a retry of the failed continuation fixture.
+Tests verify all96 cached positions, full-forward equality, reset/replay, late
+cached drift, nonfinite logits, fresh cache allocation per timing call, exact
+synchronization/clock boundaries, failure propagation and strict-MPS rejection.
+
+The new production callback adapter checks the explicit width512 rank policy,
+family layout, matching model/cache configs, eval mode and MPS FP32 tensors.
+Its kernels compare96 full logits against32prefill+64decode calls, then reset and
+repeat correctness; measured timing uses a fresh cache per call. Unique actual
+cache backing storage and allocator readings are taken after the timed regions.
+No MPS path or real KDA/gated-MLA model was exercised by these synthetic tests.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/measurement-kernel-review.json`.
+Checkpoint/tokenizer provenance loading, guarded serial inference integration,
+resource pilots, full numerical prerequisites, storage fit and freeze remain
+required. No research training, real benchmark, failed-guard retry, cleanup or
+closed-controller execution occurred. The held-out test remains closed.

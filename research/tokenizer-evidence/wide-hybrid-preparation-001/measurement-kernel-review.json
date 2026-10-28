@@ -1,0 +1,46 @@
+{
+  "status": "tiny_synthetic_measurement_kernels_passed_not_launch_ready",
+  "at": "2026-10-28T06:39:00.935196+00:00",
+  "checks": 69,
+  "new_checks": 16,
+  "regression_checks": 53,
+  "guard": {
+    "elapsed_seconds": 0.8532891673967242,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17509376000,
+      "peak_rss_bytes": 275578880
+    },
+    "pid": 53899,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Full96 vs32prefill+64decode positions",
+    "Cache reset and complete replay",
+    "Late cached drift and nonfinite logits rejected",
+    "Fresh cache and synchronized timing boundaries",
+    "Failure propagation without retry",
+    "Strict MPS adapter rejection checks"
+  ],
+  "real_campaign_model_executed": false,
+  "real_mps_execution": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Two-logit toy recurrence only; actual hybrid/control numerical behavior untested here",
+    "Production MPS adapter success path not exercised",
+    "Checkpoint/tokenizer provenance and guarded serial inference integration pending",
+    "Numerical prerequisites, resource pilots and complete storage fit unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_measurements.py": "8c4dfe69cab2e44eb834113fbb2215acc9c68bb63c1597b286bd02f8daee53b5",
+    "tests/test_tokenizer_wide_hybrid_measurements.py": "4f6a2a9d786e014ad5c5a9a2f625d1ef7065531a6469bd04115b8853cc65d896",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-measurement-kernel-tests.log": "452c610a9124ce897ac1ccb76df44321cab969a4ec23e5c207c0af5ad50c29b2",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-measurement-kernel-guard.json": "6e8d0e2505c161f8f8e2b9a0d39a97d8f7553840b1ed155113d8fae89eda10b6"
+  }
+}
