@@ -70,7 +70,7 @@ remaining allocation fits above8GiB reserve. Source and test holdout stay frozen
 
 ## Fresh confirmation progress
 
-3 of nine confirmation trajectories have completed and passed the saved-artifact
+4 of nine confirmation trajectories have completed and passed the saved-artifact
 review. This is an incomplete panel; no final paired quality gate or adoption is declared.
 
 | Seed | Arm | Selected LR | Raw CE | H200 CE |
@@ -78,10 +78,12 @@ review. This is an incomplete panel; no final paired quality gate or adoption is
 | 3311 | legacy_untied | 0.00125 | 4.738458 | 4.742336 |
 | 3311 | matched_untied | 0.0025 | 4.879054 | 4.855979 |
 | 3311 | scaled_tied | 0.0025 | 4.908078 | 4.881648 |
+| 3312 | matched_untied | 0.0025 | 4.845808 | 4.844221 |
 
 The first fresh seed triple is complete. Its tied H200 CE is higher than both
-controls; this is one seed, not the final three-seed result. Continue the exact
-frozen panel and inference review without changing rates, gates or seeds.
+controls; this is one seed, not the final three-seed result. The second seed
+is in progress. Continue the exact frozen panel and inference review without
+changing rates, gates or seeds.
 
 All independent LR selections remain frozen. Source/runtime/data provenance and
 remaining disk allocations pass; the serial worker continues. Test loss is closed.
