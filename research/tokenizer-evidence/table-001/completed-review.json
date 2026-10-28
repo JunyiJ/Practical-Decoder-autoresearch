@@ -1,7 +1,7 @@
 {
-  "at": "2026-10-28T02:46:40.028026+00:00",
-  "completed_count": 7,
-  "free_bytes": 39678259200,
+  "at": "2026-10-28T02:51:47.491547+00:00",
+  "completed_count": 9,
+  "free_bytes": 38734086144,
   "holdout_consumed": false,
   "plan_sha256": "6abcfdfe160acaa34d214bb456720cd8ec16591a3647640201eb2628d16ba353",
   "records": [
@@ -108,6 +108,36 @@
       "steps": 1200,
       "training_seconds": 203.76279912423342,
       "trial_bytes": 560629125,
+      "width": 256
+    },
+    {
+      "family": "matched_untied",
+      "h200_ce": 4.85597906078174,
+      "id": "confirm-matched_untied-w256-s3311-lr0.0025",
+      "lr": 0.0025,
+      "pair_bytes": 560603788,
+      "raw_ce": 4.879053843711091,
+      "result_sha256": "4e076aebbc18e6184e2747ad833df6468f087c31af2ec48f67c97f0e5b0b72d1",
+      "seed": 3311,
+      "stage": "confirm",
+      "steps": 1200,
+      "training_seconds": 211.83657766133547,
+      "trial_bytes": 560629092,
+      "width": 256
+    },
+    {
+      "family": "scaled_tied",
+      "h200_ce": 4.881647769818243,
+      "id": "confirm-scaled_tied-w256-s3311-lr0.0025",
+      "lr": 0.0025,
+      "pair_bytes": 303285837,
+      "raw_ce": 4.908077975178528,
+      "result_sha256": "b25306982ee7d1ae0934ad5efcbcdff1eeef00b824404efdc680369e2de1de36",
+      "seed": 3311,
+      "stage": "confirm",
+      "steps": 1200,
+      "training_seconds": 184.52452815230936,
+      "trial_bytes": 303311094,
       "width": 256
     }
   ],
