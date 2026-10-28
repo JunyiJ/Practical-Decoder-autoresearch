@@ -1,0 +1,53 @@
+{
+  "adopted": false,
+  "base_commit": "77d64b438cd9802302ed051f86b1718161fd4ca6",
+  "created_at": "2026-10-28T21:03:49.005826+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-history-v2-guard.json": "e607b009dd0232a7f4a9d9ac9405ecd7e7d280d389d03b0abf1ed72b3fbb173b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-history-v2-tests.log": "b44ac3938a0ae3495bfaaf84a3cf742d3c6f58bb17637f416449735fe35a8f29",
+    "src/research/tokenizer_wide_hybrid_lr_boundary_v2.py": "622a2a6008b5cf6119b2afaaf2dde5842d150a9fe8cc4dec36101ddac41b575c",
+    "src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py": "039fe82730c0192e27b57d3b44ab649be8012660f0f3db12b952e633bd5291a8",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "b3fc6530085f4edec87fbc70e8d5da1c9845960c68d951d26a18fb5320ae4e93",
+    "src/research/tokenizer_wide_hybrid_retention_chain.py": "49ef31fc2fbdec4fa69513a0ea4a88a5e69d8869cb2016375bf2bf90bb159a8a",
+    "src/research/tokenizer_wide_hybrid_training_outputs.py": "50d5d915d0871384b1b11ca36a3eb266fe07d6ea9add5390b7f4180c2a97ff4a",
+    "tests/test_tokenizer_wide_hybrid_lr_boundary_v2.py": "51c5cd673d1001d5eda4a582cab637b2e5f2a10e751d8e0b3cb283a0b196179d",
+    "tests/test_tokenizer_wide_hybrid_lr_history_v2.py": "dd6cd272000526ed1d507e157c65362c15213af2af67bca78233e8147bc913f5"
+  },
+  "findings": [
+    "A separate read-only LR history consumer checks the original immutable selection, pre-deletion audits, finished guards, frozen source/runtime/corpus/plan, protected controls and complete pilot/LR deletion chain after declared rank files are appended. The original cleanup context identity stays identical; the strict idle verifier still rejects appended rank files.",
+    "Continuation names are limited to quality slots09 through14, declared producer artifacts, H200 and production final_001200_timestamp raw checkpoint names, and explicit prospective rank startup/readiness/dispatch/selection metadata. Earlier/fresh slots, unknown files, failure/temporary artifacts and rank-cleanup attempts are refused. All selected LR anchors remain protected; this consumer does not support their later rank-boundary retirement.",
+    "The complete caller-supplied inventory is hash-checked before and after verification. Both original historical context and the cumulative deletion chain are rechecked; it grants no rank audit, storage, adoption, selection or dispatch credit. New rank data may be semantically invalid until independently audited.",
+    "All44 tests passed, including the existing10 LR cleanup integration tests. Disposable synthetic histories accept declared but scientifically invalid rank bytes only with false audit/storage/dispatch flags, preserve original LR records/rates/pairs and reject stale inventories, changed protected evidence/control/journals, recreated losers, unauthorized files and changes during verification. Tests use mocked scientific records/children and delete only temporary fixture byte files."
+  ],
+  "free_bytes_observed": 30583275520,
+  "guard": {
+    "elapsed_seconds": 207.90825012512505,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 300
+    },
+    "observation": {
+      "free_bytes": 30583246848,
+      "peak_rss_bytes": 241614848
+    },
+    "pid": 92167,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_lr_history_v2_component_review",
+  "limitations": [
+    "Rank prefix audits must independently reconstruct conditional requests, re-audit all three surviving LR anchors and completed rank members, and then bind full remaining storage before preparation/dispatch. Fresh transitions, final rank selection/cleanup and inference remain unfinished.",
+    "Exact full frozen configuration/source/receipt metadata accounting is still required; synthetic metadata fixtures do not prove the complete256MiB budget fits. Initial full-panel storage must be rechecked before any freeze/launch.",
+    "Actual nine rank-policy numerical/input checks and measured pilot resource/cache/export gates remain unresolved. The failed combined numerical fixture and closed controllers remain closed.",
+    "No research training/MPS launch, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or test-holdout evaluation occurred. The27-trajectory campaign remains unfrozen and all prior scientific/resource guards remain in force."
+  ],
+  "status": "append_aware_lr_history_tested_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "passed": 44,
+    "seconds": 207.43
+  }
+}

@@ -5,6 +5,7 @@ actual workers. Post-cleanup verification binds retained original audits and
 journals; it never reloads or recreates intentionally deleted losing weights.
 """
 import os
+import re
 import shutil
 import time
 
@@ -16,10 +17,11 @@ from .tokenizer_wide_hybrid_cleanup import execute_boundary,_locks,_scan,_check,
 from .tokenizer_wide_hybrid_retention_chain import recheck_chain
 from .tokenizer_wide_hybrid_storage_v2 import bind_storage
 from .tokenizer_wide_hybrid_pilot_dispatch_v2 import _Guard
-from .tokenizer_wide_hybrid_pilot_startup_v2 import _inventory
+from .tokenizer_wide_hybrid_pilot_startup_v2 import _inventory,_check_inventory
 from .tokenizer_wide_hybrid_pilot_boundary_v2 import verify_pilot_history
 from .tokenizer_wide_hybrid_quality_acceptance_v2 import _guard
 from .tokenizer_wide_hybrid_quality_readiness_v2 import _controls
+from .tokenizer_wide_hybrid_quality_audit_v2 import QUALITY_ARTIFACTS
 from .tokenizer_wide_hybrid_scores import _require
 from . import tokenizer_wide_hybrid_lr_selection_v2 as selection
 
@@ -40,7 +42,7 @@ def _inputs(review):
         evidence=review['stage']['manifest']['evidence'])
 
 
-def _context(writer,review,review_ref,completion_ref=None):
+def _context(writer,review,review_ref,completion_ref=None,*,appended_inventory=None):
     """Revalidate frozen identity and all protected bytes throughout deletion."""
     root=writer.root/'evidence';_locks(root,writer.lock_fds);snapshot(writer.root)
     bound,_=selection._frozen(writer,8,review['plan_sha256'],review['projection_ref'])
@@ -50,6 +52,9 @@ def _context(writer,review,review_ref,completion_ref=None):
     inventory=selection._add(root,review['inventory'],review_ref)
     if completion_ref is not None:
         _document(root,completion_ref);inventory=selection._add(root,inventory,completion_ref)
+    if appended_inventory is not None:
+        _require(not set(appended_inventory)&set(inventory),'Appended rank evidence overlaps LR history')
+        inventory.update(appended_inventory)
     candidates={e['path'] for e in review['stage']['manifest']['delete']}
     actual=_scan(root,root/'.retention/lr')
     _require(actual<=set(inventory) and set(inventory)-candidates<=actual,'LR protected inventory changed')
@@ -194,3 +199,57 @@ def verify_lr_boundary(writer,plan_sha256,completion_ref):
         checkpoint_pairs=review['checkpoint_pairs'],stages=stages,chain=chain,storage=storage,
         selection_ref=review['selection_ref'],pilot_completion_ref=review['pilot_completion_ref'],
         projection_ref=review['projection_ref'],adopted=False,dispatch_authorized=False,next_stage_authorized=False)
+
+
+def _rank_append(name):
+    """Declared pre-cleanup rank output names, never a content/lineage audit."""
+    slots={f'{i:02d}' for i in range(9,15)}
+    parts=name.split('/')
+    if len(parts)>=3 and parts[0]=='quality' and parts[1] in slots:
+        relative='/'.join(parts[2:])
+        return relative in QUALITY_ARTIFACTS or relative=='checkpoints/h200.pt' or bool(
+            re.fullmatch(r'checkpoints/final_001200_[0-9]+\.pt',relative))
+    if len(parts)==2 and parts[0]=='meta':
+        allowed={'rank-selection.json'}
+        stems={'rank-boundary-selection'}|{f'quality-{phase}-{slot}'
+            for slot in slots for phase in ('rank-startup','readiness','dispatch')}
+        for stem in stems:
+            allowed.update(stem+suffix+'.json' for suffix in ('','-attempt','-review','-complete'))
+        return parts[1] in allowed
+    return False
+
+
+def verify_lr_history(writer,plan_sha256,completion_ref,*,current_inventory):
+    """Read-only LR history with declared rank appends, before rank cleanup.
+
+    Caller owns both locks, has inspected workers and supplies an outer guard
+    and exact immutable current inventory. New rank bytes are hash-checked, but
+    receive no scientific, storage, selection or dispatch credit. All selected
+    LR anchor weights must still exist. A later rank-cleanup consumer must bind
+    its own complete scientific review and cumulative deletion chain.
+    """
+    _require(isinstance(writer,MetadataWriter),'Bounded writer required')
+    root=writer.root/'evidence';_locks(root,writer.lock_fds)
+    complete,review,ref=_receipt(writer,plan_sha256,completion_ref)
+    _check_inventory(root,current_inventory)
+    baseline=set(review['inventory'])|{ref['path'],completion_ref['path']}
+    appended={}
+    for name,entry in current_inventory.items():
+        if name in baseline or name.startswith('.retention/lr/'):continue
+        _require(_rank_append(name),'Unreviewed append outside declared rank continuation namespace')
+        appended[name]=entry
+    identity=_context(writer,review,ref,completion_ref,appended_inventory=appended)
+    _require(complete['chain_stage']['context_sha256']==digest(identity),'LR historical context differs')
+    stages=[review['pilot_stage'],complete['chain_stage']]
+    history=verify_pilot_history(writer,plan_sha256,review['pilot_completion_ref'],
+        current_inventory=current_inventory,stages=stages)
+    chain=recheck_chain(root,stages,current_inventory)
+    _require(history['chain']==chain,'Pilot/LR historical chain differs')
+    _require(_context(writer,review,ref,completion_ref,appended_inventory=appended)==identity,
+             'LR history changed during verification')
+    _check_inventory(root,current_inventory);_locks(root,writer.lock_fds);snapshot(writer.root)
+    return dict(kind='wide_hybrid_lr_history_v2',records=review['records'],rates=review['rates'],
+        checkpoint_pairs=review['checkpoint_pairs'],stages=stages,chain=chain,
+        selection_ref=review['selection_ref'],pilot_completion_ref=review['pilot_completion_ref'],
+        projection_ref=review['projection_ref'],lr_history_verified=True,rank_audits_bound=False,
+        storage_verified=False,adopted=False,dispatch_authorized=False,next_stage_authorized=False)

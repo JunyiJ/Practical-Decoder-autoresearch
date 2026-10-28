@@ -1886,3 +1886,38 @@ research checkpoint deletion, failed combined numerical retry, closed-controller
 rerun or holdout evaluation occurred. The27-trajectory campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/lr-boundary-v2-component-review.json`.
+
+
+## October 28 LR history across rank preparation
+
+A separate read-only history consumer now verifies completed LR cleanup after
+declared rank files are appended. It keeps the original cleanup context identity
+and checks saved selection, pre-deletion audits, finished guards, frozen sources,
+protected controls, surviving weights and the entire pilot/LR deletion chain.
+The complete supplied inventory is checked before and after verification. The
+strict idle-boundary verifier still rejects appended files.
+
+Only slots09 through14, declared producer outputs and explicit prospective rank
+controller/selection metadata may be appended. Raw names match the production
+final_001200_timestamp format. Temporary/failure files, unknown paths, fresh
+confirmation slots and rank-cleanup attempts are rejected. All selected LR
+anchors must remain present. New rank bytes receive no scientific, selection,
+storage or dispatch credit; independent rank audits are still mandatory.
+
+All44 tests passed in207.43s under300s/4GiB/8GiB actual CPU/disk guards, including
+the10 existing cleanup integration tests. Tests cover unchanged protected
+history, stale inventories, changed metadata/controls/journals, recreated losers,
+unauthorized appends and mutation during verification. Deliberately invalid
+scientific rank payloads demonstrate that history verification cannot grant
+rank-audit credit. All fixtures are disposable and no research checkpoint was
+used or deleted.
+
+Next implement rank-prefix audits using independent conditional requests, all
+three surviving LR anchors and completed rank members, then connect preparation
+to the complete future storage gate. Fresh dispatch, final selection/cleanup and
+inference remain unfinished. Full frozen metadata accounting and actual nine
+numerical/input/measured-pilot prerequisites remain unresolved. No MPS/training,
+failed combined fixture retry, closed-controller rerun or holdout evaluation
+occurred; the27-trajectory campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/lr-history-v2-component-review.json`.
