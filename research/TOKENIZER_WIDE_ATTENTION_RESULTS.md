@@ -30,3 +30,20 @@ Preparation evidence: [CPU and resource review](tokenizer-evidence/wide-attentio
 The initial invalid two-update CPU fixture failure is retained and corrected;
 no MPS pilot failure or retry occurred. In-memory CPU resume checks do not stand
 in for disk export checks; both were completed separately.
+
+## Reviewed screening progress
+
+October28,03:55UTC: the first full1200-update GQA screen completed. Checkpoint
+hashes, exact config/tokenizer/EMA lineage, parameter counts and saved validation
+arithmetic passed review. Full tensor-finiteness/EMA equality audit remains due
+after all quality trials, before timing. The second screen is running serially.
+
+| Family | Seed | LR | Raw CE | H200 CE | Training seconds | Raw/H200 bytes |
+|---|---:|---:|---:|---:|---:|---:|
+| GQA | 3401 | 0.000625 | 4.825032 | 4.857613 | 427.64 | 1,212,186,956 |
+
+This single screen establishes completion within the resource allowance for this
+configuration only. It does not select an LR, rank attention families or establish
+quality improvement. All six screens and six fresh confirmations remain required.
+[Completed-record review](tokenizer-evidence/wide-attention-001/completed-review.json)
+records the bounded audit scope; source and prospective rules remain frozen.
