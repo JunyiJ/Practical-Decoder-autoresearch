@@ -215,3 +215,23 @@ no subprocess, loads no corpus/model and produces no checkpoint. Resource pilots
 production subprocess/watchdog integration, frozen provenance/score adapter
 binding, actual filesystem fit and unresolved numerical prerequisites remain.
 All failures and closed campaigns remain preserved; no launch gate changed.
+
+## Bounded subprocess primitive
+
+Seventeen isolated subprocess tests passed in2.73s for the fresh-only parent
+runner (`src/research/tokenizer_serial_process.py`). Tiny Python children tested
+inherited global/run lock descriptors, success/nonzero exits, reserve and full
+remaining-allocation rejection, timeout termination including SIGTERM refusal,
+post-exit output checks, observer failures and parent interruption. Cleanup
+errors retain a separate diagnostic without hiding the original failure. No
+model/corpus/checkpoint workload ran; peak test-parent RSS was53,493,760bytes.
+
+The primitive dispatches one explicit argv without a shell, starts a new child
+session, preserves exclusive output directories/logs and records terminal errors
+without retry. It samples output/log bytes, wall time and the8GiB reserve and
+checks the full remaining disk allocation before dispatch. It does not replace
+the worker's4GiB RSS/6GiB MPS-driver watchdog or validate frozen prerequisites.
+Production pilot/quality/inference integration still needs source/runtime/data
+binding, the score adapter, all remaining-arm accounting and finite freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/process-runner-review.json`.
+No storage gate, historical controller or failed continuation fixture changed.

@@ -1,0 +1,47 @@
+{
+  "status": "isolated_subprocess_primitive_passed_not_campaign_launch_ready",
+  "at": "2026-10-28T06:11:11.117135+00:00",
+  "checks": 17,
+  "initial_checks": 16,
+  "guard": {
+    "elapsed_seconds": 2.843616208061576,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 17518125056,
+      "peak_rss_bytes": 53493760
+    },
+    "pid": 52745,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "explicit argv, no shell, inherited global/run lock descriptors",
+    "fresh exclusive outputs, terminal no retry",
+    "full remaining disk preflight and sampled8GiB reserve",
+    "wall time and output/log caps including fast exit",
+    "owned session termination with SIGTERM then SIGKILL",
+    "original error retained with separate cleanup diagnostic"
+  ],
+  "real_model_or_corpus_loaded": false,
+  "MPS_launch": false,
+  "checkpoint_written": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Tiny child programs only",
+    "No MPS driver/RSS measurement; existing worker watchdog remains required",
+    "Campaign source/runtime/data/config/selection and score adapter integration incomplete",
+    "Complete storage fit, finite freeze and numerical prerequisites unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_serial_process.py": "3525459119e00148186307c82c85af299bf75625ab44b769ee042af60aacabba",
+    "tests/test_tokenizer_serial_process.py": "05a67dc633dda55457128b2be97e2af3c56455c34e385ea92b15b5dfc6263983",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-runner-tests.log": "e4e75934da11e6c95564f729b21a77b87d5d6b2ba38fc062206c81093703c1ff",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-runner-guard.json": "ad07cd16862262c5437de319a0f8252983c4c7ab4d80cc83f042d4ce05a3a9ff",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-runner-final-tests.log": "15c28a7f95f4ab5f76529cf4f7945194b862664d44f1798c77ab955bde770f6c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-runner-final-guard.json": "86a8aac3d48b7b13d8975098791305efde6d0abf6585222b2aed908bc4d4d650"
+  }
+}
