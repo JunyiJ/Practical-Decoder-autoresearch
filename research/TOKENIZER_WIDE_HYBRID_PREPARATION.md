@@ -788,3 +788,45 @@ provenance, campaign inventory, guarded boundary deletion and full serial
 lifecycle integration remain. All nine numerical prerequisites and measured
 pilot resources are still unresolved; the failed combined CPU fixture stays
 closed. No scientific plan or resource threshold changed.
+
+## October 28 guarded boundary cleanup component
+
+Added an internal v2 cleanup executor with no CLI and no production caller yet.
+It requires inherited global/campaign lock identities and trusted controller
+callbacks for independent authorization and repeated frozen-context checks.
+It verifies original audited hashes and the complete immutable evidence inventory
+before removal, records/fsyncs each intent before unlink, fsyncs the directory,
+then records/fsyncs completion. All protected files are rehashed afterward.
+A completed receipt alone is insufficient: the final execution marker also binds
+the full journal, guard, inventory and manifest. Any existing attempt is closed
+to automatic re-entry, including an interruption between unlink and its journal
+completion. This never authorizes restoring or silently regenerating weights.
+
+Validation: 20 new cleanup tests and 24 receipt regressions passed (44 total,
+0.50 seconds). Tests cover altered hashes, omitted inventory, wrong locks,
+symlinks, context changes, unlink errors, protected postcheck failures, metadata
+caps and a real subprocess hard exit immediately after a **synthetic** unlink.
+The durable intent survived that exit and no completed marker appeared. Only
+disposable synthetic bytes were removed; no retained model weight was touched.
+The outer CPU guard observed64,323,584bytes peak RSS under180s/4GiB/8GiB limits.
+Earlier incremental passes are retained as well.
+
+Executor limits are600seconds,4GiB RSS,8GiB reserve,1MiB per document/journal,
+5MiB per completed cleanup attempt and2,048 inventoried files. Three cleanup
+budgets plus resource/log caps consume231MiB of the256MiB prospective metadata
+allowance, leaving25MiB for the remaining complete metadata inventory. That
+inventory and cumulative controller enforcement still precede freeze.
+
+One integration issue is explicit: an LR anchor can legitimately lose the later
+rank comparison. The current execution rechecker is boundary-local and expects
+its then-protected files. Final provenance must instead validate a cumulative
+chain of separately authorized cleanup receipts for such later retirements;
+never add an arbitrary missing-file exception or permanently protect a losing
+anchor to work around this. The immutable evidence tree must also be separated
+from mutable controller state in the future frozen v2 layout.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/cleanup-v2-component-review.json`.
+Full plan/stage-audit/idle-worker callbacks, cumulative receipts, pilot/full-panel
+gates and runner/storage integration remain. No production cleanup or training
+was launched. Nine numerical cases and measured pilot resources remain missing;
+the failed combined fixture and all closed campaigns remain closed.

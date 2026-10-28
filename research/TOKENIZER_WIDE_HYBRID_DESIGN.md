@@ -387,3 +387,12 @@ not a replacement for full gates or measured MPS feasibility. Resource/log caps
 use216MiB of the256MiB prospective metadata allowance; remaining metadata and
 cumulative enforcement still need full controller integration before freeze.
 See `resource-v2-component-review.json` in wide-hybrid preparation evidence.
+
+The internal v2 boundary cleanup executor now has44 synthetic cleanup/receipt
+checks, including abrupt exit after unlink and protected postcheck failure.
+It is not wired to production authorization gates. Cleanup metadata reserves
+5MiB per boundary (15MiB total), leaving25MiB after resource/log budgets within
+256MiB. A cumulative receipt chain is still required when a formerly selected
+LR anchor becomes a losing rank screen; boundary-local rechecking alone cannot
+serve final provenance. See `cleanup-v2-component-review.json` in preparation
+evidence. No actual retained weights were deleted in this implementation step.

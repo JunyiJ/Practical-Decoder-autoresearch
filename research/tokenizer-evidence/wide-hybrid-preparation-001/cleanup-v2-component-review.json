@@ -1,0 +1,65 @@
+{
+  "status": "internal_boundary_executor_tested_not_wired_to_production_gates",
+  "created_at": "2026-10-28T16:30:25.442800+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_cleanup.py": "a07417f1a4f93f442dadafadc5d2b115eb4d9c4066b0427900f317448058e48e",
+    "tests/test_tokenizer_wide_hybrid_cleanup.py": "ac5633e9cca0a2c90d731451484acceebd6f701c836fc341ac5f8c9276f867d0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-tests.log": "e1775867ed883bcb9659d608c1864c408e09eb6b9e29ffa8e40a287078254e03",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-guard.json": "72e2c976d8b9c7279c5b8d3a0d79b3f0efa988e81f34084f93abdd25b60f66d0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-final-tests.log": "7a05c889b50ac050f3c2118b73f77a40abf501f50fbd04cb88e0b5063d0b10c1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-final-guard.json": "0a527a82a5a2d7cf2084790716b31b3c18f834b19fbc955fbfd41bf38bc14cbd",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-bounded-tests.log": "798c6c6cc02d6c580297962f6aec4951955ea5fafdae3e2491a7dbf78e8a7b41",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-bounded-guard.json": "a33bb50ca0ef3f0eef536a664955a4e9366492bb5f51eadeecdf2d8bf9d5f5f5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-cap-final-tests.log": "ee3ed90260493d4b84d4691bbf476f3b805e283fd2b36e14e95b856aa73f54fd",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-cleanup-v2-cap-final-guard.json": "6cba5314286149435509847b1adc66c7cc7512439a8ee7821ac392a2a62ab52e"
+  },
+  "tests": {
+    "new_cleanup_tests": 20,
+    "receipt_regressions": 24,
+    "final_total": 44
+  },
+  "final_guard": {
+    "elapsed_seconds": 0.6181679582223296,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 31138508800,
+      "peak_rss_bytes": 64323584
+    },
+    "pid": 72079,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 31146213376,
+  "limits": {
+    "cleanup_seconds": 600,
+    "rss_bytes": 4294967296,
+    "reserve_bytes": 8589934592,
+    "journal_bytes": 1048576,
+    "document_bytes": 1048576,
+    "completed_attempt_bytes": 5242880,
+    "inventory_files": 2048
+  },
+  "metadata_budget": {
+    "resource_and_log_cap_MiB": 216,
+    "three_cleanup_attempts_MiB": 15,
+    "remaining_other_metadata_MiB": 25,
+    "full_campaign_cumulative_enforcement": "still required before freeze"
+  },
+  "findings": [
+    "Exact original hashes and complete immutable inventory are checked before unlink; every removal has fsynced intent/deleted entries and parent directory fsync.",
+    "Abrupt exit immediately after synthetic unlink preserves intent, publishes no completed receipt/marker and permanently blocks automatic re-entry.",
+    "Protected postcheck failures prevent completion. Final verification requires manifest, full journal, guard, inventory and execution marker, not a receipt alone.",
+    "An LR winner can later be a legitimate losing rank screen. Boundary-local rechecking cannot replace a future cumulative receipt chain that validates this retirement."
+  ],
+  "limitations": [
+    "Only disposable synthetic files were removed. No real retained checkpoints, corpus, models or MPS workers touched.",
+    "Internal executor relies on trusted future controller authorize/revalidate callbacks for full frozen-plan/stage-audit/idle-worker gates; no production implementation is wired and no CLI exists.",
+    "Immutable evidence root must be separate from mutable controller state/lock files; future v2 layout needs to freeze this contract.",
+    "Cumulative receipt-chain provenance, pilot/full-panel gates, full future storage accounting, remaining metadata inventory and runner lifecycle integration remain unresolved.",
+    "All nine rank-policy numerical cases and measured pilot resources remain prerequisites. Failed combined CPU fixture closed; no failed-guard retry."
+  ]
+}
