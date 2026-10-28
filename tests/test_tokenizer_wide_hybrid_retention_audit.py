@@ -31,7 +31,7 @@ def score(parameters, path, sha, ce=5.):
         checkpoint=str(path),checkpoint_sha256=sha)
 
 
-def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindings=None):
+def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindings=None, rank_prefix_count=None):
     records=[dict(s,status='completed',ce=5.) for s in rules.lr_specs()]
     rates=rules.choose_rates(records)
     selection=None
@@ -39,6 +39,9 @@ def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindin
         records += [dict(s,status='completed',ce=5.) for s in rules.rank_specs(rates)]
         selection=rules.choose_ranks(records[:9],records[9:])
     indices=audit.boundary_candidates(boundary,records,rates,selection)['audit_required_indices']
+    if rank_prefix_count is not None:
+        assert producer_v2 and boundary=='rank' and 0<=rank_prefix_count<=6
+        indices=[i for i in indices if i<9+rank_prefix_count]
     if prefix_count is not None:
         assert producer_v2 and boundary=='lr' and 1<=prefix_count<=9
         indices=list(range(prefix_count))

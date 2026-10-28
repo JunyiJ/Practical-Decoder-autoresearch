@@ -135,3 +135,82 @@ def bind_lr_prefix(root,*,context,requests,evidence,numerical_ref,projection_ref
         producer_provenance_bound=True,prefix_audits_bound=True,stage_inventory_complete=True,
         stage_audits_bound=False,inventory_completeness_verified=False,frozen_plan_verified=False,
         storage_verified=False,dispatch_authorized=False,deletion_authorized=False,selection=None,manifest=None)
+
+
+def bind_rank_prefix(root,*,context,lr_records,rates,lr_requests,rank_requests,evidence,
+                     numerical_ref,rates_ref,projection_ref,training_token_sha256,pending_request=None):
+    """Audit live LR anchors and zero through six completed rank members.
+
+    Caller supplies independently frozen requests, historical LR records and
+    complete immutable metadata under worker locks and an outer resource guard.
+    This re-audits every surviving anchor but cannot establish the deleted LR
+    losers' history. The controller must also call verify_lr_history with the
+    complete current inventory, bind records/rates/pairs to that history, and
+    verify full remaining storage before any preparation or dispatch. No final
+    rank choice or cleanup credit is granted here, even for all six members.
+    """
+    root=Path(root).resolve();_sha(training_token_sha256)
+    _require(set(context)=={'plan_sha256','source_sha256','runtime_sha256','corpus_sha256'},
+             'Independent frozen provenance required')
+    for sha in context.values():_sha(sha)
+    _require(isinstance(lr_records,list) and len(lr_records)==9
+             and isinstance(lr_requests,list) and len(lr_requests)==9
+             and isinstance(rank_requests,list) and 0<=len(rank_requests)<=6,
+             'Complete LR history and bounded rank prefix required')
+    rules._rates(rates)
+    for i,(record,request,spec) in enumerate(zip(lr_records,lr_requests,rules.lr_specs())):
+        rules._checked([record],[spec])
+        _require(digest(request.get('spec'))==digest(spec)
+                 and request.get('result_path')==str(root/f'quality/{i:02d}/result.json'),
+                 'Independently frozen ordered LR requests required')
+    _require(digest(rules.choose_rates(lr_records))==digest(rates)
+             and digest(_document(root,rates_ref))==digest(rates),'Persisted LR selection differs')
+    count=len(rank_requests);specs=rules.rank_specs(rates)
+    expected={f'{i:02d}' for i in range(9+count)}
+    if pending_request is not None:
+        i=9+count;stem=f'quality/{i:02d}';name=stem+'/request.json';trial=_path(root,stem)
+        _require(count<6 and isinstance(pending_request,dict),'Pending request must be another rank screen')
+        _require(digest(pending_request.get('spec'))==digest(specs[count])
+                 and pending_request.get('result_path')==str(root/stem/'result.json'),
+                 'Pending frozen rank request/order differs')
+        _require(trial.is_dir() and {p.name for p in trial.iterdir()}=={'request.json'}
+                 and name in evidence and digest(_document(root,dict(path=name,sha256=evidence[name])))==digest(pending_request),
+                 'Only the exact pending rank request may follow the completed prefix')
+        expected.add(f'{i:02d}')
+    quality=_path(root,'quality')
+    _require(quality.is_dir() and {p.name for p in quality.iterdir()}==expected
+             and all(p.is_dir() and not p.is_symlink() for p in quality.iterdir()),
+             'Quality directory must equal historical LR plus completed rank prefix')
+    bound=dict(evidence)
+    for ref in (numerical_ref,rates_ref,projection_ref):
+        _require(ref['path'] not in bound or bound[ref['path']]==ref['sha256'],'Conflicting rank prefix evidence hash')
+        bound[ref['path']]=ref['sha256']
+    for name,sha in numerical_review(root,numerical_ref,context).items():
+        _require(name not in bound or bound[name]==sha,'Conflicting numerical evidence hash')
+        bound[name]=sha
+    projection=_document(root,projection_ref);budgets=allocations(projection)
+    anchors=[i for i,r in enumerate(lr_records) if r['lr']==rates[r['family']]]
+    _require(len(anchors)==3,'Exactly three selected LR anchors required')
+    trials={i:f'quality/{i:02d}' for i in anchors}
+    requests={i:lr_requests[i] for i in anchors};records=list(lr_records)
+    for offset,(request,spec) in enumerate(zip(rank_requests,specs)):
+        i=9+offset;stem=f'quality/{i:02d}';trials[i]=stem;requests[i]=request
+        _require(digest(request.get('spec'))==digest(spec)
+                 and request.get('result_path')==str(root/stem/'result.json'),
+                 'Independently frozen rank prefix request/order differs')
+        name=stem+'/result.json';_require(name in bound,'Completed rank result not bound')
+        result=_document(root,dict(path=name,sha256=bound[name]))
+        row=dict(spec,status=result.get('status'),ce=result.get('h200',{}).get('mean_ce'))
+        rules._checked([row],[spec]);records.append(row)
+    corpora=_bind_producers(root,training_token_sha256=training_token_sha256,context=context,
+        requests=requests,trials=trials,evidence=bound,projection_ref=projection_ref)
+    pairs=_review_quality_members(root,records,requests,trials,bound,context,projection,budgets)
+    _check_quality_inventory(root,[root/name for name in trials.values()],pairs,bound)
+    for corpus in corpora:_require(file_digest(corpus)==context['corpus_sha256'],'Rank prefix corpus changed')
+    return dict(kind='wide_hybrid_rank_prefix_v2',records=records,rates=rates,
+        checkpoint_pairs={f'quality/{i:02d}':pair for i,pair in pairs.items()},evidence=bound,
+        audited_indices=sorted(trials),historical_lr_indices=sorted(set(range(9))-set(anchors)),
+        producer_provenance_bound=True,prefix_audits_bound=True,stage_inventory_complete=True,
+        lr_history_verified=False,stage_audits_bound=False,inventory_completeness_verified=False,
+        frozen_plan_verified=False,storage_verified=False,dispatch_authorized=False,
+        deletion_authorized=False,selection=None,manifest=None)

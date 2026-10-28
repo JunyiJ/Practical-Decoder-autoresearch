@@ -1,0 +1,52 @@
+{
+  "adopted": false,
+  "base_commit": "f704494cfc5d8e8e59067a25e0f3d740cd3d2f83",
+  "created_at": "2026-10-28T21:08:22.753485+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-prefix-v2-guard.json": "3495c10df79a465a888f705885c52f633bb434a8398207a9d01abac69f1b582d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-prefix-v2-tests.log": "f8fe6e42640ef4119bd6ccd33f03f55e0a4c579a3f9af23de303ec84f1d72bd3",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "92fed151bb54dda2a30627f133d3c865486a9261d002c2e0f63401206a90e513",
+    "src/research/tokenizer_wide_hybrid_retention_audit.py": "f9f248733537ba384dfd83109ec4b34fb123fdb5d34e6a793170794e07d0b5c4",
+    "src/research/tokenizer_wide_hybrid_rules.py": "7fc5638cccc2c73407384d9d615bdebe5ac448593fdb2afb0ac3e9d2fb7a954a",
+    "tests/test_tokenizer_wide_hybrid_quality_audit_v2.py": "192d881ba486a135303f4e83e339697aae57900f0c0723f35f00447e4f0218d0",
+    "tests/test_tokenizer_wide_hybrid_quality_prefix_v2.py": "0362c8ed99c153b50ba31c661b4bfcb416d8eee5e10c97bb122d44747f7e905c",
+    "tests/test_tokenizer_wide_hybrid_rank_prefix_v2.py": "525124491a8d248f4c24a9296e84fe3f724059a635fd15147ca92510199d0f70",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "587360297a1c69f2585c0d19b1ccc0af308c9677106cb77fb2aba2fff88205c6"
+  },
+  "findings": [
+    "The rank-prefix auditor accepts zero through six completed rank members and re-audits all three selected live LR anchors on every call. It requires independently supplied exact ordered LR/rank requests, nine historical LR records, the persisted prospectively chosen rates, full metadata evidence and the original numerical/input/corpus bindings. Rank specs remain conditional on the saved rates; no selection or experiment rule changes.",
+    "Producer lineage, checkpoint hashes/inode identity, tensor/export audits, complete EMA/training budget, resource/process/event evidence, holdout flags and validation statistics are checked for every live anchor and completed rank member. The exact quality directory prefix is required. An optional pending request must be the next independent conditional spec and the only file in its slot; it receives no completed record/checkpoint credit.",
+    "The report explicitly distinguishes live audited indices from six historical losing LR indices and marks LR-history, frozen-plan, global-inventory, storage, full-stage, deletion and dispatch verification false. Complete LR history and cumulative cleanup receipts must be verified separately; absence of deleted weights is not silently credited by this auditor. Neither final rank selection nor a cleanup manifest is produced.",
+    "All173 CPU tests passed in7.36s, comprising87 new rank-prefix tests and86 existing LR-prefix/quality-stage dependency tests. They cover every zero-to-six rank prefix, every allowed pending position, independent request/order/rate mismatches, missing anchor/rank provenance, live weight changes/absence/aliases, failures/partial outputs, EMA/CE/holdout tampering and numerical/input/corpus changes. Only synthetic byte fixtures and mock scientific records are used; no model or real numerical case is run."
+  ],
+  "free_bytes_observed": 30580633600,
+  "guard": {
+    "elapsed_seconds": 8.759912332519889,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30580895744,
+      "peak_rss_bytes": 237666304
+    },
+    "pid": 93666,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_rank_prefix_v2_component_review",
+  "limitations": [
+    "Next connect this component to independently reconstructed frozen conditional options, verify_lr_history and full remaining-storage checks in bounded rank request preparation and predispatch. Historical LR rows/rates/pairs must match the verified original cleanup review; this component intentionally does not grant that history credit.",
+    "Rank/fresh process orchestration, final rank selection/cleanup, cumulative post-rank history and inference are unfinished. Exact full frozen configuration/source/receipt metadata accounting and actual nine numerical/input/measured-pilot prerequisites remain unresolved.",
+    "No research training/MPS launch, research checkpoint deletion, failed combined numerical fixture retry, closed-controller rerun or holdout evaluation occurred. All27 trajectories and prior quality/resource/storage gates remain unchanged; the campaign is unfrozen."
+  ],
+  "status": "live_anchor_and_rank_prefix_audit_tested_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "passed": 173,
+    "seconds": 7.36
+  }
+}

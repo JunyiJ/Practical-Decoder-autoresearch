@@ -458,3 +458,36 @@ failed combined fixture retry, closed-controller rerun or holdout evaluation
 occurred; the27-trajectory campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/lr-history-v2-component-review.json`.
+
+
+## October 28 live LR-anchor and rank-prefix audits
+
+The rank-prefix auditor now rechecks all three retained LR anchors plus zero
+through six completed rank members. It requires independently supplied frozen
+requests, exact conditional rank order, nine historical LR records and persisted
+LR choices. Every live member must pass producer/tensor/export, training/EMA,
+resource/process, validation and corpus/input checks. An optional next request
+must be the only file in its exact pending slot and receives no completion credit.
+
+The report distinguishes live audited indices from the six historical losers.
+It grants no LR-history, frozen-plan, global-inventory, storage, final-selection,
+deletion or dispatch credit. The controller must still bind historical rows,
+rates and original pairs through the complete LR cleanup receipt chain, then
+independently reconstruct conditional options and verify the full remaining
+storage requirement before rank preparation or dispatch.
+
+All173 tests passed in7.36s under180s/4GiB/8GiB actual CPU/disk guards:87 new
+rank-prefix cases and86 existing LR-prefix/quality-stage dependency cases. They
+cover all prefix/pending positions, malformed independent requests and choices,
+missing live-member provenance, changed/absent/aliased weights, failed/partial
+outputs, EMA/CE/holdout changes and numerical/input/corpus tampering. These are
+synthetic fixtures, not model-quality or numerical results.
+
+Next integrate bounded rank request preparation with verified LR history, frozen
+conditional options and full future storage. Rank/fresh orchestration, final
+selection/cleanup/inference, full metadata accounting and actual nine numerical/
+input/measured-pilot prerequisites remain unfinished. No research training/MPS,
+checkpoint deletion, failed combined fixture retry, closed-controller rerun or
+holdout evaluation occurred. The27-trajectory campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-prefix-v2-component-review.json`.
