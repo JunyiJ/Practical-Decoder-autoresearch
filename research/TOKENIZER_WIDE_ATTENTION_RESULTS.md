@@ -57,3 +57,14 @@ tensor/EMA audit and the three frozen inference pairs.
 the selection checks.
 [Completed-record review](tokenizer-evidence/wide-attention-001/completed-review.json)
 records the bounded audit scope; source and prospective rules remain frozen.
+
+## Fresh confirmation progress
+
+October28,04:35UTC: one of six fresh trajectories has completed and passed the
+same saved-artifact hash/metadata/arithmetic checks. MLA seed3411 is running.
+No complete fresh pair or comparative conclusion yet. Final tensor/EMA audit
+and frozen serving measurements remain due after all quality trajectories.
+
+| Family | Seed | Selected LR | Raw CE | H200 CE | Training seconds |
+|---|---:|---:|---:|---:|---:|
+| GQA | 3411 | 0.00125 | 4.708778 | 4.707809 | 420.93 |
