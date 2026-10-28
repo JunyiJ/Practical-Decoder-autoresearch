@@ -3,6 +3,8 @@ from collections.abc import Mapping
 
 POLICY = 'tokenizer_k3_hybrid_nope_v1'
 GEOMETRY = 'hybrid_head32_quarter'
+WIDE_POLICY = 'tokenizer_wide_k3_hybrid_nope_v1'
+WIDE_GEOMETRY = 'wide_hybrid_head32_quarter'
 LAYOUTS = (('kda', 'kda', 'kda', 'gated_mla'), ('gated_mla',)*4, ('kda',)*4)
 
 
@@ -11,12 +13,13 @@ def get(cfg, key, default=None):
 
 
 def hybrid_contract(cfg):
-    if get(cfg, 'tokenizer_architecture_policy') != POLICY:
+    policy = get(cfg, 'tokenizer_architecture_policy')
+    if policy not in (POLICY, WIDE_POLICY):
         if get(cfg, 'attn_type') == 'hybrid' or get(cfg, 'attention_layout') is not None:
             raise ValueError('Layerwise attention requires its explicit tokenizer hybrid policy')
         return None
     from .tokenizer_architecture import FIXED, VARIABLE
-    fixed = dict(FIXED, tokenizer_architecture_policy=POLICY, rope=0)
+    fixed = dict(FIXED, tokenizer_architecture_policy=policy, rope=0)
     keys = set(cfg.keys()) if hasattr(cfg, 'keys') else set(vars(cfg))
     if keys != set(fixed) | VARIABLE | {'attention_layout'}:
         raise ValueError('Hybrid requires its exact explicit field set')
@@ -25,9 +28,11 @@ def hybrid_contract(cfg):
         if type(actual) is not type(value) or actual != value:
             raise ValueError(f'Hybrid changed fixed field {key}')
     width, heads = get(cfg, 'dim'), get(cfg, 'n_heads')
-    if type(width) is not int or width not in (64, 256) or type(heads) is not int or heads != width//32:
-        raise ValueError('Hybrid requires width64/256 with head32')
-    if (get(cfg, 'attn_type') != 'hybrid' or get(cfg, 'attention_width_policy') != GEOMETRY
+    widths = (512, 1024) if policy == WIDE_POLICY else (64, 256)
+    geometry = WIDE_GEOMETRY if policy == WIDE_POLICY else GEOMETRY
+    if type(width) is not int or width not in widths or type(heads) is not int or heads != width//32:
+        raise ValueError(f'Hybrid requires widths{widths} with head32')
+    if (get(cfg, 'attn_type') != 'hybrid' or get(cfg, 'attention_width_policy') != geometry
             or get(cfg, 'depth_width_policy') != 'depth4_hybrid_unscaled'):
         raise ValueError('Hybrid geometry/depth contract mismatch')
     layout = get(cfg, 'attention_layout')
@@ -39,7 +44,7 @@ def hybrid_contract(cfg):
     layout = tuple(layout)
     if layout not in LAYOUTS:
         raise ValueError('Undeclared hybrid/control layout')
-    return {'policy': POLICY, 'family': 'hybrid', 'layout': layout, 'width': width, 'heads': heads,
+    return {'policy': policy, 'family': 'hybrid', 'layout': layout, 'width': width, 'heads': heads,
             'position': 'none', 'score_scale': .5, 'latent_rank': width//4, 'shared_key_dim': 32,
             'kda_alpha_rank': width//4, 'kda_conv': 4, 'kda_g_min': -5., 'kda_output_gate': 'full_rank',
             'prior_sha256': get(get(cfg, 'output_bias_prior'), 'prior_sha256')}

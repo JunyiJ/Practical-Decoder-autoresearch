@@ -1,0 +1,25 @@
+{
+  "status": "halted_resource_guard_no_retry",
+  "at": "2026-10-28T05:27:55.547108+00:00",
+  "process_pid": 50558,
+  "exit_code": 90,
+  "session_id": 69675,
+  "test_command": "pytest -q tests/test_tokenizer_wide_hybrid.py -k real_trainer",
+  "passed_before_guard": [
+    "hybrid_width512_real_trainer_in_memory_resume_and_ema"
+  ],
+  "unverified": [
+    "gated_mla_width512_real_trainer_in_memory_resume_and_ema",
+    "kda_width512_real_trainer_in_memory_resume_and_ema"
+  ],
+  "rss_limit_bytes": 4294967296,
+  "free_space_limit_bytes": 8589934592,
+  "free_bytes_after_exit": 17567240192,
+  "alarm_seconds": 1200,
+  "guard_poll_seconds": 1,
+  "guard_condition": "resource.getrusage(resource.RUSAGE_SELF).ru_maxrss > 4GiB OR shutil.disk_usage(repo).free < 8GiB",
+  "last_observed_ps_rss_kib": 4018368,
+  "last_observed_ps_elapsed": "02:05",
+  "diagnostic_limitation": "Guard print used pytest-captured stdout, then os._exit(90), so exact trigger and sampled peak were not retained. Free disk after exit remains above reserve; RSS crossing is likely but not proven by a surviving trigger sample. This is CPU fixture-process memory, not MPS model memory.",
+  "next_action": "Do not repeat this combined process. Review fixture lifetime and prepare a new explicit per-family CPU validation procedure with independently persisted watchdog observations before any additional numerical attempt. No MPS launch; old studies stay closed."
+}

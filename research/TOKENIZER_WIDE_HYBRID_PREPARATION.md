@@ -61,3 +61,45 @@ support, CPU equation/gradient/causal-cache/resume/EMA tests and exact meta-devi
 accounting. Preserve all failures. Only after resources fit should a finite pilot
 source/plan be frozen; actual pilot costs then gate every remaining quality run.
 Single worker, strict MPS, sampled4GiB RSS/6GiB driver and8GiB reserve remain.
+
+## Anchor implementation and accounting
+
+A separate `tokenizer_wide_k3_hybrid_nope_v1` policy now admits only widths512/1024
+with head32 and the three declared layer layouts. The old policy still admits
+only64/256. The new anchor keeps D/4 decay and query/KV bottlenecks, convolution4,
+bounded log-decay−5, full-rank output gates, NoPE and the inherited dense backbone.
+No optional rank/decay/gate overrides are admitted yet. The config helper is not
+a dispatcher or frozen experiment; its default seed/rate are preparation values.
+
+Meta construction gives width512 parameter counts65,037,792 hybrid,
+63,474,816 all-gated-MLA and65,558,784 all-KDA. At FP32/context128/batch1 their
+allocated cache/state sizes are333,824/327,680/335,872bytes respectively. The hybrid
+is only0.61% smaller than all-KDA and1.875% larger than all-gated-MLA at this anchor.
+Therefore a meaningful memory-saving route against both controls cannot be
+assumed. Quality and actual latency remain unknown; no trained hybrid comparison
+or long-context claim follows from these shapes.
+
+The complete anchor model/optimizer/EMA accounting and conservative27-trajectory
+projection are in `tokenizer-evidence/wide-hybrid-preparation-001/anchor-storage-projection.json`.
+This substitutes the anchor geometry for every stage2 probe; changed tuning
+geometries must be accounted for again before freeze. It is not a sufficient
+resource guarantee, measured checkpoint size or measured MPS training peak.
+Width1024 has meta accounting only. Numerical prerequisites run at512 on CPU.
+
+The corrected conservative anchor panel requires56,866,579,251bytes (52.96GiB)
+at512 and124,702,393,587bytes (116.14GiB) at1024, including reserve. Exact saved
+model/optimizer/EMA tensor counts are separated from conservative allowances.
+An initial accounting draft included nonpersistent causal masks as saved buffers;
+the draft and correction are retained. No launch decision used the draft.
+
+Thirty-five geometry/equation/cache/optimizer/lineage and historical-policy checks
+passed. A separate combined CPU continuation process passed the hybrid's exact
+model/optimizer/RNG/EMA resume check, then exited90 at its resource guard. The
+gated-MLA and all-KDA continuation checks are unverified. The guard diagnostic
+was lost inside pytest capture on hard exit, so the exact trigger sample is not
+available. Last observed RSS was4,018,368KiB, and post-exit disk remained above
+reserve; an RSS crossing is likely, not a proven sampled peak. This is fixture
+process memory, not an MPS training measurement. Preserve
+`cpu-resource-failure-001.json`; no numerical retry or MPS launch followed.
+Review fixture lifetime and a separately recorded validation procedure before
+further numerical work. The wider anchor is not launch-ready.

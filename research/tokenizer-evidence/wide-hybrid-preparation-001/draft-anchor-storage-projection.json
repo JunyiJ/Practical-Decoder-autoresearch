@@ -1,0 +1,82 @@
+{
+  "status": "anchor_accounting_only_not_frozen_HP_panel_or_launch_plan",
+  "at": "2026-10-28T05:22:50.576216+00:00",
+  "torch_version": "2.14.1",
+  "free_bytes": 17559224320,
+  "reserve_bytes": 8589934592,
+  "records": [
+    {
+      "width": 512,
+      "family": "hybrid",
+      "parameters": 65037792,
+      "parameter_bytes": 260151168,
+      "persistent_buffer_bytes": 16384,
+      "optimizer_tensor_bytes": 466137012,
+      "raw_h200_model_optimizer_ema_tensor_bytes": 1246623284,
+      "cache_bytes_batch1": 333824,
+      "per_trajectory_allowance_bytes": 1797492468
+    },
+    {
+      "width": 512,
+      "family": "gated_mla",
+      "parameters": 63474816,
+      "parameter_bytes": 253899264,
+      "persistent_buffer_bytes": 65536,
+      "optimizer_tensor_bytes": 459826368,
+      "raw_h200_model_optimizer_ema_tensor_bytes": 1221655232,
+      "cache_bytes_batch1": 327680,
+      "per_trajectory_allowance_bytes": 1754467380
+    },
+    {
+      "width": 512,
+      "family": "kda",
+      "parameters": 65558784,
+      "parameter_bytes": 262235136,
+      "persistent_buffer_bytes": 0,
+      "optimizer_tensor_bytes": 468240560,
+      "raw_h200_model_optimizer_ema_tensor_bytes": 1254945968,
+      "cache_bytes_batch1": 335872,
+      "per_trajectory_allowance_bytes": 1811834164
+    },
+    {
+      "width": 1024,
+      "family": "hybrid",
+      "parameters": 157125440,
+      "parameter_bytes": 628501760,
+      "persistent_buffer_bytes": 16384,
+      "optimizer_tensor_bytes": 1040472756,
+      "raw_h200_model_optimizer_ema_tensor_bytes": 2926010804,
+      "cache_bytes_batch1": 651264,
+      "per_trajectory_allowance_bytes": 4339111552
+    },
+    {
+      "width": 1024,
+      "family": "gated_mla",
+      "parameters": 150804608,
+      "parameter_bytes": 603218432,
+      "persistent_buffer_bytes": 65536,
+      "optimizer_tensor_bytes": 1015071936,
+      "raw_h200_model_optimizer_ema_tensor_bytes": 2824858304,
+      "cache_bytes_batch1": 589824,
+      "per_trajectory_allowance_bytes": 4164769639
+    },
+    {
+      "width": 1024,
+      "family": "kda",
+      "parameters": 159232384,
+      "parameter_bytes": 636929536,
+      "persistent_buffer_bytes": 0,
+      "optimizer_tensor_bytes": 1048939696,
+      "raw_h200_model_optimizer_ema_tensor_bytes": 2959728304,
+      "cache_bytes_batch1": 671744,
+      "per_trajectory_allowance_bytes": 4397225524
+    }
+  ],
+  "anchor_panels": {
+    "512": 56868275004,
+    "1024": 124704089331
+  },
+  "panel_description": "Nine retained trajectories per family: one pilot, three LR screens, two stage2 probes, three fresh confirmations. Anchor geometry substituted for all probes; changed rank/geometry probes require recalculation before freeze.",
+  "accounting": "Exact meta model/optimizer/EMA tensor counts; excludes RNG/serialization metadata. Guard projection uses conservative24bytes/parameter plus buffers and2MiB metadata per trajectory, then15% allowance,4MiB round metadata and8GiB reserve. Not measured export size or training RSS.",
+  "helper_sha256": "eeef2e6ef404245443d09ae2778f96c1441e24bc81a662257dc982066eaac78d"
+}
