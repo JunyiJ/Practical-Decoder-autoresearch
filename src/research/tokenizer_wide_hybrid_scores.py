@@ -60,7 +60,23 @@ def _shapes(panel, expected):
 
 
 def review_trial(trial, expected_request, request_sha256, result_sha256, training_contract):
-    """Return selection row and aligned H200 blocks only after metadata review.
+    """Review quality artifacts; pilot records cannot enter quality selection."""
+    return _review_trial(trial, expected_request, request_sha256, result_sha256,
+                         training_contract, pilot=False)
+
+
+def review_pilot(trial, expected_request, request_sha256, result_sha256, training_contract):
+    """Review finite pilot metadata only, without publishing a selection row.
+
+    Full tensor-value, exact EMA, optimizer and numerical-cache audits, resource
+    observations and frozen provenance remain required before accepting a pilot.
+    """
+    return _review_trial(trial, expected_request, request_sha256, result_sha256,
+                         training_contract, pilot=True)
+
+
+def _review_trial(trial, expected_request, request_sha256, result_sha256, training_contract, *, pilot):
+    """Return metadata receipts and diagnostics only after metadata review.
 
     Expected request/config/contract and file hashes must come from independent
     frozen provenance, never be inferred from the result being reviewed.
@@ -72,15 +88,22 @@ def review_trial(trial, expected_request, request_sha256, result_sha256, trainin
     spec = request['spec']
     # Full stage completion/order and saved selection are enforced by the controller.
     _require(set(spec) == {'stage', 'family', 'seed', 'lr', 'divisor', 'width', 'steps'}, 'Unexpected spec fields')
-    _require(spec['stage'] in ('lr', 'rank', 'confirm') and spec['family'] in rules.FAMILIES
-             and spec['lr'] in rules.RATES and type(spec['seed']) is int
-             and spec['seed'] in (rules.SEEDS if spec['stage'] == 'confirm' else (3501,))
-             and (spec['stage'] != 'lr' or spec['divisor'] == 4)
-             and (spec['stage'] != 'rank' or spec['divisor'] in (2, 8))
-             and type(spec['width']) is int and spec['width'] == 512
-             and type(spec['steps']) is int and spec['steps'] == 1200, 'Undeclared quality spec')
-    cfg = rank_config(trial, spec['family'], 512, spec['seed'], spec['lr'], 1200, 'mps',
-                      bottleneck_divisor=spec['divisor'])
+    if pilot:
+        from .tokenizer_wide_hybrid_pilot_config import config, specs
+        _require(any(digest(spec) == digest(s) for s in specs()), 'Undeclared pilot spec')
+        cfg = config(trial, spec['family'])
+        steps, snapshots = 20, 8
+    else:
+        _require(spec['stage'] in ('lr', 'rank', 'confirm') and spec['family'] in rules.FAMILIES
+                 and spec['lr'] in rules.RATES and type(spec['seed']) is int
+                 and spec['seed'] in (rules.SEEDS if spec['stage'] == 'confirm' else (3501,))
+                 and (spec['stage'] != 'lr' or spec['divisor'] == 4)
+                 and (spec['stage'] != 'rank' or spec['divisor'] in (2, 8))
+                 and type(spec['width']) is int and spec['width'] == 512
+                 and type(spec['steps']) is int and spec['steps'] == 1200, 'Undeclared quality spec')
+        cfg = rank_config(trial, spec['family'], 512, spec['seed'], spec['lr'], 1200, 'mps',
+                          bottleneck_divisor=spec['divisor'])
+        steps, snapshots = 1200, 41
     _require(digest(request['config']) == digest(cfg), 'Requested config differs from explicit recipe')
     _require(Path(request['result_path']).resolve() == result_path, 'Wrong result path')
     _require(training_contract.get('tokenizer') is not None
@@ -91,9 +114,9 @@ def review_trial(trial, expected_request, request_sha256, result_sha256, trainin
     _require(all(digest(result.get(k)) == digest(v) for k, v in spec.items())
              and result.get('status') == 'completed' and result.get('holdout_consumed') is False
              and result.get('request_sha256') == request_sha256, 'Result identity/status mismatch')
-    _require(type(result['training']['completed_steps']) is int and result['training']['completed_steps'] == 1200
+    _require(type(result['training']['completed_steps']) is int and result['training']['completed_steps'] == steps
              and type(result['training']['weight_averaging']['snapshots']) is int
-             and result['training']['weight_averaging']['snapshots'] == 41, 'Incomplete training/EMA')
+             and result['training']['weight_averaging']['snapshots'] == snapshots, 'Incomplete training/EMA')
     paths = {k: Path(result[k]['checkpoint']).resolve() for k in ('raw', 'h200')}
     _require(paths['raw'] != paths['h200'] and not paths['raw'].samefile(paths['h200']), 'Raw/export must be distinct')
     _require(Path(result['training']['final_checkpoint']).resolve() == paths['raw'], 'Wrong raw endpoint')
@@ -110,7 +133,7 @@ def review_trial(trial, expected_request, request_sha256, result_sha256, trainin
         _score(score, parameters)
         payload = torch.load(path, map_location='meta', weights_only=False)
         _require(digest(payload['cfg']) == digest(cfg) and type(payload['step']) is int
-                 and payload['step'] == 1200 and payload['model_math_version'] == 2
+                 and payload['step'] == steps and payload['model_math_version'] == 2
                  and payload['parameter_layout_version'] == 2, 'Checkpoint config/version/step mismatch')
         _shapes(payload['model_state'], expected_state)
         if kind == 'raw':
@@ -132,8 +155,8 @@ def review_trial(trial, expected_request, request_sha256, result_sha256, trainin
             _require(type(ema['half_life']) is int and ema['half_life'] == 200
                      and ema['purpose'] == 'inference_only_not_optimizer_resume', 'Wrong export purpose/half-life')
         _require(digest(ema['spec']) == digest(cfg['training']['weight_averaging'])
-                 and type(ema['completed_steps']) is int and ema['completed_steps'] == 1200
-                 and type(ema['snapshots']) is int and ema['snapshots'] == 41
+                 and type(ema['completed_steps']) is int and ema['completed_steps'] == steps
+                 and type(ema['snapshots']) is int and ema['snapshots'] == snapshots
                  and ema['parameter_names'] == list(named), 'EMA metadata/name order differs')
         del payload, ema
         _require(file_digest(path) == score['checkpoint_sha256'], 'Checkpoint changed during review')
@@ -141,9 +164,15 @@ def review_trial(trial, expected_request, request_sha256, result_sha256, trainin
     _require(file_digest(request_path) == request_sha256 and file_digest(result_path) == result_sha256
              and all(file_digest(paths[k]) == result[k]['checkpoint_sha256'] for k in paths),
              'Trial artifacts changed during review')
-    return dict(selection_row=dict(spec, status='completed', ce=result['h200']['mean_ce']),
+    receipt = dict(
                 h200_loss_sums=result['h200']['block_loss_sums'],
                 target_counts=result['h200']['block_target_counts'],
                 request_sha256=request_sha256, result_sha256=result_sha256,
                 checkpoint_hashes={k: result[k]['checkpoint_sha256'] for k in paths},
                 metadata_reviewed=True, tensor_values_audited=False, adopted=False)
+    if pilot:
+        receipt.update(pilot_spec=spec, selection_eligible=False,
+                       status='pilot_metadata_reviewed_pending_tensor_cache_resource_audits')
+    else:
+        receipt['selection_row'] = dict(spec, status='completed', ce=result['h200']['mean_ce'])
+    return receipt

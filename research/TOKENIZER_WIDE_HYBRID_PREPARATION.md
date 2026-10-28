@@ -448,3 +448,33 @@ resource-pilot worker/audits, actual resource measurements, complete storage fit
 and final frozen plans remain unresolved. Next preparation is the guarded pilot
 wrapper and artifact review, without reopening closed controllers or the failed
 combined continuation fixture.
+
+## Pilot saved-artifact metadata audit
+
+The prospective adapter now has a separate `review_pilot` entry point sharing
+raw/H200 metadata checks with the quality adapter. It requires the exact declared
+width512/D2/seed3491/LR.0025/20-update request and regenerated short schedule,
+independently expected tokenizer/training contract and immutable file hashes.
+Both checkpoints must match meta-model tensor geometry; the raw endpoint must
+carry online optimizer/EMA metadata and the H200 export must carry matching
+parent hash/tokenizer, inference-only purpose,20 completed updates and eight
+snapshots. Full-validation coverage and diagnostic score arithmetic are checked.
+Pilot receipts have no selection row and explicitly remain pending tensor, cache
+and resource audits. Quality records cannot be relabeled as pilots, and pilot
+records cannot enter the quality adapter. No selection or quality thresholds changed.
+
+Thirty-nine new pilot cases plus84 regressions passed (123 checks,2.52s; peak
+RSS308,461,568bytes) under the180s/4GiB RSS/8GiB reserve CPU guard. Tests construct
+meta-device geometry and tiny metadata-only checkpoint files, not real tensors,
+trained checkpoints or corpus data. They cover each family, identity/schedule
+changes, invalid scores, incomplete trajectories, parent/tokenizer mismatch,
+tensor shape/dtype metadata and wrong export purpose. Existing quality cases,
+pilot configuration checks and mocked controller regressions also passed.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-artifact-review.json`.
+This is not a finite-tensor, exact-EMA, optimizer-continuation or numerical-cache
+audit. A guarded pilot worker/controller, full prerequisite binding and actual
+resource/tensor/cache reviews remain needed. No training/MPS launch, failed-guard
+retry, deletion or holdout access occurred. Next work is explicit bounded tensor
+value/export audit preparation and guarded pilot integration, retaining the
+complete-panel storage gate and unresolved numerical prerequisites.

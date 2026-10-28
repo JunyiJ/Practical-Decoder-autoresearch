@@ -280,3 +280,11 @@ must precede a final freeze. No actual pilot plan is frozen. Resource-pilot
 worker integration, raw/H200 tensor/export/cache audits and measured costs remain
 unfinished. The short EMA schedule is tested only on a two-scalar CPU fixture;
 this neither retries nor completes the failed wider continuation prerequisite.
+
+The pilot metadata adapter now requires the same independently bound artifact
+lineage/shape/diagnostic-score checks as quality runs, with the exact20-update
+configuration and eight-snapshot EMA contract. It returns a pilot-only receipt,
+never a selection row or a passing full-pilot review. Tensor-value finiteness,
+exact export-vs-stored-EMA equality, optimizer/resume correctness, cached logits
+and guarded actual resource observations remain separate required evidence.
+Meta-only test success does not certify any of those numerical prerequisites.

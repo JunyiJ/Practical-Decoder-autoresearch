@@ -1,0 +1,52 @@
+{
+  "status": "pilot_artifact_metadata_adapter_tested_not_launch_ready",
+  "at": "2026-10-28T07:24:46.716359+00:00",
+  "checks": 123,
+  "new_pilot_checks": 39,
+  "regression_checks": 84,
+  "guard": {
+    "elapsed_seconds": 2.701240999624133,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17591566336,
+      "peak_rss_bytes": 308461568
+    },
+    "pid": 55561,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Exact declared pilot spec and independent request/config/contract binding",
+    "20 completed updates and eight H200 snapshots",
+    "Full validation coverage and diagnostic arithmetic",
+    "Raw/H200 meta geometry, tokenizer and parent-hash lineage",
+    "Pilot results excluded from quality selection; quality records rejected as pilots",
+    "Quality adapter and configuration/controller regressions"
+  ],
+  "real_tensor_values_loaded": false,
+  "meta_model_geometry_constructed": true,
+  "real_corpus_loaded": false,
+  "real_mps_worker_dispatched": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Meta inspection cannot prove finite or exact EMA tensor values",
+    "Raw optimizer presence is not a numerical optimizer/resume audit",
+    "Cache checks, resource review, frozen provenance and pilot dispatcher remain required",
+    "No current storage fit or complete numerical prerequisites"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_scores.py": "5d38eeb17e92f6287d300641eda5df66e59f4b4243063dd7b2b5719f87befc75",
+    "tests/test_tokenizer_wide_hybrid_scores.py": "d811e74fb08a61804512b1d1cf17252bbbdf45b3b3ecab7282a73a2d7816d78f",
+    "src/research/tokenizer_wide_hybrid_pilot_config.py": "54ac627a6649908fb200a79f280f3164d7b2bd48b5811722a984310aff2dcdd1",
+    "tests/test_tokenizer_wide_hybrid_pilot_config.py": "8c383e4d6dfe504cd43b14417fa49d3d8a27a3cd91953c629142860096421f36",
+    "src/research/tokenizer_wide_hybrid_driver.py": "eec8b41d823cb478e159a50b215ed61ccb829d9a5a621d345cecfe8ab9232316",
+    "tests/test_tokenizer_wide_hybrid_driver.py": "3432d875f9526b894f15e1710a346b9a4740a676b665df6af65e0e15089ba52b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-artifact-tests.log": "e3e219edaa2381fbb5a458658db675b5a5ad74bc6173ea43084c8959d605a531",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-artifact-guard.json": "d9deace648a349fec32d409bd95ec102043ea7c27b96c59381256c29f343e7f7"
+  }
+}
