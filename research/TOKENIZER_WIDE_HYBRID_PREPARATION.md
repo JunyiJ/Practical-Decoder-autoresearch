@@ -111,3 +111,12 @@ capture;11 lightweight guard checks passed. See
 `tokenizer-evidence/wide-hybrid-preparation-001/cpu-failure-review-001.md`.
 This diagnostic work does not complete the two missing continuation checks or
 authorize rerunning the failed fixture. No further numerical attempt has run.
+
+The [staged tuning draft](TOKENIZER_WIDE_HYBRID_DESIGN.md) now selects bottleneck
+rank D/8 and D/2 as the second stage following three-rate anchor screening. It
+declares equal per-family budgets, prospective order/selection, fresh triple
+comparisons and proposed quality/cost gates. It is not frozen: rank variants,
+full resource accounting, remaining continuation prerequisites and serial runners
+still need implementation/review. A four-check small synthetic serialization
+test verifies that fully deserialized data remains usable after closing its
+scratch BytesIO; it does not demonstrate lower model RSS or authorize retry.
