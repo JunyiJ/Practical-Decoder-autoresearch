@@ -977,3 +977,36 @@ outstanding; the failed CPU fixture is closed and was not retried. No real plan
 was frozen or launched. The latest free-space observation was30,657,261,568bytes,
 only25,980,156bytes above the unchanged30,631,281,412-byte full-panel requirement;
 this transient observation grants no launch permission.
+
+## October 28 bounded v2 metadata writers
+
+Added an internal metadata writer for prospective v2 producers. Immutable JSON
+uses exclusive publication, and append streams must start in a new file. Only
+mutable `control/` JSON can be atomically replaced. Each write checks its shared
+group budget and8GiB disk reserve before writing payload bytes. Atomic replacement
+includes old/new overlap; newline bytes and transient file names also count.
+A failed serialization or I/O operation leaves its partial file for review and
+blocks reentry. Failed control replacement preserves the previous completed file.
+Checkpoint writes are explicitly excluded and need their own full trajectory gate.
+
+The writer verifies inherited global/campaign lock identities. Because parent and
+child share those lock descriptors, a separate empty `control/.metadata.lock`
+serializes metadata operations, with a bounded2-second acquisition wait. This
+file uses the existing control budget; the256MiB total and30,631,281,412-byte full
+campaign projection remain unchanged. It rejects unexpected symlinks/hardlinks,
+changed append-file identity/size, undeclared/reserved paths and file-count overflow.
+
+Validation:113 tests passed in0.66seconds, peak RSS71,008,256bytes under
+180s/4GiB/8GiB outer guards. The initial90-test pass is retained. Two tiny child
+processes sharing inherited worker locks attempted to exceed one group together;
+only one write succeeded, and the other was rejected before payload output.
+Other tests cover exact boundaries, missing newline capacity, disk reserve,
+partial I/O, serialization failure, lock timeout and atomic old/new overlap.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/metadata-writer-v2-component-review.json`.
+
+This producer is not yet connected to the runner or resource recorder. Unconverted
+writers cannot claim its bounds, and active checkpoint export/rename interactions
+with the fail-closed census still need integration tests. Full future storage
+gates, v2 controller/audit/cleanup/inference integration and all real numerical,
+input and measured-pilot prerequisites remain outstanding. No training, real
+checkpoint deletion, failed-fixture retry or plan freeze occurred.

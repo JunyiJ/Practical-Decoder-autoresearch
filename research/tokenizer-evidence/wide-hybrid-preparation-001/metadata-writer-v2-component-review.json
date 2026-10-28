@@ -1,0 +1,47 @@
+{
+  "status": "bounded_metadata_writer_components_tested_not_runner_integrated",
+  "created_at": "2026-10-28T17:23:15.345665+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "fd62d0065368e728a2dfc379f78751736fb6c5b578879493700b32dc9e57686c",
+    "tests/test_tokenizer_wide_hybrid_metadata_writer.py": "e429682f8dc132d1de75923791e4290b9007bd2da8234248e1fa2318bdda26c4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-writer-v2-final-guard.json": "3349debec7d5fc5a3bcd78e10d0369ae7816da9da4bca5a6403e60243b341bc1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-writer-v2-final-tests.log": "933594cd25348ba72440336de1eca74fdf53be67b2517de4cd618c0174245001",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-writer-v2-guard.json": "dc32566ad2a79be1e488c6b4bfb157d90455a5d02f5b32c8039832c6fbec1873",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-writer-v2-tests.log": "35130881807f98dd219feb489071b9d8257601e23f29acd857c38a73f91556fc"
+  },
+  "tests": {
+    "initial": 90,
+    "final": 113
+  },
+  "final_guard": {
+    "elapsed_seconds": 0.841297416947782,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30657323008,
+      "peak_rss_bytes": 71008256
+    },
+    "pid": 74088,
+    "reason": null,
+    "status": "finished"
+  },
+  "findings": [
+    "Exclusive immutable JSON publication and append-only new streams enforce fixed metadata group budgets before payload writes; existing failed attempts cannot be resumed.",
+    "Atomic replacement is restricted to control documents and accounts for old contents plus temporary payload; serialization/I/O failure preserves partial bytes and old completed state.",
+    "Inherited global/campaign lock identity is rechecked. Separate empty control/.metadata.lock serializes parent/child metadata producers with bounded2-second acquisition wait.",
+    "Two tiny child processes sharing inherited worker locks cannot jointly overfill a group; one succeeds and the second rejects before writing.",
+    "8GiB disk reserve, file-count/temporary-name capacity, unexpected links/identity/size changes, reserved paths, newline bytes and exact cap boundaries tested."
+  ],
+  "limitations": [
+    "No production runner/recorder/checkpoint writer uses the component yet. Only converted writes receive these byte bounds; complete v2 wrappers and active producer monitoring remain required.",
+    "Checkpoint writes refused here; full trajectory/future-campaign accounting and memory/time guards remain required.",
+    "Tree scans fail closed on concurrent unknown/changing artifacts. Active checkpoint export integration must test atomic-file lifecycle interactions before launch.",
+    "Tests used disposable synthetic files/tiny processes only; no model/corpus/MPS worker or real checkpoint deletion.",
+    "No frozen v2 plan/dispatch authorization. Nine real numerical cases, input review and measured pilots unresolved; failed combined fixture and closed campaigns remain closed."
+  ],
+  "free_bytes_observed": 30664212480,
+  "full_campaign_required_free_bytes": 30631281412
+}
