@@ -1,0 +1,82 @@
+{
+  "adopted": false,
+  "base_commit": "7e37ad16adfa6f7d759e0d149ff307ab20eb2554",
+  "created_at": "2026-10-28T21:39:39.134994+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "failures_and_repairs": [
+    "Initial collection failed before executing tests because a new eager rank-startup import formed a cycle through LR boundary history, which imports readiness control helpers. The original collection log and successful resource guard are retained.",
+    "The rank dependency is now imported only when a rank request is bound or verified, after module initialization. Tests import the rank module directly for fixtures. No scientific logic or guards were weakened. The repaired complete rank plus LR readiness suite passed37 tests; this was an import/test correction, not a retry of the closed combined numerical fixture."
+  ],
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-readiness-v2-guard.json": "1c23ca550d1b1417e8d5669c09b31a236ec1346ba73d63baae423a2ab322494e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-readiness-v2-repaired-guard.json": "8eccf28b22f57f66c919d9033a7954b58c0395d5f56a74a7623a98e00536bf96",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-readiness-v2-repaired-tests.log": "ee83c324af8798482dc7150f5a103e23701e0ffe8af81bccc55a3e99f833b542",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-readiness-v2-tests.log": "7f98af8d9ef786400d7e9418761bd9c644e090a1b9df8fe89561b7e08eb60869",
+    "src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py": "6fdb3f1808a099d7f2c2418ef8b064573ea5348a6d6fcfe2438fd85b40244a03",
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "d35eeece13481cb3594d377d3042832fdfb30ed1243551f3504f6fd15c21b0a0",
+    "tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py": "d75867ab82860e53048d6fd24d35b5b3c02e1dfc28526472503a13950c3b8949",
+    "tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py": "e613f099fe4aedc1a083093bc08364a0c0436b8aee00e3e4ac8c151eda941327",
+    "tests/test_tokenizer_wide_hybrid_rank_readiness_v2.py": "5ecc4652ea6ac6f82ed16f2658663881d84f62537c16c149a92a8843292849bf"
+  },
+  "findings": [
+    "The existing v2 readiness seal now accepts exact LR/rank slots0..14 and requires the corresponding first/LR/rank startup reference. Rank binding reconstructs the selected conditional frozen request and output allowance using saved LR rates; full rank predispatch independently validates those rates and complete history.",
+    "Rank sealing requires all four pilot-history/LR-history/rank-prefix/rank-request verification flags plus exact request hash and independently reconstructed full storage. It binds complete evidence, all existing control bytes, frozen files/context, output allowance and the finished1800s readiness guard. The receipt remains explicitly non-authorizing for dispatch/deletion.",
+    "Existing immutable publication, no-retry semantics, post-review and post-guard source/control/inventory/locks/free-space checks remain shared with LR sealing. Both rank endpoints passed while preserving all prior evidence and producing no process, selection or cleanup output.",
+    "Fifteen new rank tests cover successful endpoints, corrupt historical journal, unexpected process, incomplete review claims, control mutation, source/space change after guard, partial publication retention, forbidden retries, invalid/fresh slots and exact startup path. Twenty-two existing LR readiness regression tests also passed."
+  ],
+  "free_bytes_observed": 30566084608,
+  "guards": {
+    "initial": {
+      "elapsed_seconds": 0.9449898330494761,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 420
+      },
+      "observation": {
+        "free_bytes": 30570610688,
+        "peak_rss_bytes": 241680384
+      },
+      "pid": 97125,
+      "reason": null,
+      "status": "finished"
+    },
+    "repaired": {
+      "elapsed_seconds": 202.73658087477088,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 420
+      },
+      "observation": {
+        "free_bytes": 30568157184,
+        "peak_rss_bytes": 242548736
+      },
+      "pid": 97157,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "initial_source_hashes": {
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "cd779602298fec07b5eedcc679a780cb37206a7297812866f33f8049f0b8357e",
+    "tests/test_tokenizer_wide_hybrid_rank_readiness_v2.py": "e3bdcaa97514b6f4aa308277dfa508d66a3028bc8d92c47b47ab559d891137ea"
+  },
+  "initial_validation": {
+    "collection_errors": 2,
+    "passed": 0,
+    "seconds": 0.67
+  },
+  "kind": "wide_hybrid_rank_readiness_v2_component_review",
+  "limitations": [
+    "Rank child live-handoff/entry/storage and CLI support, parent acceptance and serial dispatch with complete prior-rank transport receipts remain unfinished. The existing child CLI still accepts LR slots only; readiness success does not launch or authorize a worker.",
+    "Fresh transitions, final rank selection/cleanup/cumulative history/inference, exact complete frozen metadata accounting and all actual nine numerical/input/measured-pilot gates remain unresolved. The failed combined numerical fixture and closed campaigns remain closed.",
+    "Only disposable synthetic byte fixtures were used. No research MPS/training, research checkpoint deletion, closed-controller rerun or holdout evaluation occurred. The27-trajectory campaign remains unfrozen with unchanged rates/seeds/order/selection/quality/memory rules."
+  ],
+  "repaired_validation": {
+    "failed": 0,
+    "passed": 37,
+    "seconds": 202.28
+  },
+  "status": "rank_readiness_seal_tested_child_dispatch_unfinished_campaign_unfrozen"
+}

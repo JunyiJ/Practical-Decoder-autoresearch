@@ -554,3 +554,32 @@ The27-trajectory campaign remains unfrozen and the failed combined numerical
 fixture remains closed.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-predispatch-v2-component-review.json`.
+
+
+## October 28 rank readiness receipts
+
+The v2 readiness seal now supports rank slots9 through14 as well as the existing
+LR slots. It binds the unique conditional frozen request and output allowance,
+requires complete pilot/LR history and live rank-prefix predispatch verification,
+and records the entire immutable evidence/control inventory, frozen context and
+full remaining storage requirement. Post-review and post-guard checks preserve
+source, controls, locks and free-space requirements. A failed or partially written
+seal remains permanent evidence and cannot be retried. No dispatch or deletion
+approval is granted; the child CLI still accepts LR slots only.
+
+An initial eager import produced two collection errors before any test executed:
+rank history already depends on readiness helpers. Rank-specific imports now
+occur after module initialization when binding/verifying rank requests. The
+original failure log and guard remain preserved. The repaired full suite passed
+37 tests in202.28s:15 new rank tests and22 existing LR readiness tests. Both420s,
+4GiB,8GiB actual CPU/disk guards finished normally; repaired peak RSS242,548,736
+bytes. This import repair did not retry the closed combined numerical fixture.
+
+Next implement rank child live-handoff/storage/entry and parent acceptance/serial
+dispatch with every prior rank transport receipt. Fresh transitions, final rank
+selection/cleanup/inference, full metadata accounting and actual nine numerical/
+input/measured-pilot gates remain unresolved. No research training/MPS, checkpoint
+deletion, closed-controller rerun or holdout evaluation occurred. The27-trajectory
+campaign remains unfrozen and all scientific choices/guards remain unchanged.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-readiness-v2-component-review.json`.

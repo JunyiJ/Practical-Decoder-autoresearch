@@ -1,0 +1,39 @@
+
+==================================== ERRORS ====================================
+____ ERROR collecting tests/test_tokenizer_wide_hybrid_rank_readiness_v2.py ____
+ImportError while importing test module '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/tests/test_tokenizer_wide_hybrid_rank_readiness_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tokenizer_wide_hybrid_rank_readiness_v2.py:6: in <module>
+    from src.research import tokenizer_wide_hybrid_quality_readiness_v2 as ready
+src/research/tokenizer_wide_hybrid_quality_readiness_v2.py:21: in <module>
+    from . import tokenizer_wide_hybrid_quality_rank_startup_v2 as rank
+src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py:17: in <module>
+    from .tokenizer_wide_hybrid_lr_boundary_v2 import verify_lr_history
+src/research/tokenizer_wide_hybrid_lr_boundary_v2.py:23: in <module>
+    from .tokenizer_wide_hybrid_quality_readiness_v2 import _controls
+E   ImportError: cannot import name '_controls' from partially initialized module 'src.research.tokenizer_wide_hybrid_quality_readiness_v2' (most likely due to a circular import) (/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_quality_readiness_v2.py)
+__ ERROR collecting tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py ___
+ImportError while importing test module '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py:7: in <module>
+    from src.research import tokenizer_wide_hybrid_quality_readiness_v2 as ready
+src/research/tokenizer_wide_hybrid_quality_readiness_v2.py:21: in <module>
+    from . import tokenizer_wide_hybrid_quality_rank_startup_v2 as rank
+src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py:17: in <module>
+    from .tokenizer_wide_hybrid_lr_boundary_v2 import verify_lr_history
+src/research/tokenizer_wide_hybrid_lr_boundary_v2.py:23: in <module>
+    from .tokenizer_wide_hybrid_quality_readiness_v2 import _controls
+E   ImportError: cannot import name '_controls' from partially initialized module 'src.research.tokenizer_wide_hybrid_quality_readiness_v2' (most likely due to a circular import) (/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_quality_readiness_v2.py)
+=========================== short test summary info ============================
+ERROR tests/test_tokenizer_wide_hybrid_rank_readiness_v2.py
+ERROR tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+2 errors in 0.67s
