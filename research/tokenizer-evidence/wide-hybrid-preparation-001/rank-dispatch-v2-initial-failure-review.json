@@ -1,0 +1,31 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T22:14:01.136994+00:00",
+  "failed": 1,
+  "failure": "Slot13 readiness JSON reached the unchanged 2MiB evidence/meta cap after four successful serial rank screens. Partial publication and attempted failure receipts retained in the synthetic census; no real campaign launched.",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "fd62d0065368e728a2dfc379f78751736fb6c5b578879493700b32dc9e57686c",
+    "src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py": "6b194cd85e7dd193d07fa727cd0c665eb43784e00659b11562d59b89b8693a04",
+    "tests/test_tokenizer_wide_hybrid_quality_dispatch_v2.py": "247517db5ca24cfd15e8eca141c4a9e83e25585522bf775fb8032bb87e1cc464",
+    "tests/test_tokenizer_wide_hybrid_rank_dispatch_v2.py": "fca1d1c1d2c4d2976f2caadec8252604c01767d7a0b5507977d3fdfc9c48873b"
+  },
+  "guard": {
+    "elapsed_seconds": 276.5346581665799,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 30552125440,
+      "peak_rss_bytes": 242925568
+    },
+    "pid": 1851,
+    "reason": null,
+    "status": "finished"
+  },
+  "kind": "synthetic_rank_dispatch_metadata_cap_failure_review",
+  "passed": 46,
+  "prospective_fix": "Compact sorted ASCII JSON encoding for newly published metadata only; preserve every field and all caps. Original failed fixture stays closed. New bounded synthetic validation under changed source is required.",
+  "seconds": 275.89
+}

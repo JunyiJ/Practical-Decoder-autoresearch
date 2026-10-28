@@ -94,14 +94,15 @@ def test_failure_keeps_evidence_and_permanently_blocks_retry(writer,monkeypatch,
     assert dispatch.acceptance._inventory(root)==before
 
 
-@pytest.mark.parametrize('bad',['receipt','prepare_guard','child_guard','review_guard','launch','entry','seal','startup','worker','missing'])
+@pytest.mark.parametrize('bad',['receipt','prepare_guard','child_guard','review_guard','launch','entry','seal','startup','worker','missing','startup_guard'])
 def test_prior_transport_receipts_gate_next_launch(writer,monkeypatch,bad):
     args,calls=setup(writer,monkeypatch);ref=dispatch.run_lr_once(slot=0,**args)
     root=writer.root/'evidence';saved=dispatch._document(root,ref)
     paths={'receipt':root/ref['path'],'launch':root/saved['review']['child']['launch']['path'],
         'entry':writer.root/saved['review']['entry_guard']['path'],
         'seal':root/saved['review']['readiness']['path'],'startup':root/saved['review']['startup']['path'],
-        'worker':root/saved['review']['child']['worker']['path']}
+        'worker':root/saved['review']['child']['worker']['path'],
+        'startup_guard':writer.root/'control/quality-first-startup.json'}
     for phase in ('prepare','child','review'):paths[phase+'_guard']=writer.root/saved['guards'][phase]['path']
     if bad=='missing':(root/ref['path']).unlink()
     else:paths[bad].write_text('{}')

@@ -2112,3 +2112,40 @@ input/measured-pilot gates remain unresolved. The27-trajectory campaign remains
 unfrozen and all scientific choices and resource guards remain unchanged.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-acceptance-v2-component-review.json`.
+
+
+## October 28 serial rank dispatch and metadata-cap finding
+
+The v2 controller now has separate exact-slot LR and rank dispatch APIs. Each
+rank transition verifies original LR/pilot cleanup history, every earlier rank
+parent/child receipt and guard, and all controls bound by earlier readiness
+seals. It then prepares one frozen conditional request, supervises one child and
+independently re-audits the live scientific prefix and full remaining storage.
+Failures remain terminal. The final rank screen grants no selection, cleanup,
+adoption or fresh-confirmation permission.
+
+The first six-screen synthetic integration test exposed a metadata-cap failure:
+four rank screens completed, then slot13 readiness publication reached the
+unchanged2MiB evidence/meta cap. The run finished with46 passes and1 failure in
+275.89s; its CPU resource guard finished normally. Raw failure output and the
+complete synthetic file-size/hash census are preserved. This is separate from
+the closed failed numerical fixture.
+
+New metadata publications now use compact sorted ASCII JSON, preserving all
+fields, streaming checks and the trailing newline. Existing evidence is never
+rewritten. No cap, per-trajectory allowance,256MiB total or8GiB reserve changed.
+With this source fix, all82 rank/LR/metadata-writer tests passed in287.28s.
+A final historical-control tightening passed four focused regressions in89.83s,
+including all six rank screens and all nine LR screens. Peak RSS was245,760,000
+bytes across the passing runs; all outer CPU/disk guards finished normally.
+
+The successful synthetic six-screen prefix uses1,985,851 metadata bytes,
+leaving111,301 bytes under the2MiB sub-cap. This is **not** proof that final
+selection, cleanup, nine fresh confirmations and inference metadata fit. Next
+resolve their complete bounded representation/accounting and implement final
+rank selection and cleanup with full reviews. Fresh transitions, inference and
+actual nine numerical/input/measured-pilot prerequisites remain unresolved.
+No research training/MPS, real checkpoint deletion or holdout evaluation occurred.
+The27-trajectory campaign remains unfrozen and no research worker is active.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-dispatch-v2-component-review.json`.

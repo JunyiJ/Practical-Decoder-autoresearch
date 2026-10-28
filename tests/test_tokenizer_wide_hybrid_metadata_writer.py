@@ -217,3 +217,13 @@ def test_newline_accounted_at_exact_json_budget(writer):
     assert (writer.root/(name+'.tmp')).read_bytes()==b'{}'
     assert not (writer.root/name).exists()
     assert metadata.snapshot(writer.root)['groups']['evidence/pilots/00/other']==cap
+
+
+def test_compact_encoding_preserves_all_fields_and_existing_bytes(writer):
+    value={'z':[1,{'nested':'你好','escaped':'line\nnext'}],'a':False,'none':None}
+    first=writer.publish_json('evidence/meta/first.json',value)
+    encoded=json.dumps(value,sort_keys=True,allow_nan=False,ensure_ascii=True,separators=(',',':')).encode('ascii')+b'\n'
+    assert first.read_bytes()==encoded and json.loads(encoded)==value
+    second=writer.publish_json('evidence/meta/second.json',{'new':value})
+    assert first.read_bytes()==encoded and json.loads(second.read_bytes())=={'new':value}
+    assert metadata.snapshot(writer.root)['groups']['evidence/meta']==len(encoded)+second.stat().st_size

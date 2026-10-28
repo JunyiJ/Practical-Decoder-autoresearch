@@ -1,9 +1,9 @@
-"""One serial LR transition with immutable parent acceptance; no campaign CLI.
+"""One serial LR or rank transition with immutable parent acceptance; no campaign CLI.
 
 Own both worker locks and inspect actual processes before calling. Preparation
 and post-child review have separate hard guards. During the child, sampled parent
 failures raise through the process supervisor so it terminates and reaps its
-owned group. There is no retry, selection, cleanup or rank/fresh transition.
+owned group. There is no retry, selection, cleanup or fresh-confirmation transition.
 """
 import math
 import os
@@ -59,24 +59,30 @@ def _guard_ref(writer,slot,phase):
     return dict(path=name,sha256=file_digest(writer.root/name))
 
 
-def _prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref):
+def _prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_completion_ref=None):
     """Historical parents need not equal this PID or use these inherited FDs.
 
     These transport receipts supplement the startup's independent full scientific
     prefix audit. They do not substitute for it or authorize any later stage.
     """
+    rank=lr_completion_ref is not None
+    _require(type(slot) is int and (9<=slot<=15 if rank else 0<=slot<=9),'Exact dispatch prefix range required')
     root=writer.root/'evidence';refs=[]
-    for i in range(slot):
+    for i in range(9 if rank else 0,slot):
         ref=dict(path=f'meta/quality-dispatch-{i:02d}.json')
         ref['sha256']=file_digest(root/ref['path']);saved=_document(root,ref)
         pid=saved.get('parent_pid');review=saved['review']
-        _require(saved.get('kind')==KIND and saved.get('status')=='lr_reviewed'
+        _require(saved.get('kind')==KIND and saved.get('status')==('rank_reviewed' if rank else 'lr_reviewed')
             and type(saved.get('slot')) is int and saved['slot']==i
             and saved.get('plan_sha256')==plan_sha256 and saved.get('projection_ref')==projection_ref
             and saved.get('pilot_completion_ref')==pilot_completion_ref
             and saved.get('prior_dispatches')==refs and type(pid) is int and pid>1,
-            'Exact successful earlier LR dispatch required')
-        _require(review.get('kind')==acceptance.KIND and review.get('status')=='lr_child_reviewed_pending_parent_receipt'
+            'Exact successful earlier dispatch required')
+        if rank:
+            _require(saved.get('lr_completion_ref')==lr_completion_ref
+                and review.get('lr_completion_ref')==lr_completion_ref,'Earlier LR cleanup lineage differs')
+        _require(review.get('kind')==(acceptance.RANK_KIND if rank else acceptance.KIND)
+            and review.get('status')==('rank_child_reviewed_pending_parent_receipt' if rank else 'lr_child_reviewed_pending_parent_receipt')
             and type(review.get('slot')) is int and review['slot']==i and review.get('plan_sha256')==plan_sha256
             and review.get('selection') is None and all(review.get(k) is False for k in
                 ('adopted','dispatch_authorized','deletion_authorized','stage_cleanup_complete','next_stage_authorized')),
@@ -86,11 +92,19 @@ def _prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref):
             _require(guard['path']==f'control/quality-controller-{phase}-{i:02d}.json','Parent guard path differs')
             acceptance._guard(writer,guard,KIND,pid,seconds)
         startup=_document(root,review['startup']);seal=_document(root,review['readiness'])
-        _require(review['startup']['path']==('meta/quality-first-startup.json' if i==0 else f'meta/quality-lr-startup-{i:02d}.json')
+        _require(review['startup']['path']==('meta/quality-first-startup.json' if i==0 else f'meta/quality-{"rank" if rank else "lr"}-startup-{i:02d}.json')
             and review['readiness']['path']==f'meta/quality-readiness-{i:02d}.json'
             and seal['parent_pid']==pid and seal['startup_ref']==review['startup']
             and startup['projection_ref']==projection_ref and startup['pilot_completion_ref']==pilot_completion_ref
             and startup['plan_sha256']==seal['plan_sha256']==plan_sha256,'Earlier startup/readiness differs')
+        if rank:_require(startup.get('lr_completion_ref')==lr_completion_ref,'Earlier startup LR cleanup differs')
+        # These controls were immutable before the earlier child started. This
+        # includes startup guards and controls from still earlier parents, not
+        # merely the three controller guards checked above.
+        deadline=time.monotonic()+1800
+        for name,binding in seal['control_inventory'].items():
+            _require(name.startswith('control/') and name.endswith('.json'),'Earlier sealed control path differs')
+            acceptance._check(writer.root,name,binding,deadline)
         child=review['child']
         for key,tail in [('launch','process/launch.json'),('process','process/process.json'),('worker','worker-outputs.json')]:
             _require(child[key]['path']==f'quality/{i:02d}/{tail}','Earlier child reference path differs')
@@ -133,12 +147,12 @@ def _prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref):
     return refs
 
 
-def _fresh(writer,slot):
+def _fresh(writer,slot,stop=9):
     _locks(writer.root/'evidence',writer.lock_fds)
     files=snapshot(writer.root)['files']
     _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents dispatch')
     _require(not any(n.endswith('.tmp') or '-failure' in n for n in files),'Partial/failed campaign cannot dispatch')
-    for i in range(slot,9):
+    for i in range(slot,stop):
         _require(not any(n.startswith(f'control/quality-controller-') and n.endswith(f'-{i:02d}.json')
             or n.startswith(f'evidence/meta/quality-dispatch-{i:02d}') for n in files),
             'Existing controller attempt cannot be retried')
@@ -147,14 +161,38 @@ def _fresh(writer,slot):
 def run_lr_once(writer,slot,plan_sha256,*,projection_ref,pilot_completion_ref):
     """Dispatch exactly one fresh LR slot, then stop at an immutable receipt."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<9,'Exact LR writer/slot required')
-    _sha(plan_sha256);_fresh(writer,slot)
+    return _run_once(writer,slot,plan_sha256,projection_ref,pilot_completion_ref)
+
+
+def run_rank_once(writer,slot,plan_sha256,*,projection_ref,lr_completion_ref):
+    """Dispatch one rank screen after verified LR cleanup; no fresh or selection."""
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 9<=slot<=14,'Exact rank writer/slot required')
+    _require(isinstance(lr_completion_ref,dict),'Exact LR completion reference required')
+    return _run_once(writer,slot,plan_sha256,projection_ref,None,lr_completion_ref=lr_completion_ref)
+
+
+def _run_once(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_completion_ref=None):
+    rank=lr_completion_ref is not None
+    _sha(plan_sha256);_fresh(writer,slot,15 if rank else 9)
     root=writer.root/'evidence';base=f'meta/quality-dispatch-{slot:02d}'
     try:
         with _PhaseGuard(writer,slot,'prepare'):
-            previous=_prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref)
-            args=dict(projection_ref=projection_ref,pilot_completion_ref=pilot_completion_ref)
-            startup=(readiness.first.prepare_first_quality_request(writer,plan_sha256,**args) if slot==0 else
-                     readiness.later.prepare_lr_request(writer,slot,plan_sha256,**args))
+            if rank:
+                # Lazy import: rank startup itself uses acceptance/readiness.
+                from . import tokenizer_wide_hybrid_quality_rank_startup_v2 as ranks
+                history=ranks.verify_lr_history(writer,plan_sha256,lr_completion_ref,
+                    current_inventory=acceptance._inventory(root))
+                _require(history['projection_ref']==projection_ref,'Dispatch LR projection differs')
+                pilot_completion_ref=history['pilot_completion_ref']
+            prior_args=dict(lr_completion_ref=lr_completion_ref)
+            previous=_prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,**prior_args)
+            if rank:
+                startup=ranks.prepare_rank_request(writer,slot,plan_sha256,
+                    projection_ref=projection_ref,lr_completion_ref=lr_completion_ref)
+            else:
+                args=dict(projection_ref=projection_ref,pilot_completion_ref=pilot_completion_ref)
+                startup=(readiness.first.prepare_first_quality_request(writer,plan_sha256,**args) if slot==0 else
+                         readiness.later.prepare_lr_request(writer,slot,plan_sha256,**args))
         # No running preparation control may be captured by the readiness seal.
         ready=readiness.seal_quality_readiness(writer,slot,startup)
         seal=_document(root,ready)
@@ -169,8 +207,8 @@ def run_lr_once(writer,slot,plan_sha256,*,projection_ref,pilot_completion_ref):
             raise
         monitor.finish()
         with _PhaseGuard(writer,slot,'review'):
-            review=acceptance.review_completed_lr(writer,slot,startup,ready,process)
-            _require(_prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref)==previous,
+            review=(acceptance.review_completed_rank if rank else acceptance.review_completed_lr)(writer,slot,startup,ready,process)
+            _require(_prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,**prior_args)==previous,
                      'Earlier dispatch receipts changed during child/review')
         guards={phase:_guard_ref(writer,slot,phase) for phase in ('prepare','child','review')}
         for phase,ref in guards.items():acceptance._guard(writer,ref,KIND,os.getpid(),7200 if phase=='child' else 1800)
@@ -178,9 +216,10 @@ def run_lr_once(writer,slot,plan_sha256,*,projection_ref,pilot_completion_ref):
         _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents success publication')
         _require(shutil.disk_usage(writer.root).free>=review['storage']['required_free_bytes'],
                  'Remaining full campaign storage changed before receipt')
-        result=dict(kind=KIND,status='lr_reviewed',slot=slot,parent_pid=os.getpid(),plan_sha256=plan_sha256,
+        result=dict(kind=KIND,status='rank_reviewed' if rank else 'lr_reviewed',slot=slot,parent_pid=os.getpid(),plan_sha256=plan_sha256,
             projection_ref=projection_ref,pilot_completion_ref=pilot_completion_ref,prior_dispatches=previous,
             guards=guards,review=review)
+        if rank:result['lr_completion_ref']=lr_completion_ref
         path=writer.publish_json('evidence/'+base+'.json',result)
         return dict(path=base+'.json',sha256=file_digest(path))
     except BaseException as exc:

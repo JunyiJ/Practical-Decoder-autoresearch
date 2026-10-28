@@ -1,0 +1,108 @@
+{
+  "adopted": false,
+  "base_commit": "e2592b0cc6c12455a7f21b4f3c253626dc6edb72",
+  "created_at": "2026-10-28T22:21:47.307075+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-dispatch-v2-compact-guard.json": "2cb8c0160fae954c57dace6a4fa370ccb13664dff974ef88fe32d009146f81a0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-dispatch-v2-compact-tests.log": "37d9085a80dba62993e6ccad8240f9e666cae36f28dfb4bb3eac7846c8ebb5d0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-dispatch-v2-controls-guard.json": "60bd20be66b8fe5b9331874912091ffaefe0cdc9ac519bea1025c52ce52c9839",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-dispatch-v2-controls-tests.log": "0023bbd9a1ebd018fac3edae555e98f2abd209ee8df694c8bf7655d51ccbb326",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-dispatch-v2-guard.json": "15c199d8852e91948c65612953c60eb3dc3dba52d317d0b1d09b33ae33b7c056",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-dispatch-v2-tests.log": "697d6c984fe975714834ed1ddb279a95e1ab342aea36ed8bb329399e906f1c13",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-dispatch-v2-compact-prefix-census.json": "85447a61643235848deabe23f72cfe29ea655f8efc472ca4e936fe5874cb70d1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-dispatch-v2-initial-failure-review.json": "a70c4113039529cedff1a0c4fe064be43677661ed38eefb16c2c0d6463882a9f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-dispatch-v2-metadata-cap-census.json": "4036911f5c8d503ecd76179e9f4a56f41f1d13e0cb26ea4f7a437007eabd7e18",
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "cf084197a65a2ba26781e54f86f2d0029da9ad2bd94297fc490e6edebcaaed6f",
+    "src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py": "1645a5a0792270de319c5247dbf34daad8316eeafa796efb6d4ced3735bf43ae",
+    "tests/test_tokenizer_wide_hybrid_metadata_writer.py": "072377ea15daa772313e4e31fdc169e37af2b9a6dfc0655d0c7ead3abf3b626c",
+    "tests/test_tokenizer_wide_hybrid_quality_dispatch_v2.py": "7c1dd42f4e9e37498d641f87696140266bc5c0d1ad8f545654e3d3bc9feb03c2",
+    "tests/test_tokenizer_wide_hybrid_rank_dispatch_v2.py": "37f7d673b32211c44e2a1cd5005a4d26ab56a8dff84c8497a2be4c9f26d35468"
+  },
+  "findings": [
+    "Separate exact-slot public LR and rank APIs share serial parent preparation, cooperative live-child supervision, post-child full scientific/storage acceptance and immutable completion receipts. Rank dispatch revalidates original LR/pilot cleanup lineage before preparation; prior rank receipts are required in exact order and rechecked after child acceptance.",
+    "Prior-rank verification binds each parent PID, receipt chain, original LR completion, startup/readiness, canonical child argv, exact terminal limits/output/log census, child/readiness/controller guards, and every control hash captured by the earlier readiness seal, including startup guards. Historical parent PIDs and lock descriptor numbers need not equal the current parent. No receipt permits final selection, cleanup, adoption or fresh dispatch.",
+    "The initial full six-screen synthetic integration test exposed a real metadata allocation problem at slot13 after slots9\u201312 passed: pretty-printed evidence/meta reached its unchanged 2MiB cap during readiness publication. Partial readiness and attempted failure receipts were preserved in a complete synthetic size/hash census. The bounded CPU guard finished normally; the failure was a metadata producer cap, not the closed numerical resource failure.",
+    "Newly published metadata now uses compact sorted ASCII JSON with all fields, finite-number validation, streaming limits and trailing newline preserved. Existing evidence is never rewritten. The 2MiB metadata cap, all other per-group allowances, 256MiB total and 8GiB reserve are unchanged. Under the changed source a new disposable six-screen fixture completes; its measured evidence/meta occupancy is1985851 bytes, leaving111301 bytes. This does not establish room for future selection/cleanup/fresh/inference records.",
+    "All82 compact-encoding suite tests passed, covering17 rank dispatch tests,30 LR dispatch regressions and35 metadata-writer tests. A subsequent control-provenance tightening passed four focused tests: all six rank screens, historical mutation checks, all nine LR screens and the newly added LR startup-guard mutation. Original failure logs and all guard observations remain retained."
+  ],
+  "free_bytes_observed": 30548901888,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_rank_dispatch_v2_component_review",
+  "limitations": [
+    "Only disposable synthetic byte/process fixtures were used. No actual research child/model/MPS, real checkpoint cleanup, closed-controller rerun, failed combined numerical retry or test-holdout evaluation occurred.",
+    "The six-rank-screen prefix is close to the metadata sub-cap. Full prospective metadata accounting and a bounded representation for final selection/cleanup and nine fresh confirmations must be resolved before freeze. Compact encoding alone is not a complete panel fit proof.",
+    "Final rank selection, cleanup/cumulative history, fresh startup/dispatch/acceptance and inference integration remain unfinished. Actual nine rank-policy numerical optimizer/update/resume/EMA cases, actual input trace and measured pilot memory/time/export/cache gates remain unresolved.",
+    "The27-trajectory wider hybrid panel remains unfrozen. Rates, seeds, ordering, quality/memory rules, protected checkpoints and all resource guards remain unchanged. Recheck full actual future storage before any launch."
+  ],
+  "status": "serial_rank_dispatch_tested_full_campaign_metadata_and_launch_gates_unresolved",
+  "validation": {
+    "compact_suite": {
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 287.96281558368355,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 30548086784,
+          "peak_rss_bytes": 245760000
+        },
+        "pid": 3538,
+        "reason": null,
+        "status": "finished"
+      },
+      "passed": 82,
+      "seconds": 287.28,
+      "source_hashes": {
+        "src/research/tokenizer_wide_hybrid_metadata_writer.py": "cf084197a65a2ba26781e54f86f2d0029da9ad2bd94297fc490e6edebcaaed6f",
+        "src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py": "6b194cd85e7dd193d07fa727cd0c665eb43784e00659b11562d59b89b8693a04",
+        "tests/test_tokenizer_wide_hybrid_metadata_writer.py": "072377ea15daa772313e4e31fdc169e37af2b9a6dfc0655d0c7ead3abf3b626c",
+        "tests/test_tokenizer_wide_hybrid_quality_dispatch_v2.py": "247517db5ca24cfd15e8eca141c4a9e83e25585522bf775fb8032bb87e1cc464",
+        "tests/test_tokenizer_wide_hybrid_rank_dispatch_v2.py": "fca1d1c1d2c4d2976f2caadec8252604c01767d7a0b5507977d3fdfc9c48873b"
+      }
+    },
+    "final_control_regressions": {
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 90.13922708295286,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 240
+        },
+        "observation": {
+          "free_bytes": 30549057536,
+          "peak_rss_bytes": 242991104
+        },
+        "pid": 5329,
+        "reason": null,
+        "status": "finished"
+      },
+      "passed": 4,
+      "seconds": 89.83
+    },
+    "initial": {
+      "failed": 1,
+      "guard": {
+        "elapsed_seconds": 276.5346581665799,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 30552125440,
+          "peak_rss_bytes": 242925568
+        },
+        "pid": 1851,
+        "reason": null,
+        "status": "finished"
+      },
+      "passed": 46,
+      "seconds": 275.89
+    }
+  }
+}

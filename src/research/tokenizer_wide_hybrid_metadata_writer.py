@@ -90,6 +90,8 @@ class MetadataWriter:
         Encoding streams to a fresh bounded .tmp; failed partial .tmp files are
         retained. Old control contents remain until the complete fsynced payload
         fits alongside them. Existing evidence and failed attempts are refused.
+        New documents use compact sorted ASCII JSON; all fields and the trailing
+        newline remain. Existing bytes are never re-encoded to reclaim capacity.
         """
         with self._serialized():
             path,group=self._target(name)
@@ -107,7 +109,7 @@ class MetadataWriter:
             fd=os.open(temporary,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
             try:
                 remaining=budgets()[group]-before['groups'][group]
-                encoder=json.JSONEncoder(sort_keys=True,allow_nan=False,indent=2,ensure_ascii=True)
+                encoder=json.JSONEncoder(sort_keys=True,allow_nan=False,separators=(',',':'),ensure_ascii=True)
                 for piece in encoder.iterencode(value):
                     # ensure_ascii guarantees this byte count before allocation.
                     if len(piece)>remaining:raise ValueError('JSON payload exceeds metadata group cap')

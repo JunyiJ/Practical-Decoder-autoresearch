@@ -1,0 +1,67 @@
+F..............................................                          [100%]
+=================================== FAILURES ===================================
+__ test_all_six_serial_rank_slots_preserve_history_and_stop_before_selection ___
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x109a93cb0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10aab6520>
+
+    def test_all_six_serial_rank_slots_preserve_history_and_stop_before_selection(writer,monkeypatch):
+        args,calls=setup(writer,monkeypatch);root=writer.root/'evidence';before=dispatch.acceptance._inventory(root);refs=[]
+        for slot in range(9,15):
+>           ref=dispatch.run_rank_once(slot=slot,**args);saved=dispatch._document(root,ref)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_rank_dispatch_v2.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py:164: in run_rank_once
+    return _run_once(writer,slot,plan_sha256,projection_ref,None,lr_completion_ref=lr_completion_ref)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py:190: in _run_once
+    ready=readiness.seal_quality_readiness(writer,slot,startup)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_readiness_v2.py:131: in seal_quality_readiness
+    path=writer.publish_json('evidence/'+base+'.json',payload)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x109a93cb0>
+name = 'evidence/meta/quality-readiness-13.json'
+value = {'kind': 'wide_hybrid_quality_readiness_v2', 'status': 'idle_review_sealed_pending_child_integration', 'slot': 13, 'parent_pid': 1851, ...}
+replace = False
+
+    def publish_json(self,name,value,*,replace=False):
+        """Exclusive immutable JSON, or atomic replacement only under control/.
+    
+        Encoding streams to a fresh bounded .tmp; failed partial .tmp files are
+        retained. Old control contents remain until the complete fsynced payload
+        fits alongside them. Existing evidence and failed attempts are refused.
+        """
+        with self._serialized():
+            path,group=self._target(name)
+            if replace and not name.startswith('control/'):
+                raise ValueError('Only mutable control documents may be replaced')
+            temporary=_path(self.root,name+'.tmp')
+            if temporary.exists() or path.exists() and not replace:
+                raise FileExistsError('Existing metadata attempt cannot be retried or overwritten')
+            before=self._capacity(group,0)
+            # Reserve both names for exclusive hard-link publication, including
+            # the transient interval before unlinking the temporary name.
+            added=1 if path.exists() else 2
+            if len(before['files'])+added>MAX_FILES:raise ValueError('Metadata file-count cap exceeded')
+            path.parent.mkdir(parents=True,exist_ok=True)
+            fd=os.open(temporary,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+            try:
+                remaining=budgets()[group]-before['groups'][group]
+                encoder=json.JSONEncoder(sort_keys=True,allow_nan=False,indent=2,ensure_ascii=True)
+                for piece in encoder.iterencode(value):
+                    # ensure_ascii guarantees this byte count before allocation.
+>                   if len(piece)>remaining:raise ValueError('JSON payload exceeds metadata group cap')
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                   ValueError: JSON payload exceeds metadata group cap
+E                   Readiness failure publication failed: ValueError('JSON payload exceeds metadata group cap')
+E                   Dispatch failure publication failed: ValueError('JSON payload exceeds metadata group cap')
+
+src/research/tokenizer_wide_hybrid_metadata_writer.py:113: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_rank_dispatch_v2.py::test_all_six_serial_rank_slots_preserve_history_and_stop_before_selection
+1 failed, 46 passed in 275.89s (0:04:35)
