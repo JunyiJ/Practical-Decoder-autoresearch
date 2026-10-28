@@ -48,10 +48,17 @@ def complete(writer,monkeypatch,slot,startup,ready):
         return original(root,name,value)
     with monkeypatch.context() as patch:
         patch.setattr(fixtures,'write',write)
-        fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+        if slot<9:
+            options=dict(prefix_count=slot+1)
+            requests=[bound['requests']['quality'][str(i)][0] for i in range(slot+1)]
+        else:
+            from src.research.tokenizer_wide_hybrid_quality_rank_startup_v2 import _frozen
+            _,requests=_frozen(writer,slot,start['plan_sha256'],start['projection_ref'],start['rates'])
+            options=dict(boundary='rank',rank_prefix_count=slot-8,
+                         raw_name={i:'final_001200_123456.pt' for i in range(9,15)})
+        fixtures.fixture(root,producer_v2=True,**options,bindings=dict(context=bound['context'],
             projection_ref=start['projection_ref'],numerical_ref=plan['numerical_ref'],
-            training_token_sha256=plan['training_token_sha256'],
-            requests=[bound['requests']['quality'][str(i)][0] for i in range(slot+1)]))
+            training_token_sha256=plan['training_token_sha256'],requests=requests))
     argv=accept.entry.worker_argv(writer,slot,startup,ready)
     launch=dict(status='preflight',argv=argv,parent_pid=os.getpid(),pid=None,returncode=None,error=None,
         required_free_bytes=seal['required_free_bytes'],reserve_bytes=8*1024**3,output_limit_bytes=seal['output_limit_bytes'],

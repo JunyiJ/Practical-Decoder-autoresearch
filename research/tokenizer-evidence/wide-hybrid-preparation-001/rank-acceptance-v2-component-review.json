@@ -1,0 +1,55 @@
+{
+  "adopted": false,
+  "base_commit": "cbae58eb8559ea4e03e1f423d2104c1b92e420fc",
+  "created_at": "2026-10-28T22:00:24.052936+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-acceptance-v2-guard.json": "6160f3b282f784df1fbccd285a3cd6508afe6cf07792531d17b8ebb10f77065b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-acceptance-v2-tests.log": "72df4e36649fe39d03f7343fd70719464df1be2dcb4b02bb81f0f212c11e37f7",
+    "src/research/tokenizer_wide_hybrid_lr_boundary_v2.py": "622a2a6008b5cf6119b2afaaf2dde5842d150a9fe8cc4dec36101ddac41b575c",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "ed9a3d01cd16c7601c42a6d3c7c8e44e1f1fb022005012b4d573784431f443f8",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "92fed151bb54dda2a30627f133d3c865486a9261d002c2e0f63401206a90e513",
+    "src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py": "6fdb3f1808a099d7f2c2418ef8b064573ea5348a6d6fcfe2438fd85b40244a03",
+    "src/research/tokenizer_wide_hybrid_storage_v2.py": "6558775da8a0598dbe471652c1c7145718823131aa206c60e94a890abefe1b2d",
+    "tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py": "40b1fd9ac0cb3b4379030c504c0c46edacc0834b221cbbe833ed0db23ee091f7",
+    "tests/test_tokenizer_wide_hybrid_rank_acceptance_v2.py": "7901d2d68e188a4bd35dbe7957c296e40e58df63b015d4678bec5181cac4a558"
+  },
+  "findings": [
+    "Separate exact-slot LR and rank parent acceptance APIs share strict same-parent sealed evidence, frozen request/output allowance, canonical launch/terminal provenance, self-inclusive output/log census and successful distinct child7200s guard checks. The complete sealed predispatch review is now checked by exact digest for both paths; successful process exit alone is insufficient.",
+    "Rank acceptance independently reconstructs all frozen LR and conditional rank requests, revalidates the complete original LR/pilot cleanup histories and saved LR selection, then re-audits every live selected LR anchor and completed rank member including the new child. Earlier records and anchor pairs must match original preserved history.",
+    "Full remaining storage receives all original pilot/LR pairs, including deliberately deleted losers, plus live rank pairs, both cleanup stages and saved rates. Actual live capacity and full future high-water requirements are checked without giving credit to planned deletion or choosing a final rank. The final rank screen still has selectionNone.",
+    "Frozen source/request/allowance, complete inventory, child guard, sealed controls, locks and full actual free space are rechecked before returning a read-only report. Its adoption/dispatch/deletion/stage-cleanup/next-stage flags are false. Prior-rank parent transport receipt validation remains the serial dispatcher prerequisite.",
+    "Seventeen new tests cover first/middle/last rank completion, full independent prefix/storage calls outside the metadata namespace lock,18 evidence/active mutations,10 rewritten terminal cases, four late storage/source/control/receipt changes, and strict separation of LR/rank acceptance slots. All33 existing LR acceptance regression tests also passed. The shared synthetic completion helper now produces canonical rank output names without changing prior fixture bytes."
+  ],
+  "free_bytes_observed": 30564622336,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_rank_acceptance_v2_component_review",
+  "limitations": [
+    "No serial rank dispatcher or complete prior-rank parent/child transport receipt verifier is implemented yet. Caller must own both locks and an outer resource guard and have reaped the child before acceptance. This API itself never launches, selects, deletes or permits next-stage continuation.",
+    "Fresh transitions, final rank selection/cleanup/cumulative history/inference, exact full frozen metadata accounting and all actual nine numerical/input/measured-pilot prerequisites remain unresolved. Complete actual storage must fit before freeze or launch.",
+    "Only disposable synthetic byte/process records were used. No actual research child/model training/MPS, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or holdout evaluation occurred. The27-trajectory campaign remains unfrozen with unchanged rates/seeds/order/selection/quality/memory guards."
+  ],
+  "status": "rank_parent_acceptance_tested_serial_dispatch_unfinished_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "guard": {
+      "elapsed_seconds": 175.7490806672722,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 420
+      },
+      "observation": {
+        "free_bytes": 30567174144,
+        "peak_rss_bytes": 241729536
+      },
+      "pid": 218,
+      "reason": null,
+      "status": "finished"
+    },
+    "lr_acceptance_regressions": 33,
+    "new_rank_tests": 17,
+    "passed": 50,
+    "seconds": 175.15
+  }
+}

@@ -1,8 +1,8 @@
-"""Read-only parent acceptance after one completed LR child; no dispatcher.
+"""Read-only parent acceptance after one completed LR/rank child; no launcher.
 
 Requires owned worker locks, an outer resource guard and a reaped child. Saved
 process success is insufficient: every completed LR producer/tensor/resource
-record, pilot cleanup history and remaining campaign storage is audited again.
+record, cleanup history and remaining campaign storage is audited again.
 """
 import math
 import os
@@ -16,13 +16,14 @@ from .tokenizer_wide_hybrid_retention_receipts import _document,_path
 from .tokenizer_wide_hybrid_cleanup import _locks,_check,TIMEOUT
 from .tokenizer_wide_hybrid_pilot_startup_v2 import _inventory,_check_inventory
 from .tokenizer_wide_hybrid_quality_startup_v2 import _history
-from .tokenizer_wide_hybrid_quality_audit_v2 import bind_lr_prefix
+from .tokenizer_wide_hybrid_quality_audit_v2 import bind_lr_prefix,bind_rank_prefix
 from .tokenizer_wide_hybrid_storage_v2 import bind_storage
 from .tokenizer_wide_hybrid_metadata import snapshot
 from . import tokenizer_wide_hybrid_quality_readiness_v2 as readiness
 from . import tokenizer_wide_hybrid_quality_entry_v2 as entry
 
 KIND='wide_hybrid_quality_acceptance_v2'
+RANK_KIND='wide_hybrid_rank_acceptance_v2'
 
 
 def _guard(writer,ref,kind,pid,seconds):
@@ -36,7 +37,7 @@ def _guard(writer,ref,kind,pid,seconds):
     return value
 
 
-def review_completed_lr(writer,slot,startup_ref,readiness_ref,process):
+def _review_completed(writer,slot,startup_ref,readiness_ref,process):
     """Parent call only, under its outer guard; never grants stage continuation."""
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
     root=writer.root/'evidence';stem=f'quality/{slot:02d}';_locks(root,writer.lock_fds)
@@ -48,6 +49,15 @@ def review_completed_lr(writer,slot,startup_ref,readiness_ref,process):
         and seal.get('deletion_authorized') is False,'Exact same-parent readiness required')
     for key in ('request','plan_sha256','projection_ref','context'):
         _require(digest(seal[key])==digest(startup[key]),'Readiness/startup identity differs')
+    expected_review=dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
+                         pilot_history_verified=True,dispatch_authorized=False)
+    if slot==0:expected_review['first_quality_request_verified']=True
+    elif slot<9:expected_review.update(startup_ref=startup_ref,lr_prefix_verified=True,lr_request_verified=True)
+    else:expected_review.update(startup_ref=startup_ref,lr_history_verified=True,rank_prefix_verified=True,rank_request_verified=True)
+    _require(digest(seal['predispatch_review'])==digest(expected_review)
+        and type(seal['required_free_bytes']) is int
+        and seal['required_free_bytes']==startup['storage']['required_free_bytes'],
+        'Exact complete sealed predispatch review required')
     bound,request,allowance=readiness._bound(writer,slot,startup)
     _require(bound['files']==seal['frozen_files'] and bound['context']==seal['context']
              and type(seal.get('output_limit_bytes')) is int and seal['output_limit_bytes']==allowance,
@@ -89,18 +99,49 @@ def review_completed_lr(writer,slot,startup_ref,readiness_ref,process):
     guard=_guard(writer,guard_ref,entry.KIND,terminal['pid'],7200)
     inventory=_inventory(root)
     plan=_document(root,dict(path='meta/plan.json',sha256=seal['plan_sha256']))
-    requests=[bound['requests']['quality'][str(i)][0] for i in range(slot+1)]
-    _require(all(len(bound['requests']['quality'][str(i)])==1 for i in range(slot+1)),
-             'Independent exact LR requests required')
-    history=_history(writer,seal['plan_sha256'],startup['pilot_completion_ref'],inventory)
-    prefix=bind_lr_prefix(root,context=bound['context'],requests=requests,
-        evidence={n:v['sha256'] for n,v in inventory.items() if not n.endswith('.pt')},
-        numerical_ref=plan['numerical_ref'],projection_ref=seal['projection_ref'],
-        training_token_sha256=plan['training_token_sha256'])
+    extra={}
+    if slot<9:
+        requests=[bound['requests']['quality'][str(i)][0] for i in range(slot+1)]
+        _require(all(len(bound['requests']['quality'][str(i)])==1 for i in range(slot+1)),
+                 'Independent exact LR requests required')
+        history=_history(writer,seal['plan_sha256'],startup['pilot_completion_ref'],inventory)
+        prefix=bind_lr_prefix(root,context=bound['context'],requests=requests,
+            evidence={n:v['sha256'] for n,v in inventory.items() if not n.endswith('.pt')},
+            numerical_ref=plan['numerical_ref'],projection_ref=seal['projection_ref'],
+            training_token_sha256=plan['training_token_sha256'])
+        rates=None;stages=[history['chain_stage']]
+        pairs={**history['checkpoint_pairs'],**prefix['checkpoint_pairs']}
+    else:
+        from .tokenizer_wide_hybrid_lr_boundary_v2 import verify_lr_history
+        from .tokenizer_wide_hybrid_pilot_boundary_v2 import verify_pilot_history
+        from .tokenizer_wide_hybrid_quality_rank_startup_v2 import _frozen
+        lr=verify_lr_history(writer,seal['plan_sha256'],startup['lr_completion_ref'],current_inventory=inventory)
+        _require(all(digest(startup[k])==digest(lr[k]) for k in
+            ('rates','stages','selection_ref','pilot_completion_ref','projection_ref')),
+            'Original rank startup history differs after child')
+        exact,requests=_frozen(writer,slot,seal['plan_sha256'],seal['projection_ref'],lr['rates'])
+        _require(digest(exact)==digest(bound) and digest(requests[-1])==digest(request),
+                 'Independent frozen rank requests differ after child')
+        prefix=bind_rank_prefix(root,context=bound['context'],lr_records=lr['records'],rates=lr['rates'],
+            lr_requests=requests[:9],rank_requests=requests[9:],
+            evidence={n:v['sha256'] for n,v in inventory.items() if not n.endswith('.pt')},
+            numerical_ref=plan['numerical_ref'],rates_ref=lr['selection_ref'],projection_ref=seal['projection_ref'],
+            training_token_sha256=plan['training_token_sha256'])
+        _require(digest(prefix['records'][:-1])==digest(startup['completed_records']),
+                 'Completed rank prefix changed from sealed history')
+        for name,pair in prefix['checkpoint_pairs'].items():
+            if int(name.split('/')[1])<9:
+                _require(digest(pair)==digest(lr['checkpoint_pairs'][name]),'Live LR anchor changed after rank child')
+        history=verify_pilot_history(writer,seal['plan_sha256'],lr['pilot_completion_ref'],
+            current_inventory=inventory,stages=lr['stages'])
+        rates=lr['rates'];stages=lr['stages']
+        pairs={**history['checkpoint_pairs'],**lr['checkpoint_pairs'],**prefix['checkpoint_pairs']}
+        extra=dict(rates=rates,stages=stages,lr_completion_ref=startup['lr_completion_ref'],
+                   selection_ref=lr['selection_ref'],audited_indices=prefix['audited_indices'])
     projection=_document(root,seal['projection_ref'])
     storage=bind_storage(writer.root,projection,pilots=history['records'],records=prefix['records'],
-        rates=None,selection=None,stages=[history['chain_stage']],current_inventory=inventory,
-        checkpoint_pairs={**history['checkpoint_pairs'],**prefix['checkpoint_pairs']},lock_fds=writer.lock_fds)
+        rates=rates,selection=None,stages=stages,current_inventory=inventory,
+        checkpoint_pairs=pairs,lock_fds=writer.lock_fds)
     again,actual,actual_allowance=readiness._bound(writer,slot,startup)
     _require(digest(again)==digest(bound) and actual==request and actual_allowance==allowance,
              'Frozen postprocess inputs changed')
@@ -109,8 +150,22 @@ def review_completed_lr(writer,slot,startup_ref,readiness_ref,process):
     for name,binding in seal['control_inventory'].items():_check(writer.root,name,binding,time.monotonic()+TIMEOUT)
     _locks(root,writer.lock_fds)
     _require(shutil.disk_usage(writer.root).free>=storage['required_free_bytes'],'Full remaining storage changed')
-    return dict(kind=KIND,status='lr_child_reviewed_pending_parent_receipt',slot=slot,plan_sha256=seal['plan_sha256'],
+    return dict(kind=KIND if slot<9 else RANK_KIND,
+        status=('lr' if slot<9 else 'rank')+'_child_reviewed_pending_parent_receipt',slot=slot,plan_sha256=seal['plan_sha256'],
         startup=startup_ref,readiness=readiness_ref,child=refs,entry_guard=dict(**guard_ref,record=guard),
         completed_records=prefix['records'],checkpoint_pairs=prefix['checkpoint_pairs'],storage=storage,
         evidence_inventory_sha256=digest(inventory),adopted=False,dispatch_authorized=False,
-        deletion_authorized=False,stage_cleanup_complete=False,next_stage_authorized=False,selection=None)
+        deletion_authorized=False,stage_cleanup_complete=False,next_stage_authorized=False,selection=None,**extra)
+
+
+
+def review_completed_lr(writer,slot,startup_ref,readiness_ref,process):
+    """Review only declared LR slots; caller has reaped the child and owns guards."""
+    _require(type(slot) is int and 0<=slot<9,'Exact LR acceptance slot required')
+    return _review_completed(writer,slot,startup_ref,readiness_ref,process)
+
+
+def review_completed_rank(writer,slot,startup_ref,readiness_ref,process):
+    """Review one rank result; never select, delete, launch or permit continuation."""
+    _require(type(slot) is int and 9<=slot<15,'Exact rank acceptance slot required')
+    return _review_completed(writer,slot,startup_ref,readiness_ref,process)

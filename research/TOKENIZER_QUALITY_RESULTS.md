@@ -616,3 +616,36 @@ The27-trajectory campaign remains unfrozen; the child CLI grants no campaign
 launch authorization or quality claim.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-entry-v2-component-review.json`.
+
+
+## October 28 parent acceptance of completed rank children
+
+A separate exact-slot rank parent acceptance API now shares the strict completed
+process checks with LR acceptance. It verifies the complete same-parent sealed
+predispatch review, immutable evidence/controls, frozen request/output allowance,
+canonical launch and terminal records, exact output/log census and successful
+7200s child guard. A successful exit alone cannot establish acceptance.
+
+Rank review independently reconstructs all frozen LR/conditional rank requests,
+verifies original pilot/LR cleanup history and saved rates, and re-audits every
+live selected LR anchor and completed rank member including the new child.
+Original records and anchor pairs must agree with preserved history. Full storage
+receives all original pilot/LR pairs, including deleted losers, and live rank
+pairs with both verified boundaries. Final source/inventory/guard/control/lock/
+free-space checks remain. Even after the last rank screen, selection staysNone;
+adoption, dispatch, deletion, cleanup and next-stage permission all stay false.
+
+All50 tests passed in175.15s:17 new rank acceptance tests and33 LR regressions.
+The420s/4GiB/8GiB actual CPU/disk guard finished normally with peak RSS241,729,536
+bytes. First/middle/last rank cases, altered evidence/process records, independent
+full audits/storage and late failures were tested with disposable synthetic
+fixtures. No research child/model/MPS, checkpoint deletion, failed combined
+numerical retry, closed-controller rerun or holdout evaluation occurred.
+
+Next implement serial rank dispatch with complete verification of all earlier
+rank parent/child transport receipts. Fresh transitions, final rank selection/
+cleanup/inference, exact full metadata accounting and actual nine numerical/
+input/measured-pilot gates remain unresolved. The27-trajectory campaign remains
+unfrozen and all scientific choices and resource guards remain unchanged.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-acceptance-v2-component-review.json`.
