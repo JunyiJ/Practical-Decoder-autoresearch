@@ -686,3 +686,37 @@ full future high-water checks; no fake passing reviews or bypass of current guar
 Nine-case numerical prerequisites and actual pilot resource reviews still remain,
 and the failed combined continuation fixture remains closed. No training has been
 launched by this cleanup or accounting change.
+
+## October 28 v2 retention planning and receipt components
+
+Added separate `wide_hybrid_retention_v2` planning and read-only provenance
+components; existing v1 runners and guards are unchanged. Boundary candidates
+are recomputed from the exact ordered pilot/LR/rank prefix and the original CE
+selection rules. Every member of a stage requires audit, including winners.
+All 27 rank choices retain exactly three final screen pairs; every fresh
+confirmation remains ineligible for cleanup. The complete high-water envelope
+reconciles to the independent cleanup002 projection: 30,631,281,412 bytes,
+including the unchanged 8 GiB reserve and 256 MiB metadata allowance.
+
+The receipt primitive requires an independently reconstructed exact manifest,
+bound manifest/receipt hashes, a complete deletion journal, unchanged bound
+non-checkpoint evidence and unchanged retained screen pairs. It rejects partial
+or failed receipts, changed allowlists, reappearing deleted files, altered/missing
+protected files and symlink artifacts/ancestors. It never deletes anything or
+approves dispatch. Its caller must establish full audit semantics, evidence
+inventory completeness and persisted selection provenance; those production
+integrations remain outstanding. A caller-supplied manifest is not scientific
+review evidence by itself.
+
+Validation: 99 planning/selection/simulation tests and 24 tiny-file receipt tests
+passed in separate bounded CPU processes (180 seconds, 4 GiB RSS, 8 GiB disk
+reserve). Observed peak RSS was 68,091,904 and 62,914,560 bytes respectively.
+Only disposable synthetic test files were deleted. No corpus, real checkpoint,
+model update, MPS worker or failed continuation fixture was used. Evidence and
+source hashes: `tokenizer-evidence/wide-hybrid-preparation-001/retention-v2-component-review.json`.
+
+Next: versioned full-stage pilot/quality/inference audit bindings, guarded actual
+cleanup and protected inventory verification, complete serial lifecycle tests,
+and future storage checks based on verified retained/deleted state. Nine real
+rank-policy numerical continuation/EMA cases and measured pilot resource checks
+are still unresolved. No plan is frozen or launch enabled by these components.

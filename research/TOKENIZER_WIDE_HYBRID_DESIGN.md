@@ -358,3 +358,15 @@ This is not a frozen executable amendment. Existing v1 guards remain intact;
 versioned retention-aware runners, immutable deletion receipts, stage audits,
 complete future high-water checks and tests are required before freeze/launch.
 No quality/memory threshold or trial/rate/seed/order/selection rule changes.
+
+## V2 retention component implementation (draft, October 28)
+
+Separate v2 planning and read-only receipt primitives now have bounded synthetic
+coverage (123 passing checks including existing selection/simulation tests).
+They enforce candidate eligibility from unchanged scientific decisions and
+exact completed receipt provenance, with retained files rehashed. They do not
+perform full stage reviews, delete real weights, or authorize dispatch. The
+production v1 runners remain unchanged; no automatic receipt exception has been
+added to their existence/hash checks. See the preparation document and
+`tokenizer-evidence/wide-hybrid-preparation-001/retention-v2-component-review.json`
+for exact source hashes, validation and integration prerequisites.

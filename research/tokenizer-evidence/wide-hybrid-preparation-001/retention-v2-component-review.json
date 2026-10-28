@@ -1,0 +1,267 @@
+{
+  "status": "draft_components_tested_not_integrated_not_frozen",
+  "version": "wide_hybrid_retention_v2",
+  "created_at": "2026-10-28T15:57:38.100363+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_retention.py": "68c5094da364bb7b887ed4edb1ebff76b1e4eebbb985bac7477d50acfefa0666",
+    "src/research/tokenizer_wide_hybrid_retention_receipts.py": "c4d5362d74dffcaef6b5c2c8e1abc488c0918c36d154ae97a1a22f1e14ad7aff",
+    "tests/test_tokenizer_wide_hybrid_retention.py": "14f9d6df27aaba2be34b20883a4e422da24650ad4f156c178be8f08b411a4834",
+    "tests/test_tokenizer_wide_hybrid_retention_receipts.py": "446da4a7459ec4f9349985ad79993770a48cd4abe2a6fd2d76df3adf930baff6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-planning-tests.log": "5f769e4887b2a46902757edad6409cd7db4398079103d00ed750c7b1c586edaf",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-planning-guard.json": "88e0cb981a392dc561f9c187833e1aa81a49639e76c0e9b2a600cfb12cc041ab",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-receipt-tests.log": "8b53f7feb4513a9e1520bc9e57b09ea8199f6c5f1d9701c1142277462a675837",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-receipt-guard.json": "283d11ecd12ccb6f7a480d61542b15c30a9567527244ca98ca084e5c894c9e00"
+  },
+  "tests": {
+    "planning_and_existing_selection_simulation": 99,
+    "receipt_primitives": 24,
+    "total": 123
+  },
+  "envelope": {
+    "version": "wide_hybrid_retention_v2",
+    "trajectories": 27,
+    "reserve_bytes": 8589934592,
+    "metadata_allowance_bytes": 268435456,
+    "phase_checkpoint_allowance_bytes": {
+      "pilot": 5443227841,
+      "lr": 16090816785,
+      "rank": 16130627907,
+      "confirm": 21772911364
+    },
+    "all_27_final_rank_selections": [
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 8,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21295177884
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 8,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21324118584
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 8,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21381999976
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 4,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21382056504
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 4,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21410997204
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 4,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21468878596
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 2,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21555813740
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 2,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21584754440
+      },
+      {
+        "divisors": {
+          "hybrid": 8,
+          "gated_mla": 2,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21642635832
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 8,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21338603060
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 8,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21367543760
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 8,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21425425152
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 4,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21425481680
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 4,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21454422380
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 4,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21512303772
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 2,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21599238916
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 2,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21628179616
+      },
+      {
+        "divisors": {
+          "hybrid": 4,
+          "gated_mla": 2,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21686061008
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 8,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21425453416
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 8,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21454394116
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 8,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21512275508
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 4,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21512332036
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 4,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21541272736
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 4,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21599154128
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 2,
+          "kda": 8
+        },
+        "checkpoint_allowance_bytes": 21686089272
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 2,
+          "kda": 4
+        },
+        "checkpoint_allowance_bytes": 21715029972
+      },
+      {
+        "divisors": {
+          "hybrid": 2,
+          "gated_mla": 2,
+          "kda": 2
+        },
+        "checkpoint_allowance_bytes": 21772911364
+      }
+    ],
+    "required_free_bytes": 30631281412,
+    "executable": false
+  },
+  "free_bytes_observed": 31108874240,
+  "limitations": [
+    "No production runner consumes the v2 contract; v1 guards remain unchanged.",
+    "Pure candidates never authorize deletion. Full stage audits and saved selections must be independently bound by a future controller.",
+    "Receipt verifier checks exact completed deletion provenance and bound retained files; it does not establish audit semantics or evidence inventory completeness.",
+    "No real checkpoints deleted in this iteration. Only tiny disposable test fixture files were removed.",
+    "No corpus, model checkpoint, optimizer update, failed continuation retry or MPS worker used.",
+    "Nine rank-policy optimizer/update/resume/EMA cases and measured pilot resource checks remain unresolved."
+  ],
+  "next_work": [
+    "Versioned pilot/quality/inference gates must bind full stage reviews and immutable complete evidence inventories.",
+    "Implement guarded boundary cleanup with pre-delete original hashes, durable per-file journals and post-delete protected verification.",
+    "Integrate full future storage gates with actual retained/deleted state; no optimistic space credit or partial launch.",
+    "Test full serial lifecycle including boundary failures, then resolve numerical prerequisites before freeze or MPS launch."
+  ]
+}
