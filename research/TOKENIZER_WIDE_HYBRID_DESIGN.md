@@ -288,3 +288,11 @@ never a selection row or a passing full-pilot review. Tensor-value finiteness,
 exact export-vs-stored-EMA equality, optimizer/resume correctness, cached logits
 and guarded actual resource observations remain separate required evidence.
 Meta-only test success does not certify any of those numerical prerequisites.
+
+A separate tensor-value audit now checks finite raw/EMA/optimizer/export values,
+exact equality of exported parameters to stored H200 and unchanged persistent
+buffers. It maps one pair on CPU and compares bounded chunks, after metadata
+review and with hashes rechecked afterward. The caller must enforce locks and
+resource guards. Its tiny synthetic tests do not measure real checkpoint peak
+memory or validate optimizer continuation/EMA recurrence; reports explicitly
+leave those checks unapproved. Full numerical and pilot reviews remain required.

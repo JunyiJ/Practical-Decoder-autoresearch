@@ -1,0 +1,49 @@
+{
+  "status": "synthetic_tensor_export_audit_tested_not_launch_ready",
+  "at": "2026-10-28T07:30:35.486250+00:00",
+  "checks": 120,
+  "new_checks": 45,
+  "regression_checks": 75,
+  "guard": {
+    "elapsed_seconds": 2.6406110003590584,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17585410048,
+      "peak_rss_bytes": 309346304
+    },
+    "pid": 55823,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Actual tiny CPU tensors: raw model, stored EMA, optimizer and export finiteness",
+    "Exact export equality to stored EMA and unchanged persistent buffers",
+    "Bounded262144-element finite/equality chunks",
+    "CPU mapped raw/export pair with before/after input hashes",
+    "Metadata prerequisites before deserialization and explicit pilot/quality entry",
+    "Meta-only score/lineage adapter regressions"
+  ],
+  "real_research_checkpoint_loaded": false,
+  "real_corpus_loaded": false,
+  "real_mps_worker_dispatched": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Tiny file integration mocks metadata reviewer; no real end-to-end checkpoint audit",
+    "Exact export-to-stored-EMA equality does not validate EMA recurrence",
+    "Finite optimizer tensors do not establish optimizer structure or resume correctness",
+    "Real mmap peak memory, cache checks, guarded pilot integration and complete prerequisites unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_tensors.py": "85708b889e66d27dd773d6ab0108200d8a4e6c17754e74503be3653cdcc48f24",
+    "tests/test_tokenizer_wide_hybrid_tensors.py": "efadd7e67a0820bcaadc37d473e768e11c1fb6edefcc6fe03f9705d68b3165d0",
+    "src/research/tokenizer_wide_hybrid_scores.py": "5d38eeb17e92f6287d300641eda5df66e59f4b4243063dd7b2b5719f87befc75",
+    "tests/test_tokenizer_wide_hybrid_scores.py": "d811e74fb08a61804512b1d1cf17252bbbdf45b3b3ecab7282a73a2d7816d78f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-tensor-export-tests.log": "472d25e9cdd0e488010bfd2fa79f55fdc91475d82431b3474ef8076f6f39235a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-tensor-export-guard.json": "ebd9df75e397c34fbed8a081fd4ca1b2ea2aa6f1c13948ce36f7f830bc703ba7"
+  }
+}

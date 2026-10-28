@@ -478,3 +478,36 @@ resource/tensor/cache reviews remain needed. No training/MPS launch, failed-guar
 retry, deletion or holdout access occurred. Next work is explicit bounded tensor
 value/export audit preparation and guarded pilot integration, retaining the
 complete-panel storage gate and unresolved numerical prerequisites.
+
+## Bounded tensor-value and stored-EMA export audit preparation
+
+The new read-only `tokenizer_wide_hybrid_tensors.py` audit first invokes the
+independently bound pilot or quality metadata adapter, then maps one raw/H200
+pair on CPU. It checks finite raw model, stored EMA, optimizer tensor/scalar and
+export values. Every exported parameter must exactly equal the corresponding
+stored H200 tensor; persistent buffers must exactly equal the raw endpoint.
+Temporary finiteness/equality operations use chunks of262,144 elements and do
+not construct another model or explicit file-sized byte buffer. All request,
+result and checkpoint hashes are rechecked after inspection. Mapping is not a
+measured peak-memory guarantee: the future caller must hold locks and enforce
+time/RSS/disk limits. No dispatcher, freeze or retry API was added.
+
+Forty-five new tiny-tensor/file checks plus75 metadata-adapter regressions passed
+(120 checks,2.45s; peak test RSS309,346,304bytes) under the180s/4GiB RSS/8GiB
+reserve guard. New cases cover NaN/infinities in each tensor group, exact export
+and buffer mismatches, geometry/name errors, missing optimizer tensors, malformed
+optimizer scalars, meta/sparse/noncontiguous tensors, chunk tails, before/after
+hash changes and a missing metadata prerequisite before loading. File integration
+uses synthetic checkpoint pairs under16KiB with a mocked metadata reviewer;
+separate metadata tests construct only meta geometry. No real research weights,
+corpus or MPS model were loaded, and no optimizer step or continuation was run.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/tensor-export-review.json`.
+The report explicitly distinguishes exact export-to-stored-EMA equality from
+correctness of the EMA recurrence. Finite optimizer values do not establish
+optimizer structure or continuation correctness. Those numerical prerequisites,
+cache checks, actual resource observations and guarded pilot integration remain
+required; the helper cannot produce a complete passing numerical/pilot review.
+No failed fixture was retried, no evidence deleted and no holdout accessed.
+Next preparation is guarded pilot integration and its prerequisite/resource
+review contracts. Complete storage fit and a final frozen plan remain necessary.
