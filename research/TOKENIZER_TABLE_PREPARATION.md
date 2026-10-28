@@ -234,3 +234,19 @@ records and stop markers remain. Character checkpoint reloading is no longer
 available; those prior studies stay closed. Free storage was 41.69 GiB after
 cleanup. Proceed with preferred width256 table-pilot and finite-plan preparation,
 rechecking actual storage and the unchanged reserve before every launch.
+
+## Width256 MPS pilot completion (October28,02:11UTC)
+
+After the authorized checkpoint cleanups, all three source-frozen20-update
+width256 pilots completed under source30a309a and plan9fc40ed. Raw and H200
+loads passed tokenizer/geometry checks and full/cached equivalence at batches1/8.
+H200 used three pilot snapshots. Each untied checkpoint pair measured560,602,700
+bytes; tied measured303,284,813. Both remain below their original conservative
+allowances. Actual unique FP32 parameter storage was114,352,128 bytes untied
+and62,888,960 tied (45.004% lower). This is parameter storage only; the GQA cache
+was unchanged. Pilot process peak RSS was at most1,515,585,536 bytes.
+
+Evidence: `tokenizer-evidence/table-pilot-001/review.json`, frozen plan, requests,
+logs and results. No pilot quality ranking or adoption is made. The following
+finite quality round retains all three arms, independent two-rate screens and
+three fresh confirmation seeds. Its executable protocol is TOKENIZER_TABLE_PROTOCOL.md.

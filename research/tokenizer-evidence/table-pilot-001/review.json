@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-28T02:11:43.997370+00:00",
+  "free_bytes": 43319427072,
+  "holdout_consumed": false,
+  "plan_sha256": "114464ac685ea14279b42bb320e16bb837bff6b5e424d8948fe0138f2f06eecd",
+  "quality_allowances": {
+    "legacy_untied": 659621888,
+    "matched_untied": 659621888,
+    "scaled_tied": 363708672
+  },
+  "quality_claim": false,
+  "records": [
+    {
+      "allowance": 659621888,
+      "kind": "legacy_untied",
+      "max_rss_bytes": 1386561536,
+      "pair_bytes": 560602700,
+      "parameter_bytes": 114352128,
+      "result_sha256": "2f1d77cff092d4e11ed66ae156d3c3f27414fa4312961930c01456eaae4d6b00",
+      "trial_bytes": 560617931,
+      "wall_seconds": 8.140307125635445
+    },
+    {
+      "allowance": 659621888,
+      "kind": "matched_untied",
+      "max_rss_bytes": 1515585536,
+      "pair_bytes": 560602700,
+      "parameter_bytes": 114352128,
+      "result_sha256": "788c0bc1075ba55bed8ccdad2c9450150b2a9af76520e1c8ee8016520a677b92",
+      "trial_bytes": 560617950,
+      "wall_seconds": 7.489147249609232
+    },
+    {
+      "allowance": 363708672,
+      "kind": "scaled_tied",
+      "max_rss_bytes": 1032011776,
+      "pair_bytes": 303284813,
+      "parameter_bytes": 62888960,
+      "result_sha256": "960020ddfb72211c88531d4c6ae7f25c40beb3ca71f49c17c309e3639fde82eb",
+      "trial_bytes": 303300029,
+      "wall_seconds": 6.383604999631643
+    }
+  ],
+  "remaining_required_free_bytes": 17008891136,
+  "scope": "Three short feasibility pilots only; raw/H200 hashes, cache checks and unique parameter storage reviewed. Original conservative allowances remain sufficient; no rate/arm selection.",
+  "source_commit": "30a309a77eadb663dad2a6f80b7150cf562ce826",
+  "status": "passed"
+}

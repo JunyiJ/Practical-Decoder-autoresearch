@@ -1,0 +1,181 @@
+{
+  "checkpoints": [
+    {
+      "bytes": 240309815,
+      "cache_checks": [
+        {
+          "batch": 1,
+          "cache_bytes": 524288,
+          "max_absolute_error": 2.86102294921875e-06
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 4194304,
+          "max_absolute_error": 5.960464477539062e-07
+        }
+      ],
+      "checkpoint": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-table-pilot-001/scaled_tied/checkpoints/final_000020_1793153472067044000.pt",
+      "kind": "raw",
+      "observed_mps_driver_bytes": 2522660864,
+      "sha256": "a77f2cf1f4e3de62d0e965e9991c107bf2492a48ea7d5b9c9cd1719527756333",
+      "unique_parameter_bytes": 62888960
+    },
+    {
+      "bytes": 62974998,
+      "cache_checks": [
+        {
+          "batch": 1,
+          "cache_bytes": 524288,
+          "max_absolute_error": 1.9073486328125e-06
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 4194304,
+          "max_absolute_error": 7.152557373046875e-07
+        }
+      ],
+      "checkpoint": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-table-pilot-001/scaled_tied/checkpoints/h200.pt",
+      "kind": "h200",
+      "observed_mps_driver_bytes": 1356546048,
+      "sha256": "ba4c876bd622e7e6b27f40db56c5fa9f0f4efffbcb5878cfff588e8a3a93d191",
+      "unique_parameter_bytes": 62888960
+    }
+  ],
+  "holdout_consumed": false,
+  "kind": "scaled_tied",
+  "max_rss_bytes": 1032011776,
+  "quality_selection": false,
+  "request_sha256": "9c54ccaaa2ed4264ef183588932211e9ef4c2802f7a2937c00f3267156219771",
+  "status": "completed",
+  "training": {
+    "best_checkpoint": null,
+    "best_metric": {
+      "accel_mem_kind": "mps_current_allocated",
+      "accel_mem_mb": 493.74853515625,
+      "averaging_snapshots": 3,
+      "base_learning_rate": 0.00125,
+      "cuda": null,
+      "device": "mps",
+      "elapsed_time_sec": 3.52242708299309,
+      "iter_time_sec": 0.15434675011783838,
+      "lr_multiplier": 0.1,
+      "moe_usage": null,
+      "ppl": 40413.69764109826,
+      "rss_kind": "process_lifetime_peak",
+      "rss_mb": 590.921875,
+      "scheduled_learning_rate": 0.000125,
+      "step": 19,
+      "tokens_processed": 20480,
+      "train_aux_loss": null,
+      "train_ce_loss": 10.649492263793945,
+      "train_loss": 10.649492263793945,
+      "train_total_loss": 10.649492263793945,
+      "training_time_sec": 3.1420327480882406,
+      "val_aux_loss": null,
+      "val_ce_loss": 10.606924057006836,
+      "val_loss": 10.606924057006836
+    },
+    "completed_steps": 20,
+    "device": "mps",
+    "eval_every": 20,
+    "eval_iters": 10,
+    "final_checkpoint": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-table-pilot-001/scaled_tied/checkpoints/final_000020_1793153472067044000.pt",
+    "final_metric": {
+      "accel_mem_kind": "mps_current_allocated",
+      "accel_mem_mb": 493.74853515625,
+      "averaging_snapshots": 3,
+      "base_learning_rate": 0.00125,
+      "cuda": null,
+      "device": "mps",
+      "elapsed_time_sec": 3.52242708299309,
+      "iter_time_sec": 0.15434675011783838,
+      "lr_multiplier": 0.1,
+      "moe_usage": null,
+      "ppl": 40413.69764109826,
+      "rss_kind": "process_lifetime_peak",
+      "rss_mb": 590.921875,
+      "scheduled_learning_rate": 0.000125,
+      "step": 19,
+      "tokens_processed": 20480,
+      "train_aux_loss": null,
+      "train_ce_loss": 10.649492263793945,
+      "train_loss": 10.649492263793945,
+      "train_total_loss": 10.649492263793945,
+      "training_time_sec": 3.1420327480882406,
+      "val_aux_loss": null,
+      "val_ce_loss": 10.606924057006836,
+      "val_loss": 10.606924057006836
+    },
+    "max_iters": 20,
+    "metrics": [
+      {
+        "accel_mem_kind": "mps_current_allocated",
+        "accel_mem_mb": 432.851806640625,
+        "averaging_snapshots": 0,
+        "base_learning_rate": 0.00125,
+        "cuda": null,
+        "device": "mps",
+        "elapsed_time_sec": 0.2732840422540903,
+        "iter_time_sec": 0.2731932923197746,
+        "lr_multiplier": 1.0,
+        "moe_usage": null,
+        "ppl": 47412.45260234769,
+        "rss_kind": "process_lifetime_peak",
+        "rss_mb": 587.734375,
+        "scheduled_learning_rate": 0.00125,
+        "step": 0,
+        "tokens_processed": 1024,
+        "train_aux_loss": null,
+        "train_ce_loss": 10.812235832214355,
+        "train_loss": 10.812235832214355,
+        "train_total_loss": 10.812235832214355,
+        "training_time_sec": 0.2731932923197746,
+        "val_aux_loss": null,
+        "val_ce_loss": 10.766640186309814,
+        "val_loss": 10.766640186309814
+      },
+      {
+        "accel_mem_kind": "mps_current_allocated",
+        "accel_mem_mb": 493.74853515625,
+        "averaging_snapshots": 3,
+        "base_learning_rate": 0.00125,
+        "cuda": null,
+        "device": "mps",
+        "elapsed_time_sec": 3.52242708299309,
+        "iter_time_sec": 0.15434675011783838,
+        "lr_multiplier": 0.1,
+        "moe_usage": null,
+        "ppl": 40413.69764109826,
+        "rss_kind": "process_lifetime_peak",
+        "rss_mb": 590.921875,
+        "scheduled_learning_rate": 0.000125,
+        "step": 19,
+        "tokens_processed": 20480,
+        "train_aux_loss": null,
+        "train_ce_loss": 10.649492263793945,
+        "train_loss": 10.649492263793945,
+        "train_total_loss": 10.649492263793945,
+        "training_time_sec": 3.1420327480882406,
+        "val_aux_loss": null,
+        "val_ce_loss": 10.606924057006836,
+        "val_loss": 10.606924057006836
+      }
+    ],
+    "stop_reason": "max_iters",
+    "training_time_sec": 3.1420327480882406,
+    "weight_averaging": {
+      "completed_steps": 20,
+      "snapshots": 3,
+      "spec": {
+        "half_lives": [
+          200
+        ],
+        "interval": 5,
+        "kind": "spaced_tail_ema",
+        "start_step": 10,
+        "total_steps": 20
+      }
+    }
+  },
+  "wall_seconds": 6.383604999631643
+}
