@@ -60,10 +60,10 @@ records the bounded audit scope; source and prospective rules remain frozen.
 
 ## Fresh confirmation progress
 
-October28,04:50UTC: three of six fresh trajectories have completed and passed the
-same saved-artifact hash/metadata/arithmetic checks. GQA seed3412 is running.
-The first pair has MLA-minus-GQA H200 delta-0.047069nat. This single-seed
-observation cannot establish improvement or adoption. Final tensor/EMA audit
+October28,05:00UTC: four of six fresh trajectories have completed and passed the
+same saved-artifact hash/metadata/arithmetic checks. GQA seed3413 is running.
+The first two pairs have MLA-minus-GQA H200 deltas-0.047069/-0.049238nat.
+These incomplete-panel observations cannot establish improvement or adoption. Final tensor/EMA audit
 and frozen serving measurements remain due after all quality trajectories.
 
 | Family | Seed | Selected LR | Raw CE | H200 CE | Training seconds |
@@ -71,3 +71,4 @@ and frozen serving measurements remain due after all quality trajectories.
 | GQA | 3411 | 0.00125 | 4.708778 | 4.707809 | 420.93 |
 | MLA | 3411 | 0.00125 | 4.671780 | 4.660740 | 413.52 |
 | MLA | 3412 | 0.00125 | 4.666685 | 4.659804 | 411.48 |
+| GQA | 3412 | 0.00125 | 4.701124 | 4.709042 | 418.36 |
