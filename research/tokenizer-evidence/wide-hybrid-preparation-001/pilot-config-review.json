@@ -1,0 +1,48 @@
+{
+  "status": "pilot_configuration_and_accounting_tested_not_launch_ready",
+  "at": "2026-10-28T07:19:58.543606+00:00",
+  "checks": 48,
+  "new_checks": 28,
+  "regression_checks": 20,
+  "guard": {
+    "elapsed_seconds": 1.927078915759921,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17595019264,
+      "peak_rss_bytes": 272957440
+    },
+    "pid": 55310,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Three finite prospective configurations and explicit short EMA schedule",
+    "Two-scalar independent EMA recurrence with eight snapshots",
+    "All27 retained trajectory accounting and ordered pilot subtraction",
+    "Exact storage boundary and corrupt projection rejection"
+  ],
+  "real_model_or_corpus_loaded": false,
+  "real_mps_worker_dispatched": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "full_panel_required_free_bytes": 57224879357,
+  "limitations": [
+    "No pilot dispatcher or freeze API",
+    "No actual raw/H200 export/tensor/cache pilot audit",
+    "Numerical optimizer/resume/EMA prerequisites incomplete",
+    "Complete fitted storage and measured pilot resources unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_pilot_config.py": "54ac627a6649908fb200a79f280f3164d7b2bd48b5811722a984310aff2dcdd1",
+    "tests/test_tokenizer_wide_hybrid_pilot_config.py": "8c383e4d6dfe504cd43b14417fa49d3d8a27a3cd91953c629142860096421f36",
+    "src/research/tokenizer_wide_hybrid_driver.py": "eec8b41d823cb478e159a50b215ed61ccb829d9a5a621d345cecfe8ab9232316",
+    "tests/test_tokenizer_wide_hybrid_driver.py": "3432d875f9526b894f15e1710a346b9a4740a676b665df6af65e0e15089ba52b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-storage-projection.json": "5aba55c22f234f35aacea218fa53e767c450e9aaa6f07f34bfa2b4d3d5bf9df4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-config-tests.log": "7f509e61e0d84e77158ac59931988ea183206af2eec196893333ebef8b025f33",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-config-guard.json": "1358e56ebd4d2d5457c50e7284133cb1bafc023f6b793fb94eb612a467770f85"
+  }
+}

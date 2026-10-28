@@ -420,3 +420,31 @@ campaign plan exist, so this code does not authorize a current launch. Next
 preparation is the finite resource-pilot wrapper and its audits, plus reviewing
 remaining numerical-prerequisite procedure and storage fit. The failed combined
 continuation fixture remains closed; no retry, cleanup or holdout access occurred.
+
+## Finite resource-pilot configuration and retained-panel accounting
+
+Twenty-eight new pure configuration/accounting and two-scalar EMA checks plus20
+mocked quality-controller regressions passed (48 checks,1.70s; peak test-parent
+RSS272,957,440bytes). The new helper specifies three prospective width512 NoPE
+D/2 pilots, ordered hybrid/gated_mla/kda, seed3491, LR.0025 and20updates. The
+highest grid LR is chosen prospectively as a short numerical stress check; no
+result supports stability or quality claims. Cooldown starts13, H200 snapshots
+are13–20 at interval1, and validation cadence is20. Pilots cannot select recipes.
+
+The full initial reservation exactly matches the retained53.2948GiB projection.
+After each audited pilot, only its allocation is removed from required remaining
+free space; all24 quality runs remain reserved, with worst-case confirmation
+ranks and unchanged metadata/reserve. Tests reject partial-pilot-only budgets,
+invalid ordered prefixes, insufficient space by one byte and corrupt projections.
+The two-scalar EMA test agrees with an independent scalar recurrence and eight
+snapshots. It does not instantiate GPT, perform optimizer continuation, read
+corpus/checkpoints or retry the failed combined fixture. Controller regressions
+use mocked workers. All tests ran under a180s/4GiB RSS/8GiB reserve CPU guard.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-config-review.json`.
+No MPS worker or training launched, no checkpoints were deleted, and the holdout
+remains closed. The helper has no dispatch/freeze API. Numerical prerequisites,
+resource-pilot worker/audits, actual resource measurements, complete storage fit
+and final frozen plans remain unresolved. Next preparation is the guarded pilot
+wrapper and artifact review, without reopening closed controllers or the failed
+combined continuation fixture.

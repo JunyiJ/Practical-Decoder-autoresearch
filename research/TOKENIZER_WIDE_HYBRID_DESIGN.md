@@ -45,8 +45,12 @@ No new tokenizer request currently uses the proposed pilot3491, screen3501 or
 fresh3511/3512/3513 seeds. Repeat the freshness audit before a final freeze.
 
 Three resource pilots would use rank D/2, the largest parameter geometry in each
-family, seed3491 and20 updates. Exact pilot schedule/export checks remain to be
-specified and tested. These are feasibility checks excluded from selection.
+family, seed3491 and20 updates, in hybrid/gated_mla/kda order. The draft
+pilot configuration uses LR.0025 (the highest declared quality-grid rate),
+cooldown start13 through20 to.1, and H200 start13/interval1: eight snapshots
+at completed steps13–20. Validation cadence is20. This short schedule exercises
+the export path; it is not a quality-comparable H200 window or a stability
+guarantee for every LR/rank. These are feasibility checks excluded from selection.
 The lower-rank configurations still need their own numerical/cache prerequisites;
 the largest-rank pilot does not establish every configuration's resource peak.
 
@@ -255,3 +259,24 @@ saved result/model receipts and guard observations before accepting each triple,
 then rechecks earlier evidence before proceeding. Final summaries remain pending
 final research review and never automatically adopt. This integration has only
 mocked/tiny-process test evidence; no current frozen launch plan exists.
+
+## Prospective resource-pilot contract
+
+`tokenizer_wide_hybrid_pilot_config.py` supplies the three draft configurations
+and a full-campaign storage check; it has no freeze, dispatcher or retry API.
+Before pilot1 the required free space is57,224,879,357bytes, including all27
+retained trajectories, metadata and the unchanged8GiB reserve. After an audited
+pilot, subtract only that pilot's allocation from required *remaining* free
+space. Its files stay on disk, and all24 quality trajectories remain reserved
+at the worst possible selected rank. Keep the full metadata allowance throughout.
+An ordered family prefix is only an accounting input; the eventual controller
+must establish successful audits and unchanged retained artifacts independently.
+
+The prospective per-pilot limits are600s,4GiB RSS,6GiB MPS driver and4MiB log,
+with the existing per-trajectory output allowance. The projection is conservative
+tensor/serialization accounting, not measured pilot bytes, memory or time.
+Required numerical/source/runtime/corpus/tokenizer bindings and full-panel fit
+must precede a final freeze. No actual pilot plan is frozen. Resource-pilot
+worker integration, raw/H200 tensor/export/cache audits and measured costs remain
+unfinished. The short EMA schedule is tested only on a two-scalar CPU fixture;
+this neither retries nor completes the failed wider continuation prerequisite.
