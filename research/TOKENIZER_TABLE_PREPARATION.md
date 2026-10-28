@@ -223,3 +223,14 @@ Free space was 18.36 GiB after cleanup, with additional filesystem changes
 beyond the deleted bytes. This observation supports preparing the preferred
 width256 panel; it does not freeze or launch it. Recheck actual free space and
 all remaining allocations before every launch; retain the 8 GiB reserve.
+
+## Character-checkpoint cleanup (October27, Los Angeles)
+
+The human subsequently requested deleting all character-model checkpoints.
+The [inventory and deletion review](tokenizer-evidence/character-checkpoint-cleanup-001/README.md)
+records 3,232 removed files (23.346 GiB), with all 126 remaining GPT-2 checkpoints
+retained and hash-verified. Numeric historical evidence, logs, configs, failure
+records and stop markers remain. Character checkpoint reloading is no longer
+available; those prior studies stay closed. Free storage was 41.69 GiB after
+cleanup. Proceed with preferred width256 table-pilot and finite-plan preparation,
+rechecking actual storage and the unchanged reserve before every launch.
