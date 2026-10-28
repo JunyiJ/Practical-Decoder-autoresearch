@@ -330,3 +330,31 @@ Checkpoint/tokenizer provenance loading, guarded serial inference integration,
 resource pilots, full numerical prerequisites, storage fit and freeze remain
 required. No research training, real benchmark, failed-guard retry, cleanup or
 closed-controller execution occurred. The held-out test remains closed.
+
+## Selected-export loading integration
+
+Twenty new mocked loading checks and36 saved-score metadata regressions passed
+(56 total,1.73s; peak process RSS306,954,240bytes). The new loading helper binds
+all three fresh selected family requests to independently supplied selection,
+training/tokenizer contracts and request/result hashes. It checks every family
+request/config/corpus before tensor loading, invokes the existing raw/H200
+metadata adapter, hash-checks exports around CPU deserialization, rejects
+nonfinite or non-CPU export tensors, and rebuilds tokenizer/split identity and
+first96 training tokens before constructing each model. The complete request,
+result, corpus and raw/H200 set is rechecked after all three loads.
+
+Tests use tiny two-element tensors, synthetic corpus bytes, mocked model/device
+construction and a mocked score adapter in the integration layer. Separate
+metadata regressions use meta tensors; neither set loads a real trained model
+or executes MPS. Cases include altered selections/seeds/configs/tokenizers,
+changed corpus/input tokens, nonfinite/meta/empty tensors, audit failure,
+mutation during deserialization and earlier-artifact changes during later loads.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/export-loading-review.json`.
+The helper has no CLI, controller, lock or watchdog and cannot authorize launch.
+The future worker must bind frozen source/runtime and complete quality/tensor
+reviews, hold the global/run locks, enforce resource limits, and integrate the
+measurement/result-audit components. Export finiteness is not exact raw-to-EMA
+or optimizer auditing. Resource pilots, numerical prerequisites, full storage
+fit and final freeze remain unresolved; all closed campaigns/test boundaries
+and retained failure evidence remain unchanged.

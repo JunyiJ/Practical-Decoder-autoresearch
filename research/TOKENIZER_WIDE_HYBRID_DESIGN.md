@@ -221,3 +221,14 @@ and cache configurations, MPS FP32 parameters and floating buffers, and the
 independently expected token hash. This adapter does not load/check checkpoints,
 start a watchdog, hold worker locks or authorize a launch; the guarded wrapper
 must supply those prerequisites and provenance checks.
+
+The prospective selected-export loader takes independent expected requests,
+training/tokenizer contracts and artifact hashes for each fresh family. It
+rechecks the raw/H200 metadata pair before deserializing each export on CPU,
+checks export finiteness and hashes around deserialization, validates rebuilt
+tokenizer/splits and first96 training IDs, and loads models strictly. All three
+models remain resident. Request/result/corpus/raw/H200 hashes are rechecked after
+all loading. The helper does not certify exact-EMA/optimizer audits or freeze
+source/runtime, acquire locks or start resource guards; the inference wrapper
+must enforce these prerequisites before invoking it. No production loader or
+MPS success was established by the mocked preparation tests.

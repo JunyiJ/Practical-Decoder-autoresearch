@@ -1,0 +1,48 @@
+{
+  "status": "mocked_selected_export_loading_passed_not_launch_ready",
+  "at": "2026-10-28T06:45:14.875332+00:00",
+  "checks": 56,
+  "new_checks": 20,
+  "regression_checks": 36,
+  "guard": {
+    "elapsed_seconds": 1.9066959582269192,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17499344896,
+      "peak_rss_bytes": 306954240
+    },
+    "pid": 54106,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Independent selected fresh requests/configs/tokenizer contracts",
+    "All-family corpus preflight before loading",
+    "Saved metadata review before export loading",
+    "CPU export finiteness and read hash checks",
+    "Rebuilt tokenizer and frozen training token identity",
+    "Full request/result/corpus/checkpoint recheck after triple loading"
+  ],
+  "real_model_or_mps_loaded": false,
+  "real_checkpoint_tensor_audit": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Integration uses tiny CPU tensors and mocked model/device/score-adapter operations",
+    "Score-adapter regression uses meta tensors and no real corpus",
+    "Complete tensor/EMA/optimizer audits, guarded worker integration and pilot wrapper pending",
+    "Numerical prerequisites, full storage fit and freeze remain unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_loading.py": "b1b097ed53acd871bb97bf62d717c7a5a3350ca452ba2ec64a7b41689ba6c249",
+    "tests/test_tokenizer_wide_hybrid_loading.py": "43ea26fd01c3b2e1ffe4874c0d9d0d3d2b7d2ae3141996160cb69494bdaada42",
+    "src/research/tokenizer_wide_hybrid_scores.py": "fae7ff3e7ec660b033671a2153cf2dcb537d742c951e6b582509719149fa4ab4",
+    "tests/test_tokenizer_wide_hybrid_scores.py": "3008ce238c7d43a10a7d4802a98add1d9752b09b9b2f3be194aa9bf52a1f13ca",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-export-loading-tests.log": "5a8fceffb186b86b16e7a4e26918d7d883bedd6f85046e7b77ec16345b44b6db",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-export-loading-guard.json": "e300b7d81b453a1ea7908bc39a7a0b36f885943214960481054e47629b46e0c4"
+  }
+}
