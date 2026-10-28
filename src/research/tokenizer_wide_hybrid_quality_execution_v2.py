@@ -38,8 +38,8 @@ def execute_quality_outputs(writer,slot,plan_sha256,request_sha256,*,projection_
     _sha(plan_sha256);_sha(request_sha256)
     evidence=writer.root/'evidence';stem=f'quality/{slot:02d}';trial=_path(evidence,stem)
     plan_path=evidence/'meta/plan.json'
-    with writer._serialized():
-        bound=bind_campaign(plan_path,plan_sha256)
+    # Frozen-source hashing must not block the parent watchdog namespace.
+    bound=bind_campaign(plan_path,plan_sha256)
     plan=_json(plan_path,plan_sha256)
     request=_json(trial/'request.json',request_sha256)
     candidates=bound['requests']['quality'][str(slot)]
@@ -114,8 +114,7 @@ def execute_quality_outputs(writer,slot,plan_sha256,request_sha256,*,projection_
         recheck()
         # Source/runtime and the full frozen prerequisites are checked again only
         # after the resource thread has closed; no concurrent census races.
-        with writer._serialized():
-            again=bind_campaign(plan_path,plan_sha256)
+        again=bind_campaign(plan_path,plan_sha256)
         _require(digest(again['files'])==digest(bound['files']),'Frozen quality provenance changed')
         recheck()
         report=dict(kind=KIND,status='quality_outputs_complete_pending_independent_stage_review',

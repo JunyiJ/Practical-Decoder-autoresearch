@@ -1,0 +1,59 @@
+...................................F.................................... [ 41%]
+........................................................................ [ 83%]
+............................                                             [100%]
+=================================== FAILURES ===================================
+_ test_log_remains_append_only_through_final_storage_and_source_checks[append] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10bcb72f0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bc6cc20>
+change = 'append'
+
+    @pytest.mark.parametrize('change',['append','rewrite','truncate','replace','overflow'])
+    def test_log_remains_append_only_through_final_storage_and_source_checks(writer,monkeypatch,change):
+        args=setup(writer,monkeypatch);original=entry._storage
+        def late(*a,**kw):
+            value=original(*a,**kw)
+            writer.publish_json('control/synthetic-parent-live.json',{'alive':True})
+            log=writer.root/'evidence/quality/01/process/worker.log'
+            if change=='append':
+                with writer.open_append('evidence/quality/01/process/worker.log') as stream:stream.write(b'parent output\n')
+            elif change=='rewrite':log.write_bytes(b'x'*log.stat().st_size)
+            elif change=='truncate':log.write_bytes(b'x')
+            elif change=='overflow':
+                with log.open('ab') as stream:stream.truncate(entry.transport.LOG_LIMIT+1)
+            else:
+                replacement=log.parent/'replacement';replacement.write_bytes(log.read_bytes());os.replace(replacement,log)
+            return value
+        monkeypatch.setattr(entry,'_storage',late)
+>       if change=='append':assert entry.verify_ready_worker(**args)['storage_verified']
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_entry_v2.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_entry_v2.py:120: in verify_ready_worker
+    needed=_storage(writer,slot,seal,startup,inventory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tokenizer_wide_hybrid_quality_entry_v2.py:138: in late
+    with writer.open_append('evidence/quality/01/process/worker.log') as stream:stream.write(b'parent output\n')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10bcb72f0>
+name = 'evidence/quality/01/process/worker.log'
+
+    def open_append(self,name):
+        """New append-only byte/JSONL stream; never resumes an existing file."""
+        with self._serialized():
+            path,group=self._target(name)
+            if name=='STOP':raise ValueError('STOP is an immutable marker, not a stream')
+            before=self._capacity(group,0)
+            if len(before['files'])+1>MAX_FILES:raise ValueError('Metadata file-count cap exceeded')
+            path.parent.mkdir(parents=True,exist_ok=True)
+>           fd=os.open(path,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileExistsError: [Errno 17] File exists: '/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-entry-final-synthetic-v821pofp/test_log_remains_append_only_t0/campaign/evidence/quality/01/process/worker.log'
+
+src/research/tokenizer_wide_hybrid_metadata_writer.py:140: FileExistsError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_entry_v2.py::test_log_remains_append_only_through_final_storage_and_source_checks[append]
+1 failed, 171 passed in 60.51s (0:01:00)

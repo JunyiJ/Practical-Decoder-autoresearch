@@ -297,3 +297,11 @@ passed. This is controller preparation only: child consumption and dispatch
 integration, actual numerical/input cases and measured pilots remain unfinished.
 No new model-quality result, research training or checkpoint deletion occurred.
 See `tokenizer-evidence/wide-hybrid-preparation-001/quality-readiness-v2-component-review.json`.
+
+The next preparation increment adds same-parent, readiness-bound child checks
+and a guarded callable quality body. It rechecks immutable evidence, frozen
+prerequisites and actual remaining storage before the producer, and keeps the
+parent's metadata writes available during source checks. Final172 synthetic
+tests passed; one corrected test-fixture failure is preserved with its log.
+There is no child CLI or parent dispatcher yet and no new quality result.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-entry-v2-component-review.json`.

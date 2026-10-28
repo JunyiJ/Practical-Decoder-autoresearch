@@ -1700,3 +1700,42 @@ remain unresolved; the27-trajectory campaign remains unfrozen. The preceding
 5f19697 push succeeded and includes ac49ffc; the earlier network issue is resolved.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-readiness-v2-component-review.json`.
+
+## October 28 readiness-bound quality child composition
+
+The child contract now includes an exact readiness SHA in addition to startup
+SHA. The consumer requires the same live parent as the sealed completed guard,
+verifies unchanged startup/request/evidence/control files, and independently
+rebinds frozen source/runtime/numerical prerequisites. It reconstructs remaining
+storage from original pilot records and the sealed completed LR prefix, measures
+current unique checkpoint allocation and logical bytes, and rejects changes,
+extra weights or a current free-space shortfall. The reserve and full metadata
+allowance are unchanged. Parent idle audit semantics are inherited only through
+the exact parent-supplied seal and unchanged inputs; the hash is not an external
+authenticity signature.
+
+Fresh process launch/log files are the only evidence additions. Existing log
+bytes and inode remain unchanged through final storage/source checks; bounded
+appends and parent control writes remain possible. The quality producer no longer
+holds the metadata namespace lock while performing full frozen-source checks.
+Regression tests exercise parent control writes during both source checks.
+
+A callable7200s child body performs these gates before lazily importing the
+bounded quality producer. Failed/completed entry guards cannot be retried. No
+CLI or parent dispatcher is implemented yet. Next add the CLI and tested parent
+dispatch/postprocess acceptance, then saved LR/rank selections, boundary cleanup
+and inference. The parent must seal readiness before starting mutable control
+updates that would invalidate existing sealed controls.
+
+Initial167 tests passed. After extending the log checks,171 passed and one
+append-positive fixture failed because it attempted to reopen the exclusive
+new-file writer. The fixture was corrected to simulate an existing parent stream;
+all172 tests then passed in61.19s under240s/4GiB/8GiB CPU/disk limits. Every run's
+logs and guard observations, including the failure, are retained. Scientific
+metadata and parent PID relation are synthetic; producer calls are mocked or use
+tiny CPU payloads. No research training/MPS launch, checkpoint deletion, failed
+combined numerical retry, closed-controller rerun or holdout access occurred.
+Real numerical/input and measured-pilot gates remain unresolved and the campaign
+remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-entry-v2-component-review.json`.

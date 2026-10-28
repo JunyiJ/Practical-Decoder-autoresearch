@@ -1,0 +1,68 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T20:15:30.100187+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-entry-v2-final-guard.json": "61bc36513cb51afa2758cd37b09089c85447a861154d46d2dae97b5d02eaf48c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-entry-v2-final-tests.log": "e7bedc7eb33f2f177e60bac8b57e28ba59d1bdac08e1220b7a7ebff860d0885b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-entry-v2-guard.json": "f2a46845176b1af707cbd17863ce090067bb9288295fe2707fd09d3a6673a563",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-entry-v2-repaired-guard.json": "5f481f334f9e499e601722be5652a2897d748669948895a806d97becc0538ed7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-entry-v2-repaired-tests.log": "93b70491ae013c7e057b6368d97587adfbd9b90f563d5bffcde0a77c666270f6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-entry-v2-tests.log": "296bdd71a5dad1d4d42aede37226c68db363e59c2cb7c3a87536980a1b0c6ba4",
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": "65c6273b7e88084fd63a18be8f1507502aa47a10ba6473c176f82417068ac6f5",
+    "src/research/tokenizer_wide_hybrid_quality_execution_v2.py": "49c36f20b9bd3ca50be03328664969091727c825f54abf874c45f6f7d6309a1e",
+    "src/research/tokenizer_wide_hybrid_quality_handoff_v2.py": "4f75c2cf5b8311bdaf51fe14b3b92a32ac1fca9d3a4581e8ff7a3f3d39475739",
+    "tests/test_tokenizer_wide_hybrid_quality_entry_v2.py": "2cbc3022539dd349d347897e0161e585f1e41ea69262de4cbc6fa6a8090cb6c9",
+    "tests/test_tokenizer_wide_hybrid_quality_execution_v2.py": "554788d29192052d058f0f0484582c980c329efdf80f25378f6249e67fa24095",
+    "tests/test_tokenizer_wide_hybrid_quality_handoff_v2.py": "6c83e560c58286e27d9a327675318bea06f06577203937eb4904dfe40b2c75a0"
+  },
+  "findings": [
+    "The exact child argv can now anchor the readiness SHA alongside startup SHA. The consumer requires the same live parent as the sealed completed guard, unchanged startup/request/evidence/control bytes and independently rebound frozen source/runtime/numerical prerequisites.",
+    "The consumer reconstructs the remaining storage projection from original pilot review and sealed completed LR records, measures current unique checkpoint allocation/logical bytes, rejects allocation changes or extra/unreviewed weights, and checks actual full remaining free space twice. It never discounts the8GiB reserve or256MiB metadata allowance.",
+    "Live handoff accepts only fresh launch/log files. The log inode and existing prefix remain unchanged through final source/storage checks; only bounded appends are permitted. Parent control writes remain possible during hashing.",
+    "A callable7200s child body performs all checks before lazily importing the quality producer; failed/completed entry guards block retry. There is no CLI or parent dispatcher yet. Tests invoke a mocked producer only.",
+    "Removed metadata namespace locks around the quality producer full frozen-source checks. A regression test publishes bounded parent control updates during both checks, preventing watchdog lock starvation.",
+    "Initial167 tests passed. The added append-positive fixture incorrectly reopened an exclusive new-file writer and failed while171 cases passed; corrected only that fixture to simulate an existing parent stream. Final172 tests passed in61.19s. All initial/failed/repaired logs and guards are retained."
+  ],
+  "free_bytes_observed": 30625488896,
+  "guard": {
+    "elapsed_seconds": 61.79613587446511,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 240
+    },
+    "observation": {
+      "free_bytes": 30625689600,
+      "peak_rss_bytes": 242450432
+    },
+    "pid": 85606,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_quality_entry_v2_component_review",
+  "limitations": [
+    "Parent full idle audits are inherited through the exact parent-supplied seal hash and unchanged evidence, rather than replayed against a mutable live log. This relies on the future parent dispatcher producing and passing the audited seal; a hash is not an external authenticity signature.",
+    "No CLI/parent process dispatch/postprocess acceptance, saved LR/rank selection transitions, later boundary cleanup or inference orchestration yet. Actual9 numerical/input cases and measured-pilot prerequisites remain unresolved; source/frozen-policy checks are not bypassed.",
+    "Fixtures use synthetic scientific metadata, tiny CPU checkpoint payloads and a simulated child-parent PID relation. No research worker/MPS trial, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or test-holdout access occurred. The27-trajectory campaign remains unfrozen."
+  ],
+  "status": "synthetic_child_composition_tests_passed_campaign_unfrozen",
+  "validation": {
+    "extended": {
+      "failed": 1,
+      "passed": 171,
+      "seconds": 60.51
+    },
+    "initial": {
+      "failed": 0,
+      "passed": 167,
+      "seconds": 53.08
+    },
+    "repaired": {
+      "failed": 0,
+      "passed": 172,
+      "seconds": 61.19
+    }
+  }
+}

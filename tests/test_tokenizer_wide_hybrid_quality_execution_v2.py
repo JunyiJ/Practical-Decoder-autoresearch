@@ -194,3 +194,15 @@ def test_body_outputs_match_independent_producer_binding(case):
     allowance=allocations(json.loads(execution.PROJECTION.read_text()))[request['spec']['family'],request['spec']['divisor']]
     _worker_review(root,stem,case.args[1],context,request,result,pair,evidence,case.pref,
                    digest('synthetic96'),allowance,stage='quality')
+
+
+def test_frozen_binding_does_not_hold_parent_metadata_namespace(case,monkeypatch):
+    original=execution.bind_campaign;calls=[]
+    def bind(*a,**kw):
+        # Parent control updates must remain possible while source hashes run.
+        path=case.writer.root/'control/binding-observation.json'
+        case.writer.publish_json('control/binding-observation.json',{'call':len(calls)},replace=path.exists())
+        calls.append(True);return original(*a,**kw)
+    monkeypatch.setattr(execution,'bind_campaign',bind)
+    run(case)
+    assert len(calls)==2

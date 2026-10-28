@@ -33,24 +33,30 @@ def _log_prefix(path,size):
     return digest.hexdigest()
 
 
-def worker_argv(writer,slot,startup_ref):
+def worker_argv(writer,slot,startup_ref,*,readiness_ref=None):
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<9,
              'Exact LR writer/slot required')
     path='meta/quality-first-startup.json' if slot==0 else f'meta/quality-lr-startup-{slot:02d}.json'
     _require(startup_ref['path']==path,'Exact quality startup reference required')
-    return [sys.executable,'-m',MODULE,'worker','--campaign',str(writer.root),'--slot',str(slot),
+    module=MODULE
+    extra=[]
+    if readiness_ref is not None:
+        _require(readiness_ref['path']==f'meta/quality-readiness-{slot:02d}.json','Exact readiness reference required')
+        module='src.research.tokenizer_wide_hybrid_quality_entry_v2'
+        extra=['--readiness-sha256',_sha(readiness_ref['sha256'])]
+    return [sys.executable,'-m',module,'worker','--campaign',str(writer.root),'--slot',str(slot),
         '--startup-sha256',_sha(startup_ref['sha256']),'--global-fd',str(writer.lock_fds[0]),
-        '--campaign-fd',str(writer.lock_fds[1])]
+        '--campaign-fd',str(writer.lock_fds[1])]+extra
 
 
-def verify_live_handoff(writer,slot,startup_ref,actual_argv,*,inventory,required_free_bytes,output_limit_bytes):
+def verify_live_handoff(writer,slot,startup_ref,actual_argv,*,inventory,required_free_bytes,output_limit_bytes,readiness_ref=None):
     """Bind the exact live parent launch and immutable prelaunch inventory.
 
     Caller owns an outer guard and must already establish frozen numerical,
     pilot/prefix, startup and full-storage semantics. Here only transport and
     unchanged bytes are checked. No scientific, storage or dispatch credit.
     """
-    expected_argv=worker_argv(writer,slot,startup_ref)
+    expected_argv=worker_argv(writer,slot,startup_ref,readiness_ref=readiness_ref)
     _require(actual_argv==expected_argv,'Actual quality child argv differs')
     _require(type(required_free_bytes) is int and required_free_bytes>=RESERVE+METADATA
              and type(output_limit_bytes) is int and output_limit_bytes>LOG_LIMIT,
