@@ -168,10 +168,19 @@ def bind_quality_boundary(root, boundary, records, rates, selection, *, context,
         ref = selection_refs[key]
         _require(digest(_document(root, ref)) == digest(value), 'Persisted scientific selection differs')
         add(ref['path'], ref['sha256'])
+    pairs = _review_quality_members(root,records,requests,trials,bound,context,projection,budgets)
+    manifest = planned_manifest(boundary, records, rates, selection, pairs, bound)
+    _check_quality_inventory(root,resolved_trials,pairs,bound)
+    return dict(manifest=manifest, stage_audits_bound=True, stage_inventory_complete=True, inventory_completeness_verified=False,
+                frozen_plan_verified=False, deletion_authorized=False, dispatch_authorized=False)
+
+
+def _review_quality_members(root,records,requests,trials,bound,context,projection,budgets):
+    """Exact per-member audits shared by full boundaries and live prefixes."""
     pairs = {}
     # Import uses torch definitions but neither creates a model nor loads data.
     from .tokenizer_wide_hybrid_scores import _score
-    for index in sorted(indices):
+    for index in sorted(trials):
         trial = _path(root, trials[index])
         stem = trials[index]
         reject_output_failures(trial)
@@ -242,8 +251,12 @@ def bind_quality_boundary(root, boundary, records, rates, selection, *, context,
         _require(event_path.stat().st_size <= EVENT_LIMIT, 'Resource trace exceeds cap')
         verify_events(docs['resource'], [json.loads(line) for line in event_path.read_text().splitlines()])
         pairs[index] = pair
-    manifest = planned_manifest(boundary, records, rates, selection, pairs, bound)
-    expected_weights = {entry['path']: entry for entry in manifest['delete']+manifest['retain']}
+    return pairs
+
+
+def _check_quality_inventory(root,resolved_trials,pairs,bound):
+    """Require complete stage-local evidence and unchanged live pair hashes."""
+    expected_weights = {entry['path']:entry for pair in pairs.values() for entry in pair.values()}
     stage_files = set()
     for trial in resolved_trials:
         _require(trial.is_dir(), 'Stage trial directory missing')
@@ -257,5 +270,3 @@ def bind_quality_boundary(root, boundary, records, rates, selection, *, context,
     for name, sha in bound.items(): _check_file(root, name, sha)
     for name, entry in expected_weights.items():
         _check_file(root, name, entry['sha256'], entry['size'])
-    return dict(manifest=manifest, stage_audits_bound=True, stage_inventory_complete=True, inventory_completeness_verified=False,
-                frozen_plan_verified=False, deletion_authorized=False, dispatch_authorized=False)

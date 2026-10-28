@@ -1532,3 +1532,37 @@ checkpoint deletion, training/MPS launch or failed-numerical retry occurred. The
 27-trajectory campaign remains unfrozen, with closed campaigns and test holdout.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-startup-v2-component-review.json`.
+
+
+## October 28 complete LR-prefix evidence review
+
+A read-only v2 verifier now reviews each ordered completed LR prefix, from one
+through nine screens, against independently supplied frozen requests. It binds
+every member's producer and tensor provenance, full validation arithmetic,
+1200-step/41-snapshot endpoint, resource trace/process limits, numerical/source/
+runtime/corpus prerequisites and complete stage-local file inventory. Full
+LR/rank boundaries reuse these same member checks. All weights remain intact.
+
+The output supplies reviewed records and checkpoint pairs for later storage
+accounting. It produces no rate selection or cleanup manifest, including at nine
+screens, and grants no frozen-plan, storage, deletion or dispatch authorization.
+The caller still needs worker locks, an outer guard, complete pilot history,
+full remaining-panel storage and selection-aware startup/process handoff.
+
+Validation: the initial suite had287 passes and two missing-resource exception
+contract failures. Missing evidence was rejected, but an explicit producer check
+now raises the intended validation error. The failed log is retained. The final
+289 tests passed in5.23s, peak RSS237,715,456bytes under the180s/4GiB/8GiB CPU guard.
+Tests cover every prefix length, reordered or missing slots, changed independent
+requests, missing evidence in first/last members, numerical/source/token/corpus
+tampering, failure/partial files, checkpoint aliases and immutable inputs, plus
+full LR/rank, pilot-audit and storage regressions. Fixtures are synthetic; no
+actual wide numerical or model-quality success is implied.
+
+Next connect reviewed LR prefixes to later-trial startup and guarded process
+handoff, then persisted LR/rank selections, boundary cleanup and inference.
+Real numerical/input and measured-pilot prerequisites remain unresolved. No
+research training/MPS launch, checkpoint deletion or failed-numerical retry
+occurred. The27-trajectory campaign remains unfrozen with closed test holdout.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-prefix-v2-component-review.json`.

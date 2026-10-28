@@ -1,0 +1,76 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T19:31:59.659840+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-prefix-v2-final-guard.json": "019b04c8fafa93e3cb34ad9384ee73e422c6d352fba77981fd2a3cde1008c035",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-prefix-v2-final-tests.log": "d489f5015cbb036d783ba0b419552ae690999b57f2c4e335d8407d589a2e67e5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-prefix-v2-guard.json": "7968f056812347c92453900a3f623c766c214e71aee7a2a09d06a92d42dad3b7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-prefix-v2-tests.log": "ad9b565ba8d9e558b9e79874cf96a2bc88e106a2ef9508af67fd3998693a9a59",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "b15ee523cafe8daa727e7205ba7cc05af72eb4f6e47e4efbd011a3ea3c342318",
+    "src/research/tokenizer_wide_hybrid_retention_audit.py": "f9f248733537ba384dfd83109ec4b34fb123fdb5d34e6a793170794e07d0b5c4",
+    "tests/test_tokenizer_wide_hybrid_quality_prefix_v2.py": "0362c8ed99c153b50ba31c661b4bfcb416d8eee5e10c97bb122d44747f7e905c",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "f3b5ad25f96f337d58ee0fa31aa91bba01c4d768da0edcbd626c179dfb983cca"
+  },
+  "findings": [
+    "New read-only LR prefix verifier accepts exactly1 through9 ordered completed slots and independent expected frozen requests. It derives records from saved results only after binding producer, tensor, score arithmetic, resource/process, numerical/source/runtime/corpus and complete stage-local inventory checks.",
+    "Full LR/rank boundaries and partial LR prefixes reuse identical per-member and stage-local integrity checks. Every prefix member, including provisional winners, requires full evidence. Checkpoint pairs feed future storage accounting; this API grants no storage or dispatch authorization.",
+    "All prefix lengths preserve all files. Even nine reviewed LR screens produce neither a selection nor a cleanup manifest; persisted final stage selection and its full boundary review remain separate prerequisites.",
+    "Initial tests rejected missing resource evidence with KeyError in two cases; explicit producer input validation now raises ValueError. Both initial failures and logs are retained. Final289 tests pass, including original full LR/rank audit, pilot audit and storage regressions."
+  ],
+  "free_bytes_observed": 30643937280,
+  "guards": [
+    {
+      "elapsed_seconds": 6.7485581655055285,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30640439296,
+        "peak_rss_bytes": 238878720
+      },
+      "pid": 81276,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "elapsed_seconds": 6.229780124500394,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30643879936,
+        "peak_rss_bytes": 237715456
+      },
+      "pid": 81346,
+      "reason": null,
+      "status": "finished"
+    }
+  ],
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_lr_prefix_v2_component_review",
+  "limitations": [
+    "All new prefixes are synthetic metadata and tiny byte checkpoint fixtures. No actual model loading, optimizer continuation, EMA recurrence, MPS execution, or scientific quality result is established.",
+    "Caller must still hold worker locks and an outer guard, bind the full frozen campaign and pilot history, recheck full remaining-panel storage and provide process handoff. Later selection-aware startup, dispatch, LR/rank cleanup and inference orchestration remain incomplete.",
+    "Actual nine rank-policy numerical/input and measured-pilot prerequisites remain unresolved. The failed combined CPU numerical fixture and closed controllers were not rerun; all research checkpoints and the closed test holdout remain untouched. The27-trajectory campaign remains unfrozen."
+  ],
+  "status": "synthetic_prefix_tests_passed_campaign_unfrozen",
+  "validation": [
+    {
+      "failed": 2,
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-prefix-v2-tests.log",
+      "passed": 287,
+      "seconds": 5.66
+    },
+    {
+      "failed": 0,
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-prefix-v2-final-tests.log",
+      "passed": 289,
+      "seconds": 5.23
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+.............................FF......................................... [ 24%]
+........................................................................ [ 49%]
+........................................................................ [ 74%]
+........................................................................ [ 99%]
+.                                                                        [100%]
+=================================== FAILURES ===================================
+______ test_every_member_needs_complete_provenance[resource-audit.json-0] ______
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-prefix-v2-synthetic-zzzb6zaw/test_every_member_needs_comple12')
+slot = 0, name = 'resource-audit.json'
+
+    @pytest.mark.parametrize('slot',[0,2])
+    @pytest.mark.parametrize('name',['result.json','request.json','tensor-attempt.json','tensor-audit.json',
+        'worker-outputs.json','training-outputs.json','resource-audit.json','resource-events.jsonl',
+        'process/process.json','process/worker.log'])
+    def test_every_member_needs_complete_provenance(tmp_path,slot,name):
+        args=setup(tmp_path);args['evidence'].pop(f'quality/{slot:02d}/{name}')
+>       with pytest.raises(ValueError):audit.bind_lr_prefix(**args)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_prefix_v2.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:98: in bind_lr_prefix
+    corpora=_bind_producers(root,training_token_sha256=training_token_sha256,context=context,
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:50: in _bind_producers
+    _worker_review(root,stem,index,context,request,result,pair,evidence,
+src/research/tokenizer_wide_hybrid_pilot_audit_v2.py:46: in _worker_review
+    result=ref(stem+'/result.json'),resources=ref(stem+'/resource-audit.json'))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'quality/00/resource-audit.json'
+
+>   def ref(name):return dict(path=name,sha256=bound[name])
+                                               ^^^^^^^^^^^
+E   KeyError: 'quality/00/resource-audit.json'
+
+src/research/tokenizer_wide_hybrid_pilot_audit_v2.py:37: KeyError
+______ test_every_member_needs_complete_provenance[resource-audit.json-2] ______
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-prefix-v2-synthetic-zzzb6zaw/test_every_member_needs_comple13')
+slot = 2, name = 'resource-audit.json'
+
+    @pytest.mark.parametrize('slot',[0,2])
+    @pytest.mark.parametrize('name',['result.json','request.json','tensor-attempt.json','tensor-audit.json',
+        'worker-outputs.json','training-outputs.json','resource-audit.json','resource-events.jsonl',
+        'process/process.json','process/worker.log'])
+    def test_every_member_needs_complete_provenance(tmp_path,slot,name):
+        args=setup(tmp_path);args['evidence'].pop(f'quality/{slot:02d}/{name}')
+>       with pytest.raises(ValueError):audit.bind_lr_prefix(**args)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_prefix_v2.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:98: in bind_lr_prefix
+    corpora=_bind_producers(root,training_token_sha256=training_token_sha256,context=context,
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:50: in _bind_producers
+    _worker_review(root,stem,index,context,request,result,pair,evidence,
+src/research/tokenizer_wide_hybrid_pilot_audit_v2.py:46: in _worker_review
+    result=ref(stem+'/result.json'),resources=ref(stem+'/resource-audit.json'))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'quality/02/resource-audit.json'
+
+>   def ref(name):return dict(path=name,sha256=bound[name])
+                                               ^^^^^^^^^^^
+E   KeyError: 'quality/02/resource-audit.json'
+
+src/research/tokenizer_wide_hybrid_pilot_audit_v2.py:37: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_prefix_v2.py::test_every_member_needs_complete_provenance[resource-audit.json-0]
+FAILED tests/test_tokenizer_wide_hybrid_quality_prefix_v2.py::test_every_member_needs_complete_provenance[resource-audit.json-2]
+2 failed, 287 passed in 5.66s
