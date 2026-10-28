@@ -1739,3 +1739,39 @@ Real numerical/input and measured-pilot gates remain unresolved and the campaign
 remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-entry-v2-component-review.json`.
+
+## October 28 child CLI and independent parent acceptance
+
+The worker-only CLI now requires the exact canonical command, startup/readiness
+hashes and inherited locks. It rejects abbreviations, duplicate/reordered options,
+unsupported slots, malformed hashes and lock aliases before the child body.
+No parent launch loop is implemented yet.
+
+The read-only acceptance component requires the caller's shared locks, outer
+review guard and reaped child. It binds same-parent readiness, original launch,
+returned/immutable terminal identity and actual child PID to the completed7200s
+entry guard. It verifies the self-inclusive output/log census and process limits,
+then independently replays all completed LR producer/tensor/resource/validation
+audits, pilot cleanup history and complete remaining storage. Frozen provenance
+and evidence are rechecked. Even after all9 LR trials it grants no saved selection,
+cleanup or next-stage authorization. Hashing leaves the metadata namespace free.
+
+Initial54 tests passed and33 failed: one fixture corpus mismatch was correctly
+rejected, and32 fixture assertions attempted to reconstruct intermediate reports
+for previously completed trials. Preserving existing fixture bytes removed those
+assertions. A subsequent86 passed/1 failed run exposed a reused first-slot fixture
+closure variable. After that fixture correction, all87 CLI/acceptance/child-entry
+tests passed in91.23s, peak RSS242,139,136bytes under240s/4GiB/8GiB actual CPU/disk
+guards. Both failed logs and all guard observations remain intact. Production
+acceptance checks were not weakened to accommodate the fixtures.
+
+Next implement the bounded serial parent transition, child reaping, immutable
+success/failure receipts and checks of prior accepted prefixes, then saved LR/rank
+selection transitions, cleanup and inference. Parent guard handling must preserve
+owned child termination and the existing7200s child limit. Real numerical/input
+and measured-pilot prerequisites remain unresolved. Fixtures are synthetic; no
+research training/MPS worker, checkpoint deletion, failed combined numerical
+retry, closed-controller rerun or holdout evaluation occurred. The27-trajectory
+campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-acceptance-v2-component-review.json`.

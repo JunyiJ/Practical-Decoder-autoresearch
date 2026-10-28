@@ -1,0 +1,1060 @@
+..............FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF......................... [ 82%]
+...............                                                          [100%]
+=================================== FAILURES ===================================
+_____ test_complete_child_reaudits_prefix_history_and_storage_readonly[0] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110350850>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110371b20>, slot = 0
+
+    @pytest.mark.parametrize('slot',[0,1,4,8])
+    def test_complete_child_reaudits_prefix_history_and_storage_readonly(writer,monkeypatch,slot):
+        args=setup(writer,monkeypatch,slot);before=accept._inventory(writer.root/'evidence')
+>       checked=accept.review_completed_lr(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py:96: in review_completed_lr
+    prefix=bind_lr_prefix(root,context=bound['context'],requests=requests,
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:132: in bind_lr_prefix
+    for corpus in corpora:_require(file_digest(corpus)==context['corpus_sha256'],'LR prefix corpus changed')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'LR prefix corpus changed'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: LR prefix corpus changed
+
+src/research/tokenizer_wide_hybrid_retention_audit.py:45: ValueError
+_____ test_complete_child_reaudits_prefix_history_and_storage_readonly[1] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x11036cb50>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110374b90>, slot = 1
+
+    @pytest.mark.parametrize('slot',[0,1,4,8])
+    def test_complete_child_reaudits_prefix_history_and_storage_readonly(writer,monkeypatch,slot):
+>       args=setup(writer,monkeypatch,slot);before=accept._inventory(writer.root/'evidence')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_complete_child_reaudits_p1/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_complete_child_reaudits_prefix_history_and_storage_readonly[4] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103c1860>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103c85f0>, slot = 4
+
+    @pytest.mark.parametrize('slot',[0,1,4,8])
+    def test_complete_child_reaudits_prefix_history_and_storage_readonly(writer,monkeypatch,slot):
+>       args=setup(writer,monkeypatch,slot);before=accept._inventory(writer.root/'evidence')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_complete_child_reaudits_p2/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_complete_child_reaudits_prefix_history_and_storage_readonly[8] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103c14e0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1104a43d0>, slot = 8
+
+    @pytest.mark.parametrize('slot',[0,1,4,8])
+    def test_complete_child_reaudits_prefix_history_and_storage_readonly(writer,monkeypatch,slot):
+>       args=setup(writer,monkeypatch,slot);before=accept._inventory(writer.root/'evidence')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_complete_child_reaudits_p3/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[return] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103a0830>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103c1160>
+bad = 'return'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug0/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[launch] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103a2870>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103f3540>
+bad = 'launch'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug1/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[guard] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110403d70>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103f18d0>
+bad = 'guard'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug2/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[startup] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110403650>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103da430>
+bad = 'startup'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug3/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+______ test_success_exit_is_not_enough_and_all_inputs_are_preserved[seal] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110403b30>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103c0c90>
+bad = 'seal'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug4/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[numeric] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103a06b0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103c1550>
+bad = 'numeric'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug5/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[source] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c74d0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103f22e0>
+bad = 'source'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug6/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+__ test_success_exit_is_not_enough_and_all_inputs_are_preserved[prior_weight] __
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110403d70>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103f0ad0>
+bad = 'prior_weight'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug7/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[result] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c4c50>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110440bb0>
+bad = 'result'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug8/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[worker] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c4890>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110441d30>
+bad = 'worker'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug9/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[tensor] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c7dd0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110369470>
+bad = 'tensor'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug10/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[resource] ____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c7470>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11036aeb0>
+bad = 'resource'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug11/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[journal] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c73b0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103f2d60>
+bad = 'journal'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug12/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[extra] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c7890>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103dbe70>
+bad = 'extra'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug13/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[later] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c76b0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103d9b70>
+bad = 'later'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug14/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+______ test_success_exit_is_not_enough_and_all_inputs_are_preserved[stop] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103b43b0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103d8b40>
+bad = 'stop'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug15/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[locks] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c4f50>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110345780>
+bad = 'locks'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug16/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_____ test_success_exit_is_not_enough_and_all_inputs_are_preserved[space] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103b5670>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103463c0>
+bad = 'space'
+
+    @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
+        'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
+>       args=setup(writer,monkeypatch);root=writer.root/'evidence'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_success_exit_is_not_enoug17/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[pid-1] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103b5010>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103f0360>
+key = 'pid', value = 1
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re0/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[parent_pid-1] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110401190>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103d9320>
+key = 'parent_pid', value = 1
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re1/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[returncode-True] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110030dd0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11099d4e0>
+key = 'returncode', value = True
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re2/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[status-running] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c5f70>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11099fb60>
+key = 'status', value = 'running'
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re3/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[timeout_seconds-600] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110401190>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b0cf770>
+key = 'timeout_seconds', value = 600
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re4/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[required_free_bytes-8589934592] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c71d0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b0cf700>
+key = 'required_free_bytes', value = 8589934592
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re5/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[capture_kind-file] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c6d50>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1104414e0>
+key = 'capture_kind', value = 'file'
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re6/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[log_truncated-True] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110033950>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110434f30>
+key = 'log_truncated', value = True
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re7/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[elapsed_seconds-7200.0] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c7290>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1103c2ba0>
+key = 'elapsed_seconds', value = 7200.0
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re8/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_rewritten_terminal_and_return_value_still_require_exact_contract[observation-value9] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c6ed0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11039b150>
+key = 'observation'
+value = {'free_bytes': 68719476736, 'output_bytes': 0, 'log_bytes': 0}
+
+    @pytest.mark.parametrize('key,value',[('pid',1),('parent_pid',1),('returncode',True),('status','running'),
+        ('timeout_seconds',600),('required_free_bytes',8*1024**3),('capture_kind','file'),('log_truncated',True),
+        ('elapsed_seconds',7200.),('observation',dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=0))])
+    def test_rewritten_terminal_and_return_value_still_require_exact_contract(writer,monkeypatch,key,value):
+>       args=setup(writer,monkeypatch);args['process'][key]=value
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_rewritten_terminal_and_re9/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+_ test_full_prefix_and_storage_are_independently_replayed_without_namespace_lock _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1109c40b0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11039b540>
+
+    def test_full_prefix_and_storage_are_independently_replayed_without_namespace_lock(writer,monkeypatch):
+>       args=setup(writer,monkeypatch);calls=[];prefix=accept.bind_lr_prefix;storage=accept.bind_storage
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:30: in setup
+    fixtures.fixture(root,producer_v2=True,prefix_count=slot+1,bindings=dict(context=bound['context'],
+tests/test_tokenizer_wide_hybrid_retention_audit.py:111: in fixture
+    refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-synthetic-b2rkzu69/test_full_prefix_and_storage_a0/campaign/evidence')
+name = 'quality/00/tensor-audit.json'
+value = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ign/evidence/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+
+    def write(root,name,value):
+        if name in existing:
+>           assert value==existing[name] if isinstance(value,bytes) else value==json.loads(existing[name])
+E           assert False
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:25: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_complete_child_reaudits_prefix_history_and_storage_readonly[0]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_complete_child_reaudits_prefix_history_and_storage_readonly[1]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_complete_child_reaudits_prefix_history_and_storage_readonly[4]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_complete_child_reaudits_prefix_history_and_storage_readonly[8]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[return]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[launch]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[guard]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[startup]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[seal]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[numeric]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[source]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[prior_weight]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[result]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[worker]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[tensor]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[resource]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[journal]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[extra]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[later]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[stop]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[locks]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_success_exit_is_not_enough_and_all_inputs_are_preserved[space]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[pid-1]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[parent_pid-1]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[returncode-True]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[status-running]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[timeout_seconds-600]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[required_free_bytes-8589934592]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[capture_kind-file]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[log_truncated-True]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[elapsed_seconds-7200.0]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_rewritten_terminal_and_return_value_still_require_exact_contract[observation-value9]
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_full_prefix_and_storage_are_independently_replayed_without_namespace_lock
+33 failed, 54 passed in 86.30s (0:01:26)

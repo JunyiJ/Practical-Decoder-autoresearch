@@ -1,4 +1,4 @@
-"""Readiness-bound LR child composition; no CLI or parent dispatcher yet.
+"""Readiness-bound LR child CLI and composition; no parent dispatcher yet.
 
 An exact parent-supplied seal hash transfers the parent's full idle audit. The
 child verifies every sealed byte, control receipt and frozen numerical gate, and
@@ -155,3 +155,33 @@ def run_worker(writer,slot,startup_ref,readiness_ref,argv):
         from .tokenizer_wide_hybrid_quality_execution_v2 import execute_quality_outputs
         return execute_quality_outputs(writer,slot,checked['plan_sha256'],checked['request_sha256'],
                                        projection_ref=checked['projection_ref'])
+
+
+def main(argv=None):
+    """Child-only CLI: never freeze, select, clean up, retry or launch a parent."""
+    import argparse
+    import sys
+    from pathlib import Path
+    from .tokenizer_wide_hybrid_metadata_writer import MetadataWriter
+    parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
+    parser.add_argument('command',choices=['worker'])
+    parser.add_argument('--campaign',required=True,type=Path)
+    parser.add_argument('--slot',required=True,type=int,choices=range(9))
+    parser.add_argument('--startup-sha256',required=True)
+    parser.add_argument('--global-fd',required=True,type=int)
+    parser.add_argument('--campaign-fd',required=True,type=int)
+    parser.add_argument('--readiness-sha256',required=True)
+    args=parser.parse_args(argv)
+    from .tokenizer_wide_hybrid_retention_receipts import _sha
+    _sha(args.startup_sha256);_sha(args.readiness_sha256)
+    writer=MetadataWriter(args.campaign,(args.global_fd,args.campaign_fd))
+    startup=dict(path='meta/quality-first-startup.json' if args.slot==0
+                 else f'meta/quality-lr-startup-{args.slot:02d}.json',sha256=args.startup_sha256)
+    ready=dict(path=f'meta/quality-readiness-{args.slot:02d}.json',sha256=args.readiness_sha256)
+    actual=[sys.executable,'-m','src.research.tokenizer_wide_hybrid_quality_entry_v2',
+            *(sys.argv[1:] if argv is None else argv)]
+    _require(actual==worker_argv(writer,args.slot,startup,ready),'Noncanonical child command refused')
+    return run_worker(writer,args.slot,startup,ready,actual)
+
+
+if __name__=='__main__':main()

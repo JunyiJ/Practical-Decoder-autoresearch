@@ -305,3 +305,10 @@ parent's metadata writes available during source checks. Final172 synthetic
 tests passed; one corrected test-fixture failure is preserved with its log.
 There is no child CLI or parent dispatcher yet and no new quality result.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-entry-v2-component-review.json`.
+
+The child-only CLI and independent parent acceptance component now pass87
+synthetic tests. Acceptance requires the exact launch/terminal/entry-guard
+identity and repeats completed-prefix, pilot-history and remaining-storage audits.
+Both fixture-failure runs are preserved. Parent orchestration and actual numerical/
+pilot prerequisites remain unfinished; no new model-quality evidence was produced.
+See `tokenizer-evidence/wide-hybrid-preparation-001/quality-acceptance-v2-component-review.json`.

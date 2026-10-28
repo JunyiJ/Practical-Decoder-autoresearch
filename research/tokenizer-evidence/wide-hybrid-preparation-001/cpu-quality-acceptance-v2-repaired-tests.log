@@ -1,0 +1,38 @@
+..............F......................................................... [ 82%]
+...............                                                          [100%]
+=================================== FAILURES ===================================
+_____ test_complete_child_reaudits_prefix_history_and_storage_readonly[0] ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1107b79d0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1107c7960>, slot = 0
+
+    @pytest.mark.parametrize('slot',[0,1,4,8])
+    def test_complete_child_reaudits_prefix_history_and_storage_readonly(writer,monkeypatch,slot):
+        args=setup(writer,monkeypatch,slot);before=accept._inventory(writer.root/'evidence')
+>       checked=accept.review_completed_lr(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py:51: in review_completed_lr
+    bound,request,allowance=readiness._bound(writer,slot,startup)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_readiness_v2.py:53: in _bound
+    bound,request=first._frozen(writer,report['plan_sha256'],report['projection_ref'])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_startup_v2.py:36: in _frozen
+    bound=bind_campaign(writer.root/'evidence/meta/plan.json',plan_sha)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-acceptance-repaired-synthetic-9_5ggxwk/te...ild_reaudits_p0/campaign/evidence/meta/plan.json'), '4dc1273900054d7d6766f27e452d56b01202306c1b5a19c02ca76d8e187a3fe9')
+
+    def campaign(*a):
+>       bound=original(*a)
+              ^^^^^^^^^^^^
+E       TypeError: write() missing 1 required positional argument: 'value'
+
+tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py:21: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py::test_complete_child_reaudits_prefix_history_and_storage_readonly[0]
+1 failed, 86 passed in 90.89s (0:01:30)
