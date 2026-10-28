@@ -44,16 +44,23 @@ This metadata/hash review does not recompute model losses or tensor finiteness.
 
 ## Reviewed screening progress
 
-Three of six screening trials are complete and reviewed; confirmation has not
-started. The remaining matched-control screen and both tied screens are pending.
-These single-seed observations cannot establish an arm comparison or adoption.
+Four of six screening trials are complete and reviewed; confirmation has not
+started. Both untied arms have completed their two-rate screens; the tied arm
+is still being screened. These single-seed observations cannot establish adoption.
 
 | Arm | LR | Raw CE | H200 CE |
 |---|---:|---:|---:|
 | legacy_untied | 0.00125 | 4.731212 | 4.763301 |
 | legacy_untied | 0.0025 | 4.879233 | 4.812186 |
 | matched_untied | 0.0025 | 4.840032 | 4.853498 |
+| matched_untied | 0.00125 | 5.077150 | 5.135245 |
+
+The legacy screen favors0.00125, while the matched-control screen favors0.0025.
+This preliminary difference supports independently tuning each arm under the
+frozen design; applying the legacy rate to every arm would disadvantage the
+matched control in this screen. Formal selection waits for all six screens, and
+any comparative quality conclusion still requires fresh confirmation.
 
 Checkpoint hashes, metadata, EMA lineage and saved-score arithmetic passed for
-all three records. Frozen source and the full remaining storage allocation pass;
+all four records. Frozen source and the full remaining storage allocation pass;
 the controller continues with one MPS worker. No intervention or rule change.
