@@ -1,0 +1,60 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T20:46:10.762917+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-selection-v2-guard.json": "d85b0389ed5e61f2f3a128c69ab2c83cd774d8d9f352ad18e8f172c42d250c8b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-selection-v2-repaired-guard.json": "0e15d563918f99a20ba05ed58dd597c02762f85f9c4f077342d04b91b430bf6a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-selection-v2-repaired-tests.log": "55807477894e39272646918b26035a856efcb0a77879ba857be2712373dd2e48",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-selection-v2-tests.log": "4a7eaad598647729d0436bce340527090bc1d6fa52604878f40e0fc9fb249ba8",
+    "src/research/tokenizer_wide_hybrid_lr_selection_v2.py": "dbf40cb8a2c0187f5be3e34600aeac9907e9fe71ad20adb435d9a625a194aa63",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "b3fc6530085f4edec87fbc70e8d5da1c9845960c68d951d26a18fb5320ae4e93",
+    "src/research/tokenizer_wide_hybrid_rules.py": "7fc5638cccc2c73407384d9d615bdebe5ac448593fdb2afb0ac3e9d2fb7a954a",
+    "tests/test_tokenizer_wide_hybrid_lr_selection_v2.py": "e87f72aa1e6de705b5d71ef32cf299e0b7c76c2e48258fe1381e48fa5bccf7f3",
+    "tests/test_tokenizer_wide_hybrid_quality_audit_v2.py": "192d881ba486a135303f4e83e339697aae57900f0c0723f35f00447e4f0218d0",
+    "tests/test_tokenizer_wide_hybrid_rules.py": "5ef3611ee17fd80a772081a72848d6439a511004114da807cc25b8cbacbab2e5"
+  },
+  "findings": [
+    "New save_lr_selection requires all nine completed serial dispatch receipts and replays independent frozen requests, producer/tensor/resource/validation audits, original pilot cleanup history and full future storage before persisting a choice. It writes an immutable preselection review first, then the three-rate map selected by minimum H200 CE with lower-LR ties, then repeats full stage audits and storage checks and publishes a finished-guard-bound completion receipt.",
+    "The persisted choice is bound to the full LR stage and exact proposed losing-screen manifest. In the synthetic panel this identifies12 candidate files; all18 raw/H200 screening files remain unchanged. No deletion, rank request, training, promotion or next-stage permission occurs. A choice file without its final completion receipt cannot authorize the transition.",
+    "Read-only verification binds the historical finished selection guard, attempt and preselection provenance, recomputes the current complete stage/selection/storage and validates the saved original stage manifest. It accepts only the exact idle pre-cleanup inventory. After actual deletion a separate reviewed history consumer is required; missing tensors are not silently excused.",
+    "All14 negative cases passed: incomplete0/8-screen stages, changed checkpoints/numerical evidence/dispatch/tensor audits, space loss, choice/stage/completion publication failure, rewritten selection/stage/guard and premature rank output. The positive case reached its final assertion but referenced a nonexistent storage field name. Corrected the test to cleanup_boundaries_verified; the positive case plus rule and stage-audit dependencies then passed66 tests in15.79s. Production code was unchanged after the first test run; original failure log/guard retained.",
+    "The synthetic complete nine-screen campaign occupied941073 metadata bytes in the observed initial success fixture, below its2MiB metadata group cap. This fixture uses simplified configs/source maps and does not prove the eventual full frozen metadata footprint fits. Exact full-config/source/receipt accounting remains a prelaunch requirement."
+  ],
+  "free_bytes_observed": 30607298560,
+  "guard": {
+    "elapsed_seconds": 16.323753207921982,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 30610178048,
+      "peak_rss_bytes": 243449856
+    },
+    "pid": 90587,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_lr_selection_v2_component_review",
+  "limitations": [
+    "Scientific requests, numerical records, checkpoint payloads, validation values and child PIDs are synthetic; child execution is mocked. These tests establish selection/controller semantics, not model quality, numerical recurrence correctness or measured MPS feasibility.",
+    "LR boundary deletion and post-cleanup history integration, rank/fresh transitions and inference orchestration remain unfinished. Actual nine numerical/input cases and measured pilots remain unresolved. The failed combined numerical fixture stays closed, as do historical campaigns.",
+    "No research training/MPS launch, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or holdout evaluation occurred. The27-trajectory campaign remains unfrozen and all resource, storage and prospective quality rules are unchanged."
+  ],
+  "status": "lr_selection_transition_tested_campaign_unfrozen",
+  "validation": {
+    "focused_repaired_and_dependencies": {
+      "failed": 0,
+      "passed": 66,
+      "seconds": 15.79
+    },
+    "initial": {
+      "failed": 1,
+      "passed": 14,
+      "seconds": 176.15
+    }
+  }
+}

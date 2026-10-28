@@ -348,3 +348,41 @@ closed. No research training/MPS launch, checkpoint deletion, closed-controller
 rerun or holdout evaluation occurred. The27-trajectory campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-dispatch-v2-component-review.json`.
+
+
+## October 28 audited LR selection transition
+
+The new versioned selection component requires all nine completed parent/child
+receipts and independently replays frozen requests, every producer/tensor/resource/
+validation audit, pilot cleanup history and complete future storage before saving
+rates. It preserves a preselection review, writes the minimum-H200-CE choice with
+the existing lower-LR tie break, then repeats full stage and storage audits before
+publishing a finished-guard-bound completion receipt. A partial choice publication
+blocks continuation and cannot be retried.
+
+The read-only pre-cleanup verifier recomputes the complete scientific stage,
+choice and remaining storage, binds original attempt/review/guard provenance and
+checks the saved manifest. The exact idle inventory is required; later deleted
+weights will need a separate reviewed history consumer. The synthetic choice
+identifies12 candidate losing-screen files, but all18 screening weights remain
+unchanged. Selection grants no deletion, rank dispatch, adoption or next-stage
+credit.
+
+All14 negative tests passed. The positive test reached its final assertion and
+failed on a test-only storage field name. After correcting that assertion, the
+positive case and rule/stage-audit dependencies passed66 tests in15.79s. The initial
+176.15s run and focused rerun retain their raw logs and240s/120s,4GiB,8GiB actual
+CPU/disk guard observations. Production code did not change between runs. These
+fixtures use synthetic scientific evidence and mocked children; they are not
+model-quality or numerical-correctness results.
+
+Observed synthetic metadata occupancy was941073bytes against the2MiB group cap.
+Full frozen configs/source maps/receipts still require exact metadata accounting;
+the simplified fixture cannot establish their fit. Next integrate audited LR
+cleanup and post-cleanup history, then rank/fresh transitions and inference.
+Actual nine numerical/input cases and measured pilots remain unresolved. No
+research training/MPS launch, checkpoint deletion, failed combined numerical
+retry, closed-controller rerun or holdout evaluation occurred. The27-trajectory
+campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/lr-selection-v2-component-review.json`.

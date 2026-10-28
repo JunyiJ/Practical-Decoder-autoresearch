@@ -1,0 +1,27 @@
+F..............                                                          [100%]
+=================================== FAILURES ===================================
+___ test_full_stage_selection_preserves_weights_and_can_be_verified_readonly ___
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x107437cb0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10840a060>
+
+    def test_full_stage_selection_preserves_weights_and_can_be_verified_readonly(writer,monkeypatch):
+        args,calls=setup(writer,monkeypatch);root=writer.root/'evidence';before=selection._inventory(root)
+        ref=selection.save_lr_selection(**args);saved=selection._document(root,ref)
+        assert calls==list(range(9)) and saved['audit']['stage']['stage_audits_bound']
+        assert saved['audit']['stage']['producer_provenance_bound']
+        assert saved['audit']['rates']==selection.choose_rates(saved['audit']['prefix']['records'])
+        assert selection._document(root,saved['selection_ref'])==saved['audit']['rates']
+        assert not any(saved[k] for k in ('adopted','dispatch_authorized','deletion_authorized','stage_cleanup_complete','next_stage_authorized'))
+        after=selection._inventory(root)
+        assert all(after[n]==v for n,v in before.items())
+        assert len([n for n in after if n.endswith('.pt')])==18
+        checked=selection.verify_lr_selection(writer,args['plan_sha256'],ref)
+>       assert checked['rates']==saved['audit']['rates'] and checked['audit']['storage']['cleanup_prefix_length']==1
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'cleanup_prefix_length'
+
+tests/test_tokenizer_wide_hybrid_lr_selection_v2.py:32: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_lr_selection_v2.py::test_full_stage_selection_preserves_weights_and_can_be_verified_readonly
+1 failed, 14 passed in 176.15s (0:02:56)
