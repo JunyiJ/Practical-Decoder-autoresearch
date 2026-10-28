@@ -417,3 +417,13 @@ tests. See `metadata-layout-v2.json` and `metadata-v2-component-review.json`.
 The v2 layout is prospective and unused by production runners; bounded producers,
 active monitoring, complete future storage gates and plan integration must precede
 freeze. Historical v1 outputs and guards remain unchanged.
+
+A read-only v2 campaign identity gate now binds the complete design and layout,
+source/runtime/data provenance, numerical/input trace reviews, serving contract
+and every conditional request option. It enumerates108 quality options across
+24 slots; execution remains the unchanged27 total trajectories. All729 family
+LR/rank combinations are covered by51 synthetic tests. See
+`plan-v2-component-review.json` in preparation evidence. No actual v2 plan is
+frozen, and binding alone cannot authorize dispatch: measured pilots, bounded
+producers, full future storage checks and complete runner/audit integration
+remain mandatory. Existing v1 gates are unchanged.

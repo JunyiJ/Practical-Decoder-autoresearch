@@ -1,0 +1,55 @@
+{
+  "status": "read_only_campaign_identity_gate_tested_no_real_frozen_plan",
+  "created_at": "2026-10-28T17:02:41.901464+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_plan_v2.py": "45406ce57557284628d1da24df0b9c461ad0ec970e58672fd72fdac95d3ac75d",
+    "tests/test_tokenizer_wide_hybrid_plan_v2.py": "4c723c9399cbac132617544c8b3a7b5a3193d3be778cab0876ae4e5e60b9e3fa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-plan-v2-final-guard.json": "572e33a272cf8feef07bad061c0e1e0c2e5d6908c81b53c82da35102b6cde8a3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-plan-v2-final-tests.log": "0f4fda04bbf7d9613cb8666633f580ba85ca91660b4942116d51a7c12ac395f6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-plan-v2-guard.json": "0415a409c84dd1eff3cb03bae01508cc42c902f465a1f7fdf23bc686a113fb4b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-plan-v2-tests.log": "15ca0ae41b9be9c6f5cf3350d3154dfa2272d4b3f4e711f30dd545d2a942e305"
+  },
+  "tests": {
+    "initial": 48,
+    "final": 51,
+    "conditional_family_lr_rank_combinations": 729
+  },
+  "final_guard": {
+    "elapsed_seconds": 1.8799617914482951,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30685577216,
+      "peak_rss_bytes": 233488384
+    },
+    "pid": 73263,
+    "reason": null,
+    "status": "finished"
+  },
+  "request_options": {
+    "pilots": 3,
+    "lr": 9,
+    "rank": 18,
+    "fresh": 81,
+    "total_quality_options": 108,
+    "actual_trajectories": 27
+  },
+  "findings": [
+    "Binds frozen v2 source/runtime, corpus/recipe/protocol/projection, scientific design, retention policy, complete256MiB metadata layout and all conditional requests.",
+    "Requires all nine numerical cases and hashed traces with common relative immutable-evidence paths; changing pass flags, geometry or missing trace bindings is rejected.",
+    "Binds serving workload and96 training IDs to tokenizer/corpus/source/runtime metadata plus the exact canonical token digest; test-split/holdout claims are rejected.",
+    "All729 combinations of three family LR/rank selections have exactly one allowed request at each quality slot; original order/seeds/horizon remain unchanged.",
+    "Plan binding rechecks source/runtime/STOP/evidence and reports all missing dispatch gates explicitly."
+  ],
+  "limitations": [
+    "Tests used synthetic review documents only; they do not establish real numerical or pilot passes.",
+    "No prepare/freeze/dispatch CLI. No real frozen v2 campaign was created and no MPS/model/training worker ran.",
+    "Measured pilot gate, v2 producer enforcement, full current/future storage gates, controller/audit/cleanup integration and complete serving acceptance remain required.",
+    "Actual numerical and training-input review producers must supply independently reviewed evidence; this binder only checks their declared identities and artifact hashes.",
+    "All nine numerical cases and measured pilot memory/time/export/cache checks remain unresolved. Failed combined CPU fixture and closed campaigns remain closed."
+  ],
+  "free_bytes_observed": 30682198016
+}

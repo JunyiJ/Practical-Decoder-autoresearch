@@ -906,3 +906,39 @@ full future high-water gates and versioned plan/runner integration remain requir
 No model, corpus or MPS worker was used; no real weights were deleted. All nine
 numerical cases and measured pilots remain outstanding; the failed CPU fixture
 and closed campaigns remain closed.
+
+## October 28 v2 complete campaign identity gate
+
+Added a read-only `wide_hybrid_campaign_v2` plan binder at the prospective
+`evidence/meta/plan.json` location. It binds the existing scientific design,
+retention contract, complete metadata layout, storage projection, pilot/quality
+limits, cache contract and serving workload to frozen source/runtime and
+corpus/recipe/protocol/projection hashes. The gate has no prepare, freeze or
+dispatch command; no real v2 plan exists yet.
+
+The plan includes three pilot requests and108 conditional quality-request
+options:9 LR requests,18 rank requests and81 fresh requests. These are possible
+requests, not extra trajectories. Execution remains3 pilots plus9 LR screens,
+6 rank probes and9 fresh confirmations. Each future selected family LR/rank
+maps to exactly one request at its existing slot, seed and order.
+
+Nine numerical cases with optimizer/resume/EMA and all other required checks,
+plus their trace files, are mandatory. The v2 numerical review uses paths relative
+to the immutable evidence root, shared with stage-audit binding. A separate
+training-input review binds96 training IDs, their canonical digest, tokenizer,
+corpus and source/runtime identity. Neither a syntactically valid token digest
+nor unbound pass flags suffice. Actual evidence producers still need to perform
+and record those checks; synthetic fixture reviews are not research passes.
+
+Validation:51 tests passed in1.71seconds, including all729 family LR/rank choice
+combinations, changed scientific/resource/configuration fields, missing numerical
+cases/traces, changed input IDs, STOP and source changes. Peak RSS233,488,384bytes
+under180s/4GiB/8GiB guards. Initial48-test evidence is retained. See
+`tokenizer-evidence/wide-hybrid-preparation-001/plan-v2-component-review.json`.
+
+The returned report explicitly leaves current-storage fit, measured-pilot review,
+producer enforcement and dispatch authorization false. Measured-pilot acceptance,
+bounded producers, complete future storage checks, controller/stage/cleanup
+integration and v2 inference acceptance remain required. No model, corpus or
+MPS worker was used in these synthetic tests. The failed combined CPU fixture
+and closed campaigns remain closed; no numerical retry or launch occurred.
