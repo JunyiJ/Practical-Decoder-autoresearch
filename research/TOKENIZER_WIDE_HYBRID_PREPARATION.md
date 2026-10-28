@@ -1668,3 +1668,35 @@ research worker, MPS trial, checkpoint deletion, failed numerical retry or test
 holdout access occurred. The27-trajectory campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-handoff-v2-component-review.json`.
+
+## October 28 immutable quality readiness seal
+
+The new readiness component seals the result of the complete idle predispatch
+review for LR slots0–8. It invokes the existing full pilot-history/completed-LR
+reviews and full remaining-storage calculation, independently rebinds the frozen
+request and original trajectory allowance, then records hashes of the complete
+prelaunch evidence inventory, frozen source files and existing control receipts.
+Its own finished guard is included. Evidence, control or source changes and late
+space loss block publication. Failed and completed seals cannot be retried.
+
+The seal must be created before a separate running parent dispatcher: every
+existing control file except the seal's own guard must remain unchanged. Hashing
+does not hold the metadata namespace lock. The future child must receive an
+exact hash anchor for this seal, verify unchanged inputs and current allocated
+checkpoint capacity/free bytes, and compose the live parent transport check
+before invoking the bounded quality producer. There is no consumer or dispatch
+entry yet; the seal explicitly grants no dispatch or deletion authorization.
+
+All134 readiness, live-handoff and first/later startup tests passed in84.11s,
+peak RSS242,024,448bytes under the180s/4GiB/8GiB outer CPU guard using actual disk
+observations. Fixtures use synthetic semantic evidence and tiny checkpoint bytes.
+They reject altered evidence/controls/source, missing audit credit, invalid locks,
+STOP, active process files and exact-threshold/late space shortfalls. Existing
+inputs remain unchanged, and failure artifacts are preserved.
+
+No research training, MPS launch, research checkpoint deletion, failed numerical
+retry or holdout access occurred. Real numerical/input and measured-pilot gates
+remain unresolved; the27-trajectory campaign remains unfrozen. The preceding
+5f19697 push succeeded and includes ac49ffc; the earlier network issue is resolved.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-readiness-v2-component-review.json`.

@@ -287,3 +287,13 @@ passing evidence. No training launched or checkpoint deletion occurred. Actual
 numerical prerequisites, measured pilots and complete v2 producer/controller
 integration remain outstanding. See `TOKENIZER_WIDE_HYBRID_PREPARATION.md` and
 `tokenizer-evidence/wide-hybrid-preparation-001/pilot-audit-v2-component-review.json`.
+
+## October 28 wider-hybrid quality handoff preparation
+
+An immutable idle-readiness seal now binds the complete first/later LR
+predispatch review, evidence/source/control hashes, remaining storage requirement
+and original output allowance. All134 synthetic readiness/handoff/startup tests
+passed. This is controller preparation only: child consumption and dispatch
+integration, actual numerical/input cases and measured pilots remain unfinished.
+No new model-quality result, research training or checkpoint deletion occurred.
+See `tokenizer-evidence/wide-hybrid-preparation-001/quality-readiness-v2-component-review.json`.

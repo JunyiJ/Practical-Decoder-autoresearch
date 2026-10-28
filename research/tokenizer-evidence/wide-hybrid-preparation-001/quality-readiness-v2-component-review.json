@@ -1,0 +1,47 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T20:06:01.880002+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-readiness-v2-guard.json": "cd0f234d2576246099d18a7244ff4177a4182946bd24d5467ea931b26db86f55",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-readiness-v2-tests.log": "70a2f3107e83079809832bcacc6ef494919f1327b0f9e851953aaca17927e089",
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "8c274fbe6c438245d5e1b3800136d4b20ee21118931102a36a86585fca79db4e",
+    "tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py": "e613f099fe4aedc1a083093bc08364a0c0436b8aee00e3e4ac8c151eda941327"
+  },
+  "findings": [
+    "New immutable readiness seal invokes the complete first/later LR idle predispatch verifier, independently rebinds the frozen option and original per-trajectory output allowance, and preserves full future storage requirements.",
+    "Seal binds startup/request references, complete prelaunch evidence inventory, frozen files, existing control hashes and its finished 1800s/4GiB/8GiB guard. Evidence/control/source changes and space loss block publication; failed or completed attempts cannot be retried.",
+    "No metadata namespace lock is held across checkpoint hashing. Sealing must precede a separate running parent dispatcher because all existing control files except the readiness guard remain immutable.",
+    "All134 synthetic readiness, transport and first/later startup tests passed in84.11s; peak RSS242024448bytes under the180s/4GiB/8GiB outer guard using captured actual disk observations."
+  ],
+  "free_bytes_observed": 30611464192,
+  "guard": {
+    "elapsed_seconds": 84.77670362498611,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30611968000,
+      "peak_rss_bytes": 242024448
+    },
+    "pid": 84050,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_quality_readiness_v2_component_review",
+  "limitations": [
+    "This seal is not consumed by a child entry yet and explicitly grants no dispatch/deletion authorization. Future child argv must hash-anchor the seal, rebind unchanged source/control/evidence plus current allocated storage capacity/free bytes, and compose exact live parent transport before the bounded quality producer.",
+    "Parent dispatch/postprocess acceptance, LR/rank selection transitions, boundary cleanup and inference orchestration remain unfinished. Synthetic semantic evidence and tiny checkpoint bytes do not establish actual model or pilot correctness.",
+    "Nine actual numerical/input cases and measured pilot prerequisites remain unresolved. No research worker/MPS trial, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or test-holdout access occurred; campaign remains unfrozen."
+  ],
+  "status": "synthetic_idle_seal_tests_passed_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-readiness-v2-tests.log",
+    "passed": 134,
+    "seconds": 84.11
+  }
+}
