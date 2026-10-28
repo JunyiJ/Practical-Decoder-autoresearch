@@ -1,0 +1,75 @@
+{
+  "status": "single_pilot_dispatch_and_child_handoff_components_tested",
+  "created_at": "2026-10-28T18:49:14.244317+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_pilot_dispatch_v2.py": "cf25107fa126a656029676095922bcc7db836604516699fa8e21e4f344389be4",
+    "src/research/tokenizer_wide_hybrid_pilot_startup_v2.py": "57da08fc6561afbf20921fca251a847a41ea586267932184cadfec834457e023",
+    "src/research/tokenizer_wide_hybrid_pilot_execution_v2.py": "a20371a8250970f545d06e6dedf7a9b25f8a8e489c0356a925060148b567fdd8",
+    "src/research/tokenizer_wide_hybrid_process_v2.py": "f7f535f9158d442f9a0620b43521dad366d24efe5055cf7da359d7ef6c1c722d",
+    "tests/test_tokenizer_wide_hybrid_pilot_dispatch_v2.py": "02b85eac35cce09d5a283196ce106786b3bbada5b62b7a93c5bb36a1e36a855c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-completion-guard.json": "f09a417057439b2f4f12059540dbe1e39d9c3ca2e20c927b3668016292389385",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-completion-tests.log": "ac586f172bd63f775cc71119c9a36b20402fce75e6f2f75513528652d945d0e6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-final-guard.json": "c1ddbe69d504528717d58ac2dfaf6db05df1e3b8ddd64861087571d3cb87034c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-final-tests.log": "4a00bdd5a7b726f96bb283ab51a2980a07557e1ca17c60aee0a3248a9a80070c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-guard.json": "53698ff48c8247378d4fc5d867b6436cc89f2c9db5c329690dd66b192af4e7ed",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-locking-guard.json": "47024a53a80809297371e5a25d5cee216ee3141a36ecf82d5d29e7eda2b37c6d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-locking-tests.log": "9b8c98ff856380b641b178f28033676ddd3dbed77d2f95284272c928d82bfebb",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-dispatch-v2-tests.log": "c86d8d116e8ed67f92f706951f9399307a650ef67368cff3b64a746e5725bfd8"
+  },
+  "tests": {
+    "initial_passed": 120,
+    "initial_failed": 1,
+    "combined_passed": 372,
+    "completion_passed": 87,
+    "final_locking_and_body_passed": 105
+  },
+  "combined_guard": {
+    "elapsed_seconds": 14.07640708424151,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30631817216,
+      "peak_rss_bytes": 250216448
+    },
+    "pid": 78339,
+    "reason": null,
+    "status": "finished"
+  },
+  "final_guard": {
+    "elapsed_seconds": 6.956033665686846,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30632534016,
+      "peak_rss_bytes": 238370816
+    },
+    "pid": 78557,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30628937728,
+  "initial_panel_required_free_bytes": 30631281412,
+  "headroom_bytes": -2343684,
+  "findings": [
+    "run_pilot_once composes frozen startup/complete-prefix/full-storage acceptance, exact600s process/4MiB log/trajectory allowance, a gated child entry point, independent completed-prefix audit and post-run full remaining storage. It handles one fresh slot and never performs cleanup or advances stages.",
+    "The bounded launch record now includes parent PID. The child checks exact reconstructed module arguments, inherited locks, parent identity, all launch limits, full required-free arithmetic and immutable startup provenance. Only fresh launch.json and worker.log may have appeared.",
+    "Checkpoint hashing in child preflight must not hold the metadata namespace lock: otherwise the parent monitor can time out while hashing prior gigabyte checkpoints. Hashes now run outside that lock, accepting changes only to the bounded process log; exact evidence file sets and other file hashes remain required. Frozen-plan metadata censuses are serialized against parent publication.",
+    "Sampled bounded CPU guards protect controller preparation and child entry before training. Controller cap1800s covers preparation, the unchanged600s child process and post-review; child entry cap600s/4GiB/8GiB. The existing scientific resource recorder additionally enforces MPS driver6GiB and full measurement traces. Successful receipt requires a finite bounded child guard observation and fresh frozen provenance after audits.",
+    "Three serial synthetic pilot transitions retained all six tiny checkpoint files, independently reviewed each completed prefix and published no cleanup/stage/adoption authorization. Changed parent/argv/limits/files, missing prerequisites, failed bodies and invalid final guard measurements block progress and retain failures.",
+    "A real tiny subprocess exercising only the entry guard exited90 when its synthetic sampled RSS reached4GiB; its bounded durable failure record was retained. No model or MPS was used.",
+    "The initial test run had one expectation mismatch: a changed startup hash was rejected by argv validation before the guard record existed. Validation was moved inside the entry guard so that this failure is also durable; the original failed log remains preserved."
+  ],
+  "limitations": [
+    "Controller/worker science bodies and the frozen campaign gate are mocked in transition tests. The complete plan gate, audit/storage/process and body component suites were also run; none substitutes for actual nine-case numerical or measured pilot evidence.",
+    "No parent campaign run CLI or plan-freezing command is provided. Caller must inspect actual processes and own both shared locks throughout run_pilot_once. There is no resume or retry path for a pending, failed or completed slot.",
+    "Versioned full-stage cleanup/selection/quality/inference orchestration and actual nine rank-policy optimizer/update/resume/EMA/input/measured-pilot prerequisites remain. The failed combined numerical fixture stays closed; no real MPS launch or retry was made.",
+    "Actual storage observations fluctuated around the unchanged full-panel threshold during this bounded preparation. A near-threshold reading is not durable launch capacity; the full gate must be rechecked at every actual transition. No research checkpoints or unrelated files were removed.",
+    "Historical closed controllers, holdout boundaries, scientific rates/seeds/order/rank choice and all selection thresholds remain unchanged."
+  ]
+}

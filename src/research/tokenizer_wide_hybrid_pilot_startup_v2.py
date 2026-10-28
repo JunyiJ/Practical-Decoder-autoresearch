@@ -6,6 +6,7 @@ remaining storage gate precede the new trial directory. Failed attempts persist.
 """
 from pathlib import Path
 import shutil
+import os
 import time
 
 from .protocol import digest,file_digest
@@ -118,7 +119,7 @@ def prepare_pilot_request(writer,slot,plan_sha256,*,projection_ref):
         raise
 
 
-def _verify_before_process(writer,slot,startup_ref):
+def _verify_before_process(writer,slot,startup_ref,*,worker_argv=None):
     """Recheck immutable startup transition before the process helper is invoked.
 
     A process attempt already present is rejected. The existing process helper
@@ -134,7 +135,8 @@ def _verify_before_process(writer,slot,startup_ref):
              and type(report.get('slot')) is int and report['slot']==slot
              and report.get('dispatch_authorized') is False and report.get('deletion_authorized') is False,
              'Startup identity/claims differ')
-    bound=bind_campaign(evidence/'meta/plan.json',report['plan_sha256'])
+    with writer._serialized():
+        bound=bind_campaign(evidence/'meta/plan.json',report['plan_sha256'])
     _require(digest(report.get('context'))==digest(bound['context']),'Startup frozen context changed')
     projection=_document(evidence,report['projection_ref'])
     _require(bound['files'].get(str(_path(evidence,report['projection_ref']['path'])))==report['projection_ref']['sha256']
@@ -159,11 +161,48 @@ def _verify_before_process(writer,slot,startup_ref):
         _require(ref['path'] not in inventory,'Startup transition aliases earlier evidence')
         inventory[ref['path']]=dict(size=path.stat().st_size,sha256=ref['sha256'])
     with writer._serialized():
-        _check_inventory(evidence,inventory);census=snapshot(writer.root)
+        launch=None
+        if worker_argv is not None:
+            from .tokenizer_wide_hybrid_retention import allocations
+            stem=f'pilots/{slot:02d}/process'
+            directory=evidence/stem
+            _require(directory.is_dir() and {p.name for p in directory.iterdir()}=={'launch.json','worker.log'},
+                     'Worker requires exact fresh process launch/log files')
+            for tail in ('launch.json','worker.log'):
+                name=stem+'/'+tail;path=_path(evidence,name)
+                _require(name not in inventory,'Process artifact aliases startup evidence')
+                inventory[name]=dict(size=path.stat().st_size,sha256=file_digest(path))
+            launch=_json(directory/'launch.json',inventory[stem+'/launch.json']['sha256'])
+            _require(launch.get('argv')==worker_argv and launch.get('parent_pid')==os.getppid()
+                     and type(launch.get('parent_pid')) is int and launch['parent_pid']>1
+                     and launch.get('status')=='preflight' and launch.get('pid') is None
+                     and launch.get('returncode') is None and launch.get('error') is None
+                     and launch.get('observation') is None and launch.get('log_truncated') is False
+                     and launch.get('capture_kind')=='bounded_pipe_v2'
+                     and type(launch.get('timeout_seconds')) is int and launch['timeout_seconds']==600
+                     and type(launch.get('reserve_bytes')) is int and launch['reserve_bytes']==8*1024**3
+                     and type(launch.get('log_limit_bytes')) is int and launch['log_limit_bytes']==4*1024**2
+                     and type(launch.get('output_limit_bytes')) is int
+                     and launch['output_limit_bytes']==allocations(projection)[bound['requests']['pilots'][slot]['spec']['family'],2],
+                     'Worker launch identity/limits differ')
+    # Immutable weights may take seconds to hash. Do not hold the metadata
+    # namespace lock across those reads while the live parent monitors the child.
+    # Only its bounded log may change; every other evidence file stays exact.
+    if worker_argv is None:
+        _check_inventory(evidence,inventory)
+    else:
+        _require(_scan(evidence,None)==set(inventory),'Worker startup inventory changed')
+        deadline=time.monotonic()+TIMEOUT
+        log_name=f'pilots/{slot:02d}/process/worker.log'
+        for name,binding in inventory.items():
+            if name!=log_name:_check(evidence,name,binding,deadline)
+        _require(_scan(evidence,None)==set(inventory),'Worker startup inventory changed while hashing')
+    with writer._serialized():
+        census=snapshot(writer.root)
         pilot_root=evidence/'pilots';trial=pilot_root/f'{slot:02d}'
         _require({p.name for p in pilot_root.iterdir()}=={f'{i:02d}' for i in range(slot+1)}
                  and all(p.is_dir() and not p.is_symlink() for p in pilot_root.iterdir())
-                 and {p.name for p in trial.iterdir()}=={'request.json'},
+                 and {p.name for p in trial.iterdir()}==({'request.json'} if worker_argv is None else {'request.json','process'}),
                  'Unexpected pilot/process directory before dispatch')
         # The supplied startup hash anchors the original full prefix audit. Now
         # reconstruct its checkpoint accounting from the unchanged result files,
@@ -188,6 +227,9 @@ def _verify_before_process(writer,slot,startup_ref):
         actual={n.removeprefix('evidence/') for n,v in census['files'].items() if v['group'].endswith('/weights')}
         _require(actual==weights and census['checkpoint_logical_bytes']==logical,'Startup checkpoint census differs')
         storage=report['storage'];needed=required_free(state,occupied)
+        if launch is not None:
+            _require(type(launch.get('required_free_bytes')) is int and launch['required_free_bytes']==needed,
+                     'Worker launch full-storage requirement differs')
         _require(digest(storage.get('projection'))==digest(state)
                  and type(storage.get('required_free_bytes')) is int and storage['required_free_bytes']==needed
                  and type(storage.get('occupied_checkpoint_capacity_bytes')) is int
@@ -222,3 +264,14 @@ def verify_before_process(writer,slot,startup_ref):
             phase='predispatch',startup_ref=startup_ref,error=repr(exc)[:1000],retry_allowed=False))
         except BaseException as error:exc.add_note('Startup failure publication failed: '+repr(error)[:1000])
         raise
+
+
+def verify_worker_startup(writer,slot,startup_ref,argv):
+    """Child-only handoff: same startup checks plus exact parent/argv/limits.
+
+    Only the fresh bounded launch record and log may have appeared. The caller
+    supplies its reconstructed actual module argv, not a saved launch argv.
+    Failure evidence is preserved by the worker entry guard and parent process.
+    """
+    _require(isinstance(argv,list) and all(type(a) is str and a for a in argv),'Exact worker argv required')
+    return _verify_before_process(writer,slot,startup_ref,worker_argv=argv)

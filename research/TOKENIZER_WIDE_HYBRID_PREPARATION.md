@@ -1345,3 +1345,48 @@ checkpoint cleanup or scientific-rule change occurred. Recheck current storage
 at every real transition; the observed fit is narrow, not a durable guarantee.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-startup-v2-component-review.json`.
+
+
+## October 28 v2 single-pilot controller and child entry
+
+A new single-pilot function composes the audited startup transition, exact bounded
+process launch, gated child worker, independent completed-prefix review and full
+remaining-storage acceptance after the run. It requires previous successful
+pilot dispatch receipts and preserves failures. It never freezes a plan, retries
+a slot, deletes weights or authorizes the next stage. No parent campaign run CLI
+has been added. The caller must inspect actual workers and own both shared locks.
+
+The child validates its parent PID, exact reconstructed module arguments,
+inherited locks, immutable startup receipt and full storage/launch limits before
+entering the training body. Only the fresh launch record and bounded process log
+may appear between idle startup and child verification. Checkpoint hashes run
+outside the metadata namespace lock so the parent can continue monitoring; all
+other evidence remains exact. Frozen-plan metadata censuses are serialized with
+parent publication to avoid races with atomic control-file updates.
+
+Bounded sampled CPU guards cover controller preparation and child entry. The
+controller cap1800s includes preparation, the unchanged600s child process and
+post-review. Child entry retains600s/4GiB/8GiB limits; the existing scientific
+resource recorder enforces MPS driver6GiB and measurement traces. Final dispatch
+receipts require a completed bounded child guard observation and a fresh frozen
+provenance check after the independent audits.
+
+Validation:120 initial tests passed and one failed because changed arguments were
+rejected before the test's expected guard record. Moving argument validation
+inside the entry guard made that failure durable; the failed log is retained.
+The expanded combined suite passed372 tests in13.56s, then87 completion tests
+passed, and105 targeted tests passed after the final metadata locking change.
+Final peak RSS was238,370,816bytes under180s/4GiB/8GiB outer guards. Three serial
+synthetic pilot transitions retained their six tiny weights; a separate tiny
+child exited90 on a synthetic sampled RSS violation. No actual model, numerical,
+cache or pilot-resource success is claimed.
+
+Next implement the complete pilot boundary cleanup transition and integrate
+quality/selection/cleanup-chain/inference orchestration. The actual nine-case
+numerical/input and measured-pilot prerequisites remain unresolved, and the plan
+remains unfrozen. Storage readings fluctuated around the unchanged initial
+full-panel threshold; every real transition must recheck the complete gate.
+No research weights were removed, no MPS launched and no failed numerical fixture
+or historical closed controller was rerun.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-dispatch-v2-component-review.json`.

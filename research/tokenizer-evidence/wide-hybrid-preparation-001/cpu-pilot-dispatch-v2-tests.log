@@ -1,0 +1,62 @@
+.......................F................................................ [ 59%]
+.................................................                        [100%]
+=================================== FAILURES ===================================
+_____ test_child_handoff_rejects_changed_or_incomplete_launch[startuphash] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10cf72bd0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107c890f0>
+bad = 'startuphash'
+
+    @pytest.mark.parametrize('bad',['argv','parent','timeout','reserve','required','output','loglimit','capture',
+        'pid','returncode','error','status','observation','logtruncated','terminal','partial','unexpected','missinglog',
+        'newweight','changedsource','startuphash'])
+    def test_child_handoff_rejects_changed_or_incomplete_launch(writer,monkeypatch,bad):
+        ref,argv,launch=handoff(writer,monkeypatch);root=writer.root/'evidence';stem='pilots/00/process/'
+        changes={'argv':('argv',argv+['--extra']), 'parent':('parent_pid',os.getppid()+1),
+            'timeout':('timeout_seconds',599),'reserve':('reserve_bytes',1),'required':('required_free_bytes',8*1024**3),
+            'output':('output_limit_bytes',1),'loglimit':('log_limit_bytes',4096),'capture':('capture_kind','old'),
+            'pid':('pid',123),'returncode':('returncode',0),'error':('error','failed'),'status':('status','completed'),
+            'observation':('observation',{}),'logtruncated':('log_truncated',True)}
+        if bad in changes:
+            k,v=changes[bad];launch[k]=v;write(root,stem+'launch.json',launch)
+        elif bad=='terminal':write(root,stem+'process.json',{})
+        elif bad=='partial':write(root,stem+'launch.json.tmp',{})
+        elif bad=='unexpected':write(root,stem+'extra.json',{})
+        elif bad=='missinglog':(root/(stem+'worker.log')).unlink()
+        elif bad=='newweight':write(root,'pilots/00/checkpoints/raw.pt',b'unreviewed')
+        elif bad=='changedsource':(root/'meta/source.txt').write_text('changed')
+        else:ref['sha256']='0'*64
+        monkeypatch.setattr(execution,'execute_pilot_outputs',lambda *a,**k:pytest.fail('Body must not execute'))
+        with pytest.raises(ValueError):dispatch.run_worker(writer,0,ref,argv)
+>       record=json.loads((writer.root/'control/pilot-entry-00.json').read_text())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_dispatch_v2.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/dispatch-v2-synthetic-nmym85df/test_child_handoff_rejects_cha20/campaign/control/pilot-entry-00.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/dispatch-v2-synthetic-nmym85df/test_child_handoff_rejects_cha20/campaign/control/pilot-entry-00.json'
+
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_pilot_dispatch_v2.py::test_child_handoff_rejects_changed_or_incomplete_launch[startuphash]
+1 failed, 120 passed in 6.35s

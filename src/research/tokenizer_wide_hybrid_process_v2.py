@@ -59,7 +59,7 @@ def run_process(writer,stage,slot,argv,cwd,*,required_free_bytes,output_limit_by
     stem=f'evidence/{stage}/{slot_name}'
     terminal=stem+'/process/process.json'
     control=f'control/process-{stage}-{slot_name}.json'
-    state=dict(status='preflight',argv=list(argv),pid=None,returncode=None,error=None,
+    state=dict(status='preflight',argv=list(argv),parent_pid=os.getpid(),pid=None,returncode=None,error=None,
                required_free_bytes=required_free_bytes,reserve_bytes=RESERVE,
                output_limit_bytes=output_limit_bytes,log_limit_bytes=log_limit_bytes,
                timeout_seconds=timeout_seconds,observation=None,

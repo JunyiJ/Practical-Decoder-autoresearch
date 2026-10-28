@@ -52,7 +52,8 @@ def execute_pilot_outputs(writer,slot,plan_sha256,request_sha256,*,projection_re
     _sha(plan_sha256);_sha(request_sha256)
     evidence=writer.root/'evidence';stem=f'pilots/{slot:02d}';trial=_path(evidence,stem)
     plan_path=evidence/'meta/plan.json'
-    bound=bind_campaign(plan_path,plan_sha256)
+    with writer._serialized():
+        bound=bind_campaign(plan_path,plan_sha256)
     plan=_json(plan_path,plan_sha256)
     request=bound['requests']['pilots'][slot]
     _require(digest(request['spec'])==digest(specs()[slot])
@@ -127,7 +128,8 @@ def execute_pilot_outputs(writer,slot,plan_sha256,request_sha256,*,projection_re
         recheck()
         # Source/runtime and the full frozen prerequisites are checked again only
         # after the resource thread has closed; no concurrent census races.
-        again=bind_campaign(plan_path,plan_sha256)
+        with writer._serialized():
+            again=bind_campaign(plan_path,plan_sha256)
         _require(digest(again['files'])==digest(bound['files']),'Frozen pilot provenance changed')
         recheck()
         report=dict(kind=KIND,status='pilot_outputs_complete_pending_independent_stage_review',
