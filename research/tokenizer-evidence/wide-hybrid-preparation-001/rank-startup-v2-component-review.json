@@ -1,0 +1,86 @@
+{
+  "adopted": false,
+  "base_commit": "42b4799f436d3388f7f95dbadc156384546716b2",
+  "created_at": "2026-10-28T21:20:31.459449+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "failures_and_repairs": [
+    "Initial run:100 passed and3 failed in182.98s. The slot9 positive case compared the entire history report across intentional request creation; its current-inventory digest/count necessarily changed. Production fix still runs full history and complete-inventory verification, while comparing only unchanged historical fields rather than the dynamic chain census.",
+    "The slots12/14 positives exposed a synthetic fixture bug: its preserve-existing wrapper also preserved the first intermediate tensor-audit file created during the same fixture build. It now protects only files that existed before fixture generation, allowing the new synthetic tensor producer record to reach its final bound form. Original historical bytes remain immutable.",
+    "Focused rerun:all three repaired positive cases plus source-change-after-request preservation passed4 tests in76.18s. The initial100 passing cases were not broadly repeated. Both original failure logs/guards and repaired logs/guards are retained; neither run violated resource guards. This is a test/code correction, not a retry of the closed combined numerical fixture."
+  ],
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-startup-v2-guard.json": "c3e91a0544910b664ff9aa0715bdfa2246826f721dac2cac1a304b88b0394ea3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-startup-v2-repaired-guard.json": "d0c5a9fcb95843a4ba7d88c215b53dc5fdf16bb41f60902d35937432ae225770",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-startup-v2-repaired-tests.log": "7ce08a3aee0b296c7c8ef7e122ca6aa25749c9adc68a850a674f23abae20e444",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-startup-v2-tests.log": "1586ad059cd0c2cdb4e4ce5d0cccf3fd6ac88b66cf9ff59c5712fc68cbeabedc",
+    "src/research/tokenizer_wide_hybrid_lr_boundary_v2.py": "622a2a6008b5cf6119b2afaaf2dde5842d150a9fe8cc4dec36101ddac41b575c",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "92fed151bb54dda2a30627f133d3c865486a9261d002c2e0f63401206a90e513",
+    "src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py": "642c617117391622966f13ea322cb0db4f1dee9a0e3b7904473da5798c898fef",
+    "src/research/tokenizer_wide_hybrid_storage_v2.py": "6558775da8a0598dbe471652c1c7145718823131aa206c60e94a890abefe1b2d",
+    "tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py": "d75867ab82860e53048d6fd24d35b5b3c02e1dfc28526472503a13950c3b8949",
+    "tests/test_tokenizer_wide_hybrid_rank_prefix_v2.py": "525124491a8d248f4c24a9296e84fe3f724059a635fd15147ca92510199d0f70",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "775ba25490dced741dd749fcdb90c33821f8144bcdc0dd49f8a085252d116ca3"
+  },
+  "findings": [
+    "A new bounded rank preparation API supports slots9..14. Before writing the next request it verifies the complete LR and pilot cleanup history, reconstructs unique frozen LR and conditional rank requests from the saved rates, re-audits all three live LR anchors and completed rank members, and checks original anchor pair identity against the preserved pre-deletion review.",
+    "The full storage gate receives all original pilot/LR pairs including deleted losers, all live rank pairs, both verified cleanup stages and original rates. It counts actual live occupied capacity against the complete future high-water requirement. Pending request directories are created only after this gate. No space is credited to planned future deletion.",
+    "Immutable attempt/request/report and finished1800s/4GiB/8GiB parent guard are bound together. Frozen requests/context/files, complete evidence inventory, historical fields, locks/STOP and full free space are rechecked before completion. Failure evidence and any published partial request persist; retry is forbidden. No final selection, deletion, process or dispatch approval is granted. Caller-owned outer resource guard also covers post-finish receipt checks, as in the guarded tests and eventual serial parent.",
+    "Synthetic integration tests cover rank slots9/12/14 (zero/three/five completed rank trials), full pair accounting, immutable previous evidence, exact request-only output, and corruption/shortfall/publication failures. Existing rank-prefix tests also ran. No scientific child or actual model numerical fixture was launched."
+  ],
+  "focused_repaired_validation": {
+    "failed": 0,
+    "passed": 4,
+    "seconds": 76.18
+  },
+  "free_bytes_observed": 30577041408,
+  "guards": {
+    "initial": {
+      "elapsed_seconds": 184.20078766625375,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 300
+      },
+      "observation": {
+        "free_bytes": 30582087680,
+        "peak_rss_bytes": 243253248
+      },
+      "pid": 93988,
+      "reason": null,
+      "status": "finished"
+    },
+    "repaired": {
+      "elapsed_seconds": 76.51345162466168,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30578921472,
+        "peak_rss_bytes": 240926720
+      },
+      "pid": 95171,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "initial_source_hashes": {
+    "src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py": "ae85c2a299fe38d3093151e3bdfd2086afef7f0b281bb32b35f08a009fb654ef",
+    "tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py": "569ade613316e5b768bf8273fe1f9884fab3366104ef94587f565438572dce75",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "775ba25490dced741dd749fcdb90c33821f8144bcdc0dd49f8a085252d116ca3"
+  },
+  "initial_validation": {
+    "failed": 3,
+    "passed": 100,
+    "seconds": 182.98
+  },
+  "kind": "wide_hybrid_rank_startup_v2_component_review",
+  "limitations": [
+    "Rank read-only predispatch, readiness/child entry, prior-rank parent/child transport receipt verification and serial dispatch remain to integrate and test. Preparation success cannot authorize a worker. Fresh transitions, final rank selection/cleanup/cumulative history and inference are unfinished.",
+    "Exact full frozen configuration/source/receipt metadata accounting and all actual nine numerical/input/measured-pilot prerequisites remain unresolved. Recheck complete actual storage before freeze or launch; the historical retain-all requirement is not used as an immutable blocker.",
+    "No research training/MPS launch, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or holdout evaluation occurred. Synthetic disposable byte fixtures were used. The27-trajectory campaign remains unfrozen; quality/rank choices, seeds, ordering and guards are unchanged."
+  ],
+  "status": "rank_request_preparation_tested_predispatch_unfinished_campaign_unfrozen"
+}

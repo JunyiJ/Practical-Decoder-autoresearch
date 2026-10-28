@@ -491,3 +491,36 @@ checkpoint deletion, failed combined fixture retry, closed-controller rerun or
 holdout evaluation occurred. The27-trajectory campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-prefix-v2-component-review.json`.
+
+
+## October 28 rank request preparation with verified history and storage
+
+A new bounded API prepares rank slots9 through14 only after complete pilot/LR
+cleanup history, unique independently frozen conditional requests, all live LR
+anchor/rank audits and full future storage pass. Original deleted pairs remain
+bound to their receipts; actual live occupied capacity is counted. No next-slot
+directory exists until those gates succeed. Immutable attempts, requests and
+finished-guard-bound reports retain the evidence; failures keep any partial
+request and permanently block retry. Frozen inputs, full current inventory,
+historical integrity, locks/STOP and free space are rechecked before completion.
+
+The initial CPU run passed100 tests and failed3 positive cases in182.98s. One
+production comparison incorrectly required the dynamic current-inventory digest
+to stay identical after intentionally adding a request. It now compares unchanged
+historical fields while still verifying the entire new inventory and chain. Two
+later-prefix fixtures had preserved an intermediate synthetic tensor record;
+the helper now preserves only files that existed before fixture construction.
+The three repaired positives and source-change-after-publication case passed4
+focused tests in76.18s. Both runs retain logs and successful300s/180s,4GiB,8GiB
+actual CPU/disk guards. Previously passing cases were not broadly repeated.
+
+Preparation grants no process/dispatch, selection or deletion approval. Next
+implement read-only rank predispatch, then readiness/child entry and serial parent
+dispatch with all prior transport receipts. Fresh transitions, final selection/
+cleanup/inference, full metadata accounting and actual nine numerical/input/
+measured-pilot prerequisites remain unfinished. Only synthetic temporary byte
+fixtures were used; no research training/MPS, checkpoint deletion, failed combined
+numerical retry, closed-controller rerun or holdout evaluation occurred. The
+27-trajectory campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-startup-v2-component-review.json`.

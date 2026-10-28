@@ -31,7 +31,8 @@ def score(parameters, path, sha, ce=5.):
         checkpoint=str(path),checkpoint_sha256=sha)
 
 
-def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindings=None, rank_prefix_count=None):
+def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindings=None, rank_prefix_count=None,
+            raw_name='raw.pt'):
     records=[dict(s,status='completed',ce=5.) for s in rules.lr_specs()]
     rates=rules.choose_rates(records)
     selection=None
@@ -47,7 +48,7 @@ def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindin
         indices=list(range(prefix_count))
     token_sha=digest('synthetic96')
     if bindings is not None:
-        assert producer_v2 and prefix_count is not None
+        assert producer_v2 and (prefix_count is not None or rank_prefix_count is not None)
         context=bindings['context'];pref=bindings['projection_ref'];nref=bindings['numerical_ref']
         projection=json.loads((root/pref['path']).read_text());budgets=audit.allocations(projection)
         token_sha=bindings['training_token_sha256']
@@ -65,8 +66,8 @@ def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindin
             cases=[dict(width=512,family=f,divisor=d,checks=dict.fromkeys(audit.NUMERICAL_CHECKS,True))
                    for f in rules.FAMILIES for d in (8,4,2)],artifacts={trace['path']:trace['sha256']})
         nref=write(root,'numerical/review.json',numerical)
-    srefs={} if prefix_count is not None else {'rates':write(root,'lr-selection.json',rates)}
-    if selection is not None: srefs['selection']=write(root,'rank-selection.json',selection)
+    srefs={} if prefix_count is not None or bindings is not None else {'rates':write(root,'lr-selection.json',rates)}
+    if selection is not None and bindings is None: srefs['selection']=write(root,'rank-selection.json',selection)
     evidence={}; requests={}; trials={}
     for i in indices:
         record=records[i]; spec={k:record[k] for k in ('stage','family','seed','lr','divisor','width','steps')}
@@ -76,7 +77,8 @@ def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindin
         if bindings is not None:request=copy.deepcopy(bindings['requests'][i])
         requests[i]=request
         rq=write(root,stem+'/request.json',request)
-        pair={k:write(root,f'{stem}/checkpoints/{k}.pt',f'synthetic {i} {k}'.encode()) for k in ('raw','h200')}
+        raw_basename=raw_name.get(i,'raw.pt') if isinstance(raw_name,dict) else raw_name
+        pair={k:write(root,f'{stem}/checkpoints/{raw_basename if k=="raw" else "h200.pt"}',f'synthetic {i} {k}'.encode()) for k in ('raw','h200')}
         parameters=next(r['parameters'] for r in projection['records'] if r['width']==512 and r['family']==spec['family'] and r['bottleneck_divisor']==spec['divisor'])
         result=dict(spec,status='completed',holdout_consumed=False,request_sha256=rq['sha256'],
             training=dict(completed_steps=1200,weight_averaging=dict(snapshots=41)),

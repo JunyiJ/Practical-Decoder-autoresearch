@@ -1,0 +1,122 @@
+FFF..................................................................... [ 69%]
+...............................                                          [100%]
+=================================== FAILURES ===================================
+_______ test_full_chain_live_anchors_and_storage_precede_rank_request[9] _______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10b043cb0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11037f950>, slot = 9
+
+    @pytest.mark.parametrize('slot',[9,12,14])
+    def test_full_chain_live_anchors_and_storage_precede_rank_request(writer,monkeypatch,slot):
+        args=setup(writer,monkeypatch,slot);root=writer.root/'evidence';before=start._inventory(root)
+        original=start.bind_storage;calls=[]
+        def gate(*a,**kw):
+            assert not (root/f'quality/{slot:02d}').exists()
+            assert len(kw['records'])==slot and len(kw['checkpoint_pairs'])==slot+3
+            assert len(kw['stages'])==2 and kw['selection'] is None and kw['rates'] is not None
+            calls.append(slot);return original(*a,**kw)
+        monkeypatch.setattr(start,'bind_storage',gate)
+>       ref=start.prepare_rank_request(**args);report=start._document(root,ref)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py:121: in prepare_rank_request
+    _require(verify_lr_history(writer,plan_sha256,lr_completion_ref,current_inventory=expected)==checked['history'],
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'LR history changed before rank completion'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: LR history changed before rank completion
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+______ test_full_chain_live_anchors_and_storage_precede_rank_request[12] _______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103f7b10>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x110580ad0>, slot = 12
+
+    @pytest.mark.parametrize('slot',[9,12,14])
+    def test_full_chain_live_anchors_and_storage_precede_rank_request(writer,monkeypatch,slot):
+        args=setup(writer,monkeypatch,slot);root=writer.root/'evidence';before=start._inventory(root)
+        original=start.bind_storage;calls=[]
+        def gate(*a,**kw):
+            assert not (root/f'quality/{slot:02d}').exists()
+            assert len(kw['records'])==slot and len(kw['checkpoint_pairs'])==slot+3
+            assert len(kw['stages'])==2 and kw['selection'] is None and kw['rates'] is not None
+            calls.append(slot);return original(*a,**kw)
+        monkeypatch.setattr(start,'bind_storage',gate)
+>       ref=start.prepare_rank_request(**args);report=start._document(root,ref)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py:103: in prepare_rank_request
+    checked=_audit(writer,slot,plan_sha256,projection_ref,lr_completion_ref)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py:63: in _audit
+    prefix=bind_rank_prefix(root,context=bound['context'],lr_records=history['records'],rates=history['rates'],
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:205: in bind_rank_prefix
+    corpora=_bind_producers(root,training_token_sha256=training_token_sha256,context=context,
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:40: in _bind_producers
+    verify_producer(root,stem,index,load('tensor-audit.json'),evidence=evidence,context=context,
+src/research/tokenizer_wide_hybrid_quality_tensors_v2.py:130: in verify_producer
+    _require(digest(attempt)==digest(expected) and digest(producer)==digest(dict(kind=KIND,attempt=ref,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Tensor producer provenance differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Tensor producer provenance differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+______ test_full_chain_live_anchors_and_storage_precede_rank_request[14] _______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1103f79d0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1105ccc90>, slot = 14
+
+    @pytest.mark.parametrize('slot',[9,12,14])
+    def test_full_chain_live_anchors_and_storage_precede_rank_request(writer,monkeypatch,slot):
+        args=setup(writer,monkeypatch,slot);root=writer.root/'evidence';before=start._inventory(root)
+        original=start.bind_storage;calls=[]
+        def gate(*a,**kw):
+            assert not (root/f'quality/{slot:02d}').exists()
+            assert len(kw['records'])==slot and len(kw['checkpoint_pairs'])==slot+3
+            assert len(kw['stages'])==2 and kw['selection'] is None and kw['rates'] is not None
+            calls.append(slot);return original(*a,**kw)
+        monkeypatch.setattr(start,'bind_storage',gate)
+>       ref=start.prepare_rank_request(**args);report=start._document(root,ref)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py:103: in prepare_rank_request
+    checked=_audit(writer,slot,plan_sha256,projection_ref,lr_completion_ref)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py:63: in _audit
+    prefix=bind_rank_prefix(root,context=bound['context'],lr_records=history['records'],rates=history['rates'],
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:205: in bind_rank_prefix
+    corpora=_bind_producers(root,training_token_sha256=training_token_sha256,context=context,
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:40: in _bind_producers
+    verify_producer(root,stem,index,load('tensor-audit.json'),evidence=evidence,context=context,
+src/research/tokenizer_wide_hybrid_quality_tensors_v2.py:130: in verify_producer
+    _require(digest(attempt)==digest(expected) and digest(producer)==digest(dict(kind=KIND,attempt=ref,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Tensor producer provenance differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Tensor producer provenance differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py::test_full_chain_live_anchors_and_storage_precede_rank_request[9]
+FAILED tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py::test_full_chain_live_anchors_and_storage_precede_rank_request[12]
+FAILED tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py::test_full_chain_live_anchors_and_storage_precede_rank_request[14]
+3 failed, 100 passed in 182.98s (0:03:02)
