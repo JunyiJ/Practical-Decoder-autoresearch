@@ -1,4 +1,4 @@
-"""Seal a fully audited idle LR or rank request for a future live handoff.
+"""Seal a fully audited idle LR, rank or first fresh request for a future live handoff.
 
 No child entry, process launch, selection or cleanup. The seal is immutable input
 for future integration, not permission to dispatch. All existing idle scientific,
@@ -54,10 +54,15 @@ def _bound(writer,slot,report):
     elif slot<9:
         bound,requests=later._frozen(writer,slot,report['plan_sha256'],report['projection_ref'])
         request=requests[-1]
-    else:
+    elif slot<15:
         # Rank history depends on readiness helpers; load it after module setup.
         from . import tokenizer_wide_hybrid_quality_rank_startup_v2 as rank
         bound,requests=rank._frozen(writer,slot,report['plan_sha256'],report['projection_ref'],report['rates'])
+        request=requests[-1]
+    else:
+        from . import tokenizer_wide_hybrid_first_confirmation_startup_v2 as fresh
+        _require(slot==15,'Only first fresh slot15 has startup integration')
+        bound,requests=fresh._frozen(writer,slot,report['plan_sha256'],report['projection_ref'],report['rates'],report['selection'])
         request=requests[-1]
     _require(digest(_document(writer.root/'evidence',report['request']))==digest(request),
              'Readiness request differs from independently frozen option')
@@ -68,8 +73,8 @@ def _bound(writer,slot,report):
 
 def seal_quality_readiness(writer,slot,startup_ref):
     """Own shared locks and inspect workers first; a failed seal is never retried."""
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<15,'Exact LR/rank writer/slot required')
-    phase='lr' if slot<9 else 'rank'
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<=15,'Exact LR/rank/first-fresh writer/slot required')
+    phase='lr' if slot<9 else ('rank' if slot<15 else 'confirm')
     expected='meta/quality-first-startup.json' if slot==0 else f'meta/quality-{phase}-startup-{slot:02d}.json'
     _require(startup_ref['path']==expected,'Exact startup reference required')
     evidence=writer.root/'evidence';base=f'meta/quality-readiness-{slot:02d}'
@@ -90,10 +95,14 @@ def seal_quality_readiness(writer,slot,startup_ref):
             elif slot<9:
                 checked=later.verify_lr_request(writer,slot,startup_ref)
                 required=('pilot_history_verified','lr_request_verified','lr_prefix_verified')
-            else:
+            elif slot<15:
                 from . import tokenizer_wide_hybrid_quality_rank_startup_v2 as rank
                 checked=rank.verify_rank_request(writer,slot,startup_ref)
                 required=('pilot_history_verified','lr_history_verified','rank_prefix_verified','rank_request_verified')
+            else:
+                from . import tokenizer_wide_hybrid_first_confirmation_startup_v2 as fresh
+                checked=fresh.verify_first_confirmation_request(writer,slot,startup_ref)
+                required=('pilot_history_verified','rank_history_verified','selected_screen_prefix_verified','first_confirmation_request_verified')
             _require(all(checked.get(k) is True for k in required)
                 and checked.get('dispatch_authorized') is False
                 and checked.get('request_sha256')==report['request']['sha256'],

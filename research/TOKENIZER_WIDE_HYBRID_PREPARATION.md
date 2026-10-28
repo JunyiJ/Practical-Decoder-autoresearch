@@ -2309,3 +2309,32 @@ deleted and no training/MPS or test-holdout evaluation ran; the campaign remains
 unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-startup-v2-component-review.json`.
+
+
+## October 28 first fresh-confirmation readiness
+
+Readiness sealing now accepts first-fresh slot15 through its exact startup
+reference and frozen conditional request. It requires the complete idle audit,
+original rank history and selected-screen checks, and independently reconstructed
+remaining capacity. The seal binds the full evidence/control inventory, frozen
+inputs, finished guard and output allowance. These are rechecked after the guard
+finishes and before publication. No child transport or dispatch permission is
+granted; later fresh slots remain unsupported.
+
+All25 tests passed in417.23s, covering the new seal and failure cases plus
+affected LR0/1/4/8 and rank9/14 readiness paths. Missing audit claims, late source
+changes, late space loss and partial publication preserve failure/partial
+evidence and block retry. The guard finished normally, maximum observed
+RSS243,761,152 bytes, with no test or driver failure. Six selected fixture
+checkpoints remain, with zero fresh trials completed; child transport still
+rejects the new first-fresh seal.
+
+The synthetic seal is16,358 bytes. The fixture uses1,458,831/2,097,152 bytes
+in the meta group,2,001,503 total metadata bytes and513 files. This is not a
+full real-panel fit proof. Next integrate first-fresh child entry, independent
+parent acceptance and serial dispatch, then later fresh transport, inference
+and full actual metadata accounting. Actual numerical/input/measured-pilot
+prerequisites remain unresolved. No research checkpoint deletion, training/MPS
+or test-holdout evaluation occurred; the campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-readiness-v2-component-review.json`.
