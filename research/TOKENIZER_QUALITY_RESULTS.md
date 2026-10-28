@@ -583,3 +583,36 @@ deletion, closed-controller rerun or holdout evaluation occurred. The27-trajecto
 campaign remains unfrozen and all scientific choices/guards remain unchanged.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-readiness-v2-component-review.json`.
+
+
+## October 28 rank child handoff and entry
+
+Canonical sealed child argv and CLI now accept rank slots9 through14, requiring
+the exact rank-startup and readiness references. Unsealed rank transport and
+fresh confirmation slots remain rejected. Child entry inherits the live parent's
+full idle audit only through its exact immutable seal hash, then verifies all
+sealed evidence/control bytes, frozen numerical/source/request bindings, parent
+identity, locks and bounded append-only worker log before producer import.
+
+Rank storage rebinds the original pilot/LR cleanup receipts, original deleted and
+retained pairs, and saved LR choice. It derives the three live LR anchors plus
+completed rank members and counts only actual live occupied capacity. Deleted
+weights remain historical evidence and cannot supply capacity credit. Complete
+future storage,8GiB reserve,256MiB metadata allowance and the7200s child guard
+remain unchanged; final source/evidence/control/log/parent/STOP/free-space checks
+still run. Entry failure permanently blocks retry.
+
+All94 tests passed in197.50s:10 new rank tests,40 LR entry regressions and44
+transport regressions. The420s/4GiB/8GiB actual CPU/disk guard finished normally,
+with peak RSS242,876,416 bytes. Tests used disposable byte fixtures and a
+synthetic producer; no research worker, checkpoint deletion, failed combined
+numerical retry, closed-controller rerun or holdout evaluation occurred.
+
+Next implement rank parent acceptance and serial dispatch with every prior rank
+transport receipt. Existing LR controllers are not rank launchers. Fresh
+transitions, final rank selection/cleanup/inference, exact full metadata
+accounting and actual nine numerical/input/measured-pilot gates remain unresolved.
+The27-trajectory campaign remains unfrozen; the child CLI grants no campaign
+launch authorization or quality claim.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-entry-v2-component-review.json`.

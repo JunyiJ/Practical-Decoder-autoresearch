@@ -34,9 +34,11 @@ def _log_prefix(path,size):
 
 
 def worker_argv(writer,slot,startup_ref,*,readiness_ref=None):
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<9,
-             'Exact LR writer/slot required')
-    path='meta/quality-first-startup.json' if slot==0 else f'meta/quality-lr-startup-{slot:02d}.json'
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<15,
+             'Exact LR/rank writer/slot required')
+    phase='lr' if slot<9 else 'rank'
+    path='meta/quality-first-startup.json' if slot==0 else f'meta/quality-{phase}-startup-{slot:02d}.json'
+    _require(slot<9 or readiness_ref is not None,'Rank transport requires an immutable readiness seal')
     _require(startup_ref['path']==path,'Exact quality startup reference required')
     module=MODULE
     extra=[]

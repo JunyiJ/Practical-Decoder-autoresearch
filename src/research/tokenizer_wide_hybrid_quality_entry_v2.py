@@ -1,4 +1,4 @@
-"""Readiness-bound LR child CLI and composition; no parent dispatcher yet.
+"""Readiness-bound LR/rank child CLI and composition; rank parent dispatch unfinished.
 
 An exact parent-supplied seal hash transfers the parent's full idle audit. The
 child verifies every sealed byte, control receipt and frozen numerical gate, and
@@ -52,13 +52,37 @@ def _stamps(root,inventory):
 
 def _storage(writer,slot,seal,startup,inventory):
     root=writer.root/'evidence'
-    _,_,stage,_=_receipt(writer,seal['plan_sha256'],startup['pilot_completion_ref'])
+    pilot,_,stage,_=_receipt(writer,seal['plan_sha256'],startup['pilot_completion_ref'])
     records=[] if slot==0 else startup['completed_records']
     pairs={} if slot==0 else startup['checkpoint_pairs']
-    _require(len(records)==slot and set(pairs)=={f'quality/{i:02d}' for i in range(slot)},
-             'Exact completed LR prefix required')
+    _require(isinstance(records,list) and len(records)==slot,'Exact completed quality prefix required')
+    rates=None;boundaries=1
+    if slot<9:
+        _require(set(pairs)=={f'quality/{i:02d}' for i in range(slot)},'Exact completed LR prefix required')
+    else:
+        # The live parent's immutable seal transfers full idle audits. Rebind
+        # original cleanup identities and selection before counting live bytes;
+        # deliberately deleted pairs are historical evidence, never capacity.
+        from .tokenizer_wide_hybrid_lr_boundary_v2 import _receipt as lr_receipt
+        complete,review,_=lr_receipt(writer,seal['plan_sha256'],startup['lr_completion_ref'])
+        rates=startup['rates'];boundaries=2
+        _require(digest(startup['stages'])==digest([pilot['chain_stage'],complete['chain_stage']])
+            and digest(records[:9])==digest(review['records']) and digest(rates)==digest(review['rates'])
+            and startup['selection_ref']==review['selection_ref']
+            and startup['projection_ref']==review['projection_ref']
+            and startup['pilot_completion_ref']==review['pilot_completion_ref'],
+            'Sealed original rank history or LR selection differs')
+        original={**stage['checkpoint_pairs'],**review['checkpoint_pairs']}
+        _require(set(pairs)==set(original)|{f'quality/{i:02d}' for i in range(9,slot)}
+            and all(digest(pairs[n])==digest(v) for n,v in original.items()),
+            'Original deleted and retained rank history pairs required')
+        anchors=[i for i,r in enumerate(records[:9]) if r['lr']==rates[r['family']]]
+        indices=anchors+list(range(9,slot))
+        _require(len(anchors)==3 and digest(startup['audited_indices'])==digest(indices),
+                 'Exact live LR anchors and completed rank members required')
+        pairs={f'quality/{i:02d}':pairs[f'quality/{i:02d}'] for i in indices}
     projection=_document(root,seal['projection_ref'])
-    state=remaining_projection(projection,stage['records'],records,None,None,1)
+    state=remaining_projection(projection,stage['records'],records,rates,None,boundaries)
     census=snapshot(writer.root);weights=set();inodes=set();logical=occupied=0
     for key,pair in pairs.items():
         _require(set(pair)=={'raw','h200'},'Complete retained checkpoint pairs required')
@@ -73,7 +97,7 @@ def _storage(writer,slot,seal,startup,inventory):
     _require(actual==weights and census['checkpoint_logical_bytes']==logical,'Unreviewed checkpoint in live handoff')
     needed=required_free(state,occupied);saved=startup['storage']
     expected=dict(required_free_bytes=needed,occupied_checkpoint_capacity_bytes=occupied,
-                  checkpoint_logical_bytes=logical,cleanup_boundaries_verified=1)
+                  checkpoint_logical_bytes=logical,cleanup_boundaries_verified=boundaries)
     _require(all(type(saved.get(k)) is int and saved[k]==v for k,v in expected.items())
         and digest(saved['projection'])==digest(state) and type(seal.get('required_free_bytes')) is int
         and seal['required_free_bytes']==needed,'Sealed remaining storage or actual allocation changed')
@@ -100,8 +124,9 @@ def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
     expected=dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
                   pilot_history_verified=True,dispatch_authorized=False)
     if slot==0:expected['first_quality_request_verified']=True
-    else:expected.update(startup_ref=startup_ref,lr_prefix_verified=True,lr_request_verified=True)
-    _require(seal['predispatch_review']==expected,'Sealed full idle review differs')
+    elif slot<9:expected.update(startup_ref=startup_ref,lr_prefix_verified=True,lr_request_verified=True)
+    else:expected.update(startup_ref=startup_ref,lr_history_verified=True,rank_prefix_verified=True,rank_request_verified=True)
+    _require(digest(seal['predispatch_review'])==digest(expected),'Sealed full idle review differs')
     inventory=dict(startup['inventory'])
     for ref in (startup['request'],startup_ref):
         _require(ref['path'] not in inventory,'Startup evidence overlap')
@@ -166,7 +191,7 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument('command',choices=['worker'])
     parser.add_argument('--campaign',required=True,type=Path)
-    parser.add_argument('--slot',required=True,type=int,choices=range(9))
+    parser.add_argument('--slot',required=True,type=int,choices=range(15))
     parser.add_argument('--startup-sha256',required=True)
     parser.add_argument('--global-fd',required=True,type=int)
     parser.add_argument('--campaign-fd',required=True,type=int)
@@ -175,8 +200,9 @@ def main(argv=None):
     from .tokenizer_wide_hybrid_retention_receipts import _sha
     _sha(args.startup_sha256);_sha(args.readiness_sha256)
     writer=MetadataWriter(args.campaign,(args.global_fd,args.campaign_fd))
+    phase='lr' if args.slot<9 else 'rank'
     startup=dict(path='meta/quality-first-startup.json' if args.slot==0
-                 else f'meta/quality-lr-startup-{args.slot:02d}.json',sha256=args.startup_sha256)
+                 else f'meta/quality-{phase}-startup-{args.slot:02d}.json',sha256=args.startup_sha256)
     ready=dict(path=f'meta/quality-readiness-{args.slot:02d}.json',sha256=args.readiness_sha256)
     actual=[sys.executable,'-m','src.research.tokenizer_wide_hybrid_quality_entry_v2',
             *(sys.argv[1:] if argv is None else argv)]

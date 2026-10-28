@@ -1,0 +1,57 @@
+{
+  "adopted": false,
+  "base_commit": "877d08da5e0a6f0823ecf4eb9a4cf0fa310550db",
+  "created_at": "2026-10-28T21:51:23.242559+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-entry-v2-guard.json": "852c4442a804d7bfc429f2ddae462abc8e05616327bbc390d91a1018ba0deb88",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-entry-v2-tests.log": "1b58ea05f5adf6f1fbc43137d6299f911a4c27adc099f8b4ba6c55cf0dd4cb21",
+    "src/research/tokenizer_wide_hybrid_lr_boundary_v2.py": "622a2a6008b5cf6119b2afaaf2dde5842d150a9fe8cc4dec36101ddac41b575c",
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": "2b31ced45429827c8157af31c5af4cd88e2b0d7b7f774ccf04ba2ce3359b4641",
+    "src/research/tokenizer_wide_hybrid_quality_handoff_v2.py": "d0b71b2c32884586b3a5447a842f72fb44ee2e977055e56bb7755a155a4eda25",
+    "src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py": "6fdb3f1808a099d7f2c2418ef8b064573ea5348a6d6fcfe2438fd85b40244a03",
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "d35eeece13481cb3594d377d3042832fdfb30ed1243551f3504f6fd15c21b0a0",
+    "tests/test_tokenizer_wide_hybrid_quality_entry_v2.py": "2cbc3022539dd349d347897e0161e585f1e41ea69262de4cbc6fa6a8090cb6c9",
+    "tests/test_tokenizer_wide_hybrid_quality_handoff_v2.py": "6c83e560c58286e27d9a327675318bea06f06577203937eb4904dfe40b2c75a0",
+    "tests/test_tokenizer_wide_hybrid_rank_entry_v2.py": "43181bca42af862b3918b01e9bfdbee1979807d7ec0c6dfa8f6ce0b517be8f32"
+  },
+  "findings": [
+    "Canonical child argv and CLI now accept rank slots9..14 with exact rank-startup and readiness references. Rank transport requires a readiness seal; unsealed rank transport and fresh confirmation slots remain rejected. No parent rank launcher was added or invoked.",
+    "Child entry inherits full idle audit semantics only through the exact immutable seal hash supplied in the same live parent argv. It checks all sealed evidence/control bytes, frozen numerical/source/context/request bindings, exact launch limits, parent identity, worker locks and append-only bounded log behavior before producer import.",
+    "Rank storage independently binds original pilot/LR cleanup receipts, original pre-deletion checkpoint pairs and saved LR choice. It reconstructs the exact three selected LR anchors plus completed rank members, never counting intentionally deleted pilot/losing-LR pairs as live occupied capacity. Ordered completion and full remaining phase high-water storage retain the8GiB reserve and256MiB metadata allowance.",
+    "The7200s child guard encloses rank entry and producer composition; partial/failed entry cannot retry. Existing final frozen/control/evidence-stamp/log/parent/STOP/free-space rechecks remain active. The entry review itself grants no adoption, deletion or next-stage permission.",
+    "Ten new rank tests cover endpoints9/14, capacity census after deletion, changed source/numerical/receipt/anchor/rank/process evidence, parent/locks/argv, independently reconstructed history/selection/pairs, exact/insufficient/late storage, append-only logs, synthetic producer entry and no retry, exact CLI construction and closed fresh slots. Forty LR entry and44 transport regression tests also passed. Only the parent PID relation and producer were simulated; real temporary locks, hashes, receipts and storage arithmetic were exercised."
+  ],
+  "free_bytes_observed": 30579822592,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_rank_entry_v2_component_review",
+  "limitations": [
+    "Rank parent acceptance and serial dispatch with complete prior-rank parent/child transport verification are still unfinished. Existing LR controllers must not be used to launch rank trials. The new child CLI is not campaign launch authorization.",
+    "Fresh transitions, final rank selection/cleanup/cumulative history/inference, exact full frozen metadata accounting and actual nine numerical/input/measured-pilot prerequisites remain unresolved. Complete actual storage must fit before freeze or launch.",
+    "No research MPS/training, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or holdout evaluation occurred. Synthetic producer stubs and disposable byte fixtures only; no quality claim. The27-trajectory campaign remains unfrozen with unchanged scientific choices and guards."
+  ],
+  "status": "rank_child_handoff_entry_tested_parent_acceptance_dispatch_unfinished_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "guard": {
+      "elapsed_seconds": 198.22818545810878,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 420
+      },
+      "observation": {
+        "free_bytes": 30575898624,
+        "peak_rss_bytes": 242876416
+      },
+      "pid": 98671,
+      "reason": null,
+      "status": "finished"
+    },
+    "lr_entry_regressions": 40,
+    "new_rank_tests": 10,
+    "passed": 94,
+    "seconds": 197.5,
+    "transport_regressions": 44
+  }
+}
