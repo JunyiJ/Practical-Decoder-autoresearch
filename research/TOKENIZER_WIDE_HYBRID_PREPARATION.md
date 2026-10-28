@@ -942,3 +942,38 @@ bounded producers, complete future storage checks, controller/stage/cleanup
 integration and v2 inference acceptance remain required. No model, corpus or
 MPS worker was used in these synthetic tests. The failed combined CPU fixture
 and closed campaigns remain closed; no numerical retry or launch occurred.
+
+## October 28 v2 pilot resource and complete-review components
+
+Added a separate600-second pilot resource recorder and read-only three-pilot
+acceptance binder. The quality recorder retains its7,200-second contract. Both
+retain4GiB RSS,6GiB MPS driver and8GiB reserve limits; sampled observations are
+not instantaneous limits. The pilot terminal event and resource summary now bind
+both the completed result and completed tensor/cache audit hashes. A missing or
+changed audit cannot be declared complete after the resource record has closed.
+
+The pilot boundary requires all three families, raw/H200 pairs, full validation
+metadata, exact stored-EMA export audit, cache checks at batches1/8, expected
+parameter/state sizes, numerical prerequisite traces and resource/process/log
+provenance. Every file under each pilot slot must be hash-bound or an explicitly
+listed checkpoint; altered/aliased weights and unbound artifacts block acceptance.
+It compiles a candidate six-file pilot cleanup manifest without deleting anything
+or granting dispatch permission. All audit execution, full campaign binding,
+inventory/locks, storage and producer gates remain necessary.
+
+Validation:204 tests passed in4.74seconds, peak RSS239,026,176bytes under
+180s/4GiB/8GiB outer guards. Earlier143/180-test passes are retained. Tests include
+all three family failures, incomplete/changed numerical and cache evidence,
+resource-profile substitution, missing terminal traces, changed result/audit
+hashes and a tiny subprocess exiting90 at the600-second synthetic clock boundary
+while retaining its independent diagnostic stream. No real model, corpus or MPS
+worker was used. Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-audit-v2-component-review.json`.
+
+The v2 cache wrapper must bind its immutable campaign projection copy; the closed
+v1 producer/controllers are unchanged. Bounded producers, complete current/future
+storage gates, controller/audit/cleanup integration and v2 inference acceptance
+are still required. All nine real numerical cases and measured pilot checks remain
+outstanding; the failed CPU fixture is closed and was not retried. No real plan
+was frozen or launched. The latest free-space observation was30,657,261,568bytes,
+only25,980,156bytes above the unchanged30,631,281,412-byte full-panel requirement;
+this transient observation grants no launch permission.

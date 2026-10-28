@@ -1,4 +1,4 @@
-"""Draft v2 quality-worker resource recording, not a dispatcher or launch gate.
+"""Draft v2 pilot/quality-worker resource recording, not a dispatcher or launch gate.
 
 Use inside a separately gated/locked worker under the serial parent and existing
 memory watchdog. Samples are not instantaneous limits. An earlier hard kill by
@@ -14,14 +14,15 @@ import sys
 import threading
 import time
 
-from .protocol import file_digest
-from .tokenizer_wide_hybrid_retention_audit import RESOURCE_LIMITS
+from .protocol import file_digest, digest
+from .tokenizer_wide_hybrid_retention_audit import RESOURCE_LIMITS, PILOT_RESOURCE_LIMITS
 from .tokenizer_wide_hybrid_retention_receipts import _sha
 from .tokenizer_wide_hybrid_simulation import _publish
 
 EVENT_LIMIT = 2*1024**2
 REPORT_LIMIT = 2*1024**2
 MAX_SAMPLES = 7203
+PILOT_MAX_SAMPLES = 603
 POLL_SECONDS = 1.
 
 
@@ -36,7 +37,7 @@ def observation(root):
                 free_bytes=shutil.disk_usage(root).free)
 
 
-def reason(sample):
+def _reason(sample, limits):
     if set(sample) != {'elapsed_seconds','peak_rss_bytes','mps_driver_bytes','free_bytes'}:
         raise ValueError('Resource sample schema differs')
     elapsed = sample['elapsed_seconds']
@@ -46,24 +47,35 @@ def reason(sample):
         if type(sample[key]) is not int or not 0 <= sample[key] < 2**63:
             raise ValueError('Invalid resource byte observation')
     if sample['peak_rss_bytes'] == 0: raise ValueError('Missing RSS observation')
-    if sample['peak_rss_bytes'] >= RESOURCE_LIMITS['rss_limit_bytes']: return 'rss_limit'
-    if sample['mps_driver_bytes'] >= RESOURCE_LIMITS['driver_limit_bytes']: return 'driver_limit'
-    if sample['free_bytes'] < RESOURCE_LIMITS['reserve_bytes']: return 'disk_reserve'
-    if elapsed >= RESOURCE_LIMITS['timeout_seconds']: return 'wall_time_limit'
+    if sample['peak_rss_bytes'] >= limits['rss_limit_bytes']: return 'rss_limit'
+    if sample['mps_driver_bytes'] >= limits['driver_limit_bytes']: return 'driver_limit'
+    if sample['free_bytes'] < limits['reserve_bytes']: return 'disk_reserve'
+    if elapsed >= limits['timeout_seconds']: return 'wall_time_limit'
     return None
 
 
+def reason(sample):
+    return _reason(sample, RESOURCE_LIMITS)
+
+
+def _header(plan_sha, request_sha, kind, limits):
+    return dict(event='header',kind=kind,
+                plan_sha256=plan_sha,request_sha256=request_sha,limits=limits)
+
+
 def header(plan_sha, request_sha):
-    return dict(event='header',kind='wide_hybrid_trial_resources_v2',
-                plan_sha256=plan_sha,request_sha256=request_sha,limits=RESOURCE_LIMITS)
+    return _header(plan_sha, request_sha, 'wide_hybrid_trial_resources_v2', RESOURCE_LIMITS)
 
 
-class QualityResourceRecorder:
-    """Fresh quality attempt only; mark_success binds the completed result.
+class _ResourceRecorder:
+    """Fresh attempt only; mark_success binds the completed result.
 
     Opening this recorder is not permission to train. Caller must already have
     the full v2 frozen-plan, numerical, pilot, storage and worker-lock gates.
     """
+    KIND = None
+    LIMITS = None
+
     def __init__(self, trial, plan_sha256, request_sha256):
         self.trial = Path(trial).resolve()
         self.plan_sha = _sha(plan_sha256); self.request_sha = _sha(request_sha256)
@@ -82,24 +94,29 @@ class QualityResourceRecorder:
 
     def _sample(self):
         sample = dict(observation(self.trial),elapsed_seconds=round(time.monotonic()-self.started,6))
-        violation = reason(sample)
+        violation = _reason(sample, self.LIMITS)
         with self.lock:
-            if len(self.samples) >= MAX_SAMPLES: raise RuntimeError('Resource sample cap exceeded')
+            if len(self.samples) >= self.sample_cap: raise RuntimeError('Resource sample cap exceeded')
             if self.samples and sample['elapsed_seconds'] < self.samples[-1]['elapsed_seconds']:
                 raise RuntimeError('Resource clock moved backwards')
             self._emit(dict(event='sample',**sample))
             self.samples.append(sample)
         return violation
 
+    def _bindings(self): return {}
+
+    def _verify_completed_artifacts(self): pass
+
     def _terminal(self, status, problem):
         with self.lock:
             self._emit(dict(event='terminal',status=status,result_sha256=self.result_sha,
-                            reason=problem),emergency=True)
+                            reason=problem,**self._bindings()),emergency=True)
             self.stream.close()
-            report = dict(kind='wide_hybrid_trial_resources_v2',status=status,
+            report = dict(kind=self.KIND,status=status,
                 plan_sha256=self.plan_sha,request_sha256=self.request_sha,result_sha256=self.result_sha,
-                limits=RESOURCE_LIMITS.copy(),violations=[] if problem is None else [problem],
-                samples=self.samples,events=dict(path='resource-events.jsonl',sha256=file_digest(self.trace)))
+                limits=self.LIMITS.copy(),violations=[] if problem is None else [problem],
+                samples=self.samples,events=dict(path='resource-events.jsonl',sha256=file_digest(self.trace)),
+                **self._bindings())
             if len((json.dumps(report,sort_keys=True,allow_nan=False,indent=2)+'\n').encode()) > REPORT_LIMIT:
                 raise RuntimeError('Resource report cap exceeded')
             _publish(self.output,report,exclusive=True)
@@ -130,7 +147,7 @@ class QualityResourceRecorder:
         self.stream = self.trace.open('xb')
         self.started = time.monotonic()
         try:
-            self._emit(header(self.plan_sha,self.request_sha))
+            self._emit(_header(self.plan_sha,self.request_sha,self.KIND,self.LIMITS))
             violation = self._sample()
             if violation: self._fatal('failed',violation,90)
         except BaseException as exc:
@@ -159,6 +176,7 @@ class QualityResourceRecorder:
                 if (saved.get('status') != 'completed' or saved.get('holdout_consumed') is not False
                         or saved.get('request_sha256') != self.request_sha):
                     raise ValueError('Result incomplete or mismatched')
+                self._verify_completed_artifacts()
         except BaseException as error:
             problem = repr(error)[:1000]
         self.stop.set(); self.thread.join(timeout=2)
@@ -175,11 +193,71 @@ class QualityResourceRecorder:
         return False
 
 
-def verify_events(report, events):
-    """Exact trace-to-summary agreement, used after the trace hash is checked."""
-    expected = [header(report['plan_sha256'],report['request_sha256'])]
+class QualityResourceRecorder(_ResourceRecorder):
+    KIND = 'wide_hybrid_trial_resources_v2'
+    LIMITS = RESOURCE_LIMITS
+
+    @property
+    def sample_cap(self): return MAX_SAMPLES
+
+
+class PilotResourceRecorder(_ResourceRecorder):
+    """Wrap the entire pilot including export, tensor and cache checks.
+
+    Caller must still satisfy the frozen campaign, numerical, full storage and
+    shared-lock gates. This class does not authorize or dispatch a pilot.
+    """
+    KIND = 'wide_hybrid_pilot_resources_v2'
+    LIMITS = PILOT_RESOURCE_LIMITS
+    cache_sha = None
+
+    def mark_success(self, result_sha256, cache_audit_sha256):
+        cache_sha = _sha(cache_audit_sha256)
+        super().mark_success(result_sha256)
+        self.cache_sha = cache_sha
+
+    def _bindings(self): return dict(cache_audit_sha256=self.cache_sha)
+
+    def _verify_completed_artifacts(self):
+        audit = self.trial/'audit.json'
+        if (self.cache_sha is None or audit.is_symlink() or not audit.is_file()
+                or audit.stat().st_size > 256*1024 or file_digest(audit) != self.cache_sha):
+            raise ValueError('Pilot cache audit missing or changed before resource completion')
+
+    @property
+    def sample_cap(self): return PILOT_MAX_SAMPLES
+
+
+def _verify_events(report, events, *, kind, limits, sample_cap):
+    """Exact trace agreement and fixed profile; called after trace hash checking."""
+    if (report.get('kind') != kind or digest(report.get('limits')) != digest(limits)
+            or report.get('status') != 'completed' or report.get('violations') != []
+            or not isinstance(report.get('samples'),list)
+            or not 2 <= len(report['samples']) <= sample_cap):
+        raise ValueError('Resource report identity/limits/samples invalid')
+    for key in ('plan_sha256','request_sha256','result_sha256'): _sha(report[key])
+    previous = -1
+    for sample in report['samples']:
+        if _reason(sample,limits) or sample['elapsed_seconds'] < previous:
+            raise ValueError('Resource sample violated limits or order')
+        previous = sample['elapsed_seconds']
+    if not any(s['mps_driver_bytes'] > 0 for s in report['samples']):
+        raise ValueError('No MPS driver observation')
+    expected = [_header(report['plan_sha256'],report['request_sha256'],kind,limits)]
     expected += [dict(event='sample',**sample) for sample in report['samples']]
-    expected += [dict(event='terminal',status='completed',result_sha256=report['result_sha256'],reason=None)]
-    if (report['status'] != 'completed' or len(report['samples']) > MAX_SAMPLES
-            or report.get('events',{}).get('path') != 'resource-events.jsonl' or events != expected):
+    bindings = {}
+    if kind == PilotResourceRecorder.KIND:
+        bindings['cache_audit_sha256'] = _sha(report.get('cache_audit_sha256'))
+    expected += [dict(event='terminal',status='completed',result_sha256=report['result_sha256'],reason=None,**bindings)]
+    if report.get('events',{}).get('path') != 'resource-events.jsonl' or events != expected:
         raise ValueError('Resource trace incomplete or differs from summary')
+
+
+def verify_events(report, events):
+    return _verify_events(report,events,kind=QualityResourceRecorder.KIND,
+                          limits=RESOURCE_LIMITS,sample_cap=MAX_SAMPLES)
+
+
+def verify_pilot_events(report, events):
+    return _verify_events(report,events,kind=PilotResourceRecorder.KIND,
+                          limits=PILOT_RESOURCE_LIMITS,sample_cap=PILOT_MAX_SAMPLES)

@@ -276,3 +276,14 @@ retention/accounting change only; no new quality evidence or launch. Versioned
 retention-aware runners and outstanding numerical/pilot checks still precede
 freeze. Follow `TOKENIZER_CHECKPOINT_RETENTION.md`; the current v1 storage guards
 remain intact. Historical closed controllers and the failed CPU fixture stay closed.
+
+## October 28 wider-hybrid pilot preparation
+
+The v2 pilot resource recorder and complete three-pilot evidence binder passed
+204 synthetic tests. Pilot completion now binds the completed tensor/cache audit
+inside its600-second resource record; quality trials retain their separate7,200s
+contract. This is preparation, not new model-quality or real numerical/pilot
+passing evidence. No training launched or checkpoint deletion occurred. Actual
+numerical prerequisites, measured pilots and complete v2 producer/controller
+integration remain outstanding. See `TOKENIZER_WIDE_HYBRID_PREPARATION.md` and
+`tokenizer-evidence/wide-hybrid-preparation-001/pilot-audit-v2-component-review.json`.

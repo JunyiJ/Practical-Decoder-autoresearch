@@ -1,0 +1,53 @@
+{
+  "status": "pilot_resource_and_complete_review_components_tested_no_real_pilot",
+  "created_at": "2026-10-28T17:15:57.429687+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_resources.py": "43292fbe51c555c0af00b233f896dd3d7a7328bb802c2e6e2412a876965b8efe",
+    "src/research/tokenizer_wide_hybrid_retention_audit.py": "cf171a42cb8c9dbba6aaab04bc98b5b3e7ebf382fdb1c0eb2846c0122d44ec72",
+    "src/research/tokenizer_wide_hybrid_pilot_audit_v2.py": "ee1ed807fb6f440d58a1acc65f7c33c4aaed0dc16e384384054e794caf607341",
+    "tests/test_tokenizer_wide_hybrid_pilot_resources.py": "c7c94bd08f2978157a122e2a2e34b4a4f00bb01dfaa10120779c8cd4e015178b",
+    "tests/test_tokenizer_wide_hybrid_pilot_audit_v2.py": "dbfdb701216d89145168d0499446b40ca862173e7145cc22197cf5ae3e9d8206",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-resources-v2-tests.log": "370eecb2d4db55c27bebe2892a223f2a917c5f0f32cf7598bfbe837e0a4aae63",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-resources-v2-guard.json": "4f57bd8e5a97d5a8e5cf3e13bdf6db3dc34763d139447a291ca038e965e8cdf9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-audit-v2-final-tests.log": "8f0928a30c17ffaeb60f9605dd3915cfd6e7919dc8d698e355bff7603ba6ad0b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-audit-v2-final-guard.json": "ea1ab766a8081ad76ca5d6e9a6657892e1b5883510b23ae030308a5e0c02eebd",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-audit-v2-guard.json": "eece54fff7ace3174b67dab55343b7213d63a283fa8c44db9cf01686268fe391",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-audit-v2-tests.log": "573b9fa605e2dbd06d933b689e69a3f8fc5675407db0beb1ae66767c5af8f40b"
+  },
+  "tests": {
+    "initial_resources": 143,
+    "initial_complete_audit": 180,
+    "final": 204
+  },
+  "final_guard": {
+    "elapsed_seconds": 5.186838832683861,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30657888256,
+      "peak_rss_bytes": 239026176
+    },
+    "pid": 73756,
+    "reason": null,
+    "status": "finished"
+  },
+  "findings": [
+    "Pilot resource recorder fixes600-second timeout with unchanged4GiB RSS/6GiB driver/8GiB reserve; separate profile cannot be substituted for7200-second quality evidence.",
+    "Pilot completion binds result and completed tensor/cache audit hashes in both terminal trace and summary; missing or changed cache audit prevents success.",
+    "All three family pilots, both checkpoint endpoints and batch1/8 cache checks are mandatory before generating a candidate cleanup manifest.",
+    "Binder checks numerical traces, request/result/tensor/cache/resource/process provenance, exact original weights, projection geometry/state sizes and complete per-pilot artifact inventories.",
+    "Failure/partial traces, wrong token IDs, holdout/step/EMA mismatches, aliased or changed weights and unbound files block acceptance; synthetic expired pilot exits90 at600 seconds with durable diagnostics."
+  ],
+  "limitations": [
+    "Only synthetic tiny artifacts and observations were tested. No real corpus/model/MPS worker ran; no quality result or numerical/pilot pass is claimed.",
+    "Binding saved reviews does not execute their numerical/tensor/cache audits or grant deletion/dispatch authorization. The future controller must independently bind frozen inputs and enforce full current/future storage, locks, complete inventory and producer caps.",
+    "V2 cache producer must bind the immutable campaign projection copy; the closed v1 producer/controllers remain unchanged and cannot supply full v2 evidence as-is.",
+    "All nine actual numerical cases and actual training-input reviews remain unresolved, as do measured pilots. The failed combined CPU fixture remains closed; no retry occurred.",
+    "Bounded producer wrappers, complete storage gating, controller/audit/cleanup chain integration and v2 inference acceptance remain required before freeze/launch."
+  ],
+  "free_bytes_observed": 30657261568,
+  "full_campaign_required_free_bytes": 30631281412
+}

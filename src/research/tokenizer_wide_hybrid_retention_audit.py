@@ -25,6 +25,8 @@ RESOURCE_LIMITS = dict(rss_limit_bytes=4*1024**3, driver_limit_bytes=6*1024**3,
                        reserve_bytes=RESERVE, timeout_seconds=7200,
                        log_limit_bytes=4*1024**2)
 
+PILOT_RESOURCE_LIMITS = dict(RESOURCE_LIMITS, timeout_seconds=600)
+
 
 def _require(condition, message):
     if not condition:
@@ -58,48 +60,61 @@ def numerical_review(root, reference, context):
     return {reference['path']: reference['sha256'], **traces}
 
 
-def resource_review(report, process, context, request_sha, result_sha, allowance):
+def _resource_review(report, process, context, request_sha, result_sha, allowance, *, kind, limits):
     """Validate the prospective v2 wrapper's terminal observations.
 
     These are sampled observations, not instantaneous memory guarantees. Current
     v1 quality workers do not emit this report; their results cannot satisfy it.
     """
-    _require(report.get('kind') == 'wide_hybrid_trial_resources_v2'
+    _require(report.get('kind') == kind
              and report.get('status') == 'completed'
              and report.get('plan_sha256') == context['plan_sha256']
              and report.get('request_sha256') == request_sha
              and report.get('result_sha256') == result_sha
-             and digest(report.get('limits')) == digest(RESOURCE_LIMITS)
+             and digest(report.get('limits')) == digest(limits)
              and report.get('violations') == [], 'Resource review identity/limits incomplete')
     samples = report.get('samples')
-    _require(isinstance(samples, list) and len(samples) >= 2, 'Resource observations missing')
+    _require(isinstance(samples, list) and 2 <= len(samples) <= limits['timeout_seconds']+3,
+             'Resource observations missing or exceed bound')
     previous = -1
     for row in samples:
         _require(set(row) == {'elapsed_seconds', 'peak_rss_bytes', 'mps_driver_bytes', 'free_bytes'},
                  'Resource observation schema changed')
         t = row['elapsed_seconds']
-        _require(_finite(t) and previous <= t < 7200, 'Resource elapsed time invalid')
+        _require(_finite(t) and previous <= t < limits['timeout_seconds'], 'Resource elapsed time invalid')
         previous = t
         for key in ('peak_rss_bytes', 'mps_driver_bytes', 'free_bytes'):
             _require(type(row[key]) is int and row[key] >= 0, 'Resource byte observation invalid')
-        _require(0 < row['peak_rss_bytes'] < RESOURCE_LIMITS['rss_limit_bytes']
-                 and row['mps_driver_bytes'] < RESOURCE_LIMITS['driver_limit_bytes']
+        _require(0 < row['peak_rss_bytes'] < limits['rss_limit_bytes']
+                 and row['mps_driver_bytes'] < limits['driver_limit_bytes']
                  and row['free_bytes'] >= RESERVE, 'Observed resource limit violated')
     _require(any(r['mps_driver_bytes'] > 0 for r in samples), 'No MPS driver observation')
     _require(process.get('status') == 'completed' and type(process.get('returncode')) is int
              and process['returncode'] == 0 and process.get('error') is None
-             and process.get('reserve_bytes') == RESERVE and process.get('timeout_seconds') == 7200
+             and process.get('reserve_bytes') == RESERVE and process.get('timeout_seconds') == limits['timeout_seconds']
              and process.get('output_limit_bytes') == allowance
-             and process.get('log_limit_bytes') == RESOURCE_LIMITS['log_limit_bytes'],
+             and process.get('log_limit_bytes') == limits['log_limit_bytes'],
              'Serial process did not finish within declared limits')
-    _require(_finite(process.get('elapsed_seconds')) and process['elapsed_seconds'] < 7200
+    _require(_finite(process.get('elapsed_seconds')) and process['elapsed_seconds'] < limits['timeout_seconds']
              and type(process.get('required_free_bytes')) is int
              and process['required_free_bytes'] >= RESERVE, 'Process time/storage contract invalid')
     observation = process.get('observation', {})
     for key in ('free_bytes', 'output_bytes', 'log_bytes'):
         _require(type(observation.get(key)) is int and observation[key] >= 0, 'Process observation missing')
     _require(observation['free_bytes'] >= RESERVE and observation['output_bytes'] <= allowance
-             and observation['log_bytes'] <= RESOURCE_LIMITS['log_limit_bytes'], 'Process resource cap violated')
+             and observation['log_bytes'] <= limits['log_limit_bytes'], 'Process resource cap violated')
+
+
+def resource_review(report, process, context, request_sha, result_sha, allowance):
+    """Quality-only acceptance: the 7,200-second contract cannot be substituted."""
+    return _resource_review(report, process, context, request_sha, result_sha, allowance,
+                            kind='wide_hybrid_trial_resources_v2', limits=RESOURCE_LIMITS)
+
+
+def pilot_resource_review(report, process, context, request_sha, result_sha, allowance):
+    """Pilot-only acceptance: all training/export/cache work must fit 600 seconds."""
+    return _resource_review(report, process, context, request_sha, result_sha, allowance,
+                            kind='wide_hybrid_pilot_resources_v2', limits=PILOT_RESOURCE_LIMITS)
 
 
 def bind_quality_boundary(root, boundary, records, rates, selection, *, context,
