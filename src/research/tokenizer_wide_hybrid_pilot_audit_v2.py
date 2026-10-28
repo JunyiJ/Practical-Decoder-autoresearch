@@ -14,7 +14,7 @@ from .tokenizer_wide_hybrid_pilot_cache_v2 import KIND as CACHE_KIND, attempt_co
 from .tokenizer_wide_hybrid_retention import allocations
 from .tokenizer_wide_hybrid_retention_audit import (
     _require, _finite, _load, numerical_review, pilot_resource_review,
-    VALUE_CHECKS, NONCLAIMS, PILOT_RESOURCE_LIMITS,
+    VALUE_CHECKS, NONCLAIMS, PILOT_RESOURCE_LIMITS, reject_output_failures,
 )
 from .tokenizer_wide_hybrid_retention_receipts import (
     _path, _sha, _check_file, _document, planned_manifest,
@@ -48,6 +48,7 @@ def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
     records=[];pairs={};inodes=set();trial_dirs=[];corpora=set()
     for index,(expected,spec) in enumerate(zip(requests,specs())):
         stem=f'pilots/{index:02d}';trial=_path(root,stem);trial_dirs.append(trial)
+        reject_output_failures(trial)
         _require(not any((trial/name).exists() or (trial/name).is_symlink() for name in
                  ('audit-failure.json','audit-failure.json.tmp','audit-attempt.json.tmp','audit.json.tmp')),
                  'Failed or partial pilot cache audit cannot pass stage review')

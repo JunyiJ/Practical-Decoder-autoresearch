@@ -1,0 +1,50 @@
+{
+  "status": "bounded_validation_result_producer_tested_synthetic_only",
+  "created_at": "2026-10-28T18:17:12.642583+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_evaluation_v2.py": "e75cce41f8310e61d25cbb21e9bdbf39167f5e0de6804706b51cdd7608ea0e8c",
+    "src/research/tokenizer_wide_hybrid_pilot_audit_v2.py": "b75acfdc5c5f29410a76a6923028db6d3776e0d729a0bba48c0c2d852ee3f142",
+    "src/research/tokenizer_wide_hybrid_retention_audit.py": "2e472012a17c4a2e6894b27744981b839862716aa311f90e721feba1f6104cb8",
+    "tests/test_tokenizer_wide_hybrid_evaluation_v2.py": "8d4d324b445a400e179f6bd7c5cf561341fda15d119167d602057591074cd125",
+    "tests/test_tokenizer_wide_hybrid_pilot_audit_v2.py": "167bd16389ad3f90e991f4fb50e6bc02a733f47b5d86984a5a7bbda32fea669f",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "90c2041c6fa971fe38ba015d2a82770f57a113184523a693372d067a9959c171",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-evaluation-v2-final-guard.json": "ce495b56eb2eb7d8e562b63a02168cfad24c2b79a3a4b46eca2c974ca0dd1c0e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-evaluation-v2-final-tests.log": "444716d696026cac40bd88a755a485924e56d8c7c74a2ca2f699ad7c966e73d2",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-evaluation-v2-guard.json": "b20bf5fcdc47fc7da17c0d0c6cb90e9536e40a2e76bf139bbe31822131f36f7a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-evaluation-v2-tests.log": "8c02e76eeaadd4a5b53037530000aea7821db3ee45333660667ce2c19c2dab92"
+  },
+  "tests": {
+    "initial_passed": 49,
+    "final_passed": 255
+  },
+  "final_guard": {
+    "elapsed_seconds": 5.963874584063888,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30645252096,
+      "peak_rss_bytes": 361070592
+    },
+    "pid": 76802,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30645084160,
+  "findings": [
+    "The evaluation producer accepts only a declared pilot/quality slot request, hash-bound completed training/export outputs, exact raw/H200 locations, summary, corpus and training contract. Strict MPS is required; no CPU fallback branch or CLI exists.",
+    "Each endpoint owns and releases its CPU payload, rebuilt tokenizer loader and model before the next endpoint. Model state finiteness, checkpoint config/step/layout, raw training contract, H200 parent/half-life and inference-only semantics are checked. Tokenizer and exact96 training token IDs are checked before model allocation.",
+    "Validation alone uses128 context, batch8 and2048-token blocks; exact34278 targets and111536 bytes plus score arithmetic are checked. The existing descriptive H200 ROMEO sample settings are preserved and are not a selector. No test_data field is accessed.",
+    "Bounded immutable attempt/result/failure records preserve changing-input and output-cap failures and prevent retry. Input hashes and STOP are rechecked before and after endpoint operations and after result publication.",
+    "Pilot and quality stage binders now reject any failed or partial training/evaluation output even if supplied in the complete evidence inventory. This prevents a post-publication failure from being accepted merely because a result file exists.",
+    "Synthetic tests used actual tiny checkpoint files and fake MPS/model/validation/sample operations; weak-reference checks verified serial model release. Coverage, bytes, tokenizer, tokens, nonfinite tensors, bad parent lineage, changed input, missing MPS/fallback, generation failure, bounded result overflow and retry rejection passed."
+  ],
+  "limitations": [
+    "No research corpus training, actual MPS validation/cache operation, nine-case numerical optimizer/update/resume/EMA suite, pilot or quality trial ran. These tests are preparation only.",
+    "The caller still must bind the complete frozen campaign and source/runtime, actual numerical/input reviews, full remaining storage, inherited locks and independent resource guard. This function is not a worker launcher or dispatch authorization.",
+    "The complete v2 worker must connect training/export, this evaluation producer, cache audit and resource completion, persist all provenance references and run stage/inference acceptance. Mandatory successful evaluation-attempt provenance binding into that complete worker/controller remains to be wired; current stage checks reject failures and continue their independent result/tensor/resource audits.",
+    "Full raw checkpoint loading and wider export/evaluation memory feasibility remain unproven. No research checkpoint deletion, storage-guard bypass, plan freeze, failed numerical-fixture retry or closed-campaign rerun occurred."
+  ]
+}

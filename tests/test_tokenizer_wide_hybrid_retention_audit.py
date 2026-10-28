@@ -215,3 +215,11 @@ def test_partial_resource_trace_is_not_a_completed_resource_review(tmp_path):
     args['evidence'][report_name]=updated['sha256']
     with pytest.raises(ValueError,match='trace incomplete'):
         audit.bind_quality_boundary(**args)
+
+
+@pytest.mark.parametrize('name',audit.OUTPUT_FAILURES)
+def test_bound_failed_training_or_evaluation_cannot_pass_quality(tmp_path,name):
+    args=fixture(tmp_path)
+    ref=write(tmp_path,'trial-0/'+name,{'status':'failed'})
+    args['evidence'][ref['path']]=ref['sha256']
+    with pytest.raises(ValueError,match='Failed or partial'):audit.bind_quality_boundary(**args)

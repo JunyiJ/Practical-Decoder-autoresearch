@@ -28,6 +28,17 @@ RESOURCE_LIMITS = dict(rss_limit_bytes=4*1024**3, driver_limit_bytes=6*1024**3,
 PILOT_RESOURCE_LIMITS = dict(RESOURCE_LIMITS, timeout_seconds=600)
 
 
+OUTPUT_FAILURES = tuple(name+suffix for name in
+    ('training-failure.json','evaluation-failure.json') for suffix in ('','.tmp')) + (
+    'training-attempt.json.tmp','training-outputs.json.tmp','training-summary.json.tmp',
+    'metrics.jsonl.tmp','evaluation-attempt.json.tmp','result.json.tmp')
+
+
+def reject_output_failures(trial):
+    _require(not any((trial/name).exists() or (trial/name).is_symlink() for name in OUTPUT_FAILURES),
+             'Failed or partial training/evaluation output cannot pass stage review')
+
+
 def _require(condition, message):
     if not condition:
         raise ValueError(message)
@@ -162,6 +173,7 @@ def bind_quality_boundary(root, boundary, records, rates, selection, *, context,
     for index in sorted(indices):
         trial = _path(root, trials[index])
         stem = trials[index]
+        reject_output_failures(trial)
         names = {k: stem+'/'+v for k, v in dict(request='request.json', result='result.json',
             tensor='tensor-audit.json', resource='resource-audit.json',
             process='process/process.json', log='process/worker.log').items()}

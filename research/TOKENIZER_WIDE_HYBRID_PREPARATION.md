@@ -1210,3 +1210,35 @@ measured MPS pilots remain outstanding. No corpus training, research checkpoint
 deletion, plan freeze or failed numerical-fixture retry occurred.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/training-outputs-v2-component-review.json`.
+
+## October 28 bounded validation and result producer
+
+The v2 evaluation producer now consumes a hash-bound completed training/export
+pair for a declared slot. It checks request/config, summary, corpus, tokenizer,
+96 training IDs and raw/H200 lineage, then evaluates one endpoint at a time.
+Payload, loader and model are released between endpoints. Validation retains the
+128-context/batch8/2048-block workload and exact34278 targets/111536 bytes; the
+H200 descriptive sample retains the existing settings. No test split is scored.
+
+Attempt, result and failure publication use bounded immutable metadata writes.
+Input hashes and STOP are checked around endpoint work and after result
+publication. An attempt or failure blocks retry. Pilot and quality stage review
+now rejects failed/partial training or evaluation outputs even when those files
+are included in the evidence inventory. Successful evaluation-attempt provenance
+must still be bound by the complete future worker/controller alongside the
+independent result, tensor, cache and resource audits.
+
+Validation:49 initial and255 final checks passed, the final suite in5.40s with
+peak RSS361,070,592bytes under180s/4GiB/8GiB outer guards. Tests used tiny synthetic
+checkpoint files and mocked MPS/model/scoring/sampling operations, with serial
+release checks, invalid provenance/coverage/lineage, changed inputs, failed
+sampling, output-cap overflow and retry rejection. No actual wider validation,
+quality measurement or feasibility conclusion follows from these tests.
+
+Next compose the explicit v2 pilot worker from training/export, evaluation,
+cache and resource producers with full campaign/storage/prerequisite binding;
+then complete controller/stage/cleanup-chain/inference wiring. The actual nine
+numerical/input reviews and measured pilots remain outstanding. No research
+weights were deleted, no plan was frozen and no failed fixture was retried.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/evaluation-v2-component-review.json`.

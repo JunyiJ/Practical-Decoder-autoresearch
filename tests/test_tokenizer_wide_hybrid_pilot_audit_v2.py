@@ -164,3 +164,11 @@ def test_bound_failure_or_partial_cache_evidence_still_blocks_stage(tmp_path,nam
     ref=write(tmp_path,'pilots/00/'+name,{'status':'failed'})
     args['evidence'][ref['path']]=ref['sha256']
     with pytest.raises(ValueError,match='Failed or partial'):audit.bind_pilot_boundary(**args)
+
+
+@pytest.mark.parametrize('name',shared.OUTPUT_FAILURES)
+def test_bound_failed_training_or_evaluation_cannot_pass_pilots(tmp_path,name):
+    args=fixture(tmp_path)
+    ref=write(tmp_path,'pilots/00/'+name,{'status':'failed'})
+    args['evidence'][ref['path']]=ref['sha256']
+    with pytest.raises(ValueError,match='Failed or partial'):audit.bind_pilot_boundary(**args)
