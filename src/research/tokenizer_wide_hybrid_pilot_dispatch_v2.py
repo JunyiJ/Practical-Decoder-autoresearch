@@ -34,6 +34,8 @@ class _Guard:
     The existing worker recorder additionally enforces MPS driver memory; the
     parent process cap includes child import/preflight/training/evaluation time.
     """
+    KIND=KIND
+
     def __init__(self,writer,slot,phase,seconds):
         self.writer=writer;self.name=f'control/pilot-{phase}-{slot:02d}.json'
         self.limits=dict(rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3,timeout_seconds=seconds)
@@ -42,7 +44,7 @@ class _Guard:
     def _write(self,status,reason=None):
         elapsed=time.monotonic()-self.started;sample=observation(self.writer.root)
         why=violation(sample,elapsed,**self.limits)
-        record=dict(kind=KIND,status='failed' if why else status,pid=os.getpid(),limits=self.limits,
+        record=dict(kind=self.KIND,status='failed' if why else status,pid=os.getpid(),limits=self.limits,
                     elapsed_seconds=elapsed,observation=sample,reason=why or reason)
         self.writer.publish_json(self.name,record,replace=self.created);self.created=True
         return why

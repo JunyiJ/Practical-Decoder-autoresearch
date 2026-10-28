@@ -101,7 +101,7 @@ def _frozen(writer,plan_sha,projection_ref):
     return bound
 
 
-def _context(writer,review,review_ref,*,completion_ref=None):
+def _context(writer,review,review_ref,*,completion_ref=None,appended_inventory=None):
     """Frozen identity recheck that never requires intentionally removed weights."""
     evidence=writer.root/'evidence';bound=_frozen(writer,review['plan_sha256'],review['projection_ref'])
     _require(digest(bound['files'])==digest(review['frozen_files'])
@@ -112,6 +112,9 @@ def _context(writer,review,review_ref,*,completion_ref=None):
     if completion_ref is not None:
         path=_path(evidence,completion_ref['path']);_document(evidence,completion_ref)
         inventory[completion_ref['path']]=dict(size=path.stat().st_size,sha256=completion_ref['sha256'])
+    if appended_inventory is not None:
+        _require(not set(appended_inventory)&set(inventory),'Appended evidence overlaps protected history')
+        inventory.update(appended_inventory)
     candidates={e['path'] for e in review['stage']['manifest']['delete']}
     actual=_scan(evidence,evidence/'.retention/pilot')
     _require(actual<=set(inventory) and set(inventory)-candidates<=actual,'Boundary protected inventory changed')
@@ -187,13 +190,8 @@ def cleanup_pilot_boundary(writer,plan_sha256,*,projection_ref):
         raise
 
 
-def verify_pilot_boundary(writer,plan_sha256,completion_ref):
-    """Read-only first-boundary verifier, before any quality request is created.
-
-    Requires an outer time/memory guard and both locks. Reconstructs the manifest
-    from protected pre-deletion records, then checks the complete deletion chain.
-    It neither reloads deleted weights nor authorizes a subsequent worker.
-    """
+def _receipt(writer,plan_sha256,completion_ref):
+    """Validate the original complete pilot boundary identity, without tensors."""
     evidence=writer.root/'evidence';_sha(plan_sha256)
     _require(completion_ref['path']==BASE+'-complete.json','Exact completion reference required')
     for suffix in ('-failure.json','-failure.json.tmp','-review.json.tmp','-complete.json.tmp','-attempt.json.tmp'):
@@ -214,6 +212,18 @@ def verify_pilot_boundary(writer,plan_sha256,completion_ref):
     manifest=planned_manifest(**_inputs(stage))
     _require(digest(manifest)==digest(stage['manifest'])
              and digest(complete['chain_stage']['manifest'])==digest(manifest),'Pilot manifest reconstruction differs')
+    return complete,review,stage,ref
+
+
+def verify_pilot_boundary(writer,plan_sha256,completion_ref):
+    """Read-only first-boundary verifier, before any quality request is created.
+
+    Requires an outer time/memory guard and both locks. Reconstructs the manifest
+    from protected pre-deletion records, then checks the complete deletion chain.
+    It neither reloads deleted weights nor authorizes a subsequent worker.
+    """
+    evidence=writer.root/'evidence'
+    complete,review,stage,ref=_receipt(writer,plan_sha256,completion_ref)
     identity=_context(writer,review,ref,completion_ref=completion_ref)
     _require(complete['chain_stage']['context_sha256']==digest(identity),'Cleanup execution context differs')
     bound=_frozen(writer,plan_sha256,review['projection_ref'])
@@ -225,3 +235,41 @@ def verify_pilot_boundary(writer,plan_sha256,completion_ref):
     snapshot(writer.root)
     return dict(chain_stage=complete['chain_stage'],records=stage['records'],checkpoint_pairs=stage['checkpoint_pairs'],
         chain=chain,storage=storage,pilot_boundary_verified=True,dispatch_authorized=False)
+
+
+
+def verify_pilot_history(writer,plan_sha256,completion_ref,*,current_inventory,stages):
+    """Verify retained pilot evidence after quality files have been appended.
+
+    Caller owns both locks and an outer resource guard. Unlike the strict idle
+    first-boundary verifier this grants no current storage or quality-stage
+    acceptance. All later cleanup receipts must be supplied and pass the chain.
+    The original pilot context remains byte-identical; deleted tensors stay gone.
+    """
+    _require(isinstance(writer,MetadataWriter),'Bounded writer required')
+    evidence=writer.root/'evidence';snapshot(writer.root)
+    complete,review,stage,ref=_receipt(writer,plan_sha256,completion_ref)
+    _require(isinstance(stages,list) and bool(stages)
+             and digest(stages[0])==digest(complete['chain_stage']),'Original pilot chain entry required')
+    baseline=set(review['inventory'])|{ref['path'],completion_ref['path']}
+    appended={}
+    for name,entry in current_inventory.items():
+        if name in baseline or name.startswith('.retention/pilot/'):continue
+        parts=Path(name).parts
+        allowed=(len(parts)>=3 and parts[0]=='quality' and parts[1] in {f'{i:02d}' for i in range(24)})
+        allowed=allowed or (len(parts)==2 and parts[0]=='meta' and name.endswith('.json') and
+            (parts[1].startswith(('quality-','lr-boundary-','rank-boundary-')) or
+             parts[1] in ('lr-selection.json','rank-selection.json')))
+        allowed=allowed or (len(parts)==3 and parts[0]=='.retention' and parts[1] in ('lr','rank'))
+        _require(allowed and not name.endswith('.tmp') and 'failure' not in parts[-1],
+                 'Unreviewed or failed append outside quality continuation namespace')
+        appended[name]=entry
+    identity=_context(writer,review,ref,completion_ref=completion_ref,appended_inventory=appended)
+    _require(complete['chain_stage']['context_sha256']==digest(identity),'Pilot historical context differs')
+    bound=_frozen(writer,plan_sha256,review['projection_ref'])
+    _require(_dispatches(writer,plan_sha256,bound,stage)==review['dispatch'],'Protected pilot dispatch changed')
+    chain=recheck_chain(evidence,stages,current_inventory)
+    snapshot(writer.root)
+    return dict(chain_stage=complete['chain_stage'],records=stage['records'],checkpoint_pairs=stage['checkpoint_pairs'],
+                chain=chain,pilot_history_verified=True,quality_audits_bound=False,storage_verified=False,
+                dispatch_authorized=False)

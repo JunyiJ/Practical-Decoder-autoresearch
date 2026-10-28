@@ -1,0 +1,75 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T19:22:47.517694+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-startup-v2-guard.json": "938bc1a6ce214e0cf1074ef4fcd77a28ec22cca213ba38fcb37e00b6c6b9842a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-startup-v2-regression-guard.json": "282386b1e5aeb7c7b0853fbf7ed873eb5ef4f7c51340cccf961e32ac39408373",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-startup-v2-regression-tests.log": "515a2e3282ef0775713e806196bd90304d85982800e15d252122e4e207ba34a8",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-startup-v2-tests.log": "089cf0bccabc6172195b7dda060c89a4c3b399385fd8f5e6271eec9d93b62db1",
+    "src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py": "039fe82730c0192e27b57d3b44ab649be8012660f0f3db12b952e633bd5291a8",
+    "src/research/tokenizer_wide_hybrid_pilot_dispatch_v2.py": "f3da9d2f7283e6a82168997cf21c56a82c9c2200fc631c6743685932ea1d930d",
+    "src/research/tokenizer_wide_hybrid_quality_startup_v2.py": "8a6c7d7cf7316fdc4a308ec5775bc691a8647000b48b44ff5124eefbb945978c",
+    "tests/test_tokenizer_wide_hybrid_quality_startup_v2.py": "830320c88812dacffa92389f9fb8e5780d16c238f4514452d0b7b2d31d814a1e"
+  },
+  "findings": [
+    "A separate historical pilot verifier accepts declared appended quality metadata while retaining original complete boundary identity, full frozen/numerical context, protected pilot file hashes, startup/dispatch/guard evidence, reconstructed manifest and exact cleanup chain. It never reopens deleted tensors or claims quality audits/storage/dispatch. The original strict immediate-post-cleanup verifier remains unchanged in scope.",
+    "The bounded first-quality transition covers only slot0. It requires the original complete pilot receipt, frozen first LR request and projection, then runs the unchanged complete remaining-panel storage gate before creating any quality request directory. Attempt and failure records persist; no existing attempt retries.",
+    "The read-only predispatch verifier permits exactly one request and no process files, later slots or checkpoints. It rechecks the pilot history, immutable inventory, frozen request, finished1800s/4GiB/8GiB preparation guard and independently reconstructed full storage requirement. The next-step-only or8GiB-only threshold is rejected.",
+    "At the first quality boundary, the conservative full-panel requirement remains30,631,281,412bytes. Exact-threshold synthetic tests pass and one-byte-below tests reject before creating a quality directory. Occupied capacity is zero after verified pilot deletion; planned cleanup alone grants no space credit.",
+    "All57 new transition/pilot-boundary tests and190 surrounding dispatch/startup/storage/chain/cleanup regressions passed. Tests reject changed protected records, incomplete journals, recreated weights, invalid guards, unknown/failed appends, changed requests, new process files and smaller claimed storage totals."
+  ],
+  "free_bytes_observed": 30648766464,
+  "guards": [
+    {
+      "elapsed_seconds": 36.03364112507552,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30649307136,
+        "peak_rss_bytes": 241713152
+      },
+      "pid": 80618,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "elapsed_seconds": 8.72769337426871,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30649040896,
+        "peak_rss_bytes": 238321664
+      },
+      "pid": 80867,
+      "reason": null,
+      "status": "finished"
+    }
+  ],
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_first_quality_startup_v2_component_review",
+  "limitations": [
+    "Full scientific plan/numerical gates and pilot dispatch are mocked in synthetic fixtures. Tiny fixture checkpoints are deleted by the real tested pilot cleanup executor; no research checkpoint is touched. The actual bounded writer/locks, receipts, inventory, storage arithmetic and transition code execute.",
+    "The new transition handles only the first LR request, not later quality prefixes, saved LR/rank selection handoff, child process entry, fresh-confirmation acceptance or inference. There is no quality launch CLI or automatic continuation.",
+    "The nine real rank-policy numerical/input and measured-pilot prerequisites remain unresolved. No MPS or research training launched, no closed controller or failed combined CPU numerical fixture reran, and the holdout remains closed. The27-trajectory campaign is still unfrozen."
+  ],
+  "status": "synthetic_transition_tests_passed_campaign_unfrozen",
+  "validation": [
+    {
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-startup-v2-tests.log",
+      "passed": 57,
+      "seconds": 35.64
+    },
+    {
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-startup-v2-regression-tests.log",
+      "passed": 190,
+      "seconds": 8.32
+    }
+  ]
+}

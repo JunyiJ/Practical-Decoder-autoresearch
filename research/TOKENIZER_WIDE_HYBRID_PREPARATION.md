@@ -1497,3 +1497,38 @@ controllers remain closed. No research checkpoint deletion or training launch
 occurred. The27-trajectory campaign remains unfrozen with full storage gates.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-tensors-v2-component-review.json`.
+
+
+## October 28 first quality request and historical pilot receipts
+
+A separate historical pilot verifier now accepts declared quality additions
+while checking the original frozen context, complete pilot boundary receipt,
+protected file hashes, dispatch/guard provenance and cumulative cleanup chain.
+It does not reload deleted weights or grant quality-audit, storage or dispatch
+credit. The strict immediate-post-cleanup verifier retains its original scope;
+new metadata still fails that stricter API.
+
+The bounded first-quality transition handles only LR slot0. After verifying
+pilot history it runs the unchanged complete remaining-panel storage gate before
+creating a quality request directory. Its immutable attempt/result/failure records
+and1800s/4GiB RSS/8GiB reserve preparation guard forbid retries. The read-only
+predispatch check permits exactly the first request, rejects any process files,
+new weights or later slots, rechecks all history and reconstructs the full
+required-free amount independently. No child entry or launch is implemented.
+
+Validation:57 transition/pilot-boundary tests passed in35.64s;190 surrounding
+dispatch/startup/storage/chain/cleanup tests passed in8.32s. These use synthetic
+pilot dispatch/numerical gates with actual bounded files, locks, receipt-chain
+checks and cleanup of tiny disposable fixtures. Exact30,631,281,412-byte free
+space passes and one byte less rejects before request creation. That full-panel
+requirement remains unchanged after pilot deletion; next-trial-only space is
+insufficient. Original protected metadata survives, and recreated deleted weights,
+changed journals, failed/partial appends and tampered storage totals are rejected.
+
+Next implement later quality prefix review, selection-aware startup and process
+handoff, LR/rank boundary cleanup and inference orchestration. The real nine-case
+numerical/input and measured-pilot prerequisites remain unresolved. No research
+checkpoint deletion, training/MPS launch or failed-numerical retry occurred. The
+27-trajectory campaign remains unfrozen, with closed campaigns and test holdout.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-startup-v2-component-review.json`.
