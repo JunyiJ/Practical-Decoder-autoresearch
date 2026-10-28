@@ -25,6 +25,7 @@ from .tokenizer_wide_hybrid_pilot_execution_v2 import _inputs
 from .tokenizer_wide_hybrid_training_outputs import TrainingOutputs
 from .tokenizer_wide_hybrid_evaluation_v2 import evaluate_and_publish
 from .tokenizer_wide_hybrid_campaign_resources import CampaignQualityResourceRecorder
+from .tokenizer_wide_hybrid_quality_tensors_v2 import review_and_publish as review_tensors
 from .tokenizer_wide_hybrid_retention_audit import reject_output_failures
 
 KIND='wide_hybrid_quality_execution_v2'
@@ -54,7 +55,7 @@ def execute_quality_outputs(writer,slot,plan_sha256,request_sha256,*,projection_
     allowance=allocations(projection)[request['spec']['family'],request['spec']['divisor']]
     forbidden=('worker-attempt.json','worker-outputs.json','worker-failure.json',
                'resource-events.jsonl','resource-audit.json','training-attempt.json',
-               'training-outputs.json','evaluation-attempt.json','result.json','tensor-audit.json')
+               'training-outputs.json','evaluation-attempt.json','result.json','tensor-attempt.json','tensor-audit.json','tensor-failure.json')
     with writer._serialized():
         reject_output_failures(trial)
         _require(not any((trial/(n+s)).exists() for n in forbidden for s in ('','.tmp')),
@@ -104,6 +105,10 @@ def execute_quality_outputs(writer,slot,plan_sha256,request_sha256,*,projection_
                      and evaluation.get('training_token_sha256')==plan['training_token_sha256'],
                      'Successful evaluation attempt provenance differs')
             refs['evaluation_attempt']=dict(path=stem+'/evaluation-attempt.json',sha256=file_digest(ep))
+            refs['tensor']=review_tensors(writer,slot,dict(request=request,request_sha256=request_sha256,
+                result_sha256=refs['result']['sha256'],training_contract=contract),projection_ref=projection_ref,
+                resources=resources,training_token_sha256=plan['training_token_sha256'])
+            recheck()
             resources.mark_success(refs['result']['sha256'])
         refs['resources']=dict(path=stem+'/resource-audit.json',sha256=file_digest(trial/'resource-audit.json'))
         recheck()

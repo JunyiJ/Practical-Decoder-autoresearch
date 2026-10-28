@@ -45,6 +45,7 @@ def _worker_review(root,stem,index,context,request,result,pair,bound,projection_
     artifacts=dict(training_outputs=ref(names['training']),evaluation_attempt=ref(names['evaluation']),
                    result=ref(stem+'/result.json'),resources=ref(stem+'/resource-audit.json'))
     if stage=='pilots':artifacts['cache']=ref(stem+'/audit.json')
+    else:artifacts['tensor']=ref(stem+'/tensor-audit.json')
     _require(digest(worker.get('artifacts'))==digest(artifacts)
              and digest(worker.get('attempt'))==digest(ref(names['attempt'])),'Worker producer references differ')
     expected_attempt=dict(kind=kind,status='started',slot=index,

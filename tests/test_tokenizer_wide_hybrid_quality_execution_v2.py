@@ -83,6 +83,12 @@ def case(writer,monkeypatch,request):
         path=writer.publish_json('evidence/'+stem+'/result.json',result)
         return dict(path=stem+'/result.json',sha256=file_digest(path))
     monkeypatch.setattr(execution,'evaluate_and_publish',evaluate)
+    def tensor(w,index,binding,*,projection_ref,resources,training_token_sha256):
+        order.append('tensor');assert resources.thread.is_alive() and not resources.stop.is_set()
+        assert resources.result_sha is None and index==slot and projection_ref==pref
+        path=writer.publish_json('evidence/'+stem+'/tensor-audit.json',{'synthetic':True})
+        return dict(path=stem+'/tensor-audit.json',sha256=file_digest(path))
+    monkeypatch.setattr(execution,'review_tensors',tensor)
     return SimpleNamespace(writer=writer,trial=trial,args=(writer,slot,plansha,rqsha),pref=pref,
                            order=order,bound=bound,contract=contract)
 
@@ -92,11 +98,11 @@ def run(case):return execution.execute_quality_outputs(*case.args,projection_ref
 
 def test_composition_orders_all_phases_with_bounded_outputs_and_resource_binding(case):
     ref=run(case)
-    assert case.order==['bind','inputs','train','export','evaluate','bind']
+    assert case.order==['bind','inputs','train','export','evaluate','tensor','bind']
     report=json.loads((case.trial/'worker-outputs.json').read_text())
     assert ref['sha256']==file_digest(case.trial/'worker-outputs.json')
     assert report['dispatch_authorized'] is False and report['stage_audits_bound'] is False
-    assert set(report['artifacts'])=={'training_outputs','evaluation_attempt','result','resources'}
+    assert set(report['artifacts'])=={'training_outputs','evaluation_attempt','result','resources','tensor'}
     resource=json.loads((case.trial/'resource-audit.json').read_text())
     assert resource['status']=='completed' and resource['limits']['timeout_seconds']==7200
     assert resource['result_sha256']==report['artifacts']['result']['sha256']
@@ -104,10 +110,10 @@ def test_composition_orders_all_phases_with_bounded_outputs_and_resource_binding
     with pytest.raises(ValueError,match='retried'):run(case)
 
 
-@pytest.mark.parametrize('phase',['inputs','train','export','evaluate','end_bind'])
+@pytest.mark.parametrize('phase',['inputs','train','export','evaluate','tensor','end_bind'])
 def test_phase_failure_is_terminal_and_preserves_preceding_outputs(case,monkeypatch,phase):
     names=dict(inputs='_inputs',train='run_training',export='export_averaged_checkpoint',
-               evaluate='evaluate_and_publish',end_bind='bind_campaign')
+               evaluate='evaluate_and_publish',tensor='review_tensors',end_bind='bind_campaign')
     previous=getattr(execution,names[phase]);calls=0
     def fail(*a,**kw):
         nonlocal calls
@@ -121,7 +127,7 @@ def test_phase_failure_is_terminal_and_preserves_preceding_outputs(case,monkeypa
     resource=json.loads((case.trial/'resource-audit.json').read_text())
     assert resource['status']==('completed' if phase=='end_bind' else 'failed')
     assert (case.trial/'worker-attempt.json').exists()
-    if phase in ('evaluate','end_bind'):
+    if phase in ('evaluate','tensor','end_bind'):
         assert len(list((case.trial/'checkpoints').glob('*.pt')))==2
     monkeypatch.setattr(execution,names[phase],previous)
     with pytest.raises(ValueError):run(case)
@@ -166,9 +172,10 @@ def test_frozen_options_do_not_accept_arbitrary_request_or_ambiguous_binding(cas
     assert 'train' not in case.order
 
 
-def test_scientific_completion_does_not_replace_independent_tensor_review(case):
+def test_body_does_not_perform_selection_or_stage_acceptance(case):
     run(case)
-    assert not (case.trial/'tensor-audit.json').exists()
+    report=json.loads((case.trial/'worker-outputs.json').read_text())
+    assert not report['stage_audits_bound'] and not report['adopted']
     assert not (case.writer.root/'evidence/meta/lr-selection.json').exists()
 
 

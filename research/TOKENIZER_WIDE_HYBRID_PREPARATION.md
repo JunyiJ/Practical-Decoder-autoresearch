@@ -1460,3 +1460,40 @@ and historical controllers remain closed. The27-trajectory plan stays unfrozen;
 full storage must be rechecked at real transitions.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-producers-v2-component-review.json`.
+
+
+## October 28 v2 bounded quality tensor audit
+
+The quality body now runs the existing independent tensor/export checker through
+a bounded publisher before marking its resource interval successful. The
+publisher requires the active matching quality watchdog and exact request,
+training/export receipts, evaluation contract/token lineage and projection copy.
+It preserves an immutable attempt and all input hashes, checks the actual mapped
+raw/H200 tensors, rechecks STOP and inputs, and publishes the report under the
+existing metadata cap. The7200s/4GiB RSS/6GiB driver/8GiB reserve limits are unchanged.
+No checkpoint weights are rewritten. Failures and partial reports remain terminal.
+
+Worker completion binds the tensor report SHA. The v2 LR/rank stage wrapper now
+requires its producer provenance and rejects missing inputs, changed plan or
+contract, overstated numerical claims, failure markers and partial tensor audits.
+Exact export equality establishes agreement with stored EMA; it does not prove
+the EMA recurrence or optimizer continuation. Those independent prerequisites
+remain required. Large checkpoint hashing does not hold the metadata lock.
+
+Validation: the initial suite had230 passes and one missing-evidence exception
+contract failure. The missing file was rejected, but an explicit input check now
+raises the intended validation error; the failed log remains retained. The final
+combined suite passed481 tests in34.30s, peak RSS247,119,872bytes under the180s CPU
+guard. Tiny real mmap tensor fixtures reject nonfinite values, wrong EMA and
+changed buffers, and preserve raw inputs. Further tests cover STOP/tampering,
+inactive or mismatched guards, metadata caps, producer binding and existing pilot
+controller paths. Wide metadata and MPS observations are mocked; no actual wide
+numerical/MPS success or model-quality result is claimed.
+
+Next integrate quality startup/selection-aware dispatch, LR/rank cleanup and
+inference orchestration. Actual nine-case numerical/input and measured-pilot
+prerequisites remain unresolved; the failed numerical fixture and closed
+controllers remain closed. No research checkpoint deletion or training launch
+occurred. The27-trajectory campaign remains unfrozen with full storage gates.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-tensors-v2-component-review.json`.

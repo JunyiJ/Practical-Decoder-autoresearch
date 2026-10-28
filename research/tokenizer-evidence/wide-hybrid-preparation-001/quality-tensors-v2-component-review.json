@@ -1,0 +1,65 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T19:14:45.825142+00:00",
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-tensors-v2-guard.json": "910cdf5e785532dbf669a5bc7a8cd7b89a5c051a82715d4e4ded1144d0663ce7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-tensors-v2-integration-guard.json": "54609eddec86d65f37d97cbd776883521fcbdb377e8915cd0c746e5daa668e78",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-tensors-v2-integration-tests.log": "890bb85214842f6e366b5cf6409304eb6a451c0704a059e0b26596d0625cf8b5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-tensors-v2-tests.log": "809b2a9de1ccd63df648befce47a3e490784680f487b583361cc00f4a8513a4f",
+    "src/research/tokenizer_wide_hybrid_pilot_audit_v2.py": "12ac5f87cede99e089c424c8daa7db4af1e9e662f596e2ee76414d8c7d1668f6",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "55d4b2bc6af9d48caaaf42f644ec435b934e53c403f0c05a23c78915d0bef0d3",
+    "src/research/tokenizer_wide_hybrid_quality_execution_v2.py": "4adcf9ee6fc0a30de9ab6c31f72124177c7750b1ebb61312f1b582bbae189fb1",
+    "src/research/tokenizer_wide_hybrid_quality_tensors_v2.py": "75fe5466de30e0a6b5e3b94253f851ec0e5148402627bb6442016a5d166b63dd",
+    "src/research/tokenizer_wide_hybrid_retention_audit.py": "485274c5be044b4896bfb2b1bb5391f32d07f3eb7903e37f5651808e7d39d82d",
+    "tests/test_tokenizer_wide_hybrid_quality_audit_v2.py": "d6f61c82648e270539494382501ae195d512dc3424793341889d8feb8a3d5717",
+    "tests/test_tokenizer_wide_hybrid_quality_execution_v2.py": "06fed14d59e415d5459c6a82192abe3317eb213799162884b25e4a18298862d8",
+    "tests/test_tokenizer_wide_hybrid_quality_tensors_v2.py": "6dabb61a2c9c4abb8b4df75554d45b750cc1fd549963a610e3b5971e54b95c37",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "e83cb70cb90208a9a1c125a3464533c94ab36129ac630e29e5d2e9b25ee9cead"
+  },
+  "final_guard": {
+    "elapsed_seconds": 35.41453554201871,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30655414272,
+      "peak_rss_bytes": 247119872
+    },
+    "pid": 80159,
+    "reason": null,
+    "status": "finished"
+  },
+  "findings": [
+    "A new bounded tensor-audit publisher requires the active matching quality recorder, exact slot request, completed bounded training receipts, evaluation contract/token lineage, distinct canonical raw/H200 files and a bound projection copy. The inherited7200s/4GiB RSS/6GiB MPS driver/8GiB reserve interval continues through tensor checking; no new time or memory allowance is granted.",
+    "The publisher invokes the existing read-only metadata/meta-device and mmap CPU tensor checker. It records immutable attempt/producer input hashes, rechecks STOP, checkpoints and protected metadata, and writes a bounded tensor-audit.json. Exceptions retain failure/partial artifacts; attempts never retry. Large file hashing stays outside the metadata namespace lock so the resource observer can publish.",
+    "The quality body now performs this audit before resource success and binds its SHA in the worker completion. The v2 LR/rank stage wrapper verifies tensor producer provenance; missing evidence, incorrect plan/contract, changed inputs, overstated numerical claims, failure markers and partial audits prevent acceptance.",
+    "Tiny real mmap tensor fixtures verify finiteness, exact exported EMA values and persistent buffers. Synthetic negative fixtures catch NaN, wrong EMA, changed buffers, input/attempt mutation, STOP, invalid resource intervals and oversized reports. Publication never deletes or rewrites checkpoint inputs.",
+    "The initial suite rejected missing training-output evidence with a generic KeyError rather than the explicit ValueError contract. An explicit required-input check fixes the validation interface; the failed log is retained. The final481-test suite includes quality producer/stage tests and pilot dispatch/boundary/resource/writer regressions."
+  ],
+  "free_bytes_observed": 30655668224,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_quality_tensor_producer_v2_component_review",
+  "limitations": [
+    "Actual wide-model metadata checks and MPS observations are mocked in tensor-publisher fixtures. Small tensor value/mmap operations, bounded publication, guards and provenance rejection run for real. Composition fixtures mock scientific training/evaluation/tensor phases. These tests do not establish real numerical continuation, optimizer correctness, EMA recurrence, cache behavior or model quality.",
+    "No research training or MPS pilot launched, no research checkpoint was deleted, no closed campaign or failed combined CPU numerical fixture was rerun, and the test holdout remains closed.",
+    "Quality startup/selection-aware dispatch, complete LR/rank cleanup and inference orchestration remain unintegrated. The nine numerical/input and measured-pilot prerequisites remain unresolved. The full27-trajectory plan remains unfrozen and current full storage must be checked before any real transition."
+  ],
+  "status": "synthetic_component_tests_passed_campaign_unfrozen",
+  "storage_observation_authorizes_launch": false,
+  "validation": [
+    {
+      "failed": 1,
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-tensors-v2-tests.log",
+      "passed": 230,
+      "seconds": 12.62
+    },
+    {
+      "failed": 0,
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-tensors-v2-integration-tests.log",
+      "passed": 481,
+      "seconds": 34.3
+    }
+  ]
+}

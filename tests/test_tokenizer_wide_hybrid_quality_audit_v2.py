@@ -61,3 +61,20 @@ def test_protected_data_and_failed_outputs_block(tmp_path,bad):
     elif bad=='foreign_slot':args['trials'][0]='quality/01'
     else:(tmp_path/'quality/00/checkpoints/raw.pt').write_bytes(b'changed')
     with pytest.raises(ValueError):bind(tmp_path,args)
+
+
+@pytest.mark.parametrize('bad',['missing_attempt','wrong_plan','wrong_contract','claim','files','failure','partial'])
+def test_tensor_producer_provenance_cannot_be_replaced_by_flags(tmp_path,bad):
+    args=fixture(tmp_path,producer_v2=True)
+    name='quality/00/tensor-attempt.json' if bad in ('wrong_plan','wrong_contract') else 'quality/00/tensor-audit.json'
+    if bad=='missing_attempt':args['evidence'].pop('quality/00/tensor-attempt.json')
+    elif bad in ('failure','partial'):
+        (tmp_path/('quality/00/tensor-failure.json' if bad=='failure' else 'quality/00/tensor-audit.json.tmp')).write_text('{}')
+    else:
+        p=tmp_path/name;value=json.loads(p.read_text())
+        if bad=='wrong_plan':value['plan_sha256']='0'*64
+        elif bad=='wrong_contract':value['training_contract_sha256']='0'*64
+        elif bad=='claim':value['producer']['numerical_audits_passed']=True
+        else:value['producer']['files']={}
+        p.write_text(json.dumps(value));args['evidence'][name]=file_digest(p)
+    with pytest.raises(ValueError):bind(tmp_path,args)

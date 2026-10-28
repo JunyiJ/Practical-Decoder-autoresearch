@@ -1,0 +1,53 @@
+........................................................................ [ 31%]
+....................................F................................... [ 62%]
+........................................................................ [ 93%]
+...............                                                          [100%]
+=================================== FAILURES ===================================
+_ test_missing_selected_winner_provenance_blocks_boundary[training-outputs.json] _
+
+tmp_path = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-tensors-v2-synthetic-m_paj44o/test_missing_selected_winner_p3')
+name = 'training-outputs.json'
+
+    @pytest.mark.parametrize('name',['worker-outputs.json','worker-attempt.json','training-attempt.json',
+        'training-outputs.json','training-summary.json','metrics.jsonl','evaluation-attempt.json'])
+    def test_missing_selected_winner_provenance_blocks_boundary(tmp_path,name):
+        args=fixture(tmp_path,producer_v2=True)
+        args['evidence'].pop('quality/00/'+name)
+>       with pytest.raises(ValueError):bind(tmp_path,args)
+                                       ^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_audit_v2.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_quality_audit_v2.py:12: in bind
+    return audit.bind_quality_stage(training_token_sha256=digest('synthetic96'),**args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:31: in bind_quality_stage
+    verify_producer(root,stem,index,load('tensor-audit.json'),evidence=evidence,context=context,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-tensors-v2-synthetic-m_paj44o/test_missing_selected_winner_p3')
+stem = 'quality/00', slot = 0
+report = {'kind': 'quality', 'adopted': False, 'status': 'export_values_reviewed_pending_numerical_and_resource_audits', 'files...ed_winner_p3/quality/00/checkpoints/h200.pt': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db634cf8b73120b26c72334'}, ...}
+evidence = {'quality/00/request.json': 'fd5be7fba817f7ac55cb6c5b5f3abb58a57e3b9caa017e672643089b6a4ec96d', 'quality/00/result.jso...106098d628e9', 'quality/00/tensor-audit.json': '37d29734c737e21c856962978137843341392e9f2f21118db380753638fa48d4', ...}
+context = {'plan_sha256': 'cadf9ed050c792e63c203fb90eef72dc88dbe7dd5792ca187dca620febe7483e', 'source_sha256': '998d8634381fc3da...72d1c48475254dc716fe0e26fcf8cf1e', 'corpus_sha256': '024c56c5a7981f8b29f289263d071d4457e2f1ccc84f490342a07aa75204e936'}
+projection_ref = {'path': 'projection.json', 'sha256': '24ae53de47fec2c18c8c3f24491e56e91af5c574ef431e919b39c4dbf1fc1221'}
+training_token_sha256 = 'fe99cd2e6a8324fa2bb895a8618b56857cd981ff9822be2f6de8b74d49fa070b'
+
+    def verify_producer(root,stem,slot,report,*,evidence,context,projection_ref,training_token_sha256):
+        """Read-only provenance check; full independent stage audit remains required."""
+        root=Path(root);producer=report.get('producer',{})
+        name=stem+'/tensor-attempt.json';_require(name in evidence,'Tensor attempt not bound')
+        ref=dict(path=name,sha256=evidence[name]);attempt=_document(root,ref)
+        ep=stem+'/evaluation-attempt.json';_require(ep in evidence,'Evaluation attempt not bound')
+        evaluation=_document(root,dict(path=ep,sha256=evidence[ep]))
+        expected=attempt_contract(slot,context['plan_sha256'],evidence[stem+'/request.json'],
+            evidence[stem+'/result.json'],projection_ref,evaluation['training_contract_sha256'],training_token_sha256)
+>       files={str(root/(stem+'/'+n)):evidence[stem+'/'+n] for n in
+                                      ^^^^^^^^^^^^^^^^^^^^
+               ('request.json','result.json','training-outputs.json','evaluation-attempt.json')}
+E       KeyError: 'quality/00/training-outputs.json'
+
+src/research/tokenizer_wide_hybrid_quality_tensors_v2.py:119: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_audit_v2.py::test_missing_selected_winner_provenance_blocks_boundary[training-outputs.json]
+1 failed, 230 passed in 12.62s

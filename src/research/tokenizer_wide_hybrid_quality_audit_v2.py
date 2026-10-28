@@ -7,6 +7,7 @@ launch, storage credit or fresh-confirmation acceptance.
 from pathlib import Path
 
 from .protocol import file_digest
+from .tokenizer_wide_hybrid_quality_tensors_v2 import verify_producer
 from .tokenizer_wide_hybrid_retention_audit import bind_quality_boundary, _require
 from .tokenizer_wide_hybrid_pilot_audit_v2 import _worker_review
 from .tokenizer_wide_hybrid_retention import allocations
@@ -27,6 +28,8 @@ def bind_quality_stage(root, *, training_token_sha256, **kwargs):
             _require(path in evidence,'Quality producer artifact is not bound')
             return _document(root,dict(path=path,sha256=evidence[path]))
         request=load('request.json');result=load('result.json')
+        verify_producer(root,stem,index,load('tensor-audit.json'),evidence=evidence,context=context,
+                        projection_ref=kwargs['projection_ref'],training_token_sha256=training_token_sha256)
         pair={}
         for role in ('raw','h200'):
             score=result[role];path=Path(score['checkpoint'])

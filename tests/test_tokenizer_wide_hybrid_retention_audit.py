@@ -116,13 +116,22 @@ def fixture(root, boundary='lr', *, producer_v2=False):
             attempt=write(root,stem+'/worker-attempt.json',dict(kind='wide_hybrid_quality_execution_v2',status='started',
                 slot=i,plan_sha256=context['plan_sha256'],request_sha256=rq['sha256'],projection_ref=pref,
                 checkpoint_allowance_bytes=allowance,dispatch_authorized=False))
+            from src.research.tokenizer_wide_hybrid_quality_tensors_v2 import attempt_contract,KIND
+            tensor_attempt=write(root,stem+'/tensor-attempt.json',attempt_contract(i,context['plan_sha256'],
+                rq['sha256'],rs['sha256'],pref,digest('synthetic contract'),digest('synthetic96')))
+            tensor['producer']=dict(kind=KIND,attempt=tensor_attempt,numerical_audits_passed=False,
+                dispatch_authorized=False,files={str(root/rq['path']):rq['sha256'],str(root/rs['path']):rs['sha256'],
+                    str(root/training['path']):training['sha256'],str(root/evaluation['path']):evaluation['sha256'],
+                    str(root/pref['path']):pref['sha256'],**{str(root/v['path']):v['sha256'] for v in pair.values()}})
+            tensor_ref=write(root,stem+'/tensor-audit.json',tensor)
+            refs=[tensor_ref if v['path']==tensor_ref['path'] else v for v in refs]
             worker=write(root,stem+'/worker-outputs.json',dict(kind='wide_hybrid_quality_execution_v2',
                 status='quality_outputs_complete_pending_independent_stage_review',slot=i,
                 plan_sha256=context['plan_sha256'],request_sha256=rq['sha256'],attempt=attempt,
-                artifacts=dict(training_outputs=training,evaluation_attempt=evaluation,result=rs,
+                artifacts=dict(training_outputs=training,evaluation_attempt=evaluation,result=rs,tensor=tensor_ref,
                     resources=next(v for v in refs if v['path']==stem+'/resource-audit.json')),
                 adopted=False,dispatch_authorized=False,stage_audits_bound=False))
-            refs += [training_attempt,training,summary,metrics,evaluation,attempt,worker]
+            refs += [training_attempt,training,summary,metrics,evaluation,attempt,worker,tensor_attempt]
         evidence.update({ref['path']:ref['sha256'] for ref in refs})
     return dict(root=root,boundary=boundary,records=records,rates=rates,selection=selection,
         context=context,requests=requests,trials=trials,evidence=evidence,numerical_ref=nref,

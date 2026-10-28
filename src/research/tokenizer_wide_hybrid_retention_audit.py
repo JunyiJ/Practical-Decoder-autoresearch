@@ -29,10 +29,10 @@ PILOT_RESOURCE_LIMITS = dict(RESOURCE_LIMITS, timeout_seconds=600)
 
 
 OUTPUT_FAILURES = tuple(name+suffix for name in
-    ('training-failure.json','evaluation-failure.json','worker-failure.json') for suffix in ('','.tmp')) + (
+    ('training-failure.json','evaluation-failure.json','worker-failure.json','tensor-failure.json') for suffix in ('','.tmp')) + (
     'training-attempt.json.tmp','training-outputs.json.tmp','training-summary.json.tmp',
     'metrics.jsonl.tmp','evaluation-attempt.json.tmp','result.json.tmp',
-    'worker-attempt.json.tmp','worker-outputs.json.tmp')
+    'worker-attempt.json.tmp','worker-outputs.json.tmp','tensor-attempt.json.tmp','tensor-audit.json.tmp')
 
 
 def reject_output_failures(trial):
