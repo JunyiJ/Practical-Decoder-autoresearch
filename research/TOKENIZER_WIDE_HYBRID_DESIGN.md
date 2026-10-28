@@ -296,3 +296,13 @@ review and with hashes rechecked afterward. The caller must enforce locks and
 resource guards. Its tiny synthetic tests do not measure real checkpoint peak
 memory or validate optimizer continuation/EMA recurrence; reports explicitly
 leave those checks unapproved. Full numerical and pilot reviews remain required.
+
+The prospective pilot plan schema now binds the full conditional27-trajectory
+design, exact pilot requests, quality/state/bootstrap thresholds and full storage
+projection before any pilot. Its numerical review must enumerate all nine
+width512 family/rank cases with geometry/cache/optimizer/resume/EMA checks and
+underlying hash-bound evidence matching source/runtime/data. A read-only gate
+rechecks provenance and STOP; it does not create a frozen plan, certify the
+review's scientific evidence or enforce live disk/worker limits. Those remain
+responsibilities of the final review and guarded serial controller. Synthetic
+gate tests do not satisfy the outstanding real numerical prerequisites.

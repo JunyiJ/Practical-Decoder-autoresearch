@@ -511,3 +511,36 @@ required; the helper cannot produce a complete passing numerical/pilot review.
 No failed fixture was retried, no evidence deleted and no holdout accessed.
 Next preparation is guarded pilot integration and its prerequisite/resource
 review contracts. Complete storage fit and a final frozen plan remain necessary.
+
+## Frozen pilot prerequisite gate preparation
+
+The new read-only `tokenizer_wide_hybrid_pilot_gate.py` binds each prospective
+pilot to a frozen source/runtime, exact three requests and full conditional
+27-trajectory design. The design names all nine LR screens, six conditional
+rank probes, nine fresh confirmations, selection/tie rules, both controls and
+quality/state/bootstrap thresholds. It does not choose outcome-dependent LRs
+or ranks. The frozen storage contract must equal the complete retained-panel
+projection, not a pilot-only allocation. Corpus, inherited recipe, design,
+projection, numerical review and underlying numerical evidence must be hash-bound.
+
+Numerical review must cover every width512 family at divisors8/4/2 with passing
+geometry, cache, optimizer, resume and EMA checks, under matching source/runtime
+and corpus identity. These are required review fields; no such real complete
+review was produced. Source/runtime and all file hashes are rechecked after
+review, with STOP checked before and after and MPS fallback rejected.
+
+Forty-three new synthetic-gate checks plus28 configuration/accounting regressions
+passed (71 checks,.98s; peak RSS272,891,904bytes) under the180s/4GiB RSS/8GiB
+reserve CPU guard. Tests use synthetic frozen documents, mocked source/runtime
+and synthetic corpus identity, never actual training data or a real numerical
+review. They reject altered budgets/thresholds/seeds/order, missing or rehashed
+incomplete numerical cases, unbound evidence, source drift, STOP and fallback.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-gate-review.json`.
+The gate neither freezes a plan nor acquires worker locks, measures free space
+or launches anything. The future controller must independently establish the
+audited retained prefix, full remaining storage fit, exclusive attempt/locks
+and resource watchdogs before dispatch. No real plan is frozen, numerical
+prerequisites remain incomplete, and the full panel still does not fit locally.
+Next preparation is the guarded serial pilot worker/controller and its result
+review, with no failed-fixture retry, evidence deletion or closed-controller run.
