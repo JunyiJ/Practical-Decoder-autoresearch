@@ -1242,3 +1242,42 @@ numerical/input reviews and measured pilots remain outstanding. No research
 weights were deleted, no plan was frozen and no failed fixture was retried.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/evaluation-v2-component-review.json`.
+
+## October 28 composed v2 pilot output body
+
+The pilot body now composes training/export, validation/sample/result, tensor/cache
+review and resource recording. It independently requires the full frozen campaign
+and numerical/input gate, exact request/order and bound projection copy before
+scientific work. The600s resource interval encloses actual input reconstruction
+through completed cache review; completion binds both result and cache hashes.
+All checkpoint and metadata output routes use the bounded producers.
+
+The successful evaluation-attempt identity is checked against the request,
+training-output digest, reconstructed training contract and frozen96 training IDs.
+Worker attempt and terminal references are immutable. Frozen evidence, producer
+references and STOP are rechecked between phases; the full campaign/source/runtime
+gate runs again after the resource thread closes. A late failure is retained even
+if the resource record completed. Pilot and quality stages reject worker failure
+or partial-worker evidence, including when bound in an inventory.
+
+Integration identified a controller-ordering requirement: the idle full-future
+storage gate must precede creation of the new slot request/process directory.
+It correctly rejects unreviewed slot artifacts. The next startup transition must
+bind the idle storage/audit receipt, recheck actual disk before dispatch and then
+require the successful worker-output provenance before accepting a pilot. The
+storage gate was not bypassed or weakened. This body has no CLI or dispatcher.
+
+Validation:18 initial and272 final tests passed. The final run took8.66s with
+peak RSS352,223,232bytes under180s/4GiB/8GiB outer guards. Composition tests used
+mocked scientific phases, MPS observations and frozen-plan gate, with real bounded
+checkpoint/metadata writers and resource recording. They cover phase ordering,
+every phase failing, failure after resource completion, changed inputs, incomplete
+provenance, no fallback and no retry. These are not real numerical, MPS pilot,
+quality or performance results.
+
+Next implement the controller startup transition and require successful worker
+provenance for per-pilot/stage acceptance, then complete cleanup-chain and inference
+wiring. Actual nine-case numerical/input reviews and measured pilots remain
+outstanding. No research weights were deleted or real trials launched.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-execution-v2-component-review.json`.
