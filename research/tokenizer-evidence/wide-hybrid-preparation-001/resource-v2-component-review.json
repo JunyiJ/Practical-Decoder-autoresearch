@@ -1,0 +1,56 @@
+{
+  "status": "draft_quality_resource_recorder_tested_not_integrated",
+  "created_at": "2026-10-28T16:16:31.985125+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_resources.py": "067d2bfe9cdd6e5bc3ad9536ca95fb0b6f47d98e5f08b385692ebaad3b345300",
+    "src/research/tokenizer_wide_hybrid_retention_audit.py": "b891fa82baec098874e116ba3e92f7dd75912bc165b2b81bf95e2b9475ca7c7d",
+    "tests/test_tokenizer_wide_hybrid_resources.py": "5a53d52809332dcecc8c231acdf9fed4817b3bd81832529942ff976ddf0d1128",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "9478702d98d5325b9d6b27f0fbb953109687d25ea01116677128714e5877a1e6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-resource-v2-tests.log": "4180ba90f093cacddc3708adae794698cfcb4d9b727ac2c0c490ee54a815dcba",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-resource-v2-guard.json": "49bff3a48fdc2df0e3d9aa60900d03eb06b2e8021ca86d3d25c2de33632ba577",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-resource-v2-final-tests.log": "258fbe101ab32576ceddc54f1f796ca900c358136626e5caf210ccb24750277e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-resource-v2-final-guard.json": "f7c8ca3c11f45856a00645afc24171fb4eed8d43453a2a1f253ed2cc00cc7c0b"
+  },
+  "tests": {
+    "initial": 59,
+    "final": 62,
+    "synthetic_recorder_tests": 22,
+    "quality_stage_binding_tests": 40
+  },
+  "final_guard": {
+    "elapsed_seconds": 3.1282422905787826,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 31102312448,
+      "peak_rss_bytes": 231260160
+    },
+    "pid": 71677,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 31102251008,
+  "metadata_budget": {
+    "resource_event_limit_bytes": 2097152,
+    "resource_summary_limit_bytes": 2097152,
+    "worst_27_resource_pairs_bytes": 113246208,
+    "worst_27_worker_logs_bytes": 113246208,
+    "remaining_within_256MiB_bytes": 41943040,
+    "qualification": "Future controller must enforce cumulative metadata cap; remaining 40MiB is not yet a complete measured inventory."
+  },
+  "findings": [
+    "Independent flushed/fsynced event FD preserves synthetic guard failures under stdout/stderr capture, including a background MPS-driver failure.",
+    "RSS4GiB, MPSdriver6GiB, disk8GiB and wall7200s limits are unchanged; ordinary worker exceptions and missing or changed result bindings cannot publish completed reports.",
+    "Stage binding requires exact hash-bound event/summary agreement; a partial trace remains invalid even if its new hash is supplied.",
+    "The existing faster memory watchdog may terminate first; incomplete new traces remain failures and cannot be used for cleanup approval."
+  ],
+  "limitations": [
+    "Synthetic observations only. No real MPS initialization, model run, corpus or checkpoint tensor read, or production memory/time validation.",
+    "Recorder supplements existing watchdog and serial parent. It does not enforce frozen plan/locks/full future disk fit itself.",
+    "No source of closed campaigns or v1 runner acceptance rules changed. No real checkpoint deletion and no failed numerical fixture retry.",
+    "Pilot/full-panel gates, campaign-wide inventories, guarded deletion and complete serial runner integration remain outstanding; all nine numerical cases and measured pilots still required."
+  ]
+}

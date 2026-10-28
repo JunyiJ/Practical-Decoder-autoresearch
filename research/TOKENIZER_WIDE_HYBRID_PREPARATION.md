@@ -752,3 +752,39 @@ Next work remains v2 resource production, pilot/full-panel provenance gates,
 locked cleanup with durable deletion journals and protected postchecks, full
 future high-water accounting and serial lifecycle tests. Nine numerical cases
 and measured pilot resources remain prerequisites. No plan is frozen.
+
+## October 28 v2 resource recording component
+
+Added a fresh-attempt quality resource recorder with its own bounded, flushed and
+fsynced event file. It samples RSS/MPS-driver/free-disk/elapsed observations and
+preserves a terminal failure independently of captured stdout/stderr. It keeps
+4 GiB RSS, 6 GiB MPS driver, 8 GiB reserve and 7,200-second limits. A completed
+report requires explicit success plus unchanged request/result hashes and a
+completed closed-holdout result. Missing success, worker exceptions, observer
+errors and exceeded limits cannot produce an accepted completed report.
+
+The quality-stage binder now requires exact event-log/summary agreement and
+binds both hashes into retained evidence. This supplements the existing memory
+watchdog and serial parent; those remain in place. The older watchdog may exit
+first, leaving an incomplete trace, which must block acceptance. Sampling does
+not guarantee instantaneous peaks or complete diagnostics after an OS kill.
+
+Event log and report are each bounded to 2 MiB, with at most 7,203 samples.
+Worst-case resource pairs plus 4 MiB child logs across 27 trajectories consume
+216 MiB of the prospective 256 MiB metadata allowance. The remaining 40 MiB
+must cover the complete other metadata inventory and be enforced by the future
+controller; this is not yet a full observed inventory or a freeze authorization.
+
+Validation: 62 synthetic tests passed in 2.98 seconds, including captured-output
+hard exits, a background driver-limit failure, event/sample caps, partial traces,
+immutable result bindings and stage-audit regressions. The CPU guard observed
+231,260,160 bytes peak RSS under 180s/4GiB/8GiB limits. The earlier 59-test pass is
+also retained. No MPS device, model, corpus or real checkpoint was loaded; no
+training or real cleanup occurred. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/resource-v2-component-review.json`.
+
+The recorder is not yet wired to a v2 training controller. Pilot/full-panel
+provenance, campaign inventory, guarded boundary deletion and full serial
+lifecycle integration remain. All nine numerical prerequisites and measured
+pilot resources are still unresolved; the failed combined CPU fixture stays
+closed. No scientific plan or resource threshold changed.

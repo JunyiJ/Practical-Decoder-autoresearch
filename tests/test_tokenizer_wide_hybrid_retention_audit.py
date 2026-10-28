@@ -84,7 +84,13 @@ def fixture(root, boundary='lr'):
         resource=dict(kind='wide_hybrid_trial_resources_v2',status='completed',plan_sha256=context['plan_sha256'],
             request_sha256=rq['sha256'],result_sha256=rs['sha256'],limits=audit.RESOURCE_LIMITS,
             violations=[],samples=[dict(elapsed_seconds=t,peak_rss_bytes=1000,mps_driver_bytes=1000,free_bytes=40*1024**3) for t in (0.,1.)])
-        refs=[rq,rs,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
+        from src.research.tokenizer_wide_hybrid_resources import header
+        events=[header(context['plan_sha256'],rq['sha256'])]
+        events += [dict(event='sample',**row) for row in resource['samples']]
+        events += [dict(event='terminal',status='completed',result_sha256=rs['sha256'],reason=None)]
+        event_ref=write(root,stem+'/resource-events.jsonl',('\n'.join(json.dumps(e) for e in events)+'\n').encode())
+        resource['events']=dict(path='resource-events.jsonl',sha256=event_ref['sha256'])
+        refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
               write(root,stem+'/process/process.json',process),write(root,stem+'/process/worker.log',b'synthetic log')]
         evidence.update({ref['path']:ref['sha256'] for ref in refs})
     return dict(root=root,boundary=boundary,records=records,rates=rates,selection=selection,
@@ -195,4 +201,17 @@ def test_unknown_symlink_directory_blocks_stage_inventory(tmp_path):
     args=fixture(tmp_path)
     (tmp_path/'trial-0/link').symlink_to(tmp_path/'trial-1',target_is_directory=True)
     with pytest.raises(ValueError,match='symlink'):
+        audit.bind_quality_boundary(**args)
+
+
+def test_partial_resource_trace_is_not_a_completed_resource_review(tmp_path):
+    args=fixture(tmp_path)
+    name='trial-0/resource-events.jsonl'
+    lines=(tmp_path/name).read_text().splitlines()
+    ref=write(tmp_path,name,('\n'.join(lines[:-1])+'\n').encode())
+    args['evidence'][name]=ref['sha256']
+    report_name='trial-0/resource-audit.json'
+    updated=mutate(tmp_path,report_name,lambda r:r['events'].update(sha256=ref['sha256']))
+    args['evidence'][report_name]=updated['sha256']
+    with pytest.raises(ValueError,match='trace incomplete'):
         audit.bind_quality_boundary(**args)

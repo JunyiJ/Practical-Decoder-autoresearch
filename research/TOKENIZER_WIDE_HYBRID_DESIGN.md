@@ -379,3 +379,11 @@ resource-report producer, pilot/full-panel gates, campaign inventory, guarded
 cleanup and complete runner lifecycle remain unimplemented integration work.
 See `retention-v2-quality-audit-review.json` in wide-hybrid preparation evidence.
 No existing v1 acceptance rule or source of a closed campaign changed.
+
+A separate v2 quality resource recorder now supplies bounded durable event and
+summary files; quality-stage binding checks their exact hash/content agreement.
+Synthetic coverage is62 checks. It supplements the unchanged existing watchdog,
+not a replacement for full gates or measured MPS feasibility. Resource/log caps
+use216MiB of the256MiB prospective metadata allowance; remaining metadata and
+cumulative enforcement still need full controller integration before freeze.
+See `resource-v2-component-review.json` in wide-hybrid preparation evidence.

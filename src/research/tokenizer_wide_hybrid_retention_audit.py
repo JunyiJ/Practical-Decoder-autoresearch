@@ -6,6 +6,7 @@ cleanup manifest. It cannot replace execution of those reviews. Pilot cache
 review, campaign-wide inventory, lock ownership and deletion remain separate.
 """
 import math
+import json
 from pathlib import Path
 
 from .protocol import digest
@@ -203,6 +204,15 @@ def bind_quality_boundary(root, boundary, records, rates, selection, *, context,
                  'Tensor audit counts incomplete')
         resource_review(docs['resource'], docs['process'], context, rqsha, rssha,
                         budgets[spec['family'], spec['divisor']])
+        from .tokenizer_wide_hybrid_resources import EVENT_LIMIT, verify_events
+        event_ref = docs['resource'].get('events', {})
+        _require(set(event_ref) == {'path','sha256'} and event_ref['path'] == 'resource-events.jsonl',
+                 'Resource event trace reference missing')
+        event_name = stem+'/'+event_ref['path']
+        _require(bound.get(event_name) == event_ref['sha256'], 'Resource trace not in immutable inventory')
+        event_path = _check_file(root, event_name, event_ref['sha256'])
+        _require(event_path.stat().st_size <= EVENT_LIMIT, 'Resource trace exceeds cap')
+        verify_events(docs['resource'], [json.loads(line) for line in event_path.read_text().splitlines()])
         pairs[index] = pair
     manifest = planned_manifest(boundary, records, rates, selection, pairs, bound)
     expected_weights = {entry['path']: entry for entry in manifest['delete']+manifest['retain']}
