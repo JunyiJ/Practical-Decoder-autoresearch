@@ -750,3 +750,34 @@ remain unresolved. No research training/MPS, real checkpoint deletion or test
 holdout evaluation occurred; the campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-selection-v2-component-review.json`.
+
+
+## October 28 audited rank cleanup boundary
+
+The new v2 boundary repeats the full saved-selection audit before cleanup and
+binds an exact losing-weight manifest, original hashes and complete protected
+inventory. It uses the locked, fsynced deletion executor. Compact immutable
+receipts support strict idle verification of the cumulative pilot/LR/rank chain
+without loading intentionally deleted weights. Frozen source, control files,
+selected checkpoints, all non-checkpoint evidence and remaining capacity remain
+mandatory. Canonical rank-cleanup review names are now admitted by the earlier
+LR history reader as bytes only, with no deletion or dispatch credit.
+
+All five full-boundary tests passed in319.35s and all36 affected LR-history
+regressions passed in57.64s. Both CPU/disk guards finished normally; maximum
+observed RSS was243,744,768 bytes. The equal-CE disposable fixture selected D/8
+under the existing tie rule, removed12 losing files including former LR anchors,
+and retained six selected files and every original non-checkpoint artifact.
+The verifier checked30 cumulative deletions and rejected altered evidence or
+recreated weights. Partial-unlink and completion-publication failures retained
+their journals/failure evidence and blocked retry. No test/driver failures occurred.
+
+Synthetic metadata is1,436,578/2,097,152 bytes, with111,636 additional bytes in
+the separate5MiB rank-retention allowance. This does not prove complete real-panel
+fit. Next implement retained rank history for fresh appends and fresh confirmation
+preparation, then serial fresh/inference integration and complete metadata
+accounting. Actual numerical/input/measured-pilot gates remain unresolved.
+No research checkpoints were deleted, no model training/MPS or test-holdout
+evaluation ran, and the campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-boundary-v2-component-review.json`.

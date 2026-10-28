@@ -27,6 +27,9 @@ def test_declared_rank_bytes_preserve_history_without_rank_or_storage_credit(wri
             path.parent.mkdir(exist_ok=True);path.write_bytes(b'synthetic unreviewed rank weights')
         writer.publish_json(f'evidence/meta/quality-rank-startup-{slot:02d}.json',{})
     writer.publish_json('evidence/meta/rank-selection.json',{})
+    # Canonical pre-deletion controller reviews are admitted as bytes only.
+    writer.publish_json('evidence/meta/rank-boundary-cleanup-attempt.json',{})
+    writer.publish_json('evidence/meta/rank-boundary-cleanup-review.json',{})
     current=boundary._inventory(root)
     def forbidden(*a,**kw):raise AssertionError('History must not grant a storage gate')
     monkeypatch.setattr(boundary,'bind_storage',forbidden)
@@ -48,7 +51,8 @@ def test_declared_rank_bytes_preserve_history_without_rank_or_storage_credit(wri
     'quality/10/checkpoints/h200.pt','quality/14/checkpoints/final_001200_123.pt',
     'meta/quality-rank-startup-09-attempt.json','meta/quality-dispatch-14.json',
     'meta/quality-readiness-12.json','meta/rank-selection.json',
-    'meta/rank-boundary-selection-complete.json'])
+    'meta/rank-boundary-selection-complete.json',
+    'meta/rank-boundary-cleanup-attempt.json','meta/rank-boundary-cleanup-review.json'])
 def test_rank_names_match_declared_producer_outputs(name):
     assert boundary._rank_append(name)
 
@@ -61,7 +65,7 @@ def test_rank_names_match_declared_producer_outputs(name):
     'quality/09/../09/request.json','quality/09//request.json','/quality/09/request.json',
     'meta/quality-dispatch-15.json','meta/quality-dispatch-09-failure.json',
     'meta/quality-arbitrary.json','meta/rank-selection.json.tmp',
-    'meta/rank-boundary-cleanup-attempt.json','.retention/rank/manifest.json',
+    'meta/rank-boundary-cleanup-failure.json','.retention/rank/manifest.json',
     'inference/3511/result.json','meta/lr-boundary-selection-complete.json'])
 def test_only_precleanup_rank_namespace_is_allowed(name):
     assert not boundary._rank_append(name)

@@ -211,7 +211,7 @@ def _rank_append(name):
             re.fullmatch(r'checkpoints/final_001200_[0-9]+\.pt',relative))
     if len(parts)==2 and parts[0]=='meta':
         allowed={'rank-selection.json'}
-        stems={'rank-boundary-selection'}|{f'quality-{phase}-{slot}'
+        stems={'rank-boundary-selection','rank-boundary-cleanup'}|{f'quality-{phase}-{slot}'
             for slot in slots for phase in ('rank-startup','readiness','dispatch')}
         for stem in stems:
             allowed.update(stem+suffix+'.json' for suffix in ('','-attempt','-review','-complete'))
@@ -248,8 +248,13 @@ def verify_lr_history(writer,plan_sha256,completion_ref,*,current_inventory):
     _require(_context(writer,review,ref,completion_ref,appended_inventory=appended)==identity,
              'LR history changed during verification')
     _check_inventory(root,current_inventory);_locks(root,writer.lock_fds);snapshot(writer.root)
+    return dict(_history_fields(review,stages),chain=chain)
+
+
+def _history_fields(review,stages):
+    """Original identity fields only; callers must separately verify the chain."""
     return dict(kind='wide_hybrid_lr_history_v2',records=review['records'],rates=review['rates'],
-        checkpoint_pairs=review['checkpoint_pairs'],stages=stages,chain=chain,
+        checkpoint_pairs=review['checkpoint_pairs'],stages=stages,
         selection_ref=review['selection_ref'],pilot_completion_ref=review['pilot_completion_ref'],
         projection_ref=review['projection_ref'],lr_history_verified=True,rank_audits_bound=False,
         storage_verified=False,adopted=False,dispatch_authorized=False,next_stage_authorized=False)
