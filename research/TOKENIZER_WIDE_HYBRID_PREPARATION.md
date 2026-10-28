@@ -1077,3 +1077,36 @@ No real training, retained research checkpoint deletion, plan freeze or failed
 fixture retry occurred. Bounded checkpoint/log/state/cache producers and complete
 v2 controller/stage/inference integration remain required, together with all real
 numerical/input reviews and measured pilots. Closed campaigns remain closed.
+
+## October 28 bounded v2 checkpoint producer
+
+The new explicit checkpoint producer streams `torch.save` into an exclusive
+trajectory temporary file. Raw, H200 export and temporary weights share the
+original per-trajectory byte allowance; current free space must preserve8GiB
+before each bounded chunk. Creation, writes and exclusive publication share the
+metadata namespace lock with the resource recorder. The lock is released between
+chunks. Completed checkpoints are never overwritten; partial failures remain and
+block another checkpoint attempt in that slot. Identity, size and timestamp changes,
+hard links, STOP, reserve shortfall and failed publication fail closed.
+
+Initial synthetic tests found that this PyTorch runtime passes memoryviews to its
+file-like writer; the bytes-only implementation was incorrect. Buffer support now
+copies at most1MiB at a time so emitted bytes and their digest agree, without
+staging a whole archive in a new RAM buffer. The single worker must keep source
+payloads stable throughout serialization. One separate test assertion needed a
+Path conversion. The original6-failure/86-pass log and subsequent98-test pass are
+retained. Final validation:275 tests passed in5.41seconds, peak RSS243,646,464bytes
+under180s/4GiB/8GiB outer guards. Ten tiny real torch archives were saved while20
+resource samples ran, with complete census and matching archive hashes.
+
+This is producer integration preparation, not wide-model save feasibility or
+numerical optimizer/resume/EMA validation. PyTorch may itself allocate additional
+memory, and large-write/fsync latency still needs measured-pilot review. No real
+model/corpus/MPS run, research checkpoint deletion, freeze or failed-fixture retry
+occurred. The v1 saver and closed controllers remain unchanged. The future v2
+worker must bind the exact allowance to the frozen plan and pass the independent
+full campaign storage/time/memory/audit gates. Bounded log/state/cache producers,
+complete controller/stage/cleanup-chain/inference integration, actual nine numerical
+cases/input review and measured pilots remain outstanding.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/checkpoint-writer-v2-component-review.json`.

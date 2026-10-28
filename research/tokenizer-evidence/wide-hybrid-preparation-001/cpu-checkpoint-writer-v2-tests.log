@@ -1,0 +1,726 @@
+FFFF....................F............F.................................. [ 78%]
+....................                                                     [100%]
+=================================== FAILURES ===================================
+_____________ test_torch_stream_roundtrip_raw_and_export[pilots-0] _____________
+
+obj = {'model': {'weight': tensor([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12., 13.,
+        14., 15., 1...57., 58., 59., 60., 61., 62., 63., 64.])}, 'rng': tensor([158,  29, 140,  ...,   0,   0,   0], dtype=torch.uint8), ...}
+f = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1105f1d30>
+pickle_module = <module 'pickle' from '/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pickle.py'>
+pickle_protocol = 2, _use_new_zipfile_serialization = True
+_disable_byteorder_record = False
+
+    def save(
+        obj: object,
+        f: FileLike,
+        pickle_module: Any = pickle,
+        pickle_protocol: int = DEFAULT_PROTOCOL,
+        _use_new_zipfile_serialization: bool = True,
+        _disable_byteorder_record: bool = False,
+    ) -> None:
+        # Reference: https://github.com/pytorch/pytorch/issues/54354
+        # The first line of this docstring overrides the one Sphinx generates for the
+        # documentation. We need it so that Sphinx doesn't leak `pickle`s path from
+        # the build environment (e.g. `<module 'pickle' from '/leaked/path').
+    
+        """save(obj, f, pickle_module=pickle, pickle_protocol=2, _use_new_zipfile_serialization=True)
+    
+        Saves an object to a disk file.
+    
+        See also: :ref:`saving-loading-tensors`
+    
+        See :ref:`layout-control` for more advanced tools to manipulate a checkpoint.
+    
+        Args:
+            obj: saved object
+            f: a file-like object (has to implement write and flush) or a string or
+               os.PathLike object containing a file name
+            pickle_module: module used for pickling metadata and objects
+            pickle_protocol: can be specified to override the default protocol
+    
+        .. note::
+            A common PyTorch convention is to save tensors using .pt file extension.
+    
+        .. note::
+            PyTorch preserves storage sharing across serialization. See
+            :ref:`preserve-storage-sharing` for more details.
+    
+        .. note::
+            The 1.6 release of PyTorch switched ``torch.save`` to use a new
+            zipfile-based file format. ``torch.load`` still retains the ability to
+            load files in the old format. If for any reason you want ``torch.save``
+            to use the old format, pass the kwarg ``_use_new_zipfile_serialization=False``.
+    
+        Example:
+            >>> # xdoctest: +SKIP("makes cwd dirty")
+            >>> # Save to file
+            >>> x = torch.tensor([0, 1, 2, 3, 4])
+            >>> torch.save(x, "tensor.pt")
+            >>> # Save to io.BytesIO buffer
+            >>> buffer = io.BytesIO()
+            >>> torch.save(x, buffer)
+        """
+        torch._C._log_api_usage_once("torch.save")
+        _check_dill_version(pickle_module)
+        _check_save_filelike(f)
+    
+        if isinstance(f, (str, os.PathLike)):
+            f = os.fspath(f)
+    
+        if _use_new_zipfile_serialization:
+            with _open_zipfile_writer(f) as opened_zipfile:
+>               _save(
+                    obj,
+                    opened_zipfile,
+                    pickle_module,
+                    pickle_protocol,
+                    _disable_byteorder_record,
+                )
+
+.venv/lib/python3.13/site-packages/torch/serialization.py:1003: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.13/site-packages/torch/serialization.py:1259: in _save
+    zip_file.write_record("data.pkl", data_value, len(data_value))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1105f1d30>
+data = <memory at 0x1106713c0>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+
+During handling of the above exception, another exception occurred:
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10b5242f0>
+stage = 'pilots', slot = 0
+
+    @pytest.mark.parametrize('stage,slot',[('pilots',0),('pilots',2),('quality',0),('quality',23)])
+    def test_torch_stream_roundtrip_raw_and_export(writer,stage,slot):
+        out=checkpoints.CheckpointWriter(writer,stage,slot,1024**2)
+        tensor=torch.arange(64,dtype=torch.float32)
+        payload={'model':{'weight':tensor},'optimizer':{'momentum':tensor*2},
+                 'ema':{'weight':tensor+1},'rng':torch.random.get_rng_state(),'step':20}
+>       raw=out.save('raw.pt',payload)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_checkpoint_writer.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:70: in save
+    torch.save(payload,stream)
+.venv/lib/python3.13/site-packages/torch/serialization.py:1002: in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/serialization.py:854: in __exit__
+    self.file_like.write_end_of_file()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1105f1d30>
+data = <memory at 0x110671600>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+_____________ test_torch_stream_roundtrip_raw_and_export[pilots-2] _____________
+
+obj = {'model': {'weight': tensor([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12., 13.,
+        14., 15., 1...57., 58., 59., 60., 61., 62., 63., 64.])}, 'rng': tensor([158,  29, 140,  ...,   0,   0,   0], dtype=torch.uint8), ...}
+f = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x110661d10>
+pickle_module = <module 'pickle' from '/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pickle.py'>
+pickle_protocol = 2, _use_new_zipfile_serialization = True
+_disable_byteorder_record = False
+
+    def save(
+        obj: object,
+        f: FileLike,
+        pickle_module: Any = pickle,
+        pickle_protocol: int = DEFAULT_PROTOCOL,
+        _use_new_zipfile_serialization: bool = True,
+        _disable_byteorder_record: bool = False,
+    ) -> None:
+        # Reference: https://github.com/pytorch/pytorch/issues/54354
+        # The first line of this docstring overrides the one Sphinx generates for the
+        # documentation. We need it so that Sphinx doesn't leak `pickle`s path from
+        # the build environment (e.g. `<module 'pickle' from '/leaked/path').
+    
+        """save(obj, f, pickle_module=pickle, pickle_protocol=2, _use_new_zipfile_serialization=True)
+    
+        Saves an object to a disk file.
+    
+        See also: :ref:`saving-loading-tensors`
+    
+        See :ref:`layout-control` for more advanced tools to manipulate a checkpoint.
+    
+        Args:
+            obj: saved object
+            f: a file-like object (has to implement write and flush) or a string or
+               os.PathLike object containing a file name
+            pickle_module: module used for pickling metadata and objects
+            pickle_protocol: can be specified to override the default protocol
+    
+        .. note::
+            A common PyTorch convention is to save tensors using .pt file extension.
+    
+        .. note::
+            PyTorch preserves storage sharing across serialization. See
+            :ref:`preserve-storage-sharing` for more details.
+    
+        .. note::
+            The 1.6 release of PyTorch switched ``torch.save`` to use a new
+            zipfile-based file format. ``torch.load`` still retains the ability to
+            load files in the old format. If for any reason you want ``torch.save``
+            to use the old format, pass the kwarg ``_use_new_zipfile_serialization=False``.
+    
+        Example:
+            >>> # xdoctest: +SKIP("makes cwd dirty")
+            >>> # Save to file
+            >>> x = torch.tensor([0, 1, 2, 3, 4])
+            >>> torch.save(x, "tensor.pt")
+            >>> # Save to io.BytesIO buffer
+            >>> buffer = io.BytesIO()
+            >>> torch.save(x, buffer)
+        """
+        torch._C._log_api_usage_once("torch.save")
+        _check_dill_version(pickle_module)
+        _check_save_filelike(f)
+    
+        if isinstance(f, (str, os.PathLike)):
+            f = os.fspath(f)
+    
+        if _use_new_zipfile_serialization:
+            with _open_zipfile_writer(f) as opened_zipfile:
+>               _save(
+                    obj,
+                    opened_zipfile,
+                    pickle_module,
+                    pickle_protocol,
+                    _disable_byteorder_record,
+                )
+
+.venv/lib/python3.13/site-packages/torch/serialization.py:1003: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.13/site-packages/torch/serialization.py:1259: in _save
+    zip_file.write_record("data.pkl", data_value, len(data_value))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x110661d10>
+data = <memory at 0x110671d80>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+
+During handling of the above exception, another exception occurred:
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110661bd0>
+stage = 'pilots', slot = 2
+
+    @pytest.mark.parametrize('stage,slot',[('pilots',0),('pilots',2),('quality',0),('quality',23)])
+    def test_torch_stream_roundtrip_raw_and_export(writer,stage,slot):
+        out=checkpoints.CheckpointWriter(writer,stage,slot,1024**2)
+        tensor=torch.arange(64,dtype=torch.float32)
+        payload={'model':{'weight':tensor},'optimizer':{'momentum':tensor*2},
+                 'ema':{'weight':tensor+1},'rng':torch.random.get_rng_state(),'step':20}
+>       raw=out.save('raw.pt',payload)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_checkpoint_writer.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:70: in save
+    torch.save(payload,stream)
+.venv/lib/python3.13/site-packages/torch/serialization.py:1002: in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/serialization.py:854: in __exit__
+    self.file_like.write_end_of_file()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x110661d10>
+data = <memory at 0x110671cc0>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+____________ test_torch_stream_roundtrip_raw_and_export[quality-0] _____________
+
+obj = {'model': {'weight': tensor([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12., 13.,
+        14., 15., 1...57., 58., 59., 60., 61., 62., 63., 64.])}, 'rng': tensor([158,  29, 140,  ...,   0,   0,   0], dtype=torch.uint8), ...}
+f = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1106620d0>
+pickle_module = <module 'pickle' from '/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pickle.py'>
+pickle_protocol = 2, _use_new_zipfile_serialization = True
+_disable_byteorder_record = False
+
+    def save(
+        obj: object,
+        f: FileLike,
+        pickle_module: Any = pickle,
+        pickle_protocol: int = DEFAULT_PROTOCOL,
+        _use_new_zipfile_serialization: bool = True,
+        _disable_byteorder_record: bool = False,
+    ) -> None:
+        # Reference: https://github.com/pytorch/pytorch/issues/54354
+        # The first line of this docstring overrides the one Sphinx generates for the
+        # documentation. We need it so that Sphinx doesn't leak `pickle`s path from
+        # the build environment (e.g. `<module 'pickle' from '/leaked/path').
+    
+        """save(obj, f, pickle_module=pickle, pickle_protocol=2, _use_new_zipfile_serialization=True)
+    
+        Saves an object to a disk file.
+    
+        See also: :ref:`saving-loading-tensors`
+    
+        See :ref:`layout-control` for more advanced tools to manipulate a checkpoint.
+    
+        Args:
+            obj: saved object
+            f: a file-like object (has to implement write and flush) or a string or
+               os.PathLike object containing a file name
+            pickle_module: module used for pickling metadata and objects
+            pickle_protocol: can be specified to override the default protocol
+    
+        .. note::
+            A common PyTorch convention is to save tensors using .pt file extension.
+    
+        .. note::
+            PyTorch preserves storage sharing across serialization. See
+            :ref:`preserve-storage-sharing` for more details.
+    
+        .. note::
+            The 1.6 release of PyTorch switched ``torch.save`` to use a new
+            zipfile-based file format. ``torch.load`` still retains the ability to
+            load files in the old format. If for any reason you want ``torch.save``
+            to use the old format, pass the kwarg ``_use_new_zipfile_serialization=False``.
+    
+        Example:
+            >>> # xdoctest: +SKIP("makes cwd dirty")
+            >>> # Save to file
+            >>> x = torch.tensor([0, 1, 2, 3, 4])
+            >>> torch.save(x, "tensor.pt")
+            >>> # Save to io.BytesIO buffer
+            >>> buffer = io.BytesIO()
+            >>> torch.save(x, buffer)
+        """
+        torch._C._log_api_usage_once("torch.save")
+        _check_dill_version(pickle_module)
+        _check_save_filelike(f)
+    
+        if isinstance(f, (str, os.PathLike)):
+            f = os.fspath(f)
+    
+        if _use_new_zipfile_serialization:
+            with _open_zipfile_writer(f) as opened_zipfile:
+>               _save(
+                    obj,
+                    opened_zipfile,
+                    pickle_module,
+                    pickle_protocol,
+                    _disable_byteorder_record,
+                )
+
+.venv/lib/python3.13/site-packages/torch/serialization.py:1003: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.13/site-packages/torch/serialization.py:1259: in _save
+    zip_file.write_record("data.pkl", data_value, len(data_value))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1106620d0>
+data = <memory at 0x110671900>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+
+During handling of the above exception, another exception occurred:
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110662490>
+stage = 'quality', slot = 0
+
+    @pytest.mark.parametrize('stage,slot',[('pilots',0),('pilots',2),('quality',0),('quality',23)])
+    def test_torch_stream_roundtrip_raw_and_export(writer,stage,slot):
+        out=checkpoints.CheckpointWriter(writer,stage,slot,1024**2)
+        tensor=torch.arange(64,dtype=torch.float32)
+        payload={'model':{'weight':tensor},'optimizer':{'momentum':tensor*2},
+                 'ema':{'weight':tensor+1},'rng':torch.random.get_rng_state(),'step':20}
+>       raw=out.save('raw.pt',payload)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_checkpoint_writer.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:70: in save
+    torch.save(payload,stream)
+.venv/lib/python3.13/site-packages/torch/serialization.py:1002: in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/serialization.py:854: in __exit__
+    self.file_like.write_end_of_file()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1106620d0>
+data = <memory at 0x110671e40>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+____________ test_torch_stream_roundtrip_raw_and_export[quality-23] ____________
+
+obj = {'model': {'weight': tensor([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12., 13.,
+        14., 15., 1...57., 58., 59., 60., 61., 62., 63., 64.])}, 'rng': tensor([158,  29, 140,  ...,   0,   0,   0], dtype=torch.uint8), ...}
+f = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1107642b0>
+pickle_module = <module 'pickle' from '/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pickle.py'>
+pickle_protocol = 2, _use_new_zipfile_serialization = True
+_disable_byteorder_record = False
+
+    def save(
+        obj: object,
+        f: FileLike,
+        pickle_module: Any = pickle,
+        pickle_protocol: int = DEFAULT_PROTOCOL,
+        _use_new_zipfile_serialization: bool = True,
+        _disable_byteorder_record: bool = False,
+    ) -> None:
+        # Reference: https://github.com/pytorch/pytorch/issues/54354
+        # The first line of this docstring overrides the one Sphinx generates for the
+        # documentation. We need it so that Sphinx doesn't leak `pickle`s path from
+        # the build environment (e.g. `<module 'pickle' from '/leaked/path').
+    
+        """save(obj, f, pickle_module=pickle, pickle_protocol=2, _use_new_zipfile_serialization=True)
+    
+        Saves an object to a disk file.
+    
+        See also: :ref:`saving-loading-tensors`
+    
+        See :ref:`layout-control` for more advanced tools to manipulate a checkpoint.
+    
+        Args:
+            obj: saved object
+            f: a file-like object (has to implement write and flush) or a string or
+               os.PathLike object containing a file name
+            pickle_module: module used for pickling metadata and objects
+            pickle_protocol: can be specified to override the default protocol
+    
+        .. note::
+            A common PyTorch convention is to save tensors using .pt file extension.
+    
+        .. note::
+            PyTorch preserves storage sharing across serialization. See
+            :ref:`preserve-storage-sharing` for more details.
+    
+        .. note::
+            The 1.6 release of PyTorch switched ``torch.save`` to use a new
+            zipfile-based file format. ``torch.load`` still retains the ability to
+            load files in the old format. If for any reason you want ``torch.save``
+            to use the old format, pass the kwarg ``_use_new_zipfile_serialization=False``.
+    
+        Example:
+            >>> # xdoctest: +SKIP("makes cwd dirty")
+            >>> # Save to file
+            >>> x = torch.tensor([0, 1, 2, 3, 4])
+            >>> torch.save(x, "tensor.pt")
+            >>> # Save to io.BytesIO buffer
+            >>> buffer = io.BytesIO()
+            >>> torch.save(x, buffer)
+        """
+        torch._C._log_api_usage_once("torch.save")
+        _check_dill_version(pickle_module)
+        _check_save_filelike(f)
+    
+        if isinstance(f, (str, os.PathLike)):
+            f = os.fspath(f)
+    
+        if _use_new_zipfile_serialization:
+            with _open_zipfile_writer(f) as opened_zipfile:
+>               _save(
+                    obj,
+                    opened_zipfile,
+                    pickle_module,
+                    pickle_protocol,
+                    _disable_byteorder_record,
+                )
+
+.venv/lib/python3.13/site-packages/torch/serialization.py:1003: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.13/site-packages/torch/serialization.py:1259: in _save
+    zip_file.write_record("data.pkl", data_value, len(data_value))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1107642b0>
+data = <memory at 0x110672800>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+
+During handling of the above exception, another exception occurred:
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x110764050>
+stage = 'quality', slot = 23
+
+    @pytest.mark.parametrize('stage,slot',[('pilots',0),('pilots',2),('quality',0),('quality',23)])
+    def test_torch_stream_roundtrip_raw_and_export(writer,stage,slot):
+        out=checkpoints.CheckpointWriter(writer,stage,slot,1024**2)
+        tensor=torch.arange(64,dtype=torch.float32)
+        payload={'model':{'weight':tensor},'optimizer':{'momentum':tensor*2},
+                 'ema':{'weight':tensor+1},'rng':torch.random.get_rng_state(),'step':20}
+>       raw=out.save('raw.pt',payload)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_checkpoint_writer.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:70: in save
+    torch.save(payload,stream)
+.venv/lib/python3.13/site-packages/torch/serialization.py:1002: in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/serialization.py:854: in __exit__
+    self.file_like.write_end_of_file()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1107642b0>
+data = <memory at 0x1106725c0>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+____________________ test_exact_aggregate_cap_and_no_retry _____________________
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1107260b0>
+
+    def test_exact_aggregate_cap_and_no_retry(writer):
+        out=producer(writer,10)
+        with out.open('raw.pt') as stream:
+            assert stream.write(b'123456')==6
+            assert stream.tell()==6
+            raw=stream.publish()
+        stream=out.open('h200.pt');stream.write(b'7890')
+        with pytest.raises(ValueError,match='allowance'):stream.write(b'x')
+        assert stream.closed
+        assert metadata.snapshot(writer.root)['checkpoint_logical_bytes']==10
+>       assert file_digest(raw['path'])==raw['sha256']
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_checkpoint_writer.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/hybrid-checkpoint-writer-synthetic-9ez1yy4k/test_exact_aggregate_cap_and_n0/campaign/evidence/quality/00/checkpoints/raw.pt'
+
+    def file_digest(path: Path) -> str:
+        hasher = hashlib.sha256()
+>       with path.open("rb") as stream:
+             ^^^^^^^^^
+E       AttributeError: 'str' object has no attribute 'open'
+
+src/research/protocol.py:22: AttributeError
+___________ test_real_torch_writes_interleave_with_resource_recorder ___________
+
+obj = {'x': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15])}
+f = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1106f6570>
+pickle_module = <module 'pickle' from '/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pickle.py'>
+pickle_protocol = 2, _use_new_zipfile_serialization = True
+_disable_byteorder_record = False
+
+    def save(
+        obj: object,
+        f: FileLike,
+        pickle_module: Any = pickle,
+        pickle_protocol: int = DEFAULT_PROTOCOL,
+        _use_new_zipfile_serialization: bool = True,
+        _disable_byteorder_record: bool = False,
+    ) -> None:
+        # Reference: https://github.com/pytorch/pytorch/issues/54354
+        # The first line of this docstring overrides the one Sphinx generates for the
+        # documentation. We need it so that Sphinx doesn't leak `pickle`s path from
+        # the build environment (e.g. `<module 'pickle' from '/leaked/path').
+    
+        """save(obj, f, pickle_module=pickle, pickle_protocol=2, _use_new_zipfile_serialization=True)
+    
+        Saves an object to a disk file.
+    
+        See also: :ref:`saving-loading-tensors`
+    
+        See :ref:`layout-control` for more advanced tools to manipulate a checkpoint.
+    
+        Args:
+            obj: saved object
+            f: a file-like object (has to implement write and flush) or a string or
+               os.PathLike object containing a file name
+            pickle_module: module used for pickling metadata and objects
+            pickle_protocol: can be specified to override the default protocol
+    
+        .. note::
+            A common PyTorch convention is to save tensors using .pt file extension.
+    
+        .. note::
+            PyTorch preserves storage sharing across serialization. See
+            :ref:`preserve-storage-sharing` for more details.
+    
+        .. note::
+            The 1.6 release of PyTorch switched ``torch.save`` to use a new
+            zipfile-based file format. ``torch.load`` still retains the ability to
+            load files in the old format. If for any reason you want ``torch.save``
+            to use the old format, pass the kwarg ``_use_new_zipfile_serialization=False``.
+    
+        Example:
+            >>> # xdoctest: +SKIP("makes cwd dirty")
+            >>> # Save to file
+            >>> x = torch.tensor([0, 1, 2, 3, 4])
+            >>> torch.save(x, "tensor.pt")
+            >>> # Save to io.BytesIO buffer
+            >>> buffer = io.BytesIO()
+            >>> torch.save(x, buffer)
+        """
+        torch._C._log_api_usage_once("torch.save")
+        _check_dill_version(pickle_module)
+        _check_save_filelike(f)
+    
+        if isinstance(f, (str, os.PathLike)):
+            f = os.fspath(f)
+    
+        if _use_new_zipfile_serialization:
+            with _open_zipfile_writer(f) as opened_zipfile:
+>               _save(
+                    obj,
+                    opened_zipfile,
+                    pickle_module,
+                    pickle_protocol,
+                    _disable_byteorder_record,
+                )
+
+.venv/lib/python3.13/site-packages/torch/serialization.py:1003: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.13/site-packages/torch/serialization.py:1259: in _save
+    zip_file.write_record("data.pkl", data_value, len(data_value))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1106f6570>
+data = <memory at 0x110673ac0>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+
+During handling of the above exception, another exception occurred:
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1106e8b30>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1107259b0>
+
+    def test_real_torch_writes_interleave_with_resource_recorder(writer,monkeypatch):
+        monkeypatch.setattr(resources,'observation',lambda root:dict(
+            peak_rss_bytes=1000,mps_driver_bytes=2000,free_bytes=40*1024**3))
+        stem='evidence/quality/00'
+        rq=writer.publish_json(stem+'/request.json',{'synthetic':True})
+        rs=writer.publish_json(stem+'/result.json',dict(status='completed',holdout_consumed=False,
+                                                     request_sha256=file_digest(rq)))
+        out=producer(writer)
+        with campaign.CampaignQualityResourceRecorder(writer,0,digest('plan'),file_digest(rq)) as recorder:
+            with ThreadPoolExecutor(2) as pool:
+                saves=pool.submit(lambda:[out.save(f'tiny-{i}.pt',{'x':torch.arange(16)}) for i in range(10)])
+                samples=pool.submit(lambda:[recorder._sample() for _ in range(20)])
+>               receipts=saves.result();samples.result()
+                         ^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_checkpoint_writer.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py:59: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tokenizer_wide_hybrid_checkpoint_writer.py:156: in <lambda>
+    saves=pool.submit(lambda:[out.save(f'tiny-{i}.pt',{'x':torch.arange(16)}) for i in range(10)])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:70: in save
+    torch.save(payload,stream)
+.venv/lib/python3.13/site-packages/torch/serialization.py:1002: in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/serialization.py:854: in __exit__
+    self.file_like.write_end_of_file()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.research.tokenizer_wide_hybrid_checkpoint_writer.CheckpointStream object at 0x1106f6570>
+data = <memory at 0x1106731c0>
+
+    def write(self,data):
+        with self._mutex:
+            try:
+                # torch ZIP serialization supplies bytes. Do not copy a tensor's
+                # entire serialized storage or permit mutable caller buffers.
+>               if type(data) is not bytes:raise TypeError('Checkpoint stream requires immutable bytes')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: Checkpoint stream requires immutable bytes
+
+src/research/tokenizer_wide_hybrid_checkpoint_writer.py:97: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_checkpoint_writer.py::test_torch_stream_roundtrip_raw_and_export[pilots-0]
+FAILED tests/test_tokenizer_wide_hybrid_checkpoint_writer.py::test_torch_stream_roundtrip_raw_and_export[pilots-2]
+FAILED tests/test_tokenizer_wide_hybrid_checkpoint_writer.py::test_torch_stream_roundtrip_raw_and_export[quality-0]
+FAILED tests/test_tokenizer_wide_hybrid_checkpoint_writer.py::test_torch_stream_roundtrip_raw_and_export[quality-23]
+FAILED tests/test_tokenizer_wide_hybrid_checkpoint_writer.py::test_exact_aggregate_cap_and_no_retry
+FAILED tests/test_tokenizer_wide_hybrid_checkpoint_writer.py::test_real_torch_writes_interleave_with_resource_recorder
+6 failed, 86 passed in 1.43s

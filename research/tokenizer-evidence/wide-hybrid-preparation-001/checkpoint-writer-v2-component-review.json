@@ -1,0 +1,50 @@
+{
+  "status": "bounded_checkpoint_producer_tested_no_real_dispatch",
+  "created_at": "2026-10-28T17:45:01.370755+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": "60e84a8fa2739e4594a98f908e8ac6ad7ac240c8cb0606b40a13378c638668bc",
+    "tests/test_tokenizer_wide_hybrid_checkpoint_writer.py": "314afc5a6d6db1f80e12472343d4e66926d700883d8c1cb1a6b697b64337efea",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-checkpoint-writer-v2-buffer-guard.json": "42daaa88dc903954e205d52bf6800d8c980bb6fa32c0fd04f572c31b9aec843b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-checkpoint-writer-v2-buffer-tests.log": "d2ff065c95e33fdbd9f722e806da454affc4a56100d369e40819a6b5234e34db",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-checkpoint-writer-v2-final-guard.json": "60a9c6eccf73a50e5a508a1afbaaddd2fdc83a44b42c3a80f67ba261c337b3d4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-checkpoint-writer-v2-final-tests.log": "8de6bdd8c8936bd3a020862a30e7f0139e1a4f50323df0989c89ea78b565ac52",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-checkpoint-writer-v2-guard.json": "3dac539e8b47f2f99d26ee6f08e6848c7cbc5e53e6de83eb85407539c902c9d8",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-checkpoint-writer-v2-tests.log": "b8943eb8f9e07c695e097fba3cdd0c7a99819955cdc958f780f4b0e3c41ea06a"
+  },
+  "tests": {
+    "initial_failed": 6,
+    "initial_passed": 86,
+    "buffer_support_passed": 98,
+    "final_passed": 275
+  },
+  "final_guard": {
+    "elapsed_seconds": 5.641784667037427,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30644928512,
+      "peak_rss_bytes": 243646464
+    },
+    "pid": 75034,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30643822592,
+  "findings": [
+    "New explicit v2 producer streams torch.save through a file-like wrapper. Existing checkpoint save code and closed controllers are unchanged.",
+    "Raw, export and temporary weights in a trajectory share one caller-bound allowance. Initial entire-write checks and per-1MiB chunk checks enforce actual free reserve and aggregate capacity before bytes are written.",
+    "PyTorch supplies borrowed memoryviews in this runtime. The initial bytes-only implementation failed synthetic tests; corrected buffer support copies at most1MiB per chunk for identical write/digest bytes. Source payload must remain stable during save.",
+    "Inherited worker locks and the metadata namespace lock coordinate creation, bounded writes and exclusive publication with resource recorder census. Ten tiny real torch archives interleaved with20 resource samples.",
+    "Partial files remain after serialization, IO, reserve, STOP, identity/size/timestamp or publication failure. Existing final or unfinished slot attempts cannot be retried or overwritten. A publication directory-sync failure leaves both names and the census fails closed.",
+    "Exact byte limits, raw/export round trips, RNG and optimizer-shaped tensor payloads, mutation/hardlinks, file-count bounds and changing free space were tested. Returned size/SHA covers emitted archive bytes."
+  ],
+  "limitations": [
+    "Tiny synthetic tensors are not numerical model optimizer/resume/EMA evidence or wide-model torch.save memory/time feasibility. No corpus, actual MPS, research weights or failed combined fixture were used.",
+    "Caller must bind the exact allowance to the frozen plan, hold worker locks, pass the full remaining-campaign storage gate, maintain time/RSS/MPS monitoring, and keep the payload stable during serialization. This component does not authorize dispatch.",
+    "Checkpoint serialization itself may allocate memory inside PyTorch; the bounded chunk copy does not establish peak memory. Large-file IO latency under the shared lock remains a measured-pilot concern.",
+    "Bounded log/state/cache producers and full v2 controller/stage/cleanup-chain/inference integration remain required, along with actual nine numerical/input reviews and measured pilots. No freeze, training launch or additional research checkpoint deletion occurred."
+  ]
+}
