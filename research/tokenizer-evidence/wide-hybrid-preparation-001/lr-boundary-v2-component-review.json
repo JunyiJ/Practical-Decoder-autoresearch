@@ -1,0 +1,52 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T20:53:08.265325+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-boundary-v2-guard.json": "5f0243d7a2cd7bb1f727c947d6c1522a4905e785c2809815bb195d0b154ee96f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-lr-boundary-v2-tests.log": "a3f042aa7593e4c4b799117dae2e51f0458ce7669f6266112357c71a8fe0adf8",
+    "src/research/tokenizer_wide_hybrid_cleanup.py": "1a5b7e92f2da0f2d8ca969234c8d6631b8bd9905916b128174f8829237205ea0",
+    "src/research/tokenizer_wide_hybrid_lr_boundary_v2.py": "ffe2accdab8b03fab9a74a4aa0f6f609c06274d11a31b154f8a7fc0809f8ed51",
+    "src/research/tokenizer_wide_hybrid_lr_selection_v2.py": "dbf40cb8a2c0187f5be3e34600aeac9907e9fe71ad20adb435d9a625a194aa63",
+    "src/research/tokenizer_wide_hybrid_retention_chain.py": "49ef31fc2fbdec4fa69513a0ea4a88a5e69d8869cb2016375bf2bf90bb159a8a",
+    "src/research/tokenizer_wide_hybrid_storage_v2.py": "6558775da8a0598dbe471652c1c7145718823131aa206c60e94a890abefe1b2d",
+    "tests/test_tokenizer_wide_hybrid_lr_boundary_v2.py": "51c5cd673d1001d5eda4a582cab637b2e5f2a10e751d8e0b3cb283a0b196179d"
+  },
+  "findings": [
+    "New callable LR cleanup controller first runs the exact idle selection verifier under a1800s parent CPU guard. It captures immutable full stage, selection, original checkpoint pairs, all existing control hashes and complete evidence inventory before repeating all nine independent audits and full future storage immediately before invoking the unchanged600s cleanup executor.",
+    "The executor receives only the12 prospectively selected losing-screen files, original size/SHA bindings and complete protected inventory. It verifies original bytes, journals intent/deleted events with fsync and verifies all protected files. A pilot+LR cumulative chain and measured full remaining storage must pass after deletion before a finished-guard-bound completion receipt is published.",
+    "Post-cleanup verification rebinds frozen source/runtime/plan, saved scientific selection, original pre-deletion audits, finished guards, immutable metadata, all surviving checkpoints and the entire pilot/LR deletion chain. It reconstructs the original LR manifest and requires exact inventory. It does not invoke the live-tensor verifier on absent losers, regenerate weights or treat unexplained absence as deletion proof.",
+    "All10 integration tests passed in152.39s under240s/4GiB/8GiB actual CPU/disk limits. They use complete synthetic serial nine-screen and selection histories. Successful cleanup removes exactly12 temporary byte files, keeps all6 selected raw/H200 files and every original non-checkpoint byte. Guard/source/selection/winner corruption blocks deletion; changed journals, recreated losers, missing winners and changed controls block post-cleanup verification.",
+    "An injected failure on the second temporary unlink preserves one confirmed deletion, the three-event intent/deleted/intent journal, remaining17 files and failure markers. No completion receipt is published and retry is refused. Original protected metadata remains byte-identical. No research checkpoint is used by these tests.",
+    "Observed synthetic metadata occupancy after cleanup was1082303bytes against the2MiB group cap. Simplified configs/source evidence mean this is not proof that the eventual full frozen27-trajectory metadata footprint fits."
+  ],
+  "free_bytes_observed": 30612926464,
+  "guard": {
+    "elapsed_seconds": 152.75958733353764,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 240
+    },
+    "observation": {
+      "free_bytes": 30614052864,
+      "peak_rss_bytes": 241025024
+    },
+    "pid": 90909,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_lr_boundary_v2_component_review",
+  "limitations": [
+    "This verifier supports the exact idle boundary before any rank request. Appended-rank history verification, rank/fresh dispatch and final selection/cleanup/inference orchestration still require integration and tests.",
+    "Actual nine rank-policy numerical/input checks and measured pilots remain unresolved; failed combined numerical fixture and all closed controllers remain closed. All scientific evidence and child calls in these integration tests are synthetic/mocked.",
+    "No research training/MPS launch, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or test-holdout evaluation occurred. The27-trajectory campaign remains unfrozen; original quality, resource and full-panel storage gates remain unchanged."
+  ],
+  "status": "lr_cleanup_and_idle_postcleanup_gate_tested_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "passed": 10,
+    "seconds": 152.39
+  }
+}

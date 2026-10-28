@@ -1849,3 +1849,40 @@ retry, closed-controller rerun or holdout evaluation occurred. The27-trajectory
 campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/lr-selection-v2-component-review.json`.
+
+
+## October 28 LR cleanup and idle post-cleanup verification
+
+A versioned LR boundary controller now requires the complete saved selection,
+all nine parent/child receipts and independent scientific audits before invoking
+the existing bounded deletion executor. It captures original checkpoint pairs,
+full metadata inventory and all prior control hashes, then repeats the full
+stage and future-storage audit immediately before deletion. Only the12 selected
+losing-screen files enter the exact path/size/SHA manifest. The executor journals
+each deletion and verifies every protected file; the parent then checks the
+complete pilot/LR chain and actual remaining storage before publishing completion.
+
+The post-cleanup verifier rebinds frozen source/runtime/plan, original selection,
+pre-deletion audits and guards, surviving weights, preserved metadata and the
+full deletion journal chain. It reconstructs the manifest without reloading
+intentionally removed tensors. This is an exact idle-boundary verifier before
+any rank request; an append-aware history consumer remains to be implemented.
+
+All10 integration tests passed in152.39s under240s/4GiB/8GiB actual CPU/disk
+guards. The successful synthetic case deletes exactly12 temporary byte files,
+keeps all6 selected raw/H200 files and preserves every prior non-checkpoint byte.
+Corrupted preconditions block deletion; changed journals, restored losers,
+missing winners and altered controls block verification. An injected second
+unlink failure retains one confirmed deletion, an intent/deleted/intent journal,
+17 remaining files and permanent failure markers; it cannot retry or publish a
+successful receipt. These are disposable fixtures, not research checkpoints.
+
+Synthetic post-cleanup metadata occupied1082303bytes of the2MiB group allowance.
+The full frozen configuration/source/receipt footprint still needs exact
+accounting. Next add append-aware LR history for rank preparation, rank/fresh
+transitions and final selection/cleanup/inference. Actual nine numerical/input
+cases and measured pilots remain unresolved. No research training/MPS launch,
+research checkpoint deletion, failed combined numerical retry, closed-controller
+rerun or holdout evaluation occurred. The27-trajectory campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/lr-boundary-v2-component-review.json`.
