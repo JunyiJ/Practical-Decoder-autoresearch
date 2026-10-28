@@ -54,7 +54,7 @@ def _locks(root, fds):
 def _scan(root, owned):
     files = set()
     for path in root.rglob('*'):
-        if path.is_relative_to(owned): continue
+        if owned is not None and path.is_relative_to(owned): continue
         if path.is_symlink(): raise ValueError('Evidence inventory contains a symlink')
         if path.is_dir(): continue
         if not path.is_file(): raise ValueError('Evidence inventory contains a nonregular file')
@@ -193,15 +193,9 @@ def execute_boundary(root, boundary, lock_fds, authorize, revalidate):
         raise
 
 
-def recheck_execution(root, expected_manifest, execution_ref, context_sha256):
-    """Verify the final marker, full journal, guard and all protected inventory.
-
-    A receipt alone cannot prove that the executor finished post-verification.
-    Frozen-plan/context authorization still belongs to the future controller.
-    This is boundary-local: after a later authorized rank cleanup retires an LR
-    anchor, a cumulative receipt-chain verifier is required instead.
-    """
-    from .tokenizer_wide_hybrid_retention_receipts import _document, recheck_boundary
+def _execution_record(root, expected_manifest, execution_ref, context_sha256):
+    """Verify terminal evidence only; public callers must verify live inventory."""
+    from .tokenizer_wide_hybrid_retention_receipts import _document, _receipt_record
     root = Path(root).resolve(); _sha(context_sha256)
     boundary = expected_manifest['boundary']
     if boundary not in ('pilot','lr','rank'): raise ValueError('Invalid execution boundary')
@@ -215,8 +209,17 @@ def recheck_execution(root, expected_manifest, execution_ref, context_sha256):
         raise ValueError('Final cleanup marker incomplete or from different context')
     refs = {name:dict(path=base+'/'+name,sha256=review['files'][name]) for name in names}
     documents = {name:_document(root,refs[name]) for name in names if name != 'deletions.jsonl'}
-    recheck_boundary(root,expected_manifest,refs['manifest.json'],refs['receipt.json'])
-    inventory = documents['inventory.json']; candidates = {e['path']:e for e in expected_manifest['delete']}
+    _receipt_record(root,expected_manifest,refs['manifest.json'],refs['receipt.json'])
+    inventory = documents['inventory.json']
+    if not isinstance(inventory,dict) or not 0 < len(inventory) <= MAX_FILES:
+        raise ValueError('Invalid execution inventory')
+    for name, entry in inventory.items():
+        _path(root,name)
+        if (not isinstance(entry,dict) or set(entry) != {'size','sha256'}
+                or type(entry['size']) is not int or entry['size'] < 0):
+            raise ValueError('Invalid original file inventory')
+        _sha(entry['sha256'])
+    candidates = {e['path']:e for e in expected_manifest['delete']}
     for e in expected_manifest['delete']+expected_manifest['retain']:
         if inventory.get(e['path']) != dict(size=e['size'],sha256=e['sha256']):
             raise ValueError('Original execution inventory differs from checkpoint bindings')
@@ -248,6 +251,21 @@ def recheck_execution(root, expected_manifest, execution_ref, context_sha256):
             or review.get('deleted_logical_bytes') != sum(e['size'] for e in candidates.values())
             or review.get('protected_files_verified') != len(inventory)-len(candidates)):
         raise ValueError('Execution counts differ')
+    _document(root,execution_ref)
+    return inventory, candidates
+
+
+def recheck_execution(root, expected_manifest, execution_ref, context_sha256):
+    """Verify the final marker, full journal, guard and all protected inventory.
+
+    A receipt alone cannot prove that the executor finished post-verification.
+    Frozen-plan/context authorization still belongs to the future controller.
+    This is boundary-local: after a later authorized rank cleanup retires an LR
+    anchor, a cumulative receipt-chain verifier is required instead.
+    """
+    from .tokenizer_wide_hybrid_retention_receipts import _document
+    root = Path(root).resolve()
+    inventory, candidates = _execution_record(root, expected_manifest, execution_ref, context_sha256)
     deadline = time.monotonic()+TIMEOUT
     for name in set(inventory)-set(candidates): _check(root,name,inventory[name],deadline)
     # Boundary-local verification. A later authorized retirement of an LR anchor

@@ -1,0 +1,51 @@
+{
+  "status": "cumulative_cleanup_provenance_tested_not_wired_to_controller",
+  "created_at": "2026-10-28T16:42:51.041526+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_retention_chain.py": "49ef31fc2fbdec4fa69513a0ea4a88a5e69d8869cb2016375bf2bf90bb159a8a",
+    "src/research/tokenizer_wide_hybrid_cleanup.py": "1a5b7e92f2da0f2d8ca969234c8d6631b8bd9905916b128174f8829237205ea0",
+    "src/research/tokenizer_wide_hybrid_retention_receipts.py": "13ee8149272d82b1ff479a5c52ee47ee639e1b67b275bff692dd70160b05da6b",
+    "tests/test_tokenizer_wide_hybrid_retention_chain.py": "ffcf9d295fcdaff6b24f397c1177e59b50f6f77e254056c36b6cc4a2ef29b494",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-chain-v2-final-guard.json": "5d403a5dfad454548ee9a1ea7233cad694b78adb51563d12d63981b231860fdb",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-chain-v2-final-tests.log": "9e18c47fbdda839457c386ab80f53f6e5046111e74ed5527473aec0a1f49cd06",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-chain-v2-guard.json": "4e89c8c548db64daaa30a214ddcc2ff71612670e335994bdfe9b2ca282496c51",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-chain-v2-tests.log": "9ece42375aa0ecd914fee23691d7063995b2f7dacce72257ff6ce5718311570e"
+  },
+  "tests": {
+    "new_chain_tests": 28,
+    "cleanup_regressions": 20,
+    "receipt_regressions": 24,
+    "final_total": 72,
+    "elapsed_seconds": 2.27
+  },
+  "final_guard": {
+    "elapsed_seconds": 2.3864801675081253,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30753198080,
+      "peak_rss_bytes": 67026944
+    },
+    "pid": 72603,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30751260672,
+  "findings": [
+    "Exact pilot/LR/rank prefix and every existing cleanup attempt required; a partial or empty interrupted later attempt cannot be ignored.",
+    "All prior protected bindings persist through each later inventory. Only identical LR-selected index/role/path/size/hash pairs may be retired by completed rank cleanup.",
+    "Completed markers, original manifests, deletion journals, guards, receipts and current complete inventory remain hash-bound; no arbitrary missing-file exception.",
+    "Synthetic re-signed rank inventory omitting prior failure evidence is rejected by cross-stage continuity. Fresh, selected and failure weights remain protected.",
+    "Existing boundary-local recheck remains strict; cumulative verification is a separate read-only entry point."
+  ],
+  "limitations": [
+    "No production cleanup, training, MPS or corpus/model/checkpoint loading. Tests removed disposable synthetic byte files only.",
+    "Independent full stage audits, frozen source/plan/context and complete current inventory must be supplied by the future controller under worker locks and resource guard; dispatch_authorized remains false.",
+    "Pilot/full-panel provenance, immutable evidence layout, full remaining metadata/cumulative storage accounting and runner integration remain unresolved.",
+    "Nine numerical rank-policy cases and measured pilot memory/time/cache/export reviews remain prerequisites. Failed combined CPU fixture stays closed; no retry.",
+    "Deleted weights cannot be reloaded or tensor-audited; original audits remain historical evidence."
+  ]
+}

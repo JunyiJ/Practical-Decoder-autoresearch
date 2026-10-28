@@ -100,14 +100,8 @@ def _document(root, ref):
     return value
 
 
-def recheck_boundary(root, expected_manifest, manifest_ref, receipt_ref):
-    """Explain missing candidate weights only using exact completed receipts.
-
-    expected_manifest must be freshly reconstructed with planned_manifest from
-    independent saved decisions/audits, not copied from the on-disk manifest.
-    Caller owns locks and resource guards. All other inventory is still checked
-    normally by the controller. This does not approve training or adoption.
-    """
+def _receipt_record(root, expected_manifest, manifest_ref, receipt_ref):
+    """Verify immutable receipt bindings; caller must verify retained weights."""
     root = Path(root).resolve()
     if (expected_manifest.get('version') != VERSION
             or expected_manifest.get('status') != 'planned'):
@@ -129,12 +123,27 @@ def recheck_boundary(root, expected_manifest, manifest_ref, receipt_ref):
         raise ValueError('Deletion receipt incomplete or differs from allowlist')
     for name, sha in manifest['evidence'].items():
         _check_file(root, name, sha)
-    for entry in manifest['retain']:
-        _check_file(root, entry['path'], entry['sha256'], entry['size'])
     for entry in manifest['delete']:
         path = _path(root, entry['path'])
         if path.exists():
             raise ValueError('Deleted checkpoint reappeared or deletion did not finish')
+    _check_file(root, manifest_ref['path'], manifest_ref['sha256'])
+    _check_file(root, receipt_ref['path'], receipt_ref['sha256'])
+    return manifest
+
+
+def recheck_boundary(root, expected_manifest, manifest_ref, receipt_ref):
+    """Explain missing candidate weights only using exact completed receipts.
+
+    expected_manifest must be freshly reconstructed with planned_manifest from
+    independent saved decisions/audits, not copied from the on-disk manifest.
+    Caller owns locks and resource guards. All other inventory is still checked
+    normally by the controller. This does not approve training or adoption.
+    """
+    root = Path(root).resolve()
+    manifest = _receipt_record(root, expected_manifest, manifest_ref, receipt_ref)
+    for entry in manifest['retain']:
+        _check_file(root, entry['path'], entry['sha256'], entry['size'])
     _check_file(root, manifest_ref['path'], manifest_ref['sha256'])
     _check_file(root, receipt_ref['path'], receipt_ref['sha256'])
     return dict(version=VERSION, deleted_files={e['path']: e['sha256'] for e in manifest['delete']},

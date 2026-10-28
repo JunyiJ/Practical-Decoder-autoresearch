@@ -830,3 +830,31 @@ Full plan/stage-audit/idle-worker callbacks, cumulative receipts, pilot/full-pan
 gates and runner/storage integration remain. No production cleanup or training
 was launched. Nine numerical cases and measured pilot resources remain missing;
 the failed combined fixture and all closed campaigns remain closed.
+
+## October 28 cumulative cleanup provenance
+
+The read-only v2 chain verifier now supports an LR winner legitimately losing
+the later rank comparison. It requires the exact pilot/LR/rank prefix, every
+existing cleanup attempt, the completed execution markers and unchanged stage
+inventories. Rank cleanup must refer to the identical LR anchor pairs by index,
+role, path, size and original hash. Every other earlier protected file remains
+protected. The final complete inventory is checked against actual files; deleted
+weights cannot reappear. Even an empty interrupted later attempt blocks accepting
+an earlier prefix. Existing boundary-local validation remains strict.
+
+Validation: 28 new chain tests plus 44 cleanup/receipt regressions passed, 72
+total in 2.27 seconds. These include legitimate anchor replacement and retention,
+missing or reordered boundaries, protected-pair substitution, altered original
+inventories, resurrected weights, omitted evidence and interrupted attempts.
+The CPU guard recorded 67,026,944 bytes peak RSS under 180s/4GiB/8GiB limits.
+Both the initial 68-test pass and final pass are retained in
+`tokenizer-evidence/wide-hybrid-preparation-001/retention-chain-v2-review.json`.
+Only disposable synthetic bytes were deleted; no production cleanup or training.
+
+This component still relies on independently reconstructed stage manifests and
+controller-bound current inventory/context, under the worker locks and resource
+guard. It returns no dispatch authorization. Versioned pilot/full-panel gates,
+immutable evidence layout, remaining metadata accounting, complete future storage
+gates and runner integration remain before freeze. Nine numerical cases and
+measured pilot reviews are unresolved; the failed combined CPU fixture stays
+closed. No quality threshold, scientific trajectory or reserve changed.

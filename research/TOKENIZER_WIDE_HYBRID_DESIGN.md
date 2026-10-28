@@ -396,3 +396,13 @@ It is not wired to production authorization gates. Cleanup metadata reserves
 LR anchor becomes a losing rank screen; boundary-local rechecking alone cannot
 serve final provenance. See `cleanup-v2-component-review.json` in preparation
 evidence. No actual retained weights were deleted in this implementation step.
+
+Cumulative receipt verification is now implemented as a separate read-only v2
+component (28 new tests, 72 with cleanup/receipt regressions). It binds every
+completed boundary in order, preserves earlier inventory identities and permits
+only identical LR anchors to be retired by a later rank selection. Missing or
+interrupted later attempts cannot be ignored. It still requires independent
+controller-owned stage manifests, contexts and full current inventory; it never
+authorizes dispatch. See `retention-chain-v2-review.json`. Production pilot and
+full-panel gates, layout, metadata/storage enforcement and serial integration,
+plus nine numerical cases and measured pilots, remain before freeze.
