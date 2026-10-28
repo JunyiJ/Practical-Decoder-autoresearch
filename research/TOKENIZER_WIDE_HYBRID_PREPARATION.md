@@ -1147,3 +1147,37 @@ controller/stage/cleanup-chain/inference wiring and all actual nine numerical/in
 reviews and measured pilots remain required.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/process-v2-component-review.json`.
+
+## October 28 v2 pilot cache-audit producer
+
+The v2 producer now uses the immutable campaign projection copy and its bound
+SHA256, including the exact D/2 geometry for the declared family. The shared
+raw/H200 tensor/load/cache/reset implementation accepts that explicit projection;
+the public v1 default retains its source-projection behavior. This closes the
+previous producer/binder mismatch without changing storage or scientific rules.
+
+Before expensive audit work, the bounded writer publishes an exclusive attempt
+record binding slot, request/result hashes, frozen projection, tokenizer, training
+tokens and cache contract. Success and failure reports use the same metadata
+budgets. Existing attempt, failure, partial or completed audit files prohibit
+retry. Projection, STOP and attempt identity are checked again during/before
+completion. The v2 three-pilot stage binder requires the producer version and
+matching attempt record, and rejects failure/partial audit files even when they
+are listed in the supplied evidence inventory.
+
+Validation:130 initial tests and261 final tests passed. The final run took4.54s
+with peak RSS250,036,224bytes under180s/4GiB/8GiB outer guards. Tests used tiny
+synthetic checkpoints and mocked MPS/model/cache APIs, including serial endpoint
+release, frozen-copy use with an inaccessible source projection, changed inputs,
+STOP, failure publication, runtime/fallback rejection and no retry. These are
+integration checks, not actual MPS measurements, nine-case numerical evidence,
+model-quality results or wider-model feasibility.
+
+Next connect the prepared metadata/checkpoint/resource/process/cache producers to
+an explicit v2 pilot worker, including training/export output hooks and frozen
+identity binding, then complete controller/stage/cleanup-chain/inference wiring.
+All actual numerical/input and measured-pilot prerequisites remain required before
+launch. No research weights were deleted, no plan was frozen and no closed run or
+failed numerical fixture was retried.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-cache-v2-component-review.json`.

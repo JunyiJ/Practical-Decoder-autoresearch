@@ -60,7 +60,8 @@ def fixture(root):
         tensor=dict(kind='pilot',status='export_values_reviewed_pending_numerical_and_resource_audits',
             adopted=False,files=dict(files),metadata=metadata,values=values)
         files[str(root/corpus['path'])]=corpus['sha256'];files[str(root/pref['path'])]=pref['sha256']
-        cache=dict(status='pilot_cache_checks_complete_pending_resource_review',spec=spec,adopted=False,
+        attempt=write(root,stem+'/audit-attempt.json',audit.attempt_contract(i,rq['sha256'],rs['sha256'],pref,tokenizer,token_sha))
+        cache=dict(kind=audit.CACHE_KIND,attempt=attempt,status='pilot_cache_checks_complete_pending_resource_review',spec=spec,adopted=False,
             contract=audit.CACHE_CONTRACT,token_sha256=token_sha,tokenizer_sha256=digest(tokenizer),tensor_review=tensor,files=files,
             endpoints={k:dict(checkpoint=str(root/pair[k]['path']),sha256=pair[k]['sha256'],parameters=row['parameters'],
                 parameter_storage_bytes=row['parameter_bytes'],checks=[dict(batch=b,passed=True,max_absolute_error=0.,
@@ -78,7 +79,7 @@ def fixture(root):
         process=dict(status='completed',returncode=0,error=None,reserve_bytes=8*1024**3,timeout_seconds=600,
             output_limit_bytes=row['per_trajectory_allowance_bytes'],log_limit_bytes=4*1024**2,elapsed_seconds=2.,
             required_free_bytes=30_631_281_412,observation=dict(free_bytes=40*1024**3,output_bytes=5000,log_bytes=30))
-        refs=[rq,rs,er,cache_ref,write(root,stem+'/resource-audit.json',resource),
+        refs=[rq,rs,er,cache_ref,attempt,write(root,stem+'/resource-audit.json',resource),
               write(root,stem+'/process/process.json',process),write(root,stem+'/process/worker.log',b'synthetic process log')]
         evidence.update({ref['path']:ref['sha256'] for ref in refs})
     return dict(root=root,context=context,requests=requests,evidence=evidence,numerical_ref=nref,
@@ -145,3 +146,21 @@ def test_incomplete_or_changed_pilot_evidence_blocks_boundary(tmp_path,bad):
     elif bad=='weight_change':(tmp_path/'pilots/00/checkpoints/raw.pt').write_text('changed')
     elif bad=='corpus_change':(tmp_path/'meta/corpus.txt').write_text('changed')
     with pytest.raises(ValueError):audit.bind_pilot_boundary(**args)
+
+
+@pytest.mark.parametrize('bad',['kind','attempt','missing_attempt','changed_attempt'])
+def test_versioned_cache_attempt_required(tmp_path,bad):
+    args=fixture(tmp_path);name='pilots/00/audit.json'
+    if bad=='kind':change(args,name,lambda x:x.update(kind='legacy'))
+    elif bad=='attempt':change(args,name,lambda x:x['attempt'].update(sha256='0'*64))
+    elif bad=='missing_attempt':args['evidence'].pop('pilots/00/audit-attempt.json')
+    else:change(args,'pilots/00/audit-attempt.json',lambda x:x.update(slot=1))
+    with pytest.raises(ValueError):audit.bind_pilot_boundary(**args)
+
+
+@pytest.mark.parametrize('name',['audit-failure.json','audit-failure.json.tmp','audit-attempt.json.tmp','audit.json.tmp'])
+def test_bound_failure_or_partial_cache_evidence_still_blocks_stage(tmp_path,name):
+    args=fixture(tmp_path)
+    ref=write(tmp_path,'pilots/00/'+name,{'status':'failed'})
+    args['evidence'][ref['path']]=ref['sha256']
+    with pytest.raises(ValueError,match='Failed or partial'):audit.bind_pilot_boundary(**args)

@@ -10,6 +10,7 @@ from pathlib import Path
 from .protocol import digest, file_digest
 from .tokenizer_wide_hybrid_pilot_config import specs
 from .tokenizer_wide_hybrid_pilot_cache import CACHE_CONTRACT
+from .tokenizer_wide_hybrid_pilot_cache_v2 import KIND as CACHE_KIND, attempt_contract
 from .tokenizer_wide_hybrid_retention import allocations
 from .tokenizer_wide_hybrid_retention_audit import (
     _require, _finite, _load, numerical_review, pilot_resource_review,
@@ -47,8 +48,11 @@ def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
     records=[];pairs={};inodes=set();trial_dirs=[];corpora=set()
     for index,(expected,spec) in enumerate(zip(requests,specs())):
         stem=f'pilots/{index:02d}';trial=_path(root,stem);trial_dirs.append(trial)
+        _require(not any((trial/name).exists() or (trial/name).is_symlink() for name in
+                 ('audit-failure.json','audit-failure.json.tmp','audit-attempt.json.tmp','audit.json.tmp')),
+                 'Failed or partial pilot cache audit cannot pass stage review')
         names={k:stem+'/'+v for k,v in dict(request='request.json',result='result.json',
-            cache='audit.json',resource='resource-audit.json',
+            cache='audit.json',attempt='audit-attempt.json',resource='resource-audit.json',
             process='process/process.json',log='process/worker.log').items()}
         docs={k:_load(root,name,bound) for k,name in names.items() if k!='log'}
         request,result,cache=docs['request'],docs['result'],docs['cache']
@@ -96,6 +100,11 @@ def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
                  and type(values.get('parameters_compared')) is int and values['parameters_compared']>0
                  and type(values.get('buffers_compared')) is int and values['buffers_compared']>=0,
                  'Pilot tensor value audit incomplete or overstated')
+        _require(cache.get('kind')==CACHE_KIND,'Versioned pilot cache producer required')
+        attempt_ref=dict(path=names['attempt'],sha256=bound[names['attempt']])
+        _require(digest(cache.get('attempt'))==digest(attempt_ref)
+                 and digest(docs['attempt'])==digest(attempt_contract(index,rqsha,rssha,
+                    projection_ref,tokenizer,training_token_sha256)), 'Pilot cache attempt binding differs')
         _require(cache.get('status')=='pilot_cache_checks_complete_pending_resource_review'
                  and digest(cache.get('spec'))==digest(spec) and cache.get('adopted') is False
                  and digest(cache.get('contract'))==digest(CACHE_CONTRACT)
@@ -125,8 +134,7 @@ def bind_pilot_boundary(root, *, context, requests, evidence, numerical_ref,
         _require(file_digest(corpus)==context['corpus_sha256'],'Pilot corpus changed')
         corpora.add(corpus)
         files[str(corpus)]=context['corpus_sha256'];files[str(root/projection_ref['path'])]=projection_ref['sha256']
-        # Existing cache producer binds the source projection's absolute path.
-        # A v2 producer must bind this immutable campaign copy instead.
+        # The v2 producer binds this immutable campaign projection copy.
         _require(digest(cache.get('files'))==digest(files),'Pilot cache evidence bindings differ')
         allowance=budgets[spec['family'],2]
         pilot_resource_review(docs['resource'],docs['process'],context,rqsha,rssha,allowance)

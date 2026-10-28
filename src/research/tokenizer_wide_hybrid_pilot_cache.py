@@ -31,9 +31,12 @@ def _projection(family):
 
 
 def check_model(model, cfg, family, token_ids, expected_sha256):
+    return _check_model(model, cfg, family, token_ids, expected_sha256, _projection(family))
+
+
+def _check_model(model, cfg, family, token_ids, expected_sha256, projection):
     validate_mps_model(model, cfg, family)
     _require(token_digest(token_ids) == expected_sha256, 'Training cache input changed')
-    projection = _projection(family)
     parameters = sum(p.numel() for p in model.parameters())
     storage = allocated_bytes(model.parameters())
     _require(parameters == projection['parameters'] and storage == projection['parameter_bytes'],
@@ -55,6 +58,12 @@ def check_model(model, cfg, family, token_ids, expected_sha256):
 
 
 def review_caches(binding, expected_tokenizer, expected_token_sha256):
+    return _review_caches(binding, expected_tokenizer, expected_token_sha256,
+        projection_path=PROJECTION, projection_sha256=file_digest(PROJECTION), model_check=check_model)
+
+
+def _review_caches(binding, expected_tokenizer, expected_token_sha256, *,
+                   projection_path, projection_sha256, model_check):
     """Review tensors, then load one checkpoint at a time for full/cache/reset.
 
     This is not a worker or launch gate. Frozen provenance, nine-case numerical
@@ -76,10 +85,12 @@ def review_caches(binding, expected_tokenizer, expected_token_sha256):
              'Missing or inconsistent tokenizer binding')
     corpus = Path(cfg_dict['data']['path']).resolve()
     _require(file_digest(corpus) == CORPUS_SHA256, 'Corpus changed')
+    projection_path = Path(projection_path).resolve()
+    _require(file_digest(projection_path) == projection_sha256, 'Frozen cache projection changed')
     tensor_review = review_values(trial, request, binding['request_sha256'], binding['result_sha256'],
                                   binding['training_contract'], kind='pilot')
     bound = dict(tensor_review['files']); bound[str(corpus)] = CORPUS_SHA256
-    bound[str(PROJECTION.resolve())] = file_digest(PROJECTION)
+    bound[str(projection_path)] = projection_sha256
     def recheck():
         _require(all(file_digest(Path(p)) == sha for p,sha in bound.items()), 'Pilot cache inputs changed')
     recheck()
@@ -109,7 +120,7 @@ def review_caches(binding, expected_tokenizer, expected_token_sha256):
             payload = loader = None
             gc.collect()
             endpoints[kind] = dict(checkpoint=str(path), sha256=bound[str(path)],
-                **check_model(model, cfg, family, ids, expected_token_sha256))
+                **model_check(model, cfg, family, ids, expected_token_sha256))
             recheck()
         finally:
             del model, payload, loader

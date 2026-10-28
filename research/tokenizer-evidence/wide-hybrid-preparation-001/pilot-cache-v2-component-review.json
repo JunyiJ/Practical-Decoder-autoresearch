@@ -1,0 +1,48 @@
+{
+  "status": "versioned_bounded_pilot_cache_producer_tested_no_real_mps",
+  "created_at": "2026-10-28T17:59:32.687192+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_pilot_cache.py": "79ad5f4845933ee5b47909fdee3d6ec5ce565bb7f072584c00f7d1f0fc3cdd31",
+    "src/research/tokenizer_wide_hybrid_pilot_cache_v2.py": "45eb43a8a8b97593341ce6e023b915a40829dd5ece1ccdbb71492f4490bd70e5",
+    "src/research/tokenizer_wide_hybrid_pilot_audit_v2.py": "e34bfd9c9734475fa4f8f450caaf496bf6bac60af1cb26fa529c72ea1c9954af",
+    "tests/test_tokenizer_wide_hybrid_pilot_cache_v2.py": "16a9e923474ba086902d023c3fc84ce6b97ed86600916ced406a4c046b925e5e",
+    "tests/test_tokenizer_wide_hybrid_pilot_audit_v2.py": "1a9aec29d9728d358fb0388e77890bfb0430ec645b60a71d20e7c7bd1861a055",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-cache-v2-final-guard.json": "449c56f7b1396b4f49e437d091b6dd46a1793f01cfbd75ec8671bd055be217aa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-cache-v2-final-tests.log": "8a0378c6fe129e5002b1afe85e08906e838c3be70e2d7020dc0636421a86c4f7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-cache-v2-guard.json": "688022cd0794ba1f47185b443c8f54ec2657c3bcb8ee7c1612e7d1b345f493df",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-cache-v2-tests.log": "a7791103ce1b413a760df6c3f8d25ff145b4929474b2ad5460e459bff3d2bc16"
+  },
+  "tests": {
+    "initial_passed": 130,
+    "final_passed": 261
+  },
+  "final_guard": {
+    "elapsed_seconds": 5.022875000722706,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30655741952,
+      "peak_rss_bytes": 250036224
+    },
+    "pid": 75927,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30654054400,
+  "findings": [
+    "V2 pilot cache producer binds the immutable campaign projection copy, its exact SHA256 and the declared D/2 family row. It does not read the source-tree projection while auditing endpoints.",
+    "Shared tensor/load/cache/reset implementation now accepts an explicit projection and checker; the public v1 default still uses its source projection. No old storage policy, closed controller or scientific selection rule changed.",
+    "An exclusive bounded audit-attempt document precedes expensive work and binds slot/request/result/projection/tokenizer/training-input/cache-contract identities. Successful report and failure diagnostics use the bounded metadata writer. Existing attempt/failure/partial/success evidence prevents retry.",
+    "Full stage review requires the v2 producer kind, matching attempt reference/hash/content and the frozen campaign projection binding. Failure and partial audit files reject a stage even if included in its evidence manifest.",
+    "Synthetic tests exercised serial raw/H200 checkpoint loads with model release, exact projection use, projection/attempt mutation, STOP, runtime/fallback/token failures, publication failure and preserved attempts. Public default cache tests remain passing."
+  ],
+  "limitations": [
+    "No actual MPS cache measurement or wide-model numerical optimizer/resume/EMA test was run. Tests used tiny checkpoints with mocked model/MPS/cache APIs; they cannot justify quality, performance or feasibility claims.",
+    "The caller must enforce the complete frozen campaign identity, all9 numerical prerequisites, training input provenance, full remaining storage, inherited worker locks and600s/4GiB/6GiB/8GiB resource profile. This module is not a worker launcher.",
+    "Checkpoint tensors, corpus, projection and exact training-token identities are rechecked by the shared reviewer. Resource completion must still bind the produced audit hash, and all three completed pilot audits must pass the separate stage review.",
+    "Actual v2 training/export sink integration, pilot worker, complete controller/stage/cleanup-chain/inference acceptance and real numerical/input/measured-pilot prerequisites remain outstanding. No research checkpoint deletion, plan freeze, failed-fixture retry or closed-campaign rerun occurred."
+  ]
+}
