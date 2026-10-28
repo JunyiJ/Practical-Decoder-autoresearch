@@ -31,7 +31,7 @@ def score(parameters, path, sha, ce=5.):
         checkpoint=str(path),checkpoint_sha256=sha)
 
 
-def fixture(root, boundary='lr'):
+def fixture(root, boundary='lr', *, producer_v2=False):
     records=[dict(s,status='completed',ce=5.) for s in rules.lr_specs()]
     rates=rules.choose_rates(records)
     selection=None
@@ -40,6 +40,8 @@ def fixture(root, boundary='lr'):
         selection=rules.choose_ranks(records[:9],records[9:])
     indices=audit.boundary_candidates(boundary,records,rates,selection)['audit_required_indices']
     context={k:digest(k) for k in ('plan_sha256','source_sha256','runtime_sha256','corpus_sha256')}
+    if producer_v2:
+        context['corpus_sha256']=write(root,'corpus.txt',b'synthetic corpus')['sha256']
     projection=json.loads((ROOT/'research/tokenizer-evidence/wide-hybrid-preparation-001/rank-storage-projection.json').read_text())
     pref=write(root,'projection.json',projection)
     budgets=audit.allocations(projection)
@@ -55,8 +57,9 @@ def fixture(root, boundary='lr'):
     evidence={}; requests={}; trials={}
     for i in indices:
         record=records[i]; spec={k:record[k] for k in ('stage','family','seed','lr','divisor','width','steps')}
-        stem=f'trial-{i}'; trials[i]=stem
+        stem=f'quality/{i:02d}' if producer_v2 else f'trial-{i}'; trials[i]=stem
         request=dict(spec=spec,config={'fixture_only':True},result_path=str(root/stem/'result.json'))
+        if producer_v2:request['config']['data']={'path':str(root/'corpus.txt')}
         requests[i]=request
         rq=write(root,stem+'/request.json',request)
         pair={k:write(root,f'{stem}/checkpoints/{k}.pt',f'synthetic {i} {k}'.encode()) for k in ('raw','h200')}
@@ -64,6 +67,10 @@ def fixture(root, boundary='lr'):
         result=dict(spec,status='completed',holdout_consumed=False,request_sha256=rq['sha256'],
             training=dict(completed_steps=1200,weight_averaging=dict(snapshots=41)),
             **{k:score(parameters,root/pair[k]['path'],pair[k]['sha256']) for k in pair})
+        if producer_v2:
+            result['training'].update(metrics=[],final_checkpoint=str(root/pair['raw']['path']))
+            from src.research.tokenizer_wide_hybrid_pilot_audit_v2 import SAMPLE_SETTINGS
+            result['h200'].update(sample='synthetic',sample_settings=SAMPLE_SETTINGS)
         rs=write(root,stem+'/result.json',result)
         files={str(root/rq['path']):rq['sha256'],str(root/rs['path']):rs['sha256'],
                **{str(root/v['path']):v['sha256'] for v in pair.values()}}
@@ -92,6 +99,30 @@ def fixture(root, boundary='lr'):
         resource['events']=dict(path='resource-events.jsonl',sha256=event_ref['sha256'])
         refs=[rq,rs,event_ref,write(root,stem+'/tensor-audit.json',tensor),write(root,stem+'/resource-audit.json',resource),
               write(root,stem+'/process/process.json',process),write(root,stem+'/process/worker.log',b'synthetic log')]
+        if producer_v2:
+            training_attempt=write(root,stem+'/training-attempt.json',dict(kind='wide_hybrid_training_outputs_v2',
+                status='started',config_sha256=digest(request['config']),checkpoint_allowance_bytes=allowance))
+            training=write(root,stem+'/training-outputs.json',dict(kind='wide_hybrid_training_outputs_v2',
+                status='completed',config_sha256=digest(request['config']),numerical_audits_passed=False,dispatch_authorized=False,
+                **{k:dict(path=str(root/v['path']),size=(root/v['path']).stat().st_size,sha256=v['sha256']) for k,v in pair.items()}))
+            summary=write(root,stem+'/training-summary.json',result['training'])
+            metrics=write(root,stem+'/metrics.jsonl',b'')
+            evaluation=write(root,stem+'/evaluation-attempt.json',dict(kind='wide_hybrid_evaluation_v2',status='started',
+                request_sha256=rq['sha256'],training_outputs_sha256=training['sha256'],
+                training_contract_sha256=digest('synthetic contract'),training_token_sha256=digest('synthetic96'),
+                files={str(root/rq['path']):rq['sha256'],str(root/training['path']):training['sha256'],
+                    str(root/summary['path']):summary['sha256'],str(root/'corpus.txt'):context['corpus_sha256'],
+                    **{str(root/v['path']):v['sha256'] for v in pair.values()}},sample_settings=SAMPLE_SETTINGS))
+            attempt=write(root,stem+'/worker-attempt.json',dict(kind='wide_hybrid_quality_execution_v2',status='started',
+                slot=i,plan_sha256=context['plan_sha256'],request_sha256=rq['sha256'],projection_ref=pref,
+                checkpoint_allowance_bytes=allowance,dispatch_authorized=False))
+            worker=write(root,stem+'/worker-outputs.json',dict(kind='wide_hybrid_quality_execution_v2',
+                status='quality_outputs_complete_pending_independent_stage_review',slot=i,
+                plan_sha256=context['plan_sha256'],request_sha256=rq['sha256'],attempt=attempt,
+                artifacts=dict(training_outputs=training,evaluation_attempt=evaluation,result=rs,
+                    resources=next(v for v in refs if v['path']==stem+'/resource-audit.json')),
+                adopted=False,dispatch_authorized=False,stage_audits_bound=False))
+            refs += [training_attempt,training,summary,metrics,evaluation,attempt,worker]
         evidence.update({ref['path']:ref['sha256'] for ref in refs})
     return dict(root=root,boundary=boundary,records=records,rates=rates,selection=selection,
         context=context,requests=requests,trials=trials,evidence=evidence,numerical_ref=nref,

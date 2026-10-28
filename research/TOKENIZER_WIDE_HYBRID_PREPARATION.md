@@ -1426,3 +1426,37 @@ campaign freeze remain outstanding. The old failed numerical fixture and closed
 campaigns stay closed. Current storage must be checked again at real transitions.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-boundary-v2-component-review.json`.
+
+
+## October 28 v2 quality producers and stage provenance
+
+The new quality body composes bounded training, raw/H200 export, full validation
+and successful resource reporting inside the quality7200-second interval. It
+requires the complete frozen numerical/input campaign gate, an exact frozen
+conditional request option and the rank-specific checkpoint allowance. Immutable
+attempt/completion records bind every producer. Failures remain terminal. The
+parent must independently bind saved LR/rank selection, verified pilot receipts,
+current full storage and the process guard before dispatch; this body has no CLI.
+
+The read-only v2 LR/rank wrapper now requires those producer records for every
+selected and losing member, in addition to the existing full stage audits. It
+checks canonical paths, unique checkpoint inodes, raw/export receipt hashes and
+sizes, exact training summary/metrics, evaluation input provenance, training-token
+digest, descriptive sample settings and actual corpus hash. The common producer
+binder preserves the pilot contract. Completion makes no adoption or launch claim.
+
+Validation:245 initial tests passed;407 combined tests passed in34.59s after
+adding producer-to-audit compatibility coverage. The final guard observed peak
+RSS357,810,176bytes under180s/4GiB/8GiB limits. Synthetic body cases cover LR,
+rank and fresh slots0/9/15/23; scientific training/validation/MPS observations and
+full numerical gating are mocked, while bounded writers, recorder lifecycle and
+provenance checks run. No research weights were deleted or real quality claimed.
+
+Next integrate quality startup/selection-aware dispatch, bounded independent
+tensor-audit production, LR/rank cleanup and inference orchestration. The wrapper
+does not yet accept the fresh confirmation stage. Actual nine-case numerical/input
+and measured-pilot prerequisites remain unresolved. The failed numerical fixture
+and historical controllers remain closed. The27-trajectory plan stays unfrozen;
+full storage must be rechecked at real transitions.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-producers-v2-component-review.json`.

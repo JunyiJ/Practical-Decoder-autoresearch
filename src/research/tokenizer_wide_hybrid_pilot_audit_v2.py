@@ -26,24 +26,28 @@ from .tokenizer_wide_hybrid_scores import _score
 SAMPLE_SETTINGS=dict(prompt='ROMEO:\n',seed=12345,temperature=.8,top_k=40,new_tokens=96)
 
 
-def _worker_review(root,stem,index,context,request,result,pair,bound,projection_ref,token_sha,allowance):
+def _worker_review(root,stem,index,context,request,result,pair,bound,projection_ref,token_sha,allowance,*,stage='pilots'):
+    _require(stage in ('pilots','quality'),'Known producer stage required')
+    label='pilot' if stage=='pilots' else 'quality'
+    kind=f'wide_hybrid_{label}_execution_v2'
     names={k:stem+'/'+name for k,name in dict(worker='worker-outputs.json',attempt='worker-attempt.json',
         training='training-outputs.json',training_attempt='training-attempt.json',summary='training-summary.json',
         evaluation='evaluation-attempt.json').items()}
     docs={k:_load(root,name,bound) for k,name in names.items()}
     def ref(name):return dict(path=name,sha256=bound[name])
     rqsha=bound[stem+'/request.json'];worker=docs['worker']
-    _require(worker.get('kind')=='wide_hybrid_pilot_execution_v2'
-             and worker.get('status')=='pilot_outputs_complete_pending_independent_stage_review'
+    _require(worker.get('kind')==kind
+             and worker.get('status')==f'{label}_outputs_complete_pending_independent_stage_review'
              and type(worker.get('slot')) is int and worker['slot']==index
              and worker.get('plan_sha256')==context['plan_sha256'] and worker.get('request_sha256')==rqsha
              and worker.get('adopted') is False and worker.get('dispatch_authorized') is False
              and worker.get('stage_audits_bound') is False,'Completed worker identity/claims differ')
     artifacts=dict(training_outputs=ref(names['training']),evaluation_attempt=ref(names['evaluation']),
-                   result=ref(stem+'/result.json'),cache=ref(stem+'/audit.json'),resources=ref(stem+'/resource-audit.json'))
+                   result=ref(stem+'/result.json'),resources=ref(stem+'/resource-audit.json'))
+    if stage=='pilots':artifacts['cache']=ref(stem+'/audit.json')
     _require(digest(worker.get('artifacts'))==digest(artifacts)
              and digest(worker.get('attempt'))==digest(ref(names['attempt'])),'Worker producer references differ')
-    expected_attempt=dict(kind='wide_hybrid_pilot_execution_v2',status='started',slot=index,
+    expected_attempt=dict(kind=kind,status='started',slot=index,
         plan_sha256=context['plan_sha256'],request_sha256=rqsha,projection_ref=projection_ref,
         checkpoint_allowance_bytes=allowance,dispatch_authorized=False)
     _require(digest(docs['attempt'])==digest(expected_attempt),'Worker attempt binding differs')
