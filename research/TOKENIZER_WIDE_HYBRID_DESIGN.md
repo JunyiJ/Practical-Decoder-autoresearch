@@ -306,3 +306,13 @@ rechecks provenance and STOP; it does not create a frozen plan, certify the
 review's scientific evidence or enforce live disk/worker limits. Those remain
 responsibilities of the final review and guarded serial controller. Synthetic
 gate tests do not satisfy the outstanding real numerical prerequisites.
+
+Before pilots, freeze tokenizer identity and the SHA256 of the first96 training
+IDs (uint32 little-endian, as in the inference contract). Pilot cache checks
+cover raw and H200 separately at batches1/8, full96 versus32+64 cached tokens
+and reset replay, rtol3e-4/atol3e-5. Load only one model at a time. Require exact
+constructed parameter storage/count and allocated D/2 cache capacity, and retain
+allocator observations separately from unmeasured peaks. The prospective helper
+rechecks all artifact/data hashes and stops after failures; it does not replace
+locks, watchdogs, full-panel fit or a passing numerical prerequisite review.
+Its mocked/tiny CPU tests do not establish real MPS correctness.

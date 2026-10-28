@@ -43,6 +43,8 @@ def setup(tmp_path, monkeypatch):
     plan=dict(kind='wide_hybrid_pilot_v1',status='frozen',output=str(root),source=source,runtime=runtime,
         protocol_sha256=file_digest(gate.PROTOCOL),projection_sha256=file_digest(gate.PROJECTION),
         pilot_contract=copy.deepcopy(gate.CONTRACT),panel_design=gate.panel_design(),
+        cache_contract=copy.deepcopy(gate.CACHE_CONTRACT),tokenizer={'synthetic':True},
+        training_token_sha256='1'*64,
         storage_contract=gate.storage_contract(),requests=requests,numerical_review=str(review_path),
         files=[dict(path=str(p),sha256=file_digest(p)) for p in files])
     return root,plan,review_path,review
@@ -150,3 +152,9 @@ def test_hash_and_family(setup):
         gate.bind_pilot(root/'plan.json','0'*64,'hybrid')
     with pytest.raises(ValueError,match='family'):
         gate.bind_pilot(root/'plan.json',file_digest(root/'plan.json'),'mla')
+
+
+@pytest.mark.parametrize('field', ['cache_contract','tokenizer','training_token_sha256'])
+def test_cache_binding_required(setup, field):
+    setup[1][field]=None
+    with pytest.raises(ValueError, match='cache/tokenizer/input'): bind(setup)

@@ -544,3 +544,37 @@ and resource watchdogs before dispatch. No real plan is frozen, numerical
 prerequisites remain incomplete, and the full panel still does not fit locally.
 Next preparation is the guarded serial pilot worker/controller and its result
 review, with no failed-fixture retry, evidence deletion or closed-controller run.
+
+## Raw/H200 pilot cache audit integration preparation
+
+The new pilot cache helper first checks the finite pilot/config/tokenizer/corpus
+bindings and invokes the tensor/export audit. It loads raw then H200 checkpoints
+one at a time on MPS, releasing the model and CPU mapping before the next
+endpoint. Each endpoint rebuilds the tokenizer/splits and must recover the frozen
+first96 training token IDs. The pilot prerequisite gate now requires an explicit
+nonempty tokenizer identity, canonical token hash and the cache workload contract
+before any future dispatch. No actual tokenizer input or plan was frozen here.
+
+At batches1/8 the shared numerical kernel compares full96-token logits with a
+32-token prefill plus64 one-token cached calls, then resets all caches and replays
+the same sequence. Existing rtol3e-4/atol3e-5 and nonfinite rejection remain.
+The shared single-model validator retains the explicit width512 NoPE rank policy,
+family layout, model/cache config identity, eval mode and MPS FP32 checks. Actual
+parameter storage/count and unique backing cache storage must match the D/2
+constructed projection. Allocator samples remain observations, not peak claims.
+
+Eighteen new mocked cache-integration checks and three new gate checks plus104
+regressions passed (125 checks,1.54s; peak RSS276,480,000bytes) under the180s/4GiB
+RSS/8GiB reserve guard. New integration tests use tiny checkpoint tensors, mocked
+GPT/tokenizer/MPS/numerical callbacks and mocked tensor review. Separate retained
+regressions exercise the numerical recurrence on a tiny CPU fixture. New checks
+cover serial model release, either-endpoint failures, changed corpus/tokenizer/
+config/tokens/files, nonfinite payloads and projected state/parameter mismatch.
+No real GPT weights, research corpus, MPS worker or training trajectory ran.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-cache-review.json`.
+The helper has no worker/CLI and requires caller-held locks, frozen prerequisites,
+full-panel fit and resource watchdogs. Actual MPS cache correctness and peak
+memory, numerical prerequisites and resource reviews remain unresolved. Next
+preparation is the serial pilot worker/controller joining these components.
+No failed-guard retry, cleanup, closed-controller run or holdout access occurred.

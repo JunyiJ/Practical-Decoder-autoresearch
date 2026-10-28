@@ -9,6 +9,7 @@ from .tokenizer_wide_config import RECIPE
 from .tokenizer_wide_hybrid_driver import CORPUS_SHA256, PROTOCOL
 from .tokenizer_wide_hybrid_pilot_config import CONTRACT, PROJECTION, config, specs, storage_contract
 from .tokenizer_wide_hybrid_scores import _json, _require
+from .tokenizer_wide_hybrid_pilot_cache import CACHE_CONTRACT
 from . import tokenizer_wide_hybrid_rules as rules
 
 CHECKS = ('geometry', 'cache', 'optimizer', 'resume', 'ema')
@@ -67,6 +68,12 @@ def bind_pilot(plan_path, plan_sha256, family):
              and digest(plan.get('panel_design')) == digest(panel_design())
              and digest(plan.get('storage_contract')) == digest(storage_contract()),
              'Frozen design/resource contract differs')
+    token_sha = plan.get('training_token_sha256')
+    _require(isinstance(plan.get('tokenizer'), dict) and bool(plan['tokenizer'])
+             and isinstance(token_sha, str) and len(token_sha) == 64
+             and all(c in '0123456789abcdef' for c in token_sha)
+             and digest(plan.get('cache_contract')) == digest(CACHE_CONTRACT),
+             'Frozen cache/tokenizer/input contract missing or changed')
     requests = []
     for index, spec in enumerate(specs()):
         trial = root/f"{index:02d}-pilot-{spec['family']}-s3491-d2"
@@ -105,4 +112,6 @@ def bind_pilot(plan_path, plan_sha256, family):
     recheck(bound)
     request = next(r for r in requests if r['spec']['family'] == family)
     return dict(request=request, files=bound, pilot_contract=CONTRACT.copy(),
-                storage_contract=storage_contract(), panel_design=panel_design(), adopted=False)
+                storage_contract=storage_contract(), panel_design=panel_design(),
+                tokenizer=plan['tokenizer'], training_token_sha256=token_sha,
+                cache_contract=plan['cache_contract'], adopted=False)

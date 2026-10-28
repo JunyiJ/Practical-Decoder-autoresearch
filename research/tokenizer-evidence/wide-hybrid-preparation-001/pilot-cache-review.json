@@ -1,0 +1,52 @@
+{
+  "status": "mocked_pilot_cache_integration_tested_not_launch_ready",
+  "at": "2026-10-28T07:42:51.384224+00:00",
+  "checks": 125,
+  "new_checks": 21,
+  "regression_checks": 104,
+  "guard": {
+    "elapsed_seconds": 1.699349457398057,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17586720768,
+      "peak_rss_bytes": 276480000
+    },
+    "pid": 56335,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Frozen pilot tokenizer/training-token/cache contract required",
+    "Raw then H200 loaded one at a time with model release",
+    "Exact declared pilot/config/seed/tokenizer/data and artifact binding",
+    "Full96 vs32+64 cached calls then reset replay at batches1/8 through existing kernel",
+    "Actual parameter/cache capacity compared to constructed projection",
+    "Failure stops next endpoint; artifact changes rechecked"
+  ],
+  "real_research_checkpoint_loaded": false,
+  "real_corpus_loaded": false,
+  "real_mps_worker_dispatched": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Pilot integration uses tiny synthetic checkpoint tensors and mocked metadata/tensor review, GPT, tokenizer and MPS callbacks",
+    "Real recurrence kernel separately tested on tiny CPU fixture; no real MPS correctness or peak memory established",
+    "Caller still must enforce frozen gate, full storage fit, locks, watchdogs and complete numerical/resource reviews"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_pilot_cache.py": "706b5144eca639f98eb9fea12dd79816944da4c70a55574519c7a846fae71bdd",
+    "tests/test_tokenizer_wide_hybrid_pilot_cache.py": "4989ed1b837687837bf83301cc3472efc77985f36839d7d88812e9a5f32c929e",
+    "src/research/tokenizer_wide_hybrid_measurements.py": "c5450662d705c0a2780169d35cb55a5a6d4a49e5b395e85580423aa16eda02e3",
+    "tests/test_tokenizer_wide_hybrid_measurements.py": "4f6a2a9d786e014ad5c5a9a2f625d1ef7065531a6469bd04115b8853cc65d896",
+    "src/research/tokenizer_wide_hybrid_pilot_gate.py": "ff1a18980e0980f943e5d08bf04e48b03c219894f5d2312232375052c14ecb49",
+    "tests/test_tokenizer_wide_hybrid_pilot_gate.py": "5c16b1bfc118319462d4b0298b3d3d3415d2a5cf35704026afc1466d16e58d38",
+    "src/research/tokenizer_wide_hybrid_tensors.py": "85708b889e66d27dd773d6ab0108200d8a4e6c17754e74503be3653cdcc48f24",
+    "tests/test_tokenizer_wide_hybrid_tensors.py": "efadd7e67a0820bcaadc37d473e768e11c1fb6edefcc6fe03f9705d68b3165d0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-cache-tests.log": "bd883bd1ad1411c9394e1f97676f385af9612f4a0507b93b847a86e96e16d334",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-cache-guard.json": "b9dcf81be05b424b75f6205774f3297795ca3b5394954554a29d9cbba22edcf9"
+  }
+}

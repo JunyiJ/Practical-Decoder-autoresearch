@@ -87,6 +87,26 @@ def measure_kernel(model, ids, cache_factory, *, synchronize, clock, memory):
                 observed_mps_current_bytes=current, observed_mps_driver_bytes=driver)
 
 
+def validate_mps_model(model, cfg, family):
+    """Shared single-model geometry/device check; no checkpoint provenance."""
+    if family not in FAMILIES:
+        raise ValueError("Undeclared model family")
+    contract = hybrid_contract(cfg.model)
+    if (contract is None or contract['policy'] != RANK_POLICY or contract['width'] != 512
+            or contract['layout'] != LAYOUT[family] or model.training):
+        raise ValueError('Explicit eval width512 rank-policy family required')
+    plain = lambda c: OmegaConf.to_container(OmegaConf.create(c), resolve=True)
+    if digest(plain(model.cfg)) != digest(plain(cfg.model)):
+        raise ValueError('Loaded model and cache config differ')
+    validate_hybrid_model(model, contract)
+    params = list(model.parameters())
+    if not params or any(p.device.type != 'mps' or p.dtype != torch.float32 for p in params):
+        raise ValueError('Model parameters must all be MPS FP32')
+    for buffer in model.buffers():
+        if buffer.device.type != 'mps' or (buffer.is_floating_point() and buffer.dtype != torch.float32):
+            raise ValueError('Model buffers must be on MPS with FP32 floating values')
+
+
 def mps_callbacks(models, configs, token_ids, expected_token_sha256):
     """Validate loaded-model geometry/device; return (check,measure) callbacks.
 
@@ -102,21 +122,7 @@ def mps_callbacks(models, configs, token_ids, expected_token_sha256):
     if token_digest(token_ids) != expected_token_sha256:
         raise ValueError('Timing token identity changed')
     for family in FAMILIES:
-        model, cfg = models[family], configs[family]
-        contract = hybrid_contract(cfg.model)
-        if (contract is None or contract['policy'] != RANK_POLICY or contract['width'] != 512
-                or contract['layout'] != LAYOUT[family] or model.training):
-            raise ValueError('Explicit eval width512 rank-policy family required')
-        plain = lambda c: OmegaConf.to_container(OmegaConf.create(c), resolve=True)
-        if digest(plain(model.cfg)) != digest(plain(cfg.model)):
-            raise ValueError('Loaded model and cache config differ')
-        validate_hybrid_model(model, contract)
-        params = list(model.parameters())
-        if not params or any(p.device.type != 'mps' or p.dtype != torch.float32 for p in params):
-            raise ValueError('Model parameters must all be MPS FP32')
-        for buffer in model.buffers():
-            if buffer.device.type != 'mps' or (buffer.is_floating_point() and buffer.dtype != torch.float32):
-                raise ValueError('Model buffers must be on MPS with FP32 floating values')
+        validate_mps_model(models[family], configs[family], family)
     fixed = torch.tensor(token_ids, device='mps', dtype=torch.int64)
     inputs = {b: fixed.unsqueeze(0).repeat(b, 1) for b in BATCHES}
 
