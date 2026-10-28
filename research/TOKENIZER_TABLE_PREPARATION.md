@@ -209,3 +209,17 @@ Outstanding work is the storage-feasible scope decision, pilot runner and source
 freeze, reviewed MPS correctness/resource evidence, and executable quality/timing
 plans with tested selection and guard logic. No training was launched by this
 design review, and no new model-quality evidence or adoption is claimed.
+
+## Authorized retention change (October27, Los Angeles)
+
+The human authorized deletion of non-chosen checkpoints. The reviewed cleanup
+removed 30 files from 15 losing tokenizer screening configurations (3.444 GiB),
+while keeping selected screens, all fresh confirmation pairs, pilot/failure
+evidence and historical campaigns. The [cleanup manifest and review](tokenizer-evidence/checkpoint-cleanup-001/README.md)
+record hashes and the resulting limits on reloading deleted weights. Earlier
+blanket-retention statements describe the policy before this authorization.
+
+Free space was 18.36 GiB after cleanup, with additional filesystem changes
+beyond the deleted bytes. This observation supports preparing the preferred
+width256 panel; it does not freeze or launch it. Recheck actual free space and
+all remaining allocations before every launch; retain the 8 GiB reserve.
