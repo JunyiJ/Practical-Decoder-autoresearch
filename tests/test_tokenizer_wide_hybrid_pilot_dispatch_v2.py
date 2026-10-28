@@ -89,7 +89,11 @@ def controller(writer,monkeypatch):
         assert not (writer.root/f'evidence/pilots/{slot:02d}/process').exists()
         calls.append(slot)
         # Tiny complete saved producer records, no training or real measurements.
+        existing={p:p.read_bytes() for p in (writer.root/'evidence').rglob('*') if p.is_file()
+                  and not p.is_relative_to(writer.root/f'evidence/pilots/{slot:02d}')}
         fixture(writer.root/'evidence',count=slot+1)
+        for p,content in existing.items():
+            if p.read_bytes()!=content:p.write_bytes(content)
         path=writer.root/f'evidence/pilots/{slot:02d}/process/process.json'
         p=json.loads(path.read_text());p.update(pid=123456,parent_pid=os.getpid())
         path.write_text(json.dumps(p))

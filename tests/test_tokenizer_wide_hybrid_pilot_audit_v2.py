@@ -34,7 +34,12 @@ def fixture(root,count=3):
     for i,spec in enumerate(specs()[:count]):
         stem=f'pilots/{i:02d}';trial=root/stem
         request=dict(spec=spec,config={'data':{'path':str(root/corpus['path'])},'fixture_only':True},result_path=str(trial/'result.json'))
-        requests.append(request);rq=write(root,stem+'/request.json',request)
+        requests.append(request)
+        request_path=root/stem/'request.json'
+        if request_path.exists():
+            assert digest(json.loads(request_path.read_text()))==digest(request)
+            rq=dict(path=stem+'/request.json',sha256=file_digest(request_path))
+        else:rq=write(root,stem+'/request.json',request)
         pair={k:write(root,f'{stem}/checkpoints/{k}.pt',f'synthetic {i} {k}'.encode()) for k in ('raw','h200')}
         row=next(r for r in projection['records'] if r['width']==512 and r['family']==spec['family'] and r['bottleneck_divisor']==2)
         def score(role):

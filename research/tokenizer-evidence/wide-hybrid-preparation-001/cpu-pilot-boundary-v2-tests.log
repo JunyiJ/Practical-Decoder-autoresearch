@@ -1,0 +1,353 @@
+F..........FFFFFFFFFFFF                                                  [100%]
+=================================== FAILURES ===================================
+_________ test_complete_audit_cleanup_and_post_deletion_reverification _________
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1072602f0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108128050>
+
+    def test_complete_audit_cleanup_and_post_deletion_reverification(writer,monkeypatch):
+        args=prepared(writer,monkeypatch);root=writer.root/'evidence'
+        before={str(p.relative_to(root)):file_digest(p) for p in root.rglob('*') if p.is_file()}
+>       ref=boundary.cleanup_pilot_boundary(**args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+_____ test_stop_after_one_deletion_keeps_journal_and_forbids_continuation ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c422210>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108118460>
+
+    def test_stop_after_one_deletion_keeps_journal_and_forbids_continuation(writer,monkeypatch):
+        args=prepared(writer,monkeypatch);original=Path.unlink;removed=[]
+        def stop(path,*a,**kw):
+            result=original(path,*a,**kw)
+            if path.suffix=='.pt':
+                removed.append(str(path));(writer.root/'STOP').write_text('synthetic interruption')
+            return result
+        monkeypatch.setattr(Path,'unlink',stop)
+        with pytest.raises(ValueError):boundary.cleanup_pilot_boundary(**args)
+>       assert len(removed)==1 and failure(writer).exists()
+E       assert (0 == 1)
+E        +  where 0 = len([])
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:82: AssertionError
+___ test_post_cleanup_acceptance_requires_complete_unchanged_chain[journal] ____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c486f90>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c457410>
+bad = 'journal'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+____ test_post_cleanup_acceptance_requires_complete_unchanged_chain[guard] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c4852b0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c4bd490>
+bad = 'guard'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+___ test_post_cleanup_acceptance_requires_complete_unchanged_chain[failure] ____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c451640>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c55f3e0>
+bad = 'failure'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+__ test_post_cleanup_acceptance_requires_complete_unchanged_chain[completion] __
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c4bc050>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c55f750>
+bad = 'completion'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+____ test_post_cleanup_acceptance_requires_complete_unchanged_chain[review] ____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c4bcb90>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c524550>
+bad = 'review'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+__ test_post_cleanup_acceptance_requires_complete_unchanged_chain[protected] ___
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c4a1b20>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c524f50>
+bad = 'protected'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+__ test_post_cleanup_acceptance_requires_complete_unchanged_chain[reappeared] __
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c4a1f40>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c613a40>
+bad = 'reappeared'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+___ test_post_cleanup_acceptance_requires_complete_unchanged_chain[context] ____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c527070>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c4d5ad0>
+bad = 'context'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+____ test_post_cleanup_acceptance_requires_complete_unchanged_chain[extra] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c4f68f0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c65bad0>
+bad = 'extra'
+
+    @pytest.mark.parametrize('bad',['journal','guard','failure','completion','review','protected','reappeared','context','extra'])
+    def test_post_cleanup_acceptance_requires_complete_unchanged_chain(writer,monkeypatch,bad):
+>       args=prepared(writer,monkeypatch);ref=boundary.cleanup_pilot_boundary(**args);root=writer.root/'evidence'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:145: in cleanup_pilot_boundary
+    stage=bind_pilot_boundary(evidence,**args);dispatch=_dispatches(writer,plan_sha256,bound,stage)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py:59: in _dispatches
+    _require(start.get('kind')=='wide_hybrid_pilot_startup_v2' and start.get('slot')==i
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Dispatch startup binding differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Dispatch startup binding differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+_____ test_callback_revalidates_noncheckpoint_evidence_before_next_unlink ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c612e70>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5295c0>
+
+    def test_callback_revalidates_noncheckpoint_evidence_before_next_unlink(writer,monkeypatch):
+        args=prepared(writer,monkeypatch);original=Path.unlink;removed=[]
+        def changed(path,*a,**kw):
+            result=original(path,*a,**kw)
+            if path.suffix=='.pt':
+                removed.append(str(path));(writer.root/'evidence/pilots/00/metrics.jsonl').write_text('changed')
+            return result
+        monkeypatch.setattr(Path,'unlink',changed)
+        with pytest.raises(ValueError):boundary.cleanup_pilot_boundary(**args)
+>       assert len(removed)==1 and failure(writer).exists()
+E       assert (0 == 1)
+E        +  where 0 = len([])
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:116: AssertionError
+_____ test_post_cleanup_storage_failure_retains_receipts_but_no_acceptance _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10c5581d0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c4f8210>
+
+    def test_post_cleanup_storage_failure_retains_receipts_but_no_acceptance(writer,monkeypatch):
+        args=prepared(writer,monkeypatch);original=boundary.bind_storage
+        def gate(*a,**kw):
+            if kw['stages']:raise ValueError('synthetic future storage shortfall')
+            return original(*a,**kw)
+        monkeypatch.setattr(boundary,'bind_storage',gate)
+>       with pytest.raises(ValueError,match='storage shortfall'):boundary.cleanup_pilot_boundary(**args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'storage shortfall'
+E         Actual message: 'Dispatch startup binding differs'
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:125: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_complete_audit_cleanup_and_post_deletion_reverification
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_stop_after_one_deletion_keeps_journal_and_forbids_continuation
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[journal]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[guard]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[failure]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[completion]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[review]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[protected]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[reappeared]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[context]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_acceptance_requires_complete_unchanged_chain[extra]
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_callback_revalidates_noncheckpoint_evidence_before_next_unlink
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_post_cleanup_storage_failure_retains_receipts_but_no_acceptance
+13 failed, 10 passed in 8.63s

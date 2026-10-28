@@ -1,0 +1,57 @@
+{
+  "status": "pilot_boundary_cleanup_and_receipt_verifier_tested_on_disposable_fixtures",
+  "created_at": "2026-10-28T18:58:52.550575+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py": "d51ccbc303d15ef231802c860519ec1f3e3dfbd8d1fa94446e2f93e1cf739bf0",
+    "tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py": "cc503acc195f01e7d0632ff530d33ad4a87bbf78920c72d90324b5fc1bcd4d07",
+    "tests/test_tokenizer_wide_hybrid_pilot_audit_v2.py": "f176b2640b852ba6855c46e3e890f132ca643bd3875098f16a4ad95020b1c851",
+    "tests/test_tokenizer_wide_hybrid_pilot_dispatch_v2.py": "5a1aa7851b932e481475bf046beb543073446b09886ddbe2be4035b050f9c35a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-boundary-v2-final-guard.json": "5f01345b3e90de15611ff09e39bfa997693b8a061e24d8bb5f2e33675e8d2850",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-boundary-v2-final-tests.log": "1c5070c8c63fc05c5b28d28a9b7587b3fb00c2bcddccb5099f9510626fe90853",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-boundary-v2-fixture-corrected-guard.json": "974be4001fbcd91d2f272ea6acf2395443a342f6e253a7ad1489e9e97f29fd9e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-boundary-v2-fixture-corrected-tests.log": "b12303c985c605f68b1290fc88a197e47641558bd869cf42e8624eb1ae32768e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-boundary-v2-guard.json": "11ba9afb786377f24b51617dce7c1a25dc0330371ec1da931800dcd605df7b12",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-boundary-v2-tests.log": "97f46e3b0d83d50147ce11ee9bc4defc11852a2cc83373699a6ad9ba6a9aca51"
+  },
+  "tests": {
+    "initial_passed": 10,
+    "initial_failed": 13,
+    "fixture_corrected_passed": 22,
+    "fixture_corrected_failed": 1,
+    "final_passed": 309
+  },
+  "final_guard": {
+    "elapsed_seconds": 23.952980416826904,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30637989888,
+      "peak_rss_bytes": 239435776
+    },
+    "pid": 79004,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30637039616,
+  "initial_panel_required_free_bytes": 30631281412,
+  "headroom_bytes": 5758204,
+  "findings": [
+    "Fresh pilot cleanup now requires the complete frozen campaign/numerical/input identity, all three full pilot audits, exact raw/H200 original hashes, successful dispatch/startup/launch/child provenance, completed bounded entry/controller guards and full remaining storage.",
+    "The immutable pre-deletion review binds all original files and audits. The existing600s/4GiB/8GiB executor receives hard-coded authorization/revalidation callbacks; every removal rechecks STOP, frozen context, protected metadata and dispatch guards. Only the six audited pilot weights enter the manifest.",
+    "After deletion, the controller verifies the full execution journal/guard/receipt chain, protected evidence and complete future storage, then publishes completion only after its bounded controller guard finishes. Failures remain permanent, including failures after weights were already removed.",
+    "A new read-only pre-quality verifier reconstructs the exact manifest from preserved pre-deletion records and verifies the complete chain, current protected files, dispatch provenance, controller guard and current storage. It does not reload deleted pilot tensors or authorize a quality worker.",
+    "Initial integration tests exposed a synthetic fixture rewriting an existing immutable request with different JSON formatting and restoring stale nominal process storage totals. Production verification correctly rejected this; fixture requests now retain exact bytes and launch limits, with all failed logs preserved.",
+    "The next test run showed that its mocked frozen gate hid STOP, allowing the synthetic executor to finish all six removals before post-verification failed. The new controller now checks STOP directly in its per-removal frozen-context callback as well as requiring the real frozen gate. Final tests stop after exactly one removal and retain intent/deleted/failure evidence.",
+    "Successful synthetic cleanup removed exactly six disposable tiny checkpoint files, preserved every other pre-existing evidence hash, and passed verification after tensors were absent. Partial pilots, missing/altered audits or dispatches, extra weights, invalid guards, changed metadata, incomplete journals, recreated weights and post-cleanup storage failure are rejected."
+  ],
+  "limitations": [
+    "The complete frozen campaign gate and training/process science are mocked in integration fixtures. The final309-test suite includes real temporary locks, guarded cleanup/journal execution, receipt-chain/storage logic and surrounding audit/dispatch/startup tests. This is not actual numerical, training, cache, MPS or model-quality evidence.",
+    "No research checkpoint was deleted. All removals were disposable synthetic bytes in temporary test directories; retained research checkpoints, failures and closed holdout remain untouched.",
+    "The new API has no CLI, plan freeze, retry, training, stage continuation or adoption action. Callers must inspect actual workers, hold both locks and use resource guards for read-only verification. Later LR/rank boundaries still need controller integration.",
+    "Quality/selection/cleanup-chain/inference orchestration, actual nine rank-policy numerical/input prerequisites and measured pilots remain unresolved. The failed combined CPU fixture remains closed and no MPS launch occurred.",
+    "Deleted real pilot tensors would no longer be reloadable or tensor-auditable; future acceptance relies on preserved pre-deletion audits and verified execution receipts. Actual full-panel storage remains near the threshold and must be rechecked before any real transition."
+  ]
+}

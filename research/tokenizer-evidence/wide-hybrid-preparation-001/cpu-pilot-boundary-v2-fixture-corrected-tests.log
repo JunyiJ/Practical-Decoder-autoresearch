@@ -1,0 +1,24 @@
+...........F...........                                                  [100%]
+=================================== FAILURES ===================================
+_____ test_stop_after_one_deletion_keeps_journal_and_forbids_continuation ______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1082fd4f0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5969c0>
+
+    def test_stop_after_one_deletion_keeps_journal_and_forbids_continuation(writer,monkeypatch):
+        args=prepared(writer,monkeypatch);original=Path.unlink;removed=[]
+        def stop(path,*a,**kw):
+            result=original(path,*a,**kw)
+            if path.suffix=='.pt':
+                removed.append(str(path));(writer.root/'STOP').write_text('synthetic interruption')
+            return result
+        monkeypatch.setattr(Path,'unlink',stop)
+        with pytest.raises(ValueError):boundary.cleanup_pilot_boundary(**args)
+>       assert len(removed)==1 and failure(writer).exists()
+E       AssertionError: assert (6 == 1)
+E        +  where 6 = len(['/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/pilot-boundary-v2-corrected-synthetic-2sp4j2bz/test_stop_af...ndary-v2-corrected-synthetic-2sp4j2bz/test_stop_after_one_deletion_k0/campaign/evidence/pilots/02/checkpoints/h200.pt'])
+
+tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py:83: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_pilot_boundary_v2.py::test_stop_after_one_deletion_keeps_journal_and_forbids_continuation
+1 failed, 22 passed in 12.13s

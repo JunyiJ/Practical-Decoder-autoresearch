@@ -1390,3 +1390,39 @@ No research weights were removed, no MPS launched and no failed numerical fixtur
 or historical closed controller was rerun.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-dispatch-v2-component-review.json`.
+
+
+## October 28 v2 full pilot cleanup boundary
+
+The pilot boundary now connects all three full pilot audits and successful
+startup/dispatch/child/guard provenance to the existing guarded cleanup executor.
+A complete immutable pre-deletion review binds the exact candidate pairs and
+protected file inventory. Controller callbacks recheck frozen identity, STOP,
+protected metadata and dispatch guards before every unlink. Only the six fully
+audited pilot weights are eligible. Failures remain permanent, including a
+failure after some or all candidate weights have already been removed.
+
+Completion requires the full journal, cleanup guard and receipt chain, unchanged
+protected evidence, full remaining storage and a finished outer controller guard.
+A read-only pre-quality verifier reconstructs the manifest from retained original
+records and verifies the chain without reopening deleted tensors. Neither API
+launches training or authorizes the next stage; there is no CLI or retry path.
+
+Validation:309 combined tests passed in23.26s. Initial integration failures caught
+a synthetic fixture rewriting immutable request bytes and retaining nominal
+process limits; the fixture now preserves those exact inputs. One subsequent
+failure showed that the mocked frozen gate hid STOP. The controller now checks
+STOP directly in its per-removal context callback, independently of the real
+frozen gate. All failed logs remain retained. Final interruption tests stop after
+one deletion and preserve the intent/deleted/failure records. Tests also reject
+incomplete pilots, changed audit/dispatch/guard evidence, unknown weights,
+changed protected metadata, incomplete journals and recreated deleted files.
+
+Successful cleanup removed only six disposable tiny fixture weights and preserved
+all other fixture evidence hashes. No research checkpoint was deleted or actual
+numerical/MPS success claimed. The actual nine-case numerical/input/measured-pilot
+prerequisites, quality/selection/LR-rank-cleanup/inference integration and full
+campaign freeze remain outstanding. The old failed numerical fixture and closed
+campaigns stay closed. Current storage must be checked again at real transitions.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-boundary-v2-component-review.json`.
