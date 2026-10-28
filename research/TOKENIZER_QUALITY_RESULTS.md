@@ -720,3 +720,33 @@ metadata accounting and compact immutable receipts before freeze. No research
 worker, MPS training, real checkpoint cleanup or holdout evaluation ran.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/inventory-delta-v1-component-review.json`.
+
+
+## October 28 final rank selection boundary
+
+The new v2 rank selection component independently reviews the three live LR
+anchors and all six rank screens, binds original pilot/LR cleanup history and
+serial transport, and persists the prescribed minimum-H200-CE choice with the
+larger-divisor tie rule. Complete remaining storage is checked before and after
+selection, without credit for an intended rank cleanup. Immutable compact
+receipts preserve records and original checkpoint pairs; read-only verification
+reconstructs the full stage and manifest against the exact saved inventory.
+Source and historical controls are rechecked immediately before completion.
+
+All five initial tests passed in256.06s. After the final publication recheck,
+all seven tests passed in375.85s, including tampering, incomplete panels, three
+partial-publication failures and two late source/control changes. The driver
+then raised an AssertionError in its optional census-export glob because pytest
+truncated a temporary directory name. Its output and fixture-exception guard
+are retained; this was after all tests passed, with no resource-limit breach.
+A separately guarded read-only census captured the completed fixture using
+its observed directory, without rerunning tests or changing fixture evidence.
+
+The synthetic campaign uses1,420,508 of2,097,152 metadata bytes; the four new
+selection documents total16,405 bytes. All18 live screen checkpoint files remain.
+This is not a full real-panel metadata fit proof. Rank cleanup/cumulative history,
+fresh transitions, inference and actual numerical/input/measured-pilot gates
+remain unresolved. No research training/MPS, real checkpoint deletion or test
+holdout evaluation occurred; the campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-selection-v2-component-review.json`.
