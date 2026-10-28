@@ -326,3 +326,17 @@ dispatch. Even all three completed pilots produce only a pending-review state;
 a separate reviewed resource/numerical prerequisite is required for quality.
 Only mocked/tiny-process integration has passed. No real plan has been frozen
 and no real MPS worker has been verified or launched in this preparation.
+
+## Prospective memory-route feasibility review
+
+Retained context128 meta accounting permits the10% both-control state reduction
+only for selected hybrid D/8 versus selected gated-MLA D/2 (any KDA rank):3 of27
+possible rank triples. Projected savings are48.9583% versus gated MLA and10.3659%
+versus KDA. Same-rank triples fail this memory threshold. This is a workload-
+specific mathematical constraint, not an observed memory benefit or a quality
+result. Keep lowest-validation-CE selection and both adoption routes unchanged;
+no rank may be chosen to manufacture a memory pass. All actual state measurements,
+fresh quality gates and audits remain mandatory. See the preparation record and
+`tokenizer-evidence/wide-hybrid-preparation-001/readiness-review-001.json` for
+coverage limits: seven-token CPU cache evidence and meta optimizer construction
+do not establish the missing nine-case rank-policy optimizer/resume/EMA review.

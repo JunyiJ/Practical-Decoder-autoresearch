@@ -618,3 +618,43 @@ remain unverified; no complete nine-case numerical review or fitted frozen plan
 exists. The failed combined continuation fixture remains closed. Next work is
 reviewing the integrated path and exact outstanding numerical/resource evidence
 without failed-guard retry, partial launch, cleanup or holdout access.
+
+## Integrated readiness review and projected memory-route constraint
+
+A read-only review now distinguishes retained numerical evidence from simulated
+controller coverage. All nine width512 family/rank configurations have retained
+meta geometry/optimizer-group checks and seven-token CPU full/cache/reset/
+causality/lineage checks at batches1/8. Those meta checks do not execute optimizer
+updates or reload optimizer state. The one completed hybrid continuation in the
+failed combined process used the older quarter-rank WIDE_POLICY; it is not a
+complete RANK_POLICY continuation result. No nine-case rank-policy optimizer/
+resume/EMA review exists, and the96-token MPS workload remains unmeasured.
+The failed combined fixture stays closed. Mocked worker success cannot fill
+these gaps or establish real training/export/cache memory feasibility.
+
+The same review enumerated all27 possible selected rank triples using retained
+meta-device cache counts, independently checked the layer-state formula, and
+cross-checked exact rational savings against the existing integer memory gate.
+At width512/context128/FP32, only hybrid D/8 with all-gated-MLA D/2 and any KDA
+rank can meet the current10% reduction against BOTH controls:3 of27 triples.
+Batch1 projected state is301,056bytes for that hybrid,589,824 for gated MLA and
+335,872 for KDA, giving48.9583% and10.3659% savings respectively. Batch8 scales
+all three equally. Same-rank selections cannot pass this memory threshold.
+These are architecture projections, not fresh measured memory or quality results;
+other workloads can have different tradeoffs.
+
+Keep validation-CE rank selection unchanged. Do not select a worse-quality rank
+to manufacture a memory pass, weaken the threshold after results, or treat this
+projection as adoption evidence. The strict-quality route remains available for
+other selected triples if its full fresh gates pass. The10% threshold, like the
++.01-nat margin, is a prospective agent engineering convention, not a human
+numeric tolerance. No threshold, rank, rate, seed, order or workload changed.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/readiness-review-001.json`
+and its reproducible `review_readiness.py`. This iteration performed source/
+retained-evidence review and27 synthetic arithmetic checks only; no model,
+corpus, checkpoint or MPS worker was loaded and no numerical fixture was retried.
+Full accounting remains57,224,879,357bytes including the8GiB reserve, versus
+about16.40GiB observed free. No plan was frozen or trial launched. Actual
+numerical prerequisites, full storage fit, measured pilot resource review and
+final provenance/fresh-seed freeze remain required before the quality panel.

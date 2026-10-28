@@ -1,0 +1,602 @@
+{
+  "status": "preparation_review_not_launch_ready",
+  "at": "2026-10-28T08:01:10.470671+00:00",
+  "method": "manual_test_source_coverage_review_plus_27_combination_exact_arithmetic",
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-review.json": "cda2b3680f8c0262c0cfb2c59f5a3385661ae2a04d2704c4a05a20492e1f9e43",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-storage-projection.json": "5aba55c22f234f35aacea218fa53e767c450e9aaa6f07f34bfa2b4d3d5bf9df4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-resource-failure-001.json": "596e0c9ba6a93ac27bec4e7db198759b9a9022d9cd38220e8018f947771ad11d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-failure-review-001.md": "78786a60f43c11b952453304dc3d60b42f5f20d45e0ff39d0f32aed11a1ccd6b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/pilot-integration-review.json": "3ad5b9069194600157a504632b15495f8a53adc6dc3cf6ed81e0307d7bbf6b4a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-integration-final-tests.log": "fa6dedd81acef733d8617dce4ea26dcbbe8a4d45a6694284bc15c4bc0ce5b582",
+    "tests/test_tokenizer_wide_hybrid_rank.py": "89261d2d458ef0c75779cff3ee9b84ac78ade3e7b8ece6f1bd9f361173b8a9ac",
+    "tests/test_tokenizer_wide_hybrid.py": "815ad78f063f9f7842a24de746d8a1b418cef7a087acae32c538866daad209d8",
+    "src/research/tokenizer_wide_hybrid_config.py": "7f6e35be7a45f98dd42627b50818ba23fbcd690ec232292ac8ad4a39e254e8e9",
+    "src/research/tokenizer_wide_hybrid_rules.py": "7fc5638cccc2c73407384d9d615bdebe5ac448593fdb2afb0ac3e9d2fb7a954a",
+    "src/research/tokenizer_wide_hybrid_pilot.py": "1ed5482e9a5dcc76cbdd28e54d6852a5b3a976b184de1d5b469ae520b8078a93",
+    "src/research/memory_guard.py": "a6617b8c0147607c8f3c4cf0d43ba278589b1e9f14c1422aaf6440de3524eefd",
+    "src/research/tokenizer_study.py": "a4292b4fae81a7407c7b3cefa29bd4304dd1b49c950eb88231041437573e32cb",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/review_readiness.py": "302ec93e8503d8babca7241ce851f0814767eacfbbac2b607ac80f15bc52e7f9"
+  },
+  "coverage": [
+    {
+      "width": 512,
+      "family": "hybrid",
+      "divisor": 8,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "hybrid",
+      "divisor": 4,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "hybrid",
+      "divisor": 2,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "gated_mla",
+      "divisor": 8,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "gated_mla",
+      "divisor": 4,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "gated_mla",
+      "divisor": 2,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "kda",
+      "divisor": 8,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "kda",
+      "divisor": 4,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    },
+    {
+      "width": 512,
+      "family": "kda",
+      "divisor": 2,
+      "meta_geometry_and_optimizer_grouping": "passed_retained_rank_review",
+      "cpu_full_cached_reset_causality_lineage": "passed_7_token_batches_1_and_8",
+      "optimizer_update_resume_ema": "not_established_under_rank_policy",
+      "mps_96_token_cache_workload": "not_run"
+    }
+  ],
+  "projected_cache_combinations": [
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 8,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-17/32",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 8,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-17/32",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 8,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-17/32",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 4,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "13/160",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 4,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "13/160",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 4,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "13/160",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 2,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "47/96",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": true
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 2,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "47/96",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": true
+    },
+    {
+      "divisors": {
+        "hybrid": 8,
+        "gated_mla": 2,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 301056,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "47/96",
+        "kda": "17/164"
+      },
+      "projected_memory_threshold_eligible": true
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 8,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-67/96",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 8,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-67/96",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 8,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-67/96",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 4,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-3/160",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 4,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-3/160",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 4,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-3/160",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 2,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "125/288",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 2,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "125/288",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 4,
+        "gated_mla": 2,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 333824,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "125/288",
+        "kda": "1/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 8,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-33/32",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 8,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-33/32",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 8,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 196608,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-33/32",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 4,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-7/32",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 4,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-7/32",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 4,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 327680,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "-7/32",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 2,
+        "kda": 8
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "31/96",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 2,
+        "kda": 4
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "31/96",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    },
+    {
+      "divisors": {
+        "hybrid": 2,
+        "gated_mla": 2,
+        "kda": 2
+      },
+      "projected_batch1_state_bytes": {
+        "hybrid": 399360,
+        "gated_mla": 589824,
+        "kda": 335872
+      },
+      "projected_fraction_saved": {
+        "gated_mla": "31/96",
+        "kda": "-31/164"
+      },
+      "projected_memory_threshold_eligible": false
+    }
+  ],
+  "projected_memory_eligible_selections": [
+    {
+      "hybrid": 8,
+      "gated_mla": 2,
+      "kda": 8
+    },
+    {
+      "hybrid": 8,
+      "gated_mla": 2,
+      "kda": 4
+    },
+    {
+      "hybrid": 8,
+      "gated_mla": 2,
+      "kda": 2
+    }
+  ],
+  "required_free_bytes": 57224879357,
+  "observed_free_bytes": 17607417856,
+  "qualifications": [
+    "Geometry and seven-token CPU cache checks are retained prior evidence, not rerun here.",
+    "Meta optimizer construction/grouping does not exercise optimizer updates or state reload.",
+    "The one completed old quarter-rank hybrid continuation used WIDE_POLICY, not RANK_POLICY.",
+    "No complete nine-case rank-policy optimizer/resume/EMA review exists; do not promote the old single case.",
+    "Mocked integration receipts do not establish real model correctness or resource feasibility.",
+    "Projected cache threshold eligibility is not measured memory or quality adoption evidence.",
+    "Same-rank hybrid/control selections cannot pass the current 10% both-control memory gate.",
+    "LR/rank selection remains minimum validation CE; do not select ranks to manufacture a memory pass.",
+    "The strict-quality route remains available for every selected geometry if its full gates pass.",
+    "The memory watchdog is a daemon started by the common worker and continues into the cache audit.",
+    "The failed combined CPU fixture remains closed; no retry or launch is authorized by this review."
+  ],
+  "numerical_tests_run": false,
+  "model_or_corpus_loaded": false,
+  "real_training_or_mps_worker_dispatched": false,
+  "plan_frozen": false,
+  "adopted": false
+}
