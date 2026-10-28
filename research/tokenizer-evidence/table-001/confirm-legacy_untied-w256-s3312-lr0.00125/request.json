@@ -1,0 +1,106 @@
+{
+  "config": {
+    "data": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/data/raw/shakespeare.txt",
+      "tokenizer": "gpt2",
+      "train_fraction": 0.8,
+      "val_fraction": 0.1
+    },
+    "model": {
+      "attention_logit_scale": 0.5,
+      "attention_logit_scale_width_policy": "tokenizer_mha_gqa_score_v1",
+      "attention_width_policy": "gqa_half_head32",
+      "attn_dropout": 0.0,
+      "attn_type": "gqa",
+      "base_width": 64,
+      "block_size": 128,
+      "depth_width_policy": "depth4_gqa_unscaled",
+      "dim": 256,
+      "dropout": 0.0,
+      "ffn": "swiglu",
+      "ffn_bias": false,
+      "ffn_width_policy": "swiglu_21_8",
+      "mlp_type": "dense",
+      "n_heads": 8,
+      "n_layers": 4,
+      "norm_type": "rmsnorm",
+      "output_bias_kind": "none",
+      "output_bias_prior": {
+        "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+        "prior_sha256": "470924d478e490521ed589c1ec38131ffad17d564990bc18dbb213e1fc04d792",
+        "tokenizer": {
+          "implementation": "tiktoken",
+          "name": "gpt2",
+          "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+          "special_token_policy": "ordinary_text",
+          "special_tokens": {
+            "<|endoftext|>": 50256
+          },
+          "split_unit": "raw_text",
+          "version": "0.14.0",
+          "vocab_size": 50257,
+          "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+        },
+        "train_fraction": 0.8,
+        "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+        "val_fraction": 0.1,
+        "version": 2
+      },
+      "output_bias_width_policy": "tokenizer_attention_no_output_bias",
+      "parameterization": "mup",
+      "rope": 1,
+      "tokenizer_architecture_policy": "tokenizer_gqa_scaled_table_sharing_v1",
+      "vocab_size": 50257,
+      "weight_tying_kind": "legacy_untied",
+      "weight_tying_width_policy": "tokenizer_gqa_scaled_table_sharing_v1"
+    },
+    "training": {
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "checkpoint_dir": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3312-lr0.00125/checkpoints",
+      "checkpoint_every": 0,
+      "decay_mode": "independent",
+      "device": "mps",
+      "eval_every": 300,
+      "eval_iters": 10,
+      "eval_seed": 2026,
+      "grad_clip": 1.0,
+      "keep_best_checkpoint": false,
+      "learning_rate": 0.00125,
+      "lr_schedule": {
+        "kind": "linear_cooldown",
+        "min_ratio": 0.1,
+        "start_step": 800,
+        "total_steps": 1200
+      },
+      "max_iters": 1200,
+      "max_train_seconds": null,
+      "metrics_file": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3312-lr0.00125/metrics.jsonl",
+      "optimizer": "muon",
+      "resume_from": null,
+      "seed": 3312,
+      "strict_device": true,
+      "summary_file": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3312-lr0.00125/training-summary.json",
+      "weight_averaging": {
+        "half_lives": [
+          200
+        ],
+        "interval": 10,
+        "kind": "spaced_tail_ema",
+        "start_step": 800,
+        "total_steps": 1200
+      },
+      "weight_decay": 6e-05
+    }
+  },
+  "result_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3312-lr0.00125/result.json",
+  "spec": {
+    "family": "legacy_untied",
+    "id": "confirm-legacy_untied-w256-s3312-lr0.00125",
+    "lr": 0.00125,
+    "seed": 3312,
+    "stage": "confirm",
+    "steps": 1200,
+    "width": 256
+  }
+}
