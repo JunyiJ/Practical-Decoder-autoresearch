@@ -20,7 +20,7 @@ from .tokenizer_wide_hybrid_quality_audit_v2 import bind_rank_prefix
 from .tokenizer_wide_hybrid_quality_acceptance_v2 import _guard
 from .tokenizer_wide_hybrid_plan_v2 import bind_campaign,PROJECTION
 from .tokenizer_wide_hybrid_retention_receipts import _document,_path,_sha
-from .tokenizer_wide_hybrid_storage_v2 import bind_storage
+from .tokenizer_wide_hybrid_storage_v2 import bind_storage,remaining_projection,required_free
 from .tokenizer_wide_hybrid_rules import lr_specs,rank_specs
 from .tokenizer_wide_hybrid_scores import _require
 
@@ -136,3 +136,99 @@ def prepare_rank_request(writer,slot,plan_sha256,*,projection_ref,lr_completion_
             plan_sha256=plan_sha256,error=repr(exc)[:1000],retry_allowed=False))
         except BaseException as error:exc.add_note('Rank preparation failure publication failed: '+repr(error)[:1000])
         raise
+
+
+def verify_rank_request(writer,slot,reference):
+    """Read-only idle predispatch recheck, under both locks and an outer guard.
+
+    Reconstruct current capacity without giving the pending request completed
+    trajectory credit. No process artifacts may yet exist in that slot. A later
+    readiness/child/parent transport layer is still required for dispatch.
+    """
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 9<=slot<=14,
+             'Exact rank slot9 through14 required')
+    root=writer.root/'evidence';base=f'meta/quality-rank-startup-{slot:02d}'
+    _locks(root,writer.lock_fds)
+    _require(reference['path']==base+'.json','Exact rank startup reference required')
+    report=_document(root,reference);pid=report.get('parent_pid')
+    _require(report.get('kind')==KIND and report.get('status')=='rank_request_pending_predispatch_review'
+        and type(report.get('slot')) is int and report['slot']==slot and type(pid) is int and pid>1
+        and all(report.get(k) is False for k in ('adopted','dispatch_authorized','deletion_authorized','next_stage_authorized'))
+        and 'selection' in report and report['selection'] is None,'Rank startup identity/claims differ')
+    guard=report['guard'];_require(guard['path']==f'control/quality-rank-startup-{slot:02d}.json',
+                                 'Exact rank preparation guard required')
+    _guard(writer,guard,KIND,pid,1800)
+    attempt=dict(kind=KIND,status='started',slot=slot,plan_sha256=report['plan_sha256'],
+        projection_ref=report['projection_ref'],lr_completion_ref=report['lr_completion_ref'],dispatch_authorized=False)
+    _require(report['attempt']['path']==base+'-attempt.json'
+        and _document(root,report['attempt'])==attempt,'Rank preparation attempt differs')
+    inventory=dict(report['inventory']);rq=report['request']
+    _require(inventory[report['attempt']['path']]['sha256']==report['attempt']['sha256'],'Attempt inventory differs')
+    _require(rq['path']==f'quality/{slot:02d}/request.json','Exact pending rank request required')
+    for ref in (rq,reference):
+        path=_path(root,ref['path']);_document(root,ref)
+        _require(ref['path'] not in inventory,'Rank startup output overlaps old inventory')
+        inventory[ref['path']]=dict(size=path.stat().st_size,sha256=ref['sha256'])
+    _check_inventory(root,inventory)
+    history=verify_lr_history(writer,report['plan_sha256'],report['lr_completion_ref'],current_inventory=inventory)
+    _require(all(digest(report[k])==digest(history[k]) for k in ('projection_ref','pilot_completion_ref','selection_ref','rates','stages')),
+             'Rank startup differs from verified original LR history')
+    bound,requests=_frozen(writer,slot,report['plan_sha256'],report['projection_ref'],history['rates'])
+    _require(report['context']==bound['context'] and report['frozen_files']==bound['files']
+        and digest(_document(root,rq))==digest(requests[-1]),'Frozen rank provenance or pending request changed')
+    plan=_document(root,dict(path='meta/plan.json',sha256=report['plan_sha256']))
+    prefix=bind_rank_prefix(root,context=bound['context'],lr_records=history['records'],rates=history['rates'],
+        lr_requests=requests[:9],rank_requests=requests[9:-1],pending_request=requests[-1],
+        evidence={n:v['sha256'] for n,v in inventory.items() if not n.endswith('.pt')},
+        numerical_ref=plan['numerical_ref'],rates_ref=history['selection_ref'],projection_ref=report['projection_ref'],
+        training_token_sha256=plan['training_token_sha256'])
+    for name,pair in prefix['checkpoint_pairs'].items():
+        if int(name.split('/')[1])<9:
+            _require(pair==history['checkpoint_pairs'][name],'Live LR anchor differs from original pair')
+    pilot=verify_pilot_history(writer,report['plan_sha256'],history['pilot_completion_ref'],
+        current_inventory=inventory,stages=history['stages'])
+    pairs={**pilot['checkpoint_pairs'],**history['checkpoint_pairs'],**prefix['checkpoint_pairs']}
+    _require(digest(report['completed_records'])==digest(prefix['records']) and digest(report['checkpoint_pairs'])==digest(pairs)
+        and digest(report['audited_indices'])==digest(prefix['audited_indices']),'Saved rank prefix or original pairs differ')
+    state=remaining_projection(_document(root,report['projection_ref']),pilot['records'],
+        prefix['records'],history['rates'],None,2)
+    census=snapshot(writer.root);weights=set();inodes=set();occupied=0;logical=0;stamps={}
+    for pair in prefix['checkpoint_pairs'].values():
+        for entry in pair.values():
+            path=_path(root,entry['path']);st=path.stat();inode=(st.st_dev,st.st_ino)
+            _require(st.st_nlink==1 and inode not in inodes
+                and inventory[entry['path']]==dict(size=entry['size'],sha256=entry['sha256']),
+                'Rank checkpoint census alias or binding differs')
+            inodes.add(inode);weights.add(entry['path']);logical+=st.st_size
+            occupied+=min(st.st_size,st.st_blocks*512)
+            stamps[entry['path']]=(st.st_dev,st.st_ino,st.st_size,st.st_blocks,st.st_mtime_ns,st.st_ctime_ns)
+    actual={n.removeprefix('evidence/') for n,v in census['files'].items() if v['group'].endswith('/weights')}
+    _require(actual==weights and census['checkpoint_logical_bytes']==logical,'Unexpected checkpoint before rank dispatch')
+    needed=required_free(state,occupied);storage=report['storage']
+    expected=dict(required_free_bytes=needed,occupied_checkpoint_capacity_bytes=occupied,
+                  checkpoint_logical_bytes=logical,cleanup_boundaries_verified=2)
+    _require(all(type(storage.get(k)) is int and storage[k]==v for k,v in expected.items())
+        and storage.get('status')=='remaining_campaign_storage_verified' and digest(storage.get('projection'))==digest(state)
+        and storage.get('current_inventory_sha256')==digest(report['inventory'])
+        and type(storage.get('free_bytes')) is int and storage['free_bytes']>=needed
+        and type(storage.get('metadata_bytes')) is int and 0<=storage['metadata_bytes']<=state['metadata_allowance_bytes']
+        and all(storage.get(k) is True for k in ('storage_projection_fits','current_phase_space_verified'))
+        and all(storage.get(k) is False for k in ('dispatch_authorized','frozen_plan_verified','audit_semantics_verified')),
+        'Saved full-panel rank storage evidence differs')
+    free=shutil.disk_usage(writer.root).free
+    _require(type(free) is int and free>=needed,'Complete remaining panel no longer fits')
+    again,again_requests=_frozen(writer,slot,report['plan_sha256'],report['projection_ref'],history['rates'])
+    _require(digest(again)==digest(bound) and again_requests==requests,'Frozen rank inputs changed during predispatch')
+    _require(verify_lr_history(writer,report['plan_sha256'],report['lr_completion_ref'],current_inventory=inventory)==history,
+             'LR history changed during rank predispatch')
+    _guard(writer,guard,KIND,pid,1800);_check_inventory(root,inventory);_locks(root,writer.lock_fds)
+    for name,stamp in stamps.items():
+        st=_path(root,name).stat()
+        _require(st.st_nlink==1 and (st.st_dev,st.st_ino,st.st_size,st.st_blocks,st.st_mtime_ns,st.st_ctime_ns)==stamp,
+                 'Live rank checkpoint changed during predispatch')
+    _require(snapshot(writer.root)==census,'Rank predispatch census changed')
+    free=shutil.disk_usage(writer.root).free
+    _require(type(free) is int and free>=needed,'Remaining storage changed before rank handoff')
+    return dict(required_free_bytes=needed,request_sha256=rq['sha256'],startup_ref=reference,
+        pilot_history_verified=True,lr_history_verified=True,rank_prefix_verified=True,
+        rank_request_verified=True,dispatch_authorized=False)

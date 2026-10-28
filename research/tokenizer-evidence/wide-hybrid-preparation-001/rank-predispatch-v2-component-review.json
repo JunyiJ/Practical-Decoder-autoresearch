@@ -1,0 +1,52 @@
+{
+  "adopted": false,
+  "base_commit": "11245508a2fb375d20145a0477aaf0cf4cdd1e60",
+  "created_at": "2026-10-28T21:30:44.883768+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-predispatch-v2-guard.json": "3a461e64ef3f8e84300b90eb57b461e6e3b56024d055a7aedee9b9304c464921",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-predispatch-v2-tests.log": "717011736b62195bfcb64532050f2c292c0a7c3ed53f39d6a70f6b4f36896f8c",
+    "src/research/tokenizer_wide_hybrid_lr_boundary_v2.py": "622a2a6008b5cf6119b2afaaf2dde5842d150a9fe8cc4dec36101ddac41b575c",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "92fed151bb54dda2a30627f133d3c865486a9261d002c2e0f63401206a90e513",
+    "src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py": "6fdb3f1808a099d7f2c2418ef8b064573ea5348a6d6fcfe2438fd85b40244a03",
+    "src/research/tokenizer_wide_hybrid_storage_v2.py": "6558775da8a0598dbe471652c1c7145718823131aa206c60e94a890abefe1b2d",
+    "tests/test_tokenizer_wide_hybrid_quality_rank_predispatch_v2.py": "38e3070337bb0cb66786c5fa21dcd627a62276a593708eab7d9cb81f18843b3a",
+    "tests/test_tokenizer_wide_hybrid_quality_rank_startup_v2.py": "d75867ab82860e53048d6fd24d35b5b3c02e1dfc28526472503a13950c3b8949"
+  },
+  "findings": [
+    "Read-only verify_rank_request supports exact slots9..14 under both worker locks and a caller-owned outer guard. It binds the immutable attempt, request, startup report and finished preparation guard; reconstructs the current evidence inventory without granting the pending request completed trajectory credit.",
+    "Both cleanup histories and original pilot/LR checkpoint pairs remain bound, including deliberately deleted weights. Every live LR anchor and completed rank member is re-audited from independent frozen requests, source/context, numerical evidence and producer/tensor records. Saved prefix records, pairs, indices, rates and stages cannot replace those checks.",
+    "Remaining storage is independently reconstructed from the full future high-water projection and actual live occupied capacity, with both verified boundaries, unchanged8GiB reserve and full256MiB metadata allowance. Unexpected weights, aliases, active process artifacts, future slots, failures and partial files reject handoff. Planned deletion gets no credit.",
+    "Final checks repeat frozen input binding, full historical receipt/inventory verification, preparation guard, exact locks, live checkpoint inode/size/block/time stamps, complete census and actual free space. The returned report explicitly leaves dispatch unauthorized.",
+    "Twelve tests include first/last rank-slot positives,28 saved-report mutation cases,16 actual evidence/active/failure mutations, exact-capacity success and two shortfall cases, three late history/weight/lock mutations and six invalid slots. All verification calls preserve their input evidence. Only disposable synthetic byte fixtures were changed/restored; no scientific child was launched."
+  ],
+  "free_bytes_observed": 30577078272,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_rank_predispatch_v2_component_review",
+  "limitations": [
+    "Rank readiness/child entry and parent serial dispatch with complete prior-rank transport receipt verification remain to integrate and test. This idle check does not authorize dispatch or claim that those transport receipts have already been checked.",
+    "Fresh transitions, final rank selection/cleanup/cumulative history/inference, exact full frozen metadata accounting and the actual nine numerical/input/measured-pilot prerequisites remain unfinished. The failed combined numerical fixture remains closed; no retry occurred.",
+    "No research MPS/training, research checkpoint deletion, closed-controller rerun or holdout evaluation occurred. The27-trajectory panel remains unfrozen; all rates/seeds/order/selection and quality/memory guards are unchanged."
+  ],
+  "status": "read_only_rank_predispatch_tested_dispatch_unfinished_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "guard": {
+      "elapsed_seconds": 140.2530609993264,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 360
+      },
+      "observation": {
+        "free_bytes": 30574346240,
+        "peak_rss_bytes": 241418240
+      },
+      "pid": 95947,
+      "reason": null,
+      "status": "finished"
+    },
+    "passed": 12,
+    "seconds": 139.85
+  }
+}

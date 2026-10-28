@@ -524,3 +524,33 @@ numerical retry, closed-controller rerun or holdout evaluation occurred. The
 27-trajectory campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-startup-v2-component-review.json`.
+
+
+## October 28 read-only rank predispatch verification
+
+Prepared rank slots9 through14 now have a read-only predispatch check. It binds
+startup/attempt/request/finished guard, verifies complete pilot and LR deletion
+history, and re-audits every live LR anchor and completed rank member against
+independently frozen requests. The pending request receives no completed-trial
+or checkpoint credit. Original deleted pairs remain traceable to their receipts.
+
+The check independently reconstructs complete future storage using actual live
+occupied capacity, the unchanged8GiB reserve and full256MiB metadata allowance.
+It rejects unexpected process/weight/future/failure/partial artifacts, then repeats
+frozen inputs, historical evidence, locks, checkpoint stamps, census and actual
+free space before returning. Its report explicitly leaves dispatch unauthorized.
+
+All12 synthetic tests passed in139.85s, including28 saved-report mutations,
+16 actual evidence/active/failure mutations, exact-capacity and late-space-loss
+cases, late history/weight/lock changes, and first/last rank-slot positives. The
+360s/4GiB/8GiB actual CPU/disk guard finished normally; peak RSS241,418,240 bytes.
+Raw logs and guard evidence are retained. No scientific worker or numerical
+fixture was run, and no research weights or closed-holdout data were touched.
+
+Next integrate rank readiness/child entry and serial parent transport verification.
+Fresh transitions, final rank selection/cleanup/inference, full metadata accounting
+and actual nine numerical/input/measured-pilot prerequisites remain unresolved.
+The27-trajectory campaign remains unfrozen and the failed combined numerical
+fixture remains closed.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-predispatch-v2-component-review.json`.
