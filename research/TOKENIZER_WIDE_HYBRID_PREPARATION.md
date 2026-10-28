@@ -1636,3 +1636,35 @@ unresolved. No research launch, deletion, failed-numerical retry or holdout use
 occurred. The27-trajectory campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-lr-predispatch-v2-component-review.json`.
+
+
+## October 28 live quality handoff transport checks
+
+The read-only LR handoff component binds exact child arguments, startup/request
+references, actual parent PID, inherited worker locks and the declared7200s,
+8GiB reserve,4MiB log and supplied full-storage/output limits. A pending slot may
+contain only its request plus fresh launch/log files. Prelaunch evidence remains
+immutable. The same bounded log inode may grow while hashes are checked, but
+previously observed log bytes cannot change. Hashing does not hold the metadata
+namespace lock, allowing the parent to continue bounded control/log writes.
+
+This component verifies transport only. Inventory, full remaining-space needs
+and trajectory allowance must still come from independent frozen/audited gates;
+it grants no numerical, current-storage or dispatch credit. The reserved child
+module contract has no runnable worker entry or launcher. The next composition
+must combine this check with full plan, historical/prefix, startup and storage
+validation before invoking the already bounded quality producer.
+
+All120 handoff/process/writer tests passed in4.66s, peak RSS237,846,528bytes under
+the180s/4GiB/8GiB CPU guard with actual disk observations. Tests reject parent,
+argument and limit changes; failed/partial/new process evidence; log rewriting,
+replacement, truncation and overflow; protected-file changes; STOP and invalid
+locks. Tests explicitly permit parent control writes and bounded log appends
+during hashing. Fixtures are synthetic and establish no model-quality result.
+
+The pending prior commit push was retried with a60-second hard network timeout
+and remained unconfirmed; local commits and all evidence were preserved. No
+research worker, MPS trial, checkpoint deletion, failed numerical retry or test
+holdout access occurred. The27-trajectory campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-handoff-v2-component-review.json`.

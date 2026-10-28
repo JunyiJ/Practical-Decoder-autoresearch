@@ -1,0 +1,47 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T19:56:50.640922+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-handoff-v2-guard.json": "0c3d9534124a76f1576a5ed79e03a09ec6908c5cf322aa40a7cdade1a503725d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-handoff-v2-tests.log": "8fa2790ecd839b36e735bd8b3fc83ad8974abc330acb372788e12c04283785b7",
+    "src/research/tokenizer_wide_hybrid_quality_handoff_v2.py": "62b169c526e4da43543080541d25f78302a4e2666ad77d341a65c5e14fd37516",
+    "tests/test_tokenizer_wide_hybrid_quality_handoff_v2.py": "6c83e560c58286e27d9a327675318bea06f06577203937eb4904dfe40b2c75a0"
+  },
+  "findings": [
+    "New read-only LR launch transport component binds the exact14-argument child contract, startup/request references, actual parent PID, inherited global/campaign descriptors and exact7200s/8GiB reserve/4MiB log/independently supplied full-storage and trajectory limits.",
+    "Only fresh launch.json and worker.log may accompany the pending request. Complete prelaunch evidence is hash-checked without holding the metadata namespace lock; only the same bounded log inode may grow. Previously observed log bytes must retain their hash. No arbitrary mutable evidence exception is introduced.",
+    "Tests allow the parent to publish control observations and append to its log while retained checkpoint bytes are checked. They reject log rewrite/truncation/replacement/overflow, changed launch/parent/args/limits, new/failed process artifacts, changed protected evidence, STOP and invalid locks.",
+    "All120 transport/process/metadata-writer tests passed in4.66s, peak RSS237,846,528bytes under180s/4GiB/8GiB actual CPU/disk guard. No model was loaded or trained by the new component."
+  ],
+  "free_bytes_observed": 30633058304,
+  "guard": {
+    "elapsed_seconds": 4.984383791685104,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30630793216,
+      "peak_rss_bytes": 237846528
+    },
+    "pid": 83733,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_quality_live_handoff_v2_component_review",
+  "limitations": [
+    "This transport component accepts independently supplied inventory, full remaining-space requirement and output allowance. It explicitly grants no scientific prerequisite, current-storage or dispatch credit. Frozen plan/numerical, historical pilot/prefix/startup audits and full storage revalidation must be composed in the future child entry.",
+    "The module path is a reserved exact argv contract with no runnable worker entry or launcher. Parent dispatch/postprocess acceptance, LR/rank selection transitions, cleanup and inference orchestration remain unfinished.",
+    "Tests use synthetic JSON and tiny checkpoint bytes. Real nine-case optimizer/update/resume/EMA/input and measured-pilot prerequisites remain unresolved. No research training/MPS launch, research checkpoint deletion, failed combined numerical retry, closed-controller rerun or test-holdout access occurred. The27-trajectory campaign remains unfrozen."
+  ],
+  "status": "synthetic_transport_tests_passed_campaign_unfrozen",
+  "validation": {
+    "failed": 0,
+    "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-handoff-v2-tests.log",
+    "passed": 120,
+    "seconds": 4.66
+  }
+}
