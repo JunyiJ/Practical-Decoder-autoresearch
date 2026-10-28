@@ -1311,3 +1311,37 @@ cleanup-chain and inference wiring and actual nine-case numerical/input/measured
 pilot prerequisites remain outstanding. No real trial or cleanup was launched.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-prefix-v2-component-review.json`.
+
+
+## October 28 v2 idle-to-request startup transition
+
+The new startup component checks frozen campaign identity, full completed-pilot
+prefix provenance and the unchanged full-remaining-campaign storage gate before
+materializing the next pilot request. An immutable receipt binds the prior file
+inventory, reviewed checkpoint pairs, projection and storage report. Predispatch
+verification rehashes that inventory and recomputes occupied checkpoint capacity
+and the complete future requirement from the frozen projection. Unexpected
+empty pilot/process directories also block progress. Failed startup/predispatch
+checks leave permanent receipts or partial files, preventing silent retries.
+
+The bounded process helper receives the verified full requirement and checks
+space again immediately before creating a child. Synthetic integration confirms
+success with enough space and refusal before child creation at one byte below
+the full requirement. No next-pilot-only accounting or v1 guard bypass is used.
+
+Validation:37 initial startup tests and333 combined startup/audit/storage/metadata/
+process/execution/plan tests passed. The combined suite took10.23s with peak RSS
+249,397,248bytes under180s/4GiB/8GiB guards. Two later process-handoff cases were
+added; the first run had44 passes and one test-only error-text mismatch, with the
+correct disk rejection already occurring. That log is retained. After correcting
+the assertion, all45 startup/integration cases passed in1.79s. These fixtures use
+synthetic records and tiny files; they are not actual numerical or pilot evidence.
+
+Next wire this transition into a versioned bounded pilot controller/worker entry
+point, then complete stage cleanup, quality and inference orchestration. Actual
+nine-case numerical/input and measured-pilot prerequisites remain unresolved.
+The plan is unfrozen; no MPS launch, failed numerical-fixture retry, research
+checkpoint cleanup or scientific-rule change occurred. Recheck current storage
+at every real transition; the observed fit is narrow, not a durable guarantee.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-startup-v2-component-review.json`.

@@ -1,0 +1,67 @@
+{
+  "status": "pilot_startup_transition_verified_with_synthetic_evidence",
+  "created_at": "2026-10-28T18:38:27.703183+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_pilot_startup_v2.py": "0a0ca10321eb544615ac2023ca903872e71813f0a0da06d263b61d0aaa38194f",
+    "tests/test_tokenizer_wide_hybrid_pilot_startup_v2.py": "b0a69b508bf7b9000b521e9ef6481202f9cef185cd59ddc85d1304c6c01ce137",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-final-guard.json": "4a9aa88523d656bade4027f1ea7924f4443ce2b486ba0069dd508eff5988890f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-final-tests.log": "b4fbc1c75a066d481cd13296a07f42b802ac0fd1ce9e2aa6fe98b6b2e71080e3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-guard.json": "3e029cff79ea83a6e626d35a365dbaca13a7be8a24343907028e9e1167339389",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-integration-corrected-guard.json": "fa39ece08504b8bef38ac0e31b2ca2655aab0c58fed6fa5d1bb1cdaca632d0e7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-integration-corrected-tests.log": "64384c2de44a1414fc49f967235ca656b2794621af34cdefc29e3438ff986720",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-integration-guard.json": "6b3ffed7ea651d9b698f20a0c2d81d1f1d29001884fd651c6186f14f0f1c0efe",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-integration-tests.log": "3e3f621ab1233d2c81051bada77340b5dc485e0abfcbf71be48e8454a6fb39fa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-startup-v2-tests.log": "ebcf7d710d1768a062a22b8f6a901b7ae3a65939654fb5f0aec8a6979a6bc430"
+  },
+  "tests": {
+    "initial_passed": 37,
+    "combined_passed": 333,
+    "integration_initial_passed": 44,
+    "integration_initial_failed": 1,
+    "integration_corrected_passed": 45
+  },
+  "combined_guard": {
+    "elapsed_seconds": 10.709504291415215,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30636212224,
+      "peak_rss_bytes": 249397248
+    },
+    "pid": 77828,
+    "reason": null,
+    "status": "finished"
+  },
+  "integration_corrected_guard": {
+    "elapsed_seconds": 1.9956877920776606,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30634967040,
+      "peak_rss_bytes": 231079936
+    },
+    "pid": 77970,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30639210496,
+  "findings": [
+    "The immutable startup attempt binds the frozen plan and projection, reviews every completed pilot in order and runs the unchanged idle full-remaining-campaign storage gate before creating the next request directory.",
+    "The request is the only permitted new trial evidence. The immutable startup receipt binds the complete prior evidence inventory, full storage report and completed checkpoint pairs; publication uses the existing bounded metadata writer and inherited worker locks.",
+    "Predispatch checks rebind frozen files, exact complete inventory, result/checkpoint identities and actual occupied checkpoint capacity. They recompute the remaining projection and required-free total instead of trusting saved storage totals. Unexpected empty slot/process directories are also rejected.",
+    "Failed startup or predispatch checks preserve a terminal failure/partial attempt that prevents silent retries. The process helper separately receives the full remaining requirement and rechecks it before Popen.",
+    "Real tiny synthetic process integration succeeds at sufficient space and refuses to launch a child at required-free minus one byte. The first integration run had one test-only error-message regex mismatch; the correct disk rejection already occurred. Its log is retained and the corrected45-test suite passes."
+  ],
+  "limitations": [
+    "The frozen campaign gate is mocked in startup tests; its separate suite is included in the333-test run. Completed pilot audits use synthetic records/tiny files. No actual model/numerical/cache/MPS/resource quality passing evidence is established.",
+    "This is a component without a launcher. The caller still must inspect actual processes, own shared locks, use an outer preparation guard, pass exact frozen worker argv/limits and wire stage cleanup/quality/inference transitions.",
+    "Actual nine rank-policy numerical optimizer/update/resume/EMA cases, input review and measured pilots remain unresolved. The failed combined numerical fixture stays closed; no retry or MPS launch occurred.",
+    "No research weights were deleted, no old controller was rerun, and no scientific selection rule, reserve or panel budget changed. The plan remains unfrozen. Current storage only narrowly meets the projection and must be rechecked at every actual transition."
+  ]
+}

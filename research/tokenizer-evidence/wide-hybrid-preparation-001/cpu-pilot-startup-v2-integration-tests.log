@@ -1,0 +1,31 @@
+............................................F                            [100%]
+=================================== FAILURES ===================================
+______ test_startup_storage_handoff_to_real_bounded_process_helper[True] _______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10b9d8e90>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c1bfaf0>
+drop = True
+
+    @pytest.mark.parametrize('drop',[False,True])
+    def test_startup_storage_handoff_to_real_bounded_process_helper(writer,monkeypatch,drop):
+        import sys
+        from src.research import tokenizer_wide_hybrid_process_v2 as process
+        args=setup(writer,monkeypatch,0);ref=start.prepare_pilot_request(**args)
+        checked=start.verify_before_process(writer,0,ref)
+        if drop:
+            monkeypatch.setattr(start.shutil,'disk_usage',lambda p:SimpleNamespace(free=checked['required_free_bytes']-1))
+        def invoke():
+            return process.run_process(writer,'pilots',0,[sys.executable,'-c','print("synthetic process only")'],writer.root,
+                required_free_bytes=checked['required_free_bytes'],output_limit_bytes=65536,
+                log_limit_bytes=4096,timeout_seconds=5,poll_seconds=.02)
+        if drop:
+>           with pytest.raises(RuntimeError,match='space'):invoke()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'space'
+E             Actual message: 'Insufficient disk for remaining allocations'
+
+tests/test_tokenizer_wide_hybrid_pilot_startup_v2.py:193: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_pilot_startup_v2.py::test_startup_storage_handoff_to_real_bounded_process_helper[True]
+1 failed, 44 passed in 1.83s
