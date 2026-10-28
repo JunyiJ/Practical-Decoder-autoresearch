@@ -282,3 +282,28 @@ callbacks, guarded serial dispatch and persisted-result audit remain required;
 the returned status explicitly remains pending artifact audit. No numerical
 continuation retry, pilot launch, cleanup or gate change occurred. Local space
 remains below the complete53.2948GiB projection; the test holdout stays closed.
+
+## Saved inference-result audit preparation
+
+Twenty-eight new synthetic saved-result checks and25 timing-contract regressions
+passed (53 total,0.47s; peak process RSS226,279,424bytes). The new audit binds
+bounded saved JSON bytes to an independently expected hash, rejects duplicate
+JSON keys, checks every seed/selection/token identity and exact correctness/
+warmup/measurement sequence, and recomputes throughput and latency summaries.
+Corruption tests cover missing, duplicate and reordered records; changed ranks,
+inputs, state allocation and throughput; failed cache flags; nonfinite timings;
+integer/boolean identity aliases; and incomplete fresh-seed panels.
+
+Summary tests use deliberately extreme synthetic warmups to verify their
+exclusion. The prospective aggregation is now explicit: eight-repeat medians
+per seed/family/batch, seed-paired hybrid/control ratios, then the median of the
+three ratios. All three seed ratios are retained. The exact10% state-saving
+rule requires both controls in every fresh seed/batch; one failing cell rejects
+that memory gate. Output remains pending provenance review and never adopts.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/timing-result-review.json`.
+No trained checkpoint, corpus or real timing was used, and these tests do not
+prove the numerical correctness callbacks or MPS behavior. Provenance-verified
+model loading, real cache/timing callbacks, guarded serial wrappers, numerical
+prerequisites, resource pilots, storage fit and final freeze remain open. No
+closed controller, failure record, reserve or test-holdout boundary changed.

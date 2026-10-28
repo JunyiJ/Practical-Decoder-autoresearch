@@ -181,3 +181,21 @@ nor proves that caller-supplied IDs come from training. The eventual worker must
 bind checkpoint hashes, selected ranks/LRs/seeds, full configuration/tokenizer,
 MPS FP32 device, actual input derivation and cached numerical checks. Guarded
 serial worker integration, result auditing and a frozen timing plan remain open.
+
+Saved timing evidence will be audited independently against the frozen seed,
+selection and token hash. Require all6 correctness rows,12 warmup rows and48
+measured rows per seed in the exact declared order; reject missing/duplicate/
+extra records, type aliases in identities, changed state sizes and incorrect
+throughput arithmetic. Hash-bind bounded JSON files and reject duplicate JSON
+keys. This contract audit does not substitute for model/checkpoint/tokenizer/
+device provenance or independent numerical-cache verification.
+
+For each seed/family/batch, compute median prefill and decode latency over the
+eight measured repeats, excluding both warmups. For each control/batch/metric,
+compute the three seed-paired ratios of hybrid median latency to control median
+latency, then report their median alongside all three ratios. Do not pool timing
+samples across seeds or select the most favorable seed. Require all three fresh
+triples for panel summaries. Evaluate the previously declared state-saving gate
+against both controls at every seed/batch, with exact integer byte arithmetic.
+Latency summaries have no speed-win gate; neither a timing audit nor its memory
+gate can adopt a recipe without the quality and complete-artifact requirements.

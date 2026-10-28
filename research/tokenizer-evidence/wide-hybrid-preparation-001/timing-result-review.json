@@ -1,0 +1,47 @@
+{
+  "status": "synthetic_saved_timing_audit_passed_not_launch_ready",
+  "at": "2026-10-28T06:32:45.415991+00:00",
+  "checks": 53,
+  "new_checks": 28,
+  "regression_checks": 25,
+  "guard": {
+    "elapsed_seconds": 0.612752040848136,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17516261376,
+      "peak_rss_bytes": 226279424
+    },
+    "pid": 53704,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Bounded JSON hash and unique-key binding",
+    "Exact fresh identities and complete ordered rows",
+    "Independent throughput arithmetic and state consistency",
+    "Warmups excluded from per-seed medians",
+    "All fresh seed-paired latency ratios reported",
+    "Both-control every-cell memory gate"
+  ],
+  "real_inference_or_checkpoint_audit": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Synthetic records only; correctness flags remain caller evidence",
+    "Model/checkpoint/tokenizer/device provenance and real numerical callbacks not integrated",
+    "No guarded benchmark dispatcher or pilot wrapper",
+    "Numerical prerequisites and full storage fit remain unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_timing_review.py": "4abd974b7aa9ef772ecdb285eb62683c787e1f7c5c69338730eb07fa9d82729a",
+    "tests/test_tokenizer_wide_hybrid_timing_review.py": "1603ad4281512ce78247c2886dee1920c3b9cb4c754ee3cfa283aa3b542f07c3",
+    "src/research/tokenizer_wide_hybrid_timing.py": "8462f1d38d6b47d7e63d3aab7e0ab6f53166530d0d45d3258ff790ce724d8fe0",
+    "tests/test_tokenizer_wide_hybrid_timing.py": "a5b3e5b30322f39a4541da50d6735b4aa8e9cff59fa5e0844f2f3923d9bc1787",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-timing-review-tests.log": "8de6c211ba7b58ef37695dd6ee15494ad00a4ff8011c26ad228e7b496da40fac",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-timing-review-guard.json": "0e7659e72ca0769c32f6b95c2ff2f95bdf746c2f19660e31ca120c33082fb221"
+  }
+}
