@@ -41,3 +41,19 @@ canonical EMA parameter names while checking the eight expected buffers separate
 `reviewer-failure-001.json` retains this review failure. The corrected review
 passed; no training source, result, checkpoint, selection rule or worker changed.
 This metadata/hash review does not recompute model losses or tensor finiteness.
+
+## Reviewed screening progress
+
+Three of six screening trials are complete and reviewed; confirmation has not
+started. The remaining matched-control screen and both tied screens are pending.
+These single-seed observations cannot establish an arm comparison or adoption.
+
+| Arm | LR | Raw CE | H200 CE |
+|---|---:|---:|---:|
+| legacy_untied | 0.00125 | 4.731212 | 4.763301 |
+| legacy_untied | 0.0025 | 4.879233 | 4.812186 |
+| matched_untied | 0.0025 | 4.840032 | 4.853498 |
+
+Checkpoint hashes, metadata, EMA lineage and saved-score arithmetic passed for
+all three records. Frozen source and the full remaining storage allocation pass;
+the controller continues with one MPS worker. No intervention or rule change.
