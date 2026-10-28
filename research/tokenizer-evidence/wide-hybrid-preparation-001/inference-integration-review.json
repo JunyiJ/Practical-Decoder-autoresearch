@@ -1,0 +1,51 @@
+{
+  "status": "mocked_serial_inference_integration_passed_not_launch_ready",
+  "at": "2026-10-28T07:04:13.624330+00:00",
+  "checks": 35,
+  "new_checks": 17,
+  "regression_checks": 18,
+  "initial_checks": 33,
+  "guard": {
+    "elapsed_seconds": 3.7055237917229533,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17599287296,
+      "peak_rss_bytes": 234881024
+    },
+    "pid": 54804,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Three serial seed triples through inline mocked worker",
+    "Inherited global/study lock identities and exclusion",
+    "Failure preservation and no re-entry",
+    "Saved result/model receipts and guard observations",
+    "Full metadata allocation and output cap",
+    "Prior-evidence rechecks and boundary STOP"
+  ],
+  "real_model_or_corpus_loaded": false,
+  "real_mps_worker_dispatched": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Integration mocks model loading/device callbacks, prerequisite binding and watchdogs",
+    "Real bounded subprocess behavior separately covered with tiny Python children",
+    "Real MPS path and model-metadata audit not exercised by this integration suite",
+    "Numerical/pilot/tensor review prerequisites, full storage fit and final freeze unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_inference.py": "73dda3c162f8016d5e78dbd6d8de97255fa7add935285697bf80e4c3c4afa503",
+    "tests/test_tokenizer_wide_hybrid_inference.py": "e8f0e410f0ea87b8a2410b33f582fc599a31057f82234c33aae9ba18104a6c2a",
+    "src/research/tokenizer_serial_process.py": "6a4dd8679747a94fd2e58b9f0592011f881a5c8cb2b8394b89adcd79ddb683c3",
+    "tests/test_tokenizer_serial_process.py": "485c56f12a80a2abde66c086916e6ec4f8dd0e7192c0b021a2332e8dc9bab2a2",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-integration-tests.log": "c747ede3d35d11b1bee7d734c58970e1aee9683a111de4f1ee5263fa2046f444",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-integration-guard.json": "441916689758143981277f6a0bede8031cc3c2c7aa8da273a0aeaa2e6fa0ff50",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-integration-final-tests.log": "fa917a9f8fc69eb9d755cb020ccdb0b97ee5e9fe7fa444af464a39e8b259355c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-integration-final-guard.json": "82e711b37226f20cf324488238f184fe63b8527ab80756e9ae1b07a48581fcf3"
+  }
+}

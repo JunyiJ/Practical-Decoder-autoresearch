@@ -386,3 +386,37 @@ gate itself is read-only and does not dispatch or run a watchdog. Guarded worker
 integration, resource pilots, numerical prerequisites, complete storage fit and
 final freeze remain outstanding. No real model/corpus was loaded in these tests,
 and no training, failed-continuation retry or closed-controller launch occurred.
+
+## Serial inference worker/controller integration
+
+Seventeen new integration checks plus18 bounded-process regressions passed
+(35 final checks,3.56s; peak test-parent RSS234,881,024bytes). The initial33-check
+run also passed and remains retained. Integration tests invoke the worker inline
+with mocked loading, device callbacks, prerequisite binding and memory watchdogs;
+separate process tests use tiny Python children. No model, corpus, actual MPS
+worker or trained checkpoint was loaded. All test children exited.
+
+The new worker/controller connects the complete-panel gate, selected-export
+loader, numerical/timing callbacks and saved-result audit. It checks inherited
+global/study lock file identities, never re-enters an existing attempt, preserves
+failure state and stops later seed dispatch after any failure. Each child has a
+600s parent timeout plus worker RSS/disk/time guard and MPS driver watchdog.
+The entire three-triple inference directory, including logs and metadata, shares
+a4MiB output cap; this is stricter than assigning4MiB to each child. Free space
+must cover the cap above the unchanged8GiB reserve before dispatch.
+
+The parent validates result/model receipts and successful guard observations,
+rechecks earlier inference artifacts and quality provenance before later seeds,
+and requires all three triples before publishing a non-adopting summary.
+STOP at a seed boundary pauses further work; STOP after the last child also
+prevents final summary publication. Tests cover each-seed load failure, corrupt
+results/model receipts/guard records, changed previous evidence, full allocation
+and output-cap rejection, lock conflict, missing prerequisites and no re-entry.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/inference-integration-review.json`.
+The real MPS loading/timing path and model-metadata audit remain unexercised in
+this integration suite. No complete numerical/pilot/tensor reviews or frozen
+campaign plan exist, so this code does not authorize a current launch. Next
+preparation is the finite resource-pilot wrapper and its audits, plus reviewing
+remaining numerical-prerequisite procedure and storage fit. The failed combined
+continuation fixture remains closed; no retry, cleanup or holdout access occurred.

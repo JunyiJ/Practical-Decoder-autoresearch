@@ -244,3 +244,14 @@ requires every reviewed request/result/raw/H200 artifact, persisted choices and
 underlying audit evidence to remain unchanged, and rechecks source/runtime and
 STOP after tokenizer reconstruction. It does not execute the tensor audit or
 replace guarded subprocess dispatch; no actual inference plan is frozen yet.
+
+The serial inference integration now applies the4MiB output allowance to the
+entire three-seed inference directory, including process logs, requests, guard
+journals, result/model receipts and summary. Each child retains the600s timeout;
+resource watchdogs cover4GiB RSS,6GiB MPS driver and8GiB free-space reserve.
+The parent requires inherited global/study locks, rejects any existing inference
+attempt, preserves failure state and stops later seeds after errors. It checks
+saved result/model receipts and guard observations before accepting each triple,
+then rechecks earlier evidence before proceeding. Final summaries remain pending
+final research review and never automatically adopt. This integration has only
+mocked/tiny-process test evidence; no current frozen launch plan exists.
