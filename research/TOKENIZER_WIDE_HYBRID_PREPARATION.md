@@ -1037,3 +1037,43 @@ producers, controller/stage/cleanup-chain integration and v2 inference acceptanc
 remain required. All real numerical/input and measured-pilot prerequisites are
 still outstanding. No model/corpus/MPS worker, real checkpoint deletion, plan
 freeze or failed-fixture retry occurred; closed campaigns remain closed.
+
+## October 28 complete remaining-campaign storage gate
+
+Added a read-only v2 storage gate for idle, audited boundaries. Initial full-panel
+required free space remains30,631,281,412bytes. Later checks retain8GiB reserve and
+the full256MiB metadata budget, plus the larger of:
+
+- all outstanding trajectory allowances in the current stage; and
+- the largest remaining phase's full checkpoint allowance, less verified capacity
+  already occupied by live campaign checkpoints.
+
+This second quantity accounts for existing disk occupancy; it never increases the
+observed free bytes or treats planned deletion as completed. Sparse/compressed
+logical bytes receive credit only up to allocated bytes. The current-stage check
+still requires enough actual free space to finish that stage. Cleanup release is
+not guaranteed by logical sizes or receipts; actual free space must pass again
+after each completed boundary. Final persisted rank choices may narrow the future
+confirmation peak without changing scientific selection or removing any of the
+three selected screens or nine fresh pairs.
+
+The gate requires all original completed raw/H200 pairs, including previously
+deleted ones; independently reconstructs each cleanup manifest from stage records
+and saved selection; and verifies the complete execution chain and current evidence.
+Unexpected or unreviewed output, missing receipts, aliased/changed weights,
+over-budget pairs, STOP, changed free space and same-size evidence changes block
+acceptance. File identity, size, timestamps and allocation stamps are rechecked
+at the end. Returned storage checks do not authorize dispatch or claim that the
+separate frozen-plan/numerical/stage audits were executed.
+
+Validation:191 tests passed in3.00seconds, peak RSS67,862,528bytes under
+180s/4GiB/8GiB guards. The initial128-test pass is retained. Tests include all27
+final-rank combinations, a complete synthetic27-trajectory sequence with three
+real cleanup executions over disposable tiny bytes, exact disk threshold/one-byte
+shortfall, sparse allocation, missing/changed receipts and same-size mutation.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/storage-v2-component-review.json`.
+
+No real training, retained research checkpoint deletion, plan freeze or failed
+fixture retry occurred. Bounded checkpoint/log/state/cache producers and complete
+v2 controller/stage/inference integration remain required, together with all real
+numerical/input reviews and measured pilots. Closed campaigns remain closed.

@@ -1,0 +1,50 @@
+{
+  "status": "remaining_campaign_storage_gate_tested_no_real_dispatch",
+  "created_at": "2026-10-28T17:36:20.660544+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_storage_v2.py": "6558775da8a0598dbe471652c1c7145718823131aa206c60e94a890abefe1b2d",
+    "tests/test_tokenizer_wide_hybrid_storage_v2.py": "57fbfae38948c0f561f6bdce6d6d6c4a35a7fe45e30991ad7474322526ee9331",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-storage-v2-final-guard.json": "51bb63fd9bfa8d4c1778da1def9cdbb5c8e484e812b42a13b17fa1ad8cf16bf4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-storage-v2-final-tests.log": "3931650172706f06f3ac9bf51bb395d8129a91900a0f36dcfee9fae3425a29f4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-storage-v2-guard.json": "eb9986401bdddbdf875f6b17bb78eda95bf5accfdb06fbe8fb7fcaa6f325b480",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-storage-v2-tests.log": "03642b3e443de64c61d0b9e523ee97e1fbe4ea03a88aa66c622c3651f33af017"
+  },
+  "tests": {
+    "initial": 128,
+    "final": 191,
+    "final_rank_combinations": 27,
+    "synthetic_complete_trajectories": 27,
+    "verified_cleanup_boundaries": 3
+  },
+  "final_guard": {
+    "elapsed_seconds": 3.235957416705787,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30654611456,
+      "peak_rss_bytes": 67862528
+    },
+    "pid": 74686,
+    "reason": null,
+    "status": "finished"
+  },
+  "initial_full_panel_required_free_bytes": 30631281412,
+  "free_bytes_observed": 30652690432,
+  "findings": [
+    "Reserves8GiB plus the full256MiB metadata budget plus the larger of current-stage outstanding allowances and the full remaining phase peak less verified occupied checkpoint capacity.",
+    "Unchanged initial complete-panel requirement30631281412bytes. Persisted final scientific selection can narrow the future confirmation peak; all selected screens and all9 fresh pairs remain included.",
+    "All original completed pairs must be supplied, including previously deleted pairs. Cleanup manifests are reconstructed from exact records/selection/pairs and the complete execution chain is reverified.",
+    "Only actual live allocated checkpoint capacity up to logical size is counted as occupied capacity; sparse-file holes do not inflate it. Actual free bytes are never increased by planned deletion.",
+    "Unexpected/unreviewed trajectory outputs, missing receipts, aliased weights, over-budget pairs, STOP, changed evidence stamps and changed free-space observations block acceptance.",
+    "Current-phase additional-space check remains mandatory even if occupied capacity would otherwise cover the future peak. Actual disk is rechecked after every completed cleanup."
+  ],
+  "limitations": [
+    "This read-only gate depends on independently frozen/audited controller inputs, locks and an outer guard; it does not establish numerical/stage audit semantics or grant dispatch permission.",
+    "Future accounting assumes only prescribed successful cleanup transitions. Filesystem release is not guaranteed by logical sizes or receipts; actual free space must pass again at each boundary.",
+    "Tests used tiny disposable synthetic checkpoint bytes and real cleanup receipts, not retained research weights. No model/corpus/MPS worker, actual campaign cleanup or failed-fixture retry occurred.",
+    "Bounded checkpoint/log/state/cache producers and complete v2 controller/stage/inference integration remain required. All nine actual numerical/input and measured-pilot prerequisites remain unresolved."
+  ]
+}
