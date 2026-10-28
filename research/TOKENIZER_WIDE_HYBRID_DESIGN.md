@@ -80,7 +80,7 @@ Total27 retained trajectories:3 pilots+9 LR screens+6 rank probes+9 fresh runs.
 All raw/H200 artifacts remain. There is no conditional omission or duplicate
 control, and no selecting the easier homogeneous comparator after seeing scores.
 
-## Proposed gates, to encode and test before freezing
+## Proposed gates, encoded and synthetically tested before freezing
 
 Primary contrasts are hybrid minus all-KDA and hybrid minus all-gated-MLA on
 full-validation H200 CE. Both use the same three fresh seeds. A quality route
@@ -101,6 +101,20 @@ quantile implementation. This Bonferroni-style allocation is conditional on
 trained seeds and adaptively reused validation. It does not provide independent
 test evidence, population uncertainty across seeds, or repair adaptive reuse.
 Report ordinary descriptive intervals separately; do not swap the gate bounds.
+
+The pure `src/research/tokenizer_wide_hybrid_rules.py` preparation module now
+encodes these selection orders and gate arithmetic. Its bootstrap consumes
+aligned per-seed/per-family 2048-token block-loss sums and shared target counts;
+it resamples grouped blocks with replacement, weighting the short tail by its
+target count. It uses NumPy default_rng(20261028), reset for each block size,
+2000 draws and the same draw indices for every seed/model/contrast. Linear
+quantile interpolation is fixed at sorted position (n−1)q. Block-size keys are
+strings so persisted JSON retains its contract. Twenty-nine synthetic tests
+pass, including an independent scalar bootstrap reference, exact thresholds,
+both-control requirements, corrupt/incomplete panels and JSON round-trip.
+The module does not validate saved tokenizer/config/checkpoint identity, dispatch
+workers, audit artifacts or adopt recipes. Those remain mandatory integration
+steps. The draft is still unfrozen and no real quality records were analyzed.
 
 After quality and saved-artifact audits, plan three serial fresh-seed inference
 triples: FP32 MPS/context128, batches1/8,32prefill/64teacher-forced decode tokens,
@@ -126,7 +140,7 @@ buffer tests do not complete missing model continuation checks or authorize a
 failed-guard retry. Resolve the validation procedure explicitly while preserving
 its failure record and unchanged4GiB RSS/8GiB reserve limits. Quality dispatch
 also needs7200s/trial,6GiB MPS-driver, output bounds and global single-worker locks.
-Finally test the serial controllers and gate arithmetic, record source/runtime/
+Finally integrate/test the serial controllers and audited score adapter, record source/runtime/
 data/config hashes, freeze both finite pilot and quality plans, and verify fit.
 This draft may change before freeze; it cannot change in response to new quality
 outcomes. Test holdout remains closed and no MPS launch follows from this file.

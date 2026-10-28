@@ -156,3 +156,20 @@ At512/context128/batch1, cache/state bytes by rank divisor are:
 KDA's rank changes parameterization, not recurrent state size. Thus the hybrid's
 memory tradeoff depends on independently selected control ranks. These geometry
 facts cannot select ranks or establish quality, latency or adoption.
+
+## Draft selection and conditional-gate arithmetic
+
+Twenty-nine synthetic tests passed for the pure staged-selection and statistics
+module. Complete nine-LR/six-rank panels are required; exact ties select lower LR
+then larger divisor at the respective stages. Confirmations use the declared
+three fresh seeds and both homogeneous controls. Conditional bounds use common
+paired resamples, token-weighted tails and the predeclared one-sided99.1667%
+linear quantile, distinct from descriptive95% intervals. Memory gates require
+every seed/batch/control cell and use integer arithmetic for the exact10% limit.
+An independent scalar bootstrap reference and JSON persistence check passed.
+
+Evidence is `tokenizer-evidence/wide-hybrid-preparation-001/rules-review.json`.
+This is arithmetic preparation only: no quality result, source freeze, model
+continuation retry or launch. Controller dry-runs, saved-score/artifact identity
+integration, model optimizer/resume/EMA and actual pilot resource prerequisites
+remain outstanding. The storage gate and all closed campaigns remain unchanged.

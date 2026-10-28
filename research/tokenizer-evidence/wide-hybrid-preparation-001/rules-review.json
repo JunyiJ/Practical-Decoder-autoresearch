@@ -1,0 +1,48 @@
+{
+  "status": "draft_arithmetic_verified_not_launch_ready",
+  "at": "2026-10-28T05:55:19.327984+00:00",
+  "checks": 29,
+  "guard": {
+    "elapsed_seconds": 0.3072131248190999,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 17537343488,
+      "peak_rss_bytes": 65585152
+    },
+    "pid": 51953,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "complete staged panels and deterministic tie rules",
+    "all three fresh seeds and both controls",
+    "common paired text resamples with short-tail token weighting",
+    "independent scalar bootstrap and linear quantile reference",
+    "strict and inclusive thresholds; all six memory cells; JSON round-trip"
+  ],
+  "initial_checks_passed": 29,
+  "review_correction": "Changed block-size keys to strings to preserve JSON contract; final checks include round-trip.",
+  "real_quality_records_used": false,
+  "model_or_MPS_work": false,
+  "failed_fixture_retry": false,
+  "adoption": false,
+  "pending": [
+    "serial controller dry-runs",
+    "saved-score/tokenizer/config/checkpoint identity adapter and audit integration",
+    "model optimizer/resume/EMA prerequisites",
+    "complete actual storage fit",
+    "pilot/quality plan freeze and measured resource pilots"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_rules.py": "7fc5638cccc2c73407384d9d615bdebe5ac448593fdb2afb0ac3e9d2fb7a954a",
+    "tests/test_tokenizer_wide_hybrid_rules.py": "5ef3611ee17fd80a772081a72848d6439a511004114da807cc25b8cbacbab2e5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rules-tests.log": "ffed804477442a0a4034f27fe1b4f647db8f48257c4a554cd292e83233257791",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rules-guard.json": "597dc42a3424a92aab201089856cda8b210283e01de612583b78198196c565ae",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rules-final-tests.log": "7a2e365317ed679047319a018ac14ede603549e893a79b684e8950fb683168be",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rules-final-guard.json": "77e2adce835ea0ddc1b00e09f82062d0f4c9935af8f636a9f54a4a9d6fd9369a"
+  }
+}
