@@ -232,3 +232,15 @@ all loading. The helper does not certify exact-EMA/optimizer audits or freeze
 source/runtime, acquire locks or start resource guards; the inference wrapper
 must enforce these prerequisites before invoking it. No production loader or
 MPS success was established by the mocked preparation tests.
+
+The draft inference contract is now encoded prospectively in
+`tokenizer_wide_hybrid_inference_gate.py`:600s per fresh-seed triple,4MiB output,
+8GiB reserve,4GiB RSS/6GiB MPS driver, FP32 MPS, declared sequence/tolerances and
+seed rotation. Freeze this contract plus actual training-token/tokenizer hashes
+inside the quality plan before training. After all quality runs and tensor
+reviews, the parent may create an immutable inference request binding that
+plan, completed state and exact complete-panel tensor-review hashes. The gate
+requires every reviewed request/result/raw/H200 artifact, persisted choices and
+underlying audit evidence to remain unchanged, and rechecks source/runtime and
+STOP after tokenizer reconstruction. It does not execute the tensor audit or
+replace guarded subprocess dispatch; no actual inference plan is frozen yet.

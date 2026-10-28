@@ -358,3 +358,31 @@ measurement/result-audit components. Export finiteness is not exact raw-to-EMA
 or optimizer auditing. Resource pilots, numerical prerequisites, full storage
 fit and final freeze remain unresolved; all closed campaigns/test boundaries
 and retained failure evidence remain unchanged.
+
+## Complete-panel inference prerequisite gate
+
+Thirty-two new synthetic gate checks plus20 quality-driver regressions passed
+(52 final checks,1.26s; peak process RSS230,309,888bytes). An initial50-check run
+also passed and is retained. The new read-only gate requires a frozen quality
+plan with the prospective inference workload/input hashes, the complete24-run
+quality prefix, unchanged persisted LR/rank selections and all96 retained
+request/result/raw/H200 file bindings. The selected three-family inference
+bindings are derived from that reviewed prefix, never from caller-selected
+checkpoint paths alone.
+
+A separately hash-bound tensor review must cover the exact24 raw/H200 pairs,
+source/runtime, plan and completed state, with positive finite-tensor,
+exact-EMA and optimizer-state checks plus hash-verified underlying evidence.
+These are required review fields, not a newly executed tensor audit. Tests use
+synthetic review documents; no real passing campaign review was created.
+The gate rebuilds training/tokenizer contracts only after preliminary checks,
+then rechecks source/runtime, STOP and all bound evidence before returning.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/inference-gate-review.json`.
+The prospective finite inference contract specifies600s per seed triple,4MiB
+output,8GiB reserve,4GiB RSS/6GiB driver and the already declared measurement
+sequence. The parent process wrapper must enforce these limits and locks; the
+gate itself is read-only and does not dispatch or run a watchdog. Guarded worker
+integration, resource pilots, numerical prerequisites, complete storage fit and
+final freeze remain outstanding. No real model/corpus was loaded in these tests,
+and no training, failed-continuation retry or closed-controller launch occurred.
