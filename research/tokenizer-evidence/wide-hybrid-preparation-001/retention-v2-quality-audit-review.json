@@ -1,0 +1,49 @@
+{
+  "status": "draft_quality_stage_binding_tested_not_integrated",
+  "created_at": "2026-10-28T16:07:35.468374+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_retention_audit.py": "9f0b0b860e57504f7ee4491cc9adbca25f1c808e14ab67972c555fd6976154cd",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "1f64be20cb294f612ece0c9e1bd1b868d0449359e58347ee8f1e4cea338eece7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-audit-tests.log": "0e4d407cedd12a5a5bc3998a0983307443d0c61b69c21757823a0e09db76373d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-audit-guard.json": "16d99e0276837b6206fc98b1009d168cec811efdb24b4d2d551b394c91b28f51",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-audit-inventory-tests.log": "c1dd810c66346aec2325600319e9becb4b9e6a0a23c99c2972b243dd78f31187",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-retention-v2-audit-inventory-guard.json": "319fd0340663dfff7f45fb332a50fccd8176ffb2ae10ba206a6af59c3737f0e2"
+  },
+  "tests": {
+    "initial_new_tests": 34,
+    "final_new_tests": 39,
+    "final_with_planning_and_receipts": 112
+  },
+  "final_guard": {
+    "elapsed_seconds": 1.2603902500122786,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 31096635392,
+      "peak_rss_bytes": 229703680
+    },
+    "pid": 71380,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 31096860672,
+  "findings": [
+    "A finite/exact stored-EMA export audit is not optimizer-resume or EMA-recurrence evidence; all nine separately reviewed rank-policy numerical cases remain mandatory.",
+    "Selected winners must pass the same stage audits as candidates for deletion.",
+    "Unknown artifacts inside a stage trial directory block cleanup unless retained and hash-bound; no unlisted file is deleted."
+  ],
+  "scope": [
+    "Read-only quality LR/rank boundary binding of independent expected requests and saved CE choices, numerical traces, actual retained pair hashes, tensor-value review receipts, scalar validation arithmetic and resource observations.",
+    "Prospective v2 quality resource-report schema is checked; existing v1 workers do not emit that report and are not accepted as v2 evidence.",
+    "Complete inventory of the audited stage trial directories is checked, but campaign-wide inventory, frozen plan, actual locks and cleanup remain integration requirements.",
+    "No real model, optimizer update, corpus, checkpoint tensor or MPS worker loaded; only temporary synthetic byte fixtures and JSON used. No real checkpoint removed."
+  ],
+  "next_work": [
+    "Implement/version pilot and full-panel gates and v2 resource-report producer; bind full campaign immutable inventory and provenance.",
+    "Integrate guarded boundary deletion with original-hash prechecks, per-file journals, protected postchecks and full future peak storage gates; test complete serial lifecycle/failure boundaries.",
+    "Resolve the nine rank-policy numerical prerequisites and measured pilots through separately reviewed bounded procedures. Failed combined CPU fixture remains closed. No freeze or MPS launch yet."
+  ]
+}

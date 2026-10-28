@@ -720,3 +720,35 @@ cleanup and protected inventory verification, complete serial lifecycle tests,
 and future storage checks based on verified retained/deleted state. Nine real
 rank-policy numerical continuation/EMA cases and measured pilot resource checks
 are still unresolved. No plan is frozen or launch enabled by these components.
+
+## October 28 v2 quality-stage audit binding
+
+The new read-only quality-stage binder requires every LR/rank stage member,
+including selected winners, to have matching request/result, tensor-value,
+scalar validation and resource evidence before deriving a removal manifest.
+It rechecks the saved CE decisions, independent frozen-context hashes and all
+nine rank-policy numerical review cases and trace files. Exact stored-EMA export
+agreement is explicitly kept separate from optimizer-resume/EMA-recurrence
+correctness; the former cannot substitute for the missing numerical work.
+
+The binder verifies checkpoint hashes, immutable metadata, all files inside the
+stage trial directories, and the existing full-validation coverage/arithmetic.
+It rejects omitted files, symlink paths, changed/partial evidence and resource
+limit violations. Selected pairs are protected. It only returns a manifest;
+it neither deletes files nor approves dispatch. Campaign-wide inventory and the
+independent frozen-plan gate are still required. The prospective v2 resource
+report format must be produced by a guarded wrapper; existing v1 outputs do not
+satisfy it. Pilot cache/resource binding and controller integration remain open.
+
+Validation: 39 new synthetic checks, 112 passing checks with planning/receipt
+regressions, in 1.12 seconds. CPU guard: 180 seconds, 4 GiB RSS, 8 GiB reserve;
+observed peak RSS 229,703,680 bytes. An earlier 34-check run passed before adding
+stage-directory inventory coverage; both logs are retained. These are JSON and
+tiny byte fixtures, not numerical/model-quality evidence. No real checkpoints
+were removed and no model/corpus/MPS workload or failed fixture was executed.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/retention-v2-quality-audit-review.json`.
+
+Next work remains v2 resource production, pilot/full-panel provenance gates,
+locked cleanup with durable deletion journals and protected postchecks, full
+future high-water accounting and serial lifecycle tests. Nine numerical cases
+and measured pilot resources remain prerequisites. No plan is frozen.

@@ -370,3 +370,12 @@ production v1 runners remain unchanged; no automatic receipt exception has been
 added to their existence/hash checks. See the preparation document and
 `tokenizer-evidence/wide-hybrid-preparation-001/retention-v2-component-review.json`
 for exact source hashes, validation and integration prerequisites.
+
+The v2 quality-stage audit binder now additionally checks complete LR/rank stage
+reviews and stage-directory inventories (39 new synthetic tests; 112 including
+retention regressions). It requires independent nine-case numerical evidence;
+metadata/value audit receipts cannot substitute for that evidence. The v2
+resource-report producer, pilot/full-panel gates, campaign inventory, guarded
+cleanup and complete runner lifecycle remain unimplemented integration work.
+See `retention-v2-quality-audit-review.json` in wide-hybrid preparation evidence.
+No existing v1 acceptance rule or source of a closed campaign changed.
