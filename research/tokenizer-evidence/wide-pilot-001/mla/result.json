@@ -1,0 +1,181 @@
+{
+  "checkpoints": [
+    {
+      "bytes": 955238521,
+      "cache_checks": [
+        {
+          "batch": 1,
+          "cache_bytes": 327680,
+          "max_absolute_error": 1.5497207641601562e-06
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 2621440,
+          "max_absolute_error": 8.344650268554688e-07
+        }
+      ],
+      "checkpoint": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-pilot-001/mla/checkpoints/final_000020_1793158634231365000.pt",
+      "kind": "raw",
+      "observed_mps_driver_bytes": 3313336320,
+      "sha256": "fbf6ed57130cbf106113c558bbbfb1aec283ced69a7489ff74ead9e3dd285838",
+      "unique_parameter_bytes": 249696768
+    },
+    {
+      "bytes": 249799363,
+      "cache_checks": [
+        {
+          "batch": 1,
+          "cache_bytes": 327680,
+          "max_absolute_error": 1.1324882507324219e-06
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 2621440,
+          "max_absolute_error": 6.556510925292969e-07
+        }
+      ],
+      "checkpoint": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-pilot-001/mla/checkpoints/h200.pt",
+      "kind": "h200",
+      "observed_mps_driver_bytes": 1123811328,
+      "sha256": "d28bc9bbf7ef3ae213cfd9b263b5c9765764f71b13c687ee4effacf462dd6d93",
+      "unique_parameter_bytes": 249696768
+    }
+  ],
+  "holdout_consumed": false,
+  "kind": "mla",
+  "max_rss_bytes": 2449309696,
+  "quality_selection": false,
+  "request_sha256": "88b21871c284109fef75cff22cfee395b6b4cf5fc9b2db3967089069a36957ad",
+  "status": "completed",
+  "training": {
+    "best_checkpoint": null,
+    "best_metric": {
+      "accel_mem_kind": "mps_current_allocated",
+      "accel_mem_mb": 1367.58349609375,
+      "averaging_snapshots": 3,
+      "base_learning_rate": 0.00125,
+      "cuda": null,
+      "device": "mps",
+      "elapsed_time_sec": 8.157684166915715,
+      "iter_time_sec": 0.3760640425607562,
+      "lr_multiplier": 0.1,
+      "moe_usage": null,
+      "ppl": 26215.65509055634,
+      "rss_kind": "process_lifetime_peak",
+      "rss_mb": 733.671875,
+      "scheduled_learning_rate": 0.000125,
+      "step": 19,
+      "tokens_processed": 20480,
+      "train_aux_loss": null,
+      "train_ce_loss": 10.181208610534668,
+      "train_loss": 10.181208610534668,
+      "train_total_loss": 10.181208610534668,
+      "training_time_sec": 7.579180750064552,
+      "val_aux_loss": null,
+      "val_ce_loss": 10.174112033843993,
+      "val_loss": 10.174112033843993
+    },
+    "completed_steps": 20,
+    "device": "mps",
+    "eval_every": 20,
+    "eval_iters": 10,
+    "final_checkpoint": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-pilot-001/mla/checkpoints/final_000020_1793158634231365000.pt",
+    "final_metric": {
+      "accel_mem_kind": "mps_current_allocated",
+      "accel_mem_mb": 1367.58349609375,
+      "averaging_snapshots": 3,
+      "base_learning_rate": 0.00125,
+      "cuda": null,
+      "device": "mps",
+      "elapsed_time_sec": 8.157684166915715,
+      "iter_time_sec": 0.3760640425607562,
+      "lr_multiplier": 0.1,
+      "moe_usage": null,
+      "ppl": 26215.65509055634,
+      "rss_kind": "process_lifetime_peak",
+      "rss_mb": 733.671875,
+      "scheduled_learning_rate": 0.000125,
+      "step": 19,
+      "tokens_processed": 20480,
+      "train_aux_loss": null,
+      "train_ce_loss": 10.181208610534668,
+      "train_loss": 10.181208610534668,
+      "train_total_loss": 10.181208610534668,
+      "training_time_sec": 7.579180750064552,
+      "val_aux_loss": null,
+      "val_ce_loss": 10.174112033843993,
+      "val_loss": 10.174112033843993
+    },
+    "max_iters": 20,
+    "metrics": [
+      {
+        "accel_mem_kind": "mps_current_allocated",
+        "accel_mem_mb": 1125.769775390625,
+        "averaging_snapshots": 0,
+        "base_learning_rate": 0.00125,
+        "cuda": null,
+        "device": "mps",
+        "elapsed_time_sec": 0.801881542429328,
+        "iter_time_sec": 0.8017696244642138,
+        "lr_multiplier": 1.0,
+        "moe_usage": null,
+        "ppl": 48913.5015428251,
+        "rss_kind": "process_lifetime_peak",
+        "rss_mb": 731.40625,
+        "scheduled_learning_rate": 0.00125,
+        "step": 0,
+        "tokens_processed": 1024,
+        "train_aux_loss": null,
+        "train_ce_loss": 10.841168403625488,
+        "train_loss": 10.841168403625488,
+        "train_total_loss": 10.841168403625488,
+        "training_time_sec": 0.8017696244642138,
+        "val_aux_loss": null,
+        "val_ce_loss": 10.797808742523193,
+        "val_loss": 10.797808742523193
+      },
+      {
+        "accel_mem_kind": "mps_current_allocated",
+        "accel_mem_mb": 1367.58349609375,
+        "averaging_snapshots": 3,
+        "base_learning_rate": 0.00125,
+        "cuda": null,
+        "device": "mps",
+        "elapsed_time_sec": 8.157684166915715,
+        "iter_time_sec": 0.3760640425607562,
+        "lr_multiplier": 0.1,
+        "moe_usage": null,
+        "ppl": 26215.65509055634,
+        "rss_kind": "process_lifetime_peak",
+        "rss_mb": 733.671875,
+        "scheduled_learning_rate": 0.000125,
+        "step": 19,
+        "tokens_processed": 20480,
+        "train_aux_loss": null,
+        "train_ce_loss": 10.181208610534668,
+        "train_loss": 10.181208610534668,
+        "train_total_loss": 10.181208610534668,
+        "training_time_sec": 7.579180750064552,
+        "val_aux_loss": null,
+        "val_ce_loss": 10.174112033843993,
+        "val_loss": 10.174112033843993
+      }
+    ],
+    "stop_reason": "max_iters",
+    "training_time_sec": 7.579180750064552,
+    "weight_averaging": {
+      "completed_steps": 20,
+      "snapshots": 3,
+      "spec": {
+        "half_lives": [
+          200
+        ],
+        "interval": 5,
+        "kind": "spaced_tail_ema",
+        "start_step": 10,
+        "total_steps": 20
+      }
+    }
+  },
+  "wall_seconds": 15.130710000172257
+}
