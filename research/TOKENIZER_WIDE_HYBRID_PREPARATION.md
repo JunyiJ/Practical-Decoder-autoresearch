@@ -858,3 +858,51 @@ immutable evidence layout, remaining metadata accounting, complete future storag
 gates and runner integration remain before freeze. Nine numerical cases and
 measured pilot reviews are unresolved; the failed combined CPU fixture stays
 closed. No quality threshold, scientific trajectory or reserve changed.
+
+## October 28 complete prospective metadata accounting
+
+Review found that the earlier216MiB trajectory resource/log budget plus15MiB
+cleanup budget had not explicitly allocated the three4MiB inference logs.
+The new v2 layout allocates the complete existing256MiB allowance:
+
+| Output category | Maximum MiB |
+|---|---:|
+| 27 trajectories: logs, resource traces/reports and other metadata | 222.75 |
+| Three cleanup attempts | 15 |
+| Three inference comparisons: logs and other metadata | 12.75 |
+| Immutable campaign plans/reviews | 2 |
+| Mutable controller state/logs, including temporary overlap | 3 |
+| Emergency failure evidence | 0.5 |
+| Total | 256 |
+
+Each trajectory retains the4MiB log and2MiB each resource trace/report limits,
+plus a prospective256KiB combined allowance for request/result, metrics,
+training summary, process, tensor/cache and other audit metadata. Each inference
+comparison has4MiB log plus256KiB other metadata. These are new prospective v2
+output caps, not changes to historical evidence or scientific/memory/time rules.
+A read-only observation of14 closed wide/pilot trajectories found at most25,217
+bytes of v1 trial metadata; that excludes new v2 outputs and is not proof of
+future sizes or transient compliance.
+
+The layout separates `evidence/` from mutable `control/` and `emergency/`, with
+three pilot slots,24 quality slots and three fixed inference seed slots. The
+census rejects undeclared paths, symlinks, nonregular files and unexpected hard
+links. Distinct atomic temporary files count at full size; the publisher's exact
+final/temporary hard-link pair counts once. Actual checkpoint `.pt.tmp` writes
+are recognized and included in separate weight totals, without cleanup credit.
+The write-capacity helper reserves new temporary payload space without subtracting
+the old file. Group caps cannot borrow unused space from another category.
+
+Validation:59 synthetic tests passed in0.29seconds, peak RSS61,898,752bytes under
+180s/4GiB/8GiB guards. The initial56-test pass is retained. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/metadata-v2-component-review.json`,
+`metadata-layout-v2.json` and `metadata-v2-historical-size-observation.json`.
+The full campaign projection remains30,631,281,412bytes including8GiB reserve;
+actual free space must be checked again before any freeze/launch.
+
+No production writer or controller uses this layout yet. Idle census checks do
+not establish active-producer transient limits: bounded writers, worker monitoring,
+full future high-water gates and versioned plan/runner integration remain required.
+No model, corpus or MPS worker was used; no real weights were deleted. All nine
+numerical cases and measured pilots remain outstanding; the failed CPU fixture
+and closed campaigns remain closed.

@@ -1,0 +1,46 @@
+{
+  "status": "metadata_layout_and_census_tested_not_integrated",
+  "created_at": "2026-10-28T16:52:59.974403+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_metadata.py": "28059390a6edb46651fb967be492fc4b713a29b29d60419569aea0379d082f6c",
+    "tests/test_tokenizer_wide_hybrid_metadata.py": "55ecc20b725dd0df443e178dc0363c3f2030df7aa68ef4c33ae5b06d4952b085",
+    "src/utils/checkpoint.py": "8a8e59c57677f7b825ee0b8715b675e66b7ccb12d52e8a9c6b8ff85fa2f402e7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-v2-final-guard.json": "500172679c4786d975403d924ceedcf9d420c581ec79ffa1868cf15811fae706",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-v2-final-tests.log": "bf4fcb876bc4c00d7752d11a9fc1fa15832fdbd31b5974362e53c0332976a3c1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-v2-guard.json": "1d23635ddb839325a0c8c5f9b1449c187edc11e881853940f503117701781e7d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-metadata-v2-tests.log": "d0f0f69257b7f40846b40b32dc5b4ee439c4beb381af8d13249fb22f7e2985bb",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/metadata-layout-v2.json": "d11450065e5022b820a3bb8fa42f5d0ea1b966fb68190d75ea1cd24807cd3398",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/metadata-v2-historical-size-observation.json": "6fc59370a96bafbebdd1806af1f7b5dca480a624a105535ea3dd7c1ae525937b"
+  },
+  "tests": {
+    "initial": 56,
+    "final": 59
+  },
+  "final_guard": {
+    "elapsed_seconds": 0.4724578754976392,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30706499584,
+      "peak_rss_bytes": 61898752
+    },
+    "pid": 72951,
+    "reason": null,
+    "status": "finished"
+  },
+  "metadata_allowance_bytes": 268435456,
+  "full_campaign_required_free_bytes": 30631281412,
+  "free_bytes_observed": 30705467392,
+  "learning": "Earlier216MiB training resources/logs plus15MiB cleanup accounting omitted12MiB serving logs. Complete256MiB allocation now includes those logs, other producer metadata, control temporary overlap and emergency evidence.",
+  "limitations": [
+    "No production writer/runner uses this layout yet. Freeze and producer integration are required.",
+    "Grouped other metadata caps are prospective limits; existing v1 evidence is untouched.",
+    "Distinct temporary file copies count at full size. Exact same-directory final/.tmp publisher hard links count once; other/external aliases fail.",
+    "Checkpoint and checkpoint-temporary bytes are reported separately, never treated as reclaimed capacity.",
+    "Idle scans do not prove active-producer transient enforcement. Full future storage gates remain required.",
+    "No real cleanup, model/corpus/MPS use or training. Nine numerical cases and measured pilots remain unresolved; failed combined fixture closed."
+  ]
+}

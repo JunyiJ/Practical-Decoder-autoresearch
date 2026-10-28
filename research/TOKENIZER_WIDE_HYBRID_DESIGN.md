@@ -406,3 +406,14 @@ controller-owned stage manifests, contexts and full current inventory; it never
 authorizes dispatch. See `retention-chain-v2-review.json`. Production pilot and
 full-panel gates, layout, metadata/storage enforcement and serial integration,
 plus nine numerical cases and measured pilots, remain before freeze.
+
+The prospective v2 metadata/layout component now assigns the entire256MiB:
+222.75MiB trajectory outputs,15MiB cleanup,12.75MiB inference outputs,2MiB
+immutable campaign metadata,3MiB mutable controller/temporary overlap and0.5MiB
+emergency evidence. This explicitly includes the previously unallocated12MiB
+inference logs without changing the30,631,281,412-byte panel requirement.
+Grouped caps and an inode-aware census/write-capacity helper passed59 synthetic
+tests. See `metadata-layout-v2.json` and `metadata-v2-component-review.json`.
+The v2 layout is prospective and unused by production runners; bounded producers,
+active monitoring, complete future storage gates and plan integration must precede
+freeze. Historical v1 outputs and guards remain unchanged.
