@@ -32,7 +32,7 @@ def score(parameters, path, sha, ce=5.):
 
 
 def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindings=None, rank_prefix_count=None,
-            raw_name='raw.pt'):
+            raw_name='raw.pt', confirmation_prefix_count=None):
     records=[dict(s,status='completed',ce=5.) for s in rules.lr_specs()]
     rates=rules.choose_rates(records)
     selection=None
@@ -46,9 +46,15 @@ def fixture(root, boundary='lr', *, producer_v2=False, prefix_count=None, bindin
     if prefix_count is not None:
         assert producer_v2 and boundary=='lr' and 1<=prefix_count<=9
         indices=list(range(prefix_count))
+    if confirmation_prefix_count is not None:
+        assert producer_v2 and boundary=='rank' and 0<=confirmation_prefix_count<=9
+        indices=[i for i,r in enumerate(records) if r['lr']==selection[r['family']]['lr']
+                 and r['divisor']==selection[r['family']]['divisor']]
+        records += [dict(s,status='completed',ce=5.) for s in rules.confirmation_specs(selection)[:confirmation_prefix_count]]
+        indices += list(range(15,15+confirmation_prefix_count))
     token_sha=digest('synthetic96')
     if bindings is not None:
-        assert producer_v2 and (prefix_count is not None or rank_prefix_count is not None)
+        assert producer_v2 and (prefix_count is not None or rank_prefix_count is not None or confirmation_prefix_count is not None)
         context=bindings['context'];pref=bindings['projection_ref'];nref=bindings['numerical_ref']
         projection=json.loads((root/pref['path']).read_text());budgets=audit.allocations(projection)
         token_sha=bindings['training_token_sha256']

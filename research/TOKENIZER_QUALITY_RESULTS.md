@@ -781,3 +781,35 @@ No research checkpoints were deleted, no model training/MPS or test-holdout
 evaluation ran, and the campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-boundary-v2-component-review.json`.
+
+
+## October 28 retained rank history and fresh confirmation audits
+
+The new read-only rank-history reader permits declared fresh files while
+reconstructing the original selection, execution identity, cumulative cleanup
+chain and historical storage observation. It grants no current storage or fresh
+scientific/dispatch credit. The existing strict idle verifier remains strict.
+A separate prefix auditor checks the persisted LR/rank choices and independently
+frozen requests, then reaudits all three selected screen anchors and every
+completed fresh trial through producer, tensor, resource, validation and
+numerical/input/corpus evidence. Pending requests receive no completed-trial
+credit. Neither component selects again or adopts a recipe.
+
+All156 confirmation/shared-fixture tests passed in8.25s; all40 history and
+strict-boundary tests passed in160.47s. Both guards finished normally, with
+maximum observed RSS245,481,472 bytes and no test/driver failures. The full
+disposable chain retained all24 selected/fresh checkpoint files, kept30 reviewed
+fixture deletions absent and preserved all original non-checkpoint evidence.
+Corruption, undeclared files, resurrected weights and concurrent byte changes
+were rejected. All zero-through-nine fresh prefixes were checked.
+
+Synthetic metadata totals2,111,145 bytes, including1,436,485/2,097,152 bytes in
+the separately capped meta group. Fresh parent-controller receipts and inference
+are absent; this is not complete real-panel fit evidence. Next implement fresh
+startup and its complete history/live-audit/transport/storage gates, then serial
+fresh and inference integration and full actual metadata accounting. Actual
+numerical/input/measured-pilot prerequisites remain unresolved. No research
+weights were removed, no training/MPS or test-holdout evaluation ran, and the
+campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/confirmation-history-v2-component-review.json`.

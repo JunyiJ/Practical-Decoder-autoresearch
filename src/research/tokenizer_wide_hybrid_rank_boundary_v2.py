@@ -93,7 +93,7 @@ def _view(writer,review):
         stage_inventory=inventory,stages=stages)
 
 
-def _context(writer,review,ref,view,completion_ref=None):
+def _context(writer,review,ref,view,completion_ref=None,*,appended_inventory=None,appended_controls=None):
     root=writer.root/'evidence';_locks(root,writer.lock_fds);snapshot(writer.root)
     selected=view['selected'];summary=view['summary']
     bound,_=selection._frozen(writer,14,review['plan_sha256'],selected['projection_ref'],summary['rates'])
@@ -102,14 +102,21 @@ def _context(writer,review,ref,view,completion_ref=None):
     _document(root,ref);inventory=selection._add(root,review['inventory'],ref)
     if completion_ref is not None:
         _document(root,completion_ref);inventory=selection._add(root,inventory,completion_ref)
+    if appended_inventory is not None:
+        _require(not set(appended_inventory)&set(inventory),'Fresh append overlaps protected rank history')
+        inventory.update(appended_inventory)
     candidates={e['path'] for e in view['manifest']['delete']}
     actual=_scan(root,root/'.retention/rank')
     _require(actual<=set(inventory) and set(inventory)-candidates<=actual,'Rank protected inventory changed')
-    _require(_controls(writer,GUARD)==review['controls'],'Protected control census changed')
+    controls=dict(review['controls'])
+    if appended_controls is not None:
+        _require(not set(appended_controls)&set(controls),'Fresh controls overlap protected rank history')
+        controls.update(appended_controls)
+    _require(_controls(writer,GUARD)==controls,'Protected control census changed')
     deadline=time.monotonic()+TIMEOUT
     for name,binding in inventory.items():
         if name not in candidates:_check(root,name,binding,deadline)
-    for name,binding in review['controls'].items():
+    for name,binding in controls.items():
         _require(name.startswith('control/') and name not in (GUARD,'control/.metadata.lock'),'Unexpected protected control')
         _check(writer.root,name,binding,deadline)
     _locks(root,writer.lock_fds)
@@ -186,8 +193,8 @@ def cleanup_rank_boundary(writer,plan_sha256,selection_completion_ref):
         raise
 
 
-def verify_rank_boundary(writer,plan_sha256,completion_ref):
-    """Strict idle gate before any fresh request; no tensors or storage speculation."""
+def _receipt(writer,plan_sha256,completion_ref):
+    """Bind original complete rank receipt, without granting continuation credit."""
     _require(isinstance(writer,MetadataWriter),'Bounded writer required');_sha(plan_sha256)
     root=writer.root/'evidence';_locks(root,writer.lock_fds)
     seen=snapshot(writer.root)['files']
@@ -207,7 +214,15 @@ def verify_rank_boundary(writer,plan_sha256,completion_ref):
     _require(review['attempt']['path']==BASE+'-attempt.json' and _document(root,review['attempt'])==dict(kind=KIND,
         status='started',plan_sha256=plan_sha256,selection_completion_ref=review['selection_completion_ref'],retry_allowed=False),
         'Original cleanup attempt differs')
-    view=_view(writer,review);identity=_context(writer,review,ref,view,completion_ref)
+    view=_view(writer,review)
+    return saved,review,ref,view
+
+
+def verify_rank_boundary(writer,plan_sha256,completion_ref):
+    """Strict idle gate before any fresh request; no tensors or storage speculation."""
+    saved,review,ref,view=_receipt(writer,plan_sha256,completion_ref)
+    root=writer.root/'evidence';pid=saved['parent_pid']
+    identity=_context(writer,review,ref,view,completion_ref)
     _require(digest(identity)==saved['context_sha256'] and digest(view['manifest'])==saved['manifest_sha256']
         and saved['execution_ref']['path']=='.retention/rank/execution-review.json','Rank execution identity differs')
     stage=dict(manifest=view['manifest'],execution_ref=saved['execution_ref'],context_sha256=saved['context_sha256'])
