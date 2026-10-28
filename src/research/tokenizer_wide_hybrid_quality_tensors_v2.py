@@ -115,6 +115,7 @@ def review_and_publish(writer,slot,binding,*,projection_ref,resources,training_t
 def verify_producer(root,stem,slot,report,*,evidence,context,projection_ref,training_token_sha256):
     """Read-only provenance check; full independent stage audit remains required."""
     root=Path(root);producer=report.get('producer',{})
+    _require(isinstance(report.get('files'),dict),'Tensor producer file bindings required')
     required=('request.json','result.json','training-outputs.json','evaluation-attempt.json')
     _require(all(stem+'/'+n in evidence for n in required),'Tensor producer input not bound')
     name=stem+'/tensor-attempt.json';_require(name in evidence,'Tensor attempt not bound')

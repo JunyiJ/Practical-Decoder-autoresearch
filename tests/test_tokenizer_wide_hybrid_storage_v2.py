@@ -34,7 +34,7 @@ def fixture(tmp_path,monkeypatch,projection):
     (evidence/'meta/fixture.json').write_text('{"synthetic":true}')
     global_lock=tmp_path/'global.lock';global_lock.touch();(root/'.lock').touch()
     monkeypatch.setattr(cleanup,'GLOBAL_LOCK',global_lock)
-    monkeypatch.setattr(storage.shutil,'disk_usage',lambda p:SimpleNamespace(free=64*1024**3))
+    monkeypatch.setattr(storage,'shutil',SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=64*1024**3)))
     with global_lock.open('rb') as g,(root/'.lock').open('rb') as c:
         fds=(g.fileno(),c.fileno())
         for fd in fds:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)

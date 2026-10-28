@@ -15,6 +15,11 @@ from .tokenizer_wide_hybrid_retention import allocations
 from .tokenizer_wide_hybrid_retention_receipts import _document, _sha, _path
 from . import tokenizer_wide_hybrid_rules as rules
 
+QUALITY_ARTIFACTS=frozenset(('request.json','result.json','worker-attempt.json','worker-outputs.json',
+    'training-attempt.json','training-outputs.json','training-summary.json','metrics.jsonl',
+    'evaluation-attempt.json','tensor-attempt.json','tensor-audit.json','resource-audit.json',
+    'resource-events.jsonl','process/launch.json','process/process.json','process/worker.log'))
+
 
 def _bind_producers(root, *, training_token_sha256, **kwargs):
     """Bind producer lineage without implying complete stage selection."""
@@ -46,6 +51,15 @@ def _bind_producers(root, *, training_token_sha256, **kwargs):
             inodes.add(inode)
             pair[role]=dict(path=str(path.relative_to(root)),size=stat.st_size,
                             sha256=score['checkpoint_sha256'])
+        allowed={stem+'/'+name for name in QUALITY_ARTIFACTS}|{entry['path'] for entry in pair.values()}
+        for path in (root/stem).rglob('*'):
+            _require(not path.is_symlink(),'Quality output symlink refused')
+            if path.is_dir():
+                _require(path in (root/stem/'checkpoints',root/stem/'process'),
+                         'Undeclared quality output directory')
+            else:
+                _require(path.is_file() and str(path.relative_to(root)) in allowed,
+                         'Undeclared quality output artifact')
         _require(result['training'].get('final_checkpoint')==str(root/pair['raw']['path']),
                  'Quality raw training endpoint differs')
         corpora.add(Path(request['config']['data']['path']).resolve())

@@ -78,3 +78,13 @@ def test_tensor_producer_provenance_cannot_be_replaced_by_flags(tmp_path,bad):
         else:value['producer']['files']={}
         p.write_text(json.dumps(value));args['evidence'][name]=file_digest(p)
     with pytest.raises(ValueError):bind(tmp_path,args)
+
+
+@pytest.mark.parametrize('name',['unknown.json','extra.pt','unknown/nested.json','unknown-empty'])
+def test_hashing_an_unknown_output_does_not_make_it_declared(tmp_path,name):
+    args=fixture(tmp_path,producer_v2=True);path=tmp_path/'quality/00'/name
+    if name=='unknown-empty':path.mkdir()
+    else:
+        path.parent.mkdir(exist_ok=True);path.write_text('{}')
+        args['evidence'][str(path.relative_to(tmp_path))]=file_digest(path)
+    with pytest.raises(ValueError,match='Undeclared quality output'):bind(tmp_path,args)

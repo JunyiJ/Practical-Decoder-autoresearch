@@ -1,0 +1,103 @@
+.....F...........F...................................................... [ 43%]
+........................................................................ [ 86%]
+......................                                                   [100%]
+=================================== FAILURES ===================================
+____ test_invalid_history_prefix_or_capacity_never_creates_request[tensor] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10ec3e450>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10eb9f350>
+bad = 'tensor'
+
+    @pytest.mark.parametrize('bad',['weight','resource','tensor','numeric','source','corpus','pilot_journal',
+        'pilot_guard','stop','wrong_request','later_slot','pending','failed','partial','extra','storage'])
+    def test_invalid_history_prefix_or_capacity_never_creates_request(writer,monkeypatch,bad):
+        args=setup(writer,monkeypatch);root=writer.root/'evidence'
+        paths={'weight':'quality/00/checkpoints/raw.pt','resource':'quality/00/resource-audit.json',
+            'tensor':'quality/00/tensor-audit.json','numeric':'meta/numerical.json','source':'meta/source.txt',
+            'corpus':'meta/corpus.txt','pilot_journal':'.retention/pilot/deletions.jsonl',
+            'failed':'quality/00/worker-failure.json','partial':'quality/00/tensor-audit.json.tmp',
+            'extra':'quality/00/unknown.json'}
+        if bad in paths:(root/paths[bad]).write_text('{}')
+        elif bad=='pilot_guard':(writer.root/'control/pilot-entry-00.json').write_text('{}')
+        elif bad=='stop':(writer.root/'STOP').touch()
+        elif bad=='wrong_request':
+            original=start.bind_campaign
+            def wrong(*a):
+                bound=original(*a);bound['requests']['quality']['0'][0]['config']['fixture_only']=False;return bound
+            monkeypatch.setattr(start,'bind_campaign',wrong)
+        elif bad in ('later_slot','pending'):
+            writer.publish_json('evidence/quality/'+('02' if bad=='later_slot' else '01')+'/request.json',{})
+        else:monkeypatch.setattr(storage,'shutil',SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=8*1024**3)))
+>       with pytest.raises(ValueError):start.prepare_lr_request(**args)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_quality_lr_startup_v2.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_lr_startup_v2.py:76: in prepare_lr_request
+    prefix=bind_lr_prefix(root,context=bound['context'],requests=requests[:-1],
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:100: in bind_lr_prefix
+    corpora=_bind_producers(root,training_token_sha256=training_token_sha256,context=context,
+src/research/tokenizer_wide_hybrid_quality_audit_v2.py:35: in _bind_producers
+    verify_producer(root,stem,index,load('tensor-audit.json'),evidence=evidence,context=context,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/quality-lr-startup-v2-synthetic-46siwwzu/test_invalid_history_prefix_or2/campaign/evidence')
+stem = 'quality/00', slot = 0, report = {}
+evidence = {'.retention/pilot/deletions.jsonl': '41e8f51967bfc0f0e5151d095e02777a98396e8d9b5e557f1cefcae6d6549045', '.retention/p...38bf4e427', '.retention/pilot/inventory.json': '5b96e1144e1b45db701e3df6e0e6c420f8e72eb2ebbefe96ed2b20ca39f2eb20', ...}
+context = {'plan_sha256': 'cadf9ed050c792e63c203fb90eef72dc88dbe7dd5792ca187dca620febe7483e', 'source_sha256': '998d8634381fc3da...72d1c48475254dc716fe0e26fcf8cf1e', 'corpus_sha256': 'b0e18b6167c7de11dfad92028c6d8403490944d16da540ad1008ec2e169739ee'}
+projection_ref = {'path': 'meta/projection.json', 'sha256': '24ae53de47fec2c18c8c3f24491e56e91af5c574ef431e919b39c4dbf1fc1221'}
+training_token_sha256 = 'c3c36f5c24677ee8e0101427c87408dfc06524c1a554ef498fd791b0746546af'
+
+    def verify_producer(root,stem,slot,report,*,evidence,context,projection_ref,training_token_sha256):
+        """Read-only provenance check; full independent stage audit remains required."""
+        root=Path(root);producer=report.get('producer',{})
+        required=('request.json','result.json','training-outputs.json','evaluation-attempt.json')
+        _require(all(stem+'/'+n in evidence for n in required),'Tensor producer input not bound')
+        name=stem+'/tensor-attempt.json';_require(name in evidence,'Tensor attempt not bound')
+        ref=dict(path=name,sha256=evidence[name]);attempt=_document(root,ref)
+        ep=stem+'/evaluation-attempt.json';_require(ep in evidence,'Evaluation attempt not bound')
+        evaluation=_document(root,dict(path=ep,sha256=evidence[ep]))
+        expected=attempt_contract(slot,context['plan_sha256'],evidence[stem+'/request.json'],
+            evidence[stem+'/result.json'],projection_ref,evaluation['training_contract_sha256'],training_token_sha256)
+        files={str(root/(stem+'/'+n)):evidence[stem+'/'+n] for n in required}
+        files[str(_path(root,projection_ref['path']))]=projection_ref['sha256']
+>       files.update({p:sha for p,sha in report['files'].items() if Path(p).suffix=='.pt'})
+                                         ^^^^^^^^^^^^^^^
+E       KeyError: 'files'
+
+src/research/tokenizer_wide_hybrid_quality_tensors_v2.py:128: KeyError
+_____ test_invalid_history_prefix_or_capacity_never_creates_request[extra] _____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10ec5b070>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ec45bd0>
+bad = 'extra'
+
+    @pytest.mark.parametrize('bad',['weight','resource','tensor','numeric','source','corpus','pilot_journal',
+        'pilot_guard','stop','wrong_request','later_slot','pending','failed','partial','extra','storage'])
+    def test_invalid_history_prefix_or_capacity_never_creates_request(writer,monkeypatch,bad):
+        args=setup(writer,monkeypatch);root=writer.root/'evidence'
+        paths={'weight':'quality/00/checkpoints/raw.pt','resource':'quality/00/resource-audit.json',
+            'tensor':'quality/00/tensor-audit.json','numeric':'meta/numerical.json','source':'meta/source.txt',
+            'corpus':'meta/corpus.txt','pilot_journal':'.retention/pilot/deletions.jsonl',
+            'failed':'quality/00/worker-failure.json','partial':'quality/00/tensor-audit.json.tmp',
+            'extra':'quality/00/unknown.json'}
+        if bad in paths:(root/paths[bad]).write_text('{}')
+        elif bad=='pilot_guard':(writer.root/'control/pilot-entry-00.json').write_text('{}')
+        elif bad=='stop':(writer.root/'STOP').touch()
+        elif bad=='wrong_request':
+            original=start.bind_campaign
+            def wrong(*a):
+                bound=original(*a);bound['requests']['quality']['0'][0]['config']['fixture_only']=False;return bound
+            monkeypatch.setattr(start,'bind_campaign',wrong)
+        elif bad in ('later_slot','pending'):
+            writer.publish_json('evidence/quality/'+('02' if bad=='later_slot' else '01')+'/request.json',{})
+        else:monkeypatch.setattr(storage,'shutil',SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=8*1024**3)))
+>       with pytest.raises(ValueError):start.prepare_lr_request(**args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_tokenizer_wide_hybrid_quality_lr_startup_v2.py:81: Failed
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_quality_lr_startup_v2.py::test_invalid_history_prefix_or_capacity_never_creates_request[tensor]
+FAILED tests/test_tokenizer_wide_hybrid_quality_lr_startup_v2.py::test_invalid_history_prefix_or_capacity_never_creates_request[extra]
+2 failed, 164 passed in 27.26s

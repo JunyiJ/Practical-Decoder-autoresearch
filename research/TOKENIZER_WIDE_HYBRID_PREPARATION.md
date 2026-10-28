@@ -1566,3 +1566,39 @@ research training/MPS launch, checkpoint deletion or failed-numerical retry
 occurred. The27-trajectory campaign remains unfrozen with closed test holdout.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-prefix-v2-component-review.json`.
+
+
+## October 28 later LR request preparation and output allowlist
+
+The later-LR preparation component now covers slots1 through8. Before creating
+the next request, it rebinds frozen requests and pilot cleanup history, reviews
+every completed LR member, and verifies the entire remaining-panel storage
+requirement. Its immutable receipt retains the complete prefix, checkpoint
+pairs, inventory and finished1800s/4GiB RSS/8GiB reserve guard. Existing or failed
+attempts cannot retry. Preparation grants no process, selection or deletion
+authority; rank and fresh stages are outside this component.
+
+Integration found that hashing all current files could turn an unknown output
+into supplied evidence. The v2 quality producer binder now requires an explicit
+artifact/directory allowlist as well as matching hashes. Unknown files are
+rejected even when included in the inventory. A missing tensor file mapping
+also receives an explicit validation error. The initial164-pass/two-failure log
+is preserved; the failure that accepted unknown output occurred only in a
+disposable synthetic fixture, with no real request or checkpoint affected.
+
+An intermediate335-test run passed but shared storage-test mocks affected some
+outer-guard free-space readings. The storage fixture now uses a module-local
+namespace, and the final harness captures the original disk function before
+pytest. The final337 tests passed in42.05s, peak RSS244,203,520bytes, under the
+180s/4GiB/8GiB CPU guard with actual disk observations. Exact remaining-capacity
+and one-byte-short tests preserve all live weights; no speculative deletion
+credit is used. Tests include prefix/full-stage, tensor producer, execution and
+storage regressions. Scientific/model/MPS prerequisites remain mocked.
+
+Next implement read-only later-LR predispatch and exact guarded process handoff,
+then saved LR/rank selection transitions, boundary cleanup and inference. Real
+nine-case numerical/input and measured-pilot prerequisites remain unresolved.
+The campaign stays unfrozen; no research training, MPS launch, checkpoint
+deletion, failed-numerical retry or holdout access occurred.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-lr-startup-v2-component-review.json`.

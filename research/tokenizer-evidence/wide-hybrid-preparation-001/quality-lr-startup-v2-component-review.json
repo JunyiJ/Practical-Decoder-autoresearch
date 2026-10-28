@@ -1,0 +1,106 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T19:42:23.037232+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-final-guard.json": "fdd80dd54f69057fd6e62fd6292581e6a930a4f7bde8666c080886e853a08cb9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-final-tests.log": "5624ad3326b722d2b25513960266eed22f7cb6752e0b256cfde3a27f36d9f1d3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-guard.json": "3d366b09039c1917d892570fa121d50e42a32f677bc63a0b14ed531d54f92197",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-isolated-guard.json": "c1ddaa540b71656b38f369792165d6c9d897ebc78c1a0f4687c5732f47288882",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-isolated-tests.log": "a53d83feb0760adbf731dd10512b94ad6982a1f171295a42ad33ce1bbbdeb9e1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-tests.log": "37c2c99a2447deea78d47011974ff873bcf6b31065b42fe8813aef9c9c74fa0d",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "7924e7f66949dc0e5b2d18f667bc45b1c3d0a07b2634534e6adf4d6fb32e7636",
+    "src/research/tokenizer_wide_hybrid_quality_lr_startup_v2.py": "74870f750b587090c525655adc26912e84a1d46fcd95507c8495919e4763bf78",
+    "src/research/tokenizer_wide_hybrid_quality_tensors_v2.py": "2d8268c0b874eb375ac4c2ac7dada8bb9e670c38be57de044c734a9dae1d0d7d",
+    "tests/test_tokenizer_wide_hybrid_quality_audit_v2.py": "192d881ba486a135303f4e83e339697aae57900f0c0723f35f00447e4f0218d0",
+    "tests/test_tokenizer_wide_hybrid_quality_lr_startup_v2.py": "4a67d0bd8dfbcf65da242a065d837a38cb3d4ba63fb41bea0ee71d9267887cff",
+    "tests/test_tokenizer_wide_hybrid_retention_audit.py": "51c8d1fcd93c91cc463b7b97600a266d9249133cf722bf5837f3fe202dd56344",
+    "tests/test_tokenizer_wide_hybrid_storage_v2.py": "7729b7b6743c584ce6a6896f68d4fce4024882e9904490ed69dfb8ca9a07363a"
+  },
+  "findings": [
+    "A bounded later-LR preparation component supports slots1..8 only. It rebinds independently frozen requests, complete pilot cleanup history, every completed quality member and all remaining-panel storage before publishing the next immutable request.",
+    "Attempts, failures, finished1800s/4GiB RSS/8GiB reserve preparation guards, prefix records/pairs and exact pre-request inventory remain retained. It neither authorizes a process nor selects rates, performs cleanup or advances to rank/fresh stages. Failed or existing preparation cannot retry.",
+    "Integration exposed that an inventory collected from disk could bind unknown quality files and make them pass the old supplied-inventory completeness check. V2 producer review now enforces an explicit artifact/directory allowlist in addition to hash binding; unknown output remains rejected even when included in the inventory.",
+    "A missing tensor files mapping previously raised KeyError; explicit validation now rejects it with ValueError. Both initial test failures are retained.",
+    "Slots1/4/8 preserve all existing evidence and checkpoint pairs. Exact full remaining-space threshold passes and one byte less fails before request creation; occupied checkpoint capacity reduces remaining requirements without deleting or treating those weights as free bytes.",
+    "The final337-test run passed with real outer-guard disk readings, including prefix/full-stage audits, tensor producer, quality execution and storage regressions. A shared shutil mock was isolated after an intermediate passing run so the final resource evidence uses actual disk capacity."
+  ],
+  "free_bytes_observed": 30628753408,
+  "guards": [
+    {
+      "elapsed_seconds": 28.160594834014773,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30632468480,
+        "peak_rss_bytes": 240713728
+      },
+      "pid": 81652,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "elapsed_seconds": 40.9445214997977,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30631817216,
+        "peak_rss_bytes": 243597312
+      },
+      "pid": 81860,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "elapsed_seconds": 43.210783707909286,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30630219776,
+        "peak_rss_bytes": 244203520
+      },
+      "pid": 82147,
+      "reason": null,
+      "status": "finished"
+    }
+  ],
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_later_lr_startup_v2_component_review",
+  "limitations": [
+    "Full frozen-plan/numerical gates and model/MPS producer evidence are synthetic in transition tests; real bounded writers, inherited locks, pilot cleanup receipts, prefix audit semantics and storage arithmetic execute. Only disposable synthetic pilot weights are removed by fixture setup; no research checkpoints are touched.",
+    "Preparation does not yet implement later-LR predispatch revalidation, exact child process handoff, dispatch receipt acceptance, saved LR/rank selection transitions, LR/rank cleanup or inference orchestration. There is no new training launch CLI.",
+    "The real nine rank-policy optimizer/update/resume/EMA/input and measured-pilot prerequisites remain unresolved. No failed combined numerical fixture or closed controller was rerun. The27-trajectory campaign is unfrozen; no research training/MPS launch, quality claim or test-holdout access occurred."
+  ],
+  "status": "synthetic_transition_tests_passed_campaign_unfrozen",
+  "validation": [
+    {
+      "failed": 2,
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-tests.log",
+      "passed": 164,
+      "seconds": 27.26
+    },
+    {
+      "failed": 0,
+      "guard_limitation": "Storage tests temporarily mocked shared shutil.disk_usage, affecting outer guard free-space samples. This is not the final unmocked resource evidence.",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-final-tests.log",
+      "passed": 335,
+      "seconds": 39.69
+    },
+    {
+      "failed": 0,
+      "guard_disk_observation": "Original disk_usage function captured before pytest; storage fixture now patches a module-local namespace instead of shared shutil.",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-startup-v2-isolated-tests.log",
+      "passed": 337,
+      "seconds": 42.05
+    }
+  ]
+}
