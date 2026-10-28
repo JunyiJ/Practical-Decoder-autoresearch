@@ -1,0 +1,17 @@
+{
+  "status": "lower_bound_only_not_launch_plan",
+  "at": "2026-10-28T05:13:11.076569+00:00",
+  "width": 512,
+  "prospective_quality_trials": 24,
+  "prospective_retained_pilots": 3,
+  "table_parameters_per_model": 51463168,
+  "table_checkpoint_bytes_per_parameter": 20,
+  "derivation": "Untied embedding/readout tables: raw weights4 + Adam first/second moments8 + saved EMA4 + exported H2004 bytes per parameter. Excludes all attention/FFN/norm tensors and other optimizer state. No construction or guard bypass.",
+  "per_trajectory_lower_bound_with_allowance": 1186064589,
+  "reserve_bytes": 8589934592,
+  "required_free_bytes_lower_bound": 40617872799,
+  "observed_free_bytes": 17551732736,
+  "fits_even_lower_bound": false,
+  "allowance": "2MiB per trajectory,15% tensor allowance,4MiB round metadata,8GiB reserve. Full exact policy-validated projection remains required.",
+  "quality_claim": false
+}

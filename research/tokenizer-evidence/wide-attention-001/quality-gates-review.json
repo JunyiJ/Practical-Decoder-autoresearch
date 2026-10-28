@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "quality_state_sha256": "ca49b2f834be637385af628f9fdcde17489b812d48aa5e7ec6882f40e4fb2847",
+  "recomputed_conclusion": {
+    "adopted": false,
+    "quality_eligible": true,
+    "mla_strict_quality_gate": true,
+    "gqa_strict_quality_gate": false,
+    "intervals": [
+      {
+        "mean_delta": -0.04763040595099664,
+        "paired_seed_deltas": {
+          "3411": -0.04706899767252537,
+          "3412": -0.0492381275614866,
+          "3413": -0.04658409261897756
+        },
+        "text_block_tokens": 2048,
+        "text_block_count": 17,
+        "conditional_text_bootstrap_95pct": [
+          -0.05216034628568374,
+          -0.043069164047636554
+        ],
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 20261024,
+        "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test."
+      },
+      {
+        "mean_delta": -0.047630405950996636,
+        "paired_seed_deltas": {
+          "3411": -0.04706899767252537,
+          "3412": -0.0492381275614866,
+          "3413": -0.04658409261897756
+        },
+        "text_block_tokens": 4096,
+        "text_block_count": 9,
+        "conditional_text_bootstrap_95pct": [
+          -0.052322016794398095,
+          -0.043790490424549834
+        ],
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 20261024,
+        "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test."
+      },
+      {
+        "mean_delta": -0.047630405950996636,
+        "paired_seed_deltas": {
+          "3411": -0.04706899767252537,
+          "3412": -0.0492381275614866,
+          "3413": -0.04658409261897756
+        },
+        "text_block_tokens": 8192,
+        "text_block_count": 5,
+        "conditional_text_bootstrap_95pct": [
+          -0.0535272673819288,
+          -0.04365751073498091
+        ],
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 20261024,
+        "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test."
+      }
+    ],
+    "reason": "Quality gates only. Fresh artifact audit and measured cache/latency review required. Test closed."
+  },
+  "holdout_consumed": false
+}

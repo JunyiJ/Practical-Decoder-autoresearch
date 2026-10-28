@@ -1,10 +1,28 @@
 # Wider direct MLA/GQA comparison status
 
-October28,2026. Two width512 resource pilots passed and were audited; the finite
-12-trial quality comparison is prepared under source607ef9f, plan digest
+Completed and audited October27,2026, Los Angeles (October28 UTC). All12 quality
+trajectories,24 checkpoint tensor/hash/EMA audits and three serial inference pairs
+passed. Adopt a scoped width512 quarter-latent RoPE MLA option versus equally tuned
+fresh GQA. Source607ef9f, planb098d72, digest
 `12c60cbf4e01550e09b8317ccbbb90d13ed2390ad01a3d3304db205450f37240`.
-Consult research_state/tokenizer-quality-progress.json and the actual run state
-for dispatch/progress. No width512 comparative quality result or adoption yet.
+No training or inference worker remains. Closed controllers must not be rerun.
+
+Mean fresh H200 CE: MLA4.657553 versus GQA4.705184, delta-0.047630nat.
+All three seeds and conditional interval strict/neutrality gates pass. Actual
+allocated KV is68.75% smaller in every seed/batch. Decode is19.88% slower at batch1
+and22.98% slower at batch8; prefill12.82%/1.73% slower. These are medians across
+seed-specific median ratios on FP32 MPS/context128,32prefill/64decode. No speed-win
+claim. Both models were resident; allocator readings are not deployment peaks.
+
+Mean training time413.58s MLA versus421.86s GQA, about1.96% less. Actual parameter
+storage249,696,768 versus251,510,784bytes. Cached/full parity passed in all pairs;
+maximum absolute error0.000017166. Three seeds on reused Shakespeare validation
+support this scoped decision, not larger-data/width transfer or a global optimum.
+Test holdout remains closed. Keep the width256 recipes separately scoped.
+
+[Final review](tokenizer-evidence/wide-attention-001/final-review.json),
+[tensor audit](tokenizer-evidence/wide-attention-001/tensor-audit.json), and
+[adopted recipe](tokenizer-evidence/wide-attention-001/adopted-width512-mla-recipe.json).
 
 The [frozen protocol](TOKENIZER_WIDE_ATTENTION_PROTOCOL.md) independently screens
 three LRs per family at3401, then compares selected GQA/MLA recipes at fresh
@@ -15,9 +33,9 @@ screen/pilot result is a final ranking. Source and selection rules stay frozen.
 Both20-update pilots retained raw/H200 pairs and passed tokenizer/checkpoint/EMA,
 finite saved tensor and cached/full parity checks at batches1/8. Measured cache
 per batch item/context128 is1,048,576 bytes GQA and327,680 MLA (68.75% less).
-This is geometry/feasibility evidence only. The>=60% memory benefit must be
-measured again on every fresh pair, together with prospective quality neutrality
-and serving latency. No speed win is required for the memory adoption route.
+The initial pilot was geometry/feasibility evidence only. The>=60% memory gate
+was subsequently verified on every fresh pair with quality and serving latency.
+No speed win was required for the memory adoption route.
 
 Width1024 full-panel accounting currently exceeds available disk, so it is not
 in this finite round. Existing8GiB reserve and sampled memory/time guards remain.
@@ -35,8 +53,8 @@ in for disk export checks; both were completed separately.
 
 October28,04:30UTC: all six screening trials completed1200updates. Checkpoint
 hashes, exact config/tokenizer/EMA lineage, parameter counts and saved validation
-arithmetic passed review. Full tensor-finiteness/EMA equality audit remains due
-after all quality trials, before timing. The first fresh GQA confirmation is running serially.
+arithmetic passed review at the screening transition. The full tensor/EMA audit
+and fresh confirmation subsequently completed as summarized above.
 
 | Family | Seed | LR | Raw CE | H200 CE | Training seconds | Raw/H200 bytes |
 |---|---:|---:|---:|---:|---:|---:|
@@ -51,8 +69,8 @@ Both families independently selected LR0.00125, the interior point of the frozen
 three-rate grid. The independent selection audit matches the controller's saved
 choice, written before the first fresh confirmation request. This is a one-seed
 tuning outcome, not proof of an optimum or an attention-family quality advantage.
-All six fresh confirmations at3411/3412/3413 remain required, followed by final
-tensor/EMA audit and the three frozen inference pairs.
+The selected rates were used unchanged for all six fresh confirmations,
+followed by final tensor/EMA audit and three frozen inference pairs.
 [Screening review](tokenizer-evidence/wide-attention-001/screen-review.json) records
 the selection checks.
 [Completed-record review](tokenizer-evidence/wide-attention-001/completed-review.json)
@@ -60,11 +78,12 @@ records the bounded audit scope; source and prospective rules remain frozen.
 
 ## Fresh confirmation progress
 
-October28,05:05UTC: five of six fresh trajectories have completed and passed the
-same saved-artifact hash/metadata/arithmetic checks. Final MLA seed3413 is running.
-The first two pairs have MLA-minus-GQA H200 deltas-0.047069/-0.049238nat.
-These incomplete-panel observations cannot establish improvement or adoption. Final tensor/EMA audit
-and frozen serving measurements remain due after all quality trajectories.
+All six fresh trajectories completed. Paired MLA-minus-GQA H200 deltas are
+-0.047069/-0.049238/-0.046584nat. Final tensor/EMA audits and frozen serving
+measurements passed. Conditional95% text-bootstrap intervals at block sizes
+2048/4096/8192 are[-0.052160,-0.043069],[-0.052322,-0.043790],
+[-0.053527,-0.043658]. They condition on these trained seeds and adaptive
+validation; they do not measure population uncertainty or an independent test.
 
 | Family | Seed | Selected LR | Raw CE | H200 CE | Training seconds |
 |---|---:|---:|---:|---:|---:|
@@ -73,3 +92,4 @@ and frozen serving measurements remain due after all quality trajectories.
 | MLA | 3412 | 0.00125 | 4.666685 | 4.659804 | 411.48 |
 | GQA | 3412 | 0.00125 | 4.701124 | 4.709042 | 418.36 |
 | GQA | 3413 | 0.00125 | 4.693315 | 4.698700 | 426.31 |
+| MLA | 3413 | 0.00125 | 4.663606 | 4.652116 | 415.75 |

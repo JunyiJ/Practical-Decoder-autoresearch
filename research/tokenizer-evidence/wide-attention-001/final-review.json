@@ -1,0 +1,405 @@
+{
+  "adopted": true,
+  "at": "2026-10-28T05:12:02.527921+00:00",
+  "cache_bytes_per_batch_item": {
+    "gqa": 1048576,
+    "mla": 327680
+  },
+  "completed_review_sha256": "efa46790de7501400dd2ea7d82ca12226ffcc1cd5a9bd1c0860f49302083390b",
+  "confirmation_seeds": [
+    3411,
+    3412,
+    3413
+  ],
+  "decision": "Adopt the scoped width512 quarter-latent RoPE MLA option versus equally tuned fresh GQA.",
+  "helper_sha256": "ee7a0fa3e0066f885ecd10ae9adbd0db7b32b86fd374743a2d802552ccfe98c4",
+  "holdout_consumed": false,
+  "max_cached_full_absolute_error": 1.71661376953125e-05,
+  "mean_h200_ce": {
+    "gqa": 4.705183861541235,
+    "mla": 4.6575534555902385
+  },
+  "mean_training_seconds": {
+    "gqa": 421.86386553384364,
+    "mla": 413.58422617428005
+  },
+  "median_of_seed_median_ratios": {
+    "1": {
+      "mla_vs_gqa": {
+        "decode_seconds": 1.198843961056804,
+        "prefill_seconds": 1.1281791398971346
+      }
+    },
+    "8": {
+      "mla_vs_gqa": {
+        "decode_seconds": 1.2298110439745737,
+        "prefill_seconds": 1.0172691242357326
+      }
+    }
+  },
+  "parameter_bytes": {
+    "gqa": 251510784,
+    "mla": 249696768
+  },
+  "per_seed_inference": [
+    {
+      "batch": 1,
+      "cache_reduction_fraction": 0.6875,
+      "medians": {
+        "gqa": {
+          "decode_seconds": 0.2008877294138074,
+          "decode_tokens_per_second": 318.58629377788185,
+          "prefill_seconds": 0.009326145052909851
+        },
+        "mla": {
+          "decode_seconds": 0.2408330412581563,
+          "decode_tokens_per_second": 265.74902841175975,
+          "prefill_seconds": 0.010521562304347754
+        }
+      },
+      "ratios": {
+        "mla_vs_gqa": {
+          "decode_seconds": 1.198843961056804,
+          "prefill_seconds": 1.1281791398971346
+        }
+      },
+      "seed": 3411
+    },
+    {
+      "batch": 8,
+      "cache_reduction_fraction": 0.6875,
+      "medians": {
+        "gqa": {
+          "decode_seconds": 0.19493822986260056,
+          "decode_tokens_per_second": 2626.4730956926705,
+          "prefill_seconds": 0.01483483286574483
+        },
+        "mla": {
+          "decode_seconds": 0.23973718797788024,
+          "decode_tokens_per_second": 2135.6722554795724,
+          "prefill_seconds": 0.014876395463943481
+        }
+      },
+      "ratios": {
+        "mla_vs_gqa": {
+          "decode_seconds": 1.2298110439745737,
+          "prefill_seconds": 1.0028016896836516
+        }
+      },
+      "seed": 3411
+    },
+    {
+      "batch": 1,
+      "cache_reduction_fraction": 0.6875,
+      "medians": {
+        "gqa": {
+          "decode_seconds": 0.19448943762108684,
+          "decode_tokens_per_second": 329.0679591492533,
+          "prefill_seconds": 0.009193582460284233
+        },
+        "mla": {
+          "decode_seconds": 0.23417127132415771,
+          "decode_tokens_per_second": 273.30780164180425,
+          "prefill_seconds": 0.010242291260510683
+        }
+      },
+      "ratios": {
+        "mla_vs_gqa": {
+          "decode_seconds": 1.2040307905068903,
+          "prefill_seconds": 1.1140696572589428
+        }
+      },
+      "seed": 3412
+    },
+    {
+      "batch": 8,
+      "cache_reduction_fraction": 0.6875,
+      "medians": {
+        "gqa": {
+          "decode_seconds": 0.1996089373715222,
+          "decode_tokens_per_second": 2565.015542961525,
+          "prefill_seconds": 0.014666520524770021
+        },
+        "mla": {
+          "decode_seconds": 0.2478234376758337,
+          "decode_tokens_per_second": 2066.5762034009877,
+          "prefill_seconds": 0.015026437118649483
+        }
+      },
+      "ratios": {
+        "mla_vs_gqa": {
+          "decode_seconds": 1.2415447972380729,
+          "prefill_seconds": 1.0245400122865955
+        }
+      },
+      "seed": 3412
+    },
+    {
+      "batch": 1,
+      "cache_reduction_fraction": 0.6875,
+      "medians": {
+        "gqa": {
+          "decode_seconds": 0.20323345810174942,
+          "decode_tokens_per_second": 314.9748983444298,
+          "prefill_seconds": 0.009200249332934618
+        },
+        "mla": {
+          "decode_seconds": 0.23860954120755196,
+          "decode_tokens_per_second": 268.2207714448386,
+          "prefill_seconds": 0.010517749935388565
+        }
+      },
+      "ratios": {
+        "mla_vs_gqa": {
+          "decode_seconds": 1.1740662361218663,
+          "prefill_seconds": 1.1432027062285823
+        }
+      },
+      "seed": 3413
+    },
+    {
+      "batch": 8,
+      "cache_reduction_fraction": 0.6875,
+      "medians": {
+        "gqa": {
+          "decode_seconds": 0.20002318732440472,
+          "decode_tokens_per_second": 2559.7209336704145,
+          "prefill_seconds": 0.014592520892620087
+        },
+        "mla": {
+          "decode_seconds": 0.24576124968007207,
+          "decode_tokens_per_second": 2083.324553164323,
+          "prefill_seconds": 0.014844520948827267
+        }
+      },
+      "ratios": {
+        "mla_vs_gqa": {
+          "decode_seconds": 1.2286638012696385,
+          "prefill_seconds": 1.0172691242357326
+        }
+      },
+      "seed": 3413
+    }
+  ],
+  "plan_sha256": "12c60cbf4e01550e09b8317ccbbb90d13ed2390ad01a3d3304db205450f37240",
+  "quality": {
+    "adopted": false,
+    "gqa_strict_quality_gate": false,
+    "intervals": [
+      {
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 20261024,
+        "conditional_text_bootstrap_95pct": [
+          -0.05216034628568374,
+          -0.043069164047636554
+        ],
+        "mean_delta": -0.04763040595099664,
+        "paired_seed_deltas": {
+          "3411": -0.04706899767252537,
+          "3412": -0.0492381275614866,
+          "3413": -0.04658409261897756
+        },
+        "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+        "text_block_count": 17,
+        "text_block_tokens": 2048
+      },
+      {
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 20261024,
+        "conditional_text_bootstrap_95pct": [
+          -0.052322016794398095,
+          -0.043790490424549834
+        ],
+        "mean_delta": -0.047630405950996636,
+        "paired_seed_deltas": {
+          "3411": -0.04706899767252537,
+          "3412": -0.0492381275614866,
+          "3413": -0.04658409261897756
+        },
+        "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+        "text_block_count": 9,
+        "text_block_tokens": 4096
+      },
+      {
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 20261024,
+        "conditional_text_bootstrap_95pct": [
+          -0.0535272673819288,
+          -0.04365751073498091
+        ],
+        "mean_delta": -0.047630405950996636,
+        "paired_seed_deltas": {
+          "3411": -0.04706899767252537,
+          "3412": -0.0492381275614866,
+          "3413": -0.04658409261897756
+        },
+        "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+        "text_block_count": 5,
+        "text_block_tokens": 8192
+      }
+    ],
+    "mla_strict_quality_gate": true,
+    "quality_eligible": true,
+    "reason": "Quality gates only. Fresh artifact audit and measured cache/latency review required. Test closed."
+  },
+  "quality_state_sha256": "ca49b2f834be637385af628f9fdcde17489b812d48aa5e7ec6882f40e4fb2847",
+  "quality_trials": 12,
+  "scope": "Three trained seeds, adaptive validation, FP32 MPS context128 batches1/8. Conditional text intervals do not measure seed-population uncertainty. Both models resident during timing; working-memory readings are not single-model peak or capacity. No larger-data/width transfer or test-holdout result. Existing width256 recipes remain separately scoped.",
+  "selection": {
+    "gqa": 0.00125,
+    "mla": 0.00125
+  },
+  "source": {
+    "requirements.txt": "1ae8e633e91babdb4931ad1d1ceb88fee8613a5ee27eb15bac1cbc8ed93f4c73",
+    "src/__init__.py": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+    "src/attention/__init__.py": "d4b73c2244f2e465ea8e727c9c057a0f8e186ffe4002aabedfd2c2c6142c9907",
+    "src/attention/cache.py": "ca863d6e62af28e8c4512c5966fd7e3c7544f3e7586e43dd8006e737bb79edd0",
+    "src/attention/gqa.py": "8edc87d788332893cea1022e81f608d737baa92625d785e502cc62c40316aa1e",
+    "src/attention/kda.py": "333c36d0b552492da4375ff4fa7a1005fb724461e0ed10501208031121706894",
+    "src/attention/kda_scaling.py": "daa4500c4ccf5a4083692d79bffa14db526bcbef6b64dde4cd92903b54bdfaee",
+    "src/attention/mha.py": "e87892e5fa51d0ca0b208e499ea57fa765138f211fea954892ae44b9837d8834",
+    "src/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "src/attention/output_gate.py": "d9d7671cdfa0d8e3a09ee0a79eae2ce19eae12fdd15ec2a3748adf8abede7dbc",
+    "src/attention/qk_norm.py": "ae69b95907398bcddb5044b12f5529bf41e368aea6c9bc26c6f899f4dffbc69f",
+    "src/data/loaders.py": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+    "src/models/__init__.py": "2db522babfe2d440c4d816dcccaa624999516930bb214b731fa16cfbc34cce20",
+    "src/models/attention_scale.py": "c964f5b9532684e9b244a5f03a6da6a65ba998611b04a27a7553ad21ff26bf7e",
+    "src/models/blocks.py": "99f74dea226a87f585b72aec8c5186d8261f6e857951556eec8899ea436f035e",
+    "src/models/depth_scaling.py": "a7f3f3b913b797cca8fe0d5d44385c86df41f8a5ca68b1c197136a838cc31448",
+    "src/models/embedding_scale.py": "596783ac8b1c1753f26a13571fa7c000aaa5fd5e1c93bfe59b03a99fa00f7c51",
+    "src/models/ffn_hidden_norm.py": "b4bc9d79c16e84d6c6640427edee8736a9d14cfb5ff7ff37c2ca24c1aad203d5",
+    "src/models/gated_activation.py": "83fc9d31f930ff2be51bd303689d282ec366e221344ed23e567515e615421984",
+    "src/models/gpt.py": "90daf16e0956eecdeb08a778db52b3896108993a1e1d463a423c60a4937f2add",
+    "src/models/logit_z.py": "16e1a305b6049b5f197bd2cbbc1102cd71f927c996a6657b13d203a72739f802",
+    "src/models/mlp.py": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+    "src/models/output_bias.py": "22e095ab917f49360a114085c45cd6aa1fc675296d144ea80a6870422879099d",
+    "src/models/position_family.py": "388c3f0e523b81d3037216a7db7de5069a9f5322280c4057d0e8fc6f08e73549",
+    "src/models/readout_norm.py": "c3de6242e3b8867be43bd21d72eb9d21224a89aabd8d40bd4eafdd36c9b9fc22",
+    "src/models/residual_gain.py": "db9641bc6e45ffdada8f138e2531c1d600154083cbd8acb333708c8afe781436",
+    "src/models/residual_topology.py": "cbcbe3dba3c726a7e88e6c025b69de37d21a053b43ca3773d9b77d90091c88fd",
+    "src/models/rope.py": "33bda2c5d2a4c312d65e2e294c5de944ff84d2c231bf40001f621a9399f6e5d3",
+    "src/models/tokenizer_architecture.py": "21afe2161809ab938cffcf1b49c8bea1b54f8199f78e28357d79ec19f34700f6",
+    "src/models/tokenizer_hybrid.py": "e4300623c34f5b046ec51dfd9da706dcc0b2eb4e5d07cf6655a0706c4ec5ebe9",
+    "src/models/tokenizer_tables.py": "0d946deb390b717aa76281fafee61722bea269be636afe472bed85a193dfcb92",
+    "src/models/value_residual.py": "144ad67287d95bd5bd8feec443c7cdda584b1999a89753bdb5f39177d208e4ce",
+    "src/models/weight_tying.py": "c7bb966e9c01811aaf0636c0e657d1c1c0baa2403870f886fb70c44d3064151e",
+    "src/moe/__init__.py": "f0911c8ad4ac9dc58ac16bd6ea8b33c9d7300f021ad5bc39aa33f1817b0662a9",
+    "src/moe/moe_block.py": "c29fb1be70bb4de5584bcbd5fb71cdb7088b5fd87868853aadf875116efd945f",
+    "src/moe/scaling.py": "c0265ce242f560a6816d8769f8a756ade2c6ee328ac355e32683192e88dee2bc",
+    "src/research/__init__.py": "4b0d5f73d0329af534851579ea1721ef64c05167516bc212b2e520aa0dd96423",
+    "src/research/architecture_study.py": "99d8434b92aed9ce0d172f4b377d6d3c943f95a15807c21a3546d61a85297823",
+    "src/research/attention_scale_audit.py": "a7d24651b60768dc3b5b5b915a0858a7d21a2158df8a53e946c2c98757e3d7fe",
+    "src/research/attention_scale_predecessor.py": "08191d75b742df2fa48e3a96b8a5c7f4a394dd21e1ec8dac6dbba5f20e9fd04c",
+    "src/research/attention_scale_study.py": "b4b4af7b63bb2457fd075ffa3461009c9eaf6827068ba14fe52fa9a32338636a",
+    "src/research/averaging_eval.py": "dce0dade790a2522aa354ab11f28eba29ffd6fbf3e5fab144833f9499d50f9c8",
+    "src/research/averaging_study.py": "5c4e9b92bca2d76fc3c6da7e500850c1e0c27d91c74a4c8805328f898702f01b",
+    "src/research/batch_study.py": "6ecb87355f16165d3853799cfaf280146d03084e0da63b2128d6e088edb0a8a7",
+    "src/research/capacity_study.py": "ab04332608b65182e9803eee2e144a7627b2364190411ea23b06233da534a585",
+    "src/research/context256_study.py": "fc75d41d1be6415f30ec228b8274a2161fcdc3277e0875ae33764a1ba6cc08d1",
+    "src/research/context_inference.py": "b246521a7d2388dc822579f965a84ccbf5946ada7d44ecba726af9fa1a2f038d",
+    "src/research/context_interaction.py": "63f5340d381b3aa7bcc6e7a6864454d8c5890389ff8b4cc659bd39ecd0d2efeb",
+    "src/research/coverage_eval.py": "403f10101e9ae8d96846473a97904d4f75b3ca4ad44077297f73cb57a59b18b4",
+    "src/research/decay_quality_predecessor.py": "a48728e4471519d6ca374580ec438434be4955a0896cec39080b835368a17c04",
+    "src/research/decay_quality_study.py": "fee8b048a65f854c8949dd6f04544b90a6c49144febd8e1258263ad974b13a50",
+    "src/research/depth_study.py": "6896f4e7e1668f66747a2ef77317d26261fc1a1c2224ddd127d85d967cca6bdb",
+    "src/research/embedding_scale_audit.py": "7cc88e1f83136ae2196340c0570f20fb23a66d962964953590d32b51f151c9b5",
+    "src/research/embedding_scale_predecessor.py": "1f7cdbbc8f9f9e4b9625ae8de46fde7ddc5942fcdcab604ad0ccf3bac68d59c8",
+    "src/research/embedding_scale_study.py": "9dba838c071b68bc32bdfc5d06dde87d6c573f73b4e9779be38a026f1cffdce2",
+    "src/research/ffn_hidden_norm_predecessor.py": "513beddf3c1eaa6b14989d6f49545f1ba26a29bd10fff312053dbc3583d64c48",
+    "src/research/ffn_hidden_norm_study.py": "9752c5520bcedc6606852904e0659ca925fb194c7ad19d42cba53222941b2c5b",
+    "src/research/gated_activation_audit.py": "b2308238e542415b0eb616f80d8d430f55cc24dac19d684c54d2fc985d084466",
+    "src/research/gated_activation_predecessor.py": "77e4c72e699b45f11d119bad2db8b20e8472782b71f27cf39326c68be330dd96",
+    "src/research/gated_activation_study.py": "3cd5c72e15c938ee61bc152a48b2c081d728ed78c9857f793bd77e75c89d5bb6",
+    "src/research/gated_study.py": "d74b5a9199662cfecbb1cf53a5a6ea9d621c9706f7e31aabd45bfb21ff9263aa",
+    "src/research/gqa_study.py": "3716440dae29f3006b1d89784d93136ca79f4b4d62d25340bdb8cc6c0f699891",
+    "src/research/head_study.py": "f741069565a830d691e19be325b00dcdb46187b1a19a3cc2a9c31ce8cedfc16e",
+    "src/research/horizon_study.py": "deb089a6fb030186e1169916cd25ea798d7d3b1be943deaeea3ff7a025a16567",
+    "src/research/inference_bench.py": "64216b9046c6fda2af529d758be5ccbb9145a371bdb28dc404f53d787d1b4d54",
+    "src/research/kda_quality_predecessor.py": "e8ab1ea9bd672b2fe8054273c57558da97d19a309f93c0ba0319de76dfc4bc51",
+    "src/research/kda_quality_study.py": "f98bfed9cc2b14445aed04040b36acb5daed892cfbf09a6a7faa2d14de632574",
+    "src/research/logit_z_audit.py": "48b6cf832f25f7698df8acea17e6822b5955fb69a026bec7b138299337fc68c4",
+    "src/research/logit_z_predecessor.py": "210e1c9b1d790510b3a2eda5bd61d2be609996bbfef177309267b634c905b4ef",
+    "src/research/logit_z_study.py": "33fcc5bfb93454beb71ecd6cb6b8b89cbc7cb20473f57208ed0d346d003a888a",
+    "src/research/memory_guard.py": "a6617b8c0147607c8f3c4cf0d43ba278589b1e9f14c1422aaf6440de3524eefd",
+    "src/research/mla_study.py": "202d07e7786f1f53a1f38a04eb75f2dc7a3fff352b9d870ff53998c636b9a63f",
+    "src/research/moe_study.py": "7c4a512aafed07e3a4067be4f5bbd3f7d6ed25f109150ea372b7a481200e7aae",
+    "src/research/optimizer_study.py": "47dbf40ec211306ccb248a2d6fd08c22ad753f4b3b2331881904e2cbf095fb22",
+    "src/research/output_bias_audit.py": "28dcfd164554f225475fa2af463232ec77809fbfa50f994a9c0f2c8d01ce360b",
+    "src/research/output_bias_predecessor.py": "4e8a50eabe56c15e7985d507db201e5fbd3433655c0adc7ea95cbe9ee09b74ab",
+    "src/research/output_bias_study.py": "383bf93a81138b3ea13804f4a2cf39d363e52aa6ea3a457168742760a3bd5215",
+    "src/research/output_gate_predecessor.py": "e18270eba0ffcf29337fb174e91fb1b28df2c2285db6222bd47bc90a4697df33",
+    "src/research/output_gate_study.py": "129f32e99a216a8a1604e83700663851cf5f4c6e51741ef64ec3944cc9a6a41f",
+    "src/research/parallel_block_audit.py": "cb5bcf8bba815bbb4052a6eb463d3aa166974a10e2ea6e1db96cdbd6c1419a32",
+    "src/research/parallel_block_predecessor.py": "17db0f0e18c87c3fcd303c2a1795554acb09b4f0cd4958cabe88cf49cb22176a",
+    "src/research/parallel_block_study.py": "804c075227faa128501afe99c581d1e5118345c8280445351db2256b3483b01e",
+    "src/research/position_quality_audit.py": "1a6b51dcaa0f560cd4185217bb3de732a5bc463dec37581deb1e87137a3744fd",
+    "src/research/position_quality_predecessor.py": "45d38907994b591f9eb56b7abcdfa56caa07b21ba3d5256b2414678220d98e43",
+    "src/research/position_quality_study.py": "fc3021bd909e8a10cf33b93152e74e54929e9107febc6c2556a5b211ec029ac7",
+    "src/research/protocol.py": "f461bd7267b3fc09004740905864a750dd42e7ad1fdd32be82ba97488ae9618d",
+    "src/research/qknorm_predecessor.py": "4f1134edbce0d191a4b637c69b505534799c23ade994ee0486845fe4da7c94b0",
+    "src/research/qknorm_study.py": "77571ae116e8f9376009d478eff8284b695207d8a1ce4592bcabadd74f724b1a",
+    "src/research/readout_norm_audit.py": "8a0f7a9d1a97178e771e8fb396600291f84e4562126084f4db0e1a1825b7d20b",
+    "src/research/readout_norm_predecessor.py": "40cdf649879e932ae213367ce24de4e8613feb993b31a3e59d2efc18dbca0af4",
+    "src/research/readout_norm_study.py": "40d1d0d3fc9bf7e4e86e53e845076018e41fd884633b6456ca28919c1f42bbaa",
+    "src/research/report.py": "aa9ef8b9c1ae31ecb5839c40f1cc8c2c5d44ed8395b5dc3e8f749a7c8fa1bb1a",
+    "src/research/residual_gain_audit.py": "ead6d103ed37605e3c45eafe6f79b7f4303c624f14c4fc96a12922f6bd972386",
+    "src/research/residual_gain_predecessor.py": "55db0070745d5438e71a2d7d87bf68d8308570bff6b8b8b871556d24182cf746",
+    "src/research/residual_gain_study.py": "618b192ace301df7675acb207ac69e3f0628941822515e7f3e4568666d7bc343",
+    "src/research/runner.py": "dfbb9e9c31d6cd97949638471d5ed6802e59dad96d2adafcf04899374666fd1e",
+    "src/research/schedule_study.py": "1a4c446e59aa6fc28c19ed419e804ea300e64b23fa92a3e582526811e0eba40a",
+    "src/research/team/__init__.py": "af0705905e6b55322a46b7b6143dea40b40419e300a7a44904970cd5ae5d061a",
+    "src/research/team/__main__.py": "0f4d5e9c5cb9cbef4e1a89e77ebad7895f0132e07eac8c02d1fa743376e68d63",
+    "src/research/team/control.py": "e9d862b93f11aee453f3fd51a6713921ead771128caae8328cafbeecdf82dd76",
+    "src/research/team/coordinator.py": "c483b263978af98ab407537ef580f0a5678fe32ddaa137486045abf75021db53",
+    "src/research/team/evolution.py": "8f1b0af7ceb31fe1440da4e80c2c46f1a4d73d26a938ae23a3e87440ebdc58e7",
+    "src/research/team/history.py": "63246fd53e32a1bbe2245c021ab3edf3509434d9d73a75cd202e2c8ca7ed6377",
+    "src/research/team/host.py": "3d43d481cb7137d51517c5d0b9b565bae1c2be93c91cc0b6eaa88ef874153d85",
+    "src/research/team/journal.py": "456d63a81b79d989a23af174ee3acb108ead23b5f02cdc2064bd7fa3fab423b5",
+    "src/research/team/knowledge.py": "060cac51a74c715584d062ec47e3e229795ce83c7e55d684211cfe70995969c4",
+    "src/research/team/performance.py": "d63a38f1ea1f8e0c78c3663b5d9e1a220a28d589fd564c9555943af2a9b9d922",
+    "src/research/team/predictions.py": "09fea2bd13ac9d7a4bc35222e1fb9e6cd303c539cf23ef409d67d822db11c31d",
+    "src/research/team/recovery.py": "9dcc407bffefe2a37f32d996879b0722a71727658a924a43c0f8c3f76654d728",
+    "src/research/team/roles.py": "cf9e0d6c9ee0e890ddb8ff580de258b51eec49cef37f1ccc09c4f5a987c4bdd1",
+    "src/research/team/runtime.py": "105f27fd0888af5bb164083398814708ceebb6df0a5585909b2d23d51f2a9407",
+    "src/research/team/suite.py": "189d1c30771872ad15b3a250e03dd5984ef8a46bc3cf44c8e3b83321bde65cba",
+    "src/research/team/workspace.py": "adbaa5211fa4099882c1957cf23498743202f212856f8e1aa751218b9b8af43b",
+    "src/research/tokenizer_attention_bench.py": "73f986b56ab49941026a95c6205a7968f200896a206232cea3f0aab2e6f3ba30",
+    "src/research/tokenizer_attention_study.py": "23e9394dd38e6b86531c00b5f11745622d948f8548f97e84827708c207b93e36",
+    "src/research/tokenizer_horizon_study.py": "5504eedec4ca4f5147a89b67d07e20e918c23f353a6945d66745d7a1d1bdc60e",
+    "src/research/tokenizer_hybrid_bench.py": "f8d6ba6104a382911f101cd749f9256bb9e2d32778c4debac3c91c97525d863d",
+    "src/research/tokenizer_hybrid_study.py": "2616f74e37b1881d25f1ac81c44344531e7d57a722955f7012a227a5f61edf12",
+    "src/research/tokenizer_mla_study.py": "cfd4467700f7b3ef9d7f72b2f18716e1e85b6c95c1bacae7cad8527c791b11c1",
+    "src/research/tokenizer_study.py": "a4292b4fae81a7407c7b3cefa29bd4304dd1b49c950eb88231041437573e32cb",
+    "src/research/tokenizer_table_bench.py": "c7da08ba0014d485f5350c35bcbecc8eff16e969f14aa5309e12b2e2cb804802",
+    "src/research/tokenizer_table_pilot.py": "bfc7caf4f6336e710eb63b9e60f5f93fcbee0df700a39864699b906c825123bd",
+    "src/research/tokenizer_table_study.py": "5040dbe19cd31324fbae64e8a254575f2a9560f00c2c5cf3c8c3532457ef2b90",
+    "src/research/tokenizer_wide_bench.py": "1a2dd92804aea2f0a94c5577152fb52295eeef73f3870b92fe1d908321b44dce",
+    "src/research/tokenizer_wide_config.py": "2ae8ddf7f32f084a402b71f690a48d4571fc917356c6b0212418f34d4bb2d53c",
+    "src/research/tokenizer_wide_pilot.py": "7f369378bbeb09deb6d749c16b630a03f657e912a1a97d9aa8b076753f1c619a",
+    "src/research/tokenizer_wide_study.py": "ac3a263abef05bdf32af5e4d0a7de191c4c0550d7b08143ca66b3cf6dab9cae8",
+    "src/research/value_residual_audit.py": "3a9de6d60af61b8c7cf90a5c9bd984577f935c53baebb5b70d8e6dcf8c747580",
+    "src/research/value_residual_predecessor.py": "fd5b66ef8ac8285ff077522424b84b7cdfedee5d27297f89e4220a801b13da89",
+    "src/research/value_residual_study.py": "63e5b5e50854ca758d114878b43e8dc1af63606adcdd4f86c758f59a40474184",
+    "src/research/warmup_quality_audit.py": "9ac7bedbe2dae8a54125c9b17695795dcfbed571d1cbdb715d2e66025d597419",
+    "src/research/warmup_quality_predecessor.py": "adb02c7a611b977b822bf99b0ab4c8d8cea0687e03901ff49cb9cc825119689a",
+    "src/research/warmup_quality_study.py": "912b5ba05b28ae4a7a3277628bebcc73f5029f4bcb4ceabc64feb0f77efb8ba5",
+    "src/research/weight_tying_audit.py": "c82234dd7d8d58f55e5428595f0fd3a041ebdb4444566d6a927118ffb5f9f2c0",
+    "src/research/weight_tying_predecessor.py": "07819d811411017b4e41c2aa983b198cf1dc5a7768dc3e715ca420621890e85e",
+    "src/research/weight_tying_study.py": "98865e2ea3b5d5c2367a65f861c88cce6775470f14b9ebecdc319804f0d99379",
+    "src/research/worker.py": "e3a5cdc3c1880cf6a9c5edd767b7361cf68baa6ed0795af1a35e152b895af571",
+    "src/train/lr_schedule.py": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6",
+    "src/train/optimizers.py": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+    "src/train/train.py": "6a694e666edc9b0e86bf82e547a71ae47fd2188c16b256d9ddf5e3a55bedac4c",
+    "src/train/weight_averaging.py": "8cda4f6b7f9b736d88399e49be3f0091aff98c12cd315a878c2aadf934e47459",
+    "src/utils/__init__.py": "3e61d7fcea9efad4762e2bfe8d9a318ab0bad69ccb5184b3505b7963233eba7a",
+    "src/utils/bench_compare.py": "96b751276d5cd87cf5e889e9f062d164f24b7a280767ac39cd5a05bc833c6335",
+    "src/utils/checkpoint.py": "8a8e59c57677f7b825ee0b8715b675e66b7ccb12d52e8a9c6b8ff85fa2f402e7",
+    "src/utils/device.py": "fa74ad997cad2b8eb4e906118980250768c875623d5c595409665ad6be40c091",
+    "src/utils/eval.py": "4276a95ddb680d5ff465e405961ce7ce9ea5bf54dca5331e38046c68c0950e63",
+    "src/utils/generate.py": "0e392e4db7087eb29bfb1f724fd4547289b9f16b8d28d27fc3c6b43a074044f9"
+  },
+  "status": "completed_adopted",
+  "tensor_audit_sha256": "6fe101534cf0647e459b747dd0b3be4787d3c61a1fd9fdd48b275c4ba3cc742f",
+  "timing_pairs": 3,
+  "timing_state_sha256": "e1186a16cb9f69422d11e9178920e64cac554fd2333ef64153703846ce29afcf"
+}
