@@ -44,9 +44,11 @@ This metadata/hash review does not recompute model losses or tensor finiteness.
 
 ## Reviewed screening progress
 
-Four of six screening trials are complete and reviewed; confirmation has not
-started. Both untied arms have completed their two-rate screens; the tied arm
-is still being screened. These single-seed observations cannot establish adoption.
+All six screens at seed3301 completed and passed hash/metadata/EMA/score review.
+The frozen rule independently selected LR0.00125 for legacy_untied and0.0025
+for matched_untied and scaled_tied. The saved selection preceded the first fresh
+confirmation request; screen-review.json records that check and an immutable
+snapshot of all six reviewed records. Nine fresh confirmation trials are underway.
 
 | Arm | LR | Raw CE | H200 CE |
 |---|---:|---:|---:|
@@ -54,13 +56,14 @@ is still being screened. These single-seed observations cannot establish adoptio
 | legacy_untied | 0.0025 | 4.879233 | 4.812186 |
 | matched_untied | 0.0025 | 4.840032 | 4.853498 |
 | matched_untied | 0.00125 | 5.077150 | 5.135245 |
+| scaled_tied | 0.00125 | 5.111563 | 5.168311 |
+| scaled_tied | 0.0025 | 4.880606 | 4.884608 |
 
-The legacy screen favors0.00125, while the matched-control screen favors0.0025.
-This preliminary difference supports independently tuning each arm under the
-frozen design; applying the legacy rate to every arm would disadvantage the
-matched control in this screen. Formal selection waits for all six screens, and
-any comparative quality conclusion still requires fresh confirmation.
+The matched and tied arms preferred the higher screened LR, unlike legacy.
+This is a single-seed optimization observation supporting independent tuning;
+it does not establish a relative quality gain, neutrality or adoption. Both
+controls remain in all three fresh confirmation seeds. No additional LR is added.
 
-Checkpoint hashes, metadata, EMA lineage and saved-score arithmetic passed for
-all four records. Frozen source and the full remaining storage allocation pass;
-the controller continues with one MPS worker. No intervention or rule change.
+Tied raw/H200 pairs were303,285,837/303,285,773 bytes, below the363,708,672-byte
+allowance. Untied pairs remained560,603,788 bytes, below659,621,888. The full
+remaining allocation fits above8GiB reserve. Source and test holdout stay frozen.
