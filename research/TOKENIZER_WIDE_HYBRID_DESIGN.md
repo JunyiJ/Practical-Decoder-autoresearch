@@ -111,13 +111,15 @@ from deployment peaks. The old RoPE MLA option is not a fresh control here.
 
 ## Work remaining before any launch
 
-Only the D/4 wider policy is currently implemented. D/8 and D/2 need explicit
-config/model/cache/optimizer/checkpoint signatures and numerical prerequisites;
-do not bypass guards or label analytical rank estimates as constructed models.
-Complete exact meta accounting for every variant and worst-case selections,
-including pilot, intermediate export, metadata and retained artifacts. Measure
+The separate rank policy now implements D/8,D/4,D/2 with explicit model/cache/
+optimizer/checkpoint signatures. Selected geometry/equation/cache/lineage checks
+passed; optimizer-resume/EMA and resource-pilot prerequisites remain incomplete.
+Constructed meta accounting for every variant and worst-case selections gives
+53.2948GiB for the width512 draft including reserve, retained pilot/quality
+artifacts and conservative metadata/serialization allowances. Measure
 actual pilot resource costs only after the complete prospective panel fits.
-The approximate60GiB storage target remains provisional until this accounting.
+The approximate60GiB storage target exceeds this prospective estimate, but actual
+filesystem fit and pilot costs still require verification before dispatch.
 
 The failed combined CPU fixture remains closed. New diagnostic and synthetic
 buffer tests do not complete missing model continuation checks or authorize a

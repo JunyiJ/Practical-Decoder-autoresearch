@@ -68,7 +68,7 @@ A separate `tokenizer_wide_k3_hybrid_nope_v1` policy now admits only widths512/1
 with head32 and the three declared layer layouts. The old policy still admits
 only64/256. The new anchor keeps D/4 decay and query/KV bottlenecks, convolution4,
 bounded log-decay−5, full-rank output gates, NoPE and the inherited dense backbone.
-No optional rank/decay/gate overrides are admitted yet. The config helper is not
+This anchor policy admits no optional rank/decay/gate overrides. The config helper is not
 a dispatcher or frozen experiment; its default seed/rate are preparation values.
 
 Meta construction gives width512 parameter counts65,037,792 hybrid,
@@ -115,8 +115,44 @@ authorize rerunning the failed fixture. No further numerical attempt has run.
 The [staged tuning draft](TOKENIZER_WIDE_HYBRID_DESIGN.md) now selects bottleneck
 rank D/8 and D/2 as the second stage following three-rate anchor screening. It
 declares equal per-family budgets, prospective order/selection, fresh triple
-comparisons and proposed quality/cost gates. It is not frozen: rank variants,
-full resource accounting, remaining continuation prerequisites and serial runners
-still need implementation/review. A four-check small synthetic serialization
+comparisons and proposed quality/cost gates. It is not frozen: remaining
+continuation prerequisites, measured pilot resources and serial runners still
+need implementation/review. A four-check small synthetic serialization
 test verifies that fully deserialized data remains usable after closing its
 scratch BytesIO; it does not demonstrate lower model RSS or authorize retry.
+
+## Explicit rank variants and complete draft panel accounting
+
+The separate `tokenizer_wide_k3_hybrid_rank_nope_v1` policy now requires an
+integer divisor2/4/8. It binds both KDA decay and gated-MLA query/KV ranks toD/b
+in model, optimizer, cache and checkpoint contracts. Both earlier quarter-rank
+policies still reject the new field. Width1024 remains meta-only.
+
+Seventy-two selected CPU/meta checks passed in21.42s under a600s/4GiB-RSS/
+8GiB-reserve guard, including37 rank checks and35 anchor/historical regressions.
+Peak recorded process RSS was1,400,913,920bytes. All continuation tests were
+excluded; the failed combined fixture was not retried. These checks cover rank
+geometry, independent parameter-count formulas, equations/gradients, cached/full
+parity, causality/reset, optimizer grouping/scaling, lineage and invalid policies.
+They are not optimizer-resume/EMA or training-quality results for the new ranks.
+
+Complete constructed meta accounting for18 width/family/rank combinations is in
+`tokenizer-evidence/wide-hybrid-preparation-001/rank-storage-projection.json`.
+For27 retained trajectories, reserving D/2 resource pilots and the most costly
+possible confirmations, the width512 draft requires57,224,879,357bytes
+(53.2948GiB), including8GiB reserve. Width1024 requires126,135,276,067bytes
+(117.4726GiB). This replaces the anchor-only projection for the draft design.
+It still needs actual pilot export/runtime/memory validation after full fit and
+freeze; current local disk does not fit. No MPS pilot or quality launch occurred.
+
+At512/context128/batch1, cache/state bytes by rank divisor are:
+
+| Family | D/8 | D/4 | D/2 |
+|---|---:|---:|---:|
+| hybrid | 301,056 | 333,824 | 399,360 |
+| all-gated-MLA | 196,608 | 327,680 | 589,824 |
+| all-KDA | 335,872 | 335,872 | 335,872 |
+
+KDA's rank changes parameterization, not recurrent state size. Thus the hybrid's
+memory tradeoff depends on independently selected control ranks. These geometry
+facts cannot select ranks or establish quality, latency or adoption.

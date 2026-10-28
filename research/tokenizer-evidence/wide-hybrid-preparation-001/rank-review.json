@@ -1,0 +1,48 @@
+{
+  "status": "rank_geometry_prerequisites_passed_not_launch_ready",
+  "at": "2026-10-28T05:48:05.450293+00:00",
+  "selected_checks": 72,
+  "rank_checks": 37,
+  "anchor_and_historical_checks": 35,
+  "continuation_tests_excluded": 4,
+  "model_continuation_retry": false,
+  "quality_or_MPS_launch": false,
+  "meta_widths": [
+    512,
+    1024
+  ],
+  "numerical_width": 512,
+  "guard": {
+    "elapsed_seconds": 21.60384533368051,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 17544069120,
+      "peak_rss_bytes": 1400913920
+    },
+    "pid": 51379,
+    "reason": null,
+    "status": "finished"
+  },
+  "draft_required_free_bytes": 57224879357,
+  "pending": [
+    "model optimizer/resume/EMA prerequisites",
+    "tested serial quality and triple inference runners",
+    "gate arithmetic tests",
+    "actual resource fit",
+    "pilot and quality plan freeze",
+    "measured pilot resources"
+  ],
+  "hashes": {
+    "src/models/tokenizer_hybrid.py": "cdab512a0f6d93464bbf4095a6c77a93198e376da3ba53955dfcb556003dd064",
+    "src/research/tokenizer_wide_hybrid_config.py": "7f6e35be7a45f98dd42627b50818ba23fbcd690ec232292ac8ad4a39e254e8e9",
+    "tests/test_tokenizer_wide_hybrid_rank.py": "89261d2d458ef0c75779cff3ee9b84ac78ade3e7b8ece6f1bd9f361173b8a9ac",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-contracts.log": "2565f5b53f952cdd3d2258d062d1cb9f19863f3994d267edbe3b81dce09d5ecd",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-rank-contracts-guard.json": "2fc22e140be2a7854dba846d7b1958793cbf44eedf62e070dfdead1423641008",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/project_rank_storage.py": "ecd9f4f82a183488e1e25bc121688ffa25c8cec842e1fbbd8cdac60471fe5655",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-storage-projection.json": "5aba55c22f234f35aacea218fa53e767c450e9aaa6f07f34bfa2b4d3d5bf9df4"
+  }
+}

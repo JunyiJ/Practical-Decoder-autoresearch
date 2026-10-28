@@ -5,6 +5,8 @@ POLICY = 'tokenizer_k3_hybrid_nope_v1'
 GEOMETRY = 'hybrid_head32_quarter'
 WIDE_POLICY = 'tokenizer_wide_k3_hybrid_nope_v1'
 WIDE_GEOMETRY = 'wide_hybrid_head32_quarter'
+RANK_POLICY = 'tokenizer_wide_k3_hybrid_rank_nope_v1'
+RANK_GEOMETRY = 'wide_hybrid_head32_rank'
 LAYOUTS = (('kda', 'kda', 'kda', 'gated_mla'), ('gated_mla',)*4, ('kda',)*4)
 
 
@@ -14,22 +16,26 @@ def get(cfg, key, default=None):
 
 def hybrid_contract(cfg):
     policy = get(cfg, 'tokenizer_architecture_policy')
-    if policy not in (POLICY, WIDE_POLICY):
+    if policy not in (POLICY, WIDE_POLICY, RANK_POLICY):
         if get(cfg, 'attn_type') == 'hybrid' or get(cfg, 'attention_layout') is not None:
             raise ValueError('Layerwise attention requires its explicit tokenizer hybrid policy')
         return None
     from .tokenizer_architecture import FIXED, VARIABLE
     fixed = dict(FIXED, tokenizer_architecture_policy=policy, rope=0)
     keys = set(cfg.keys()) if hasattr(cfg, 'keys') else set(vars(cfg))
-    if keys != set(fixed) | VARIABLE | {'attention_layout'}:
+    rank_fields = {'attention_bottleneck_divisor'} if policy == RANK_POLICY else set()
+    if keys != set(fixed) | VARIABLE | {'attention_layout'} | rank_fields:
         raise ValueError('Hybrid requires its exact explicit field set')
     for key, value in fixed.items():
         actual = get(cfg, key)
         if type(actual) is not type(value) or actual != value:
             raise ValueError(f'Hybrid changed fixed field {key}')
     width, heads = get(cfg, 'dim'), get(cfg, 'n_heads')
-    widths = (512, 1024) if policy == WIDE_POLICY else (64, 256)
-    geometry = WIDE_GEOMETRY if policy == WIDE_POLICY else GEOMETRY
+    widths = (64, 256) if policy == POLICY else (512, 1024)
+    geometry = {POLICY: GEOMETRY, WIDE_POLICY: WIDE_GEOMETRY, RANK_POLICY: RANK_GEOMETRY}[policy]
+    divisor = get(cfg, 'attention_bottleneck_divisor') if policy == RANK_POLICY else 4
+    if type(divisor) is not int or divisor not in (2, 4, 8):
+        raise ValueError('Hybrid rank policy requires integer divisor2/4/8')
     if type(width) is not int or width not in widths or type(heads) is not int or heads != width//32:
         raise ValueError(f'Hybrid requires widths{widths} with head32')
     if (get(cfg, 'attn_type') != 'hybrid' or get(cfg, 'attention_width_policy') != geometry
@@ -45,8 +51,8 @@ def hybrid_contract(cfg):
     if layout not in LAYOUTS:
         raise ValueError('Undeclared hybrid/control layout')
     return {'policy': policy, 'family': 'hybrid', 'layout': layout, 'width': width, 'heads': heads,
-            'position': 'none', 'score_scale': .5, 'latent_rank': width//4, 'shared_key_dim': 32,
-            'kda_alpha_rank': width//4, 'kda_conv': 4, 'kda_g_min': -5., 'kda_output_gate': 'full_rank',
+            'position': 'none', 'score_scale': .5, 'latent_rank': width//divisor, 'shared_key_dim': 32,
+            'kda_alpha_rank': width//divisor, 'kda_conv': 4, 'kda_g_min': -5., 'kda_output_gate': 'full_rank',
             'prior_sha256': get(get(cfg, 'output_bias_prior'), 'prior_sha256')}
 
 
@@ -81,14 +87,18 @@ def validate_hybrid_model(model, contract):
                 or block.hidden_dim != 21*d//8 or a.dim != d or a.n_heads != h or a.head_dim != 32):
             raise ValueError('Hybrid constructed block differs from contract')
         if family == 'kda':
-            if (type(a) is not KDA or a.dim_alpha != d//4 or a.g_min != -5.
+            if (type(a) is not KDA or a.dim_alpha != contract['kda_alpha_rank'] or a.g_min != -5.
                     or a.conv_size != 4 or a.head_norm.eps != 1e-6
                     or tuple(a.output_gate.weight.shape) != (d, d)
-                    or tuple(a.z1.weight.shape) != (d//4, d)
-                    or tuple(a.z2.weight.shape) != (d, d//4)):
+                    or tuple(a.z1.weight.shape) != (contract['kda_alpha_rank'], d)
+                    or tuple(a.z2.weight.shape) != (d, contract['kda_alpha_rank'])):
                 raise ValueError('Hybrid KDA geometry/gate/decay mismatch')
-        elif (type(a) is not GatedMLA or a.enable_rope or a.dimc_q != d//4
-              or a.dimc_kv != d//4 or a.head_dim_r != 32 or a.attention_logit_scale != .5
+        elif (type(a) is not GatedMLA or a.enable_rope or a.dimc_q != contract['latent_rank']
+              or a.dimc_kv != contract['latent_rank'] or a.head_dim_r != 32 or a.attention_logit_scale != .5
+              or tuple(a.dq.weight.shape) != (contract['latent_rank'], d)
+              or tuple(a.dkv.weight.shape) != (contract['latent_rank'], d)
+              or any(tuple(getattr(a, name).weight.shape) != (d, contract['latent_rank'])
+                     for name in ('uq', 'uk', 'uv', 'qr'))
               or tuple(a.gate.weight.shape) != (d, d)):
             raise ValueError('Hybrid gated MLA geometry/position/score mismatch')
 
@@ -115,6 +125,6 @@ def validate_hybrid_caches(model, caches, batch, start_pos):
                    tuple(cache.k_history.shape), tuple(cache.v_history.shape)] if family == 'kda'
                   else [tuple(cache.c_cache.shape), tuple(cache.r_cache.shape)])
         expected = ([(batch, h, 32, 32)] + [(batch, d, 3)]*3 if family == 'kda'
-                    else [(batch, 128, d//4), (batch, 128, 32)])
+                    else [(batch, 128, contract['latent_rank']), (batch, 128, 32)])
         if shapes != expected:
             raise ValueError('Hybrid cache batch/geometry mismatch')

@@ -1,6 +1,6 @@
 """Prospective wider NoPE geometry; no dispatcher, tuning grid or launch plan."""
 from ..models.tokenizer_architecture import architecture_contract
-from ..models.tokenizer_hybrid import LAYOUTS, WIDE_GEOMETRY, WIDE_POLICY
+from ..models.tokenizer_hybrid import LAYOUTS, WIDE_GEOMETRY, WIDE_POLICY, RANK_GEOMETRY, RANK_POLICY
 from .tokenizer_wide_config import config as backbone_config
 
 FAMILIES = ('hybrid', 'gated_mla', 'kda')
@@ -15,5 +15,14 @@ def config(output, family, width=512, seed=3491, lr=.00125, steps=1200, device='
         tokenizer_architecture_policy=WIDE_POLICY,
         attention_width_policy=WIDE_GEOMETRY,
         depth_width_policy='depth4_hybrid_unscaled', attention_layout=list(LAYOUT[family]))
+    architecture_contract(cfg['model'])
+    return cfg
+
+
+def rank_config(output, family, width=512, seed=3491, lr=.00125, steps=1200,
+                device='cpu', *, bottleneck_divisor=4):
+    cfg = config(output, family, width, seed, lr, steps, device)
+    cfg['model'].update(tokenizer_architecture_policy=RANK_POLICY,
+        attention_width_policy=RANK_GEOMETRY, attention_bottleneck_divisor=bottleneck_divisor)
     architecture_contract(cfg['model'])
     return cfg
