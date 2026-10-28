@@ -1,0 +1,48 @@
+{
+  "status": "resource_recorders_integrated_with_bounded_metadata_writer_no_dispatch",
+  "created_at": "2026-10-28T17:27:12.386948+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_resources.py": "bf940f58d046665251004245bb2db1a63234f7bd6e0e084be97f2f118e7b5fb5",
+    "src/research/tokenizer_wide_hybrid_campaign_resources.py": "2827a8c2db554896047fbf49bf6564fedc49ad0c0450db0f1a26a2e480884c1a",
+    "tests/test_tokenizer_wide_hybrid_campaign_resources.py": "5d338a52e5b9468e741cbf5f121fc0a1b88de8a24ff60532de9c6613dffc25b6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-campaign-resources-v2-final-guard.json": "73b950b540386f9cf066e5cd55e5cd4c36d1a4bc4e91608473cbe72830a69771",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-campaign-resources-v2-final-tests.log": "64e36849c9275da07980dacc84b09ed64e152790f3d572555467f0da25d7e769",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-campaign-resources-v2-guard.json": "a9e70f23d4a4400bdf07dfbb36397c92e7a16c44e13b30c2723f65a7e8c07155",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-campaign-resources-v2-tests.log": "c7708aefe71eed6ff3155201285f801f5e740a450cb2a6e2d4e05c6b521c1af4"
+  },
+  "tests": {
+    "initial": 165,
+    "final": 205
+  },
+  "final_guard": {
+    "elapsed_seconds": 3.4992413325235248,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30658523136,
+      "peak_rss_bytes": 242630656
+    },
+    "pid": 74338,
+    "reason": null,
+    "status": "finished"
+  },
+  "findings": [
+    "Campaign pilot/quality adapters write resource-event streams and final reports through the locked bounded metadata writer at exact declared slots.",
+    "Existing600s pilot and7200s quality resource profiles, terminal audit/result binding, failure codes and no-reentry behavior are preserved.",
+    "Checkpoint namespace transitions must cooperate with the same metadata lock:20 tiny create/publish cycles interleaved with resource samples retained complete weight accounting without skipped files.",
+    "Uncoordinated disappearing checkpoint artifacts fail closed; no incomplete census is accepted.",
+    "Two tiny hard-failure child cases (synthetic600s deadline and6GiB driver limit) exit90 and preserve independently written bounded diagnostics despite captured stdout/stderr."
+  ],
+  "limitations": [
+    "The new adapters are concrete recorder/metadata integration but no training controller invokes them yet; other worker/log/state/cache/checkpoint producers still need conversion and full integrated tests.",
+    "Checkpoint lifecycle tests used tiny synthetic bytes and cooperating lock transitions. They do not establish production torch.save memory/time/output feasibility.",
+    "No real model/corpus/MPS worker, plan freeze, checkpoint deletion or numerical retry occurred.",
+    "Complete current/future high-water gates, checkpoint/log/state/cache producers, controller/stage/cleanup-chain and v2 inference acceptance remain required.",
+    "Actual nine numerical cases, training-input review and measured pilots remain unresolved; the failed combined fixture and closed campaigns remain closed."
+  ],
+  "free_bytes_observed": 30657327104,
+  "full_campaign_required_free_bytes": 30631281412
+}

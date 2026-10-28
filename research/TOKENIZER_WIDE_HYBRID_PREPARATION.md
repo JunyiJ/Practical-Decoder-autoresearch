@@ -1010,3 +1010,30 @@ with the fail-closed census still need integration tests. Full future storage
 gates, v2 controller/audit/cleanup/inference integration and all real numerical,
 input and measured-pilot prerequisites remain outstanding. No training, real
 checkpoint deletion, failed-fixture retry or plan freeze occurred.
+
+## October 28 resource-recorder / bounded-writer integration
+
+The prospective campaign pilot and quality resource recorders now route their
+independent event streams and final reports through the bounded metadata writer
+at the exact declared trajectory slots. Existing600s/7,200s profiles, completed
+result/audit bindings, failure codes and no-reentry rules remain intact. These
+adapters are concrete producer integration; no training controller invokes them yet.
+
+A namespace interaction test interleaved resource samples with20 tiny checkpoint
+temporary-file creation/publication cycles. Coordinating these transitions under
+the same metadata lock kept the census complete and counted each final weight
+once. An uncoordinated disappearing artifact fails closed. The future real
+checkpoint producer must implement that coordination and retain its own full
+trajectory/output/storage guards; this test is not torch.save feasibility evidence.
+
+Validation:205 tests passed in3.25seconds, peak RSS242,630,656bytes under
+180s/4GiB/8GiB outer guards. Initial165-test evidence is retained. Two tiny child
+processes exercised synthetic600-second and6GiB-driver violations: both exited90
+and preserved bounded resource diagnostics independently of captured stdio.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign-resources-v2-component-review.json`.
+
+Complete current/future high-water storage gates, bounded checkpoint/log/state/cache
+producers, controller/stage/cleanup-chain integration and v2 inference acceptance
+remain required. All real numerical/input and measured-pilot prerequisites are
+still outstanding. No model/corpus/MPS worker, real checkpoint deletion, plan
+freeze or failed-fixture retry occurred; closed campaigns remain closed.

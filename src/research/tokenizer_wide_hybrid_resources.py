@@ -85,6 +85,10 @@ class _ResourceRecorder:
         self.stream = None; self.thread = None
         self.stop = threading.Event(); self.lock = threading.RLock()
 
+    def _open_trace(self): return self.trace.open('xb')
+
+    def _publish_report(self, report): _publish(self.output,report,exclusive=True)
+
     def _emit(self, event, emergency=False):
         data = (json.dumps(event,sort_keys=True,allow_nan=False,separators=(',',':'))+'\n').encode()
         cap = EVENT_LIMIT if emergency else EVENT_LIMIT-4096
@@ -119,7 +123,7 @@ class _ResourceRecorder:
                 **self._bindings())
             if len((json.dumps(report,sort_keys=True,allow_nan=False,indent=2)+'\n').encode()) > REPORT_LIMIT:
                 raise RuntimeError('Resource report cap exceeded')
-            _publish(self.output,report,exclusive=True)
+            self._publish_report(report)
 
     def _fatal(self, status, problem, code):
         # Own independent FD survives pytest/stdout/stderr redirection. If even
@@ -144,7 +148,7 @@ class _ResourceRecorder:
         request = self.trial/'request.json'
         if request.is_symlink() or file_digest(request) != self.request_sha:
             raise ValueError('Resource request binding changed')
-        self.stream = self.trace.open('xb')
+        self.stream = self._open_trace()
         self.started = time.monotonic()
         try:
             self._emit(_header(self.plan_sha,self.request_sha,self.KIND,self.LIMITS))
