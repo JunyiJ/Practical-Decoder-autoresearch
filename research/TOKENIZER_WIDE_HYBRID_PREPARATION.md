@@ -262,3 +262,23 @@ passing full numerical review or resource pilot review exists; local storage
 still fails the complete panel projection. Pilot/inference controllers, those
 reviews, actual resources and final freeze remain required. No training or failed
 continuation retry ran, and no new quality result exists.
+
+## Inference measurement contract preparation
+
+Twenty-five synthetic callback/tiny-storage tests passed in0.42s; peak process
+RSS226,017,280bytes. The new timing helper checks the full correctness barrier,
+exact rotated execution order, canonical input-token hash, positive finite
+durations, integer memory observations and stable state allocation across
+warmups/repeats. A small CPU view/alias fixture verifies unique backing storage
+rather than logical view elements. Per-seed repeat positions are intentionally
+3/3/2; the declared seed offsets balance each family/position across all three
+seeds. Callback failures propagate immediately without retry or completed report.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/timing-contract-review.json`.
+No real model, corpus, checkpoint or MPS timing was used. The helper trusts its
+callbacks to implement actual numerical checks/measurements and cannot certify
+checkpoint, tokenizer or device identity. Production model loading, correctness
+callbacks, guarded serial dispatch and persisted-result audit remain required;
+the returned status explicitly remains pending artifact audit. No numerical
+continuation retry, pilot launch, cleanup or gate change occurred. Local space
+remains below the complete53.2948GiB projection; the test holdout stays closed.

@@ -151,3 +151,33 @@ Finally integrate/test the serial controllers and audited score adapter, record 
 data/config hashes, freeze both finite pilot and quality plans, and verify fit.
 This draft may change before freeze; it cannot change in response to new quality
 outcomes. Test holdout remains closed and no MPS launch follows from this file.
+
+## Prospective inference measurement order
+
+The callback-based `tokenizer_wide_hybrid_timing.py` now fixes the proposed
+measurement sequence; it is not a model-loading worker or launch authorization.
+For seeds3511/3512/3513 assign offsets0/1/2 into the family cycle
+hybrid,gated_mla,kda. At repeat r use offset(seed)+r modulo3. Each seed has eight
+measured repeats per batch, giving position counts3/3/2; across all three seeds,
+each family occupies each position exactly eight times per batch. Two warmup
+repeats use the same rotation, restarting r at0 for measured repeats. Retain
+warmup records separately and exclude them from reported timing summaries.
+
+All six family/batch cache-correctness checks must pass before any warmup or
+measured timing. The eventual worker must implement the numerical comparison;
+a callback's passed flag alone is not independent numerical evidence. Timing
+samples require positive finite prefill/decode durations and positive integer
+state/current/driver byte observations. Unique backing storage of all cache
+buffers measures recurrent, convolution, latent and shared-key capacity, including
+unused capacity of views and counting shared storage once. This excludes
+allocator overhead; report allocator observations separately. State bytes must
+remain identical for a family/batch across warmups and measured repeats.
+
+The proposed input is the first96 training token IDs shared by every model,
+identified by SHA256 of96 unsigned little-endian uint32 values. Freeze the
+actual IDs/hash after validating tokenizer and split identity before launch.
+The helper accepts an independently expected hash; it neither reads the corpus
+nor proves that caller-supplied IDs come from training. The eventual worker must
+bind checkpoint hashes, selected ranks/LRs/seeds, full configuration/tokenizer,
+MPS FP32 device, actual input derivation and cached numerical checks. Guarded
+serial worker integration, result auditing and a frozen timing plan remain open.

@@ -1,0 +1,43 @@
+{
+  "status": "synthetic_timing_contract_passed_not_launch_ready",
+  "at": "2026-10-28T06:28:21.699616+00:00",
+  "checks": 25,
+  "guard": {
+    "elapsed_seconds": 0.5523667074739933,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17513062400,
+      "peak_rss_bytes": 226017280
+    },
+    "pid": 53414,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Six correctness callbacks before any timing",
+    "Rotating order balanced across three seeds",
+    "Canonical 96-token uint32 little-endian hash",
+    "State consistency across warmups/repeats",
+    "Unique backing storage including views and aliases",
+    "Failure propagation without retry"
+  ],
+  "real_model_or_corpus_loaded": false,
+  "real_inference_run": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Callbacks synthetic; no numerical model cache check or MPS timing",
+    "No checkpoint/tokenizer/device provenance integration or benchmark dispatcher",
+    "Numerical prerequisites, resource pilots, full storage fit and frozen plans unresolved"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_timing.py": "8462f1d38d6b47d7e63d3aab7e0ab6f53166530d0d45d3258ff790ce724d8fe0",
+    "tests/test_tokenizer_wide_hybrid_timing.py": "a5b3e5b30322f39a4541da50d6735b4aa8e9cff59fa5e0844f2f3923d9bc1787",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-timing-contract-tests.log": "976d557f3c2aa9044525ac1a3cf7538a825e3591115ea73d07dc69945d80805e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-timing-contract-guard.json": "a259bc7ca5c077503c254e9dd5d1ed5a785cfb9be3548c3e1688e1ac98e807dd"
+  }
+}
