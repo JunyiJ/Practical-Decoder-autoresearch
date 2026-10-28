@@ -2149,3 +2149,37 @@ No research training/MPS, real checkpoint deletion or holdout evaluation occurre
 The27-trajectory campaign remains unfrozen and no research worker is active.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/rank-dispatch-v2-component-review.json`.
+
+
+## October 28 lossless inventory references and metadata sizing
+
+New readiness and rank-startup receipts use the explicitly versioned
+`wide_hybrid_inventory_delta_v1` format. A receipt references an earlier immutable
+inventory by document SHA256 and stores its changes plus the complete inventory
+count/hash. Readers reconstruct the full map before existing provenance,
+scientific, cleanup and storage audits. Old full-inventory documents remain
+compatible and are never rewritten.
+
+Decoding checks campaign identity, canonical paths and exact row types, both
+physical hashes and the reconstructed digest. It rejects malformed or redundant
+deltas, symlinks, traversal and unknown versions, and bounds rows, decoded bytes,
+reference depth and total referenced bytes. The prospective plan explicitly
+binds these limits. A delta removal only describes a map difference; reviewed
+cleanup receipts and protected-evidence checks still govern actual weight removal.
+
+All135 integration/provenance tests passed in470.61s, including the complete six
+rank-screen sequence. The subsequent explicit-layout declaration passed75
+codec/plan tests in2.04s. Both bounded CPU/disk guards finished normally; maximum
+RSS was243,892,224 bytes. The measured synthetic prefix shrank from1,985,851 to
+1,403,111 metadata bytes (582,740 bytes,29.34%) under the unchanged2MiB cap.
+No per-group cap,256MiB total,8GiB reserve or scientific choice changed.
+
+Actual read-only configuration sizing found355,839 compact bytes for the known
+request/source/runtime/layout plan fields alone:3 pilot options and108 conditional
+quality options still produce27 selected trajectories. This is a lower bound,
+not a complete plan or campaign fit proof. Final rank selection/cleanup, fresh
+confirmations, inference and actual numerical/input evidence still need complete
+metadata accounting and compact immutable receipts before freeze. No research
+worker, MPS training, real checkpoint cleanup or holdout evaluation ran.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/inventory-delta-v1-component-review.json`.

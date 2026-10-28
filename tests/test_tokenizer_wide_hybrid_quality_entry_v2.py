@@ -15,7 +15,7 @@ from test_tokenizer_wide_hybrid_quality_readiness_v2 import prepared
 def setup(writer,monkeypatch,slot=1):
     startup=prepared(writer,monkeypatch,slot)
     ref=entry.readiness.seal_quality_readiness(writer,slot,startup);root=writer.root/'evidence'
-    seal=json.loads((root/ref['path']).read_text())
+    seal=entry._document(root,ref)
     # The real shared-lock fixture stays in one process; simulate its child PID
     # relation only. Real process capture/parent identity has separate tests.
     monkeypatch.setattr(entry.os,'getppid',os.getpid)

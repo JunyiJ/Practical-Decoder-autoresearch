@@ -26,7 +26,7 @@ def prepared(writer,monkeypatch,slot):
 def test_full_idle_review_is_sealed_without_changing_prior_evidence(writer,monkeypatch,slot):
     startup=prepared(writer,monkeypatch,slot);root=writer.root/'evidence';before=ready._inventory(root)
     ref=ready.seal_quality_readiness(writer,slot,startup)
-    report=json.loads((root/ref['path']).read_text());after=ready._inventory(root)
+    report=ready._document(root,ref);after=ready._inventory(root)
     assert all(after[n]==v for n,v in before.items()) and set(after)-set(before)=={ref['path']}
     assert report['inventory']==before and report['startup_ref']==startup
     assert report['predispatch_review']['pilot_history_verified']

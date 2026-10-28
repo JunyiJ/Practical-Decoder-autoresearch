@@ -129,7 +129,10 @@ def prepare_rank_request(writer,slot,plan_sha256,*,projection_ref,lr_completion_
         _check_inventory(root,expected);_locks(root,writer.lock_fds)
         _require(shutil.disk_usage(writer.root).free>=checked['storage']['required_free_bytes'],
                  'Full remaining storage changed before rank completion')
-        path=writer.publish_json('evidence/'+base+'.json',report)
+        from .tokenizer_wide_hybrid_inventory_delta import encode_inventory
+        anchor=dict(path='meta/quality-readiness-08.json',sha256=file_digest(root/'meta/quality-readiness-08.json'))
+        wire=encode_inventory(root,report,anchor)
+        path=writer.publish_json('evidence/'+base+'.json',wire)
         return dict(path=base+'.json',sha256=file_digest(path))
     except BaseException as exc:
         try:writer.publish_json('evidence/'+base+'-failure.json',dict(kind=KIND,status='failed',slot=slot,

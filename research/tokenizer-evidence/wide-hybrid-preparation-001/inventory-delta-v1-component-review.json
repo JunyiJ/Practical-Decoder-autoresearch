@@ -1,0 +1,91 @@
+{
+  "adopted": false,
+  "base_commit": "2892c88e52052c85a23fe1a317e0f26f10ea2268",
+  "created_at": "2026-10-28T22:39:13.507881+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inventory-delta-v1-guard.json": "40efa403152df1e5528dc8c6ef3072452ed144b58cd57d62e9fd8bf33c786d6f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inventory-delta-v1-plan-guard.json": "c3ae924c8c7c218e73793a1ad3b34c8807b14d2b562dc93cf2f5a8237decfbad",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inventory-delta-v1-plan-tests.log": "4a2bcf9bca316afc770308d7091b0f09db1489b1d55be66bbed61753d5306f71",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inventory-delta-v1-tests.log": "c1daa56533b4903620b5cb5825fb344c62062e6867fae0ddfded296c03872bba",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inventory-delta-v1-known-plan-size.json": "2a8db4574ce3aaa6d690d2bf2521378ad40b90082b3a0c0f645b62ef27988f9d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inventory-delta-v1-prefix-census.json": "9064d5186398e789bc998d249ce6868ca25c859e77a06bf0348c60f8757c502c",
+    "src/research/tokenizer_wide_hybrid_inventory_delta.py": "f3a7b41dc8addf4ce343fae372f59dd1f3085ef11709c96c17ea2bc9bf02ad8e",
+    "src/research/tokenizer_wide_hybrid_plan_v2.py": "12088f8126784f053577eac7b24fd3b61def0ad31cefd018ae9de53d01bd1ebb",
+    "src/research/tokenizer_wide_hybrid_quality_rank_startup_v2.py": "1f91b83158acb89d692580e90db9b0637ea85aee31d6ba2c970f34a227d29cb6",
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "8d7ee6b52fe88eaf3db0fae206df36bb017799775e59b406c41803967256b4fe",
+    "src/research/tokenizer_wide_hybrid_retention_receipts.py": "d546930413e91ccb6b3505572873f4dd2a44fc3531e288bf521e294a6e5da697",
+    "tests/test_tokenizer_wide_hybrid_inventory_delta.py": "771da050145c56c39457c0847aac0f15a9437aa028b19857a8515a4acaad58bb",
+    "tests/test_tokenizer_wide_hybrid_quality_entry_v2.py": "7f401c6f9ead52a4dc46dbca8cfbfff96519ca853b2d260e9f24de7eee908cd7",
+    "tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py": "1d6ae9b88671523c59130ad30220c9c1f5aebf23b89b8f5d4df47afdd5657bbc"
+  },
+  "findings": [
+    "New immutable metadata may declare _inventory_encoding=wide_hybrid_inventory_delta_v1. It references an earlier immutable metadata document by path/SHA256 and stores exact sorted removals, changed/new rows, full row count and reconstructed inventory digest. Ordinary full-inventory JSON remains compatible. Encoding is lossless and grants no scientific, storage, cleanup or launch permission.",
+    "The document reader verifies both physical documents, campaign plan/context identity, canonical row bindings and deltas, full reconstructed count/hash, and the parent document again after expansion. It refuses symlink/traversal/nonmetadata bases, unknown versions, duplicate or redundant changes, invalid row sizes/hashes and bounded-reference violations. Limits are2048 rows,2MiB expanded inventory,16 reference levels and8MiB unique reference bytes; the existing4MiB per-document read limit also remains.",
+    "Quality readiness uses its exact startup inventory as a base. Rank startups use the retained final LR readiness inventory; delta removals describe the already separately audited LR cleanup. Actual cleanup receipts, all original hashes, live artifact/tensor checks and full future-capacity gates remain mandatory. No old evidence is rewritten, deleted or re-encoded. Higher-level readers continue to receive complete reconstructed inventories.",
+    "The prospective layout contract explicitly declares the wire version and all decoder limits. Rates, seeds, order, finite27 trajectories, per-group metadata caps, total256MiB metadata allocation and8GiB reserve are unchanged.",
+    "All135 codec/provenance/readiness/entry and six-rank serial tests passed in470.61s. After adding the explicit plan declaration,75 codec/plan tests passed in2.04s. Both CPU/disk guards finished normally; no test failures occurred in this iteration.",
+    "The measured disposable six-rank prefix uses1403111 metadata bytes versus1985851 in the previous compact-only fixture, a reduction of582740 bytes (29.34%). This measurement does not establish complete real-panel fit.",
+    "Read-only actual configuration generation enumerated the unchanged3 pilot and108 conditional quality options. Requests,201 source hashes,runtime and the declared layout alone serialize to355839 compact bytes at the recorded prospective path. This is a known-fields plan lower bound, not a frozen plan or a complete campaign projection."
+  ],
+  "free_bytes_observed": 30555967488,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_inventory_delta_v1_component_review",
+  "known_plan_fields_lower_bound_bytes": 355839,
+  "limitations": [
+    "Full campaign metadata still requires the actual complete frozen plan, numerical/input evidence, final rank selection/cleanup, nine fresh confirmations, inference/final records and transient publication overlap. The smaller synthetic prefix is not a launch fit proof.",
+    "Final rank selection/cleanup/cumulative history, fresh transitions and inference integration remain unfinished. Next implement their compact immutable receipts and exact complete metadata accounting before any freeze.",
+    "Actual nine rank-policy optimizer/update/resume/EMA cases, actual input trace and measured pilot memory/time/export/cache checks remain unresolved. The failed combined numerical fixture and all closed campaigns remain closed.",
+    "Only disposable synthetic fixtures and read-only config sizing ran. No real training/MPS, research checkpoint deletion, held-out test evaluation, paid compute or subagents. No research worker active at closure; campaign remains unfrozen."
+  ],
+  "status": "inventory_delta_integrated_full_campaign_metadata_unverified",
+  "synthetic_prefix": {
+    "cap_bytes": 2097152,
+    "current_meta_bytes": 1403111,
+    "previous_meta_bytes": 1985851,
+    "remaining_meta_bytes": 694041,
+    "saved_bytes": 582740
+  },
+  "validation": {
+    "integration": {
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 471.59179420862347,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 30540537856,
+          "peak_rss_bytes": 243892224
+        },
+        "pid": 6145,
+        "reason": null,
+        "status": "finished"
+      },
+      "passed": 135,
+      "seconds": 470.61
+    },
+    "layout_followup": {
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 2.375962625257671,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 120
+        },
+        "observation": {
+          "free_bytes": 30556160000,
+          "peak_rss_bytes": 236027904
+        },
+        "pid": 9014,
+        "reason": null,
+        "status": "finished"
+      },
+      "passed": 75,
+      "seconds": 2.04
+    }
+  }
+}

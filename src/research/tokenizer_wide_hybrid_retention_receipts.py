@@ -88,15 +88,25 @@ def planned_manifest(boundary, records, rates, selection, pairs, evidence):
                 retain=[e for e in entries if e['index'] in decision['retained_indices']])
 
 
-def _document(root, ref):
+def _document(root, ref, *, _stack=(), _loaded=None):
     if set(ref) != {'path', 'sha256'}:
         raise ValueError('Document requires independently bound path and hash')
+    from .tokenizer_wide_hybrid_inventory_delta import MARKER,MAX_DEPTH,MAX_CHAIN_BYTES,decode_inventory
+    identity=(ref['path'],ref['sha256'])
+    if identity in _stack or len(_stack)>=MAX_DEPTH:raise ValueError('Inventory reference chain depth/cycle refused')
+    if _loaded is None:_loaded={}
     path = _path(root, ref['path'])
     if not path.is_file() or path.stat().st_size > 4*1024**2:
         raise ValueError('Receipt document missing or exceeds 4MiB')
+    _loaded[identity]=path.stat().st_size
+    if sum(_loaded.values())>MAX_CHAIN_BYTES:raise ValueError('Inventory reference chain byte cap exceeded')
     _check_file(root, ref['path'], ref['sha256'])
     value = json.loads(path.read_text())
     _check_file(root, ref['path'], ref['sha256'])
+    if isinstance(value,dict) and MARKER in value:
+        if not ref['path'].startswith('meta/'):raise ValueError('Inventory encoding requires immutable metadata')
+        value=decode_inventory(value,lambda base:_document(root,base,_stack=(*_stack,identity),_loaded=_loaded))
+        _check_file(root,ref['path'],ref['sha256'])
     return value
 
 

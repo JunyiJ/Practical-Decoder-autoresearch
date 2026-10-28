@@ -43,9 +43,14 @@ def design():
 
 
 def layout_contract():
+    from . import tokenizer_wide_hybrid_inventory_delta as inventory
     return dict(version='wide_hybrid_metadata_v2',immutable_root='evidence',
         plan='evidence/meta/plan.json',mutable_root='control',emergency_root='emergency',
-        worker_lock='.lock',stop='STOP',metadata_groups=budgets())
+        worker_lock='.lock',stop='STOP',metadata_groups=budgets(),
+        inventory_wire=dict(version=inventory.VERSION,marker=inventory.MARKER,field='inventory',
+            full_documents_compatible=True,immutable_metadata_bases=True,
+            max_rows=inventory.MAX_ROWS,max_expanded_bytes=inventory.MAX_INVENTORY_BYTES,
+            max_reference_depth=inventory.MAX_DEPTH,max_reference_bytes=inventory.MAX_CHAIN_BYTES))
 
 
 def request_options(root):

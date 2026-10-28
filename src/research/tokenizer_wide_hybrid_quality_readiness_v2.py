@@ -128,7 +128,9 @@ def seal_quality_readiness(writer,slot,startup_ref):
             frozen_files=bound['files'],inventory=inventory,control_inventory=controls,guard=guard_ref,
             predispatch_review=checked,required_free_bytes=needed,output_limit_bytes=allowance,
             dispatch_authorized=False,deletion_authorized=False)
-        path=writer.publish_json('evidence/'+base+'.json',payload)
+        from .tokenizer_wide_hybrid_inventory_delta import encode_inventory
+        wire=encode_inventory(evidence,payload,startup_ref)
+        path=writer.publish_json('evidence/'+base+'.json',wire)
         return dict(path=base+'.json',sha256=file_digest(path))
     except BaseException as exc:
         try:writer.publish_json('evidence/'+base+'-failure.json',dict(kind=KIND,status='failed',slot=slot,
