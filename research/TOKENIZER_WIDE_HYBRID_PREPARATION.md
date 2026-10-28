@@ -1110,3 +1110,40 @@ complete controller/stage/cleanup-chain/inference integration, actual nine numer
 cases/input review and measured pilots remain outstanding.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/checkpoint-writer-v2-component-review.json`.
+
+## October 28 bounded v2 subprocess capture
+
+The prospective v2 subprocess helper captures merged binary stdout/stderr through
+a pipe in at most64KiB reads. It writes only the remaining declared log prefix
+through the bounded metadata writer, then fails and terminates the owned process
+group on overflow. This closes the direct-file overshoot behavior of the existing
+sampled v1 logger without modifying closed v1 controllers. Exact-cap output remains
+valid; an extra byte makes the attempt fail and cannot be silently truncated into
+a successful result.
+
+Launch and terminal reports are immutable exclusive evidence. Live process state
+uses bounded atomic replacement under control/. Any prior launch/log/report/control
+attempt blocks relaunch. Parent census and child checkpoint/metadata producers use
+the same namespace lock. Terminal output accounting includes the report's own
+bytes, with16KiB reserved before completion. Remaining campaign space is rechecked
+immediately before spawn; runtime checks preserve8GiB reserve, declared output/time
+bounds and STOP. Independent child RSS/MPS monitoring and frozen scientific gates
+remain mandatory. Arbitrary unconverted child writes are only sampled, so all
+intended worker producers must be integrated before a real launch.
+
+Validation:85 initial tests and279 broader tests passed (9.63seconds,
+peak RSS241,057,792bytes for the broader run). A subsequent PID-recording hardening
+for failure immediately after spawn passed all42 process tests in3.30seconds,
+peak RSS64,356,352bytes. All runs had180s/4GiB/8GiB outer guards. Tests include
+fast overflow, binary merged logs, inherited locks, EOF before exit, ignored
+SIGTERM, orphan descendants, parent interruption, failed diagnostics and no retry.
+A real tiny child wrote640 synthetic checkpoint bytes and metadata while the
+parent captured20 progress lines and observed a reconciled complete census.
+
+No trained model/corpus/MPS operation, research checkpoint deletion, freeze or
+failed numerical-fixture retry occurred. The helper is ready for future campaign
+controller integration; it is not a dispatcher. State/cache producers, complete
+controller/stage/cleanup-chain/inference wiring and all actual nine numerical/input
+reviews and measured pilots remain required.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/process-v2-component-review.json`.

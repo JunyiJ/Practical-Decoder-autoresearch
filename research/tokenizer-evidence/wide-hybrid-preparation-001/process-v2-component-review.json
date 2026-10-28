@@ -1,0 +1,65 @@
+{
+  "status": "bounded_v2_subprocess_capture_tested_no_campaign_dispatch",
+  "created_at": "2026-10-28T17:52:46.720156+00:00",
+  "files": {
+    "src/research/tokenizer_wide_hybrid_process_v2.py": "b42b25cd72c99ca14574424b70ea7939449570955f316758a963adbd22be07b1",
+    "tests/test_tokenizer_wide_hybrid_process_v2.py": "53d173971c2f62a9e1c1417f848b2655d4ac00f327ec5c1dd83087e6477d5e8a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-v2-final-guard.json": "d99026ef31bf8c757814365adb56d46173e553491fdf2eb5b7b4d40327ae8708",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-v2-final-tests.log": "cecccd5ff8c5439fdb2e3840792655e6842177876085e2d8f1d91772577bfc53",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-v2-guard.json": "c4dee6b0cfbff45e67994898cd87d34f2880b35942ffd8d75e10400c6dd98b0c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-v2-pipe-guard.json": "a1ecc8e5a320f8063fce6da89d34e0cd1f82fcfa272ee991a8c6350c03f93eed",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-v2-pipe-tests.log": "1c8bb17dfd9047df184dfb149973de0e61251bc3d56664523f0b9d0159c49aa6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-process-v2-tests.log": "f7491666854888aacff9017560bba29870e1f2d0383fa12f10d67d79d1e9704f"
+  },
+  "tests": {
+    "initial_passed": 85,
+    "broader_passed": 279,
+    "final_pipe_hardening_passed": 42
+  },
+  "broader_guard": {
+    "elapsed_seconds": 9.87775191757828,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30645551104,
+      "peak_rss_bytes": 241057792
+    },
+    "pid": 75487,
+    "reason": null,
+    "status": "finished"
+  },
+  "final_guard": {
+    "elapsed_seconds": 3.4382481249049306,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30666579968,
+      "peak_rss_bytes": 64356352
+    },
+    "pid": 75607,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30665568256,
+  "findings": [
+    "Existing v1 subprocess logging writes directly to a file and enforces the cap afterward. New v2 captures merged binary stdout/stderr through a pipe, reading at most65536bytes at once and persisting only the remaining allowed prefix. Overshoot fails the attempt and stops the owned process group.",
+    "Fresh immutable launch and terminal process documents use the bounded metadata writer. Live state is atomically replaced only under control/. Existing log/launch/report/control attempts block all relaunch. Terminal output accounting includes the report itself and reserves16384bytes before completion.",
+    "Actual global/campaign inherited locks and metadata namespace lock coordinate parent capture/census with a child using bounded checkpoint and metadata producers. The integration child writes only640 synthetic checkpoint bytes, not a trained model.",
+    "Full caller-supplied remaining-space preflight is checked again immediately before spawn. During execution reserve/output/time/STOP checks continue. RSS and MPS monitoring remain independent child responsibilities.",
+    "Tests cover exact log cap, fast overflow, binary stderr/stdout, EOF before process exit, nonzero exit, timeout/ignored SIGTERM, live descendants, parent interruption, immutable failed attempts, failed diagnostic publication, and pipe setup failure immediately after spawn.",
+    "Pipe setup now records PID immediately after successful Popen, before descriptor configuration, so failure evidence identifies the child that cleanup terminated. No v1 implementation was changed."
+  ],
+  "limitations": [
+    "No campaign launcher/CLI or scientific dispatch authorization is added. The future controller must bind frozen argv/request/source, full high-water budget and numerical/stage prerequisites; accepted pilot/quality profiles remain600/7200seconds with independent4GiB RSS/6GiB MPS driver guards.",
+    "Smaller test-only limits are accepted by this primitive; scientific acceptance independently requires exact frozen limits. The helper does not measure MPS memory.",
+    "Output from noncooperating arbitrary child file writes is sampled and can overshoot before termination. Every intended v2 child producer must use bounded writers. Pipe capture itself never persists bytes beyond the declared log cap.",
+    "A filesystem/metadata failure can prevent terminal diagnostic publication. Existing launch/log/control/partial evidence remains, the original exception propagates with publication errors, and relaunch is refused. No automatic repair or cleanup occurs.",
+    "Only tiny synthetic processes and files were used. No model/corpus/MPS run, retained research checkpoint deletion, plan freeze or failed numerical-fixture retry occurred. Real nine numerical cases/input review, measured pilots, full controller/stage/cleanup/inference wiring and remaining state/cache producer integration are outstanding."
+  ]
+}
