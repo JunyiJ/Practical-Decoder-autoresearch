@@ -1,0 +1,52 @@
+{
+  "status": "opt_in_training_export_outputs_tested_synthetic_cpu_only",
+  "created_at": "2026-10-28T18:10:46.261149+00:00",
+  "files": {
+    "src/train/train.py": "991d6fee3b969a69c4c19fa235dc8e2d8423e51500596fdc7cc850789cc33cb2",
+    "src/train/weight_averaging.py": "a2ffa1acff302190065fddb53db1dc234ab8ec5c71f929128459cda3059fbf20",
+    "src/utils/checkpoint.py": "05d2a9b8b0f1d08a2017e551e86c66bafb4c297e1e73f13bf50e734e552c6a6f",
+    "src/research/tokenizer_wide_hybrid_training_outputs.py": "50d5d915d0871384b1b11ca36a3eb266fe07d6ea9add5390b7f4180c2a97ff4a",
+    "tests/test_tokenizer_wide_hybrid_training_outputs.py": "8c84961271d6abe9b1e5ca6d0414c313047a2d3fa4383d8201fdefa879a9b5b9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-training-outputs-v2-final-guard.json": "619e98fa8c97341acd074468aa67ee1eaa5869367b1316159d05dd2ed7733f09",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-training-outputs-v2-final-tests.log": "f3b2a5b1f49a98a74f3f8d97da22a031e9d9dc0160cac3c7571b9b47d4d82be4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-training-outputs-v2-guard.json": "d46688572251330e74b42109458eecba9ff9ff289d3074bf7e30af26f294b73b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-training-outputs-v2-reviewed-guard.json": "89283c458f62c45cb4bc2d2971e327b95f51f8b6f88815e888d2be273fe044c1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-training-outputs-v2-reviewed-tests.log": "46f53645c147be9d82cb3796ee096b24e45132e79a3da824d64f3c6b26dd3a39",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-training-outputs-v2-tests.log": "f12b7c8f9446be14092fa1f8a62086ba5c786384eab5a04faacda5244ab4a5fc"
+  },
+  "tests": {
+    "initial_passed": 106,
+    "expanded_passed": 173,
+    "expanded_failed": 1,
+    "reviewed_passed": 174
+  },
+  "reviewed_guard": {
+    "elapsed_seconds": 4.116176292300224,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 30647033856,
+      "peak_rss_bytes": 330317824
+    },
+    "pid": 76394,
+    "reason": null,
+    "status": "finished"
+  },
+  "free_bytes_observed": 30647173120,
+  "findings": [
+    "Opt-in training, checkpoint payload and H200 export output hooks preserve default behavior and payload schemas. V2 sink validates exact bound configuration and fresh final-only output paths before seed, loader or model creation.",
+    "Raw and H200 serialization uses the slot checkpoint writer; metrics and summary use bounded metadata writes. The sink requires raw completion before summary/export, exact raw parent path/hash, inference-only H200 payload, ordered finite JSON metrics and matching summary. Caught producer errors remain terminal; attempt/failure/partial evidence prevents retry.",
+    "The explicit H200 exporter hashes in 1MiB chunks after publication rather than allocating the complete archive solely for hashing.",
+    "Two-update width8 synthetic CPU training compared default and opt-in outputs: exact model, optimizer, torch RNG, loader RNG, stored EMA and exported model tensors. Only synthetic train/validation batches used; no test split accessed.",
+    "Expanded failure tests initially had one mislabeled fixture field: optimizer instead of the actual optimizer_state. Corrected test now verifies actual optimizer-state rejection. The failed log and guard are retained; this was not a research run or resource-guard failure."
+  ],
+  "limitations": [
+    "No wider numerical optimizer/update/resume/EMA case, real tokenizer corpus training or MPS pilot ran. Synthetic parity is not model-quality, performance or wider feasibility evidence.",
+    "The caller must still bind the frozen campaign/configuration/allowance, full future storage, inherited locks, numerical/input prerequisites and independent600s/4GiB/6GiB/8GiB pilot guard. This component is not a launcher or complete worker.",
+    "Existing EMA derivation still loads and constructs CPU state; its full wider memory feasibility remains unresolved. Streaming serialization/hash does not establish an instantaneous memory bound.",
+    "Explicit v2 pilot worker, validation/result/sample producers, complete controller/stage/cleanup-chain/inference wiring and actual numerical/input/measured-pilot prerequisites remain. No scientific rule, checkpoint retention guard, closed controller or failed numerical fixture was changed or retried."
+  ]
+}

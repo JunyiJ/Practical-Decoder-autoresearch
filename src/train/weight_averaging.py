@@ -188,20 +188,32 @@ def derived_checkpoint_payload(parent_path, half_life):
     return payload
 
 
-def export_averaged_checkpoint(parent_path, output_path, half_life):
+def export_averaged_checkpoint(parent_path, output_path, half_life, *, payload_writer=None):
     """Publish a new inference-only derivation, refusing any existing output."""
     import hashlib
     import os
     from pathlib import Path
+    if payload_writer is not None and not callable(payload_writer):
+        raise TypeError('Averaging payload writer must be callable')
     parent, output = Path(parent_path).resolve(), Path(output_path).resolve()
     if parent == output or output.exists():
         raise ValueError('Averaged checkpoint must have a new output path')
     payload = derived_checkpoint_payload(parent, half_life)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    temporary = output.with_suffix(output.suffix + '.tmp')
-    with temporary.open('xb') as stream:
-        torch.save(payload, stream)
-    os.link(temporary, output)
-    temporary.unlink()
-    return dict(checkpoint=str(output), checkpoint_sha256=hashlib.sha256(output.read_bytes()).hexdigest(),
+    if payload_writer is None:
+        output.parent.mkdir(parents=True, exist_ok=True)
+        temporary = output.with_suffix(output.suffix + '.tmp')
+        with temporary.open('xb') as stream:
+            torch.save(payload, stream)
+        os.link(temporary, output)
+        temporary.unlink()
+        output_sha=hashlib.sha256(output.read_bytes()).hexdigest()
+    else:
+        payload_writer(output,payload)
+        # The explicit bounded producer must not be followed by a whole-file
+        # read_bytes allocation merely to hash its completed archive.
+        hasher=hashlib.sha256()
+        with output.open('rb') as stream:
+            for chunk in iter(lambda:stream.read(1024**2),b''):hasher.update(chunk)
+        output_sha=hasher.hexdigest()
+    return dict(checkpoint=str(output), checkpoint_sha256=output_sha,
                 parent_checkpoint=payload['parent_checkpoint'], averaged_weights=payload['averaged_weights'])

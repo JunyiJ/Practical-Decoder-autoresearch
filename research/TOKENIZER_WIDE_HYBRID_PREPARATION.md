@@ -1181,3 +1181,32 @@ launch. No research weights were deleted, no plan was frozen and no closed run o
 failed numerical fixture was retried.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-cache-v2-component-review.json`.
+
+## October 28 bounded training and export outputs
+
+Training and H200 export now accept explicit output hooks. The v2 sink binds the
+exact configuration and canonical slot paths before loader/model creation, allows
+only fresh fixed-budget final-only training, and routes checkpoint serialization,
+metrics and summary through the bounded writers. It requires exact raw-parent
+lineage for H200, matching summary/metrics, and a complete raw/export sequence.
+Attempt/failure records prevent retry, including when a caller catches a producer
+exception. Existing default output behavior and training math remain unchanged.
+The explicit export path hashes in1MiB chunks rather than reading the entire
+archive solely to compute its digest; full wider export memory is still unproven.
+
+Validation:106 initial tests passed. Expanded tests had173 passes and one fixture
+error (the test supplied `optimizer` instead of the actual `optimizer_state`);
+the failed log is retained. After correcting that test,174 checks passed in3.86s,
+peak RSS330,317,824bytes under180s/4GiB/8GiB outer guards. Two-update width8
+synthetic CPU training produced exactly matching default/opt-in model, optimizer,
+RNG, stored EMA and exported model tensors. Failure tests cover changed lineage,
+partial serialization, inconsistent summaries, invalid configs, no fallback and
+no retry. These checks do not satisfy the nine wider numerical prerequisites.
+
+Next compose the explicit v2 pilot worker with frozen identity, resource recording,
+validation/result/sample writers and cache review, then complete controller,
+stage/cleanup-chain and inference acceptance. Actual numerical/input reviews and
+measured MPS pilots remain outstanding. No corpus training, research checkpoint
+deletion, plan freeze or failed numerical-fixture retry occurred.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/training-outputs-v2-component-review.json`.

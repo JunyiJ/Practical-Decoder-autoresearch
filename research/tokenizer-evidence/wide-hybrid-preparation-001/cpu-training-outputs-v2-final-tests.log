@@ -1,0 +1,21 @@
+......................F................................................. [ 41%]
+........................................................................ [ 82%]
+..............................                                           [100%]
+=================================== FAILURES ===================================
+______ test_export_lineage_failure_retains_raw_without_export[optimizer] _______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x1118a53b0>
+cfg = {'data': {'path': '/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/training-output-synthetic-myna9do8/test_ex...weight_averaging': {'kind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}}}
+bad = 'optimizer'
+
+    @pytest.mark.parametrize('bad',['parent_hash','parent_path','half_life','optimizer','training_state','raw_changed'])
+    def test_export_lineage_failure_retains_raw_without_export(writer,cfg,bad):
+        outputs=sink(writer,cfg)
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_tokenizer_wide_hybrid_training_outputs.py:168: Failed
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_training_outputs.py::test_export_lineage_failure_retains_raw_without_export[optimizer]
+1 failed, 173 passed in 3.84s

@@ -268,7 +268,9 @@ def evaluate_checkpoint(cfg: DictConfig, checkpoint_path: str | Path,
     }
 
 
-def run_training(cfg: DictConfig) -> dict:
+def run_training(cfg: DictConfig, *, output_sink=None) -> dict:
+    if output_sink is not None:
+        output_sink.validate_config(cfg)
     eval_every = int(getattr(cfg.training, "eval_every", 400))
     eval_iters = int(getattr(cfg.training, "eval_iters", 100))
     if eval_every < 1:
@@ -296,7 +298,7 @@ def run_training(cfg: DictConfig) -> dict:
     weight_averages = TailWeightAverages(model, cfg.training)
     checkpoint_dir = to_absolute_path(cfg.training.checkpoint_dir) if cfg.training.checkpoint_dir else None
     checkpoint_every = cfg.training.checkpoint_every
-    if checkpoint_dir:
+    if checkpoint_dir and output_sink is None:
         Path(checkpoint_dir).mkdir(parents=True, exist_ok=True)
     log.info("Starting training: %s + %s on %s", cfg.model.attn_type, cfg.model.mlp_type, device)
 
@@ -333,7 +335,8 @@ def run_training(cfg: DictConfig) -> dict:
         if weight_averages.spec is not None:
             state['weight_averaging_state'] = weight_averages.state_dict()
         save_checkpoint(path, model, optimizer=optimizer, step=completed_steps,
-                        cfg=cfg, training_state=state)
+                        cfg=cfg, training_state=state,
+                        **({"payload_writer": output_sink.checkpoint} if output_sink is not None else {}))
 
     if str(device).startswith('cuda'):
         torch.cuda.reset_peak_memory_stats(device)
@@ -491,7 +494,10 @@ def run_training(cfg: DictConfig) -> dict:
                     best_checkpoint_path = str(Path(checkpoint_dir) / f"best_{completed_steps:06d}_{time.time_ns()}.pt")
                     save_run(best_checkpoint_path)
             if metrics_path is not None:
-                _append_metric(metrics_path, metric)
+                if output_sink is None:
+                    _append_metric(metrics_path, metric)
+                else:
+                    output_sink.metric(metrics_path, metric)
         if checkpoint_dir and checkpoint_every > 0 and completed_steps % checkpoint_every == 0:
             ckpt_path = Path(checkpoint_dir) / f"step_{completed_steps:06d}_{time.time_ns()}.pt"
             save_run(ckpt_path)
@@ -522,9 +528,12 @@ def run_training(cfg: DictConfig) -> dict:
         result['weight_averaging'] = dict(spec=weight_averages.spec,
             completed_steps=weight_averages.completed_steps, snapshots=weight_averages.snapshots)
     if summary_path is not None:
-        summary_path.parent.mkdir(parents=True, exist_ok=True)
-        with summary_path.open("w", encoding="utf-8") as fh:
-            json.dump(result, fh, indent=2, sort_keys=True)
+        if output_sink is None:
+            summary_path.parent.mkdir(parents=True, exist_ok=True)
+            with summary_path.open("w", encoding="utf-8") as fh:
+                json.dump(result, fh, indent=2, sort_keys=True)
+        else:
+            output_sink.summary(summary_path, result)
     return result
 
 

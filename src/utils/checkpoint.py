@@ -14,7 +14,10 @@ def save_checkpoint(
     step: Optional[int] = None,
     cfg: Optional[Any] = None,
     training_state: Optional[dict] = None,
+    *, payload_writer=None,
 ) -> None:
+    if payload_writer is not None and not callable(payload_writer):
+        raise TypeError("Checkpoint payload writer must be callable")
     ckpt_path = Path(path)
     ckpt = {"model_state": model.state_dict(), "model_math_version": 2, "parameter_layout_version": 2}
     if training_state is not None:
@@ -31,6 +34,9 @@ def save_checkpoint(
         except Exception:
             ckpt["cfg"] = cfg
 
+    if payload_writer is not None:
+        payload_writer(ckpt_path, ckpt)
+        return
     ckpt_path.parent.mkdir(parents=True, exist_ok=True)
     temporary = ckpt_path.with_suffix(ckpt_path.suffix + ".tmp")
     torch.save(ckpt, temporary)
