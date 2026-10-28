@@ -1602,3 +1602,37 @@ The campaign stays unfrozen; no research training, MPS launch, checkpoint
 deletion, failed-numerical retry or holdout access occurred.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-lr-startup-v2-component-review.json`.
+
+
+## October 28 later LR predispatch revalidation
+
+A read-only predispatch verifier now checks the later-LR preparation receipt,
+request, immutable attempt, completed guard, frozen source/context, pilot cleanup
+history and all completed LR member audits again. The prefix API can explicitly
+permit the exact next frozen request as its only pending-slot file; its default
+remains strict. The pending slot gains no completion or checkpoint credit. Any
+new process files, weights, later slots, failed/partial artifacts or changed
+evidence block handoff.
+
+Storage is reconstructed from current, unique checkpoint inodes and allocated
+capacity plus the complete remaining-panel projection. Claimed storage totals
+and selected rates cannot substitute for this calculation. Actual free bytes are
+checked twice, including after the final source/inventory review. Shared worker
+lock descriptors are checked on entry and immediately before return. This idle
+check does not authorize dispatch or implement child entry.
+
+Validation:207 tests passed initially; after adding explicit lock rechecks, all
+209 tests passed in70.45s. The final guard observed peak RSS239,828,992bytes under
+180s/4GiB/8GiB limits, with the original disk-reading function captured before
+pytest. Tests preserve inputs on success/failure and reject altered storage
+claims, changed records/pairs/guards, active pending slots, exact-threshold
+shortfalls, late space loss and invalid locks. Scientific/model/MPS evidence is
+synthetic; this is controller preparation only.
+
+Next implement exact guarded child handoff and parent dispatch/postprocess
+acceptance, then persisted LR/rank selection transitions, boundary cleanup and
+inference. Actual numerical/input and measured-pilot prerequisites remain
+unresolved. No research launch, deletion, failed-numerical retry or holdout use
+occurred. The27-trajectory campaign remains unfrozen.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/quality-lr-predispatch-v2-component-review.json`.

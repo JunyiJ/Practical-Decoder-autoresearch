@@ -80,13 +80,16 @@ def bind_quality_stage(root, *, training_token_sha256, **kwargs):
 
 
 
-def bind_lr_prefix(root,*,context,requests,evidence,numerical_ref,projection_ref,training_token_sha256):
+def bind_lr_prefix(root,*,context,requests,evidence,numerical_ref,projection_ref,training_token_sha256,
+                   pending_request=None):
     """Review every member of a nonempty LR prefix before its next trial.
 
     The caller supplies independent frozen requests and complete immutable
     evidence, holds worker locks and an outer resource guard. Pilot history,
     frozen-plan readiness, storage and process handoff remain separate gates.
     No rate selection or cleanup manifest is produced, even after all nine screens.
+    Optional pending_request permits only the exact next frozen request file;
+    it grants that slot no completed-record, checkpoint or process credit.
     """
     root=Path(root).resolve();_sha(training_token_sha256)
     _require(isinstance(requests,list) and 1<=len(requests)<=9,'Nonempty ordered LR prefix required')
@@ -94,6 +97,17 @@ def bind_lr_prefix(root,*,context,requests,evidence,numerical_ref,projection_ref
              'Independent frozen provenance required')
     for sha in context.values():_sha(sha)
     quality=_path(root,'quality');expected={f'{i:02d}' for i in range(len(requests))}
+    if pending_request is not None:
+        i=len(requests)
+        _require(i<9 and isinstance(pending_request,dict),'Pending request must be another LR screen')
+        stem=f'quality/{i:02d}';name=stem+'/request.json';trial=_path(root,stem)
+        _require(digest(pending_request.get('spec'))==digest(rules.lr_specs()[i])
+                 and pending_request.get('result_path')==str(root/stem/'result.json'),
+                 'Pending frozen LR request/order differs')
+        _require(trial.is_dir() and {p.name for p in trial.iterdir()}=={'request.json'}
+                 and name in evidence and digest(_document(root,dict(path=name,sha256=evidence[name])))==digest(pending_request),
+                 'Only the exact pending LR request may follow the completed prefix')
+        expected.add(f'{i:02d}')
     _require(quality.is_dir() and {p.name for p in quality.iterdir()}==expected
              and all(p.is_dir() and not p.is_symlink() for p in quality.iterdir()),
              'Quality directory must equal the completed LR prefix')

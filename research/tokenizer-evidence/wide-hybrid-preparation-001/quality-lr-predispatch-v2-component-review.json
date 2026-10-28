@@ -1,0 +1,76 @@
+{
+  "adopted": false,
+  "created_at": "2026-10-28T19:48:32.547222+00:00",
+  "current_storage_observation_authorizes_launch": false,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-predispatch-v2-final-guard.json": "b13d9d746687d3377861e7fbaa80e4adcb97546082c4b4d648c0ea040f88cbac",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-predispatch-v2-final-tests.log": "cb2889ca3272300a20d055a25a986e16de488c309f66936584f629a5381b7397",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-predispatch-v2-guard.json": "afa4a7a1ea868ef87c10a19eead07c50511afb427d42e1fbe98f5b2923f2aab8",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-predispatch-v2-tests.log": "322926dd2407d2237b198f76dceb184c42d1fd2f871b8410c67ee4b24cb402c7",
+    "src/research/tokenizer_wide_hybrid_quality_audit_v2.py": "b3fc6530085f4edec87fbc70e8d5da1c9845960c68d951d26a18fb5320ae4e93",
+    "src/research/tokenizer_wide_hybrid_quality_lr_startup_v2.py": "297b42126dd8f8b36f30b56d299c8b8968c6f27feb4b31b09add9082833a0272",
+    "tests/test_tokenizer_wide_hybrid_quality_lr_predispatch_v2.py": "3074dd4661e6142200d1b33026c9b69e2d44c5bf0ff966501b1bdd26cf468e09"
+  },
+  "findings": [
+    "Read-only later-LR predispatch verifies exact startup/request/attempt/guard references, frozen context and source, historical pilot receipts and every prior LR producer/tensor/resource/result audit. Pending slots may contain only the independently frozen next request, never process files or checkpoints.",
+    "Optional pending-request support leaves the strict prefix API default unchanged. The pending request receives no completed-record, checkpoint, selection, cleanup or dispatch credit. Completed LR records and pairs are independently reconstructed and must match the startup receipt.",
+    "Live checkpoint inodes, logical sizes, allocated capacity and exact census are checked against immutable bindings. Full remaining-panel storage is recomputed, rather than trusting claimed required-free or occupied totals. Actual free bytes are checked before and after the final provenance/inventory review.",
+    "Worker lock descriptors are checked on entry and immediately before handoff; stale or aliased descriptors reject. Final209 tests passed, including later startup, prefix, full quality producer and storage regressions, exact threshold/one-byte shortage, changed receipts and final free-space loss. Inputs remain unchanged on successful and failed read-only checks."
+  ],
+  "free_bytes_observed": 30623535104,
+  "guard_observation": "Original disk_usage function captured before pytest; actual CPU RSS and disk samples with180s/4GiB/8GiB limits.",
+  "guards": [
+    {
+      "elapsed_seconds": 67.80681891739368,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30626578432,
+        "peak_rss_bytes": 240205824
+      },
+      "pid": 82601,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "elapsed_seconds": 71.45958733279258,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 30623477760,
+        "peak_rss_bytes": 239828992
+      },
+      "pid": 83050,
+      "reason": null,
+      "status": "finished"
+    }
+  ],
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_later_lr_predispatch_v2_component_review",
+  "limitations": [
+    "Transition fixtures use synthetic numerical/model/MPS evidence and mocked frozen-plan bindings. They exercise real bounded writers/locks, cleanup receipts, member review and storage arithmetic; only disposable fixture pilot weights are removed during setup. No research checkpoint deletion occurred.",
+    "This API is an idle predispatch verifier, not a child-entry gate or dispatch authorization. Exact process handoff, parent/child guards and postprocess receipt acceptance remain unfinished, followed by LR/rank selection transitions, cleanup and inference.",
+    "The real nine rank-policy optimizer/update/resume/EMA/input and measured-pilot prerequisites remain unresolved. No research training or MPS launch, failed combined numerical retry, closed-controller rerun, quality claim or test-holdout access occurred. The27-trajectory campaign remains unfrozen."
+  ],
+  "status": "synthetic_predispatch_tests_passed_campaign_unfrozen",
+  "validation": [
+    {
+      "failed": 0,
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-predispatch-v2-tests.log",
+      "passed": 207,
+      "seconds": 66.75
+    },
+    {
+      "failed": 0,
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-quality-lr-predispatch-v2-final-tests.log",
+      "passed": 209,
+      "seconds": 70.45
+    }
+  ]
+}
