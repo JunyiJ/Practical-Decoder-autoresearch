@@ -1,0 +1,50 @@
+{
+  "status": "mocked_serial_pilot_integration_tested_not_launch_ready",
+  "at": "2026-10-28T07:51:59.518218+00:00",
+  "checks": 38,
+  "new_checks": 20,
+  "regression_checks": 18,
+  "initial_checks": 35,
+  "guard": {
+    "elapsed_seconds": 3.73044874984771,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17617412096,
+      "peak_rss_bytes": 230768640
+    },
+    "pid": 56671,
+    "reason": null,
+    "status": "finished"
+  },
+  "scope": [
+    "Three serial pilots through inline mocked worker with real inherited lock identities",
+    "Full remaining quality and pilot allocation before each dispatch; per-trial cap and reserve",
+    "Frozen input identity checked before common training worker",
+    "Raw/H200 metadata, tensor/cache report and guard receipt review before next pilot",
+    "Failure at each pilot, STOP boundary/afterlast, changed prior evidence, lock contention and no reentry"
+  ],
+  "real_training_or_mps_worker_dispatched": false,
+  "real_research_checkpoint_or_corpus_loaded": false,
+  "campaign_plan_frozen": false,
+  "failed_continuation_retry": false,
+  "limitations": [
+    "Integration mocks training, data reconstruction, prerequisite gate, tensor/cache audit and memory watchdog",
+    "Separate process tests use tiny Python children; no real MPS training/export path verified",
+    "No complete numerical review or fitted frozen plan exists",
+    "Pilot completion remains pending resource/numerical review, not permission to dispatch quality"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_pilot.py": "1ed5482e9a5dcc76cbdd28e54d6852a5b3a976b184de1d5b469ae520b8078a93",
+    "tests/test_tokenizer_wide_hybrid_pilot.py": "b6adab694e7bcabe163402ad1c94616b1e96cab85603a3941ba4add85269fa08",
+    "src/research/tokenizer_serial_process.py": "6a4dd8679747a94fd2e58b9f0592011f881a5c8cb2b8394b89adcd79ddb683c3",
+    "tests/test_tokenizer_serial_process.py": "485c56f12a80a2abde66c086916e6ec4f8dd0e7192c0b021a2332e8dc9bab2a2",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-integration-tests.log": "38e1c727016d9aa5ebfb22341cf52daae933194adca4763484f13532d482166a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-integration-guard.json": "e382b638238a130a5c3377e3ea8f79dc5d8fad4092bb87af68bda1038dd4b172",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-integration-final-tests.log": "fa6dedd81acef733d8617dce4ea26dcbbe8a4d45a6694284bc15c4bc0ce5b582",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-pilot-integration-final-guard.json": "7f0fc07847ed0d3af6a6890c156695122d985c11372a79bc107833eda71b87eb"
+  }
+}

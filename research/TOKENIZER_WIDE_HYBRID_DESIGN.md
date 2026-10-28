@@ -316,3 +316,13 @@ allocator observations separately from unmeasured peaks. The prospective helper
 rechecks all artifact/data hashes and stops after failures; it does not replace
 locks, watchdogs, full-panel fit or a passing numerical prerequisite review.
 Its mocked/tiny CPU tests do not establish real MPS correctness.
+
+The prospective serial pilot integration now enforces the frozen gate, inherited
+locks, no reentry, full remaining-panel reservation, per-trial and aggregate
+output caps,600s timeout and existing4GiB RSS/6GiB driver/8GiB reserve limits.
+The parent reviews metadata, tensor/cache receipts and guard observations before
+the next pilot, retaining and rechecking evidence. STOP/failures prevent further
+dispatch. Even all three completed pilots produce only a pending-review state;
+a separate reviewed resource/numerical prerequisite is required for quality.
+Only mocked/tiny-process integration has passed. No real plan has been frozen
+and no real MPS worker has been verified or launched in this preparation.

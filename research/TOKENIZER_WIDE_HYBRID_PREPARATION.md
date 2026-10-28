@@ -578,3 +578,43 @@ full-panel fit and resource watchdogs. Actual MPS cache correctness and peak
 memory, numerical prerequisites and resource reviews remain unresolved. Next
 preparation is the serial pilot worker/controller joining these components.
 No failed-guard retry, cleanup, closed-controller run or holdout access occurred.
+
+## Guarded serial pilot integration preparation
+
+The new pilot worker/controller connects the frozen prerequisite gate, exact
+three requests, common training/export/validation worker, raw/H200 tensor/cache
+audit and saved-result review. It requires inherited global/study lock identities
+and a matching active parent prefix, rejects existing attempts, checks frozen
+tokenizer/training IDs before training and preserves failures. Every dispatch
+reserves all remaining quality trajectories plus remaining pilots and metadata
+above8GiB. Per-pilot output caps and the aggregate pilot allocation are checked.
+A600s parent timeout covers worker startup, training, validation/export and audits;
+a worker CPU RSS/disk/time guard and the common training worker's4GiB RSS/6GiB
+MPS-driver watchdog apply. Sampled guards do not establish instantaneous peaks.
+
+Before the next family, the parent rechecks raw/H200 metadata, tensor/export
+receipts, both endpoint/batch cache checks, projected parameters/state, observed
+allocator limits and successful guard records. It retains hash-bound requests,
+results, checkpoints, audit reports, worker/guard/process journals and logs.
+Earlier evidence and frozen provenance are checked again before later dispatch.
+STOP at a boundary prevents later pilots; STOP after the last child prevents
+final completion. Completion remains pending resource and numerical review,
+never a passing pilot prerequisite or automatic quality launch. No prepare/freeze
+or resume CLI was added; only the guarded worker entry exists.
+
+Twenty new mocked integration checks plus18 tiny-process regressions passed
+(38 final checks,3.59s; peak test-parent RSS230,768,640bytes). An initial35-check
+run also passed and is retained. Integration invokes workers inline with real
+lock files and mocked training/data/prerequisite/tensor/cache/guard components;
+separate subprocess tests use tiny Python children. Checks cover each-pilot
+failure, corrupted guard/cache/token/geometry/EMA/file receipts, prior-evidence
+changes, full-panel space, metadata cap, missing prerequisites, global lock
+contention, inherited-lock identity, input mismatch before training and no reentry.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/pilot-integration-review.json`.
+No actual model, research corpus, checkpoint or MPS worker ran. All test children
+exited. Real integrated training/export/cache behavior and peak resource costs
+remain unverified; no complete nine-case numerical review or fitted frozen plan
+exists. The failed combined continuation fixture remains closed. Next work is
+reviewing the integrated path and exact outstanding numerical/resource evidence
+without failed-guard retry, partial launch, cleanup or holdout access.
