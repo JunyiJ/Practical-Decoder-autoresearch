@@ -257,3 +257,22 @@ Frozen screening choice: LR0.0025. Confirmation results cannot change this choic
 
 Single-seed signs are preliminary. The controller remains serial, the source
 and data contract are frozen, and test loss remains closed.
+
+## October 28 proactive retention update
+
+The human authorized non-critical checkpoint cleanup going forward. Cleanup002
+removed 42 files from successful closed pilots and losing table/wide screens,
+freeing 13,438,900,670 logical bytes (12.516 GiB). All 148 other tokenizer weights,
+including selected screens and all fresh confirmation raw/H200 pairs, and 659
+non-checkpoint run files were hash-verified unchanged. Metrics, failures and
+original audits remain; deleted weights cannot be reloaded or audited again.
+See `tokenizer-evidence/checkpoint-cleanup-002/README.md` and `manifest.json`.
+
+Prospective audited stage-boundary retention reduces the complete 27-trajectory
+width512 hybrid high-water storage requirement to 30,631,281,412 bytes (28.5276
+GiB), with 8 GiB reserve and 256 MiB round metadata. This fits the post-cleanup
+observation of about 28.984 GiB, subject to rechecking current disk. This is a
+retention/accounting change only; no new quality evidence or launch. Versioned
+retention-aware runners and outstanding numerical/pilot checks still precede
+freeze. Follow `TOKENIZER_CHECKPOINT_RETENTION.md`; the current v1 storage guards
+remain intact. Historical closed controllers and the failed CPU fixture stay closed.

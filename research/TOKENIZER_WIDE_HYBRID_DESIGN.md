@@ -340,3 +340,21 @@ fresh quality gates and audits remain mandatory. See the preparation record and
 `tokenizer-evidence/wide-hybrid-preparation-001/readiness-review-001.json` for
 coverage limits: seven-token CPU cache evidence and meta optimizer construction
 do not establish the missing nine-case rank-policy optimizer/resume/EMA review.
+
+## October 28 retention amendment before freeze
+
+The human authorized proactive non-critical checkpoint cleanup. The 27-trial
+scientific design above remains unchanged. Replace the proposed retain-everything
+lifetime with audited boundary retention: after pilot review prune three pilot
+pairs; after all LR audits and saved per-family LR selection prune six losing
+pairs; after rank audits and saved final selection prune six losing pairs from
+the three anchors plus six probes. Retain three final selected screens and all
+nine fresh confirmation pairs. All non-checkpoint evidence and failures remain.
+
+Follow TOKENIZER_CHECKPOINT_RETENTION.md. The new prospective high-water budget is
+30,631,281,412 bytes including 256 MiB round metadata/logs and 8 GiB reserve; see
+`tokenizer-evidence/checkpoint-cleanup-002/prospective-retention-projection.json`.
+This is not a frozen executable amendment. Existing v1 guards remain intact;
+versioned retention-aware runners, immutable deletion receipts, stage audits,
+complete future high-water checks and tests are required before freeze/launch.
+No quality/memory threshold or trial/rate/seed/order/selection rule changes.

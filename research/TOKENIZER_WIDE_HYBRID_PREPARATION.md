@@ -658,3 +658,31 @@ Full accounting remains57,224,879,357bytes including the8GiB reserve, versus
 about16.40GiB observed free. No plan was frozen or trial launched. Actual
 numerical prerequisites, full storage fit, measured pilot resource review and
 final provenance/fresh-seed freeze remain required before the quality panel.
+
+## October 28 human-authorized storage policy change
+
+The human explicitly authorized cleaning non-critical checkpoint weights moving
+forward instead of silently remaining blocked. The earlier prohibition on further
+cleanup/external-storage-only resolution is superseded by
+[TOKENIZER_CHECKPOINT_RETENTION.md](TOKENIZER_CHECKPOINT_RETENTION.md). Other
+stopping, numerical, quality, data and resource constraints remain unchanged.
+Cleanup002 removes successful closed pilots and unselected table/wide screens;
+all selected screens and all fresh confirmation raw/H200 pairs remain protected.
+
+A new prospective full-panel accounting retains three final selected screen pairs
+and all nine fresh confirmation pairs, while pruning audited pilot weights and
+losing screens only at completed stage boundaries. It enumerates all 27 possible
+final rank selections, uses the original per-trajectory allowances, increases the
+round metadata/log allocation to 256 MiB, and preserves the 8 GiB reserve. See
+`tokenizer-evidence/checkpoint-cleanup-002/prospective-retention-projection.json`.
+Its complete campaign high-water requirement is 30,631,281,412 bytes (28.5276 GiB),
+compared with the prior all-retained requirement of 57,224,879,357 bytes.
+
+This changes retention, not the 27 trajectories, rates, seeds, order, rank/CE
+selection or adoption gates. The current v1 runners still require all weights to
+exist and cannot execute this retention design. Next work is a versioned,
+manifest-aware retention contract with tested stage-boundary audits/pruning and
+full future high-water checks; no fake passing reviews or bypass of current guards.
+Nine-case numerical prerequisites and actual pilot resource reviews still remain,
+and the failed combined continuation fixture remains closed. No training has been
+launched by this cleanup or accounting change.

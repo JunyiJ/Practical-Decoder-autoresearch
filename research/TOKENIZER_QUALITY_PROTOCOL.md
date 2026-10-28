@@ -115,3 +115,13 @@ add `--pilot` for the pilot plan. Then `run --output <path>`; `status` is read-o
 Generated plans and raw evidence live under ignored `research_runs/`; reviewed
 results and portable metadata are checked into Git. Checkpoint backups require
 separate storage; no binary training checkpoints are pushed to GitHub.
+
+## October 28 prospective checkpoint-retention update
+
+The human now authorizes proactive deletion of reviewed non-critical checkpoint
+weights. Follow [TOKENIZER_CHECKPOINT_RETENTION.md](TOKENIZER_CHECKPOINT_RETENTION.md).
+This supersedes blanket checkpoint retention for successful audited pilots and
+saved-selection losing screens. Preserve selected recipes, every fresh confirmation
+pair, failures, all non-checkpoint evidence and the closed test. New unfrozen
+panels may use tested, prospectively frozen stage-boundary retention and full
+campaign high-water accounting; never bypass an existing frozen storage guard.
