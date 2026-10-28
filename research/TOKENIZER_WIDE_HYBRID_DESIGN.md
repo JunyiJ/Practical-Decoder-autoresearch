@@ -116,6 +116,13 @@ The module does not validate saved tokenizer/config/checkpoint identity, dispatc
 workers, audit artifacts or adopt recipes. Those remain mandatory integration
 steps. The draft is still unfrozen and no real quality records were analyzed.
 
+The separate saved-score adapter now checks independently expected requests,
+training/tokenizer metadata, raw/H200 hashes and meta-device tensor geometry,
+plus saved score arithmetic. Its36 synthetic checks pass alongside the29 rules
+checks. It supplies selection rows/block sums; it never declares tensor values
+audited or a recipe adopted. Frozen controller provenance, full tensor-value
+audits and the remaining numerical/serving prerequisites are still required.
+
 After quality and saved-artifact audits, plan three serial fresh-seed inference
 triples: FP32 MPS/context128, batches1/8,32prefill/64teacher-forced decode tokens,
 two warmups and eight rotating repeats. Cache equality precedes timing. Freeze

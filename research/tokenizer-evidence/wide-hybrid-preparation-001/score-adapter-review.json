@@ -1,0 +1,42 @@
+{
+  "status": "synthetic_meta_adapter_verified_not_launch_ready",
+  "at": "2026-10-28T06:00:42.001319+00:00",
+  "checks": 65,
+  "new_adapter_checks": 36,
+  "rules_regressions": 29,
+  "guard": {
+    "elapsed_seconds": 1.6892486661672592,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 17527091200,
+      "peak_rss_bytes": 306724864
+    },
+    "pid": 52220,
+    "reason": null,
+    "status": "finished"
+  },
+  "real_trial_artifacts_read": false,
+  "corpus_read": false,
+  "model_forward_or_training": false,
+  "failed_fixture_retry": false,
+  "scope": "Independent expected requests/hashes/contracts, explicit rank config, completed result identity, exact coverage/arithmetic, checkpoint hashes/meta geometry/EMA metadata and parent lineage. All fixtures synthetic meta tensors.",
+  "limitations": [
+    "No real trial review",
+    "No tensor-value finiteness or exact EMA-value audit",
+    "No optimizer state/continuation validation",
+    "Controller provenance/selection persistence and serial dry-runs remain",
+    "Full storage fit, source/plan freeze and measured pilots remain"
+  ],
+  "hashes": {
+    "src/research/tokenizer_wide_hybrid_scores.py": "fae7ff3e7ec660b033671a2153cf2dcb537d742c951e6b582509719149fa4ab4",
+    "tests/test_tokenizer_wide_hybrid_scores.py": "3008ce238c7d43a10a7d4802a98add1d9752b09b9b2f3be194aa9bf52a1f13ca",
+    "src/research/tokenizer_wide_hybrid_rules.py": "7fc5638cccc2c73407384d9d615bdebe5ac448593fdb2afb0ac3e9d2fb7a954a",
+    "tests/test_tokenizer_wide_hybrid_rules.py": "5ef3611ee17fd80a772081a72848d6439a511004114da807cc25b8cbacbab2e5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-score-adapter-tests.log": "67a486755d41f8a8769fd57ae10c13945b216ca66e40f10b02d61565e84ba8ff",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-score-adapter-guard.json": "dc6bd8cc0008cba636b3e5148a93235cf711afdcb258d023e21d7828bd9d6e2a"
+  }
+}

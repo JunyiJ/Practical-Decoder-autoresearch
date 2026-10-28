@@ -173,3 +173,26 @@ This is arithmetic preparation only: no quality result, source freeze, model
 continuation retry or launch. Controller dry-runs, saved-score/artifact identity
 integration, model optimizer/resume/EMA and actual pilot resource prerequisites
 remain outstanding. The storage gate and all closed campaigns remain unchanged.
+
+## Saved-score metadata adapter
+
+The new read-only `src/research/tokenizer_wide_hybrid_scores.py` consumes an
+independently expected request, file hashes and training/tokenizer contract.
+It regenerates the explicit rank config, checks result identity/completion,
+and validates exact target/block coverage and saved CE/BPB/perplexity arithmetic.
+It hashes distinct local raw/H200 files before and after inspection, constructs
+the expected model on the meta device, and checks checkpoint parameter shapes,
+dtypes/names, config, tokenizer and raw-to-export EMA metadata/parent lineage.
+It then supplies the selection row and aligned H200 block sums to the pure rules.
+
+Thirty-six meta-only synthetic adapter checks and the29 arithmetic checks passed
+(65 total,1.51s; peak process RSS306,724,864bytes). Fixtures carry only meta tensors,
+are each below512KiB and load no corpus or weight values. Mutation tests include
+updated file hashes so that lineage/shape/arithmetic checks are tested separately
+from hash rejection. See `tokenizer-evidence/wide-hybrid-preparation-001/score-adapter-review.json`.
+
+This verifies the adapter's metadata path, not real new trial artifacts, tensor
+finiteness, exact EMA values, optimizer state correctness or continuation. The
+controller still must bind expected inputs to frozen source/runtime/data and
+persisted selections, serialize worker dispatch, and require separate tensor and
+serving audits before adoption. No MPS launch or failed-guard retry occurred.
