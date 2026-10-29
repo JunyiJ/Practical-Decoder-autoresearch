@@ -2119,3 +2119,44 @@ divisor4, seed3501, width512 and1200updates.
 The five-cell review was committed and pushed as `a1b0bf1`. Frozen LR slot5
 started through production gates with parent7791 and child7818. The sole
 training worker runs gated-MLA at LR0.00125; the wrapper stops after this trial.
+
+
+### Campaign002 closed on slot5 checkpoint-lock timeout — October29,2026
+
+Slot5 gated-MLA at LR0.00125 logged all1200updates but failed during raw
+checkpoint output. The parent reported `Metadata producer lock timeout; no retry`
+and terminated/reaped child7818 with returncode−15 after456.04s. No research
+worker remained on process inspection. There is no complete raw/H200 pair,
+training summary, full-validation result, tensor/resource audit or acceptance
+for slot5. Its sampled training metrics cannot be used for selection. The failed
+761,768,510-byte raw `.pt.tmp` is protected, SHA256
+`2744ab5d95a972152be379d6adf49fc2125fecf8b942499b227a881a4c67ebb3`.
+
+The forensic review verifies every file from the accepted five-cell archive is
+unchanged and preserves all current non-weight bytes, hashes and relevant source
+bytes in `tokenizer-evidence/wide-hybrid-preparation-001/campaign002-lock-failure-v2-review.json`.
+Its independent guard finished. No cleanup or retry occurred. Last sampled RSS
+and MPS peaks were616,054,784 and3,567,042,560bytes, respectively; sampled
+resource limits did not trigger. These samples do not establish an instantaneous
+peak after the final sample. Test holdout stays closed. Campaign002 is now closed;
+slot6 must not launch, and the unsuccessful slot5 cannot be resumed or retried.
+
+The shared metadata lock has a2s nonblocking acquisition deadline. Checkpoint
+writes release it between1MiB chunks and immediately compete to reacquire it;
+this provides no fairness guarantee. The evidence is consistent with starvation
+or a slow critical section, but no lock trace distinguishes them. Existing tests
+cover tiny chunk boundaries and a640-byte child producer with explicit sleeps;
+they do not establish progress for unpaced sustained writes with a larger
+campaign census. Do not relabel this infrastructure failure as a numerical or
+quality regression.
+
+Next prerequisite is a new isolated, bounded producer/supervisor contention
+fixture: no model/corpus/training, one child, fresh paths, explicit source hashes,
+wall/RSS/disk/output caps, actual lock-wait/hold durations, sustained unpaced
+checkpoint chunks and simultaneous supervisor/resource publication. First retain
+baseline evidence without changing production source; then design and test a
+versioned progress fix, preserving fail-closed behavior, metadata/inode/byte
+integrity, storage checks and independent resource supervision. No arbitrary
+lock-timeout increase or disabled guard is justified by this failure. A fresh
+source/evidence applicability review and finite campaign plan are required before
+any later training; neither002 nor any earlier closed fixture is reopened.
