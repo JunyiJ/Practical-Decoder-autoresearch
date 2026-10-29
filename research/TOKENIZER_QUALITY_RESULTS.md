@@ -1213,3 +1213,19 @@ All37 guarded checks passed on unchanged source, including capacity preservation
 API boundaries, integrity/late-change rejection and slot18 compatibility. No
 resource guard failed; final inspection found no research workers. Next publish
 and independently consume compact slot19 startup.
+
+
+## Fifth-fresh startup publication and replay
+
+Compact slot19 startup receipts now independently bind the complete completed
+slot18 history, all19 records, seven protected pairs, original transport/retention
+lineage, current parent and full remaining capacity. Failures remain preserved
+without retries; ordinary readers stay strict and slot19 readiness stays closed.
+
+All21 guarded checks passed on unchanged source, including tamper/late-change
+rejection, failure preservation and slot18 compatibility. No resource guard failed;
+final inspection found no research workers. This is synthetic controller
+preparation, with no training or new model-quality result. Next complete slot19
+readiness/entry using the stable slot16 anchor. Remaining integration, inference,
+real metadata fit and actual prerequisite gates still precede finite-plan freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-startup-v2-component-review.json`.

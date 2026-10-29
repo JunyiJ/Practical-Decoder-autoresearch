@@ -3132,3 +3132,32 @@ retry or test-holdout use occurred.
 Staged whitespace review removed only an extra EOF blank line in the new test.
 The exact tested snapshot and original hash manifest are preserved; the Python
 AST is identical. No production source changed or behavioral tests were repeated.
+
+
+## Compact fifth-fresh startup receipt
+
+The shared startup writer now publishes and independently consumes exact slot19
+receipts while preserving slot18 compatibility. The compact receipt binds the
+current parent, immediate slot18 dispatch, original slot15–17 transport/retention
+lineage, all19 completed records, seven protected pairs and full remaining
+capacity. Ordinary history and preparation readers remain strict. Publication
+failures are preserved without retries; slot19 readiness and dispatch stay closed.
+
+All21 guarded checks passed on unchanged source in four serial batches. Coverage
+includes rehashed false claims, undeclared outputs/controls, preserved failures,
+late source/evidence/control/free-space/STOP changes, exact API boundaries and
+slot18 startup/history compatibility. No test, driver or resource guard failed;
+final process inspection found no research workers.
+
+The synthetic receipt is3,089bytes. Its meta group uses
+1,576,587 of2,097,152bytes; total metadata is
+2,180,056bytes. All14 protected checkpoint files remain;
+required remaining free space is30,153,547,703bytes. Full real
+metadata fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-startup-v2-component-review.json`.
+
+Next complete slot19 readiness/entry using the stable original slot16 inventory
+anchor and unchanged chain caps, then parent acceptance/serial dispatch and
+finite remaining integration. Inference, real metadata fit and actual prerequisite
+gates still precede freeze. No research training, quality result, protected
+checkpoint deletion, closed numerical-fixture retry or test-holdout use occurred.
