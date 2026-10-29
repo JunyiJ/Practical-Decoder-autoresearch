@@ -3331,3 +3331,37 @@ inventory anchor and unchanged caps, then parent acceptance and remaining finite
 transitions. Inference, real metadata fit and actual prerequisite gates still
 precede freeze. No research training, quality result, protected deletion, closed
 numerical-fixture retry or test-holdout use occurred.
+
+
+## Sixth-fresh readiness and child entry
+
+Slot20 readiness independently replays the completed history with only its
+explicit current-parent readiness guard. The immutable seal binds the startup
+receipt, full frozen source/request/evidence/control identities and complete
+remaining capacity. Ordinary startup and history readers stay strict.
+
+The inventory encoding keeps the original slot16 anchor. The synthetic seal uses
+11 documents and 238,966 bytes in its
+chain, below the unchanged16-document/8MiB caps. Its readiness receipt is
+33,102 bytes; the meta group uses 1,649,156
+of2,097,152 bytes and total metadata is 2,275,904 bytes.
+All16 checkpoint files and20 completed records remain. Real-panel fit is unproven.
+
+Slot20 child entry reconstructs the original selected/fresh history and actual
+retained capacity before invoking the separately guarded producer. Shared finite
+reconstruction now supports18..20 recursively while preserving earlier APIs.
+Slot20 parent acceptance and serial dispatch remain closed.
+
+All58 checks passed on unchanged source in five serial guarded batches. Coverage
+includes seal/guard bindings, canonical CLI and guard-before-producer order,
+protected evidence and transport integrity, both free-space boundaries, late
+evidence/log changes, preserved failures/no retry, finite APIs, and slot18/19
+entry plus slot20 startup compatibility. No test, driver or resource guard
+failed; final process inspection found no research workers.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-readiness-entry-v2-component-review.json`.
+
+Next implement slot20 parent acceptance and one serial transition, preserving
+all original history and capacity checks, then independent completed-slot20
+replay and the remaining finite transitions. Inference, real metadata fit and
+actual prerequisite gates still precede freeze. No research training, quality
+result, protected deletion, closed fixture retry or holdout use occurred.

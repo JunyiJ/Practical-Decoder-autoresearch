@@ -34,7 +34,7 @@ def _log_prefix(path,size):
 
 
 def worker_argv(writer,slot,startup_ref,*,readiness_ref=None):
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<=19,
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<=20,
              'Exact supported quality writer/slot required')
     phase='lr' if slot<9 else ('rank' if slot<15 else 'confirm')
     path='meta/quality-first-startup.json' if slot==0 else f'meta/quality-{phase}-startup-{slot:02d}.json'
