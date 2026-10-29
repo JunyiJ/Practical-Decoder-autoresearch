@@ -2067,3 +2067,7 @@ its review guard finished. All three raw/H200 pairs remain. Full remaining
 storage requires26,907,661,636bytes against40,776,089,600bytes free.
 Test holdout is unused. Next is frozen slot3: all-KDA, LR0.00125,
 divisor4, seed3501, width512 and1200updates, through production serial gates.
+
+The three-cell review was committed and pushed as `f04fcfc`. Frozen LR slot3
+started through production gates with parent6128 and child6139. The sole
+training worker runs all-KDA at LR0.00125; the wrapper stops after this trial.
