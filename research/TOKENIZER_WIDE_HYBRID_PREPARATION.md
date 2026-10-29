@@ -4145,3 +4145,7 @@ for a reviewed prefix and stops after that slot. Next is frozen slot1:
 all-gated-MLA, divisor4, LR0.000625, seed3501,1200updates. All9 LR
 cells must complete before rate selection or eligible screen cleanup. No
 training implementation, frozen plan, guard or statistical rule changed.
+
+Slot0 review/evidence was committed and pushed as `cd46ebc`. Frozen LR slot1
+started through production gates with parent4486 and child4497. The wrapper
+stops after this slot; later slots require fresh prefix review and serial dispatch.
