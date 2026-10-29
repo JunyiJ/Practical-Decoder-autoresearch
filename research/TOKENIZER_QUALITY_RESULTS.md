@@ -996,3 +996,19 @@ Later fresh transport, inference, complete real metadata fit and actual numerica
 input/measured-pilot prerequisites remain before freeze. No training or holdout
 use occurred. Evidence and bounded test verdicts:
 `tokenizer-evidence/wide-hybrid-preparation-001/slot16-parent-integration-v2-component-review.json`.
+
+
+## October 28 compact slot16 receipt replay
+
+The new idle verifier independently reconstructs slot16's compact acceptance,
+including historical parent/child transport,17 completed records, all five live
+selected/fresh pairs, three cleanup boundaries and full remaining storage. It
+also recomputes pre-slot16 capacity rather than trusting copied storage claims.
+Later artifacts require their own explicit contract; verification grants no
+dispatch or cleanup permission. Immediate acceptance still requires its original
+parent.
+
+This is controller preparation with no new model-quality result. Slot17–23
+integration, inference and actual numerical/input/measured-pilot and real metadata
+prerequisites still precede freeze. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot16-history-v2-component-review.json`.

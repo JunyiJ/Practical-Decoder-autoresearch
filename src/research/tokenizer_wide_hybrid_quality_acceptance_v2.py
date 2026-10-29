@@ -72,8 +72,8 @@ def _completed_transport(writer,slot,startup_ref,readiness_ref,process,*,histori
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
     parent_pid=os.getpid()
     if historical_identity is not None:
-        _require(type(slot) is int and slot==15 and type(historical_identity) is dict
-            and set(historical_identity)=={'parent_pid','lock_fds'},'Exact first-fresh historical identity required')
+        _require(type(slot) is int and slot in (15,16) and type(historical_identity) is dict
+            and set(historical_identity)=={'parent_pid','lock_fds'},'Exact supported fresh historical identity required')
         parent_pid=historical_identity['parent_pid'];fds=historical_identity['lock_fds']
         _require(type(parent_pid) is int and parent_pid>1 and type(fds) is tuple and len(fds)==2
             and all(type(fd) is int and fd>2 for fd in fds) and fds[0]!=fds[1],
@@ -141,7 +141,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
                       pending_confirmation_request=None):
     """Full audit under caller locks/guard; public parent APIs stay same-parent.
 
-    The first-fresh history reader may supply a separately verified historical
+    The supported fresh history readers may supply a separately verified historical
     parent/descriptor identity. That read-only path never launches or resumes a
     process; all scientific, transport and capacity audits still run.
     """

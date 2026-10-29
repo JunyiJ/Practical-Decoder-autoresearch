@@ -2644,3 +2644,47 @@ inference, full real metadata accounting and actual nine-case numerical/input/
 measured-pilot prerequisites still precede finite-plan freeze. These controller
 checks launch no model or MPS work, delete no protected checkpoint, consume no
 test holdout and do not retry the closed failed combined numerical fixture.
+
+
+## October 28 independent compact slot16 history replay
+
+A new strict idle consumer reconstructs the compact slot16 dispatch receipt
+before any slot17 artifact exists. It verifies the historical parent's exact
+startup attempt, completed startup/readiness/controller guards, sealed evidence
+and control inventories, original slot15 lineage and canonical child transport.
+Current-parent immediate acceptance remains unchanged; historical PID/descriptors
+are used only by the separate read-only replay path for supported fresh slots.
+
+The consumer re-runs the complete scientific/transport/retention/storage audit,
+reconstructs all17 completed records, five live selected/fresh pairs and three
+cleanup boundaries, and compares every compact acceptance claim. It separately
+recomputes the pre-slot16 storage requirement from the16-record prefix and four
+then-live pairs. The slot15 receipt and slot16 startup therefore cannot merely
+validate each other's copied capacity claims. Newly completed slot16 weights
+receive no retroactive prechild capacity credit.
+
+Only the exact current dispatch receipt is excluded when reconstructing its
+original post-child inventory. Unexpected later requests, attempts or controls,
+partial/failure artifacts, changed protected evidence and STOP block replay.
+Final transport/control/source/census and capacity checks repeat before returning;
+all dispatch, deletion, adoption and next-stage claims remain false.
+
+The disposable fixture retains10 checkpoint files,17 completed records and three
+cleanup boundaries. Its meta group uses1,507,341 of2,097,152bytes; total metadata
+is2,074,487bytes and reconstructed remaining capacity is30,153,547,769bytes. This
+is synthetic controller evidence, not real panel-fit or model-quality evidence.
+Exact test verdicts, source hashes and guards are in
+`tokenizer-evidence/wide-hybrid-preparation-001/slot16-history-v2-component-review.json`.
+
+All18 checks passed on unchanged source in two serial batches of154.69s and
+302.42s, with peak RSS245,137,408bytes. Both batches retained the600-second,
+4GiB RSS and8GiB reserve limits; no test, driver or resource-guard failure
+occurred. Compatibility includes original slot15 replay and rejection of
+immediate slot16 acceptance by a different simulated parent.
+
+Next implement an explicit later-fresh preparation append contract, starting at
+slot17, and integrate the remaining finite slots17–23 with bounded inventory
+references and independently verified prior transport. Inference, full real
+metadata accounting and actual nine-case numerical/input/measured-pilot
+prerequisites remain before freeze. No model training, MPS work, protected
+checkpoint cleanup, closed-fixture retry or test-holdout evaluation occurred.
