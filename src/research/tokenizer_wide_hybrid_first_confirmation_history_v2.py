@@ -85,7 +85,7 @@ def verify_first_confirmation_dispatch(writer,plan_sha256,completion_ref,*,proje
                    rank_completion_ref=rank_completion_ref)
 
 
-def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None):
+def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None):
     """Shared replay; only the separately checked slot16 preparation may append."""
     _require(isinstance(writer,MetadataWriter),'Bounded writer required');_sha(plan_sha256)
     root=writer.root/'evidence';_locks(root,writer.lock_fds)
@@ -95,11 +95,16 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
              'Failed/partial history cannot be accepted')
     inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
     saved,identity=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
-    appended={};pending=None;extra_control=None
+    _require(startup_ref is None or preparation is not None,'Startup receipt requires explicit preparation')
+    appended={};pending=None;extra_control=None;startup_report=None
     if preparation is not None:
         from .tokenizer_wide_hybrid_confirmation_append_v2 import _append
         appended,pending,extra_control=_append(writer,plan_sha256,completion_ref,projection_ref,
                                               rank_completion_ref,saved,preparation)
+    if startup_ref is not None:
+        from .tokenizer_wide_hybrid_confirmation_startup_v2 import _receipt_binding
+        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,controls)
+        appended[startup_ref['path']]=binding
     review=saved['review'];historical=dict(inventory);historical.pop(completion_ref['path'])
     for name,binding in appended.items():
         _require(historical.get(name)==binding,'Declared preparation append binding differs')
@@ -130,6 +135,9 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
         digest({k:v for k,v in compact.items() if k not in dynamic}),
         'Reconstructed complete fresh audit differs from compact receipt')
     _storage(review['storage'],actual['storage'],historical)
+    if startup_report is not None:
+        before_receipt={n:v for n,v in inventory.items() if n!=startup_ref['path']}
+        _storage(startup_report['storage'],actual['storage'],before_receipt)
     _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during history replay')
     again,_=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
     _require(again==saved and acceptance.readiness._controls(writer,'not-a-control')==controls,

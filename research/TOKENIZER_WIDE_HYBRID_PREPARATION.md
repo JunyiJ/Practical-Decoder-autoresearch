@@ -2516,3 +2516,45 @@ readiness/entry/acceptance/serial dispatch and slots17–23 remain unfinished, a
 v2 inference, full real metadata accounting and actual numerical/input/measured
 pilots. No training, plan freeze, checkpoint deletion, holdout evaluation or
 closed numerical-fixture retry occurred.
+
+
+## October 28 slot16 startup receipt and independent predispatch review
+
+Slot16 now has an exclusive preparation writer and a separate read-only receipt
+consumer. The writer creates one bounded attempt, reconstructs completed slot15
+history before creating the independently frozen next request, finishes its
+startup guard, then fully replays the pending-request audit before publishing a
+compact receipt. Failure evidence is retained and an existing attempt cannot be
+retried. No readiness or child launch is implemented by this component.
+
+The receipt binds the current parent, finished guard, attempt, request, prior
+dispatch and rank cleanup references, frozen context/files, full evidence and
+control inventory digests, completed-record/live-pair/stage digests, selections
+and complete remaining storage. The consumer permits only this exact additional
+receipt and reconstructs its claims against full independent historical replay.
+Its original evidence inventory excludes only the explicitly bound preparation
+artifacts. The old idle and attempt/request readers continue rejecting startup
+receipt appends. All launch, deletion, adoption and next-stage flags remain false.
+
+Publication pins the finished-control inventory before the final replay and
+checks it again after replay and before writing the receipt. A direct injected
+post-replay control append must leave failure evidence and no successful receipt.
+The independent consumer also rejects rehashed false claims, unknown output,
+changed guards, source/evidence mutations, STOP and lost capacity after the
+storage audit. Pending slot16 still has no completed-trial/checkpoint credit; all
+eight selected/fresh fixture checkpoint files remain present.
+
+All 9 initial core and 4 initial failure/late-change checks passed. After the
+final control pin, 4 publication-boundary and compatibility checks passed. The
+three bounded batches finished normally in 154.99s, 303.12s and 299.20s, with
+peak RSS 244,563,968 bytes; no test or guard failure occurred. Source phases are
+recorded separately. The final synthetic receipt is 3,081 bytes, its meta group
+uses 1,481,322/2,097,152 bytes and total metadata is 2,031,887 bytes. This does
+not establish full real-panel metadata fit. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot16-startup-v2-component-review.json`.
+
+Next integrate slot16 readiness and child entry using this compact startup
+contract, then parent acceptance/serial dispatch and later fresh slots17–23.
+Actual numerical/input/measured-pilot prerequisites, inference and full real
+metadata accounting remain before plan freeze. No research training, MPS work,
+checkpoint deletion, holdout evaluation or closed numerical-fixture retry occurred.

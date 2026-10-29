@@ -949,3 +949,18 @@ full metadata accounting and actual numerical/input/measured-pilot prerequisites
 remain before freeze. No training, protected checkpoint cleanup, closed-fixture
 retry or holdout evaluation occurred. Evidence:
 `tokenizer-evidence/wide-hybrid-preparation-001/confirmation-append-v2-component-review.json`.
+
+
+## October 28 slot16 preparation receipt
+
+Slot16 now has exclusive request/compact receipt publication and an independent
+predispatch recheck. Both bind completed slot15 transport/scientific history,
+selected/fresh checkpoints, frozen choices, finished controls and full future
+storage. Failed attempts retain evidence and cannot be retried; the earlier
+public readers keep their stricter append contracts. This is preparation and
+provides no new model-quality result.
+
+Readiness/entry/parent dispatch and later fresh slots remain unfinished. Actual
+numerical/input/measured-pilot gates, inference and complete real metadata fit
+still precede freeze. No training, protected checkpoint cleanup or holdout use.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot16-startup-v2-component-review.json`.

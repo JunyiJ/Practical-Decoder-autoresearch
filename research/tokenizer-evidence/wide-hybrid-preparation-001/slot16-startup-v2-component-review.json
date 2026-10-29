@@ -1,0 +1,85 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "b930be917e012b22cca3074c1822e4fb873e30e6",
+  "check_executions_passed": 17,
+  "created_at": "2026-10-29T05:18:46.715002+00:00",
+  "distinct_test_cases": 16,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-core-guard.json": "72c546c8243b96b1eec3f8dd157530db768f6adb651dfbf3a8414aaf13a8a1f3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-core-tests.log": "404215ec545b5f85620bb3c444ba77ad1fd5c43635779b5d2660a18776628704",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-failures-guard.json": "30ed5ea3ffaeeed20c8dd6e8637f92a9e6e9a6f975cd2348ecde128f1c0bce8e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-failures-tests.log": "c8a2b669775d7988e380ef9be5433679607c75642c4ef365931d0d8fadc801dc",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-final-guard.json": "ceaeb70b19edf6f70fbe492ba4d823f960b52b07b79bba6b87235c7115d5bf94",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-final-tests.log": "c87dbf8bf9f21a201ab8cf3c55d1314427e3b4cd5a52d1383cf6fb7fc3f538c0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot16-startup-census.json": "7ff7f38d4a534d9dbc89dfdb0c902e8f331da7a08177929f33f6b9fe40df4182",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot16-startup-initial-source-hashes.json": "0e43d0c86fd7fe3e6d28fae0e188567c87e1702806b9e1eda7e67ecc86e16b42",
+    "src/research/tokenizer_wide_hybrid_confirmation_startup_v2.py": "635040d93f2cab754ada90191fba3b98631044673907c1cc90788c5afcd01dab",
+    "src/research/tokenizer_wide_hybrid_first_confirmation_history_v2.py": "a8f6393444032d947ff0cfe4430f7c74235b0826fdb07ebd2a6f0e417bcf03c1",
+    "tests/test_tokenizer_wide_hybrid_confirmation_startup_v2.py": "bcae8ca78e147552edcbf51467c85794403e16225fd0ed250c9d0beb3c5dbf2c"
+  },
+  "findings": [
+    "An exclusive slot16 writer binds the current parent and a bounded startup attempt, independently replays completed slot15 history before the frozen request is published, finishes its guard, then fully replays the pending-request audit before compact receipt publication. Failed attempts preserve evidence and cannot be retried.",
+    "The compact receipt binds exact prior/rank/attempt/guard/request references, frozen context and file digest, complete evidence/control inventory digests, completed-record/live-pair/stage digests, persisted choices and complete remaining storage. All adoption, dispatch, deletion and next-stage claims remain false.",
+    "The independent reader permits only this exact additional receipt and reconstructs every claim through full historical scientific/transport/capacity replay. It requires the finished current-parent guard. Earlier public idle and preparation-append APIs continue rejecting receipt appends.",
+    "Code review tightened a publication boundary: capture finished controls before final replay, compare them immediately after replay and again before receipt publication. A direct injected post-replay control append test confirms failure evidence without a successful receipt.",
+    "Initial9 core and4 failure/late-change cases passed before the final control pin. Four final checks passed after it: complete publication/recheck, injected control append, old idle history under new parent/descriptors and old attempt/pending-request compatibility. Tests include rehashed false claims, unknown outputs, changed guards, failed writes, STOP and late source/control/receipt/capacity changes."
+  ],
+  "free_bytes_observed": 56227389440,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "initial_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/slot16-startup-initial-source-hashes.json",
+  "kind": "wide_hybrid_slot16_startup_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Synthetic disposable scientific/history/byte fixtures; no real model, numerical correctness or measured MPS feasibility result.",
+    "The4 final checks cover the final publication-control change and compatibility; the13 earlier cases are labeled with their initial source hashes rather than misrepresented as all rerun on the final source.",
+    "Only slot16 startup/predispatch is integrated. Readiness, child entry, parent acceptance/serial dispatch and slots17..23 still require integration.",
+    "Full real metadata fit, inference and actual numerical/input/measured-pilot prerequisites remain before freeze. The closed failed numerical fixture and all closed campaigns remain closed."
+  ],
+  "maximum_observed_rss_bytes": 244563968,
+  "next_action": "Integrate slot16 readiness sealing and bounded child entry using the tested compact confirmation_startup_v2 receipt and independent verify_confirmation_request. Keep exact current-parent identity, independently frozen slot16 request, canonical argv, sealed full evidence/control inventories, completed16-record and selected/all-fresh checkpoint history, original retention proofs and full current/future storage; startup success is not dispatch permission. Preserve the stricter old idle and attempt/request readers. Then finish slot16 parent acceptance/serial dispatch and extend later fresh slots17..23 with verified prior transport. V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. Do not retry the closed failed combined numerical fixture, reopen closed campaigns, delete protected checkpoints or use the test holdout.",
+  "plan_frozen": false,
+  "resource_guard_failures": 0,
+  "status": "slot16_compact_startup_and_independent_predispatch_tested_readiness_entry_unimplemented",
+  "synthetic_census": {
+    "completed_quality_records": 16,
+    "live_checkpoint_files": 8,
+    "meta_group_bytes": 1481322,
+    "metadata_bytes": 2031887,
+    "pending_slot": 16,
+    "real_panel_fit_proven": false,
+    "receipt_bytes": 3081
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-core-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-core-tests.log",
+      "passed": 9,
+      "peak_rss_bytes": 244367360,
+      "seconds": 154.99,
+      "source_phase": "initial_before_publication_control_pin"
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-failures-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-failures-tests.log",
+      "passed": 4,
+      "peak_rss_bytes": 244203520,
+      "seconds": 303.12,
+      "source_phase": "initial_before_publication_control_pin"
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-final-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-startup-v2-final-tests.log",
+      "passed": 4,
+      "peak_rss_bytes": 244563968,
+      "seconds": 299.2,
+      "source_phase": "final_with_publication_control_pin"
+    }
+  ],
+  "training_launched": false
+}
