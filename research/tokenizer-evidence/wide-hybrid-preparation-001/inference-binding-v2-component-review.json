@@ -1,0 +1,59 @@
+{
+  "kind": "wide_hybrid_inference_binding_v2_component_review",
+  "status": "idle_provenance_complete_scoped_inference_dispatch_pending",
+  "created_at": "2026-10-29T18:01:12.063741+00:00",
+  "base_commit": "29e750e9746bd601196bf3183659980a3d0e515f",
+  "tests": {
+    "passed": 5,
+    "sequential_adapter_negative_scenarios": 6,
+    "seconds": 527.08,
+    "exit_code": 0,
+    "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-binding-v2-guard.json",
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 55230709760,
+      "peak_rss_bytes": 261750784
+    },
+    "source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-binding-v2-source-hashes.json",
+    "source_files_verified": 331,
+    "actual_disk_observer_isolated": true
+  },
+  "files": {
+    "src/research/tokenizer_wide_hybrid_inference_gate_v2.py": "61960b5b2921ed1d08c11d498617cd3922f77e36867ad5cffd058a184c3caecb",
+    "tests/test_tokenizer_wide_hybrid_inference_gate_v2.py": "4e0a2bf60c85deb86cfcd4a179cdbac93fc8fcec159dd2fe3d402b2f32e0f076",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-binding-v2-source-hashes.json": "ebaf5b0ae977ce5623d85f6daecd67eedcab5d1ab97630a3337b36417930fa5b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-binding-v2-guard.json": "54ba7d0ad3d7ab2b1c60778fd611181d44a05a4c031dada29ca84dff7fdb5554",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-binding-v2-tests.log": "3d94134e01aacde57d084d4c2eb9fc166193d40af14d75856f152cc20ed4bf59",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30"
+  },
+  "coverage": [
+    "One synthetic complete quality prefix reused for all three seeds and nine fresh bindings",
+    "Full production slot23 transport, retained tensor/producer and retention audits; no production audit cache",
+    "Exact selected screen anchors and all fresh raw/H200 pairs",
+    "Frozen conditional request, result, tokenizer and training-input identities",
+    "Six adapter negatives: wrong seed type, wrong order, absent or duplicate frozen request, swapped checkpoint and tokenizer",
+    "All live evidence and controls rechecked; deleted losers validated through retained journals",
+    "Strict final history API unchanged; no inference/control appends admitted"
+  ],
+  "test_mocks": [
+    "Frozen campaign/source identity and tiny scientific child artifacts from existing synthetic fixture",
+    "Training contract reconstruction returns fixture tokenizer; no model/corpus evaluation",
+    "Reported free capacity mocked inside fixture; outer guard observes actual disk and RSS"
+  ],
+  "limitations": [
+    "Synthetic data only; real inference loading/timing not executed",
+    "Actual full-panel metadata/high-water fit not established",
+    "No v2 serial inference dispatcher or scoped append verifier yet",
+    "Nine-case numerical/input prerequisites and measured pilots remain before freezes"
+  ],
+  "training_launched": false,
+  "inference_launched": false,
+  "closed_fixture_retried": false,
+  "holdout_consumed": false,
+  "protected_checkpoints_deleted": false,
+  "adopted": false
+}

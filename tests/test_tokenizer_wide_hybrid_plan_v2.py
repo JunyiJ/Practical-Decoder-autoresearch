@@ -207,3 +207,36 @@ def test_live_identity_and_output_guards(fixture,monkeypatch,bad):
     elif bad=='trace_changes':(root/'evidence/meta/numerical.log').write_text('changed')
     elif bad=='unknown_output':(root/'unexpected').touch()
     with pytest.raises(ValueError):bind(fixture)
+
+
+
+def test_compact_request_identity_preserves_every_reconstructed_option(fixture):
+    root,plan,_,_=fixture
+    expected=copy.deepcopy(plan['requests'])
+    before=len(json.dumps(plan,sort_keys=True,separators=(',',':')).encode())
+    plan['requests']=gate.request_identity(expected)
+    after=len(json.dumps(plan,sort_keys=True,separators=(',',':')).encode())
+    report=bind(fixture)
+    assert report['requests']==expected
+    assert before-after>250000
+    assert len(json.dumps(plan['requests']).encode())<300
+    assert not report['dispatch_authorized']
+
+
+@pytest.mark.parametrize('bad',['hash','version','count','order','missing_slot','extra','reconstructed_config'])
+def test_compact_identity_cannot_hide_request_changes(fixture,monkeypatch,bad):
+    _,plan,_,_=fixture
+    plan['requests']=gate.request_identity(plan['requests'])
+    identity=plan['requests']
+    if bad=='hash':identity['sha256']='0'*64
+    elif bad=='version':identity['representation']='unreviewed'
+    elif bad=='count':identity['pilot_count']=True
+    elif bad=='order':identity['quality_slot_counts'].reverse()
+    elif bad=='missing_slot':identity['quality_slot_counts'].pop()
+    elif bad=='extra':identity['ignored_requests']=[]
+    else:
+        original=gate.rank_config
+        def changed(*a,**kw):
+            cfg=original(*a,**kw);cfg['model']['rope']=1;return cfg
+        monkeypatch.setattr(gate,'rank_config',changed)
+    with pytest.raises(ValueError,match='requests'):bind(fixture)

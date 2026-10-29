@@ -1,0 +1,93 @@
+{
+  "kind": "wide_hybrid_compact_request_identity_review_v2",
+  "status": "tested_known_overflow_removed_full_real_census_pending",
+  "created_at": "2026-10-29T18:03:36.538512+00:00",
+  "tests_passed": 59,
+  "seconds": 1.84,
+  "guard": {
+    "elapsed_seconds": 2.0200292090012226,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 55206383616,
+      "peak_rss_bytes": 234520576
+    },
+    "pid": 85409,
+    "reason": null,
+    "status": "finished"
+  },
+  "source_files_verified": 331,
+  "files": {
+    "src/research/tokenizer_wide_hybrid_plan_v2.py": "941a817a40cb60e331a1d3543ff247d2ab44ab97372ca4b545f97e9f808bbd49",
+    "tests/test_tokenizer_wide_hybrid_plan_v2.py": "ca5440837f511750cbccc69d49aaa6527f2d7909c14ec44a61d36e009c8d3e2e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-binding-v2-component-review.json": "ec26a40c3172a83d6929940420e3132c753b15c25575b848bca5dcf638210b1d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-plan-metadata-lower-bound.json": "56634dafbb83491c26655a3abfcf81a95487f27c45d8c389866f1148befa2d43",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-plan-metadata-guard.json": "6369685f932810928428674cd8202da210f3dc09474e5627648c711212e750c0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-compact-plan-metadata.json": "ff9349c6ae15707364c08d4b76f0f7a6f563225b030c4e83057c554ecddafe06",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-compact-plan-metadata-guard.json": "72e1b22dc27f23e3edd289f76642bc434ba9031a0e894f15d4e7e486d622fc52",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-compact-plan-source-hashes.json": "db5e10effa99ae8e6ac3c04c51d831326ce492d518efb147e6a6abf70489b930",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-compact-plan-guard.json": "40bbb351e65b25d030e2f23ae6ef28ac0da55efd9663caec0696d78b64cd8b38",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-compact-plan-tests.log": "6c8ebc61e0f7bff70d9b29297439e9b1fcaf8448ba3bdc8fc56b0b982212b69d"
+  },
+  "earlier_inference_validation": {
+    "review": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-binding-v2-component-review.json",
+    "passed": 5,
+    "adapter_negative_scenarios": 6,
+    "source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-binding-v2-source-hashes.json",
+    "changed_since": [
+      "src/research/tokenizer_wide_hybrid_plan_v2.py",
+      "tests/test_tokenizer_wide_hybrid_plan_v2.py"
+    ],
+    "full_sequence_repeated": false,
+    "reason": "Only plan wire representation changed afterward. Dedicated tests verify exact equality of every reconstructed request and all pre-existing full-plan cases; inference gate, loader and history code are unchanged."
+  },
+  "findings": {
+    "kind": "wide_hybrid_compact_request_metadata_v2",
+    "original_lower_bound": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-plan-metadata-lower-bound.json",
+    "request_identity": {
+      "representation": "wide_hybrid_request_identity_v1",
+      "sha256": "93acc72def20d3456f30c01b6e86e9af858fc1e9e280776228807e1f6d3c02aa",
+      "pilot_count": 3,
+      "quality_slot_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    "compact_requests_only_plan_bytes": 229,
+    "bytes_saved": 317711,
+    "meta_replacing_fixture_plan_with_compact_requests_only": 1801557,
+    "meta_limit_bytes": 2097152,
+    "real_full_panel_fit_proven": false,
+    "note": "Exact request hash and counts replace repeated config serialization; reconstructed requests returned by bind_campaign are unchanged. Real full metadata and transient high-water audit remains mandatory."
+  },
+  "limits_changed": false,
+  "grid_changed": false,
+  "training_launched": false,
+  "closed_fixture_retried": false,
+  "holdout_consumed": false
+}

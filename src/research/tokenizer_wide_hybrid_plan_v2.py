@@ -78,6 +78,17 @@ def request_options(root):
     return dict(pilots=pilots,quality=quality)
 
 
+def request_identity(options):
+    """Compact exact identity; reconstruct every request under frozen source.
+
+    This only compresses the immutable plan representation. It does not change
+    the request grid or remove any independently checked config from binding.
+    """
+    return dict(representation='wide_hybrid_request_identity_v1', sha256=digest(options),
+        pilot_count=len(options['pilots']),
+        quality_slot_counts=[len(options['quality'][str(i)]) for i in range(24)])
+
+
 def bind_campaign(plan_path,plan_sha256):
     """Bind frozen identity and numerical evidence, never authorize a worker.
 
@@ -104,7 +115,8 @@ def bind_campaign(plan_path,plan_sha256):
     expected=dict(protocol_sha256=file_digest(PROTOCOL),projection_sha256=file_digest(PROJECTION),
         panel_design=design(),layout=layout_contract(),storage_contract=storage_envelope(projection),
         pilot_contract=dict(PILOT_V1,version=2),quality_contract=RESOURCE_LIMITS,
-        cache_contract=CACHE_CONTRACT,requests=options)
+        cache_contract=CACHE_CONTRACT,requests=(request_identity(options)
+            if isinstance(plan.get('requests'),dict) and 'representation' in plan['requests'] else options))
     for key,value in expected.items():
         _require(digest(plan.get(key))==digest(value),'Frozen campaign contract differs: '+key)
     tokenizer=options['pilots'][0]['config']['model']['output_bias_prior']['tokenizer']

@@ -1459,3 +1459,57 @@ This does not establish real-panel fit. No training or model-quality result.
 Next complete v2 inference, real numerical/input/resource prerequisites and finite
 pilot/quality freezes; the closed numerical fixture and holdout remain closed.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/final-confirmation-v2-component-review.json`.
+
+
+### Retention-aware inference provenance for all three fresh seeds
+
+The v2 idle inference gate now replays completed slot23 and binds all 24 quality
+records, the three selected screening pairs, all nine fresh raw/H200 pairs and
+original transport/retention lineage. All three seed triples are constructed in
+one call with exact frozen requests, result hashes, tokenizer/input identity and
+the existing export loader's binding schema. Deleted losing checkpoints are
+proven through retention history rather than required to exist again.
+
+Validation passed **5 tests plus six sequential adapter-negative scenarios** in
+527.08 seconds under the unchanged 600-second, 4-GiB RSS and 8-GiB reserve guard.
+A single completed synthetic prefix served all nine bindings. Production history
+was not cached or bypassed; frozen scientific inputs and training contracts were
+mocked as stated in `inference-binding-v2-component-review.json`. All
+331 source/test hashes remained unchanged during validation.
+
+This gate is read-only and returns no dispatch, adoption or deletion authority.
+The strict idle final-history API remains unchanged. No receipt containing the
+large live inventory is written; bindings remain in memory. Next implement one
+shared, finite inference append/serial controller for seeds3511/3512/3513 using
+compact references, exact output/control namespaces and existing loading/cache/
+timing audits. Then audit real metadata/high-water fit, complete the separate
+nine-case numerical/input prerequisites, freeze and measure resource pilots,
+and freeze quality training. Training and inference have not launched; closed
+campaigns, the closed numerical fixture and the test holdout remain closed.
+
+
+### Real request-table metadata overflow and compact identity
+
+The real 3-pilot/108-conditional-request table exposed a concrete metadata issue:
+substituting only that table for the tiny synthetic plan raises the completed
+meta group to **2,119,268 bytes**, above its **2,097,152-byte** cap by22,116 bytes.
+This lower bound omits the rest of the real plan and prerequisite trace growth.
+Evidence: `inference-plan-metadata-lower-bound.json`.
+
+The plan gate now also accepts an exact, versioned request-table SHA256 plus
+pilot and per-slot counts. It reconstructs and checks every request under frozen
+source/runtime and returns the same full request table to downstream components.
+Full-document compatibility remains tested. This reduces the request field from
+317,940 to **229 bytes**, saving **317711 bytes**, without changing the
+finite grid, resource caps or required audits. The real complete metadata and
+transient high-water census remains a prerequisite; this is not a fit claim.
+
+All **59 plan tests passed** in1.84 seconds, including compact/full equality,
+729 selection combinations and tampered identity/reconstructed-config rejection.
+Together with the earlier five inference binding tests, this iteration passed64
+tests plus six sequential adapter negatives. Only the plan implementation/test
+changed after the full inference-prefix run; both source manifests and the scope
+of that validation are preserved in `inference-compact-plan-component-review.json`.
+Use the compact request identity in the future frozen plan. Continue the shared
+v2 inference controller, then real metadata/numerical/input/pilot prerequisites;
+training, inference, protected deletion and closed-fixture retry remain unlaunched.
