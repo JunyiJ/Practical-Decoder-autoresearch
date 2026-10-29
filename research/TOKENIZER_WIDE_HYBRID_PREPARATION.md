@@ -4015,3 +4015,29 @@ superseded estimate. Source/runtime hashes match the completed numerical and
 train-only input passes. At freeze no resource pilot or quality worker has
 launched. Next: serial resource pilots through the existing production
 `run_pilot_once`, then the independent pilot boundary and quality readiness.
+
+
+### Real MPS resource pilots accepted — October 29, 2026
+
+All three width512/divisor2 resource pilots completed and passed independent
+production acceptance: hybrid49.04s, gated MLA41.69s, KDA56.64s. Each used
+20 updates. Maximum observed RSS was3,233,792,000bytes (3.01GiB), and maximum
+MPS driver allocation was4,112,433,152bytes (3.83GiB), below4/6GiB guards.
+Raw/H200 prefill/decode/reset cache checks passed at both batches; maximum
+absolute error was4.65e-6. Tensor finiteness and exact EMA-export checks passed.
+These establish measured local feasibility, not1200-step stability or quality.
+
+The authorized pilot retention boundary independently re-audited all receipts,
+executed its exact six-file pilot-checkpoint manifest, verified the deletion
+journal and protected noncheckpoint evidence, and passed remaining full-campaign
+storage. Numerical partials, selected checkpoints and fresh confirmations were
+outside that manifest. All original pilot metadata bytes plus the subsequent
+boundary changes are archived in `resource-pilot-reviewed-v2.json` and
+`resource-pilot-boundary-v2-archive.json`. The complete boundary ref is
+`meta/pilot-boundary-complete.json`, SHA256
+`455b3f962b50b7e9f6bd72fa1e81707ff23cbcdf412ba946893d04564a6c6afc`.
+
+The finite quality grid was fixed before pilots. Next is its first1200-step LR
+trial through the existing production readiness/serial-dispatch path, using
+this accepted boundary and the same frozen source/runtime. No research quality
+result or adoption is claimed by these pilot observations.

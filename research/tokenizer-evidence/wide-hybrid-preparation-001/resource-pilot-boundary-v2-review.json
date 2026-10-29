@@ -1,0 +1,295 @@
+{
+  "reference": {
+    "path": "meta/pilot-boundary-complete.json",
+    "sha256": "455b3f962b50b7e9f6bd72fa1e81707ff23cbcdf412ba946893d04564a6c6afc"
+  },
+  "review": {
+    "chain_stage": {
+      "context_sha256": "b88cf31f73224f3478bc09070221bda445b4246c18a37349db667b65f14ce2d4",
+      "execution_ref": {
+        "path": ".retention/pilot/execution-review.json",
+        "sha256": "d91654fa3dd69dd283e0dc2438730dd47c9ef5ec8b44c1f8167f43deaa7455d8"
+      },
+      "manifest": {
+        "boundary": "pilot",
+        "decision_sha256": "35c402c30bda14a35aaec4ce44df5d4489c57bb42f4ec399a07839860c0e1a25",
+        "delete": [
+          {
+            "index": 0,
+            "path": "pilots/00/checkpoints/final_000020_1793308044846269000.pt",
+            "role": "raw",
+            "sha256": "827aecd30e30b9385e074211d57fcb2179bb52b6a00d842dd8029500a5998653",
+            "size": 996028361
+          },
+          {
+            "index": 0,
+            "path": "pilots/00/checkpoints/h200.pt",
+            "role": "h200",
+            "sha256": "9855c7ae644eb35196920a48f9617f0b3c6ec026f87b40d8984ac0d615d3a2cb",
+            "size": 263331815
+          },
+          {
+            "index": 1,
+            "path": "pilots/01/checkpoints/final_000020_1793308093388579000.pt",
+            "role": "raw",
+            "sha256": "fb832fe7a9cad016aef398b13532cd072ca70192645f56f55d9d2c1cf6541964",
+            "size": 986677237
+          },
+          {
+            "index": 1,
+            "path": "pilots/01/checkpoints/h200.pt",
+            "role": "h200",
+            "sha256": "d8878a542b3c28dfdf71ac68c02191dbe18bb54752b61dee55fe28b3b23262ea",
+            "size": 260232515
+          },
+          {
+            "index": 2,
+            "path": "pilots/02/checkpoints/final_000020_1793308155023083000.pt",
+            "role": "raw",
+            "sha256": "cb5407143b22a957ffa6f8f23ace9cad5f9aeaeafc3124770881ae82f45e721b",
+            "size": 999145381
+          },
+          {
+            "index": 2,
+            "path": "pilots/02/checkpoints/h200.pt",
+            "role": "h200",
+            "sha256": "703bc721531054bf8510c9ed7c10fd11730046fa78454dab294c4dbe87caabac",
+            "size": 264364915
+          }
+        ],
+        "evidence": {
+          "meta/numerical-trace.json.gz": "6ae89c77f97d460e3a5c1d731befee68c6e2173b0acf900fa9ae6e34e6a6e0d6",
+          "meta/numerical.json": "8c63f6024193c217f9caff1b1d94c9095bbd42b16e4405a4d79cc0f744716831",
+          "meta/pilot-boundary-attempt.json": "94fecac8112bd743276fdad3ff61516e7703c05227ec5df47ff6996beb061c29",
+          "meta/pilot-dispatch-00.json": "17888be8ac4f16df673f7c6885c74fac034ae99d1903dfa081c881894210eee8",
+          "meta/pilot-dispatch-01.json": "4f2a816091a92a54fdf696ee024afecec7b18e0c9b971b353cd7eb6a6c51c4bf",
+          "meta/pilot-dispatch-02.json": "ea9ea15c53017110e91f3a715236ffe6b4a79dcbcf22da37b965c69217b1f604",
+          "meta/pilot-startup-00-attempt.json": "5cff70969a18fbe9b3121d78679529bec53ed6430cbaf61974b7abc1f35c3a64",
+          "meta/pilot-startup-00.json": "a39f8a537a4402654a3a64b4e7ada6ac97df7dea319cbd0808ed256bfaa9e71a",
+          "meta/pilot-startup-01-attempt.json": "8e12ae705778b64adec24a75a1830b3fa072570a946a3dbd09e7454ea2dde83e",
+          "meta/pilot-startup-01.json": "0b26587f180db31b50566930269ff9c00c9f60470ca577389562ccb04d3f2afc",
+          "meta/pilot-startup-02-attempt.json": "763bfecefe949cc4a59996444037f47854793b5e0dde152385945f55e6abd055",
+          "meta/pilot-startup-02.json": "c4a5dcc38eeee184c4e7448856190b31a060d2c81d384745380253c558354422",
+          "meta/plan.json": "bb44ea3b55db81b6808072f36d09a9eb8c5d263aa18bc88d06acc88b4ffc19d5",
+          "meta/projection.json": "5aba55c22f234f35aacea218fa53e767c450e9aaa6f07f34bfa2b4d3d5bf9df4",
+          "meta/training-input-ids.json": "c703d3ef0f61950b2a5713740e5fedec53255ee535b7276ae4a77b9fc0d21138",
+          "meta/training-input-trace.json": "b57b8bc8b7457cdf616eea2df195c70527ec2c47b71139e0130ee932e6be2ef0",
+          "meta/training-input.json": "5ece26be743dea9270e270d29d8b3aba18d26449bf351a3e3139438e042c5aba",
+          "pilots/00/audit-attempt.json": "1d26d8aa60d90bc807349496f954008e3c18a6d5fb818d10769e393295f2d83e",
+          "pilots/00/audit.json": "c1462ae7d9e375028f39412ab46d8d6a946e543c1caf46c789fd1a8c89b1e6c9",
+          "pilots/00/evaluation-attempt.json": "811f375ddabb053a29d851ca75eded553e47994faaa31e953a1d223591816ece",
+          "pilots/00/metrics.jsonl": "965f561adf446747ee6a4e56828a8d3daf547b4719a05f4b88ef3bc8ef51f097",
+          "pilots/00/process/launch.json": "9cf65bd4ee9dfc798217b618bd56c18fdfae380cb5b06e0d587cc9910d5a8061",
+          "pilots/00/process/process.json": "64fc73484afb86bf088d18ecc9cbbf317e4cf105d77f363e6728dae72416d77e",
+          "pilots/00/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "pilots/00/request.json": "428acf84ac60a406fdf10c7fbb06fc506760f1f1a23110bf5dd8a5fa56610793",
+          "pilots/00/resource-audit.json": "16fdc84efe19e0d5654b9560835930f8026930ad5f352b80e97daad3c0ac3d60",
+          "pilots/00/resource-events.jsonl": "a9e62c50e5b77c5060107022c03a013c37dc9a6a666f840a2a385802be9da1f7",
+          "pilots/00/result.json": "ff3acb668d07eb41f0ff03e71e6025a1cc4062f9966fe40b57b8769193b7dc5f",
+          "pilots/00/training-attempt.json": "f01a8edcef32b2677878b0f233be085d3f58b79b8728128d453b35b597e6b24c",
+          "pilots/00/training-outputs.json": "0676eb872312670ed4a985338018816d0516cb3b90aea8fd62cb4a309785e68a",
+          "pilots/00/training-summary.json": "b2395de4c19d2aeeccecfedebacba49e1cb744ba6f155523d1c606c5b8299e46",
+          "pilots/00/worker-attempt.json": "aa9d35f7c0f388c636cd92a845601e909fe0dd2757c39cdebeffce5c5fffe1f8",
+          "pilots/00/worker-outputs.json": "45429aa3a61c8d21cf17dbbd9e8ee3bf39d7b85fb58b7b047c17a08aaf8978ed",
+          "pilots/01/audit-attempt.json": "f89701564c2a2671d1f6b4ada78ffa618c9830a09adb22e8238548c96f4de5d1",
+          "pilots/01/audit.json": "b36634fb7571846b0d3d1a34b34cac46584d0e2eb8f20fd25ae7748a6885937d",
+          "pilots/01/evaluation-attempt.json": "4da5139f00cb7cbd30325204f876d572b0fa7bc3dd96a03e1beccfc6ba09795e",
+          "pilots/01/metrics.jsonl": "64217a6a88264f1ba78000e48aeb0aa07091ceb65355e64643f9f58a3ab1e27c",
+          "pilots/01/process/launch.json": "86910229bc6f8342feb0c971e1e23db7bf90d8bde921c373fa52fce7d1877228",
+          "pilots/01/process/process.json": "5116196aef99283de89fb0ae8c76fc24a82df8b2482ba2d4b70efb87737b7587",
+          "pilots/01/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "pilots/01/request.json": "b729d24319cf507a7b9d7c04096fa25a00dc95bfca3605623a278079002a824a",
+          "pilots/01/resource-audit.json": "b350d3998b438a85278ee35124d47a7142fede200038db8e71b8e30e49ec14d2",
+          "pilots/01/resource-events.jsonl": "26a385381dee869adefa71ace82dc199daa3ab2c0c4cd4dec0f429f5ddcef623",
+          "pilots/01/result.json": "eb4ceaabeff7e676084c38bc0ef5a79f5d8607439a4498e271e971f6d2057847",
+          "pilots/01/training-attempt.json": "c1328fee9caaa4fc46f1694a0656bf47bf3ad2082522cc4cbda721fbc97f106f",
+          "pilots/01/training-outputs.json": "1a7df40dc7ff8f5f424d62aac13694594ef14d60d1ab8878afe02741a9ce4ba7",
+          "pilots/01/training-summary.json": "fb30c7bf53d17807d11f0855280216f631e9ee858b8bc7b5ef5caa57bfbef95e",
+          "pilots/01/worker-attempt.json": "97b9d9029f2b6e3f88a5264fbe75ed842b2a90e1cadec6dcdc99024bab42c914",
+          "pilots/01/worker-outputs.json": "d51228ee04e8f64c4f3b1b2dffb67d0a0206f6588ec682e88cdd96817d424154",
+          "pilots/02/audit-attempt.json": "d5ce2c81bad2040f62ebe69f7dce9e80d6f10fdd3098c2d3a3c7bf4098aea9d0",
+          "pilots/02/audit.json": "3d0182c42fddb84b72349d6bd8eef54cb38c3bcb85dd2d1e4f73c176090cc9e9",
+          "pilots/02/evaluation-attempt.json": "814d91e64777e8bdbd48838f2bd68f910f2692a39694359866410145d56b44dd",
+          "pilots/02/metrics.jsonl": "56dc9824b8eb2f2524285ed5712ddbb45c8a6889b972041a6ae4530dbcf11c98",
+          "pilots/02/process/launch.json": "56caa5989ad015ba1cc4cacd6207ae96a28e0f18e7cad168b4c2d4123194b6b9",
+          "pilots/02/process/process.json": "3d3ec05439805f07a4d86322203af083884b3a8a086f9cfd81d63534e03a6362",
+          "pilots/02/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "pilots/02/request.json": "3db05181ab0a5a952997e887b405f5a3b69971bb38ff3fcdc426f1b0839fb104",
+          "pilots/02/resource-audit.json": "fd57be5781257b81ad464dd67a3ddc49da2675596db29c822aeee5a279bb37a4",
+          "pilots/02/resource-events.jsonl": "b1b8534bd7bf6e6f8365c2c6d0a97657cfc5c97cf62aae069418b7fc5cc49868",
+          "pilots/02/result.json": "727d26f389025e858917bfd96d879ef6949617421d6742ca038c8a83584527b6",
+          "pilots/02/training-attempt.json": "488bf86b25ed7d0a5b8eece229a5033a89a923e902c99bf8441d6af0d779b896",
+          "pilots/02/training-outputs.json": "75bb543b52ceb3c19b64338582370254dc968c574b4634aa718963042293b06a",
+          "pilots/02/training-summary.json": "256fa352dc5bbee271fa35ebb77516ad3c4694c80e41d6b24d765e826fbc9cb1",
+          "pilots/02/worker-attempt.json": "96cbc20b0700da29ceb3c684d0ae3246f7c7cafd4fcfd1d9f8e3f6002849972d",
+          "pilots/02/worker-outputs.json": "824277f9255c387017e02b3fec3c7d3683f22cd5212b6fb0ada6524931666da2"
+        },
+        "rates_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "records_sha256": "9eaa212eb10460730fdd8494f9127efde3b60bfa68cf3a7a2d75d13c8efde9b6",
+        "retain": [],
+        "selection_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "status": "planned",
+        "version": "wide_hybrid_retention_v2"
+      }
+    },
+    "records": [
+      {
+        "ce": 10.224096795754322,
+        "divisor": 2,
+        "family": "hybrid",
+        "lr": 0.0025,
+        "seed": 3491,
+        "stage": "pilot",
+        "status": "completed",
+        "steps": 20,
+        "width": 512
+      },
+      {
+        "ce": 9.834376425606498,
+        "divisor": 2,
+        "family": "gated_mla",
+        "lr": 0.0025,
+        "seed": 3491,
+        "stage": "pilot",
+        "status": "completed",
+        "steps": 20,
+        "width": 512
+      },
+      {
+        "ce": 10.324813027999262,
+        "divisor": 2,
+        "family": "kda",
+        "lr": 0.0025,
+        "seed": 3491,
+        "stage": "pilot",
+        "status": "completed",
+        "steps": 20,
+        "width": 512
+      }
+    ],
+    "checkpoint_pairs": {
+      "pilot/00": {
+        "h200": {
+          "path": "pilots/00/checkpoints/h200.pt",
+          "sha256": "9855c7ae644eb35196920a48f9617f0b3c6ec026f87b40d8984ac0d615d3a2cb",
+          "size": 263331815
+        },
+        "raw": {
+          "path": "pilots/00/checkpoints/final_000020_1793308044846269000.pt",
+          "sha256": "827aecd30e30b9385e074211d57fcb2179bb52b6a00d842dd8029500a5998653",
+          "size": 996028361
+        }
+      },
+      "pilot/01": {
+        "h200": {
+          "path": "pilots/01/checkpoints/h200.pt",
+          "sha256": "d8878a542b3c28dfdf71ac68c02191dbe18bb54752b61dee55fe28b3b23262ea",
+          "size": 260232515
+        },
+        "raw": {
+          "path": "pilots/01/checkpoints/final_000020_1793308093388579000.pt",
+          "sha256": "fb832fe7a9cad016aef398b13532cd072ca70192645f56f55d9d2c1cf6541964",
+          "size": 986677237
+        }
+      },
+      "pilot/02": {
+        "h200": {
+          "path": "pilots/02/checkpoints/h200.pt",
+          "sha256": "703bc721531054bf8510c9ed7c10fd11730046fa78454dab294c4dbe87caabac",
+          "size": 264364915
+        },
+        "raw": {
+          "path": "pilots/02/checkpoints/final_000020_1793308155023083000.pt",
+          "sha256": "cb5407143b22a957ffa6f8f23ace9cad5f9aeaeafc3124770881ae82f45e721b",
+          "size": 999145381
+        }
+      }
+    },
+    "chain": {
+      "version": "wide_hybrid_retention_v2",
+      "status": "verified_cleanup_chain",
+      "boundaries": 1,
+      "deleted_files": {
+        "pilots/00/checkpoints/final_000020_1793308044846269000.pt": {
+          "index": 0,
+          "path": "pilots/00/checkpoints/final_000020_1793308044846269000.pt",
+          "role": "raw",
+          "sha256": "827aecd30e30b9385e074211d57fcb2179bb52b6a00d842dd8029500a5998653",
+          "size": 996028361
+        },
+        "pilots/00/checkpoints/h200.pt": {
+          "index": 0,
+          "path": "pilots/00/checkpoints/h200.pt",
+          "role": "h200",
+          "sha256": "9855c7ae644eb35196920a48f9617f0b3c6ec026f87b40d8984ac0d615d3a2cb",
+          "size": 263331815
+        },
+        "pilots/01/checkpoints/final_000020_1793308093388579000.pt": {
+          "index": 1,
+          "path": "pilots/01/checkpoints/final_000020_1793308093388579000.pt",
+          "role": "raw",
+          "sha256": "fb832fe7a9cad016aef398b13532cd072ca70192645f56f55d9d2c1cf6541964",
+          "size": 986677237
+        },
+        "pilots/01/checkpoints/h200.pt": {
+          "index": 1,
+          "path": "pilots/01/checkpoints/h200.pt",
+          "role": "h200",
+          "sha256": "d8878a542b3c28dfdf71ac68c02191dbe18bb54752b61dee55fe28b3b23262ea",
+          "size": 260232515
+        },
+        "pilots/02/checkpoints/final_000020_1793308155023083000.pt": {
+          "index": 2,
+          "path": "pilots/02/checkpoints/final_000020_1793308155023083000.pt",
+          "role": "raw",
+          "sha256": "cb5407143b22a957ffa6f8f23ace9cad5f9aeaeafc3124770881ae82f45e721b",
+          "size": 999145381
+        },
+        "pilots/02/checkpoints/h200.pt": {
+          "index": 2,
+          "path": "pilots/02/checkpoints/h200.pt",
+          "role": "h200",
+          "sha256": "703bc721531054bf8510c9ed7c10fd11730046fa78454dab294c4dbe87caabac",
+          "size": 264364915
+        }
+      },
+      "protected_files_verified": 73,
+      "current_inventory_sha256": "583dd3bdc911ecda614ba9ab3d787bdf7da50209d55a95151663f0203a38130b",
+      "audit_semantics_verified": false,
+      "dispatch_authorized": false
+    },
+    "storage": {
+      "status": "remaining_campaign_storage_verified",
+      "projection": {
+        "phase": "lr",
+        "remaining_current_phase_allowance_bytes": 16090816785,
+        "remaining_phase_peak_bytes": {
+          "lr": 16090816785,
+          "rank": 16130627907,
+          "confirm": 21772911364
+        },
+        "remaining_peak_bytes": 21772911364,
+        "reserve_bytes": 8589934592,
+        "metadata_allowance_bytes": 268435456,
+        "initial_full_panel_required_free_bytes": 30631281412,
+        "cleanup_prefix_length": 1,
+        "arithmetic_only": true,
+        "dispatch_authorized": false
+      },
+      "free_bytes": 46160269312,
+      "required_free_bytes": 30631281412,
+      "occupied_checkpoint_capacity_bytes": 0,
+      "checkpoint_logical_bytes": 0,
+      "metadata_bytes": 304605,
+      "cleanup_boundaries_verified": 1,
+      "current_inventory_sha256": "583dd3bdc911ecda614ba9ab3d787bdf7da50209d55a95151663f0203a38130b",
+      "storage_projection_fits": true,
+      "current_phase_space_verified": true,
+      "frozen_plan_verified": false,
+      "audit_semantics_verified": false,
+      "dispatch_authorized": false
+    },
+    "pilot_boundary_verified": true,
+    "dispatch_authorized": false
+  }
+}
