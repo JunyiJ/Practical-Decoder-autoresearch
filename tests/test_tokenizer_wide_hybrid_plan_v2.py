@@ -240,3 +240,31 @@ def test_compact_identity_cannot_hide_request_changes(fixture,monkeypatch,bad):
             cfg=original(*a,**kw);cfg['model']['rope']=1;return cfg
         monkeypatch.setattr(gate,'rank_config',changed)
     with pytest.raises(ValueError,match='requests'):bind(fixture)
+
+
+def test_live_census_locks_only_snapshot_not_frozen_hashing(fixture,monkeypatch):
+    import fcntl
+    from src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter
+    from src.research import tokenizer_wide_hybrid_cleanup as cleanup
+    root,plan,_,_=fixture;path=root/'evidence/meta/plan.json';write(path,plan)
+    sha=file_digest(path);global_lock=root.parent/'global.lock';global_lock.touch();(root/'.lock').touch()
+    monkeypatch.setattr(cleanup,'GLOBAL_LOCK',global_lock)
+    original_snapshot=gate.snapshot;original_hash=gate.file_digest;hashed=[];censuses=[]
+    with global_lock.open('rb') as g,(root/'.lock').open('rb') as c:
+        fcntl.flock(g,fcntl.LOCK_EX|fcntl.LOCK_NB);fcntl.flock(c,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        writer=MetadataWriter(root,(g.fileno(),c.fileno()))
+        def snapshot(campaign):
+            with (root/'control/.metadata.lock').open('rb') as lock:
+                with pytest.raises(BlockingIOError):fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            censuses.append(True);return original_snapshot(campaign)
+        def hashing(target):
+            with (root/'control/.metadata.lock').open('rb') as lock:
+                fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            hashed.append(str(target));return original_hash(target)
+        monkeypatch.setattr(gate,'snapshot',snapshot);monkeypatch.setattr(gate,'file_digest',hashing)
+        report=gate.bind_campaign(path,sha,live_writer=writer)
+        assert report['numerical_review_bound'] and censuses==[True] and hashed
+        with pytest.raises(ValueError,match='exact locked campaign'):gate.bind_campaign(path,sha,live_writer=object())
+        with monkeypatch.context() as patch:
+            patch.setattr(writer,'root',root.parent/'wrong-campaign')
+            with pytest.raises(ValueError,match='exact locked campaign'):gate.bind_campaign(path,sha,live_writer=writer)

@@ -65,7 +65,7 @@ def _transport(writer,seed,proof):
     # Acceptance is appended after process completion; it is not retroactive
     # child output and must not alter the saved self-inclusive byte census.
     total=sum(v['size'] for n,v in census['files'].items()
-        if n.startswith('evidence/'+stem+'/') and n!='evidence/'+stem+'/review.json')
+        if n.startswith('evidence/'+stem+'/') and n not in {'evidence/'+stem+'/review.json','evidence/'+stem+'/controller.json'})
     log=(root/refs['log']['path']).stat().st_size
     _require(type(elapsed) in (int,float) and math.isfinite(elapsed) and 0<=elapsed<600
         and type(sample) is dict and set(sample)=={'free_bytes','output_bytes','log_bytes'}
@@ -118,6 +118,8 @@ def _scope(writer,reference,**expected):
         mode=state if current==seed else 'accepted'
         names={'ready.json'} if mode=='ready' else COMPLETED|({'review.json'} if mode=='accepted' else set())
         evidence_names|={f'inference/{current}/{n}' for n in names}
+        controller=f'inference/{current}/controller.json'
+        if mode=='accepted' and (root/controller).exists():evidence_names.add(controller)
         if mode!='ready':control_names|={f'control/inference-worker-{current}.json',f'control/process-inference-{current}.json'}
     inventory=prep.gate.history.acceptance._inventory(root)
     controls=prep.gate.history.acceptance.readiness._controls(writer,'not-a-control')
@@ -147,6 +149,10 @@ def _scope(writer,reference,**expected):
             if mode=='accepted':
                 review_ref=_ref(root,stem+'/review.json')
                 _require(digest(_document(root,review_ref))==digest(receipt),'Independent accepted inference receipt differs')
+                controller=f'inference/{current}/controller.json'
+                if controller in evidence_names:
+                    from .tokenizer_wide_hybrid_inference_dispatch_v2 import verify_controller
+                    verify_controller(writer,current,ready_ref,review_ref,_ref(root,controller))
                 previous.append(review_ref)
             current_review=receipt
         else:current_review=None

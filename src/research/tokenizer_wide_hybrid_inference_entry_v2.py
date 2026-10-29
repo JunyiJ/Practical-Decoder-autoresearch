@@ -1,10 +1,10 @@
-"""Compact live inference handoff, initially gated to the first fresh triple.
+"""Compact live inference handoff for the finite three-seed serial panel.
 
 The parent replays full retained history before publishing readiness. The child
 reconstructs the same immutable binding, checks frozen source/runtime/input and
 numerical evidence, and verifies live transport at every worker boundary.
-There is deliberately no CLI or dispatcher until completed transport and idle
-history replay are integrated. Later seeds must not bypass that missing gate.
+The child CLI requires exact inherited descriptors and parent readiness.
+The separate serial controller owns idle replay, resource checks and reaping.
 """
 import math
 import os
@@ -29,9 +29,8 @@ PHASES={'entry':(), 'loaded':('worker-attempt.json',), 'measured':('worker-attem
         'saved':('worker-attempt.json','result.json','models.json')}
 
 
-def _first(seed):
-    _require(type(seed) is int and seed==3511,
-             'Later inference seeds require completed transport and serial history integration')
+def _seed(seed):
+    _require(type(seed) is int and seed in outputs.SEEDS,'Exact finite inference seed required')
 
 
 def worker_argv(writer,seed,ready_ref):
@@ -66,9 +65,10 @@ def _immutable(writer,ready):
     _require(type(seed) is int and seed in outputs.SEEDS,'Exact inference readiness seed required')
     root=writer.root/'evidence';ref=ready['request_ref'];request=_document(root,ref)
     args={k:request[k] for k in ('plan_sha256','completion_ref','projection_ref','rank_completion_ref')}
-    prep._request(writer,ref,**args)
+    with writer._serialized():prep._request(writer,ref,**args)
     prep._guard(writer,request['parent_pid'],finished=True)
-    frozen=bind_campaign(root/'meta/plan.json',request['plan_sha256'])
+    # Only the mutable namespace census is locked, never frozen-file hashing.
+    frozen=bind_campaign(root/'meta/plan.json',request['plan_sha256'],live_writer=writer)
     with writer._serialized():census=snapshot(writer.root)
     inventory={};controls={};deadline=time.monotonic()+TIMEOUT
     for name,item in census['files'].items():
@@ -129,16 +129,24 @@ def _launch(argv,parent):
 
 def _live(writer,argv,parent,phase):
     """Read only under the shared metadata lock; never hash weights while held."""
-    stem='evidence/inference/3511';control='control/process-inference-3511.json'
+    seed=int(argv[7]);_seed(seed)
+    stem=f'evidence/inference/{seed}';control=f'control/process-inference-{seed}.json'
     with writer._serialized():
         seen=snapshot(writer.root)['files']
         _require(not any(n.startswith('emergency/') for n in seen),'Emergency evidence blocks live inference')
         inference={n for n in seen if n.startswith('evidence/inference/')}
         expected={ 'evidence/'+prep.REQUEST,stem+'/ready.json',stem+'/process/launch.json',stem+'/process/worker.log'}
         expected|={stem+'/'+n for n in PHASES[phase]}
+        prior_controls=set()
+        from .tokenizer_wide_hybrid_inference_acceptance_v2 import COMPLETED
+        for prior in outputs.SEEDS[:outputs.SEEDS.index(seed)]:
+            expected|={f'evidence/inference/{prior}/'+n for n in COMPLETED|{'review.json'}}
+            controller=f'evidence/inference/{prior}/controller.json'
+            if controller in seen:expected.add(controller)
+            prior_controls|={f'control/inference-worker-{prior}.json',f'control/process-inference-{prior}.json'}
         _require(inference==expected,'Exact live inference phase files required')
         current={n for n in seen if n.startswith(('control/inference-','control/process-inference-'))}
-        _require(current=={prep.GUARD,control,'control/inference-worker-3511.json'},'Exact live inference controls required')
+        _require(current=={prep.GUARD,control,f'control/inference-worker-{seed}.json'}|prior_controls,'Exact live inference controls required')
         launch=_document(writer.root,dict(path=stem+'/process/launch.json',sha256=file_digest(writer.root/stem/'process/launch.json')))
         expected_launch=_launch(argv,parent)
         _require(digest(launch)==digest(expected_launch),'Live launch identity or limits differ')
@@ -159,7 +167,7 @@ def _live(writer,argv,parent,phase):
                  'Live supervisor child identity differs')
         path=writer.root/stem/'process/worker.log';st=path.stat()
         _require(sample['log_bytes']<=st.st_size<=outputs.LIMIT and st.st_nlink==1,'Live log observation differs')
-        guard_name='control/inference-worker-3511.json'
+        guard_name=f'control/inference-worker-{seed}.json'
         guard=_document(writer.root,dict(path=guard_name,sha256=file_digest(writer.root/guard_name)))
         limits=dict(timeout_seconds=600,rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3)
         _require(set(guard)=={'kind','status','reason','pid','limits','elapsed_seconds','observation'}
@@ -174,7 +182,7 @@ def _live(writer,argv,parent,phase):
 
 
 def verify_live_entry(writer,seed,ready_ref,actual_argv,phase):
-    _first(seed);outputs._budget(writer)
+    _seed(seed);outputs._budget(writer)
     argv=worker_argv(writer,seed,ready_ref)
     _require(actual_argv==argv and phase in PHASES,'Exact child command and boundary required')
     root=writer.root/'evidence';ready=_document(root,ready_ref);parent=os.getppid()
@@ -190,7 +198,7 @@ def verify_live_entry(writer,seed,ready_ref,actual_argv,phase):
     _require(entry['ready_ref']==ready_ref,'Readiness changed while reconstructing entry')
     outputs._binding(writer,seed,entry)
     starting,after,_=_live(writer,argv,parent,phase)
-    path=root/'inference/3511/process/worker.log'
+    path=root/f'inference/{seed}/process/worker.log'
     _require(not starting and after[:2]==stamp[:2] and after[2]>=stamp[2]
         and _log_prefix(path,stamp[2])==prefix,'Live log replaced or previous bytes changed')
     _document(root,ready_ref);outputs._budget(writer)
@@ -199,7 +207,28 @@ def verify_live_entry(writer,seed,ready_ref,actual_argv,phase):
 
 
 def run_worker(writer,seed,ready_ref,actual_argv):
-    """Composition with the real verifier; no public launch command yet."""
-    _first(seed)
+    """Bounded child composition with independent live verification."""
+    _seed(seed)
     return outputs.execute_bound_triple(writer,seed,
         entry_check=lambda phase:verify_live_entry(writer,seed,ready_ref,actual_argv,phase))
+
+
+
+def main(argv=None):
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('command',choices=['worker'])
+    parser.add_argument('--campaign',required=True)
+    parser.add_argument('--seed',required=True,type=int)
+    parser.add_argument('--readiness-sha256',required=True)
+    parser.add_argument('--global-fd',required=True,type=int)
+    parser.add_argument('--campaign-fd',required=True,type=int)
+    args=parser.parse_args(argv)
+    writer=MetadataWriter(args.campaign,(args.global_fd,args.campaign_fd))
+    ref=dict(path=f'inference/{args.seed}/ready.json',sha256=_sha(args.readiness_sha256))
+    actual=[sys.executable,'-m',MODULE,*(sys.argv[1:] if argv is None else argv)]
+    _require(actual==worker_argv(writer,args.seed,ref),'Noncanonical inference child command')
+    return run_worker(writer,args.seed,ref,actual)
+
+
+if __name__=='__main__':main()

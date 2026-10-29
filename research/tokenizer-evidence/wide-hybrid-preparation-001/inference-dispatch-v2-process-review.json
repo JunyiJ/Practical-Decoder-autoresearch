@@ -1,0 +1,2434 @@
+{
+  "kind": "wide_hybrid_inference_real_process_test_review_v2",
+  "created_at": "2026-10-29T19:44:37.525128+00:00",
+  "real_children": 12,
+  "successful_children": 4,
+  "expected_failed_children": 8,
+  "test_assertions_verified_reaped": true,
+  "model_loading_and_mps_synthetic": true,
+  "full_quality_binding_synthetic_in_process_tests": true,
+  "runtime_source_log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-dispatch-v2-b-tests.log",
+  "records": [
+    {
+      "scenario": "test_idle_watchdog_hard_failur0",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-c",
+          "import time\nfrom src.research import tokenizer_wide_hybrid_inference_dispatch_v2 as d\nfrom src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter\nw=MetadataWriter('/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur0/campaign',(13, 14))\ncount=0\ndef sample(root):\n global count\n count+=1\n if count>1:\n  if 'limit'=='observer':raise RuntimeError('Synthetic observer error')\n  return dict(peak_rss_bytes=4*1024**3,free_bytes=64*1024**3)\n return dict(peak_rss_bytes=1000,free_bytes=64*1024**3)\nd.observation=sample\nwith d._IdleMonitor(w,3511,'prepare'):time.sleep(10)\n"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 1.5528178340027807,
+        "error": "RuntimeError('Worker exited with code 90')",
+        "log_limit_bytes": 8192,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 4285
+        },
+        "output_limit_bytes": 1048576,
+        "parent_pid": 97493,
+        "pid": 97584,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 90,
+        "status": "failed",
+        "timeout_seconds": 5
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-c",
+          "import time\nfrom src.research import tokenizer_wide_hybrid_inference_dispatch_v2 as d\nfrom src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter\nw=MetadataWriter('/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur0/campaign',(13, 14))\ncount=0\ndef sample(root):\n global count\n count+=1\n if count>1:\n  if 'limit'=='observer':raise RuntimeError('Synthetic observer error')\n  return dict(peak_rss_bytes=4*1024**3,free_bytes=64*1024**3)\n return dict(peak_rss_bytes=1000,free_bytes=64*1024**3)\nd.observation=sample\nwith d._IdleMonitor(w,3511,'prepare'):time.sleep(10)\n"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 8192,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 1048576,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 5
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-c",
+          "import time\nfrom src.research import tokenizer_wide_hybrid_inference_dispatch_v2 as d\nfrom src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter\nw=MetadataWriter('/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur0/campaign',(13, 14))\ncount=0\ndef sample(root):\n global count\n count+=1\n if count>1:\n  if 'limit'=='observer':raise RuntimeError('Synthetic observer error')\n  return dict(peak_rss_bytes=4*1024**3,free_bytes=64*1024**3)\n return dict(peak_rss_bytes=1000,free_bytes=64*1024**3)\nd.observation=sample\nwith d._IdleMonitor(w,3511,'prepare'):time.sleep(10)\n"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 1.546400375002122,
+        "error": "RuntimeError('Worker exited with code 90')",
+        "log_limit_bytes": 8192,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 3154
+        },
+        "output_limit_bytes": 1048576,
+        "parent_pid": 97493,
+        "pid": 97584,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 90,
+        "status": "failed",
+        "timeout_seconds": 5
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller_failure": {
+        "adopted": false,
+        "error": "RuntimeError('peak_rss_limit')",
+        "guards": {
+          "prepare": {
+            "elapsed_seconds": 1.012172875001852,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 68719476736,
+              "peak_rss_bytes": 4294967296
+            },
+            "pid": 97584,
+            "reason": "peak_rss_limit",
+            "status": "failed"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97584,
+        "retry_allowed": false,
+        "seed": 3511,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_idle_watchdog_hard_failur1",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-c",
+          "import time\nfrom src.research import tokenizer_wide_hybrid_inference_dispatch_v2 as d\nfrom src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter\nw=MetadataWriter('/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur1/campaign',(13, 14))\ncount=0\ndef sample(root):\n global count\n count+=1\n if count>1:\n  if 'observer'=='observer':raise RuntimeError('Synthetic observer error')\n  return dict(peak_rss_bytes=4*1024**3,free_bytes=64*1024**3)\n return dict(peak_rss_bytes=1000,free_bytes=64*1024**3)\nd.observation=sample\nwith d._IdleMonitor(w,3511,'prepare'):time.sleep(10)\n"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 1.5088184160049423,
+        "error": "RuntimeError('Worker exited with code 91')",
+        "log_limit_bytes": 8192,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 4291
+        },
+        "output_limit_bytes": 1048576,
+        "parent_pid": 97493,
+        "pid": 97597,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 91,
+        "status": "failed",
+        "timeout_seconds": 5
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-c",
+          "import time\nfrom src.research import tokenizer_wide_hybrid_inference_dispatch_v2 as d\nfrom src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter\nw=MetadataWriter('/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur1/campaign',(13, 14))\ncount=0\ndef sample(root):\n global count\n count+=1\n if count>1:\n  if 'observer'=='observer':raise RuntimeError('Synthetic observer error')\n  return dict(peak_rss_bytes=4*1024**3,free_bytes=64*1024**3)\n return dict(peak_rss_bytes=1000,free_bytes=64*1024**3)\nd.observation=sample\nwith d._IdleMonitor(w,3511,'prepare'):time.sleep(10)\n"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 8192,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 1048576,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 5
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-c",
+          "import time\nfrom src.research import tokenizer_wide_hybrid_inference_dispatch_v2 as d\nfrom src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter\nw=MetadataWriter('/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur1/campaign',(13, 14))\ncount=0\ndef sample(root):\n global count\n count+=1\n if count>1:\n  if 'observer'=='observer':raise RuntimeError('Synthetic observer error')\n  return dict(peak_rss_bytes=4*1024**3,free_bytes=64*1024**3)\n return dict(peak_rss_bytes=1000,free_bytes=64*1024**3)\nd.observation=sample\nwith d._IdleMonitor(w,3511,'prepare'):time.sleep(10)\n"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 1.5042289580014767,
+        "error": "RuntimeError('Worker exited with code 91')",
+        "log_limit_bytes": 8192,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 3157
+        },
+        "output_limit_bytes": 1048576,
+        "parent_pid": 97493,
+        "pid": 97597,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 91,
+        "status": "failed",
+        "timeout_seconds": 5
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller_failure": {
+        "adopted": false,
+        "error": "RuntimeError('Synthetic observer error')",
+        "guards": {},
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97597,
+        "retry_allowed": false,
+        "seed": 3511,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_parent_failure_reaps_real0",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "ebc560a7e5cf2b531807130b0fc81b730bff6bb5eb84aaeefa4f71cc9e4e58e0",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.04096558300079778,
+        "error": "ValueError('STOP prevents inference outputs')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 4670
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97551,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "ebc560a7e5cf2b531807130b0fc81b730bff6bb5eb84aaeefa4f71cc9e4e58e0",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "ebc560a7e5cf2b531807130b0fc81b730bff6bb5eb84aaeefa4f71cc9e4e58e0",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.03672133299551206,
+        "error": "ValueError('STOP prevents inference outputs')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 3842
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97551,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller_failure": {
+        "adopted": false,
+        "error": "ValueError('STOP prevents inference outputs')",
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.04559900000458583,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55105482752,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": "ValueError('STOP prevents inference outputs')",
+            "status": "failed"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.07062033399415668,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105507328,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "retry_allowed": false,
+        "seed": 3511,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_parent_failure_reaps_real1",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real1/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "df1c152e13012e60de9398dd002015986faee6f85398706e7c16cca5c0109ed2",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.03754024999943795,
+        "error": "RuntimeError('Synthetic parent peak_rss_limit')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 4672
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97552,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real1/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "df1c152e13012e60de9398dd002015986faee6f85398706e7c16cca5c0109ed2",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real1/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "df1c152e13012e60de9398dd002015986faee6f85398706e7c16cca5c0109ed2",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.033302374999038875,
+        "error": "RuntimeError('Synthetic parent peak_rss_limit')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 3842
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97552,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller_failure": {
+        "adopted": false,
+        "error": "RuntimeError('Synthetic parent peak_rss_limit')",
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.04210662500554463,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55105241088,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": "RuntimeError('Synthetic parent peak_rss_limit')",
+            "status": "failed"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.07046220800111769,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105257472,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "retry_allowed": false,
+        "seed": 3511,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_parent_failure_reaps_real2",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real2/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "60340ce7a0b1d10e1c60795672ac0d572ee050b3b0fbebb99d03d6003a3e7455",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.037513957999181,
+        "error": "RuntimeError('Synthetic parent wall_time_limit')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 4671
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97553,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real2/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "60340ce7a0b1d10e1c60795672ac0d572ee050b3b0fbebb99d03d6003a3e7455",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real2/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "60340ce7a0b1d10e1c60795672ac0d572ee050b3b0fbebb99d03d6003a3e7455",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.033256541995797306,
+        "error": "RuntimeError('Synthetic parent wall_time_limit')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 3842
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97553,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller_failure": {
+        "adopted": false,
+        "error": "RuntimeError('Synthetic parent wall_time_limit')",
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.042140083001868334,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55104405504,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": "RuntimeError('Synthetic parent wall_time_limit')",
+            "status": "failed"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.07176445799996145,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55104425984,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "retry_allowed": false,
+        "seed": 3511,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_parent_failure_reaps_real3",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real3/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "e921436663ee49380b572c945c70e2c30aabb211a41f83a94d70aa143bfbce25",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.03663600000436418,
+        "error": "KeyboardInterrupt('Synthetic parent interrupt')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 4672
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97554,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real3/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "e921436663ee49380b572c945c70e2c30aabb211a41f83a94d70aa143bfbce25",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real3/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "e921436663ee49380b572c945c70e2c30aabb211a41f83a94d70aa143bfbce25",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.032368665997637436,
+        "error": "KeyboardInterrupt('Synthetic parent interrupt')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 3842
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97554,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller_failure": {
+        "adopted": false,
+        "error": "KeyboardInterrupt('Synthetic parent interrupt')",
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.04118245800054865,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55104163840,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": "KeyboardInterrupt('Synthetic parent interrupt')",
+            "status": "failed"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.07118016699678265,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55104180224,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "retry_allowed": false,
+        "seed": 3511,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_parent_failure_reaps_real4",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real4/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "db8f4b8c7fe28d5ce96a495eba0846050eea6f0889cc78b405d500115bd9dbb3",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.03670916699775262,
+        "error": "KeyboardInterrupt('Inference controller signal 15')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 4676
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97555,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real4/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "db8f4b8c7fe28d5ce96a495eba0846050eea6f0889cc78b405d500115bd9dbb3",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real4/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "db8f4b8c7fe28d5ce96a495eba0846050eea6f0889cc78b405d500115bd9dbb3",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.0324197500012815,
+        "error": "KeyboardInterrupt('Inference controller signal 15')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 0,
+          "output_bytes": 3842
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97555,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": -15,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller_failure": {
+        "adopted": false,
+        "error": "KeyboardInterrupt('Inference controller signal 15')",
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.0412731660035206,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55103922176,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": "KeyboardInterrupt('Inference controller signal 15')",
+            "status": "failed"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.07031708299473394,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55103938560,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "retry_allowed": false,
+        "seed": 3511,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_second_real_child_failure0",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_second_real_child_failure0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "2092bbdf198fd62bbb04100e8e577450a55e95a83b51eeb38a9351d6d66e2c73",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8434753340043244,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 23629
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97556,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_second_real_child_failure0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "2092bbdf198fd62bbb04100e8e577450a55e95a83b51eeb38a9351d6d66e2c73",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_second_real_child_failure0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "2092bbdf198fd62bbb04100e8e577450a55e95a83b51eeb38a9351d6d66e2c73",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8344746670045424,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 22841
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97556,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+      "worker_guard": {
+        "elapsed_seconds": 0.20968037500279024,
+        "kind": "wide_hybrid_inference_outputs_v2",
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 55102889984,
+          "peak_rss_bytes": 211992576
+        },
+        "pid": 97556,
+        "reason": null,
+        "status": "finished"
+      },
+      "controller": {
+        "adopted": false,
+        "dispatch_authorized": false,
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.8484659579989966,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55102885888,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.07176833300036378,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55103688704,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "review": {
+            "elapsed_seconds": 0.20925433399679605,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55102881792,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "ready_ref": {
+          "path": "inference/3511/ready.json",
+          "sha256": "2092bbdf198fd62bbb04100e8e577450a55e95a83b51eeb38a9351d6d66e2c73"
+        },
+        "review_ref": {
+          "path": "inference/3511/review.json",
+          "sha256": "656462121b19318a73d3f6765b7fd81f7068ebf69add14e115937e7f852dd43e"
+        },
+        "seed": 3511,
+        "status": "completed"
+      }
+    },
+    {
+      "scenario": "test_second_real_child_failure0",
+      "seed": 3512,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_second_real_child_failure0/campaign",
+          "--seed",
+          "3512",
+          "--readiness-sha256",
+          "417326b3f4c4df8655a3e04c63b0d180da32c55a8980151a591861da73cc6a9a",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.6960501670037047,
+        "error": "RuntimeError('Worker exited with code 1')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 1955,
+          "output_bytes": 5131
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97576,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 1,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_second_real_child_failure0/campaign",
+          "--seed",
+          "3512",
+          "--readiness-sha256",
+          "417326b3f4c4df8655a3e04c63b0d180da32c55a8980151a591861da73cc6a9a",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_second_real_child_failure0/campaign",
+          "--seed",
+          "3512",
+          "--readiness-sha256",
+          "417326b3f4c4df8655a3e04c63b0d180da32c55a8980151a591861da73cc6a9a",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.690842750002048,
+        "error": "RuntimeError('Worker exited with code 1')",
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 1955,
+          "output_bytes": 4307
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97576,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 1,
+        "status": "failed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "c531f76917b3a8d2d041491e75112e6778e46b8aa19be43e5fe59021ef49835b",
+      "worker_guard": {
+        "elapsed_seconds": 0.05839262499648612,
+        "kind": "wide_hybrid_inference_outputs_v2",
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 55102828544,
+          "peak_rss_bytes": 211730432
+        },
+        "pid": 97576,
+        "reason": "RuntimeError('Synthetic model loading failure')",
+        "status": "failed"
+      },
+      "controller_failure": {
+        "adopted": false,
+        "error": "RuntimeError('Worker exited with code 1')",
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.7016082080008346,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55102812160,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": "RuntimeError('Worker exited with code 1')",
+            "status": "failed"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.33949474999826634,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55102869504,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "retry_allowed": false,
+        "seed": 3512,
+        "status": "failed"
+      }
+    },
+    {
+      "scenario": "test_three_actual_cli_children0",
+      "seed": 3511,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "d6bb6a11d0eea7674cdffb95233dcee53fb4f830fb0c7c8994d4ca808fe0b57d",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8622540419964935,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 23629
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97505,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "d6bb6a11d0eea7674cdffb95233dcee53fb4f830fb0c7c8994d4ca808fe0b57d",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3511",
+          "--readiness-sha256",
+          "d6bb6a11d0eea7674cdffb95233dcee53fb4f830fb0c7c8994d4ca808fe0b57d",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8533429579983931,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 22841
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97505,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+      "worker_guard": {
+        "elapsed_seconds": 0.23580766600207426,
+        "kind": "wide_hybrid_inference_outputs_v2",
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 55105724416,
+          "peak_rss_bytes": 212041728
+        },
+        "pid": 97505,
+        "reason": null,
+        "status": "finished"
+      },
+      "controller": {
+        "adopted": false,
+        "dispatch_authorized": false,
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.8671818330039969,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55105716224,
+              "peak_rss_bytes": 233127936
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.07094066699937684,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105810432,
+              "peak_rss_bytes": 233127936
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "review": {
+            "elapsed_seconds": 0.2103521669996553,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105712128,
+              "peak_rss_bytes": 233259008
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "ready_ref": {
+          "path": "inference/3511/ready.json",
+          "sha256": "d6bb6a11d0eea7674cdffb95233dcee53fb4f830fb0c7c8994d4ca808fe0b57d"
+        },
+        "review_ref": {
+          "path": "inference/3511/review.json",
+          "sha256": "92077b07836bf4e2aeef57c80a6dc7fa2ceeb11a9f8f0fed6528e47eb825f64a"
+        },
+        "seed": 3511,
+        "status": "completed"
+      }
+    },
+    {
+      "scenario": "test_three_actual_cli_children0",
+      "seed": 3512,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3512",
+          "--readiness-sha256",
+          "412ec7b465464e33a865f76d3ae44b7e503a24cb91530d793e6b40d563b7df72",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8781647089999751,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 21477
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97527,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3512",
+          "--readiness-sha256",
+          "412ec7b465464e33a865f76d3ae44b7e503a24cb91530d793e6b40d563b7df72",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3512",
+          "--readiness-sha256",
+          "412ec7b465464e33a865f76d3ae44b7e503a24cb91530d793e6b40d563b7df72",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8678794169973116,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 20689
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97527,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+      "worker_guard": {
+        "elapsed_seconds": 0.2477165829986916,
+        "kind": "wide_hybrid_inference_outputs_v2",
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 55105634304,
+          "peak_rss_bytes": 211763200
+        },
+        "pid": 97527,
+        "reason": null,
+        "status": "finished"
+      },
+      "controller": {
+        "adopted": false,
+        "dispatch_authorized": false,
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.8837645829989924,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55105634304,
+              "peak_rss_bytes": 233259008
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.3289282089972403,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105699840,
+              "peak_rss_bytes": 233259008
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "review": {
+            "elapsed_seconds": 0.3797666250029579,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105630208,
+              "peak_rss_bytes": 233373696
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "ready_ref": {
+          "path": "inference/3512/ready.json",
+          "sha256": "412ec7b465464e33a865f76d3ae44b7e503a24cb91530d793e6b40d563b7df72"
+        },
+        "review_ref": {
+          "path": "inference/3512/review.json",
+          "sha256": "182f3813ce1d2e8e80a9b63597dd5bd7aee35f4c3f7233a4c7161bdd3290b85f"
+        },
+        "seed": 3512,
+        "status": "completed"
+      }
+    },
+    {
+      "scenario": "test_three_actual_cli_children0",
+      "seed": 3513,
+      "terminal": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3513",
+          "--readiness-sha256",
+          "edc62ad44ffbdb079494414eb97a681cb2e078f5c5eee4f2a022f257bb5fccaf",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8998779999965336,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 21477
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97540,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "launch": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3513",
+          "--readiness-sha256",
+          "edc62ad44ffbdb079494414eb97a681cb2e078f5c5eee4f2a022f257bb5fccaf",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": null,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 600
+      },
+      "supervisor": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_wide_hybrid_inference_entry_v2",
+          "worker",
+          "--campaign",
+          "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+          "--seed",
+          "3513",
+          "--readiness-sha256",
+          "edc62ad44ffbdb079494414eb97a681cb2e078f5c5eee4f2a022f257bb5fccaf",
+          "--global-fd",
+          "13",
+          "--campaign-fd",
+          "14"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "elapsed_seconds": 0.8881524999960675,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": {
+          "free_bytes": 68719476736,
+          "log_bytes": 279,
+          "output_bytes": 20689
+        },
+        "output_limit_bytes": 4194304,
+        "parent_pid": 97493,
+        "pid": 97540,
+        "required_free_bytes": 8589934592,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "log_sha256": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+      "worker_guard": {
+        "elapsed_seconds": 0.266227334002906,
+        "kind": "wide_hybrid_inference_outputs_v2",
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 55105564672,
+          "peak_rss_bytes": 211992576
+        },
+        "pid": 97540,
+        "reason": null,
+        "status": "finished"
+      },
+      "controller": {
+        "adopted": false,
+        "dispatch_authorized": false,
+        "guards": {
+          "child": {
+            "elapsed_seconds": 0.9061767919993144,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 600
+            },
+            "observation": {
+              "free_bytes": 55105560576,
+              "peak_rss_bytes": 233390080
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "prepare": {
+            "elapsed_seconds": 0.5573721660039155,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105613824,
+              "peak_rss_bytes": 233390080
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          },
+          "review": {
+            "elapsed_seconds": 0.5660714580008062,
+            "kind": "wide_hybrid_inference_controller_v2",
+            "limits": {
+              "reserve_bytes": 8589934592,
+              "rss_limit_bytes": 4294967296,
+              "timeout_seconds": 1800
+            },
+            "observation": {
+              "free_bytes": 55105757184,
+              "peak_rss_bytes": 237273088
+            },
+            "pid": 97493,
+            "reason": null,
+            "status": "finished"
+          }
+        },
+        "kind": "wide_hybrid_inference_controller_v2",
+        "parent_pid": 97493,
+        "ready_ref": {
+          "path": "inference/3513/ready.json",
+          "sha256": "edc62ad44ffbdb079494414eb97a681cb2e078f5c5eee4f2a022f257bb5fccaf"
+        },
+        "review_ref": {
+          "path": "inference/3513/review.json",
+          "sha256": "da5a000a4e264ff0fb499ef2db80109adf576e96307b33eae36b4eb2e0f619cb"
+        },
+        "seed": 3513,
+        "status": "completed"
+      }
+    }
+  ],
+  "fixtures": [
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur0/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "emergency/inference-controller-failure-3511.json": "5de5d9203872a2550256d058c7c7fa1c42689542b2da9f976100387bef49c9c5",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3511.json": "c75fe899ccb990fdde5071efa6f4f1354d4a0358b334dd70812adb83fcb6c966",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "467160d9755e0f957500188d945dd3c481153a0acb1aa5cc6a8e408007749c83",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/panel-request.json": "9efcf593fe1d6341a3ef93a345b97d320c1dc21031d923cd28082853c75ab63a",
+        "evidence/inference/3511/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/inference/3511/process/launch.json": "fe81fa2162f053ec311375445ad27acd5c8dbcd1898a189aa36b3d61a64a2f0c",
+        "evidence/inference/3511/process/process.json": "de523417e653bf97307c8f38c91c42f7a60301b538a55267870d7fe0688f14f0",
+        "evidence/quality/20/request.json": "63ad819e1d554a729c41f5c92e2c88060f1bfa6b276a99c22e4995d886817e33",
+        "evidence/quality/20/result.json": "0d6c1816a4eefeabaf54e08ad8abbe119d9f349c37e0a370d5cc007bfd341f07",
+        "evidence/quality/18/request.json": "4df02d0cd64926feaf9b0d993e2b51db7673e8a38b247b9e58af656f99a04165",
+        "evidence/quality/18/result.json": "09c5a26e99e38c4a83fb59a1ea885f08e402030a568aa4761f5ea97abeac6ae3",
+        "evidence/quality/16/request.json": "1bd9b2b0bb36a09032782e7cc8bbca38496cd2fe920f394bfbf12e788fe32db6",
+        "evidence/quality/16/result.json": "48daa612d1e94bad8864766e47c945d4a3a0e41d89df4679b0de3782aa73d52c",
+        "evidence/quality/17/request.json": "10ea2ee713be1b375ba9fffc7ca387d7922c81ea368a51441031d026c674432b",
+        "evidence/quality/17/result.json": "7caa57dd1ef9b01d987a1be1e9e4a0894be3a21b881ae2ac06a68faeab988921",
+        "evidence/quality/19/request.json": "928eb724a5102135a68e76f203c6cd2aebc498743949a7d68239d2e0bb68230c",
+        "evidence/quality/19/result.json": "6d9d6d96e8ed028c9708f88349538df06f9d72eee549dfcf558c44781e5fe959",
+        "evidence/quality/21/request.json": "74f8de4283027a8376f8e5c085444fc52bcd8c71c094d4788915f0430ef5f1ca",
+        "evidence/quality/21/result.json": "2f3890710eae168b83d1e6bb7ed30336db5dcd510ae0dad892da165338675614",
+        "evidence/quality/23/request.json": "8d438f187e81913eff865a0640a62c643f42d0cd174a7f4a2837bafb41883c0a",
+        "evidence/quality/23/result.json": "2a7c463177386c43ff39fb1e7a30f590c0226176e7e6159ba82d31c8b2f83739",
+        "evidence/quality/15/request.json": "21fd711d3d9997c6fd7a44c7383172e63dc7aaa14259942383ff74053bc34330",
+        "evidence/quality/15/result.json": "55105c2e5f8f7a4f0101df5ce9aadbc1b83e63c70d9bde0f41d0717aa1015d80",
+        "evidence/quality/22/request.json": "0081b61d6c13d1b5e6f93e19f1709a69680a55696ed8552b1f9ca42cc53d9915",
+        "evidence/quality/22/result.json": "178aebb228e2f6dd9415c65eefdb07ebc09c36ddd79dbceed2c4193bbdf4576d",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_idle_watchdog_hard_failur1/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "emergency/inference-controller-failure-3511.json": "64d7fad75698899f10dcfb7264769942a6e5074bba94e070d136d58f60dfbef1",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3511.json": "33fe5def77673bcf0193062095bfa8ddc16502630e8db2e5e6dafdb1319e877d",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "d27d6211ccec9ed3a060e6c9060829aa07568a4750649a2884a13eb5c5b2006d",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/panel-request.json": "a973ff5c5836e34dfe06de2a58909142415144637bcacbbeeacc4dfdea63a345",
+        "evidence/inference/3511/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/inference/3511/process/launch.json": "14f4f5dcba99b2ccf7834d9ec7cf38e209188b3dbdbecbcb2799b4e56ca8dd86",
+        "evidence/inference/3511/process/process.json": "14570cf4c95fc95dbcc2ee67e2ea8fb35dc4d29126b31d94eff8f73057aa45e8",
+        "evidence/quality/20/request.json": "1d8d89066f5997dbeae943a0070e7b28bf1cf9929e45f938f8871e42ef308ef0",
+        "evidence/quality/20/result.json": "09112bdeff4214e6dc7f5911b2bfadd6bc9fa8b1d28087d6afab5685039104dd",
+        "evidence/quality/18/request.json": "c64ee31c41171b627b6f07035c922e27bb52f29c4aad8a9ff2b10c8124ed61ea",
+        "evidence/quality/18/result.json": "80cbc43e86529ad7c74d9a1c374de97e3d656a72f4962293033e68483fe3d093",
+        "evidence/quality/16/request.json": "e42c3248c1b0fd7dbee361964dc96398c0f4b81e2fc90232e52f87b9a3749bda",
+        "evidence/quality/16/result.json": "919d954d78c09acbb8cf4ba4c2fc9d6e6b0d6dc8d1b9fe4c41277d4878517292",
+        "evidence/quality/17/request.json": "73100b422158404d033a2c90521aadc74e2f5ee1dbc4cc38da15483903da36d9",
+        "evidence/quality/17/result.json": "65baf468c73ee091454c64be654290d23f8b3578e5a1e8e2cd4a4ce040514431",
+        "evidence/quality/19/request.json": "b31bc20ff814146a926dd91c59edc9b50fe6366c2892ed2b72b76b95bb2d9fc9",
+        "evidence/quality/19/result.json": "4641ac52eafdc44940dfb5defd8218525f8f6f06ed5d4c253fd61b1524113228",
+        "evidence/quality/21/request.json": "8b03e44e1e7d9ea612910340694832bcb9171c61eab88dbdbc58a01dc3eb076c",
+        "evidence/quality/21/result.json": "caa4c0b1ce6a2e6f683be129b6a0a301cddc6d0b5c86980035b2e37689a41ccb",
+        "evidence/quality/23/request.json": "562d3683175f0d92fda257b85ad7f35b4cb6dddc852d6538022a6c451002da7d",
+        "evidence/quality/23/result.json": "e4bd3c53006d96abb8cf5ae17a5c955ed68369fc89452f4dbb3797f0b2bdbc7a",
+        "evidence/quality/15/request.json": "fab5e808ceb5121772093704ee0fc4c21d4709aa9e7738f64a723128323ad7dd",
+        "evidence/quality/15/result.json": "6752065bf748f97d945275b51db8c239167280203d1a8dfc1f19da3cfadef546",
+        "evidence/quality/22/request.json": "910ef1342a0fd181bc7fe061d64edac80014bb0d7eabfcb7a2efabaaa887b13a",
+        "evidence/quality/22/result.json": "f783a9b88998352323ece15cbc4464f5462cb0874a96a1985d3f7f611ec26c8d",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real0/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "STOP": "d556698170cc12d58761671f8f8c5ab9fd739034d1f1027189a8994d7220e1a3",
+        "emergency/inference-controller-failure-3511.json": "c594b3ed1f33ba8be00a37c2f2c8f404d6824c052585f51a3953a2de2995c8d9",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3511.json": "93afcd01c1834dfc3c1430e3647e2d367b8d8f36f36d94162f4e40a222caea07",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "ce1afc4c01a817a956a18ee4a6a2b554c592c59d87942aa0e92a825e2183df38",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/panel-request.json": "87b44c20ae7b55c6117ec859c5f652611c4148be0f19d0fa588fe982d82a9755",
+        "evidence/inference/3511/ready.json": "ebc560a7e5cf2b531807130b0fc81b730bff6bb5eb84aaeefa4f71cc9e4e58e0",
+        "evidence/inference/3511/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/inference/3511/process/launch.json": "c6215fc6df30d5407132e4e22fbb2576dd95c28d34716d25ba3035201dc792c6",
+        "evidence/inference/3511/process/process.json": "c7e274318b35d238945532e135a5baf7d5ac4a5501871f08621a9a0826c588f0",
+        "evidence/quality/20/request.json": "74c90abd446ad75a13a46b870a11d39be8966a659c2a73679a44e71a7928bb3d",
+        "evidence/quality/20/result.json": "606dec47a639c0aaa25137f57546a5cf896f40b4abdfe0de8ba9eae7fc250e1f",
+        "evidence/quality/18/request.json": "629a8f4c2888614b2809621a9c88b59cc7ea34436f5866d62443fdf1ba30b8aa",
+        "evidence/quality/18/result.json": "ddaa02e0b075fe33a76dcefa1c6993436eeddb575ca4a81d1db72bcbf9e528f6",
+        "evidence/quality/16/request.json": "e453eea81051906c27b89d0859464a4ffb3a3953942b16434c9202bfafda9bea",
+        "evidence/quality/16/result.json": "462795aa94598a07c3529dcf7524f980c627665a9abfba1916e77fdf5ddc138d",
+        "evidence/quality/17/request.json": "bc6f57ce6e44939ac5d45f404295768a4d249f837d274ad0b9a539dd462b07cd",
+        "evidence/quality/17/result.json": "2277af2b8c2a75a6127daabb416951abeb91fbbb919681b582315085131f719c",
+        "evidence/quality/19/request.json": "96721804f215a38dbed3ce493a934157d54dcb0e0ec1b19cbdfe6bfc3ec8e102",
+        "evidence/quality/19/result.json": "57aa6a8b94bc1890fc669d4258960b57dacc3da5577917b7096bbd55f94ffbe4",
+        "evidence/quality/21/request.json": "7c5953a35789a96803c0a33571679696f6142920f1262bf04788e37cb2795631",
+        "evidence/quality/21/result.json": "f05fa45117a5d78ca6960b2385307627b217458e07570544e7c1d2a0667947a6",
+        "evidence/quality/23/request.json": "4b914bf39eeb5205da51072c7e99a0786754a47a275ad971c3a3d2a1d730d4c4",
+        "evidence/quality/23/result.json": "c7e3c2f6a29206ab0184646dac7700004125a7a8a6f6d28b107f5cad7033ced7",
+        "evidence/quality/15/request.json": "6ee289e73582ea4154c19d04ed251e296e0ecb6bd5f7b0b65e1dc581197a9759",
+        "evidence/quality/15/result.json": "c537beedbd4ca472e183095306ab6cf8d1749413f1b10d838279c35f45930c5b",
+        "evidence/quality/22/request.json": "4542d950a69eb4ac9d654a2b28c94b7ef855eeeab94e7e916f05d00fd308a396",
+        "evidence/quality/22/result.json": "25584e8ef06b7099eab94e8911fe7ef65e02bc9020d66b29401385f9b7dac769",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real1/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "emergency/inference-controller-failure-3511.json": "fb2ae66742873d074a75348b36c480747992006012d09a96a3ee8c15714128e8",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3511.json": "917ff5f445e30a9083778224e937deb45f07f093bcd5dd3f5f52bea51ef4c56a",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "6e6a7ddb800f142f1cf86190958a9cbedb89fa628598df48c93372912339f78d",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/panel-request.json": "2bd2d6e5ae6888b3560320b3554366740cc7bbef9eeda649c4e20eae58a4866c",
+        "evidence/inference/3511/ready.json": "df1c152e13012e60de9398dd002015986faee6f85398706e7c16cca5c0109ed2",
+        "evidence/inference/3511/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/inference/3511/process/launch.json": "63d010c06061f5b6c55be8826fa2c795077e4bdebdf9ecc5697e1113a8a4bfba",
+        "evidence/inference/3511/process/process.json": "c103670ce64215a8b358b015055e0f9fed88512c07a9754625e3c0fd6cca154b",
+        "evidence/quality/20/request.json": "e68387f4c3e961de41ab0741c3330d595334c9267c6000597bbd694acb6ccea6",
+        "evidence/quality/20/result.json": "8ed8c5ea5168f37e015b68adf0343d6bd4457dc70af62cff0baca4ea0b20cdc3",
+        "evidence/quality/18/request.json": "b90c180859a6b6c0e5f9a2e7440ddde458dcf1a924520d67be0dd5438719d7bc",
+        "evidence/quality/18/result.json": "b3dec6224733f29d71a5093b155b3849f121bc02da0cd8d9eae5155d360c7f96",
+        "evidence/quality/16/request.json": "cf768ef069380a1ec41454c0dfcd9818cf3b2adb830e0815991f064fd19262a8",
+        "evidence/quality/16/result.json": "bcda3bde1b5e4106dc9524bbf420726231321aa67cf0f9323c442c623c46d669",
+        "evidence/quality/17/request.json": "b5a4e13c6e690b3cf83b30f747fb3ca62ead4b4c8c0c6f3b96b969acb4138a29",
+        "evidence/quality/17/result.json": "208ebb8dd79dccfd0bff18c8c65cc7cad4f6cd0b0b19ade2404faaf61796341b",
+        "evidence/quality/19/request.json": "116812326553695d6d87aa993a96a588874db89ef9e1c39fdde0444af72dc0e0",
+        "evidence/quality/19/result.json": "396a56a2e850ef61bcacabdcd75436bd8ff771a2bf215686f6cfbd08bdd6a7e2",
+        "evidence/quality/21/request.json": "2332c0494e71131c512ddbffee55cc3420d3ff6192d8f31e4be924eb9d78d543",
+        "evidence/quality/21/result.json": "768fdf8ef33538a461819f7c694dc8c7ddabc631c935a405aa87bf42952451ad",
+        "evidence/quality/23/request.json": "82811befac4acc8884d4e9a85e70a0dcd9628b8fe5af05e6d30e0067d5713508",
+        "evidence/quality/23/result.json": "2bc9cfc28a059ea36e2fb86be9119c016daf7d30618fa5eed35cce688bd9bffb",
+        "evidence/quality/15/request.json": "791d344a3c635422aeb9b5129c2e523c6c4d456c8631fdd4f4ee4b4f23bce0cd",
+        "evidence/quality/15/result.json": "4d2ab7fb6d9ace0fff6565508673c289b4d9688f0271d123a4494bf43e86508b",
+        "evidence/quality/22/request.json": "cbaa96bc0e50bd83f2b01e8f5c06a377e48f173f7d2b435560491ee5998ba87c",
+        "evidence/quality/22/result.json": "bc7bd347536bbde9313d947c73d6a090b842925ee8c55fa1a9e91f9dc51891a4",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real2/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "emergency/inference-controller-failure-3511.json": "8299816bf91598e45da0918431909b2227ce0b0e96c7456021e28a58de1871c0",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3511.json": "57128d7d3deb2d10b74354945dd9ece3be2387c185d414ede1a6fc51543bf4c9",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "f62e8ec8334532887a9032f78a38c6b8c6bfcb7f5f54aadfcf82ee9481a7d948",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/panel-request.json": "b7e960ea065af6fbdcc642d02fad06ba7217513c678464db1a0d2fd592c03954",
+        "evidence/inference/3511/ready.json": "60340ce7a0b1d10e1c60795672ac0d572ee050b3b0fbebb99d03d6003a3e7455",
+        "evidence/inference/3511/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/inference/3511/process/launch.json": "5a5687615b291001a0d2a3a68ec6fd99c05056e8dbf4d99042874a23ccd684d1",
+        "evidence/inference/3511/process/process.json": "3d4e96e74e729ce2811a9e5a37f7db0310fc107abf3e426fcb8e01906d583b61",
+        "evidence/quality/20/request.json": "f342f26b2fc20c5b4bacf1d14f78c7f7830211a78f6efde04587149355b57863",
+        "evidence/quality/20/result.json": "5b32cbc6bbc710ba1204d9b3689b138ca37b91ec17b3f2e8dd0ad0c424a8dd52",
+        "evidence/quality/18/request.json": "2ca92dcbe87d770e36fc61b4504117f35688007354882731bed3deb84ee650ff",
+        "evidence/quality/18/result.json": "cb570cd4a8a6feb701da812a86ae4fd21f2add59ec975d8804e2d6a27b4489f3",
+        "evidence/quality/16/request.json": "bf336f29262071cdcdea9c0c20c26d521f7e8f438104d471f35a9b6e8c1d86fa",
+        "evidence/quality/16/result.json": "771537d8c7d4742ad2cae3c9e9d04ef9881519114338c01481eff1433088575d",
+        "evidence/quality/17/request.json": "28352042606fe571e52ffcdb31bfec4944fa4d4596f6f49e90937b7a1aa73fa7",
+        "evidence/quality/17/result.json": "7ca1bad7cc303cc74f18c1c3a3c4fd417e20e79b6843d10e16b0b676b757403d",
+        "evidence/quality/19/request.json": "b1d5fecbe1c77ede34b5c0389a80f9cde840abd1866109d390d6c920a34c6aa5",
+        "evidence/quality/19/result.json": "d606984d564f974006b3bfd8189e4569e576dfc9d943c4730e9ff0d234f2fbe6",
+        "evidence/quality/21/request.json": "7174be8001fc627be5ff1bdc1241d537f8bfa715452540607e7adc4b98b1c7bb",
+        "evidence/quality/21/result.json": "a30c69839ade5520e1bf5eb3e5986162bf326940c5d0c615f87eceddf64afd16",
+        "evidence/quality/23/request.json": "3715d6976462f45902357030b4c9ba171a0dad5fcf345e9d7c395da7715fa269",
+        "evidence/quality/23/result.json": "ee786c029553dd734bce5e8c5937ba487c0ee9c4f6c8a0e29f552e0fba9e060e",
+        "evidence/quality/15/request.json": "0777674ec4e498a6e6df51da55ea8e23df33211088a4a9cbea5bf2299590f9d6",
+        "evidence/quality/15/result.json": "587b2481290c8d7fe006963d52875d2acd5868aaf64188e757becd0b50f6c73d",
+        "evidence/quality/22/request.json": "5e61dcc3612ac32e4f8f0253a7ecb1d9270e8cbd1c0e66727c6dbdb0e9f409d9",
+        "evidence/quality/22/result.json": "ec2289b98250a4e864b04bd61991ace3a71d75b62e8b274d7eb2a6abeacb5466",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real3/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "STOP": "9e6b8a0bdb09672a1bbe550b1433c15331184777c91cc085803f2b9ea3a4102b",
+        "emergency/inference-controller-failure-3511.json": "4dd554b6b5dc793aeba9fdf7f3e350110f5c8a2372f3e39fbec2b90f2d50b97e",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3511.json": "17d68e5ee841b528ed19cd3c4873644851ecb4a736685be7597ff7027952a24a",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "fbb42ddf2d6eaab08583c065c7fbb162423628fe14ef3a09accb09b308589418",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/panel-request.json": "e865364f524611e555449b54106f27f9a90cc5b1ca7378727cece1493bf61aa2",
+        "evidence/inference/3511/ready.json": "e921436663ee49380b572c945c70e2c30aabb211a41f83a94d70aa143bfbce25",
+        "evidence/inference/3511/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/inference/3511/process/launch.json": "d15de5ad8594fcbcf60db738def423119aa58a33402ca7ff445cb31df1976466",
+        "evidence/inference/3511/process/process.json": "f8cb96d33fef30c47d23d2f2081111773c76bc6df38362f345e232e27c2d1127",
+        "evidence/quality/20/request.json": "7d8edd3851f86ff954495bbc30afda9f1174db0fbe173b64597e289f2e709de1",
+        "evidence/quality/20/result.json": "fb95d67e835d566f082146b4259c5d3293da97c274a0eb21d10fa57c029dd4f8",
+        "evidence/quality/18/request.json": "cdd58d83fb1205b0a2b374a52ef66df5ef5798acbdaf1ab64fb993c80ccbf629",
+        "evidence/quality/18/result.json": "a8c0d6c08890b188bc61582a4044ffe56b5773b0331f8f9eac4e36430fd44dcb",
+        "evidence/quality/16/request.json": "82fb433d6ce670f51b3bc4d04b8b3ce7f5b99151a5253390282b614b9e2fd478",
+        "evidence/quality/16/result.json": "c19aef5e6f6a16204650ba14b1106704ec6f9220b3f2015e9b93a5419821e25c",
+        "evidence/quality/17/request.json": "07b6bb977cd0f2b4e7a34e499c30e97bc9a9d39f136abbab5390dc14187bff80",
+        "evidence/quality/17/result.json": "33e4ee456ccbbef788b909308b03a2c6529529ce6e63e2179858b7f9faae9457",
+        "evidence/quality/19/request.json": "03f17de6ab9358e8786fc54670a98498d9975a3e061721d5d443b7e1ff8d4995",
+        "evidence/quality/19/result.json": "f64e0d4763a6bf5a58a317cade06d21cc352f2db24366683ca6d77a023d1b1ca",
+        "evidence/quality/21/request.json": "5575597d9d4a522d1d18f2b847fc6d9b3107995fd2a786579d985a6861771881",
+        "evidence/quality/21/result.json": "2d1e92ab321d0812df5dd02f5134a4b1436eb8dfab1a8a72a0ced4e6e134f642",
+        "evidence/quality/23/request.json": "742facd55f3b3daa74e7d6eae8f82d46073c2372bf5940b4efc3e350ee2ff590",
+        "evidence/quality/23/result.json": "5dc968254cabfbe247a3d05cedcccb876f45a5fe28e6f6559f9c6079561e4bc8",
+        "evidence/quality/15/request.json": "89ca02cb058dc5fcf481d462129531e038449f85fa9938418ba9f6d51e67ca69",
+        "evidence/quality/15/result.json": "2652a6a4e8b32c85e692048468a44d508d38b01609e370109a02ff50f9b9ceba",
+        "evidence/quality/22/request.json": "a937e5de41f7b5266fc2e96c9d2d7998cf4c8884d7456ca586e16d9e12369d7e",
+        "evidence/quality/22/result.json": "f168547132fd169c0823758c0706a2dc2557d4d5048f4d44443c6739c0d72986",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_parent_failure_reaps_real4/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "STOP": "df221241e72546ee39095d571f1d614ef3dfc80cd3a44c5fc7b97e3650b9f2e2",
+        "emergency/inference-controller-failure-3511.json": "e834c8ff1eaeb44814a3441fd7391f7ac03de85f70e072cea4a75e135bfdeb9b",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3511.json": "d9a5037f5b935b27baf6536fc607cac3e50af2216655f60edf930f1ca4ce34a8",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "cab2c7ba08c52e68e5aba204899029d0158b19605903e92e9bac3164bb14af67",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/panel-request.json": "ff707c0da5b0aea400a47fc796747fa6646332ebffcdd65e79bf6e4b69d3155f",
+        "evidence/inference/3511/ready.json": "db8f4b8c7fe28d5ce96a495eba0846050eea6f0889cc78b405d500115bd9dbb3",
+        "evidence/inference/3511/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/inference/3511/process/launch.json": "bef8377c8b7189ca2886bbb231909eceedf572ff3bfddaf74b78df33521cdabf",
+        "evidence/inference/3511/process/process.json": "9de7ecedd9ca75e8cfad176140cad810f4224727d8bae3973c8f7bf479fb045b",
+        "evidence/quality/20/request.json": "1d5fe7829830ad9b91b61c65404671b6100496ca6209499ba189483ac5853e0f",
+        "evidence/quality/20/result.json": "bcb9d4dd6f5d273410950cdbd68d0219db6527806c4ebb08137f868fc8dd1964",
+        "evidence/quality/18/request.json": "c0ec4c7fde422723f31b4e063a9056f326b35f4d03a512c882f66fdfef274710",
+        "evidence/quality/18/result.json": "d52c344eaa98729a34f20500c895f5bdcb0c65c00d56ebe04cb682de9ffaa747",
+        "evidence/quality/16/request.json": "cea03578e41fa53f29a243748f236d0064628e2f7f3a04ddff9569d65273e730",
+        "evidence/quality/16/result.json": "508389ebb2aba919620876da15bfb78dd340adeef63c0a7dfe019463bb0302ff",
+        "evidence/quality/17/request.json": "938c3d0bf74cb4f05948a3b67142ea87db5457a2069aa345401f4bf215f65d84",
+        "evidence/quality/17/result.json": "d3dc260f15c5a35f1a724e6d46476dca73f713c8d69faafbfb8b76e6ef2dc1fc",
+        "evidence/quality/19/request.json": "3925a5481e34c730d192b9174e20707d7b892f625f8eb3a924800e00389c4751",
+        "evidence/quality/19/result.json": "b66fa9d2dc84363cb24afb6b59a9ed34e6d1bad85030997fb5a8b870e834403a",
+        "evidence/quality/21/request.json": "cba3b88545b80a928ddecf9811015b345c7bbd45e86d402464f43b3f090f7a15",
+        "evidence/quality/21/result.json": "bc5384d0a4ea5acc5377236d61404a7b01097b08c60c39ff1d1a88005fc2cca6",
+        "evidence/quality/23/request.json": "19d0dba1aa89e2832530e40da9c673b457fdeca6f66e16b560ac517093d226b4",
+        "evidence/quality/23/result.json": "4e6aa4d80c56fd18fe8544f0a127314f9f75e53bc462831043fa105ad349b15e",
+        "evidence/quality/15/request.json": "359fb857b39f734602e02f11db9ce43c4cea87bfee4611cb50356809b2a29a46",
+        "evidence/quality/15/result.json": "40957542fa634bb3d1c769b0611ecaecbac21bf1aac8c105ff0d6df91b7c2d2d",
+        "evidence/quality/22/request.json": "f9b816a299b026799971d987eaa80da64ef5e55f593b569a7d3a883b06b89ef5",
+        "evidence/quality/22/result.json": "153c1cf6e7c257a90b9c277efb82326e6aa9a37d3df92e08751e178c38a1bbca",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_second_real_child_failure0/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "emergency/inference-controller-failure-3512.json": "8d468d8801f71f9b805983af19684196f44ee34c52d1d14367d9994acba54255",
+        "control/inference-worker-3511.json": "7d8b0d5bf6fe4180bbe4f64cf03bcf560dfc218b8e784aed38b5df559ffcf4d4",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3512.json": "23dff5e4360a48b1023d8dc617e10437331103ca3b05fcd4e391df79adf9d40e",
+        "control/process-inference-3511.json": "ac2c539649ea67952a3c687b3e703debe74b4a087470533677188b0c4aab7538",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "control/inference-worker-3512.json": "e81e211bb3bb454f257edc6944c4e8f18a08e3837b3cb62c5f388a04ebf060ab",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "87bcfa4e05bc64cf4b1fce307cfba45676aefc2aaea275b2b4340915a5f20962",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/models.json": "03ec8874012a7f897d499dbfbe4eb0e8f5a4b4ef9ce42ae6c985bf07e79155fe",
+        "evidence/inference/3511/result.json": "37bb29d7fe78f07a64735dd09aa2c1553dc381425a92ab8afe99cb1ff1a96b3c",
+        "evidence/inference/3511/worker-attempt.json": "6d3364231f1dd9a3b5edfabcdc9d9fec2dfdc3b6eb9fb4d9acd2ec11e4322d10",
+        "evidence/inference/3511/controller.json": "74f7b0f059f0968cd20bcb307de467553d82736a7bba6706a11bc00232f225b8",
+        "evidence/inference/3511/worker-outputs.json": "81620a78d664128d7424b6aefab90abf6ac70ed83b18544bcf482aa66e83e2ae",
+        "evidence/inference/3511/panel-request.json": "3318cb1e7cbcee171ff32e09ebd529ca9fb4c8a6b78824629e5766e8dd915d41",
+        "evidence/inference/3511/review.json": "656462121b19318a73d3f6765b7fd81f7068ebf69add14e115937e7f852dd43e",
+        "evidence/inference/3511/ready.json": "2092bbdf198fd62bbb04100e8e577450a55e95a83b51eeb38a9351d6d66e2c73",
+        "evidence/inference/3512/worker-failure.json": "18f57cd20d3f088e20548e41776b3a261e14aafda435a1ab96333f6dbb5a08ea",
+        "evidence/inference/3512/worker-attempt.json": "dfdee787d1eb9ea60c25a6e32650b89061c6285909255e26fb55f776236b1935",
+        "evidence/inference/3512/ready.json": "417326b3f4c4df8655a3e04c63b0d180da32c55a8980151a591861da73cc6a9a",
+        "evidence/inference/3512/process/worker.log": "c531f76917b3a8d2d041491e75112e6778e46b8aa19be43e5fe59021ef49835b",
+        "evidence/inference/3512/process/launch.json": "f7ad0bb8e75c73b9546f9d2e0b1506fb3341957b48b62b6894e7391884e62fd2",
+        "evidence/inference/3512/process/process.json": "658d8d2472667bc0b8bb157de548fce03fc7780e52d260187a5a73c43eeb668d",
+        "evidence/inference/3511/process/worker.log": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+        "evidence/inference/3511/process/launch.json": "8ff51d4273cb861fa043faea2e731d5d0e66cf09e4d1d83b1a3194e57b7f018f",
+        "evidence/inference/3511/process/process.json": "14d64fcd05c95aae0387783926bb9a8635dcb79e868b1a41bffcbc8357d1183f",
+        "evidence/quality/20/request.json": "e38dcd7d23d98663bbfac9b6f59eff4d5f862ffdd57b2d20051807aa7dfaed46",
+        "evidence/quality/20/result.json": "e3e9b8a54c720fc211a9ca7b1f7e56c4fabf181d9fcdfc18061202c8fd7848ad",
+        "evidence/quality/18/request.json": "81636e0a29e78d4f227834dbc3a5f1d909231a24bab31e2902af6430c309894f",
+        "evidence/quality/18/result.json": "211013c57189aa97caa9c33ac22d1c3c445b3b6c619b15711ddb77a8cb353dbc",
+        "evidence/quality/16/request.json": "06bab6a6407bdf3948959479e0471243b7cc6c6a76a1d1a527328043074f69d9",
+        "evidence/quality/16/result.json": "e842bbb3c8fca084abd283553f40766fd66278c0652fca1426dac84585c4fefb",
+        "evidence/quality/17/request.json": "22c6e46d63dcfd907eea6a9adecf366e6d3052d24894d44b1c7ad2e4f266cc47",
+        "evidence/quality/17/result.json": "22ba099112e296542c7f0a5972cc137358c9481d4fee002a282a8f40224020e8",
+        "evidence/quality/19/request.json": "c0bb6a464848cae6f7656591f584ad1fed7b0e30dff79e6a1f94ae4935b3bb7c",
+        "evidence/quality/19/result.json": "40bdabc56c3d4d5fec40a42d87c6341818ab83b13ba6fd92d9b33741e171c51e",
+        "evidence/quality/21/request.json": "667874a5aefd31d89169a0081076a4738abf5e174bf32e3ca2e5e89aad6dd0cb",
+        "evidence/quality/21/result.json": "b4dc7825ce1c2d03ad660aab45470fb19c31851afd983b7adcf9d2648fc3a507",
+        "evidence/quality/23/request.json": "9ad70148dce47dcf405e5ce7f42141ebb1f8f650d56f89a3563505a7ca730e7f",
+        "evidence/quality/23/result.json": "8f86a145a494130de7132e738c166613c2ba42b5e3d67730a262f267648d6d58",
+        "evidence/quality/15/request.json": "231aeef02cd405fb17c52fdcf09dd67ba348cd637b03b525be3fe198295df93f",
+        "evidence/quality/15/result.json": "e57df4c0d220e54ad754c409cdcdb89abd6283bd8e7b71b17938b99a50dc9a32",
+        "evidence/quality/22/request.json": "1ce0abd0447583620615fd4b0f7bfafed32bde2b9f916c3d7084a3835d909dcf",
+        "evidence/quality/22/result.json": "a4fa84d65c130eca9f998565681bdb4d9dbfc9cb8d8b5646dc4cee8bfbf3faa1",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    },
+    {
+      "root": "/private/tmp/cpu-inference-dispatch-v2-b-fixtures/test_three_actual_cli_children0/campaign",
+      "files": {
+        ".lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/inference-worker-3511.json": "0d2c2c1d163164914d277994180bed4776bb8d1bb01e99c52653c9c93b241c67",
+        "control/.metadata.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "control/process-inference-3512.json": "746f42aedc75f79df0425e636455747d68cdb205b638f38a6fa8a06b3aefd337",
+        "control/process-inference-3513.json": "99734dcf5039ac0667e6c4e112fbe243d7e78a41cbf1e1f8b699351f042460c3",
+        "control/inference-worker-3513.json": "1559f5a9385a62f1702f289fa6aa0154a9c410191965481a59670b9ac39ff0b8",
+        "control/process-inference-3511.json": "2623834270f0d795000cccc90cb11fa9395503ba750417264e0c1d11a5ad82d5",
+        "control/inference-preparation.json": "c18e86b876aabf3dffa0d185b24ed3a4459a0d857384106ce1a4007d5525291e",
+        "control/inference-worker-3512.json": "0ba311e36a01f44f075478ccad44dd6f0dd4ac7dc9fa24828cde4f4ffe6cb448",
+        "evidence/meta/plan.json": "0457a7d52ac1fb219ec3ac0311092e2a667d1521e62e7e3b35ae2e9b0a8d9c9d",
+        "evidence/meta/source.json": "07e42e396ccfff43e5d80d2253138d30bd273473acb6fad5248471690dfeff59",
+        "evidence/meta/projection.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/meta/quality-dispatch-23.json": "96f26e33e9e14482374f31182f1deda40b2216b03837552b98cae495db1a88a7",
+        "evidence/meta/rank-complete.json": "cb8daed7b30399a1c3c8b83b3b7bee4b774a30fc389afc1d375e4c23a3cc4ae8",
+        "evidence/inference/3511/models.json": "14f00576eaf46ad6c97a61a16d210d856736b61f63e57966af364f1f36777574",
+        "evidence/inference/3511/result.json": "37bb29d7fe78f07a64735dd09aa2c1553dc381425a92ab8afe99cb1ff1a96b3c",
+        "evidence/inference/3511/worker-attempt.json": "b1b23c7d6c3d5e2da03febd7c7df0e75cb1e635b8db951605efd4e5fb1f1c515",
+        "evidence/inference/3511/controller.json": "1b612593b03924ab3b931e05bf1fecdb64d4abac6aa46445af13428059db31fc",
+        "evidence/inference/3511/worker-outputs.json": "56db3cb266d483c145377c7f8bd91ae0ac19f06f793590aee8e014c230e004e7",
+        "evidence/inference/3511/panel-request.json": "baafa39f6203a2933ea1c2c26cc0a966e4e114ab1113efe82ce4e0831289e49d",
+        "evidence/inference/3511/review.json": "92077b07836bf4e2aeef57c80a6dc7fa2ceeb11a9f8f0fed6528e47eb825f64a",
+        "evidence/inference/3511/ready.json": "d6bb6a11d0eea7674cdffb95233dcee53fb4f830fb0c7c8994d4ca808fe0b57d",
+        "evidence/inference/3513/models.json": "a64a1d89ead00dd2922511022b10f03442279da6f765262b3497ac4f40855a99",
+        "evidence/inference/3513/result.json": "bbe77cb736f40076765dca160133c491fd5ecdf9d910ea9bf51894f553600062",
+        "evidence/inference/3513/worker-attempt.json": "10b7c7a211d1a2cce6ed77c02f6ecb3f5d7a438c0d1bd3122c5344206a8e58a3",
+        "evidence/inference/3513/controller.json": "079c2c73c3c53ff858ce71808994cbf2d94ee5cdc70013798b9c05e083fa6afb",
+        "evidence/inference/3513/worker-outputs.json": "6d80341b673fc7b9b82e29d286d840ae8eab2ba762ce606d38e63755c776a169",
+        "evidence/inference/3513/review.json": "da5a000a4e264ff0fb499ef2db80109adf576e96307b33eae36b4eb2e0f619cb",
+        "evidence/inference/3513/ready.json": "edc62ad44ffbdb079494414eb97a681cb2e078f5c5eee4f2a022f257bb5fccaf",
+        "evidence/inference/3512/models.json": "fc1b88179d3f9c6411c2d164122b40e45b1c933b87629da2a2aae82dcfee6968",
+        "evidence/inference/3512/result.json": "96cb488a1afa4f0ca9f7f85f7ddcc40dd1022dab8e894d7c6e81fb2cf8d80974",
+        "evidence/inference/3512/worker-attempt.json": "0d51f0cd7f0acf52165962aa48e7b0779ffef803f589edf7ae8e9dff890ec8c9",
+        "evidence/inference/3512/controller.json": "e7d775ab67985f345a97bf839d3e3683924524e35327e34d79cd49fa787eb0d9",
+        "evidence/inference/3512/worker-outputs.json": "31efc9f2a03c64f18bb1103382fcc98e748111baf97cd76e6f9edc43119af230",
+        "evidence/inference/3512/review.json": "182f3813ce1d2e8e80a9b63597dd5bd7aee35f4c3f7233a4c7161bdd3290b85f",
+        "evidence/inference/3512/ready.json": "412ec7b465464e33a865f76d3ae44b7e503a24cb91530d793e6b40d563b7df72",
+        "evidence/inference/3512/process/worker.log": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+        "evidence/inference/3512/process/launch.json": "0ccf8c0b5abd7abc2a71c08e09d531ed2ab01640e4f9d545f3a5a74e75152dc5",
+        "evidence/inference/3512/process/process.json": "4c89844ab670bad1ee11cec3d796038defff07af4658e9d09489620361ebc450",
+        "evidence/inference/3513/process/worker.log": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+        "evidence/inference/3513/process/launch.json": "32f2233a2894116e5b7a132a130a2b8f8b120fce2a4294c7fa79d9c9c0f4ec62",
+        "evidence/inference/3513/process/process.json": "bf084321804b1920e56553787dba0dcbee7550039eb07a65d9002e03be365b4c",
+        "evidence/inference/3511/process/worker.log": "cd1e2ac584a3f68885ff0af29053336ea80154a3efc748f92d03bd6bb29db94b",
+        "evidence/inference/3511/process/launch.json": "83e117b777e33eafa0751b055b2ce63003703de65b1fd8245d1e73b2e64e59ea",
+        "evidence/inference/3511/process/process.json": "e59130ce889e26c822617205e5cd2d627364ac215c30f85c94007816e84da590",
+        "evidence/quality/20/request.json": "b53521ee2678cc96f3e31cbc075d011d06f298cd81567c2f95db1c7a290441d8",
+        "evidence/quality/20/result.json": "f427409a40cc8ce1427bf44df848f7ed9b63e72142117556faa5e5c3b76d5df0",
+        "evidence/quality/18/request.json": "968880e8a985d85f90109d4b93ce59c8fd9ef007e1950c5e6c79962482db77a8",
+        "evidence/quality/18/result.json": "0d6de85537809d7459de63c59f89a8661039c36510a6b75fae18ab23854c6dc6",
+        "evidence/quality/16/request.json": "3bda7603a61340186b6cb53a1633048f6ecb2eb00b93264a009ad3c09d560562",
+        "evidence/quality/16/result.json": "646f1d717413d41ef81fab56e1cd0ae12d62dcac346579bc72b12e883f18a49f",
+        "evidence/quality/17/request.json": "ed75ed8218eec746828605305f27d78d223d1e4aee82c202119e39ec1db14de8",
+        "evidence/quality/17/result.json": "f7f9f3dc9fea8917a1b978c96388542ac429fef55421f06e8c54ec0bafd48708",
+        "evidence/quality/19/request.json": "c2ddd9efc4c6df682e81a12736dbda18216037dc821b621bbbbd339032309d0c",
+        "evidence/quality/19/result.json": "f0858fa61b732122156ca206c5ec0e78ae0125c48711071aab2b3682f9f7ada1",
+        "evidence/quality/21/request.json": "7ba31dd8470d63c7560f7067a658a24cd06405b8479796eb270f2310f78cb8ba",
+        "evidence/quality/21/result.json": "b5bd43ed0dd16109bf6e12ab2a81821e92d7f928988b988b4a928bf89b8f054a",
+        "evidence/quality/23/request.json": "b8c200074891fff802d71992f744dc5627f64d9c7d4150fe769c6195757cc560",
+        "evidence/quality/23/result.json": "80e6428fedeb58c237c21f8ab1f8a99757e799ddc30096613b08c945de6b6afc",
+        "evidence/quality/15/request.json": "6fc3f3ea78f2070c9f80068e70c956eae6300f8bb9d358f3620fd992ca7c6325",
+        "evidence/quality/15/result.json": "b62e5268c0044fd8d2e5c18088318be002b9d162fb337cbfa72382df1a15ad79",
+        "evidence/quality/22/request.json": "58e88b0bb4980aed2bf7a9d84024b1f84a673522991aa8ab0b4fde780b565fa4",
+        "evidence/quality/22/result.json": "8c52d97c96c0f2d4bd923a2fde71072172975484fff500f2f53ccd1671806074",
+        "evidence/quality/22/checkpoints/raw.pt": "f3c1eaccdaf515f693b533ce51c347f830c224a23a0a79dad40b52a78babec61",
+        "evidence/quality/22/checkpoints/h200.pt": "f8c60842325879a71bdb87e4b6e95af2c49ee2dec36d10d03b253182a33a9053",
+        "evidence/quality/15/checkpoints/raw.pt": "dbcaf1dee5ea7711e23c9486de565a61ecc63ea1a3b125e91155dc83da3aa97e",
+        "evidence/quality/15/checkpoints/h200.pt": "83f2e8e1f0a4324ecc1491aca0fde96c10b33bf14079eed57b7b90d9f3689e8c",
+        "evidence/quality/23/checkpoints/raw.pt": "6494cd5ab670a8f33c37a4bae41cb22647bd2b72743602de82f8d9ef1bc8b0f4",
+        "evidence/quality/23/checkpoints/h200.pt": "b692ee27777530ad5fa9273525c71104739541409887d3f48152b35c78ca8f98",
+        "evidence/quality/21/checkpoints/raw.pt": "fdeb1b59a039488cb4e5208238308983bc8d162edd9d9fb2c22285401f851b9a",
+        "evidence/quality/21/checkpoints/h200.pt": "cffc22b6685bf5603f83c5930a0a4456223ad4e0eb0f3eeacb3072e4b5e079c9",
+        "evidence/quality/19/checkpoints/raw.pt": "a1f6216661a89e6a97a99fa0e1a18edf1ec3f782390f4b2627461cacef936835",
+        "evidence/quality/19/checkpoints/h200.pt": "b85443e57ad1230f8d7c717973fe05fb03aca91ecb983aff98f5e853160ea7a2",
+        "evidence/quality/17/checkpoints/raw.pt": "5fb358acbcd356173e70742803bc3383f595d963d4be30adabde606f6d474271",
+        "evidence/quality/17/checkpoints/h200.pt": "65fbf8aed7c6a13c7f44a44311b17a6a7a6c977f1a6a47fd6ef854b64a03efed",
+        "evidence/quality/16/checkpoints/raw.pt": "10c890d6eeb11a9d76143ef06296ccc7c177b21f51f1da063340e641735d1c4a",
+        "evidence/quality/16/checkpoints/h200.pt": "f2d78e71148374c2e07e541e688c77059c22a81d79d96f109e857c99fc9443b6",
+        "evidence/quality/18/checkpoints/raw.pt": "2142e8e58e75e55d864341555e8eee047b5dda9948195f122be9694083c980a0",
+        "evidence/quality/18/checkpoints/h200.pt": "fd6b5acc84a5ce8a6cb305e994b25205e9e91c629e886684eddc98b0233bd867",
+        "evidence/quality/20/checkpoints/raw.pt": "be6823e3ed92539da1effabb30282a68272ba99ccecb2d6ce7b8fccadd74ee1f",
+        "evidence/quality/20/checkpoints/h200.pt": "3c27d8a145ad0e39af4d8dc0fb75ff898ccd6217bda51d0676b39513678b07e5"
+      }
+    }
+  ]
+}

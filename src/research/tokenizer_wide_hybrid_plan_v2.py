@@ -89,7 +89,7 @@ def request_identity(options):
         quality_slot_counts=[len(options['quality'][str(i)]) for i in range(24)])
 
 
-def bind_campaign(plan_path,plan_sha256):
+def bind_campaign(plan_path,plan_sha256,*,live_writer=None):
     """Bind frozen identity and numerical evidence, never authorize a worker.
 
     Numerical review/trace paths are relative to the immutable evidence root,
@@ -103,6 +103,10 @@ def bind_campaign(plan_path,plan_sha256):
     root=Path(plan['output'])
     _require(root.is_absolute() and root==root.resolve()
              and path==_path(root,'evidence/meta/plan.json'),'Campaign plan location differs')
+    if live_writer is not None:
+        from .tokenizer_wide_hybrid_metadata_writer import MetadataWriter
+        _require(isinstance(live_writer,MetadataWriter) and live_writer.root==root,
+                 'Live census requires the exact locked campaign writer')
     def stopped():return _path(root,'STOP').exists()
     _require(not stopped(),'Campaign STOP prevents binding')
     _require(plan.get('kind')==KIND and plan.get('status')=='frozen','Complete frozen v2 campaign required')
@@ -168,7 +172,11 @@ def bind_campaign(plan_path,plan_sha256):
     for name,sha in internal.items():required[str(_path(root/'evidence',name))]=sha
     _require(all(bound.get(name)==sha for name,sha in required.items()),'Missing required frozen evidence')
     for name,sha in bound.items():_require(file_digest(Path(name))==sha,'Frozen evidence changed')
-    census=snapshot(root)
+    if live_writer is None:census=snapshot(root)
+    else:
+        # Only the mutable namespace census needs this lock. Frozen source and
+        # prerequisite hashing must not block live pipe/control publication.
+        with live_writer._serialized():census=snapshot(root)
     _require(digest(source_fingerprint())==digest(source) and digest(runtime_identity())==digest(runtime)
              and not stopped(),'Source/runtime/STOP changed during binding')
     for name,sha in bound.items():_require(file_digest(Path(name))==sha,'Frozen evidence changed during binding')

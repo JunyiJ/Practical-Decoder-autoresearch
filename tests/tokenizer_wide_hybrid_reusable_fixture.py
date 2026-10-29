@@ -48,7 +48,8 @@ def reopen_prefix(binding,*,allow_preparation=False,allow_first_readiness=False,
     frozen={str(evidence/name):binding['files']['evidence/'+name] for name in
             ('meta/plan.json','meta/projection.json','meta/numerical.json','meta/source.txt')}
     bound=dict(context=context,requests=options,files=frozen)
-    def campaign(path,sha):
+    def campaign(path,sha,*,live_writer=None):
+        assert live_writer is None or live_writer.root==root
         assert path==evidence/'meta/plan.json' and sha==frozen[str(path)]
         if any(file_digest(Path(name))!=value for name,value in frozen.items()):
             raise ValueError('Synthetic frozen source changed')

@@ -1,0 +1,44 @@
+{
+  "kind": "wide_hybrid_inference_dispatch_v2_final_review",
+  "status": "serial_cli_and_controller_consolidated_tests_passed_real_prerequisites_pending",
+  "created_at": "2026-10-29T19:50:31.259960+00:00",
+  "prior_component_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-component-review.json",
+  "prior_component_review_sha256": "cbf82ee315a5e9ba4617676b0b8e232a9023dd8c3f3ba37536781e6f8e13017c",
+  "final_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-source-hashes-v3.json",
+  "source_test_files_verified": 347,
+  "final_test_batch": "cpu-inference-dispatch-v2-c",
+  "final_tests_passed": 159,
+  "final_tests_failed": 0,
+  "seconds": 65.98,
+  "guard": {
+    "elapsed_seconds": 66.15577154100174,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 55040290816,
+      "peak_rss_bytes": 264060928
+    },
+    "pid": 97986,
+    "reason": null,
+    "status": "finished"
+  },
+  "final_process_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-process-review-final.json",
+  "historical_prefix_files_unchanged": 818,
+  "retained_historical_checkpoints": 24,
+  "final_change": "Frozen identity gate accepts an exact locked live_writer only for its metadata census. Frozen prerequisite hashing stays outside the namespace lock; default idle behavior unchanged. No arbitrary census callback is accepted.",
+  "verification": "Independent lock test proves census exclusivity and hashing lock availability, rejecting non-writers and another campaign. Consolidated frozen-plan/worker/acceptance/controller tests and full old-panel replay passed.",
+  "limitations": [
+    "No real model loading, MPS measurement, research inference or training in process tests",
+    "Real metadata/transient high-water, numerical/input/resource prerequisites and finite freezes still required",
+    "No adoption, protected deletion, closed fixture retry or holdout access"
+  ],
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-process-review-final.json": "32364908b7a4aea216b2106a1949ef59ee45f3185e6bb7b2d330b92b30c09c2e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-source-hashes-v3.json": "5591e8725f955bdccefc52bde6bf63fe34c48916a6d9560d3bc42eb38500d78a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-dispatch-v2-c-guard.json": "c107bb88ba72297d625096ba30c179f2e6fb3828aa8d6f03c54a011b8ffbbab7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-dispatch-v2-c-tests.log": "722fb52842d56df7d5fe68c84deae8b9cb34c93ba3f653323ed746a218d0ceea"
+  }
+}

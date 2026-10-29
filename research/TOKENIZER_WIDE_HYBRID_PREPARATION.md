@@ -3780,3 +3780,58 @@ CLI or serial controller is exposed. Next integrate the shared later-seed live
 namespace and actual serial supervision/cancellation, then finish real metadata,
 numerical/input/resource prerequisites and finite freezes before training.
 Evidence: `inference-acceptance-v2-component-review.json`.
+
+
+### Shared three-seed inference CLI and guarded serial controller
+
+The live entry now supports all three seeds through one finite namespace and a
+canonical inherited-FD child CLI. Each later readiness binds the prior accepted
+inference files and controller record. Metadata censuses during live entry
+serialize against atomic supervisor writes; retained training weights are
+hashed outside that lock.
+
+The controller creates only one fresh child at a time. Preparation/review have
+separate1800s CPU watchdogs, and the live600s phase uses cooperative parent
+resource checks so STOP, time/RSS/disk/output failures and interrupts terminate
+and reap the owned process group. Parent phases retain4-GiB RSS and8-GiB reserve;
+the worker retains its6-GiB MPS guard and the whole inference panel retains its
+4-MiB cap. SIGINT/SIGTERM record STOP/failure and restore prior handlers. No
+failed or already-attempted seed is resumed. Exact successful parent guard
+records append after acceptance and are independently checked on later replay.
+
+**99 distinct tests passed** across112 executions, with no unexpected failure.
+The final batch passed16 tests in47.70s and includes12 real child processes:
+three canonical serial CLI children, controlled cancellation/resource/signal
+failures, a second-seed loading failure and idle watchdog hard exits. Every
+owned process group was reaped, prior successful evidence was retained, and no
+third seed launched after the second failed. Loading, MPS and the scientific
+inputs in these process tests are synthetic; CPU guards, argv, descriptors,
+PIDs/groups, writers and transport checks are real. These are implementation
+tests, not model-quality or inference-performance evidence.
+
+A separate read-only test reran the complete retained science, cleanup and
+transport history of the previously completed synthetic three-seed panel. All
+818 original files and24 retained checkpoint files stayed unchanged. Its old
+receipts remain readable; the new controller advances only from a preceding
+guarded controller completion.
+
+The controller returns three reviewed seed receipts pending the frozen
+quality/cost decision; it does not adopt a recipe. Next audit actual complete
+metadata/transient high-water fit, finish the separately reviewed numerical
+and exact-input prerequisites, and freeze/measure resource pilots before the
+quality-plan freeze and training. Real research inference/training remain
+unlaunched; no protected cleanup, closed numerical retry or holdout access
+occurred. Evidence: `inference-dispatch-v2-component-review.json` and
+`inference-dispatch-v2-process-review.json`.
+
+The final consolidated controller check passed **159 tests in65.98s** under the
+180s guard. A source review narrowed the live frozen-identity lock to the
+metadata census: hashing source/prerequisite files must not delay the
+supervisor's bounded pipe/control publication. An independent lock test confirms
+that snapshot reading is exclusive, file hashing leaves the lock available,
+and only the exact campaign's MetadataWriter may request this live path.
+Default idle identity verification is unchanged. The consolidated batch reran
+real subprocess/cancellation tests and the complete old-panel replay; all818
+historical files and24 checkpoint files remain unchanged. Final evidence:
+`inference-dispatch-v2-final-review.json` and
+`inference-dispatch-v2-process-review-final.json`.

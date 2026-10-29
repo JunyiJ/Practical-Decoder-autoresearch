@@ -13,13 +13,14 @@ from src.research.tokenizer_wide_hybrid_inference import PROJECTION
 from test_tokenizer_wide_hybrid_metadata_writer import writer
 
 
-def setup(writer,monkeypatch):
+def setup(writer,monkeypatch,*,prepared_only=False):
     root=writer.root/'evidence';selection={f:dict(lr=.00125,divisor=4) for f in outputs.FAMILIES}
     tokenizer={'synthetic':True};ids=list(range(96));token_sha=outputs.token_digest(ids)
     def write(name,value):
         path=writer.publish_json('evidence/'+name,value)
         return dict(path=name,sha256=outputs.file_digest(path))
     plan=write('meta/plan.json',dict(tokenizer=tokenizer,training_token_sha256=token_sha))
+    write('meta/source.json',dict(synthetic_inference_only=True))
     projection=write('meta/projection.json',{'synthetic':True})
     rank=write('meta/rank-complete.json',{'synthetic':True})
     sha='a'*64;triples={s:{} for s in outputs.SEEDS};requests={};metadata={}
@@ -53,6 +54,8 @@ def setup(writer,monkeypatch):
         elapsed_seconds=1.,observation=dict(peak_rss_bytes=100000,free_bytes=64*1024**3)))
     files={str(root/n):v['sha256'] for n,v in inventory.items()}
     files.update({str(root/request['path']):request['sha256'],str(writer.root/prep.GUARD):outputs.file_digest(writer.root/prep.GUARD)})
+    writer._test_triples=triples
+    if prepared_only:return request,None
     ready=write('inference/3511/ready.json',dict(kind=outputs.READY_KIND,seed=3511,parent_pid=os.getppid(),request_ref=request,
         bindings_sha256=outputs.digest(triples[3511]),protected_files_sha256=outputs.digest(files),contract=bound['contract']))
     argv=entry.worker_argv(writer,3511,ready);launch=entry._launch(argv,os.getppid())
@@ -61,7 +64,7 @@ def setup(writer,monkeypatch):
     state=dict(launch,status='running',pid=os.getpid(),elapsed_seconds=.1,
         observation=dict(free_bytes=64*1024**3,output_bytes=1000,log_bytes=14))
     writer.publish_json('control/process-inference-3511.json',state)
-    monkeypatch.setattr(entry,'bind_campaign',lambda *a:copy.deepcopy(frozen))
+    monkeypatch.setattr(entry,'bind_campaign',lambda *a,**kw:copy.deepcopy(frozen))
     monkeypatch.setattr(prep.gate,'_contract',lambda c:dict(tokenizer=tokenizer))
     monkeypatch.setattr(entry.os,'getpgid',lambda p:p)
     monkeypatch.setattr(outputs,'start_memory_guard',lambda:None)
@@ -130,7 +133,7 @@ def test_real_entry_rejects_transport_and_binding_corruption(writer,monkeypatch,
         name={'terminal':'inference/3511/process/process.json','future':'inference/3512/ready.json','temporary':'inference/3511/result.json.tmp'}[bad]
         path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text('{}')
     elif bad=='original':(root/'quality/15/checkpoints/raw.pt').write_bytes(b'changed')
-    elif bad=='frozen':monkeypatch.setattr(entry,'bind_campaign',lambda *a:(_ for _ in ()).throw(ValueError('frozen source differs')))
+    elif bad=='frozen':monkeypatch.setattr(entry,'bind_campaign',lambda *a,**kw:(_ for _ in ()).throw(ValueError('frozen source differs')))
     elif bad=='triples':monkeypatch.setattr(prep.gate,'_contract',lambda c:dict(tokenizer={'different':True}))
     elif bad=='ready':
         change(root/ready['path'],lambda v:v.update(parent_pid=1));ready['sha256']=outputs.file_digest(root/ready['path']);argv=entry.worker_argv(writer,3511,ready)
@@ -152,8 +155,8 @@ def test_real_entry_rejects_transport_and_binding_corruption(writer,monkeypatch,
     assert not (root/'inference/3511/worker-outputs.json').exists()
 
 
-@pytest.mark.parametrize('seed',[True,3511.,3512,3513])
-def test_unintegrated_seed_rejected_without_writes(writer,seed):
+@pytest.mark.parametrize('seed',[True,3511.,3510,3514])
+def test_nonfinite_seed_rejected_without_writes(writer,seed):
     before=outputs.snapshot(writer.root)
     with pytest.raises(ValueError):entry.run_worker(writer,seed,{},[])
     assert outputs.snapshot(writer.root)==before

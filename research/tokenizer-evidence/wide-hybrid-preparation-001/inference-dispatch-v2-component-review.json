@@ -1,0 +1,83 @@
+{
+  "kind": "wide_hybrid_inference_dispatch_v2_component_review",
+  "status": "serial_cli_and_controller_tested_real_prerequisites_pending",
+  "created_at": "2026-10-29T19:44:37.525128+00:00",
+  "base_commit": "f28d3603eec3a339b588b55d56feaa8646db5311",
+  "tests": [
+    {
+      "name": "cpu-inference-dispatch-v2",
+      "passed": 96,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 25.793392999999924,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55110152192,
+          "peak_rss_bytes": 243335168
+        },
+        "pid": 97257,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    {
+      "name": "cpu-inference-dispatch-v2-b",
+      "passed": 16,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 47.880380166003306,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55094218752,
+          "peak_rss_bytes": 257736704
+        },
+        "pid": 97493,
+        "reason": null,
+        "status": "finished"
+      }
+    }
+  ],
+  "distinct_passing_tests": 99,
+  "passing_test_executions": 112,
+  "final_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-source-hashes-v2.json",
+  "source_test_files_verified": 347,
+  "completed_historical_prefix_files_unchanged": 818,
+  "retained_historical_checkpoint_files": 24,
+  "real_process_test_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-process-review.json",
+  "real_children_in_final_batch": 12,
+  "tested_scope": [
+    "All three live seed namespaces and exact inherited-FD canonical child CLI",
+    "Serial actual processes with separate sessions; parent/child identities and lock ownership; no live prior child before next launch",
+    "Cooperative parent CPU/time/disk/output checks through owned supervisor termination/reaping",
+    "Real STOP, KeyboardInterrupt and SIGTERM handling; restored signal handlers; no later seed after failure",
+    "Second model-loading failure preserves first acceptance and prevents third seed",
+    "Idle watchdog limit/observer failure exits90/91 with emergency evidence and reaped process",
+    "Exact saved prepare/child/review parent guards; optional legacy controller absence is readable but this controller requires its preceding guarded completion",
+    "Full old completed-panel scientific/retention/transport replay unchanged under new code; no prior file appended or rewritten",
+    "Serialized metadata census against atomic supervisor writes; protected training-weight hashing stays outside namespace lock"
+  ],
+  "limitations": [
+    "Real OS children and CPU guards are exercised with tiny synthetic models/inputs; no real MPS model or inference performance measurement",
+    "Process tests mock full scientific binding, which is independently covered by complete historical replay tests",
+    "No real numerical/input/resource prerequisites or finite freezes yet; no research training/inference launched",
+    "run_panel returns reviewed per-seed receipts pending the frozen quality/cost decision; it does not adopt a model",
+    "Complete real metadata and transient high-water fit remain unproven; no cleanup or closed fixture retry occurred"
+  ],
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-dispatch-v2-b-guard.json": "f897d799ca170d6cb11e27af1a35c4f321b29d22895c5112d41009dc952348a7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-dispatch-v2-b-tests.log": "d01047883ddc7473f4f4b26b5d2761fda5251fdcdd5cbe285b5a31b6c73f6d5d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-dispatch-v2-guard.json": "7a116826cd9adb140afce2da3c30f0a457aa66961f2ef7e139a4d42f0188165c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-dispatch-v2-tests.log": "12e4f539ce25f5af889d87644e7bb7c2f8b4f075ceda349c938a4123487445c6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-process-review.json": "5382fa3d54600bb04fc999832b93011b15f96340d5971d0b96952bb293c61e20",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-source-hashes-v2.json": "d6e4205aeaa51e92fe4fb5073da9a7a8a075bcb581b384fa4b7360e04a22a248",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-source-hashes.json": "1ab592594e9d029164759b89c8809a095b79791b131325dff7d00ddba7cb9195"
+  }
+}

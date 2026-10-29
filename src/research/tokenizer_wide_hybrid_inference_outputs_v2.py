@@ -1,10 +1,9 @@
-"""Bounded inference worker body for a future v2 serial entry/controller.
+"""Bounded v2 inference body and independent artifact review.
 
-No CLI or dispatcher. The caller must implement the independent live entry
-verifier (source/runtime, complete retained history seal, inherited parent and
-process/control lifecycle). This body requires that verifier at each boundary;
-it does not treat caller-supplied bindings as launch authorization. Tests use a
-synthetic verifier. Real v2 dispatch remains unavailable until integrated.
+The live entry module supplies source/runtime, retained-history and inherited
+process checks at every boundary. The serial controller independently accepts
+completed transport and replays full quality history between seeds. This body
+itself neither dispatches nor advances the panel.
 """
 import os
 from pathlib import Path
@@ -46,7 +45,7 @@ class _WorkerGuard(_Guard):
 def _budget(writer):
     _locks(writer.root/'evidence',writer.lock_fds)
     _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents inference outputs')
-    seen=snapshot(writer.root)
+    with writer._serialized():seen=snapshot(writer.root)
     # Preserve the original whole-panel cap, not three independent 4-MiB caps.
     size=sum(v['size'] for n,v in seen['files'].items() if n.startswith('evidence/inference/'))
     _require(size+TERMINAL_RESERVE<=LIMIT,'Inference panel output/terminal reserve exceeded')
