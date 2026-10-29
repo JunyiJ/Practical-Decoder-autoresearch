@@ -4119,3 +4119,29 @@ trial; future LR slots require their production gates and explicit next
 continuation. No quality result, selection or adoption is claimed yet.
 Follow actual process/events and `campaign002-terminal-v2.json`; never launch
 a duplicate while it runs, and preserve/close any failure without retry.
+
+
+### Campaign002 first quality result independently verified — October29,2026
+
+Slot0 completed1200 MPS updates at width512: hybrid, divisor4,
+LR0.000625, seed3501. Full-validation H200 CE is4.961644521
+and raw endpoint CE is4.988754896, over34278 targets
+and111536 target bytes. This is one LR-screening cell, not a family comparison,
+selection or adoption. Sampled online validation did not choose the checkpoint;
+the closed test remains unused.
+
+Child wall time was789.85s. Sampled peak RSS was2702704640bytes
+and MPS driver memory was3969826816bytes, below the unchanged4/6GiB
+limits. The completed entry guard also passed. Independent read-only replay
+verified the original dispatch transport, all scientific LR-prefix artifacts,
+raw/H200 hashes, pilot-retention lineage, frozen source/input bindings and
+remaining full-panel storage. About43.30GB was free against29.38GB required.
+The exact non-weight campaign bytes and all file hashes are preserved in
+`tokenizer-evidence/wide-hybrid-preparation-001/campaign002-lr-prefix-01-v2-review.json`;
+the independent review guard finished successfully. Both slot0 checkpoints remain.
+
+The one-slot continuation wrapper calls the unchanged production `run_lr_once`
+for a reviewed prefix and stops after that slot. Next is frozen slot1:
+all-gated-MLA, divisor4, LR0.000625, seed3501,1200updates. All9 LR
+cells must complete before rate selection or eligible screen cleanup. No
+training implementation, frozen plan, guard or statistical rule changed.
