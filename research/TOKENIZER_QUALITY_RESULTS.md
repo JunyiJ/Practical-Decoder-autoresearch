@@ -1263,3 +1263,19 @@ workers. This is synthetic preparation, with no new model-quality result or trai
 Next add independent completed-slot19 replay, then remaining finite integration.
 Inference, real metadata fit and actual prerequisite gates still precede freeze.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-parent-integration-v2-component-review.json`.
+
+
+## Independent fifth-fresh history replay
+
+Completed slot19 now has strict independent replay under verified historical
+parent/descriptors, reauditing all 20 records, eight protected pairs, original
+transport/retention history and current plus pre-child capacity. All evidence
+remains unchanged; pending slot20 artifacts and controls remain closed.
+
+All 25 guarded checks passed on unchanged source, including historical-capacity
+and receipt forgery rejection, protected/late-change checks, exact identity/API
+boundaries and slot18 compatibility. No resource guard failed; final inspection
+found no research workers. This is synthetic preparation with no new model-quality
+result or training. Next add explicit slot20 preparation. Remaining integration,
+inference, real metadata fit and actual prerequisite gates still precede freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-history-v2-component-review.json`.

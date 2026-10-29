@@ -3232,3 +3232,37 @@ without allowing pending slot20, then finish finite remaining integration. V2
 inference, real metadata fit and actual numerical/input/measured-pilot gates still
 precede freeze. No research training, model-quality result, protected deletion,
 closed numerical-fixture retry or test-holdout use occurred.
+
+
+## Independent fifth-fresh history replay
+
+The compact completed-slot19 receipt now supports strict independent replay under
+verified historical parent/descriptors. The reader reconstructs original slot19
+attempt/startup/readiness, all four prior fresh transports, retention lineage,
+canonical argv and bounded guards. Full acceptance reaudits 20 completed records
+and eight protected selected/fresh pairs while preserving every evidence byte.
+
+Current capacity and original pre-child capacities at slots19,18,17,16 are
+reconstructed from sealed prefixes and actual retained allocation. The exact
+slot16 inventory anchor and existing chain caps remain. Ordinary replay rejects
+later artifacts and controls; pending slot20 is closed even with a valid
+historical identity. The same-parent acceptance APIs keep their existing behavior.
+
+All 25 guarded checks passed on unchanged source in three serial batches. They
+cover different-parent/descriptor replay, exact API boundaries, false rehashed
+claims, forged historical capacities, protected evidence, later appends, late
+source/control/receipt/free-space/STOP changes and slot18 compatibility. No guarded
+test, driver or resource guard failed; final inspection found no research workers.
+A draft signature syntax error was corrected before source freeze and validation.
+
+The synthetic census retains all 16 checkpoint files; meta group usage is
+1,611,204 of 2,097,152 bytes and total metadata is
+2,231,789 bytes. Full remaining free space is
+30,153,547,670 bytes. Full real-panel metadata fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-history-v2-component-review.json`.
+
+Next extend explicit preparation to slot20 while keeping ordinary idle replay
+strict, then integrate its compact startup and the finite remainder. Inference,
+real metadata fit and actual numerical/input/measured-pilot gates still precede
+freeze. No research training, model-quality result, protected deletion, closed
+numerical-fixture retry or test-holdout use occurred.

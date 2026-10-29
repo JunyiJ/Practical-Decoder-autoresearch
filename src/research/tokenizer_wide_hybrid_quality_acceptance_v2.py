@@ -72,7 +72,7 @@ def _completed_transport(writer,slot,startup_ref,readiness_ref,process,*,histori
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
     parent_pid=os.getpid()
     if historical_identity is not None:
-        _require(type(slot) is int and slot in (15,16,17,18) and type(historical_identity) is dict
+        _require(type(slot) is int and slot in (15,16,17,18,19) and type(historical_identity) is dict
             and set(historical_identity)=={'parent_pid','lock_fds'},'Exact supported fresh historical identity required')
         parent_pid=historical_identity['parent_pid'];fds=historical_identity['lock_fds']
         _require(type(parent_pid) is int and parent_pid>1 and type(fds) is tuple and len(fds)==2
