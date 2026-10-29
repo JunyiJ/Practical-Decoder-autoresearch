@@ -4425,3 +4425,12 @@ its guard, and `campaign003-terminal-v2.json`. After committing this evidence,
 the sole next dispatch is slot1: gatedMLA, divisor4, LR0.000625, seed3501.
 The continuation stops after that slot, preserves failures and never retries.
 No selection, fresh confirmation, inference or closed-test result is claimed.
+
+
+Prefix1 evidence and serial wrappers were committed/pushed as `5a3f5c0`.
+The sandbox-only launch preflight could not see MPS and stopped at its availability
+assertion before any launch receipt, campaign mutation or child. Host execution
+then passed that same preflight with CPU fallback disabled. Slot1 controller
+PID10515/session57898 is active through the original production gates; it may
+run only this one frozen cell. This is not a retried training attempt.
+Launch identity is preserved in `campaign003-lr-01-v2-launch.json`.
