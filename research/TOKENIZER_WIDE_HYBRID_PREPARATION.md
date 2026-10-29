@@ -3672,3 +3672,33 @@ and completed-result acceptance against this request, including the active
 control/log lifecycle; keep ordinary idle history strict. Then complete real
 numerical/input/resource prerequisites and finite pilot/quality freezes before
 training. Evidence: `inference-preparation-v2-component-review.json`.
+
+
+### Bounded inference worker body and independent artifact review
+
+A shared worker body now supports all three fresh seeds using the existing
+export loader, loaded-model identity check, cache callbacks, timing sequence and
+saved-result audit. It requires an independently implemented live entry verifier
+at entry, after loading, after measurement and after publication. The controller
+must still provide that verifier and supervise exactly one child at a time.
+There is no new launch CLI or dispatch authority.
+
+Independent saved-output review binds the attempt, selected raw/H200 pairs,
+model metadata, timing arithmetic and finished worker guard. It rejects rehashed
+corruption, failed/partial artifacts and changed resource limits. It explicitly
+grants no transport, full-quality-history or next-seed acceptance; those remain
+mandatory controller work. The600s worker,4-GiB RSS,6-GiB MPS and8-GiB reserve
+limits remain, and the4-MiB output cap applies to the whole inference panel.
+
+All **58 final tests passed in1.66s**, using mocked loading/MPS/live entry with
+real bounded metadata producers and independent artifact/timing review. A
+refactor regression that called entry verification before the initial panel-cap
+check was corrected; its raw failure and source are preserved. No loading or
+measurement ran in that failing case. No resource guard failed.
+
+Next implement the actual live entry verifier, readiness/active-output scope,
+supervisor transport acceptance and serial controller against these contracts.
+Then complete real metadata/numerical/input/resource prerequisites and finite
+freezes before training. No real inference/training, protected deletion,
+closed-fixture retry or holdout use occurred.
+Evidence: `inference-outputs-v2-component-review.json`.

@@ -1,0 +1,18 @@
+.....................F....................................               [100%]
+=================================== FAILURES ===================================
+__________________ test_whole_panel_cap_applies_across_seeds ___________________
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10f049e20>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109d81080>
+
+    def test_whole_panel_cap_applies_across_seeds(writer,monkeypatch):
+        check,entry,events=fixture(writer,monkeypatch)
+        p=writer.root/'evidence/inference/3513/process/worker.log';p.parent.mkdir(parents=True);p.write_bytes(b'x'*(outputs.LIMIT-outputs.TERMINAL_RESERVE))
+        with pytest.raises(ValueError,match='panel output'):outputs.execute_bound_triple(writer,3511,entry_check=check)
+>       assert not events and not (writer.root/'evidence/inference/3511/worker-attempt.json').exists()
+E       AssertionError: assert (not ['entry'])
+
+tests/test_tokenizer_wide_hybrid_inference_outputs_v2.py:137: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_inference_outputs_v2.py::test_whole_panel_cap_applies_across_seeds
+1 failed, 57 passed in 1.63s

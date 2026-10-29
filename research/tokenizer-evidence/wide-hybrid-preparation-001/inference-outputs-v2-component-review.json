@@ -1,0 +1,122 @@
+{
+  "kind": "wide_hybrid_inference_outputs_v2_component_review",
+  "status": "worker_body_and_artifact_review_tested_live_entry_transport_dispatch_pending",
+  "created_at": "2026-10-29T18:48:15.196748+00:00",
+  "base_commit": "dccf4e635d296022686230386b1a91f69b9d851d",
+  "tests": [
+    {
+      "name": "cpu-inference-outputs-v2",
+      "passed": 50,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 1.3063236670059268,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55192350720,
+          "peak_rss_bytes": 237125632
+        },
+        "pid": 92033,
+        "reason": null,
+        "status": "finished"
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "cpu-inference-outputs-v2-b",
+      "passed": 57,
+      "failed": 1,
+      "guard": {
+        "elapsed_seconds": 1.8056065419950755,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55182409728,
+          "peak_rss_bytes": 237617152
+        },
+        "pid": 92104,
+        "reason": null,
+        "status": "finished"
+      },
+      "exit_code": 1
+    },
+    {
+      "name": "cpu-inference-outputs-v2-c",
+      "passed": 58,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 1.8380233330026385,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55174594560,
+          "peak_rss_bytes": 237240320
+        },
+        "pid": 92162,
+        "reason": null,
+        "status": "finished"
+      },
+      "exit_code": 0
+    }
+  ],
+  "distinct_final_test_cases_passed": 58,
+  "final_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-outputs-v2-source-hashes-v3.json",
+  "source_files_verified": 337,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-outputs-v2-b-guard.json": "1c5cceb67c2549cc9b01096152535b9ccb0d4eadb905281479bcc97a7ae01aed",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-outputs-v2-b-tests.log": "03b2bc60cecab1a60cf3edf4e34bc18e51eae7039bf7647685ad3c02694c7629",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-outputs-v2-c-guard.json": "3e5d05332a880c49517a1775d94dcf44b141587a6ce225e90b5e1140f046b7f1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-outputs-v2-c-tests.log": "1550c1e006b820d0485bc1dd4fbd4e29858e2fdd06959ea5612cf098b11b6655",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-outputs-v2-guard.json": "c51eaf8160b94d406db618bfc8f2ad8fb8a285b2943626ecd429e2544e41df31",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-outputs-v2-tests.log": "ccd9d26d5af2b916b82f6f94841bc4fd578b4c40ed5a7f96ad78bee59c969429",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-outputs-v2-failed-body.py.txt": "27b2d2e43a4423e267f1d32c1b8de17c6563ab0a80836b47ef963230b09f98dc",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-outputs-v2-source-hashes-v2.json": "86c5df21139c740ff270ba9096619c8611e856cdeb12a4cbf37238bd27ad9351",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-outputs-v2-source-hashes-v3.json": "fad8bdd9fab2dbaf10c37ec67bc070c6af09b7fb6ea35c51c4b37c2aa5922171",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-outputs-v2-source-hashes.json": "85e25c4f60132b9fcc6a7127af494b09164de8c367bc1d8fa6e1ba592110d390",
+    "src/research/tokenizer_wide_hybrid_inference_outputs_v2.py": "d27980c2f0fc385a8d9e29d827ad65c347eb079de54e6bf467982615c89c1fcd",
+    "tests/test_tokenizer_wide_hybrid_inference_outputs_v2.py": "ad94f61ec4ecbcb55e1482e86a92a300a522df940b0d35f2ac2ce55017ee8d9b"
+  },
+  "coverage": [
+    "All three seeds use one bounded worker-body implementation",
+    "Exact fresh slots, frozen readiness and current-parent identity checked; protected pair hashes rechecked after load, measurement and publication",
+    "Existing strict export loader, model metadata check, cache callbacks, timing and saved-result audit reused",
+    "600s worker/RSS4GiB guard and existing MPS6GiB watchdog; persisted driver observations at limit rejected",
+    "Whole inference panel remains4MiB, with16KiB terminal reserve; unchanged8GiB disk reserve",
+    "Independent artifact review recomputes timing/model identity and rejects rehashed tampering, failed/partial files and changed guard limits",
+    "Partial publication and failures preserved; no retry or later-seed advance"
+  ],
+  "mocks": [
+    "Independent live entry verifier is synthetic and remains to be implemented in the controller",
+    "Export loading and MPS callbacks are mocked; no real checkpoint tensors, model timing or training",
+    "Fixture free-space observer mocked; outer CPU guard captures actual disk/RSS before fixture changes"
+  ],
+  "failure": {
+    "kind": "unit_regression",
+    "reason": "Refactor called entry verifier before initial panel-cap check",
+    "corrected": "Restored budget check before callback",
+    "loading_or_measurement_reached": false,
+    "closed_numerical_fixture_retried": false,
+    "raw_evidence_preserved": true
+  },
+  "limitations": [
+    "No standalone CLI/launcher",
+    "Live entry verifier and full supervisor transport acceptance remain pending",
+    "Artifact review explicitly returns transport_verified=false, quality_history_reaudited=false and next_seed_authorized=false",
+    "Real numerical/input/resource prerequisites and full metadata/high-water fit remain unproven"
+  ],
+  "raw_log_whitespace_exception": {},
+  "training_launched": false,
+  "inference_launched": false,
+  "holdout_consumed": false,
+  "protected_checkpoints_deleted": false,
+  "adopted": false
+}
