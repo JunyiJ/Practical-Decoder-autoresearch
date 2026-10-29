@@ -1045,3 +1045,22 @@ This is controller preparation, with no new model-quality result or training.
 Slot17 readiness/entry and parent dispatch, remaining fresh slots, inference and
 real numerical/input/measured-pilot and metadata gates still precede freeze.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot17-startup-v2-component-review.json`.
+
+## Slot17 readiness and child-entry preparation
+
+Slot17 readiness and child entry now bind the current parent and complete prior
+history, reconstructing17 completed records and preserving all10 live checkpoint
+files. Entry checks immutable evidence, original transport, source, storage and
+resource guards before invoking a synthetic producer. Parent acceptance and
+serial dispatch for slot17 remain pending; these checks establish no model-quality
+or numerical result and launch no training.
+
+The synthetic seal is22,275bytes. Its inventory chain uses11 of16 allowed
+documents; later fresh slots must use a stable earlier anchor to avoid exceeding
+the cap at slot23. Full real metadata fit, inference and actual prerequisite
+gates still precede plan freeze. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-readiness-entry-v2-component-review.json`.
+
+All17 bounded checks passed on unchanged source, including failure preservation,
+late-change rejection and existing slot15/16 compatibility. No resource guard
+failed and final process inspection found no research workers.

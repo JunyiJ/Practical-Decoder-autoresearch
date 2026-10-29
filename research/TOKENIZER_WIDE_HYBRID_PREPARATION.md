@@ -2766,3 +2766,44 @@ dispatch and remaining finite fresh slots18–23. V2 inference, full real metada
 accounting and actual nine-case numerical/input/measured-pilot gates remain
 before finite-plan freeze. Training remains unlaunched; the closed failed
 combined numerical fixture and test holdout remain untouched.
+
+## Slot17 readiness and child-entry preparation
+
+The readiness sealer now admits slot17 through an explicit, bounded,
+current-parent readiness-guard capability. It reconstructs complete compact
+slot16 history and then seals the exact evidence/control inventory, frozen
+request/source and full remaining storage. Ordinary idle and append-only readers
+remain strict. The immutable seal uses the prior slot16 readiness inventory as
+its delta anchor and grants no dispatch or deletion permission.
+
+Child entry reconstructs17 completed quality records, all three retention
+boundaries, three selected screen pairs and both completed fresh pairs. It
+binds original result/request/checkpoint identities and compact history digests,
+counts only the five live pairs, and checks exact argv, live parent, inherited
+locks, sealed bytes/controls, numerical provenance, capacity, STOP and append-only
+logs. The7200-second entry guard precedes the separately bounded producer.
+Tests use synthetic producer callbacks; no actual model or MPS work is enabled
+by the preparation tests, and parent acceptance/dispatch for slot17 remains pending.
+
+The synthetic seal is22,275bytes, meta group1,534,361 of2,097,152bytes and total
+metadata2,106,990bytes, retaining all10 checkpoint files. Its inventory reference
+chain has11 documents and228,139 physical bytes within the16-document/8MiB
+bounds. Adding one link per remaining fresh slot would exceed the document cap
+at slot23, so later slots must use a stable earlier readiness anchor. This is
+a preparation constraint, not a reason to relax the cap. Real-panel metadata
+fit remains unproven. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-readiness-entry-v2-component-review.json`.
+
+All17 checks passed on unchanged source in serial batches of207.25s,384.66s and
+244.28s. Peak RSS was244,776,960bytes; all batches retained the600-second,4GiB
+RSS and8GiB reserve limits. There were no test, driver or resource-guard failures.
+Coverage includes failure preservation/no retry, malformed guards and unsupported
+slots, changed history/checkpoints/transport, late integrity/capacity checks,
+and existing slot15/16 readiness/entry/CLI compatibility. Final process inspection
+found no research training/test workers.
+
+Next integrate slot17 parent acceptance and serial dispatch, then remaining fresh
+slots18–23 with bounded inventory anchors and independent compact prior transport
+verification. V2 inference and real numerical/input/measured-pilot and metadata
+prerequisites still precede finite-plan freeze. No research training, protected
+checkpoint cleanup, closed-campaign reopening or test-holdout use occurred.
