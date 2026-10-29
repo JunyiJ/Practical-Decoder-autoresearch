@@ -2308,3 +2308,24 @@ then passed that same preflight with CPU fallback disabled. Slot1 controller
 PID10515/session57898 is active through the original production gates; it may
 run only this one frozen cell. This is not a retried training attempt.
 Launch identity is preserved in `campaign003-lr-01-v2-launch.json`.
+
+
+### Campaign003 second LR cell independently reviewed (2026-10-29)
+
+Slot1 gatedMLA completed1200 updates at width512/divisor4/LR0.000625,
+seed3501. Full-validation H200 CE4.953336207757286; raw CE4.92009252749222.
+Child elapsed508.1716s. Relative to slot0 hybrid, H200 CE is lower by
+0.003994636655600 on this screening seed; the incomplete adaptive panel
+supports no superiority or adoption conclusion. Both raw/H200 pairs are retained,
+2,468,497,192bytes total. No closed002 result is pooled.
+
+Independent prefix2 review verified144 file hashes, losslessly archived all
+nonweight evidence, and passed production prior/frozen/pilot/checkpoint/storage
+bindings. The external guard finished in8.7815s, peak RSS220,069,888bytes,
+with no error. Observed free34,695,581,696bytes exceeds required28,162,784,220.
+No cleanup, selection or closed-test evaluation occurred. Evidence is in
+`tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-prefix-02-v2-review.json`,
+its guard and `campaign003-lr-01-v2-terminal.json`.
+After committing/pushing this review, dispatch only slot2 KDA at the same
+LR/divisor/seed through the original one-slot controller. Frozen source and
+all resource guards remain unchanged.
