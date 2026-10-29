@@ -3919,3 +3919,57 @@ phases finish, independently review original guards/process/receipt/checkpoint
 hashes and export the compact numerical trace/review. No nine-case numerical
 pass, MPS pilot, quality-plan freeze or adoption is claimed yet. The closed
 failed combined fixture and test holdout remain closed.
+
+
+### Nine-case rank-policy numerical prerequisite completed
+
+All nine width512 cases (hybrid, gated-MLA and KDA at divisors8/4/2)
+completed27 isolated CPU phases under the frozen separate procedure. For each
+case, four uninterrupted updates exactly matched one disk-checkpointed update
+plus three resumed updates in complete model, optimizer, EMA, torch RNG and
+loader RNG hashes. Every saved floating tensor was checked finite. Independent
+scalar EMA recurrences sampled first/middle/last values of every parameter;
+complete EMA equality, inference-only loading, persistent-buffer preservation
+and optimizer-resume rejection also passed. These are four-update correctness
+checks, not1,200-step quality, general stability or MPS measurements.
+
+Every600s/4GiB-RSS/8GiB-reserve guard finished successfully. Peak RSS was
+3,890,331,648bytes (3.62GiB); the longest phase was87.57s and total worker
+time was1,395.45s. All nine partial checkpoints remain retained, totaling
+8,858,999,191bytes. No failed artifact was replaced or cleaned up, and the
+old failed combined continuation fixture was never called. No worker remains.
+
+The independent terminal reviewer verified all121 original files, all27
+process/guard/receipt chains, exact argv/config/plan identities and original
+checkpoint hashes before and after review. Eight small reviewer checks passed,
+including rejection of failed guards, mismatched resume/checkpoint hashes,
+extra/missing files, nonfinite recurrence diagnostics and wrong argv. Together
+with the five earlier procedure checks, these are13 distinct small tests; the
+27 actual CPU phases are reported separately. The reviewer strengthened exact
+file-set/hash/finite checks before this first terminal review; it did not change
+the frozen worker. Geometry/cache coverage reuses the unchanged, hash-verified
+prior rank evidence, rather than claiming new cache runs.
+
+The compact numerical package contains only two meta files, totaling65,396bytes,
+and passes the production `numerical_review` binder. Original metadata for112
+non-checkpoint files is also archived byte-for-byte in the portable terminal
+review; original checkpoints and run records remain at their recorded paths.
+Evidence: `rank-numerical-v2-reviewed-001/meta/numerical.json`,
+`rank-numerical-v2-terminal-review.json`, and the terminal-review guard/test logs.
+
+A fresh disposable identity plan then exercised `bind_campaign` without mocks,
+using the actual numerical package, the27,838-byte train-only input package,
+current source/runtime/corpus and the complete3-pilot/108-conditional-request
+table represented by its compact exact identity. It passed with11 bound files,
+a40,760-byte plan and142,859 initial metadata bytes. The gate correctly returned
+false for dispatch authority, complete storage fit and measured pilots. This
+identity-only plan is not the resource-pilot or quality campaign freeze, and
+its initial census does not prove future metadata/transient high-water fit.
+Evidence: `actual-prerequisite-binding-v2-review.json` and guard.
+
+Next finish the complete real metadata/inventory/transient envelope and final
+quality/cost aggregation review, then freeze and measure the serial resource
+pilots and freeze the finite quality plan before training. Source/runtime
+changes require explicit prerequisite review; do not silently reuse these
+source-bound passes. MPS pilots, research inference and quality training remain
+unlaunched. All selected/fresh evidence and the test holdout remain protected.

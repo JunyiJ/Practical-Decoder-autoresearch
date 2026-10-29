@@ -2,6 +2,7 @@
 import argparse
 import importlib.util
 import json
+import math
 from pathlib import Path
 import sys
 
@@ -25,6 +26,11 @@ def review(root,sha,output):
     assert not (root/'failure.json').exists() and not any(root.rglob('*.tmp'))
     # Validate every original file, including the retained partial checkpoints.
     files={str(f):file_digest(f) for f in root.rglob('*') if f.is_file()}
+    expected={str(root/n) for n in ('.lock','plan.json','attempt.json','completed.json')}
+    expected.update(str(root/f'{i:02d}/partial.pt') for i in range(9))
+    expected.update(str(root/f'{i:02d}'/phase/name) for i in range(9) for phase in p.PHASES
+                    for name in ('process.json','worker.log','guard.json','receipt.json'))
+    assert set(files)==expected and not any(f.is_symlink() for f in root.rglob('*'))
     cases=[]
     for i,case in enumerate(p.CASES):
         phases=[]
@@ -54,11 +60,16 @@ def review(root,sha,output):
             assert receipt['completed_steps']==(1 if phase=='partial' else 4)
             steps={'baseline':[1,2,3,4],'partial':[1],'resumed':[2,3,4]}[phase]
             assert receipt['ema_observations']==[dict(step=s,snapshots=s) for s in steps]
+            error=receipt['ema_sample_max_absolute_error']
+            assert type(error) in (int,float) and math.isfinite(error) and error>=0
+            assert receipt['parameter_sample_positions']=='first_middle_last_each_parameter'
             assert receipt['exact_resume_equal']==(phase=='resumed')
             assert receipt['ema_load_and_resume_rejection_checked']==(phase=='resumed')
             assert receipt['test_loss_computed'] is False and receipt['quality_evidence'] is False
             assert receipt['partial_checkpoint_sha256']==(None if phase=='baseline' else partial_sha)
             assert set(receipt['hashes'])=={'model','optimizer','ema','rng','loader_rng'}
+            assert all(type(s) is str and len(s)==64 and set(s)<=set('0123456789abcdef')
+                       for s in receipt['hashes'].values())
             phases.append(dict(phase=phase,receipt=receipt,guard=guard,process_sha256=files[str(directory/'process.json')]))
         assert phases[0]['receipt']['hashes']==phases[2]['receipt']['hashes']
         assert phases[0]['receipt']['hashes']['model']!=phases[1]['receipt']['hashes']['model']
