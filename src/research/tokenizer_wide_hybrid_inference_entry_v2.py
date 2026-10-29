@@ -35,7 +35,7 @@ def _first(seed):
 
 
 def worker_argv(writer,seed,ready_ref):
-    _first(seed)
+    _require(type(seed) is int and seed in outputs.SEEDS,'Exact inference seed required')
     _require(isinstance(writer,MetadataWriter) and set(ready_ref)=={'path','sha256'}
         and ready_ref['path']==f'inference/{seed}/ready.json','Exact readiness reference required')
     return [sys.executable,'-m',MODULE,'worker','--campaign',str(writer.root),'--seed',str(seed),
@@ -62,6 +62,8 @@ def prepare_first_readiness(writer,request_ref):
 
 def _immutable(writer,ready):
     """Reconstruct original prepared bytes, excluding exact live process files."""
+    seed=ready['seed']
+    _require(type(seed) is int and seed in outputs.SEEDS,'Exact inference readiness seed required')
     root=writer.root/'evidence';ref=ready['request_ref'];request=_document(root,ref)
     args={k:request[k] for k in ('plan_sha256','completion_ref','projection_ref','rank_completion_ref')}
     prep._request(writer,ref,**args)
@@ -73,8 +75,8 @@ def _immutable(writer,ready):
         if name.startswith('evidence/') and not name.startswith('evidence/inference/'):
             target=inventory;key=name.removeprefix('evidence/')
         elif name.startswith('control/') and name not in {
-                'control/.metadata.lock',prep.GUARD,'control/inference-worker-3511.json',
-                'control/process-inference-3511.json'}:
+                'control/.metadata.lock',prep.GUARD} and not name.startswith(
+                    ('control/inference-worker-','control/process-inference-')):
             target=controls;key=name
         else:continue
         binding=dict(size=item['size'],sha256=file_digest(writer.root/name))
@@ -104,9 +106,17 @@ def _immutable(writer,ready):
             files[path]=item['sha256']
     files[str(root/ref['path'])]=ref['sha256']
     files[str(writer.root/prep.GUARD)]=file_digest(writer.root/prep.GUARD)
-    return dict(kind=outputs.ENTRY_KIND,seed=3511,parent_pid=ready['parent_pid'],request_ref=ref,
-        ready_ref=dict(path='inference/3511/ready.json',sha256=file_digest(root/'inference/3511/ready.json')),
-        binding=dict(bindings=triples[3511],selection=request['selection'],tokenizer=plan['tokenizer'],
+    # Earlier completed inference files are immutable inputs to this seed.
+    # Exact finite scope and their semantics are checked by the idle parent;
+    # readiness's protected-files digest binds them again in the child.
+    for prior in outputs.SEEDS[:outputs.SEEDS.index(seed)]:
+        for name in census['files']:
+            if name.startswith(f'evidence/inference/{prior}/') or name in {
+                    f'control/inference-worker-{prior}.json',f'control/process-inference-{prior}.json'}:
+                files[str(writer.root/name)]=file_digest(writer.root/name)
+    return dict(kind=outputs.ENTRY_KIND,seed=seed,parent_pid=ready['parent_pid'],request_ref=ref,
+        ready_ref=dict(path=f'inference/{seed}/ready.json',sha256=file_digest(root/f'inference/{seed}/ready.json')),
+        binding=dict(bindings=triples[seed],selection=request['selection'],tokenizer=plan['tokenizer'],
                      token_sha256=plan['training_token_sha256'],files=files))
 
 

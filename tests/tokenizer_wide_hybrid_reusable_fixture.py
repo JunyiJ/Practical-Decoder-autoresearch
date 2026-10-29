@@ -27,7 +27,7 @@ def inventory(root):
 
 
 @contextmanager
-def reopen_prefix(binding,*,allow_preparation=False,allow_first_readiness=False):
+def reopen_prefix(binding,*,allow_preparation=False,allow_first_readiness=False,allow_inference=False):
     root=Path(binding['root'])
     assert binding['kind']=='wide_hybrid_reusable_synthetic_prefix_v1'
     assert root==root.resolve() and root.is_relative_to(Path('/tmp').resolve())
@@ -77,4 +77,11 @@ def reopen_prefix(binding,*,allow_preparation=False,allow_first_readiness=False)
             if allow_preparation:allowed|={n+'.tmp' for n in allowed}
             else:allowed=set()
             if allow_first_readiness:allowed|={'evidence/inference/3511/ready.json','evidence/inference/3511/ready.json.tmp'}
+            if allow_inference:
+                allowed|={prep.GUARD,'evidence/'+prep.REQUEST,'evidence/'+prep.FAILURE}
+                from src.research.tokenizer_wide_hybrid_inference_acceptance_v2 import COMPLETED
+                for seed in (3511,3512,3513):
+                    allowed|={f'evidence/inference/{seed}/'+n for n in COMPLETED|{'review.json','worker-failure.json'}}
+                    allowed|={f'control/inference-worker-{seed}.json',f'control/process-inference-{seed}.json'}
+                allowed|={n+'.tmp' for n in allowed}
             assert extra<=allowed, 'Undeclared reusable-fixture append'

@@ -1,0 +1,184 @@
+{
+  "kind": "wide_hybrid_inference_acceptance_v2_component_review",
+  "status": "all_three_idle_boundaries_and_acceptance_tested_live_serial_dispatch_pending",
+  "created_at": "2026-10-29T19:23:20.935216+00:00",
+  "base_commit": "1fa71ce4e6cf4fd67412d472ca07c004bfb0fb70",
+  "tests": [
+    {
+      "name": "cpu-inference-acceptance-v2",
+      "passed": 83,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 17.200838042001124,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55105196032,
+          "peak_rss_bytes": 242728960
+        },
+        "pid": 93323,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    {
+      "name": "cpu-inference-acceptance-v2-b",
+      "passed": 0,
+      "failed": 1,
+      "guard": {
+        "elapsed_seconds": 29.482278292001865,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 300
+        },
+        "observation": {
+          "free_bytes": 55104356352,
+          "peak_rss_bytes": 256966656
+        },
+        "pid": 93484,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    {
+      "name": "cpu-inference-acceptance-v2-c",
+      "passed": 0,
+      "failed": 1,
+      "guard": {
+        "elapsed_seconds": 58.405528957999195,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 300
+        },
+        "observation": {
+          "free_bytes": 55102386176,
+          "peak_rss_bytes": 257015808
+        },
+        "pid": 93788,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    {
+      "name": "cpu-inference-acceptance-v2-adapter",
+      "passed": 1,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 0.6061794589986675,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55100116992,
+          "peak_rss_bytes": 233406464
+        },
+        "pid": 94312,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    {
+      "name": "cpu-inference-acceptance-v2-d",
+      "passed": 1,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 328.9397525000022,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 420
+        },
+        "observation": {
+          "free_bytes": 55137353728,
+          "peak_rss_bytes": 257835008
+        },
+        "pid": 94337,
+        "reason": null,
+        "status": "finished"
+      }
+    }
+  ],
+  "distinct_passing_tests": 85,
+  "full_history_replays_in_final_test": 10,
+  "production_source_unchanged_across_passing_batches": true,
+  "final_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-v2-source-hashes-v4.json",
+  "source_test_files_verified": 343,
+  "preserved_original_prefix_files": 783,
+  "completed_prefix_files": 818,
+  "retained_checkpoint_files": 24,
+  "inference_panel_bytes": 71544,
+  "meta_group_bytes": 1801739,
+  "tested_scope": [
+    "Exact readiness/completed/accepted finite scopes for all three seeds; strict unscoped APIs preserved",
+    "Completed launch and terminal identity; historical distinct FDs; self-inclusive terminal bytes and final pre-terminal supervisor observation",
+    "Artifact, model metadata, timing arithmetic and worker guard reviewed independently of process success",
+    "Full retained quality/cleanup/transport replay before acceptance and next readiness; no mutable active scope accepted",
+    "Same-parent acceptance requires returned process identity, original current FDs and no surviving owned group; read-only historical replay permits new FDs",
+    "Later immutable bindings include all earlier accepted inference evidence and controls without copying history manifests"
+  ],
+  "limitations": [
+    "No actual subprocess, model loading or MPS measurement in these integration tests",
+    "Live entry still deliberately first-seed-only; no CLI or serial controller exposed",
+    "Historical disposable fixture uses an exact explicit placeholder-token adapter in test producer and reviewer only; production token hashing unchanged",
+    "Synthetic metadata sizes are not real complete-panel or transient high-water proof",
+    "Real numerical/input/resource prerequisites and finite freezes remain pending; no training or holdout use"
+  ],
+  "failures": [
+    {
+      "root": "/private/tmp/cpu-inference-binding-v2-fixtures/test_all_triples_share_one_ful0/campaign",
+      "reason": "Legacy synthetic digest is a placeholder, not the hash of range(96); assertion stopped before any append.",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-b-tests.log",
+      "worker_attempt_created": false,
+      "original_files_preserved": 786,
+      "no_further_worker_append": true
+    },
+    {
+      "root": "/private/tmp/cpu-final-confirmation-a2-fixtures/test_full_finite_sequence_and_0/campaign",
+      "reason": "Test adapter initially missed independent timing reviewer token_digest; reviewer correctly rejected the synthetic report. Failed worker attempt is preserved and closed.",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-c-tests.log",
+      "worker_attempt_created": true,
+      "original_files_preserved": 785,
+      "no_further_worker_append": true
+    }
+  ],
+  "immutable_raw_log_whitespace_exceptions": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-c-tests.log": [
+      27,
+      28,
+      36
+    ],
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-b-tests.log": [
+      25,
+      26,
+      45
+    ]
+  },
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-adapter-guard.json": "f9f2154bae693d59a235262ffa4e8a6718503ba3cf21717524c234a1318c5488",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-adapter-tests.log": "0dff5a7b4f7b627aa5d5ba9609862b0c83a9c34efeac8569b0ff66edb0c0e2d9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-b-guard.json": "95bb61812a9130de94f5bcd2e58b299fc61fdacd1d1d7ad7d6804bab1e69295f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-b-tests.log": "2b843066ae4ce9e4ae2c02937fe147b622b9c54ff144cdc786a61509deb3f7f0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-c-guard.json": "bc4009ce09a58dc11f1f1fd49dc5b2ad867463cf13d06dba893c8806cb1f2f41",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-c-tests.log": "f21599812f048bb45580ddbcc3db968efd4da1125676a54cfbf006632fbdf752",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-d-guard.json": "e8624b9948930ad3780cbe682d241b63d40e26beb8d937724a364997253ee792",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-d-tests.log": "e04f64c54628f7c6d1e50c016ec32630ac8c6ab6794a04b445194465d446c1b5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-guard.json": "b8aeb66a1bb1018b988253059bb7ecf19010d486e4e2680a0d15e23027f822d5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-acceptance-v2-tests.log": "207cccc48483e859638625e52a4a13436248d49d15190cf1c6dca3092308b36f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-reusable-completed-prefix.json": "05f052e1292c1a63dc82a5c9595bb87974f4591bc32cafe97f0fece6eee785f1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-reusable-idle-prefix.json": "f93b71bbcd02a5f1dd69c069fda57e226ff972522d4d4f392321b98246af035a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-reusable-prepared-prefix.json": "38bb4957e05a9716432301a95c02ac1346997f58e38e93419fcc35ae5426ec30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-v2-failed-reused-test-v2.py.txt": "8cc53146e2c51b573952adafe604476700da7e78d1bbc2c024794e5096c4e19f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-v2-failed-reused-test.py.txt": "b489b383f8fba1ac57e1c5ae677c09a5e51e12620a10d53184453abf290ce8a1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-v2-source-hashes-v2.json": "1683d751eff2a10daccc2bec49123564fc476cc7eebc4d2e9109e8dd1cd0cca3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-v2-source-hashes-v3.json": "b1e2127f23039b279296e4e1f5a07ea86534dde2a0e4dab992b3f9e076c7ca41",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-v2-source-hashes-v4.json": "e0da236b9ebf19ca7150feb366b6b4e954e330a5fd947000c11a6ac31c4a7f83",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-acceptance-v2-source-hashes.json": "0d88f5dd582702ee2fe6bd23c1029df3ebd1f20d3fd9f89b1514008bb76c0d57"
+  }
+}

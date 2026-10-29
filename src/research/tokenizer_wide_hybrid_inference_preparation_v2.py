@@ -86,6 +86,10 @@ def _request(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_c
 
 def _scope(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref):
     """Validate only one exact request/guard append, never a caller allowlist."""
+    if request_ref.get('path')!=REQUEST:
+        from .tokenizer_wide_hybrid_inference_acceptance_v2 import _scope as boundary_scope
+        return boundary_scope(writer,request_ref,plan_sha256=plan_sha256,completion_ref=completion_ref,
+            projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
     request,guard=_request(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
     root=writer.root/'evidence';review=_document(root,completion_ref)['review']
     inventory=gate.history.acceptance._inventory(root)
@@ -105,7 +109,9 @@ def _scope(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_com
 
 def _history_scope(writer,request_ref,plan_sha256):
     """Explicit lower-history binding, independently validated at each consumer."""
-    _require(request_ref.get('path')==REQUEST,'Exact inference history scope required')
+    if request_ref.get('path')!=REQUEST:
+        from .tokenizer_wide_hybrid_inference_acceptance_v2 import _scope as boundary_scope
+        return boundary_scope(writer,request_ref,plan_sha256=plan_sha256)
     request=_document(writer.root/'evidence',request_ref)
     _require(request['plan_sha256']==plan_sha256,'Inference history plan differs')
     return _scope(writer,request_ref,plan_sha256,request['completion_ref'],request['projection_ref'],request['rank_completion_ref'])

@@ -40,6 +40,7 @@ def setup(writer,monkeypatch):
                 seed=seed,family=family,divisor=4,lr=.00125,config_sha256=outputs.digest(cfg),tokenizer_sha256=outputs.digest(tokenizer),
                 parameters=row['parameters'],parameter_storage_bytes=row['parameter_bytes'])
     review=dict(selection=selection,completed_records_sha256=sha,checkpoint_pairs_sha256=sha,stages_sha256=sha)
+    review['evidence_inventory_sha256']=outputs.digest(prep.gate.history.acceptance._inventory(root))
     completion=write('meta/quality-dispatch-23.json',dict(review=review))
     inventory=prep.gate.history.acceptance._inventory(root)
     frozen=dict(files={str(root/plan['path']):plan['sha256']},requests=dict(quality=requests))
@@ -69,6 +70,7 @@ def setup(writer,monkeypatch):
     monkeypatch.setattr(outputs,'mps_callbacks',lambda *a:(lambda f,b:dict(passed=True,max_absolute_error=0.),
         lambda f,b:dict(prefill_seconds=.1,decode_seconds=.2,state_bytes=100*b,
             observed_mps_current_bytes=1000,observed_mps_driver_bytes=2000)))
+    writer._test_triples=triples
     return ready,argv
 
 

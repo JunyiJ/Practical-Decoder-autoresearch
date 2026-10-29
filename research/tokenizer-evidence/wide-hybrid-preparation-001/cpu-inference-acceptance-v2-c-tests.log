@@ -1,0 +1,64 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_three_finite_boundaries_replay_complete_quality_history _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10be523f0>
+
+    def test_three_finite_boundaries_replay_complete_quality_history(monkeypatch):
+        name=os.environ.get('TOKENIZER_READY_PREFIX_BINDING')
+        if not name:pytest.skip('Explicit successful ready prefix binding required')
+        binding=json.loads(Path(name).read_text());calls=[];original=prep.gate.history._verify
+        def full(*a,**kw):
+            value=original(*a,**kw);calls.append(kw.get('inference_request_ref'));return value
+        with reopen_prefix(binding,allow_inference=True) as writer,monkeypatch.context() as patch:
+            patch.setattr(prep.gate.history,'_verify',full)
+            patch.setattr(acceptance,'_group_exists',lambda pid:False)
+            root=writer.root/'evidence'
+            assert not (root/'inference/3511/ready.json').exists(), 'Only fresh readiness on this alternate prefix'
+            ready=entry.prepare_first_readiness(writer,acceptance._ref(root,prep.REQUEST))
+            # Full replay must admit only the explicitly scoped readiness append.
+            report=acceptance.verify_boundary(writer,ready)
+            assert report['quality_history_reaudited'] and len(report['bound']['history']['records'])==24
+            accepted=[]
+            for seed in outputs.SEEDS:
+>               ref,process=synthetic_triple(writer,ready,patch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_inference_acceptance_reused_v2.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_wide_hybrid_inference_acceptance_reused_v2.py:56: in synthetic_triple
+    if seed==3511:ref=entry.run_worker(writer,seed,ready_ref,argv)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_inference_entry_v2.py:204: in run_worker
+    return outputs.execute_bound_triple(writer,seed,
+src/research/tokenizer_wide_hybrid_inference_outputs_v2.py:137: in execute_bound_triple
+    review_result(result,seed,bound['selection'],bound['token_sha256'])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = {'status': 'measurements_complete_pending_artifact_audit', 'seed': 3511, 'selected_specs': [{'stage': 'confirm', 'fami...: 3511, 'lr': 0.000625, ...}], 'token_sha256': 'c3c36f5c24677ee8e0101427c87408dfc06524c1a554ef498fd791b0746546af', ...}
+seed = 3511
+selection = {'gated_mla': {'divisor': 8, 'lr': 0.000625}, 'hybrid': {'divisor': 8, 'lr': 0.000625}, 'kda': {'divisor': 8, 'lr': 0.000625}}
+token_sha256 = 'c3c36f5c24677ee8e0101427c87408dfc06524c1a554ef498fd791b0746546af'
+
+    def review_result(result, seed, selection, token_sha256):
+        order(seed, 0)
+        specs = [s for s in confirmation_specs(selection) if s['seed'] == seed]
+        expected = dict(status='measurements_complete_pending_artifact_audit', seed=seed,
+                        selected_specs=specs, token_sha256=token_sha256,
+                        token_hash_encoding='uint32-little-endian', context_tokens=128,
+                        prefill_tokens=32, decode_tokens=64, warmups=WARMUPS,
+                        repeats=REPEATS, adopted=False)
+        extras = {'fixed_train_token_ids', 'correctness', 'warmup_records', 'records', 'scope'}
+        if not isinstance(result, dict) or set(result) != set(expected) | extras:
+            raise ValueError('Incomplete/extra inference report fields')
+        _same({k: result[k] for k in expected}, expected)
+        if not isinstance(result['scope'], str) or not result['scope']:
+            raise ValueError('Missing measurement scope')
+        if token_digest(result['fixed_train_token_ids']) != token_sha256:
+>           raise ValueError('Saved timing tokens differ from independently expected hash')
+E           ValueError: Saved timing tokens differ from independently expected hash
+
+src/research/tokenizer_wide_hybrid_timing_review.py:45: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_inference_acceptance_reused_v2.py::test_three_finite_boundaries_replay_complete_quality_history
+1 failed in 58.23s

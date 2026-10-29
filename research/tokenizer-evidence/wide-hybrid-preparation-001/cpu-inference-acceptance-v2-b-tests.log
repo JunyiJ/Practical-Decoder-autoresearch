@@ -1,0 +1,52 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_three_finite_boundaries_replay_complete_quality_history _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10896a2c0>
+
+    def test_three_finite_boundaries_replay_complete_quality_history(monkeypatch):
+        name=os.environ.get('TOKENIZER_READY_PREFIX_BINDING')
+        if not name:pytest.skip('Explicit successful ready prefix binding required')
+        binding=json.loads(Path(name).read_text());calls=[];original=prep.gate.history._verify
+        def full(*a,**kw):
+            value=original(*a,**kw);calls.append(kw.get('inference_request_ref'));return value
+        with reopen_prefix(binding,allow_inference=True) as writer,monkeypatch.context() as patch:
+            patch.setattr(prep.gate.history,'_verify',full)
+            patch.setattr(acceptance,'_group_exists',lambda pid:False)
+            root=writer.root/'evidence';ready=acceptance._ref(root,'inference/3511/ready.json')
+            # Full replay must admit only the explicitly scoped readiness append.
+            report=acceptance.verify_boundary(writer,ready)
+            assert report['quality_history_reaudited'] and len(report['bound']['history']['records'])==24
+            accepted=[]
+            for seed in outputs.SEEDS:
+>               ref,process=synthetic_triple(writer,ready,patch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_inference_acceptance_reused_v2.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10cec8050>
+ready_ref = {'path': 'inference/3511/ready.json', 'sha256': '33c08915899b9391f003eab5ee943a07eb8dc757c0785fcb9b0c296de1d79305'}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1079e6b10>
+
+    def synthetic_triple(writer,ready_ref,monkeypatch):
+        root=writer.root/'evidence';ready=outputs._document(root,ready_ref);seed=ready['seed']
+        proof=entry._immutable(writer,ready);bound=proof['binding'];metadata={}
+        rows=json.loads((root/'meta/projection.json').read_text())['records']
+        for family,binding in bound['bindings'].items():
+            spec=binding['request']['spec'];result=json.loads((Path(binding['trial'])/'result.json').read_text())
+            row=next(r for r in rows if r['width']==512 and r['family']==family and r['bottleneck_divisor']==spec['divisor'])
+            metadata[family]=dict(checkpoint=result['h200']['checkpoint'],sha256=result['h200']['checkpoint_sha256'],
+                seed=seed,family=family,divisor=spec['divisor'],lr=spec['lr'],config_sha256=outputs.digest(binding['request']['config']),
+                tokenizer_sha256=outputs.digest(bound['tokenizer']),parameters=row['parameters'],parameter_storage_bytes=row['parameter_bytes'])
+>       ids=list(range(96));assert outputs.token_digest(ids)==bound['token_sha256']
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert '95350b3ff196...b65064c17b0a5' == 'c3c36f5c2467...791b0746546af'
+E         
+E         - c3c36f5c24677ee8e0101427c87408dfc06524c1a554ef498fd791b0746546af
+E         + 95350b3ff196048341bce0c130b5b9c216c79db8c6e2c0b6325b65064c17b0a5
+
+tests/test_tokenizer_wide_hybrid_inference_acceptance_reused_v2.py:32: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_inference_acceptance_reused_v2.py::test_three_finite_boundaries_replay_complete_quality_history
+1 failed in 29.31s

@@ -1614,3 +1614,43 @@ integration next, then complete actual metadata/high-water, numerical/input and
 resource prerequisites and finite freezes before training. No protected cleanup,
 closed fixture retry or holdout access occurred. Evidence:
 `inference-entry-v2-component-review.json`.
+
+
+### Three-seed idle inference acceptance and full-history replay
+
+A shared acceptance component now validates exact readiness, completed-output
+and accepted-result states for seeds3511/3512/3513. Each accepted seed binds
+its worker artifacts, original launch, canonical historical descriptors,
+self-inclusive terminal output bytes and final supervisor observations. New
+acceptance requires the same current parent and descriptors and a reaped owned
+process group. Historical read-only replay supports new lock descriptors.
+
+Acceptance and next readiness independently replay the complete retained
+quality, cleanup and original transport history. Later readiness binds every
+earlier accepted inference file/control without copying those histories. Only
+explicit, fully checked idle inference references admit appended files into
+lower quality-history readers; ordinary idle/prepared readers stay strict.
+No process-success flag alone grants next-seed credit.
+
+**85 tests passed** across83 focused cases, one isolated fixture-adapter test
+and one full three-seed integration. The final integration executed ten full
+history replays in328.76s under420s,4-GiB RSS and8-GiB reserve guards; observed
+peak RSS was257,835,008bytes. All783 original successful-prefix files and24
+retained checkpoint files remained unchanged. Its complete synthetic inference
+metadata occupied71544bytes; this is not real-panel or transient high-water proof.
+
+Two test-fixture integration failures are preserved. The old completed fixture
+uses a placeholder token digest, so a range(96) input assertion first stopped
+before any append. A second attempt exposed a missing adapter in the independent
+timing reviewer, which correctly rejected that synthetic report and preserved
+a failed worker. Both prefixes are closed to further worker appends. The exact
+test-only token adapter was independently checked before a third, untouched
+successful prefix completed the panel. Production token hashing and scientific
+gates were unchanged; no resource guard failed or closed numerical fixture ran.
+
+OS process identity, loading and timings in the panel integration remain
+synthetic. The live entry is still intentionally first-seed-only and no launch
+CLI or serial controller is exposed. Next integrate the shared later-seed live
+namespace and actual serial supervision/cancellation, then finish real metadata,
+numerical/input/resource prerequisites and finite freezes before training.
+Evidence: `inference-acceptance-v2-component-review.json`.
