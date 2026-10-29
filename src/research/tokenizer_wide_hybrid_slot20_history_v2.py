@@ -1,4 +1,4 @@
-"""Strict slot20 replay with explicitly scoped slot21 preparation appends.
+"""Strict slot20 replay with explicitly scoped slot21 preparation and startup appends.
 
 Caller owns both worker locks, inspects processes and holds an outer resource
 guard. Historical PID/descriptors identify evidence, never a process to resume.
@@ -147,19 +147,24 @@ def verify_confirmation_dispatch(writer,slot,plan_sha256,completion_ref,*,projec
     return _verify(writer,slot,plan_sha256,completion_ref,projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
 
 
-def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None):
+def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None):
     """Reconstruct the complete sealed history under independently verified identity."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==20,'Exact idle slot20 replay required')
     _sha(plan_sha256);root=writer.root/'evidence';_locks(root,writer.lock_fds);census=snapshot(writer.root)
     _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents replay')
     _require(not any(n.endswith('.tmp') or '-failure' in n for n in census['files']),'Failed/partial history cannot be accepted')
     inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
-    appended={};pending=None;extra_control=None
+    _require(startup_ref is None or preparation is not None,'Startup receipt requires explicit preparation')
+    appended={};pending=None;extra_control=None;startup_report=None
     if preparation is not None:
         from .tokenizer_wide_hybrid_remaining_confirmation_append_v2 import _append
         appended,pending,extra_control=_append(writer,21,plan_sha256,completion_ref,projection_ref,
             rank_completion_ref,_document(root,completion_ref),preparation)
     saved,identity,context=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control)
+    if startup_ref is not None:
+        from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import _receipt_binding
+        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,controls)
+        appended[startup_ref['path']]=binding
     historical={n:v for n,v in inventory.items() if n!=completion_ref['path']};review=saved['review']
     for name,binding in appended.items():
         _require(historical.get(name)==binding,'Declared slot21 preparation binding differs')
@@ -173,6 +178,9 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
     _require(set(review)==set(compact) and digest({k:v for k,v in review.items() if k not in dynamic})==
         digest({k:v for k,v in compact.items() if k not in dynamic}),'Reconstructed full slot20 audit differs from compact receipt')
     _storage(review['storage'],actual['storage'],historical)
+    if startup_report is not None:
+        before_receipt={n:v for n,v in inventory.items() if n!=startup_ref['path']}
+        _storage(startup_report['storage'],actual['storage'],before_receipt)
     _prechild_storage(writer,context,actual['storage'])
     _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during replay')
     again,_,_=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control)

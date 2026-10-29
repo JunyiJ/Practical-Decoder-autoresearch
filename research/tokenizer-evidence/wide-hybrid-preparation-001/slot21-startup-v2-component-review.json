@@ -1,0 +1,151 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "9e5627c5d06f054ce2951b6881c39a33245c6fe7",
+  "check_executions_passed": 46,
+  "created_at": "2026-10-29T15:48:18.698829+00:00",
+  "distinct_test_cases": 46,
+  "draft_edit_check": "An initial git apply --check rejected a transformed patch with changed hunk counts before any source mutation or test launch. The transformation was corrected to preserve patch headers; application, syntax review and source freeze then succeeded.",
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-compatibility-guard.json": "8f6f9425fb0164669975538ab709d7b445947933c41c3e0c04a2c8c9abf7800c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-compatibility-tests.log": "21e2221292859cace59d2ca9f039f531d82f05c05ef040e61f3b6d5ba7eb89c7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-core-guard.json": "0bd087b150eb9269cf5300c30d5f8ee9da385b03a254286676a91856d5770dc1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-core-tests.log": "578b5ba22713cbfe6ad0b435462f0d9a9ce371f3228e656acebf86df01a6c39a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-a-guard.json": "1407d798b6bfc9baf19f1b37712888c2ee9889fc14e71f8afa17a22f9ed03ec5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-a-tests.log": "9ce6a11c0b1f8228975760c531d75cfc40517afed073a1dbd0a0093b3ba7e8e1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-b-guard.json": "073c330a1b3b2f2ed10561114e8ab8bf3a493c90aab75cd6fc8e6cb9fc6d39aa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-b-tests.log": "26e1fd8b4341f7fa94d20e32846183fe2d2998743b8d6006d2396485e3dd7183",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-a-guard.json": "5da1e9348d5622586bb165262cb5afa99bf19b10fceb6172ee0ccc1b50166671",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-a-tests.log": "49bfe2f048d974c43db2e9c6780a2a3f882a2890b011712089e16a1485d551a7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-b-guard.json": "b9dde59bf6b9c467aba5755c86a6cbed2d693f415d6815f6ea90f4914b2c02f1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-b-tests.log": "bd2583266f797ab772920a39eb4cc3feb07d52e7683d3fe28b385b418e897c48",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot21-startup-census.json": "85722730cc1f3f2947acafab596b81024a838fd21a11621a003126efd0f8f1e4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot21-startup-source-hashes.json": "f596e8f184d427c459b8134ac39bf6e7d9f1b438bf0e1a8b66575d264db1c37f",
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "9ab0e77432ca491fcd9620ebeeedb6f6c56e3111aee0e087cda5b131620885b0",
+    "src/research/tokenizer_wide_hybrid_slot20_history_v2.py": "705c14a340c7c858ec82be41babbeba78f11720b286d8a522af03297b0e4b4a4",
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "b9a7458350afa5517c5cd4a628e1861b6730a30d4180163f9a1546568c2327a4",
+    "tests/test_tokenizer_wide_hybrid_slot19_startup_v2.py": "14e5c71c2447a50a21b300ee6c164ccb28f7f32c14fd03a51976d4806afffd40",
+    "tests/test_tokenizer_wide_hybrid_slot20_history_v2.py": "db55dc7dadd48b440b95c2d28acf363a0dbd6785550d0cfe4801bc7835b78916",
+    "tests/test_tokenizer_wide_hybrid_slot20_startup_v2.py": "82baa0b850fd98d936377b1d7730b50e3fea4cf3a577812b1ca4d4f26d9ce7bc",
+    "tests/test_tokenizer_wide_hybrid_slot21_startup_v2.py": "f4dae073f18a4414bff89c7052b02927046c853c939c62250204e6c2658ddb12"
+  },
+  "findings": [
+    "The shared startup writer supports exact slots18..21 while preserving legacy slot18 constants and payload behavior. Slot21 publishes only an exclusive current-parent attempt, guarded frozen request and compact receipt. Failures remain preserved and retries are forbidden.",
+    "Independent receipt consumption fully replays completed slot20 and original slot15..19 transport/retention lineage, all 21 completed records, nine protected pairs and full current/historical capacity. Only explicitly validated attempt/request/receipt and startup guard are admitted; ordinary history and preparation readers remain strict.",
+    "All 46 checks passed on unchanged source: compact publication/replay, false rehashed claims, undeclared outputs and controls, preserved publication failures, current-parent identity, source/evidence/control/free-space/STOP late changes, exact slot/type boundaries, slot21 readiness remaining closed, and slot20 startup/history compatibility."
+  ],
+  "free_bytes_observed": 55410544640,
+  "holdout_consumed": false,
+  "kind": "wide_hybrid_slot21_startup_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic science/checkpoint bytes only; no real numerical correctness, model quality or MPS feasibility result.",
+    "Slot21 readiness/entry/parent dispatch and full remaining integrations22..23 remain closed.",
+    "V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. The closed failed combined numerical fixture remains closed."
+  ],
+  "maximum_observed_rss_bytes": 253575168,
+  "next_action": "Implement and test slot21 readiness and child entry using the compact startup receipt and stable original slot16 inventory anchor, preserving the 16-document/8MiB chain caps and exact slot18..20 compatibility. Independently bind all 21 completed records and nine protected pairs, original transport/retention lineage, current parent, frozen source/request/evidence/control identities and full remaining capacity before any child handoff. Then complete slot21 parent acceptance/serial dispatch and finite remaining slots22..23. V2 inference, full real metadata fit and actual nine-case numerical/input/measured-pilot gates remain before finite-plan freeze. No closed failed numerical-fixture retry, closed-campaign reopening, protected deletion or test-holdout use.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "status": "slot21_compact_startup_publication_and_independent_replay_tested_readiness_pending",
+  "synthetic_census": {
+    "completed_quality_records": 21,
+    "live_checkpoint_files": 18,
+    "meta_group_bytes": 1657029,
+    "metadata_bytes": 2296155,
+    "pending_slot": 21,
+    "real_panel_fit_proven": false,
+    "receipt_bytes": 3095,
+    "required_free_bytes": 30153547637
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-core-tests.log",
+      "passed": 38,
+      "peak_rss_bytes": 253575168,
+      "seconds": 252.73
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-a-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-a-tests.log",
+      "passed": 2,
+      "peak_rss_bytes": 251789312,
+      "seconds": 453.19
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-b-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-failures-b-tests.log",
+      "passed": 1,
+      "peak_rss_bytes": 252297216,
+      "seconds": 240.24
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-a-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-a-tests.log",
+      "passed": 2,
+      "peak_rss_bytes": 252018688,
+      "seconds": 514.34
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-b-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-integrity-b-tests.log",
+      "passed": 1,
+      "peak_rss_bytes": 252346368,
+      "seconds": 289.93
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-compatibility-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-startup-v2-compatibility-tests.log",
+      "passed": 2,
+      "peak_rss_bytes": 251494400,
+      "seconds": 420.48
+    }
+  ],
+  "training_launched": false
+}

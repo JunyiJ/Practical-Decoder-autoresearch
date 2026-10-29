@@ -1,4 +1,4 @@
-"""Exclusive slot18..20 startup receipts and independent idle predispatch review.
+"""Exclusive slot18..21 startup receipts and independent idle predispatch review.
 
 Caller owns both locks, inspects workers and holds an outer resource guard over
 the entire call, including final checks. No readiness, child, retry or later slot.
@@ -26,13 +26,13 @@ NONCLAIMS=('adopted','dispatch_authorized','deletion_authorized','next_stage_aut
 
 
 def _names(slot):
-    _require(type(slot) is int and slot in (18,19,20),'Exact slot18, slot19 or slot20 startup required')
+    _require(type(slot) is int and slot in (18,19,20,21),'Exact slot18, slot19, slot20 or slot21 startup required')
     names=append.paths(slot);base=names['attempt'].removesuffix('-attempt.json')
     return dict(names,base=base,receipt=base+'.json')
 
 
 def _next_slot(saved):
-    _require(type(saved.get('slot')) is int and saved['slot'] in (17,18,19),'Exact integrated predecessor required')
+    _require(type(saved.get('slot')) is int and saved['slot'] in (17,18,19,20),'Exact integrated predecessor required')
     return saved['slot']+1
 
 
@@ -168,6 +168,10 @@ def _verify_request(writer,slot,reference,*,readiness_guard_ref=None):
         from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as replay
     elif slot==20:
         from . import tokenizer_wide_hybrid_slot19_history_v2 as replay
+    elif slot==21:
+        from . import tokenizer_wide_hybrid_slot20_history_v2 as replay
+        _require(readiness_guard_ref is None,'Slot21 readiness is not integrated')
+        options.pop('readiness_guard_ref')
     checked=replay._verify(writer,slot-1,report['plan_sha256'],report['prior_dispatch_ref'],
         projection_ref=report['projection_ref'],rank_completion_ref=report['rank_completion_ref'],
         **options)
