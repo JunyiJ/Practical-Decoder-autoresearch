@@ -72,7 +72,7 @@ def _completed_transport(writer,slot,startup_ref,readiness_ref,process,*,histori
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
     parent_pid=os.getpid()
     if historical_identity is not None:
-        _require(type(slot) is int and slot in (15,16,17) and type(historical_identity) is dict
+        _require(type(slot) is int and slot in (15,16,17,18) and type(historical_identity) is dict
             and set(historical_identity)=={'parent_pid','lock_fds'},'Exact supported fresh historical identity required')
         parent_pid=historical_identity['parent_pid'];fds=historical_identity['lock_fds']
         _require(type(parent_pid) is int and parent_pid>1 and type(fds) is tuple and len(fds)==2
@@ -160,7 +160,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         prior_transport=_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
     elif slot==18:
         entry._slot18_inventory(seal,startup,startup_ref)
-        prior_transport=_prior_third_transport(writer,seal,startup)
+        prior_transport=_prior_third_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
     inventory=_inventory(root)
     plan=_document(root,dict(path='meta/plan.json',sha256=seal['plan_sha256']))
     extra={};selected_choice=None
@@ -259,7 +259,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     elif slot==17:
         _require(_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
     elif slot==18:
-        _require(_prior_third_transport(writer,seal,startup)==prior_transport,'Prior fresh transports changed during acceptance')
+        _require(_prior_third_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
     _check_inventory(root,inventory)
     _guard(writer,guard_ref,entry.KIND,terminal['pid'],7200)
     _document(writer.root,supervisor_ref)

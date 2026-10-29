@@ -1176,3 +1176,22 @@ no retries, exact stable-anchor validation, late integrity rejection and prior
 slot17 compatibility. No resource guard failed; final inspection found no
 research workers. Next independently replay the completed slot18 receipt before
 integrating slot19 preparation.
+
+
+## Independent fourth-fresh history replay
+
+The compact completed-slot18 receipt now has strict independent replay under a
+verified historical parent and descriptors. It reaudits all19 records, seven
+retained pairs, original transport/retention history and current plus pre-child
+capacity. All evidence remains unchanged; later artifacts and controls are
+rejected, and pending slot19 requests remain closed.
+
+This is synthetic controller preparation with no new model-quality result or
+training. Slot19 preparation and remaining finite integration, inference, real
+metadata fit and actual prerequisite gates still precede freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-history-v2-component-review.json`.
+
+All24 guarded checks passed on unchanged source, including historical capacity,
+integrity and late-change rejection, exact API boundaries and slot17 compatibility.
+No resource guard failed; final inspection found no research workers. Next add
+explicit slot19 preparation while keeping the ordinary idle reader strict.

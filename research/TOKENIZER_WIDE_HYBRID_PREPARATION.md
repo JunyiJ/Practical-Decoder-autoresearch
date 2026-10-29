@@ -3047,3 +3047,43 @@ Then integrate finite remaining slots19–23 with the shared bounded contracts.
 Inference, real metadata fit and actual numerical/input/measured-pilot gates
 remain before freeze. No research training, protected checkpoint deletion,
 closed numerical-fixture retry or test-holdout use occurred.
+
+
+## Independent completed-slot18 history replay
+
+A strict slot18 reader now reconstructs the compact parent receipt under a
+verified historical parent and descriptor identity. It independently binds the
+original slot18 startup, stable slot16 readiness inventory anchor, exact prior
+slot15–17 dispatch/control lineage and complete current control inventory. It
+reaudits all19 completed records, seven selected/fresh pairs and three original
+cleanup boundaries, comparing the fully reconstructed audit to every compact
+receipt claim. Historical identities never resume a process or authorize launch.
+
+Current and pre-child storage are reconstructed separately, including pre-slot18,
+pre-slot17 and pre-slot16 capacity. A later checkpoint never earns credit against
+an earlier requirement. Final frozen-source, evidence/control, census, owned-lock,
+STOP and full remaining-capacity checks remain. Ordinary parent acceptance still
+requires the current parent. This idle reader rejects all later artifacts and
+controls; even an explicit pending slot19 request remains unsupported.
+
+The disposable synthetic history retains19 records and14 checkpoint files. Its
+meta group uses1,572,797 of2,097,152bytes and total metadata is2,175,398bytes; full
+remaining free space is30,153,547,703bytes. This does not prove real-panel metadata
+fit or model/numerical/MPS correctness.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-history-v2-component-review.json`.
+
+All24 checks passed on unchanged source in serial batches of312.83s and416.03s.
+Peak RSS was249,069,568bytes; both retained the600-second,4GiB RSS and8GiB reserve
+limits. Coverage includes changed-parent/descriptors replay, rehashed false
+claims, capacity rejection at three historical levels, unsupported slots and
+identities, explicit pending-slot19 rejection, protected/later evidence/control
+rejection, late source/transport/space/STOP changes and slot17 compatibility.
+No test, driver or resource guard failed. Final inspection found no research
+workers.
+
+Next integrate explicitly bounded slot19 preparation around this strict reader,
+then compact startup and remaining finite transitions19–23, retaining stable
+original slot16 inventory anchors. Inference, full real metadata fit and actual
+numerical/input/measured-pilot gates remain before finite-plan freeze. No research
+training, protected checkpoint deletion, closed numerical-fixture retry or
+test-holdout use occurred.
