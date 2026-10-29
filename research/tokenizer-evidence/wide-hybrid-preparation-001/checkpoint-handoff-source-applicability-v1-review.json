@@ -1,0 +1,114 @@
+{
+  "kind": "wide_hybrid_source_applicability_review_v3",
+  "status": "numerical_and_input_evidence_applicable_after_census_and_checkpoint_handoff",
+  "created_at": "2026-10-29T23:24:54.719619+00:00",
+  "before_source_sha256": "5b32cee89c24353b0372f0c288078b0d292d50fb65de77e5a379e8d8a8556f7a",
+  "after_source_sha256": "d285f807deb32a04edc1bc6ca6140716433ea377121372f7f36e3bf2403a1438",
+  "runtime_sha256": "d193008aa205d1d7dd914c0c65256024f318390ed707124a6ef7c5aa4eb5b24c",
+  "changed_files": {
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": {
+      "before": "6c17c8bd40501ebfa17aa733a75096a59be637c0bef50090b52ef73b588e5b43",
+      "after": "a7b1be0efcae1cc50ab0611bd5b296327d20934340dcf5f269804ccb95b94cb8"
+    },
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": {
+      "before": "60e84a8fa2739e4594a98f908e8ac6ad7ac240c8cb0606b40a13378c638668bc",
+      "after": "99b9f6f65cd57fc6f94c9d4f246743ddd313b2ac7541061326fa43b50f55e904"
+    },
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": {
+      "before": "5b1b127b201fce3d61c432b2ed23a78c1017460e539a056a990a1dddb8386c05",
+      "after": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9"
+    }
+  },
+  "unchanged_source_file_count": 225,
+  "test_source_hashes": {
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9",
+    "tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py": "30637f29ccc9062be7b09a0c551741c7da25904c13d5ed5a52c829d81e6844af",
+    "tests/test_tokenizer_wide_hybrid_quality_entry_v2.py": "85ac06137301ec5b49bfe9c50ac79da8645f1b19a67ca2cbf81c30938f89cd8e",
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": "a7b1be0efcae1cc50ab0611bd5b296327d20934340dcf5f269804ccb95b94cb8",
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": "99b9f6f65cd57fc6f94c9d4f246743ddd313b2ac7541061326fa43b50f55e904",
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "e486260aa6c2fd33ad8616c51529fd34fc2318bfca5d8c1b79c69a6a053d4e6a",
+    "src/research/tokenizer_wide_hybrid_process_v2.py": "798774cf0d90fb7c1cd56c6b72ccf4284be1335a9513c13d5fcc2b513240aad4",
+    "tests/test_tokenizer_wide_hybrid_checkpoint_writer.py": "f769cd153ce0e7203d9be08f277d60fab8e27dea5e4affb94fa87b8a4fabcabb",
+    "tests/test_tokenizer_wide_hybrid_metadata_writer.py": "072377ea15daa772313e4e31fdc169e37af2b9a6dfc0655d0c7ead3abf3b626c",
+    "tests/test_tokenizer_wide_hybrid_process_v2.py": "6d45e59c2d9156db993903ef5ef40b22eb75cc718514839b8bca1ca67e7c9842"
+  },
+  "test_logs": {
+    "cpu-readiness-census-fix-v2-tests.log": "263d03f3bb7f0d448030a5992dd14c4ae4679c0c9882e24b1a859801e66d8dc7",
+    "cpu-live-census-fix-v2-tests.log": "8cc33cc0e602ef3e98a275062a1248dde45551eb6ad7bfb96ee272e8037a66a6",
+    "cpu-live-census-fix-v2-final-tests.log": "4a50a012563780210ee551a0d38c44e90bec914087ed67e8e64e4b27e693f216",
+    "checkpoint-handoff-v1-tests.log": "a2d40021018babc9b6c3ed5eb606fbfbab04771e0a3af1538d11d7bdb814ef75"
+  },
+  "distinct_passing_readiness_tests": 26,
+  "distinct_passing_entry_tests": 40,
+  "checkpoint_metadata_process_tests": 134,
+  "original_report_hashes": {
+    "rank-numerical-v2-reviewed-001/meta/numerical.json": "9e6ce1796aff4c5620ce1d8130e409afdc7345da26f8f49b282c366c690f9be4",
+    "training-input-v2-002/meta/training-input.json": "5ece26be743dea9270e270d29d8b3aba18d26449bf351a3e3139438e042c5aba"
+  },
+  "prior_applicability_sha256": "ef07bbe5a477074be64ac13e24227c707e8b0d3e4fe78c928fac263d407a3010",
+  "handoff_review_sha256": "c09cf5c98543fd51107fd78c4ea925b08c56c4a197b4b6000c1485ff570ed9b5",
+  "protected_campaign002_weight_bytes": 6987283846,
+  "protected_campaign002_weights": {
+    "evidence/quality/01/checkpoints/h200.pt": {
+      "size": 253936963,
+      "sha256": "ee0de52825007c03ed26933c36c5b05e2587e25eab57f230c6b65df16895eb01"
+    },
+    "evidence/quality/01/checkpoints/final_001200_1793311136570118000.pt": {
+      "size": 967787253,
+      "sha256": "0002989a14f75425842ae29606a9999ba5a68d3dd05720da8f9b04412835dc8f"
+    },
+    "evidence/quality/00/checkpoints/final_001200_1793310264891963000.pt": {
+      "size": 986587913,
+      "sha256": "d36425c9c6075007c3f63e41a8e9e0354b5cb769b654d2321250a17250eac049"
+    },
+    "evidence/quality/00/checkpoints/h200.pt": {
+      "size": 260185063,
+      "sha256": "ff2fdd44014d0cd2d3f852dd04e2eb5ba5951aad3542b4c8df169837e18a83be"
+    },
+    "evidence/quality/02/checkpoints/final_001200_1793312397864842000.pt": {
+      "size": 992854821,
+      "sha256": "91655bab5e0e66e064eea186114668eecb231a20451d04c9121fdfc2babc7de7"
+    },
+    "evidence/quality/02/checkpoints/h200.pt": {
+      "size": 262267763,
+      "sha256": "4f0e382af3b4e1062790c0ead14b1a25a221bbf239b4c4059b3ecd7e2bdcb4b9"
+    },
+    "evidence/quality/05/checkpoints/final_001200_1793315322602681000.pt.tmp": {
+      "size": 761768510,
+      "sha256": "2744ab5d95a972152be379d6adf49fc2125fecf8b942499b227a881a4c67ebb3"
+    },
+    "evidence/quality/04/checkpoints/final_001200_1793314706417637000.pt": {
+      "size": 986587913,
+      "sha256": "e7075bee1a92b8eddb7dc932d6dc758eabae801455f6df731d1086e54bb92733"
+    },
+    "evidence/quality/04/checkpoints/h200.pt": {
+      "size": 260185063,
+      "sha256": "54644f91d6a97c102a19e3601130e38224291ad8936eaff4e638e8f467b19fc5"
+    },
+    "evidence/quality/03/checkpoints/final_001200_1793313598550224000.pt": {
+      "size": 992854821,
+      "sha256": "584a571576359e19e01bf8f80c30cf6339742f2dd9e3d0017fed2f1e3cbec6af"
+    },
+    "evidence/quality/03/checkpoints/h200.pt": {
+      "size": 262267763,
+      "sha256": "a423798689046a50b760db54b7ac9caa97a3318faccf12dcbd871251aecda2df"
+    }
+  },
+  "campaign002_all_files_unchanged": true,
+  "review": [
+    "Two earlier census-only readiness/entry corrections remain byte-identical to their reviewed versions.",
+    "The only new production change is checkpoint namespace scheduling:20ms outside the lock after accumulated MiB. Tensor payload construction, tensor/RNG/optimizer/EMA values, hashing, writes, tokenizer/config/corpus and runtime remain unchanged.",
+    "The completed CPU numerical procedure uses original checkpoint save/read helpers, not this bounded checkpoint writer; its exact-resume and scalar EMA evidence still applies to unchanged mathematical/state logic.",
+    "Input encoding has no checkpoint-writer dependency and its original96 train IDs and tokenizer assets remain unchanged.",
+    "134 small tests verify serialization roundtrip, exact byte hashing, new publisher handoffs and existing failure/guard cases. New real MPS pilots must verify actual raw/H200/export/resource behavior under the changed output schedule.",
+    "Baseline56MiB fixture did not reproduce original timeout; new fixture passed with shorter observed parent wait. Mitigation is not proof no contention failure can occur.",
+    "Do not merge or replace old scientific results. A fresh complete panel keeps the same frozen candidate grid/seeds; seed3501 is reused and is not independent replication. Old five-cell results remain descriptive and excluded from new selection. Fresh3511/3512/3513 quality confirmation has not launched in001/002."
+  ],
+  "numerical_rerun_required": false,
+  "input_reencoding_required": false,
+  "original_evidence_modified": false,
+  "new_campaign_freeze_required": true,
+  "closed_campaign001_retry_allowed": false,
+  "closed_campaign002_retry_allowed": false,
+  "qualification": "Explicit applicability, not a claim that old numerical/input executions used current source. New transport/pilot/retention evidence required; all closed evidence and failed partial remain protected."
+}

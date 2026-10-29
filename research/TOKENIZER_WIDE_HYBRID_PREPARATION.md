@@ -4331,3 +4331,39 @@ re-audit a fresh finite plan's complete storage/metadata envelope including
 all002 protected weights. Old001/002 remain closed. Do not use the passed
 synthetic fixture as a pilot, numerical or quality result, or reuse002 process
 receipts as a new campaign's transport provenance.
+
+
+### Campaign003 source applicability and finite freeze — October29,2026
+
+The explicit applicability review compares against the original executed
+numerical/input source. Exactly three production files differ: the two already
+reviewed census checks and checkpoint-writer scheduling. The other225 source
+hashes and runtime match. The CPU numerical procedure uses the unchanged
+checkpoint save/read helpers; input encoding has no checkpoint-output dependency.
+Serialization/guard coverage includes the134 passed tests. Original numerical
+and input reports, hashes and executed-source identity remain in the lossless
+applicability attachment; neither prerequisite was rerun. New real pilots must
+still validate this source's actual raw/H200/export/resource behavior.
+
+Campaign003 is a fresh complete panel under the handoff source, not a continuation
+of002's failed attempt. The original candidate grid, seeds, budgets and selection
+rules remain unchanged:3 pilots,9 LR cells,6 rank cells,9 fresh confirmations,
+then3 inference seeds. The reused screening seed3501 is not independent
+replication;002's five accepted cells remain descriptive and are excluded from
+003 selection. No old process, pilot or cleanup receipts are transplanted.
+Old001/002 stay closed and every retained/failed checkpoint remains protected.
+
+Plan SHA256 `4a08476fe21b92ae8debc7d7b004dad8b0f082637e76e65ad7cdc33f22f85102`.
+The unmodified production binder accepts the complete numerical/input bindings.
+The conservative meta envelope is2,075,524 of2,097,152bytes
+(21,628 remaining), all other groups fit, and the file peak is855.
+Full future storage plus the external review allowance requires30,631,412,484bytes
+against37,209,874,432bytes actually free. That free-space reading already includes
+all6,987,283,846bytes of protected002 weights/partial; no speculative cleanup
+credit is used. Reserve and all time/memory/metadata guards stay unchanged.
+The freeze and applicability guards finished successfully.
+
+After committing this freeze, the serial starter may run only the3 new resource
+pilots, verify their exact authorized retention boundary, then admit quality
+slot0 through production gates and stop. Any failure closes that new attempt;
+no automatic retry, source change or later quality dispatch occurs.
