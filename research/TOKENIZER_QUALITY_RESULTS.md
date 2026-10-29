@@ -2274,3 +2274,28 @@ Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-pilots-v2-
 Read-only archive inspection initially resolved evidence-relative paths against
 the campaign root and stopped with missing-path/key errors; resolving against
 `evidence/` completed verification. No artifact or worker was changed by these checks.
+
+
+### Campaign003 first LR cell independently reviewed (2026-10-29)
+
+Slot0 completed1200 updates: hybrid, width512, divisor4, LR0.000625,
+seed3501. Full-validation H200 CE is4.957330844412886 and raw CE
+4.985172284648273, on34278 targets/111536 bytes across17 blocks.
+The child completed successfully in832.5694s; its raw/H200 pair totaling
+1,246,772,976bytes remains retained. This single screening cell establishes
+no family comparison or adoption decision; closed002 results are not pooled.
+
+The independent prefix1 review verified production prior transport, frozen
+identity, pilot history, result/checkpoint bindings, all115 file hashes and
+remaining storage, and archived exact nonweight bytes. Its CPU guard finished
+in4.5116s with no reason/error and peak RSS220,086,272bytes. Available space
+35,935,940,608bytes exceeded required29,384,508,436bytes. No cleanup occurred.
+The external reviewer and one-slot continuation were adapted from002 solely
+by changing campaign identity/path strings; source equivalence and syntax were
+checked. Production source, finite plan and guards remain unchanged.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-prefix-01-v2-review.json`,
+its guard, and `campaign003-terminal-v2.json`. After committing this evidence,
+the sole next dispatch is slot1: gatedMLA, divisor4, LR0.000625, seed3501.
+The continuation stops after that slot, preserves failures and never retries.
+No selection, fresh confirmation, inference or closed-test result is claimed.
