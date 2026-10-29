@@ -1137,3 +1137,22 @@ All20 guarded checks passed on unchanged source, including preserved failures,
 late integrity rejection and prior reader compatibility. No resource guard
 failed; final process inspection found no research workers. Next integrate
 slot18 readiness and child entry using a stable earlier inventory anchor.
+
+
+## Fourth-fresh readiness and child-entry preparation
+
+Slot18 readiness and child entry now bind the complete18-record prefix, six
+protected pairs and full remaining capacity before a bounded producer. The
+readiness inventory uses the authenticated original slot16 seal as a stable
+anchor, keeping its reference chain at11 documents and231,748bytes without
+relaxing caps. Ordinary startup readers remain strict.
+
+This is synthetic controller preparation, with no new model-quality result or
+training. Slot18 parent acceptance/serial dispatch, later fresh integration,
+inference, real metadata fit and actual prerequisite gates remain before freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-readiness-entry-v2-component-review.json`.
+
+All26 guarded checks passed on unchanged source, including preserved failures,
+child integrity/capacity rejection, canonical CLI and prior API compatibility.
+No resource guard failed; final inspection found no research workers. Next add
+slot18 parent acceptance and one guarded serial transition.

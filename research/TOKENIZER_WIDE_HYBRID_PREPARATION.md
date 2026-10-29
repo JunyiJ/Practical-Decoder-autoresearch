@@ -2963,3 +2963,43 @@ dispatch and the finite remainder19–23. No chain cap is relaxed. V2 inference,
 full real metadata fit and actual numerical/input/measured-pilot gates remain
 before finite-plan freeze. No research training, protected checkpoint deletion,
 closed numerical-fixture retry or test-holdout use occurred.
+
+
+## Slot18 readiness and child entry with a stable inventory anchor
+
+Slot18 readiness explicitly validates its own bounded current-parent guard while
+replaying the complete startup/history audit. Ordinary idle/startup readers stay
+strict. The new readiness seal encodes its inventory against the original slot16
+readiness reference from the authenticated slot17 dispatch lineage. This keeps
+the reference chain at11 documents and231,748bytes, below the unchanged16-document
+and8MiB caps, rather than adding another recursive predecessor link.
+
+The synthetic readiness receipt is25,884bytes. The meta group uses1,568,896 of
+2,097,152bytes; total metadata is2,159,558bytes. All18 completed records and six
+retained raw/H200 pairs remain bound. Full real-panel metadata fit is unproven.
+
+The slot18 child entry reconstructs the original three-stage retention history,
+all selected and fresh records/pairs, frozen request/source/context, and current
+remaining capacity. It binds the same live parent, inherited locks, exact argv,
+launch evidence, immutable readiness seal and append-only worker log before the
+separately guarded producer. Exact slot18 CLI support is added; slots19–23 stay
+closed. No parent dispatcher is enabled by this change. Tests use only disposable
+synthetic evidence and a stub producer, with no model execution.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-readiness-entry-v2-component-review.json`.
+
+All26 checks passed on unchanged source in serial batches of253.25s,347.30s and
+341.31s. Peak RSS was246,431,744bytes; each batch retained the600-second,4GiB RSS
+and8GiB reserve limits. Coverage includes stable-anchor seal publication, explicit
+guard validation, child reconstruction/guard-before-producer, canonical CLI,
+unsupported slots/types, three preserved failures/no retries, evidence/transport/
+protected-pair/capacity/late-log integrity rejection, and prior slot17 entry and
+slot18 startup compatibility. No test, driver or resource guard failed. Final
+process inspection found no research workers.
+
+Next implement slot18 parent acceptance and one guarded serial transition with
+independent prior transport and full result/pair audits, then the finite remaining
+fresh integrations19–23. Keep stable inventory anchors and all existing caps.
+Inference, real metadata fit and actual numerical/input/measured-pilot gates
+remain before freeze. No research training, protected checkpoint deletion,
+closed numerical-fixture retry or test-holdout use occurred.

@@ -1,0 +1,104 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "3cb9ee6cb0bf373779bf5a1493ffe67ccea74712",
+  "check_executions_passed": 26,
+  "created_at": "2026-10-29T08:52:45.991860+00:00",
+  "distinct_test_cases": 26,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-core-guard.json": "2bcd4b8a8e981406172003a32006f3c72c99d71acf851260c1aff1b86aad1c6e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-core-tests.log": "feeae8a65549a10747179209230eba1b462f4517f659fb77bfc2ec6e42365798",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-failures-guard.json": "16328aa1f9cf2aea6814e0a205e3296e2e8dca7459e75a5adf32c4b73352f89c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-failures-tests.log": "f77543f1485232af3948fa0755e2e183549aeb06ad0ff8c2505eb160e6677afa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-integrity-guard.json": "cae1bec4869f3ac5c9fc890b5b2e4e04a8e4e753802128c518e5190c25e06528",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-integrity-tests.log": "254e1cc76b5a57e54efaa9890d07286d4513f48276b12318a2e0799e5f67e273",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot18-readiness-census.json": "60be99c4ae8ebe0a093b8dd138c25902a1e1ccefc646ec3981d75dd66fe88250",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot18-readiness-entry-source-hashes.json": "0b74fd50005d28bbe0e4c5a247a0ccb320e4f2e08a3df016b60feac7eb4400f4",
+    "src/research/tokenizer_wide_hybrid_later_confirmation_history_v2.py": "6f649454909a03f2c75836f621120446296b2ab37b3f042c403b0fae66211371",
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": "3884616a78f8610f42b982091eb5074a2de325e4a5a84909f0eb29b05fcfb6ca",
+    "src/research/tokenizer_wide_hybrid_quality_handoff_v2.py": "0e7808297da1c0e73922a48e1990f21ad715f0acbc14bcf08e207bfdc3a89671",
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "8e7914e8a1cb3bdd514dfa979e3020fe1ef90eccd17df3033bc8e9e58cec7a22",
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "1001c7f4f7b420d0fbd9eced35a8919aeae6027e617716da53141586dadaa33b",
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "0ea8d1e98121d33657a70d9268b3f4c455408152d7bd1c801dc7665804a08356",
+    "tests/test_tokenizer_wide_hybrid_slot17_readiness_entry_v2.py": "c49ddfbae3d560181b8f0759617a2c866c96bbc5e3463cda6fb25d11938a76e0",
+    "tests/test_tokenizer_wide_hybrid_slot18_readiness_entry_v2.py": "359fa33244199633320fd6144e818305420b2999e6c7be416a9d0c9fceb1fa9f"
+  },
+  "findings": [
+    "Slot18 readiness validates an explicit bounded current-parent readiness guard while fully replaying startup and completed history. Ordinary idle/startup readers remain strict. Claims, frozen inputs, evidence, controls, locks and full remaining capacity are pinned before the immutable seal.",
+    "The readiness inventory is encoded against the authenticated original slot16 seal from prior slot17 dispatch lineage. The exact chain remains11 documents and231748 physical bytes, avoiding one extra recursive predecessor link. Existing16-document,8MiB reference-chain and2MiB expanded inventory bounds are unchanged.",
+    "Slot18 child entry reconstructs18 completed records, six retained selected/fresh pairs and three original cleanup boundaries. It binds current frozen request/source/context, same live parent, canonical argv, inherited locks, exact launch, sealed evidence/controls, append-only log and actual remaining capacity before the guarded producer. Later fresh slots remain unsupported.",
+    "All26 checks passed on unchanged source: readiness publication/explicit guard validation, stable anchor chain and census, child reconstruction/guard-before-producer/no retry, canonical slot18 CLI, unsupported slots/types, three preserved readiness failures, altered history/source/numerical/retention/checkpoints/transport, storage boundaries and late log/history mutations, plus slot17 entry and slot18 startup compatibility. Producer calls are synthetic stubs only."
+  ],
+  "free_bytes_observed": 55912914944,
+  "holdout_consumed": false,
+  "kind": "wide_hybrid_slot18_readiness_entry_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic science/checkpoint bytes and stub producer only; no real model quality, numerical correctness or MPS feasibility result.",
+    "Slot18 parent acceptance and serial dispatch remain unimplemented, as does full integration for slots19..23. No parent dispatcher or campaign launch was enabled by this iteration.",
+    "V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. The closed failed combined numerical fixture remains closed."
+  ],
+  "maximum_observed_rss_bytes": 246431744,
+  "next_action": "Integrate slot18 parent acceptance and one guarded serial transition from its existing same-parent startup/readiness seal. Independently replay exact prior slot17 transport, original retention lineage, the stable slot16 inventory anchor, complete frozen source/evidence/control identities and all18 completed records with6 protected pairs before dispatch. Add only explicit validated readiness/controller-guard capabilities; keep ordinary readers strict. Supervise exactly one child, audit its result and both checkpoint files, preserve all fresh pairs and publish a compact parent receipt without automatic slot19 launch or retries. Then integrate finite remainder19..23 using stable inventory anchors without relaxing16-document/8MiB chain caps. V2 inference, full real metadata fit and actual nine-case numerical/input/measured-pilot gates remain before finite-plan freeze. No closed failed numerical-fixture retry, campaign reopening, protected deletion or test-holdout use.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "status": "slot18_stable_anchor_readiness_and_child_entry_tested_parent_acceptance_dispatch_pending",
+  "synthetic_census": {
+    "completed_quality_records": 18,
+    "inventory_chain_bytes": 231748,
+    "inventory_chain_documents": 11,
+    "live_checkpoint_files": 12,
+    "meta_group_bytes": 1568896,
+    "metadata_bytes": 2159558,
+    "readiness_bytes": 25884,
+    "real_panel_fit_proven": false
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-core-tests.log",
+      "passed": 20,
+      "peak_rss_bytes": 246431744,
+      "seconds": 253.25
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-failures-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-failures-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 245088256,
+      "seconds": 347.3
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-integrity-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-readiness-entry-v2-integrity-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 245006336,
+      "seconds": 341.31
+    }
+  ],
+  "training_launched": false
+}

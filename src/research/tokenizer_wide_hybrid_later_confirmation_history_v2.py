@@ -27,7 +27,7 @@ def _binding(root,ref):
     return dict(size=_path(root,ref['path']).stat().st_size,sha256=ref['sha256'])
 
 
-def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref,*,extra_control=None):
+def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref,*,extra_control=None,readiness_control=None):
     root=writer.root/'evidence'
     _require(reference['path']=='meta/quality-dispatch-17.json','Exact slot17 dispatch reference required')
     saved=_document(root,reference);pid=saved.get('parent_pid');review=saved.get('review',{})
@@ -109,6 +109,11 @@ def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref,*,ex
         _require(name=='control/quality-confirm-startup-18.json' and name not in expected_controls,
                  'Only separately validated slot18 preparation guard may append')
         expected_controls[name]=binding
+    if readiness_control is not None:
+        name,binding=readiness_control
+        _require(name=='control/quality-readiness-18.json' and name not in expected_controls,
+                 'Only separately validated slot18 readiness guard may append')
+        expected_controls[name]=binding
     _require(acceptance.readiness._controls(writer,'not-a-control')==expected_controls,
              'Exact original controls required; no later controls allowed')
     launch=_document(root,review['child']['launch']);argv=launch.get('argv')
@@ -145,7 +150,7 @@ def verify_confirmation_dispatch(writer,slot,plan_sha256,completion_ref,*,projec
     return _verify(writer,slot,plan_sha256,completion_ref,projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
 
 
-def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None):
+def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,readiness_guard_ref=None):
     """Shared replay; only an explicit validated preparation may append."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==17,'Exact idle slot17 replay required')
     _sha(plan_sha256);root=writer.root/'evidence';_locks(root,writer.lock_fds);census=snapshot(writer.root)
@@ -153,15 +158,21 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
     _require(not any(n.endswith('.tmp') or '-failure' in n for n in census['files']),'Failed/partial history cannot be accepted')
     inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
     _require(startup_ref is None or preparation is not None,'Startup receipt requires explicit preparation')
+    _require(readiness_guard_ref is None or startup_ref is not None,'Readiness guard requires exact startup receipt')
+    readiness_control=None;startup_controls=controls
+    if readiness_guard_ref is not None:
+        from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import _readiness_control
+        readiness_control=_readiness_control(writer,readiness_guard_ref)
+        startup_controls={n:v for n,v in controls.items() if n!=readiness_control[0]}
     appended={};pending=None;extra_control=None;startup_report=None
     if preparation is not None:
         from .tokenizer_wide_hybrid_remaining_confirmation_append_v2 import _append
         appended,pending,extra_control=_append(writer,18,plan_sha256,completion_ref,projection_ref,
             rank_completion_ref,_document(root,completion_ref),preparation)
-    saved,identity,context=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control)
+    saved,identity,context=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control)
     if startup_ref is not None:
         from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import _receipt_binding
-        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,controls)
+        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,startup_controls)
         appended[startup_ref['path']]=binding
     historical={n:v for n,v in inventory.items() if n!=completion_ref['path']};review=saved['review']
     for name,binding in appended.items():
@@ -181,7 +192,7 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
         _storage(startup_report['storage'],actual['storage'],before_receipt)
     _prechild_storage(writer,context,actual['storage'])
     _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during replay')
-    again,_,_=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control)
+    again,_,_=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control)
     _require(again==saved and acceptance.readiness._controls(writer,'not-a-control')==controls,'Transport/control changed during replay')
     acceptance._check_inventory(root,inventory);_locks(root,writer.lock_fds)
     _require(snapshot(writer.root)==census and not (writer.root/'STOP').exists()

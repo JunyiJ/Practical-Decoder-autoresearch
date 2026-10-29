@@ -3,9 +3,11 @@
 Caller owns both locks, inspects workers and holds an outer resource guard over
 the entire call, including final checks. No readiness, child, retry or later slot.
 """
+import math
 import os
 import shutil
 
+from .cpu_prerequisite_guard import violation
 from .protocol import digest,file_digest
 from .tokenizer_wide_hybrid_metadata_writer import MetadataWriter
 from .tokenizer_wide_hybrid_metadata import snapshot
@@ -114,6 +116,31 @@ def prepare_confirmation_request(writer,slot,plan_sha256,*,projection_ref,rank_c
 
 
 def verify_confirmation_request(writer,slot,reference):
+    return _verify_request(writer,slot,reference)
+
+
+def _readiness_control(writer,reference):
+    from .tokenizer_wide_hybrid_quality_readiness_v2 import KIND as readiness_kind
+    _require(reference['path']=='control/quality-readiness-18.json','Exact slot18 readiness guard required')
+    guard=_document(writer.root,reference);elapsed=guard.get('elapsed_seconds');sample=guard.get('observation',{})
+    limits=dict(timeout_seconds=1800,rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3)
+    _require(set(guard)=={'kind','status','reason','pid','limits','elapsed_seconds','observation'}
+        and guard['kind']==readiness_kind and guard['status'] in ('starting','finished') and guard['reason'] is None
+        and type(guard['pid']) is int and guard['pid']==os.getpid() and guard['limits']==limits
+        and type(elapsed) in (int,float) and math.isfinite(elapsed) and 0<=elapsed<1800
+        and type(sample) is dict and set(sample)=={'peak_rss_bytes','free_bytes'}
+        and all(type(v) is int and v>0 for v in sample.values()) and violation(sample,elapsed,**limits) is None,
+        'Bounded current-parent readiness guard required')
+    return reference['path'],dict(size=_path(writer.root,reference['path']).stat().st_size,sha256=reference['sha256'])
+
+
+def verify_confirmation_for_readiness(writer,slot,reference,guard_ref):
+    """Explicit single-guard append; the ordinary idle reader stays strict."""
+    _require(guard_ref is not None,'Explicit readiness guard required')
+    return _verify_request(writer,slot,reference,readiness_guard_ref=guard_ref)
+
+
+def _verify_request(writer,slot,reference,*,readiness_guard_ref=None):
     """Independently reconstruct the same-parent slot18 receipt; no launch grant."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==18,'Exact slot18 predispatch required')
     _require(reference['path']==RECEIPT,'Exact slot18 startup reference required')
@@ -121,7 +148,7 @@ def verify_confirmation_request(writer,slot,reference):
     preparation=dict(attempt_ref=report['attempt'],guard_ref=report['guard'],pending_request_ref=report['request'])
     checked=append.history._verify(writer,17,report['plan_sha256'],report['prior_dispatch_ref'],
         projection_ref=report['projection_ref'],rank_completion_ref=report['rank_completion_ref'],
-        preparation=preparation,startup_ref=reference)
+        preparation=preparation,startup_ref=reference,readiness_guard_ref=readiness_guard_ref)
     return dict(startup_ref=reference,request_sha256=report['request']['sha256'],
         required_free_bytes=checked['storage']['required_free_bytes'],prior_transport_verified=True,
         selected_and_fresh_prefix_verified=True,confirmation_request_verified=True,dispatch_authorized=False)

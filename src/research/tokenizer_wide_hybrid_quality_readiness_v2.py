@@ -61,7 +61,7 @@ def _bound(writer,slot,report):
         request=requests[-1]
     else:
         from . import tokenizer_wide_hybrid_first_confirmation_startup_v2 as fresh
-        _require(slot in (15,16,17),'Only fresh slots15..17 have startup integration')
+        _require(slot in (15,16,17,18),'Only fresh slots15..18 have startup integration')
         bound,requests=fresh._frozen(writer,slot,report['plan_sha256'],report['projection_ref'],report['rates'],report['selection'])
         request=requests[-1]
     _require(digest(_document(writer.root/'evidence',report['request']))==digest(request),
@@ -73,7 +73,7 @@ def _bound(writer,slot,report):
 
 def seal_quality_readiness(writer,slot,startup_ref):
     """Own shared locks and inspect workers first; a failed seal is never retried."""
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<=17,'Exact supported quality writer/slot required')
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<=18,'Exact supported quality writer/slot required')
     phase='lr' if slot<9 else ('rank' if slot<15 else 'confirm')
     expected='meta/quality-first-startup.json' if slot==0 else f'meta/quality-{phase}-startup-{slot:02d}.json'
     _require(startup_ref['path']==expected,'Exact startup reference required')
@@ -106,8 +106,10 @@ def seal_quality_readiness(writer,slot,startup_ref):
             else:
                 if slot==16:
                     from . import tokenizer_wide_hybrid_confirmation_startup_v2 as fresh
-                else:
+                elif slot==17:
                     from . import tokenizer_wide_hybrid_later_confirmation_startup_v2 as fresh
+                else:
+                    from . import tokenizer_wide_hybrid_remaining_confirmation_startup_v2 as fresh
                 guard_ref=dict(path=guard_name,sha256=file_digest(writer.root/guard_name))
                 checked=fresh.verify_confirmation_for_readiness(writer,slot,startup_ref,guard_ref)
                 required=('prior_transport_verified','selected_and_fresh_prefix_verified','confirmation_request_verified')
@@ -151,6 +153,14 @@ def seal_quality_readiness(writer,slot,startup_ref):
             prior=_document(evidence,report['prior_dispatch_ref'])
             anchor=prior['review']['readiness']
             _require(anchor['path']==f'meta/quality-readiness-{slot-1:02d}.json','Exact previous readiness inventory anchor required')
+        elif slot==18:
+            # Reuse a stable earlier seal; one link per fresh slot exceeds MAX_DEPTH.
+            prior=_document(evidence,report['prior_dispatch_ref'])
+            previous=prior['prior_dispatches'][-1]
+            _require(previous['path']=='meta/quality-dispatch-16.json','Exact stable earlier dispatch required')
+            original=_document(evidence,previous)
+            anchor=original['review']['readiness']
+            _require(anchor['path']=='meta/quality-readiness-16.json','Exact stable slot16 inventory anchor required')
         wire=encode_inventory(evidence,payload,anchor)
         path=writer.publish_json('evidence/'+base+'.json',wire)
         return dict(path=base+'.json',sha256=file_digest(path))
