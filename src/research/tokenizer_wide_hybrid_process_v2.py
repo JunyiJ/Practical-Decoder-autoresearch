@@ -4,7 +4,6 @@ This subprocess primitive is not a campaign dispatcher. Frozen request/source,
 full future storage and numerical/stage gates remain caller responsibilities;
 the child must independently enforce RSS/MPS limits. Closed v1 code is unchanged.
 """
-import json
 import math
 import os
 from pathlib import Path
@@ -15,7 +14,7 @@ import time
 
 from .tokenizer_serial_process import _group_exists, _stop
 from .tokenizer_wide_hybrid_metadata import snapshot
-from .tokenizer_wide_hybrid_metadata_writer import MetadataWriter
+from .tokenizer_wide_hybrid_metadata_writer import MetadataWriter,json_encoder
 from .tokenizer_wide_hybrid_retention import RESERVE
 
 LOG_LIMIT=4*1024**2
@@ -24,7 +23,9 @@ DOCUMENT_LIMIT=16384
 
 
 def _encoded_size(value):
-    return len((json.dumps(value,sort_keys=True,allow_nan=False,indent=2,ensure_ascii=True)+'\n').encode('ascii'))
+    # ensure_ascii makes character lengths exact byte lengths; publication
+    # streams the identical encoder output followed by one newline.
+    return sum(len(piece) for piece in json_encoder().iterencode(value))+1
 
 
 def run_process(writer,stage,slot,argv,cwd,*,required_free_bytes,output_limit_bytes,

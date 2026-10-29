@@ -104,7 +104,7 @@ def test_first_fresh_serial_transition_preserves_selection_and_stops_before_slot
         completed_synthetic_fresh=1,real_panel_fit_proven=False),sort_keys=True))
 
 
-@pytest.mark.parametrize('phase',['process','review','source_after_review','evidence_after_review'])
+@pytest.mark.parametrize('phase',['process','review','source_after_review','evidence_after_review','supervisor_after_review'])
 def test_first_fresh_failure_retains_evidence_and_blocks_retry(writer,monkeypatch,phase):
     args,calls=setup(writer,monkeypatch)
     def fail(*a,**kw):raise RuntimeError('synthetic '+phase)
@@ -115,8 +115,11 @@ def test_first_fresh_failure_retains_evidence_and_blocks_retry(writer,monkeypatc
         def late(guard,*a,**kw):
             result=original(guard,*a,**kw)
             if guard.name=='control/quality-controller-review-15.json':
-                name='meta/source.txt' if phase=='source_after_review' else 'quality/15/result.json'
-                (writer.root/'evidence'/name).write_bytes(b'late mutation')
+                if phase=='supervisor_after_review':path=writer.root/'control/process-quality-15.json'
+                else:
+                    name='meta/source.txt' if phase=='source_after_review' else 'quality/15/result.json'
+                    path=writer.root/'evidence'/name
+                path.write_bytes(b'late mutation')
             return result
         monkeypatch.setattr(dispatch._PhaseGuard,'__exit__',late)
     with pytest.raises((RuntimeError,ValueError)):dispatch.run_first_confirmation_once(**args)

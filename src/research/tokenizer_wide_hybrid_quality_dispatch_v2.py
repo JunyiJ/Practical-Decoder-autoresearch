@@ -137,6 +137,8 @@ def _prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_comp
             and set(sample)=={'free_bytes','output_bytes','log_bytes'} and all(type(v) is int for v in sample.values())
             and sample['free_bytes']>=8*1024**3 and sample['output_bytes']==total<=seal['output_limit_bytes']
             and sample['log_bytes']==log<=4*1024**2,'Earlier terminal resource census differs')
+        _require(acceptance._supervisor(writer,i,terminal,child['process'])==review['supervisor_ref'],
+                 'Earlier supervisor snapshot differs')
         _require(seal['guard']['path']==f'control/quality-readiness-{i:02d}.json','Earlier readiness guard path differs')
         acceptance._guard(writer,seal['guard'],readiness.KIND,pid,1800)
         entry=review['entry_guard']
@@ -242,6 +244,7 @@ def _run_once(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_c
         _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents success publication')
         _require(shutil.disk_usage(writer.root).free>=review['storage']['required_free_bytes'],
                  'Remaining full campaign storage changed before receipt')
+        _document(writer.root,review['supervisor_ref'])
         if fresh:
             bound,_,allowance=readiness._bound(writer,slot,_document(root,startup))
             _require(bound['files']==seal['frozen_files'] and bound['context']==seal['context']

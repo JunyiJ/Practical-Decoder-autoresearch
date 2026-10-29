@@ -1,0 +1,99 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "8b1cd735980a336e4f98202d55910c88495a7228",
+  "created_at": "2026-10-29T04:27:19.146345+00:00",
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-final-001-guard.json": "738481a5f19adb9defc1cd0c9375f60dfc12c916b18d6af8d45bba50c720d4b0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-final-001-tests.log": "c0230e6259d2970ddb3ea0e305ec983eb609aaa4d205e27fd67fb78369b20a95",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-focused-001-guard.json": "44d8d928d7410498b43edd90d270c7aceff4d438b273a9db4c6c152f0affb521",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-focused-001-tests.log": "16c8b6059a98dde381a18967edd1a83ea32c71c19ccb77f4e15e8763a56188b7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-regression-001-guard.json": "6e090e65dcd7b8271b830884ae0ad6488f288b52a9468579bdcfa3f6a4777cd8",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-regression-001-tests.log": "500d4566b0860ea598134f8782543465e6be063949d9c02fa13a9f61dd903555",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-reproduction-001-guard.json": "c9b1d34f723a7fac4a21756c6664f018107357662486cbac12d4a612ffaac3b0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-reproduction-001-tests.log": "e057bc8226f95ad94fa6ac8ec948bf52bf23bf81c5f0d1c15df7fd5921349f14",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/supervisor-control-driver-note.json": "936c50186bca7402afa93ad46d9a28ded7d90455aa863766ac60464d5ccfb541",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/supervisor-control-first-fresh-census.json": "4e51d3b9eba1fd312d3b22c928d64eacc3d05b00d5562329bbe151630c5f6ad2",
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "e486260aa6c2fd33ad8616c51529fd34fc2318bfca5d8c1b79c69a6a053d4e6a",
+    "src/research/tokenizer_wide_hybrid_process_v2.py": "798774cf0d90fb7c1cd56c6b72ccf4284be1335a9513c13d5fcc2b513240aad4",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "e1c1ead8ced69cb669293f6ee2d03a19d31b0a93b22905f87eaaff6583a57270",
+    "src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py": "5920a6f7e97e1efff2ed82594a1386beb5a56dd86e416f316d0ab95a69e75ac0",
+    "src/research/tokenizer_wide_hybrid_rank_history_v2.py": "32237ecb2991037c275008c889746141115f2c94a98d0085eca6559a595dbf70",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_dispatch_v2.py": "033340881ed6d4aa5d084d2ea29cbb70ab5925c326b8c936c4bb75586da08a41",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_history_v2.py": "44706bc8a940ffeca68cd07a9c49743d4ec9cb2fb0a0fa5d0c07f752baad77c5",
+    "tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py": "12b3d7cad6d12c3636f7f72b4bd934c23d7e1e7dd99abcc55716a56fa4274362",
+    "tests/test_tokenizer_wide_hybrid_rank_history_v2.py": "a2fbeffdc5bc04d521883d6a16a2150d727ba20727f2995b37fee956ac2c4eca",
+    "tests/test_tokenizer_wide_hybrid_supervisor_control_v2.py": "051ddbd603ca2a35ae000c8b787defa41e216df61f364d914fc12f8f03f3acab"
+  },
+  "final_code_passed_tests": 156,
+  "findings": [
+    "Adding the real supervisor control snapshot to the synthetic completion fixture reproduced slot15 dispatch rejection: Undeclared fresh control append. Fresh history now permits only declared process-quality control names for slots15..23 as hash-bound bytes, without scientific or launch credit.",
+    "Real tiny subprocess checks exposed a second integration defect: process terminal self-inclusive census used pretty JSON size while MetadataWriter published compact JSON. Two existing census assertions were 100 bytes too high. One shared encoder now drives exact compact publication and the converged terminal byte count.",
+    "LR/rank/first-fresh parent acceptance checks completed supervisor identity and resource limits against the immutable terminal, with bounded earlier elapsed/free observations and an exact pre-terminal output count. Its hash is retained and rechecked after storage review and before receipt publication.",
+    "Earlier LR/rank transport and first-fresh full historical replay bind the saved supervisor reference; control tampering and late changes fail closed. The shared completed-child fixture now preserves this real supervisor artifact.",
+    "All 84 final focused checks and 72 affected regressions passed. Coverage includes real tiny process capture/failures/locks/census, metadata writer behavior, parent acceptance, LR serial continuation, all six serial rank slots, slot15 dispatch, new-parent replay, tampering and late supervisor changes."
+  ],
+  "free_bytes_observed": 56366923776,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_supervisor_control_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Tiny real process primitives and synthetic scientific/byte fixtures only; no model-quality or measured MPS feasibility result.",
+    "Later-fresh append-aware startup/history and slots16..23, v2 inference and full real metadata accounting remain unfinished.",
+    "Actual nine-case numerical/input/measured-pilot prerequisites remain before plan freeze. The closed failed combined fixture and all closed campaigns remain closed."
+  ],
+  "maximum_observed_rss_bytes": 251166720,
+  "next_action": "Integrate later-fresh slots16..23 beginning with an explicit append-aware startup/history contract. The new verify_first_confirmation_dispatch is strict idle-only: it independently reconstructs the first compact receipt under its historical parent/FD identity and rejects any later request/attempt; do not bypass that restriction. Extend verified previous fresh transport, independently frozen conditional requests, selected/live fresh audits and full current/future storage through later startup/readiness/entry/acceptance/serial dispatch. Then finish v2 inference and full real metadata accounting. Actual nine numerical/input/measured-pilot prerequisites remain unresolved; no retry of the closed failed combined fixture or any closed campaign. Freeze only after all prerequisites and storage gates pass; keep test holdout closed.",
+  "prelaunch_shell_selector_errors": 1,
+  "preserved_test_failures": 4,
+  "status": "real_supervisor_control_and_terminal_census_corrected_and_tested",
+  "synthetic": {
+    "completed_synthetic_fresh": 1,
+    "full_real_panel_fit_proven": false,
+    "live_checkpoint_files_preserved": 8,
+    "meta_group_bytes": 1478212,
+    "metadata_bytes": 2030725,
+    "receipt_bytes": 4533
+  },
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "failed": 1,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-reproduction-001-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-reproduction-001-tests.log",
+      "passed": 0,
+      "peak_rss_bytes": 245514240,
+      "seconds": 67.06
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "failed": 3,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-focused-001-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-focused-001-tests.log",
+      "passed": 45,
+      "peak_rss_bytes": 244858880,
+      "seconds": 146.61
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "failed": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-final-001-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-final-001-tests.log",
+      "passed": 84,
+      "peak_rss_bytes": 251166720,
+      "seconds": 218.3
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "failed": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-regression-001-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-supervisor-control-regression-001-tests.log",
+      "passed": 72,
+      "peak_rss_bytes": 244678656,
+      "seconds": 292.92
+    }
+  ],
+  "training_launched": false,
+  "whitespace_check": "Source, tests and documentation pass git diff --check. Six trailing-space findings occur only in preserved raw pytest failure traceback lines; those logs and their hashes remain unchanged."
+}

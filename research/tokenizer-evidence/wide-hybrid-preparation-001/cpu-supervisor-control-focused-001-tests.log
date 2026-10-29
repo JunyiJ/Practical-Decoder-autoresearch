@@ -1,0 +1,86 @@
+F.F................................F............                         [100%]
+=================================== FAILURES ===================================
+____ test_real_supervisor_snapshot_matches_terminal_and_rejects_false_state ____
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x107928050>
+
+    def test_real_supervisor_snapshot_matches_terminal_and_rejects_false_state(writer):
+        terminal=run(writer,"print('tiny supervisor proof')")
+        terminal_path=writer.root/'evidence/quality/00/process/process.json'
+        ref=dict(path='quality/00/process/process.json',sha256=file_digest(terminal_path))
+        control_path=writer.root/'control/process-quality-00.json';raw=control_path.read_bytes()
+>       saved=json.loads(raw);bound=accept._supervisor(writer,0,terminal,ref)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_supervisor_control_v2.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py:56: in _supervisor
+    _require(type(elapsed) in (int,float) and math.isfinite(elapsed)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Completed supervisor pre-terminal observation differs'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Completed supervisor pre-terminal observation differs
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+________ test_binary_merged_capture_locks_census_and_exclusive_terminal ________
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10cc60690>
+
+    def test_binary_merged_capture_locks_census_and_exclusive_terminal(writer):
+        code=f'import os,fcntl\nfor fd in {writer.lock_fds!r}:\n os.fstat(fd)\n fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)\nos.write(1,b"a\\x00b");os.write(2,b"error")'
+        result=run(writer,code)
+        assert result==report(writer)
+        assert result['status']=='completed' and result['returncode']==0
+        assert result['capture_kind']=='bounded_pipe_v2' and not result['log_truncated']
+        assert log(writer).read_bytes()==b'a\x00berror'
+        assert not process._group_exists(result['pid'])
+        census=metadata.snapshot(writer.root)
+        total=sum(v['size'] for k,v in census['files'].items() if k.startswith('evidence/quality/00/'))
+>       assert result['observation']['output_bytes']==total
+E       assert 1241 == 1141
+
+tests/test_tokenizer_wide_hybrid_process_v2.py:38: AssertionError
+______ test_child_checkpoint_metadata_producers_share_parent_census_lock _______
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10cda49b0>
+
+    def test_child_checkpoint_metadata_producers_share_parent_census_lock(writer):
+        repo=Path(__file__).resolve().parents[1]
+        code=f'''import sys,time
+    sys.path.insert(0,{str(repo)!r})
+    from pathlib import Path
+    from src.research import tokenizer_wide_hybrid_cleanup as cleanup
+    from src.research.tokenizer_wide_hybrid_metadata_writer import MetadataWriter
+    from src.research.tokenizer_wide_hybrid_checkpoint_writer import CheckpointWriter
+    cleanup.GLOBAL_LOCK=Path({str(writer.root.parent/'global.lock')!r})
+    w=MetadataWriter(Path.cwd(),{writer.lock_fds!r})
+    c=CheckpointWriter(w,'quality',0,2048)
+    with c.open('raw.pt') as stream:
+     for i in range(20):
+      stream.write(b'x'*32)
+      print('progress',i,flush=True)
+      time.sleep(.002)
+     stream.publish()
+    w.publish_json('evidence/quality/00/result.json',{{'synthetic_only':True}})
+    '''
+        result=run(writer,code)
+        assert result['status']=='completed'
+        assert (writer.root/'evidence/quality/00/checkpoints/raw.pt').read_bytes()==b'x'*640
+        assert len(log(writer).read_text().splitlines())==20
+        census=metadata.snapshot(writer.root)
+>       assert result['observation']['output_bytes']==sum(v['size'] for k,v in census['files'].items()
+                                                        if k.startswith('evidence/quality/00/'))
+E       assert 3403 == 3303
+E        +  where 3303 = sum(<generator object test_child_checkpoint_metadata_producers_share_parent_census_lock.<locals>.<genexpr> at 0x10cc9c4a0>)
+
+tests/test_tokenizer_wide_hybrid_process_v2.py:200: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_supervisor_control_v2.py::test_real_supervisor_snapshot_matches_terminal_and_rejects_false_state
+FAILED tests/test_tokenizer_wide_hybrid_process_v2.py::test_binary_merged_capture_locks_census_and_exclusive_terminal
+FAILED tests/test_tokenizer_wide_hybrid_process_v2.py::test_child_checkpoint_metadata_producers_share_parent_census_lock
+3 failed, 45 passed in 146.61s (0:02:26)

@@ -75,7 +75,7 @@ def test_protected_science_transport_and_later_appends_rejected(writer,monkeypat
     args=setup(writer,monkeypatch);root=writer.root/'evidence';saved=history._document(root,args['completion_ref'])
     paths=[writer.root/v['path'] for v in saved['guards'].values()]+[
         writer.root/'control/quality-entry-15.json',writer.root/'control/quality-readiness-15.json',
-        writer.root/'control/quality-confirm-startup-15.json',
+        writer.root/'control/quality-confirm-startup-15.json',writer.root/'control/process-quality-15.json',
         root/'quality/09/checkpoints/final_001200_123456.pt',root/'quality/15/checkpoints/h200.pt',
         root/'meta/numerical.json',root/'meta/source.txt',root/'.retention/rank/deletions.jsonl',
         root/'quality/15/process/worker.log',root/'quality/15/process/process.json',

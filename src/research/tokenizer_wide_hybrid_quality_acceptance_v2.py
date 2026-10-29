@@ -38,6 +38,34 @@ def _guard(writer,ref,kind,pid,seconds):
     return value
 
 
+def _supervisor(writer,slot,terminal,terminal_ref):
+    """Bind the final supervisor snapshot, before immutable terminal publication.
+
+    Its elapsed/free observations may precede the terminal's. Its output census
+    must differ by exactly the terminal document's bytes; every other field is
+    identical. Callers independently audit the terminal and recheck this hash.
+    """
+    name=f'control/process-quality-{slot:02d}.json'
+    ref=dict(path=name,sha256=file_digest(writer.root/name));value=_document(writer.root,ref)
+    dynamic={'elapsed_seconds','observation'}
+    _require(set(value)==set(terminal) and digest({k:v for k,v in value.items() if k not in dynamic})==
+        digest({k:v for k,v in terminal.items() if k not in dynamic})
+        and value.get('status')=='completed' and type(value.get('returncode')) is int
+        and value['returncode']==0 and value.get('error') is None,'Completed supervisor provenance differs')
+    elapsed=value.get('elapsed_seconds');sample=value.get('observation',{})
+    _require(type(elapsed) in (int,float) and math.isfinite(elapsed)
+        and 0<=elapsed<=terminal['elapsed_seconds']<terminal['timeout_seconds']
+        and type(sample) is dict and set(sample)=={'free_bytes','output_bytes','log_bytes'}
+        and all(type(v) is int for v in sample.values())
+        and sample['free_bytes']>=terminal['reserve_bytes']
+        and sample['output_bytes']==terminal['observation']['output_bytes']-
+            _path(writer.root/'evidence',terminal_ref['path']).stat().st_size
+        and 0<=sample['output_bytes']<=terminal['output_limit_bytes']
+        and sample['log_bytes']==terminal['observation']['log_bytes'],
+        'Completed supervisor pre-terminal observation differs')
+    return ref
+
+
 def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical_identity=None):
     """Full audit under caller locks/guard; public parent APIs stay same-parent.
 
@@ -105,6 +133,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         and set(obs)=={'free_bytes','output_bytes','log_bytes'} and all(type(v) is int for v in obs.values())
         and obs['free_bytes']>=8*1024**3 and obs['output_bytes']==total<=allowance
         and obs['log_bytes']==log<=4*1024**2,'Terminal resource census differs')
+    supervisor_ref=_supervisor(writer,slot,terminal,refs['process'])
     guard_name=f'control/quality-entry-{slot:02d}.json'
     guard_ref=dict(path=guard_name,sha256=file_digest(writer.root/guard_name))
     guard=_guard(writer,guard_ref,entry.KIND,terminal['pid'],7200)
@@ -183,12 +212,14 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
              'Frozen postprocess inputs changed')
     _check_inventory(root,inventory)
     _guard(writer,guard_ref,entry.KIND,terminal['pid'],7200)
+    _document(writer.root,supervisor_ref)
     for name,binding in seal['control_inventory'].items():_check(writer.root,name,binding,time.monotonic()+TIMEOUT)
     _locks(root,writer.lock_fds)
     _require(shutil.disk_usage(writer.root).free>=storage['required_free_bytes'],'Full remaining storage changed')
     return dict(kind=KIND if slot<9 else (RANK_KIND if slot<15 else CONFIRM_KIND),
         status=('lr' if slot<9 else ('rank' if slot<15 else 'first_confirmation'))+'_child_reviewed_pending_parent_receipt',slot=slot,plan_sha256=seal['plan_sha256'],
         startup=startup_ref,readiness=readiness_ref,child=refs,entry_guard=dict(**guard_ref,record=guard),
+        supervisor_ref=supervisor_ref,
         completed_records=prefix['records'],checkpoint_pairs=prefix['checkpoint_pairs'],storage=storage,
         evidence_inventory_sha256=digest(inventory),adopted=False,dispatch_authorized=False,
         deletion_authorized=False,stage_cleanup_complete=False,next_stage_authorized=False,selection=selected_choice,**extra)

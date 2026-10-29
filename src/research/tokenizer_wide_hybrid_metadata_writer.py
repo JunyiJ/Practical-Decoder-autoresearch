@@ -24,6 +24,11 @@ LOCK_SECONDS=2.
 CHUNK_BYTES=65536
 
 
+def json_encoder():
+    """One byte-encoding contract for publication and self-inclusive censuses."""
+    return json.JSONEncoder(sort_keys=True,allow_nan=False,separators=(',',':'),ensure_ascii=True)
+
+
 def _write(fd, data):
     view=memoryview(data)
     while view:
@@ -109,7 +114,7 @@ class MetadataWriter:
             fd=os.open(temporary,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
             try:
                 remaining=budgets()[group]-before['groups'][group]
-                encoder=json.JSONEncoder(sort_keys=True,allow_nan=False,separators=(',',':'),ensure_ascii=True)
+                encoder=json_encoder()
                 for piece in encoder.iterencode(value):
                     # ensure_ascii guarantees this byte count before allocation.
                     if len(piece)>remaining:raise ValueError('JSON payload exceeds metadata group cap')

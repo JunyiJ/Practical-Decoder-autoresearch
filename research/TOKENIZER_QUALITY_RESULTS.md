@@ -913,3 +913,20 @@ Later fresh appends/slots, inference, full real metadata accounting and actual
 numerical/input/measured-pilot gates remain before freeze. No model training,
 quality result, research cleanup, closed-fixture retry or holdout evaluation.
 See `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-history-v2-component-review.json`.
+
+
+## October 28 supervisor preparation defects found before launch
+
+Realistic child evidence exposed two launch-blocking defects hidden by earlier
+synthetic fixtures: fresh history rejected the real supervisor's control record,
+and process output censuses counted pretty JSON despite compact publication.
+Both are corrected; 84 focused checks and 72 affected regressions passed under
+actual CPU/disk guards. Parent acceptance now verifies and retains the supervisor
+hash, including its exact pre-terminal byte census; serial transport and historical
+replay enforce that binding. Original reproductions and failed checks are retained.
+
+This is preparation, with no new model-quality result. Later-fresh slots, inference,
+full metadata accounting and actual numerical/input/measured-pilot gates remain
+before freeze. No training, protected checkpoint deletion, closed-fixture retry
+or holdout evaluation occurred. See
+`tokenizer-evidence/wide-hybrid-preparation-001/supervisor-control-v2-component-review.json`.

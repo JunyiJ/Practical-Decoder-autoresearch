@@ -79,6 +79,12 @@ def complete(writer,monkeypatch,slot,startup,ready):
         if total==terminal['observation']['output_bytes']:break
         terminal['observation']['output_bytes']=total
     else:pytest.fail('Synthetic terminal size did not converge')
+    # The real supervisor leaves its final mutable control snapshot behind.
+    # It precedes terminal publication, so its census excludes terminal bytes.
+    control=json.loads(json.dumps(terminal))
+    control['elapsed_seconds']=1.9
+    control['observation']['output_bytes']-=path.stat().st_size
+    writer.publish_json(f'control/process-quality-{slot:02d}.json',control)
     writer.publish_json(f'control/quality-entry-{slot:02d}.json',dict(kind=accept.entry.KIND,status='finished',reason=None,
         pid=terminal['pid'],elapsed_seconds=2.,observation=dict(peak_rss_bytes=1000,free_bytes=64*1024**3),
         limits=dict(timeout_seconds=7200,rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3)))
@@ -98,7 +104,7 @@ def test_complete_child_reaudits_prefix_history_and_storage_readonly(writer,monk
 
 
 @pytest.mark.parametrize('bad',['return','launch','guard','startup','seal','numeric','source','prior_weight',
-    'result','worker','tensor','resource','journal','extra','later','stop','locks','space'])
+    'result','worker','tensor','resource','journal','extra','later','stop','locks','space','supervisor'])
 def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypatch,bad):
     args=setup(writer,monkeypatch);root=writer.root/'evidence'
     paths={'launch':'quality/01/process/launch.json','startup':args['startup_ref']['path'],
@@ -109,6 +115,7 @@ def test_success_exit_is_not_enough_and_all_inputs_are_preserved(writer,monkeypa
     if bad in paths:(root/paths[bad]).write_text('{}')
     elif bad=='return':args['process']['returncode']=1
     elif bad=='guard':(writer.root/'control/quality-entry-01.json').write_text('{}')
+    elif bad=='supervisor':(writer.root/'control/process-quality-01.json').write_text('{}')
     elif bad=='stop':(writer.root/'STOP').touch()
     elif bad=='locks':monkeypatch.setattr(writer,'lock_fds',(writer.lock_fds[0],writer.lock_fds[0]))
     elif bad=='space':monkeypatch.setattr(accept,'shutil',SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=8*1024**3)))

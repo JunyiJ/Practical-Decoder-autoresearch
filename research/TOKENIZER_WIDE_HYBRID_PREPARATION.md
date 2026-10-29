@@ -2431,3 +2431,43 @@ checks, not new model-quality evidence. No research training/MPS, checkpoint
 deletion, holdout evaluation, closed-fixture retry or plan freeze occurred.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-history-v2-component-review.json`.
+
+
+## October 28 real supervisor integration corrections
+
+A realistic supervisor control snapshot exposed a launch-blocking mismatch:
+`control/process-quality-15.json` was rejected by the fresh-history allowlist,
+although the real process runner always writes it. The synthetic completed-child
+fixture had omitted that file. Fresh history now admits only the declared
+quality supervisor names for slots15–23 as bound bytes, with no scientific or
+dispatch credit. The completed-child fixture includes the pre-terminal snapshot.
+
+Real tiny-process checks then exposed a second mismatch: terminal output counts
+used pretty JSON size while the metadata writer published compact JSON. Two
+existing process census assertions were 100 bytes too high. Publication and
+self-inclusive census now share one encoder. No old evidence is re-encoded.
+
+Parent acceptance independently checks the completed supervisor identity and
+limits against the immutable terminal. Its earlier output count must exclude
+exactly the terminal document's bytes; its elapsed/free observations remain
+bounded. The supervisor hash is saved in acceptance, checked again after the
+full storage audit and before receipt publication, and verified during LR/rank
+transport and first-fresh historical replay. Late changes fail closed.
+
+The original failing dispatch and subsequent three census failures are retained
+as development evidence. An unquoted pytest node selector was rejected by zsh
+before a test process launched; the quoted invocation ran normally. These are
+new controller/process checks, not retries of the closed numerical fixture.
+
+All 84 final focused checks and 72 affected regressions passed under actual
+CPU/disk guards (218.30s and 292.92s; peak RSS 251,166,720 bytes). The final
+process inspection found no research worker. The synthetic compact receipt is
+4,533 bytes; its meta group uses 1,478,212/2,097,152 bytes, with 2,030,725 total
+metadata bytes. These observations do not prove full real-panel fit.
+
+Validation details and source/log hashes are in
+`tokenizer-evidence/wide-hybrid-preparation-001/supervisor-control-v2-component-review.json`.
+Later-fresh append-aware startup and serial slots16–23 remain the next integration
+step, followed by v2 inference and full real metadata accounting. Actual numerical,
+input and measured-pilot prerequisites still precede freeze. No research training,
+MPS run, checkpoint cleanup, holdout evaluation or plan freeze occurred.

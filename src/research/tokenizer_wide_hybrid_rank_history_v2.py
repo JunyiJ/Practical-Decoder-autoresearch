@@ -27,7 +27,7 @@ def fresh_artifact(name):
 
 
 def fresh_control(name):
-    return bool(re.fullmatch(r'control/quality-(?:confirm-startup|readiness|entry|controller-(?:prepare|child|review))-(?:1[5-9]|2[0-3])\.json',name))
+    return bool(re.fullmatch(r'control/(?:quality-(?:confirm-startup|readiness|entry|controller-(?:prepare|child|review))|process-quality)-(?:1[5-9]|2[0-3])\.json',name))
 
 
 def verify_rank_history(writer,plan_sha256,completion_ref,*,current_inventory):

@@ -1,0 +1,48 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_first_fresh_serial_transition_preserves_selection_and_stops_before_slot16 _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10960c050>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a4362c0>
+
+    def test_first_fresh_serial_transition_preserves_selection_and_stops_before_slot16(writer,monkeypatch):
+        args,calls=setup(writer,monkeypatch);root=writer.root/'evidence';before=accept._inventory(root)
+        original=accept.review_completed_first_confirmation;audited=[]
+        def capture(*a,**kw):
+            value=original(*a,**kw);audited.append(value);return value
+        monkeypatch.setattr(accept,'review_completed_first_confirmation',capture)
+>       ref=dispatch.run_first_confirmation_once(**args);saved=dispatch._document(root,ref)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_first_confirmation_dispatch_v2.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py:179: in run_first_confirmation_once
+    return _run_once(writer,slot,plan_sha256,projection_ref,None,rank_completion_ref=rank_completion_ref)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py:230: in _run_once
+    review=reviewer(writer,slot,startup,ready,process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tokenizer_wide_hybrid_first_confirmation_dispatch_v2.py:83: in capture
+    value=original(*a,**kw);audited.append(value);return value
+          ^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py:213: in review_completed_first_confirmation
+    return _review_completed(writer,slot,startup_ref,readiness_ref,process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py:157: in _review_completed
+    rank=verify_rank_history(writer,seal['plan_sha256'],startup['rank_completion_ref'],current_inventory=inventory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_rank_history_v2.py:42: in verify_rank_history
+    _require(all(fresh_control(n) for n in added_controls),'Undeclared fresh control append')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Undeclared fresh control append'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Undeclared fresh control append
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_first_confirmation_dispatch_v2.py::test_first_fresh_serial_transition_preserves_selection_and_stops_before_slot16
+1 failed in 67.06s (0:01:07)

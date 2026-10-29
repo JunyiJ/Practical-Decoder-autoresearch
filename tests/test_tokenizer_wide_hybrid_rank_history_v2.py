@@ -34,14 +34,18 @@ def test_unknown_names_do_not_extend_history(name):
 
 
 @pytest.mark.parametrize('name',['control/quality-confirm-startup-15.json','control/quality-readiness-23.json',
-    'control/quality-entry-18.json','control/quality-controller-child-21.json'])
+    'control/quality-entry-18.json','control/quality-controller-child-21.json',
+    'control/process-quality-15.json','control/process-quality-23.json'])
 def test_fresh_controls(name):
     assert history.fresh_control(name)
 
 
 @pytest.mark.parametrize('name',['control/quality-controller-child-14.json','control/quality-entry-24.json',
     'control/quality-entry-15.json.tmp','control/quality-entry-015.json','control/quality-failure-15.json',
-    'control/quality-rank-startup-15.json','control/quality-controller-arbitrary-15.json'])
+    'control/quality-rank-startup-15.json','control/quality-controller-arbitrary-15.json',
+    'control/process-quality-14.json','control/process-quality-24.json',
+    'control/process-quality-015.json','control/process-quality-15.json.tmp',
+    'control/process-pilots-15.json'])
 def test_other_controls_rejected(name):
     assert not history.fresh_control(name)
 
