@@ -1,0 +1,24 @@
+{
+  "kind": "bounded_nontraining_contention_baseline_v1",
+  "script_sha256": "add40a20273c8d96db5398322ca6674bf270395eb44706cbceac006d8ffd4fe3",
+  "sources": {
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "e486260aa6c2fd33ad8616c51529fd34fc2318bfca5d8c1b79c69a6a053d4e6a",
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": "60e84a8fa2739e4594a98f908e8ac6ad7ac240c8cb0606b40a13378c638668bc",
+    "src/research/tokenizer_wide_hybrid_process_v2.py": "798774cf0d90fb7c1cd56c6b72ccf4284be1335a9513c13d5fcc2b513240aad4",
+    "src/research/tokenizer_wide_hybrid_metadata.py": "28059390a6edb46651fb967be492fc4b713a29b29d60419569aea0379d082f6c",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+    "src/research/tokenizer_wide_hybrid_cleanup.py": "1a5b7e92f2da0f2d8ca969234c8d6631b8bd9905916b128174f8829237205ea0"
+  },
+  "census_files": 800,
+  "checkpoint_bytes": 58720256,
+  "output_cap_bytes": 67108864,
+  "wall_seconds": 180,
+  "child_wall_seconds": 150,
+  "rss_limit_bytes": 4294967296,
+  "reserve_bytes": 8589934592,
+  "child_count": 1,
+  "attempts": 1,
+  "retry_allowed": false,
+  "training": false,
+  "scope": "One fresh synthetic campaign; original lock and chunk constants unchanged; unpaced56MiB write, independent CPU-resource thread and production parent supervisor. Instrumentation records original lock context wait/hold in bounded memory; instrumentation may affect scheduling. Completion cannot rule out longer real-workload starvation. No source fix or training permission."
+}
