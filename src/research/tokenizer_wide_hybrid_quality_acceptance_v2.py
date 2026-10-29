@@ -72,7 +72,7 @@ def _completed_transport(writer,slot,startup_ref,readiness_ref,process,*,histori
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
     parent_pid=os.getpid()
     if historical_identity is not None:
-        _require(type(slot) is int and slot in (15,16,17,18,19,20) and type(historical_identity) is dict
+        _require(type(slot) is int and slot in (15,16,17,18,19,20,21,22,23) and type(historical_identity) is dict
             and set(historical_identity)=={'parent_pid','lock_fds'},'Exact supported fresh historical identity required')
         parent_pid=historical_identity['parent_pid'];fds=historical_identity['lock_fds']
         _require(type(parent_pid) is int and parent_pid>1 and type(fds) is tuple and len(fds)==2
@@ -145,7 +145,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     parent/descriptor identity. That read-only path never launches or resumes a
     process; all scientific, transport and capacity audits still run.
     """
-    _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot in (15,16,17,18,19,20),
+    _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot in (15,16,17,18,19,20,21,22),
              'Pending fresh request is limited to supported historical replay')
     transport=_completed_transport(writer,slot,startup_ref,readiness_ref,process,historical_identity=historical_identity)
     seal=transport['seal'];startup=transport['startup'];bound=transport['bound'];request=transport['request']
@@ -158,9 +158,8 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     elif slot==17:
         entry._slot17_inventory(seal,startup,startup_ref)
         prior_transport=_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
-    elif slot in (18,19,20,21):
-        {18:entry._slot18_inventory,19:entry._slot19_inventory,
-         20:entry._slot20_inventory,21:entry._slot21_inventory}[slot](seal,startup,startup_ref)
+    elif slot in (18,19,20,21,22,23):
+        entry._compact_inventory(slot,seal,startup,startup_ref)
         prior_transport=_prior_remaining_transport(writer,slot,seal,startup,parent_pid=seal['parent_pid'])
     inventory=_inventory(root)
     plan=_document(root,dict(path='meta/plan.json',sha256=seal['plan_sha256']))
@@ -218,7 +217,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         elif slot==18:
             records,selected_pairs,rates,selected_choice,pilot_ref=entry._slot18_history(writer,seal,startup)
             _require(pilot_ref==rank['pilot_completion_ref'],'Original pilot lineage differs after fourth fresh child')
-        elif slot in (19,20,21):
+        elif slot in (19,20,21,22,23):
             records,selected_pairs,rates,selected_choice,pilot_ref=entry._remaining_confirmation_history(writer,slot,seal,startup)
             _require(pilot_ref==rank['pilot_completion_ref'],'Original pilot lineage differs after remaining fresh child')
         else:records,selected_pairs,rates,selected_choice=entry._first_confirmation_history(writer,seal,startup)
@@ -246,7 +245,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         pairs={**history['checkpoint_pairs'],**rank['checkpoint_pairs'],**prefix['checkpoint_pairs']}
         extra=dict(rates=rates,stages=stages,rank_completion_ref=startup['rank_completion_ref'],
             selection_ref=rank['selection_ref'],rates_ref=rank['rates_ref'],audited_indices=prefix['audited_indices'])
-    if slot in (16,17,18,19,20,21):extra.update(prior_dispatch_ref=startup['prior_dispatch_ref'],prior_transport_verified=True)
+    if slot in (16,17,18,19,20,21,22,23):extra.update(prior_dispatch_ref=startup['prior_dispatch_ref'],prior_transport_verified=True)
     projection=_document(root,seal['projection_ref'])
     storage_options={}
     if pending_confirmation_request is not None:
@@ -262,7 +261,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         _require(_prior_first_transport(writer,seal,startup)==prior_transport,'Prior fresh transport changed during acceptance')
     elif slot==17:
         _require(_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
-    elif slot in (18,19,20,21):
+    elif slot in (18,19,20,21,22,23):
         _require(_prior_remaining_transport(writer,slot,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,
                  'Prior fresh transports changed during acceptance')
     _check_inventory(root,inventory)
@@ -367,8 +366,9 @@ def _prior_remaining_transport(writer,slot,seal,startup,*,parent_pid=None):
     from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as fourth
     from . import tokenizer_wide_hybrid_slot19_history_v2 as fifth
     from . import tokenizer_wide_hybrid_slot20_history_v2 as sixth
+    from . import tokenizer_wide_hybrid_final_confirmation_history_v2 as final
     from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import KIND as startup_kind
-    _require(type(slot) is int and slot in (18,19,20,21),'Exact integrated remaining transport slot required')
+    _require(type(slot) is int and slot in (18,19,20,21,22,23),'Exact integrated remaining transport slot required')
     root=writer.root/'evidence'
     _require(startup['guard']['path']==f'control/quality-confirm-startup-{slot:02d}.json'
         and seal['guard']['path']==f'control/quality-readiness-{slot:02d}.json',
@@ -381,9 +381,12 @@ def _prior_remaining_transport(writer,slot,seal,startup,*,parent_pid=None):
         _require(original.get(ref['path'])==dict(size=_path(writer.root,ref['path']).stat().st_size,sha256=ref['sha256']),
                  'Current preparation controls differ from sealed bindings')
         original.pop(ref['path'])
-    history={18:third,19:fourth,20:fifth,21:sixth}[slot]
-    saved,identity,_=history._transport(writer,seal['plan_sha256'],startup['prior_dispatch_ref'],
-        seal['projection_ref'],startup['rank_completion_ref'],sealed_controls=original)
+    args=(writer,seal['plan_sha256'],startup['prior_dispatch_ref'],seal['projection_ref'],startup['rank_completion_ref'])
+    if slot<=21:
+        history={18:third,19:fourth,20:fifth,21:sixth}[slot]
+        saved,identity,_=history._transport(*args,sealed_controls=original)
+    else:
+        saved,identity,_=final._transport(writer,slot-1,*args[1:],sealed_controls=original)
     review=saved['review'];previous=_document(root,review['startup'])
     previous_seal=_document(root,review['readiness'])
     if slot==18:
@@ -413,6 +416,6 @@ def _prior_fifth_transport(writer,seal,startup,*,parent_pid=None):
 
 
 def review_completed_remaining_confirmation(writer,slot,startup_ref,readiness_ref,process):
-    """Review only slots18..21; preserve every fresh pair and full remaining storage."""
-    _require(type(slot) is int and slot in (18,19,20,21),'Exact remaining-confirmation acceptance slot18, slot19, slot20 or slot21 required')
+    """Review only slots18..23; preserve every fresh pair and full remaining storage."""
+    _require(type(slot) is int and slot in (18,19,20,21,22,23),'Exact remaining-confirmation acceptance slot18, slot19, slot20, slot21, slot22 or slot23 required')
     return _review_completed(writer,slot,startup_ref,readiness_ref,process)

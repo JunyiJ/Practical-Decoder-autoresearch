@@ -57,14 +57,14 @@ def _storage(writer,slot,seal,startup,inventory):
         records,pairs,rates,selection,pilot_ref=_slot16_history(writer,seal,startup)
     elif slot==17:
         records,pairs,rates,selection,pilot_ref=_slot17_history(writer,seal,startup)
-    elif slot in (18,19,20,21):
+    elif slot in (18,19,20,21,22,23):
         records,pairs,rates,selection,pilot_ref=_remaining_confirmation_history(writer,slot,seal,startup)
     pilot,_,stage,_=_receipt(writer,seal['plan_sha256'],pilot_ref)
-    if slot not in (16,17,18,19,20,21):selection=None
+    if slot not in (16,17,18,19,20,21,22,23):selection=None
     if slot==15:
         records,pairs,rates,selection=_first_confirmation_history(writer,seal,startup)
         boundaries=3
-    elif slot in (16,17,18,19,20,21):boundaries=3
+    elif slot in (16,17,18,19,20,21,22,23):boundaries=3
     else:
         records=[] if slot==0 else startup['completed_records']
         pairs={} if slot==0 else startup['checkpoint_pairs']
@@ -147,7 +147,7 @@ def _first_confirmation_history(writer,seal,startup):
 
 
 def _expected_review(slot,startup_ref,seal):
-    if slot in (16,17,18,19,20,21):
+    if slot in (16,17,18,19,20,21,22,23):
         return dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
             startup_ref=startup_ref,prior_transport_verified=True,selected_and_fresh_prefix_verified=True,
             confirmation_request_verified=True,dispatch_authorized=False)
@@ -263,7 +263,7 @@ def _remaining_confirmation_history(writer,slot,seal,startup):
     from pathlib import Path
     from .tokenizer_wide_hybrid_rules import _checked
     from .tokenizer_wide_hybrid_first_confirmation_startup_v2 import _frozen
-    _require(type(slot) is int and slot in (18,19,20,21),'Exact integrated remaining-fresh slot required')
+    _require(type(slot) is int and slot in (18,19,20,21,22,23),'Exact integrated remaining-fresh slot required')
     previous_slot=slot-1
     root=writer.root/'evidence';ref=startup['prior_dispatch_ref']
     _require(ref['path']==f'meta/quality-dispatch-{previous_slot:02d}.json','Exact previous fresh transport reference required')
@@ -309,70 +309,41 @@ def _remaining_confirmation_history(writer,slot,seal,startup):
     return records,pairs,rates,selection,pilot_ref
 
 
-def _slot16_inventory(seal,startup,startup_ref):
-    """Bind the exact full prelaunch inventory to the compact startup receipt."""
+def _compact_inventory(slot,seal,startup,startup_ref):
+    """Bind the complete compact inventory; finite support ends at slot23."""
+    _require(type(slot) is int and 16<=slot<=23,'Exact compact inventory slot16..23 required')
     inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
-    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-16.json'}
+    controls={n:v for n,v in seal['control_inventory'].items() if n!=f'control/quality-readiness-{slot:02d}.json'}
     _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
         and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
         and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
-        'Compact slot16 sealed inventory/control/parent binding differs')
+        f'Compact slot{slot} sealed inventory/control/parent binding differs')
     return inventory
+
+
+def _slot16_inventory(seal,startup,startup_ref):
+    return _compact_inventory(16,seal,startup,startup_ref)
 
 
 def _slot17_inventory(seal,startup,startup_ref):
-    """Bind the exact full prelaunch inventory to the compact startup receipt."""
-    inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
-    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-17.json'}
-    _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
-        and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
-        and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
-        'Compact slot17 sealed inventory/control/parent binding differs')
-    return inventory
+    return _compact_inventory(17,seal,startup,startup_ref)
 
 
 def _slot18_inventory(seal,startup,startup_ref):
-    """Bind the exact full prelaunch inventory to the compact startup receipt."""
-    inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
-    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-18.json'}
-    _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
-        and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
-        and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
-        'Compact slot18 sealed inventory/control/parent binding differs')
-    return inventory
+    return _compact_inventory(18,seal,startup,startup_ref)
 
 
 def _slot19_inventory(seal,startup,startup_ref):
-    """Bind the exact full prelaunch inventory to the compact startup receipt."""
-    inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
-    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-19.json'}
-    _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
-        and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
-        and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
-        'Compact slot19 sealed inventory/control/parent binding differs')
-    return inventory
+    return _compact_inventory(19,seal,startup,startup_ref)
 
 
 def _slot20_inventory(seal,startup,startup_ref):
-    """Bind the exact full prelaunch inventory to the compact startup receipt."""
-    inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
-    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-20.json'}
-    _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
-        and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
-        and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
-        'Compact slot20 sealed inventory/control/parent binding differs')
-    return inventory
+    return _compact_inventory(20,seal,startup,startup_ref)
 
 
 def _slot21_inventory(seal,startup,startup_ref):
-    """Bind the exact full prelaunch inventory to the compact startup receipt."""
-    inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
-    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-21.json'}
-    _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
-        and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
-        and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
-        'Compact slot21 sealed inventory/control/parent binding differs')
-    return inventory
+    return _compact_inventory(21,seal,startup,startup_ref)
+
 
 
 def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
@@ -393,12 +364,7 @@ def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
         _require(digest(seal[key])==digest(startup[key]),'Seal/startup identity differs')
     expected=_expected_review(slot,startup_ref,seal)
     _require(digest(seal['predispatch_review'])==digest(expected),'Sealed full idle review differs')
-    if slot==16:inventory=_slot16_inventory(seal,startup,startup_ref)
-    elif slot==17:inventory=_slot17_inventory(seal,startup,startup_ref)
-    elif slot==18:inventory=_slot18_inventory(seal,startup,startup_ref)
-    elif slot==19:inventory=_slot19_inventory(seal,startup,startup_ref)
-    elif slot==20:inventory=_slot20_inventory(seal,startup,startup_ref)
-    elif slot==21:inventory=_slot21_inventory(seal,startup,startup_ref)
+    if 16<=slot<=23:inventory=_compact_inventory(slot,seal,startup,startup_ref)
     else:
         inventory=dict(startup['inventory'])
         for ref in (startup['request'],startup_ref):
@@ -464,7 +430,7 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument('command',choices=['worker'])
     parser.add_argument('--campaign',required=True,type=Path)
-    parser.add_argument('--slot',required=True,type=int,choices=range(22))
+    parser.add_argument('--slot',required=True,type=int,choices=range(24))
     parser.add_argument('--startup-sha256',required=True)
     parser.add_argument('--global-fd',required=True,type=int)
     parser.add_argument('--campaign-fd',required=True,type=int)

@@ -1,0 +1,183 @@
+"""One finite synthetic sequence through23; independent production audits remain uncached."""
+import copy
+import json
+import os
+import sys
+from types import SimpleNamespace
+
+import pytest
+
+from src.research import tokenizer_wide_hybrid_final_confirmation_history_v2 as history
+from src.research import tokenizer_wide_hybrid_remaining_confirmation_dispatch_v2 as dispatch
+from src.research.protocol import digest,file_digest
+from test_tokenizer_wide_hybrid_metadata_writer import writer
+from test_tokenizer_wide_hybrid_slot21_parent_integration_v2 import setup as prepared21
+from test_tokenizer_wide_hybrid_quality_acceptance_v2 import complete
+
+
+def arguments(writer,slot,ref):
+    saved=history._document(writer.root/'evidence',ref)
+    return dict(writer=writer,slot=slot,plan_sha256=saved['plan_sha256'],completion_ref=ref,
+        projection_ref=saved['projection_ref'],rank_completion_ref=saved['rank_completion_ref'])
+
+
+def replay_as_new_parent(writer,monkeypatch,args):
+    root=writer.root/'evidence';before=history.acceptance._inventory(root)
+    controls=history.acceptance.readiness._controls(writer,'not-a-control')
+    saved=history._document(root,args['completion_ref']);fds=writer.lock_fds;new=tuple(os.dup(fd) for fd in fds)
+    try:
+        with monkeypatch.context() as patch:
+            patch.setattr(writer,'lock_fds',new)
+            patch.setattr(history.acceptance,'os',SimpleNamespace(getpid=lambda:saved['parent_pid']+500000))
+            with pytest.raises(ValueError,match='same-parent'):
+                history.acceptance.review_completed_remaining_confirmation(writer,args['slot'],saved['review']['startup'],
+                    saved['review']['readiness'],history._document(root,saved['review']['child']['process']))
+            report=history.verify_confirmation_dispatch(**args)
+    finally:
+        for fd in new:os.close(fd)
+    assert before==history.acceptance._inventory(root)
+    assert controls==history.acceptance.readiness._controls(writer,'not-a-control')
+    assert len(report['records'])==args['slot']+1 and len(report['checkpoint_pairs'])==args['slot']-11
+    assert len(report['stages'])==3 and report['storage']['cleanup_boundaries_verified']==3
+    for old,key in [('completed_records','records'),('checkpoint_pairs','checkpoint_pairs'),('stages','stages')]:
+        assert digest(report[key])==saved['review'][old+'_sha256']
+    assert all(report[k] is False for k in ('adopted','dispatch_authorized','deletion_authorized','next_stage_authorized'))
+    return report
+
+
+def sequence(writer,monkeypatch,*,replay_each=False):
+    args,calls=prepared21(writer,monkeypatch);root=writer.root/'evidence'
+    ref=dispatch.run_sealed_confirmation_once(**args);assert calls==[21]
+    monkeypatch.setattr(history,'shutil',SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=64*1024**3)))
+    observed=[]
+    for slot in (21,22,23):
+        args=arguments(writer,slot,ref)
+        if replay_each:replay_as_new_parent(writer,monkeypatch,args)
+        if slot==23:break
+        next_slot=slot+1;before=history.acceptance._inventory(root)
+        startup=dispatch.startup.prepare_confirmation_request(writer,next_slot,args['plan_sha256'],
+            projection_ref=args['projection_ref'],rank_completion_ref=args['rank_completion_ref'],prior_dispatch_ref=ref)
+        # Strict idle history never silently accepts preparation/startup appends.
+        with pytest.raises(ValueError):history.verify_confirmation_dispatch(**args)
+        ready=dispatch.readiness.seal_quality_readiness(writer,next_slot,startup)
+        wire=json.loads((root/ready['path']).read_text())
+        assert wire['inventory']['base']['path']=='meta/quality-readiness-16.json'
+        with pytest.raises(ValueError):dispatch.startup.verify_confirmation_request(writer,next_slot,startup)
+        def process(w,stage,current,argv,cwd,**limits):
+            assert current==next_slot and stage=='quality' and cwd==dispatch.ROOT
+            assert limits['timeout_seconds']==7200 and limits['log_limit_bytes']==4*1024**2
+            seal=history._document(root,ready)
+            launch=dict(status='preflight',argv=argv,parent_pid=os.getpid(),pid=None,returncode=None,error=None,
+                required_free_bytes=seal['required_free_bytes'],reserve_bytes=8*1024**3,
+                output_limit_bytes=seal['output_limit_bytes'],log_limit_bytes=4*1024**2,timeout_seconds=7200,
+                observation=None,capture_kind='bounded_pipe_v2',log_truncated=False)
+            w.publish_json(f'evidence/quality/{current}/process/launch.json',launch)
+            with w.open_append(f'evidence/quality/{current}/process/worker.log') as log:log.write(b'synthetic log')
+            with monkeypatch.context() as patch:
+                patch.setattr(os,'getppid',os.getpid)
+                checked=dispatch.entry.verify_ready_worker(w,current,startup,ready,argv)
+                assert checked['storage_verified'] and not checked['dispatch_authorized']
+                for bad in ('parent','argv','capacity'):
+                    with patch.context() as bad_patch:
+                        actual=list(argv)
+                        if bad=='parent':bad_patch.setattr(os,'getppid',lambda:1)
+                        elif bad=='argv':actual[7]='24'
+                        else:bad_patch.setattr(dispatch.entry,'shutil',SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=8*1024**3)))
+                        with pytest.raises(ValueError):dispatch.entry.verify_ready_worker(w,current,startup,ready,actual)
+            limits['parent_check']();observed.append(current)
+            return complete(w,monkeypatch,current,startup,ready,launched=True)['process']
+        monkeypatch.setattr(dispatch,'run_process',process)
+        ref=dispatch.run_sealed_confirmation_once(writer,next_slot,startup,ready)
+        after=history.acceptance._inventory(root)
+        assert all(after[n]==v for n,v in before.items())
+        assert not (root/f'quality/{next_slot+1}').exists()
+        with pytest.raises(ValueError,match='cannot be retried'):dispatch.run_sealed_confirmation_once(writer,next_slot,startup,ready)
+    assert observed==[22,23] and len(list(root.rglob('*.pt')))==24
+    return args
+
+
+def test_full_finite_sequence_and_independent_replays(writer,monkeypatch):
+    args=sequence(writer,monkeypatch,replay_each=True);root=writer.root/'evidence'
+    saved=history._document(root,args['completion_ref'])
+    assert saved['slot']==23 and saved['review']['audited_indices']==[9,10,11,*range(15,24)]
+    for options in ({'preparation':{}},{'startup_ref':{}},{'readiness_guard_ref':{}},
+                    {'readiness_ref':{}},{'controller_guard_ref':{}}):
+        with pytest.raises(ValueError,match='Final slot23'):history._verify(**args,**options)
+    census=history.snapshot(writer.root)
+    (writer.root.parent/'final-confirmation-census.json').write_text(json.dumps(dict(
+        completed_quality_records=24,live_checkpoint_files=24,selected_pairs=3,fresh_pairs=9,
+        metadata_bytes=census['metadata_bytes'],meta_group_bytes=census['groups']['evidence/meta'],
+        receipt_bytes=(root/args['completion_ref']['path']).stat().st_size,
+        real_panel_fit_proven=False,training_launched=False)))
+
+
+def test_complete_tail_rejects_tampering_and_late_changes(writer,monkeypatch):
+    args=sequence(writer,monkeypatch);root=writer.root/'evidence';cases=[]
+    paths=[root/f'quality/{i}/checkpoints/{name}' for i in (9,10,11,*range(15,24))
+           for name in ('h200.pt','final_001200_123456.pt')]
+    paths += [root/n for n in ('meta/source.txt','meta/numerical.json','.retention/pilot/receipt.json',
+                               '.retention/lr/deletions.jsonl','.retention/rank/execution-review.json')]
+    paths += [root/f'meta/quality-dispatch-{i}.json' for i in range(15,23)]
+    paths += [writer.root/f'control/process-quality-{i}.json' for i in (15,21,22,23)]
+    for path in paths:
+        raw=path.read_bytes();path.write_bytes(b'{}')
+        try:
+            with pytest.raises((ValueError,KeyError)):history.verify_confirmation_dispatch(**args)
+            cases.append(str(path.relative_to(writer.root)))
+        finally:path.write_bytes(raw)
+    path=root/args['completion_ref']['path'];raw=path.read_bytes();saved=json.loads(raw)
+    for key,value in [('completed_records_sha256','a'*64),('checkpoint_pairs_sha256','b'*64),
+                      ('adopted',True),('prior_transport_verified',False),('stages_sha256','c'*64)]:
+        changed=copy.deepcopy(saved);changed['review'][key]=value;path.write_text(json.dumps(changed))
+        try:
+            with pytest.raises(ValueError):history.verify_confirmation_dispatch(**dict(args,completion_ref=dict(path=args['completion_ref']['path'],sha256=file_digest(path))))
+            cases.append('false_compact:'+key)
+        finally:path.write_bytes(raw)
+    capacity=history.acceptance.bind_storage
+    for bad in ('source','control','space','stop'):
+        path={'source':root/'meta/source.txt','control':writer.root/'control/process-quality-22.json'}.get(bad)
+        raw=path.read_bytes() if path else None;seen=[]
+        with monkeypatch.context() as patch:
+            def late(*a,**kw):
+                result=capacity(*a,**kw);seen.append(True)
+                if path:path.write_bytes(b'late')
+                elif bad=='stop':(writer.root/'STOP').touch()
+                else:patch.setattr(history,'shutil',SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=8*1024**3)))
+                return result
+            patch.setattr(history.acceptance,'bind_storage',late)
+            try:
+                with pytest.raises((ValueError,KeyError)):history.verify_confirmation_dispatch(**args)
+                assert seen==[True];cases.append('late:'+bad)
+            finally:
+                if path:path.write_bytes(raw)
+                if bad=='stop':(writer.root/'STOP').unlink()
+    assert len(list(root.rglob('*.pt')))==24 and not (root/'quality/24').exists()
+    (writer.root.parent/'final-confirmation-negative-cases.json').write_text(json.dumps(cases))
+
+
+@pytest.mark.parametrize('slot',[0,15,16,17,18,19,20,24,-1,True,21.,'21'])
+def test_history_has_exact_finite_range(writer,slot):
+    with pytest.raises(ValueError):history.verify_confirmation_dispatch(writer,slot,'a'*64,{},projection_ref={},rank_completion_ref={})
+    assert not (writer.root/'evidence').exists()
+
+
+@pytest.mark.parametrize('slot',[24,-1,True,22.,'23'])
+def test_no_next_slot_or_loose_types(writer,slot):
+    with pytest.raises(ValueError):dispatch.startup.prepare_confirmation_request(writer,slot,'a'*64,projection_ref={},rank_completion_ref={},prior_dispatch_ref={})
+    with pytest.raises(ValueError):dispatch.readiness.seal_quality_readiness(writer,slot,{})
+    with pytest.raises(ValueError):dispatch.run_sealed_confirmation_once(writer,slot,{},{})
+    with pytest.raises(ValueError):history.acceptance.review_completed_remaining_confirmation(writer,slot,{},{},{})
+    assert not (writer.root/'evidence').exists()
+
+
+@pytest.mark.parametrize('slot',[22,23])
+def test_new_cli_is_canonical_and_stops_at23(writer,monkeypatch,slot):
+    start=dict(path=f'meta/quality-confirm-startup-{slot}.json',sha256='a'*64)
+    ready=dict(path=f'meta/quality-readiness-{slot}.json',sha256='b'*64)
+    argv=dispatch.entry.worker_argv(writer,slot,start,ready);seen=[]
+    def run(w,current,s,r,actual):
+        assert current==slot and s==start and r==ready and actual==argv;seen.append(True);return 'synthetic'
+    monkeypatch.setattr(dispatch.entry,'run_worker',run)
+    assert dispatch.entry.main(argv[3:])=='synthetic' and seen==[True]
+    bad=list(argv[3:]);bad[4]='24'
+    with pytest.raises(SystemExit):dispatch.entry.main(bad)

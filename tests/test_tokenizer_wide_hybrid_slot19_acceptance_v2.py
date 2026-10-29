@@ -106,7 +106,7 @@ def test_late_history_controls_stop_and_capacity_changes_reject_readonly(writer,
     assert len(list(root.rglob('*.pt')))==16 and not (root/'quality/20').exists()
 
 
-@pytest.mark.parametrize('slot',[0,9,15,16,17,22,23,24,-1,True,19.,'19'])
+@pytest.mark.parametrize('slot',[0,9,15,16,17,24,-1,True,19.,'19'])
 def test_only_integrated_remaining_parent_slots_are_enabled(writer,slot):
     with pytest.raises(ValueError,match='slot19'):accept.review_completed_remaining_confirmation(writer,slot,{},{},{})
     assert not (writer.root/'evidence').exists()

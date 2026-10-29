@@ -31,7 +31,7 @@ def setup(writer,monkeypatch,slot=1):
     return complete(writer,monkeypatch,slot,startup,ready)
 
 
-def complete(writer,monkeypatch,slot,startup,ready):
+def complete(writer,monkeypatch,slot,startup,ready,*,launched=False):
     root=writer.root/'evidence'
     start=json.loads((root/startup['path']).read_text());seal=json.loads((root/ready['path']).read_text())
     bound,_,_=accept.readiness._bound(writer,slot,start)
@@ -68,7 +68,10 @@ def complete(writer,monkeypatch,slot,startup,ready):
     launch=dict(status='preflight',argv=argv,parent_pid=os.getpid(),pid=None,returncode=None,error=None,
         required_free_bytes=seal['required_free_bytes'],reserve_bytes=8*1024**3,output_limit_bytes=seal['output_limit_bytes'],
         log_limit_bytes=4*1024**2,timeout_seconds=7200,observation=None,capture_kind='bounded_pipe_v2',log_truncated=False)
-    writer.publish_json(f'evidence/quality/{slot:02d}/process/launch.json',launch)
+    if launched:
+        assert json.loads((root/f'quality/{slot:02d}/process/launch.json').read_text())==launch
+    else:
+        writer.publish_json(f'evidence/quality/{slot:02d}/process/launch.json',launch)
     terminal=dict(launch,status='completed',pid=os.getpid()+100000,returncode=0,elapsed_seconds=2.,
         observation=dict(free_bytes=64*1024**3,output_bytes=0,log_bytes=13))
     path=root/f'quality/{slot:02d}/process/process.json'

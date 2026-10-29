@@ -1,4 +1,4 @@
-"""Bounded shared remaining-fresh append contract; slots18..21 replay integrated.
+"""Bounded shared remaining-fresh append contract; slots18..23 replay integrated.
 
 Caller owns both locks, inspects workers and holds an outer resource guard. Only
 one current-parent bounded startup guard, its attempt and optional independently
@@ -68,7 +68,7 @@ def _append(writer,slot,plan_sha,completion_ref,projection_ref,rank_completion_r
 def verify_confirmation_preparation(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,
         attempt_ref,guard_ref,pending_request_ref=None):
     """Replay the exact completed predecessor with the declared preparation."""
-    _require(type(slot) is int and slot in (18,19,20,21),'Only preparation slot18..21 has integrated history replay')
+    _require(type(slot) is int and slot in (18,19,20,21,22,23),'Only preparation slot18..23 has integrated history replay')
     replay=history
     if slot==19:
         from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as replay
@@ -76,6 +76,8 @@ def verify_confirmation_preparation(writer,slot,plan_sha256,completion_ref,*,pro
         from . import tokenizer_wide_hybrid_slot19_history_v2 as replay
     elif slot==21:
         from . import tokenizer_wide_hybrid_slot20_history_v2 as replay
+    elif slot in (22,23):
+        from . import tokenizer_wide_hybrid_final_confirmation_history_v2 as replay
     preparation=dict(attempt_ref=attempt_ref,guard_ref=guard_ref,pending_request_ref=pending_request_ref)
     checked=replay._verify(writer,slot-1,plan_sha256,completion_ref,projection_ref=projection_ref,
         rank_completion_ref=rank_completion_ref,preparation=preparation)

@@ -156,7 +156,7 @@ def test_pending_capability_is_not_exposed_by_immediate_parent_acceptance(writer
     assert not (writer.root/'evidence').exists()
 
 
-@pytest.mark.parametrize('slot',[0,15,16,17,22,23,24,-1,True,18.,'18'])
+@pytest.mark.parametrize('slot',[0,15,16,17,24,-1,True,18.,'18'])
 def test_only_integrated_preparation_slots_are_enabled(writer,slot):
     with pytest.raises(ValueError,match='slot18'):
         append.verify_confirmation_preparation(writer,slot,'a'*64,{},projection_ref={},rank_completion_ref={},attempt_ref={},guard_ref={})

@@ -1,0 +1,25 @@
+{
+  "kind": "wide_hybrid_final_confirmation_synthetic_test_timeout",
+  "created_at": "2026-10-29T17:13:12.727455+00:00",
+  "status": "preserved_test_harness_timeout",
+  "exit_code": 90,
+  "reason": "wall_time_limit",
+  "elapsed_seconds": 600.426014208002,
+  "peak_rss_bytes": 260538368,
+  "free_bytes": 55260803072,
+  "evidence": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-final-confirmation-a-tests.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-final-confirmation-a-guard.json": "2414c21eba09aab4a4a95bd9c8d24c3398ce1275f8c249f20c967d51559c4c04",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/final-confirmation-source-hashes-v1.json": "82321787be76a935f44a772873d07c8764c46d17561bb4915e67f87224894414",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/final-confirmation-failed-test-v1.py.txt": "d1d118cc23ab13cf447d40950e9eb5830661e83b530904617320053867bea87d"
+  },
+  "observation": "Synthetic dispatch receipts exist through23, but the first pytest case did not complete before the outer guard. No passing full-sequence claim is taken from this run.",
+  "diagnosis": "The new test redundantly rebuilt and hashed the entire campaign inventory once per preexisting file at each final transition. This is avoidable test-only work; it is not a proven attribution of all elapsed time.",
+  "correction": "Take one post-transition inventory snapshot, compare every original binding against it. No production source or resource guard changes; a new bounded batch uses fresh disposable fixtures.",
+  "production_source_unchanged": true,
+  "changed_test_file": "tests/test_tokenizer_wide_hybrid_final_confirmation_v2.py",
+  "closed_numerical_fixture_retried": false,
+  "training_launched": false,
+  "failed_fixture_path": "/tmp/cpu-final-confirmation-a-fixtures",
+  "active_workers_after_exit": 0
+}

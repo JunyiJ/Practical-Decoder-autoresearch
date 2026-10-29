@@ -151,7 +151,7 @@ def test_partial_publication_preserves_failure_and_prevents_second_child(writer,
     assert calls==[21] and controller.acceptance._inventory(root)==before
 
 
-@pytest.mark.parametrize('slot',[0,9,15,16,17,22,23,24,-1,True,21.,'21'])
+@pytest.mark.parametrize('slot',[0,9,15,16,17,24,-1,True,21.,'21'])
 def test_only_integrated_parent_slots_are_enabled(writer,slot):
     with pytest.raises(ValueError,match='slot21'):controller.run_sealed_confirmation_once(writer,slot,{},{})
     with pytest.raises(ValueError,match='slot21'):controller.acceptance.review_completed_remaining_confirmation(writer,slot,{},{},{})

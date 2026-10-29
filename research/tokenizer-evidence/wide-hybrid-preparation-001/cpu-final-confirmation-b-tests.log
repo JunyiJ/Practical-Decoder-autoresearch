@@ -1,0 +1,45 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_complete_tail_rejects_tampering_and_late_changes _____________
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x107a38050>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1088823f0>
+
+    def test_complete_tail_rejects_tampering_and_late_changes(writer,monkeypatch):
+        args=sequence(writer,monkeypatch);root=writer.root/'evidence';cases=[]
+        paths=[root/f'quality/{i}/checkpoints/{name}' for i in (9,22,23)
+               for name in ('h200.pt','final_001200_123456.pt')]
+        paths += [root/n for n in ('meta/source.txt','meta/numerical.json','.retention/pilot/receipt.json',
+                                   '.retention/lr/deletions.jsonl','.retention/rank/execution-review.json')]
+        paths += [root/f'meta/quality-dispatch-{i}.json' for i in (20,21,22)]
+        paths += [writer.root/f'control/process-quality-{i}.json' for i in (15,22,23)]
+        for path in paths:
+>           raw=path.read_bytes();path.write_bytes(b'{}')
+                ^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_final_confirmation_v2.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/private/tmp/cpu-final-confirmation-b-fixtures/test_complete_tail_rejects_tam0/campaign/evidence/quality/9/checkpoints/h200.pt')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/cpu-final-confirmation-b-fixtures/test_complete_tail_rejects_tam0/campaign/evidence/quality/9/checkpoints/h200.pt'
+
+/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_final_confirmation_v2.py::test_complete_tail_rejects_tampering_and_late_changes
+1 failed in 504.24s (0:08:24)
