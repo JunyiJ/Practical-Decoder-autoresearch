@@ -3835,3 +3835,47 @@ real subprocess/cancellation tests and the complete old-panel replay; all818
 historical files and24 checkpoint files remain unchanged. Final evidence:
 `inference-dispatch-v2-final-review.json` and
 `inference-dispatch-v2-process-review-final.json`.
+
+
+### Actual training-input provenance and remaining metadata capacity
+
+The first96 GPT-2 training tokens are now verified against the real frozen
+Shakespeare corpus and inherited tokenizer contract. Only the80% training
+text was tokenized; validation/test text was not encoded, and no model or
+checkpoint was loaded. Ordinary-text encoding matched the independent
+`encode_ordinary` entry point and round-tripped the entire training split.
+The canonical uint32 little-endian input digest is
+`0e77bdca8368d30a983e0b1ef033bd141411c35ff00c8f9e7cc1e05c6a276812`.
+The three immutable input artifacts occupy27,838bytes and bind current
+source/runtime. A separate review independently recomputed the input digest
+and rechecked all artifact hashes. The180s/4GiB/8GiB guard finished in0.19s,
+with262,733,824bytes peak RSS. No numerical optimizer test ran.
+
+The initial input-only attempt failed before encoding because the default
+GPT-2 cache was absent and sandbox DNS blocked the implicit download. Its
+guard and original script remain preserved and closed. The two public assets
+were restored into ignored `research_state/tiktoken-cache`, verified against
+the installed tiktoken SHA256 pins, and a new fresh input-only attempt passed.
+The revised procedure refuses implicit downloads and requires a verified cache.
+Future workers must receive that explicit cache path. This did not retry the
+closed failed combined continuation fixture.
+
+A guarded read-only census verified all818 retained synthetic-prefix files,
+including24 checkpoint files, unchanged. Substituting the known real plan/input
+fields and propagating the known frozen-file maps through34 occurrences gives
+a **partial** meta-group projection of1,900,578bytes, leaving196,574bytes of
+the2,097,152-byte cap. Nine additional numerical-artifact references leave
+134,987bytes;18 leave73,400bytes, before their payloads and other unmodeled
+growth. These figures are sensitivity calculations, not a complete upper bound
+or fit claim. The actual numerical payloads, inventory propagation, full-duration
+resource records, final controller/decision receipts and transient overlap
+still require a complete audit. Existing metadata/resource limits are unchanged.
+
+Evidence: `training-input-and-metadata-review.json`,
+`training-input-v2-002/meta/training-input.json`, and
+`prerequisite-metadata-v2-review.json`, under the wider-hybrid preparation
+evidence directory. Next implement and review the separate serial nine-case
+rank-policy numerical procedure with bounded disk-backed checkpoint lifetimes,
+then execute its fresh cases once. Do not rerun the closed combined fixture.
+Complete actual metadata and quality/cost aggregation review, freeze/measure
+resource pilots, and freeze the finite quality plan before research training.

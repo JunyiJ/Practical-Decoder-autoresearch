@@ -1,0 +1,49 @@
+{
+  "kind": "wide_hybrid_training_input_and_metadata_review_v2",
+  "at": "2026-10-29T20:01:01.423483+00:00",
+  "status": "training_input_passed_metadata_incomplete",
+  "input_package": "research/tokenizer-evidence/wide-hybrid-preparation-001/training-input-v2-002",
+  "input_ref": {
+    "path": "meta/training-input.json",
+    "sha256": "5ece26be743dea9270e270d29d8b3aba18d26449bf351a3e3139438e042c5aba"
+  },
+  "training_token_sha256": "0e77bdca8368d30a983e0b1ef033bd141411c35ff00c8f9e7cc1e05c6a276812",
+  "token_hash_independently_recomputed": true,
+  "input_guard": {
+    "elapsed_seconds": 0.18809874999715248,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 55032942592,
+      "peak_rss_bytes": 262733824
+    },
+    "pid": 98965,
+    "reason": null,
+    "status": "finished"
+  },
+  "source_and_runtime_rechecked": true,
+  "failed_attempt": {
+    "path": "research/tokenizer-evidence/wide-hybrid-preparation-001/training-input-v2-001",
+    "reason": "GPT-2 cache absent; sandbox DNS prevented implicit download before encoding",
+    "retained_original_script_sha256": "83280c6fc771b93b79e3e7eceb355891bf197c02c2a5a7eeece41429b1e530a9",
+    "closed": true
+  },
+  "remediation": "Two installed-tiktoken-pinned public GPT-2 assets restored to explicit ignored cache; new procedure requires verified cache before execution; fresh input-only attempt002 passed. No failed numerical fixture was called.",
+  "metadata_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/prerequisite-metadata-v2-review.json",
+  "original_synthetic_files_unchanged": 818,
+  "original_checkpoint_files_unchanged": 24,
+  "requirements": [
+    "Future actual workers must use the verified explicit TIKTOKEN_CACHE_DIR or an equally pinned default cache.",
+    "Copy the three input meta files byte-for-byte and include all three in the future plan files; require matching source/runtime.",
+    "Complete a separately reviewed, serial nine-case rank-policy optimizer/resume/EMA procedure before a passing numerical review.",
+    "Use the actual numerical artifacts for final metadata/inventory/transient accounting; current report is not an upper bound or fit proof."
+  ],
+  "actual_model_loaded": false,
+  "research_training_launched": false,
+  "research_inference_launched": false,
+  "plan_frozen": false,
+  "holdout_consumed": false
+}
