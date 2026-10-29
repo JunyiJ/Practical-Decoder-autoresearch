@@ -4367,3 +4367,8 @@ After committing this freeze, the serial starter may run only the3 new resource
 pilots, verify their exact authorized retention boundary, then admit quality
 slot0 through production gates and stop. Any failure closes that new attempt;
 no automatic retry, source change or later quality dispatch occurs.
+
+Campaign003 freeze/evidence was committed and pushed as `bc8e49b`. The starter
+is active with parent9293 and initial pilot0 child9294. Only one local MPS
+worker is active. No quality trial has launched at this observation; actual
+pilot acceptance and retention gates precede the starter’s sole quality slot0.
