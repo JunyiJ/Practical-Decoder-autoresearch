@@ -3003,3 +3003,47 @@ fresh integrations19–23. Keep stable inventory anchors and all existing caps.
 Inference, real metadata fit and actual numerical/input/measured-pilot gates
 remain before freeze. No research training, protected checkpoint deletion,
 closed numerical-fixture retry or test-holdout use occurred.
+
+
+## Slot18 parent acceptance and one serial transition
+
+A separate same-parent slot18 acceptance API now reconstructs19 completed records
+and seven retained selected/fresh raw/H200 pairs. It rechecks original slot15–17
+transport, supervision, entry guards and sealed controls before and after the
+scientific and full remaining-storage audit. The original slot17 idle reader
+remains strict; the new parent supplies an exact authenticated historical control
+map while its current child controls receive separate audits.
+
+The slot18 controller consumes an existing startup/readiness seal. It validates
+the exact original slot16 inventory wire anchor, replays full prior history under
+a bounded preparation guard, supervises one child and independently accepts its
+result and both checkpoint files. Final source, evidence, controls, locks, STOP
+and capacity checks precede the compact parent receipt. No parent CLI, retry,
+cleanup, slot19 request or automatic next launch is enabled.
+
+The synthetic receipt is5,037bytes and binds all three prior fresh dispatches.
+The completed fixture retains19 records and14 checkpoint files. Its meta group
+uses1,572,718 of2,097,152bytes and total metadata is2,174,878bytes. Acceptance's
+full remaining free-space requirement is30,153,547,703bytes. These disposable
+fixtures do not establish real-panel metadata fit, numerical correctness, model
+quality or MPS feasibility. The process callback is synthetic; no real training
+child was launched.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-parent-integration-v2-component-review.json`.
+
+All42 checks passed on unchanged source in five serial batches of241.93s,
+388.43s,367.44s,369.99s and101.71s. Peak RSS was246,792,192bytes; every batch
+retained the600-second,4GiB RSS and8GiB reserve limits. Coverage includes acceptance
+and one synthetic transition, exact API boundaries, alternate valid wire-anchor
+rejection, prior/current science/transport/capacity/late-change rejection, all
+five dispatch failure paths, no retries, changed prelaunch seal blocking the
+child, and prior slot17 acceptance/dispatch compatibility. No test, driver or
+resource guard failed. Final inspection found no research workers.
+
+Next independently replay the completed compact slot18 receipt under verified
+historical parent/descriptors, reconstructing original transport, selected/fresh
+science, retained pairs, stable inventory anchor and pre-child/current capacity.
+Then integrate finite remaining slots19–23 with the shared bounded contracts.
+Inference, real metadata fit and actual numerical/input/measured-pilot gates
+remain before freeze. No research training, protected checkpoint deletion,
+closed numerical-fixture retry or test-holdout use occurred.

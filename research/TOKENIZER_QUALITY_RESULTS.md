@@ -1156,3 +1156,23 @@ All26 guarded checks passed on unchanged source, including preserved failures,
 child integrity/capacity rejection, canonical CLI and prior API compatibility.
 No resource guard failed; final inspection found no research workers. Next add
 slot18 parent acceptance and one guarded serial transition.
+
+
+## Fourth-fresh parent acceptance and serial preparation
+
+Slot18 now has separate same-parent acceptance and a single guarded serial
+transition. It rechecks original slot15–17 transport and all scientific evidence,
+retains seven selected/fresh pairs, and publishes a compact5,037-byte parent
+receipt after full remaining-storage checks. The stable slot16 inventory anchor
+is explicitly required. The controller stops before slot19 and prohibits retries.
+
+This is synthetic controller preparation with no new model-quality result or
+training. Independent completed-slot18 history replay, later fresh integration,
+inference, real metadata fit and actual prerequisite gates still precede freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-parent-integration-v2-component-review.json`.
+
+All42 guarded checks passed on unchanged source, including preserved failures,
+no retries, exact stable-anchor validation, late integrity rejection and prior
+slot17 compatibility. No resource guard failed; final inspection found no
+research workers. Next independently replay the completed slot18 receipt before
+integrating slot19 preparation.
