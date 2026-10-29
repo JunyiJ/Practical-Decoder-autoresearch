@@ -2846,3 +2846,43 @@ anchor: chaining each slot would exceed the16-document cap at slot23. V2 inferen
 full real metadata accounting and actual nine-case numerical/input/measured-pilot
 gates remain before finite-plan freeze. No research training, protected checkpoint
 cleanup, closed failed numerical-fixture retry or test-holdout use occurred.
+
+## Slot17 independent compact-history replay
+
+A strict idle reader now reconstructs the completed slot17 dispatch under its
+original parent/descriptor identities. It rechecks exact original attempt,
+startup, readiness, parent phases, terminal/entry/supervisor controls and both
+earlier fresh transports. It reconstructs all18 completed records, six live
+checkpoint pairs, three retention boundaries and the complete current/future
+storage requirement before comparing the compact claims. Unknown evidence,
+later controls, partial/failure artifacts and STOP are rejected.
+
+The reader also independently reconstructs capacity before slots16 and17, with
+only the checkpoints that existed at each boundary. Neither later checkpoints
+nor matching false claims in two old receipts can substitute for that calculation.
+Original control/evidence sets and frozen source are checked again after the
+full audit. Historical identities never resume a process or grant dispatch,
+cleanup, adoption or continuation permission; the public slot17 parent acceptance
+API still requires its live parent.
+
+The disposable replay fixture retains12 checkpoint files and18 completed records,
+uses1,538,232 of2,097,152bytes in the meta group and2,123,196 total metadata bytes.
+Its required free space is30,153,547,736bytes. These are synthetic census results,
+not proof of real-panel metadata fit. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-history-v2-component-review.json`.
+
+All19 checks passed on unchanged source in serial batches of240.59s and323.56s.
+Peak RSS was246,693,888bytes; both retained the600-second,4GiB RSS and8GiB reserve
+limits. No test, driver or resource-guard failure occurred. Coverage includes
+changed-parent/descriptor replay, false compact and nested prechild-capacity
+claims, malformed identities/slots, protected evidence and late-change rejection,
+and existing slot16 replay compatibility. Final process inspection found no
+research training/test workers.
+
+Next prepare bounded shared support for the remaining finite fresh slots18–23,
+starting with an explicit slot18 attempt/guard/pending-request append around the
+strict slot17 replay. Keep idle readers strict and use a stable earlier readiness
+inventory anchor; one new reference link per slot would exceed the cap at23.
+V2 inference, full real metadata accounting and actual nine-case numerical/input/
+measured-pilot gates remain before finite-plan freeze. No research training,
+protected checkpoint cleanup, closed numerical-fixture retry or holdout use occurred.

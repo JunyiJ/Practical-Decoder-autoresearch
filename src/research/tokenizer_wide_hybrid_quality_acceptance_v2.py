@@ -72,7 +72,7 @@ def _completed_transport(writer,slot,startup_ref,readiness_ref,process,*,histori
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
     parent_pid=os.getpid()
     if historical_identity is not None:
-        _require(type(slot) is int and slot in (15,16) and type(historical_identity) is dict
+        _require(type(slot) is int and slot in (15,16,17) and type(historical_identity) is dict
             and set(historical_identity)=={'parent_pid','lock_fds'},'Exact supported fresh historical identity required')
         parent_pid=historical_identity['parent_pid'];fds=historical_identity['lock_fds']
         _require(type(parent_pid) is int and parent_pid>1 and type(fds) is tuple and len(fds)==2
@@ -157,7 +157,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         prior_transport=_prior_first_transport(writer,seal,startup)
     elif slot==17:
         entry._slot17_inventory(seal,startup,startup_ref)
-        prior_transport=_prior_second_transport(writer,seal,startup)
+        prior_transport=_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
     inventory=_inventory(root)
     plan=_document(root,dict(path='meta/plan.json',sha256=seal['plan_sha256']))
     extra={};selected_choice=None
@@ -251,7 +251,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     if slot==16:
         _require(_prior_first_transport(writer,seal,startup)==prior_transport,'Prior fresh transport changed during acceptance')
     elif slot==17:
-        _require(_prior_second_transport(writer,seal,startup)==prior_transport,'Prior fresh transports changed during acceptance')
+        _require(_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
     _check_inventory(root,inventory)
     _guard(writer,guard_ref,entry.KIND,terminal['pid'],7200)
     _document(writer.root,supervisor_ref)
@@ -312,7 +312,7 @@ def review_completed_confirmation(writer,slot,startup_ref,readiness_ref,process)
     return _review_completed(writer,slot,startup_ref,readiness_ref,process)
 
 
-def _prior_second_transport(writer,seal,startup):
+def _prior_second_transport(writer,seal,startup,*,parent_pid=None):
     """Recheck both prior fresh transports against exact sealed control history."""
     from .tokenizer_wide_hybrid_confirmation_history_v2 import _transport
     from .tokenizer_wide_hybrid_later_confirmation_startup_v2 import KIND as startup_kind
@@ -320,7 +320,9 @@ def _prior_second_transport(writer,seal,startup):
     _require(startup['guard']['path']=='control/quality-confirm-startup-17.json'
         and seal['guard']['path']=='control/quality-readiness-17.json',
         'Exact current startup/readiness controls required')
-    _guard(writer,startup['guard'],startup_kind,os.getpid(),1800)
+    pid=os.getpid() if parent_pid is None else parent_pid
+    _require(type(pid) is int and pid>1 and seal['parent_pid']==pid,'Verified current or historical parent required')
+    _guard(writer,startup['guard'],startup_kind,pid,1800)
     original=dict(seal['control_inventory'])
     for ref in (startup['guard'],seal['guard']):
         _require(original.get(ref['path'])==dict(size=_path(writer.root,ref['path']).stat().st_size,sha256=ref['sha256']),

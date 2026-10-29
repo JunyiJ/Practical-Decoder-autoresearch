@@ -1083,3 +1083,22 @@ cap. Evidence:
 All44 bounded checks passed on unchanged source, including integrity rejection,
 failure preservation/no retry and slot16 compatibility. No test or resource
 guard failed, and final inspection found no research workers.
+
+## Slot17 independent compact-history replay
+
+The completed compact slot17 receipt can now be independently replayed under a
+different parent/descriptor identity. The reader reconstructs18 completed
+records, six live pairs, both earlier fresh transports, all three retention
+boundaries and prechild/current/future capacity. It preserves all evidence and
+controls and grants no launch, cleanup or adoption permission. The public parent
+acceptance API remains same-parent.
+
+This is synthetic controller preparation with no new quality or numerical result
+and no training launch. Remaining fresh slots18–23 need bounded shared integration
+and a stable inventory anchor, followed by inference and the real prerequisite
+and metadata gates before freeze. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-history-v2-component-review.json`.
+
+All19 bounded checks passed on unchanged source, including changed-parent replay,
+false receipt/capacity rejection, integrity checks and slot16 compatibility.
+No resource guard failed, and final inspection found no research workers.
