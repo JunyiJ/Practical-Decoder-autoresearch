@@ -4221,3 +4221,23 @@ LR0.00125, with the same divisor4/seed3501/width512/1200update budget.
 The four-cell review was committed and pushed as `1a531c5`. Frozen LR slot4
 started through production gates with parent7031 and child7063. The sole
 training worker runs hybrid at LR0.00125; the wrapper stops after this trial.
+
+
+### Campaign002 second-rate hybrid result — October29,2026
+
+Slot4 hybrid at LR0.00125, width512/divisor4, seed3501 completed1200updates.
+H200 full-validation CE is4.981121139, worse by0.019476618 than its
+LR0.000625 screen; raw endpoint CE is5.083567067. Both hybrid and KDA
+currently score worse at the middle rate than the lower rate on this screening
+seed. The higher-rate cells, gated-MLA middle-rate cell and fresh confirmation
+remain necessary; no grid change, rate selection or adoption follows.
+
+Child wall time was806.65s; sampled peak RSS2,612,396,032bytes and MPS
+driver3,969,826,816bytes passed the unchanged guards. Independent review of
+all five completed cells passed original transport, scientific/checkpoint,
+frozen-input and retention-history checks. Exact non-weight bytes and hashes
+are archived in `tokenizer-evidence/wide-hybrid-preparation-001/campaign002-lr-prefix-05-v2-review.json`;
+its guard finished. Full remaining storage requires24,405,766,076bytes
+against38,221,434,880bytes free. All five raw/H200 pairs remain and test
+holdout is closed. Next is frozen slot5: gated-MLA at LR0.00125,
+divisor4, seed3501, width512 and1200updates.
