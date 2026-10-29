@@ -51,11 +51,16 @@ def complete(writer,monkeypatch,slot,startup,ready):
         if slot<9:
             options=dict(prefix_count=slot+1)
             requests=[bound['requests']['quality'][str(i)][0] for i in range(slot+1)]
-        else:
+        elif slot<15:
             from src.research.tokenizer_wide_hybrid_quality_rank_startup_v2 import _frozen
             _,requests=_frozen(writer,slot,start['plan_sha256'],start['projection_ref'],start['rates'])
             options=dict(boundary='rank',rank_prefix_count=slot-8,
                          raw_name={i:'final_001200_123456.pt' for i in range(9,15)})
+        else:
+            from src.research.tokenizer_wide_hybrid_first_confirmation_startup_v2 import _frozen
+            _,requests=_frozen(writer,slot,start['plan_sha256'],start['projection_ref'],start['rates'],start['selection'])
+            options=dict(boundary='rank',confirmation_prefix_count=slot-14,
+                         raw_name={i:'final_001200_123456.pt' for i in range(9,24)})
         fixtures.fixture(root,producer_v2=True,**options,bindings=dict(context=bound['context'],
             projection_ref=start['projection_ref'],numerical_ref=plan['numerical_ref'],
             training_token_sha256=plan['training_token_sha256'],requests=requests))

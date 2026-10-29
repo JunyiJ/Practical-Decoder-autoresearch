@@ -152,6 +152,6 @@ def test_rank_cli_builds_exact_sealed_request_without_launch(writer,monkeypatch,
         entry.transport.worker_argv(writer,slot,startup)
 
 
-def test_confirmation_cli_stays_closed(writer):
-    with pytest.raises(SystemExit) as exc:entry.main(['worker','--slot','15'])
+def test_later_confirmation_cli_stays_closed(writer):
+    with pytest.raises(SystemExit) as exc:entry.main(['worker','--slot','16'])
     assert exc.value.code==2

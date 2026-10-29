@@ -1,0 +1,99 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "e007cfa9890f694c4a9ea59e813a56415af86406",
+  "created_at": "2026-10-29T03:48:16.437667+00:00",
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/continuation-handoff-20261028.json": "8bf16b3d5465dd9cb735ae189e96aa2c3aafcfad4014f765bae510be213d7451",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/continuation-resource-observations.jsonl": "9ac3644e86d586081d8c4e8f8373673c899a85f4395961094187524670c3207a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-entry-v2-guard.json": "48c0138cd455bad864a1dc23306875453e8e853c8265b13a23d41805457d0bcf",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-entry-v2-tests.log": "a2209c3d0433719be535f18f5e52ba4ddf4920e1236239115b93af12440cd91a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-integration-v2-guard.json": "ce10854951f70be1c99348db4411b5aa36b4597069227938bc56d6cdce71e82b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-integration-v2-tests.log": "1473f8963f7afde52409c0585cd7d83b7a217b334a780912875905b0dc24fc45",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-regression-v2-guard.json": "cc1fe753db2853ee639d4e8bcef4763bf28bd0a4e488bb2a2f98181ac8bb0276",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-regression-v2-tests.log": "f61705fdc82122af754e534cda58b08588eda225fa562a5cbe9a73aacbf6956e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-v2-guard.json": "65420ddd3ee2d206dd8ad1039fc9c6812ef75a8ad4a0f22828a852afd3b9b013",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-v2-tests.log": "d4663cd71fc5bd70e3724a211ff7725e69762735134b81cecfc2de0d5d41ff5c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-dispatch-v2-census-expanded.json": "6557e26aa7c30aa1f135cbf958ccf8529e7d26c44ef2f0dc1fc67ce3938c793d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-dispatch-v2-census.json": "0e12f8da957fe3a79400d158995ca6844dafdecda70923bde9321374f7fee888",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-entry-v2-census.json": "b9c30da7e82a0d6025655b7488fd3306648037eb4a7c64a084576ff8bc80d192",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "5a93dbb4b4a8f393c5062ecddc3fa1f0ce20fc862bd3340c2e00e0fee8a727a6",
+    "src/research/tokenizer_wide_hybrid_quality_dispatch_v2.py": "ad91336c655a6c476e0ef473217d91a261319d687b3ddeb4948e431035e815f3",
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": "beab298e41bbedbe98eb12fb7363efbc8e7290d5438d66715ff994444ae307fc",
+    "src/research/tokenizer_wide_hybrid_quality_handoff_v2.py": "ea88b23fcf1184e74bcea8c8235c8d5635df3273e7fc5622ba377a3cff7a2b89",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_dispatch_v2.py": "9a02d3c27d9ef68894e4929a1e1afd5585173d700d880591794d00b81b1b97be",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_entry_v2.py": "8fe81298bfb6491acbbb9ce1d4712f0525a01e90cf956331a3a8e08c3d9c15e2",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_readiness_v2.py": "ecd19700c35c02331f4a4d4c2d0d4ef142f6c88ee0b834c737a8118b3e18bf93",
+    "tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py": "cc4e5799ce67be88ff87d5e5b3853da2f6926e902be065933dc3f2c72875128b",
+    "tests/test_tokenizer_wide_hybrid_quality_cli_v2.py": "7397ce194924ab9f22db23dc0c8691b604ab497db0d5ad656219e0eba8488cd7",
+    "tests/test_tokenizer_wide_hybrid_rank_entry_v2.py": "b79f06524419eb0e16de7755ae8bddd1b97c97f4526b25e772b32e58f764adf0"
+  },
+  "findings": [
+    "Slot15 child-only CLI consumes the same live-parent immutable readiness seal, reconstructs compact startup hashes against original rank receipts and all three cleanup stages, retains historical deleted pairs as evidence, and counts only the three selected live screen pairs for capacity. Exact argv/locks/frozen inputs/controls/log prefix/current and complete future storage are rechecked before bounded producer entry.",
+    "Independent parent acceptance replays original rank/pilot retention history, all three selected screen audits and the new fresh producer/tensor/resource/validation evidence, exact process/entry guard identity, actual output/log census, frozen request and complete remaining storage. Saved LR/rank choices are retained, never selected again.",
+    "The exact-slot parent API prepares, seals, supervises one child, independently accepts it and writes an immutable completion receipt. Guards finish before seal/publication. STOP, late source/evidence changes and process/review failures preserve failure evidence and prohibit retry; slot16 remains unsupported.",
+    "The initial synthetic completion receipt was86122bytes. Repeating that size eight more times would take the measured1540001-byte meta group to2228977bytes, above the unchanged2097152-byte cap even before later startup/readiness overhead. The explicitly versioned acceptance digest representation replaces repeated records/pairs/stages with their full audit digests, anchored to original rank and fresh producer references. The compact receipt is4397bytes; readers for later fresh slots must reconstruct and validate those digests before granting continuation credit.",
+    "Old heartbeat is paused and continuation heartbeat is active in this chat. Initial and final authorized process checks succeeded with no matching research training/test workers; no worker was killed. The two initial pending commits were pushed without force."
+  ],
+  "free_bytes_observed": 56529055744,
+  "harness_note": "Initial seven-case run retained a legacy global shutil mock in intermediate outer disk readings; its final reading was actual. This limitation is preserved, not treated as continuous actual disk evidence. All three subsequent runs used a captured original disk reader and actual process RSS/time under unchanged4GiB/8GiB guards. The final97-case run repeated the full first-fresh child positive and compact dispatch plus affected child/transport/readiness regressions. No guard failure occurred.",
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_first_confirmation_integration_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Synthetic byte/provenance fixtures and mocked child scientific execution/PIDs; not numerical, training, measured MPS resource or quality evidence.",
+    "Later fresh slots and compact prior-fresh receipt verification, v2 inference, complete real metadata sizing and actual nine-case numerical/input/measured-pilot gates remain unfinished.",
+    "No research weights deleted, closed numerical fixture retried, holdout evaluated, paid compute or subagents. No real plan frozen or training launched; all existing resource/scientific thresholds remain unchanged."
+  ],
+  "maximum_observed_rss_bytes": 245170176,
+  "next_action": "Implement strict prior fresh transport verification for wide_hybrid_first_confirmation_acceptance_digest_v1: reconstruct and verify complete records/pairs/stages digests from original rank history and fresh producer evidence plus every previous parent/child receipt, guard, argv, terminal and log census. Then integrate slots16..23 startup/readiness/entry/acceptance/serial dispatch, v2 inference and full actual metadata accounting. Actual nine numerical/input/measured-pilot prerequisites remain unresolved; design separate bounded evidence contracts without retrying the closed failed combined fixture. Freeze the finite panel only after all prerequisites and current/future storage pass. Keep all closed campaigns and test holdout closed.",
+  "status": "first_confirmation_entry_acceptance_dispatch_tested_later_fresh_unimplemented",
+  "synthetic": {
+    "completed_synthetic_fresh": 1,
+    "expanded_receipt_bytes": 86122,
+    "file_count": 535,
+    "full_real_panel_fit_proven": false,
+    "live_checkpoint_files": 8,
+    "meta_bytes": 1458935,
+    "meta_cap_bytes": 2097152,
+    "receipt_bytes": 4397,
+    "total_metadata_bytes": 2000195
+  },
+  "test_executions": 215,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": false,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-entry-v2-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-entry-v2-tests.log",
+      "passed": 7,
+      "scope": "Seven first-fresh child history, storage, transport, guarded producer, tamper and CLI tests; initial disk sampling affected by legacy mocks.",
+      "seconds": 426.92
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-v2-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-v2-tests.log",
+      "passed": 15,
+      "scope": "Fifteen independent acceptance, serial dispatch, late source/evidence failures, no-retry and slot-boundary tests.",
+      "seconds": 431.08
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-integration-v2-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-integration-v2-tests.log",
+      "passed": 97,
+      "scope": "Compact dispatch receipt and first-fresh child plus LR/rank child, transport and fresh readiness regressions.",
+      "seconds": 399.47
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-regression-v2-guard.json",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-first-confirmation-parent-regression-v2-tests.log",
+      "passed": 96,
+      "scope": "LR/rank parent acceptance, CLI, complete serial LR controller suite and all-six-rank serial transition regression.",
+      "seconds": 253.51
+    }
+  ],
+  "training_launched": false
+}

@@ -875,3 +875,26 @@ prerequisites remain unresolved. No research checkpoint deletion, training/MPS
 or test-holdout evaluation occurred; the campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-readiness-v2-component-review.json`.
+
+
+## October 28 continuation and first fresh-confirmation integration
+
+The old tokenizer heartbeat is paused and a new five-minute continuation heartbeat
+is active in this chat. Process inspection works again: no research workers were
+found at entry or completion, and none were killed. The two initial pending commits
+were pushed. First-fresh slot15 now has tested child entry, independent parent
+acceptance and a single-slot serial dispatcher; it cannot advance to slot16.
+
+Validation passed 7 child tests, 15 parent tests, 97 integration regressions and
+96 parent/CLI regressions. A repeated-audit metadata issue was corrected: the
+synthetic receipt shrank from 86,122 to 4,397 bytes using versioned audit digests
+and original evidence references. The final synthetic meta group is
+1,458,935/2,097,152 bytes; full real-panel fit remains unproven. The initial test
+harness's mock-contaminated disk observations are preserved and disclosed; later
+runs used the captured actual disk reader under unchanged resource guards.
+
+This is controller preparation, not model-quality evidence. Later fresh transport,
+inference, full metadata accounting and actual numerical/input/measured-pilot
+prerequisites remain before freeze. No training, research checkpoint deletion,
+closed numerical-fixture retry or holdout evaluation occurred. See
+`tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-integration-v2-component-review.json`.

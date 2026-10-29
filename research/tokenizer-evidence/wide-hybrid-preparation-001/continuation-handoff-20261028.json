@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-29T03:22:51.610460+00:00",
+  "automations": [
+    {
+      "id": "tokenizer-quality-research",
+      "kind": "heartbeat",
+      "rrule": "FREQ=MINUTELY;INTERVAL=5",
+      "status": "PAUSED",
+      "target_thread_id": "01a17b40-48e6-7fe3-8860-1467cd9bd94a"
+    },
+    {
+      "id": "tokenizer-quality-research-continuation",
+      "kind": "heartbeat",
+      "rrule": "FREQ=MINUTELY;INTERVAL=5",
+      "status": "ACTIVE",
+      "target_thread_id": "01a185a6-572e-7b91-a23e-1b65b29b2404"
+    }
+  ],
+  "closed_fixture_retried": false,
+  "free_bytes": 58104762368,
+  "initial_git": {
+    "branch": "codex/tokenizer-quality",
+    "commits_ahead": 2,
+    "head": "e007cfa9890f694c4a9ea59e813a56415af86406",
+    "working_tree": "clean"
+  },
+  "kind": "tokenizer_quality_continuation_handoff",
+  "next_step": "First-fresh slot15 child entry, independent parent acceptance and serial dispatch; later fresh transport, inference, full metadata accounting and actual numerical/input/measured-pilot gates remain.",
+  "pending_commits_pushed": true,
+  "plan_frozen": false,
+  "process_inspection": {
+    "authorized_escalated_result": "success; only inspection shell and rg matched",
+    "command": "ps -axo pid,ppid,etime,rss,command | rg '(^ *PID|LLM-pretraining-RSI|src\\.research|pytest|tokenizer|python)'",
+    "old_tool_execution_blocker_resolved": true,
+    "research_workers_found": 0,
+    "sandbox_result": "operation not permitted",
+    "workers_stopped": 0
+  },
+  "protected_checkpoints_changed": false,
+  "remote_tracking_head": "e007cfa9890f694c4a9ea59e813a56415af86406",
+  "required_initial_panel_bytes": 30631281412,
+  "test_holdout_evaluated": false,
+  "training_launched": false
+}

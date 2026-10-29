@@ -2338,3 +2338,61 @@ prerequisites remain unresolved. No research checkpoint deletion, training/MPS
 or test-holdout evaluation occurred; the campaign remains unfrozen.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-readiness-v2-component-review.json`.
+
+
+## October 28 continuation: first fresh child and serial parent integration
+
+The old `tokenizer-quality-research` heartbeat is paused. The new five-minute
+`tokenizer-quality-research-continuation` heartbeat belongs to the continuation
+chat. Authorized process checks succeeded at entry and completion, finding no
+research training/test workers; none were killed. The clean starting HEAD was
+`e007cfa`, two commits ahead; both pending commits were pushed without force.
+The earlier process-tool execution blocker is resolved.
+
+Slot15 now has a readiness-bound child CLI and guarded producer entry. It
+reconstructs the compact startup digests from original rank receipts and all
+three cleanup stages, verifies the exact parent/argv/locks and immutable evidence,
+and counts only the three selected live screen pairs toward occupied capacity.
+Original deleted weights remain historical evidence. Frozen numerical/input
+bindings, source, controls, log prefix and full remaining storage are rechecked.
+
+The independent parent acceptance path re-audits all three selected screens and
+the completed fresh child, including producer/tensor/resource/validation evidence,
+original cleanup history, exact process/entry-guard identity and output/log census.
+A new single-slot dispatcher prepares, seals, supervises and accepts only slot15.
+It retains saved LR/rank choices and stops before slot16. Late source/evidence
+changes and process/review failures preserve evidence and prohibit retry.
+
+The first synthetic completion receipt was 86,122 bytes. Eight more receipts of
+that size would take its 1,540,001-byte meta group to 2,228,977 bytes, exceeding
+the unchanged 2,097,152-byte cap before later startup/readiness overhead. The
+explicit `wide_hybrid_first_confirmation_acceptance_digest_v1` representation
+stores complete audit digests for repeated records, checkpoint pairs and cleanup
+stages, anchored to their original rank and fresh producer references. The compact
+receipt is 4,397 bytes. Later-fresh readers must reconstruct and validate these
+values; a digest alone grants no audit or dispatch credit.
+
+All 7 child-entry and 15 parent tests passed. After compaction, all 97 integration/
+child regressions and 96 parent/CLI regressions passed, including complete serial
+LR and rank sequences. Peak observed RSS was 245,170,176 bytes. The initial
+seven-case harness had legacy disk mocks in intermediate outer observations;
+that log remains intact. All subsequent runs captured the actual system disk
+reader before fixtures, retained the 4GiB RSS/8GiB reserve guards and finished
+normally. The final integration run repeated the first-fresh child positive.
+No test or driver failure occurred. A stale CLI rejection fixture now targets
+unsupported slot16 rather than the already-supported rank slot9.
+
+The final synthetic transition retains eight selected/fresh checkpoint files,
+uses 1,458,935/2,097,152 meta bytes and 2,000,195 total metadata bytes. This is
+not complete real-panel fit evidence. Actual free space at review was
+56,529,055,744 bytes, above the unchanged 30,631,281,412-byte initial projection;
+current capacity must still be checked at every real transition.
+
+Next implement strict compact prior-fresh transport verification and slots16–23
+startup/readiness/child/acceptance/serial transitions, then v2 inference and full
+actual metadata accounting. Actual nine-case numerical/input/measured-pilot
+prerequisites remain unresolved. The failed combined numerical fixture and all
+closed campaigns remain closed. No research checkpoint deletion, MPS/training,
+holdout evaluation, paid compute, subagents or plan freeze occurred.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-integration-v2-component-review.json`.

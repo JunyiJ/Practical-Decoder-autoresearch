@@ -1,9 +1,9 @@
-"""One serial LR or rank transition with immutable parent acceptance; no campaign CLI.
+"""One serial LR, rank or first-fresh transition; no campaign CLI.
 
 Own both worker locks and inspect actual processes before calling. Preparation
 and post-child review have separate hard guards. During the child, sampled parent
 failures raise through the process supervisor so it terminates and reaps its
-owned group. There is no retry, selection, cleanup or fresh-confirmation transition.
+owned group. There is no retry, selection, cleanup or later-fresh transition.
 """
 import math
 import os
@@ -171,13 +171,28 @@ def run_rank_once(writer,slot,plan_sha256,*,projection_ref,lr_completion_ref):
     return _run_once(writer,slot,plan_sha256,projection_ref,None,lr_completion_ref=lr_completion_ref)
 
 
-def _run_once(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_completion_ref=None):
+def run_first_confirmation_once(writer,slot,plan_sha256,*,projection_ref,rank_completion_ref):
+    """Dispatch only slot15 after full rank cleanup; later fresh transport is separate."""
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==15,
+             'Exact first-confirmation writer/slot15 required')
+    _require(isinstance(rank_completion_ref,dict),'Exact rank completion reference required')
+    return _run_once(writer,slot,plan_sha256,projection_ref,None,rank_completion_ref=rank_completion_ref)
+
+
+def _run_once(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_completion_ref=None,rank_completion_ref=None):
     rank=lr_completion_ref is not None
-    _sha(plan_sha256);_fresh(writer,slot,15 if rank else 9)
+    fresh=rank_completion_ref is not None
+    _sha(plan_sha256);_fresh(writer,slot,24 if fresh else (15 if rank else 9))
     root=writer.root/'evidence';base=f'meta/quality-dispatch-{slot:02d}'
     try:
         with _PhaseGuard(writer,slot,'prepare'):
-            if rank:
+            if fresh:
+                from . import tokenizer_wide_hybrid_first_confirmation_startup_v2 as confirmations
+                history=confirmations.verify_rank_history(writer,plan_sha256,rank_completion_ref,
+                    current_inventory=acceptance._inventory(root))
+                _require(history['projection_ref']==projection_ref,'Dispatch rank projection differs')
+                pilot_completion_ref=history['pilot_completion_ref']
+            elif rank:
                 # Lazy import: rank startup itself uses acceptance/readiness.
                 from . import tokenizer_wide_hybrid_quality_rank_startup_v2 as ranks
                 history=ranks.verify_lr_history(writer,plan_sha256,lr_completion_ref,
@@ -185,8 +200,11 @@ def _run_once(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_c
                 _require(history['projection_ref']==projection_ref,'Dispatch LR projection differs')
                 pilot_completion_ref=history['pilot_completion_ref']
             prior_args=dict(lr_completion_ref=lr_completion_ref)
-            previous=_prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,**prior_args)
-            if rank:
+            previous=[] if fresh else _prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,**prior_args)
+            if fresh:
+                startup=confirmations.prepare_first_confirmation_request(writer,slot,plan_sha256,
+                    projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
+            elif rank:
                 startup=ranks.prepare_rank_request(writer,slot,plan_sha256,
                     projection_ref=projection_ref,lr_completion_ref=lr_completion_ref)
             else:
@@ -207,19 +225,44 @@ def _run_once(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,*,lr_c
             raise
         monitor.finish()
         with _PhaseGuard(writer,slot,'review'):
-            review=(acceptance.review_completed_rank if rank else acceptance.review_completed_lr)(writer,slot,startup,ready,process)
-            _require(_prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,**prior_args)==previous,
-                     'Earlier dispatch receipts changed during child/review')
+            reviewer=(acceptance.review_completed_first_confirmation if fresh else
+                      acceptance.review_completed_rank if rank else acceptance.review_completed_lr)
+            review=reviewer(writer,slot,startup,ready,process)
+            if fresh:
+                after=confirmations.verify_rank_history(writer,plan_sha256,rank_completion_ref,
+                    current_inventory=acceptance._inventory(root))
+                _require({k:v for k,v in after.items() if k!='chain'}=={k:v for k,v in history.items() if k!='chain'},
+                         'Original rank history changed during fresh child/review')
+            else:
+                _require(_prior(writer,slot,plan_sha256,projection_ref,pilot_completion_ref,**prior_args)==previous,
+                         'Earlier dispatch receipts changed during child/review')
         guards={phase:_guard_ref(writer,slot,phase) for phase in ('prepare','child','review')}
         for phase,ref in guards.items():acceptance._guard(writer,ref,KIND,os.getpid(),7200 if phase=='child' else 1800)
         _locks(root,writer.lock_fds)
         _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents success publication')
         _require(shutil.disk_usage(writer.root).free>=review['storage']['required_free_bytes'],
                  'Remaining full campaign storage changed before receipt')
-        result=dict(kind=KIND,status='rank_reviewed' if rank else 'lr_reviewed',slot=slot,parent_pid=os.getpid(),plan_sha256=plan_sha256,
+        if fresh:
+            bound,_,allowance=readiness._bound(writer,slot,_document(root,startup))
+            _require(bound['files']==seal['frozen_files'] and bound['context']==seal['context']
+                and allowance==seal['output_limit_bytes'],'Frozen first-fresh inputs changed before receipt')
+            _require(digest(acceptance._inventory(root))==review['evidence_inventory_sha256'],
+                     'First-fresh evidence changed after acceptance')
+            for name,binding in seal['control_inventory'].items():
+                acceptance._check(writer.root,name,binding,time.monotonic()+1800)
+        result=dict(kind=KIND,status='first_confirmation_reviewed' if fresh else ('rank_reviewed' if rank else 'lr_reviewed'),slot=slot,parent_pid=os.getpid(),plan_sha256=plan_sha256,
             projection_ref=projection_ref,pilot_completion_ref=pilot_completion_ref,prior_dispatches=previous,
             guards=guards,review=review)
         if rank:result['lr_completion_ref']=lr_completion_ref
+        if fresh:
+            result['rank_completion_ref']=rank_completion_ref
+            # Reconstruct these large values from the bound original rank
+            # receipts and fresh producer artifacts. Keep their complete audit
+            # digests, not nine copies of the same cleanup manifests.
+            compact=dict(review,representation='wide_hybrid_first_confirmation_acceptance_digest_v1')
+            for key in ('completed_records','checkpoint_pairs','stages'):
+                compact[key+'_sha256']=digest(compact.pop(key))
+            result['review']=compact
         path=writer.publish_json('evidence/'+base+'.json',result)
         return dict(path=base+'.json',sha256=file_digest(path))
     except BaseException as exc:

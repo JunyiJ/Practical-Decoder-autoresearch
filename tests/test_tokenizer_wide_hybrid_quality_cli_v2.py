@@ -29,7 +29,7 @@ def test_noncanonical_or_incomplete_cli_never_reaches_body(writer,monkeypatch,ba
     elif bad=='extra':argv+=['--unknown','1']
     elif bad=='abbreviation':argv[argv.index('--startup-sha256')]='--startup'
     elif bad=='subcommand':argv[0]='run'
-    elif bad=='slot':argv[argv.index('--slot')+1]='9'
+    elif bad=='slot':argv[argv.index('--slot')+1]='16'
     elif bad=='sha':argv[-1]='A'*64
     elif bad=='fd_alias':argv[argv.index('--campaign-fd')+1]=str(writer.lock_fds[0])
     elif bad=='duplicate':argv+=['--slot','0']

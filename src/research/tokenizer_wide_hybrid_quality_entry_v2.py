@@ -1,4 +1,4 @@
-"""Readiness-bound LR/rank child CLI and composition; rank parent dispatch unfinished.
+"""Readiness-bound LR/rank/first-fresh child CLI and composition.
 
 An exact parent-supplied seal hash transfers the parent's full idle audit. The
 child verifies every sealed byte, control receipt and frozen numerical gate, and
@@ -53,13 +53,18 @@ def _stamps(root,inventory):
 def _storage(writer,slot,seal,startup,inventory):
     root=writer.root/'evidence'
     pilot,_,stage,_=_receipt(writer,seal['plan_sha256'],startup['pilot_completion_ref'])
-    records=[] if slot==0 else startup['completed_records']
-    pairs={} if slot==0 else startup['checkpoint_pairs']
+    selection=None
+    if slot==15:
+        records,pairs,rates,selection=_first_confirmation_history(writer,seal,startup)
+        boundaries=3
+    else:
+        records=[] if slot==0 else startup['completed_records']
+        pairs={} if slot==0 else startup['checkpoint_pairs']
+        rates=None;boundaries=1
     _require(isinstance(records,list) and len(records)==slot,'Exact completed quality prefix required')
-    rates=None;boundaries=1
     if slot<9:
         _require(set(pairs)=={f'quality/{i:02d}' for i in range(slot)},'Exact completed LR prefix required')
-    else:
+    elif slot<15:
         # The live parent's immutable seal transfers full idle audits. Rebind
         # original cleanup identities and selection before counting live bytes;
         # deliberately deleted pairs are historical evidence, never capacity.
@@ -82,7 +87,7 @@ def _storage(writer,slot,seal,startup,inventory):
                  'Exact live LR anchors and completed rank members required')
         pairs={f'quality/{i:02d}':pairs[f'quality/{i:02d}'] for i in indices}
     projection=_document(root,seal['projection_ref'])
-    state=remaining_projection(projection,stage['records'],records,rates,None,boundaries)
+    state=remaining_projection(projection,stage['records'],records,rates,selection,boundaries)
     census=snapshot(writer.root);weights=set();inodes=set();logical=occupied=0
     for key,pair in pairs.items():
         _require(set(pair)=={'raw','h200'},'Complete retained checkpoint pairs required')
@@ -105,6 +110,47 @@ def _storage(writer,slot,seal,startup,inventory):
     return needed
 
 
+def _first_confirmation_history(writer,seal,startup):
+    """Expand compact original receipts; the same-parent seal binds their full audit.
+
+    Reconstruct all three cleanup proofs and original pairs, then count only the
+    three selected live screens. Deleted weights never receive capacity credit.
+    """
+    from .tokenizer_wide_hybrid_rank_boundary_v2 import _receipt as rank_receipt
+    saved,_,_,view=rank_receipt(writer,seal['plan_sha256'],startup['rank_completion_ref'])
+    summary=view['summary'];selected=view['selected'];history=view['history']
+    stages=view['stages']+[dict(manifest=view['manifest'],execution_ref=saved['execution_ref'],
+                              context_sha256=saved['context_sha256'])]
+    expected=dict(projection_ref=selected['projection_ref'],pilot_completion_ref=history['pilot_completion_ref'],
+        rates_ref=history['selection_ref'],selection_ref=selected['selection_ref'],
+        rates=summary['rates'],selection=summary['selection'],
+        completed_records_sha256=digest(summary['records']),checkpoint_pairs_sha256=digest(summary['checkpoint_pairs']),
+        stages_sha256=digest(stages),frozen_files_sha256=digest(seal['frozen_files']))
+    _require(all(digest(startup[k])==digest(v) for k,v in expected.items()),
+             'Compact first-confirmation original history differs')
+    indices=[i for i,r in enumerate(summary['records'])
+             if dict(lr=r['lr'],divisor=r['divisor'])==summary['selection'][r['family']]]
+    _require(len(indices)==3 and digest(indices)==digest(startup['audited_indices']),
+             'Exact three selected screen anchors required')
+    pairs={f'quality/{i:02d}':summary['checkpoint_pairs'][f'quality/{i:02d}'] for i in indices}
+    _require({e['path'] for pair in pairs.values() for e in pair.values()}==
+             {e['path'] for e in view['manifest']['retain']},'Selected pairs differ from rank retention')
+    return summary['records'],pairs,summary['rates'],summary['selection']
+
+
+def _expected_review(slot,startup_ref,seal):
+    expected=dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
+                  pilot_history_verified=True,dispatch_authorized=False)
+    if slot==0:expected['first_quality_request_verified']=True
+    elif slot<9:expected.update(startup_ref=startup_ref,lr_prefix_verified=True,lr_request_verified=True)
+    elif slot<15:expected.update(startup_ref=startup_ref,lr_history_verified=True,rank_prefix_verified=True,rank_request_verified=True)
+    else:
+        _require(slot==15,'Only first fresh slot15 supported')
+        expected.update(startup_ref=startup_ref,rank_history_verified=True,
+                        selected_screen_prefix_verified=True,first_confirmation_request_verified=True)
+    return expected
+
+
 def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
     """Caller owns outer resource guard; exact argv anchors trusted parent seal.
 
@@ -121,11 +167,7 @@ def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
         and seal.get('deletion_authorized') is False,'Same-parent immutable readiness seal required')
     for key in ('request','plan_sha256','projection_ref','context'):
         _require(digest(seal[key])==digest(startup[key]),'Seal/startup identity differs')
-    expected=dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
-                  pilot_history_verified=True,dispatch_authorized=False)
-    if slot==0:expected['first_quality_request_verified']=True
-    elif slot<9:expected.update(startup_ref=startup_ref,lr_prefix_verified=True,lr_request_verified=True)
-    else:expected.update(startup_ref=startup_ref,lr_history_verified=True,rank_prefix_verified=True,rank_request_verified=True)
+    expected=_expected_review(slot,startup_ref,seal)
     _require(digest(seal['predispatch_review'])==digest(expected),'Sealed full idle review differs')
     inventory=dict(startup['inventory'])
     for ref in (startup['request'],startup_ref):
@@ -191,7 +233,7 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument('command',choices=['worker'])
     parser.add_argument('--campaign',required=True,type=Path)
-    parser.add_argument('--slot',required=True,type=int,choices=range(15))
+    parser.add_argument('--slot',required=True,type=int,choices=range(16))
     parser.add_argument('--startup-sha256',required=True)
     parser.add_argument('--global-fd',required=True,type=int)
     parser.add_argument('--campaign-fd',required=True,type=int)
@@ -200,7 +242,7 @@ def main(argv=None):
     from .tokenizer_wide_hybrid_retention_receipts import _sha
     _sha(args.startup_sha256);_sha(args.readiness_sha256)
     writer=MetadataWriter(args.campaign,(args.global_fd,args.campaign_fd))
-    phase='lr' if args.slot<9 else 'rank'
+    phase='lr' if args.slot<9 else ('rank' if args.slot<15 else 'confirm')
     startup=dict(path='meta/quality-first-startup.json' if args.slot==0
                  else f'meta/quality-{phase}-startup-{args.slot:02d}.json',sha256=args.startup_sha256)
     ready=dict(path=f'meta/quality-readiness-{args.slot:02d}.json',sha256=args.readiness_sha256)

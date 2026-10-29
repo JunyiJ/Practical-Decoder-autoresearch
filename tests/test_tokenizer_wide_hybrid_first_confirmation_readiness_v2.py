@@ -54,15 +54,13 @@ def test_first_fresh_seal_binds_full_idle_review_and_does_not_launch(writer,monk
     assert len(list(root.rglob('*.pt')))==6 and not (root/'quality/16').exists()
     assert ready._document(root,report['selection_ref'])==report['selection']
     with pytest.raises(ValueError,match='cannot be retried'):ready.seal_quality_readiness(writer,15,startup)
-    # Existing child transport remains closed to fresh slots until its own
-    # independently tested lineage/storage composition is implemented.
-    with pytest.raises(ValueError):transport.worker_argv(writer,15,startup,readiness_ref=ref)
+    assert transport.worker_argv(writer,15,startup,readiness_ref=ref)[2].endswith('quality_entry_v2')
     with pytest.raises(ValueError):fresh.verify_first_confirmation_request(writer,15,startup)
     assert ready._inventory(root)==after
     census=ready.snapshot(writer.root)
     (writer.root.parent/'first-confirmation-readiness-census.json').write_text(json.dumps(dict(
         groups=census['groups'],metadata_bytes=census['metadata_bytes'],file_count=len(census['files']),
-        readiness_bytes=(root/ref['path']).stat().st_size,child_transport_implemented=False,
+        readiness_bytes=(root/ref['path']).stat().st_size,child_transport_implemented=True,
         live_checkpoint_files=6,completed_fresh=0,real_panel_fit_proven=False),sort_keys=True))
 
 
