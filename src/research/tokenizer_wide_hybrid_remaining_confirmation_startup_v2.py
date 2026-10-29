@@ -1,4 +1,4 @@
-"""Exclusive slot18/19 startup receipts and independent idle predispatch review.
+"""Exclusive slot18..20 startup receipts and independent idle predispatch review.
 
 Caller owns both locks, inspects workers and holds an outer resource guard over
 the entire call, including final checks. No readiness, child, retry or later slot.
@@ -26,13 +26,13 @@ NONCLAIMS=('adopted','dispatch_authorized','deletion_authorized','next_stage_aut
 
 
 def _names(slot):
-    _require(type(slot) is int and slot in (18,19),'Exact slot18 or slot19 startup required')
+    _require(type(slot) is int and slot in (18,19,20),'Exact slot18, slot19 or slot20 startup required')
     names=append.paths(slot);base=names['attempt'].removesuffix('-attempt.json')
     return dict(names,base=base,receipt=base+'.json')
 
 
 def _next_slot(saved):
-    _require(type(saved.get('slot')) is int and saved['slot'] in (17,18),'Exact integrated predecessor required')
+    _require(type(saved.get('slot')) is int and saved['slot'] in (17,18,19),'Exact integrated predecessor required')
     return saved['slot']+1
 
 
@@ -135,7 +135,7 @@ def verify_confirmation_request(writer,slot,reference):
 
 def _readiness_control(writer,reference,slot=18):
     from .tokenizer_wide_hybrid_quality_readiness_v2 import KIND as readiness_kind
-    _names(slot)
+    _require(type(slot) is int and slot in (18,19),'Readiness supports only slot18/19')
     _require(reference['path']==f'control/quality-readiness-{slot:02d}.json','Exact supported readiness guard required')
     guard=_document(writer.root,reference);elapsed=guard.get('elapsed_seconds');sample=guard.get('observation',{})
     limits=dict(timeout_seconds=1800,rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3)
@@ -151,7 +151,7 @@ def _readiness_control(writer,reference,slot=18):
 
 def verify_confirmation_for_readiness(writer,slot,reference,guard_ref):
     """Explicit single-guard append; the ordinary idle reader stays strict."""
-    _names(slot)
+    _require(type(slot) is int and slot in (18,19),'Readiness supports only slot18/19')
     _require(guard_ref is not None,'Explicit readiness guard required')
     return _verify_request(writer,slot,reference,readiness_guard_ref=guard_ref)
 
@@ -166,6 +166,10 @@ def _verify_request(writer,slot,reference,*,readiness_guard_ref=None):
     replay=append.history;options=dict(preparation=preparation,startup_ref=reference,readiness_guard_ref=readiness_guard_ref)
     if slot==19:
         from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as replay
+    elif slot==20:
+        from . import tokenizer_wide_hybrid_slot19_history_v2 as replay
+        _require(readiness_guard_ref is None,'Slot20 readiness is not integrated')
+        options.pop('readiness_guard_ref')
     checked=replay._verify(writer,slot-1,report['plan_sha256'],report['prior_dispatch_ref'],
         projection_ref=report['projection_ref'],rank_completion_ref=report['rank_completion_ref'],
         **options)

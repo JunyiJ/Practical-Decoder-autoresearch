@@ -1295,3 +1295,20 @@ synthetic preparation with no model-quality result or training. Next publish and
 independently consume compact slot20 startup. Remaining integration, inference,
 real metadata fit and actual prerequisite gates still precede finite-plan freeze.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-append-v2-component-review.json`.
+
+
+## Compact sixth-fresh startup receipt
+
+Slot20 now has exclusive startup publication and independent compact-receipt
+verification. Replay binds all20 completed records, eight protected pairs,
+original slot15..19 transport/retention history and full remaining capacity.
+Failures are preserved without retries; ordinary history readers stay strict.
+
+All43 guarded checks passed on unchanged source, including publication/replay,
+false claims and unreviewed outputs, preserved failures, late mutations/STOP,
+API boundaries and slot18/19 compatibility. No resource guard failed; final
+inspection found no research workers. This is synthetic preparation, with no
+model-quality result or training. Next integrate slot20 readiness/child entry.
+Remaining integration, inference, real metadata fit and actual prerequisite gates
+still precede finite-plan freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-startup-v2-component-review.json`.

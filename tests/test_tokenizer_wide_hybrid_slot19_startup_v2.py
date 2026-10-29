@@ -141,7 +141,7 @@ def test_late_receipt_control_source_space_and_stop_changes_fail_closed(writer,m
         assert reached==[True]
 
 
-@pytest.mark.parametrize('slot',[15,16,17,20,21,22,23,24,True,19.,'19'])
+@pytest.mark.parametrize('slot',[15,16,17,21,22,23,24,True,19.,'19'])
 def test_other_slots_rejected_before_mutation(writer,slot):
     with pytest.raises(ValueError,match='slot19'):
         start.prepare_confirmation_request(writer,slot,'a'*64,projection_ref={},rank_completion_ref={},prior_dispatch_ref={})

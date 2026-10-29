@@ -3301,3 +3301,33 @@ slot18/19 compatibility, then complete the finite remaining transitions. Keep
 stable slot16 inventory anchors and existing caps. Inference, real metadata fit
 and actual prerequisite gates still precede freeze. No research training,
 protected deletion, closed numerical-fixture retry or test-holdout use occurred.
+
+
+## Compact sixth-fresh startup receipt
+
+The shared startup writer now supports exact slots18..20. Slot20 exclusively
+publishes its attempt, bounded current-parent startup guard, independently frozen
+request and compact receipt. Independent consumption fully replays completed
+slot19, original slot15..18 transport/retention lineage, all20 completed records,
+eight protected pairs and full current/historical capacity. Ordinary history
+and preparation readers remain strict. Publication failures are preserved without
+retries; slot20 readiness and dispatch stay closed.
+
+All43 guarded checks passed on unchanged source in five serial batches. Coverage
+includes full publication/replay, false claims and undeclared outputs/controls,
+preserved failures/no retry, late mutations/STOP, exact slot/type boundaries,
+slot18/19 startup and slot19 history compatibility. No test, driver or resource
+guard failed; final inspection found no research workers.
+
+The synthetic receipt is 3,092 bytes. Its state retains20
+completed records and all16 checkpoint files. The meta group uses
+1,614,941 of2,097,152 bytes; total metadata is
+2,236,237 bytes and remaining required free space is
+30,153,547,670 bytes. Full real-panel fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-startup-v2-component-review.json`.
+
+Next integrate slot20 readiness/child entry with the stable original slot16
+inventory anchor and unchanged caps, then parent acceptance and remaining finite
+transitions. Inference, real metadata fit and actual prerequisite gates still
+precede freeze. No research training, quality result, protected deletion, closed
+numerical-fixture retry or test-holdout use occurred.
