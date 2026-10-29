@@ -3399,3 +3399,36 @@ Next add independent completed-slot20 replay, then explicit preparation for the
 remaining finite slots21..23. Inference, real metadata fit and actual prerequisite
 gates still precede freeze. No research training, quality result, protected
 deletion, closed numerical-fixture retry or test-holdout use occurred.
+
+
+## Independent sixth-fresh history replay
+
+Completed slot20 now has strict independent replay under verified historical
+parent/descriptors. It reconstructs original startup/readiness, all five prior
+fresh transports, exact sealed/current controls, canonical argv and bounded
+guards. Full acceptance reaudits 21 completed records and nine protected pairs
+with frozen source/request/evidence and retention lineage. No process is resumed.
+
+Current and original pre-child capacity are independently reconstructed through
+slots 20, 19, 18, 17, 16; later weights earn no earlier-capacity credit. Stable original
+slot16 inventory anchoring and existing caps remain unchanged. Ordinary replay
+rejects later artifacts and controls; pending slot21 is closed even with a valid
+historical slot20 identity. No launch, cleanup, retry or adoption is granted.
+
+All 25 checks passed on unchanged source in four serial guarded batches. They
+cover different-parent/descriptor replay and byte preservation, exact API/identity
+boundaries, receipt and five-depth historical-capacity forgery rejection,
+protected/late-change checks, failure/partial/later-artifact rejection and slot19
+compatibility. No test, driver or resource guard failed; final process inspection
+found no research workers.
+
+The synthetic completed state retains 21 records and 18 checkpoint files. Its meta
+group uses 1,653,224 of 2,097,152 bytes; total metadata is
+2,291,455 bytes and required remaining free space is
+30,153,547,637 bytes. Full real-panel fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-history-v2-component-review.json`.
+
+Next add explicit slot21 preparation, then the remaining finite transitions.
+Inference, real metadata fit and actual prerequisite gates still precede freeze.
+No research training, model-quality result, protected deletion, closed numerical
+fixture retry or test-holdout use occurred.
