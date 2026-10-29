@@ -4169,3 +4169,7 @@ its guard finished successfully. Both raw/H200 pairs remain protected during
 the incomplete screen. Remaining full-panel storage requires28,162,784,220bytes
 against42,054,352,896bytes free. Next is frozen slot2: all-KDA at the same
 LR/divisor/seed/width/budget, through the unchanged one-slot production wrapper.
+
+The two-cell review was committed and pushed as `ce4d9e7`. Frozen LR slot2
+started through production gates with parent5171 and child5184. Exactly one
+training worker is active; the wrapper stops after this all-KDA trial.
