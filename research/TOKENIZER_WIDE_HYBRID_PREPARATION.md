@@ -2926,3 +2926,40 @@ one link per slot would exceed the16-document cap at23. Inference, full real
 metadata accounting and actual numerical/input/measured-pilot gates remain before
 finite-plan freeze. No research training, protected checkpoint deletion, closed
 numerical-fixture retry or test-holdout use occurred.
+
+
+## Compact slot18 startup publication and independent replay
+
+The remaining-fresh startup module publishes only the slot18 attempt, independently
+frozen request and compact receipt. It uses the shared finite naming contract,
+binds the current parent and exact slot17 dispatch, and independently reconstructs
+all18 completed records, six retained raw/H200 pairs and three cleanup boundaries.
+The receipt binds complete evidence/control digests, frozen source/context and
+full remaining capacity. Receipt publication repeats source, evidence, control,
+locks, STOP and capacity checks after the guarded preparation replay. An explicit
+receipt reader validates the whole payload and repeats historical and current
+storage audits; the ordinary idle and append-only readers stay strict.
+
+The disposable synthetic receipt is3,087bytes. Its meta group uses1,541,963 of
+2,097,152bytes, total metadata is2,127,619bytes and the full remaining free-space
+requirement remains30,153,547,736bytes. A pending request earns no completed-record
+or checkpoint capacity credit. Full real-panel metadata fit is still unproven.
+Failures preserve their evidence and prevent retries. No readiness, child or
+later-slot capability is granted by this receipt.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-startup-v2-component-review.json`.
+
+All20 checks passed on unchanged source in three serial batches of237.01s,
+318.31s and344.14s. Peak RSS was246,562,816bytes; all retained the600-second,
+4GiB RSS and8GiB reserve limits. Coverage includes compact publication and
+read-only replay, rehashed false claims, unsupported slots, three preserved
+failure/no-retry cases, late integrity/capacity/STOP changes, post-replay control
+append and prior slot17 changed-parent/descriptors compatibility. No test, driver
+or resource guard failed. Final process inspection found no research workers.
+
+Next integrate slot18 readiness and child entry using a stable earlier inventory
+anchor such as the original slot16 seal, then complete parent acceptance/serial
+dispatch and the finite remainder19–23. No chain cap is relaxed. V2 inference,
+full real metadata fit and actual numerical/input/measured-pilot gates remain
+before finite-plan freeze. No research training, protected checkpoint deletion,
+closed numerical-fixture retry or test-holdout use occurred.

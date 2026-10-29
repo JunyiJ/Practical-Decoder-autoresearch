@@ -1,0 +1,101 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "025565ec682696961cc0d8babea6ba82bf62123b",
+  "check_executions_passed": 20,
+  "created_at": "2026-10-29T08:30:51.117733+00:00",
+  "distinct_test_cases": 20,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-core-guard.json": "f1429bdb3b12a9cc3d44e7d6829fc213c7bd784f16fa3aa59fa0b7cdb32b1c64",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-core-tests.log": "15a4408f1d9f6e2260cc5deacef4ebfd61b8e84254394aab719b7f6fa5971f64",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-failures-guard.json": "4f219fa863df0105001db0f1af06940615ce1a6188a67d75523996f63fba2190",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-failures-tests.log": "05a85b4c93cc1ac890572dc3ae7c40df8fa3c0d8abe211b6bbb0c39d7a46f412",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-integrity-guard.json": "9d0c04c8acd8f6f73425f2ad4102eeae521c96714104efed773f8fc09fc513c7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-integrity-tests.log": "e3ce66b548a1d7e161bfce318966567f8824c9e4453f7cffca2af2072737520e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot18-startup-census.json": "44e5a2ef785afd585e37045603b2d40af3185cc65ae96d3549024e0e6f606ae7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot18-startup-source-hashes.json": "fcc5e222676a4c77f1c45e908ff3a5309ae96e4a6cbb127ea73ccf2f7b467c3b",
+    "src/research/tokenizer_wide_hybrid_later_confirmation_history_v2.py": "7790c10ada88d014a3a1ed4e74fe341f71c418c943e1aa0b62e9524641ed2bc4",
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_append_v2.py": "b7dbfb3909bd426bb7217fbd743e574618432cec72534343a1c54254798fe28a",
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "501835c26ac619e530d6b953037eaee4be330e89772ace293026404290f68f0c",
+    "tests/test_tokenizer_wide_hybrid_later_confirmation_history_v2.py": "dc6e91b23f6e2be28e55b0a12cc732d8e99d7c6567e04953c2dd04051a8d7dbd",
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "0ea8d1e98121d33657a70d9268b3f4c455408152d7bd1c801dc7665804a08356"
+  },
+  "findings": [
+    "Exclusive slot18 startup publication uses shared finite paths, validates the exact prior slot17 dispatch and current parent, independently freezes the pending request and repeats complete history/science/storage checks before a compact receipt. Publication repeats source, evidence, controls, locks, STOP and full capacity checks.",
+    "The independent reader reconstructs all compact payload claims, all18 completed records, six protected selected/fresh pairs and three cleanup boundaries. It validates current and original historical capacity and full evidence/control identities. A pending request earns no completed-record or checkpoint capacity credit.",
+    "Only an explicit startup receipt capability extends the internal historical replay. Public idle and append-only readers remain strict, and unsupported startup slots fail before mutation. No readiness or dispatch capability is granted.",
+    "All20 checks passed on unchanged source: positive publication/read-only replay, strict prior APIs, twelve unsupported slot/type cases, rehashed receipt and undeclared output/control rejection, current-parent binding, three failure-preservation/no-retry cases, late receipt/control/source/free-space/STOP changes, post-replay control append and prior slot17 changed-parent/descriptors compatibility."
+  ],
+  "free_bytes_observed": 55958089728,
+  "holdout_consumed": false,
+  "kind": "wide_hybrid_slot18_startup_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic science/checkpoint bytes only; no real model quality, numerical correctness or MPS feasibility result.",
+    "Only slot18 compact startup is integrated. Readiness/entry, parent acceptance/serial dispatch and slots19..23 full integration remain pending. Stable earlier readiness inventory anchors are required to stay below the16-document/8MiB chain limits.",
+    "V2 inference, full real metadata fit and actual nine-case numerical/input/measured-pilot prerequisites remain unresolved before finite-plan freeze. The closed failed combined numerical fixture remains closed."
+  ],
+  "maximum_observed_rss_bytes": 246562816,
+  "next_action": "Integrate slot18 readiness sealing and child entry with a stable earlier inventory anchor such as the original slot16 seal. Independently bind the compact slot18 receipt, exact slot17 dispatch lineage, all18 completed records and6 retained pairs, complete source/evidence/control identities and full remaining capacity. Preserve strict ordinary readers and explicit bounded capabilities. Then complete parent acceptance/serial dispatch and finite remainder19..23 integration without relaxing the16-document/8MiB reference-chain caps. V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. No closed numerical-fixture retry, closed-campaign reopening, protected checkpoint deletion or test-holdout use.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "status": "slot18_compact_startup_publication_and_independent_replay_tested_readiness_pending",
+  "synthetic_census": {
+    "completed_quality_records": 18,
+    "live_checkpoint_files": 12,
+    "meta_group_bytes": 1541963,
+    "metadata_bytes": 2127619,
+    "pending_slot": 18,
+    "real_panel_fit_proven": false,
+    "receipt_bytes": 3087,
+    "required_free_bytes": 30153547736
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-core-tests.log",
+      "passed": 14,
+      "peak_rss_bytes": 246562816,
+      "seconds": 237.01
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-failures-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-failures-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 245923840,
+      "seconds": 318.31
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-integrity-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot18-startup-v2-integrity-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 245956608,
+      "seconds": 344.14
+    }
+  ],
+  "training_launched": false
+}

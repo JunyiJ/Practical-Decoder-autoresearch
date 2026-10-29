@@ -1119,3 +1119,21 @@ real metadata fit and actual prerequisite gates still precede freeze. Evidence:
 All101 bounded checks passed on unchanged source, including the full storage
 suite, slot18 preparation, prior API compatibility and integrity rejection.
 No resource guard failed, and final inspection found no research workers.
+
+
+## Compact fourth-fresh startup preparation
+
+Slot18 now has compact startup publication and independent same-parent receipt
+replay, binding the exact slot17 dispatch, all18 completed records, six retained
+pairs, complete evidence/control digests and full remaining capacity. The older
+idle and append-only readers remain strict, and failures prohibit retry.
+
+This is disposable synthetic controller preparation, with no new model-quality
+result or training. Slot18 readiness/entry, remaining serial integration, inference,
+real metadata fit and actual prerequisite gates still precede finite-plan freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot18-startup-v2-component-review.json`.
+
+All20 guarded checks passed on unchanged source, including preserved failures,
+late integrity rejection and prior reader compatibility. No resource guard
+failed; final process inspection found no research workers. Next integrate
+slot18 readiness and child entry using a stable earlier inventory anchor.
