@@ -1847,3 +1847,45 @@ pilots and freeze the finite quality plan before training. Source/runtime
 changes require explicit prerequisite review; do not silently reuse these
 source-bound passes. MPS pilots, research inference and quality training remain
 unlaunched. All selected/fresh evidence and the test holdout remain protected.
+
+
+### Finite wider-hybrid freeze and final decision wiring — October 29, 2026
+
+The real numerical/input prerequisites are now frozen for `/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-001`;
+plan SHA256 `bb44ea3b55db81b6808072f36d09a9eb8c5d263aa18bc88d06acc88b4ffc19d5`. The plan fixes three resource pilots and
+24 quality trajectories (108 conditional request options), with the existing
+serial worker, retention, memory, time, storage and closed-holdout constraints.
+Quality remains gated on measured and independently accepted pilots.
+
+The first virtual metadata estimate missed552 occurrences of synthetic
+`raw.pt` names. Corrected accounting reserves real timestamped filenames and
+binds both the preparation and final-decision sources. The numerical trace is
+now a lossless gzip attachment:63,746 original bytes become12,576 bytes;
+exact decompression and the unmodified production identity gate pass. Original
+reports, traces and every numerical checkpoint remain untouched. No numerical
+or synthetic training fixture was repeated. Corrected meta bound is
+2,058,492 of2,097,152 bytes, leaving
+38,660 bytes. Every other group fits its
+existing cap; the conservative count is854 of2048 files. Full-duration quality
+resource reports/events are bounded at1,282,827/1,106,155 bytes before remaining
+fixed-schema padding; metrics, sample text, controller receipts and control
+replacement overlap are included. Success-schema estimates remain subject to
+the actual bounded writers and watchdogs; unexpected output stops the run.
+
+`review_final_campaign_v2.py` now composes strict quality OR (neutral quality
+AND measured memory), after full production acceptance replay of all fresh
+triples. It checks its own frozen source hash, requires all three controller
+receipts, binds result hashes, and rechecks protected files. It preserves the
+conditional-bootstrap caveat and reports latency without a speed gate; it does
+not itself modify an adopted recipe. Seventeen new small tests passed across
+two bounded runs (14 arithmetic/boundary cases,3 file-binding wrapper cases).
+No model or timing worker was used in these tests. The final external review
+has a128KiB cap, additionally reserved at freeze.
+
+Evidence: `finite-campaign-freeze-v2-review.json`, its finished guard, the exact
+`finite-campaign-v2-frozen/meta/` archive, and the two final-decision test logs.
+The earlier `full-metadata-v2-review.json` is retained as an explicitly
+superseded estimate. Source/runtime hashes match the completed numerical and
+train-only input passes. At freeze no resource pilot or quality worker has
+launched. Next: serial resource pilots through the existing production
+`run_pilot_once`, then the independent pilot boundary and quality readiness.
