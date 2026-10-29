@@ -1,0 +1,101 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "9fef5d21ec6adf751baf6daaec7d7211108d8a47",
+  "check_executions_passed": 17,
+  "created_at": "2026-10-29T06:48:31.280976+00:00",
+  "distinct_test_cases": 17,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-boundaries-guard.json": "f016333584542391a250b169cd73eaa035299bda3fb7f7c55ce1eb45997ff40e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-boundaries-tests.log": "5b75836a7fa29b393635493e5c2dcf9e1cc267a3e3abb589c3bd33a51bc0d575",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-core-guard.json": "8545be7e9c80d9da6209b2872ed998dedeba7c131aaff9f827287e0856806f58",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-core-tests.log": "6ad145f38378422e323e5598d44c4d25444981f8e791dc1bbd5cd4afbc561dd8",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-publication-guard.json": "47aaf8c2b9ea1614cd2e151acb03da77355132a3398c5dc8abb11b090aafe3e9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-publication-tests.log": "52dd1541e47360ba6888e715c1b677081fd9e09513edc2768e7bdc8938d18ff7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot17-startup-census.json": "c555e3fc68c3d6722a8cd78fdab028eebbfb3f508d6159e0f266e98f22c883bc",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot17-startup-source-hashes.json": "c5031868901493c31ad1f7fa3187e081c75d61b25b45475d8df6dc0f216ab501",
+    "src/research/tokenizer_wide_hybrid_confirmation_history_v2.py": "d2e3a74e70ddfee06d153ce6ab507174c7bb74503d0e5123048945feeed49888",
+    "src/research/tokenizer_wide_hybrid_later_confirmation_startup_v2.py": "ce700c0eac58913f067ec1c4b410d66472d43d5f50e0793f24eaebd4ec4c5b48",
+    "tests/test_tokenizer_wide_hybrid_confirmation_history_v2.py": "4472c2d9bf7c3c62e09509ba706f70952a573e0e60354bce419f4e2f9b98c88e",
+    "tests/test_tokenizer_wide_hybrid_later_confirmation_append_v2.py": "213abd8d6f50c3c17156f9b2daf7ea5906900aa824e89e18957e31ca1a500a39",
+    "tests/test_tokenizer_wide_hybrid_later_confirmation_startup_v2.py": "683126df927f4b3ff2ea49b54e542a157d395ac7da223f85851962c6c9e1ca91"
+  },
+  "findings": [
+    "Exclusive publication replays completed slot16 history before and after publishing the independently frozen slot17 request, pins finished controls before final replay, and rechecks source, evidence, controls, locks, STOP and complete future capacity before the compact receipt.",
+    "The receipt binds the current parent, exact prior dispatch and original retention lineage, frozen source/request, completed-record/checkpoint/stage digests and storage. The independent consumer fully reconstructs historical transport and retained science; compact claims do not substitute for audits.",
+    "Only explicitly declared receipt bindings are admitted. Older public idle and append-only APIs remain strict. The pending request creates no completed trial, checkpoint pair or capacity credit.",
+    "All17 cases passed on unchanged source in three serial bounded batches: publication/replay, rehashed false claims and unsupported outputs/slots, immutable no-retry failure paths, late receipt/control/source/space/STOP changes, post-replay control append rejection and existing slot17 append/slot16 idle compatibility."
+  ],
+  "free_bytes_observed": 56156700672,
+  "holdout_consumed": false,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_slot17_startup_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic science/checkpoint bytes only; no numerical correctness, model-quality or MPS feasibility result.",
+    "Readiness/child/parent dispatch for slot17 and subsequent fresh slots remain pending.",
+    "V2 inference, full real metadata fit and actual numerical/input/measured-pilot gates remain unresolved before freeze; the closed failed combined numerical fixture remains closed."
+  ],
+  "maximum_observed_rss_bytes": 245071872,
+  "next_action": "Integrate slot17 readiness and child entry around the tested compact startup receipt. Add only an explicitly validated readiness guard/receipt capability; retain strict idle/append readers, original transport replay, current-parent locks/argv, source/evidence/control integrity and full future capacity. Use a bounded inventory-reference anchor. Then integrate slot17 parent acceptance/serial dispatch and finite remaining fresh slots18..23 with verified compact prior transport. V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. Do not retry the closed failed combined numerical fixture, reopen closed campaigns, delete protected checkpoints or use the test holdout.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "status": "exclusive_slot17_startup_and_independent_consumer_tested_readiness_pending",
+  "synthetic_census": {
+    "completed_quality_records": 17,
+    "live_checkpoint_files": 10,
+    "meta_group_bytes": 1511070,
+    "metadata_bytes": 2078917,
+    "pending_slot": 17,
+    "real_panel_fit_proven": false,
+    "receipt_bytes": 3084
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-core-tests.log",
+      "passed": 10,
+      "peak_rss_bytes": 245071872,
+      "seconds": 189.16
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-publication-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-publication-tests.log",
+      "passed": 4,
+      "peak_rss_bytes": 244924416,
+      "seconds": 355.02
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-boundaries-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-startup-v2-boundaries-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 244744192,
+      "seconds": 279.54
+    }
+  ],
+  "training_launched": false
+}

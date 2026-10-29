@@ -1027,3 +1027,21 @@ inference, real metadata fit and actual numerical/input/measured-pilot gates
 before freeze. This is synthetic controller preparation with no new quality
 result or training. Evidence:
 `tokenizer-evidence/wide-hybrid-preparation-001/slot17-append-v2-component-review.json`.
+
+## October 28 slot17 compact startup publication and replay
+
+Slot17 now has an exclusive compact startup receipt and independent consumer.
+The receipt binds the current parent, frozen pending request and complete prior
+history; verification reconstructs retained science, original transport and
+storage. Failures remain immutable and cannot be retried. The synthetic receipt
+is3,084bytes and retains all10 checkpoint files, with no credit for the pending
+trial. Actual full-panel metadata fit remains unproven.
+
+All17 bounded CPU checks passed on unchanged source, including preserved failure
+paths, late-change rejection and existing-reader compatibility. No resource
+guard failed and final process inspection found no research workers.
+
+This is controller preparation, with no new model-quality result or training.
+Slot17 readiness/entry and parent dispatch, remaining fresh slots, inference and
+real numerical/input/measured-pilot and metadata gates still precede freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot17-startup-v2-component-review.json`.

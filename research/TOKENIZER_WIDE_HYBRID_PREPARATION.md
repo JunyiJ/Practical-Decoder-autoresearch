@@ -2731,3 +2731,38 @@ remaining finite fresh slots. Inference, full real metadata accounting and
 actual nine-case numerical/input/measured-pilot prerequisites still precede
 freeze. No research training, MPS work, protected checkpoint cleanup, closed
 numerical-fixture retry or test-holdout evaluation occurred.
+
+## October 28 slot17 compact startup receipt
+
+The separate slot17 startup writer publishes one attempt, the independently
+frozen pending request and a compact receipt under the current parent. It
+replays completed slot16 history before and after request publication, preserves
+failures and refuses retries. The receipt binds the exact prior dispatch,
+original retention lineage, source, completed-record/checkpoint/stage digests,
+evidence and controls, and complete remaining storage. Controls are pinned
+before final replay and checked again before publication.
+
+Its independent consumer reconstructs the entire retained history and original
+transport rather than trusting the compact claims. Only the explicitly bound
+receipt is added to the slot17 preparation contract; public idle and append-only
+readers remain strict. No readiness, child dispatch or later slot is enabled.
+
+The disposable fixture retains17 completed records and10 checkpoint files. The
+pending slot17 request earns no completed-trial or capacity credit. Its receipt
+is3,084bytes, meta group1,511,070 of2,097,152bytes and total metadata2,078,917bytes.
+This synthetic census does not establish real-panel metadata fit. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-startup-v2-component-review.json`.
+
+All17 cases passed on unchanged source in serial batches of189.16s,355.02s and
+279.54s, with peak RSS245,071,872bytes. Each retained the600-second,4GiB RSS and
+8GiB reserve limits. No test, driver or resource-guard failure occurred. Checks
+covered publication/replay, rehashed false claims, unsupported outputs/slots,
+preserved failures/no retries, late evidence/control/source/space/STOP changes,
+post-replay control additions and old append/idle compatibility. The final
+process inspection found no research training/test workers.
+
+Next integrate slot17 readiness and child entry, then parent acceptance/serial
+dispatch and remaining finite fresh slots18–23. V2 inference, full real metadata
+accounting and actual nine-case numerical/input/measured-pilot gates remain
+before finite-plan freeze. Training remains unlaunched; the closed failed
+combined numerical fixture and test holdout remain untouched.
