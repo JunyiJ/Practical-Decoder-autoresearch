@@ -2886,3 +2886,43 @@ inventory anchor; one new reference link per slot would exceed the cap at23.
 V2 inference, full real metadata accounting and actual nine-case numerical/input/
 measured-pilot gates remain before finite-plan freeze. No research training,
 protected checkpoint cleanup, closed numerical-fixture retry or holdout use occurred.
+
+## Finite remaining-fresh append and storage contracts
+
+The shared append validator now declares exact paths and immediate-prior lineage
+for slots18–23. Full preparation replay is integrated only for slot18 around the
+completed slot17 history; public requests for slots19–23 still fail before
+mutation. The explicit capability permits one bounded current-parent startup
+guard, its exact attempt and an optional independently frozen pending request.
+It permits no compact startup receipt, readiness, child output or next-slot append.
+Existing public idle readers remain strict.
+
+The storage contract now supports explicitly bound pending requests at each
+remaining finite position through23, with tests for every supported position
+16–23 and rejection outside that range. Pending spec/order/result path and
+inventory must match; original checkpoint and retention audits, full future
+capacity, reserve and final integrity checks remain. A pending request earns
+no completed-record, checkpoint, occupied-capacity or future-storage credit.
+Historical acceptance permits the slot18 request only through the explicit
+slot17 replay path; immediate parent acceptance does not acquire that capability.
+
+The slot18 synthetic preparation retains18 completed records and12 live checkpoint
+files, with required free space30,153,547,736bytes unchanged. Its meta group uses
+1,539,139 of2,097,152bytes and total metadata is2,125,961bytes. Full real-panel
+metadata fit remains unproven. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/remaining-append-v2-component-review.json`.
+
+All101 checks passed on unchanged source in serial batches of208.76s and332.46s.
+Peak RSS was247,496,704bytes; both retained the600-second,4GiB RSS and8GiB reserve
+limits. No test, driver or resource-guard failure occurred. Coverage includes the
+full65-case storage module, every pending position16–23, explicit slot18 replay,
+shared finite boundaries, old append/idle compatibility and integrity/late-change
+rejection. Final process inspection found no research training/test workers.
+
+Next publish and independently verify the compact slot18 startup receipt, using
+shared finite-slot validation, then complete remaining readiness/entry and serial
+transitions. Later readiness seals must use a stable earlier inventory anchor;
+one link per slot would exceed the16-document cap at23. Inference, full real
+metadata accounting and actual numerical/input/measured-pilot gates remain before
+finite-plan freeze. No research training, protected checkpoint deletion, closed
+numerical-fixture retry or test-holdout use occurred.

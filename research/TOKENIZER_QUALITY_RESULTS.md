@@ -1102,3 +1102,20 @@ and metadata gates before freeze. Evidence:
 All19 bounded checks passed on unchanged source, including changed-parent replay,
 false receipt/capacity rejection, integrity checks and slot16 compatibility.
 No resource guard failed, and final inspection found no research workers.
+
+## Finite remaining-fresh append and storage contracts
+
+Slot18 preparation now replays complete slot17 history with an explicitly bound
+attempt, current-parent guard and optional frozen pending request. Shared naming
+and storage contracts cover the finite remaining positions, while full replay for
+slots19–23 remains closed pending integration. The pending request changes none
+of the18 completed records, six retained pairs or required future storage.
+
+This is synthetic controller preparation with no new model-quality result or
+training. Compact startup publication, remaining serial integration, inference,
+real metadata fit and actual prerequisite gates still precede freeze. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/remaining-append-v2-component-review.json`.
+
+All101 bounded checks passed on unchanged source, including the full storage
+suite, slot18 preparation, prior API compatibility and integrity rejection.
+No resource guard failed, and final inspection found no research workers.
