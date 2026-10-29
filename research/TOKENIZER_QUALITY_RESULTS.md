@@ -1279,3 +1279,19 @@ found no research workers. This is synthetic preparation with no new model-quali
 result or training. Next add explicit slot20 preparation. Remaining integration,
 inference, real metadata fit and actual prerequisite gates still precede freeze.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-history-v2-component-review.json`.
+
+
+## Sixth-fresh preparation replay
+
+Slot20 preparation now independently replays completed slot19 with an explicitly
+bound attempt, current-parent guard and optional frozen request. All 20 completed
+records, eight protected pairs and full remaining-storage requirements stay
+unchanged. Ordinary idle replay and immediate-parent acceptance remain strict.
+
+All 37 guarded checks passed on unchanged source, including capacity preservation,
+API boundaries, integrity/late-change rejection and slot19 compatibility. No
+resource guard failed; final inspection found no research workers. This is
+synthetic preparation with no model-quality result or training. Next publish and
+independently consume compact slot20 startup. Remaining integration, inference,
+real metadata fit and actual prerequisite gates still precede finite-plan freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-append-v2-component-review.json`.

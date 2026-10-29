@@ -162,8 +162,8 @@ def test_slot20_pending_request_stays_closed_for_immediate_slot19_parent(writer)
     assert not (writer.root/'evidence').exists()
 
 
-def test_pending_request_is_closed_even_with_valid_historical_slot19_identity(writer):
+def test_pending_request_is_closed_for_unintegrated_historical_slot20(writer):
     with pytest.raises(ValueError,match='Pending fresh request'):
-        history.acceptance._review_completed(writer,19,{},{},{},
+        history.acceptance._review_completed(writer,20,{},{},{},
             historical_identity=dict(parent_pid=5,lock_fds=(3,4)),pending_confirmation_request={})
     assert not (writer.root/'evidence').exists()

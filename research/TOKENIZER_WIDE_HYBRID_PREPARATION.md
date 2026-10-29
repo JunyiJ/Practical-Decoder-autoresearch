@@ -3266,3 +3266,38 @@ strict, then integrate its compact startup and the finite remainder. Inference,
 real metadata fit and actual numerical/input/measured-pilot gates still precede
 freeze. No research training, model-quality result, protected deletion, closed
 numerical-fixture retry or test-holdout use occurred.
+
+
+## Explicit sixth-fresh preparation replay
+
+The shared remaining-fresh preparation verifier now supports exact slots18..20.
+Slot20 uses the independent completed-slot19 reader with only an explicitly
+validated current-parent bounded startup guard, exact attempt and optional
+independently frozen pending request. Original transport/retention lineage, all
+20 completed records, eight protected pairs and full current/historical capacity
+remain bound. The ordinary slot19 idle reader stays strict.
+
+Pending slot20 earns no completed-record, checkpoint or occupied-capacity credit.
+It is admitted only through explicit historical replay; immediate-parent
+acceptance still rejects pending requests. Full preparation21..23, compact
+slot20 startup publication, readiness and dispatch remain closed.
+
+All 37 guarded checks passed on unchanged source in two serial batches. Coverage
+includes different-parent preparation, guard finalization, no pending credit,
+strict/unbound-request rejection, finite paths/types/predecessor boundaries,
+immediate-parent restrictions, false claims and undeclared outputs/controls,
+protected evidence, late mutations/STOP and slot19 preparation/history compatibility.
+No test, driver or resource guard failed; final inspection found no research workers.
+
+The synthetic pending state retains 20 completed records and all 16 checkpoint
+files. Its meta group uses 1,611,711 of 2,097,152 bytes; total
+metadata is 2,232,337 bytes and remaining required free space is
+30,153,547,670 bytes, unchanged by the pending request. Full
+real-panel fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-append-v2-component-review.json`.
+
+Next publish and independently consume compact slot20 startup while preserving
+slot18/19 compatibility, then complete the finite remaining transitions. Keep
+stable slot16 inventory anchors and existing caps. Inference, real metadata fit
+and actual prerequisite gates still precede freeze. No research training,
+protected deletion, closed numerical-fixture retry or test-holdout use occurred.

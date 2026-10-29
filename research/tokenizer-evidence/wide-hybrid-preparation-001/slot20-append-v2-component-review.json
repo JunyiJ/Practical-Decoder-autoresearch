@@ -1,0 +1,86 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "9a358311ecd6ddf94a2423067851c364f7b450cb",
+  "check_executions_passed": 37,
+  "created_at": "2026-10-29T12:23:49.557117+00:00",
+  "distinct_test_cases": 37,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-core-guard.json": "2f526d339cb6abfbac9484ac6ac3c03ed80a714ccfaa6a3405152e661bbadc67",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-core-tests.log": "606a31aeb867c3b09a143a09a65d86d8c28493cb14f04903eb97b085dd076e20",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-integrity-guard.json": "c45d52fabd876a6e7a917ddd5d19242207ea3dc6cb38e3a66f989eda52eb2065",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-integrity-tests.log": "02e799a6d26f8b15b442209bb69560c15301eee90bb227c5e4c61506695ad488",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot20-append-census.json": "6a45e06775b8f3df61f4e44353955d05440f581963da3b470748ef96e957e412",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot20-append-source-hashes.json": "02908217b59ea771e1f842d08af06e1dcfd2000c580ec0624d375bd07a881314",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "81497e913bcf4306be3823182e0eebc2911322298402d7a61cb57b6bb7c95264",
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_append_v2.py": "5953221c98bb11f91f8766af7daa6630a66b03de506ffcbbeac9af49304d5501",
+    "src/research/tokenizer_wide_hybrid_slot19_history_v2.py": "001b9e80501fd4edbd0e448b9069db3228ebc56eb6eb8a9d29aa9f7ce2a2d575",
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_append_v2.py": "6e37aadf25daa6dce68d9d8b039a1c3ed5018c48823057edf14d6cdfbe475c9e",
+    "tests/test_tokenizer_wide_hybrid_slot19_append_v2.py": "699accfbc5732cd14b991ca7b4d86f18183157e78118cc47200d5a057f683c5b",
+    "tests/test_tokenizer_wide_hybrid_slot19_history_v2.py": "931a2caf339695481cb3c72aea312481e0aa5c2bb5004021205f5384a40451fd",
+    "tests/test_tokenizer_wide_hybrid_slot20_append_v2.py": "a0318196b773e26f617b796f9dd1bfa7b0cd8956d6addd0b908d2113821cc3c6"
+  },
+  "findings": [
+    "The shared remaining-fresh verifier now supports exact preparation slots18..20. Slot20 uses independently replayed completed slot19 with only an explicitly validated current-parent bounded startup guard, exact attempt and optional independently frozen request. Ordinary idle replay remains strict.",
+    "Slot20 preparation reaudits all20 completed records,8 protected selected/fresh pairs, original transport/retention lineage and current plus historical capacity. Adding the pending request changes none of the records/pairs/stages/rates/selection/audited indices, remaining projection, occupied capacity or free-space requirement.",
+    "Pending slot20 is allowed only through explicitly bound historical slot19 replay. Immediate-parent acceptance remains closed to pending requests, and unintegrated historical slot20 acceptance remains closed. Shared finite paths cover18..23; full preparation21..23 and compact slot20 startup/readiness/dispatch remain unsupported.",
+    "All37 checks passed on unchanged source: different-parent attempt/pending replay, guard finalization, no pending capacity credit, strict idle and unbound-request storage rejection, finite paths/types/predecessor boundaries, immediate-parent restrictions, false rehashed claims, undeclared outputs/controls/checkpoints, protected evidence and late attempt/request/guard/free-space/STOP changes, plus slot19 preparation/history compatibility."
+  ],
+  "free_bytes_observed": 55684534272,
+  "holdout_consumed": false,
+  "kind": "wide_hybrid_slot20_append_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic science/checkpoint bytes only; no real numerical correctness, model quality or MPS feasibility result.",
+    "Compact slot20 startup publication/reader and subsequent readiness/entry/parent dispatch are pending. Full remaining preparation21..23 is closed.",
+    "V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. The closed failed combined numerical fixture remains closed."
+  ],
+  "maximum_observed_rss_bytes": 251232256,
+  "next_action": "Publish and independently consume a compact slot20 startup receipt using the tested shared remaining-fresh preparation verifier. Bind the current parent, immediate slot19 dispatch, original slot15..18 transport and retention lineage, all20 completed records and8 protected pairs, complete frozen source/request/evidence/control identities and full remaining capacity. Preserve existing slot18/19 startup and history compatibility and strict ordinary readers; preserve failures and prohibit retries. Then complete slot20 readiness/entry/parent acceptance/serial support and remaining finite slots21..23 using stable original slot16 inventory anchors and unchanged16-document/8MiB chain caps. V2 inference, full real metadata fit and actual nine-case numerical/input/measured-pilot gates remain before finite-plan freeze. No closed failed numerical-fixture retry, closed-campaign reopening, protected deletion or test-holdout use.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "status": "slot20_attempt_pending_preparation_replay_tested_compact_startup_pending",
+  "synthetic_census": {
+    "completed_quality_records": 20,
+    "live_checkpoint_files": 16,
+    "meta_group_bytes": 1611711,
+    "metadata_bytes": 2232337,
+    "pending_slot": 20,
+    "real_panel_fit_proven": false,
+    "required_free_bytes": 30153547670
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-core-tests.log",
+      "passed": 34,
+      "peak_rss_bytes": 251232256,
+      "seconds": 334.83
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-integrity-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot20-append-v2-integrity-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 249413632,
+      "seconds": 541.36
+    }
+  ],
+  "training_launched": false
+}

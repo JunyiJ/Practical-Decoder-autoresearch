@@ -1,4 +1,4 @@
-"""Strict independent compact slot19 replay; no later append or launch.
+"""Strict slot19 replay with explicitly scoped slot20 preparation appends.
 
 Caller owns both worker locks, inspects processes and holds an outer resource
 guard. Historical PID/descriptors identify evidence, never a process to resume.
@@ -28,7 +28,7 @@ def _binding(root,ref):
     return dict(size=_path(root,ref['path']).stat().st_size,sha256=ref['sha256'])
 
 
-def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref):
+def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref,*,extra_control=None):
     root=writer.root/'evidence'
     _require(reference['path']=='meta/quality-dispatch-19.json','Exact slot19 dispatch reference required')
     saved=_document(root,reference);pid=saved.get('parent_pid');review=saved.get('review',{})
@@ -106,6 +106,11 @@ def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref):
     for ref in [*saved['guards'].values(),review['entry_guard'],review['supervisor_ref']]:
         _require(ref['path'] not in expected_controls,'Current child controls overlap sealed history')
         expected_controls[ref['path']]=_binding(writer.root,ref)
+    if extra_control is not None:
+        name,binding=extra_control
+        _require(name=='control/quality-confirm-startup-20.json' and name not in expected_controls,
+                 'Only separately validated slot20 preparation guard may append')
+        expected_controls[name]=binding
     _require(acceptance.readiness._controls(writer,'not-a-control')==expected_controls,
              'Exact original controls required; no later controls allowed')
     launch=_document(root,review['child']['launch']);argv=launch.get('argv')
@@ -142,18 +147,26 @@ def verify_confirmation_dispatch(writer,slot,plan_sha256,completion_ref,*,projec
     return _verify(writer,slot,plan_sha256,completion_ref,projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
 
 
-def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref):
+def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None):
     """Reconstruct the complete sealed history under independently verified identity."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==19,'Exact idle slot19 replay required')
     _sha(plan_sha256);root=writer.root/'evidence';_locks(root,writer.lock_fds);census=snapshot(writer.root)
     _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents replay')
     _require(not any(n.endswith('.tmp') or '-failure' in n for n in census['files']),'Failed/partial history cannot be accepted')
     inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
-    saved,identity,context=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
+    appended={};pending=None;extra_control=None
+    if preparation is not None:
+        from .tokenizer_wide_hybrid_remaining_confirmation_append_v2 import _append
+        appended,pending,extra_control=_append(writer,20,plan_sha256,completion_ref,projection_ref,
+            rank_completion_ref,_document(root,completion_ref),preparation)
+    saved,identity,context=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control)
     historical={n:v for n,v in inventory.items() if n!=completion_ref['path']};review=saved['review']
+    for name,binding in appended.items():
+        _require(historical.get(name)==binding,'Declared slot20 preparation binding differs')
+        historical.pop(name)
     _require(review['evidence_inventory_sha256']==digest(historical),'Exact slot19 post-child inventory required; no append')
     actual=acceptance._review_completed(writer,19,review['startup'],review['readiness'],
-        _document(root,review['child']['process']),historical_identity=identity)
+        _document(root,review['child']['process']),historical_identity=identity,pending_confirmation_request=pending)
     compact=dict(actual,representation=dispatch.REPRESENTATION)
     for key in ('completed_records','checkpoint_pairs','stages'):compact[key+'_sha256']=digest(compact.pop(key))
     dynamic={'storage','evidence_inventory_sha256'}
@@ -162,7 +175,7 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
     _storage(review['storage'],actual['storage'],historical)
     _prechild_storage(writer,context,actual['storage'])
     _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during replay')
-    again,_,_=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
+    again,_,_=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control)
     _require(again==saved and acceptance.readiness._controls(writer,'not-a-control')==controls,'Transport/control changed during replay')
     acceptance._check_inventory(root,inventory);_locks(root,writer.lock_fds)
     _require(snapshot(writer.root)==census and not (writer.root/'STOP').exists()
