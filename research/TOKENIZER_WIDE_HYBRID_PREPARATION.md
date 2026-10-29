@@ -4173,3 +4173,23 @@ LR/divisor/seed/width/budget, through the unchanged one-slot production wrapper.
 The two-cell review was committed and pushed as `ce4d9e7`. Frozen LR slot2
 started through production gates with parent5171 and child5184. Exactly one
 training worker is active; the wrapper stops after this all-KDA trial.
+
+
+### Campaign002 first LR trio independently verified — October29,2026
+
+All-KDA slot2 completed1200updates at width512/divisor4, LR0.000625,
+seed3501. Full-validation H200 CE is4.947694237; raw CE is4.975362476.
+The first LR trio is hybrid4.961644521, gated-MLA4.953339260 and
+KDA4.947694237. These single-seed screening differences do not determine
+family superiority, rate selection or adoption; the remaining six LR cells,
+rank stage and fresh confirmations retain their frozen rules.
+
+Child wall time was909.66s; sampled peak RSS2,600,484,864bytes and MPS
+driver4,104,044,544bytes passed the unchanged guards. Independent replay
+of all three completed cells passed the transport/scientific/checkpoint/input
+and retention-history checks. Lossless non-weight bytes and all hashes are
+archived in `tokenizer-evidence/wide-hybrid-preparation-001/campaign002-lr-prefix-03-v2-review.json`;
+its review guard finished. All three raw/H200 pairs remain. Full remaining
+storage requires26,907,661,636bytes against40,776,089,600bytes free.
+Test holdout is unused. Next is frozen slot3: all-KDA, LR0.00125,
+divisor4, seed3501, width512 and1200updates, through production serial gates.
