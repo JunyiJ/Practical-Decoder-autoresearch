@@ -3087,3 +3087,48 @@ original slot16 inventory anchors. Inference, full real metadata fit and actual
 numerical/input/measured-pilot gates remain before finite-plan freeze. No research
 training, protected checkpoint deletion, closed numerical-fixture retry or
 test-holdout use occurred.
+
+
+## Explicit slot19 preparation replay
+
+The shared remaining-fresh preparation verifier now supports exact slots18 and19.
+Slot19 uses the independent completed-slot18 reader with only an explicitly
+validated current-parent bounded startup guard, exact attempt and optional
+independently frozen pending request. Immediate-predecessor identity, original
+slot15–17 transport/retention lineage, full source/context/request bindings,
+19 completed records, seven retained pairs and all current/historical capacity
+checks remain. The ordinary slot18 idle reader stays strict; no other later
+artifact or control is allowed.
+
+A pending slot19 request earns no completed-record, checkpoint or occupied-capacity
+credit. Immediate-parent acceptance still rejects pending requests; the extra
+request is allowed only through explicitly bound historical replay. Shared paths
+and storage remain finite, while full preparation for slots20–23 stays closed.
+This iteration does not publish a production startup receipt, enable child entry
+or launch a training worker.
+
+The synthetic pending state retains19 completed records and14 checkpoint files.
+Its meta group uses1,573,363 of2,097,152bytes and total metadata is2,176,195bytes;
+full remaining free space is30,153,547,703bytes, unchanged by the pending request.
+Full real-panel fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-append-v2-component-review.json`.
+
+All37 checks passed on unchanged source in serial batches of275.14s and403.54s.
+Peak RSS was249,266,176bytes; both retained the600-second,4GiB RSS and8GiB reserve
+limits. Coverage includes different-parent attempt/pending replay, no capacity
+credit, strict idle and unbound-request rejection, finite paths/types/predecessor
+boundaries, immediate-parent restrictions, false claims and undeclared artifacts,
+protected evidence and late mutations/STOP, plus slot18 preparation/history
+compatibility. No test, driver or resource guard failed. Final process inspection
+found no research workers.
+
+Next publish and independently consume compact slot19 startup while preserving
+slot18 compatibility, then finish remaining readiness/entry/parent transitions.
+Keep stable slot16 inventory anchors and existing caps. Inference, full real
+metadata fit and actual numerical/input/measured-pilot gates remain before freeze.
+No research training, protected checkpoint deletion, closed numerical-fixture
+retry or test-holdout use occurred.
+
+Staged whitespace review removed only an extra EOF blank line in the new test.
+The exact tested snapshot and original hash manifest are preserved; the Python
+AST is identical. No production source changed or behavioral tests were repeated.

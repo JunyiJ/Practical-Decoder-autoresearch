@@ -1195,3 +1195,21 @@ All24 guarded checks passed on unchanged source, including historical capacity,
 integrity and late-change rejection, exact API boundaries and slot17 compatibility.
 No resource guard failed; final inspection found no research workers. Next add
 explicit slot19 preparation while keeping the ordinary idle reader strict.
+
+
+## Fifth-fresh preparation replay
+
+Slot19 preparation now independently replays completed slot18 with an explicitly
+bound attempt, current-parent guard and optional frozen request. All19 completed
+records, seven retained pairs and full remaining-storage requirements stay
+unchanged. Ordinary idle replay and immediate-parent acceptance remain strict.
+
+This is synthetic controller preparation with no model-quality result or
+training. Compact slot19 startup publication, remaining finite integration,
+inference, real metadata fit and actual prerequisite gates still precede freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-append-v2-component-review.json`.
+
+All37 guarded checks passed on unchanged source, including capacity preservation,
+API boundaries, integrity/late-change rejection and slot18 compatibility. No
+resource guard failed; final inspection found no research workers. Next publish
+and independently consume compact slot19 startup.

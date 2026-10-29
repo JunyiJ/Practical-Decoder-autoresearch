@@ -155,8 +155,8 @@ def test_invalid_historical_identity_cannot_enter_slot18_audit(writer,identity):
     assert not (writer.root/'evidence').exists()
 
 
-def test_slot19_pending_request_stays_closed_even_with_historical_slot18_identity(writer):
+def test_slot19_pending_request_stays_closed_for_immediate_slot18_parent(writer):
     with pytest.raises(ValueError,match='Pending fresh request'):
         history.acceptance._review_completed(writer,18,{},{},{},
-            historical_identity=dict(parent_pid=5,lock_fds=(3,4)),pending_confirmation_request={})
+            pending_confirmation_request={})
     assert not (writer.root/'evidence').exists()
