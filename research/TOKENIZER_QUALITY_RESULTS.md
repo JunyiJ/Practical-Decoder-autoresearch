@@ -2023,3 +2023,23 @@ training implementation, frozen plan, guard or statistical rule changed.
 Slot0 review/evidence was committed and pushed as `cd46ebc`. Frozen LR slot1
 started through production gates with parent4486 and child4497. The wrapper
 stops after this slot; later slots require fresh prefix review and serial dispatch.
+
+
+### Campaign002 LR slot1 independently verified — October29,2026
+
+All-gated-MLA at width512/divisor4, LR0.000625, seed3501 completed1200updates.
+Full-validation H200 CE is4.953339260; raw endpoint CE is4.920094199.
+Hybrid minus gated-MLA H200 CE at this one LR/seed is+0.008305262;
+this incomplete screening comparison supports no selection or adoption.
+H200 remains the declared selector even when the raw endpoint scores lower.
+Child wall time was467.00s, sampled peak RSS3,169,337,344bytes and
+MPS driver3,567,042,560bytes. All guards passed; test holdout stays closed.
+
+Independent replay of both completed LR cells passed, including original
+transport/control receipts, checkpoint hashes, scientific artifacts, pilot
+retention history and frozen bindings. Exact non-weight bytes and file hashes
+are archived in `tokenizer-evidence/wide-hybrid-preparation-001/campaign002-lr-prefix-02-v2-review.json`;
+its guard finished successfully. Both raw/H200 pairs remain protected during
+the incomplete screen. Remaining full-panel storage requires28,162,784,220bytes
+against42,054,352,896bytes free. Next is frozen slot2: all-KDA at the same
+LR/divisor/seed/width/budget, through the unchanged one-slot production wrapper.
