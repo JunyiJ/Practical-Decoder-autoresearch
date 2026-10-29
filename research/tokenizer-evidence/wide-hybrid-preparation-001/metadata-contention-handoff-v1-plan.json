@@ -1,0 +1,24 @@
+{
+  "kind": "bounded_nontraining_contention_handoff_v1",
+  "script_sha256": "4065eda2242ef6996d3f3f36b5ee1f45f824853751e74fbf02907e4abfd349da",
+  "sources": {
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "e486260aa6c2fd33ad8616c51529fd34fc2318bfca5d8c1b79c69a6a053d4e6a",
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": "99b9f6f65cd57fc6f94c9d4f246743ddd313b2ac7541061326fa43b50f55e904",
+    "src/research/tokenizer_wide_hybrid_process_v2.py": "798774cf0d90fb7c1cd56c6b72ccf4284be1335a9513c13d5fcc2b513240aad4",
+    "src/research/tokenizer_wide_hybrid_metadata.py": "28059390a6edb46651fb967be492fc4b713a29b29d60419569aea0379d082f6c",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+    "src/research/tokenizer_wide_hybrid_cleanup.py": "1a5b7e92f2da0f2d8ca969234c8d6631b8bd9905916b128174f8829237205ea0"
+  },
+  "census_files": 800,
+  "checkpoint_bytes": 58720256,
+  "output_cap_bytes": 67108864,
+  "wall_seconds": 180,
+  "child_wall_seconds": 150,
+  "rss_limit_bytes": 4294967296,
+  "reserve_bytes": 8589934592,
+  "child_count": 1,
+  "attempts": 1,
+  "retry_allowed": false,
+  "training": false,
+  "scope": "One changed-source handoff check using the same56MiB/800file synthetic workload and unchanged two-second lock deadline. Checkpoint writer adds20ms namespace-free intervals per accumulated MiB. No model/corpus/training; baseline remains immutable; scheduling comparison is descriptive, not proof original failure was reproduced or eliminated."
+}

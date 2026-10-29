@@ -2160,3 +2160,48 @@ integrity, storage checks and independent resource supervision. No arbitrary
 lock-timeout increase or disabled guard is justified by this failure. A fresh
 source/evidence applicability review and finite campaign plan are required before
 any later training; neither002 nor any earlier closed fixture is reopened.
+
+
+### Checkpoint namespace handoff mitigation — October29,2026
+
+A separately frozen nontraining baseline used one child, an800-file synthetic
+metadata census and56MiB of unpaced checkpoint bytes. It preserved the original
+2s lock deadline and1MiB chunks,180s parent/150s child limits,4GiB RSS,
+8GiB reserve and64MiB total output cap. It completed in1.88s; the parent
+waited up to0.40315s while the longest measured hold was0.02817s. Only one
+resource sample occurred. This did not reproduce the original failure; its
+larger census and much smaller checkpoint differ from002's250files/761MiB
+failed partial. Instrumentation can also affect scheduling. Baseline plan,
+script, original source and lossless metadata are retained.
+
+Only the production checkpoint writer changes: after each accumulated MiB it
+yields20ms outside the namespace lock, including across small serialization
+callbacks. This gives other publishers an interval to acquire the lock before
+more checkpoint output. It preserves the2s deadline and all byte/inode/hash,
+capacity, disk, memory and supervision checks. It adds intentional output time;
+it is a cooperative mitigation, not a guarantee of scheduler fairness.
+
+All134 checkpoint/metadata/process tests pass under the bounded test guard.
+New tests verify both supervisor and resource publishers finish during a
+namespace-free handoff, and small callbacks accumulate yields without changing
+bytes. Existing lock-timeout, partial retention, mutation, storage and process
+failure checks still pass. A distinct changed-source fixture with the same
+56MiB/800file workload completed in3.91s: parent maximum wait0.05603s,
+maximum hold0.03078s and three resource samples. Both fixtures verified exact
+output hashes; these single observations do not establish general performance
+or prove the original failure is eliminated.
+
+The independent report `tokenizer-evidence/wide-hybrid-preparation-001/checkpoint-handoff-v1-review.json`
+archives the tests and changed-source fixture and verifies every closed002
+file remains unchanged, including five accepted pairs and the failed partial.
+No training, numerical panel, closed fixture or failed trial was rerun. An
+initial report command used system Python and failed importing a dependency
+before any review mutation; the report then completed under the repository
+venv. Both original fixture attempts remain immutable.
+
+Before further training: explicitly review source applicability of this
+scheduling-only change, preserve original executed-source provenance, and
+re-audit a fresh finite plan's complete storage/metadata envelope including
+all002 protected weights. Old001/002 remain closed. Do not use the passed
+synthetic fixture as a pilot, numerical or quality result, or reuse002 process
+receipts as a new campaign's transport provenance.

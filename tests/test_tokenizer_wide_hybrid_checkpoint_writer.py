@@ -175,6 +175,51 @@ def test_chunked_digest_and_namespace_lock_released(writer,monkeypatch):
     writer.publish_json('control/after.json',{'done':True})
 
 
+def test_checkpoint_handoff_admits_supervisor_and_resource_publishers(writer,monkeypatch):
+    """Both competing publishers must finish while the checkpoint yields."""
+    import threading
+    monkeypatch.setattr(checkpoints,'CHUNK_BYTES',4)
+    wake=threading.Event();handoffs=[]
+    stream=producer(writer).open('raw.pt')
+    events=writer.open_append('evidence/quality/00/resource-events.jsonl')
+    def supervisor():
+        assert wake.wait(2)
+        writer.publish_json('control/supervisor.json',{'sample':1})
+    def resource():
+        assert wake.wait(2)
+        events.write(b'{"sample":1}\n')
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        tasks=[pool.submit(supervisor),pool.submit(resource)]
+        def handoff(seconds):
+            assert seconds==.02
+            handoffs.append(seconds);wake.set()
+            for task in tasks:task.result(timeout=2)
+        monkeypatch.setattr(checkpoints,'_handoff',handoff)
+        stream.write(b'0123456789');receipt=stream.publish()
+    events.close()
+    assert len(handoffs)==2
+    assert Path(receipt['path']).read_bytes()==b'0123456789'
+    assert receipt['sha256']==hashlib.sha256(b'0123456789').hexdigest()
+    assert json_load(writer.root/'control/supervisor.json')=={'sample':1}
+
+
+def json_load(path):
+    import json
+    return json.loads(path.read_text())
+
+
+def test_small_callbacks_accumulate_handoff_without_changing_bytes(writer,monkeypatch):
+    monkeypatch.setattr(checkpoints,'CHUNK_BYTES',4)
+    pauses=[];monkeypatch.setattr(checkpoints,'_handoff',pauses.append)
+    stream=producer(writer).open('raw.pt')
+    stream.write(b'abc');assert pauses==[]
+    stream.write(b'def');assert pauses==[.02]
+    stream.write(b'gh');assert pauses==[.02,.02]
+    receipt=stream.publish()
+    assert Path(receipt['path']).read_bytes()==b'abcdefgh'
+    assert receipt['sha256']==hashlib.sha256(b'abcdefgh').hexdigest()
+
+
 @pytest.mark.parametrize('buffer',[bytearray(b'abc'),memoryview(b'abc'),memoryview(bytearray(b'abc'))])
 def test_buffer_protocol_support(writer,buffer):
     stream=producer(writer).open('raw.pt')

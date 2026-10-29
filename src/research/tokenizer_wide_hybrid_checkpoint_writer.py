@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import shutil
 import threading
+from time import sleep as _handoff
 
 from .tokenizer_wide_hybrid_cleanup import _sync_directory
 from .tokenizer_wide_hybrid_metadata import snapshot, MAX_FILES
@@ -17,6 +18,10 @@ from .tokenizer_wide_hybrid_retention import RESERVE
 from .tokenizer_wide_hybrid_retention_receipts import _path
 
 CHUNK_BYTES=1024**2
+# Leave two metadata-lock polling intervals outside the namespace lock after
+# each MiB of output. Immediate reacquisition can starve the parent/recorder.
+# This is cooperative scheduling, not a relaxation of the two-second timeout.
+HANDOFF_SECONDS=.02
 
 
 class CheckpointWriter:
@@ -79,6 +84,7 @@ class CheckpointStream:
         st=os.fstat(fd);self._inode=(st.st_dev,st.st_ino)
         self._stamp=(st.st_mtime_ns,st.st_ctime_ns)
         self._size=0;self._digest=hashlib.sha256();self._mutex=threading.RLock()
+        self._handoff_bytes=0
         self.closed=False
 
     def _identity(self):
@@ -113,6 +119,12 @@ class CheckpointStream:
                         self._digest.update(piece);self._size+=len(piece)
                         current=os.fstat(self._fd)
                         self._stamp=(current.st_mtime_ns,current.st_ctime_ns)
+                    self._handoff_bytes+=len(piece)
+                    if self._handoff_bytes>=CHUNK_BYTES:
+                        self._handoff_bytes%=CHUNK_BYTES
+                        # No namespace lock is held while other producers run.
+                        # Accumulate across small torch.save callbacks as well.
+                        _handoff(HANDOFF_SECONDS)
                 return len(view)
             except BaseException:
                 self.close();raise
