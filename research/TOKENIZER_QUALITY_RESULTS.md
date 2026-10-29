@@ -1012,3 +1012,18 @@ This is controller preparation with no new model-quality result. Slot17–23
 integration, inference and actual numerical/input/measured-pilot and real metadata
 prerequisites still precede freeze. Evidence:
 `tokenizer-evidence/wide-hybrid-preparation-001/slot16-history-v2-component-review.json`.
+
+
+## October 28 slot17 preparation append contract
+
+Slot17 now has an explicit read-only attempt/guard/pending-request contract around
+full slot16 history replay. The new attempt must bind its current parent, and
+the request must match the independently frozen option. Completed history and
+required storage remain unchanged: a pending request earns no trial or checkpoint
+credit. Existing idle readers stay strict, and no child dispatch is enabled.
+
+Compact startup publication and later serial integration remain, followed by
+inference, real metadata fit and actual numerical/input/measured-pilot gates
+before freeze. This is synthetic controller preparation with no new quality
+result or training. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-append-v2-component-review.json`.

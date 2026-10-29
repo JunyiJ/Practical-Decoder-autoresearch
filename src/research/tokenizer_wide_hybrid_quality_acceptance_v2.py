@@ -145,8 +145,8 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     parent/descriptor identity. That read-only path never launches or resumes a
     process; all scientific, transport and capacity audits still run.
     """
-    _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot==15,
-             'Pending fresh request is limited to historical first-fresh replay')
+    _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot in (15,16),
+             'Pending fresh request is limited to supported historical replay')
     transport=_completed_transport(writer,slot,startup_ref,readiness_ref,process,historical_identity=historical_identity)
     seal=transport['seal'];startup=transport['startup'];bound=transport['bound'];request=transport['request']
     allowance=transport['allowance'];refs=transport['refs'];terminal=transport['terminal']
@@ -212,10 +212,10 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         _require(digest(exact)==digest(bound) and requests[-1]==request,
                  'Independent frozen confirmation requests differ after child')
         if pending_confirmation_request is not None:
-            later,later_requests=_frozen(writer,16,seal['plan_sha256'],seal['projection_ref'],rates,selected_choice)
+            later,later_requests=_frozen(writer,slot+1,seal['plan_sha256'],seal['projection_ref'],rates,selected_choice)
             _require(digest(later)==digest(bound) and later_requests[:-1]==requests
                 and digest(later_requests[-1])==digest(pending_confirmation_request),
-                'Pending slot16 request differs from independent frozen choice')
+                'Pending next-fresh request differs from independent frozen choice')
         prefix=bind_confirmation_prefix(root,context=bound['context'],screen_records=rank['records'],
             rates=rates,selection=selected_choice,screen_requests=requests[:15],confirmation_requests=requests[15:],
             evidence={n:v['sha256'] for n,v in inventory.items() if not n.endswith('.pt')},
@@ -234,8 +234,8 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     projection=_document(root,seal['projection_ref'])
     storage_options={}
     if pending_confirmation_request is not None:
-        storage_options['pending_request_ref']=dict(path='quality/16/request.json',
-            sha256=inventory['quality/16/request.json']['sha256'])
+        pending_name=f'quality/{slot+1:02d}/request.json'
+        storage_options['pending_request_ref']=dict(path=pending_name,sha256=inventory[pending_name]['sha256'])
     storage=bind_storage(writer.root,projection,pilots=history['records'],records=prefix['records'],
         rates=rates,selection=selected_choice,stages=stages,current_inventory=inventory,
         checkpoint_pairs=pairs,lock_fds=writer.lock_fds,**storage_options)

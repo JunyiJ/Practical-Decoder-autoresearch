@@ -89,7 +89,7 @@ def bind_storage(campaign,projection,*,pilots,records,rates,selection,stages,
     checkpoint_pairs contains ALL completed original pairs, including deleted
     ones: keys pilot/00..02 and quality/00..23, values raw/h200 path,size,sha256
     relative to evidence/. It cannot excuse unreviewed or failed output.
-    The explicit slot16 request allowance requires a separately frozen/audited
+    The explicit slot16/17 request allowance requires a separately frozen/audited
     caller binding. It never changes completed records, pairs or future capacity.
     """
     root=Path(campaign).absolute()
@@ -101,13 +101,13 @@ def bind_storage(campaign,projection,*,pilots,records,rates,selection,stages,
     if not isinstance(current_inventory,dict):raise ValueError('Complete current inventory required')
     pending_name=None
     if pending_request_ref is not None:
-        if (len(stages)!=3 or len(records)!=16 or type(pending_request_ref) is not dict
+        if (len(stages)!=3 or len(records) not in (16,17) or type(pending_request_ref) is not dict
                 or set(pending_request_ref)!={'path','sha256'}
-                or pending_request_ref['path']!='quality/16/request.json'):
-            raise ValueError('Only the explicit pending slot16 request is supported')
+                or pending_request_ref['path']!=f'quality/{len(records):02d}/request.json'):
+            raise ValueError('Only explicit pending slot16/17 requests are supported')
         pending_name=pending_request_ref['path'];request=_document(evidence,pending_request_ref)
-        if (digest(request.get('spec'))!=digest(rules.confirmation_specs(selection)[1])
-                or request.get('result_path')!=str(evidence/'quality/16/result.json')
+        if (digest(request.get('spec'))!=digest(rules.confirmation_specs(selection)[len(records)-15])
+                or request.get('result_path')!=str(evidence/f'quality/{len(records):02d}/result.json')
                 or current_inventory.get(pending_name)!=dict(size=_path(evidence,pending_name).stat().st_size,
                                                              sha256=pending_request_ref['sha256'])):
             raise ValueError('Pending request order or inventory binding differs')

@@ -2688,3 +2688,46 @@ references and independently verified prior transport. Inference, full real
 metadata accounting and actual nine-case numerical/input/measured-pilot
 prerequisites remain before freeze. No model training, MPS work, protected
 checkpoint cleanup, closed-fixture retry or test-holdout evaluation occurred.
+
+
+## October 28 slot17 preparation append contract
+
+A separate read-only contract now accepts exactly slot17's current-parent bounded
+startup guard, immutable attempt and optional independently frozen pending request
+while fully replaying completed slot16 history. Historical parent/descriptors
+continue to identify original evidence; they do not substitute for the new
+attempt's current parent. Starting and finished guards require the unchanged
+1800-second,4GiB RSS and8GiB reserve contract.
+
+The public slot16 idle reader remains strict. Only the explicit preparation API
+may remove those exact declared append bindings when reconstructing the original
+post-child inventory. All selected/fresh science, original transport, retention
+proofs, compact claims, prechild/current/future capacity and final integrity
+checks still run. Unsupported current outputs, startup/readiness/process
+artifacts, later slots and undeclared controls cannot acquire historical credit.
+
+The pending slot17 request must equal the independent frozen plan option. Both
+the scientific-prefix and storage readers recognize it only through explicit
+caller bindings; ordinary storage still rejects the extra request. It creates
+no completed record or checkpoint pair and changes neither the occupied
+checkpoint capacity nor the remaining full-panel requirement. Only17 completed
+records and10 live checkpoint files remain, with required free space
+30,153,547,769bytes in the synthetic fixture.
+
+The fixture's meta group uses1,507,860 of2,097,152bytes and total metadata is
+2,075,132bytes. This does not prove real-panel metadata fit. Source/test hashes,
+guards and exact verdicts are retained in
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-append-v2-component-review.json`.
+
+All73 checks passed on unchanged source in two serial batches of167.91s and
+267.70s. Peak RSS was245,104,640bytes; both batches kept the600-second,4GiB RSS
+and8GiB reserve limits. No test, driver or resource-guard failure occurred.
+Coverage includes the full existing storage module, old slot16 append behavior
+and strict idle slot16 replay, as well as the new preparation/rejection cases.
+
+Next publish the exclusive compact slot17 startup receipt and independently
+verify it, then integrate readiness/child/parent serial transitions and the
+remaining finite fresh slots. Inference, full real metadata accounting and
+actual nine-case numerical/input/measured-pilot prerequisites still precede
+freeze. No research training, MPS work, protected checkpoint cleanup, closed
+numerical-fixture retry or test-holdout evaluation occurred.
