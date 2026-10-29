@@ -1947,3 +1947,49 @@ train-input evidence remain applicable by explicit review, without claiming
 those old runs executed under the new hash. A new package and finite freeze
 must bind both source identities, that applicability review and original
 evidence. No quality training has started; replacement campaign gates remain.
+
+
+### Replacement campaign002 frozen — October29,2026
+
+The pre-freeze audit found the live-census comparison in child entry as well
+as readiness. Entry now excludes only that counter while preserving all
+append-only log, immutable inventory, control, transport and storage checks.
+All40 distinct entry cases pass:39 passed initially, with an overflow error
+message mismatch because the real census rejected it earlier; all5 log cases
+passed after updating that test expectation in a fresh small fixture. Initial
+log/source preserved. The unchanged readiness fix retains its26-case pass.
+
+The explicit source-applicability review verifies only these two control files
+changed; the other226 source hashes and runtime match the actually executed
+numerical/input evidence. Campaign002 binds a lossless attachment containing
+the original reports and applicability review. No numerical/input rerun and
+no transplant of old pilot/process/cleanup receipts occurred.
+
+Plan SHA256 `dba216b378680ecd56641051c00c5077cb99006f45858ddc03bb23f338cfc769` fixes3 pilots,24 quality trajectories and108
+conditional requests under the same scientific/resource/retention rules.
+Meta envelope: 2,073,259 of2,097,152bytes; 23,893bytes
+remaining. Other groups fit; file peak855. The unmodified production binder
+passes. The freeze/evidence commit is e04f4a0. Campaign001 remains closed.
+The serial starter will run3 new guarded pilots, verify their retention
+boundary, then admit only quality slot0 through production readiness.
+
+
+### Campaign002 resource acceptance and first quality training — October29,2026
+
+All3 new resource pilots passed independent acceptance with raw/H200 cache
+checks and tensor audits. Durations were47.69s, 41.76s, 56.53s
+for hybrid, gated MLA and KDA. Peak RSS was3,233,333,248
+bytes; peak MPS driver memory was4,112,433,152
+bytes, within the original4/6GiB limits. The exact authorized pilot-retention
+manifest completed and its boundary was independently verified. Original
+pilot metadata and boundary files are archived; no unrelated or protected
+weights were targeted.
+
+Quality slot0 has passed the corrected readiness and live-child handoff and
+started real MPS training: width512 hybrid, divisor4, LR0.000625, seed3501,
+1200steps. Parent PID3352, child PID3463 at this observation.
+Only one training worker is active. The starter stops after this one quality
+trial; future LR slots require their production gates and explicit next
+continuation. No quality result, selection or adoption is claimed yet.
+Follow actual process/events and `campaign002-terminal-v2.json`; never launch
+a duplicate while it runs, and preserve/close any failure without retry.
