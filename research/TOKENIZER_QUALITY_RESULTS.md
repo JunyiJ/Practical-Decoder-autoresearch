@@ -2115,3 +2115,7 @@ its guard finished. Full remaining storage requires24,405,766,076bytes
 against38,221,434,880bytes free. All five raw/H200 pairs remain and test
 holdout is closed. Next is frozen slot5: gated-MLA at LR0.00125,
 divisor4, seed3501, width512 and1200updates.
+
+The five-cell review was committed and pushed as `a1b0bf1`. Frozen LR slot5
+started through production gates with parent7791 and child7818. The sole
+training worker runs gated-MLA at LR0.00125; the wrapper stops after this trial.
