@@ -166,7 +166,7 @@ def test_post_replay_control_append_blocks_receipt_publication(writer,monkeypatc
     with pytest.raises(ValueError,match='cannot be retried'):start.prepare_confirmation_request(**args)
 
 
-def test_slot21_readiness_remains_closed_before_reading_or_writing(writer):
-    with pytest.raises(ValueError,match='Readiness supports only'):
-        start.verify_confirmation_for_readiness(writer,21,{},dict(path="control/quality-readiness-21.json"))
+def test_slot21_readiness_requires_explicit_guard_before_reading_or_writing(writer):
+    with pytest.raises(ValueError,match='Explicit readiness guard'):
+        start.verify_confirmation_for_readiness(writer,21,{},None)
     assert not (writer.root/'evidence').exists()

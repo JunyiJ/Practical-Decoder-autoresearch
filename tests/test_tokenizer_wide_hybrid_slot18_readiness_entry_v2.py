@@ -191,7 +191,7 @@ def test_failed_seal_preserves_attempt_and_never_retries(writer,monkeypatch,bad)
     if before is not None:assert entry.readiness._inventory(root)==before
 
 
-@pytest.mark.parametrize('slot',[21,22,23,24,True,18.,'18',-1])
+@pytest.mark.parametrize('slot',[22,23,24,True,18.,'18',-1])
 def test_unsupported_handoff_and_readiness_slots_fail_before_mutation(writer,slot):
     with pytest.raises(ValueError):entry.worker_argv(writer,slot,{}, {})
     with pytest.raises(ValueError):entry.readiness.seal_quality_readiness(writer,slot,{})
@@ -210,6 +210,6 @@ def test_slot18_cli_requires_canonical_sealed_arguments_before_worker(writer,mon
     assert entry.main(argv[3:])=='canonical CLI only' and seen==[True]
     with pytest.raises(ValueError,match='Noncanonical'):
         entry.main([*argv[3:8],*argv[10:],*argv[8:10]])
-    unsupported=list(argv[3:]);unsupported[4]='21'
+    unsupported=list(argv[3:]);unsupported[4]='22'
     with pytest.raises(SystemExit):entry.main(unsupported)
     assert seen==[True] and not (writer.root/'evidence').exists()

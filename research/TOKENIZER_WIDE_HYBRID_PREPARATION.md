@@ -3501,3 +3501,40 @@ remaining finite slots22..23. Inference, real metadata fit and actual prerequisi
 gates still precede finite-plan freeze. No research training, model-quality
 result, protected deletion, closed numerical-fixture retry or test-holdout use
 occurred.
+
+
+## Seventh-fresh readiness and guarded child entry
+
+Slot21 readiness now validates an explicit current-parent guard and fully
+reconstructs completed-slot20 history: 21 completed records, nine protected pairs,
+original transport/retention lineage and current plus historical capacity.
+Ordinary idle startup/history readers remain strict. The immutable seal reuses
+the original slot16 inventory anchor and unchanged 16-document/8MiB chain caps.
+
+Child entry reconstructs the prior records and live pairs, binds exact parent,
+inherited locks, canonical argv, frozen source/request, all sealed evidence and
+controls, and complete remaining capacity. Its resource guard starts before the
+synthetic producer. Retry, changed history and unbound controls are rejected;
+bounded log growth is allowed only with the existing prefix unchanged.
+
+All 50 checks passed on unchanged source in eight serial guarded batches. They
+cover seal/guard/chain integrity, guarded entry, exact CLI/API boundaries,
+protected raw/H200 pairs and prior transports, false compact claims, capacity
+boundaries and late mutations, parent/locks/argv/STOP, preserved seal/partial
+failures and earlier-slot compatibility. No test, driver or resource guard
+failed. Final process inspection found no research workers.
+
+The synthetic readiness receipt occupies 36,719 bytes;
+its inventory chain has 11 documents and
+242,625 bytes. The state preserves 21 completed
+records and 18 checkpoint files. Its meta group uses 1,695,176
+of 2,097,152 bytes; total metadata is 2,341,311 bytes. Full
+real-panel fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot21-readiness-entry-v2-component-review.json`.
+
+Next integrate slot21 parent acceptance/serial dispatch, then independent history
+and remaining finite slots22..23. Review consolidation of repeated slot wiring
+and fixture setup while retaining every audit and guard. Inference, real metadata
+fit and actual prerequisite gates still precede freeze. No research training,
+model-quality result, protected deletion, closed numerical-fixture retry or
+test-holdout use occurred.
