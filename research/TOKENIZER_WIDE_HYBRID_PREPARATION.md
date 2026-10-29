@@ -4372,3 +4372,31 @@ Campaign003 freeze/evidence was committed and pushed as `bc8e49b`. The starter
 is active with parent9293 and initial pilot0 child9294. Only one local MPS
 worker is active. No quality trial has launched at this observation; actual
 pilot acceptance and retention gates precede the starter’s sole quality slot0.
+
+
+### Campaign003 pilot acceptance and first quality dispatch (2026-10-29)
+
+All three fresh resource pilots completed and were accepted: hybrid89.5785s,
+gatedMLA83.7171s, KDA100.3218s. These are20-step resource/export checks at
+width512, divisor2, LR0.0025 and seed3491, not quality comparisons.
+The immutable pilot archive contains82 file hashes and76 exact noncheckpoint
+byte records. Archive byte hashes and the three dispatch references were checked.
+The verified retention boundary removed exactly six authorized pilot weight
+files totaling3,769,780,224bytes; their archived hashes match the deletion manifest.
+No selected, confirmation, numerical or failed-attempt checkpoint was removed.
+
+Boundary reference `meta/pilot-boundary-complete.json` SHA256
+`711f3f95cb61c692bf27257e901cca26b625592e5043afe9984a6865a369c8b8`.
+The standalone boundary/storage review is evidence only; its dispatch-authorized
+flags remain false. The production quality gates separately admitted slot0,
+hybrid/divisor4/LR0.000625/seed3501, with1200 planned updates.
+At observation parent9293 and sole worker9618 were active, with no process error;
+no quality acceptance or new quality finding is claimed yet. The starter stops
+after this slot. Independently review its accepted prefix before any later slot.
+Source and plan remain frozen. Campaigns001/002 remain closed, test holdout closed.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-pilots-v2-archive.json`,
+`campaign003-pilot-boundary-v2.json`, and `campaign003-quality0-start-v2.json`.
+Read-only archive inspection initially resolved evidence-relative paths against
+the campaign root and stopped with missing-path/key errors; resolving against
+`evidence/` completed verification. No artifact or worker was changed by these checks.
