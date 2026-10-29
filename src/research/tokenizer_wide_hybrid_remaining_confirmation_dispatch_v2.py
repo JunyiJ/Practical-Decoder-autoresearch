@@ -1,4 +1,4 @@
-"""One slot18..20 transition from an existing same-parent startup/readiness seal.
+"""One slot18..21 transition from an existing same-parent startup/readiness seal.
 
 The caller owns both shared locks, inspects workers and first prepares and seals
 the requested slot using separately bounded APIs. This controller never recreates
@@ -65,13 +65,13 @@ def _stable_anchor(writer,readiness_ref,prepared):
 
 def _inventory(slot,seal,prepared,startup_ref):
     startup._names(slot)
-    check={18:entry._slot18_inventory,19:entry._slot19_inventory,20:entry._slot20_inventory}[slot]
+    check={18:entry._slot18_inventory,19:entry._slot19_inventory,20:entry._slot20_inventory,21:entry._slot21_inventory}[slot]
     return check(seal,prepared,startup_ref)
 
 
 def verify_sealed_confirmation(writer,slot,startup_ref,readiness_ref,controller_guard_ref):
     """Full idle replay with exactly the completed seal and one prepare guard."""
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (18,19,20),'Exact sealed slot18, slot19 or slot20 required')
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (18,19,20,21),'Exact sealed slot18, slot19, slot20 or slot21 required')
     _require(startup_ref['path']==startup._names(slot)['receipt'] and readiness_ref['path']==f'meta/quality-readiness-{slot:02d}.json',
              'Exact supported startup/readiness references required')
     root=writer.root/'evidence';seal=_document(root,readiness_ref);prepared=_document(root,startup_ref)
@@ -98,6 +98,8 @@ def verify_sealed_confirmation(writer,slot,startup_ref,readiness_ref,controller_
         from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as history
     elif slot==20:
         from . import tokenizer_wide_hybrid_slot19_history_v2 as history
+    elif slot==21:
+        from . import tokenizer_wide_hybrid_slot20_history_v2 as history
     checked=history._verify(writer,slot-1,seal['plan_sha256'],prepared['prior_dispatch_ref'],
         projection_ref=seal['projection_ref'],rank_completion_ref=prepared['rank_completion_ref'],
         preparation=preparation,startup_ref=startup_ref,readiness_guard_ref=seal['guard'],
@@ -129,7 +131,7 @@ def _prelaunch(writer,slot,startup_ref,readiness_ref,seal,guard_ref,*,finished=T
 
 def run_sealed_confirmation_once(writer,slot,startup_ref,readiness_ref):
     """Consume one existing supported seal; never prepare, retry or advance."""
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (18,19,20),'Exact dispatch slot18, slot19 or slot20 required')
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (18,19,20,21),'Exact dispatch slot18, slot19, slot20 or slot21 required')
     dispatch._fresh(writer,slot,24);root=writer.root/'evidence';base=f'meta/quality-dispatch-{slot:02d}'
     try:
         with dispatch._PhaseGuard(writer,slot,'prepare'):

@@ -158,15 +158,10 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     elif slot==17:
         entry._slot17_inventory(seal,startup,startup_ref)
         prior_transport=_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
-    elif slot==18:
-        entry._slot18_inventory(seal,startup,startup_ref)
-        prior_transport=_prior_third_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
-    elif slot==19:
-        entry._slot19_inventory(seal,startup,startup_ref)
-        prior_transport=_prior_fourth_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
-    elif slot==20:
-        entry._slot20_inventory(seal,startup,startup_ref)
-        prior_transport=_prior_fifth_transport(writer,seal,startup,parent_pid=seal['parent_pid'])
+    elif slot in (18,19,20,21):
+        {18:entry._slot18_inventory,19:entry._slot19_inventory,
+         20:entry._slot20_inventory,21:entry._slot21_inventory}[slot](seal,startup,startup_ref)
+        prior_transport=_prior_remaining_transport(writer,slot,seal,startup,parent_pid=seal['parent_pid'])
     inventory=_inventory(root)
     plan=_document(root,dict(path='meta/plan.json',sha256=seal['plan_sha256']))
     extra={};selected_choice=None
@@ -223,7 +218,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         elif slot==18:
             records,selected_pairs,rates,selected_choice,pilot_ref=entry._slot18_history(writer,seal,startup)
             _require(pilot_ref==rank['pilot_completion_ref'],'Original pilot lineage differs after fourth fresh child')
-        elif slot in (19,20):
+        elif slot in (19,20,21):
             records,selected_pairs,rates,selected_choice,pilot_ref=entry._remaining_confirmation_history(writer,slot,seal,startup)
             _require(pilot_ref==rank['pilot_completion_ref'],'Original pilot lineage differs after remaining fresh child')
         else:records,selected_pairs,rates,selected_choice=entry._first_confirmation_history(writer,seal,startup)
@@ -251,7 +246,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         pairs={**history['checkpoint_pairs'],**rank['checkpoint_pairs'],**prefix['checkpoint_pairs']}
         extra=dict(rates=rates,stages=stages,rank_completion_ref=startup['rank_completion_ref'],
             selection_ref=rank['selection_ref'],rates_ref=rank['rates_ref'],audited_indices=prefix['audited_indices'])
-    if slot in (16,17,18,19,20):extra.update(prior_dispatch_ref=startup['prior_dispatch_ref'],prior_transport_verified=True)
+    if slot in (16,17,18,19,20,21):extra.update(prior_dispatch_ref=startup['prior_dispatch_ref'],prior_transport_verified=True)
     projection=_document(root,seal['projection_ref'])
     storage_options={}
     if pending_confirmation_request is not None:
@@ -267,12 +262,9 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         _require(_prior_first_transport(writer,seal,startup)==prior_transport,'Prior fresh transport changed during acceptance')
     elif slot==17:
         _require(_prior_second_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
-    elif slot==18:
-        _require(_prior_third_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
-    elif slot==19:
-        _require(_prior_fourth_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
-    elif slot==20:
-        _require(_prior_fifth_transport(writer,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,'Prior fresh transports changed during acceptance')
+    elif slot in (18,19,20,21):
+        _require(_prior_remaining_transport(writer,slot,seal,startup,parent_pid=seal['parent_pid'])==prior_transport,
+                 'Prior fresh transports changed during acceptance')
     _check_inventory(root,inventory)
     _guard(writer,guard_ref,entry.KIND,terminal['pid'],7200)
     _document(writer.root,supervisor_ref)
@@ -369,13 +361,17 @@ def review_completed_later_confirmation(writer,slot,startup_ref,readiness_ref,pr
     return _review_completed(writer,slot,startup_ref,readiness_ref,process)
 
 
-def _prior_third_transport(writer,seal,startup,*,parent_pid=None):
-    """Recheck all three prior fresh transports against exact sealed control history."""
-    from .tokenizer_wide_hybrid_later_confirmation_history_v2 import _transport
+def _prior_remaining_transport(writer,slot,seal,startup,*,parent_pid=None):
+    """Recheck every prior fresh transport; only integrated finite slots qualify."""
+    from . import tokenizer_wide_hybrid_later_confirmation_history_v2 as third
+    from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as fourth
+    from . import tokenizer_wide_hybrid_slot19_history_v2 as fifth
+    from . import tokenizer_wide_hybrid_slot20_history_v2 as sixth
     from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import KIND as startup_kind
+    _require(type(slot) is int and slot in (18,19,20,21),'Exact integrated remaining transport slot required')
     root=writer.root/'evidence'
-    _require(startup['guard']['path']=='control/quality-confirm-startup-18.json'
-        and seal['guard']['path']=='control/quality-readiness-18.json',
+    _require(startup['guard']['path']==f'control/quality-confirm-startup-{slot:02d}.json'
+        and seal['guard']['path']==f'control/quality-readiness-{slot:02d}.json',
         'Exact current startup/readiness controls required')
     pid=os.getpid() if parent_pid is None else parent_pid
     _require(type(pid) is int and pid>1 and seal['parent_pid']==pid,'Verified current or historical parent required')
@@ -385,84 +381,38 @@ def _prior_third_transport(writer,seal,startup,*,parent_pid=None):
         _require(original.get(ref['path'])==dict(size=_path(writer.root,ref['path']).stat().st_size,sha256=ref['sha256']),
                  'Current preparation controls differ from sealed bindings')
         original.pop(ref['path'])
-    saved,identity,_=_transport(writer,seal['plan_sha256'],startup['prior_dispatch_ref'],
+    history={18:third,19:fourth,20:fifth,21:sixth}[slot]
+    saved,identity,_=history._transport(writer,seal['plan_sha256'],startup['prior_dispatch_ref'],
         seal['projection_ref'],startup['rank_completion_ref'],sealed_controls=original)
     review=saved['review'];previous=_document(root,review['startup'])
     previous_seal=_document(root,review['readiness'])
-    first=_prior_second_transport(writer,previous_seal,previous,parent_pid=previous_seal['parent_pid'])
-    checked=_completed_transport(writer,17,review['startup'],review['readiness'],
+    if slot==18:
+        first=_prior_second_transport(writer,previous_seal,previous,parent_pid=previous_seal['parent_pid'])
+    else:
+        first=_prior_remaining_transport(writer,slot-1,previous_seal,previous,parent_pid=previous_seal['parent_pid'])
+    checked=_completed_transport(writer,slot-1,review['startup'],review['readiness'],
         _document(root,review['child']['process']),historical_identity=identity)
     _require(checked['refs']==review['child'] and checked['supervisor_ref']==review['supervisor_ref']
         and dict(**checked['guard_ref'],record=checked['guard'])==review['entry_guard']
         and checked['bound']['files']==seal['frozen_files'] and checked['bound']['context']==seal['context'],
-        'Original third-fresh transport changed after the fourth child')
+        'Original fresh transport changed after the remaining child')
     return dict(prior_dispatch_ref=startup['prior_dispatch_ref'],first=first,child=checked['refs'],
         supervisor_ref=checked['supervisor_ref'],entry_guard=review['entry_guard'])
+
+
+def _prior_third_transport(writer,seal,startup,*,parent_pid=None):
+    return _prior_remaining_transport(writer,18,seal,startup,parent_pid=parent_pid)
 
 
 def _prior_fourth_transport(writer,seal,startup,*,parent_pid=None):
-    """Recheck all four prior fresh transports against exact sealed control history."""
-    from .tokenizer_wide_hybrid_remaining_confirmation_history_v2 import _transport
-    from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import KIND as startup_kind
-    root=writer.root/'evidence'
-    _require(startup['guard']['path']=='control/quality-confirm-startup-19.json'
-        and seal['guard']['path']=='control/quality-readiness-19.json',
-        'Exact current startup/readiness controls required')
-    pid=os.getpid() if parent_pid is None else parent_pid
-    _require(type(pid) is int and pid>1 and seal['parent_pid']==pid,'Verified current or historical parent required')
-    _guard(writer,startup['guard'],startup_kind,pid,1800)
-    original=dict(seal['control_inventory'])
-    for ref in (startup['guard'],seal['guard']):
-        _require(original.get(ref['path'])==dict(size=_path(writer.root,ref['path']).stat().st_size,sha256=ref['sha256']),
-                 'Current preparation controls differ from sealed bindings')
-        original.pop(ref['path'])
-    saved,identity,_=_transport(writer,seal['plan_sha256'],startup['prior_dispatch_ref'],
-        seal['projection_ref'],startup['rank_completion_ref'],sealed_controls=original)
-    review=saved['review'];previous=_document(root,review['startup'])
-    previous_seal=_document(root,review['readiness'])
-    first=_prior_third_transport(writer,previous_seal,previous,parent_pid=previous_seal['parent_pid'])
-    checked=_completed_transport(writer,18,review['startup'],review['readiness'],
-        _document(root,review['child']['process']),historical_identity=identity)
-    _require(checked['refs']==review['child'] and checked['supervisor_ref']==review['supervisor_ref']
-        and dict(**checked['guard_ref'],record=checked['guard'])==review['entry_guard']
-        and checked['bound']['files']==seal['frozen_files'] and checked['bound']['context']==seal['context'],
-        'Original fourth-fresh transport changed after the fifth child')
-    return dict(prior_dispatch_ref=startup['prior_dispatch_ref'],first=first,child=checked['refs'],
-        supervisor_ref=checked['supervisor_ref'],entry_guard=review['entry_guard'])
+    return _prior_remaining_transport(writer,19,seal,startup,parent_pid=parent_pid)
 
 
 def _prior_fifth_transport(writer,seal,startup,*,parent_pid=None):
-    """Recheck all five prior fresh transports against exact sealed control history."""
-    from .tokenizer_wide_hybrid_slot19_history_v2 import _transport
-    from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import KIND as startup_kind
-    root=writer.root/'evidence'
-    _require(startup['guard']['path']=='control/quality-confirm-startup-20.json'
-        and seal['guard']['path']=='control/quality-readiness-20.json',
-        'Exact current startup/readiness controls required')
-    pid=os.getpid() if parent_pid is None else parent_pid
-    _require(type(pid) is int and pid>1 and seal['parent_pid']==pid,'Verified current or historical parent required')
-    _guard(writer,startup['guard'],startup_kind,pid,1800)
-    original=dict(seal['control_inventory'])
-    for ref in (startup['guard'],seal['guard']):
-        _require(original.get(ref['path'])==dict(size=_path(writer.root,ref['path']).stat().st_size,sha256=ref['sha256']),
-                 'Current preparation controls differ from sealed bindings')
-        original.pop(ref['path'])
-    saved,identity,_=_transport(writer,seal['plan_sha256'],startup['prior_dispatch_ref'],
-        seal['projection_ref'],startup['rank_completion_ref'],sealed_controls=original)
-    review=saved['review'];previous=_document(root,review['startup'])
-    previous_seal=_document(root,review['readiness'])
-    first=_prior_fourth_transport(writer,previous_seal,previous,parent_pid=previous_seal['parent_pid'])
-    checked=_completed_transport(writer,19,review['startup'],review['readiness'],
-        _document(root,review['child']['process']),historical_identity=identity)
-    _require(checked['refs']==review['child'] and checked['supervisor_ref']==review['supervisor_ref']
-        and dict(**checked['guard_ref'],record=checked['guard'])==review['entry_guard']
-        and checked['bound']['files']==seal['frozen_files'] and checked['bound']['context']==seal['context'],
-        'Original fifth-fresh transport changed after the sixth child')
-    return dict(prior_dispatch_ref=startup['prior_dispatch_ref'],first=first,child=checked['refs'],
-        supervisor_ref=checked['supervisor_ref'],entry_guard=review['entry_guard'])
+    return _prior_remaining_transport(writer,20,seal,startup,parent_pid=parent_pid)
 
 
 def review_completed_remaining_confirmation(writer,slot,startup_ref,readiness_ref,process):
-    """Review only slots18..20; preserve every fresh pair and full remaining storage."""
-    _require(type(slot) is int and slot in (18,19,20),'Exact remaining-confirmation acceptance slot18, slot19 or slot20 required')
+    """Review only slots18..21; preserve every fresh pair and full remaining storage."""
+    _require(type(slot) is int and slot in (18,19,20,21),'Exact remaining-confirmation acceptance slot18, slot19, slot20 or slot21 required')
     return _review_completed(writer,slot,startup_ref,readiness_ref,process)

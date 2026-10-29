@@ -1412,3 +1412,23 @@ Next integrate slot21 parent acceptance/serial dispatch. Remaining finite
 integrations, inference, real metadata fit and actual prerequisite gates still
 precede freeze; there is no new model-quality result.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot21-readiness-entry-v2-component-review.json`.
+
+
+## Seventh-fresh parent integration and shared transport checks
+
+Slot21 same-parent acceptance and single-child dispatch now bind all prior
+transport, retained science, retention lineage and full capacity before a compact
+success receipt. Three duplicated prior-transport checks now share one bounded
+implementation for slots18..21; production audits remain independent and uncached.
+
+All 87 pytest cases passed in two serial guarded batches, including
+79 sequential negative scenarios on one disposable prefix, partial-publication
+failure preservation, exact API/type gates and different-parent completed20 replay.
+No resource guard failed. Synthetic completed state has 22 records and 20 protected
+checkpoint files; its meta group uses 1,699,986 of 2,097,152 bytes.
+Full real-panel metadata fit remains unproven.
+
+No research training or new quality result. Next consolidate independent completed21
+history and finite slots22..23, then inference and actual prerequisites before freeze.
+Closed campaigns, failed numerical fixture and holdout remain closed.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot21-parent-integration-v2-component-review.json`.
