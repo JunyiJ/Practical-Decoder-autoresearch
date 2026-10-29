@@ -204,6 +204,17 @@ def _slot16_history(writer,seal,startup):
     return records,pairs,rates,selection,first['pilot_completion_ref']
 
 
+def _slot16_inventory(seal,startup,startup_ref):
+    """Bind the exact full prelaunch inventory to the compact startup receipt."""
+    inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
+    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-16.json'}
+    _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
+        and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
+        and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
+        'Compact slot16 sealed inventory/control/parent binding differs')
+    return inventory
+
+
 def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
     """Caller owns outer resource guard; exact argv anchors trusted parent seal.
 
@@ -222,13 +233,7 @@ def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
         _require(digest(seal[key])==digest(startup[key]),'Seal/startup identity differs')
     expected=_expected_review(slot,startup_ref,seal)
     _require(digest(seal['predispatch_review'])==digest(expected),'Sealed full idle review differs')
-    if slot==16:
-        inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
-        controls={n:v for n,v in seal['control_inventory'].items() if n!=f'control/quality-readiness-{slot:02d}.json'}
-        _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
-            and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
-            and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
-            'Compact slot16 sealed inventory/control/parent binding differs')
+    if slot==16:inventory=_slot16_inventory(seal,startup,startup_ref)
     else:
         inventory=dict(startup['inventory'])
         for ref in (startup['request'],startup_ref):

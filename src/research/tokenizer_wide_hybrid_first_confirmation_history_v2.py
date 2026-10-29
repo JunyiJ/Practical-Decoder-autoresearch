@@ -86,7 +86,7 @@ def verify_first_confirmation_dispatch(writer,plan_sha256,completion_ref,*,proje
 
 
 def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,
-            readiness_guard_ref=None):
+            readiness_guard_ref=None,readiness_ref=None,controller_guard_ref=None):
     """Shared replay; only the separately checked slot16 preparation may append."""
     _require(isinstance(writer,MetadataWriter),'Bounded writer required');_sha(plan_sha256)
     root=writer.root/'evidence';_locks(root,writer.lock_fds)
@@ -98,11 +98,23 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
     saved,identity=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
     _require(startup_ref is None or preparation is not None,'Startup receipt requires explicit preparation')
     _require(readiness_guard_ref is None or startup_ref is not None,'Readiness guard requires exact startup receipt')
+    _require(readiness_ref is None or readiness_guard_ref is not None,'Readiness receipt requires its exact guard')
+    _require(controller_guard_ref is None or readiness_ref is not None,'Controller guard requires completed readiness')
+    controller_control=None;startup_inventory=inventory
+    if readiness_ref is not None:
+        _require(readiness_ref['path']=='meta/quality-readiness-16.json','Exact slot16 readiness receipt required')
+        _document(root,readiness_ref)
+        startup_inventory={n:v for n,v in inventory.items() if n!=readiness_ref['path']}
+    if controller_guard_ref is not None:
+        from .tokenizer_wide_hybrid_confirmation_dispatch_v2 import _prepare_control
+        controller_control=_prepare_control(writer,controller_guard_ref)
     readiness_control=None;startup_controls=controls
     if readiness_guard_ref is not None:
         from .tokenizer_wide_hybrid_confirmation_startup_v2 import _readiness_control
         readiness_control=_readiness_control(writer,readiness_guard_ref)
         startup_controls={n:v for n,v in controls.items() if n!=readiness_control[0]}
+    if controller_control is not None:
+        startup_controls={n:v for n,v in startup_controls.items() if n!=controller_control[0]}
     appended={};pending=None;extra_control=None;startup_report=None
     if preparation is not None:
         from .tokenizer_wide_hybrid_confirmation_append_v2 import _append
@@ -110,8 +122,10 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
                                               rank_completion_ref,saved,preparation)
     if startup_ref is not None:
         from .tokenizer_wide_hybrid_confirmation_startup_v2 import _receipt_binding
-        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,startup_controls)
+        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,startup_inventory,startup_controls)
         appended[startup_ref['path']]=binding
+    if readiness_ref is not None:
+        appended[readiness_ref['path']]=dict(size=_path(root,readiness_ref['path']).stat().st_size,sha256=readiness_ref['sha256'])
     review=saved['review'];historical=dict(inventory);historical.pop(completion_ref['path'])
     for name,binding in appended.items():
         _require(historical.get(name)==binding,'Declared preparation append binding differs')
@@ -134,6 +148,10 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
         name,binding=readiness_control
         _require(name not in expected_controls,'Readiness control overlaps original history')
         expected_controls[name]=binding
+    if controller_control is not None:
+        name,binding=controller_control
+        _require(name not in expected_controls,'Controller guard overlaps history')
+        expected_controls[name]=binding
     _require(controls==expected_controls,'Exact original controls plus declared preparation guard required')
     process=_document(root,review['child']['process'])
     actual=acceptance._review_completed(writer,15,review['startup'],review['readiness'],process,
@@ -147,7 +165,7 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
         'Reconstructed complete fresh audit differs from compact receipt')
     _storage(review['storage'],actual['storage'],historical)
     if startup_report is not None:
-        before_receipt={n:v for n,v in inventory.items() if n!=startup_ref['path']}
+        before_receipt={n:v for n,v in startup_inventory.items() if n!=startup_ref['path']}
         _storage(startup_report['storage'],actual['storage'],before_receipt)
     _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during history replay')
     again,_=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)

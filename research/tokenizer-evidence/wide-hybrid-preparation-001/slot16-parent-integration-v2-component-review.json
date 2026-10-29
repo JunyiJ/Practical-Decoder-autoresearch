@@ -1,0 +1,138 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "dbab5bb5c2cdd0506c0c90539390b8ccfda83a72",
+  "check_executions_passed": 65,
+  "created_at": "2026-10-29T06:02:20.655299+00:00",
+  "distinct_test_cases": 65,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-acceptance-v2-core-guard.json": "343b379b4c21e36fd7ca6d03f12a753badb541d9d71d9eba603a3b6b885fcc57",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-acceptance-v2-core-tests.log": "d50c98974d85cb58604538d411014d3e448c54cb40a91eab0fdc0eab27a216be",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-core-guard.json": "025d1717b78c64399d65880b542b933f2b48856bf441667aa3f4ecb95bf416fa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-core-tests.log": "7cc3b63d0abc10f2ae6ee8953fb45a035cc85ef536ece7578f154391c6213a69",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-a-guard.json": "1594e51b6f55c7969468f118f1475be1f0fe67c13f56bcd8da2215da7e0fc2a0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-a-tests.log": "6438f1d74d5ec8c8f8524c28b3d98f2dd7721cf7c62265743c97d87bbe56d03b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-b-guard.json": "a8a8f2fc219f01134c03517a23a12bb1b6c8bf8b9c8bc51844863ebf7b7a88d3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-b-tests.log": "391dd42c298817d1d86adb7ac47b0804a7bab9c4b8d35ee5090cb4fd67fd17d0",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot16-acceptance-census.json": "0cbb39ed9877178d24979ef1d1029371948dab6570ddef8de4f41ec29655a22a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot16-acceptance-initial-source-hashes.json": "7abee681e517db144e1b440b0806fd30db7ea8e0387d3f58f6e871bfa397fa90",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot16-dispatch-census.json": "9ad9f9aef2cd6c78cede02a966b218458087b62ae96bba8049d215209dc3ff8a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot16-parent-integration-source-hashes.json": "96b5c4a933f6e04de87d8c5d11d474be2855eb5a4798c0a5ccce7799a99c39be",
+    "src/research/tokenizer_wide_hybrid_confirmation_dispatch_v2.py": "a99f48c7b6a13889955da2f7b18e9b31483b4510d44c027ffe4432dc9c637f11",
+    "src/research/tokenizer_wide_hybrid_first_confirmation_history_v2.py": "80e0fddc48054b3ef3bf982c4ed27a9a0842df6122890a9d774f0249c22a633b",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "c5a7c9eb642d6a80d319c93bdbaf5573718e22ab70116684bc042b0735a0411d",
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": "5de47a970f536817c2136b91969b40f0b7c96c9bfb7e66213e7481d054106bd1",
+    "tests/test_tokenizer_wide_hybrid_slot16_acceptance_v2.py": "e470b4711af4d68b83310929a6822ee77810552afbb7f82a09106d6dd0e4919b",
+    "tests/test_tokenizer_wide_hybrid_slot16_dispatch_v2.py": "6984e786e3cd258da448fa321244225274dde2b000a0b53e7b99de4cb0a842e4"
+  },
+  "findings": [
+    "Slot16 acceptance independently reconstructs17 completed quality records, audits3 selected screen pairs and both fresh pairs, verifies all3 original cleanup boundaries and recomputes complete remaining capacity. Deleted pairs remain provenance without live storage credit.",
+    "A shared completed-transport checker validates exact same-parent current launch/terminal/supervisor/child guard and rechecks slot15 under its verified historical PID/descriptors. Saved success flags are insufficient. Prior transport and all sealed controls are checked again after the scientific/storage audit.",
+    "The new serial controller consumes existing same-parent slot16 startup/readiness artifacts. Under its prepare guard it fully replays prior scientific/transport history with exactly the explicit finished readiness seal/guard and current prepare guard appended. Older public idle/startup readers remain strict.",
+    "A second prelaunch check binds all sealed bytes, exact controls, frozen inputs, STOP and full capacity after prepare completion. The controller supervises exactly one bounded child, performs independent guarded acceptance and checks final source/evidence/control/STOP/capacity before compact receipt publication.",
+    "The compact dispatch receipt retains full record/pair/stage digests, prior slot15 lineage and exact parent/child guards. It does not launch slot17, permit cleanup/adoption or retry failed artifacts.",
+    "Tests cover current/prior science and transport tampering, rehashed terminal fields, later/unreviewed outputs, wrong parent/guard, late source/receipt/guard/supervisor/STOP/space changes, synthetic child/review failures, post-review evidence/control changes, partial publication and a changed seal before launch.",
+    "All46 initial acceptance/LR/entry compatibility checks passed. After adding the explicit sealed-readiness/controller append contract, all19 integration/mutation/failure checks passed on the final source. Those fixtures also traverse original slot15 dispatch and slot16 startup/readiness; source phases are retained separately."
+  ],
+  "free_bytes_observed": 56119476224,
+  "holdout_consumed": false,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_slot16_parent_integration_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic scientific/history/checkpoint fixtures and synthetic child; no real model or MPS training, numerical-quality result or benchmark.",
+    "This controller consumes an already prepared/sealed slot16 under current-parent identity. Caller must own shared locks and inspect workers; it is not a general campaign launcher.",
+    "Slot16 compact post-dispatch replay and later fresh slots17..23 remain unfinished. V2 inference, complete real metadata fit and actual numerical/input/measured-pilot prerequisites remain before freeze.",
+    "The initial46 tests precede the explicit sealed-readiness/controller append extension; they are not represented as rerun on every final file. The final19 tests and source manifest cover that integration."
+  ],
+  "maximum_observed_rss_bytes": 244432896,
+  "next_action": "Reconstruct and independently verify the new compact slot16 confirmation dispatch receipt before slot17 preparation. Bind historical parent/descriptors, exact original startup/readiness/launch/terminal/supervisor/child and parent guards, full selected and all-fresh scientific prefix, retained checkpoint pairs, three original retention proofs and complete remaining storage. Then integrate the finite remaining fresh slots17..23 with explicit append contracts, bounded inventory-delta depth, same-parent sealing and serial no-retry dispatch. Preserve the stricter old idle/startup readers. V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. Do not retry the closed failed combined numerical fixture, reopen closed campaigns, delete protected checkpoints or use the test holdout.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "status": "slot16_parent_acceptance_and_sealed_serial_dispatch_tested_later_history_pending",
+  "synthetic_censuses": {
+    "slot16-acceptance-census.json": {
+      "cleanup_boundaries": 3,
+      "completed_quality_records": 17,
+      "live_checkpoint_files": 10,
+      "meta_group_bytes": 1502924,
+      "metadata_bytes": 2070901,
+      "real_panel_fit_proven": false,
+      "required_free_bytes": 30153547769
+    },
+    "slot16-dispatch-census.json": {
+      "completed_quality_records": 17,
+      "live_checkpoint_files": 10,
+      "meta_group_bytes": 1507469,
+      "metadata_bytes": 2075184,
+      "real_panel_fit_proven": false,
+      "receipt_bytes": 4798
+    }
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-acceptance-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-acceptance-v2-core-tests.log",
+      "passed": 46,
+      "peak_rss_bytes": 243564544,
+      "seconds": 193.12,
+      "source_phase": "acceptance_before_explicit_sealed_dispatch_append"
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-core-tests.log",
+      "passed": 13,
+      "peak_rss_bytes": 244432896,
+      "seconds": 258.7,
+      "source_phase": "final_parent_integration"
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-a-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-a-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 244105216,
+      "seconds": 243.13,
+      "source_phase": "final_parent_integration"
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-b-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot16-dispatch-v2-failures-b-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 243974144,
+      "seconds": 246.21,
+      "source_phase": "final_parent_integration"
+    }
+  ],
+  "training_launched": false
+}

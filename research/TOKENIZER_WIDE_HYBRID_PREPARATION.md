@@ -2596,3 +2596,51 @@ transport for later fresh slots17–23. Inference, full real metadata accounting
 and actual nine-case numerical/input/measured-pilot prerequisites remain before
 finite-plan freeze. No training, MPS run, protected checkpoint deletion, holdout
 evaluation or retry of the closed failed numerical fixture occurred.
+
+
+## October 28 slot16 parent acceptance and sealed serial dispatch
+
+Slot16 parent acceptance now independently audits17 completed quality records,
+all three selected screen pairs and both fresh raw/H200 pairs, original retention
+proofs and complete remaining storage. A shared read-only transport checker binds
+both the current child and original slot15 launch/terminal/supervisor/entry-guard
+records. The prior parent's PID/descriptors are historical evidence; current
+acceptance still requires the current parent. Slot15's public API stays limited
+to slot15. Entry and acceptance share the compact startup inventory binding.
+
+The new `confirmation_dispatch_v2.run_sealed_confirmation_once` consumes an
+existing same-parent slot16 startup and readiness seal. It deliberately does not
+recreate preparation artifacts. Under its1800-second prepare guard it replays the
+full idle history, permitting only the explicit finished readiness seal/guard
+and its exact current prepare guard. The old public idle/startup readers retain
+their strict append contracts. A second prelaunch check pins all evidence,
+controls, frozen inputs, STOP and complete capacity after prepare completion.
+
+The controller supervises exactly one7200-second child with the existing process
+supervisor, bounded pipe/log/output, shared descriptors and cooperative parent
+monitor, then runs independently guarded acceptance. Only after finished parent
+guards, frozen provenance, complete evidence/control inventories, STOP and full
+future storage pass does it publish a compact receipt. The receipt preserves
+completed-record, live-pair and cleanup-stage digests plus the exact prior
+slot15 receipt. No slot17 work, retry, selection, cleanup or adoption follows.
+
+The disposable slot16 dispatch receipt is4,798bytes; its fixture has17 completed
+records,10 live checkpoint files, meta-group usage1,507,469 of2,097,152bytes and
+total metadata2,075,184bytes. The acceptance fixture's remaining full-panel
+requirement is30,153,547,769bytes. Fixture sizes and capacities are synthetic and
+do not prove the real panel fits. Full source/test/guard/verdict evidence is in
+`tokenizer-evidence/wide-hybrid-preparation-001/slot16-parent-integration-v2-component-review.json`.
+
+All65 checks passed:46 initial acceptance/LR/entry compatibility checks and19
+final dispatch/mutation/failure checks. The four serial batches completed in
+193.12s,258.70s,243.13s and246.21s under unchanged600-second,4GiB RSS and8GiB
+reserve limits. Peak observed RSS was244,432,896bytes. There were no test,
+driver or resource-guard failures. Initial and final source phases are recorded
+separately; the initial46 checks are not claimed as rerun after every extension.
+
+Next reconstruct and verify the new compact slot16 transport receipt before
+preparing slot17, then integrate the bounded remaining fresh slots17–23. V2
+inference, full real metadata accounting and actual nine-case numerical/input/
+measured-pilot prerequisites still precede finite-plan freeze. These controller
+checks launch no model or MPS work, delete no protected checkpoint, consume no
+test holdout and do not retry the closed failed combined numerical fixture.

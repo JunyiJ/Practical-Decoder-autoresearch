@@ -980,3 +980,19 @@ complete real metadata fit and actual numerical/input/measured-pilot gates still
 precede freeze. Training has not launched; protected checkpoints and the closed
 holdout are unchanged. Evidence and test verdicts:
 `tokenizer-evidence/wide-hybrid-preparation-001/slot16-readiness-entry-v2-component-review.json`.
+
+
+## October 28 slot16 parent acceptance and serial-transition preparation
+
+The slot16 parent now audits17 completed quality records, both fresh checkpoint
+pairs, selected screens, prior/current process records and complete remaining
+capacity. A separate controller consumes the existing same-parent readiness seal,
+repeats full guarded predispatch verification, supervises one child and publishes
+a compact receipt only after independent acceptance and final integrity checks.
+It stops before slot17; startup success and readiness flags alone do not dispatch.
+
+This is synthetic controller preparation, with no new model-quality result.
+Later fresh transport, inference, complete real metadata fit and actual numerical/
+input/measured-pilot prerequisites remain before freeze. No training or holdout
+use occurred. Evidence and bounded test verdicts:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot16-parent-integration-v2-component-review.json`.
