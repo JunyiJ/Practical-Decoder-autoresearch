@@ -383,7 +383,7 @@ def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
     log_prefix=transport._log_prefix(log,log_before.st_size)
     needed=_storage(writer,slot,seal,startup,inventory)
     again,actual,actual_allowance=readiness._bound(writer,slot,startup)
-    _require(digest(again)==digest(bound) and actual==request and actual_allowance==allowance,
+    _require(readiness._same_frozen_identity(bound,again) and actual==request and actual_allowance==allowance,
              'Frozen provenance changed during sealed handoff')
     _controls(writer,seal,slot)
     names=set(inventory)|{f'quality/{slot:02d}/process/'+n for n in ('launch.json','worker.log')}

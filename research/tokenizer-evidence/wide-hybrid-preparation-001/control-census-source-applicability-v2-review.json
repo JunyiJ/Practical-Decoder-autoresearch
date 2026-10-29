@@ -1,0 +1,44 @@
+{
+  "kind": "wide_hybrid_source_applicability_review_v2",
+  "status": "numerical_and_input_evidence_applicable_after_control_census_fixes",
+  "created_at": "2026-10-29T21:25:58.740869+00:00",
+  "before_source_sha256": "5b32cee89c24353b0372f0c288078b0d292d50fb65de77e5a379e8d8a8556f7a",
+  "after_source_sha256": "d5c5f8967aeb5fbcac0e6fcbbd183f366b66fb0c83278e28a4a2146bee016145",
+  "runtime_sha256": "d193008aa205d1d7dd914c0c65256024f318390ed707124a6ef7c5aa4eb5b24c",
+  "changed_files": {
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": {
+      "before": "5b1b127b201fce3d61c432b2ed23a78c1017460e539a056a990a1dddb8386c05",
+      "after": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9"
+    },
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": {
+      "before": "6c17c8bd40501ebfa17aa733a75096a59be637c0bef50090b52ef73b588e5b43",
+      "after": "a7b1be0efcae1cc50ab0611bd5b296327d20934340dcf5f269804ccb95b94cb8"
+    }
+  },
+  "unchanged_source_file_count": 226,
+  "test_source_hashes": {
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9",
+    "tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py": "30637f29ccc9062be7b09a0c551741c7da25904c13d5ed5a52c829d81e6844af",
+    "tests/test_tokenizer_wide_hybrid_quality_entry_v2.py": "85ac06137301ec5b49bfe9c50ac79da8645f1b19a67ca2cbf81c30938f89cd8e",
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": "a7b1be0efcae1cc50ab0611bd5b296327d20934340dcf5f269804ccb95b94cb8"
+  },
+  "test_logs": {
+    "cpu-readiness-census-fix-v2-tests.log": "263d03f3bb7f0d448030a5992dd14c4ae4679c0c9882e24b1a859801e66d8dc7",
+    "cpu-live-census-fix-v2-tests.log": "8cc33cc0e602ef3e98a275062a1248dde45551eb6ad7bfb96ee272e8037a66a6",
+    "cpu-live-census-fix-v2-final-tests.log": "4a50a012563780210ee551a0d38c44e90bec914087ed67e8e64e4b27e693f216"
+  },
+  "distinct_passing_readiness_tests": 26,
+  "distinct_passing_entry_tests": 40,
+  "test_qualification": "Initial live-entry run39passed/1 assertion mismatch: overflow was rejected earlier by the newly modeled actual metadata cap, rather than the later log check. Updated expected error; all5 log-mutation cases passed in a fresh tiny fixture. Initial log/source preserved. No production fixture/campaign retry.",
+  "review": [
+    "The readiness-only fix is preserved byte-for-byte from its26-case pass.",
+    "The live child entry now uses the same frozen-identity comparator; its expected bounded append can change metadata_bytes. Frozen fields, immutable inventory, sealed controls, transport, append-only prefix/inode/length, resource cap and full-storage checks remain.",
+    "Exactly two control-plane files differ. All trainer/model/attention/cache math/optimizer/EMA/checkpoint/input/tokenizer/config/corpus source hashes and runtime remain identical to the actually executed numerical/input evidence."
+  ],
+  "numerical_rerun_required": false,
+  "input_reencoding_required": false,
+  "original_evidence_modified": false,
+  "new_campaign_freeze_required": true,
+  "closed_campaign001_retry_allowed": false,
+  "qualification": "This supports explicit carry-forward applicability; it does not assert old numerical/input runs used the new source and does not transplant old pilot/process/retention receipts."
+}

@@ -130,6 +130,13 @@ def test_child_body_gates_producer_and_rejects_reentry(writer,monkeypatch,valid)
 @pytest.mark.parametrize('change',['append','rewrite','truncate','replace','overflow'])
 def test_log_remains_append_only_through_final_storage_and_source_checks(writer,monkeypatch,change):
     args=setup(writer,monkeypatch);original=entry._storage
+    original_bound=entry.readiness._bound
+    def live_bound(*a,**kw):
+        bound,request,allowance=original_bound(*a,**kw)
+        # Production binding includes the current byte census. A legal live
+        # append must not be mistaken for a frozen source/config change.
+        return dict(bound,metadata_bytes=entry.snapshot(writer.root)['metadata_bytes']),request,allowance
+    monkeypatch.setattr(entry.readiness,'_bound',live_bound)
     def late(*a,**kw):
         value=original(*a,**kw)
         writer.publish_json('control/synthetic-parent-live.json',{'alive':True})
@@ -146,4 +153,4 @@ def test_log_remains_append_only_through_final_storage_and_source_checks(writer,
     monkeypatch.setattr(entry,'_storage',late)
     if change=='append':assert entry.verify_ready_worker(**args)['storage_verified']
     else:
-        with pytest.raises(ValueError,match='log changed'):entry.verify_ready_worker(**args)
+        with pytest.raises(ValueError,match='log changed|Metadata group allowance exceeded'):entry.verify_ready_worker(**args)
