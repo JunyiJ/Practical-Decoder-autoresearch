@@ -38,14 +38,28 @@ def _guard(writer,ref,kind,pid,seconds):
     return value
 
 
-def _review_completed(writer,slot,startup_ref,readiness_ref,process):
-    """Parent call only, under its outer guard; never grants stage continuation."""
+def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical_identity=None):
+    """Full audit under caller locks/guard; public parent APIs stay same-parent.
+
+    The first-fresh history reader may supply a separately verified historical
+    parent/descriptor identity. That read-only path never launches or resumes a
+    process; all scientific, transport and capacity audits still run.
+    """
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
+    parent_pid=os.getpid()
+    if historical_identity is not None:
+        _require(type(slot) is int and slot==15 and type(historical_identity) is dict
+            and set(historical_identity)=={'parent_pid','lock_fds'},'Exact first-fresh historical identity required')
+        parent_pid=historical_identity['parent_pid'];fds=historical_identity['lock_fds']
+        _require(type(parent_pid) is int and parent_pid>1 and type(fds) is tuple and len(fds)==2
+            and all(type(fd) is int and fd>2 for fd in fds) and fds[0]!=fds[1],
+            'Exact historical parent and distinct descriptors required')
+        argv[11]=str(fds[0]);argv[13]=str(fds[1])
     root=writer.root/'evidence';stem=f'quality/{slot:02d}';_locks(root,writer.lock_fds)
     seal=_document(root,readiness_ref);startup=_document(root,startup_ref)
     _require(seal.get('kind')==readiness.KIND and seal.get('status')=='idle_review_sealed_pending_child_integration'
         and type(seal.get('slot')) is int and seal['slot']==slot
-        and type(seal.get('parent_pid')) is int and seal['parent_pid']==os.getpid()
+        and type(seal.get('parent_pid')) is int and seal['parent_pid']==parent_pid
         and seal.get('startup_ref')==startup_ref and seal.get('dispatch_authorized') is False
         and seal.get('deletion_authorized') is False,'Exact same-parent readiness required')
     for key in ('request','plan_sha256','projection_ref','context'):
@@ -67,12 +81,12 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process):
     _require(seal['guard']['path']==f'control/quality-readiness-{slot:02d}.json'
         and seal['control_inventory'][seal['guard']['path']]['sha256']==seal['guard']['sha256'],
         'Readiness guard binding differs')
-    _guard(writer,seal['guard'],readiness.KIND,os.getpid(),1800)
+    _guard(writer,seal['guard'],readiness.KIND,parent_pid,1800)
     refs={name:dict(path=stem+'/'+tail,sha256=file_digest(root/stem/tail)) for name,tail in
           [('launch','process/launch.json'),('process','process/process.json'),('worker','worker-outputs.json')]}
     terminal=_document(root,refs['process']);launch=_document(root,refs['launch'])
     _require(digest(terminal)==digest(process),'Returned process differs from immutable terminal')
-    expected=dict(status='preflight',argv=argv,parent_pid=os.getpid(),pid=None,returncode=None,error=None,
+    expected=dict(status='preflight',argv=argv,parent_pid=parent_pid,pid=None,returncode=None,error=None,
         required_free_bytes=seal['required_free_bytes'],reserve_bytes=8*1024**3,output_limit_bytes=allowance,
         log_limit_bytes=4*1024**2,timeout_seconds=7200,observation=None,capture_kind='bounded_pipe_v2',log_truncated=False)
     _require(digest(launch)==digest(expected),'Exact original sealed launch required')
@@ -82,7 +96,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process):
                  'Terminal process provenance differs')
     _require(terminal.get('status')=='completed' and type(terminal.get('returncode')) is int
         and terminal['returncode']==0 and terminal.get('error') is None and type(terminal.get('pid')) is int
-        and terminal['pid']>1 and terminal['pid']!=os.getpid(),'Successful distinct child process required')
+        and terminal['pid']>1 and terminal['pid']!=parent_pid,'Successful distinct child process required')
     elapsed=terminal.get('elapsed_seconds');obs=terminal.get('observation',{})
     census=snapshot(writer.root)
     total=sum(v['size'] for n,v in census['files'].items() if n.startswith('evidence/'+stem+'/'))

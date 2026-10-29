@@ -898,3 +898,18 @@ inference, full metadata accounting and actual numerical/input/measured-pilot
 prerequisites remain before freeze. No training, research checkpoint deletion,
 closed numerical-fixture retry or holdout evaluation occurred. See
 `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-integration-v2-component-review.json`.
+
+
+## October 28 first-fresh historical receipt verification
+
+The compact first-confirmation receipt now has an independent read-only consumer
+that reconstructs full scientific, cleanup, transport and capacity audits under
+its original parent identity. A new controller PID/FD pair is allowed only on
+this historical path; immediate parent acceptance stays strict. All 8 new tests
+and 51 affected parent regressions passed under actual CPU/disk guards. Evidence
+and all eight selected/fresh fixture weights remain unchanged.
+
+Later fresh appends/slots, inference, full real metadata accounting and actual
+numerical/input/measured-pilot gates remain before freeze. No model training,
+quality result, research cleanup, closed-fixture retry or holdout evaluation.
+See `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-history-v2-component-review.json`.

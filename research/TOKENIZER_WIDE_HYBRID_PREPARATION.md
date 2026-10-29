@@ -2396,3 +2396,38 @@ closed campaigns remain closed. No research checkpoint deletion, MPS/training,
 holdout evaluation, paid compute, subagents or plan freeze occurred.
 
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-integration-v2-component-review.json`.
+
+
+## October 28 strict first-fresh historical transport replay
+
+A new read-only idle verifier reconstructs the complete audit behind the compact
+slot15 dispatch receipt: screening/fresh records, four live checkpoint pairs and
+all three cleanup stages. It binds the original startup attempt and full sealed
+inventory, historical parent/descriptor identity, every parent phase guard and
+child launch/terminal/worker reference. Full acceptance replay independently
+rechecks selected/fresh scientific evidence, frozen inputs, output/log census,
+child/readiness guards, original retention history and complete remaining storage.
+
+A subsequent controller may have a different PID and lock descriptor numbers.
+Only the private first-fresh replay path accepts an explicit historical identity;
+public immediate acceptance still requires the current parent. Historical storage
+is compared to reconstructed capacity while allowing only observation-time free
+bytes, metadata bytes and the current-inventory digest to differ. The original
+post-child inventory excludes only the completed dispatch receipt. Later fresh
+requests/attempts remain rejected until an explicit append-aware contract exists.
+
+All 8 new history tests and 51 affected parent acceptance regressions passed in
+305.99s and 235.43s. Both actual CPU/disk guards finished normally, with maximum
+RSS 244,187,136 bytes. Tests cover new caller PID/FDs, rehashed false claims,
+changed guards/weights/scientific evidence, later appends, STOP, and late source,
+control, receipt and capacity changes. All eight selected/fresh fixture weights
+and prior evidence remain unchanged; the reader adds no campaign metadata.
+No test or driver failure occurred.
+
+Next integrate explicit later-fresh startup/history appends and slots16–23,
+then v2 inference and full real metadata accounting. Actual numerical/input/
+measured-pilot prerequisites remain unresolved. These are synthetic controller
+checks, not new model-quality evidence. No research training/MPS, checkpoint
+deletion, holdout evaluation, closed-fixture retry or plan freeze occurred.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/first-confirmation-history-v2-component-review.json`.
