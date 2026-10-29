@@ -1064,3 +1064,22 @@ gates still precede plan freeze. Evidence:
 All17 bounded checks passed on unchanged source, including failure preservation,
 late-change rejection and existing slot15/16 compatibility. No resource guard
 failed and final process inspection found no research workers.
+
+## Slot17 parent acceptance and serial-dispatch preparation
+
+Slot17 now has a separate parent acceptance API and one sealed serial transition.
+Acceptance rechecks both earlier fresh transports and all current/prior scientific
+evidence and storage. The synthetic success preserves all12 live checkpoint
+files, records18 completed trials and publishes a4,918-byte compact receipt,
+then stops before slot18. Failure evidence remains immutable and cannot be retried.
+
+This is controller preparation with no new quality or numerical result and no
+training launch. Independent completed-slot17 replay, remaining fresh slots,
+inference and real numerical/input/measured-pilot and metadata gates still precede
+freeze. Later inventory seals need a stable earlier anchor to respect the depth
+cap. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-parent-integration-v2-component-review.json`.
+
+All44 bounded checks passed on unchanged source, including integrity rejection,
+failure preservation/no retry and slot16 compatibility. No test or resource
+guard failed, and final inspection found no research workers.

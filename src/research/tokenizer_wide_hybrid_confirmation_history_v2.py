@@ -26,7 +26,7 @@ def _binding(root,ref):
     return dict(size=_path(root,ref['path']).stat().st_size,sha256=ref['sha256'])
 
 
-def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref,*,extra_control=None,readiness_control=None):
+def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref,*,extra_control=None,readiness_control=None,controller_control=None,sealed_controls=None):
     root=writer.root/'evidence'
     _require(reference['path']=='meta/quality-dispatch-16.json','Exact slot16 dispatch reference required')
     saved=_document(root,reference);pid=saved.get('parent_pid');review=saved.get('review',{})
@@ -103,8 +103,23 @@ def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref,*,ex
         _require(name=='control/quality-readiness-17.json' and name not in expected_controls,
                  'Only separately validated slot17 readiness guard may append')
         expected_controls[name]=binding
-    _require(acceptance.readiness._controls(writer,'not-a-control')==expected_controls,
-             'Exact original controls required; later controls need separate integration')
+    if controller_control is not None:
+        name,binding=controller_control
+        _require(name=='control/quality-controller-prepare-17.json' and name not in expected_controls,
+                 'Only separately validated slot17 controller guard may append')
+        expected_controls[name]=binding
+    actual_controls=acceptance.readiness._controls(writer,'not-a-control')
+    if sealed_controls is None:
+        _require(actual_controls==expected_controls,
+                 'Exact original controls required; later controls need separate integration')
+    else:
+        # Live slot17 acceptance supplies the exact original controls reconstructed
+        # from its same-parent seal. Recheck every original byte while allowing
+        # the current child's separately audited controls outside that history.
+        _require(extra_control is None and readiness_control is None and controller_control is None
+            and sealed_controls==expected_controls
+            and all(actual_controls.get(n)==v for n,v in expected_controls.items()),
+            'Exact sealed original slot16 control history required')
     launch=_document(root,review['child']['launch']);argv=launch.get('argv')
     _require(type(argv) is list and len(argv)==16 and all(type(v) is str for v in argv)
         and argv[11].isdigit() and argv[13].isdigit(),'Historical canonical argv required')
@@ -139,7 +154,7 @@ def verify_confirmation_dispatch(writer,slot,plan_sha256,completion_ref,*,projec
     return _verify(writer,slot,plan_sha256,completion_ref,projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
 
 
-def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,readiness_guard_ref=None):
+def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,readiness_guard_ref=None,readiness_ref=None,controller_guard_ref=None):
     """Shared replay; an explicit append capability never changes the idle API."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==16,'Exact completed slot16 required')
     _sha(plan_sha256);root=writer.root/'evidence';_locks(root,writer.lock_fds);census=snapshot(writer.root)
@@ -148,21 +163,35 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
     inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
     _require(startup_ref is None or preparation is not None,'Startup receipt requires explicit preparation')
     _require(readiness_guard_ref is None or startup_ref is not None,'Readiness guard requires exact startup receipt')
+    _require(readiness_ref is None or readiness_guard_ref is not None,'Readiness receipt requires its exact guard')
+    _require(controller_guard_ref is None or readiness_ref is not None,'Controller guard requires completed readiness')
+    controller_control=None;startup_inventory=inventory
+    if readiness_ref is not None:
+        _require(readiness_ref['path']=='meta/quality-readiness-17.json','Exact slot17 readiness receipt required')
+        _document(root,readiness_ref)
+        startup_inventory={n:v for n,v in inventory.items() if n!=readiness_ref['path']}
+    if controller_guard_ref is not None:
+        from .tokenizer_wide_hybrid_later_confirmation_dispatch_v2 import _prepare_control
+        controller_control=_prepare_control(writer,controller_guard_ref)
     readiness_control=None;startup_controls=controls
     if readiness_guard_ref is not None:
         from .tokenizer_wide_hybrid_later_confirmation_startup_v2 import _readiness_control
         readiness_control=_readiness_control(writer,readiness_guard_ref)
         startup_controls={n:v for n,v in controls.items() if n!=readiness_control[0]}
+    if controller_control is not None:
+        startup_controls={n:v for n,v in startup_controls.items() if n!=controller_control[0]}
     appended={};pending=None;extra_control=None;startup_report=None
     if preparation is not None:
         from .tokenizer_wide_hybrid_later_confirmation_append_v2 import _append
         appended,pending,extra_control=_append(writer,plan_sha256,completion_ref,projection_ref,
             rank_completion_ref,_document(root,completion_ref),preparation)
-    saved,identity,context=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control)
+    saved,identity,context=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control)
     if startup_ref is not None:
         from .tokenizer_wide_hybrid_later_confirmation_startup_v2 import _receipt_binding
-        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,startup_controls)
+        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,startup_inventory,startup_controls)
         appended[startup_ref['path']]=binding
+    if readiness_ref is not None:
+        appended[readiness_ref['path']]=dict(size=_path(root,readiness_ref['path']).stat().st_size,sha256=readiness_ref['sha256'])
     historical={n:v for n,v in inventory.items() if n!=completion_ref['path']};review=saved['review']
     for name,binding in appended.items():
         _require(historical.get(name)==binding,'Declared slot17 preparation append binding differs')
@@ -177,11 +206,11 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
         digest({k:v for k,v in compact.items() if k not in dynamic}),'Reconstructed full slot16 audit differs from compact receipt')
     _storage(review['storage'],actual['storage'],historical)
     if startup_report is not None:
-        before_receipt={n:v for n,v in inventory.items() if n!=startup_ref['path']}
+        before_receipt={n:v for n,v in startup_inventory.items() if n!=startup_ref['path']}
         _storage(startup_report['storage'],actual['storage'],before_receipt)
     _prechild_storage(writer,context,actual['storage'])
     _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during replay')
-    again,_,_= _transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control)
+    again,_,_= _transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control)
     _require(again==saved and acceptance.readiness._controls(writer,'not-a-control')==controls,'Transport/control changed during replay')
     acceptance._check_inventory(root,inventory);_locks(root,writer.lock_fds)
     _require(snapshot(writer.root)==census and not (writer.root/'STOP').exists()

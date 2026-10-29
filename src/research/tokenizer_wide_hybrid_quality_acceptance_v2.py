@@ -155,6 +155,9 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     if slot==16:
         entry._slot16_inventory(seal,startup,startup_ref)
         prior_transport=_prior_first_transport(writer,seal,startup)
+    elif slot==17:
+        entry._slot17_inventory(seal,startup,startup_ref)
+        prior_transport=_prior_second_transport(writer,seal,startup)
     inventory=_inventory(root)
     plan=_document(root,dict(path='meta/plan.json',sha256=seal['plan_sha256']))
     extra={};selected_choice=None
@@ -205,6 +208,9 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         if slot==16:
             records,selected_pairs,rates,selected_choice,pilot_ref=entry._slot16_history(writer,seal,startup)
             _require(pilot_ref==rank['pilot_completion_ref'],'Original pilot lineage differs after later child')
+        elif slot==17:
+            records,selected_pairs,rates,selected_choice,pilot_ref=entry._slot17_history(writer,seal,startup)
+            _require(pilot_ref==rank['pilot_completion_ref'],'Original pilot lineage differs after third fresh child')
         else:records,selected_pairs,rates,selected_choice=entry._first_confirmation_history(writer,seal,startup)
         _require(records[:15]==rank['records'] and rates==rank['rates'] and selected_choice==rank['selection'],
                  'Original first-confirmation history differs after child')
@@ -230,7 +236,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         pairs={**history['checkpoint_pairs'],**rank['checkpoint_pairs'],**prefix['checkpoint_pairs']}
         extra=dict(rates=rates,stages=stages,rank_completion_ref=startup['rank_completion_ref'],
             selection_ref=rank['selection_ref'],rates_ref=rank['rates_ref'],audited_indices=prefix['audited_indices'])
-    if slot==16:extra.update(prior_dispatch_ref=startup['prior_dispatch_ref'],prior_transport_verified=True)
+    if slot in (16,17):extra.update(prior_dispatch_ref=startup['prior_dispatch_ref'],prior_transport_verified=True)
     projection=_document(root,seal['projection_ref'])
     storage_options={}
     if pending_confirmation_request is not None:
@@ -244,6 +250,8 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
              'Frozen postprocess inputs changed')
     if slot==16:
         _require(_prior_first_transport(writer,seal,startup)==prior_transport,'Prior fresh transport changed during acceptance')
+    elif slot==17:
+        _require(_prior_second_transport(writer,seal,startup)==prior_transport,'Prior fresh transports changed during acceptance')
     _check_inventory(root,inventory)
     _guard(writer,guard_ref,entry.KIND,terminal['pid'],7200)
     _document(writer.root,supervisor_ref)
@@ -301,4 +309,38 @@ def _prior_first_transport(writer,seal,startup):
 def review_completed_confirmation(writer,slot,startup_ref,readiness_ref,process):
     """Review only slot16, retaining both fresh pairs and full future storage."""
     _require(type(slot) is int and slot==16,'Exact later-confirmation acceptance slot16 required')
+    return _review_completed(writer,slot,startup_ref,readiness_ref,process)
+
+
+def _prior_second_transport(writer,seal,startup):
+    """Recheck both prior fresh transports against exact sealed control history."""
+    from .tokenizer_wide_hybrid_confirmation_history_v2 import _transport
+    from .tokenizer_wide_hybrid_later_confirmation_startup_v2 import KIND as startup_kind
+    root=writer.root/'evidence'
+    _require(startup['guard']['path']=='control/quality-confirm-startup-17.json'
+        and seal['guard']['path']=='control/quality-readiness-17.json',
+        'Exact current startup/readiness controls required')
+    _guard(writer,startup['guard'],startup_kind,os.getpid(),1800)
+    original=dict(seal['control_inventory'])
+    for ref in (startup['guard'],seal['guard']):
+        _require(original.get(ref['path'])==dict(size=_path(writer.root,ref['path']).stat().st_size,sha256=ref['sha256']),
+                 'Current preparation controls differ from sealed bindings')
+        original.pop(ref['path'])
+    saved,identity,_=_transport(writer,seal['plan_sha256'],startup['prior_dispatch_ref'],
+        seal['projection_ref'],startup['rank_completion_ref'],sealed_controls=original)
+    review=saved['review'];previous=_document(root,review['startup'])
+    first=_prior_first_transport(writer,seal,previous)
+    checked=_completed_transport(writer,16,review['startup'],review['readiness'],
+        _document(root,review['child']['process']),historical_identity=identity)
+    _require(checked['refs']==review['child'] and checked['supervisor_ref']==review['supervisor_ref']
+        and dict(**checked['guard_ref'],record=checked['guard'])==review['entry_guard']
+        and checked['bound']['files']==seal['frozen_files'] and checked['bound']['context']==seal['context'],
+        'Original second-fresh transport changed after the third child')
+    return dict(prior_dispatch_ref=startup['prior_dispatch_ref'],first=first,child=checked['refs'],
+        supervisor_ref=checked['supervisor_ref'],entry_guard=review['entry_guard'])
+
+
+def review_completed_later_confirmation(writer,slot,startup_ref,readiness_ref,process):
+    """Review only slot17, retaining all three fresh pairs and full future storage."""
+    _require(type(slot) is int and slot==17,'Exact later-confirmation acceptance slot17 required')
     return _review_completed(writer,slot,startup_ref,readiness_ref,process)

@@ -1,0 +1,130 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "d6fc337b0ea6c3133491ed01f92b40cc99ce4570",
+  "check_executions_passed": 44,
+  "created_at": "2026-10-29T07:34:03.452975+00:00",
+  "distinct_test_cases": 44,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-core-guard.json": "b463b6c21f69bf81af551db5d524ffba6794561fa1ea0ce8e912e8d0a2b99dfa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-core-tests.log": "965719019aad27da4ec1a9073dfd18c8d0d8f6b73ea7841dd6a65ab0a263fc63",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-failures-a-guard.json": "ede64c2f438e4d945016a864e2b5cb5f00e3389f54863dd0eac286f8cc52ca95",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-failures-a-tests.log": "110ecf42cc2f4f099e88804604d7deabc3b07371aa32fc0d72e17ef6e932baf3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-final-guard.json": "93502b926cf1887da5550d41289f596e43d0f1c574b5a56016173429de714fbb",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-final-tests.log": "a341c0d0e1142606a08cf33be6a737f5c90759763b90f55b1ee3b4a915265457",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-rejections-guard.json": "03292b7a642bf05f86b05786340560d35f0e094b33f25eae952923cf711181ad",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-rejections-tests.log": "b9c59898763637aadf108344f08be95068d4fddb487fbb64611344b4b623bbe5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot17-acceptance-census.json": "f2fbec8286635c81ce45874b52f2b9b02acb7cf126e6896383e3e4f1ce21708b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot17-dispatch-census.json": "364eb54a51c31f9d36606e19a1ff7b3ba34e26e9b1aee6883f44cffbe81e2c1e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot17-parent-integration-source-hashes.json": "899d1e7375fa716f63e46eff99ecc73c295793a2ab475c4fde8b14f57a06245d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot17-parent-integration-tested-source-hashes.json": "918cc9a142b25b36b93f3a80db6798ffca735fd121e0f3fec5db65e39ad6c885",
+    "src/research/tokenizer_wide_hybrid_confirmation_history_v2.py": "75c2586dbc0334a71a56405c134eb9e87d4547d6ead0f4c5f67cc793f1385d31",
+    "src/research/tokenizer_wide_hybrid_later_confirmation_dispatch_v2.py": "162b0e89d225d36cbb94b1501508db22cf6aacc1cce0cbf15afdd767b7ebd17d",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "11a48e7aacd0327f5162643b6276f35b4afd2dc58a405615edff42dd37d28639",
+    "tests/test_tokenizer_wide_hybrid_slot16_acceptance_v2.py": "e470b4711af4d68b83310929a6822ee77810552afbb7f82a09106d6dd0e4919b",
+    "tests/test_tokenizer_wide_hybrid_slot16_dispatch_v2.py": "6984e786e3cd258da448fa321244225274dde2b000a0b53e7b99de4cb0a842e4",
+    "tests/test_tokenizer_wide_hybrid_slot17_acceptance_v2.py": "5e5a46836c9baf230b155e627e8767d1216ba9147ee4d4458071a0bb32355769",
+    "tests/test_tokenizer_wide_hybrid_slot17_dispatch_v2.py": "7c796e42ed0395581727b68377e368c6af85f12483302bcd9796e998379be2e5"
+  },
+  "findings": [
+    "A separate same-parent slot17 acceptance API reconstructs18 completed records and all three retention stages, reaudits selected/fresh science, preserves6 live checkpoint pairs and checks full remaining storage. It rechecks both earlier fresh transports and original control history before and after the scientific/storage audit.",
+    "The original slot16 transport reader remains strict by default. Live slot17 acceptance supplies an exact sealed original-control map; every reconstructed original binding must match both that map and current bytes. Current child controls receive their own audits and the controller requires the exact final control set.",
+    "A separate slot17 controller consumes an existing startup/readiness seal, adds only explicit readiness-receipt and parent-prepare-guard capabilities for full prelaunch replay, supervises one child, independently accepts it and publishes a compact receipt with both previous dispatch references. It never prepares slot18 or grants adoption/cleanup/continuation permission.",
+    "All44 checks passed on unchanged tested source in four serial batches. Coverage includes acceptance and one synthetic dispatch, exact-slot API boundaries, altered current/prior science/weights/transport/rehashed terminals, late source/control/receipt/STOP/space changes, changed prelaunch seal, process/review/late-control/late-evidence/partial-publication failure preservation and no retries, plus existing slot16 positive acceptance/dispatch compatibility."
+  ],
+  "free_bytes_observed": 56051589120,
+  "holdout_consumed": false,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "kind": "wide_hybrid_slot17_parent_integration_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic science/checkpoint bytes and synthetic process callback only; no actual process/model training, numerical correctness, model-quality or MPS feasibility result.",
+    "Independent completed-slot17 historical replay and finite remaining fresh-slot integration remain pending.",
+    "V2 inference, full real metadata accounting and actual numerical/input/measured-pilot gates remain unresolved before freeze; the closed failed combined numerical fixture remains closed."
+  ],
+  "maximum_observed_rss_bytes": 245006336,
+  "next_action": "Add strict independent idle replay of the completed compact slot17 dispatch under separately validated historical parent/descriptor identities. Reconstruct all18 completed records,6 retained pairs, three retention boundaries, both earlier transports, exact original control/evidence inventories and prechild/current/future capacity; no appends or launch permission in that public reader. The current slot17 parent API stays same-parent. Then finish the finite remaining fresh slots18..23 with verified compact prior transport and stable earlier readiness anchors: slot17 already uses11 of16 inventory-reference documents, so a new link per slot would exceed the cap at23. V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. Do not retry the closed failed combined numerical fixture, reopen closed campaigns, delete protected checkpoints or use the test holdout.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "source_manifest_note": "The initial pretest manifest is retained. Two copied fixture completion calls were corrected to slot17 and the old slot16 API rejection assertion added before any test execution. Every executed test used the unchanged tested-source-hashes manifest; no collection, test or driver failure occurred.",
+  "status": "slot17_parent_acceptance_and_single_slot_dispatch_tested_idle_replay_pending",
+  "synthetic_acceptance_census": {
+    "cleanup_boundaries": 3,
+    "completed_quality_records": 18,
+    "live_checkpoint_files": 12,
+    "meta_group_bytes": 1533182,
+    "metadata_bytes": 2116704,
+    "real_panel_fit_proven": false,
+    "required_free_bytes": 30153547736
+  },
+  "synthetic_dispatch_census": {
+    "completed_quality_records": 18,
+    "live_checkpoint_files": 12,
+    "meta_group_bytes": 1538100,
+    "metadata_bytes": 2122478,
+    "real_panel_fit_proven": false,
+    "receipt_bytes": 4918
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-core-tests.log",
+      "passed": 34,
+      "peak_rss_bytes": 245006336,
+      "seconds": 192.65
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-rejections-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-rejections-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 243875840,
+      "seconds": 321.41
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-failures-a-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-failures-a-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 244842496,
+      "seconds": 294.08
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-final-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot17-parent-v2-final-tests.log",
+      "passed": 4,
+      "peak_rss_bytes": 244809728,
+      "seconds": 362.25
+    }
+  ],
+  "training_launched": false
+}

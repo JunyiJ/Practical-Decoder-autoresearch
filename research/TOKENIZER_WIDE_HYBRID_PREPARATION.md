@@ -2807,3 +2807,42 @@ slots18–23 with bounded inventory anchors and independent compact prior transp
 verification. V2 inference and real numerical/input/measured-pilot and metadata
 prerequisites still precede finite-plan freeze. No research training, protected
 checkpoint cleanup, closed-campaign reopening or test-holdout use occurred.
+
+## Slot17 parent acceptance and serial-dispatch preparation
+
+A separate slot17 parent API now audits the third completed fresh child. It
+rechecks both prior fresh transports against their original process, entry,
+supervisor and parent guards; reconstructs the exact original slot16 controls
+from the current same-parent seal; and audits all selected/fresh scientific
+evidence, three retention boundaries and complete remaining storage. Existing
+slot15/16 acceptance APIs remain strict. Historical replay of a completed slot17
+receipt under a new parent is a separate remaining prerequisite.
+
+The new single-transition controller consumes an existing slot17 startup and
+readiness seal. An explicit readiness-receipt/current-prepare-guard capability
+permits full slot16 replay before the one supervised child. The controller pins
+evidence, controls, source, locks, STOP and capacity before launch and again
+before publishing success. Its compact receipt retains both earlier dispatch
+references. Failures preserve partial evidence and refuse retries; success
+grants no adoption, cleanup or next-slot permission. No slot18 is prepared.
+
+The synthetic success has18 completed records and12 live checkpoint files.
+The compact parent receipt is4,918bytes, meta group1,538,100 of2,097,152bytes and
+total metadata2,122,478bytes. Real-panel metadata fit remains unproven. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot17-parent-integration-v2-component-review.json`.
+
+All44 checks passed on unchanged tested source in four serial batches of192.65s,
+321.41s,294.08s and362.25s. Peak RSS was245,006,336bytes; each batch retained
+the600-second,4GiB RSS and8GiB reserve limits. No collection, test, driver or
+resource-guard failure occurred. Coverage includes exact-slot boundaries,
+current/prior integrity and late-change rejection, all five injected dispatch
+failure phases, no retries, and existing slot16 acceptance/dispatch compatibility.
+Final process inspection found no research training/test workers.
+
+Next independently replay the completed compact slot17 receipt, including both
+earlier transports and original control/evidence inventories, before integrating
+the finite remaining fresh slots18–23. Later seals need a stable earlier inventory
+anchor: chaining each slot would exceed the16-document cap at slot23. V2 inference,
+full real metadata accounting and actual nine-case numerical/input/measured-pilot
+gates remain before finite-plan freeze. No research training, protected checkpoint
+cleanup, closed failed numerical-fixture retry or test-holdout use occurred.
