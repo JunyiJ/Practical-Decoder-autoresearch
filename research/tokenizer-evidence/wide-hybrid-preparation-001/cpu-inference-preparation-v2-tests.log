@@ -1,0 +1,58 @@
+F....                                                                    [100%]
+=================================== FAILURES ===================================
+___ test_one_panel_request_replays_full_history_and_rejects_unscoped_appends ___
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10b940050>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c8283e0>
+
+    def test_one_panel_request_replays_full_history_and_rejects_unscoped_appends(writer,monkeypatch):
+        args=sequence(writer,monkeypatch);args.pop('slot');root=writer.root/'evidence'
+        plan=prep._document(root,dict(path='meta/plan.json',sha256=args['plan_sha256']))
+        monkeypatch.setattr(prep.gate,'bind_campaign',first.bind_campaign)
+        monkeypatch.setattr(prep.gate,'_contract',lambda cfg:dict(tokenizer=plan['tokenizer']))
+        free=SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=64*1024**3))
+        monkeypatch.setattr(prep,'shutil',free);monkeypatch.setattr(prep.gate,'shutil',free)
+        inventory=prep.gate.history.acceptance._inventory(root)
+        controls=prep.gate.history.acceptance.readiness._controls(writer,'not-a-control')
+        actual=prep.gate.history._verify;scopes=[]
+        def replay(*a,**kw):
+            value=actual(*a,**kw)
+            scopes.append(kw.get('inference_request_ref'))
+            return value
+        monkeypatch.setattr(prep.gate.history,'_verify',replay)
+>       ref=prep.prepare_inference(**args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_inference_preparation_v2.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_inference_preparation_v2.py:128: in prepare_inference
+    checked=verify_prepared_inference(writer,ref,finished=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_inference_preparation_v2.py:105: in verify_prepared_inference
+    bound=gate._bind(writer,**args,inference_request_ref=request_ref)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_inference_gate_v2.py:86: in _bind
+    report = history._verify(writer, 23, plan_sha256, completion_ref,
+tests/test_tokenizer_wide_hybrid_inference_preparation_v2.py:26: in replay
+    value=actual(*a,**kw)
+          ^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_final_confirmation_history_v2.py:222: in _verify
+    actual=acceptance._review_completed(writer,slot,review['startup'],review['readiness'],
+src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py:210: in _review_completed
+    rank=verify_rank_history(writer,seal['plan_sha256'],startup['rank_completion_ref'],current_inventory=inventory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/research/tokenizer_wide_hybrid_rank_history_v2.py:39: in verify_rank_history
+    _require(all(fresh_artifact(n) for n in appended),'Undeclared fresh evidence append')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Undeclared fresh evidence append'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Undeclared fresh evidence append
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_inference_preparation_v2.py::test_one_panel_request_replays_full_history_and_rejects_unscoped_appends
+1 failed, 4 passed in 540.88s (0:09:00)

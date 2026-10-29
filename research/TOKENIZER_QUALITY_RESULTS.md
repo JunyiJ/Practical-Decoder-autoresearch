@@ -1513,3 +1513,36 @@ of that validation are preserved in `inference-compact-plan-component-review.jso
 Use the compact request identity in the future frozen plan. Continue the shared
 v2 inference controller, then real metadata/numerical/input/pilot prerequisites;
 training, inference, protected deletion and closed-fixture retry remain unlaunched.
+
+
+### Shared inference preparation and reusable synthetic replay
+
+One immutable request now binds the complete fresh inference panel (seeds3511,
+3512,3513). Preparation performs the full idle audit, appends only the request
+and its bounded guard, then repeats the retained science/transport audit through
+an explicit scope. Final quality, rank and pilot history remain strict by default;
+only the independently validated inference reference admits these two files.
+No worker dispatch, measurement, adoption or deletion authority is granted.
+
+The initial integration test failed because the scoped reference was not yet
+propagated to rank/pilot history. Its request, failed guard, failure receipt,
+raw log and source versions remain intact. The correction was validated on
+fresh attempts in two other completed disposable synthetic prefixes; the failed
+prefix and closed numerical fixture were not retried. No resource guard failed.
+
+The final guarded batch passed **29 tests**, including **19 sequential negative
+scenarios**, completed replay from a different process/new lock descriptors,
+late STOP/capacity failures and strict API compatibility. The reusable test
+fixture pins every original file and reinstalls only synthetic input mocks;
+all production audits execute again. Preparation plus negative scenarios took
+60.57s instead of rebuilding the entire synthetic sequence for aboutnine minutes.
+The final combined batch took143.29s under180s,4-GiB RSS and8-GiB reserve limits.
+
+The request lives in the existing inference3511 metadata allowance and adds no
+file to the2-MiB meta group. Every original fixture byte and all24 selected/fresh
+checkpoint files were preserved. Real-panel metadata/high-water fit remains
+unproven. Next integrate the shared serial child controller, entry/measurement
+and completed-result acceptance against this request, including the active
+control/log lifecycle; keep ordinary idle history strict. Then complete real
+numerical/input/resource prerequisites and finite pilot/quality freezes before
+training. Evidence: `inference-preparation-v2-component-review.json`.

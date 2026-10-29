@@ -1,0 +1,245 @@
+"""Strict finite completed21..23 replay with explicitly scoped next-slot appends.
+
+Caller owns both worker locks, inspects processes and holds an outer resource
+guard. Historical PID/descriptors identify evidence, never a process to resume.
+All original transport, selected/fresh science and remaining storage are audited.
+"""
+import shutil
+
+from .protocol import digest
+from .tokenizer_wide_hybrid_metadata_writer import MetadataWriter
+from .tokenizer_wide_hybrid_metadata import snapshot
+from .tokenizer_wide_hybrid_retention_receipts import _document,_path,_sha
+from .tokenizer_wide_hybrid_cleanup import _locks
+from .tokenizer_wide_hybrid_scores import _require
+from .tokenizer_wide_hybrid_rank_selection_v2 import _storage
+from . import tokenizer_wide_hybrid_quality_acceptance_v2 as acceptance
+from . import tokenizer_wide_hybrid_remaining_confirmation_dispatch_v2 as dispatch
+from . import tokenizer_wide_hybrid_remaining_confirmation_startup_v2 as startup
+from . import tokenizer_wide_hybrid_first_confirmation_history_v2 as first
+from . import tokenizer_wide_hybrid_slot20_history_v2 as previous
+
+KIND='wide_hybrid_final_confirmation_history_v2'
+
+
+def _binding(root,ref):
+    _document(root,dict(path=ref['path'],sha256=ref['sha256']))
+    return dict(size=_path(root,ref['path']).stat().st_size,sha256=ref['sha256'])
+
+
+def _transport(writer,slot,plan_sha,reference,projection_ref,rank_completion_ref,*,extra_control=None,readiness_control=None,controller_control=None,sealed_controls=None):
+    _require(type(slot) is int and slot in (21,22,23),'Exact completed slot21..23 required')
+    _require(slot<23 or all(v is None for v in (extra_control,readiness_control,controller_control)),
+             'Final slot23 forbids later controls')
+    names=startup._names(slot);next_slot=slot+1;root=writer.root/'evidence'
+    _require(reference['path']==f'meta/quality-dispatch-{slot:02d}.json','Exact completed-slot dispatch reference required')
+    saved=_document(root,reference);pid=saved.get('parent_pid');review=saved.get('review',{})
+    _require(set(saved)=={'kind','status','slot','parent_pid','plan_sha256','projection_ref',
+        'pilot_completion_ref','rank_completion_ref','prior_dispatches','guards','review'}
+        and saved['kind']==dispatch.KIND and saved['status']=='confirmation_reviewed'
+        and type(saved['slot']) is int and saved['slot']==slot and type(pid) is int and pid>1
+        and saved['plan_sha256']==plan_sha and saved['projection_ref']==projection_ref
+        and saved['rank_completion_ref']==rank_completion_ref,'Exact completed-slot dispatch required')
+    _require(review.get('representation')==dispatch.REPRESENTATION and review.get('kind')==acceptance.LATER_CONFIRM_KIND
+        and review.get('status')=='confirmation_child_reviewed_pending_parent_receipt'
+        and type(review.get('slot')) is int and review['slot']==slot and review.get('plan_sha256')==plan_sha
+        and review.get('prior_transport_verified') is True and all(review.get(k) is False for k in first.NONCLAIMS)
+        and not set(review)&{'completed_records','checkpoint_pairs','stages'},'Exact unpromoted compact completed-slot acceptance required')
+    _require(review['startup']['path']==names['receipt']
+        and review['readiness']['path']==f'meta/quality-readiness-{slot:02d}.json','Exact original startup/readiness paths required')
+    prepared=_document(root,review['startup']);seal=_document(root,review['readiness'])
+    prior_ref=prepared['prior_dispatch_ref']
+    _require(prior_ref['path']==f'meta/quality-dispatch-{slot-1:02d}.json'
+        and review['prior_dispatch_ref']==prior_ref,'Exact immediately preceding fresh lineage required')
+    prior=_document(root,prior_ref)
+    prior_controls=dict(_document(root,prior['review']['readiness'])['control_inventory'])
+    for ref in [*prior['guards'].values(),prior['review']['entry_guard'],prior['review']['supervisor_ref']]:
+        binding=_binding(writer.root,ref)
+        _require(ref['path'] not in prior_controls or prior_controls[ref['path']]==binding,
+                 'Conflicting previous control reference')
+        prior_controls[ref['path']]=binding
+    if slot==21:
+        prior,_,prior_context=previous._transport(writer,plan_sha,prior_ref,projection_ref,rank_completion_ref,sealed_controls=prior_controls)
+    else:
+        prior,_,prior_context=_transport(writer,slot-1,plan_sha,prior_ref,projection_ref,rank_completion_ref,sealed_controls=prior_controls)
+    _require(saved['prior_dispatches']==[*prior['prior_dispatches'],prior_ref],
+             'Exact ordered prior-fresh lineage required')
+    _require(saved['pilot_completion_ref']==prior['pilot_completion_ref'],'Original pilot lineage differs')
+    _require(prepared['attempt']['path']==names['attempt'] and prepared['guard']['path']==names['guard']
+        and prepared['request']['path']==names['request'],'Exact original completed-slot preparation references required')
+    attempt=dict(kind=startup.KIND,status='started',slot=slot,parent_pid=pid,plan_sha256=plan_sha,
+        projection_ref=projection_ref,rank_completion_ref=rank_completion_ref,prior_dispatch_ref=prior_ref,
+        dispatch_authorized=False,deletion_authorized=False)
+    _require(digest(_document(root,prepared['attempt']))==digest(attempt),'Original completed-slot attempt differs')
+    acceptance._guard(writer,prepared['guard'],startup.KIND,pid,1800)
+    dispatch._stable_anchor(writer,review['readiness'],prepared)
+    acceptance.entry._compact_inventory(slot,seal,prepared,review['startup'])
+    before={n:v for n,v in seal['inventory'].items() if n!=review['startup']['path']}
+    old_controls=dict(_document(root,prior['review']['readiness'])['control_inventory'])
+    for ref in [*prior['guards'].values(),prior['review']['entry_guard'],prior['review']['supervisor_ref'],prepared['guard']]:
+        binding=_binding(writer.root,ref)
+        _require(ref['path'] not in old_controls or old_controls[ref['path']]==binding,'Conflicting original control reference')
+        old_controls[ref['path']]=binding
+    preparation=dict(prior_dispatch_ref=prior_ref,attempt_ref=prepared['attempt'],guard_ref=prepared['guard'],
+        pending_request_ref=prepared['request'])
+    expected=startup._payload(prior,preparation,before,old_controls,
+        _document(root,prior['review']['readiness']),prepared['storage'])
+    expected['parent_pid']=pid
+    _require(digest(prepared)==digest(expected),'Complete original completed-slot startup claims differ')
+    _require(seal['guard']['path']==f'control/quality-readiness-{slot:02d}.json','Exact original readiness guard required')
+    acceptance._guard(writer,seal['guard'],acceptance.readiness.KIND,pid,1800)
+    expected_controls=dict(old_controls,**{seal['guard']['path']:_binding(writer.root,seal['guard'])})
+    _require(seal['control_inventory']==expected_controls,'Exact original sealed control inventory required')
+    old_inventory=dict(before)
+    for ref in (prior_ref,prepared['attempt'],prepared['request']):
+        _require(old_inventory.get(ref['path'])==_binding(root,ref),'Original preparation inventory differs')
+        old_inventory.pop(ref['path'])
+    _require(digest(old_inventory)==prior['review']['evidence_inventory_sha256'],
+             'Exact previous post-child inventory required')
+    _require(set(saved['guards'])=={'prepare','child','review'},'Complete completed-slot parent guards required')
+    for phase,seconds in [('prepare',1800),('child',7200),('review',1800)]:
+        ref=saved['guards'][phase]
+        _require(ref['path']==f'control/quality-controller-{phase}-{slot:02d}.json','Exact original parent guard path required')
+        acceptance._guard(writer,ref,dispatch.KIND,pid,seconds)
+    _require(set(review['child'])=={'launch','process','worker'},'Complete completed-slot child references required')
+    for key,tail in [('launch','process/launch.json'),('process','process/process.json'),('worker','worker-outputs.json')]:
+        _require(review['child'][key]['path']==f'quality/{slot:02d}/'+tail,'Exact original child reference path required')
+        _document(root,review['child'][key])
+    _require(review['entry_guard']['path']==f'control/quality-entry-{slot:02d}.json'
+        and review['supervisor_ref']['path']==f'control/process-quality-{slot:02d}.json','Exact child control references required')
+    for ref in [*saved['guards'].values(),review['entry_guard'],review['supervisor_ref']]:
+        _require(ref['path'] not in expected_controls,'Current child controls overlap sealed history')
+        expected_controls[ref['path']]=_binding(writer.root,ref)
+    if extra_control is not None:
+        name,binding=extra_control
+        _require(name==f'control/quality-confirm-startup-{next_slot:02d}.json' and name not in expected_controls,
+                 'Only separately validated next-slot preparation guard may append')
+        expected_controls[name]=binding
+    if readiness_control is not None:
+        name,binding=readiness_control
+        _require(extra_control is not None and name==f'control/quality-readiness-{next_slot:02d}.json' and name not in expected_controls,
+                 'Only separately validated next-slot readiness guard may append')
+        expected_controls[name]=binding
+    if controller_control is not None:
+        name,binding=controller_control
+        _require(readiness_control is not None and name==f'control/quality-controller-prepare-{next_slot:02d}.json' and name not in expected_controls,
+                 'Only separately validated next-slot controller guard may append')
+        expected_controls[name]=binding
+    actual_controls=acceptance.readiness._controls(writer,'not-a-control')
+    if sealed_controls is None:
+        _require(actual_controls==expected_controls,'Exact original controls required; no later controls allowed')
+    else:
+        _require(extra_control is None and readiness_control is None and controller_control is None
+            and sealed_controls==expected_controls
+            and all(actual_controls.get(n)==v for n,v in expected_controls.items()),
+            'Exact sealed original completed-slot control history required')
+    launch=_document(root,review['child']['launch']);argv=launch.get('argv')
+    _require(type(argv) is list and len(argv)==16 and all(type(v) is str for v in argv)
+        and argv[11].isdigit() and argv[13].isdigit(),'Historical canonical argv required')
+    identity=dict(parent_pid=pid,lock_fds=(int(argv[11]),int(argv[13])))
+    return saved,identity,dict(slot=slot,prepared=prepared,seal=seal,prior=prior,before_startup=before,prior_inventory=old_inventory,prior_context=prior_context)
+
+
+def _prechild_storage(writer,context,current):
+    """Reconstruct original pre-child capacity, without credit for its later weights."""
+    slot=context['slot'];entry=acceptance.entry;root=writer.root/'evidence';seal=context['seal'];prepared=context['prepared']
+    records,pairs,rates,selection,pilot_ref=entry._remaining_confirmation_history(writer,slot,seal,prepared)
+    _,_,pilot_stage,_=entry._receipt(writer,seal['plan_sha256'],pilot_ref)
+    state=entry.remaining_projection(_document(root,seal['projection_ref']),pilot_stage['records'],records,rates,selection,3)
+    logical=occupied=0;inodes=set()
+    for pair in pairs.values():
+        for record in pair.values():
+            path=_path(root,record['path']);stat=path.stat();inode=(stat.st_dev,stat.st_ino)
+            _require(stat.st_nlink==1 and inode not in inodes and stat.st_size==record['size']
+                and seal['inventory'][record['path']]==dict(size=record['size'],sha256=record['sha256']),
+                'Original selected/fresh checkpoint capacity changed')
+            inodes.add(inode);logical+=stat.st_size;occupied+=min(stat.st_size,stat.st_blocks*512)
+    expected=dict(current,projection=state,required_free_bytes=entry.required_free(state,occupied),
+        occupied_checkpoint_capacity_bytes=occupied,checkpoint_logical_bytes=logical,cleanup_boundaries_verified=3)
+    _storage(prepared['storage'],expected,context['before_startup'])
+    _storage(context['prior']['review']['storage'],expected,context['prior_inventory'])
+    _require(context['seal']['required_free_bytes']==expected['required_free_bytes'],'Historical readiness capacity differs')
+    if slot==21:previous._prechild_storage(writer,context['prior_context'],current)
+    else:_prechild_storage(writer,context['prior_context'],current)
+
+
+def verify_confirmation_dispatch(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref):
+    """Strict completed-slot replay; no later append, process resumption or launch."""
+    return _verify(writer,slot,plan_sha256,completion_ref,projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
+
+
+def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,readiness_guard_ref=None,readiness_ref=None,controller_guard_ref=None,inference_request_ref=None):
+    """Reconstruct the complete sealed history under independently verified identity."""
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (21,22,23),'Exact idle completed slot21..23 replay required')
+    _require(slot<23 or all(v is None for v in (preparation,startup_ref,readiness_guard_ref,readiness_ref,controller_guard_ref)),
+             'Final slot23 cannot append another quality slot')
+    _require(inference_request_ref is None or slot==23 and all(v is None for v in
+        (preparation,startup_ref,readiness_guard_ref,readiness_ref,controller_guard_ref)),
+        'Inference preparation requires only completed slot23')
+    next_slot=slot+1
+    _sha(plan_sha256);root=writer.root/'evidence';_locks(root,writer.lock_fds);census=snapshot(writer.root)
+    _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents replay')
+    _require(not any(n.endswith('.tmp') or '-failure' in n for n in census['files']),'Failed/partial history cannot be accepted')
+    inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
+    _require(startup_ref is None or preparation is not None,'Startup receipt requires explicit preparation')
+    _require(readiness_guard_ref is None or startup_ref is not None,'Readiness guard requires exact startup receipt')
+    _require(readiness_ref is None or readiness_guard_ref is not None,'Readiness receipt requires its exact guard')
+    _require(controller_guard_ref is None or readiness_ref is not None,'Controller guard requires completed readiness')
+    controller_control=None;startup_inventory=inventory
+    if readiness_ref is not None:
+        _require(readiness_ref['path']==f'meta/quality-readiness-{next_slot:02d}.json','Exact next-slot readiness receipt required')
+        _document(root,readiness_ref)
+        startup_inventory={n:v for n,v in inventory.items() if n!=readiness_ref['path']}
+    if controller_guard_ref is not None:
+        controller_control=dispatch._prepare_control(writer,controller_guard_ref,next_slot)
+    readiness_control=None;startup_controls=controls
+    if readiness_guard_ref is not None:
+        readiness_control=startup._readiness_control(writer,readiness_guard_ref,next_slot)
+        startup_controls={n:v for n,v in controls.items() if n!=readiness_control[0]}
+    if controller_control is not None:
+        startup_controls={n:v for n,v in startup_controls.items() if n!=controller_control[0]}
+    appended={};pending=None;extra_control=None;startup_report=None;sealed_controls=None
+    if inference_request_ref is not None:
+        from .tokenizer_wide_hybrid_inference_preparation_v2 import _scope
+        scope=_scope(writer,inference_request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
+        appended=scope['evidence'];sealed_controls={n:v for n,v in controls.items() if n not in scope['controls']}
+    if preparation is not None:
+        from .tokenizer_wide_hybrid_remaining_confirmation_append_v2 import _append
+        appended,pending,extra_control=_append(writer,next_slot,plan_sha256,completion_ref,projection_ref,
+            rank_completion_ref,_document(root,completion_ref),preparation)
+    saved,identity,context=_transport(writer,slot,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control,sealed_controls=sealed_controls)
+    if startup_ref is not None:
+        from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import _receipt_binding
+        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,startup_inventory,startup_controls)
+        appended[startup_ref['path']]=binding
+    if readiness_ref is not None:
+        appended[readiness_ref['path']]=dict(size=_path(root,readiness_ref['path']).stat().st_size,sha256=readiness_ref['sha256'])
+    historical={n:v for n,v in inventory.items() if n!=completion_ref['path']};review=saved['review']
+    for name,binding in appended.items():
+        _require(historical.get(name)==binding,'Declared next-slot preparation binding differs')
+        historical.pop(name)
+    _require(review['evidence_inventory_sha256']==digest(historical),'Exact completed-slot post-child inventory required; no append')
+    actual=acceptance._review_completed(writer,slot,review['startup'],review['readiness'],
+        _document(root,review['child']['process']),historical_identity=identity,pending_confirmation_request=pending)
+    compact=dict(actual,representation=dispatch.REPRESENTATION)
+    for key in ('completed_records','checkpoint_pairs','stages'):compact[key+'_sha256']=digest(compact.pop(key))
+    dynamic={'storage','evidence_inventory_sha256'}
+    _require(set(review)==set(compact) and digest({k:v for k,v in review.items() if k not in dynamic})==
+        digest({k:v for k,v in compact.items() if k not in dynamic}),'Reconstructed full completed-slot audit differs from compact receipt')
+    _storage(review['storage'],actual['storage'],historical)
+    if startup_report is not None:
+        before_receipt={n:v for n,v in startup_inventory.items() if n!=startup_ref['path']}
+        _storage(startup_report['storage'],actual['storage'],before_receipt)
+    _prechild_storage(writer,context,actual['storage'])
+    _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during replay')
+    again,_,_=_transport(writer,slot,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control,sealed_controls=sealed_controls)
+    _require(again==saved and acceptance.readiness._controls(writer,'not-a-control')==controls,'Transport/control changed during replay')
+    acceptance._check_inventory(root,inventory);_locks(root,writer.lock_fds)
+    _require(snapshot(writer.root)==census and not (writer.root/'STOP').exists()
+        and not (writer.root/'STOP').is_symlink(),'History census or STOP changed')
+    _require(shutil.disk_usage(writer.root).free>=actual['storage']['required_free_bytes'],'Complete remaining capacity changed')
+    return dict(kind=KIND,slot=slot,dispatch_ref=completion_ref,plan_sha256=plan_sha256,projection_ref=projection_ref,
+        rank_completion_ref=rank_completion_ref,records=actual['completed_records'],checkpoint_pairs=actual['checkpoint_pairs'],
+        stages=actual['stages'],rates=actual['rates'],selection=actual['selection'],audited_indices=actual['audited_indices'],
+        storage=actual['storage'],historical_transport_verified=True,confirmation_audits_bound=True,
+        adopted=False,dispatch_authorized=False,deletion_authorized=False,next_stage_authorized=False)

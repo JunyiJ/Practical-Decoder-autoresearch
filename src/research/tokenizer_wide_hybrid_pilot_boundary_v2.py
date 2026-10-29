@@ -238,7 +238,7 @@ def verify_pilot_boundary(writer,plan_sha256,completion_ref):
 
 
 
-def verify_pilot_history(writer,plan_sha256,completion_ref,*,current_inventory,stages):
+def verify_pilot_history(writer,plan_sha256,completion_ref,*,current_inventory,stages,inference_request_ref=None):
     """Verify retained pilot evidence after quality files have been appended.
 
     Caller owns both locks and an outer resource guard. Unlike the strict idle
@@ -252,7 +252,10 @@ def verify_pilot_history(writer,plan_sha256,completion_ref,*,current_inventory,s
     _require(isinstance(stages,list) and bool(stages)
              and digest(stages[0])==digest(complete['chain_stage']),'Original pilot chain entry required')
     baseline=set(review['inventory'])|{ref['path'],completion_ref['path']}
-    appended={}
+    appended={};scope={'evidence':{}}
+    if inference_request_ref is not None:
+        from .tokenizer_wide_hybrid_inference_preparation_v2 import _history_scope
+        scope=_history_scope(writer,inference_request_ref,plan_sha256)
     for name,entry in current_inventory.items():
         if name in baseline or name.startswith('.retention/pilot/'):continue
         parts=Path(name).parts
@@ -261,6 +264,7 @@ def verify_pilot_history(writer,plan_sha256,completion_ref,*,current_inventory,s
             (parts[1].startswith(('quality-','lr-boundary-','rank-boundary-')) or
              parts[1] in ('lr-selection.json','rank-selection.json')))
         allowed=allowed or (len(parts)==3 and parts[0]=='.retention' and parts[1] in ('lr','rank'))
+        allowed=allowed or scope['evidence'].get(name)==entry
         _require(allowed and not name.endswith('.tmp') and 'failure' not in parts[-1],
                  'Unreviewed or failed append outside quality continuation namespace')
         appended[name]=entry

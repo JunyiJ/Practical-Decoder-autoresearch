@@ -63,6 +63,11 @@ def _triples(root, report, frozen, inventory, tokenizer):
 
 def bind_inference(writer, *, plan_sha256, completion_ref, projection_ref, rank_completion_ref):
     """Bind all seeds once; this result is evidence, never dispatch permission."""
+    return _bind(writer,plan_sha256=plan_sha256,completion_ref=completion_ref,
+        projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
+
+
+def _bind(writer, *, plan_sha256, completion_ref, projection_ref, rank_completion_ref, inference_request_ref=None):
     _require(isinstance(writer, MetadataWriter), 'Locked metadata writer required')
     _sha(plan_sha256)
     _require(completion_ref.get('path') == 'meta/quality-dispatch-23.json', 'Final slot23 required')
@@ -77,8 +82,9 @@ def bind_inference(writer, *, plan_sha256, completion_ref, projection_ref, rank_
     tokenizer = plan['tokenizer']; token_sha = _sha(plan['training_token_sha256'])
     inventory = history.acceptance._inventory(root)
     controls = history.acceptance.readiness._controls(writer, 'not-a-control')
-    report = history.verify_confirmation_dispatch(writer, 23, plan_sha256, completion_ref,
-        projection_ref=projection_ref, rank_completion_ref=rank_completion_ref)
+    options = {} if inference_request_ref is None else {'inference_request_ref':inference_request_ref}
+    report = history._verify(writer, 23, plan_sha256, completion_ref,
+        projection_ref=projection_ref, rank_completion_ref=rank_completion_ref, **options)
     _require(len(report['records']) == 24 and len(report['checkpoint_pairs']) == 12
              and len(report['stages']) == 3 and len(report['audited_indices']) == 12
              and report['historical_transport_verified'] is True and report['confirmation_audits_bound'] is True
@@ -103,10 +109,17 @@ def bind_inference(writer, *, plan_sha256, completion_ref, projection_ref, rank_
     _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink()
              and shutil.disk_usage(writer.root).free >= report['storage']['required_free_bytes'],
              'STOP or remaining capacity changed during inference binding')
+    quality_inventory = inventory
+    quality_controls = controls
+    if inference_request_ref is not None:
+        from .tokenizer_wide_hybrid_inference_preparation_v2 import _scope
+        scope = _scope(writer,inference_request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
+        quality_inventory = {n:v for n,v in inventory.items() if n not in scope['evidence']}
+        quality_controls = {n:v for n,v in controls.items() if n not in scope['controls']}
     return dict(kind=KIND, triples=triples, selection=report['selection'], tokenizer=tokenizer,
         token_sha256=token_sha, contract=dict(CONTRACT, version=2, tokenizer_sha256=digest(tokenizer), token_sha256=token_sha),
         files=files, history=report, plan_sha256=plan_sha256, completion_ref=completion_ref,
         records_sha256=digest(report['records']), checkpoint_pairs_sha256=digest(report['checkpoint_pairs']),
-        retention_sha256=digest(report['stages']), inventory_sha256=digest(inventory),
-        controls_sha256=digest(controls), inference_provenance_bound=True,
+        retention_sha256=digest(report['stages']), inventory_sha256=digest(quality_inventory),
+        controls_sha256=digest(quality_controls), inference_provenance_bound=True,
         adopted=False, dispatch_authorized=False, deletion_authorized=False, next_stage_authorized=False)

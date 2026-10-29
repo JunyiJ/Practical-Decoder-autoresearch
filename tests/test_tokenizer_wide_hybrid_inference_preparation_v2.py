@@ -1,0 +1,122 @@
+"""One completed prefix, one three-seed request; no training or serving child."""
+import copy
+import json
+import os
+from types import SimpleNamespace
+
+import pytest
+
+from src.research import tokenizer_wide_hybrid_inference_preparation_v2 as prep
+from src.research import tokenizer_wide_hybrid_first_confirmation_startup_v2 as first
+from test_tokenizer_wide_hybrid_metadata_writer import writer
+from test_tokenizer_wide_hybrid_final_confirmation_v2 import sequence
+
+
+def test_one_panel_request_replays_full_history_and_rejects_unscoped_appends(writer,monkeypatch):
+    binding_path=os.environ.get('TOKENIZER_SYNTHETIC_PREFIX_BINDING')
+    if binding_path:
+        from pathlib import Path
+        from tokenizer_wide_hybrid_reusable_fixture import reopen_prefix
+        from test_tokenizer_wide_hybrid_final_confirmation_v2 import arguments
+        binding=json.loads(Path(binding_path).read_text())
+        with reopen_prefix(binding,allow_preparation=True) as reopened:
+            ref=dict(path='meta/quality-dispatch-23.json',sha256=prep.file_digest(reopened.root/'evidence/meta/quality-dispatch-23.json'))
+            args=arguments(reopened,23,ref);args.pop('slot')
+            with monkeypatch.context() as patch:
+                _exercise_preparation(reopened,patch,args)
+    else:
+        args=sequence(writer,monkeypatch);args.pop('slot')
+        _exercise_preparation(writer,monkeypatch,args)
+
+
+def _exercise_preparation(writer,monkeypatch,args):
+    root=writer.root/'evidence'
+    plan=prep._document(root,dict(path='meta/plan.json',sha256=args['plan_sha256']))
+    monkeypatch.setattr(prep.gate,'bind_campaign',first.bind_campaign)
+    monkeypatch.setattr(prep.gate,'_contract',lambda cfg:dict(tokenizer=plan['tokenizer']))
+    free=SimpleNamespace(disk_usage=lambda p:SimpleNamespace(free=64*1024**3))
+    monkeypatch.setattr(prep,'shutil',free);monkeypatch.setattr(prep.gate,'shutil',free)
+    inventory=prep.gate.history.acceptance._inventory(root)
+    controls=prep.gate.history.acceptance.readiness._controls(writer,'not-a-control')
+    actual=prep.gate.history._verify;scopes=[]
+    def replay(*a,**kw):
+        value=actual(*a,**kw)
+        scopes.append(kw.get('inference_request_ref'))
+        return value
+    monkeypatch.setattr(prep.gate.history,'_verify',replay)
+    ref=prep.prepare_inference(**args)
+    assert scopes==[None,ref]
+    request=prep._document(root,ref)
+    assert request['seed_order']==[3511,3512,3513]
+    assert request['quality_inventory_sha256']==prep.digest(inventory)
+    assert request['quality_controls_sha256']==prep.digest(controls)
+    assert all(request[k] is False for k in ('adopted','dispatch_authorized','deletion_authorized','next_stage_authorized'))
+    assert prep._guard(writer,os.getpid(),finished=True)['status']=='finished'
+    args.pop('writer')
+    assert prep._scope(writer,ref,**args)['request']==request
+    assert {n for n in prep.gate.history.acceptance._inventory(root) if n not in inventory}=={prep.REQUEST}
+    after=prep.gate.history.acceptance._inventory(root)
+    assert all(after[n]==v for n,v in inventory.items())
+    assert len(list(root.rglob('*.pt')))==24
+    with pytest.raises(ValueError,match='cannot be retried'):prep.prepare_inference(writer,**args)
+    with pytest.raises(ValueError):prep.gate.history.verify_confirmation_dispatch(writer,23,**args)
+    # Corrupt only disposable synthetic files, restore exact original bytes.
+    cases=[]
+    paths=[root/'quality/23/checkpoints/h200.pt',root/'meta/source.txt',root/'.retention/rank/receipt.json',writer.root/'control/process-quality-23.json']
+    for path in paths:
+        raw=path.read_bytes();path.write_bytes(b'changed')
+        try:
+            with pytest.raises(ValueError):prep._scope(writer,ref,**args)
+            cases.append(str(path.relative_to(writer.root)))
+        finally:path.write_bytes(raw)
+    for name in ('inference/3512/request.json','inference/3511/result.json','quality/24/request.json'):
+        path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text('{}')
+        try:
+            with pytest.raises(ValueError):prep._scope(writer,ref,**args)
+            cases.append(name)
+        finally:
+            path.unlink()
+            if not any(path.parent.iterdir()):path.parent.rmdir()
+    path=root/prep.REQUEST;raw=path.read_bytes()
+    for key,value in [('seed_order',[3512,3511,3513]),('dispatch_authorized',True),('token_sha256','0'*64),
+                       ('records_sha256','0'*64),('quality_inventory_sha256','0'*64),('quality_controls_sha256','0'*64),('parent_pid',True)]:
+        changed=copy.deepcopy(request);changed[key]=value;path.write_text(json.dumps(changed))
+        new=dict(path=prep.REQUEST,sha256=prep.file_digest(path))
+        try:
+            with pytest.raises(ValueError):prep._scope(writer,new,**args)
+            cases.append(key)
+        finally:path.write_bytes(raw)
+    path=writer.root/prep.GUARD;raw=path.read_bytes();guard=json.loads(raw)
+    for key,value in [('status','failed'),('pid',True),('limits',dict(prep.LIMITS,timeout_seconds=1801)),('elapsed_seconds',1800),('reason','failure')]:
+        changed=dict(guard,**{key:value});path.write_text(json.dumps(changed))
+        try:
+            with pytest.raises(ValueError):prep._scope(writer,ref,**args)
+            cases.append('guard:'+key)
+        finally:path.write_bytes(raw)
+    assert len(cases)==19 and not (root/'inference/3511/process').exists()
+    (writer.root.parent/'inference-preparation-negative-cases.json').write_text(json.dumps(cases))
+
+
+@pytest.mark.parametrize('name',['evidence/inference/3511/partial.json','control/inference-preparation.json','control/process-inference-3512.json'])
+def test_existing_attempt_is_terminal_before_audit(writer,monkeypatch,name):
+    writer.publish_json(name,{'partial':True})
+    monkeypatch.setattr(prep.gate,'bind_inference',lambda *a,**kw:pytest.fail('must not audit or retry'))
+    with pytest.raises(ValueError,match='cannot be retried'):
+        prep.prepare_inference(writer,plan_sha256='a'*64,completion_ref={},projection_ref={},rank_completion_ref={})
+
+
+def test_failed_publication_keeps_request_guard_and_failure(writer,monkeypatch):
+    bound=dict(plan_sha256='a'*64,completion_ref={},contract={},selection={},tokenizer={},token_sha256='b'*64,
+        records_sha256='c'*64,checkpoint_pairs_sha256='d'*64,retention_sha256='e'*64,inventory_sha256='f'*64,
+        controls_sha256='0'*64,triples={},files={})
+    monkeypatch.setattr(prep.gate,'bind_inference',lambda *a,**kw:bound)
+    def failure(*a,**kw):raise RuntimeError('synthetic scoped audit failure')
+    monkeypatch.setattr(prep,'verify_prepared_inference',failure)
+    with pytest.raises(RuntimeError,match='synthetic scoped'):
+        prep.prepare_inference(writer,plan_sha256='a'*64,completion_ref={},projection_ref={},rank_completion_ref={})
+    root=writer.root/'evidence'
+    assert (root/prep.REQUEST).exists()
+    assert json.loads((root/prep.FAILURE).read_text())['retry_allowed'] is False
+    assert json.loads((writer.root/prep.GUARD).read_text())['status']=='failed'
+    with pytest.raises(ValueError,match='cannot be retried'):
+        prep.prepare_inference(writer,plan_sha256='a'*64,completion_ref={},projection_ref={},rank_completion_ref={})

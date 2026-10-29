@@ -30,23 +30,27 @@ def fresh_control(name):
     return bool(re.fullmatch(r'control/(?:quality-(?:confirm-startup|readiness|entry|controller-(?:prepare|child|review))|process-quality)-(?:1[5-9]|2[0-3])\.json',name))
 
 
-def verify_rank_history(writer,plan_sha256,completion_ref,*,current_inventory):
+def verify_rank_history(writer,plan_sha256,completion_ref,*,current_inventory,inference_request_ref=None):
     """Verify original selection/deletion proof; never authorize appended trials."""
     saved,review,ref,view=_receipt(writer,plan_sha256,completion_ref);root=writer.root/'evidence'
     _check_inventory(root,current_inventory)
     baseline=set(review['inventory'])|{ref['path'],completion_ref['path']}
     appended={n:v for n,v in current_inventory.items() if n not in baseline and not n.startswith('.retention/rank/')}
-    _require(all(fresh_artifact(n) for n in appended),'Undeclared fresh evidence append')
+    scope={'evidence':{},'controls':{}}
+    if inference_request_ref is not None:
+        from .tokenizer_wide_hybrid_inference_preparation_v2 import _history_scope
+        scope=_history_scope(writer,inference_request_ref,plan_sha256)
+    _require(all(fresh_artifact(n) or scope['evidence'].get(n)==v for n,v in appended.items()),'Undeclared fresh evidence append')
     controls=_controls(writer,GUARD)
     added_controls={n:v for n,v in controls.items() if n not in review['controls']}
-    _require(all(fresh_control(n) for n in added_controls),'Undeclared fresh control append')
+    _require(all(fresh_control(n) or scope['controls'].get(n)==v for n,v in added_controls.items()),'Undeclared fresh control append')
     identity=_context(writer,review,ref,view,completion_ref,
         appended_inventory=appended,appended_controls=added_controls)
     _require(digest(identity)==saved['context_sha256'] and digest(view['manifest'])==saved['manifest_sha256']
         and saved['execution_ref']['path']=='.retention/rank/execution-review.json','Original rank execution differs')
     stage=dict(manifest=view['manifest'],execution_ref=saved['execution_ref'],context_sha256=saved['context_sha256'])
     stages=view['stages']+[stage];chain=recheck_chain(root,stages,current_inventory)
-    pilot=verify_pilot_history(writer,plan_sha256,view['history']['pilot_completion_ref'],current_inventory=current_inventory,stages=stages)
+    pilot=verify_pilot_history(writer,plan_sha256,view['history']['pilot_completion_ref'],current_inventory=current_inventory,stages=stages,inference_request_ref=inference_request_ref)
     _require(pilot['chain']==chain,'Pilot/rank cumulative history differs')
     summary=view['summary']
     for n,pair in pilot['checkpoint_pairs'].items():_require(summary['checkpoint_pairs'][n]==pair,'Original pilot pair changed')

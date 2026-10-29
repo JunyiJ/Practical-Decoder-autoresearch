@@ -138,7 +138,7 @@ def _completed_transport(writer,slot,startup_ref,readiness_ref,process,*,histori
 
 
 def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical_identity=None,
-                      pending_confirmation_request=None):
+                      pending_confirmation_request=None,inference_request_ref=None):
     """Full audit under caller locks/guard; public parent APIs stay same-parent.
 
     The supported fresh history readers may supply a separately verified historical
@@ -147,6 +147,8 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     """
     _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot in (15,16,17,18,19,20,21,22),
              'Pending fresh request is limited to supported historical replay')
+    _require(inference_request_ref is None or type(slot) is int and slot==23 and historical_identity is not None
+        and pending_confirmation_request is None,'Inference scope requires completed final historical acceptance')
     transport=_completed_transport(writer,slot,startup_ref,readiness_ref,process,historical_identity=historical_identity)
     seal=transport['seal'];startup=transport['startup'];bound=transport['bound'];request=transport['request']
     allowance=transport['allowance'];refs=transport['refs'];terminal=transport['terminal']
@@ -207,7 +209,8 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         from .tokenizer_wide_hybrid_pilot_boundary_v2 import verify_pilot_history
         from .tokenizer_wide_hybrid_first_confirmation_startup_v2 import _frozen
         from .tokenizer_wide_hybrid_confirmation_audit_v2 import bind_confirmation_prefix
-        rank=verify_rank_history(writer,seal['plan_sha256'],startup['rank_completion_ref'],current_inventory=inventory)
+        rank=verify_rank_history(writer,seal['plan_sha256'],startup['rank_completion_ref'],current_inventory=inventory,
+            inference_request_ref=inference_request_ref)
         if slot==16:
             records,selected_pairs,rates,selected_choice,pilot_ref=entry._slot16_history(writer,seal,startup)
             _require(pilot_ref==rank['pilot_completion_ref'],'Original pilot lineage differs after later child')
@@ -240,7 +243,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         _require(prefix['records'][:-1]==records and all(prefix['checkpoint_pairs'][n]==v for n,v in selected_pairs.items()),
                  'Selected anchors or screening history changed after first fresh child')
         history=verify_pilot_history(writer,seal['plan_sha256'],rank['pilot_completion_ref'],
-            current_inventory=inventory,stages=rank['stages'])
+            current_inventory=inventory,stages=rank['stages'],inference_request_ref=inference_request_ref)
         stages=rank['stages']
         pairs={**history['checkpoint_pairs'],**rank['checkpoint_pairs'],**prefix['checkpoint_pairs']}
         extra=dict(rates=rates,stages=stages,rank_completion_ref=startup['rank_completion_ref'],

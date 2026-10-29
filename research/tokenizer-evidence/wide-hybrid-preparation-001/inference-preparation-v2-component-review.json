@@ -1,0 +1,181 @@
+{
+  "kind": "wide_hybrid_inference_preparation_v2_component_review",
+  "status": "shared_panel_preparation_tested_serial_child_integration_pending",
+  "created_at": "2026-10-29T18:28:26.928217+00:00",
+  "base_commit": "e89d9c459757a8427bdc780710e8845bba1e4ce6",
+  "tests": [
+    {
+      "name": "cpu-inference-preparation-v2",
+      "guard": {
+        "elapsed_seconds": 541.0553173750013,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 55225102336,
+          "peak_rss_bytes": 263553024
+        },
+        "pid": 85776,
+        "reason": null,
+        "status": "finished"
+      },
+      "log_sha256": "51d587642cba03919ce48ed2898ff91a01fb97995b8949129037e9c684beea00",
+      "passed": null,
+      "exit_code": 1
+    },
+    {
+      "name": "cpu-inference-preparation-v2-b",
+      "guard": {
+        "elapsed_seconds": 60.74774604100094,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55223857152,
+          "peak_rss_bytes": 262717440
+        },
+        "pid": 89940,
+        "reason": null,
+        "status": "finished"
+      },
+      "log_sha256": "0ac11dff35d04729c7187fff8b0c33c547b942a130a6321de139e287bcd12206",
+      "passed": 5,
+      "exit_code": 0
+    },
+    {
+      "name": "cpu-inference-preparation-v2-c",
+      "guard": {
+        "elapsed_seconds": 143.46010745899548,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55222415360,
+          "peak_rss_bytes": 261472256
+        },
+        "pid": 90467,
+        "reason": null,
+        "status": "finished"
+      },
+      "log_sha256": "713fd83d580d495384a7e99eb5ddddd1c7b03b87ef0a87ad0472560e95711fe4",
+      "passed": 29,
+      "exit_code": 0
+    }
+  ],
+  "distinct_final_test_cases_passed": 29,
+  "sequential_negative_scenarios": 19,
+  "coverage": [
+    "Exact shared request for all three fresh seed triples; full idle then scoped production replay",
+    "Original rank/pilot history accept inference scope only through explicitly supplied and independently verified request reference",
+    "Ordinary idle and lower-history APIs reject undeclared inference files",
+    "Fresh-process completed replay with new locks; late STOP and remaining-capacity rejection",
+    "Failure preserves request, failed guard and failure receipt; no retry",
+    "Reusable tiny synthetic prefix retains every original byte and reruns production audits"
+  ],
+  "failure": {
+    "reason": "Initial scoped replay did not propagate the request scope to strict rank/pilot history checks",
+    "retry_of_closed_numerical_fixture": false,
+    "failed_prefix": "/tmp/cpu-inference-preparation-v2-fixtures/test_one_panel_request_replays0/campaign",
+    "preserved": true,
+    "fresh_attempts_use_different_previously_successful_synthetic_prefixes": true
+  },
+  "fixture_reuse": {
+    "kind": "test_only",
+    "initial_failed_rebuild_seconds": 540.88,
+    "passing_prepare_and_negatives_seconds": 60.57,
+    "final_combined_seconds": 143.29,
+    "production_audits_cached": false,
+    "real_training_or_inference": false
+  },
+  "final_source_hashes_verified": 335,
+  "final_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-v2-source-hashes-final.json",
+  "formatting_only_after_tests": {
+    "path": "tests/tokenizer_wide_hybrid_reusable_fixture.py",
+    "tested_sha256": "1ab14ed66e339b2c2853cbb8edc0b64d0d2ef590824bd7db4fcd8e3cce879b17",
+    "final_sha256": "ce5c9d71cd825a6d110b3125168e735cc3b498a26532a85d7f44cf92b9e345b2",
+    "ast_unchanged": true,
+    "change": "Remove trailing whitespace only after final tests; no semantic change."
+  },
+  "tests_scope": {
+    "production_unchanged_between_passing_batches": true,
+    "final_batch_adds_independent_replay_and_late_faults": true
+  },
+  "censuses": [
+    {
+      "root": "/private/tmp/cpu-inference-binding-v2-fixtures/test_all_triples_share_one_ful0/campaign",
+      "original_files_verified": 783,
+      "new_files": [
+        "control/inference-preparation.json",
+        "evidence/inference/3511/panel-request.json"
+      ],
+      "request_bytes": 2174,
+      "metadata_bytes": 2494412,
+      "meta_group_bytes": 1801583,
+      "live_checkpoint_files": 24
+    },
+    {
+      "root": "/private/tmp/cpu-final-confirmation-a2-fixtures/test_full_finite_sequence_and_0/campaign",
+      "original_files_verified": 783,
+      "new_files": [
+        "control/inference-preparation.json",
+        "evidence/inference/3511/panel-request.json"
+      ],
+      "request_bytes": 2174,
+      "metadata_bytes": 2495312,
+      "meta_group_bytes": 1801738,
+      "live_checkpoint_files": 24
+    }
+  ],
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-preparation-v2-b-guard.json": "a2adbdbe0f88a32042e2b208fc6303e2fd272d65ee5ac4f223c3b1650c72b79e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-preparation-v2-b-tests.log": "0ac11dff35d04729c7187fff8b0c33c547b942a130a6321de139e287bcd12206",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-preparation-v2-c-guard.json": "bfc970506f43319f91ff12208a612903e2aea3f6059a5d426714c4ed2e998260",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-preparation-v2-c-tests.log": "713fd83d580d495384a7e99eb5ddddd1c7b03b87ef0a87ad0472560e95711fe4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-preparation-v2-guard.json": "b9176e82580060572d14e01ea359e7413738a999e89a40674f35c3ab1a45116c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-preparation-v2-tests.log": "51d587642cba03919ce48ed2898ff91a01fb97995b8949129037e9c684beea00",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-failed-test_tokenizer_wide_hybrid_inference_preparation_v2.py.txt": "d8acbdec9a8531d5ce7a05fa1b3f541acdd5c262f5b7bcd7b9a0f1d2dbbdc89f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-failed-tokenizer_wide_hybrid_final_confirmation_history_v2.py.txt": "8b8186b4338025c6f3bfe44775ed43335d05dec9300148ac5af22edc45aa6a76",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-failed-tokenizer_wide_hybrid_inference_gate_v2.py.txt": "36c783acdb68d47a233a8f89101cd7316884f1785a4375bf42ca91409471d0c6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-failed-tokenizer_wide_hybrid_inference_preparation_v2.py.txt": "bf4167c7f7a6e29514117e6d404dc8e5d448517cfa23afd3b68c625e307e2e65",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-negative-cases.json": "b88fc1dd27632fba749b60530bbad9eb655805bebe1b6bc614fbb0a3a8623602",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-reusable-idle-c-prefix.json": "8758f1281c7493021d42f371620756d529c5fb9defd1d78b45d87da800ee801b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-reusable-idle-prefix.json": "98d2f7ddf93a56f89abc4dac711d6c1cab2f33eff72f367f27fdfc4e45e714f9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-reusable-prepared-prefix.json": "cb5fc4a89fec37a49d1d5246339f1675b455f4f6bbb6190f019debdd8d9f5b25",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-v2-source-hashes-final.json": "d05aa6f2bb66737160df9169e841dfd63b977c60e9b4b6518fe5fce6160e5514",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-v2-source-hashes-v2.json": "ae8797411f2ecc1ceaa73d972bbefa3e40a50aef7b364eb78e94f55132548d6e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-v2-source-hashes-v3.json": "95401d44e8c8e1d685ef08e3214ac900dabce2fc4db68fc0c982886666cf62b7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-preparation-v2-source-hashes.json": "f31e94bf560df32268fcf7048e1620841895e9d3e6b746c6e654b48439f9c0ee",
+    "src/research/tokenizer_wide_hybrid_final_confirmation_history_v2.py": "32a00505b8dc115792a93217da4a16f0c54f4b6d3ce730c37cc67e229f73ffcc",
+    "src/research/tokenizer_wide_hybrid_inference_gate_v2.py": "36c783acdb68d47a233a8f89101cd7316884f1785a4375bf42ca91409471d0c6",
+    "src/research/tokenizer_wide_hybrid_inference_preparation_v2.py": "60d975fd93c78a7c274b088e633403cfd0f8ab85861ce09f44121ceffbb53ab1",
+    "src/research/tokenizer_wide_hybrid_pilot_boundary_v2.py": "80829a1218fee90c546712ecf18622f6b814d9123a3ec42d1bf96987d910f3a7",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "1f54a47334433b864d68c43cf7cd41b05fce035914c74291b546986d451f5353",
+    "src/research/tokenizer_wide_hybrid_rank_history_v2.py": "f85bcde02af929cfaac5f97f9a0c2cdad9d1e874289433c037999f9208f9549c",
+    "tests/test_tokenizer_wide_hybrid_inference_preparation_v2.py": "44789caecdc12d584fd6eeeeb3e22fa7cc3ba2f135f8bb2cc5362afc87904bc3",
+    "tests/test_tokenizer_wide_hybrid_inference_reopened_v2.py": "7b7f2203cacc37e98239737263c2f0cb60656999e2466f903f8e42fea95bc860",
+    "tests/tokenizer_wide_hybrid_reusable_fixture.py": "ce5c9d71cd825a6d110b3125168e735cc3b498a26532a85d7f44cf92b9e345b2"
+  },
+  "raw_log_whitespace_exception": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-preparation-v2-tests.log": {
+      "lines": [
+        26,
+        27,
+        46
+      ],
+      "sha256": "51d587642cba03919ce48ed2898ff91a01fb97995b8949129037e9c684beea00",
+      "reason": "Immutable raw pytest failure output retained byte-for-byte"
+    }
+  },
+  "training_launched": false,
+  "inference_launched": false,
+  "adopted": false,
+  "protected_checkpoints_deleted": false,
+  "holdout_consumed": false,
+  "real_panel_metadata_fit_proven": false
+}

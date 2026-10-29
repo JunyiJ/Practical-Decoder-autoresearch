@@ -168,11 +168,14 @@ def verify_confirmation_dispatch(writer,slot,plan_sha256,completion_ref,*,projec
     return _verify(writer,slot,plan_sha256,completion_ref,projection_ref=projection_ref,rank_completion_ref=rank_completion_ref)
 
 
-def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,readiness_guard_ref=None,readiness_ref=None,controller_guard_ref=None):
+def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,readiness_guard_ref=None,readiness_ref=None,controller_guard_ref=None,inference_request_ref=None):
     """Reconstruct the complete sealed history under independently verified identity."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (21,22,23),'Exact idle completed slot21..23 replay required')
     _require(slot<23 or all(v is None for v in (preparation,startup_ref,readiness_guard_ref,readiness_ref,controller_guard_ref)),
              'Final slot23 cannot append another quality slot')
+    _require(inference_request_ref is None or slot==23 and all(v is None for v in
+        (preparation,startup_ref,readiness_guard_ref,readiness_ref,controller_guard_ref)),
+        'Inference preparation requires only completed slot23')
     next_slot=slot+1
     _sha(plan_sha256);root=writer.root/'evidence';_locks(root,writer.lock_fds);census=snapshot(writer.root)
     _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),'STOP prevents replay')
@@ -195,12 +198,16 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
         startup_controls={n:v for n,v in controls.items() if n!=readiness_control[0]}
     if controller_control is not None:
         startup_controls={n:v for n,v in startup_controls.items() if n!=controller_control[0]}
-    appended={};pending=None;extra_control=None;startup_report=None
+    appended={};pending=None;extra_control=None;startup_report=None;sealed_controls=None
+    if inference_request_ref is not None:
+        from .tokenizer_wide_hybrid_inference_preparation_v2 import _scope
+        scope=_scope(writer,inference_request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
+        appended=scope['evidence'];sealed_controls={n:v for n,v in controls.items() if n not in scope['controls']}
     if preparation is not None:
         from .tokenizer_wide_hybrid_remaining_confirmation_append_v2 import _append
         appended,pending,extra_control=_append(writer,next_slot,plan_sha256,completion_ref,projection_ref,
             rank_completion_ref,_document(root,completion_ref),preparation)
-    saved,identity,context=_transport(writer,slot,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control)
+    saved,identity,context=_transport(writer,slot,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control,sealed_controls=sealed_controls)
     if startup_ref is not None:
         from .tokenizer_wide_hybrid_remaining_confirmation_startup_v2 import _receipt_binding
         startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,startup_inventory,startup_controls)
@@ -213,7 +220,7 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
         historical.pop(name)
     _require(review['evidence_inventory_sha256']==digest(historical),'Exact completed-slot post-child inventory required; no append')
     actual=acceptance._review_completed(writer,slot,review['startup'],review['readiness'],
-        _document(root,review['child']['process']),historical_identity=identity,pending_confirmation_request=pending)
+        _document(root,review['child']['process']),historical_identity=identity,pending_confirmation_request=pending,inference_request_ref=inference_request_ref)
     compact=dict(actual,representation=dispatch.REPRESENTATION)
     for key in ('completed_records','checkpoint_pairs','stages'):compact[key+'_sha256']=digest(compact.pop(key))
     dynamic={'storage','evidence_inventory_sha256'}
@@ -225,7 +232,7 @@ def _verify(writer,slot,plan_sha256,completion_ref,*,projection_ref,rank_complet
         _storage(startup_report['storage'],actual['storage'],before_receipt)
     _prechild_storage(writer,context,actual['storage'])
     _require(actual['evidence_inventory_sha256']==digest(inventory),'Current evidence changed during replay')
-    again,_,_=_transport(writer,slot,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control)
+    again,_,_=_transport(writer,slot,plan_sha256,completion_ref,projection_ref,rank_completion_ref,extra_control=extra_control,readiness_control=readiness_control,controller_control=controller_control,sealed_controls=sealed_controls)
     _require(again==saved and acceptance.readiness._controls(writer,'not-a-control')==controls,'Transport/control changed during replay')
     acceptance._check_inventory(root,inventory);_locks(root,writer.lock_fds)
     _require(snapshot(writer.root)==census and not (writer.root/'STOP').exists()
