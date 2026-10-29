@@ -1,7 +1,8 @@
-"""One slot18 transition from an existing same-parent startup/readiness seal.
+"""One slot18/19 transition from an existing same-parent startup/readiness seal.
 
 The caller owns both shared locks, inspects workers and first prepares and seals
-slot18 using the separately bounded APIs. This controller never recreates them.
+the requested slot using separately bounded APIs. This controller never recreates
+them.
 A dedicated prepare guard encloses full replay of the sealed idle history; a
 single supervised child and independently bounded acceptance follow. No CLI,
 retry, cleanup, later slot or campaign launch is enabled.
@@ -30,9 +31,10 @@ readiness=dispatch.readiness
 run_process=dispatch.run_process
 
 
-def _prepare_control(writer,ref):
-    name='control/quality-controller-prepare-18.json'
-    _require(ref['path']==name,'Exact slot18 controller prepare guard required')
+def _prepare_control(writer,ref,slot=18):
+    startup._names(slot)
+    name=f'control/quality-controller-prepare-{slot:02d}.json'
+    _require(ref['path']==name,'Exact supported controller prepare guard required')
     value=_document(writer.root,ref);elapsed=value.get('elapsed_seconds');sample=value.get('observation',{})
     limits=dict(timeout_seconds=1800,rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3)
     _require(set(value)=={'kind','status','reason','pid','limits','elapsed_seconds','observation'}
@@ -51,39 +53,50 @@ def _stable_anchor(writer,readiness_ref,prepared):
     root=writer.root/'evidence'
     _document(root,readiness_ref)
     wire=json.loads(_path(root,readiness_ref['path']).read_text())
-    prior=_document(root,prepared['prior_dispatch_ref']);previous=prior['prior_dispatches'][-1]
-    _require(previous['path']=='meta/quality-dispatch-16.json','Exact stable original dispatch required')
+    prior=_document(root,prepared['prior_dispatch_ref'])
+    anchors=[ref for ref in prior['prior_dispatches'] if ref['path']=='meta/quality-dispatch-16.json']
+    _require(len(anchors)==1,'Exact stable original dispatch required')
+    previous=anchors[0]
     anchor=_document(root,previous)['review']['readiness']
     _require(anchor['path']=='meta/quality-readiness-16.json'
         and wire.get(MARKER)==VERSION and wire['inventory']['base']==anchor,
         'Exact original slot16 inventory wire anchor required')
 
 
+def _inventory(slot,seal,prepared,startup_ref):
+    startup._names(slot)
+    check=entry._slot18_inventory if slot==18 else entry._slot19_inventory
+    return check(seal,prepared,startup_ref)
+
+
 def verify_sealed_confirmation(writer,slot,startup_ref,readiness_ref,controller_guard_ref):
     """Full idle replay with exactly the completed seal and one prepare guard."""
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==18,'Exact sealed slot18 required')
-    _require(startup_ref['path']==startup.RECEIPT and readiness_ref['path']=='meta/quality-readiness-18.json',
-             'Exact slot18 startup/readiness references required')
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (18,19),'Exact sealed slot18 or slot19 required')
+    _require(startup_ref['path']==startup._names(slot)['receipt'] and readiness_ref['path']==f'meta/quality-readiness-{slot:02d}.json',
+             'Exact supported startup/readiness references required')
     root=writer.root/'evidence';seal=_document(root,readiness_ref);prepared=_document(root,startup_ref)
     _require(seal['kind']==readiness.KIND and seal['status']=='idle_review_sealed_pending_child_integration'
-        and type(seal['slot']) is int and seal['slot']==18 and type(seal['parent_pid']) is int
+        and type(seal['slot']) is int and seal['slot']==slot and type(seal['parent_pid']) is int
         and seal['parent_pid']==os.getpid()>1 and seal['startup_ref']==startup_ref
         and seal['dispatch_authorized'] is False and seal['deletion_authorized'] is False,
         'Exact same-parent completed readiness required')
     _stable_anchor(writer,readiness_ref,prepared)
-    entry._slot18_inventory(seal,prepared,startup_ref)
+    _inventory(slot,seal,prepared,startup_ref)
     _require(seal['predispatch_review']==entry._expected_review(slot,startup_ref,seal)
         and all(seal[k]==prepared[k] for k in ('request','plan_sha256','projection_ref','context')),
         'Complete sealed idle review differs')
     acceptance._guard(writer,seal['guard'],readiness.KIND,os.getpid(),1800)
-    _require(seal['guard']['path']=='control/quality-readiness-18.json'
+    _require(seal['guard']['path']==f'control/quality-readiness-{slot:02d}.json'
         and seal['control_inventory'][seal['guard']['path']]['sha256']==seal['guard']['sha256'],
         'Completed readiness guard binding differs')
     bound,request,allowance=readiness._bound(writer,slot,prepared)
     _require(bound['files']==seal['frozen_files'] and bound['context']==seal['context']
         and allowance==seal['output_limit_bytes'],'Sealed frozen inputs differ')
     preparation=dict(attempt_ref=prepared['attempt'],guard_ref=prepared['guard'],pending_request_ref=prepared['request'])
-    checked=startup.append.history._verify(writer,17,seal['plan_sha256'],prepared['prior_dispatch_ref'],
+    history=startup.append.history
+    if slot==19:
+        from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as history
+    checked=history._verify(writer,slot-1,seal['plan_sha256'],prepared['prior_dispatch_ref'],
         projection_ref=seal['projection_ref'],rank_completion_ref=prepared['rank_completion_ref'],
         preparation=preparation,startup_ref=startup_ref,readiness_guard_ref=seal['guard'],
         readiness_ref=readiness_ref,controller_guard_ref=controller_guard_ref)
@@ -97,10 +110,10 @@ def _prelaunch(writer,slot,startup_ref,readiness_ref,seal,guard_ref,*,finished=T
     """Pin evidence, controls, independent frozen inputs, STOP and capacity again."""
     root=writer.root/'evidence';prepared=_document(root,startup_ref)
     _require(_document(root,readiness_ref)==seal,'Readiness changed before dispatch')
-    inventory=entry._slot18_inventory(seal,prepared,startup_ref)
+    inventory=_inventory(slot,seal,prepared,startup_ref)
     inventory[readiness_ref['path']]=dict(size=_path(root,readiness_ref['path']).stat().st_size,sha256=readiness_ref['sha256'])
     _require(acceptance._inventory(root)==inventory,'Unsealed evidence before dispatch')
-    name,binding=_prepare_control(writer,guard_ref)
+    name,binding=_prepare_control(writer,guard_ref,slot)
     if finished:acceptance._guard(writer,guard_ref,KIND,os.getpid(),1800)
     _require(readiness._controls(writer,'not-a-control')==dict(seal['control_inventory'],**{name:binding}),
              'Exact sealed controls plus current prepare guard required')
@@ -113,9 +126,9 @@ def _prelaunch(writer,slot,startup_ref,readiness_ref,seal,guard_ref,*,finished=T
 
 
 def run_sealed_confirmation_once(writer,slot,startup_ref,readiness_ref):
-    """Consume one existing sealed slot18; never prepare, retry or advance slot19."""
-    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot==18,'Exact dispatch slot18 required')
-    dispatch._fresh(writer,slot,24);root=writer.root/'evidence';base='meta/quality-dispatch-18'
+    """Consume one existing supported seal; never prepare, retry or advance."""
+    _require(isinstance(writer,MetadataWriter) and type(slot) is int and slot in (18,19),'Exact dispatch slot18 or slot19 required')
+    dispatch._fresh(writer,slot,24);root=writer.root/'evidence';base=f'meta/quality-dispatch-{slot:02d}'
     try:
         with dispatch._PhaseGuard(writer,slot,'prepare'):
             seal=verify_sealed_confirmation(writer,slot,startup_ref,readiness_ref,dispatch._guard_ref(writer,slot,'prepare'))

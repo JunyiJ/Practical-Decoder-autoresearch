@@ -3195,3 +3195,40 @@ completed-history replay and the finite remainder. Inference, real metadata fit
 and actual numerical/input/measured-pilot gates still precede freeze. No research
 training, model-quality result, protected deletion, closed numerical-fixture retry
 or test-holdout use occurred.
+
+
+## Fifth-fresh parent acceptance and serial dispatch
+
+Same-parent slot19 acceptance now reaudits the current child, all four original
+fresh transports, selected screens and retention/scientific history. It binds
+20 completed records, eight protected pairs and full remaining capacity. The
+shared controller supports exact slots18/19 from existing sealed readiness, with
+bounded prepare replay, one supervised child and bounded acceptance. Its compact
+receipt binds the complete prior-dispatch chain and grants no automatic slot20
+launch, adoption, retry or cleanup.
+
+The exact original slot16 inventory wire anchor remains mandatory, including
+against a valid re-encoding using slot18. Ordinary idle readers stay strict;
+original sealed control maps are used only inside full current-child acceptance.
+Independent historical replay of completed slot19 remains pending.
+
+All 40 guarded checks passed on unchanged source in five serial batches. Coverage
+includes full acceptance and serial success, exact API boundaries, current/prior
+science/checkpoint/transport/guard integrity, rehashed terminals, pending outputs,
+late source/control/receipt/STOP/capacity changes, preserved process/review/receipt
+failures, no retry, changed-seal refusal before child, and slot18 compatibility.
+No test, driver or resource guard failed; final inspection found no research workers.
+
+The synthetic completed state retains all 16 protected checkpoint files. Its
+compact parent receipt is 5,157 bytes, meta group uses
+1,611,066 of 2,097,152 bytes and total metadata is
+2,231,013 bytes. Read-only acceptance requires
+30,153,547,670 bytes of remaining free space. Full real-panel fit
+remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-parent-integration-v2-component-review.json`.
+
+Next independently replay completed slot19 under verified historical identities
+without allowing pending slot20, then finish finite remaining integration. V2
+inference, real metadata fit and actual numerical/input/measured-pilot gates still
+precede freeze. No research training, model-quality result, protected deletion,
+closed numerical-fixture retry or test-holdout use occurred.
