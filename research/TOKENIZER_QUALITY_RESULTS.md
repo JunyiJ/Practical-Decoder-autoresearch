@@ -1330,3 +1330,20 @@ training. Next implement slot20 parent acceptance and serial dispatch. Remaining
 integration, inference, real metadata fit and actual prerequisite gates still
 precede finite-plan freeze.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-readiness-entry-v2-component-review.json`.
+
+
+## Sixth-fresh parent acceptance and serial dispatch
+
+Slot20 now has same-parent full acceptance and a bounded one-child serial
+transition from its existing readiness seal. Acceptance reaudits all five prior
+fresh transports and binds21 completed records, nine protected pairs and full
+remaining capacity. The compact receipt grants no automatic later launch or
+adoption. The exact stable slot16 inventory anchor and existing caps remain.
+
+All 90 guarded checks passed on unchanged source, including provenance/integrity,
+late-change rejection, preserved failures/no retry, pre-child seal refusal and
+compatibility. No resource guard failed; no research workers remain. This is
+synthetic preparation with no new model-quality result or training. Next add
+independent completed-slot20 replay, then remaining finite integration. Inference,
+real metadata fit and actual prerequisite gates still precede freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-parent-integration-v2-component-review.json`.

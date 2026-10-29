@@ -118,7 +118,7 @@ def test_changed_seal_blocks_child_and_preserves_attempt(writer,monkeypatch):
     with pytest.raises(ValueError):controller.run_sealed_confirmation_once(**args)
 
 
-@pytest.mark.parametrize('slot',[0,9,15,16,17,20,21,22,23,24,-1,True,18.,'18'])
+@pytest.mark.parametrize('slot',[0,9,15,16,17,21,22,23,24,-1,True,18.,'18'])
 def test_other_slots_stay_closed(writer,slot):
     with pytest.raises(ValueError,match='slot18'):controller.run_sealed_confirmation_once(writer,slot,{},{})
     assert not (writer.root/'evidence').exists()
