@@ -183,7 +183,7 @@ def test_failed_seal_preserves_attempt_and_never_retries(writer,monkeypatch,bad)
     if before is not None:assert entry.readiness._inventory(root)==before
 
 
-@pytest.mark.parametrize('slot',[19,23,24,True,17.,'17',-1])
+@pytest.mark.parametrize('slot',[20,23,24,True,17.,'17',-1])
 def test_unsupported_handoff_and_readiness_slots_fail_before_mutation(writer,slot):
     with pytest.raises(ValueError):entry.worker_argv(writer,slot,{}, {})
     with pytest.raises(ValueError):entry.readiness.seal_quality_readiness(writer,slot,{})

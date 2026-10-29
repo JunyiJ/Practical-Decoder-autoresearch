@@ -57,14 +57,14 @@ def _storage(writer,slot,seal,startup,inventory):
         records,pairs,rates,selection,pilot_ref=_slot16_history(writer,seal,startup)
     elif slot==17:
         records,pairs,rates,selection,pilot_ref=_slot17_history(writer,seal,startup)
-    elif slot==18:
-        records,pairs,rates,selection,pilot_ref=_slot18_history(writer,seal,startup)
+    elif slot in (18,19):
+        records,pairs,rates,selection,pilot_ref=_remaining_confirmation_history(writer,slot,seal,startup)
     pilot,_,stage,_=_receipt(writer,seal['plan_sha256'],pilot_ref)
-    if slot not in (16,17,18):selection=None
+    if slot not in (16,17,18,19):selection=None
     if slot==15:
         records,pairs,rates,selection=_first_confirmation_history(writer,seal,startup)
         boundaries=3
-    elif slot in (16,17,18):boundaries=3
+    elif slot in (16,17,18,19):boundaries=3
     else:
         records=[] if slot==0 else startup['completed_records']
         pairs={} if slot==0 else startup['checkpoint_pairs']
@@ -147,7 +147,7 @@ def _first_confirmation_history(writer,seal,startup):
 
 
 def _expected_review(slot,startup_ref,seal):
-    if slot in (16,17,18):
+    if slot in (16,17,18,19):
         return dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
             startup_ref=startup_ref,prior_transport_verified=True,selected_and_fresh_prefix_verified=True,
             confirmation_request_verified=True,dispatch_authorized=False)
@@ -255,48 +255,55 @@ def _slot17_history(writer,seal,startup):
 
 
 def _slot18_history(writer,seal,startup):
+    return _remaining_confirmation_history(writer,18,seal,startup)
+
+
+def _remaining_confirmation_history(writer,slot,seal,startup):
     """Expand sealed prior records/pairs without re-running idle audits in a live child."""
     from pathlib import Path
     from .tokenizer_wide_hybrid_rules import _checked
     from .tokenizer_wide_hybrid_first_confirmation_startup_v2 import _frozen
+    _require(type(slot) is int and slot in (18,19),'Exact integrated remaining-fresh slot required')
+    previous_slot=slot-1
     root=writer.root/'evidence';ref=startup['prior_dispatch_ref']
-    _require(ref['path']=='meta/quality-dispatch-17.json','Exact third-fresh transport reference required')
+    _require(ref['path']==f'meta/quality-dispatch-{previous_slot:02d}.json','Exact previous fresh transport reference required')
     prior=_document(root,ref);review=prior['review']
-    _require(prior['status']=='confirmation_reviewed' and type(prior['slot']) is int and prior['slot']==17
+    _require(prior['status']=='confirmation_reviewed' and type(prior['slot']) is int and prior['slot']==previous_slot
         and prior['plan_sha256']==seal['plan_sha256'] and prior['projection_ref']==seal['projection_ref']
         and prior['rank_completion_ref']==startup['rank_completion_ref']
         and review['representation']=='wide_hybrid_confirmation_acceptance_digest_v1',
         'Sealed original fresh transport identity differs')
     first=_document(root,review['startup'])
-    records,pairs,rates,selection,pilot_ref=_slot17_history(writer,seal,first)
-    bound,requests=_frozen(writer,18,seal['plan_sha256'],seal['projection_ref'],rates,selection)
+    prior_history=_slot17_history if slot==18 else _slot18_history
+    records,pairs,rates,selection,pilot_ref=prior_history(writer,seal,first)
+    bound,requests=_frozen(writer,slot,seal['plan_sha256'],seal['projection_ref'],rates,selection)
     _require(bound['files']==seal['frozen_files'] and bound['context']==seal['context']
-        and _document(root,first['request'])==requests[17]
+        and _document(root,first['request'])==requests[previous_slot]
         and prior['pilot_completion_ref']==pilot_ref
         and prior['prior_dispatches']==[*_document(root,first['prior_dispatch_ref'])['prior_dispatches'],first['prior_dispatch_ref']],
-        'Sealed third-fresh frozen request or pilot lineage differs')
-    result_name='quality/17/result.json'
+        'Sealed previous-fresh frozen request or pilot lineage differs')
+    result_name=f'quality/{previous_slot:02d}/result.json'
     result=_document(root,dict(path=result_name,sha256=seal['inventory'][result_name]['sha256']))
-    row=dict(requests[17]['spec'],status=result.get('status'),ce=result.get('h200',{}).get('mean_ce'))
-    _checked([row],[requests[17]['spec']])
+    row=dict(requests[previous_slot]['spec'],status=result.get('status'),ce=result.get('h200',{}).get('mean_ce'))
+    _checked([row],[requests[previous_slot]['spec']])
     _require(result.get('holdout_consumed') is False and result.get('request_sha256')==first['request']['sha256']
-        and all(digest(result.get(k))==digest(v) for k,v in requests[17]['spec'].items()),
-        'Sealed third-fresh result identity differs')
+        and all(digest(result.get(k))==digest(v) for k,v in requests[previous_slot]['spec'].items()),
+        'Sealed previous-fresh result identity differs')
     records=[*records,row];pair={}
     for role in ('raw','h200'):
         path=Path(result[role]['checkpoint'])
-        _require(path.is_absolute() and path.parent==root/'quality/17/checkpoints',
+        _require(path.is_absolute() and path.parent==root/f'quality/{previous_slot:02d}/checkpoints',
                  'Fresh checkpoint outside exact sealed trial')
         name=str(path.relative_to(root));binding=seal['inventory'][name]
         _require(binding['sha256']==result[role]['checkpoint_sha256'],'Sealed fresh checkpoint hash differs')
         pair[role]=dict(path=name,**binding)
-    pairs={**pairs,'quality/17':pair}
+    pairs={**pairs,f'quality/{previous_slot:02d}':pair}
     expected=dict(completed_records_sha256=digest(records),checkpoint_pairs_sha256=digest(pairs),
         stages_sha256=first['stages_sha256'],rates=rates,selection=selection,
-        audited_indices=first['audited_indices']+[17])
+        audited_indices=first['audited_indices']+[previous_slot])
     _require(all(digest(startup[k])==digest(v)==digest(review[k]) for k,v in expected.items())
         and startup['frozen_files_sha256']==digest(seal['frozen_files']),
-        'Compact slot18 completed records, live pairs or cleanup history differ')
+        'Compact remaining-fresh completed records, live pairs or cleanup history differ')
     return records,pairs,rates,selection,pilot_ref
 
 
@@ -333,6 +340,17 @@ def _slot18_inventory(seal,startup,startup_ref):
     return inventory
 
 
+def _slot19_inventory(seal,startup,startup_ref):
+    """Bind the exact full prelaunch inventory to the compact startup receipt."""
+    inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
+    controls={n:v for n,v in seal['control_inventory'].items() if n!='control/quality-readiness-19.json'}
+    _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
+        and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
+        and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
+        'Compact slot19 sealed inventory/control/parent binding differs')
+    return inventory
+
+
 def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
     """Caller owns outer resource guard; exact argv anchors trusted parent seal.
 
@@ -354,6 +372,7 @@ def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
     if slot==16:inventory=_slot16_inventory(seal,startup,startup_ref)
     elif slot==17:inventory=_slot17_inventory(seal,startup,startup_ref)
     elif slot==18:inventory=_slot18_inventory(seal,startup,startup_ref)
+    elif slot==19:inventory=_slot19_inventory(seal,startup,startup_ref)
     else:
         inventory=dict(startup['inventory'])
         for ref in (startup['request'],startup_ref):
@@ -419,7 +438,7 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument('command',choices=['worker'])
     parser.add_argument('--campaign',required=True,type=Path)
-    parser.add_argument('--slot',required=True,type=int,choices=range(19))
+    parser.add_argument('--slot',required=True,type=int,choices=range(20))
     parser.add_argument('--startup-sha256',required=True)
     parser.add_argument('--global-fd',required=True,type=int)
     parser.add_argument('--campaign-fd',required=True,type=int)

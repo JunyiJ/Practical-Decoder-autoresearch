@@ -3161,3 +3161,37 @@ anchor and unchanged chain caps, then parent acceptance/serial dispatch and
 finite remaining integration. Inference, real metadata fit and actual prerequisite
 gates still precede freeze. No research training, quality result, protected
 checkpoint deletion, closed numerical-fixture retry or test-holdout use occurred.
+
+
+## Fifth-fresh readiness and child entry
+
+Slot19 readiness now independently verifies the compact startup and complete
+prior history with only an explicitly validated current-parent readiness guard.
+Ordinary idle readers remain strict. The immutable seal uses the original slot16
+inventory anchor; the synthetic chain has 11 documents and
+235,357 bytes under unchanged 16-document/8MiB limits.
+
+Child entry reconstructs all 19 completed records and seven protected pairs,
+binds original transport/retention history and frozen inputs, and verifies actual
+retained allocation and full remaining capacity before the bounded producer.
+The finite shared reconstruction supports slots18/19 while preserving slot18
+APIs. Slot19 parent acceptance and serial dispatch remain closed.
+
+All 38 guarded checks passed on unchanged source in four serial batches. They
+cover explicit seal/guard bindings, canonical CLI and guard-before-producer order,
+protected evidence/checkpoint integrity, live parent/locks/argv/STOP, capacity
+boundaries, late evidence/log changes, preserved failures/no retry, exact slot
+boundaries, slot18 compatibility and slot19 idle-startup compatibility. No test,
+driver or resource guard failed. Final inspection found no research workers.
+
+The synthetic readiness receipt is 29,493 bytes; its meta group
+uses 1,607,160 of 2,097,152 bytes and total metadata is
+2,215,856 bytes. All 14 protected checkpoint files remain.
+Full real-panel metadata fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot19-readiness-entry-v2-component-review.json`.
+
+Next finish slot19 parent acceptance and bounded serial dispatch, then independent
+completed-history replay and the finite remainder. Inference, real metadata fit
+and actual numerical/input/measured-pilot gates still precede freeze. No research
+training, model-quality result, protected deletion, closed numerical-fixture retry
+or test-holdout use occurred.

@@ -133,9 +133,10 @@ def verify_confirmation_request(writer,slot,reference):
     return _verify_request(writer,slot,reference)
 
 
-def _readiness_control(writer,reference):
+def _readiness_control(writer,reference,slot=18):
     from .tokenizer_wide_hybrid_quality_readiness_v2 import KIND as readiness_kind
-    _require(reference['path']=='control/quality-readiness-18.json','Exact slot18 readiness guard required')
+    _names(slot)
+    _require(reference['path']==f'control/quality-readiness-{slot:02d}.json','Exact supported readiness guard required')
     guard=_document(writer.root,reference);elapsed=guard.get('elapsed_seconds');sample=guard.get('observation',{})
     limits=dict(timeout_seconds=1800,rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3)
     _require(set(guard)=={'kind','status','reason','pid','limits','elapsed_seconds','observation'}
@@ -150,7 +151,7 @@ def _readiness_control(writer,reference):
 
 def verify_confirmation_for_readiness(writer,slot,reference,guard_ref):
     """Explicit single-guard append; the ordinary idle reader stays strict."""
-    _require(type(slot) is int and slot==18,'Only slot18 readiness integration is enabled')
+    _names(slot)
     _require(guard_ref is not None,'Explicit readiness guard required')
     return _verify_request(writer,slot,reference,readiness_guard_ref=guard_ref)
 
@@ -159,13 +160,11 @@ def _verify_request(writer,slot,reference,*,readiness_guard_ref=None):
     """Independently reconstruct the same-parent supported receipt; no launch grant."""
     _require(isinstance(writer,MetadataWriter),'Metadata writer required')
     names=_names(slot)
-    _require(readiness_guard_ref is None or slot==18,'Only slot18 readiness integration is enabled')
     _require(reference['path']==names['receipt'],'Exact supported startup reference required')
     report=_document(writer.root/'evidence',reference)
     preparation=dict(attempt_ref=report['attempt'],guard_ref=report['guard'],pending_request_ref=report['request'])
-    replay=append.history;options=dict(preparation=preparation,startup_ref=reference)
-    if slot==18:options['readiness_guard_ref']=readiness_guard_ref
-    else:
+    replay=append.history;options=dict(preparation=preparation,startup_ref=reference,readiness_guard_ref=readiness_guard_ref)
+    if slot==19:
         from . import tokenizer_wide_hybrid_remaining_confirmation_history_v2 as replay
     checked=replay._verify(writer,slot-1,report['plan_sha256'],report['prior_dispatch_ref'],
         projection_ref=report['projection_ref'],rank_completion_ref=report['rank_completion_ref'],
