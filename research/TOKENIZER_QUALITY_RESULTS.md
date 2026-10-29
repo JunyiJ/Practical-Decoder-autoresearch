@@ -1915,3 +1915,35 @@ The finite quality grid was fixed before pilots. Next is its first1200-step LR
 trial through the existing production readiness/serial-dispatch path, using
 this accepted boundary and the same frozen source/runtime. No research quality
 result or adoption is claimed by these pilot observations.
+
+
+### First quality readiness failure and narrow correction — October 29, 2026
+
+Campaign `research_runs/tokenizer-wide-hybrid-001` is now closed after its first
+quality request failed before a process launch. The error was
+`Readiness inputs changed after guard completion`; quality slot00 contains only
+its request, with no process directory or training output. All pilot successes,
+audited retention receipts and the failed readiness/dispatch evidence are
+preserved. This campaign and failed attempt must never be retried.
+
+The production binder returns live `metadata_bytes` alongside frozen identity.
+Readiness compared the entire returned object across its own guard's completion,
+although the legitimate final guard write can change byte length. Prior small
+fixtures omitted that live census field. Read-only forensics reproduced the
+comparison sensitivity using the real binder result; the exact starting-guard
+bytes were not retained, so no exact historical byte delta is claimed.
+
+The correction excludes only that census counter from the post-guard frozen
+comparison, checks its range, and retains current census enforcement, finished
+guard validation, immutable inventory, every other control, full storage and
+lock checks. All26 focused readiness tests passed, including actual byte-count
+growth from a valid finished guard and rejection of changed frozen files,
+source context and other controls. No closed fixture or campaign was rerun.
+
+`readiness-fix-source-applicability-v2-review.json` verifies that this is the only
+changed source file and runtime is identical. Trainer/model/optimizer/EMA/cache
+and input/tokenizer code are unchanged, so the nine-case numerical and exact
+train-input evidence remain applicable by explicit review, without claiming
+those old runs executed under the new hash. A new package and finite freeze
+must bind both source identities, that applicability review and original
+evidence. No quality training has started; replacement campaign gates remain.

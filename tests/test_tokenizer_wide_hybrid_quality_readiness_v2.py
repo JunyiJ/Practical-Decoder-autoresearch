@@ -100,3 +100,39 @@ def test_late_space_loss_and_finished_guard_are_rechecked(writer,monkeypatch):
     assert not (root/'meta/quality-readiness-00.json').exists()
     guard=json.loads((writer.root/'control/quality-readiness-00.json').read_text())
     assert guard['status']=='finished' and (root/'meta/quality-readiness-00-failure.json').exists()
+
+
+@pytest.mark.parametrize('change',['own_guard_only','frozen_files','context','other_control'])
+def test_finished_guard_can_change_live_census_but_not_frozen_inputs(writer,monkeypatch,change):
+    """Regression for real slot0 failure: synthetic binders omitted live bytes."""
+    startup=prepared(writer,monkeypatch,0)
+    original_bound=ready._bound;original_exit=ready._ReadinessGuard.__exit__;observed=[]
+    def bound(*args,**kwargs):
+        value,request,allowance=original_bound(*args,**kwargs)
+        value=dict(value,metadata_bytes=ready.snapshot(writer.root)['metadata_bytes'])
+        observed.append(value['metadata_bytes'])
+        guard=json.loads((writer.root/'control/quality-readiness-00.json').read_text())
+        if guard['status']=='finished':
+            if change=='frozen_files':value['files']=dict(value['files'],unexpected='0'*64)
+            elif change=='context':value['context']=dict(value['context'],source_sha256='0'*64)
+        return value,request,allowance
+    def finish(self,*args):
+        result=original_exit(self,*args)
+        # Preserve valid finished-guard JSON and force a size difference, as a
+        # normal elapsed-time/free-byte spelling change can do in production.
+        guard=writer.root/'control/quality-readiness-00.json'
+        with guard.open('a') as stream:stream.write(' '*64)
+        if change=='other_control':
+            path=writer.root/'control/quality-first-startup.json'
+            with path.open('a') as stream:stream.write(' ')
+        return result
+    monkeypatch.setattr(ready,'_bound',bound)
+    monkeypatch.setattr(ready._ReadinessGuard,'__exit__',finish)
+    if change=='own_guard_only':
+        ref=ready.seal_quality_readiness(writer,0,startup)
+        assert ready._document(writer.root/'evidence',ref)['guard']['sha256']
+        assert not (writer.root/'evidence/quality/00/process').exists()
+    else:
+        with pytest.raises(ValueError,match='after guard completion'):
+            ready.seal_quality_readiness(writer,0,startup)
+    assert len(observed)==3 and observed[0]==observed[1] and observed[2]!=observed[0]

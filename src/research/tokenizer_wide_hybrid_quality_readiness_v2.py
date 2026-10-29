@@ -71,6 +71,22 @@ def _bound(writer,slot,report):
     return bound,request,allowance
 
 
+def _same_frozen_identity(before,after):
+    """An owned guard may change census bytes without changing frozen inputs.
+
+    bind_campaign still validates the complete current census on every call.
+    The caller separately verifies the finished guard, immutable inventory and
+    every other control file. No other binding field is excluded here.
+    """
+    if ('metadata_bytes' in before)!=('metadata_bytes' in after):return False
+    for value in (before,after):
+        if 'metadata_bytes' in value:
+            count=value['metadata_bytes']
+            if type(count) is not int or not 0<=count<=256*1024**2:return False
+    return digest({k:v for k,v in before.items() if k!='metadata_bytes'})==\
+           digest({k:v for k,v in after.items() if k!='metadata_bytes'})
+
+
 def seal_quality_readiness(writer,slot,startup_ref):
     """Own shared locks and inspect workers first; a failed seal is never retried."""
     _require(isinstance(writer,MetadataWriter) and type(slot) is int and 0<=slot<=23,'Exact supported quality writer/slot required')
@@ -136,7 +152,7 @@ def seal_quality_readiness(writer,slot,startup_ref):
             'Finished readiness guard required')
         _check_inventory(evidence,inventory)
         final,actual,actual_allowance=_bound(writer,slot,report)
-        _require(digest(final)==digest(bound) and digest(actual)==digest(request) and actual_allowance==allowance
+        _require(_same_frozen_identity(bound,final) and digest(actual)==digest(request) and actual_allowance==allowance
             and _controls(writer,guard_name)==controls,'Readiness inputs changed after guard completion')
         controls[guard_name]=dict(size=guard_path.stat().st_size,sha256=guard_ref['sha256'])
         _locks(evidence,writer.lock_fds)

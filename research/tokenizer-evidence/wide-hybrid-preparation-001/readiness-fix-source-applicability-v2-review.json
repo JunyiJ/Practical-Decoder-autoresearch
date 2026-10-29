@@ -1,0 +1,48 @@
+{
+  "kind": "wide_hybrid_source_applicability_review_v2",
+  "status": "numerical_and_input_evidence_applicable_after_readiness_only_fix",
+  "created_at": "2026-10-29T21:20:02.148066+00:00",
+  "before_source_sha256": "5b32cee89c24353b0372f0c288078b0d292d50fb65de77e5a379e8d8a8556f7a",
+  "after_source_sha256": "ccd626c6a544570d977ca5fab84abffbc853abcdf365d488e56fdc9e482deaed",
+  "runtime_sha256": "d193008aa205d1d7dd914c0c65256024f318390ed707124a6ef7c5aa4eb5b24c",
+  "changed_files": {
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": {
+      "before": "5b1b127b201fce3d61c432b2ed23a78c1017460e539a056a990a1dddb8386c05",
+      "after": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9"
+    }
+  },
+  "unchanged_source_file_count": 227,
+  "original_numerical": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/wide-hybrid-preparation-001/rank-numerical-v2-reviewed-001/meta/numerical.json",
+    "sha256": "9e6ce1796aff4c5620ce1d8130e409afdc7345da26f8f49b282c366c690f9be4"
+  },
+  "original_input": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/wide-hybrid-preparation-001/training-input-v2-002/meta/training-input.json",
+    "sha256": "5ece26be743dea9270e270d29d8b3aba18d26449bf351a3e3139438e042c5aba"
+  },
+  "regression_log_sha256": "263d03f3bb7f0d448030a5992dd14c4ae4679c0c9882e24b1a859801e66d8dc7",
+  "test_source_hashes": {
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9",
+    "tests/test_tokenizer_wide_hybrid_quality_readiness_v2.py": "30637f29ccc9062be7b09a0c551741c7da25904c13d5ed5a52c829d81e6844af"
+  },
+  "review": [
+    "Only quality-readiness comparison after owned guard completion changed; no trainer, optimizer, EMA, checkpoint, model, cache kernel, tokenizer, config, corpus, numerical controller or input producer changed.",
+    "Every other source file hash and complete runtime identity equal the actually tested source/runtime.",
+    "The new comparison omits only top-level metadata_bytes across the expected owned-guard transition, validates its numeric range and preserves every other binding field.",
+    "Production census cap checks, own finished-guard validation, immutable inventory checks, other-control hashes, locks and full remaining-storage checks remain.",
+    "26 focused tests passed, including live-census growth and rejection of changed frozen-file hashes, source context and other controls."
+  ],
+  "numerical_rerun_required": false,
+  "input_reencoding_required": false,
+  "original_artifacts_rewritten": false,
+  "quality_training_started": false,
+  "closed_campaign": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-001",
+  "closed_campaign_retry_allowed": false,
+  "new_freeze_required": true,
+  "limitations": [
+    "This review carries forward numerical/input applicability; it does not relabel old runs as executed under the new source.",
+    "A new package/plan must bind this review, the original artifacts and both source identities explicitly.",
+    "Closed campaign001 remains immutable; do not transplant historical process/cleanup receipts as if executed in a different campaign.",
+    "New prospective resource-pilot/quality gates still apply before any replacement quality dispatch."
+  ]
+}
