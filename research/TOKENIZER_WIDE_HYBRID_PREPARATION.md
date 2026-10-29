@@ -3879,3 +3879,43 @@ rank-policy numerical procedure with bounded disk-backed checkpoint lifetimes,
 then execute its fresh cases once. Do not rerun the closed combined fixture.
 Complete actual metadata and quality/cost aggregation review, freeze/measure
 resource pilots, and freeze the finite quality plan before research training.
+
+
+### Separate frozen nine-case CPU numerical procedure begins
+
+The separately reviewed rank-policy procedure is frozen in
+`rank-numerical-v2-frozen-plan.json`; its executable run plan hashes to
+`d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1`.
+Five small streaming-hash/config/freeze/STOP/provenance orchestration tests
+passed in0.50s under the180s/4GiB/8GiB CPU guard. The prior four-test batch
+also passed and is retained. No closed continuation test is imported or called.
+
+This fresh prerequisite uses nine width512 family/rank cases, with baseline,
+partial-save and resume isolated in27 serial CPU processes. The existing trainer,
+model, sampler, optimizer, checkpoint reader and EMA math remain unchanged.
+The partial checkpoint is written directly to disk; baseline and resumed
+end states are streamed into complete hashes without retained serialized
+buffers. Each phase has600s/4GiB/8GiB guards, inherited global/run locks and
+owned-process cleanup. Each case has a2GiB output cap; the initial complete
+reservation is26GiB versus roughly51GiB observed free. Failures stop the panel
+and preserve all artifacts. This is four-update correctness validation with
+H200 snapshots1–4, not a resource pilot or quality trajectory.
+
+The first complete case, hybrid D/8, passed all three phases. Full model,
+optimizer, EMA and torch/loader RNG hashes exactly matched baseline versus
+resume. Independent scalar EMA recurrence checks sampled the first/middle/last
+values of every parameter; complete EMA state equality complements that sample.
+The inference-only EMA load matched every stored parameter, preserved buffers
+and correctly rejected optimizer resume. Phase times were74.58/21.31/58.44s;
+maximum RSS was3,855,155,200bytes (3.59GiB). Its981,866,923-byte partial checkpoint
+is retained. The remaining eight cases are still pending/running serially.
+
+Evidence: `rank-numerical-v2-procedure.md`,
+`rank-numerical-v2-procedure-review.json`, and
+`rank-numerical-v2-first-case-review.json`. Actual running evidence is under
+`research_runs/tokenizer-wide-hybrid-numerical-v2-001`. Monitor this controller;
+do not start a competing worker or retry its existing directory. After all27
+phases finish, independently review original guards/process/receipt/checkpoint
+hashes and export the compact numerical trace/review. No nine-case numerical
+pass, MPS pilot, quality-plan freeze or adoption is claimed yet. The closed
+failed combined fixture and test holdout remain closed.

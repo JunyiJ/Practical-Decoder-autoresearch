@@ -1,0 +1,306 @@
+{
+  "status": "first_case_passed_remaining_eight_pending",
+  "at": "2026-10-29T20:13:14.628264+00:00",
+  "case": {
+    "family": "hybrid",
+    "width": 512,
+    "divisor": 8
+  },
+  "plan_sha256": "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+  "phases": {
+    "baseline": {
+      "guard": {
+        "elapsed_seconds": 74.57615737499873,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 55030157312,
+          "peak_rss_bytes": 3376103424
+        },
+        "pid": 99454,
+        "reason": null,
+        "status": "finished"
+      },
+      "process": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/wide-hybrid-preparation-001/run_rank_numerical_v2.py",
+          "worker",
+          "--root",
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001",
+          "--plan-sha256",
+          "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+          "--index",
+          "0",
+          "--phase",
+          "baseline",
+          "--global-fd",
+          "3",
+          "--local-fd",
+          "4"
+        ],
+        "elapsed_seconds": 75.4818532499994,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "observation": {
+          "free_bytes": 55030157312,
+          "log_bytes": 150,
+          "output_bytes": 2327
+        },
+        "output_limit_bytes": 2147483648,
+        "pid": 99454,
+        "required_free_bytes": 27917287424,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "receipt": {
+        "case": {
+          "divisor": 8,
+          "family": "hybrid"
+        },
+        "completed_steps": 4,
+        "config_sha256": "03eed240795a296a10cd7a6a2bc79fe94eb854010ad51234862d9b931fdfeb20",
+        "ema_load_and_resume_rejection_checked": false,
+        "ema_observations": [
+          {
+            "snapshots": 1,
+            "step": 1
+          },
+          {
+            "snapshots": 2,
+            "step": 2
+          },
+          {
+            "snapshots": 3,
+            "step": 3
+          },
+          {
+            "snapshots": 4,
+            "step": 4
+          }
+        ],
+        "ema_sample_max_absolute_error": 1.1542991917856682e-07,
+        "exact_resume_equal": false,
+        "hashes": {
+          "ema": "49ff862d63f855b2f5adc7da5843a901fb2a596ce562a0171e7a3b3591ba34f7",
+          "loader_rng": "a6c7810ab8e363ff1cc77dee49e308fc7cb96fa67e2cf7385065bde9fa67c0b8",
+          "model": "b8e7ef5cb72a7f17ce39287e87c07b57b7d6e587596649d7bffa61d886baeefd",
+          "optimizer": "240e6f1d68a5da72cc9cc4a7fd354a96bff55a0a7aa350eb232c3605e32d1b94",
+          "rng": "1917c7a22fb19816f256d6c3ecef6cbb0bdc71387eee481a625d0bc39bdaa577"
+        },
+        "kind": "rank_numerical_phase_v2",
+        "parameter_sample_positions": "first_middle_last_each_parameter",
+        "partial_checkpoint_sha256": null,
+        "phase": "baseline",
+        "plan_sha256": "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+        "quality_evidence": false,
+        "test_loss_computed": false
+      },
+      "original_files": {
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/baseline/guard.json": "147d77e49a27cd304f77bf454d46e6dfd43c804cbe24131c2f1806cb3e86ae02",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/baseline/worker.log": "77b0324b0eff39ef3771a9f70278727c40946b1dcde7d962e35f9e04a93be622",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/baseline/process.json": "3e8ecaa11b614390d123ddae42d0a455bc3cb69fa97719556a552f896b9d306f",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/baseline/receipt.json": "f7461f979bc1e8e1b06184879032f5f800ffe85cb0b60e3c1822f7ee909d0c1f"
+      }
+    },
+    "partial": {
+      "guard": {
+        "elapsed_seconds": 21.313560707996658,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 54039756800,
+          "peak_rss_bytes": 3222011904
+        },
+        "pid": 99471,
+        "reason": null,
+        "status": "finished"
+      },
+      "process": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/wide-hybrid-preparation-001/run_rank_numerical_v2.py",
+          "worker",
+          "--root",
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001",
+          "--plan-sha256",
+          "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+          "--index",
+          "0",
+          "--phase",
+          "partial",
+          "--global-fd",
+          "3",
+          "--local-fd",
+          "4"
+        ],
+        "elapsed_seconds": 22.29831479099812,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "observation": {
+          "free_bytes": 54039756800,
+          "log_bytes": 56,
+          "output_bytes": 981871450
+        },
+        "output_limit_bytes": 2147483648,
+        "pid": 99471,
+        "required_free_bytes": 27917287424,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "receipt": {
+        "case": {
+          "divisor": 8,
+          "family": "hybrid"
+        },
+        "completed_steps": 1,
+        "config_sha256": "9980ce0e999abf24127ab215cb5854b428bd827daaecc58c9b4845a10620159d",
+        "ema_load_and_resume_rejection_checked": false,
+        "ema_observations": [
+          {
+            "snapshots": 1,
+            "step": 1
+          }
+        ],
+        "ema_sample_max_absolute_error": 0.0,
+        "exact_resume_equal": false,
+        "hashes": {
+          "ema": "5b09c8ba4e8903cd8a63040d112cd24ea02c809680c9d5c46e332f7b9fdcb2c9",
+          "loader_rng": "8592ced8839f45dc57808544988c6ba8622ca695e6f4c10c2cf0a594c5d61279",
+          "model": "3a2ffe985bc72a9fba41f6f2950884b18e9cdf873408be8fa670401b8b8c37af",
+          "optimizer": "21beeb23e7e725c49ae0b97a98a19429a5f269292bd68f6a7f371bdaa0e342af",
+          "rng": "1917c7a22fb19816f256d6c3ecef6cbb0bdc71387eee481a625d0bc39bdaa577"
+        },
+        "kind": "rank_numerical_phase_v2",
+        "parameter_sample_positions": "first_middle_last_each_parameter",
+        "partial_checkpoint_sha256": "ff8a5d7e96b9db86545bfd8fbfd39f9553c709a4de0314749d916c805fc46b38",
+        "phase": "partial",
+        "plan_sha256": "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+        "quality_evidence": false,
+        "test_loss_computed": false
+      },
+      "original_files": {
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/partial/guard.json": "a21c41654cae060e2baba1b236d3e8ebcd090feaa16204e2b9cd7ea553fc6071",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/partial/worker.log": "c6245731679e180d1783d67ecd8833375818e4f9806cdd5a3247f0a5add0182b",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/partial/process.json": "88a50a687cbc9fe54f6d7b1a0165e51e523aec638945ac6c80a0bbb6ec5e0fcb",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/partial/receipt.json": "6b5c6ebd1a2d8a8de1ebe02759843f4e14fd32a1e75b4379776ce82058c7895f"
+      }
+    },
+    "resumed": {
+      "guard": {
+        "elapsed_seconds": 58.44000795800093,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 54036975616,
+          "peak_rss_bytes": 3855155200
+        },
+        "pid": 99480,
+        "reason": null,
+        "status": "finished"
+      },
+      "process": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/wide-hybrid-preparation-001/run_rank_numerical_v2.py",
+          "worker",
+          "--root",
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001",
+          "--plan-sha256",
+          "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+          "--index",
+          "0",
+          "--phase",
+          "resumed",
+          "--global-fd",
+          "3",
+          "--local-fd",
+          "4"
+        ],
+        "elapsed_seconds": 59.351523208999424,
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "observation": {
+          "free_bytes": 54036971520,
+          "log_bytes": 118,
+          "output_bytes": 981873784
+        },
+        "output_limit_bytes": 2147483648,
+        "pid": 99480,
+        "required_free_bytes": 27917287424,
+        "reserve_bytes": 8589934592,
+        "returncode": 0,
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "receipt": {
+        "case": {
+          "divisor": 8,
+          "family": "hybrid"
+        },
+        "completed_steps": 4,
+        "config_sha256": "f44fc82712a58ec92150f9cae49b5169a9d08916452ac00e4d7584d599e89171",
+        "ema_load_and_resume_rejection_checked": true,
+        "ema_observations": [
+          {
+            "snapshots": 2,
+            "step": 2
+          },
+          {
+            "snapshots": 3,
+            "step": 3
+          },
+          {
+            "snapshots": 4,
+            "step": 4
+          }
+        ],
+        "ema_sample_max_absolute_error": 1.1542991917856682e-07,
+        "exact_resume_equal": true,
+        "hashes": {
+          "ema": "49ff862d63f855b2f5adc7da5843a901fb2a596ce562a0171e7a3b3591ba34f7",
+          "loader_rng": "a6c7810ab8e363ff1cc77dee49e308fc7cb96fa67e2cf7385065bde9fa67c0b8",
+          "model": "b8e7ef5cb72a7f17ce39287e87c07b57b7d6e587596649d7bffa61d886baeefd",
+          "optimizer": "240e6f1d68a5da72cc9cc4a7fd354a96bff55a0a7aa350eb232c3605e32d1b94",
+          "rng": "1917c7a22fb19816f256d6c3ecef6cbb0bdc71387eee481a625d0bc39bdaa577"
+        },
+        "kind": "rank_numerical_phase_v2",
+        "parameter_sample_positions": "first_middle_last_each_parameter",
+        "partial_checkpoint_sha256": "ff8a5d7e96b9db86545bfd8fbfd39f9553c709a4de0314749d916c805fc46b38",
+        "phase": "resumed",
+        "plan_sha256": "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+        "quality_evidence": false,
+        "test_loss_computed": false
+      },
+      "original_files": {
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/resumed/guard.json": "ab70126f62276424acdcbb27fa61be4f3bc964704ddf06ee94b83465d9eb6c24",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/resumed/worker.log": "8cd6253445bef0cf6a5b0122885565f4838d51cd706326a41c011bb0daf9baf2",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/resumed/process.json": "bb9654d70e1d384b64bef577cfc43eaa9303c2c28012e371a975c07267d7efb4",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/resumed/receipt.json": "488ddcd554b7d355cdef1c590f1241eda6381cdc51dc3eeae785597c4ee45ddc"
+      }
+    }
+  },
+  "partial_checkpoint": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/partial.pt",
+    "bytes": 981866923,
+    "sha256": "ff8a5d7e96b9db86545bfd8fbfd39f9553c709a4de0314749d916c805fc46b38"
+  },
+  "peak_rss_bytes": 3855155200,
+  "nine_case_numerical_review_passed": false,
+  "mps_launched": false,
+  "quality_training_launched": false,
+  "closed_failed_fixture_retried": false
+}

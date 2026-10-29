@@ -1,0 +1,43 @@
+{
+  "kind": "separate_rank_numerical_procedure_review",
+  "at": "2026-10-29T20:08:28.035203+00:00",
+  "status": "reviewed_for_one_fresh_finite_execution",
+  "run_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-numerical-v2-001",
+  "run_plan_sha256": "d89c3e501c80f8391da471dafde93884e5f635df5f93048a576c69e9729e32a1",
+  "source_hashes": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_rank_numerical_v2.py": "8f8746e86db741346bac70f87b521757925ce6d2a0187e0a80824e7fd5788e81",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-numerical-v2-procedure.md": "e4c3279f87d77b0b12ccd89da815ab88ae15c578b2deab4f1aa59d486f0eac7d",
+    "tests/test_tokenizer_rank_numerical_procedure.py": "b43db8ab2d14079b1cbe3927e68bda15b923d46023800ae139c6bf9c9c4c1461"
+  },
+  "tests_passed": 5,
+  "test_guard": {
+    "elapsed_seconds": 0.6779005420030444,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 180
+    },
+    "observation": {
+      "free_bytes": 55031123968,
+      "peak_rss_bytes": 243236864
+    },
+    "pid": 99392,
+    "reason": null,
+    "status": "finished"
+  },
+  "available_free_bytes": 55031033856,
+  "required_free_bytes": 27917287424,
+  "review_findings": [
+    "One case and one phase per process; no prior continuation test imported.",
+    "Production trainer/checkpoint loading unchanged; only final save callback hashes instead of serializing baseline/resumed state.",
+    "Partial checkpoint serialized directly to disk; no BytesIO or surviving serialized buffer.",
+    "Exact complete state equality required; per-parameter sampled scalar EMA recurrence is complementary, not all-element independent recurrence.",
+    "Original partial checkpoint SHA checked before/after deserialization; prior artifacts rechecked before/after every phase.",
+    "Existing process supervisor owns/reaps each child group; independent child watchdog includes STOP; no parent hard exit with live child.",
+    "All outputs retained; first failure stops entire fresh procedure, no retries."
+  ],
+  "numerical_result": null,
+  "quality_plan_frozen": false,
+  "research_training_launched": false,
+  "closed_combined_fixture_retried": false
+}
