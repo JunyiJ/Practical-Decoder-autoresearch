@@ -145,5 +145,5 @@ def test_first_fresh_cli_exact_seal_and_later_slots_stay_closed(writer,monkeypat
     monkeypatch.setattr(entry,'run_worker',capture)
     assert entry.main(argv[3:])=='no producer' and seen==[1]
     with pytest.raises(ValueError):entry.transport.worker_argv(writer,15,start)
-    for slot in (16,23,24,-1,True,15.0):
+    for slot in (17,23,24,-1,True,15.0):
         with pytest.raises(ValueError):entry.worker_argv(writer,slot,start,seal)

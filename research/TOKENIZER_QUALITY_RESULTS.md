@@ -964,3 +964,19 @@ Readiness/entry/parent dispatch and later fresh slots remain unfinished. Actual
 numerical/input/measured-pilot gates, inference and complete real metadata fit
 still precede freeze. No training, protected checkpoint cleanup or holdout use.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot16-startup-v2-component-review.json`.
+
+
+## October 28 slot16 readiness and child-entry preparation
+
+Slot16 now seals its full idle review with an explicitly bound readiness guard,
+then validates a live child handoff against the compact startup receipt. Child
+entry reconstructs16 completed records, three cleanup boundaries and all four
+live selected/fresh pairs before recomputing full remaining storage. Existing
+idle readers remain strict, and the bounded entry cannot be retried. This is
+controller preparation and supplies no new model-quality result.
+
+Slot16 parent acceptance/serial dispatch, later fresh transport, inference,
+complete real metadata fit and actual numerical/input/measured-pilot gates still
+precede freeze. Training has not launched; protected checkpoints and the closed
+holdout are unchanged. Evidence and test verdicts:
+`tokenizer-evidence/wide-hybrid-preparation-001/slot16-readiness-entry-v2-component-review.json`.

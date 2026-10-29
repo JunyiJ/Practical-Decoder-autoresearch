@@ -18,7 +18,7 @@ def prepared(writer,monkeypatch):
     return ref
 
 
-@pytest.mark.parametrize('slot',[16,23,24,-1,True,15.0,'15'])
+@pytest.mark.parametrize('slot',[17,23,24,-1,True,15.0,'15'])
 def test_unsupported_fresh_slot_never_creates_guard(writer,slot):
     before=ready.snapshot(writer.root)
     with pytest.raises(ValueError):ready.seal_quality_readiness(writer,slot,{})

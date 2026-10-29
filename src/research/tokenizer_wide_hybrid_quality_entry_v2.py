@@ -52,11 +52,15 @@ def _stamps(root,inventory):
 
 def _storage(writer,slot,seal,startup,inventory):
     root=writer.root/'evidence'
-    pilot,_,stage,_=_receipt(writer,seal['plan_sha256'],startup['pilot_completion_ref'])
-    selection=None
+    pilot_ref=startup.get('pilot_completion_ref')
+    if slot==16:
+        records,pairs,rates,selection,pilot_ref=_slot16_history(writer,seal,startup)
+    pilot,_,stage,_=_receipt(writer,seal['plan_sha256'],pilot_ref)
+    if slot!=16:selection=None
     if slot==15:
         records,pairs,rates,selection=_first_confirmation_history(writer,seal,startup)
         boundaries=3
+    elif slot==16:boundaries=3
     else:
         records=[] if slot==0 else startup['completed_records']
         pairs={} if slot==0 else startup['checkpoint_pairs']
@@ -139,6 +143,10 @@ def _first_confirmation_history(writer,seal,startup):
 
 
 def _expected_review(slot,startup_ref,seal):
+    if slot==16:
+        return dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
+            startup_ref=startup_ref,prior_transport_verified=True,selected_and_fresh_prefix_verified=True,
+            confirmation_request_verified=True,dispatch_authorized=False)
     expected=dict(required_free_bytes=seal['required_free_bytes'],request_sha256=seal['request']['sha256'],
                   pilot_history_verified=True,dispatch_authorized=False)
     if slot==0:expected['first_quality_request_verified']=True
@@ -149,6 +157,51 @@ def _expected_review(slot,startup_ref,seal):
         expected.update(startup_ref=startup_ref,rank_history_verified=True,
                         selected_screen_prefix_verified=True,first_confirmation_request_verified=True)
     return expected
+
+
+def _slot16_history(writer,seal,startup):
+    """Expand sealed prior records/pairs without re-running idle audits in a live child."""
+    from pathlib import Path
+    from .tokenizer_wide_hybrid_rules import _checked
+    from .tokenizer_wide_hybrid_first_confirmation_startup_v2 import _frozen
+    root=writer.root/'evidence';ref=startup['prior_dispatch_ref']
+    _require(ref['path']=='meta/quality-dispatch-15.json','Exact first-fresh transport reference required')
+    prior=_document(root,ref);review=prior['review']
+    _require(prior['status']=='first_confirmation_reviewed' and type(prior['slot']) is int and prior['slot']==15
+        and prior['plan_sha256']==seal['plan_sha256'] and prior['projection_ref']==seal['projection_ref']
+        and prior['rank_completion_ref']==startup['rank_completion_ref']
+        and review['representation']=='wide_hybrid_first_confirmation_acceptance_digest_v1',
+        'Sealed original fresh transport identity differs')
+    first=_document(root,review['startup'])
+    records,pairs,rates,selection=_first_confirmation_history(writer,seal,first)
+    bound,requests=_frozen(writer,16,seal['plan_sha256'],seal['projection_ref'],rates,selection)
+    _require(bound['files']==seal['frozen_files'] and bound['context']==seal['context']
+        and _document(root,first['request'])==requests[15]
+        and prior['pilot_completion_ref']==first['pilot_completion_ref'],
+        'Sealed first-fresh frozen request or pilot lineage differs')
+    result_name='quality/15/result.json'
+    result=_document(root,dict(path=result_name,sha256=seal['inventory'][result_name]['sha256']))
+    row=dict(requests[15]['spec'],status=result.get('status'),ce=result.get('h200',{}).get('mean_ce'))
+    _checked([row],[requests[15]['spec']])
+    _require(result.get('holdout_consumed') is False and result.get('request_sha256')==first['request']['sha256']
+        and all(digest(result.get(k))==digest(v) for k,v in requests[15]['spec'].items()),
+        'Sealed first-fresh result identity differs')
+    records=[*records,row];pair={}
+    for role in ('raw','h200'):
+        path=Path(result[role]['checkpoint'])
+        _require(path.is_absolute() and path.parent==root/'quality/15/checkpoints',
+                 'Fresh checkpoint outside exact sealed trial')
+        name=str(path.relative_to(root));binding=seal['inventory'][name]
+        _require(binding['sha256']==result[role]['checkpoint_sha256'],'Sealed fresh checkpoint hash differs')
+        pair[role]=dict(path=name,**binding)
+    pairs={**pairs,'quality/15':pair}
+    expected=dict(completed_records_sha256=digest(records),checkpoint_pairs_sha256=digest(pairs),
+        stages_sha256=first['stages_sha256'],rates=rates,selection=selection,
+        audited_indices=first['audited_indices']+[15])
+    _require(all(digest(startup[k])==digest(v)==digest(review[k]) for k,v in expected.items())
+        and startup['frozen_files_sha256']==digest(seal['frozen_files']),
+        'Compact slot16 completed records, live pairs or cleanup history differ')
+    return records,pairs,rates,selection,first['pilot_completion_ref']
 
 
 def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
@@ -169,10 +222,18 @@ def verify_ready_worker(writer,slot,startup_ref,readiness_ref,actual_argv):
         _require(digest(seal[key])==digest(startup[key]),'Seal/startup identity differs')
     expected=_expected_review(slot,startup_ref,seal)
     _require(digest(seal['predispatch_review'])==digest(expected),'Sealed full idle review differs')
-    inventory=dict(startup['inventory'])
-    for ref in (startup['request'],startup_ref):
-        _require(ref['path'] not in inventory,'Startup evidence overlap')
-        p=_path(root,ref['path']);inventory[ref['path']]=dict(size=p.stat().st_size,sha256=ref['sha256'])
+    if slot==16:
+        inventory=dict(seal['inventory']);before={n:v for n,v in inventory.items() if n!=startup_ref['path']}
+        controls={n:v for n,v in seal['control_inventory'].items() if n!=f'control/quality-readiness-{slot:02d}.json'}
+        _require(startup_ref['path'] in inventory and inventory[startup_ref['path']]['sha256']==startup_ref['sha256']
+            and digest(before)==startup['inventory_sha256'] and digest(controls)==startup['controls_sha256']
+            and type(startup.get('parent_pid')) is int and startup['parent_pid']==seal['parent_pid'],
+            'Compact slot16 sealed inventory/control/parent binding differs')
+    else:
+        inventory=dict(startup['inventory'])
+        for ref in (startup['request'],startup_ref):
+            _require(ref['path'] not in inventory,'Startup evidence overlap')
+            p=_path(root,ref['path']);inventory[ref['path']]=dict(size=p.stat().st_size,sha256=ref['sha256'])
     _require(inventory==seal['inventory'] and readiness_ref['path'] not in inventory,'Complete sealed inventory differs')
     p=_path(root,readiness_ref['path']);inventory[readiness_ref['path']]=dict(size=p.stat().st_size,sha256=readiness_ref['sha256'])
     initial=_stamps(root,inventory);_controls(writer,seal,slot)
@@ -233,7 +294,7 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument('command',choices=['worker'])
     parser.add_argument('--campaign',required=True,type=Path)
-    parser.add_argument('--slot',required=True,type=int,choices=range(16))
+    parser.add_argument('--slot',required=True,type=int,choices=range(17))
     parser.add_argument('--startup-sha256',required=True)
     parser.add_argument('--global-fd',required=True,type=int)
     parser.add_argument('--campaign-fd',required=True,type=int)

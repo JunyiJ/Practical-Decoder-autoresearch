@@ -2558,3 +2558,41 @@ contract, then parent acceptance/serial dispatch and later fresh slots17–23.
 Actual numerical/input/measured-pilot prerequisites, inference and full real
 metadata accounting remain before plan freeze. No research training, MPS work,
 checkpoint deletion, holdout evaluation or closed numerical-fixture retry occurred.
+
+
+## October 28 slot16 readiness and bounded child entry
+
+Slot16 readiness now performs the full independent compact-startup replay while
+allowing exactly its own explicitly referenced, schema-checked, bounded current
+parent guard. The ordinary idle/startup and attempt readers remain strict about
+additional artifacts. The seal binds the complete evidence/control inventory,
+frozen request and source, full remaining storage and finished readiness guard.
+Its lossless inventory delta uses the original slot15 readiness seal as an anchor;
+the compact startup receipt has no expanded inventory to use as a delta base.
+
+Child entry binds canonical argv, inherited locks and the exact live parent,
+launch and seal hashes. It reconstructs all16 completed records and the four live
+checkpoint pairs from original rank receipts and the sealed first fresh result,
+checks their compact digests and three cleanup boundaries, and independently
+recomputes current allocation and full future capacity. Selected screens and the
+completed fresh pair remain protected. No pending-trial credit is taken. The
+7200-second entry guard precedes the producer, and entry cannot be retried.
+
+The synthetic readiness seal is21,376bytes, with meta-group usage1,503,560 of
+2,097,152bytes and total metadata2,058,140bytes. These disposable fixtures do not
+establish full real-panel metadata fit, numerical correctness or MPS feasibility.
+The exact tests, guards, source hashes, preserved command-collection error and
+verdicts are recorded in
+`tokenizer-evidence/wide-hybrid-preparation-001/slot16-readiness-entry-v2-component-review.json`.
+
+All20 checks passed in two serial batches of171.84s and386.05s. Peak RSS was
+243,941,376bytes, with no resource-guard or test-assertion failure. An intervening
+command exited4 during collection because of an incorrect test selector; no
+test or fixture ran in that attempt, and its raw evidence is retained separately.
+The corrected command used a new evidence name and the same unchanged limits.
+
+Next integrate slot16 parent acceptance and serial dispatch, then verified
+transport for later fresh slots17–23. Inference, full real metadata accounting
+and actual nine-case numerical/input/measured-pilot prerequisites remain before
+finite-plan freeze. No training, MPS run, protected checkpoint deletion, holdout
+evaluation or retry of the closed failed numerical fixture occurred.

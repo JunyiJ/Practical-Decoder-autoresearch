@@ -85,7 +85,8 @@ def verify_first_confirmation_dispatch(writer,plan_sha256,completion_ref,*,proje
                    rank_completion_ref=rank_completion_ref)
 
 
-def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None):
+def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None,startup_ref=None,
+            readiness_guard_ref=None):
     """Shared replay; only the separately checked slot16 preparation may append."""
     _require(isinstance(writer,MetadataWriter),'Bounded writer required');_sha(plan_sha256)
     root=writer.root/'evidence';_locks(root,writer.lock_fds)
@@ -96,6 +97,12 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
     inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
     saved,identity=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
     _require(startup_ref is None or preparation is not None,'Startup receipt requires explicit preparation')
+    _require(readiness_guard_ref is None or startup_ref is not None,'Readiness guard requires exact startup receipt')
+    readiness_control=None;startup_controls=controls
+    if readiness_guard_ref is not None:
+        from .tokenizer_wide_hybrid_confirmation_startup_v2 import _readiness_control
+        readiness_control=_readiness_control(writer,readiness_guard_ref)
+        startup_controls={n:v for n,v in controls.items() if n!=readiness_control[0]}
     appended={};pending=None;extra_control=None;startup_report=None
     if preparation is not None:
         from .tokenizer_wide_hybrid_confirmation_append_v2 import _append
@@ -103,7 +110,7 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
                                               rank_completion_ref,saved,preparation)
     if startup_ref is not None:
         from .tokenizer_wide_hybrid_confirmation_startup_v2 import _receipt_binding
-        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,controls)
+        startup_report,binding=_receipt_binding(writer,startup_ref,saved,preparation,inventory,startup_controls)
         appended[startup_ref['path']]=binding
     review=saved['review'];historical=dict(inventory);historical.pop(completion_ref['path'])
     for name,binding in appended.items():
@@ -122,6 +129,10 @@ def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_r
     if extra_control is not None:
         name,binding=extra_control
         _require(name not in expected_controls,'Preparation control overlaps original history')
+        expected_controls[name]=binding
+    if readiness_control is not None:
+        name,binding=readiness_control
+        _require(name not in expected_controls,'Readiness control overlaps original history')
         expected_controls[name]=binding
     _require(controls==expected_controls,'Exact original controls plus declared preparation guard required')
     process=_document(root,review['child']['process'])

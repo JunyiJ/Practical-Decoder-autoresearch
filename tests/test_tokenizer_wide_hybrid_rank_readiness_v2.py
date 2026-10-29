@@ -97,7 +97,7 @@ def test_partial_rank_seal_publication_is_preserved_and_not_retried(writer,monke
     with pytest.raises(ValueError,match='cannot be retried'):ready.seal_quality_readiness(writer,9,startup)
 
 
-@pytest.mark.parametrize('slot',[16,23,-1,True,'9'])
+@pytest.mark.parametrize('slot',[17,23,-1,True,'9'])
 def test_invalid_or_later_confirmation_slot_never_creates_readiness_guard(writer,slot):
     with pytest.raises(ValueError):ready.seal_quality_readiness(writer,slot,{})
     assert not (writer.root/'evidence/meta').exists()
