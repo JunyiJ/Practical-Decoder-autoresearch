@@ -81,6 +81,12 @@ def _transport(writer,plan_sha,reference,projection_ref,rank_completion_ref):
 
 def verify_first_confirmation_dispatch(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref):
     """Strict idle verification before any later fresh request/attempt exists."""
+    return _verify(writer,plan_sha256,completion_ref,projection_ref=projection_ref,
+                   rank_completion_ref=rank_completion_ref)
+
+
+def _verify(writer,plan_sha256,completion_ref,*,projection_ref,rank_completion_ref,preparation=None):
+    """Shared replay; only the separately checked slot16 preparation may append."""
     _require(isinstance(writer,MetadataWriter),'Bounded writer required');_sha(plan_sha256)
     root=writer.root/'evidence';_locks(root,writer.lock_fds)
     census=snapshot(writer.root)
@@ -89,12 +95,33 @@ def verify_first_confirmation_dispatch(writer,plan_sha256,completion_ref,*,proje
              'Failed/partial history cannot be accepted')
     inventory=acceptance._inventory(root);controls=acceptance.readiness._controls(writer,'not-a-control')
     saved,identity=_transport(writer,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
+    appended={};pending=None;extra_control=None
+    if preparation is not None:
+        from .tokenizer_wide_hybrid_confirmation_append_v2 import _append
+        appended,pending,extra_control=_append(writer,plan_sha256,completion_ref,projection_ref,
+                                              rank_completion_ref,saved,preparation)
     review=saved['review'];historical=dict(inventory);historical.pop(completion_ref['path'])
+    for name,binding in appended.items():
+        _require(historical.get(name)==binding,'Declared preparation append binding differs')
+        historical.pop(name)
     _require(review.get('evidence_inventory_sha256')==digest(historical),
              'Exact original post-child inventory required; later evidence needs separate integration')
+    # The original seal contains all controls preceding the first child. Only
+    # that child's finished controls and the three finished parent phases follow.
+    expected_controls=dict(_document(root,review['readiness'])['control_inventory'])
+    for ref in [*saved['guards'].values(),review['entry_guard'],review['supervisor_ref']]:
+        binding=dict(size=_path(writer.root,ref['path']).stat().st_size,sha256=ref['sha256'])
+        _require(ref['path'] not in expected_controls or expected_controls[ref['path']]==binding,
+                 'Historical control reference conflict')
+        expected_controls[ref['path']]=binding
+    if extra_control is not None:
+        name,binding=extra_control
+        _require(name not in expected_controls,'Preparation control overlaps original history')
+        expected_controls[name]=binding
+    _require(controls==expected_controls,'Exact original controls plus declared preparation guard required')
     process=_document(root,review['child']['process'])
     actual=acceptance._review_completed(writer,15,review['startup'],review['readiness'],process,
-                                         historical_identity=identity)
+                                         historical_identity=identity,pending_confirmation_request=pending)
     compact=dict(actual,representation=REPRESENTATION)
     for key in ('completed_records','checkpoint_pairs','stages'):
         compact[key+'_sha256']=digest(compact.pop(key))

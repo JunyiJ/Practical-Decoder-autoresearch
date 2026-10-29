@@ -1,0 +1,110 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "447556380c2442907e9518f67a1d4186ca00f3aa",
+  "created_at": "2026-10-29T04:54:50.908964+00:00",
+  "development_notes": [
+    "The initial integration test failed at the intentionally strict existing storage gate. The narrow explicit allowance was then implemented. Late-mutation tests were strengthened to assert they pass the storage audit before the mutation is injected; their initial negative results alone did not prove that reachability."
+  ],
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-001-guard.json": "beb5698e1b43f246d7a433728895f5bddcfa0fead514bec9b8aa27ed30baa3bf",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-001-tests.log": "32808c69954793ecbd97eeeb17d6e33b5c3a3eada1ebd92137e082949a21a285",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-final-guard.json": "cc7f5d023403beced62ab6d05b1317c681a94a837b3eb84a90b47891d811422d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-final-tests.log": "b0de1112b86bad2f2baef6c8659036ea3ef778b85a7127fbfac2ff126e988113",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-regression-guard.json": "08cafeb45c96e1e6b1d57d7612eeada84effc5fc356a5df41dd07423b4d2c41b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-regression-tests.log": "89530866e687a72950f2a3e40452ae5227bcd2dc536070562861b70db2b8be42",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-remaining-guard.json": "d2cfb9703cc1a0013da868ac737e976c2ac9006f2a127264711b7e89f7978dcd",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-remaining-tests.log": "6d76d41eb5b86ea2c1bed6fc04337dceffd6972f66b5c033b028d2b5e13b6be6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "src/research/tokenizer_wide_hybrid_confirmation_append_v2.py": "33c9087090e22400bdf2d22e0072550ec2bd0b7252e6df2505181ee1d039b566",
+    "src/research/tokenizer_wide_hybrid_first_confirmation_history_v2.py": "94332523328ea7561c2f8ca1172de6916f6aa70e8d12cfd570aed38667e1d0cc",
+    "src/research/tokenizer_wide_hybrid_first_confirmation_startup_v2.py": "d90acf1b30b0015b111cd8f0f9fe0762fe89a3ed17a9a1b9801b2fd6b07da067",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "24dedff418339a0153f9b1faf30e5f6e63f21eaee88e219a3b95a19eddebeaa4",
+    "src/research/tokenizer_wide_hybrid_storage_v2.py": "b17df62f9c0f6e00a6846d92ac0ec26c708a57bb0c8ad11960b4c8ccc3ae40b0",
+    "tests/test_tokenizer_wide_hybrid_confirmation_append_v2.py": "278f85dbb33fffc364878b4fced4bf5ddbcf35d9fc23508280178f8926942f95",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_history_v2.py": "44706bc8a940ffeca68cd07a9c49743d4ec9cb2fb0a0fa5d0c07f752baad77c5",
+    "tests/test_tokenizer_wide_hybrid_first_confirmation_startup_v2.py": "194d2af58999974e031dc30d2d23beb5c4a451022743ab1eb7c553f44418be6d",
+    "tests/test_tokenizer_wide_hybrid_quality_acceptance_v2.py": "12b3d7cad6d12c3636f7f72b4bd934c23d7e1e7dd99abcc55716a56fa4274362",
+    "tests/test_tokenizer_wide_hybrid_storage_v2.py": "71ae28e62b16420f1f65f36fe4fec7c196353875c8aa3d2184a3a8009d339d5c"
+  },
+  "findings": [
+    "A separate read-only consumer admits only an exact current-parent slot16 startup attempt, a bounded starting/finished preparation guard and optionally the independently frozen slot16 request. It creates no evidence and authorizes no launch, retry, deletion or next stage.",
+    "Original post-child evidence is reconstructed by excluding only the exact declared attempt/request bindings and the original completed dispatch receipt. Full slot15 historical transport, selected-screen/fresh scientific audits, checkpoint pairs, cleanup stages, frozen sources and full remaining storage are replayed under the original parent identity.",
+    "Historical controls now equal the original sealed controls plus finished first-child/parent controls, with only the explicit current preparation guard admitted on the new path. Unknown current/future controls and process artifacts are rejected. The existing public idle verifier remains strict.",
+    "Storage retains default rejection of unfinished trajectories. Its explicit pending allowance supports only quality/16/request.json after16 completed quality records and three verified cleanup boundaries; it checks the hash, inventory, next selected spec and result path. Completed records, checkpoint pairs, occupied capacity and required full future free space remain unchanged.",
+    "All60 focused append/storage checks and all34 separately bounded parent-acceptance checks passed. Tests include current vs historical parent identities, both guard lifecycle states, exact frozen requests, rehashed false claims, unexpected outputs and controls, old evidence corruption, STOP and late mutations after successful storage audit."
+  ],
+  "free_bytes_observed": 56271740928,
+  "initial_full_panel_requirement_bytes": 30631281412,
+  "invariants": {
+    "cleanup_stages": 3,
+    "completed_quality_records": 16,
+    "history_verifier_writes": false,
+    "live_checkpoint_files": 8,
+    "live_checkpoint_pairs": 4,
+    "pending_request_completed_credit": false,
+    "required_capacity_unchanged": true
+  },
+  "kind": "wide_hybrid_confirmation_append_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Synthetic disposable controller/scientific fixtures; no numerical, actual MPS feasibility or model-quality evidence.",
+    "Only slot16 attempt/guard and optional pending request coexistence is implemented. Startup receipt publication/predispatch and later readiness/entry/acceptance/serial dispatch remain unimplemented.",
+    "The broad regression invocation hit its600-second wall bound and has no complete suite verdict; it must not be reported as a passing whole batch.",
+    "Complete real metadata accounting, inference and actual numerical/input/measured-pilot gates remain before freeze. The closed failed numerical fixture and closed campaigns remain closed."
+  ],
+  "maximum_observed_rss_bytes": 247414784,
+  "next_action": "Implement exclusive slot16 preparation and a compact startup receipt with independent predispatch verification. Use verify_first_confirmation_preparation for the exact current-parent attempt/guard before and after the frozen pending request; startup receipt appends need an explicit additional binding. The original idle first-fresh verifier must continue rejecting preparation appends and undeclared controls. Then integrate later readiness/child entry/parent acceptance/serial dispatch and slots17..23 with prior transport, independently frozen conditional requests, selected/all-fresh audits and full current/future capacity. Finish v2 inference and full real metadata accounting. Actual nine-case numerical/input/measured-pilot prerequisites remain unresolved; do not retry the closed failed combined numerical fixture or reopen closed campaigns. Freeze only after all prerequisites pass; keep protected checkpoints and test holdout closed.",
+  "partial_regression": {
+    "actual_disk_observer_isolated": true,
+    "completed_pass_markers": 39,
+    "elapsed_seconds": 600.1033170419996,
+    "exit_code": 90,
+    "full_suite_verdict_available": false,
+    "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-regression-guard.json",
+    "guard_status": "failed",
+    "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-regression-tests.log",
+    "peak_rss_bytes": 243712000,
+    "reason": "wall_time_limit",
+    "resolution": "The combined batch covered historical replay/startup before reaching parent acceptance. Its 39 serial pass markers preceded the cap. Reran the complete remaining parent-acceptance module alone: all34 passed under a shorter300-second bound. No resource limit was increased; capped evidence was retained."
+  },
+  "plan_frozen": false,
+  "preserved_development_test_failures": 1,
+  "preserved_resource_guard_failures": 1,
+  "status": "exact_slot16_attempt_and_pending_request_history_contract_tested_startup_publication_unimplemented",
+  "successful_final_batch_passes": 94,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "failed": 1,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-001-guard.json",
+      "guard_status": "finished",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-001-tests.log",
+      "passed": 3,
+      "peak_rss_bytes": 247414784,
+      "seconds": 225.23
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "failed": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-final-guard.json",
+      "guard_status": "finished",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-final-tests.log",
+      "passed": 60,
+      "peak_rss_bytes": 245219328,
+      "seconds": 232.25
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "failed": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-remaining-guard.json",
+      "guard_status": "finished",
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-confirmation-append-v2-remaining-tests.log",
+      "passed": 34,
+      "peak_rss_bytes": 238796800,
+      "seconds": 37.8
+    }
+  ],
+  "training_launched": false,
+  "whitespace_check": "Source, tests and documentation pass git diff --check. Four trailing-space findings are confined to preserved raw pytest failure traceback lines; their bytes and hashes remain unchanged."
+}

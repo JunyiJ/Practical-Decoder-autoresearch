@@ -12,7 +12,7 @@ from pathlib import Path
 
 from .protocol import digest
 from .tokenizer_wide_hybrid_retention import allocations,storage_envelope,METADATA,RESERVE,boundary_candidates
-from .tokenizer_wide_hybrid_retention_receipts import _path,_sha,planned_manifest
+from .tokenizer_wide_hybrid_retention_receipts import _path,_sha,_document,planned_manifest
 from .tokenizer_wide_hybrid_retention_chain import recheck_chain
 from .tokenizer_wide_hybrid_cleanup import _locks,_scan,_check,TIMEOUT
 from .tokenizer_wide_hybrid_metadata import snapshot
@@ -82,13 +82,15 @@ def required_free(projection,occupied_checkpoint_bytes):
 
 
 def bind_storage(campaign,projection,*,pilots,records,rates,selection,stages,
-                 current_inventory,checkpoint_pairs,lock_fds):
+                 current_inventory,checkpoint_pairs,lock_fds,pending_request_ref=None):
     """Verify receipts, all current evidence and actual disk at an idle boundary.
 
     Inputs must come from independent frozen/audited controller provenance.
     checkpoint_pairs contains ALL completed original pairs, including deleted
     ones: keys pilot/00..02 and quality/00..23, values raw/h200 path,size,sha256
     relative to evidence/. It cannot excuse unreviewed or failed output.
+    The explicit slot16 request allowance requires a separately frozen/audited
+    caller binding. It never changes completed records, pairs or future capacity.
     """
     root=Path(campaign).absolute()
     if root!=root.resolve() or not root.is_dir():raise ValueError('Canonical campaign required')
@@ -97,6 +99,18 @@ def bind_storage(campaign,projection,*,pilots,records,rates,selection,stages,
     if not isinstance(stages,list):raise ValueError('Complete cleanup prefix required')
     state=remaining_projection(projection,pilots,records,rates,selection,len(stages))
     if not isinstance(current_inventory,dict):raise ValueError('Complete current inventory required')
+    pending_name=None
+    if pending_request_ref is not None:
+        if (len(stages)!=3 or len(records)!=16 or type(pending_request_ref) is not dict
+                or set(pending_request_ref)!={'path','sha256'}
+                or pending_request_ref['path']!='quality/16/request.json'):
+            raise ValueError('Only the explicit pending slot16 request is supported')
+        pending_name=pending_request_ref['path'];request=_document(evidence,pending_request_ref)
+        if (digest(request.get('spec'))!=digest(rules.confirmation_specs(selection)[1])
+                or request.get('result_path')!=str(evidence/'quality/16/result.json')
+                or current_inventory.get(pending_name)!=dict(size=_path(evidence,pending_name).stat().st_size,
+                                                             sha256=pending_request_ref['sha256'])):
+            raise ValueError('Pending request order or inventory binding differs')
     def stamps():
         result={}
         for name in current_inventory:
@@ -151,7 +165,8 @@ def bind_storage(campaign,projection,*,pilots,records,rates,selection,stages,
     for name in census['files']:
         parts=Path(name).parts
         if len(parts)>=3 and parts[0]=='evidence' and parts[1] in ('pilots','quality'):
-            if '/'.join(parts[1:3]) not in slots:raise ValueError('Unreviewed trajectory attempt blocks storage acceptance')
+            if '/'.join(parts[1:3]) not in slots and name!='evidence/'+str(pending_name):
+                raise ValueError('Unreviewed trajectory attempt blocks storage acceptance')
     occupied=0;logical=0;seen=set()
     for name,entry in live.items():
         if current_inventory.get(name)!={'size':entry['size'],'sha256':entry['sha256']}:

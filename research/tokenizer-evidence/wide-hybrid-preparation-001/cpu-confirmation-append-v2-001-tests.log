@@ -1,0 +1,127 @@
+F...                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_exact_attempt_and_pending_request_preserve_historical_audits_and_capacity _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x109c88050>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10aa9dba0>
+
+    def test_exact_attempt_and_pending_request_preserve_historical_audits_and_capacity(writer,monkeypatch):
+        args=setup(writer,monkeypatch);root=writer.root/'evidence'
+        before=append.history.acceptance._inventory(root)
+        initial=append.verify_first_confirmation_preparation(**args)
+        assert initial['preparation_append_verified'] and not initial['pending_request_verified']
+        assert len(initial['records'])==16 and len(initial['checkpoint_pairs'])==4
+        assert initial['audited_indices']==[9,10,11,15] and len(initial['stages'])==3
+        assert append.history.acceptance._inventory(root)==before
+        args=pending(writer,args);before=append.history.acceptance._inventory(root)
+        original=append.history.acceptance.bind_storage;calls=[]
+        def capacity(*a,**kw):
+            assert len(kw['records'])==16 and len(kw['checkpoint_pairs'])==19
+            assert append.REQUEST in kw['current_inventory'];calls.append(1)
+            return original(*a,**kw)
+        monkeypatch.setattr(append.history.acceptance,'bind_storage',capacity)
+>       checked=append.verify_first_confirmation_preparation(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_confirmation_append_v2.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_confirmation_append_v2.py:67: in verify_first_confirmation_preparation
+    checked=history._verify(writer,plan_sha256,completion_ref,projection_ref=projection_ref,
+src/research/tokenizer_wide_hybrid_first_confirmation_history_v2.py:123: in _verify
+    actual=acceptance._review_completed(writer,15,review['startup'],review['readiness'],process,
+src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py:216: in _review_completed
+    storage=bind_storage(writer.root,projection,pilots=history['records'],records=prefix['records'],
+tests/test_tokenizer_wide_hybrid_confirmation_append_v2.py:54: in capacity
+    return original(*a,**kw)
+           ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+campaign = PosixPath('/private/tmp/cpu-confirmation-append-v2-001-fixtures/test_exact_attempt_and_pending0/campaign')
+projection = {'status': 'draft_rank_panel_accounting_not_launch_plan', 'at': '2026-10-28T05:45:55.277400+00:00', 'torch_version': '2.14.1', 'free_bytes': 17543974912, ...}
+pilots = [{'ce': 5.0, 'divisor': 2, 'family': 'hybrid', 'lr': 0.0025, ...}, {'ce': 5.0, 'divisor': 2, 'family': 'gated_mla', 'lr': 0.0025, ...}, {'ce': 5.0, 'divisor': 2, 'family': 'kda', 'lr': 0.0025, ...}]
+records = [{'ce': 5.0, 'divisor': 4, 'family': 'hybrid', 'lr': 0.000625, ...}, {'ce': 5.0, 'divisor': 4, 'family': 'gated_mla', ... 4, 'family': 'hybrid', 'lr': 0.00125, ...}, {'ce': 5.0, 'divisor': 4, 'family': 'gated_mla', 'lr': 0.00125, ...}, ...]
+rates = {'gated_mla': 0.000625, 'hybrid': 0.000625, 'kda': 0.000625}
+selection = {'gated_mla': {'divisor': 8, 'lr': 0.000625}, 'hybrid': {'divisor': 8, 'lr': 0.000625}, 'kda': {'divisor': 8, 'lr': 0.000625}}
+stages = [{'context_sha256': 'bd5fc63007745e74fe2894a19bd8990d280b81c74d8e3e3fd4b201b3147d440c', 'execution_ref': {'path': '.re...2d165d1b51774b1c26a923c7fa1d7'}, 'context_sha256': '42a1a86ff47e6b17c7f23b0c26c703e36500b2621e0395642ecf66fc42fa2d75'}]
+current_inventory = {'.retention/lr/deletions.jsonl': {'size': 4706, 'sha256': '37059a39b25c9f6d595c8796a314401fbbd22bc5b203e4074f39ba2195...lr/inventory.json': {'size': 38797, 'sha256': '38f356921e8f9e68d331fd64ed38b1ab2c0ef7beb695136ae8129abf78ea0cc5'}, ...}
+checkpoint_pairs = {'pilot/00': {'h200': {'path': 'pilots/00/checkpoints/h200.pt', 'sha256': '9df9b505c021e3e3a015e0937bbcd0ee83f0c1897db...0/checkpoints/raw.pt', 'sha256': 'e39ef1202c69ea94ca1dc18587c38d73cd8adbc1af72f7f05f5c0036669808ca', 'size': 15}}, ...}
+lock_fds = (13, 14)
+
+    def bind_storage(campaign,projection,*,pilots,records,rates,selection,stages,
+                     current_inventory,checkpoint_pairs,lock_fds):
+        """Verify receipts, all current evidence and actual disk at an idle boundary.
+    
+        Inputs must come from independent frozen/audited controller provenance.
+        checkpoint_pairs contains ALL completed original pairs, including deleted
+        ones: keys pilot/00..02 and quality/00..23, values raw/h200 path,size,sha256
+        relative to evidence/. It cannot excuse unreviewed or failed output.
+        """
+        root=Path(campaign).absolute()
+        if root!=root.resolve() or not root.is_dir():raise ValueError('Canonical campaign required')
+        evidence=_path(root,'evidence');_locks(evidence,lock_fds)
+        if _path(root,'STOP').exists():raise ValueError('STOP prevents storage acceptance')
+        if not isinstance(stages,list):raise ValueError('Complete cleanup prefix required')
+        state=remaining_projection(projection,pilots,records,rates,selection,len(stages))
+        if not isinstance(current_inventory,dict):raise ValueError('Complete current inventory required')
+        def stamps():
+            result={}
+            for name in current_inventory:
+                st=_path(evidence,name).stat()
+                result[name]=(st.st_dev,st.st_ino,st.st_size,st.st_mtime_ns,st.st_ctime_ns,st.st_blocks)
+            return result
+        initial_stamps=stamps()
+        expected_keys={f'pilot/{i:02d}' for i in range(len(pilots))}|{f'quality/{i:02d}' for i in range(len(records))}
+        if set(checkpoint_pairs)!=expected_keys:raise ValueError('All completed original checkpoint pairs required')
+        all_entries={};slots=set()
+        for key,pair in checkpoint_pairs.items():
+            if set(pair)!={'raw','h200'}:raise ValueError('Complete raw/H200 pair required')
+            stage,slot=key.split('/');stem=f"{'pilots' if stage=='pilot' else 'quality'}/{slot}";slots.add(stem)
+            for entry in pair.values():
+                if set(entry)!={'path','size','sha256'}:raise ValueError('Exact original checkpoint binding required')
+                if type(entry['size']) is not int or entry['size']<=0:raise ValueError('Positive original checkpoint size required')
+                _sha(entry['sha256'])
+                path=_path(evidence,entry['path'])
+                if path.parent!=evidence/stem/'checkpoints' or path.suffix!='.pt' or entry['path'] in all_entries:
+                    raise ValueError('Checkpoint alias or wrong declared slot')
+                all_entries[entry['path']]=entry
+            rows=pilots if stage=='pilot' else records
+            spec=rows[int(slot)]
+            if sum(e['size'] for e in pair.values())>allocations(projection)[spec['family'],spec['divisor']]:
+                raise ValueError('Completed checkpoint pair exceeds trajectory allowance')
+        for index,stage in enumerate(stages):
+            boundary=('pilot','lr','rank')[index]
+            rows=pilots if index==0 else records[:9 if index==1 else 15]
+            rr=None if index==0 else rates;ss=selection if index==2 else None
+            indices=boundary_candidates(boundary,rows,rr,ss)['audit_required_indices']
+            pairs={i:checkpoint_pairs[f"{'pilot' if index==0 else 'quality'}/{i:02d}"] for i in indices}
+            manifest=stage['manifest']
+            expected=planned_manifest(boundary,rows,rr,ss,pairs,manifest['evidence'])
+            if digest(expected)!=digest(manifest):raise ValueError('Cleanup manifest differs from audited stage/selection')
+        if stages:
+            chain=recheck_chain(evidence,stages,current_inventory)
+            deleted=chain['deleted_files']
+        else:
+            attempts=_path(evidence,'.retention')
+            if attempts.exists() and any(attempts.iterdir()):raise ValueError('Unreviewed cleanup attempt blocks storage gate')
+            if _scan(evidence,None)!=set(current_inventory):raise ValueError('Complete current evidence inventory required')
+            deadline=time.monotonic()+TIMEOUT
+            for name,binding in current_inventory.items():_check(evidence,name,binding,deadline)
+            deleted={}
+        live={name:entry for name,entry in all_entries.items() if name not in deleted}
+        if any(name not in all_entries or digest(entry)!=digest(dict(all_entries[name],index=entry['index'],role=entry['role']))
+               for name,entry in deleted.items()):
+            raise ValueError('Deleted original pair bindings differ')
+        census=snapshot(root)
+        actual_weights={name.removeprefix('evidence/') for name,row in census['files'].items() if row['group'].endswith('/weights')}
+        if actual_weights!=set(live):raise ValueError('Unexpected, missing, failed or unreviewed checkpoint output')
+        for name in census['files']:
+            parts=Path(name).parts
+            if len(parts)>=3 and parts[0]=='evidence' and parts[1] in ('pilots','quality'):
+>               if '/'.join(parts[1:3]) not in slots:raise ValueError('Unreviewed trajectory attempt blocks storage acceptance')
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               ValueError: Unreviewed trajectory attempt blocks storage acceptance
+
+src/research/tokenizer_wide_hybrid_storage_v2.py:154: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_confirmation_append_v2.py::test_exact_attempt_and_pending_request_preserve_historical_audits_and_capacity
+1 failed, 3 passed in 225.23s (0:03:45)

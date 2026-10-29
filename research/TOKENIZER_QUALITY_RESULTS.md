@@ -930,3 +930,22 @@ full metadata accounting and actual numerical/input/measured-pilot gates remain
 before freeze. No training, protected checkpoint deletion, closed-fixture retry
 or holdout evaluation occurred. See
 `tokenizer-evidence/wide-hybrid-preparation-001/supervisor-control-v2-component-review.json`.
+
+
+## October 28 bounded later-fresh preparation history
+
+A separate read-only contract now verifies completed slot15 history alongside
+exactly a bounded slot16 preparation attempt and optional independently frozen
+request. It preserves the original strict idle API and rejects undeclared
+controls, process output and later slots. The pending request receives no
+completed-trial or checkpoint credit and does not reduce the full future-space
+requirement. All 60 focused checks and 34 separately bounded parent-acceptance
+checks passed. The broader regression batch hit its unchanged 600-second cap
+after 39 pass markers; that incomplete verdict and failed guard are retained.
+This is controller preparation, with no new model-quality result.
+
+Slot16 startup publication/predispatch, later child/parent dispatch, inference,
+full metadata accounting and actual numerical/input/measured-pilot prerequisites
+remain before freeze. No training, protected checkpoint cleanup, closed-fixture
+retry or holdout evaluation occurred. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/confirmation-append-v2-component-review.json`.

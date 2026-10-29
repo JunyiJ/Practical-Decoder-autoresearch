@@ -37,6 +37,7 @@ class _PreparationGuard(_Guard):
 
 
 def _frozen(writer,slot,plan_sha,projection_ref,rates,selection):
+    _require(type(slot) is int and 15<=slot<24,'Exact fresh request slot required')
     _require(not (writer.root/'STOP').exists() and not (writer.root/'STOP').is_symlink(),
              'STOP prevents confirmation request preparation')
     root=writer.root/'evidence';bound=bind_campaign(root/'meta/plan.json',plan_sha)
@@ -45,7 +46,7 @@ def _frozen(writer,slot,plan_sha,projection_ref,rates,selection):
         and bound['files'].get(str(PROJECTION.resolve()))==projection_ref['sha256'],
         'Confirmation startup projection differs from frozen copy')
     requests=[]
-    for i,spec in enumerate(lr_specs()+rank_specs(rates)+confirmation_specs(selection)[:1]):
+    for i,spec in enumerate(lr_specs()+rank_specs(rates)+confirmation_specs(selection)[:slot-14]):
         options=bound['requests']['quality'][str(i)]
         matches=[r for r in options if digest(r.get('spec'))==digest(spec)]
         _require(len(matches)==1 and (i>=9 or len(options)==1)

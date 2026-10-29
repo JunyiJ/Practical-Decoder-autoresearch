@@ -93,6 +93,47 @@ def test_free_space_exact_boundary_and_one_byte_short(fixture,monkeypatch):
             with pytest.raises(ValueError,match='remaining panel'):storage.bind_storage(**args)
 
 
+def test_only_bound_pending_slot16_request_has_no_completed_capacity_credit(fixture):
+    args,add,boundary=fixture
+    for spec in storage.pilot_specs():add('pilot',spec)
+    boundary()
+    for spec in rules.lr_specs():add('quality',spec)
+    args['rates']=rules.choose_rates(args['records']);boundary()
+    for spec in rules.rank_specs(args['rates']):add('quality',spec)
+    args['selection']=rules.choose_ranks(args['records'][:9],args['records'][9:]);boundary()
+    add('quality',rules.confirmation_specs(args['selection'])[0])
+    before=storage.bind_storage(**args);root=args['campaign']/'evidence'
+    path=root/'quality/16/request.json';path.parent.mkdir()
+    request=dict(spec=rules.confirmation_specs(args['selection'])[1],result_path=str(root/'quality/16/result.json'))
+    path.write_text(json.dumps(request));args['current_inventory']=inventory(root)
+    with pytest.raises(ValueError,match='Unreviewed trajectory'):storage.bind_storage(**args)
+    args['pending_request_ref']=dict(path='quality/16/request.json',sha256=file_digest(path))
+    checked=storage.bind_storage(**args)
+    for key in ('projection','required_free_bytes','occupied_checkpoint_capacity_bytes','checkpoint_logical_bytes'):
+        assert checked[key]==before[key]
+    assert len(args['records'])==16 and len(args['checkpoint_pairs'])==19
+    assert not checked['dispatch_authorized'] and len(list(root.rglob('*.pt')))==8
+    raw=path.read_bytes()
+    for field,value in [('spec',rules.confirmation_specs(args['selection'])[2]),
+                        ('result_path',str(root/'quality/17/result.json'))]:
+        path.write_text(json.dumps(dict(request,**{field:value})))
+        args['pending_request_ref']['sha256']=file_digest(path);args['current_inventory']=inventory(root)
+        with pytest.raises(ValueError,match='order or inventory'):storage.bind_storage(**args)
+    path.write_bytes(raw);args['pending_request_ref']['sha256']=file_digest(path)
+    for name in ('quality/16/result.json','quality/16/process/launch.json','quality/17/request.json'):
+        extra=root/name;made=not extra.parent.exists();extra.parent.mkdir(parents=True,exist_ok=True);extra.write_text('{}')
+        args['current_inventory']=inventory(root)
+        try:
+            with pytest.raises(ValueError,match='Unreviewed trajectory'):storage.bind_storage(**args)
+        finally:
+            extra.unlink()
+            if made:extra.parent.rmdir()
+    args['current_inventory']=inventory(root)
+    for reference in ({},dict(path='quality/17/request.json',sha256=file_digest(path)),
+                      dict(path='quality/16/request.json',sha256='a'*64)):
+        with pytest.raises(ValueError):storage.bind_storage(**dict(args,pending_request_ref=reference))
+
+
 def test_current_phase_increment_prevents_spending_future_capacity_credit(projection):
     pilots=rows(storage.pilot_specs());r=rows(rules.lr_specs());rates=rules.choose_rates(r)
     p=storage.remaining_projection(projection,pilots,r,rates,None,2)

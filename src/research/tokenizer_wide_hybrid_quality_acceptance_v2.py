@@ -66,13 +66,16 @@ def _supervisor(writer,slot,terminal,terminal_ref):
     return ref
 
 
-def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical_identity=None):
+def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical_identity=None,
+                      pending_confirmation_request=None):
     """Full audit under caller locks/guard; public parent APIs stay same-parent.
 
     The first-fresh history reader may supply a separately verified historical
     parent/descriptor identity. That read-only path never launches or resumes a
     process; all scientific, transport and capacity audits still run.
     """
+    _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot==15,
+             'Pending fresh request is limited to historical first-fresh replay')
     argv=entry.worker_argv(writer,slot,startup_ref,readiness_ref)
     parent_pid=os.getpid()
     if historical_identity is not None:
@@ -190,11 +193,17 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         exact,requests=_frozen(writer,slot,seal['plan_sha256'],seal['projection_ref'],rates,selected_choice)
         _require(digest(exact)==digest(bound) and requests[-1]==request,
                  'Independent frozen confirmation requests differ after child')
+        if pending_confirmation_request is not None:
+            later,later_requests=_frozen(writer,16,seal['plan_sha256'],seal['projection_ref'],rates,selected_choice)
+            _require(digest(later)==digest(bound) and later_requests[:-1]==requests
+                and digest(later_requests[-1])==digest(pending_confirmation_request),
+                'Pending slot16 request differs from independent frozen choice')
         prefix=bind_confirmation_prefix(root,context=bound['context'],screen_records=rank['records'],
             rates=rates,selection=selected_choice,screen_requests=requests[:15],confirmation_requests=requests[15:],
             evidence={n:v['sha256'] for n,v in inventory.items() if not n.endswith('.pt')},
             numerical_ref=plan['numerical_ref'],rates_ref=rank['rates_ref'],selection_ref=rank['selection_ref'],
-            projection_ref=seal['projection_ref'],training_token_sha256=plan['training_token_sha256'])
+            projection_ref=seal['projection_ref'],training_token_sha256=plan['training_token_sha256'],
+            pending_request=pending_confirmation_request)
         _require(prefix['records'][:-1]==records and all(prefix['checkpoint_pairs'][n]==v for n,v in selected_pairs.items()),
                  'Selected anchors or screening history changed after first fresh child')
         history=verify_pilot_history(writer,seal['plan_sha256'],rank['pilot_completion_ref'],
@@ -204,9 +213,13 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
         extra=dict(rates=rates,stages=stages,rank_completion_ref=startup['rank_completion_ref'],
             selection_ref=rank['selection_ref'],rates_ref=rank['rates_ref'],audited_indices=prefix['audited_indices'])
     projection=_document(root,seal['projection_ref'])
+    storage_options={}
+    if pending_confirmation_request is not None:
+        storage_options['pending_request_ref']=dict(path='quality/16/request.json',
+            sha256=inventory['quality/16/request.json']['sha256'])
     storage=bind_storage(writer.root,projection,pilots=history['records'],records=prefix['records'],
         rates=rates,selection=selected_choice,stages=stages,current_inventory=inventory,
-        checkpoint_pairs=pairs,lock_fds=writer.lock_fds)
+        checkpoint_pairs=pairs,lock_fds=writer.lock_fds,**storage_options)
     again,actual,actual_allowance=readiness._bound(writer,slot,startup)
     _require(digest(again)==digest(bound) and actual==request and actual_allowance==allowance,
              'Frozen postprocess inputs changed')

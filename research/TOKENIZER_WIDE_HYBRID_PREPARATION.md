@@ -2471,3 +2471,48 @@ Later-fresh append-aware startup and serial slots16–23 remain the next integra
 step, followed by v2 inference and full real metadata accounting. Actual numerical,
 input and measured-pilot prerequisites still precede freeze. No research training,
 MPS run, checkpoint cleanup, holdout evaluation or plan freeze occurred.
+
+
+## October 28 explicit slot16 preparation append contract
+
+A separate read-only consumer now replays the completed compact slot15 receipt
+while permitting exactly a current-parent slot16 preparation attempt, its bounded
+startup guard and, optionally, its independently frozen pending request. It
+accepts no startup receipt, readiness, child/process artifact, result, weight or
+later-slot append. The original public idle verifier retains its strict evidence
+contract and now also requires the exact original control census.
+
+The explicit path reconstructs the original post-child inventory by removing only
+the referenced attempt and pending request, then replays the full slot15 audit
+under its historical parent identity. The slot16 request is matched against the
+independent frozen conditional choice before the scientific prefix audit. Original
+selection, selected screen anchors, the fresh pair, all three cleanup stages,
+transport and source evidence remain bound. Current evidence and control bytes,
+STOP, locks and complete remaining storage are checked again before return.
+
+Storage retains its default refusal of unfinished trajectories. The new explicit
+allowance is limited to the hash-bound `quality/16/request.json` after exactly
+16 completed quality records and three verified cleanup boundaries. Its spec and
+result path must match the next selected fresh member. It grants no completed
+record, checkpoint, occupied-capacity or reduced future-space credit; any other
+output in that or a later slot remains forbidden.
+
+The initial integration test preserved one failure at the existing strict storage
+gate. The final contract adds the narrow allowance and strengthens late-mutation
+tests to prove they reach and pass the storage audit before injecting changes.
+The 60 focused append/storage checks passed in 232.25s. A combined regression
+batch reached its unchanged 600-second wall limit after 39 pass markers, without
+a test failure marker. That includes the historical-replay/startup groups and
+part of ordinary parent acceptance. Its incomplete verdict and failed guard are
+retained; all 34 checks in the remaining parent-acceptance group passed separately
+in 37.80s under a 300-second limit. This does not retry the closed numerical fixture or raise any
+resource guard. Validation details are in
+`tokenizer-evidence/wide-hybrid-preparation-001/confirmation-append-v2-component-review.json`.
+
+Next implement exclusive slot16 preparation and a compact startup receipt with
+an independent predispatch verifier using this contract. Startup receipt appends
+need their own exact binding; do not relax the original idle reader. Later
+readiness/entry/acceptance/serial dispatch and slots17–23 remain unfinished, as do
+v2 inference, full real metadata accounting and actual numerical/input/measured
+pilots. No training, plan freeze, checkpoint deletion, holdout evaluation or
+closed numerical-fixture retry occurred.
