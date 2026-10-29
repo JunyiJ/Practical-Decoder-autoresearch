@@ -145,7 +145,7 @@ def _review_completed(writer,slot,startup_ref,readiness_ref,process,*,historical
     parent/descriptor identity. That read-only path never launches or resumes a
     process; all scientific, transport and capacity audits still run.
     """
-    _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot in (15,16,17,18,19),
+    _require(pending_confirmation_request is None or historical_identity is not None and type(slot) is int and slot in (15,16,17,18,19,20),
              'Pending fresh request is limited to supported historical replay')
     transport=_completed_transport(writer,slot,startup_ref,readiness_ref,process,historical_identity=historical_identity)
     seal=transport['seal'];startup=transport['startup'];bound=transport['bound'];request=transport['request']

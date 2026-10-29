@@ -1,0 +1,118 @@
+{
+  "active_research_workers_at_final_check": 0,
+  "adopted": false,
+  "base_commit": "90b40bb72942096e3ee4e1001b6bfd8b12c6b588",
+  "check_executions_passed": 39,
+  "created_at": "2026-10-29T15:07:57.396372+00:00",
+  "distinct_test_cases": 39,
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-compatibility-guard.json": "931675024af69522dcbe1254d2029c3108d844bffb329aaf183e1320d4d1441b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-compatibility-tests.log": "f73ca13eaaba6ee89c142e7d708bb337fe4af52809fe55a98650310a5db0e90e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-core-guard.json": "065d536f9de7864cf30193fffc115a1e4ddcee1bd249c39948f9d801cbd1fff7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-core-tests.log": "7974eff307b7d71768a7a55bd04a7d635b526cb08c374d5e27d930b36caf47aa",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-integrity-guard.json": "27072e474ed1ebdb1307217d6dc82e5b6cb2098b59122461741accc0c807583c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-integrity-tests.log": "b4bbb4cb160c647b47b575b552a17687488ded7acfa522c3115631b8d493330a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-late-guard.json": "86cf37387bd9c79c4c2c26370c5587293c97e78ad4d733c87a6ea3738f41a51c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-late-tests.log": "ac377145506dbf48e8254b7a6bdd81c82d91f153ff0bb742763da1e4bb1c1ec6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot21-append-census.json": "acacbe0113bbabf2042817b1514b32b8677e2a30d28c116ed3ee1264eb9dc470",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/slot21-append-source-hashes.json": "cbfc1377485ab98dc89936e6871efeaae658dc7f677f6988369a2b0e89f9b51d",
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": "33e3285534de2c8049698bc7f07272d9ff2470c6e9529fc5872d7016a5c8d32a",
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_append_v2.py": "81a7005b2e42470c997a8e8e322b1368e3caf083f8589316f6a8eb7f2e7241d6",
+    "src/research/tokenizer_wide_hybrid_slot20_history_v2.py": "ca4e27fb26ed6b74d05cbf4b97c8458ef4a4e9c6228c8befa175e7d236bf64f4",
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_append_v2.py": "7857dc99fa2229dc1d81cd9e68483cc3c18bfe89c8059e1f97840013e8ac9377",
+    "tests/test_tokenizer_wide_hybrid_slot20_append_v2.py": "a0318196b773e26f617b796f9dd1bfa7b0cd8956d6addd0b908d2113821cc3c6",
+    "tests/test_tokenizer_wide_hybrid_slot20_history_v2.py": "db55dc7dadd48b440b95c2d28acf363a0dbd6785550d0cfe4801bc7835b78916",
+    "tests/test_tokenizer_wide_hybrid_slot21_append_v2.py": "ec7dceb7fbf12f4339453ce15f98dfe966ef4f9cfd5aa8c7606544726f7986e3"
+  },
+  "findings": [
+    "The shared remaining-fresh verifier supports exact preparation slots18..21. Slot21 uses independent completed-slot20 replay with only an explicitly validated current-parent bounded startup guard, exact attempt and optional independently frozen request. Ordinary idle replay remains strict.",
+    "Preparation reaudits all 21 completed records, nine protected selected/fresh pairs, original transport/retention lineage and current plus historical capacity. A pending slot21 request changes none of the completed records, pairs, stages, rates, selection, audited indices, remaining projection, occupied capacity or required free space.",
+    "Pending slot21 is permitted only through explicitly bound historical slot20 replay. Immediate-parent acceptance remains closed to pending requests, as does unintegrated historical slot21 acceptance. Shared paths remain finite18..23; full preparation22..23 and compact slot21 startup/readiness/dispatch remain unsupported.",
+    "All 39 checks passed on unchanged source: different-parent attempt/pending replay, guard finalization, no pending capacity credit, strict idle and unbound-request rejection, finite paths/types/predecessor boundaries, immediate-parent restrictions, false rehashed claims, undeclared outputs/controls/checkpoints, protected evidence and late attempt/request/guard/free-space/STOP changes, plus slot20 preparation/history compatibility."
+  ],
+  "free_bytes_observed": 55451406336,
+  "holdout_consumed": false,
+  "kind": "wide_hybrid_slot21_append_v2_component_review",
+  "launch_authorized": false,
+  "limitations": [
+    "Disposable synthetic science/checkpoint bytes only; no real numerical correctness, model quality or MPS feasibility result.",
+    "Compact slot21 startup publication/reader and subsequent readiness/entry/parent dispatch are pending. Full remaining preparation22..23 is closed.",
+    "V2 inference, full real metadata accounting and actual nine-case numerical/input/measured-pilot prerequisites remain before finite-plan freeze. The closed failed combined numerical fixture remains closed."
+  ],
+  "maximum_observed_rss_bytes": 253886464,
+  "next_action": "Publish and independently consume a compact slot21 startup receipt using the tested shared remaining-fresh preparation verifier. Bind the current parent, immediate slot20 dispatch, original slot15..19 transport and retention lineage, all 21 completed records and nine protected pairs, complete frozen source/request/evidence/control identities and full remaining capacity. Preserve existing slot18..20 startup and history compatibility and strict ordinary readers; preserve failures and prohibit retries. Then complete slot21 readiness/entry/parent acceptance/serial support and remaining finite slots22..23 using the stable original slot16 inventory anchor and unchanged 16-document/8MiB chain caps. V2 inference, full real metadata fit and actual nine-case numerical/input/measured-pilot gates remain before finite-plan freeze. No closed failed numerical-fixture retry, closed-campaign reopening, protected deletion or test-holdout use.",
+  "plan_frozen": false,
+  "protected_checkpoints_deleted": false,
+  "resource_guard_failures": 0,
+  "status": "slot21_attempt_pending_preparation_replay_tested_compact_startup_pending",
+  "synthetic_census": {
+    "completed_quality_records": 21,
+    "live_checkpoint_files": 18,
+    "meta_group_bytes": 1653791,
+    "metadata_bytes": 2292213,
+    "pending_slot": 21,
+    "real_panel_fit_proven": false,
+    "required_free_bytes": 30153547637
+  },
+  "test_or_driver_failures": 0,
+  "tests": [
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-core-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-core-tests.log",
+      "passed": 35,
+      "peak_rss_bytes": 253886464,
+      "seconds": 251.35
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-integrity-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-integrity-tests.log",
+      "passed": 1,
+      "peak_rss_bytes": 249806848,
+      "seconds": 232.24
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-late-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-late-tests.log",
+      "passed": 1,
+      "peak_rss_bytes": 251985920,
+      "seconds": 258.74
+    },
+    {
+      "actual_disk_observer_isolated": true,
+      "exit_code": 0,
+      "guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-compatibility-guard.json",
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "log": "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-slot21-append-v2-compatibility-tests.log",
+      "passed": 2,
+      "peak_rss_bytes": 251330560,
+      "seconds": 420.6
+    }
+  ],
+  "training_launched": false
+}

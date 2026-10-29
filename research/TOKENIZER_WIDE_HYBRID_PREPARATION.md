@@ -3432,3 +3432,37 @@ Next add explicit slot21 preparation, then the remaining finite transitions.
 Inference, real metadata fit and actual prerequisite gates still precede freeze.
 No research training, model-quality result, protected deletion, closed numerical
 fixture retry or test-holdout use occurred.
+
+
+## Explicit seventh-fresh preparation
+
+Slot21 preparation now permits an exact current-parent attempt, bounded startup
+guard and optional independently frozen request, using completed-slot20 replay.
+It reaudits all 21 completed records, nine protected pairs, original transport
+and retention lineage, and current plus historical pre-child capacity. Adding
+the pending request changes no completed records, pairs, stages, rates, selection,
+audited indices, remaining projection, occupied capacity or free-space requirement.
+
+Ordinary idle readers remain strict. Immediate-parent acceptance cannot accept
+a pending request; unintegrated historical slot21 acceptance remains closed.
+Undeclared child outputs, weights, startup/readiness receipts and later controls
+are rejected. No dispatch, cleanup, retry or adoption is granted.
+
+All 39 checks passed on unchanged source in four serial guarded batches. They
+cover different-parent preparation, guard finalization, no pending capacity
+credit, strict idle behavior, finite paths/types/predecessors, false rehashed
+claims, protected evidence, undeclared artifacts, late mutations/free-space/STOP
+changes and slot20 preparation/history compatibility. No test, driver or resource
+guard failed. Final process inspection found no research workers.
+
+The synthetic pending state retains 21 completed records and 18 checkpoint files.
+Its meta group uses 1,653,791 of 2,097,152 bytes; total metadata
+is 2,292,213 bytes. Required remaining free space is
+30,153,547,637 bytes. Full real-panel fit remains unproven.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot21-append-v2-component-review.json`.
+
+Next implement compact slot21 startup publication and independent reading, then
+readiness/entry/parent dispatch and the remaining finite slots22..23. Inference,
+real metadata fit and actual prerequisite gates still precede finite-plan freeze.
+No research training, model-quality result, protected deletion, closed numerical
+fixture retry or test-holdout use occurred.

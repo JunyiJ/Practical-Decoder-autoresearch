@@ -1363,3 +1363,19 @@ workers remain. This is synthetic preparation with no new model-quality result
 or training. Next add explicit slot21 preparation. Remaining integration,
 inference, real metadata fit and actual prerequisite gates still precede freeze.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot20-history-v2-component-review.json`.
+
+
+## Explicit seventh-fresh preparation
+
+Slot21 attempt/guard/pending-request preparation now reaudits completed slot20:
+21 records, nine protected checkpoint pairs, original transport/retention history
+and current plus historical capacity. The pending request receives no completed
+record, checkpoint or occupied-capacity credit. Ordinary replay remains strict.
+
+All 39 guarded checks passed on unchanged source, including false-claim,
+undeclared-artifact and late-change rejection, plus slot20 preparation/history
+compatibility. No guard failed; no research workers remain. This is synthetic
+preparation with no new model-quality result or training. Next add compact slot21
+startup publication/reading. Remaining integrations, inference, real metadata fit
+and actual prerequisite gates still precede freeze.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/slot21-append-v2-component-review.json`.
