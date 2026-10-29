@@ -4197,3 +4197,23 @@ divisor4, seed3501, width512 and1200updates, through production serial gates.
 The three-cell review was committed and pushed as `f04fcfc`. Frozen LR slot3
 started through production gates with parent6128 and child6139. The sole
 training worker runs all-KDA at LR0.00125; the wrapper stops after this trial.
+
+
+### Campaign002 second-rate KDA result — October29,2026
+
+Slot3 all-KDA at LR0.00125, width512/divisor4, seed3501 completed1200updates.
+Full-validation H200 CE is4.980911690, worse by0.033217454 than its
+LR0.000625 screen; raw endpoint CE is5.084563022. Faster early sampled
+validation improvement did not predict the final H200 ranking. This is a
+single-seed LR comparison, not final rate selection or evidence of a general
+architecture disadvantage. The frozen grid is unchanged.
+
+Child wall time was911.94s; sampled peak RSS2,629,910,528bytes and
+MPS driver4,104,044,544bytes passed the original guards. Independent replay
+of all four completed cells verified transport, scientific records, checkpoint
+hashes, frozen source/input and retention history. The lossless archive is
+`tokenizer-evidence/wide-hybrid-preparation-001/campaign002-lr-prefix-04-v2-review.json`;
+its guard finished. Remaining full-panel storage requires25,652,539,052bytes
+against39,483,129,856bytes free. All four raw/H200 pairs remain; no test use,
+cleanup, selection or source change occurred. Next is slot4: hybrid at
+LR0.00125, with the same divisor4/seed3501/width512/1200update budget.
