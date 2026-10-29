@@ -27,7 +27,7 @@ def inventory(root):
 
 
 @contextmanager
-def reopen_prefix(binding,*,allow_preparation=False):
+def reopen_prefix(binding,*,allow_preparation=False,allow_first_readiness=False):
     root=Path(binding['root'])
     assert binding['kind']=='wide_hybrid_reusable_synthetic_prefix_v1'
     assert root==root.resolve() and root.is_relative_to(Path('/tmp').resolve())
@@ -76,4 +76,5 @@ def reopen_prefix(binding,*,allow_preparation=False):
             allowed={prep.GUARD,'evidence/'+prep.REQUEST,'evidence/'+prep.FAILURE}
             if allow_preparation:allowed|={n+'.tmp' for n in allowed}
             else:allowed=set()
+            if allow_first_readiness:allowed|={'evidence/inference/3511/ready.json','evidence/inference/3511/ready.json.tmp'}
             assert extra<=allowed, 'Undeclared reusable-fixture append'

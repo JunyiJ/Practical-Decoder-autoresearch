@@ -1,0 +1,83 @@
+{
+  "kind": "wide_hybrid_inference_entry_v2_component_review",
+  "status": "first_ready_and_live_entry_tested_serial_acceptance_pending",
+  "created_at": "2026-10-29T19:01:40.643677+00:00",
+  "base_commit": "0a8bfcd00e6156e7da50de5c7513cb59e28cd0de",
+  "tests": [
+    {
+      "name": "cpu-inference-entry-v2",
+      "passed": 51,
+      "failed": 1,
+      "guard": {
+        "elapsed_seconds": 4.096958499998436,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55150485504,
+          "peak_rss_bytes": 238501888
+        },
+        "pid": 92634,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    {
+      "name": "cpu-inference-entry-v2-b",
+      "passed": 55,
+      "failed": 0,
+      "guard": {
+        "elapsed_seconds": 32.72107245799998,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 55142109184,
+          "peak_rss_bytes": 260767744
+        },
+        "pid": 92701,
+        "reason": null,
+        "status": "finished"
+      }
+    }
+  ],
+  "final_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-entry-v2-source-hashes-v2.json",
+  "source_files_verified": 340,
+  "readiness_bytes": 996,
+  "preserved_original_files": 785,
+  "retained_checkpoint_files": 24,
+  "scope": [
+    "Full idle scientific/retention/transport replay before compact readiness publication",
+    "Independent child reconstruction of all nine fresh export bindings and original quality/control digests",
+    "Real verifier at entry, loaded, measured, saved worker boundaries",
+    "Exact parent, canonical argv/lock FDs, process group, supervisor limits and worker guard",
+    "Mutable supervisor updates and append-only log accepted independently of protected files",
+    "Strict ordinary prepared scope retained; later seeds deliberately disabled"
+  ],
+  "limitations": [
+    "No real subprocess dispatch: process identity and MPS/loading are synthetic in composition tests",
+    "No live CLI or completed transport/serial controller yet",
+    "No real inference/training, numerical fixture retry, holdout use or protected checkpoint deletion",
+    "Real complete metadata/transient high-water fit and finite freezes remain pending",
+    "Current live scope supports first seed only; subsequent seeds need independently reviewed completed transport"
+  ],
+  "failure": {
+    "type": "test_expectation",
+    "detail": "Existing partial result is rejected by preexisting no-retry gate before worker guard or new failure marker. Test now asserts preservation and absence of new worker. Production no-retry guard unchanged.",
+    "original_test": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-entry-v2-failed-test.py.txt"
+  },
+  "files": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-entry-v2-tests.log": "e663db983adc8f2dca3652fa84398d88ae2d9cd7aa61de167a33fe272f41c515",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-entry-v2-guard.json": "d433ea6cfa9ec95ea45bdeae7c6a48d04aa6ff703c9a3fd2efc9717beefe26d9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-entry-v2-b-tests.log": "6610cadbcce7b97f9e44d3a9b602263fa42beada06f040f64152ba8248a6c87d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/cpu-inference-entry-v2-b-guard.json": "3faa395a09ab7d090d51d87d425cc5598228e3da805cb858f5484bdd4db542a6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-entry-v2-source-hashes.json": "1a86b1984b18700c2a56a8a619279cd708ac28b06440a0a07e1a2e15f07af332",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-entry-v2-source-hashes-v2.json": "297633d4d916ea2a12c5d210e5a40402d70fd3eff92dc07bc2f84380b7670912",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-entry-v2-failed-test.py.txt": "93817130717d6b12866520ca24411045b9652061640d253c0086b6ac709e1155",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-entry-reusable-ready-prefix.json": "647445a2f1c1a1cedfbe2eeba330112f65dd648bf03ea56fa8ff9757de71e3e7"
+  }
+}

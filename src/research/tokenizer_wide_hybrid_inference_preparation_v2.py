@@ -60,8 +60,8 @@ def _guard(writer,parent_pid,*,finished=False):
     return value
 
 
-def _scope(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref):
-    """Validate only one exact request/guard append, never a caller allowlist."""
+def _request(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref):
+    """Validate immutable request semantics; namespace scope is checked separately."""
     _require(isinstance(writer,MetadataWriter) and set(request_ref)=={'path','sha256'}
         and request_ref['path']==REQUEST,'Exact finite inference request reference required')
     root=writer.root/'evidence';_locks(root,writer.lock_fds);snapshot(writer.root)
@@ -81,6 +81,13 @@ def _scope(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_com
         and type(request['parent_pid']) is int and request['parent_pid']>1,'Exact unpromoted finite inference request required')
     for key in extra-{'parent_pid'}:gate._sha(request[key])
     guard=_guard(writer,request['parent_pid'])
+    return request,guard
+
+
+def _scope(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref):
+    """Validate only one exact request/guard append, never a caller allowlist."""
+    request,guard=_request(writer,request_ref,plan_sha256,completion_ref,projection_ref,rank_completion_ref)
+    root=writer.root/'evidence';review=_document(root,completion_ref)['review']
     inventory=gate.history.acceptance._inventory(root)
     controls=gate.history.acceptance.readiness._controls(writer,'not-a-control')
     evidence={REQUEST:inventory[REQUEST]};added_controls={GUARD:controls[GUARD]}

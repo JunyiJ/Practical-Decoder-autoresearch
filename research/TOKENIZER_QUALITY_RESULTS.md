@@ -1576,3 +1576,41 @@ Then complete real metadata/numerical/input/resource prerequisites and finite
 freezes before training. No real inference/training, protected deletion,
 closed-fixture retry or holdout use occurred.
 Evidence: `inference-outputs-v2-component-review.json`.
+
+
+### Compact first inference readiness and live entry verification
+
+The first fresh inference triple now has a real live entry verifier composed
+with the bounded worker body. Before readiness publication, the parent reruns
+the complete retained quality, cleanup and historical transport audits. The
+child reconstructs all nine fresh bindings from the existing immutable evidence
+and validates their digest against the shared request, frozen source/runtime,
+numerical/input contracts, original controls and selected/fresh checkpoints.
+The readiness record is 996 bytes; no copied history manifest consumes the
+per-seed metadata allowance.
+
+The live verifier checks canonical argv and inherited lock descriptors, current
+parent/child/process-group identity, exact phase-specific files, bounded parent
+supervisor and worker guards. It permits the supervisor and log to advance
+without treating those mutable files as frozen quality evidence. It rejects
+replaced log prefixes, extra/future/partial outputs, changed protected bytes,
+source/input bindings, STOP and resource-limit changes. Existing ordinary idle
+and prepared-history scopes remain strict.
+
+The final guarded batch passed **55 tests in32.55s**, including a full reused
+completed synthetic history and all four composed worker boundaries. All 785
+original prefix files and24 retained checkpoint files stayed unchanged. The
+only append to that prefix was the small readiness record. One earlier test
+incorrectly expected a new failure marker for an already-existing partial
+output; the existing no-retry gate correctly refuses before creating a worker.
+The test was corrected; failed raw evidence and original test source remain.
+
+There is no launch CLI or serial controller yet. Real process creation, model
+loading and MPS inference were not exercised; unit process identity and model
+work remain synthetic. The first seed's live entry is implemented, while
+seeds3512/3513 deliberately remain blocked pending completed transport review
+and full idle-history replays between seeds. Implement that shared serial
+integration next, then complete actual metadata/high-water, numerical/input and
+resource prerequisites and finite freezes before training. No protected cleanup,
+closed fixture retry or holdout access occurred. Evidence:
+`inference-entry-v2-component-review.json`.
