@@ -5079,3 +5079,23 @@ After prefix2 review was committed and pushed as `7cca48e`, slot2 KDA
 Controller25024 owns child25039. The launch receipt binds the frozen plan and
 independent review: `campaign004-lr-02-v2-launch.json`. It permits this cell only;
 slot3 requires a completed result and a fresh independent prefix review.
+
+
+### Campaign004 first LR group completed; three-cell prefix accepted
+
+Slot2 KDA completed 1,200 updates at width512, D/4, LR0.000625,
+seed3501. Full-validation H200 CE is 4.94793046301675; raw endpoint CE is
+4.97468234106922. Parent acceptance and independent prefix3 review passed,
+including all three checkpoint pairs and prior cleanup provenance. The review
+guard finished in 13.08 s with 224,100,352-byte peak RSS. No research worker
+remained before continuation. Storage fits: 29,750,755,328 bytes free versus
+26,907,661,636 required for the remaining campaign including the reserve.
+
+The first LR group's H200 CE values are hybrid4.9636715290,
+gated MLA4.9533373133 and KDA4.9479304630. These single-seed, single-LR
+observations do not select an architecture or establish a fresh-seed benefit.
+Three of nine LR cells are accepted; full tuning, rank probes, fresh confirmation
+and inference measurements remain. The test holdout remains closed.
+Evidence: `campaign004-lr-02-v2-terminal.json`,
+`campaign004-lr-prefix-03-v2-review.json` and its guard. After committing/pushing
+this review, the frozen next cell is slot3 KDA at LR0.00125, D/4, seed3501.
