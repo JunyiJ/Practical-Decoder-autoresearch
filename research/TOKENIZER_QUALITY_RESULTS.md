@@ -2998,3 +2998,10 @@ the unchanged reserve. All checkpoints remain protected and the test stays close
 Evidence: `campaign004-lr-03-v2-terminal.json`,
 `campaign004-lr-prefix-04-v2-review.json` and its guard. Commit/push this review
 before slot4 hybrid at LR0.00125, D/4, seed3501, through the frozen serial gates.
+
+
+After prefix4 review was committed and pushed as `57f5d8a`, slot4 hybrid
+(LR0.00125, D/4, seed3501) started under controller26836 and the sole
+training child26847. `campaign004-lr-04-v2-launch.json` binds the frozen plan
+and independent review. The unchanged guarded wrapper permits this cell only;
+no automatic later-slot dispatch or retry is enabled.
