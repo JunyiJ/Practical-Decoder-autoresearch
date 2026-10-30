@@ -5177,3 +5177,10 @@ the unchanged reserve. All retained evidence and closed test remain protected.
 Evidence: `campaign004-lr-05-v2-terminal.json`,
 `campaign004-lr-prefix-06-v2-review.json` and its guard. Commit/push this review
 before slot6 gated MLA at LR0.0025, D/4, seed3501, through the unchanged gates.
+
+
+After prefix6 review was committed and pushed as `eecf9a1`, slot6 gated MLA
+(LR0.0025, D/4, seed3501) started under controller28761 and child28783.
+`campaign004-lr-06-v2-launch.json` binds the frozen plan and independent review.
+The original guarded wrapper permits this cell only, with no retry or automatic
+later-slot dispatch.
