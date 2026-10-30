@@ -2772,3 +2772,55 @@ Evidence: `checkpoint-time-handoff-source-applicability-v2-review.json`,
 `time-handoff-prerequisite-transport-v2-review.json`, their guarded procedures
 and guard journals under `tokenizer-evidence/wide-hybrid-preparation-001/`.
 The old heartbeat remains paused and this continuation heartbeat active.
+
+
+### October 29: verified lossless archival recovers the required capacity
+
+The human explicitly requested proactive archival/removal while preserving
+selected models, fresh confirmation pairs and failure evidence. The earlier
+finding of no eligible irreversible deletion still holds; cold archival retains
+all checkpoint bytes and resolves storage without discarding those records.
+The committed prospective plan (`f6f544b`) covered only completed numerical and
+non-selected/non-fresh screen weights. No closed campaign was reopened.
+
+35 loose files totaling 25,008,600,879 bytes were replaced by three protected local
+Zstandard archives totaling 13,454,327,571 bytes. Net logical reclamation is
+**11,554,273,308 bytes (11.55 GB)**. Each archive was fully decompressed and every
+member's path, size and original SHA256 verified before any loose copy was
+removed. Removal was journaled and archive hashes were rechecked afterward.
+
+| Archive group | Files | Original bytes | Archive bytes | Net bytes reclaimed |
+|---|---:|---:|---:|---:|
+| Completed numerical prerequisites | 9 | 8,858,999,191 | 3,625,971,340 | 5,233,027,851 |
+| Completed campaign002 screens | 10 | 6,225,515,336 | 3,791,160,683 | 2,434,354,653 |
+| Completed campaign003 screens | 16 | 9,924,086,352 | 6,037,195,548 | 3,886,890,804 |
+
+All **154 excluded loose checkpoints** were hash-verified unchanged, including
+selected models, all fresh confirmation pairs and every failed partial. All
+**3,740 non-checkpoint files** in tokenizer run roots were verified unchanged.
+A separate read-only review reconciled the archives with all 250 original
+campaign002, 337 campaign003 and 121 numerical-prerequisite file identities.
+The original reports retain their executed-source hashes and byte contents;
+there was no model load, numerical rerun, training or holdout access.
+
+Observed free space after the operation was 33,493,016,576 bytes, exceeding the
+unchanged 30,631,412,484-byte panel requirement by 2,861,604,092 bytes. Other system
+activity can affect observed free space; attributable savings are the exact
+logical figure above. One archival worker finished within the guarded bounds.
+Initial filesystem-compression/sparse-copy probes saved no allocated blocks;
+only their independently verified scratch duplicates were removed.
+
+Archives remain protected under `research_archives/checkpoint-compaction-001/`
+and are excluded from Git. Text manifests, archive/member hashes, removal
+journal, restoration instructions and guard/review evidence are committed under
+`tokenizer-evidence/checkpoint-compaction-001/`. Do not delete these archives as
+caches. Restore exact bytes before invoking an original-path-only audit, or use
+the explicit archive resolver; absent loose paths are intentional archival,
+not lost evidence or permission to regenerate checkpoints.
+
+Capacity is now sufficient at the observed snapshot. Next incorporate the
+archival proof into prospective prerequisite provenance, audit the complete
+metadata envelope at the final new destination, and freeze the finite plan.
+Recheck actual capacity before dispatch and run new resource pilots first.
+No training has launched under the changed source. Continue proactive bounded
+storage management without waiting for another human cleanup request.

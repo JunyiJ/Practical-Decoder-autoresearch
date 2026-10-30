@@ -40,3 +40,12 @@ Initial copy probes found that `ditto --hfsCompression` and sparse writes did no
 reduce allocated blocks on this filesystem. They changed no original. Their
 verified scratch duplicates are removed by the archival procedure. A small test
 verified the archive roundtrip and rejection of an incorrect expected member hash.
+
+## Completed outcome
+
+All three groups completed.35 checkpoint files (25,008,600,879 bytes) are preserved
+in13,454,327,571 archive bytes, reclaiming11,554,273,308 logical bytes.154 excluded
+loose checkpoints and3,740 non-checkpoint files verified unchanged. Free space at
+completion was33,493,016,576 bytes. `completed.json`, `journal.jsonl` and the
+independent `logical-evidence-review.json` bind the outcome and exact restoration
+identities. No checkpoint data was discarded; never remove these archives.
