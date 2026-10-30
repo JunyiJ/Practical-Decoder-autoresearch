@@ -2688,3 +2688,41 @@ cleanup or retry, no training or holdout use. Full training-panel storage remain
 blocked. Plan, test logs/guards and component review are under
 `tokenizer-evidence/wide-hybrid-preparation-001/` with `trace-v3` and
 `checkpoint-time-handoff-v2` names.
+
+
+### Elapsed-time handoff: actual-scale trace-v3 completed and independently reviewed
+
+The prospective source/plan was committed and pushed as `19f65b1` before its
+single run. The synthetic checkpoint completed: 1,006,700,215 bytes, SHA256
+`853ba84e95525d097d26f2ab9aad58af4bca86ccc182c9cf7eb7cf4f660552db`.
+Parent/child guards finished in 73.3748/71.9172 s; peak RSS was
+220,463,104/1,230,225,408 bytes. All time, memory, disk and output caps held.
+No research worker remains and no retry occurred.
+
+Maximum parent lock wait was 0.0453204 s; child main/resource maxima were
+0.0605946/0.0602781 s. Maximum parent/child holds were 0.0233675/0.0222068 s.
+The child completed 1,650 checkpoint writes, including 690 sub-MiB writes,
+and 70 resource samples with no recorder errors. The trace retained all 629
+parent and 2,419 child lock scopes. There were no failures or dropped records.
+Aggregation handled 25,337 parent JSON writes without spending detail capacity;
+parent/child trace sizes were 161,451/1,048,335 bytes, below 4 MiB each.
+
+Independent guarded review rehashed the output, verified source/plan pins and
+all 337 closed003 plus 350 closed trace-v2 files unchanged, and archived every
+noncheckpoint byte. Review guard finished in 5.8864 s, peak RSS 240,238,592 bytes.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/metadata-contention-trace-v3-review.json`,
+its guard and `review_metadata_contention_trace_v3.py`. The synthetic checkpoint
+and all failed evidence remain preserved; no cleanup, model/corpus access or
+holdout use occurred.
+
+This supports the revised handoff under one actual-scale synthetic workload.
+It does not prove that future training cannot time out, or isolate the handoff's
+effect from the changed tracing overhead. Flat synthetic topology, CPU tensors
+and absence of preceding MPS training remain limitations. Next audit source
+applicability against the completed numerical/input prerequisites and prepare
+an explicit new evidence contract. Never reopen campaigns001/002/003 or rerun
+the closed numerical/trace fixtures. A new full panel still requires
+30,631,412,484 bytes including reserve versus roughly 22.68 GB currently free;
+resolve storage prospectively under retention policy or a justified new finite
+scientific design before any training. Do not promote the incomplete old panel
+or delete protected weights to fit it.
