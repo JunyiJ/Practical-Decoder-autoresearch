@@ -5621,3 +5621,43 @@ and forbids retries or automatic later slots. Syntax and exact adaptation
 diffs were checked; frozen production source is unchanged.
 Commit/push this review before slot16: gated MLA D/4, LR0.00125, seed3511.
 Retain every fresh pair, including negative results.
+
+
+### Campaign004 closed at slot16 startup; no second fresh child launched
+
+The slot15 review and bounded slot16 wrapper were committed/pushed as`bdc4a92`.
+Slot16 controller46637 stopped after68.40s during startup with
+`ValueError('Frozen slot16 request changed before receipt')`. It produced
+no startup success receipt, readiness seal, child process, result or checkpoint.
+The controller exited and process inspection confirmed no research workers.
+Do not retry or reopen this failed campaign; its16 accepted quality results
+(15 screening plus one fresh) remain evidence, not a completed fresh panel.
+
+Read-only diagnosis under both locks and an outer CPU guard verified all556
+preexisting file identities and all548 non-checkpoint byte sequences unchanged.
+The only appends are the slot16 startup guard, attempt, failure receipt and
+pending request. The pending request matches the independently reconstructed
+frozen choice; frozen files and context still match the slot15 readiness seal.
+All eight selected/fresh weight files remain intact. The failure archive
+preserves all560 file identities and552 exact non-checkpoint byte sequences.
+The diagnostic guard finished in5.30s, peak RSS
+252280832 bytes. No deletion, training or holdout evaluation occurred.
+
+Static diagnosis: `confirmation_startup_v2` compares the whole `bind_campaign`
+return before/after writing the pending request and finishing its startup guard.
+That return includes mutable `metadata_bytes`, so expected namespace growth is
+compared as though it were frozen identity. Current metadata is5,841,923 bytes.
+The original two intermediate bound dictionaries were not recorded, so the
+precise failing field is inferred from the code and unchanged request/file
+checks, pending a disposable regression reproduction. The same comparison
+appears in slot17 and remaining-slot startup. Existing readiness already has
+a helper separating metadata census from frozen identity.
+
+Evidence: `campaign004-fresh-16-v2-launch.json`, terminal and startup guard;
+`campaign004-fresh16-failure-review-v2.json`, diagnostic script and finished guard.
+Next: a bounded disposable regression exercising real metadata growth, then
+repair the affected startup identity comparison while retaining byte/file
+caps, exact append audits, source/config/request checks and resource guards.
+Do not replay any closed numerical fixture or reopen campaigns001–004.
+Reassess the finite future plan only after regression evidence; no new training
+is authorized by these failure receipts. Every fresh pair remains protected.
