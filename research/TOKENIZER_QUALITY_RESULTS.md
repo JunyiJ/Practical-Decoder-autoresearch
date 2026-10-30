@@ -3196,3 +3196,24 @@ anchors, fresh/failure evidence and closed holdout remain unchanged.
 Launch receipt: `campaign004-rank-09-v2-launch.json`. Observe this worker to
 completion; do not relaunch. After acceptance and exit, review rank prefix before
 any slot10 dispatch.
+
+
+### Campaign004 rank slot9 independently reviewed
+
+Hybrid D/8 at LR0.000625, seed3501 completed1,200 updates and passed
+parent acceptance (1,055.16s including startup/review). Final H200 validation CE
+was4.9540804930 and raw CE4.9830292708; the D/4 LR anchor H200 was4.9636715290,
+a0.0095910361 screening improvement. This is one seed and one of six rank probes;
+no rank selection, architecture adoption or fresh-confirmation claim is made.
+
+After both processes exited, the independent prefix audit passed under shared
+locks in30.28s with231,768,064-byte peak RSS. It verified LR cleanup history,
+rank scientific and transport evidence, and preserved379 file identities plus
+exact bytes for371 non-checkpoint files. Eight live screen weight files remain.
+The remaining-capacity gate requires25,667,182,740 bytes including8GiB reserve;
+observed free space was28,387,106,816 bytes. No cleanup or training occurred in
+this review. Test holdout remains closed.
+
+Evidence: `campaign004-rank-09-v2-terminal.json`,
+`campaign004-rank-prefix-10-v2-review.json` and its finished guard. Commit/push
+these before serial slot10 (gated MLA D/8 at selected LR0.00125, seed3501).
