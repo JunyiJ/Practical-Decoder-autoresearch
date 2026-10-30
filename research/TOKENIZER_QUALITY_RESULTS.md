@@ -3309,3 +3309,12 @@ No cleanup occurred.
 Evidence: `campaign004-rank-12-v2-terminal.json`,
 `campaign004-rank-prefix-13-v2-review.json` and its finished guard. Commit/push
 before serial slot13: gated MLA D/2, LR0.00125, seed3501, 1,200 updates.
+
+
+Rank12 review evidence was committed/pushed as `5932053` before serial slot13.
+Controller39858 passed production preparation/readiness and started sole
+child39926: gated MLA D/2, width512, LR0.00125, seed3501, 1,200 updates.
+Running control reports no error and24.61GB free against21.94GB required
+including8GiB reserve. Launch receipt: `campaign004-rank-13-v2-launch.json`.
+No later slot dispatches automatically; terminal acceptance and independent
+prefix14 review are required before the final rank probe, hybrid D/2 slot14.
