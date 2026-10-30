@@ -5046,3 +5046,11 @@ source and frozen plan are unchanged. Evidence: `campaign004-terminal-v2.json`,
 review, the next authorized serial cell is slot1, gated MLA at LR0.000625,
 D/4, seed3501, through all original production gates. No retry or automatic
 later-slot dispatch is enabled.
+
+
+Campaign004 slot1 was launched only after prefix1 review commit `36b061e` was
+pushed. Controller24348 started the sole training child24360 through the existing
+production gates: gated MLA, LR0.000625, D/4, seed3501, 1,200 updates. The launch
+receipt is `campaign004-lr-01-v2-launch.json`; it binds the frozen plan and
+independent prefix review. This wrapper stops on acceptance or failure and cannot
+automatically dispatch slot2. No retry, selection or holdout evaluation occurred.
