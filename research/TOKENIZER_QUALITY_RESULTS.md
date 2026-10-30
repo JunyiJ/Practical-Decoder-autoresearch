@@ -2469,10 +2469,23 @@ raw/H200 pairs remain retained,8,668,963,768bytes total. Observed free
 closed-test evaluation occurred; closed002 results are not pooled.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-prefix-07-v2-review.json`,
 its guard and `campaign003-lr-06-v2-terminal.json`.
-After commit/push next is solely slot7 hybrid at LR0.0025 with unchanged
+After commit/push next is solely slot7 KDA at LR0.0025 with unchanged
 width/divisor/seed/budget, original production gates, frozen source and guards.
 
 
 Prefix7 review committed/pushed as `4ad370f`. Slot7 controllerPID15590
-(session89694) is active through production gates for the single frozen hybrid
+(session89694) is active through production gates for the single frozen KDA
 LR0.0025 cell. Launch receipt: `campaign003-lr-07-v2-launch.json`.
+
+
+### Slot7 reporting-label correction (2026-10-30 UTC)
+
+Prior prose incorrectly named slot7 hybrid. The unchanged frozen plan and actual
+request specify slot7 KDA at LR0.0025; slot8 is hybrid. The production controller
+correctly dispatched KDA, with four KDA layers, divisor4/width512/seed3501.
+A read-only check matched the actual request spec to frozen panel slot7, verified
+the original plan digest and unchanged LR-rule source hash. No execution or
+selection change was needed. The erroneous label affected commentary and these
+notes only; numerical results for completed slots0..6 remain unchanged.
+The active KDA worker remains sole worker15757 under controller15590.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-slot7-label-correction-v1.json`.

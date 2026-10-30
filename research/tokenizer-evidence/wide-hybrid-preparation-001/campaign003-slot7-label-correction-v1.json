@@ -1,0 +1,34 @@
+{
+  "status": "reporting_label_corrected_no_execution_change",
+  "observed_at": "2026-10-30T01:34:43.357516+00:00",
+  "plan_sha256": "4a08476fe21b92ae8debc7d7b004dad8b0f082637e76e65ad7cdc33f22f85102",
+  "request_sha256": "9f67fd03138fddbc33efdbf4f5aa2f15420d50c46354a3b59d50d5d6deb16f25",
+  "actual_slot7_spec": {
+    "divisor": 4,
+    "family": "kda",
+    "lr": 0.0025,
+    "seed": 3501,
+    "stage": "lr",
+    "steps": 1200,
+    "width": 512
+  },
+  "frozen_slot8_spec": {
+    "divisor": 4,
+    "family": "hybrid",
+    "lr": 0.0025,
+    "seed": 3501,
+    "stage": "lr",
+    "steps": 1200,
+    "width": 512
+  },
+  "layout": [
+    "kda",
+    "kda",
+    "kda",
+    "kda"
+  ],
+  "rules_source_sha256": "7fc5638cccc2c73407384d9d615bdebe5ac448593fdb2afb0ac3e9d2fb7a954a",
+  "incorrect_prior_prose": "slot7 hybrid; slot8 KDA",
+  "correct_frozen_order": "slot6 gated_mla; slot7 kda; slot8 hybrid",
+  "scope": "Read-only identity check during active worker; no source, plan, request, worker or checkpoint mutation."
+}
