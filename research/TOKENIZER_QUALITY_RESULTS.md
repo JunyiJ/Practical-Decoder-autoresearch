@@ -3350,3 +3350,41 @@ control reports no error and23.33GB free against20.70GB required including
 final rank probe. After acceptance and worker exit, execute the separately
 prepared rank-selection wrapper, inspect/commit/push selection before cleanup,
 and independently verify/commit/push cleanup before any fresh confirmation.
+
+
+### Campaign004 complete rank selection independently verified
+
+The final hybrid D/2 trial passed parent acceptance (1,310.29s including
+preparation/review), H200 CE4.9527891402 and raw CE4.9848553028. All15 screening
+trials are accepted. The frozen minimum-H200-CE rule (larger divisor for exact
+ties) saved these configurations before any fresh-seed result:
+
+| Family | D/8 H200 CE | D/4 H200 CE | D/2 H200 CE | Selected divisor | LR |
+|---|---:|---:|---:|---:|---:|
+| Hybrid | 4.9540804930 | 4.9636715290 | 4.9527891402 | 2 | 0.000625 |
+| Gated MLA | 4.8286763122 | 4.8214491355 | 4.8302985459 | 4 | 0.00125 |
+| KDA | 4.9418159157 | 4.9479304630 | 4.9264940236 | 2 | 0.000625 |
+
+Hybrid D/2 beats D/8 by only0.0012913528 on this seed; this narrow screening
+choice is not a stability claim. These are selected single-seed results, not
+fresh confirmation or architecture adoption. Nine fresh trials and three
+inference evaluations remain under the frozen plan. Test holdout stays closed.
+
+The full production selection and independent verification finished in348.48s
+under both locks and the unchanged CPU guard, peak RSS243,957,760 bytes.
+All original file identities and non-checkpoint bytes remained unchanged.
+The saved external archive has529 files and511 exact non-checkpoint files.
+The manifest retains selected slots5,12,14 (six raw/H200 weights,3,744,596,480
+bytes) and marks12 losing weights totaling7,449,344,384 bytes eligible. No
+weights were removed during selection. Commit/push selection evidence before
+cleanup, then independently verify/push cleanup before fresh slot15.
+
+Evidence: `campaign004-rank-select-v2-review.json`, before archive and guard,
+plus `campaign004-rank-14-v2-terminal.json`. Selection completion SHA256:
+`9ad355475f0c762fbf4da56184e611902d9fc943160812f823f7b9972ff58ccc`.
+
+Prepared `start_campaign004_fresh_v2.py` by adapting the reviewed first-rank
+wrapper to unchanged `run_first_confirmation_once`. It only accepts slot15,
+requires verified rank cleanup and a finished guard, retains plan/cache/MPS
+checks and both shared locks, and stops after one child without retry. Syntax
+and exact adaptation diff were inspected; no fresh dispatch yet.
