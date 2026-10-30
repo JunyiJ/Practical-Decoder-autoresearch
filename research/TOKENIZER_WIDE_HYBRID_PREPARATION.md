@@ -5421,3 +5421,12 @@ reserve. No cleanup occurred.
 Evidence: `campaign004-rank-11-v2-terminal.json`,
 `campaign004-rank-prefix-12-v2-review.json` and its finished guard. Commit/push
 before serial slot12: KDA D/2, LR0.000625, seed3501, 1,200 updates.
+
+
+Rank11 review evidence was committed/pushed as `fd60c7a` before serial slot12.
+Controller38788 passed production preparation/readiness and started sole
+child38846: KDA D/2, width512, LR0.000625, seed3501, 1,200 updates. Running
+control reports no error and25.90GB free against23.21GB required including
+8GiB reserve. Launch receipt: `campaign004-rank-12-v2-launch.json`. No later
+slot dispatches automatically; terminal acceptance and independent prefix13
+review are required before gated MLA D/2 slot13.
