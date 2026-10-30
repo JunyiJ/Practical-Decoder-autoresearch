@@ -5544,3 +5544,32 @@ wrapper to unchanged `run_first_confirmation_once`. It only accepts slot15,
 requires verified rank cleanup and a finished guard, retains plan/cache/MPS
 checks and both shared locks, and stops after one child without retry. Syntax
 and exact adaptation diff were inspected; no fresh dispatch yet.
+
+
+### Campaign004 rank cleanup independently verified
+
+Selection evidence was committed/pushed as `bd1c487` before cleanup. The frozen
+production cleanup re-audited the complete rank stage and exact manifest under
+shared locks, then removed exactly12 losing weights totaling7,449,344,384 bytes.
+Selected raw/H200 pairs at slots5,12,14 remain byte-identical,3,744,596,480 bytes
+in total. Every one of511 original non-checkpoint files retains its exact
+archived bytes; every other preexisting file identity is unchanged. The final
+external archive has527 files, including521 non-checkpoint files and six weights.
+Original metrics, validation block sums, logs, hashes, selection decisions and
+all cleanup receipts remain. Deleted losing weights cannot be reloaded. No
+closed-round, fresh-confirmation, failure evidence or protected cold archive
+was touched.
+
+Independent verification accepted the full three-boundary cleanup chain. The
+outer guard finished in324.58s, peak RSS260,964,352 bytes. Free space at guard
+completion was29,572,743,168 bytes; remaining-campaign required free space is
+26,712,927,696 bytes including the unchanged8GiB reserve. The external archive
+comparison additionally confirmed the exact12-path deletion set and unchanged
+non-checkpoint bytes. No training launched during selection/cleanup.
+
+Evidence: `campaign004-rank-cleanup-v2-review.json`, before archive and guard.
+Completion SHA256:
+`191ec52b3fff8be397eddf5f8a33c02aa86c3f03c4be213d5ed0f37bab200814`.
+Commit/push this verified boundary before `start_campaign004_fresh_v2.py --slot 15`.
+The first fresh trial is selected hybrid D/2, LR0.000625, seed3511,1,200 updates;
+all fresh raw/H200 pairs must be retained, including negative results.
