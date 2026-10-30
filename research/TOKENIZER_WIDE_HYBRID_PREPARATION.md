@@ -4723,3 +4723,56 @@ failure eliminated or authorize training. Preserve every outcome, independently
 review traces/hashes and unchanged closed003 evidence, then choose further work
 from observations. New full-panel storage remains blocked. Syntax and source
 pins checked before execution; commit/push this finite plan before its sole run.
+
+
+### Actual-scale trace v2: timeout reproduced and small-write starvation observed
+
+Frozen plan committed/pushed as `010ff39`; exactly one synthetic attempt ran.
+It failed closed with the same 2 s metadata producer-lock timeout. No worker
+remains, no retry occurred, and no production source was changed. The new
+synthetic partial is 1,006,654,080 bytes, SHA 256
+`1c4b101ebf2e022be9035a6662b165bcb05b75e71cafd6972aaf571aa6c8ccfb`.
+All 350 diagnostic files are preserved (1,011,820,960 bytes total, below 992 MiB).
+
+During the parent's 2.002416167 s failed acquisition, the child made 154 checkpoint
+writes totaling 11,504 bytes, with write sizes 4..256 bytes. 310 overlapping child
+lock scopes occupied 1.961031242 s (97.9333%) of that interval. Maximum overlapping
+hold was 0.012483916 s; maximum child operation starting in the interval was
+0.007236292 s. Across the whole saved trace, parent/child maximum holds were
+0.024327625/0.023709708 s. The last 1 MiB write preceded this small-write tail.
+The child recorder completed 44 samples with no resource-recorder error.
+
+This supports starvation in this instrumented synthetic run: many small
+callbacks repeatedly acquire the namespace lock for census/write checks, while
+only 11.5 KiB is accumulated during the parent's deadline. The byte-only 1 MiB
+handoff therefore fails to schedule a gap in that interval. No individual long
+critical section appears in the saved trace. This narrows a credible mechanism
+but does not prove the uninstrumented 003 failure had the identical cause.
+
+Instrumentation has a separate failure: parent trace reached its 16384-record
+cap during later failure publication/shutdown. The original lock timeout is
+record 16305; later records continue after its end. Per-JSON-piece metadata
+writes consumed 15206 trace records. The final traced fsync raised the cap error,
+and a partial process-control JSON remains. Child termination caused a secondary
+torch.save unexpected-position error. Both fixture guards report exceptions;
+this is a failed diagnostic with an incomplete final trace tail, not a passed
+test. Saved trace sizes 4,074,367/1,023,669 bytes remain below their 4 MiB caps.
+
+Independent read-only review verified frozen source/script pins, all diagnostic
+hashes, original output limits and every one of closed 003's 337 files unchanged.
+It archived all noncheckpoint bytes losslessly and hashed the partial without
+loading it. Review guard finished 5.4562 s, peak RSS 264,224,768 bytes, no error.
+Worker/parent peaks were 1,232,322,560/236,929,024 bytes, below 4 GiB. No cleanup,
+training, corpus access or test-holdout use. Evidence:
+`tokenizer-evidence/wide-hybrid-preparation-001/metadata-contention-trace-v2-review.json`,
+its guard and `review_metadata_contention_trace_v2.py`.
+
+Next design a handoff bounded by elapsed work as well as bytes, so small
+callbacks cannot indefinitely delay the cooperative gap; retain the 2 s deadline,
+all integrity checks and resource caps. Add targeted regression coverage for
+sub-MiB small-call sequences and competing producers. Bound diagnostic operation
+tracing by aggregation/thresholds so JSON piece counts cannot consume the event
+budget; retain every lock wait/failure and meaningful operation maximum. A
+changed-source comparison needs its own frozen plan and new single-attempt root;
+never rerun this closed attempt. New training remains blocked pending a validated
+fix, fresh evidence contract/finite plan and verified storage solution.
