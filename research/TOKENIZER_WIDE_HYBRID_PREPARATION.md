@@ -5496,3 +5496,13 @@ must remain unchanged. Existing attempts block retries. Syntax and the exact
 adaptation diff were inspected; neither operation has run yet. Commit/push
 selection evidence before authorized cleanup, then verify/push cleanup before
 any fresh confirmation. No frozen production source was changed.
+
+
+Rank13 review evidence was committed/pushed as `7cd787a` before serial slot14.
+Controller41010 passed production preparation/readiness and started sole
+child41149: hybrid D/2, width512, LR0.000625, seed3501, 1,200 updates. Running
+control reports no error and23.33GB free against20.70GB required including
+8GiB reserve. Launch receipt: `campaign004-rank-14-v2-launch.json`. This is the
+final rank probe. After acceptance and worker exit, execute the separately
+prepared rank-selection wrapper, inspect/commit/push selection before cleanup,
+and independently verify/commit/push cleanup before any fresh confirmation.
