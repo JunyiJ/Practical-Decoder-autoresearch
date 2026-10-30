@@ -2418,3 +2418,29 @@ Production source, plan and guards remain frozen.
 Prefix5 review committed/pushed as `714fd96`. Slot5 controllerPID13822
 (session26123) is active through production gates for the single frozen gatedMLA
 LR0.00125 cell. Launch receipt: `campaign003-lr-05-v2-launch.json`.
+
+
+### Campaign003 sixth LR cell independently reviewed (2026-10-30 UTC)
+
+Slot5 gatedMLA completed1200 updates at width512/divisor4/LR0.00125,
+seed3501. Full-validation H200 CE4.821469271057781; raw CE4.824475110326953.
+Child elapsed529.3563s. H200 CE improved by0.131866936699505 versus gatedMLA
+at LR0.000625; hybrid and KDA instead worsened at this higher rate on the same
+screening seed. GatedMLA is0.153835108451236 lower than hybrid at LR0.00125.
+These descriptive comparisons motivate completing equal family-specific tuning;
+six of nine frozen cells are complete, with no LR selection or adoption yet.
+Fresh confirmations and final conditional criteria remain necessary.
+
+The checkpoint/export/validation path completed successfully under the frozen003
+handoff source. This does not prove the prior metadata timeout impossible;
+closed002's failed cell and partial checkpoint remain preserved, not resumed.
+Independent prefix6 review verified260 file hashes and losslessly archived
+nonweight evidence; production prior/frozen/pilot/checkpoint/storage bindings
+passed. Guard finished29.4563s, peak RSS224,624,640bytes, no error. All six
+raw/H200 pairs remain retained,7,447,239,552bytes total. Observed free
+29,623,996,416bytes exceeds required23,184,041,860bytes. No cleanup or
+closed-test evaluation occurred; closed002 results are not pooled.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-prefix-06-v2-review.json`,
+its guard and `campaign003-lr-05-v2-terminal.json`.
+After commit/push, next is solely slot6 gatedMLA at LR0.0025, unchanged
+width/divisor/seed/budget, original production gates, frozen source and guards.
