@@ -3114,3 +3114,41 @@ After prefix8 review was committed and pushed as `fda2e76`, final LR slot8 hybri
 The original wrapper stops after this cell. Complete LR selection, independent
 verification and audited cleanup must precede any rank dispatch; no stage is
 implicitly authorized by this launch receipt.
+
+
+### Campaign004 complete LR screen and verified selection
+
+All nine 1,200-update LR trials completed and passed the full production stage
+audit and independent selection verifier. Width512, D/4, seed3501 H200 CE:
+
+| Family | LR0.000625 | LR0.00125 | LR0.0025 | Selected LR |
+|---|---:|---:|---:|---:|
+| Hybrid | 4.9636715290 | 4.9785038782 | 5.1111339709 | 0.000625 |
+| Gated MLA | 4.9533373133 | 4.8214491355 | 4.8562963135 | 0.00125 |
+| KDA | 4.9479304630 | 4.9774401132 | 5.1049378739 | 0.000625 |
+
+Gated MLA benefits from the middle LR in this screen; increasing LR worsened
+hybrid and KDA at the tested settings. These are selected single-seed results,
+not independent confirmation, universal architecture superiority or adoption.
+The remaining frozen stages are six rank probes, nine fresh confirmations and
+three inference evaluations. Test holdout remains closed.
+
+The new external boundary wrapper calls the unchanged production selection and
+cleanup APIs in separate phases under shared locks and a 1,800-second CPU guard.
+All25 existing selection/cleanup component tests passed in360.95s; their outer
+guard finished with240,238,592-byte peak RSS. Boundary wrapper syntax and first-rank
+wrapper adaptation were inspected; no frozen production source changed.
+
+Selection plus verification finished in172.97s, peak RSS231,391,232 bytes.
+The external review preserves hashes/sizes for352 files and exact bytes for334
+non-checkpoint files. All18 weights remain present at this point. The prospective
+manifest retains slots0,2,5 (six selected raw/H200 files) and marks12 losing-screen
+weights eligible for policy cleanup. Selected/fresh/failure evidence and the
+lossless archives from closed rounds remain protected. Commit/push this complete
+selection evidence before running cleanup; then independently verify the cleanup
+chain and protected bytes before any rank dispatch.
+
+Evidence: `campaign004-lr-select-v2-review.json`, its before archive/guard,
+`campaign004-lr-boundary-tests-v2.log`, and `campaign004-lr-08-v2-terminal.json`.
+Selection completion SHA256:
+`100a5e54fa1e0d8d3dd3758b244f9e1e48970e92dfde120c3c5dd21b13f43ebc`.
