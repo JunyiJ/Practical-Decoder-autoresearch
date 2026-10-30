@@ -2824,3 +2824,40 @@ metadata envelope at the final new destination, and freeze the finite plan.
 Recheck actual capacity before dispatch and run new resource pilots first.
 No training has launched under the changed source. Continue proactive bounded
 storage management without waiting for another human cleanup request.
+
+
+### Campaign004 finite freeze after elapsed-time handoff and archival
+
+A fresh complete campaign is frozen at `research_runs/tokenizer-wide-hybrid-004`.
+Plan SHA256:
+`6e42949c51dcfab5766444a293763856d22e2913aa01ebbdc1eb8b7a1f6625c2`.
+Source SHA256:
+`0fc7f6b3440484700151a99f6a02f1b847914f7c8914612b4d684f54d058ccaa`.
+The original nine-case numerical and train-only input reports, applicability
+review and explicit archival resolver are carried losslessly, retaining original
+executed-source identities. All three protected archive hashes were checked.
+No old quality trajectories, process receipts or cleanup chains are reused.
+
+The unchanged finite design has three resource pilots, nine LR cells, six rank
+cells and nine fresh confirmation cells, followed by three inference workloads.
+All 108 conditional quality request options are bound. Seed3501 is reused for
+screening and is not independent replication; old incomplete screen results
+remain excluded from selection. Fresh3511/3512/3513 have not been launched by
+previous closed campaigns. No holdout use or quality/adoption claim follows
+from this engineering change.
+
+The full metadata envelope fits: 2,093,907 of 2,097,152 bytes for evidence/meta,
+leaving 3,245 bytes, and 855 conservative files below the 2,048 cap. Other group
+caps and producer guards remain unchanged. Full-panel storage requirement remains
+30,631,412,484 bytes including reserve; freeze observed 33,491,800,064 bytes free.
+The guarded preparation finished in 5.77 s. The actual plan binder accepted
+numerical/input provenance and explicitly left dispatch unauthorized until
+measured pilot gates pass. Originals and archival member identities are preserved.
+
+`start_campaign004_v2.py` uses the existing production dispatchers to run the
+three resource pilots serially, independently audit the completed pilot boundary,
+perform only its policy-eligible six-weight cleanup after exact metadata archival,
+and dispatch quality slot0 only if every prerequisite passes. It stops after
+slot0 or any failure, with no retry or automatic later slots. Commit/push the
+finite plan before launching this wrapper with local MPS access. One training
+worker, all existing resource limits and the closed test remain enforced.
