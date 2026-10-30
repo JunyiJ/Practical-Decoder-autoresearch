@@ -4852,3 +4852,49 @@ the closed numerical/trace fixtures. A new full panel still requires
 resolve storage prospectively under retention policy or a justified new finite
 scientific design before any training. Do not promote the incomplete old panel
 or delete protected weights to fit it.
+
+
+### Time-handoff applicability and retention audit: capacity is now the blocker
+
+A read-only guarded audit compared all 228 source entries: 227 are unchanged
+since campaign003, with only the checkpoint writer's scheduling changed. Relative
+to the completed original numerical execution, 225 entries remain unchanged;
+the two earlier census fixes and checkpoint scheduling are explicitly accounted
+for. Runtime identity is unchanged. Original numerical/input reports, trace
+artifacts and all numerical phase files/checkpoints were hash-verified without
+reexecuting or loading them. The mathematical/state and input evidence remains
+applicable, with original executed-source identity retained. New MPS pilot and
+process/retention evidence will still be required for a new campaign.
+
+The retention inventory verified all 189 tokenizer `.pt`/`.pt.tmp` files,
+62,800,809,984 logical bytes: 148 previously protected selected/fresh pairs' files
+(34,119,142,876 bytes), 28 incomplete-campaign/failure files (17,691,873,110),
+nine numerical-prerequisite checkpoints (8,858,999,191) and four preserved
+synthetic diagnostic weights (2,130,794,807). All 42 prior cleanup paths remain
+absent. Closed002, closed003 and both actual-scale diagnostic inventories matched
+their saved reviews. No eligible deletion was identified and nothing was removed.
+Incomplete screens have no completed, persisted selection permitting cleanup;
+synthetic diagnostic saves are not successful resource pilots or losing screens.
+
+The unchanged full-panel requirement is 30,631,412,484 bytes including the 8 GiB
+reserve. Observed free space was 22,849,273,856 bytes, a 7,782,138,628-byte shortfall.
+For this design, provide additional local capacity or a new output volume with
+at least 30.64 GB free (with practical headroom). Do not shrink a frozen guard,
+promote an incomplete old panel, delete protected evidence or repeatedly poll
+unchanged free space. No new campaign directory, plan freeze or worker was created.
+
+Independent preparation produced six losslessly verified prerequisite files
+(64,513 bytes) in `tokenizer-evidence/wide-hybrid-preparation-001/time-handoff-prerequisite-transport-v2/`.
+The original reports and applicability review are embedded with hashes and exact
+bytes; numerical traces decompress exactly, and the 96 train IDs are unchanged.
+The numerical gate accepted the transported evidence. No holdout was accessed.
+Replacing the six prior payloads adds 14,501 bytes to the last metadata envelope,
+leaving only 7,127 bytes of its former 21,628-byte margin before other plan/path
+changes. This is a static delta, not a new complete envelope proof. Once storage
+is available, recheck the final destination, source and full metadata envelope,
+then freeze the finite plan before any new pilot or training launch.
+
+Evidence: `checkpoint-time-handoff-source-applicability-v2-review.json`,
+`time-handoff-prerequisite-transport-v2-review.json`, their guarded procedures
+and guard journals under `tokenizer-evidence/wide-hybrid-preparation-001/`.
+The old heartbeat remains paused and this continuation heartbeat active.

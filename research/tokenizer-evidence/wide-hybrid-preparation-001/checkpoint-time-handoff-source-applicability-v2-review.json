@@ -1,0 +1,1059 @@
+{
+  "kind": "wide_hybrid_source_applicability_review_v4",
+  "status": "prerequisites_applicable_storage_blocked",
+  "created_at": "2026-10-30T02:38:39.332913+00:00",
+  "before_source_sha256": "5b32cee89c24353b0372f0c288078b0d292d50fb65de77e5a379e8d8a8556f7a",
+  "after_source_sha256": "0fc7f6b3440484700151a99f6a02f1b847914f7c8914612b4d684f54d058ccaa",
+  "runtime_sha256": "d193008aa205d1d7dd914c0c65256024f318390ed707124a6ef7c5aa4eb5b24c",
+  "changed_files": {
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": {
+      "before": "5b1b127b201fce3d61c432b2ed23a78c1017460e539a056a990a1dddb8386c05",
+      "after": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9"
+    },
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": {
+      "before": "60e84a8fa2739e4594a98f908e8ac6ad7ac240c8cb0606b40a13378c638668bc",
+      "after": "cfb4deba9de71fc1ff84fdae3beb49e9280be51c66a3790267091afb614c6fd1"
+    },
+    "src/research/tokenizer_wide_hybrid_quality_entry_v2.py": {
+      "before": "6c17c8bd40501ebfa17aa733a75096a59be637c0bef50090b52ef73b588e5b43",
+      "after": "a7b1be0efcae1cc50ab0611bd5b296327d20934340dcf5f269804ccb95b94cb8"
+    }
+  },
+  "changes_since_campaign003": {
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": {
+      "before": "99b9f6f65cd57fc6f94c9d4f246743ddd313b2ac7541061326fa43b50f55e904",
+      "after": "cfb4deba9de71fc1ff84fdae3beb49e9280be51c66a3790267091afb614c6fd1"
+    }
+  },
+  "unchanged_original_source_files": 225,
+  "unchanged_campaign003_source_files": 227,
+  "original_report_hashes": {
+    "rank-numerical-v2-reviewed-001/meta/numerical.json": "9e6ce1796aff4c5620ce1d8130e409afdc7345da26f8f49b282c366c690f9be4",
+    "training-input-v2-002/meta/training-input.json": "5ece26be743dea9270e270d29d8b3aba18d26449bf351a3e3139438e042c5aba"
+  },
+  "original_artifacts": {
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/rank-numerical-v2-reviewed-001/meta/numerical-trace.json": "d5a61cd33168efab1f2ee135a2cf80127b49deb32ac3cc1ddcc58a3812185370",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/training-input-v2-002/meta/training-input-ids.json": "c703d3ef0f61950b2a5713740e5fedec53255ee535b7276ae4a77b9fc0d21138",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/training-input-v2-002/meta/training-input-trace.json": "b57b8bc8b7457cdf616eea2df195c70527ec2c47b71139e0130ee932e6be2ef0"
+  },
+  "numerical_original_files_verified": 121,
+  "prior_applicability_sha256": "6cf7481b3fc759f9ca6c4cb80b5526a71cc4b287146d58927c49ae970d03140f",
+  "component_review_sha256": "28cd8cadf11805f32a07a23757b39a74eeeddf7323a9582778a45571c856e83d",
+  "synthetic_comparison_review_sha256": "b5b493ffb6708d1064c4393aaa462ffdabc6c11688b4dbd977d1a26597b3ea61",
+  "closed_evidence": {
+    "tokenizer-wide-hybrid-002": {
+      "files": 250,
+      "inventory_sha256": "501ae8ddbc8e50d96622de3e8a6be0797c5ecce021434a74662d0f548184f7f9"
+    },
+    "tokenizer-wide-hybrid-003": {
+      "files": 337,
+      "inventory_sha256": "d9708449fcb0c431a0c05e82c693f9fbd8411ddfa1fffa93f85def820eb6e892"
+    },
+    "tokenizer-metadata-contention-trace-v2-001": {
+      "files": 350,
+      "inventory_sha256": "e79bbfee8cdade725b23e0b717d2c26529d13a2d7f211faca396831917e4808c"
+    },
+    "tokenizer-metadata-contention-trace-v3-001": {
+      "files": 351,
+      "inventory_sha256": "fe5601f8e672e25ad55c1b56ef29fd8e6d711f4b906b054cf68d9cbe79ec90d8"
+    }
+  },
+  "retention": {
+    "scope": "All tokenizer-* research_runs .pt/.pt.tmp files; no unrelated or historical character data inspected/deleted",
+    "checkpoints": {
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w256-s2711-lr0.00125/checkpoints/final_003000_1793083883300794000.pt": {
+        "size": 446166649,
+        "sha256": "a2a4da96059bf1ed8a4fab2d01bc5c26e960ba90c6292c1c09d2433ae99bce42",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w256-s2711-lr0.00125/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "799416ad2c14ebfb23defbb945c31e5bdbfb4aafe8ec2f83a6bb1ccb75d4fcd1",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w256-s2712-lr0.00125/checkpoints/final_003000_1793084400899200000.pt": {
+        "size": 446166649,
+        "sha256": "f2140e78c674bbfe73097a9dc45da28f8d5ed1c7578ccb414c729696c3e4acfa",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w256-s2712-lr0.00125/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "0f03764d4c36eb7e1a0d93f57d300d598bd05399656ac7a0f3c3351ce5586603",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w256-s2713-lr0.00125/checkpoints/final_003000_1793085955314835000.pt": {
+        "size": 446166649,
+        "sha256": "0e52b301e0c35a8b70f9b608fb628dcf444866be45e8a9d04975b36963474085",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w256-s2713-lr0.00125/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "475b7fb25819b859d09b3709a66f07f7f3246d135cd054fd086cb8b90f082250",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w64-s2711-lr0.00125/checkpoints/final_003000_1793081797850213000.pt": {
+        "size": 105247929,
+        "sha256": "e3053722e806881e54b4ea86b74f5e7cf3ff3de6d51da270d8b743c79120768f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w64-s2711-lr0.00125/checkpoints/h200.pt": {
+        "size": 26536019,
+        "sha256": "c0a3ea19c6a3e13ab67a2675051fc8294014fa9a5ad5c6de448925c9c592aada",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w64-s2712-lr0.00125/checkpoints/final_003000_1793082059447843000.pt": {
+        "size": 105247929,
+        "sha256": "8871ea4a56e51d829d8be05d6b2990546bfe0c375ef1e46364722190cb16a189",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w64-s2712-lr0.00125/checkpoints/h200.pt": {
+        "size": 26536019,
+        "sha256": "a00f0985eff73e6e74331f5fc536aa8712992f69639985824363d3758e462ffb",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w64-s2713-lr0.00125/checkpoints/final_003000_1793082846754868000.pt": {
+        "size": 105247929,
+        "sha256": "6215d7d252a183a3aa56ee004cd44f3537b17aea04b1ec9a64f4e9e157edb64f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-gqa-w64-s2713-lr0.00125/checkpoints/h200.pt": {
+        "size": 26536019,
+        "sha256": "eb56c6e6f683e718be0ac152bf0de24db5f094851cc906acb243f4305d5b1385",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w256-s2711-lr0.00125/checkpoints/final_003000_1793083365903927000.pt": {
+        "size": 449328761,
+        "sha256": "79fd9dd16beef2724d3004d1736eeb525dccaf6b8c67ae2a5b3fe80b04639ab9",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w256-s2711-lr0.00125/checkpoints/h200.pt": {
+        "size": 115491091,
+        "sha256": "27c3e977031401d04e0e7bd57b7aa559f7d161c233ad671b9e1296aca0308eb4",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w256-s2712-lr0.00125/checkpoints/final_003000_1793084922083287000.pt": {
+        "size": 449328761,
+        "sha256": "9d64a15b1d944488cf6c5ef623d749e139fa7ae3c5b9f32efe8060a96045d290",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w256-s2712-lr0.00125/checkpoints/h200.pt": {
+        "size": 115491091,
+        "sha256": "219d008fd378e555e2883e894f0c31fd6fb7cc9c1e94d1750d7b4fb994772999",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w256-s2713-lr0.00125/checkpoints/final_003000_1793085440103297000.pt": {
+        "size": 449328761,
+        "sha256": "a988de04379ff7eb2544843854ae11e9b6a94d7ea55ff8675bd4f791c1e939de",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w256-s2713-lr0.00125/checkpoints/h200.pt": {
+        "size": 115491091,
+        "sha256": "c33ee28dac9e12b7e772022be90793b7f47491b97f04aa4da9f5c37db89f4deb",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w64-s2711-lr0.00125/checkpoints/final_003000_1793081535680735000.pt": {
+        "size": 105448633,
+        "sha256": "2e87da5c13530dc79f7a35aa787c265063fd98a4a41ff0116dd923e10488508b",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w64-s2711-lr0.00125/checkpoints/h200.pt": {
+        "size": 26602579,
+        "sha256": "801989847ae48a4d18ec5942396cd830947bf264697aebff43bc10ab67fa50b1",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w64-s2712-lr0.00125/checkpoints/final_003000_1793082321203554000.pt": {
+        "size": 105448633,
+        "sha256": "9a5f22683c554b3e82efc30090b968dfcd7f29aedc57cdb80970601814695dfd",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w64-s2712-lr0.00125/checkpoints/h200.pt": {
+        "size": 26602579,
+        "sha256": "56a9b122b757191a12bf6edd897751106d6e7041d2a3ee9adf6f85dc1ce5e315",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w64-s2713-lr0.00125/checkpoints/final_003000_1793082584439618000.pt": {
+        "size": 105448633,
+        "sha256": "f0913de7d7fef6c45ab6c4380472e643f6f7795f52ac1ed9d8b3aa6392164e16",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/confirm-mha-w64-s2713-lr0.00125/checkpoints/h200.pt": {
+        "size": 26602579,
+        "sha256": "6e392b77da8eab5b9865f18adca04cf8918e037422c6d0d85c0a4ab958eb5916",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-gqa-w64-s2701-lr0.00125/checkpoints/final_003000_1793080224761455000.pt": {
+        "size": 105247929,
+        "sha256": "718e3e5c857f9bd81ee585bc5675072f8e42453b6f85c801d468f74c6688ea0c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-gqa-w64-s2701-lr0.00125/checkpoints/h200.pt": {
+        "size": 26536019,
+        "sha256": "8ce08275e6719eef9bf82605ffd5f6d2d81623037230abade048e5181e44b5d4",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-gqa-w64-s2702-lr0.00125/checkpoints/final_003000_1793080487027344000.pt": {
+        "size": 105247929,
+        "sha256": "7148e5480ba636d8424ef41ee6e07f8ab84e57936aea39f64443015dfab4f528",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-gqa-w64-s2702-lr0.00125/checkpoints/h200.pt": {
+        "size": 26536019,
+        "sha256": "dc689a53ba26ab4a8df97c95e6b75eefc0f0e2f153dcd71649c5677c0efd01d6",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-mha-w64-s2701-lr0.00125/checkpoints/final_003000_1793079701047932000.pt": {
+        "size": 105448633,
+        "sha256": "7fa6625340df128a0bf1a88b20523581689e89071d0554fd833cfbbf6f5f6190",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-mha-w64-s2701-lr0.00125/checkpoints/h200.pt": {
+        "size": 26602579,
+        "sha256": "3378954ab88c6ba24029698f110541c411fa015257fe09fe749c43b49d4d982f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-mha-w64-s2702-lr0.00125/checkpoints/final_003000_1793081011680602000.pt": {
+        "size": 105448633,
+        "sha256": "6b7d566da1d8b135469bcdc0cb799dc19e80436c6115f41c612088ce97c68e2f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-gqa-001/screen-mha-w64-s2702-lr0.00125/checkpoints/h200.pt": {
+        "size": 26602579,
+        "sha256": "f58bc3581a202fb8fb9e48b894bc180b9330f439cb2380c85f0ae52a315e041e",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2811-n1200/checkpoints/final_001200_1793088845249833000.pt": {
+        "size": 446164985,
+        "sha256": "e0e14a5fedcb76c8792ab6a23d26782f7afc204c3cd474c519e9378775dc0447",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2811-n1200/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "610570d32d56a4d2f0f06db5deaaba927a053c657ae7f00b488cca590acd6182",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2811-n3000/checkpoints/final_003000_1793088633249152000.pt": {
+        "size": 446166649,
+        "sha256": "8376963da37db8e7c9246fa4d57c0f628b66e0e393bc220f27acc9cd0eeb9866",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2811-n3000/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "6571fec8868fbd9a5a4ade67681ed4a5807a9b5e2d6bc8705d4aa1e569f898fc",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2812-n1200/checkpoints/final_001200_1793089055192606000.pt": {
+        "size": 446164985,
+        "sha256": "8a8e419e867fd8268cab5d090a491059db0daa53d7e8a57f70a093cb315b88e9",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2812-n1200/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "40b5e8fcdd14f03d0c450a9b0e9365883aca42af91ee833c706cc89792ac7985",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2812-n3000/checkpoints/final_003000_1793089573327290000.pt": {
+        "size": 446166649,
+        "sha256": "a547994f7ab99f5afe0bcdf6aef53143958f0afb1825b4250b8122c2373019ef",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2812-n3000/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "700222db239ef29d26747f8a23e66819f87ed5d106d9db7721db316d83830f1f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2813-n1200/checkpoints/final_001200_1793090302240125000.pt": {
+        "size": 446164985,
+        "sha256": "a151718c0ee083731b8236a3061ef942b186133a5cc35f04c5a98b118cd4eccd",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2813-n1200/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "b259e712095dc7e28416e1f5bc0b600300e3529c856e7b336ea25673dce50645",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2813-n3000/checkpoints/final_003000_1793090090871910000.pt": {
+        "size": 446166649,
+        "sha256": "ac33530db36b0af73a0116fd8d8e0a5d346d8267c89a3f683791e59de81964e6",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/confirm-gqa-w256-s2813-n3000/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "585a58e50b21a662da60bde445897aea6c7c1540e0b77aa290e1feec7b329a74",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/screen-gqa-w256-s2801-n1200/checkpoints/final_001200_1793087290464907000.pt": {
+        "size": 446164985,
+        "sha256": "767d65a921058787bbc1458c5f416cf4ca4114858aad117c858f24a446e19108",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-horizon-001/screen-gqa-w256-s2801-n1200/checkpoints/h200.pt": {
+        "size": 114438419,
+        "sha256": "6d51eb3b0032528e960566764e0d54d32fc980b42b3c89a9ba74e9961624eaef",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-hybrid-w64-s3011-lr0.00125/checkpoints/final_001200_1793097021139532000.pt": {
+        "size": 105713573,
+        "sha256": "b36fcd4e2dcb9961f574f02fcf6527e60b32e080f6839f2965567c37af48cf90",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-hybrid-w64-s3011-lr0.00125/checkpoints/h200.pt": {
+        "size": 26635815,
+        "sha256": "9a45da949333a9c7c64eb8835551fe12e980dabb47a04d242c10d4324280caa5",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-hybrid-w64-s3012-lr0.00125/checkpoints/final_001200_1793097627099495000.pt": {
+        "size": 105713573,
+        "sha256": "ef380cc879c74020c3cbc5302c91a84464f70e0980cd983c0790697fdcf0472b",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-hybrid-w64-s3012-lr0.00125/checkpoints/h200.pt": {
+        "size": 26635815,
+        "sha256": "20e332fb2489ce7d6ae36289b0548e683bdfb63245ff758694e3ddb20930679f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-hybrid-w64-s3013-lr0.00125/checkpoints/final_001200_1793097809829653000.pt": {
+        "size": 105713573,
+        "sha256": "1685535723211d27ea69a95da09ba46ab531e00dbc296c27140821216013a325",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-hybrid-w64-s3013-lr0.00125/checkpoints/h200.pt": {
+        "size": 26635815,
+        "sha256": "4dfe08a7adb656143c2522e3a4680a31156c1dd3c85082a18943131231cb0a76",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-kda-w64-s3011-lr0.00125/checkpoints/final_001200_1793097233488661000.pt": {
+        "size": 105793593,
+        "sha256": "910023334b0d993f9c8bd08afb21dd25c469f9010a4ab03888ab27d920ceeb3d",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-kda-w64-s3011-lr0.00125/checkpoints/h200.pt": {
+        "size": 26662067,
+        "sha256": "1100253a23be179b2dadba8a2294003fd3bfacc5c151cf0d76663414a67801b8",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-kda-w64-s3012-lr0.00125/checkpoints/final_001200_1793097444153249000.pt": {
+        "size": 105793593,
+        "sha256": "ff3d78a732ec7db1843c3e0f26c66e5281a68a559f27f2dd81726517c6d8bd70",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-kda-w64-s3012-lr0.00125/checkpoints/h200.pt": {
+        "size": 26662067,
+        "sha256": "6561c12c2d75ea6771019cb6f7d088b4fde7fd750e95c5d4d007c34f4ff0df27",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-kda-w64-s3013-lr0.00125/checkpoints/final_001200_1793098021512449000.pt": {
+        "size": 105793593,
+        "sha256": "cedb7da087cd9ecf4f67ac6b07a74385778c2945a344165a68860bf4962b5749",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/confirm-kda-w64-s3013-lr0.00125/checkpoints/h200.pt": {
+        "size": 26662067,
+        "sha256": "c3ee3f24a94f55227b962bf680e695a7b9b542e00b070b024363afb08848effa",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/screen-gated_mla-w64-s3001-lr0.0025/checkpoints/final_001200_1793096296348633000.pt": {
+        "size": 105473449,
+        "sha256": "ec50b63af2fcd140a21d23e303e1878736510de3d10bca1f82c840a9e729631a",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/screen-gated_mla-w64-s3001-lr0.0025/checkpoints/h200.pt": {
+        "size": 26556995,
+        "sha256": "3e27ccdd1d885e10776bdea5568a0e65b02f4c6d028bc45b800157e84021b1e3",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/screen-hybrid-w64-s3001-lr0.00125/checkpoints/final_001200_1793095992541903000.pt": {
+        "size": 105713573,
+        "sha256": "fe06cbe39b5ed8665561e887117031520ef640d4c4729e396fcd6e12b7be5a23",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/screen-hybrid-w64-s3001-lr0.00125/checkpoints/h200.pt": {
+        "size": 26635815,
+        "sha256": "c75307a75bfe050ad1325b17b21ab3f5ab5b4333d234cb7509b03d3ffb32a1a6",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/screen-kda-w64-s3001-lr0.00125/checkpoints/final_001200_1793096626365122000.pt": {
+        "size": 105793593,
+        "sha256": "2414912db564fa3705e0b2673626ef4b447be4ac23f1c43365fc2cd60a090f03",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-hybrid-001/screen-kda-w64-s3001-lr0.00125/checkpoints/h200.pt": {
+        "size": 26662067,
+        "sha256": "c608b526c94a8ea2c3f585fae78041a2124d2e89ea0c59355c80fe800889da4f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mha-w256-s2911-lr0.00125/checkpoints/final_001200_1793092849980183000.pt": {
+        "size": 449327097,
+        "sha256": "37554e373c326de2b1b5174cf21dbaa50376b4669d4be18a2125314c5ea63b63",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mha-w256-s2911-lr0.00125/checkpoints/h200.pt": {
+        "size": 115491091,
+        "sha256": "87b7b5c9b19775ab14b2070d013db7ee7dbffbbf08db2cffb7fd0914e9f29f52",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mha-w256-s2912-lr0.00125/checkpoints/final_001200_1793093522821593000.pt": {
+        "size": 449327097,
+        "sha256": "e033cf9b3ec4bf5e7c6345bd53c955b942117aac56f99f1f93f85af6100e10dd",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mha-w256-s2912-lr0.00125/checkpoints/h200.pt": {
+        "size": 115491091,
+        "sha256": "6486112fe5f134ae55ac2b2c0034875831c9a6ea4125fc1d108af97edfc7a9d3",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mha-w256-s2913-lr0.00125/checkpoints/final_001200_1793093736859031000.pt": {
+        "size": 449327097,
+        "sha256": "bb0f1d883b7f3ecb74017f66d2976646a1553a099c7d5eb1a5341364f59a1d7f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mha-w256-s2913-lr0.00125/checkpoints/h200.pt": {
+        "size": 115491091,
+        "sha256": "6a98b66d74ecf355daae7dd28ead11bb6da1358ae1fb95ce092b3839ccacd9ea",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mla-w256-s2911-lr0.00125/checkpoints/final_001200_1793093079026008000.pt": {
+        "size": 445098873,
+        "sha256": "c5445983a6bdc45036f06d7374c6dc259658be19dc35a1d4bc7767036f8c83c0",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mla-w256-s2911-lr0.00125/checkpoints/h200.pt": {
+        "size": 114072323,
+        "sha256": "7d2a6893d9529fecb4ba464bf050ea42d96c700d17edbe9c3802f670a74d91f8",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mla-w256-s2912-lr0.00125/checkpoints/final_001200_1793093308621015000.pt": {
+        "size": 445098873,
+        "sha256": "88a88d55e514371b5a886ee8c693a4088d30081d26ec67270cb82b324ce4fd09",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mla-w256-s2912-lr0.00125/checkpoints/h200.pt": {
+        "size": 114072323,
+        "sha256": "22dc8e8df248f102deefc3523e9d86508b2b18792326a28ae2c5b6e081d9aaab",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mla-w256-s2913-lr0.00125/checkpoints/final_001200_1793093965673802000.pt": {
+        "size": 445098873,
+        "sha256": "a505bc4bffe647068d247526391fce5d852e208865060341ff2284b5a1d69cfd",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/confirm-mla-w256-s2913-lr0.00125/checkpoints/h200.pt": {
+        "size": 114072323,
+        "sha256": "192cf5015b230c8d2704f54e5f56465a8884e4fdc37de9b73e9c55f725c37e5f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/screen-mha-w256-s2901-lr0.00125/checkpoints/final_001200_1793091965524174000.pt": {
+        "size": 449327097,
+        "sha256": "c5a68144d6c0522d592e05562bd89693428d5a050e7bcd45221aafd7cce35ba1",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/screen-mha-w256-s2901-lr0.00125/checkpoints/h200.pt": {
+        "size": 115491027,
+        "sha256": "09da03d85d510eb3137d13284aeb7c9829487867e781e963f86298970fc6e939",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/screen-mla-w256-s2901-lr0.00125/checkpoints/final_001200_1793092634933148000.pt": {
+        "size": 445098873,
+        "sha256": "79af83faa49eb8e0d9c4b768fc395138dbeb19089b23927736dcc180a7951b49",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-mla-001/screen-mla-w256-s2901-lr0.00125/checkpoints/h200.pt": {
+        "size": 114072323,
+        "sha256": "45c38050d4a1a1de77b09434b281a25099b37318b1146dfbaae1e7fd9d46d477",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2611-lr0.0025/checkpoints/final_003000_1793075229972012000.pt": {
+        "size": 449331257,
+        "sha256": "b3d36727edd8bd838987f2a0964cd117699899c92753d73f82cdd1d6738d8d0c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2611-lr0.0025/checkpoints/h200.pt": {
+        "size": 115492115,
+        "sha256": "1bbaee62551cd3931f5a7f403329fcc579f9e468fa7089de680da6bd9364f321",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2611-lr0.01/checkpoints/final_003000_1793075755510436000.pt": {
+        "size": 449331257,
+        "sha256": "1683d6d238574accd9738766168fd20d83f4a646c0c0f0fb403aa9c3d79e2581",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2611-lr0.01/checkpoints/h200.pt": {
+        "size": 115492051,
+        "sha256": "05a44e6367e3a31e7776d86f7d391beb91079dc088206bfe5895605e3ba21185",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2612-lr0.0025/checkpoints/final_003000_1793076805949019000.pt": {
+        "size": 449331257,
+        "sha256": "279af930f58a8d8fcc941cff4e6e070d4e47147af115da4dae4d88fb92e8cf0c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2612-lr0.0025/checkpoints/h200.pt": {
+        "size": 115492115,
+        "sha256": "e191a31b1818d1ed11521ffe9ff969470e196c8ca99f019963106679ff41ee25",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2612-lr0.01/checkpoints/final_003000_1793076285388974000.pt": {
+        "size": 449331257,
+        "sha256": "9a64b481c40420ee29ee5bc98b30768e34a027b9c0d510307c664e2c5a64ba0f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2612-lr0.01/checkpoints/h200.pt": {
+        "size": 115492051,
+        "sha256": "6bea020f538b731ed4ede2153e771449aaa07202e4c50fb8190d2f7e45821d12",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2613-lr0.0025/checkpoints/final_003000_1793077328770047000.pt": {
+        "size": 449331257,
+        "sha256": "b9b181c18d921798a9d75f02449709d40a4d0fa63356d3d63556bafe78a7f3f3",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2613-lr0.0025/checkpoints/h200.pt": {
+        "size": 115492115,
+        "sha256": "9c5e28eac50f57421a85661cde41bd627c3f94167ab46ec91d550d229fc39e8a",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2613-lr0.01/checkpoints/final_003000_1793077856119533000.pt": {
+        "size": 449331257,
+        "sha256": "7fd06cc9963f176c4fca149f84e4cba9ac37f388183ba5fb543d2e98b3dfd8d9",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w256-s2613-lr0.01/checkpoints/h200.pt": {
+        "size": 115492051,
+        "sha256": "d7d0aaad7e10cf3a798efbb0f2279dca2a933e1be605c751acfb987d71810b26",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2611-lr0.0025/checkpoints/final_003000_1793073369259945000.pt": {
+        "size": 105451129,
+        "sha256": "24aa49cd436f1ea9bd09240923b67e25a0f9fb0022d4926b1a492b312d3884d3",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2611-lr0.0025/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "d4223d48cf7da2c0804c68464edb48d7004f5e6f30d00d08c66909ea30a687d4",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2611-lr0.01/checkpoints/final_003000_1793073635539392000.pt": {
+        "size": 105451129,
+        "sha256": "f81e857c54ab2fc1a7d2f4b3478ea89094b43af2940769c9a04411fe36bc33a7",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2611-lr0.01/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "ae30e72f94b4b2665efd7765a33069a03854a6addeb4bd8fce469994e4f6c7a5",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2612-lr0.0025/checkpoints/final_003000_1793074169077947000.pt": {
+        "size": 105451129,
+        "sha256": "5e2b2152a5acec98ba9849b2c241a3c54601997ee17b7d1d385b03030a575cef",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2612-lr0.0025/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "2470c0ad8ea0f41d813d5d4b94c700373fd7e87f210a09f36cceb783a41bed6c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2612-lr0.01/checkpoints/final_003000_1793073902625237000.pt": {
+        "size": 105451129,
+        "sha256": "29c4174ace5702302e444adba68d5af295acbbd36e32ff31b7dc447cc8ca5d1b",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2612-lr0.01/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "85f32eaa80c0ecf595fb076285d51dcc7efb16f54fc7c3ed96c3f95bfa7bf469",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2613-lr0.0025/checkpoints/final_003000_1793074434507675000.pt": {
+        "size": 105451129,
+        "sha256": "82c0072fe3f74ce922e22bca6b8eb24df06639447aeae8b95a1eb37fb6202d79",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2613-lr0.0025/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "ee03eae1c1b96d7f2053e03043074fb695ceb8d81e076e299f5afa6876731bcc",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2613-lr0.01/checkpoints/final_003000_1793074700038314000.pt": {
+        "size": 105451129,
+        "sha256": "584263b2303017d339436ee5abe45e236d3a272eefc73cd5890ad4fb91fc01e6",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/confirm-w64-s2613-lr0.01/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "5f9573b3293aa4ee14ec5d9bff49fc9845c8b5b905c726d7c07e9d60589382a3",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/screen-w64-s2601-lr0.0025/checkpoints/final_003000_1793072303927421000.pt": {
+        "size": 105451129,
+        "sha256": "f01b7b42a8c1ca28454b441ad28db04b91971207d92d0c8b54c0dd44326341d7",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/screen-w64-s2601-lr0.0025/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "66c44d196d26ded34e778e3d3ccda6189432ff3087bf80e4ab80ad8228073176",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/screen-w64-s2602-lr0.0025/checkpoints/final_003000_1793072568621246000.pt": {
+        "size": 105451129,
+        "sha256": "794a3a6b7e11b268fb8b0399d4f1874cfb639fd3885bb56e32df6ded01ef7a2c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-quality-001/screen-w64-s2602-lr0.0025/checkpoints/h200.pt": {
+        "size": 26603603,
+        "sha256": "22dc93120847f1a22a2a930ac159f548ff7e7069432c8d4b3112f61687199539",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3311-lr0.00125/checkpoints/final_001200_1793155414398824000.pt": {
+        "size": 446165177,
+        "sha256": "545c3f89b168e34ca756222c74dcbb9919387ffb92b7037bfe7550a1072e5f14",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3311-lr0.00125/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "66f560eb41a08b6d9508c3cf5dad8eec9b14efbd49bd705c6a3910cf9d59873c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3312-lr0.00125/checkpoints/final_001200_1793156464498379000.pt": {
+        "size": 446165177,
+        "sha256": "1f6f9643ee5e4dd1249a554de8012356297a7672dddd0b67220c0b207146722c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3312-lr0.00125/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "f35cb258ab35e64616daec19bb7d1f570d817112bcf8f5718170accb86a593dd",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3313-lr0.00125/checkpoints/final_001200_1793156869095441000.pt": {
+        "size": 446165177,
+        "sha256": "ca93cda1ef609537729d677b29780dffa6ee72e56de9a11eea9b671a943a091f",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-legacy_untied-w256-s3313-lr0.00125/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "ac8a5701fad8c8368d357c63c2a593d32f1ed06f23b7c13259d7856a9d0b5f7a",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-matched_untied-w256-s3311-lr0.0025/checkpoints/final_001200_1793155635658853000.pt": {
+        "size": 446165177,
+        "sha256": "c34143a8248720dbcf8d4587ccc04a207682c350c8f0ce754ec7d01c74ef2375",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-matched_untied-w256-s3311-lr0.0025/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "88ab05a59f7e03cf4f56db5fb2a5f00b0ae2df2b7ee4e428c52c3ada84947273",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-matched_untied-w256-s3312-lr0.0025/checkpoints/final_001200_1793156054976957000.pt": {
+        "size": 446165177,
+        "sha256": "c0f6227f6568a329ab003f54a01cb00e58d9f0f16aa2a5168643f1e76c762cb4",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-matched_untied-w256-s3312-lr0.0025/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "16efcf122667e24d75d124471103490fab7bc4746e3efbe18c3f42c64a42a9a0",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-matched_untied-w256-s3313-lr0.0025/checkpoints/final_001200_1793157090245451000.pt": {
+        "size": 446165177,
+        "sha256": "12c2329b5206c19151c413e30a89e91a5449be78beef221a0b3219a0fb3956db",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-matched_untied-w256-s3313-lr0.0025/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "8d60c1086187507e3d56bf17773ea7e0c229491c73631cb6c1a2ae38afbe24a7",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-scaled_tied-w256-s3311-lr0.0025/checkpoints/final_001200_1793155830086290000.pt": {
+        "size": 240310711,
+        "sha256": "0f297068a63b83372f89e86f2ae9fc3f4bef20bdc4aaf18a17dada8d49d549bf",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-scaled_tied-w256-s3311-lr0.0025/checkpoints/h200.pt": {
+        "size": 62975126,
+        "sha256": "d71fd163432d2c55a26257dc17eac787ed642b0a12f2de19f9daae97710e1433",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-scaled_tied-w256-s3312-lr0.0025/checkpoints/final_001200_1793156249778394000.pt": {
+        "size": 240310711,
+        "sha256": "e664fd31c0f916e8cc83639aa120d0bb8c02a7d6b8d86c92c0fa51bb2a1e28de",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-scaled_tied-w256-s3312-lr0.0025/checkpoints/h200.pt": {
+        "size": 62975126,
+        "sha256": "947731d977e1f99f7568d02dacb4466aa2c7af0654823682becc7097ad05881c",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-scaled_tied-w256-s3313-lr0.0025/checkpoints/final_001200_1793156655944434000.pt": {
+        "size": 240310711,
+        "sha256": "49f05f87f0ed3eab54887679972d99e177b0230d9da174c40027a817a65d4473",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/confirm-scaled_tied-w256-s3313-lr0.0025/checkpoints/h200.pt": {
+        "size": 62975126,
+        "sha256": "7ccfb8988044f854cc3e7e65ada563fc7eed280068d1d1413f4899179280337e",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/screen-legacy_untied-w256-s3301-lr0.00125/checkpoints/final_001200_1793154162650471000.pt": {
+        "size": 446165177,
+        "sha256": "5d3fb60b9ce4340b10949cc469a0803d7bbaa8ad500149cbbd995965934d46dd",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/screen-legacy_untied-w256-s3301-lr0.00125/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "e92b161eab65ba152252ac02d0e3bade3cb3fffa13fe733c511363510ce82ac8",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/screen-matched_untied-w256-s3301-lr0.0025/checkpoints/final_001200_1793154596563095000.pt": {
+        "size": 446165177,
+        "sha256": "b039ee4fe68f0767fcd64ecc3529a594fb10e725f9f49a7c88f1f3ed59ee0640",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/screen-matched_untied-w256-s3301-lr0.0025/checkpoints/h200.pt": {
+        "size": 114438611,
+        "sha256": "67fc4fdce176877fd710d9e3d06accef7595b9c16c537becfb5905bdc0458ebc",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/screen-scaled_tied-w256-s3301-lr0.0025/checkpoints/final_001200_1793155201629127000.pt": {
+        "size": 240310711,
+        "sha256": "bdf98d4f9e4580c961c487ccdedaef8d4a083a5427bdb512537362dbb87f0199",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-table-001/screen-scaled_tied-w256-s3301-lr0.0025/checkpoints/h200.pt": {
+        "size": 62975062,
+        "sha256": "c89b5caade4bba2da7f0530d5ffc0f052cb46ccf28d3c513cd12b6960e9ed7f4",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-gqa-w512-s3411-lr0.00125/checkpoints/final_001200_1793162014946708000.pt": {
+        "size": 960589817,
+        "sha256": "fc6d2762343277cd86db58878ff7a9a2c02dd2465bff3fd95d71a36e0e41e3f8",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-gqa-w512-s3411-lr0.00125/checkpoints/h200.pt": {
+        "size": 251597139,
+        "sha256": "0c6d5f2d8888e5d12434508da8dac1669468c54860b95e728065320b40358a99",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-gqa-w512-s3412-lr0.00125/checkpoints/final_001200_1793163301921085000.pt": {
+        "size": 960589817,
+        "sha256": "93f2c62b1c94f3108d4519bf3a924636b2257f8ffead4bc26cb40d6315e52252",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-gqa-w512-s3412-lr0.00125/checkpoints/h200.pt": {
+        "size": 251597139,
+        "sha256": "d30ab48aee553faa33c6e1ef327623b79020639a07ec0b45d5e1665fc04aa07a",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-gqa-w512-s3413-lr0.00125/checkpoints/final_001200_1793163742979117000.pt": {
+        "size": 960589817,
+        "sha256": "58d0207e893bf69742ee0870d8af3f6d0ecff988c82f25a0edd6eef2b5cbf884",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-gqa-w512-s3413-lr0.00125/checkpoints/h200.pt": {
+        "size": 251597139,
+        "sha256": "57cbf5f732b05e15428cf6068c61a57a7ecfe33686731d53316de087828d0ff5",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-mla-w512-s3411-lr0.00125/checkpoints/final_001200_1793162443075156000.pt": {
+        "size": 955239481,
+        "sha256": "71795c6508a3b1c031946bbf26e15aeb750d506d10d565ba03039223a2571a71",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-mla-w512-s3411-lr0.00125/checkpoints/h200.pt": {
+        "size": 249799555,
+        "sha256": "534a8384d628f881159a9d271b81e04339259d3e4818598e25e1448f273bfaf3",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-mla-w512-s3412-lr0.00125/checkpoints/final_001200_1793162869076835000.pt": {
+        "size": 955239481,
+        "sha256": "ee26e92f1b9de3dd3c8b8bd41d18d8f606a0dd5240e4bb4c2a2a394e9c3bbd44",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-mla-w512-s3412-lr0.00125/checkpoints/h200.pt": {
+        "size": 249799555,
+        "sha256": "9c9168375e27f6149d96ed92ac27d57211b2f8cfddcd99f88b8338295153daf7",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-mla-w512-s3413-lr0.00125/checkpoints/final_001200_1793164173529889000.pt": {
+        "size": 955239481,
+        "sha256": "2cfd022fe381e0230d87d157102ad9963d683e8dde2cf603a03aec353870195b",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/confirm-mla-w512-s3413-lr0.00125/checkpoints/h200.pt": {
+        "size": 249799555,
+        "sha256": "5ecc0eb8f42a755b9331936131eefbba6572fd7c118a849189106a19c0943888",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/screen-gqa-w512-s3401-lr0.00125/checkpoints/final_001200_1793159849514154000.pt": {
+        "size": 960589817,
+        "sha256": "9f3e1bd04b19aaab8d6c59f4e189fb68e1121fc0df40d3eff883203130080da2",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/screen-gqa-w512-s3401-lr0.00125/checkpoints/h200.pt": {
+        "size": 251597075,
+        "sha256": "34356c89222fcf4ade67fec4128e495d6ebf450238188013daa8a6322f67f2fa",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/screen-mla-w512-s3401-lr0.00125/checkpoints/final_001200_1793161147078349000.pt": {
+        "size": 955239481,
+        "sha256": "8c58eb04f2cbbd73c977c2f8faaba21a3fd95716418e253df2d5833c5388d935",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-attention-001/screen-mla-w512-s3401-lr0.00125/checkpoints/h200.pt": {
+        "size": 249799555,
+        "sha256": "cb4713916047ddf417fda9206f5696c006b92e1283a09ffda8f7cb579812960b",
+        "retention_reason": "selected_and_fresh_pairs_retained_by_cleanup002"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/01/checkpoints/h200.pt": {
+        "size": 253936963,
+        "sha256": "ee0de52825007c03ed26933c36c5b05e2587e25eab57f230c6b65df16895eb01",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/01/checkpoints/final_001200_1793311136570118000.pt": {
+        "size": 967787253,
+        "sha256": "0002989a14f75425842ae29606a9999ba5a68d3dd05720da8f9b04412835dc8f",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/00/checkpoints/final_001200_1793310264891963000.pt": {
+        "size": 986587913,
+        "sha256": "d36425c9c6075007c3f63e41a8e9e0354b5cb769b654d2321250a17250eac049",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/00/checkpoints/h200.pt": {
+        "size": 260185063,
+        "sha256": "ff2fdd44014d0cd2d3f852dd04e2eb5ba5951aad3542b4c8df169837e18a83be",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/02/checkpoints/final_001200_1793312397864842000.pt": {
+        "size": 992854821,
+        "sha256": "91655bab5e0e66e064eea186114668eecb231a20451d04c9121fdfc2babc7de7",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/02/checkpoints/h200.pt": {
+        "size": 262267763,
+        "sha256": "4f0e382af3b4e1062790c0ead14b1a25a221bbf239b4c4059b3ecd7e2bdcb4b9",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/05/checkpoints/final_001200_1793315322602681000.pt.tmp": {
+        "size": 761768510,
+        "sha256": "2744ab5d95a972152be379d6adf49fc2125fecf8b942499b227a881a4c67ebb3",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/04/checkpoints/final_001200_1793314706417637000.pt": {
+        "size": 986587913,
+        "sha256": "e7075bee1a92b8eddb7dc932d6dc758eabae801455f6df731d1086e54bb92733",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/04/checkpoints/h200.pt": {
+        "size": 260185063,
+        "sha256": "54644f91d6a97c102a19e3601130e38224291ad8936eaff4e638e8f467b19fc5",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/03/checkpoints/final_001200_1793313598550224000.pt": {
+        "size": 992854821,
+        "sha256": "584a571576359e19e01bf8f80c30cf6339742f2dd9e3d0017fed2f1e3cbec6af",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-002/evidence/quality/03/checkpoints/h200.pt": {
+        "size": 262267763,
+        "sha256": "a423798689046a50b760db54b7ac9caa97a3318faccf12dcbd871251aecda2df",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/06/checkpoints/final_001200_1793323408776466000.pt": {
+        "size": 967787253,
+        "sha256": "070ac09b25bca7a5b2130cdbd0111e75fb6a8746ede4a1cdb0113f6167019dfd",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/06/checkpoints/h200.pt": {
+        "size": 253936963,
+        "sha256": "b92875388dee286a29c5ea93469c40ee882f12db58579aa32aae30a9b2096d69",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/01/checkpoints/final_001200_1793318252436052000.pt": {
+        "size": 967787253,
+        "sha256": "a070d70fa6482d67578a76f32d3e844e7b54a277f1e5f40c3171b7df269bb005",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/01/checkpoints/h200.pt": {
+        "size": 253936963,
+        "sha256": "a101d9547c09aac3cdc985d05edf287dbf466d320b3526b8881da3bab9a33c01",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/08/checkpoints/final_001200_1793325864452219000.pt.tmp": {
+        "size": 780502912,
+        "sha256": "6a572d5c2a72198e56de2e188940e24161f2cbcea367af55743d0bcaef546f64",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/00/checkpoints/final_001200_1793317483358631000.pt": {
+        "size": 986587913,
+        "sha256": "4c705ef6b5e2e12613ff6ab619ead093a7c3b27b89292022083658b5d7dd4f58",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/00/checkpoints/h200.pt": {
+        "size": 260185063,
+        "sha256": "dcf006cfab87dca93784889b4567440f04acb2d4e3014c2091786c07f6c8050c",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/07/checkpoints/h200.pt": {
+        "size": 262267763,
+        "sha256": "04cb3dac69fc7a2633de07759d2a5e776434ea5e5a009ec406e7b4af5994b4e3",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/07/checkpoints/final_001200_1793324762298797000.pt": {
+        "size": 992854821,
+        "sha256": "ca883b3b61a2ab6365f9d84c3504f6f5a0a6faf3e44caa6be87f505330a720bd",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/02/checkpoints/final_001200_1793319300587898000.pt": {
+        "size": 992854821,
+        "sha256": "46eb686b1eec25fc00a07b4dfe6813102c2a0e3e3aa292492a3716433e5cc4cf",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/02/checkpoints/h200.pt": {
+        "size": 262267763,
+        "sha256": "5f242334ea187c1de9b2a473f0dd7a930ac8c69ebb4630d2f00d1ff7f64ab89d",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/05/checkpoints/final_001200_1793322471715939000.pt": {
+        "size": 967787253,
+        "sha256": "6125b496502ddcacf2bade744b7d73304f1e2856b1abbfcac8eefadeb87e22da",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/05/checkpoints/h200.pt": {
+        "size": 253936963,
+        "sha256": "ca904bbcf8a87b2188ee75efbc59336b342ad934f43d3cf3e34cdf81534c6117",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/04/checkpoints/final_001200_1793321579493311000.pt": {
+        "size": 986587913,
+        "sha256": "70ee160b371a0f92981b0eb9fc3c0062ac23a90561ab3243d55111295ab84348",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/04/checkpoints/h200.pt": {
+        "size": 260185063,
+        "sha256": "78b266ee1b99396034670a06695c30e08ce6dca96866528e9cdc94da305e12af",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/03/checkpoints/final_001200_1793320479442911000.pt": {
+        "size": 992854821,
+        "sha256": "ff4a7beba652c84997b897afaac5e1118d1950baf59a0083acb08371907f1a4e",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-wide-hybrid-003/evidence/quality/03/checkpoints/h200.pt": {
+        "size": 262267763,
+        "sha256": "ffe5a649f3f917e5f764782add7ea7668b2264ad8c2d701edf13eb7694a36746",
+        "retention_reason": "incomplete_campaign_pairs_and_failed_partial"
+      },
+      "research_runs/tokenizer-metadata-contention-trace-v2-001/campaign/evidence/quality/23/checkpoints/fixture.pt.tmp": {
+        "size": 1006654080,
+        "sha256": "1c4b101ebf2e022be9035a6662b165bcb05b75e71cafd6972aaf571aa6c8ccfb",
+        "retention_reason": "preserved_synthetic_diagnostic"
+      },
+      "research_runs/tokenizer-metadata-contention-trace-v3-001/campaign/evidence/quality/23/checkpoints/fixture.pt": {
+        "size": 1006700215,
+        "sha256": "853ba84e95525d097d26f2ab9aad58af4bca86ccc182c9cf7eb7cf4f660552db",
+        "retention_reason": "preserved_synthetic_diagnostic"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/00/partial.pt": {
+        "size": 981866923,
+        "sha256": "ff8a5d7e96b9db86545bfd8fbfd39f9553c709a4de0314749d916c805fc46b38",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/01/partial.pt": {
+        "size": 986587627,
+        "sha256": "3e048981ed4e4f22f4bdfa2796cb39533e3dbbbccabc845c7019035aa277537b",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/02/partial.pt": {
+        "size": 996028971,
+        "sha256": "07867616d5c2e8817a14519bf68e58c58add2a8102da909042c37fa618b36763",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/03/partial.pt": {
+        "size": 958341525,
+        "sha256": "4c306c653126abf336acd91f800a583946461d4b80e85bd7d00fa9217663d05c",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/04/partial.pt": {
+        "size": 967787029,
+        "sha256": "37ee852e9de7bbe4278f263e6399aa19e39d0775cc44df97d927fb9a2bc80b26",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/05/partial.pt": {
+        "size": 986677973,
+        "sha256": "0ff48c948b859b097231200b85f93dc461acb97e558c2817174aa77b3ee5c155",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/06/partial.pt": {
+        "size": 989708701,
+        "sha256": "bab05686378e25d12084616da6f0cd63b56a102eb6e364cdc4cf5f04d0663fd2",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/07/partial.pt": {
+        "size": 992854493,
+        "sha256": "3db2cc2c82fd94c44bbad8b7cebb9c048f900864209fbc58ddfb74ce2a3ff38b",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-wide-hybrid-numerical-v2-001/08/partial.pt": {
+        "size": 999145949,
+        "sha256": "7d74ecc1d93dd1fc0d8892b69d6d8998ae3acfbfc5344be91bb364a6cc50982f",
+        "retention_reason": "protected_completed_numerical_prerequisite"
+      },
+      "research_runs/tokenizer-metadata-contention-baseline-001/campaign/evidence/quality/23/checkpoints/fixture.pt": {
+        "size": 58720256,
+        "sha256": "36f37bf4bc784fb6be04942bfa044524abc9f8fa6011b9f3587d415673b11594",
+        "retention_reason": "preserved_synthetic_diagnostic"
+      },
+      "research_runs/tokenizer-metadata-contention-handoff-001/campaign/evidence/quality/23/checkpoints/fixture.pt": {
+        "size": 58720256,
+        "sha256": "36f37bf4bc784fb6be04942bfa044524abc9f8fa6011b9f3587d415673b11594",
+        "retention_reason": "preserved_synthetic_diagnostic"
+      }
+    },
+    "categories": {
+      "selected_and_fresh_pairs_retained_by_cleanup002": {
+        "files": 148,
+        "bytes": 34119142876
+      },
+      "incomplete_campaign_pairs_and_failed_partial": {
+        "files": 28,
+        "bytes": 17691873110
+      },
+      "preserved_synthetic_diagnostic": {
+        "files": 4,
+        "bytes": 2130794807
+      },
+      "protected_completed_numerical_prerequisite": {
+        "files": 9,
+        "bytes": 8858999191
+      }
+    },
+    "total_files": 189,
+    "total_bytes": 62800809984,
+    "eligible_deletion_files": [],
+    "eligible_deletion_bytes": 0,
+    "cleanup002_manifest_sha256": "43016a6329181e8e14e774a37390b341213d08f2e68e7bd557ae46ec3e647a49",
+    "prior_deleted_files_still_absent": 42,
+    "policy": "Completed prior cleanup retains selected/fresh pairs. Failed partials and incomplete screens have no valid selection permitting deletion. Numerical and synthetic prerequisite evidence remains preserved; successful synthetic saves are not resource-pilot or losing-screen weights."
+  },
+  "storage": {
+    "required_free_bytes": 30631412484,
+    "observed_free_bytes": 22849273856,
+    "shortfall_bytes": 7782138628,
+    "reserve_bytes": 8589934592
+  },
+  "review": [
+    "Only new production change since003 is elapsed-time checkpoint yielding, including preflight/empty calls and flush; model/optimizer/EMA/RNG/data math is unchanged.",
+    "Completed numerical procedure uses original checkpoint helpers, not the bounded writer. Exact-resume/EMA evidence applies to unchanged math; no numerical rerun.",
+    "Input encoding has no checkpoint scheduling dependency. Original report and artifact bytes verified, no reencoding or holdout access.",
+    "140 regression tests and three recorder tests passed; new instrumented actual-scale synthetic comparison completed. This does not establish future MPS training reliability.",
+    "New campaign requires explicit carry-forward provenance, fresh pilot/process/retention evidence and finite full-panel storage freeze. No old partial panel is pooled, selected or promoted.",
+    "Existing full-panel storage guard is not reduced. No eligible tokenizer weight deletion identified; external storage or additional user-managed local free space is required for this unchanged design."
+  ],
+  "numerical_rerun_required": false,
+  "input_reencoding_required": false,
+  "original_evidence_modified": false,
+  "new_campaign_freeze_required": true,
+  "training": false,
+  "cleanup_performed": false,
+  "closed_campaigns_reopened": false,
+  "holdout_consumed": false,
+  "next_action": "Prepare lossless prospective source-applicability transport and metadata sizing without creating/dispatching a campaign. Full-panel launch remains blocked until verified capacity reaches the unchanged bound. Report actionable shortfall once; do not repeatedly poll unchanged disk or retry closed fixtures."
+}

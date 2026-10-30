@@ -1,0 +1,48 @@
+{
+  "status": "lossless_prerequisite_transport_prepared_not_campaign_frozen",
+  "source_sha256": "0fc7f6b3440484700151a99f6a02f1b847914f7c8914612b4d684f54d058ccaa",
+  "executed_source_sha256": "5b32cee89c24353b0372f0c288078b0d292d50fb65de77e5a379e8d8a8556f7a",
+  "runtime_sha256": "d193008aa205d1d7dd914c0c65256024f318390ed707124a6ef7c5aa4eb5b24c",
+  "output": "research/tokenizer-evidence/wide-hybrid-preparation-001/time-handoff-prerequisite-transport-v2",
+  "files": {
+    "source-applicability.json.gz": {
+      "size": 20942,
+      "sha256": "e65ba545f71ed5d73c0cf03a3246965c4aa2ab4f4862d226b9eb7dd3542f6600"
+    },
+    "numerical-trace.json.gz": {
+      "size": 12576,
+      "sha256": "6ae89c77f97d460e3a5c1d731befee68c6e2173b0acf900fa9ae6e34e6a6e0d6"
+    },
+    "numerical.json": {
+      "size": 2485,
+      "sha256": "857d18a7cef6d12a29cf698f583faefbbc26e3fb5c4b3ec112cc82703bc00c9e"
+    },
+    "training-input-ids.json": {
+      "size": 603,
+      "sha256": "c703d3ef0f61950b2a5713740e5fedec53255ee535b7276ae4a77b9fc0d21138"
+    },
+    "training-input-trace.json": {
+      "size": 26347,
+      "sha256": "b57b8bc8b7457cdf616eea2df195c70527ec2c47b71139e0130ee932e6be2ef0"
+    },
+    "training-input.json": {
+      "size": 1560,
+      "sha256": "e0e158854441d3edf35935ff51f061c99537b1fc6662bf51abeb22577b1d5dbe"
+    }
+  },
+  "total_bytes": 64513,
+  "original_reports_unchanged": true,
+  "lossless_originals_verified": true,
+  "numerical_artifacts_bound": {
+    "meta/numerical.json": "857d18a7cef6d12a29cf698f583faefbbc26e3fb5c4b3ec112cc82703bc00c9e",
+    "meta/numerical-trace.json.gz": "6ae89c77f97d460e3a5c1d731befee68c6e2173b0acf900fa9ae6e34e6a6e0d6",
+    "meta/source-applicability.json.gz": "e65ba545f71ed5d73c0cf03a3246965c4aa2ab4f4862d226b9eb7dd3542f6600"
+  },
+  "training_ids_unchanged": true,
+  "current_source_applicability_sha256": "ce58c791655eba871368b3fe18cf770c63b5672a929613330b3b156686ad055d",
+  "script_sha256": "108d61d5bf8bebe14aeedb5910ab1ab4b7451af566ecbe1f45910784d9a05d2e",
+  "campaign_created": false,
+  "plan_frozen": false,
+  "training": false,
+  "limitation": "Transport checks preserve original executed-source identity; no numerical reexecution. Complete campaign metadata high-water and capacity gate remain separate before any freeze or dispatch."
+}
