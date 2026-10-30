@@ -2868,3 +2868,29 @@ its production process guard; no quality result exists yet. The bounded wrapper
 may advance through the remaining serial pilots and qualityslot0 only after
 all required reviews succeed. Launch/start receipts are recorded separately;
 no other worker, later quality slot or retry was launched.
+
+
+### Campaign004 resource pilots accepted; first quality cell running
+
+All three 20-update width512 D/2 resource pilots completed under the frozen
+elapsed-time-handoff source. Full/cache and raw/H200 audits, resource reviews
+and parent acceptance passed for hybrid, gated MLA and KDA. Worker times were
+99.94, 100.67 and 120.15 s. Largest sampled RSS was 3,228,827,648 bytes and MPS
+driver allocation was 4,112,433,152 bytes, within the unchanged 4/6 GiB limits.
+No resource violations were recorded; sampled maxima are not instantaneous bounds.
+
+The complete pilot boundary passed its production audit. Exactly six successful
+pilot weights (3,769,780,224 bytes) were removed under the frozen retention rule
+after preserving exact non-weight bytes and hashes. The external archive retains
+76 non-checkpoint files; a separate read-only check verified the immutable pilot
+records, archive bytes, six-file manifest and saved execution-review reference.
+Boundary reference SHA256:
+`12a766f7c9a301d5176f4556d8512bebfe320af243925d0e9fdf08b1a9fa1f93`.
+
+The existing serial wrapper then started quality slot0 (hybrid, LR0.000625,
+seed3501, 1,200 updates) with one MPS worker23466 and controller23108. No quality
+result exists yet. This is execution/correctness evidence, not a quality gain or
+proof that the full training campaign cannot fail. The wrapper stops after
+slot0 acceptance or failure; later slots require independently reviewed progress.
+Evidence: `campaign004-pilots-reviewed-v2.json`, pilot archive/boundary receipts
+and `campaign004-quality0-start-v2.json` under the preparation evidence directory.
