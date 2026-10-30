@@ -5573,3 +5573,15 @@ Completion SHA256:
 Commit/push this verified boundary before `start_campaign004_fresh_v2.py --slot 15`.
 The first fresh trial is selected hybrid D/2, LR0.000625, seed3511,1,200 updates;
 all fresh raw/H200 pairs must be retained, including negative results.
+
+
+Verified rank cleanup was committed/pushed as `6394277` before fresh slot15.
+Controller45487 passed production preparation/readiness and started sole
+child45508: selected hybrid D/2, width512, LR0.000625, fresh seed3511,
+1,200 updates. The immutable request confirms the fresh seed and selected
+configuration. Running control reports no error and29.57GB free against26.71GB
+required including8GiB reserve. Launch receipt: `campaign004-fresh-15-v2-launch.json`.
+No later slot dispatches automatically. Retain every fresh raw/H200 pair.
+After acceptance and exit, independently review compact first-fresh history
+and adapt the external slot16 wrapper to the existing frozen later-confirmation
+startup/readiness/dispatch APIs before gated MLA D/4 seed3511.
