@@ -2973,3 +2973,10 @@ and inference measurements remain. The test holdout remains closed.
 Evidence: `campaign004-lr-02-v2-terminal.json`,
 `campaign004-lr-prefix-03-v2-review.json` and its guard. After committing/pushing
 this review, the frozen next cell is slot3 KDA at LR0.00125, D/4, seed3501.
+
+
+After prefix3 review was committed and pushed as `36ffb14`, slot3 KDA
+(LR0.00125, D/4, seed3501) started through the unchanged guarded dispatcher.
+Controller25964 owns child25983. The launch receipt is
+`campaign004-lr-03-v2-launch.json`; it binds the frozen plan and independent
+review and permits this cell only. No automatic later-slot dispatch or retry.
