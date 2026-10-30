@@ -4570,3 +4570,8 @@ Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-prefix-
 its guard and `campaign003-lr-05-v2-terminal.json`.
 After commit/push, next is solely slot6 gatedMLA at LR0.0025, unchanged
 width/divisor/seed/budget, original production gates, frozen source and guards.
+
+
+Prefix6 review committed/pushed as `eb6c9f3`. Slot6 controllerPID14687
+(session77627) is active through production gates for the single frozen gatedMLA
+LR0.0025 cell. Launch receipt: `campaign003-lr-06-v2-launch.json`.
