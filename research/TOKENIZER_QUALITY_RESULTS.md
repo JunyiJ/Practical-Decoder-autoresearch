@@ -3226,3 +3226,24 @@ control reports no error, about28.38GB free against25.67GB required including
 8GiB reserve. Launch receipt: `campaign004-rank-10-v2-launch.json`. No later
 slot launches automatically; terminal acceptance and independent prefix11 review
 are required before slot11.
+
+
+### Campaign004 rank slot10 independently reviewed
+
+Gated MLA D/8 at LR0.00125, seed3501 completed1,200 updates and passed
+parent acceptance (781.25s including preparation/review). Final H200 validation
+CE4.8286763122 and raw CE4.8307202561 compare with D/4 anchor H2004.8214491355:
+D/8 is0.0072271767 worse on this screening seed. This does not complete rank
+selection or establish an architecture conclusion. All raw/H200 pairs remain
+protected; no fresh confirmations or holdout evaluations have run in this round.
+
+After both processes exited, independent prefix11 review passed in43.85s under
+shared locks and the unchanged CPU guard, peak RSS231,964,672 bytes. It verified
+LR cleanup history, both rank trials and their transport receipts, archived408
+file identities and398 exact non-checkpoint files. Ten live screen weights remain.
+Observed free space27,178,233,856 bytes exceeds24,458,051,804 required including
+8GiB reserve. No cleanup occurred.
+
+Evidence: `campaign004-rank-10-v2-terminal.json`,
+`campaign004-rank-prefix-11-v2-review.json` and its finished guard. Commit/push
+before serial slot11: KDA D/8, LR0.000625, seed3501, 1,200 updates.
