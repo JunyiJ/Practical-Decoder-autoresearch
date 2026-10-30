@@ -5430,3 +5430,25 @@ control reports no error and25.90GB free against23.21GB required including
 8GiB reserve. Launch receipt: `campaign004-rank-12-v2-launch.json`. No later
 slot dispatches automatically; terminal acceptance and independent prefix13
 review are required before gated MLA D/2 slot13.
+
+
+### Campaign004 rank slot12 independently reviewed
+
+KDA D/2 at LR0.000625, seed3501 completed1,200 updates and passed parent
+acceptance (1,323.78s including preparation/review). Final H200 validation CE
+was4.9264940236 and raw CE4.9551758129. KDA H200 results across D/8,D/4,D/2
+are4.9418159157,4.9479304630,4.9264940236: D/2 improves0.0214364394 versus
+D/4 and0.0153218921 versus D/8 on this screening seed. This is a screening
+result, not a fresh-seed or adoption claim. Two remaining rank probes must
+finish before the frozen selection is saved. Test holdout remains closed.
+
+After both processes exited, independent prefix13 review passed under shared
+locks in64.83s, peak RSS233,521,152 bytes. It verified cleanup history, four
+rank results and transport receipts, and archived466 file identities plus452
+exact non-checkpoint files. All14 live screen weights remain protected. Free
+space24,620,216,320 bytes exceeds21,943,612,396 required including8GiB reserve.
+No cleanup occurred.
+
+Evidence: `campaign004-rank-12-v2-terminal.json`,
+`campaign004-rank-prefix-13-v2-review.json` and its finished guard. Commit/push
+before serial slot13: gated MLA D/2, LR0.00125, seed3501, 1,200 updates.
