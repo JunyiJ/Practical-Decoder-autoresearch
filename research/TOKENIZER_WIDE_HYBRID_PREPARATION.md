@@ -4694,3 +4694,32 @@ Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-08-v2-t
 `campaign003-lock-failure-v2-review.json`, its guard and
 `review_campaign003_lock_failure_v2.py`. Previous eight cells remain descriptive
 screening evidence, not a completed panel or adoption result.
+
+
+### Prospective actual-scale contention trace v2 (2026-10-30 UTC)
+
+Freeze one separate nontraining diagnostic after closed003's repeated timeout:
+`tokenizer-evidence/wide-hybrid-preparation-001/run_metadata_contention_trace_v2.py`
+and `metadata-contention-trace-v2-plan.json`. The new output root is
+`research_runs/tokenizer-metadata-contention-trace-v2-001`; no existing fixture
+or campaign is resumed. All228 production/runtime-input source hashes match003.
+The synthetic CPU payload has four240MiB float32 tensors plus128 small tensors,
+serialized through actual torch.save and the unchanged bounded checkpoint writer.
+337 flat synthetic control files approximate the failed campaign's file count.
+
+One child only, four CPU threads,150s child/180s parent limits, original4GiB RSS,
+8GiB reserve,2s namespace-lock deadline and20ms-per-MiB handoff. Checkpoint cap
+964MiB, total output cap992MiB, each external JSON cap4MiB, at most16384 trace
+records per process. Both worker locks and original process supervisor remain.
+Process-local observational wrappers time the original lock scopes, census,
+write and fsync operations with monotonic clocks/PIDs/thread names. No source
+mutation, model/corpus/training, existing checkpoint read or test-holdout use.
+
+This is a new scale/serialization diagnostic, not a rerun of the closed56MiB
+checks or failed numerical fixture. Instrumentation changes scheduling; flat
+synthetic files and CPU tensors do not reproduce nested topology, tensor layout,
+prior MPS/dirty-page state or machine load. A successful run cannot prove the
+failure eliminated or authorize training. Preserve every outcome, independently
+review traces/hashes and unchanged closed003 evidence, then choose further work
+from observations. New full-panel storage remains blocked. Syntax and source
+pins checked before execution; commit/push this finite plan before its sole run.
