@@ -2329,3 +2329,8 @@ its guard and `campaign003-lr-01-v2-terminal.json`.
 After committing/pushing this review, dispatch only slot2 KDA at the same
 LR/divisor/seed through the original one-slot controller. Frozen source and
 all resource guards remain unchanged.
+
+
+Prefix2 review committed/pushed as `ea6f4e9`. The sole slot2 KDA controller
+PID11085/session26358 is active through production gates; its immutable
+receipt is `campaign003-lr-02-v2-launch.json`. It stops after this cell.
