@@ -5203,3 +5203,10 @@ the unchanged reserve. Protected evidence and closed test remain unchanged.
 Evidence: `campaign004-lr-06-v2-terminal.json`,
 `campaign004-lr-prefix-07-v2-review.json` and its guard. Commit/push this review
 before slot7 KDA at LR0.0025, D/4, seed3501, through the unchanged serial gates.
+
+
+After prefix7 review was committed and pushed as `cfbe012`, slot7 KDA
+(LR0.0025, D/4, seed3501) started under controller29612 and child29630.
+`campaign004-lr-07-v2-launch.json` binds the frozen plan and independent review.
+The original guarded wrapper permits this cell only, with no retry or automatic
+later-slot dispatch.
