@@ -58,3 +58,26 @@ do not quietly repeat unchanged storage checks indefinitely.
 
 The initial application is documented in
 [tokenizer-evidence/checkpoint-cleanup-002/README.md](tokenizer-evidence/checkpoint-cleanup-002/README.md).
+
+## October 29 lossless cold archival authorization
+
+The human explicitly requested proactive archival or removal of old checkpoints
+while keeping selected models, fresh confirmation pairs and failure evidence.
+Lossless cold archival is distinct from discarding a losing weight: a completed
+non-selected screening or numerical-prerequisite checkpoint may be moved into a
+verified archive even when it is not eligible for irreversible deletion. Keep
+selected/fresh and failed checkpoints in their original loose form for this
+operation. Preserve every non-checkpoint evidence file byte-for-byte.
+
+Before removing any loose copy, hold the shared worker lock, bind an exact
+path/size/SHA256 manifest, create a bounded archive and independently stream its
+entire decompressed contents to verify every member. Keep the original until
+that verification succeeds; then journal each loose-copy removal. Keep archives
+local and protected, never push binary checkpoints. Recheck protected files and
+metadata afterward. Archived files retain their original logical identities;
+future audits must resolve the archive manifest or restore exact bytes before
+requiring the original paths. Old validators/controllers are not rerun or patched
+to hide missing files. Restoration must verify hashes, reserve sufficient space
+and never overwrite an existing path. Record logical savings separately from
+observed filesystem free-space changes. Continue proactive capacity management
+under these controls without asking again for already-authorized cleanup.
