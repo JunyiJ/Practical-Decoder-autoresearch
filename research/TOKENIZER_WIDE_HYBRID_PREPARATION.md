@@ -5054,3 +5054,21 @@ production gates: gated MLA, LR0.000625, D/4, seed3501, 1,200 updates. The launc
 receipt is `campaign004-lr-01-v2-launch.json`; it binds the frozen plan and
 independent prefix review. This wrapper stops on acceptance or failure and cannot
 automatically dispatch slot2. No retry, selection or holdout evaluation occurred.
+
+
+### Campaign004 second quality cell independently accepted
+
+Slot1 gated MLA completed 1,200 updates at width512, D/4, LR0.000625,
+seed3501. Full-validation H200 CE is 4.95333731332134 and raw endpoint CE is
+4.920093629712963. Parent acceptance and the independent two-cell prefix review
+passed, including both raw/H200 pairs and prior cleanup provenance. The review
+guard finished in 8.73 s, peak RSS220,397,568 bytes. No research worker remained
+before continuation. Remaining storage fits: 30,985,097,216 bytes free versus
+28,162,784,220 required, including the unchanged reserve.
+
+Only two of nine LR cells are complete. The observed H200 difference from hybrid
+at this one LR/seed is descriptive; no selection, fresh confirmation or adoption
+is available. The test holdout remains closed. Evidence is in
+`campaign004-lr-01-v2-terminal.json`, `campaign004-lr-prefix-02-v2-review.json`
+and its guard. Commit/push this review before the next serial cell, slot2 KDA,
+LR0.000625, D/4, seed3501, through the unchanged production gates.
