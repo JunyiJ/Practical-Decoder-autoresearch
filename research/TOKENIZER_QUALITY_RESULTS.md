@@ -3217,3 +3217,12 @@ this review. Test holdout remains closed.
 Evidence: `campaign004-rank-09-v2-terminal.json`,
 `campaign004-rank-prefix-10-v2-review.json` and its finished guard. Commit/push
 these before serial slot10 (gated MLA D/8 at selected LR0.00125, seed3501).
+
+
+Rank9 review evidence was committed/pushed as `bdc9b29` before serial slot10.
+The next controller36655 passed preparation/readiness and started sole child36681:
+gated MLA D/8, width512, LR0.00125, seed3501, 1,200 updates. Running process
+control reports no error, about28.38GB free against25.67GB required including
+8GiB reserve. Launch receipt: `campaign004-rank-10-v2-launch.json`. No later
+slot launches automatically; terminal acceptance and independent prefix11 review
+are required before slot11.
