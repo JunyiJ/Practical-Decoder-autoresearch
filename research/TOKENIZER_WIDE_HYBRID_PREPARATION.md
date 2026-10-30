@@ -5278,3 +5278,30 @@ Evidence: `campaign004-lr-select-v2-review.json`, its before archive/guard,
 `campaign004-lr-boundary-tests-v2.log`, and `campaign004-lr-08-v2-terminal.json`.
 Selection completion SHA256:
 `100a5e54fa1e0d8d3dd3758b244f9e1e48970e92dfde120c3c5dd21b13f43ebc`.
+
+
+### Campaign004 LR boundary cleanup verified; rank stage ready
+
+After selection evidence was committed/pushed as `db62fa1`, the frozen production
+cleanup re-audited all nine screens and the exact manifest under shared locks.
+Exactly12 losing-screen weights totaling7,447,239,552 bytes were removed. Selected
+raw/H200 pairs at slots0,2,5 remain byte-identical (3,723,619,776 bytes total).
+All334 pre-cleanup non-checkpoint files retain exact archived bytes, and every
+other preexisting file hash is unchanged. The post-cleanup external archive has
+350 files, including344 non-checkpoint files. Original selection, metrics,
+validation block sums, resource/tensor audits, logs, manifests and deletion journal
+are preserved. No closed-round, fresh-confirmation or failure evidence was removed.
+Deleted losing weights cannot be reloaded; their original audited evidence remains.
+
+The independent production verifier accepted the two-boundary cleanup chain.
+The outer guard finished in186.52s with237,715,456-byte peak RSS. Free space at
+completion was29,654,528,000 bytes; the verifier's remaining-campaign requirement
+is26,907,661,636 bytes including the unchanged8GiB reserve. The boundary does not
+itself authorize dispatch: the next child must pass normal frozen rank readiness.
+
+Evidence: `campaign004-lr-cleanup-v2-before.json`, review and guard. Completion
+SHA256: `65923075d6c2e3861972831c3ba96c91c02cb859fd507f435e71b08b06039036`.
+Commit/push this reviewed boundary before `start_campaign004_rank_v2.py --slot 9`:
+first rank probe is hybrid D/8 at selected LR0.000625, seed3501, 1,200 updates.
+The new wrapper is restricted to slot9 and calls the unchanged `run_rank_once`
+production dispatcher; it stops after this one trial, with no retry or later slot.
