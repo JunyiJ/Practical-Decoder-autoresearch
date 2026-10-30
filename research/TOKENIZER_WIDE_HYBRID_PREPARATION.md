@@ -5483,3 +5483,16 @@ Evidence: `campaign004-rank-13-v2-terminal.json`,
 `campaign004-rank-prefix-14-v2-review.json` and its finished guard. Commit/push
 before serial slot14: hybrid D/2, LR0.000625, seed3501, 1,200 updates.
 After slot14 use full rank selection/boundary APIs, not prefix count15.
+
+
+Prepared `campaign004_rank_boundary_v2.py` for the eventual completed rank
+stage, adapting the reviewed LR boundary wrapper to the frozen rank APIs.
+It requires slot14 acceptance and exposes separate `select` and `cleanup`
+operations under both locks and an1,800-second CPU guard. Selection is saved
+and independently verified before cleanup; cleanup requires the finished
+selection guard and byte-identical pre-cleanup evidence archive. Only manifest
+weights may disappear, and every other original file hash/non-checkpoint byte
+must remain unchanged. Existing attempts block retries. Syntax and the exact
+adaptation diff were inspected; neither operation has run yet. Commit/push
+selection evidence before authorized cleanup, then verify/push cleanup before
+any fresh confirmation. No frozen production source was changed.
