@@ -1,0 +1,77 @@
+{
+  "status": "component_tests_passed_prospective_fixture_frozen",
+  "source_changes": [
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py"
+  ],
+  "old_source_sha256": "99b9f6f65cd57fc6f94c9d4f246743ddd313b2ac7541061326fa43b50f55e904",
+  "new_source_sha256": "cfb4deba9de71fc1ff84fdae3beb49e9280be51c66a3790267091afb614c6fd1",
+  "tests": {
+    "checkpoint-time-handoff-v2": {
+      "guard": {
+        "elapsed_seconds": 0.2454351669875905,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 23722303488,
+          "peak_rss_bytes": 53166080
+        },
+        "pid": 18571,
+        "reason": null,
+        "status": "finished"
+      },
+      "log": "\nno tests ran in 0.00s\nERROR: file or directory not found: tests/test_tokenizer_wide_hybrid_process.py\n\n",
+      "log_sha256": "e29d5bc844bf9362143e3e8886b157b4e8717929deed55dc50161ce4fbd871ca"
+    },
+    "checkpoint-time-handoff-v2-corrected-path": {
+      "guard": {
+        "elapsed_seconds": 6.911888375005219,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 23718260736,
+          "peak_rss_bytes": 240599040
+        },
+        "pid": 18586,
+        "reason": null,
+        "status": "finished"
+      },
+      "log": "........................................................................ [ 51%]\n....................................................................     [100%]\n140 passed in 6.73s\n",
+      "log_sha256": "8dc2e5984665c09bcbed139678bd2bbe6b6fac75f97a22dbc71a81a2555e36cc"
+    },
+    "contention-trace-v3-recorder": {
+      "guard": {
+        "elapsed_seconds": 0.6995167500135722,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 180
+        },
+        "observation": {
+          "free_bytes": 23714807808,
+          "peak_rss_bytes": 229195776
+        },
+        "pid": 18686,
+        "reason": null,
+        "status": "finished"
+      },
+      "log": "...                                                                      [100%]\n3 passed in 0.52s\n",
+      "log_sha256": "1efbd5fc9da76a71b0acad1451577d9edfe50962077b19e434edf3ce3a299dba"
+    }
+  },
+  "source_hashes": {
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": "cfb4deba9de71fc1ff84fdae3beb49e9280be51c66a3790267091afb614c6fd1",
+    "tests/test_tokenizer_wide_hybrid_checkpoint_writer.py": "02de455dfa452e704e8e3d562f44f7456e83442e7082c194c9ff22f6e5f7587a",
+    "tests/test_tokenizer_contention_trace_v3.py": "257d54464c3f7514cc2ccccbed39068883ea1e17f060ae50fc5cb83c1d9a9ecd",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/run_first_confirmation_tests.py": "e8640bc419701128fab4a63caafcae6485ea4090a41fde6e2040b57b10dc2e30"
+  },
+  "plan_sha256": "d5e59170e5d2dc8fadcf3ff6bba4b7bdd7fa31cfa921ce61cc3047f9e39ae6b4",
+  "training": false,
+  "closed_campaigns_reopened": false,
+  "interpretation": "Regression clocks are controlled while publishers use real namespace locks. Original140 checks cover integrity/resource/failure behavior; three trace tests cover aggregation/cap/error preservation. Initial command exited4 because process test filename was wrong; no tests ran, logs retained; corrected command ran once. Elapsed wall time includes wait/census/idle callbacks, not a strict per-operation hold bound. Real-scale comparison still pending."
+}

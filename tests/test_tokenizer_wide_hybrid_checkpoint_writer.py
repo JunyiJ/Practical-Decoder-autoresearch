@@ -178,6 +178,7 @@ def test_chunked_digest_and_namespace_lock_released(writer,monkeypatch):
 def test_checkpoint_handoff_admits_supervisor_and_resource_publishers(writer,monkeypatch):
     """Both competing publishers must finish while the checkpoint yields."""
     import threading
+    monkeypatch.setattr(checkpoints,'_monotonic',lambda:0.)
     monkeypatch.setattr(checkpoints,'CHUNK_BYTES',4)
     wake=threading.Event();handoffs=[]
     stream=producer(writer).open('raw.pt')
@@ -209,6 +210,7 @@ def json_load(path):
 
 
 def test_small_callbacks_accumulate_handoff_without_changing_bytes(writer,monkeypatch):
+    monkeypatch.setattr(checkpoints,'_monotonic',lambda:0.)
     monkeypatch.setattr(checkpoints,'CHUNK_BYTES',4)
     pauses=[];monkeypatch.setattr(checkpoints,'_handoff',pauses.append)
     stream=producer(writer).open('raw.pt')
@@ -218,6 +220,88 @@ def test_small_callbacks_accumulate_handoff_without_changing_bytes(writer,monkey
     receipt=stream.publish()
     assert Path(receipt['path']).read_bytes()==b'abcdefgh'
     assert receipt['sha256']==hashlib.sha256(b'abcdefgh').hexdigest()
+
+
+def test_sub_mib_callbacks_admit_both_publishers_by_elapsed_time(writer,monkeypatch):
+    """Real namespace locking, controlled clock: no byte threshold is reached."""
+    import threading
+    clock=[0.];pauses=[];wake=threading.Event()
+    monkeypatch.setattr(checkpoints,'_monotonic',lambda:clock[0])
+    stream=producer(writer).open('raw.pt')
+    events=writer.open_append('evidence/quality/00/resource-events.jsonl')
+    def supervisor():
+        assert wake.wait(2)
+        writer.publish_json('control/small-write-supervisor.json',{'sample':1})
+    def resource():
+        assert wake.wait(2)
+        events.write(b'{"sample":1}\n')
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        tasks=[pool.submit(supervisor),pool.submit(resource)]
+        def handoff(seconds):
+            pauses.append(seconds);wake.set()
+            for task in tasks:task.result(timeout=2)
+            # Handoff time must not consume the next work interval.
+            clock[0]+=seconds
+        monkeypatch.setattr(checkpoints,'_handoff',handoff)
+        for _ in range(3):
+            clock[0]+=.005
+            stream.write(b'x'*16)
+        assert pauses==[]
+        clock[0]=.021
+        stream.write(b'y'*16)
+        assert pauses==[.02]
+        stream.write(b'z'*16)
+        assert pauses==[.02]
+        receipt=stream.publish()
+    events.close()
+    expected=b'x'*48+b'y'*16+b'z'*16
+    assert Path(receipt['path']).read_bytes()==expected
+    assert receipt['sha256']==hashlib.sha256(expected).hexdigest()
+    assert json_load(writer.root/'control/small-write-supervisor.json')=={'sample':1}
+    assert (writer.root/'evidence/quality/00/resource-events.jsonl').read_bytes()==b'{"sample":1}\n'
+
+
+@pytest.mark.parametrize('operation',['write','empty','flush'])
+def test_time_spent_inside_operation_triggers_unlocked_handoff(writer,monkeypatch,operation):
+    clock=[0.];pauses=[]
+    monkeypatch.setattr(checkpoints,'_monotonic',lambda:clock[0])
+    stream=producer(writer).open('raw.pt')
+    real=stream.owner._capacity
+    def capacity(additional):
+        result=real(additional);clock[0]+=.021
+        return result
+    monkeypatch.setattr(stream.owner,'_capacity',capacity)
+    def handoff(seconds):
+        # A separate flock acquisition proves namespace release at every gap.
+        with writer._serialized():pauses.append(seconds)
+    monkeypatch.setattr(checkpoints,'_handoff',handoff)
+    if operation=='flush':stream.flush()
+    else:stream.write(b'x' if operation=='write' else b'')
+    assert pauses==[.02]*(2 if operation=='write' else 1)
+    stream.close()
+
+
+def test_stop_published_during_time_handoff_blocks_next_piece(writer,monkeypatch):
+    clock=[0.]
+    monkeypatch.setattr(checkpoints,'_monotonic',lambda:clock[0])
+    stream=producer(writer).open('raw.pt')
+    clock[0]=.021
+    monkeypatch.setattr(checkpoints,'_handoff',lambda seconds:writer.publish_json('STOP',{'stop':True}))
+    with pytest.raises(ValueError,match='STOP'):stream.write(b'abc')
+    assert stream.closed
+    assert (writer.root/stream.name).with_suffix('.pt.tmp').read_bytes()==b''
+
+
+def test_time_handoff_failure_closes_stream_and_preserves_partial(writer,monkeypatch):
+    clock=[0.]
+    monkeypatch.setattr(checkpoints,'_monotonic',lambda:clock[0])
+    stream=producer(writer).open('raw.pt');stream.write(b'kept')
+    clock[0]=.021
+    def failed(seconds):raise OSError('handoff interrupted')
+    monkeypatch.setattr(checkpoints,'_handoff',failed)
+    with pytest.raises(OSError,match='handoff interrupted'):stream.write(b'new')
+    assert stream.closed
+    assert (writer.root/stream.name).with_suffix('.pt.tmp').read_bytes()==b'kept'
 
 
 @pytest.mark.parametrize('buffer',[bytearray(b'abc'),memoryview(b'abc'),memoryview(bytearray(b'abc'))])

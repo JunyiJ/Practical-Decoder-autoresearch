@@ -2650,3 +2650,41 @@ budget; retain every lock wait/failure and meaningful operation maximum. A
 changed-source comparison needs its own frozen plan and new single-attempt root;
 never rerun this closed attempt. New training remains blocked pending a validated
 fix, fresh evidence contract/finite plan and verified storage solution.
+
+
+### Prospective elapsed-time checkpoint handoff and trace-v3 comparison
+
+The checkpoint writer now yields outside the namespace lock after either 1 MiB
+or 20 ms since its previous handoff. Checks run after preflight, each bounded
+write and flush, including empty callbacks. The clock resets after the gap;
+existing accumulated-byte behavior remains. The 20 ms gap, two-second namespace
+deadline, integrity checks and resource caps are unchanged. A single operation
+is not preempted: this is cooperative scheduling, not a hard latency guarantee.
+
+140 checkpoint/metadata/process tests passed in 6.73 s under the unchanged
+180 s CPU guard (peak RSS 240,599,040 bytes). Six added cases cover sub-MiB
+callbacks with competing publishers, time spent in preflight/write/flush,
+STOP during a gap and interrupted handoff preservation. The first command named
+a nonexistent process test file, exited 4 and ran no tests; its log and guard
+remain, alongside the corrected invocation. No numerical fixture was retried.
+Three recorder tests also passed: per-JSON-piece aggregation, explicit overflow
+accounting and preservation of original failures when the detail cap is reached.
+
+Freeze one new nontraining trace-v3 comparison in
+`research_runs/tokenizer-metadata-contention-trace-v3-001`. It uses the same
+four 240 MiB tensors, 128 small tensors, 337 synthetic files, one CPU child,
+four threads, 150/180 s child/parent bounds, 4 GiB RSS, 8 GiB reserve and
+992 MiB total output allowance as trace-v2. All 228 source pins were compared;
+only the checkpoint writer changed. The new recorder keeps detailed locks and
+checkpoint writes, aggregates five fixed operation labels and retains bounded
+failure records. Overflow marks the trace incomplete without masking an original
+exception. All external traces remain capped at 4 MiB. Python version is checked.
+
+The handoff and instrumentation overhead both change, so a pass cannot isolate
+their effects or prove training reliability. Commit and push this finite plan
+before its sole execution. Review hashes, guards, trace completeness and
+unchanged closed003/trace-v2 evidence afterward. Preserve every outcome, no
+cleanup or retry, no training or holdout use. Full training-panel storage remains
+blocked. Plan, test logs/guards and component review are under
+`tokenizer-evidence/wide-hybrid-preparation-001/` with `trace-v3` and
+`checkpoint-time-handoff-v2` names.

@@ -10,6 +10,7 @@ from pathlib import Path
 import shutil
 import threading
 from time import sleep as _handoff
+from time import monotonic as _monotonic
 
 from .tokenizer_wide_hybrid_cleanup import _sync_directory
 from .tokenizer_wide_hybrid_metadata import snapshot, MAX_FILES
@@ -19,9 +20,11 @@ from .tokenizer_wide_hybrid_retention_receipts import _path
 
 CHUNK_BYTES=1024**2
 # Leave two metadata-lock polling intervals outside the namespace lock after
-# each MiB of output. Immediate reacquisition can starve the parent/recorder.
+# each MiB or 20ms between handoffs. Small serializer callbacks can monopolize
+# repeated short lock scopes without accumulating a MiB before the deadline.
 # This is cooperative scheduling, not a relaxation of the two-second timeout.
 HANDOFF_SECONDS=.02
+HANDOFF_WORK_SECONDS=.02
 
 
 class CheckpointWriter:
@@ -85,7 +88,21 @@ class CheckpointStream:
         self._stamp=(st.st_mtime_ns,st.st_ctime_ns)
         self._size=0;self._digest=hashlib.sha256();self._mutex=threading.RLock()
         self._handoff_bytes=0
+        self._handoff_started=_monotonic()
         self.closed=False
+
+    def _yield_if_due(self,additional=0):
+        """Called with the stream mutex, always outside the namespace lock.
+
+        Wall time includes census/lock waits and time between callbacks. A
+        single operation is not preempted; this is not a hard hold-time bound.
+        """
+        self._handoff_bytes+=additional
+        if (self._handoff_bytes>=CHUNK_BYTES or
+                _monotonic()-self._handoff_started>=HANDOFF_WORK_SECONDS):
+            self._handoff_bytes%=CHUNK_BYTES
+            _handoff(HANDOFF_SECONDS)
+            self._handoff_started=_monotonic()
 
     def _identity(self):
         if self.closed:raise ValueError('Closed or failed checkpoint stream cannot be reused')
@@ -109,6 +126,7 @@ class CheckpointStream:
                 view=memoryview(data).cast('B')
                 with self.owner.writer._serialized():
                     self._identity();self.owner._capacity(len(view))
+                self._yield_if_due()
                 for start in range(0,len(view),CHUNK_BYTES):
                     piece=bytes(view[start:start+CHUNK_BYTES])
                     # Release the namespace lock between bounded writes so the
@@ -119,12 +137,7 @@ class CheckpointStream:
                         self._digest.update(piece);self._size+=len(piece)
                         current=os.fstat(self._fd)
                         self._stamp=(current.st_mtime_ns,current.st_ctime_ns)
-                    self._handoff_bytes+=len(piece)
-                    if self._handoff_bytes>=CHUNK_BYTES:
-                        self._handoff_bytes%=CHUNK_BYTES
-                        # No namespace lock is held while other producers run.
-                        # Accumulate across small torch.save callbacks as well.
-                        _handoff(HANDOFF_SECONDS)
+                    self._yield_if_due(len(piece))
                 return len(view)
             except BaseException:
                 self.close();raise
@@ -134,6 +147,7 @@ class CheckpointStream:
             try:
                 with self.owner.writer._serialized():
                     self._identity();self.owner._capacity(0);os.fsync(self._fd)
+                self._yield_if_due()
             except BaseException:
                 self.close();raise
 
