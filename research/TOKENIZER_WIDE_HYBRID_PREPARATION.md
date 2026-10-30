@@ -5705,3 +5705,39 @@ are retained. Next: refreshed prerequisite applicability with archive-aware
 original-evidence verification, prospective metadata/capacity audit and a
 finite future plan before any new training. Preserve selected/fresh/failure
 weights and use audited eligible cleanup proactively if capacity is insufficient.
+
+
+### Census-fix prerequisite applicability and additional archival plan
+
+Archive-aware source applicability passed for source
+`73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa`.
+Only the three reviewed fresh-startup comparisons changed since004; model,
+optimizer, EMA, RNG, data/tokenizer and request semantics remain unchanged.
+Original numerical/input reports and artifacts were verified without execution,
+including121 original numerical file identities and35 archived members through
+the unchanged fully verified archives. Closed002/003/004 evidence and all162
+remaining tokenizer checkpoint files were reconciled. The initial read-only
+audit referenced a nonexistent handoff review filename; its source and failed
+guard are preserved, and the corrected run used the actual completed review.
+No campaign or numerical fixture was retried.
+
+The unchanged full-panel requirement is30,631,412,484 bytes including8GiB
+reserve, versus28,386,181,120 bytes free at audit:2,245,231,364 short.
+Three completed successful synthetic diagnostic checkpoints are eligible for
+lossless archival under the retention policy: baseline001, handoff001 and
+trace-v3-001 (all `fixture.pt`, total1,124,140,727 bytes). They are not model
+selections, fresh pairs or failed checkpoints. Previous compaction excluded
+them for that operation; this explicit manifest preserves their logical
+identities through verified cold storage rather than discarding evidence.
+
+`checkpoint-compaction-002/plan.json` pins exact paths/sizes/SHA256,159 excluded
+selected/fresh/failed loose weights, three existing protected archives and4,291
+non-checkpoint file identities. The adapted single-worker archiver retains the
+original stream verification, disk/RSS/time limits, exclusive worker lock and
+per-file removal journal; it removes loose copies only after every archive
+member passes complete decompression/hash verification. Syntax and adaptation
+diff reviewed. Commit/push the plan before applying it.
+Even a zero-byte archive cannot fully close the current capacity gap. Do not
+reduce reserve or launch a partial panel; selected/fresh/failure weights remain
+protected. Prospective metadata and complete capacity checks still precede
+any future finite-plan freeze.
