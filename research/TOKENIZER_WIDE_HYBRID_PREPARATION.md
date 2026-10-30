@@ -5322,3 +5322,20 @@ anchors, fresh/failure evidence and closed holdout remain unchanged.
 Launch receipt: `campaign004-rank-09-v2-launch.json`. Observe this worker to
 completion; do not relaunch. After acceptance and exit, review rank prefix before
 any slot10 dispatch.
+
+
+### Campaign004 later rank continuation wrappers
+
+Prepared `review_campaign004_rank_prefix_v2.py` for completed counts10–14.
+It requires the preceding accepted terminal, an absent next request, both shared
+locks and an1,800-second CPU guard, then calls the unchanged production rank
+startup audit and prior-dispatch transport verifier. It saves live file hashes
+and exact non-checkpoint bytes; it performs no selection, cleanup or dispatch.
+An existing review/guard/failure blocks rerunning that review.
+
+`continue_campaign004_rank_v2.py` supports only slots10–14 and requires the
+matching completed independent review and finished guard. It retains the
+original MPS/cache/plan checks and single-slot `run_rank_once` dispatcher.
+Both wrappers passed syntax checks and the continuation delta was inspected.
+No frozen production source changed. Slot9 remains in export/auditing; no
+independent review or later dispatch has executed yet.
