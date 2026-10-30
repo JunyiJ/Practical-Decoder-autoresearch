@@ -1,0 +1,94 @@
+{
+  "status": "startup_census_fix_regression_verified",
+  "before_source_sha256": "0fc7f6b3440484700151a99f6a02f1b847914f7c8914612b4d684f54d058ccaa",
+  "after_source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
+  "runtime_sha256": "d193008aa205d1d7dd914c0c65256024f318390ed707124a6ef7c5aa4eb5b24c",
+  "changed_files": {
+    "src/research/tokenizer_wide_hybrid_confirmation_startup_v2.py": {
+      "before": "06c96088fa3f1ac8cad32e96adcb1a83d9e82182c61c2c0d217421897f04ebef",
+      "after": "d85aaf9bdec9c8a07508310076e908690daa1c487a0680e99f3e8ecc3c724445"
+    },
+    "src/research/tokenizer_wide_hybrid_later_confirmation_startup_v2.py": {
+      "before": "763aac464dc8c8c3edb112cc050cc6d22d849ae799bd88c73729cb5866afb3a7",
+      "after": "40786f96f61a1d56601607d66dcf4dc0eac8cc3c7eff1568832415c108b7d09f"
+    },
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": {
+      "before": "243e0b74207d8bb57530211d2ca64b590cf1f306642ca7959420b93e3b806d9b",
+      "after": "1a9ce2c4ef88ed906a6230166f7d53c058ae9adf751ec9fca22e10b88a623d24"
+    }
+  },
+  "source_and_test_hashes": {
+    "src/research/tokenizer_wide_hybrid_confirmation_startup_v2.py": "d85aaf9bdec9c8a07508310076e908690daa1c487a0680e99f3e8ecc3c724445",
+    "src/research/tokenizer_wide_hybrid_later_confirmation_startup_v2.py": "40786f96f61a1d56601607d66dcf4dc0eac8cc3c7eff1568832415c108b7d09f",
+    "src/research/tokenizer_wide_hybrid_plan_v2.py": "97e618070ef88c82ac9e828d1b676173f5ff54de9cc3f16a94b8ad6fe9a7c7b2",
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": "1fa5df3f657d1faa034bd01ad27bd64bcd1682551d20f26fde8767b5ce6142d9",
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "1a9ce2c4ef88ed906a6230166f7d53c058ae9adf751ec9fca22e10b88a623d24",
+    "tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py": "8c03f823c8a2124e5171f8e715a87d73c272112afb96a0d94165a86c3deae082",
+    "tests/test_tokenizer_wide_hybrid_confirmation_startup_v2.py": "bcae8ca78e147552edcbf51467c85794403e16225fd0ed250c9d0beb3c5dbf2c",
+    "tests/test_tokenizer_wide_hybrid_later_confirmation_startup_v2.py": "683126df927f4b3ff2ea49b54e542a157d395ac7da223f85851962c6c9e1ca91",
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": "7ac10040420bb98620f5477bc128956e20fbefec3adcaf03175a1d716acafdce"
+  },
+  "tests": {
+    "red": {
+      "summary": "3 failed",
+      "exitcode": 1,
+      "log_sha256": "1f0416afb15cca4a635e9808ca81991c1a2eee087684dc6262641a5d7c57a43f",
+      "guard": {
+        "elapsed_seconds": 276.899677333,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 1800
+        },
+        "observation": {
+          "free_bytes": 28374949888,
+          "peak_rss_bytes": 244498432
+        },
+        "pid": 47381,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    "green": {
+      "summary": "25 passed",
+      "exitcode": 0,
+      "log_sha256": "94e288117b743ddf332964f88da69aac0f42c77323783a7806a1d64fb468048d",
+      "guard": {
+        "elapsed_seconds": 561.2838811669935,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 1800
+        },
+        "observation": {
+          "free_bytes": 28376674304,
+          "peak_rss_bytes": 244645888
+        },
+        "pid": 49209,
+        "reason": null,
+        "status": "finished"
+      }
+    }
+  },
+  "preserved_closed_campaign": {
+    "files": 560,
+    "noncheckpoint_files": 552,
+    "checkpoint_files": 8,
+    "inventory_sha256": "3520eabcb92fbead8fdbfc3da8a4cb2394e7418b660b78c7ed6c5bcad893f0bc"
+  },
+  "claims": [
+    "All three affected startup paths fail with actual live census growth before the fix and pass after it.",
+    "Only the metadata_bytes field is allowed to vary, with integer/range/presence validation; every other binding field stays exact.",
+    "Live snapshot group/file/total caps, request checks, append audits, control checks, resource guards and no-retry checks remain unchanged.",
+    "Late unexpected control appends still reject receipt publication for all three startup paths."
+  ],
+  "limits": [
+    "Disposable CPU histories and mock frozen scientific inputs; no real model, training child, numerical rerun or end-to-end MPS reliability claim.",
+    "Shared remaining-slot implementation exercised at slot18; slots19\u201323 use the same changed comparison, not new full-chain live-census runs.",
+    "A future source-applicability/metadata/capacity review and finite plan are still required; campaigns001\u2013004 remain closed."
+  ],
+  "training": false,
+  "cleanup": false,
+  "closed_campaigns_reopened": false,
+  "holdout_consumed": false
+}

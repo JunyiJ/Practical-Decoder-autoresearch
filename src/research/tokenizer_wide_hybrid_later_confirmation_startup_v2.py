@@ -16,6 +16,7 @@ from .tokenizer_wide_hybrid_retention_receipts import _document,_path,_sha
 from .tokenizer_wide_hybrid_scores import _require
 from .tokenizer_wide_hybrid_rank_selection_v2 import _storage
 from .cpu_prerequisite_guard import violation
+from .tokenizer_wide_hybrid_quality_readiness_v2 import _same_frozen_identity
 from . import tokenizer_wide_hybrid_later_confirmation_append_v2 as append
 
 KIND=append.KIND
@@ -96,7 +97,7 @@ def prepare_confirmation_request(writer,slot,plan_sha256,*,projection_ref,rank_c
         _require(report['storage']['current_inventory_sha256']==digest(inventory),
                  'Slot17 preparation inventory changed after replay')
         again,actual=append._frozen(writer,17,plan_sha256,projection_ref,checked['rates'],checked['selection'])
-        _require(digest(again)==digest(bound) and actual==requests,'Frozen slot17 request changed before receipt')
+        _require(_same_frozen_identity(bound,again) and actual==requests,'Frozen slot17 request changed before receipt')
         append.history.acceptance._check_inventory(root,inventory)
         _require(append.history.acceptance.readiness._controls(writer,'not-a-control')==controls,
                  'Slot17 controls changed before receipt')

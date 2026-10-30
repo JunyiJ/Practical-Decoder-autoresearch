@@ -5661,3 +5661,47 @@ caps, exact append audits, source/config/request checks and resource guards.
 Do not replay any closed numerical fixture or reopen campaigns001–004.
 Reassess the finite future plan only after regression evidence; no new training
 is authorized by these failure receipts. Every fresh pair remains protected.
+
+
+### Fresh-startup metadata census regression fixed
+
+A new disposable CPU regression reproduced the closed004 startup failure in
+all three affected paths: slot16, slot17 and the shared remaining-slot startup
+at slot18. Each test supplies actual namespace `metadata_bytes` on every
+frozen binding, rather than omitting that mutable observation as the earlier
+synthetic fixtures did. All three failed at the expected frozen-request
+comparison before the fix (276.72s); exact red-test source and logs are preserved.
+This confirms the metadata-growth mechanism without retrying campaign004 or
+replaying a closed numerical fixture.
+
+The three startup modules now use the existing readiness `_same_frozen_identity`
+helper at the comparison that spans request publication/guard completion. It
+permits changes only to a valid integer metadata count with matching presence
+and the existing256MiB ceiling. Every other returned binding field stays exact,
+and the explicit request comparison is unchanged. Actual `bind_campaign` census
+validation, per-group/file/total caps, exact evidence/control append checks,
+remaining-storage checks, shared locks and all resource/no-retry guards remain.
+No model, optimizer, EMA, RNG, data, recipe or quality decision code changed.
+
+Verification:25 tests passed in561.11s, including all three live-growth startup
+and receipt-replay cases, malformed census values, changes to every other
+binding field, and late unexpected control appends across all three paths.
+The latter still block receipt publication. Peak test RSS was244,645,888 bytes;
+the4GiB RSS/8GiB disk/1,800s limits held throughout. These are disposable
+history tests, not new model training or an end-to-end MPS reliability claim.
+Slots19–23 share the corrected remaining-slot comparison; this regression
+exercised that shared path at18 rather than rerunning every full chain.
+
+An independent locked preservation review matched all560 closed004 file
+identities, all552 non-checkpoint byte sequences and all eight selected/fresh
+checkpoint files. Runtime is unchanged, and only the three startup source
+files differ from the004 frozen source. New source SHA256:
+`73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa`.
+Campaigns001–004 remain closed; no cleanup, training or test-holdout use occurred.
+
+Evidence: `confirmation-census-v2-review.json`, before manifest, exact red-test
+source, red/green logs and finished guards; review script and regression test
+are retained. Next: refreshed prerequisite applicability with archive-aware
+original-evidence verification, prospective metadata/capacity audit and a
+finite future plan before any new training. Preserve selected/fresh/failure
+weights and use audited eligible cleanup proactively if capacity is insufficient.

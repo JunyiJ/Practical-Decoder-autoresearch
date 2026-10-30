@@ -8,6 +8,7 @@ import os
 import shutil
 
 from .cpu_prerequisite_guard import violation
+from .tokenizer_wide_hybrid_quality_readiness_v2 import _same_frozen_identity
 from .protocol import digest,file_digest
 from .tokenizer_wide_hybrid_metadata_writer import MetadataWriter
 from .tokenizer_wide_hybrid_metadata import snapshot
@@ -111,7 +112,7 @@ def prepare_confirmation_request(writer,slot,plan_sha256,*,projection_ref,rank_c
         _require(report['storage']['current_inventory_sha256']==digest(inventory),
                  'Startup preparation inventory changed after replay')
         again,actual=append._frozen(writer,slot,plan_sha256,projection_ref,checked['rates'],checked['selection'])
-        _require(digest(again)==digest(bound) and actual==requests,'Frozen startup request changed before receipt')
+        _require(_same_frozen_identity(bound,again) and actual==requests,'Frozen startup request changed before receipt')
         append.history.acceptance._check_inventory(root,inventory)
         _require(append.history.acceptance.readiness._controls(writer,'not-a-control')==controls,
                  'Startup controls changed before receipt')

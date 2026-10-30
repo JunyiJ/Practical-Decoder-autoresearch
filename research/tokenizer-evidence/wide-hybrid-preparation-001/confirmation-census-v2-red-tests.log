@@ -1,0 +1,121 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_startup_accepts_owned_metadata_growth_and_replays_receipt[confirmation_startup] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10ea7af90>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ed64180>
+module = 'confirmation_startup'
+
+    @pytest.mark.parametrize('module',[
+        'confirmation_startup', 'later_confirmation_startup', 'remaining_confirmation_startup',
+    ])
+    def test_startup_accepts_owned_metadata_growth_and_replays_receipt(writer,monkeypatch,module):
+        fixture=importlib.import_module('test_tokenizer_wide_hybrid_'+module+'_v2')
+        start=fixture.start
+        args=fixture.setup(writer,monkeypatch)
+        original=first.bind_campaign
+        observed=[]
+        def live(*a,**kw):
+            bound=dict(original(*a,**kw),metadata_bytes=snapshot(writer.root)['metadata_bytes'])
+            observed.append(bound['metadata_bytes'])
+            return bound
+        monkeypatch.setattr(first,'bind_campaign',live)
+        try:
+>           ref=start.prepare_confirmation_request(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_confirmation_startup_v2.py:99: in prepare_confirmation_request
+    _require(digest(again)==digest(bound) and actual==requests,'Frozen slot16 request changed before receipt')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Frozen slot16 request changed before receipt'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Frozen slot16 request changed before receipt
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+_ test_startup_accepts_owned_metadata_growth_and_replays_receipt[later_confirmation_startup] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10ede1810>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10efbee90>
+module = 'later_confirmation_startup'
+
+    @pytest.mark.parametrize('module',[
+        'confirmation_startup', 'later_confirmation_startup', 'remaining_confirmation_startup',
+    ])
+    def test_startup_accepts_owned_metadata_growth_and_replays_receipt(writer,monkeypatch,module):
+        fixture=importlib.import_module('test_tokenizer_wide_hybrid_'+module+'_v2')
+        start=fixture.start
+        args=fixture.setup(writer,monkeypatch)
+        original=first.bind_campaign
+        observed=[]
+        def live(*a,**kw):
+            bound=dict(original(*a,**kw),metadata_bytes=snapshot(writer.root)['metadata_bytes'])
+            observed.append(bound['metadata_bytes'])
+            return bound
+        monkeypatch.setattr(first,'bind_campaign',live)
+        try:
+>           ref=start.prepare_confirmation_request(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_later_confirmation_startup_v2.py:99: in prepare_confirmation_request
+    _require(digest(again)==digest(bound) and actual==requests,'Frozen slot17 request changed before receipt')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Frozen slot17 request changed before receipt'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Frozen slot17 request changed before receipt
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+_ test_startup_accepts_owned_metadata_growth_and_replays_receipt[remaining_confirmation_startup] _
+
+writer = <src.research.tokenizer_wide_hybrid_metadata_writer.MetadataWriter object at 0x10ede25d0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10f4eedd0>
+module = 'remaining_confirmation_startup'
+
+    @pytest.mark.parametrize('module',[
+        'confirmation_startup', 'later_confirmation_startup', 'remaining_confirmation_startup',
+    ])
+    def test_startup_accepts_owned_metadata_growth_and_replays_receipt(writer,monkeypatch,module):
+        fixture=importlib.import_module('test_tokenizer_wide_hybrid_'+module+'_v2')
+        start=fixture.start
+        args=fixture.setup(writer,monkeypatch)
+        original=first.bind_campaign
+        observed=[]
+        def live(*a,**kw):
+            bound=dict(original(*a,**kw),metadata_bytes=snapshot(writer.root)['metadata_bytes'])
+            observed.append(bound['metadata_bytes'])
+            return bound
+        monkeypatch.setattr(first,'bind_campaign',live)
+        try:
+>           ref=start.prepare_confirmation_request(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py:114: in prepare_confirmation_request
+    _require(digest(again)==digest(bound) and actual==requests,'Frozen startup request changed before receipt')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Frozen startup request changed before receipt'
+
+    def _require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Frozen startup request changed before receipt
+
+src/research/tokenizer_wide_hybrid_scores.py:22: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py::test_startup_accepts_owned_metadata_growth_and_replays_receipt[confirmation_startup]
+FAILED tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py::test_startup_accepts_owned_metadata_growth_and_replays_receipt[later_confirmation_startup]
+FAILED tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py::test_startup_accepts_owned_metadata_growth_and_replays_receipt[remaining_confirmation_startup]
+3 failed in 276.72s (0:04:36)
