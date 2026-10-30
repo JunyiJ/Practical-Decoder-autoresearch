@@ -3179,3 +3179,20 @@ Commit/push this reviewed boundary before `start_campaign004_rank_v2.py --slot 9
 first rank probe is hybrid D/8 at selected LR0.000625, seed3501, 1,200 updates.
 The new wrapper is restricted to slot9 and calls the unchanged `run_rank_once`
 production dispatcher; it stops after this one trial, with no retry or later slot.
+
+
+### Campaign004 first rank trial launched
+
+Reviewed LR cleanup was committed/pushed as `53e7e28` before dispatch.
+The unchanged production rank startup and readiness gates admitted slot9:
+hybrid width512, D/8, LR0.000625, seed3501, 1,200 updates. Controller35596
+started child35615; process inspection confirmed exactly one training worker.
+The running control reports no error or log truncation, about29.65GB free against
+the26.91GB remaining-campaign requirement including8GiB reserve. This is startup
+evidence only; terminal acceptance and independent prefix review remain pending.
+No next slot is automatically dispatched. The frozen plan/source, selected LR
+anchors, fresh/failure evidence and closed holdout remain unchanged.
+
+Launch receipt: `campaign004-rank-09-v2-launch.json`. Observe this worker to
+completion; do not relaunch. After acceptance and exit, review rank prefix before
+any slot10 dispatch.
