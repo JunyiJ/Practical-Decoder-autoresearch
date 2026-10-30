@@ -3318,3 +3318,25 @@ Running control reports no error and24.61GB free against21.94GB required
 including8GiB reserve. Launch receipt: `campaign004-rank-13-v2-launch.json`.
 No later slot dispatches automatically; terminal acceptance and independent
 prefix14 review are required before the final rank probe, hybrid D/2 slot14.
+
+
+### Campaign004 rank slot13 independently reviewed
+
+Gated MLA D/2 at LR0.00125, seed3501 completed1,200 updates and passed parent
+acceptance (966.81s including preparation/review). H200 validation CE4.8302985459
+and raw CE4.8338051302 compare with D/4 H2004.8214491355 and D/8 H2004.8286763122.
+D/4 remains the lowest-loss gated MLA rank on this screening seed; D/2 is
+0.0088494104 worse. The final hybrid D/2 probe remains before the complete
+frozen rank selection. No adoption or fresh-confirmation claim; holdout closed.
+
+After both processes exited, independent prefix14 review passed under shared
+locks in72.48s, peak RSS233,652,224 bytes. It verified cleanup history, all five
+rank results and transport receipts, and archived495 file identities plus479
+exact non-checkpoint files. All16 live screen weights remain protected. Free
+space23,342,075,904 bytes exceeds20,696,701,620 required including8GiB reserve.
+No cleanup occurred.
+
+Evidence: `campaign004-rank-13-v2-terminal.json`,
+`campaign004-rank-prefix-14-v2-review.json` and its finished guard. Commit/push
+before serial slot14: hybrid D/2, LR0.000625, seed3501, 1,200 updates.
+After slot14 use full rank selection/boundary APIs, not prefix count15.
