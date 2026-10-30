@@ -2894,3 +2894,29 @@ proof that the full training campaign cannot fail. The wrapper stops after
 slot0 acceptance or failure; later slots require independently reviewed progress.
 Evidence: `campaign004-pilots-reviewed-v2.json`, pilot archive/boundary receipts
 and `campaign004-quality0-start-v2.json` under the preparation evidence directory.
+
+
+### Campaign004 first quality cell accepted and independently reviewed
+
+Slot0 completed all 1,200 updates: width512 hybrid, D/4, LR0.000625,
+seed3501. Full-validation H200 CE is 4.963671529014013; raw endpoint CE is
+4.991196894351007 over 34,278 targets / 111,536 bytes. Both checkpoint hashes,
+request/result audits, parent acceptance and the completed pilot-cleanup chain
+passed independent prefix1 review. The review guard finished in 4.52 s with
+220,250,112-byte peak RSS. The controller and child exited; no research worker
+remained before continuation.
+
+The review measured 32,232,665,088 bytes free against a remaining-campaign
+requirement of 29,384,508,436 bytes, including the unchanged 8 GiB reserve.
+Both slot0 checkpoints remain protected. This is one of nine LR screening cells;
+there is no family selection, fresh-seed claim or adoption, and the test holdout
+remains closed. Closed-round results are not pooled with this panel.
+
+The campaign004 prefix-review and one-slot continuation wrappers differ from the
+reviewed campaign003 wrappers only in run-root/receipt identifiers; production
+source and frozen plan are unchanged. Evidence: `campaign004-terminal-v2.json`,
+`campaign004-lr-prefix-01-v2-review.json` and its guard in
+`tokenizer-evidence/wide-hybrid-preparation-001/`. After committing/pushing this
+review, the next authorized serial cell is slot1, gated MLA at LR0.000625,
+D/4, seed3501, through all original production gates. No retry or automatic
+later-slot dispatch is enabled.
