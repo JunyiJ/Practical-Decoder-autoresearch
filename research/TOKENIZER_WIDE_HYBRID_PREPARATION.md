@@ -5741,3 +5741,52 @@ Even a zero-byte archive cannot fully close the current capacity gap. Do not
 reduce reserve or launch a partial panel; selected/fresh/failure weights remain
 protected. Prospective metadata and complete capacity checks still precede
 any future finite-plan freeze.
+
+
+### Additional diagnostic archival completed; prospective metadata passes
+
+The archival plan was committed/pushed as`2a7bdba` before execution. Three
+completed successful diagnostic weights totaling1,124,140,727 bytes were
+losslessly archived into44,015 bytes; net logical space reclaimed is
+1,124,096,712 bytes. All members passed complete streamed decompression and
+size/SHA256 verification before loose-copy removal. Observed free space rose
+from28,383,399,936 to29,507,551,232 bytes immediately after archival.
+All159 protected loose selected/fresh/failed weights, three prior archives
+and4,291 non-checkpoint files passed post-operation identity checks. No
+checkpoint bytes were discarded and no unrelated files were removed.
+Protected local archive (never push):
+`research_archives/checkpoint-compaction-002/successful-diagnostics.tar.zst`,
+SHA256`fce1eb1fd01157246bfe7d5d7b51aeaa96b8966eba5456885c412f310bce772a`.
+
+Independent logical-evidence review rehashed all four archives and reconciled
+all38 archived members with original file identities. It verified closed002
+(250 files),003(337),004(560), all three successful diagnostic histories and
+121 original numerical-prerequisite files. Use both compaction manifests for
+future historical audits; original-path-only readers must restore exact bytes
+or explicitly resolve archival identity. Originals in the completed diagnostic
+histories are now logical archive members; do not rerun those old controllers.
+
+Prepared a non-runnable prospective005 byte-layout preview outside
+`research_runs`, carrying original numerical/input reports and archive-aware
+source applicability losslessly. No005 campaign directory was created and no
+plan was frozen. Independent transport review bound the numerical artifacts,
+verified the unchanged96 training-token IDs and exact embedded original bytes;
+no numerical execution or holdout access occurred. The unchanged full-panel
+shape remains3pilots,24quality trajectories and3inference panels solely as a
+capacity/layout proposal, not new execution authority or an independent result.
+Its metadata envelope passes:2,092,559/2,097,152 bytes in`evidence/meta`
+(4,593 bytes remaining), with855 conservative files below the2,048 limit.
+
+Capacity remains blocked:29,516,120,064 observed free versus30,631,412,484
+required, including the unchanged8GiB reserve; shortfall1,115,292,420 bytes.
+No further eligible loose tokenizer checkpoints remain after this manifest;
+the remaining159 are protected selected/fresh/failed evidence. Do not lower
+guards, rerun a closed campaign or launch a partial panel. Additional capacity
+is needed before a fresh full-panel freeze. Do not repeatedly notify or poll
+an unchanged shortfall. Any scientifically different smaller future study
+would need its own prospective design, validation and storage contract.
+
+Evidence: `checkpoint-compaction-002/completed.json`, archive receipt, journal,
+finished guards and `logical-evidence-review.json`;
+`census-campaign005-preview-review.json`, preview payloads, preview script and
+`census-preview-transport-review-v2.json`. No training/test worker remains.

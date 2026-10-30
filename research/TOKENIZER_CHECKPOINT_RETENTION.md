@@ -81,3 +81,18 @@ to hide missing files. Restoration must verify hashes, reserve sufficient space
 and never overwrite an existing path. Record logical savings separately from
 observed filesystem free-space changes. Continue proactive capacity management
 under these controls without asking again for already-authorized cleanup.
+
+
+## October 30 completed diagnostic archival
+
+`checkpoint-compaction-002/plan.json` narrowly extends lossless archival to
+the completed successful baseline001, handoff001 and trace-v3-001 synthetic
+`fixture.pt` files. Prior exclusion from compaction001 applied to that operation;
+these are non-selected successful numerical/transport prerequisites, not failed
+weights. All three are now exact members of a verified protected archive.
+Selected models, every fresh pair and failed/partial weights remain loose.
+The independent `checkpoint-compaction-002/logical-evidence-review.json`
+reconciles both archival manifests (38 members in four archives). Future audits
+must use those logical identities or restore exact bytes, preserving originals
+and old status reports. Never rerun closed controllers to recreate missing paths.
+No further eligible loose tokenizer checkpoints were identified by this audit.
