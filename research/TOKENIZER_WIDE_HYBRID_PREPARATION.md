@@ -5210,3 +5210,25 @@ After prefix7 review was committed and pushed as `cfbe012`, slot7 KDA
 `campaign004-lr-07-v2-launch.json` binds the frozen plan and independent review.
 The original guarded wrapper permits this cell only, with no retry or automatic
 later-slot dispatch.
+
+
+### Campaign004 eighth LR cell accepted
+
+Slot7 KDA completed 1,200 updates at width512, D/4, LR0.0025, seed3501.
+H200 full-validation CE is 5.104937873943505; raw CE is 5.273170680299278.
+Its H200 values increase across the tested LRs: 4.9479304630 at0.000625,
+4.9774401132 at0.00125, and5.1049378739 at0.0025. The lowest LR is currently
+best on this screening seed. This is descriptive; selection waits for the ninth
+cell and the complete LR-stage audit. No adoption or fresh-seed claim is made.
+
+Parent acceptance and independent prefix8 review passed for all eight raw/H200
+pairs and prior cleanup provenance. The guard finished in 40.98 s with
+224,673,792-byte peak RSS. The training child exited before review and the
+parent acceptance completed before shared locks were acquired.
+Storage fits: 23,404,253,184 bytes free versus 20,707,195,060 required including
+the unchanged reserve. Protected evidence and closed test remain unchanged.
+Evidence: `campaign004-lr-07-v2-terminal.json`,
+`campaign004-lr-prefix-08-v2-review.json` and its guard. Commit/push this review
+before slot8 hybrid at LR0.0025, D/4, seed3501, through the unchanged gates.
+After all nine cells pass, use the production LR selection and cleanup boundary
+before rank dispatch; the prefix wrapper intentionally supports only1–8.
