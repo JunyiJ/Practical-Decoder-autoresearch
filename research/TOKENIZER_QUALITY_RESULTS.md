@@ -3106,3 +3106,11 @@ Evidence: `campaign004-lr-07-v2-terminal.json`,
 before slot8 hybrid at LR0.0025, D/4, seed3501, through the unchanged gates.
 After all nine cells pass, use the production LR selection and cleanup boundary
 before rank dispatch; the prefix wrapper intentionally supports only1–8.
+
+
+After prefix8 review was committed and pushed as `fda2e76`, final LR slot8 hybrid
+(LR0.0025, D/4, seed3501) started under controller30644 and child30676.
+`campaign004-lr-08-v2-launch.json` binds the frozen plan and independent review.
+The original wrapper stops after this cell. Complete LR selection, independent
+verification and audited cleanup must precede any rank dispatch; no stage is
+implicitly authorized by this launch receipt.
