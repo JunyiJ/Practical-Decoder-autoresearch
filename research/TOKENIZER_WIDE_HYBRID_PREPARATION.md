@@ -4987,3 +4987,10 @@ and dispatch quality slot0 only if every prerequisite passes. It stops after
 slot0 or any failure, with no retry or automatic later slots. Commit/push the
 finite plan before launching this wrapper with local MPS access. One training
 worker, all existing resource limits and the closed test remain enforced.
+
+Campaign004 launch followed committed/pushed freeze `73f2507`: controller23108
+started one MPS resource-pilot worker23109. Pilot0 was observed running under
+its production process guard; no quality result exists yet. The bounded wrapper
+may advance through the remaining serial pilots and qualityslot0 only after
+all required reviews succeed. Launch/start receipts are recorded separately;
+no other worker, later quality slot or retry was launched.
