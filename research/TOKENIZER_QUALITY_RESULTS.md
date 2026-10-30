@@ -2946,3 +2946,10 @@ is available. The test holdout remains closed. Evidence is in
 `campaign004-lr-01-v2-terminal.json`, `campaign004-lr-prefix-02-v2-review.json`
 and its guard. Commit/push this review before the next serial cell, slot2 KDA,
 LR0.000625, D/4, seed3501, through the unchanged production gates.
+
+
+After prefix2 review was committed and pushed as `7cca48e`, slot2 KDA
+(LR0.000625, D/4, seed3501) started through the original guarded dispatcher.
+Controller25024 owns child25039. The launch receipt binds the frozen plan and
+independent review: `campaign004-lr-02-v2-launch.json`. It permits this cell only;
+slot3 requires a completed result and a fresh independent prefix review.
