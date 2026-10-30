@@ -3005,3 +3005,22 @@ After prefix4 review was committed and pushed as `57f5d8a`, slot4 hybrid
 training child26847. `campaign004-lr-04-v2-launch.json` binds the frozen plan
 and independent review. The unchanged guarded wrapper permits this cell only;
 no automatic later-slot dispatch or retry is enabled.
+
+
+### Campaign004 fifth LR cell accepted
+
+Slot4 hybrid completed 1,200 updates at width512, D/4, LR0.00125, seed3501.
+H200 full-validation CE is 4.978503878216632; raw CE is 5.081234641065298.
+H200 CE is 0.0148323492 higher than hybrid at LR0.000625 on this screening seed.
+Like KDA's observed increase, this motivates finishing the frozen grid rather
+than treating a larger LR as an improvement. It is not a fresh-seed conclusion,
+family selection or adoption. Five of nine LR cells are accepted.
+
+Parent acceptance and independent prefix5 review passed for all five raw/H200
+pairs and prior cleanup provenance. The review guard finished in 24.69 s with
+216,334,336-byte peak RSS. No research worker remained before continuation.
+Storage fits: 27,188,117,504 bytes free versus 24,405,766,076 required including
+the unchanged reserve. Protected weights and closed test remain unchanged.
+Evidence: `campaign004-lr-04-v2-terminal.json`,
+`campaign004-lr-prefix-05-v2-review.json` and its guard. Commit/push this review
+before slot5 gated MLA at LR0.00125, D/4, seed3501, through the original gates.
