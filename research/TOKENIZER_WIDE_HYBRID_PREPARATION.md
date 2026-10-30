@@ -5150,3 +5150,10 @@ the unchanged reserve. Protected weights and closed test remain unchanged.
 Evidence: `campaign004-lr-04-v2-terminal.json`,
 `campaign004-lr-prefix-05-v2-review.json` and its guard. Commit/push this review
 before slot5 gated MLA at LR0.00125, D/4, seed3501, through the original gates.
+
+
+After prefix5 review was committed and pushed as `acc6d1d`, slot5 gated MLA
+(LR0.00125, D/4, seed3501) started under controller27909 and child27950.
+`campaign004-lr-05-v2-launch.json` binds the frozen plan and independent review.
+The original guarded wrapper permits this cell only, with no retry or automatic
+later-slot dispatch.
