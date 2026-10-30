@@ -4645,3 +4645,52 @@ reviewer deliberately stops at8 completed cells; do not alter production gates.
 Prefix8 review committed/pushed as `1b50d3c`. Slot8 controllerPID16764
 (session51551) is active through production gates for the final frozen hybrid
 LR0.0025 cell. Launch receipt: `campaign003-lr-08-v2-launch.json`.
+
+
+### Campaign003 closed at final LR slot8: metadata lock timeout (2026-10-30 UTC)
+
+Final hybrid/LR0.0025 slot8 failed with
+`TimeoutError('Metadata producer lock timeout; no retry')`. Controller16764
+stopped/reaped worker16918 (returncode-15), child elapsed811.4618s, wrapper
+893.9771s. Actual process inspection confirms no remaining research worker.
+The surfaced traceback places the parent at `run_process -> save_control ->
+MetadataWriter.publish_json -> _serialized`. All1200 updates were logged, but
+raw checkpoint publication did not finish. There is no completed raw/H200 pair,
+training summary, training-outputs, result, tensor/resource audit, worker-outputs
+or parent acceptance for slot8. Online metrics are not selection evidence.
+
+The protected partial is
+`research_runs/tokenizer-wide-hybrid-003/evidence/quality/08/checkpoints/final_001200_1793325864452219000.pt.tmp`,
+780,502,912bytes, SHA256
+`6a572d5c2a72198e56de2e188940e24161f2cbcea367af55743d0bcaef546f64`.
+Independent failure audit verified all337 campaign file hashes twice and every
+previously archived prefix8 file unchanged; nonweight bytes and relevant source
+were archived losslessly. All eight accepted pairs plus partial remain protected,
+10,704,589,264bytes total. Failure-review guard finished8.8228s with no error,
+peak RSS228,900,864bytes. Failed worker sampled peaks were RSS634,847,232bytes
+and MPS driver3,969,826,816bytes, under original caps; samples do not bound the
+instant of failure. No cleanup, LR selection, rank dispatch or test evaluation
+occurred. Campaign003 is closed; no retry/resume/replacement cell is authorized
+by this evidence. Closed001/002 and the failed numerical fixture stay closed.
+
+The20ms-per-MiB cooperative handoff did not eliminate the timeout. No recorded
+lock-acquisition/hold trace distinguishes starvation, a slow filesystem operation,
+a long census or other critical-section delay. The earlier56MiB synthetic checks
+were not a reproduction of this failure and cannot establish safety at this
+checkpoint size. Do not simply extend the2s deadline or repeat training.
+Next prepare a separate finite nontraining diagnostic with actual-scale synthetic
+checkpoint writes and bounded per-process/thread lock-wait/hold and operation
+traces. Preserve original guards, freeze its script/source/workload and allow
+one fresh attempt; no model/corpus/checkpoint load and no rerun of closed fixtures.
+Only diagnose before choosing another versioned implementation change.
+
+At this audit26,295,799,808bytes were free. The unchanged full-panel initial
+requirement30,631,412,484bytes would exceed that by4,335,612,676bytes, before
+new diagnostic outputs. Protected evidence gets no speculative cleanup credit.
+A new full training panel therefore needs a separately verified storage solution
+as well as an evidence-backed fix and new finite plan; it must not auto-launch.
+
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-08-v2-terminal.json`,
+`campaign003-lock-failure-v2-review.json`, its guard and
+`review_campaign003_lock_failure_v2.py`. Previous eight cells remain descriptive
+screening evidence, not a completed panel or adoption result.
