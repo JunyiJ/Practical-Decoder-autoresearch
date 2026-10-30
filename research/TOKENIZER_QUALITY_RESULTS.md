@@ -3031,3 +3031,23 @@ After prefix5 review was committed and pushed as `acc6d1d`, slot5 gated MLA
 `campaign004-lr-05-v2-launch.json` binds the frozen plan and independent review.
 The original guarded wrapper permits this cell only, with no retry or automatic
 later-slot dispatch.
+
+
+### Campaign004 six LR cells accepted: gated MLA responds to LR0.00125
+
+Slot5 gated MLA completed 1,200 updates at width512, D/4, LR0.00125,
+seed3501. H200 full-validation CE is 4.821449135542395; raw CE is
+4.824457830622191. Relative to its LR0.000625 result, H200 CE improved by
+0.1318881778 nats/token on this screening seed. At LR0.00125 it is below
+hybrid4.9785038782 and KDA4.9774401132. This is a descriptive result within
+an incomplete single-seed screen, not a family selection or fresh-seed gain.
+Three LR0.0025 cells, rank probes and fresh confirmations remain before adoption.
+
+Parent acceptance and independent prefix6 review passed for all six raw/H200
+pairs and prior cleanup provenance. The review guard finished in 29.90 s with
+225,017,856-byte peak RSS. No research worker remained before the review.
+Storage fits: 25,943,928,832 bytes free versus 23,184,041,860 required including
+the unchanged reserve. All retained evidence and closed test remain protected.
+Evidence: `campaign004-lr-05-v2-terminal.json`,
+`campaign004-lr-prefix-06-v2-review.json` and its guard. Commit/push this review
+before slot6 gated MLA at LR0.0025, D/4, seed3501, through the unchanged gates.
