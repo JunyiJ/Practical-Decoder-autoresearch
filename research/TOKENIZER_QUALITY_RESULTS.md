@@ -2489,3 +2489,28 @@ selection change was needed. The erroneous label affected commentary and these
 notes only; numerical results for completed slots0..6 remain unchanged.
 The active KDA worker remains sole worker15757 under controller15590.
 Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-slot7-label-correction-v1.json`.
+
+
+### Campaign003 eighth LR cell independently reviewed (2026-10-30 UTC)
+
+Slot7 KDA completed1200 updates at width512/divisor4/LR0.0025, seed3501.
+Full-validation H200 CE5.114296068829509; raw CE5.279939868603322.
+Child elapsed975.6345s. H200 CE is0.172953543226598 above KDA at LR0.000625.
+KDA's three-rate screen gives4.941342525602911/4.978608155903051/5.114296068829509
+for ascending rates. The lowest rate is descriptively best on this seed;
+formal family-specific selection still waits for the final hybrid cell.
+Eight of nine LR cells are complete; no adoption or fresh-seed claim.
+
+Independent prefix8 review verified318 file hashes and losslessly archived
+nonweight evidence. Production prior/frozen/pilot/checkpoint/storage bindings
+passed. Guard finished40.8564s, peak RSS224,641,024bytes, no error. All eight
+raw/H200 pairs remain retained,9,924,086,352bytes total. Observed free
+27,098,804,224bytes exceeds required20,707,195,060bytes. No cleanup or
+closed-test evaluation occurred; closed002 results are not pooled.
+Evidence: `tokenizer-evidence/wide-hybrid-preparation-001/campaign003-lr-prefix-08-v2-review.json`,
+its guard and `campaign003-lr-07-v2-terminal.json`.
+The actual frozen panel identifies final slot8 as hybrid at LR0.0025,
+width512/divisor4/seed3501/1200steps. Dispatch only that cell after commit/push.
+After acceptance, use the original full-panel LR selection and retention
+components with independent archive before authorized cleanup. The prefix
+reviewer deliberately stops at8 completed cells; do not alter production gates.
