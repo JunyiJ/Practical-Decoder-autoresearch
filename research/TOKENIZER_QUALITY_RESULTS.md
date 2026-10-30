@@ -3429,3 +3429,39 @@ No later slot dispatches automatically. Retain every fresh raw/H200 pair.
 After acceptance and exit, independently review compact first-fresh history
 and adapt the external slot16 wrapper to the existing frozen later-confirmation
 startup/readiness/dispatch APIs before gated MLA D/4 seed3511.
+
+
+### Campaign004 first fresh confirmation independently verified
+
+Slot15 (selected hybrid D/2, LR0.000625, fresh seed3511) completed1,200
+updates and parent acceptance. Full-validation H200 CE is4.999246600352049;
+raw CE is5.029029321452403, over34,278 targets in17 blocks. The H200
+checkpoint improves this fresh run by0.029782721100354. This is one
+fresh run; no paired architecture comparison or adoption claim is available.
+The closed test holdout remains unused and the selected configurations stay fixed.
+
+After controller/child exit, the read-only first-confirmation history verifier
+reconstructed the full scientific, transport, storage and compact-parent audit
+under both shared locks. The outer guard finished in36.89s
+with peak RSS245202944 bytes. The external archive preserves
+556 file identities and exact bytes for548 non-checkpoint files,
+including all selected pairs and the first fresh raw/H200 pair (eight weights
+in total). Free space was28270907392 bytes against
+25453566624 required, including the unchanged8GiB reserve.
+No cleanup, selection change or later request occurred during this audit.
+
+Evidence: `campaign004-fresh-15-v2-terminal.json`,
+`campaign004-fresh-prefix-16-v2-review.json` and its finished guard.
+Parent receipt SHA256:
+`eede2435620a7f21f805a854df4e35b8ddfab31cad6702d1a8ad251cca00b330`.
+
+Prepared `continue_campaign004_fresh16_v2.py`, restricted to slot16. It uses
+unchanged `confirmation_startup_v2`, `quality_readiness_v2` and
+`confirmation_dispatch_v2` APIs with one same-parent startup/seal/dispatch
+sequence. An outer1,800s CPU guard covers startup and readiness, including
+final replay checks; original prepare/child/review guards and both locks remain.
+It requires this independent review and a finished guard, pins plan/cache/MPS,
+and forbids retries or automatic later slots. Syntax and exact adaptation
+diffs were checked; frozen production source is unchanged.
+Commit/push this review before slot16: gated MLA D/4, LR0.00125, seed3511.
+Retain every fresh pair, including negative results.
