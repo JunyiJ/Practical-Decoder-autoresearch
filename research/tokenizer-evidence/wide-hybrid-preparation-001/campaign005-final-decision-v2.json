@@ -1,0 +1,208 @@
+{
+  "status": "closed_completed_not_adopted",
+  "campaign": "tokenizer-wide-hybrid-005",
+  "created_at": "2026-10-31T15:19:49.073233+00:00",
+  "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
+  "review_reference": {
+    "path": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
+    "sha256": "72e97d4aa939231deafb12a86ca1e6089c5d70ea1d1e70597b437d0c6ef79c95"
+  },
+  "guard_reference": {
+    "path": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
+    "sha256": "a18aba34bf325e5c7cf3d2ea03e6739f5419047dfa9e80f8ce3c642ae0be227a"
+  },
+  "actual_reviewer_exit_verified": true,
+  "decision": "Do not adopt the hybrid; retain existing adopted recipes.",
+  "adopted": false,
+  "adoption_eligible": false,
+  "passing_routes": [],
+  "quality": {
+    "adopted": false,
+    "neutral_quality": false,
+    "per_control": {
+      "gated_mla": {
+        "neutral": false,
+        "strict": false
+      },
+      "kda": {
+        "neutral": false,
+        "strict": false
+      }
+    },
+    "strict_quality": false
+  },
+  "mean_h200_ce": {
+    "hybrid": 4.985189831510325,
+    "gated_mla": 4.8429360153472585,
+    "kda": 4.96329048568082
+  },
+  "mean_raw_ce_diagnostic": {
+    "hybrid": 5.013479965473767,
+    "gated_mla": 4.83183319438275,
+    "kda": 4.989473011918658
+  },
+  "paired_statistics": {
+    "gated_mla": {
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            0.11292019954700912,
+            0.17140966576274494
+          ],
+          "gate_upper": 0.1769364501316701
+        },
+        "4096": {
+          "descriptive_95pct": [
+            0.10086530980608396,
+            0.18267824483460363
+          ],
+          "gate_upper": 0.19078985338426657
+        },
+        "8192": {
+          "descriptive_95pct": [
+            0.0856641659886647,
+            0.19583074433428277
+          ],
+          "gate_upper": 0.2052273839287413
+        }
+      },
+      "mean_delta": 0.14225381616306598,
+      "seed_deltas": [
+        0.15383535116619051,
+        0.1352729100524456,
+        0.1376531872705619
+      ]
+    },
+    "kda": {
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            0.015547041496297041,
+            0.02807328716123299
+          ],
+          "gate_upper": 0.029720164605105757
+        },
+        "4096": {
+          "descriptive_95pct": [
+            0.013668708737754512,
+            0.030722206799616236
+          ],
+          "gate_upper": 0.0326397457313947
+        },
+        "8192": {
+          "descriptive_95pct": [
+            0.013066875703279914,
+            0.034411309597001186
+          ],
+          "gate_upper": 0.03697734864032517
+        }
+      },
+      "mean_delta": 0.021899345829505323,
+      "seed_deltas": [
+        0.025043617461786183,
+        0.01143160300345548,
+        0.0292228170232743
+      ]
+    }
+  },
+  "memory_gate": false,
+  "hybrid_state_ratio": {
+    "gated_mla": 1.21875,
+    "kda": 1.1890243902439024
+  },
+  "paired_latency_ratios": [
+    {
+      "batch": 1,
+      "control": "gated_mla",
+      "median_ratio": 1.8153190646233985,
+      "metric": "prefill",
+      "seed_ratios": [
+        1.8153190646233985,
+        1.8042967876463498,
+        1.832047862050723
+      ]
+    },
+    {
+      "batch": 1,
+      "control": "gated_mla",
+      "median_ratio": 1.0122718194197518,
+      "metric": "decode",
+      "seed_ratios": [
+        1.01631698235807,
+        1.0013758684492753,
+        1.0122718194197518
+      ]
+    },
+    {
+      "batch": 1,
+      "control": "kda",
+      "median_ratio": 1.0256230927107486,
+      "metric": "prefill",
+      "seed_ratios": [
+        1.042547376002907,
+        1.0162973456931608,
+        1.0256230927107486
+      ]
+    },
+    {
+      "batch": 1,
+      "control": "kda",
+      "median_ratio": 1.7928920172326919,
+      "metric": "decode",
+      "seed_ratios": [
+        1.805820336477344,
+        1.7803247302381686,
+        1.7928920172326919
+      ]
+    },
+    {
+      "batch": 8,
+      "control": "gated_mla",
+      "median_ratio": 1.5588465705641132,
+      "metric": "prefill",
+      "seed_ratios": [
+        1.5588465705641132,
+        1.5562571943011128,
+        1.5673294787463932
+      ]
+    },
+    {
+      "batch": 8,
+      "control": "gated_mla",
+      "median_ratio": 1.0248541299161373,
+      "metric": "decode",
+      "seed_ratios": [
+        1.0295338565551322,
+        1.0082267704634538,
+        1.0248541299161373
+      ]
+    },
+    {
+      "batch": 8,
+      "control": "kda",
+      "median_ratio": 0.8812555860740471,
+      "metric": "prefill",
+      "seed_ratios": [
+        0.8812555860740471,
+        0.8778831906125221,
+        0.8937938379971764
+      ]
+    },
+    {
+      "batch": 8,
+      "control": "kda",
+      "median_ratio": 1.3273182603838547,
+      "metric": "decode",
+      "seed_ratios": [
+        1.3273182603838547,
+        1.374838570197965,
+        1.3025247727247613
+      ]
+    }
+  ],
+  "scope": "Conditional on the finite adaptive selection and reused validation text; not an unconditional confidence claim, test-holdout result or evidence of larger-scale optimality.",
+  "no_control_promotion": "Gated NoPE MLA and KDA controls were not compared under a prospective adoption rule against the prior adopted RoPE MLA incumbent; do not replace it posthoc.",
+  "preserve": "All selected screen pairs, all9 fresh raw/H200 pairs, failure evidence and protected archives; no cleanup.",
+  "holdout_consumed": false,
+  "next_direction": "Prepare scoped tokenizer sparse-versus-dense FFN comparison, with historical stored-capacity control and bounded equal LR tuning; no launch before new explicit contracts, numerical/resource prerequisites and finite freeze."
+}

@@ -6557,3 +6557,43 @@ procedure, statistical rules and guards are unchanged. Reviewer44945/session8329
 now runs that separately recorded read-only audit. No experimental trial was
 repeated. Require its finished guard and successful final report before decision.
 Evidence: campaign005-final-cache-environment-diagnosis-v2.json.
+
+
+### Campaign005 closed: hybrid fails both adoption routes
+
+Independent final review completed985.06s, guard finished with no reason and
+reviewer exited. All24 quality trajectories, three inference seeds, full history
+and protected artifacts were verified. Hybrid is not adopted; existing adopted
+recipes remain unchanged. No posthoc promotion of005 gated NoPE MLA versus the
+prior adopted RoPE MLA, since that comparison was not this prospective study.
+
+Fresh mean H200 CE: hybrid4.985189831510325, gated MLA4.8429360153472585,
+KDA4.96329048568082. Hybrid-minus-control means are+0.142253816163066 and
++0.021899345829505; every seed is worse than each control. Simultaneous upper
+bounds at blocks2048/4096/8192 are0.176936/0.190790/0.205227 versus gated MLA
+and0.029720/0.032640/0.036977 versus KDA. Strict and neutral quality gates fail.
+Raw diagnostic means are5.013479965473767 /4.831833194382750 /4.989473011918658
+(hybrid/gated MLA/KDA); the H200 decision metric remains unchanged.
+
+All seeds measure batch1 state399,360 /327,680 /335,872 bytes, scaling eightfold
+at batch8. Hybrid uses21.875% more state than gated MLA and18.9024% more than KDA;
+memory gate fails. Median seed-paired hybrid/control latency ratios (prefill,
+decode) at batch1/batch8: gated MLA(1.815,1.012)/(1.559,1.025);
+KDA(1.026,1.793)/(0.881,1.327). Each seed uses eight measured repeats; warmups
+excluded. This is local context128/prefill32/decode64 MPS evidence, not general
+production, long-context or population-seed superiority. Validation remains
+adaptively reused; holdout closed. Preserve every fresh pair and failure.
+
+Decision: campaign005-final-decision-v2.json. Original audit cache-environment
+failure remains immutable; the separately recorded cached read-only review
+passed without repeating experimental trajectories. Campaign005 is now closed.
+
+Next architecture direction: tokenizer sparse versus dense FFNs, with the
+historical stored-capacity wider-dense control. Read-only feasibility found
+historical MoE restricted to MHA and tokenizer contracts restricted to dense.
+TOKENIZER_MOE_PREPARATION.md specifies proposed width256 adopted RoPE MLA
+backbone, exact FFN arithmetic, bounded equal LR tuning, prospective strict
+comparison, diagnostics/tests and mandatory capacity audit. No new source edits
+or training; proposal is not frozen and fit is not asserted. Activation/norm/
+residual families remain queued; further hybrid tuning and separate EMA/horizon
+work are deferred with rationale. No blanket storage cleanup.

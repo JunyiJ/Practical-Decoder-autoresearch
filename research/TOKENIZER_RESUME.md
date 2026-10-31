@@ -8,38 +8,34 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at07:57 Los Angeles: all24 quality trajectories,
-including all nine fresh confirmations, are accepted and independently reviewed.
-H200 validation CE:
+Observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
+closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
+passed their parent reviews. Independent final review completed985.06s under
+the unchanged guard; reason null, reviewer and all workers exited.
 
-| Seed | Gated MLA | KDA | Hybrid |
+| Seed | Gated MLA H200 CE | KDA H200 CE | Hybrid H200 CE |
 | --- | --- | --- | --- |
 |3511|4.845517761609039|4.9743094953134435|4.999353112775229|
 |3512|4.84407892743844|4.967920234487431|4.979351837490887|
 |3513|4.839211356994297|4.947641727241584|4.976864544264859|
 
-Gated MLA has the lowest H200 CE on every fresh seed. No adoption yet: frozen
-statistical and inference gates remain required. Final history replay passed
-219.31s, verifying12 selected/fresh pairs and all three cleanup boundaries.
-Free15,577,501,696 bytes exceeds remaining8,858,370,048 required, including8GiB
-reserve. Every fresh raw/H200 pair remains protected. No quality slot24.
+Hybrid mean loss is worse by0.142253816 versus gated MLA and0.021899346 versus
+KDA. Strict quality and neutrality both fail against both controls. Actual
+hybrid state399,360 bytes at batch1 is21.875% larger than gated MLA327,680 and
+18.9024% larger than KDA335,872; all seeds/batch8 agree. Memory route also fails.
+Hybrid/gated-MLA median paired prefill ratios are1.815/1.559 at batches1/8;
+decode1.012/1.025. Hybrid/KDA ratios are1.026/0.881 prefill and1.793/1.327 decode.
+These are local context128, prefill32/decode64 MPS measurements, not production
+cost or long-context claims. Existing adopted recipes remain unchanged; no
+posthoc promotion of005's gated NoPE MLA control over the RoPE incumbent.
 
-All three inference seeds are parent accepted; inference controller38659 and all
-children have exited. Final seed3513 passed preparation930.57s, child147.01s and
-parent review1090.28s. The serial panel finished5248.11s, with no guard violation.
-
-Independent final reviewer **44945**, session **83295**, is running under both
-locks and an outer1800s CPU guard. Never duplicate this review. Require its
-`campaign005-final-cached-v2-review.json`, finished guard with no reason, and actual
-reviewer exit before interpreting the final frozen quality/cost decision.
-
-The first external final reviewer stopped after18.98s: its wrapper omitted
-`TIKTOKEN_CACHE_DIR`, so GPT2 identity reconstruction attempted a download and
-DNS failed. The failed wrapper, guard and receipt are preserved. The separately
-recorded cached review verifies both existing cache hashes and sets that local
-path. Frozen source/procedure and accepted inference bytes are unchanged; no
-training, inference or closed numerical fixture was repeated. See
-`campaign005-final-cache-environment-diagnosis-v2.json`.
+[Final decision](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json),
+[independent review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json),
+[completed inference metadata](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-panel-accepted-v2.json).
+Every selected/fresh pair, failure and archive remains protected. No cleanup.
+The first external final-audit wrapper omitted tokenizer cache setup and failed;
+its evidence remains preserved. The separate cached read-only audit passed.
+No training/inference/closed numerical fixture was repeated.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -49,37 +45,23 @@ git status --short --branch
 ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|metadata_contention|pytest|run_training)|pytest|zstd'
 ```
 
-The status script verifies immutable evidence, shows local progress, process
-records, preparation and all inference review/controller receipts. Actual PIDs
-must be inspected; saved records can be stale. Process inspection is already
-human-authorized. Leave unrelated programs alone.
-
-1. Reconcile ignored `research_state/tokenizer-quality-progress.json` with actual
-   processes. While reviewer44945 runs, observe its external guard; do not acquire
-   its locks or duplicate the review. Inference is complete, never relaunch it.
-2. Require `campaign005-final-cached-v2-review.json` status
-   `complete_independent_quality_cost_review`, a finished
-   `campaign005-final-cached-v2-guard.json` with reason null, and actual reviewer exit.
-   A review file alone does not prove its enclosing guard finished successfully.
-3. Interpret the unchanged frozen rule: strict quality OR quality neutrality
-   plus measured memory savings. Disclose latency, raw endpoints and conditional
-   adaptive-validation limits. Save the final decision; the procedure itself
-   returns eligibility with adopted=false, not automatic adoption.
-4. Preserve every selected/fresh raw/H200 pair, failure and archive. Do not rerun
-   closed campaigns or the failed numerical fixture. No quality slot24, cleanup,
-   production changes or holdout use. A review failure must be preserved and
-   diagnosed, not silently retried.
-5. After final review, explicitly evaluate the architecture roadmap's next
-   untested family (sparse versus dense FFN priority) alongside bounded HP
-   alternatives. Freeze prerequisites and a finite plan before new training.
-6. Commit/push substantive evidence and this guide/index without force. Keep
-   only this chat's continuation heartbeat active; the old heartbeat is paused.
-
-[All fresh results](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-panel-accepted-v2.json),
-[final history review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-24-v2-review.json),
-[inference wrapper review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-wrapper-review-v2.json),
-[inference launch](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-launch.json).
-Selected screens remain slots14/5/12; audited rank cleanup is complete.
+1. Read ignored `research_state/tokenizer-quality-progress.json`; reconcile its
+   next_action with actual Git/process state. Current research workers are idle.
+   No005 relaunch, slot24, seed extension or changed adoption criterion.
+2. Continue [MoE preparation](TOKENIZER_MOE_PREPARATION.md). Read-only feasibility
+   selected the next roadmap family with ordinary dense and wider dense controls,
+   using the adopted width256 RoPE MLA backbone. Historical MoE only supports MHA;
+   tokenizer validators currently require dense FFNs. A new explicit contract,
+   optimizer/load/cache/EMA tests and routing diagnostics are required.
+3. Audit exact full retained capacity before any pilots. Proposed3pilots,
+   9LRscreen+9fresh trajectories are **not frozen** and storage fit is not asserted.
+   Keep all prior protected pairs and8GiB reserve. Do not launch a partial panel.
+   Freeze exact requests/seeds/limits/source/input/resource prerequisites first.
+4. If MoE feasibility fails, record the reason and consider the proposed same-shape
+   activation comparison prospectively. Bounded equal LR tuning remains part of
+   the next design; do not extend completed attention grids. No test holdout use.
+5. Commit/push substantive findings and this guide/index without force. Keep only
+   this chat's continuation heartbeat active; the old heartbeat stays paused.
 
 Campaign root: `research_runs/tokenizer-wide-hybrid-005`.
 [Launch receipt](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-launch-v2.json),
@@ -87,7 +69,7 @@ Campaign root: `research_runs/tokenizer-wide-hybrid-005`.
 [frozen plan](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-frozen/meta/plan.json).
 Plan SHA256: `7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94`.
 Source SHA256: `73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa`.
-The finite design is3pilots,24quality trajectories and3inference panels, width512,
+The completed finite design was3pilots,24quality trajectories and3inference panels, width512,
 four layers,1200updates per quality trajectory, batch8/context128. Exact requests,
 seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
