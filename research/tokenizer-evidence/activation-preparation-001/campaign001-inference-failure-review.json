@@ -1,0 +1,205 @@
+{
+  "status": "training_complete_inference_failed_no_retry",
+  "observed_at": "2026-10-31T18:53:58.265405+00:00",
+  "plan": {
+    "path": "evidence/meta/activation-plan.json",
+    "size": 36221,
+    "sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4"
+  },
+  "source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
+  "process": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "src.research.tokenizer_activation_inference_entry",
+      "worker",
+      "--root",
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001",
+      "--plan-sha256",
+      "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+      "--seed",
+      "3611",
+      "--request-sha256",
+      "98c403b0e94a823bdb8909566e6c4c2e98ed33291088056316072a3888a8674f",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 39.26410608299193,
+    "error": "RuntimeError('Worker exited with code 1')",
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 13077635072,
+      "log_bytes": 2683,
+      "output_bytes": 11794
+    },
+    "output_limit_bytes": 5242880,
+    "parent_pid": 63057,
+    "pid": 63060,
+    "required_free_bytes": 8595177472,
+    "reserve_bytes": 8589934592,
+    "returncode": 1,
+    "status": "failed",
+    "timeout_seconds": 600
+  },
+  "protected_checkpoints": {
+    "evidence/quality/02/checkpoints/final_001200_1793466733266936000.pt": {
+      "path": "evidence/quality/02/checkpoints/final_001200_1793466733266936000.pt",
+      "sha256": "03bcf3d22d437e884443641472e2be0c2ce25d99be845c7df6f9a34f01b1390e",
+      "size": 445087909
+    },
+    "evidence/quality/02/checkpoints/h200.pt": {
+      "path": "evidence/quality/02/checkpoints/h200.pt",
+      "sha256": "91e175002629377b986960bb6c670c79e8d3d695b08174adf394f0833741a0ae",
+      "size": 114072387
+    },
+    "evidence/quality/03/checkpoints/final_001200_1793467314983803000.pt": {
+      "path": "evidence/quality/03/checkpoints/final_001200_1793467314983803000.pt",
+      "sha256": "39b2f14a1fd316add1808379cb6d1839aa94e9f77394d4c37718bd642230ae7d",
+      "size": 445087909
+    },
+    "evidence/quality/03/checkpoints/h200.pt": {
+      "path": "evidence/quality/03/checkpoints/h200.pt",
+      "sha256": "f468a16d98ca929837dce86d24caf27c419ee29316e75c3d05e45fe191fd5c35",
+      "size": 114072387
+    },
+    "evidence/quality/06/checkpoints/final_001200_1793469194114885000.pt": {
+      "path": "evidence/quality/06/checkpoints/final_001200_1793469194114885000.pt",
+      "sha256": "3b4cc1f45ce1acadf386bd63993a21273af4e300e3c0c5f5dd32b188a4d932db",
+      "size": 445087909
+    },
+    "evidence/quality/06/checkpoints/h200.pt": {
+      "path": "evidence/quality/06/checkpoints/h200.pt",
+      "sha256": "c8b7bde81e44b8610c7bb3f10e92f40a56b84ea27473bdaa9ac282ad035b7ade",
+      "size": 114072387
+    },
+    "evidence/quality/07/checkpoints/final_001200_1793469711658169000.pt": {
+      "path": "evidence/quality/07/checkpoints/final_001200_1793469711658169000.pt",
+      "sha256": "b286e1ba3d8f4b1a4fd6356c3532f234dc760a175b90f9a5bc83b59fbc00e882",
+      "size": 445087909
+    },
+    "evidence/quality/07/checkpoints/h200.pt": {
+      "path": "evidence/quality/07/checkpoints/h200.pt",
+      "sha256": "58e70de22b14902d7b9915c24131bddcbe501100901dbd254c7861577a8d9918",
+      "size": 114072387
+    },
+    "evidence/quality/08/checkpoints/final_001200_1793470308327355000.pt": {
+      "path": "evidence/quality/08/checkpoints/final_001200_1793470308327355000.pt",
+      "sha256": "3f15e655a0c2bef0b359dbd7d3f0f3373a448bd5f40b49b173dbd111ba426b36",
+      "size": 445087909
+    },
+    "evidence/quality/08/checkpoints/h200.pt": {
+      "path": "evidence/quality/08/checkpoints/h200.pt",
+      "sha256": "42e215ac49c0699077fd48a8340deab10e9a10d0f45a4c1c5d3bc741a893d397",
+      "size": 114072387
+    },
+    "evidence/quality/09/checkpoints/final_001200_1793470915505796000.pt": {
+      "path": "evidence/quality/09/checkpoints/final_001200_1793470915505796000.pt",
+      "sha256": "bda9c1c6e52ac6f23eb210fcd269f72fef71b10cf032e80f6b0c8b787868a1f8",
+      "size": 445087909
+    },
+    "evidence/quality/09/checkpoints/h200.pt": {
+      "path": "evidence/quality/09/checkpoints/h200.pt",
+      "sha256": "73f46f10341de88a5a76d4d82f8d1ef42744a306d71ec5960188ede0bcbe5b44",
+      "size": 114072387
+    },
+    "evidence/quality/10/checkpoints/final_001200_1793471513534846000.pt": {
+      "path": "evidence/quality/10/checkpoints/final_001200_1793471513534846000.pt",
+      "sha256": "5d674d3f56e2a1a00f17b28d10bd5fb0dcdb9399a058c204df2aae6cba554dc9",
+      "size": 445087909
+    },
+    "evidence/quality/10/checkpoints/h200.pt": {
+      "path": "evidence/quality/10/checkpoints/h200.pt",
+      "sha256": "21f8dfbcf76399864f76077a8c9ae70d05457b91631dd4e8c78212a09ff4b329",
+      "size": 114072387
+    },
+    "evidence/quality/11/checkpoints/final_001200_1793472115633712000.pt": {
+      "path": "evidence/quality/11/checkpoints/final_001200_1793472115633712000.pt",
+      "sha256": "ee1df3a5c9d1fd189d6089b9939d4fd78f194d72f153d97e8e7af469e6503ac8",
+      "size": 445087909
+    },
+    "evidence/quality/11/checkpoints/h200.pt": {
+      "path": "evidence/quality/11/checkpoints/h200.pt",
+      "sha256": "daf80183af5e1042d91ff7a297d85a79488b76f4c879f3c8acfa2cc95a27877e",
+      "size": 114072387
+    }
+  },
+  "copied": {
+    "control/activation-worker-inference-3511.json": {
+      "path": "control/activation-worker-inference-3511.json",
+      "size": 318,
+      "sha256": "66fa70c4c9e4c78d482170af87c01bd5aa92cf9f7b3c82f4090853e2290b49f6"
+    },
+    "control/activation-prepare-inference-3511.json": {
+      "path": "control/activation-prepare-inference-3511.json",
+      "size": 274,
+      "sha256": "c597347084037246b00d4be44a52c5160946cc7c1bbefda100ded05c9bf16f2a"
+    },
+    "control/activation-entry-inference-3511.json": {
+      "path": "control/activation-entry-inference-3511.json",
+      "size": 272,
+      "sha256": "b65de851e21e25dd20dc96f5ad5e8e0eb25d0457672f87f78e7653a2d5674b11"
+    },
+    "control/process-inference-3511.json": {
+      "path": "control/process-inference-3511.json",
+      "size": 895,
+      "sha256": "832c9088d75d855939cff043606dc0e48cad318d00f48ff27bdf3c7d974ee656"
+    },
+    "evidence/inference/3511/request.json": {
+      "path": "evidence/inference/3511/request.json",
+      "size": 7178,
+      "sha256": "98c403b0e94a823bdb8909566e6c4c2e98ed33291088056316072a3888a8674f"
+    },
+    "evidence/inference/3511/worker-failure.json": {
+      "path": "evidence/inference/3511/worker-failure.json",
+      "size": 84,
+      "sha256": "00656599748e88d15d152d19771b4a50c4e2fbda561099e70f847dea127b6e97"
+    },
+    "evidence/inference/3511/dispatch-failure.json": {
+      "path": "evidence/inference/3511/dispatch-failure.json",
+      "size": 222,
+      "sha256": "2bf5f898989011b7c693ce1815e0922a5fcb4add221cbc6e757a43dabfc5af57"
+    },
+    "evidence/inference/3511/attempt.json": {
+      "path": "evidence/inference/3511/attempt.json",
+      "size": 191,
+      "sha256": "92f7e5c701c3dec80dbd874e102d33b13b2bf0a226470183c2255e9a607d7516"
+    },
+    "evidence/inference/3511/process/worker.log": {
+      "path": "evidence/inference/3511/process/worker.log",
+      "size": 2683,
+      "sha256": "aa2ed19c103560d14dec06b79a4671a7b66219cd04895c462583ce1b0a584c6f"
+    },
+    "evidence/inference/3511/process/launch.json": {
+      "path": "evidence/inference/3511/process/launch.json",
+      "size": 764,
+      "sha256": "c3b5bcb3e35c75cef9bcc6d1d65c5f6a8b273bc9ed281e85218b00f7aa6fc953"
+    },
+    "evidence/inference/3511/process/process.json": {
+      "path": "evidence/inference/3511/process/process.json",
+      "size": 894,
+      "sha256": "07875d53d9b34d2b33ebe24c29dd75801537117e80ac92d4844c77695f1ddaac"
+    }
+  },
+  "capacity": {
+    "required_free_bytes": 10695107039,
+    "observed_free_bytes": 13074849792,
+    "weight_bytes": 4473282368,
+    "metadata_bytes": 1605761
+  },
+  "guard": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/campaign001-inference-failure-guard.json",
+    "size": 260,
+    "sha256": "ba002a86447b9c9ef13ccf6db349107da94e5ac6148b2ccfa8d1b566ff46a8b0"
+  },
+  "procedure_sha256": "17087a8101b518864d716dfd775d1c6a9f58e93ced160ab30787aec35e92e65c",
+  "diagnosis": "The active output census enumerated control/process-inference-3511.json.tmp, then parent atomic replacement removed that temporary name before Path.stat. Worker budget() propagates FileNotFoundError; bounded parent records exit1. No accepted timing result exists.",
+  "limitations": "Traceback establishes the census race failure location; no complete timing samples were published and no latency conclusion is available. Training quality conclusions remain supported by all12 accepted cells. Formal frozen final wrapper remains unavailable because it requires all3 accepted inference pairs.",
+  "recovery": "Do not retry or patch activation001. Preserve its frozen source and failed attempt. Develop a separate versioned inference-only evidence contract with a race-safe bounded census, deterministic concurrency regression tests, exact imported training/selection/retention/checkpoint pins and unchanged timing/quality rules. Freeze that new contract before measurements; do not retrain or regenerate checkpoints.",
+  "holdout_scored": false,
+  "retry_allowed": false,
+  "formal_final_completed": false
+}

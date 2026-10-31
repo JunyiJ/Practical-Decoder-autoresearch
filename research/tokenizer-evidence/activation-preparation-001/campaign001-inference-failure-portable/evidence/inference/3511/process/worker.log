@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference_entry.py", line 175, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference_entry.py", line 172, in main
+    return run((args.global_fd,args.campaign_fd))
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference_entry.py", line 166, in run
+    return worker(ledger,args.seed,request)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference_entry.py", line 100, in worker
+    return produce(ledger,request,rq['binding'],recheck)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference.py", line 160, in produce
+    result=measure_pair(seed,binding['selection'],loaded['token_ids'],binding['inputs']['training96_sha256'],check=check,measure=measure)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_timing.py", line 77, in measure_pair
+    **sample(measure(family,batch),batch)))
+             ~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference.py", line 143, in measure
+    recheck();result=measure_kernel(*args(family,batch),synchronize=torch.mps.synchronize,
+    ~~~~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference.py", line 159, in <lambda>
+    check,measure=callbacks(loaded,binding['inputs']['training96_sha256'],lambda:budget(ledger))
+                                                                                 ~~~~~~^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_inference.py", line 32, in budget
+    seen=snapshot(ledger.root)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata.py", line 77, in snapshot
+    st=path.stat()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 515, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001/control/process-inference-3511.json.tmp'

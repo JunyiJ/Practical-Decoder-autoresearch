@@ -8,6 +8,10 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
+**Latest: activation001 inference failed on a control-file census race. No worker
+is active. Do not retry any activation001 entry or patch frozen source. Read the
+latest state index and failure review below; older launch notes are historical.**
+
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
 passed their parent reviews. Independent final review completed985.06s under
@@ -84,7 +88,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 screen complete; LR0.00125 saved for both gates; all training accepted; first inference pair seed3611 running; see the indexed
+Current continuation: activation001 screen complete; LR0.00125 saved for both gates; all training accepted; first inference failed permanently; separate recovery contract pending; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -334,3 +338,31 @@ evidence and the closed test. No cleanup or model adoption.
 [Full accepted-prefix review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-12-review.json).
 
 Latest inference process: parent63057/child63060/session85489. Inspect actual state; do not repeat any attempted seed.
+
+
+### October31 activation001 inference failed; no retry
+
+First inference seed3611 (storage slot3511) exited1 after39.24s. Its output
+census enumerated control/process-inference-3511.json.tmp; the parent atomically
+replaced that file before Path.stat, raising FileNotFoundError inside worker
+budget(). The exact traceback, failed worker guard, process receipt, request,
+attempt and failure latches are preserved. Worker guard failed at34.43s with
+RSS821,805,056bytes; this was a file-census race, not a memory-limit crossing.
+No complete timing result or accepted inference receipt was published.
+
+Independent read-only audit confirmed no research worker/process group remains,
+all12 quality trajectories and both boundaries still verify, and all16 retained
+selected/fresh checkpoint hashes match. Original source/plan stayed unchanged.
+GELU's completed quality failure remains supported; inference costs and the
+frozen final wrapper are incomplete. Do not report a formal terminal receipt.
+
+Do not retry or patch activation001, rerun training, or regenerate weights.
+The next engineering step is a separate versioned inference-only continuation:
+reproduce the race using disposable filesystem metadata; test bounded census
+synchronization/revalidation without dropping transient bytes or weakening
+unknown/symlink/hardlink/cap checks; bind all original accepted training,
+selection, retention and checkpoint evidence; preserve frozen source and use
+explicit applicability for any external adapter. Freeze a new dedicated root
+and exact unchanged timing/quality/resource contract before measurements.
+This is planned recovery work, not an approved result or completed fix.
+[Failure review](tokenizer-evidence/activation-preparation-001/campaign001-inference-failure-review.json).

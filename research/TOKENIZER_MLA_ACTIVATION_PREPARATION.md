@@ -624,3 +624,31 @@ pair seed3611 is running in physical storage slot3511, followed serially by
 seeds or artifacts. Preserve all16 selected/fresh checkpoint files, all other
 evidence and the closed test. No cleanup or model adoption.
 [Full accepted-prefix review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-12-review.json).
+
+
+### October31 activation001 inference failed; no retry
+
+First inference seed3611 (storage slot3511) exited1 after39.24s. Its output
+census enumerated control/process-inference-3511.json.tmp; the parent atomically
+replaced that file before Path.stat, raising FileNotFoundError inside worker
+budget(). The exact traceback, failed worker guard, process receipt, request,
+attempt and failure latches are preserved. Worker guard failed at34.43s with
+RSS821,805,056bytes; this was a file-census race, not a memory-limit crossing.
+No complete timing result or accepted inference receipt was published.
+
+Independent read-only audit confirmed no research worker/process group remains,
+all12 quality trajectories and both boundaries still verify, and all16 retained
+selected/fresh checkpoint hashes match. Original source/plan stayed unchanged.
+GELU's completed quality failure remains supported; inference costs and the
+frozen final wrapper are incomplete. Do not report a formal terminal receipt.
+
+Do not retry or patch activation001, rerun training, or regenerate weights.
+The next engineering step is a separate versioned inference-only continuation:
+reproduce the race using disposable filesystem metadata; test bounded census
+synchronization/revalidation without dropping transient bytes or weakening
+unknown/symlink/hardlink/cap checks; bind all original accepted training,
+selection, retention and checkpoint evidence; preserve frozen source and use
+explicit applicability for any external adapter. Freeze a new dedicated root
+and exact unchanged timing/quality/resource contract before measurements.
+This is planned recovery work, not an approved result or completed fix.
+[Failure review](tokenizer-evidence/activation-preparation-001/campaign001-inference-failure-review.json).
