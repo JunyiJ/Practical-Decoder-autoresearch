@@ -5967,3 +5967,23 @@ LayerNorm resource pilot. Recheck remaining capacity with the failed RMS pair
 protected. Quality training remains unfrozen; SiLU remains adopted.
 Evidence: validation-recovery-plan-001.json, validation-recovery-001-review.json,
 validation-recovery-001-rms-result.json and validation-recovery-decision.json.
+
+## LayerNorm resource pilot accepted, October 31, 2026
+
+Pilot002 slot1 completed20 updates/20,480 tokens with eight EMA snapshots, and
+passed independent parent artifact acceptance, full-validation replay and all
+four raw/H200 batch1/8 cache/reset checks. The child exited cleanly and was reaped;
+its46.375-second guard observed peak RSS1,544,667,136B and MPS driver2,501,705,728B.
+The parent audit completed in10.132 seconds. Measured training time was3.509446s.
+Full-validation H200 CE9.567695740230638 is a short-pilot diagnostic only, not
+evidence for adoption; no quality ranking or test loss was computed.
+
+RMS resource observations and separately audited checkpoint components are carried
+explicitly; the original RMS process remains failed and closed. Both pairs are
+retained, and the failed RMS pair is protected from cleanup. About17.95GB remains
+free. Next measure the actual trained pair's descriptive inference, then connect
+the finite quality sequence to real parent acceptance and audited retention
+boundaries before final quality freeze. The original15.17GB projection assumes
+stage-boundary retention; do not reinterpret it as a retain-all projection.
+No additional ledger-only scaffolding is needed. Evidence: pilot002-result.json,
+pilot002-accepted-01.json and pilot002-completed-evidence/.

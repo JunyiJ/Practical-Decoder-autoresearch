@@ -1,0 +1,205 @@
+{
+  "status": "layernorm_pilot_accepted_rms_components_carried",
+  "observed_at": "2026-10-31T22:37:01.011709+00:00",
+  "source_commit": "f21f0efc3aeacc200d72c4a656494994b5717297",
+  "root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-block-norm-v2-pilots-002",
+  "inventory": {
+    ".lock": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "control/.metadata.lock": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "control/entry-01-guard.json": {
+      "size": 261,
+      "sha256": "898f33eaf1ea0b072dadfc7c4787df850013a64226afd3e12952c02d0caefd71"
+    },
+    "control/parent-01-guard.json": {
+      "size": 400,
+      "sha256": "daef2a49a70b747a3ee8c4d884dab576c990567b85f949e57fea25c9aab33b0b"
+    },
+    "control/process-pilots-01.json": {
+      "size": 667,
+      "sha256": "e50920985524f3958f84d0b191648bad455927a9e6d4ecc8b16d81e13a1a7630"
+    },
+    "control/worker-01-guard.json": {
+      "size": 399,
+      "sha256": "21d8481e684fa2e8ae707c2d0587cb500ace9f790400deeb6b2ff0d29ee8e7e1"
+    },
+    "evidence/meta/pilot-plan.json": {
+      "size": 60405,
+      "sha256": "5589a970478f12882dd55ff7e66ec283d1178fd5d809d26dc8c1159805df5c0d"
+    },
+    "evidence/pilots/01/accepted.json": {
+      "size": 12860,
+      "sha256": "9381d948470c2b5314879c6f02c77ca592678b6425c52fedc8624be1a39dd014"
+    },
+    "evidence/pilots/01/checkpoints/final_000020_1793486120066958000.pt": {
+      "size": 445135189,
+      "sha256": "994266420a137d5bf8d76131f0b7dd2c589b253717b6d32e0c7ad0f716bb13a2"
+    },
+    "evidence/pilots/01/checkpoints/h200.pt": {
+      "size": 114085807,
+      "sha256": "89d588d8f50db962b7ad8de8a5f47899f3594187d0b60a2db09803b1ea14023f"
+    },
+    "evidence/pilots/01/config.json": {
+      "size": 3138,
+      "sha256": "4e9967189cf48636aaaf8c1f459640be8e627df0325021c5419a958af362055a"
+    },
+    "evidence/pilots/01/export.json": {
+      "size": 3844,
+      "sha256": "df88861a0884dc898c4c426f66a4081c97db91f49c2cfd66cba41acfa36e07c3"
+    },
+    "evidence/pilots/01/metrics.jsonl": {
+      "size": 1308,
+      "sha256": "b781a31f978cc44ba500cb847b8bbd518e47413d78a8418da228114befd2c56c"
+    },
+    "evidence/pilots/01/process/launch.json": {
+      "size": 571,
+      "sha256": "48535e00911c9d6ead9ce752c6e5070a69a4a679cd2ef3d9036e4a988716a7dc"
+    },
+    "evidence/pilots/01/process/process.json": {
+      "size": 667,
+      "sha256": "a58bc11531bac5b8b1767ae1f44313bc7176cb2f50c72c596a1a88608e22a242"
+    },
+    "evidence/pilots/01/process/worker.log": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evidence/pilots/01/request.json": {
+      "size": 527,
+      "sha256": "43c9015afbae8ed762fa2f869695bd0a825ef3982e5a3da632d747220da9f286"
+    },
+    "evidence/pilots/01/training-summary.json": {
+      "size": 3169,
+      "sha256": "2f81b20525ed03c42eedda0f506bf694422b99f7d058d9e018eed8c874838078"
+    },
+    "evidence/pilots/01/worker-guard.json": {
+      "size": 372,
+      "sha256": "7cc795ec4b8fcedb20731d9b002bfe9ae5e5d13240805130a18c721e64fef6e6"
+    },
+    "evidence/pilots/01/worker.json": {
+      "size": 58795,
+      "sha256": "ce776ba6edaa445dc0c1ec67a2f8a20f70dd6d5dc3d71e8a6de3fe578b9bdd37"
+    }
+  },
+  "external_anchor_sha256": "be3ec25e3603b2325100e5778ebd1341b3cbe512f87173d89e8ce7c3e3aad1d1",
+  "completed_updates": 20,
+  "tokens_processed": 20480,
+  "training_seconds": 3.50944583301316,
+  "worker_guard": {
+    "elapsed_seconds": 46.37511220900342,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 17951715328,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 39534592,
+      "peak_observed_mps_driver_bytes": 2501705728,
+      "peak_rss_bytes": 1544667136
+    },
+    "pid": 80986,
+    "reason": null,
+    "status": "finished"
+  },
+  "parent_guard": {
+    "elapsed_seconds": 10.132312083005672,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 17951850496,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 39534592,
+      "peak_observed_mps_driver_bytes": 1146896384,
+      "peak_rss_bytes": 1398407168
+    },
+    "pid": 80982,
+    "reason": null,
+    "status": "finished"
+  },
+  "process": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.block_norm_v1.pilot_continuation",
+      "worker",
+      "--slot",
+      "1",
+      "--freeze-sha256",
+      "82fc10765b5f7017d7bbd21bf6fc9ebf48f8026f790f325cd8fab02d002418d2",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 47.062107667006785,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 17951846400,
+      "log_bytes": 0,
+      "output_bytes": 559293387
+    },
+    "output_limit_bytes": 797398272,
+    "parent_pid": 80982,
+    "pid": 80986,
+    "required_free_bytes": 15170221264,
+    "reserve_bytes": 8589934592,
+    "returncode": 0,
+    "status": "completed",
+    "timeout_seconds": 600
+  },
+  "full_validation_ce": 9.567695740230638,
+  "cache": {
+    "rows": [
+      {
+        "batch": 1,
+        "endpoint": "parent",
+        "max_absolute_error": 2.86102294921875e-06,
+        "passed": true,
+        "state_bytes": 196608
+      },
+      {
+        "batch": 8,
+        "endpoint": "parent",
+        "max_absolute_error": 2.6226043701171875e-06,
+        "passed": true,
+        "state_bytes": 1572864
+      },
+      {
+        "batch": 1,
+        "endpoint": "h200",
+        "max_absolute_error": 2.1457672119140625e-06,
+        "passed": true,
+        "state_bytes": 196608
+      },
+      {
+        "batch": 8,
+        "endpoint": "h200",
+        "max_absolute_error": 2.0265579223632812e-06,
+        "passed": true,
+        "state_bytes": 1572864
+      }
+    ],
+    "training96_sha256": "0e77bdca8368d30a983e0b1ef033bd141411c35ff00c8f9e7cc1e05c6a276812"
+  },
+  "rms_original_process_status": "closed_failed_preserved",
+  "rms_component_recovery_sha256": "3c46a7940340590b5ccebe4da3eecd06fc2408d81e41753869965cb3d0a5cee4",
+  "quality_conclusion": null,
+  "quality_plan_frozen": false,
+  "holdout_scored": false,
+  "deletion_performed": false,
+  "free_bytes": 17951596544
+}
