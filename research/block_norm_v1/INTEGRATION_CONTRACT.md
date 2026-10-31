@@ -182,3 +182,20 @@ gradients and exact original RMS gradient equivalence. This is a normalizer
 integration oracle, not a second attention implementation. No binary fixture or
 optimizer update was needed. Strict MPS numerical/resource and actual tokenizer
 trainer/controller integration remain before freezing the quality campaign.
+
+
+## Strict MPS numerical status
+
+`mps-numerical-plan-001.json` binds the unchanged runtime inventory, prospective
+tolerances/cases and strict backend environment.11 tests pass: CPU/reference
+comparisons, cached offsets/reset/interleaving/causality, device-mismatch rejection
+and original MPS RMS control. The guard records RSS4GiB/driver6GiB/reserve8GiB/
+600s and samples driver memory every0.25s. No optimizer update or checkpoint was
+used. Treat this as numerical evidence, not an optimizer/resume/resource pilot
+or performance result. Preserve fallback=0 and fast_math=0 in future bindings.
+
+Actual tokenizer-bound `_make_loader`/`run_training` entry remains untested for
+the new policy. Use a separately identified generated-text fixture with its own
+`tokenizer_no_bias_prior` binding and guarded storage projection, without touching
+real holdout data or claiming quality. Strict MPS optimizer/resume and finite
+controller/retention/selection/statistical integration still precede launch.

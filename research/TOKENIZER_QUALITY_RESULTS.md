@@ -5273,3 +5273,35 @@ Next strict MPS numerical/resource validation with no fallback, then actual
 tokenizer-bound trainer/controller integration and finite-plan freeze. These
 CPU results do not establish MPS agreement, long-context behavior, training
 stability or quality improvement. The full-panel capacity gate remains unmet.
+
+
+## Strict MPS numerical prerequisite completed October31
+
+11 tests passed for both block-normalization arms with MPS fallback and fast math
+explicitly disabled. Model parameters and tested gradients were MPS FP32. Cases
+cover batch1/8/context17 and batch1/context128 full/cached execution, nonzero
+continuation offsets, batch2/context9 interleaving/causality/reset, CPU-cache
+device-mismatch rejection and batch1/context5 gradient comparison to the CPU
+normalization reference. Original MPS RMS control logits/CE were bit-exact; its
+gradients passed the tighter predeclared control tolerance.
+
+Maximum absolute errors: CPU–MPS logits8.9407e-7; MPS full/cached1.0729e-6;
+interleaved requests9.5368e-7; reset0; CPU-reference logits9.5368e-7; CE0; all
+parameter gradients1.9325e-7. Tolerances were fixed before attempt001 and not
+relaxed. The CPU reference independently changes normalization arithmetic only,
+sharing attention/FFN/readout; this remains a scoped numerical check.
+
+Guard:3.340s, peakRSS1,154,957,312bytes, peak sampled MPS driver1,159,659,520bytes.
+Limits remained RSS4GiB/driver6GiB, reserve8GiB,600s and four CPU threads. Driver
+observations were sampled every0.25s, not an instantaneous peak guarantee. Runtime
+code was unchanged from the CPU cache prerequisite. No checkpoints/corpus were
+loaded, no binary artifacts, optimizer updates, cleanup or holdout scoring were
+performed, and frozen source/closed campaign inventories remained unchanged.
+
+[Review](tokenizer-evidence/block-norm-preparation-001/mps-numerical-prerequisite-001-review.json),
+[prospective tolerances and resource plan](tokenizer-evidence/block-norm-preparation-001/mps-numerical-plan-001.json).
+This is not a throughput benchmark, MPS optimizer/resume run, resource pilot or
+quality result. Next validate actual tokenizer/data binding and trainer entry on
+a bounded synthetic fixture with its own correctly derived binding, then strict
+MPS optimizer/resume and controller/retention/statistical preparation. Do not use
+these small numerical checks to bypass capacity or freeze an incomplete panel.

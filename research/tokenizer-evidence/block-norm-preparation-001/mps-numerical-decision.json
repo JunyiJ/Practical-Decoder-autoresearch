@@ -1,0 +1,29 @@
+{
+  "status": "strict_mps_numerics_passed_trainer_integration_pending",
+  "observed_at": "2026-10-31T20:35:59.738800+00:00",
+  "source_commit": "bd10cf96ea76cf67d9ec7cfc248b4f2b4a4a090e",
+  "plan_sha256": "520c223e723f9c5d517f3b5730a7cc5f65918ed7aee26ca4549db1f83323236b",
+  "applicable_review": "research/tokenizer-evidence/block-norm-preparation-001/mps-numerical-prerequisite-001-review.json",
+  "applicable_review_sha256": "8b4253b269773eaedcd08b284447d925317dbcb13ce27ab540850f082b3dcf8c",
+  "max_observed_errors": {
+    "cpu_mps_logit_error": 8.940696716308594e-07,
+    "mps_full_cached_error": 1.0728836059570312e-06,
+    "mps_interleaved_a_error": 9.5367431640625e-07,
+    "mps_interleaved_b_error": 9.5367431640625e-07,
+    "mps_reset_error": 0.0,
+    "mps_reference_logit_error": 9.5367431640625e-07,
+    "mps_reference_ce_error": 0.0,
+    "mps_reference_max_parameter_gradient_error": 1.932494342327118e-07
+  },
+  "integration_contract_sha256": "56bb5f90809d5822645596abc037f5a9f114d492a6b9107805d0b1efa72cdab1",
+  "current_design_sha256": "e664b4a53c9276fd9cacdc1d7a83cda0e5b188ace4d75d2f9d7b917b6c455581",
+  "prior_snapshots": {
+    "research/tokenizer-evidence/block-norm-preparation-001/cache-numerical-design-original.md": "88942924e22d63199f4e93f5517b6d31de705b23aa3b493608c4b9ec0af4050c",
+    "research/tokenizer-evidence/block-norm-preparation-001/cache-numerical-integration-original.md": "40d2bb923e4ef24b76965dd6fd5153a652e6993afbe9a3d22462e4c646893b04"
+  },
+  "quality_training_launched": false,
+  "optimizer_updates": 0,
+  "binary_artifacts_created": false,
+  "holdout_scored": false,
+  "mps_optimizer_resume_validated": false
+}

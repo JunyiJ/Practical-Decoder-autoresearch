@@ -3,9 +3,8 @@
 This directory provides a prospective normalizer specification, CPU reference
 checks and a separately namespaced unmodified runtime baseline. A named candidate model policy now has construction/optimizer-coverage tests.
 Raw/H200 signature serialization now passes bounded synthetic tests. Synthetic CPU populated-optimizer and interrupted replay checks now pass.
-CPU normalization-reference gradients and cache numerics now pass. MPS and
-tokenizer-bound trainer/controller integration remain unvalidated; no quality
-training is ready. Frozen original/recovery source and evidence are unchanged.
+CPU normalization-reference gradients and cache numerics now pass. Strict MPS numerical checks now pass. Tokenizer-bound trainer/controller and
+MPS optimizer/resume integration remain unvalidated; no quality training is ready. Frozen original/recovery source and evidence are unchanged.
 
 `spec.py` binds kind, width256, FP32, epsilon2^-23, affine/bias and pre-attention/
 pre-FFN placement. The control uses exact native RMSNorm with `eps=None`; the
@@ -147,3 +146,21 @@ Next inspect existing strict MPS guards and predeclare backend tolerances for
 bounded synthetic numerical checks, keeping RSS4GiB/driver6GiB, reserve8GiB,
 serial work and fallback disabled. Trainer/tokenizer/controller/statistics and
 finite-plan freeze still remain, and training capacity is still insufficient.
+
+
+## Strict MPS numerical checks
+
+11 checks pass with fallback=0 and fast_math=0, four CPU threads and the original
+RSS4GiB/MPS-driver6GiB/reserve8GiB/600s guards. Runtime code is unchanged from the
+CPU cache checks. CPU–MPS max logit error8.941e-7, MPS full/cache1.073e-6, and
+CPU-reference parameter-gradient error1.933e-7; reset/CE errors0. Original MPS
+RMS logits/CE are bit-exact; its gradients pass the declared tighter tolerance.
+All tolerances were frozen before the first attempt. No optimizer/checkpoint/
+corpus or binary-fixture work occurred. Guard3.340s, peakRSS1,154,957,312bytes and
+peak sampled driver1,159,659,520bytes. This supersedes MPS-numerics pending notes.
+
+Next actual tokenizer-bound trainer entry on generated synthetic text with its
+own validated no-bias prior/tokenizer binding; never substitute the real-corpus
+prior onto synthetic data or silently weaken validation. Plan storage first and
+use one guarded worker. MPS optimizer/resume, controller/retention/statistics and
+finite seed/order freeze still remain. No quality pilot while capacity blocked.
