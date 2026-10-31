@@ -6089,3 +6089,26 @@ No cleanup or holdout use occurred; all selected/fresh/failure evidence preserve
 Evidence: `campaign005-rank-09-v2-terminal.json`, `campaign005-rank-prefix-10-v2-review.json`,
 finished guard and `campaign005-rank-10-v2-launch.json`. Current resumption is
 recorded in the guide and SHA-pinned state index.
+
+
+### Campaign005 gated MLA D/8 rank screen accepted
+
+Slot10 (gatedMLAD/8, LR0.00125, seed3501, width512,1200updates) completed
+in648.80s and received parent acceptance. Independent rank-prefix11 review
+verified prior LR selection/cleanup, both accepted rank cells, checkpoint identities
+and preserved metadata. H200 full-validation CE4.828688418517511 versus
+raw4.830738001895907. H200 CE is0.007230957185301 above the selectedD/4
+anchor on the same screening seed. Rank selection, fresh confirmation and
+inference remain; no adoption or seed-population claim.
+
+Review guard finished46.22s without violations. Remaining storage fit:
+24,627,044,352 bytes free versus24,458,051,804 required including8GiB reserve.
+After confirming worker exit/no other research workers, dispatched only slot11
+through unchanged gates: controller318, session48019, training child484.
+Actual process inspection confirmed one training child; never duplicate the launch.
+After slot11 acceptance/exit, review prefix12 before slot12. No cleanup or
+holdout use occurred; all selected/fresh/failure evidence preserved.
+
+Evidence: `campaign005-rank-10-v2-terminal.json`, `campaign005-rank-prefix-11-v2-review.json`,
+finished guard and `campaign005-rank-11-v2-launch.json`. Current resumption is
+recorded in the guide and SHA-pinned state index.
