@@ -1,0 +1,546 @@
+from pathlib import Path
+import json
+import hashlib
+import math
+import logging
+import shutil
+import subprocess
+import sys
+import time
+import resource
+
+import hydra
+from hydra.utils import to_absolute_path
+from omegaconf import DictConfig, OmegaConf
+import torch
+from datetime import datetime
+from ..models.gpt import GPT
+from .optimizers import build_optimizer, optimizer_options
+from .lr_schedule import LearningRateSchedule, schedule_contract
+from .weight_averaging import TailWeightAverages, averaging_contract
+from ..utils.device import synchronize_device
+from ..data.loaders import TinyDataLoader, TextDataset
+from ..utils.checkpoint import (save_checkpoint, read_checkpoint, load_model_weights,
+                                capture_training_state, restore_training_state)
+from ..moe.moe_block import MoEBlock
+
+log = logging.getLogger(__name__)
+
+def _get_rss_mb() -> float:
+    rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    if sys.platform == "darwin":
+        rss_bytes = rss
+    else:
+        rss_bytes = rss * 1024
+    return rss_bytes / (1024 * 1024)
+
+
+def _get_accel_mem_mb(device: str) -> float | None:
+    if device.startswith("cuda") and torch.cuda.is_available():
+        return torch.cuda.max_memory_allocated(device) / (1024 * 1024)
+    if device == "mps" and hasattr(torch, "mps"):
+        current = getattr(torch.mps, "current_allocated_memory", None)
+        if callable(current):
+            return current() / (1024 * 1024)
+    return None
+
+
+def _get_cuda_device_index(device: str) -> int | None:
+    if not device.startswith("cuda"):
+        return None
+    if ":" in device:
+        _, _, suffix = device.partition(":")
+        try:
+            return int(suffix)
+        except ValueError:
+            return None
+    if torch.cuda.is_available():
+        return torch.cuda.current_device()
+    return 0
+
+
+def _get_cuda_usage(device: str) -> dict | None:
+    if not device.startswith("cuda") or not torch.cuda.is_available():
+        return None
+    if shutil.which("nvidia-smi") is None:
+        return None
+    device_index = _get_cuda_device_index(device)
+    if device_index is None:
+        return None
+    cmd = [
+        "nvidia-smi",
+        "--query-gpu=index,utilization.gpu,memory.used,memory.total",
+        "--format=csv,noheader,nounits",
+    ]
+    try:
+        result = subprocess.run(
+            cmd,
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=2.0,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+    for line in result.stdout.splitlines():
+        parts = [part.strip() for part in line.split(",")]
+        if len(parts) != 4:
+            continue
+        try:
+            gpu_index = int(parts[0])
+            utilization = float(parts[1])
+            memory_used = float(parts[2])
+            memory_total = float(parts[3])
+        except ValueError:
+            continue
+        if gpu_index == device_index:
+            return {
+                "gpu_index": gpu_index,
+                "utilization_pct": utilization,
+                "memory_used_mb": memory_used,
+                "memory_total_mb": memory_total,
+            }
+    return None
+
+
+def _collect_moe_hists(model: GPT) -> list[tuple[int, torch.Tensor]]:
+    hists = []
+    for layer_idx, block in enumerate(model.transformer.h):
+        mlp = getattr(block, "mlp", None)
+        if isinstance(mlp, MoEBlock) and mlp.last_expert_hist is not None:
+            hists.append((layer_idx, mlp.last_expert_hist.detach().to("cpu")))
+    return hists
+
+
+def _summarize_moe_usage(model: GPT) -> dict | None:
+    train_hists = _collect_moe_hists(model)
+    if not train_hists:
+        return None
+
+    stacked = torch.stack([hist for _, hist in train_hists], dim=0)
+    aggregate_total = stacked.sum().item()
+    if aggregate_total > 0:
+        aggregate_usage = (stacked.sum(dim=0).float() / aggregate_total).tolist()
+    else:
+        aggregate_usage = []
+
+    per_layer = []
+    for layer_idx, hist in train_hists:
+        layer_total = hist.sum().item()
+        if layer_total > 0:
+            layer_usage = (hist.float() / layer_total).tolist()
+        else:
+            layer_usage = []
+        per_layer.append(
+            {
+                "layer_idx": layer_idx,
+                "usage": [float(x) for x in layer_usage],
+            }
+        )
+
+    return {
+        "aggregate": [float(x) for x in aggregate_usage],
+        "per_layer": per_layer,
+    }
+
+
+def _append_metric(metric_path: Path, metric: dict) -> None:
+    metric_path.parent.mkdir(parents=True, exist_ok=True)
+    with metric_path.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(metric, sort_keys=True) + "\n")
+
+
+def _resolve_device(cfg: DictConfig) -> str:
+    device = str(cfg.training.device)
+    kind = torch.device(device).type
+    unavailable = ((kind == 'mps' and not torch.backends.mps.is_available())
+                   or (kind == 'cuda' and not torch.cuda.is_available()))
+    if unavailable:
+        if getattr(cfg.training, 'strict_device', False):
+            raise RuntimeError(f"Requested device {device!r} is unavailable; strict_device forbids CPU fallback")
+        if kind == 'mps':  # Preserve the legacy MPS fallback only.
+            device = 'cpu'
+    return device
+
+
+def _make_loader(cfg: DictConfig, device: str) -> TinyDataLoader:
+    seed = int(getattr(cfg.training, 'seed', 0))
+    tokenizer = getattr(cfg.data, 'tokenizer', 'char')
+    if tokenizer not in {'char', 'gpt2'}:
+        raise ValueError('data.tokenizer must be char or gpt2')
+    loader_class = TinyDataLoader if tokenizer == 'char' else TextDataset
+    return loader_class(
+        data_path=to_absolute_path(cfg.data.path),
+        batch_size=cfg.training.batch_size,
+        block_size=cfg.model.block_size,
+        device=device,
+        seed=seed,
+        train_fraction=getattr(cfg.data, 'train_fraction', .9),
+        val_fraction=getattr(cfg.data, 'val_fraction', .1),
+        eval_seed=getattr(cfg.training, 'eval_seed', seed + 1),
+        batch_layout=getattr(cfg.training, 'batch_layout', 'independent'),
+        **({'split_unit': 'raw_text'} if tokenizer == 'gpt2' else {}),
+    )
+
+
+def _training_contract(cfg: DictConfig, device: str, loader: TinyDataLoader) -> dict:
+    options = optimizer_options(cfg.training)
+    schedule = schedule_contract(cfg.training)
+    averaging = averaging_contract(cfg.training)
+    return {
+        **({'tokenizer': loader.tokenizer_contract} if hasattr(loader, 'tokenizer_contract') else {}),
+        **({'weight_averaging': averaging} if averaging is not None else {}),
+        **({'lr_schedule': schedule} if schedule is not None else {}),
+        **({'batch_layout': loader.batch_layout} if getattr(loader, 'batch_layout', 'independent') != 'independent' else {}),
+        **({'optimizer_contract': options} if options != {'optimizer': 'adamw', 'decay_mode': 'conventional'} or getattr(cfg.model, 'parameterization', 'sp') != 'sp' else {}),
+        'model': OmegaConf.to_container(cfg.model, resolve=True),
+        'data_sha256': hashlib.sha256(Path(to_absolute_path(cfg.data.path)).read_bytes()).hexdigest(),
+        'data_split': {'train_fraction': loader.train_fraction, 'val_fraction': loader.val_fraction},
+        'eval_seed': loader.eval_seed,
+        'torch_version': str(torch.__version__), 'device': str(device),
+        'training': {key: getattr(cfg.training, key, default) for key, default in
+                     [('batch_size', None), ('learning_rate', None), ('weight_decay', None),
+                      ('grad_clip', 0.0), ('seed', 0), ('eval_iters', 100)]},
+    }
+
+
+def _contracts_match(saved: dict | None, expected: dict) -> bool:
+    if not isinstance(saved, dict):
+        return False
+    # Corrected version-2 checkpoints from before configurable splits used
+    # exactly 90/10 and seed+1. Fill only those legacy defaults, never silently
+    # accept a changed research split or shared evaluation seed.
+    normalized = dict(saved)
+    normalized.setdefault('data_split', {'train_fraction': .9, 'val_fraction': .1})
+    normalized.setdefault('eval_seed', normalized.get('training', {}).get('seed', 0) + 1)
+    return normalized == expected
+
+
+def _evaluate(model: GPT, loader: TinyDataLoader, split: str, eval_iters: int) -> tuple[float, float | None]:
+    if split not in loader.generators:
+        raise ValueError(f"Evaluation split {split!r} is unavailable")
+    if eval_iters < 1:
+        raise ValueError('eval_iters must be >= 1')
+    loader.generators[split].manual_seed(loader.eval_seed + (split == 'test'))
+    model.eval()
+    losses = 0.0
+    aux_losses = 0.0
+    saw_aux = False
+    with torch.no_grad():
+        for _ in range(eval_iters):
+            x, y = loader.get_batch(split)
+            _, loss, breakdown = model(x, y, include_aux_loss=False, return_loss_breakdown=True)
+            if not torch.isfinite(loss).item():
+                raise FloatingPointError(f"Nonfinite {split} loss")
+            losses += loss.item()
+            if breakdown['aux_loss'] is not None:
+                if not torch.isfinite(breakdown['aux_loss']).item():
+                    raise FloatingPointError(f"Nonfinite {split} auxiliary loss")
+                saw_aux = True
+                aux_losses += breakdown['aux_loss'].item()
+    return losses / eval_iters, aux_losses / eval_iters if saw_aux else None
+
+
+def evaluate_checkpoint(cfg: DictConfig, checkpoint_path: str | Path,
+                        split: str = 'test', eval_iters: int | None = None) -> dict:
+    """Score a frozen checkpoint on a named split; training never calls this on test."""
+    if split not in ('val', 'test'):
+        raise ValueError("Evaluation split must be 'val' or 'test'")
+    cfg = OmegaConf.create(OmegaConf.to_container(cfg, resolve=True))
+    device = _resolve_device(cfg)
+    loader = _make_loader(cfg, device)
+    cfg.model.vocab_size = loader.vocab_size
+    from ..models.output_bias import validate_output_bias_training_data
+    validate_output_bias_training_data(cfg.model, loader, to_absolute_path(cfg.data.path))
+    checkpoint = read_checkpoint(to_absolute_path(str(checkpoint_path)), map_location='cpu')
+    contract = _training_contract(cfg, device, loader)
+    if not _contracts_match(checkpoint.get('training_state', {}).get('contract'), contract):
+        raise ValueError('Checkpoint evaluation requires matching model, data, device, PyTorch and evaluation settings')
+    model = GPT(cfg.model).to(device)
+    load_model_weights(model, checkpoint)
+    count = int(getattr(cfg.training, 'eval_iters', 100) if eval_iters is None else eval_iters)
+    loss, aux_loss = _evaluate(model, loader, split, count)
+    return {
+        'split': split, 'loss': loss, 'ce_loss': loss, 'aux_loss': aux_loss,
+        'eval_iters': count, 'eval_seed': loader.eval_seed + (split == 'test'),
+        'tokens_evaluated': count * cfg.training.batch_size * cfg.model.block_size,
+        'checkpoint_step': int(checkpoint['step']), 'device': device,
+    }
+
+
+def run_training(cfg: DictConfig, *, output_sink=None) -> dict:
+    if output_sink is not None:
+        output_sink.validate_config(cfg)
+    eval_every = int(getattr(cfg.training, "eval_every", 400))
+    eval_iters = int(getattr(cfg.training, "eval_iters", 100))
+    if eval_every < 1:
+        raise ValueError("cfg.training.eval_every must be >= 1")
+    if eval_iters < 1:
+        raise ValueError("cfg.training.eval_iters must be >= 1")
+    metrics_file = getattr(cfg.training, "metrics_file", None)
+    summary_file = getattr(cfg.training, "summary_file", None)
+    metrics_path = Path(to_absolute_path(metrics_file)) if metrics_file else None
+    summary_path = Path(to_absolute_path(summary_file)) if summary_file else None
+
+    seed = int(getattr(cfg.training, "seed", 0))
+    torch.manual_seed(seed)
+    if cfg.training.max_iters < 1:
+        raise ValueError("training.max_iters must be >= 1")
+    device = _resolve_device(cfg)
+    loader = _make_loader(cfg, device)
+    cfg.model.vocab_size = loader.vocab_size
+    from ..models.output_bias import validate_output_bias_training_data
+    validate_output_bias_training_data(cfg.model, loader, to_absolute_path(cfg.data.path))
+    model = GPT(cfg.model).to(device)
+    optimizer = build_optimizer(model, cfg.training)
+    # Capture configured base rates before loading any scheduled checkpoint.
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+    weight_averages = TailWeightAverages(model, cfg.training)
+    checkpoint_dir = to_absolute_path(cfg.training.checkpoint_dir) if cfg.training.checkpoint_dir else None
+    checkpoint_every = cfg.training.checkpoint_every
+    if checkpoint_dir and output_sink is None:
+        Path(checkpoint_dir).mkdir(parents=True, exist_ok=True)
+    log.info("Starting training: %s + %s on %s", cfg.model.attn_type, cfg.model.mlp_type, device)
+
+    budget = getattr(cfg.training, "max_train_seconds", None)
+    if budget is not None and (not math.isfinite(float(budget)) or float(budget) <= 0):
+        raise ValueError("max_train_seconds must be positive or null")
+    contract = _training_contract(cfg, device, loader)
+    metrics = []
+    completed_steps = 0
+    training_seconds = 0.0
+    best_metric = None
+    best_checkpoint_path = None
+    resume = getattr(cfg.training, "resume_from", None)
+    if resume:
+        ckpt = read_checkpoint(to_absolute_path(resume), map_location='cpu')
+        state = ckpt.get('training_state')
+        if state is None or not _contracts_match(state.get('contract'), contract):
+            raise ValueError("Resume requires matching model, data, optimizer, device, PyTorch and evaluation settings")
+        load_model_weights(model, ckpt, for_resume=True)
+        optimizer.load_state_dict(ckpt['optimizer_state'])
+        completed_steps = int(ckpt['step'])
+        training_seconds = state['training_seconds']
+        metrics = state['metrics']
+        best_metric = state['best_metric']
+        best_checkpoint_path = state['best_checkpoint']
+        restore_training_state(state, loader, device)
+        weight_averages.load_state_dict(state.get('weight_averaging_state'), completed_steps)
+
+    def save_run(path):
+        state = capture_training_state(
+            loader, device, contract=contract, training_seconds=training_seconds,
+            metrics=metrics, best_metric=best_metric, best_checkpoint=best_checkpoint_path,
+        )
+        if weight_averages.spec is not None:
+            state['weight_averaging_state'] = weight_averages.state_dict()
+        save_checkpoint(path, model, optimizer=optimizer, step=completed_steps,
+                        cfg=cfg, training_state=state,
+                        **({"payload_writer": output_sink.checkpoint} if output_sink is not None else {}))
+
+    if str(device).startswith('cuda'):
+        torch.cuda.reset_peak_memory_stats(device)
+    start_time = time.perf_counter()
+    final_checkpoint_path = None
+    stop_reason = "max_iters"
+    for iter in range(completed_steps, cfg.training.max_iters):
+        if budget is not None and training_seconds >= budget:
+            stop_reason = "time_budget"
+            break
+        model.train()
+        synchronize_device(device)
+        iter_start = time.perf_counter()
+        xb, yb = loader.get_batch('train')
+        objective_kwargs = ({"include_training_objective": True}
+                            if getattr(model, "logit_z_signature", None) is not None else {})
+        logits, loss, train_loss_breakdown = model(xb, yb, return_loss_breakdown=True, **objective_kwargs)
+        optimizer.zero_grad(set_to_none=True)
+        if not torch.isfinite(loss).item():
+            raise FloatingPointError("Nonfinite training loss")
+        loss.backward()
+        grad_clip = float(getattr(cfg.training, "grad_clip", 0.0))
+        if grad_clip > 0:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip, error_if_nonfinite=True)
+        lr_multiplier = lr_schedule.apply(iter)
+        optimizer.step()
+        weight_averages.update(iter + 1)
+        synchronize_device(device)
+        iter_time = time.perf_counter() - iter_start
+        completed_steps = iter + 1
+        training_seconds += iter_time
+        budget_reached = budget is not None and training_seconds >= budget
+
+        if iter % eval_every == 0 or iter == cfg.training.max_iters - 1 or budget_reached:
+            elapsed = time.perf_counter() - start_time
+            rss_mb = _get_rss_mb()
+            accel_mb = _get_accel_mem_mb(device)
+            cuda_usage = _get_cuda_usage(device)
+            # Snapshot training routing before evaluation overwrites the histograms.
+            moe_usage = _summarize_moe_usage(model)
+            avg_eval_loss, avg_eval_aux_loss = _evaluate(model, loader, 'val', eval_iters)
+            ppl = math.exp(avg_eval_loss)
+            train_ce_loss = train_loss_breakdown["ce_loss"]
+            train_aux_loss = train_loss_breakdown["aux_loss"]
+
+            if train_aux_loss is None and accel_mb is None:
+                log.info(
+                    "Step %d: Loss %.4f | val %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB",
+                    iter,
+                    loss.item(),
+                    avg_eval_loss,
+                    ppl,
+                    iter_time,
+                    elapsed,
+                    rss_mb,
+                )
+            elif train_aux_loss is None:
+                log.info(
+                    "Step %d: Loss %.4f | val %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB | accel %.1f MB",
+                    iter,
+                    loss.item(),
+                    avg_eval_loss,
+                    ppl,
+                    iter_time,
+                    elapsed,
+                    rss_mb,
+                    accel_mb,
+                )
+            elif accel_mb is None:
+                log.info(
+                    "Step %d: Loss %.4f | ce %.4f | aux %.4f | val_ce %.4f | val_aux %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB",
+                    iter,
+                    loss.item(),
+                    train_ce_loss.item(),
+                    train_aux_loss.item(),
+                    avg_eval_loss,
+                    0.0 if avg_eval_aux_loss is None else avg_eval_aux_loss,
+                    ppl,
+                    iter_time,
+                    elapsed,
+                    rss_mb,
+                )
+            else:
+                log.info(
+                    "Step %d: Loss %.4f | ce %.4f | aux %.4f | val_ce %.4f | val_aux %.4f | ppl %.2f | iter %.3fs | elapsed %.1fs | rss %.1f MB | accel %.1f MB",
+                    iter,
+                    loss.item(),
+                    train_ce_loss.item(),
+                    train_aux_loss.item(),
+                    avg_eval_loss,
+                    0.0 if avg_eval_aux_loss is None else avg_eval_aux_loss,
+                    ppl,
+                    iter_time,
+                    elapsed,
+                    rss_mb,
+                    accel_mb,
+                )
+            if "logit_z_coefficient" in train_loss_breakdown:
+                log.info("Training objective: ce %.6f | logit_z_coefficient %.6g | logit_z_squared_mean %s | logit_z_penalty %s | logit_z_mean %s | total %.6f",
+                         train_ce_loss.item(), train_loss_breakdown["logit_z_coefficient"],
+                         *[None if train_loss_breakdown[k] is None else train_loss_breakdown[k].item()
+                           for k in ("logit_z_squared_mean", "logit_z_penalty", "logit_z_mean")], loss.item())
+            if cuda_usage is not None:
+                log.info(
+                    "CUDA usage (gpu %d): util %.1f%% | used %.1f / %.1f MB",
+                    cuda_usage["gpu_index"],
+                    cuda_usage["utilization_pct"],
+                    cuda_usage["memory_used_mb"],
+                    cuda_usage["memory_total_mb"],
+                )
+            if moe_usage is not None:
+                usage_str = ", ".join(f"{u:.3f}" for u in moe_usage["aggregate"]) or "n/a"
+                log.info("MoE expert usage (train batch, top-k assignments): %s", usage_str)
+                for layer_usage in moe_usage["per_layer"]:
+                    layer_usage_str = ", ".join(f"{u:.3f}" for u in layer_usage["usage"]) or "n/a"
+                    log.info("MoE expert usage (layer %d): %s", layer_usage["layer_idx"], layer_usage_str)
+
+            metric = {
+                **({'averaging_snapshots': weight_averages.snapshots}
+                   if weight_averages.spec is not None else {}),
+                **({'lr_multiplier': lr_multiplier,
+                    'base_learning_rate': float(cfg.training.learning_rate),
+                    'scheduled_learning_rate': float(cfg.training.learning_rate) * lr_multiplier}
+                   if lr_multiplier is not None else {}),
+                "step": iter,
+                "tokens_processed": (iter + 1) * cfg.training.batch_size * cfg.model.block_size,
+                "train_loss": float(loss.item()),
+                "train_total_loss": float(loss.item()),
+                "train_ce_loss": float(train_ce_loss.item()),
+                "train_aux_loss": None if train_aux_loss is None else float(train_aux_loss.item()),
+                "val_loss": float(avg_eval_loss),
+                "val_ce_loss": float(avg_eval_loss),
+                "val_aux_loss": None if avg_eval_aux_loss is None else float(avg_eval_aux_loss),
+                "ppl": float(ppl),
+                "iter_time_sec": float(iter_time),
+                "elapsed_time_sec": float(elapsed),
+                "training_time_sec": training_seconds,
+                "accel_mem_kind": "cuda_peak_allocated" if str(device).startswith('cuda') else "mps_current_allocated" if device == 'mps' else None,
+                "rss_kind": "process_lifetime_peak",
+                "rss_mb": float(rss_mb),
+                "accel_mem_mb": None if accel_mb is None else float(accel_mb),
+                "device": device,
+                "cuda": cuda_usage,
+                "moe_usage": moe_usage,
+            }
+            if "logit_z_coefficient" in train_loss_breakdown:
+                metric["train_logit_z_coefficient"] = train_loss_breakdown["logit_z_coefficient"]
+                for key in ("logit_z_squared_mean", "logit_z_penalty", "logit_z_mean"):
+                    value = train_loss_breakdown[key]
+                    metric["train_" + key] = None if value is None else float(value.item())
+            metrics.append(metric)
+            if best_metric is None or metric['val_loss'] < best_metric['val_loss']:
+                best_metric = metric
+                if checkpoint_dir and getattr(cfg.training, 'keep_best_checkpoint', True):
+                    best_checkpoint_path = str(Path(checkpoint_dir) / f"best_{completed_steps:06d}_{time.time_ns()}.pt")
+                    save_run(best_checkpoint_path)
+            if metrics_path is not None:
+                if output_sink is None:
+                    _append_metric(metrics_path, metric)
+                else:
+                    output_sink.metric(metrics_path, metric)
+        if checkpoint_dir and checkpoint_every > 0 and completed_steps % checkpoint_every == 0:
+            ckpt_path = Path(checkpoint_dir) / f"step_{completed_steps:06d}_{time.time_ns()}.pt"
+            save_run(ckpt_path)
+            final_checkpoint_path = str(ckpt_path)
+        if budget_reached:
+            stop_reason = "time_budget"
+            break
+    if checkpoint_dir:
+        ckpt_path = Path(checkpoint_dir) / f"final_{completed_steps:06d}_{time.time_ns()}.pt"
+        save_run(ckpt_path)
+        final_checkpoint_path = str(ckpt_path)
+
+    result = {
+        "device": device,
+        "metrics": metrics,
+        "best_metric": best_metric,
+        "final_metric": metrics[-1] if metrics else None,
+        "final_checkpoint": final_checkpoint_path,
+        "max_iters": int(cfg.training.max_iters),
+        "completed_steps": completed_steps,
+        "training_time_sec": training_seconds,
+        "stop_reason": stop_reason,
+        "best_checkpoint": best_checkpoint_path,
+        "eval_every": eval_every,
+        "eval_iters": eval_iters,
+    }
+    if weight_averages.spec is not None:
+        result['weight_averaging'] = dict(spec=weight_averages.spec,
+            completed_steps=weight_averages.completed_steps, snapshots=weight_averages.snapshots)
+    if summary_path is not None:
+        if output_sink is None:
+            summary_path.parent.mkdir(parents=True, exist_ok=True)
+            with summary_path.open("w", encoding="utf-8") as fh:
+                json.dump(result, fh, indent=2, sort_keys=True)
+        else:
+            output_sink.summary(summary_path, result)
+    return result
+
+
+@hydra.main(version_base=None, config_path="../config", config_name="mac_tinyshakespeare")
+def train(cfg: DictConfig):
+    run_training(cfg)
+
+
+if __name__ == "__main__":
+    train()

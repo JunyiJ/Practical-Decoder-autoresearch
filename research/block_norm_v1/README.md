@@ -1,9 +1,9 @@
-# Standalone block normalization prerequisite v1
+# Block normalization prerequisites v1
 
-This directory provides a prospective normalizer specification and CPU reference
-checks only. It does not register a model policy or enable training/checkpoint
-loading. The full model, optimizer, cache, serialization and MPS integration are
-not yet validated. Frozen original/recovery source and evidence are unchanged.
+This directory provides a prospective normalizer specification, CPU reference
+checks and a separately namespaced unmodified runtime baseline. It does not yet
+register a candidate model policy or enable candidate training/checkpoint loading.
+Candidate model, optimizer, cache, serialization and MPS integration remain unvalidated. Frozen original/recovery source and evidence are unchanged.
 
 `spec.py` binds kind, width256, FP32, epsilon2^-23, affine/bias and pre-attention/
 pre-FFN placement. The control uses exact native RMSNorm with `eps=None`; the
@@ -43,3 +43,21 @@ checkpoint/cache integration and source applicability without editing frozen
 runtime artifacts or bypassing RMS-only validators. The prospective panel's
 2.186GB storage deficit remains a training gate; do not poll unchanged capacity
 or narrow the design merely to fit. See TOKENIZER_BLOCK_NORM_PREPARATION.md.
+
+
+## Runtime integration baseline
+
+See [INTEGRATION_CONTRACT.md](INTEGRATION_CONTRACT.md) for the import map, source
+applicability, prospective edit allowlist and required full-model tests. The43
+module copy under `runtime` is byte-identical to its original source. It passed
+five guarded tests: import isolation, exact initial state/RNG/logits/loss and
+old-new cached state/output, optimizer group equivalence and RMS-only rejection.
+No candidate policy or optimizer update was exercised. Attempt001 stopped before
+tests on sandbox PermissionError; attempt002 passed unchanged sources using
+authorized process access. All snapshots/reports remain immutable. Do not rerun
+those evidence attempts or invoke the copied Hydra CLI.
+
+The staged whitespace check reports only six inherited lines: the exact baseline
+and two immutable snapshots each retain original `attention/mha.py:106` and
+`attention/mla.py:66` whitespace. These bytes are intentionally unchanged to
+preserve origin hashes. No new authored whitespace error was found.

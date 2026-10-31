@@ -1,0 +1,1183 @@
+{
+  "status": "static_relative_import_closure_mapped",
+  "observed_at": "2026-10-31T20:02:24.973888+00:00",
+  "source_commit": "16dea5451a6de91a4631989c833894cdad6c4a19",
+  "roots": [
+    "src.models.gpt",
+    "src.attention.cache",
+    "src.train.train",
+    "src.train.optimizers",
+    "src.train.weight_averaging",
+    "src.utils.checkpoint"
+  ],
+  "modules": {
+    "src": {
+      "path": "src/__init__.py",
+      "sha256": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+      "size": 62
+    },
+    "src.attention": {
+      "path": "src/attention/__init__.py",
+      "sha256": "d4b73c2244f2e465ea8e727c9c057a0f8e186ffe4002aabedfd2c2c6142c9907",
+      "size": 55
+    },
+    "src.attention.cache": {
+      "path": "src/attention/cache.py",
+      "sha256": "ca863d6e62af28e8c4512c5966fd7e3c7544f3e7586e43dd8006e737bb79edd0",
+      "size": 5174
+    },
+    "src.attention.gqa": {
+      "path": "src/attention/gqa.py",
+      "sha256": "8edc87d788332893cea1022e81f608d737baa92625d785e502cc62c40316aa1e",
+      "size": 5256
+    },
+    "src.attention.kda": {
+      "path": "src/attention/kda.py",
+      "sha256": "333c36d0b552492da4375ff4fa7a1005fb724461e0ed10501208031121706894",
+      "size": 5993
+    },
+    "src.attention.kda_scaling": {
+      "path": "src/attention/kda_scaling.py",
+      "sha256": "daa4500c4ccf5a4083692d79bffa14db526bcbef6b64dde4cd92903b54bdfaee",
+      "size": 2871
+    },
+    "src.attention.mha": {
+      "path": "src/attention/mha.py",
+      "sha256": "e87892e5fa51d0ca0b208e499ea57fa765138f211fea954892ae44b9837d8834",
+      "size": 7539
+    },
+    "src.attention.mla": {
+      "path": "src/attention/mla.py",
+      "sha256": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+      "size": 10621
+    },
+    "src.attention.output_gate": {
+      "path": "src/attention/output_gate.py",
+      "sha256": "d9d7671cdfa0d8e3a09ee0a79eae2ce19eae12fdd15ec2a3748adf8abede7dbc",
+      "size": 4430
+    },
+    "src.attention.qk_norm": {
+      "path": "src/attention/qk_norm.py",
+      "sha256": "ae69b95907398bcddb5044b12f5529bf41e368aea6c9bc26c6f899f4dffbc69f",
+      "size": 2624
+    },
+    "src.data.loaders": {
+      "path": "src/data/loaders.py",
+      "sha256": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+      "size": 7960
+    },
+    "src.models": {
+      "path": "src/models/__init__.py",
+      "sha256": "2db522babfe2d440c4d816dcccaa624999516930bb214b731fa16cfbc34cce20",
+      "size": 46
+    },
+    "src.models.attention_scale": {
+      "path": "src/models/attention_scale.py",
+      "sha256": "c964f5b9532684e9b244a5f03a6da6a65ba998611b04a27a7553ad21ff26bf7e",
+      "size": 3370
+    },
+    "src.models.blocks": {
+      "path": "src/models/blocks.py",
+      "sha256": "99f74dea226a87f585b72aec8c5186d8261f6e857951556eec8899ea436f035e",
+      "size": 6553
+    },
+    "src.models.depth_scaling": {
+      "path": "src/models/depth_scaling.py",
+      "sha256": "a7f3f3b913b797cca8fe0d5d44385c86df41f8a5ca68b1c197136a838cc31448",
+      "size": 1582
+    },
+    "src.models.embedding_scale": {
+      "path": "src/models/embedding_scale.py",
+      "sha256": "596783ac8b1c1753f26a13571fa7c000aaa5fd5e1c93bfe59b03a99fa00f7c51",
+      "size": 3482
+    },
+    "src.models.ffn_hidden_norm": {
+      "path": "src/models/ffn_hidden_norm.py",
+      "sha256": "b4bc9d79c16e84d6c6640427edee8736a9d14cfb5ff7ff37c2ca24c1aad203d5",
+      "size": 2880
+    },
+    "src.models.gated_activation": {
+      "path": "src/models/gated_activation.py",
+      "sha256": "8c811ce6b655ca29b1d3adda0c50db4450e01b213981be2c7458f87f485bb1cc",
+      "size": 3858
+    },
+    "src.models.gpt": {
+      "path": "src/models/gpt.py",
+      "sha256": "90daf16e0956eecdeb08a778db52b3896108993a1e1d463a423c60a4937f2add",
+      "size": 9291
+    },
+    "src.models.logit_z": {
+      "path": "src/models/logit_z.py",
+      "sha256": "16e1a305b6049b5f197bd2cbbc1102cd71f927c996a6657b13d203a72739f802",
+      "size": 5073
+    },
+    "src.models.mlp": {
+      "path": "src/models/mlp.py",
+      "sha256": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+      "size": 1347
+    },
+    "src.models.output_bias": {
+      "path": "src/models/output_bias.py",
+      "sha256": "22e095ab917f49360a114085c45cd6aa1fc675296d144ea80a6870422879099d",
+      "size": 11003
+    },
+    "src.models.position_family": {
+      "path": "src/models/position_family.py",
+      "sha256": "388c3f0e523b81d3037216a7db7de5069a9f5322280c4057d0e8fc6f08e73549",
+      "size": 6154
+    },
+    "src.models.readout_norm": {
+      "path": "src/models/readout_norm.py",
+      "sha256": "c3de6242e3b8867be43bd21d72eb9d21224a89aabd8d40bd4eafdd36c9b9fc22",
+      "size": 4208
+    },
+    "src.models.residual_gain": {
+      "path": "src/models/residual_gain.py",
+      "sha256": "db9641bc6e45ffdada8f138e2531c1d600154083cbd8acb333708c8afe781436",
+      "size": 4407
+    },
+    "src.models.residual_topology": {
+      "path": "src/models/residual_topology.py",
+      "sha256": "cbcbe3dba3c726a7e88e6c025b69de37d21a053b43ca3773d9b77d90091c88fd",
+      "size": 3008
+    },
+    "src.models.rope": {
+      "path": "src/models/rope.py",
+      "sha256": "33bda2c5d2a4c312d65e2e294c5de944ff84d2c231bf40001f621a9399f6e5d3",
+      "size": 2395
+    },
+    "src.models.tokenizer_activation": {
+      "path": "src/models/tokenizer_activation.py",
+      "sha256": "0b66fbbefd9ac04567c96a0f09738483dd02d78890bcddb9515a8cd34f663612",
+      "size": 1187
+    },
+    "src.models.tokenizer_architecture": {
+      "path": "src/models/tokenizer_architecture.py",
+      "sha256": "e58a8926700f4d3930e465a41fe185672b94fdf90d4db40f4b44bc6d43595af7",
+      "size": 6780
+    },
+    "src.models.tokenizer_hybrid": {
+      "path": "src/models/tokenizer_hybrid.py",
+      "sha256": "cdab512a0f6d93464bbf4095a6c77a93198e376da3ba53955dfcb556003dd064",
+      "size": 7739
+    },
+    "src.models.tokenizer_tables": {
+      "path": "src/models/tokenizer_tables.py",
+      "sha256": "0d946deb390b717aa76281fafee61722bea269be636afe472bed85a193dfcb92",
+      "size": 1397
+    },
+    "src.models.value_residual": {
+      "path": "src/models/value_residual.py",
+      "sha256": "144ad67287d95bd5bd8feec443c7cdda584b1999a89753bdb5f39177d208e4ce",
+      "size": 3900
+    },
+    "src.models.weight_tying": {
+      "path": "src/models/weight_tying.py",
+      "sha256": "c7bb966e9c01811aaf0636c0e657d1c1c0baa2403870f886fb70c44d3064151e",
+      "size": 4434
+    },
+    "src.moe": {
+      "path": "src/moe/__init__.py",
+      "sha256": "f0911c8ad4ac9dc58ac16bd6ea8b33c9d7300f021ad5bc39aa33f1817b0662a9",
+      "size": 59
+    },
+    "src.moe.moe_block": {
+      "path": "src/moe/moe_block.py",
+      "sha256": "c29fb1be70bb4de5584bcbd5fb71cdb7088b5fd87868853aadf875116efd945f",
+      "size": 4213
+    },
+    "src.moe.scaling": {
+      "path": "src/moe/scaling.py",
+      "sha256": "c0265ce242f560a6816d8769f8a756ade2c6ee328ac355e32683192e88dee2bc",
+      "size": 1278
+    },
+    "src.train.lr_schedule": {
+      "path": "src/train/lr_schedule.py",
+      "sha256": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6",
+      "size": 4811
+    },
+    "src.train.optimizers": {
+      "path": "src/train/optimizers.py",
+      "sha256": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+      "size": 11544
+    },
+    "src.train.train": {
+      "path": "src/train/train.py",
+      "sha256": "991d6fee3b969a69c4c19fa235dc8e2d8423e51500596fdc7cc850789cc33cb2",
+      "size": 24897
+    },
+    "src.train.weight_averaging": {
+      "path": "src/train/weight_averaging.py",
+      "sha256": "a2ffa1acff302190065fddb53db1dc234ab8ec5c71f929128459cda3059fbf20",
+      "size": 11865
+    },
+    "src.utils": {
+      "path": "src/utils/__init__.py",
+      "sha256": "3e61d7fcea9efad4762e2bfe8d9a318ab0bad69ccb5184b3505b7963233eba7a",
+      "size": 107
+    },
+    "src.utils.checkpoint": {
+      "path": "src/utils/checkpoint.py",
+      "sha256": "05d2a9b8b0f1d08a2017e551e86c66bafb4c297e1e73f13bf50e734e552c6a6f",
+      "size": 6890
+    },
+    "src.utils.device": {
+      "path": "src/utils/device.py",
+      "sha256": "fa74ad997cad2b8eb4e906118980250768c875623d5c595409665ad6be40c091",
+      "size": 970
+    }
+  },
+  "module_count": 43,
+  "source_bytes": 213313,
+  "edges": [
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.train.train",
+      "line": 61
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.output_bias",
+      "line": 62
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.tokenizer_architecture",
+      "line": 84
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.logit_z",
+      "line": 86
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.position_family",
+      "line": 88
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.value_residual",
+      "line": 90
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.residual_gain",
+      "line": 92
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.gated_activation",
+      "line": 94
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.attention_scale",
+      "line": 96
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.residual_topology",
+      "line": 98
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.weight_tying",
+      "line": 100
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.output_bias",
+      "line": 102
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.embedding_scale",
+      "line": 104
+    },
+    {
+      "source": "src.utils.checkpoint",
+      "target": "src.models.readout_norm",
+      "line": 106
+    },
+    {
+      "source": "src.models.embedding_scale",
+      "target": "src.models.readout_norm",
+      "line": 48
+    },
+    {
+      "source": "src.models.output_bias",
+      "target": "src.models.tokenizer_architecture",
+      "line": 132
+    },
+    {
+      "source": "src.models.output_bias",
+      "target": "src.models.readout_norm",
+      "line": 152
+    },
+    {
+      "source": "src.models.output_bias",
+      "target": "src.models.tokenizer_architecture",
+      "line": 186
+    },
+    {
+      "source": "src.models.output_bias",
+      "target": "src.models.readout_norm",
+      "line": 135
+    },
+    {
+      "source": "src.models.tokenizer_architecture",
+      "target": "src.models.tokenizer_activation",
+      "line": 26
+    },
+    {
+      "source": "src.models.tokenizer_architecture",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 30
+    },
+    {
+      "source": "src.models.tokenizer_architecture",
+      "target": "src.models.tokenizer_tables",
+      "line": 34
+    },
+    {
+      "source": "src.models.tokenizer_architecture",
+      "target": "src.attention.gqa",
+      "line": 91
+    },
+    {
+      "source": "src.models.tokenizer_architecture",
+      "target": "src.attention.mha",
+      "line": 92
+    },
+    {
+      "source": "src.models.tokenizer_architecture",
+      "target": "src.attention.mla",
+      "line": 93
+    },
+    {
+      "source": "src.models.tokenizer_architecture",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 86
+    },
+    {
+      "source": "src.models.tokenizer_hybrid",
+      "target": "src.models.tokenizer_architecture",
+      "line": 23
+    },
+    {
+      "source": "src.models.tokenizer_hybrid",
+      "target": "src.attention.kda",
+      "line": 71
+    },
+    {
+      "source": "src.models.tokenizer_hybrid",
+      "target": "src.attention.mla",
+      "line": 72
+    },
+    {
+      "source": "src.attention.mla",
+      "target": "src.models.rope",
+      "line": 6
+    },
+    {
+      "source": "src.attention.mla",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 11
+    },
+    {
+      "source": "src.attention.mla",
+      "target": "src.models.tokenizer_architecture",
+      "line": 17
+    },
+    {
+      "source": "src.attention.mla",
+      "target": "src.models.attention_scale",
+      "line": 34
+    },
+    {
+      "source": "src.attention.mla",
+      "target": "src.models.attention_scale",
+      "line": 125
+    },
+    {
+      "source": "src.models.attention_scale",
+      "target": "src.models.tokenizer_architecture",
+      "line": 18
+    },
+    {
+      "source": "src.models.attention_scale",
+      "target": "src.models.residual_topology",
+      "line": 25
+    },
+    {
+      "source": "src.models.attention_scale",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 49
+    },
+    {
+      "source": "src.models.residual_topology",
+      "target": "src.models.weight_tying",
+      "line": 26
+    },
+    {
+      "source": "src.models.weight_tying",
+      "target": "src.models.tokenizer_tables",
+      "line": 25
+    },
+    {
+      "source": "src.models.weight_tying",
+      "target": "src.models.output_bias",
+      "line": 32
+    },
+    {
+      "source": "src.models.tokenizer_tables",
+      "target": "src.models.tokenizer_architecture",
+      "line": 20
+    },
+    {
+      "source": "src.models.rope",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 10
+    },
+    {
+      "source": "src.models.rope",
+      "target": "src.models.position_family",
+      "line": 13
+    },
+    {
+      "source": "src.models.position_family",
+      "target": "src.models.value_residual",
+      "line": 23
+    },
+    {
+      "source": "src.models.value_residual",
+      "target": "src.models.residual_gain",
+      "line": 13
+    },
+    {
+      "source": "src.models.residual_gain",
+      "target": "src.models.gated_activation",
+      "line": 21
+    },
+    {
+      "source": "src.models.gated_activation",
+      "target": "src.models.tokenizer_activation",
+      "line": 15
+    },
+    {
+      "source": "src.models.gated_activation",
+      "target": "src.models.attention_scale",
+      "line": 26
+    },
+    {
+      "source": "src.models.tokenizer_activation",
+      "target": "src.models.tokenizer_architecture",
+      "line": 19
+    },
+    {
+      "source": "src.attention.kda",
+      "target": "src.attention.kda_scaling",
+      "line": 20
+    },
+    {
+      "source": "src.attention.kda_scaling",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 18
+    },
+    {
+      "source": "src.attention.mha",
+      "target": "src.models.rope",
+      "line": 6
+    },
+    {
+      "source": "src.attention.mha",
+      "target": "src.models.position_family",
+      "line": 7
+    },
+    {
+      "source": "src.attention.mha",
+      "target": "src.models.value_residual",
+      "line": 8
+    },
+    {
+      "source": "src.attention.mha",
+      "target": "src.models.attention_scale",
+      "line": 9
+    },
+    {
+      "source": "src.attention.mha",
+      "target": "src.attention.qk_norm",
+      "line": 10
+    },
+    {
+      "source": "src.attention.mha",
+      "target": "src.attention.output_gate",
+      "line": 11
+    },
+    {
+      "source": "src.attention.output_gate",
+      "target": "src.attention.qk_norm",
+      "line": 72
+    },
+    {
+      "source": "src.attention.gqa",
+      "target": "src.models.rope",
+      "line": 6
+    },
+    {
+      "source": "src.attention.gqa",
+      "target": "src.models.tokenizer_architecture",
+      "line": 15
+    },
+    {
+      "source": "src.attention.gqa",
+      "target": "src.models.attention_scale",
+      "line": 34
+    },
+    {
+      "source": "src.models.logit_z",
+      "target": "src.models.position_family",
+      "line": 26
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.models.gpt",
+      "line": 17
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.train.optimizers",
+      "line": 18
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.train.lr_schedule",
+      "line": 19
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.train.weight_averaging",
+      "line": 20
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.utils.device",
+      "line": 21
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.data.loaders",
+      "line": 22
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.utils.checkpoint",
+      "line": 23
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.moe.moe_block",
+      "line": 25
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.models.output_bias",
+      "line": 253
+    },
+    {
+      "source": "src.train.train",
+      "target": "src.models.output_bias",
+      "line": 292
+    },
+    {
+      "source": "src.moe.moe_block",
+      "target": "src.models.mlp",
+      "line": 6
+    },
+    {
+      "source": "src.moe.moe_block",
+      "target": "src.moe.scaling",
+      "line": 15
+    },
+    {
+      "source": "src.models.mlp",
+      "target": "src.models.ffn_hidden_norm",
+      "line": 17
+    },
+    {
+      "source": "src.models.ffn_hidden_norm",
+      "target": "src.attention.output_gate",
+      "line": 44
+    },
+    {
+      "source": "src.utils",
+      "target": "src.utils.checkpoint",
+      "line": 1
+    },
+    {
+      "source": "src.train.weight_averaging",
+      "target": "src.models.gpt",
+      "line": 149
+    },
+    {
+      "source": "src.train.weight_averaging",
+      "target": "src.utils.checkpoint",
+      "line": 150
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.blocks",
+      "line": 5
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.rope",
+      "line": 6
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.tokenizer_architecture",
+      "line": 12
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.logit_z",
+      "line": 14
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.position_family",
+      "line": 16
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.value_residual",
+      "line": 18
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.residual_gain",
+      "line": 20
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.gated_activation",
+      "line": 22
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.attention_scale",
+      "line": 24
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.residual_topology",
+      "line": 26
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.weight_tying",
+      "line": 28
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.output_bias",
+      "line": 31
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.embedding_scale",
+      "line": 33
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.readout_norm",
+      "line": 35
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.attention.kda_scaling",
+      "line": 37
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.ffn_hidden_norm",
+      "line": 40
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.attention.output_gate",
+      "line": 42
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.attention.qk_norm",
+      "line": 44
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.logit_z",
+      "line": 107
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.depth_scaling",
+      "line": 51
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 130
+    },
+    {
+      "source": "src.models.gpt",
+      "target": "src.models.logit_z",
+      "line": 166
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.attention.mha",
+      "line": 3
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.attention.gqa",
+      "line": 4
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.attention.mla",
+      "line": 5
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.attention.kda",
+      "line": 6
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.moe.moe_block",
+      "line": 7
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.rope",
+      "line": 9
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.mlp",
+      "line": 10
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 15
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.residual_topology",
+      "line": 18
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.ffn_hidden_norm",
+      "line": 20
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.gated_activation",
+      "line": 22
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.residual_gain",
+      "line": 108
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.models.residual_gain",
+      "line": 124
+    },
+    {
+      "source": "src.models.blocks",
+      "target": "src.moe.scaling",
+      "line": 67
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.tokenizer_architecture",
+      "line": 66
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.logit_z",
+      "line": 68
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.position_family",
+      "line": 70
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.value_residual",
+      "line": 72
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.residual_gain",
+      "line": 74
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.gated_activation",
+      "line": 76
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.attention_scale",
+      "line": 78
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.residual_topology",
+      "line": 80
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.weight_tying",
+      "line": 82
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.embedding_scale",
+      "line": 84
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.readout_norm",
+      "line": 86
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.output_bias",
+      "line": 88
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 101
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.attention.kda_scaling",
+      "line": 103
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.ffn_hidden_norm",
+      "line": 107
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.attention.output_gate",
+      "line": 109
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.attention.qk_norm",
+      "line": 111
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.tokenizer_architecture",
+      "line": 117
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.models.depth_scaling",
+      "line": 153
+    },
+    {
+      "source": "src.train.optimizers",
+      "target": "src.moe.scaling",
+      "line": 157
+    },
+    {
+      "source": "src.attention.cache",
+      "target": "src.attention.mla",
+      "line": 3
+    },
+    {
+      "source": "src.attention.cache",
+      "target": "src.attention.gqa",
+      "line": 4
+    },
+    {
+      "source": "src.attention.cache",
+      "target": "src.models.tokenizer_hybrid",
+      "line": 9
+    }
+  ],
+  "external_import_roots": [
+    "__future__",
+    "collections",
+    "copy",
+    "datetime",
+    "hashlib",
+    "hydra",
+    "importlib",
+    "io",
+    "json",
+    "logging",
+    "math",
+    "omegaconf",
+    "os",
+    "pathlib",
+    "resource",
+    "shutil",
+    "subprocess",
+    "sys",
+    "tiktoken",
+    "time",
+    "torch",
+    "typing",
+    "warnings"
+  ],
+  "absolute_or_dynamic_local_import_hazards": [],
+  "functions": {
+    "src/models/tokenizer_architecture.py": [
+      {
+        "name": "_get",
+        "line": 21,
+        "end_line": 22
+      },
+      {
+        "name": "architecture_contract",
+        "line": 25,
+        "end_line": 71
+      },
+      {
+        "name": "wide_architecture_contract",
+        "line": 74,
+        "end_line": 76
+      },
+      {
+        "name": "validate_architecture_model",
+        "line": 79,
+        "end_line": 119
+      },
+      {
+        "name": "validate_architecture_load",
+        "line": 122,
+        "end_line": 126
+      }
+    ],
+    "src/models/blocks.py": [
+      {
+        "name": "TransformerBlock",
+        "line": 12,
+        "end_line": 139
+      },
+      {
+        "name": "__init__",
+        "line": 13,
+        "end_line": 109
+      },
+      {
+        "name": "forward",
+        "line": 111,
+        "end_line": 139
+      }
+    ],
+    "src/utils/checkpoint.py": [
+      {
+        "name": "save_checkpoint",
+        "line": 10,
+        "end_line": 43
+      },
+      {
+        "name": "load_checkpoint",
+        "line": 46,
+        "end_line": 56
+      },
+      {
+        "name": "checkpoint_loader",
+        "line": 59,
+        "end_line": 72
+      },
+      {
+        "name": "load_model_weights",
+        "line": 75,
+        "end_line": 119
+      },
+      {
+        "name": "read_checkpoint",
+        "line": 122,
+        "end_line": 131
+      },
+      {
+        "name": "capture_training_state",
+        "line": 134,
+        "end_line": 142
+      },
+      {
+        "name": "restore_training_state",
+        "line": 145,
+        "end_line": 152
+      }
+    ],
+    "src/train/weight_averaging.py": [
+      {
+        "name": "averaging_contract",
+        "line": 12,
+        "end_line": 43
+      },
+      {
+        "name": "TailWeightAverages",
+        "line": 46,
+        "end_line": 137
+      },
+      {
+        "name": "derived_checkpoint_payload",
+        "line": 140,
+        "end_line": 188
+      },
+      {
+        "name": "export_averaged_checkpoint",
+        "line": 191,
+        "end_line": 219
+      },
+      {
+        "name": "__init__",
+        "line": 48,
+        "end_line": 58
+      },
+      {
+        "name": "_check_parameters",
+        "line": 60,
+        "end_line": 63
+      },
+      {
+        "name": "update",
+        "line": 66,
+        "end_line": 82
+      },
+      {
+        "name": "state_dict",
+        "line": 84,
+        "end_line": 92
+      },
+      {
+        "name": "load_state_dict",
+        "line": 95,
+        "end_line": 126
+      },
+      {
+        "name": "averaged_parameters",
+        "line": 129,
+        "end_line": 137
+      },
+      {
+        "name": "sha",
+        "line": 153,
+        "end_line": 157
+      }
+    ],
+    "src/train/train.py": [
+      {
+        "name": "_get_rss_mb",
+        "line": 29,
+        "end_line": 35
+      },
+      {
+        "name": "_get_accel_mem_mb",
+        "line": 38,
+        "end_line": 45
+      },
+      {
+        "name": "_get_cuda_device_index",
+        "line": 48,
+        "end_line": 59
+      },
+      {
+        "name": "_get_cuda_usage",
+        "line": 62,
+        "end_line": 103
+      },
+      {
+        "name": "_collect_moe_hists",
+        "line": 106,
+        "end_line": 112
+      },
+      {
+        "name": "_summarize_moe_usage",
+        "line": 115,
+        "end_line": 144
+      },
+      {
+        "name": "_append_metric",
+        "line": 147,
+        "end_line": 150
+      },
+      {
+        "name": "_resolve_device",
+        "line": 153,
+        "end_line": 163
+      },
+      {
+        "name": "_make_loader",
+        "line": 166,
+        "end_line": 183
+      },
+      {
+        "name": "_training_contract",
+        "line": 186,
+        "end_line": 204
+      },
+      {
+        "name": "_contracts_match",
+        "line": 207,
+        "end_line": 216
+      },
+      {
+        "name": "_evaluate",
+        "line": 219,
+        "end_line": 241
+      },
+      {
+        "name": "evaluate_checkpoint",
+        "line": 244,
+        "end_line": 268
+      },
+      {
+        "name": "run_training",
+        "line": 271,
+        "end_line": 537
+      },
+      {
+        "name": "train",
+        "line": 541,
+        "end_line": 542
+      },
+      {
+        "name": "save_run",
+        "line": 330,
+        "end_line": 339
+      }
+    ]
+  },
+  "chosen_namespace": "research.block_norm_v1.runtime",
+  "strategy": "Copy this exact closure into a new package, preserving relative imports and keeping old src unchanged. Baseline parity before named-policy changes. No sys.modules/sys.path redirect, monkeypatch or old-validator suppression.",
+  "constraints": [
+    "Static analysis is a conservative import closure, not proof of all executed dependencies.",
+    "train.train Hydra CLI refers to ../config; do not invoke the copied Hydra entry. A separately frozen controller must pass explicit configs.",
+    "Future candidate changes require exact changed-file allowlist and complete new source/applicability digest; baseline copy remains auditable via origin hashes."
+  ],
+  "source_modified": false,
+  "model_constructed": false,
+  "training_launched": false,
+  "holdout_scored": false
+}

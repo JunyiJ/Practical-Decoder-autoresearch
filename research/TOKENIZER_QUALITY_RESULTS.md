@@ -5095,3 +5095,27 @@ Next resolve full model/optimizer/checkpoint/cache and source applicability as a
 separate versioned integration contract. Do not patch frozen old code or bypass
 its RMS-only validators. Full-model initialization, cache, resume/EMA, serialization
 and MPS remain prerequisites. The recorded training-capacity blocker remains.
+
+
+### Separate runtime baseline completed October31
+
+The [integration contract](block_norm_v1/INTEGRATION_CONTRACT.md) maps the model,
+optimizer, checkpoint/H200 reconstruction and cache dependencies into a separate
+`research.block_norm_v1.runtime` namespace. Its43-module unmodified copy passed
+five guarded CPU tests: exact original-control initialization/RNG/state, logits
+and loss, old-new cached outputs/state, optimizer group equivalence and preserved
+RMS-only rejection. This is baseline transport evidence, not a candidate quality,
+full-versus-cached numerical, gradient/update, serialization or MPS result.
+
+Attempt001 stopped before tests on a sandbox safety-entry PermissionError. The
+unchanged sources passed attempt002 with authorized process access in0.851s,
+peakRSS543,424,512bytes. Original source,13 frozen recovery modules and three
+closed-root inventories/nonweight hashes remained unchanged. No training or
+checkpoint/corpus load, cleanup or holdout scoring occurred.
+
+[Review002](tokenizer-evidence/block-norm-preparation-001/runtime-baseline-prerequisite-002-review.json)
+and [copy manifest](tokenizer-evidence/block-norm-preparation-001/runtime-baseline-copy-manifest.json).
+Next implement the explicit full-model normalization policy only in the new
+namespace, preserving old-policy behavior and binding candidate configuration,
+actual modules, optimizer, strict checkpoint/EMA and cache contracts. Frozen
+source sets remain untouched. The finite plan and capacity gate remain pending.
