@@ -4353,3 +4353,19 @@ No new launch or locked replay was performed. Immutable seed3511 metadata,
 measurements and completed process/guard receipts are preserved byte-for-byte
 in campaign005-inference-seed3511-accepted-v2.json. All selected/fresh pairs,
 failures and protected archives remain retained; no adoption or holdout use.
+
+
+### Campaign005 second inference seed accepted
+
+Seed3512 child completed143.33s; guarded parent preparation629.41s and
+review810.92s finished without violation. All six cache-correctness checks
+passed. Measured state bytes match3511 for each family/batch: hybrid399,360,
+gated MLA327,680 and KDA335,872 at batch1, scaling eightfold at batch8.
+No final decision: seed3513 and frozen quality/cost review remain required.
+
+Controller38659/session36174 is preparing final seed3513. Immutable seed3512
+metadata, measurements and completed guard/process receipts are preserved in
+campaign005-inference-seed3512-accepted-v2.json. No duplicate launch, cleanup,
+production change, closed retry, holdout use or adoption. All fresh pairs remain
+protected. Parent replay costs grow with accepted history but remain within
+the existing1800s phase guards; no limits were relaxed.
