@@ -4513,3 +4513,22 @@ model/state checks. No quality training, cleanup, holdout scoring or executable
 freeze. Production serial controller/filesystem integration, actual audit/cleanup
 receipts and complete resource/source/runtime/input binding remain required.
 Evidence: tokenizer-evidence/activation-preparation-001/finite-design-v1.json.
+
+### October31 activation session/transport prerequisite
+
+A new activation receipt-ledger core passed49 tests, including the complete
+14-trajectory synthetic sequence, independent LR selection, exact retention
+boundaries and preservation of both selected screens plus all six fresh pairs.
+Real bounded filesystem serialization/publication and torch.load used tiny
+synthetic payloads; no corpus or research training occurred. Complete producer
+inventories are pinned at acceptance. Tampered/incomplete evidence, STOP,
+failures, orphan requests, symlinks and output overflow block progression.
+Guard54.21s, peakRSS241,418,240bytes, 180s/4GiB/8GiB-reserve limits intact.
+The first44-test run passed but its post-test reporting wrapper failed; both
+versions and that diagnostic are preserved. No closed fixture was retried.
+
+This is controller-core/transport evidence only. The ledger has no launch/delete
+API; test audit verdicts are synthetic. Executable worker, independent scientific
+review, complete audited cleanup and final source/runtime/input/resource freeze
+remain necessary. No pilots launched and no new model result or adoption.
+[Evidence](tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json).

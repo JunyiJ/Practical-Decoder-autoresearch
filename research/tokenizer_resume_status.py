@@ -28,6 +28,9 @@ def main():
     terminal = read(ROOT / index['terminal_receipt'])
     result = dict(observed_at=datetime.now(timezone.utc).isoformat(),
         saved_observation_at=index['observed_at'], branch=index['branch'],
+        current_research_phase=index.get('current_research_phase'),
+        activation_session_review=(read(ROOT / index['activation_session_review'])
+            if index.get('activation_session_review') else None),
         campaign_root=index['campaign_root'], immutable_evidence_checks=checks,
         local_progress=None if live is None else {k: live.get(k) for k in
             ('updated_at', 'status', 'active_run', 'next_action')},

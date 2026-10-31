@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T15:45:43.354363+00:00",
-  "observed_at_los_angeles": "2026-10-31T08:45:43.354363-07:00",
+  "observed_at": "2026-10-31T15:57:45.541836+00:00",
+  "observed_at_los_angeles": "2026-10-31T08:57:45.541836-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "c73ffb9",
+  "evidence_commit_before_handoff": "07761cd",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
@@ -522,13 +522,24 @@
     "research/tokenizer-evidence/activation-preparation-001/rules-tests-v1-guard.json": "d433e22a97a80d4d3a4f97ae55b41f4a96b83695c742c8eeef6cb7bd75cc5609",
     "research/tokenizer-evidence/activation-preparation-001/rules-tests-v1-review.json": "1eb49e76891ea3d8f933364baa993404bd85bdd226ad4cf022dfa88635a346ad",
     "research/tokenizer-evidence/activation-preparation-001/finite-design-v1.json": "899150d19c159b5b798111cebd292d0ffd411c199969f0d9317958d288b29f71",
-    "research/tokenizer-evidence/activation-preparation-001/rules-applicability-review.json": "1065d6afc002bd557fe7a9fdee5a5c0d0c1de1c45e02cbd8ae5896678bb2ca43"
+    "research/tokenizer-evidence/activation-preparation-001/rules-applicability-review.json": "1065d6afc002bd557fe7a9fdee5a5c0d0c1de1c45e02cbd8ae5896678bb2ca43",
+    "research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json": "a2f30318fbd04bcbcf4a9bdc48546b07e873c58b9a372c242aeb62c869355774",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v1-guard.json": "85b98eaeef57d46ae7cd7afe080990078b75a6282696d7dcf9fa55349b224787",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v1-review.json": "40230970fea622ab7540bad1af7b5ac5db0ea3d3e01b97c8127772f3e8ff115b",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v1-source.py": "3d9bd35aa5035aaa311ee4888310557cca83bd8d54280707a0e8d441f0284967",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v1-tests.py": "3489dc80722e343efe8b8cbbf6a48d1c0809c28036b02e1d6d8751f72b70dfc7",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v1.log": "39b0db55584e377409e9869179c050977e8bcff2635489f18d40cd6b6ca38ef9",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v2-guard.json": "1637f949d246eab43c33e4a452d14956451cfc19b4e1fbea609e5a5881815843",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v2-review.json": "9ddc0dbb9d528312bcd81e2238716940aa69096cb2ec3288e44203f9dccd364d",
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v2.log": "f847b35ee718b4cff4f7df7236194935faab270d107cefcc9b5f030f133363e9"
   },
   "independent_final_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
   "independent_final_guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
-  "current_research_phase": "activation_finite_rules_validated_controller_pending",
+  "current_research_phase": "activation_session_core_validated_executable_integration_pending",
   "final_decision": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json",
   "ffn_direction_decision": "research/tokenizer-evidence/moe-preparation-001/direction-decision.json",
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
-  "activation_finite_design": "research/tokenizer-evidence/activation-preparation-001/finite-design-v1.json"
+  "activation_finite_design": "research/tokenizer-evidence/activation-preparation-001/finite-design-v1.json",
+  "activation_session_review": "research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json",
+  "next_action": "Campaign005 remains closed and MoE deferred. Activation session core plus tiny filesystem transport passed49 tests; read research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json. Next implement the executable activation entry and worker using the tested Session ledger, unchanged bounded TrainingOutputs/resource/process primitives, and activation-specific independent training/evaluation/tensor/resource/cache acceptance. Wire complete idle-process/allowlist/journal/preserved-inventory retention executor to pilot and screen boundaries; the ledger has no launch/delete API and synthetic audit verdicts do not authorize research. Bind source/runtime/input identities and final inference protocol; reconcile serialization and current full-panel free space>=15,169,995,168 bytes including8GiB reserve. Then freeze complete executable plan before2 guardedMPS pilots, with6screen+6fresh runs only after accepted pilots and audited boundaries. No further retries of closed fixtures; one worker/fourthreads/strictMPS, all selected/fresh/failure weights and archives protected, closed holdout, no paidcompute/subagents. Commit/push withoutforce."
 }

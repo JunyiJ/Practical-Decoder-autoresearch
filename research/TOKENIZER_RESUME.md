@@ -170,3 +170,20 @@ Detailed reading: [protocol](TOKENIZER_QUALITY_PROTOCOL.md),
 [wide-hybrid preparation](TOKENIZER_WIDE_HYBRID_PREPARATION.md),
 [attention roadmap](TOKENIZER_ATTENTION_ROADMAP.md),
 [architecture roadmap](TOKENIZER_ARCHITECTURE_ROADMAP.md).
+
+### Latest continuation: activation session core
+
+49 session/rule tests passed, including real bounded filesystem writers on tiny
+synthetic tensors and all14 finite transitions. Complete producer-file pinning,
+STOP/failure/orphan handling, saved selection and exact eligible-removal receipts
+are covered. The initial44 tests also passed; a post-test reporting-wrapper error
+is preserved. Model and transport primitives are unchanged. No research training,
+checkpoint cleanup, holdout scoring or closed-fixture rerun occurred.
+
+Read `research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json`
+and the latest ignored `next_action`. Implement the executable activation entry,
+worker and independent scientific acceptance, then wire complete retention
+process/manifest/journal checks. `Session` alone has no launch/delete API and its
+synthetic test audit verdicts confer no launch authority. Source/runtime/input,
+inference and full-capacity freeze remain pending before two MPS pilots. Keep
+all14 trajectories, protected pairs and guards; never reopen005 or old fixtures.

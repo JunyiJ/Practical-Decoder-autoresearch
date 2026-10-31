@@ -192,3 +192,47 @@ These rules are not a production dispatcher or an executable freeze. Next
 implement/test the bounded serial controller and filesystem producer, actual
 review/retention receipts and complete resource/source/input/runtime binding.
 Recheck full capacity before freezing and launching pilots.
+
+## Controller core and filesystem transport validated October 31
+
+The separate activation `Session` ledger now records exclusive immutable requests,
+acceptances, selection and boundary receipts in a hash chain. It reconstructs
+state from those receipts rather than a mutable progress cache. Exactly one
+pending trial is allowed. Acceptance requires request/result/pair-bound training,
+evaluation, tensor and resource audit receipts plus the complete producer-file
+inventory, including metrics and summaries. STOP, failure/partial outputs, orphan
+requests, altered artifacts, unreviewed extra files and premature selection block
+progress. A failed attempt cannot be automatically retried.
+
+Boundary receipts must explain exactly the four successful pilot files or eight
+losing-screen files, preserve pinned non-checkpoint evidence and selected pairs,
+and correspond to actual absence. All fresh pairs remain required. The ledger
+has **no launch or deletion API**: it verifies ordering and receipt provenance,
+not the scientific truth of a supplied audit verdict. It cannot replace the
+independent scientific reviewer or the complete cleanup/process audit executor.
+
+49 tests passed in54.10s; the guard finished54.21s with241,418,240-byte peak RSS,
+180s/4GiB limits and the8GiB reserve intact. A complete14-trajectory synthetic
+filesystem sequence retained16 endpoint files: two selected screening pairs plus
+all six fresh pairs. Tests use tiny synthetic tensor payloads, real advisory
+locks, actual free-space checks and the unchanged bounded torch checkpoint,
+metric and summary writers. Independent torch.load verifies the saved tiny
+tensors. These are transport fixtures, not model tensor audits or corpus runs.
+No research checkpoint was created or deleted, and no closed fixture reran.
+
+The initial44-test version passed. Its reporting wrapper then raised a KeyError
+while reading the source fingerprint after pytest and its guard had completed;
+an independent receipt records this error and the unchanged executed source.
+A subsequent review added immediate producer-inventory pinning; the final49-test
+run includes mutation/extra-output tests. Both versions' evidence is preserved.
+Only the new session module differs from the previously tested source; model,
+optimizer, EMA, tokenizer, checkpoint and bounded writers remain unchanged.
+
+[Session review](tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json),
+[final test review](tokenizer-evidence/activation-preparation-001/session-tests-v2-review.json).
+
+Next connect an executable activation worker/controller, independent scientific
+acceptance and the complete retention executor. Bind actual source/runtime/input
+identities, inference protocol and full resource projection before freezing the
+plan. The ledger's synthetic verdicts and completed transport tests do not allow
+pilots yet. Recheck the15,169,995,168-byte full-panel gate at freeze and dispatch.

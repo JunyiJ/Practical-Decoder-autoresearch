@@ -1,0 +1,61 @@
+{
+  "kind": "activation_session_prerequisite_review_v1",
+  "observed_at": "2026-10-31T15:57:45.541836+00:00",
+  "status": "session_core_and_synthetic_filesystem_transport_passed",
+  "tests_passed": 49,
+  "tests": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/session-tests-v2-review.json",
+    "sha256": "9ddc0dbb9d528312bcd81e2238716940aa69096cb2ec3288e44203f9dccd364d"
+  },
+  "guard": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/session-tests-v2-guard.json",
+    "sha256": "1637f949d246eab43c33e4a452d14956451cfc19b4e1fbea609e5a5881815843"
+  },
+  "first_test_run": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/session-tests-v1-review.json",
+    "sha256": "40230970fea622ab7540bad1af7b5ac5db0ea3d3e01b97c8127772f3e8ff115b"
+  },
+  "source_sha256": "4ad4085ed53db838085aa5e7d4396bceec2ebeb30734a4b65ab34c2376e5fc56",
+  "prior_source_sha256": "e1e764c7c21f9dfcd46fc58695bc58382bd95ed053495d9acba4c155a7e663b4",
+  "only_new_source": {
+    "src/research/tokenizer_activation_session.py": "b4dbf1bba3d598ae29917dce16505ca7df13c0840a8f829a679240b75ccfcfac"
+  },
+  "runtime": {
+    "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "executable": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+    "packages": {
+      "torch": "2.14.1",
+      "numpy": "2.5.4",
+      "tiktoken": "0.14.0",
+      "omegaconf": "2.3.1"
+    }
+  },
+  "runtime_unchanged": true,
+  "model_optimizer_checkpoint_ema_and_bounded_writer_sources_unchanged": true,
+  "validated": [
+    "One pending request and exclusive immutable hash-chained events; exact finite request/config order",
+    "Four request/result/pair-bound audit receipts and complete producer file inventory required for acceptance",
+    "Six-screen persisted independent LR selection; premature/tampered selection rejected",
+    "Only four successful pilot files and eight losing-screen files can be explained by completed removal receipts",
+    "Selected two screen pairs and all six fresh pairs remain required: sixteen endpoint files after fourteen synthetic trajectories",
+    "STOP, failed/partial producer attempts, orphan requests, symlinks, receipt mutation, extra outputs and byte overflow reject progress",
+    "Real locks/free-space checks, production bounded torch serialization/publication, summary/metric output and independent torch.load on tiny synthetic tensors"
+  ],
+  "limitations": [
+    "No subprocess launch or deletion API in Session; executable controller not implemented",
+    "Test audit verdicts are synthetic inputs; independent activation-specific scientific review still required",
+    "Tiny tensors validate transport, not full activation model serialization/memory; existing RAM model-state evidence remains separate",
+    "Retention receipts verify eligible names/hashes/preservation and absence, but complete process/manifest/journal cleanup executor remains unwired",
+    "Full plan/source/runtime/input/resource and inference gates remain required; no launch based on Session dispatch_authorized=False"
+  ],
+  "metadata_allowance_bytes": 268435456,
+  "full_panel_required_free_bytes": 15169995168,
+  "current_free_bytes": 15513186304,
+  "observed_margin_bytes": 343191136,
+  "capacity_reconciled_for_launch": false,
+  "training_launched": false,
+  "plan_frozen": false,
+  "holdout_scored": false,
+  "research_checkpoints_deleted": false,
+  "closed_fixtures_retried": false
+}
