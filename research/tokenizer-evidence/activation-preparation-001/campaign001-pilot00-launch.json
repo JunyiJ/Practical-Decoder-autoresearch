@@ -1,0 +1,29 @@
+{
+  "status": "launch_requested",
+  "observed_at": "2026-10-31T16:51:05.478684+00:00",
+  "campaign_root": "research_runs/tokenizer-activation-001",
+  "stage": "pilots",
+  "slot": 0,
+  "family": "silu",
+  "plan_sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+  "source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
+  "git_commit": "d3f270c7e414338215a16f06fa9b45bf19a0d15b",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "src.research.tokenizer_activation_entry",
+    "step",
+    "--root",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001",
+    "--plan-sha256",
+    "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4"
+  ],
+  "environment": {
+    "PYTHONPATH": ".",
+    "TIKTOKEN_CACHE_DIR": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/tiktoken-cache",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "note": "Request only; actual process, acceptance and guard evidence determine completion. No retry if an attempt exists."
+}

@@ -54,9 +54,9 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
 3. Activation campaign001 is frozen and independently verified. All preparation
    gates are complete, including34 final-decision/freeze-entry tests. Exact meta
    model/optimizer accounting confirms15,169,995,168bytes required, including
-   every future retained pair and8GiB reserve. No model training has started yet.
-4. After committing/pushing the freeze, inspect actual workers and execute only
-   the next guarded pilot step. The immutable plan fixes two20-update pilots,
+   every future retained pair and8GiB reserve. Both20-update MPS pilots are accepted; audited pilot cleanup is complete.
+4. After committing/pushing pilot evidence, inspect actual workers and execute only
+   the first guarded quality step. The immutable plan fixes two20-update pilots,
    six1200-update LR screens and six fresh runs. Accept both pilots and audit
    pilot cleanup before screens; save selection and audit losing-screen cleanup
    before fresh runs. Do not edit frozen source or retry any existing attempt.
@@ -84,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 frozen; first guarded pilot pending; see the indexed
+Current continuation: activation001 pilots and audited cleanup complete; first screen next; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -231,3 +231,21 @@ Only after all12 quality runs and both audited boundaries, use module
 After its three accepted pairs and summary, use module
 `src.research.tokenizer_activation_final` with `--root` and `--plan-sha256`.
 Preserve source and every selected/fresh/failure pair and archive throughout.
+
+
+### October31 activation001 pilots and audited retention completed
+
+Both20-update MPS pilots passed independent tensor/EMA, full-validation, cache
+and resource acceptance. SiLU/GELU worker times were46.97/57.55seconds; peak RSS
+1,839,251,456/1,837,727,744bytes and driver memory2,501,705,728bytes for both.
+Raw/H200 cached parity passed at batches1/8; actual state196,608/1,572,864bytes.
+These are feasibility checks, not comparative quality evidence or adoption.
+
+The frozen retention boundary deleted exactly four audited pilot weights,
+1,118,318,800 logical bytes, preserving all59 other campaign files. Manifest,
+journal, inventory and terminal guard were independently verified; complete
+portable text evidence is saved. Deleted pilot weights cannot be re-audited.
+Observed free15,573,012,480bytes exceeded remaining requirement15,169,847,947.
+No selected/fresh/failure checkpoint was deleted; test holdout remains closed.
+Next is the first of six1200-update screens under the unchanged frozen source.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-pilot-boundary-reviewed.json).

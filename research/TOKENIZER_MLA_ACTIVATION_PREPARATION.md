@@ -1,7 +1,7 @@
 # Tokenizer gate-activation preparation
 
 Status, October 31, 2026: activation campaign001 frozen after complete prerequisite
-review; first guarded pilot pending. No training has launched yet. Campaign005 remains closed, with the
+review; both guarded pilots and audited pilot cleanup completed. Quality screening is next. Campaign005 remains closed, with the
 hybrid not adopted. Existing selected models, every fresh pair and failures remain
 protected. The earlier MoE draft is retained as a historical proposal. The October 28
 GQA activation draft in TOKENIZER_ACTIVATION_PREPARATION.md also remains unchanged;
@@ -419,3 +419,21 @@ source/runtime and current capacity without republishing or running training.
 The next action is committing/pushing this frozen implementation and evidence,
 then exactly the first guarded MPS pilot. No source edits or existing-attempt
 retries. Model memory/time/cache readiness remains subject to actual pilot guards.
+
+
+### October31 activation001 pilots and audited retention completed
+
+Both20-update MPS pilots passed independent tensor/EMA, full-validation, cache
+and resource acceptance. SiLU/GELU worker times were46.97/57.55seconds; peak RSS
+1,839,251,456/1,837,727,744bytes and driver memory2,501,705,728bytes for both.
+Raw/H200 cached parity passed at batches1/8; actual state196,608/1,572,864bytes.
+These are feasibility checks, not comparative quality evidence or adoption.
+
+The frozen retention boundary deleted exactly four audited pilot weights,
+1,118,318,800 logical bytes, preserving all59 other campaign files. Manifest,
+journal, inventory and terminal guard were independently verified; complete
+portable text evidence is saved. Deleted pilot weights cannot be re-audited.
+Observed free15,573,012,480bytes exceeded remaining requirement15,169,847,947.
+No selected/fresh/failure checkpoint was deleted; test holdout remains closed.
+Next is the first of six1200-update screens under the unchanged frozen source.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-pilot-boundary-reviewed.json).

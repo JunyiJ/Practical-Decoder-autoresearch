@@ -6721,3 +6721,21 @@ executable binding succeeded, followed by an external review-writer Path/string
 error. Both failure and original procedure are preserved; independent read-only
 verification passed on the unchanged plan and empty campaign. First guarded pilot
 is next after commit/push. [Freeze review](tokenizer-evidence/activation-preparation-001/campaign001-freeze-review.json).
+
+
+### October31 activation001 pilots and audited retention completed
+
+Both20-update MPS pilots passed independent tensor/EMA, full-validation, cache
+and resource acceptance. SiLU/GELU worker times were46.97/57.55seconds; peak RSS
+1,839,251,456/1,837,727,744bytes and driver memory2,501,705,728bytes for both.
+Raw/H200 cached parity passed at batches1/8; actual state196,608/1,572,864bytes.
+These are feasibility checks, not comparative quality evidence or adoption.
+
+The frozen retention boundary deleted exactly four audited pilot weights,
+1,118,318,800 logical bytes, preserving all59 other campaign files. Manifest,
+journal, inventory and terminal guard were independently verified; complete
+portable text evidence is saved. Deleted pilot weights cannot be re-audited.
+Observed free15,573,012,480bytes exceeded remaining requirement15,169,847,947.
+No selected/fresh/failure checkpoint was deleted; test holdout remains closed.
+Next is the first of six1200-update screens under the unchanged frozen source.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-pilot-boundary-reviewed.json).
