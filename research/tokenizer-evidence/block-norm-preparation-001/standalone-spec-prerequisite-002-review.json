@@ -1,0 +1,471 @@
+{
+  "status": "passed",
+  "error": null,
+  "pytest_exit_code": 0,
+  "tests": [
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[random-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 2.598647270701804e-07,
+        "input_gradient_max_absolute_error": 3.143873601452185e-07,
+        "gain_gradient_max_absolute_error": 8.986400139576745e-07
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[random-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 4.822822279315631e-07,
+        "input_gradient_max_absolute_error": 6.392975802071987e-07,
+        "gain_gradient_max_absolute_error": 6.735142061842225e-07
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[shifted-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 2.823946827490431e-07,
+        "input_gradient_max_absolute_error": 1.604229751261954e-07,
+        "gain_gradient_max_absolute_error": 7.105750539082578e-07
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[shifted-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 6.258148421700582e-07,
+        "input_gradient_max_absolute_error": 5.833190916959552e-07,
+        "gain_gradient_max_absolute_error": 1.6258923771772515e-06
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[zero-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 0.0,
+        "input_gradient_max_absolute_error": 0.0007366160207311623,
+        "gain_gradient_max_absolute_error": 0.0
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[zero-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 0.0,
+        "input_gradient_max_absolute_error": 0.001393215308780782,
+        "gain_gradient_max_absolute_error": 0.0
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[constant-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 8.940695916948016e-08,
+        "input_gradient_max_absolute_error": 3.172297660114509e-07,
+        "gain_gradient_max_absolute_error": 1.030643304034129e-06
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[constant-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 0.0,
+        "input_gradient_max_absolute_error": 0.001393215308780782,
+        "gain_gradient_max_absolute_error": 0.0
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[near_zero-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 1.054504722430849e-08,
+        "input_gradient_max_absolute_error": 0.001118818230679608,
+        "gain_gradient_max_absolute_error": 2.551283645457758e-08
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[near_zero-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 1.6837746918962893e-08,
+        "input_gradient_max_absolute_error": 0.0019378125325602014,
+        "gain_gradient_max_absolute_error": 1.737236947352283e-08
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[near_constant-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 2.0671748979239624e-07,
+        "input_gradient_max_absolute_error": 3.982662239998547e-07,
+        "gain_gradient_max_absolute_error": 6.007291593057573e-07
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_forward_and_input_gain_bias_gradients_against_analytic_fp64[near_constant-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "output_max_absolute_error": 0.00021030805341379355,
+        "input_gradient_max_absolute_error": 0.015362370391812874,
+        "gain_gradient_max_absolute_error": 0.0009630866144410138
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_control_is_bit_exact_incumbent_forward_and_backward[random]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_control_is_bit_exact_incumbent_forward_and_backward[shifted]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_control_is_bit_exact_incumbent_forward_and_backward[zero]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_control_is_bit_exact_incumbent_forward_and_backward[constant]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_control_is_bit_exact_incumbent_forward_and_backward[near_zero]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_control_is_bit_exact_incumbent_forward_and_backward[near_constant]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_eight_independent_initializers_preserve_rng_and_parameter_counts[rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_eight_independent_initializers_preserve_rng_and_parameter_counts[layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_non_fp32_input_or_parameters_rejected[rms_incumbent-dtype0]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_non_fp32_input_or_parameters_rejected[rms_incumbent-dtype1]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_non_fp32_input_or_parameters_rejected[rms_incumbent-dtype2]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_non_fp32_input_or_parameters_rejected[layer_matched_epsilon-dtype0]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_non_fp32_input_or_parameters_rejected[layer_matched_epsilon-dtype1]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_non_fp32_input_or_parameters_rejected[layer_matched_epsilon-dtype2]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_default_dtype_change_does_not_change_normalizer_dtype[rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_default_dtype_change_does_not_change_normalizer_dtype[layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_autocast_rejected[rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_autocast_rejected[layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[kind-layer_default]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[policy-old]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[width-128]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[width-True]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[dtype-float64]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[epsilon-1e-05]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[epsilon-None]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[epsilon-True]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[affine-False]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[affine-1]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_specs_rejected[placement-final]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[epsilon-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[epsilon-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[shape-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[shape-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[affine-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[affine-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[bias-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[bias-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[frozen_gain-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[frozen_gain-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[subclass-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[subclass-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[buffer-rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_constructed_module_mutations_rejected[buffer-layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_input_shapes_rejected[shape0]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_input_shapes_rejected[shape1]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_input_shapes_rejected[shape2]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_invalid_input_shapes_rejected[shape3]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_mixed_or_shared_block_normalizers_rejected[count]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_mixed_or_shared_block_normalizers_rejected[mixed]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_mixed_or_shared_block_normalizers_rejected[shared_module]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_mixed_or_shared_block_normalizers_rejected[shared_parameter]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_mixed_or_shared_block_normalizers_rejected[aliased_storage]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_signature_round_trip_and_same_shape_mismatch[rms_incumbent]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_spec.py::test_signature_round_trip_and_same_shape_mismatch[layer_matched_epsilon]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    }
+  ],
+  "observed_at": "2026-10-31T19:57:37.321944+00:00",
+  "code_sha256": {
+    "research/block_norm_v1/run_spec_prerequisite.py": "df450bf8a6028486fff9d33113feaa888e96ad79853e0995dec3507df7fea53d",
+    "research/block_norm_v1/test_spec.py": "71677da9552c84f484724c5f56d367a06b8a50f493233caa7f357f1e2d5a394c",
+    "research/block_norm_v1/spec.py": "205b2e346b39d1c66d5d95684635cdf5a6e72d00a12da69f1dd0feac1c31ca31"
+  },
+  "source_snapshot": {
+    "research/tokenizer-evidence/block-norm-preparation-001/standalone-spec-prerequisite-002-source/run_spec_prerequisite.py": "df450bf8a6028486fff9d33113feaa888e96ad79853e0995dec3507df7fea53d",
+    "research/tokenizer-evidence/block-norm-preparation-001/standalone-spec-prerequisite-002-source/test_spec.py": "71677da9552c84f484724c5f56d367a06b8a50f493233caa7f357f1e2d5a394c",
+    "research/tokenizer-evidence/block-norm-preparation-001/standalone-spec-prerequisite-002-source/spec.py": "205b2e346b39d1c66d5d95684635cdf5a6e72d00a12da69f1dd0feac1c31ca31"
+  },
+  "guard_sha256": "8a4cbecfbf387846c164000e063424199cd730bb5fccd0ade5c3003616673008",
+  "log_sha256": "7aa6f5565bcb1ff32b87135941434b8be1fb04ecc72d4da8f5ce303a40848011",
+  "frozen_sources_and_closed_campaigns_unchanged": true,
+  "scope": "Standalone native CPU FP32 normalizers only. Independent FP64 analytic formulas/input+gain+bias derivatives; exact native RMS incumbent equivalence; no full model or optimizer integration.",
+  "limitations": "No MPS, full/cached model, resume/EMA/checkpoint producer, runtime-policy integration, or training readiness demonstrated. Prospective full-panel capacity gate remains unsatisfied.",
+  "training_launched": false,
+  "checkpoints_loaded": false,
+  "holdout_scored": false,
+  "deletion_performed": false
+}

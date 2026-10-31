@@ -5065,3 +5065,33 @@ allowances alone cannot make this full retained panel fit. No pilot or training
 started; no protected evidence changed. Bounded CPU prerequisites can proceed.
 See [prospective design](TOKENIZER_BLOCK_NORM_PREPARATION.md) and
 [audit](tokenizer-evidence/block-norm-preparation-001/shape-storage-review.json).
+
+
+### Standalone FP32 normalizer prerequisite completed October31
+
+The separate [specification](block_norm_v1/README.md) passed66 bounded CPU tests:
+independent FP64 formulas and analytic input/gain/bias derivatives; six input
+regimes; bit-exact native RMS control forward/backward; eight independent
+normalizers with RNG-preserving constant initialization; precise parameter counts;
+signature round trips and rejection of wrong epsilon/dtype/shape/affine/bias,
+autocast, mixed/shared/aliased modules and unsupported mutation.
+
+Near-constant shifted LayerNorm input has greater rounding sensitivity: observed
+maximum output/input-gradient/gain-gradient discrepancies versus FP64 were
+0.0002103/0.01536/0.0009631. Ordinary random/shifted output discrepancies were
+below6.26e-7. All passed tolerances declared before execution; no tolerance was
+relaxed. This does not establish full-model stability, MPS agreement or quality.
+
+Attempt001's66 tests passed, but its enclosing final metadata audit failed on a
+string-versus-Path error. That failure, log and exact source snapshot are retained.
+Attempt002 fixed only that wrapper conversion; its complete audit passed in0.388s
+at285,900,800bytes peakRSS. Original source, all13 frozen recovery modules, three
+closed-root inventories and noncheckpoint hashes were unchanged. No models,
+corpus/checkpoint data, training, MPS, cleanup or holdout were accessed.
+
+[Applicable review002](tokenizer-evidence/block-norm-preparation-001/standalone-spec-prerequisite-002-review.json),
+[preserved failure001](tokenizer-evidence/block-norm-preparation-001/standalone-spec-prerequisite-001-review.json).
+Next resolve full model/optimizer/checkpoint/cache and source applicability as a
+separate versioned integration contract. Do not patch frozen old code or bypass
+its RMS-only validators. Full-model initialization, cache, resume/EMA, serialization
+and MPS remain prerequisites. The recorded training-capacity blocker remains.

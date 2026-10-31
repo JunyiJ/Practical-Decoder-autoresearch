@@ -8,12 +8,11 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest: activation comparison closed; SiLU retained. Next prospective design
-is block RMSNorm versus affine LayerNorm with matched FP32 epsilon on D256 MLA.
-Start standalone bounded CPU prerequisites; full-model integration is not ready.
-Training is capacity-gated:15.170GB required vs12.984GB free. Even payload plus
-reserve exceeds space. No protected cleanup or smaller partial panel. Read the
-new block-norm preparation document and current state index.**
+**Latest: standalone FP32 block-normalizer spec passed66CPU tests and audit002.
+Attempt001's wrapper failure is preserved; spec/tests/tolerances did not change.
+Next resolve full-model/optimizer/checkpoint/cache integration and source
+applicability without editing frozen code. No full-model or MPS validation yet.
+Training remains capacity-gated; all old campaigns stay closed and SiLU retained.**
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
