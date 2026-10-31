@@ -6136,3 +6136,28 @@ holdout use occurred; all selected/fresh/failure evidence preserved.
 Evidence: `campaign005-rank-11-v2-terminal.json`, `campaign005-rank-prefix-12-v2-review.json`,
 finished guard and `campaign005-rank-12-v2-launch.json`. Current resumption is
 recorded in the guide and SHA-pinned state index.
+
+
+### Campaign005 KDA D/2 rank screen accepted
+
+Slot12 (KDA D/2, LR0.000625, seed3501, width512,1200updates) completed
+in1091.09s and received parent acceptance. Independent rank-prefix13 review
+verified prior LR selection/cleanup, all four accepted rank cells, checkpoint
+identities and preserved metadata. H200 full-validation CE4.930133935108931
+versus raw4.9562451051463. H200 CE is0.014408205149220 below the selected
+D/4 anchor and0.012177778652737 below D/8 on the same screening seed.
+KDA D/2 leads its three screened ranks, but remaining family rank cells, formal
+rank selection, fresh confirmation and inference remain; no adoption claim.
+
+Review guard finished65.08s without violations. Remaining storage fit:
+22,086,991,872 bytes free versus21,943,612,396 required including8GiB reserve.
+Actual process inspection confirmed prior worker exit and no other research
+workers. Dispatched only slot13 through unchanged gates: controller3448,
+session23454, observed phasestarting, childNone. Never duplicate this launch.
+After slot13 acceptance/exit, review prefix14 before slot14. After slot14 use
+the full rank boundary; do not call the prefix helper with15. No cleanup or
+holdout use occurred; all selected/fresh/failure evidence preserved.
+
+Evidence: `campaign005-rank-12-v2-terminal.json`, `campaign005-rank-prefix-13-v2-review.json`,
+finished guard and `campaign005-rank-13-v2-launch.json`. Current resumption is
+recorded in the guide and SHA-pinned state index.
