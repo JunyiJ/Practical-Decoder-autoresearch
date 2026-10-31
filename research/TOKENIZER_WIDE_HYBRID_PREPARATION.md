@@ -6005,3 +6005,28 @@ use occurred; selected/fresh/failure weights remain protected.
 Evidence: `campaign005-lr-06-v2-terminal.json`, `campaign005-lr-prefix-07-v2-review.json`,
 finished prefix guard and `campaign005-lr-07-v2-launch.json`. See the resume guide
 and SHA-pinned state index for the current next action.
+
+
+### Campaign005 KDA learning-rate grid screened
+
+Slot7 (KDAD/4, LR0.0025, seed3501, width512,1200updates) completed
+in1036.27s and received parent acceptance. Independent prefix08 review verified
+all eight accepted cells and preserved checkpoint/non-checkpoint identities.
+H200 full-validation CE5.118220312101873 versus raw5.274697344090305.
+KDA H200 CE at LR0.000625/0.00125/0.0025 is
+4.944542140258151/4.976398347271712/5.118220312101873;0.000625 is lowest
+on this screening seed. Formal selection waits for the last hybrid screen.
+No fresh-seed or adoption conclusion; the frozen grid and metric are unchanged.
+
+Review guard finished without violations. Remaining storage fit:
+20,878,508,032 bytes free versus20,707,195,060 required including8GiB reserve.
+After verifying worker exit and no other research workers, dispatched only slot8
+(controller95618, child95644, session28061). The005 LR-boundary helper was
+adapted only in campaign bindings from004 and syntax/identity checked, not run.
+After slot8 acceptance/exit, run selection and review it before audited cleanup;
+do not call the prefix helper with9. Selected/fresh/failure weights remain
+protected; no cleanup or holdout use occurred in this continuation.
+
+Evidence: `campaign005-lr-07-v2-terminal.json`, `campaign005-lr-prefix-08-v2-review.json`,
+finished guard, `campaign005-lr-08-v2-launch.json`, `campaign005_lr_boundary_v2.py`.
+See the resume guide and SHA-pinned state index for the next action.
