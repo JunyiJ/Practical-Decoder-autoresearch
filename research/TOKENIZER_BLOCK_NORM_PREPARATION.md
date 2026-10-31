@@ -1036,3 +1036,15 @@ LayerNorm resource pilot. Recheck remaining capacity with the failed RMS pair
 protected. Quality training remains unfrozen; SiLU remains adopted.
 Evidence: validation-recovery-plan-001.json, validation-recovery-001-review.json,
 validation-recovery-001-rms-result.json and validation-recovery-decision.json.
+
+## LayerNorm-only continuation frozen, October 31, 2026
+
+Pilot002 permits only the unstarted LayerNorm slot1, paired seed374001, LR0.0025,
+20 updates. It carries the separately audited RMS raw/H200 components while
+keeping pilot001 failed and closed. All recovery sources remain unchanged; only
+the new continuation dispatcher is added. Six entry/carry rejection checks and
+actual frozen-plan binding passed. Disk free18,519,027,712 bytes exceeds the
+unchanged conservative15,170,221,264-byte full projection; failed weights receive
+no cleanup credit. One worker/four threads and all original guards apply.
+No quality dispatch or checkpoint deletion is authorized by this pilot freeze.
+Evidence: pilot002-plan.json, pilot002-freeze.json and pilot002-preflight.json.
