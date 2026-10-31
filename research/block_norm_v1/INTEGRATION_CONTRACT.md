@@ -199,3 +199,22 @@ the new policy. Use a separately identified generated-text fixture with its own
 `tokenizer_no_bias_prior` binding and guarded storage projection, without touching
 real holdout data or claiming quality. Strict MPS optimizer/resume and finite
 controller/retention/selection/statistical integration still precede launch.
+
+
+## Generated-text trainer integration
+
+12 CPU checks now pass through actual run_training with the GPT-2 loader and an
+independently derived generated-text no-bias binding: two updates per arm at
+batch1/context128, complete raw resume preflight, exact saved-EMA/H200 equality,
+raw/H200 tokenizer loading, metadata mismatch rejection and output contracts.
+The paired512 batch8 sampler separately matches independently sampled starts.
+There is no fixture test split and no real corpus/holdout access. Runtime unchanged.
+
+Attempt001 failed before updates due to an invalid fixture cooldown start1 for
+a two-update horizon; attempt002 used start0. Both plans/snapshots/outputs remain
+immutable. Successful fixtures total1,118,435,545bytes; failed text40,902bytes.
+Guard00212.437s, RSS1,419,116,544bytes,4threads/120s/8GiBreserve. This supersedes
+pending-tokenizer/trainer-entry notes, not full-trainer interrupted replay or
+MPS optimizer/resume readiness. Next bounded strict MPS optimizer/resume, then
+controller/retention/statistics and exact finite-plan freeze; quality remains
+gated on complete capacity. No old attempt may be rerun or overwritten.

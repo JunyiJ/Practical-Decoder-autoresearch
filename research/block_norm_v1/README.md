@@ -3,7 +3,7 @@
 This directory provides a prospective normalizer specification, CPU reference
 checks and a separately namespaced unmodified runtime baseline. A named candidate model policy now has construction/optimizer-coverage tests.
 Raw/H200 signature serialization now passes bounded synthetic tests. Synthetic CPU populated-optimizer and interrupted replay checks now pass.
-CPU normalization-reference gradients and cache numerics now pass. Strict MPS numerical checks now pass. Tokenizer-bound trainer/controller and
+CPU normalization-reference gradients and cache numerics now pass. Strict MPS numerical checks now pass. Generated-text tokenizer/trainer entry now passes. Production controller and
 MPS optimizer/resume integration remain unvalidated; no quality training is ready. Frozen original/recovery source and evidence are unchanged.
 
 `spec.py` binds kind, width256, FP32, epsilon2^-23, affine/bias and pre-attention/
@@ -164,3 +164,26 @@ own validated no-bias prior/tokenizer binding; never substitute the real-corpus
 prior onto synthetic data or silently weaken validation. Plan storage first and
 use one guarded worker. MPS optimizer/resume, controller/retention/statistics and
 finite seed/order freeze still remain. No quality pilot while capacity blocked.
+
+
+## Generated-text trainer integration
+
+12 CPU checks now pass through actual run_training with the GPT-2 loader and an
+independently derived generated-text no-bias binding: two updates per arm at
+batch1/context128, complete raw resume preflight, exact saved-EMA/H200 equality,
+raw/H200 tokenizer loading, metadata mismatch rejection and output contracts.
+The paired512 batch8 sampler separately matches independently sampled starts.
+There is no fixture test split and no real corpus/holdout access. Runtime unchanged.
+
+Attempt001 failed before updates due to an invalid fixture cooldown start1 for
+a two-update horizon; attempt002 used start0. Both plans/snapshots/outputs remain
+immutable. Successful fixtures total1,118,435,545bytes; failed text40,902bytes.
+Guard00212.437s, RSS1,419,116,544bytes,4threads/120s/8GiBreserve. This supersedes
+pending-tokenizer/trainer-entry notes, not full-trainer interrupted replay or
+MPS optimizer/resume readiness. Next bounded strict MPS optimizer/resume, then
+controller/retention/statistics and exact finite-plan freeze; quality remains
+gated on complete capacity. No old attempt may be rerun or overwritten.
+
+The two exact trainer source snapshots preserve inherited attention whitespace;
+the failed pytest log preserves emitted trailing spaces. Staged whitespace
+diagnostics are confined to these immutable captures; authored changes are clean.

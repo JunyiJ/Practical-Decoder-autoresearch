@@ -5305,3 +5305,40 @@ quality result. Next validate actual tokenizer/data binding and trainer entry on
 a bounded synthetic fixture with its own correctly derived binding, then strict
 MPS optimizer/resume and controller/retention/statistical preparation. Do not use
 these small numerical checks to bypass capacity or freeze an incomplete panel.
+
+
+## Generated-text tokenizer and trainer integration completed October31
+
+The actual copied `run_training` entry and GPT-2 raw-text loader passed12 CPU
+checks on generated Unicode/special-marker text, with a correctly computed
+`tokenizer_no_bias_prior`. Both normalization arms completed two updates at
+batch1/context128, using Muon/AdamW, cooldown and H200. Each generated file has
+6,408 train tokens and1,599 validation tokens under80/20 raw-text splits; no test
+split exists in the fixture, and the real corpus/closed holdout were not read.
+
+The raw training contract, complete resume preflight, tokenizer-bound raw/H200
+loading, exact H200 equality to saved EMA tensors, metrics/summary and parent
+hashes passed. Self-consistent but wrong corpus, train-ID and tokenizer priors,
+saved tokenizer mismatches and changed resume evaluation seed were rejected.
+The campaign's paired512 batch8/context128 sampler separately matched independently
+sampled starts; the trainer itself used independent batch1. Runtime source was
+unchanged. This is integration evidence, not model-quality or production resource
+readiness, full-trainer interrupted replay, MPS optimizer/resume or a controller.
+
+Attempt001 failed during setup before optimizer updates: its two-step fixture
+set cooldown start1, violating start<total-1. Attempt002 corrected start to0
+without changing runtime validators. Both plans, source snapshots, logs, guards
+and all generated files are preserved. Attempt002 guard12.437s, peakRSS
+1,419,116,544bytes, four threads,120s cap and8GiB reserve. Successful outputs total
+1,118,435,545bytes (four checkpoints plus metadata/text); the failed attempt retains
+40,902bytes of generated text. Both attempts left frozen source and closed roots
+unchanged. No cleanup, historical checkpoint loading or quality training occurred.
+
+[Passing review](tokenizer-evidence/block-norm-preparation-001/trainer-binding-prerequisite-002-review.json),
+[corrected prospective plan](tokenizer-evidence/block-norm-preparation-001/trainer-binding-plan-002.json),
+[retained fixture manifest](tokenizer-evidence/block-norm-preparation-001/trainer-binding-fixture-manifest.json).
+Next predeclare strict MPS optimizer/resume checks with storage accounted before
+writes; prefer bounded in-memory replay and existing evidence where applicable.
+Controller/retention/selection/statistical readiness and exact finite seed/order
+freeze remain pending. Full-panel capacity remains gated; no partial quality
+pilot or thinning controls/seeds/protected evidence to fit.

@@ -1,0 +1,946 @@
+EEEEEEEEEEEE                                                             [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_trainer_rejects_self_consistent_but_wrong_data_binding[rms_incumbent-corpus_sha256] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_trainer_rejects_self_consistent_but_wrong_data_binding[rms_incumbent-train_ids_sha256] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_trainer_rejects_self_consistent_but_wrong_data_binding[rms_incumbent-tokenizer] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_saved_tokenizer_rejection_and_resume_contract_rejection[rms_incumbent] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+___ ERROR at setup of test_campaign_batch_layout_loader_only[rms_incumbent] ____
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_trainer_rejects_self_consistent_but_wrong_data_binding[layer_matched_epsilon-corpus_sha256] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_trainer_rejects_self_consistent_but_wrong_data_binding[layer_matched_epsilon-train_ids_sha256] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_trainer_rejects_self_consistent_but_wrong_data_binding[layer_matched_epsilon-tokenizer] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_saved_tokenizer_rejection_and_resume_contract_rejection[layer_matched_epsilon] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+_ ERROR at setup of test_campaign_batch_layout_loader_only[layer_matched_epsilon] _
+
+request = <SubRequest 'trained' for <Function test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon]>>
+
+    @pytest.fixture(scope='module',params=['rms_incumbent','layer_matched_epsilon'])
+    def trained(request):
+        root=Path(os.environ['BLOCK_NORM_FIXTURE_ROOT'])/request.param
+        root.mkdir()
+        # Unicode and literal special-token markers exercise the actual ordinary-text API.
+        text=''.join(f'Row {i}: café Ω, red blue green <|endoftext|> {i%17}.\n' for i in range(400))
+        path=root/'generated.txt';path.write_text(text,encoding='utf-8')
+        cfg=config(request.param)
+        cfg.data.path=str(path);cfg.data.train_fraction=.8;cfg.data.val_fraction=.2
+        cfg.training.device='cpu';cfg.training.strict_device=True
+        cfg.training.max_iters=2;cfg.training.batch_size=1;cfg.training.batch_layout='independent'
+        cfg.training.seed=372501;cfg.training.eval_seed=372502
+        cfg.training.eval_every=1;cfg.training.eval_iters=1
+        cfg.training.checkpoint_dir=str(root);cfg.training.checkpoint_every=0
+        cfg.training.keep_best_checkpoint=False;cfg.training.resume_from=None
+        cfg.training.metrics_file=str(root/'metrics.jsonl');cfg.training.summary_file=str(root/'summary.json')
+        cfg.training.max_train_seconds=None
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=2,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=2,start_step=1,interval=1,half_lives=[200])
+        data=_make_loader(cfg,'cpu')
+        assert set(data.splits)=={'train','val'} and cfg.model.block_size==128
+        assert set(data.generators)=={'train','val'}
+        boundary=int(.8*len(text))
+        assert data.split_texts==dict(train=text[:boundary],val=text[boundary:])
+        assert torch.equal(data.train_data,torch.tensor(data.encode(text[:boundary])))
+        cfg.model.output_bias_prior=tokenizer_no_bias_prior(data,path)
+        sink=FixtureSink(root,cfg)
+>       result=run_training(cfg,output_sink=sink)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/block_norm_v1/test_trainer_binding.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/runtime/train/train.py:297: in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/runtime/train/lr_schedule.py:78: in __init__
+    self.spec = schedule_contract(training)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+training = {'batch_layout': 'independent', 'batch_size': 1, 'checkpoint_dir': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI...ind': 'spaced_tail_ema', 'total_steps': 2, 'start_step': 1, 'interval': 1, 'half_lives': [200]}, 'weight_decay': 6e-05}
+
+    def schedule_contract(training):
+        raw = getattr(training, 'lr_schedule', None)
+        if raw is None:
+            return None
+        if not isinstance(raw, Mapping):
+            raise ValueError('lr_schedule must be a mapping or null')
+        spec = dict(raw)
+        kind = spec.get('kind')
+        keys = {'constant': {'kind'},
+                'cosine': {'kind', 'total_steps', 'min_ratio'},
+                'linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step'},
+                'warmup_linear_cooldown': {'kind', 'total_steps', 'min_ratio', 'start_step',
+                                           'warmup_steps', 'initial_ratio'}}
+        if not isinstance(kind, str) or kind not in keys or set(spec) != keys[kind]:
+            raise ValueError('Unknown schedule or invalid schedule fields')
+        if kind == 'constant':
+            return spec
+        total = spec['total_steps']
+        if type(total) is not int or total < 2 or total != training.max_iters:
+            raise ValueError('Scheduled total_steps must equal max_iters and be >= 2')
+        floor = spec['min_ratio']
+        if (isinstance(floor, bool) or not isinstance(floor, (int, float))
+                or not math.isfinite(floor) or not 0 < floor <= 1):
+            raise ValueError('Schedule min_ratio must be finite and in (0, 1]')
+        if kind in {'linear_cooldown', 'warmup_linear_cooldown'}:
+            start = spec['start_step']
+            if type(start) is not int or not 0 <= start < total - 1:
+>               raise ValueError('Cooldown start_step must be before the final update')
+E               ValueError: Cooldown start_step must be before the final update
+
+research/block_norm_v1/runtime/train/lr_schedule.py:37: ValueError
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345
+  /Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; hydra
+    self._mark_plugins_for_rewrite(hook, disable_autoload)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR research/block_norm_v1/test_trainer_binding.py::test_actual_trainer_outputs_and_bound_raw_h200[rms_incumbent]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_trainer_rejects_self_consistent_but_wrong_data_binding[rms_incumbent-corpus_sha256]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_trainer_rejects_self_consistent_but_wrong_data_binding[rms_incumbent-train_ids_sha256]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_trainer_rejects_self_consistent_but_wrong_data_binding[rms_incumbent-tokenizer]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_saved_tokenizer_rejection_and_resume_contract_rejection[rms_incumbent]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_campaign_batch_layout_loader_only[rms_incumbent]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_actual_trainer_outputs_and_bound_raw_h200[layer_matched_epsilon]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_trainer_rejects_self_consistent_but_wrong_data_binding[layer_matched_epsilon-corpus_sha256]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_trainer_rejects_self_consistent_but_wrong_data_binding[layer_matched_epsilon-train_ids_sha256]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_trainer_rejects_self_consistent_but_wrong_data_binding[layer_matched_epsilon-tokenizer]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_saved_tokenizer_rejection_and_resume_contract_rejection[layer_matched_epsilon]
+ERROR research/block_norm_v1/test_trainer_binding.py::test_campaign_batch_layout_loader_only[layer_matched_epsilon]
+1 warning, 12 errors in 0.89s
