@@ -5933,3 +5933,25 @@ No cleanup or holdout use occurred; selected/fresh/failure weights remain protec
 Evidence: `campaign005-lr-03-v2-terminal.json`, `campaign005-lr-prefix-04-v2-review.json`,
 finished prefix guard and `campaign005-lr-04-v2-launch.json`. See the resume guide
 and SHA-pinned state index for the current next action.
+
+
+### Campaign005 second hybrid learning-rate screen accepted
+
+Slot4 (hybridD/4, LR0.00125, seed3501, width512,1200updates) completed
+in901.91s and received parent acceptance. Independent prefix05 review verified
+all five accepted cells and preserved checkpoint/non-checkpoint identities.
+H200 full-validation CE4.976714106020634 versus raw5.077557087636783.
+Compared with LR0.000625 on the same screening seed, hybrid H200 CE is
+0.011068468692712 worse. This partial-grid observation is not LR selection,
+fresh confirmation or adoption; the frozen grid and H200 metric remain unchanged.
+
+The review guard finished without violations. Remaining storage fit:
+24,646,782,976 bytes free versus24,405,766,076 required including8GiB reserve.
+After verifying worker exit and no other research workers, dispatched only slot5
+through unchanged gates (controller93091, child93130, session66438).
+Review prefix06 after successful slot5 acceptance and exit before slot6.
+No cleanup or holdout use occurred; selected/fresh/failure weights remain protected.
+
+Evidence: `campaign005-lr-04-v2-terminal.json`, `campaign005-lr-prefix-05-v2-review.json`,
+finished prefix guard and `campaign005-lr-05-v2-launch.json`. See the resume guide
+and SHA-pinned state index for the current next action.
