@@ -1,0 +1,134 @@
+{
+  "status": "guarded_inference_preparation_completed_pending_serial_seeds",
+  "observed_at": "2026-10-31T13:37:51.086359+00:00",
+  "controller_pid": 38659,
+  "request_reference": {
+    "path": "inference/3511/panel-request.json",
+    "sha256": "688225dd78304f6bdf57029e1106fcb80dc033e08ef0dcb8085dec3b27c629af"
+  },
+  "request": {
+    "adopted": false,
+    "checkpoint_pairs_sha256": "b99f9497b7d0f6ccb0f679b67b223478b288e096960cbf87e788bec0a872d685",
+    "completion_ref": {
+      "path": "meta/quality-dispatch-23.json",
+      "sha256": "c9b3e0ad27b0ae58a0c096f90f62fadb1061be2a06398f5c5275d23ae7b1216a"
+    },
+    "contract": {
+      "batches": [
+        1,
+        8
+      ],
+      "cache_atol": 3e-05,
+      "cache_reset_replay": true,
+      "cache_rtol": 0.0003,
+      "context": 128,
+      "decode_tokens": 64,
+      "device": "mps",
+      "driver_limit_bytes": 6442450944,
+      "dtype": "float32",
+      "family_cycle": [
+        "hybrid",
+        "gated_mla",
+        "kda"
+      ],
+      "job_seconds": 600,
+      "output_limit_bytes": 4194304,
+      "prefill_tokens": 32,
+      "repeats": 8,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "seed_offsets": [
+        0,
+        1,
+        2
+      ],
+      "seeds": [
+        3511,
+        3512,
+        3513
+      ],
+      "token_sha256": "0e77bdca8368d30a983e0b1ef033bd141411c35ff00c8f9e7cc1e05c6a276812",
+      "tokenizer_sha256": "752ce9bb507638868010d56f2d12a013142a3a8eaba390033a00f3ba92b74234",
+      "version": 2,
+      "warmups": 2
+    },
+    "deletion_authorized": false,
+    "dispatch_authorized": false,
+    "kind": "wide_hybrid_inference_preparation_v2",
+    "next_stage_authorized": false,
+    "parent_pid": 38659,
+    "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
+    "projection_ref": {
+      "path": "meta/projection.json",
+      "sha256": "5aba55c22f234f35aacea218fa53e767c450e9aaa6f07f34bfa2b4d3d5bf9df4"
+    },
+    "quality_controls_sha256": "fb12bbebdd893dd9eaaf5b0308b02d254e140a6f71a61a9f7610c73c3a70fc06",
+    "quality_inventory_sha256": "346337c3a69579c7d6863ead7e4d34b96a4aecaed8de6874cc7461603b33c70a",
+    "rank_completion_ref": {
+      "path": "meta/rank-boundary-cleanup-complete.json",
+      "sha256": "1dfe4e9087e9264a8d44726d87d76f34dac8ca1a7a374e0200ae45f8c1b8090f"
+    },
+    "records_sha256": "44705bbfe6a7c0dc48957f59ade096b18ec8e297b9ba2b0acdf5c8184090c99e",
+    "retention_sha256": "3693722d65d9e775c764ad40e946ac77221c547fe9c386dc931a9528574138c1",
+    "seed_order": [
+      3511,
+      3512,
+      3513
+    ],
+    "selection": {
+      "gated_mla": {
+        "divisor": 4,
+        "lr": 0.00125
+      },
+      "hybrid": {
+        "divisor": 2,
+        "lr": 0.000625
+      },
+      "kda": {
+        "divisor": 2,
+        "lr": 0.000625
+      }
+    },
+    "status": "prepared_pending_serial_integration",
+    "token_sha256": "0e77bdca8368d30a983e0b1ef033bd141411c35ff00c8f9e7cc1e05c6a276812",
+    "tokenizer_sha256": "752ce9bb507638868010d56f2d12a013142a3a8eaba390033a00f3ba92b74234",
+    "triples_sha256": "e0d1556ded5712e647eb538234bbbbc82e2b52167ef9cb9700f29d2aa9f87037"
+  },
+  "internal_guard": {
+    "elapsed_seconds": 265.37100058302167,
+    "kind": "wide_hybrid_inference_preparation_v2",
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 1800
+    },
+    "observation": {
+      "free_bytes": 15567757312,
+      "peak_rss_bytes": 267157504
+    },
+    "pid": 38659,
+    "reason": null,
+    "status": "finished"
+  },
+  "internal_guard_sha256": "a0799f8e2be6efccfae11842bb3964ef03eb80d077cb52eaa8d2fb070f5f93cc",
+  "external_guard": {
+    "elapsed_seconds": 504.62066600000253,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 1800
+    },
+    "observation": {
+      "free_bytes": 15567663104,
+      "peak_rss_bytes": 267157504
+    },
+    "pid": 38659,
+    "reason": null,
+    "status": "finished"
+  },
+  "external_guard_sha256": "0e83e7b46d9084b306443e075d03625f3a1363c2548aa856826b00a3d709fc36",
+  "inference_seed_accepted": false,
+  "adopted": false,
+  "holdout_consumed": false,
+  "scope": "Preparation gates completed; controller remains active in first seed readiness replay. No measurement or final decision claimed."
+}

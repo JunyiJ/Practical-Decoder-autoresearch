@@ -4325,3 +4325,15 @@ is not yet accepted. Sandbox MPS preflight failed before any attempt/publication
 host MPS was confirmed and the unchanged wrapper launched there. This is an
 environment preflight record, not a retried inference seed or numerical fixture.
 Resume guide/index and the status tool now expose the exact inference continuation.
+
+
+### Campaign005 inference preparation completed
+
+Shared inference preparation passed under the outer504.62s guard; internal
+preparation/replay finished265.37s, both with no resource violation. The exact
+panel request SHA256 is688225dd78304f6bdf57029e1106fcb80dc033e08ef0dcb8085dec3b27c629af.
+Controller38659 remains active in first-seed readiness replay; no inference
+measurement or seed acceptance is claimed. The fixed serial panel still owns
+3511/3512/3513; do not duplicate preparation or dispatch.
+Evidence: campaign005-inference-preparation-reviewed-v2.json contains the
+immutable request and completed guards. All protected pairs remain retained.
