@@ -4728,3 +4728,18 @@ frozen H200 endpoint remains unchanged. Training206.79s/worker338.83s; peakRSS
 Matched GELU seed3611 is running as slot07. Every fresh raw/H200 pair remains
 protected; no cleanup or holdout scoring.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-07-review.json).
+
+
+### October31 activation001 first fresh pair accepted
+
+Both seed3611 recipes at saved LR0.00125 passed independent acceptance.
+SiLU rawCE4.707916448/H200CE4.722778111; GELU rawCE4.707687207/H200CE4.722655893.
+GELU-minus-SiLU H200 delta=-0.000122218 (raw delta=-0.000229241): nearly identical
+on this seed, far smaller than the strict mean0.02 adoption improvement. No
+adoption or equivalence conclusion from one pair; all three pairs and frozen
+conditional-text/inference/final reviews remain required. H200 worsened both
+raw endpoints by about0.0149 on this seed; preserve the frozen endpoint.
+GELU training206.89s/worker346.67s, peakRSS1,698,004,992bytes, driver2,501,705,728bytes.
+All guards passed, every fresh pair protected, holdout closed. Slot08 GELU
+seed3612 now runs first in the predeclared alternating arm order.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-08-review.json).
