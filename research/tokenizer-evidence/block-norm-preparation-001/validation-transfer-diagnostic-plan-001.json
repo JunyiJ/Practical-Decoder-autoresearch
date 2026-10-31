@@ -1,0 +1,18 @@
+{
+  "source": "research/block_norm_v1/validation_transfer_diagnostic.py",
+  "sha256": "efddb47040353b66ad6ab64130d0d0a9cdd8d77f7dcf5fd51928fdf386671cb4",
+  "question": "Does combined MPS-to-CPU float64 conversion preserve nonzero FP32 values?",
+  "cases": [
+    "literal positive values",
+    "uniform seven-class crossentropy"
+  ],
+  "original_failed_attempt": "validation-001",
+  "limits": {
+    "cpu_threads": 4,
+    "seconds": 600,
+    "rss": 4294967296,
+    "driver": 6442450944,
+    "reserve": 8589934592
+  },
+  "model_or_training": false
+}

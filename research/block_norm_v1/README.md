@@ -333,3 +333,37 @@ retention-aware capacity, scientific seeds and finite launch freeze remain gated
 Evidence: `campaign-ledger-plan-001.json`, `campaign-ledger-001-review.json`,
 `campaign-ledger-analysis.json` and `campaign-ledger-decision.json` in the
 block-norm preparation evidence directory.
+
+## Cache capacity restored and retained-fixture validation passed, October31,2026
+
+The human authorized unused shared dataset-cache deletion. The exact manifested
+cleanup removed9.32GiB allocated, with17.87GiB free afterward. Research weights,
+archives, model caches and immutable evidence were verified unchanged. The
+remaining checkpoint audit found no additional verified deletion allowlist; historical
+numerical payloads remain pending any specific archival/dependency audit.
+This clears the current15,170,221,264B full-panel projection with about3.74GiB
+headroom; recheck before dispatch. Capacity is no longer the current blocker.
+See `tokenizer-evidence/dataset-cache-cleanup-001/completed.json` and checkpoint review.
+
+Read-only validation attempt001 failed: the new scorer's combined MPS-to-CPU
+float64 conversion returned zeros. A separate tiny-tensor diagnostic reproduced
+it for literal values and crossentropy. The corrected path transfers FP32 to CPU
+first and converts there. Failed001 and its exact source are retained. Original
+`src/research/coverage_eval.py:54` already uses this safe MPS path; historical
+quality results and source remain unchanged. No tolerance was relaxed.
+
+New attempt002 passed34 checks using both retained generated-text v2 H200
+checkpoints: all1598 validation targets,13 context windows including62-target
+tail, independent CPU FP64 logsumexp oracle, exact MPS replay, RNG preservation,
+artifact/hash and malformed-report rejection. Maximum per-window mean NLL
+errors were3.786403e-7 RMS and3.410218e-7 LayerNorm (limit3e-5). A separate
+8327-target uniform-logit analytic oracle checked66 windows and5 blocks, with
+short tails7/135 and mean error2.758057e-7 (limit2e-6). No test split was scored.
+Guard7.41663s, RSS808,304,640B, peak sampled MPS driver1,103,872,000B.
+
+This is evaluation correctness on two-step fixtures, not a quality comparison.
+No optimizer update, new binary checkpoint, cleanup of research evidence or
+model/runtime change occurred. Next bind real worker/parent artifact acceptance,
+external ledger heads and retention receipts; complete inference measurement
+acceptance, seed census, resource pilots and final finite freeze. Avoid further
+metadata-only expansion absent a concrete failure.

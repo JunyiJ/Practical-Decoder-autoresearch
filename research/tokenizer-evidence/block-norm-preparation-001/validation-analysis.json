@@ -1,0 +1,235 @@
+{
+  "status": "corrected_readonly_validation_passed",
+  "observed_at": "2026-10-31T21:52:15.323019+00:00",
+  "source_commit": "031aff5772695c406b33139349899981a131d894",
+  "tests_passed": 34,
+  "preserved_failed_attempt": {
+    "review_sha256": "34e43b8fd75835ecebe8904f1c9350fc813d717566c752cd7c3b6466b383643b",
+    "cause": "Combined MPS-to-CPU and float64 conversion zeroed nonzero FP32 data; new scorer bug caught by independent oracle"
+  },
+  "diagnostic_sha256": "a601d58e9e6ec6a320bd9a24fab21d01657a00a6b6141066169e6d8e5878b00d",
+  "correction": "Move FP32 to CPU, then convert to float64 on CPU; targets, models, precision of forward/crossentropy, tolerances unchanged",
+  "historical_scope": {
+    "path": "src/research/coverage_eval.py",
+    "sha256": "403f10101e9ae8d96846473a97904d4f75b3ca4ad44077297f73cb57a59b18b4",
+    "line": 54,
+    "note": "Frozen historical evaluator already uses losses.cpu().double() for MPS; no historical result invalidated by this new-scorer failure"
+  },
+  "oracle_results": [
+    {
+      "arm": "rms_incumbent",
+      "report": {
+        "binding": {
+          "config": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/config.json",
+            "sha256": "34fcfca92af00d4d7bab705c0de1dc98dece643ae9a61e7f2ea35daa5cc491f7"
+          },
+          "h200": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/h200.pt",
+            "sha256": "85fab7285d44818cf1b09a920be6bbf34e46fc146cdbe4d4932ff238a9533789"
+          },
+          "parent": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/final_000002_1793481669892493000.pt",
+            "sha256": "797c2faf3efd3b36098233c3d55c044fd14d292571c148be75325b94968b2f76"
+          }
+        },
+        "target": {
+          "validation_tokens": 1599,
+          "targets": 1598,
+          "ids_sha256": "1a64d7d5ac99e48b33e3d993a7b57d0e764d159ded0ea34d3bb1e0c76a17b872",
+          "target_ids_sha256": "387668afe6a5439eaecdae163e8ce17f149707e7534a6f14dcc60d6e7381a7d8",
+          "target_bytes": 4084,
+          "window_counts": [
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            62
+          ],
+          "block_counts": [
+            1598
+          ],
+          "tokenizer": {
+            "name": "gpt2",
+            "implementation": "tiktoken",
+            "version": "0.14.0",
+            "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c",
+            "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+            "special_tokens": {
+              "<|endoftext|>": 50256
+            },
+            "special_token_policy": "ordinary_text",
+            "split_unit": "raw_text",
+            "vocab_size": 50257
+          },
+          "context": 128,
+          "first_target_offset": 1,
+          "tail_retained": true,
+          "holdout_scored": false
+        },
+        "window_loss_sums": [
+          1376.808632850647,
+          1377.6436595916748,
+          1376.7405033111572,
+          1378.0544719696045,
+          1378.8204879760742,
+          1378.765968322754,
+          1375.8566360473633,
+          1378.3430061340332,
+          1378.4526748657227,
+          1378.199743270874,
+          1377.277606010437,
+          1378.2989807128906,
+          668.659291267395
+        ],
+        "block_loss_sums": [
+          17201.921662330627
+        ],
+        "total_loss": 17201.921662330627,
+        "ce": 10.764656860031682,
+        "bits_per_byte": 6.076671664056032,
+        "loss_dtype": "float32_cross_entropy_float64_aggregation"
+      },
+      "independent_cpu_fp64_ce": 10.764657127997591,
+      "max_window_mean_nll_error": 3.786402622552032e-07,
+      "mean_nll_error": 2.679659090176756e-07,
+      "rng_preserved": true,
+      "complete_target_offsets": true,
+      "quality_comparison": false
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "report": {
+        "binding": {
+          "config": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/config.json",
+            "sha256": "094f0ef653ba9cc87adf9d24fdf8afd8966cf3b4d5a8b5ba0b7e0c93504febe1"
+          },
+          "h200": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/h200.pt",
+            "sha256": "454c134bcb725cc19524f3b109449d6dae41b41039c110a974267bd55767fe7d"
+          },
+          "parent": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/final_000002_1793481674956161000.pt",
+            "sha256": "5836ce0907e65c050290662fefd772f7d29f783fed7b6d9501ca326d030a371b"
+          }
+        },
+        "target": {
+          "validation_tokens": 1599,
+          "targets": 1598,
+          "ids_sha256": "1a64d7d5ac99e48b33e3d993a7b57d0e764d159ded0ea34d3bb1e0c76a17b872",
+          "target_ids_sha256": "387668afe6a5439eaecdae163e8ce17f149707e7534a6f14dcc60d6e7381a7d8",
+          "target_bytes": 4084,
+          "window_counts": [
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            128,
+            62
+          ],
+          "block_counts": [
+            1598
+          ],
+          "tokenizer": {
+            "name": "gpt2",
+            "implementation": "tiktoken",
+            "version": "0.14.0",
+            "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c",
+            "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+            "special_tokens": {
+              "<|endoftext|>": 50256
+            },
+            "special_token_policy": "ordinary_text",
+            "split_unit": "raw_text",
+            "vocab_size": 50257
+          },
+          "context": 128,
+          "first_target_offset": 1,
+          "tail_retained": true,
+          "holdout_scored": false
+        },
+        "window_loss_sums": [
+          1376.2432289123535,
+          1377.1789436340332,
+          1376.2181253433228,
+          1377.5180587768555,
+          1378.2960405349731,
+          1378.2047519683838,
+          1375.3098430633545,
+          1377.8244066238403,
+          1377.9170398712158,
+          1377.6825122833252,
+          1376.6826848983765,
+          1377.755820274353,
+          668.4386568069458
+        ],
+        "block_loss_sums": [
+          17195.270112991333
+        ],
+        "total_loss": 17195.270112991333,
+        "ce": 10.760494438667918,
+        "bits_per_byte": 6.074321968354261,
+        "loss_dtype": "float32_cross_entropy_float64_aggregation"
+      },
+      "independent_cpu_fp64_ce": 10.760494705420625,
+      "max_window_mean_nll_error": 3.4102177970396497e-07,
+      "mean_nll_error": 2.667527070343567e-07,
+      "rng_preserved": true,
+      "complete_target_offsets": true,
+      "quality_comparison": false
+    }
+  ],
+  "analytic_multiblock": {
+    "targets": 8327,
+    "windows": 66,
+    "blocks": 5,
+    "window_tail": 7,
+    "block_tail": 135,
+    "mean_loss_error": 2.7580573203067615e-07
+  },
+  "guard": {
+    "elapsed_seconds": 7.416622999997344,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 19170766848,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 13320192,
+      "peak_observed_mps_driver_bytes": 1103872000,
+      "peak_rss_bytes": 808304640
+    },
+    "pid": 76527,
+    "reason": null,
+    "status": "finished"
+  },
+  "runtime_unchanged": true,
+  "optimizer_updates": 0,
+  "new_binary_files": 0,
+  "quality_comparison": false,
+  "holdout_scored": false,
+  "limitations": [
+    "Generated two-step checkpoint fixtures only, no architecture adoption conclusion",
+    "Structural report checks cannot prove arbitrary claimed losses; worker acceptance needs trusted hashes and parent verification",
+    "Real worker/parent integration, retention receipts, inference timing acceptance and finite launch freeze remain"
+  ]
+}

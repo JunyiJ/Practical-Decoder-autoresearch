@@ -1,0 +1,28 @@
+F
+=================================== FAILURES ===================================
+______ test_full_validation_matches_independent_cpu_oracle[rms_incumbent] ______
+
+scored = {'arm': 'rms_incumbent', 'binding': {'config': {'path': '/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_s...4dcc60d6e7381a7d8', ...}, 'window_loss_sums': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...], 'block_loss_sums': [0.0], ...}, ...}
+record_property = <function record_property.<locals>.append_property at 0x10c42c220>
+
+    def test_full_validation_matches_independent_cpu_oracle(scored,record_property):
+        report=scored['report'];oracle=scored['oracle'];target=report['target']
+        assert target['targets']==1598 and target['validation_tokens']==1599
+        assert target['window_counts']==[128]*12+[62] and target['block_counts']==[1598]
+        total=math.fsum(oracle);windows=[math.fsum(oracle[i:i+128]) for i in range(0,len(oracle),128)]
+        errors=[abs(a-b)/n for a,b,n in zip(report['window_loss_sums'],windows,target['window_counts'])]
+>       assert max(errors)<3e-5 and abs(report['ce']-total/len(oracle))<3e-5
+E       assert (10.784827556427798 < 3e-05)
+E        +  where 10.784827556427798 = max([10.75631767604421, 10.762841323161236, 10.755785479224723, 10.766050940902797, 10.772035298012312, 10.771609421447414, ...])
+
+research/block_norm_v1/test_validation.py:38: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345
+  /Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; hydra
+    self._mark_plugins_for_rewrite(hook, disable_autoload)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED research/block_norm_v1/test_validation.py::test_full_validation_matches_independent_cpu_oracle[rms_incumbent]
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 1 warning in 2.40s

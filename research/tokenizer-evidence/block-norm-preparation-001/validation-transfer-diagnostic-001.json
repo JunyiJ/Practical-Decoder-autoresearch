@@ -1,0 +1,51 @@
+{
+  "torch_version": "2.14.1",
+  "rows": [
+    {
+      "case": "literal",
+      "fp32_cpu": [
+        0.5,
+        1.0,
+        2.0,
+        10.75
+      ],
+      "combined_transfer_fp64": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "separate_transfer_fp64": [
+        0.5,
+        1.0,
+        2.0,
+        10.75
+      ],
+      "combined_equals_separate": false
+    },
+    {
+      "case": "cross_entropy",
+      "fp32_cpu": [
+        1.9459102153778076,
+        1.9459102153778076,
+        1.9459102153778076,
+        1.9459102153778076
+      ],
+      "combined_transfer_fp64": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "separate_transfer_fp64": [
+        1.9459102153778076,
+        1.9459102153778076,
+        1.9459102153778076,
+        1.9459102153778076
+      ],
+      "combined_equals_separate": false
+    }
+  ],
+  "source_sha256": "efddb47040353b66ad6ab64130d0d0a9cdd8d77f7dcf5fd51928fdf386671cb4",
+  "scope": "Tiny FP32 transfer diagnostic; no model/optimizer/quality work"
+}
