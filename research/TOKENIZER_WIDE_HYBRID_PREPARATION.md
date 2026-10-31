@@ -6392,3 +6392,31 @@ cannot append another quality slot. Inference requires completed23.
 Evidence: campaign005-fresh-seeds3511-3512-accepted-v2.json, slot20 terminal,
 fresh-prefix-21 review/guard, campaign005-fresh21-wrapper-review-v2.json and
 slot21 launch. Resume guide/index preserve the exact continuation sequence.
+
+
+### Campaign005 third-seed gated MLA accepted; final-history replay passed
+
+Slot21 gated MLA D/4, LR0.00125, seed3513 completed737.94s; parent accepted1420.76s.
+H200 CE4.839211356994297, raw4.824693534822825. All three gated MLA fresh
+cells are now accepted, but KDA/hybrid seed3513 and inference remain pending.
+No adoption or switch from the frozen H200 decision metric.
+
+Dedicated final_confirmation_history_v2 replay explicitly for21 passed162.14s,
+checking22 completed records and10 retained selected/fresh pairs, immutable
+metadata and all three cleanup boundaries. Remaining capacity18,182,131,712 bytes
+versus18,002,010,520 required includes the unchanged8GiB reserve. All protected
+models, every fresh pair, failures and archives remain intact; no cleanup.
+
+Exact-slot22 wrapper AST/diff/API checks passed; production source matches005
+and applicable inference/census pins. After prior workers/reviewer exited,
+dispatched only slot22 (KDA D/2, LR0.000625, seed3513): controller27897,
+session5372, guarded startup. No slot22 success claim. Review22 before final23.
+
+A read-only inference resumption map records prepare_inference under an outer
+guard and both locks, run_panel for the three fixed serial seeds, then the frozen
+review_final_campaign_v2 procedure with final inference/3513/review.json. This
+map grants no skipped prerequisites and no inference was prepared. The final
+procedure must be pinned in the frozen files, verify all three controllers, and
+publish outside the sealed campaign. See campaign005-inference-resumption-map-v2.json.
+Evidence: slot21 terminal, fresh-prefix-22 review/guard,
+campaign005-fresh22-wrapper-review-v2.json and slot22 launch.

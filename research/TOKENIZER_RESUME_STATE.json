@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T11:32:01.032345+00:00",
-  "observed_at_los_angeles": "2026-10-31T04:32:01.032345-07:00",
+  "observed_at": "2026-10-31T12:02:44.778134+00:00",
+  "observed_at_los_angeles": "2026-10-31T05:02:44.778134-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "cdbac39",
+  "evidence_commit_before_handoff": "94d64b8",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-21-v2-terminal.json",
+  "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-22-v2-terminal.json",
   "observed_process_records": [
     {
       "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-00.json",
@@ -224,9 +224,18 @@
       "elapsed_seconds": 725.4998502499948,
       "returncode": 0,
       "error": null
+    },
+    {
+      "path": "research_runs/tokenizer-wide-hybrid-005/control/process-quality-21.json",
+      "status": "completed",
+      "pid": 26350,
+      "parent_pid": 23736,
+      "elapsed_seconds": 737.9400955409801,
+      "returncode": 0,
+      "error": null
     }
   ],
-  "session_id_hint": 83274,
+  "session_id_hint": 5372,
   "closed_campaigns": [
     "tokenizer-wide-hybrid-001",
     "tokenizer-wide-hybrid-002",
@@ -234,7 +243,7 @@
     "tokenizer-wide-hybrid-004"
   ],
   "first_action": "Run read-only tokenizer_resume_status.py and inspect actual processes; do not duplicate an existing worker. Follow TOKENIZER_RESUME.md and current local next_action.",
-  "next_after_starter": "Observe campaign005 fresh slot21 controller23736/session83274; startup may precede child creation, never duplicate launch. Slots15\u201320 accepted and independently reviewed; first two fresh seeds complete. After slot21 parent acceptance and actual worker exit, prepare guarded independent review with final_confirmation_history_v2.verify_confirmation_dispatch explicitly slot21 (completed22), preserving full history, all selected/fresh pairs and remaining storage. Then adapt only the slot21 wrapper to slot22/prefix22 through remaining startup/readiness/dispatch APIs after scope review. The final-history API supports21..23; slot23 cannot append quality, and inference requires completed23. Inspect inference prerequisites after all fresh cells. No cleanup, closed campaign/numerical retry, source edits or holdout use. One worker/all guards; commit/push findings and resumption state.",
+  "next_after_starter": "Observe campaign005 fresh slot22 controller27897/session5372; startup may precede child creation, never duplicate launch. Slots15\u201321 accepted and independently reviewed. After slot22 parent acceptance and actual worker exit, prepare guarded independent final_confirmation_history_v2 replay explicitly slot22 (completed23), preserving full history, all selected/fresh pairs and remaining storage. Then adapt only slot22 wrapper to slot23/prefix23 through remaining startup/readiness/dispatch APIs after scope review. After slot23 acceptance/exit review explicitly23/completed24, then inspect campaign005-inference-resumption-map-v2.json and all frozen prerequisites before preparing inference. Final23 cannot append quality; no retries, cleanup, production edits or holdout use. One worker/all guards; commit/push findings and resumption state.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -392,6 +401,15 @@
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-21-v2-review.json": "4fbd8faa77a06324ed354a028c256aebcfc5ff6c00bdcee5ed8da3e0adee0436",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-21-v2-guard.json": "f90f94fbb6d9e2c1631ce3a20fb2a60528bf88305fa94afe002785db9185a1d8",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-21-v2-launch.json": "b37abe262dd9093b6509c111e76307155bc55a6fea535cd231501a66c67c4e04",
-    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-seeds3511-3512-accepted-v2.json": "a906ef66e43bfe7c98588d7898ba342f6d7fd02a046ad95e84c743cd45ccc9c4"
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-seeds3511-3512-accepted-v2.json": "a906ef66e43bfe7c98588d7898ba342f6d7fd02a046ad95e84c743cd45ccc9c4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-21-v2-startup-guard.json": "78b6793e45b5070a1b77265e8a0c1b94188097c76380e5e3df969176a08db70e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-21-v2-terminal.json": "4eb6a785e94ef34e2eab0f1cf4469d69478b5d2fa29f7140e5a459e8be22a805",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_fresh21_v2.py": "029418afeab8a49b81f18ff8d7b9fc73f17dec60dfd8ed6af9c512d1b343cb8c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_fresh22_v2.py": "4ce5246b7f2db32a8892d3e5125565548a62add3129e70dd20798d7d874acdbc",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh22-wrapper-review-v2.json": "446662bc023baf4c9906ce9f6f00e9089c002f0992dfde579879277c219e26c6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-22-v2-review.json": "1443c31dfe68c755241cd695c35988681b02a74d871225c17ca6e8e3d31506c9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-22-v2-guard.json": "c21bf7a39cef08f573c250755f254c0198d7f5198c549c893f5d8fc92cf10bdc",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-22-v2-launch.json": "617520682171c77629b61ee35cae7b446145fb82d47aa58f0c71e4d3f310e963",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-resumption-map-v2.json": "e5142e658a14fbdf0612e94724f3183983f4271099d9cf421aa72b0adec1094d"
   }
 }
