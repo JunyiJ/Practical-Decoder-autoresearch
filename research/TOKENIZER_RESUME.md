@@ -46,7 +46,7 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
 ```
 
 1. Read ignored `research_state/tokenizer-quality-progress.json`; reconcile its
-   next_action with actual Git/process state. Current research workers are idle.
+   next_action with actual Git/process state. Activation quality slot00 was launched.
    No005 relaunch, slot24, seed extension or changed adoption criterion.
 2. Continue [activation preparation](TOKENIZER_MLA_ACTIVATION_PREPARATION.md).
    The MoE panel is deferred after a 3.27 GB conservative capacity gap; its
@@ -84,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 pilots and audited cleanup complete; first screen next; see the indexed
+Current continuation: activation001 first SiLU screen running (slot00, seed3601, LR0.000625); see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -249,3 +249,7 @@ Observed free15,573,012,480bytes exceeded remaining requirement15,169,847,947.
 No selected/fresh/failure checkpoint was deleted; test holdout remains closed.
 Next is the first of six1200-update screens under the unchanged frozen source.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-pilot-boundary-reviewed.json).
+
+Latest launch: activation001 quality00, parent57264/child57267/session9271.
+Inspect actual state and wait for immutable acceptance before any next dispatch.
+[Launch observation](tokenizer-evidence/activation-preparation-001/campaign001-quality00-launch.json).

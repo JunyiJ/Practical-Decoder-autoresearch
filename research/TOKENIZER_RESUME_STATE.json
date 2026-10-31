@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T16:56:06.929364+00:00",
+  "observed_at": "2026-10-31T16:56:59.125507+00:00",
   "observed_at_los_angeles": "2026-10-31T09:49:56.753225-07:00",
   "branch": "codex/tokenizer-quality",
   "evidence_commit_before_handoff": "d3f270c7e414338215a16f06fa9b45bf19a0d15b",
@@ -643,17 +643,18 @@
     "research/tokenizer-evidence/activation-preparation-001/campaign001-pilots-review-guard.json": "792db6026a698fe2eb70a5ddb49e7d94a8f71d21934ff50b51a95579e062f0a7",
     "research/tokenizer-evidence/activation-preparation-001/campaign001-pilots-reviewed.json": "d58a3b071dafe18fcdd68fddb679064b8b66c7ec6ae6ae75b3e46a85159d3240",
     "research/tokenizer-evidence/activation-preparation-001/review_campaign001_pilot_boundary.py": "8efd7eacfb327f48a27e5aeb88b5db95f008fcb98f2164c545fa33bf324b4dee",
-    "research/tokenizer-evidence/activation-preparation-001/review_campaign001_pilots.py": "ddff5b1d045c4731c7ab7a39782e59dcf6f9119a17674910dd173c9fbd7d6818"
+    "research/tokenizer-evidence/activation-preparation-001/review_campaign001_pilots.py": "ddff5b1d045c4731c7ab7a39782e59dcf6f9119a17674910dd173c9fbd7d6818",
+    "research/tokenizer-evidence/activation-preparation-001/campaign001-quality00-launch.json": "37a5af4545d3a7ccd39f8b97128b7af2b94640b2a6bded79de3b6643b6715880"
   },
   "independent_final_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
   "independent_final_guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
-  "current_research_phase": "activation_campaign001_pilots_and_retention_complete",
+  "current_research_phase": "activation_campaign001_quality00_running",
   "final_decision": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json",
   "ffn_direction_decision": "research/tokenizer-evidence/moe-preparation-001/direction-decision.json",
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
   "activation_finite_design": "research/tokenizer-evidence/activation-preparation-001/finite-design-v1.json",
   "activation_session_review": "research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json",
-  "next_action": "Activation001 both pilots accepted and audited pilot boundary completed; portable metadata and manifests saved. Commit/push evidence, then dispatch exactly quality slot00 with frozen entry step, pinned tokenizer cache and four threads. Inspect actual processes first. No source edits, existing attempt retries, closed campaign reopening or holdout scoring. After each accepted quality slot continue serially; six screens precede saved LR selection and audited losing-screen cleanup, then six fresh runs. Preserve every selected/fresh/failure pair and all guards.",
+  "next_action": "Activation001 quality slot00 (SiLU, seed3601, LR0.000625,1200steps) launched; parent57264/child57267/session9271 observed running. Inspect actual process/control/log/ledger; saved PIDs may be stale. Do not dispatch another worker or retry. Only after immutable dispatch-complete-quality-00 and independent acceptance advance one frozen step. Both pilots and exact four-weight retention boundary passed/pushed; frozen source unchanged. Six screens precede saved selection and audited losing-screen cleanup, then six fresh runs/inference/final. Keep all guards/protected pairs/closed holdout; no paid compute/subagents. Commit/push substantive evidence without force.",
   "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json",
   "activation_dispatch_retention_review": "research/tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json",
   "activation_inference_review": "research/tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json",
@@ -662,5 +663,6 @@
   "active_campaign_root": "research_runs/tokenizer-activation-001",
   "activation_plan_sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
   "activation_source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
-  "activation_pilot_boundary_review": "research/tokenizer-evidence/activation-preparation-001/campaign001-pilot-boundary-reviewed.json"
+  "activation_pilot_boundary_review": "research/tokenizer-evidence/activation-preparation-001/campaign001-pilot-boundary-reviewed.json",
+  "activation_quality_launch": "research/tokenizer-evidence/activation-preparation-001/campaign001-quality00-launch.json"
 }
