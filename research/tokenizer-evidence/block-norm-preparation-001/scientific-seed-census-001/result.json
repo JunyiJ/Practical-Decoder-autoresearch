@@ -1,0 +1,150 @@
+{
+  "audit_sha256": "58ee5cc5be7c9ae43d886e53cadb2881a171a9ee486e7be376f090f4b22bb6c9",
+  "bytes_scanned": 3701570300,
+  "commit_before_census": "3e7b9831a6f5fa7fe2919b43ff183feb9d9479fb",
+  "excluded": [
+    "research/tokenizer-evidence/block-norm-preparation-001/scientific-seed-census-001",
+    "__pycache__",
+    "binary checkpoints/archives",
+    "raw corpus and untracked external files outside declared roots"
+  ],
+  "file_count": 40314,
+  "holdout_scored": false,
+  "inventory_sha256": "27957798aa749d88d93bf92b877300d03845eb4c253998e889f0f45155e0b374",
+  "launch_permitted": false,
+  "matches": [],
+  "observed_at": "2026-10-31T22:12:14.927555+00:00",
+  "pilot_specs": [
+    {
+      "arm": "rms_incumbent",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.0025,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374001,
+      "stage": "pilot",
+      "steps": 20,
+      "width": 256
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.0025,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374001,
+      "stage": "pilot",
+      "steps": 20,
+      "width": 256
+    }
+  ],
+  "quality_plan_frozen": false,
+  "root_level_text_included": true,
+  "roots": [
+    "research",
+    "research_runs",
+    "research_state",
+    "src",
+    "tests"
+  ],
+  "scope": "No candidate whole-word integer appears in recorded repository research/config/source/log text. Both arms share pilot/screen/fresh seeds; evaluation/bootstrap separate. Not a claim about unrelated external experiments; recheck new recorded inputs before launch.",
+  "screen_specs": [
+    {
+      "arm": "rms_incumbent",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.000625,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374002,
+      "stage": "screen",
+      "steps": 1200,
+      "width": 256
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.000625,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374002,
+      "stage": "screen",
+      "steps": 1200,
+      "width": 256
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.00125,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374002,
+      "stage": "screen",
+      "steps": 1200,
+      "width": 256
+    },
+    {
+      "arm": "rms_incumbent",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.00125,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374002,
+      "stage": "screen",
+      "steps": 1200,
+      "width": 256
+    },
+    {
+      "arm": "rms_incumbent",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.0025,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374002,
+      "stage": "screen",
+      "steps": 1200,
+      "width": 256
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "batch_layout": "paired_blocks512",
+      "batch_size": 8,
+      "context": 128,
+      "lr": 0.0025,
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "seed": 374002,
+      "stage": "screen",
+      "steps": 1200,
+      "width": 256
+    }
+  ],
+  "seeds": {
+    "bootstrap": 374004,
+    "evaluation": 374003,
+    "fresh": [
+      374011,
+      374012,
+      374013
+    ],
+    "pilot": 374001,
+    "screen": 374002
+  },
+  "status": "fresh_seeds_reserved",
+  "suffixes": [
+    ".ipynb",
+    ".json",
+    ".jsonl",
+    ".log",
+    ".md",
+    ".py",
+    ".txt",
+    ".yaml",
+    ".yml"
+  ]
+}

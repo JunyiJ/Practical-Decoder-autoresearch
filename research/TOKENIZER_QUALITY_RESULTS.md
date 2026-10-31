@@ -5855,3 +5855,37 @@ the actual campaign path, then census seeds, freeze the finite pilots and run
 the actual-corpus resource pilots. Ledger mechanics need no further expansion.
 Evidence: fixture-dispatch-plan-001/002, original source snapshots,002-campaign,
 reviews, analysis and decision in the block-norm preparation evidence directory.
+
+## Cached inference passed; scientific seeds reserved, October31,2026
+
+The retained v2 pair passed21 guarded inference checks. Before any warmup, both
+arms at batch1/8 passed full96 versus cached32+64 teacher-forced calls and cache
+reset/replay; maximum absolute logit difference1.43052e-6. Both cache sizes are
+196,608B at batch1 and1,572,864B at batch8. LayerNorm adds8,192B of learned
+parameter storage. Two warmups and eight alternating paired repeats per batch
+produce eight warmup/32 measured rows. Loading/cache allocation stay outside
+synchronized timing intervals; saved-value/provenance review and independent
+median/throughput arithmetic pass.19 corrupted reports and a swapped-arm request
+are rejected. CPU/MPS RNG and all retained artifacts remain unchanged.
+
+The22.577s guard observed peak RSS869,646,336B and MPS driver1,154,236,416B.
+These generated two-step fixture timings are implementation checks only: no
+quality or speed winner, deployment peak or cost adoption conclusion. Real
+campaign inference still needs its worker/process provenance and fresh trained
+pairs. No optimizer updates, new binary files, deletion or holdout scoring.
+
+A separate120s-guarded freshness census scanned40,314 recorded research/config/
+source/log text files (3,701,570,300B), finding no whole-word occurrence of the
+seven proposed seeds. Reserve pilot374001, screen374002, fresh374011/374012/374013,
+evaluation374003 and bootstrap374004. Both arms share paired training seeds.
+The census excludes only its own new output directory, bytecode/binary artifacts,
+raw corpus and external files; it claims freshness in recorded repository work.
+The exact file/hash inventory and audit source are retained.
+
+Next build/freeze the minimal finite pilot entry using these reserved seeds and
+tested config/worker/acceptance primitives, then run the two actual-corpus20-step
+resource pilots. Keep their weights until the required audits and dependent
+prerequisites finish. Before cleanup or quality dispatch, connect durable external
+heads and audited retention receipts; do not expand already-passed ledger mechanics.
+Final quality freeze remains separate. Evidence: inference-measurement-plan001/
+review/result/analysis/decision and scientific-seed-census-001.

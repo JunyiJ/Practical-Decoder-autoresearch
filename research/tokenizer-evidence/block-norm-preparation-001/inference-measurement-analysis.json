@@ -1,0 +1,127 @@
+{
+  "status": "retained_v2_inference_measured_and_reviewed",
+  "observed_at": "2026-10-31T22:13:19.941429+00:00",
+  "source_commit": "3e7b9831a6f5fa7fe2919b43ff183feb9d9479fb",
+  "tests_passed": 21,
+  "measurement_review": {
+    "review": {
+      "status": "values_reviewed_transport_provenance_required",
+      "cells": [
+        {
+          "batch": 1,
+          "arm": "rms_incumbent",
+          "state_bytes": 196608,
+          "median_prefill_seconds": 0.008519458016962744,
+          "median_decode_seconds": 0.2863201874861261
+        },
+        {
+          "batch": 1,
+          "arm": "layer_matched_epsilon",
+          "state_bytes": 196608,
+          "median_prefill_seconds": 0.008921687476686202,
+          "median_decode_seconds": 0.28918381250696257
+        },
+        {
+          "batch": 8,
+          "arm": "rms_incumbent",
+          "state_bytes": 1572864,
+          "median_prefill_seconds": 0.01419693700154312,
+          "median_decode_seconds": 0.2995347919932101
+        },
+        {
+          "batch": 8,
+          "arm": "layer_matched_epsilon",
+          "state_bytes": 1572864,
+          "median_prefill_seconds": 0.014300812501460314,
+          "median_decode_seconds": 0.30007714600651525
+        }
+      ],
+      "quality_adopted": false,
+      "scope": "Two resident H200 models; cache construction/loading excluded from timings. Allocator observations are not single-model deployment peaks. Warmups excluded; cost descriptive only."
+    },
+    "correctness": [
+      {
+        "batch": 1,
+        "arm": "rms_incumbent",
+        "passed": true,
+        "max_absolute_error": 1.0728836059570312e-06
+      },
+      {
+        "batch": 1,
+        "arm": "layer_matched_epsilon",
+        "passed": true,
+        "max_absolute_error": 1.430511474609375e-06
+      },
+      {
+        "batch": 8,
+        "arm": "rms_incumbent",
+        "passed": true,
+        "max_absolute_error": 1.0728836059570312e-06
+      },
+      {
+        "batch": 8,
+        "arm": "layer_matched_epsilon",
+        "passed": true,
+        "max_absolute_error": 1.3113021850585938e-06
+      }
+    ],
+    "rng_preserved": true,
+    "token_sha256": "eeed115205f0878d0ec7b56813342be752297cb264219ec7efccca9425a127f6"
+  },
+  "guard": {
+    "elapsed_seconds": 22.576998667005682,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 19126919168,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 21708800,
+      "peak_observed_mps_driver_bytes": 1154236416,
+      "peak_rss_bytes": 869646336
+    },
+    "pid": 78099,
+    "reason": null,
+    "status": "finished"
+  },
+  "findings": [
+    "Both retained v2 models pass all four full96/cached32+64/reset checks before any warmup; maximum absolute logit difference1.430511474609375e-6",
+    "Actual cache backing storage is196608B at batch1 and1572864B at batch8 for both arms; LayerNorm adds8192B learned parameter storage",
+    "Eight warmup and32 measured rows: two warmups/eight alternating paired repeats for both batches, MPS interval synchronization, cache allocation and loading outside timings",
+    "Saved result rebinds385source/config/raw/H200/training token/environment identities; medians and64*batch/decode throughput independently checked",
+    "19 invalid identity/order/arithmetic/resource reports and swapped arm request rejected; CPU/MPS RNG preserved"
+  ],
+  "runtime_unchanged": true,
+  "new_binary_files": 0,
+  "optimizer_updates": 0,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "seed_reservation": {
+    "reference": "research/tokenizer-evidence/block-norm-preparation-001/scientific-seed-census-001/result.json",
+    "sha256": "11430118dc3360d5fa81734f4ed46f12eb48720d6fb49c3dd7986c8d811373ca",
+    "seeds": {
+      "bootstrap": 374004,
+      "evaluation": 374003,
+      "fresh": [
+        374011,
+        374012,
+        374013
+      ],
+      "pilot": 374001,
+      "screen": 374002
+    },
+    "files": 40314,
+    "bytes": 3701570300
+  },
+  "free_bytes_after": 19133300736,
+  "current_full_panel_projection_bytes": 15170221264,
+  "limitations": [
+    "Generated two-step fixtures only; timing differences are descriptive implementation observations, not scientific trained-pair results",
+    "Two resident models/allocator observations are not deployment peaks; no cost adoption route",
+    "Wall-clock values cannot be authenticated by exact numerical replay; real campaign worker/process/source provenance remains required",
+    "Finite pilot entry/freeze and actual-corpus pilots pending; final quality dispatch requires durable external heads and audited retention receipts"
+  ]
+}
