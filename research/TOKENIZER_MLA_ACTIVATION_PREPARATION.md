@@ -560,3 +560,14 @@ GELU training206.89s/worker346.67s, peakRSS1,698,004,992bytes, driver2,501,705,7
 All guards passed, every fresh pair protected, holdout closed. Slot08 GELU
 seed3612 now runs first in the predeclared alternating arm order.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-08-review.json).
+
+
+### October31 activation001 fresh GELU seed3612 accepted
+
+GELU seed3612 at saved LR0.00125 completed1200updates and independent acceptance.
+RawCE4.702213629/H200CE4.698578620; averaging improves this endpoint by0.003635009.
+The matched SiLU seed is still pending, so this is not a paired conclusion.
+Training205.52s/worker353.74s; peakRSS1,695,776,768bytes, driver2,501,705,728bytes.
+All guards passed, no cleanup or holdout scoring. Matched SiLU seed3612 runs as
+slot09; every fresh raw/H200 pair and selected screen remains protected.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-09-review.json).
