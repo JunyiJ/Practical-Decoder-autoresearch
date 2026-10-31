@@ -6667,3 +6667,24 @@ model/state checks. No quality training, cleanup, holdout scoring or executable
 freeze. Production serial controller/filesystem integration, actual audit/cleanup
 receipts and complete resource/source/runtime/input binding remain required.
 Evidence: tokenizer-evidence/activation-preparation-001/finite-design-v1.json.
+
+
+### October31 activation dispatch/retention prerequisite
+
+24 tests passed in34.99s under the180s/4GiB/8GiB-reserve guard; peak RSS
+239,960,064bytes. The new entry binds a complete frozen plan and finite design,
+source/runtime/input/prerequisite identities and remaining capacity; it connects
+bounded serial dispatch, guarded child entry and independent parent acceptance.
+The retention executor uses complete stage reviews, exact allowlists/hashes,
+intent/deleted journals and preserved inventories; partial failure forbids retry.
+
+Real harmless subprocesses test inherited locks and exit handling. Connected
+entry/parent tests use explicit process/numerical doubles. Both actual cleanup
+boundaries were exercised only on tiny disposable fixture files, retaining every
+selected/fresh pair. The first attempt's two preflight test-cap failures and
+source snapshots are preserved; production limits were not reduced.
+
+Inference protocol/runner, final applicability/capacity review and executable
+freeze remain pending. No research training, checkpoint cleanup, holdout scoring
+or closed-fixture retry occurred. No new model result or adoption.
+[Evidence](tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json).

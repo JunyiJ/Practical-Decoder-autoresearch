@@ -272,9 +272,49 @@ integration in the ledger; model/training/optimizer/tokenizer/transport primitiv
 remain unchanged. All tests passed; no new failed test attempt or closed-fixture
 retry occurred in this iteration.
 
-The executable freeze/dispatch entry and complete retention executor remain
-unimplemented. The worker body requires trusted controller freeze/resource checks;
-a callback or synthetic success receipt is not launch authorization. Next bind
-source/runtime/input/capacity, child exit/no-descendant checks, a guarded parent
-review and audited cleanup; finish the finite inference protocol and exact storage
-review, then freeze before pilots. No training has launched.
+The worker prerequisite alone did not complete dispatch or retention. The next
+iteration below records those additions; inference and final freeze remain open.
+
+## Dispatch and retention execution prerequisites validated October31
+
+The new executable entry binds the exact frozen plan, conditional finite design,
+source/runtime, inputs, prerequisite receipts and full remaining storage. It uses
+the reviewed bounded process supervisor with two inherited locks, a parent/slot
+seal, guarded child preflight, positive exit and no-live-process-group checks.
+Independent parent acceptance runs under its own guard. Every completed dispatch
+pins both guard identities and the immutable process/acceptance chain. STOP,
+failed/pending attempts, missing completion or partial cleanup block continuation.
+
+The retention executor independently derives four eligible successful pilot files
+or eight losing-screen files from complete audits and saved selection. It checks
+actual research processes, hashes every explicit allowlisted path, journals intent
+and deletion, then verifies the complete preserved inventory. Any incomplete or
+failed attempt is permanent and cannot be retried. Selected screen pairs and all
+fresh pairs remain required; prior protected campaigns and archives are outside
+this executor's scope. No research cleanup was performed in this iteration.
+
+24 tests passed in34.99s; guard35.10s, peak RSS239,960,064bytes, with180s/4GiB/
+8GiB-reserve limits intact. Real harmless subprocess tests validate inherited
+locks and positive/nonzero exit handling. The connected sealed-entry/parent test
+runs actual guards, metadata/trace acceptance and ledger logic, with explicit
+process and tensor/input doubles. It is not evidence of an actual MPS launch.
+The disposable14-trajectory sequence exercises both real deletion boundaries,
+retains16 tiny files (two selected screens plus all six fresh pairs), and rejects
+changed journals/weights, incomplete reviews and an injected second-unlink failure.
+
+The first attempt passed21 tests and rejected two subprocess fixtures at preflight:
+their1MiB output cap was smaller than the fixed4MiB log cap. Both source/test
+snapshots and failure evidence are preserved. Corrected fixtures use8MiB; no
+production resource limit changed. Review also added a separately pinned child
+entry guard and the connected success test. This did not retry a closed fixture.
+
+Only two new activation research modules differ from the prior worker prerequisite;
+all existing model/training/optimizer/EMA/tokenizer/transport sources and runtime
+are unchanged. [Dispatch/retention review](tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json).
+
+Next finish finite inference protocol/runner and independent acceptance, then the
+complete source/runtime/input applicability and exact artifact-capacity audit.
+Latest free space15,580,561,408bytes exceeds the full15,169,995,168-byte projection
+by410,566,240bytes; this observation is not the final launch capacity review.
+Freeze all prerequisites before two guarded MPS pilots. No executable activation
+plan is frozen, no corpus training has launched, and the holdout remains closed.

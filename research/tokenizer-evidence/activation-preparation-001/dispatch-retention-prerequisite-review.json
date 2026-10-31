@@ -1,0 +1,87 @@
+{
+  "kind": "activation_dispatch_retention_prerequisite_review_v1",
+  "status": "passed",
+  "observed_at": "2026-10-31T16:27:35.522597+00:00",
+  "source_sha256": "b9766ec5a228714543580fb5a5def200b1c5c449982df3e9680e5c4c6064564b",
+  "prior_worker_source_sha256": "acecaba1c073a835fddf40e012fbdcdd2a79b411a67140ea7dc54883c25010ad",
+  "runtime": {
+    "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "executable": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+    "packages": {
+      "torch": "2.14.1",
+      "numpy": "2.5.4",
+      "tiktoken": "0.14.0",
+      "omegaconf": "2.3.1"
+    }
+  },
+  "runtime_unchanged": true,
+  "changed_source": {
+    "src/research/tokenizer_activation_entry.py": {
+      "previous": null,
+      "current": "fd3cb08eac5fe17ac54303949566ed2be8ec8716b3d321d28c59101089954b72"
+    },
+    "src/research/tokenizer_activation_retention.py": {
+      "previous": null,
+      "current": "f0be05008df0b652c8068aab63879629466fae6dc19d1fca490ee1098daaee84"
+    }
+  },
+  "tests": {
+    "passed": 24,
+    "review": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/dispatch-retention-tests-v2-review.json",
+      "sha256": "898034023c35fbbfc4807c379fb36fcae60b1f91ab65f9c42ffa2da46d32222b"
+    },
+    "guard": {
+      "elapsed_seconds": 35.096526584005915,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 15580622848,
+        "peak_rss_bytes": 239960064
+      },
+      "pid": 55195,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "preserved_failure": {
+    "review": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/dispatch-retention-tests-v1-review.json",
+      "sha256": "8fed02d64d21c663f40c1d40199d06c62b3ec1adbac2ebcc845d6651832c4b80"
+    },
+    "passed": 21,
+    "failed": 2,
+    "diagnosis": "Harmless subprocess test output cap1MiB was smaller than fixed4MiB log cap. Both rejected at preflight, before child creation. Corrected fixture output cap to8MiB without changing production process limits. Initial source/tests/log/guard are preserved."
+  },
+  "executable_scope": [
+    "Exact frozen plan, source/runtime, finite conditional design, prerequisite/input/storage binding; unchanged shared worker and campaign locks",
+    "One serial child through bounded process supervisor; exact inherited descriptors/parent seal, child preflight guard, positive exit/no live process group, guarded independent parent acceptance and immutable completion chain",
+    "STOP, failed/pending/orphan attempts and incomplete cleanup cannot retry; full remaining capacity uses observed current allocation, never anticipated deletion",
+    "Audited pilot and screen cleanup uses actual process check, exact eligible hashes/reasons, intent/deleted journal, immutable manifests, independent-review provenance and complete preserved inventory; partial failure cannot retry"
+  ],
+  "test_scope": [
+    "Real harmless OS subprocesses verify inherited two locks, positive/nonzero exit receipts and no second attempt",
+    "Actual seal, child entry guard, parent guard, independent metadata/trace acceptance and ledger are connected; process and numerical/input operations are explicit test doubles, not MPS evidence",
+    "Real14-trial disposable filesystem sequence deletes4 pilot and8 losing-screen files, retains16 files for2 selected screens and all6 fresh pairs; mutations, incomplete reviews and injected second-unlink failure rejected"
+  ],
+  "new_guard_requirement": "Child preflight has its own bounded guard; its immutable hash/PID is required in the dispatch completion chain. Parent live-child monitoring is cooperative so the process supervisor terminates/reaps its own child on failure.",
+  "pending": [
+    "Finite inference protocol, runner and independent inference acceptance",
+    "Final complete source/runtime/input applicability and exact capacity/artifact high-water review",
+    "Executable freeze; then guarded MPS pilots and complete parent acceptance before quality dispatch"
+  ],
+  "full_panel_required_free_bytes": 15169995168,
+  "current_free_bytes": 15580561408,
+  "observed_margin_bytes": 410566240,
+  "capacity_reconciled_for_launch": false,
+  "plan_frozen": false,
+  "research_training_launched": false,
+  "research_checkpoints_deleted": false,
+  "protected_research_checkpoints_modified": false,
+  "holdout_scored": false,
+  "closed_fixtures_retried": false,
+  "next_action": "Campaign005 remains closed; MoE deferred. Activation dispatch/freeze gates and audited retention executor now pass24 tests; read research/tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json. Next finish the finite inference protocol and runner (both fresh arms/seeds, actual cache/prefill/decode costs, independent acceptance), then final source applicability/runtime/input and exact artifact high-water/current-space audit. Bind all prerequisite receipts and finite design into an executable frozen plan before2 guarded MPS pilots. Require accepted pilots and audited pilot/screen boundaries before6screens+6fresh quality runs. Current entry/acceptance integration uses explicit process/numerical doubles; harmless real subprocess tests separately validate inherited locks and exit handling. Do not claim an actual MPS launch or complete executable freeze from those tests. Preserve all selected/fresh/failure pairs and archives, closed holdout, one worker/fourthreads/strictMPS and4GiB RSS/6GiB driver/8GiB reserve; no paidcompute/subagents or closedfixture retries. Commit/push withoutforce."
+}

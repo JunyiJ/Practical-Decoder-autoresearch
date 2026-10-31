@@ -1,0 +1,18 @@
+.............FF........                                                  [100%]
+=================================== FAILURES ===================================
+_____________ test_real_subprocess_receipt_and_inherited_two_locks _____________
+tests/test_tokenizer_activation_entry.py:100: in test_real_subprocess_receipt_and_inherited_two_locks
+    result=e.run_process(ledger.writer,'pilots',0,[sys.executable,'-c',code],Path.cwd(),
+src/research/tokenizer_wide_hybrid_process_v2.py:53: in run_process
+    raise ValueError('Reserve/output policy violated')
+E   ValueError: Reserve/output policy violated
+___________________ test_real_failed_subprocess_is_terminal ____________________
+tests/test_tokenizer_activation_entry.py:110: in test_real_failed_subprocess_is_terminal
+    e.run_process(ledger.writer,'pilots',0,[sys.executable,'-c','raise SystemExit(3)'],Path.cwd(),
+src/research/tokenizer_wide_hybrid_process_v2.py:53: in run_process
+    raise ValueError('Reserve/output policy violated')
+E   ValueError: Reserve/output policy violated
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_activation_entry.py::test_real_subprocess_receipt_and_inherited_two_locks
+FAILED tests/test_tokenizer_activation_entry.py::test_real_failed_subprocess_is_terminal
+2 failed, 21 passed in 34.26s

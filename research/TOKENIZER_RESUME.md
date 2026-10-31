@@ -51,19 +51,20 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
 2. Continue [activation preparation](TOKENIZER_MLA_ACTIVATION_PREPARATION.md).
    The MoE panel is deferred after a 3.27 GB conservative capacity gap; its
    original draft remains historical. No protected evidence was removed.
-3. The new width256 SiLU/exact-GELU MLA contract passed 154 targeted checks.
-   Four additional state tests now pass: exact optimizer/RNG/EMA resume, H200
-   export/load, tokenizer binding and cache isolation. Serialization used RAM;
-   filesystem integration is still required. Preserve both harness failures.
-   Finite request/selection/statistics and seed registry now pass 22 tests.
-   Next implement the retention-aware controller, actual review/cleanup
-   receipts and filesystem-producer integration. Pure flags cannot authorize
-   dispatch or deletion; the executable freeze is still pending.
-4. The full activation projection requires 15,169,995,168 free bytes including
-   the 8 GiB reserve; only 345,472,608 bytes of margin existed at the audit.
-   Recheck actual capacity and all prerequisites, then freeze exact seeds,
-   requests, statistical rules, source/runtime/input and limits before pilots.
-   No training or new launch plan is yet authorized by a completed freeze.
+3. Activation model/state, finite rules, session ledger and worker/independent
+   acceptance prerequisites have passed. The executable freeze/dispatch gates
+   and actual retention executor now pass 24 tests. Real harmless subprocesses
+   test lock inheritance and exit handling; sealed entry/parent integration uses
+   explicit process/numerical doubles. Preserve the initial two fixture-cap
+   failures and their source snapshots. No MPS pilot or corpus training ran.
+4. Next finish the finite inference protocol/runner and independent acceptance,
+   then reconcile source/runtime/input identities and exact artifact high-water.
+   The full panel requires 15,169,995,168 free bytes, including the 8 GiB reserve;
+   the latest observation had 410,566,240 bytes of margin. Recheck at freeze and
+   dispatch. Bind all prerequisite receipts into the complete executable plan
+   before two guarded pilots, then require accepted pilots and audited boundaries
+   before the six screens and six fresh runs. A synthetic verdict cannot authorize
+   research execution. See the [dispatch/retention review](tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json).
 5. Commit/push substantive findings and this guide/index without force. Keep only
    this chat's continuation heartbeat active; the old heartbeat stays paused.
 
@@ -79,7 +80,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation model/state and finite rules passed; controller pending; see the indexed
+Current continuation: activation dispatch/retention prerequisites passed; inference and executable freeze pending; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
