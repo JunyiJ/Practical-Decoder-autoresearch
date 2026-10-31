@@ -1,11 +1,10 @@
 # Tokenizer gate-activation preparation
 
-Status, October 31, 2026: activation campaign001 frozen after complete prerequisite
-review; both guarded pilots and audited pilot cleanup completed. Quality screening is next. Campaign005 remains closed, with the
-hybrid not adopted. Existing selected models, every fresh pair and failures remain
-protected. The earlier MoE draft is retained as a historical proposal. The October 28
-GQA activation draft in TOKENIZER_ACTIVATION_PREPARATION.md also remains unchanged;
-this separate MLA proposal follows completion of the later attention studies.
+Status, October31,2026: **comparison complete, GELU not adopted; retain SiLU**.
+Recovery002 closed after carrying accepted3611 and completing3612/3613 inference.
+Both older failure roots remain preserved and closed. The final closure section
+below supersedes historical preparation/launch instructions. All selected/fresh
+pairs and the closed test holdout remain protected.
 
 ## Why this family now
 
@@ -774,3 +773,43 @@ STOP/failure/path/file-count/alias/transient-byte/resource checks. Test actual
 parent/child monitor contention and immutable-file tampering before a new finite
 freeze. Quality failure and incumbent are unchanged; only one inference pair is
 accepted, so no aggregate cost conclusion or formal terminal closure is available.
+
+
+### October31 activation comparison closed: retain SiLU
+
+Recovery002 completed the two remaining inference pairs,3612/3613, and carried
+accepted3611 unchanged from recovery001. Both new pairs passed parent acceptance
+and separate read-only prefix reviews. The guarded final decision finished37.038s;
+independent closure reconstruction finished55.992s, peakRSS231,161,856bytes.
+No worker remains. Original activation001 and recovery001 failures stay preserved
+and closed; no training or accepted timing pair was repeated.
+
+Both arms selected LR0.00125. Fresh H200 means are SiLU4.7102738771 and exact
+GELU4.7118246330: GELU minus SiLU **+0.0015507559 nat/token**, worse on2/3seeds.
+All three conditional gate upper bounds are positive (+0.002471/+0.002570/
++0.002788 at2048/4096/8192 blocks). Mean, every-seed and conditional-bound gates
+all fail. **GELU is not adopted; the existing SiLU MLA recipe remains unchanged.**
+These are reused-validation, fixed-trained-seed findings, not population-seed,
+independent-test or larger-model transfer claims.
+
+| Batch | GELU/SiLU prefill latency | GELU/SiLU decode latency | Cache bytes, each arm |
+| --- | --- | --- | --- |
+|1|1.002140|1.001036|196,608|
+|8|1.002410|1.000247|1,572,864|
+
+Ratios are medians of three seed-paired ratios of eight-repeat median latency,
+excluding warmups. Local MPS workload: context128, prefill32,64 teacher-forced
+decode calls. Measurements are near parity; these tiny differences do not
+establish a general speed advantage or statistical equivalence. There is no
+predeclared cost-only adoption route. Cache sizes are identical. New worker
+peakRSS814,202,880/823,885,824bytes stayed below4GiB; all guards finished cleanly.
+
+[Independent closure audit](tokenizer-evidence/activation-preparation-001/inference-recovery002-closed-review.json),
+[terminal receipt](tokenizer-evidence/activation-preparation-001/inference-recovery002-closed-portable/evidence/meta/recovery-final-complete.json),
+[final decision](tokenizer-evidence/activation-preparation-001/inference-recovery002-closed-portable/evidence/meta/recovery-final-decision.json),
+[timing summary](tokenizer-evidence/activation-preparation-001/inference-recovery002-closed-portable/evidence/meta/recovery-inference-summary.json).
+All16 selected/fresh checkpoint files, both failure roots and archives remain
+protected; no cleanup or holdout scoring. The complete experiment is closed.
+Next review normalization/residual architecture and full storage feasibility
+before proposing another finite panel. MoE remains deferred on its recorded
+capacity requirement; do not trim controls/seeds or delete protected pairs to fit.

@@ -83,3 +83,21 @@ Continue with one local worker and bounded disk, memory and time guards. Publish
 completed iterations, substantive learnings and failures, then advance to the
 next evidence-driven architecture or hyperparameter hypothesis until the human
 stops the campaign.
+
+
+## October31 completed activation comparison and next design review
+
+The width256 RoPE-MLA SiLU versus exact-GELU comparison is now fully closed through
+recovery002, including three accepted timing pairs and independent final review.
+GELU failed all quality adoption gates (mean delta+0.0015507559nat/token,2/3seeds
+worse); measured local inference is near parity and cache sizes identical. Retain
+SiLU. See the final closure section of TOKENIZER_MLA_ACTIVATION_PREPARATION.md.
+
+Next review the untested tokenizer normalization/residual families, specifying
+one isolated hypothesis and controls before implementation. MoE remains deferred
+under its full18,782,075,912-byte requirement. Closure left about12.99GBfree;
+even the prior same-size two-arm15.17GB projection cannot presently fit. A new
+panel needs fresh full high-water accounting and safe capacity or a separately
+justified prospective design. Do not silently narrow controls, fresh seeds or
+width, remove protected pairs, or launch a partial panel. Read-only feasibility
+and bounded CPU prerequisites can proceed while this training constraint holds.

@@ -1,3 +1,8 @@
+> Completed and independently closed October31: GELU not adopted. No further
+> controller, final or review-wrapper invocation is allowed on recovery002.
+> Seed3611 was imported unchanged; only3612/3613 were newly measured. All earlier
+> launch/gate notes below are historical. See the closure review in the evidence directory.
+
 # Activation inference recovery v2 prerequisites
 
 This version is frozen for recovery002 after the integration and applicability
@@ -77,3 +82,13 @@ is frozen in tokenizer-activation-inference-recovery-002. Thirteen runtime files
 Only3612/3613 are new measurements; summary/final include the original3611 result.
 Both old roots remain closed. The next gate is commit/push, then one step3612.
 The earlier remaining-gate section describes the now-completed preparation.
+
+## Completed real inference and closure
+
+Both remaining pairs passed parent and independent acceptance, followed by the
+saved three-pair summary, final decision and independent read-only closure audit.
+The final decision retains SiLU. The13 frozen runtime modules and original source
+fingerprint remain unchanged; all prior failures and16 protected checkpoints were
+reverified. No accepted pair was repeated. No workers remain. Evidence prefixes:
+`inference-recovery002-prefix-02`, `inference-recovery002-prefix-03` and
+`inference-recovery002-closed` under the activation-preparation evidence directory.

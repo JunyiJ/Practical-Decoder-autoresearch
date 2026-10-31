@@ -8,10 +8,12 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest: recovery002 is frozen for only the remaining3612/3613 pairs after
-47 integration tests and actual source/capacity audits. Commit/push first, then
-one guarded3612 step and independent acceptance. Carry accepted3611 without
-repeating it. Both failed roots remain closed and all frozen sources unchanged.**
+**Latest: activation comparison completed and independently closed through
+recovery002. Retain SiLU: GELU failed the quality gates, timing is near parity,
+and cache sizes are identical. No workers remain. All three roots stay closed;
+accepted3611 was never repeated. Read the current closure audit and state index.
+Next is normalization/residual feasibility and full storage accounting before
+another finite plan; older launch instructions are historical.**
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
