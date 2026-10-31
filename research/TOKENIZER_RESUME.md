@@ -8,13 +8,13 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at01:01 Los Angeles: all LR screens, selection/cleanup and
-rank slots9–12 have passed review. KDA D/2 at LR0.000625, seed3501 reached
-H200 CE4.930133935108931 (raw4.9562451051463),0.014408205149220 below
-D/4 and0.012177778652737 below D/8. This one-seed screen is not adoption;
-rank selection, fresh confirmation and inference remain.
-Slot12 controller and child exited. Slot13 controller3448 is starting; child PID
-at observation:None; session23454. Startup history verification may precede
+Observed October31,2026 at01:21 Los Angeles: all LR screens, selection/cleanup and
+rank slots9–13 have passed review. Gated MLA D/2 at LR0.00125, seed3501
+reached H200 CE4.830300243418004 (raw4.833802662880457). D/4 remains
+best among this family's three screened ranks. Formal rank selection, fresh
+confirmation and inference remain; no adoption claim.
+Slot13 controller and child exited. Slot14 controller4628 is starting; child PID
+at observation:None; session93760. Startup history verification may precede
 child creation. Inspect actual state; never rerun the launcher. LR choices and
 cleanup are in the compact [LR summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-summary-v2.json).
 
@@ -34,7 +34,7 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller3448 or its current descendant is still running, observe it;
+2. If controller4628 or its current descendant is still running, observe it;
    never invoke the starter again. Pilot children change during serial dispatch.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
@@ -42,16 +42,18 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. Rank prefix13 is independently verified in the
-   [review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-prefix-13-v2-review.json)
-   with a finished guard. Never repeat the completed LR boundary phases.
-   After slot13 parent acceptance and actual worker exit, run
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_rank_prefix_v2.py --completed 14`.
-   Only after its review/guard pass, run
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_rank_v2.py --slot 14`.
-   The prefix/continuation helpers support10–14; after slot14, adapt/review the
-   full rank boundary before selection, audited cleanup and fresh slot15.
-   Fresh confirmations and inference retain separate tested gates and audits.
+4. Rank prefix14 is independently verified in the
+   [review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-prefix-14-v2-review.json)
+   with a finished guard. Never repeat completed LR boundary phases.
+   After slot14 parent acceptance and actual worker exit, run
+   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005_rank_boundary_v2.py select`.
+   Independently verify all family choices and the exact retained/deletion manifest;
+   commit and push this selection evidence before running the same helper with
+   `cleanup`. Verify exact deletions and unchanged retained/noncheckpoint evidence.
+   The helper is a path-only adaptation of004; AST and reverse comparison passed,
+   but neither phase has executed. Do not call the rank-prefix helper with15.
+   After the rank boundary passes, prepare fresh slot15 through its tested gates;
+   later fresh confirmations and inference retain separate reviews and audits.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
    invent replacement seeds, clear STOP or extend a closed grid.

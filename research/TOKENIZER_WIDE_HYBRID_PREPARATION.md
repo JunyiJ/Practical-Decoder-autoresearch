@@ -6161,3 +6161,31 @@ holdout use occurred; all selected/fresh/failure evidence preserved.
 Evidence: `campaign005-rank-12-v2-terminal.json`, `campaign005-rank-prefix-13-v2-review.json`,
 finished guard and `campaign005-rank-13-v2-launch.json`. Current resumption is
 recorded in the guide and SHA-pinned state index.
+
+
+### Campaign005 gated MLA D/2 rank screen accepted
+
+Slot13 (gated MLA D/2, LR0.00125, seed3501, width512,1200updates) completed
+in694.54s and received parent acceptance. Independent rank-prefix14 review
+verified prior LR selection/cleanup, all five accepted rank cells, checkpoint
+identities and preserved metadata. H200 full-validation CE4.830300243418004
+versus raw4.833802662880457. D/4 (4.82145746133221) remains better than
+D/8 (4.828688418517511) and D/2 on this screening seed. Final hybrid D/2,
+formal rank selection, fresh confirmation and inference remain; no adoption.
+
+Review guard finished72.39s without violations. Remaining storage fit:
+20,823,105,536 bytes free versus20,696,701,620 required including8GiB reserve.
+Actual process inspection confirmed prior worker exit and no other research
+workers. Dispatched only slot14 through unchanged gates: controller4628,
+session93760, observed phasestarting, childNone. Never duplicate this launch.
+No cleanup or holdout use occurred; all selected/fresh/failure evidence preserved.
+
+Prepared `campaign005_rank_boundary_v2.py` from004 using campaign/path-only
+substitutions; AST parsing and exact reverse comparison passed. Neither boundary
+phase has run. After slot14 acceptance/exit, select and independently verify all
+rank choices and the exact manifest, commit/push evidence, then perform audited
+cleanup and verification before fresh slot15. Never use rank-prefix completed15.
+
+Evidence: `campaign005-rank-13-v2-terminal.json`, `campaign005-rank-prefix-14-v2-review.json`,
+finished guard and `campaign005-rank-14-v2-launch.json`. Current resumption is
+recorded in the guide and SHA-pinned state index.
