@@ -1,0 +1,17 @@
+{
+  "status": "read_only_final_review_environment_failure_diagnosed",
+  "failed_wrapper_sha256": "c4b563c9e2fd5998037861bbe4cc26c26847d633ce511992357b4adade452eaa",
+  "failure_sha256": "563e5f509e59bfb09ba0ac264a111c83119f0831333e7c82574dbf2b3a1c46c0",
+  "failed_guard_sha256": "ba54b1bb20f61f3e302f66b99446f9eff9df9da5389c3250be2c509451329337",
+  "reason": "Wrapper omitted TIKTOKEN_CACHE_DIR; training-input identity reconstruction attempted GPT2 vocab download and DNS failed. Existing pinned local cache is available.",
+  "preserved_failed_attempt": true,
+  "sealed_inference_metadata_unchanged": true,
+  "cache_sha256": {
+    "research_state/tiktoken-cache/6d1cbeee0f20b3d9449abfede4726ed8212e3aee": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "research_state/tiktoken-cache/6c7ea1a7e38e3a7f062df639a5b80947f075ffe6": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+  },
+  "new_wrapper_sha256": "717bba6e25d6ce717dccb093a6fa13c518dd4ebd707f52dec65f39927b5c3eb1",
+  "correction": "New exclusive external audit namespace and explicit pinned cache setting only. Original failed wrapper/guard/failure remain unchanged. Frozen procedure/source/rules unchanged; no training, inference or closed numerical fixture re-execution.",
+  "validation": "AST parsed; exact diff inspected; local cache pins verified; all saved inference bytes rehashed unchanged.",
+  "adopted": false
+}

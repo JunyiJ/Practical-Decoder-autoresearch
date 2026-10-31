@@ -28,10 +28,18 @@ All three inference seeds are parent accepted; inference controller38659 and all
 children have exited. Final seed3513 passed preparation930.57s, child147.01s and
 parent review1090.28s. The serial panel finished5248.11s, with no guard violation.
 
-Independent final reviewer **44715**, session **5954**, is running under both
+Independent final reviewer **44945**, session **83295**, is running under both
 locks and an outer1800s CPU guard. Never duplicate this review. Require its
-`campaign005-final-v2-review.json`, finished guard with no reason, and actual
+`campaign005-final-cached-v2-review.json`, finished guard with no reason, and actual
 reviewer exit before interpreting the final frozen quality/cost decision.
+
+The first external final reviewer stopped after18.98s: its wrapper omitted
+`TIKTOKEN_CACHE_DIR`, so GPT2 identity reconstruction attempted a download and
+DNS failed. The failed wrapper, guard and receipt are preserved. The separately
+recorded cached review verifies both existing cache hashes and sets that local
+path. Frozen source/procedure and accepted inference bytes are unchanged; no
+training, inference or closed numerical fixture was repeated. See
+`campaign005-final-cache-environment-diagnosis-v2.json`.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -47,11 +55,11 @@ must be inspected; saved records can be stale. Process inspection is already
 human-authorized. Leave unrelated programs alone.
 
 1. Reconcile ignored `research_state/tokenizer-quality-progress.json` with actual
-   processes. While reviewer44715 runs, observe its external guard; do not acquire
+   processes. While reviewer44945 runs, observe its external guard; do not acquire
    its locks or duplicate the review. Inference is complete, never relaunch it.
-2. Require `campaign005-final-v2-review.json` status
+2. Require `campaign005-final-cached-v2-review.json` status
    `complete_independent_quality_cost_review`, a finished
-   `campaign005-final-v2-guard.json` with reason null, and actual reviewer exit.
+   `campaign005-final-cached-v2-guard.json` with reason null, and actual reviewer exit.
    A review file alone does not prove its enclosing guard finished successfully.
 3. Interpret the unchanged frozen rule: strict quality OR quality neutrality
    plus measured memory savings. Disclose latency, raw endpoints and conditional

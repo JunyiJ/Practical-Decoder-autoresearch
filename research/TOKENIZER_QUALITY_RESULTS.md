@@ -4386,3 +4386,20 @@ checks full quality/inference provenance and publishes exclusively outside the
 sealed campaign within128KiB. Source/procedure pins and wrapper AST/API checks
 passed. Require review success, finished guard and reviewer exit before a final
 decision. No adoption claim, rule change, holdout use or new campaign launch.
+
+
+### Final audit environment failure preserved and corrected
+
+External reviewer44715 stopped18.98s while reconstructing tokenizer identity:
+its wrapper omitted TIKTOKEN_CACHE_DIR and attempted a GPT2 vocab download;
+DNS failed. No final decision was published. The wrapper, failed guard and
+failure receipt remain immutable. This is a read-only audit environment failure,
+not a training/inference failure or the closed failed numerical fixture.
+
+Both existing local cache SHA256 pins verified, and all archived accepted
+inference bytes rehashed unchanged. A new external wrapper differs only by
+explicit pinned cache setup and a separate output namespace. Frozen source,
+procedure, statistical rules and guards are unchanged. Reviewer44945/session83295
+now runs that separately recorded read-only audit. No experimental trial was
+repeated. Require its finished guard and successful final report before decision.
+Evidence: campaign005-final-cache-environment-diagnosis-v2.json.
