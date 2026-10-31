@@ -8,13 +8,15 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October30,2026 at23:10 Los Angeles: pilots and quality slots0–7 have
-completed and passed independent review. Slot7 KDAD/4 at LR0.0025, seed3501
-gave H200CE5.118220312101873 (raw5.274697344090305). KDA's three-rate
-screen favors LR0.000625 (H200CE4.944542140258151); gated MLA favors0.00125.
-Formal selection waits for the last hybrid screen; fresh confirmation/adoption
-remain pending. Slot7 controller and child exited. Final LR slot8 is running
-under controller95618, child95644, session28061; verify current processes.
+Observed October30,2026 at23:37 Los Angeles: all nine LR screens, full selection
+and audited cleanup passed. Selected rates: hybrid0.000625, gatedMLA0.00125,
+KDA0.000625. The selected raw/H200 pairs at slots0/2/5 remain;12 losing-screen
+weights were removed under the frozen manifest, reclaiming7,447,239,552 logical
+bytes. All preserved non-checkpoint evidence is unchanged. See the compact
+[LR summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-summary-v2.json).
+These are one-seed screens; rank comparisons, fresh confirmation and inference
+remain. Rank slot9 is running under controller98457, child98491, session51113;
+verify current processes. One trial per invocation, no automatic later dispatch.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -32,7 +34,7 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller95618 or its current descendant is still running, observe it;
+2. If controller98457 or its current descendant is still running, observe it;
    never invoke the starter again. Pilot children change during serial dispatch.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
@@ -40,17 +42,17 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. Slots0–7 acceptance and independent prefix verification are saved in
-   [prefix08 review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-prefix-08-v2-review.json)
-   with a finished guard. After slot8 parent acceptance and actual worker exit,
-   run `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005_lr_boundary_v2.py select`.
-   Inspect the full nine-cell selection, preservation audit and finished guard,
-   then run the same helper with `cleanup`. It differs from004 only in campaign
-   bindings and was syntax checked; neither phase has run yet. Both phases use
-   production gates and both locks. Cleanup must preserve selected LR anchors.
-   The LR-prefix helper accepts only1–8 completed cells: do not invoke it with9.
-   After verified cleanup, adapt/review the004 rank starter to005 before slot9.
-   Fresh confirmations and inference retain separate tested gates and audits.
+4. Full LR selection and cleanup are independently verified in the
+   [cleanup review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-cleanup-v2-review.json)
+   with a finished guard. Never repeat either boundary phase. After slot9 parent
+   acceptance and actual worker exit, run
+   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_rank_prefix_v2.py --completed 10`.
+   Only after its review/guard pass, run
+   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_rank_v2.py --slot 10`.
+   The005 rank helpers change only campaign bindings from004 and preserve all
+   production gates. The prefix/continuation helpers support10–14; after slot14,
+   adapt/review the full rank boundary before selection, audited cleanup and
+   fresh slot15. Fresh confirmations and inference retain separate tested gates.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
    invent replacement seeds, clear STOP or extend a closed grid.

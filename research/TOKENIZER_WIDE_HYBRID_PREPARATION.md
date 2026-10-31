@@ -6030,3 +6030,39 @@ protected; no cleanup or holdout use occurred in this continuation.
 Evidence: `campaign005-lr-07-v2-terminal.json`, `campaign005-lr-prefix-08-v2-review.json`,
 finished guard, `campaign005-lr-08-v2-launch.json`, `campaign005_lr_boundary_v2.py`.
 See the resume guide and SHA-pinned state index for the next action.
+
+
+### Campaign005 LR selection and audited cleanup complete
+
+All nine width512, D/4,1200-update LR screens passed. Final hybrid slot8
+(LR0.0025, seed3501) H200CE5.110104452076268, raw5.277339023920939.
+The full production selection audit and independent minimum-CE calculation agree:
+
+| Family | LR0.000625 H200CE | LR0.00125 | LR0.0025 | Selected LR |
+| --- | ---: | ---: | ---: | ---: |
+| Hybrid | 4.9656456373 | 4.9767141060 | 5.1101044521 | 0.000625 |
+| Gated MLA | 4.9533368528 | 4.8214574613 | 4.8574942336 | 0.00125 |
+| KDA | 4.9445421403 | 4.9763983473 | 5.1182203121 | 0.000625 |
+
+Family-specific tuning matters in this reused-seed screen. These choices feed
+the frozen rank comparison; they do not establish fresh-seed superiority or adoption.
+Selection guard finished177.20s, cleanup guard188.55s, without violations.
+The exact manifest was committed/pushed before completion of cleanup. Removed
+only12 losing-screen weights at slots1/3/4/6/7/8, totaling7,447,239,552 logical
+bytes. Retained all six selected weights at slots0/2/5 (3,723,619,776 bytes).
+Independent before/after comparison verified exact deletions, unchanged retained
+bindings and all preserved non-checkpoint bytes;344 non-checkpoint files are
+archived in the cleanup review. Deleted weights cannot be re-evaluated.
+Fresh pairs, old selected/failure weights, archives and holdout remain protected.
+
+Post-cleanup review observed27,126,628,352 free bytes versus26,907,661,636
+required for the remaining campaign including8GiB reserve. Read-only process
+inspection initially hit an automatic approval-review timeout; the one permitted
+retry succeeded. No human authorization was missing, and no guard was bypassed.
+After cleanup exit and a new process check, rank slot9 was dispatched through
+the original gates. Prepared005 rank starter/review/continuation helpers differ
+from004 only in campaign bindings; no production source changed.
+
+Evidence: `campaign005-lr-summary-v2.json`, selection/cleanup before archives,
+reviews and finished guards, and `campaign005-rank-09-v2-launch.json`. The
+resume guide/index record the live controller and exact next accepted-prefix review.

@@ -1,0 +1,162 @@
+{
+  "observed_at": "2026-10-31T06:36:38.242222+00:00",
+  "status": "lr_selection_and_cleanup_verified",
+  "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
+  "records": [
+    {
+      "slot": 0,
+      "family": "hybrid",
+      "divisor": 4,
+      "lr": 0.000625,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 4.965645637327922,
+      "raw_ce": 4.996666329241553
+    },
+    {
+      "slot": 1,
+      "family": "gated_mla",
+      "divisor": 4,
+      "lr": 0.000625,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 4.953336852752508,
+      "raw_ce": 4.9200928696776876
+    },
+    {
+      "slot": 2,
+      "family": "kda",
+      "divisor": 4,
+      "lr": 0.000625,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 4.944542140258151,
+      "raw_ce": 4.969660905926372
+    },
+    {
+      "slot": 3,
+      "family": "kda",
+      "divisor": 4,
+      "lr": 0.00125,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 4.976398347271712,
+      "raw_ce": 5.079611199806855
+    },
+    {
+      "slot": 4,
+      "family": "hybrid",
+      "divisor": 4,
+      "lr": 0.00125,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 4.976714106020634,
+      "raw_ce": 5.077557087636783
+    },
+    {
+      "slot": 5,
+      "family": "gated_mla",
+      "divisor": 4,
+      "lr": 0.00125,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 4.82145746133221,
+      "raw_ce": 4.8244493101960275
+    },
+    {
+      "slot": 6,
+      "family": "gated_mla",
+      "divisor": 4,
+      "lr": 0.0025,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 4.857494233625267,
+      "raw_ce": 4.919870187125091
+    },
+    {
+      "slot": 7,
+      "family": "kda",
+      "divisor": 4,
+      "lr": 0.0025,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 5.118220312101873,
+      "raw_ce": 5.274697344090305
+    },
+    {
+      "slot": 8,
+      "family": "hybrid",
+      "divisor": 4,
+      "lr": 0.0025,
+      "seed": 3501,
+      "steps": 1200,
+      "h200_ce": 5.110104452076268,
+      "raw_ce": 5.277339023920939
+    }
+  ],
+  "rates": {
+    "hybrid": 0.000625,
+    "gated_mla": 0.00125,
+    "kda": 0.000625
+  },
+  "selected_slots": [
+    0,
+    2,
+    5
+  ],
+  "deleted_slots": [
+    1,
+    3,
+    4,
+    6,
+    7,
+    8
+  ],
+  "deleted_checkpoint_count": 12,
+  "deleted_logical_bytes": 7447239552,
+  "retained_checkpoint_count": 6,
+  "archived_noncheckpoint_count": 344,
+  "cleanup_reference": {
+    "path": "meta/lr-boundary-cleanup-complete.json",
+    "sha256": "7af1bad29ddb62e503e3e752265c9102dd99e43100985a6d0b6d48f4cad4d89a"
+  },
+  "storage": {
+    "status": "remaining_campaign_storage_verified",
+    "projection": {
+      "phase": "rank",
+      "remaining_current_phase_allowance_bytes": 10767022312,
+      "remaining_phase_peak_bytes": {
+        "rank": 16130627907,
+        "confirm": 21772911364
+      },
+      "remaining_peak_bytes": 21772911364,
+      "reserve_bytes": 8589934592,
+      "metadata_allowance_bytes": 268435456,
+      "initial_full_panel_required_free_bytes": 30631281412,
+      "cleanup_prefix_length": 2,
+      "arithmetic_only": true,
+      "dispatch_authorized": false
+    },
+    "free_bytes": 27126628352,
+    "required_free_bytes": 26907661636,
+    "occupied_checkpoint_capacity_bytes": 3723619776,
+    "checkpoint_logical_bytes": 3723619776,
+    "metadata_bytes": 3189751,
+    "cleanup_boundaries_verified": 2,
+    "current_inventory_sha256": "9e443d5502a77aeb415c9e602cf5a1cb0abde920ab6795b84a531f203df3624f",
+    "storage_projection_fits": true,
+    "current_phase_space_verified": true,
+    "frozen_plan_verified": false,
+    "audit_semantics_verified": false,
+    "dispatch_authorized": false
+  },
+  "adopted": false,
+  "holdout_consumed": false,
+  "limits": "One reused screening seed; rank stage, fresh confirmations and inference remain. Deleted losing weights cannot be re-evaluated; original hashes, full results and noncheckpoint bytes are preserved.",
+  "evidence_sha256": {
+    "campaign005-lr-select-v2-review.json": "2798822e65c67b6b775198bc47c0fc2e9b51f0ca916225f4ca1811cf1349db1e",
+    "campaign005-lr-select-v2-guard.json": "3f58b30ff3b3a465931d19a566c2274f96be05db4714211625ba353910d082a6",
+    "campaign005-lr-cleanup-v2-review.json": "9b3e25aa8ada462aa8c8c10cfaa3aad7734339995e151e2500b02c5629f2fb70",
+    "campaign005-lr-cleanup-v2-guard.json": "08d7d1c257dd7261b8f734d00a2b5c9844b93ec91dd8700dbebfafef77e313ca"
+  }
+}
