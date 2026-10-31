@@ -3634,3 +3634,40 @@ Evidence: `checkpoint-compaction-002/completed.json`, archive receipt, journal,
 finished guards and `logical-evidence-review.json`;
 `census-campaign005-preview-review.json`, preview payloads, preview script and
 `census-preview-transport-review-v2.json`. No training/test worker remains.
+
+
+### Transparent filesystem compression clears the remaining capacity gap
+
+The renewed human request prompted an audit beyond tokenizer checkpoint weights.
+Historical Markdown knowledge snapshots occupied2,037,526,528 allocated bytes.
+The explicit `filesystem-compression-001` manifest compressed174 snapshots with
+APFS transparent compression, preserving every original path and readable byte;
+one4,011-byte snapshot remained unchanged because compression saved no blocks.
+The initial storage operation stopped safely on that no-savings copy; its guard
+and journal were retained, and a reviewed continuation completed the remaining
+entries. No research campaign or numerical fixture was retried.
+
+Net allocated space recovered:1,594,634,240 bytes. All175 snapshot SHA256/size,
+mode, mtime and ownership checks passed. All33,352 other inventoried research
+files passed unchanged checks, including159 selected/fresh/failed tokenizer
+weights, four archives, historical weights, non-checkpoint evidence and corpus.
+Observed free space30,967,259,136 now exceeds the unchanged30,631,412,484-byte
+full-panel requirement including8GiB reserve. No model checkpoint was removed,
+archived or recompressed. The old campaigns001–004 remain closed.
+
+Evidence: `filesystem-compression-001/plan.json`, both journals, original partial
+guard, finished continuation guard and `completed.json`. This changes physical
+storage only; ordinary readers and old hashes continue to see identical bytes.
+
+
+Campaign005 is now frozen from the exact previously reviewed prospective bytes
+(plan SHA256 `7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94`).
+Fresh publication rechecked current source/runtime, all bound files, original
+prerequisite transport, four archive identities, compression receipts and actual
+full capacity. `bind_campaign` accepted numerical and training-input bindings.
+The finite plan remains3pilots,24quality trajectories and3inference panels with
+unchanged grid/seeds, budgets, retention and8GiB reserve. Old campaigns remain
+closed, and their results are not pooled. The serial starter is identical to004
+apart from campaign/receipt paths: three pilots, audited pilot cleanup, then
+quality slot0 only; later dispatch requires separate accepted-history review.
+Evidence: `campaign005-freeze-v2-review.json`, finished guard and frozen bytes.

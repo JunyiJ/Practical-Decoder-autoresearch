@@ -17,3 +17,18 @@ after replacement it verifies all content and protected physical metadata again.
 The original path, SHA256, size, permissions, mtime and ownership must match.
 A durable journal records verification before atomic replacement and afterward.
 The complete 8 GiB reserve and research guards remain unchanged.
+
+Completed: 174 snapshots compressed; one 4,011-byte snapshot retained unchanged
+because its staged copy saved no allocation. The initial application stopped
+before replacing that file. Its diagnostic and 122 successful replacements remain
+in the original guard/journal; `finish.py` verified those paths and completed the
+remaining 52 replacements under a new guard and continuation journal. This was
+continuation of a file-storage operation, not a retry of a research campaign.
+
+Recovered **1,594,634,240 allocated bytes**, with all 2,037,153,240 logical bytes
+unchanged and at their original paths. Final verification covered all 175
+snapshots and 33,352 other research files, including 159 protected tokenizer
+checkpoints, all four archives, older checkpoints, failure evidence and corpus.
+Observed free space after completion: 30,967,259,136 bytes, above the unchanged
+30,631,412,484-byte full-panel requirement. Both worker locks and the 8 GiB
+reserve remained enforced. See `completed.json` and both immutable journals.
