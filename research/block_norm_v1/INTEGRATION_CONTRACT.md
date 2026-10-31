@@ -743,3 +743,29 @@ LayerNorm resource pilot. Recheck remaining capacity with the failed RMS pair
 protected. Quality training remains unfrozen; SiLU remains adopted.
 Evidence: validation-recovery-plan-001.json, validation-recovery-001-review.json,
 validation-recovery-001-rms-result.json and validation-recovery-decision.json.
+
+## Finite normalization quality plan frozen, October 31, 2026
+
+The real quality dispatcher now connects the accepted pilot worker/parent path
+to1,200-update trials, a7,200-second total worker/parent deadline, independent
+full-validation/cache replay, and external acceptance anchors. Requests and
+partial attempts cannot be retried. Six screens span both arms and three LRs;
+per-arm minimum H200 CE (lower-LR tie-break) is saved before three fresh pairs.
+The original quality thresholds and simultaneous conditional-text bootstrap
+remain unchanged; adoption still needs a separate final review.
+
+The exact retention boundary re-audits all six screens, persists selection, then
+allows only four losing raw/H200 pairs with a size/SHA/path manifest, fsynced
+intent/deletion journal and complete protected-evidence verification. Two chosen
+screen pairs, all six fresh pairs, both pilots and all non-weight evidence remain.
+The failed RMS pilot remains permanently protected; no cleanup credit is assumed.
+
+Integration001 failed during collection due to a relative test import; no test,
+training or deletion ran. Its source and log are preserved. Corrected002 passed
+nine checks including disposable-file cleanup/corruption/re-entry handling and
+actual parent acceptance of both trained pilot models. No scientific checkpoint
+was deleted. The final frozen entry bound successfully with395 source inventory
+entries and17,937,055,744B free versus the
+15,170,221,264B initial requirement. All CPU/thread/memory/disk/holdout guards remain.
+Evidence: quality-integration-001/002-plan/review/source, quality001-plan/freeze/
+preflight and quality-retention-disposable-002. The first quality screen is next.
