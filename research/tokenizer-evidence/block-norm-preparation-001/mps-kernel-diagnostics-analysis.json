@@ -1,0 +1,164 @@
+{
+  "status": "isolated_diagnostics_complete_resume_not_accepted",
+  "observed_at": "2026-10-31T20:58:04.013836+00:00",
+  "results": {
+    "embedding": {
+      "review_sha256": "234382967672a14abf4b49201d1a2975a0805ab1c1e96503d7b0bfbc3c858342",
+      "events_sha256": "c787bce80bf2e51e33a6d111c09859840b2077bda76ed15df90612ff43f72968",
+      "case_summaries": [
+        {
+          "backend_error": null,
+          "case": "generated_text_duplicates",
+          "completed_passes": 8,
+          "deterministic": false,
+          "event": "case_summary",
+          "max_oracle_error": 1.5133991837501526e-09,
+          "max_repeat_difference": 1.862645149230957e-09,
+          "unique_gradient_hashes": 8
+        },
+        {
+          "backend_error": null,
+          "case": "generated_text_duplicates",
+          "completed_passes": 8,
+          "deterministic": true,
+          "event": "case_summary",
+          "max_oracle_error": 1.5133991837501526e-09,
+          "max_repeat_difference": 1.862645149230957e-09,
+          "unique_gradient_hashes": 8
+        },
+        {
+          "backend_error": null,
+          "case": "unique_ids",
+          "completed_passes": 8,
+          "deterministic": false,
+          "event": "case_summary",
+          "max_oracle_error": 0.0,
+          "max_repeat_difference": 0.0,
+          "unique_gradient_hashes": 1
+        },
+        {
+          "backend_error": null,
+          "case": "unique_ids",
+          "completed_passes": 8,
+          "deterministic": true,
+          "event": "case_summary",
+          "max_oracle_error": 0.0,
+          "max_repeat_difference": 0.0,
+          "unique_gradient_hashes": 1
+        }
+      ],
+      "guard": {
+        "elapsed_seconds": 2.7759125830198172,
+        "limits": {
+          "mps_driver_limit_bytes": 6442450944,
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 10366230528,
+          "mps_current_bytes": 0,
+          "mps_driver_bytes": 8863744,
+          "peak_observed_mps_driver_bytes": 1082621952,
+          "peak_rss_bytes": 599015424
+        },
+        "pid": 71773,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    "muon": {
+      "review_sha256": "0cfc556e144a2b8e2aedfd32c5fc83b68d911cb3072873d13228ceb5697a719f",
+      "events_sha256": "5a547ae2f822f07f56e82ef0c9511a450c1bac9bbdb7e292249356c1f988ea77",
+      "case_summaries": [
+        {
+          "actual_gradient_delta": 1.862645149230957e-09,
+          "changed_bf16_orthogonalizer_input_elements": 51,
+          "changed_parameter_elements": 11524,
+          "deterministic": false,
+          "event": "case_summary",
+          "max_identical_input_repeat_difference": 0.0,
+          "perturbed_parameter_max_difference": 9.765848517417908e-06,
+          "shape": [
+            256,
+            64
+          ],
+          "unique_base_parameter_hashes": 1,
+          "unique_perturbed_parameter_hashes": 1
+        },
+        {
+          "actual_gradient_delta": 1.862645149230957e-09,
+          "changed_bf16_orthogonalizer_input_elements": 51,
+          "changed_parameter_elements": 11524,
+          "deterministic": true,
+          "event": "case_summary",
+          "max_identical_input_repeat_difference": 0.0,
+          "perturbed_parameter_max_difference": 9.765848517417908e-06,
+          "shape": [
+            256,
+            64
+          ],
+          "unique_base_parameter_hashes": 1,
+          "unique_perturbed_parameter_hashes": 1
+        },
+        {
+          "actual_gradient_delta": 1.8662831280380487e-09,
+          "changed_bf16_orthogonalizer_input_elements": 416,
+          "changed_parameter_elements": 112678,
+          "deterministic": false,
+          "event": "case_summary",
+          "max_identical_input_repeat_difference": 0.0,
+          "perturbed_parameter_max_difference": 1.2657605111598969e-05,
+          "shape": [
+            672,
+            256
+          ],
+          "unique_base_parameter_hashes": 1,
+          "unique_perturbed_parameter_hashes": 1
+        },
+        {
+          "actual_gradient_delta": 1.8662831280380487e-09,
+          "changed_bf16_orthogonalizer_input_elements": 416,
+          "changed_parameter_elements": 112678,
+          "deterministic": true,
+          "event": "case_summary",
+          "max_identical_input_repeat_difference": 0.0,
+          "perturbed_parameter_max_difference": 1.2657605111598969e-05,
+          "shape": [
+            672,
+            256
+          ],
+          "unique_base_parameter_hashes": 1,
+          "unique_perturbed_parameter_hashes": 1
+        }
+      ],
+      "guard": {
+        "elapsed_seconds": 1.9718094170093536,
+        "limits": {
+          "mps_driver_limit_bytes": 6442450944,
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 10364547072,
+          "mps_current_bytes": 0,
+          "mps_driver_bytes": 737280,
+          "peak_observed_mps_driver_bytes": 8880128,
+          "peak_rss_bytes": 454410240
+        },
+        "pid": 71852,
+        "reason": null,
+        "status": "finished"
+      }
+    }
+  },
+  "embedding_conclusion": "With repeated generated-text IDs,8/8 distinct full-gradient hashes in both deterministic-off and strict-on modes; unique-ID controls exact. No warning/error/fallback. Default/strict flag does not enforce deterministic repeated-index embedding backward in this local case.",
+  "muon_conclusion": "Both shapes and modes repeat bit-exactly on identical synthetic inputs. Roughly1.86e-9 gradient perturbations cause9.766e-6/1.266e-5 parameter differences. Supports sensitivity/amplification, not causal replay of the actual full-model perturbation.",
+  "precision_note": "BF16 orthogonalizer inputs reconstructed from the installed formula, not instrumented inside the optimizer; actual updated parameters/momentum are measured. The in-place and out-of-place momentum paths were not separately compared.",
+  "scope": "One PyTorch2.14.1 local MPS installation; one duplicate-token input and two synthetic Muon matrix shapes. No universal determinism claim, quality result or changed acceptance threshold.",
+  "runtime_unchanged": true,
+  "global_deterministic_settings_restored": true,
+  "numerical_resume_accepted": false,
+  "closed_attempts_retried": false
+}

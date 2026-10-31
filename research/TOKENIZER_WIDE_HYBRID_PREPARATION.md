@@ -7419,3 +7419,52 @@ strict deterministic controls, then identical-gradient Muon repeat/perturbation
 sensitivity as warranted. Use separate bounded diagnostics and disclose backend
 support/errors; do not silently change precision, fallback or accept a new threshold.
 MPS resume, controller and finite quality-plan readiness remain gated.
+
+
+## Isolated MPS embedding and Muon diagnostics completed October31
+
+A fresh embedding-only diagnostic used the real generated-text first batch,
+FP32 upstream gradients, eight identical backward passes per mode and a unique-
+ID control. Repeated token IDs produced8distinct gradient hashes in8passes both
+with deterministic algorithms off and with strict deterministic mode on
+(warn_only=False). No warning/error or fallback occurred. Maximum repeat delta
+was1.862645149e-9; maximum error versus sequential FP64 analytic sums1.513399184e-9.
+Unique-ID controls were bit-exact to the oracle and across passes in both modes.
+This isolates observed variation to repeated-index embedding backward in this
+local case; the strict flag alone does not solve it. It does not identify the
+specific kernel implementation or establish universal backend behavior.
+
+A separately frozen Muon sensitivity probe used fixed synthetic FP32 weights,
+gradients and populated momentum at shapes256x64 and672x256, with four repeats
+per input and deterministic mode off/on. Identical inputs gave bit-exact updated
+parameters in every case. Seeded gradient perturbations near1.86e-9 produced
+max parameter differences9.765848517e-6 and1.265760511e-5, respectively; results
+were the same across deterministic modes. BF16 orthogonalizer inputs reconstructed
+from the installed formula changed51/416elements. These reconstructed intermediates
+were not instrumented inside the optimizer, and the in-place/out-of-place momentum
+paths were not separately compared. Actual parameter outputs were measured.
+
+Together with the earlier exact-restoration trace, this supports small embedding-
+backward variation followed by optimizer sensitivity as a plausible explanation.
+The synthetic perturbations are not the full-model trace's actual gradient pairs;
+there is no complete causal reconstruction or accepted numerical resume result.
+No tolerance changed, failed attempt reopened, runtime/math edited, precision
+changed or persistent deterministic setting promoted. Global settings were restored.
+
+Embedding guard2.776s/RSS599,015,424bytes/peak sampled MPS driver1,082,621,952bytes;
+Muon guard1.972s/RSS454,410,240bytes/driver8,880,128bytes.32embedding backwards and
+32synthetic single-matrix optimizer updates, no GPT/model training. Strict MPS
+fallback0/fast_math0 and all4CPU/4GiB/6GiB/8GiB/600s guards remained. No new binary
+files, cleanup, quality/holdout scoring or changes to frozen source/closed roots.
+
+[Analysis](tokenizer-evidence/block-norm-preparation-001/mps-kernel-diagnostics-analysis.json),
+[embedding events](tokenizer-evidence/block-norm-preparation-001/mps-embedding-diagnostic-001-events.jsonl),
+[Muon events](tokenizer-evidence/block-norm-preparation-001/mps-muon-diagnostic-001-events.jsonl).
+Next design and prospectively test a separate deterministic MPS embedding-gradient
+prototype before any runtime adoption. One candidate is unique-token grouping plus
+a FP32 membership-matrix product and unique-index output copy, entirely on MPS;
+first verify backend support, analytic gradients, repeated-call determinism and
+bounded cost/memory without changing production. Preserve native forward behavior,
+no CPU fallback, no new quality claim and no tolerance widening. Any eventual
+runtime change needs explicit source delta, both-arm equivalence/replay/resource
+checks and a fresh finite-plan binding. Quality/controller readiness stays gated.

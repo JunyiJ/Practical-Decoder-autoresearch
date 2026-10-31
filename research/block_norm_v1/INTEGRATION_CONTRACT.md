@@ -256,3 +256,23 @@ updates, no new binary files/quality/holdout. Intermediate archive hash and full
 trace retained; payload stays ephemeral. All earlier failed attempts remain closed.
 Next separately plan embedding-backward deterministic controls and Muon sensitivity
 checks, without silent backend/precision/tolerance changes or quality launch.
+
+
+## Isolated kernel diagnostics
+
+Repeated-token embedding backward returned8different hashes in8identical passes
+both with deterministic algorithms off and strict on; unique-ID controls were
+bit-exact. Max repeat delta1.8626e-9, FP64 oracle error1.5134e-9; no warning/error/
+fallback. The strict flag alone is insufficient on this local backend. Installed
+Muon repeated exactly on identical synthetic inputs, but1.86e-9 perturbations
+produced9.766e-6/1.266e-5 parameter differences at256x64/672x256, identical across
+modes. BF16 input observations reconstruct the formula rather than instrumenting
+optimizer internals. This supports sensitivity, not full causal trace replay.
+
+Both new diagnostics completed with all guards and frozen evidence unchanged;
+no runtime changes, binary artifacts, model training, quality or holdout use.
+Global deterministic settings restored; failed resume gate remains unchanged.
+Next standalone deterministic MPS embedding-gradient prototype (unique-token
+membership reduction/copy candidate), with prospective formula/FP32/repeat/resource
+checks and no CPU fallback. Do not adopt into runtime without explicit delta and
+both-arm numerical/replay/resource validation. No old failed fixture reruns.

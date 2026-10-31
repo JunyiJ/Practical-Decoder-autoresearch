@@ -1,0 +1,133 @@
+{
+  "status": "prospective_isolated_embedding_diagnostic_before_execution",
+  "baseline_manifest_sha256": "3923f20365b0b69632fdcab85c410946e85c46abe398cf92dcdb816d4d495e3c",
+  "previous_runtime_plan_sha256": "1c5031056f7c76e35812427596961774478f1c1e8c1eaa52f234732eb4250073",
+  "trace_decision_sha256": "39fb3590a5a5fc886e9d498aebc3eaa3dc50c17cd0d9a8997c27ce4bde508ddd",
+  "current_runtime_sha256": {
+    "research/block_norm_v1/runtime/__init__.py": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+    "research/block_norm_v1/runtime/attention/output_gate.py": "d9d7671cdfa0d8e3a09ee0a79eae2ce19eae12fdd15ec2a3748adf8abede7dbc",
+    "research/block_norm_v1/runtime/attention/gqa.py": "8edc87d788332893cea1022e81f608d737baa92625d785e502cc62c40316aa1e",
+    "research/block_norm_v1/runtime/attention/kda.py": "333c36d0b552492da4375ff4fa7a1005fb724461e0ed10501208031121706894",
+    "research/block_norm_v1/runtime/attention/cache.py": "5d7588b2227adade11fc34a3f57cdf8cf68261f9fba544527cfeda7e2da4eef9",
+    "research/block_norm_v1/runtime/attention/__init__.py": "d4b73c2244f2e465ea8e727c9c057a0f8e186ffe4002aabedfd2c2c6142c9907",
+    "research/block_norm_v1/runtime/attention/qk_norm.py": "ae69b95907398bcddb5044b12f5529bf41e368aea6c9bc26c6f899f4dffbc69f",
+    "research/block_norm_v1/runtime/attention/kda_scaling.py": "daa4500c4ccf5a4083692d79bffa14db526bcbef6b64dde4cd92903b54bdfaee",
+    "research/block_norm_v1/runtime/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "research/block_norm_v1/runtime/attention/mha.py": "e87892e5fa51d0ca0b208e499ea57fa765138f211fea954892ae44b9837d8834",
+    "research/block_norm_v1/runtime/utils/checkpoint.py": "8d819e0578814d3121bf4372f7cd3922e04b47e5e666cd32e725a7282f84bc3a",
+    "research/block_norm_v1/runtime/utils/device.py": "fa74ad997cad2b8eb4e906118980250768c875623d5c595409665ad6be40c091",
+    "research/block_norm_v1/runtime/utils/__init__.py": "3e61d7fcea9efad4762e2bfe8d9a318ab0bad69ccb5184b3505b7963233eba7a",
+    "research/block_norm_v1/runtime/utils/block_norm_resume.py": "9cd6ff50a79173f873a43f90f969e6cb0b9e52f121e6f1a8319326b40f44c178",
+    "research/block_norm_v1/runtime/models/residual_topology.py": "cbcbe3dba3c726a7e88e6c025b69de37d21a053b43ca3773d9b77d90091c88fd",
+    "research/block_norm_v1/runtime/models/position_family.py": "388c3f0e523b81d3037216a7db7de5069a9f5322280c4057d0e8fc6f08e73549",
+    "research/block_norm_v1/runtime/models/residual_gain.py": "db9641bc6e45ffdada8f138e2531c1d600154083cbd8acb333708c8afe781436",
+    "research/block_norm_v1/runtime/models/logit_z.py": "16e1a305b6049b5f197bd2cbbc1102cd71f927c996a6657b13d203a72739f802",
+    "research/block_norm_v1/runtime/models/embedding_scale.py": "596783ac8b1c1753f26a13571fa7c000aaa5fd5e1c93bfe59b03a99fa00f7c51",
+    "research/block_norm_v1/runtime/models/ffn_hidden_norm.py": "b4bc9d79c16e84d6c6640427edee8736a9d14cfb5ff7ff37c2ca24c1aad203d5",
+    "research/block_norm_v1/runtime/models/block_norm.py": "3254a0aa35523c45cac7cb72f87e817176f82c61d700005cd50cdd5f9a5fa3e2",
+    "research/block_norm_v1/runtime/models/readout_norm.py": "c3de6242e3b8867be43bd21d72eb9d21224a89aabd8d40bd4eafdd36c9b9fc22",
+    "research/block_norm_v1/runtime/models/__init__.py": "2db522babfe2d440c4d816dcccaa624999516930bb214b731fa16cfbc34cce20",
+    "research/block_norm_v1/runtime/models/tokenizer_tables.py": "0d946deb390b717aa76281fafee61722bea269be636afe472bed85a193dfcb92",
+    "research/block_norm_v1/runtime/models/gated_activation.py": "8c811ce6b655ca29b1d3adda0c50db4450e01b213981be2c7458f87f485bb1cc",
+    "research/block_norm_v1/runtime/models/mlp.py": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+    "research/block_norm_v1/runtime/models/tokenizer_activation.py": "0b66fbbefd9ac04567c96a0f09738483dd02d78890bcddb9515a8cd34f663612",
+    "research/block_norm_v1/runtime/models/output_bias.py": "22e095ab917f49360a114085c45cd6aa1fc675296d144ea80a6870422879099d",
+    "research/block_norm_v1/runtime/models/attention_scale.py": "c964f5b9532684e9b244a5f03a6da6a65ba998611b04a27a7553ad21ff26bf7e",
+    "research/block_norm_v1/runtime/models/tokenizer_hybrid.py": "cdab512a0f6d93464bbf4095a6c77a93198e376da3ba53955dfcb556003dd064",
+    "research/block_norm_v1/runtime/models/tokenizer_architecture.py": "d289b50b754fa586738002d850d185b0db0edef596cdb4c17d445e51daf930eb",
+    "research/block_norm_v1/runtime/models/weight_tying.py": "c7bb966e9c01811aaf0636c0e657d1c1c0baa2403870f886fb70c44d3064151e",
+    "research/block_norm_v1/runtime/models/rope.py": "33bda2c5d2a4c312d65e2e294c5de944ff84d2c231bf40001f621a9399f6e5d3",
+    "research/block_norm_v1/runtime/models/blocks.py": "838c77737328c52f6570ec1e17a557add32e1ba7fa3d1f88b669e7a23f3b14b5",
+    "research/block_norm_v1/runtime/models/depth_scaling.py": "a7f3f3b913b797cca8fe0d5d44385c86df41f8a5ca68b1c197136a838cc31448",
+    "research/block_norm_v1/runtime/models/gpt.py": "1a39ce92e8a75fa10607e2a626ec81ba1e87625673781cab17ecbb61c4969faa",
+    "research/block_norm_v1/runtime/models/value_residual.py": "144ad67287d95bd5bd8feec443c7cdda584b1999a89753bdb5f39177d208e4ce",
+    "research/block_norm_v1/runtime/train/lr_schedule.py": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6",
+    "research/block_norm_v1/runtime/train/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/block_norm_v1/runtime/train/optimizers.py": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+    "research/block_norm_v1/runtime/train/train.py": "991d6fee3b969a69c4c19fa235dc8e2d8423e51500596fdc7cc850789cc33cb2",
+    "research/block_norm_v1/runtime/train/weight_averaging.py": "c314f8771262e3e0ba60e3d6382d76b7026d006aeae3d0e7abe6f7282245cbab",
+    "research/block_norm_v1/runtime/data/loaders.py": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+    "research/block_norm_v1/runtime/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/block_norm_v1/runtime/moe/moe_block.py": "c29fb1be70bb4de5584bcbd5fb71cdb7088b5fd87868853aadf875116efd945f",
+    "research/block_norm_v1/runtime/moe/scaling.py": "c0265ce242f560a6816d8769f8a756ade2c6ee328ac355e32683192e88dee2bc",
+    "research/block_norm_v1/runtime/moe/__init__.py": "f0911c8ad4ac9dc58ac16bd6ea8b33c9d7300f021ad5bc39aa33f1817b0662a9"
+  },
+  "runtime_unchanged": true,
+  "prerequisite_source_sha256": {
+    "research/block_norm_v1/test_mps_embedding_determinism.py": "06f4ca5785fd669aa08abfc21eae608dca5c8718eb7d7fd784529853eea22565",
+    "research/block_norm_v1/run_mps_embedding_diagnostic.py": "23b185cc7db99ee9f383c458d6e4142a90f85684f390147bbea314e282835e0a"
+  },
+  "generated_fixture_sha256": {
+    "research_state/block-norm-trainer-fixture-001/layer_matched_epsilon/generated.txt": "bef9eb379f72f9b0f16942590cae2dc95e474d0c940a1be90d3b4618ee3bfc69",
+    "research_state/block-norm-trainer-fixture-001/rms_incumbent/generated.txt": "bef9eb379f72f9b0f16942590cae2dc95e474d0c940a1be90d3b4618ee3bfc69",
+    "research_state/block-norm-trainer-fixture-002/layer_matched_epsilon/summary.json": "eee20bf60388062bd875d5b5209810602ef1210a1326641f458689f9b6df1d94",
+    "research_state/block-norm-trainer-fixture-002/layer_matched_epsilon/export.json": "c9e1962f2c7568a2f274821ce51b8ecb89882ce276a8fd0849f042a00f97b8c0",
+    "research_state/block-norm-trainer-fixture-002/layer_matched_epsilon/config.json": "2461784d6d35cb71804c1fb633b9e26b6e946eb12bc6db632310b56e6db0e39a",
+    "research_state/block-norm-trainer-fixture-002/layer_matched_epsilon/final_000002_1793479266042615000.pt": "17347e12924c8db11b61b76a72a21cc82a2d3f7471201ed5ed12393023865cdd",
+    "research_state/block-norm-trainer-fixture-002/layer_matched_epsilon/metrics.jsonl": "bf8d2be0b4101fb1b15cad925a2999a7cf15f146d130c7202e486b9d263f7bc6",
+    "research_state/block-norm-trainer-fixture-002/layer_matched_epsilon/generated.txt": "bef9eb379f72f9b0f16942590cae2dc95e474d0c940a1be90d3b4618ee3bfc69",
+    "research_state/block-norm-trainer-fixture-002/layer_matched_epsilon/h200.pt": "7175083a8c331b910eb390bdee073c9f424120ec64b9abce54392482a7dff0c3",
+    "research_state/block-norm-trainer-fixture-002/rms_incumbent/final_000002_1793479260319233000.pt": "0b42d97e376633420e395cb3e6c2c862e89a0407bff18a646450c3bf1812e989",
+    "research_state/block-norm-trainer-fixture-002/rms_incumbent/summary.json": "89d4047cde32eeea25c8c3b17a2814c5c87442b5fa42b404a461d8dbe0a07993",
+    "research_state/block-norm-trainer-fixture-002/rms_incumbent/export.json": "045949217365e557649fa758571fa7bc1635a0fdb70268b79f3fb5242698aa37",
+    "research_state/block-norm-trainer-fixture-002/rms_incumbent/config.json": "006a079e34f4c6694e2411f62678fd5feb4525f65e6bad93665e5153ae2f5a37",
+    "research_state/block-norm-trainer-fixture-002/rms_incumbent/metrics.jsonl": "45fd3cbdfed29a101b65c60a25505855952341b9b701c6f18f5c64f1897030a6",
+    "research_state/block-norm-trainer-fixture-002/rms_incumbent/generated.txt": "bef9eb379f72f9b0f16942590cae2dc95e474d0c940a1be90d3b4618ee3bfc69",
+    "research_state/block-norm-trainer-fixture-002/rms_incumbent/h200.pt": "f7e5449b16f7176bf1cdd863909be8dbf7e268f63fc55891daab9002349e8ae4"
+  },
+  "guard_source_sha256": "3978e8b9411e206a62f86fed913e857cb979b18db2f2bbec787be95d6d1e17c4",
+  "limits": {
+    "cpu_threads": 4,
+    "rss_limit_bytes": 4294967296,
+    "mps_driver_limit_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "timeout_seconds": 600
+  },
+  "environment": {
+    "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+    "PYTORCH_MPS_FAST_MATH": "0"
+  },
+  "cases": {
+    "weight_shape": [
+      50257,
+      256
+    ],
+    "weight_initialization": "zeros; no optimizer updates",
+    "upstream_shape": [
+      1,
+      128,
+      256
+    ],
+    "upstream": "CPU FP32 Gaussian *.001, generator seed372702; copied exactly toMPS once",
+    "input_cases": [
+      "actual generated-text first training batch with loader seed372701",
+      "unique IDs0..127"
+    ],
+    "deterministic_modes": [
+      false,
+      true
+    ],
+    "warn_only": false,
+    "repetitions_per_mode": 8,
+    "planned_total_backward_calls": 32,
+    "oracle": "Sequential CPU FP64 sum of upstream rows for each active token ID"
+  },
+  "observations": [
+    "full gradient SHA each pass",
+    "max absolute repeat discrepancy and element count",
+    "absolute error against independent analytic FP64 sums",
+    "finite values and exact zero inactive rows",
+    "deterministic backend error if unsupported; never fallback",
+    "restore initial deterministic/warn-only flags"
+  ],
+  "interpretation": "Observation only: no tolerance gate changed and no full-model/RNG/resume acceptance. If repeated-ID off varies and strict on stable while unique-ID off stable, narrows failure to repeated-index embedding backward accumulation in this case; does not identify kernel code or guarantee cross-run determinism universally.",
+  "storage": {
+    "binary_files": 0,
+    "event_log_cap_bytes": 1048576,
+    "estimated_tensor_live_bytes": 367001600,
+    "warning": "Runtime/backend allocator excluded; existing RSS4GiB/driver6GiB/reserve8GiB guards remain."
+  },
+  "optimizer_updates": 0,
+  "quality_training_launched": false,
+  "holdout_scored": false
+}
