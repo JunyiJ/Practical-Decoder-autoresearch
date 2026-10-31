@@ -1,0 +1,14 @@
+{
+  "status": "explicit_provenance_field_interpretation",
+  "review": "resume-export-regression-001-review.json",
+  "review_sha256": "134ba070cc665316152811fdec2b68128de282f6a55791f4ec3ac8f16830ee8f",
+  "note": "The inherited wrapper field baseline_manifest_sha256 holds the source delta JSON hash, not the origin-copy manifest hash. The guard validated the actual baseline via the delta. Evidence remains unchanged; use these explicit paths for provenance.",
+  "source_delta": {
+    "path": "research/tokenizer-evidence/block-norm-preparation-001/resume-replay-delta-001.json",
+    "sha256": "0fc16a1e387f88c0de0d3e6d915afc12a053521d7516ea1db50e5c3350bf56d6"
+  },
+  "origin_baseline": {
+    "path": "research/tokenizer-evidence/block-norm-preparation-001/runtime-baseline-copy-manifest.json",
+    "sha256": "3923f20365b0b69632fdcab85c410946e85c46abe398cf92dcdb816d4d495e3c"
+  }
+}

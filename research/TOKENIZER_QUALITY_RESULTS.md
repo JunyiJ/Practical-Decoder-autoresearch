@@ -5192,3 +5192,44 @@ cache/gradient numerical and MPS checks remain. No training readiness or quality
 gain follows. Guard-observed free space was12,084,506,624bytes after fixtures;
 against the recorded15,170,221,264 full-panel requirement, the capacity gap is now
 3,085,714,640bytes. This observation is not a new audited launch approval.
+
+
+## Populated optimizer and interrupted CPU replay completed October31
+
+The new policy now rejects incomplete raw-resume metadata before loading model
+weights. Preflight checks model/device/PyTorch/progress/RNG contracts, exact
+optimizer group order/names/rates and scheduled step, complete finite FP32
+Muon/AdamW slots, Adam counters and EMA state. This policy-specific helper lives
+in the copied runtime; old-policy behavior is unchanged. H200 export restores
+raw weights/EMA without pretending to resume the optimizer; existing raw-parent
+and layout checks remain mandatory.
+
+Thirty CPU tests passed using fresh synthetic batch1/context2 data: three updates
+per arm, saving after update1 and replaying updates2/3. Final model weights,
+populated optimizer slots, EMA state, batches, losses, global RNG and loader RNG
+were bit-exact between uninterrupted and restored execution. Tests also rejected
+missing optimizer/training/RNG state, changed model contracts, group order/rates,
+missing/wrong-dtype slots, nonfinite state, wrong Adam counts and invalid EMA.
+No original corpus or trained research checkpoint was used. This is ten synthetic
+optimizer updates in an implementation fixture, not a quality trajectory.
+
+A separate three-test read-only regression rederived both retained synthetic H200
+exports bit-exactly, rejected their deliberately incomplete full-resume state and
+preserved legacy low-level resume semantics. Original/recovery source and three
+closed campaign inventories/nonweight hashes stayed unchanged. All evidence and
+synthetic artifacts remain retained; no cleanup, MPS or holdout scoring occurred.
+
+Replay guard:12.266s, peakRSS2,186,706,944bytes. Export regression:1.900s,
+peakRSS958,185,472bytes. Both used four threads,120s cap,4GiB RSS cap and8GiB
+reserve. Two new raw files plus synthetic ID files total890,211,626bytes under
+the declared1,200MiB quota; their hashes are recorded without pushing binaries.
+
+[Replay review](tokenizer-evidence/block-norm-preparation-001/resume-replay-prerequisite-001-review.json),
+[export regression](tokenizer-evidence/block-norm-preparation-001/resume-export-regression-001-review.json),
+[fixture manifest](tokenizer-evidence/block-norm-preparation-001/resume-replay-fixture-manifest.json).
+Next complete candidate full/cached causality/reset/interleaving and numerical
+gradient checks, then strict MPS and tokenizer-bound trainer/controller integration.
+This small CPU replay does not establish those or full-budget training stability.
+Latest guard free space11,481,591,808bytes leaves a3,688,629,456byte gap against
+the recorded15,170,221,264 full-panel requirement. Training remains gated; do not
+poll unchanged capacity, narrow the panel or delete protected evidence to fit.

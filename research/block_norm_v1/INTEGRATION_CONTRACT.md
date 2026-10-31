@@ -145,3 +145,23 @@ but not full resume: optimizer state was empty, no optimizer update occurred,
 and loader/RNG trajectory replay was not exercised. Review raw resume paths for
 missing optimizer/training state acceptance and test populated state/interrupted
 replay next. Retain the four fixture files/manifest; no trained artifact is used.
+
+
+## Raw resume preflight and replay status
+
+`resume-replay-delta-001.json` adds a new policy-specific helper at
+`utils/block_norm_resume.py` and changes only checkpoint load and H200 export
+call sites. This explicitly extends the new-module allowlist to isolate resume
+validation. It checks complete typed/raw metadata, RNG, exact scheduled optimizer
+groups, complete finite FP32 state and EMA before model mutation. H200 uses
+validated inference weight loading after its explicit raw-parent checks, since
+export does not resume optimizer/RNG state. Original policy behavior is preserved.
+
+30 guarded synthetic CPU tests give exact uninterrupted/restored model, populated
+optimizer, schedule, EMA, samples/losses and RNG equality. Three read-only export
+regressions also pass. Actual `_training_contract`, capture/restore and production
+model/optimizer/schedule/EMA primitives were exercised on generated IDs; the
+`run_training` dispatcher and real tokenizer/data binding were not invoked. This
+is batch1/context2 over three synthetic updates, not an actual research run or
+proof of MPS/full-budget stability. Candidate cache/gradient numerical checks and
+trainer/controller integration still precede any campaign freeze.

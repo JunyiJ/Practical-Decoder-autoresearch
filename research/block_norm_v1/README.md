@@ -2,9 +2,9 @@
 
 This directory provides a prospective normalizer specification, CPU reference
 checks and a separately namespaced unmodified runtime baseline. A named candidate model policy now has construction/optimizer-coverage tests.
-Raw/H200 signature serialization now passes bounded synthetic tests. Candidate
-gradient/update, populated optimizer/trajectory resume, cache numerical and MPS
-integration remain unvalidated; no candidate training is ready. Frozen original/recovery source and evidence are unchanged.
+Raw/H200 signature serialization now passes bounded synthetic tests. Synthetic CPU populated-optimizer and interrupted replay checks now pass.
+Independent gradient/cache numerical, MPS and tokenizer-bound trainer/controller
+integration remain unvalidated; no quality training is ready. Frozen original/recovery source and evidence are unchanged.
 
 `spec.py` binds kind, width256, FP32, epsilon2^-23, affine/bias and pre-attention/
 pre-FFN placement. The control uses exact native RMSNorm with `eps=None`; the
@@ -105,3 +105,21 @@ and final EMA accumulator restoration passed; populated optimizer-state and
 interrupted trajectory/loader RNG replay remain pending. Tighten new-policy raw
 resume requirements and test those before declaring resume ready. No candidate
 cache/gradient/MPS or quality claim. No evidence attempt may be overwritten.
+
+
+## Populated resume replay
+
+30 CPU checks now establish bit-exact batch1/context2 primitive replay for both
+arms over three synthetic updates with an interruption after the first. Model,
+Muon/AdamW slots, schedule, EMA, losses, samples and CPU/loader RNG agree exactly.
+The new copied `utils/block_norm_resume.py` checks complete raw state before
+weight loading; malformed groups, rates, slots, counters and RNG/EMA are rejected.
+All source deltas and test snapshots are retained. Two raw fixture files and ID
+files total890,211,626bytes; no cleanup or original corpus access occurred.
+
+The accompanying three-test read-only H200 regression remains exact on prior
+synthetic fixtures and preserves old-policy resume behavior. These results
+supersede the earlier populated-resume pending note, but do not prove production
+trainer/tokenizer integration, independent gradients, candidate cache parity or
+MPS stability. Next complete numerical/cache checks without new binary fixtures
+where feasible, then resource and controller readiness. Training remains gated.

@@ -163,7 +163,9 @@ def derived_checkpoint_payload(parent_path, half_life):
     cfg = OmegaConf.create(raw['cfg'])
     with torch.random.fork_rng(devices=[]):
         model = GPT(cfg.model)
-        load_model_weights(model, raw, for_resume=True)
+        # Export restores raw weights and EMA, not the online optimizer/RNG.
+        # The raw-parent and layout checks above remain mandatory.
+        load_model_weights(model, raw, for_resume=False)
         tracker = TailWeightAverages(model, cfg.training)
         if tracker.spec is None or raw['training_state']['contract'].get('weight_averaging') != tracker.spec:
             raise ValueError('Parent averaging contract is absent or inconsistent')

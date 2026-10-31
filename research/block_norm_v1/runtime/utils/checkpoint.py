@@ -88,6 +88,9 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
         raise ValueError('Averaged inference weights cannot resume the online optimizer; use the raw parent checkpoint')
     from ..models.block_norm import validate_checkpoint
     validate_checkpoint(model, checkpoint)
+    if for_resume:
+        from .block_norm_resume import validate_resume
+        validate_resume(model, checkpoint)
     from ..models.tokenizer_architecture import validate_architecture_load
     validate_architecture_load(model, checkpoint)
     from ..models.logit_z import validate_logit_z_load
