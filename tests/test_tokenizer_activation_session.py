@@ -57,7 +57,9 @@ def outputs(ledger, *, ce=5.):
                for name, value in (('raw', sink.raw), ('h200', sink.export))}
     row = dict(request['spec'], status='completed')
     if request['spec']['stage'] != 'pilot': row['h200_ce'] = ce
-    result = publish(ledger, stem+'/result.json', dict(kind=session.KIND, request=ref, record=row, holdout_consumed=False))
+    measurement = publish(ledger, stem+'/measurements.json', dict(synthetic_fixture=True))
+    result = publish(ledger, stem+'/result.json', dict(kind=session.KIND, request=ref, record=row, holdout_consumed=False,
+        status='completed', request_sha256=ref['sha256'], measurements=measurement))
     audits = {name: publish(ledger, stem+'/'+name+'-audit.json',
         dict(status='passed', request=ref, result=result, weights=weights, synthetic_fixture=True)) for name in session.AUDITS}
     review = publish(ledger, stem+'/acceptance.json', dict(kind='activation_acceptance_v1', status='accepted',

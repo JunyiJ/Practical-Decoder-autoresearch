@@ -59,7 +59,7 @@ class Session:
         return self.root / ref['path']
 
     def document(self, ref):
-        require(ref['size'] <= 1024**2, 'Receipt exceeds read bound')
+        require(ref['size'] <= 2*1024**2, 'Receipt exceeds read bound')
         return json.loads(self.verify(ref).read_text())
 
     def _events(self):
@@ -136,9 +136,12 @@ class Session:
                         'Complete independent audit bundle required')
                 result = self.document(review['result'])
                 require(review['result']['path'] == stem+'/result.json'
-                        and set(result) == {'kind', 'request', 'record', 'holdout_consumed'}
+                        and set(result) == {'kind', 'request', 'record', 'holdout_consumed', 'status', 'request_sha256', 'measurements'}
                         and result['kind'] == KIND and result['request'] == pending['ref']
-                        and result['holdout_consumed'] is False, 'Result provenance/holdout differs')
+                        and result['holdout_consumed'] is False and result['status'] == 'completed'
+                        and result['request_sha256'] == pending['ref']['sha256'], 'Result provenance/holdout differs')
+                require(result['measurements']['path'] == stem+'/measurements.json', 'Measurement location differs')
+                self.document(result['measurements']); pin(result['measurements'])
                 spec = pending['request']['spec']; row = result['record']
                 rules.checked([row], [spec], quality=spec['stage'] != 'pilot')
                 weights = review['weights']
@@ -162,7 +165,7 @@ class Session:
                         'Unique slot-local output inventory required')
                 current = {str(p.relative_to(self.root)) for p in (self.root/stem).rglob('*') if p.is_file()}
                 require(current <= set(inventory) | {payload['path']}, 'Unreviewed trial output')
-                for ref in (pending['ref'], review['result'], raw, avg, *review['audits'].values()):
+                for ref in (pending['ref'], review['result'], result['measurements'], raw, avg, *review['audits'].values()):
                     require(inventory.get(ref['path']) == ref, 'Inventory omitted a reviewed artifact')
                 # Missing files are checked at the end of the complete ledger;
                 # only a later valid boundary can explain removed weights.

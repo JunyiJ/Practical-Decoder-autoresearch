@@ -1,0 +1,81 @@
+{
+  "kind": "activation_worker_prerequisite_review_v1",
+  "observed_at": "2026-10-31T16:10:32.428994+00:00",
+  "status": "worker_body_and_independent_acceptance_prerequisites_passed",
+  "source_sha256": "acecaba1c073a835fddf40e012fbdcdd2a79b411a67140ea7dc54883c25010ad",
+  "prior_session_source_sha256": "4ad4085ed53db838085aa5e7d4396bceec2ebeb30734a4b65ab34c2376e5fc56",
+  "runtime": {
+    "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "executable": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+    "packages": {
+      "torch": "2.14.1",
+      "numpy": "2.5.4",
+      "tiktoken": "0.14.0",
+      "omegaconf": "2.3.1"
+    }
+  },
+  "runtime_unchanged": true,
+  "changed_source": {
+    "src/research/tokenizer_activation_audit.py": {
+      "previous": null,
+      "current": "bb5f127b218508763e565ae962fc066b41f843ebbb89db0d7e6483e83b5ad467"
+    },
+    "src/research/tokenizer_activation_session.py": {
+      "previous": "b4dbf1bba3d598ae29917dce16505ca7df13c0840a8f829a679240b75ccfcfac",
+      "current": "2d024bf10a81ea7bc6d5f210bdc52260ed6241de73d0f14b9f94faf31ba1cbf9"
+    },
+    "src/research/tokenizer_activation_worker.py": {
+      "previous": null,
+      "current": "c52f242168146c996fae90f0007432dce96fee7ffbf3816213ef96c3f71129ce"
+    }
+  },
+  "tests": {
+    "worker_audit_and_regressions": {
+      "passed": 76,
+      "review": {
+        "path": "research/tokenizer-evidence/activation-preparation-001/worker-tests-v1-review.json",
+        "sha256": "8de158662fe7906a2c85534f7547939a9a1480778197cc38a30526ea7a02041c"
+      }
+    },
+    "independent_parent": {
+      "passed": 6,
+      "review": {
+        "path": "research/tokenizer-evidence/activation-preparation-001/acceptance-tests-v1-review.json",
+        "sha256": "4c6f70d387321736022123212b74c162630b843a7c3cb1b98e6b59ad98cf419e"
+      }
+    },
+    "cache_allocation": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/worker-cache-shapes-v1-review.json",
+      "sha256": "39021034d7a0c84068d9fe102d40149fb497432280268bd344c72d1c2a2317c9"
+    }
+  },
+  "scientific_scope": [
+    "Both actual activation geometries with20 synthetic CPU optimizer updates and8 EMA snapshots; no corpus batches",
+    "Independent parameter names/shapes/dtypes, exact optimizer groups/scheduled rates, complete per-parameter state and Adam update counters",
+    "Finite model/optimizer/EMA/export values, exact H200/EMA and buffer equality; wrong gate/step/snapshot/parent/rate/count and corrupt export rejected",
+    "Full validation target/count/byte/CE/BPB/perplexity arithmetic, fixed metric/schedule coverage and CE-only fields",
+    "Exact resource limits/trace/provenance agreement; incomplete traces and reserve/memory/time violations fail closed"
+  ],
+  "integration_scope": [
+    "Bounded worker body connects actual TrainingOutputs, strict MPS resource adapter and memory watchdog, input contracts, endpoint evaluation and pilot cache kernel",
+    "Orchestration tests mock training/MPS/resource observations explicitly; no actual MPS worker execution",
+    "Independent parent reads producer metadata and actual saved pair through review_pair; parent integration tests mock pair/input checks while actual pair checks are separately tested in RAM",
+    "Result envelope now agrees with resource recorder and ledger and binds a separate immutable measurement file",
+    "CPU cache storage is196608bytes atbatch1 and1572864bytes atbatch8 for both gates; no performance measurement"
+  ],
+  "pending": [
+    "Executable frozen-plan/source/runtime/input/capacity binder and serial child dispatch with confirmed exit/no descendants",
+    "Independent parent audit execution guard and complete process/allowlist/deletion-journal/preserved-inventory retention executor",
+    "Finite inference protocol and runner binding; final exact artifact high-water/current-space audit",
+    "Complete executable freeze before2MPS pilots; quality only after complete accepted pilots and audited boundaries"
+  ],
+  "full_panel_required_free_bytes": 15169995168,
+  "current_free_bytes": 15573037056,
+  "observed_margin_bytes": 403041888,
+  "capacity_reconciled_for_launch": false,
+  "plan_frozen": false,
+  "research_training_launched": false,
+  "protected_research_checkpoints_modified": false,
+  "holdout_scored": false,
+  "closed_fixtures_retried": false
+}

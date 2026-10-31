@@ -236,3 +236,45 @@ acceptance and the complete retention executor. Bind actual source/runtime/input
 identities, inference protocol and full resource projection before freezing the
 plan. The ledger's synthetic verdicts and completed transport tests do not allow
 pilots yet. Recheck the15,169,995,168-byte full-panel gate at freeze and dispatch.
+
+## Worker and independent acceptance adapters validated October31
+
+The activation worker body now connects the existing bounded output sink,
+strict-MPS resource recorder and memory watchdog, training/export, full raw/H200
+validation and pilot cache checks. A separate parent adapter reconstructs expected
+input/training identities, checks coverage/score arithmetic and training metrics,
+independently maps the pair for tensor/optimizer/EMA inspection, verifies resource
+trace agreement, and only then publishes acceptance audits into the session ledger.
+The result envelope now satisfies both the recorder and ledger and pins a separate
+measurement document. No closed hybrid execution controller was modified or used.
+
+76 tests passed in100.56s with1,149,943,808-byte peak RSS under the180s/4GiB/
+8GiB-reserve guard. These include both actual activation models after20 synthetic
+CPU updates each and eight EMA snapshots. Audits check all optimizer parameter
+states, group/rate identity, Adam update counters, checkpoint geometry/contracts,
+finite values and exact export equality. Wrong gate, step, EMA count, optimizer
+state/rate/counter, parent identity and corrupted exports are rejected. This does
+not independently replay the EMA recurrence or establish corpus quality; the
+previous resume/EMA numerical tests remain separately applicable.
+
+Six more tests passed for parent acceptance, including corrupted coverage, cache
+reports, truncated traces, worker status and evidence changed during review.
+Worker orchestration and parent integration tests explicitly mock MPS/training
+or tensor/input operations; they are not pilot evidence. The actual tensor audits
+are tested separately in RAM. CPU cache allocations also match the worker's
+196,608-byte batch1 and1,572,864-byte batch8 expectations for both activations.
+No checkpoint/model timing, MPS pilot, corpus training or holdout scoring occurred.
+
+[Worker review](tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json)
+records source applicability, tests and limits. The only source changes from the
+prior session prerequisite are two new activation adapters and result-envelope
+integration in the ledger; model/training/optimizer/tokenizer/transport primitives
+remain unchanged. All tests passed; no new failed test attempt or closed-fixture
+retry occurred in this iteration.
+
+The executable freeze/dispatch entry and complete retention executor remain
+unimplemented. The worker body requires trusted controller freeze/resource checks;
+a callback or synthetic success receipt is not launch authorization. Next bind
+source/runtime/input/capacity, child exit/no-descendant checks, a guarded parent
+review and audited cleanup; finish the finite inference protocol and exact storage
+review, then freeze before pilots. No training has launched.

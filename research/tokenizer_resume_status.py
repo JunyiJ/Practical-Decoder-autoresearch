@@ -29,6 +29,8 @@ def main():
     result = dict(observed_at=datetime.now(timezone.utc).isoformat(),
         saved_observation_at=index['observed_at'], branch=index['branch'],
         current_research_phase=index.get('current_research_phase'),
+        activation_worker_review=(read(ROOT / index['activation_worker_review'])
+            if index.get('activation_worker_review') else None),
         activation_session_review=(read(ROOT / index['activation_session_review'])
             if index.get('activation_session_review') else None),
         campaign_root=index['campaign_root'], immutable_evidence_checks=checks,

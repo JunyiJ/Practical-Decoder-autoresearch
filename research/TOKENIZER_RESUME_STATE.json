@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T15:57:45.541836+00:00",
-  "observed_at_los_angeles": "2026-10-31T08:57:45.541836-07:00",
+  "observed_at": "2026-10-31T16:10:32.428994+00:00",
+  "observed_at_los_angeles": "2026-10-31T09:10:32.428994-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "07761cd",
+  "evidence_commit_before_handoff": "cb3e793",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
@@ -531,15 +531,25 @@
     "research/tokenizer-evidence/activation-preparation-001/session-tests-v1.log": "39b0db55584e377409e9869179c050977e8bcff2635489f18d40cd6b6ca38ef9",
     "research/tokenizer-evidence/activation-preparation-001/session-tests-v2-guard.json": "1637f949d246eab43c33e4a452d14956451cfc19b4e1fbea609e5a5881815843",
     "research/tokenizer-evidence/activation-preparation-001/session-tests-v2-review.json": "9ddc0dbb9d528312bcd81e2238716940aa69096cb2ec3288e44203f9dccd364d",
-    "research/tokenizer-evidence/activation-preparation-001/session-tests-v2.log": "f847b35ee718b4cff4f7df7236194935faab270d107cefcc9b5f030f133363e9"
+    "research/tokenizer-evidence/activation-preparation-001/session-tests-v2.log": "f847b35ee718b4cff4f7df7236194935faab270d107cefcc9b5f030f133363e9",
+    "research/tokenizer-evidence/activation-preparation-001/worker-cache-shapes-v1-guard.json": "6e38b1fd5d14fed410451ee570821949557e96bc63e41955184420c266e1188a",
+    "research/tokenizer-evidence/activation-preparation-001/worker-cache-shapes-v1-review.json": "39021034d7a0c84068d9fe102d40149fb497432280268bd344c72d1c2a2317c9",
+    "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json": "bf54a21f6a0ee1931bdde28ed57cb4600d1520a577d93f7d3abb4755dba7ef98",
+    "research/tokenizer-evidence/activation-preparation-001/worker-tests-v1-guard.json": "4cbf5d8377bb382976977f98d75335d3783154c92e902719291d327ef04f8304",
+    "research/tokenizer-evidence/activation-preparation-001/worker-tests-v1-review.json": "8de158662fe7906a2c85534f7547939a9a1480778197cc38a30526ea7a02041c",
+    "research/tokenizer-evidence/activation-preparation-001/worker-tests-v1.log": "10f25685fedc028529ec86089f3bac43626216f7925af854077fc2df6f6c181d",
+    "research/tokenizer-evidence/activation-preparation-001/acceptance-tests-v1-guard.json": "61ad54d3fd6ddbcd0284d912c16e5678c4ed58d4c34e616912c262b8edc4a491",
+    "research/tokenizer-evidence/activation-preparation-001/acceptance-tests-v1-review.json": "4c6f70d387321736022123212b74c162630b843a7c3cb1b98e6b59ad98cf419e",
+    "research/tokenizer-evidence/activation-preparation-001/acceptance-tests-v1.log": "2fbebde3ff012e439c92df39ae6a15dfd79aa6e934c94deeaafeb22da015bf43"
   },
   "independent_final_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
   "independent_final_guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
-  "current_research_phase": "activation_session_core_validated_executable_integration_pending",
+  "current_research_phase": "activation_worker_acceptance_validated_dispatch_retention_pending",
   "final_decision": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json",
   "ffn_direction_decision": "research/tokenizer-evidence/moe-preparation-001/direction-decision.json",
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
   "activation_finite_design": "research/tokenizer-evidence/activation-preparation-001/finite-design-v1.json",
   "activation_session_review": "research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json",
-  "next_action": "Campaign005 remains closed and MoE deferred. Activation session core plus tiny filesystem transport passed49 tests; read research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json. Next implement the executable activation entry and worker using the tested Session ledger, unchanged bounded TrainingOutputs/resource/process primitives, and activation-specific independent training/evaluation/tensor/resource/cache acceptance. Wire complete idle-process/allowlist/journal/preserved-inventory retention executor to pilot and screen boundaries; the ledger has no launch/delete API and synthetic audit verdicts do not authorize research. Bind source/runtime/input identities and final inference protocol; reconcile serialization and current full-panel free space>=15,169,995,168 bytes including8GiB reserve. Then freeze complete executable plan before2 guardedMPS pilots, with6screen+6fresh runs only after accepted pilots and audited boundaries. No further retries of closed fixtures; one worker/fourthreads/strictMPS, all selected/fresh/failure weights and archives protected, closed holdout, no paidcompute/subagents. Commit/push withoutforce."
+  "next_action": "Campaign005 remains closed and MoE deferred. Activation worker body/independent artifact acceptance now passed76+6 tests plus actual CPU cache allocation checks; read research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json. Next implement/test the executable frozen-plan/source/runtime/input/capacity binder and serial child dispatch (inherited two locks, one worker, positive exit/no descendants, failure latch, STOP); bind the already-tested worker/acceptance adapters instead of adding another synthetic-only layer. Add guarded independent parent review and complete idle-process/allowlist/deletion-journal/preserved-inventory retention executor at pilot and screen boundaries. Freeze finite inference protocol, reconcile exact artifact high-water and current full-panel free space>=15,169,995,168 bytes incl8GiB reserve. Then complete executable freeze before2guarded MPS pilots;6screens+6fresh runs only after accepted pilots and audited boundaries. No source/runtime/input callback or synthetic verdict alone is launch authorization. Preserve every selected/fresh/failure pair and archives, closedholdout, one worker/fourthreads/strictMPS, no paidcompute/subagents; no closedfixture retries. Commit/push withoutforce.",
+  "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json"
 }

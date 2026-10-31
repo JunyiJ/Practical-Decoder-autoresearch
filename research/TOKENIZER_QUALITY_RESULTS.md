@@ -4532,3 +4532,19 @@ API; test audit verdicts are synthetic. Executable worker, independent scientifi
 review, complete audited cleanup and final source/runtime/input/resource freeze
 remain necessary. No pilots launched and no new model result or adoption.
 [Evidence](tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json).
+
+### October31 activation worker/acceptance prerequisite
+
+76 worker/audit/regression tests and six independent-parent integration tests
+passed. Actual activation shapes underwent20 synthetic CPU updates per gate to
+check real optimizer/EMA payloads, exact export values and corruption rejection.
+Guard100.70s, peakRSS1,149,943,808bytes,180s/4GiB/8GiB-reserve limits intact.
+Worker orchestration/resource traces and parent integration use explicit test
+doubles; they do not establish MPS pilot readiness or model quality. CPU cache
+allocation matches196,608bytes atbatch1 and1,572,864bytes atbatch8 for both gates.
+
+The bounded worker body and independent acceptance adapters are implemented.
+Executable freeze/dispatch, guarded parent execution, complete retention cleanup
+and inference/resource binding remain required before pilots. No corpus training,
+holdout scoring, protected-checkpoint change or closed-fixture retry occurred.
+[Evidence](tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json).

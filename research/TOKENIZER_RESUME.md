@@ -187,3 +187,20 @@ process/manifest/journal checks. `Session` alone has no launch/delete API and it
 synthetic test audit verdicts confer no launch authority. Source/runtime/input,
 inference and full-capacity freeze remain pending before two MPS pilots. Keep
 all14 trajectories, protected pairs and guards; never reopen005 or old fixtures.
+
+### Latest continuation: activation worker and acceptance
+
+Read `research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json`.
+76 worker/audit/regression tests and six parent-integration tests passed. Actual
+CPU activation optimizer/EMA payloads were tested; MPS/training orchestration
+used explicit doubles. No research pilot launched. The worker body connects
+bounded writers/guards/evaluation and the independent parent adapter validates
+saved evidence before ledger acceptance. Result-envelope compatibility is fixed.
+
+Next implement the executable freeze binder and serial child dispatch, including
+source/runtime/input/full-capacity gates, inherited locks, exit/no-descendant
+checks and guarded parent review. Wire the complete retention process/manifest/
+journal/preservation executor, finish finite inference binding and storage review,
+then freeze before two MPS pilots. Do not treat callbacks or synthetic audit
+verdicts as launch authority. All protected weights, guards and closed campaigns
+remain unchanged; use the latest ignored next_action for exact continuation.

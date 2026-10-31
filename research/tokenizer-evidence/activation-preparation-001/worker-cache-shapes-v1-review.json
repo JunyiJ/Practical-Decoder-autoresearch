@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "source_sha256": "acecaba1c073a835fddf40e012fbdcdd2a79b411a67140ea7dc54883c25010ad",
+  "rows": [
+    {
+      "family": "silu",
+      "batch": 1,
+      "allocated_cache_bytes": 196608
+    },
+    {
+      "family": "silu",
+      "batch": 8,
+      "allocated_cache_bytes": 1572864
+    },
+    {
+      "family": "gelu_exact",
+      "batch": 1,
+      "allocated_cache_bytes": 196608
+    },
+    {
+      "family": "gelu_exact",
+      "batch": 8,
+      "allocated_cache_bytes": 1572864
+    }
+  ],
+  "guard_sha256": "6e38b1fd5d14fed410451ee570821949557e96bc63e41955184420c266e1188a",
+  "scope": "CPU cache allocation shape/storage check only; no model forward, tokenizer, timing, training or MPS pilot."
+}
