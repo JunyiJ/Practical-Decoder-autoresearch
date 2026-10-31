@@ -6066,3 +6066,26 @@ from004 only in campaign bindings; no production source changed.
 Evidence: `campaign005-lr-summary-v2.json`, selection/cleanup before archives,
 reviews and finished guards, and `campaign005-rank-09-v2-launch.json`. The
 resume guide/index record the live controller and exact next accepted-prefix review.
+
+
+### Campaign005 first rank screen accepted
+
+Slot9 (hybridD/8, LR0.000625, seed3501, width512,1200updates) completed
+in947.10s and received parent acceptance. Independent rank-prefix10 review
+verified prior LR selection/cleanup, this accepted rank cell, checkpoint identities
+and preserved metadata. H200 full-validation CE4.956084595234285 versus
+raw4.9859793480260155. H200 CE is0.009561042093637 below the selectedD/4
+anchor on the same screening seed. Rank selection, fresh confirmation and
+inference remain; no adoption or seed-population claim.
+
+Review guard finished30.48s without violations. Remaining storage fit:
+25,847,701,504 bytes free versus25,667,182,740 required including8GiB reserve.
+After confirming worker exit/no other research workers, dispatched only slot10
+through unchanged gates: controller99377, session61462, observed phasestarting,
+childNone. Startup history verification may precede child creation; never duplicate
+the launch. After slot10 acceptance/exit, review prefix11 before slot11.
+No cleanup or holdout use occurred; all selected/fresh/failure evidence preserved.
+
+Evidence: `campaign005-rank-09-v2-terminal.json`, `campaign005-rank-prefix-10-v2-review.json`,
+finished guard and `campaign005-rank-10-v2-launch.json`. Current resumption is
+recorded in the guide and SHA-pinned state index.

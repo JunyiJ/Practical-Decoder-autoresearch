@@ -8,15 +8,15 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October30,2026 at23:37 Los Angeles: all nine LR screens, full selection
-and audited cleanup passed. Selected rates: hybrid0.000625, gatedMLA0.00125,
-KDA0.000625. The selected raw/H200 pairs at slots0/2/5 remain;12 losing-screen
-weights were removed under the frozen manifest, reclaiming7,447,239,552 logical
-bytes. All preserved non-checkpoint evidence is unchanged. See the compact
+Observed October30,2026 at23:56 Los Angeles: all LR screens, selection/cleanup and
+rank slot9 have passed review. HybridD/8 at LR0.000625, seed3501 reached
+H200CE4.956084595234285 (raw4.9859793480260155),0.009561042093637 lower
+than D/4. This one-seed partial rank comparison is not selection or adoption.
+Slot9 controller and child exited. Slot10 controller99377 is starting; child
+PID at observation: None; tool session61462. Startup includes guarded history
+verification and may precede child creation. Inspect actual state; never rerun
+the launcher. LR choices and cleanup are in the compact
 [LR summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-summary-v2.json).
-These are one-seed screens; rank comparisons, fresh confirmation and inference
-remain. Rank slot9 is running under controller98457, child98491, session51113;
-verify current processes. One trial per invocation, no automatic later dispatch.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -34,7 +34,7 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller98457 or its current descendant is still running, observe it;
+2. If controller99377 or its current descendant is still running, observe it;
    never invoke the starter again. Pilot children change during serial dispatch.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
@@ -42,17 +42,16 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. Full LR selection and cleanup are independently verified in the
-   [cleanup review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-cleanup-v2-review.json)
-   with a finished guard. Never repeat either boundary phase. After slot9 parent
-   acceptance and actual worker exit, run
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_rank_prefix_v2.py --completed 10`.
+4. Rank prefix10 is independently verified in the
+   [review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-prefix-10-v2-review.json)
+   with a finished guard. Never repeat the completed LR boundary phases.
+   After slot10 parent acceptance and actual worker exit, run
+   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_rank_prefix_v2.py --completed 11`.
    Only after its review/guard pass, run
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_rank_v2.py --slot 10`.
-   The005 rank helpers change only campaign bindings from004 and preserve all
-   production gates. The prefix/continuation helpers support10–14; after slot14,
-   adapt/review the full rank boundary before selection, audited cleanup and
-   fresh slot15. Fresh confirmations and inference retain separate tested gates.
+   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_rank_v2.py --slot 11`.
+   The prefix/continuation helpers support10–14; after slot14, adapt/review the
+   full rank boundary before selection, audited cleanup and fresh slot15.
+   Fresh confirmations and inference retain separate tested gates and audits.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
    invent replacement seeds, clear STOP or extend a closed grid.

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T06:37:59.807069+00:00",
-  "observed_at_los_angeles": "2026-10-30T23:37:59.807069-07:00",
+  "observed_at": "2026-10-31T06:56:30.350431+00:00",
+  "observed_at_los_angeles": "2026-10-30T23:56:30.350431-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "6d03f80",
+  "evidence_commit_before_handoff": "75798a6",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-09-v2-terminal.json",
+  "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-10-v2-terminal.json",
   "observed_process_records": [
     {
       "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-00.json",
@@ -119,15 +119,15 @@
     },
     {
       "path": "research_runs/tokenizer-wide-hybrid-005/control/process-quality-09.json",
-      "status": "running",
+      "status": "completed",
       "pid": 98491,
       "parent_pid": 98457,
-      "elapsed_seconds": 38.08914020800148,
-      "returncode": null,
+      "elapsed_seconds": 947.0979211250087,
+      "returncode": 0,
       "error": null
     }
   ],
-  "session_id_hint": 51113,
+  "session_id_hint": 61462,
   "closed_campaigns": [
     "tokenizer-wide-hybrid-001",
     "tokenizer-wide-hybrid-002",
@@ -135,7 +135,7 @@
     "tokenizer-wide-hybrid-004"
   ],
   "first_action": "Run read-only tokenizer_resume_status.py and inspect actual processes; do not duplicate an existing worker. Follow TOKENIZER_RESUME.md and current local next_action.",
-  "next_after_starter": "Observe campaign005 rank slot9 controller98457/child98491/session51113; do not duplicate launch. All9 LR cells accepted; full selection and audited cleanup verified. Selected rates hybrid0.000625, gated_mla0.00125, kda0.000625; retained slots0/2/5 pairs. After slot9 parent acceptance and actual worker exit, run review_campaign005_rank_prefix_v2.py --completed 10; require finished guard and verified prefix/storage, then continue_campaign005_rank_v2.py --slot 10. Rank helpers support completed/slots10\u201314; after slot14 use full rank-boundary selection/cleanup before fresh slot15. No automatic later slots. Keep001\u2013004 closed, no failed numerical retry, closed holdout, all selected/fresh/failure weights, one worker and guards. Maintain committed resume guide/index.",
+  "next_after_starter": "Observe existing campaign005 rank slot10 controller99377/childNone/session61462; startup may still be verifying history, never duplicate launch. Slots0\u20139 accepted and rank prefix10 independently verified. After slot10 parent acceptance and actual worker exit, run review_campaign005_rank_prefix_v2.py --completed 11; require finished guard and verified prefix/storage, then continue_campaign005_rank_v2.py --slot 11. Rank helpers support10\u201314; after slot14 use full rank-boundary selection/cleanup before fresh slot15. Retain chosen LR pairs0/2/5, all protected selected/fresh/failure weights, closed campaigns001\u2013004/holdout, no numerical retry, one worker and all guards. Update resume guide/index on substantive transitions.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -211,6 +211,10 @@
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-09-v2-launch.json": "958d5e7cca31a1ab9a8ab366cf6c1e3ee829655e2b189aba2dde71ad88810206",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/start_campaign005_rank_v2.py": "c5dcefae7f8d940b26aa2ddbc295a0a8498d248361b001a3033f951473df2cd8",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_rank_prefix_v2.py": "37bae98e0428c204dbc496486be104d45fe707d32a347cac1adbe807b18cfa1d",
-    "research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_rank_v2.py": "619437a836957b782ee6ebb1dfda06e7deb8d3c6183e16ffe0d98e363422d8c3"
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_rank_v2.py": "619437a836957b782ee6ebb1dfda06e7deb8d3c6183e16ffe0d98e363422d8c3",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-09-v2-terminal.json": "6ddf69abe11c3b1a1c89f325d075c140e4c9ec5a2941ea230511dbbca1e9852a",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-prefix-10-v2-review.json": "8240a3e354b45a90bdb0bbfb7c8c218e478d5852d2931cc2c6401c9b5b02c476",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-prefix-10-v2-guard.json": "23ec1971426dc04a20464f8d1830ebe0b67bdb7f78927b34436e16c95d079ab5",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-10-v2-launch.json": "1468608b61c6c2911b196fd0d693de2a06d92e004706906f67a7d44065eb40a2"
   }
 }
