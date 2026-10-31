@@ -5987,3 +5987,32 @@ boundaries before final quality freeze. The original15.17GB projection assumes
 stage-boundary retention; do not reinterpret it as a retain-all projection.
 No additional ledger-only scaffolding is needed. Evidence: pilot002-result.json,
 pilot002-accepted-01.json and pilot002-completed-evidence/.
+
+## Trained pilot-pair inference completed, October 31, 2026
+
+The actual20-update RMS and LayerNorm H200 checkpoints passed all four full/cache/
+reset comparisons before timing. With two warmups and eight alternating repeats,
+median32-token prefill/64-token decode times were8.477/291.908ms for RMS and
+8.952/278.811ms for LayerNorm at batch1; at batch8 they were13.713/297.073ms
+and14.222/305.529ms respectively. LayerNorm decode time was4.49% lower at batch1
+and2.85% higher at batch8, with identical cache allocations196,608/1,572,864B.
+This mixed single-pilot result supports no consistent speed advantage. It is
+descriptive only; two models were resident, cache allocation/loading excluded,
+and timing values are not independently reproducible hashes or adoption gates.
+
+The24.224-second guarded run peaked at RSS881,606,656B and driver1,155,842,048B.
+Both original pilot directories, weights and failed-process status remained
+unchanged. The new RMS measurement request explicitly rebinds only the additive
+continuation source; original requests and recovery evidence remain immutable.
+No training, test scoring or deletion occurred.
+
+The remaining quality projection keeps both existing pilot pairs without cleanup
+credit, retains all six screens through saved LR selection, then permits only
+exactly audited losing-screen weight removal. Two selected screen pairs plus six
+fresh pairs define the later peak. Original per-trajectory allowances,256MiB
+metadata and8GiB reserve require15,170,221,264 additional free bytes, versus
+approximately17.95GB available. This projection fits, but is not launch authority:
+real quality dispatch, external acceptance anchors and the exact retention
+boundary must be connected and checked before final finite quality freeze.
+Evidence: pilot-pair-inference-001-plan/result/review/guard.json and
+quality-remaining-capacity-001.json. SiLU remains adopted; no norm quality result.
