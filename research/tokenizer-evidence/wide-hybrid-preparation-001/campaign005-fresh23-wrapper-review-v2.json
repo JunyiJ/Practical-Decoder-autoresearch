@@ -1,0 +1,37 @@
+{
+  "status": "slot22_review_and_final_slot23_controller_wrappers_checked",
+  "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
+  "wrappers": {
+    "review_campaign005_fresh22_v2.py": "91948df8d946f045397735c5a80d7896e294298716c17f60005f321e55ad5be2",
+    "continue_campaign005_fresh23_v2.py": "e26ff4977ed460557043b112c9776bc84f42f557ea28c30b3f3ec85a7a362cd0"
+  },
+  "validation": [
+    "AST parse and exact diffs reviewed: final-history reviewer explicitly22/completed23.",
+    "Controller changes only exact slot, prefix/status and ordinal; cache pins, MPS, locks, readiness and all guards retained.",
+    "Final history supports21..23; remaining startup/dispatch18..23, wrapper restricts23. No quality slot after23. No production edits or tests rerun."
+  ],
+  "inference_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-source-hashes-v2.json",
+  "inference_manifest_sha256": "d6e4205aeaa51e92fe4fb5073da9a7a8a075bcb581b384fa4b7360e04a22a248",
+  "inference_pin_matches": {
+    "src/research/tokenizer_wide_hybrid_final_confirmation_history_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_dispatch_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": true
+  },
+  "census_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/confirmation-census-v2-review.json",
+  "census_review_sha256": "e75d08a74f6f2be6c05db7a317cf41e7313f9cd4432eac0036961a2d97e2bad2",
+  "census_pin_matches": {
+    "src/research/tokenizer_wide_hybrid_confirmation_startup_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_later_confirmation_startup_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_plan_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_confirmation_startup_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_later_confirmation_startup_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": true
+  },
+  "training_launched": false,
+  "adopted": false,
+  "holdout_consumed": false,
+  "limitation": "Synthetic tests are not quality evidence. Independent slot22 reconstruction must finish; all production gates required before final23."
+}

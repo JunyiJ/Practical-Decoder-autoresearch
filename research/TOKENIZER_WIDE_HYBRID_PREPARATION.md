@@ -6420,3 +6420,28 @@ procedure must be pinned in the frozen files, verify all three controllers, and
 publish outside the sealed campaign. See campaign005-inference-resumption-map-v2.json.
 Evidence: slot21 terminal, fresh-prefix-22 review/guard,
 campaign005-fresh22-wrapper-review-v2.json and slot22 launch.
+
+
+### Campaign005 third-seed KDA accepted; final confirmation dispatched
+
+Slot22 KDA D/2, LR0.000625, seed3513 completed1166.35s; parent accepted1971.89s.
+H200 CE4.947641727241584, raw4.975336175863581. Gated MLA on seed3513 has
+H200 CE4.839211356994297. KDA and gated MLA now have all three fresh cells;
+hybrid seed3513 and inference remain pending. No adoption or metric change.
+
+Exact-slot22 final-history replay passed188.16s, checking23 completed records
+and11 retained selected/fresh pairs, immutable metadata and all three cleanup
+boundaries. Remaining capacity16,881,770,496 bytes versus16,738,499,328 required
+includes the unchanged8GiB reserve. Every fresh pair, selected/failure checkpoint
+and archive remains protected; no cleanup.
+
+Final-slot23 wrapper AST/diff/API checks passed; current production source matches
+frozen005 and applicable inference/census pins. After all prior workers/reviewer
+exited, dispatched only slot23 (hybrid D/2, LR0.000625, seed3513):
+controller32901, session62286, guarded startup. No slot23 success claim.
+After acceptance/exit, independently replay23/completed24; no quality slot24.
+Use the pinned inference resumption map and inspect all frozen prerequisites
+before prepare_inference/run_panel. Final quality/cost review remains gated on
+accepted inference/3513/review.json and all controller/history receipts.
+Evidence: slot22 terminal, fresh-prefix-23 review/guard,
+campaign005-fresh23-wrapper-review-v2.json and final slot23 launch.
