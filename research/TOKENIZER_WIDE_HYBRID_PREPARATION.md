@@ -7468,3 +7468,45 @@ bounded cost/memory without changing production. Preserve native forward behavio
 no CPU fallback, no new quality claim and no tolerance widening. Any eventual
 runtime change needs explicit source delta, both-arm equivalence/replay/resource
 checks and a fresh finite-plan binding. Quality/controller readiness stays gated.
+
+
+## Standalone grouped MPS embedding-gradient prototype passed
+
+The prototype preserves native functional.embedding forward and computes backward
+entirely on MPS: sorted unique IDs, an FP32 membership matrix times upstream rows,
+and a copy to distinct rows of the dense gradient. It introduces no CPU fallback,
+Muon precision change, padding, sparse/frequency-scaled semantics or runtime edits.
+Its scoped contract is first-order FP32, vocabulary50,257/width256, rank2int64 IDs,
+and1..1,024tokens. Higher derivatives and other embedding options are unsupported.
+
+11 tests passed: one numerical/repeat test spanning11cases and ten unsupported-
+contract rejections.88backwards covered generated batch1 and paired batch8/context128,
+unique IDs, one repeated ID, alternating IDs, zero/constant upstream, noncontiguous
+IDs and noncontiguous upstream. Native forward outputs were bit-exact; all gradient
+hashes matched within and across deterministic-off/strict-on modes. Unused rows
+were exact zero. Maximum absolute gradient error versus independent sequential
+FP64 sums was1.002636907e-8, below prospective atol1e-7/rtol2e-5. Unique/zero/constant
+cases matched the oracle exactly. These are standalone bounds, not a changed
+full-model resume tolerance or a general determinism guarantee.
+
+Guard5.613s, peakRSS624,197,632bytes and peak sampled MPS driver1,082,884,096bytes;
+fallback0/fast_math0,4CPU and all4GiB/6GiB/8GiB/600s limits preserved. Native forward
+and backward observations took roughly3–7ms after initial cases, but first-use
+outliers reached121ms and timings include checks/synchronization; this is not a
+native-versus-prototype benchmark or campaign resource pilot. No optimizer steps,
+model/quality training, new binary artifacts, cleanup or holdout use occurred.
+Global deterministic settings were restored; frozen sources/closed roots and
+prior generated fixtures stayed unchanged. All source/evidence snapshots retained.
+
+[Analysis](tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-analysis.json),
+[prospective contract and tolerances](tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-plan-001.json),
+[review](tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-review.json).
+The prototype remains outside runtime imports. Next design explicit versioned
+embedding-backward config/model/checkpoint/source bindings before integration;
+never silently reinterpret prior checkpoints or old model-policy signatures.
+Bind all-MPS reduction semantics, CPU inference/reference behavior, token limits
+and first-order scope. Both prospective normalization arms must share that policy,
+with fresh controls and declared FP32 reduction-order change. Verify initialization/
+forward/cache equivalence, both-arm gradients, serialized transport and full-model
+MPS repeat/resume under the unchanged original gate before resource/controller
+readiness or finite quality-plan freeze. Earlier failed attempts remain closed.

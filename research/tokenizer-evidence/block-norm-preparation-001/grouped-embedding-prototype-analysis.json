@@ -1,0 +1,412 @@
+{
+  "status": "standalone_prototype_passed_not_runtime_adopted",
+  "observed_at": "2026-10-31T21:03:21.500194+00:00",
+  "tests_passed": 11,
+  "backward_calls": 88,
+  "case_summaries": [
+    {
+      "active_ids": 29,
+      "case": "generated1",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.12116366601549089,
+        0.003255583986174315,
+        0.00312008400214836,
+        0.003087250021053478
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 1.0477378964424133e-09,
+      "token_shape": [
+        1,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 29,
+      "case": "generated1",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.006962790997931734,
+        0.003595000016503036,
+        0.003458457998931408,
+        0.003487208014121279
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 1.0477378964424133e-09,
+      "token_shape": [
+        1,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "generated8paired",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.065623707982013,
+        0.004547041986370459,
+        0.004665582993766293,
+        0.004248833021847531
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 8.428003184235422e-09,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "generated8paired",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.00534329199581407,
+        0.005534666997846216,
+        0.005299832992022857,
+        0.005111999984364957
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 8.428003184235422e-09,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 128,
+      "case": "unique1",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.005848875007359311,
+        0.0036881669948343188,
+        0.004612707998603582,
+        0.003986541996710002
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        1,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 128,
+      "case": "unique1",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.004570582997985184,
+        0.00512345801689662,
+        0.004880082997260615,
+        0.004581916000461206
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        1,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1024,
+      "case": "unique8",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.019067541987169534,
+        0.005616707989247516,
+        0.004092125018360093,
+        0.003694916988024488
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1024,
+      "case": "unique8",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.004343582986621186,
+        0.004603958979714662,
+        0.004409457993460819,
+        0.004423416976351291
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1,
+      "case": "same1",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.014724249980645254,
+        0.0029445000109262764,
+        0.0028649170126300305,
+        0.0028460829926189035
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 3.5345237847650424e-09,
+      "token_shape": [
+        1,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1,
+      "case": "same1",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.003712125006131828,
+        0.004315166996093467,
+        0.005217416997766122,
+        0.005411165999248624
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 3.5345237847650424e-09,
+      "token_shape": [
+        1,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1,
+      "case": "same8",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.004066207999130711,
+        0.004264832998160273,
+        0.004595749982399866,
+        0.003950249985791743
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 1.0026369068327767e-08,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1,
+      "case": "same8",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.005059290997451171,
+        0.0047828749811742455,
+        0.005273459013551474,
+        0.004493791988352314
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 1.0026369068327767e-08,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 2,
+      "case": "alternating8",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.09961258398834616,
+        0.003255291987443343,
+        0.004525458003627136,
+        0.004303749999962747
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 5.963329385849647e-09,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 2,
+      "case": "alternating8",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.004829875018913299,
+        0.004956542019499466,
+        0.0036665409861598164,
+        0.003543625003658235
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 5.963329385849647e-09,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "zero8",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.004833499988308176,
+        0.0031479579920414835,
+        0.003139916021609679,
+        0.0031995419994927943
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "zero8",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.0037080409820191562,
+        0.003749875002540648,
+        0.003743499983102083,
+        0.0036946659965906292
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1,
+      "case": "constant_same8",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.0029670829826500267,
+        0.0031105829984880984,
+        0.0029338749882299453,
+        0.0029919170192442834
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 1,
+      "case": "constant_same8",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.003613083012169227,
+        0.0036720409989356995,
+        0.0036399159871507436,
+        0.0035635000094771385
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 0.0,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "noncontiguous_ids",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.016635957988910377,
+        0.004818999994313344,
+        0.004991208988940343,
+        0.004695916984928772
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 8.588358468841761e-09,
+      "token_shape": [
+        128,
+        8
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "noncontiguous_ids",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.005081334005808458,
+        0.00563695901655592,
+        0.00371541699860245,
+        0.0055847920011729
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 8.588358468841761e-09,
+      "token_shape": [
+        128,
+        8
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "noncontiguous_upstream",
+      "deterministic": false,
+      "elapsed_seconds": [
+        0.005910625011892989,
+        0.003795458993408829,
+        0.0030300000216811895,
+        0.003306166996480897
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 8.288679964607581e-09,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    },
+    {
+      "active_ids": 84,
+      "case": "noncontiguous_upstream",
+      "deterministic": true,
+      "elapsed_seconds": [
+        0.0038712919922545552,
+        0.003820041980361566,
+        0.003895000001648441,
+        0.0037971249839756638
+      ],
+      "event": "case_summary",
+      "max_abs_vs_fp64": 8.288679964607581e-09,
+      "token_shape": [
+        8,
+        128
+      ],
+      "unique_gradient_hashes": 1
+    }
+  ],
+  "max_abs_vs_fp64": 1.0026369068327767e-08,
+  "all_forward_exact": true,
+  "all_gradients_bit_exact_within_and_across_modes": true,
+  "noncontiguous_ids_exercised": true,
+  "noncontiguous_upstream_exercised": true,
+  "trace_sha256": "70083bf128fa0947f930d66b94fa57b7ba2cc99dff08f6559d9bc32b0e16e3c1",
+  "limitations": "Only standalone first-order dense embedding, fixed vocab50257/width256, at most1024tokens. No full-model gradients/cache/resume, raw/H200 policy binding, optimizer updates or quality/resource pilot. Timing includes first-use compilation/checks; not a benchmark.",
+  "runtime_unchanged": true
+}

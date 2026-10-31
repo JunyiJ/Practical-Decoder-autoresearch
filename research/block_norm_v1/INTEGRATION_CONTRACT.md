@@ -276,3 +276,21 @@ Next standalone deterministic MPS embedding-gradient prototype (unique-token
 membership reduction/copy candidate), with prospective formula/FP32/repeat/resource
 checks and no CPU fallback. Do not adopt into runtime without explicit delta and
 both-arm numerical/replay/resource validation. No old failed fixture reruns.
+
+
+## Standalone grouped embedding prototype passed; runtime unchanged
+
+11 tests passed, including88backward calls over11patterns with deterministic
+algorithms off/on. Native forward is exact, gradient hashes are identical within
+and across modes, FP64 oracle maxerror1.0026e-8 under fixed1e-7/2e-5 tolerance;
+unique/zero/constant and unused rows are exact. Batch1 and paired batch8/context128,
+repeated/unique IDs and actual noncontiguous tensors were covered. Guard5.613s,
+RSS624,197,632B/driver1,082,884,096B; no optimizer/model training or binary outputs.
+
+`grouped_embedding_prototype.py` is not imported by the runtime. It performs
+MPS unique-token membership matmul and distinct-row copy, with native forward.
+It is first-order only, fixed50257x256, at most1024tokens and no extra embedding
+options. Next explicit versioned backward-policy/config/checkpoint/source binding,
+then both-arm full-model equivalence/gradients/transport/repeat/resume checks.
+Do not silently alter old policies, reinterpret old checkpoints, change Muon
+precision, loosen the failed gate, or claim full-model/campaign readiness.

@@ -1,0 +1,638 @@
+{
+  "status": "passed",
+  "error": null,
+  "pytest_exit_code": 0,
+  "tests": [
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_formula_native_forward_and_repeated_backward",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {
+        "case_summaries": [
+          {
+            "case": "generated1",
+            "deterministic": false,
+            "active_ids": 29,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 1.0477378964424133e-09,
+            "elapsed_seconds": [
+              0.12116366601549089,
+              0.003255583986174315,
+              0.00312008400214836,
+              0.003087250021053478
+            ],
+            "token_shape": [
+              1,
+              128
+            ]
+          },
+          {
+            "case": "generated1",
+            "deterministic": true,
+            "active_ids": 29,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 1.0477378964424133e-09,
+            "elapsed_seconds": [
+              0.006962790997931734,
+              0.003595000016503036,
+              0.003458457998931408,
+              0.003487208014121279
+            ],
+            "token_shape": [
+              1,
+              128
+            ]
+          },
+          {
+            "case": "generated8paired",
+            "deterministic": false,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 8.428003184235422e-09,
+            "elapsed_seconds": [
+              0.065623707982013,
+              0.004547041986370459,
+              0.004665582993766293,
+              0.004248833021847531
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "generated8paired",
+            "deterministic": true,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 8.428003184235422e-09,
+            "elapsed_seconds": [
+              0.00534329199581407,
+              0.005534666997846216,
+              0.005299832992022857,
+              0.005111999984364957
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "unique1",
+            "deterministic": false,
+            "active_ids": 128,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.005848875007359311,
+              0.0036881669948343188,
+              0.004612707998603582,
+              0.003986541996710002
+            ],
+            "token_shape": [
+              1,
+              128
+            ]
+          },
+          {
+            "case": "unique1",
+            "deterministic": true,
+            "active_ids": 128,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.004570582997985184,
+              0.00512345801689662,
+              0.004880082997260615,
+              0.004581916000461206
+            ],
+            "token_shape": [
+              1,
+              128
+            ]
+          },
+          {
+            "case": "unique8",
+            "deterministic": false,
+            "active_ids": 1024,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.019067541987169534,
+              0.005616707989247516,
+              0.004092125018360093,
+              0.003694916988024488
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "unique8",
+            "deterministic": true,
+            "active_ids": 1024,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.004343582986621186,
+              0.004603958979714662,
+              0.004409457993460819,
+              0.004423416976351291
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "same1",
+            "deterministic": false,
+            "active_ids": 1,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 3.5345237847650424e-09,
+            "elapsed_seconds": [
+              0.014724249980645254,
+              0.0029445000109262764,
+              0.0028649170126300305,
+              0.0028460829926189035
+            ],
+            "token_shape": [
+              1,
+              128
+            ]
+          },
+          {
+            "case": "same1",
+            "deterministic": true,
+            "active_ids": 1,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 3.5345237847650424e-09,
+            "elapsed_seconds": [
+              0.003712125006131828,
+              0.004315166996093467,
+              0.005217416997766122,
+              0.005411165999248624
+            ],
+            "token_shape": [
+              1,
+              128
+            ]
+          },
+          {
+            "case": "same8",
+            "deterministic": false,
+            "active_ids": 1,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 1.0026369068327767e-08,
+            "elapsed_seconds": [
+              0.004066207999130711,
+              0.004264832998160273,
+              0.004595749982399866,
+              0.003950249985791743
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "same8",
+            "deterministic": true,
+            "active_ids": 1,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 1.0026369068327767e-08,
+            "elapsed_seconds": [
+              0.005059290997451171,
+              0.0047828749811742455,
+              0.005273459013551474,
+              0.004493791988352314
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "alternating8",
+            "deterministic": false,
+            "active_ids": 2,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 5.963329385849647e-09,
+            "elapsed_seconds": [
+              0.09961258398834616,
+              0.003255291987443343,
+              0.004525458003627136,
+              0.004303749999962747
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "alternating8",
+            "deterministic": true,
+            "active_ids": 2,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 5.963329385849647e-09,
+            "elapsed_seconds": [
+              0.004829875018913299,
+              0.004956542019499466,
+              0.0036665409861598164,
+              0.003543625003658235
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "zero8",
+            "deterministic": false,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.004833499988308176,
+              0.0031479579920414835,
+              0.003139916021609679,
+              0.0031995419994927943
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "zero8",
+            "deterministic": true,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.0037080409820191562,
+              0.003749875002540648,
+              0.003743499983102083,
+              0.0036946659965906292
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "constant_same8",
+            "deterministic": false,
+            "active_ids": 1,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.0029670829826500267,
+              0.0031105829984880984,
+              0.0029338749882299453,
+              0.0029919170192442834
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "constant_same8",
+            "deterministic": true,
+            "active_ids": 1,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 0.0,
+            "elapsed_seconds": [
+              0.003613083012169227,
+              0.0036720409989356995,
+              0.0036399159871507436,
+              0.0035635000094771385
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "noncontiguous_ids",
+            "deterministic": false,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 8.588358468841761e-09,
+            "elapsed_seconds": [
+              0.016635957988910377,
+              0.004818999994313344,
+              0.004991208988940343,
+              0.004695916984928772
+            ],
+            "token_shape": [
+              128,
+              8
+            ]
+          },
+          {
+            "case": "noncontiguous_ids",
+            "deterministic": true,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 8.588358468841761e-09,
+            "elapsed_seconds": [
+              0.005081334005808458,
+              0.00563695901655592,
+              0.00371541699860245,
+              0.0055847920011729
+            ],
+            "token_shape": [
+              128,
+              8
+            ]
+          },
+          {
+            "case": "noncontiguous_upstream",
+            "deterministic": false,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 8.288679964607581e-09,
+            "elapsed_seconds": [
+              0.005910625011892989,
+              0.003795458993408829,
+              0.0030300000216811895,
+              0.003306166996480897
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          },
+          {
+            "case": "noncontiguous_upstream",
+            "deterministic": true,
+            "active_ids": 84,
+            "unique_gradient_hashes": 1,
+            "max_abs_vs_fp64": 8.288679964607581e-09,
+            "elapsed_seconds": [
+              0.0038712919922545552,
+              0.003820041980361566,
+              0.003895000001648441,
+              0.0037971249839756638
+            ],
+            "token_shape": [
+              8,
+              128
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[dtype]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[width]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[indices_dtype]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[rank]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[empty]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[too_many]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[cpu_weight]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[negative]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[out_of_range]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    },
+    {
+      "nodeid": "research/block_norm_v1/test_grouped_embedding_prototype.py::test_reject_unsupported_contract[autocast]",
+      "when": "call",
+      "outcome": "passed",
+      "numerical_observations": {}
+    }
+  ],
+  "observed_at": "2026-10-31T21:01:59.067899+00:00",
+  "code_sha256": {
+    "research/block_norm_v1/grouped_embedding_prototype.py": "1f5562500b05936650ec7ae152dc80abe88b4e77329811c742c3c6b91963b2bb",
+    "research/block_norm_v1/test_resume_replay.py": "4444aa549d6fa7d4500b8623d816cee9699452eb96eccace98ad2f97dbb78197",
+    "research/block_norm_v1/run_mps_muon_diagnostic.py": "42b0ead292b88e1020cffd4d479a353cfbcb2e09bcd50e68ef0a13a21d0b08ce",
+    "research/block_norm_v1/test_checkpoint_transport.py": "576118de84a6a91ce0afcd6c5f760f197f7d9853b629f10bff0c896949f7735d",
+    "research/block_norm_v1/run_spec_prerequisite.py": "df450bf8a6028486fff9d33113feaa888e96ad79853e0995dec3507df7fea53d",
+    "research/block_norm_v1/test_runtime_baseline.py": "d7671a0b524f0e0c776acbc0d5be64ed4d5ea2211f334ebc82af75d986ad7f76",
+    "research/block_norm_v1/test_mps_numerics.py": "4d10144261237b13264586d19db4db089c518d9ded43ab253e14546bcdcab054",
+    "research/block_norm_v1/test_mps_muon_sensitivity.py": "cab7f052befc8b1eba1c908293aebaa6cf11bc6770115e7a75fc687a1d9d6bcb",
+    "research/block_norm_v1/test_grouped_embedding_prototype.py": "9387ae48b713de82aea4b47320a012e2e427c086329a45a50b87ecd4522e0ec6",
+    "research/block_norm_v1/test_mps_resume_trace.py": "ee90deeec7504e81b15957fe0fa42829ed661bea006abc55a8534d1a5a87193a",
+    "research/block_norm_v1/test_spec.py": "71677da9552c84f484724c5f56d367a06b8a50f493233caa7f357f1e2d5a394c",
+    "research/block_norm_v1/run_mps_numerical_prerequisite.py": "f3a3de2bdf48a154e845f51676c5fdded2d40e5efd153fcff751664ef6f0db76",
+    "research/block_norm_v1/test_mps_embedding_determinism.py": "06f4ca5785fd669aa08abfc21eae608dca5c8718eb7d7fd784529853eea22565",
+    "research/block_norm_v1/run_runtime_baseline_prerequisite.py": "aac97ae84ecdcce321320375683b7c2da608f0ac6935765bfba0c85a5d76ddf7",
+    "research/block_norm_v1/spec.py": "205b2e346b39d1c66d5d95684635cdf5a6e72d00a12da69f1dd0feac1c31ca31",
+    "research/block_norm_v1/run_model_policy_prerequisite.py": "c68c8a376d9e1b9c39add293be74c621d12d9267dde11a69a0fd691813498a1f",
+    "research/block_norm_v1/run_resume_export_regression.py": "b355e81a888cafeee963de5943cd0e7cbd29b97fb636e451db13ce391987711f",
+    "research/block_norm_v1/run_mps_embedding_diagnostic.py": "23b185cc7db99ee9f383c458d6e4142a90f85684f390147bbea314e282835e0a",
+    "research/block_norm_v1/test_cache_numerics.py": "60fc06b7b287fdbab7c5c198702683dc8d1af7d81d14c95afd589350b1870716",
+    "research/block_norm_v1/mps_guard.py": "3978e8b9411e206a62f86fed913e857cb979b18db2f2bbec787be95d6d1e17c4",
+    "research/block_norm_v1/test_model_policy.py": "60bb8b9feddb8d35b245dd7e27c7fcdcc9105c0cd1f43160a74cab60fabbbfcb",
+    "research/block_norm_v1/run_cache_numerical_prerequisite.py": "d5fa92868222233ee88e3e5a4c623701a09672047e69711750e6b6ea2b10eb2e",
+    "research/block_norm_v1/test_trainer_binding.py": "19e6b9b46a706b07edebaad9fc92ccd22cefe4649c15732a942d721bdca0bc53",
+    "research/block_norm_v1/run_resume_replay_prerequisite.py": "6458c67c5efb0f7c585fe2aabfccc8dd55f109edb7a8e033b1bf55509230c606",
+    "research/block_norm_v1/run_grouped_embedding_prototype.py": "1f9c9eff98f70713123a72fdb23fae5cbe187ba2384e339952240c5863a6c34a",
+    "research/block_norm_v1/test_resume_export_regression.py": "ac5a3188841ce74c489b354ad83ed9442210ff486b92f68c80a9f4ce07064111",
+    "research/block_norm_v1/run_mps_resume_trace.py": "a12e67bbd4f1c22ff0fd4a1d6446a05233a083bd8a35e7185c6b7208fa69d1f4",
+    "research/block_norm_v1/map_runtime.py": "66c944144a639f44396099dbe4b9715604c0010eec730c74e53806d02a046c54",
+    "research/block_norm_v1/run_mps_resume_prerequisite.py": "f4805167a6a9efb1fc2aaba4e6b884451ff27592a365927108c3a27c28f2b0e5",
+    "research/block_norm_v1/test_mps_resume.py": "633a8a51aa3fe9049fdc3f2ab203dc539946fc7901b1f4e3f6665fa141706461",
+    "research/block_norm_v1/run_trainer_binding_prerequisite.py": "11c16931295b005ef059dfc62768b19525d2538e6828bd8d381fcba7b02ec797",
+    "research/block_norm_v1/run_checkpoint_transport_prerequisite.py": "2b9bcaad4db8efa610e18df757410bbaec9b07571597426435e13a490cbd996d",
+    "research/block_norm_v1/runtime/__init__.py": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+    "research/block_norm_v1/runtime/attention/output_gate.py": "d9d7671cdfa0d8e3a09ee0a79eae2ce19eae12fdd15ec2a3748adf8abede7dbc",
+    "research/block_norm_v1/runtime/attention/gqa.py": "8edc87d788332893cea1022e81f608d737baa92625d785e502cc62c40316aa1e",
+    "research/block_norm_v1/runtime/attention/kda.py": "333c36d0b552492da4375ff4fa7a1005fb724461e0ed10501208031121706894",
+    "research/block_norm_v1/runtime/attention/cache.py": "5d7588b2227adade11fc34a3f57cdf8cf68261f9fba544527cfeda7e2da4eef9",
+    "research/block_norm_v1/runtime/attention/__init__.py": "d4b73c2244f2e465ea8e727c9c057a0f8e186ffe4002aabedfd2c2c6142c9907",
+    "research/block_norm_v1/runtime/attention/qk_norm.py": "ae69b95907398bcddb5044b12f5529bf41e368aea6c9bc26c6f899f4dffbc69f",
+    "research/block_norm_v1/runtime/attention/kda_scaling.py": "daa4500c4ccf5a4083692d79bffa14db526bcbef6b64dde4cd92903b54bdfaee",
+    "research/block_norm_v1/runtime/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "research/block_norm_v1/runtime/attention/mha.py": "e87892e5fa51d0ca0b208e499ea57fa765138f211fea954892ae44b9837d8834",
+    "research/block_norm_v1/runtime/utils/checkpoint.py": "8d819e0578814d3121bf4372f7cd3922e04b47e5e666cd32e725a7282f84bc3a",
+    "research/block_norm_v1/runtime/utils/device.py": "fa74ad997cad2b8eb4e906118980250768c875623d5c595409665ad6be40c091",
+    "research/block_norm_v1/runtime/utils/__init__.py": "3e61d7fcea9efad4762e2bfe8d9a318ab0bad69ccb5184b3505b7963233eba7a",
+    "research/block_norm_v1/runtime/utils/block_norm_resume.py": "9cd6ff50a79173f873a43f90f969e6cb0b9e52f121e6f1a8319326b40f44c178",
+    "research/block_norm_v1/runtime/models/residual_topology.py": "cbcbe3dba3c726a7e88e6c025b69de37d21a053b43ca3773d9b77d90091c88fd",
+    "research/block_norm_v1/runtime/models/position_family.py": "388c3f0e523b81d3037216a7db7de5069a9f5322280c4057d0e8fc6f08e73549",
+    "research/block_norm_v1/runtime/models/residual_gain.py": "db9641bc6e45ffdada8f138e2531c1d600154083cbd8acb333708c8afe781436",
+    "research/block_norm_v1/runtime/models/logit_z.py": "16e1a305b6049b5f197bd2cbbc1102cd71f927c996a6657b13d203a72739f802",
+    "research/block_norm_v1/runtime/models/embedding_scale.py": "596783ac8b1c1753f26a13571fa7c000aaa5fd5e1c93bfe59b03a99fa00f7c51",
+    "research/block_norm_v1/runtime/models/ffn_hidden_norm.py": "b4bc9d79c16e84d6c6640427edee8736a9d14cfb5ff7ff37c2ca24c1aad203d5",
+    "research/block_norm_v1/runtime/models/block_norm.py": "3254a0aa35523c45cac7cb72f87e817176f82c61d700005cd50cdd5f9a5fa3e2",
+    "research/block_norm_v1/runtime/models/readout_norm.py": "c3de6242e3b8867be43bd21d72eb9d21224a89aabd8d40bd4eafdd36c9b9fc22",
+    "research/block_norm_v1/runtime/models/__init__.py": "2db522babfe2d440c4d816dcccaa624999516930bb214b731fa16cfbc34cce20",
+    "research/block_norm_v1/runtime/models/tokenizer_tables.py": "0d946deb390b717aa76281fafee61722bea269be636afe472bed85a193dfcb92",
+    "research/block_norm_v1/runtime/models/gated_activation.py": "8c811ce6b655ca29b1d3adda0c50db4450e01b213981be2c7458f87f485bb1cc",
+    "research/block_norm_v1/runtime/models/mlp.py": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+    "research/block_norm_v1/runtime/models/tokenizer_activation.py": "0b66fbbefd9ac04567c96a0f09738483dd02d78890bcddb9515a8cd34f663612",
+    "research/block_norm_v1/runtime/models/output_bias.py": "22e095ab917f49360a114085c45cd6aa1fc675296d144ea80a6870422879099d",
+    "research/block_norm_v1/runtime/models/attention_scale.py": "c964f5b9532684e9b244a5f03a6da6a65ba998611b04a27a7553ad21ff26bf7e",
+    "research/block_norm_v1/runtime/models/tokenizer_hybrid.py": "cdab512a0f6d93464bbf4095a6c77a93198e376da3ba53955dfcb556003dd064",
+    "research/block_norm_v1/runtime/models/tokenizer_architecture.py": "d289b50b754fa586738002d850d185b0db0edef596cdb4c17d445e51daf930eb",
+    "research/block_norm_v1/runtime/models/weight_tying.py": "c7bb966e9c01811aaf0636c0e657d1c1c0baa2403870f886fb70c44d3064151e",
+    "research/block_norm_v1/runtime/models/rope.py": "33bda2c5d2a4c312d65e2e294c5de944ff84d2c231bf40001f621a9399f6e5d3",
+    "research/block_norm_v1/runtime/models/blocks.py": "838c77737328c52f6570ec1e17a557add32e1ba7fa3d1f88b669e7a23f3b14b5",
+    "research/block_norm_v1/runtime/models/depth_scaling.py": "a7f3f3b913b797cca8fe0d5d44385c86df41f8a5ca68b1c197136a838cc31448",
+    "research/block_norm_v1/runtime/models/gpt.py": "1a39ce92e8a75fa10607e2a626ec81ba1e87625673781cab17ecbb61c4969faa",
+    "research/block_norm_v1/runtime/models/value_residual.py": "144ad67287d95bd5bd8feec443c7cdda584b1999a89753bdb5f39177d208e4ce",
+    "research/block_norm_v1/runtime/train/lr_schedule.py": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6",
+    "research/block_norm_v1/runtime/train/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/block_norm_v1/runtime/train/optimizers.py": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+    "research/block_norm_v1/runtime/train/train.py": "991d6fee3b969a69c4c19fa235dc8e2d8423e51500596fdc7cc850789cc33cb2",
+    "research/block_norm_v1/runtime/train/weight_averaging.py": "c314f8771262e3e0ba60e3d6382d76b7026d006aeae3d0e7abe6f7282245cbab",
+    "research/block_norm_v1/runtime/data/loaders.py": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+    "research/block_norm_v1/runtime/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/block_norm_v1/runtime/moe/moe_block.py": "c29fb1be70bb4de5584bcbd5fb71cdb7088b5fd87868853aadf875116efd945f",
+    "research/block_norm_v1/runtime/moe/scaling.py": "c0265ce242f560a6816d8769f8a756ade2c6ee328ac355e32683192e88dee2bc",
+    "research/block_norm_v1/runtime/moe/__init__.py": "f0911c8ad4ac9dc58ac16bd6ea8b33c9d7300f021ad5bc39aa33f1817b0662a9"
+  },
+  "source_snapshot": {
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/grouped_embedding_prototype.py": "1f5562500b05936650ec7ae152dc80abe88b4e77329811c742c3c6b91963b2bb",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_resume_replay.py": "4444aa549d6fa7d4500b8623d816cee9699452eb96eccace98ad2f97dbb78197",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_mps_muon_diagnostic.py": "42b0ead292b88e1020cffd4d479a353cfbcb2e09bcd50e68ef0a13a21d0b08ce",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_checkpoint_transport.py": "576118de84a6a91ce0afcd6c5f760f197f7d9853b629f10bff0c896949f7735d",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_spec_prerequisite.py": "df450bf8a6028486fff9d33113feaa888e96ad79853e0995dec3507df7fea53d",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_runtime_baseline.py": "d7671a0b524f0e0c776acbc0d5be64ed4d5ea2211f334ebc82af75d986ad7f76",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_mps_numerics.py": "4d10144261237b13264586d19db4db089c518d9ded43ab253e14546bcdcab054",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_mps_muon_sensitivity.py": "cab7f052befc8b1eba1c908293aebaa6cf11bc6770115e7a75fc687a1d9d6bcb",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_grouped_embedding_prototype.py": "9387ae48b713de82aea4b47320a012e2e427c086329a45a50b87ecd4522e0ec6",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_mps_resume_trace.py": "ee90deeec7504e81b15957fe0fa42829ed661bea006abc55a8534d1a5a87193a",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_spec.py": "71677da9552c84f484724c5f56d367a06b8a50f493233caa7f357f1e2d5a394c",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_mps_numerical_prerequisite.py": "f3a3de2bdf48a154e845f51676c5fdded2d40e5efd153fcff751664ef6f0db76",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_mps_embedding_determinism.py": "06f4ca5785fd669aa08abfc21eae608dca5c8718eb7d7fd784529853eea22565",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_runtime_baseline_prerequisite.py": "aac97ae84ecdcce321320375683b7c2da608f0ac6935765bfba0c85a5d76ddf7",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/spec.py": "205b2e346b39d1c66d5d95684635cdf5a6e72d00a12da69f1dd0feac1c31ca31",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_model_policy_prerequisite.py": "c68c8a376d9e1b9c39add293be74c621d12d9267dde11a69a0fd691813498a1f",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_resume_export_regression.py": "b355e81a888cafeee963de5943cd0e7cbd29b97fb636e451db13ce391987711f",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_mps_embedding_diagnostic.py": "23b185cc7db99ee9f383c458d6e4142a90f85684f390147bbea314e282835e0a",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_cache_numerics.py": "60fc06b7b287fdbab7c5c198702683dc8d1af7d81d14c95afd589350b1870716",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/mps_guard.py": "3978e8b9411e206a62f86fed913e857cb979b18db2f2bbec787be95d6d1e17c4",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_model_policy.py": "60bb8b9feddb8d35b245dd7e27c7fcdcc9105c0cd1f43160a74cab60fabbbfcb",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_cache_numerical_prerequisite.py": "d5fa92868222233ee88e3e5a4c623701a09672047e69711750e6b6ea2b10eb2e",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_trainer_binding.py": "19e6b9b46a706b07edebaad9fc92ccd22cefe4649c15732a942d721bdca0bc53",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_resume_replay_prerequisite.py": "6458c67c5efb0f7c585fe2aabfccc8dd55f109edb7a8e033b1bf55509230c606",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_grouped_embedding_prototype.py": "1f9c9eff98f70713123a72fdb23fae5cbe187ba2384e339952240c5863a6c34a",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_resume_export_regression.py": "ac5a3188841ce74c489b354ad83ed9442210ff486b92f68c80a9f4ce07064111",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_mps_resume_trace.py": "a12e67bbd4f1c22ff0fd4a1d6446a05233a083bd8a35e7185c6b7208fa69d1f4",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/map_runtime.py": "66c944144a639f44396099dbe4b9715604c0010eec730c74e53806d02a046c54",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_mps_resume_prerequisite.py": "f4805167a6a9efb1fc2aaba4e6b884451ff27592a365927108c3a27c28f2b0e5",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/test_mps_resume.py": "633a8a51aa3fe9049fdc3f2ab203dc539946fc7901b1f4e3f6665fa141706461",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_trainer_binding_prerequisite.py": "11c16931295b005ef059dfc62768b19525d2538e6828bd8d381fcba7b02ec797",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/run_checkpoint_transport_prerequisite.py": "2b9bcaad4db8efa610e18df757410bbaec9b07571597426435e13a490cbd996d",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/__init__.py": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/output_gate.py": "d9d7671cdfa0d8e3a09ee0a79eae2ce19eae12fdd15ec2a3748adf8abede7dbc",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/gqa.py": "8edc87d788332893cea1022e81f608d737baa92625d785e502cc62c40316aa1e",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/kda.py": "333c36d0b552492da4375ff4fa7a1005fb724461e0ed10501208031121706894",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/cache.py": "5d7588b2227adade11fc34a3f57cdf8cf68261f9fba544527cfeda7e2da4eef9",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/__init__.py": "d4b73c2244f2e465ea8e727c9c057a0f8e186ffe4002aabedfd2c2c6142c9907",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/qk_norm.py": "ae69b95907398bcddb5044b12f5529bf41e368aea6c9bc26c6f899f4dffbc69f",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/kda_scaling.py": "daa4500c4ccf5a4083692d79bffa14db526bcbef6b64dde4cd92903b54bdfaee",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/attention/mha.py": "e87892e5fa51d0ca0b208e499ea57fa765138f211fea954892ae44b9837d8834",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/utils/checkpoint.py": "8d819e0578814d3121bf4372f7cd3922e04b47e5e666cd32e725a7282f84bc3a",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/utils/device.py": "fa74ad997cad2b8eb4e906118980250768c875623d5c595409665ad6be40c091",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/utils/__init__.py": "3e61d7fcea9efad4762e2bfe8d9a318ab0bad69ccb5184b3505b7963233eba7a",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/utils/block_norm_resume.py": "9cd6ff50a79173f873a43f90f969e6cb0b9e52f121e6f1a8319326b40f44c178",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/residual_topology.py": "cbcbe3dba3c726a7e88e6c025b69de37d21a053b43ca3773d9b77d90091c88fd",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/position_family.py": "388c3f0e523b81d3037216a7db7de5069a9f5322280c4057d0e8fc6f08e73549",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/residual_gain.py": "db9641bc6e45ffdada8f138e2531c1d600154083cbd8acb333708c8afe781436",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/logit_z.py": "16e1a305b6049b5f197bd2cbbc1102cd71f927c996a6657b13d203a72739f802",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/embedding_scale.py": "596783ac8b1c1753f26a13571fa7c000aaa5fd5e1c93bfe59b03a99fa00f7c51",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/ffn_hidden_norm.py": "b4bc9d79c16e84d6c6640427edee8736a9d14cfb5ff7ff37c2ca24c1aad203d5",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/block_norm.py": "3254a0aa35523c45cac7cb72f87e817176f82c61d700005cd50cdd5f9a5fa3e2",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/readout_norm.py": "c3de6242e3b8867be43bd21d72eb9d21224a89aabd8d40bd4eafdd36c9b9fc22",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/__init__.py": "2db522babfe2d440c4d816dcccaa624999516930bb214b731fa16cfbc34cce20",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/tokenizer_tables.py": "0d946deb390b717aa76281fafee61722bea269be636afe472bed85a193dfcb92",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/gated_activation.py": "8c811ce6b655ca29b1d3adda0c50db4450e01b213981be2c7458f87f485bb1cc",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/mlp.py": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/tokenizer_activation.py": "0b66fbbefd9ac04567c96a0f09738483dd02d78890bcddb9515a8cd34f663612",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/output_bias.py": "22e095ab917f49360a114085c45cd6aa1fc675296d144ea80a6870422879099d",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/attention_scale.py": "c964f5b9532684e9b244a5f03a6da6a65ba998611b04a27a7553ad21ff26bf7e",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/tokenizer_hybrid.py": "cdab512a0f6d93464bbf4095a6c77a93198e376da3ba53955dfcb556003dd064",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/tokenizer_architecture.py": "d289b50b754fa586738002d850d185b0db0edef596cdb4c17d445e51daf930eb",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/weight_tying.py": "c7bb966e9c01811aaf0636c0e657d1c1c0baa2403870f886fb70c44d3064151e",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/rope.py": "33bda2c5d2a4c312d65e2e294c5de944ff84d2c231bf40001f621a9399f6e5d3",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/blocks.py": "838c77737328c52f6570ec1e17a557add32e1ba7fa3d1f88b669e7a23f3b14b5",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/depth_scaling.py": "a7f3f3b913b797cca8fe0d5d44385c86df41f8a5ca68b1c197136a838cc31448",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/gpt.py": "1a39ce92e8a75fa10607e2a626ec81ba1e87625673781cab17ecbb61c4969faa",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/models/value_residual.py": "144ad67287d95bd5bd8feec443c7cdda584b1999a89753bdb5f39177d208e4ce",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/train/lr_schedule.py": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/train/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/train/optimizers.py": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/train/train.py": "991d6fee3b969a69c4c19fa235dc8e2d8423e51500596fdc7cc850789cc33cb2",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/train/weight_averaging.py": "c314f8771262e3e0ba60e3d6382d76b7026d006aeae3d0e7abe6f7282245cbab",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/data/loaders.py": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/moe/moe_block.py": "c29fb1be70bb4de5584bcbd5fb71cdb7088b5fd87868853aadf875116efd945f",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/moe/scaling.py": "c0265ce242f560a6816d8769f8a756ade2c6ee328ac355e32683192e88dee2bc",
+    "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-source/runtime/moe/__init__.py": "f0911c8ad4ac9dc58ac16bd6ea8b33c9d7300f021ad5bc39aa33f1817b0662a9"
+  },
+  "source_delta_sha256": "5467e32c3058cb1fd663c718e4df6aef0921cec51b77996436c2e9a97c5196e3",
+  "baseline_manifest_sha256": "3923f20365b0b69632fdcab85c410946e85c46abe398cf92dcdb816d4d495e3c",
+  "dependency_map_sha256": "36fb1317444d9a472191c288c7e33c09cdd577b8cece81ab65a4c513fb44ccb5",
+  "guard_sha256": "9e73d82ed37a65dd517947e7c820626ca89237eb1ac6b001e2f009dc6de61828",
+  "log_sha256": "83e3990c39810ecec073c6d3c6c3719aea28de788634e3fe1cf0a31637b7ffd1",
+  "frozen_sources_and_closed_campaigns_unchanged": true,
+  "trace_sha256": "70083bf128fa0947f930d66b94fa57b7ba2cc99dff08f6559d9bc32b0e16e3c1",
+  "trace_path": "research/tokenizer-evidence/block-norm-preparation-001/grouped-embedding-prototype-001-events.jsonl",
+  "numerical_acceptance_claimed": false,
+  "scope": "Standalone all-MPS grouped embedding backward prototype: native forward, unique-token FP32 membership matmul and unique-index copy. Eleven input/upstream cases,88backwards with four repeats each deterministic-off/on, FP64 analytic oracle, ten unsupported-contract rejections. No runtime adoption.",
+  "limitations": "Standalone first-order dense fixed50257x256 embedding only, at most1024tokens. Not full-model gradient/cache/resume or resource pilot. Timing observations include checks and synchronization, not a throughput benchmark. No quality/holdout/optimizer updates.",
+  "backend_environment": {
+    "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+    "PYTORCH_MPS_FAST_MATH": "0",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "quality_training_launched": false,
+  "synthetic_optimizer_steps": false,
+  "in_memory_checkpoint_loaded": false,
+  "persisted_checkpoints_loaded": false,
+  "trained_checkpoints_loaded": false,
+  "holdout_scored": false,
+  "deletion_performed": false
+}
