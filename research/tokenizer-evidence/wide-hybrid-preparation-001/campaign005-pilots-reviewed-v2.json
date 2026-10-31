@@ -1,0 +1,54 @@
+{
+  "status": "three_pilots_and_recorded_boundary_verified",
+  "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
+  "boundary_ref": {
+    "path": "meta/pilot-boundary-complete.json",
+    "sha256": "1bb04ca5c0f27e2efa2dea686c2d02c05d13eb0e109c739026052e307e0552a6"
+  },
+  "pilots": [
+    {
+      "slot": 0,
+      "family": "hybrid",
+      "steps": 20,
+      "elapsed_seconds": 97.13925241699326,
+      "samples": 96,
+      "peak_rss_bytes": 2703704064,
+      "peak_mps_driver_bytes": 3986604032,
+      "minimum_free_bytes": 29684334592,
+      "cache_audit_sha256": "7f035ec74bbb92c44c1c9cb5ad0ea14ef8d4bb2a4c4502b5550f9c6c918cec7b",
+      "resource_audit_sha256": "bdc02cb476219511e7616716f5b4f588bf1bcfb1e72b6bb8d025cc172db934e8"
+    },
+    {
+      "slot": 1,
+      "family": "gated_mla",
+      "steps": 20,
+      "elapsed_seconds": 98.89618104099645,
+      "samples": 96,
+      "peak_rss_bytes": 3232137216,
+      "peak_mps_driver_bytes": 3600596992,
+      "minimum_free_bytes": 28424417280,
+      "cache_audit_sha256": "1022b1647d1334f6b493e8c53b5b4b66c266bcf83dbdf12eeb6ff3ddd51f991c",
+      "resource_audit_sha256": "ea787e141269a26411d2d541053827d66726f8e55ec6cc6a1d74c0366a8aaedf"
+    },
+    {
+      "slot": 2,
+      "family": "kda",
+      "steps": 20,
+      "elapsed_seconds": 119.57685704200412,
+      "samples": 115,
+      "peak_rss_bytes": 2615869440,
+      "peak_mps_driver_bytes": 4112416768,
+      "minimum_free_bytes": 27145412608,
+      "cache_audit_sha256": "ebaee29edc08bca58cc04bfa5cf3d598b3f79c688c0493ae5cfa4e5f1a1c35d5",
+      "resource_audit_sha256": "a0082f3c2e85fc620b3ae0214b5bf964a070d8bb20455af75860b0080a8e33e3"
+    }
+  ],
+  "deleted_successful_pilot_weights": 6,
+  "deleted_logical_bytes": 3769780224,
+  "archived_noncheckpoint_files": 76,
+  "immutable_metadata_verified": true,
+  "current_quality_slot": 0,
+  "quality_result_available": false,
+  "quality_or_adoption_claim": false,
+  "qualification": "Read-only check of immutable completed pilot records and prior audited cleanup receipts. Did not reacquire active worker locks, load removed weights, rerun pilots or modify the live campaign. Sampled resource peaks are not instantaneous upper bounds."
+}

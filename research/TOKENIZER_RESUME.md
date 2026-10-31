@@ -8,9 +8,9 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October30,2026 at20:46 Los Angeles: campaign005 pilot0 exited
-successfully; pilot1 was running under controller88781, child88922, tool
-session96910. Verify current
+Observed October30,2026 at20:53 Los Angeles: all three campaign005 pilots and
+audited pilot cleanup passed. Quality slot0 is running under controller88781,
+child89256, tool session96910. Verify current
 processes; do not dispatch a duplicate. The starter runs three pilots, verifies
 and records eligible pilot cleanup, then runs quality slot0 **only**. It does not
 schedule later slots automatically. No005 quality conclusion exists yet.
@@ -33,7 +33,9 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
 2. If controller88781 or its current descendant is still running, observe it;
    never invoke the starter again. Pilot children change during serial dispatch.
-3. After the three pilots complete, adapt the existing read-only
+3. The three pilots and their boundary are now reviewed in
+   [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
+   This used a005-adapted copy of the existing read-only
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.

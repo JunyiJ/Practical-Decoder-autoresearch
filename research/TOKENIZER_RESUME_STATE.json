@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T03:46:37.614194+00:00",
-  "observed_at_los_angeles": "2026-10-30T20:46:37.614194-07:00",
+  "observed_at": "2026-10-31T03:53:22.183216+00:00",
+  "observed_at_los_angeles": "2026-10-30T20:53:22.183216-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "65781b3",
+  "evidence_commit_before_handoff": "5390dae",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
@@ -20,10 +20,28 @@
     },
     {
       "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-01.json",
-      "status": "running",
+      "status": "completed",
       "pid": 88922,
       "parent_pid": 88781,
-      "elapsed_seconds": 51.21486141599598,
+      "elapsed_seconds": 98.89104495799984,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-02.json",
+      "status": "completed",
+      "pid": 89092,
+      "parent_pid": 88781,
+      "elapsed_seconds": 119.57003741699737,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "path": "research_runs/tokenizer-wide-hybrid-005/control/process-quality-00.json",
+      "status": "running",
+      "pid": 89256,
+      "parent_pid": 88781,
+      "elapsed_seconds": 207.70196929198573,
       "returncode": null,
       "error": null
     }
@@ -36,7 +54,7 @@
     "tokenizer-wide-hybrid-004"
   ],
   "first_action": "Run read-only tokenizer_resume_status.py and inspect actual processes; do not duplicate an existing worker. Follow TOKENIZER_RESUME.md and current local next_action.",
-  "next_after_starter": "Review completed pilots and audited cleanup; independently verify accepted quality slot0 prefix after worker exit before adapting later serial continuation.",
+  "next_after_starter": "Pilots and boundary independently reviewed. After quality slot0 parent acceptance and worker exit, independently verify accepted prefix before later serial LR dispatch.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -63,6 +81,10 @@
     "research/tokenizer-evidence/wide-hybrid-preparation-001/census-preview-transport-review-v2.json": "db88b01d05a62519d6de505cbf6e52f3c9975dc57f263114af1e95b51d26cd7d",
     "research/tokenizer-evidence/filesystem-compression-001/completed.json": "b6f1898e0600e9fd5a44259ab57ebf591931227dc9fc36d57d4227b0dc8753af",
     "research/tokenizer-evidence/filesystem-compression-001/continuation-guard.json": "de41cd56a966558d7aef3707554923b07354dc0fbc7b1c59387a074f8213f15d",
-    "research/tokenizer-evidence/checkpoint-compaction-002/logical-evidence-review.json": "b642ee74ad0a5b11cafd8def0df8c586d73599b7ceb64c2f3b5da363e149aca6"
+    "research/tokenizer-evidence/checkpoint-compaction-002/logical-evidence-review.json": "b642ee74ad0a5b11cafd8def0df8c586d73599b7ceb64c2f3b5da363e149aca6",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json": "cb4304a706df77e3fda42906b964112ae21b02886a9501de009c80a33bea575d",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilot-boundary-v2.json": "7b59140a60afabd455545a7a2bf05e178ccbf46adcc4370f9b32e3921ef5432e",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-v2-archive.json": "1cec0f873c775eb977516d6e5d1d45bb6ab2028bfb678429aa1f3021234430b1",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-quality0-start-v2.json": "e3c8f0429edd41650ecfd2996dfc245f86da8fe17241d45c01301072771c065a"
   }
 }

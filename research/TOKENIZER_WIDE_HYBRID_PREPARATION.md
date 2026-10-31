@@ -5827,3 +5827,21 @@ closed, and their results are not pooled. The serial starter is identical to004
 apart from campaign/receipt paths: three pilots, audited pilot cleanup, then
 quality slot0 only; later dispatch requires separate accepted-history review.
 Evidence: `campaign005-freeze-v2-review.json`, finished guard and frozen bytes.
+
+
+### Campaign005 pilots and audited boundary verified
+
+All three20-update resource pilots completed and passed cache/resource checks:
+hybrid97.14s, gatedMLA98.90s, KDA119.58s. Sampled peak RSS was at most
+3,232,137,216 bytes and MPS-driver allocation at most4,112,416,768 bytes;
+no resource violation was recorded. These short checks do not establish full
+training stability or quality superiority.
+
+The production pilot-boundary review authorized removal of six successful pilot
+weights totaling3,769,780,224 bytes. A separate read-only review verified the
+recorded deletion manifest, all76 archived non-checkpoint byte streams and
+immutable evidence hashes. Selected/fresh/failure checkpoints were not involved.
+Quality slot0 is running under controller88781/child89256; no quality result or
+adoption claim yet. Later slots are not automatically dispatched by this starter.
+Evidence: `campaign005-pilots-reviewed-v2.json`, pilot archive, boundary receipt
+and `campaign005-quality0-start-v2.json`.
