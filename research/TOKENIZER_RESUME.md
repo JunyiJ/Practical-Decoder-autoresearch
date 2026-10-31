@@ -84,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 screen complete; LR0.00125 saved for both gates; two fresh pairs accepted; SiLU seed3613 slot10 running; see the indexed
+Current continuation: activation001 screen complete; LR0.00125 saved for both gates; five fresh cells accepted; final GELU seed3613 slot11 running; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -304,3 +304,5 @@ Latest observation: seed3611 pair accepted; slot08 GELU seed3612 running. Parent
 Latest observation: seed3612 GELU accepted; matched slot09 SiLU running. Parent61735/child61738/session41518. Require immutable acceptance before slot10.
 
 Latest observation: two fresh pairs accepted; seed3612 favors SiLU, failing the frozen every-seed GELU improvement condition. Finish finite evidence regardless. Slot10 SiLU seed3613 running, parent62174/child62178/session10675.
+
+Latest observation: slot10 accepted; final slot11 GELU seed3613 running. Parent62609/child62613/session31403. After acceptance, complete prefix audit then frozen inference entry, never another training step.

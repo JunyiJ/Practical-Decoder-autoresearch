@@ -4769,3 +4769,15 @@ SiLU training205.09s/worker378.39s; peakRSS1,695,023,104bytes, driver2,501,705,7
 All guards passed; no cleanup/holdout scoring. Slot10 SiLU seed3613 running;
 all fresh raw/H200 pairs and selected models remain protected.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-10-review.json).
+
+
+### October31 activation001 final-seed SiLU accepted
+
+SiLU seed3613 at saved LR0.00125 completed1200updates and independent acceptance.
+RawCE4.701461123/H200CE4.712309397; averaging worsens this cell by0.010848274.
+The matched GELU endpoint is pending. Training205.24s/worker393.60s; peakRSS
+1,514,586,112bytes, driver2,501,705,728bytes. All guards passed; no cleanup or
+holdout scoring. Final GELU seed3613 runs as slot11. Then the finite inference
+panel and independent final review remain required; the every-seed quality
+condition already failed on3612. All fresh and selected pairs stay protected.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-11-review.json).
