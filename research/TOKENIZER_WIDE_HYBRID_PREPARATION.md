@@ -6944,3 +6944,29 @@ STOP/failure/path/file-count/alias/transient-byte/resource checks. Test actual
 parent/child monitor contention and immutable-file tampering before a new finite
 freeze. Quality failure and incumbent are unchanged; only one inference pair is
 accepted, so no aggregate cost conclusion or formal terminal closure is available.
+
+
+### October31 recovery v2 scoped verification and carried-pair prerequisites
+
+The separate v2 inventory helper passed27 tests, including10 sequential real
+bounded pipe children. Actual parent monitor updates reproduce rejection by
+whole-root before/after equality while the prior completed slot remains byte
+identical. Scoped file/control hashes accept that valid overlap and reject
+same-size prior-result changes, prior-control changes, extra prior files and
+unknown controls. Global quotas, path/alias/file-count, STOP/failure, transient
+and resource checks remain enforced. Historical exact differing monitor fields
+were not logged; this test demonstrates the mechanism, not that missing detail.
+
+The first-pair importer passed13 provenance tests and an actual read-only audit
+of accepted seed3611. All27 files of the failed recovery001 root are pinned,
+including the second-entry failure; original training and all16 protected
+checkpoint hashes were reverified. No inference was repeated. Both failed roots
+and frozen source sets are unchanged; no matching workers remain.
+
+[Scoped inventory review](tokenizer-evidence/activation-preparation-001/inference-recovery-v2-scoped-inventory-prerequisite-001-review.json),
+[carried-pair review](tokenizer-evidence/activation-preparation-001/inference-recovery-v2-carried-pair-prerequisite-001-review.json),
+[v2 integration gates](activation_inference_recovery_v2/README.md).
+These are component prerequisites, not a completed controller or launch freeze.
+Next integrate carried3611 plus only new3612/3613, test actual later-child entry
+concurrency and final assembly, then freeze/commit/push before dispatch. GELU
+still fails the quality gates; no complete timing aggregate or final receipt yet.

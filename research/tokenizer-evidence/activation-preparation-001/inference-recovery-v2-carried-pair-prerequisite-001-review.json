@@ -1,0 +1,104 @@
+{
+  "status": "passed",
+  "error": null,
+  "pytest_exit_code": 0,
+  "tests": [
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_first_pair_replayed_without_original_failed_root_entry",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[acceptance]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[request]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[model]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[result]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[guard]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[worker_identity]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[extra_file]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_changed_carried_first_evidence_rejected[review]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_live_prior_process_is_not_carried",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_wrong_seed_path_is_not_first_pair",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_anchor_hash_tampering_rejected",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v2/test_carried_pair.py::test_frozen_carried_import_replayed_not_trusted",
+      "when": "call",
+      "outcome": "passed"
+    }
+  ],
+  "observed_at": "2026-10-31T19:34:11.193601+00:00",
+  "code_sha256": {
+    "research/activation_inference_recovery_v2/carried_pair.py": "d6a5c0fc28e27c85dc38a35388e647af78be9b8a27405198cc3866219880fc32",
+    "research/activation_inference_recovery_v2/test_carried_pair.py": "858bb9a8502e461f0d7577e6a1fd0ba5a8744668cab2677bf91d663c614f99e2",
+    "research/activation_inference_recovery_v2/run_carried_prerequisite.py": "d786a0be45b7389b6548e52fc49532cc703389129a6a10b686e2e0062fa8cf34"
+  },
+  "outputs": {
+    "guard": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery-v2-carried-pair-prerequisite-001-guard.json",
+      "size": 260,
+      "sha256": "f492fb02bc4fa560d03b59bcced6f5bdb364bbf6229f61ee41edf05e01a58013"
+    },
+    "log": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery-v2-carried-pair-prerequisite-001.log",
+      "size": 593,
+      "sha256": "7741fe99d7056b43d0a7b8971a0557b3212be0c8350b21005a711fa1ecfc02d7"
+    },
+    "import": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery-v2-carried-pair-prerequisite-001-import.json",
+      "size": 42191,
+      "sha256": "9c2fac1cb852cfdcf35cecf78db483b8f8560adee787607a22ab85beb48e351e"
+    }
+  },
+  "carried_import_sha256": "93e3cb7ad83179e3ebd1252772d69243909d219b8a68e8ca53a82474a3b6a240",
+  "carried_files": 27,
+  "scope": "Disposable first-pair transport/provenance tests use explicit v1 GPU/model/process doubles. Actual import independently replays original accepted3611 process/request/guards/model lineage/timing arithmetic, pins all27files of closed recovery001 including later failure, and verifies original training/source/16protected checkpoints. No real inference repeated, no corpus/checkpoint deserialization, no old entry called.",
+  "limitations": "Component prerequisite only; new version must integrate carried credit with only3612/3613, use scoped inventories, test real later-child entry concurrency and freeze exact source/evidence before dispatch.",
+  "inference_launched": false,
+  "repeat_first_pair_allowed": false,
+  "training_launched": false,
+  "holdout_scored": false,
+  "dispatch_authorized": false
+}
