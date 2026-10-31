@@ -13,11 +13,12 @@ from .runtime.models.block_norm import CHECKPOINT_KEY
 require=c.require
 KINDS={'config','parent','h200','summary','metrics','export'}
 SCOPE='retained_generated_fixture_acceptance_v1'
+TRIAL_SCOPE='finite_block_norm_v2_trial_acceptance_v1'
 
 
 def verify_request(request):
-    require(type(request) is dict and set(request)=={'scope','sources','config','files'},'Exact acceptance request required')
-    require(request['scope']==SCOPE,'Only declared retained-fixture scope supported')
+    require(type(request) is dict and request.get('scope') in (SCOPE,TRIAL_SCOPE),'Declared acceptance scope required')
+    require(set(request)=={'scope','sources','config','files'}|({'trial'} if request['scope']==TRIAL_SCOPE else set()),'Exact acceptance request required')
     c.verify_sources(request['sources']);require(type(request['files']) is dict and set(request['files'])==KINDS,'Complete output bundle required')
     for kind,binding in request['files'].items():
         require(type(binding) is dict and set(binding)=={'path','sha256'},'Exact path/SHA binding required')
@@ -28,6 +29,9 @@ def verify_request(request):
     require(type(cfg['training']['max_iters']) is int and 2<=cfg['training']['max_iters']<=1200,'Bounded final horizon required')
     require(cfg['training']['device']=='mps' and cfg['training']['strict_device'] is True,'Strict MPS fixture required')
     require(cfg['training']['keep_best_checkpoint'] is False and cfg['training']['checkpoint_every']==0,'Final-only outputs required')
+    if request['scope']==TRIAL_SCOPE:
+        trial=request['trial'];require(type(trial) is dict and set(trial)=={'spec','seeds'},'Exact finite trial binding required')
+        c.validate_trial_config(cfg,Path(cfg['training']['checkpoint_dir']).parent,trial['spec'],trial['seeds'])
     return OmegaConf.create(cfg)
 
 
@@ -40,6 +44,20 @@ def read_bundle(request):
 
 
 def equal(a,b,message):require(c.canonical(a)==c.canonical(b),message)
+
+
+def audit_metric_rows(cfg,metrics):
+    """The frozen trainer logs evaluation steps, not every optimizer update."""
+    t=cfg.training;n=t.max_iters
+    steps=sorted(set(range(0,n,t.eval_every))|{n-1})
+    require(type(metrics) is list and len(metrics)==len(steps),'Every scheduled evaluation metric required')
+    schedule=schedule_contract(t)
+    for i,row in zip(steps,metrics):
+        require(type(row['step']) is int and row['step']==i and row['tokens_processed']==(i+1)*t.batch_size*cfg.model.block_size,'Metric update/token sequence differs')
+        require(row['device']=='mps','Metric backend differs')
+        require(row['base_learning_rate']==t.learning_rate and row['lr_multiplier']==multiplier(schedule,i)
+                and row['scheduled_learning_rate']==t.learning_rate*multiplier(schedule,i),'Metric schedule differs')
+        require(type(row['train_ce_loss']) in (int,float) and math.isfinite(row['train_ce_loss']) and row['train_ce_loss']>=0,'Finite training loss required')
 
 
 def audit_payloads(request,bundle,data):
@@ -60,14 +78,8 @@ def audit_payloads(request,bundle,data):
     require(summary['completed_steps']==summary['max_iters']==n and summary['stop_reason']=='max_iters' and summary['device']=='mps','Incomplete training summary')
     require(summary['final_checkpoint']==request['files']['parent']['path'] and summary['best_checkpoint'] is None,'Summary checkpoint path differs')
     equal(summary['metrics'],metrics,'Summary/log metrics differ');equal(state['metrics'],metrics,'Checkpoint/log metrics differ')
-    require(type(metrics) is list and len(metrics)==n,'Every update metric required')
-    schedule=schedule_contract(t);averaging=averaging_contract(t)
-    for i,row in enumerate(metrics):
-        require(type(row['step']) is int and row['step']==i and row['tokens_processed']==(i+1)*t.batch_size*cfg.model.block_size,'Metric update/token sequence differs')
-        require(row['device']=='mps','Metric backend differs')
-        require(row['base_learning_rate']==t.learning_rate and row['lr_multiplier']==multiplier(schedule,i)
-                and row['scheduled_learning_rate']==t.learning_rate*multiplier(schedule,i),'Metric schedule differs')
-        require(type(row['train_ce_loss']) in (int,float) and math.isfinite(row['train_ce_loss']) and row['train_ce_loss']>=0,'Finite training loss required')
+    audit_metric_rows(cfg,metrics)
+    averaging=averaging_contract(t)
     equal(summary['final_metric'],metrics[-1],'Final metric differs');equal(summary['best_metric'],state['best_metric'],'Best metric differs')
     require(summary['training_time_sec']==state['training_seconds'] and summary['training_time_sec']>=0,'Training time differs')
     require(summary['eval_every']==t.eval_every and summary['eval_iters']==t.eval_iters,'Evaluation settings differ')
@@ -99,7 +111,7 @@ def accept(request,reported_validation):
         recomputed=dict(binding=copy.deepcopy(binding),**v.score(model,data))
         equal(reported_validation,recomputed,'Parent recomputation differs from claimed validation')
         verify_request(request)
-        return dict(kind='real_fixture_artifact_acceptance_v1',scope=SCOPE,request_sha256=c.fingerprint(request),
+        return dict(kind='real_fixture_artifact_acceptance_v1' if request['scope']==SCOPE else 'finite_trial_artifact_acceptance_v1',scope=request['scope'],request_sha256=c.fingerprint(request),
                     source_sha256=c.fingerprint(request['sources']),files=copy.deepcopy(request['files']),audit=audit,
                     validation=recomputed,accepted=True,launch_permitted=False,quality_adopted=False)
     finally:del model,data,cfg,bundle

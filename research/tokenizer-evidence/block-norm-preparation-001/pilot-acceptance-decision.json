@@ -1,0 +1,19 @@
+{
+  "status": "passed64_sparse_metric_compatibility",
+  "observed_at": "2026-10-31T22:20:08.122373+00:00",
+  "review_sha256": "02ae2091b324aabc641551c6f93259221bedaaacb6458010eedc0baa83998590",
+  "plan_sha256": "b629b93469474d756387a09f82a08ebcd73106c29a0d3e3ddd5517f74cdd03a1",
+  "concrete_gap": "Fixture2step checks expected a metric each update; actual frozen20/1200step configs log evaluation steps only. Audit now enforces0/19 or0/300/600/900/1199 exactly. No trainer/logging/schedule change.",
+  "old_source": {
+    "path": "research/tokenizer-evidence/block-norm-preparation-001/inference-measurement-001-source/artifact_acceptance.py",
+    "sha256": "11bf8a8e67108982dabf0cc8c613062f85d97bcc586f715add9e0e72a07e4f81"
+  },
+  "current_source": {
+    "path": "research/block_norm_v1/artifact_acceptance.py",
+    "sha256": "a711bba0c174b3f33080fadeedbbfbecb7e3c6836c4278b1525c8954d9072e3c"
+  },
+  "finite_trial_scope": "New finite trial request scope separately binds exact trial spec/seeds/output/config through c.validate_trial_config; retained fixture scope remains supported.",
+  "tests_passed": 64,
+  "training_launched": false,
+  "runtime_unchanged": true
+}

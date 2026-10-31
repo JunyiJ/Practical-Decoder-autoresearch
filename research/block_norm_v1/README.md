@@ -457,3 +457,25 @@ prerequisites finish. Before cleanup or quality dispatch, connect durable extern
 heads and audited retention receipts; do not expand already-passed ledger mechanics.
 Final quality freeze remains separate. Evidence: inference-measurement-plan001/
 review/result/analysis/decision and scientific-seed-census-001.
+
+## Two actual-corpus resource pilots frozen, October31,2026
+
+The finite pilot plan is now frozen for RMS then LayerNorm: seed374001,20updates,
+LR0.0025, batch8/context128, cooldown/EMA start13 and H200 interval1. It binds
+388 source files, exact configs/data/environment, completed prerequisites and
+the15,170,221,264B complete-panel projection; observed free space19,149,811,712B.
+Quality dispatch and checkpoint cleanup remain prohibited by this pilot freeze.
+
+A concrete fixture-to-production audit gap was fixed before freeze: the trainer
+logs at evaluation indices, not each update. The20step pilot must have rows0/19;
+1200step quality runs must have0/300/600/900/1199.52 existing artifact checks and
+12 sparse-metric checks pass. The original runtime and logging schedule are
+unchanged, and the previous acceptance source remains preserved. The finite
+trial acceptance scope additionally binds exact configuration/spec/seeds.
+
+Run the two bounded children serially, independently audit raw/H200, resume state,
+full validation and raw/H200 cache/reset at batches1/8, and anchor each accepted
+receipt outside the campaign directory only after parent guards close. A partial
+attempt or absent external anchor blocks progression; no retry or cleanup.
+Keep both pilot pairs until complete audits and dependent prerequisites finish.
+Evidence: pilot-acceptance-plan001/review/decision and pilot001-plan/freeze/build.
