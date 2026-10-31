@@ -404,3 +404,46 @@ writes; prefer bounded in-memory replay and existing evidence where applicable.
 Controller/retention/selection/statistical readiness and exact finite seed/order
 freeze remain pending. Full-panel capacity remains gated; no partial quality
 pilot or thinning controls/seeds/protected evidence to fit.
+
+
+## Strict MPS optimizer/resume prerequisite failed October31
+
+Two immutable in-memory transport attempts used generated GPT-2 text, batch1/
+context128, strict MPS FP32, fallback=0 and fast_math=0. No new binary files were
+written. Attempt001 completed three uninterrupted RMS updates but rejected resume
+because the saved contract says `mps` while actual parameters report `mps:0`.
+The isolated new-policy preflight now accepts these device0 aliases, preserving
+other-device and PyTorch-version rejection. It also checks MPS RNG vector length
+against the current backend before loading any model weights. CPU/legacy branches
+and all mathematical operations remain unchanged; explicit plan deltas bind this.
+
+Attempt002 passed all five malformed-MPS-RNG and three device/version rejection
+checks without changing model weights or RNG, accepted both device aliases, and
+completed the two resumed updates. Its RMS model comparison FAILED the original
+atol2e-6/rtol2e-4: one element out of the first failing172,032-element tensor had
+absolute error3.050663508e-6 (relative0.002040846). This is a failed numerical gate,
+not an accepted approximate replay. No tolerance was widened. Fail-fast stopped
+before the LayerNorm arm. Full optimizer/EMA comparisons and the final exact RNG/
+batch/draw assertions were not reached, so their agreement is not established.
+
+Both guards completed with frozen original/recovery sources, closed roots and
+retained generated fixtures unchanged. Attempt001:3.229s, RSS2,064,138,240bytes,
+peak sampled driver1,190,920,192bytes. Attempt002:4.325s, RSS2,183,725,056bytes,
+peak sampled driver1,242,398,720bytes. Limits stayed4GiB RSS/6GiB driver/8GiB
+reserve/600s/4CPU. Across attempts eight synthetic RMS optimizer updates ran;
+no candidate updates, real-corpus quality training, holdout scoring or cleanup.
+
+[Failed numerical review](tokenizer-evidence/block-norm-preparation-001/mps-resume-prerequisite-002-review.json),
+[device/RNG delta and unchanged tolerances](tokenizer-evidence/block-norm-preparation-001/mps-resume-plan-002.json).
+The generic wrapper mentions archive hashes, but these failed tests stopped before
+emitting their final observation properties: no in-memory archive digest or binary
+payload was retained. Exact source, plans, failure logs and guard evidence remain.
+Future diagnostics must emit intermediate observations before any assertion.
+
+Close both attempts; do not overwrite or rerun them, loosen tolerance or infer a
+root cause. Next prepare a separately bounded diagnostic that first verifies the
+loaded model/optimizer/EMA and RNG states, then records exact batch/CPU/MPS draws
+and per-step losses/gradients/updates with parameter names before final comparison.
+Separate a transport/state defect from backend numerical variation using a
+prospectively specified control, with no quality training. MPS resume and all
+later controller/finite-plan gates remain incomplete; capacity remains gated.

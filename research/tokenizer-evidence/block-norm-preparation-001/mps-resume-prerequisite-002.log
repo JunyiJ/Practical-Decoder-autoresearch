@@ -1,0 +1,109 @@
+F
+=================================== FAILURES ===================================
+_________ test_mps_populated_resume_with_rng_rejections[rms_incumbent] _________
+
+kind = 'rms_incumbent'
+record_property = <function record_property.<locals>.append_property at 0x114e7f420>
+
+    @pytest.mark.parametrize('kind',['rms_incumbent','layer_matched_epsilon'])
+    def test_mps_populated_resume_with_rng_rejections(kind,record_property):
+        before_cpu=torch.get_rng_state();before_mps=torch.mps.get_rng_state()
+        fixture=ROOT/'research_state/block-norm-trainer-fixture-002'/kind
+        cfg=OmegaConf.create(json.loads((fixture/'config.json').read_text()))
+        cfg.training.device='mps';cfg.training.max_iters=3;cfg.training.seed=372601;cfg.training.eval_seed=372602
+        cfg.training.lr_schedule=dict(kind='linear_cooldown',total_steps=3,start_step=1,min_ratio=.1)
+        cfg.training.weight_averaging=dict(kind='spaced_tail_ema',total_steps=3,start_step=1,interval=1,half_lives=[200])
+        buffer=io.BytesIO()
+        try:
+            torch.manual_seed(372603)
+            a=components(cfg);update(a,0)
+            state=capture_training_state(a[4],'mps',contract=_training_contract(cfg,'mps',a[4]),
+                training_seconds=0.,metrics=[],best_metric=None,best_checkpoint=None)
+            state['weight_averaging_state']=a[3].state_dict()
+            def writer(path,payload):
+                assert buffer.tell()==0
+                torch.save(payload,buffer)
+                assert buffer.tell()<600*1024**2
+            virtual=fixture/'not-written-mps-resume.pt';assert not virtual.exists()
+            save_checkpoint(virtual,a[0],a[1],step=1,cfg=cfg,training_state=state,payload_writer=writer)
+            del state
+            buffer_hash=hashlib.sha256(buffer.getbuffer()).hexdigest()
+            expected_trace=[update(a,i) for i in (1,2)]
+            expected=cpu(dict(model=a[0].state_dict(),optimizer=a[1].state_dict(),ema=a[3].state_dict()))
+            expected_cpu=torch.get_rng_state();expected_mps=torch.mps.get_rng_state()
+            expected_loader={k:g.get_state() for k,g in a[4].generators.items()}
+            del a;gc.collect();torch.mps.empty_cache()
+            b=components(cfg);buffer.seek(0);saved=read_checkpoint(buffer,map_location='cpu')
+            original_model=cpu(b[0].state_dict());rng_cpu=torch.get_rng_state();rng_mps=torch.mps.get_rng_state()
+            for case in ('missing','empty','dtype','short','long','cpu_device','other_mps','torch_version'):
+                bad=dict(saved);bad['training_state']=dict(saved['training_state'])
+                if case in ('cpu_device','other_mps','torch_version'):
+                    contract=dict(saved['training_state']['contract']);bad['training_state']['contract']=contract
+                    if case=='torch_version':contract['torch_version']='unmatched-version'
+                    else:contract['device']='cpu' if case=='cpu_device' else 'mps:1'
+                elif case=='missing':del bad['training_state']['mps_rng']
+                else:
+                    valid=saved['training_state']['mps_rng']
+                    bad['training_state']['mps_rng']={'empty':torch.empty(0,dtype=torch.uint8),
+                        'dtype':valid.float(),'short':valid[:-1],'long':torch.cat([valid,valid[:1]])}[case]
+                message='device or PyTorch' if case in ('cpu_device','other_mps','torch_version') else 'MPS RNG'
+                with pytest.raises(ValueError,match=message):load_model_weights(b[0],bad,for_resume=True)
+                compare(b[0].state_dict(),original_model,0.,0.)
+                assert torch.equal(rng_cpu,torch.get_rng_state()) and torch.equal(rng_mps,torch.mps.get_rng_state())
+            del bad,original_model
+            from research.block_norm_v1.runtime.utils.block_norm_resume import validate_resume
+            alias=dict(saved);alias['training_state']=dict(saved['training_state'])
+            alias['training_state']['contract']=dict(saved['training_state']['contract'],device='mps:0')
+            validate_resume(b[0],alias);del alias
+            load_model_weights(b[0],saved,for_resume=True);b[1].load_state_dict(saved['optimizer_state'])
+            restore_training_state(saved['training_state'],b[4],'mps')
+            b[3].load_state_dict(saved['training_state']['weight_averaging_state'],1)
+            del saved
+            actual_trace=[update(b,i) for i in (1,2)]
+>           errors={name:compare(actual,expected[name]) for name,actual in
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                [('model',b[0].state_dict()),('optimizer',b[1].state_dict()),('ema',b[3].state_dict())]}
+
+research/block_norm_v1/test_mps_resume.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+research/block_norm_v1/test_mps_resume.py:41: in compare
+    return max((compare(actual[k],v,atol,rtol) for k,v in expected.items()),default=0.)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+research/block_norm_v1/test_mps_resume.py:41: in <genexpr>
+    return max((compare(actual[k],v,atol,rtol) for k,v in expected.items()),default=0.)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[ 0.0209, -0.0326, -0.0051,  ..., -0.0256,  0.0143, -0.0003],
+        [ 0.0192,  0.0338,  0.0362,  ..., -0.025....0111,  0.0164, -0.0122],
+        [ 0.0098, -0.0269,  0.0311,  ..., -0.0038, -0.0180,  0.0356]],
+       device='mps:0')
+expected = tensor([[ 0.0209, -0.0326, -0.0051,  ..., -0.0256,  0.0143, -0.0003],
+        [ 0.0192,  0.0338,  0.0362,  ..., -0.025...0082,  0.0289,  ...,  0.0111,  0.0164, -0.0122],
+        [ 0.0098, -0.0269,  0.0311,  ..., -0.0038, -0.0180,  0.0356]])
+atol = 2e-06, rtol = 0.0002
+
+    def compare(actual,expected,atol=2e-6,rtol=2e-4):
+        if isinstance(expected,torch.Tensor):
+            a=actual.detach().cpu()
+            assert a.dtype==expected.dtype and a.shape==expected.shape
+            if expected.is_floating_point():
+                assert torch.isfinite(a).all()
+>               torch.testing.assert_close(a,expected,atol=atol,rtol=rtol)
+E               AssertionError: Tensor-likes are not close!
+E               
+E               Mismatched elements: 1 / 172032 (0.0%)
+E               Greatest absolute difference: 3.050663508474827e-06 at index (140, 50) (up to 2e-06 allowed)
+E               Greatest relative difference: 0.0020408458076417446 at index (140, 50) (up to 0.0002 allowed)
+
+research/block_norm_v1/test_mps_resume.py:35: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345
+  /Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; hydra
+    self._mark_plugins_for_rewrite(hook, disable_autoload)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED research/block_norm_v1/test_mps_resume.py::test_mps_populated_resume_with_rng_rejections[rms_incumbent]
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 1 warning in 3.30s

@@ -18,7 +18,10 @@ def validate_resume(model, checkpoint):
     require(type(contract) is dict and _same_typed(contract.get('model'),OmegaConf.to_container(cfg.model,resolve=True)),
             'Resume model contract differs')
     device=next(model.parameters()).device
-    require(contract.get('device')==str(device) and contract.get('torch_version')==str(torch.__version__),
+    device_matches = (contract.get('device') in ('mps', 'mps:0')
+                      if device.type=='mps' and device.index in (None, 0)
+                      else contract.get('device')==str(device))
+    require(device_matches and contract.get('torch_version')==str(torch.__version__),
             'Resume device or PyTorch differs')
     seconds=state.get('training_seconds')
     require(type(seconds) in (int,float) and math.isfinite(seconds) and seconds>=0
@@ -36,8 +39,9 @@ def validate_resume(model, checkpoint):
     for value in loaders.values():rng(value)
     if device.type=='mps':
         value=state.get('mps_rng')
-        require(type(value) is torch.Tensor and value.dtype==torch.uint8 and value.ndim==1 and value.numel()>0,
-                'Resume MPS RNG missing')
+        require(type(value) is torch.Tensor and value.dtype==torch.uint8 and value.ndim==1
+                and value.numel()==torch.mps.get_rng_state().numel(),
+                'Resume MPS RNG missing or incompatible size')
     elif device.type!='cpu':
         raise ValueError('Block norm resume supports only reviewed CPU/MPS backends')
     from ..train.optimizers import build_optimizer, optimizer_options

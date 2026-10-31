@@ -218,3 +218,23 @@ pending-tokenizer/trainer-entry notes, not full-trainer interrupted replay or
 MPS optimizer/resume readiness. Next bounded strict MPS optimizer/resume, then
 controller/retention/statistics and exact finite-plan freeze; quality remains
 gated on complete capacity. No old attempt may be rerun or overwritten.
+
+
+## MPS resume failure: no readiness claim
+
+The strict MPS resume attempts001/002 are closed and preserved. Attempt001 exposed
+`mps` versus `mps:0` device-name rejection; the new-policy preflight now accepts
+those device0 aliases and validates MPS RNG byte-vector length. Attempt002 passed
+five RNG and three device/version rejection checks without mutation, and resumed
+RMS updates, but failed the fixed numerical replay tolerance (atol2e-6/rtol2e-4):
+one element in a172,032-element tensor differed3.050663508e-6. LayerNorm was not
+run, and later optimizer/EMA/RNG agreement assertions were not reached. No
+production or quality readiness follows; no tolerance relaxation or old retry.
+
+Both attempts preserved existing source/evidence/fixtures and used only in-memory
+checkpoint transport, no new binary files. All failure logs/source snapshots stay
+immutable, including emitted/inherited whitespace. Generic wrapper scope text
+mentions archive hashes, but failure occurred before those final properties were
+emitted; no archive hash/payload was retained. Next separately planned diagnostic
+must emit named intermediate state/RNG/gradient/update evidence before assertions,
+with a predeclared numerical control. No assumed root cause or quality launch.

@@ -1,0 +1,93 @@
+{
+  "status": "mps_resume_numerical_prerequisite_failed_diagnostic_pending",
+  "observed_at": "2026-10-31T20:47:28.869814+00:00",
+  "source_commit": "8d0c658f4a4e34ce79d1093b23542791809cf8d5",
+  "attempts": {
+    "001": {
+      "review": "research/tokenizer-evidence/block-norm-preparation-001/mps-resume-prerequisite-001-review.json",
+      "sha256": "7f9f70beb071c8aa0c7d8831082fe855cab273355f2c69ce5c1b70c95ab379e2",
+      "guard": {
+        "elapsed_seconds": 3.2294209169922397,
+        "limits": {
+          "mps_driver_limit_bytes": 6442450944,
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 10181513216,
+          "mps_current_bytes": 116032512,
+          "mps_driver_bytes": 1132150784,
+          "peak_observed_mps_driver_bytes": 1190920192,
+          "peak_rss_bytes": 2064138240
+        },
+        "pid": 70959,
+        "reason": null,
+        "status": "finished"
+      },
+      "actual_synthetic_updates": 3
+    },
+    "002": {
+      "review": "research/tokenizer-evidence/block-norm-preparation-001/mps-resume-prerequisite-002-review.json",
+      "sha256": "9cff2de0bd00ad0c398bbe8ab685e7377af6e66ba15f58e5c544b70d19cd80ec",
+      "guard": {
+        "elapsed_seconds": 4.324572625017026,
+        "limits": {
+          "mps_driver_limit_bytes": 6442450944,
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 10180530176,
+          "mps_current_bytes": 568628224,
+          "mps_driver_bytes": 1182482432,
+          "peak_observed_mps_driver_bytes": 1242398720,
+          "peak_rss_bytes": 2183725056
+        },
+        "pid": 71036,
+        "reason": null,
+        "status": "finished"
+      },
+      "actual_synthetic_updates": 5
+    }
+  },
+  "closed_attempts": [
+    "mps-resume-prerequisite-001",
+    "mps-resume-prerequisite-002"
+  ],
+  "plan_sha256": "1c5031056f7c76e35812427596961774478f1c1e8c1eaa52f234732eb4250073",
+  "runtime_changes": {
+    "research/block_norm_v1/runtime/utils/block_norm_resume.py": {
+      "before": "b9375f2f12cebafd40d7d55fc44d592acb13ac991faa86c917f37ce9b52345fb",
+      "after": "9cd6ff50a79173f873a43f90f969e6cb0b9e52f121e6f1a8319326b40f44c178"
+    }
+  },
+  "rms_rejection_cases_passed_before_mutation": 8,
+  "device_aliases_accepted": [
+    "mps",
+    "mps:0"
+  ],
+  "first_failing_tensor_elements": 172032,
+  "first_failing_tensor_mismatch_count": 1,
+  "reported_absolute_error": 3.050663508474827e-06,
+  "reported_relative_error": 0.0020408458076417446,
+  "unchanged_tolerances": {
+    "atol": 2e-06,
+    "rtol": 0.0002
+  },
+  "root_cause": "not_established",
+  "layer_arm_executed": false,
+  "optimizer_ema_and_final_rng_comparisons_reached": false,
+  "archive_hashes_emitted": false,
+  "persisted_binary_artifacts": 0,
+  "actual_synthetic_optimizer_updates": 8,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "prior_snapshots": {
+    "research/tokenizer-evidence/block-norm-preparation-001/trainer-binding-design-original.md": "1c28778415d8fb866bea02a8b6efa245a476fadf8ab71206eaaa680f88d14c66",
+    "research/tokenizer-evidence/block-norm-preparation-001/trainer-binding-integration-original.md": "c97a509000089b6ff7bf2ac48049a06f341056643f0dd5b2e9bc291b6103b1d0"
+  },
+  "integration_contract_sha256": "be4d5230934eada30ee70e492c52347afebebefcc4cc38e1e2ac13b8778b5bf5",
+  "current_design_sha256": "8fa17187a5415d214a91180b0717f9fa052dec47106f3521a2e384b3c795aaf7"
+}
