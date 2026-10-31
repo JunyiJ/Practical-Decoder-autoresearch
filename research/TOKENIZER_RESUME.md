@@ -10,7 +10,9 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 **Latest: activation001 inference failed on a control-file census race. No worker
 is active. Do not retry any activation001 entry or patch frozen source. Read the
-latest state index and failure review below; older launch notes are historical.**
+latest state index and failure review below; older launch notes are historical.
+The external metadata recovery prerequisite passed17tests; binder/controller,
+acceptance/final reporting and a new-root freeze still precede any inference.**
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
@@ -366,3 +368,8 @@ explicit applicability for any external adapter. Freeze a new dedicated root
 and exact unchanged timing/quality/resource contract before measurements.
 This is planned recovery work, not an approved result or completed fix.
 [Failure review](tokenizer-evidence/activation-preparation-001/campaign001-inference-failure-review.json).
+
+
+Recovery preparation: [design and remaining prerequisites](activation_inference_recovery_v1/README.md).
+The state index first_action/next_after_starter now match current next_action;
+obsolete pilot-dispatch text is removed from these machine-readable entry fields.

@@ -6822,3 +6822,27 @@ explicit applicability for any external adapter. Freeze a new dedicated root
 and exact unchanged timing/quality/resource contract before measurements.
 This is planned recovery work, not an approved result or completed fix.
 [Failure review](tokenizer-evidence/activation-preparation-001/campaign001-inference-failure-review.json).
+
+
+### October31 activation inference recovery: metadata prerequisite passed
+
+The original control temporary-file/stat race is reproduced deterministically on
+disposable metadata. A separate reader outside frozen source serializes census
+under the existing metadata lock, revalidates inventory and enforces a two-second
+elapsed allowance without ignoring missing files or temporary bytes. Seventeen
+tests passed, including actual atomic publication, two waiting readers and a
+bounded parent/child process. File/group caps, alias rejection, old-plus-temporary
+write accounting and deadlines remain tested. Guard finished in0.583s with
+233,783,296-byte peakRSS; no model or corpus loaded. Original source fingerprint,
+campaign inventory and all422 non-checkpoint hashes remain unchanged.
+
+Lock audit correction: the original process supervisor already locks its scans;
+the uncovered call is the worker inference-budget census. Do not nest a new
+lock around already-serialized supervisor/writer calls. See the
+[recovery design](activation_inference_recovery_v1/README.md) and
+[guarded review](tokenizer-evidence/activation-preparation-001/inference-recovery-census-prerequisite-001-review.json).
+This is a preparation result, not an accepted timing measurement. The external
+binder, new-root controller, independent acceptance/final report and exact source
+freeze remain prerequisites. Activation001 is never retried; its failed evidence
+and protected checkpoints stay intact. SiLU remains the incumbent; no new
+scientific quality conclusion or formal terminal receipt is claimed here.

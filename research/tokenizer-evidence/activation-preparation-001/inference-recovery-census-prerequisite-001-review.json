@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "pytest_exit_code": 0,
+  "tests": [
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_reproduces_original_enumeration_stat_race",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_uncooperative_disappearance_is_not_ignored_or_retried",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_two_readers_wait_for_actual_atomic_control_writer",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_actual_parent_runner_and_child_census_with_control_updates",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_distinct_temporary_bytes_and_exact_publication_alias",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_original_rejections_preserved[symlink]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_original_rejections_preserved[external_hardlink]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_original_rejections_preserved[wrong_alias]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_original_rejections_preserved[unknown]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_original_rejections_preserved[fifo]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_original_rejections_preserved[checkpoint]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_group_cap_and_file_cap_preserved",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_writer_still_reserves_old_plus_temporary_bytes",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_lock_timeout_does_not_scan_or_mutate",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_revalidation_rejects_change_without_retry",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_census_elapsed_bound_includes_scans",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_census.py::test_invalid_writer_rejected",
+      "when": "call",
+      "outcome": "passed"
+    }
+  ],
+  "observed_at": "2026-10-31T19:02:37.093642+00:00",
+  "original_source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
+  "original_metadata_files_verified": 422,
+  "original_inventory_unchanged": true,
+  "code_sha256": {
+    "research/activation_inference_recovery_v1/census.py": "c3dceae2c876fb0b908ada30b5cd260a471db1946a95fb110da1fd8e43b9981a",
+    "research/activation_inference_recovery_v1/run_census_prerequisite.py": "290a0874d18671c96b6cc99e5cd24911b4a6582d6c9dcea863b70c6622a1a77f",
+    "research/activation_inference_recovery_v1/test_census.py": "3a9b6708d3b657da9cacfedf842bdb3f85c2136d62deaedccd1a40b12c7f3316"
+  },
+  "guard_sha256": "fa44054737b507537714694f9b6b74e46b74c3e8851039d8907a5527719b761d",
+  "log_sha256": "2a1f090a3afeeefe0448f57eac9150298de4ae775f1060ecc3c0a23851bab2f6",
+  "scope": "Disposable metadata only; one bounded metadata subprocess; actual flock, atomic writer and original process supervisor. No models, corpus, checkpoints or inference measurements.",
+  "lock_audit": "Original process_v2 observe, preflight and failure snapshots already hold writer._serialized(). Worker activation_inference.budget lacks it. Writer publication, append and capacity snapshots already hold the same metadata lock. Shared inherited global/campaign descriptors alone do not provide parent-child exclusion.",
+  "limitations": "Prerequisite only. New inference adapter, exact original-evidence binding, independent acceptance/final reporting, dedicated-root source contract and freeze remain required. No new campaign or scientific measurement authorized by this report.",
+  "original_failed_entry_retried": false,
+  "training_launched": false,
+  "inference_launched": false,
+  "holdout_scored": false
+}
