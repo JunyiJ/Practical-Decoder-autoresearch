@@ -37,12 +37,13 @@ PREREQUISITES = dict(
     model='passed', state='activation_serialized_state_checks_passed_transport_integration_pending',
     rules='passed', session='session_core_and_synthetic_filesystem_transport_passed',
     worker='worker_body_and_independent_acceptance_prerequisites_passed',
-    dispatch='passed', retention='passed', inference='passed', capacity='passed')
+    dispatch='passed', retention='passed', inference='passed', final='passed', capacity='passed')
 
 
 def design():
     from .tokenizer_activation_timing import CONTRACT
-    return dict(inference=CONTRACT,pilots=pilot_specs(), screen=screen_specs(), confirmations=[
+    from .tokenizer_activation_final import CONTRACT as FINAL
+    return dict(final=FINAL,inference=CONTRACT,pilots=pilot_specs(), screen=screen_specs(), confirmations=[
         confirmation_specs(dict(zip(FAMILIES, (a,b)))) for a in RATES for b in RATES])
 
 

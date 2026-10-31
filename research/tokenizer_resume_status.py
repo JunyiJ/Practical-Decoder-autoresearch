@@ -29,6 +29,12 @@ def main():
     result = dict(observed_at=datetime.now(timezone.utc).isoformat(),
         saved_observation_at=index['observed_at'], branch=index['branch'],
         current_research_phase=index.get('current_research_phase'),
+        active_campaign_root=index.get('active_campaign_root'),
+        activation_freeze_review=(read(ROOT / index['activation_freeze_review'])
+            if index.get('activation_freeze_review') else None),
+        active_campaign_controls=({p.name:read(p) for p in sorted(
+            (ROOT / index['active_campaign_root'] / 'control').glob('*.json'))}
+            if index.get('active_campaign_root') else None),
         activation_inference_review=(read(ROOT / index['activation_inference_review'])
             if index.get('activation_inference_review') else None),
         activation_dispatch_retention_review=(read(ROOT / index['activation_dispatch_retention_review'])

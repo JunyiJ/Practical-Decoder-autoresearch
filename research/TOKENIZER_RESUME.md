@@ -51,24 +51,28 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
 2. Continue [activation preparation](TOKENIZER_MLA_ACTIVATION_PREPARATION.md).
    The MoE panel is deferred after a 3.27 GB conservative capacity gap; its
    original draft remains historical. No protected evidence was removed.
-3. Activation inference protocol and serial worker/parent acceptance now pass
-   65 tests, including dispatch/retention regressions. Three fresh SiLU/GELU pairs
-   use fixed training tokens, batches1/8, two warmups and eight alternating
-   measured repeats. Cache correctness precedes all timing. Cost remains
-   descriptive; the strict paired quality adoption criterion is unchanged.
-   Integration tests use explicit approved-quality/process/loading/GPU doubles;
-   no actual MPS benchmark or training occurred.
-4. Next implement the final independent campaign quality/cost decision wrapper,
-   then reconcile exact implemented-model/optimizer/artifact high-water, cached
-   tokenizer/input identities and source/runtime/prerequisite applicability.
-   The full panel requires15,169,995,168 free bytes including8GiB reserve;
-   latest margin382,492,256bytes. Freeze the executable plan before two guarded
-   pilots; require accepted pilots and audited boundaries before six screens and
-   six fresh runs. See the [inference review](tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json).
+3. Activation campaign001 is frozen and independently verified. All preparation
+   gates are complete, including34 final-decision/freeze-entry tests. Exact meta
+   model/optimizer accounting confirms15,169,995,168bytes required, including
+   every future retained pair and8GiB reserve. No model training has started yet.
+4. After committing/pushing the freeze, inspect actual workers and execute only
+   the next guarded pilot step. The immutable plan fixes two20-update pilots,
+   six1200-update LR screens and six fresh runs. Accept both pilots and audit
+   pilot cleanup before screens; save selection and audit losing-screen cleanup
+   before fresh runs. Do not edit frozen source or retry any existing attempt.
+   [Freeze review](tokenizer-evidence/activation-preparation-001/campaign001-freeze-review.json),
+   [frozen plan](tokenizer-evidence/activation-preparation-001/campaign001-frozen-plan.json).
+   Original publication succeeded; its external report writer failed on a string/
+   Path mismatch. The procedure/diagnostic is preserved, and independent read-only
+   verification passed without republishing or launching anything.
 5. Commit/push substantive findings and this guide/index without force. Keep only
    this chat's continuation heartbeat active; the old heartbeat stays paused.
 
-Campaign root: `research_runs/tokenizer-wide-hybrid-005`.
+Active campaign root: `research_runs/tokenizer-activation-001`.
+Plan SHA256: `508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4`.
+Source SHA256: `7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487`.
+
+Closed historical campaign root: `research_runs/tokenizer-wide-hybrid-005`.
 [Launch receipt](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-launch-v2.json),
 [freeze review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-freeze-v2-review.json),
 [frozen plan](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-frozen/meta/plan.json).
@@ -80,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation inference prerequisites passed; final decision wrapper and executable freeze pending; see the indexed
+Current continuation: activation001 frozen; first guarded pilot pending; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -205,3 +209,25 @@ journal/preservation executor, finish finite inference binding and storage revie
 then freeze before two MPS pilots. Do not treat callbacks or synthetic audit
 verdicts as launch authority. All protected weights, guards and closed campaigns
 remain unchanged; use the latest ignored next_action for exact continuation.
+
+
+## Activation001 executable commands
+
+Run from the repository with `.venv/bin/python`, `PYTHONPATH=.`,
+`TIKTOKEN_CACHE_DIR=/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/tiktoken-cache`,
+`OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4` and no MPS fallback.
+Use the full root and plan hash above. Each invocation holds the shared/campaign
+locks; inspect actual processes first. Training entry `step` performs only one
+trial or approved selection/retention transition. Later inference entry `step`
+performs one accepted seed pair or the final inference summary. The final module
+publishes one guarded terminal decision. None automatically retries a failure.
+
+```sh
+.venv/bin/python -m src.research.tokenizer_activation_entry step --root /Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001 --plan-sha256 508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4
+```
+
+Only after all12 quality runs and both audited boundaries, use module
+`src.research.tokenizer_activation_inference_entry step` with the same root/hash.
+After its three accepted pairs and summary, use module
+`src.research.tokenizer_activation_final` with `--root` and `--plan-sha256`.
+Preserve source and every selected/fresh/failure pair and archive throughout.

@@ -1,7 +1,7 @@
 # Tokenizer gate-activation preparation
 
-Status, October 31, 2026: implementation prerequisites in progress; no training
-launched and no finite launch plan frozen. Campaign005 remains closed, with the
+Status, October 31, 2026: activation campaign001 frozen after complete prerequisite
+review; first guarded pilot pending. No training has launched yet. Campaign005 remains closed, with the
 hybrid not adopted. Existing selected models, every fresh pair and failures remain
 protected. The earlier MoE draft is retained as a historical proposal. The October 28
 GQA activation draft in TOKENIZER_ACTIVATION_PREPARATION.md also remains unchanged;
@@ -375,3 +375,47 @@ exact implemented-shape/optimizer/artifact accounting and current capacity, cach
 tokenizer/input and source/runtime/prerequisite applicability review. Latest free
 space15,552,487,424bytes leaves382,492,256bytes beyond the full projection. This is
 not a final launch audit. No activation plan has been frozen and no pilot launched.
+
+
+## Final decision and executable freeze completed October31
+
+The independent final wrapper rebinds all accepted quality, retention, dispatch,
+checkpoint and inference evidence, validates raw/H200 coverage and score arithmetic,
+and reconstructs paired H200 statistics from all six fresh endpoints. It reports
+actual training/worker elapsed costs and measured memory alongside inference
+ratios. Only the existing strict quality criterion can adopt GELU; if it passes,
+seed3611 is the prospectively fixed representative export, never the best observed
+seed. All six fresh pairs remain protected. Terminal failure/incomplete publication
+cannot retry. 34 synthetic final-decision/freeze-entry tests passed in3.17s under
+the180s/4GiB/8GiB-reserve guard (237,453,312-byte peak RSS). No scientific result
+is inferred from these tests. [Final prerequisite](tokenizer-evidence/activation-preparation-001/final-prerequisite-review.json).
+
+The prefreeze audit constructed both implemented activation models and optimizer
+groups on the meta device:28,492,416 parameters,216,929,456 optimizer bytes,
+65,536 persistent-buffer bytes and558,969,520 raw/H200 payload bytes per pair.
+The unchanged allowance is788,953,140bytes per trajectory, including extra overlap,
+headers and15percent allowance. All nine selected-LR branches peak at eight retained
+pairs; with256MiB metadata and8GiB reserve the full requirement is15,169,995,168bytes.
+Inference remains within existing metadata buckets and writes no weight files.
+Actual CPU tokenizer/input identities and cached vocabulary hashes were verified;
+no forward pass, optimizer update, checkpoint access or holdout score occurred.
+Runtime and model/training/optimizer/cache/transport primitives remain unchanged.
+[Capacity/applicability audit](tokenizer-evidence/activation-preparation-001/capacity-applicability-v1.json).
+
+Campaign001 now has a complete executable plan, exact source/runtime/input and all
+prerequisite references. Plan SHA256
+`508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4`;
+source SHA256
+`7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487`.
+Two20-update pilots precede six1200-update screens and six fresh runs; each stage
+requires actual acceptance and audited retention barriers. The initial freezer
+completed and validated publication but failed afterward while constructing its
+external review: `file_digest(__file__)` supplied a string instead of Path. The
+original procedure and failure diagnostic are preserved. An independent read-only
+review verified the same actual/copy plan, empty campaign census, prerequisites,
+source/runtime and current capacity without republishing or running training.
+[Freeze review](tokenizer-evidence/activation-preparation-001/campaign001-freeze-review.json).
+
+The next action is committing/pushing this frozen implementation and evidence,
+then exactly the first guarded MPS pilot. No source edits or existing-attempt
+retries. Model memory/time/cache readiness remains subject to actual pilot guards.

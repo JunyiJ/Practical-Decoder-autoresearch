@@ -1,0 +1,16 @@
+{
+  "status": "freeze_completed_report_publication_failed",
+  "observed_at": "2026-10-31T16:48:24.354531+00:00",
+  "procedure_sha256": "b28cd79d2422eeb8ef093a04c2d97e151368dabb162eb8a061b1a4ef68705527",
+  "guard_sha256": "b260c06f4b4dbe6ebebf440e67cac06651511c4cbc1ec9bc9ffb684959fe5a3f",
+  "plan_sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+  "saved_plan_sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+  "error": "AttributeError: 'str' object has no attribute 'open' at procedure_sha256=file_digest(__file__)",
+  "failure_phase": "After successful guarded plan publication, executable bind, capacity recheck and copied-plan hash verification; while constructing external review receipt.",
+  "original_procedure_preserved": true,
+  "plan_publication_will_not_be_repeated": true,
+  "next_action": "Independent read-only verification of the already published plan, source/runtime/prerequisites/capacity and idle empty campaign before recording a new review.",
+  "training_launched": false,
+  "checkpoint_created": false,
+  "closed_fixture_retried": false
+}

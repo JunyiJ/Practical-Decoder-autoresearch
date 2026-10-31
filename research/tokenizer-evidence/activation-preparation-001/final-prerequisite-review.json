@@ -1,0 +1,85 @@
+{
+  "kind": "activation_final_prerequisite_review_v1",
+  "status": "passed",
+  "observed_at": "2026-10-31T16:45:52.909829+00:00",
+  "source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
+  "prior_inference_source_sha256": "be7e7830624a4d41a4cdf69824495c74d0752e7fe675194fcffcef5f452e4106",
+  "runtime": {
+    "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "executable": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+    "packages": {
+      "torch": "2.14.1",
+      "numpy": "2.5.4",
+      "tiktoken": "0.14.0",
+      "omegaconf": "2.3.1"
+    }
+  },
+  "changed_source": {
+    "src/research/tokenizer_activation_entry.py": {
+      "previous": "d1154696b7da8fdf8b55bcad8da3b2d192e4485b506076659993f90e714e5769",
+      "current": "ba8ca9345294ab54a62b8db8fc6c797a40a63457d9a7a6c7de2e9daed2e72244"
+    },
+    "src/research/tokenizer_activation_final.py": {
+      "previous": null,
+      "current": "27a1a2ee1bc1c848379d5b76f1bf1fc27cad12c6c55759ab970e634a0de15eca"
+    }
+  },
+  "contract": {
+    "kind": "activation_final_decision_v1",
+    "contrast": "gelu_exact_minus_silu",
+    "mean_improvement_strictly_greater_than": 0.02,
+    "every_seed_strictly_better": true,
+    "all_conditional_upper_bounds_strictly_negative": true,
+    "blocks": [
+      2048,
+      4096,
+      8192
+    ],
+    "draws": 2000,
+    "bootstrap_seed": 20261031,
+    "gate_quantile": 0.9833333333333333,
+    "quantile_method": "linear",
+    "cost_adoption_route": false,
+    "representative_export_seed": 3611,
+    "holdout_scored": false
+  },
+  "tests": {
+    "passed": 34,
+    "review": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/final-tests-v1-review.json",
+      "sha256": "8d20b662e0a9e8e4bac782f096906a620b7ebb2d3f09752090e01d4264d59394"
+    },
+    "guard": {
+      "elapsed_seconds": 3.271080250007799,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 15564103680,
+        "peak_rss_bytes": 237453312
+      },
+      "pid": 56568,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "scope": [
+    "Independent full-coverage raw/H200 score arithmetic, actual training/worker cost and resource checks for all6 ordered fresh endpoints",
+    "Frozen paired2048/4096/8192 block statistics and strict quality gate; inference cost never changes selection/adoption",
+    "All accepted quality/retention/dispatch/fresh checkpoint and3-seed inference evidence replayed before/after final calculations; changed endpoint bytes rejected",
+    "Bounded terminal attempt/decision/completion with final guard; failure or incomplete attempt cannot retry",
+    "If strict quality passes, representative H200 artifact is prospectively seed3611; every fresh pair retained"
+  ],
+  "test_limitations": "Synthetic scores and approved-quality/process/GPU doubles; actual arithmetic, bounded metadata/guard and terminal publication tested. No scientific result or actual campaign decision.",
+  "plan_frozen": false,
+  "research_training_launched": false,
+  "holdout_scored": false,
+  "existing_model_sources_changed": false,
+  "pending": [
+    "Exact implemented shape/optimizer/artifact/metadata and current capacity audit",
+    "Cached tokenizer/input and complete source/runtime/prerequisite applicability review",
+    "Executable freeze before pilots"
+  ]
+}

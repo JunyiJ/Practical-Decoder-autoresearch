@@ -6705,3 +6705,19 @@ batches1/8, correctness before two warmups/eight alternating measurements,
 cache/allocator observations separately from the unchanged strict quality rule.
 Final campaign decision wrapper and exact capacity/source/runtime/input freeze
 remain pending before pilots. [Evidence](tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json).
+
+
+### October31 activation001 frozen before pilots
+
+Final independent decision logic passed34 tests. Exact implemented meta-device
+accounting confirms28,492,416 parameters and788,953,140-byte trajectory allowance
+per arm; all nine LR branches require15,169,995,168 free bytes including eight
+retained pairs,256MiB metadata and8GiB reserve. Cached tokenizer/input hashes and
+source/runtime/prerequisite applicability passed. No model forward/update,
+checkpoint access, holdout score or scientific result in this audit.
+
+The finite two-pilot/six-screen/six-fresh plan is frozen. Initial publication and
+executable binding succeeded, followed by an external review-writer Path/string
+error. Both failure and original procedure are preserved; independent read-only
+verification passed on the unchanged plan and empty campaign. First guarded pilot
+is next after commit/push. [Freeze review](tokenizer-evidence/activation-preparation-001/campaign001-freeze-review.json).
