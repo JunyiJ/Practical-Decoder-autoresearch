@@ -1135,3 +1135,25 @@ Quality001 slot03 accepted (2026-10-31T23:11:15.403533+00:00): rms_incumbent, se
 Quality001 slot04 accepted (2026-10-31T23:16:46.542625+00:00): rms_incumbent, seed374002, LR0.0025, 1,200 updates/1,228,800 targets, H200 full-validation CE4.772951029132. Independent parent tensor/optimizer/EMA/validation/cache audits passed and the child exited cleanly. This is one endpoint; no adoption or partial-screen selection. Evidence: quality001-slot04-result.json and accepted-04.json.
 
 Quality001 slot05 accepted (2026-10-31T23:22:21.601112+00:00): layer_matched_epsilon, seed374002, LR0.0025, 1,200 updates/1,228,800 targets, H200 full-validation CE4.784594486091. Independent parent tensor/optimizer/EMA/validation/cache audits passed and the child exited cleanly. This is one endpoint; no adoption or partial-screen selection. Evidence: quality001-slot05-result.json and accepted-05.json.
+
+## Six-screen selection and audited retention complete
+
+All six1,200-update endpoints passed independent parent acceptance. Full-validation
+H200 CE for RMS/LayerNorm was4.883680/4.880529 at LR0.000625,
+4.694151/4.690080 at0.00125, and4.772951/4.784594 at0.0025. The frozen per-arm
+minimum rule selects0.00125 for both. LayerNorm's small selected-rate screening
+improvement (-0.004070nat/token) is not a fresh confirmation or adoption result.
+
+The boundary independently re-audited all six checkpoint pairs, saved selection,
+then removed exactly eight manifested losing-screen files (slots0,1,4,5), totaling
+2,236,771,928 logical bytes. The two selected pairs, all non-weight evidence and
+both original pilot directories verified unchanged; the failed RMS pair remains
+protected. Exact manifest, intent/deletion journal, guard and receipt are retained.
+The deleted weights cannot be reloaded; all prior audit evidence remains.
+
+Post-cleanup source/receipt/retained-file verification passed; approximately16.77GB
+is free and the remaining requirement is14.05GB. Next run the six frozen fresh
+endpoints at LR0.00125, seeds374011/374012/374013, with every raw/H200 pair protected.
+All three descriptive inference pairs and final quality review remain required.
+Evidence: quality001-selection.json, quality001-screen-retention/, and
+quality001-boundary-result/next/guard.json. No test scoring or adoption occurred.

@@ -110,3 +110,25 @@ Selected models, fresh confirmation pairs, failed weights, corpus and existing
 archives are excluded from compression and must retain their physical identities.
 Report allocated-block savings separately from unchanged logical file sizes and
 observed free space. A failed staging verification leaves its original untouched.
+
+## Six-screen selection and audited retention complete
+
+All six1,200-update endpoints passed independent parent acceptance. Full-validation
+H200 CE for RMS/LayerNorm was4.883680/4.880529 at LR0.000625,
+4.694151/4.690080 at0.00125, and4.772951/4.784594 at0.0025. The frozen per-arm
+minimum rule selects0.00125 for both. LayerNorm's small selected-rate screening
+improvement (-0.004070nat/token) is not a fresh confirmation or adoption result.
+
+The boundary independently re-audited all six checkpoint pairs, saved selection,
+then removed exactly eight manifested losing-screen files (slots0,1,4,5), totaling
+2,236,771,928 logical bytes. The two selected pairs, all non-weight evidence and
+both original pilot directories verified unchanged; the failed RMS pair remains
+protected. Exact manifest, intent/deletion journal, guard and receipt are retained.
+The deleted weights cannot be reloaded; all prior audit evidence remains.
+
+Post-cleanup source/receipt/retained-file verification passed; approximately16.77GB
+is free and the remaining requirement is14.05GB. Next run the six frozen fresh
+endpoints at LR0.00125, seeds374011/374012/374013, with every raw/H200 pair protected.
+All three descriptive inference pairs and final quality review remain required.
+Evidence: quality001-selection.json, quality001-screen-retention/, and
+quality001-boundary-result/next/guard.json. No test scoring or adoption occurred.
