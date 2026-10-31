@@ -8,13 +8,18 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at04:06 Los Angeles: fresh slots15–19 accepted and
-independently reviewed. Seed3511 H200 CE: gated MLA4.845517761609039,
-KDA4.9743094953134435, hybrid4.999353112775229. Seed3512 KDA H200
-CE4.967920234487431 versus hybrid4.979351837490887; gated MLA pending.
-All fresh pairs protected. No adoption; remaining seeds/inference required.
-Slot19 replay passed113.63s; remaining storage fits with8GiB reserve.
-Slot20 (gated MLA, seed3512) controller20347 is starting; session27655.
+Observed October31,2026 at04:32 Los Angeles: fresh slots15–20 accepted and
+independently reviewed, completing two fresh seeds. H200 CE:
+
+| Seed | Gated MLA | KDA | Hybrid |
+| --- | --- | --- | --- |
+|3511|4.845517761609039|4.9743094953134435|4.999353112775229|
+|3512|4.84407892743844|4.967920234487431|4.979351837490887|
+
+Gated MLA leads both observed seeds; no adoption until seed3513 and all frozen
+statistical/inference gates finish. Every fresh raw/H200 pair stays protected.
+Slot20 replay passed137.14s; remaining storage fits with8GiB reserve.
+Slot21 (gated MLA, seed3513) controller23736 is starting; session83274.
 Guarded startup may precede child creation. Never duplicate the launcher.
 Selected screens remain slots14/5/12; rank cleanup is complete and verified.
 See [rank summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-summary-v2.json).
@@ -35,7 +40,7 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller20347 or its current descendant is running, observe it.
+2. If controller23736 or its current descendant is running, observe it.
    Never duplicate the fresh dispatch or rerun completed rank boundaries.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
@@ -43,14 +48,15 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. After slot20 parent acceptance and actual worker exit, prepare a guarded
-   independent review using `tokenizer_wide_hybrid_slot20_history_v2.verify_confirmation_dispatch`
-   explicitly for slot20 (completed21). Bind full history, protected pairs and
-   remaining storage; require a finished guard. Do not reuse the slot19-only verifier.
-   Adapt `continue_campaign005_fresh20_v2.py` only to slot21/prefix21 with the
+4. After slot21 parent acceptance and actual worker exit, prepare a guarded
+   independent review using `tokenizer_wide_hybrid_final_confirmation_history_v2.verify_confirmation_dispatch`
+   explicitly for slot21 (completed22). Bind full history, protected pairs and
+   remaining storage; require a finished guard. Do not reuse the slot20-only verifier.
+   Adapt `continue_campaign005_fresh21_v2.py` only to slot22/prefix22 with the
    same remaining-startup/readiness/dispatch APIs, inspecting signatures and scope.
-   Slot21/22 idle reviews use `final_confirmation_history_v2`; inspect exact scope.
-   Preserve every fresh pair; no cleanup, closed campaign or numerical retry.
+   Final history supports21..23; completed23 cannot append another quality slot.
+   Inference requires completed23 and its own prerequisites. Preserve every fresh
+   pair; no cleanup, closed campaign or numerical retry.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
    invent replacement seeds, clear STOP or extend a closed grid.

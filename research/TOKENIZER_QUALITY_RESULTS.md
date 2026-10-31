@@ -4211,3 +4211,30 @@ controller20347, session27655, guarded startup. No slot20 success claim.
 Its idle review must use slot20_history_v2 before slot21; later scopes differ.
 Evidence: campaign005-fresh-19-v2-terminal.json, fresh-prefix-20 review/guard,
 campaign005-fresh20-wrapper-review-v2.json and slot20 launch.
+
+
+### Campaign005 second fresh seed complete; gated MLA leads both observed seeds
+
+Slot20 gated MLA D/4, LR0.00125, seed3512 completed725.50s; parent accepted1291.34s.
+H200 CE4.84407892743844, raw4.836186593180043. Seed3512 H200 comparisons:
+gated MLA4.84407892743844, KDA4.967920234487431, hybrid4.979351837490887.
+Together with seed3511, gated MLA has the lowest H200 CE on both observed fresh
+seeds. This is an interim descriptive result; complete seed3513 and all frozen
+statistical/inference rules before adoption. Do not switch to raw or pool004.
+
+Dedicated slot20 compact-history replay passed137.14s, binding21 completed
+records and9 retained selected/fresh pairs, immutable metadata and all three
+cleanup boundaries. Remaining capacity19,433,660,416 bytes versus19,223,734,736
+required includes the unchanged8GiB reserve. All fresh pairs and selected/failure
+evidence remain protected; no cleanup or holdout use.
+
+Exact-slot21 wrapper/reviewer AST, diffs and API scopes checked; production source
+matches frozen005 and applicable inference/census pins. No production edits or
+numerical fixture rerun. After all prior workers/reviewer exited, dispatched only
+slot21 (gated MLA D/4, LR0.00125, seed3513): controller23736, session83274,
+guarded startup. No slot21 success claim. Its idle review must use
+final_confirmation_history_v2 explicitly21; this API supports21..23 but final23
+cannot append another quality slot. Inference requires completed23.
+Evidence: campaign005-fresh-seeds3511-3512-accepted-v2.json, slot20 terminal,
+fresh-prefix-21 review/guard, campaign005-fresh21-wrapper-review-v2.json and
+slot21 launch. Resume guide/index preserve the exact continuation sequence.
