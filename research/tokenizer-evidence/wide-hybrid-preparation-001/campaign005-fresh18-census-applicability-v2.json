@@ -1,0 +1,17 @@
+{
+  "status": "all_current_census_fix_source_and_test_pins_match",
+  "reference": "research/tokenizer-evidence/wide-hybrid-preparation-001/confirmation-census-v2-review.json",
+  "reference_sha256": "e75d08a74f6f2be6c05db7a317cf41e7313f9cd4432eac0036961a2d97e2bad2",
+  "checks": {
+    "src/research/tokenizer_wide_hybrid_confirmation_startup_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_later_confirmation_startup_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_plan_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_quality_readiness_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_confirmation_census_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_confirmation_startup_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_later_confirmation_startup_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": true
+  },
+  "note": "This is the applicable remaining-startup census-fix review; the older live-census manifest covers quality entry only. No tests rerun."
+}

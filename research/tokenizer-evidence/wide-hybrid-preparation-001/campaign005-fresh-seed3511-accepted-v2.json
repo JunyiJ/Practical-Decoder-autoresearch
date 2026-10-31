@@ -1,0 +1,93 @@
+{
+  "status": "first_fresh_seed_three_families_parent_accepted_independent_slot17_review_pending",
+  "seed": 3511,
+  "cells": [
+    {
+      "slot": 15,
+      "family": "hybrid",
+      "seed": 3511,
+      "divisor": 2,
+      "lr": 0.000625,
+      "h200_ce": 4.999353112775229,
+      "raw_ce": 5.029627986077138,
+      "result_path": "research_runs/tokenizer-wide-hybrid-005/evidence/quality/15/result.json",
+      "result_sha256": "7257f3699b62b0e63f06fe9335ed4292e4d3e3d423ff59fa4c4e3055cb27e1ff",
+      "terminal_path": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-15-v2-terminal.json",
+      "terminal_sha256": "a82d43fdf1806d8fc0e9910c40a885d7d249b10657dc8b321d791072e3f6f845",
+      "dispatch_ref": {
+        "path": "meta/quality-dispatch-15.json",
+        "sha256": "d686e17df5d3d8dc1b590c95d4c4f48071734b44a21d75ea319bdfc46e01717e"
+      },
+      "checkpoints": {
+        "raw": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/15/checkpoints/final_001200_1793437899019171000.pt",
+          "sha256": "f9343b5dd0235a9aa7f892db37b54f0fe6cae5b1d7e3a5ae21f62af3c6519817"
+        },
+        "h200": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/15/checkpoints/h200.pt",
+          "sha256": "9ddf612901ec847c55bf8bd3befa9c66e4ba3479260b921a8525401367a35c31"
+        }
+      }
+    },
+    {
+      "slot": 16,
+      "family": "gated_mla",
+      "seed": 3511,
+      "divisor": 4,
+      "lr": 0.00125,
+      "h200_ce": 4.845517761609039,
+      "raw_ce": 4.834619455145382,
+      "result_path": "research_runs/tokenizer-wide-hybrid-005/evidence/quality/16/result.json",
+      "result_sha256": "f298eb069f6696a0826570ad4b297a4ca3a07c5d0907361f32992a3de631cb4c",
+      "terminal_path": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-16-v2-terminal.json",
+      "terminal_sha256": "a919cff02d04e1a24dcaabb9d6294a08a98462a3fdbee12d66ad444fbe3bfc5b",
+      "dispatch_ref": {
+        "path": "meta/quality-dispatch-16.json",
+        "sha256": "b1c9a9e411d5bff41dbb818946572c0151eca1f851ba450fd7b7286fcc520582"
+      },
+      "checkpoints": {
+        "raw": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/16/checkpoints/final_001200_1793438990007782000.pt",
+          "sha256": "a431dc65cdc82c7706d31742a9a7dc8db73c721f7287512729814f1f9dd95b05"
+        },
+        "h200": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/16/checkpoints/h200.pt",
+          "sha256": "f7aeeb413a01439c8b0e733be336e1c9b4a8fe60f655527c68dff872656f6221"
+        }
+      }
+    },
+    {
+      "slot": 17,
+      "family": "kda",
+      "seed": 3511,
+      "divisor": 2,
+      "lr": 0.000625,
+      "h200_ce": 4.9743094953134435,
+      "raw_ce": 4.998094061861975,
+      "result_path": "research_runs/tokenizer-wide-hybrid-005/evidence/quality/17/result.json",
+      "result_sha256": "2ad09f3377271c73dd4686c909eb21d488520e4b36ea8044310dd19a5a417686",
+      "terminal_path": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-17-v2-terminal.json",
+      "terminal_sha256": "1b807a0e4f389f5de6d30e5741472722f456f9592d4e606ed760e02e87d0debf",
+      "dispatch_ref": {
+        "path": "meta/quality-dispatch-17.json",
+        "sha256": "81e356420b966c6371d74567d79c6131a95e08e6817826106f37bff31436e387"
+      },
+      "checkpoints": {
+        "raw": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/17/checkpoints/final_001200_1793440774990682000.pt",
+          "sha256": "ce0f2c282f2cc354d6b29233a58f14158eb8f0c17c0ba34bb91b3c6de8edaf53"
+        },
+        "h200": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/17/checkpoints/h200.pt",
+          "sha256": "cbf94458f3c66c72355d3d98db03b4cd9147a904e66aba762f44e43a7c6955bd"
+        }
+      }
+    }
+  ],
+  "hybrid_minus_gated_mla_h200": 0.1538353511661903,
+  "hybrid_minus_kda_h200": 0.02504361746178585,
+  "kda_minus_gated_mla_h200": 0.12879173370440444,
+  "adopted": false,
+  "holdout_consumed": false,
+  "limitation": "One of three fresh seeds. Full frozen paired/statistical and inference rules remain; no early adoption, grid extension or switching to raw metric. Every fresh raw/H200 pair stays protected."
+}

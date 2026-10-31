@@ -1,0 +1,36 @@
+{
+  "status": "slot17_review_and_slot18_controller_wrappers_prepared_not_executed",
+  "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
+  "wrappers": {
+    "review_campaign005_fresh17_v2.py": "873878554d36cc516e55f27adc7880b15624dc398a74e62c10dc2fe489ee2477",
+    "continue_campaign005_fresh18_v2.py": "a14930ec0e750607a7685c1c70851abe73f6975c003efda78c2b6e5a3c474d6e"
+  },
+  "changes": [
+    "Reviewer: completed18, explicit slot17, later_confirmation_history_v2; unchanged locks, guards, hash checks and metadata preservation.",
+    "Controller: exact slot18, prefix18, remaining startup/dispatch APIs; unchanged cache pins, MPS requirement, locks, readiness and no-retry gates."
+  ],
+  "validation": [
+    "AST parse and exact wrapper diffs reviewed.",
+    "API signatures inspected: later history accepts only17; remaining startup/dispatch accept18..23. Wrapper narrows to18.",
+    "Current complete production source matches frozen005. No production edits or training tests."
+  ],
+  "historical_pin_matches": {
+    "slot18-parent-integration-source-hashes.json": {
+      "src/research/tokenizer_wide_hybrid_later_confirmation_history_v2.py": true,
+      "src/research/tokenizer_wide_hybrid_remaining_confirmation_dispatch_v2.py": false,
+      "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": false
+    },
+    "inference-dispatch-v2-source-hashes-v2.json": {
+      "src/research/tokenizer_wide_hybrid_later_confirmation_history_v2.py": true,
+      "src/research/tokenizer_wide_hybrid_remaining_confirmation_startup_v2.py": false,
+      "src/research/tokenizer_wide_hybrid_remaining_confirmation_dispatch_v2.py": true,
+      "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": true
+    },
+    "live-census-fix-v2-final-source-hashes.json": {}
+  },
+  "training_launched": false,
+  "review_executed": false,
+  "adopted": false,
+  "holdout_consumed": false,
+  "applicability": "Historical slot18-only tests precede extensions and census fixes; mismatching old pins are not claimed as current coverage. Later inference and census evidence plus frozen005 bind current source. Live slot17 independent replay and every original production gate remain required before slot18."
+}

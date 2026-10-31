@@ -6285,3 +6285,36 @@ After prior worker exit, dispatched only slot17: controller12309, session44132,
 observed phasestarting, childNone. No cleanup/holdout use or live slot17 success
 claim. Next review uses the slot17 later-history verifier before slot18's remaining
 startup/dispatch path. All selected/fresh/failure evidence and archives preserved.
+
+
+### Campaign005 first fresh seed complete; independent slot17 replay passed
+
+All three seed3511 cells received parent acceptance. H200 validation CE is
+4.845517761609039 for gated MLA D/4, 4.9743094953134435 for KDA D/2, and
+4.999353112775229 for hybrid D/2. Hybrid is worse by0.1538353511661903 versus
+gated MLA and0.02504361746178585 versus KDA on this seed. Slot17 raw CE is
+4.998094061861975; its child completed1117.89s and parent accepted1405.94s.
+These are one-seed comparisons, not adoption. Seeds3512/3513 and frozen
+statistical/inference gates remain. The H200 decision metric is unchanged.
+
+Dedicated slot17 compact-history reconstruction finished73.19s without guard
+violations, binding18 completed records and six live selected/fresh checkpoint
+pairs. Space verified23,286,218,752 bytes free versus22,968,331,216 required,
+including the unchanged8GiB reserve. Every fresh raw/H200 pair remains protected;
+no cleanup or holdout use occurred. The full review preserves metadata bytes,
+checkpoint identities and prior boundary evidence.
+
+Prepared exact-slot18 startup/dispatch and slot17-review wrappers with AST/diff
+and signature checks. Current full production source matches frozen005; current
+census-fix source/test pins match. Historical slot18-only test hashes precede
+remaining-slot extensions and are not misrepresented as current coverage.
+Later inference evidence binds current dispatch/acceptance, and the census review
+binds current startup. No production edits or closed numerical fixture rerun.
+
+After all prior workers/reviewer exited, dispatched only slot18 (KDA D/2,
+LR0.000625, fresh seed3512): controller14449, session32349. Startup may precede
+child creation. No slot18 success claim. Next independent review must use
+remaining_confirmation_history_v2 explicitly slot18 before preparing slot19.
+Evidence: campaign005-fresh-seed3511-accepted-v2.json,
+campaign005-fresh-prefix-18-v2-review/guard.json, campaign005-fresh18-wrapper-review-v2.json,
+campaign005-fresh18-census-applicability-v2.json and slot18 launch receipt.
