@@ -7596,3 +7596,47 @@ selection, statistics and inference/resource gates and freeze the finite quality
 plan. Full-panel capacity remains unresolved; do not launch a partial panel,
 trim controls/seeds/width, delete protected pairs or repeatedly poll unchanged space.
 SiLU remains retained; no normalization quality result is available.
+
+
+## October 31 v2 full-batch trainer and H200 transport passed
+
+The separately frozen `grouped-embedding-h200-plan-001.json` passed9 checks.
+Both normalization arms used the actual isolated `run_training` with GPT-2 on
+generated Unicode/special-marker text, paired512 sampling, batch8/context128,
+strict MPS, two updates and2,048 target tokens each. This closes the prior
+full-batch generated-loader gap; it is not an actual-corpus quality/resource pilot.
+The paired sampler was checked against independently drawn starts before training.
+
+Both raw/H200 pairs were serialized to exclusive capped files. H200 matched all
+saved EMA parameters exactly (88 RMS/96 LayerNorm), copied nonlearned buffers
+exactly, and preserved parent SHA, tokenizer/config and versioned model signatures.
+Export preserved CPU/MPS RNG. Raw complete resume preflight passed; H200 optimizer
+resume was rejected before model mutation. Malformed tokenizer metadata and
+re-export to an existing path were rejected. Reconstructed CPU/MPS and cached
+H200 inference at1x17 and8x17 passed inherited atol3e-4/rtol3e-4, with maximum
+CPU/MPS error7.748604e-7 and full/cached error1.072884e-6.
+
+A prospective storage projection reserved1,216,348,160bytes above8GiB, including
+two448MiB raw caps, two112MiB H200 caps, metadata and source/log allowances; no
+temporary checkpoint copies. The capped writer rejects overflow before writing.
+The completed fixture retains14 files totaling1,118,443,110bytes, including four
+binary checkpoints under `research_state/block-norm-v2-h200-fixture-001`.
+All files are SHA-bound in `grouped-embedding-h200-fixture-manifest.json`; retain
+these pairs for dependent tests. No old checkpoint was deleted or modified.
+
+Guard elapsed11.985s; peakRSS1,628,127,232bytes and sampled MPS driver2,501,722,112
+bytes. Preflight free space10,347,212,800bytes; last sampled free space9,034,428,416
+bytes, above the8GiB reserve. These are observed filesystem values, not inferred
+space savings. Four CPU threads, strict fallback0/fast_math0 and existing time/
+memory/disk guards held. Original/copied runtime sources,13 frozen recovery modules,
+closed campaigns and prior fixtures passed unchanged audits. No holdout scoring.
+
+Next implement the new isolated controller/config/source bindings and bounded
+selection/statistical/retention/serial-dispatch tests, with full-validation and
+inference evidence paths. Reuse retained v2 fixtures read-only where possible;
+new binary production needs a new reserve projection. Test failure/stop handling,
+finite stage/order and exact selection rules before freezing any quality launch.
+Actual-corpus pilot cost, full-horizon behavior and full retained-panel capacity
+remain unestablished. Do not launch a partial panel, trim controls/seeds/width,
+remove protected pairs or poll unchanged capacity. SiLU remains retained; no
+normalization quality conclusion follows from this generated-text prerequisite.

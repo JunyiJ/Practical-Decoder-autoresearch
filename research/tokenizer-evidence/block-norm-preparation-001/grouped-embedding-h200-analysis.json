@@ -1,0 +1,130 @@
+{
+  "status": "v2_full_batch_actual_trainer_and_persisted_h200_passed",
+  "observed_at": "2026-10-31T21:22:40.451899+00:00",
+  "tests_passed": 9,
+  "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+  "training_shape": [
+    8,
+    128
+  ],
+  "batch_layout": "paired_blocks512",
+  "optimizer_updates": 4,
+  "updates_per_arm": 2,
+  "target_tokens_per_arm": 2048,
+  "generated_text_only": true,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "exact_ema_parameter_replacement": {
+    "rms_incumbent": 88,
+    "layer_matched_epsilon": 96
+  },
+  "nonlearned_buffers_copied_exactly": true,
+  "raw_resume_preflight_passed_both_arms": true,
+  "H200_resume_rejected_before_model_mutation": true,
+  "export_parent_sha_tokenizer_config_normalization_embedding_policy_bound": true,
+  "export_cpu_mps_rng_preserved": true,
+  "inference_cases": [
+    {
+      "arm": "rms_incumbent",
+      "errors": {
+        "cpu_mps": 7.152557373046875e-07,
+        "full_cached": 9.5367431640625e-07
+      },
+      "event": "h200_inference",
+      "shape": [
+        1,
+        17
+      ]
+    },
+    {
+      "arm": "rms_incumbent",
+      "errors": {
+        "cpu_mps": 7.748603820800781e-07,
+        "full_cached": 1.0132789611816406e-06
+      },
+      "event": "h200_inference",
+      "shape": [
+        8,
+        17
+      ]
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "errors": {
+        "cpu_mps": 7.152557373046875e-07,
+        "full_cached": 1.0728836059570312e-06
+      },
+      "event": "h200_inference",
+      "shape": [
+        1,
+        17
+      ]
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "errors": {
+        "cpu_mps": 7.748603820800781e-07,
+        "full_cached": 8.344650268554688e-07
+      },
+      "event": "h200_inference",
+      "shape": [
+        8,
+        17
+      ]
+    }
+  ],
+  "max_cpu_mps_logit_error": 7.748603820800781e-07,
+  "max_full_cached_logit_error": 1.0728836059570312e-06,
+  "malformed_tokenizer_and_existing_output_refused": true,
+  "capped_writer_overflow_rejected_before_write": true,
+  "fixture_manifest_sha256": "c5f3fe5ea781e62fd2018de41284e92284035ba441f10e2efa16e67a792bef0f",
+  "retained_fixture_bytes": 1118443110,
+  "retained_binary_files": 4,
+  "guard": {
+    "elapsed_seconds": 11.98539470799733,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 9034428416,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 18563072,
+      "peak_observed_mps_driver_bytes": 2501722112,
+      "peak_rss_bytes": 1628127232
+    },
+    "pid": 73682,
+    "reason": null,
+    "status": "finished"
+  },
+  "preflight_free_bytes": 10347212800,
+  "prospective_storage": {
+    "raw_cap_bytes": 469762048,
+    "h200_cap_bytes": 117440512,
+    "arms": 2,
+    "metadata_allowance_bytes": 8388608,
+    "evidence_logs_source_allowance_bytes": 33554432,
+    "temporary_disk_overlap_bytes": 0,
+    "writer": "exclusive direct capped streams; no temporary raw/H200 copies; partial failures retained",
+    "binary_files": 4,
+    "fixture_cap_bytes": 1182793728,
+    "additional_highwater_bytes": 1216348160,
+    "reserve_bytes": 8589934592,
+    "required_free_bytes": 9806282752,
+    "observed_free_bytes": 10349236224
+  },
+  "runtime_sources_unchanged": true,
+  "original_recovery_sources_closed_campaigns_prior_fixtures_unchanged": true,
+  "conclusions": "Full8x128 generated-loader training and real raw/H200 export/reconstruction work for both v2 arms in this two-update prerequisite. These short measurements do not establish actual-corpus pilot cost, full-horizon stability, controller acceptance, quality or full-panel capacity.",
+  "remaining": [
+    "Isolated source/config/runtime/tokenizer-bound controller with exact finite stage/order/selection/retention state",
+    "No-training selection/statistics/holdout and failure/serial dispatch tests",
+    "Full validation and inference evidence path using retained fixtures without new weights where possible",
+    "Actual-corpus pilot plan only after readiness/capacity permits; exact final quality seed/order freeze",
+    "Full retained-panel storage capacity remains unsatisfied"
+  ],
+  "review_sha256": "8f470929232dcd428900ce30f0f7488a6e89844ae5aaf6d115b379331c907f82",
+  "plan_sha256": "805cf1f54c1b57c64e0ee2489f77446a903b608b42649f45322187d8efae6b17"
+}
