@@ -1,0 +1,33 @@
+{
+  "status": "readonly_actual_corpus_recovery_passed",
+  "observed_at": "2026-10-31T22:32:59.291401+00:00",
+  "source_commit": "f7b5068addafe21c62c75a9a4bda8b05490c0621",
+  "review_sha256": "988ee2ec8b80390452833c7f453332a050900c451a244f3388b1dd0bcab5bcb1",
+  "rms_result_sha256": "3c46a7940340590b5ccebe4da3eecd06fc2408d81e41753869965cb3d0a5cee4",
+  "guard_sha256": "2b538858c1106608f492c11b599915149e35b163d5536050e96d6cebdbcd8ef9",
+  "checks_passed": 62,
+  "source_transitions": {
+    "research/block_norm_v1/validation.py": {
+      "previous_sha256": "beeac6015ea149faf4e922a373a69eddaa9dd2f5cdda6131cd81eb7e5157945c",
+      "preserved_source": "research/tokenizer-evidence/block-norm-preparation-001/pilot-acceptance-001-source/validation.py",
+      "current_sha256": "b40f2c1139c9b2b41732518518e3684e7e85f14fdec1f3a6fe920640e44fd645"
+    },
+    "research/block_norm_v1/inference.py": {
+      "previous_sha256": "08ce8bedbeffe1aff59f2748522f2c7b4734a65927e92ed260823603c7c0c914",
+      "preserved_source": "research/tokenizer-evidence/block-norm-preparation-001/pilot-acceptance-001-source/inference.py",
+      "current_sha256": "4f4238b924a756984a8d68750253e2adae722dadbf63affdb5a346009961ca01"
+    }
+  },
+  "prior_snapshots": {
+    "research/tokenizer-evidence/block-norm-preparation-001/validation-recovery-design-original.md": "0dc8b9d53e0b1db4147dd43f3fdf1fb7deaa41affe157e4ce7321fc7893909b3",
+    "research/tokenizer-evidence/block-norm-preparation-001/validation-recovery-integration-original.md": "23fb62daab6f858173a34e75e860e1529ead4df33c0d80204b661b5bb916e53f"
+  },
+  "current_design_sha256": "c77b04f4ef3b3cc847d31a0a120c59f96bc8a446ac75dae52eb2700d02d94924",
+  "integration_contract_sha256": "27153dc5ffef2d4171d80c700d9fcc81dfd2e44bf36e0c83d24f56a4c40ce1c1",
+  "original_pilot001_status": "closed_failed_preserved",
+  "original_process_reclassified": false,
+  "training_repeated": false,
+  "quality_plan_frozen": false,
+  "holdout_scored": false,
+  "next": "Separate finite continuation carrying audited RMS components; LayerNorm pilot only."
+}

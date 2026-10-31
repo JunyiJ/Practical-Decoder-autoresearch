@@ -507,3 +507,31 @@ continuation may carry verified RMS evidence and run the unstarted LayerNorm
 pilot. Rebuild remaining capacity without cleanup credit for these failed weights.
 Evidence: pilot001-failure.json, failure-evidence, close-failure.py and original
 pilot001 freeze/source. Free space after closure:18,575,335,424B.
+
+## Actual-corpus validation recovery passed, October 31, 2026
+
+The concrete split-interface failure is fixed with an explicit read-only
+train/validation view. It reuses the frozen raw split boundaries, encodes only
+train and validation, and verifies tokenizer and training-prior identity.
+The training runtime and model math are unchanged. The actual 80/10/10 boundary
+test observes exactly two encoding calls and no exposed test array or sampler.
+
+All 62 guarded checks passed: 34 validation checks, 21 inference checks and
+seven actual-corpus recovery checks. The saved RMS pilot raw/H200 pair passed
+independent parent artifact acceptance, optimizer/RNG/EMA preflight, full
+validation and raw/H200 cached-versus-full/reset checks at batches 1 and 8.
+All 34,278 validation targets are accounted for. H200 CE is 9.611318003763374;
+the independent CPU FP64 oracle is 9.611318312664661, with maximum window-mean
+error 4.108e-7. This 20-update pilot score is diagnostic, not a quality comparison.
+The audit confirmed 20 updates, 20,480 tokens and eight EMA snapshots; it made
+zero optimizer updates and preserved checkpoint bytes and RNG state.
+
+The recovery guard finished in 46.615 seconds, peak RSS 1,380,466,688 bytes and
+MPS driver 1,162,608,640 bytes. The failed pilot001 process remains failed and
+closed, with its source, STOP and all artifacts unchanged. This separate
+read-only acceptance does not relabel that process. Next freeze a new finite
+continuation carrying these audited RMS components and run only the unstarted
+LayerNorm resource pilot. Recheck remaining capacity with the failed RMS pair
+protected. Quality training remains unfrozen; SiLU remains adopted.
+Evidence: validation-recovery-plan-001.json, validation-recovery-001-review.json,
+validation-recovery-001-rms-result.json and validation-recovery-decision.json.

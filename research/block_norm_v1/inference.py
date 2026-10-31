@@ -8,7 +8,7 @@ import torch
 from . import artifact_acceptance as a, campaign_contract as c, validation as v
 from .runtime.attention.cache import build_caches
 from .runtime.models.block_norm import contract, validate_model
-from .runtime.train.train import _make_loader
+from .validation_data import load as validation_data
 from src.research.tokenizer_wide_hybrid_measurements import check_kernel, measure_kernel
 from src.research.tokenizer_wide_hybrid_timing import token_digest, allocated_bytes, _measurement, _correctness
 
@@ -34,7 +34,7 @@ def identity(requests,pair_index):
     for arm in ARMS:
         cfg=a.verify_request(requests[arm])
         require(contract(cfg.model)['normalization']['kind']==arm,'Requested normalization arm differs')
-        data=_make_loader(copy.deepcopy(cfg),'cpu')
+        data=validation_data(cfg)
         require(set(data.splits)=={'train','val'},'Closed holdout required')
         row=data.train_data[:96].tolist();token_digest(row)
         require(ids is None or row==ids,'Paired training token identities differ');ids=row

@@ -9,7 +9,8 @@ from . import campaign_contract as c
 from .runtime.models.block_norm import GROUPED_POLICY, contract
 from .runtime.models.gpt import GPT
 from .runtime.models.output_bias import digest
-from .runtime.utils.checkpoint import checkpoint_loader,load_model_weights,read_checkpoint
+from .runtime.utils.checkpoint import load_model_weights,read_checkpoint
+from .validation_data import load as validation_data
 
 require=c.require
 
@@ -32,7 +33,7 @@ def load(binding,device):
     contract(cfg.model)
     require(saved.get('parent_checkpoint')==binding['parent'],'H200 parent binding differs')
     require(saved.get('averaged_weights',{}).get('half_life')==200,'H200 weights required')
-    data=checkpoint_loader(copy.deepcopy(cfg),saved,cfg.data.path,'cpu')
+    data=validation_data(cfg,saved)
     require(set(data.splits)=={'train','val'},'Closed test boundary required')
     # Constructor RNG consumption must not affect subsequent training/inference.
     with torch.random.fork_rng(devices=[]):
