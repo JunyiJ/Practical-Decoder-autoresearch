@@ -6341,3 +6341,27 @@ Its eventual idle review must use slot19_history_v2, not slot18-only history.
 Evidence: campaign005-fresh-18-v2-terminal.json, fresh-prefix-19 review/guard,
 campaign005-fresh19-wrapper-review-v2.json and slot19 launch. Resume guide/index
 record exact next actions; local checkpoints/archives remain outside Git.
+
+
+### Campaign005 second-seed hybrid accepted and independently reviewed
+
+Slot19 hybrid D/2, LR0.000625, seed3512 completed1033.10s; parent accepted1493.51s.
+H200 validation CE4.979351837490887, raw5.008163495363069. KDA on the same
+seed has H200 CE4.967920234487431, so hybrid is worse by0.011431603003456.
+Gated MLA seed3512 remains pending. This partial fresh panel does not establish
+adoption; retain the frozen H200 metric, all seeds and inference requirements.
+
+The exact-slot19 independent compact-history replay passed113.63s, checking20
+completed records and8 retained selected/fresh pairs, immutable metadata and
+all three cleanup boundaries. Remaining capacity20,697,972,736 bytes versus
+20,445,458,952 required includes the unchanged8GiB reserve. Every fresh pair,
+selected/failure checkpoint and protected archive remains retained; no cleanup.
+
+AST/diff/API checks verified the slot19 reviewer and exact-slot20 wrapper;
+current full source matches frozen005 and applicable inference/census pins.
+No production edits or numerical fixture rerun. After all workers/reviewer
+exited, dispatched only slot20 (gated MLA D/4, LR0.00125, seed3512):
+controller20347, session27655, guarded startup. No slot20 success claim.
+Its idle review must use slot20_history_v2 before slot21; later scopes differ.
+Evidence: campaign005-fresh-19-v2-terminal.json, fresh-prefix-20 review/guard,
+campaign005-fresh20-wrapper-review-v2.json and slot20 launch.

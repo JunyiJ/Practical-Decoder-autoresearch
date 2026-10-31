@@ -8,12 +8,13 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at03:36 Los Angeles: fresh slots15–18 accepted and
+Observed October31,2026 at04:06 Los Angeles: fresh slots15–19 accepted and
 independently reviewed. Seed3511 H200 CE: gated MLA4.845517761609039,
 KDA4.9743094953134435, hybrid4.999353112775229. Seed3512 KDA H200
-CE4.967920234487431; its paired controls remain pending. All fresh pairs protected.
-Slot18 independent replay passed93.02s; remaining storage fits with8GiB reserve.
-Slot19 (hybrid, seed3512) controller17187 is starting; session61533.
+CE4.967920234487431 versus hybrid4.979351837490887; gated MLA pending.
+All fresh pairs protected. No adoption; remaining seeds/inference required.
+Slot19 replay passed113.63s; remaining storage fits with8GiB reserve.
+Slot20 (gated MLA, seed3512) controller20347 is starting; session27655.
 Guarded startup may precede child creation. Never duplicate the launcher.
 Selected screens remain slots14/5/12; rank cleanup is complete and verified.
 See [rank summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-summary-v2.json).
@@ -34,7 +35,7 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller17187 or its current descendant is running, observe it.
+2. If controller20347 or its current descendant is running, observe it.
    Never duplicate the fresh dispatch or rerun completed rank boundaries.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
@@ -42,13 +43,13 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. After slot19 parent acceptance and actual worker exit, prepare a guarded
-   independent review using `tokenizer_wide_hybrid_slot19_history_v2.verify_confirmation_dispatch`
-   explicitly for slot19 (completed20). Bind full history, protected pairs and
-   remaining storage; require a finished guard. Do not reuse the slot18-only verifier.
-   Adapt `continue_campaign005_fresh19_v2.py` only to slot20/prefix20 with the
+4. After slot20 parent acceptance and actual worker exit, prepare a guarded
+   independent review using `tokenizer_wide_hybrid_slot20_history_v2.verify_confirmation_dispatch`
+   explicitly for slot20 (completed21). Bind full history, protected pairs and
+   remaining storage; require a finished guard. Do not reuse the slot19-only verifier.
+   Adapt `continue_campaign005_fresh20_v2.py` only to slot21/prefix21 with the
    same remaining-startup/readiness/dispatch APIs, inspecting signatures and scope.
-   Slot20 idle review uses `slot20_history_v2`; inspect later scopes separately.
+   Slot21/22 idle reviews use `final_confirmation_history_v2`; inspect exact scope.
    Preserve every fresh pair; no cleanup, closed campaign or numerical retry.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
