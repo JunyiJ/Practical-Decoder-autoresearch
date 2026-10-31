@@ -338,3 +338,45 @@ v2 H200/inference transport and full-workload/resource/controller/statistical ga
 Do not rerun historical failed fixtures, widen tolerances or change Muon precision.
 Full-panel capacity remains unresolved; no partial panel, seed/control/width trimming
 or protected-weight deletion. Freeze exact finite seeds/order before quality launch.
+
+
+## October 31 v2 MPS repeat/resume: both arms exactly reproduced
+
+The new, separately frozen `grouped-embedding-resume-plan-001.json` exercised the
+explicit grouped-embedding v2 policy with new prerequisite seeds373101/373102/373103.
+No historical failed v1 fixture or closed campaign was rerun. Runtime files,
+original source/requirements and13 recovery modules were unchanged. Installed
+Muon precision, including its BF16 orthogonalizer, was not altered.
+
+Both RMS and matched-epsilon LayerNorm passed the original model/optimizer/EMA
+acceptance tolerance (atol2e-6/rtol2e-4), with observed maximum errors **zero**.
+Each arm ran three reference updates, three fresh-repeat updates and two updates
+after restoring the step-one RAM checkpoint:16 synthetic updates total on real
+GPT-2 loading of generated text, batch1/context128. Every intermediate gradient
+and post-update model/optimizer/EMA tensor hash matched. Initialization, restored
+state, schedules/groups/counters, batches, CPU/MPS random draws and all final RNG
+states matched exactly. This short prerequisite supports the scoped grouped
+embedding workaround; it does not establish global determinism or model quality.
+
+Each arm also rejected five malformed MPS RNG states and three invalid device/
+PyTorch-version bindings before any model/optimizer/EMA/RNG mutation. Both `mps`
+and `mps:0` aliases passed preflight. Complete one-update raw states serialized to
+RAM archives of445,082,791bytes (RMS) and445,128,471bytes (LayerNorm); their hashes
+and restored state hashes are retained. Payload bytes were ephemeral, no binary
+files were written, and no historical/selected quality checkpoint was loaded.
+H200 serialization/export and production controller resume remain separate gates.
+
+The2 parameterized tests passed in15.70s; guard elapsed16.741s, peakRSS2,469,740,544
+bytes and sampled MPS driver1,242,398,720bytes. Four CPU threads, strict fallback0/
+fast_math0 and4GiB/6GiB/8GiB/600s limits held. Source, closed-root and existing
+fixture audits passed unchanged. No quality training, cleanup or holdout scoring.
+
+Next prepare v2 H200 file export/reconstruction and full8x128 paired generated-loader
+MPS readiness with a bounded storage projection before writing any new fixture.
+Verify exact EMA replacement, parent hashes, tokenizer identity, inference/cache
+parity and refusal to resume an online optimizer from H200. Keep raw/H200 fixtures
+and failure evidence under the retention policy. Then finish controller, retention,
+selection, statistics and inference/resource gates and freeze the finite quality
+plan. Full-panel capacity remains unresolved; do not launch a partial panel,
+trim controls/seeds/width, delete protected pairs or repeatedly poll unchanged space.
+SiLU remains retained; no normalization quality result is available.

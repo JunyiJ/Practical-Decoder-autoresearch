@@ -1,0 +1,107 @@
+{
+  "status": "v2_both_arm_mps_primitive_repeat_resume_passed",
+  "observed_at": "2026-10-31T21:16:49.793502+00:00",
+  "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+  "tests_passed": 2,
+  "optimizer_updates": 16,
+  "arms": [
+    {
+      "arm": "rms_incumbent",
+      "updates": 8,
+      "reference_updates": 3,
+      "fresh_repeat_updates": 3,
+      "resumed_updates": 2,
+      "final_model_optimizer_ema_errors": {
+        "fresh_repeat": {
+          "ema": 0.0,
+          "model": 0.0,
+          "optimizer": 0.0
+        },
+        "resumed": {
+          "ema": 0.0,
+          "model": 0.0,
+          "optimizer": 0.0
+        }
+      },
+      "every_intermediate_gradient_and_full_state_bit_exact": true,
+      "initialization_restoration_rng_batches_metadata_exact": true,
+      "malformed_rng_device_version_rejections_before_mutation": 8,
+      "ram_archive_bytes": 445082791,
+      "ram_archive_sha256": "e2eb368b92c60be7a623de1e2ec7a358d9c7e77c4e3a21429eab5f7270d66346"
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "updates": 8,
+      "reference_updates": 3,
+      "fresh_repeat_updates": 3,
+      "resumed_updates": 2,
+      "final_model_optimizer_ema_errors": {
+        "fresh_repeat": {
+          "ema": 0.0,
+          "model": 0.0,
+          "optimizer": 0.0
+        },
+        "resumed": {
+          "ema": 0.0,
+          "model": 0.0,
+          "optimizer": 0.0
+        }
+      },
+      "every_intermediate_gradient_and_full_state_bit_exact": true,
+      "initialization_restoration_rng_batches_metadata_exact": true,
+      "malformed_rng_device_version_rejections_before_mutation": 8,
+      "ram_archive_bytes": 445128471,
+      "ram_archive_sha256": "b38046f74f8b6fd616948c0c4ae83edd384e01dc7db21a6dda76d6b249b73f78"
+    }
+  ],
+  "shape": [
+    1,
+    128
+  ],
+  "generated_text_only": true,
+  "holdout_scored": false,
+  "unchanged_acceptance_tolerance": {
+    "atol": 2e-06,
+    "rtol": 0.0002
+  },
+  "loss_tolerance": {
+    "atol": 1e-05,
+    "rtol": 1e-05
+  },
+  "max_observed_final_error": 0.0,
+  "installed_muon_precision_unchanged": true,
+  "original_and_isolated_runtime_unchanged": true,
+  "closed_failed_v1_fixture_rerun": false,
+  "source_and_closed_campaign_audits_passed": true,
+  "guard": {
+    "elapsed_seconds": 16.741069624986267,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 10346127360,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 41631744,
+      "peak_observed_mps_driver_bytes": 1242398720,
+      "peak_rss_bytes": 2469740544
+    },
+    "pid": 73164,
+    "reason": null,
+    "status": "finished"
+  },
+  "new_binary_files": 0,
+  "quality_training_launched": false,
+  "transport_scope": "Two one-update synthetic raw payloads serialized/loaded in RAM; complete optimizer/EMA/CPU/MPS/loader RNG. No persisted or historical quality checkpoint loaded. Ephemeral payload identities retained in events; payload bytes not retained.",
+  "conclusions": "Explicit v2 grouped embedding passes this new short both-arm replay gate exactly; supports local workaround for the previously observed duplicate-index embedding variation. Does not establish general determinism, long-horizon stability or quality.",
+  "remaining": [
+    "V2 H200 file export, tokenizer identity, exact averaging and inference reconstruction; reject H200 optimizer resume",
+    "Full8x128 paired generated-loader MPS training/resource prerequisite",
+    "Production controller/retention/selection/statistics/inference readiness",
+    "Full retained-panel capacity and exact finite quality seed/order freeze"
+  ],
+  "review_sha256": "8dda56c4e68d6d96982dc2cc71f93b978ce4ae956662216fa596faf6bc9c6f28",
+  "plan_sha256": "b0e9291de352902eb8f632bfb311207e37caadf835e2571cd9a7cfd62007c1d7"
+}
