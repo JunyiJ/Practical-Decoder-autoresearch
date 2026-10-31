@@ -1,0 +1,124 @@
+{
+  "status": "prospective_shape_accounting_not_launch_authorization",
+  "observed_at": "2026-10-31T15:26:04.064252+00:00",
+  "torch_version": "2.14.1",
+  "helper_sha256": "7a92bfd54a5440aa49f293133750f8462f84fb0b983d0e23c4c0f676b99204eb",
+  "source_refs": {
+    "research/tokenizer-evidence/mla-001/adopted-width256-mla-recipe.json": "14936864a1ef15aaa1e97c763755f0b090c0e31babdb5c27edc657417aa4f3d3",
+    "src/models/gpt.py": "90daf16e0956eecdeb08a778db52b3896108993a1e1d463a423c60a4937f2add",
+    "src/models/mlp.py": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+    "src/models/tokenizer_architecture.py": "21afe2161809ab938cffcf1b49c8bea1b54f8199f78e28357d79ec19f34700f6",
+    "src/models/gated_activation.py": "83fc9d31f930ff2be51bd303689d282ec366e221344ed23e567515e615421984",
+    "src/train/optimizers.py": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+    "src/train/weight_averaging.py": "a2ffa1acff302190065fddb53db1dc234ab8ec5c71f929128459cda3059fbf20",
+    "src/utils/checkpoint.py": "05d2a9b8b0f1d08a2017e551e86c66bafb4c297e1e73f13bf50e734e552c6a6f",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/project_rank_storage.py": "ecd9f4f82a183488e1e25bc121688ffa25c8cec842e1fbbd8cdac60471fe5655"
+  },
+  "free_bytes": 15515467776,
+  "reserve_bytes": 8589934592,
+  "metadata_allowance_bytes": 268435456,
+  "baseline_optimizer_groups": {
+    "Muon": {
+      "parameters": 2752512,
+      "tensors": 44
+    },
+    "AdamW": {
+      "parameters": 25739904,
+      "tensors": 44
+    }
+  },
+  "arms": {
+    "dense_silu": {
+      "parameters": 28492416,
+      "muon_parameters": 2752512,
+      "adam_parameters": 25739904,
+      "optimizer_tensor_bytes": 216929456,
+      "persistent_buffer_bytes": 65536,
+      "raw_h200_payload_bytes": 558969520,
+      "per_trajectory_allowance_bytes": 788953140
+    },
+    "dense_gelu_exact": {
+      "parameters": 28492416,
+      "muon_parameters": 2752512,
+      "adam_parameters": 25739904,
+      "optimizer_tensor_bytes": 216929456,
+      "persistent_buffer_bytes": 65536,
+      "raw_h200_payload_bytes": 558969520,
+      "per_trajectory_allowance_bytes": 788953140
+    },
+    "wider_dense_silu": {
+      "parameters": 30556800,
+      "muon_parameters": 4816896,
+      "adam_parameters": 25739904,
+      "optimizer_tensor_bytes": 225186992,
+      "persistent_buffer_bytes": 65536,
+      "raw_h200_payload_bytes": 591999664,
+      "per_trajectory_allowance_bytes": 845930138
+    },
+    "moe_top2of4_silu": {
+      "parameters": 30560896,
+      "muon_parameters": 4816896,
+      "adam_parameters": 25744000,
+      "optimizer_tensor_bytes": 225219776,
+      "persistent_buffer_bytes": 65536,
+      "raw_h200_payload_bytes": 592081600,
+      "per_trajectory_allowance_bytes": 846043188
+    }
+  },
+  "panels": {
+    "moe_three_arm": {
+      "arms": [
+        "dense_silu",
+        "wider_dense_silu",
+        "moe_top2of4_silu"
+      ],
+      "pilot_trajectories": 3,
+      "screening_trajectories": 9,
+      "fresh_trajectories": 9,
+      "protected_selected_screen_pairs": 3,
+      "protected_fresh_pairs": 9,
+      "phase_allowance_bytes": {
+        "pilots": 2480926466,
+        "lr_screen": 7442779398,
+        "fresh_confirmation": 9923705864
+      },
+      "required_free_bytes": 18782075912,
+      "margin_bytes": -3266608136,
+      "fits_projection_at_observation": false,
+      "final_payload_plus_reserve_bytes": 15562137728
+    },
+    "activation_two_arm": {
+      "arms": [
+        "dense_silu",
+        "dense_gelu_exact"
+      ],
+      "pilot_trajectories": 2,
+      "screening_trajectories": 6,
+      "fresh_trajectories": 6,
+      "protected_selected_screen_pairs": 2,
+      "protected_fresh_pairs": 6,
+      "phase_allowance_bytes": {
+        "pilots": 1577906280,
+        "lr_screen": 4733718840,
+        "fresh_confirmation": 6311625120
+      },
+      "required_free_bytes": 15169995168,
+      "margin_bytes": 345472608,
+      "fits_projection_at_observation": true,
+      "final_payload_plus_reserve_bytes": 13061690752
+    }
+  },
+  "assumptions": [
+    "FP32; one raw/H200 pair, one EMA half-life, all optimizer states charged.",
+    "Pilots cleaned only after complete review; losing screens only after frozen selection and audited cleanup.",
+    "One selected screening pair plus all three fresh pairs per arm remain protected.",
+    "Existing protected files already consume disk; observed free space gives no credit for deleting them.",
+    "Raw/export/audit overlap and metadata allowance retained; no periodic or best checkpoints.",
+    "No learned checkpoint weights read, written, removed or compressed.",
+    "Hypothetical replacement shapes do not establish model validity, numerical correctness or runtime resource fit.",
+    "Require exact implementation projection, current free-space recheck and guarded pilots before any quality run."
+  ],
+  "training_launched": false,
+  "holdout_consumed": false,
+  "deletion_authorized": false
+}

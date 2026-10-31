@@ -8,7 +8,7 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
+Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
 passed their parent reviews. Independent final review completed985.06s under
 the unchanged guard; reason null, reviewer and all workers exited.
@@ -48,18 +48,17 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
 1. Read ignored `research_state/tokenizer-quality-progress.json`; reconcile its
    next_action with actual Git/process state. Current research workers are idle.
    No005 relaunch, slot24, seed extension or changed adoption criterion.
-2. Continue [MoE preparation](TOKENIZER_MOE_PREPARATION.md). Read-only feasibility
-   selected the next roadmap family with ordinary dense and wider dense controls,
-   using the adopted width256 RoPE MLA backbone. Historical MoE only supports MHA;
-   tokenizer validators currently require dense FFNs. A new explicit contract,
-   optimizer/load/cache/EMA tests and routing diagnostics are required.
-3. Audit exact full retained capacity before any pilots. Proposed3pilots,
-   9LRscreen+9fresh trajectories are **not frozen** and storage fit is not asserted.
-   Keep all prior protected pairs and8GiB reserve. Do not launch a partial panel.
-   Freeze exact requests/seeds/limits/source/input/resource prerequisites first.
-4. If MoE feasibility fails, record the reason and consider the proposed same-shape
-   activation comparison prospectively. Bounded equal LR tuning remains part of
-   the next design; do not extend completed attention grids. No test holdout use.
+2. Continue [activation preparation](TOKENIZER_MLA_ACTIVATION_PREPARATION.md).
+   The MoE panel is deferred after a 3.27 GB conservative capacity gap; its
+   original draft remains historical. No protected evidence was removed.
+3. The new width256 SiLU/exact-GELU MLA contract passed 154 targeted checks.
+   Complete checkpoint resume/H200 export, tokenizer binding, optimizer-update
+   and cache reset/interleaving prerequisites, then the finite two-arm controller.
+4. The full activation projection requires 15,169,995,168 free bytes including
+   the 8 GiB reserve; only 345,472,608 bytes of margin existed at the audit.
+   Recheck actual capacity and all prerequisites, then freeze exact seeds,
+   requests, statistical rules, source/runtime/input and limits before pilots.
+   No training or new launch plan is yet authorized by a completed freeze.
 5. Commit/push substantive findings and this guide/index without force. Keep only
    this chat's continuation heartbeat active; the old heartbeat stays paused.
 
@@ -74,6 +73,9 @@ four layers,1200updates per quality trajectory, batch8/context128. Exact request
 seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
+
+Current continuation: activation contract prerequisites; see the indexed
+[FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
 

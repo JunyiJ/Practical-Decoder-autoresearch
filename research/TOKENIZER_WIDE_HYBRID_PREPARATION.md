@@ -6597,3 +6597,31 @@ comparison, diagnostics/tests and mandatory capacity audit. No new source edits
 or training; proposal is not frozen and fit is not asserted. Activation/norm/
 residual families remain queued; further hybrid tuning and separate EMA/horizon
 work are deferred with rationale. No blanket storage cleanup.
+
+
+### Next FFN direction: capacity audit and activation contract
+
+The proposed width256 three-arm MoE panel does not fit: 18,782,075,912 free
+bytes required versus 15,515,467,776 observed, a 3,266,608,136-byte gap. The
+projection retains all three selected screens and nine fresh pairs, optimizer/EMA/
+export allowances, 256 MiB metadata and the unchanged 8 GiB reserve. Even its
+final tensor payload plus reserve exceeds observed free space before headers
+and extra overlap. MoE is deferred; no controls or fresh seeds were dropped and
+no protected evidence was removed. This is a feasibility result, not a failed run.
+
+Select the prospective same-shape SiLU versus exact-GELU gate fallback on the
+adopted width256 RoPE MLA backbone. Its complete two-arm projection requires
+15,169,995,168 bytes, with only 345,472,608 bytes of observed margin: recheck
+before freeze/launch. Historical character GEGLU did not transfer at width256;
+this is a new subword/MLA hypothesis without pooling or a positive forecast.
+
+A separate tokenizer_mla_gate_v1 contract is implemented. 154 targeted tests
+passed: exact SiLU incumbent weights/logits/optimizer parity, parameter coverage,
+GELU formula/gradients, full/cached causality, same-shape checkpoint rejection
+and historical contract checks. Guard finished in 1.32s, peak RSS 558,956,544
+bytes, reserve intact. No training, quality scoring or model cleanup. Remaining
+checkpoint resume/H200, tokenizer/cache/update tests, finite controller, storage
+reconciliation and complete freeze are required before pilots. Details and
+next actions: TOKENIZER_MLA_ACTIVATION_PREPARATION.md; immutable direction decision:
+tokenizer-evidence/moe-preparation-001/direction-decision.json. Earlier MoE draft
+and original source references remain preserved as historical evidence.

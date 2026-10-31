@@ -12,6 +12,14 @@ def _get(c,k,d=None):return c.get(k,d) if isinstance(c,Mapping) else getattr(c,k
 def _has(c,k):return k in c if isinstance(c,Mapping) else hasattr(c,k)
 def gated_activation_contract(cfg):
     if not any(_has(cfg,k) for k in FIELDS):return None
+    from .tokenizer_activation import POLICY as TOKENIZER_POLICY, activation_contract
+    if (_get(cfg, 'tokenizer_architecture_policy') == TOKENIZER_POLICY
+            or _get(cfg, FIELDS[1]) == TOKENIZER_POLICY):
+        contract = activation_contract(cfg)
+        if contract is None:
+            raise ValueError('Tokenizer gate requires its explicit MLA backbone')
+        return dict(gated_activation_kind=contract['gate_kind'],
+                    gated_activation_width_policy=TOKENIZER_POLICY)
     kind=_get(cfg,FIELDS[0])
     if type(kind) is not str or kind not in KINDS or _get(cfg,FIELDS[1])!=POLICY:
         raise ValueError('Gated activation requires explicit reviewed kind and policy')
@@ -24,7 +32,7 @@ def gated_activation_contract(cfg):
     return dict(gated_activation_kind=kind,gated_activation_width_policy=POLICY)
 def gated_activation_signature(cfg):
     c=gated_activation_contract(cfg)
-    return None if c is None else (c['gated_activation_kind'],POLICY)
+    return None if c is None else (c['gated_activation_kind'],c['gated_activation_width_policy'])
 def resolve_gated_activation(cfg):
     c=gated_activation_contract(cfg)
     return 'silu' if c is None else c['gated_activation_kind']

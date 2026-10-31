@@ -23,6 +23,10 @@ def _get(cfg, key, default=None):
 
 
 def architecture_contract(cfg):
+    from .tokenizer_activation import activation_contract
+    activation = activation_contract(cfg)
+    if activation is not None:
+        return activation
     from .tokenizer_hybrid import hybrid_contract
     hybrid = hybrid_contract(cfg)
     if hybrid is not None:
@@ -110,7 +114,7 @@ def validate_architecture_model(model):
         if (type(block.attn) is not expected or type(block.ln1) is not nn.RMSNorm
                 or type(block.ln2) is not nn.RMSNorm or not block.enable_rope
                 or block.residual_topology_kind != 'serial'
-                or block.mlp.gate_activation != 'silu' or block.mlp.hidden_norm is not None
+                or block.mlp.gate_activation != contract.get('gate_kind', 'silu') or block.mlp.hidden_norm is not None
                 or block.attn.attention_logit_scale != .5):
             raise ValueError('Tokenizer architecture block semantics mismatch')
 

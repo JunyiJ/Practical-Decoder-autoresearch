@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T15:20:47.675279+00:00",
-  "observed_at_los_angeles": "2026-10-31T08:20:47.675279-07:00",
+  "observed_at": "2026-10-31T15:30:06.667948+00:00",
+  "observed_at_los_angeles": "2026-10-31T08:30:06.667948-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "15674ce",
+  "evidence_commit_before_handoff": "5542eb4",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
@@ -288,8 +288,8 @@
     "tokenizer-wide-hybrid-004",
     "tokenizer-wide-hybrid-005"
   ],
-  "first_action": "Campaign005 is closed completed, hybrid not adopted; all24 quality trajectories/3 inference seeds and independent final review passed. Start from research/TOKENIZER_MOE_PREPARATION.md and research/tokenizer-evidence/moe-preparation-001/read-only-feasibility.json. Next implement and test a separate narrow tokenizer MLA+FFN policy for dense/wider-dense/top2of4 half-width SwiGLU MoE, preserving old contracts, optimizer/router semantics and checkpoint signatures; assess exact retained-capacity fit before any pilots. Proposed width256 adopted RoPE MLA backbone,3pilots+9LRscreen+9fresh trajectories is unfrozen; do not launch until full finite plan, exact fresh seeds, numerical/input/transport/runtime prerequisites and storage high-water incl8GiB reserve are frozen. Maintain nine005 fresh pairs, selected screens, failure evidence and archives; do not reopen005 or001-004, retry closed failed numerical fixture or use test holdout. Consider same-shape activation comparison if MoE feasibility fails prospectively; record rationale. One worker, no paid compute/subagents. Commit/push findings and handoff without force.",
-  "next_after_starter": "Campaign005 is closed completed, hybrid not adopted; all24 quality trajectories/3 inference seeds and independent final review passed. Start from research/TOKENIZER_MOE_PREPARATION.md and research/tokenizer-evidence/moe-preparation-001/read-only-feasibility.json. Next implement and test a separate narrow tokenizer MLA+FFN policy for dense/wider-dense/top2of4 half-width SwiGLU MoE, preserving old contracts, optimizer/router semantics and checkpoint signatures; assess exact retained-capacity fit before any pilots. Proposed width256 adopted RoPE MLA backbone,3pilots+9LRscreen+9fresh trajectories is unfrozen; do not launch until full finite plan, exact fresh seeds, numerical/input/transport/runtime prerequisites and storage high-water incl8GiB reserve are frozen. Maintain nine005 fresh pairs, selected screens, failure evidence and archives; do not reopen005 or001-004, retry closed failed numerical fixture or use test holdout. Consider same-shape activation comparison if MoE feasibility fails prospectively; record rationale. One worker, no paid compute/subagents. Commit/push findings and handoff without force.",
+  "first_action": "Campaign005 remains closed and not adopted. MoE width256 three-arm draft is deferred: audited conservative full-panel requirement18,782,075,912 bytes exceeds observed free space by3,266,608,136 bytes. Follow research/TOKENIZER_MLA_ACTIVATION_PREPARATION.md: new tokenizer_mla_gate_v1 width256 SiLU/exact-GELU contract implemented;154 targeted checks passed. Next complete bounded checkpoint resume/H200 export/load/tokenizer/objective/cache reset/interleave/optimizer-update prerequisites, then implement and test a new finite two-arm controller with exact seeds, equal3-LR screening and3 fresh seeds per arm. Recheck implemented full storage projection (initial15,169,995,168 bytes incl8GiB reserve; margin345,472,608 at observation), preserve all selected/fresh/failed evidence, and freeze all source/runtime/input/statistical/resource/retention prerequisites before MPS pilots or quality training. No old controller launch, closed fixture retry, holdout, paid compute or subagents. Update evidence/handoff and commit/push without force.",
+  "next_after_starter": "Campaign005 remains closed and not adopted. MoE width256 three-arm draft is deferred: audited conservative full-panel requirement18,782,075,912 bytes exceeds observed free space by3,266,608,136 bytes. Follow research/TOKENIZER_MLA_ACTIVATION_PREPARATION.md: new tokenizer_mla_gate_v1 width256 SiLU/exact-GELU contract implemented;154 targeted checks passed. Next complete bounded checkpoint resume/H200 export/load/tokenizer/objective/cache reset/interleave/optimizer-update prerequisites, then implement and test a new finite two-arm controller with exact seeds, equal3-LR screening and3 fresh seeds per arm. Recheck implemented full storage projection (initial15,169,995,168 bytes incl8GiB reserve; margin345,472,608 at observation), preserve all selected/fresh/failed evidence, and freeze all source/runtime/input/statistical/resource/retention prerequisites before MPS pilots or quality training. No old controller launch, closed fixture retry, holdout, paid compute or subagents. Update evidence/handoff and commit/push without force.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -493,10 +493,19 @@
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json": "72e97d4aa939231deafb12a86ca1e6089c5d70ea1d1e70597b437d0c6ef79c95",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json": "a18aba34bf325e5c7cf3d2ea03e6739f5419047dfa9e80f8ce3c642ae0be227a",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json": "c779f55c05a8b69513080bd599a0a7f02a5a881da9ff1ba31e3acc5c29f6ba8c",
-    "research/tokenizer-evidence/moe-preparation-001/read-only-feasibility.json": "1c8f50192c126cb345b52f587ad179190eda415d34fad42ef5d9e231df354121"
+    "research/tokenizer-evidence/moe-preparation-001/read-only-feasibility.json": "1c8f50192c126cb345b52f587ad179190eda415d34fad42ef5d9e231df354121",
+    "research/tokenizer-evidence/moe-preparation-001/project_ffn_storage.py": "7a92bfd54a5440aa49f293133750f8462f84fb0b983d0e23c4c0f676b99204eb",
+    "research/tokenizer-evidence/moe-preparation-001/ffn-storage-projection.json": "fd60ee44a76d8258708008b67b440b2eb3aeec2d08162b589e78daa8d5583d35",
+    "research/tokenizer-evidence/moe-preparation-001/storage-crosscheck.json": "c37973350d1fa10d284683eb6a02a4a70cbb2d856287f0bb6fc700089078cc9b",
+    "research/GATED_ACTIVATION_RESULTS.md": "06f27765ac642bb7e12a86f9d76db16b456d6969a20f18cdcd57a395862b7afb",
+    "research/tokenizer-evidence/activation-preparation-001/contract-tests-v1-review.json": "36818ef722cd443313c3a65c4ddc76cc98fb9764511daa826aede6913693c920",
+    "research/tokenizer-evidence/activation-preparation-001/contract-tests-v1.log": "9292bab11599edb972d79bbac76115dd2a66dd5ec3bf9abcbd63b2090311439d",
+    "research/tokenizer-evidence/activation-preparation-001/contract-tests-v1-guard.json": "c762b691696e970942625122026eac3a0fd04f4fc4e28684d22a8d0ea533e722",
+    "research/tokenizer-evidence/moe-preparation-001/direction-decision.json": "5b751d45988d3561949fc8f2e6cd1439f0a20a63e49223dd58c1751d6bcb45c3"
   },
   "independent_final_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
   "independent_final_guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
-  "current_research_phase": "moe_preparation_no_training",
-  "final_decision": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json"
+  "current_research_phase": "activation_contract_validated_remaining_prerequisites",
+  "final_decision": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json",
+  "ffn_direction_decision": "research/tokenizer-evidence/moe-preparation-001/direction-decision.json"
 }
