@@ -571,3 +571,18 @@ Training205.52s/worker353.74s; peakRSS1,695,776,768bytes, driver2,501,705,728byt
 All guards passed, no cleanup or holdout scoring. Matched SiLU seed3612 runs as
 slot09; every fresh raw/H200 pair and selected screen remains protected.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-09-review.json).
+
+
+### October31 activation001 second fresh pair accepted
+
+Both seed3612 recipes at saved LR0.00125 passed independent acceptance. SiLU
+rawCE4.699689255/H200CE4.695734123; GELU rawCE4.702213629/H200CE4.698578620.
+GELU-minus-SiLU H200 delta=+0.002844497, reversing seed3611's-0.000122218.
+The frozen every-fresh-seed-improves condition therefore fails; GELU cannot
+qualify under this panel's adoption rule regardless of seed3613. This does not
+establish population superiority or equivalence. Complete the final pair and
+inference/final review as planned; no premature terminal receipt or changed rule.
+SiLU training205.09s/worker378.39s; peakRSS1,695,023,104bytes, driver2,501,705,728bytes.
+All guards passed; no cleanup/holdout scoring. Slot10 SiLU seed3613 running;
+all fresh raw/H200 pairs and selected models remain protected.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-10-review.json).
