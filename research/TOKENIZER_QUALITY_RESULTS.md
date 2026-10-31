@@ -3825,3 +3825,29 @@ No cleanup or holdout use occurred; selected/fresh/failure weights remain protec
 Evidence: `campaign005-lr-05-v2-terminal.json`, `campaign005-lr-prefix-06-v2-review.json`,
 finished prefix guard and `campaign005-lr-06-v2-launch.json`. See the resume guide
 and SHA-pinned state index for the current next action.
+
+
+### Campaign005 gated MLA learning-rate grid screened
+
+Slot6 (gatedMLAD/4, LR0.0025, seed3501, width512,1200updates) completed
+in603.72s and received parent acceptance. Independent prefix07 review verified
+all seven accepted cells and preserved checkpoint/non-checkpoint identities.
+H200 full-validation CE4.857494233625267 versus raw4.919870187125091.
+All three gated MLA rates are screened: H200 CE at LR0.000625/0.00125/0.0025
+is4.953336852752508/4.82145746133221/4.857494233625267. LR0.00125 is
+lowest in this family on this screen seed. Formal selection waits for the full
+nine-cell LR stage, with rank screening and fresh confirmation still required.
+No adoption or seed-population conclusion; frozen grid and metric unchanged.
+
+The review guard finished without violations. Remaining storage fit:
+22,157,549,568 bytes free versus21,962,317,644 required including8GiB reserve.
+After verifying worker exit and no other research workers, dispatched only slot7
+through unchanged gates (controller94679, child94703, session72867).
+Review prefix08 after successful slot7 acceptance and exit before slot8.
+After slot8, adapt the004 LR-boundary helper to005 for selection and audited
+cleanup; the prefix helper accepts only1–8 completed cells. No cleanup or holdout
+use occurred; selected/fresh/failure weights remain protected.
+
+Evidence: `campaign005-lr-06-v2-terminal.json`, `campaign005-lr-prefix-07-v2-review.json`,
+finished prefix guard and `campaign005-lr-07-v2-launch.json`. See the resume guide
+and SHA-pinned state index for the current next action.
