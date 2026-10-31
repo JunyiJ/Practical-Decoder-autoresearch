@@ -1,14 +1,23 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T13:37:51.086359+00:00",
-  "observed_at_los_angeles": "2026-10-31T06:37:51.086359-07:00",
+  "observed_at": "2026-10-31T13:53:02.053942+00:00",
+  "observed_at_los_angeles": "2026-10-31T06:53:02.053942-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "54764b9",
+  "evidence_commit_before_handoff": "0126b30",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-terminal.json",
   "observed_process_records": [
+    {
+      "path": "research_runs/tokenizer-wide-hybrid-005/control/process-inference-3511.json",
+      "status": "completed",
+      "pid": 41979,
+      "parent_pid": 38659,
+      "elapsed_seconds": 141.93849808297819,
+      "returncode": 0,
+      "error": null
+    },
     {
       "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-00.json",
       "status": "completed",
@@ -260,8 +269,8 @@
     "tokenizer-wide-hybrid-003",
     "tokenizer-wide-hybrid-004"
   ],
-  "first_action": "Observe campaign005 inference controller38659/session36174; shared preparation passed504.62s; first seed readiness replay precedes fixed serial seeds3511,3512,3513. Never duplicate launch. All24 quality records and12 selected/fresh pairs independently reviewed. After inference terminal success, all3 controller receipts and actual process exit, run a new external wrapper under both locks and outer CPU guard calling frozen review_final_campaign_v2.review_completed_campaign(writer, reference for inference/3513/review.json). Verify frozen procedure pin and publish exclusively outside sealed campaign, max128KiB. Report frozen quality/cost eligibility with limitations, then review architecture roadmap next untested family and bounded HP alternatives. Any failed/interrupted phase stops this finite campaign; preserve evidence and do not retry. No quality slot24, cleanup, production edits, closed numerical retry or holdout use. Commit/push findings and resume state.",
-  "next_after_starter": "Observe campaign005 inference controller38659/session36174; shared preparation passed504.62s; first seed readiness replay precedes fixed serial seeds3511,3512,3513. Never duplicate launch. All24 quality records and12 selected/fresh pairs independently reviewed. After inference terminal success, all3 controller receipts and actual process exit, run a new external wrapper under both locks and outer CPU guard calling frozen review_final_campaign_v2.review_completed_campaign(writer, reference for inference/3513/review.json). Verify frozen procedure pin and publish exclusively outside sealed campaign, max128KiB. Report frozen quality/cost eligibility with limitations, then review architecture roadmap next untested family and bounded HP alternatives. Any failed/interrupted phase stops this finite campaign; preserve evidence and do not retry. No quality slot24, cleanup, production edits, closed numerical retry or holdout use. Commit/push findings and resume state.",
+  "first_action": "Observe campaign005 inference controller38659/session36174; shared preparation passed504.62s; seed3511 accepted with completed controller receipt; seed3512 readiness replay active; fixed serial panel3511,3512,3513. Never duplicate launch. All24 quality records and12 selected/fresh pairs independently reviewed. After inference terminal success, all3 controller receipts and actual process exit, run a new external wrapper under both locks and outer CPU guard calling frozen review_final_campaign_v2.review_completed_campaign(writer, reference for inference/3513/review.json). Verify frozen procedure pin and publish exclusively outside sealed campaign, max128KiB. Report frozen quality/cost eligibility with limitations, then review architecture roadmap next untested family and bounded HP alternatives. Any failed/interrupted phase stops this finite campaign; preserve evidence and do not retry. No quality slot24, cleanup, production edits, closed numerical retry or holdout use. Commit/push findings and resume state.",
+  "next_after_starter": "Observe campaign005 inference controller38659/session36174; shared preparation passed504.62s; seed3511 accepted with completed controller receipt; seed3512 readiness replay active; fixed serial panel3511,3512,3513. Never duplicate launch. All24 quality records and12 selected/fresh pairs independently reviewed. After inference terminal success, all3 controller receipts and actual process exit, run a new external wrapper under both locks and outer CPU guard calling frozen review_final_campaign_v2.review_completed_campaign(writer, reference for inference/3513/review.json). Verify frozen procedure pin and publish exclusively outside sealed campaign, max128KiB. Report frozen quality/cost eligibility with limitations, then review architecture roadmap next untested family and bounded HP alternatives. Any failed/interrupted phase stops this finite campaign; preserve evidence and do not retry. No quality slot24, cleanup, production edits, closed numerical retry or holdout use. Commit/push findings and resume state.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -449,6 +458,7 @@
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-launch.json": "8aee74fdcc649da5eb0d7bc78ec926c8df27fdb8d5f5c22d68e1d7901fed1c41",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-preparation-reviewed-v2.json": "a77dccd58444624cace9d64b151451dac07bc72929a9344c298a849a83f40bbd",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-prepared.json": "c828a896743ca1bbff09ab5188c38820439dd22605bdff017434a6d91dafb4ee",
-    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-startup-guard.json": "0e83e7b46d9084b306443e075d03625f3a1363c2548aa856826b00a3d709fc36"
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-startup-guard.json": "0e83e7b46d9084b306443e075d03625f3a1363c2548aa856826b00a3d709fc36",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-seed3511-accepted-v2.json": "9272e8ca974ad09cf5e3c6205802bcf51bb498aab1b2c9f4e1bde919ce96db30"
   }
 }

@@ -4337,3 +4337,19 @@ measurement or seed acceptance is claimed. The fixed serial panel still owns
 3511/3512/3513; do not duplicate preparation or dispatch.
 Evidence: campaign005-inference-preparation-reviewed-v2.json contains the
 immutable request and completed guards. All protected pairs remain retained.
+
+
+### Campaign005 first inference seed accepted
+
+Seed3511 completed its child in141.94s; guarded parent preparation303.37s and
+review545.92s finished without violation. All six cache-correctness checks passed.
+Actual state bytes for batch1 are hybrid399,360, gated MLA327,680 and KDA335,872;
+batch8 scales to3,194,880 /2,621,440 /2,686,976. Hybrid state is larger than
+both homogeneous controls in this short-context workload. This single seed is
+not the final campaign cost decision; retain the frozen three-seed aggregation.
+
+Controller38659/session36174 remains active, preparing seed3512 serially.
+No new launch or locked replay was performed. Immutable seed3511 metadata,
+measurements and completed process/guard receipts are preserved byte-for-byte
+in campaign005-inference-seed3511-accepted-v2.json. All selected/fresh pairs,
+failures and protected archives remain retained; no adoption or holdout use.
