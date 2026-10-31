@@ -6318,3 +6318,26 @@ remaining_confirmation_history_v2 explicitly slot18 before preparing slot19.
 Evidence: campaign005-fresh-seed3511-accepted-v2.json,
 campaign005-fresh-prefix-18-v2-review/guard.json, campaign005-fresh18-wrapper-review-v2.json,
 campaign005-fresh18-census-applicability-v2.json and slot18 launch receipt.
+
+
+### Campaign005 second-seed KDA accepted and independently reviewed
+
+Slot18 KDA D/2, LR0.000625, seed3512 completed1125.81s; parent accepted1493.48s.
+H200 validation CE4.967920234487431, raw4.994988798030418. Its seed3512
+paired controls remain pending; no adoption or metric change. Both weights stay
+protected alongside all prior fresh pairs and selected/failure evidence.
+
+The dedicated slot18 history reconstruction passed93.02s, checking19 completed
+records and7 retained selected/fresh pairs, compact transport, immutable
+metadata and all three cleanup boundaries. Remaining capacity21,985,591,296 bytes
+versus21,704,820,024 required includes the unchanged8GiB reserve. No cleanup.
+Exact-slot19 wrapper changes retain all original production gates; AST/diff/API
+checks passed. Frozen source, applicable inference manifest and census-fix
+source/test pins match. No production edit or numerical fixture rerun.
+
+After worker/reviewer exit, dispatched only slot19 (hybrid D/2, LR0.000625,
+seed3512): controller17187, session61533, guarded startup. No slot19 success claim.
+Its eventual idle review must use slot19_history_v2, not slot18-only history.
+Evidence: campaign005-fresh-18-v2-terminal.json, fresh-prefix-19 review/guard,
+campaign005-fresh19-wrapper-review-v2.json and slot19 launch. Resume guide/index
+record exact next actions; local checkpoints/archives remain outside Git.
