@@ -5911,3 +5911,25 @@ No cleanup or holdout use occurred; selected/fresh/failure weights remain protec
 Evidence: `campaign005-lr-02-v2-terminal.json`, `campaign005-lr-prefix-03-v2-review.json`,
 finished prefix guard and `campaign005-lr-03-v2-launch.json`. Current instructions
 are in `TOKENIZER_RESUME.md` and its SHA-pinned state index.
+
+
+### Campaign005 second KDA learning-rate screen accepted
+
+Slot3 (KDAD/4, LR0.00125, seed3501, width512,1200updates) completed
+in996.61s and received parent acceptance. Independent prefix04 review verified
+all four accepted cells and preserved checkpoint/non-checkpoint identities.
+H200 full-validation CE4.976398347271712 versus raw5.079611199806855.
+Compared with LR0.000625 on the same screening seed, KDA H200 CE is
+0.031856207013561 worse. This partial-grid observation is not LR selection,
+fresh confirmation or adoption; the frozen grid and H200 metric remain unchanged.
+
+The review guard finished without violations. Remaining storage fit:
+25,929,609,216 bytes free versus25,652,539,052 required including8GiB reserve.
+After verifying worker exit and no other research workers, dispatched only slot4
+through unchanged gates (controller92236, child92267, session30754).
+Review prefix05 after successful slot4 acceptance and exit before slot5.
+No cleanup or holdout use occurred; selected/fresh/failure weights remain protected.
+
+Evidence: `campaign005-lr-03-v2-terminal.json`, `campaign005-lr-prefix-04-v2-review.json`,
+finished prefix guard and `campaign005-lr-04-v2-launch.json`. See the resume guide
+and SHA-pinned state index for the current next action.
