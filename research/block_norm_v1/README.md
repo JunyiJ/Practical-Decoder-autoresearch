@@ -263,3 +263,5 @@ options. Next explicit versioned backward-policy/config/checkpoint/source bindin
 then both-arm full-model equivalence/gradients/transport/repeat/resume checks.
 Do not silently alter old policies, reinterpret old checkpoints, change Muon
 precision, loosen the failed gate, or claim full-model/campaign readiness.
+
+Versioned grouped embedding integration passed33 checks under `grouped-embedding-integration-plan-001.json`: both-arm initialization/CPU gradients/native MPS forward-cache, four full-model gradient repeats per1x128/8x17 shape, RAM raw transport and old/new checkpoint/cache rejection. V2 is isolated prerequisite code only. Optimizer resume, H200, full8x128 readiness and quality-plan freeze remain pending. See `grouped-embedding-integration-analysis.json` and `grouped-embedding-integration-decision.json`; prior failed attempts stay closed.

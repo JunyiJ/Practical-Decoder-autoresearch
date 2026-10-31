@@ -5,6 +5,8 @@ from torch import nn
 from ...spec import Spec, decode, encode, make, checked_forward, validate_eight, require
 
 POLICY = 'tokenizer_mla_block_norm_v1'
+GROUPED_POLICY = 'tokenizer_mla_block_norm_grouped_embedding_v2'
+POLICIES = (POLICY, GROUPED_POLICY)
 FIELD = 'block_normalization'
 PLACEMENTS = tuple(f'transformer.h.{i}.ln{j}' for i in range(4) for j in (1, 2))
 
@@ -14,14 +16,19 @@ def get(cfg, key, default=None):
 
 
 def contract(cfg):
-    if get(cfg, 'tokenizer_architecture_policy') != POLICY:
+    policy = get(cfg, 'tokenizer_architecture_policy')
+    from .grouped_embedding import EMBEDDING_FIELD, contract as embedding_contract
+    if policy not in POLICIES:
         require(get(cfg, FIELD) is None, 'Block normalization requires its named architecture policy')
+        require(get(cfg, EMBEDDING_FIELD) is None, 'Grouped embedding requires its named architecture policy')
         return None
     from .tokenizer_architecture import FIXED, VARIABLE
     keys = set(cfg.keys()) if hasattr(cfg, 'keys') else set(vars(cfg))
-    require(keys == set(FIXED) | VARIABLE | {FIELD}, 'Block normalization requires exact explicit fields')
+    extra = {EMBEDDING_FIELD} if policy == GROUPED_POLICY else set()
+    require(keys == set(FIXED) | VARIABLE | {FIELD} | extra, 'Block normalization requires exact explicit fields')
     spec = decode(get(cfg, FIELD))
-    fixed = dict(FIXED, tokenizer_architecture_policy=POLICY,
+    embedding = embedding_contract(get(cfg, EMBEDDING_FIELD)) if extra else None
+    fixed = dict(FIXED, tokenizer_architecture_policy=policy,
                  norm_type='layernorm' if spec.bias else 'rmsnorm', dim=256, n_heads=8,
                  attn_type='mla', attention_width_policy='mla_quarter_head32',
                  depth_width_policy='depth4_unscaled')
@@ -29,7 +36,8 @@ def contract(cfg):
         value = get(cfg, key)
         require(type(value) is type(expected) and value == expected,
                 f'Block normalization changed fixed field {key}')
-    return dict(policy=POLICY, family='mla', width=256, heads=8, score_scale=.5,
+    return dict(policy=policy, family='mla', width=256, heads=8, score_scale=.5,
+                **({EMBEDDING_FIELD: embedding} if embedding is not None else {}),
                 prior_sha256=get(get(cfg, 'output_bias_prior'), 'prior_sha256'),
                 normalization=encode(spec), placements=list(PLACEMENTS),
                 final_normalization=dict(kind='layer_affine', epsilon=1e-5),
@@ -51,6 +59,13 @@ def validate_model(model, value):
     require(len({p.device for p in parameters}) == 1, 'Block norm model devices differ')
     require(sum(p.numel() for p in parameters) == 28492416 + (2048 if spec.bias else 0),
             'Block norm model parameter inventory differs')
+    from .grouped_embedding import GroupedMpsEmbedding, EMBEDDING_FIELD
+    expected_embedding = GroupedMpsEmbedding if value['policy'] == GROUPED_POLICY else nn.Embedding
+    require(type(model.transformer.wte) is expected_embedding, 'Constructed embedding backward policy differs')
+    if expected_embedding is GroupedMpsEmbedding:
+        model.transformer.wte.validate()
+        require(_same_typed(model.transformer.wte.embedding_backward_spec, value[EMBEDDING_FIELD]),
+                'Constructed embedding backward specification differs')
     final = model.transformer.ln_f
     require(type(final) is nn.LayerNorm and final.normalized_shape == (256,)
             and final.eps == 1e-5 and final.elementwise_affine is True

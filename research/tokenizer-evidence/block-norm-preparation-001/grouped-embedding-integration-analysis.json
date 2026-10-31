@@ -1,0 +1,135 @@
+{
+  "status": "passed_versioned_integration_prerequisite",
+  "observed_at": "2026-10-31T21:12:42.171399+00:00",
+  "tests_passed": 33,
+  "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+  "old_policy": "tokenizer_mla_block_norm_v1",
+  "runtime_changed_files": [
+    "research/block_norm_v1/runtime/models/block_norm.py",
+    "research/block_norm_v1/runtime/models/gpt.py",
+    "research/block_norm_v1/runtime/models/grouped_embedding.py",
+    "research/block_norm_v1/runtime/models/tokenizer_architecture.py"
+  ],
+  "prototype_core_AST_preserved": true,
+  "old_new_initialization_rng_cpu_forward_gradient": "bit_exact_both_arms",
+  "old_new_mps_native_forward_and_cached_outputs": "bit_exact_both_arms",
+  "max_full_cached_error": 8.940696716308594e-07,
+  "full_model_gradient_repeat_summaries": [
+    {
+      "arm": "rms_incumbent",
+      "shape": [
+        1,
+        128
+      ],
+      "repeats": 4,
+      "all_parameter_gradients_bit_exact": true,
+      "max_reference_error": 4.7264620661735535e-08
+    },
+    {
+      "arm": "rms_incumbent",
+      "shape": [
+        8,
+        17
+      ],
+      "repeats": 4,
+      "all_parameter_gradients_bit_exact": true,
+      "max_reference_error": 4.889443516731262e-08
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "shape": [
+        1,
+        128
+      ],
+      "repeats": 4,
+      "all_parameter_gradients_bit_exact": true,
+      "max_reference_error": 5.564652383327484e-08
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "shape": [
+        8,
+        17
+      ],
+      "repeats": 4,
+      "all_parameter_gradients_bit_exact": true,
+      "max_reference_error": 3.632158041000366e-08
+    }
+  ],
+  "max_reference_parameter_gradient_error": 5.564652383327484e-08,
+  "reference_scope": "Native CPU embedding and shared MLA/FFN/readout with independent FP64 block normalization; not independent whole-model oracle.",
+  "raw_memory_transport": [
+    {
+      "arm": "rms_incumbent",
+      "bytes": 114073155,
+      "cross_policy_rejected_before_mutation": true,
+      "event": "raw_memory_transport",
+      "policy": "tokenizer_mla_block_norm_v1",
+      "roundtrip_exact": true,
+      "sha256": "5c7a8482f34035a7360fd8013c78d6319e88ea5af6bf75a5faa0df1d7d7cdcc5"
+    },
+    {
+      "arm": "rms_incumbent",
+      "bytes": 114073731,
+      "cross_policy_rejected_before_mutation": true,
+      "event": "raw_memory_transport",
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "roundtrip_exact": true,
+      "sha256": "74dbe8842c0c87d0a9bb15d454cc9cbf525828639ed82841e06688a961104a2a"
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "bytes": 114084015,
+      "cross_policy_rejected_before_mutation": true,
+      "event": "raw_memory_transport",
+      "policy": "tokenizer_mla_block_norm_v1",
+      "roundtrip_exact": true,
+      "sha256": "ac28e9353c58b8707703da394a27888bac4124a4c3f38d1c1101b6801f892a20"
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "bytes": 114084591,
+      "cross_policy_rejected_before_mutation": true,
+      "event": "raw_memory_transport",
+      "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+      "roundtrip_exact": true,
+      "sha256": "039bd0e8f2191f68eae74bc0b86e2cb7d0f94cad939037555539600538f02bc6"
+    }
+  ],
+  "raw_transport_scope": "Untrained inference payloads; serialized through torch.save/weights_only read; no optimizer/training state; not strict resume or H200.",
+  "old_new_checkpoint_interchange": "rejected_both_directions_before_mutation",
+  "old_new_cache_interchange": "rejected_both_directions_before_mutation",
+  "guard": {
+    "elapsed_seconds": 8.16482462498243,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 10366472192,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 77283328,
+      "peak_observed_mps_driver_bytes": 1244495872,
+      "peak_rss_bytes": 1806532608
+    },
+    "pid": 72779,
+    "reason": null,
+    "status": "finished"
+  },
+  "original_sources_recovery_modules_closed_roots_generated_fixtures_unchanged": true,
+  "new_binary_files": 0,
+  "optimizer_updates": 0,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "remaining": [
+    "New v2 both-arm MPS optimizer uninterrupted-repeat and raw resume under unchanged atol2e-6/rtol2e-4 gate",
+    "V2 H200 serialized transport and inference reconstruction",
+    "Full8x128 generated-loader training and resource readiness",
+    "Controller, retention, selection, inference and statistical readiness",
+    "Full-panel capacity and finite seed/order freeze"
+  ],
+  "review_sha256": "e21e0a102666546389151c07542f99fb0865889ec7cbff2f862c062ed357c6a2",
+  "plan_sha256": "a5388d42afced02e0c42f23e4034d4cf9cf9edf0dce0705c3db9428c2ccf2eeb"
+}

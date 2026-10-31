@@ -5523,3 +5523,47 @@ with fresh controls and declared FP32 reduction-order change. Verify initializat
 forward/cache equivalence, both-arm gradients, serialized transport and full-model
 MPS repeat/resume under the unchanged original gate before resource/controller
 readiness or finite quality-plan freeze. Earlier failed attempts remain closed.
+
+
+## October 31 versioned grouped embedding integration: 33 checks passed
+
+The isolated runtime now has an explicit `tokenizer_mla_block_norm_grouped_embedding_v2`
+architecture policy and exact `embedding_backward` specification. Its MPS backward
+core is AST-identical to the tested standalone prototype: unique-token FP32
+membership matmul and distinct-row copy, first order, vocabulary50,257/width256,
+maximum1,024 gradient tokens. CPU gradients use the native reference path; no-grad
+inference uses native embedding on either device. Padding, max-norm, sparse or
+frequency-scaled gradients, autocast and altered shapes/dtypes remain unsupported.
+This is a declared FP32 reduction-order change for both future normalization arms,
+not a reinterpretation of the old native-embedding policy or prior checkpoints.
+Original source/requirements and the13 frozen recovery modules are unchanged.
+
+33 checks passed under the frozen integration plan. Both RMS and matched-epsilon
+LayerNorm preserved old-policy initialization, RNG, parameter inventories, CPU
+forward and CPU gradients exactly. Native MPS full/cached outputs were also
+bit-exact between old/new policies. Full-versus-cached maximum error was8.940697e-7
+under inherited atol3e-4/rtol3e-4. Four full-model gradient repeats per arm at shapes
+1x128 and8x17 were bit-exact for every parameter (16 MPS backwards total). Maximum
+error against native CPU embedding/shared MLA/FFN with independent FP64 block
+normalization was5.564652e-8 under inherited gradient atol3e-5/rtol3e-3. This is
+scoped repeatability evidence; full8x128 gradients and optimizer replay are pending.
+
+Four untrained raw payloads serialized in RAM and reloaded exactly. Old/new policy
+checkpoint and cache interchange was rejected in both directions before mutation;
+missing/malformed specifications and actual module changes were rejected. These
+raw payloads have no optimizer/training state, and strict-resume loading rejects
+them. H200 export/reconstruction and populated optimizer resume are not established
+by this transport check. No binary files or optimizer updates were produced.
+
+Guard8.165s; peakRSS1,806,532,608bytes and sampled MPS driver1,244,495,872bytes.
+Strict fallback0/fast_math0,4CPU and4GiB/6GiB/8GiB/600s guards held. Frozen sources,
+closed campaigns and retained generated fixtures passed unchanged audits. No
+quality training, deletion or holdout scoring occurred. SiLU remains retained;
+no normalization quality conclusion is available.
+
+Next freeze a new v2 both-arm MPS repeat/resume prerequisite with populated optimizer,
+EMA and RNG state, using the original failed gate (atol2e-6/rtol2e-4), then finish
+v2 H200/inference transport and full-workload/resource/controller/statistical gates.
+Do not rerun historical failed fixtures, widen tolerances or change Muon precision.
+Full-panel capacity remains unresolved; no partial panel, seed/control/width trimming
+or protected-weight deletion. Freeze exact finite seeds/order before quality launch.

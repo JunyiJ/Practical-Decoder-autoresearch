@@ -91,8 +91,8 @@ def validate_architecture_model(model):
         validate_hybrid_model(model, contract)
         return
     from torch import nn
-    from .block_norm import POLICY as NORM_POLICY, validate_model as validate_norm_model
-    normalized = contract['policy'] == NORM_POLICY
+    from .block_norm import POLICIES as NORM_POLICIES, validate_model as validate_norm_model
+    normalized = contract['policy'] in NORM_POLICIES
     if normalized:
         validate_norm_model(model, contract)
 

@@ -58,7 +58,11 @@ class GPT(nn.Module):
         self.aux_loss_weight = getattr(moe_cfg, "aux_loss_weight", getattr(cfg, "aux_loss_weight", 1.0))
         self.position_encoding = resolve_position_encoding(cfg)
         self.enable_rope = self.position_encoding == "rope"
-        embeddings = {"wte": nn.Embedding(cfg.vocab_size, cfg.dim)}
+        from .block_norm import GROUPED_POLICY
+        from .grouped_embedding import GroupedMpsEmbedding
+        embedding_type = (GroupedMpsEmbedding if getattr(cfg, 'tokenizer_architecture_policy', None)
+                          == GROUPED_POLICY else nn.Embedding)
+        embeddings = {"wte": embedding_type(cfg.vocab_size, cfg.dim)}
         if self.position_encoding == "learned":
             embeddings["wpe"] = nn.Embedding(cfg.block_size, cfg.dim)
         self.transformer = nn.ModuleDict({
