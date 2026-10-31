@@ -1,0 +1,23 @@
+{
+  "status": "read_only_installed_optimizer_source_inspection",
+  "torch_version": "2.14.1",
+  "module_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/optim/_muon.py",
+  "module_sha256": "c17abbb8af4c935d125b189c38d3cbaec295f1cfd232d2712bdb75e13184b972",
+  "functions": {
+    "_zeropower_via_newtonschulz": {
+      "source_sha256": "99e2359a95e1a914345207e49f072a658866333f4458b7b45faafa35c628f7c4",
+      "first_line": 31
+    },
+    "_single_tensor_muon": {
+      "source_sha256": "44fba01f07983da8404c512ab0d862f1992262955ed3c6ff1ab2e424e57ba23c",
+      "first_line": 318
+    }
+  },
+  "observations": [
+    "_zeropower_via_newtonschulz explicitly casts the update to bfloat16 before normalization/Newton-Schulz iterations.",
+    "_single_tensor_muon updates FP32 momentum via lerp, forms the Nesterov update, then invokes that bfloat16 orthogonalizer and applies it to parameters.",
+    "FP32 model parameters/gradients/optimizer slots do not imply FP32 optimizer intermediate arithmetic."
+  ],
+  "inference": "Internal bfloat16 quantization and nonlinear orthogonalization are plausible amplification mechanisms for tiny input-gradient differences, not proven as the cause by this source inspection or trace.",
+  "math_or_backend_changed": false
+}

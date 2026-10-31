@@ -447,3 +447,50 @@ and per-step losses/gradients/updates with parameter names before final comparis
 Separate a transport/state defect from backend numerical variation using a
 prospectively specified control, with no quality training. MPS resume and all
 later controller/finite-plan gates remain incomplete; capacity remains gated.
+
+
+## RMS MPS diagnostic: exact transport, variation without resume
+
+The separately planned trace001 completed eight synthetic updates: a three-step
+RMS reference, a separately initialized three-step uninterrupted repeat and a
+resume for updates2/3. It did not invoke either closed failed prerequisite. All
+original tolerances remain unchanged, and diagnostic completion is not acceptance.
+
+The fresh repeat started with identical state. The checkpoint round trip restored
+all recorded model, optimizer and EMA tensor values/layouts plus group, schedule,
+EMA-counter and CPU/MPS/loader RNG metadata exactly. Serialization did not change
+RNG. Every compared batch, CPU/MPS random draw, pre/post-draw RNG state and scalar
+loss matched exactly. First observed numerical differences were confined to the
+embedding gradient: fresh-repeat step1 max4.6566e-10; resumed step2 max2.3283e-10.
+
+The fresh uninterrupted repeat subsequently diverged more than the resumed run.
+After step3, fresh-repeat max parameter difference4.902482033e-5 with5,472elements
+outside the unchanged2e-6+2e-4*abs(reference) threshold; resumed max3.956258297e-6
+with3elements outside. Named intermediate gradients, model/optimizer/EMA hashes,
+layouts and all comparisons are retained in the event trace. The observed pattern
+supports backend numerical variation independent of checkpoint transport. It does
+not prove the precise kernel cause, justify relaxed tolerance or establish MPS
+resume readiness. Evidence is one RMS seed, one fresh-repeat control, batch1/
+context128; no LayerNorm or full trainer interruption was tested.
+
+Read-only inspection of installed torch.optim._muon confirms that its Newton-
+Schulz orthogonalizer casts updates to bfloat16. FP32 parameters, gradients and
+saved optimizer slots therefore do not imply FP32 optimizer intermediates. BF16
+quantization/nonlinear orthogonalization is a plausible amplification mechanism,
+not a causal result from this trace. Installed module/version/function hashes and
+line locations are recorded; no optimizer math or backend configuration changed.
+
+Guard7.896s, peakRSS2,297,741,312bytes, peak sampled MPS driver1,191,608,320bytes;
+strict fallback0/fast_math0,4CPU,4GiB RSS/6GiB driver/8GiB reserve/600s. No new binary
+files or cleanup. The445,082,087-byte in-memory archive's SHA was emitted before
+comparisons and verified unchanged; payload bytes were not persisted. Original
+source,13 recovery modules, closed roots and generated fixtures stayed unchanged.
+
+[Trace analysis](tokenizer-evidence/block-norm-preparation-001/mps-resume-trace-001-analysis.json),
+[full events](tokenizer-evidence/block-norm-preparation-001/mps-resume-trace-001-events.jsonl),
+[installed Muon precision](tokenizer-evidence/block-norm-preparation-001/installed-muon-precision-review.json).
+Next prospectively isolate repeated embedding backward under default and explicit
+strict deterministic controls, then identical-gradient Muon repeat/perturbation
+sensitivity as warranted. Use separate bounded diagnostics and disclose backend
+support/errors; do not silently change precision, fallback or accept a new threshold.
+MPS resume, controller and finite quality-plan readiness remain gated.

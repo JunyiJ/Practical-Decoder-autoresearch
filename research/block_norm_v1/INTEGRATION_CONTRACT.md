@@ -238,3 +238,21 @@ mentions archive hashes, but failure occurred before those final properties were
 emitted; no archive hash/payload was retained. Next separately planned diagnostic
 must emit named intermediate state/RNG/gradient/update evidence before assertions,
 with a predeclared numerical control. No assumed root cause or quality launch.
+
+
+## New RMS diagnostic completed; failed acceptance gate unchanged
+
+Trace001 separately observed exact full checkpoint restoration (tensor values/
+layouts, optimizer/EMA/schedule metadata and RNG), identical batches/draws/losses,
+and the first differences in embedding gradients. A fresh uninterrupted repeat
+also diverged: final max parameter delta4.9025e-5/5,472elements outside the unchanged
+threshold, versus resumed3.9563e-6/3elements. This supports backend variation
+independent of resume, but not a precise kernel cause or numerical acceptance.
+
+Installed Muon orthogonalization explicitly uses BF16 intermediates despite FP32
+parameters/gradients/saved slots. Its potential amplification remains an inference.
+Runtime unchanged. Guard7.896s/RSS2,297,741,312B/driver1,191,608,320B;8synthetic RMS
+updates, no new binary files/quality/holdout. Intermediate archive hash and full
+trace retained; payload stays ephemeral. All earlier failed attempts remain closed.
+Next separately plan embedding-backward deterministic controls and Muon sensitivity
+checks, without silent backend/precision/tolerance changes or quality launch.
