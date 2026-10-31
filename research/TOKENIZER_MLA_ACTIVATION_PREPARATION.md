@@ -504,3 +504,32 @@ All guards passed; no cleanup, all current pairs retained, holdout closed.
 Slot05 GELU LR0.0025 is running; then save selection and audit losing-screen
 cleanup before fresh confirmation.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-05-review.json).
+
+
+### October31 activation001 screen selection and cleanup complete
+
+All six1200-update screens passed independent acceptance. H200 full-validation CE:
+
+| LR | SiLU | Exact GELU | GELU minus SiLU |
+| --- | --- | --- | --- |
+|0.000625|4.900551548|4.898298625|-0.002252923|
+|0.00125|4.722533288|4.726793996|+0.004260708|
+|0.0025|4.805960225|4.807614079|+0.001653854|
+
+The frozen minimum-H200 rule saved LR0.00125 for both arms. This screening seed
+favors SiLU by0.004260708 at the selected rate; no fresh-seed/adoption conclusion.
+Final GELU rawCE4.906256948/H200CE4.807614079;207.35s training/332.93s worker;
+peakRSS1,697,267,712bytes, driver2,501,705,728bytes. All guards passed.
+
+Independent selection review confirmed both saved minima and exact losing slots
+00/01/04/05. Frozen cleanup removed their eight weights (2,236,641,184 logical
+bytes), preserving all240 other campaign files including the four selected
+weights. Independent post-cleanup replay verified selection, journals, terminal
+guards, retained hashes and remaining capacity:14,436,069,376free bytes versus
+14,050,805,346 required including the8GiB reserve and all future fresh pairs.
+Deleted losing weights cannot be re-audited; complete portable text remains.
+
+Next: fresh seeds3611/3612/3613 at the saved rates, alternating arm order. No
+source/endpoint/grid change, holdout scoring or protected checkpoint deletion.
+[Selection review](tokenizer-evidence/activation-preparation-001/campaign001-screen-selected-review.json),
+[retention review](tokenizer-evidence/activation-preparation-001/campaign001-screen-released-review.json).

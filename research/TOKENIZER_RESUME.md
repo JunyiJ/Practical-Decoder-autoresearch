@@ -46,7 +46,7 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
 ```
 
 1. Read ignored `research_state/tokenizer-quality-progress.json`; reconcile its
-   next_action with actual Git/process state. Activation quality slot05 was launched; slots00-04 accepted.
+   next_action with actual Git/process state. All six activation screens and audited screen cleanup are complete.
    No005 relaunch, slot24, seed extension or changed adoption criterion.
 2. Continue [activation preparation](TOKENIZER_MLA_ACTIVATION_PREPARATION.md).
    The MoE panel is deferred after a 3.27 GB conservative capacity gap; its
@@ -84,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 exact-GELU screen running (slot05, seed3601, LR0.0025); see the indexed
+Current continuation: activation001 screen complete; LR0.00125 saved for both gates; fresh slot06 next; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -265,3 +265,32 @@ Latest observation: three screens accepted; slot03 SiLU LR0.00125 running. Paren
 Latest observation: four screens accepted; slot04 SiLU LR0.0025 running. Parent59460/child59463/session85521. Read the state index before dispatch.
 
 Latest observation: five screens accepted; slot05 GELU LR0.0025 running. Parent59900/child59904/session51452. After acceptance, save selection and verify audited screen cleanup before fresh slot06; read the state index.
+
+
+### October31 activation001 screen selection and cleanup complete
+
+All six1200-update screens passed independent acceptance. H200 full-validation CE:
+
+| LR | SiLU | Exact GELU | GELU minus SiLU |
+| --- | --- | --- | --- |
+|0.000625|4.900551548|4.898298625|-0.002252923|
+|0.00125|4.722533288|4.726793996|+0.004260708|
+|0.0025|4.805960225|4.807614079|+0.001653854|
+
+The frozen minimum-H200 rule saved LR0.00125 for both arms. This screening seed
+favors SiLU by0.004260708 at the selected rate; no fresh-seed/adoption conclusion.
+Final GELU rawCE4.906256948/H200CE4.807614079;207.35s training/332.93s worker;
+peakRSS1,697,267,712bytes, driver2,501,705,728bytes. All guards passed.
+
+Independent selection review confirmed both saved minima and exact losing slots
+00/01/04/05. Frozen cleanup removed their eight weights (2,236,641,184 logical
+bytes), preserving all240 other campaign files including the four selected
+weights. Independent post-cleanup replay verified selection, journals, terminal
+guards, retained hashes and remaining capacity:14,436,069,376free bytes versus
+14,050,805,346 required including the8GiB reserve and all future fresh pairs.
+Deleted losing weights cannot be re-audited; complete portable text remains.
+
+Next: fresh seeds3611/3612/3613 at the saved rates, alternating arm order. No
+source/endpoint/grid change, holdout scoring or protected checkpoint deletion.
+[Selection review](tokenizer-evidence/activation-preparation-001/campaign001-screen-selected-review.json),
+[retention review](tokenizer-evidence/activation-preparation-001/campaign001-screen-released-review.json).
