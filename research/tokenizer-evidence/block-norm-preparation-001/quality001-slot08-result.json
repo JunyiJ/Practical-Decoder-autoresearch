@@ -1,0 +1,156 @@
+{
+  "status": "quality_endpoint_independently_accepted",
+  "observed_at": "2026-10-31T23:42:26.336186+00:00",
+  "slot": 8,
+  "spec": {
+    "arm": "layer_matched_epsilon",
+    "batch_layout": "paired_blocks512",
+    "batch_size": 8,
+    "context": 128,
+    "lr": 0.00125,
+    "policy": "tokenizer_mla_block_norm_grouped_embedding_v2",
+    "seed": 374012,
+    "stage": "confirm",
+    "steps": 1200,
+    "width": 256
+  },
+  "anchor_sha256": "bc02418be908e7552a1c3750dd617326d1440dd02194b18c0d96accad3200730",
+  "inventory": {
+    "accepted.json": {
+      "size": 63378,
+      "sha256": "bfea0903aa25c25d49eee49067087d5d265a6d2e9b03186e9fae6c6e59a40c43"
+    },
+    "checkpoints/final_001200_1793490023441872000.pt": {
+      "size": 445135573,
+      "sha256": "929f86e1d90c67e0491f23af5dfb902acdf1493801e9d4933a4536932839ccdd"
+    },
+    "checkpoints/h200.pt": {
+      "size": 114085807,
+      "sha256": "a46191a41fce07d1d7b47aaa989614fe5cbd9cfc80b81a860d9740c58c9c4296"
+    },
+    "config.json": {
+      "size": 3155,
+      "sha256": "07fec0e14375cd4121cc3fdebe73e71d1cdbe9edee26917785a0726203c65e05"
+    },
+    "export.json": {
+      "size": 3855,
+      "sha256": "c903992a37134bbfb5034554857268959bb1667b9c29d59031deacb4922d2e9c"
+    },
+    "metrics.jsonl": {
+      "size": 3330,
+      "sha256": "eef087432d23652c63c5c1164f7b92e76be2c1926f5cb4635033f1f8fdbf44fa"
+    },
+    "process/launch.json": {
+      "size": 571,
+      "sha256": "b848141f4dcc3cb8d02095224a4c644f0b43ab83375629815c00a6c11fb65e55"
+    },
+    "process/process.json": {
+      "size": 667,
+      "sha256": "0d6e28662e47997010e7c5d1d6a881b2e4340940554305048009a32ce9bfecc4"
+    },
+    "process/worker.log": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "request.json": {
+      "size": 761,
+      "sha256": "3bc4700df745ee94a40d26966db0120a9734664edf8dc3fcb9bb4d3dbcb05bc2"
+    },
+    "training-summary.json": {
+      "size": 5233,
+      "sha256": "f075a2e0c862678819b44dab8c7b2110e47ce102000c362858450d55b6a87309"
+    },
+    "worker-guard.json": {
+      "size": 374,
+      "sha256": "6fe35d4165725a3a1f7473cd3f8b4c5b61997010c1819bc753aa1e39d04495c4"
+    },
+    "worker.json": {
+      "size": 58908,
+      "sha256": "4c345a17ded533c97b169137a32db666bc135f4082651a809f520a8ec2f0eb8b"
+    }
+  },
+  "audit": {
+    "completed_steps": 1200,
+    "ema_parameters": 96,
+    "ema_snapshots": 41,
+    "tokens_processed": 1228800
+  },
+  "h200_ce": 4.720327997809165,
+  "training_seconds": 209.44637726072688,
+  "worker_guard": {
+    "elapsed_seconds": 312.30731670800014,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 15056609280,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 39534592,
+      "peak_observed_mps_driver_bytes": 2510094336,
+      "peak_rss_bytes": 1565360128
+    },
+    "pid": 84753,
+    "reason": null,
+    "status": "finished"
+  },
+  "parent_guard": {
+    "elapsed_seconds": 10.095711917005247,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 6886.86099299998
+    },
+    "observation": {
+      "free_bytes": 15056560128,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 39534592,
+      "peak_observed_mps_driver_bytes": 1148502016,
+      "peak_rss_bytes": 1346338816
+    },
+    "pid": 84749,
+    "reason": null,
+    "status": "finished"
+  },
+  "process": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.block_norm_v1.quality_execution",
+      "worker",
+      "--slot",
+      "8",
+      "--freeze-sha256",
+      "395efff57d7845114354955a7b9d5f2359a1c0dea28edd024db7e10538cacb30",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 313.09958437501336,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 15056588800,
+      "log_bytes": 0,
+      "output_bytes": 559298234
+    },
+    "output_limit_bytes": 797398272,
+    "parent_pid": 84749,
+    "pid": 84753,
+    "required_free_bytes": 12933449336,
+    "reserve_bytes": 8589934592,
+    "returncode": 0,
+    "status": "completed",
+    "timeout_seconds": 7200
+  },
+  "free_bytes": 15056400384,
+  "quality_adopted": false,
+  "selection_saved": true,
+  "holdout_scored": false
+}
