@@ -8,14 +8,14 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October30,2026 at21:18 Los Angeles: the three pilots and quality slots0–1
-have completed and passed independent review. Slot1 gatedMLAD/4, LR0.000625,
-seed3501 reached H200 validationCE4.953336852752508 (raw4.9200928696776876).
-The raw checkpoint was better in this cell; the frozen H200 selection rule remains
-unchanged. These are screening cells, with no selection or adoption claim.
-Slot1 controller and child exited. LR slot2 is now running under controller90595,
-child90610, tool session97599; verify current processes before acting. Each
-continuation dispatches exactly one slot, with no automatic later dispatch.
+Observed October30,2026 at21:38 Los Angeles: the three pilots and quality slots0–2
+have completed and passed independent review. At LR0.000625, D/4, seed3501,
+H200 validationCE is hybrid4.965645637327922, gatedMLA4.953336852752508,
+and KDA4.944542140258151. KDA rawCE is4.969660905926372. This completes
+one LR setting across the three families, not LR selection or fresh confirmation.
+No adoption claim follows. Slot2 controller and child exited. LR slot3 is running
+under controller91415, child91431, tool session24853; verify current processes.
+Each continuation dispatches exactly one slot, with no automatic later dispatch.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -33,7 +33,7 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller90595 or its current descendant is still running, observe it;
+2. If controller91415 or its current descendant is still running, observe it;
    never invoke the starter again. Pilot children change during serial dispatch.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
@@ -41,12 +41,12 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. Slots0–1 acceptance and independent prefix verification are saved in
-   [prefix02 review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-prefix-02-v2-review.json)
-   with a finished guard. After slot2 parent acceptance and actual worker exit,
-   run `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_lr_prefix_v2.py --completed 3`.
-   Only after that review and its guard pass, dispatch exactly slot3 with
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_lr_v2.py --slot 3`.
+4. Slots0–2 acceptance and independent prefix verification are saved in
+   [prefix03 review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-lr-prefix-03-v2-review.json)
+   with a finished guard. After slot3 parent acceptance and actual worker exit,
+   run `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_lr_prefix_v2.py --completed 4`.
+   Only after that review and its guard pass, dispatch exactly slot4 with
+   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_lr_v2.py --slot 4`.
    These005 helpers change only campaign bindings from their reviewed004 patterns;
    they preserve production gates and both locks. Never rerun a consumed slot.
    Later LR/rank boundaries, fresh confirmations and inference retain their

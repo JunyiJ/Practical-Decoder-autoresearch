@@ -5888,3 +5888,26 @@ Review prefix03 after successful slot2 acceptance and exit before slot3.
 Evidence: `campaign005-lr-01-v2-terminal.json`, `campaign005-lr-prefix-02-v2-review.json`,
 finished prefix guard and `campaign005-lr-02-v2-launch.json`. Current instructions
 are in `TOKENIZER_RESUME.md` and its SHA-pinned state index.
+
+
+### Campaign005 first LR setting completed across three families
+
+Slot2 (KDAD/4, LR0.000625, seed3501, width512,1200updates) completed
+in991.54s and received parent acceptance. Independent prefix03 review verified
+all three accepted cells and preserved checkpoint/non-checkpoint identities.
+KDA H200 full-validation CE4.944542140258151 versus raw4.969660905926372.
+At this first LR setting, H200 CE was hybrid4.965645637327922,
+gatedMLA4.953336852752508 and KDA4.944542140258151. These reused-seed
+screens establish neither tuned family superiority nor adoption. Finish the
+frozen LR/rank stages and fresh confirmations; retain H200 as the selection metric.
+
+The review guard finished without violations. Remaining campaign storage fit:
+27,204,509,696 bytes free versus26,907,661,636 required including8GiB reserve.
+After verifying worker exit and no other research workers, dispatched only slot3
+through unchanged production gates (controller91415, child91431, session24853).
+Review prefix04 after successful slot3 acceptance and exit before slot4.
+No cleanup or holdout use occurred; selected/fresh/failure weights remain protected.
+
+Evidence: `campaign005-lr-02-v2-terminal.json`, `campaign005-lr-prefix-03-v2-review.json`,
+finished prefix guard and `campaign005-lr-03-v2-launch.json`. Current instructions
+are in `TOKENIZER_RESUME.md` and its SHA-pinned state index.
