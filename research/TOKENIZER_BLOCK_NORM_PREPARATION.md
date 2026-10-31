@@ -6,7 +6,8 @@ Pure finite-stage/selection/statistical rules pass67 CPU checks; exact configura
 source/environment and train/validation preparation bindings pass66 more. The executable
 controller and scored artifact/validation provenance gates remain pending. Synthetic
 append-only ledger mechanics pass42 checks; real retained-artifact acceptance now
-passes52 checks, while new worker/dispatch integration remains pending; no quality
+passes52 checks and real readonly worker/parent transport passes22; actual campaign
+integration and inference measurements remain pending; no quality
 campaign has launched and the finite launch plan is not frozen. Retained-fixture
 validation passes34 checks after preserving/correcting its transfer failure. Cache
 cleanup now provides sufficient capacity against the current full-panel projection. Historical sections below retain their dated scope.
@@ -896,3 +897,30 @@ pilot/quality plans. Capacity currently fits after authorized cache cleanup;
 recheck at dispatch. Avoid additional metadata-only expansion absent a concrete
 failure. Evidence: artifact-acceptance-plan-001/review/analysis/decision and source
 snapshot in the block-norm preparation evidence directory.
+
+## Real readonly worker dispatch passed, October31,2026
+
+Two actual child processes sequentially loaded the retained v2 RMS/LayerNorm
+fixtures, scored all validation targets, exited and were reaped. Only then did
+the parent audit each six-file bundle and independently recompute its score.
+Both exactly match the previous CPU-oracle-checked reports. All22 checks passed,
+including duplicate-attempt and STOP rejection,17 corrupt process/report/guard
+variants, and rejection of parent impersonation of a child. Sources (382 files),
+configuration, requests, environment, argv, parent PID and inherited locks bind
+the handoff. The frozen bounded subprocess supervisor is reused unchanged.
+
+Child wall times were4.132s/2.620s; peak child RSS653,885,440B and sampled
+MPS driver1,125,711,872B. Parent peak RSS1,222,098,944B and driver1,155,317,760B.
+A live-child parent uses synchronous guard checks so the supervisor owns cleanup;
+the parent's strict MPS audit guard begins after child exit. No training, new
+binary, deletion or holdout scoring occurred. Attempt001 failed test collection
+before starting a worker; its source/log/plan are preserved. Attempt002 changes
+only the test's relative import to an absolute namespace.
+
+This closes the real readonly worker-to-parent transport prerequisite. It does
+not freeze or launch the scientific campaign. Next finish inference measurement
+acceptance and connect durable external heads and audited retention receipts to
+the actual campaign path, then census seeds, freeze the finite pilots and run
+the actual-corpus resource pilots. Ledger mechanics need no further expansion.
+Evidence: fixture-dispatch-plan-001/002, original source snapshots,002-campaign,
+reviews, analysis and decision in the block-norm preparation evidence directory.
