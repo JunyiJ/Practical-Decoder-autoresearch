@@ -4672,3 +4672,18 @@ Training212.66s/worker297.91s, peakRSS1,650,491,392bytes, driver2,501,705,728byt
 All guards passed, no cleanup, holdout closed. Slot04 SiLU LR0.0025 is running;
 the final GELU rate follows before any frozen selection.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-04-review.json).
+
+
+### October31 activation001 SiLU three-rate screen completed
+
+SiLU LR0.0025, seed3601, completed1200updates and independent acceptance.
+RawCE4.908889975/H200CE4.805960225. Its three H200 endpoints at ascending
+LR0.000625/0.00125/0.0025 are4.900551548/4.722533288/4.805960225. The middle
+rate is lowest on this screening seed; the highest rate is worse by0.083426937
+despite H200 improving its own raw endpoint by0.102929750. No fresh-seed or
+general-optimum claim. Persisted selection waits for the final GELU screen.
+Training210.84s/worker325.27s, peakRSS1,706,131,456bytes, driver2,501,705,728bytes.
+All guards passed; no cleanup, all current pairs retained, holdout closed.
+Slot05 GELU LR0.0025 is running; then save selection and audit losing-screen
+cleanup before fresh confirmation.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-05-review.json).
