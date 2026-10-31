@@ -5867,3 +5867,24 @@ Review accepted prefix02 after slot1 succeeds and exits before considering slot2
 Evidence: `campaign005-terminal-v2.json`, `campaign005-lr-prefix-01-v2-review.json`,
 finished prefix guard,005 review/continuation helpers and slot1 launch receipt.
 See `TOKENIZER_RESUME.md` and `TOKENIZER_RESUME_STATE.json` for current resumption.
+
+
+### Campaign005 second quality cell accepted
+
+Slot1 (gatedMLAD/4, LR0.000625, seed3501, width512,1200updates) completed
+in542.68s and received parent acceptance. Independent prefix02 review verified
+both accepted cells, checkpoint identities and non-checkpoint evidence. H200
+full-validation CE4.953336852752508 versus raw4.9200928696776876: raw was
+0.0332439830748204 nats/token better in this cell. Retain this EMA reversal;
+do not change the prospective H200 selection rule. No architecture winner or
+adoption is established by these one-seed screens. Holdout remains closed.
+
+The review guard finished without violations. Remaining campaign storage fit:
+28,480,778,240 bytes free versus28,162,784,220 required including8GiB reserve.
+After verifying worker exit and no other research workers, dispatched only slot2
+through the unchanged production gates (controller90595, child90610, session97599).
+Review prefix03 after successful slot2 acceptance and exit before slot3.
+
+Evidence: `campaign005-lr-01-v2-terminal.json`, `campaign005-lr-prefix-02-v2-review.json`,
+finished prefix guard and `campaign005-lr-02-v2-launch.json`. Current instructions
+are in `TOKENIZER_RESUME.md` and its SHA-pinned state index.
