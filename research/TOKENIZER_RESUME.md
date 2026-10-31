@@ -84,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 screen complete; LR0.00125 saved for both gates; fresh slot06 next; see the indexed
+Current continuation: activation001 screen complete; LR0.00125 saved for both gates; first fresh SiLU slot06 running; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -294,3 +294,5 @@ Next: fresh seeds3611/3612/3613 at the saved rates, alternating arm order. No
 source/endpoint/grid change, holdout scoring or protected checkpoint deletion.
 [Selection review](tokenizer-evidence/activation-preparation-001/campaign001-screen-selected-review.json),
 [retention review](tokenizer-evidence/activation-preparation-001/campaign001-screen-released-review.json).
+
+Latest launch: fresh slot06 SiLU seed3611, LR0.00125. Parent60492/child60495/session62014. Require immutable acceptance before matched slot07. All fresh pairs protected.

@@ -1,0 +1,286 @@
+{
+  "status": "launch_observed_running_not_accepted",
+  "observed_at": "2026-10-31T17:49:54.779365+00:00",
+  "root": "research_runs/tokenizer-activation-001",
+  "session_id": 62014,
+  "process_observation": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "src.research.tokenizer_activation_entry",
+      "worker",
+      "--root",
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001",
+      "--plan-sha256",
+      "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+      "--request",
+      "evidence/quality/06/request.json",
+      "--request-sha256",
+      "9d32c2ffbd051215e5b944cadcebce0d5003ba11fe0e0def65dc813e513cdfe3",
+      "--seal",
+      "evidence/meta/dispatch-seal-quality-06.json",
+      "--seal-sha256",
+      "9ac4457d815242dea43553ef15b1ae1b7a60244197e2fca1d2193b465b7c12fa",
+      "--parent-pid",
+      "60492",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 12.235705875005806,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 14435131392,
+      "log_bytes": 0,
+      "output_bytes": 6542
+    },
+    "output_limit_bytes": 798390324,
+    "parent_pid": 60492,
+    "pid": 60495,
+    "required_free_bytes": 14050801724,
+    "reserve_bytes": 8589934592,
+    "returncode": null,
+    "status": "running",
+    "timeout_seconds": 7200
+  },
+  "immutable_launch_inputs": {
+    "evidence/quality/06/request.json": {
+      "sha256": "9d32c2ffbd051215e5b944cadcebce0d5003ba11fe0e0def65dc813e513cdfe3",
+      "size": 2860,
+      "document": {
+        "config": {
+          "data": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/data/raw/shakespeare.txt",
+            "tokenizer": "gpt2",
+            "train_fraction": 0.8,
+            "val_fraction": 0.1
+          },
+          "model": {
+            "attention_logit_scale": 0.5,
+            "attention_logit_scale_width_policy": "tokenizer_mha_gqa_score_v1",
+            "attention_width_policy": "mla_quarter_head32",
+            "attn_dropout": 0.0,
+            "attn_type": "mla",
+            "base_width": 64,
+            "block_size": 128,
+            "depth_width_policy": "depth4_unscaled",
+            "dim": 256,
+            "dropout": 0.0,
+            "ffn": "swiglu",
+            "ffn_bias": false,
+            "ffn_width_policy": "swiglu_21_8",
+            "gated_activation_kind": "silu",
+            "gated_activation_width_policy": "tokenizer_mla_gate_v1",
+            "mlp_type": "dense",
+            "n_heads": 8,
+            "n_layers": 4,
+            "norm_type": "rmsnorm",
+            "output_bias_kind": "none",
+            "output_bias_prior": {
+              "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+              "prior_sha256": "470924d478e490521ed589c1ec38131ffad17d564990bc18dbb213e1fc04d792",
+              "tokenizer": {
+                "implementation": "tiktoken",
+                "name": "gpt2",
+                "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+                "special_token_policy": "ordinary_text",
+                "special_tokens": {
+                  "<|endoftext|>": 50256
+                },
+                "split_unit": "raw_text",
+                "version": "0.14.0",
+                "vocab_size": 50257,
+                "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+              },
+              "train_fraction": 0.8,
+              "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+              "val_fraction": 0.1,
+              "version": 2
+            },
+            "output_bias_width_policy": "tokenizer_attention_no_output_bias",
+            "parameterization": "mup",
+            "rope": 1,
+            "tokenizer_architecture_policy": "tokenizer_mla_gate_v1",
+            "vocab_size": 50257
+          },
+          "training": {
+            "batch_layout": "paired_blocks512",
+            "batch_size": 8,
+            "checkpoint_dir": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001/evidence/quality/06/checkpoints",
+            "checkpoint_every": 0,
+            "decay_mode": "independent",
+            "device": "mps",
+            "eval_every": 300,
+            "eval_iters": 10,
+            "eval_seed": 2026,
+            "grad_clip": 1.0,
+            "keep_best_checkpoint": false,
+            "learning_rate": 0.00125,
+            "lr_schedule": {
+              "kind": "linear_cooldown",
+              "min_ratio": 0.1,
+              "start_step": 800,
+              "total_steps": 1200
+            },
+            "max_iters": 1200,
+            "max_train_seconds": null,
+            "metrics_file": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001/evidence/quality/06/metrics.jsonl",
+            "optimizer": "muon",
+            "resume_from": null,
+            "seed": 3611,
+            "strict_device": true,
+            "summary_file": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001/evidence/quality/06/training-summary.json",
+            "weight_averaging": {
+              "half_lives": [
+                200
+              ],
+              "interval": 10,
+              "kind": "spaced_tail_ema",
+              "start_step": 800,
+              "total_steps": 1200
+            },
+            "weight_decay": 6e-05
+          }
+        },
+        "kind": "activation_session_v1",
+        "plan": {
+          "path": "evidence/meta/activation-plan.json",
+          "sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+          "size": 36221
+        },
+        "spec": {
+          "family": "silu",
+          "lr": 0.00125,
+          "seed": 3611,
+          "stage": "confirm",
+          "steps": 1200,
+          "width": 256
+        }
+      }
+    },
+    "evidence/meta/dispatch-seal-quality-06.json": {
+      "sha256": "9ac4457d815242dea43553ef15b1ae1b7a60244197e2fca1d2193b465b7c12fa",
+      "size": 1864,
+      "document": {
+        "capacity": {
+          "metadata_bytes": 872852,
+          "observed_free_bytes": 14435127296,
+          "required_free_bytes": 14050801724,
+          "weight_bytes": 1118320592
+        },
+        "kind": "activation_dispatch_v1",
+        "lock_fds": [
+          3,
+          4
+        ],
+        "parent_pid": 60492,
+        "plan": {
+          "path": "evidence/meta/activation-plan.json",
+          "sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+          "size": 36221
+        },
+        "prepare_guard": {
+          "path": "control/activation-prepare-quality-06.json",
+          "sha256": "195a78ef5a82d586b8958bdfdcb8442f8d537367cda6877912ca17cb742cf204",
+          "size": 274
+        },
+        "prior_dispatches": [
+          {
+            "path": "evidence/meta/dispatch-complete-pilots-00.json",
+            "sha256": "16d45c0e15f9890dfed2116a131bc81c3a4ff96e04123875582e1e09006b9e67",
+            "size": 1087
+          },
+          {
+            "path": "evidence/meta/dispatch-complete-pilots-01.json",
+            "sha256": "2c8639b8c499f74bf79cd31bde80b29c6c341746c3ef86d4aec1481a53c4310e",
+            "size": 1087
+          },
+          {
+            "path": "evidence/meta/dispatch-complete-quality-00.json",
+            "sha256": "1a09c8fb322a4ff13e8b787243d3adc9312a95bd614ea93edce54cf0d6f2b41f",
+            "size": 1093
+          },
+          {
+            "path": "evidence/meta/dispatch-complete-quality-01.json",
+            "sha256": "6a25ea16c405fa411f6b4672c6fe60b13df576cc3566c87ae1ed86d984be4cf4",
+            "size": 1094
+          },
+          {
+            "path": "evidence/meta/dispatch-complete-quality-02.json",
+            "sha256": "092c07aff56a6b3445911d1226e6ce350e32cecbd7b275363531a760d46528b2",
+            "size": 1094
+          },
+          {
+            "path": "evidence/meta/dispatch-complete-quality-03.json",
+            "sha256": "bafd636c70c9c05dc58576155913656f849d6f90945d58ae1d41c49dfd55646c",
+            "size": 1094
+          },
+          {
+            "path": "evidence/meta/dispatch-complete-quality-04.json",
+            "sha256": "76b6362fb286d3e434587cee8d2c38f02616a1f27f85a030f51c25e461cf1c4b",
+            "size": 1094
+          },
+          {
+            "path": "evidence/meta/dispatch-complete-quality-05.json",
+            "sha256": "e1c73447bb3bb5dbde1acd6f73621637ef9d8aaf56b265e74de2b88fea785a2e",
+            "size": 1094
+          }
+        ],
+        "request": {
+          "path": "evidence/quality/06/request.json",
+          "sha256": "9d32c2ffbd051215e5b944cadcebce0d5003ba11fe0e0def65dc813e513cdfe3",
+          "size": 2860
+        },
+        "slot": 6,
+        "stage": "quality"
+      }
+    },
+    "evidence/quality/06/process/launch.json": {
+      "sha256": "26006b31cda749168914c0a557598c228abdf5cb36f36ec7e4b60751761ee410",
+      "size": 950,
+      "document": {
+        "argv": [
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+          "-m",
+          "src.research.tokenizer_activation_entry",
+          "worker",
+          "--root",
+          "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-001",
+          "--plan-sha256",
+          "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4",
+          "--request",
+          "evidence/quality/06/request.json",
+          "--request-sha256",
+          "9d32c2ffbd051215e5b944cadcebce0d5003ba11fe0e0def65dc813e513cdfe3",
+          "--seal",
+          "evidence/meta/dispatch-seal-quality-06.json",
+          "--seal-sha256",
+          "9ac4457d815242dea43553ef15b1ae1b7a60244197e2fca1d2193b465b7c12fa",
+          "--parent-pid",
+          "60492",
+          "--global-fd",
+          "3",
+          "--campaign-fd",
+          "4"
+        ],
+        "capture_kind": "bounded_pipe_v2",
+        "error": null,
+        "log_limit_bytes": 4194304,
+        "log_truncated": false,
+        "observation": null,
+        "output_limit_bytes": 798390324,
+        "parent_pid": 60492,
+        "pid": null,
+        "required_free_bytes": 14050801724,
+        "reserve_bytes": 8589934592,
+        "returncode": null,
+        "status": "preflight",
+        "timeout_seconds": 7200
+      }
+    }
+  }
+}
