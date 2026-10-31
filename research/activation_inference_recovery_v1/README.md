@@ -3,8 +3,8 @@
 Activation001 remains permanently failed at its first inference entry. Its twelve
 accepted quality trajectories, selection, retention receipts and sixteen retained
 checkpoint files remain original evidence. This directory is outside the frozen
-`src/**/*.py` plus requirements source set. It does not authorize a launch and
-has no inference entry point. No model, checkpoint, corpus or test holdout was
+`src/**/*.py` plus requirements source set. The separate recovery001 plan is now frozen after the prerequisites below;
+only its pinned controller/final entry points can execute against the new root. No model, checkpoint, corpus or test holdout was
 loaded by the metadata prerequisite.
 
 ## Lock finding and tested reader
@@ -118,3 +118,38 @@ formal closure follows; the new inference panel remains unrun.
 
 Both evidence wrappers have executed once. Their outputs and reviewed source
 hashes must remain intact; do not rerun them to overwrite existing artifacts.
+
+
+## Recovery001 freeze and execution handoff
+
+The complete external worker/controller/final implementation passed the second
+integration suite:34execution tests and7final tests, with actual disposable
+bounded metadata/guards and explicit GPU/model/process/source-audit doubles.
+The original OS supervisor/flock concurrency is separately covered by the real
+metadata-child test. Initial suite001 passed37tests; a subsequent review found
+that an early failed final attempt could permit a later controller step. Suite002
+adds a root-level failure/partial latch and four regressions. All001 evidence
+and the exact reviewed source snapshot remain preserved;002 is the applicable
+execution/final prerequisite. Frozen original source never changed.
+
+The real-source freeze independently checked all prerequisite hashes/guards,
+original imports and current capacity, then created only four new-root files:
+plan, exact original-import bytes, campaign lock and metadata lock. Capacity:
+12,993,671,168bytes free;8,858,224,705bytes required remaining under the conservative
+256MiB metadata envelope plus8GiBreserve; zero checkpoint allocation. Freeze
+finished4.848s with222,904,320byte peakRSS. No inference ran during freeze.
+
+Root:`research_runs/tokenizer-activation-inference-recovery-001`.
+Plan SHA256:`29b8265276d6bedb933bbb3f522b179ffa1b8403b18ac7f7b62b5b6638ee5dde`.
+[Freeze review](../tokenizer-evidence/activation-preparation-001/inference-recovery001-freeze-review.json),
+[portable exact plan](../tokenizer-evidence/activation-preparation-001/inference-recovery001-freeze-plan.json),
+[execution002](../tokenizer-evidence/activation-preparation-001/inference-recovery-execution-prerequisite-002-review.json),
+[final002](../tokenizer-evidence/activation-preparation-001/inference-recovery-final-prerequisite-002-review.json).
+
+Commit/push before dispatch. `controller step` runs exactly the next seed
+3611/3612/3613, one per invocation; its fourth invocation writes the summary.
+Only then may the separate `final` module publish the recovery terminal receipt.
+Both require absolute new root and exact `--plan-sha256`. The old failed campaign
+remains failed even after recovery closure. A failure or leftover temporary file
+anywhere in the new root blocks retry/advancement. Do not edit any of the seven
+frozen runtime modules or the original `src`/requirements after this freeze.

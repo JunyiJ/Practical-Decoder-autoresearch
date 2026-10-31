@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "error": null,
+  "observed_at": "2026-10-31T19:19:15.797600+00:00",
+  "root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-inference-recovery-001",
+  "plan": {
+    "path": "evidence/meta/recovery-plan.json",
+    "size": 3861,
+    "sha256": "29b8265276d6bedb933bbb3f522b179ffa1b8403b18ac7f7b62b5b6638ee5dde"
+  },
+  "capacity": {
+    "free_bytes": 12993671168,
+    "metadata_bytes": 145343,
+    "required_remaining_bytes": 8858224705,
+    "checkpoint_allocation_bytes": 0
+  },
+  "guard": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery001-freeze-guard.json",
+    "size": 260,
+    "sha256": "6a54a460b014d25ae4f1cdf62bab8774046efd64fcffde31869aa4c1c95d997c"
+  },
+  "portable_plan": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery001-freeze-plan.json",
+    "size": 3861,
+    "sha256": "29b8265276d6bedb933bbb3f522b179ffa1b8403b18ac7f7b62b5b6638ee5dde"
+  },
+  "procedure_sha256": "0af78d3fdf9517ae004d9e1008497f739ee335be8b5cd2173df15141c525fb4c",
+  "applicability": {
+    "original_source_unchanged": true,
+    "reused_original_functions": [
+      "tokenizer_wide_hybrid_metadata_writer.MetadataWriter",
+      "tokenizer_wide_hybrid_process_v2.run_process",
+      "tokenizer_activation_inference.load_pair",
+      "tokenizer_activation_inference.expected_models",
+      "tokenizer_activation_inference.callbacks",
+      "tokenizer_activation_inference.strict_mps",
+      "tokenizer_activation_timing.measure_pair",
+      "tokenizer_activation_timing.review_result",
+      "tokenizer_activation_timing.summarize",
+      "tokenizer_activation_final.analyze"
+    ],
+    "excluded_original_entries": [
+      "tokenizer_activation_inference.produce",
+      "tokenizer_activation_inference.budget",
+      "tokenizer_activation_inference.quality_binding",
+      "tokenizer_activation_inference_entry",
+      "tokenizer_activation_final.complete"
+    ],
+    "original_scope": "Read-only source Session; checkpoints remain at original paths with original lineage. No retraining, rescoring or cleanup.",
+    "new_scope": "External source hash set replaces orchestration only. New-root synchronized budget outside timed kernels; original parent supervisor scans already serialized. New-root worker/receipt/final contracts explicitly identify preserved original failure.",
+    "source_lock_handoff": "Parent releases original-root lock before dispatch; child independently acquires it with inherited global ownership. Parent monitors only new root; reacquires original after child exit.",
+    "panel": "Exactly seeds3611/3612/3613, unchanged two-family/batch1/8 workloads and resource limits; one pair per step; failures permanently latch; final requires all three accepted pairs."
+  },
+  "inference_launched": false,
+  "training_launched": false,
+  "holdout_scored": false,
+  "commit_and_push_before_dispatch": true
+}

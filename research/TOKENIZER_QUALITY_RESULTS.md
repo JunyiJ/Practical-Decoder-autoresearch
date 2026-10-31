@@ -4896,3 +4896,32 @@ acceptance/final assembly and exact external freeze before finite inference;
 see [recovery design](activation_inference_recovery_v1/README.md). The failed
 activation001 root is never retried; selected/fresh pairs,failures,and closed
 holdout remain protected. Both new evidence-producing wrappers executed once.
+
+
+### October31 separate inference recovery001 frozen
+
+External recovery worker/controller/final implementation passed41 integration
+tests (34execution/7final). The suite uses real disposable bounded metadata and
+guards, explicit model/GPU/process/source-audit doubles, and connects all three
+serial pairs to independent acceptance and a final receipt. Earlier37-test
+suite001 and its source snapshot remain preserved; review then found and fixed
+the failed-final-to-controller continuation gap. Applicable002 adds a root-level
+failure/partial latch and four regressions; no failed phase can advance.
+
+A real-source applicability/freeze audit passed: all original438files and
+16protected checkpoints bind to unchanged source/runtime; original loader,
+cache checks, numerical timing/statistical engines and bounded supervisor are
+reused under exact source pins. Outputs and acceptance live in a separate root.
+No original inference entry or frozen producer is patched/retried. Capacity:
+12,993,671,168bytes free versus8,858,224,705bytes required remaining; zero new
+checkpoint allocation, conservative256MiBmetadata envelope and8GiBreserve.
+
+Plan SHA256 `29b8265276d6bedb933bbb3f522b179ffa1b8403b18ac7f7b62b5b6638ee5dde` at
+`research_runs/tokenizer-activation-inference-recovery-001/evidence/meta/recovery-plan.json`.
+[Freeze review](tokenizer-evidence/activation-preparation-001/inference-recovery001-freeze-review.json),
+[execution002](tokenizer-evidence/activation-preparation-001/inference-recovery-execution-prerequisite-002-review.json),
+[final002](tokenizer-evidence/activation-preparation-001/inference-recovery-final-prerequisite-002-review.json).
+No inference launched during freeze. Commit/push first, then dispatch only
+seed3611; require independent acceptance before3612/3613, saved summary before
+separate terminal review. Quality failure and incumbent remain unchanged.
+All selected/fresh pairs, failures, archives and closed holdout stay protected.
