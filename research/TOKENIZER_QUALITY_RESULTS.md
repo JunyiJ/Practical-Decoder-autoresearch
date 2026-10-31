@@ -4644,3 +4644,16 @@ This small single-screen-seed contrast is not adoption or fresh confirmation.
 GELU training214.05s/worker278.14s; peakRSS1,721,024,512bytes, driver2,501,705,728bytes.
 All guards passed; no cleanup and holdout stays closed. Slot02 GELU LR0.00125 running.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-02-review.json).
+
+
+### October31 activation001 middle-rate GELU screen accepted
+
+Exact GELU LR0.00125, seed3601, completed1200updates and independent acceptance.
+Raw CE4.727150151; H200 CE4.726793996. Raising LR from0.000625 improved H200
+by0.171504628 on this screening seed, much larger than the first-rate gate
+contrast0.002252923. H200 now slightly improves raw by0.000356154; the earlier
+averaging disadvantage therefore does not persist across these two GELU rates.
+No general EMA conclusion, changed endpoint or adoption follows.
+Training213.41s/worker297.45s; peakRSS1,718,665,216bytes, driver2,501,705,728bytes.
+All guards passed, checkpoints retained, holdout closed. Matched SiLU LR0.00125
+is running as slot03. [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-03-review.json).
