@@ -271,3 +271,33 @@ New v2 MPS repeat/resume prerequisite passed both arms:16 synthetic updates at b
 V2 actual MPS batch8/context128 trainer and persisted H200 prerequisite passed9 checks:two generated-text updates per arm, exact EMA replacement, raw resume preflight/H200 rejection, tokenizer/parent binding and CPU/MPS cached inference. Four binaries plus metadata retained under `block-norm-v2-h200-fixture-001`, SHA-bound by `grouped-embedding-h200-fixture-manifest.json`. Controller/statistical/retention/inference and actual-corpus/full-panel gates remain pending; no quality conclusion.
 
 Pure finite campaign rules/statistics passed67 CPU checks:14trajectory specifications,18suggested transitions, per-arm three-LR selection/lower-LR ties, allfresh protection, strict gates and tail-weighted common paired bootstrap (independent error3.469447e-18). Test seeds are not a frozen launch plan. `campaign-rules-decision.json` records scope; immutable ledger/config/source/provenance/dispatch remain pending. No new weights or training.
+
+## Read-only campaign contracts passed, October31,2026
+
+The isolated preparation contract passed66 guarded CPU checks. It builds and
+validates exact v2 configurations for both20-step pilots, six1200-step screens
+and all54 fresh-slot/LR-selection combinations (62 checks of configurations).
+Pilot cooldown and H200 begin at13of20 with EMA interval1; quality keeps800of1200
+and interval10. No output directory or model is created by the builder. Changed
+fields, wrong slots, path aliases and source inventory drift are rejected.
+
+The preparation manifest binds369 source files, the unchanged original source
+and13 recovery modules, strict four-thread environment, installed Muon source,
+base recipe, corpus bytes, tokenizer and train/validation identities. The actual
+validation has34,278 targets/111,536 bytes:267 full128-target windows plus102,
+and16 full2048-target statistical blocks plus1510. Only train and validation
+raw-text slices were encoded; test was neither tokenized nor scored. This binds
+intended coverage, not evaluator loss provenance.
+
+Guard:4.02235s, peak RSS272,367,616B, free disk9,226,452,992B;120s/4GiB/8GiB
+guards passed. No MPS/model/optimizer work, checkpoint writes, cleanup or new
+quality result. Earlier fixtures, closed campaigns and runtime source stayed
+unchanged. The manifest always has launch_permitted=false; fixture seed values
+are unreserved. A future immutable ledger must bind the selected LR and exact
+request/config/source, one pending worker, accepted prefix, STOP/failure and
+retention receipts. Full validation/inference and worker/parent prerequisites,
+actual-corpus pilots, scientific seed census and full-panel capacity remain.
+
+Evidence: `campaign-contract-plan-001.json`, `campaign-contract-001-review.json`,
+`campaign-contract-analysis.json`, `campaign-contract-preparation-manifest-001.json`
+and `campaign-contract-decision.json` in the block-norm preparation evidence directory.
