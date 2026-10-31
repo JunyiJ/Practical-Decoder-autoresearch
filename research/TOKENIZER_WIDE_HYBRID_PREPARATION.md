@@ -6211,3 +6211,26 @@ noncheckpoint metadata, older selected models, fresh pairs, failures and archive
 Evidence: campaign005-rank-select-v2-{before,review,guard}.json and the compact
 campaign005-rank-selection-summary-v2.json. First-fresh helper prepared by
 campaign/path-only substitutions, AST/reverse comparison passed; not executed.
+
+
+### Campaign005 rank cleanup verified; first fresh confirmation dispatched
+
+Guarded cleanup completed323.31s. Independent before/after comparison confirmed
+exactly12 manifest-listed removals in slots0/2/9/10/11/13, reclaiming
+7,449,344,384 logical bytes. The six selected raw/H200 weights in slots5/12/14
+(3,744,596,480 bytes) and all511 prior noncheckpoint streams are unchanged.
+Original hashes, results and deletion receipts remain; removed losing weights
+cannot be re-evaluated. Other selected models, fresh pairs, failures, archives
+and the closed test holdout were untouched.
+
+Remaining confirmation storage was27,031,441,408 bytes free versus26,712,927,696
+required, including the unchanged8GiB reserve. Selection/manifest were pushed
+as3a138bc before cleanup; completed cleanup/independent summary pushed as0efb952.
+After checking actual process exit, dispatched only fresh slot15 (hybrid D/2,
+LR0.000625, seed3511): controller9355, session23723, observed phasestarting,
+childNone. No fresh result or adoption yet. Never duplicate this launch.
+
+The path-only005 first-fresh reviewer passed AST/reverse comparison and is not
+yet executed. After slot15 acceptance/exit, review completed16, then inspect/adapt
+the slot16 helper and use the current tested census-fixed gates. Later slots and
+inference retain their own prerequisites. Resume guide/index contain exact paths.

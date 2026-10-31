@@ -8,13 +8,16 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-All campaign005 screening slots0–14 are accepted and exited. Full rank selection
-and independent score/manifest checks passed: hybrid D/2 LR0.000625, gated MLA
-D/4 LR0.00125, KDA D/2 LR0.000625. These are screening choices, not adoption.
-The selected raw/H200 pairs are slots14/5/12. See the compact
-[rank selection summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-selection-summary-v2.json).
-Cleanup has not run. Its explicit manifest lists12 losing weights (7,449,344,384
-logical bytes); six selected weights (3,744,596,480 bytes) stay protected.
+Observed October31,2026 at01:58 Los Angeles: all15 screening runs and both
+rank-boundary phases passed. Selected: hybrid D/2 LR0.000625, gated MLA D/4
+LR0.00125, KDA D/2 LR0.000625. These are screening choices, not adoption.
+Audited cleanup removed12 losing weights (7,449,344,384 logical bytes), retaining
+six selected weights in slots14/5/12 (3,744,596,480 bytes). All511 prior
+noncheckpoint streams are unchanged. See the compact
+[rank summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-summary-v2.json).
+First fresh slot15 (hybrid D/2, seed3511) controller9355 is starting; child PID
+at observation:None; session23723. Startup history audits may precede child
+creation. Inspect actual state and never duplicate the launcher.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -32,23 +35,22 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. No training worker was active after rank selection. Inspect actual processes
-   before any boundary or dispatch; never duplicate an existing operation.
+2. If controller9355 or its current descendant is running, observe it.
+   Never duplicate the first-fresh dispatch or rerun completed rank boundaries.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
    This used a005-adapted copy of the existing read-only
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. Rank selection is fully verified. Confirm the selection evidence and manifest
-   are committed/pushed, then run
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005_rank_boundary_v2.py cleanup` once.
-   Require a finished guard and verify exact deletions, selected pairs5/12/14 and
-   unchanged noncheckpoint evidence. Commit/push the completed cleanup report.
-   Only then run
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/start_campaign005_fresh_v2.py --slot 15`.
-   The fresh helper is a path-only adaptation of004 with AST/reverse comparison
-   verified; it has not run. Never rerun selection or call rank-prefix15.
+4. After slot15 parent acceptance and actual worker exit, run
+   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_first_fresh_v2.py --completed 16`.
+   Require its finished guard and passing full review. Then inspect/adapt
+   `continue_campaign004_fresh16_v2.py` to005 paths only, check frozen source and
+   census-fix applicability, and dispatch only slot16 through its tested gates.
+   Never execute the004 helper unchanged or retry004. Slots17 and18+ have
+   separate later/remaining startup and acceptance gates; inference follows the
+   frozen plan. Preserve every fresh pair, including controls and negative results.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
    invent replacement seeds, clear STOP or extend a closed grid.
