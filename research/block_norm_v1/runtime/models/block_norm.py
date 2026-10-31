@@ -127,3 +127,28 @@ def validate_checkpoint(model, checkpoint):
         require(type(value) is torch.Tensor and value.shape == target.shape and value.dtype == target.dtype,
                 'Block normalization checkpoint tensor shape/dtype differs: ' + name)
         require(bool(torch.isfinite(value).all()), 'Nonfinite block normalization checkpoint tensor: ' + name)
+
+
+
+def validate_caches(model, caches, batch, start_pos):
+    """Validate every request cache before any layer can mutate it."""
+    from ..attention.cache import KVCache
+    expected = contract(model.cfg)
+    if expected is None:
+        return
+    require(type(start_pos) is int and start_pos >= 0, 'Block norm cache start position invalid')
+    require(len(caches) == 4 and len({id(c) for c in caches}) == 4, 'Four distinct caches required')
+    pointers = []
+    for i, cache in enumerate(caches):
+        require(type(cache) is KVCache and cache.layer_index == i
+                and _same_typed(cache.block_norm_signature, expected)
+                and cache.attn_type == 'mla' and cache.is_mla is True,
+                'Block norm cache policy/layer differs')
+        require(type(cache.position) is int and cache.position == start_pos,
+                'Block norm cache requires contiguous positions')
+        for value, width in ((cache.c_cache, 64), (cache.r_cache, 32)):
+            require(type(value) is torch.Tensor and tuple(value.shape) == (batch, 128, width)
+                    and value.dtype == torch.float32 and value.device == model.transformer.wte.weight.device,
+                    'Block norm cache tensor shape/dtype/device differs')
+            pointers.append(value.untyped_storage().data_ptr())
+    require(len(set(pointers)) == 8, 'Aliased request cache storage forbidden')

@@ -1,0 +1,28 @@
+{
+  "status": "cpu_cache_and_norm_gradient_integration_passed_mps_pending",
+  "observed_at": "2026-10-31T20:31:05.337516+00:00",
+  "source_commit": "f1730eb87dd4834c197195a6c9766b8ea265bf78",
+  "source_delta_sha256": "fe0920675d2bdaa4e85ab472eee1866bbee20d4ea26bd952696e7401178fa5be",
+  "applicable_review": "research/tokenizer-evidence/block-norm-preparation-001/cache-numerical-prerequisite-001-review.json",
+  "applicable_review_sha256": "1530aeb049c3179848ba5d67a81ef7f61880c687d583974c76cd549efe47efd5",
+  "max_observed_errors": {
+    "max_full_cached_error": 8.344650268554688e-07,
+    "interleaved_a_error": 7.748603820800781e-07,
+    "interleaved_b_error": 7.748603820800781e-07,
+    "reference_logit_error": 1.0728836059570312e-06,
+    "reference_ce_error": 0.0,
+    "max_parameter_gradient_error": 1.862645149230957e-08,
+    "max_norm_input_gradient_error": 1.862645149230957e-09
+  },
+  "integration_contract_sha256": "40d2bb923e4ef24b76965dd6fd5153a652e6993afbe9a3d22462e4c646893b04",
+  "current_design_sha256": "88942924e22d63199f4e93f5517b6d31de705b23aa3b493608c4b9ec0af4050c",
+  "prior_snapshots": {
+    "research/tokenizer-evidence/block-norm-preparation-001/resume-replay-design-original.md": "4162d6bedd0242332b04ebeaa0fd2c376f930f51ce5dc1955287df2af2c755bb",
+    "research/tokenizer-evidence/block-norm-preparation-001/resume-replay-integration-original.md": "98725a5bbef7bc20214ca31ec8b8fc825c6122862ca6dd72dbe7dd1791be4477"
+  },
+  "quality_training_launched": false,
+  "optimizer_updates": 0,
+  "binary_artifacts_created": false,
+  "holdout_scored": false,
+  "mps_validated": false
+}

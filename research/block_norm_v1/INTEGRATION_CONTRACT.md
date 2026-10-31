@@ -165,3 +165,20 @@ model/optimizer/schedule/EMA primitives were exercised on generated IDs; the
 is batch1/context2 over three synthetic updates, not an actual research run or
 proof of MPS/full-budget stability. Candidate cache/gradient numerical checks and
 trainer/controller integration still precede any campaign freeze.
+
+
+## CPU cache/gradient integration status
+
+`cache-numerical-delta-001.json` records changes only in `models/block_norm.py`,
+`models/gpt.py` and `attention/cache.py`. The cache-file allowlist is explicitly
+extended to bind new-policy signatures, layer/shape/dtype/device, independent
+storage and contiguous positions before writes; reset returns position to zero.
+Old-policy behavior/math remains unchanged. No attention projection math changed.
+
+33 synthetic CPU tests pass with predeclared tolerances: full/cached offsets,
+reset/interleaving/causality, mutation-free invalid-cache rejection, explicit FP64
+normalizer arithmetic through shared attention/FFN, all parameter/norm-input
+gradients and exact original RMS gradient equivalence. This is a normalizer
+integration oracle, not a second attention implementation. No binary fixture or
+optimizer update was needed. Strict MPS numerical/resource and actual tokenizer
+trainer/controller integration remain before freezing the quality campaign.

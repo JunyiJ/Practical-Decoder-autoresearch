@@ -140,6 +140,9 @@ class GPT(nn.Module):
         if cache is not None and len(cache) != len(self.transformer.h):
             raise ValueError("cache length must match number of transformer blocks")
         if cache is not None:
+            if self.block_norm_spec is not None:
+                from .block_norm import validate_caches
+                validate_caches(self, cache, b, start_pos)
             from .tokenizer_hybrid import validate_hybrid_caches
             validate_hybrid_caches(self, cache, b, start_pos)
         first_layer_value = None  # This invocation's new token/chunk only; autograd remains attached.

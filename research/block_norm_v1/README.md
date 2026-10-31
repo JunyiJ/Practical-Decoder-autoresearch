@@ -3,8 +3,9 @@
 This directory provides a prospective normalizer specification, CPU reference
 checks and a separately namespaced unmodified runtime baseline. A named candidate model policy now has construction/optimizer-coverage tests.
 Raw/H200 signature serialization now passes bounded synthetic tests. Synthetic CPU populated-optimizer and interrupted replay checks now pass.
-Independent gradient/cache numerical, MPS and tokenizer-bound trainer/controller
-integration remain unvalidated; no quality training is ready. Frozen original/recovery source and evidence are unchanged.
+CPU normalization-reference gradients and cache numerics now pass. MPS and
+tokenizer-bound trainer/controller integration remain unvalidated; no quality
+training is ready. Frozen original/recovery source and evidence are unchanged.
 
 `spec.py` binds kind, width256, FP32, epsilon2^-23, affine/bias and pre-attention/
 pre-FFN placement. The control uses exact native RMSNorm with `eps=None`; the
@@ -123,3 +124,26 @@ supersede the earlier populated-resume pending note, but do not prove production
 trainer/tokenizer integration, independent gradients, candidate cache parity or
 MPS stability. Next complete numerical/cache checks without new binary fixtures
 where feasible, then resource and controller readiness. Training remains gated.
+
+
+## CPU cache and normalization-gradient checks
+
+33 checks now pass: full/cached batch1/2/8/context17 and batch1/context128,
+continuation offsets, exact causality/reset, independent interleaved requests and
+invalid-cache rejection before any write. The copied cache/GPT/new-policy modules
+now bind norm signature, layer, shape/dtype/device, distinct storage and contiguous
+positions; old-policy behavior is unchanged. The delta explicitly extends the
+cache-file allowlist for these guards. No attention math changed.
+
+An explicit FP64 normalizer reference shares the FP32 attention/FFN/readout and
+checks outputs, CE, all parameter gradients and eight norm-input gradients.
+Maximum errors: logits1.073e-6, CE0, parameter gradients1.863e-8, norm-input
+gradients1.863e-9. Original RMS full-model gradients are bit-exact. Cache/full
+maximum logit error8.345e-7; storage196,608bytes/batch item for both arms.
+Tolerances were frozen before execution; no binary fixture/update/checkpoint
+load or MPS operation occurred. This supersedes earlier CPU-cache pending notes.
+
+Next inspect existing strict MPS guards and predeclare backend tolerances for
+bounded synthetic numerical checks, keeping RSS4GiB/driver6GiB, reserve8GiB,
+serial work and fallback disabled. Trainer/tokenizer/controller/statistics and
+finite-plan freeze still remain, and training capacity is still insufficient.

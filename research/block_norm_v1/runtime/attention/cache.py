@@ -9,6 +9,10 @@ class KVCache(nn.Module):
         from ..models.tokenizer_hybrid import hybrid_contract, layer_family
         self.hybrid_signature = hybrid_contract(cfg.model)
         self.layer_index = layer_index
+        from ..models.block_norm import contract as norm_contract
+        self.block_norm_signature = norm_contract(cfg.model)
+        if self.block_norm_signature is not None:
+            self.position = 0
         self.attn_type = layer_family(cfg.model, layer_index)
         if self.hybrid_signature is not None:
             if n_kv_heads is not None:
@@ -65,6 +69,15 @@ class KVCache(nn.Module):
         """
         k_new, v_new: (Batch, Num_Heads, Seq_Len_New, Head_Dim)
         """
+        if self.block_norm_signature is not None:
+            if type(start_pos) is not int or start_pos != self.position:
+                raise ValueError('Block norm cache requires contiguous integer positions')
+            if (k_new.ndim != 3 or v_new.ndim != 3 or k_new.shape[:2] != v_new.shape[:2]
+                    or k_new.shape[0] != self.c_cache.shape[0]
+                    or k_new.shape[2] != 64 or v_new.shape[2] != 32
+                    or k_new.dtype != self.c_cache.dtype or v_new.dtype != self.r_cache.dtype
+                    or k_new.device != self.c_cache.device or v_new.device != self.r_cache.device):
+                raise ValueError('Block norm cache update shape/dtype/device differs')
         if self.attn_type == "kda":
             raise ValueError("KDA updates recurrent state and convolution history directly")
         if self.is_mla:
@@ -77,7 +90,7 @@ class KVCache(nn.Module):
                 raise ValueError("Cache size exceeded; increase block_size or reset cache.")
             self.c_cache[:, start_pos:end_pos, :] = c_new
             self.r_cache[:, start_pos:end_pos, :] = r_new
-            if self.hybrid_signature is not None:
+            if self.hybrid_signature is not None or self.block_norm_signature is not None:
                 self.position = end_pos
             return self.c_cache[:, :end_pos, :], self.r_cache[:, :end_pos, :]
         end_pos = start_pos + k_new.size(2)
@@ -98,7 +111,7 @@ class KVCache(nn.Module):
         if self.is_mla:
             self.c_cache.zero_()
             self.r_cache.zero_()
-            if self.hybrid_signature is not None:
+            if self.hybrid_signature is not None or self.block_norm_signature is not None:
                 self.position = 0
             return
         self.k_cache.zero_()

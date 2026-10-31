@@ -5233,3 +5233,43 @@ This small CPU replay does not establish those or full-budget training stability
 Latest guard free space11,481,591,808bytes leaves a3,688,629,456byte gap against
 the recorded15,170,221,264 full-panel requirement. Training remains gated; do not
 poll unchanged capacity, narrow the panel or delete protected evidence to fit.
+
+
+## CPU cache and normalization-gradient integration completed October31
+
+33 guarded CPU tests passed for both block-normalization arms. Full versus cached
+execution covers batch1/2/8 and context17, plus batch1/context128, mixed chunk
+sizes and nonzero continuation offsets. Largest absolute logit discrepancy was
+8.3447e-7. Two interleaved requests remained independent (maximum7.7487e-7 versus
+full execution); resetting one cache left the other unchanged. Reset/fresh cached
+outputs and same-length causality checks were bit-exact. Cache storage remains
+196,608bytes per batch item (1,572,864 at batch8), identical for both arms.
+
+The explicit reference independently computes RMS/Layer normalization in FP64
+and casts at FP32 branch boundaries, sharing attention/FFN/final readout with
+the tested model. Maximum logit discrepancy was1.0729e-6, CE discrepancy0, all
+parameter-gradient discrepancy1.8627e-8 and norm-input-gradient discrepancy
+1.8627e-9. This checks normalization math/placement through the model, not an
+independent oracle for the shared attention/FFN implementation. The new RMS
+control's complete parameter gradients were bit-exact to original source. All
+tolerances were declared before attempt001 and stayed unchanged.
+
+The inherited plain MLA cache lacked normalization-policy and position checks.
+The isolated new policy now binds cache signature/layer/geometry/dtype/device,
+requires distinct storage and contiguous positions, and resets its position.
+Validation covers all four caches before any layer writes. Wrong arm, batch,
+dtype, layer order, shared/aliased caches, stale/nonzero-empty positions and
+overflow were rejected without partial cache mutation. Old-policy cache behavior
+is preserved. This narrow cache-file extension is recorded in the source delta.
+
+Guard:1.418s, peakRSS1,201,012,736bytes, four CPU threads,120s cap,4GiB RSS cap
+and8GiB reserve. No checkpoints/corpus were loaded, no binary artifacts or
+optimizer updates were produced, and no cleanup/MPS/holdout scoring occurred.
+Original/recovery source and closed campaign inventories/nonweight hashes stayed
+unchanged. [Review](tokenizer-evidence/block-norm-preparation-001/cache-numerical-prerequisite-001-review.json),
+[predeclared source delta and tolerances](tokenizer-evidence/block-norm-preparation-001/cache-numerical-delta-001.json).
+
+Next strict MPS numerical/resource validation with no fallback, then actual
+tokenizer-bound trainer/controller integration and finite-plan freeze. These
+CPU results do not establish MPS agreement, long-context behavior, training
+stability or quality improvement. The full-panel capacity gate remains unmet.
