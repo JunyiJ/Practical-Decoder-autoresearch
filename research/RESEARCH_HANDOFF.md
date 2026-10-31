@@ -1,5 +1,7 @@
 # Research handoff — stopped by the human on 2026-10-27
 
+> **Current tokenizer continuation:** start with the [resume guide](TOKENIZER_RESUME.md) and [compact state index](TOKENIZER_RESUME_STATE.json). These distinguish active tokenizer work from historical stopped campaigns. Check live state before dispatch.
+
 **Research is stopped.** At 02:52:45 UTC the human asked to stop iteration and preserve the learnings for a later restart or reproduction. The CPU controller and its worker exited, the research heartbeat is **PAUSED**, and the continuing goal is **paused**. This instruction supersedes older “continue until interruption” prose, preparation banners and automation prompts. Reading this guide, checking out a branch or restoring the archive does not authorize execution. A new explicit human instruction is required.
 
 The last completed quality study is **logit-z-quality-001**. It retained the incumbent. **Null attention is unfinished preparation, with no quality result.** Campaign006 remains permanently stopped even if other research is later restarted.

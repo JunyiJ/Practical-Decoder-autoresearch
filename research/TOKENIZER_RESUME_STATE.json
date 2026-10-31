@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-31T03:46:37.614194+00:00",
+  "observed_at_los_angeles": "2026-10-30T20:46:37.614194-07:00",
+  "branch": "codex/tokenizer-quality",
+  "evidence_commit_before_handoff": "65781b3",
+  "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
+  "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
+  "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
+  "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-terminal-v2.json",
+  "observed_process_records": [
+    {
+      "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-00.json",
+      "status": "completed",
+      "pid": 88782,
+      "parent_pid": 88781,
+      "elapsed_seconds": 97.13581549999071,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-01.json",
+      "status": "running",
+      "pid": 88922,
+      "parent_pid": 88781,
+      "elapsed_seconds": 51.21486141599598,
+      "returncode": null,
+      "error": null
+    }
+  ],
+  "session_id_hint": 96910,
+  "closed_campaigns": [
+    "tokenizer-wide-hybrid-001",
+    "tokenizer-wide-hybrid-002",
+    "tokenizer-wide-hybrid-003",
+    "tokenizer-wide-hybrid-004"
+  ],
+  "first_action": "Run read-only tokenizer_resume_status.py and inspect actual processes; do not duplicate an existing worker. Follow TOKENIZER_RESUME.md and current local next_action.",
+  "next_after_starter": "Review completed pilots and audited cleanup; independently verify accepted quality slot0 prefix after worker exit before adapting later serial continuation.",
+  "local_roots_not_in_git": [
+    "research_runs",
+    "research_archives",
+    "research_state"
+  ],
+  "storage_reclaimed_allocated_bytes": 1594634240,
+  "initial_required_free_bytes": 30631412484,
+  "reserve_bytes": 8589934592,
+  "selected_fresh_failure_weights_protected": true,
+  "holdout_closed": true,
+  "no_paid_compute": true,
+  "no_subagents": true,
+  "evidence_sha256": {
+    "research/TOKENIZER_CHECKPOINT_RETENTION.md": "b005a426720e628390a1dabd377f36a2e242217777f0863710f7bd6f4b7a1cc8",
+    "research/TOKENIZER_QUALITY_PROTOCOL.md": "52924ee202fbbcf9795e04e41a5c90f889638de002eb817e813addabe6612a71",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-launch-v2.json": "4c916bc03c6948d1864bdd6f91cc88b53e55723510470c227ba0d191c6cfb2c7",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-freeze-v2-review.json": "689ca7b320eb8eeac16de19724b0f55a48ec9d71aeab532b7ae919a69ba79ac4",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-freeze-v2-guard.json": "9b2fbd76974e69810ccc20d4f30c8304c9bd8b4ccb1d37b00ff5e40fb1385881",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-frozen/meta/plan.json": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/confirmation-census-v2-review.json": "e75d08a74f6f2be6c05db7a317cf41e7313f9cd4432eac0036961a2d97e2bad2",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign004-rank-select-v2-review.json": "7a7a20ec0e067ffcc5e1e15ce4c497690e4cde9fca1273bb05925fb3f7080b29",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign004-fresh-prefix-16-v2-review.json": "ee468ec37a1b2e89ff37c2b6f178917ab058de7e6095301299e9ebd54a0cef51",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign004-fresh16-failure-review-v2.json": "6b6cf14efdf0eeb7a397c8b9c8ff675115edfe8c54f87375b980254d76bb1d76",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/census-preview-transport-review-v2.json": "db88b01d05a62519d6de505cbf6e52f3c9975dc57f263114af1e95b51d26cd7d",
+    "research/tokenizer-evidence/filesystem-compression-001/completed.json": "b6f1898e0600e9fd5a44259ab57ebf591931227dc9fc36d57d4227b0dc8753af",
+    "research/tokenizer-evidence/filesystem-compression-001/continuation-guard.json": "de41cd56a966558d7aef3707554923b07354dc0fbc7b1c59387a074f8213f15d",
+    "research/tokenizer-evidence/checkpoint-compaction-002/logical-evidence-review.json": "b642ee74ad0a5b11cafd8def0df8c586d73599b7ceb64c2f3b5da363e149aca6"
+  }
+}

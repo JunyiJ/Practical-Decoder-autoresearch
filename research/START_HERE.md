@@ -1,5 +1,7 @@
 # Start and continue auto-research
 
+> **Current tokenizer continuation:** start with the [resume guide](TOKENIZER_RESUME.md) and [compact state index](TOKENIZER_RESUME_STATE.json). These distinguish active tokenizer work from historical stopped campaigns. Check live state before dispatch.
+
 > **Current status — human-stopped on 2026-10-27.** Read [the research handoff](RESEARCH_HANDOFF.md) before acting. It supersedes historical continue/launch/preparation status below. Research, prerequisite model validation and automated iteration require a new explicit human instruction. Campaign006 remains permanently stopped.
 
 This guide runs the local Codex CLI research team: propose an idea, predict its

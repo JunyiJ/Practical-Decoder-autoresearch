@@ -1,5 +1,7 @@
 # Practical-Decoder
 
+> **Current tokenizer continuation:** start with the [resume guide](research/TOKENIZER_RESUME.md) and [compact state index](research/TOKENIZER_RESUME_STATE.json). These distinguish active tokenizer work from historical stopped campaigns. Check live state before dispatch.
+
 > **New tokenizer campaign authorized October 26, 2026 (Los Angeles):** see [the tokenizer protocol](research/TOKENIZER_QUALITY_PROTOCOL.md). Historical character and null-attention research remains paused. Read [the research handoff](research/RESEARCH_HANDOFF.md) for validated findings, the exact incumbent, unfinished null-attention work and explicit restart/reproduction procedures. Older launch/continue wording below is historical and does not authorize execution.
 
 A repo to implement the decoder-only GPT-style model and play around with different attention mechanism and MoE structures
