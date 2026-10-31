@@ -4,7 +4,8 @@ Status: preparation, October31,2026. Versioned v2 model/cache/checkpoint,
 MPS repeat/resume and generated-text full-batch/H200 prerequisites have passed.
 Pure finite-stage/selection/statistical rules pass67 CPU checks; exact configuration,
 source/environment and train/validation preparation bindings pass66 more. The executable
-ledger/controller and scored artifact/validation provenance gates remain pending; no quality
+controller and scored artifact/validation provenance gates remain pending. Synthetic
+append-only ledger mechanics pass42 checks; real-artifact integration is still pending; no quality
 campaign has launched and the finite launch plan is not frozen. Full-panel storage
 capacity is still insufficient. Historical sections below retain their dated scope.
 
@@ -798,3 +799,35 @@ actual-corpus pilots, scientific seed census and full-panel capacity remain.
 Evidence: `campaign-contract-plan-001.json`, `campaign-contract-001-review.json`,
 `campaign-contract-analysis.json`, `campaign-contract-preparation-manifest-001.json`
 and `campaign-contract-decision.json` in the block-norm preparation evidence directory.
+
+## Synthetic append-only ledger passed, October31,2026
+
+The isolated ledger passed42 bounded CPU checks. Its32-event replay accepts
+exactly two pilots, six screens and six fresh confirmations, with one pending
+request, per-arm selected LR, exact accepted prefix and boundary indices.
+Content-addressed configuration/request/receipt objects and sequenced event
+hashes reject edits, missing files, aliases and stale callers. A nonblocking
+file lock serializes writes. Durable STOP/failure retains the pending identity
+and blocks later acceptance; source drift does not prevent recording STOP.
+
+A caller must retain the expected head outside the ledger: a hash chain alone
+cannot detect removal of a valid suffix. That check passed, but external head
+persistence/recovery is still a controller integration task. Interrupted or
+invalid operations may leave valid unreferenced objects; these are preserved
+and cannot advance accepted state. Partial event writes fail closed.
+
+This version only accepts explicitly synthetic parent and retention receipts.
+It cannot launch workers, validate real checkpoints or authorize cleanup, and
+always reports launch_permitted=false. The passing replay is not real-artifact
+acceptance. Guard:13.82545s, peak RSS276,971,520B, free disk9,223,426,048B,
+within120s/4GiB/8GiB constraints. No model/optimizer/checkpoint work or quality
+result; prior fixtures, runtime and closed campaigns remain unchanged.
+
+Ledger mechanics are complete for this prerequisite. Next prioritize scored
+validation/provenance and inference checks against retained v2 fixtures, then
+bind real worker/parent artifacts and externally persisted heads. Do not extend
+metadata-only scaffolding absent a concrete failure. Actual-corpus pilots, full
+retention-aware capacity, scientific seeds and finite launch freeze remain gated.
+Evidence: `campaign-ledger-plan-001.json`, `campaign-ledger-001-review.json`,
+`campaign-ledger-analysis.json` and `campaign-ledger-decision.json` in the
+block-norm preparation evidence directory.

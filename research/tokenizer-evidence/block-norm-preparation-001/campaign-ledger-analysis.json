@@ -1,0 +1,83 @@
+{
+  "status": "passed_synthetic_ledger_only",
+  "observed_at": "2026-10-31T21:41:50.623502+00:00",
+  "tests_passed": 42,
+  "complete_replay": {
+    "events": 32,
+    "accepted": 14,
+    "objects": 58,
+    "head": "36b2330608b4e88e8fea656186726049a9e11002916047c22ac115248398bea5",
+    "actions": [
+      "pilot",
+      "pending",
+      "pilot",
+      "pending",
+      "review_pilot_boundary",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "save_selection",
+      "review_screen_boundary",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "quality",
+      "pending",
+      "review_final"
+    ],
+    "launch_permitted": false
+  },
+  "guard": {
+    "elapsed_seconds": 13.825449500000104,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 9223426048,
+      "peak_rss_bytes": 276971520
+    },
+    "pid": 75003,
+    "reason": null,
+    "status": "finished"
+  },
+  "source_commit": "398aba186a3106a02c30ae7a2caac4ecdd94e396",
+  "findings": [
+    "32event replay accepts exactly2pilots+6screens+6fresh; selected per-arm LR and boundary indices remain bound",
+    "One pending request, nonblocking lock, stale-head and duplicate acceptance rejection passed",
+    "Immutable content-addressed configurations/requests/synthetic parent and boundary receipts checked on replay",
+    "STOP and failure survive reread, preserve pending request identity and prohibit later acceptance/dispatch; source drift still permits STOP",
+    "Externally retained expected head detects valid-suffix truncation; missing/mutated/noncanonical/aliased files rejected",
+    "Valid orphan objects from invalid/interrupted appends are retained without state advancement"
+  ],
+  "limitations": [
+    "Synthetic parent/retention receipts only: no real checkpoint verification, worker launch/recovery or cleanup acceptance",
+    "Hash chain needs externally trusted expected head; external head persistence/recovery is not yet implemented",
+    "No model-quality conclusion or launch permission; no seed reservation",
+    "Scored fullvalidation/inference and real artifact acceptance remain; full-panel capacity unmet"
+  ],
+  "model_constructed": false,
+  "optimizer_updates": 0,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "new_binary_files": 0,
+  "cleanup_performed": false,
+  "runtime_unchanged": true
+}
