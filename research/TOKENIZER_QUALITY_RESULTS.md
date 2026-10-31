@@ -4471,3 +4471,26 @@ reconciliation and complete freeze are required before pilots. Details and
 next actions: TOKENIZER_MLA_ACTIVATION_PREPARATION.md; immutable direction decision:
 tokenizer-evidence/moe-preparation-001/direction-decision.json. Earlier MoE draft
 and original source references remain preserved as historical evidence.
+
+
+### Activation serialized-state prerequisite passed
+
+Four new bounded synthetic CPU tests passed for both SiLU and exact GELU.
+Resumed online weights, optimizer, EMA and global/loader RNG matched uninterrupted
+four-step execution exactly. Production H200 export/load, tokenizer identity
+rejection, reset/interleaved caches and CE-only semantics passed. Real torch
+serialization stayed in RAM; no checkpoint file or corpus training/evaluation
+was performed. Filesystem publication remains a separate integration gate.
+
+The successful guard finished17.48s with peak RSS3,352,215,552 bytes below4GiB
+and the8GiB disk reserve intact. Preserve two harness failures: v1 incorrectly
+requested logit-z; v2 used /tmp rather than canonical /private/tmp as a RAM key.
+No production source change or closed experimental/numerical retry occurred.
+Runtime and shared checkpoint/EMA/optimizer/schedule/loader/cache/writer hashes
+match completed005; only three activation contract files differ. This does not
+relabel the old hybrid tests as activation evidence or authorize training.
+
+Review: tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json.
+Next: finite two-arm rules/seed registry/statistics, retention-aware serial
+controller and filesystem-producer integration, then exact capacity/source/input/
+runtime freeze before pilots. Existing protected models/pairs/failures remain.

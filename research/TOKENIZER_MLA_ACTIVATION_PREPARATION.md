@@ -96,10 +96,10 @@ Evidence: [test review](tokenizer-evidence/activation-preparation-001/contract-t
 
 ## Next prerequisites, before launch
 
-1. Verify new-contract checkpoint resume and raw/H200 export/load identity,
-   tokenizer binding, objective separation, cache resets/interleaved requests,
-   and optimizer updates under bounded synthetic tests. Preserve all failure
-   evidence. Do not retry the closed hybrid numerical fixture.
+1. New-contract optimizer/RNG/EMA resume, H200 export/load, tokenizer binding,
+   objective separation and cache isolation passed the RAM-serialization tests
+   recorded below. Filesystem-producer integration remains required; preserve
+   both harness failures and do not retry the closed hybrid numerical fixture.
 2. Build and test the finite two-arm request/selection/confirmation contract,
    exact fresh seed registry, statistical rule, bounded artifact manifests and
    retention-aware serial controller. No launch through old hybrid controllers.
@@ -111,3 +111,42 @@ Evidence: [test review](tokenizer-evidence/activation-preparation-001/contract-t
    memory/time/storage guards, no paid compute, no subagents and closed holdout.
    If current storage fails, record the exact gap and safe options; never start
    a partial confirmation panel or remove protected pairs.
+
+
+## Serialized state prerequisite completed October 31
+
+Four new bounded integration tests passed for SiLU and exact GELU. Four-step
+synthetic CPU updates with random token IDs produced bit-exact resumed online
+weights, optimizer states, EMA and global/loader RNG relative to uninterrupted
+execution. Production H200 derivation/export/load accepted the new contract,
+retained the raw byte hash and RNG, matched EMA parameters, rejected optimizer
+resume from averaged weights and rejected duplicate export. Production tokenizer
+loading accepted the local corpus/tokenizer binding and rejected a changed
+identity. Reset/interleaved caches and CE-only objective checks passed. No corpus
+split was sampled or scored.
+
+Real torch checkpoint serialization was held in RAM through an IO adapter; no
+checkpoint file was created or deleted. This preserves capacity but does not
+test filesystem publication. The successful 180-second/4 GiB/8 GiB-reserve guard
+finished in 17.48 seconds with peak RSS 3,352,215,552 bytes.
+
+Two harness failures remain preserved with their exact source, logs and guards:
+v1 incorrectly requested logit-z and stopped before optimizer updates; v2 used
+an uncanonicalized /tmp key for releasing a RAM buffer, causing two failures
+after resume loading while both cache/objective cases passed. Production source
+was unchanged across these attempts. The corrected v3 used the CE-only API and
+canonical paths. These are new activation unit fixtures, not retries of the
+closed failed hybrid numerical fixture or of an experimental trajectory.
+
+The runtime and checkpoint, EMA, optimizer, schedule, loader, MLA/cache and
+filesystem-writer source hashes match the completed005 baseline. Only the three
+activation-contract files differ. This supports review of unchanged primitives,
+not automatic reuse of hybrid numerical cases or authorization to launch an
+activation campaign. [State prerequisite review](tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json).
+
+Next: implement/test the finite two-arm request and selection rules, exact fresh
+seed registry and conditional-text statistics, then retention-aware serial
+controller and filesystem-producer integration. Bind the state tests, review
+source applicability and reconcile exact serialization/metadata capacity before
+freezing all prerequisites and launching guarded MPS pilots. Retain all earlier
+protected pairs, archives and failures. The plan is still unfrozen.

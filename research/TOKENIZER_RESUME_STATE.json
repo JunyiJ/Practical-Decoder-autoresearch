@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T15:30:06.667948+00:00",
-  "observed_at_los_angeles": "2026-10-31T08:30:06.667948-07:00",
+  "observed_at": "2026-10-31T15:38:10.379193+00:00",
+  "observed_at_los_angeles": "2026-10-31T08:38:10.379193-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "5542eb4",
+  "evidence_commit_before_handoff": "3b2c188",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
@@ -288,8 +288,8 @@
     "tokenizer-wide-hybrid-004",
     "tokenizer-wide-hybrid-005"
   ],
-  "first_action": "Campaign005 remains closed and not adopted. MoE width256 three-arm draft is deferred: audited conservative full-panel requirement18,782,075,912 bytes exceeds observed free space by3,266,608,136 bytes. Follow research/TOKENIZER_MLA_ACTIVATION_PREPARATION.md: new tokenizer_mla_gate_v1 width256 SiLU/exact-GELU contract implemented;154 targeted checks passed. Next complete bounded checkpoint resume/H200 export/load/tokenizer/objective/cache reset/interleave/optimizer-update prerequisites, then implement and test a new finite two-arm controller with exact seeds, equal3-LR screening and3 fresh seeds per arm. Recheck implemented full storage projection (initial15,169,995,168 bytes incl8GiB reserve; margin345,472,608 at observation), preserve all selected/fresh/failed evidence, and freeze all source/runtime/input/statistical/resource/retention prerequisites before MPS pilots or quality training. No old controller launch, closed fixture retry, holdout, paid compute or subagents. Update evidence/handoff and commit/push without force.",
-  "next_after_starter": "Campaign005 remains closed and not adopted. MoE width256 three-arm draft is deferred: audited conservative full-panel requirement18,782,075,912 bytes exceeds observed free space by3,266,608,136 bytes. Follow research/TOKENIZER_MLA_ACTIVATION_PREPARATION.md: new tokenizer_mla_gate_v1 width256 SiLU/exact-GELU contract implemented;154 targeted checks passed. Next complete bounded checkpoint resume/H200 export/load/tokenizer/objective/cache reset/interleave/optimizer-update prerequisites, then implement and test a new finite two-arm controller with exact seeds, equal3-LR screening and3 fresh seeds per arm. Recheck implemented full storage projection (initial15,169,995,168 bytes incl8GiB reserve; margin345,472,608 at observation), preserve all selected/fresh/failed evidence, and freeze all source/runtime/input/statistical/resource/retention prerequisites before MPS pilots or quality training. No old controller launch, closed fixture retry, holdout, paid compute or subagents. Update evidence/handoff and commit/push without force.",
+  "first_action": "Campaign005 closed/not adopted; MoE remains deferred for3.27GB capacity gap. See research/TOKENIZER_MLA_ACTIVATION_PREPARATION.md. Activation contract passed154 earlier checks; new state-tests-v3 passed4 bounded RAM-serialization tests for both gates: exact optimizer/RNG/EMA resume, H200 export/load and tokenizer binding, cache isolation and CE-only semantics. Preserve v1/v2 harness failures and snapshots; never retry the closed hybrid numerical fixture. Next implement/test finite two-arm request/selection rules, exact unused pilot/screen/fresh seeds and conditional-text statistics, followed by retention-aware serial controller and filesystem-producer integration. State test RAM IO is not filesystem-write evidence. Verify unchanged primitive applicability, implemented full serialization/metadata projection and current free space (full activation allowance15,169,995,168 bytes incl8GiB reserve) before complete freeze and guarded MPS pilots. No quality launch/closed controller reuse/holdout/paid compute/subagents. Keep all selected/fresh/failed weights and archives; commit/push substantive findings and handoff.",
+  "next_after_starter": "Campaign005 closed/not adopted; MoE remains deferred for3.27GB capacity gap. See research/TOKENIZER_MLA_ACTIVATION_PREPARATION.md. Activation contract passed154 earlier checks; new state-tests-v3 passed4 bounded RAM-serialization tests for both gates: exact optimizer/RNG/EMA resume, H200 export/load and tokenizer binding, cache isolation and CE-only semantics. Preserve v1/v2 harness failures and snapshots; never retry the closed hybrid numerical fixture. Next implement/test finite two-arm request/selection rules, exact unused pilot/screen/fresh seeds and conditional-text statistics, followed by retention-aware serial controller and filesystem-producer integration. State test RAM IO is not filesystem-write evidence. Verify unchanged primitive applicability, implemented full serialization/metadata projection and current free space (full activation allowance15,169,995,168 bytes incl8GiB reserve) before complete freeze and guarded MPS pilots. No quality launch/closed controller reuse/holdout/paid compute/subagents. Keep all selected/fresh/failed weights and archives; commit/push substantive findings and handoff.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -501,11 +501,26 @@
     "research/tokenizer-evidence/activation-preparation-001/contract-tests-v1-review.json": "36818ef722cd443313c3a65c4ddc76cc98fb9764511daa826aede6913693c920",
     "research/tokenizer-evidence/activation-preparation-001/contract-tests-v1.log": "9292bab11599edb972d79bbac76115dd2a66dd5ec3bf9abcbd63b2090311439d",
     "research/tokenizer-evidence/activation-preparation-001/contract-tests-v1-guard.json": "c762b691696e970942625122026eac3a0fd04f4fc4e28684d22a8d0ea533e722",
-    "research/tokenizer-evidence/moe-preparation-001/direction-decision.json": "5b751d45988d3561949fc8f2e6cd1439f0a20a63e49223dd58c1751d6bcb45c3"
+    "research/tokenizer-evidence/moe-preparation-001/direction-decision.json": "5b751d45988d3561949fc8f2e6cd1439f0a20a63e49223dd58c1751d6bcb45c3",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1-failed-source.py": "9551b5d7f8fc2af6929294c2f8d139386dac953bfe326e4c3ecd9cea24c20a04",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1-guard.json": "55b1e6e9ab87a3f6591c706a7b80d6b8c11c85545ce8928a2b4d3bf57bc39883",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1-review.json": "4505e16c8762c7f9882294a784b2ec5881414b8e1d1de842638fe73894ef963f",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1.log": "d8dc8afd51ead1812df96655fc4039cbc586ffb6b7c0b92ca0552da1972ca4d8",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2-failed-source.py": "82015a2f6e9d229b4be7b9c5eb35e9e0a4125595c2f8e99816e85e3c649124ba",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2-guard.json": "28b4b8755f4c011e8388869607755bcca13368e3ce812662aa0c5baf6adc981a",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2-review.json": "0e5fa7ecb5ec69d6f2bf410c0b63b49e63e15ae0899ac899f7206f61b2ecfd29",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2.log": "124503922f44860aff97d21ea0b8ccee10f47145785ff5c1e02f889cfa55018e",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v3-guard.json": "40a749bd8903e9d42457eda73f30fa02757746b925b2292a3ab7c860f63f2e0f",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v3-review.json": "cfe4886f72a93525873b3ce57f4b70638911dd1c3a15d3eaa519ba807dc8dc3a",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v3.log": "8295b4aa2013742a35f512ffadeb39347f4e101f6f3d6310fb0e155c127c241f",
+    "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json": "03200c44fea66b8292827b8079b0e92fe5d93bb9d801ae019728c51f5c09964b",
+    "research/tokenizer-evidence/activation-preparation-001/pre-state-preparation.md": "6b7b03d2f0c5cbe730fdc7835042619af74c9aa3b9a45f1bf3eead6072d87cd6",
+    "research/tokenizer-evidence/activation-preparation-001/preparation-history.json": "6c558cd6a54cc22b4640d2924919604f46b4ebe6009c965db1b99bf18f8a6f0c"
   },
   "independent_final_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
   "independent_final_guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
-  "current_research_phase": "activation_contract_validated_remaining_prerequisites",
+  "current_research_phase": "activation_state_validated_finite_controller_pending",
   "final_decision": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json",
-  "ffn_direction_decision": "research/tokenizer-evidence/moe-preparation-001/direction-decision.json"
+  "ffn_direction_decision": "research/tokenizer-evidence/moe-preparation-001/direction-decision.json",
+  "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json"
 }

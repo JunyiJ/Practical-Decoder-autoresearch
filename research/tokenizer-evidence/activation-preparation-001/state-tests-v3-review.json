@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "source_sha256": "31eddb7941f426f19a789f3044f3c37ff774a0f97bc0ed30183d3bf180d929ce",
+  "test_sha256": "5edfd0146d79e4280a4b55e1437f2bf39eb0aa49467f0c76d119ac4cdd1d67a7",
+  "log_sha256": "8295b4aa2013742a35f512ffadeb39347f4e101f6f3d6310fb0e155c127c241f",
+  "fixture": "4-step synthetic CPU token IDs with real RAM serialization; not corpus training or filesystem transport",
+  "checkpoint_files_created": false,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "prior_failures": [
+    "state-tests-v1-review.json",
+    "state-tests-v2-review.json"
+  ],
+  "correction": "Canonicalize RAM store key to resolve macOS /tmp alias. Production source unchanged; prior harness failures retained."
+}

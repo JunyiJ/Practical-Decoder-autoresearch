@@ -1,0 +1,232 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_________ test_serialized_resume_rng_schedule_h200_and_tokenizer[silu] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11052c8a0>
+kind = 'silu'
+
+    @pytest.mark.parametrize('kind', ['silu', 'gelu_exact'])
+    def test_serialized_resume_rng_schedule_h200_and_tokenizer(monkeypatch, kind):
+        torch.set_num_threads(1)
+        cfg = config(kind)
+        cfg.training.max_iters = 4
+        cfg.training.lr_schedule.update(total_steps=4, start_step=2)
+        cfg.training.weight_averaging.update(total_steps=4, start_step=2, interval=1)
+        store = MemoryCheckpoints(monkeypatch)
+        root = Path('/tmp/tokenizer-activation-ram-only') / kind
+        raw_path, final_path, avg_path = (root / n for n in ('step2.pt', 'raw.pt', 'h200.pt'))
+        assert not root.exists()  # No file or directory is created by this test.
+        torch.manual_seed(7350)
+        model, opt, schedule, average, loader = objects(cfg)
+        for step in range(2):
+>           update(model, opt, schedule, average, loader, step)
+
+tests/test_tokenizer_activation_state.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_activation_state.py:95: in update
+    _, loss, parts = model(ids, targets, return_loss_breakdown=True,
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1783: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1794: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/models/gpt.py:108: in forward
+    objective = objective_requested(self, include_training_objective, targets)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = GPT(
+  (transformer): ModuleDict(
+    (wte): Embedding(50257, 256)
+    (h): ModuleList(
+      (0-3): 4 x TransformerBl...s=1e-05, elementwise_affine=True, bias=True)
+  )
+  (lm_head): Linear(in_features=256, out_features=50257, bias=False)
+)
+enabled = True, targets = tensor([[5190, 4902, 2329]])
+
+    def objective_requested(model, enabled, targets):
+        if type(enabled) is not bool: raise ValueError('Training objective flag must be boolean')
+        signature=validate_logit_z_model(model)
+        if enabled and (signature is None or targets is None):
+>           raise ValueError('Training objective requires explicit contract and targets')
+E           ValueError: Training objective requires explicit contract and targets
+
+src/models/logit_z.py:62: ValueError
+______ test_serialized_resume_rng_schedule_h200_and_tokenizer[gelu_exact] ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1135e4fc0>
+kind = 'gelu_exact'
+
+    @pytest.mark.parametrize('kind', ['silu', 'gelu_exact'])
+    def test_serialized_resume_rng_schedule_h200_and_tokenizer(monkeypatch, kind):
+        torch.set_num_threads(1)
+        cfg = config(kind)
+        cfg.training.max_iters = 4
+        cfg.training.lr_schedule.update(total_steps=4, start_step=2)
+        cfg.training.weight_averaging.update(total_steps=4, start_step=2, interval=1)
+        store = MemoryCheckpoints(monkeypatch)
+        root = Path('/tmp/tokenizer-activation-ram-only') / kind
+        raw_path, final_path, avg_path = (root / n for n in ('step2.pt', 'raw.pt', 'h200.pt'))
+        assert not root.exists()  # No file or directory is created by this test.
+        torch.manual_seed(7350)
+        model, opt, schedule, average, loader = objects(cfg)
+        for step in range(2):
+>           update(model, opt, schedule, average, loader, step)
+
+tests/test_tokenizer_activation_state.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tokenizer_activation_state.py:95: in update
+    _, loss, parts = model(ids, targets, return_loss_breakdown=True,
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1783: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1794: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/models/gpt.py:108: in forward
+    objective = objective_requested(self, include_training_objective, targets)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = GPT(
+  (transformer): ModuleDict(
+    (wte): Embedding(50257, 256)
+    (h): ModuleList(
+      (0-3): 4 x TransformerBl...s=1e-05, elementwise_affine=True, bias=True)
+  )
+  (lm_head): Linear(in_features=256, out_features=50257, bias=False)
+)
+enabled = True, targets = tensor([[5190, 4902, 2329]])
+
+    def objective_requested(model, enabled, targets):
+        if type(enabled) is not bool: raise ValueError('Training objective flag must be boolean')
+        signature=validate_logit_z_model(model)
+        if enabled and (signature is None or targets is None):
+>           raise ValueError('Training objective requires explicit contract and targets')
+E           ValueError: Training objective requires explicit contract and targets
+
+src/models/logit_z.py:62: ValueError
+_______________ test_cache_interleaving_reset_and_ce_only[silu] ________________
+
+kind = 'silu'
+
+    @pytest.mark.parametrize('kind', ['silu', 'gelu_exact'])
+    def test_cache_interleaving_reset_and_ce_only(kind):
+        cfg = config(kind)
+        model = GPT(cfg.model).eval()
+        first = torch.tensor([[11, 22, 33, 44, 55, 66, 77]])
+        second = first + 100
+        a = build_caches(cfg, 'cpu', batch_size=1, dtype=torch.float32)
+        b = build_caches(cfg, 'cpu', batch_size=1, dtype=torch.float32)
+        with torch.no_grad():
+            expected_a = model(first)[0]; expected_b = model(second)[0]
+            a0 = model(first[:, :2], cache=a, start_pos=0)[0]
+            b0 = model(second[:, :4], cache=b, start_pos=0)[0]
+            a1 = model(first[:, 2:], cache=a, start_pos=2)[0]
+            b1 = model(second[:, 4:], cache=b, start_pos=4)[0]
+            torch.testing.assert_close(torch.cat([a0, a1], 1), expected_a, rtol=1e-5, atol=1e-6)
+            torch.testing.assert_close(torch.cat([b0, b1], 1), expected_b, rtol=1e-5, atol=1e-6)
+            for cache in a:
+                cache.reset()
+            torch.testing.assert_close(model(second, cache=a)[0], expected_b, rtol=1e-5, atol=1e-6)
+            for aux in (False, True):
+>               logits, loss, parts = model(first, second, include_aux_loss=aux,
+                    include_training_objective=True, return_loss_breakdown=True)
+
+tests/test_tokenizer_activation_state.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1783: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1794: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/models/gpt.py:108: in forward
+    objective = objective_requested(self, include_training_objective, targets)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = GPT(
+  (transformer): ModuleDict(
+    (wte): Embedding(50257, 256)
+    (h): ModuleList(
+      (0-3): 4 x TransformerBl...s=1e-05, elementwise_affine=True, bias=True)
+  )
+  (lm_head): Linear(in_features=256, out_features=50257, bias=False)
+)
+enabled = True, targets = tensor([[111, 122, 133, 144, 155, 166, 177]])
+
+    def objective_requested(model, enabled, targets):
+        if type(enabled) is not bool: raise ValueError('Training objective flag must be boolean')
+        signature=validate_logit_z_model(model)
+        if enabled and (signature is None or targets is None):
+>           raise ValueError('Training objective requires explicit contract and targets')
+E           ValueError: Training objective requires explicit contract and targets
+
+src/models/logit_z.py:62: ValueError
+____________ test_cache_interleaving_reset_and_ce_only[gelu_exact] _____________
+
+kind = 'gelu_exact'
+
+    @pytest.mark.parametrize('kind', ['silu', 'gelu_exact'])
+    def test_cache_interleaving_reset_and_ce_only(kind):
+        cfg = config(kind)
+        model = GPT(cfg.model).eval()
+        first = torch.tensor([[11, 22, 33, 44, 55, 66, 77]])
+        second = first + 100
+        a = build_caches(cfg, 'cpu', batch_size=1, dtype=torch.float32)
+        b = build_caches(cfg, 'cpu', batch_size=1, dtype=torch.float32)
+        with torch.no_grad():
+            expected_a = model(first)[0]; expected_b = model(second)[0]
+            a0 = model(first[:, :2], cache=a, start_pos=0)[0]
+            b0 = model(second[:, :4], cache=b, start_pos=0)[0]
+            a1 = model(first[:, 2:], cache=a, start_pos=2)[0]
+            b1 = model(second[:, 4:], cache=b, start_pos=4)[0]
+            torch.testing.assert_close(torch.cat([a0, a1], 1), expected_a, rtol=1e-5, atol=1e-6)
+            torch.testing.assert_close(torch.cat([b0, b1], 1), expected_b, rtol=1e-5, atol=1e-6)
+            for cache in a:
+                cache.reset()
+            torch.testing.assert_close(model(second, cache=a)[0], expected_b, rtol=1e-5, atol=1e-6)
+            for aux in (False, True):
+>               logits, loss, parts = model(first, second, include_aux_loss=aux,
+                    include_training_objective=True, return_loss_breakdown=True)
+
+tests/test_tokenizer_activation_state.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1783: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1794: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/models/gpt.py:108: in forward
+    objective = objective_requested(self, include_training_objective, targets)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = GPT(
+  (transformer): ModuleDict(
+    (wte): Embedding(50257, 256)
+    (h): ModuleList(
+      (0-3): 4 x TransformerBl...s=1e-05, elementwise_affine=True, bias=True)
+  )
+  (lm_head): Linear(in_features=256, out_features=50257, bias=False)
+)
+enabled = True, targets = tensor([[111, 122, 133, 144, 155, 166, 177]])
+
+    def objective_requested(model, enabled, targets):
+        if type(enabled) is not bool: raise ValueError('Training objective flag must be boolean')
+        signature=validate_logit_z_model(model)
+        if enabled and (signature is None or targets is None):
+>           raise ValueError('Training objective requires explicit contract and targets')
+E           ValueError: Training objective requires explicit contract and targets
+
+src/models/logit_z.py:62: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_activation_state.py::test_serialized_resume_rng_schedule_h200_and_tokenizer[silu]
+FAILED tests/test_tokenizer_activation_state.py::test_serialized_resume_rng_schedule_h200_and_tokenizer[gelu_exact]
+FAILED tests/test_tokenizer_activation_state.py::test_cache_interleaving_reset_and_ce_only[silu]
+FAILED tests/test_tokenizer_activation_state.py::test_cache_interleaving_reset_and_ce_only[gelu_exact]
+4 failed in 0.96s

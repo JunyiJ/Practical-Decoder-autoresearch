@@ -1,0 +1,79 @@
+{
+  "status": "activation_serialized_state_checks_passed_transport_integration_pending",
+  "created_at": "2026-10-31T15:38:10.293936+00:00",
+  "source_sha256": "31eddb7941f426f19a789f3044f3c37ff774a0f97bc0ed30183d3bf180d929ce",
+  "baseline_plan": {
+    "path": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-frozen/meta/plan.json",
+    "sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94"
+  },
+  "changed_source_files": {
+    "src/models/gated_activation.py": {
+      "old": "83fc9d31f930ff2be51bd303689d282ec366e221344ed23e567515e615421984",
+      "current": "8c811ce6b655ca29b1d3adda0c50db4450e01b213981be2c7458f87f485bb1cc"
+    },
+    "src/models/tokenizer_activation.py": {
+      "old": null,
+      "current": "0b66fbbefd9ac04567c96a0f09738483dd02d78890bcddb9515a8cd34f663612"
+    },
+    "src/models/tokenizer_architecture.py": {
+      "old": "21afe2161809ab938cffcf1b49c8bea1b54f8199f78e28357d79ec19f34700f6",
+      "current": "e58a8926700f4d3930e465a41fe185672b94fdf90d4db40f4b44bc6d43595af7"
+    }
+  },
+  "runtime": {
+    "executable": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+    "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "packages": {
+      "numpy": "2.5.4",
+      "omegaconf": "2.3.1",
+      "tiktoken": "0.14.0",
+      "torch": "2.14.1"
+    }
+  },
+  "runtime_matches_completed005": true,
+  "unchanged_primitives": {
+    "src/utils/checkpoint.py": "05d2a9b8b0f1d08a2017e551e86c66bafb4c297e1e73f13bf50e734e552c6a6f",
+    "src/train/weight_averaging.py": "a2ffa1acff302190065fddb53db1dc234ab8ec5c71f929128459cda3059fbf20",
+    "src/train/optimizers.py": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+    "src/train/lr_schedule.py": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6",
+    "src/train/train.py": "991d6fee3b969a69c4c19fa235dc8e2d8423e51500596fdc7cc850789cc33cb2",
+    "src/data/loaders.py": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+    "src/models/gpt.py": "90daf16e0956eecdeb08a778db52b3896108993a1e1d463a423c60a4937f2add",
+    "src/models/mlp.py": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+    "src/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "src/attention/cache.py": "ca863d6e62af28e8c4512c5966fd7e3c7544f3e7586e43dd8006e737bb79edd0",
+    "src/research/tokenizer_wide_hybrid_checkpoint_writer.py": "cfb4deba9de71fc1ff84fdae3beb49e9280be51c66a3790267091afb614c6fd1",
+    "src/research/tokenizer_wide_hybrid_metadata_writer.py": "e486260aa6c2fd33ad8616c51529fd34fc2318bfca5d8c1b79c69a6a053d4e6a"
+  },
+  "test_references": {
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1-review.json": "4505e16c8762c7f9882294a784b2ec5881414b8e1d1de842638fe73894ef963f",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1.log": "d8dc8afd51ead1812df96655fc4039cbc586ffb6b7c0b92ca0552da1972ca4d8",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1-guard.json": "55b1e6e9ab87a3f6591c706a7b80d6b8c11c85545ce8928a2b4d3bf57bc39883",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v1-failed-source.py": "9551b5d7f8fc2af6929294c2f8d139386dac953bfe326e4c3ecd9cea24c20a04",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2-review.json": "0e5fa7ecb5ec69d6f2bf410c0b63b49e63e15ae0899ac899f7206f61b2ecfd29",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2.log": "124503922f44860aff97d21ea0b8ccee10f47145785ff5c1e02f889cfa55018e",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2-guard.json": "28b4b8755f4c011e8388869607755bcca13368e3ce812662aa0c5baf6adc981a",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v2-failed-source.py": "82015a2f6e9d229b4be7b9c5eb35e9e0a4125595c2f8e99816e85e3c649124ba",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v3-review.json": "cfe4886f72a93525873b3ce57f4b70638911dd1c3a15d3eaa519ba807dc8dc3a",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v3.log": "8295b4aa2013742a35f512ffadeb39347f4e101f6f3d6310fb0e155c127c241f",
+    "research/tokenizer-evidence/activation-preparation-001/state-tests-v3-guard.json": "40a749bd8903e9d42457eda73f30fa02757746b925b2292a3ab7c860f63f2e0f",
+    "tests/test_tokenizer_activation_state.py": "5edfd0146d79e4280a4b55e1437f2bf39eb0aa49467f0c76d119ac4cdd1d67a7"
+  },
+  "checks": [
+    "Exact resumed online weights, optimizer, EMA and both RNG states match uninterrupted four-step synthetic execution for both activations.",
+    "H200 derived/exported/loaded through production functions and real RAM torch serialization; raw bytes and global RNG unchanged; inference-only resume rejected.",
+    "Actual local tokenizer/data binding accepted; altered tokenizer identity rejected; no corpus split sampled or scored.",
+    "Interleaved and reset caches match uncached logits; both arms are CE-only and reject uncontracted logit-z requests."
+  ],
+  "failures_preserved": [
+    "v1 harness incorrectly enabled logit-z; all four cases stopped before optimizer updates.",
+    "v2 RAM dictionary key used /tmp rather than canonical /private/tmp; two resume cases stopped at volatile-byte release, two cache/objective cases passed."
+  ],
+  "limits": "Successful v3 guard:180s,4GiB RSS,8GiB reserve;17.48s elapsed,3,352,215,552-byte peak RSS.",
+  "applicability": "Hash equality establishes unchanged transport/serialization primitive code only. Prior hybrid numerical cases are not relabeled as activation tests. New finite-controller/filesystem-producer integration and exact resource/manifests still required; no launch readiness claim.",
+  "checkpoint_files_created": false,
+  "old_campaigns_reopened": false,
+  "closed_fixture_reexecuted": false,
+  "quality_training_launched": false,
+  "holdout_scored": false
+}

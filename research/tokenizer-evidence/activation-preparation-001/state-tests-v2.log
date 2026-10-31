@@ -1,0 +1,84 @@
+FF..                                                                     [100%]
+=================================== FAILURES ===================================
+_________ test_serialized_resume_rng_schedule_h200_and_tokenizer[silu] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1100ec9d0>
+kind = 'silu'
+
+    @pytest.mark.parametrize('kind', ['silu', 'gelu_exact'])
+    def test_serialized_resume_rng_schedule_h200_and_tokenizer(monkeypatch, kind):
+        torch.set_num_threads(1)
+        cfg = config(kind)
+        cfg.training.max_iters = 4
+        cfg.training.lr_schedule.update(total_steps=4, start_step=2)
+        cfg.training.weight_averaging.update(total_steps=4, start_step=2, interval=1)
+        store = MemoryCheckpoints(monkeypatch)
+        root = Path('/tmp/tokenizer-activation-ram-only') / kind
+        raw_path, final_path, avg_path = (root / n for n in ('step2.pt', 'raw.pt', 'h200.pt'))
+        assert not root.exists()  # No file or directory is created by this test.
+        torch.manual_seed(7350)
+        model, opt, schedule, average, loader = objects(cfg)
+        for step in range(2):
+            update(model, opt, schedule, average, loader, step)
+        save(store, raw_path, cfg, model, opt, average, loader, 2)
+        expected_losses = [update(model, opt, schedule, average, loader, step) for step in (2, 3)]
+        expected = dict(model=fingerprint(model.state_dict()), optimizer=fingerprint(opt.state_dict()),
+                        average=fingerprint(average.state_dict()),
+                        rng=fingerprint(ck.capture_training_state(loader, 'cpu')))
+        del model, opt, schedule, average, loader
+        gc.collect()
+    
+        model, opt, schedule, average, loader = objects(cfg)
+        raw = ck.load_checkpoint(raw_path, model, opt)
+        average.load_state_dict(raw['training_state']['weight_averaging_state'], 2)
+        ck.restore_training_state(raw['training_state'], loader, 'cpu')
+        del raw
+        # Only volatile serialized bytes are released, never a filesystem artifact.
+>       del store.blobs[raw_path]
+            ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: PosixPath('/tmp/tokenizer-activation-ram-only/silu/step2.pt')
+
+tests/test_tokenizer_activation_state.py:143: KeyError
+______ test_serialized_resume_rng_schedule_h200_and_tokenizer[gelu_exact] ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1100ee190>
+kind = 'gelu_exact'
+
+    @pytest.mark.parametrize('kind', ['silu', 'gelu_exact'])
+    def test_serialized_resume_rng_schedule_h200_and_tokenizer(monkeypatch, kind):
+        torch.set_num_threads(1)
+        cfg = config(kind)
+        cfg.training.max_iters = 4
+        cfg.training.lr_schedule.update(total_steps=4, start_step=2)
+        cfg.training.weight_averaging.update(total_steps=4, start_step=2, interval=1)
+        store = MemoryCheckpoints(monkeypatch)
+        root = Path('/tmp/tokenizer-activation-ram-only') / kind
+        raw_path, final_path, avg_path = (root / n for n in ('step2.pt', 'raw.pt', 'h200.pt'))
+        assert not root.exists()  # No file or directory is created by this test.
+        torch.manual_seed(7350)
+        model, opt, schedule, average, loader = objects(cfg)
+        for step in range(2):
+            update(model, opt, schedule, average, loader, step)
+        save(store, raw_path, cfg, model, opt, average, loader, 2)
+        expected_losses = [update(model, opt, schedule, average, loader, step) for step in (2, 3)]
+        expected = dict(model=fingerprint(model.state_dict()), optimizer=fingerprint(opt.state_dict()),
+                        average=fingerprint(average.state_dict()),
+                        rng=fingerprint(ck.capture_training_state(loader, 'cpu')))
+        del model, opt, schedule, average, loader
+        gc.collect()
+    
+        model, opt, schedule, average, loader = objects(cfg)
+        raw = ck.load_checkpoint(raw_path, model, opt)
+        average.load_state_dict(raw['training_state']['weight_averaging_state'], 2)
+        ck.restore_training_state(raw['training_state'], loader, 'cpu')
+        del raw
+        # Only volatile serialized bytes are released, never a filesystem artifact.
+>       del store.blobs[raw_path]
+            ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: PosixPath('/tmp/tokenizer-activation-ram-only/gelu_exact/step2.pt')
+
+tests/test_tokenizer_activation_state.py:143: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_tokenizer_activation_state.py::test_serialized_resume_rng_schedule_h200_and_tokenizer[silu]
+FAILED tests/test_tokenizer_activation_state.py::test_serialized_resume_rng_schedule_h200_and_tokenizer[gelu_exact]
+2 failed, 2 passed in 10.09s
