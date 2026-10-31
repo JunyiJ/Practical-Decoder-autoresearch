@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/pilot_execution.py", line 189, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/pilot_execution.py", line 182, in main
+    worker(writer,args.slot,args.freeze_sha256,[sys.executable,'-m',MODULE,*sys.argv[1:]])
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/pilot_execution.py", line 123, in worker
+    validation=v.evaluate({k:files[k] for k in ('config','parent','h200')});cached=cache_audit(acceptance)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/validation.py", line 96, in evaluate
+    model,data,cfg=load(binding,device)
+                   ~~~~^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/validation.py", line 36, in load
+    require(set(data.splits)=={'train','val'},'Closed test boundary required')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/campaign_rules.py", line 20, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Closed test boundary required

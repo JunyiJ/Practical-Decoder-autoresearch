@@ -7898,3 +7898,31 @@ receipt outside the campaign directory only after parent guards close. A partial
 attempt or absent external anchor blocks progression; no retry or cleanup.
 Keep both pilot pairs until complete audits and dependent prerequisites finish.
 Evidence: pilot-acceptance-plan001/review/decision and pilot001-plan/freeze/build.
+
+## Pilot001 closed after validation-adapter failure, October31,2026
+
+The actual-corpus RMS pilot completed20updates/20,480targets in4.073884 measured
+training seconds and wrote its raw and H200 checkpoints (eight EMA snapshots).
+The child then failed during post-training validation: `validation.load` required
+exactly train/val split keys, while the inherited80/10/10 checkpoint loader
+exposes train/val/test. The earlier generated80/20 fixtures did not exercise
+this boundary. The failure occurred before full-validation scoring or cache
+audits. No parent acceptance exists, and the LayerNorm pilot did not start.
+
+The child exited and was reaped; the root is now closed with STOP, never retried.
+Both checkpoint files, frozen source, configuration, logs and failure evidence
+are protected. The failed32.737s child guard observed peak RSS1,480,212,480B
+and MPS driver2,510,094,336B, below limits; this is a postprocessing error rather
+than a resource-limit breach. It is not a passed pilot or a quality result.
+
+The inherited loader does encode/materialize the held-out split, but the frozen
+trainer uses only training batches and sampled validation. No test loss, test
+training batch or test-based decision was computed. Do not claim the holdout
+was never tokenized. Next correct the read-only scorer/inference interface with
+an explicit train/val-only view and actual80/10/10 boundary tests, keeping model
+math and raw boundaries fixed. Audit the saved RMS outputs in separate recovery
+evidence without retraining or relabeling the failed process. A separately frozen
+continuation may carry verified RMS evidence and run the unstarted LayerNorm
+pilot. Rebuild remaining capacity without cleanup credit for these failed weights.
+Evidence: pilot001-failure.json, failure-evidence, close-failure.py and original
+pilot001 freeze/source. Free space after closure:18,575,335,424B.
