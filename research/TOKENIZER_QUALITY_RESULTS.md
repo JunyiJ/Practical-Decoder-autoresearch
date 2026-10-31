@@ -4631,3 +4631,16 @@ within frozen limits. This is one adaptive screening cell, not an activation
 comparison or adoption. All checkpoints retained; test holdout remains closed.
 The matched exact-GELU screen is now running serially.
 [Accepted-prefix review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-01-review.json).
+
+
+### October31 activation001 first matched screening pair
+
+Both LR0.000625 cells (seed3601,1200updates) passed independent acceptance.
+H200 CE: SiLU4.900551548, exact GELU4.898298625; GELU-minus-SiLU=-0.002252923.
+Raw CE: SiLU4.863816353, GELU4.862704081. H200 was worse than raw by0.036735195
+and0.035594544 respectively. Track the averaging pattern without changing the
+frozen selection endpoint or introducing a posthoc EMA study into this panel.
+This small single-screen-seed contrast is not adoption or fresh confirmation.
+GELU training214.05s/worker278.14s; peakRSS1,721,024,512bytes, driver2,501,705,728bytes.
+All guards passed; no cleanup and holdout stays closed. Slot02 GELU LR0.00125 running.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-02-review.json).
