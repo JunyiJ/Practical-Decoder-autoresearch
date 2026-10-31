@@ -1,0 +1,297 @@
+{
+  "status": "real_retained_fixture_acceptance_passed",
+  "observed_at": "2026-10-31T21:57:32.284253+00:00",
+  "source_commit": "074245a5cd54db9c236f4203e10947e4e0aaafa5",
+  "tests_passed": 52,
+  "receipts": [
+    {
+      "arm": "rms_incumbent",
+      "receipt": {
+        "kind": "real_fixture_artifact_acceptance_v1",
+        "scope": "retained_generated_fixture_acceptance_v1",
+        "request_sha256": "844edc510145ac2dbafe3ba841bab1b21629e6b7cdef8216786cf307ca6ab9fb",
+        "source_sha256": "6b5e55c7aa2bb2a6bd91dee60491fca398182f0ff1e9e54936cb5ce97ff6609b",
+        "files": {
+          "config": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/config.json",
+            "sha256": "34fcfca92af00d4d7bab705c0de1dc98dece643ae9a61e7f2ea35daa5cc491f7"
+          },
+          "h200": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/h200.pt",
+            "sha256": "85fab7285d44818cf1b09a920be6bbf34e46fc146cdbe4d4932ff238a9533789"
+          },
+          "parent": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/final_000002_1793481669892493000.pt",
+            "sha256": "797c2faf3efd3b36098233c3d55c044fd14d292571c148be75325b94968b2f76"
+          },
+          "summary": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/summary.json",
+            "sha256": "93ebcf6af6e1f959863d249479ed44e86b78c996180232b2c3f9dc43fea560d4"
+          },
+          "metrics": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/metrics.jsonl",
+            "sha256": "eb7777633fdca0e043281e80672b4330ea9e887b2194d019cf577071b44695fb"
+          },
+          "export": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/export.json",
+            "sha256": "20644ace1acda9f4315b0184236e9a87cfbdfa4dabc847c93b57ad1cdf12adf1"
+          }
+        },
+        "audit": {
+          "completed_steps": 2,
+          "tokens_processed": 2048,
+          "ema_parameters": 88,
+          "ema_snapshots": 2
+        },
+        "validation": {
+          "binding": {
+            "config": {
+              "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/config.json",
+              "sha256": "34fcfca92af00d4d7bab705c0de1dc98dece643ae9a61e7f2ea35daa5cc491f7"
+            },
+            "parent": {
+              "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/final_000002_1793481669892493000.pt",
+              "sha256": "797c2faf3efd3b36098233c3d55c044fd14d292571c148be75325b94968b2f76"
+            },
+            "h200": {
+              "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/rms_incumbent/h200.pt",
+              "sha256": "85fab7285d44818cf1b09a920be6bbf34e46fc146cdbe4d4932ff238a9533789"
+            }
+          },
+          "target": {
+            "validation_tokens": 1599,
+            "targets": 1598,
+            "ids_sha256": "1a64d7d5ac99e48b33e3d993a7b57d0e764d159ded0ea34d3bb1e0c76a17b872",
+            "target_ids_sha256": "387668afe6a5439eaecdae163e8ce17f149707e7534a6f14dcc60d6e7381a7d8",
+            "target_bytes": 4084,
+            "window_counts": [
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              62
+            ],
+            "block_counts": [
+              1598
+            ],
+            "tokenizer": {
+              "name": "gpt2",
+              "implementation": "tiktoken",
+              "version": "0.14.0",
+              "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c",
+              "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+              "special_tokens": {
+                "<|endoftext|>": 50256
+              },
+              "special_token_policy": "ordinary_text",
+              "split_unit": "raw_text",
+              "vocab_size": 50257
+            },
+            "context": 128,
+            "first_target_offset": 1,
+            "tail_retained": true,
+            "holdout_scored": false
+          },
+          "window_loss_sums": [
+            1376.808632850647,
+            1377.6436595916748,
+            1376.7405033111572,
+            1378.0544719696045,
+            1378.8204879760742,
+            1378.765968322754,
+            1375.8566360473633,
+            1378.3430061340332,
+            1378.4526748657227,
+            1378.199743270874,
+            1377.277606010437,
+            1378.2989807128906,
+            668.659291267395
+          ],
+          "block_loss_sums": [
+            17201.921662330627
+          ],
+          "total_loss": 17201.921662330627,
+          "ce": 10.764656860031682,
+          "bits_per_byte": 6.076671664056032,
+          "loss_dtype": "float32_cross_entropy_float64_aggregation"
+        },
+        "accepted": true,
+        "launch_permitted": false,
+        "quality_adopted": false
+      },
+      "rng_preserved": true
+    },
+    {
+      "arm": "layer_matched_epsilon",
+      "receipt": {
+        "kind": "real_fixture_artifact_acceptance_v1",
+        "scope": "retained_generated_fixture_acceptance_v1",
+        "request_sha256": "f81309b5ee096272bc28edde0db75655d118e1a313aea9708f4c406c3aeef6d5",
+        "source_sha256": "6b5e55c7aa2bb2a6bd91dee60491fca398182f0ff1e9e54936cb5ce97ff6609b",
+        "files": {
+          "config": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/config.json",
+            "sha256": "094f0ef653ba9cc87adf9d24fdf8afd8966cf3b4d5a8b5ba0b7e0c93504febe1"
+          },
+          "h200": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/h200.pt",
+            "sha256": "454c134bcb725cc19524f3b109449d6dae41b41039c110a974267bd55767fe7d"
+          },
+          "parent": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/final_000002_1793481674956161000.pt",
+            "sha256": "5836ce0907e65c050290662fefd772f7d29f783fed7b6d9501ca326d030a371b"
+          },
+          "summary": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/summary.json",
+            "sha256": "0a747b57812428eb84ae3f53eda5fd151109045ead0707ec33ae6518f0bce7bd"
+          },
+          "metrics": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/metrics.jsonl",
+            "sha256": "40d4eaa13be6164ab216b4230600bcd396cfc7d113a721cd4f9d2e0f296a5708"
+          },
+          "export": {
+            "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/export.json",
+            "sha256": "61b1887bfaac5cbb8d7d2d54ada5b7492d6a374ea25549fbb0b6e623436eb91d"
+          }
+        },
+        "audit": {
+          "completed_steps": 2,
+          "tokens_processed": 2048,
+          "ema_parameters": 96,
+          "ema_snapshots": 2
+        },
+        "validation": {
+          "binding": {
+            "config": {
+              "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/config.json",
+              "sha256": "094f0ef653ba9cc87adf9d24fdf8afd8966cf3b4d5a8b5ba0b7e0c93504febe1"
+            },
+            "parent": {
+              "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/final_000002_1793481674956161000.pt",
+              "sha256": "5836ce0907e65c050290662fefd772f7d29f783fed7b6d9501ca326d030a371b"
+            },
+            "h200": {
+              "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/block-norm-v2-h200-fixture-001/layer_matched_epsilon/h200.pt",
+              "sha256": "454c134bcb725cc19524f3b109449d6dae41b41039c110a974267bd55767fe7d"
+            }
+          },
+          "target": {
+            "validation_tokens": 1599,
+            "targets": 1598,
+            "ids_sha256": "1a64d7d5ac99e48b33e3d993a7b57d0e764d159ded0ea34d3bb1e0c76a17b872",
+            "target_ids_sha256": "387668afe6a5439eaecdae163e8ce17f149707e7534a6f14dcc60d6e7381a7d8",
+            "target_bytes": 4084,
+            "window_counts": [
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              62
+            ],
+            "block_counts": [
+              1598
+            ],
+            "tokenizer": {
+              "name": "gpt2",
+              "implementation": "tiktoken",
+              "version": "0.14.0",
+              "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c",
+              "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+              "special_tokens": {
+                "<|endoftext|>": 50256
+              },
+              "special_token_policy": "ordinary_text",
+              "split_unit": "raw_text",
+              "vocab_size": 50257
+            },
+            "context": 128,
+            "first_target_offset": 1,
+            "tail_retained": true,
+            "holdout_scored": false
+          },
+          "window_loss_sums": [
+            1376.2432289123535,
+            1377.1789436340332,
+            1376.2181253433228,
+            1377.5180587768555,
+            1378.2960405349731,
+            1378.2047519683838,
+            1375.3098430633545,
+            1377.8244066238403,
+            1377.9170398712158,
+            1377.6825122833252,
+            1376.6826848983765,
+            1377.755820274353,
+            668.4386568069458
+          ],
+          "block_loss_sums": [
+            17195.270112991333
+          ],
+          "total_loss": 17195.270112991333,
+          "ce": 10.760494438667918,
+          "bits_per_byte": 6.074321968354261,
+          "loss_dtype": "float32_cross_entropy_float64_aggregation"
+        },
+        "accepted": true,
+        "launch_permitted": false,
+        "quality_adopted": false
+      },
+      "rng_preserved": true
+    }
+  ],
+  "guard": {
+    "elapsed_seconds": 11.858697457995731,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 19175804928,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 13320192,
+      "peak_observed_mps_driver_bytes": 1163706368,
+      "peak_rss_bytes": 1820884992
+    },
+    "pid": 77053,
+    "reason": null,
+    "status": "finished"
+  },
+  "findings": [
+    "Both actual raw/H200/config/log/summary/export bundles bound to379file source inventory and exactconfiguration/hashes",
+    "Raw optimizer/RNG/EMA resume preflight passed without optimizer update",
+    "H200 exactly matches88RMS/96LayerNorm EMA parameters; nonlearnedbuffers matchparent",
+    "Summary/log/checkpoint step/token/schedule/evaluation/EMA/export metadata agree",
+    "Parent recomputation exactly matches prior independently checked full-validation reports",
+    "A coherent fabricated score passes structural arithmetic checks but is rejected by parent recomputation",
+    "Corrupt identity/metadata/tensors/nonfinite/lineage and all6changedfilepins rejected perarm"
+  ],
+  "runtime_unchanged": true,
+  "new_binary_files": 0,
+  "optimizer_updates": 0,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "limitations": [
+    "Two-step generated retained fixtures only; no scientific quality/adoption conclusion",
+    "No new worker dispatch, external head persistence/recovery or retention deletion implementation accepted",
+    "Actual corpus pilots and final seed/source/config/capacity freeze still required"
+  ],
+  "automation_update": "Continuation heartbeat refreshed to current normalization work; old tokenizer-quality-research remains PAUSED. Removed obsolete wider-hybrid slot15 continuation instructions; retained guards, closure, cleanup and notification intent."
+}

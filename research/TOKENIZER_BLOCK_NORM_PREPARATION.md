@@ -5,7 +5,8 @@ MPS repeat/resume and generated-text full-batch/H200 prerequisites have passed.
 Pure finite-stage/selection/statistical rules pass67 CPU checks; exact configuration,
 source/environment and train/validation preparation bindings pass66 more. The executable
 controller and scored artifact/validation provenance gates remain pending. Synthetic
-append-only ledger mechanics pass42 checks; real-artifact integration is still pending; no quality
+append-only ledger mechanics pass42 checks; real retained-artifact acceptance now
+passes52 checks, while new worker/dispatch integration remains pending; no quality
 campaign has launched and the finite launch plan is not frozen. Retained-fixture
 validation passes34 checks after preserving/correcting its transfer failure. Cache
 cleanup now provides sufficient capacity against the current full-panel projection. Historical sections below retain their dated scope.
@@ -866,3 +867,32 @@ model/runtime change occurred. Next bind real worker/parent artifact acceptance,
 external ledger heads and retention receipts; complete inference measurement
 acceptance, seed census, resource pilots and final finite freeze. Avoid further
 metadata-only expansion absent a concrete failure.
+
+## Actual retained artifact acceptance passed, October31,2026
+
+Parent-side acceptance passed52 guarded checks on both retained generated-text
+v2 output bundles. Each binds actual config/raw/H200/metrics/summary/export files
+and379 source files. Raw optimizer/RNG/EMA resume preflight passes without a step;
+all88 RMS or96 LayerNorm averaged parameters exactly match parent EMA, and
+nonlearned buffers match the raw parent. Summary, log and checkpoint agree on
+updates, tokens, LR schedule, evaluation settings, timing and averaging lineage.
+
+The parent independently recomputes full validation. Its scores exactly match
+the earlier CPU-oracle-checked reports. A fabricated score with internally
+consistent sums/CE/byte arithmetic is rejected by recomputation: structural
+validation alone cannot authenticate a worker's loss. Corrupt configurations,
+metadata, signatures, tensors, lineage and each of six file hashes are rejected.
+No saved artifact is edited, and CPU/MPS RNG state is preserved.
+
+Guard11.85870s, RSS1,820,884,992B, peak sampled MPS driver1,163,706,368B;
+no training, optimizer update, new binary or holdout evaluation. This proves
+acceptance of actual existing two-step fixtures, not a new worker dispatch or
+quality claim. Receipts still prohibit launch and adoption.
+
+Next connect a thin serial worker/parent path, external head persistence and
+audited retention boundaries to these tested primitives, complete inference
+measurement acceptance, reserve fresh scientific seeds and freeze the finite
+pilot/quality plans. Capacity currently fits after authorized cache cleanup;
+recheck at dispatch. Avoid additional metadata-only expansion absent a concrete
+failure. Evidence: artifact-acceptance-plan-001/review/analysis/decision and source
+snapshot in the block-norm preparation evidence directory.
