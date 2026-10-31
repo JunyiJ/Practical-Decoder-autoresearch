@@ -6258,3 +6258,30 @@ review/guard, campaign005-fresh16-controller-review-v2.json and slot16 launch.
 After slot16 acceptance, use its dedicated confirmation-history verifier before
 the slot17 later-startup path; do not reuse the first-fresh-only verifier.
 All selected/fresh/failure evidence, protected archives and closed holdout preserved.
+
+
+### Campaign005 fresh gated MLA accepted; slot16 compact history replay passed
+
+Slot16 gated MLA D/4, LR0.00125, seed3511 completed696.13s and received parent
+acceptance. H200 CE4.845517761609039, raw4.834619455145382. The frozen H200
+metric favors gated MLA over hybrid (4.999353112775229) by0.153835351166190
+on this seed; do not switch to raw because its score is lower. KDA and the two
+remaining fresh seeds are pending. Both fresh raw/H200 pairs remain protected.
+
+Dedicated slot16 history replay reconstructed the compact acceptance receipt,
+checkpoint identities and storage; guard finished57.23s with no violations.
+Remaining space24,580,538,368 bytes versus24,231,842,408 required, including8GiB
+reserve. Wrapper diffs preserve locks, guards, immutable metadata and all original
+production gates; reviewer calls the slot16 history API, controller calls the
+separate slot17 later-startup and later-dispatch APIs. No production edits.
+
+The slot17 dispatch/history/test hashes match the recorded parent tests. Shared
+acceptance has a later hash pinned in inference-dispatch evidence and frozen005;
+the old slot17 tests are not represented as covering that newer hash. Full live
+slot16 replay passed on the current frozen source; census-fix source/test pins
+also match. Details: campaign005-fresh17-controller-review-v2.json.
+
+After prior worker exit, dispatched only slot17: controller12309, session44132,
+observed phasestarting, childNone. No cleanup/holdout use or live slot17 success
+claim. Next review uses the slot17 later-history verifier before slot18's remaining
+startup/dispatch path. All selected/fresh/failure evidence and archives preserved.

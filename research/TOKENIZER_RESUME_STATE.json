@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-31T09:21:07.845074+00:00",
-  "observed_at_los_angeles": "2026-10-31T02:21:07.845074-07:00",
+  "observed_at": "2026-10-31T09:41:57.201511+00:00",
+  "observed_at_los_angeles": "2026-10-31T02:41:57.201511-07:00",
   "branch": "codex/tokenizer-quality",
-  "evidence_commit_before_handoff": "0c25bbb",
+  "evidence_commit_before_handoff": "6a6d33c",
   "campaign_root": "research_runs/tokenizer-wide-hybrid-005",
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-16-v2-terminal.json",
+  "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-17-v2-terminal.json",
   "observed_process_records": [
     {
       "path": "research_runs/tokenizer-wide-hybrid-005/control/process-pilots-00.json",
@@ -179,9 +179,18 @@
       "elapsed_seconds": 1000.7354833749996,
       "returncode": 0,
       "error": null
+    },
+    {
+      "path": "research_runs/tokenizer-wide-hybrid-005/control/process-quality-16.json",
+      "status": "completed",
+      "pid": 11292,
+      "parent_pid": 10478,
+      "elapsed_seconds": 696.1272595420014,
+      "returncode": 0,
+      "error": null
     }
   ],
-  "session_id_hint": 87554,
+  "session_id_hint": 44132,
   "closed_campaigns": [
     "tokenizer-wide-hybrid-001",
     "tokenizer-wide-hybrid-002",
@@ -189,7 +198,7 @@
     "tokenizer-wide-hybrid-004"
   ],
   "first_action": "Run read-only tokenizer_resume_status.py and inspect actual processes; do not duplicate an existing worker. Follow TOKENIZER_RESUME.md and current local next_action.",
-  "next_after_starter": "Observe campaign005 fresh slot16 controller10478/childNone/session87554; guarded startup may precede child creation; never duplicate launch. Slot15 accepted and independently reviewed, protected raw/H200 pair retained. Frozen source matches census-fix review. After slot16 parent acceptance and actual worker exit, prepare a guarded independent review using tokenizer_wide_hybrid_confirmation_history_v2.verify_confirmation_dispatch for slot16, binding full evidence and preserved checkpoint pairs/storage. Do not reuse the first-fresh-only verifier for slot16. Then prepare slot17 controller with later_confirmation_startup_v2.prepare_confirmation_request, seal_quality_readiness and run_sealed_confirmation_once; verify all existing gates/signatures before execution. Slots18+ use remaining startup/history paths. Preserve all fresh pairs, selected/failure evidence and archives, closed holdout, one worker/all guards; no004 or numerical retry. Commit/push review and resumption state.",
+  "next_after_starter": "Observe campaign005 fresh slot17 controller12309/childNone/session44132; guarded startup may precede child creation; never duplicate launch. Slots15\u201316 accepted and independently reviewed; all fresh raw/H200 pairs protected. After slot17 parent acceptance and actual worker exit, prepare guarded independent review with later_confirmation_history_v2.verify_confirmation_dispatch for slot17, binding full evidence, retained pairs and storage. Then prepare only slot18 using remaining_confirmation_startup_v2.prepare_confirmation_request, seal_quality_readiness and remaining_confirmation_dispatch_v2.run_sealed_confirmation_once; inspect signatures/slot scopes and prerequisite evidence first. For later slots use their matching remaining history scope; never reuse a slot16/17-only verifier. Preserve all fresh pairs, selected/failure evidence, archives, closed holdout, one worker/all guards; no004 or numerical retry. Commit/push findings and resumption state.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -304,6 +313,14 @@
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-16-v2-guard.json": "e3d11ca9eccd186ae5ffd76be4c22cd5d7657beef5d63d59e868de35f29c4c2a",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_fresh16_v2.py": "2f9f4d3e6bac2c76480689efa3c8e66999bd43b04edcf4fdccdf27e88b08264e",
     "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh16-controller-review-v2.json": "d3ac8b7710e6e6cba3020a30bce240306f1a2e8f1f2a480fbfae74d78c1ba4d5",
-    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-16-v2-launch.json": "54f9ce35a02fe0ff9f6fb1c7ff04b0a5fdfb7601c13b11f4f522a5fce55e45ad"
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-16-v2-launch.json": "54f9ce35a02fe0ff9f6fb1c7ff04b0a5fdfb7601c13b11f4f522a5fce55e45ad",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-16-v2-startup-guard.json": "eed845dd5665e9cb67d22603e5cd8f6f464fad58960024c64f967e2a4561dfd9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-16-v2-terminal.json": "a919cff02d04e1a24dcaabb9d6294a08a98462a3fdbee12d66ad444fbe3bfc5b",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-17-v2-review.json": "2b749eb7383a5c6fcf3d70247ffa06e570dda2c01bd8dd2e4e2dc8981ef78d6c",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-17-v2-guard.json": "794f662503efce4f4e31922f251ae1dfa44606c955ffb01dec8d7a829a030a60",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_fresh16_v2.py": "498c1f464f28ce4fd7623a2f9e6fe8a52d0898c7f109d0a5c901f6d3a23d53d9",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/continue_campaign005_fresh17_v2.py": "a19706b25ed535f24cc322c2b52a7763309545134135753ac9431aa164f52152",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh17-controller-review-v2.json": "69fce2d5a57cbf770477895503243635c4aa934ff2215d725b56cce4f232c957",
+    "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-17-v2-launch.json": "16786b9c23fc267454b687b8b528c0dbbbcc80c08bf327153303d6bf87917f3f"
   }
 }

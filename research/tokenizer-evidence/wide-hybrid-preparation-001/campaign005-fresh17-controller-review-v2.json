@@ -1,0 +1,43 @@
+{
+  "status": "slot16_history_verified_and_slot17_wrappers_reviewed",
+  "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
+  "wrappers": {
+    "review_campaign005_fresh16_v2.py": "498c1f464f28ce4fd7623a2f9e6fe8a52d0898c7f109d0a5c901f6d3a23d53d9",
+    "continue_campaign005_fresh17_v2.py": "a19706b25ed535f24cc322c2b52a7763309545134135753ac9431aa164f52152"
+  },
+  "reviewer_changes": [
+    "Dedicated slot16 history verifier with explicit slot16; completed prefix17.",
+    "All artifact hashing, immutable metadata capture, both locks and guard limits retained."
+  ],
+  "controller_changes": [
+    "Dedicated later_confirmation_startup_v2 and later_confirmation_dispatch_v2 APIs, both explicitly slot17.",
+    "Completed-prefix17 evidence names/status; original readiness, cache hashes, MPS and no-retry controls retained."
+  ],
+  "old_parent_test_pin_matches": {
+    "src/research/tokenizer_wide_hybrid_confirmation_history_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_later_confirmation_dispatch_v2.py": true,
+    "src/research/tokenizer_wide_hybrid_quality_acceptance_v2.py": false,
+    "tests/test_tokenizer_wide_hybrid_slot17_acceptance_v2.py": true,
+    "tests/test_tokenizer_wide_hybrid_slot17_dispatch_v2.py": true
+  },
+  "acceptance_current_sha256": "1f54a47334433b864d68c43cf7cd41b05fce035914c74291b546986d451f5353",
+  "acceptance_applicability": "Acceptance source evolved for later confirmations and explicit slot23 inference scope; current file pinned in inference-dispatch review and frozen005. Full live slot16 replay passed on current frozen source. Do not claim the old slot17 test run covered the current acceptance hash.",
+  "guard": {
+    "elapsed_seconds": 57.23430270899553,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 1800
+    },
+    "observation": {
+      "free_bytes": 24572198912,
+      "peak_rss_bytes": 236978176
+    },
+    "pid": 11957,
+    "reason": null,
+    "status": "finished"
+  },
+  "training_launched": false,
+  "adopted": false,
+  "holdout_consumed": false
+}

@@ -8,11 +8,11 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at02:21 Los Angeles: first fresh slot15 accepted and
-independently reviewed. Hybrid D/2, LR0.000625, seed3511: H200 CE4.999353112775229,
-raw5.029627986077138. Both checkpoints are protected. Paired controls and later
-seeds remain pending; no comparative/adoption claim from this single result.
-Slot16 controller10478 is starting; child PID at observation:None; session87554.
+Observed October31,2026 at02:41 Los Angeles: fresh slots15–16 accepted and
+independently reviewed. On seed3511, hybrid D/2 H200 CE4.999353112775229
+versus gated MLA D/4 CE4.845517761609039 (hybrid worse by0.153835351166190).
+Both raw/H200 pairs are protected. KDA and later seeds remain pending; no adoption.
+Slot17 controller12309 is starting; child PID at observation:None; session44132.
 Guarded startup may precede child creation. Never duplicate the launcher.
 Selected screens remain slots14/5/12; rank cleanup is complete and verified.
 See [rank summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-summary-v2.json).
@@ -33,7 +33,7 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller10478 or its current descendant is running, observe it.
+2. If controller12309 or its current descendant is running, observe it.
    Never duplicate the fresh dispatch or rerun completed rank boundaries.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
@@ -41,16 +41,15 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. After slot16 parent acceptance and actual worker exit, prepare a guarded
-   independent review using `tokenizer_wide_hybrid_confirmation_history_v2.verify_confirmation_dispatch`
-   for slot16. Bind full evidence, preserved checkpoint pairs and remaining storage;
-   require a finished guard. The first-fresh-only verifier is not valid for slot16.
-   Then prepare slot17 with `later_confirmation_startup_v2.prepare_confirmation_request`,
-   `seal_quality_readiness` and `run_sealed_confirmation_once`, inspecting signatures
-   and keeping all existing gates. Slots18+ use their remaining startup/history paths.
-   The frozen source and census-fix source/test pins were verified before slot16;
-   no production source was changed. Preserve every fresh pair, including controls
-   and negative results. Never execute004 helpers unchanged or retry004.
+4. After slot17 parent acceptance and actual worker exit, prepare a guarded
+   independent review using `tokenizer_wide_hybrid_later_confirmation_history_v2.verify_confirmation_dispatch`
+   for slot17. Bind full evidence, protected pairs and remaining storage; require
+   a finished guard. Do not reuse the slot16-only verifier.
+   Then prepare only slot18 using `remaining_confirmation_startup_v2.prepare_confirmation_request`,
+   `seal_quality_readiness` and `remaining_confirmation_dispatch_v2.run_sealed_confirmation_once`.
+   Inspect signatures, slot scopes and prerequisite evidence first. Later slots
+   require matching remaining-history scopes. Preserve every fresh pair, including
+   controls and negative results; no closed campaign or numerical retry.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
    invent replacement seeds, clear STOP or extend a closed grid.
