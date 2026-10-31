@@ -437,3 +437,14 @@ Observed free15,573,012,480bytes exceeded remaining requirement15,169,847,947.
 No selected/fresh/failure checkpoint was deleted; test holdout remains closed.
 Next is the first of six1200-update screens under the unchanged frozen source.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-pilot-boundary-reviewed.json).
+
+
+### October31 activation001 first quality screen accepted
+
+SiLU at LR0.000625, seed3601, completed1200updates and independent acceptance.
+Full-validation rawCE4.863816353, H200CE4.900551548;211.99s training and275.87s
+worker duration. PeakRSS1,720,582,144bytes and MPS driver2,501,705,728bytes stayed
+within frozen limits. This is one adaptive screening cell, not an activation
+comparison or adoption. All checkpoints retained; test holdout remains closed.
+The matched exact-GELU screen is now running serially.
+[Accepted-prefix review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-01-review.json).
