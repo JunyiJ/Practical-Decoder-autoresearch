@@ -46,7 +46,7 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
 ```
 
 1. Read ignored `research_state/tokenizer-quality-progress.json`; reconcile its
-   next_action with actual Git/process state. Activation quality slot03 was launched; slots00-02 accepted.
+   next_action with actual Git/process state. Activation quality slot04 was launched; slots00-03 accepted.
    No005 relaunch, slot24, seed extension or changed adoption criterion.
 2. Continue [activation preparation](TOKENIZER_MLA_ACTIVATION_PREPARATION.md).
    The MoE panel is deferred after a 3.27 GB conservative capacity gap; its
@@ -84,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 SiLU screen running (slot03, seed3601, LR0.00125); see the indexed
+Current continuation: activation001 SiLU screen running (slot04, seed3601, LR0.0025); see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -261,3 +261,5 @@ Read the current state index before dispatch; prior launch observations are hist
 Latest observation: both LR0.000625 screens accepted; slot02 GELU LR0.00125 running. Parent58516/child58519/session59421. Read the state index before dispatch.
 
 Latest observation: three screens accepted; slot03 SiLU LR0.00125 running. Parent58978/child58984/session32162. Read the state index before dispatch.
+
+Latest observation: four screens accepted; slot04 SiLU LR0.0025 running. Parent59460/child59463/session85521. Read the state index before dispatch.

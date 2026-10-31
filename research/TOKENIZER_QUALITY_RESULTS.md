@@ -4657,3 +4657,18 @@ No general EMA conclusion, changed endpoint or adoption follows.
 Training213.41s/worker297.45s; peakRSS1,718,665,216bytes, driver2,501,705,728bytes.
 All guards passed, checkpoints retained, holdout closed. Matched SiLU LR0.00125
 is running as slot03. [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-03-review.json).
+
+
+### October31 activation001 middle-rate paired screen accepted
+
+SiLU LR0.00125, seed3601, completed1200updates and independent acceptance.
+RawCE4.723106871/H200CE4.722533288; GELU-minus-SiLU H200 delta=+0.004260708
+at this rate, reversing the lower-rate delta=-0.002252923. Increasing LR from
+0.000625 improves H200 by0.178018260 for SiLU and0.171504628 for GELU. Thus
+within this one screening seed, LR effects are much larger than the gate
+contrast; neither screening difference establishes an activation winner.
+H200 slightly improves SiLU raw by0.000573584 at this rate. No endpoint change.
+Training212.66s/worker297.91s, peakRSS1,650,491,392bytes, driver2,501,705,728bytes.
+All guards passed, no cleanup, holdout closed. Slot04 SiLU LR0.0025 is running;
+the final GELU rate follows before any frozen selection.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-04-review.json).
