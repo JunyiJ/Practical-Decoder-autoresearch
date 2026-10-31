@@ -53,11 +53,17 @@ outputs. A changed prerequisite needs a separately named evidence attempt.
 
 ## Required work before any inference
 
-1. Build and test an external binder that reads activation001 without modifying
-   it, verifies its freeze, all accepted training/selection/retention records,
-   exact source/runtime/input identities and every protected checkpoint hash.
-   Explicitly import the preserved failed inference receipt without accepting
-   it as timing evidence. Bind the old root separately from the new output root.
+1. **Completed prerequisite:** `source_binding.collect_source_import` replays
+   the original freeze, fourteen accepted dispatches, selection and both
+   retention boundaries; verifies sixteen protected checkpoint hashes and all
+   438 original file identities; and anchors the exact preserved failure audit.
+   It produces three loader-facing fresh-pair bindings. The new-root controller
+   must freeze this import and call `verify_source_import` at its entry/review
+   boundaries. Keep the original Session and new output root separate. The
+   original remaining-training storage gate is inapplicable to this read-only
+   import; no checkpoint allocation is made. The future controller must enforce
+   its full new finite inference allocation separately, keeping every original
+   resource limit.
 2. Build a new-root worker/controller using the tested reader for its unlocked
    budget checks. Reuse the original bounded writers and already-serialized
    process supervisor without monkeypatching their globals or frozen source.
@@ -71,8 +77,11 @@ outputs. A changed prerequisite needs a separately named evidence attempt.
    training-token inputs, cache/reset correctness, 600-second jobs, RSS4GiB,
    driver6GiB, reserve8GiB, per-job5MiB/log4MiB, panel16MiB. Import trained H200
    files; no training, weight regeneration, cleanup or new quality scoring.
-4. Implement independent final reporting using original six fresh rows,
-   selection, paired block statistics and unchanged quality gate. It requires
+4. **Quality arithmetic prerequisite completed:** `quality.analyze_imported_quality`
+   verifies the complete original import before/after extracting the six fresh
+   endpoints, checks each score's checkpoint lineage and uses the unchanged
+   original statistical engine. It publishes only `quality_reviewed_inference_pending`.
+   Implement the remaining independent final-report assembly. It requires
    all three accepted new timing pairs and an immutable final receipt. The
    original final wrapper cannot run on the failed root. No claim of formal
    closure or new adoption follows from this prerequisite.
@@ -80,3 +89,32 @@ outputs. A changed prerequisite needs a separately named evidence attempt.
    imported evidence hashes and original source applicability before launch;
    commit/push first. Preserve failed attempt001, all selected/fresh pairs and
    closed campaigns. No paid compute, subagents or holdout scoring.
+
+
+## Completed source import and quality arithmetic
+
+The source-binding prerequisite passed28 contract tests plus actual original-root
+integration in4.860s (peakRSS234,258,432bytes). Every protected checkpoint was
+rehash-verified:16files,4,473,282,368bytes. All438 original files are imported;
+422 are metadata. Failure hashes and the full original source/runtime are bound.
+No corpus/model/checkpoint deserialization or numerical scoring took place.
+[Review](../tokenizer-evidence/activation-preparation-001/inference-recovery-binding-prerequisite-001-review.json),
+[exact import](../tokenizer-evidence/activation-preparation-001/inference-recovery-binding-prerequisite-001-import.json).
+
+The quality adapter passed9 transport/lineage/revalidation tests and actual
+analysis in9.333s (peakRSS237,191,168bytes). Source import was fully replayed before
+and after the original predeclared arithmetic. Mean GELU-minus-SiLU CE is
++0.001550755925793319. Upper gate bounds for block lengths2048/4096/8192 are
++0.002470789135/+0.002569505209/+0.002788169461, all failing the negative-bound
+condition. Descriptive95% intervals are respectively
+[+0.000692766861,+0.002409247687],
+[+0.000385030443,+0.002518861133], and
+[+0.000105328239,+0.002716096356].
+These condition on the same trained seeds and reused validation text; they are
+not seed-population or independent holdout uncertainty. No new adoption or
+formal closure follows; the new inference panel remains unrun.
+[Analysis](../tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001-analysis.json),
+[review](../tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001-review.json).
+
+Both evidence wrappers have executed once. Their outputs and reviewed source
+hashes must remain intact; do not rerun them to overwrite existing artifacts.

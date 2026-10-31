@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "error": null,
+  "pytest_exit_code": 0,
+  "tests": [
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_quality_only_report_cannot_claim_inference_or_closure",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_altered_imported_endpoint_rejected[request]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_altered_imported_endpoint_rejected[path]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_altered_imported_endpoint_rejected[raw_lineage]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_altered_imported_endpoint_rejected[h200_lineage]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_altered_imported_endpoint_rejected[score_arithmetic]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_altered_imported_endpoint_rejected[resource]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_altered_imported_endpoint_rejected[contract]",
+      "when": "call",
+      "outcome": "passed"
+    },
+    {
+      "nodeid": "research/activation_inference_recovery_v1/test_quality.py::test_post_arithmetic_provenance_failure_propagates",
+      "when": "call",
+      "outcome": "passed"
+    }
+  ],
+  "observed_at": "2026-10-31T19:09:09.220092+00:00",
+  "source_import": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery-binding-prerequisite-001-import.json",
+    "size": 141482,
+    "sha256": "feb9fc8403459aa1d16f50052a26ddba243985c32146257582873c96f8644e87"
+  },
+  "code_sha256": {
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/quality.py": "f85c676c26679236887cbc019a04324a5965bb48c6cc0414b2d4a0dc49a6fbfd",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/test_quality.py": "19ba5193750f8457eabbe224680adef922c2a63e95c5788fb5fdd2bdad65dd02",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/run_quality_prerequisite.py": "155382ff802d165cc6476ebb98befc400a4e6355f075e8c222764796d6af6bbc"
+  },
+  "outputs": {
+    "guard": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001-guard.json",
+      "size": 260,
+      "sha256": "70bf8a965b82c7ace6b075f1ac20d841cdd2e8924b206b4910d338e4e7a47980"
+    },
+    "log": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001.log",
+      "size": 592,
+      "sha256": "ffe08d1b15f64b407abad44c9aab42a44b59ecb84bca75f2f4f7c0e2610ec10a"
+    },
+    "analysis": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001-analysis.json",
+      "size": 15635,
+      "sha256": "fd264f3fb7768e8560c24161a155153c3e7e69da88e7c7a9d1ee2ad0ee98e8e5"
+    }
+  },
+  "scope": "Independent original-file provenance before/after the original predeclared statistical engine on accepted fresh metadata. No weights loaded, new validation scoring, training, inference, cleanup or terminal campaign entry.",
+  "formal_final_completed": false,
+  "holdout_scored": false,
+  "inference_launched": false
+}

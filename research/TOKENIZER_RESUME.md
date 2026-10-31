@@ -11,8 +11,9 @@ supporting evidence; ignored local progress and live processes may be newer.
 **Latest: activation001 inference failed on a control-file census race. No worker
 is active. Do not retry any activation001 entry or patch frozen source. Read the
 latest state index and failure review below; older launch notes are historical.
-The external metadata recovery prerequisite passed17tests; binder/controller,
-acceptance/final reporting and a new-root freeze still precede any inference.**
+External recovery census, original-evidence binding and quality arithmetic
+prerequisites passed17/28/9tests. All three conditional gate bounds also fail.
+A new-root controller, acceptance/final assembly and freeze still precede inference.**
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds

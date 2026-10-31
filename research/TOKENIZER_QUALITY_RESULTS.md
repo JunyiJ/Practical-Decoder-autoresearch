@@ -4859,3 +4859,40 @@ binder, new-root controller, independent acceptance/final report and exact sourc
 freeze remain prerequisites. Activation001 is never retried; its failed evidence
 and protected checkpoints stay intact. SiLU remains the incumbent; no new
 scientific quality conclusion or formal terminal receipt is claimed here.
+
+
+### October31 activation001 imported quality statistics and evidence binding
+
+The external read-only binder passed28 contract tests and actual integration:
+all438 original files,14 accepted dispatches,both retention boundaries,and all
+16protected checkpoints (4,473,282,368bytes) verified. Original inference failure
+is pinned explicitly and grants no timing credit. No original source or campaign
+file changed. [Binding review](tokenizer-evidence/activation-preparation-001/inference-recovery-binding-prerequisite-001-review.json).
+
+The imported-quality adapter passed9 tests and ran the unchanged predeclared
+statistical engine on the original six accepted fresh endpoints, with complete
+source/evidence verification before and after. No weights loaded or new
+validation scoring. Mean H200 CE:SiLU4.710273877112203,GELU4.711824633037997;
+GELU-minus-SiLU+0.001550755925793319,losing2/3seeds.
+
+| Block length | Gate upper bound | Descriptive95% interval, GELU minus SiLU |
+| --- | --- | --- |
+|2048|+0.002470789135|[+0.000692766861,+0.002409247687]|
+|4096|+0.002569505209|[+0.000385030443,+0.002518861133]|
+|8192|+0.002788169461|[+0.000105328239,+0.002716096356]|
+
+All three negative-upper-bound conditions fail, alongside the mean and every-seed
+criteria. The descriptive intervals are above zero, supporting a small GELU
+disadvantage conditional on these trained seeds and adaptively reused validation
+text. They are not seed-population or independent-holdout intervals. Original
+bootstrap draws/seed/quantile/block rules are unchanged; no posthoc quality or
+cost route. [Analysis](tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001-analysis.json),
+[guarded review](tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001-review.json).
+
+The incumbent remains unchanged. This is a quality-only review, explicitly
+`quality_reviewed_inference_pending`, not a terminal campaign receipt. No new
+inference ran. Next complete the separate new-root worker/controller, independent
+acceptance/final assembly and exact external freeze before finite inference;
+see [recovery design](activation_inference_recovery_v1/README.md). The failed
+activation001 root is never retried; selected/fresh pairs,failures,and closed
+holdout remain protected. Both new evidence-producing wrappers executed once.

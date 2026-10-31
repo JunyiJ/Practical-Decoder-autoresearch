@@ -1,0 +1,456 @@
+{
+  "kind": "activation001_imported_quality_review_v1",
+  "status": "quality_reviewed_inference_pending",
+  "source_import_sha256": "e7028d3065f087aadfd280e80e7315cc555367a9ba422ac1958594ff2a13dc4b",
+  "plan": {
+    "path": "evidence/meta/activation-plan.json",
+    "size": 36221,
+    "sha256": "508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4"
+  },
+  "analysis": {
+    "status": "arithmetic_reviewed_pending_provenance",
+    "contract": {
+      "kind": "activation_final_decision_v1",
+      "contrast": "gelu_exact_minus_silu",
+      "mean_improvement_strictly_greater_than": 0.02,
+      "every_seed_strictly_better": true,
+      "all_conditional_upper_bounds_strictly_negative": true,
+      "blocks": [
+        2048,
+        4096,
+        8192
+      ],
+      "draws": 2000,
+      "bootstrap_seed": 20261031,
+      "gate_quantile": 0.9833333333333333,
+      "quantile_method": "linear",
+      "cost_adoption_route": false,
+      "representative_export_seed": 3611,
+      "holdout_scored": false
+    },
+    "selection": {
+      "gelu_exact": 0.00125,
+      "silu": 0.00125
+    },
+    "fresh_endpoints": [
+      {
+        "seed": 3611,
+        "family": "silu",
+        "lr": 0.00125,
+        "raw_ce": 4.707916448045876,
+        "h200_ce": 4.722778111162631,
+        "raw_bits_per_byte": 2.087390462358358,
+        "h200_bits_per_byte": 2.093979809086797,
+        "training_seconds": 206.79449676396325,
+        "worker_seconds": 336.326576,
+        "peak_rss_bytes": 1697906688,
+        "peak_mps_driver_bytes": 2501705728
+      },
+      {
+        "seed": 3611,
+        "family": "gelu_exact",
+        "lr": 0.00125,
+        "raw_ce": 4.707687207049669,
+        "h200_ce": 4.722655892946058,
+        "raw_bits_per_byte": 2.0872888217548455,
+        "h200_bits_per_byte": 2.0939256201175547,
+        "training_seconds": 206.88523075377452,
+        "worker_seconds": 343.561143,
+        "peak_rss_bytes": 1698004992,
+        "peak_mps_driver_bytes": 2501705728
+      },
+      {
+        "seed": 3612,
+        "family": "gelu_exact",
+        "lr": 0.00125,
+        "raw_ce": 4.702213628563563,
+        "h200_ce": 4.698578619971935,
+        "raw_bits_per_byte": 2.084861952957799,
+        "h200_bits_per_byte": 2.083250267120021,
+        "training_seconds": 205.51831407172722,
+        "worker_seconds": 350.013514,
+        "peak_rss_bytes": 1695776768,
+        "peak_mps_driver_bytes": 2501705728
+      },
+      {
+        "seed": 3612,
+        "family": "silu",
+        "lr": 0.00125,
+        "raw_ce": 4.699689255084517,
+        "h200_ce": 4.695734123349365,
+        "raw_bits_per_byte": 2.083742699211106,
+        "h200_bits_per_byte": 2.0819890775501366,
+        "training_seconds": 205.0927153818193,
+        "worker_seconds": 374.057454,
+        "peak_rss_bytes": 1695023104,
+        "peak_mps_driver_bytes": 2501705728
+      },
+      {
+        "seed": 3613,
+        "family": "silu",
+        "lr": 0.00125,
+        "raw_ce": 4.701461123324758,
+        "h200_ce": 4.712309396824614,
+        "raw_bits_per_byte": 2.0845283080693027,
+        "h200_bits_per_byte": 2.0893382028256244,
+        "training_seconds": 205.24215369610465,
+        "worker_seconds": 388.455547,
+        "peak_rss_bytes": 1514586112,
+        "peak_mps_driver_bytes": 2501705728
+      },
+      {
+        "seed": 3613,
+        "family": "gelu_exact",
+        "lr": 0.00125,
+        "raw_ce": 4.703934880095275,
+        "h200_ce": 4.714239386195998,
+        "raw_bits_per_byte": 2.0856251194392486,
+        "h200_bits_per_byte": 2.0901939192451353,
+        "training_seconds": 205.05898581707152,
+        "worker_seconds": 395.691749,
+        "peak_rss_bytes": 1692663808,
+        "peak_mps_driver_bytes": 2501705728
+      }
+    ],
+    "h200_means": {
+      "silu": 4.710273877112203,
+      "gelu_exact": 4.711824633037997
+    },
+    "statistics": {
+      "seed_deltas": [
+        -0.0001222182165727091,
+        0.002844496622569261,
+        0.0019299893713834054
+      ],
+      "mean_delta": 0.001550755925793319,
+      "bounds": {
+        "2048": {
+          "gate_upper": 0.002470789134928842,
+          "descriptive_95pct": [
+            0.0006927668606927679,
+            0.002409247686779208
+          ]
+        },
+        "4096": {
+          "gate_upper": 0.002569505209332,
+          "descriptive_95pct": [
+            0.0003850304434315013,
+            0.002518861133044932
+          ]
+        },
+        "8192": {
+          "gate_upper": 0.0027881694609431422,
+          "descriptive_95pct": [
+            0.00010532823902203391,
+            0.0027160963555572662
+          ]
+        }
+      }
+    },
+    "strict_quality": false,
+    "eligible_family": null,
+    "scope": "Width256 four-layer quarter-latent RoPE MLA, equally tuned SiLU/exact-GELU gates, 1200 updates and H200 on GPT2-tokenized Tiny Shakespeare. Adaptive validation; text-block intervals condition on these trained seeds and selection, not population seed uncertainty or independent holdout. No cost-only adoption route or transfer claim.",
+    "adopted": false
+  },
+  "fresh_provenance": [
+    {
+      "spec": {
+        "stage": "confirm",
+        "family": "silu",
+        "seed": 3611,
+        "lr": 0.00125,
+        "width": 256,
+        "steps": 1200
+      },
+      "accepted": {
+        "path": "evidence/quality/06/acceptance.json",
+        "sha256": "e87c4805a96d1c7cfea3531202eac709da594e94b7687e64d0bfede8b1ec6897",
+        "size": 4237
+      },
+      "request": {
+        "path": "evidence/quality/06/request.json",
+        "sha256": "9d32c2ffbd051215e5b944cadcebce0d5003ba11fe0e0def65dc813e513cdfe3",
+        "size": 2860
+      },
+      "weights": {
+        "h200": {
+          "path": "evidence/quality/06/checkpoints/h200.pt",
+          "sha256": "c8b7bde81e44b8610c7bb3f10e92f40a56b84ea27473bdaa9ac282ad035b7ade",
+          "size": 114072387
+        },
+        "raw": {
+          "path": "evidence/quality/06/checkpoints/final_001200_1793469194114885000.pt",
+          "sha256": "3b4cc1f45ce1acadf386bd63993a21273af4e300e3c0c5f5dd32b188a4d932db",
+          "size": 445087909
+        }
+      },
+      "measurements": {
+        "measurements": {
+          "path": "evidence/quality/06/measurements.json",
+          "size": 4317,
+          "sha256": "420c6edfb57654399e3b6c715a3ee93e0bfe1c09f29a649aadea0e6294c2af95"
+        },
+        "training-summary": {
+          "path": "evidence/quality/06/training-summary.json",
+          "size": 5201,
+          "sha256": "28bc947d46c9e571ba207fdd6095d21029b2ffcd7d8df4e23403895a800fcc4c"
+        },
+        "resource-audit": {
+          "path": "evidence/quality/06/resource-audit.json",
+          "size": 37247,
+          "sha256": "658033c86ce3f3b54bca61a825d9fe91d47ee3b879941d3ad464b86f0bb35326"
+        }
+      }
+    },
+    {
+      "spec": {
+        "stage": "confirm",
+        "family": "gelu_exact",
+        "seed": 3611,
+        "lr": 0.00125,
+        "width": 256,
+        "steps": 1200
+      },
+      "accepted": {
+        "path": "evidence/quality/07/acceptance.json",
+        "sha256": "622b862d09f757a88c3c82077d829762c55a86d937d5c57178b418257bed9ffc",
+        "size": 4237
+      },
+      "request": {
+        "path": "evidence/quality/07/request.json",
+        "sha256": "57da588b97b7a5ee33e7464c28f5f6f8330ae3fa7662b8e62eb4a92e5f264c39",
+        "size": 2872
+      },
+      "weights": {
+        "h200": {
+          "path": "evidence/quality/07/checkpoints/h200.pt",
+          "sha256": "58e70de22b14902d7b9915c24131bddcbe501100901dbd254c7861577a8d9918",
+          "size": 114072387
+        },
+        "raw": {
+          "path": "evidence/quality/07/checkpoints/final_001200_1793469711658169000.pt",
+          "sha256": "b286e1ba3d8f4b1a4fd6356c3532f234dc760a175b90f9a5bc83b59fbc00e882",
+          "size": 445087909
+        }
+      },
+      "measurements": {
+        "measurements": {
+          "path": "evidence/quality/07/measurements.json",
+          "size": 4327,
+          "sha256": "f708bde305b219fe02d0fd69dbfc8d8f374a9eb3e7a78bdaeac28c23bcf8d940"
+        },
+        "training-summary": {
+          "path": "evidence/quality/07/training-summary.json",
+          "size": 5213,
+          "sha256": "0e19861b1546d2db21b3a486ae3511b5ecc12307fe2d413fa3cee2a5b5ed464f"
+        },
+        "resource-audit": {
+          "path": "evidence/quality/07/resource-audit.json",
+          "size": 38034,
+          "sha256": "661ecbdcbc628dc627e16f986f9245606f05e42de4a9b8604f5b49ed2518d441"
+        }
+      }
+    },
+    {
+      "spec": {
+        "stage": "confirm",
+        "family": "gelu_exact",
+        "seed": 3612,
+        "lr": 0.00125,
+        "width": 256,
+        "steps": 1200
+      },
+      "accepted": {
+        "path": "evidence/quality/08/acceptance.json",
+        "sha256": "482db930b1fa56041c05f1233390da5b98ea3df6d904627812c0dee22f29083f",
+        "size": 4237
+      },
+      "request": {
+        "path": "evidence/quality/08/request.json",
+        "sha256": "bf100cb641d0aa4d891e5eeda0d5deffd4adab85d70263706a353f81b50b3191",
+        "size": 2872
+      },
+      "weights": {
+        "h200": {
+          "path": "evidence/quality/08/checkpoints/h200.pt",
+          "sha256": "42e215ac49c0699077fd48a8340deab10e9a10d0f45a4c1c5d3bc741a893d397",
+          "size": 114072387
+        },
+        "raw": {
+          "path": "evidence/quality/08/checkpoints/final_001200_1793470308327355000.pt",
+          "sha256": "3f15e655a0c2bef0b359dbd7d3f0f3373a448bd5f40b49b173dbd111ba426b36",
+          "size": 445087909
+        }
+      },
+      "measurements": {
+        "measurements": {
+          "path": "evidence/quality/08/measurements.json",
+          "size": 4324,
+          "sha256": "5ea2a7ba6b5902dbb71292df4d4c15215494672c7e16edc12acf5387bb63fa24"
+        },
+        "training-summary": {
+          "path": "evidence/quality/08/training-summary.json",
+          "size": 5212,
+          "sha256": "c8343b8b8849ba5708ffe3744c327dbb3bff139772264ce47bf97e40973c874f"
+        },
+        "resource-audit": {
+          "path": "evidence/quality/08/resource-audit.json",
+          "size": 38477,
+          "sha256": "26845e392cb158a8350743bf10618fce9639a5a50ab8a9881fb3853d2d8f0716"
+        }
+      }
+    },
+    {
+      "spec": {
+        "stage": "confirm",
+        "family": "silu",
+        "seed": 3612,
+        "lr": 0.00125,
+        "width": 256,
+        "steps": 1200
+      },
+      "accepted": {
+        "path": "evidence/quality/09/acceptance.json",
+        "sha256": "bab4450340346c4ff42829e7cae2e524ce796f9fc721f22280489ec6959544a2",
+        "size": 4237
+      },
+      "request": {
+        "path": "evidence/quality/09/request.json",
+        "sha256": "304e5ad0030a153b9f90d5108b5e0574dfaf3d800ea539c41b13a87f602bf00a",
+        "size": 2860
+      },
+      "weights": {
+        "h200": {
+          "path": "evidence/quality/09/checkpoints/h200.pt",
+          "sha256": "73f46f10341de88a5a76d4d82f8d1ef42744a306d71ec5960188ede0bcbe5b44",
+          "size": 114072387
+        },
+        "raw": {
+          "path": "evidence/quality/09/checkpoints/final_001200_1793470915505796000.pt",
+          "sha256": "bda9c1c6e52ac6f23eb210fcd269f72fef71b10cf032e80f6b0c8b787868a1f8",
+          "size": 445087909
+        }
+      },
+      "measurements": {
+        "measurements": {
+          "path": "evidence/quality/09/measurements.json",
+          "size": 4316,
+          "sha256": "51beea4779a3aab12c45de94ef95eb1fb3a7621a6c76755838aa224bd937e01b"
+        },
+        "training-summary": {
+          "path": "evidence/quality/09/training-summary.json",
+          "size": 5208,
+          "sha256": "a2d6f7355cf8aec05617bb3fe76f561f010db92522c5e1692a60d2e1926fe7c8"
+        },
+        "resource-audit": {
+          "path": "evidence/quality/09/resource-audit.json",
+          "size": 41060,
+          "sha256": "e14b485dcb600f51dce81b8150eb7d2cab5f913383c9432c38314b78735a2bc0"
+        }
+      }
+    },
+    {
+      "spec": {
+        "stage": "confirm",
+        "family": "silu",
+        "seed": 3613,
+        "lr": 0.00125,
+        "width": 256,
+        "steps": 1200
+      },
+      "accepted": {
+        "path": "evidence/quality/10/acceptance.json",
+        "sha256": "41318ffbdb684e895dd5b8528b2d18955eaed805738406db6ec286da176c2334",
+        "size": 4237
+      },
+      "request": {
+        "path": "evidence/quality/10/request.json",
+        "sha256": "61b5ca4729b56645ab1fa8a7222dd6f6f82e3e462ff1bdc2c9092204fecaae2b",
+        "size": 2860
+      },
+      "weights": {
+        "h200": {
+          "path": "evidence/quality/10/checkpoints/h200.pt",
+          "sha256": "21f8dfbcf76399864f76077a8c9ae70d05457b91631dd4e8c78212a09ff4b329",
+          "size": 114072387
+        },
+        "raw": {
+          "path": "evidence/quality/10/checkpoints/final_001200_1793471513534846000.pt",
+          "sha256": "5d674d3f56e2a1a00f17b28d10bd5fb0dcdb9399a058c204df2aae6cba554dc9",
+          "size": 445087909
+        }
+      },
+      "measurements": {
+        "measurements": {
+          "path": "evidence/quality/10/measurements.json",
+          "size": 4322,
+          "sha256": "a95a1d7506ac7513a0feb39b581e247654dd737bee0f8dbd7ef7f04b122c6af1"
+        },
+        "training-summary": {
+          "path": "evidence/quality/10/training-summary.json",
+          "size": 5212,
+          "sha256": "8f493048acbb7b8ae7b8746f5f0e9888558fecc2fa8148ac3af3d0c65cf77f8d"
+        },
+        "resource-audit": {
+          "path": "evidence/quality/10/resource-audit.json",
+          "size": 42527,
+          "sha256": "e578fc46a3890df0a7d8a902034bd4b3642548b3f95da8d08f3d1c6d125f8b55"
+        }
+      }
+    },
+    {
+      "spec": {
+        "stage": "confirm",
+        "family": "gelu_exact",
+        "seed": 3613,
+        "lr": 0.00125,
+        "width": 256,
+        "steps": 1200
+      },
+      "accepted": {
+        "path": "evidence/quality/11/acceptance.json",
+        "sha256": "0f667f235526bcabfb09f7b785b00fa28a1b5de045b0869f4d71684c74f4a1e3",
+        "size": 4237
+      },
+      "request": {
+        "path": "evidence/quality/11/request.json",
+        "sha256": "49b1fefd75bf108081e14380ea4a376e32a4eae9df731cfd3ef3f9a7695fc6cb",
+        "size": 2872
+      },
+      "weights": {
+        "h200": {
+          "path": "evidence/quality/11/checkpoints/h200.pt",
+          "sha256": "daf80183af5e1042d91ff7a297d85a79488b76f4c879f3c8acfa2cc95a27877e",
+          "size": 114072387
+        },
+        "raw": {
+          "path": "evidence/quality/11/checkpoints/final_001200_1793472115633712000.pt",
+          "sha256": "ee1df3a5c9d1fd189d6089b9939d4fd78f194d72f153d97e8e7af469e6503ac8",
+          "size": 445087909
+        }
+      },
+      "measurements": {
+        "measurements": {
+          "path": "evidence/quality/11/measurements.json",
+          "size": 4324,
+          "sha256": "39ea8e6d7a4c924b8019aa607d02a86540d221e0289612b18b890a627d8fd0e8"
+        },
+        "training-summary": {
+          "path": "evidence/quality/11/training-summary.json",
+          "size": 5218,
+          "sha256": "d46767b351b5f3b5b01e23909116afc5d25001e2f4e2aa47e6d30550b83064d2"
+        },
+        "resource-audit": {
+          "path": "evidence/quality/11/resource-audit.json",
+          "size": 43209,
+          "sha256": "96e0c6a3d1d9623d09ab8bdc7057819d58fad1339095030de9f3bd779ab8c8e0"
+        }
+      }
+    }
+  ],
+  "accepted_inference_pairs": 0,
+  "formal_final_completed": false,
+  "adopted": false,
+  "holdout_scored": false,
+  "limitations": "Original predeclared conditional text-block arithmetic on the same accepted six fresh endpoints. No new scoring or seed-population inference. The separate complete inference panel and independent terminal receipt are still required; this quality review cannot close the campaign."
+}
