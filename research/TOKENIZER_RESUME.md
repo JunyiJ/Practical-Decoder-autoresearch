@@ -84,7 +84,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation001 screen complete; LR0.00125 saved for both gates; five fresh cells accepted; final GELU seed3613 slot11 running; see the indexed
+Current continuation: activation001 screen complete; LR0.00125 saved for both gates; all training accepted; first inference pair seed3611 running; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain
@@ -306,3 +306,31 @@ Latest observation: seed3612 GELU accepted; matched slot09 SiLU running. Parent6
 Latest observation: two fresh pairs accepted; seed3612 favors SiLU, failing the frozen every-seed GELU improvement condition. Finish finite evidence regardless. Slot10 SiLU seed3613 running, parent62174/child62178/session10675.
 
 Latest observation: slot10 accepted; final slot11 GELU seed3613 running. Parent62609/child62613/session31403. After acceptance, complete prefix audit then frozen inference entry, never another training step.
+
+
+### October31 activation001 complete fresh quality panel
+
+All12 quality trajectories and both pilots passed independent acceptance.
+Both families use their independently selected LR0.00125. Fresh H200 CE:
+
+| Seed | SiLU | Exact GELU | GELU minus SiLU |
+| --- | --- | --- | --- |
+|3611|4.722778111|4.722655893|-0.000122218|
+|3612|4.695734123|4.698578620|+0.002844497|
+|3613|4.712309397|4.714239386|+0.001929989|
+
+Mean GELU-minus-SiLU=+0.001550756: GELU is slightly worse on average and loses
+two of three seeds. Both strict mean improvement and every-seed improvement
+conditions fail. No population-equivalence claim; conditional-text intervals,
+finite inference and independent terminal review still must be recorded.
+Final GELU rawCE4.703934880/H200CE4.714239386;205.06s training/401.30s worker;
+peakRSS1,692,663,808bytes, driver2,501,705,728bytes. All guards passed.
+
+Training is complete; do not dispatch another training step. First inference
+pair seed3611 is running in physical storage slot3511, followed serially by
+3612/3613 and summary. These writer bucket names do not reuse old scientific
+seeds or artifacts. Preserve all16 selected/fresh checkpoint files, all other
+evidence and the closed test. No cleanup or model adoption.
+[Full accepted-prefix review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-12-review.json).
+
+Latest inference process: parent63057/child63060/session85489. Inspect actual state; do not repeat any attempted seed.

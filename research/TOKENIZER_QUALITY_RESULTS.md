@@ -4781,3 +4781,29 @@ holdout scoring. Final GELU seed3613 runs as slot11. Then the finite inference
 panel and independent final review remain required; the every-seed quality
 condition already failed on3612. All fresh and selected pairs stay protected.
 [Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-11-review.json).
+
+
+### October31 activation001 complete fresh quality panel
+
+All12 quality trajectories and both pilots passed independent acceptance.
+Both families use their independently selected LR0.00125. Fresh H200 CE:
+
+| Seed | SiLU | Exact GELU | GELU minus SiLU |
+| --- | --- | --- | --- |
+|3611|4.722778111|4.722655893|-0.000122218|
+|3612|4.695734123|4.698578620|+0.002844497|
+|3613|4.712309397|4.714239386|+0.001929989|
+
+Mean GELU-minus-SiLU=+0.001550756: GELU is slightly worse on average and loses
+two of three seeds. Both strict mean improvement and every-seed improvement
+conditions fail. No population-equivalence claim; conditional-text intervals,
+finite inference and independent terminal review still must be recorded.
+Final GELU rawCE4.703934880/H200CE4.714239386;205.06s training/401.30s worker;
+peakRSS1,692,663,808bytes, driver2,501,705,728bytes. All guards passed.
+
+Training is complete; do not dispatch another training step. First inference
+pair seed3611 is running in physical storage slot3511, followed serially by
+3612/3613 and summary. These writer bucket names do not reuse old scientific
+seeds or artifacts. Preserve all16 selected/fresh checkpoint files, all other
+evidence and the closed test. No cleanup or model adoption.
+[Full accepted-prefix review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-12-review.json).
