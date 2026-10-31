@@ -1,9 +1,9 @@
 # Block normalization prerequisites v1
 
 This directory provides a prospective normalizer specification, CPU reference
-checks and a separately namespaced unmodified runtime baseline. It does not yet
-register a candidate model policy or enable candidate training/checkpoint loading.
-Candidate model, optimizer, cache, serialization and MPS integration remain unvalidated. Frozen original/recovery source and evidence are unchanged.
+checks and a separately namespaced unmodified runtime baseline. A named candidate model policy now has construction/optimizer-coverage tests.
+Candidate gradient/update, cache numerical, serialization and MPS integration
+remain unvalidated; no candidate training or checkpoint acceptance is ready. Frozen original/recovery source and evidence are unchanged.
 
 `spec.py` binds kind, width256, FP32, epsilon2^-23, affine/bias and pre-attention/
 pre-FFN placement. The control uses exact native RMSNorm with `eps=None`; the
@@ -57,7 +57,32 @@ tests on sandbox PermissionError; attempt002 passed unchanged sources using
 authorized process access. All snapshots/reports remain immutable. Do not rerun
 those evidence attempts or invoke the copied Hydra CLI.
 
-The staged whitespace check reports only six inherited lines: the exact baseline
+The baseline commit's staged whitespace check reported only six inherited lines: the exact baseline
 and two immutable snapshots each retain original `attention/mha.py:106` and
 `attention/mla.py:66` whitespace. These bytes are intentionally unchanged to
 preserve origin hashes. No new authored whitespace error was found.
+
+
+## Named policy construction
+
+The new `runtime/models/block_norm.py` and three explicit model-file changes
+passed40 tests (attempt001), then41 (attempt002 adding direct named-RMS versus
+original equivalence). The runtime code was identical across attempts. Both
+source snapshots are immutable. The current runtime has diverged from the
+unmodified baseline only as recorded in `model-policy-delta-001.json`; historical
+baseline evidence applies to its own saved sources, not silently to later edits.
+
+New RMS control initial weights/RNG/full logits/loss and old-new cached execution
+are bit-exact. LayerNorm adds2,048 parameters, preserving shared initial weights
+and RNG, with all eight new biases uniquely grouped in AdamW at base LR. Config,
+constructed module, epsilon/dtype/autocast and same-shape metadata rejection
+checks passed. These are not gradient, serialized resume or H200 export tests.
+
+Next bind actual normalization signatures in new raw/H200 checkpoint producers
+and strict loaders, test serialized transport/EMA/resume, then complete numerical
+cache/gradient and MPS checks. No old source or recovery runtime may change.
+The original standalone spec remains unchanged. Training capacity remains gated.
+
+The two model-policy source snapshots likewise preserve the two inherited
+attention whitespace lines each; source hashes take priority over reformatting
+immutable captures. Authored model changes have no whitespace-check errors.

@@ -9,6 +9,10 @@ class GPT(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
+        from .block_norm import resolve
+        self.block_norm_spec = resolve(cfg)
+        if self.block_norm_spec is not None and torch.get_default_dtype() != torch.float32:
+            raise ValueError("Block norm model requires FP32 construction default")
         from .tokenizer_architecture import architecture_contract
         self.tokenizer_architecture_signature = architecture_contract(cfg)
         from .logit_z import logit_z_signature
@@ -94,6 +98,10 @@ class GPT(nn.Module):
         elif tying == 'scaled_tied':
             self.lm_head = None
 
+        if self.block_norm_spec is not None:
+            from .tokenizer_architecture import validate_architecture_model
+            validate_architecture_model(self)
+
     def forward(
         self,
         idx,
@@ -104,6 +112,11 @@ class GPT(nn.Module):
         return_loss_breakdown=False,
         include_training_objective=False,
     ):
+        if self.block_norm_spec is not None:
+            from .tokenizer_architecture import validate_architecture_model
+            validate_architecture_model(self)
+            if torch.is_autocast_enabled(self.transformer.wte.weight.device.type):
+                raise ValueError("Autocast not supported by FP32 block norm model")
         from .logit_z import objective_requested
         objective = objective_requested(self, include_training_objective, targets)
         b, t = idx.size()

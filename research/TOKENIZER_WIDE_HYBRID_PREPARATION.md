@@ -7106,3 +7106,41 @@ Next implement the explicit full-model normalization policy only in the new
 namespace, preserving old-policy behavior and binding candidate configuration,
 actual modules, optimizer, strict checkpoint/EMA and cache contracts. Frozen
 source sets remain untouched. The finite plan and capacity gate remain pending.
+
+
+## Named full-model policy construction completed October31
+
+The isolated runtime now implements `tokenizer_mla_block_norm_v1` with explicit
+RMS-incumbent and matched-epsilon LayerNorm signatures. It validates the exact
+config field set and eight actual modules, placement, FP32 parameters, final
+affine LayerNorm, untied tables, serial unit residuals and SiLU/MLA backbone.
+Non-FP32 construction/execution and autocast are rejected. Only three copied
+model files changed plus one new policy module; optimizer, checkpoint, EMA,
+training and cache implementations remain unchanged. Frozen original source and
+all13 recovery runtime files were preserved.
+
+Forty checks passed in attempt001. Attempt002 added the direct new RMS-policy
+versus original-source comparison, passing41 tests without changing runtime code.
+The named RMS control is bit-exact for initial state/RNG, synthetic full logits/CE
+and original-versus-new cached outputs/state. Candidate shared initial weights
+and RNG match the control; only eight zero biases are added (2,048 parameters).
+Optimizer checks confirm unique complete parameter coverage, unchanged shared
+groups and all new bias vectors in AdamW at base LR with independent decay.
+Invalid config/signatures, wrong epsilon/placement/dtype, mixed/shared normalizers,
+changed residual/gate/final norm and mutable model signatures were rejected.
+
+Guard002:1.280s, peakRSS658,538,496bytes; four CPU threads,120s cap,4GiB RSS cap,
+8GiB reserve. Both attempts and exact source snapshots are retained. Three closed
+activation-root inventories and nonweight hashes were unchanged. No model
+checkpoint/corpus load, training, cleanup, MPS or holdout scoring occurred.
+
+This is construction/contract evidence. No gradients, optimizer updates, candidate
+full-versus-cached numerical equivalence, real checkpoint serialization, resume
+or H200 transport has been demonstrated. Current checkpoint save/export code
+does not yet persist a dedicated constructed normalization signature: implement
+and test that transport before any candidate artifact is accepted. In-memory
+architecture-config comparison alone is insufficient. Capacity and finite-plan
+freeze remain pending.
+
+[Review002](tokenizer-evidence/block-norm-preparation-001/model-policy-prerequisite-002-review.json),
+[reviewed source delta](tokenizer-evidence/block-norm-preparation-001/model-policy-delta-001.json).

@@ -1,8 +1,10 @@
 # Block-normalization runtime integration contract v1
 
 October 31, 2026. Prospective implementation contract, not a frozen training
-plan. The runtime currently contains only an unmodified control copy. No
-candidate model policy, training trajectory, resume test or MPS result exists.
+plan. The original baseline was an unmodified control copy. A named candidate
+construction policy has now passed41 CPU tests; no training trajectory, serialized
+resume test or MPS result exists. Historical baseline applicability is preserved
+by snapshots and the original manifest.
 
 ## Source applicability
 
@@ -105,3 +107,22 @@ serialized resume, numerical/MPS and controller/retention/statistical prerequisi
 remain. Only after all prerequisites and sufficient full-panel capacity may the
 finite seeds/order/plan be frozen. Recorded storage shortfall remains2,186,024,144
 bytes; a baseline CPU guard observation is not a new training capacity approval.
+
+
+## Construction implementation status
+
+`model-policy-delta-001.json` records three changed model files plus the new
+`models/block_norm.py`; all other copied files retain their baseline bytes.
+The dedicated `tokenizer_mla_block_norm_v1` policy validates the full field set
+directly using fixed backbone constants; it does not disguise LayerNorm as RMS
+for validation. `block_normalization` carries the complete standalone signature.
+Construction and execution validate actual modules; optimizer entry inherits
+these checks from the architecture validator, with no grouping-code change.
+
+Attempt002 passed41 CPU construction, parameter/group, rejection and old-control
+regression tests, including direct original versus named-RMS equality. No update,
+serialized checkpoint, EMA/resume or candidate cache-numerical claim follows.
+Checkpoint save/load and H200 exporter still require dedicated signature
+transport and actual serialized tests. Do not treat their config-only checks as
+that completed prerequisite. Keep both policy attempts and original baseline
+snapshots; subsequent code changes require a new reviewed delta and test scope.

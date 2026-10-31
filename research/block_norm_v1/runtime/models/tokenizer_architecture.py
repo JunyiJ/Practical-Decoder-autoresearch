@@ -23,6 +23,10 @@ def _get(cfg, key, default=None):
 
 
 def architecture_contract(cfg):
+    from .block_norm import contract as block_norm_contract
+    normalization = block_norm_contract(cfg)
+    if normalization is not None:
+        return normalization
     from .tokenizer_activation import activation_contract
     activation = activation_contract(cfg)
     if activation is not None:
@@ -87,6 +91,10 @@ def validate_architecture_model(model):
         validate_hybrid_model(model, contract)
         return
     from torch import nn
+    from .block_norm import POLICY as NORM_POLICY, validate_model as validate_norm_model
+    normalized = contract['policy'] == NORM_POLICY
+    if normalized:
+        validate_norm_model(model, contract)
 
     from ..attention.gqa import GQA
     from ..attention.mha import MHA
@@ -111,8 +119,9 @@ def validate_architecture_model(model):
                 or block.attn.head_dim != 32 or block.attn.head_dim_r != 32
                 or block.attn.n_heads != contract['heads']):
             raise ValueError('Tokenizer MLA latent/head geometry mismatch')
-        if (type(block.attn) is not expected or type(block.ln1) is not nn.RMSNorm
-                or type(block.ln2) is not nn.RMSNorm or not block.enable_rope
+        if (type(block.attn) is not expected
+                or (not normalized and (type(block.ln1) is not nn.RMSNorm or type(block.ln2) is not nn.RMSNorm))
+                or not block.enable_rope
                 or block.residual_topology_kind != 'serial'
                 or block.mlp.gate_activation != contract.get('gate_kind', 'silu') or block.mlp.hidden_norm is not None
                 or block.attn.attention_logit_scale != .5):

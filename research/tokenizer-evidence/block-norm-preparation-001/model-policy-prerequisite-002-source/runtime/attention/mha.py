@@ -1,0 +1,160 @@
+import math
+
+import torch
+import torch.nn as nn
+
+from ..models.rope import apply_rotary_emb
+from ..models.position_family import resolve_position_family, slopes_for_heads, add_alibi_bias
+from ..models.value_residual import value_residual_contract, resolve_value_residual, mix_values
+from ..models.attention_scale import attention_scale_contract, resolve_attention_scale
+from .qk_norm import make_qk_norms, resolve_qk_norm
+from .output_gate import make_output_gate, resolve_output_gate
+
+
+class ScaledAttention(nn.Module):
+    def __init__(self, dim, attn_dim, attn_bias, attn_drop, causal=True):
+        super().__init__()
+        self.dim = dim
+        self.attn_dim = attn_dim
+        self.causal = causal
+
+        self.qkv = nn.Linear(self.dim, self.attn_dim * 3, bias=attn_bias)
+        self.attn_dropout = nn.Dropout(attn_drop)
+
+    def forward(self, x, cache=None, start_pos=0):
+        b, s, d = x.size()
+        qkv = self.qkv(x)
+        q, k, v = qkv.chunk(3, dim=-1)
+
+        score = q @ k.transpose(-2, -1)
+        if self.causal:
+            mask = torch.tril(torch.ones(s, s, device=x.device, dtype=torch.bool))
+            score = score.masked_fill(~mask, float("-inf"))
+        attn = torch.softmax(score / math.sqrt(self.attn_dim), dim=-1)
+        attn = self.attn_dropout(attn)
+        y = attn @ v
+        return y, None
+
+class MHA_NAIVE(nn.Module):
+    def __init__(self, cfg):
+        super().__init__()
+        if resolve_position_family(cfg) is not None:
+            raise ValueError('Position family is implemented only in fused MHA')
+        if value_residual_contract(cfg) is not None:
+            raise ValueError('Value reuse is implemented only in fused MHA')
+        if attention_scale_contract(cfg) is not None:
+            raise ValueError('Explicit attention scaling is implemented only in fused MHA')
+        if resolve_qk_norm(cfg) != 'none':
+            raise ValueError('QK normalization is implemented only in fused MHA')
+        if resolve_output_gate(cfg) != 'none':
+            raise ValueError('Output gating is implemented only in fused MHA')
+        self.dim = cfg.dim
+        self.n_heads = getattr(cfg, "n_heads", 1)
+        if self.dim % self.n_heads != 0:
+            raise ValueError(f"cfg.dim must be divisible by cfg.n_heads (got {self.dim}, {self.n_heads})")
+        self.head_dim = self.dim // self.n_heads
+
+        attn_bias = getattr(cfg, "attn_bias", True)
+        drop = getattr(cfg, "dropout", 0.0)
+        attn_drop = getattr(cfg, "attn_dropout", drop)
+        causal = getattr(cfg, "causal", True)
+        self.heads = nn.ModuleList([ScaledAttention(self.dim, self.head_dim, attn_bias, attn_drop, causal) for _ in range(self.n_heads)])
+        self.out = nn.Linear(self.dim, self.dim, bias=attn_bias)
+        self.out_dropout = nn.Dropout(drop)
+
+    def forward(self, x):
+        heads_output = []
+        for head in self.heads:
+            output, _ = head(x)
+            heads_output.append(output)
+        y = torch.concat(heads_output, dim=-1)
+        y = self.out_dropout(self.out(y))
+        return y, None
+
+class MHA(nn.Module):
+    def __init__(self, cfg):
+        super().__init__()
+        self.position_family_kind = resolve_position_family(cfg)
+        self.position_slopes = slopes_for_heads(cfg.n_heads) if self.position_family_kind == 'alibi' else ()
+        self.attention_logit_scale = resolve_attention_scale(cfg)
+        self.value_residual_kind = resolve_value_residual(cfg)
+        self.value_residual_layer = 0
+        self.dim = cfg.dim
+        self.n_heads = getattr(cfg, "n_heads", 1)
+        if self.dim % self.n_heads != 0:
+            raise ValueError(f"cfg.dim must be divisible by cfg.n_heads (got {self.dim}, {self.n_heads})")
+        self.head_dim = self.dim // self.n_heads
+
+        attn_bias = getattr(cfg, "attn_bias", True)
+        drop = getattr(cfg, "dropout", 0.0)
+        attn_drop = getattr(cfg, "attn_dropout", drop)
+        self.causal = getattr(cfg, "causal", True)
+
+        self.qkv = nn.Linear(self.dim, 3 * self.dim, bias=attn_bias)
+        self.out = nn.Linear(self.dim, self.dim, bias=attn_bias)
+        self.attn_dropout = nn.Dropout(attn_drop)
+        self.out_dropout = nn.Dropout(drop)
+        self.q_norm, self.k_norm = make_qk_norms(cfg)
+        self.output_gate = make_output_gate(cfg)
+
+        self.max_seq_len = getattr(cfg, "block_size", None)
+        if self.causal and self.max_seq_len is not None:
+            mask = torch.tril(torch.ones(self.max_seq_len, self.max_seq_len, dtype=torch.bool))
+            self.register_buffer("causal_mask", mask, persistent=False)
+        else:
+            self.register_buffer("causal_mask", None, persistent=False)
+    
+    def _get_causal_mask(self, s, device):
+        if self.causal_mask is None or self.causal_mask.size(0) < s:
+            self.causal_mask = torch.tril(torch.ones(s, s, device=device, dtype=torch.bool))
+        return self.causal_mask[:s, :s]
+
+    def forward(self, x, cache=None, start_pos=0, freq_cos=None, freq_sin=None,
+                first_layer_value=None, return_raw_value=False):
+        b, s, d = x.size()
+        qkv = self.qkv(x)
+        q, k, v = qkv.chunk(3, dim=-1)
+
+        q = q.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
+        k = k.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
+        v = v.view(b, s, self.n_heads, self.head_dim).transpose(1, 2)
+        raw_value = v
+        if self.value_residual_kind != 'local':
+            v = mix_values(v, first_layer_value, self.value_residual_kind, self.value_residual_layer)
+        if self.q_norm is not None:
+            q, k = self.q_norm(q), self.k_norm(k)
+        if self.position_family_kind is not None:
+            if type(start_pos) is not int or start_pos < 0:
+                raise ValueError('Explicit position offset must be a nonnegative integer')
+            wants_rope = self.position_family_kind == 'rope'
+            if ((freq_cos is not None) != wants_rope or (freq_sin is not None) != wants_rope):
+                raise ValueError('Explicit position family and supplied rotary frequencies disagree')
+        if freq_cos is not None and freq_sin is not None:
+            cos = freq_cos[start_pos:start_pos + s].to(device=q.device, dtype=q.dtype)
+            sin = freq_sin[start_pos:start_pos + s].to(device=q.device, dtype=q.dtype)
+            q = apply_rotary_emb(q, cos, sin)
+            k = apply_rotary_emb(k, cos, sin)
+        if cache is not None:
+            k, v = cache.update(k, v, start_pos)
+
+        att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)
+        if self.attention_logit_scale != 1.:
+            att = att * self.attention_logit_scale
+        if self.position_family_kind == 'alibi':
+            att = add_alibi_bias(att, self.position_slopes, start_pos,
+                                 key_start_pos=0 if cache is not None else start_pos)
+        if self.causal:
+            total_len = k.size(-2)
+            mask = self._get_causal_mask(total_len, x.device)
+            mask_start = 0 if self.position_family_kind is not None and cache is None else start_pos
+            mask = mask[mask_start:mask_start + s, :total_len]
+            att = att.masked_fill(~mask, float("-inf"))
+        att = torch.softmax(att, dim=-1)
+        att = self.attn_dropout(att)
+
+        y = att @ v
+        if self.output_gate is not None:
+            y = self.output_gate(x, y)
+        y = y.transpose(1, 2).contiguous().view(b, s, d)
+        y = self.out_dropout(self.out(y))
+        return y, raw_value if return_raw_value else None

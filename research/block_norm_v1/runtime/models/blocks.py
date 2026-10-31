@@ -28,7 +28,12 @@ class TransformerBlock(nn.Module):
         self.head_dim = self.dim // self.n_heads
         self.head_dim_r = getattr(cfg, "head_dim_r", self.head_dim)
         self.norm_type = getattr(cfg, "norm_type", "layernorm")
-        if self.norm_type == "layernorm":
+        from .block_norm import resolve, make
+        self.block_norm_spec = resolve(cfg)
+        if self.block_norm_spec is not None:
+            self.ln1 = make(self.block_norm_spec)
+            self.ln2 = make(self.block_norm_spec)
+        elif self.norm_type == "layernorm":
             self.ln1 = nn.LayerNorm(cfg.dim)
             self.ln2 = nn.LayerNorm(cfg.dim)
         elif self.norm_type == "rmsnorm":
@@ -108,26 +113,32 @@ class TransformerBlock(nn.Module):
         from .residual_gain import install_residual_gains
         install_residual_gains(self, cfg)
 
+    def _normalize(self, module, x):
+        if self.block_norm_spec is None:
+            return module(x)
+        from .block_norm import checked_forward
+        return checked_forward(self.block_norm_spec, module, x)
+
     def forward(self, x, cache=None, start_pos=0, *, first_layer_value=None, return_raw_value=False):
         residual = x
         if return_raw_value:
             x, raw_value = self.attn(
-                self.ln1(x), cache=cache, start_pos=start_pos,
+                self._normalize(self.ln1, x), cache=cache, start_pos=start_pos,
                 freq_cos=self.freq_cos, freq_sin=self.freq_sin,
                 first_layer_value=first_layer_value, return_raw_value=True,
             )
         else:
             x, _ = self.attn(
-                self.ln1(x), cache=cache, start_pos=start_pos,
+                self._normalize(self.ln1, x), cache=cache, start_pos=start_pos,
                 freq_cos=self.freq_cos, freq_sin=self.freq_sin,
             )
         from .residual_gain import apply_residual_gain
         # Scale complete projected branch, including its output bias.
         x = residual + apply_residual_gain(self, x, 'attention')
         if self.residual_topology_kind == 'parallel_separate_norms':
-            mlp_out = self.mlp(self.ln2(residual))
+            mlp_out = self.mlp(self._normalize(self.ln2, residual))
         else:
-            mlp_out = self.mlp(self.ln2(x))
+            mlp_out = self.mlp(self._normalize(self.ln2, x))
 
         # MoE aux loss if present
         aux_loss = None
