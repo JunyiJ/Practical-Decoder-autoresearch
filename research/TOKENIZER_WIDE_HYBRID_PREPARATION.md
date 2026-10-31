@@ -6189,3 +6189,25 @@ cleanup and verification before fresh slot15. Never use rank-prefix completed15.
 Evidence: `campaign005-rank-13-v2-terminal.json`, `campaign005-rank-prefix-14-v2-review.json`,
 finished guard and `campaign005-rank-14-v2-launch.json`. Current resumption is
 recorded in the guide and SHA-pinned state index.
+
+
+### Campaign005 screening completed; rank choices verified
+
+Final slot14 hybrid D/2 reached H200 CE4.951268515577171, raw4.981226434801457;
+its child completed998.90s and parent accepted. All15 screens are now accepted.
+Full rank selection and replay finished347.31s without guard violations.
+An independent minimum-H200-CE calculation confirmed hybrid D/2 LR0.000625,
+gated MLA D/4 LR0.00125 and KDA D/2 LR0.000625. Hybrid D/2 improves over
+D/8 by0.004816079657114 CE on the reused screening seed; fresh confirmation
+and inference remain mandatory. No adoption or holdout claim.
+
+Independent manifest checks matched original result paths, sizes, hashes and
+archived bindings. Keep selected raw/H200 pairs5/12/14 (3,744,596,480 bytes).
+Only12 losing weights in slots0/2/9/10/11/13 are eligible (7,449,344,384 bytes).
+No deletion has happened in this phase. Commit/push selection evidence before
+cleanup; deleted weights cannot subsequently be re-evaluated. Preserve all
+noncheckpoint metadata, older selected models, fresh pairs, failures and archives.
+
+Evidence: campaign005-rank-select-v2-{before,review,guard}.json and the compact
+campaign005-rank-selection-summary-v2.json. First-fresh helper prepared by
+campaign/path-only substitutions, AST/reverse comparison passed; not executed.
