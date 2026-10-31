@@ -8,7 +8,7 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at07:17 Los Angeles: all24 quality trajectories,
+Observed October31,2026 at07:57 Los Angeles: all24 quality trajectories,
 including all nine fresh confirmations, are accepted and independently reviewed.
 H200 validation CE:
 
@@ -24,11 +24,14 @@ statistical and inference gates remain required. Final history replay passed
 Free15,577,501,696 bytes exceeds remaining8,858,370,048 required, including8GiB
 reserve. Every fresh raw/H200 pair remains protected. No quality slot24.
 
-Inference controller **38659**, session **36174**, completed guarded preparation in504.62s. Seeds3511/3512 are accepted with all guards
-finished; the controller is replaying final seed3513 readiness.
-It owns the fixed serial3511/3512/3513 panel. Never duplicate the launcher.
-The sandbox MPS preflight stopped before creating any campaign attempt; host MPS
-was verified and the controller launched there. The preflight evidence is saved.
+All three inference seeds are parent accepted; inference controller38659 and all
+children have exited. Final seed3513 passed preparation930.57s, child147.01s and
+parent review1090.28s. The serial panel finished5248.11s, with no guard violation.
+
+Independent final reviewer **44715**, session **5954**, is running under both
+locks and an outer1800s CPU guard. Never duplicate this review. Require its
+`campaign005-final-v2-review.json`, finished guard with no reason, and actual
+reviewer exit before interpreting the final frozen quality/cost decision.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -43,27 +46,25 @@ records, preparation and all inference review/controller receipts. Actual PIDs
 must be inspected; saved records can be stale. Process inspection is already
 human-authorized. Leave unrelated programs alone.
 
-1. Read ignored `research_state/tokenizer-quality-progress.json` and reconcile
-   `next_action` with actual Git/process/log state. While controller38659 or its
-   child is live, observe. Guarded idle binding can take several minutes before
-   a child exists. Do not reacquire its locks or duplicate preparation.
-2. Read `campaign005-inference-v2-terminal.json` outside the sealed campaign
-   when it appears. Success requires all three accepted reviews AND controller
-   receipts. A result file alone is insufficient. A failed/interrupted attempt
-   stops the finite campaign: preserve failure evidence and do not retry seeds,
-   clear STOP or invent replacements.
-3. After successful terminal and actual worker exit, create an external review
-   wrapper owning both locks and an outer1800s CPU prerequisite guard. Call the
-   frozen `review_final_campaign_v2.review_completed_campaign(writer,reference)`
-   with exact `inference/3513/review.json` and its SHA256. Verify the procedure's
-   frozen pin; publish exclusively outside the sealed campaign, max128KiB.
-   The API reaudits all quality history, retained pairs and all three inference
-   controllers. Report frozen eligibility and limitations; no automatic adoption.
-4. Preserve all fresh pairs, selected models, failures and protected archives.
-   No cleanup, production-source edits, quality slot24 or closed fixture retry.
-   Test holdout remains closed. After final review, explicitly consider the
-   architecture roadmap's next untested family and bounded HP alternatives.
-5. Commit/push substantive evidence and this guide/index without force. Keep
+1. Reconcile ignored `research_state/tokenizer-quality-progress.json` with actual
+   processes. While reviewer44715 runs, observe its external guard; do not acquire
+   its locks or duplicate the review. Inference is complete, never relaunch it.
+2. Require `campaign005-final-v2-review.json` status
+   `complete_independent_quality_cost_review`, a finished
+   `campaign005-final-v2-guard.json` with reason null, and actual reviewer exit.
+   A review file alone does not prove its enclosing guard finished successfully.
+3. Interpret the unchanged frozen rule: strict quality OR quality neutrality
+   plus measured memory savings. Disclose latency, raw endpoints and conditional
+   adaptive-validation limits. Save the final decision; the procedure itself
+   returns eligibility with adopted=false, not automatic adoption.
+4. Preserve every selected/fresh raw/H200 pair, failure and archive. Do not rerun
+   closed campaigns or the failed numerical fixture. No quality slot24, cleanup,
+   production changes or holdout use. A review failure must be preserved and
+   diagnosed, not silently retried.
+5. After final review, explicitly evaluate the architecture roadmap's next
+   untested family (sparse versus dense FFN priority) alongside bounded HP
+   alternatives. Freeze prerequisites and a finite plan before new training.
+6. Commit/push substantive evidence and this guide/index without force. Keep
    only this chat's continuation heartbeat active; the old heartbeat is paused.
 
 [All fresh results](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-panel-accepted-v2.json),

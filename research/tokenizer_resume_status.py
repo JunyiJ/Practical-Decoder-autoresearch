@@ -32,6 +32,10 @@ def main():
         local_progress=None if live is None else {k: live.get(k) for k in
             ('updated_at', 'status', 'active_run', 'next_action')},
         controller_terminal=terminal, process_records=controls,
+        independent_final_review=(read(ROOT / index['independent_final_review'])
+            if index.get('independent_final_review') else None),
+        independent_final_guard=(read(ROOT / index['independent_final_guard'])
+            if index.get('independent_final_guard') else None),
         quality_result_files=[str(p.relative_to(ROOT)) for p in sorted(
             (root / 'evidence/quality').glob('*/result.json'))],
         inference_preparation=read(root / 'control/inference-preparation.json'),
