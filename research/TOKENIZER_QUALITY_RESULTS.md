@@ -3691,3 +3691,25 @@ Quality slot0 is running under controller88781/child89256; no quality result or
 adoption claim yet. Later slots are not automatically dispatched by this starter.
 Evidence: `campaign005-pilots-reviewed-v2.json`, pilot archive, boundary receipt
 and `campaign005-quality0-start-v2.json`.
+
+
+### Campaign005 first quality cell accepted; serial LR screen continues
+
+Slot0 (hybridD/4, LR0.000625, seed3501, width512,1200updates) completed
+in859.33s and received parent acceptance. Independent prefix01 review verified
+its scientific/transport history, raw/H200 checkpoint hashes and all preserved
+non-checkpoint bytes. H200 full-validation CE4.965645637327922 versus
+raw4.996666329241553, over34,278targets/17blocks. This is one screening cell;
+no architecture comparison, selection or adoption follows from it. Holdout closed.
+
+The review guard finished without violations. Remaining campaign storage fit:
+29,690,634,240 bytes free versus29,384,508,436 required including the8GiB reserve.
+Both original worker processes exited; process inspection found no other research
+worker. The005 LR helper adapts only campaign/receipt bindings from004 and
+dispatches exactly slot1 through unchanged production gates. Controller89974,
+child89987, session9207 are observation hints, not durable proof of liveness.
+Review accepted prefix02 after slot1 succeeds and exits before considering slot2.
+
+Evidence: `campaign005-terminal-v2.json`, `campaign005-lr-prefix-01-v2-review.json`,
+finished prefix guard,005 review/continuation helpers and slot1 launch receipt.
+See `TOKENIZER_RESUME.md` and `TOKENIZER_RESUME_STATE.json` for current resumption.
