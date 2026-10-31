@@ -34,6 +34,11 @@ def save_checkpoint(
         except Exception:
             ckpt["cfg"] = cfg
 
+    from ..models.block_norm import CHECKPOINT_KEY, checkpoint_signature, validate_checkpoint
+    normalization = checkpoint_signature(model)
+    if normalization is not None:
+        ckpt[CHECKPOINT_KEY] = normalization
+        validate_checkpoint(model, ckpt)
     if payload_writer is not None:
         payload_writer(ckpt_path, ckpt)
         return
@@ -81,6 +86,8 @@ def load_model_weights(model, checkpoint, *, for_resume=False):
     """
     if for_resume and 'averaged_weights' in checkpoint:
         raise ValueError('Averaged inference weights cannot resume the online optimizer; use the raw parent checkpoint')
+    from ..models.block_norm import validate_checkpoint
+    validate_checkpoint(model, checkpoint)
     from ..models.tokenizer_architecture import validate_architecture_load
     validate_architecture_load(model, checkpoint)
     from ..models.logit_z import validate_logit_z_load

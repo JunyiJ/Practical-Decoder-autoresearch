@@ -7144,3 +7144,38 @@ freeze remain pending.
 
 [Review002](tokenizer-evidence/block-norm-preparation-001/model-policy-prerequisite-002-review.json),
 [reviewed source delta](tokenizer-evidence/block-norm-preparation-001/model-policy-delta-001.json).
+
+
+## Raw and H200 normalization-signature transport completed October31
+
+The copied checkpoint writer/loader and H200 exporter now persist and validate a
+dedicated constructed normalization signature, including exact typed version,
+backbone/normalizer semantics, placements and parameter names. Saved config must
+agree with that signature and the actual receiving model; all saved tensors must
+have the complete expected inventory, shapes, dtypes and finite values. Old
+policies omit the new signature and reject artifacts carrying it.
+
+Twenty-six guarded CPU tests passed for both arms: actual raw/H200 serialization
+and strict loads, H200 optimizer-resume rejection, malformed/missing/cross-arm/
+epsilon/signature/dtype/nonfinite rejection before mutation, and final EMA-state
+restoration. A synthetic two-snapshot H200 oracle explicitly changes all norm
+gains/biases, confirming their inclusion without folding. Maximum gain error
+versus independent FP64 arithmetic was4.8312e-8 and LayerNorm bias error8.223e-13.
+All unchanged parameters stayed bit-exact; export preserved the raw parent and
+CPU RNG. No actual optimizer update or training trajectory was run.
+
+Guard:3.412s, peakRSS1,323,057,152bytes, four threads,120s cap,4GiB RSS cap and
+8GiB reserve. Four fresh synthetic artifacts total684,354,160bytes and remain
+retained with SHA256/size manifest; no binary checkpoints enter Git. No trained
+checkpoint or corpus was accessed, no cleanup/MPS/holdout scoring occurred, and
+frozen source plus closed campaign inventories/nonweight hashes were unchanged.
+
+[Review](tokenizer-evidence/block-norm-preparation-001/checkpoint-transport-prerequisite-001-review.json),
+[retained fixture manifest](tokenizer-evidence/block-norm-preparation-001/checkpoint-transport-fixture-manifest.json).
+These tests restore an empty optimizer's groups and final EMA accumulator only.
+They do not establish populated optimizer-state or interrupted trajectory/loader
+RNG replay. That is next, alongside strict raw-resume state requirements; candidate
+cache/gradient numerical and MPS checks remain. No training readiness or quality
+gain follows. Guard-observed free space was12,084,506,624bytes after fixtures;
+against the recorded15,170,221,264 full-panel requirement, the capacity gap is now
+3,085,714,640bytes. This observation is not a new audited launch approval.

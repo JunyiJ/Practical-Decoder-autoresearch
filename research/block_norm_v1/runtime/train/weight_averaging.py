@@ -180,6 +180,11 @@ def derived_checkpoint_payload(parent_path, half_life):
                        parameter_names=[name for name, _ in tracker.parameters],
                        purpose='inference_only_not_optimizer_resume'),
                    parent_checkpoint=dict(path=str(parent), sha256=parent_sha))
+    from ..models.block_norm import CHECKPOINT_KEY, checkpoint_signature, validate_checkpoint
+    normalization = checkpoint_signature(model)
+    if normalization is not None:
+        payload[CHECKPOINT_KEY] = normalization
+        validate_checkpoint(model, payload)
     tokenizer = raw['training_state']['contract'].get('tokenizer')
     if tokenizer is not None:
         payload['tokenizer_contract'] = copy.deepcopy(tokenizer)

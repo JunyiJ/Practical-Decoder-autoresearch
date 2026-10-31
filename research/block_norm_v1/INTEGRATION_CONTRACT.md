@@ -126,3 +126,22 @@ Checkpoint save/load and H200 exporter still require dedicated signature
 transport and actual serialized tests. Do not treat their config-only checks as
 that completed prerequisite. Keep both policy attempts and original baseline
 snapshots; subsequent code changes require a new reviewed delta and test scope.
+
+
+## Serialized transport implementation status
+
+The next reviewed delta (`checkpoint-transport-delta-001.json`) changes only
+`models/block_norm.py`, `utils/checkpoint.py` and `train/weight_averaging.py`
+relative to the construction implementation.26 targeted CPU tests pass. New
+raw/H200 payloads carry `block_normalization_signature` from validated constructed
+modules. Loads require exact typed signature/config agreement plus complete
+finite tensor inventory/shapes/dtypes before mutation. Old policy payloads retain
+their prior format. Both raw and derived real files round-trip successfully.
+
+Two synthetic averaging snapshots confirm all normalizer gains and learned
+biases are averaged; final accumulator restore, parent immutability and export
+RNG preservation pass. This supersedes the pending signature-transport item,
+but not full resume: optimizer state was empty, no optimizer update occurred,
+and loader/RNG trajectory replay was not exercised. Review raw resume paths for
+missing optimizer/training state acceptance and test populated state/interrupted
+replay next. Retain the four fixture files/manifest; no trained artifact is used.

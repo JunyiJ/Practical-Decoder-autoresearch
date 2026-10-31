@@ -2,8 +2,9 @@
 
 This directory provides a prospective normalizer specification, CPU reference
 checks and a separately namespaced unmodified runtime baseline. A named candidate model policy now has construction/optimizer-coverage tests.
-Candidate gradient/update, cache numerical, serialization and MPS integration
-remain unvalidated; no candidate training or checkpoint acceptance is ready. Frozen original/recovery source and evidence are unchanged.
+Raw/H200 signature serialization now passes bounded synthetic tests. Candidate
+gradient/update, populated optimizer/trajectory resume, cache numerical and MPS
+integration remain unvalidated; no candidate training is ready. Frozen original/recovery source and evidence are unchanged.
 
 `spec.py` binds kind, width256, FP32, epsilon2^-23, affine/bias and pre-attention/
 pre-FFN placement. The control uses exact native RMSNorm with `eps=None`; the
@@ -86,3 +87,21 @@ The original standalone spec remains unchanged. Training capacity remains gated.
 The two model-policy source snapshots likewise preserve the two inherited
 attention whitespace lines each; source hashes take priority over reformatting
 immutable captures. Authored model changes have no whitespace-check errors.
+
+
+## Serialized signature transport
+
+The checkpoint writer/loader and H200 exporter now bind the dedicated constructed
+normalization signature and validate exact typed metadata, saved configuration
+and tensor inventory/shape/dtype/finite values.26 CPU checks passed on fresh
+synthetic raw/H200 files for both arms. H200 gains/biases match a separate FP64
+two-snapshot oracle; export leaves parent bytes and RNG unchanged. All four
+fixture files (684,354,160bytes) are retained under an explicit size/SHA manifest.
+No trained checkpoints or corpus were accessed. Source delta and exact tested
+snapshot are recorded under checkpoint-transport-prerequisite-001.
+
+This supersedes the prior pending-transport note. Empty optimizer group transport
+and final EMA accumulator restoration passed; populated optimizer-state and
+interrupted trajectory/loader RNG replay remain pending. Tighten new-policy raw
+resume requirements and test those before declaring resume ready. No candidate
+cache/gradient/MPS or quality claim. No evidence attempt may be overwritten.

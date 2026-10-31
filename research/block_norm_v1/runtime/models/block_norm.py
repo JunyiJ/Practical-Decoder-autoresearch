@@ -79,3 +79,51 @@ def validate_model(model, value):
                     and layer.bias is None, 'SwiGLU projection differs')
         require(block.attn.causal is True and block.attn.attn_dropout.p == 0.
                 and block.attn.out_dropout.p == 0., 'MLA causal/dropout semantics differ')
+
+
+CHECKPOINT_KEY = 'block_normalization_signature'
+
+
+def _same_typed(a, b):
+    if type(a) is not type(b):
+        return False
+    if isinstance(a, dict):
+        return a.keys() == b.keys() and all(_same_typed(a[k], b[k]) for k in a)
+    if isinstance(a, (list, tuple)):
+        return len(a) == len(b) and all(_same_typed(x, y) for x, y in zip(a, b))
+    return a == b
+
+
+def checkpoint_signature(model):
+    """Bind validated constructed semantics, not only mutable config labels."""
+    value = contract(model.cfg)
+    if value is None:
+        require(getattr(model, 'block_norm_spec', None) is None,
+                'New block normalization model cannot drop its policy')
+        return None
+    from .tokenizer_architecture import validate_architecture_model
+    validate_architecture_model(model)
+    return dict(version=1, architecture=value,
+                parameter_names=[name + '.' + parameter for name in PLACEMENTS
+                                 for parameter in ('weight', 'bias') if parameter == 'weight'
+                                 or model.block_norm_spec.bias])
+
+
+def validate_checkpoint(model, checkpoint):
+    expected = checkpoint_signature(model)
+    if expected is None:
+        require(CHECKPOINT_KEY not in checkpoint, 'Legacy model cannot accept block normalization signature')
+        return
+    saved = checkpoint.get(CHECKPOINT_KEY)
+    require(_same_typed(saved, expected), 'Saved constructed block normalization signature differs or is missing')
+    cfg = get(checkpoint.get('cfg', {}), 'model', {})
+    require(_same_typed(contract(cfg), expected['architecture']), 'Saved block normalization config differs')
+    state = checkpoint.get('model_state')
+    current = model.state_dict()
+    require(type(state) in (dict, type(current)) and state.keys() == current.keys(),
+            'Block normalization checkpoint tensor inventory differs')
+    for name, value in state.items():
+        target = current[name]
+        require(type(value) is torch.Tensor and value.shape == target.shape and value.dtype == target.dtype,
+                'Block normalization checkpoint tensor shape/dtype differs: ' + name)
+        require(bool(torch.isfinite(value).all()), 'Nonfinite block normalization checkpoint tensor: ' + name)
