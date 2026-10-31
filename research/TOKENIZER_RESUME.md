@@ -8,16 +8,14 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at01:58 Los Angeles: all15 screening runs and both
-rank-boundary phases passed. Selected: hybrid D/2 LR0.000625, gated MLA D/4
-LR0.00125, KDA D/2 LR0.000625. These are screening choices, not adoption.
-Audited cleanup removed12 losing weights (7,449,344,384 logical bytes), retaining
-six selected weights in slots14/5/12 (3,744,596,480 bytes). All511 prior
-noncheckpoint streams are unchanged. See the compact
-[rank summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-summary-v2.json).
-First fresh slot15 (hybrid D/2, seed3511) controller9355 is starting; child PID
-at observation:None; session23723. Startup history audits may precede child
-creation. Inspect actual state and never duplicate the launcher.
+Observed October31,2026 at02:21 Los Angeles: first fresh slot15 accepted and
+independently reviewed. Hybrid D/2, LR0.000625, seed3511: H200 CE4.999353112775229,
+raw5.029627986077138. Both checkpoints are protected. Paired controls and later
+seeds remain pending; no comparative/adoption claim from this single result.
+Slot16 controller10478 is starting; child PID at observation:None; session87554.
+Guarded startup may precede child creation. Never duplicate the launcher.
+Selected screens remain slots14/5/12; rank cleanup is complete and verified.
+See [rank summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-summary-v2.json).
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -35,22 +33,24 @@ actual command and parent before interpreting PIDs. Do not stop unrelated apps.
 1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
    its `next_action` with actual Git/process/log state. Read the current005
    `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller9355 or its current descendant is running, observe it.
-   Never duplicate the first-fresh dispatch or rerun completed rank boundaries.
+2. If controller10478 or its current descendant is running, observe it.
+   Never duplicate the fresh dispatch or rerun completed rank boundaries.
 3. The three pilots and their boundary are now reviewed in
    [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
    This used a005-adapted copy of the existing read-only
    [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
    to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
    do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. After slot15 parent acceptance and actual worker exit, run
-   `.venv/bin/python research/tokenizer-evidence/wide-hybrid-preparation-001/review_campaign005_first_fresh_v2.py --completed 16`.
-   Require its finished guard and passing full review. Then inspect/adapt
-   `continue_campaign004_fresh16_v2.py` to005 paths only, check frozen source and
-   census-fix applicability, and dispatch only slot16 through its tested gates.
-   Never execute the004 helper unchanged or retry004. Slots17 and18+ have
-   separate later/remaining startup and acceptance gates; inference follows the
-   frozen plan. Preserve every fresh pair, including controls and negative results.
+4. After slot16 parent acceptance and actual worker exit, prepare a guarded
+   independent review using `tokenizer_wide_hybrid_confirmation_history_v2.verify_confirmation_dispatch`
+   for slot16. Bind full evidence, preserved checkpoint pairs and remaining storage;
+   require a finished guard. The first-fresh-only verifier is not valid for slot16.
+   Then prepare slot17 with `later_confirmation_startup_v2.prepare_confirmation_request`,
+   `seal_quality_readiness` and `run_sealed_confirmation_once`, inspecting signatures
+   and keeping all existing gates. Slots18+ use their remaining startup/history paths.
+   The frozen source and census-fix source/test pins were verified before slot16;
+   no production source was changed. Preserve every fresh pair, including controls
+   and negative results. Never execute004 helpers unchanged or retry004.
 5. If a worker failed/interrupted or evidence is inconsistent, preserve the
    failure and stop the finite campaign for diagnosis. Do not retry the slot,
    invent replacement seeds, clear STOP or extend a closed grid.

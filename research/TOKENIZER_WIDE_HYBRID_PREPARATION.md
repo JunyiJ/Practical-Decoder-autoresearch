@@ -6234,3 +6234,27 @@ The path-only005 first-fresh reviewer passed AST/reverse comparison and is not
 yet executed. After slot15 acceptance/exit, review completed16, then inspect/adapt
 the slot16 helper and use the current tested census-fixed gates. Later slots and
 inference retain their own prerequisites. Resume guide/index contain exact paths.
+
+
+### Campaign005 first fresh pair accepted and reviewed
+
+Slot15 hybrid D/2, LR0.000625, fresh seed3511 completed1000.74s and received
+parent acceptance. H200 full-validation CE4.999353112775229, raw5.029627986077138.
+The independent first-fresh history review finished36.81s without guard violations,
+checking frozen provenance, full history, both checkpoint identities and storage.
+Both weights are protected; no cleanup occurred. Paired controls and seeds3512/3513
+remain pending, so no comparative or adoption conclusion is supported yet.
+
+Remaining storage verified25,736,900,608 bytes free versus25,453,566,624 required,
+including8GiB reserve. Current source fingerprint exactly matches frozen005 and
+the census-fix review; every recorded source/test pin matches. Slot16 controller
+was adapted from004 by campaign/path substitutions only, AST/reverse comparison
+passed. Existing25-test green evidence is applicable; no numerical fixture rerun.
+After prior workers exited, dispatched only slot16: controller10478, session87554,
+observed phasestarting, childNone. No live slot16 success claim yet.
+
+Evidence: campaign005-fresh-15-v2-terminal.json, campaign005-fresh-prefix-16-v2
+review/guard, campaign005-fresh16-controller-review-v2.json and slot16 launch.
+After slot16 acceptance, use its dedicated confirmation-history verifier before
+the slot17 later-startup path; do not reuse the first-fresh-only verifier.
+All selected/fresh/failure evidence, protected archives and closed holdout preserved.
