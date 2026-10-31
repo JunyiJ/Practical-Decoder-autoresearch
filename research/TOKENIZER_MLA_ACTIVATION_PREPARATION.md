@@ -533,3 +533,15 @@ Next: fresh seeds3611/3612/3613 at the saved rates, alternating arm order. No
 source/endpoint/grid change, holdout scoring or protected checkpoint deletion.
 [Selection review](tokenizer-evidence/activation-preparation-001/campaign001-screen-selected-review.json),
 [retention review](tokenizer-evidence/activation-preparation-001/campaign001-screen-released-review.json).
+
+
+### October31 activation001 first fresh SiLU accepted
+
+Fresh SiLU seed3611 at saved LR0.00125 completed1200updates and independent
+acceptance. RawCE4.707916448/H200CE4.722778111; H200 is worse by0.014861663
+in this cell. This unpaired endpoint is not an activation conclusion, and the
+frozen H200 endpoint remains unchanged. Training206.79s/worker338.83s; peakRSS
+1,697,906,688bytes and driver2,501,705,728bytes; all guards passed.
+Matched GELU seed3611 is running as slot07. Every fresh raw/H200 pair remains
+protected; no cleanup or holdout scoring.
+[Review](tokenizer-evidence/activation-preparation-001/campaign001-quality-prefix-07-review.json).
