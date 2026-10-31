@@ -1,0 +1,74 @@
+{
+  "status": "pure_finite_rules_and_statistics_passed_controller_pending",
+  "observed_at": "2026-10-31T21:28:34.590434+00:00",
+  "tests_passed": 67,
+  "implementation": "research/block_norm_v1/campaign_rules.py",
+  "pure_functions_only": true,
+  "quality_seed_reservations_frozen": false,
+  "test_seed_values_scope": "Only synthetic prerequisite inputs; not future scientific seeds or a launch plan.",
+  "finite_structure": {
+    "pilots": 2,
+    "screens": 6,
+    "confirmations": 6,
+    "suggested_actions_including_boundaries_selection_final": 18,
+    "stages": "exact accepted prefixes only",
+    "per_arm_selection": "minimum H200 CE; lower LR exact tie"
+  },
+  "statistics": {
+    "base_counts": "aligned full2048-token blocks with optional short final tail; bounded512blocks; caller still must prove full coverage",
+    "blocks": [
+      2048,
+      4096,
+      8192
+    ],
+    "draws": 2000,
+    "engine": "numpy PCG64 reset to explicit caller seed per blocksize",
+    "pairing": "same sampled text indices for all3trained pairs",
+    "weighting": "grouped loss deltas divided by sampled target counts",
+    "quantile": "linear1-.05/3",
+    "independent_oracle": "Python scalar grouping/per-seed ratios plus separate numpy linear quantile",
+    "max_absolute_oracle_error": 3.469446951953614e-18
+  },
+  "gate": "mean<-0.02, every seed<0, every conditional upper<0; threshold equality rejected; adoptedFalse always",
+  "malformed_inputs_rejected": [
+    "missing/extra/overlapping/bool/out-of-range seeds",
+    "incomplete/duplicate/reordered/failed endpoints",
+    "nonfinite/negative/bool CE",
+    "wrong stage/policy/width/steps/seed",
+    "premature quality/selection/retention/fresh transitions",
+    "changed saved selection",
+    "misaligned counts or missing pairs",
+    "bootstrap overflow",
+    "malformed/inconsistent bounds"
+  ],
+  "retention": "Indices only; winning2screens + allfreshpairs protected; deletion_authorizedFalse; no filesystem cleanup.",
+  "guard": {
+    "elapsed_seconds": 1.79261645898805,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 9211211776,
+      "peak_rss_bytes": 236732416
+    },
+    "pid": 74149,
+    "reason": null,
+    "status": "finished"
+  },
+  "new_binary_files": 0,
+  "optimizer_updates": 0,
+  "quality_training_launched": false,
+  "holdout_scored": false,
+  "runtime_unchanged": true,
+  "frozen_sources_closed_roots_all_prior_fixtures_unchanged": true,
+  "limitations": [
+    "No source/config/tokenizer/checkpoint identity or validation target provenance proven by numeric rows",
+    "Receipt booleans require future actual immutable audit bindings",
+    "No pending-process/STOP/failure ledger or dispatcher implemented",
+    "No quality adoption, costs or full-panel capacity established"
+  ],
+  "review_sha256": "77dd2feb7b4049426879542503d70c4d4b87b713ad42c7a3bd88f47bf73ec788",
+  "plan_sha256": "05671f8fadb449b68e20e08bcac21c8757d245656b9f0cf52da4216736389d5f"
+}

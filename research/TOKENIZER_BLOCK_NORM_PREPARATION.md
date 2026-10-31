@@ -1,9 +1,11 @@
 # Tokenizer block-normalization preparation
 
-Status: prospective design with candidate model construction tested, October31,2026.
-No candidate gradient/cache numerical integration, pilot or training run exists. This is not a
-frozen launch plan. The completed activation comparison retains SiLU; all closed
-campaigns and protected selected/fresh/failure evidence remain unchanged.
+Status: preparation, October31,2026. Versioned v2 model/cache/checkpoint,
+MPS repeat/resume and generated-text full-batch/H200 prerequisites have passed.
+Pure finite-stage/selection/statistical rules now pass67 CPU checks. The executable
+controller and artifact/validation provenance gates remain pending; no quality
+campaign has launched and the finite launch plan is not frozen. Full-panel storage
+capacity is still insufficient. Historical sections below retain their dated scope.
 
 ## Selected question and alternatives
 
@@ -715,3 +717,53 @@ Actual-corpus pilot cost, full-horizon behavior and full retained-panel capacity
 remain unestablished. Do not launch a partial panel, trim controls/seeds/width,
 remove protected pairs or poll unchanged capacity. SiLU remains retained; no
 normalization quality conclusion follows from this generated-text prerequisite.
+
+
+## October 31 finite-stage, selection and statistics rules passed
+
+The new pure `campaign_rules.py` passed67 CPU tests under prospective
+`campaign-rules-plan-001.json`. It suggests exactly two20-step pilots, six1200-step
+screens and six fresh confirmations on the explicit v2 backbone. Both arms have
+LRs0.000625/0.00125/0.0025; each independently selects minimum full-validation H200
+CE, breaking exact ties toward lower LR. Screens alternate arm order by ascending
+LR; confirmations alternate by declared fresh-seed order. All18 suggested actions,
+including pilot/screen audit boundaries, selection publication and final review,
+were checked. Premature, incomplete, duplicate, reordered, failed or malformed
+records are rejected. Persisted selection cannot change at retention/confirmation.
+
+The seed contract requires distinct typed pilot/screen/three-fresh/evaluation/
+bootstrap values. Test values373301/373302/373311–313/373303/373304 are synthetic
+inputs only, not scientific seed reservations. Final seed freshness/census and
+exact launch configuration/source/order remain to be frozen after prerequisites.
+Pilot cooldown/EMA and the complete worker configuration still need their explicit
+controller binding; these pure row specifications are not a complete training plan.
+
+Statistics use aligned2048-target base sums, grouping to2048/4096/8192 and2000
+PCG64 common paired resamples per size. RNG resets to the declared bootstrap seed
+for each size. Sampled target counts weight short tails; the same text indices
+apply to all three trained pairs. Linear quantile1-0.05/3 supplies each gate upper
+bound. An independent Python scalar/per-seed calculation with separate NumPy
+linear quantiles agrees to3.469447e-18 under predeclared absolute5e-14. Repeated
+arithmetic is exact. Strict gates reject equality at mean-0.02, any seed0 or upper0.
+Malformed inputs, nonfinite/overflow arithmetic and inconsistent panels are rejected.
+
+Numeric eligibility always returns `adopted=False`. These functions do not prove
+checkpoint/source/config/tokenizer/target identity or full validation coverage.
+Boundary flags must later resolve immutable audited receipts; they do not authorize
+cleanup. Retention only identifies four losing-screen indices while protecting both
+selected screens and all fresh pairs; no paths are removed. The executable ledger
+must handle pending requests, locks, STOP/failure, source drift and serial acceptance.
+
+Guard1.793s, peakRSS236,732,416bytes,4CPU/120s/4GiB/8GiB limits. No model, corpus or
+checkpoint payload was loaded, no MPS or training ran, and no binary file/cleanup/
+holdout access occurred. Prior fixture bytes were hash-audited read-only, including
+both retained v2 raw/H200 pairs. Original/runtime/recovery sources and closed-root
+inventories remained unchanged. Full-panel capacity remains gated.
+
+Next implement and test the new isolated manifest/config binding and append-only
+session ledger before any worker launch: bind exact source inventories/environment,
+corpus/tokenizer/split/validation coverage and v2 trial configurations; enforce one
+pending immutable request, exact accepted prefixes, persistent terminal failure/STOP,
+selection and audited retention receipts. Then connect full-validation/inference
+and worker/parent acceptance with retained fixtures. Do not treat this pure rule
+pass as controller, cleanup, quality adoption or launch readiness.
