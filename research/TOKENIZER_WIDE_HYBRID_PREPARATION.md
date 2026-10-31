@@ -6648,3 +6648,22 @@ Review: tokenizer-evidence/activation-preparation-001/state-prerequisite-review.
 Next: finite two-arm rules/seed registry/statistics, retention-aware serial
 controller and filesystem-producer integration, then exact capacity/source/input/
 runtime freeze before pilots. Existing protected models/pairs/failures remain.
+
+
+### Activation finite design and seed registry tested
+
+22 pure tests passed for exact two-arm configurations, ordered stage/selection/
+retention barriers and conditional-text statistics. An independent loop oracle
+confirmed weighted-tail bootstrap arithmetic. Seed audit checked3,024 recorded
+plans/requests: pilot3591, screen3601 and fresh3611/3612/3613 were unused.
+Draft design:2pilots+6LR screens+6fresh runs; all9 possible selected-LR branches
+recorded. Both arms get0.000625/0.00125/0.0025; minimum H200 selects, lower-LR
+ties. Single GELU-minus-SiLU contrast uses PCG64 seed20261031,2,000 draws and
+linear quantile1-0.05/3 across three block sizes. Strict mean improvement>0.02,
+every seed better and all upper bounds negative; no neutral-cost route.
+
+Source applicability confirms only two pure research modules were added since
+model/state checks. No quality training, cleanup, holdout scoring or executable
+freeze. Production serial controller/filesystem integration, actual audit/cleanup
+receipts and complete resource/source/runtime/input binding remain required.
+Evidence: tokenizer-evidence/activation-preparation-001/finite-design-v1.json.

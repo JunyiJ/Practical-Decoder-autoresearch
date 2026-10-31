@@ -100,9 +100,10 @@ Evidence: [test review](tokenizer-evidence/activation-preparation-001/contract-t
    objective separation and cache isolation passed the RAM-serialization tests
    recorded below. Filesystem-producer integration remains required; preserve
    both harness failures and do not retry the closed hybrid numerical fixture.
-2. Build and test the finite two-arm request/selection/confirmation contract,
-   exact fresh seed registry, statistical rule, bounded artifact manifests and
-   retention-aware serial controller. No launch through old hybrid controllers.
+2. Finite two-arm request/selection/statistical rules and seed registry passed
+   22 tests (details below). Implement/test bounded artifact manifests, actual
+   review/cleanup receipts and the retention-aware serial controller next.
+   No launch through old hybrid controllers.
 3. Reconcile the implemented model/optimizer/serialization resource projection,
    source/runtime/input pins and all prerequisites. Account for any test artifacts
    and metadata growth. Freeze the full plan before guarded MPS pilots; require
@@ -150,3 +151,44 @@ controller and filesystem-producer integration. Bind the state tests, review
 source applicability and reconcile exact serialization/metadata capacity before
 freezing all prerequisites and launching guarded MPS pilots. Retain all earlier
 protected pairs, archives and failures. The plan is still unfrozen.
+
+
+## Finite rules and requests validated October 31
+
+The draft now fixes pilot seed3591, screening seed3601 and fresh seeds
+3611/3612/3613. A recursive audit of seed-named fields in3,024 recorded
+plan/request files found no reuse; its complete hashed inventory is preserved.
+This is local nonreuse evidence, not population independence.
+
+Two20-update pilots use LR0.0025, cooldown/EMA start13 and EMA interval1
+(eight H200 snapshots). Six full screens use the three declared rates for both
+arms, reversing arm order at the middle rate. Independent minimum H200 CE
+selects each arm's LR, with lower-LR ties. Six full fresh runs alternate arm
+order across the three seeds. The complete finite design has14 trajectories.
+All nine conditional LR-selection branches are explicitly saved.
+
+The single GELU-minus-SiLU contrast uses2,000 PCG64 resamples, RNG seed20261031
+reset separately for each block size. Common text draws apply to all paired
+models/seeds; paired seed loss sums are averaged before resampling and divided
+by sampled target counts, including the tail. Bounds use sorted linear
+interpolation and quantile1-0.05/3 for the three declared block sizes. Adoption
+requires mean delta<-0.02, every fresh seed<0 and every upper bound<0.
+The helper returns arithmetic eligibility only, never adopted=True.
+
+22 tests passed, including independent loop-oracle weighted-tail bootstrap
+comparison, strict threshold boundaries, invalid data/panel rejection, exact
+request geometry/schedules, full ordered progression and persisted selection/
+cleanup barriers. Missing, duplicated, reordered, failed or extra trials and
+raw scores masquerading as H200 are rejected. Both selected screen pairs and
+every fresh pair remain protected; only four losing screens are candidates
+after complete audits. No deletion or training was performed.
+
+[Finite design](tokenizer-evidence/activation-preparation-001/finite-design-v1.json),
+[tests](tokenizer-evidence/activation-preparation-001/rules-tests-v1-review.json),
+[seed audit](tokenizer-evidence/activation-preparation-001/seed-audit.json),
+[source applicability](tokenizer-evidence/activation-preparation-001/rules-applicability-review.json).
+Only two pure research modules were added since model/state validation.
+These rules are not a production dispatcher or an executable freeze. Next
+implement/test the bounded serial controller and filesystem producer, actual
+review/retention receipts and complete resource/source/input/runtime binding.
+Recheck full capacity before freezing and launching pilots.

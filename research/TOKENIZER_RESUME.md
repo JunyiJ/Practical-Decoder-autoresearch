@@ -55,8 +55,10 @@ ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|meta
    Four additional state tests now pass: exact optimizer/RNG/EMA resume, H200
    export/load, tokenizer binding and cache isolation. Serialization used RAM;
    filesystem integration is still required. Preserve both harness failures.
-   Next implement finite request/selection/statistics and fresh seed registry,
-   then the retention-aware controller and filesystem-producer integration.
+   Finite request/selection/statistics and seed registry now pass 22 tests.
+   Next implement the retention-aware controller, actual review/cleanup
+   receipts and filesystem-producer integration. Pure flags cannot authorize
+   dispatch or deletion; the executable freeze is still pending.
 4. The full activation projection requires 15,169,995,168 free bytes including
    the 8 GiB reserve; only 345,472,608 bytes of margin existed at the audit.
    Recheck actual capacity and all prerequisites, then freeze exact seeds,
@@ -77,7 +79,7 @@ seeds, conditional choices and adoption rules live in the frozen plan/source.
 Prior incomplete campaigns are not pooled; reused screening seeds are not new
 independent evidence.
 
-Current continuation: activation state checks passed; finite controller pending; see the indexed
+Current continuation: activation model/state and finite rules passed; controller pending; see the indexed
 [FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
 
 ## Findings to retain

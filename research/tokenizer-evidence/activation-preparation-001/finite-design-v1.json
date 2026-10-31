@@ -1,0 +1,675 @@
+{
+  "status": "prospective_finite_design_not_executable_freeze",
+  "created_at": "2026-10-31T15:44:31.380931+00:00",
+  "source_sha256": "e1e764c7c21f9dfcd46fc58695bc58382bd95ed053495d9acba4c155a7e663b4",
+  "baseline": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-001/adopted-width256-mla-recipe.json",
+    "sha256": "14936864a1ef15aaa1e97c763755f0b090c0e31babdb5c27edc657417aa4f3d3"
+  },
+  "families": [
+    "silu",
+    "gelu_exact"
+  ],
+  "pilots": [
+    {
+      "stage": "pilot",
+      "family": "silu",
+      "seed": 3591,
+      "lr": 0.0025,
+      "width": 256,
+      "steps": 20
+    },
+    {
+      "stage": "pilot",
+      "family": "gelu_exact",
+      "seed": 3591,
+      "lr": 0.0025,
+      "width": 256,
+      "steps": 20
+    }
+  ],
+  "screen": [
+    {
+      "stage": "screen",
+      "family": "silu",
+      "seed": 3601,
+      "lr": 0.000625,
+      "width": 256,
+      "steps": 1200
+    },
+    {
+      "stage": "screen",
+      "family": "gelu_exact",
+      "seed": 3601,
+      "lr": 0.000625,
+      "width": 256,
+      "steps": 1200
+    },
+    {
+      "stage": "screen",
+      "family": "gelu_exact",
+      "seed": 3601,
+      "lr": 0.00125,
+      "width": 256,
+      "steps": 1200
+    },
+    {
+      "stage": "screen",
+      "family": "silu",
+      "seed": 3601,
+      "lr": 0.00125,
+      "width": 256,
+      "steps": 1200
+    },
+    {
+      "stage": "screen",
+      "family": "silu",
+      "seed": 3601,
+      "lr": 0.0025,
+      "width": 256,
+      "steps": 1200
+    },
+    {
+      "stage": "screen",
+      "family": "gelu_exact",
+      "seed": 3601,
+      "lr": 0.0025,
+      "width": 256,
+      "steps": 1200
+    }
+  ],
+  "all_nine_selection_branches": [
+    {
+      "selection": {
+        "silu": 0.000625,
+        "gelu_exact": 0.000625
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.000625,
+        "gelu_exact": 0.00125
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.000625,
+        "gelu_exact": 0.0025
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.00125,
+        "gelu_exact": 0.000625
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.00125,
+        "gelu_exact": 0.00125
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.00125,
+        "gelu_exact": 0.0025
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.0025,
+        "gelu_exact": 0.000625
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.000625,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.0025,
+        "gelu_exact": 0.00125
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.00125,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    },
+    {
+      "selection": {
+        "silu": 0.0025,
+        "gelu_exact": 0.0025
+      },
+      "confirmation": [
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3611,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3611,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3612,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3612,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "silu",
+          "seed": 3613,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        },
+        {
+          "stage": "confirm",
+          "family": "gelu_exact",
+          "seed": 3613,
+          "lr": 0.0025,
+          "width": 256,
+          "steps": 1200
+        }
+      ]
+    }
+  ],
+  "total_pilots": 2,
+  "total_quality_trajectories": 12,
+  "full_updates": 1200,
+  "context": 128,
+  "batch": 8,
+  "limits": {
+    "reserve_bytes": 8589934592,
+    "rss_limit_bytes": 4294967296,
+    "driver_limit_bytes": 6442450944,
+    "pilot_seconds": 600,
+    "quality_seconds": 7200,
+    "cpu_threads": 4,
+    "device": "mps",
+    "cpu_fallback": false
+  },
+  "pilot_schedule": {
+    "cooldown_start": 13,
+    "ema_start": 13,
+    "ema_interval": 1,
+    "half_life": 200,
+    "snapshots": 8
+  },
+  "quality_schedule": {
+    "cooldown_start": 800,
+    "ema_start": 800,
+    "ema_interval": 10,
+    "half_life": 200
+  },
+  "selection": "Independent minimum H200 CE per arm over all three LRs; exact ties choose lower LR; no grid extension.",
+  "quality_gate": {
+    "contrast": "gelu_exact minus silu",
+    "mean_delta_strictly_below": -0.02,
+    "every_seed_strictly_below": 0,
+    "all_gate_uppers_strictly_below": 0,
+    "block_sizes": [
+      2048,
+      4096,
+      8192
+    ],
+    "resamples": 2000,
+    "rng": "numpy.random.Generator(PCG64)",
+    "rng_seed": 20261031,
+    "rng_reset": "Reset to the same seed separately for each block size; common text draws for all paired models/seeds.",
+    "gate_quantile": 0.9833333333333333,
+    "quantile": "sorted linear interpolation at (n-1)*q",
+    "multiplicity": "Bonferroni 0.05 across one contrast and three block sizes",
+    "tail": "Weight block loss sums by sampled target counts; average paired seed loss sums before resampling",
+    "scope": "Conditional text uncertainty only; adaptive validation reuse; not training-seed population confidence."
+  },
+  "retention": {
+    "pilot_boundary": "After both pilot reviews; never quality selection.",
+    "screen_boundary": "Persist scientific selection; audit/delete only four losing screening pairs.",
+    "protected_selected_screens": 2,
+    "protected_fresh_pairs": 6,
+    "all_non_checkpoint_evidence_protected": true,
+    "deletion_authorized": false
+  },
+  "storage": {
+    "prior_projection": {
+      "path": "research/tokenizer-evidence/moe-preparation-001/ffn-storage-projection.json",
+      "sha256": "fd60ee44a76d8258708008b67b440b2eb3aeec2d08162b589e78daa8d5583d35"
+    },
+    "required_free_bytes": 15169995168,
+    "observed_free_bytes": 15511126016,
+    "implemented_serialization_and_metadata_reconciliation_pending": true
+  },
+  "seed_audit": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/seed-audit.json",
+    "sha256": "9d6085d63ff83bc6ce4e62c835edb9ea3d6ffee44fd63ee7031849ed77f5f3d2"
+  },
+  "rules": {
+    "path": "src/research/tokenizer_activation_rules.py",
+    "sha256": "7e5908bba26fc329a871d1fd26c60f1a6bab652bde41978491a22250ec148a5f"
+  },
+  "config": {
+    "path": "src/research/tokenizer_activation_config.py",
+    "sha256": "1cde505dba2380de06089b944e0c3bcececec461ce41e46d543024de6b36414e"
+  },
+  "tests": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/rules-tests-v1-review.json",
+    "sha256": "1eb49e76891ea3d8f933364baa993404bd85bdd226ad4cf022dfa88635a346ad"
+  },
+  "production_controller_implemented": false,
+  "filesystem_integration_complete": false,
+  "training_launched": false,
+  "plan_frozen": false,
+  "adopted": false,
+  "holdout_scored": false
+}

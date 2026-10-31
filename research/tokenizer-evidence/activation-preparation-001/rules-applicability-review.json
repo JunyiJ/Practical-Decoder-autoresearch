@@ -1,0 +1,27 @@
+{
+  "status": "prior_model_state_evidence_unchanged_new_pure_rules_tested",
+  "at": "2026-10-31T15:45:43.327029+00:00",
+  "prior_state_review": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
+    "sha256": "03200c44fea66b8292827b8079b0e92fe5d93bb9d801ae019728c51f5c09964b"
+  },
+  "executed_state_source_sha256": "31eddb7941f426f19a789f3044f3c37ff774a0f97bc0ed30183d3bf180d929ce",
+  "current_source_sha256": "e1e764c7c21f9dfcd46fc58695bc58382bd95ed053495d9acba4c155a7e663b4",
+  "only_changes": {
+    "src/research/tokenizer_activation_rules.py": {
+      "previous": null,
+      "current": "7e5908bba26fc329a871d1fd26c60f1a6bab652bde41978491a22250ec148a5f"
+    },
+    "src/research/tokenizer_activation_config.py": {
+      "previous": null,
+      "current": "1cde505dba2380de06089b944e0c3bcececec461ce41e46d543024de6b36414e"
+    }
+  },
+  "rules_test_review": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/rules-tests-v1-review.json",
+    "sha256": "1eb49e76891ea3d8f933364baa993404bd85bdd226ad4cf022dfa88635a346ad"
+  },
+  "scope": "No model, optimizer, EMA, checkpoint, cache or tokenizer source changed since state tests. New pure finite rules/config were separately tested. Production dispatcher/filesystem integration and final freeze remain pending.",
+  "training_launched": false,
+  "plan_frozen": false
+}
