@@ -1,6 +1,7 @@
 # Activation inference recovery v2 prerequisites
 
-This version is not frozen and cannot dispatch inference. Activation001 and
+This version is frozen for recovery002 after the integration and applicability
+audits below. Dispatch requires the freeze commit to be pushed first. Activation001 and
 inference recovery001 remain permanently closed to entries. Their original
 runtime sources and failure evidence are unchanged. Preserve the valid recovery001
 seed3611 timing pair; only seeds3612/3613 remain eligible for the new finite plan.
@@ -60,3 +61,19 @@ The scientific conclusion is unchanged: GELU fails the predeclared quality gates
 against SiLU; no adoption. One timing pair is accepted, so the three-pair timing
 aggregate and formal terminal receipt remain outstanding. No training, checkpoint
 regeneration, cleanup or holdout scoring occurred during these prerequisites.
+
+## Completed integration and freeze
+
+Execution40 and final7 tests passed. Four actual bounded children call production
+later entry/prefix/output review while live parent monitor bytes change; valid
+overlap passes, prior-result/prior-guard changes and unknown controls fail.
+Model/GPU/source audit portions are explicit doubles. The real freeze separately
+replayed original and carried evidence, all16 protected checkpoints and both
+closed-root inventories. No inference was executed by these prerequisites.
+
+Plan f28fe8194baf1fe4b05a1c480b4868e41a1b7b66fe7410e163e52f883edbb1b3
+is frozen in tokenizer-activation-inference-recovery-002. Thirteen runtime files
+(six v2 and seven frozen v1) plus the original source fingerprint are pinned.
+Only3612/3613 are new measurements; summary/final include the original3611 result.
+Both old roots remain closed. The next gate is commit/push, then one step3612.
+The earlier remaining-gate section describes the now-completed preparation.

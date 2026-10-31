@@ -4983,3 +4983,27 @@ These are component prerequisites, not a completed controller or launch freeze.
 Next integrate carried3611 plus only new3612/3613, test actual later-child entry
 concurrency and final assembly, then freeze/commit/push before dispatch. GELU
 still fails the quality gates; no complete timing aggregate or final receipt yet.
+
+
+### October31 inference recovery002 frozen for two remaining pairs
+
+V2 execution40 and final7 tests passed. Four real bounded child subprocesses
+exercise production later-child entry, prior-prefix replay and output review
+while the actual parent monitor changes. Source/model/GPU portions are explicit
+doubles in these tests. Valid monitor changes pass; prior-result/guard tampering
+and unknown controls fail. Serial tests preserve carried3611 credit, dispatch
+only3612/3613, enforce failure/partial/final latches and assemble all three pairs.
+
+The separate real-source freeze audit reverified original training, all16
+protected checkpoints, all27 closed recovery001 files and the accepted3611
+result without repeating it. Both failed roots and frozen source sets are intact.
+New root: `research_runs/tokenizer-activation-inference-recovery-002`.
+Plan SHA256 `f28fe8194baf1fe4b05a1c480b4868e41a1b7b66fe7410e163e52f883edbb1b3`.
+Free12,988,067,840bytes versus8,858,181,766required remaining; no new weights.
+
+[Freeze review](tokenizer-evidence/activation-preparation-001/inference-recovery002-freeze-review.json),
+[execution tests](tokenizer-evidence/activation-preparation-001/inference-recovery-v2-execution-prerequisite-001-review.json),
+[final tests](tokenizer-evidence/activation-preparation-001/inference-recovery-v2-final-prerequisite-001-review.json).
+Commit/push this freeze before dispatch3612, then independently accept before3613;
+summary precedes a separate guarded final review. No inference launched during
+freeze. No training, checkpoint regeneration, cleanup or holdout scoring.

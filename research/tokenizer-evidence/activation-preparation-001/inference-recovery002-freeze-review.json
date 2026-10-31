@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "error": null,
+  "observed_at": "2026-10-31T19:41:33.002329+00:00",
+  "root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-inference-recovery-002",
+  "plan": {
+    "path": "evidence/meta/recovery-plan.json",
+    "size": 4609,
+    "sha256": "f28fe8194baf1fe4b05a1c480b4868e41a1b7b66fe7410e163e52f883edbb1b3"
+  },
+  "capacity": {
+    "free_bytes": 12988067840,
+    "metadata_bytes": 188282,
+    "required_remaining_bytes": 8858181766,
+    "checkpoint_allocation_bytes": 0
+  },
+  "guard": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery002-freeze-guard.json",
+    "size": 260,
+    "sha256": "3bacc282dc211ef7fb9185083f9e3869741bc8f5e918cbc92c37b1ea585a0e68"
+  },
+  "portable_plan": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery002-freeze-plan.json",
+    "size": 4609,
+    "sha256": "f28fe8194baf1fe4b05a1c480b4868e41a1b7b66fe7410e163e52f883edbb1b3"
+  },
+  "procedure_sha256": "821b68bcd55bab7610e1c1fff936e44675e539519eb39e158b0c6418b0a0191e",
+  "applicability": {
+    "original_and_v1_source_unchanged": true,
+    "closed_roots_unchanged": true,
+    "original_training_source_and_16_protected_checkpoints_reverified": true,
+    "carried_root_files": 27,
+    "reused_original_functions": [
+      "MetadataWriter",
+      "run_process",
+      "load_pair",
+      "expected_models",
+      "callbacks",
+      "strict_mps",
+      "measure_pair",
+      "review_result",
+      "summarize",
+      "analyze"
+    ],
+    "old_bind_budget_entry_produce_or_final_called_on_failed_roots": false,
+    "source_lock_handoff": "Parent releases original root before child; child borrows global/new root locks and independently locks original and historical root for read-only audits. Parent monitor touches only new root.",
+    "scope": "Only new3612/3613 measurements; exact accepted3611 result imported, never repeated. Final assembles all3 with unchanged numerical/cache/timing/statistical/resource rules; new orchestration only.",
+    "prerequisite_limits": "Execution40 plus final7 disposable tests. Four real child processes exercise later-entry/prefix/output review during parent monitor updates. Source audit/GPU/models are doubles in tests; actual source/import/checkpoint applicability is independently verified here."
+  },
+  "inference_launched": false,
+  "training_launched": false,
+  "holdout_scored": false,
+  "commit_and_push_before_dispatch": true
+}
