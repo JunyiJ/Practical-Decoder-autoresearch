@@ -1,0 +1,106 @@
+{
+  "status": "prospective_shape_accounting_not_launch_authorization",
+  "observed_at": "2026-10-31T19:51:37.735312+00:00",
+  "source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
+  "source_refs": {
+    "research/tokenizer-evidence/mla-001/adopted-width256-mla-recipe.json": "14936864a1ef15aaa1e97c763755f0b090c0e31babdb5c27edc657417aa4f3d3",
+    "research/FFN_HIDDEN_NORM_RESULTS.md": "af447043450de1f4310ead36469f3e51f950eb1f7fdceeb643a6d89793d31623",
+    "research/QKNORM_QUALITY_RESULTS.md": "b0d44c37e175843800b02ff7c9071537ed77535f4f620992321f5d3468361a13",
+    "research/RESIDUAL_GAIN_RESULTS.md": "bbe43a3d1df91d56cf30413285f2aef71cf4cbcce88594cf6e1b044f07738e6d",
+    "src/models/blocks.py": "99f74dea226a87f585b72aec8c5186d8261f6e857951556eec8899ea436f035e",
+    "src/models/tokenizer_architecture.py": "e58a8926700f4d3930e465a41fe185672b94fdf90d4db40f4b44bc6d43595af7",
+    "src/models/gpt.py": "90daf16e0956eecdeb08a778db52b3896108993a1e1d463a423c60a4937f2add",
+    "src/train/optimizers.py": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730",
+    "src/utils/checkpoint.py": "05d2a9b8b0f1d08a2017e551e86c66bafb4c297e1e73f13bf50e734e552c6a6f",
+    "src/train/weight_averaging.py": "a2ffa1acff302190065fddb53db1dc234ab8ec5c71f929128459cda3059fbf20",
+    "research/tokenizer-evidence/moe-preparation-001/ffn-storage-projection.json": "fd60ee44a76d8258708008b67b440b2eb3aeec2d08162b589e78daa8d5583d35"
+  },
+  "helper_sha256": "17a0f722083f97abf571523c449412761187c261d6c0ed8c22663f59e9c067dc",
+  "torch_version": "2.14.1",
+  "torch_norm_module_sha256": "96284b63a2088c7d378716d5114eb5b6a1c072d479116170fcfd284c57e84b4f",
+  "baseline_validated_on_meta": true,
+  "candidate_full_model_validated": false,
+  "block_normalizer_paths": [
+    "transformer.h.0.ln1",
+    "transformer.h.0.ln2",
+    "transformer.h.1.ln1",
+    "transformer.h.1.ln2",
+    "transformer.h.2.ln1",
+    "transformer.h.2.ln2",
+    "transformer.h.3.ln1",
+    "transformer.h.3.ln2"
+  ],
+  "epsilon": {
+    "incumbent_attribute": null,
+    "fp32_effective": 1.1920928955078125e-07,
+    "default_layer": 1e-05,
+    "candidate_explicit": 1.1920928955078125e-07,
+    "final_layer_norm_unchanged": true
+  },
+  "baseline_optimizer_groups": {
+    "Muon": {
+      "parameters": 2752512,
+      "tensors": 44
+    },
+    "AdamW": {
+      "parameters": 25739904,
+      "tensors": 44
+    }
+  },
+  "persistent_buffer_bytes": 65536,
+  "arms": {
+    "rms_incumbent": {
+      "parameters": 28492416,
+      "muon_parameters": 2752512,
+      "adam_parameters": 25739904,
+      "adam_tensors": 44,
+      "optimizer_tensor_bytes": 216929456,
+      "raw_h200_payload_bytes": 558969520,
+      "per_trajectory_allowance_bytes": 788953140
+    },
+    "layer_matched_epsilon": {
+      "parameters": 28494464,
+      "muon_parameters": 2752512,
+      "adam_parameters": 25741952,
+      "adam_tensors": 52,
+      "optimizer_tensor_bytes": 216945872,
+      "raw_h200_payload_bytes": 559010512,
+      "per_trajectory_allowance_bytes": 789009664
+    }
+  },
+  "panel": {
+    "pilots": 2,
+    "screens": 6,
+    "fresh": 6,
+    "selected_pairs": 2,
+    "fresh_pairs": 6,
+    "phase_allowance_bytes": {
+      "pilots": 1577962804,
+      "lr_screen": 4733888412,
+      "fresh_confirmation": 6311851216
+    },
+    "reserve_bytes": 8589934592,
+    "metadata_bytes": 268435456,
+    "required_free_bytes": 15170221264,
+    "observed_free_bytes": 12984197120,
+    "shortfall_bytes": 2186024144,
+    "final_payload_plus_reserve_bytes": 13061854720,
+    "payload_only_shortfall_bytes": 77657600,
+    "fits_projection": false
+  },
+  "limitations": [
+    "Only original full model is validated. Candidate uses independently counted LayerNorm components; no unsupported full policy constructed.",
+    "Payload excludes headers/RNG and transient audit overlap; it is a lower bound, not a launch budget.",
+    "All optimizer moments charged; pilot/losing-screen cleanup credited only at audited boundaries.",
+    "Existing selected/fresh/failure evidence remains protected; no deletion credit.",
+    "Default-RMS epsilon inference is for explicit FP32 only; full forward/gradient/cache parity and dtype rejection remain prerequisites."
+  ],
+  "training_launched": false,
+  "checkpoints_loaded": false,
+  "holdout_scored": false,
+  "deletion_performed": false,
+  "guard": {
+    "path": "research/tokenizer-evidence/block-norm-preparation-001/shape-storage-guard.json",
+    "sha256": "8b684fcc3a0cd88330f04e33fcca2a6c6e6e2d003bba8408fe17013babad5929"
+  }
+}

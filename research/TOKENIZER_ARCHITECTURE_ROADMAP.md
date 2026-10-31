@@ -101,3 +101,21 @@ panel needs fresh full high-water accounting and safe capacity or a separately
 justified prospective design. Do not silently narrow controls, fresh seeds or
 width, remove protected pairs, or launch a partial panel. Read-only feasibility
 and bounded CPU prerequisites can proceed while this training constraint holds.
+
+
+### October31 next normalization design: matched-epsilon block LayerNorm
+
+Selected prospective two-arm block RMSNorm versus affine LayerNorm on the adopted
+D256 RoPE MLA/SiLU backbone; only eight pre-branch normalizers change. The local
+constructor audit found an epsilon confound: default RMSNorm uses FP32 epsilon
+2^-23, default LayerNorm1e-5. Proposed LayerNorm explicitly uses2^-23 while the
+control preserves its exact incumbent path. Centering and a learned bias remain
+joint changes; no isolated-centering causal claim. Candidate adds2,048 parameters.
+
+The guarded meta-shape/optimizer audit found15,170,221,264bytes required against
+12,984,197,120free, a2,186,024,144byte gap. Even final tensor payload plus reserve
+exceeds free space by77,657,600bytes before headers/logs/overlap. Reducing safety
+allowances alone cannot make this full retained panel fit. No pilot or training
+started; no protected evidence changed. Bounded CPU prerequisites can proceed.
+See [prospective design](TOKENIZER_BLOCK_NORM_PREPARATION.md) and
+[audit](tokenizer-evidence/block-norm-preparation-001/shape-storage-review.json).

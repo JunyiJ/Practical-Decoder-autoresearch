@@ -1,0 +1,41 @@
+{
+  "status": "selected_prospective_design_training_capacity_blocked",
+  "observed_at": "2026-10-31T19:53:07.269358+00:00",
+  "selected": "block_rms_vs_affine_layer_matched_fp32_epsilon",
+  "scope": "D256 four-layer adopted RoPE MLA; eight pre-branch norms only; SiLU retained",
+  "rationale": "Isolated new tokenizer normalization family; historical character hidden/QK norm and attenuated-residual findings motivate caution, not a transfer conclusion.",
+  "deferred": {
+    "moe": "Full three-arm capacity does not fit; preserve both dense controls.",
+    "parallel_residual": "Separate topology question; do not combine with block-norm change.",
+    "qk_or_hidden_norm": "Historical mixed/reversed evidence; not selected for this bounded round."
+  },
+  "source_refs": {
+    "research/TOKENIZER_BLOCK_NORM_PREPARATION.md": "2e3704c40cbda7a4860c27b65de5368a7b63c75d45da2a6facbd71ca9a23ba99",
+    "research/tokenizer-evidence/block-norm-preparation-001/shape-storage-review.json": "33e6ce68c024fb3f2c1a9ebb7b1ec621b9e940a1656da2ed25e7792a64246176",
+    "research/tokenizer-evidence/block-norm-preparation-001/shape-storage-guard.json": "8b684fcc3a0cd88330f04e33fcca2a6c6e6e2d003bba8408fe17013babad5929"
+  },
+  "panel": {
+    "pilots": 2,
+    "screens": 6,
+    "fresh": 6,
+    "selected_pairs": 2,
+    "fresh_pairs": 6,
+    "phase_allowance_bytes": {
+      "pilots": 1577962804,
+      "lr_screen": 4733888412,
+      "fresh_confirmation": 6311851216
+    },
+    "reserve_bytes": 8589934592,
+    "metadata_bytes": 268435456,
+    "required_free_bytes": 15170221264,
+    "observed_free_bytes": 12984197120,
+    "shortfall_bytes": 2186024144,
+    "final_payload_plus_reserve_bytes": 13061854720,
+    "payload_only_shortfall_bytes": 77657600,
+    "fits_projection": false
+  },
+  "candidate_full_model_validated": false,
+  "training_launched": false,
+  "holdout_scored": false,
+  "next_action": "Versioned standalone FP32 normalizer specification/reference and bounded CPU arithmetic/gradient/control-equivalence/rejection tests; preserve all frozen source. Resolve full integration/source applicability separately. No pilot until full storage gate passes."
+}

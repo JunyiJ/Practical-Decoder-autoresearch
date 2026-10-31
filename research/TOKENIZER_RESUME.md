@@ -8,12 +8,12 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest: activation comparison completed and independently closed through
-recovery002. Retain SiLU: GELU failed the quality gates, timing is near parity,
-and cache sizes are identical. No workers remain. All three roots stay closed;
-accepted3611 was never repeated. Read the current closure audit and state index.
-Next is normalization/residual feasibility and full storage accounting before
-another finite plan; older launch instructions are historical.**
+**Latest: activation comparison closed; SiLU retained. Next prospective design
+is block RMSNorm versus affine LayerNorm with matched FP32 epsilon on D256 MLA.
+Start standalone bounded CPU prerequisites; full-model integration is not ready.
+Training is capacity-gated:15.170GB required vs12.984GB free. Even payload plus
+reserve exceeds space. No protected cleanup or smaller partial panel. Read the
+new block-norm preparation document and current state index.**
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
