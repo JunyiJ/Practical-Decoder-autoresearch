@@ -34,6 +34,11 @@ def main():
         controller_terminal=terminal, process_records=controls,
         quality_result_files=[str(p.relative_to(ROOT)) for p in sorted(
             (root / 'evidence/quality').glob('*/result.json'))],
+        inference_preparation=read(root / 'control/inference-preparation.json'),
+        inference_seed_receipts={str(seed): {
+            'review': read(root / f'evidence/inference/{seed}/review.json'),
+            'controller': read(root / f'evidence/inference/{seed}/controller.json')}
+            for seed in (3511, 3512, 3513)},
         free_bytes=shutil.disk_usage(ROOT).free,
         caution='Process records and PIDs can be stale. Inspect actual processes before acting. Result files alone do not prove parent acceptance. Missing local files do not authorize reruns. This command never launches or resumes anything.')
     print(json.dumps(result, indent=2))

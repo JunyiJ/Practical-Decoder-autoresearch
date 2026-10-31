@@ -8,22 +8,26 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-Observed October31,2026 at05:43 Los Angeles: fresh slots15–22 accepted and
-independently reviewed. H200 CE:
+Observed October31,2026 at06:25 Los Angeles: all24 quality trajectories,
+including all nine fresh confirmations, are accepted and independently reviewed.
+H200 validation CE:
 
 | Seed | Gated MLA | KDA | Hybrid |
 | --- | --- | --- | --- |
 |3511|4.845517761609039|4.9743094953134435|4.999353112775229|
 |3512|4.84407892743844|4.967920234487431|4.979351837490887|
-|3513|4.839211356994297|4.947641727241584|pending|
+|3513|4.839211356994297|4.947641727241584|4.976864544264859|
 
-No adoption until final hybrid cell and frozen statistical/inference gates finish.
-Every fresh raw/H200 pair stays protected. Slot22 replay passed188.16s;
-remaining storage fits with8GiB reserve.
-Slot23 (final hybrid, seed3513) controller32901 is starting; session62286.
-Guarded startup may precede child creation. Never duplicate the launcher.
-Selected screens remain slots14/5/12; rank cleanup is complete and verified.
-See [rank summary](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-rank-summary-v2.json).
+Gated MLA has the lowest H200 CE on every fresh seed. No adoption yet: frozen
+statistical and inference gates remain required. Final history replay passed
+219.31s, verifying12 selected/fresh pairs and all three cleanup boundaries.
+Free15,577,501,696 bytes exceeds remaining8,858,370,048 required, including8GiB
+reserve. Every fresh raw/H200 pair remains protected. No quality slot24.
+
+Inference controller **38659**, session **36174**, is in guarded preparation.
+It owns the fixed serial3511/3512/3513 panel. Never duplicate the launcher.
+The sandbox MPS preflight stopped before creating any campaign attempt; host MPS
+was verified and the controller launched there. The preflight evidence is saved.
 
 From the repository root, inspect without mutating or launching anything:
 
@@ -33,39 +37,39 @@ git status --short --branch
 ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|metadata_contention|pytest|run_training)|pytest|zstd'
 ```
 
-The status script verifies pinned small evidence files and shows local progress,
-process records, terminal receipt and result-file presence. Process inspection
-may require environment approval; it is already human-authorized. Inspect each
-actual command and parent before interpreting PIDs. Do not stop unrelated apps.
+The status script verifies immutable evidence, shows local progress, process
+records, preparation and all inference review/controller receipts. Actual PIDs
+must be inspected; saved records can be stale. Process inspection is already
+human-authorized. Leave unrelated programs alone.
 
-1. Read `research_state/tokenizer-quality-progress.json` if present and reconcile
-   its `next_action` with actual Git/process/log state. Read the current005
-   `control/process-*.json`, bounded worker logs and immutable acceptance records.
-2. If controller32901 or its current descendant is running, observe it.
-   Never duplicate the fresh dispatch or rerun completed rank boundaries.
-3. The three pilots and their boundary are now reviewed in
-   [005 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-pilots-reviewed-v2.json).
-   This used a005-adapted copy of the existing read-only
-   [004 pilot review](tokenizer-evidence/wide-hybrid-preparation-001/review_campaign004_pilots_v2.py)
-   to005 paths and receipt names. Review archived pilot bytes and recorded cleanup;
-   do not re-evaluate removed pilot weights or reacquire an active worker's lock.
-4. After final slot23 acceptance and actual worker exit, run a new guarded
-   `final_confirmation_history_v2.verify_confirmation_dispatch` review explicitly
-   for23 (completed24), binding full history, all pairs and remaining storage.
-   Require a finished guard. No quality slot24 is permitted. Inspect the pinned
-   [inference map](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-resumption-map-v2.json)
-   and all frozen prerequisites/source applicability before a guarded controller
-   prepares inference and runs the fixed three seeds serially. Final independent
-   quality/cost review uses the frozen `review_final_campaign_v2.py` and accepted
-   `inference/3513/review.json`, both locks and an outer guard, with exclusive
-   external publication. Preserve every fresh pair; no early adoption, cleanup
-   or closed campaign/numerical retry.
-5. If a worker failed/interrupted or evidence is inconsistent, preserve the
-   failure and stop the finite campaign for diagnosis. Do not retry the slot,
-   invent replacement seeds, clear STOP or extend a closed grid.
-6. Update this index/guide and the results when a meaningful stage changes;
-   commit and push without force. Keep only this chat's continuation heartbeat
-   active; the old `tokenizer-quality-research` heartbeat stays paused.
+1. Read ignored `research_state/tokenizer-quality-progress.json` and reconcile
+   `next_action` with actual Git/process/log state. While controller38659 or its
+   child is live, observe. Guarded idle binding can take several minutes before
+   a child exists. Do not reacquire its locks or duplicate preparation.
+2. Read `campaign005-inference-v2-terminal.json` outside the sealed campaign
+   when it appears. Success requires all three accepted reviews AND controller
+   receipts. A result file alone is insufficient. A failed/interrupted attempt
+   stops the finite campaign: preserve failure evidence and do not retry seeds,
+   clear STOP or invent replacements.
+3. After successful terminal and actual worker exit, create an external review
+   wrapper owning both locks and an outer1800s CPU prerequisite guard. Call the
+   frozen `review_final_campaign_v2.review_completed_campaign(writer,reference)`
+   with exact `inference/3513/review.json` and its SHA256. Verify the procedure's
+   frozen pin; publish exclusively outside the sealed campaign, max128KiB.
+   The API reaudits all quality history, retained pairs and all three inference
+   controllers. Report frozen eligibility and limitations; no automatic adoption.
+4. Preserve all fresh pairs, selected models, failures and protected archives.
+   No cleanup, production-source edits, quality slot24 or closed fixture retry.
+   Test holdout remains closed. After final review, explicitly consider the
+   architecture roadmap's next untested family and bounded HP alternatives.
+5. Commit/push substantive evidence and this guide/index without force. Keep
+   only this chat's continuation heartbeat active; the old heartbeat is paused.
+
+[All fresh results](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-panel-accepted-v2.json),
+[final history review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-fresh-prefix-24-v2-review.json),
+[inference wrapper review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-wrapper-review-v2.json),
+[inference launch](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-launch.json).
+Selected screens remain slots14/5/12; audited rank cleanup is complete.
 
 Campaign root: `research_runs/tokenizer-wide-hybrid-005`.
 [Launch receipt](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-launch-v2.json),

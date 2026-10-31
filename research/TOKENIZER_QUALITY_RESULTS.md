@@ -4291,3 +4291,37 @@ before prepare_inference/run_panel. Final quality/cost review remains gated on
 accepted inference/3513/review.json and all controller/history receipts.
 Evidence: slot22 terminal, fresh-prefix-23 review/guard,
 campaign005-fresh23-wrapper-review-v2.json and final slot23 launch.
+
+
+### Campaign005 all nine fresh quality cells accepted
+
+Final slot23 hybrid D/2, LR0.000625, seed3513 has H200 CE4.976864544264859
+and raw CE5.002648414981093; parent acceptance took2079.58s. All nine fresh
+confirmation cells are now parent accepted. Mean H200 CE over the three seeds
+is gated MLA4.8429360153472585, KDA4.96329048568082 and hybrid4.985189831510325.
+Gated MLA has the lowest H200 CE on each fresh seed. This is descriptive local
+Shakespeare validation evidence, conditional on the adaptive finite choices;
+no test-holdout, seed-population or larger-scale claim. No adoption yet.
+
+The final slot23 history reviewer explicitly requests23/completed24 and archives
+full non-checkpoint bytes with checkpoint hashes. No quality slot24 is allowed.
+The inference wrapper requires the finished independent review, fixed005 source,
+plan/cache/MPS identities and both locks. Its outer CPU guard covers only
+prepare_inference; the fixed serial run_panel owns individual parent/child
+guards. All21 relevant inference source/test pins match the159-test consolidated
+manifest; those tests are synthetic and do not replace real prerequisite replay.
+The final quality/cost procedure is present in the original frozen plan.
+Every fresh raw/H200 pair, selected model, failure and protected archive remains
+retained. No cleanup, production-source edit or closed fixture retry occurred.
+Evidence: campaign005-fresh-panel-accepted-v2.json, final slot23 terminal,
+review_campaign005_fresh23_v2.py and campaign005-inference-wrapper-review-v2.json.
+
+Final independent history replay passed219.31s, confirming24 records and12
+retained selected/fresh pairs,8,192,035 metadata bytes and all three cleanup
+boundaries. End-of-review free15,577,501,696 bytes exceeds8,858,370,048 required.
+Reviewer and prior workers exited. Inference controller38659/session36174 is
+now in guarded preparation for the fixed serial3511/3512/3513 panel; inference
+is not yet accepted. Sandbox MPS preflight failed before any attempt/publication;
+host MPS was confirmed and the unchanged wrapper launched there. This is an
+environment preflight record, not a retried inference seed or numerical fixture.
+Resume guide/index and the status tool now expose the exact inference continuation.

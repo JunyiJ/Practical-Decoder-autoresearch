@@ -1,0 +1,44 @@
+{
+  "status": "final_quality_review_and_serial_inference_wrapper_checked",
+  "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
+  "wrappers": {
+    "review_campaign005_fresh23_v2.py": "74125720d2790441576756cfcf26d54c1b4e05fb8616cf28b4a926488dacd0c7",
+    "continue_campaign005_inference_v2.py": "2cd445631c321f4d032ac658872965a40b64e6fc512f404dfdc403b649ac181a"
+  },
+  "inference_source_manifest": "research/tokenizer-evidence/wide-hybrid-preparation-001/inference-dispatch-v2-source-hashes-v3.json",
+  "inference_source_manifest_sha256": "5591e8725f955bdccefc52bde6bf63fe34c48916a6d9560d3bc42eb38500d78a",
+  "current_inference_source_test_pins": {
+    "src/research/tokenizer_wide_hybrid_inference.py": "73dda3c162f8016d5e78dbd6d8de97255fa7add935285697bf80e4c3c4afa503",
+    "src/research/tokenizer_wide_hybrid_inference_acceptance_v2.py": "c8cc680e021883640f5ad5ae5d44a0b7121d6db5f512380a591b491feceef0e8",
+    "src/research/tokenizer_wide_hybrid_inference_dispatch_v2.py": "09768dd128d18e07675445b2cd7ba5a6df74d6b1e60f154dd7d464a1e62bac8f",
+    "src/research/tokenizer_wide_hybrid_inference_entry_v2.py": "d22b1d2d2f080d5bd4b9c455026e2f0a01d7168d5216f2367d199a802cc1d075",
+    "src/research/tokenizer_wide_hybrid_inference_gate.py": "2239200b719cec484c9290bb0e652e3abef7a4a1cf7a215ae0f0f578cd93e1dc",
+    "src/research/tokenizer_wide_hybrid_inference_gate_v2.py": "36c783acdb68d47a233a8f89101cd7316884f1785a4375bf42ca91409471d0c6",
+    "src/research/tokenizer_wide_hybrid_inference_outputs_v2.py": "7fb7a86f643dac68d319d13cc6109f7820895e6b946c562d20fa34f96acb0d23",
+    "src/research/tokenizer_wide_hybrid_inference_preparation_v2.py": "c1f408fe55279d3419b629df92433475261215612e2dbf707c66746c5f85ab30",
+    "tests/test_tokenizer_wide_hybrid_inference.py": "e8f0e410f0ea87b8a2410b33f582fc599a31057f82234c33aae9ba18104a6c2a",
+    "tests/test_tokenizer_wide_hybrid_inference_acceptance_reused_v2.py": "9b51cabd9689a52fe44a3a436156358e2800f9ca308342f9882a99862dea8465",
+    "tests/test_tokenizer_wide_hybrid_inference_acceptance_v2.py": "7fb604000a74badc1320446bb0f2bc32b8eddec3287f0ba3ceec673d011061aa",
+    "tests/test_tokenizer_wide_hybrid_inference_dispatch_reopened_v2.py": "c4dc756eb59cc0d01f60da8d0d0bfbf7049f89d7c058c33c86e72dbb618afae2",
+    "tests/test_tokenizer_wide_hybrid_inference_dispatch_v2.py": "a128e0d9ccb9123a36471a3f6342f9a16c6011ad854cd5ed78a74845bacf25c1",
+    "tests/test_tokenizer_wide_hybrid_inference_entry_v2.py": "c5ae71fe6012f620baf3739b0333420a570cc051a315794dbbbca9a94e3328f3",
+    "tests/test_tokenizer_wide_hybrid_inference_gate.py": "a8d2b9195ac213ac1b0f0025a5c528d9af5efcf2b0f76f01488c6fd573b925a7",
+    "tests/test_tokenizer_wide_hybrid_inference_gate_v2.py": "4e0a2bf60c85deb86cfcd4a179cdbac93fc8fcec159dd2fe3d402b2f32e0f076",
+    "tests/test_tokenizer_wide_hybrid_inference_outputs_v2.py": "ad94f61ec4ecbcb55e1482e86a92a300a522df940b0d35f2ac2ce55017ee8d9b",
+    "tests/test_tokenizer_wide_hybrid_inference_preparation_v2.py": "8d3895f811a8755a52923ac18cda283f352fdc78c60a3405c81c2a3fe7491c6c",
+    "tests/test_tokenizer_wide_hybrid_inference_readiness_reused_v2.py": "a60db09d886184c5aa45e3b9917e11d680a977c9b2c51a75fdcafbd5aac0cd7c",
+    "tests/test_tokenizer_wide_hybrid_inference_reopened_v2.py": "7b7f2203cacc37e98239737263c2f0cb60656999e2466f903f8e42fea95bc860",
+    "tests/tokenizer_wide_hybrid_inference_subprocess_fixture.py": "772f7f5c283689dae42cfba107decdb81dc3e4bebafb35eb8e7755417c346990"
+  },
+  "final_procedure_frozen_pin": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/wide-hybrid-preparation-001/review_final_campaign_v2.py",
+    "sha256": "047af41288647410968e8848ab84db5296d21766ff11a325cd1283e97dc1359e"
+  },
+  "validation": [
+    "Reviewer diff only slot22 to23, completed23 to24 and explicit history argument22 to23; full hashes/metadata retained.",
+    "Controller requires completed24 independent review and finished guard; immutable once-only launch, original plan/source/cache/MPS identities and both locks.",
+    "Outer 1800s CPU guard covers prepare_inference only; ends before run_panel owns all serial prepare/child/review guards. Fixed3511/3512/3513; no retry, quality slot24, cleanup, final decision or holdout use.",
+    "All21 relevant inference source/test pins match consolidated159-test manifest. Those tests were synthetic; real frozen prerequisites are replayed by production APIs. No production edits or closed fixture retry."
+  ],
+  "adopted": false
+}
