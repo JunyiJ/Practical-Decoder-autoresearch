@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/controller.py", line 179, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/controller.py", line 176, in main
+    return run((args.global_fd,args.campaign_fd))
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/controller.py", line 170, in run
+    return worker(ctx,args.seed,request)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/controller.py", line 97, in worker
+    prior=accepted_prefix(ctx,source,imported);rq=request_check(ctx,seed,request,prior,imported)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/controller.py", line 86, in accepted_prefix
+    independent=review_outputs(ctx,source,done['request'],rq['binding'],p['pid'],rq['parent_pid'])
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/activation_inference_recovery_v1/worker.py", line 82, in review_outputs
+    require(budget(ctx)==before and all(reference(ctx.root,r['path'])==r for r in refs.values()),
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'Recovery output changed during review')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_activation_session.py", line 27, in require
+    raise ValueError(message)
+ValueError: Recovery output changed during review

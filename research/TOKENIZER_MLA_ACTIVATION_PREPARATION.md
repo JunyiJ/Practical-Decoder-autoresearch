@@ -742,3 +742,35 @@ No inference launched during freeze. Commit/push first, then dispatch only
 seed3611; require independent acceptance before3612/3613, saved summary before
 separate terminal review. Quality failure and incumbent remain unchanged.
 All selected/fresh pairs, failures, archives and closed holdout stay protected.
+
+
+### October31 recovery001: valid first pair, second entry failed permanently
+
+Seed3611 completed33.995s and passed independent parent acceptance plus portable
+read-only review; worker28.687s,peakRSS784,973,824bytes. The synchronized census
+survived the actual first inference workload. Seed3612 then failed9.751s after
+launch during child entry, before model loading/timing. No3612 result or3613
+attempt exists; no worker remains. Original activation001 and recovery001 must
+never be retried, and their frozen runtime source must remain unchanged.
+
+The trace ends at `worker.review_outputs`'s whole-root before/after census equality
+while replaying prior3611 acceptance. The parent concurrently updates the active
+3512 monitor. Individually serialized scans do not guarantee whole-directory
+stability across a longer original-source audit. Exact differing entries were
+not logged; attribution to a particular mutable monitor field is inferred.
+The doubled process tests did not cover actual parent updates during later-child
+prior-prefix review. A real concurrent subprocess regression is now required.
+
+[Failure audit](tokenizer-evidence/activation-preparation-001/inference-recovery001-second-entry-failure-review.json)
+verified all first-pair artifacts/guards/process/model bindings/timing arithmetic
+against the [accepted prefix](tokenizer-evidence/activation-preparation-001/inference-recovery001-prefix-01-review.json),
+and rehashed all16original protected checkpoints. All remain intact; no cleanup,
+training, weight regeneration or holdout scoring occurred.
+
+Next prepare a separate versioned continuation for remaining3612/3613, importing
+valid3611 timing without repeating it. Compare completed-slot immutable evidence
+separately from active control state while retaining global synchronized quota,
+STOP/failure/path/file-count/alias/transient-byte/resource checks. Test actual
+parent/child monitor contention and immutable-file tampering before a new finite
+freeze. Quality failure and incumbent are unchanged; only one inference pair is
+accepted, so no aggregate cost conclusion or formal terminal closure is available.

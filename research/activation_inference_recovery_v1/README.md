@@ -1,3 +1,8 @@
+> Latest: recovery001 accepted seed3611, then failed permanently during seed3612
+> entry before model loading. No worker remains. Do not rerun this root or edit
+> frozen v1 runtime. The first pair remains valid. See the failure audit below;
+> freeze/launch instructions further down are historical, not next actions.
+
 # Activation inference recovery v1 — preparation only
 
 Activation001 remains permanently failed at its first inference entry. Its twelve
@@ -153,3 +158,37 @@ Both require absolute new root and exact `--plan-sha256`. The old failed campaig
 remains failed even after recovery closure. A failure or leftover temporary file
 anywhere in the new root blocks retry/advancement. Do not edit any of the seven
 frozen runtime modules or the original `src`/requirements after this freeze.
+
+
+## Recovery001 second-entry failure: preserve first pair, no retry
+
+Seed3611 completed33.995s, worker28.687s, peakRSS784,973,824bytes; independent
+acceptance and separate read-only portable review passed. Seed3612 failed after
+9.751s in child entry (entry guard9.161s,RSS221,429,760bytes), before `produce`,
+model loading or timing. No3612 result and no3613 attempt exist.
+
+The failing call is `worker.review_outputs` invoked by `accepted_prefix` for the
+already accepted3611 pair. It compares the entire recovery-root census before
+and after full original-source verification while the parent updates3512's live
+monitor. Locking each individual census fixed the original missing-temporary
+race but does not freeze the entire directory across that longer audit. The
+exact differing census entries were not logged; assigning the difference to a
+specific monitor field is an inference. The process-double integration suite did
+not model live parent mutation during this later-child prior-pair review.
+
+The failure audit independently verified all first-pair artifacts, guards,
+canonical process receipt, original model bindings and timing arithmetic against
+the saved portable prefix; all16original checkpoint hashes also passed. No owned
+worker remains. Both original and external frozen source identities are intact.
+[Valid first pair](../tokenizer-evidence/activation-preparation-001/inference-recovery001-prefix-01-review.json),
+[failure audit](../tokenizer-evidence/activation-preparation-001/inference-recovery001-second-entry-failure-review.json).
+
+Do not patch v1 or retry either failed root. A new external version must import
+the accepted3611 pair byte-for-byte without repeating it, distinguish completed
+slot immutable inventories from active mutable control state, and retain all
+global synchronized quota/STOP/failure/path/resource checks. Add an actual
+concurrent parent-monitor/pipe-child regression covering later-prefix review,
+plus immutable prior-file tampering and unknown-output rejection. Then freeze
+only remaining3612/3613 and complete aggregate/final reporting with explicit
+source applicability. Quality remains a failure for GELU; no complete timing
+panel or terminal receipt exists yet. No training, cleanup or holdout access.

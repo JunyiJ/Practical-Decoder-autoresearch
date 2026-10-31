@@ -1,0 +1,289 @@
+{
+  "status": "recovery001_first_pair_valid_second_entry_failed_no_retry",
+  "observed_at": "2026-10-31T19:24:43.553662+00:00",
+  "plan": {
+    "path": "evidence/meta/recovery-plan.json",
+    "size": 3861,
+    "sha256": "29b8265276d6bedb933bbb3f522b179ffa1b8403b18ac7f7b62b5b6638ee5dde"
+  },
+  "source_import_sha256": "e7028d3065f087aadfd280e80e7315cc555367a9ba422ac1958594ff2a13dc4b",
+  "prior_valid_review": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery001-prefix-01-review.json",
+    "size": 8563,
+    "sha256": "3386b679511fef2873080f7f9154a387b92ea4874a7097e7b6bcce9e2bf52c27"
+  },
+  "first_accepted": {
+    "path": "evidence/inference/3511/accepted.json",
+    "size": 2240,
+    "sha256": "e9bda89a13ba9171e304d0a09a6d55a931d5471be39c5bc889d386ae4f9d60dc"
+  },
+  "first_process": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.activation_inference_recovery_v1.controller",
+      "worker",
+      "--root",
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-inference-recovery-001",
+      "--plan-sha256",
+      "29b8265276d6bedb933bbb3f522b179ffa1b8403b18ac7f7b62b5b6638ee5dde",
+      "--seed",
+      "3611",
+      "--request-sha256",
+      "6caa05f3f63994a9df73fd3ff5942a4378b08ff35a46bd9f4eff1982c8759605",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 33.994859708007425,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 12990636032,
+      "log_bytes": 0,
+      "output_bytes": 24534
+    },
+    "output_limit_bytes": 5242880,
+    "parent_pid": 64942,
+    "pid": 64948,
+    "required_free_bytes": 8595177472,
+    "reserve_bytes": 8589934592,
+    "returncode": 0,
+    "status": "completed",
+    "timeout_seconds": 600
+  },
+  "first_timing_review": {
+    "status": "measurements_reviewed_pending_provenance",
+    "seed": 3611,
+    "cells": [
+      {
+        "seed": 3611,
+        "batch": 1,
+        "family": "silu",
+        "state_bytes": 196608,
+        "median_prefill_seconds": 0.008236791501985863,
+        "median_decode_seconds": 0.20972743799211457
+      },
+      {
+        "seed": 3611,
+        "batch": 1,
+        "family": "gelu_exact",
+        "state_bytes": 196608,
+        "median_prefill_seconds": 0.008254416505224071,
+        "median_decode_seconds": 0.21011637497576885
+      },
+      {
+        "seed": 3611,
+        "batch": 8,
+        "family": "silu",
+        "state_bytes": 1572864,
+        "median_prefill_seconds": 0.013537603997974657,
+        "median_decode_seconds": 0.21806756251316983
+      },
+      {
+        "seed": 3611,
+        "batch": 8,
+        "family": "gelu_exact",
+        "state_bytes": 1572864,
+        "median_prefill_seconds": 0.013578937490819953,
+        "median_decode_seconds": 0.217246250496828
+      }
+    ],
+    "adopted": false
+  },
+  "failed_process": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.activation_inference_recovery_v1.controller",
+      "worker",
+      "--root",
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-activation-inference-recovery-001",
+      "--plan-sha256",
+      "29b8265276d6bedb933bbb3f522b179ffa1b8403b18ac7f7b62b5b6638ee5dde",
+      "--seed",
+      "3612",
+      "--request-sha256",
+      "8c062448a2d8c3fc17420450270cb27fe64edac2950ef1b931d4b659af3cc634",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 9.753668874996947,
+    "error": "RuntimeError('Worker exited with code 1')",
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 12988043264,
+      "log_bytes": 1834,
+      "output_bytes": 10937
+    },
+    "output_limit_bytes": 5242880,
+    "parent_pid": 65044,
+    "pid": 65051,
+    "required_free_bytes": 8595177472,
+    "reserve_bytes": 8589934592,
+    "returncode": 1,
+    "status": "failed",
+    "timeout_seconds": 600
+  },
+  "failed_entry_guard": {
+    "elapsed_seconds": 9.16063337502419,
+    "kind": "activation_inference_recovery_v1",
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 12988051456,
+      "peak_rss_bytes": 221429760
+    },
+    "pid": 65051,
+    "reason": "ValueError('Recovery output changed during review')",
+    "status": "failed"
+  },
+  "protected_original_checkpoints": {
+    "evidence/quality/02/checkpoints/final_001200_1793466733266936000.pt": {
+      "path": "evidence/quality/02/checkpoints/final_001200_1793466733266936000.pt",
+      "sha256": "03bcf3d22d437e884443641472e2be0c2ce25d99be845c7df6f9a34f01b1390e",
+      "size": 445087909
+    },
+    "evidence/quality/02/checkpoints/h200.pt": {
+      "path": "evidence/quality/02/checkpoints/h200.pt",
+      "sha256": "91e175002629377b986960bb6c670c79e8d3d695b08174adf394f0833741a0ae",
+      "size": 114072387
+    },
+    "evidence/quality/03/checkpoints/final_001200_1793467314983803000.pt": {
+      "path": "evidence/quality/03/checkpoints/final_001200_1793467314983803000.pt",
+      "sha256": "39b2f14a1fd316add1808379cb6d1839aa94e9f77394d4c37718bd642230ae7d",
+      "size": 445087909
+    },
+    "evidence/quality/03/checkpoints/h200.pt": {
+      "path": "evidence/quality/03/checkpoints/h200.pt",
+      "sha256": "f468a16d98ca929837dce86d24caf27c419ee29316e75c3d05e45fe191fd5c35",
+      "size": 114072387
+    },
+    "evidence/quality/06/checkpoints/final_001200_1793469194114885000.pt": {
+      "path": "evidence/quality/06/checkpoints/final_001200_1793469194114885000.pt",
+      "sha256": "3b4cc1f45ce1acadf386bd63993a21273af4e300e3c0c5f5dd32b188a4d932db",
+      "size": 445087909
+    },
+    "evidence/quality/06/checkpoints/h200.pt": {
+      "path": "evidence/quality/06/checkpoints/h200.pt",
+      "sha256": "c8b7bde81e44b8610c7bb3f10e92f40a56b84ea27473bdaa9ac282ad035b7ade",
+      "size": 114072387
+    },
+    "evidence/quality/07/checkpoints/final_001200_1793469711658169000.pt": {
+      "path": "evidence/quality/07/checkpoints/final_001200_1793469711658169000.pt",
+      "sha256": "b286e1ba3d8f4b1a4fd6356c3532f234dc760a175b90f9a5bc83b59fbc00e882",
+      "size": 445087909
+    },
+    "evidence/quality/07/checkpoints/h200.pt": {
+      "path": "evidence/quality/07/checkpoints/h200.pt",
+      "sha256": "58e70de22b14902d7b9915c24131bddcbe501100901dbd254c7861577a8d9918",
+      "size": 114072387
+    },
+    "evidence/quality/08/checkpoints/final_001200_1793470308327355000.pt": {
+      "path": "evidence/quality/08/checkpoints/final_001200_1793470308327355000.pt",
+      "sha256": "3f15e655a0c2bef0b359dbd7d3f0f3373a448bd5f40b49b173dbd111ba426b36",
+      "size": 445087909
+    },
+    "evidence/quality/08/checkpoints/h200.pt": {
+      "path": "evidence/quality/08/checkpoints/h200.pt",
+      "sha256": "42e215ac49c0699077fd48a8340deab10e9a10d0f45a4c1c5d3bc741a893d397",
+      "size": 114072387
+    },
+    "evidence/quality/09/checkpoints/final_001200_1793470915505796000.pt": {
+      "path": "evidence/quality/09/checkpoints/final_001200_1793470915505796000.pt",
+      "sha256": "bda9c1c6e52ac6f23eb210fcd269f72fef71b10cf032e80f6b0c8b787868a1f8",
+      "size": 445087909
+    },
+    "evidence/quality/09/checkpoints/h200.pt": {
+      "path": "evidence/quality/09/checkpoints/h200.pt",
+      "sha256": "73f46f10341de88a5a76d4d82f8d1ef42744a306d71ec5960188ede0bcbe5b44",
+      "size": 114072387
+    },
+    "evidence/quality/10/checkpoints/final_001200_1793471513534846000.pt": {
+      "path": "evidence/quality/10/checkpoints/final_001200_1793471513534846000.pt",
+      "sha256": "5d674d3f56e2a1a00f17b28d10bd5fb0dcdb9399a058c204df2aae6cba554dc9",
+      "size": 445087909
+    },
+    "evidence/quality/10/checkpoints/h200.pt": {
+      "path": "evidence/quality/10/checkpoints/h200.pt",
+      "sha256": "21f8dfbcf76399864f76077a8c9ae70d05457b91631dd4e8c78212a09ff4b329",
+      "size": 114072387
+    },
+    "evidence/quality/11/checkpoints/final_001200_1793472115633712000.pt": {
+      "path": "evidence/quality/11/checkpoints/final_001200_1793472115633712000.pt",
+      "sha256": "ee1df3a5c9d1fd189d6089b9939d4fd78f194d72f153d97e8e7af469e6503ac8",
+      "size": 445087909
+    },
+    "evidence/quality/11/checkpoints/h200.pt": {
+      "path": "evidence/quality/11/checkpoints/h200.pt",
+      "sha256": "daf80183af5e1042d91ff7a297d85a79488b76f4c879f3c8acfa2cc95a27877e",
+      "size": 114072387
+    }
+  },
+  "copied": {
+    "control/process-inference-3512.json": {
+      "path": "control/process-inference-3512.json",
+      "size": 916,
+      "sha256": "63f98ebf1fc5cc955bddd55c276b29ecfa19edf00c179c98a64404289fb8f8c5"
+    },
+    "control/recovery-prepare-inference-3512.json": {
+      "path": "control/recovery-prepare-inference-3512.json",
+      "size": 283,
+      "sha256": "a30716cb2c5d2552fb3c39423fe534de18334369fbb1975a5cb31e86daf151a4"
+    },
+    "control/recovery-entry-inference-3512.json": {
+      "path": "control/recovery-entry-inference-3512.json",
+      "size": 329,
+      "sha256": "289ab622dd319dd42c410921eb6b6f07f1e70eb012e03188c43114193732f2d1"
+    },
+    "evidence/inference/3512/request.json": {
+      "path": "evidence/inference/3512/request.json",
+      "size": 7401,
+      "sha256": "8c062448a2d8c3fc17420450270cb27fe64edac2950ef1b931d4b659af3cc634"
+    },
+    "evidence/inference/3512/dispatch-failure.json": {
+      "path": "evidence/inference/3512/dispatch-failure.json",
+      "size": 222,
+      "sha256": "3eaa0d6acce9993fd0d7d5bf6149b16b570f388834c7f556f64c2a042022789f"
+    },
+    "evidence/inference/3512/process/worker.log": {
+      "path": "evidence/inference/3512/process/worker.log",
+      "size": 1834,
+      "sha256": "a4e1da36b280f4dd8562ef9c2afbc51848326e56ff18f2bfab229e8f369ef1e1"
+    },
+    "evidence/inference/3512/process/launch.json": {
+      "path": "evidence/inference/3512/process/launch.json",
+      "size": 786,
+      "sha256": "753153227579893cba059b3b522cdeb6a4dcfe0c3cfa521ae00619d59be07826"
+    },
+    "evidence/inference/3512/process/process.json": {
+      "path": "evidence/inference/3512/process/process.json",
+      "size": 916,
+      "sha256": "35dffcbdf1b0d873fa94180d40fa1208ea8d3fe5a696f9ff7cfa20351c197f70"
+    }
+  },
+  "guard": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-recovery001-second-entry-failure-guard.json",
+    "size": 259,
+    "sha256": "fb8e6d834c46dc2d11c8f9c27595aedc3420cd08d5a20aecf97ff84cf99c7464"
+  },
+  "procedure_sha256": "f9062e9e205e407b42accfa5b86c43d786723c920da7758d732ae2b635564816",
+  "diagnosis": "Second child failed during accepted_prefix replay of the already completed first pair. worker.review_outputs compares the entire recovery census before/after a full original-source audit, while the parent updates the current second-entry process monitor. Synchronized individual snapshots do not make this multi-snapshot whole-root equality stable.",
+  "limitations": "The exact differing census entries were not logged, so attributing the difference to a specific monitor byte is an inference. All first-pair artifacts/guards/model bindings/timing arithmetic and all sixteen original checkpoints reverified intact. The second child never reached produce/model loading; no second timing result exists.",
+  "next_action": "Do not edit frozen v1 runtime, retry recovery001 or start3613 there. Prepare a separate versioned remaining-pair continuation: import first accepted pair byte-for-byte, compare completed-slot immutable inventories separately from active mutable control files, retain complete synchronized global quota/STOP/failure checks, and test actual concurrent parent monitor plus later-child prior review before a new freeze. No repeat of seed3611, no training or weight regeneration. New version must bind unchanged timing/quality rules and explicit source applicability.",
+  "original_campaign_retried": false,
+  "recovery001_retry_allowed": false,
+  "accepted_inference_pairs": 1,
+  "formal_final_completed": false,
+  "holdout_scored": false
+}
