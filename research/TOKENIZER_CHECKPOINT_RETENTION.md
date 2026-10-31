@@ -96,3 +96,17 @@ reconciles both archival manifests (38 members in four archives). Future audits
 must use those logical identities or restore exact bytes, preserving originals
 and old status reports. Never rerun closed controllers to recreate missing paths.
 No further eligible loose tokenizer checkpoints were identified by this audit.
+
+## October 30 transparent filesystem compression
+
+The renewed request to find another safe source of space authorizes the explicit
+`filesystem-compression-001/plan.json` operation on historical Markdown knowledge
+snapshots. APFS compression preserves their original paths and exact readable
+bytes; no evidence is removed or moved into an archive. Stage each copy with
+`ditto --hfsCompression --noclone`, verify size/SHA256, mode, mtime and ownership,
+then atomically replace only that manifest-listed path under the worker lock.
+Verify every original snapshot and all inventoried research files afterward.
+Selected models, fresh confirmation pairs, failed weights, corpus and existing
+archives are excluded from compression and must retain their physical identities.
+Report allocated-block savings separately from unchanged logical file sizes and
+observed free space. A failed staging verification leaves its original untouched.
