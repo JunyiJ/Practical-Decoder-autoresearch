@@ -41,7 +41,8 @@ PREREQUISITES = dict(
 
 
 def design():
-    return dict(pilots=pilot_specs(), screen=screen_specs(), confirmations=[
+    from .tokenizer_activation_timing import CONTRACT
+    return dict(inference=CONTRACT,pilots=pilot_specs(), screen=screen_specs(), confirmations=[
         confirmation_specs(dict(zip(FAMILIES, (a,b)))) for a in RATES for b in RATES])
 
 

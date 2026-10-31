@@ -6688,3 +6688,20 @@ Inference protocol/runner, final applicability/capacity review and executable
 freeze remain pending. No research training, checkpoint cleanup, holdout scoring
 or closed-fixture retry occurred. No new model result or adoption.
 [Evidence](tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json).
+
+
+### October31 activation inference prerequisite
+
+65 tests passed, including the new finite timing/order/aggregation contract,
+CPU export-value/lineage checks, connected three-seed worker/parent receipt chain,
+and dispatch/retention regressions. Guard37.77s, peakRSS241,385,472bytes;
+180s/4GiB/8GiB-reserve limits intact. GPU, process, loading and completed-quality
+operations are explicit doubles in integration tests; no MPS benchmark or model
+quality claim follows. No research training, checkpoint cleanup or holdout scoring.
+
+Inference fixes both fresh H200 arms at all three seeds, first96 training IDs,
+batches1/8, correctness before two warmups/eight alternating measurements,
+32-token prefill and64-token decode. Report seed-paired latency ratios and actual
+cache/allocator observations separately from the unchanged strict quality rule.
+Final campaign decision wrapper and exact capacity/source/runtime/input freeze
+remain pending before pilots. [Evidence](tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json).

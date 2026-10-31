@@ -1,0 +1,61 @@
+{
+  "status": "finite_protocol_implemented_not_campaign_freeze",
+  "contract": {
+    "kind": "activation_inference_v1",
+    "seeds": [
+      3611,
+      3612,
+      3613
+    ],
+    "storage_slots": [
+      3511,
+      3512,
+      3513
+    ],
+    "families": [
+      "silu",
+      "gelu_exact"
+    ],
+    "batches": [
+      1,
+      8
+    ],
+    "warmups": 2,
+    "repeats": 8,
+    "context_tokens": 128,
+    "prefill_tokens": 32,
+    "decode_tokens": 64,
+    "token_source": "first96_training_ids",
+    "token_hash_encoding": "uint32-little-endian",
+    "dtype": "float32",
+    "device": "mps",
+    "cpu_threads": 4,
+    "rtol": 0.0003,
+    "atol": 3e-05,
+    "rss_limit_bytes": 4294967296,
+    "driver_limit_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "job_seconds": 600,
+    "output_limit_bytes": 5242880,
+    "log_limit_bytes": 4194304,
+    "panel_limit_bytes": 16777216,
+    "adoption_cost_route": false
+  },
+  "scope": "Two fresh H200 models resident. Cache allocation/loading outside timed regions. 32-token prefill and64 teacher-forced decode calls, synchronized at interval boundaries. Cache bytes count unique backing storage. MPS allocator observations are not single-model deployment peaks. Fixed training tokens; no holdout. Cost is descriptive, not an adoption gate.",
+  "selected_checkpoints": "Both accepted fresh H200 exports for every seed3611/3612/3613 after all12 quality trajectories, selected learning rates and both audited retention boundaries.",
+  "order": "Alternating SiLU/GELU order by fresh-seed index plus repeat; four first positions per arm at each batch. All four correctness checks finish before any warmup.",
+  "correctness": "Full96 logits versus cached32+64 one-token calls and reset/replay, FP32 rtol3e-4/atol3e-5; finite logits required.",
+  "timing": "Cache construction and input preparation outside timing; MPS synchronization before and after prefill and after64 decode calls;2 warmups and8 measured repeats at each batch1/8.",
+  "aggregation": "Eight-repeat median per seed/family/batch; then median of three seed-paired GELU-over-SiLU latency ratios. Warmups excluded.",
+  "storage_slot_mapping": {
+    "3611": 3511,
+    "3612": 3512,
+    "3613": 3513
+  },
+  "slot_scope": "Physical buckets3511/3512/3513 inside a new activation root reuse the unchanged bounded metadata layout. Scientific seeds are3611/3612/3613; no old campaign data or checkpoint is reused.",
+  "adoption": "Inference cost is descriptive. No neutral-cost route or timing-dependent selection. Strict predeclared paired quality criterion remains unchanged.",
+  "output_accounting": "Per-seed5MiB including4MiB bounded log; whole inference16MiB within existing256MiB metadata reserve. No new checkpoint or model cache files.",
+  "plan_frozen": false,
+  "benchmark_run": false,
+  "holdout_scored": false
+}

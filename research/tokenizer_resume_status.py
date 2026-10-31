@@ -29,6 +29,8 @@ def main():
     result = dict(observed_at=datetime.now(timezone.utc).isoformat(),
         saved_observation_at=index['observed_at'], branch=index['branch'],
         current_research_phase=index.get('current_research_phase'),
+        activation_inference_review=(read(ROOT / index['activation_inference_review'])
+            if index.get('activation_inference_review') else None),
         activation_dispatch_retention_review=(read(ROOT / index['activation_dispatch_retention_review'])
             if index.get('activation_dispatch_retention_review') else None),
         activation_worker_review=(read(ROOT / index['activation_worker_review'])

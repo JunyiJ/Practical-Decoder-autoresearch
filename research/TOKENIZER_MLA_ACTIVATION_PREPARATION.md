@@ -318,3 +318,60 @@ Latest free space15,580,561,408bytes exceeds the full15,169,995,168-byte project
 by410,566,240bytes; this observation is not the final launch capacity review.
 Freeze all prerequisites before two guarded MPS pilots. No executable activation
 plan is frozen, no corpus training has launched, and the holdout remains closed.
+
+
+## Finite inference execution prerequisite validated October31
+
+The inference contract now fixes all three selected fresh H200 pairs at seeds
+3611/3612/3613, batches1/8, first96 training IDs, context128, prefill32 and64
+teacher-forced decode calls. Four full/cached/reset correctness checks must pass
+before timing starts. Two warmups and eight measured repeats alternate arm order
+by seed and repeat. Synchronization brackets the timed intervals; cache creation
+and model loading stay outside them. Independent review reconstructs every
+sequence and throughput value, excludes warmups, computes seed-specific medians,
+then the median of three paired GELU-over-SiLU latency ratios. Cost is descriptive;
+there is no timing-dependent selection or quality-neutral adoption route.
+
+The activation-specific loader rebinds accepted fresh raw/H200 pairs, configs,
+tokenizer/training IDs and export lineage, checks finite CPU values, then validates
+actual FP32 MPS geometry and parameter storage. Both models remain resident.
+Unique allocated cache storage is196,608bytes times batch; allocator observations
+must not be described as single-model deployment peaks. No test data is used.
+
+A separate serial entry requires the complete accepted quality panel, both audited
+retention boundaries and dispatch proof. It guards child preflight/worker and
+parent acceptance, checks inherited locks and process identity, and pins each
+seed's producer inventory, resource guards and completed transport. Saved process
+descriptors are checked against the original request across later invocations.
+STOP, changed proof, pending/future/orphan attempts and failures forbid progression.
+Final summary requires all three accepted pairs and never itself adopts a model.
+
+The unchanged metadata writer has three bounded inference buckets named3511,
+3512,3513; the new contract explicitly maps them to scientific seeds3611,3612,3613
+inside a new activation campaign root. Bucket names do not select training seeds
+or reuse old campaign artifacts. Each seed has a5MiB output cap including its4MiB
+log; the16MiB whole-inference cap fits inside the existing256MiB metadata reserve.
+No new model/checkpoint/cache files are written by inference.
+
+65 tests passed in37.67s; the guard finished37.77s with241,385,472-byte peak RSS
+under180s/4GiB/8GiB-reserve limits. Timing/order/aggregation and CPU export-value/
+lineage checks are real. The connected three-seed entry/worker/parent tests use
+explicit approved-quality/process/loading/GPU doubles with real bounded filesystem
+artifacts and guards. No actual MPS benchmark, corpus training, model-quality result
+or research cleanup occurred. No failed test attempt or closed-fixture retry.
+
+Source applicability: three new activation inference/timing modules and one
+existing entry change to bind the finite inference contract. Existing model,
+training, optimizer, EMA, tokenizer, timing kernels, loaders and bounded transport
+primitives are unchanged; runtime matches the prior dispatch prerequisite.
+[Protocol](tokenizer-evidence/activation-preparation-001/inference-protocol-v1.json),
+[review](tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json).
+
+Before freezing, implement the final independent campaign decision wrapper to
+rebind all retained quality and accepted inference evidence, recompute the six
+fresh endpoints' full-coverage paired statistics and report raw endpoints/training
+costs/inference ratios. Apply only the declared strict quality criterion. Complete
+exact implemented-shape/optimizer/artifact accounting and current capacity, cached
+tokenizer/input and source/runtime/prerequisite applicability review. Latest free
+space15,552,487,424bytes leaves382,492,256bytes beyond the full projection. This is
+not a final launch audit. No activation plan has been frozen and no pilot launched.

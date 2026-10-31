@@ -1,0 +1,97 @@
+{
+  "kind": "activation_inference_prerequisite_review_v1",
+  "status": "passed",
+  "observed_at": "2026-10-31T16:39:35.123629+00:00",
+  "source_sha256": "be7e7830624a4d41a4cdf69824495c74d0752e7fe675194fcffcef5f452e4106",
+  "prior_dispatch_source_sha256": "b9766ec5a228714543580fb5a5def200b1c5c449982df3e9680e5c4c6064564b",
+  "runtime": {
+    "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "executable": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+    "packages": {
+      "torch": "2.14.1",
+      "numpy": "2.5.4",
+      "tiktoken": "0.14.0",
+      "omegaconf": "2.3.1"
+    }
+  },
+  "runtime_unchanged": true,
+  "changed_source": {
+    "src/research/tokenizer_activation_entry.py": {
+      "previous": "fd3cb08eac5fe17ac54303949566ed2be8ec8716b3d321d28c59101089954b72",
+      "current": "d1154696b7da8fdf8b55bcad8da3b2d192e4485b506076659993f90e714e5769"
+    },
+    "src/research/tokenizer_activation_inference.py": {
+      "previous": null,
+      "current": "06f4c96e110ce5b684f139165067c6b6f760d7a637b21e81732b3ff640f409b9"
+    },
+    "src/research/tokenizer_activation_inference_entry.py": {
+      "previous": null,
+      "current": "5731c7face1ecf8bd990cd44b61ac9cd75125883498e96a3760f38bcc48b8252"
+    },
+    "src/research/tokenizer_activation_timing.py": {
+      "previous": null,
+      "current": "bbcb16e13e3abed5f6bcb9c7e8ad17412392d93049467286313b7ef7f4020fae"
+    }
+  },
+  "existing_source_change_scope": "Entry design now binds the exact finite inference contract; no other existing source changed. Three new activation-specific modules use unchanged timing kernels, checkpoint loading and bounded writer/process primitives.",
+  "protocol": {
+    "path": "research/tokenizer-evidence/activation-preparation-001/inference-protocol-v1.json",
+    "sha256": "3db0d4911801c64e4cdd1cc2b3881b4433c205cdd507add45530bb79af523a09"
+  },
+  "tests": {
+    "passed": 65,
+    "review": {
+      "path": "research/tokenizer-evidence/activation-preparation-001/inference-tests-v1-review.json",
+      "sha256": "54ed159fd9afdd52f5ca58403e107c7444f0d2a70a3fa30a8f544ebb838dceec"
+    },
+    "guard": {
+      "elapsed_seconds": 37.77456858300138,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 180
+      },
+      "observation": {
+        "free_bytes": 15549624320,
+        "peak_rss_bytes": 241385472
+      },
+      "pid": 55884,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "implementation": [
+    "Finite seed/arm/batch/order and correctness-before-timing barrier; saved timing arithmetic, resource/cache bytes and summaries independently reconstructed",
+    "Fresh accepted H200 pair loader binds exact config/tokenizer/raw lineage, finite CPU values, selected seed/rate, actual FP32 MPS geometry and parameter storage; same fixed96 training IDs",
+    "Separate serial inference command requires all quality acceptance and retention/dispatch proofs. Child inherits locks and verifies parent/group; bounded process has cooperative parent monitoring and guarded child/parent review",
+    "Three immutable seed acceptance inventories, guard hashes and saved process descriptors support later invocations; changed/future/failed/orphan attempts stop continuation",
+    "Full quality binding replay and surviving checkpoint hashes checked before/after loading and during parent review; no checkpoint writes or cleanup"
+  ],
+  "test_scope": [
+    "Complete alternating pair sequence and median-of-seed-paired-ratios oracle; missing/reordered/invalid/tampered timings and cache/memory limits rejected",
+    "Actual CPU tensor finiteness and export config/tokenizer/raw-parent/purpose/half-life/step checks on tiny synthetic payloads",
+    "Connected3-seed child/worker/parent artifacts and guards with explicit approved-quality/process/loading/GPU callback doubles; actual bounded filesystem metadata and independent value review",
+    "Historical process evidence accepts saved descriptors across parent descriptor changes; mutated proof/weights, incomplete quality, STOP, orphan future attempts and process failures block progression",
+    "Previously passed dispatch/retention regression included because finite design binding changed"
+  ],
+  "nonclaims": [
+    "No actual MPS inference/model loading/performance measured",
+    "No corpus training or holdout scoring",
+    "No research checkpoint creation/deletion",
+    "No launch plan frozen or adoption decision",
+    "No closed campaign/fixture retried"
+  ],
+  "pending": [
+    "Final independent quality/cost decision wrapper",
+    "Exact implemented model/optimizer/artifact capacity, input/cache and source/runtime applicability audit",
+    "Complete executable campaign freeze before guarded pilots"
+  ],
+  "full_panel_required_free_bytes": 15169995168,
+  "current_free_bytes": 15552487424,
+  "observed_margin_bytes": 382492256,
+  "capacity_reconciled_for_launch": false,
+  "plan_frozen": false,
+  "research_training_launched": false,
+  "holdout_scored": false,
+  "next_action": "Campaign005 remains closed; MoE deferred. Activation finite inference protocol and three-seed runner/parent acceptance now pass65 tests including dispatch/retention regressions; read research/tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json. Next implement/test the final independent campaign decision wrapper: rebind all retained quality/dispatch/retention and accepted inference evidence, recompute full-coverage paired H200 statistics from all6 fresh endpoints, report raw scores/training costs/inference ratios, apply only the frozen strict quality criterion and preserve every fresh pair. Then complete exact implemented-model/optimizer/artifact/metadata high-water accounting (including inference inside256MiB metadata), current full-panel space>=15,169,995,168bytes, tokenizer cache/input identities and source/runtime/prerequisite applicability audit. Publish a complete executable frozen plan before2 guarded MPS pilots;6screens+6fresh only after accepted pilots/audited boundaries. Current inference integration uses explicit approved-quality/process/GPU/loading doubles, not a real benchmark or freeze. Do not rerun passed preparation or any closed numerical fixture without a concrete changed-code/failure need. Preserve selected/fresh/failure pairs and archives, closed holdout, one worker/fourthreads/strictMPS and4GiB RSS/6GiB driver/8GiB reserve; no paidcompute/subagents. Commit/push withoutforce."
+}
