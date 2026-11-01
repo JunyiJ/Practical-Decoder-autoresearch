@@ -6432,3 +6432,21 @@ independent statistical review. Keep every fresh raw/H200 pair. Evidence:
 quality001-slot05-result.json/evidence/, quality001-accepted-05.json,
 quality001-selection.json and quality001-boundary-result.json/guards in
 ffn-structure-preparation-001/.
+
+
+FFN quality001 slot06 accepted (2026-11-01T04:53:57.716984+00:00): first fresh SwiGLU672
+endpoint, seed187620011, frozen selected LR0.00125. It completed1,200 updates,
+1,228,800 targets and41H200 snapshots. Full-validation H200 CE is
+**4.700707486073** over34,278 targets. The paired ungated endpoint is pending;
+no paired fresh delta, adoption, rate reselection or interim stopping follows.
+
+Independent parent raw/optimizer/EMA/export/full-validation/cache audits, clean
+child exit and all guards passed. Training214.88seconds; worker296.82seconds,
+parent10.10seconds; peak worker RSS1.623GB/MPS driver2.510GB. This fresh raw/H200
+pair is permanently protected under the campaign retention policy. Both selected
+screen pairs, both pilots and all existing evidence remain intact. No deletion
+or test scoring occurred. Free14,178,803,712B exceeds the remaining13,951,923,794B
+projection. Next is slot07 ungatedSiLU1008, same fresh seed and LR. Complete the
+three frozen fresh pairs, all paired inference checks and final review. Evidence:
+quality001-slot06-result.json/evidence/ and quality001-accepted-06.json in
+ffn-structure-preparation-001/.
