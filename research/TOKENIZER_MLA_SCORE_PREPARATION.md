@@ -449,3 +449,32 @@ inference result or new numerical claim is made for this unexecuted driver.
 Evidence: quality001-slot06-result.json, quality001-slot06-evidence/ and
 quality001-accepted-06.json; driver quality001-fresh-inference.py in
 mla-score-preparation-001/. Keep the test holdout closed.
+
+
+### First fresh MLA score pair completed
+
+quality001 slot07 accepted at 2026-11-01T07:05:12.665572+00:00, completing the first
+fresh pair at seed198630011 and selected LR0.00125 for both arms. Multiplier1.0
+H200 CE is 4.699208080398, versus 4.712354865011 for0.5:
+unit-minus-half -0.013146784613nat/token across34278 aligned validation targets.
+Both endpoints completed1200updates/1,228,800training targets and41H200 snapshots
+and passed independent checkpoint/optimizer/EMA, full-validation and cache audits.
+This one-seed improvement does not establish adoption or justify interim stopping.
+Complete the other two frozen pairs and all three inference reviews before the
+independent strict-gate calculation; retain both raw/H200 pairs.
+
+Worker peak RSS1,648,738,304B and MPS driver2,518,482,944B remained within
+4GiB/6GiB limits; both guards finished without violations. Observed free
+11,848,216,576B exceeds remaining full-panel requirement
+11,319,330,144B. Slot08 (multiplier1.0, seed198630012,
+LR0.00125) has started in the frozen unit-first order for the second pair.
+
+The independent final-statistics driver was adapted from the completed FFN
+review outside frozen namespaces, with score identities and neutral handling
+of either gate outcome. It rechecks all12 accepted endpoints, all three
+inference reviews, aligned validation blocks, explicit independent bootstrap
+quantiles and the frozen gate. A passing gate requires a separate adoption
+review; the script cannot silently adopt. Syntax validation passed; it has
+not been executed and provides no new statistical conclusion yet. Evidence:
+quality001-slot07-result.json, quality001-slot07-evidence/, quality001-accepted-07.json
+and quality001-final-review.py in mla-score-preparation-001/. Holdout stays closed.
