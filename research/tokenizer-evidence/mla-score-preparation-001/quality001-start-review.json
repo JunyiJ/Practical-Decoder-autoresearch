@@ -1,0 +1,62 @@
+{
+  "status": "finite_quality_frozen_first_screen_started",
+  "observed_at": "2026-11-01T06:22:55.121344+00:00",
+  "plan": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-plan.json",
+    "sha256": "11a96aff9e9565686e73fc00b49e36049c62c1b198f3474960ef6dae89651ea9"
+  },
+  "freeze": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-freeze.json",
+    "sha256": "60268532622961d0cf59b85432ac46969e86592745f9526655ac24464e3790ac"
+  },
+  "integration": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/quality-integration001-review.json",
+    "sha256": "52cb928cf3c81723fa2fac4aa1e753c4de0da31ef38df8a2057a8f6b871c0e8b"
+  },
+  "pilot_retirement": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-pilot-retirement/completed.json",
+    "sha256": "085fbbb1011f734125308610860a870f06d537be51e36f377eaacaa20d87fe1a"
+  },
+  "preserved_retirement_execution": {
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/.retention/pilot/deletions.jsonl": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-pilot-retirement/execution/deletions.jsonl",
+      "sha256": "421b7e7fece50bf471caaf44df0915c3cc1f1c7570a44d9f023faf576ced6f78"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/.retention/pilot/guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-pilot-retirement/execution/guard.json",
+      "sha256": "16253759ac2fe61b9ad80d219f7e4577a4c8e68d9466b0da67aa007c58dd0f27"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/.retention/pilot/execution-review.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-pilot-retirement/execution/execution-review.json",
+      "sha256": "9294b850e1cd91e01850f41fb323e2af6edaae7333e558722ee023994a78fd4b"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/.retention/pilot/manifest.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-pilot-retirement/execution/manifest.json",
+      "sha256": "7be1d3c12d745b2f31ea2f3a55fadeb3c4b08832b0935e60a7b59b607e0198ee"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/.retention/pilot/inventory.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-pilot-retirement/execution/inventory.json",
+      "sha256": "7c215a63299a3e4ef6ce2cb6a599301fa34e96aad9fca059dc010e33b3d42d5e"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/.retention/pilot/receipt.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/quality001-pilot-retirement/execution/receipt.json",
+      "sha256": "72f346e7dc49ee041cf2776fa62f4742ab3c7e50d5f7e025a4cc4140c5154e42"
+    }
+  },
+  "first_spec": {
+    "arm": "half",
+    "batch_layout": "paired_blocks512",
+    "batch_size": 8,
+    "context": 128,
+    "lr": 0.000625,
+    "policy": "tokenizer_mla_score_transfer_v1",
+    "seed": 198630002,
+    "stage": "screen",
+    "steps": 1200,
+    "width": 256
+  },
+  "active_exec_session": 43352,
+  "all_frozen_source_hashes_unchanged": true,
+  "quality_adopted": false,
+  "holdout_scored": false
+}

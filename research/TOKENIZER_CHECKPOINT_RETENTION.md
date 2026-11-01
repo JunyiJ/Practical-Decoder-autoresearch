@@ -243,3 +243,16 @@ is authorized before screening; rehash all retained evidence and measure capacit
 Never remove pilot001 failure artifacts or change either frozen source. The
 small-file test itself deletes no scientific weights. Every fresh pair and both
 selected screen pairs remain protected; there is no confirmation cleanup boundary.
+
+## Completed MLA score pilot retirement before quality001
+
+The independent additive quality prerequisites and both pilot inference reviews
+closed before retirement. Exactly four successful pilot002 raw/H200 checkpoint
+files (1,118,328,272B) were removed by the tested locked executor. Complete
+path/size/hash manifest, durable journal, resource guard and copied terminal
+execution evidence are in mla-score-preparation-001/quality001-pilot-retirement/.
+All26,448 other research files were rehashed unchanged. The four retired pilot
+weights cannot be reloaded; their original acceptance/config/validation/source
+receipts remain immutable. Failed pilot001, selected/fresh models and existing
+archives were excluded. quality001 now binds completed retirement evidence rather
+than requiring the old loose paths. Do not rerun a closed pilot controller.

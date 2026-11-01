@@ -6764,3 +6764,57 @@ pilots as a permanent storage blocker or shrink the confirmation panel.
 Evidence: mla-score-preparation-001/retention-boundary001, scientific-seed-census-001,
 pilot001-failure-review, pilot002-plan/review/final-review and preserved failed/
 completed metadata copies. No scientific quality endpoint has been launched.
+
+## Full finite score quality comparison frozen and started
+
+Additive code in research/mla_score_quality_v1 reuses the frozen score runtime,
+bounded writer, full-validation/cache arithmetic and tested retention executor.
+All74 finite-rule/config/selection/retention checks passed. Independent additive
+acceptance reloaded both real pilot raw/H200 pairs and checked optimizer/EMA,
+full-validation and cached inference before closing their dependencies. Neither
+frozen pilot source nor the earlier failed attempt was modified or rerun.
+
+The exact successful-pilot retirement removed four audited files totaling
+1,118,328,272B under global/campaign locks. Independent payload/inference audits,
+path/size/SHA256 allowlist, fsynced intent/deletion journal and post-verification
+confirmed26,448 other research files unchanged. The failed pilot001 evidence,
+selected models, all fresh pairs and archives remain protected. These four pilot
+weights cannot be restored; original receipts and copied deletion evidence remain.
+
+The final quality freeze measured14,089,822,208B free against13,555,990,528B:
+eight560MiB weight allowances +256MiB complete metadata +8GiB reserve. Each active
+trajectory has separate448MiB raw/112MiB H200 caps and a576MiB process-output cap.
+Declared active campaign metadata groups total128,188,416B; bounded external
+anchors/reviews/retirement shards add at most32MiB, together below the256MiB
+allowance. Temporary publication is charged; checkpoint publication adds names,
+not another payload. No speculative pilot cleanup or partial panel is needed.
+
+quality001 freezes all twelve1200-update endpoints: six equal-budget screens,
+three rates per multiplier (0.000625/0.00125/0.0025), followed by three reserved
+fresh paired seeds. Save each arm's minimum full-validation H200 CE, lower-LR tie
+break, only after all six screens independently pass. Then audit and retire only
+four losing screen pairs; retain both selected screen pairs and all six fresh
+raw/H200 trajectories. No extension, replacement seeds, retry or cost-only route.
+All three fresh pairs require paired inference and independent final statistics.
+The gate remains mean(unit-half)<-0.02, every fresh delta<0, and all simultaneous
+conditional-text upper bounds<0 at2048/4096/8192 tokens (2000 common PCG64 draws).
+
+First screen slot00 (multiplier0.5, LR0.000625) has started under the frozen hash.
+No quality result or adoption claim is made here. Both score namespaces are now
+frozen; continue the exact serial prefix and actual process/anchor state, keeping
+the test holdout closed. Evidence: quality-integration001, quality001-pilot-retirement,
+quality001-plan/freeze/preflight/capacity/start-review in mla-score-preparation-001.
+
+### First accepted quality endpoint
+
+quality001 slot00 (multiplier0.5, LR0.000625, screening seed198630002) completed
+all1200updates/1,228,800 targets and41H200 snapshots. Independent parent checkpoint,
+optimizer/EMA, full-validation and cache checks passed. H200 validation CE is
+4.896530022nat/token across34278 targets. This is one
+screening endpoint, not a candidate comparison, selected rate or adoption result.
+Remaining capacity fits: observed13514715136B versus required
+12996825432B after charging the accepted retained pair.
+The next frozen slot01 (multiplier1.0 at the same LR) has started serially. Keep
+all six screens through selection and every fresh pair through final review.
+Evidence: quality001-slot00-result.json and its preserved metadata, plus the
+external quality001-accepted-00 anchor. No test scoring or interim selection.
