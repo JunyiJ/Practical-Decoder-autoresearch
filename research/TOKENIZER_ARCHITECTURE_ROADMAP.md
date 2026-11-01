@@ -148,3 +148,51 @@ real quality dispatch, external acceptance anchors and the exact retention
 boundary must be connected and checked before final finite quality freeze.
 Evidence: pilot-pair-inference-001-plan/result/review/guard.json and
 quality-remaining-capacity-001.json. SiLU remains adopted; no norm quality result.
+
+## Block-normalization comparison closed, November 1 UTC / October 31 Los Angeles
+
+All six LR screens, six fresh confirmations and three fresh inference pairs
+completed with independent acceptance. Both arms selected LR0.00125.
+
+| Fresh seed | RMSNorm H200 CE | LayerNorm H200 CE | LayerNorm minus RMSNorm |
+|---|---:|---:|---:|
+| 374011 | 4.709659 | 4.706465 | -0.003194 |
+| 374012 | 4.728085 | 4.720328 | -0.007757 |
+| 374013 | 4.715869 | 4.710494 | -0.005376 |
+
+Mean delta is **-0.00544214 nat/token**. Every seed improves and simultaneous
+conditional-text upper bounds are negative at all declared block sizes:
+2048: -0.00382454; 4096: -0.00420806; 8192: -0.00391838. The required mean
+delta below -0.02 is not met. **Do not adopt LayerNorm; retain RMSNorm and SiLU.**
+This is a small consistent validation improvement that fails the prospective
+practical-effect threshold, not a claim of no effect. Independent grouping,
+PCG64 resampling and linear quantiles agreed with the frozen arithmetic within1e-12.
+Intervals condition on these trained seeds and reused text; they do not establish
+population-seed or holdout confidence. Centering and learned bias changed jointly.
+
+All three H200 inference pairs passed full/cache/reset checks for batches1/8.
+Median across the three paired timing medians (milliseconds,32-token prefill /
+64-token decode) was:
+
+| Batch | RMSNorm | LayerNorm |
+|---|---:|---:|
+| 1 | 8.720 / 275.931 | 8.664 / 284.162 |
+| 8 | 13.942 / 290.713 | 14.104 / 292.302 |
+
+LayerNorm batch1 decode was slower in all three pairs; batch8 was mixed.
+Cache allocations are identical (196608B/item). Timings are descriptive, with
+two models resident and allocation/loading excluded; there is no cost-only
+adoption route. All guards passed; approximately13.35GB remained free.
+Every fresh raw/H200 pair, both selected screens and original failed pilot
+are preserved. No additional checkpoint deletion or test scoring occurred.
+A STOP marker closes quality001; do not rerun its training, inference or review.
+Evidence: quality001-final-review.json, quality001-fresh-inference-* and
+quality001-closure.json in tokenizer-evidence/block-norm-preparation-001/.
+
+At this boundary, the next review compares residual topology with a bounded
+schedule/horizon hypothesis. Parallel separate-norm blocks were worse in the
+closed character experiments (+0.026757/+0.013555 at widths64/256); a subword MLA
+comparison therefore needs a specific transfer rationale, not a presumed gain.
+Scaled table sharing already failed the closed BPE GQA neutrality test; do not
+repeat it solely to save disk. MoE remains deferred pending a complete feasible
+capacity projection. No next hypothesis or training grid is frozen here.

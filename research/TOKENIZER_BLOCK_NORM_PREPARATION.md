@@ -1,16 +1,11 @@
 # Tokenizer block-normalization preparation
 
-Status: preparation, October31,2026. Versioned v2 model/cache/checkpoint,
-MPS repeat/resume and generated-text full-batch/H200 prerequisites have passed.
-Pure finite-stage/selection/statistical rules pass67 CPU checks; exact configuration,
-source/environment and train/validation preparation bindings pass66 more. The executable
-controller and scored artifact/validation provenance gates remain pending. Synthetic
-append-only ledger mechanics pass42 checks; real retained-artifact acceptance now
-passes52 checks and real readonly worker/parent transport passes22; actual campaign
-integration remains pending; retained-pair inference passes21 and scientific seeds are reserved; no quality
-campaign has launched and the finite launch plan is not frozen. Retained-fixture
-validation passes34 checks after preserving/correcting its transfer failure. Cache
-cleanup now provides sufficient capacity against the current full-panel projection. Historical sections below retain their dated scope.
+Status: closed, November1 UTC / October31 Los Angeles. All12 quality endpoints
+and3 fresh inference pairs passed independent review. LayerNorm mean fresh
+delta-0.00544214 fails the frozen -0.02 practical-effect threshold despite all
+seeds and conditional-text bounds improving. Retain RMSNorm and SiLU. The root
+has STOP; all original failures and selected/fresh checkpoints remain protected.
+Historical sections below retain their dated scope.
 
 ## Selected question and alternatives
 
@@ -1167,3 +1162,45 @@ Quality001 slot08 accepted (2026-10-31T23:42:26.336186+00:00): layer_matched_eps
 Quality001 slot09 accepted (2026-10-31T23:50:51.285184+00:00): rms_incumbent, seed374012, LR0.00125, 1,200 updates/1,228,800 targets, H200 full-validation CE4.728084822601. Independent parent tensor/optimizer/EMA/validation/cache audits passed and the child exited cleanly. This is one endpoint; no adoption or partial-screen selection. Evidence: quality001-slot09-result.json and accepted-09.json.
 
 Quality001 slot10 accepted (2026-10-31T23:57:00.233968+00:00): rms_incumbent, seed374013, LR0.00125, 1,200 updates/1,228,800 targets, H200 full-validation CE4.715869467650. Independent parent tensor/optimizer/EMA/validation/cache audits passed and the child exited cleanly. This is one endpoint; no adoption or partial-screen selection. Evidence: quality001-slot10-result.json and accepted-10.json.
+
+Quality001 slot11 accepted (2026-11-01T00:06:08.450927+00:00): layer_matched_epsilon, seed374013, LR0.00125, 1,200 updates/1,228,800 targets, H200 full-validation CE4.710493693825. Independent parent tensor/optimizer/EMA/validation/cache audits passed and the child exited cleanly. This is one endpoint; no adoption or partial-screen selection. Evidence: quality001-slot11-result.json and accepted-11.json.
+
+## Block-normalization comparison closed, November 1 UTC / October 31 Los Angeles
+
+All six LR screens, six fresh confirmations and three fresh inference pairs
+completed with independent acceptance. Both arms selected LR0.00125.
+
+| Fresh seed | RMSNorm H200 CE | LayerNorm H200 CE | LayerNorm minus RMSNorm |
+|---|---:|---:|---:|
+| 374011 | 4.709659 | 4.706465 | -0.003194 |
+| 374012 | 4.728085 | 4.720328 | -0.007757 |
+| 374013 | 4.715869 | 4.710494 | -0.005376 |
+
+Mean delta is **-0.00544214 nat/token**. Every seed improves and simultaneous
+conditional-text upper bounds are negative at all declared block sizes:
+2048: -0.00382454; 4096: -0.00420806; 8192: -0.00391838. The required mean
+delta below -0.02 is not met. **Do not adopt LayerNorm; retain RMSNorm and SiLU.**
+This is a small consistent validation improvement that fails the prospective
+practical-effect threshold, not a claim of no effect. Independent grouping,
+PCG64 resampling and linear quantiles agreed with the frozen arithmetic within1e-12.
+Intervals condition on these trained seeds and reused text; they do not establish
+population-seed or holdout confidence. Centering and learned bias changed jointly.
+
+All three H200 inference pairs passed full/cache/reset checks for batches1/8.
+Median across the three paired timing medians (milliseconds,32-token prefill /
+64-token decode) was:
+
+| Batch | RMSNorm | LayerNorm |
+|---|---:|---:|
+| 1 | 8.720 / 275.931 | 8.664 / 284.162 |
+| 8 | 13.942 / 290.713 | 14.104 / 292.302 |
+
+LayerNorm batch1 decode was slower in all three pairs; batch8 was mixed.
+Cache allocations are identical (196608B/item). Timings are descriptive, with
+two models resident and allocation/loading excluded; there is no cost-only
+adoption route. All guards passed; approximately13.35GB remained free.
+Every fresh raw/H200 pair, both selected screens and original failed pilot
+are preserved. No additional checkpoint deletion or test scoring occurred.
+A STOP marker closes quality001; do not rerun its training, inference or review.
+Evidence: quality001-final-review.json, quality001-fresh-inference-* and
+quality001-closure.json in tokenizer-evidence/block-norm-preparation-001/.
