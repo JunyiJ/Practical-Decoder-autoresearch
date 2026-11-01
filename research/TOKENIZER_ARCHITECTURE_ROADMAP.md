@@ -471,3 +471,13 @@ additive finite1200-step orchestration, real pilot integration and exact pilot
 retirement before full-panel capacity/seed recheck and quality freeze. See
 TOKENIZER_LOCAL_MIX_PREPARATION.md for census failure preservation, corrected
 entry point,521 frozen sources and reserved198970 seed identities.
+
+
+Local causal FFN mixing quality001 is now frozen and the first1200-step screen
+is running.75 finite checks plus real pilot payload/full-validation/cache audits
+passed in additive local_mix_quality_v3; two earlier copied config-check failures
+remain preserved without changing the tested model. Exact pilot retirement
+reclaimed1,118,415,676B with27,372 retained files verified. The plan binds531
+sources, six equal-LR screens and all three fresh confirmation pairs, with
+strict original quality gates and closed test. No quality or adoption conclusion
+at launch. See TOKENIZER_LOCAL_MIX_PREPARATION.md for the exact freeze and routing.

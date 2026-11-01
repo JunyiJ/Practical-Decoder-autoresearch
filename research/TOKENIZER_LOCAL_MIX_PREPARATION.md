@@ -169,3 +169,36 @@ payloads/cache, audit exact successful-pilot retirement, recheck actual complete
 capacity and unused seeds, then final quality freeze. No partial panel, grid
 extension, retry, guard relaxation or metadata scaffolding absent a failure.
 Retain the adopted recipe; no scientific quality result or active worker.
+
+
+## Finite quality comparison frozen and started
+
+The separately versioned research/local_mix_quality_v3 runner passed75 finite
+contract/statistics/retention checks and real pilot raw/H200, optimizer/RNG/EMA,
+full-validation and raw/H200 cache/reset audits. The first two integration
+attempts stopped in a copied config assertion before any quality training: v1
+expected an explicit ffn_hidden_norm field; v2 expected an optional product-norm
+signature. Both original namespaces, plans/logs/reviews are preserved closed.
+The v3 check uses the actual inherited resolve_ffn_hidden_norm function with
+OmegaConf, which returns none for the exact local-mixing policy. All521 accepted
+pilot sources remain unchanged;531 sources bind the active quality plan.
+
+Exact successful-pilot retirement reclaimed1,118,415,676B and verified27,372
+other retained files. The original pilot receipts remain immutable; absent weights
+resolve through quality001-pilot-retirement. No selected/fresh/failure weight
+was removed. Freeze observed14,666,792,960B free versus the complete13,555,990,528B
+requirement, including8GiB reserve and256MiB complete metadata/transient budget.
+Recheck actual remaining full-panel capacity at every dispatch.
+
+quality001-freeze SHA cf4b0db78b3ed04dd623f6ca4ba0fd236da2971a4faf0c7861d78ecc8449376e
+binds exactly six1200-step equal-LR screens followed by three fresh pairs, saved
+per-arm minimum full-validation H200 CE/lower-LR ties, exact losing-screen
+retirement, three paired inference reviews and independent final statistics.
+Slot00 has started. Panel198970 pilot/evaluation used; screen002 now in use;
+fresh011/012/013 and bootstrap004 unused at launch. No pilot-loss selection,
+grid extension, retry or interim adoption. Use research.local_mix_quality_v3.
+quality_execution and the exact freeze SHA; poll actual worker/anchor state
+before any new dispatch. Prepared quality001-fresh-inference003.py and
+quality001-final-review003.py run only after all12 endpoints are accepted.
+The candidate adds3072 parameters and8192B cache per item; this is not a
+parameter-matched comparison. No quality result or adoption is claimed yet.

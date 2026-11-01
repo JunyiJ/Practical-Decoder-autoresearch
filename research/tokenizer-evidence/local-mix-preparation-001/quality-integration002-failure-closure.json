@@ -1,0 +1,15 @@
+{
+  "status": "closed_pretraining_optional_contract_key_failure",
+  "review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/quality-integration002-review.json",
+    "sha256": "9bf56bd6a394d0583f9ce99a96e0bc86ee742e5b49a9cbfbb06a05f37848aad1"
+  },
+  "source_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/quality-integration002-plan.json",
+    "sha256": "23ac567f8eea7e66e3e93c687ab85eaa864ada2cbb7a82449ac2ad7bb5e6727a"
+  },
+  "no_retry": true,
+  "original_source_preserved": true,
+  "training_launched": false,
+  "reason": "Local mixing contract intentionally omits the product-normalization signature. Third version uses actual runtime resolve_ffn_hidden_norm(OmegaConf model), verified in inherited module; no model/runtime change."
+}

@@ -1,0 +1,34 @@
+.......................................................................F [ 96%]
+...                                                                      [100%]
+=================================== FAILURES ===================================
+_____________________________ test_finite_configs ______________________________
+
+    def test_finite_configs():
+     seeds=plan()['seeds']
+     for a in rules.RATES:
+      for b in rules.RATES:
+       specs=rules.screen_specs(seeds)+rules.confirmation_specs(seeds,dict(zip(rules.ARMS,(a,b))))
+       for i,spec in enumerate(specs):
+        out=q.ROOT/f'evidence/quality/{i:02d}';cfg=c.trial_config(out,spec,seeds);c.validate_trial_config(cfg,out,spec,seeds)
+        t=OmegaConf.create(cfg).training;assert schedule_contract(t)['total_steps']==averaging_contract(t)['total_steps']==1200
+        assert t.lr_schedule.start_step==800 and t.weight_averaging.start_step==800 and t.weight_averaging.interval==10
+        from research.local_mix_v1.runtime.models.block_norm import contract
+>       assert cfg['model']['attention_logit_scale']==.5 and contract(cfg['model'])['ffn_product_normalization']['kind']=='none'
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'ffn_product_normalization'
+
+research/local_mix_quality_v2/test_execution.py:29: KeyError
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345
+  /Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; hydra
+    self._mark_plugins_for_rewrite(hook, disable_autoload)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED research/local_mix_quality_v2/test_execution.py::test_finite_configs
+1 failed, 74 passed, 1 warning in 0.18s
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/quality-integration002.py", line 43, in <module>
+    assert result['status']=='passed';print(json.dumps(dict(status='passed',tests=len(report.tests),actual_pilot_arms=list(audits))),flush=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

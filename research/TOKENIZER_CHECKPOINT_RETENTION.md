@@ -523,3 +523,14 @@ configuration reads retained plan/config JSON and creates fresh weights. Keep
 all original receipts, selected models, every fresh confirmation and all other
 artifacts. Apply only exact size/hash audit, worker locks, durable deletion
 journal and survivor verification; never rerun these closed prerequisites.
+
+
+Local-mixing quality001-pilot-retirement is authorized for exactly both successful
+20-update pilot raw/H200 pairs,1,118,415,676B. Both accepted payloads passed the
+separately versioned quality-integration003 real optimizer/EMA/validation/cache
+audit and75 finite-contract tests. The final inference/statistics source is
+prepared independently; pilot weights have no remaining live loading dependency
+after the retirement operation's last independent re-audit. Preserve original
+receipts/source/logs and every selected/fresh/failure artifact. Use the tested
+exact pilot boundary with global/run locks, durable journals and full survivor
+verification. Later manifest resolves absent pilot paths; no pilot rerun.
