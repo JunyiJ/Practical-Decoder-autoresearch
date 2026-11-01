@@ -443,3 +443,12 @@ all warmup model-resume001 publication-failure checkpoints, remain protected.
 Actual post-cleanup free14,070,472,704B enabled both warmup resource pilots.
 The new pilot weights remain present pending future quality-source dependency
 closure and a separate exact successful-pilot retirement audit.
+
+
+Completed warmup quality001 successful-pilot retirement: exactly four raw/H200
+files reclaimed1,118,332,368B after75 finite integration checks and actual
+pilot payload/parent/cache audits. All27,049 other research files verified
+unchanged under shared locks and guards. Original receipts remain immutable;
+quality001-pilot-retirement manifest/journal explains intentional absence.
+Selected/fresh/failed weights and remaining numerical archives remain protected.
+Do not rerun closed pilot/integration commands against retired pilot paths.

@@ -7328,3 +7328,37 @@ pilot tensor dependencies, audit exact successful-pilot retirement, remeasure
 complete capacity and verify unused scientific seeds before final quality freeze.
 Keep warmup100 versus none, LR0.000625/0.00125/0.0025, cooldown/H200start800,
 H200interval10/41snapshots, all frozen gates, confirmations and resource guards.
+
+
+## Warmup finite quality comparison frozen
+
+Warmup quality001 is frozen after75 integration checks and real accepted pilot
+raw/H200/optimizer/RNG/full-validation/cache audits passed. Both arms have88 EMA
+tensors; pilot-to-quality impersonation and mutated source bindings were rejected.
+All487 predecessor sources are unchanged;497 Python sources are bound by the
+additive warmup_quality_v1 contract. The only arm difference is the declared
+100-update warmup schedule, with equal bounded peak-LR tuning.
+
+Exact successful-pilot retirement reclaimed1,118,332,368B after tensor dependencies
+closed. All27,049 other research files verified unchanged. Original pilot receipts
+remain immutable; absent weights resolve through quality001-pilot-retirement's
+manifest/journal and portable runtime evidence, and cannot be restored or rerun.
+The final freeze measured14,039,228,416B free against13,555,990,528B required,
+including all retained output/serialization/metadata allowances and8GiB reserve.
+
+Freeze SHA:9f890ee1e534b966713139c9f4740488573133977b5416e43315e94df9775f94.
+The first screen has been dispatched through research.warmup_quality_v1.quality_execution.
+Keep exactly six1200-update screens at LR0.000625/0.00125/0.0025, persist each
+arm's minimum full-validation H200 CE/lower-LR tie selection, independently
+re-audit and retire only four losing screen pairs, then all six fresh trajectories
+in frozen paired order, three paired inference reviews and independent statistics.
+No grid extension, pilot-loss selection, partial panel, retry or adoption from
+incomplete results. H200 start800/interval10 yields41 snapshots per endpoint.
+Screen/fresh seeds were unused at freeze; screen198850002 is now in use.
+Fresh198850011/012/013 and bootstrap198850004 remain unused at launch.
+
+Read current process/log/acceptance-anchor state before any dispatch. Poll the
+owned active worker, never duplicate it. Recheck actual remaining full-panel
+capacity for each slot. Preserve selected models, every fresh pair, failures,
+immutable sources/receipts and the closed test holdout. No new scientific quality
+result or adopted-recipe change is claimed at launch.
