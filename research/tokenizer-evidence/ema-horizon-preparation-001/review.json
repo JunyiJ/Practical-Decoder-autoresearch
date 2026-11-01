@@ -1,0 +1,219 @@
+{
+  "status": "hypothesis_selected_not_launch_frozen",
+  "observed_at": "2026-11-01T00:13:05.875700+00:00",
+  "runner": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ema-horizon-preparation-001/review.py",
+    "sha256": "748e729fe4ee5c7452ea9ed3631f9fe5821dcef74fdd12c1cf83d5711797c38f"
+  },
+  "references": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/PARALLEL_BLOCK_RESULTS.md",
+      "sha256": "1027cc4cd97cc49e6574dcaf0a223e8248873423ceb8d8b20c20b2f9891ddbc2"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_HORIZON_RESULTS.md",
+      "sha256": "51d771260e8bc9b235c0e2930ef9818b5ece158158555ca91be9f75efa3bf094"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/AVERAGING_QUALITY_RESULTS.md",
+      "sha256": "622802eebfa1c49e39cafd080f196f9a4678227303cb3f44d0985d0ed2bc670e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_MLA_RESULTS.md",
+      "sha256": "a3e3a37943cad535a4d687fb8f7eee444b94bf2f65bf6af1812e87165c41633b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_TABLE_RESULTS.md",
+      "sha256": "a814d5a497e4f92c14aac0128576e9094597150d9c32cffa629667a443fcb29d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_ARCHITECTURE_ROADMAP.md",
+      "sha256": "d3c014b9a887454c0bd42731ff27b6587dd1995bface26aa0a2c28f3df570f69"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/block-norm-preparation-001/shape-storage-review.json",
+      "sha256": "33e6ce68c024fb3f2c1a9ebb7b1ec621b9e940a1656da2ed25e7792a64246176"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/block-norm-preparation-001/quality001-final-review.json",
+      "sha256": "6107d2cc937d2a8fded8e67a5d086121cb5226ee0bb16ffd3e5aae5b06f00ee3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/weight_averaging.py",
+      "sha256": "c314f8771262e3e0ba60e3d6382d76b7026d006aeae3d0e7abe6f7282245cbab"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/artifact_acceptance.py",
+      "sha256": "a711bba0c174b3f33080fadeedbbfbecb7e3c6836c4278b1525c8954d9072e3c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/validation.py",
+      "sha256": "b40f2c1139c9b2b41732518518e3684e7e85f14fdec1f3a6fe920640e44fd645"
+    }
+  ],
+  "frozen395_sources_unchanged": true,
+  "selected_hypothesis": "H100 versus H200 returned weights on the same new 1200-update RMSNorm/SiLU MLA trajectories",
+  "initial_snapshot_weights": {
+    "H100": 0.0625,
+    "H200": 0.25
+  },
+  "interpretation": "The shorter 400-update EMA tail retains more initialization mass under H200 than the historical 1000-update character tail. Lower lag is a hypothesis, not an established quality benefit.",
+  "recent_rms_curves": [
+    {
+      "slot": 6,
+      "seed": 374011,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-block-norm-v2-quality-001/evidence/quality/06/metrics.jsonl",
+        "sha256": "03c9d933ae7dec913ec43c41265b66858e41557413eef61793ed0878d407d244"
+      },
+      "sampled_online_validation": [
+        {
+          "step": 0,
+          "ce": 10.821484661102295
+        },
+        {
+          "step": 300,
+          "ce": 5.399602603912354
+        },
+        {
+          "step": 600,
+          "ce": 4.858070707321167
+        },
+        {
+          "step": 900,
+          "ce": 4.793834114074707
+        },
+        {
+          "step": 1199,
+          "ce": 4.691730690002442
+        }
+      ],
+      "accepted_h200_ce": 4.709659289210885,
+      "limitation": "Online sampled losses are diagnostics, not full-validation checkpoint-selection evidence."
+    },
+    {
+      "slot": 9,
+      "seed": 374012,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-block-norm-v2-quality-001/evidence/quality/09/metrics.jsonl",
+        "sha256": "65ac2d72ce557564fb41fdc4f6960259cf9ff5014c69de33be6c4c71ec322e5b"
+      },
+      "sampled_online_validation": [
+        {
+          "step": 0,
+          "ce": 10.817288970947265
+        },
+        {
+          "step": 300,
+          "ce": 5.264322948455811
+        },
+        {
+          "step": 600,
+          "ce": 4.876710844039917
+        },
+        {
+          "step": 900,
+          "ce": 4.769002294540405
+        },
+        {
+          "step": 1199,
+          "ce": 4.697972965240479
+        }
+      ],
+      "accepted_h200_ce": 4.728084822600839,
+      "limitation": "Online sampled losses are diagnostics, not full-validation checkpoint-selection evidence."
+    },
+    {
+      "slot": 10,
+      "seed": 374013,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-block-norm-v2-quality-001/evidence/quality/10/metrics.jsonl",
+        "sha256": "ae1c299c017bb74610effe754a81b006ce8e391a5529b609425250dfd4e7285d"
+      },
+      "sampled_online_validation": [
+        {
+          "step": 0,
+          "ce": 10.829580116271973
+        },
+        {
+          "step": 300,
+          "ce": 5.345976686477661
+        },
+        {
+          "step": 600,
+          "ce": 4.88253116607666
+        },
+        {
+          "step": 900,
+          "ce": 4.763876819610596
+        },
+        {
+          "step": 1199,
+          "ce": 4.679635095596313
+        }
+      ],
+      "accepted_h200_ce": 4.715869467650019,
+      "limitation": "Online sampled losses are diagnostics, not full-validation checkpoint-selection evidence."
+    }
+  ],
+  "alternatives": {
+    "parallel_residual": "Deferred: historical character deltas positive at both widths and no specific new MLA benefit established.",
+    "longer_training": "Deferred: prior BPE GQA extension degraded; current MLA sampled loss still decreases, so neither early stopping nor extension is established.",
+    "table_tying": "Closed negative BPE comparison; do not retry for capacity.",
+    "moe": "Deferred: full capacity still unresolved."
+  },
+  "proposed_panel": {
+    "pilot_trajectories": 1,
+    "quality_trajectories": 3,
+    "new_fresh_seeds_required": true,
+    "outputs_per_trajectory": [
+      "raw_with_both_ema_states",
+      "H100",
+      "H200"
+    ],
+    "learning_rate": 0.00125,
+    "steps": 1200,
+    "cooldown_start": 800,
+    "ema_start": 800,
+    "ema_interval": 10,
+    "half_lives": [
+      100,
+      200
+    ],
+    "snapshots": 41,
+    "selection": "Fixed H100 candidate, no screen or LR reselection; identical online training and optimizer for both outputs.",
+    "adoption": "Mean paired H100-minus-H200 CE below -0.02; each seed below zero; all simultaneous 2048/4096/8192 conditional-text upper bounds below zero. No cost-only route."
+  },
+  "capacity": {
+    "parameters": 28492416,
+    "persistent_buffer_bytes": 65536,
+    "optimizer_tensor_bytes": 216929456,
+    "raw_payload_bytes": 558903984,
+    "raw_plus_two_exports_payload_bytes": 786974384,
+    "per_trajectory_allowance_bytes": 1051158733,
+    "trajectories_retained_including_pilot": 4,
+    "reserve_bytes": 8589934592,
+    "metadata_bytes": 268435456,
+    "required_free_bytes": 13063004980,
+    "observed_free_bytes": 13361377280,
+    "headroom_bytes": 298372300,
+    "fits_projection": true,
+    "cleanup_credit_bytes": 0,
+    "launch_permitted": false
+  },
+  "concrete_contract_work": [
+    "Versioned averaging-only request and acceptance adapter outside frozen namespaces.",
+    "Explicit bounded raw-file allowance above 512MiB: dual-EMA raw tensor payload alone is 558903984B; never loosen old 512MiB validators.",
+    "Verify online weights/optimizer/RNG and H200 unchanged by extra shadow tracker; CPU recurrence and resume/export/parent/cache checks.",
+    "Reuse unchanged scoring/statistical/guard/writer primitives with exact new output bindings; no new generic ledger.",
+    "Fresh-seed census, finite pilot freeze, real guarded pilot then complete quality capacity/freeze."
+  ],
+  "training_launched": false,
+  "checkpoints_loaded": false,
+  "holdout_scored": false,
+  "deletion_performed": false,
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ema-horizon-preparation-001/review-guard.json",
+    "sha256": "c466de2cb1757b175e25b7bd2b8d43e35c16b1c0c5d59f1030fda80967839964"
+  }
+}
