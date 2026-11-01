@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/mla_score_v1/pilot.py", line 169, in <module>
+    elif args.mode=='worker':worker(args)
+                             ~~~~~~^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/mla_score_v1/pilot.py", line 102, in worker
+    assert base.bind_data()==plan['data']
+           ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'bind_data'

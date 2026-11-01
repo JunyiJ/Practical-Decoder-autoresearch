@@ -185,3 +185,50 @@ No scientific pilot/quality plan is frozen and no scientific worker is running.
 Evidence: mla-score-preparation-001/trainer-worker001, trained-inference001,
 worker-archive001, capacity003 and worker003-review.json; implementation in
 research/mla_score_v1. No new ledger framework was introduced.
+
+## Finite resource pilots completed; quality freeze is next
+
+The narrow pilot and losing-screen retention test passed using the bounded,
+locked executor and tiny disposable byte files. Incomplete or failed stages,
+wrong saved LR selection, aliasing, fresh-confirmation paths, missing evidence,
+and retry attempts were rejected. Protected sentinels and all remaining evidence
+were unchanged. This tests eligibility/file handling; actual retirement still
+requires independent complete payload/inference/selection audits.
+
+A read-only census reserved pilot198630001, screen198630002, fresh198630011/12/13,
+evaluation198630003 and bootstrap198630004 after scanning42,354 recorded files
+(3,789,456,073B) with no collisions. No seed was chosen using a quality result.
+The first frozen pilot wrapper (pilot001) stopped before config publication,
+model construction or updates because its path variable shadowed the imported
+data-contract module. Its source, plan, log and STOP remain preserved and closed.
+The separate pilot002 wrapper uses an explicit data_contract alias; static
+regression and real execution confirm the correction. Its new frozen root carries
+forward the explicitly unconsumed reserved seed panel. No historical fixture was
+reopened and no guard or validator was weakened.
+
+Both pilot002 arms completed20updates/20,480 training targets and eight H200
+snapshots at LR0.0025. Independent parent acceptance and full-validation coverage
+passed, followed by complete paired cache/reset/inference barriers and timing.
+Worker process times were40.57s/47.34s; parent acceptance4.81s/4.39s, below600s
+per trajectory. Peak worker RSS was1,490,141,184B and MPS driver2,510,094,336B,
+below4GiB/6GiB. Pilot losses are excluded from scientific LR selection and quality
+conclusions. The test holdout was never scored.
+
+All pilot-bound source bytes remain unchanged. research/mla_score_v1 is now a
+frozen pilot namespace; final quality code must be additive outside it. The planned
+quality scope remains six1200-step screens (three rates per arm), then three fresh
+paired seeds, with identical prospective adoption gates and no extension.
+Screen and fresh seeds are reserved and still unused.
+
+Actual free space at final review: 12513693696B. The two accepted pilot raw/H200
+pairs occupy1118328272B and remain protected until dependent preparation closes.
+After exact successful-pilot retirement, prospective free would be13632021968B
+against the complete13,555,990,528B requirement, margin76031440B.
+This is conditional recovery credit, not completed deletion or launch authority.
+Use the tested exact boundary after independent audits, measure actual space,
+and freeze the full quality plan before training. Do not treat retained eligible
+pilots as a permanent storage blocker or shrink the confirmation panel.
+
+Evidence: mla-score-preparation-001/retention-boundary001, scientific-seed-census-001,
+pilot001-failure-review, pilot002-plan/review/final-review and preserved failed/
+completed metadata copies. No scientific quality endpoint has been launched.

@@ -1,0 +1,30 @@
+{
+  "status": "closed_before_training_wrapper_namespace_failure",
+  "root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-score-pilot-001",
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/mla_score_v1/pilot.py",
+    "sha256": "b7ea52c934b5668f88bb0669c84649d1c82cbd035b0ca88af2566a372ee06b51"
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/pilot001-plan.json",
+    "sha256": "9419acec45789361ca934b7335e87954a6fae75cf4c980fc81c92e2286a982d5"
+  },
+  "stop": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-score-pilot-001/STOP",
+    "sha256": "590033df90bcb59722ab7be50b879770b966151933fb73bf2f8af79655942b9f"
+  },
+  "worker_log": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-score-pilot-001/evidence/pilots/00/process/worker.log",
+    "sha256": "1f94e66d4bacf4bf6a5b5ba5028bdfb85352727f951b35de23f776c65b91bec6"
+  },
+  "process": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-score-pilot-001/evidence/pilots/00/process/process.json",
+    "sha256": "0bcce2c5e0ff5ca348bb36630274d34ed6f05e60de301298a84381d58af8720a"
+  },
+  "reason": "Local base path string shadowed imported data contract; first worker data binding raised AttributeError before guard, config publication, model construction or any update.",
+  "training_updates": 0,
+  "checkpoints": 0,
+  "scientific_seed_consumed": false,
+  "source_preserved": true,
+  "recovery": "New pilot002 wrapper imports data_contract explicitly. New plan/root; pilot001 remains closed. The reserved complete seed panel remains unused and is carried forward explicitly; no seed result was observed or selected."
+}

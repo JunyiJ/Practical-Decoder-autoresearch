@@ -1,0 +1,248 @@
+{
+  "status": "resource_pilots_complete_quality_freeze_next",
+  "at": "2026-11-01T06:12:34.227821+00:00",
+  "plan": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-plan.json",
+    "sha256": "4c15a1d4484bc7114d567c249eadd47098cd15f943a49be22a3de4f925bb2b5f"
+  },
+  "pilot_review": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-review.json",
+    "sha256": "ca2dbfff483b5b532c42462af4611ba0e49f72ac9b3b9e30ab9dce1b212d468d"
+  },
+  "failed_attempt": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failure-review.json",
+    "sha256": "750f27a6110081a946d4e718f7bc0930ee5db1a9bc099836b8317f1da7f5da20"
+  },
+  "retention_prerequisite": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/retention-boundary001.json",
+    "sha256": "ee0964026af98ea0ce48b42b94291b08662d26bc3dff4df4aa2a13d3bc2fdb7a"
+  },
+  "seed_census": {
+    "path": "research/tokenizer-evidence/mla-score-preparation-001/scientific-seed-census-001/result.json",
+    "sha256": "e62c977e3853de308feb511d8dc113441017bc3d094e4e2e57d839478683e03d"
+  },
+  "rows": [
+    {
+      "slot": 0,
+      "arm": "half",
+      "accepted": {
+        "path": "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/accepted.json",
+        "sha256": "64bace7dca0b023deccecc63347f4fe7d1149d3937ddab1b7c8f272fa229fc1f"
+      },
+      "steps": 20,
+      "targets": 20480,
+      "ema_snapshots": 8,
+      "validation_targets": 34278,
+      "worker_wall_seconds": 40.56724983302411,
+      "parent_seconds": 4.809349125018343,
+      "peak_rss_bytes": 1490141184,
+      "peak_mps_driver_bytes": 2510094336
+    },
+    {
+      "slot": 1,
+      "arm": "unit",
+      "accepted": {
+        "path": "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/accepted.json",
+        "sha256": "148afd210d3159d254698f2dc28cb2bf855db95f1cc5a84697a8f2e42529531a"
+      },
+      "steps": 20,
+      "targets": 20480,
+      "ema_snapshots": 8,
+      "validation_targets": 34278,
+      "worker_wall_seconds": 47.33963500004029,
+      "parent_seconds": 4.387472332979087,
+      "peak_rss_bytes": 1432551424,
+      "peak_mps_driver_bytes": 2510094336
+    }
+  ],
+  "preserved_metadata": {
+    "research_runs/tokenizer-mla-score-pilot-001/STOP": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failed-evidence/STOP",
+      "sha256": "590033df90bcb59722ab7be50b879770b966151933fb73bf2f8af79655942b9f"
+    },
+    "research_runs/tokenizer-mla-score-pilot-001/control/prefix-00-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failed-evidence/control/prefix-00-guard.json",
+      "sha256": "2eb353853ef9a12eca0071888b1698fb12a7c0e7249672472ce5b65652726fc4"
+    },
+    "research_runs/tokenizer-mla-score-pilot-001/control/process-pilots-00.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failed-evidence/control/process-pilots-00.json",
+      "sha256": "c8218c80da86b06581f6a3c4e975f96138968e25389f7fdb085487a85bd83f02"
+    },
+    "research_runs/tokenizer-mla-score-pilot-001/evidence/pilots/00/process/launch.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failed-evidence/evidence/pilots/00/process/launch.json",
+      "sha256": "248063b6bf42bb34b5c8059d6c58ee4e02dc61795667eda8243c2e0eb78b0b57"
+    },
+    "research_runs/tokenizer-mla-score-pilot-001/evidence/pilots/00/process/process.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failed-evidence/evidence/pilots/00/process/process.json",
+      "sha256": "0bcce2c5e0ff5ca348bb36630274d34ed6f05e60de301298a84381d58af8720a"
+    },
+    "research_runs/tokenizer-mla-score-pilot-001/evidence/pilots/00/process/worker.log": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failed-evidence/evidence/pilots/00/process/worker.log",
+      "sha256": "1f94e66d4bacf4bf6a5b5ba5028bdfb85352727f951b35de23f776c65b91bec6"
+    },
+    "research_runs/tokenizer-mla-score-pilot-001/evidence/pilots/00/request.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot001-failed-evidence/evidence/pilots/00/request.json",
+      "sha256": "04f3d75c0e94f6c26500bd30b66c1832923b6a5cfb92f0f5bec745eb74dd4a24"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/parent-00-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/parent-00-guard.json",
+      "sha256": "ae98bf20ff9f77f0c652855d77ea50b37f3e507744a26503daf803590c864fd6"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/parent-01-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/parent-01-guard.json",
+      "sha256": "8e6b1eba24911ed95da5a2e06f06baf7f58b92aeaaa2c6139c8b824ea279d754"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/prefix-00-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/prefix-00-guard.json",
+      "sha256": "efaffd65e87214f6eb3d520eafd2c65ab524ab9781ed25f572a049b2c43504bd"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/prefix-01-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/prefix-01-guard.json",
+      "sha256": "073fca7ef0bd856b5d1dd358d6cf679e03c51231827fa89290da7c4bcd3b321a"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/process-pilots-00.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/process-pilots-00.json",
+      "sha256": "0d41b00124e6d460fa119f3d0e449073a413daf43da2de24dfe77ba421660c1a"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/process-pilots-01.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/process-pilots-01.json",
+      "sha256": "3f3a6b0ea3369ba385ef38a2c383a15da139612b94095b7007ca612868dcd736"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/worker-00-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/worker-00-guard.json",
+      "sha256": "3fb2d6d327907109bbaa20639b67324635d4f3609da5578d88e4ab2d33f349fe"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/control/worker-01-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/control/worker-01-guard.json",
+      "sha256": "f57eda770c4adb5f4438c24b556e44b2b06458bacfc471b314d00a41426b23ae"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/accepted.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/accepted.json",
+      "sha256": "64bace7dca0b023deccecc63347f4fe7d1149d3937ddab1b7c8f272fa229fc1f"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/config.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/config.json",
+      "sha256": "26648082bd4b886fe7b3d6dc12c2dcbc86ce883585e8a4c4cbdc322dbfa6a831"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/export.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/export.json",
+      "sha256": "d04bdf8ea2a05866738be4208ed83ac235832d13cffab4e269f850888e9c5f06"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/metrics.jsonl": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/metrics.jsonl",
+      "sha256": "f1679b6b0c666613a8b06e2a0e8b74558ac0295ad927755f3579d655747d0316"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/parent-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/parent-guard.json",
+      "sha256": "7d3cab79fb6826e95df3e00b1dcdd5e3c3bec723e46f277c23b39a48646d047e"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/process/launch.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/process/launch.json",
+      "sha256": "c3c0c21e5b8fecf742001176854fa08a1aa228cf15f07627c49ca64eb681d1d3"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/process/process.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/process/process.json",
+      "sha256": "1e895e4e7e62003405382889565d61c103e26710c9672c75a002fd1f46fbdc99"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/process/worker.log": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/process/worker.log",
+      "sha256": "186d03090a74ebede646a5d2b2c392510ce57b48f84189495eb540efd7ba8b50"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/request.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/request.json",
+      "sha256": "6355e1a39a8491dce82fe4d87f2aec603d1540709c2b4cb1fff78dfb47b04ea0"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/summary.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/summary.json",
+      "sha256": "db825bcbb198e6a8b7e908dfaf695b71804ea72e71b83baef1cdcdf04ab433ea"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/worker-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/worker-guard.json",
+      "sha256": "5f3fe4c9d456b73e19b6804977018ed18c2435e1da427e76c1fc4088dc78a862"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/worker.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/00/worker.json",
+      "sha256": "d46252afc138a2c9979a206cf6464131eac557b55b3305642835e3d2a5acd363"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/accepted.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/accepted.json",
+      "sha256": "148afd210d3159d254698f2dc28cb2bf855db95f1cc5a84697a8f2e42529531a"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/config.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/config.json",
+      "sha256": "47dae78dd6d27b59c14c36c94fff258f882ee4af3b1b07dfe939256721f6c1fc"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/export.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/export.json",
+      "sha256": "5f6ae6388960f6471996fc1c2197a7a677dfa4139cb0b56a27e758de54c9bf9d"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/metrics.jsonl": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/metrics.jsonl",
+      "sha256": "0a78b063c330fdf4ccbb8986e61b3cb23c280d0f11934635732a9a54b0437812"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/parent-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/parent-guard.json",
+      "sha256": "363607bbbb2322c9b6032a3052e461c1fff8f84643438f039cdc6f4bedb4b02e"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/process/launch.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/process/launch.json",
+      "sha256": "952163261617174c81123b876633e1d63f51efc669a499abe23d9818961a2e81"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/process/process.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/process/process.json",
+      "sha256": "0d2b9cee3a9d1c5d9d449b867d016d607f7072386726ab176876ac8b423b2a18"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/process/worker.log": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/process/worker.log",
+      "sha256": "225f5d334ccb99058dd4423fe2b16695da8806819a43f9e4be7b00779b63c742"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/request.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/request.json",
+      "sha256": "e11a8920a507fcc5fe259de4beca9f43b477887021998187e394d7cc954332ac"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/summary.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/summary.json",
+      "sha256": "7592e7488a522161d8a4cb2ed693d14bac42c42bfedcab9adc7386ab6c336420"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/worker-guard.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/worker-guard.json",
+      "sha256": "45d8ac656b6d9f10a438ba8f4567a766ccc66e04d9722aa5797dcbca41def322"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/worker.json": {
+      "path": "research/tokenizer-evidence/mla-score-preparation-001/pilot002-completed-evidence/evidence/pilots/01/worker.json",
+      "sha256": "18cd3b2bc6565e93e4369075f6fcaf18d0f4d724fd3e16639b07787852ded106"
+    }
+  },
+  "protected_pilot_weights": {
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/checkpoints/final_000020_1793513341105375000.pt": {
+      "size": 445089445,
+      "sha256": "3a087072f9ee98dbd4bd185e5d4859c15dfb1b8ef607c188b62af7399c0b5c88"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/00/checkpoints/h200.pt": {
+      "size": 114074691,
+      "sha256": "ae5c9b0edfce3496f8a8b06f64d4372e1872f2c4f7ef2281eb98809f47dfe812"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/checkpoints/final_000020_1793513403138242000.pt": {
+      "size": 445089445,
+      "sha256": "5a6e45a6910347e43c273ff1c2b6673cda68ab434fd452253ae319ac6fe5c525"
+    },
+    "research_runs/tokenizer-mla-score-pilot-002/evidence/pilots/01/checkpoints/h200.pt": {
+      "size": 114074691,
+      "sha256": "201702eedd7370612cb3350fed3046a46bf8a14ead1727f3a1e64e9403234849"
+    }
+  },
+  "all_frozen_source_hashes_unchanged": true,
+  "scientific_quality_launched": false,
+  "quality_adopted": false,
+  "holdout_scored": false,
+  "capacity": {
+    "free_bytes": 12513693696,
+    "pilot_weights_bytes": 1118328272,
+    "complete_future_requirement_bytes": 13555990528,
+    "after_exact_pilot_retirement_projection_bytes": 13632021968,
+    "conditional_margin_bytes": 76031440,
+    "cleanup_performed": false,
+    "condition": "Only after final source preparation closes pilot dependencies: independently re-audit both accepted pairs and inference, apply exact locked pilot retirement with complete protected inventory and fsynced journal, then remeasure actual space before screen dispatch."
+  },
+  "remaining": "Add finite quality orchestration outside frozen research/mla_score_v1, using existing tested training/parent/inference/retention primitives. Re-audit frozen1200-step six-screen/three-fresh-pair configs, then exact pilot retirement and final quality freeze/dispatch. No ledger framework, quality inference or seed selection from pilot losses."
+}

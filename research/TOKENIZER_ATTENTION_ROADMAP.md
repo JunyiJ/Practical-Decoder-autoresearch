@@ -146,3 +146,12 @@ twice; removing that duplicate charge relaxes no guard. Next test exact stage
 retirement boundaries, census fresh seeds and freeze the finite pilot plan,
 then run guarded pilots before quality freeze. Recheck capacity at dispatch.
 See MLA_SCORE_PREPARATION and mla-score-preparation-001/worker003-review.json.
+
+The score-transfer resource stage is now complete: both20-update pilot002 arms
+passed independent parent acceptance and paired inference within the unchanged
+resource limits. A wrapper namespace failure before training is preserved as
+pilot001; its separately frozen correction completed. These pilot losses provide
+no quality ranking. Next freeze the finite six-screen/three-fresh-pair quality
+comparison in an additive namespace and execute exact eligible pilot retirement
+before screening. Retention boundaries and seed freshness passed; keep the test
+holdout closed and recheck actual complete capacity after retirement.

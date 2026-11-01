@@ -230,3 +230,16 @@ protected. The original receipts are immutable historical identities; their loos
 paths are now resolved through the later archive manifest. Keep this archive
 protected and restore only exact absent members through verified staging after
 capacity checks. Never overwrite or rerun closed fixtures to recreate their paths.
+
+## Prospective MLA score pilot and screen boundaries
+
+The new score-study disposable test covers exactly two successful pilot pairs
+(after complete independent acceptance plus paired inference) and four losing
+screen pairs (after all six audits and persisted per-arm minimum-CE/lower-LR tie
+selection). It rejects failed/incomplete stages and any fresh confirmation path.
+The actual pilot002 raw/H200 pairs remain protected through dependent final-source
+preparation. Once those dependencies close, exact locked manifest/journal cleanup
+is authorized before screening; rehash all retained evidence and measure capacity.
+Never remove pilot001 failure artifacts or change either frozen source. The
+small-file test itself deletes no scientific weights. Every fresh pair and both
+selected screen pairs remain protected; there is no confirmation cleanup boundary.
