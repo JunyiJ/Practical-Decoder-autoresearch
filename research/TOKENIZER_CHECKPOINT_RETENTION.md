@@ -215,3 +215,18 @@ overwrite or reopen a closed fixture. Future reviews must resolve these logical
 archive identities instead of assuming loose paths remain. Earlier historical
 sources/results are untouched. The previously retired obsolete-screen archives
 remain permanently absent and are unrelated to this lossless operation.
+
+## Successful worker prerequisite cold archival
+
+Six completed successful worker files are preserved in the verified lossless
+`research_archives/mla-score-worker-001/successful-workers.tar.zst` archive:
+the two MLA score worker001 raw/H200 pairs and successful ungated FFN worker003
+raw/H200 pair. Exact eligibility, size/hash allowlist, full decompression receipt,
+fsynced loose-copy removal journal and26,524 unchanged survivor checks are in
+mla-score-preparation-001/worker-archive001/.1,677,471,074 original bytes occupy
+849,909,661 archive bytes, recovering827,561,413B net. No checkpoint bytes were
+lost. Failed worker002 control, selected/fresh pairs and all other archives remain
+protected. The original receipts are immutable historical identities; their loose
+paths are now resolved through the later archive manifest. Keep this archive
+protected and restore only exact absent members through verified staging after
+capacity checks. Never overwrite or rerun closed fixtures to recreate their paths.

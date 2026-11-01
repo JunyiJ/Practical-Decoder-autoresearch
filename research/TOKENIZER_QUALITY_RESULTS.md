@@ -6675,3 +6675,45 @@ this narrow296MB observed margin as unconditional launch authority.
 Evidence: mla-score-preparation-001/model001-failure.json, model002.py/json/guard,
 checkpoint-resume001.py/json/guard/trace, serialization-capacity002.json,
 ema-pilot-retention/ and synthetic-archive001/, plus research/mla_score_v1/.
+
+## Real worker, independent parent and trained inference prerequisites passed
+
+The score half/unit arms each completed two actual generated-text run_training
+updates through the bounded serial child process and output sink. Independent
+parent acceptance verified optimizer/RNG/resume semantics, both raw/H200 identities,
+all88 EMA tensors and two snapshots,2,048 processed training targets, and all3,014
+validation targets. CPU/MPS validation CE differed by at most2.775e-7. Both raw
+checkpoints measured445,084,199B and both H200 exports114,074,819B. Existing streaming
+publication and new individual448/112MiB limits passed; no duplicate payload or
+temporary checkpoint remained. These are generated-data engineering checks only.
+
+The resulting trained pair passed full/cache/reset checks at batches1/8 before
+warmups and eight alternating timing repeats. Cache bytes were196,608 per item.
+Timing is descriptive for this two-update fixture; it establishes no score-arm
+quality or deployment-performance advantage. The research corpus and test stayed
+closed. All frozen and worker-bound sources were rechecked unchanged.
+
+Six successful worker checkpoints (both new score pairs and the prior successful
+ungated FFN worker003 pair) are now losslessly archived in
+`research_archives/mla-score-worker-001/successful-workers.tar.zst`. Full member
+verification preceded loose-copy removal, and26,524 other files were rehashed.
+Original1,677,471,074B became849,909,661B, recovering827,561,413B net. The failed FFN
+worker002 control and every selected/fresh/failure artifact remain unchanged.
+Use worker-archive001's exact manifest to resolve or restore absent loose paths.
+
+Capacity003 corrects duplicate metadata accounting: the enforced256MiB complete
+campaign budget already includes8.25MiB per trajectory, below its16MiB allowance,
+including temporary metadata publication. Thus the complete proposed high-water
+is eight560MiB weight allowances +256MiB metadata +8GiB reserve =13,555,990,528B.
+The active serializer is included in its weight allowance and publishes by
+same-inode link/unlink. No guard or confirmation requirement was reduced. Observed
+free13,654,347,776B gives98,357,248B headroom at that observation only. The earlier
+13,690,208,256B estimate double-counted128MiB of trajectory metadata.
+
+Next execute the narrow prospective pilot/losing-screen retention-boundary checks,
+then fresh seed census, finite pilot freeze, guarded resource pilots and final
+quality freeze. Recheck actual free space and charge all new output before dispatch.
+No scientific pilot/quality plan is frozen and no scientific worker is running.
+Evidence: mla-score-preparation-001/trainer-worker001, trained-inference001,
+worker-archive001, capacity003 and worker003-review.json; implementation in
+research/mla_score_v1. No new ledger framework was introduced.

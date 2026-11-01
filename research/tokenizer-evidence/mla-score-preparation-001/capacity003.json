@@ -1,0 +1,48 @@
+{
+  "status": "measured_disjoint_budget_projection",
+  "required_free_bytes": 13555990528,
+  "observed_free_bytes": 13654347776,
+  "margin_bytes": 98357248,
+  "raw_cap_bytes": 469762048,
+  "export_cap_bytes": 117440512,
+  "trajectory_weight_cap_bytes": 587202560,
+  "all_campaign_metadata_cap_bytes": 268435456,
+  "per_trajectory_metadata_included_bytes": 8650752,
+  "reserve_bytes": 8589934592,
+  "phase_retained_trajectory_counts": {
+    "pilots_before_retirement": 2,
+    "screens_after_pilot_retirement": 6,
+    "selected_screens_plus_fresh_pairs": 8
+  },
+  "phase_required_free_bytes": {
+    "pilots_before_retirement": 10032775168,
+    "screens_after_pilot_retirement": 12381585408,
+    "selected_screens_plus_fresh_pairs": 13555990528
+  },
+  "previous_requirement_bytes": 13690208256,
+  "removed_duplicate_metadata_charge_bytes": 134217728,
+  "serialization": "Streaming temporary is charged within active trajectory weight cap. Same-inode link/unlink publication does not create a second payload. Existing checkpoint bytes and partial files count against aggregate cap. Metadata temporary overlap is charged by MetadataWriter within the complete 256MiB budget.",
+  "guards_relaxed": false,
+  "confirmation_pairs_reduced": false,
+  "dispatch_authorized": false,
+  "outstanding": [
+    "Prospectively test exact successful-pilot and losing-screen retirement boundaries before source/finite pilot freeze.",
+    "Fresh seed census and immutable finite pilot plan; guarded pilots then final quality plan.",
+    "All further prerequisite outputs and external disk changes must be recharged at dispatch."
+  ],
+  "worker": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
+    "sha256": "778b54b0cda1768597cd71732c73930567470c72c253aa5b98461983ba09de8d"
+  },
+  "archive": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
+    "sha256": "e93f92015ce4fb6ebd78f30e15eb5f5b6ba6e573acb28c6592eb59c2ed7c81ec"
+  },
+  "sources": {
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/capacity003.py": "305929f5f6c7efdb771580e236672060881ec52b8ad69562be8d44531ffd74cc",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/mla_score_v1/output.py": "5730550964aabe6a63f72a572cb828838a6a927d7423dc07e3565e58c0a2bcd2",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata.py": "28059390a6edb46651fb967be492fc4b713a29b29d60419569aea0379d082f6c",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata_writer.py": "e486260aa6c2fd33ad8616c51529fd34fc2318bfca5d8c1b79c69a6a053d4e6a",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_checkpoint_writer.py": "cfb4deba9de71fc1ff84fdae3beb49e9280be51c66a3790267091afb614c6fd1"
+  }
+}

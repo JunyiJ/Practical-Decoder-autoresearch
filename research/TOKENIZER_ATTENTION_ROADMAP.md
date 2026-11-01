@@ -136,3 +136,13 @@ shapes, tokenizer/optimizer/checkpoint/resume semantics, and serial MPS resource
 pilots. An optimized kernel requires numerical agreement with the reference;
 its speed is measured only on hardware/backend that actually supports it.
 Preserve all failed attempts and closed studies; keep test loss closed.
+
+The MLA score transfer real worker/parent validation and trained-cache inference
+prerequisites now pass for both arms on generated text. No scientific quality
+finding follows. Successful-worker lossless archival recovered827.6MB. The actual
+writer budgets give a prospective13.556GB complete retained-output requirement
+(including8GiB reserve);13.654GB was observed free. Prior metadata was charged
+twice; removing that duplicate charge relaxes no guard. Next test exact stage
+retirement boundaries, census fresh seeds and freeze the finite pilot plan,
+then run guarded pilots before quality freeze. Recheck capacity at dispatch.
+See MLA_SCORE_PREPARATION and mla-score-preparation-001/worker003-review.json.
