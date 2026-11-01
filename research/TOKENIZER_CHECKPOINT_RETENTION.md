@@ -271,3 +271,22 @@ identities, resolved by this later manifest for absent loser weights. These
 retired weights cannot be restored. The selected pairs, every fresh confirmation,
 failures, protected archives and unrelated files remain protected. No repeat
 cleanup or fresh-confirmation cleanup is permitted.
+
+## Successful normalization prerequisites losslessly archived for FFN norm work
+
+Four completed successful fixture groups (block-norm-v2-h200-fixture-001,
+block-norm-trainer-fixture-002, block-norm-resume-fixture-001 and
+block-norm-checkpoint-fixture-001) now resolve through
+`research_archives/ffn-norm-prerequisites-001/{h200,trainer,resume,transport}.tar.zst`.
+The exact14 checkpoint members matched their original success manifests and
+passing reviews. Full decompression verified every byte before journaled removal
+of the loose copies.3,811,304,854 logical bytes now occupy1,545,106,758 archive
+bytes, recovering2,266,198,096B net. All27,046 retained files rehashed unchanged.
+Observed free space afterward was11,861,012,480B.
+
+Exact manifests, archive hashes, per-member verification, intent/removal journal
+and resource guards are in ffn-norm-preparation-001/archive001/. These archives
+are protected. Resolve those manifests or restore only absent original paths
+through verified staging after a capacity check; never overwrite or rerun a
+closed fixture. Original receipts remain immutable. Selected/fresh/failed weights,
+all other archives and unrelated programs/files were excluded. No bytes were lost.

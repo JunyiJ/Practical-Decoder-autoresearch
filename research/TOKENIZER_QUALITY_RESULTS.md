@@ -7149,3 +7149,21 @@ Next perform narrow explicit model/checkpoint/cache integration outside frozen
 namespaces; measure actual retained-output high-water and audit eligible capacity
 recovery before any new finite pilot/quality freeze. Small numerical work is
 not blocked by a future training-capacity constraint.
+
+## SwiGLU-product RMS implementation prerequisites passed
+
+The explicit additive D256 MLA product-normalization runtime passed both arms'
+CPU/MPS full-model, all-gradient, optimizer and request-cache checks. The control
+retains bitwise identical initialization/logits; the candidate adds2,688 AdamW
+gains with shared weights/groups unchanged. Serialized repeated/resumed model,
+optimizer, EMA and RNG states matched exactly, and H200 CPU/MPS/cache inference
+passed at batches1/8. These are generated-text implementation checks, not a
+scientific quality result. Actual worker/parent validation and inference precede
+fresh census and finite pilot/quality plans.
+
+Proactive lossless archival of14 completed successful normalization-prerequisite
+weights recovered2,266,198,096B net, with27,046 retained files verified unchanged.
+Exact original members remain protected in ffn-norm-prerequisites-001 archives;
+use the later manifests, not absent loose paths. Selected/fresh/failure artifacts
+were excluded. The capacity recovery enabled serialized tests immediately; a
+complete future retained-output projection remains required.

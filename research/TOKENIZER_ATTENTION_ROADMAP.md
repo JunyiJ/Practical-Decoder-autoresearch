@@ -190,3 +190,14 @@ worker/parent validation/inference, then fresh census and finite guarded plans.
 Forecast complete retained output and reserve, and execute eligible audited
 recovery if needed; storage does not block these small prerequisites. See
 TOKENIZER_FFN_NORM_PREPARATION.md and ffn-norm-preparation-001/.
+
+
+The SwiGLU-product normalization full-model and serialized MPS resume prerequisites
+now pass both arms. Shared initialization/optimizer groups are identical;2,688
+new gains use the existing AdamW vector rule. Repeat/resume model/optimizer/EMA/
+RNG differences are0, and H200 CPU/MPS cached inference passes at batches1/8.
+These generated checks establish integration only. Next actual worker/independent
+parent validation/inference, complete resource projection, fresh seed census and
+finite pilot/quality freezes. Exact successful numerical-fixture archival recovered
+2,266,198,096B net without losing checkpoint bytes or moving protected scientific
+weights. Follow TOKENIZER_FFN_NORM_PREPARATION.md and current next_action.
