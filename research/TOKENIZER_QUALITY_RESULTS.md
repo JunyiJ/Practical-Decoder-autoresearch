@@ -7375,3 +7375,44 @@ Fresh confirmation has started in the frozen paired order using seeds198850011,
 198850012,198850013. Preserve all six fresh trajectories, complete all three
 paired inference reviews and independent final statistics before any decision.
 No adoption or quality conclusion follows from screening alone.
+
+
+## Warmup quality001 closed without adoption
+
+All twelve1200-update endpoints passed independent checkpoint/optimizer/EMA,
+full-validation and cache acceptance; all three paired inference reviews passed.
+Both arms selected peak LR0.00125 with equal search budgets. Fresh H200 CE:
+
+| Seed | No warmup | Warmup100 | Warmup minus none |
+|---|---:|---:|---:|
+|198850011|4.7279747502|4.7315034892|+0.0035287390|
+|198850012|4.7220432808|4.7236056867|+0.0015624060|
+|198850013|4.7028434423|4.7054898574|+0.0026464151|
+
+Independent mean delta is+0.0025791866880477015 nats/token. All three seeds
+slightly worsen. Simultaneous conditional text-bootstrap upper bounds are
++0.0047709126/+0.0053859092/+0.0046459678 for2048/4096/8192-token blocks.
+The mean<-0.02, every-seed-improves and all-upper-bounds-negative gates all fail.
+Retain no warmup with the adopted D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/
+no product normalization/H200 recipe. No grid extension or retry.
+
+These estimates condition on three trained seeds and reused validation text;
+they are not population-seed or test-holdout confidence. The test remains closed.
+Warmup changed integrated LR, so this is a selected recipe comparison, not an
+isolated causal estimate at equal integrated step size. Descriptive inference
+has identical cache sizes and no cost-only adoption route.
+
+Guarded closure wrote terminal STOP, preserving selected screen slots02/03 and
+all six fresh raw/H200 pairs (4,473,325,888B total). Deleted loser paths remain
+resolved by quality001-screen-retention. All497 frozen sources are unchanged;
+no worker remains. Closure free9,484,255,232B is an observation, not readiness
+for a new complete training panel. Evidence: quality001-final-review.json,
+quality001-closure.json and all three fresh-inference pair reviews.
+
+At the boundary, reviewed causal local mixing against bounded independent-decay
+HP tuning. Selected the distinct causal three-tap normalized-FFN-input question;
+decay0.00006-versus0 is deferred, not prohibited. The standalone local-mix
+component passed six generated CPU FP64/FP32 and MPS FP32 forward/all-gradient,
+causality, uneven-cache/reset cases. No scientific seeds, corpus training or
+new pilot/quality freeze occurred. Full-model/optimizer/checkpoint/H200/cache
+integration remains next; see TOKENIZER_LOCAL_MIX_PREPARATION.md.

@@ -1,0 +1,48 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-01T20:57:51.348831+00:00",
+  "question": "Does identity-initialized causal three-tap depthwise mixing of each normalized FFN input improve the adopted tokenizer MLA recipe under equal bounded LR tuning?",
+  "architecture_review": {
+    "selected": "Causal local mixing before each SwiGLU input projection",
+    "rationale": "Untested structural family previously deferred only for placement/cache contracts. Recent FFN structure/normalization changes did not improve this backbone; temporal mixing changes receptive field rather than reopening those comparisons.",
+    "limitation": "A local inductive-bias hypothesis, not evidence that local context is deficient or a Kimi reproduction."
+  },
+  "hp_review": {
+    "candidate": "Independent weight decay0.00006 versus0 with equal peak-LR tuning",
+    "decision": "Deferred: valid distinct regularization question, but no new measured decay failure; prioritize the previously queued local-mixing architecture after the completed warmup HP study. Do not reopen warmup."
+  },
+  "proposal": {
+    "arms": [
+      "none",
+      "causal3"
+    ],
+    "placement": "u=block FFN RMSNorm(post-attention residual); v[t,c]=a0[c]*u[t,c]+a1[c]*u[t-1,c]+a2[c]*u[t-2,c], zero left padding; existing SwiGLU consumes v.",
+    "initialization": "a0=1,a1=a2=0; three 1D channel vectors, no bias/nonlinearity and no RNG draws; shared baseline weights must match exactly.",
+    "parameters": "3*256*4=3072 additional parameters; report total/matrix counts and measured compute, not a parameter-matched claim.",
+    "optimizer": "Prospective three vector groups per block in inherited AdamW at base LR and same independent decay; must verify explicit model/optimizer policy and state mapping before use.",
+    "cache": "Retain exactly two normalized FFN-input tokens per layer; preserve each stream across chunks, reset to zeros, no future tokens. Four layers add8192 FP32 bytes per batch item beyond existing196608 MLA bytes; measure actual buffers.",
+    "backbone": "Adopted D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/no product norm/no warmup/H200",
+    "quality_design": "Prospective six equal-LR screens then three fresh pairs; existing strict quality gates, all inference/resource guards. No seeds or training plan frozen.",
+    "scientific_training_allowed": false
+  },
+  "references": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/warmup-preparation-001/quality001-closure.json",
+      "sha256": "a2c6dc7e535ba5f7449be7c22bfcb65e683dc87c9d5ec7ad48415b96b9e7063f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
+      "sha256": "81866e6afeaa5bc145d3792af153438f13589d75354810a7dbca87aa423bad7d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_ARCHITECTURE_ROADMAP.md",
+      "sha256": "3063513d296b9c3a38bc1692e8428e5de8a9fea637f21cd94231e9ec7841e8f3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/train/optimizers.py",
+      "sha256": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730"
+    }
+  ],
+  "next_action": "Standalone generated forward/all-gradient/causality and unequal-chunk/reset cache checks; then explicit full-model/optimizer/checkpoint/EMA/H200 integration outside frozen namespaces before real worker, seed/capacity census and finite pilots.",
+  "closed_campaign_reopened": false
+}
