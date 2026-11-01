@@ -428,3 +428,15 @@ minimal finite pilot/retention integration and actual full-panel capacity recove
 capacity001 requires13,555,990,528B versus observed9,661,427,712B. Source work
 continues independently; preserve all protected weights/archives and do not launch
 a partial panel. See TOKENIZER_FFN_NORM_PREPARATION.md for exact evidence.
+
+
+Finite FFN product-normalization pilot orchestration and the complete six-screen/
+three-fresh-pair design now pass config, real checkpoint/parent full-validation,
+CLI and exact retention/capacity integration checks. No scientific seed consumed
+or pilot/quality plan frozen. Lossless archival of224 successful non-selected
+worker/numerical weights recovered644,140,089B net; all retained evidence verified.
+capacity002 records10,279,190,528B free versus13,555,990,528B required. Source/design
+and known eligible recovery are complete; no worker is active. Wait for actual
+full-panel capacity or new storage evidence, checking hourly and staying quiet
+while unchanged. See TOKENIZER_FFN_NORM_PREPARATION.md and exact later archive
+manifests; do not rerun closed prerequisites against intentionally absent paths.

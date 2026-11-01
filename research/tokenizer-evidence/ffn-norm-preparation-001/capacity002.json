@@ -1,0 +1,46 @@
+{
+  "status": "full_panel_capacity_wait_after_completed_recovery",
+  "observed_at": "2026-11-01T08:14:47.999393+00:00",
+  "required_free_bytes": 13555990528,
+  "observed_free_bytes": 10279190528,
+  "deficit_bytes": 3276800000,
+  "retained_pair_allowance_bytes": 587202560,
+  "retained_pair_high_water": 8,
+  "complete_metadata_and_transients_bytes": 268435456,
+  "reserve_bytes": 8589934592,
+  "recovery": [
+    {
+      "path": "research/tokenizer-evidence/ffn-norm-preparation-001/worker-archive001/completed.json",
+      "sha256": "7e567c9754f6e1edc16ddf21bc403abbd6234bb119e623c2d2e4d0fadeb78bb7"
+    },
+    {
+      "path": "research/tokenizer-evidence/ffn-norm-preparation-001/historical-numerical-archive001/completed.json",
+      "sha256": "9705b4785f890b56471bb8a25d9317a49dc408ea8e45b2fd18e28be474e4cd3b"
+    }
+  ],
+  "net_logical_reclaimed_bytes": 644140089,
+  "remaining_unreviewed_research_state_weight_bytes": 3686774,
+  "remaining_unreviewed_research_state_weight_files": 4,
+  "no_further_known_eligible_loose_numerical_weights": true,
+  "protected_archive_retirement_not_authorized": true,
+  "independent_work_completed": [
+    {
+      "path": "research/tokenizer-evidence/ffn-norm-preparation-001/retention-boundary001.json",
+      "sha256": "18c07c9cb5dddeb354f0ae6bdd1aff91a6c4502f42be8a3ebf53d4a922c888a2"
+    },
+    {
+      "path": "research/tokenizer-evidence/ffn-norm-preparation-001/pilot-integration001.json",
+      "sha256": "9d426f4089111252b9ac707354f847ec0831b908a20ac60341380ad3a47c3b2d"
+    }
+  ],
+  "wake_condition": "Actual free bytes >=13555990528 on the repository volume, or new user-authorized storage/recovery evidence. Recheck source/data/seed use and capacity before freeze and each dispatch.",
+  "check_interval_seconds": 3600,
+  "next_capacity_check_at": "2026-11-01T09:14:47.999393+00:00",
+  "storage_escalation_already_reported": true,
+  "no_repeat_unchanged_notification": true,
+  "no_scientific_worker": true,
+  "scientific_seeds_consumed": false,
+  "partial_panel_permitted": false,
+  "guard_relaxation_permitted": false,
+  "limitation": "Four remaining loose research_state fixtures lack passing sibling reviews and remain protected; every other known remaining weight/archive is selected, fresh, failed or explicitly protected. No speculative recovery is credited."
+}

@@ -157,3 +157,42 @@ scientific checkpoint/archive. Next prepare the minimal finite pilot/retention
 source and audit exact remaining eligible recovery; no partial-panel launch or
 relaxed guard. If recovery cannot meet the full bound, escalate the remaining
 byte deficit once with a concrete storage option while finishing independent work.
+
+## Finite pilot integration ready; exact recovery completed
+
+The additive `research/ffn_norm_campaign_v1` preserves all462 accepted runtime/
+worker sources. It prepares two20-step pilots at LR0.0025, with8 H200 snapshots,
+and a complete prospective quality design: six1,200-step screens at three equal
+LRs per arm, then three fresh paired seeds. Selection remains per-arm minimum
+full-validation H200 CE/lower-LR tie. Adoption requires mean RMS-minus-none below
+-0.02, all three seeds improving and all frozen text-block upper bounds below0.
+Pilot loss never selects; the actual quality freeze follows resource evidence.
+
+retention-boundary001 passed the exact successful-pilot and four-losing-screen
+small-artifact boundaries, including failure/fresh/incomplete/alias and selection
+rejections. pilot-integration001 independently re-audited both actual generated
+worker payloads and exact MPS full validation under the additive source binding;
+both20-step configurations, target coverage, CLI entry and exact complete-panel
+capacity thresholds passed. Its5.333s guard observed peak RSS1,303,003,136B and
+MPS driver1,112,244,224B. No scientific training or seeds were consumed; no pilot
+or quality plan is frozen. Do not rerun either closed prerequisite.
+
+After these dependencies closed, four successful worker weights were losslessly
+archived with488,444,874B net recovery and27,066 survivors verified. A separate
+exact original-review audit archived220 historical successful numerical fixtures,
+recovering155,695,215B with27,432 survivors verified. Four unreviewed/failed
+fixtures totaling3,686,774B remain loose. The historical apply wrapper fixes the
+review-directory set before removal so deleted numerical weights cannot remove
+metadata from the final survivor inventory; it ran before any cleanup attempt.
+Original reviews/configs/hashes and all protected scientific artifacts remain intact.
+
+capacity002 now observes10,279,190,528B free against13,555,990,528B required,
+a remaining3,276,800,000B deficit. This includes eight560MiB pairs,
+256MiB complete metadata/transients and8GiB reserve. Both authorized recovery
+operations are complete; no further known eligible loose numerical weights remain.
+Independent pilot-source/design work is finished. No worker is active. Wake on
+actual free space meeting the full bound, new authorized storage evidence, or an
+hourly check; remain quiet while unchanged. The already reported storage request
+is not reissued. After capacity recovery, verify source/data/unused seed identity,
+freeze and execute the two guarded pilots, then prepare the final quality runner.
+No partial panel, smaller confirmation set or relaxed guard is permitted.

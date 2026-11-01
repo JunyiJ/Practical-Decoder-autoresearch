@@ -1,0 +1,53 @@
+{
+  "status": "finite_pilot_prerequisites_and_recovery_complete_capacity_wait",
+  "observed_at": "2026-11-01T08:15:44.642204+00:00",
+  "new_source_count": 467,
+  "all_bound_sources_unchanged": true,
+  "previous_tracked_evidence_hashes_verified": 5571,
+  "archive_hashes_reverified": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/ffn-norm-worker-001/none.tar.zst",
+      "sha256": "e624b14b8d213e5ff0daf9300d32a0b5d083e50286a4d6e8bfdd3fdfdbfc8bac"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/ffn-norm-worker-001/rms.tar.zst",
+      "sha256": "b489f7293edeab3921cc2168d13ad7d8bab2f3d9e3d79ea421ed7801c242ecdd"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/ffn-norm-historical-numerical-001/successful-numerical.tar.zst",
+      "sha256": "a2110552ca3dd18b5dc2c3548042d67eb93210ebd741c5527a8369626e858fa4"
+    }
+  ],
+  "unreviewed_fixtures_retained": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/logit-z-preparation001/mps-pilots001/primitive-check.pt",
+      "size": 12743,
+      "reason": "No verified original numerical review; keep loose and protected"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/position-quality-preparation001/mps-pilots001/w64_rope/attention-math-check.pt",
+      "size": 806937,
+      "reason": "No verified original numerical review; keep loose and protected"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/position-quality-preparation001/mps-pilots001/w64_rope/branch-math-check.pt",
+      "size": 1363547,
+      "reason": "No verified original numerical review; keep loose and protected"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_state/position-quality-preparation001/mps-pilots001/w64_rope/cache-check.pt",
+      "size": 1503547,
+      "reason": "No verified original numerical review; keep loose and protected"
+    }
+  ],
+  "no_active_worker": true,
+  "pilot_frozen": false,
+  "quality_frozen": false,
+  "scientific_seeds_consumed": false,
+  "capacity": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/capacity002.json",
+    "sha256": "991761511cd5fbd3c62b1882adf4280ca7bdde6c43d9eb47e968b96d4653709c"
+  },
+  "next_action": "Hourly/change-driven capacity wake; no repeat fixture or partial panel",
+  "guards_unchanged": true
+}

@@ -310,3 +310,29 @@ Original receipts remain immutable. Resolve the later manifests or restore only
 exact absent members through verified staging with reserve; do not overwrite or
 rerun closed fixtures. Selected/fresh/failed weights and all earlier archives
 were excluded and remain protected. No checkpoint bytes were lost.
+
+
+## Successful FFN worker and historical numerical archival
+
+The accepted finite-pilot bridge review closed dependencies on the four generated
+FFN product-normalization worker weights. They now resolve through protected
+`research_archives/ffn-norm-worker-001/{none,rms}.tar.zst`, with exact manifests,
+full decompression checks and durable loose-copy journals in
+ffn-norm-preparation-001/worker-archive001/. Original1,118,381,408B occupy
+629,936,534 archive bytes, recovering488,444,874B net. All27,066 survivors verified.
+
+A separate original-review audit binds220 successful historical character
+numerical/math/cache and coupled-resume fixture files by exact hash. They are
+non-selected numerical evidence, not scientific endpoints. Their703,598,400B
+now occupy547,903,185B in protected
+`research_archives/ffn-norm-historical-numerical-001/successful-numerical.tar.zst`,
+recovering155,695,215B net;27,432 survivors verified. Four loose files lacking
+passing sibling reviews (3,686,774B) were excluded and remain protected. Exact
+eligibility fields, manifests, journal and fixed original-directory inventory
+binding are in ffn-norm-preparation-001/historical-numerical-archive001/.
+
+These operations preserve every checkpoint byte. Original receipts and source
+remain immutable. Resolve later manifests or restore only exact absent members
+through verified staging with reserve. Never overwrite or rerun closed fixtures.
+Selected/fresh/failed weights and all earlier archives remained unchanged. Neither
+operation authorizes discarding these archives or consuming a partial new panel.
