@@ -6319,3 +6319,20 @@ deletion or test scoring occurred. About15.50GB is free versus15.07GB remaining
 conservative requirement. Both pilot pairs and the accepted screen pair remain
 retained. Evidence: quality001-slot00-result.json/evidence/ and
 quality001-accepted-00.json in ffn-structure-preparation-001/.
+
+
+FFN quality001 slot01 accepted (2026-11-01T04:19:11.075544+00:00): ungatedSiLU1008, screening
+seed187620002, LR0.000625,1,200 updates/1,228,800 targets and41H200 snapshots.
+Full-validation H200 CE is **4.946103441823**, versus SwiGLU672
+**4.920534463529** at the same seed/rate: candidate minus control
+**+0.025568978294 nat/token**. This first screening pair favors SwiGLU.
+It does not settle the independently tuned, fresh-seed comparison or authorize
+interim selection, stopping, new rates or a grid extension. Hidden width and
+factorization change jointly; this is not an isolated gating-mechanism result.
+
+Independent parent raw/optimizer/EMA/export/full-validation/cache audits passed,
+as did clean child exit and all guards. Worker268.54seconds, parent12.04seconds;
+worker peak RSS1.579GB and MPS driver2.544GB. Both screen pairs and both pilots
+remain retained. No deletion or test scoring occurred. About14.95GB free exceeds
+14.51GB remaining conservative requirement. Next frozen slot02 is ungatedSiLU
+at LR0.00125, followed by SwiGLU at that rate. Evidence: quality001-slot01-result.json, quality001-slot01-evidence/ and quality001-accepted-01.json in ffn-structure-preparation-001/.
