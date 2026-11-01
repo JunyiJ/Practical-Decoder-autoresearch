@@ -31,3 +31,11 @@ was in-memory only. No scientific training or corpus/test access occurred.
 Serialization, H200 export, resume, worker/parent validation and inference remain
 prerequisites, followed by measured storage projection, seed census and finite
 pilot/quality freezes. Do not launch a scientific campaign from these fixtures.
+
+Full file-backed MPS repeat/resume and H200 export now passed bitwise on generated
+text. The serial actual-trainer/independent-parent and trained inference paths
+also passed. validation.py, validation_data.py and inference.py bind the new
+policy while retaining the prior scoring/timing arithmetic. A historical-validator
+import failure is preserved separately; recovery accepted the existing control
+without retraining. These are prerequisites only; scientific pilots/quality
+remain unfrozen. See transport-worker-inference001-review.json for exact evidence.

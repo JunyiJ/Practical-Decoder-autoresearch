@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-structure-preparation-001/trainer-worker001.py", line 124, in <module>
+    try:worker(args) if args.worker else parent()
+        ~~~~~~^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-structure-preparation-001/trainer-worker001.py", line 54, in worker
+    summary=run_training(cfg,output_sink=sink)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/train.py", line 297, in run_training
+    lr_schedule = LearningRateSchedule(optimizer, cfg.training)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/lr_schedule.py", line 78, in __init__
+    self.spec = schedule_contract(training)
+                ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/lr_schedule.py", line 37, in schedule_contract
+    raise ValueError('Cooldown start_step must be before the final update')
+ValueError: Cooldown start_step must be before the final update

@@ -1,0 +1,8 @@
+{
+  "status": "closed_failed_before_first_update",
+  "reason": "Two-update fixture used cooldown start1, violating start < total_steps-1. No weights or training updates produced.",
+  "failed_source_sha256": "36815c32ce23be136b8dc50776bf3029a4035fdfee7bc42f90dd9ad45e283f39",
+  "failed_evidence": "research/tokenizer-evidence/ffn-structure-preparation-001/trainer-worker001-failed-evidence",
+  "correction": "Distinct fixture002 uses cooldown start0 and validates schedule/averaging before child dispatch. No runtime/guard/scientific settings changed; never rerun001.",
+  "checkpoint_files_found": []
+}

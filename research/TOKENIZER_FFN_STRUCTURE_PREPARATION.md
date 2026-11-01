@@ -186,3 +186,57 @@ training launch is supported by these numerical prerequisites.
 
 Evidence: model-integration001.py/json/guard/source and
 mps-integration001.py/json/guard in tokenizer-evidence/ffn-structure-preparation-001/.
+
+
+## Serialized resume, actual trainer, parent validation and inference passed
+
+New generated-text fixtures exercised the real GPT2 loader, batch8/context128
+paired512 sampling, Muon/AdamW, cooldown and H200 on strict MPS. For both arms,
+three uninterrupted updates, a fresh repeat and interrupted file-backed replay
+agreed bitwise in model, populated optimizer and EMA state, with exact sampling
+and CPU/MPS RNG restoration. Six raw/H200 files were written exclusively under
+600MiB raw/128MiB export caps. H200 parameters exactly match the saved average;
+the raw parent and RNG were unchanged by export. Wrong optimizer/group order,
+missing MPS RNG and inference-only resume were rejected before mutation.
+Loaded H200 CPU/MPS and cached inference passed at batches1/8.
+
+Actual run_training then ran two generated-text updates per arm in serial child
+processes, with parent/run locks, bounded sinks and resource guards. The first
+fixture failed before updates because a two-step cooldown incorrectly started at1.
+The distinct second fixture used valid start0 and completed control training and
+export, then exposed a namespace bug: reused validation_data called the frozen
+normalization architecture validator. Original sources/logs/guards/configs remain
+immutable. The corrected FFN validation_data uses the new runtime namespace,
+without changing the frozen implementation. Recovery003 accepted the existing
+control raw/H200 pair without retraining it and ran only the new candidate child.
+No old closed campaign or historical failed numerical fixture was reopened.
+
+Independent parent raw-resume preflight and exact H200 transport passed for both.
+Parent MPS scoring reproduced every worker report exactly across3014 generated
+validation targets in24windows (including70tail targets). CPU/MPS CE differences
+were3.098e-7(control) and2.769e-7(candidate). The read-only view constructs only
+train/validation splits. A deliberately incorrect target count was rejected.
+
+The actual trained-pair inference path passed all cache/reset checks and the
+predeclared alternating2warmup/8repeat measurement sequence at batches1/8. Cache
+is196608B/item for either arm. These two-update generated-text timings validate
+measurement mechanics only; they establish neither quality nor a deployment gain.
+No research corpus or test holdout was read, and no scientific seeds are reserved.
+
+All399 frozen sources remain unchanged. All10 newly produced fixture checkpoints
+are retained (3,126,780,502B), including the control pair from failed validation002.
+About17.17GB remains free versus the15.170GB proposed full-panel requirement.
+Observed raw/H200 sizes remain within the existing788,953,140B trajectory allowance;
+revalidate full-duration metadata and all transient overlaps before scientific
+freeze. Do not count speculative fixture deletion as available capacity.
+
+Next implement the narrow finite pilot/config/serial acceptance path using these
+proven primitives, perform seed census including all synthetic fixture seeds,
+freeze exact pilot configs/source/provenance/resource limits, then run guarded
+resource pilots and freeze the finite quality panel. No ledger expansion or
+new model hypothesis is required.
+
+Evidence: checkpoint-resume001.*, trainer-worker001/002 failure decisions and
+original evidence, trainer-worker003.*, trained-inference001.*, and
+transport-worker-inference001-review.json/evidence in
+tokenizer-evidence/ffn-structure-preparation-001/.

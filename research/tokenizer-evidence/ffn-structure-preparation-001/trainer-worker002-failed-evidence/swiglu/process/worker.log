@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-structure-preparation-001/trainer-worker002.py", line 127, in <module>
+    try:worker(args) if args.worker else parent()
+        ~~~~~~^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-structure-preparation-001/trainer-worker002.py", line 64, in worker
+    report=v.evaluate(binding,'mps');e.exclusive(root/'validation.json',report)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_structure_v1/validation.py", line 97, in evaluate
+    model,data,cfg=load(binding,device)
+                   ~~~~^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_structure_v1/validation.py", line 36, in load
+    data=validation_data(cfg,saved)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/validation_data.py", line 36, in load
+    validate_output_bias_training_data(cfg.model,view,str(path))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/models/output_bias.py", line 184, in validate_output_bias_training_data
+    c = output_bias_contract(cfg)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/models/output_bias.py", line 136, in output_bias_contract
+    backbone = architecture_contract(cfg) if tokenizer_policy == BIAS_POLICY else readout_norm_contract(cfg)
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/models/tokenizer_architecture.py", line 27, in architecture_contract
+    normalization = block_norm_contract(cfg)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/models/block_norm.py", line 22, in contract
+    require(get(cfg, FIELD) is None, 'Block normalization requires its named architecture policy')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/spec.py", line 17, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Block normalization requires its named architecture policy

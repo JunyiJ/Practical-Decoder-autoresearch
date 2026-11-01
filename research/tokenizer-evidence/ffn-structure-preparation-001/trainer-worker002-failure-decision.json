@@ -1,0 +1,17 @@
+{
+  "status": "closed_failed_validation_after_training",
+  "reason": "Frozen norm validation_data explicitly imports its old output-bias validator, which rejects the new FFN policy. Two control training updates and raw/H200 export completed before the failure.",
+  "original_source_sha256": "660a8578d86c1d82523dd883d05a0a64a736d44c0e7784c6723c6e5a4638a542",
+  "failed_evidence": "research/tokenizer-evidence/ffn-structure-preparation-001/trainer-worker002-failed-evidence",
+  "correction": "New FFN validation_data module uses overlay runtime imports; frozen original unchanged. New recovery003 independently accepts existing control files without training them again, then runs the candidate once.",
+  "weights": {
+    "research_runs/tokenizer-ffn-structure-trainer-prerequisite-002/swiglu/final_000002_1793504898478490000.pt": {
+      "size": 445084199,
+      "sha256": "b2717ee87d894c00d24e1fe7883d8a0f7eadd64ef2b21fbd90bf7a0fbaf88416"
+    },
+    "research_runs/tokenizer-ffn-structure-trainer-prerequisite-002/swiglu/h200.pt": {
+      "size": 114074755,
+      "sha256": "bd7eeaeb57d2486185eeb4829a807e50dbcecc7feff25035f87a7497e9b07256"
+    }
+  }
+}

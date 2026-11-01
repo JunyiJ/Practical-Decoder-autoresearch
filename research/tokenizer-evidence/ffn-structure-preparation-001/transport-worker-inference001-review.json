@@ -1,0 +1,61 @@
+{
+  "status": "transport_worker_inference_prerequisites_passed",
+  "at": "2026-11-01T03:51:24.680506+00:00",
+  "checkpoint": "checkpoint-resume001.json",
+  "worker": "trainer-worker003.json",
+  "inference": "trained-inference001.json",
+  "weights": {
+    "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/swiglu/final.pt": {
+      "size": 445082471,
+      "sha256": "ace1126bca3350d4e4ffb68861da70b7880b987b78025365e4af6ea981b5ca28"
+    },
+    "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/swiglu/h200.pt": {
+      "size": 114074499,
+      "sha256": "0f6e52a0eaa54d7a90e961c4d97d106d44a7c61cbd7c52220482456f25ae23c5"
+    },
+    "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/swiglu/step1.pt": {
+      "size": 445082471,
+      "sha256": "a06bdd17a0b3047c180483cbb21c6052f53ab17cb18d0e337d102942f2f16cea"
+    },
+    "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/final.pt": {
+      "size": 445078015,
+      "sha256": "41457246250849a6355c77307b2931b42a8702d998096284ca88967dfc155bb7"
+    },
+    "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/h200.pt": {
+      "size": 114073039,
+      "sha256": "ee06aa643117d89fd69d6be158485ed52a6dc3626131bd7e867e53177f3b3a45"
+    },
+    "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/step1.pt": {
+      "size": 445078015,
+      "sha256": "5750894dc4d7bb6a23c01f67fc607d0c1fd198820260e4db65ba6f5d82f78d31"
+    },
+    "research_runs/tokenizer-ffn-structure-trainer-prerequisite-002/swiglu/final_000002_1793504898478490000.pt": {
+      "size": 445084199,
+      "sha256": "b2717ee87d894c00d24e1fe7883d8a0f7eadd64ef2b21fbd90bf7a0fbaf88416"
+    },
+    "research_runs/tokenizer-ffn-structure-trainer-prerequisite-002/swiglu/h200.pt": {
+      "size": 114074755,
+      "sha256": "bd7eeaeb57d2486185eeb4829a807e50dbcecc7feff25035f87a7497e9b07256"
+    },
+    "research_runs/tokenizer-ffn-structure-trainer-prerequisite-003/ungated_silu/final_000002_1793504974588913000.pt": {
+      "size": 445079743,
+      "sha256": "69fa82fb784206cff5f29d8e03fd886a389e43f4451e0ab7e6b3d0b591bcf135"
+    },
+    "research_runs/tokenizer-ffn-structure-trainer-prerequisite-003/ungated_silu/h200.pt": {
+      "size": 114073295,
+      "sha256": "bfe9a41286b6b44846b26eb1f4253e4bdd0393aea08d2086678dda1203dac569"
+    }
+  },
+  "retained_fixture_bytes": 3126780502,
+  "free_bytes": 17170599936,
+  "required_scientific_panel_free_bytes": 15169995168,
+  "failures_preserved": [
+    "trainer-worker001-failure-decision.json",
+    "trainer-worker002-failure-decision.json"
+  ],
+  "failure_recovery": "001 schedule rejected before updates;002 control completed then validation namespace rejected.003 imported that control without retraining and ran only the candidate.",
+  "frozen_source_files_verified": 399,
+  "scientific_seeds_reserved": false,
+  "scientific_training_launched": false,
+  "limitation": "Generated-text correctness only. No inference cost or quality adoption claim; completed fixtures retained pending audited policy cleanup."
+}
