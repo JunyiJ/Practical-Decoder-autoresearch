@@ -1,7 +1,6 @@
 # Tokenizer EMA-horizon preparation
 
-Status: hypothesis selected, November 1 UTC / October 31 Los Angeles. No pilot
-or quality launch is frozen. The block-normalization campaign is closed and
+Status: real pilot accepted and three fresh quality trajectories frozen, November 1 UTC / October 31 Los Angeles. The block-normalization campaign is closed and
 RMSNorm/SiLU remain adopted. This is an averaging hyperparameter experiment;
 it does not change architecture, optimizer, training horizon or LR schedule.
 
@@ -125,3 +124,60 @@ including oversized-raw rejection in old validators, exact new bounded loads,
 full-validation identities and cache/reset checks. Do not add generic ledger
 machinery. Only after these pass: reserve fresh seeds, freeze the pilot, obtain
 real workload/resource evidence and freeze the final three-trajectory quality plan.
+
+
+## Real pilot accepted; finite quality comparison frozen
+
+The23 synthetic artifact-contract checks passed, including wrong-half-life,
+changed tensors/buffers/config/parent, malformed EMA and cross-scope rejection.
+A558,903,984-byte sparse zero probe was rejected by the unchanged512MiB loader
+and read completely by the new640MiB bound; the exact manifested synthetic probe
+was removed. It contained no model tensors and was not a research checkpoint.
+
+The first prospective seed census conservatively rejected six whole-word textual
+matches in historical resource logs. That failed census is preserved; these
+matches do not prove prior use as training seeds. A new census scanned41,131
+text files and reserved pilot187610001, fresh187610011–187610013,
+evaluation187610003 and bootstrap187610004, with no matches. Screen187610002
+is reserved but unused. No training used the rejected candidate range.
+
+To stay within the complete retained-panel projection, the single predeclared
+20-step batch8/context128 pilot also served as the first real checkpoint,
+worker and independent-parent integration test. An extra full-size generated
+fixture would have required another approximately787MB. This adjustment was
+recorded before dispatch; quality stayed blocked until pilot acceptance.
+
+Pilot001 passed. The unchanged trainer completed20 updates and eight EMA
+snapshots. Raw resume preflight, exact H100/H200 exports, both independently
+recomputed full-validation reports, and raw/H100/H200 full/cache/reset checks
+passed. The worker finished in63.68seconds; parent acceptance took15.39seconds.
+Observed worker peak RSS was1,769,930,752B and MPS driver2,518,482,944B;
+parent peaks were1,513,930,752B and1,148,502,016B. All guards finished cleanly.
+Raw559,083,061B plus two114,074,691B exports totals787,232,443B, below the
+1,051,158,733B allowance. Every file remains retained.
+
+Descriptive paired inference used two resident models, first96 training IDs,
+32-token prefill/64-token teacher-forced decode, two warmups and eight alternating
+repeats per batch. All four correctness checks passed. Median prefill/decode(ms):
+H200 batch1 8.890/274.807, H100 8.050/276.972; H200 batch8 13.557/283.373,
+H100 13.813/291.401. Cache remains196608B/item. These pilot timings and pilot
+validation CE(H10010.345618/H20010.349039) are feasibility evidence, excluded
+from quality selection. There is no cost-only adoption route.
+
+The final quality freeze binds399 source files, including395 unchanged inherited
+files, the accepted pilot and timing source, exact configurations and seeds.
+Exactly three1200-update trajectories at LR0.00125 will produce raw/H100/H200
+triples. No screen, replacement seeds, retries or expanded grid. For statistics,
+arm order is explicitly H200 then H100 using unchanged paired arithmetic; all
+previously stated effect-size, per-seed and simultaneous-text gates apply.
+Each fresh pair also requires the same descriptive inference protocol.
+
+At freeze12,519,411,712B was free versus12,275,772,537B required for the remaining
+panel, including the8GiB reserve. Recheck at every dispatch; no cleanup credit.
+The test holdout remains unscored. The inherited training loader materializes
+test tokens; independent validation uses a train/validation-only view.
+
+Evidence: pilot001-review.json, pilot001-evidence/, pilot001-source/,
+pilot001-inference-*, and quality001-{plan,freeze,preflight,freeze-guard}.json.
+Quality freeze SHA256: a58f1c2c7d8b1c10c28acb4d89c1ecc535c6f3e457d46052e75116c433b64bbf.
+Next dispatch fresh slot0 once, then accept serially; never rerun an existing slot.

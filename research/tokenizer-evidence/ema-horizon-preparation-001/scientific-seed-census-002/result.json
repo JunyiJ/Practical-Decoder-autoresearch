@@ -1,0 +1,99 @@
+{
+  "audit_sha256": "c60a25ff928b4ebe3bb7ed9ff34ffe5034e3f7b7de72519d3a5d527df4b43e91",
+  "bytes_scanned": 3727451061,
+  "commit_before_census": "3606cb2ab8cabb24818b25909b467f1431d8ebe3",
+  "excluded": [
+    "research/tokenizer-evidence/ema-horizon-preparation-001/scientific-seed-census-002",
+    "__pycache__",
+    "binary checkpoints/archives",
+    "raw corpus and untracked external files outside declared roots"
+  ],
+  "file_count": 41131,
+  "holdout_scored": false,
+  "inventory_sha256": "aff6fdcc878cc2e9d7b8f3bfa1d80a9319ae25b5ad1a16d9617ada5a8656632b",
+  "launch_permitted": false,
+  "matches": [],
+  "observed_at": "2026-11-01T00:28:34.553969+00:00",
+  "pilot_specs": [
+    {
+      "half_lives": [
+        100,
+        200
+      ],
+      "learning_rate": 0.00125,
+      "seed": 187610001,
+      "slot": 0,
+      "stage": "pilot",
+      "steps": 20
+    }
+  ],
+  "quality_plan_frozen": false,
+  "quality_specs": [
+    {
+      "half_lives": [
+        100,
+        200
+      ],
+      "learning_rate": 0.00125,
+      "seed": 187610011,
+      "slot": 0,
+      "stage": "quality",
+      "steps": 1200
+    },
+    {
+      "half_lives": [
+        100,
+        200
+      ],
+      "learning_rate": 0.00125,
+      "seed": 187610012,
+      "slot": 1,
+      "stage": "quality",
+      "steps": 1200
+    },
+    {
+      "half_lives": [
+        100,
+        200
+      ],
+      "learning_rate": 0.00125,
+      "seed": 187610013,
+      "slot": 2,
+      "stage": "quality",
+      "steps": 1200
+    }
+  ],
+  "root_level_text_included": true,
+  "roots": [
+    "research",
+    "research_runs",
+    "research_state",
+    "src",
+    "tests"
+  ],
+  "scope": "No candidate whole-word integer appears in recorded repository research/config/source/log text. Both outputs share each fresh trajectory; screen seed is reserved but unused; evaluation/bootstrap separate. Not a claim about unrelated external experiments; recheck new recorded inputs before launch.",
+  "screen_seed_reserved_unused": true,
+  "seeds": {
+    "bootstrap": 187610004,
+    "evaluation": 187610003,
+    "fresh": [
+      187610011,
+      187610012,
+      187610013
+    ],
+    "pilot": 187610001,
+    "screen": 187610002
+  },
+  "status": "fresh_seeds_reserved",
+  "suffixes": [
+    ".ipynb",
+    ".json",
+    ".jsonl",
+    ".log",
+    ".md",
+    ".py",
+    ".txt",
+    ".yaml",
+    ".yml"
+  ]
+}
