@@ -354,3 +354,27 @@ until the complete six-screen saved-selection boundary; no test access, grid
 extension or changed source. Evidence: quality001-slot03-result.json,
 quality001-slot03-evidence/ and quality001-accepted-03.json in
 mla-score-preparation-001/.
+
+
+### Fifth score screening endpoint accepted
+
+quality001 slot04 accepted at 2026-11-01T06:47:42.882435+00:00: multiplier0.5,
+LR0.0025 and screening seed198630002 completed1200updates/1,228,800targets
+and41H200 snapshots. Independent checkpoint/optimizer/EMA, full-validation
+and cache audits passed. H200 CE across34278 targets is 4.793428589630,
+worse by 0.089769142594nat/token than this arm at LR0.00125
+(4.703659447036). The upper tested rate therefore did not improve the
+incumbent on this screening seed. This does not select a rate or establish
+adoption: complete the final unit/LR0.0025 endpoint, then apply the frozen
+per-arm minimum-CE/lower-LR tie rule to all six accepted screens.
+
+Worker peak RSS1,611,890,688B and MPS driver2,510,094,336B stayed within
+4GiB/6GiB limits; both guards finished without violations. Observed free
+11,260,493,824B exceeds the remaining complete-panel requirement
+10,760,165,048B with five raw/H200 pairs retained.
+Slot05 (multiplier1.0, LR0.0025) has started serially. After it passes,
+independently re-audit all six and retire only the four losing screen pairs
+through the frozen boundary, then run all three fresh confirmation pairs.
+No test scoring, grid extension or checkpoint removal occurred in this iteration.
+Evidence: quality001-slot04-result.json, quality001-slot04-evidence/ and
+quality001-accepted-04.json in mla-score-preparation-001/.
