@@ -163,3 +163,30 @@ pilot loss influenced selection. The whole retained panel fits measured storage
 with the8GiB reserve. No quality/adoption conclusion yet. Follow the frozen prefix
 and immutable source contracts; review architecture and bounded HP alternatives
 again only when this finite campaign closes.
+
+
+## MLA score campaign closed; SwiGLU-product normalization next
+
+Twelve accepted endpoints and three inference pairs completed. Multiplier1.0
+improved all three fresh seeds, mean delta-0.014971502424, with all simultaneous
+conditional-text upper bounds below0. The frozen-0.02 mean threshold failed;
+retain multiplier0.5/SwiGLU672/SiLU/block RMSNorm/H200. Both arms selected
+LR0.00125. No grid extension, cost-only adoption or holdout access.
+
+Both architecture and HP options were reviewed at closure. Select prerequisite
+work for per-token affine RMSNorm of the SwiGLU product before down projection
+versus none (epsilon1e-5, gain1, no bias, proposed2,688 extra parameters). This
+is a new tokenizer/MLA internal-FFN normalization question, distinct from closed
+block norm and gated-versus-ungated studies. Weak character gains are only a
+prior. Defer100-update warmup/peak-LR tuning: historical width256 gains were
+small and mixed, without a current identified stability mechanism. Short
+convolution and MoE remain distinct later questions with additional cache/resource
+requirements. No new scientific panel or seed census is frozen.
+
+Component001 failed in pre-numerical source verification and is preserved closed.
+Separately frozen component002 passed12 CPU FP64/FP32 forward/gradient/causality
+cases. Next explicit full-model/optimizer/checkpoint/cache/MPS integration, real
+worker/parent validation/inference, then fresh census and finite guarded plans.
+Forecast complete retained output and reserve, and execute eligible audited
+recovery if needed; storage does not block these small prerequisites. See
+TOKENIZER_FFN_NORM_PREPARATION.md and ffn-norm-preparation-001/.

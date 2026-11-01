@@ -1,0 +1,23 @@
+{
+  "status": "closed_failed_harness_before_numerics",
+  "at": "2026-11-01T07:34:47.281741+00:00",
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/component001.py",
+    "sha256": "53187f2594ffec7c8f6c99030f2fad3464947ce9d127360c0f63099944f160b9"
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/component001-plan.json",
+    "sha256": "a3431a8d5743fdfd9116edd157dead64078e268014da888b9b31b57ec9c5794d"
+  },
+  "exit_code": 1,
+  "error": "json.decoder.JSONDecodeError: Extra data: line 1 column 3 (char 2)",
+  "cause": "fixture_dispatch.read validates a hash then parses JSON; it was incorrectly used for Python source references.",
+  "failed_line": "for ref in plan['sources']:read(ref)",
+  "guard_started": false,
+  "numerical_cases_started": false,
+  "synthetic_seed_consumed": false,
+  "training_launched": false,
+  "holdout_scored": false,
+  "retry_allowed": false,
+  "next_action": "Separate component002 source uses reference(path) equality for source-byte verification; preserve component001 source and plan unchanged."
+}

@@ -1,0 +1,41 @@
+{
+  "status": "direction_selected_for_prerequisites_only",
+  "at": "2026-11-01T07:33:51.708891+00:00",
+  "question": "Does affine RMS normalization of the per-token SwiGLU product improve the adopted D256 tokenizer MLA recipe after equally bounded LR tuning?",
+  "architecture_review": {
+    "selected": "SwiGLU product RMSNorm versus none",
+    "rationale": "Distinct from block RMS-vs-LayerNorm and gated-vs-ungated structure. Character width256 RMS mean gain0.003438 was small and failed the full rule, so it is only a weak prior; transfer to GPT2-tokenized MLA is untested. Avoid further attention-only refinements.",
+    "deferred": {
+      "QK normalization": "Character width256 worsened in all three seeds; score tuning just completed.",
+      "short convolution": "Distinct local-mixing question remains useful, but requires additional cache-history contracts.",
+      "MoE": "Distinct capacity question remains deferred until a complete measured resource design fits."
+    }
+  },
+  "hp_review": {
+    "candidate": "100-update warmup with bounded peak-LR tuning",
+    "rationale": "Character fixed-LR width256 mean gain0.000805 was small and mixed; no present instability evidence establishes a warmup mechanism. Defer rather than infer stability from higher-LR CE degradation."
+  },
+  "proposal": {
+    "backbone": "adopted D256 MLA multiplier0.5, SwiGLU672/SiLU, block RMSNorm, final affine LayerNorm, grouped-embeddingv2, H200",
+    "placement": "per-token after silu(gate(x))*up(x), before unchanged down projection",
+    "epsilon": 1e-05,
+    "elementwise_affine": true,
+    "gain_init": 1.0,
+    "bias": false,
+    "extra_parameters_expected": 2688,
+    "optimizer_proposal": "new norm gains use AdamW base LR and independent decay; preserve existing matrix and embedding groups",
+    "scientific_seeds_reserved": false,
+    "finite_plan_frozen": false,
+    "training_allowed": false
+  },
+  "references": {
+    "research/tokenizer-evidence/mla-score-preparation-001/quality001-closure.json": "4e888db24d59c847655737fef3f86dbd79d5af5a6bb340acd9ee7be6c20a0642",
+    "research/FFN_HIDDEN_NORM_RESULTS.md": "af447043450de1f4310ead36469f3e51f950eb1f7fdceeb643a6d89793d31623",
+    "research/WARMUP_QUALITY_RESULTS.md": "1d010602846d67391e72aac3b82f46f802b085cffe10ff9d369e9d2064910ea8",
+    "research/QKNORM_QUALITY_RESULTS.md": "b0d44c37e175843800b02ff7c9071537ed77535f4f620992321f5d3468361a13",
+    "src/models/mlp.py": "918ca371c484f9d9dea39ea9b452b866bbee72354cc26161bda86e9543e57308",
+    "src/models/ffn_hidden_norm.py": "b4bc9d79c16e84d6c6640427edee8736a9d14cfb5ff7ff37c2ca24c1aad203d5"
+  },
+  "next_action": "Independent synthetic component forward/gradient/causality check, then explicit unfrozen full-model/optimizer/checkpoint/cache integration. Measure actual full-output high-water and inspect authorized recovery before any new pilot/quality freeze. Storage does not block small numerical work.",
+  "closed_campaign_reopened": false
+}

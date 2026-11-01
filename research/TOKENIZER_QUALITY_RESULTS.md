@@ -7064,3 +7064,88 @@ exceeds remaining complete-panel requirement9,641,834,856B.
 All selected and fresh raw/H200 pairs remain protected; no cleanup, grid/source
 change or test access. Evidence: mla-score-preparation-001/quality001-slot10-result.json,
 quality001-slot10-evidence/ and quality001-accepted-10.json.
+
+
+## MLA attention multiplier comparison closed: retain0.5
+
+All twelve1200-update endpoints, three fresh paired inference reviews and the
+independent final statistics review passed. Slot11 multiplier1.0 completed the
+final fresh pair with H200 CE4.692675884339. Both arms selected LR0.00125 from
+the original equal three-rate screens; no grid extension, pilot-loss selection,
+seed replacement or holdout evaluation occurred. All449 frozen source entries
+were reverified unchanged at closure.
+
+| Fresh seed | Multiplier0.5 CE | Multiplier1.0 CE | Unit minus half |
+| --- | ---: | ---: | ---: |
+| 198630011 | 4.712354865 | 4.699208080 | -0.013146785 |
+| 198630012 | 4.722457821 | 4.705125007 | -0.017332814 |
+| 198630013 | 4.707110793 | 4.692675884 | -0.014434908 |
+
+Mean unit-minus-half is **-0.014971502424nat/token**.
+Every fresh seed improved and all simultaneous conditional-text upper bounds
+are negative. However, the frozen requirement was mean delta strictly below
+-0.02; this comparison fails that minimum-improvement gate. Therefore **retain
+multiplier0.5 with D256 MLA/SwiGLU672/SiLU/block RMSNorm/H200**. The data support
+a small consistent validation improvement from1.0 in these three runs, not
+absence of an effect; the prospective practical threshold prevents adoption.
+No cost-only route or retrospective threshold change is allowed.
+
+| Text block size | Descriptive95% interval | Simultaneous gate upper bound |
+| --- | --- | ---: |
+| 2048 | [-0.017749179, -0.011981252] | -0.011724943 |
+| 4096 | [-0.016979215, -0.012739207] | -0.012548857 |
+| 8192 | [-0.016721147, -0.012374552] | -0.012035767 |
+
+The separate implementation reproduced paired loss arithmetic and2000 common
+PCG64 bootstrap draws at2048/4096/8192-token groupings, with linear quantiles
+and simultaneous upper quantile1-0.05/3. These are intervals conditional on
+reused validation text and these three trained seeds, not population-seed,
+independent holdout or universal architecture guarantees.
+
+All three full/cache/reset barriers passed at batches1/8 before timings. Two
+warmups and eight alternating repeats per cell were completed under unchanged
+guards. Timings are descriptive medians; both H200 models were resident and
+model loading/cache allocation were excluded. Mixed timing differences and
+identical cache sizes establish no consistent deployment-cost advantage.
+
+| Pair | Batch | Prefill0.5 /1.0 ms | Decode0.5 /1.0 ms | Cache bytes per arm |
+| --- | ---: | --- | --- | ---: |
+| 1 | 1 | 8.320 / 8.715 | 289.938 / 283.768 | 196,608 |
+| 1 | 8 | 14.114 / 13.748 | 298.384 / 298.548 | 1,572,864 |
+| 2 | 1 | 8.847 / 9.019 | 291.754 / 292.610 | 196,608 |
+| 2 | 8 | 13.667 / 13.826 | 314.810 / 300.039 | 1,572,864 |
+| 3 | 1 | 9.067 / 8.519 | 286.192 / 294.305 | 196,608 |
+| 3 | 8 | 14.188 / 13.940 | 300.852 / 293.040 | 1,572,864 |
+
+Inference peak RSS was824,164,352B and driver1,155,842,048B. All three guard
+reviews finished without violations. Closure preserved both selected screen
+pairs and all six fresh raw/H200 trajectories:4,473,320,768 retained weight bytes.
+The prior exact four-loser retirement remains final; resolve absent screen
+weights through its manifest. Closure observed9,603,719,168B free;
+this is not a capacity guarantee for another campaign. No research worker
+remains active. All earlier campaigns and failed attempts remain closed.
+
+Evidence in mla-score-preparation-001/: quality001-slot11-result.json/evidence/,
+quality001-accepted-11.json, quality001-fresh-inference-plan.json, all three pair
+result/review/guard files, quality001-final-review.json/guard and
+quality001-closure.json/guard.
+
+At this boundary, both architecture and bounded HP hypotheses were reviewed.
+Next prepare per-token affine RMS normalization of the SwiGLU product before
+down projection versus none on the retained backbone. This is distinct from
+closed block-normalization and FFN-factorization studies. Character results
+are a weak prior only.100-update warmup with bounded peak-LR tuning was reviewed
+and deferred given weak mixed character evidence and no current stability
+mechanism. See TOKENIZER_FFN_NORM_PREPARATION.md and its direction-decision.
+No new scientific seeds or training panel are frozen.
+
+The new component001 harness failed before numerical work by parsing Python
+source as JSON during hash verification; its source/plan/failure remain closed
+and immutable. Separately recorded component002 corrected only this harness
+check and passed12 generated CPU FP64/FP32 cases, all forward/gradient comparisons
+and per-token causality, with identical shared matrices and672 additional gain
+parameters per block. No full-model/MPS/optimizer/resume/quality claim follows.
+Next perform narrow explicit model/checkpoint/cache integration outside frozen
+namespaces; measure actual retained-output high-water and audit eligible capacity
+recovery before any new finite pilot/quality freeze. Small numerical work is
+not blocked by a future training-capacity constraint.
