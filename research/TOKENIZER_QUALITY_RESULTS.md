@@ -6841,3 +6841,25 @@ capacity rechecked by the frozen runner. Keep all six screen pairs until the
 saved-selection retention boundary; the holdout remains closed. Evidence:
 mla-score-preparation-001/quality001-slot01-result.json, preserved slot01
 metadata and quality001-accepted-01.json.
+
+
+### Third score screening endpoint accepted
+
+quality001 slot02 accepted at 2026-11-01T06:37:05.177388+00:00: multiplier1.0,
+LR0.00125, screening seed198630002. All1200updates/1,228,800targets and
+41H200 snapshots completed; independent parent checkpoint/optimizer/EMA,
+full-validation and cache checks passed. H200 CE across34278 validation targets
+is 4.692032518055, compared with 4.863321954179 for the same
+multiplier at LR0.000625. This single-seed rate comparison makes no rate selection
+or adoption decision. The matched multiplier0.5/LR0.00125 endpoint is next,
+followed by both frozen LR0.0025 screens. No grid change or interim stopping.
+
+Worker peak RSS1,642,840,064B and MPS driver2,510,094,336B remained below
+4GiB/6GiB; worker and parent guards finished without violations. After retaining
+all three raw/H200 pairs, observed free 12,364,083,200B exceeds the
+remaining full-panel requirement 11,878,495,240B. Slot03
+has started serially with the same frozen source and all guards. Preserve all
+screens until the complete six-screen selection/retirement boundary and every
+fresh pair through final review; no test access. Evidence: quality001-slot02-result.json,
+quality001-slot02-evidence/ and quality001-accepted-02.json in
+mla-score-preparation-001/.
