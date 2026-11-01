@@ -196,3 +196,30 @@ hourly check; remain quiet while unchanged. The already reported storage request
 is not reissued. After capacity recovery, verify source/data/unused seed identity,
 freeze and execute the two guarded pilots, then prepare the final quality runner.
 No partial panel, smaller confirmation set or relaxed guard is permitted.
+
+
+## Storage recovered and frozen resource pilots completed
+
+The renewed human authorization retired exactly three obsolete numerical
+archives, reclaiming5,443,835,089B with34,575 retained files verified unchanged.
+Their21 successful historical numerical payloads cannot be restored; original
+sources, reviews and hashes remain immutable. Selected/fresh/failed models and
+all other archives are unchanged. See obsolete-numerical-cleanup-001/.
+
+Source continuity, data identity and reserved-seed non-use were rechecked before
+freezing pilot001. Both20-step workers then passed independent parent acceptance:
+20,480targets and8 H200 snapshots each,88/92 EMA tensors for none/RMS.
+Worker guard times were35.714/41.472s; maximum sampled RSS1,467,858,944B and
+MPS driver2,510,094,336B remained below unchanged limits. Paired trained
+full/cache/reset inference also passed. Pilot losses do not select an arm or LR;
+no scientific quality result is claimed. Pilot raw/H200 weights total1,118,391,708B
+and stay retained until dependent final quality-source acceptance closes.
+
+capacity003 records14,676,287,488B free after both pilots, already above the full
+13,555,990,528B quality requirement before any pilot retirement. The old capacity
+wait is resolved. No worker is active at this completed boundary. Next prepare
+only additive finite quality orchestration, verify both real pilot payload/cache
+paths, retire exact successful pilots after dependencies close, then freeze six
+1,200-step equal-LR screens plus three fresh pairs. All earlier sources/campaigns
+stay frozen/closed; no pilot-loss selection or partial-panel launch. Continuation
+returns to five minutes for concrete quality preparation and worker monitoring.

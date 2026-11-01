@@ -1,0 +1,43 @@
+{
+  "status": "final_read_only_reconciliation_passed",
+  "observed_at": "2026-11-01T17:24:16.752312+00:00",
+  "original_immutable_evidence_hashes_verified": 5726,
+  "reviewed_mutable_document_updates": [
+    {
+      "path": "research/TOKENIZER_CHECKPOINT_RETENTION.md",
+      "before": "715c2c35873a4934739921fa03c39c21bc8b150bd430b705a042cc7a66e6de80",
+      "after": "6697130551f1d9035f49375e29a3ce34916e014add80f57b55e85987358de5f0",
+      "reason": "Intentional current authorization, cleanup completion and resource-pilot results appended"
+    },
+    {
+      "path": "research/TOKENIZER_QUALITY_RESULTS.md",
+      "before": "a819ddf21865e5ca36cdb0bdcefc34a9a88142ddf6f11c40473b5f3e66b1f79f",
+      "after": "21c2d98d6948f022b4e9b8d266b70b2135e6e888ff6b06c634869735e53389c9",
+      "reason": "Intentional current authorization, cleanup completion and resource-pilot results appended"
+    },
+    {
+      "path": "research/TOKENIZER_ARCHITECTURE_ROADMAP.md",
+      "before": "ba3c300513fab3fbe43c0072fb2303fc0521e28d892bf91ef0d311a18f62a624",
+      "after": "d03f7de2d58b8e4e110d8fb3a2c8eb67e3843d6020253eb3d55a6e0fb0f95f4a",
+      "reason": "Intentional current authorization, cleanup completion and resource-pilot results appended"
+    },
+    {
+      "path": "research/TOKENIZER_ATTENTION_ROADMAP.md",
+      "before": "51ccda7829988dccd65c8019af6497882990c269cd5eb24d3faec55c95a432f4",
+      "after": "e4da7f88da08e5024702e3be1b3e87739b62a0fc30020befc1a46697b7c269e9",
+      "reason": "Intentional current authorization, cleanup completion and resource-pilot results appended"
+    },
+    {
+      "path": "research/TOKENIZER_FFN_NORM_PREPARATION.md",
+      "before": "f90c3452e1acb3794f9a4222b90791c867f7d8b324cb99604faf45340f80833e",
+      "after": "b523dc5c798abe62d10404ebac441fa3e828d8585530967bb03964d20d5a3031",
+      "reason": "Intentional current authorization, cleanup completion and resource-pilot results appended"
+    }
+  ],
+  "frozen_pilot_binding": true,
+  "no_active_worker": true,
+  "read_only_check_corrections": [
+    "First ad-hoc bind check omitted strict MPS environment variables and was rejected before data binding. Correct environment subsequently passed bind.",
+    "The all-file hash check then identified the five intentionally edited mutable research documents. Every other prior evidence hash is unchanged. No training, numerical fixture or frozen source/result was retried."
+  ]
+}

@@ -440,3 +440,14 @@ and known eligible recovery are complete; no worker is active. Wait for actual
 full-panel capacity or new storage evidence, checking hourly and staying quiet
 while unchanged. See TOKENIZER_FFN_NORM_PREPARATION.md and exact later archive
 manifests; do not rerun closed prerequisites against intentionally absent paths.
+
+
+FFN product-normalization resource pilots are complete: both20-step endpoints
+passed independent parent checkpoint/full-validation acceptance and paired
+full/cache/reset inference. This is resource readiness, not a scientific quality
+result. Authorized obsolete numerical archive retirement reclaimed5,443,835,089B;
+34,575 retained files verified unchanged. Actual post-pilot free14,676,287,488B
+exceeds the complete13,555,990,528B requirement. Next additive finite quality
+orchestration and real pilot integration, exact pilot retirement after dependencies
+close, then freeze six equal-LR screens and all three fresh confirmation pairs.
+See TOKENIZER_FFN_NORM_PREPARATION.md; the storage wait is resolved.

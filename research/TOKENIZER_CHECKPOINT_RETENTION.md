@@ -336,3 +336,34 @@ remain immutable. Resolve later manifests or restore only exact absent members
 through verified staging with reserve. Never overwrite or rerun closed fixtures.
 Selected/fresh/failed weights and all earlier archives remained unchanged. Neither
 operation authorizes discarding these archives or consuming a partial new panel.
+
+
+## November 1 renewed numerical-archive retirement authorization
+
+The human explicitly authorized deleting obsolete numerical checkpoint archives
+to resume experiments while retaining selected models and fresh confirmations.
+This supersedes earlier archive retain-all/restoration language only for the exact
+new manifest in `obsolete-numerical-cleanup-001/`. Its candidates are the nine
+passed wider-hybrid numerical-v2 checkpoints in checkpoint-compaction-001's
+numerical.tar.zst and the twelve successful FFN/MLA-score synthetic resume
+checkpoints in mla-score-synthetic-001/{ffn,score}.tar.zst. These completed
+prerequisites have no live checkpoint-loading dependency in the current FFN
+product-normalization pilot. The current source imports preserved Python code
+and reads preserved receipts/configs, not these archived tensors.
+
+Require original passing reviews, archive/member size/hash identities, current
+archive hashes, the shared worker lock, an exact deletion manifest, fsynced
+journal and unchanged survivor verification before accepting this retirement.
+Preserve every original source, review, metric, manifest and failure. Preserve
+all selected/fresh models and all other archives. Once deletion completes, these
+three archive identities cannot be restored or their weights re-evaluated.
+Earlier original receipts remain immutable; the later retirement manifest
+explains their intentional absence. Do not rerun closed numerical fixtures.
+
+Completed numerical retirement: exactly three archives totaling5,443,835,089B
+were removed under the worker lock and durable journal. All34,575 other research
+files rehashed unchanged, including selected/fresh/failed weights, remaining
+archives and original numerical evidence. Free space15,834,030,080B exceeded
+the13,555,990,528B complete-panel requirement. The obsolete-numerical-cleanup-001
+manifest, original member identities and completion receipt are authoritative
+for intentional absence. These21 numerical payloads cannot be restored.
