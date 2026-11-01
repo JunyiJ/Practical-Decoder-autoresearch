@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-11-01T05:07:20.499605+00:00",
+  "observed_at": "2026-11-01T05:14:15.470520+00:00",
   "observed_at_los_angeles": "2026-10-31T15:25:39.350189-07:00",
   "branch": "codex/tokenizer-quality",
   "evidence_commit_before_handoff": "7d5e997b36fd43db6ee898b880edc3d4074a9bfd",
@@ -292,8 +292,8 @@
     "tokenizer-activation-inference-recovery-002",
     "tokenizer-ema-horizon-v1-001"
   ],
-  "first_action": "FFN quality001 slots00-08 ACCEPTED. First freshpair seed187620011 favorsSwiGLU by.013767702604871701nat/token. Slot8 ungatedSiLU1008 freshseed187620012 LR.00125 H200CE4.722783352829461 accepted; same-seed control pending. Next exactly slot9 SwiGLU672 LR.00125 freshseed187620012: python -m research.ffn_quality_v1.quality_execution run --slot 9 --freeze-sha256 4db95f1c36da55dc54e6d5b54bc4b99a2a6423c4b307d012a78c56b23c9bca39 under strictMPS/fourthreads; afteracceptance record-quality-slot.py --slot 9. Verify actualidle/contiguousnineprefix/cleanupreceipt first; no retries or repeatedboundary/deletion. Then slots10/11seed187620013 in frozenorder. Allthree pairedinference reviews and final statistical review required; no interimstop/reselection/gridextension/adoption. Preserve everyfresh raw/H200pair, selectedscreens/bothpilots/failed/fixtureweights and424frozen sources. Slot8 full1200updates/1228800targets/41snapshots, raw/optimizer/EMA/export/independentvalidation/cache accepted and allguards passed. Free13024657408B vsremaining12833606458B fits; recheckentry. Closedtest; retainSiLU/RMSNorm/H200 pending finalreview; oneworker/allguards/no paidcompute/subagents; oldheartbeatPAUSED.",
-  "next_after_starter": "FFN quality001 slots00-08 ACCEPTED. First freshpair seed187620011 favorsSwiGLU by.013767702604871701nat/token. Slot8 ungatedSiLU1008 freshseed187620012 LR.00125 H200CE4.722783352829461 accepted; same-seed control pending. Next exactly slot9 SwiGLU672 LR.00125 freshseed187620012: python -m research.ffn_quality_v1.quality_execution run --slot 9 --freeze-sha256 4db95f1c36da55dc54e6d5b54bc4b99a2a6423c4b307d012a78c56b23c9bca39 under strictMPS/fourthreads; afteracceptance record-quality-slot.py --slot 9. Verify actualidle/contiguousnineprefix/cleanupreceipt first; no retries or repeatedboundary/deletion. Then slots10/11seed187620013 in frozenorder. Allthree pairedinference reviews and final statistical review required; no interimstop/reselection/gridextension/adoption. Preserve everyfresh raw/H200pair, selectedscreens/bothpilots/failed/fixtureweights and424frozen sources. Slot8 full1200updates/1228800targets/41snapshots, raw/optimizer/EMA/export/independentvalidation/cache accepted and allguards passed. Free13024657408B vsremaining12833606458B fits; recheckentry. Closedtest; retainSiLU/RMSNorm/H200 pending finalreview; oneworker/allguards/no paidcompute/subagents; oldheartbeatPAUSED.",
+  "first_action": "FFN quality001 slots00-09 ACCEPTED. Second freshpair seed187620012 at LR.00125: SwiGLU4.727638883431809 vsungated4.722783352829461, candidate-control-.004855530602347891. Firstpair delta+.013767702604871701; signs mixed and descriptive two-pairmean+.004456086001261905 favorsSwiGLU slightly. No interimstop/reselection/gridextension/adoption. Next exactly slot10 SwiGLU672 LR.00125 freshseed187620013: python -m research.ffn_quality_v1.quality_execution run --slot 10 --freeze-sha256 4db95f1c36da55dc54e6d5b54bc4b99a2a6423c4b307d012a78c56b23c9bca39 under strictMPS/fourthreads; afteracceptance record-quality-slot.py --slot 10. Verify actualidle/contiguoustenprefix/cleanupreceipt first; no retry or repeatedboundary/deletion. Then slot11ungatedsame seed/rate; allthree pairedinference reviews and final statistical review required. Keep everyfresh raw/H200pair, selectedscreens/bothpilots/failed/fixtureweights and424frozen sources. Slot9 full1200updates/1228800targets/41snapshots, independentraw/optimizer/EMA/export/validation/cache accepted and allguards passed. Actualfree12744900608B vsremaining12274441874B fits; recheckentry. Closedtest; retainSiLU/RMSNorm/H200 pending finalreview; oneworker/allguards/no paidcompute/subagents; oldheartbeatPAUSED.",
+  "next_after_starter": "FFN quality001 slots00-09 ACCEPTED. Second freshpair seed187620012 at LR.00125: SwiGLU4.727638883431809 vsungated4.722783352829461, candidate-control-.004855530602347891. Firstpair delta+.013767702604871701; signs mixed and descriptive two-pairmean+.004456086001261905 favorsSwiGLU slightly. No interimstop/reselection/gridextension/adoption. Next exactly slot10 SwiGLU672 LR.00125 freshseed187620013: python -m research.ffn_quality_v1.quality_execution run --slot 10 --freeze-sha256 4db95f1c36da55dc54e6d5b54bc4b99a2a6423c4b307d012a78c56b23c9bca39 under strictMPS/fourthreads; afteracceptance record-quality-slot.py --slot 10. Verify actualidle/contiguoustenprefix/cleanupreceipt first; no retry or repeatedboundary/deletion. Then slot11ungatedsame seed/rate; allthree pairedinference reviews and final statistical review required. Keep everyfresh raw/H200pair, selectedscreens/bothpilots/failed/fixtureweights and424frozen sources. Slot9 full1200updates/1228800targets/41snapshots, independentraw/optimizer/EMA/export/validation/cache accepted and allguards passed. Actualfree12744900608B vsremaining12274441874B fits; recheckentry. Closedtest; retainSiLU/RMSNorm/H200 pending finalreview; oneworker/allguards/no paidcompute/subagents; oldheartbeatPAUSED.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -1687,7 +1687,7 @@
     "research/block_norm_v1/runtime/moe/moe_block.py": "c29fb1be70bb4de5584bcbd5fb71cdb7088b5fd87868853aadf875116efd945f",
     "research/block_norm_v1/runtime/moe/scaling.py": "c0265ce242f560a6816d8769f8a756ade2c6ee328ac355e32683192e88dee2bc",
     "research/block_norm_v1/runtime/moe/__init__.py": "f0911c8ad4ac9dc58ac16bd6ea8b33c9d7300f021ad5bc39aa33f1817b0662a9",
-    "research/TOKENIZER_QUALITY_RESULTS.md": "ec769790023c63b81a1b51a093af1d7734d6eec9223bafe3d90f85c33e7ef3ec",
+    "research/TOKENIZER_QUALITY_RESULTS.md": "64341eda5ee3e65975a90866e1c6b662a4f4f7f7e45007916e8bd1074d94648e",
     "research/TOKENIZER_WIDE_HYBRID_PREPARATION.md": "ab1a5d523782303ce5245addafb0dee95ce5896f3d1f374078e55bf53134a8bc",
     "research/tokenizer-evidence/block-norm-preparation-001/model-policy-prerequisite-001-review.json": "c5c051e3aed22dd1caf55ffe039d59100af8146b63bafeab87c23ad31e9297f0",
     "research/tokenizer-evidence/block-norm-preparation-001/model-policy-decision.json": "dd4cb86e7935729f58dbb469a0e5e706c00e41556556e607e27ecf246b172003",
@@ -4821,7 +4821,7 @@
     "research/tokenizer-evidence/ema-horizon-preparation-001/quality001-slot02-evidence/evidence/quality/02/process/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "research/tokenizer-evidence/ema-horizon-preparation-001/quality001-slot02-evidence/evidence/quality/02/process/launch.json": "596034db8561b6ccd5368c17e82058972a98b7d854f2cf0daf5fcdce7cd46ef2",
     "research/tokenizer-evidence/ema-horizon-preparation-001/quality001-slot02-evidence/evidence/quality/02/process/process.json": "f407b68a7badba3a475f1169396fd3a81484f43593f13cbbbfd622843b85545e",
-    "research/TOKENIZER_FFN_STRUCTURE_PREPARATION.md": "3a8adf37cbb2daae193d2d82004bd3dc3687ac8c8918fb56be50d5d14fb483b3",
+    "research/TOKENIZER_FFN_STRUCTURE_PREPARATION.md": "fa40515557caf2c0bb58b5f6e63ccdfc91a7c0b2d232833aeece5780915ba93e",
     "research/tokenizer-evidence/ffn-structure-preparation-001/review001-failure.json": "347090a115a27625afc5dd7c49f3219c748948a4c61a6e9fd1d80d295f92bea9",
     "research/tokenizer-evidence/ffn-structure-preparation-001/review002.py": "58f420cc081a7b4822316984c28a9e4453933df785a4de2ad881deb15f27476b",
     "research/tokenizer-evidence/ffn-structure-preparation-001/review-guard.json": "8c02d68497c513de799fc73a0a6631e9f133e42dfb169d2ca5789f09e203ee30",
@@ -5060,7 +5060,10 @@
     "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-accepted-07.json": "5b6c6809c42029eb4b18aa6440c4efe36f52ee7e366608f0df0226975806d833",
     "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-slot08-result.json": "63cfeb6bde28d336143182f48c7a6a98e3a729f2fd6b493160eff89eaeb8dfe9",
     "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-slot08-record-guard.json": "b492e1ff38d6cc5c7d1d3cd8d257e1bf490fa06b18b20f07507a55b40dd8af65",
-    "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-accepted-08.json": "e38ffa14a0f7ec50016bc0591227b3482edcf593821b2880882e7f705358e8be"
+    "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-accepted-08.json": "e38ffa14a0f7ec50016bc0591227b3482edcf593821b2880882e7f705358e8be",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-slot09-result.json": "39e0a3b2ae65077bb0809f364c98a86e5ea6800436e02a8b003ae8ad0025ee25",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-slot09-record-guard.json": "b7cfff99b8970fa388526b88c1a72269afda87bd6bcadf0b02471c705155909e",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-accepted-09.json": "c7450450a663c14e016aac41feaefff082a2a7b20e3d96798c42ec57efad2896"
   },
   "independent_final_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
   "independent_final_guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
@@ -5070,7 +5073,7 @@
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
   "activation_finite_design": "research/tokenizer-evidence/activation-preparation-001/finite-design-v1.json",
   "activation_session_review": "research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json",
-  "next_action": "FFN quality001 slots00-08 ACCEPTED. First freshpair seed187620011 favorsSwiGLU by.013767702604871701nat/token. Slot8 ungatedSiLU1008 freshseed187620012 LR.00125 H200CE4.722783352829461 accepted; same-seed control pending. Next exactly slot9 SwiGLU672 LR.00125 freshseed187620012: python -m research.ffn_quality_v1.quality_execution run --slot 9 --freeze-sha256 4db95f1c36da55dc54e6d5b54bc4b99a2a6423c4b307d012a78c56b23c9bca39 under strictMPS/fourthreads; afteracceptance record-quality-slot.py --slot 9. Verify actualidle/contiguousnineprefix/cleanupreceipt first; no retries or repeatedboundary/deletion. Then slots10/11seed187620013 in frozenorder. Allthree pairedinference reviews and final statistical review required; no interimstop/reselection/gridextension/adoption. Preserve everyfresh raw/H200pair, selectedscreens/bothpilots/failed/fixtureweights and424frozen sources. Slot8 full1200updates/1228800targets/41snapshots, raw/optimizer/EMA/export/independentvalidation/cache accepted and allguards passed. Free13024657408B vsremaining12833606458B fits; recheckentry. Closedtest; retainSiLU/RMSNorm/H200 pending finalreview; oneworker/allguards/no paidcompute/subagents; oldheartbeatPAUSED.",
+  "next_action": "FFN quality001 slots00-09 ACCEPTED. Second freshpair seed187620012 at LR.00125: SwiGLU4.727638883431809 vsungated4.722783352829461, candidate-control-.004855530602347891. Firstpair delta+.013767702604871701; signs mixed and descriptive two-pairmean+.004456086001261905 favorsSwiGLU slightly. No interimstop/reselection/gridextension/adoption. Next exactly slot10 SwiGLU672 LR.00125 freshseed187620013: python -m research.ffn_quality_v1.quality_execution run --slot 10 --freeze-sha256 4db95f1c36da55dc54e6d5b54bc4b99a2a6423c4b307d012a78c56b23c9bca39 under strictMPS/fourthreads; afteracceptance record-quality-slot.py --slot 10. Verify actualidle/contiguoustenprefix/cleanupreceipt first; no retry or repeatedboundary/deletion. Then slot11ungatedsame seed/rate; allthree pairedinference reviews and final statistical review required. Keep everyfresh raw/H200pair, selectedscreens/bothpilots/failed/fixtureweights and424frozen sources. Slot9 full1200updates/1228800targets/41snapshots, independentraw/optimizer/EMA/export/validation/cache accepted and allguards passed. Actualfree12744900608B vsremaining12274441874B fits; recheckentry. Closedtest; retainSiLU/RMSNorm/H200 pending finalreview; oneworker/allguards/no paidcompute/subagents; oldheartbeatPAUSED.",
   "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json",
   "activation_dispatch_retention_review": "research/tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json",
   "activation_inference_review": "research/tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json",
@@ -5179,8 +5182,8 @@
   "obsolete_screen_cleanup": "research/tokenizer-evidence/obsolete-screen-cleanup-001/completed.json",
   "ffn_structure_capacity_blocker": {
     "status": "resolved_against_current_projection",
-    "required_remaining_free_bytes": 12833606458,
-    "observed_free_bytes": 13024657408,
+    "required_remaining_free_bytes": 12274441874,
+    "observed_free_bytes": 12744900608,
     "shortfall_bytes": 0
   },
   "ffn_structure_model_integration": "research/tokenizer-evidence/ffn-structure-preparation-001/model-integration001.json",
@@ -5202,8 +5205,8 @@
   "ffn_structure_pilot_inference": "research/tokenizer-evidence/ffn-structure-preparation-001/pilot001-inference-result.json",
   "ffn_structure_pilot_last_accepted_slot": 1,
   "ffn_structure_quality_freeze": "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-freeze.json",
-  "ffn_structure_quality_last_accepted_slot": 8,
-  "ffn_structure_quality_last_result": "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-slot08-result.json",
+  "ffn_structure_quality_last_accepted_slot": 9,
+  "ffn_structure_quality_last_result": "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-slot09-result.json",
   "ffn_structure_quality_boundary": "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-boundary-result.json",
   "ffn_structure_selected_rates": {
     "swiglu": 0.00125,

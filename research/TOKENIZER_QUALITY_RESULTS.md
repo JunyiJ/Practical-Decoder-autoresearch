@@ -6488,3 +6488,24 @@ projection. Next is slot09 SwiGLU672 at the same seed/rate, then the final fresh
 pair, all paired inference reviews and final statistical review. Evidence:
 quality001-slot08-result.json/evidence/ and quality001-accepted-08.json in
 ffn-structure-preparation-001/.
+
+
+FFN quality001 slot09 accepted (2026-11-01T05:13:45.691626+00:00), completing the second
+fresh pair at seed187620012/LR0.00125. SwiGLU672 H200 validation CE is
+**4.727638883432**, versus ungatedSiLU1008 **4.722783352829**. Candidate minus
+control is **-0.004855530602 nat/token**, a small ungated advantage. The first
+fresh pair favored SwiGLU by0.013767702605. Thus the two completed fresh pairs
+have opposite signs; their descriptive mean candidate-control delta is
+**+0.004456086001 nat/token**, favoring SwiGLU slightly. This is incomplete
+confirmation evidence. Run the final frozen pair and all inference/final reviews;
+no interim stopping, reselection, grid extension or architecture adoption.
+
+Slot09 completed1,200 updates/1,228,800 targets and41H200 snapshots. Independent
+parent raw/optimizer/EMA/export/full-validation/cache checks, clean child exit
+and all guards passed. Training214.41seconds; worker307.46seconds, parent10.86
+seconds; peak worker RSS1.608GB/MPS driver2.518GB. Every fresh raw/H200 pair,
+selected screen and pilot remains retained. This run deleted no checkpoints and
+did not score test. Actual free12,744,900,608B exceeds the remaining12,274,441,874B
+projection. Next is slot10 SwiGLU672 at seed187620013/LR0.00125, followed by
+slot11 ungated at that seed/rate. Evidence: quality001-slot09-result.json/evidence/
+and quality001-accepted-09.json in ffn-structure-preparation-001/.
