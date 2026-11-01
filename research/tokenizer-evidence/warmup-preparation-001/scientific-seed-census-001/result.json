@@ -1,0 +1,51 @@
+{
+  "audit_sha256": "d03d05d6888c844e8a7fed602c8c2718cce2c46c71a11145961507852c7d20bd",
+  "bytes_scanned": 3908217503,
+  "commit_before_census": "fcb610c8dd9c87fcbd97c15f03d7f1c8fcde851d",
+  "excluded": [
+    "research/tokenizer-evidence/warmup-preparation-001/scientific-seed-census-001",
+    "__pycache__",
+    "binary checkpoints/archives",
+    "raw corpus and untracked external files outside declared roots"
+  ],
+  "file_count": 44227,
+  "holdout_scored": false,
+  "inventory_sha256": "6bf5bfc8e7199d545f3c8530ea4c982fa2de59ef76b4fcae6e6780961259dfd8",
+  "launch_permitted": false,
+  "matches": [],
+  "observed_at": "2026-11-01T19:25:05.770882+00:00",
+  "quality_plan_frozen": false,
+  "root_level_text_included": true,
+  "roots": [
+    "research",
+    "research_runs",
+    "research_state",
+    "src",
+    "tests"
+  ],
+  "scope": "No candidate whole-word integer appears in recorded repository research/config/source/log text. Warmup100/none arms share pilot/screen and three prospective paired fresh seeds; evaluation/bootstrap separate. Not a claim about unrelated external experiments; recheck new recorded inputs before launch.",
+  "screen_seed_reserved_unused": true,
+  "seeds": {
+    "bootstrap": 198850004,
+    "evaluation": 198850003,
+    "fresh": [
+      198850011,
+      198850012,
+      198850013
+    ],
+    "pilot": 198850001,
+    "screen": 198850002
+  },
+  "status": "fresh_seeds_reserved",
+  "suffixes": [
+    ".ipynb",
+    ".json",
+    ".jsonl",
+    ".log",
+    ".md",
+    ".py",
+    ".txt",
+    ".yaml",
+    ".yml"
+  ]
+}

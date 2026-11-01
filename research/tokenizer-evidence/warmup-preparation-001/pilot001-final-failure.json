@@ -1,0 +1,8 @@
+{
+  "status": "closed_pre_audit_environment_failure",
+  "error": "ValueError: Strict environment differs",
+  "cause": "Read-only review invocation omitted PYTORCH_ENABLE_MPS_FALLBACK=0 and PYTORCH_MPS_FAST_MATH=0; binding rejected before guard/artifact audit. No numerical rerun or outputs changed.",
+  "source_sha256": "299e6c47de04a9490945307edc92ed5c8c44ee2ce3164ba7116b5df37a72a7f8",
+  "retry_permitted": false,
+  "next_action": "Separately frozen final002 read-only review with the exact required environment."
+}

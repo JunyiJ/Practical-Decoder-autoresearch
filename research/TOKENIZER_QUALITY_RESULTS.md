@@ -7290,3 +7290,41 @@ Authorized retirement of two obsolete FFN numerical archives reclaimed
 pilot/source and real-payload integration followed by exact eligible recovery,
 actual capacity recheck and fresh seed census; capacity001 records a conditional
 full-panel recovery path. All selected/fresh/failed weights remain protected.
+
+
+## Warmup resource pilots completed
+
+Finite pilot001 completed both120-update arms with actual100-update warmup in
+the challenger. Each independently accepted endpoint has122,880 targets,
+88 EMA tensors and21 H200 snapshots. Paired full/cache/reset inference passed
+at batches1/8. Independent final002 resource/artifact review passed. The first
+read-only final review omitted two strict environment variables and stopped
+before auditing; its source/plan/failure are preserved closed. Final002 used
+the required environment without repeating training or inference measurements.
+No pilot loss selects a learning rate or supports an adoption claim.
+
+The additive warmup_campaign_v1 source is frozen with487 source dependencies.
+Exact retention-boundary001 and actual generated-worker payload/parent
+pilot-integration001 passed before dependent worker weights were retired.
+Fresh census reserved panel198850: pilot001/evaluation003 used as planned;
+screen002, fresh011/012/013 and bootstrap004 remain unused. Only the resource
+pilot plan is frozen; no scientific quality plan or worker is active.
+
+Exact obsolete-numerical-cleanup-003 reclaimed4,691,175,838B from eight obsolete
+numerical archives and four successful generated-worker weights, verifying
+35,434 survivors unchanged. All original receipts and every selected/fresh/failed
+artifact remain protected, including all model-resume001 publication-failure
+outputs. Retired identities resolve through the later manifest and cannot be
+restored. Capacity002 then measured14,070,431,744B versus13,555,990,528B required.
+After pilots, final002 measured12,916,207,616B; the1,118,332,368B pilot weights
+remain present. Their conditional exact retirement would yield14,034,539,984B.
+This is conditional capacity, not permission to dispatch an unfrozen panel.
+
+Next implement minimal additive warmup_quality_v1 orchestration outside all
+frozen namespaces: six equal-LR1200-update screens, per-arm minimum full-validation
+H200 CE/lower-LR tie selection, then all three fresh pairs, paired inference and
+independent statistics. Validate real pilot payload/cache integration, close
+pilot tensor dependencies, audit exact successful-pilot retirement, remeasure
+complete capacity and verify unused scientific seeds before final quality freeze.
+Keep warmup100 versus none, LR0.000625/0.00125/0.0025, cooldown/H200start800,
+H200interval10/41snapshots, all frozen gates, confirmations and resource guards.

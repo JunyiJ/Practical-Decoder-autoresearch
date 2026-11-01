@@ -414,3 +414,32 @@ manifest explains intentional absence. Actual post-cleanup free10,291,621,888B
 exceeded the10,066,329,600B bounded two-worker prerequisite requirement, and the
 enabled warmup workers and paired inference completed. This does not authorize
 partial scientific panels or waive future complete-capacity checks.
+
+
+## Warmup capacity recovery after dependency closure
+
+Renewed human permission to retire obsolete numerical checkpoints applies to
+obsolete-numerical-cleanup-003's exact manifest: eight archives under
+ffn-norm-historical-numerical-001, ffn-norm-prerequisites-001,
+ffn-norm-worker-001 and mla-score-worker-001, plus four successful generated
+warmup worker raw/H200 weights. The archived244 payloads have original verified
+success reviews and member manifests; current generated workers passed actual
+parent/inference and finite-pilot payload integration, closing their tensor
+dependencies. No selected/fresh/failed weights are eligible. The model-resume001
+publication-failure source and all six checkpoints remain protected.
+
+Require exact original path/size/hash checks, global worker lock, idle process
+check, durable deletion journal and survivor verification. Keep all original
+receipts, sources, configs and metrics. The later manifest explains intentional
+absence; retired identities cannot be restored or re-evaluated. This overrides
+prior archive retain-all/restoration wording only for those exact paths.
+
+
+Completed obsolete-numerical-cleanup-003: all12 exact paths retired, reclaiming
+4,691,175,838B;35,434 survivors verified unchanged. Eight archives and four
+successful generated-worker weights are permanently absent; original receipts
+and member manifests remain immutable. Selected/fresh/failed artifacts, including
+all warmup model-resume001 publication-failure checkpoints, remain protected.
+Actual post-cleanup free14,070,472,704B enabled both warmup resource pilots.
+The new pilot weights remain present pending future quality-source dependency
+closure and a separate exact successful-pilot retirement audit.
