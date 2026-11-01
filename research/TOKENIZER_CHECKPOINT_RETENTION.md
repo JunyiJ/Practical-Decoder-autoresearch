@@ -256,3 +256,18 @@ weights cannot be reloaded; their original acceptance/config/validation/source
 receipts remain immutable. Failed pilot001, selected/fresh models and existing
 archives were excluded. quality001 now binds completed retirement evidence rather
 than requiring the old loose paths. Do not rerun a closed pilot controller.
+
+
+## Completed MLA score six-screen retirement
+
+After all six quality001 screens and independent boundary payload/validation
+re-audits passed, the persisted minimum-CE/lower-LR tie rule selected LR0.00125
+for both score arms (slots02/03). Exactly the eight raw/H200 files in losing
+slots00/01/04/05 were retired, reclaiming2,236,660,384B;72 remaining campaign
+files were rehashed unchanged. Evidence is preserved under
+mla-score-preparation-001/quality001-screen-retention/ and
+quality001-boundary-result.json. Original receipts remain immutable historical
+identities, resolved by this later manifest for absent loser weights. These
+retired weights cannot be restored. The selected pairs, every fresh confirmation,
+failures, protected archives and unrelated files remain protected. No repeat
+cleanup or fresh-confirmation cleanup is permitted.

@@ -6910,3 +6910,48 @@ through the frozen boundary, then run all three fresh confirmation pairs.
 No test scoring, grid extension or checkpoint removal occurred in this iteration.
 Evidence: quality001-slot04-result.json, quality001-slot04-evidence/ and
 quality001-accepted-04.json in mla-score-preparation-001/.
+
+
+## MLA score six-screen selection and retention complete
+
+All six frozen1200-update screens passed independent checkpoint/optimizer/EMA,
+full-validation and cache acceptance. Each completed1,228,800training targets
+and41H200 snapshots; validation covers34278 aligned targets. Final slot05
+(multiplier1.0/LR0.0025) reached CE4.832040597159. No grid extension, changed
+source, pilot-loss selection or replacement seed occurred.
+
+| Learning rate | Multiplier0.5 H200 CE | Multiplier1.0 H200 CE | Unit minus half |
+| --- | ---: | ---: | ---: |
+| 0.000625 | 4.896530022 | 4.863321954 | -0.033208068 |
+| 0.00125 | 4.703659447 | 4.692032518 | -0.011626929 |
+| 0.0025 | 4.793428590 | 4.832040597 | +0.038612008 |
+
+The persisted per-arm minimum-full-validation-CE/lower-LR tie rule selects
+**LR0.00125 for both arms**. On this screening seed, multiplier1.0 improves
+CE at the two lower rates but worsens it at0.0025. At the selected common rate
+the difference is -0.011626928981nat/token. This is screening evidence only;
+the three reserved fresh pairs and original strict gate decide adoption.
+The result makes an unqualified claim that multiplier1.0 always improves this
+backbone inappropriate.
+
+The frozen boundary independently reloaded and re-audited all six raw/H200
+pairs before persisting selection and retiring slots00/01/04/05 only. Eight
+files totaling2,236,660,384B were removed under the shared worker/campaign locks,
+exact path/size/hash manifest, durable intent/deletion journal and bounded
+guards. All72 retained campaign evidence files were reverified unchanged.
+Selected slots02/03 remain; no fresh, failure, archive or unrelated path was
+removed. Retired weights cannot be restored; original accepted receipts and
+all nonweight evidence remain immutable, with the later retention manifest
+explaining their absent checkpoint paths. A read-only recorder independently
+verified the boundary and preserved its selection, inventory, manifest, journal,
+receipt and guards in quality001-screen-retention/.
+
+Post-retirement free12,979,437,568B exceeds the full remaining
+requirement12,437,660,336B, including the unchanged8GiB
+reserve. Fresh slot06 (multiplier0.5/LR0.00125/seed198630011) has started serially;
+slot07 is its matched1.0 partner. Complete all six fresh trajectories, all three
+paired inference reviews and independent final statistics. Keep every fresh
+raw/H200 pair and the test holdout closed. Evidence: quality001-slot05-result.json
+and preserved metadata, quality001-accepted-05.json, quality001-boundary-result.json,
+quality001-boundary-record-guard.json and quality001-screen-retention/ in
+mla-score-preparation-001/.
