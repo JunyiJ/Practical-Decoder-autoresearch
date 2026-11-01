@@ -331,3 +331,26 @@ screens until the complete six-screen selection/retirement boundary and every
 fresh pair through final review; no test access. Evidence: quality001-slot02-result.json,
 quality001-slot02-evidence/ and quality001-accepted-02.json in
 mla-score-preparation-001/.
+
+
+### Second matched score comparison accepted
+
+quality001 slot03 accepted at 2026-11-01T06:42:22.271513+00:00: multiplier0.5,
+LR0.00125 and screening seed198630002 completed1200updates/1,228,800targets,
+with41H200 snapshots. Independent checkpoint/optimizer/EMA, full-validation
+and cache checks passed. H200 CE across34278 targets is 4.703659447036,
+versus 4.692032518055 for multiplier1.0 at the same rate. Unit-minus-half
+is -0.011626928981nat/token. Both completed matched-rate comparisons favor1.0
+on this screening seed, but the gap is smaller at0.00125 than at0.000625.
+This is no rate selection or adoption result; finish the two LR0.0025 screens
+and all three reserved fresh pairs under the original gate.
+
+Worker peak RSS1,643,544,576B and MPS driver2,510,094,336B remained below
+4GiB/6GiB; both guards finished without violations. Observed free
+11,865,415,680B exceeds remaining complete-panel requirement
+11,319,330,144B with four raw/H200 pairs retained. Slot04
+(multiplier0.5, LR0.0025) has started serially. All screen pairs remain protected
+until the complete six-screen saved-selection boundary; no test access, grid
+extension or changed source. Evidence: quality001-slot03-result.json,
+quality001-slot03-evidence/ and quality001-accepted-03.json in
+mla-score-preparation-001/.
