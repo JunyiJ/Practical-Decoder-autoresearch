@@ -6818,3 +6818,26 @@ The next frozen slot01 (multiplier1.0 at the same LR) has started serially. Keep
 all six screens through selection and every fresh pair through final review.
 Evidence: quality001-slot00-result.json and its preserved metadata, plus the
 external quality001-accepted-00 anchor. No test scoring or interim selection.
+
+
+### First matched MLA score screening comparison
+
+quality001 slot01 accepted at 2026-11-01T06:31:57.562317+00:00: multiplier1.0 at
+LR0.000625 and screening seed198630002 completed1200updates/1,228,800targets,
+with41H200 snapshots and88 EMA parameters. Independent parent checkpoint,
+optimizer/EMA, full-validation and cache audits passed. H200 CE across34278
+validation targets is 4.863321954179, versus 4.896530022241 for
+multiplier0.5 at the same rate: unit-minus-half -0.033208068063nat/token.
+This is the first screening comparison only; it does not select a rate or
+establish adoption. Finish all six equal-budget screens, then all three fresh
+pairs at the independently selected rates under the original frozen gate.
+
+Worker peak RSS1,640,792,064B and MPS driver2,510,094,336B remained within
+4GiB/6GiB limits; worker and parent guards finished without violations.
+Observed free 12,939,902,976B exceeds the remaining complete-panel
+requirement 12,437,660,336B after charging both retained
+raw/H200 pairs. Slot02 (multiplier1.0, LR0.00125) has started serially, with
+capacity rechecked by the frozen runner. Keep all six screen pairs until the
+saved-selection retention boundary; the holdout remains closed. Evidence:
+mla-score-preparation-001/quality001-slot01-result.json, preserved slot01
+metadata and quality001-accepted-01.json.
