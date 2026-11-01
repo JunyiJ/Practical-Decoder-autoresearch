@@ -7273,3 +7273,20 @@ bounded peak-LR tuning; local mixing needs explicit placement/cache-history desi
 and remains deferred. See TOKENIZER_WARMUP_PREPARATION.md. No new scientific seed
 or panel is frozen. The small generated schedule/toy-resume prerequisite passed;
 full-model Muon/AdamW/raw/H200/cache and real-worker prerequisites remain.
+
+
+Warmup prerequisites now pass actual full-model Muon/AdamW group rates, a short
+generated repeat/raw-resume/EMA/H200 fixture, two real bounded workers with
+independent full-validation acceptance, and paired trained cache/reset inference.
+The full1,200-step rate schedule was checked on real optimizer groups; actual
+short fixtures used four updates and warmup2, not scientific warmup100 training.
+There is no new quality result or scientific seed reservation. The final receipt
+serialization failure was preserved and recovered from sealed evidence without
+rerunning numerical work. See TOKENIZER_WARMUP_PREPARATION.md and its exact
+model-receipt-recovery001/trainer-worker001/trained-inference001 evidence.
+
+Authorized retirement of two obsolete FFN numerical archives reclaimed
+1,051,131,606B with35,257 survivors unchanged. The next concrete action is finite
+pilot/source and real-payload integration followed by exact eligible recovery,
+actual capacity recheck and fresh seed census; capacity001 records a conditional
+full-panel recovery path. All selected/fresh/failed weights remain protected.

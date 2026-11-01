@@ -46,3 +46,51 @@ partial panel. Use current manifests; retired archives cannot be restored.
 
 Evidence: tokenizer-evidence/warmup-preparation-001/direction-decision.json and
 schedule-component001-plan.json, executable source, result and guard.
+
+
+## Warmup full-model and real-worker prerequisites
+
+The inherited runtime already binds the LR schedule into its training contract,
+captures base group rates before optimizer restoration, and rejects a changed
+schedule on resume. No architecture or frozen source change was necessary.
+Both1,200-update schedules now pass exhaustive checks on the actual full-model
+Muon/AdamW groups, including width scaling and noncompounding application. Both
+arms have identical initialization,28,492,416 parameters and88 EMA tensors.
+
+A separate four-update generated fixture (warmup2 versus none, H200 start2)
+passed repeated and serialized-resumed model/optimizer/EMA/RNG checks with zero
+difference, plus CPU/MPS full/cache/reset inference at batches1/8. This shortened
+fixture is explicitly not a completed warmup100 training trajectory. Original
+model-resume001's final receipt publication failed on optimizer tuple metadata
+after all numerical checks had passed. Its source, plan, failure and every
+checkpoint remain preserved and closed. A separately frozen read-only receipt
+recovery verified the complete trace and every output hash without numerical
+replay. See model-receipt-recovery001.json; do not rerun model-resume001.
+
+Both actual four-update run_training children then passed independent parent
+raw/H200/optimizer/RNG/full-validation acceptance:4,096 targets and3 H200
+snapshots each. CPU/MPS full-validation CE differences were below3e-7. Paired
+trained full/cache/reset inference also passed; descriptive timing does not
+establish a quality or serving advantage. Runtime integration is frozen in
+research/warmup_v1 with all477 predecessor sources unchanged. No scientific
+seed, resource-pilot plan or quality plan is reserved/frozen.
+
+Exact obsolete-numerical-cleanup-002 retired two closed FFN resume archives,
+recovering1,051,131,606B, with all35,257 other files unchanged. The original
+FFN resume archive manifests are retained; those two archives cannot be restored.
+All selected/fresh/failed evidence, including the warmup publication-failure
+outputs, remains protected.
+
+Next complete minimal finite warmup-pilot orchestration and a full six-screen/
+three-fresh-pair design with tested primitives and real payload integration.
+Choose a bounded pilot that actually exercises the100-update warmup; the
+four-update fixture alone does not demonstrate that execution. Close generated
+worker tensor dependencies before considering exact successful-worker retirement.
+capacity001 measures complete retained-output high-water13,555,990,528B versus
+observed9,365,782,528B. It identifies3,572,856,138B of older numerical archives
+for eligibility audit plus1,118,319,700B of successful generated-worker weights
+after dependent source/payload checks close. Conditional recovery yields
+14,056,958,366B (500,967,838B margin); this is not dispatch readiness. Execute
+exact authorized audits/manifests, remeasure actual space, then fresh seed census,
+finite pilot freeze, guarded pilots and final quality freeze. No new escalation
+or wait is appropriate while this concrete source/recovery path remains.

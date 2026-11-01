@@ -1,0 +1,27 @@
+{
+  "status": "closed_receipt_publication_failure",
+  "at": "2026-11-01T19:07:13.192138+00:00",
+  "exit_code": 1,
+  "error": "ValueError: Native JSON types required",
+  "phase": "Final external receipt publication after guard exit and both arm_completed trace records",
+  "cause": "Optimizer group betas are tuples; ordinary trace JSON serialization accepts them, but canonical receipt validation requires native lists.",
+  "source": {
+    "path": "research/tokenizer-evidence/warmup-preparation-001/model-resume001.py",
+    "sha256": "fb11347eb33eea133b989eada0c1b412b491b713767aeb74fda66b32ff4bf77c"
+  },
+  "plan": {
+    "path": "research/tokenizer-evidence/warmup-preparation-001/model-resume001-plan.json",
+    "sha256": "cf4c24ef817f9a8a0b5cdd9222044997cd45c58759ee4886b217af2cf6843d69"
+  },
+  "trace": {
+    "path": "research/tokenizer-evidence/warmup-preparation-001/model-resume001-trace.jsonl",
+    "sha256": "6c33d1ba105387af54991a65be00b838245b1ee8b69039d39f58b27f3ef80585"
+  },
+  "guard": {
+    "path": "research/tokenizer-evidence/warmup-preparation-001/model-resume001-guard.json",
+    "sha256": "40bc1927b58ef8b24a02ebe56c1ed9772b3d38f73c9b17b7177d318296edc4e2"
+  },
+  "retry_permitted": false,
+  "original_source_and_outputs_preserved": true,
+  "recovery": "New read-only publication recovery will validate immutable trace, source bindings and all recorded files. No numerical rerun or new training."
+}

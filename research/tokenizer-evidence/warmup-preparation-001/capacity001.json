@@ -1,0 +1,96 @@
+{
+  "status": "prospective_full_panel_capacity_recovery_route_not_dispatch_ready",
+  "at": "2026-11-01T19:14:32.768334+00:00",
+  "observed_free_bytes": 9365782528,
+  "required_free_bytes": 13555990528,
+  "deficit_bytes": 4190208000,
+  "accounting": {
+    "retained_weight_allowances": 8,
+    "each_weight_pair_cap_bytes": 587202560,
+    "raw_cap_bytes": 469762048,
+    "export_cap_bytes": 117440512,
+    "complete_metadata_and_transient_bytes": 268435456,
+    "reserve_bytes": 8589934592,
+    "note": "Eight complete raw/H200 allowances cover retained selected screens plus six fresh endpoints; exact successful-pilot and losing-screen retirement must be prospectively tested/frozen. Streaming publication must avoid duplicate whole-file payloads. Scientific and pilot freezes remain pending."
+  },
+  "actual_worker_weights": [
+    {
+      "arm": "none",
+      "kind": "parent",
+      "path": "research_runs/tokenizer-warmup-trainer-prerequisite-001/evidence/pilots/00/checkpoints/final_000004_1793560264951415000.pt",
+      "sha256": "b2f644a8e4feffb756a5dcb53167ed150efc181f29074f335c848cd0a4f77219",
+      "bytes": 445084775
+    },
+    {
+      "arm": "none",
+      "kind": "h200",
+      "path": "research_runs/tokenizer-warmup-trainer-prerequisite-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "157386ff711308fc080a563ac3c35773175bfc705e5d69ee03ad5ba3cf59180f",
+      "bytes": 114075011
+    },
+    {
+      "arm": "warmup100",
+      "kind": "parent",
+      "path": "research_runs/tokenizer-warmup-trainer-prerequisite-001/evidence/pilots/01/checkpoints/final_000004_1793560303643000000.pt",
+      "sha256": "52e77eb1c72253ae3001a45772670aeeaf0ef4435a4ae22dd1fd615d5a3a7b96",
+      "bytes": 445084839
+    },
+    {
+      "arm": "warmup100",
+      "kind": "h200",
+      "path": "research_runs/tokenizer-warmup-trainer-prerequisite-001/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "60465a39ee088ba934f7fcf475af7bdaf363ec10a7aa4f89613bc9fca915f74e",
+      "bytes": 114075075
+    }
+  ],
+  "actual_worker_weight_bytes": 1118319700,
+  "prior_obsolete_archive_candidates": [
+    {
+      "path": "research_archives/ffn-norm-historical-numerical-001/successful-numerical.tar.zst",
+      "bytes": 547903185
+    },
+    {
+      "path": "research_archives/ffn-norm-prerequisites-001/h200.tar.zst",
+      "bytes": 533893876
+    },
+    {
+      "path": "research_archives/ffn-norm-prerequisites-001/resume.tar.zst",
+      "bytes": 372606285
+    },
+    {
+      "path": "research_archives/ffn-norm-prerequisites-001/trainer.tar.zst",
+      "bytes": 534382313
+    },
+    {
+      "path": "research_archives/ffn-norm-prerequisites-001/transport.tar.zst",
+      "bytes": 104224284
+    },
+    {
+      "path": "research_archives/ffn-norm-worker-001/none.tar.zst",
+      "bytes": 315015459
+    },
+    {
+      "path": "research_archives/ffn-norm-worker-001/rms.tar.zst",
+      "bytes": 314921075
+    },
+    {
+      "path": "research_archives/mla-score-worker-001/successful-workers.tar.zst",
+      "bytes": 849909661
+    }
+  ],
+  "prior_candidate_bytes": 3572856138,
+  "prior_candidates_audited_for_new_deletion": false,
+  "conditional_current_worker_retirement": "Successful generated worker weights only, after finite-pilot source/integration consumes and closes their tensor-loading dependencies, with exact original acceptance and survivor audit. No current deletion authorized by this capacity observation alone.",
+  "conditional_projected_free": 14056958366,
+  "conditional_margin": 500967838,
+  "protected": "All selected/fresh/failed artifacts, especially model-resume001 publication-failure source and every checkpoint; immutable prior receipts/sources; no closed-fixture retry.",
+  "next_action": "Complete minimal finite pilot/source and real-payload integration, then execute exact eligible recovery audits before fresh census and any pilot/quality freeze. Re-measure actual free space; do not repeat this observation as a blocker.",
+  "worker": {
+    "path": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
+    "sha256": "30c6964eeb8463d9b9a1ea2f057da9408e57b6c548318aa8240403d4f818f08b"
+  },
+  "inference": {
+    "path": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
+    "sha256": "d9b6ef1d13d2aeb306df2f6c9266ac8ef9dacd4ae17ff0959a5bae28f992704a"
+  }
+}

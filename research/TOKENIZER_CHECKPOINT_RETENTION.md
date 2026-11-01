@@ -390,3 +390,27 @@ All72 retained files, including the selected pairs, verified unchanged. Exact ma
 guards and receipts are preserved under ffn-norm-preparation-001/quality001-screen-retention/.
 Original receipts remain immutable; deleted loser weights cannot be restored.
 All fresh confirmation pairs remain protected.
+
+
+## Renewed numerical retirement: closed FFN resume fixtures
+
+The same explicit human authorization covers the two proved-obsolete
+`research_archives/ffn-norm-resume-001/{none,rms}.tar.zst` archives, subject to
+obsolete-numerical-cleanup-002's exact original success/member/hash audit, global
+worker lock, durable journal and survivor verification. The FFN normalization
+campaign is terminally closed. Warmup uses its own new generated corpus and
+checkpoints, so these six older numerical weights have no remaining loading
+dependency. Preserve all original sources/receipts/configs, selected/fresh/failed
+artifacts, and especially the new warmup publication-failure attempt and outputs.
+On completion these two archive identities cannot be restored or re-evaluated.
+This narrow exception supersedes their earlier restoration/retain-all language.
+
+
+Completed obsolete-numerical-cleanup-002: both exact closed FFN resume archives
+were retired, reclaiming1,051,131,606B. All35,257 survivors rehashed unchanged,
+including selected/fresh/failed weights and the new warmup publication-failure
+outputs. Original archive/member/success receipts remain immutable; the later
+manifest explains intentional absence. Actual post-cleanup free10,291,621,888B
+exceeded the10,066,329,600B bounded two-worker prerequisite requirement, and the
+enabled warmup workers and paired inference completed. This does not authorize
+partial scientific panels or waive future complete-capacity checks.
