@@ -253,3 +253,22 @@ Freeze SHA: `4a10df86ada4f27e89911f6ee231946713e277f9c3eb5f33b683f09e8fbdad26`. 
 8GiB reserve. Streaming publication adds no full-payload duplicate. Slot00 was
 dispatched using the exact freeze, one local worker and four threads. Monitor actual
 process/anchor state before any later dispatch. No final quality claim is available.
+
+
+## FFN product-normalization screening complete
+
+All six1,200-step endpoints passed independent checkpoint, full-validation and
+cache acceptance. Both arms selected LR0.00125 using the frozen minimum-CE rule.
+Screen H200 CE (none/RMS) was4.9243453/4.8871934 at0.000625,
+4.7064604/4.7193965 at0.00125, and4.7702461/4.7424677 at0.0025.
+These reused-seed screens select rates, not architecture adoption. The selected
+RMS recipe trails none by0.0129361 on this screen; all three fresh pairs remain
+required regardless of that direction.
+
+The frozen boundary independently re-audited all six endpoints and retired only
+eight weights from the four losing screen pairs, reclaiming2,236,787,128B.
+All72 retained files, including both selected raw/H200 pairs (slots02/03),
+verified unchanged. Original receipts stay immutable; absent loser paths resolve through
+ffn-norm-preparation-001/quality001-screen-retention/. Portable exact screen
+metadata is saved in quality001-screen-evidence/. The first fresh confirmation
+is dispatched with all guards; all fresh raw/H200 pairs will remain protected.

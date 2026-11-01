@@ -381,3 +381,12 @@ pilot receipts and source remain immutable; this later manifest explains absent
 weights, which cannot be restored. Selected/fresh/failed weights and all remaining
 archives were excluded. The final quality plan binds this completed retirement;
 never rerun the closed pilot controller against intentionally absent paths.
+
+
+Completed FFN-normalization quality001 screen retention: the frozen boundary
+selected slots02/03 (both LR0.00125), independently re-audited all six screens,
+and retired exactly four losing raw/H200 pairs totaling2,236,787,128B.
+All72 retained files, including the selected pairs, verified unchanged. Exact manifests, journal,
+guards and receipts are preserved under ffn-norm-preparation-001/quality001-screen-retention/.
+Original receipts remain immutable; deleted loser weights cannot be restored.
+All fresh confirmation pairs remain protected.
