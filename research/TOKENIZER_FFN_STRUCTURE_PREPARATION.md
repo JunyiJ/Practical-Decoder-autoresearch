@@ -1,8 +1,8 @@
 # Tokenizer gated versus ungated SiLU FFN preparation
 
-Status: architecture hypothesis selected; full-model integration and training
-remain blocked by the complete-panel capacity projection. November1UTC /
-October31Los Angeles. No scientific seeds or launch plan are frozen.
+Status: architecture hypothesis selected; integration prerequisites remain.
+The renewed obsolete-screen cleanup resolves the current capacity projection
+(see latest receipt below). No scientific seeds or launch plan are frozen.
 
 ## Question and controls
 
@@ -121,3 +121,29 @@ capacity or an appropriate output volume before full-panel dispatch. Keep all
 three fresh confirmation pairs, both tuned controls and the8GiB reserve; do
 not change scope solely to fit. Do not repeat unchanged space polling or add
 metadata-only implementation work while this prerequisite remains unresolved.
+
+
+## Renewed old-checkpoint retirement completed
+
+The user explicitly authorized removing old checkpoints. The narrow exception
+retired only two obsolete wider-hybrid screening archives (26 completed endpoints),
+reclaiming 9,828,356,231 logical bytes. No selected, fresh-confirmation,
+failed, or numerical-fixture checkpoint was removed. All 232 surviving checkpoint/
+archive files and 25,974 non-weight evidence files were rehashed unchanged.
+Original archive/member hashes and results remain; the retired weights can no
+longer be restored or re-evaluated.
+
+Free space at completion was 20,517,961,728 bytes, above the proposed
+15,169,995,168-byte high-water requirement by 5,347,966,560 bytes.
+The previous capacity blocker is resolved against that projection. Revalidate
+actual serialization/transient needs before freezing or dispatching a panel.
+
+The earlier restriction on all implementation while capacity was short was too
+broad. Capacity constrains disk-consuming dispatch, not bounded source or CPU
+prerequisites. Continue narrow full-model FFN integration and numerical/cache/
+optimizer/checkpoint prerequisites outside the frozen sources. No new scientific
+seeds, plan freeze or training launch has occurred. AGENTS.md now requires active
+blocker recovery and distinguishes blocked actions from independent useful work.
+
+Evidence: tokenizer-evidence/obsolete-screen-cleanup-001/manifest.json,
+completed.json, journal.jsonl and both resource guards.

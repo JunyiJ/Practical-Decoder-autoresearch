@@ -150,3 +150,24 @@ guard. The prior oversized-receipt audit failed before deletion and is preserved
 separately. Old pilot and final results describe their original time of review;
 this later manifest explains the two intentionally absent files. They cannot be
 reloaded/re-audited, and no closed controller or numerical fixture was rerun.
+
+## Renewed authorization: retire obsolete archived screens
+
+The human's latest instruction, “find cleanup possibility - ok to remove old
+checkpoints”, authorizes a narrow retirement exception to the earlier archive
+retain-all rule. The exact candidate allowlist is the campaign002-completed and
+campaign003-completed archives from checkpoint-compaction-001: 26 completed,
+non-selected screening endpoints from superseded wider-hybrid runs. Their
+original archive receipts explicitly excluded failed, selected and fresh weights.
+Keep the numerical archive, all selected models, every fresh confirmation and
+failed checkpoint. Preserve every original result, config, log and hash.
+
+The new obsolete-screen-cleanup-001 manifest and journal supersede restoration
+instructions only for these two archives after recorded deletion. They are
+permanently retired, not moved; their weights cannot then be restored or
+re-evaluated. Original archival receipts remain immutable historical evidence.
+
+Completed: two archives totaling 9,828,356,231 bytes removed. All 232
+retained checkpoint/archive files and 25,974 metadata files verified unchanged.
+Free space afterward: 20,517,961,728 bytes. See obsolete-screen-cleanup-001/
+completed.json; old archive restoration instructions no longer apply to these two files.
