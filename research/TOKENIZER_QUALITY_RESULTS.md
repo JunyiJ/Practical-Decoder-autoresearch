@@ -7167,3 +7167,19 @@ Exact original members remain protected in ffn-norm-prerequisites-001 archives;
 use the later manifests, not absent loose paths. Selected/fresh/failure artifacts
 were excluded. The capacity recovery enabled serialized tests immediately; a
 complete future retained-output projection remains required.
+
+## FFN product-normalization real execution prerequisites complete
+
+Both serial two-update generated workers passed independent parent raw/H200/
+optimizer/EMA/RNG audits and exact full-validation recomputation. Trained paired
+full/cache/reset inference passed at batches1/8. No scientific quality claim is
+available. The finite198740 seed panel is reserved after a43,153-file collision
+census; all scientific seeds remain unused and no new pilot/quality plan is frozen.
+
+Audited lossless archival of six completed resume files recovered957,460,848B
+net with27,031 survivors unchanged, enabling both workers without reducing guards.
+Those checkpoint identities resolve via ffn-norm-preparation-001/resume-archive001.
+The prospective full retained panel requires13,555,990,528B free; capacity001's
+9,661,427,712B observation leaves3,894,562,816B deficit. Continue finite pilot
+source and exact eligible recovery audit before any scientific dispatch; do not
+repeat stale measurements as progress or consume a partial panel.

@@ -17,3 +17,11 @@ and request cache signatures distinguish the arms. Legacy policies continue to
 reject this extension. No frozen source is modified and no scientific panel is
 selected by this runtime. Prerequisite evidence and next work are recorded in
 `../TOKENIZER_FFN_NORM_PREPARATION.md`.
+
+The additive validation, artifact-acceptance, output and inference adapters reuse
+the prior bounded primitives under this policy. The output sink retains448MiB raw,
+112MiB H200 and16MiB trajectory-metadata caps. Parent acceptance checks actual
+optimizer/RNG/EMA state and independently recomputes every validation target.
+Inference binds none/RMS model identities and exact28,492,416/28,495,104 parameter
+counts; both cache footprints remain196,608B per batch item. No ledger or new
+scientific dispatcher is introduced by these prerequisite adapters.

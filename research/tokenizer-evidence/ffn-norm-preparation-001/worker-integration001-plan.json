@@ -1,0 +1,98 @@
+{
+  "status": "prospective_generated_worker_inference_only",
+  "sources": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/validation_data.py",
+      "sha256": "fad96eb58bfe8af43c4af48218c16a6ee7fd049e1fa6005c4655b2dc69b1e4eb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/artifact_acceptance.py",
+      "sha256": "4e9b59ace3d14581013f02fb67e2db44fc4179831a22d049f5cd9ee4ad6092c8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/__init__.py",
+      "sha256": "bd2fc739d62b1f1fd007d80adba9e5ab9c7cb6ac1a1735e77fb7d609a172b56d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/inference.py",
+      "sha256": "ca112bb13b74bcc3ae46080b4fb6f86dffe504b8f57db914d542dafdd5cdf8b3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/evidence_contract.py",
+      "sha256": "c776d18a39e76631933714bbd35d51e51e4a9f9e9a9d4ca81a441e1d53f81b3a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/output.py",
+      "sha256": "5730550964aabe6a63f72a572cb828838a6a927d7423dc07e3565e58c0a2bcd2"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/validation.py",
+      "sha256": "3255e6c8fd5dd01c37eb9a9c5f2f084fc5bd0f70453a90c0e7df4fcb4d4ec820"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/runtime/__init__.py",
+      "sha256": "efa6e69c8ce84704c81a8672ee7a8813c0464b3bd3cb4e44d914a20de8de603a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/runtime/models/ffn_hidden_norm.py",
+      "sha256": "350c976d43e6dab1e2b9083e525787c95c94613d3232208d63f0470270f6940b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/runtime/models/block_norm.py",
+      "sha256": "935c7edd94d5afab25bda387e5f664e99fa355249da1f897300e976ef2b58fd2"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/runtime/models/__init__.py",
+      "sha256": "9ada1d55c609145dae5040b4609525d851f5c5817fc1e7b0538b6f4bb16923c4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/runtime/models/tokenizer_architecture.py",
+      "sha256": "500c8e33aa123787e2edce33fe59f3fa9c528aaecdcfc86d2e35019cdc26db65"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_norm_v1/runtime/train/__init__.py",
+      "sha256": "21c5466764e256029f3a486707125e421750dbbcf4568125759cab1a559d494f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/trainer-worker001.py",
+      "sha256": "1cb3970bd40e5ed38a057569b9eaf5030bb7d05637508b31e55d7796945a4074"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/trained-inference001.py",
+      "sha256": "94c62d426ae3a0a0b94ec69ecd79acfa73e9cb51e48f8efabbe3be28cf2233f0"
+    }
+  ],
+  "arms": [
+    "none",
+    "rms"
+  ],
+  "updates_per_arm": 2,
+  "batch": 8,
+  "context": 128,
+  "total_training_targets_per_arm": 2048,
+  "synthetic_training_seed": 90861,
+  "synthetic_evaluation_seed": 90862,
+  "scientific_training": false,
+  "holdout_read": false,
+  "scientific_seed_census_frozen": false,
+  "checks": [
+    "bounded run_training streaming publication",
+    "raw optimizer/RNG/EMA and H200 exact parent audit",
+    "independent MPS full validation recomputation and CPU comparison",
+    "malformed target coverage rejected",
+    "paired trained full/cache/reset before alternating timing"
+  ],
+  "limits": {
+    "raw_bytes": 469762048,
+    "export_bytes": 117440512,
+    "trajectory_bytes": 603979776,
+    "round_metadata_bytes": 268435456,
+    "reserve_bytes": 8589934592,
+    "required_initial_free": 10066329600,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "seconds_per_trial_and_acceptance": 600,
+    "cpu_threads": 4
+  },
+  "archive_dependency_closure": "Old six resume weights are not loaded by these adapters; use immutable success receipt/configs and generated corpus. Original replay/export/cache audits completed. Preserve exact bytes through verified archive manifests before loose removal."
+}

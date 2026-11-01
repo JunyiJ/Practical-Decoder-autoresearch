@@ -290,3 +290,23 @@ are protected. Resolve those manifests or restore only absent original paths
 through verified staging after a capacity check; never overwrite or rerun a
 closed fixture. Original receipts remain immutable. Selected/fresh/failed weights,
 all other archives and unrelated programs/files were excluded. No bytes were lost.
+
+## Successful FFN product-normalization resume fixtures archived
+
+After both generated-text resume/H200/cache reviews passed and the new worker's
+dependencies were inspected, the six successful none/RMS resume weights became
+eligible for lossless archival. The worker uses the immutable receipt/configs and
+generated corpus; it does not load those six old weights. Exact result-bound
+members now reside in protected
+`research_archives/ffn-norm-resume-001/{none,rms}.tar.zst`.
+
+Full decompression verified2,008,592,454 original bytes before journaled loose
+copy removal. Archive bytes1,051,131,606 yield957,460,848B net recovery;
+27,031 retained files rehashed unchanged. Observed free space10,794,491,904B
+passed the10,066,329,600B complete two-worker prerequisite requirement. Exact
+manifests, journal and guards: ffn-norm-preparation-001/resume-archive001/.
+
+Original receipts remain immutable. Resolve the later manifests or restore only
+exact absent members through verified staging with reserve; do not overwrite or
+rerun closed fixtures. Selected/fresh/failed weights and all earlier archives
+were excluded and remain protected. No checkpoint bytes were lost.

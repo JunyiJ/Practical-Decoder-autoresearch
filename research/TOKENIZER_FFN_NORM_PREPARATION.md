@@ -115,3 +115,45 @@ finish source work, measure exact complete output high-water, and use audited
 lossless archival of completed eligible prerequisites once their dependencies
 close. Existing archives are protected and all failed attempts remain closed.
 No scientific census, pilot plan or quality plan has been frozen.
+
+## Real worker, independent parent validation and inference passed
+
+trainer-worker001 completed two serial actual run_training workers on generated
+text. Each performed2 updates/2,048 targets with2 H200 snapshots; the none/RMS
+arms contained88/92 EMA tensors. The independent parent checked raw optimizer/
+RNG/EMA state, exact H200 tensors/lineage, output caps and immutable bundle hashes,
+and recomputed full validation exactly on MPS. CPU/MPS CE differences were
+2.576e-7/2.512e-7. Incorrect target coverage was rejected. Raw/H200 pairs occupy
+559,159,594/559,221,814B, and per-trial metadata73,512/73,676B.
+
+All full/cache/reset barriers then passed at batches1/8 before two warmups and
+eight alternating timing repeats. Cache remains196,608/1,572,864B per arm.
+Batch1 median decode was277.974/282.926ms; batch8 was290.725/290.606ms for
+none/RMS. These two-update generated fixtures establish measurement mechanics,
+not a scientific quality or deployment-cost advantage. Inference guard finished
+in19.289s, peak RSS871,710,720B and MPS driver1,162,608,640B.
+
+The six earlier resume checkpoint files were losslessly archived after dependent
+numerical reviews closed; their bytes remain in protected ffn-norm-resume-001
+archives. This recovered957,460,848B net and verified27,031 survivors, enabling
+both worker runs immediately. Original receipts remain unchanged; use later
+resume-archive001 manifests rather than absent loose paths.
+
+Fresh seed census scanned43,153 repository text files/3,829,300,519B and found
+no prior occurrence of the reserved finite panel: pilot198740001,
+screen198740002, fresh198740011/198740012/198740013, evaluation198740003,
+bootstrap198740004. All remain unused. This is reservation only; no pilot or
+quality plan is frozen and no scientific training launched.
+
+capacity001 computes the complete prospective panel at13,555,990,528B free:
+eight560MiB retained-pair allowances,256MiB complete metadata/transients and
+8GiB reserve. Two pilot pairs and six screens fit below the eight-pair peak only
+with successful audited pilot/four-loser retirement at the declared boundaries.
+Observed9,661,427,712B leaves3,894,562,816B deficit. Successful current-worker
+weights total1,118,381,408B; archival alone cannot close that gap even with zero
+archive bytes. Remaining unclassified research_state weights total707,285,174B,
+an upper bound, not deletion permission. Preserve failures and every protected
+scientific checkpoint/archive. Next prepare the minimal finite pilot/retention
+source and audit exact remaining eligible recovery; no partial-panel launch or
+relaxed guard. If recovery cannot meet the full bound, escalate the remaining
+byte deficit once with a concrete storage option while finishing independent work.

@@ -1,0 +1,946 @@
+{
+  "status": "prospective_capacity_not_a_frozen_or_executable_panel",
+  "at": "2026-11-01T07:58:14.814808+00:00",
+  "worker": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/trainer-worker001.json",
+    "sha256": "dfde1238e5f9764ee4275031f3a8153b7d2b3b85e0a94a49756ccfe7da0d3307"
+  },
+  "inference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/trained-inference001.json",
+    "sha256": "8f32a809e757280ae352ceded63a044b082aab3dba52e25441d46f9b9cd8830d"
+  },
+  "raw_cap_bytes": 469762048,
+  "export_cap_bytes": 117440512,
+  "weight_allowance_per_trajectory_bytes": 587202560,
+  "phase_weight_allowances": {
+    "two_resource_pilot_pairs": 1174405120,
+    "six_screen_pairs_before_selection": 3523215360,
+    "two_selected_plus_six_fresh": 4697620480
+  },
+  "complete_round_metadata_bytes": 268435456,
+  "reserve_bytes": 8589934592,
+  "required_free_bytes": 13555990528,
+  "observed_free_bytes": 9661427712,
+  "byte_deficit": 3894562816,
+  "measured_worker_pairs": {
+    "none": 559159594,
+    "rms": 559221814
+  },
+  "assumptions": [
+    "Exactly six equal-LR screens then three fresh paired confirmations; no reduced panel",
+    "Two fully accepted pilot pairs retired only after dependent prerequisites close and exact audit",
+    "Four losing screen pairs retired only after all six independently accepted and minimum CE/lower-LR tie selection saved",
+    "Both selected pairs and all six fresh raw/H200 trajectories retained",
+    "256MiB is the complete metadata/transient budget including trajectory metadata; do not double count it",
+    "Streaming checkpoint publication shares temporary/final inode, no whole-payload duplicate; caps apply before write",
+    "New fixtures already on disk are charged via observed free space; no optimistic future reclamation"
+  ],
+  "recovery": {
+    "successful_worker_candidate_bytes": 1118381408,
+    "worker_archival_alone_cannot_close_deficit": true,
+    "remaining_state_weight_inventory": [
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_baseline/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_baseline/branch-math-check.pt",
+        "bytes": 17731171
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_baseline/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_baseline/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_double/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_double/branch-math-check.pt",
+        "bytes": 17731171
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_double/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_double/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_half/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_half/branch-math-check.pt",
+        "bytes": 17731171
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_half/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w256_half/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_baseline/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_baseline/branch-math-check.pt",
+        "bytes": 1357155
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_baseline/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_baseline/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_double/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_double/branch-math-check.pt",
+        "bytes": 1357155
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_double/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_double/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_half/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_half/branch-math-check.pt",
+        "bytes": 1357155
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_half/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/attention-scale-preparation001/mps-pilots001/w64_half/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/averaging-mps-coupled-001/w256-midpoint.pt",
+        "bytes": 62762947
+      },
+      {
+        "path": "research_state/averaging-mps-coupled-001/w64-midpoint.pt",
+        "bytes": 4126725
+      },
+      {
+        "path": "research_state/decay-quality-pilots-001/w256_anchor/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/decay-quality-pilots-001/w256_strong/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/decay-quality-pilots-001/w256_weak/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/decay-quality-pilots-001/w64_anchor/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/decay-quality-pilots-001/w64_strong/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/decay-quality-pilots-001/w64_weak/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/embedding-scale-preparation001/mps-pilots001/w256_baseline/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/embedding-scale-preparation001/mps-pilots001/w256_half/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/embedding-scale-preparation001/mps-pilots001/w256_quarter/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/embedding-scale-preparation001/mps-pilots001/w64_baseline/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/embedding-scale-preparation001/mps-pilots001/w64_half/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/embedding-scale-preparation001/mps-pilots001/w64_quarter/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w256_layer/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w256_layer/norm-math.pt",
+        "bytes": 170281
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w256_none/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w256_rms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w256_rms/norm-math.pt",
+        "bytes": 161709
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w64_layer/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w64_layer/norm-math.pt",
+        "bytes": 45225
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w64_none/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w64_rms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/ffn-hidden-norm-pilots-001/w64_rms/norm-math.pt",
+        "bytes": 42733
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_geglu/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_geglu/branch-math-check.pt",
+        "bytes": 17731235
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_geglu/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_geglu/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_reglu/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_reglu/branch-math-check.pt",
+        "bytes": 17731171
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_reglu/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_reglu/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_swiglu/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_swiglu/branch-math-check.pt",
+        "bytes": 17731171
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_swiglu/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w256_swiglu/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_geglu/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_geglu/branch-math-check.pt",
+        "bytes": 1357219
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_geglu/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_geglu/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_reglu/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_reglu/branch-math-check.pt",
+        "bytes": 1357155
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_reglu/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_reglu/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_swiglu/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_swiglu/branch-math-check.pt",
+        "bytes": 1357155
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_swiglu/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/gated-activation-preparation001/mps-pilots001/w64_swiglu/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/kda-quality-pilots-001/w256_kda/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/kda-quality-pilots-001/w256_mha/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/kda-quality-pilots-001/w64_kda/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/kda-quality-pilots-001/w64_mha/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/logit-z-preparation001/mps-pilots001/primitive-check.pt",
+        "bytes": 12743
+      },
+      {
+        "path": "research_state/logit-z-preparation001/mps-pilots001/w256_none/linked-graph-check.pt",
+        "bytes": 33193176
+      },
+      {
+        "path": "research_state/logit-z-preparation001/mps-pilots001/w256_z1e3/linked-graph-check.pt",
+        "bytes": 33193176
+      },
+      {
+        "path": "research_state/logit-z-preparation001/mps-pilots001/w256_z1e4/linked-graph-check.pt",
+        "bytes": 33193176
+      },
+      {
+        "path": "research_state/logit-z-preparation001/mps-pilots001/w64_none/linked-graph-check.pt",
+        "bytes": 3825496
+      },
+      {
+        "path": "research_state/logit-z-preparation001/mps-pilots001/w64_z1e3/linked-graph-check.pt",
+        "bytes": 3825496
+      },
+      {
+        "path": "research_state/logit-z-preparation001/mps-pilots001/w64_z1e4/linked-graph-check.pt",
+        "bytes": 3825496
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w256_learned_train_unigram/bias-math-check.pt",
+        "bytes": 21173
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w256_learned_train_unigram/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w256_learned_zero/bias-math-check.pt",
+        "bytes": 21173
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w256_learned_zero/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w256_none/bias-math-check.pt",
+        "bytes": 20721
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w256_none/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w64_learned_train_unigram/bias-math-check.pt",
+        "bytes": 21173
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w64_learned_train_unigram/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w64_learned_zero/bias-math-check.pt",
+        "bytes": 21173
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w64_learned_zero/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w64_none/bias-math-check.pt",
+        "bytes": 20721
+      },
+      {
+        "path": "research_state/output-bias-preparation001/mps-pilots001/w64_none/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w256_none/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w256_sigmoid_headwise_zero/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w256_sigmoid_headwise_zero/gate-math.pt",
+        "bytes": 114217
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w256_static_half/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w256_static_half/gate-math.pt",
+        "bytes": 74543
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w64_none/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w64_sigmoid_headwise_zero/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w64_sigmoid_headwise_zero/gate-math.pt",
+        "bytes": 26665
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w64_static_half/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/output-gate-pilots-001/w64_static_half/gate-math.pt",
+        "bytes": 20783
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w256_parallel_separate_norms/branch-math-check.pt",
+        "bytes": 17731171
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w256_parallel_separate_norms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w256_parallel_separate_norms/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w256_serial/branch-math-check.pt",
+        "bytes": 17731171
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w256_serial/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w256_serial/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w64_parallel_separate_norms/branch-math-check.pt",
+        "bytes": 1357155
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w64_parallel_separate_norms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w64_parallel_separate_norms/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w64_serial/branch-math-check.pt",
+        "bytes": 1357155
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w64_serial/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/parallel-block-preparation001/mps-pilots001/w64_serial/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots001/w64_rope/attention-math-check.pt",
+        "bytes": 806937
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots001/w64_rope/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots001/w64_rope/cache-check.pt",
+        "bytes": 1503547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_alibi/attention-math-check.pt",
+        "bytes": 9431689
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_alibi/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_alibi/cache-check.pt",
+        "bytes": 5565243
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_alibi/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_nope/attention-math-check.pt",
+        "bytes": 9431561
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_nope/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_nope/cache-check.pt",
+        "bytes": 5565179
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_nope/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_rope/attention-math-check.pt",
+        "bytes": 9439449
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_rope/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_rope/cache-check.pt",
+        "bytes": 5565179
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w256_rope/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_alibi/attention-math-check.pt",
+        "bytes": 799113
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_alibi/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_alibi/cache-check.pt",
+        "bytes": 1503611
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_alibi/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_nope/attention-math-check.pt",
+        "bytes": 799113
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_nope/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_nope/cache-check.pt",
+        "bytes": 1503547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_nope/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_rope/attention-math-check.pt",
+        "bytes": 806937
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_rope/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_rope/cache-check.pt",
+        "bytes": 1503547
+      },
+      {
+        "path": "research_state/position-quality-preparation001/mps-pilots002/w64_rope/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w256_qkrms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w256_qkrms/k-norm-math.pt",
+        "bytes": 60869
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w256_qkrms/q-norm-math.pt",
+        "bytes": 60869
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w256_standard/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w64_qkrms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w64_qkrms/k-norm-math.pt",
+        "bytes": 17861
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w64_qkrms/q-norm-math.pt",
+        "bytes": 17861
+      },
+      {
+        "path": "research_state/qknorm-pilots-001/w64_standard/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/readout-normalization-preparation001/mps-pilots001/w256_layer_affine/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/readout-normalization-preparation001/mps-pilots001/w256_layer_no_bias/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/readout-normalization-preparation001/mps-pilots001/w256_rms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/readout-normalization-preparation001/mps-pilots001/w64_layer_affine/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/readout-normalization-preparation001/mps-pilots001/w64_layer_no_bias/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/readout-normalization-preparation001/mps-pilots001/w64_rms/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_learned_tenth/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_learned_tenth/branch-math-check.pt",
+        "bytes": 17752411
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_learned_tenth/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_learned_tenth/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_static_tenth/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_static_tenth/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_static_tenth/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_static_tenth/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_unit/attention-math-check.pt",
+        "bytes": 8804961
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_unit/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_unit/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w256_unit/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_learned_tenth/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_learned_tenth/branch-math-check.pt",
+        "bytes": 1366043
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_learned_tenth/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_learned_tenth/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_static_tenth/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_static_tenth/branch-math-check.pt",
+        "bytes": 1363611
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_static_tenth/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_static_tenth/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_unit/attention-math-check.pt",
+        "bytes": 645537
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_unit/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_unit/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/residual-gain-preparation001/mps-pilots001/w64_unit/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_first_blend/attention-math-check.pt",
+        "bytes": 9439385
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_first_blend/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_first_blend/cache-check.pt",
+        "bytes": 5467503
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_first_blend/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local/attention-math-check.pt",
+        "bytes": 9439385
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local/cache-check.pt",
+        "bytes": 5467439
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local_half/attention-math-check.pt",
+        "bytes": 9439385
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local_half/branch-math-check.pt",
+        "bytes": 17749915
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local_half/cache-check.pt",
+        "bytes": 5467503
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w256_local_half/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_first_blend/attention-math-check.pt",
+        "bytes": 806873
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_first_blend/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_first_blend/cache-check.pt",
+        "bytes": 1473455
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_first_blend/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local/attention-math-check.pt",
+        "bytes": 806873
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local/cache-check.pt",
+        "bytes": 1473455
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local_half/attention-math-check.pt",
+        "bytes": 806873
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local_half/branch-math-check.pt",
+        "bytes": 1363547
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local_half/cache-check.pt",
+        "bytes": 1473455
+      },
+      {
+        "path": "research_state/value-residual-preparation001/mps-pilots002/w64_local_half/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/warmup-quality-preparation/mps-pilots001/w256_baseline/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/warmup-quality-preparation/mps-pilots001/w256_warmup100/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/warmup-quality-preparation/mps-pilots001/w256_warmup300/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/warmup-quality-preparation/mps-pilots001/w64_baseline/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/warmup-quality-preparation/mps-pilots001/w64_warmup100/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/warmup-quality-preparation/mps-pilots001/w64_warmup300/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w256_legacy_untied/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w256_legacy_untied/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w256_matched_untied/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w256_matched_untied/table-math-check.pt",
+        "bytes": 411547
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w256_scaled_tied/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w256_scaled_tied/table-math-check.pt",
+        "bytes": 344725
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w64_legacy_untied/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w64_legacy_untied/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w64_matched_untied/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w64_matched_untied/table-math-check.pt",
+        "bytes": 111195
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w64_scaled_tied/cache-check.pt",
+        "bytes": 13829
+      },
+      {
+        "path": "research_state/weight-tying-preparation001/mps-pilots001/w64_scaled_tied/table-math-check.pt",
+        "bytes": 94293
+      }
+    ],
+    "remaining_state_weight_inventory_bytes": 707285174,
+    "inventory_is_not_cleanup_authorization": true,
+    "next": "Close pilot-source dependencies, audit exact successful-worker archival and eligible completed historical pilot weights against their original reviews; preserve every failed/state fixture until positively classified. If audited recovery cannot meet full panel, record remaining exact deficit and one storage escalation while finishing independent source/finite-plan work."
+  },
+  "launch_permitted": false,
+  "scientific_seeds_consumed": false,
+  "holdout_scored": false
+}

@@ -419,3 +419,12 @@ parent validation/inference, complete resource projection, fresh seed census and
 finite pilot/quality freezes. Exact successful numerical-fixture archival recovered
 2,266,198,096B net without losing checkpoint bytes or moving protected scientific
 weights. Follow TOKENIZER_FFN_NORM_PREPARATION.md and current next_action.
+
+
+FFN product-normalization real workers, independent parent full validation and
+trained paired inference now pass both arms on generated text. The198740 finite
+scientific seeds are reserved and unused. No pilot/quality plan is frozen. Next
+minimal finite pilot/retention integration and actual full-panel capacity recovery;
+capacity001 requires13,555,990,528B versus observed9,661,427,712B. Source work
+continues independently; preserve all protected weights/archives and do not launch
+a partial panel. See TOKENIZER_FFN_NORM_PREPARATION.md for exact evidence.
