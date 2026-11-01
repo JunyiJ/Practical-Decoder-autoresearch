@@ -129,3 +129,43 @@ pilot orchestration/design with tested primitives, audit real accepted payloads
 and close successful generated-worker dependencies. Their1,118,405,952B pair
 weights may then be retired only by another exact audit under current permission.
 Do not leave continuation in the resolved storage-wait state.
+
+
+## Finite local-mixing resource pilots complete
+
+The additive pilot source passed actual generated raw/H200/optimizer/RNG/full-
+validation and full/cache/reset integration plus exact pilot/losing-screen
+retention tests. All515 predecessor runtime/acceptance sources remain unchanged.
+Successful generated-worker tensor dependencies are now closed; exact
+worker-retirement001 reclaimed1,118,405,952B from four weights and verified36,434
+retained files unchanged. Original receipts and all selected/fresh weights remain.
+Resolve absent prerequisite weights through this later manifest; do not rerun
+closed worker/integration fixtures.
+
+Seed census001 stopped before reservation because preparation files were added
+during its inventory. Its source/log/guard/failure are preserved closed. Separate
+census002 scanned45,249 files without collisions after preparation writes ended.
+Additive pilot002 changes only census/child-module routing, preserving the first
+520 source bindings; the frozen resource plan binds521 sources. Panel198970 uses
+pilot001/evaluation003, with screen002, fresh011/012/013 and bootstrap004 unused.
+The unused final001 review source/plan remain historical; final003 binds the
+corrected additive pilot entry point.
+
+Both20-update resource pilots completed and were independently accepted:
+20,480targets,8H200snapshots and88/100EMA tensors. Paired inference passed full/
+cache/reset checks at batches1/8, with196,608/204,800B cache per item. Independent
+final003 review verified all artifact hashes, guard results and actual payload
+sizes. Conservative1200-step projections with2x headroom are5,459/6,446seconds,
+below the7200second watchdog; these are projections, not measured quality runs.
+No pilot loss selects an LR or supports adoption.
+
+Final-review free13,537,243,136B plus exactly eligible retained pilot weights
+1,118,415,676B conditionally yields14,655,658,812B against the complete
+13,555,990,528B requirement. The pilots are not yet eligible for deletion until
+quality-source payload/cache integration closes dependencies. Proceed with minimal
+additive1200-step quality orchestration outside all521 frozen sources, six equal
+LR screens and three fresh pairs. Verify finite contracts and actual pilot
+payloads/cache, audit exact successful-pilot retirement, recheck actual complete
+capacity and unused seeds, then final quality freeze. No partial panel, grid
+extension, retry, guard relaxation or metadata scaffolding absent a failure.
+Retain the adopted recipe; no scientific quality result or active worker.

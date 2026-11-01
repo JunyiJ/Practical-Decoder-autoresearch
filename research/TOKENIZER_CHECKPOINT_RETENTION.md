@@ -512,3 +512,14 @@ policy text is retained as policy-at-audit.md matching each manifest's policy ha
 Audit002 failed before deletion and is preserved;003 corrected the eligibility
 assertion without expanding scope. Later manifests explain intentionally absent
 weights; none can be restored or used to retry closed fixtures.
+
+
+Local-mixing worker-retirement001 is authorized for exactly the four successful
+generated trainer-worker002 raw/H200 payloads (1,118,405,952B). Both arms passed
+independent payload/full-validation acceptance and trained cache/reset inference;
+the additive finite pilot bridge rechecked actual payloads and cache behavior.
+worker-dependencies-closed001 closes their tensor-loading use. Future pilot
+configuration reads retained plan/config JSON and creates fresh weights. Keep
+all original receipts, selected models, every fresh confirmation and all other
+artifacts. Apply only exact size/hash audit, worker locks, durable deletion
+journal and survivor verification; never rerun these closed prerequisites.

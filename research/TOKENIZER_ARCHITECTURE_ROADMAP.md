@@ -460,3 +460,14 @@ evidence verified. The finite design remains six equal-LR1,200-step screens then
 three fresh pairs, all paired inference and independent final statistics. See
 TOKENIZER_FFN_NORM_PREPARATION.md for the exact freeze and capacity accounting.
 No adoption or new scientific quality conclusion is claimed at launch.
+
+
+Local causal FFN mixing resource pilots are complete: both20-update endpoints
+passed independent checkpoint/full-validation acceptance, paired cache/reset
+inference and final resource review. This establishes readiness only, with no
+quality/adoption claim. Exact retirement of obsolete generated prerequisites
+recovered1,118,405,952B while preserving all selected/fresh evidence. Next minimal
+additive finite1200-step orchestration, real pilot integration and exact pilot
+retirement before full-panel capacity/seed recheck and quality freeze. See
+TOKENIZER_LOCAL_MIX_PREPARATION.md for census failure preservation, corrected
+entry point,521 frozen sources and reserved198970 seed identities.
