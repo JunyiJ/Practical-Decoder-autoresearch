@@ -520,3 +520,21 @@ seed187620012/LR0.00125, then its SwiGLU counterpart in the frozen alternating
 order. Finish all three fresh pairs, all paired inference reviews and final
 statistical review. Evidence: quality001-slot07-result.json/evidence/ and
 quality001-accepted-07.json in ffn-structure-preparation-001/.
+
+
+FFN quality001 slot08 accepted (2026-11-01T05:07:04.838084+00:00): ungatedSiLU1008 at
+second fresh seed187620012 and frozen LR0.00125. Full-validation H200 CE is
+**4.722783352829** over34,278 targets. The same-seed SwiGLU endpoint remains
+pending; no second paired delta or final architecture conclusion is available.
+The first fresh pair still favors SwiGLU by0.013767702605nat/token.
+
+This endpoint completed1,200 updates/1,228,800 targets and41H200 snapshots.
+Independent parent raw/optimizer/EMA/export/full-validation/cache audits, clean
+child exit and all guards passed. Training211.54seconds; worker301.42seconds,
+parent11.11seconds; peak worker RSS1.583GB/MPS driver2.510GB. Every fresh raw/H200
+pair remains protected, along with selected screens and both pilots. No cleanup
+or test scoring. Free13,024,657,408B exceeds the remaining12,833,606,458B
+projection. Next is slot09 SwiGLU672 at the same seed/rate, then the final fresh
+pair, all paired inference reviews and final statistical review. Evidence:
+quality001-slot08-result.json/evidence/ and quality001-accepted-08.json in
+ffn-structure-preparation-001/.
