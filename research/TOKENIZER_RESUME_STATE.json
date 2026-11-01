@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-11-01T03:52:06.413658+00:00",
+  "observed_at": "2026-11-01T03:59:17.859904+00:00",
   "observed_at_los_angeles": "2026-10-31T15:25:39.350189-07:00",
   "branch": "codex/tokenizer-quality",
   "evidence_commit_before_handoff": "3e7b9831a6f5fa7fe2919b43ff183feb9d9479fb",
@@ -292,8 +292,8 @@
     "tokenizer-activation-inference-recovery-002",
     "tokenizer-ema-horizon-v1-001"
   ],
-  "first_action": "Read AGENTS.md and latest TOKENIZER_FFN_STRUCTURE_PREPARATION.md. Transport/worker/inference prerequisites passed: ffn-structure-preparation-001/transport-worker-inference001-review.json, checkpoint-resume001.json (both-arm MPS file-backed repeat/resume model+optimizer+H200+RNG bitwise exact), trainer-worker003.json (actual serial trainer and exact independent parent validation;3014generated targets), trained-inference001.json (trained H200 cache/reset/paired measurement accepted). All399 frozen sources unchanged; new runtime overlay plus validation/data/inference sources in research/ffn_structure_v1. Preserve first failed fixture001 invalid two-step cooldown before update and002 completed-control validation namespace failure; original source/evidence remain immutable.003 recovered existing control without retraining and ran candidate once. No closed campaign/fixture reruns. Next implement narrow finite pilot config/serial acceptance using proven primitives, seed census including synthetic sources3769xx/3771xx/3772xx, exact finite pilot source/config/resource freeze, then resource pilots and final quality freeze. Actual scientific corpus validation/config binding still must be checked before dispatch. Proposed equal3LR/arm screens plus3freshpairs remains unchanged; retainH200/RMSNorm/SiLU.10fixtureweights3.127GBretained, currentfree17.17GB above15.17GBprojection; audit full-duration metadata/transient highwater beforefreeze, do not count speculative cleanup or reintroduce stale capacity blocker. No activeworker/scientifictraining/seeds/freeze. Keep4threads,oneworker,strictguards,8GiBreserve,selected/fresh/failedweights,closedtest;no paidcompute/subagents. Old heartbeatPAUSED.",
-  "next_after_starter": "Read AGENTS.md and latest TOKENIZER_FFN_STRUCTURE_PREPARATION.md. Transport/worker/inference prerequisites passed: ffn-structure-preparation-001/transport-worker-inference001-review.json, checkpoint-resume001.json (both-arm MPS file-backed repeat/resume model+optimizer+H200+RNG bitwise exact), trainer-worker003.json (actual serial trainer and exact independent parent validation;3014generated targets), trained-inference001.json (trained H200 cache/reset/paired measurement accepted). All399 frozen sources unchanged; new runtime overlay plus validation/data/inference sources in research/ffn_structure_v1. Preserve first failed fixture001 invalid two-step cooldown before update and002 completed-control validation namespace failure; original source/evidence remain immutable.003 recovered existing control without retraining and ran candidate once. No closed campaign/fixture reruns. Next implement narrow finite pilot config/serial acceptance using proven primitives, seed census including synthetic sources3769xx/3771xx/3772xx, exact finite pilot source/config/resource freeze, then resource pilots and final quality freeze. Actual scientific corpus validation/config binding still must be checked before dispatch. Proposed equal3LR/arm screens plus3freshpairs remains unchanged; retainH200/RMSNorm/SiLU.10fixtureweights3.127GBretained, currentfree17.17GB above15.17GBprojection; audit full-duration metadata/transient highwater beforefreeze, do not count speculative cleanup or reintroduce stale capacity blocker. No activeworker/scientifictraining/seeds/freeze. Keep4threads,oneworker,strictguards,8GiBreserve,selected/fresh/failedweights,closedtest;no paidcompute/subagents. Old heartbeatPAUSED.",
+  "first_action": "FFN pilot001 frozen for exactly two20-update scientific-corpus resource pilots, SwiGLU672 then ungatedSiLU1008, shared reserved seed187620001, LR.0025/cooldown13/H200interval1. Run research.ffn_structure_v1.pilot_execution run --slot 0 then1 with pilot001-freeze.json SHA; existing attempt never retries. Four threads/strictMPS/shared lock/600s including parent acceptance. No quality launch. Census found no seed collisions across41516files; 19 boundary checks and actual scientific train/validation binding passed. Required initial free16747901448B retains BOTH pilots plus2selected+6freshpairs, raw600MiB/H200128MiB direct serialization caps,16MiB/trajectory+256MiBroundmetadata and8GiBreserve. Observed17164787712B; recheck fullremaining allocation before each slot, subtract accepted actual bytes. No pilot/fixture deletion credit; later losing-screen deletion requires tested exact retention boundary. After both pilots: trained-pair inference, full-duration acceptance/retention checks and final finite quality freeze. Preserve all earlier failures/399 frozen sources; closed campaigns remain closed, SiLU/RMSNorm/H200 retained; test scoring closed; old heartbeatPAUSED.",
+  "next_after_starter": "FFN pilot001 frozen for exactly two20-update scientific-corpus resource pilots, SwiGLU672 then ungatedSiLU1008, shared reserved seed187620001, LR.0025/cooldown13/H200interval1. Run research.ffn_structure_v1.pilot_execution run --slot 0 then1 with pilot001-freeze.json SHA; existing attempt never retries. Four threads/strictMPS/shared lock/600s including parent acceptance. No quality launch. Census found no seed collisions across41516files; 19 boundary checks and actual scientific train/validation binding passed. Required initial free16747901448B retains BOTH pilots plus2selected+6freshpairs, raw600MiB/H200128MiB direct serialization caps,16MiB/trajectory+256MiBroundmetadata and8GiBreserve. Observed17164787712B; recheck fullremaining allocation before each slot, subtract accepted actual bytes. No pilot/fixture deletion credit; later losing-screen deletion requires tested exact retention boundary. After both pilots: trained-pair inference, full-duration acceptance/retention checks and final finite quality freeze. Preserve all earlier failures/399 frozen sources; closed campaigns remain closed, SiLU/RMSNorm/H200 retained; test scoring closed; old heartbeatPAUSED.",
   "local_roots_not_in_git": [
     "research_runs",
     "research_archives",
@@ -4999,17 +4999,23 @@
     "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-evidence/new-source/runtime/train/__init__.py": "b3b6e52546561d540e1e2d05b600e7dead44860ad46f16dc1571911ee2f8ff7a",
     "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-evidence/new-source/runtime/train/optimizers.py": "7f65d2f2d6cb5e836b4d9c2719f3664994d790decf1b65e53e85ec2b8b55affe",
     "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-evidence/tokenizer-ffn-structure-checkpoint-prerequisite-001/swiglu/config.json": "f40791837d5e432146cb09c203e87e2b6920be544f6f34966619732ad7e7a802",
-    "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-evidence/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/config.json": "b769c386bca0f4cbb59c47dcd26f6026c8028496a695321769e4716fc0c1e968"
+    "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-evidence/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/config.json": "b769c386bca0f4cbb59c47dcd26f6026c8028496a695321769e4716fc0c1e968",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/pilot001-plan.json": "79905cd546d51f04a4f3d85bd0110ad7ab8246a90deef6bac61f1c7514ecf49b",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/pilot001-freeze.json": "120c09376f350372c567bfec86d5d76b32058361b662603418abe7d1761ce5ae",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/pilot001-preflight.json": "09fe699f861074ec95c7800427a66aaa6d4e9bb26a549db06cd3187ea5caec08",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/pilot001-boundary-tests.json": "55bc03a1f5c11f14fb5dc90ee09a2c53e4c0cfa68ad57628fccdaa26ac1d5090",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/pilot001-capacity.json": "a7297ab2c094f25bd8f663f2d47cf491ad746d9147b554154fb7482e91f61f1e",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/scientific-seed-census-001/result.json": "959ba9f5bc5b1191cb555f5400df8c9d0020ba44b2b07d6a2f76c6fbdeea37ce"
   },
   "independent_final_review": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json",
   "independent_final_guard": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-guard.json",
-  "current_research_phase": "ffn_structure_transport_worker_inference_passed",
+  "current_research_phase": "ffn_structure_resource_pilots_frozen",
   "final_decision": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json",
   "ffn_direction_decision": "research/tokenizer-evidence/moe-preparation-001/direction-decision.json",
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
   "activation_finite_design": "research/tokenizer-evidence/activation-preparation-001/finite-design-v1.json",
   "activation_session_review": "research/tokenizer-evidence/activation-preparation-001/session-prerequisite-review.json",
-  "next_action": "Read AGENTS.md and latest TOKENIZER_FFN_STRUCTURE_PREPARATION.md. Transport/worker/inference prerequisites passed: ffn-structure-preparation-001/transport-worker-inference001-review.json, checkpoint-resume001.json (both-arm MPS file-backed repeat/resume model+optimizer+H200+RNG bitwise exact), trainer-worker003.json (actual serial trainer and exact independent parent validation;3014generated targets), trained-inference001.json (trained H200 cache/reset/paired measurement accepted). All399 frozen sources unchanged; new runtime overlay plus validation/data/inference sources in research/ffn_structure_v1. Preserve first failed fixture001 invalid two-step cooldown before update and002 completed-control validation namespace failure; original source/evidence remain immutable.003 recovered existing control without retraining and ran candidate once. No closed campaign/fixture reruns. Next implement narrow finite pilot config/serial acceptance using proven primitives, seed census including synthetic sources3769xx/3771xx/3772xx, exact finite pilot source/config/resource freeze, then resource pilots and final quality freeze. Actual scientific corpus validation/config binding still must be checked before dispatch. Proposed equal3LR/arm screens plus3freshpairs remains unchanged; retainH200/RMSNorm/SiLU.10fixtureweights3.127GBretained, currentfree17.17GB above15.17GBprojection; audit full-duration metadata/transient highwater beforefreeze, do not count speculative cleanup or reintroduce stale capacity blocker. No activeworker/scientifictraining/seeds/freeze. Keep4threads,oneworker,strictguards,8GiBreserve,selected/fresh/failedweights,closedtest;no paidcompute/subagents. Old heartbeatPAUSED.",
+  "next_action": "FFN pilot001 frozen for exactly two20-update scientific-corpus resource pilots, SwiGLU672 then ungatedSiLU1008, shared reserved seed187620001, LR.0025/cooldown13/H200interval1. Run research.ffn_structure_v1.pilot_execution run --slot 0 then1 with pilot001-freeze.json SHA; existing attempt never retries. Four threads/strictMPS/shared lock/600s including parent acceptance. No quality launch. Census found no seed collisions across41516files; 19 boundary checks and actual scientific train/validation binding passed. Required initial free16747901448B retains BOTH pilots plus2selected+6freshpairs, raw600MiB/H200128MiB direct serialization caps,16MiB/trajectory+256MiBroundmetadata and8GiBreserve. Observed17164787712B; recheck fullremaining allocation before each slot, subtract accepted actual bytes. No pilot/fixture deletion credit; later losing-screen deletion requires tested exact retention boundary. After both pilots: trained-pair inference, full-duration acceptance/retention checks and final finite quality freeze. Preserve all earlier failures/399 frozen sources; closed campaigns remain closed, SiLU/RMSNorm/H200 retained; test scoring closed; old heartbeatPAUSED.",
   "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json",
   "activation_dispatch_retention_review": "research/tokenizer-evidence/activation-preparation-001/dispatch-retention-prerequisite-review.json",
   "activation_inference_review": "research/tokenizer-evidence/activation-preparation-001/inference-prerequisite-review.json",
@@ -5118,11 +5124,23 @@
   "obsolete_screen_cleanup": "research/tokenizer-evidence/obsolete-screen-cleanup-001/completed.json",
   "ffn_structure_capacity_blocker": {
     "status": "resolved_against_current_projection",
-    "required_free_bytes": 15169995168,
-    "observed_free_bytes": 20506828800,
+    "required_free_bytes": 16747901448,
+    "observed_free_bytes": 17164787712,
     "shortfall_bytes": 0
   },
   "ffn_structure_model_integration": "research/tokenizer-evidence/ffn-structure-preparation-001/model-integration001.json",
   "ffn_structure_mps_integration": "research/tokenizer-evidence/ffn-structure-preparation-001/mps-integration001.json",
-  "ffn_structure_transport_review": "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-review.json"
+  "ffn_structure_transport_review": "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-review.json",
+  "ffn_structure_pilot_freeze": "research/tokenizer-evidence/ffn-structure-preparation-001/pilot001-freeze.json",
+  "ffn_structure_scientific_seeds": {
+    "bootstrap": 187620004,
+    "evaluation": 187620003,
+    "fresh": [
+      187620011,
+      187620012,
+      187620013
+    ],
+    "pilot": 187620001,
+    "screen": 187620002
+  }
 }

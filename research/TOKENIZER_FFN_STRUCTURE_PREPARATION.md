@@ -240,3 +240,35 @@ Evidence: checkpoint-resume001.*, trainer-worker001/002 failure decisions and
 original evidence, trainer-worker003.*, trained-inference001.*, and
 transport-worker-inference001-review.json/evidence in
 tokenizer-evidence/ffn-structure-preparation-001/.
+
+
+## Two scientific-corpus resource pilots frozen
+
+The new finite pilot path binds exactly SwiGLU672 then ungatedSiLU1008,20updates
+each at LR0.0025, cooldown13 and H200 every update from13. It uses the established
+scientific corpus/prior/tokenizer and full-validation target identity. Nineteen
+config/output/slot/deadline boundaries passed; no test tokens were encoded during
+preparation. The unchanged training loader will materialize test tokens but never
+score them. Independent parent acceptance repeats the existing payload arithmetic
+through the FFN runtime and recomputes the complete worker validation report.
+
+A census scanned41,516 recorded text files (3,746,599,319B), including all recent
+synthetic fixtures, with no collision. Reserved pilot187620001, screen187620002,
+fresh187620011/12/13, evaluation187620003 and bootstrap187620004. No quality
+training is authorized by this pilot freeze. Failed/partial attempts stop the root
+and preserve original artifacts; there is no automatic retry.
+
+The revised projection retains both pilot pairs without cleanup credit. Peak
+retention is ten pairs: both pilots, two selected screens, six fresh endpoints.
+Each trajectory retains788,953,140B allowance, exceeding simultaneous capped
+600MiB raw +128MiB H200 direct writes +16MiB bounded metadata/logs. No full-size
+temporary copy is made. With256MiB round metadata and8GiB reserve, the initial
+requirement is16,747,901,448B;17,164,787,712B was available. Four losing screen
+pairs may only be removed after separately tested, exact audited selection and
+retention. That boundary and full-duration output acceptance must precede quality
+freeze. No failed, selected, fresh or fixture deletion is credited.
+
+Evidence: scientific-seed-census-001/, pilot001-capacity/boundary-tests/plan/
+freeze/preflight/prepare-guard.json, prepare-pilot001.py and pilot001-source/.
+Next execute the two guarded pilots, then trained-pair inference and final quality
+preparation. These resource pilots are excluded from quality conclusions.
