@@ -7046,3 +7046,21 @@ remaining full-panel requirement10,200,999,952B. Slot10
 pairs remain protected; no cleanup, source/grid change or test access. Evidence:
 mla-score-preparation-001/quality001-slot09-result.json, quality001-slot09-evidence/
 and quality001-accepted-09.json.
+
+
+### Final-seed MLA score control accepted
+
+Slot10 accepted at 2026-11-01T07:22:42.657530+00:00: multiplier0.5, selected LR0.00125,
+fresh seed198630013; H200 CE4.707110792553 across34278 validation targets.
+All1200updates/1,228,800training targets and41H200 snapshots completed, with
+independent checkpoint/optimizer/EMA, full-validation and cache audits passed.
+The final matched candidate slot11 is now running. There is no third-pair
+difference or adoption decision yet. Complete it, then all three paired
+inference reviews and independent statistics under the frozen gate.
+
+Worker peak RSS1,551,777,792B and MPS driver2,518,482,944B remained below
+4GiB/6GiB; both guards finished without violations. Free10,151,968,768B
+exceeds remaining complete-panel requirement9,641,834,856B.
+All selected and fresh raw/H200 pairs remain protected; no cleanup, grid/source
+change or test access. Evidence: mla-score-preparation-001/quality001-slot10-result.json,
+quality001-slot10-evidence/ and quality001-accepted-10.json.
