@@ -325,3 +325,22 @@ About12.06GB was free at FFN closure; this is an observation, not proof that a
 new panel fits. Small source/numerical work can proceed while eligible recovery
 is assessed. Do not revive the deferred MoE proposal without its full capacity.
 See TOKENIZER_FFN_STRUCTURE_PREPARATION.md and quality001-final-review.json.
+
+## Next boundary review: attention multiplier transfer on adopted MLA
+
+After the closed gated/ungated FFN comparison, select bounded HP alpha0.5 versus1.0
+in the D256 MLA attention scores. The inherited0.5 was selected in character MHA;
+current subword/low-rank geometry provides a distinct transfer question. Current
+MLA already applies the multiplier correctly. Review deferred internal norms
+(weak or mixed historical evidence), position alternatives (historically worse),
+short-convolution mixing (distinct new cache contract) and MoE (larger complete
+retained-output requirement). This HP round follows several completed structural
+rounds; both architecture and HP remain candidates at its next boundary.
+
+The synthetic attention arithmetic gate passed, including CPU/MPS gradients and
+uneven/reset/causal caches. No new quality finding yet. The exact proposed controls,
+equal LR budget, three fresh pairs and strict adoption rule are in
+[TOKENIZER_MLA_SCORE_PREPARATION.md](TOKENIZER_MLA_SCORE_PREPARATION.md).
+Next implement only the full-model/checkpoint/inference prerequisites outside
+frozen sources. Audited obsolete FFN pilot retirement reclaimed1.118GB; capacity
+still needs actual new serialization accounting and further eligible cleanup.

@@ -171,3 +171,21 @@ Completed: two archives totaling 9,828,356,231 bytes removed. All 232
 retained checkpoint/archive files and 25,974 metadata files verified unchanged.
 Free space afterward: 20,517,961,728 bytes. See obsolete-screen-cleanup-001/
 completed.json; old archive restoration instructions no longer apply to these two files.
+
+## Completed FFN resource-pilot retirement after campaign closure
+
+After all twelve FFN quality endpoints, three paired inference reviews and final
+independent closure completed, both successful FFN resource-pilot pairs became
+non-critical. Current cleanup authorization and this policy supersede the old
+campaign's retain-pilots condition only after closure. Its historical manifests
+and closure are unchanged; they describe the original review time.
+
+Exactly four manifested files under tokenizer-ffn-structure-pilot-001/00 and01
+were removed, totaling1,118,322,228B. Saved pilot and quality protected-inventory
+hashes matched; the shared lock, process check, fsynced deletion journal and
+post-removal rehash verified266 surviving checkpoint/archive files and26,231
+metadata files. All selected/fresh pairs, failed artifacts, numerical fixtures
+and remaining archives were excluded. Free space afterward13,223,596,032B.
+These four pilot weights cannot be reloaded; do not rerun a closed controller to
+recreate or hide their absence. Exact evidence is in
+`tokenizer-evidence/mla-score-preparation-001/ffn-pilot-retention/`.

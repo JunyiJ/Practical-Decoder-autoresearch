@@ -6592,3 +6592,43 @@ quality001-accepted-11.json, quality001-fresh-inference-plan.json and all three
 pair result/review/guard files, quality001-final-review.py/json/guard and
 quality001-closure.json/guard. The continuation prompt now follows the closed
 FFN result and next-direction review; the old research heartbeat remains paused.
+
+## Next direction: MLA attention-score transfer; first arithmetic gate passed
+
+At the closed FFN boundary, reviewed the historical QK/FFN internal-normalization,
+position and readout results alongside attention-score and optimizer HP questions.
+Selected a distinct two-arm **0.5 versus1.0 attention multiplier** comparison on
+the adopted D256 tokenizer MLA backbone. The half-strength choice was learned in
+character MHA; its current MLA transfer has not been independently compared. The
+current implementation correctly applies0.5 in full/cached attention. This is
+not a repair of the roadmap's historical pre-integration issue. Internal norms
+and position alternatives had weak/negative historical evidence; short convolution
+and MoE remain separate architectural candidates. No closed campaign is reopened.
+
+Both multipliers passed the actual attention component's independent complex-RoPE
+forward/gradient oracle and CPU/MPS uneven-cache/reset/causality checks. Maximum
+FP64 forward/gradient errors7.78e-16/8.89e-15; CPU/MPS FP32 errors4.48e-7/4.77e-6.
+This used private scalar overrides on copies of an incumbent module; the frozen
+full-model policy still correctly rejects1.0. No corpus, checkpoint IO, scientific
+training or quality comparison occurred. Full-model policy, optimizer/cache and
+checkpoint/resume integration remain next, outside424 unchanged frozen sources.
+See TOKENIZER_MLA_SCORE_PREPARATION.md and mla-score-preparation-001/component001.*.
+
+Proactively retired the now-completed FFN resource-pilot weights after exact saved
+hash verification: four files, **1,118,322,228B**. All266 other checkpoint/archive
+files and26,231 metadata files verified unchanged. Free space after cleanup was
+**13,223,596,032B**. Historical pilot receipts and closure remain immutable and
+now require the later retirement receipt to explain absent weights. Every selected
+and fresh pair and every failed artifact remains protected. The completed EMA
+pilot triple (787,232,443B) is an additional audit candidate, not deleted or credited.
+
+Existing full-quality SwiGLU raw/H200 pairs each actually occupy559,164,584B.
+The previous conservative envelope with ten retained trajectories would require
+16,747,901,448B, exceeding post-cleanup space by3,524,305,416B. This is a planning
+envelope, not a validated new serialization projection or a reason to block small
+integration work. Next measure the new serializer/metadata/transient limits and
+prospectively test any early successful-pilot retirement boundary. Do not relax
+resource guards, reduce confirmations or launch a partial panel. No training is
+currently running; next executable work is the narrow full-model integration.
+Evidence: mla-score-preparation-001/direction-decision.json, capacity-inventory001.json,
+and ffn-pilot-retention/manifest/journal/completed plus bounded inventory shards.
