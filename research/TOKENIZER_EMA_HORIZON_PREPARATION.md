@@ -181,3 +181,23 @@ Evidence: pilot001-review.json, pilot001-evidence/, pilot001-source/,
 pilot001-inference-*, and quality001-{plan,freeze,preflight,freeze-guard}.json.
 Quality freeze SHA256: a58f1c2c7d8b1c10c28acb4d89c1ecc535c6f3e457d46052e75116c433b64bbf.
 Next dispatch fresh slot0 once, then accept serially; never rerun an existing slot.
+
+
+## EMA quality001: first fresh trajectory accepted
+
+Seed187610011 completed1200updates and41dual-EMA snapshots. H100 full-validation
+CE is4.715769963489097 versus H2004.726289522424742, delta-0.010519558935645
+nat/token. This is one of three fixed fresh trajectories and is insufficient
+for adoption; the required final mean improvement exceeds0.02, with everyseed
+and all simultaneous conditional-text bounds also negative. Continue the frozen
+panel without interim selection, early stopping or replacement seeds.
+
+Independent raw-resume/export audits and both full-validation recomputations
+passed. Worker elapsed292seconds, peak RSS1.827GB and MPS driver2.535GB;
+parent acceptance15.24seconds. All guards passed. Paired inference full/cache/reset
+checks passed at batches1/8. Median prefill/decode milliseconds were H200
+8.212/285.844 versus H1008.839/276.767 at batch1; H20013.918/288.110 versus
+H10013.781/291.969 at batch8. Timing is descriptive; cache196608B/item remains
+identical. All raw/H100/H200 files are retained, no test scoring or deletion.
+Evidence: ema-horizon-preparation-001/quality001-slot00-{review,inference-result,
+review-guard}.json and portable slot00-evidence/. Next is frozen quality slot1.
