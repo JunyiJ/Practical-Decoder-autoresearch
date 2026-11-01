@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "arm": "none",
+      "updates": 1200,
+      "integral": 1020.0,
+      "resumed_after_steps": [
+        0,
+        98,
+        99,
+        799,
+        800
+      ],
+      "exact_parameter_and_momentum_resume": true,
+      "group_rates_match": true
+    },
+    {
+      "arm": "warmup100",
+      "updates": 1200,
+      "integral": 975.0,
+      "resumed_after_steps": [
+        0,
+        98,
+        99,
+        799,
+        800
+      ],
+      "exact_parameter_and_momentum_resume": true,
+      "group_rates_match": true
+    }
+  ],
+  "plan_sha256": "e99ab0102f8a8307aea731c6778da6cd6e064533c486df87b90d2dd9b1cd5dda",
+  "guard_sha256": "9253eff556dd5df95055f2085eee73acf3183b005167c550acd92158736a7082",
+  "scope": "Generated CPU float64 toy SGD only; actual model/Muon/AdamW/EMA/raw-checkpoint contracts still required.",
+  "research_corpus_read": false,
+  "scientific_seed_consumed": false,
+  "training_panel_launched": false
+}

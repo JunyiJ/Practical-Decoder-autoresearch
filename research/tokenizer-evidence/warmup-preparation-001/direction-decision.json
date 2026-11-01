@@ -1,0 +1,64 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-01T18:57:49.120273+00:00",
+  "question": "Does 100-update warmup improve the adopted tokenizer D256 MLA recipe after equally bounded peak-LR tuning?",
+  "architecture_review": {
+    "candidate": "Causal local mixing before the FFN",
+    "rationale": "A distinct untested structural family, unlike the closed FFN normalization/structure, score and block-norm campaigns.",
+    "decision": "Deferred for this round: explicit convolution placement and cache-history contracts are still needed; do not infer a gain from code availability.",
+    "other_deferred": {
+      "residual attenuation": "Historical width256 static/learned gains worsened all fresh seeds; no new tokenizer-specific evidence justifies prioritizing it.",
+      "MoE": "Needs a complete active/total parameter and resource design, rather than a partial storage-limited panel."
+    }
+  },
+  "hp_review": {
+    "selected": "warmup100 versus no warmup with equal bounded peak-LR tuning",
+    "rationale": "Character warmup100 at inherited common peak LR had a small mixed width256 mean gain0.000805 and failed adoption. That study did not compare independently tuned warmup recipes on tokenized MLA. Recent tokenizer screens show conclusions depend on LR, motivating equal bounded tuning rather than fixed-LR warmup claims.",
+    "limitation": "This is an untested optimization hypothesis, not evidence of instability or an identified mechanism; character and tokenizer losses are not pooled."
+  },
+  "proposal": {
+    "backbone": "D256 MLA score0.5, SwiGLU672/SiLU, block RMSNorm, no FFN-product norm, final affine LayerNorm, grouped embedding v2, H200",
+    "arms": [
+      "none",
+      "warmup100"
+    ],
+    "warmup_steps": 100,
+    "initial_ratio": 0.1,
+    "total_steps": 1200,
+    "cooldown_start_step": 800,
+    "final_ratio": 0.1,
+    "h200_start_step": 800,
+    "h200_interval": 10,
+    "independent_decay": 6e-05,
+    "equal_peak_lr_candidates": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "budget": "Equal updates/targets; warmup changes integrated learning rate and update/decay balance, not equal integrated step size.",
+    "scientific_seeds_reserved": false,
+    "pilot_frozen": false,
+    "quality_frozen": false,
+    "training_allowed": false
+  },
+  "references": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-norm-preparation-001/quality001-closure.json",
+      "sha256": "5e7b0d70f16e9782ce9cc4534de07d55f035412ac13cc11bdfd5e9905092b635"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/WARMUP_QUALITY_RESULTS.md",
+      "sha256": "1d010602846d67391e72aac3b82f46f802b085cffe10ff9d369e9d2064910ea8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/RESIDUAL_GAIN_RESULTS.md",
+      "sha256": "bbe43a3d1df91d56cf30413285f2aef71cf4cbcce88594cf6e1b044f07738e6d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_ARCHITECTURE_ROADMAP.md",
+      "sha256": "3063513d296b9c3a38bc1692e8428e5de8a9fea637f21cd94231e9ec7841e8f3"
+    }
+  ],
+  "next_action": "Check the 1200-step schedule arithmetic, width-scaled group rates and serialized toy-optimizer resume at warmup/cooldown boundaries; then explicit full-model Muon/AdamW, raw/H200/RNG resume and worker/inference contracts outside frozen namespaces. No corpus training until fresh census, measured full output capacity, resource pilots and finite freeze.",
+  "closed_campaign_reopened": false
+}

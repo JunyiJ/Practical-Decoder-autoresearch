@@ -7234,3 +7234,42 @@ verified unchanged. Original receipts stay immutable; absent loser paths resolve
 ffn-norm-preparation-001/quality001-screen-retention/. Portable exact screen
 metadata is saved in quality001-screen-evidence/. The first fresh confirmation
 is dispatched with all guards; all fresh raw/H200 pairs will remain protected.
+
+
+## FFN product-normalization campaign closed: retain no product norm
+
+All twelve independently accepted1,200-step endpoints, all three paired full/cache/
+reset inference reviews, and independent final statistics are complete. Both arms
+selected peak LR0.00125 from the same three-rate screen. Fresh H200 CE:
+
+| Fresh seed | No product norm | Product RMSNorm | RMS minus none |
+|---|---:|---:|---:|
+| 198740011 | 4.714070902 | 4.713468354 | -0.000602548 |
+| 198740012 | 4.726630458 | 4.734607213 | +0.007976755 |
+| 198740013 | 4.732428258 | 4.726370305 | -0.006057953 |
+
+Mean RMS-minus-none delta is+0.000438751: no quality gain. One of three seeds
+regressed, and all simultaneous conditional text upper bounds are positive
+(0.005718593/0.006452445/0.006978979 for2048/4096/8192-token blocks).
+The mean-gain, every-seed and text-bound gates all fail. Retain no FFN-product
+normalization, score0.5/SwiGLU672/SiLU/block RMSNorm/H200 on D256 MLA.
+
+Shared-screen effects changed with LR and did not yield a confirmed improvement
+after equal tuning. This does not identify an amplitude/stability mechanism.
+Intervals condition on three trained seeds and reused validation text; they do
+not establish population-seed uncertainty or independent holdout confidence.
+All three trained cache/reset reviews passed at batches1/8. Timing is descriptive
+(two resident models; allocation/loading excluded), with no cost-only adoption.
+
+Final review and closure are in ffn-norm-preparation-001/quality001-final-review.json
+and quality001-closure.json. All477 frozen sources and retained checkpoints were
+rechecked. The run root has terminal STOP; do not rerun its training, boundary,
+inference or final-review commands. Selected screens02/03 and all six fresh
+raw/H200 pairs remain protected. Original receipts and failed attempts are intact.
+
+At this research boundary, causal local mixing and bounded warmup/peak-LR tuning
+were reviewed. Select warmup100 versus none for prerequisites only, with equal
+bounded peak-LR tuning; local mixing needs explicit placement/cache-history design
+and remains deferred. See TOKENIZER_WARMUP_PREPARATION.md. No new scientific seed
+or panel is frozen. The small generated schedule/toy-resume prerequisite passed;
+full-model Muon/AdamW/raw/H200/cache and real-worker prerequisites remain.
