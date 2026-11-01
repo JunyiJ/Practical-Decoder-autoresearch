@@ -1,0 +1,12 @@
+{
+  "status": "closed_accounting_attempt_failed_before_candidate_oracle",
+  "error": "ValueError: Aliased block normalizer storage forbidden",
+  "cause": "Full grouped-embedding v2 model validator checks distinct real storage data_ptr values; meta tensors all have zero data pointers. Meta construction is unsupported by this inherited alias validator.",
+  "source_sha256": "5b1a6da65c17eb485ec322a22c880a5f49e36f628c14f0e74694980418cea074",
+  "guard_sha256": "8c02d68497c513de799fc73a0a6631e9f133e42dfb169d2ca5789f09e203ee30",
+  "training_started": false,
+  "checkpoint_io": false,
+  "oracle_started": false,
+  "original_source_preserved": true,
+  "decision": "Use a distinct CPU-only accounting attempt with real storage, within existing guards. Do not alter or bypass frozen validator. This is a harness correction, not a failed numerical training replay."
+}

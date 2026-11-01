@@ -252,3 +252,22 @@ MoE feasibility against the recorded evidence. Do not repeat the closed gate-
 activation, block-normalization, wider-hybrid, tying or EMA campaigns. Choose
 one concrete architecture or HP hypothesis with a full retained-output capacity
 projection before implementation/training; no next grid or launch is frozen yet.
+
+
+## November1 boundary: ungated SiLU FFN selected for preparation
+
+After the closed EMA comparison, select a distinct FFN-structure question:
+SwiGLU hidden672 versus ungated SiLU hidden1008 at equal516,096 matrix parameters
+per layer, width256 MLA. SiLU stays fixed; hidden width and multiplicative
+factorization change jointly. No isolated gating-mechanism claim. Historical
+residual attenuation worsened all fresh seeds; defer it and the still-unfunded
+three-arm MoE storage proposal. The standalone CPU analytic forward/gradient
+oracle passed, but the candidate full-model policy remains unsupported.
+
+The complete equal-LR-screen/three-fresh-pair proposal needs15.170GB free.
+Audited successful norm-pilot cleanup reclaimed0.559GB and verified all protected
+evidence. About10.740GB is free; another4.430GB is required. No
+seeds/grid/launch frozen and no training started. See
+[TOKENIZER_FFN_STRUCTURE_PREPARATION.md](TOKENIZER_FFN_STRUCTURE_PREPARATION.md)
+and ffn-structure-preparation-001/direction-decision.json. Preserve all frozen
+source namespaces; resolve full retained-output capacity before new dispatch.

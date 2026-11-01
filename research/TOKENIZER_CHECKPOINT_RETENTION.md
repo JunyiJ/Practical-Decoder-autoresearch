@@ -132,3 +132,21 @@ endpoints at LR0.00125, seeds374011/374012/374013, with every raw/H200 pair prot
 All three descriptive inference pairs and final quality review remain required.
 Evidence: quality001-selection.json, quality001-screen-retention/, and
 quality001-boundary-result/next/guard.json. No test scoring or adoption occurred.
+
+
+## November1 completed successful normalization-pilot cleanup
+
+After normalization quality001 and all dependent inference closed, the successful
+LayerNorm pilot002 raw/H200 pair became non-critical under this policy. Exactly
+two allowlisted weight files totaling559,220,996B were deleted. Their original
+hashes matched pilot002-result.json and the original audit. All234 other
+checkpoint/archive files and25,974 non-checkpoint metadata files were rehashed
+unchanged. The failed RMS pilot001 and all selected/fresh pairs remain loose
+and protected; the EMA campaign's explicitly retained pilot triple was excluded.
+
+Evidence: tokenizer-evidence/ffn-structure-preparation-001/norm-pilot-retention-v2/
+contains the bounded inventories, manifest, intent/removal journal and completion
+guard. The prior oversized-receipt audit failed before deletion and is preserved
+separately. Old pilot and final results describe their original time of review;
+this later manifest explains the two intentionally absent files. They cannot be
+reloaded/re-audited, and no closed controller or numerical fixture was rerun.

@@ -1,0 +1,9 @@
+{
+  "status": "audit_receipt_size_failure_no_deletion",
+  "source_sha256": "193fbcbdf68b596a7248ece073033b13028b954436bb8b19ab0dfd537c358fe3",
+  "guard_sha256": "46a6642e63ae10e671b8abbf645116ebaf6f6d52e4363a895b17bfc1f29ec5cd",
+  "error": "Bounded external receipt required",
+  "cause": "Complete protected and metadata inventory exceeds inherited2MiB per-receipt cap.",
+  "decision": "Preserve this failed audit. New audit uses bounded inventory shards and a small exact allowlist manifest; retain the original2MiB cap.",
+  "deletion_performed": false
+}
