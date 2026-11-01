@@ -6148,3 +6148,21 @@ H10013.781/291.969 at batch8. Timing is descriptive; cache196608B/item remains
 identical. All raw/H100/H200 files are retained, no test scoring or deletion.
 Evidence: ema-horizon-preparation-001/quality001-slot00-{review,inference-result,
 review-guard}.json and portable slot00-evidence/. Next is frozen quality slot1.
+
+
+## EMA quality001: second fresh trajectory accepted
+
+Seed187610012 completed1200updates and41EMA snapshots. H100 full-validation CE
+is4.6866778909108255 versus H2004.691822250918006, delta-0.005144360007180
+nat/token. Both completed seeds favor H100; their descriptive mean delta is
+-0.007831959471412. This partial panel does not satisfy or replace the final
+three-seed adoption decision. Continue fixed seed187610013 without early stopping.
+
+Independent parent validation, raw/export acceptance and fresh inference checks
+passed. Worker peak RSS1.806GB, driver2.527GB; all guards finished. Median
+prefill/decode(ms) at batch1: H2008.250/280.984, H1008.924/283.620; batch8:
+H20013.882/306.252, H10013.992/287.625. Timing remains descriptive and mixed;
+cache196608B/item is unchanged. All three new checkpoint files remain protected.
+No test scoring, deletion, architecture or hyperparameter changes occurred.
+Evidence: ema-horizon-preparation-001/quality001-slot01-review.json,
+slot01-inference-result.json, slot01-review-guard.json and slot01-evidence/.
