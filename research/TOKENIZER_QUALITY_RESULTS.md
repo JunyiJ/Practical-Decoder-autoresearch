@@ -6509,3 +6509,21 @@ did not score test. Actual free12,744,900,608B exceeds the remaining12,274,441,8
 projection. Next is slot10 SwiGLU672 at seed187620013/LR0.00125, followed by
 slot11 ungated at that seed/rate. Evidence: quality001-slot09-result.json/evidence/
 and quality001-accepted-09.json in ffn-structure-preparation-001/.
+
+
+FFN quality001 slot10 accepted (2026-11-01T05:20:50.655072+00:00): final-seed SwiGLU672
+control, seed187620013 at frozen LR0.00125. Full-validation H200 CE is
+**4.711847316257** over34,278 targets. The matching ungated endpoint is the
+last remaining training run. The first two fresh pairs remain mixed in direction;
+no third paired delta or final architecture conclusion is available yet.
+
+Slot10 completed1,200 updates/1,228,800 targets and41H200 snapshots. Independent
+parent raw/optimizer/EMA/export/full-validation/cache checks, clean child exit
+and all guards passed. Training217.00seconds; worker310.34seconds, parent11.06
+seconds; peak worker RSS1.610GB/MPS driver2.510GB. Every fresh raw/H200 pair,
+selected screen and pilot remains retained. No checkpoint deletion or test scoring
+by this run. Actual free12,215,128,064B exceeds the remaining11,715,277,290B
+projection. Next is slot11 ungatedSiLU1008 at the same seed/rate; then run all
+three frozen paired inference measurements and final statistical review. Evidence:
+quality001-slot10-result.json/evidence/ and quality001-accepted-10.json in
+ffn-structure-preparation-001/.
