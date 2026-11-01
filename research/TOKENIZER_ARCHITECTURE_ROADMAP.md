@@ -344,3 +344,13 @@ equal LR budget, three fresh pairs and strict adoption rule are in
 Next implement only the full-model/checkpoint/inference prerequisites outside
 frozen sources. Audited obsolete FFN pilot retirement reclaimed1.118GB; capacity
 still needs actual new serialization accounting and further eligible cleanup.
+
+The score-transfer full-model and serialized-resume prerequisites now pass for
+both multipliers, including identical initialization/grouping, strict cross-arm
+identity rejection and exact model/optimizer/EMA/RNG replay on generated text.
+This is engineering evidence, not a quality improvement. Completed EMA-pilot
+retirement plus lossless successful-numerical archival recovered2.986GB while
+preserving protected evidence. The measured prospective13.69GB requirement fits
+the13.99GB observation, subject to actual worker caps, tested stage retention and
+fresh capacity checks. Proceed to real worker/parent validation/inference before
+scientific seed and finite-plan freezes; do not repeat stale storage blockers.

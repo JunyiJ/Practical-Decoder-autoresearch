@@ -189,3 +189,29 @@ and remaining archives were excluded. Free space afterward13,223,596,032B.
 These four pilot weights cannot be reloaded; do not rerun a closed controller to
 recreate or hide their absence. Exact evidence is in
 `tokenizer-evidence/mla-score-preparation-001/ffn-pilot-retention/`.
+
+## Completed EMA-pilot retirement and successful numerical cold archival
+
+After the EMA campaign and dependent inference closed, its non-critical pilot
+raw/H100/H200 triple was retired under the exact mla-score-preparation-001/
+ema-pilot-retention manifest. This supersedes the completed campaign's pilot
+retention condition only after closure. Three files totaling787,232,443B were
+removed;269 other checkpoint/archive files and26,234 metadata files verified
+unchanged. Selected/fresh/failed artifacts were excluded. Original receipts
+remain immutable and the three retired pilot weights cannot be restored.
+
+Separately, twelve successful numerical-prerequisite files from
+`tokenizer-ffn-structure-checkpoint-prerequisite-001` and
+`tokenizer-mla-score-checkpoint-prerequisite-001` were losslessly archived into
+`research_archives/mla-score-synthetic-001/{ffn,score}.tar.zst`. Exact size/hash
+member manifests, full decompression verification, durable deletion intents and
+removal journals are in mla-score-preparation-001/synthetic-archive001/. All
+4,016,947,008 original bytes remain recoverable; archive size1,817,863,749B,
+net logical recovery2,199,083,259B. Rechecked26,491 other retained files unchanged.
+
+Keep these two new archives protected. Restore only absent manifest-listed paths
+through staging after size/SHA256 verification and a fresh space check; never
+overwrite or reopen a closed fixture. Future reviews must resolve these logical
+archive identities instead of assuming loose paths remain. Earlier historical
+sources/results are untouched. The previously retired obsolete-screen archives
+remain permanently absent and are unrelated to this lossless operation.

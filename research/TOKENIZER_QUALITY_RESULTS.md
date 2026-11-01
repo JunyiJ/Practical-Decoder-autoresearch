@@ -6632,3 +6632,46 @@ resource guards, reduce confirmations or launch a partial panel. No training is
 currently running; next executable work is the narrow full-model integration.
 Evidence: mla-score-preparation-001/direction-decision.json, capacity-inventory001.json,
 and ffn-pilot-retention/manifest/journal/completed plus bounded inventory shards.
+
+## MLA score full-model/resume prerequisites passed; capacity recovery completed
+
+The isolated score-transfer runtime now supports exactly0.5/1.0 while preserving
+all incumbent settings. Both arms have28,492,416 parameters, identical initial
+weights and identical optimizer groups; the0.5 control matches old logits bitwise.
+Cross-arm checkpoints/caches and mutated scalar configurations are rejected.
+Maximum CPU/MPS full-model logit/gradient errors were8.94e-7/1.10e-7; cached
+error1.02e-6, with exact reset and causality checks. A harness-only namespace
+failure before training was preserved as model001; corrected model002 passed
+without altering frozen sources or weakening strict class validation.
+
+Generated-text serialized tests passed both arms with bitwise repeat/resume
+model, optimizer, EMA and RNG state, plus raw/H200 parent/export/load checks and
+batch1/8 inference. The16 total generated-data updates are implementation tests,
+not scientific training or quality evidence. No research corpus/test was read.
+Raw files measured445,082,407B and H200114,074,435B under enforced448/112MiB caps.
+Next required work is real worker/output-sink, independent parent validation and
+inference acceptance; no pilot or quality plan is frozen yet.
+
+Exact cleanup retired the completed EMA pilot raw/H100/H200 triple, reclaiming
+787,232,443B and verifying269 other checkpoint/archive files plus26,234 metadata
+files unchanged. Lossless cold archival then preserved all twelve successful
+FFN/score resume-fixture weights:4,016,947,008B of original members became two
+archives totaling1,817,863,749B, net savings2,199,083,259B. Complete decompression
+verified every member before any loose copy was removed;26,491 other retained
+files were rechecked. All selected/fresh/failed artifacts and older archives stayed
+unchanged. Original fixture receipts remain immutable; later archive manifests
+resolve their logical identities. A pre-apply static reference-type correction
+was recorded separately; no failed archive/deletion attempt preceded it.
+
+Free space afterward13,986,324,480B. The measured prospective requirement is
+13,690,208,256B using eight576MiB trajectory allowances,256MiB metadata and8GiB
+reserve, with successful-pilot retirement before screening and exactly audited
+losing-screen retirement before fresh confirmations. This is conditional on the
+real worker enforcing448/112MiB raw/export caps,16MiB per-trajectory metadata,
+no duplicate whole-payload publication and tested retention boundaries. Recheck
+all prerequisite consumption and actual free space before freezes; do not treat
+this narrow296MB observed margin as unconditional launch authority.
+
+Evidence: mla-score-preparation-001/model001-failure.json, model002.py/json/guard,
+checkpoint-resume001.py/json/guard/trace, serialization-capacity002.json,
+ema-pilot-retention/ and synthetic-archive001/, plus research/mla_score_v1/.

@@ -1,0 +1,91 @@
+{
+  "status": "exact_lossless_archival_planned",
+  "script": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/archive-synthetic.py",
+    "sha256": "e5d459f0313bb8c50049e2aee76e1cd6ee38ee162de60ba2b064544e4b943afc"
+  },
+  "policy": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_CHECKPOINT_RETENTION.md",
+    "sha256": "777198ac592382fd0971eb24768f58a98edd5a3d1c532b8efeb68a987c03837d"
+  },
+  "eligibility": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/checkpoint-resume001.json",
+      "sha256": "57e824da7ef04b7092181a8c88eeac0e2c9d0ded3376259da9577fa8ce90f4ae"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-structure-preparation-001/checkpoint-resume001.json",
+      "sha256": "d6c8f21eb2e4cf2af6b25acaf9955b74f35a9f13a5705bd5cba5cd670f30ebc3"
+    }
+  ],
+  "inventory_manifest": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/ema-pilot-retention/manifest.json",
+    "sha256": "5481046eaceae2a9b2f5b822d027001c96dbd45cc107833f0932f9aa543eb596"
+  },
+  "inventory_verified_receipt": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/ema-pilot-retention/completed.json",
+    "sha256": "a94c9dc8eb4fc297c6fee02acb9729e11715636a160684c2e05edb32365f959b"
+  },
+  "groups": {
+    "score": {
+      "research_runs/tokenizer-mla-score-checkpoint-prerequisite-001/half/final.pt": {
+        "size": 445082407,
+        "sha256": "742434c49ac7be38716c76cfd5162b8538628504d915a4cf5c0c49454b51d095"
+      },
+      "research_runs/tokenizer-mla-score-checkpoint-prerequisite-001/half/h200.pt": {
+        "size": 114074435,
+        "sha256": "b7c1abbc7ed8be79c80bf9f2ef5f1f343bf8e0b2ff9f53af6f4880ca0283c48b"
+      },
+      "research_runs/tokenizer-mla-score-checkpoint-prerequisite-001/half/step1.pt": {
+        "size": 445082407,
+        "sha256": "c169ad81c43565988d4c10c71d3eb6834a93b613ed799e97e71275abbb7b9c94"
+      },
+      "research_runs/tokenizer-mla-score-checkpoint-prerequisite-001/unit/final.pt": {
+        "size": 445082407,
+        "sha256": "c3d5e38c3f29637a667abc6a01c5cc58f8c760ea1b086c039d834b1db4b22699"
+      },
+      "research_runs/tokenizer-mla-score-checkpoint-prerequisite-001/unit/h200.pt": {
+        "size": 114074435,
+        "sha256": "807a3cf437585499747089e1f4ff2cfdd07e706e89de59111e8a392e60ce6c76"
+      },
+      "research_runs/tokenizer-mla-score-checkpoint-prerequisite-001/unit/step1.pt": {
+        "size": 445082407,
+        "sha256": "5b43863ce70c0182e54d64f62cd774f09f3c48bdd755dbf6e419ebf8efc840c1"
+      }
+    },
+    "ffn": {
+      "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/swiglu/final.pt": {
+        "size": 445082471,
+        "sha256": "ace1126bca3350d4e4ffb68861da70b7880b987b78025365e4af6ea981b5ca28"
+      },
+      "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/swiglu/h200.pt": {
+        "size": 114074499,
+        "sha256": "0f6e52a0eaa54d7a90e961c4d97d106d44a7c61cbd7c52220482456f25ae23c5"
+      },
+      "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/swiglu/step1.pt": {
+        "size": 445082471,
+        "sha256": "a06bdd17a0b3047c180483cbb21c6052f53ab17cb18d0e337d102942f2f16cea"
+      },
+      "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/final.pt": {
+        "size": 445078015,
+        "sha256": "41457246250849a6355c77307b2931b42a8702d998096284ca88967dfc155bb7"
+      },
+      "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/h200.pt": {
+        "size": 114073039,
+        "sha256": "ee06aa643117d89fd69d6be158485ed52a6dc3626131bd7e867e53177f3b3a45"
+      },
+      "research_runs/tokenizer-ffn-structure-checkpoint-prerequisite-001/ungated_silu/step1.pt": {
+        "size": 445078015,
+        "sha256": "5750894dc4d7bb6a23c01f67fc607d0c1fd198820260e4db65ba6f5d82f78d31"
+      }
+    }
+  },
+  "rationale": "Successful synthetic resume prerequisites only. Preserve exact bytes by verified cold archive; no selected/fresh/failed files. Current score fixtures become archive-resolvable, not discarded; restore exact bytes if downstream APIs require loose paths.",
+  "archive": "PAX tar + zstd level3 long30, one compression thread. Verify every decompressed member before any loose-copy removal.",
+  "reserve_bytes": 8589934592,
+  "max_archive_bytes": 2411724800,
+  "subprocess_and_parent_rss_limit": 4294967296,
+  "per_subprocess_timeout_seconds": 600,
+  "restoration": "Restore only absent allowlisted member paths through staging with size/hash verification; never overwrite or reopen closed fixtures.",
+  "free_bytes": 11805458432
+}

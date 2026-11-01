@@ -101,3 +101,45 @@ and serialization overlap, plus the unchanged8GiB reserve. Do not treat the old
 FFN projection or this component check as a new launch authorization. Complete
 the small full-model integration while auditing eligible obsolete artifacts;
 no partial quality panel or reduced confirmation is permitted to hide a deficit.
+
+## Full-model and serialized resume integration completed
+
+The earlier component-only status is superseded by the isolated
+`research/mla_score_v1` runtime and model002/checkpoint-resume001 evidence. Only
+block-normalization policy resolution and constructed architecture validation
+were extended; unchanged implementation modules resolve under the new namespace.
+The named score policy permits exactly float0.5/float1.0 on the incumbent backbone.
+Both arms retain28,492,416 parameters, bitwise-identical initial weights and
+identical Muon/AdamW groups. Control logits match the incumbent bit for bit.
+Cross-score checkpoint/config/cache identities, mutated module scalars and
+unsupported settings are rejected. CPU/MPS logits, gradients, uneven/interleaved
+cache, reset and causality passed; no quality claim follows.
+
+The first model001 harness stopped before training because it used the new
+optimizer validator on the legacy model. Its source/snapshot/failed guard remain
+intact. Separately recorded model002 uses each namespace's own optimizer factory;
+no historical failed fixture was rerun or validator weakened.
+
+Generated-text strict-MPS tests completed three updates per uninterrupted and
+repeated trajectory, plus interrupted replay, for each arm. Model, optimizer,
+EMA and RNG comparisons were bitwise exact; raw/H200 export/load and cached
+inference passed at batches1/8. Actual serialized sizes are445,082,407B per raw
+and114,074,435B per H200. These numerical fixtures are now exact members of the
+verified `mla-score-synthetic-001` archive; their original hashes remain valid.
+Original-path consumers must use verified archive resolution or restore exact
+bytes with adequate space. Scientific worker/parent acceptance remains pending.
+
+The new measured prospective projection is13,690,208,256B: eight retained
+trajectories at576MiB each (448MiB raw +112MiB H200 +16MiB per-trajectory metadata),
+256MiB round metadata and8GiB reserve. It assumes audited successful-pilot
+retirement before screening and losing-screen retirement after saved selection.
+The worker must enforce these caps and tested publication/retention boundaries
+before this becomes a frozen launch contract. No scientific scope or global
+guard is reduced. Later prerequisite output consumption must be charged again.
+
+Completed EMA-pilot retirement reclaimed787,232,443B. Lossless archival of twelve
+successful FFN/score numerical checkpoints reclaimed another2,199,083,259B net;
+all selected/fresh/failed evidence remained unchanged. Observed free13,986,324,480B
+exceeds the prospective projection by296,116,224B at that observation only.
+Next: real bounded worker/parent validation and inference, then updated capacity,
+fresh seed census, finite pilot freeze/pilots and final quality freeze.
