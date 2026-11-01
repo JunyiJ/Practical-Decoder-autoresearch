@@ -478,3 +478,19 @@ review; the script cannot silently adopt. Syntax validation passed; it has
 not been executed and provides no new statistical conclusion yet. Evidence:
 quality001-slot07-result.json, quality001-slot07-evidence/, quality001-accepted-07.json
 and quality001-final-review.py in mla-score-preparation-001/. Holdout stays closed.
+
+
+### Second-seed score candidate accepted
+
+Slot08 accepted at 2026-11-01T07:10:56.377832+00:00: multiplier1.0, selected LR0.00125,
+fresh seed198630012; H200 CE4.705125006811 across34278 validation targets.
+All1200updates/1,228,800training targets and41H200 snapshots completed; independent
+checkpoint/optimizer/EMA, full-validation and cache checks passed. Its matched
+control slot09 is now running. There is no second paired difference or adoption
+conclusion yet; retain every fresh pair and complete the frozen panel.
+
+Peak worker RSS1,558,102,016B and MPS driver2,518,482,944B stayed within4GiB/6GiB;
+both guards finished without violations. Free11,279,716,352B exceeds
+remaining full-panel requirement10,760,165,048B. No cleanup,
+grid/source change or holdout access. Evidence: mla-score-preparation-001/
+quality001-slot08-result.json, quality001-slot08-evidence/ and quality001-accepted-08.json.
