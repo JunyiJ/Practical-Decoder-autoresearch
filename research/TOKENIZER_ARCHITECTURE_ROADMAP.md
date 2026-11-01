@@ -281,3 +281,13 @@ resolved against that projection. Full-model CPU and strict MPS tests now pass
 for SwiGLU672 and ungatedSiLU1008, including gradients and cached decoding.
 No scientific training or quality claim yet. Continue serialized checkpoint/
 resume/H200 and actual worker acceptance; see TOKENIZER_FFN_STRUCTURE_PREPARATION.md.
+
+
+## FFN resource gate passed
+
+Both matched-parameter FFN arms completed the finite scientific-corpus20-update
+resource pilots with exact independent full-validation acceptance and trained
+cache/inference checks. Both pilot pairs remain retained; the remaining full
+quality projection fits current capacity with all reserve/output guards. No
+quality result yet. Next is narrow full-duration/retention integration and the
+finite3LR-per-arm,3freshpair quality freeze; see TOKENIZER_FFN_STRUCTURE_PREPARATION.md.

@@ -272,3 +272,42 @@ Evidence: scientific-seed-census-001/, pilot001-capacity/boundary-tests/plan/
 freeze/preflight/prepare-guard.json, prepare-pilot001.py and pilot001-source/.
 Next execute the two guarded pilots, then trained-pair inference and final quality
 preparation. These resource pilots are excluded from quality conclusions.
+
+
+## FFN scientific resource pilots and paired inference completed
+
+Both frozen20-update pilots passed real child training and independent parent
+acceptance. Each processed20,480 targets and saved8 H200 snapshots. Raw resume,
+optimizer/EMA/export/metric/schedule/tokenizer checks passed; independent parent
+scoring reproduced the full34,278-target validation report exactly. These short
+pilots are excluded from LR selection and all quality/adoption conclusions.
+
+| Arm | Training seconds | Worker seconds | Parent-inclusive seconds | Worker peak RSS | Worker peak MPS driver |
+|---|---:|---:|---:|---:|---:|
+| SwiGLU672 | 3.614 | 10.710 | 16.492 | 1.437GB | 2.502GB |
+| Ungated SiLU1008 | 3.499 | 10.285 | 16.234 | 1.484GB | 2.502GB |
+
+Both strict resource guards and clean process reaping passed. Linear scaling
+puts training alone around210–217seconds per1200-update run; this is only a
+rough estimate and does not replace the7,200-second full-trial guard.
+
+Trained H200 full/cache/reset checks passed at batches1/8 before alternating
+2warmup/8repeat timing. Median32-token prefill /64-token decode milliseconds:
+SwiGLU8.058/279.251 versus ungated8.427/278.982 at batch1;
+SwiGLU13.919/294.506 versus ungated13.768/284.885 at batch8. Cache is identical
+196,608B/item. This single short-pilot pair is descriptive, with two models
+resident and loading/cache construction excluded; no consistent deployment or
+quality advantage is established and there is no cost-only adoption route.
+
+All four pilot weight files remain retained, totaling1,118,322,228B. There was
+no deletion or test scoring. Actual free space16,045,850,624B exceeds the
+remaining conservative full-panel requirement15,629,411,630B by416,438,994B.
+This accounts for both retained pilots, full serialization limits and metadata
+allowances; future dispatch must recheck capacity. No fixture deletion credit.
+
+Next connect/test only full-duration finite quality acceptance and the exact
+losing-screen retention boundary, then freeze the complete3LR-per-arm screen
+and3freshpaired-seed panel. Keep all pilot sources immutable; additive quality
+work must use a new namespace. Neither accepted pilot is rerun.
+Evidence: ffn-structure-preparation-001/pilot001-review.json, both external
+pilot001-accepted anchors, pilot001-completed-evidence/ and pilot001-inference-*.
