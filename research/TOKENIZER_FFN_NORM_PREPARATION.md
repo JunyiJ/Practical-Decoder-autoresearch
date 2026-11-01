@@ -223,3 +223,33 @@ paths, retire exact successful pilots after dependencies close, then freeze six
 1,200-step equal-LR screens plus three fresh pairs. All earlier sources/campaigns
 stay frozen/closed; no pilot-loss selection or partial-panel launch. Continuation
 returns to five minutes for concrete quality preparation and worker monitoring.
+
+
+## Finite quality001 frozen and scientific screening started
+
+The additive `research/ffn_norm_quality_v1` passed74 integration tests plus
+independent actual pilot raw/H200/optimizer/RNG/full-validation and batch1/8
+cache checks. It preserves all467 predecessor sources and binds477 total source
+files. None/RMS acceptance requires88/92 EMA tensors. A20-step pilot bundle cannot
+impersonate a1,200-step quality endpoint. No pilot loss selects LR or architecture.
+
+After quality-source dependencies closed, both successful pilot pairs were
+independently re-audited and exactly four weights totaling1,118,391,708B retired.
+All26,752 other research files rehashed unchanged.
+Original pilot receipts remain immutable; quality001-pilot-retirement manifests
+explain absent pilot paths. Failed, selected and fresh models remain protected.
+
+quality001 freezes six1,200-step equal-LR screens at0.000625/0.00125/0.0025,
+then three fresh pairs using per-arm minimum full-validation H200 CE/lower-LR tie
+selection. Each endpoint has1,228,800targets and41 H200 snapshots. Exactly four
+losing screen pairs retire only after all six acceptance audits and saved selection;
+both selected screen pairs and every fresh pair remain retained. Three paired
+inference reviews and independent final statistics are required. The RMS-minus-none
+mean must be below-0.02, all three paired deltas negative and every simultaneous
+text-block upper bound negative; no cost-only adoption or test scoring.
+
+Freeze SHA: `4a10df86ada4f27e89911f6ee231946713e277f9c3eb5f33b683f09e8fbdad26`. Actual free15,810,514,944B exceeds the complete
+13,555,990,528B requirement: eight560MiB pairs,256MiB metadata/transients and
+8GiB reserve. Streaming publication adds no full-payload duplicate. Slot00 was
+dispatched using the exact freeze, one local worker and four threads. Monitor actual
+process/anchor state before any later dispatch. No final quality claim is available.

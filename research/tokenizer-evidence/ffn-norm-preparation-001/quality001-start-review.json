@@ -1,0 +1,25 @@
+{
+  "status": "first_screen_running",
+  "observed_at": "2026-11-01T17:36:23.933684+00:00",
+  "freeze_sha256": "4a10df86ada4f27e89911f6ee231946713e277f9c3eb5f33b683f09e8fbdad26",
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-ffn-norm-quality-v1-001/evidence/quality/00/request.json",
+    "sha256": "bb1bb5d011a575778f507e8494ae3ac431ba76fe82971216ac301af5d293d53b"
+  },
+  "processes": [
+    {
+      "pid": 48674,
+      "parent_pid": 3389,
+      "command": "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m research.ffn_norm_quality_v1.quality_execution run --slot 0 --freeze-sha256 4a10df86ada4f27e89911f6ee231946713e277f9c3eb5f33b683f09e8fbdad26"
+    },
+    {
+      "pid": 48685,
+      "parent_pid": 48674,
+      "command": "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m research.ffn_norm_quality_v1.quality_execution worker --slot 0 --freeze-sha256 4a10df86ada4f27e89911f6ee231946713e277f9c3eb5f33b683f09e8fbdad26 --global-fd 3 --campaign-fd 4"
+    }
+  ],
+  "last_logged_step": 600,
+  "completed_endpoint": false,
+  "quality_result": false,
+  "no_duplicate_worker": true
+}

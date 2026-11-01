@@ -233,3 +233,12 @@ exceeds the complete13,555,990,528B requirement. Next additive finite quality
 orchestration and real pilot integration, exact pilot retirement after dependencies
 close, then freeze six equal-LR screens and all three fresh confirmation pairs.
 See TOKENIZER_FFN_NORM_PREPARATION.md; the storage wait is resolved.
+
+
+FFN-product normalization quality001 is now frozen and scientific screening has
+started.74 integration checks and real pilot payload/full-validation/cache audits
+passed; exact successful pilot retirement reclaimed1,118,391,708B with all retained
+evidence verified. The finite design remains six equal-LR1,200-step screens then
+three fresh pairs, all paired inference and independent final statistics. See
+TOKENIZER_FFN_NORM_PREPARATION.md for the exact freeze and capacity accounting.
+No adoption or new scientific quality conclusion is claimed at launch.

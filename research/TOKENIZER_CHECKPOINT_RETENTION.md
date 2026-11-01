@@ -367,3 +367,17 @@ archives and original numerical evidence. Free space15,834,030,080B exceeded
 the13,555,990,528B complete-panel requirement. The obsolete-numerical-cleanup-001
 manifest, original member identities and completion receipt are authoritative
 for intentional absence. These21 numerical payloads cannot be restored.
+
+
+## Completed FFN product-normalization pilot retirement
+
+Both accepted resource pilots and paired inference passed before additive quality
+source integration. After74 checks and real independent payload/full-validation/
+cache audits, exactly four raw/H200 pilot weights totaling1,118,391,708B were
+retired under the worker locks with exact manifests and a durable journal.
+All26,752 other research files verified unchanged.
+Evidence is in ffn-norm-preparation-001/quality001-pilot-retirement/. Original
+pilot receipts and source remain immutable; this later manifest explains absent
+weights, which cannot be restored. Selected/fresh/failed weights and all remaining
+archives were excluded. The final quality plan binds this completed retirement;
+never rerun the closed pilot controller against intentionally absent paths.
