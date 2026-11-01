@@ -6304,3 +6304,18 @@ credit or relaxed guard. First quality screen is next.
 
 Evidence: quality-integration001-failure.json, quality-integration002-review.json,
 quality-retention-disposable001/002/, quality001-plan/freeze/preflight/capacity, and quality001-protected-pilot-*.
+
+
+FFN quality001 slot00 accepted (2026-11-01T04:13:05.206410+00:00): SwiGLU672, seed187620002,
+LR0.000625,1,200 updates/1,228,800 targets and41H200 snapshots. Full-validation
+H200 CE is **4.920534463529** over34,278 targets. Independent parent
+raw/optimizer/EMA/export/full-validation/cache audits passed; the child exited
+cleanly and all guards finished. Training took225.11seconds; worker265.68seconds
+and parent acceptance10.78seconds. Worker peak RSS1.574GB/MPS driver2.510GB.
+
+This first fixed screen supports no selection or comparative quality conclusion.
+Next is frozen slot01, ungatedSiLU1008 at the same seed and LR. No checkpoint
+deletion or test scoring occurred. About15.50GB is free versus15.07GB remaining
+conservative requirement. Both pilot pairs and the accepted screen pair remain
+retained. Evidence: quality001-slot00-result.json/evidence/ and
+quality001-accepted-00.json in ffn-structure-preparation-001/.
