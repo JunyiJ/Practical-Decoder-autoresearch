@@ -423,3 +423,29 @@ raw/H200 pair and the test holdout closed. Evidence: quality001-slot05-result.js
 and preserved metadata, quality001-accepted-05.json, quality001-boundary-result.json,
 quality001-boundary-record-guard.json and quality001-screen-retention/ in
 mla-score-preparation-001/.
+
+
+### First fresh MLA score endpoint accepted
+
+quality001 slot06 accepted at 2026-11-01T06:59:36.996505+00:00: multiplier0.5,
+selected LR0.00125, first reserved fresh seed198630011. All1200updates,
+1,228,800training targets and41H200 snapshots completed. Independent parent
+checkpoint/optimizer/EMA, full-validation and cache audits passed; H200 CE is
+4.712354865011 across34278 validation targets. This is one fresh endpoint,
+not a paired difference or adoption result. Slot07 multiplier1.0 is now running
+at the same seed and rate. No selection change, interim stop or grid extension.
+
+Worker peak RSS1,653,833,728B and MPS driver2,510,094,336B remained below
+4GiB/6GiB; worker and parent guards finished without violations. Retained
+selected screen pairs and the fresh raw/H200 pair were verified. Observed free
+12,407,627,776B exceeds remaining complete-panel requirement
+11,878,495,240B. All fresh confirmations remain protected.
+
+The existing read-only three-pair inference driver was adapted outside frozen
+namespaces, changing only score-module imports and the exact quality freeze SHA.
+Syntax validation passed; execution is deferred until all twelve endpoints are
+accepted, when its exact requests/anchors and runner hash will be frozen. No
+inference result or new numerical claim is made for this unexecuted driver.
+Evidence: quality001-slot06-result.json, quality001-slot06-evidence/ and
+quality001-accepted-06.json; driver quality001-fresh-inference.py in
+mla-score-preparation-001/. Keep the test holdout closed.
