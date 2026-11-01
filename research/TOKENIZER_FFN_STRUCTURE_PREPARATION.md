@@ -386,3 +386,19 @@ worker peak RSS1.579GB and MPS driver2.544GB. Both screen pairs and both pilots
 remain retained. No deletion or test scoring occurred. About14.95GB free exceeds
 14.51GB remaining conservative requirement. Next frozen slot02 is ungatedSiLU
 at LR0.00125, followed by SwiGLU at that rate. Evidence: quality001-slot01-result.json, quality001-slot01-evidence/ and quality001-accepted-01.json in ffn-structure-preparation-001/.
+
+
+FFN quality001 slot02 accepted (2026-11-01T04:25:21.000319+00:00): ungatedSiLU1008 at
+LR0.00125, screening seed187620002,1,200 updates/1,228,800 targets and41H200
+snapshots. Full-validation H200 CE **4.722775215414** improves over this
+arm's LR0.000625 screen (**4.946103441823**). The paired SwiGLU
+endpoint at0.00125 is next; no rate selection or architecture conclusion is
+available from this incomplete screen. The remaining frozen rates are unchanged.
+
+Independent parent raw/optimizer/EMA/export/full-validation/cache checks and
+clean child exit passed. Training221.93seconds, worker279.39seconds, parent
+11.35seconds; peak worker RSS1.558GB/MPS driver2.510GB. All guards passed.
+All accepted screen/pilot pairs remain retained; no deletion or test scoring.
+Free14.37GB exceeds13.95GB remaining conservative requirement. Evidence:
+quality001-slot02-result.json, quality001-slot02-evidence/ and
+quality001-accepted-02.json in ffn-structure-preparation-001/.
