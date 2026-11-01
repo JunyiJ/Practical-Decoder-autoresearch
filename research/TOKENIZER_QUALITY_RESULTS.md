@@ -6389,3 +6389,46 @@ six endpoints pass, save per-arm rate selection and execute the exact audited
 losing-screen retention boundary before fresh confirmations. Evidence:
 quality001-slot04-result.json, quality001-slot04-evidence/ and
 quality001-accepted-04.json in ffn-structure-preparation-001/.
+
+
+## FFN six-screen selection and retention complete
+
+Slot05 accepted (2026-11-01T04:45:54.354657+00:00): ungatedSiLU1008 at LR0.0025,
+screening seed187620002,1,200 updates/1,228,800 targets and41H200 snapshots.
+Full-validation H200 CE is **4.749980863365**, versus SwiGLU's4.803416296113
+at that rate (candidate minus control **-0.053435432748 nat/token**).
+Independent parent raw/optimizer/EMA/export/full-validation/cache checks, clean
+child exit and all guards passed. Training213.73seconds; worker291.48seconds,
+parent10.09seconds; peak worker RSS1.583GB/MPS driver2.552GB.
+
+All six accepted full-validation screens:
+
+| Peak LR | SwiGLU672 | UngatedSiLU1008 | Candidate minus control |
+|---|---:|---:|---:|
+| 0.000625 | 4.920534463529 | 4.946103441823 | +0.025568978294 |
+| 0.00125 | 4.712840888916 | 4.722775215414 | +0.009934326498 |
+| 0.0025 | 4.803416296113 | 4.749980863365 | -0.053435432748 |
+
+The frozen minimum-H200-CE rule selects **LR0.00125 for both arms**, persisted
+before any fresh run. The ranking reversal at0.0025 shows why the independently
+tuned comparison matters: the selected-rate screen favors SwiGLU by0.009934,
+although ungated SiLU wins at the highest fixed rate. This is screening evidence
+from one seed, not a fresh confirmation or adoption conclusion. Width and
+factorization change jointly, so it does not isolate the gating mechanism.
+
+The boundary independently re-audited all six pairs, saved selection, then removed
+exactly eight allowlisted raw/H200 files from losing slots0,1,4,5, reclaiming
+**2,236,646,504 logical bytes**. The selected slots2/3, all71 non-deleted files in
+the quality evidence inventory and both pilot inventories verified unchanged.
+Manifest, fsynced intent/deletion journal, guard and receipt are preserved in
+quality001-screen-retention/. Deleted weights cannot be reloaded; original
+hashes, complete audits and all non-weight evidence remain. No test scoring.
+
+Post-boundary verification passed: free14,753,619,968B exceeds the remaining
+14,511,088,378B conservative requirement. Next is slot06 SwiGLU at LR0.00125,
+fresh seed187620011, followed by the paired ungated endpoint. Complete all six
+fresh endpoints at frozen rates, all three paired inference reviews and final
+independent statistical review. Keep every fresh raw/H200 pair. Evidence:
+quality001-slot05-result.json/evidence/, quality001-accepted-05.json,
+quality001-selection.json and quality001-boundary-result.json/guards in
+ffn-structure-preparation-001/.

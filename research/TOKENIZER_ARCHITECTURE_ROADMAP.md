@@ -291,3 +291,15 @@ cache/inference checks. Both pilot pairs remain retained; the remaining full
 quality projection fits current capacity with all reserve/output guards. No
 quality result yet. Next is narrow full-duration/retention integration and the
 finite3LR-per-arm,3freshpair quality freeze; see TOKENIZER_FFN_STRUCTURE_PREPARATION.md.
+
+
+## FFN screening complete; fresh confirmation ready
+
+The six frozen FFN screens and independent acceptance are complete. Both arms
+select LR0.00125; selected-rate H200 CE is4.712841 for SwiGLU672 versus4.722775
+for ungatedSiLU1008. The high-rate0.0025 ordering reverses, so the screening
+comparison depends on the rate. No adoption conclusion from one screening seed.
+Exact audited losing-screen cleanup reclaimed2.237GB and preserved selected
+pairs, pilot inventories and all non-weight evidence. The remaining finite
+projection fits current capacity. Next: three fresh pairs at frozen selected
+rates, paired inference and final review; see TOKENIZER_FFN_STRUCTURE_PREPARATION.md.
