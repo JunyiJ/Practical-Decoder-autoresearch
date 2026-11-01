@@ -6370,3 +6370,22 @@ Free13.80GB exceeds13.39GB remaining conservative requirement. Next is frozen
 slot04, SwiGLU at LR0.0025. Evidence: quality001-slot03-result.json,
 quality001-slot03-evidence/ and quality001-accepted-03.json in
 ffn-structure-preparation-001/.
+
+
+FFN quality001 slot04 accepted (2026-11-01T04:39:27.180350+00:00): SwiGLU672 at LR0.0025,
+screening seed187620002,1,200 updates/1,228,800 targets and41H200 snapshots.
+Full-validation H200 CE **4.803416296113** over34,278 targets is worse
+than this arm's LR0.00125 result **4.712840888916**. All three SwiGLU rates
+are now measured; the ungated LR0.0025 endpoint remains before the frozen
+six-screen selection boundary. No interim selection or architecture adoption.
+
+Independent parent raw/optimizer/EMA/export/full-validation/cache audits, clean
+child exit and all guards passed. Training217.31seconds; worker289.46seconds,
+parent10.08seconds. Peak worker RSS1.584GB/MPS driver2.510GB. All pilot and
+screen pairs remain retained; no deletion or test scoring occurred. Observed
+free13.05GB exceeds the12.83GB remaining conservative requirement; recheck
+before dispatch. Next is frozen slot05, ungatedSiLU1008 at LR0.0025. After all
+six endpoints pass, save per-arm rate selection and execute the exact audited
+losing-screen retention boundary before fresh confirmations. Evidence:
+quality001-slot04-result.json, quality001-slot04-evidence/ and
+quality001-accepted-04.json in ffn-structure-preparation-001/.
