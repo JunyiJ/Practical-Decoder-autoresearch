@@ -7416,3 +7416,13 @@ component passed six generated CPU FP64/FP32 and MPS FP32 forward/all-gradient,
 causality, uneven-cache/reset cases. No scientific seeds, corpus training or
 new pilot/quality freeze occurred. Full-model/optimizer/checkpoint/H200/cache
 integration remains next; see TOKENIZER_LOCAL_MIX_PREPARATION.md.
+
+
+Local causal FFN mixing remains an untested quality hypothesis. Full-model CPU/MPS
+initialization, optimizer grouping, payload identity and nonzero-lag cache tests
+passed. Candidate serialized repeat/resume model/optimizer/EMA/RNG was exact, but
+the subsequent H200 export was correctly rejected because the harness supplied
+an intermediate rather than final-horizon checkpoint. This failed fixture is
+preserved closed. A separate final-horizon worker pair is source-ready, awaiting
+measured capacity; no new scientific seeds or quality claims. See
+TOKENIZER_LOCAL_MIX_PREPARATION.md and local-mix-preparation-001 for exact evidence.

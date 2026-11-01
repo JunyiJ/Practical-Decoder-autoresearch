@@ -51,3 +51,42 @@ proceeds while future full-panel capacity is audited; do not reuse stale blocker
 
 Evidence: tokenizer-evidence/local-mix-preparation-001/direction-decision.json,
 component001-plan.json, component001-result.json and component001-guard.json.
+
+
+Full-model model001 passed both arms with identical shared initialization, RNG
+state and initial logits. The candidate adds3,072 parameters in12 AdamW vectors
+at base LR and independent decay0.00006; filtered existing optimizer groups match.
+CPU/MPS maximum logits difference7.16e-7 and gradient difference1.32e-7;
+nonzero lags were exercised. Interleaved uneven-chunk/cache/reset/causality tests
+passed. Wrong-arm, malformed and aliased caches were rejected before mutation.
+Actual cache storage is196,608B/control versus204,800B/candidate per batch item.
+Checkpoint payload signatures reject changed arms/configurations and constructed
+mixer mutations. All497 predecessors and the standalone component remain intact.
+
+Candidate serialized model-resume001 produced an intermediate step2 checkpoint
+and matched both four-update repeat and interrupted resume exactly for model,
+Muon/AdamW optimizer, EMA and CPU/MPS/loader RNG (max difference0). It then failed
+when the harness attempted H200 export from step2 of a total4-update horizon.
+The exporter correctly requires the final horizon. Preserve the original source,
+plan, trace, guard and445MB-class checkpoint as failed evidence; its STOP closes
+this fixture without retry. This is not a passed final H200 integration test.
+
+A separate fresh final-horizon two-arm worker prerequisite is prepared in
+trainer-worker001.py, with actual run_training, bounded final-only raw/H200
+publication, independent parent full-validation acceptance and arm-specific cache
+measurement adapters. Its imports and arm contracts passed;515 sources are bound.
+It does not load failed resume weights. Actual workers, final H200 and paired
+inference have NOT run. No scientific seed or training panel is reserved/frozen.
+
+Capacity001 measures9,032,929,280B free versus10,066,329,600B required for the complete
+worker pair (deficit1,033,400,320B), including8GiB reserve, both560MiB weight
+allowances, both16MiB trajectory metadata and256MiB round metadata. A read-only
+weight/archive inventory found no further eligible large numerical archive or
+losing-screen recovery; the remaining large weights are selected/fresh/failed.
+The remaining unreviewed numerical weights are only3.69MB. No cleanup was done;
+unrelated maintenance remains untouched. One storage action is needed: free2GB
+on this volume for the next worker pair, or provide another research volume.
+The eventual scientific panel requires a separate full-output projection.
+Independent worker source work is complete. Wake at free>=10066329600B or new
+eligible recovery evidence, checking hourly while waiting; no unchanged commits,
+repeated escalation, retry of closed fixtures or additional metadata scaffolding.

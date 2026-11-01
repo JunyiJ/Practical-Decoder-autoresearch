@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/model-resume001.py", line 179, in <module>
+    export=export_averaged_checkpoint(root/'step2.pt',root/'h200.pt',200,payload_writer=write_payload)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/weight_averaging.py", line 208, in export_averaged_checkpoint
+    payload = derived_checkpoint_payload(parent, half_life)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/weight_averaging.py", line 173, in derived_checkpoint_payload
+    parameters = tracker.averaged_parameters(half_life)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/weight_averaging.py", line 132, in averaged_parameters
+    raise ValueError('Only a registered final-horizon average can be exported')
+ValueError: Only a registered final-horizon average can be exported
