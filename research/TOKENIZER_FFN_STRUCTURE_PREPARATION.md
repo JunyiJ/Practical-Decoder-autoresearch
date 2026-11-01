@@ -311,3 +311,46 @@ and3freshpaired-seed panel. Keep all pilot sources immutable; additive quality
 work must use a new namespace. Neither accepted pilot is rerun.
 Evidence: ffn-structure-preparation-001/pilot001-review.json, both external
 pilot001-accepted anchors, pilot001-completed-evidence/ and pilot001-inference-*.
+
+
+## Finite FFN quality plan frozen
+
+The additive research/ffn_quality_v1 path reuses the established bounded serial
+controller, independent full-validation/cache acceptance, paired-statistics and
+exact screen-retention logic. It binds FFN configurations and88/84 EMA parameter
+inventories without editing any frozen pilot or historical source. Seventy-six
+checks passed, including finite orders/ties/adoption arithmetic, all12config
+slots, disposable-only cleanup/corruption/re-entry rejection, and real read-only
+parent acceptance of both retained scientific pilots. No scientific weights
+were deleted.
+
+Integration001 passed all76tests but its external report serialization rejected
+pytest tuples. Original source/guard/plan/disposable receipts are preserved.
+Distinct002 normalizes report properties to native JSON lists, records its log,
+and passed all76checks with the protected pilot roots unchanged. No model or
+scientific training retry occurred.
+
+Frozen quality001 contains six1200-update screens at0.000625/0.00125/0.0025,
+shared screening seed187620002, alternating arm order. Each arm selects minimum
+full-validation H200 CE with lower-LR tie-break. Save selection after all six
+accepted endpoints; independently re-audit all six and retire only four losing
+raw/H200 pairs through exact manifests/journals before any fresh run. Keep both
+selected pairs, both resource pilots and every fresh raw/H200 pair. Then run
+three fresh paired seeds187620011/12/13 at the fixed selected rates.
+
+All quality runs retain cooldown800, H200 from800 every10updates, batch8/context128
+and1,228,800 targets. Adoption requires mean ungated-minus-gated delta<-0.02,
+every fresh delta<0 and all simultaneous conditional-text uppers<0 at the three
+frozen block sizes. All three paired inference measurements and a separate final
+review remain required; no interim or cost-only adoption.
+
+Full remaining capacity requirement is15,629,411,630B versus16,034,213,888B free.
+The bounded checkpoint writer streams to a temporary inode then publishes a hard
+link and unlinks the temporary name under the census lock; it makes no second
+physical payload copy. Aggregate raw/H200 cap728MiB plus bounded metadata fits
+the788,953,140B per-slot cap;256MiB round metadata covers control overlap. The
+conservative earlier pilot headroom remains reserved. No speculative deletion
+credit or relaxed guard. First quality screen is next.
+
+Evidence: quality-integration001-failure.json, quality-integration002-review.json,
+quality-retention-disposable001/002/, quality001-plan/freeze/preflight/capacity, and quality001-protected-pilot-*.

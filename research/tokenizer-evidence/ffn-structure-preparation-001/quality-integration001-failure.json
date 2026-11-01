@@ -1,0 +1,16 @@
+{
+  "status": "closed_reporting_failure_after_tests_passed",
+  "observed_test_summary": "76 passed, 1 warning in 8.13s",
+  "error": "ValueError: Native JSON types required",
+  "phase": "exclusive review serialization after completed tests, protected-root and source verification",
+  "cause": "pytest user_properties is list of tuples; canonical evidence writer requires native JSON lists",
+  "original_source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-structure-preparation-001/quality-integration001.py",
+    "sha256": "9af5e680d296e418f195dcada8d523324687e6fd9e489410199bb5a0f2b9fd14"
+  },
+  "plan": "quality-integration001-plan.json",
+  "guard": "quality-integration001-guard.json",
+  "scientific_training_launched": false,
+  "scientific_weights_deleted": false,
+  "recovery": "Distinct integration002 normalizes report tuples to JSON lists, captures output, uses fresh disposable-only root. Original001 source/evidence remains immutable."
+}
