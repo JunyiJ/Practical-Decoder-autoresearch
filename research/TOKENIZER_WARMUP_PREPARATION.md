@@ -166,3 +166,16 @@ owned active worker, never duplicate it. Recheck actual remaining full-panel
 capacity for each slot. Preserve selected models, every fresh pair, failures,
 immutable sources/receipts and the closed test holdout. No new scientific quality
 result or adopted-recipe change is claimed at launch.
+
+
+Warmup quality001 screening and retention boundary completed. All six1200-update
+endpoints passed independent parent acceptance and were re-audited at selection.
+Both arms selected peak LR0.00125 (selected slots02/03) by the frozen minimum
+full-validation H200 CE/lower-LR tie rule. Exactly four losing raw/H200 pairs
+were retired:2,236,662,944B reclaimed,72 retained files unchanged. Original
+acceptance receipts remain immutable; absent paths resolve via
+quality001-screen-retention manifests/journal. Selected pairs remain protected.
+Fresh confirmation has started in the frozen paired order using seeds198850011,
+198850012,198850013. Preserve all six fresh trajectories, complete all three
+paired inference reviews and independent final statistics before any decision.
+No adoption or quality conclusion follows from screening alone.

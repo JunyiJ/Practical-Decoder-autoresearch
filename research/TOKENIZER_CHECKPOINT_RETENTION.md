@@ -452,3 +452,16 @@ unchanged under shared locks and guards. Original receipts remain immutable;
 quality001-pilot-retirement manifest/journal explains intentional absence.
 Selected/fresh/failed weights and remaining numerical archives remain protected.
 Do not rerun closed pilot/integration commands against retired pilot paths.
+
+
+Warmup quality001 screening and retention boundary completed. All six1200-update
+endpoints passed independent parent acceptance and were re-audited at selection.
+Both arms selected peak LR0.00125 (selected slots02/03) by the frozen minimum
+full-validation H200 CE/lower-LR tie rule. Exactly four losing raw/H200 pairs
+were retired:2,236,662,944B reclaimed,72 retained files unchanged. Original
+acceptance receipts remain immutable; absent paths resolve via
+quality001-screen-retention manifests/journal. Selected pairs remain protected.
+Fresh confirmation has started in the frozen paired order using seeds198850011,
+198850012,198850013. Preserve all six fresh trajectories, complete all three
+paired inference reviews and independent final statistics before any decision.
+No adoption or quality conclusion follows from screening alone.
