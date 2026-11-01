@@ -147,3 +147,42 @@ blocker recovery and distinguishes blocked actions from independent useful work.
 
 Evidence: tokenizer-evidence/obsolete-screen-cleanup-001/manifest.json,
 completed.json, journal.jsonl and both resource guards.
+
+
+## Full-model CPU and strict MPS integration passed
+
+The isolated research/ffn_structure_v1 runtime now accepts exactly the matched
+SwiGLU672 and ungated SiLU1008 arms on the grouped-embedding D256 MLA backbone.
+It overrides six runtime modules and resolves unchanged dependencies from the
+frozen norm runtime under its own namespace. All399 frozen source files remain
+byte-identical; the tested new source snapshot is preserved separately.
+
+The control matches legacy initialization and logits bitwise. Candidate total
+parameters are28,492,416, with2,064,384 FFN parameters. Complete non-duplicated
+optimizer coverage passed: Muon2,752,512 parameters/40tensors and AdamW
+25,739,904/44tensors, retaining width-LR scale0.5 and match_rms_adamw. Full-model
+synthetic forward/backward and one CPU update passed with finite gradients.
+CPU cached/full maximum error was8.345e-7; causality was exact.
+
+Strict MPS tests passed for both arms with repeated token IDs exercising grouped
+embedding gradients. Maximum CPU/MPS logits error8.941e-7, gradient error1.500e-7,
+and full/interleaved-cache error9.537e-7. Reset and causality were bitwise exact.
+Cache remains196608B/item. Existing tolerances and resource guards were retained.
+Wrong-arm cache and checkpoint signatures, a changed activation module and use
+of the candidate under the old policy were rejected. No corpus/test/checkpoint
+file IO or scientific training occurred. Synthetic fixture seeds are not reserved
+scientific seeds; the future census must include these sources.
+
+Candidate initialization uses ordinary bias-free Linear draws. Removing a
+projection and changing its shape changes RNG consumption, so paired scientific
+seeds will not imply identical attention/readout initial values. The comparison
+changes factorization, hidden width and optimizer geometry jointly.
+
+Next: real serialized raw/H200 checkpoint and optimizer-resume equivalence,
+worker/parent full-validation and inference acceptance; measure actual output
+allowance/transients before seed census and finite pilots/quality freezes.
+Current capacity remains above the15.170GB projection. No quality claim or
+training launch is supported by these numerical prerequisites.
+
+Evidence: model-integration001.py/json/guard/source and
+mps-integration001.py/json/guard in tokenizer-evidence/ffn-structure-preparation-001/.

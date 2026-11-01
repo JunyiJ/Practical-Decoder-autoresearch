@@ -271,3 +271,13 @@ seeds/grid/launch frozen and no training started. See
 [TOKENIZER_FFN_STRUCTURE_PREPARATION.md](TOKENIZER_FFN_STRUCTURE_PREPARATION.md)
 and ffn-structure-preparation-001/direction-decision.json. Preserve all frozen
 source namespaces; resolve full retained-output capacity before new dispatch.
+
+
+## FFN integration advanced after capacity recovery
+
+Renewed authorized obsolete-screen retirement reclaimed9.828GB; capacity now
+exceeds the proposed15.170GB panel requirement. The earlier storage blocker is
+resolved against that projection. Full-model CPU and strict MPS tests now pass
+for SwiGLU672 and ungatedSiLU1008, including gradients and cached decoding.
+No scientific training or quality claim yet. Continue serialized checkpoint/
+resume/H200 and actual worker acceptance; see TOKENIZER_FFN_STRUCTURE_PREPARATION.md.
