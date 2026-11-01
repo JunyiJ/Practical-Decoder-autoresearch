@@ -494,3 +494,23 @@ both guards finished without violations. Free11,279,716,352B exceeds
 remaining full-panel requirement10,760,165,048B. No cleanup,
 grid/source change or holdout access. Evidence: mla-score-preparation-001/
 quality001-slot08-result.json, quality001-slot08-evidence/ and quality001-accepted-08.json.
+
+
+### Second fresh MLA score pair completed
+
+Slot09 accepted at 2026-11-01T07:16:43.884398+00:00, completing seed198630012 at
+selected LR0.00125 for both arms. Multiplier0.5 H200 CE4.722457821258
+versus multiplier1.0 CE4.705125006811 gives unit-minus-half
+-0.017332814447nat/token across34278 aligned validation targets. Both fresh pairs
+so far favor1.0, but there is no adoption or interim stopping decision. Complete
+the final pair, all three paired inference reviews and independent frozen-gate
+statistics. Each endpoint passed1200updates/1,228,800targets/41H200 snapshots
+and independent checkpoint/optimizer/EMA, validation and cache acceptance.
+
+Worker peak RSS1,583,513,600B and driver2,518,482,944B were below4GiB/6GiB;
+both guards finished without violations. Free10,710,462,464B exceeds
+remaining full-panel requirement10,200,999,952B. Slot10
+(multiplier0.5/LR0.00125/seed198630013) has started serially. All fresh raw/H200
+pairs remain protected; no cleanup, source/grid change or test access. Evidence:
+mla-score-preparation-001/quality001-slot09-result.json, quality001-slot09-evidence/
+and quality001-accepted-09.json.
