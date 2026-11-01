@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/trainer-worker001.py", line 136, in <module>
+    try:worker(args) if args.worker else parent()
+                                         ~~~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/trainer-worker001.py", line 94, in parent
+    writer.publish_json('evidence/meta/prerequisite-plan.json',plan);plan_ref=ref(ROOT/'evidence/meta/prerequisite-plan.json')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata_writer.py", line 108, in publish_json
+    before=self._capacity(group,0)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata_writer.py", line 85, in _capacity
+    observed=snapshot(self.root)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata.py", line 80, in snapshot
+    name=str(path.relative_to(root));group=classify(name)
+                                           ~~~~~~~~^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata.py", line 42, in classify
+    if len(parts)<4 or parts[0]!='evidence':raise ValueError('Undeclared v2 campaign output path')
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Undeclared v2 campaign output path

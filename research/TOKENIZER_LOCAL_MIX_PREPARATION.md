@@ -90,3 +90,42 @@ The eventual scientific panel requires a separate full-output projection.
 Independent worker source work is complete. Wake at free>=10066329600B or new
 eligible recovery evidence, checking hourly while waiting; no unchanged commits,
 repeated escalation, retry of closed fixtures or additional metadata scaffolding.
+
+
+## Storage recovery and final-horizon worker acceptance
+
+The latest human explicitly authorized retiring obsolete failed numerical
+checkpoint payloads while keeping selected models and fresh confirmations. Exact
+cleanup001/003 retired14 failed or incomplete payloads totaling5,892,893,697B.
+The two operations verified36,155 and36,234 retained files unchanged, including
+selected/fresh weights and every original failure source/log/config/receipt. The
+earlier retain-failed language is superseded only by these later exact manifests.
+Cleanup002's preliminary eligibility assertion failed before deletion; corrected
+003 checks failed terminal slots and accepted prefixes, rather than treating an
+old generic protected inventory label as proof of a selected model. Include
+.pt.tmp files in future size-based inventories. AGENTS.md now records this rule.
+
+The initial trainer-worker001 stopped before dispatch because generated.txt was
+inside the restricted campaign output namespace. Original source/plan/failure and
+STOP are immutable. Separately frozen worker002 uses generated input outside
+the campaign root with all515 model/acceptance sources unchanged. Both actual
+four-update workers completed, with4,096targets and3H200snapshots each. Independent
+parent payload/optimizer/RNG/EMA/full-validation acceptance passed; EMA inventories
+were88/control and100/candidate. CPU/MPS full-validation CE differences were below
+2.70e-7. Final H200 export passed for both arms. No failed fixture was rerun.
+
+Trained paired inference001 passed full/cache/reset tests at batches1/8 and the
+predeclared alternating2warmup/8repeat measurements. Actual cache storage is
+196,608B/control and204,800B/candidate per item. These short generated-text results
+validate integration and measurement only; no quality or deployment gain claimed.
+The scientific corpus and closed holdout were not read and no scientific seeds
+or training panel are reserved/frozen. All new generated weights remain retained.
+
+Capacity002 observes13,565,247,488B free after both workers/inference. The prior complete
+13,555,990,528B panel allowance has only9,256,960B current margin and is
+not dispatch permission: actual serialized outputs, metadata/transient overlap,
+finite plan and seed census still need review. Next implement minimal finite
+pilot orchestration/design with tested primitives, audit real accepted payloads
+and close successful generated-worker dependencies. Their1,118,405,952B pair
+weights may then be retired only by another exact audit under current permission.
+Do not leave continuation in the resolved storage-wait state.

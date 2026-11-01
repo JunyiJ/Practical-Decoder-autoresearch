@@ -1,0 +1,29 @@
+{
+  "status": "worker_and_inference_complete_storage_wait_resolved",
+  "at": "2026-11-01T22:57:38.843887+00:00",
+  "free_bytes": 13565247488,
+  "worker": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/trainer-worker002.json",
+    "sha256": "f91bef4d00854fed23026e946688bb60645456274aae283e90786ef00203f6b5"
+  },
+  "inference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/trained-inference001.json",
+    "sha256": "b3d122cf97fdc7f31f59b3aeb9aa70211cda3e0969cce070cbbf3c75cddb0541"
+  },
+  "cleanup": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/obsolete-failed-numerical-cleanup-001/completed.json",
+      "sha256": "06e8948ad493a0e8d0d5a9d30d4e5550040956a4f9cc42423c34b99addf3714b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/obsolete-failed-numerical-cleanup-003/completed.json",
+      "sha256": "f3e26e4426928c2a85c49a6ea2a9b08f8b6ecc22e3a1fa36d2cf21ccba2261cd"
+    }
+  ],
+  "reclaimed_bytes": 5892893697,
+  "retained_generated_worker_weight_bytes": 1118405952,
+  "prospective_quality_high_water_requirement": 13555990528,
+  "prospective_margin": 9256960,
+  "scientific_dispatch_authorized": false,
+  "note": "Current observation, not a frozen scientific panel. Charge every new output; remeasure actual final serialization and complete metadata/transient budget. Candidate generated outputs stay retained until explicit dependency closure and exact retirement audit. No stale capacity wait."
+}

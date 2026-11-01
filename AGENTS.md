@@ -30,6 +30,10 @@ the same issue. Follow the latest human authorization over older local plans.
 - When capacity is insufficient, promptly inventory large research artifacts
   and identify obsolete screens, completed pilots, duplicate caches, and old
   archives. Archival does not make an obsolete checkpoint permanently necessary.
+- Inventory large files by size as well as extension. Include incomplete writes
+  such as `.pt.tmp`; a suffix-only checkpoint search can miss gigabytes. Classify
+  them by original failure/acceptance records, not an old generic "protected"
+  inventory label. Apply current human authorization through exact audits.
 - Apply current user authorization to concrete cleanup candidates; do not
   silently treat an earlier self-authored retain-all plan as overriding newer
   permission to retire old checkpoints. Record narrow policy exceptions.
@@ -38,6 +42,10 @@ the same issue. Follow the latest human authorization over older local plans.
   selected models, fresh confirmations, failed artifacts, and active work unless
   the user specifically authorizes changing those protections. Never remove
   unrelated files or data merely because it is large.
+- Current human authorization also covers obsolete failed numerical checkpoint
+  payloads and incomplete failed writes once dependencies are closed. Keep
+  original failure source/log/config/receipts and selected/fresh weights; use
+  exact audits rather than treating older retain-failed wording as missing consent.
 - After cleanup, measure actual free space and immediately update stale blocker
   state and the recorded next action. Continue the enabled work; do not leave
   future heartbeats stuck on a resolved capacity condition.

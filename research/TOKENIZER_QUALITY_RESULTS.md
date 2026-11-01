@@ -7426,3 +7426,14 @@ an intermediate rather than final-horizon checkpoint. This failed fixture is
 preserved closed. A separate final-horizon worker pair is source-ready, awaiting
 measured capacity; no new scientific seeds or quality claims. See
 TOKENIZER_LOCAL_MIX_PREPARATION.md and local-mix-preparation-001 for exact evidence.
+
+
+Local causal FFN mixing final-horizon worker prerequisites now pass both arms:
+actual four-update run_training, final raw/H200 serialization, independent parent
+full-validation acceptance and paired full/cache/reset inference at batches1/8.
+This establishes integration only; no new quality comparison or adoption.
+The failed intermediate-export and initial pre-dispatch path attempts remain
+closed with original evidence preserved. User-authorized obsolete failed weight
+retirement recovered5.89GB while retaining selected models and all fresh pairs.
+Next finite pilot design/integration, fresh seed census, actual full-output
+capacity and finite guarded freezes. See TOKENIZER_LOCAL_MIX_PREPARATION.md.

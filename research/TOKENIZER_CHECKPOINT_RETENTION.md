@@ -465,3 +465,50 @@ Fresh confirmation has started in the frozen paired order using seeds198850011,
 198850012,198850013. Preserve all six fresh trajectories, complete all three
 paired inference reviews and independent final statistics before any decision.
 No adoption or quality conclusion follows from screening alone.
+
+
+## Explicit retirement of obsolete failed numerical checkpoints
+
+The latest human instruction authorizes deletion of old failed numerical
+checkpoints no longer needed while keeping selected models and fresh
+confirmations. obsolete-failed-numerical-cleanup-001 narrows this to eleven
+tensors: six warmup model-resume001 weights, one local-mix model-resume001
+intermediate weight, two FFN trainer-worker002 weights and two failed block-norm
+pilot001 weights. These four roots are closed and have no live tensor-loading
+dependency. The prepared local-mix final-horizon workers create fresh data and
+weights; they read preserved full-model receipts, not these failed tensors.
+
+This human authorization supersedes earlier retain-failed clauses only for the
+exact audited paths. Verify original size/hash receipts, acquire the shared
+worker lock, check processes, write durable deletion intents and verify all
+retained evidence. Preserve every original failure source, log, trace, config,
+receipt and STOP, all selected models, all fresh confirmations and all other
+failed artifacts. The later manifest explains absent weights; they cannot be
+restored and closed fixtures must never be rerun.
+
+
+The same renewed authorization covers obsolete-failed-numerical-cleanup-002's
+three exact incomplete .pt.tmp files: the actual-scale metadata-contention trace
+v2 synthetic payload and incomplete failed screening writes from closed wider-
+hybrid002 slot05 and003 slot08. Original failure reviews identify their exact
+size/hash and forbid retry. None is an accepted endpoint, selected model or fresh
+confirmation, and none has a current loading dependency. Preserve all original
+failure evidence and all accepted/selected/fresh weights. Retire only through
+the separate exact audit, locks, durable journal and survivor verification.
+
+The initial partial-write audit002 stopped before manifest/deletion because an
+old protected_weights inventory also included failed partials. Preserve its source
+and guard. Separately versioned003 instead verifies the original failed terminal
+slot equals the accepted prefix length, exact .pt.tmp paths/hashes, and no completed
+endpoint. The same three paths and authorization apply; no new cleanup scope.
+
+
+Completed obsolete-failed-numerical-cleanup001/003: eleven closed failed numerical
+weights (3,343,968,195B) and three incomplete failed checkpoint writes
+(2,548,925,502B) were permanently retired under exact original size/hash checks,
+worker locks and durable journals.36,155/36,234 survivors verified unchanged.
+All selected/fresh models and original failure evidence remain. Exact historical
+policy text is retained as policy-at-audit.md matching each manifest's policy hash.
+Audit002 failed before deletion and is preserved;003 corrected the eligibility
+assertion without expanding scope. Later manifests explain intentionally absent
+weights; none can be restored or used to retry closed fixtures.
