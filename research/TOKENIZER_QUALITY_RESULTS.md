@@ -7458,3 +7458,23 @@ reclaimed1,118,415,676B with27,372 retained files verified. The plan binds531
 sources, six equal-LR screens and all three fresh confirmation pairs, with
 strict original quality gates and closed test. No quality or adoption conclusion
 at launch. See TOKENIZER_LOCAL_MIX_PREPARATION.md for the exact freeze and routing.
+
+
+## Local-mixing screening complete; fresh confirmations started
+
+All six1200-step screens passed independent acceptance. Both arms selected
+LR0.00125: none H200 validation CE4.706012847929603, causal3
+4.698945099031134 (delta−0.007067748898469). The lower-rate gap−0.07968228
+is substantially larger; this screening seed does not establish adoption.
+At LR0.0025, none/causal3 CE were4.778780302320959/4.97667545638055.
+The frozen three fresh pairs and independent inference/statistics remain required.
+
+Exact boundary re-audited all six endpoints, persisted selection, retired only
+four losing raw/H200 pairs (2,236,835,192B), and verified72 retained files.
+Selected02/03 remain protected; original receipts are immutable. Absent losing
+paths resolve through local-mix-preparation-001/quality001-screen-retention.
+Actual post-boundary free13,730,594,816B; slot06 started through the frozen
+remaining-full-panel capacity guard. Keep all fresh pairs, closed holdout and
+all original guards. No new quality/adoption conclusion. At the next campaign
+boundary consider the user concern about repeated LR searches when choosing
+a prospective standard-LR comparison versus another equally tuned comparison.
