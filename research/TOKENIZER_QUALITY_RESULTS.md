@@ -6166,3 +6166,59 @@ cache196608B/item is unchanged. All three new checkpoint files remain protected.
 No test scoring, deletion, architecture or hyperparameter changes occurred.
 Evidence: ema-horizon-preparation-001/quality001-slot01-review.json,
 slot01-inference-result.json, slot01-review-guard.json and slot01-evidence/.
+
+
+## EMA horizon comparison closed: retain H200
+
+The finite H100-versus-H200 panel completed all three fresh1200-update online
+trajectories with41snapshots per EMA. Both averages used each same online model;
+only averaging half-life differed. All raw resume/export audits, independent
+parent full-validation recomputations and fresh inference/cache/reset checks
+passed. No source, LR, schedule, seed or grid change occurred after freeze.
+
+| Fresh seed | H200 validation CE | H100 validation CE | H100 minus H200 |
+|---|---:|---:|---:|
+| 187610011 | 4.726289522 | 4.715769963 | -0.010519559 |
+| 187610012 | 4.691822251 | 4.686677891 | -0.005144360 |
+| 187610013 | 4.700717490 | 4.689580086 | -0.011137404 |
+
+Mean delta is **-0.0089337743 nat/token**. Every fresh seed improves; simultaneous
+conditional-text upper bounds are negative at2048(-0.0064582934),
+4096(-0.0058233907) and8192(-0.0049000548) tokens. The declared mean delta
+below-0.02 is not met. **Do not adopt H100; retain H200, RMSNorm and SiLU.**
+This is a consistent small validation gain below the prospective practical-effect
+threshold, not evidence that the two averages are identical. Independent
+contiguous grouping, PCG64 resampling and NumPy linear quantiles agree with
+frozen arithmetic within1e-12. The intervals condition on three trained seeds
+and reused validation text; they are not population-seed or holdout confidence.
+The experiment is consistent with a smaller averaging lag helping this400-update
+tail, but it does not isolate lag as the cause or establish a new optimal half-life.
+
+All three inference pairs passed. Median across paired medians, milliseconds
+for32-token prefill/64-token teacher-forced decode:
+
+| Batch | H200 | H100 |
+|---|---:|---:|
+| 1 | 8.212 / 280.984 | 8.839 / 276.767 |
+| 8 | 13.918 / 293.076 | 13.861 / 288.526 |
+
+Per-seed decode timing was mixed; cache196608B/item is identical. This is
+descriptive timing of two resident models, excluding loading/cache construction;
+there is no cost-only adoption route. All12 raw/H100/H200 checkpoint files
+(pilot plus three fresh triples) remain verified and protected. About10.19GB
+was free at closure, above the8GiB reserve. No deletion or test scoring occurred.
+The inherited trainer materialized test tokens; validation used only train/val.
+STOP closes tokenizer-ema-horizon-v1-001; do not rerun training, inference or
+this final review. No new control checkpoint is promoted from these results.
+
+Evidence: tokenizer-evidence/ema-horizon-preparation-001/quality001-final-review.json,
+its executable source/guard, all three slot reviews/inference reports, and
+quality001-closure.json. Final quality source inventory remains399 files,
+including395 byte-identical inherited files.
+
+Next boundary: review a distinct structural FFN question (gated versus ungated
+at a declared comparable matrix budget), residual scaling at fixed depth, and
+MoE feasibility against the recorded evidence. Do not repeat the closed gate-
+activation, block-normalization, wider-hybrid, tying or EMA campaigns. Choose
+one concrete architecture or HP hypothesis with a full retained-output capacity
+projection before implementation/training; no next grid or launch is frozen yet.
