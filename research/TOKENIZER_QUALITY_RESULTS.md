@@ -6527,3 +6527,68 @@ projection. Next is slot11 ungatedSiLU1008 at the same seed/rate; then run all
 three frozen paired inference measurements and final statistical review. Evidence:
 quality001-slot10-result.json/evidence/ and quality001-accepted-10.json in
 ffn-structure-preparation-001/.
+
+
+## FFN structure campaign closed: retain SwiGLU672
+
+Final slot11 accepted (2026-11-01T05:27:30.110749+00:00): ungatedSiLU1008 at seed187620013,
+LR0.00125, H200 CE **4.725101035355**. It completed1,200 updates/1,228,800
+targets and41H200 snapshots. Independent parent raw/optimizer/EMA/export/full-
+validation/cache checks, clean child exit and all guards passed. Training214.28s,
+worker328.03s, parent10.12s; peak worker RSS1.534GB/MPS driver2.510GB.
+
+Both arms used their independently screened LR0.00125. Complete fresh results:
+
+| Fresh seed | SwiGLU672 CE | UngatedSiLU1008 CE | Ungated minus SwiGLU |
+|---|---:|---:|---:|
+| 187620011 | 4.700707486073 | 4.714475188678 | +0.013767702605 |
+| 187620012 | 4.727638883432 | 4.722783352829 | -0.004855530602 |
+| 187620013 | 4.711847316257 | 4.725101035355 | +0.013253719098 |
+| Mean | 4.713397895254 | 4.720786525621 | **+0.007388630367** |
+
+The candidate is worse on two of three fresh seeds and on average. All three
+predeclared gates fail: mean improvement beyond0.02, improvement on every seed,
+and negative simultaneous conditional-text upper bounds. Independent arithmetic
+recomputed the paired deltas and all2,000 common PCG64 bootstrap draws using
+explicit grouping and NumPy linear quantiles, agreeing within1e-12:
+
+| Text block size | Conditional descriptive95% interval | Simultaneous gate upper |
+|---|---|---:|
+| 2048 | [0.003193095, 0.011832723] | +0.012057621 |
+| 4096 | [0.002329997, 0.012221908] | +0.012518783 |
+| 8192 | [0.000923522, 0.013122211] | +0.013122211 |
+
+Retain the adopted **SwiGLU672/SiLU/RMSNorm/H200** D256 MLA recipe; do not adopt
+ungatedSiLU1008. The fixed-high-rate ordering reversal from screening did not
+translate into an independently tuned fresh quality win. This is a joint change
+to FFN hidden width and multiplicative factorization at matched matrix budget,
+not proof about gating alone. The intervals condition on these three trained
+seeds and reused validation text; they do not provide population-seed or test
+holdout confidence. No test scoring occurred.
+
+All three frozen paired inference measurements passed full/cache/reset correctness
+at batches1/8. Both arms use196,608cache bytes per item (1,572,864 at batch8).
+Ungated median decode time was0.34-1.70% lower at batch1 across pairs; at batch8
+it ranged from2.07% lower to2.77% higher. These small local timing differences
+are descriptive: two models resident, loading/cache construction excluded,
+warmups excluded, and no cost-only adoption route. They do not rescue the failed
+quality gate. All424 frozen sources, accepted artifacts and protected pilot
+inventories were rechecked unchanged. The two additive review scripts adapt the
+already exercised block-norm review wrappers, project exact config/raw/H200
+bindings to the frozen FFN inference API, and leave frozen training code intact.
+
+The final independent review and guarded closure completed; the quality root now
+has a STOP marker. All three fresh raw/H200 pairs, both selected screen pairs and
+both resource-pilot pairs remain retained. Earlier8-file losing-screen retirement
+remains explained by its immutable receipt; no further checkpoint deletion.
+Closure observed12,062,703,616B free. Continue the broader authorized research
+loop by reviewing untested internal-normalization/position/local-mixing questions
+alongside bounded attention-score/optimizer HP questions, rejecting already closed
+comparisons and selecting one distinct justified next hypothesis. Forecast its
+complete retained-output requirement before freezing any new training panel.
+
+Evidence in ffn-structure-preparation-001/: quality001-slot11-result.json/evidence/,
+quality001-accepted-11.json, quality001-fresh-inference-plan.json and all three
+pair result/review/guard files, quality001-final-review.py/json/guard and
+quality001-closure.json/guard. The continuation prompt now follows the closed
+FFN result and next-direction review; the old research heartbeat remains paused.

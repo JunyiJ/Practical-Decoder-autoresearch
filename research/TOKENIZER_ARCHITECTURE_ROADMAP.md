@@ -303,3 +303,25 @@ Exact audited losing-screen cleanup reclaimed2.237GB and preserved selected
 pairs, pilot inventories and all non-weight evidence. The remaining finite
 projection fits current capacity. Next: three fresh pairs at frozen selected
 rates, paired inference and final review; see TOKENIZER_FFN_STRUCTURE_PREPARATION.md.
+
+
+## FFN structure completed; next distinct hypothesis review
+
+All six screens, three fresh pairs, three paired cache/inference measurements
+and independent statistical review are complete. At selected LR0.00125 for both
+arms, ungatedSiLU1008 is worse by0.007388630367nat/token on average and on two
+of three fresh seeds. All predeclared quality gates fail. Retain SwiGLU672,
+SiLU/RMSNorm/H200 and the adopted D256 MLA backbone; close this FFN comparison.
+Cache sizes match; small local decode timing differences do not establish a
+cost-only adoption case. Preserve all selected/fresh/pilot and failure evidence.
+
+Next executable work: review remaining internal-normalization/position/local-
+mixing architecture questions and bounded attention-score/optimizer HP questions
+against their original character and current-tokenizer evidence. Select one
+distinct hypothesis with an explicit rationale and finite prospective design;
+reject reopening any already closed comparison. Recompute complete retained
+output plus serialization/metadata/reserve for that design before any freeze.
+About12.06GB was free at FFN closure; this is an observation, not proof that a
+new panel fits. Small source/numerical work can proceed while eligible recovery
+is assessed. Do not revive the deferred MoE proposal without its full capacity.
+See TOKENIZER_FFN_STRUCTURE_PREPARATION.md and quality001-final-review.json.
