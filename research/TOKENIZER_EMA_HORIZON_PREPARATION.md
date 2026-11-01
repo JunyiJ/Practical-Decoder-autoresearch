@@ -96,3 +96,32 @@ ledger framework is needed. Preserve every failed attempt and original source.
 Evidence: [guarded review](tokenizer-evidence/ema-horizon-preparation-001/review.json)
 and its executable source/guard. Historical source documents are bound to their
 recorded hashes at commit c337739; no historical campaign was rerun.
+
+## Dual-EMA shadow prerequisite passed
+
+The new averaging-only contract now binds one pilot and three fresh trajectories,
+exact RMSNorm/SiLU configuration, ordered half-lives100/200, fixed LR0.00125,
+final-only outputs and distinct raw/export size limits. The old395 numerical
+source files remain byte-identical. A reserved screen seed is unused; this
+comparison has no screening trajectory. No scientific seeds are reserved yet.
+
+The guarded new prerequisite passed29 contract/recurrence checks plus1200 CPU
+online/RNG invariance checks. The full41-snapshot H100/H200 recurrence agreed
+with an independent float64 calculation within6.04463e-9; resume matched exactly.
+On the actual28,492,416-parameter model with generated tokens,20 realized
+optimizer updates showed that shadow updates preserve online parameters,
+optimizer state, gradients and CPU/MPS RNG byte-for-byte. H200 matched the
+single-average tracker at all8 snapshots; dual-state resume matched exactly.
+
+The MPS phase took5.278seconds, with observed peak RSS616,644,608B and driver
+2,319,253,504B. These are generated2x5-token prerequisites, not independent-run
+reproducibility, training-quality results or batch8/context128 capacity pilots.
+No corpus/test was read and no checkpoints were written or deleted. Original
+source snapshots, manifest, logs, both guards and results are retained in
+ema-horizon-preparation-001/shadow-prerequisite-001*.
+
+Next implement and exercise actual raw/H100/H200 export and parent acceptance,
+including oversized-raw rejection in old validators, exact new bounded loads,
+full-validation identities and cache/reset checks. Do not add generic ledger
+machinery. Only after these pass: reserve fresh seeds, freeze the pilot, obtain
+real workload/resource evidence and freeze the final three-trajectory quality plan.
