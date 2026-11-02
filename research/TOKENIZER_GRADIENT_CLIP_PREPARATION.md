@@ -221,3 +221,15 @@ all H200 originals, selected/fresh bytes and the storage004 fixture archive.
 
 See [independent review](tokenizer-evidence/gradient-clip-preparation-001/quality002-final-review.json)
 and [closure](tokenizer-evidence/gradient-clip-preparation-001/quality002-closure.json).
+
+
+Storage014 COMPLETE: six closed gradient-clip quality002 fresh RAWs losslessly
+archived,654,173,784B reclaimed,51,335 other files verified unchanged and exact
+restoration PASS. Original RAWs resolve through storage-recovery-014/raw-completed.json
+and protected research_archives/protected-raw-storage-014/*.tar.zst. This includes
+accepted imported clip slot00 in the original publication-failed quality001 root;
+it is accepted FRESH, never obsolete failed payload. No bytes retired.153 RAWs total
+remain recoverable in storage006–014; all H200 originals and current readout fresh
+endpoints stay loose/protected. Slot02 capacity shortfall was before process/request
+creation; no quality retry. Actual free11,577,294,848B exceeded remaining11,263,061,680B
+and slot02 resumed under the unchanged freeze/guards.

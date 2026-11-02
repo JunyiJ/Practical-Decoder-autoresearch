@@ -1,7 +1,7 @@
 # Tokenizer final-readout centering preparation
 
-Current status: quality001 has one independently accepted endpoint (slot00 layer);
-paired slot01 rms_bias is running.
+Current status: quality001 has two independently accepted endpoints (slots00/01);
+slot02 rms_bias, first arm of fresh pair two, is running.
 All737 active source bindings immutable,729 predecessors unchanged. The complete
 six1200-update trajectory panel fits the measured retained-output allowance with
 8GiB reserve after exact completed-pilot retirement. No scientific quality result.
@@ -248,3 +248,31 @@ Paired slot01 rms_bias launched once: parent65663/worker65675, exec32455; exact
 configuration, initial metric and worker guard verified. No paired quality conclusion.
 Current processes and accepted anchors supersede these observations; poll before
 every next dispatch. Sources, fixed order, LR and all gates remain frozen.
+
+
+## Slot02 capacity recovery and continuation
+
+Slots00/01 independently accepted1200updates/1,228,800targets,41H200snapshots,
+88EMA tensors and complete clipping histories each. Their raw/H200 pairs total
+1,118,523,728B and remain protected/loose. No campaign quality conclusion.
+Before slot02 process creation an external read-only check found free10,764,169,216B
+below remaining-panel11,263,061,680B. No quality attempt/request/STOP was created;
+the frozen runner was not invoked on that failed precheck.
+
+Storage014 resolved this through lossless archival of the six CLOSED gradient-clip
+quality002 fresh RAWs,2,671,116,894 original bytes. Copy-only probe preserved its
+original and saved109,293,046B; full exact audit then reclaimed654,173,784B and
+verified51,335 other files unchanged. Exact restoration passed. Imported clipping
+slot00 remains accepted FRESH despite its original publication-failed root; all
+six RAWs now resolve through storage-recovery-014/raw-completed.json and protected
+research_archives/protected-raw-storage-014/*.tar.zst. Bytes remain recoverable,
+NOT retired; never purge archives.153 historical RAWs are now archived. All H200
+originals, readout endpoints and source/log/config/receipts are unchanged.
+
+After recovery actual free11,577,294,848B exceeded remaining11,263,061,680B.
+All737 frozen sources verified unchanged. Slot02 then launched once under the
+same exact freeze: parent67649/worker67667, exec31339; config/initial metric/guard
+verified. Fresh199630012 now in use;013/bootstrap004 unused. Continue fixed
+slots02–05, then all three inference reviews and independent statistics. Recheck
+actual processes/anchors and remaining full-panel capacity before each dispatch;
+no retry, partial panel, LR rescue or guard relaxation.

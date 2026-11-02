@@ -8,22 +8,26 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: readout-centering quality001 is frozen; slot00 LayerNorm accepted; paired slot01
+**Latest November2: readout-centering quality001 is frozen; slots00/01 accepted; slot02
 RMS-with-bias is running. All737 source bindings immutable,729 predecessors unchanged.
 No scientific quality conclusion yet.**
 
 Exact freeze SHA`409de49f511b3d94733ff788ef0aec18a26291843b6957e0ed95e539bec9546c`.
-Initial slot01 parent65663/worker65675, exec session32455; config/initial metric/guard
+Initial slot02 parent67649/worker67667, exec session31339; config/initial metric/guard
 verified. Poll actual process/log/guard/anchors before dispatch; never duplicate.
 Complete exactly six1200-update trajectories in paired order layer/rms_bias,
 rms_bias/layer,layer/rms_bias at commonLR0.00125, zero LR-search and original strict
 gates. After all six accepted endpoints run three prepared inference pairs and
 independent final statistics with this freeze. Preserve every fresh raw/H200 pair.
-No screens/selection/rescue/retry/partial panel. Fresh199630011 now in use;012/013
-and bootstrap004 unused at launch. Exact pilot retirement reclaimed1,118,335,248B;
+No screens/selection/rescue/retry/partial panel. Fresh199630011 used;012 now in use;013
+and bootstrap004 unused. Exact pilot retirement reclaimed1,118,335,248B;
 28,586 survivors verified. Freeze free12,691,947,520B exceeded complete12,381,585,408B
 including8GiBreserve; recheck actual remaining-panel capacity each dispatch.
-147 historical RAWs remain recoverable in protected archives; H200 originals intact.
+153 historical RAWs remain recoverable in protected archives; H200 originals intact.
+Slot02 pre-dispatch capacity shortfall resolved by storage014: six closed clipping
+fresh RAWs losslessly archived,654,173,784B reclaimed,51,335 survivors unchanged
+and exact restoration passed. Actual free11,577,294,848B exceeded remaining
+11,263,061,680B before dispatch. Current readout endpoints remain loose/protected.
 Start with [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
 and the compact state index. Historical material below is superseded by this state.
 

@@ -1031,3 +1031,28 @@ Actual freeze free12,691,947,520B exceeds complete12,381,585,408B including8GiBr
 The six fresh quality trajectories are now frozen and every resulting raw/H200 pair
 is protected; no quality cleanup.147 historical lossless RAW archives are recoverable,
 NOT retired; all H200 originals and storage004 remain intact.
+
+
+Prospective storage014 lossless recovery after readout slots00/01 accepted: actual
+remaining-panel free space fell below11,263,061,680B before slot02 dispatch.
+No slot02 process/request exists. Exactly six closed gradient-clip quality002 fresh
+RAWs may be preserved in new verified lossless protected archives. Imported slot00
+in the original publication-failed quality001 root is an ACCEPTED FRESH artifact,
+resolved through its later quality002 anchor; it is never obsolete failed payload.
+No fresh bytes are retired. Exact original acceptance/terminal path/size/hash audits,
+shared lock/process checks, durable archive/removal journals, full survivor checks
+and exact restoration are required before resuming the frozen readout panel.
+All H200 originals, current readout fresh endpoints and existing archives remain
+unchanged. Archive manifests permanently resolve original paths.
+
+
+Storage014 COMPLETE: six closed gradient-clip quality002 fresh RAWs losslessly
+archived,654,173,784B reclaimed,51,335 other files verified unchanged and exact
+restoration PASS. Original RAWs resolve through storage-recovery-014/raw-completed.json
+and protected research_archives/protected-raw-storage-014/*.tar.zst. This includes
+accepted imported clip slot00 in the original publication-failed quality001 root;
+it is accepted FRESH, never obsolete failed payload. No bytes retired.153 RAWs total
+remain recoverable in storage006–014; all H200 originals and current readout fresh
+endpoints stay loose/protected. Slot02 capacity shortfall was before process/request
+creation; no quality retry. Actual free11,577,294,848B exceeded remaining11,263,061,680B
+and slot02 resumed under the unchanged freeze/guards.

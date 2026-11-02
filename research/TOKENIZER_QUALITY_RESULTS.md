@@ -7968,3 +7968,11 @@ the original strict gates. AdamW beta2 remains deferred. All fresh pairs and147
 losslessly archived RAWs stay protected. Current live state and exact next action
 are in [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
 and the resume index; current processes/anchors supersede launch snapshots.
+
+
+Readout quality001 now has two accepted endpoints and slot02 running. A pre-dispatch
+capacity shortfall was resolved with storage014: six closed clipping fresh RAWs
+preserved losslessly,654,173,784B reclaimed,51,335 survivors unchanged and exact
+restoration PASS. No scientific retry or guard change. All153 historical RAW archives,
+H200 originals and current readout pairs remain protected. Current next action and
+resolver details are in TOKENIZER_READOUT_CENTERING_PREPARATION.md and resume state.
