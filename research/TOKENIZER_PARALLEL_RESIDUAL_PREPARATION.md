@@ -122,22 +122,42 @@ resource review passed, including original guards, output bounds and conservativ
 1200-update timing projections. Pilot losses are not selection or quality evidence.
 Final review retained1,118,328,784B pilot weights and observed12,055,719,936B free;
 exact retirement after quality-source dependency closure would conditionally yield
-13,174,048,720B. Remeasure actual capacity before dispatch; current pilots stay
-retained until that new exact audit. No active worker or scientific quality result.
+13,174,048,720B. This was the pilot-closure observation. The later exact retirement and quality
+launch below supersede the then-pending audit; no pilot-loss quality claim exists.
 
-Next minimal additive finite1200-update quality orchestration in NEW
-research/parallel_residual_quality_v1 outside all591 frozen campaign sources.
-Reuse tested fixed-LR three-pair serial/acceptance/inference/retention primitives;
-adapt serial/parallel_separate_norms,88EMA and196,608B cache identities. Verify
-actual retained pilot payload/cache and exactly six fresh-trajectory contracts.
-Close dependencies, independently audit exact successful-pilot retirement,
-recheck full capacity and unused fresh/bootstrap seeds, then final quality freeze,
-six fresh trajectories, three paired inference reviews and independent statistics.
-Common LR0.00125, equal zero search budgets, no screens/rescue/retry or pilot-loss
-selection; original strict gates and standard-recipe scope. All earlier campaigns
-and failed fixtures remain closed. Architecture/HP direction remains parallel
-residual topology with cooldown600-versus800 deferred; no boundary-quality result
-has appeared to revise that decision.
+Quality001 is now FROZEN in additive research/parallel_residual_quality_v1.
+All21 finite-contract tests and real pilot raw/H200/optimizer/EMA/RNG/full-validation/
+cache re-audits passed; pilot-to-quality forgery and changed-source requests were
+rejected. The600 bound sources include591 unchanged campaign predecessors and
+the exact accepted pilot002 entry. Read-only fresh-inference001/final-review001
+runners are separately bound and require the exact freeze and all six endpoints.
+
+Exact quality001-pilot-retirement retired1,118,328,784B in four successful pilot
+payloads after dependency closure and verified27,843 other research-run/archive
+files unchanged. Original pilot receipts are immutable; absent weights resolve
+through that later manifest. All selected/fresh models, including protected
+storage-recovery-006 RAW archives and original H200 files, remain preserved.
+Freeze capacity was13,182,410,752B versus complete12,381,585,408B including8GiB
+reserve. Each dispatch must charge existing outputs and recheck remaining full
+panel capacity. No partial panel or relaxed guards.
+
+Exactly six fresh1200-update trajectories use common LR0.00125 and paired order
+serial/parallel, parallel/serial, serial/parallel. No screens, selection, rescue,
+retry or interim stopping. Original strict gates and standard-recipe scope remain.
+Freeze SHA750d78fdbf1f32470048e461db93275f638b6baddbb8119b197b305e1ac9c9c8.
+Slot00 was dispatched and its actual worker/guard/config/initial metric verified.
+Seed199190011 is now in use;199190012/013 and bootstrap199190004 remain unused
+at first launch. Pilot199190001 and evaluation199190003 were used as planned.
+
+Next poll actual processes/logs/guards/anchors before any dispatch; never duplicate
+a live worker. Continue slots00–05 in frozen order, retain every fresh raw/H200
+pair, then all three paired inference reviews and independent final statistics.
+The read-only commands are quality001-fresh-inference001.py and
+quality001-final-review001.py with the exact freeze, after all six accepted
+endpoints. No new scientific quality result or recipe change yet. Earlier campaigns
+and fixtures stay closed; retain serial residual composition pending final gates.
+At the eventual campaign boundary review both architecture and bounded HP;
+cooldown600-versus800 remains deferred.
 
 Closure free space is only an observation; source and small numerical work can
 proceed. Recheck actual full retained-output high-water with8GiB reserve before

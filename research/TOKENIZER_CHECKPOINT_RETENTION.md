@@ -600,3 +600,15 @@ verification, fsync before removing duplicate loose copies, and survivor checks.
 A copy-only probe verified exact recovery and measured actual savings. No
 quantization, tensor rewriting, scientific rerun, or loss of selected/fresh bytes
 is permitted. Unrelated maintenance and all existing archives remain untouched.
+
+Parallel-residual quality001 may retire exactly its four completed successful
+resource-pilot raw/H200 payloads (1,118,328,784B) only after additive
+parallel_residual_quality_v1 integration001 passes actual payload/optimizer/EMA/
+RNG/full-validation/cache checks and the complete fixed-LR six-trajectory tests.
+Use the tested pilot-only manifest, shared locks/process checks, durable deletion
+journal and complete research-run/archive survivor verification. Preserve all
+pilot source/config/log/acceptance/resource-review evidence. Original pilot paths
+resolve through quality001-pilot-retirement; no restoration or pilot rerun.
+Every fresh quality pair remains protected. The storage-recovery-006 protected
+RAW archives are selected/fresh models, NOT retirement candidates; all those
+archives and every original H200 inference model remain preserved.
