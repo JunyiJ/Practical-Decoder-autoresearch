@@ -550,3 +550,39 @@ prerequisites only; the negative character-MHA prior remains explicit. Defer
 cooldown start600-versus800 as a separate schedule question. Continue prospective
 fixed-common-LR comparisons with equal zero search budgets. Read
 TOKENIZER_PARALLEL_RESIDUAL_PREPARATION.md; no new seed/training plan is reserved.
+
+## Parallel residual comparison closed without adoption
+
+All six fresh 1,200-update endpoints were independently accepted at common
+LR 0.00125 with zero LR-search budgets. Three paired full/cache/reset inference
+reviews passed at batches 1/8; both arms use 196,608 bytes of cache per item.
+Independent final statistics passed provenance and arithmetic checks.
+
+| Seed | Serial H200 CE | Parallel H200 CE | Parallel minus serial |
+|---|---:|---:|---:|
+|199190011|4.7176393932|4.7296534829|+0.0120140896|
+|199190012|4.7007159542|4.7068419199|+0.0061259657|
+|199190013|4.7184464682|4.7267622133|+0.0083157451|
+
+Parallel composition worsened all three seeds. Mean delta is
++0.008818600140528715 nats/token; all three frozen quality gates failed.
+Conditional text-bootstrap simultaneous upper bounds at block sizes
+2048/4096/8192 are +0.0112559128/+0.0115174044/+0.0117277727. These reused-text
+intervals are conditional on the three trained seeds, not population-seed or
+holdout confidence. This is a fixed standard-recipe result, not a comparison of
+separately optimized optima or a general rejection of parallel architectures.
+
+Retain serial residual composition with D256 MLA score0.5/SwiGLU672/SiLU/blockRMS,
+no product norm, no local mixing, no warmup, independent decay0.00006 and H200.
+Terminal STOP closes every parallel-residual quality training/boundary/inference/
+final command. All six fresh raw/H200 pairs (3,354,992,304 bytes) remain protected,
+as do historical selected/fresh models and their lossless RAW archives. All600
+frozen sources remain unchanged. No holdout was scored. Closure free space
+10,045,964,288 bytes is an observation, not next-panel readiness.
+
+Both architecture and bounded HP were reviewed at the boundary. Select cooldown
+start600 versus800 for prerequisites; defer fixed serial residual branch scaling.
+The prospective comparison retains common LR0.00125, three fresh pairs, equal
+zero LR-search budgets and original strict gates. No new scientific seeds or
+pilot/quality plan are reserved. See TOKENIZER_COOLDOWN_PREPARATION.md and
+[tokenizer evidence](tokenizer-evidence/parallel-residual-preparation-001/quality001-closure.json).

@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "arm": "cooldown800",
+      "updates": 1200,
+      "start_step": 800,
+      "integral": 1020.0,
+      "base_lr_sum": 1.2750000000000001,
+      "resumed_after_steps": [
+        0,
+        598,
+        599,
+        600,
+        799,
+        800,
+        1198
+      ],
+      "exact_parameter_and_momentum_resume": true,
+      "group_rates_match": true
+    },
+    {
+      "arm": "cooldown600",
+      "updates": 1200,
+      "start_step": 600,
+      "integral": 930.0,
+      "base_lr_sum": 1.1625,
+      "resumed_after_steps": [
+        0,
+        598,
+        599,
+        600,
+        799,
+        800,
+        1198
+      ],
+      "exact_parameter_and_momentum_resume": true,
+      "group_rates_match": true
+    }
+  ],
+  "plan_sha256": "043e82953a752a19f30613bace4b0fa7baefe4661966ee3179bcaf36f6ca5de0",
+  "guard_sha256": "f1694398bbac9a74c16e6916be351ca4ed39b41d445649ded00ecd60854927d7",
+  "scope": "Generated CPU float64 toy SGD only; actual model/Muon/AdamW/EMA/raw-checkpoint contracts still required.",
+  "research_corpus_read": false,
+  "scientific_seed_consumed": false,
+  "training_panel_launched": false
+}

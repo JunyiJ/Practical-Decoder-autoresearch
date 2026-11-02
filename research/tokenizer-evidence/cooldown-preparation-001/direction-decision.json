@@ -1,0 +1,58 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T04:44:06.653085+00:00",
+  "question": "Does starting linear cooldown at update600 instead of800 improve the retained1200-update serial MLA recipe at fixed peak LR0.00125?",
+  "architecture_review": {
+    "candidate": "Fixed residual branch scaling at unchanged depth",
+    "decision": "Deferred distinct architecture question",
+    "rationale": "Parallel composition is now fully closed and worsened every fresh seed. Scaling serial branches changes residual magnitude rather than topology; it would need explicit gains, shared initialization and checkpoint/cache contracts. No improvement is assumed. Complete the previously queued schedule question after this architecture round before another residual variant."
+  },
+  "hp_review": {
+    "selected": "Linear cooldown start600 versus800",
+    "rationale": "Directly test the previously deferred plateau/cooldown allocation. No-warmup and nonzero independent decay remain adopted; neither closed result answers cooldown onset. Same1200updates, peak LR0.00125 and floor0.1; changing onset also changes LR exposure, so this is not equal-integral schedule shape isolation."
+  },
+  "proposal": {
+    "arms": [
+      "cooldown800",
+      "cooldown600"
+    ],
+    "schedule_kind": "linear_cooldown",
+    "total_updates": 1200,
+    "start_steps": [
+      800,
+      600
+    ],
+    "min_ratio": 0.1,
+    "warmup": false,
+    "peak_learning_rate": 0.00125,
+    "independent_decay": 6e-05,
+    "h200": {
+      "start_step": 800,
+      "interval": 10,
+      "half_life": 200,
+      "snapshots": 41
+    },
+    "backbone": "D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial residual/no product norm/no local mix/no warmup/independent decay0.00006/H200",
+    "quality_design": "Prospective exactly three fresh pairs, common LR0.00125, equal zero LR-search budgets, no screens/rescue, original strict gates; standard-recipe claim only. Fresh census, full-model/worker/inference checks, complete retained-output high-water including8GiB reserve and finite resource pilots precede any quality freeze.",
+    "prior": "Historical character schedule quality favored a tuned cooldown over constant/cosine at3000updates; it does not compare600 versus800 on this subword1200-update recipe. No historical score/seed pooling.",
+    "training_allowed": false,
+    "seeds_reserved": false,
+    "pilot_or_quality_frozen": false
+  },
+  "references": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/parallel-residual-preparation-001/quality001-closure.json",
+      "sha256": "65cbdc08acddecb442bc71af8f5577f1d22bf852c8bd816e349e4512bad4895b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/SCHEDULE_QUALITY_RESULTS.md",
+      "sha256": "09cab454d032bf600948056c0a3f3811b6f1aeafc15c7294e674a48022465404"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/lr_schedule.py",
+      "sha256": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6"
+    }
+  ],
+  "next_action": "Freeze and run one narrow generated schedule-component check of all1200 rates, width-scaled groups and serialized toy-SGD resume around both onset boundaries. Then explicit full-model Muon/AdamW schedule/resume/EMA/H200/cache integration outside600 frozen sources; no scientific seeds or training panel yet.",
+  "closed_campaign_reopened": false
+}
