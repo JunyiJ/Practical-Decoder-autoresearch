@@ -8,29 +8,31 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**AdamW epsilon trainer-worker001 and trained-inference001 completed.**
+**AdamW epsilon pilot integration passed; scientific dispatch waits for capacity.**
 
-Both generated four-update arms passed independent full validation and complete
-optimizer/EMA/RNG/clipping-history acceptance:4,096 targets,3 H200 snapshots,
-88EMA tensors,44AdamW/44Muon groups. CPU/MPS CE agreement below2.9e-7;
-full/cache/reset inference passes batches1/8 with196,608B cache/item. All846
-source bindings unchanged. No scientific quality claim,new seeds or active worker.
+Both actual generated worker endpoints passed the new parent payload/full-validation/
+cache audits. Finite20-update pilot configuration,complete three-fresh-pair design
+and pilot-only retention tests passed; all852 bindings unchanged. No scientific
+seeds,pilot/quality freeze,result or active worker. Prepared census and independent
+resource-review entrypoints remain unexecuted.
 
-Next additive finite20-update resource-pilot orchestration and complete three-
-fresh-pair fixed-LR design outside frozen sources. Re-audit actual accepted worker
-payloads/cache and close dependencies before NEW exact retirement; then live full
-capacity/census and pilots. Source work proceeds; current free is not panel readiness.
-Read [epsilon preparation](TOKENIZER_ADAMW_EPSILON_PREPARATION.md).
+Exact obsolete worker retirement reclaimed1,118,324,948B;44,725 survivors unchanged.
+Storage021 losslessly archived six closed final-bias fresh RAWs,reclaimed653,245,163B,
+verified54,107 survivors and exact restoration. All197 historical RAWs remain
+protected/recoverable,NOT retired; all H100/H200 originals intact. Never restore
+permanently retired generated weights or rerun closed fixtures.
 
-Exact resume retirement reclaimed1,118,319,316B with44,529 survivors unchanged;
-original evidence retained,never restore/rerun. New successful worker weights
-1,118,324,948B remain retained pending pilot dependencies and a NEW audit.
-All191 historical RAW archives and H100/H200 originals remain protected.
+Capacity001 measured10,678,415,360B free versus12,381,585,408B required including
+8GiB reserve:1,703,170,048B remains. Only Macintosh HD is mounted. Check free space
+hourly; unchanged checks stay silent and create no records or commits. Wake when
+actual free>=12,381,585,408B or a human supplies an external volume for verified
+protected-archive relocation. Do not repeat completed cleanup or launch partial
+panels. On relevant change remeasure capacity,run fresh census,freeze/run two
+finite20-update pilots serially,paired inference and independent resource review.
+New independent human work need not wait.
 
-Retain epsilon1e-8 and learned final bias. The completed final-bias quality study
-improved all seeds but missed the original0.02 mean gate; all six fresh pairs
-remain protected. Original epsilon model001 failed construction and stays closed;
-v2/model002/resume002 passed without relaxed guards. Final LayerNorm scale deferred.
+Retain epsilon1e-8 and adopted recipe; final LayerNorm scale ablation deferred.
+See [epsilon preparation](TOKENIZER_ADAMW_EPSILON_PREPARATION.md) and the state index.
 
 ## Findings to retain
 

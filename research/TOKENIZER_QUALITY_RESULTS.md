@@ -8610,3 +8610,37 @@ passed without weakening class or numerical guards. Final LayerNorm scale
 ablation remains deferred. Evidence: adamw-epsilon-preparation-001/
 worker-integration001.json,resume-dependencies-closed001.json,resume-retirement001/,
 capacity003.json,trainer-worker001.json,trainer-worker001-evidence/,trained-inference001.json.
+
+## November 2 — AdamW epsilon finite pilot integration passed; capacity wait
+
+Six additive campaign modules preserve all846 accepted runtime predecessors; all852
+bindings unchanged. Both real generated worker endpoints passed new independent
+optimizer/EMA/RNG/clipping-history/full-validation/cache acceptance. Finite20-update
+pilot configs,complete three-fresh-pair fixed-LR design and pilot-only retention
+boundary passed. CommonLR.00125,equal zero LR-search,original strict gates; no
+rescue,selection or partial panel. Independent resource reviewer and guarded seed
+census entrypoint are prepared but unexecuted. No scientific seeds,pilot/quality
+freeze,quality result or active worker. Retain epsilon1e-8 and adopted recipe;
+final LayerNorm scale ablation stays deferred.
+
+New exact worker-retirement001 removed only four obsolete successful generated
+weights1,118,324,948B after dependencies closed;44,725 survivors verified unchanged.
+Original evidence immutable; absent tensors resolve the later manifest,never restore
+or rerun. Storage021 losslessly archived all six closed final-bias fresh RAWs,
+recovering653,245,163B with54,107 survivors unchanged and exact restoration PASS.
+All197 historical RAWs are recoverable/protected,NOT retired; all H100/H200 original
+paths and storage004 intact. Resolve the six former RAW paths through
+storage-recovery-021/raw-completed.json and protected-raw-storage-021 archives.
+
+Measured complete high-water remains12,381,585,408B,including serialization/metadata
+and8GiB reserve. Capacity001 observed10,678,415,360B free:1,703,170,048B short.
+Recovery has been executed; only Macintosh HD is mounted. Wake when actual free
+is at least12,381,585,408B or human supplies an external volume for verified
+protected-archive relocation. Check hourly; unchanged checks stay silent and create
+no records/commits. Do not repeat closed cleanup/probes or manufacture progress.
+On relevant state change,remeasure capacity,run fresh census,freeze two finite
+20-update pilots,run serially,paired inference and independent resource review.
+Quality source/freeze remains later. New concrete independent human work is allowed.
+Evidence: adamw-epsilon-preparation-001/pilot-integration001.json,
+retention-boundary001.json,worker-dependencies-closed001.json,worker-retirement001/,
+campaign-capacity001.json;storage-recovery-021/raw-completed.json,restoration-check.json.

@@ -1021,3 +1021,13 @@ bindings unchanged. No scientific quality claim,new seeds or active worker.
 Next finite resource-pilot integration and complete three-fresh-pair fixed-LR
 capacity/design; retain epsilon1e-8 and defer final LayerNorm scale ablation.
 See TOKENIZER_ADAMW_EPSILON_PREPARATION.md for exact retirement and next action.
+
+## November 2 — AdamW epsilon finite pilot integration completed
+
+Pilot integration/retention boundary PASS;852 bindings unchanged. Both real
+generated endpoints were re-audited; exact obsolete worker retirement and lossless
+final-bias RAW archival completed. No scientific seeds,freeze,result or active
+worker. Remaining full-panel gap1,703,170,048B at capacity001; hourly quiet wake
+check for free>=12,381,585,408B or supplied external volume. Next census/two resource
+pilots after capacity,not a partial panel. Retain epsilon1e-8; LayerNorm scale
+remains deferred. Details: TOKENIZER_ADAMW_EPSILON_PREPARATION.md.

@@ -1370,3 +1370,19 @@ adamw-epsilon-preparation-001/resume-retirement001/completed.json,never restore.
 The new accepted generated worker raw/H200 files1,118,324,948B remain retained
 pending pilot integration and a NEW exact audit. No selected/fresh bytes or
 protected archives were removed; closed final-bias fresh RAWs remain protected.
+
+## Epsilon worker retirement and storage021 completed
+
+Pilot integration independently re-audited actual generated worker raw/H200,
+optimizer/EMA/RNG/history/full-validation/cache and closed tensor dependencies.
+worker-retirement001 permanently retired exactly four obsolete generated weights
+1,118,324,948B with44,725 survivors unchanged. Original evidence remains immutable;
+absent payloads resolve the exact manifest,never restore/rerun.
+
+Storage021 preserved all six closed final-bias fresh RAWs losslessly in protected
+archives before removing duplicate loose copies;653,245,163B reclaimed,54,107
+survivors unchanged,exact temporary restoration PASS. Resolve original paths via
+storage-recovery-021/raw-completed.json and protected-raw-storage-021/*.tar.zst.
+These are FRESH models,NOT retired,never purge. All197 historical RAWs and H100/H200
+originals/storage004 remain protected. Current capacity wait authorizes no partial
+panel or additional deletion; do not repeat closed cleanup/probes.

@@ -47,7 +47,7 @@
   "active_run": null,
   "active_session": null,
   "active_worker": null,
-  "actual_free_bytes": 8716853248,
+  "actual_free_bytes": 10678415360,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
   "adamw_beta2_direction": "research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
@@ -117,9 +117,10 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/worker-retirement001/completed.json",
     "sha256": "6acc61999c26415d8a46dc5b4ad56da45e49b57c02c4e516089ba89e53f298ef"
   },
+  "adamw_epsilon_campaign_source_count": 852,
   "adamw_epsilon_capacity": {
-    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/capacity003.json",
-    "sha256": "48f4cbc6e7b0d905f0378cafc2c94a6f8161e446d0ef3db320ce71d8c1e521ea"
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/campaign-capacity001.json",
+    "sha256": "aa95747f447907964eccb36eb3770c3909e1acf93c3073acb66491f5c07d4960"
   },
   "adamw_epsilon_component": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/optimizer-component001-result.json",
@@ -137,7 +138,13 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/model001-failure.json",
     "sha256": "6110b28f444176dfa0d7a0a08d2ce88cff8d57c520f94a7d22993a9fa508e38a"
   },
-  "adamw_epsilon_preparation": "worker001_complete_pilot_integration_next",
+  "adamw_epsilon_pilot_frozen": false,
+  "adamw_epsilon_pilot_integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/pilot-integration001.json",
+    "sha256": "917a005dfb5d3ffb806fe221fbe3aae18e3227cdb37002b0ce0ef5d5a9d614f4"
+  },
+  "adamw_epsilon_preparation": "pilot_integration_complete_capacity_wait",
+  "adamw_epsilon_quality_frozen": false,
   "adamw_epsilon_resume": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/model-resume002.json",
     "sha256": "e417023938655e24fe66494d39c60624f8ca3c84c766ab3a6ee052e12d343e68"
@@ -147,7 +154,12 @@
     "sha256": "ce0267311ae647839974364b262bc045bff008d90bb552c8944e946de73f93cb"
   },
   "adamw_epsilon_retained_generated_resume_bytes": 0,
-  "adamw_epsilon_retained_generated_worker_bytes": 1118324948,
+  "adamw_epsilon_retained_generated_worker_bytes": 0,
+  "adamw_epsilon_retention_boundary": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/retention-boundary001.json",
+    "sha256": "93f31964e8c3f3f8767ba69a99f2b361e77cb9e63d595fdb0620d2dcd1af997f"
+  },
+  "adamw_epsilon_scientific_seeds_reserved": false,
   "adamw_epsilon_trained_inference": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/trained-inference001.json",
     "sha256": "efced4ba5581ede8c49d681c2647c55340f6653a7453d64a655678cc7f9001bc"
@@ -159,6 +171,10 @@
   "adamw_epsilon_worker_integration": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/worker-integration001.json",
     "sha256": "11d29b4bf0fa996f5cfaecb5b88f85d62a6844e8487c04941521dcdc91c2690f"
+  },
+  "adamw_epsilon_worker_retirement": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/worker-retirement001/completed.json",
+    "sha256": "f1a30a8215cd819ae60ac54bcd88a8bb8f5f7a1e5e528f55768e16d375006f7c"
   },
   "block_norm_artifact_acceptance": "research/tokenizer-evidence/block-norm-preparation-001/artifact-acceptance-decision.json",
   "block_norm_cache_numerical_review": "research/tokenizer-evidence/block-norm-preparation-001/cache-numerical-prerequisite-001-review.json",
@@ -214,7 +230,13 @@
   "branch": "codex/tokenizer-quality",
   "campaign_root": "research_runs/tokenizer-decay-quality-v2-001",
   "capacity_blocker_resolved": true,
+  "capacity_deficit_bytes": 1703170048,
   "capacity_poll_interval_seconds": null,
+  "capacity_wake_condition": {
+    "alternative": "Human supplies external volume for verified protected-archive relocation",
+    "check_interval_seconds": 3600,
+    "minimum_free_bytes": 12381585408
+  },
   "capacity_wake_free_bytes": null,
   "closed_campaigns": [
     "tokenizer-wide-hybrid-001",
@@ -8718,7 +8740,7 @@
   "mla_score_worker": "research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
   "mla_score_worker_archive": "research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
   "mla_score_worker_review": "research/tokenizer-evidence/mla-score-preparation-001/worker003-review.json",
-  "next_action": "AdamW epsilon trainer-worker001 COMPLETE: both generated four-update eps8/eps6 arms independently accepted(4096targets,3H200snapshots,88EMA tensors,44AdamW/44Muon groups). Parent full-validation exact and CPU/MPS CE agreement below2.9e-7;actual betas(.9,.999),epsilon1e-8/1e-6 and zero child decay checked. Complete clipping histories agree across raw/summary/metrics; independent history,foreign-epsilon/group and coverage forgeries rejected. Trained-inference001 full/cache/reset PASS batches1/8,196608B cache/item. All846 runtime/acceptance bindings unchanged,839 predecessors preserved. No scientific quality result/new scientific seeds,pilot/quality freeze or active worker. Next minimal additive finite20-update resource-pilot orchestration and complete THREE-fresh-pair fixed-LR design outside846 frozen sources using tested serial/acceptance/inference/retention primitives. Re-audit actual accepted worker raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache and finite contracts,close dependencies,fresh scientific census,complete measured retained-output high-water including serialization/metadata/8GiBreserve,exact authorized recovery if needed,then finite pilots/final quality freeze. AdamW epsilon1e-6 versus1e-8 at commonLR.00125/equal zeroLRsearch/original strict gates/no rescue/selection/partial panel;betas(.9,.999),Muon,model/schedule/H200 fixed. Resume-retirement001 reclaimed1118319316B from exactly four obsolete successful generated weights after dependency closure,44529survivors unchanged. Original receipts immutable;absent tensors resolve later manifest,never restore/rerun. Actual post-retirementfree10024738816B exceeded complete9814671360B worker-pair requirement. New successful worker weights1118324948B retained until pilot integration closes dependencies and a NEW exact audit. Currentfree is not scientific-panel readiness;source work proceeds,no stale wait. Large-file inventory included incomplete suffixes: only active worker temporary existed and disappeared at successful completion;no old large incomplete writes or additional large nonprotected archives found. Proactively inventory authorized lossless recovery for the full-panel forecast;closed final-bias fresh RAWs are still loose and protected,lossless archival only,not retirement. Preserve191 historical protected RAW archives and all H100/H200 originals/storage004. Original model001 namespace construction failure remains closed;v2 exact local grouping/model002/resume002 passed without relaxed guards. Absolute CPU/MPS post-update equality is not claimed. Final-bias quality001 CLOSED_NOT_ADOPTED mean-0.009304557298255875;all seeds/text bounds improve but0.02 mean gate fails;all6fresh pairs3355558167B protected. Final LayerNorm learned-scale-versus-fixed-unit deferred.",
+  "next_action": "AdamW epsilon pilot-integration001 and pilot-only retention-boundary001 PASS. Six additive research.adamw_epsilon_campaign_v1 modules; all852 bindings unchanged,846 accepted runtime predecessors preserved. Both real generated worker endpoints re-audited through new parent optimizer/EMA/RNG/clipping/full-validation/cache acceptance. Finite20-update pilot configs and complete THREE-fresh-pair design at commonLR.00125/equal zeroLRsearch/original strict gates tested. Independent pilot001-final001-review.py and guarded scientific-seed-census-001/census.py prepared,not executed. No active worker,scientific seed reservation,pilot/quality freeze or quality result. Worker-retirement001 reclaimed1118324948B from exactly four obsolete successful generated weights after dependency closure,44725survivors unchanged;original evidence immutable,absent tensors resolve exact manifest,never restore/rerun. Storage021 losslessly archived all6 closed final-bias fresh RAWs,reclaimed653245163B,54107survivors unchanged,exact restoration PASS. Resolve original RAW paths through storage-recovery-021/raw-completed.json and protected-raw-storage-021 archives;recoverable,NOT retired,never purge. All197 historical RAWs through006\u2013017/019/021 remain protected;all H100/H200 originals/storage004 intact. Campaign-capacity001 measured10678415360B free versus complete12381585408B including8GiBreserve,remaining deficit1703170048B. Recovery completed;do not repeat audits/probes/cleanup or freeze partial panel. Large-file census finds no other loose RAWs/incomplete writes for retirement;remaining historical archives/H200s protected. Only Macintosh HD mounted. Wake when actualfree>=12381585408B or human supplies external volume for verified protected-archive relocation. Check free space once per hour;unchanged checks stay silent,create no records/commits. On relevant change remeasure complete capacity,execute fresh scientific seed census with unused prefix,freeze two finite20-update pilots,run serially,paired inference and independent final resource review with strict environment/bound plan. Final quality source/freeze remains later. No stale capacity ban on concrete independent work from new human steering. Retain epsilon1e-8/adopted recipe;final LayerNorm learned-scale-versus-fixed-unit deferred. Original epsilon model001 construction failure remains closed;v2 passed strict class/numerical guards. No assumed benefit or old score/seed pooling.",
   "next_after_starter": "Readout-centering pilot001 COMPLETE via research.readout_centering_campaign_v2: both20-update layer/rms_bias arms independently accepted(20480targets,8H200snapshots,88EMA tensors),complete clipping histories; paired full/cache/reset inference batches1/8 and independent final003 resource review PASS,196608B cache/item. All729 campaign sources unchanged,717 runtime predecessors preserved. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/readout_centering_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118335248B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199630 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Final LayerNorm versus affine RMS WITH bias,epsilon1e-5/512parameters both,eight pre-branch RMSNorms fixed. Original final002 reviewer launch environment failure before audit stays closed; separate final003 uses the required strict environment without repeating training/inference. Original pilot integration001 import failure before numerical work/deletion stays closed; additive v2 explicit worker validation routing and separate integration002 passed without changing723 original bindings. Worker-retirement001 reclaimed1118323284B with41696survivors unchanged,original evidence immutable. Storage013 losslessly archived27 closed table/MLA/horizon selected/fresh RAWs,reclaimed2574573563B,50958other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-013/raw-completed.json and protected research_archives/protected-raw-storage-013/*.tar.zst;recoverable,NOT retired,never purge. Together006-013 preserve147 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11575418880B plus retainedpilots1118335248B conditionally yields12693754128B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW beta2 .95-versus-.999 deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Pilot observations are resource evidence,not scientific quality selection.",
   "no_paid_compute": true,
   "no_subagents": true,
@@ -8761,6 +8783,7 @@
   "pending_commit": false,
   "pending_push": false,
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
+  "protected_lossless_raw_count": 197,
   "protected_raw_restoration": "research/tokenizer-evidence/storage-recovery-014/restoration-check.json",
   "protected_raw_storage_manifest": "research/tokenizer-evidence/storage-recovery-014/raw-completed.json",
   "push_pending": true,
@@ -8828,7 +8851,7 @@
   "session_hint": null,
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "status": "adamw_epsilon_worker001_complete",
+  "status": "adamw_epsilon_pilot_integration_complete_capacity_wait",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -8865,12 +8888,20 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-019/restoration-check.json",
     "sha256": "5d327c7f14c598002d984bbdee8a65d86948944b51204433636064671360c72e"
   },
+  "storage_recovery_021": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-021/raw-completed.json",
+    "sha256": "b2c2a51d45e386bbcc704328e600a3226c5f23efed556ec80ac455e60d63ae78"
+  },
+  "storage_recovery_021_restoration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-021/restoration-check.json",
+    "sha256": "ad92a557023779f024b79b5ad2e240c407c2be4f76ca0e390dd334834eb31152"
+  },
   "storage_recovery_latest": {
-    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-completed.json",
-    "sha256": "5d9f374ecb7e5b252a31c8d3afc1716b23c18a161b2d3b35f0d7f59ddaa704a5"
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-021/raw-completed.json",
+    "sha256": "b2c2a51d45e386bbcc704328e600a3226c5f23efed556ec80ac455e60d63ae78"
   },
   "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-terminal.json",
-  "updated_at": "2026-11-02T19:25:41.505495+00:00",
+  "updated_at": "2026-11-02T19:40:25.252894+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
