@@ -8,15 +8,19 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: readout-centering full-model and serialized resume checks passed
-both arms. All710 source/config bindings unchanged; no active worker or scientific
-quality result. Clipping quality002 remains closed without adoption.**
+**Latest November2: readout-centering real generated worker pair and paired inference
+passed. All717 runtime/acceptance bindings unchanged; no active worker or scientific
+quality result. Both arms have complete clipping histories and independent parent
+validation; CPU/MPS CE difference<2.8e-7, cache196608B per item.**
 
-Next: additive actual worker/output/independent full-validation and inference,
-including explicit readout-policy data routing. Re-audit retained generated resume
-payloads, close dependencies, then exact retirement/capacity recheck before the
-complete worker pair. Storage012 lossless archival already enabled the resume tests;
-selected/fresh bytes remain protected. Start with
+Next: additive finite20-update resource-pilot orchestration and complete THREE-fresh-
+pair fixed-LR design outside frozen sources. Verify actual worker payload/cache,
+close dependencies, fresh seed census, measured complete retained-output high-water
+including serialization overlap/metadata/8GiBreserve and exact authorized recovery
+before finite pilots/final quality freeze. Resume-retirement001 completed exactly
+1118317844B with41499 survivors unchanged and enabled both workers. Their new
+1118323284B weights remain retained until dependencies close and a new exact audit.
+Selected/fresh bytes and120 losslessly archived RAWs remain protected. Start with
 [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
 and the compact state index. Historical material below is superseded by this state.
 

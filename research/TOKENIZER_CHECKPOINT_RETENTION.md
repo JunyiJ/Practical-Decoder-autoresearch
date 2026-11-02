@@ -958,3 +958,26 @@ generated resume pair. New four successful readout resume weights1,118,317,844B
 remain retained until actual worker integration closes dependencies and an exact
 independent retirement audit passes. Current capacity001 is not scientific-panel
 readiness; source work proceeds and the full worker pair is capacity-gated.
+
+
+Readout worker-integration001 independently re-audited both actual generated
+resume raw/H200 payloads, optimizer/EMA/RNG/clipping histories, full validation
+and paired cache inference. Tensor dependencies are now closed. Prospective
+resume-retirement001 is limited to the four generated final.pt/h200.pt files in
+tokenizer-readout-centering-resume-001/layer and rms_bias, exactly1,118,317,844B.
+The prepared fresh worker reads retained success/config metadata and creates
+new input/initialization; it never needs these old tensors. Independent exact
+path/size/hash audit, shared locks/process checks, durable deletion journals and
+full survivor verification precede permanent retirement. Selected/fresh weights,
+protected archives and original source/config/log/receipts remain unchanged.
+Actual free space must exceed the complete9,814,671,360B worker-pair requirement
+after cleanup; this is not new scientific-panel readiness.
+
+
+Readout-centering resume-retirement001 is COMPLETE: exactly four obsolete generated
+resume weights1,118,317,844B retired after worker integration001 dependency closure;
+41,499 retained files unchanged. Original evidence stays immutable and absent paths
+resolve through tokenizer-evidence/readout-centering-preparation-001/resume-retirement001/manifest.json
+and completed.json. The separately trained worker001 weights1,118,323,284B remain
+retained pending pilot integration and a NEW exact audit. Selected/fresh bytes and
+120 losslessly archived historical RAWs remain protected, not retired.

@@ -699,3 +699,45 @@ verified and exact restoration PASS;120 historical RAWs now remain recoverable
 in protected archives, NOT retired. All H200 originals intact. Full scientific
 panel capacity and census remain separate. Retain LayerNorm/clip1.0 and adopted
 recipe; AdamW beta2 .95-versus-.999 deferred. See TOKENIZER_READOUT_CENTERING_PREPARATION.md.
+
+
+## Readout-centering real worker and paired inference complete
+
+Additive research/readout_centering_worker_v1 explicitly routes the readout policy
+through actual run_training, data loading, bounded raw/H200 output and independent
+parent full validation. Both generated four-update layer/rms_bias arms passed:
+4,096 training targets,3 H200 snapshots and88 EMA tensors each. Parent validation
+was exact; CPU/MPS CE differences were2.733889967743153e-7 and2.62410942752922e-7.
+Complete clipping histories agree across raw/summary/metrics. Integration001 also
+rejected missing/sequence/threshold/coefficient/nonfinite history forgeries and
+foreign-readout checkpoints. Paired full/cache/reset inference passed batches1/8;
+cache remains196,608B per item in both arms. All717 runtime/acceptance bindings
+unchanged,710 predecessors preserved. This is generated-fixture engineering
+evidence, not a scientific quality result or seed/pilot/quality reservation.
+The prerequisite plan's inherited kind string says generated_gradient_clip_worker_parent_prerequisite;
+its explicit readout configs, source hashes, requests and accepted artifacts bind
+the actual readout comparison. This descriptive label does not change execution.
+
+Resume-retirement001 independently audited and retired exactly four obsolete
+generated resume weights,1,118,317,844B, after real payload/cache integration closed
+their dependencies.41,499 retained files verified unchanged; original sources,
+configs, logs and receipts remain immutable. Absent weights resolve through the
+later retirement manifest; never restore or rerun them. Actual post-recovery
+free10,253,819,904B exceeded complete worker-pair9,814,671,360B including8GiBreserve.
+Both fresh generated workers then completed. Their new raw/H200 weights total
+1,118,323,284B and remain retained until pilot integration closes dependencies
+and a new exact audit. Current free space is not scientific-panel readiness.
+
+Next: minimal additive finite20-update resource-pilot orchestration and complete
+THREE-fresh-pair fixed-LR design outside717 frozen sources. Re-audit actual worker
+payload/cache, test finite contracts, close dependencies, fresh scientific census,
+measure complete retained-output high-water including serialization overlap,
+metadata and8GiBreserve, and take exact authorized recovery if necessary before
+finite pilots and final quality freeze. CommonLR0.00125/equal zero LR-search,
+original strict gates/no rescue/selection/partial panel. Retain final LayerNorm
+and the adopted recipe; AdamW beta2 .95-versus-.999 remains deferred.
+Preserve120 recoverable historical RAW archives, all H200 originals, storage004
+and every selected/fresh byte. All earlier campaigns/fixtures remain closed.
+
+Evidence: tokenizer-evidence/readout-centering-preparation-001/trainer-worker001.json,
+trained-inference001.json, worker-integration001.json and resume-retirement001/completed.json.
