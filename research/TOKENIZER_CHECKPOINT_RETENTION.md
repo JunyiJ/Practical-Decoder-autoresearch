@@ -765,3 +765,26 @@ passing paired inference reviews and independent final statistics. Terminal STOP
 prevents further quality training/inference/final invocations. All six fresh raw/H200
 pairs totaling3,354,994,032B remain protected; no fresh retirement is authorized.
 All historical selected/fresh bytes and lossless archives remain protected.
+
+
+## Gradient clipping full-model prerequisites and storage010
+
+Clipping1.0/0.5 model002 and serialized model-resume001 passed: identical shared
+initialization/logits/RNG/groups, exact direct-PyTorch clipping, CPU/MPS cache/reset/
+causality, foreign-threshold rejection and exact repeated/resumed model/optimizer/
+EMA/RNG/clipping history(maxerror0). Final-step4 raw/H200 has3snapshots and batch1/8
+CPU/MPS inference passes; cache196608B/item. All667 sources unchanged. Model001's
+coefficient-oracle tolerance failure remains immutable and closed; separate002
+corrected the oracle tolerance consistently with FP32 norm error. No quality claim,
+scientific seed reservation or pilot/quality freeze. See TOKENIZER_GRADIENT_CLIP_PREPARATION.md.
+
+Storage010 losslessly archived23 closed quality001/hybrid001 RAW checkpoints,
+reclaimed1,105,700,860B and verified49,467 survivors unchanged. Exact restoration
+passed. Original raw bytes remain protected via storage-recovery-010/raw-completed.json
+and research_archives/protected-raw-storage-010/*.tar.zst, NOT retired. Together
+006/007/008/009/010 preserve98 archived RAWs; all H200 original paths and storage004
+fixture archive remain intact. Never purge these archives. Four new successful
+generated resume weights totaling1,118,316,500B stay retained until actual worker
+integration closes dependencies and a new exact retirement audit. Source work
+proceeds; recheck full capacity before the worker pair, then separately forecast
+the scientific panel. No retired tensor restoration or closed-fixture reruns.
