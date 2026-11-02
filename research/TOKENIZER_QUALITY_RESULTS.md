@@ -7588,7 +7588,7 @@ Cooldown resource preparation has advanced to two independently accepted20-updat
 pilots, passing paired inference and independent resource review. This is not a
 scientific quality result. The next finite comparison remains exactly three fresh
 pairs at common peakLR0.00125 with zero LR screening; cooldown600/800 also changes
-total LR exposure. Full quality source/freeze and exact pilot retirement remain
-required. All selected/fresh bytes remain protected, including the lossless
+total LR exposure. Quality001 is now frozen with623 sources; exact pilot retirement
+passed and the first fresh trajectory is active. There is no quality result yet. All selected/fresh bytes remain protected, including the lossless
 storage-recovery-007 RAW archives. See TOKENIZER_COOLDOWN_PREPARATION.md for the
 current source, capacity, seed and next-action evidence.

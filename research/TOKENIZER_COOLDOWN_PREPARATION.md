@@ -1,11 +1,12 @@
 # Tokenizer cooldown-onset preparation
 
-Current status: pilot001 COMPLETE. Both20-update resource arms were independently
-accepted; paired full/cache/reset inference and independent final001 resource
-review passed. No scientific quality result, full quality freeze or active worker.
-Scientific panel199300 is reserved: pilot001/eval003 used, fresh011/012/013 and
-bootstrap004 unused. All prior prerequisites/campaigns remain closed; serial and
-cooldown800 remain adopted pending a complete quality comparison.
+Current status: quality001 FROZEN; first fresh slot00 is running under the exact
+freeze `1a13edadf74644b11c9aca9b9861d1875c156217533916592fabff04bee194d0`. The current
+progress record and accepted anchors supersede this launch snapshot. No scientific
+quality result exists yet. Six1,200-update trajectories form three fresh pairs at
+common peakLR0.00125, with zero LR-search budgets and original strict gates.
+Pilot/evaluation seeds are used; fresh199300011 is now in use,012/013 and
+bootstrap199300004 remain unused at launch. All earlier campaigns stay closed.
 
 Test linear cooldown beginning at zero-based update600 versus incumbent800 over
 1,200 updates. Both use peak LR0.00125 and final multiplier0.1, no warmup and
@@ -130,8 +131,26 @@ free plus1,118,328,144B retained pilot weights, conditionally13,090,944,336B aft
 future exact retirement; pilots stay retained until quality-source dependencies
 close and an independent audit authorizes those exact paths.
 
-Next: minimal additive research/cooldown_quality_v1 outside all615 frozen sources;
-verify actual pilot payload/cache and exactly six fresh trajectories, close tensor
-dependencies, audit pilot retirement, recheck actual capacity and unused fresh/
-bootstrap seeds, then freeze and run all three pairs with equal zero LR-search
-budgets and original strict gates. No screens, selection, rescue or partial panel.
+Quality-source preparation completed in additive research/cooldown_quality_v1.
+All623 active source bindings preserve615 unchanged predecessors. All21 contract
+tests passed, including exact800/600 schedules, H200start800/41snapshots, six-slot
+paired order, commonLR/no selection/no rescue, output guards and statistical signs.
+Actual retained pilot raw/H200/optimizer/EMA/RNG/full-validation/cache audits passed;
+pilot-to-quality forgery and mutated source bindings were rejected.
+
+The separate locked pilot-retirement audit revalidated both accepted payloads and
+paired inference, then retired exactly1,118,328,144B using the tested durable journal
+and verified28,023 other run/archive files unchanged. Original receipts remain
+immutable; absent successful pilot weights resolve via quality001-pilot-retirement.
+No selected/fresh or protected lossless archive was retired. The final freeze
+remeasured13,107,888,128B free versus12,381,585,408B complete-panel requirement,
+including serialization/metadata and8GiBreserve. All reserved fresh seeds were
+still unused before dispatch; the synthetic statistics tests used separate seeds.
+
+Next: poll actual worker/process/log/guard/anchor state; never duplicate a running
+or unaccepted attempt. Continue slots00-05 in frozen order800/600,600/800,800/600.
+Preserve every fresh raw/H200 pair and recheck remaining full-panel capacity each
+dispatch. After all six endpoints are accepted, run all three paired inference
+reviews through quality001-fresh-inference001.py and independent statistics through
+quality001-final-review001.py, both requiring the exact freeze hash. No screens,
+selection, rescue, retry, interim adoption or partial panel.

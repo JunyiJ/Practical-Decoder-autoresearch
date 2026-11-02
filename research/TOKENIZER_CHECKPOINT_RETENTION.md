@@ -660,3 +660,18 @@ Worker-retirement001 for cooldown separately retired exactly1,118,318,420B of
 obsolete generated prerequisite weights after real pilot integration closed their
 tensor dependencies, with38,877 survivors verified. Original sources/logs/configs/
 receipts remain; these retired generated tensors cannot be restored or rerun.
+
+Cooldown quality001 pilot retirement is limited to the four raw/H200 payloads
+from tokenizer-cooldown-pilot-001, exactly1,118,328,144 bytes. Quality-integration001
+closed their tensor dependencies by independent actual payload/optimizer/EMA/RNG/
+validation/cache audits,21 finite-contract tests and pilot-to-quality forgery
+rejection. The new quality pilot_retirement module re-audits both accepted pilots,
+inference and exact identities under shared locks before tested journaled deletion;
+it verifies all other research-run/archive files unchanged. No selected/fresh
+weights or lossless RAW archives are eligible. Original receipts remain immutable;
+a completed exact manifest must resolve absent pilot paths before quality freeze.
+
+Cooldown quality001 pilot retirement completed: exactly1,118,328,144B reclaimed,
+28,023 other run/archive files verified unchanged. Original receipts now resolve
+absent pilot weights through quality001-pilot-retirement/completed.json. Every
+fresh quality trajectory remains protected; no quality cleanup command exists.
