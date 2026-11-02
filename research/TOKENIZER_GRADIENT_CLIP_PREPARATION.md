@@ -1,13 +1,12 @@
 # Tokenizer global gradient-clipping preparation
 
-Current status: model002 and model-resume001 PASS both thresholds1.0/0.5.
-Identical initialization/logits/RNG/groups,28,492,416parameters/88EMA tensors;
-CPU/MPS gradient, full/cache/reset and causality checks pass. Exact direct-PyTorch
-clipped gradients, foreign-threshold checkpoint rejection and unchanged RNG verified.
-Four-update repeated/resumed raw model/optimizer/EMA/RNG/clipping history agree exactly
-(maxerror0); final-step4 raw/H200 with3snapshots and CPU/MPS batches1/8 pass.
-All667 bound sources unchanged,660 predecessors preserved. No active worker,
-scientific quality result, seed reservation or pilot/quality freeze.
+Current status: trainer-worker001 and trained-inference001 COMPLETE. Both generated
+four-update clip1/cliphalf arms passed actual instrumented run_training, bounded
+raw/H200 publication, independent parent full validation and CPU/MPS agreement
+(<3.1e-7 CE). Each completed4096targets,3H200snapshots and88EMA tensors. Full/cache/
+reset passes at batches1/8; cache196608B/item. All673 runtime/acceptance bindings
+unchanged,667 predecessors preserved. No active worker, scientific quality result,
+seed reservation or pilot/quality freeze.
 
 Question: does global L2 gradient clipping0.5 versus incumbent1.0 improve the retained
 1200-update subword MLA recipe at common peak LR0.00125? Apply clipping after backward
@@ -53,26 +52,44 @@ updates clipped; this is not a scientific training frequency estimate. Step2 was
 serialized only in capped memory; only final-step4 raw/H200 files were written.
 Final H200 retained88EMA tensors and196608B cache per item, unchanged by threshold.
 The additive trainer records complete per-update pre/post norms and coefficients
-in raw resume state and final summary, plus evaluated metric rows. Its actual
-run_training/output/worker path still needs the next bounded test.
+in raw resume state and final summary, plus evaluated metric rows. That actual
+run_training/output/worker path now passes the bounded generated test below.
 
-Next executable action: minimal additive worker/output and independent parent
-full-validation/inference adapters outside frozen667 bindings, including explicit
-clipping-history acceptance. Re-audit the actual retained resume raw/H200/optimizer/
-EMA/RNG/history/cache payloads and close tensor dependencies. Then exact independent
-retirement audit for obsolete generated weights if needed, and actual complete
-worker-pair capacity recheck. capacity001 records the observed free space and the
-1,118,316,500B retained generated-weight recovery route; no deletion before dependency
-closure/audit. Source work proceeds. After worker/inference: fresh scientific census,
-complete measured retained-output high-water including metadata/serialization overlap/
-8GiB reserve, finite resource pilots, then exactly three fresh pairs at fixed common
-LR0.00125 with zero LR-search budgets and original strict gates. No selection/rescue/
-retry/partial panel; standard-recipe scope, no old score/seed pooling, closed holdout.
+The actual workers retained all four measured per-update clipping observations in
+raw resume state and summary; evaluated metric rows match their corresponding
+updates exactly. Independent acceptance rejects missing, misordered, foreign-threshold,
+nonfinite and inconsistent coefficient histories. Generated worker pre-norms were
+1.2937–1.3033; coefficient ranges0.76733–0.77297 and0.38372–0.38649 respectively.
+These four generated updates per arm all clipped, not a scientific frequency or
+benefit estimate. Both parent full-validation reports recomputed exactly; CPU/MPS
+CE differences3.0137e-7/2.6949e-7. Paired H200 cache/reset checks passed batches1/8.
+Timing is descriptive generated-fixture evidence, not a production advantage.
+
+Next executable action: minimal additive finite20-update resource-pilot orchestration
+and complete THREE-fresh-pair fixed-LR design outside frozen673 sources, reusing tested
+serial/acceptance/inference/retention primitives. Integrate/re-audit actual successful
+worker raw/H200/optimizer/EMA/RNG/clipping history/cache and finite contracts, close
+tensor dependencies, perform a fresh scientific seed census and measure complete
+retained-output high-water including serialization overlap/metadata/8GiB reserve.
+Use exact authorized recovery if needed, then finite pilots and final quality freeze.
+Common LR0.00125, zero LR-search budgets, original strict gates; no screens/selection/
+rescue/retry/partial panel. Standard-recipe scope, closed holdout, no old score pooling.
+
+The new adapter integration closed successful resume tensor dependencies before
+resume-retirement001 independently audited and retired exactly four generated
+weights totaling1,118,316,500B;40,488 survivors remained unchanged. Original sources,
+config/log/receipts remain immutable and later manifest resolves absent tensors.
+Never restore or rerun that fixture. Actualfree10,449,551,360B exceeded complete
+worker-pair9,814,671,360B including reserve and metadata, enabling both workers.
+New successful worker raw/H200 weights1,118,322,004B remain retained until pilot
+integration closes dependencies and a new exact audit. Current free space is not
+scientific-panel readiness; source work proceeds and additional authorized lossless
+recovery can be inventoried when the measured full high-water needs it.
 
 Storage010 recovered1,105,700,860B by losslessly archiving23 closed quality001/hybrid001
 RAWs, verified49,467 survivors and exact restoration. All selected/fresh raw bytes
 remain recoverable, NOT retired; all H200 files remain original-path. Manifests and
-protected archives resolve original identities. Current generated resume weights
+protected archives resolve original identities. Current generated worker weights
 remain retained. This resolved the resume-pair capacity requirement before execution;
 new scientific-panel capacity must be measured separately.
 

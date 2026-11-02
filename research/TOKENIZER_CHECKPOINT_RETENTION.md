@@ -788,3 +788,26 @@ generated resume weights totaling1,118,316,500B stay retained until actual worke
 integration closes dependencies and a new exact retirement audit. Source work
 proceeds; recheck full capacity before the worker pair, then separately forecast
 the scientific panel. No retired tensor restoration or closed-fixture reruns.
+
+
+## Gradient clipping generated worker pair complete
+
+Both clip1/cliphalf four-update workers passed actual run_training, bounded raw/H200
+publication, independent parent full validation and CPU/MPS CE agreement<3.1e-7.
+Each completed4096targets,3H200snapshots,88EMA tensors. Independent acceptance verifies
+complete clipping histories across raw/summary/metrics and rejects five malformed
+history classes. Trained paired full/cache/reset inference passes batches1/8 with
+196608B cache/item. All673 runtime/acceptance sources unchanged; no scientific quality
+result, scientific seed reservation or pilot/quality freeze. Next finite20-update
+resource-pilot orchestration, full three-fresh-pair design, actual worker dependency
+audit, fresh census and measured complete capacity before pilots/final freeze.
+Fixed common LR0.00125, zero LR-search, original strict gates; no rescue/selection.
+
+Resume-retirement001 retired exactly four obsolete successful generated weights
+(1,118,316,500B) after new real payload/optimizer/EMA/RNG/history/full-validation/cache
+audit closed dependencies;40,488 survivors unchanged. Original evidence stays immutable
+and later manifest resolves absent weights. Actualfree10,449,551,360B exceeded complete
+worker-pair9,814,671,360B including reserve/metadata. New successful worker raw/H200
+weights1,118,322,004B remain retained until pilot integration closes dependencies and
+a new exact audit. Preserve all selected/fresh bytes,98 protected archived RAWs and
+original failure evidence. No permanently retired restoration or closed-fixture rerun.
