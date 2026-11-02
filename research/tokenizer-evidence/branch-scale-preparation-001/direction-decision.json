@@ -1,0 +1,58 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T06:03:47.963327+00:00",
+  "question": "Does fixed0.5 scaling of both complete serial residual branches improve the retained1200-update subword MLA recipe versus unit scaling at common peakLR0.00125?",
+  "architecture_review": {
+    "selected": "Fixed half versus unit attention and FFN residual branch scaling at unchanged depth",
+    "rationale": "Previously deferred distinct architecture question. Scaling each complete branch changes residual magnitude and optimization while retaining serial topology and separate RMSNorms. Historical character static0.1 and learned0.1 results were negative; that is an adverse prior, not evidence of benefit. This changes gain magnitude, tokenizer/backbone and horizon, without reopening any prior panel."
+  },
+  "hp_review": {
+    "candidate": "Global gradient clipping0.5 versus incumbent1.0",
+    "decision": "Deferred distinct bounded HP question",
+    "rationale": "The accepted recipe uses global norm clipping1.0. A lower threshold changes clipping only when the norm exceeds it and interacts with Muon/AdamW; no benefit or clipping frequency is assumed. Actual gradient-norm/order instrumentation would be needed before a future finite test. Do not extend the closed cooldown onset grid."
+  },
+  "proposal": {
+    "arms": [
+      "unit",
+      "fixed_half"
+    ],
+    "attention_gain": [
+      1.0,
+      0.5
+    ],
+    "ffn_gain": [
+      1.0,
+      0.5
+    ],
+    "gains_trainable": false,
+    "equations": "u=x+g*A(N1(x)); y=u+g*F(N2(u)); g=1 or0.5, separate RMSNorms. Scale complete post-projection branches; no folding into H200 projections.",
+    "parameter_change": 0,
+    "construction_rng_draws": 0,
+    "cache_change_expected": 0,
+    "backbone": "D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/no local mix/no warmup/independent decay0.00006/cooldown800/H200",
+    "quality_design": "Prospective exactly three fresh pairs at common LR0.00125 with equal zero LR-search budgets and original strict gates; standard-recipe scope only, no screens/rescue. Fresh census, explicit full-model/optimizer/checkpoint/resume/EMA/H200/cache/worker checks, measured complete retained-output high-water plus8GiB reserve and finite resource pilots precede any quality freeze.",
+    "training_allowed": false,
+    "seeds_reserved": false,
+    "pilot_or_quality_frozen": false
+  },
+  "references": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/cooldown-preparation-001/quality001-closure.json",
+      "sha256": "1bf277d816b57d3be0402b2594ed878c105c740d42b0ebaa3ceedbf1e66234aa"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/RESIDUAL_GAIN_RESULTS.md",
+      "sha256": "bbe43a3d1df91d56cf30413285f2aef71cf4cbcce88594cf6e1b044f07738e6d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/RESIDUAL_GAIN_PROTOCOL.md",
+      "sha256": "76d437fe39716809db6e1427a9440c06639391f5aabeb06c89cf226698af493c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-quality-v1-001/evidence/quality/00/config.json",
+      "sha256": "aba1d7d0e241ee59004d740ed7492397db0aacc9f50d7b9e7e796f33f7a33bce"
+    }
+  ],
+  "next_action": "Freeze and run a narrow generated serial branch-scaling component against explicit equations: CPU FP64/FP32 and MPS FP32 forward/all-gradient/causality, exact unit reference and identical shared matrices/RNG. Then explicit full-model policy/optimizer/checkpoint/resume/final-H200/cache integration outside623 frozen sources; no scientific seed/pilot/quality reservation.",
+  "closed_campaign_reopened": false
+}

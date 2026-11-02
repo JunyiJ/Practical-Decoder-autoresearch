@@ -595,3 +595,41 @@ total LR exposure. Quality001 is now frozen with623 sources; exact pilot retirem
 passed and the first fresh trajectory is active. There is no quality result yet. All selected/fresh bytes remain protected, including the lossless
 storage-recovery-007 RAW archives. See TOKENIZER_COOLDOWN_PREPARATION.md for the
 current source, capacity, seed and next-action evidence.
+
+## Cooldown onset comparison closed without adoption
+
+All six fresh1,200-update endpoints were independently accepted at common peak
+LR0.00125 with zero LR-search budgets. All three paired full/cache/reset inference
+reviews passed at batches1/8,196,608B cache per item. Independent final statistics
+verified both provenance and a separate arithmetic/bootstrap implementation.
+
+| Seed | Cooldown800 H200 CE | Cooldown600 H200 CE | 600 minus800 |
+|---|---:|---:|---:|
+|199300011|4.7127084386|4.7222150878|+0.0095066492|
+|199300012|4.7216895012|4.7284279587|+0.0067384574|
+|199300013|4.7107724355|4.7180821944|+0.0073097588|
+
+Earlier cooldown worsened all three seeds. Mean delta is
++0.007851621813797643 nats/token; all three frozen gates failed.
+Simultaneous conditional text-bootstrap upper bounds at blocks2048/4096/8192 are
++0.0107926732/+0.0113509813/+0.0114523509. These reused-text intervals condition on
+the three trained seeds, not population-seed uncertainty or an independent holdout.
+No test split was scored. This is a fixed standard-recipe comparison, not separately
+optimized optima. Earlier cooldown also lowers multiplier sum1020 to930; it does
+not isolate schedule shape at equal LR exposure. No rescue or grid extension.
+
+Retain cooldown800 with D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial residual,
+no product norm/local mix/warmup, independent decay0.00006 and H200. Terminal STOP
+closes all cooldown quality training/inference/final commands. All six fresh
+raw/H200 pairs(3,354,990,192B), all historical selected/fresh models,
+and protected storage004/006/007 archives remain intact. All623 sources unchanged.
+Closure free9,726,046,208B is an observation, not next-panel readiness.
+
+Both architecture and bounded HP were reviewed. Select fixed0.5 versus unit scaling
+of both complete serial attention/FFN branches; defer global gradient clipping0.5
+versus incumbent1.0. Negative character0.1-gain results are an adverse prior; no
+gain is assumed, old scores/seeds are not pooled and closed campaigns stay closed.
+The generated standalone branch-scaling component passed12 CPU FP64/FP32 and MPS
+FP32 forward/all-gradient/causality cases, exact unit reference and identical shared
+initialization/RNG. This is not full-model integration or a quality result. See
+TOKENIZER_BRANCH_SCALE_PREPARATION.md and cooldown quality001-final-review.json.

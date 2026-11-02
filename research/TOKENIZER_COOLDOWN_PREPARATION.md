@@ -1,13 +1,11 @@
 # Tokenizer cooldown-onset preparation
 
-Current status: quality001 FROZEN; slots00-04 independently accepted;
-final slot05 paired cooldown600 on the third fresh seed is running under the exact
-freeze `1a13edadf74644b11c9aca9b9861d1875c156217533916592fabff04bee194d0`. The current
-progress record and accepted anchors supersede this launch snapshot. No scientific
-quality result exists yet. Six1,200-update trajectories form three fresh pairs at
-common peakLR0.00125, with zero LR-search budgets and original strict gates.
-Pilot/evaluation seeds are used; fresh199300011/012 are complete,013 is in use and
-bootstrap199300004 remains unused. All earlier campaigns stay closed.
+Current status: quality001 CLOSED_NOT_ADOPTED. All six fresh endpoints and all
+three paired inference reviews passed their technical audits. Earlier cooldown
+worsened all three seeds, mean+0.007851621813797643 nats/token; all three strict
+gates failed. Retain cooldown800. Terminal STOP closes all campaign commands;
+every fresh raw/H200 pair remains protected. Next distinct prerequisites are in
+TOKENIZER_BRANCH_SCALE_PREPARATION.md; no new scientific seeds/panel reserved.
 
 Test linear cooldown beginning at zero-based update600 versus incumbent800 over
 1,200 updates. Both use peak LR0.00125 and final multiplier0.1, no warmup and
@@ -155,3 +153,41 @@ dispatch. After all six endpoints are accepted, run all three paired inference
 reviews through quality001-fresh-inference001.py and independent statistics through
 quality001-final-review001.py, both requiring the exact freeze hash. No screens,
 selection, rescue, retry, interim adoption or partial panel.
+
+## Cooldown onset comparison closed without adoption
+
+All six fresh1,200-update endpoints were independently accepted at common peak
+LR0.00125 with zero LR-search budgets. All three paired full/cache/reset inference
+reviews passed at batches1/8,196,608B cache per item. Independent final statistics
+verified both provenance and a separate arithmetic/bootstrap implementation.
+
+| Seed | Cooldown800 H200 CE | Cooldown600 H200 CE | 600 minus800 |
+|---|---:|---:|---:|
+|199300011|4.7127084386|4.7222150878|+0.0095066492|
+|199300012|4.7216895012|4.7284279587|+0.0067384574|
+|199300013|4.7107724355|4.7180821944|+0.0073097588|
+
+Earlier cooldown worsened all three seeds. Mean delta is
++0.007851621813797643 nats/token; all three frozen gates failed.
+Simultaneous conditional text-bootstrap upper bounds at blocks2048/4096/8192 are
++0.0107926732/+0.0113509813/+0.0114523509. These reused-text intervals condition on
+the three trained seeds, not population-seed uncertainty or an independent holdout.
+No test split was scored. This is a fixed standard-recipe comparison, not separately
+optimized optima. Earlier cooldown also lowers multiplier sum1020 to930; it does
+not isolate schedule shape at equal LR exposure. No rescue or grid extension.
+
+Retain cooldown800 with D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial residual,
+no product norm/local mix/warmup, independent decay0.00006 and H200. Terminal STOP
+closes all cooldown quality training/inference/final commands. All six fresh
+raw/H200 pairs(3,354,990,192B), all historical selected/fresh models,
+and protected storage004/006/007 archives remain intact. All623 sources unchanged.
+Closure free9,726,046,208B is an observation, not next-panel readiness.
+
+Both architecture and bounded HP were reviewed. Select fixed0.5 versus unit scaling
+of both complete serial attention/FFN branches; defer global gradient clipping0.5
+versus incumbent1.0. Negative character0.1-gain results are an adverse prior; no
+gain is assumed, old scores/seeds are not pooled and closed campaigns stay closed.
+The generated standalone branch-scaling component passed12 CPU FP64/FP32 and MPS
+FP32 forward/all-gradient/causality cases, exact unit reference and identical shared
+initialization/RNG. This is not full-model integration or a quality result. See
+TOKENIZER_BRANCH_SCALE_PREPARATION.md and cooldown quality001-final-review.json.
