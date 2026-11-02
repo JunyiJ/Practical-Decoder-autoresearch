@@ -1,0 +1,209 @@
+{
+  "seeds": [
+    2811,
+    2812,
+    2813
+  ],
+  "summary": {
+    "1200": {
+      "updates": [
+        1,
+        301,
+        601,
+        901,
+        1200
+      ],
+      "train_mean": [
+        10.859623908996582,
+        4.63854185740153,
+        4.480770428975423,
+        3.5330115954081216,
+        3.5172602335611978
+      ],
+      "val_mean": [
+        10.831055418650308,
+        5.139118846257527,
+        4.75324878692627,
+        4.645503616333008,
+        4.585290225346882
+      ],
+      "train_min": [
+        10.853923797607422,
+        4.379177093505859,
+        4.111940383911133,
+        3.2318153381347656,
+        3.1322455406188965
+      ],
+      "train_max": [
+        10.866954803466797,
+        4.8431854248046875,
+        4.8164873123168945,
+        3.695858955383301,
+        4.0184006690979
+      ],
+      "val_min": [
+        10.81843547821045,
+        5.114147663116455,
+        4.732031774520874,
+        4.613009405136109,
+        4.574734497070312
+      ],
+      "val_max": [
+        10.838856983184815,
+        5.163355541229248,
+        4.7745543956756595,
+        4.675376224517822,
+        4.598383140563965
+      ],
+      "full_validation_raw_mean": 4.742122224193148,
+      "full_validation_h200_mean": 4.753151027625648
+    },
+    "3000": {
+      "updates": [
+        1,
+        301,
+        601,
+        901,
+        1201,
+        1501,
+        1801,
+        2101,
+        2401,
+        2701,
+        3000
+      ],
+      "train_mean": [
+        10.859623908996582,
+        4.6385566393534345,
+        4.4807688395182295,
+        3.5326897303263345,
+        3.2417783737182617,
+        3.084545612335205,
+        2.573930104573568,
+        1.855916142463684,
+        1.8060551881790161,
+        1.6471261978149414,
+        1.6125426689783733
+      ],
+      "val_mean": [
+        10.831055386861166,
+        5.139130560557047,
+        4.75324231783549,
+        4.6544801712036135,
+        4.637112108866373,
+        4.716983620325724,
+        4.855056269963582,
+        5.025189828872681,
+        5.203092320760091,
+        5.318458048502604,
+        5.35806277592977
+      ],
+      "train_min": [
+        10.853923797607422,
+        4.379201889038086,
+        4.11192512512207,
+        3.235825538635254,
+        2.6270313262939453,
+        2.6267261505126953,
+        2.175239086151123,
+        1.7618037462234497,
+        1.4392551183700562,
+        1.092076063156128,
+        1.313096046447754
+      ],
+      "train_max": [
+        10.866954803466797,
+        4.843204021453857,
+        4.816500663757324,
+        3.696841239929199,
+        3.6112937927246094,
+        3.560372829437256,
+        3.0619139671325684,
+        1.9520379304885864,
+        2.2372124195098877,
+        2.2930283546447754,
+        1.8619722127914429
+      ],
+      "val_min": [
+        10.81843547821045,
+        5.114157390594483,
+        4.732007360458374,
+        4.618542814254761,
+        4.614378023147583,
+        4.696979999542236,
+        4.84197473526001,
+        5.015818977355957,
+        5.18434591293335,
+        5.305038928985596,
+        5.336611366271972
+      ],
+      "val_max": [
+        10.838856887817382,
+        5.163371562957764,
+        4.774567127227783,
+        4.68713698387146,
+        4.649289321899414,
+        4.72752685546875,
+        4.872879838943481,
+        5.04018759727478,
+        5.21838607788086,
+        5.33640685081482,
+        5.385852813720703
+      ],
+      "full_validation_raw_mean": 5.547186357384618,
+      "full_validation_h200_mean": 5.464003005913635
+    }
+  },
+  "diagnostics": [
+    {
+      "seed": 2811,
+      "long_min_logged_val_update": 901,
+      "long_min_logged_val_ce": 4.618542814254761,
+      "long_final_logged_val_ce": 5.385852813720703,
+      "long_train_ce_at_val_min": 3.665402412414551,
+      "long_final_train_ce": 1.8619722127914429
+    },
+    {
+      "seed": 2812,
+      "long_min_logged_val_update": 1201,
+      "long_min_logged_val_ce": 4.614378023147583,
+      "long_final_logged_val_ce": 5.336611366271972,
+      "long_train_ce_at_val_min": 2.6270313262939453,
+      "long_final_train_ce": 1.6625597476959229
+    },
+    {
+      "seed": 2813,
+      "long_min_logged_val_update": 1201,
+      "long_min_logged_val_ce": 4.649289321899414,
+      "long_final_logged_val_ce": 5.351724147796631,
+      "long_train_ce_at_val_min": 3.6112937927246094,
+      "long_final_train_ce": 1.313096046447754
+    }
+  ],
+  "source_sha256": {
+    "research_runs/tokenizer-horizon-001/plan.json": "d3173ef8cd3570f86a7463178b84914efc969e589f6bd2a61316c4342ebc8977",
+    "git:de0da6894da5392c4925695507f88ee13a602157:src/train/train.py": "6a694e666edc9b0e86bf82e547a71ae47fd2188c16b256d9ddf5e3a55bedac4c",
+    "git:de0da6894da5392c4925695507f88ee13a602157:src/train/lr_schedule.py": "984981244082d479c915b3c018a245c8d437120de49a61966cf37f02a1d582f6",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2811-n1200/metrics.jsonl": "d857c1061b39421aa989b3f196c0ea2cdb25d7fea61ef995746981e838e7c996",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2811-n1200/request.json": "f21e9b84881854edcde98b160dc111676d5ee4693afea68f6d23e215c0934319",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2811-n1200/result.json": "cefe30e4dba615263dfd703ebf1db6cac217069329b962c7bd2fe1a341d00c38",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2812-n1200/metrics.jsonl": "5e943f0516595ad188ca1afff0a9e0ce3770157c9bec599ccc92fc6a6620fd2b",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2812-n1200/request.json": "3474d8c7b9d6147fd887050fd6c456fadf5f2dd114d452b39ad2080a83f50345",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2812-n1200/result.json": "d110b742512eab7b41bcbfd9363e79ce3a3e9f5ed41d9fbcf8290c714a4d2203",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2813-n1200/metrics.jsonl": "274e45c2149fbde536a944be4ce9077a66a5daf4ba6a1e26a2fb372797ec2acc",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2813-n1200/request.json": "dfdece376b323c0877e317e6a6530ae37a0b9315138d019a0dbcee108230424c",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2813-n1200/result.json": "11a004e7f109fd2b632e1cabaed7da7def945b63735c90dcf992ae3af09d7bb1",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2811-n3000/metrics.jsonl": "efd234a93205646d0c1d1e5491e4266cf1c4c39310df0012b745be5847503d09",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2811-n3000/request.json": "9a7b149000e63aac3c62cec7b6c2d6786722c6a8e38104d26fe52aa2c0a844fb",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2811-n3000/result.json": "5d5d34115702c93dee29d16880cc3333851fe0ed8c1803afbc8b6783b7ef675a",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2812-n3000/metrics.jsonl": "ade26de7dca3132afe096d6eae48423404d5324f2f6a43d0efb1e1c9ddc2b977",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2812-n3000/request.json": "419f666c9b9ad720c158c9830ed9648c706d3b97bf3ddf96a4fce2f19e40933f",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2812-n3000/result.json": "07f2fc31df1ea55b5c6f9fe772c43693f3dfab7c47657aee5ee883a7307ebd3c",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2813-n3000/metrics.jsonl": "58963d765078a19883316041f92ba10c2d1659a4b7c83e951202a9ed19dcd527",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2813-n3000/request.json": "4eab07f4bc7fb6de241073c89840ffd3a04d711c487812bb1476319d7fd4476e",
+    "research/tokenizer-evidence/horizon-001/confirm-gqa-w256-s2813-n3000/result.json": "1e417bf7079866a1a7077417bf6d7c68e4eb2dc23a045eb7f428d33f1dad9944"
+  },
+  "original_producer_commit": "de0da6894da5392c4925695507f88ee13a602157",
+  "interpretation": "All three long runs show rising fixed-sample validation loss after their logged minimum, while training minibatch loss falls overall. This is strong evidence of overfitting for this recipe, not a duration-only causal estimate or an optimal-stopping claim.",
+  "time_semantics": "x=logged step+1. Training loss is measured before that update; validation after. Configured cooldown/EMA start markers use recorded start_step."
+}
