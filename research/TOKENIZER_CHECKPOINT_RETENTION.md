@@ -710,3 +710,40 @@ restore or rerun them. Fresh generated trainer-worker001 weights1,118,319,636B
 remain retained until downstream tested pilot integration and a new exact audit.
 The policy-at-audit snapshots stored alongside this retirement and storage008 match
 the immutable manifest policy hashes; later policy additions do not alter them.
+
+Prospective branch-scale worker-retirement001 targets only its four successful
+generated worker raw/H200 payloads, exactly1,118,319,636B, after pilot-integration001
+re-audits actual payloads/cache and the pilot-only retention contract passes.
+Original source/config/log/receipts survive. New exact allowlists, shared locks,
+journals and complete survivor verification are required. No selected/fresh or
+lossless protected archive is eligible. This clears generated tensor dependencies
+without authorizing a partial scientific panel.
+
+Prospective lossless storage-recovery-009 covers only the nine completed wide-hybrid
+campaign005 confirmation RAWs referenced by campaign005-final-cached-v2-review.json.
+The independent terminal review binds each completed result, which binds exact
+raw/H200 hashes; no STOP file is invented. These fresh model bytes remain protected,
+recoverable and NOT retired. Copy-only feasibility, exact allowlists, locks/process
+checks, journals, archive verification before duplicate removal, full survivor
+verification and exact restoration remain mandatory. H200 files stay original-path;
+all existing protected archives remain intact.
+
+
+Branch-scale worker-retirement001 COMPLETE: exactly four obsolete generated worker
+weights totaling1,118,319,636B retired after actual pilot integration and retention
+test closed dependencies;39,723 survivors verified unchanged. Original sources,
+configs/logs/receipts are preserved; later manifest resolves absent paths. The exact
+policy bytes at audit are preserved in worker-retirement001/retention-policy-at-audit.md.
+
+Storage-recovery-009 COMPLETE: nine historical wide-hybrid005 fresh RAW confirmations
+losslessly archived,2,033,806,544B reclaimed and48,929 other files verified unchanged.
+Exact restoration PASS. Original raw bytes remain recoverable via raw-completed.json
+and protected research_archives/protected-raw-storage-009/*.tar.zst; NOT retired.
+All H200 original paths remain intact. The policy at audit is preserved inside009.
+Together006/007/008/009 protect75 archived RAWs; never purge archives as obsolete.
+
+Branch-scale pilot001 successful raw/H200 pair outputs total1,118,329,296B and remain
+retained. New quality-source integration must close actual tensor dependencies before
+any independent exact retirement audit. Preserve all original pilot evidence and every
+scientific selected/fresh model. No current pilot deletion is authorized by a mere
+capacity projection; execute the exact audited boundary only after dependencies close.

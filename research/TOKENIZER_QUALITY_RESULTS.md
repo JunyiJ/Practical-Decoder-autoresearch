@@ -7655,3 +7655,24 @@ fixed-LR design after actual payload integration, census and full storage foreca
 Exact obsolete generated resume retirement reclaimed1,118,314,644B with39,528
 survivors unchanged and enabled the complete worker pair; selected/fresh bytes and
 all original evidence remain protected. See TOKENIZER_BRANCH_SCALE_PREPARATION.md.
+
+
+## Fixed branch scaling: finite resource pilots complete, no quality result
+
+Both20-update unit/fixed_half pilots independently accepted20,480targets,8H200
+snapshots and88EMA tensors. Full/cache/reset paired inference passed batches1/8,
+196,608B cache/item; independent final001 resource review PASS. All651 frozen
+campaign sources preserve645 predecessors. Pilot losses are excluded from selection
+and adoption. Panel199410 pilot/eval used; three fresh seeds/bootstrap remain unused.
+Next additive six-trajectory1200-update quality orchestration with common LR0.00125,
+zero LR-search budgets and original strict gates, followed by actual pilot audits,
+exact retirement/capacity check and quality freeze. No active worker or recipe change.
+
+Exact obsolete generated-worker retirement reclaimed1,118,319,636B with39,723
+survivors unchanged. Lossless storage009 preserved nine historical fresh RAWs,
+reclaimed2,033,806,544B and verified48,929 other files plus exact restoration.
+Selected/fresh bytes and all H200 files remain protected. Complete capacity passed
+before pilot dispatch; final review free11,745,796,096B plus retainedpilots1,118,329,296B
+conditionally yields12,864,125,392B, above12,381,585,408B. Fresh launch still requires
+new dependency closure, exact pilot audit and actual capacity remeasurement.
+See TOKENIZER_BRANCH_SCALE_PREPARATION.md for evidence and next executable action.

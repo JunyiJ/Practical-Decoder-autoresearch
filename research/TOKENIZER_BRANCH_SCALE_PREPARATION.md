@@ -1,9 +1,11 @@
 # Tokenizer fixed residual branch-scaling preparation
 
-Current status: actual trainer-worker001 and independent parent acceptance plus
-trained-inference001 PASS both unit/fixed_half arms. Finite resource-pilot integration
-is next. No scientific seeds, pilot/quality freeze, quality result or active worker.
-The adopted recipe and unit branch gains remain unchanged.
+Current status: pilot001 COMPLETE. Both20-update unit/fixed_half resource pilots,
+independent parent acceptance, paired inference and independent final001 resource
+review PASS. All651 campaign sources remain frozen with645 unchanged predecessors.
+Next: additive six-trajectory quality orchestration, real pilot payload/cache audits,
+exact pilot retirement and final capacity/unused-seed checks before quality freeze.
+No scientific quality result or active worker. Adopted unit gains remain unchanged.
 
 Compare unit gain with fixed0.5 scaling of both complete post-projection residual
 branches at unchanged depth: u=x+g*A(N1(x)); y=u+g*F(N2(u)), g=1 or0.5. Keep separate
@@ -124,3 +126,51 @@ exact authorized recovery if needed, then finite resource pilots and final quali
 freeze. Unit versus fixed0.5 complete serial branches at common LR0.00125, equal
 zero LR-search budgets, original strict gates, no screens/selection/rescue/partial
 panel. Source work proceeds; current free space is not scientific-panel readiness.
+
+
+## Finite resource pilots and complete quality design
+
+Pilot-integration001 PASS actual generated worker raw/H200, optimizer/EMA/RNG,
+independent full-validation and cache audits against the additive finite campaign.
+The exact pilot-only retention test passed, including rejection of fresh-confirmation
+deletion, incomplete stages and selection. All651 campaign sources bind645 unchanged
+runtime/acceptance predecessors. Worker tensor dependencies then closed; exact
+worker-retirement001 reclaimed1,118,319,636B from four obsolete generated payloads
+with39,723 survivors verified. Original receipts remain immutable; absent generated
+paths resolve through worker-retirement001/completed.json. Never restore or rerun.
+
+Lossless storage-recovery-009 archived nine accepted fresh RAW confirmations from
+closed wide-hybrid005, whose hashes were bound by its independent final review.
+It reclaimed2,033,806,544B and verified48,929 other files unchanged. Exact temporary
+restoration passed. Resolve original RAW paths using storage-recovery-009/raw-completed.json
+and protected research_archives/protected-raw-storage-009/*.tar.zst plus materialize.py.
+These models are NOT retired: all RAW bytes remain recoverable, and H200 files stay
+at their original paths. Together storage006/007/008/009 protect75 archived RAWs;
+the storage004 fixture archive also remains protected. Never purge these archives.
+
+Campaign-capacity001 measured12,897,472,512B free against the complete12,381,585,408B
+requirement: six retained raw/H200 pairs,256MiB metadata and8GiB reserve, with bounded
+streaming publication and same-inode serialization overlap accounted for. This was
+checked again at freeze and each dispatch. Seed census001 passed48,515 recorded text
+files; panel199410 reserves pilot001/eval003, fresh011/012/013 and bootstrap004.
+Pilot/eval are now used; fresh/bootstrap remain unused. No screening seed exists.
+
+Both20-update pilots independently accepted20,480 training targets,8H200 snapshots
+and88EMA tensors. Paired full/cache/reset checks passed at batches1/8 with196,608B
+cache per item for each arm. Independent final001 resource review PASS; source,
+artifact, process and resource guards all checked. No pilot loss is used for
+selection, adoption or a quality claim. The common LR is0.00125; scientific arms
+retain cooldown800, floor0.1, no warmup, decay0.00006 and H200start800.
+
+Next executable action: minimal additive finite1200-update quality orchestration in
+NEW research/branch_scale_quality_v1 outside all651 frozen sources. Exactly THREE
+fresh pairs, order unit/half,half/unit,unit/half at common LR0.00125, equal zero
+LR-search budgets; no screens/selection/rescue/retry or partial panel. Reuse tested
+acceptance/inference/retention primitives; verify actual retained pilots/cache and
+all six-trajectory contracts. Close dependencies, independently audit exact successful
+pilot retirement of1,118,329,296B, remeasure complete capacity and unused fresh/bootstrap
+seeds, then final quality freeze. Preserve every fresh raw/H200 pair and apply all
+original strict gates under standard-recipe scope. Final resource review recorded
+11,745,796,096B free; adding retained pilots conditionally gives12,864,125,392B.
+This conditional recovery is not deletion or quality-dispatch readiness. Source work
+proceeds; no stale capacity wait. No active worker or scientific quality result.
