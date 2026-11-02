@@ -37,3 +37,31 @@ output high-water including serialization overlap/metadata and8GiB reserve
 before freezing a fresh finite panel; current free space is only an observation.
 Use exact authorized recovery audits if needed, never partial panels or relaxed
 guards. No new model-quality result is claimed.
+
+
+## Real full-model and serialized resume prerequisites pass
+
+Additive research/decay_v1 wraps the unchanged grouped-embedding MLA runtime
+with explicit decay0/0.00006 and peak-LR0.00125 identity. model001 verified
+identical28,492,416-parameter initialization/logits/RNG and optimizer grouping,
+88 EMA tensors, CPU/MPS gradients and finite updates, foreign-decay/tampered-
+optimizer rejection before model mutation, full/cache/reset/causality. Cache
+remains196,608B per item. No corpus or disk checkpoint was used in model001.
+
+Separately frozen model-resume001 completed both generated four-update arms.
+Fresh repeats and resumed model/optimizer/EMA/RNG matched exactly (maxerror0).
+Step2 was serialized into a capped in-memory buffer; only final-step4 raw/H200
+pairs were persisted, preventing an unnecessary duplicate payload. Export
+correctly used the final horizon with three H200 snapshots. Both CPU/MPS
+H200 inference and uneven-cache/reset checks passed at batches1/8. All original
+sources and previous failed fixtures are unchanged. These are numerical
+prerequisites, not scientific model-quality results.
+
+Next implement narrow actual run_training/output/worker and independent parent
+full-validation/inference adapters outside frozen tested sources. Re-audit the
+retained successful resume payloads for these adapters and close tensor loading
+dependencies; only then use an exact authorized retirement audit if needed.
+capacity001 records the actual next worker-pair requirement and the concrete
+conditional recovery from these four successful numerical weights. Source work
+proceeds; no partial worker pair or guard relaxation. A new scientific panel
+still requires fresh census, complete measured high-water and finite pilots.

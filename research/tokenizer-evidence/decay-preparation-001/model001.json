@@ -1,0 +1,2015 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "decay": 6e-05,
+      "identity": {
+        "policy": "fixed_lr_independent_decay_v1",
+        "decay": 6e-05,
+        "peak_lr": 0.00125,
+        "optimizer": "muon",
+        "decay_mode": "independent"
+      },
+      "initial_state_sha256": "fdc1fb09cee5f8cf48db6e9e07a6220501780342cff4e167a728ca03ad5feb53",
+      "logits_max_abs": 7.152557373046875e-07,
+      "loss_abs": 9.5367431640625e-07,
+      "gradient_max_abs": 1.3783574104309082e-07,
+      "cross_arm_rejected": "Cross-arm decay checkpoint identity differs",
+      "optimizer_decay_tamper_rejected": "Optimizer decay differs from saved training configuration",
+      "cache_max_abs": 8.940696716308594e-07,
+      "reset_max_abs": 0.0,
+      "causality_max_abs": 0.0,
+      "cache_bytes": 393216
+    },
+    {
+      "decay": 0.0,
+      "identity": {
+        "policy": "fixed_lr_independent_decay_v1",
+        "decay": 0.0,
+        "peak_lr": 0.00125,
+        "optimizer": "muon",
+        "decay_mode": "independent"
+      },
+      "initial_state_sha256": "fdc1fb09cee5f8cf48db6e9e07a6220501780342cff4e167a728ca03ad5feb53",
+      "logits_max_abs": 7.152557373046875e-07,
+      "loss_abs": 9.5367431640625e-07,
+      "gradient_max_abs": 1.3783574104309082e-07,
+      "cross_arm_rejected": "Cross-arm decay checkpoint identity differs",
+      "optimizer_decay_tamper_rejected": "Optimizer decay differs from saved training configuration",
+      "cache_max_abs": 8.344650268554688e-07,
+      "reset_max_abs": 0.0,
+      "causality_max_abs": 0.0,
+      "cache_bytes": 393216
+    }
+  ],
+  "invalid_decay_rejected": [
+    {
+      "value": true,
+      "error": "Exactly independent decay0 or0.00006 required"
+    },
+    {
+      "value": 3e-05,
+      "error": "Exactly independent decay0 or0.00006 required"
+    },
+    {
+      "value": -6e-05,
+      "error": "Exactly independent decay0 or0.00006 required"
+    }
+  ],
+  "optimizer_groups": [
+    {
+      "child": "Muon",
+      "groups": [
+        {
+          "names": [
+            "transformer.h.0.attn.dkv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.dkv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.uk.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.uk.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.uv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.uv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.dq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.dq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.uq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.uq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.qr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.qr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.kr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.kr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.out.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.out.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.mlp.linear_gate.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.mlp.linear_gate.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.mlp.linear_up.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.mlp.linear_up.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.0.mlp.linear_down.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.mlp.linear_down.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.dkv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.dkv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.uk.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.uk.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.uv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.uv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.dq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.dq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.uq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.uq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.qr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.qr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.kr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.kr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.out.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.out.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.mlp.linear_gate.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.mlp.linear_gate.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.mlp.linear_up.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.mlp.linear_up.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.1.mlp.linear_down.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.mlp.linear_down.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.dkv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.dkv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.uk.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.uk.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.uv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.uv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.dq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.dq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.uq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.uq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.qr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.qr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.kr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.kr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.out.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.out.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.mlp.linear_gate.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.mlp.linear_gate.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.mlp.linear_up.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.mlp.linear_up.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.2.mlp.linear_down.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.mlp.linear_down.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.dkv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.dkv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.uk.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.uk.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.uv.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.uv.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.dq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.dq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.uq.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.uq.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.qr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.qr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.kr.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.kr.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.out.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.out.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.mlp.linear_gate.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.mlp.linear_gate.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.mlp.linear_up.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.mlp.linear_up.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        },
+        {
+          "names": [
+            "transformer.h.3.mlp.linear_down.weight"
+          ],
+          "lr": 0.000625,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.mlp.linear_down.weight"
+          ],
+          "width_lr_scale": 0.5,
+          "momentum": 0.95,
+          "nesterov": true,
+          "ns_coefficients": [
+            3.4445,
+            -4.775,
+            2.0315
+          ],
+          "eps": 1e-07,
+          "ns_steps": 5,
+          "adjust_lr_fn": "match_rms_adamw"
+        }
+      ]
+    },
+    {
+      "child": "AdamW",
+      "groups": [
+        {
+          "names": [
+            "transformer.wte.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.wte.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.ln1.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.ln1.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.ln2.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.ln2.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.dkv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.dkv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.uk.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.uk.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.uv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.uv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.dq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.dq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.uq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.uq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.qr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.qr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.kr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.kr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.0.attn.out.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.0.attn.out.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.ln1.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.ln1.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.ln2.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.ln2.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.dkv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.dkv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.uk.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.uk.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.uv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.uv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.dq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.dq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.uq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.uq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.qr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.qr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.kr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.kr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.1.attn.out.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.1.attn.out.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.ln1.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.ln1.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.ln2.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.ln2.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.dkv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.dkv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.uk.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.uk.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.uv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.uv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.dq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.dq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.uq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.uq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.qr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.qr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.kr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.kr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.2.attn.out.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.2.attn.out.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.ln1.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.ln1.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.ln2.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.ln2.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.dkv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.dkv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.uk.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.uk.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.uv.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.uv.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.dq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.dq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.uq.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.uq.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.qr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.qr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.kr.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.kr.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.h.3.attn.out.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.h.3.attn.out.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.ln_f.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.ln_f.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "transformer.ln_f.bias"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "transformer.ln_f.bias"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        },
+        {
+          "names": [
+            "lm_head.weight"
+          ],
+          "lr": 0.00125,
+          "weight_decay": 0.0,
+          "parameter_names": [
+            "lm_head.weight"
+          ],
+          "width_lr_scale": 1.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true
+        }
+      ]
+    }
+  ],
+  "shared_initialization_logits_rng_exact": true,
+  "parameter_count": 28492416,
+  "ema_tensor_count": 88,
+  "sources_unchanged": 537,
+  "corpus_read": false,
+  "scientific_training": false,
+  "checkpoint_io": false,
+  "scope": "Real CPU/MPS one-update model and in-memory raw payload only. Serialized raw/EMA/RNG resume, final-horizon H200 and actual worker/parent validation still required."
+}
