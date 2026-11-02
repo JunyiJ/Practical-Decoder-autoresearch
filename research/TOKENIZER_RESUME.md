@@ -8,26 +8,29 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: AdamW beta2 quality001 closed without adoption; final LayerNorm
-bias component001 passed24 CPU/MPS generated cases. No active worker.**
+**Latest November2: final LayerNorm bias full-model and serialized resume checks
+passed both arms. No active worker or scientific quality result.**
 
-Beta2 .95 worsened all three seeds; mean candidate-minus-incumbent CE
-+0.11006817407836185, all strict gates failed. Six accepted RAW/H200 pairs remain
-protected; all three inference reviews passed. The terminal STOP closes all beta2
-quality commands. Retain beta2 .999 and the adopted architecture.
+Shared initialization/logits/RNG and unrelated optimizer groups match exactly.
+Removing only final bias changes28,492,416/88 to28,492,160/87 parameters/tensors;
+Muon44 groups remains fixed,AdamW44 becomes43. CPU/MPS gradients/cache/causality,
+foreign-policy rejection and four-update exact raw-model/optimizer/EMA/RNG/history
+repeat/resume passed. Final-step4 H200 has3 snapshots; batch1/8 inference passed.
+All791 source bindings unchanged,777 predecessors preserved.
 
-Next integrate the explicit final LayerNorm learned-bias versus fixed-zero policy
-with full-model optimizer/checkpoint/cache identity and raw/EMA/RNG resume, outside
-frozen namespaces. Component evidence is not candidate full-model or quality
-validation. Read [TOKENIZER_FINAL_LN_BIAS_PREPARATION.md](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md).
-All777 source bindings are unchanged,774 predecessors preserved. No scientific
-seeds or pilot/quality plan reserved. AdamW epsilon1e-6 versus1e-8 is deferred.
+Next implement actual trainer/output/worker and independent parent full-validation/
+inference adapters outside frozen sources. Re-audit retained successful resume
+payloads and close dependencies before exact retirement. Read
+[TOKENIZER_FINAL_LN_BIAS_PREPARATION.md](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md).
+Capacity003 records the current worker-pair deficit and concrete lossless text
+recovery candidates; source work proceeds. No scientific seeds or panel reserved.
 
-Preserve all182 historical lossless RAW archives, all H200 originals and storage004.
-Closure free9,203,707,904B is not readiness for another panel. Small integration
-work proceeds; remeasure complete capacity and use exact authorized recovery
-before larger numerical stages. Original failures and retired-payload manifests
-remain immutable; no closed reruns or permanently retired tensor restoration.
+Storage017 preserves all six closed beta2 fresh RAWs losslessly, reclaiming
+651,815,376B;52,616 survivors unchanged and exact restoration passed. Resolve
+original paths via its raw-completed manifest and protected archives. All188
+historical RAWs remain recoverable,all H200 originals/storage004 intact. No
+permanently retired restoration or closed reruns. Beta2 .95 remains not adopted;
+retain .999 and the learned final LayerNorm bias. AdamW epsilon change deferred.
 
 ## Findings to retain
 

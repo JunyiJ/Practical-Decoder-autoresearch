@@ -1214,3 +1214,45 @@ Evidence: `adamw-beta2-preparation-001/quality001-final-review.json`,
 `quality001-closure.json`, `quality001-fresh-inference-pair{0,1,2}-review.json`;
 `final-ln-bias-preparation-001/direction-decision.json`, `component001-plan.json`,
 `component001-result.json`. See `TOKENIZER_FINAL_LN_BIAS_PREPARATION.md`.
+
+## November2 — Final LayerNorm bias full-model and serialized resume passed
+
+Both learned/fixed-zero policies passed model001 and model-resume001. Shared
+initialization/logits/RNG and all unrelated groups match exactly; only final bias
+is removed. Parameter counts28,492,416/28,492,160;EMA inventories88/87,Muon44
+groups both andAdamW44/43. Explicit actual readout equations,CPU/MPS gradients,
+full/cache/reset/causality and foreign-bias checkpoint/cache rejection passed.
+Both four-update MPS fresh repeat and serialized resume raw-model/optimizer/EMA/
+RNG/clipping histories match exactly(maxerror0). Step2 serialized in capped memory;
+final-step4 RAW/H200 exports have3 snapshots,CPU/MPS batch1/8 inference passed.
+All791 source/config bindings unchanged,777 predecessors preserved. This is
+generated integration evidence;no scientific quality result,seeds or pilot/quality
+reservation. Next actual trainer/output/worker and independent parent full-validation
+acceptance/inference adapters outside frozen sources,with87/88 tensor acceptance.
+
+Storage017 losslessly archived six closed beta2 fresh RAWs, reclaiming651,815,376B
+and verifying52,616 survivors unchanged. Exact restoration passed. The original
+APFS copy-only probe kept bytes unchanged but gave no useful compression; the
+separate streaming path uses a stricter kernel-enforced512MiB output cap and
+complete staging forecast,with unchanged8GiB reserve,time/RSS limits and one
+compressor thread. Output-cap self-test passed. Original RAWs resolve through
+`storage-recovery-017/raw-completed.json` and `protected-raw-storage-017/*.tar.zst`;
+bytes recoverable,NOT retired. All188 historical RAWs and H200 originals/storage004
+remain protected. No source,receipt or closed scientific experiment was rerun.
+
+Capacity002 observed9,943,003,136B versus9,781,116,928B complete resume-pair
+requirement, enabling both arms. Four successful generated resume weights now
+total1,118,313,377B and remain retained until downstream tensor dependencies close
+and a NEW exact audit. Capacity003 observed8,625,647,616B versus9,814,671,360B
+complete worker-pair requirement;conditional retirement leaves70,710,367B deficit.
+An additional118,112,256B of allocated historical text candidates was inventoried
+for exact lossless original-path compression if needed;this is not an allowlist or
+dispatch readiness. Source integration proceeds;remeasure actual complete capacity
+after authorized recovery. No partial panels or relaxed guards.
+
+Retain learned final bias and the adopted beta2 .999 recipe. AdamW epsilon1e-6
+versus1e-8 deferred. Prospective scientific design remains exactly three fresh
+pairs at commonLR .00125,equal zero LR search,original strict gates,no rescue.
+Evidence: `final-ln-bias-preparation-001/model001-plan.json`, `model001.json`,
+`model-resume001-plan.json`, `model-resume001.json`, `capacity001/002/003.json`;
+`storage-recovery-017/raw-completed.json`, `restoration-check.json`.

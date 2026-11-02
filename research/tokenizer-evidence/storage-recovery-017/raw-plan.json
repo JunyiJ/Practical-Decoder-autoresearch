@@ -1,0 +1,618 @@
+{
+  "operation": "lossless_protected_raw_cold_storage_not_retirement",
+  "streaming_limits": {
+    "output_bytes": 536870912,
+    "metadata_headroom_bytes": 16777216,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "seconds": 600,
+    "threads": 1
+  },
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/archive_raw.py",
+    "sha256": "6ed6a7d15b146528e67c51f1944e4fd1939a078bda459b5f340895be7e3a1c3d"
+  },
+  "codec": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/archive_codec.py",
+    "sha256": "63a8c5a799089093dc7ebcdd7c1ceeef0dc75935045c8f6bf4b4458a6886d929"
+  },
+  "materializer": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/materialize.py",
+    "sha256": "1e6cbba40ca70fabf043a0f54dce0c9ebd5a7fb34bd93eac1f14baa9f1904e70"
+  },
+  "policy": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_CHECKPOINT_RETENTION.md",
+    "sha256": "342f3412494e5132778692d55dbbdb355c5ef0b91b8b5ccb5d5ab9e509ef255a"
+  },
+  "primitives": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-score-preparation-001/archive-workers.py",
+    "sha256": "958d14019eafb5aae61dc2382786093879278321e6ae2d3913c0fe9495028dd0"
+  },
+  "probe": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/archive-probe.json",
+    "sha256": "7336a35713674e018b2b22141144dc23a3c835b4a49a8c131e483f29093afa9a"
+  },
+  "files": [
+    {
+      "original": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/00/checkpoints/final_001200_1793624023163277000.pt",
+        "size": 445187557,
+        "sha256": "d9e83a5d30014664cc63f14e91e74b13a84004ab7de2454f11972d0f6d9ea209",
+        "device": 16777234,
+        "inode": 92704445,
+        "mtime_ns": 1793624047700347613
+      },
+      "member": "research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/00/checkpoints/final_001200_1793624023163277000.pt",
+      "archive": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/protected-raw-storage-017/00-d9e83a5d3001.tar.zst",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/00/resource-events.jsonl",
+        "sha256": "8b0e94e7df5c95939a4bcc3c66ba109b5404cd43b15ea554967749189de3b6ae"
+      },
+      "terminal": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/STOP",
+        "sha256": "f72de98d6c73e1f05832436ab5bec7b03a4270c038066c350d0d78bed841cddc"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/00/checkpoints/h200.pt",
+        "sha256": "9fd26b19c171ee0061a403256142eba695eb16d410e9c5d69fb5491e972d554b"
+      },
+      "classification": "selected_or_fresh_raw_preserved_losslessly_not_retired"
+    },
+    {
+      "original": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/01/checkpoints/final_001200_1793624559619852000.pt",
+        "size": 445187557,
+        "sha256": "a27f0dd70653ce4f2f3f7ecdcb6b0566f99eb1d1384edcaa9de5a18b9aeae723",
+        "device": 16777234,
+        "inode": 92709862,
+        "mtime_ns": 1793624588739178324
+      },
+      "member": "research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/01/checkpoints/final_001200_1793624559619852000.pt",
+      "archive": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/protected-raw-storage-017/01-a27f0dd70653.tar.zst",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/01/resource-events.jsonl",
+        "sha256": "4fa480f8893fcbba042459eca472725d1e8fad8c9855a6cde454ddd13c978484"
+      },
+      "terminal": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/STOP",
+        "sha256": "f72de98d6c73e1f05832436ab5bec7b03a4270c038066c350d0d78bed841cddc"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/01/checkpoints/h200.pt",
+        "sha256": "e184bc6709ca20254d3bb4825391d55c03d92f6ce4ea389a9d994a4de6fa8bdf"
+      },
+      "classification": "selected_or_fresh_raw_preserved_losslessly_not_retired"
+    },
+    {
+      "original": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/02/checkpoints/final_001200_1793625161569356000.pt",
+        "size": 445187557,
+        "sha256": "5a609ef2c23dac73e42611fef9125c5b8c3bebf629d87c3d086405aaeef5d962",
+        "device": 16777234,
+        "inode": 92715389,
+        "mtime_ns": 1793625196275959328
+      },
+      "member": "research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/02/checkpoints/final_001200_1793625161569356000.pt",
+      "archive": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/protected-raw-storage-017/02-5a609ef2c23d.tar.zst",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/02/resource-events.jsonl",
+        "sha256": "d9fc669254df757dba29816a3c7d4af0efd84721fa8087c73c453fb30e4934a1"
+      },
+      "terminal": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/STOP",
+        "sha256": "f72de98d6c73e1f05832436ab5bec7b03a4270c038066c350d0d78bed841cddc"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/02/checkpoints/h200.pt",
+        "sha256": "a62b093af7716a52fd3b7ed204d8e02cec85d35fb9a21947287ba55e9bfb96e1"
+      },
+      "classification": "selected_or_fresh_raw_preserved_losslessly_not_retired"
+    },
+    {
+      "original": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/03/checkpoints/final_001200_1793625754619121000.pt",
+        "size": 445187557,
+        "sha256": "be1e9f5a92de41774b1327afa653caea8cf9ea0e59cb54b3dceb139ec86087b9",
+        "device": 16777234,
+        "inode": 92720911,
+        "mtime_ns": 1793625797953362886
+      },
+      "member": "research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/03/checkpoints/final_001200_1793625754619121000.pt",
+      "archive": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/protected-raw-storage-017/03-be1e9f5a92de.tar.zst",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/03/resource-events.jsonl",
+        "sha256": "67b6e042c280fb351f7ca6400a7c25d3dc943346cd05ee36a4de4fc5c88014be"
+      },
+      "terminal": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/STOP",
+        "sha256": "f72de98d6c73e1f05832436ab5bec7b03a4270c038066c350d0d78bed841cddc"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/03/checkpoints/h200.pt",
+        "sha256": "6466d92ffc6983828e8798cfa22793ea59f97e25d24c04722f48502c733c7274"
+      },
+      "classification": "selected_or_fresh_raw_preserved_losslessly_not_retired"
+    },
+    {
+      "original": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/04/checkpoints/final_001200_1793626284614236000.pt",
+        "size": 445187557,
+        "sha256": "a16f69dd1a35f6d2ecf7243e6dc00851b3eab0d663606d89ab9db3b9c9ce8d17",
+        "device": 16777234,
+        "inode": 92726509,
+        "mtime_ns": 1793626331074833161
+      },
+      "member": "research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/04/checkpoints/final_001200_1793626284614236000.pt",
+      "archive": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/protected-raw-storage-017/04-a16f69dd1a35.tar.zst",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/04/resource-events.jsonl",
+        "sha256": "95cd13cdce0938214b29eff01ab7e73f436b74ad60661dc6135185279f82821a"
+      },
+      "terminal": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/STOP",
+        "sha256": "f72de98d6c73e1f05832436ab5bec7b03a4270c038066c350d0d78bed841cddc"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/04/checkpoints/h200.pt",
+        "sha256": "7573f25e5391eddeeb9ece1d3b5a119ace083ef8ae8488c0eac1f4f1b5674bfa"
+      },
+      "classification": "selected_or_fresh_raw_preserved_losslessly_not_retired"
+    },
+    {
+      "original": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/05/checkpoints/final_001200_1793626753268852000.pt",
+        "size": 445187557,
+        "sha256": "b51ebfff8911b716ca7332bd3202f3e7f5feeb3d76f5be49b8f66ee158e1f3a9",
+        "device": 16777234,
+        "inode": 92732018,
+        "mtime_ns": 1793626804004875892
+      },
+      "member": "research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/05/checkpoints/final_001200_1793626753268852000.pt",
+      "archive": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_archives/protected-raw-storage-017/05-b51ebfff8911.tar.zst",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/05/resource-events.jsonl",
+        "sha256": "6dc07c56b4decac6fa18c4746eeef4e407d3f3f633a1b188f2bb40a809d636e8"
+      },
+      "terminal": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/STOP",
+        "sha256": "f72de98d6c73e1f05832436ab5bec7b03a4270c038066c350d0d78bed841cddc"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-quality-v1-001/evidence/quality/05/checkpoints/h200.pt",
+        "sha256": "6ffa4256734aa4e932266a24b3a56b7d025c72fb0173b8a10638dbfbb4168298"
+      },
+      "classification": "selected_or_fresh_raw_preserved_losslessly_not_retired"
+    }
+  ],
+  "protected_shards": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-000.json",
+      "sha256": "d275fea715af871fb16e2402f724db666819d65072cd48a8ace03c8ee2780879"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-001.json",
+      "sha256": "60e8b1dc120c8688bcc9283395a8553654ae51225111cec03ed5c822b2944526"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-002.json",
+      "sha256": "c196d35caced01b140f3e095677b1e9ce9ea1efe6d8f88dc7c9c53482d205cde"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-003.json",
+      "sha256": "0cbfabbe4edca14cff0013964852576d6cee56206988ab9e33775c7158ae0fb2"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-004.json",
+      "sha256": "7cc7e59969bb7f84617f004de911f25ea5107c97703fe464e5b07a043bb3e5f9"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-005.json",
+      "sha256": "7a5de45a328f6fa09e0ff79021affbf7be43390d1dcb1da05afb6b560e3aed59"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-006.json",
+      "sha256": "6a68aaa937098fb09830d31a14fd6c240c19ff640647ed3cea2c267023e3dfc8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-007.json",
+      "sha256": "7658edf0f2688fbf99f5726469bd31daf5ea573c1475c7545b2eef61e17c5f15"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-008.json",
+      "sha256": "d37fb04e48fb73f3b8f8ed79b79b759d6dfddbb70451ff4e40bef8e3802d0f10"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-009.json",
+      "sha256": "6b528b4c2332a0460cbd42dafbe112c10e57210ee62b03dd768f5ffd2eb4d2aa"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-010.json",
+      "sha256": "83f54b40dd33694d4b97a6c82e686c574f47a44426b70b5d222a58cd3e0bcdbf"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-011.json",
+      "sha256": "d75f4efba43c1c6ced314a15e5a05b7a54d0ff61b36fc9bc1a34f77bc3e11852"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-012.json",
+      "sha256": "53cc2e3f382ccaeec577134f7bf735c9fad30b444e09a93183046d91cc8db933"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-013.json",
+      "sha256": "c4d3acd04fb0bc6f4e0513c35b2babb198d957e0cef330510c4bb6008c23fa75"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-014.json",
+      "sha256": "abb045b752e0f44436bcbdbc2407da729b0a49d49fe66672606f8d211680f026"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-015.json",
+      "sha256": "d1aaefe821eaf8771af792ddf9615907ef9625d8044ab0b18009e26d2c0dc5d3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-016.json",
+      "sha256": "8d06485d522d513d4fdfe92831e62a27f850f4594d5746814a0fbfc9b6a105ec"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-017.json",
+      "sha256": "456913bba88d93766d79df5b60cbddfc958e1969ced2a133befafc899b4c7178"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-018.json",
+      "sha256": "d4a18ca82440da4a2d3cf0cf3d1b3db0994e47be595f5413e85a15a303a25db2"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-019.json",
+      "sha256": "9b8a445bd77f676d0135f598a105cc95f01c8116a2f569fc49874ee39c7694a7"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-020.json",
+      "sha256": "b260d72b855aa691902d8d37a86905603396cf2e89c0772eb1daba5f057bc882"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-021.json",
+      "sha256": "d483a720e1f1e7c81813e1bc0fb8b27fe16361b9d8d02e5ffaf4a681ff0a90be"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-022.json",
+      "sha256": "f6b71ea36295e843c1c6ef2f66c8218c6c63ffe8fd5aec48668bcf634ffadc66"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-023.json",
+      "sha256": "49816d835e8bb3e598f8c031802e99c0ae31e1ab16fa2ca616acbd9df0f50924"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-024.json",
+      "sha256": "52381ae81377d405e5659f53aa7855d9e350cc4b0d87cec06b0b47811292cf4c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-025.json",
+      "sha256": "b8932ff2c44b098a4d29eca1bd3322354f09747ad0988e6feca9f38a771ae2b7"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-026.json",
+      "sha256": "3ff738864c2163823aea7ff16f9db101b173a47c5fa171182b42c4cda44865c8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-027.json",
+      "sha256": "9d136e0bb25fbe33e16826cfd54faa2eb5ed394f7d444fef181e0bf70088d776"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-028.json",
+      "sha256": "889a82c92f315caf1c5d237a467efb0d7293464681c6dbfc957c117d2a62bde7"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-029.json",
+      "sha256": "fe430af3f5d6b4c0ccb916e18d40ccf1ecb9b760aeeeabbde72652dac9735145"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-030.json",
+      "sha256": "edbf920927bc3fc09168a63d24b72f34b5166a224a1a1335b4b8a35a0ea6f22a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-031.json",
+      "sha256": "3952af62df7dc3e5c5ec189c4f9764a4b9301971c62dd7b4365af5dc4e440408"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-032.json",
+      "sha256": "4697ed71def8f0d693ec3ecc801514a035052547cd9136c2c3cb99e86d89b558"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-033.json",
+      "sha256": "37c876ee86b15c7bffa721dd7bf50be012c3565e9cab10f0e867a65755459b2d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-034.json",
+      "sha256": "8bc71e5fcaf4214e8e2012fe6552d3a45fa1a09611ad9006fef07cc201fdad07"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-035.json",
+      "sha256": "f5575b4558e678f284e2776c91e14f2b51624ce176443c001d3330a4b9f47484"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-036.json",
+      "sha256": "aef325ce980edd4d4a3b7ef32ada4b5ce7fe2bdba16010eb657d8d6a3ebe5b81"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-037.json",
+      "sha256": "ba733924d78908273f8aea5d07289c7874d9ad6f1526a6e847b87f355080a983"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-038.json",
+      "sha256": "1c51c1659210c2937ddf4e3e09699e80cf90d278f9fcd687fbc9225f1e7c6126"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-039.json",
+      "sha256": "bad7baf1e381ed323d7fb13113427f76cd15fbe13bdd8e38071e8171832475d3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-040.json",
+      "sha256": "94372c59fc3c9783d037c1df99693ea1272bad2cde3dd378893f26f4dcc57086"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-041.json",
+      "sha256": "127624b6dc139c612c8378bbe535e61636f26454bebeb71dd1f91e876d573bbb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-042.json",
+      "sha256": "11e1d5bc0d73d98c111f7c969f03200c6fc5485e546897f512daf5bdbfbce813"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-043.json",
+      "sha256": "c43554ad16808548a467da33e45114cf856b1b668779e26acb3d182c24367944"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-044.json",
+      "sha256": "91053d189c0183b86e3ce3aba761a85e749c8121024bb3e36eed9ca0a17138eb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-045.json",
+      "sha256": "e8260a30d737bfda71ec2cf03dfaf94e6de42115eeff232023780857680f93fb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-046.json",
+      "sha256": "1ebf1b0ce39fb57ee75693b41353b8620e0552ef6e4b877b461dcc5a6750d81f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-047.json",
+      "sha256": "76a3eecf4e2bbee2fa914792a72563a0c365f70222c9d5546ad7cb94c3a01835"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-048.json",
+      "sha256": "597885586c395353e6a33d5339ddb7e3ff6f2680a838f8b0f359ae419b1ab61f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-049.json",
+      "sha256": "b6117309e0aeedb424a07fa4d02aec439df129f30d3f5c91cbeb13b725a74af8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-050.json",
+      "sha256": "04d461a31205019a327c68e6550e84362dd2223bc06197ac100672a122296a47"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-051.json",
+      "sha256": "74322f1aa7c6d50f0bd930ba16c875727ee0646bbb1d8523dc8ebcab36a9623e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-052.json",
+      "sha256": "1f9c65a1d28a5584fdb94a81c08b02d08d6d72feb5cf9d295985f1b54f68b91d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-053.json",
+      "sha256": "4c9ce3892207372b2f22f3ddd7f78e9704b997781c7ae847421206c3d917c969"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-054.json",
+      "sha256": "d54616d68aa02d92f0b02758f730381fa799fdcbc790684a449567f88430d0c5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-055.json",
+      "sha256": "e6756d04743979cadcf4f861468efe4779d0cf3eac99bb9ec2b4069ea0030740"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-056.json",
+      "sha256": "99169f3a5dedea4cfab3e67abe8fe332aa4d2a6418afeb4b7aa402a459eac430"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-057.json",
+      "sha256": "5c8b11f8e697d22a8bcb646f78dc24fb263d208caba11359292e902638e7c8a8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-058.json",
+      "sha256": "d877ac2f676a358a2372baf511bd1d0acc19b713779d903380d7760223ad036b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-059.json",
+      "sha256": "da3149664af828538f135cad65ca53af0b1c0b9dddaf6dc05b81da493fd75448"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-060.json",
+      "sha256": "9464291cbd6cd4f90119156e5ef41ab4b03e1885c38e2b7d7ae63e44cd2f1aa9"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-061.json",
+      "sha256": "42cd8e54e9e6fe5af2f81cbc4acfe88d8074aa528097b8e1d73fd15f0a14ab07"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-062.json",
+      "sha256": "4e0df91346b088bfb3859804a3279d249542c3983225f79e1f1f4c5d98e8e5f9"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-063.json",
+      "sha256": "2320c60075989367f2d3ec509c26016cd405d0fbdca9c12dee640957718212a4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-064.json",
+      "sha256": "c9bd0466ad4626e3e05864d99529ba7cf3f9fd470d8c820ed228bf6831229d4b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-065.json",
+      "sha256": "11a0a359602a0aa8f9681b41d7da8ac97ce504ecce149d940f1551ae864bfa2f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-066.json",
+      "sha256": "1d40e4160c90cef4d79baec342651082aa121b1762f8d2462fa309c1dcff8ae0"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-067.json",
+      "sha256": "d5b0f9a96aa84d0482eccbbc3c4f62e5f91e15313247e204e2c4be4bc44f608e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-068.json",
+      "sha256": "969c9009cf75c9b121d5fac797e30e39899c8cd13e2f0ae161e76e59fce3608e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-069.json",
+      "sha256": "8ff903fb04df208f81d56a47609086f785baf3efb510d7fd4e8c01b7d5becacd"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-070.json",
+      "sha256": "5cdcaf524ca112747c33f8475940068135f2e19dd7259be973b7404ce8235d6f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-071.json",
+      "sha256": "b6cad4e631a459d3cd86f9401e5890f84b99bcb1114e1ac7bfedb9885bdbcd00"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-072.json",
+      "sha256": "512c5406544877e992cb559940146746925f47dca79c93d7f61aba7e2dd4eb3e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-073.json",
+      "sha256": "81b4b7d17097f171defa126b725740c61b977f37d218cb0764e3a7268f7ed8eb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-074.json",
+      "sha256": "f478e898b8468b422f691b639c50c2ad939d7aed5876c8562d20c1b958d4fb57"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-075.json",
+      "sha256": "a297bfe33518578898050bcaf172072d28945cb0f16d576231aec77e8c2c6f35"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-076.json",
+      "sha256": "2e0587e36cbd7dc4fa80e26f98e77100a75d5a17ca73c95173821b71d9b24e69"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-077.json",
+      "sha256": "055dc0c8ae35b479ccda6d2fccf7f4a2e40badf9540ef4690e4d13c8170932cb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-078.json",
+      "sha256": "27bf7ec431b565bd2b4f110d7058133dd84f040cf2b9dd3884f124572f16aaa5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-079.json",
+      "sha256": "b3414915eea75aeda28101f1e1ce3eb8aa2245d0697c419da88276fe978f61ed"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-080.json",
+      "sha256": "e4d399c28c30220f3f052f2499c0c86da1308078a32db9c5c1b322e23a664ee4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-081.json",
+      "sha256": "e9d8990f719e3ac0abf2d81c076ba9b481b1d4387aa37c0faef2ccaa42ffe161"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-082.json",
+      "sha256": "2ca36e28526f12e3364297e575bfdb627c8446d905a9a8f6b70f137f7605026a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-083.json",
+      "sha256": "f6308239f13251f085260ca6247e80b373adacb24aad384124d7f537c755fda0"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-084.json",
+      "sha256": "665d3bc888a969bab32e7e3bd84dc0718a72a1956cd43e7e994cba606dada0da"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-085.json",
+      "sha256": "3c0b937b1180bd1438b0b677d23a325b07f5e5dedfad6c813a27bf4828d32934"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-086.json",
+      "sha256": "1d08682748c29a954f43cfbd6c092649187524947bf808523ec5fa31c1914f22"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-087.json",
+      "sha256": "abc9ff9dee7cc9117c2691da870999975adb236c9f4522e1f3bd9bd0e423c9f0"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-088.json",
+      "sha256": "f649468a5701c55b56c22b8eb90303876335ab8647c885881315f1d580065c6f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-089.json",
+      "sha256": "18fc65c268b432a7dd78d98e18e8aafcf01cddc233b9cfa45de16607fc3bad07"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-090.json",
+      "sha256": "db1577100b4b3108afbfbb07970bfa1a6432daa4367a5a44374044bc19eeb476"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-091.json",
+      "sha256": "3254f6de81b1577d9f68f45b260cbe2257acb175207e1f7eec76cf910b6cfc50"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-092.json",
+      "sha256": "033cbe3fc560b07f6fb726512cb1fbdefa2cdc08ddd348d85e300d31455c5ebd"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-093.json",
+      "sha256": "30466d8248ca2680c7a1a0876ac83b53e420390cd882752d71687396ed91056a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-094.json",
+      "sha256": "9bf328d11d8e1c6934393f036915631d3b1c7879a8a51509307bdf28df4f4ef5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-095.json",
+      "sha256": "974cec8360315af7de829e237d39b18c770913ab6df62238a243bcdb8a946bcd"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-096.json",
+      "sha256": "af19d3f439492d71b2c58d3b5a631606048904d951c2d695f79ff13e87972c29"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-097.json",
+      "sha256": "d3995c36cb2ac63d2e1732b2ffac6ab9c104fe9a8d118661dc618d6f7844bf31"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-098.json",
+      "sha256": "ec80b97c9388b2d955707a666138f144cd31b07a0477b86a88aafda368381a9e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-099.json",
+      "sha256": "a4dcb9e218873ed0ee648a853d0c297966e101fcf6d5da1f68b4cd4203171b82"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-100.json",
+      "sha256": "610971294662638534ededd61abaee27d6d4cae964584b27e2771951670b72e7"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-101.json",
+      "sha256": "13561cbf6337b0bf2c8b5e1d772b441b6d6672cc06e6468dce91281ca74e1988"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-102.json",
+      "sha256": "ce3d75c4445c8e79972e72083259eda0599b7d309a20022d41ebf5fa84a78859"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-103.json",
+      "sha256": "0fb1efd251e422aff197d90792f43cf76514493223876f0f664635d60ac4675b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-104.json",
+      "sha256": "9d8209fefc89a70c6d582183516a159161f7b212456249043623c1a58417b6a9"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-protected-105.json",
+      "sha256": "01747751221d5282e096f00d71df8c53c267334cb474a27ddd4b1d049373597a"
+    }
+  ],
+  "original_bytes": 2671125342,
+  "free_before": 9274339328,
+  "required_panel": 9781116928,
+  "all_h200_remain_loose": true,
+  "restoration": "Use materialize.py with the original relative path and a capacity check; archive remains protected. No closed campaign is rerun."
+}
