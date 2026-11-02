@@ -1,0 +1,631 @@
+{
+  "as_of": "2026-11-01 America/Los_Angeles",
+  "lr_comparisons": [
+    {
+      "width": 64,
+      "candidate_mean_ce": 5.214648135519582,
+      "baseline_mean_ce": 5.562135895443537,
+      "mean_delta": -0.347487759923955,
+      "paired_seed_deltas": [
+        -0.3539051638986441,
+        -0.33551539784314865,
+        -0.35304271803007303
+      ],
+      "intervals": [
+        {
+          "block_tokens": 2048,
+          "conditional_interval": [
+            -0.3834965669772435,
+            -0.3129489589540969
+          ]
+        },
+        {
+          "block_tokens": 4096,
+          "conditional_interval": [
+            -0.39706462148364136,
+            -0.30428697063799687
+          ]
+        },
+        {
+          "block_tokens": 8192,
+          "conditional_interval": [
+            -0.41815623296708965,
+            -0.2976377214594493
+          ]
+        }
+      ],
+      "passes": true
+    },
+    {
+      "width": 256,
+      "candidate_mean_ce": 6.309554020855746,
+      "baseline_mean_ce": 7.082104537278725,
+      "mean_delta": -0.7725505164229789,
+      "paired_seed_deltas": [
+        -0.7713136652093091,
+        -0.7935141917055475,
+        -0.7528236923540801
+      ],
+      "intervals": [
+        {
+          "block_tokens": 2048,
+          "conditional_interval": [
+            -0.813322476571463,
+            -0.7354791830918135
+          ]
+        },
+        {
+          "block_tokens": 4096,
+          "conditional_interval": [
+            -0.8219033997370238,
+            -0.7269521655216947
+          ]
+        },
+        {
+          "block_tokens": 8192,
+          "conditional_interval": [
+            -0.83514534610066,
+            -0.736276562602213
+          ]
+        }
+      ],
+      "passes": true
+    }
+  ],
+  "horizon": {
+    "mean_h200_ce": {
+      "1200": 4.753151027625648,
+      "3000": 5.464003005913636
+    },
+    "mean_delta": -0.7108519782879869,
+    "mean_training_seconds": {
+      "1200": 201.73488210110614,
+      "3000": 503.91159252698225
+    },
+    "paired_seed_deltas": {
+      "2811": -0.7374513219341994,
+      "2812": -0.69465046219059,
+      "2813": -0.700454150739171
+    }
+  },
+  "attention": [
+    {
+      "label": "GQA vs MHA \u00b7 D64\n3,000 updates",
+      "delta": 0.017884195968121946,
+      "ci": [
+        0.007822076225527441,
+        0.02836044965786377
+      ],
+      "cache": 50.0,
+      "decode": 2.723335766516044,
+      "adopted": false
+    },
+    {
+      "label": "GQA vs MHA \u00b7 D256\n3,000 updates",
+      "delta": -0.0549290396891007,
+      "ci": [
+        -0.06982862480586506,
+        -0.0399095541868699
+      ],
+      "cache": 50.0,
+      "decode": 1.1424578821837228,
+      "adopted": true
+    },
+    {
+      "label": "MLA vs MHA \u00b7 D256\n1,200 updates",
+      "delta": -0.03244018564230947,
+      "ci": [
+        -0.03714176897002281,
+        -0.027935096201748708
+      ],
+      "cache": 81.25,
+      "decode": 20.92833136845198,
+      "adopted": true
+    },
+    {
+      "label": "MLA vs GQA \u00b7 D512\n1,200 updates",
+      "delta": -0.047630405950996636,
+      "ci": [
+        -0.052322016794398095,
+        -0.043790490424549834
+      ],
+      "cache": 68.75,
+      "decode": 19.884396105680402,
+      "adopted": true
+    }
+  ],
+  "later_refinements": [
+    {
+      "label": "Exact GELU gate vs SiLU",
+      "seed_deltas": [
+        -0.0001222182165727091,
+        0.002844496622569261,
+        0.0019299893713834054
+      ],
+      "mean_delta": 0.001550755925793319,
+      "bounds": {
+        "2048": {
+          "gate_upper": 0.002470789134928842,
+          "descriptive_95pct": [
+            0.0006927668606927679,
+            0.002409247686779208
+          ]
+        },
+        "4096": {
+          "gate_upper": 0.002569505209332,
+          "descriptive_95pct": [
+            0.0003850304434315013,
+            0.002518861133044932
+          ]
+        },
+        "8192": {
+          "gate_upper": 0.0027881694609431422,
+          "descriptive_95pct": [
+            0.00010532823902203391,
+            0.0027160963555572662
+          ]
+        }
+      }
+    },
+    {
+      "label": "LayerNorm vs RMSNorm",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            -0.006611904033478749,
+            -0.0040114048241520605
+          ],
+          "gate_upper": -0.003824543351761033
+        },
+        "4096": {
+          "descriptive_95pct": [
+            -0.006560610517352049,
+            -0.004280247031403162
+          ],
+          "gate_upper": -0.004208057624377959
+        },
+        "8192": {
+          "descriptive_95pct": [
+            -0.006952352124067448,
+            -0.004011449054508326
+          ],
+          "gate_upper": -0.003918383175455728
+        }
+      },
+      "mean_delta": -0.005442138543323048,
+      "seed_deltas": [
+        -0.003193817013148051,
+        -0.007756824791674086,
+        -0.005375773825147008
+      ]
+    },
+    {
+      "label": "EMA half-life 100 vs 200",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            -0.011404427907017319,
+            -0.006654241356064582
+          ],
+          "gate_upper": -0.006458293397277302
+        },
+        "4096": {
+          "descriptive_95pct": [
+            -0.011866157620580846,
+            -0.006116259383864454
+          ],
+          "gate_upper": -0.005823390668679867
+        },
+        "8192": {
+          "descriptive_95pct": [
+            -0.012276185468205072,
+            -0.005384519348154189
+          ],
+          "gate_upper": -0.004900054821300569
+        }
+      },
+      "mean_delta": -0.008933774274503052,
+      "seed_deltas": [
+        -0.010519558935644803,
+        -0.00514436000717973,
+        -0.011137403880684628
+      ]
+    },
+    {
+      "label": "Ungated SiLU1008 vs SwiGLU672",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            0.003193094855152698,
+            0.011832723251784081
+          ],
+          "gate_upper": 0.012057620824354073
+        },
+        "4096": {
+          "descriptive_95pct": [
+            0.0023299974259209768,
+            0.012221908103513524
+          ],
+          "gate_upper": 0.012518782511895315
+        },
+        "8192": {
+          "descriptive_95pct": [
+            0.0009235221985711521,
+            0.013122211050403601
+          ],
+          "gate_upper": 0.013122211050403601
+        }
+      },
+      "mean_delta": 0.007388630366807889,
+      "seed_deltas": [
+        0.013767702604871656,
+        -0.004855530602347821,
+        0.013253719097899831
+      ]
+    },
+    {
+      "label": "Attention multiplier 1.0 vs 0.5",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            -0.017749178997281703,
+            -0.011981252252029484
+          ],
+          "gate_upper": -0.011724943034879257
+        },
+        "4096": {
+          "descriptive_95pct": [
+            -0.016979215378346957,
+            -0.012739206807991068
+          ],
+          "gate_upper": -0.012548857290259317
+        },
+        "8192": {
+          "descriptive_95pct": [
+            -0.016721147076190827,
+            -0.012374551962879649
+          ],
+          "gate_upper": -0.012035767306394494
+        }
+      },
+      "mean_delta": -0.01497150242441804,
+      "seed_deltas": [
+        -0.013146784613088075,
+        -0.017332814446753688,
+        -0.014434908213412354
+      ]
+    },
+    {
+      "label": "FFN product RMSNorm vs none",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            -0.004887470513546249,
+            0.005293713296127994
+          ],
+          "gate_upper": 0.005718593165714239
+        },
+        "4096": {
+          "descriptive_95pct": [
+            -0.0056302007065410975,
+            0.006021067485279451
+          ],
+          "gate_upper": 0.006452444897836713
+        },
+        "8192": {
+          "descriptive_95pct": [
+            -0.006437406563808114,
+            0.006947276980727485
+          ],
+          "gate_upper": 0.006978978954097195
+        }
+      },
+      "mean_delta": 0.0004387511051875817,
+      "seed_deltas": [
+        -0.0006025484128580226,
+        0.007976754868608113,
+        -0.006057953140187346
+      ]
+    },
+    {
+      "label": "100-update warmup vs none",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            0.0006588919109294429,
+            0.004586430656679229
+          ],
+          "gate_upper": 0.004770912558155014
+        },
+        "4096": {
+          "descriptive_95pct": [
+            0.00010777328384961397,
+            0.005164572521564458
+          ],
+          "gate_upper": 0.0053859092366902814
+        },
+        "8192": {
+          "descriptive_95pct": [
+            0.00072282708955503,
+            0.004498471905921923
+          ],
+          "gate_upper": 0.004645967847417006
+        }
+      },
+      "mean_delta": 0.0025791866880477015,
+      "seed_deltas": [
+        0.003528738994949443,
+        0.0015624059714607107,
+        0.0026464150977329516
+      ]
+    },
+    {
+      "label": "Causal FFN mixing vs none",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            -0.01290493114513497,
+            0.0010604313809743353
+          ],
+          "gate_upper": 0.0016267590263640427
+        },
+        "4096": {
+          "descriptive_95pct": [
+            -0.013258767609002204,
+            0.000491487349077566
+          ],
+          "gate_upper": 0.0007544119357766375
+        },
+        "8192": {
+          "descriptive_95pct": [
+            -0.00938179590973244,
+            -0.0008664082325819135
+          ],
+          "gate_upper": -0.0006949244163637902
+        }
+      },
+      "mean_delta": -0.005921143794331035,
+      "seed_deltas": [
+        -0.010714412362270604,
+        0.0025213614971208516,
+        -0.009570380517843353
+      ]
+    },
+    {
+      "label": "Zero weight decay vs 0.00006",
+      "bounds": {
+        "2048": {
+          "descriptive_95pct": [
+            0.006076898971396706,
+            0.012480812336015749
+          ],
+          "gate_upper": 0.012872407187668999
+        },
+        "4096": {
+          "descriptive_95pct": [
+            0.005580330086614872,
+            0.01355345245181881
+          ],
+          "gate_upper": 0.01411414125974317
+        },
+        "8192": {
+          "descriptive_95pct": [
+            0.004592107253519373,
+            0.015340379742563824
+          ],
+          "gate_upper": 0.015832047621199094
+        }
+      },
+      "mean_delta": 0.009165192884960233,
+      "seed_deltas": [
+        0.009304629800063562,
+        0.008200582245224991,
+        0.009990366609592145
+      ]
+    }
+  ],
+  "hybrid_wide": {
+    "hybrid_ce": 4.985189831510325,
+    "gated_mla_ce": 4.8429360153472585,
+    "kda_ce": 4.96329048568082,
+    "hybrid_state_bytes": 399360,
+    "gated_mla_state_bytes": 327680,
+    "kda_state_bytes": 335872,
+    "source_excerpt": "\n\nIndependent final review completed985.06s, guard finished with no reason and\nreviewer exited. All24 quality trajectories, three inference seeds, full history\nand protected artifacts were verified. Hybrid is not adopted; existing adopted\nrecipes remain unchanged. No posthoc promotion of005 gated NoPE MLA versus the\nprior adopted RoPE MLA, since that comparison was not this prospective study.\n\nFresh mean H200 CE: hybrid4.985189831510325, gated MLA4.8429360153472585,\nKDA4.96329048568082. Hybrid-minus-control means are+0.142253816163066 and\n+0.021899345829505; every seed is worse than each control. Simultaneous upper\nbounds at blocks2048/4096/8192 are0.176936/0.190790/0.205227 versus gated MLA\nand0.029720/0.032640/0.036977 versus KDA. Strict and neutral quality gates fail.\nRaw diagnostic means are5.013479965473767 /4.831833194382750 /4.989473011918658\n(hybrid/gated MLA/KDA); the H200 decision metric remains unchanged.\n\nAll seeds measure batch1 state399,360 /327,680 /335,872 bytes, scaling eightfold\nat batch8. Hybrid uses21.875% more state than gated MLA and18.9024% more than KDA;\nmemory gate fails. Median seed-paired hybrid/control latency ratios (prefill,\ndecode) at batch1/batch8: gated MLA(1.815,1.012)/(1.559,1.025);\nKDA(1.026,1.793)/(0.881,1.327). Each seed uses eight measured repeats; warmups\nexcluded. This is local context128/prefill32/decode64 MPS evidence, not general\nproduction, long-context or population-seed superiority. Validation remains\nadaptively reused; holdout closed. Preserve every fresh pair and failure.\n\nDecision: campaign005-final-decision-v2.json. Original audit cache-environment\nfailure remains immutable; the separately recorded cached read-only review\npassed without repeating experimental trajectories. Campaign005 is now closed.\n\nNext architecture direction: tokenizer sparse versus dense FFNs, with the\nhistorical stored-capacity wider-dense control. Read-only feasibility found\nhistorical MoE restricted to MHA and tokenizer contracts restricted to dense.\nTOKENIZER_MOE_PREPARATION.md specifies proposed width256 adopted RoPE MLA\nbackbone, exact FFN arithmetic, bounded equal LR tuning, prospective strict\ncomparison, diagnostics/tests and mandatory capacity audit. No new source edits\nor training; proposal is not frozen and fit is not asserted. Activation/norm/\nresidual families remain queued; further hybrid tuning and separate EMA/horizon\nwork are deferred with rationale. No blanket storage cleanup.\n\n\n"
+  },
+  "table_comparisons": {
+    "matched_untied_vs_legacy_untied": {
+      "intervals": [
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.09111861149457814,
+            0.11432814396787178
+          ],
+          "mean_delta": 0.10266656065529868,
+          "paired_seed_deltas": {
+            "3311": 0.11364294378699125,
+            "3312": 0.09475058830356886,
+            "3313": 0.09960614987533578
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 17,
+          "text_block_tokens": 2048
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.08790164957344605,
+            0.11638975170917233
+          ],
+          "mean_delta": 0.10266656065529867,
+          "paired_seed_deltas": {
+            "3311": 0.11364294378699125,
+            "3312": 0.09475058830356886,
+            "3313": 0.09960614987533578
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 9,
+          "text_block_tokens": 4096
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.08534619251655819,
+            0.11741405171064109
+          ],
+          "mean_delta": 0.10266656065529868,
+          "paired_seed_deltas": {
+            "3311": 0.11364294378699125,
+            "3312": 0.09475058830356886,
+            "3313": 0.09960614987533578
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 5,
+          "text_block_tokens": 8192
+        }
+      ],
+      "neutral": false,
+      "strict": false
+    },
+    "scaled_tied_vs_legacy_untied": {
+      "intervals": [
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.11675627154017747,
+            0.14871843157619904
+          ],
+          "mean_delta": 0.13317450991900048,
+          "paired_seed_deltas": {
+            "3311": 0.13931165282349411,
+            "3312": 0.1268135805659707,
+            "3313": 0.13339829636753642
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 17,
+          "text_block_tokens": 2048
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.11146835399185624,
+            0.15270738853154278
+          ],
+          "mean_delta": 0.13317450991900048,
+          "paired_seed_deltas": {
+            "3311": 0.13931165282349411,
+            "3312": 0.1268135805659707,
+            "3313": 0.13339829636753642
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 9,
+          "text_block_tokens": 4096
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.10420866381261107,
+            0.1557234098162814
+          ],
+          "mean_delta": 0.13317450991900048,
+          "paired_seed_deltas": {
+            "3311": 0.13931165282349411,
+            "3312": 0.1268135805659707,
+            "3313": 0.13339829636753642
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 5,
+          "text_block_tokens": 8192
+        }
+      ],
+      "neutral": false,
+      "strict": false
+    },
+    "scaled_tied_vs_matched_untied": {
+      "intervals": [
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.022864354923336327,
+            0.037021933570147096
+          ],
+          "mean_delta": 0.030507949263701803,
+          "paired_seed_deltas": {
+            "3311": 0.025668709036502868,
+            "3312": 0.032062992262401835,
+            "3313": 0.033792146492200636
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 17,
+          "text_block_tokens": 2048
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.021847560701213305,
+            0.03751528869883199
+          ],
+          "mean_delta": 0.03050794926370181,
+          "paired_seed_deltas": {
+            "3311": 0.025668709036502868,
+            "3312": 0.032062992262401835,
+            "3313": 0.033792146492200636
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 9,
+          "text_block_tokens": 4096
+        },
+        {
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 20261024,
+          "conditional_text_bootstrap_95pct": [
+            0.018862471296052855,
+            0.03835386259366374
+          ],
+          "mean_delta": 0.03050794926370181,
+          "paired_seed_deltas": {
+            "3311": 0.025668709036502868,
+            "3312": 0.032062992262401835,
+            "3313": 0.033792146492200636
+          },
+          "scope": "Text-block resampling conditional on these trained seeds and this adaptively reused validation split. Not seed uncertainty, independent holdout, or a multiple-comparison-adjusted significance test.",
+          "text_block_count": 5,
+          "text_block_tokens": 8192
+        }
+      ],
+      "neutral": false,
+      "strict": false
+    }
+  },
+  "hybrid_small_mean_delta": 0.012373877357627924,
+  "source_sha256": {
+    "research/tokenizer-evidence/quality-001/final-review.json": "01513db3067d10a86673f4fe06f06b8f35c954accb6c4e41ba8a54184501e844",
+    "research/tokenizer-evidence/horizon-001/final-review.json": "890d87964aa317c98d5cd7768834a849be36dc5307413b0a19826d301972ad4b",
+    "research/tokenizer-evidence/gqa-001/final-review.json": "7e1f68b6cbe85a49900f59a2cced079a0d38d790d48891a0bc19de187175e37b",
+    "research/tokenizer-evidence/mla-001/final-review.json": "781b9fff0d93e70aaafd91b811a7bf92520f9bbf9ac1e8187852024170be9d20",
+    "research/tokenizer-evidence/wide-attention-001/final-review.json": "47acf3e7257b5198930425cc9b320cce1da196b167b5c666321eb561b2aae97e",
+    "research/tokenizer-evidence/table-001/final-review.json": "faca4015c02349e106ad49e825a29fc241d187ab8c83de9b744db3f76bdd2425",
+    "research/tokenizer-evidence/hybrid-001/final-review.json": "c7f80b432bd54e7e41c7b0ab51c58346e9c5e90c44c22237faae9c43ae9bf728",
+    "research/tokenizer-evidence/activation-preparation-001/inference-recovery-quality-prerequisite-001-analysis.json": "fd264f3fb7768e8560c24161a155153c3e7e69da88e7c7a9d1ee2ad0ee98e8e5",
+    "research/tokenizer-evidence/activation-preparation-001/inference-recovery002-closed-review.json": "6180dc10f79eb2211d07a2e6ddb474a03076326f17d8c5a02e90112301fb0ff3",
+    "research/tokenizer-evidence/block-norm-preparation-001/quality001-final-review.json": "6107d2cc937d2a8fded8e67a5d086121cb5226ee0bb16ffd3e5aae5b06f00ee3",
+    "research/tokenizer-evidence/ema-horizon-preparation-001/quality001-final-review.json": "9ae564c18b89ed7b6ecbf79dd76314429648cf0fa4cabc9adbf26c1c5389aff8",
+    "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-final-review.json": "53e3872f4fce6e49e9c33c840b7881f67a025c0a5ed31b80ed95ff54e35b99c6",
+    "research/tokenizer-evidence/mla-score-preparation-001/quality001-final-review.json": "042941bc3e22f3e2c64d9ca5b44a8c54f901cf5e6011fbf01acc24b921727765",
+    "research/tokenizer-evidence/ffn-norm-preparation-001/quality001-final-review.json": "f2dee95aa370d408a4567a96b1dabd3826015be137288fa63bd89273eb88dcfb",
+    "research/tokenizer-evidence/warmup-preparation-001/quality001-final-review.json": "7a7e117694b5291e33fba0b26df34c9b7e95ba5c2e69bb7f9665ce86e6a8e499",
+    "research/tokenizer-evidence/local-mix-preparation-001/quality001-final-review.json": "86d89a22127eb680f28ab7297f22031adf11d3cd4f29e694b899127612070933",
+    "research/tokenizer-evidence/decay-preparation-001/quality001-final-review.json": "da36099c29c68d27f6f95f5860f28118cebfc8eed4c5bceb7aeba782866238cf",
+    "research/TOKENIZER_WIDE_HYBRID_PREPARATION.md": "ab1a5d523782303ce5245addafb0dee95ce5896f3d1f374078e55bf53134a8bc"
+  },
+  "scope": "GPT-2-tokenized Tiny Shakespeare, reused validation, three fresh seeds per comparison; no test scoring."
+}
