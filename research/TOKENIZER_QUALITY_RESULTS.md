@@ -8531,3 +8531,44 @@ is an observation, not new-panel readiness. Source/small numerical work proceeds
 Evidence: final-ln-bias-preparation-001/quality001-final-review.json,
 quality001-closure.json, quality001-fresh-inference-pair0/1/2-review.json;
 adamw-epsilon-preparation-001/direction-decision.json and optimizer-component001-*.
+
+## November 2 — AdamW epsilon full-model and serialized resume passed
+
+Both1e-8/1e-6 arms passed model002 and model-resume002. Shared initialization,
+logits,RNG and all Muon/AdamW groups match except declared epsilon. Both have
+28,492,416 parameters,88 EMA tensors,44 AdamW and44 Muon groups. Exact native
+child updates on each backend,CPU/MPS gradients,full/cache/reset/causality and
+foreign-config/saved-epsilon rejection passed. The added epsilon backend
+update discrepancy is1.8477439880371094e-5 relative to unchanged control;
+absolute CPU/MPS post-update equality is not claimed.
+
+Four-update fresh repeats and serialized resumes match raw model,optimizer,EMA,
+RNG and clipping history exactly(maxerror0). Step2 serializes in capped memory;
+final-step4 raw/H200 with3 snapshots passes CPU/MPS full/cache/reset at batches1/8.
+All839 source/config bindings remain unchanged,including813 accepted predecessors
+and826 original attempt bindings. Generated integration only: no scientific
+quality claim,new scientific seeds,pilot/quality freeze or active worker.
+
+Original model001 failed at optimizer construction before any update: inherited
+grouping used the original namespace embedding class in a strict type check.
+Sources,plan,log,guard and failure receipt remain immutable. Separate v2 copies
+exact inherited grouping into its own namespace;model002 preserves the strict
+class guard and all numerical/resource tolerances. The unlaunched original
+resume001 remains unexecuted. No closed fixture was retried or guard bypassed.
+
+Four successful generated raw/H200 files total1,118,319,316B and remain retained
+until new worker integration re-audits actual optimizer/EMA/RNG/history/cache and
+closes tensor dependencies,followed by a NEW exact retirement audit. Capacity002
+observed8,736,092,160B against complete worker-pair9,814,671,360B;conditional
+post-retirement9,854,411,476B has only39,740,116B margin. This is a recovery route,
+not deletion or dispatch readiness. Source integration proceeds;remeasure live
+capacity after exact authorized recovery and inventory lossless recovery if needed.
+
+Next minimal actual trainer/output/worker and independent parent full-validation/
+inference adapters outside frozen sources,with explicit epsilon/history checks.
+Then fresh census,full retained-output high-water including serialization/metadata/
+8GiB reserve,finite resource pilots and exactly three fresh pairs at commonLR.00125,
+zeroLRsearch,original gates,no rescue. Retain epsilon1e-8 and learned final bias.
+Final LayerNorm learned-scale-versus-fixed-unit remains deferred.
+Evidence: adamw-epsilon-preparation-001/model001-failure.json,model002-plan.json,
+model002.json,model-resume002-plan.json,model-resume002.json,capacity001/002.json.

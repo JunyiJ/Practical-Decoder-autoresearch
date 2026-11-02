@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/model001.py", line 58, in <module>
+    torch.manual_seed(91761);cpu=GPT(cfg.model);opt=build_optimizer(cpu,cfg);rng=torch.get_rng_state().clone();d=digest(cpu);gg=groups(opt,cpu)
+                                                    ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/adamw_epsilon_model_v1/integration.py", line 16, in build_optimizer
+    result = construct(model, cfg.training)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/adamw_epsilon_model_v1/runtime/train/optimizers.py", line 29, in build_optimizer
+    result = inherited_build(model, training)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_bias_model_v1/runtime/train/optimizers.py", line 41, in build_optimizer
+    result = inherited_build(model, training)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/adamw_beta2_model_v1/runtime/train/_grouping.py", line 67, in build_optimizer
+    validate_architecture_model(model)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/readout_centering_model_v1/runtime/models/tokenizer_architecture.py", line 97, in validate_architecture_model
+    validate_norm_model(model, contract)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_bias_model_v1/runtime/models/block_norm.py", line 139, in validate_model
+    require(type(model.transformer.wte) is expected_embedding, 'Constructed embedding backward policy differs')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/spec.py", line 17, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Constructed embedding backward policy differs

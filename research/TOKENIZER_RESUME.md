@@ -8,23 +8,28 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Final-bias quality001 closed without adoption. AdamW epsilon component001 passed.**
+**AdamW epsilon model002 and serialized-resume002 passed both arms.**
 
-Removing final bias improved all three seeds, mean-0.00930456 nats/token, but
-missed the original0.02 mean threshold. Retain learned bias; all six fresh pairs
-are protected and all quality commands closed. Three inference reviews passed.
+No active worker or new scientific seed reservation. Epsilon1e-8 versus1e-6
+preserves shared initialization/logits/RNG and all groups except epsilon;
+28,492,416 parameters/88EMA tensors. Four-update repeat/resume raw model,
+optimizer,EMA,RNG and clipping histories match exactly; H200 and CPU/MPS
+cache/reset checks passed. Same-backend native updates are exact; absolute
+CPU/MPS post-update equality is not claimed. All839 bindings remain unchanged.
 
-No active worker or new scientific seed reservation. Next implement explicit
-full-model AdamW epsilon1e-6 versus1e-8 identity/group/checkpoint routing and
-CPU/MPS repeat/resume/EMA/RNG/clipping/cache checks outside frozen namespaces.
-Four generated CPU optimizer cases passed; all813 bindings unchanged. This is
-not full-model or quality evidence. Keep betas(.9,.999),Muon and recipe fixed.
+Original model001 namespace/grouping type-check failure remains closed. Separate
+v2 uses namespace-local exact grouping without weakening guards or tolerances.
+Next actual trainer/output/worker and independent parent full-validation/inference
+adapters,then re-audit retained resume tensors/cache and close dependencies before
+NEW exact retirement. Four successful weights1,118,319,316B remain retained.
+Capacity002 free8,736,092,160B versus9,814,671,360B required;conditional recovery
+fits narrowly,so source integration proceeds and dispatch needs a live recheck.
 Read [epsilon preparation](TOKENIZER_ADAMW_EPSILON_PREPARATION.md).
-Final LayerNorm learned-scale-versus-fixed-unit scale is deferred.
 
-All191 protected RAW archives and H100/H200 originals remain intact. Free space
-at closure10,054,123,520B is not new-panel readiness; source integration proceeds,
-with complete measured capacity required before any future panel freeze.
+Final-bias quality001 is closed without adoption: mean improvement0.00930456
+missed the original0.02 threshold despite all seeds/text bounds improving. Keep
+learned bias and epsilon1e-8. All six fresh pairs,191 protected RAW archives and
+H100/H200 originals remain intact. Final LayerNorm scale ablation stays deferred.
 
 ## Findings to retain
 

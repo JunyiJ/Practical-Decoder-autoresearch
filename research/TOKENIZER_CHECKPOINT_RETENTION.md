@@ -1348,3 +1348,14 @@ manifest. Never restore or rerun these retired tensors. All quality fresh pairs,
 historical selected/fresh bytes, protected archives and H100/H200 originals remain
 protected. Actual free space passed the unchanged complete-panel requirement
 before quality freeze; charge retained outputs and recheck at each dispatch.
+
+## AdamW epsilon generated resume payloads retained
+
+Model-resume002 passed both epsilon arms; four generated raw/H200 files totaling
+1,118,319,316B remain in research_runs/tokenizer-adamw-epsilon-resume-002.
+Do not delete until actual downstream worker integration closes tensor dependencies
+and a NEW exact path/size/SHA audit,shared locks,journal and survivor verification.
+Original model001 construction failure has no checkpoint payloads; preserve its
+source/config/log/guard/receipt. Original unlaunched resume001 stays unexecuted.
+All selected/fresh models,191 lossless historical RAW archives and H100/H200
+originals remain protected. Current free space is not scientific-panel readiness.
