@@ -1,9 +1,8 @@
 # AdamW second-moment beta2 preparation
 
-Current status: model003 and model-resume001 PASS both beta2 policies.
-All753 bindings unchanged,738 predecessors preserved. Original model001 launch
-and model002 absolute backend-update failures remain closed; see limits below.
-No scientific quality result, seed reservation, pilot/quality freeze or active worker.
+Current status: trainer-worker001 and trained-inference001 COMPLETE both arms.
+All760 runtime/acceptance bindings unchanged,753 predecessors preserved. No active
+worker, scientific quality result, seed reservation or pilot/quality freeze.
 
 Select AdamW beta2 .95 versus incumbent .999. Keep beta1 .9, epsilon1e-8,
 Muon/group membership/width-scaled rates, independent per-update decay .00006,
@@ -30,10 +29,11 @@ unchanged, and prescribed-gradient Muon outputs match across arms. These are
 small generated optimizer prerequisites, not actual full-model/MPS/EMA/H200/cache
 or scientific quality evidence.
 
-Next: actual bounded training/output/worker and independent parent full-validation
-and inference adapters outside753 frozen sources. Re-audit actual retained resume
-payloads, close dependencies, then new exact retirement and full worker-pair capacity
-check if needed. Details, failure scope and capacity evidence appear below.
+Next: minimal additive finite20-update resource-pilot orchestration and complete
+three-fresh-pair fixed-LR design outside760 frozen sources. Re-audit actual worker
+payloads/cache, finite contracts and dependency closure; fresh census, full retained-
+output high-water/8GiB reserve, exact recovery if needed, pilots and final freeze.
+See latest worker completion and evidence below.
 
 All previous campaigns/fixtures remain closed. Preserve all selected/fresh bytes,
 153 lossless RAW archives and H200 originals. Readout closure retains all six fresh
@@ -90,3 +90,47 @@ resource pilots before any three-fresh-pair quality freeze. Retain beta2 .999.
 Evidence: tokenizer-evidence/adamw-beta2-preparation-001/model003.json,
 model-resume001.json, capacity001.json; storage-recovery-015/raw-completed.json,
 compression-completed.json and restoration-check.json.
+
+## AdamW beta2 generated worker integration complete
+
+Both fresh generated four-update beta999/beta95 arms passed independent parent
+acceptance:4096 training targets,3 H200 snapshots and88 EMA tensors each. Actual
+optimizer states contain44 AdamW groups at(.9,.999)/(.9,.95),epsilon1e-8 and zero
+child decay, with44 unchanged Muon groups and outer independent decay0.00006.
+Full validation recomputed exactly in the parent; CPU/MPS CE differs by less than
+2.9e-7. Complete clipping histories agree across raw/summary/metrics. Independent
+missing/sequence/threshold/coefficient/nonfinite history, foreign beta2 config/group
+and wrong-target-coverage probes were rejected. Trained-inference001 full/cache/reset
+passed batches1/8,196608B cache per item. All760 runtime/acceptance bindings unchanged,
+753 predecessors preserved. No scientific quality result or seed reservation.
+
+Worker-integration001 first re-audited both real retained resume raw/H200/optimizer,
+EMA/RNG/clipping histories/full-validation/cache and closed tensor dependencies.
+A separate exact resume-retirement001 audit then reclaimed1,118,319,956B from four
+obsolete successful generated weights;42,544 survivors verified unchanged. Original
+receipts remain immutable; absent tensors resolve through the retirement manifest,
+never restoration or old-fixture reruns. Actual free10,517,405,696B exceeded complete
+worker-pair9,814,671,360B including8GiB reserve, enabling both fresh worker arms.
+New generated worker raw/H200 weights1,118,325,460B stay retained until pilot
+integration re-audits and closes dependencies, followed by a NEW exact cleanup audit.
+All169 protected historical RAW archives, H200 originals, selected/fresh bytes,
+storage004 and original failures remain intact.
+
+Next: minimal additive finite20-update resource-pilot orchestration and complete
+THREE-fresh-pair fixed-LR design outside760 frozen sources. Verify actual worker
+payload/cache and finite contracts, close dependencies, fresh scientific census,
+measure complete retained-output high-water with serialization overlap/metadata/
+8GiB reserve, take exact authorized recovery if needed, then finite pilots and final
+quality freeze. CommonLR0.00125/equal zero LR-search/original strict gates/no rescue,
+selection or partial panel; beta1 .9/epsilon1e-8/Muon/model/schedule/H200 fixed.
+Current free space is not new-panel readiness; source work proceeds and additional
+lossless recovery is inventoried if the complete forecast needs it.
+
+Retain incumbent beta2 .999. Final LayerNorm learned bias versus fixed zero is
+deferred. Prior model001 missing-plan and model002 absolute CPU/MPS post-update
+failures remain closed; model003 exact native updates/differential check is no claim
+of absolute backend-update parity. Generated observations do not select quality.
+
+Evidence: tokenizer-evidence/adamw-beta2-preparation-001/trainer-worker001.json,
+trained-inference001.json, worker-integration001.json, worker-capacity001.json,
+and resume-retirement001/completed.json.

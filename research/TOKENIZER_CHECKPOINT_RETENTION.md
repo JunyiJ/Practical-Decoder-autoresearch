@@ -1087,3 +1087,25 @@ failure before compression is closed; separate002 passed after text recovery.
 New beta2 generated resume weights1,118,319,956B remain retained until actual worker
 integration re-audits and closes dependencies, then a new exact retirement audit.
 Original failure source/log/config/receipts and all selected/fresh bytes stay protected.
+
+
+Prospective AdamW beta2 resume-retirement001: worker-integration001 re-audited both
+actual successful generated resume raw/H200/optimizer/EMA/RNG/clipping-history,
+full-validation and cache bundles and closed tensor dependencies. Exactly four
+generated weights1,118,319,956B may be retired after an independent exact path/size/hash
+audit, shared locks/process checks, durable journals and survivor verification.
+Prepared worker reads retained success/config metadata only and trains fresh generated
+input from initialization. Selected/fresh weights,169 protected RAW archives,
+all H200 originals and original failure evidence remain unchanged.
+Actual complete worker-pair9,814,671,360B must pass after cleanup; scientific-panel
+capacity is a separate forecast. No permanently retired payload restoration.
+
+
+AdamW beta2 resume-retirement001 COMPLETE: exactly four successful generated resume
+weights1,118,319,956B retired after worker-integration001 dependency closure and exact
+audit;42,544 retained files unchanged. Original evidence immutable; absent tensor
+paths resolve through adamw-beta2-preparation-001/resume-retirement001/manifest.json
+and completed.json, never restoration. Fresh generated worker001 pair independently
+accepted and inference passed; new raw/H200 weights1,118,325,460B remain retained
+until pilot integration closes dependencies and a NEW exact audit. All169 historical
+lossless RAW archives/selected/fresh/H200 originals/storage004 remain protected.
