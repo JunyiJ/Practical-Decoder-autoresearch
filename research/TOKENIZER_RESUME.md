@@ -8,28 +8,28 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: final-bias pilot integration passed; storage020 cleared the
-capacity blocker. No training worker is active.**
+**Latest November 2: both final-bias resource pilots and independent resource
+review passed. No worker is active; scientific quality testing remains ahead.**
 
-The human requested aggressive cleanup without impacting the study. Exactly2,857
-unused third-party Qwen-download and temporary UV cache entries were removed,
-recovering3,189,305,344 allocated bytes. All79,753 retained study/environment
-files hash-verified unchanged; all191 protected RAW archives and H100/H200
-originals survive. No study model/data/evidence was removed.
+Learned/fixed-zero arms completed 20 updates, 20,480 targets, 8 H200 snapshots,
+88/87 EMA tensors and 44/43 AdamW groups. Paired full/cache/reset inference passed
+at batches 1/8; cache is 196,608 bytes/item in both arms. All 804 source bindings
+remain unchanged. No pilot loss is a selection or adoption result.
 
-Completion free13,427,970,048B exceeded the complete12,381,585,408B requirement
-including8GiB reserve. Recheck live capacity before every dispatch. The former
-hourly storage wait is resolved; do not repeat closed audits or cleanup.
+Next add finite quality orchestration in NEW research/final_ln_bias_quality_v1,
+re-audit actual pilot tensors/cache and six-trajectory contracts, then close
+dependencies and perform a NEW exact pilot-retirement audit before final freeze.
+Retained pilots total 1,118,330,973B. Independent review observed 12,324,999,168B
+free, conditionally 13,443,330,141B after retirement, versus the unchanged
+12,381,585,408B full requirement. Source work proceeds; remeasure before dispatch.
 
-All804 campaign/runtime bindings remain unchanged. Two finite20-update pilot
-configs and the complete three-fresh-pair fixed-LR design passed integration.
-Next execute the prepared fresh scientific seed census, freeze/run both resource
-pilots serially, paired inference and independent resource review. No scientific
-seeds reserved or pilot/quality plan frozen yet. Final quality source/freeze
-remains later. Retain learned final bias; AdamW epsilon ablation is deferred.
+Panel 199850 pilot001/eval003 used; fresh011/012/013/bootstrap004 unused. Final
+quality remains exactly three fresh pairs at common LR 0.00125, equal zero search
+budgets and original gates. Retain learned bias; AdamW epsilon change deferred.
+All 191 protected RAW archives and H100/H200 originals remain intact.
 
 Read [preparation](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md) and
-[cleanup receipt](tokenizer-evidence/storage-recovery-020/completed.json).
+[independent review](tokenizer-evidence/final-ln-bias-preparation-001/pilot001-final001-review.json).
 
 ## Findings to retain
 

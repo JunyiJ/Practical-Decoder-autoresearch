@@ -1078,3 +1078,41 @@ Exact retirement and lossless recovery executed; complete-panel capacity still
 lacks2,090,844,160B at the recorded observation. Prepared pilots await the precise
 storage wake condition in TOKENIZER_FINAL_LN_BIAS_PREPARATION.md. No active worker
 or quality result. Keep learned final bias; epsilon ablation remains deferred.
+
+## November 2 — Final LayerNorm bias resource pilots completed
+
+Both frozen 20-update arms passed independent parent acceptance: 20,480 training
+targets, 8 H200 snapshots, and complete clipping histories. Learned/fixed-zero
+arms enforce 88/87 EMA tensors and 44/43 AdamW groups, with 44 Muon groups each.
+Both ran at common peak LR 0.00125; no pilot loss selected a configuration.
+Full/cache/reset inference passed at batches 1 and 8, using 196,608 cache bytes
+per item in each arm. The separately bound final001 resource review passed.
+All 804 campaign sources remain unchanged; 798 runtime predecessors preserved.
+
+Peak observed MPS driver allocation was 2,510,094,336B for each arm; maximum
+RSS was 1,449,328,640B. Conservative 1200-update projections with 2x headroom
+were 5,588.74 and 6,335.95 seconds, below the unchanged 7,200-second cap. These
+are resource observations, not full-run measurements or scientific quality gains.
+Neither pilot clipped any of its 20 updates; this short observation does not
+establish clipping frequency in the eventual quality runs.
+
+Panel 199850 pilot001/eval003 are used; fresh011/012/013 and bootstrap004 remain
+unused. Both raw/H200 pairs (1,118,330,973B total) remain retained. Final review
+observed 12,324,999,168B free; adding those pilots conditionally yields
+13,443,330,141B, above the unchanged 12,381,585,408B complete requirement.
+Do not delete pilots until the next integration closes dependencies and a NEW
+exact retirement audit passes; remeasure actual capacity before dispatch.
+This is a concrete recovery path, not a renewed capacity wait for source work.
+
+Next implement finite quality orchestration in NEW research/final_ln_bias_quality_v1
+outside frozen sources. Re-audit actual pilot tensors, optimizer/EMA/RNG/clipping,
+validation and cache; test exactly six 1200-update trajectories, then audit pilot
+retirement and freeze three fresh pairs at common LR 0.00125, zero LR-search,
+original strict gates, no rescue/retry/selection/partial panel. The candidate
+removes 256 parameters; centering/scale/epsilon1e-5 and pre-branch norms stay fixed.
+Keep learned final bias and the adopted recipe. AdamW epsilon ablation remains
+deferred. No active worker or scientific quality result; all older campaigns closed.
+
+Evidence: final-ln-bias-preparation-001/scientific-seed-census-001/result.json,
+pilot001-plan.json, pilot001-freeze.json, pilot001-accepted-00/01.json,
+pilot001-review.json, pilot001-final001-review.json and pilot001-evidence/.

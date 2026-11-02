@@ -1327,3 +1327,12 @@ quality result or adoption change. Original capacity001 remains historical.
 Evidence: tokenizer-evidence/storage-recovery-020/plan.json,
 deletion-journal.jsonl, completed.json
 and finished plan/apply guards. No closed numerical campaign was rerun.
+
+## Final-bias pilots retained pending quality dependencies
+
+Both pilot001 arms passed 20-update acceptance, paired cache/inference and final001
+resource review. Their four raw/H200 files total 1,118,330,973B and remain retained
+until new quality integration closes tensor dependencies and an independent exact
+retirement audit passes. Current free space includes these retained pilots; the
+conditional post-retirement forecast fits the complete panel, but is not deletion
+or dispatch authorization. Preserve original receipts and all selected/fresh models.
