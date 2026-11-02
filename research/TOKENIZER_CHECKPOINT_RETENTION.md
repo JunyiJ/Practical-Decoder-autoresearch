@@ -811,3 +811,49 @@ worker-pair9,814,671,360B including reserve/metadata. New successful worker raw/
 weights1,118,322,004B remain retained until pilot integration closes dependencies and
 a new exact audit. Preserve all selected/fresh bytes,98 protected archived RAWs and
 original failure evidence. No permanently retired restoration or closed-fixture rerun.
+
+
+Prospective storage-recovery-011 losslessly archives exactly eight closed MLA-score
+selected/fresh RAWs (02/03/06–11) and eight closed wide-attention selected/fresh RAWs.
+Terminal acceptance and state bindings establish their identities. These model
+bytes remain protected and recoverable, NOT retired. Exact path/size/hash plans,
+shared locks/process checks, copy-only feasibility, verified streamed archives,
+durable journals, survivor verification and exact restoration precede readiness.
+All H200 original files and existing protected archives remain unchanged.
+
+
+## Gradient-clipping resource pilot001 complete
+
+Both20-update clip1/cliphalf arms independently passed actual training, bounded
+raw/H200 publication, complete clipping-history acceptance, full validation and
+paired full/cache/reset inference at batches1/8. Each completed20,480targets,
+8H200snapshots and88EMA tensors; cache196608B/item. Independent final001 resource
+review passed. All679 campaign sources frozen,673 runtime predecessors unchanged.
+No scientific quality result; pilot losses cannot select a threshold.
+
+Exactly three prospective fresh pairs use common LR0.00125 with zero LR-search,
+original strict gates and no rescue. Scientific seeds199520011/012/013 and
+bootstrap199520004 remain unused; pilot199520001/evaluation199520003 were consumed.
+Next new research/gradient_clip_quality_v1 must integrate/audit actual pilot
+payloads, complete clipping histories and six-trajectory contracts before exact
+pilot retirement, capacity/seed recheck and final quality freeze. Retain clip1.0.
+
+Worker-retirement001 reclaimed1,118,322,004B with40,676 survivors unchanged after
+tested pilot integration closed tensor dependencies. Original evidence survives.
+Storage011 losslessly archived16 closed MLA-score/wide-attention selected/fresh RAWs,
+reclaimed2,653,116,732B and verified49,904 other files unchanged. Exact
+restoration passed. Original bytes resolve through storage-recovery-011/raw-completed.json
+and protected-raw-storage-011 archives; NOT retired. Together006–011 preserve114
+archived RAWs. All H200 originals and storage004 fixture archive remain intact.
+
+Final review free11,838,726,144B plus retained pilots1,118,333,904B conditionally
+yields12,957,060,048B versus complete12,381,585,408B including8GiBreserve.
+Recheck actual capacity after quality-source dependencies close and an independent
+exact pilot audit; no speculative deletion or partial scientific panel.
+
+Storage011 uses archive_raw002.py, prepared before audit to bind the actual historical
+closure/anchor schema (tokens_processed; no invented STOP). The unused initial
+archive_raw.py remains preserved in the copy-only probe source inventory; it was
+never invoked. Exact policy bytes at audit are preserved in retention-policy-at-audit.md
+for storage011 and gradient-clip worker-retirement001; later policy additions do
+not change those immutable audit snapshots.

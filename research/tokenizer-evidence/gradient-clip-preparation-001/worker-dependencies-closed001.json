@@ -1,0 +1,34 @@
+{
+  "status": "generated_worker_tensor_dependencies_closed",
+  "integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/gradient-clip-preparation-001/pilot-integration001.json",
+    "sha256": "35373e9cf7629daea29a0739aff3a656697dcbe3d6fe4b3baf4846209f4066c5"
+  },
+  "retention_test": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/gradient-clip-preparation-001/retention-boundary001.json",
+    "sha256": "32ef6c40eba77fe1f66c41c42cd8ec7ce71c3b332fc99687f5629f482ee3d267"
+  },
+  "eligible_successful_generated_weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-clip-trainer-prerequisite-001/evidence/pilots/00/checkpoints/final_000004_1793606947009222000.pt",
+      "sha256": "dc09f82d67069420032f253a8865e4173323ec09628d75d99e262356764cf273",
+      "size": 445085927
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-clip-trainer-prerequisite-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "b2337e2003a7626a471423cc4d7ef6b685b49a6ff9db9590094ae1bc5dc416d5",
+      "size": 114075075
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-clip-trainer-prerequisite-001/evidence/pilots/01/checkpoints/final_000004_1793606985506620000.pt",
+      "sha256": "347c198764148e11b745816ad66b988c4ada6a3368024c9d19c6494e736ebbd7",
+      "size": 445085927
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-clip-trainer-prerequisite-001/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "fde54df0facee62c6ccd4b46a8738b64752cfa0d8edb60d07385706e0b5681ef",
+      "size": 114075075
+    }
+  ],
+  "next": "Pilot reads retained worker plan/config/acceptance metadata only; no generated weights."
+}

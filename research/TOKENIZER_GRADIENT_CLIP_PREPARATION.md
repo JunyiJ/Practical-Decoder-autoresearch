@@ -1,12 +1,8 @@
 # Tokenizer global gradient-clipping preparation
 
-Current status: trainer-worker001 and trained-inference001 COMPLETE. Both generated
-four-update clip1/cliphalf arms passed actual instrumented run_training, bounded
-raw/H200 publication, independent parent full validation and CPU/MPS agreement
-(<3.1e-7 CE). Each completed4096targets,3H200snapshots and88EMA tensors. Full/cache/
-reset passes at batches1/8; cache196608B/item. All673 runtime/acceptance bindings
-unchanged,667 predecessors preserved. No active worker, scientific quality result,
-seed reservation or pilot/quality freeze.
+Current status: pilot001 and independent final001 resource review COMPLETE.
+Next new finite quality integration, exact pilot retirement and final quality freeze.
+No scientific quality result or active worker.
 
 Question: does global L2 gradient clipping0.5 versus incumbent1.0 improve the retained
 1200-update subword MLA recipe at common peak LR0.00125? Apply clipping after backward
@@ -104,3 +100,37 @@ numerical work proceeds; exact authorized recovery needs dependency closure, pat
 size/hash allowlists, shared locks/process checks, durable journals and survivor
 verification. One local worker/four threads, all resource guards, no paid compute
 or subagents. Approval-review timeouts are execution blockers, not missing consent.
+
+
+## Gradient-clipping resource pilot001 complete
+
+Both20-update clip1/cliphalf arms independently passed actual training, bounded
+raw/H200 publication, complete clipping-history acceptance, full validation and
+paired full/cache/reset inference at batches1/8. Each completed20,480targets,
+8H200snapshots and88EMA tensors; cache196608B/item. Independent final001 resource
+review passed. All679 campaign sources frozen,673 runtime predecessors unchanged.
+No scientific quality result; pilot losses cannot select a threshold.
+
+Exactly three prospective fresh pairs use common LR0.00125 with zero LR-search,
+original strict gates and no rescue. Scientific seeds199520011/012/013 and
+bootstrap199520004 remain unused; pilot199520001/evaluation199520003 were consumed.
+Next new research/gradient_clip_quality_v1 must integrate/audit actual pilot
+payloads, complete clipping histories and six-trajectory contracts before exact
+pilot retirement, capacity/seed recheck and final quality freeze. Retain clip1.0.
+
+Worker-retirement001 reclaimed1,118,322,004B with40,676 survivors unchanged after
+tested pilot integration closed tensor dependencies. Original evidence survives.
+Storage011 losslessly archived16 closed MLA-score/wide-attention selected/fresh RAWs,
+reclaimed2,653,116,732B and verified49,904 other files unchanged. Exact
+restoration passed. Original bytes resolve through storage-recovery-011/raw-completed.json
+and protected-raw-storage-011 archives; NOT retired. Together006–011 preserve114
+archived RAWs. All H200 originals and storage004 fixture archive remain intact.
+
+Final review free11,838,726,144B plus retained pilots1,118,333,904B conditionally
+yields12,957,060,048B versus complete12,381,585,408B including8GiBreserve.
+Recheck actual capacity after quality-source dependencies close and an independent
+exact pilot audit; no speculative deletion or partial scientific panel.
+
+Observed pilot clipping: clip1 clipped0/20 updates, pre-norm0.40428–0.82294;
+cliphalf clipped13/20, pre-norm0.40428–0.81842. These20-update observations
+are not full-horizon clipping-frequency estimates or threshold-selection evidence.
