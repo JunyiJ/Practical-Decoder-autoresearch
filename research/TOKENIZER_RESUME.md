@@ -8,15 +8,15 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: gradient clipping quality002 closed without adoption; mean
-clip0.5-minus1.0 +0.0041331496, all seeds worse/all gates failed. All six endpoints
-and three inference pairs passed. Retain clipping1.0. No active worker.**
+**Latest November2: readout-centering full-model and serialized resume checks passed
+both arms. All710 source/config bindings unchanged; no active worker or scientific
+quality result. Clipping quality002 remains closed without adoption.**
 
-Next: explicit full-model final-readout centering integration outside695 frozen
-sources. The incumbent is affine LayerNorm epsilon1e-5 (earlier deferred wording
-was incorrect). Standalone matched-affine RMS comparison component002 passed24
-CPU/MPS cases; original component001 oracle failure remains preserved. No scientific
-seeds or pilot/quality plan reserved. Start with
+Next: additive actual worker/output/independent full-validation and inference,
+including explicit readout-policy data routing. Re-audit retained generated resume
+payloads, close dependencies, then exact retirement/capacity recheck before the
+complete worker pair. Storage012 lossless archival already enabled the resume tests;
+selected/fresh bytes remain protected. Start with
 [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
 and the compact state index. Historical material below is superseded by this state.
 

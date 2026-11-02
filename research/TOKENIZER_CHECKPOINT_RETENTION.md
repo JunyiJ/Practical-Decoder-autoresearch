@@ -936,3 +936,25 @@ archived historical RAWs and H200 originals/storage004 archive remain protected.
 Readout component001 failure and separate002 success are retained with exact source/
 plan/log/guard; no tensor files emitted. New model/integration capacity must be
 measured; source/small numerical work proceeds without a stale capacity wait.
+
+
+Prospective storage-recovery-012 may losslessly archive exactly the six accepted
+RAW checkpoints of the closed branch-scale quality001 panel. Every selected/fresh
+RAW byte remains protected and recoverable in protected-raw-storage-012 archives;
+none is retired. All H200 files remain loose. This enables the complete generated
+readout resume pair after source integration; it is not scientific-panel readiness.
+Require copy-only compression probe, exact original/accepted/STOP/H200 bindings,
+shared locks/idle checks, full survivor verification, durable journals and exact
+restoration check before proceeding. No permanently retired tensor restoration.
+
+
+Storage012 completed lossless archival of the exact six closed branch-scale RAWs,
+reclaiming654,730,043B and verifying50,525 survivors unchanged. Exact restoration
+passed. Resolve original RAW identities through storage-recovery-012/raw-completed.json
+and protected research_archives/protected-raw-storage-012/*.tar.zst; these models
+remain recoverable and NOT retired. All H200 files stay in original paths. Total
+protected lossless historical RAW count120. This enabled the complete readout
+generated resume pair. New four successful readout resume weights1,118,317,844B
+remain retained until actual worker integration closes dependencies and an exact
+independent retirement audit passes. Current capacity001 is not scientific-panel
+readiness; source work proceeds and the full worker pair is capacity-gated.

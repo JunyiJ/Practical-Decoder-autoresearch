@@ -7876,3 +7876,21 @@ all H200 originals, selected/fresh bytes and the storage004 fixture archive.
 
 See [independent review](tokenizer-evidence/gradient-clip-preparation-001/quality002-final-review.json)
 and [closure](tokenizer-evidence/gradient-clip-preparation-001/quality002-closure.json).
+
+
+## Readout centering full-model prerequisites complete
+
+Both layer_affine/rms_affine_bias arms passed explicit policy/group/checkpoint/cache
+identity, CPU/MPS gradients and full/cache/reset/causality. Shared matrices/RNG/groups
+match exactly; incumbent LayerNorm logits are exact, candidate function differs.
+Generated four-update repeat/resume raw-model/optimizer/EMA/RNG/clipping history
+matched exactly; final-step4 H2003snapshots passed CPU/MPS batches1/8. All710
+bindings unchanged. No scientific result/seed reservation or active worker.
+Next additive actual worker/output/independent validation/inference with explicit
+readout-policy routing, then closure of resume tensor dependencies, exact retirement
+audit/capacity recheck. The4 generated weights1,118,317,844B remain retained.
+Storage012 saved654,730,043B losslessly from6 closed branch RAWs,50,525 survivors
+verified and exact restoration PASS;120 historical RAWs now remain recoverable
+in protected archives, NOT retired. All H200 originals intact. Full scientific
+panel capacity and census remain separate. Retain LayerNorm/clip1.0 and adopted
+recipe; AdamW beta2 .95-versus-.999 deferred. See TOKENIZER_READOUT_CENTERING_PREPARATION.md.
