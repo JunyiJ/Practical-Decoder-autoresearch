@@ -8,105 +8,20 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: AdamW beta2 trainer-worker001 and trained-inference001 COMPLETE.
-Both generated four-update arms independently accepted; all760 bindings unchanged.
-No active worker, scientific quality result, seed reservation or pilot/quality freeze.**
+**Latest November2: AdamW beta2 pilot001 COMPLETE. Both20-update arms independently
+accepted,paired cache inference and independent final001 resource review PASS.
+All766 campaign sources unchanged; no active worker or scientific quality result.**
 
-Next: minimal additive finite20-update resource-pilot orchestration and complete
-three-fresh-pair fixed-LR design outside frozen sources. Verify actual retained worker
-raw/H200/optimizer/EMA/RNG/clipping histories/cache, finite contracts and dependency
-closure; fresh census, measured full retained-output high-water/8GiB reserve,
-exact recovery if needed, finite pilots then final quality freeze. Read
-[TOKENIZER_ADAMW_BETA2_PREPARATION.md](TOKENIZER_ADAMW_BETA2_PREPARATION.md).
+Next prepare additive `research/adamw_beta2_quality_v1`, verify real pilot payloads
+and six-trajectory contracts,close dependencies and audit exact pilot retirement.
+Remeasure full capacity and unused fresh/bootstrap seeds before final quality freeze.
+Exactly three fresh pairs/commonLR .00125/zeroLRsearch/original strict gates.
+Read [TOKENIZER_ADAMW_BETA2_PREPARATION.md](TOKENIZER_ADAMW_BETA2_PREPARATION.md).
 
-Parent full validation matched exactly; CPU/MPS CE difference<2.9e-7. Actual beta2
-groups, complete clipping histories and wrong-policy/coverage rejection passed.
-Trained full/cache/reset inference batches1/8 passed. Exact resume retirement
-reclaimed1,118,319,956B with42,544 survivors unchanged. New generated worker weights
-1,118,325,460B remain retained until next integration closes dependencies/new audit.
-All169 historical lossless RAW archives and H200 originals/storage004 remain intact.
-No permanently retired restoration or closed reruns. Retain beta2 .999 and adopted
-recipe. Prior absolute CPU/MPS post-update parity failure remains closed; native/
-differential checks passed without claiming absolute backend-update parity.
-
-Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
-closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
-passed their parent reviews. Independent final review completed985.06s under
-the unchanged guard; reason null, reviewer and all workers exited.
-
-| Seed | Gated MLA H200 CE | KDA H200 CE | Hybrid H200 CE |
-| --- | --- | --- | --- |
-|3511|4.845517761609039|4.9743094953134435|4.999353112775229|
-|3512|4.84407892743844|4.967920234487431|4.979351837490887|
-|3513|4.839211356994297|4.947641727241584|4.976864544264859|
-
-Hybrid mean loss is worse by0.142253816 versus gated MLA and0.021899346 versus
-KDA. Strict quality and neutrality both fail against both controls. Actual
-hybrid state399,360 bytes at batch1 is21.875% larger than gated MLA327,680 and
-18.9024% larger than KDA335,872; all seeds/batch8 agree. Memory route also fails.
-Hybrid/gated-MLA median paired prefill ratios are1.815/1.559 at batches1/8;
-decode1.012/1.025. Hybrid/KDA ratios are1.026/0.881 prefill and1.793/1.327 decode.
-These are local context128, prefill32/decode64 MPS measurements, not production
-cost or long-context claims. Existing adopted recipes remain unchanged; no
-posthoc promotion of005's gated NoPE MLA control over the RoPE incumbent.
-
-[Final decision](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-decision-v2.json),
-[independent review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-final-cached-v2-review.json),
-[completed inference metadata](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-panel-accepted-v2.json).
-Every selected/fresh pair, failure and archive remains protected. No cleanup.
-The first external final-audit wrapper omitted tokenizer cache setup and failed;
-its evidence remains preserved. The separate cached read-only audit passed.
-No training/inference/closed numerical fixture was repeated.
-
-From the repository root, inspect without mutating or launching anything:
-
-```sh
-git status --short --branch
-.venv/bin/python research/tokenizer_resume_status.py
-ps -axo pid,ppid,etime,rss,command | rg 'python.*(src[./]research|tokenizer|metadata_contention|pytest|run_training)|pytest|zstd'
-```
-
-1. Read ignored `research_state/tokenizer-quality-progress.json`; reconcile its
-   next_action with actual Git/process state. All six activation screens and audited screen cleanup are complete.
-   No005 relaunch, slot24, seed extension or changed adoption criterion.
-2. Continue [activation preparation](TOKENIZER_MLA_ACTIVATION_PREPARATION.md).
-   The MoE panel is deferred after a 3.27 GB conservative capacity gap; its
-   original draft remains historical. No protected evidence was removed.
-3. Activation campaign001 is frozen and independently verified. All preparation
-   gates are complete, including34 final-decision/freeze-entry tests. Exact meta
-   model/optimizer accounting confirms15,169,995,168bytes required, including
-   every future retained pair and8GiB reserve. Both20-update MPS pilots are accepted; audited pilot cleanup is complete.
-4. After committing/pushing pilot evidence, inspect actual workers and execute only
-   the first guarded quality step. The immutable plan fixes two20-update pilots,
-   six1200-update LR screens and six fresh runs. Accept both pilots and audit
-   pilot cleanup before screens; save selection and audit losing-screen cleanup
-   before fresh runs. Do not edit frozen source or retry any existing attempt.
-   [Freeze review](tokenizer-evidence/activation-preparation-001/campaign001-freeze-review.json),
-   [frozen plan](tokenizer-evidence/activation-preparation-001/campaign001-frozen-plan.json).
-   Original publication succeeded; its external report writer failed on a string/
-   Path mismatch. The procedure/diagnostic is preserved, and independent read-only
-   verification passed without republishing or launching anything.
-5. Commit/push substantive findings and this guide/index without force. Keep only
-   this chat's continuation heartbeat active; the old heartbeat stays paused.
-
-Active campaign root: `research_runs/tokenizer-activation-001`.
-Plan SHA256: `508b922253f7eef8ae6fafe05cb393aefe4bb0f58225e8573857e920933016c4`.
-Source SHA256: `7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487`.
-
-Closed historical campaign root: `research_runs/tokenizer-wide-hybrid-005`.
-[Launch receipt](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-launch-v2.json),
-[freeze review](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-freeze-v2-review.json),
-[frozen plan](tokenizer-evidence/wide-hybrid-preparation-001/campaign005-frozen/meta/plan.json).
-Plan SHA256: `7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94`.
-Source SHA256: `73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa`.
-The completed finite design was3pilots,24quality trajectories and3inference panels, width512,
-four layers,1200updates per quality trajectory, batch8/context128. Exact requests,
-seeds, conditional choices and adoption rules live in the frozen plan/source.
-Prior incomplete campaigns are not pooled; reused screening seeds are not new
-independent evidence.
-
-Current continuation: activation001 screen complete; LR0.00125 saved for both gates; all training accepted; first inference failed permanently; separate recovery contract pending; see the indexed
-[FFN direction decision](tokenizer-evidence/moe-preparation-001/direction-decision.json).
+Storage016 preserves13 additional accepted RAWs losslessly;182 archived RAWs remain
+recoverable and protected. All H200 originals/storage004 intact. Generated worker
+weights retired only after exact dependency closure/audit; original receipts preserved.
+Retain beta2 .999 and adopted recipe. All prior campaigns remain closed.
 
 ## Findings to retain
 

@@ -1109,3 +1109,38 @@ and completed.json, never restoration. Fresh generated worker001 pair independen
 accepted and inference passed; new raw/H200 weights1,118,325,460B remain retained
 until pilot integration closes dependencies and a NEW exact audit. All169 historical
 lossless RAW archives/selected/fresh/H200 originals/storage004 remain protected.
+
+## November2 — AdamW beta2 finite resource pilots complete
+
+Both20-update arms independently passed actual raw/H200/optimizer/EMA/RNG and
+complete clipping-history acceptance:20,480targets,8H200snapshots,88EMA tensors.
+Actual44AdamW groups differ only in declared beta2(.999/.95);44Muon groups,
+beta1 .9,epsilon1e-8 and outerdecay .00006 remain fixed. Paired full/cache/reset
+inference batches1/8 passed at196608B/cache item. Independent final001 resource
+review passed; all766 campaign sources unchanged,760 runtime predecessors preserved.
+No scientific quality result. Pilot losses were not used for selection.
+
+The prospective design fixes exactly three fresh pairs/six1200-update trajectories,
+commonLR .00125,equal zero search and original strict gates. Panel199740 pilot/eval
+used;fresh011/012/013/bootstrap004 remain unused. Next prepare additive
+`research/adamw_beta2_quality_v1`, re-audit retained pilot payloads/cache and close
+dependencies before a new exact pilot retirement audit and final quality freeze.
+Retained pilot weights:1,118,337,488B. Observed free:11,507,736,576B;
+conditional post-retirement:12,626,074,064B
+versus complete12,381,585,408B including8GiB reserve. Remeasure before dispatch.
+
+Worker retirement reclaimed1,118,325,460B and verified42,735
+survivors. Storage016 losslessly archived13 closed accepted readout/wide RAWs,
+reclaimed2,236,324,199B and verified52,040
+other files unchanged. Exact restoration passed. All182 archived RAWs remain
+protected/recoverable,NOT retired;all H200 originals and storage004 remain intact.
+Original worker evidence stays immutable; absent generated tensors resolve through
+`adamw-beta2-preparation-001/worker-retirement001/manifest.json`,never restore/rerun.
+Archived RAWs resolve through `storage-recovery-016/raw-completed.json` and
+`research_archives/protected-raw-storage-016/*.tar.zst`;never purge.
+
+Evidence: `adamw-beta2-preparation-001/pilot-integration001.json`,
+`pilot001-plan.json`, `pilot001-review.json`, `pilot001-final001-review.json`,
+`campaign-capacity001.json`, `scientific-seed-census-001/result.json`;
+`storage-recovery-016/raw-completed.json` and `restoration-check.json`.
+Retain beta2 .999 and the adopted recipe; final LayerNorm bias ablation deferred.

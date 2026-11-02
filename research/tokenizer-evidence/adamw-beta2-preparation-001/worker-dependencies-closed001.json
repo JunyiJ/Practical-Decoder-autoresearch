@@ -1,0 +1,39 @@
+{
+  "cache": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/pilot-integration001-cache.json",
+    "sha256": "e0d7a6c729d5eca1cdb88872c6ede04a58fe611df7c29c5c5c3c1845d9b67b15"
+  },
+  "eligible_successful_generated_weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-trainer-prerequisite-001/evidence/pilots/00/checkpoints/final_000004_1793621767510675000.pt",
+      "sha256": "9b4aeca735aadaeaeebb04660e2dab88a51990e276bc5bf334ae7eaca9edf217",
+      "size": 445087271
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-trainer-prerequisite-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "2c1ac5ff38df77406e918db3d703b80356f35b3010762991cb56404ebd0c0603",
+      "size": 114075459
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-trainer-prerequisite-001/evidence/pilots/01/checkpoints/final_000004_1793621806405260000.pt",
+      "sha256": "f146f1331fb58a4a208f854839bfca7f8dc5c728f42759ec070edbb7beb7f291",
+      "size": 445087271
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-adamw-beta2-trainer-prerequisite-001/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "b36567726c393ac10037a99df0d9eb968e26ced58471edcb454dc65f909da1c3",
+      "size": 114075459
+    }
+  ],
+  "integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/pilot-integration001.json",
+    "sha256": "64e4b0d0b1eaa90e9b18a1f6035a5de879451289d96fcc403e561807075aa851"
+  },
+  "reason": "Both actual raw/H200/optimizer/EMA/RNG/clipping histories were re-audited with independent full validation and paired cache checks. Finite pilots read retained configs only and initialize fresh. No selected/fresh scientific payload eligible.",
+  "retirement_requires_new_exact_audit": true,
+  "status": "generated_worker_tensor_dependencies_closed",
+  "worker": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/trainer-worker001.json",
+    "sha256": "3e42798b86031854bd8fb3e630ff99433228f6b2c71077192a1ee38e07f9419c"
+  }
+}

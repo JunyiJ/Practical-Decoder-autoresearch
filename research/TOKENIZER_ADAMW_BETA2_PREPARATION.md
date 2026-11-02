@@ -1,8 +1,9 @@
 # AdamW second-moment beta2 preparation
 
-Current status: trainer-worker001 and trained-inference001 COMPLETE both arms.
-All760 runtime/acceptance bindings unchanged,753 predecessors preserved. No active
-worker, scientific quality result, seed reservation or pilot/quality freeze.
+Current status: pilot001 and independent final001 resource review COMPLETE.
+All766 campaign sources unchanged,760 runtime predecessors preserved. No active
+worker or scientific quality result. Resource pilot/evaluation seeds used; three
+fresh seeds and bootstrap remain unused. Final quality source/freeze is next.
 
 Select AdamW beta2 .95 versus incumbent .999. Keep beta1 .9, epsilon1e-8,
 Muon/group membership/width-scaled rates, independent per-update decay .00006,
@@ -17,7 +18,7 @@ without adoption. Final LayerNorm learned bias versus fixed zero bias is deferre
 No prior scores/seeds pooled. Prospective quality scope is exactly three fresh
 pairs at commonLR .00125, equal zero LR-search budgets, original strict gates,
 no screens/selection/rescue/retry/partial panel: standard recipes, not separately
-tuned optima. No scientific seeds or pilot/quality plans have been reserved.
+tuned optima. Pilot seeds/plan are now frozen and completed; no final quality plan frozen.
 
 The frozen component exercises actual Muon/AdamW with prescribed variable gradients
 on CPU FP64/FP32 at both beta2 values. Independent float64 first/second moments,
@@ -29,7 +30,7 @@ unchanged, and prescribed-gradient Muon outputs match across arms. These are
 small generated optimizer prerequisites, not actual full-model/MPS/EMA/H200/cache
 or scientific quality evidence.
 
-Next: minimal additive finite20-update resource-pilot orchestration and complete
+Historical post-worker next action (completed below): minimal additive finite20-update resource-pilot orchestration and complete
 three-fresh-pair fixed-LR design outside760 frozen sources. Re-audit actual worker
 payloads/cache, finite contracts and dependency closure; fresh census, full retained-
 output high-water/8GiB reserve, exact recovery if needed, pilots and final freeze.
@@ -76,7 +77,7 @@ copy-only probe stopped before compression on actual capacity; separate002 passe
 after text recovery. All169 RAW archives throughstorage006–015 remain protected,
 recoverable, NOT retired; all H200 originals and storage004 remain intact.
 
-Next: minimal additive actual run_training/output/worker and independent parent
+Historical pre-worker next action (completed below): minimal additive actual run_training/output/worker and independent parent
 full-validation/inference adapters using these tested primitives, including beta2
 identity and complete clipping histories. Re-audit actual retained resume payloads,
 close their tensor dependencies, then take a NEW exact authorized retirement audit
@@ -111,12 +112,12 @@ obsolete successful generated weights;42,544 survivors verified unchanged. Origi
 receipts remain immutable; absent tensors resolve through the retirement manifest,
 never restoration or old-fixture reruns. Actual free10,517,405,696B exceeded complete
 worker-pair9,814,671,360B including8GiB reserve, enabling both fresh worker arms.
-New generated worker raw/H200 weights1,118,325,460B stay retained until pilot
+At that boundary, generated worker raw/H200 weights1,118,325,460B stayed retained until pilot
 integration re-audits and closes dependencies, followed by a NEW exact cleanup audit.
 All169 protected historical RAW archives, H200 originals, selected/fresh bytes,
 storage004 and original failures remain intact.
 
-Next: minimal additive finite20-update resource-pilot orchestration and complete
+Historical post-worker next action (completed below): minimal additive finite20-update resource-pilot orchestration and complete
 THREE-fresh-pair fixed-LR design outside760 frozen sources. Verify actual worker
 payload/cache and finite contracts, close dependencies, fresh scientific census,
 measure complete retained-output high-water with serialization overlap/metadata/
@@ -134,3 +135,38 @@ of absolute backend-update parity. Generated observations do not select quality.
 Evidence: tokenizer-evidence/adamw-beta2-preparation-001/trainer-worker001.json,
 trained-inference001.json, worker-integration001.json, worker-capacity001.json,
 and resume-retirement001/completed.json.
+
+## November2 — AdamW beta2 finite resource pilots complete
+
+Both20-update arms independently passed actual raw/H200/optimizer/EMA/RNG and
+complete clipping-history acceptance:20,480targets,8H200snapshots,88EMA tensors.
+Actual44AdamW groups differ only in declared beta2(.999/.95);44Muon groups,
+beta1 .9,epsilon1e-8 and outerdecay .00006 remain fixed. Paired full/cache/reset
+inference batches1/8 passed at196608B/cache item. Independent final001 resource
+review passed; all766 campaign sources unchanged,760 runtime predecessors preserved.
+No scientific quality result. Pilot losses were not used for selection.
+
+The prospective design fixes exactly three fresh pairs/six1200-update trajectories,
+commonLR .00125,equal zero search and original strict gates. Panel199740 pilot/eval
+used;fresh011/012/013/bootstrap004 remain unused. Next prepare additive
+`research/adamw_beta2_quality_v1`, re-audit retained pilot payloads/cache and close
+dependencies before a new exact pilot retirement audit and final quality freeze.
+Retained pilot weights:1,118,337,488B. Observed free:11,507,736,576B;
+conditional post-retirement:12,626,074,064B
+versus complete12,381,585,408B including8GiB reserve. Remeasure before dispatch.
+
+Worker retirement reclaimed1,118,325,460B and verified42,735
+survivors. Storage016 losslessly archived13 closed accepted readout/wide RAWs,
+reclaimed2,236,324,199B and verified52,040
+other files unchanged. Exact restoration passed. All182 archived RAWs remain
+protected/recoverable,NOT retired;all H200 originals and storage004 remain intact.
+Original worker evidence stays immutable; absent generated tensors resolve through
+`adamw-beta2-preparation-001/worker-retirement001/manifest.json`,never restore/rerun.
+Archived RAWs resolve through `storage-recovery-016/raw-completed.json` and
+`research_archives/protected-raw-storage-016/*.tar.zst`;never purge.
+
+Evidence: `adamw-beta2-preparation-001/pilot-integration001.json`,
+`pilot001-plan.json`, `pilot001-review.json`, `pilot001-final001-review.json`,
+`campaign-capacity001.json`, `scientific-seed-census-001/result.json`;
+`storage-recovery-016/raw-completed.json` and `restoration-check.json`.
+Retain beta2 .999 and the adopted recipe; final LayerNorm bias ablation deferred.
