@@ -47,7 +47,7 @@
   "active_run": null,
   "active_session": null,
   "active_worker": null,
-  "actual_free_bytes": 10287669248,
+  "actual_free_bytes": 13436973056,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
   "adamw_beta2_direction": "research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
@@ -171,7 +171,7 @@
   "branch": "codex/tokenizer-quality",
   "campaign_root": "research_runs/tokenizer-decay-quality-v2-001",
   "capacity_blocker_resolved": true,
-  "capacity_poll_interval_seconds": 300,
+  "capacity_poll_interval_seconds": null,
   "capacity_wake_free_bytes": null,
   "closed_campaigns": [
     "tokenizer-wide-hybrid-001",
@@ -8468,13 +8468,8 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/campaign-capacity001.json",
     "sha256": "c63a2cbd41c57851f8c9bba87c29ffd4d422e53a68e9f222f57285b16e0cc60f"
   },
-  "final_ln_bias_capacity_deficit_bytes": 2090844160,
-  "final_ln_bias_capacity_wake_condition": {
-    "alternative": "Human supplies an external volume for verified protected-archive relocation or frees unrelated space on current volume.",
-    "check_interval_seconds": 3600,
-    "required_actual_free_bytes": 12381585408,
-    "unchanged_behavior": "One short free-space check only; no repeated audits, probes, commits or notifications."
-  },
+  "final_ln_bias_capacity_deficit_bytes": 0,
+  "final_ln_bias_capacity_wake_condition": null,
   "final_ln_bias_component": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/component001-result.json",
     "sha256": "9da219beced71c0aa9e84b47471f2cebee46b41aeedacaa9e5c798b78b0e2ce9"
@@ -8505,6 +8500,10 @@
     "sha256": "e48a1185749fe8295426b65e669178a7ab33f88593f304ebf170fbb06b8de039"
   },
   "final_ln_bias_retained_generated_worker_bytes": 0,
+  "final_ln_bias_storage020": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-020/completed.json",
+    "sha256": "d71b0e9b6b884c990bed79f83015b8c72dda9eb9c165d22b1b2b9ad6771aebef"
+  },
   "final_ln_bias_trained_inference": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/trained-inference002.json",
     "sha256": "9ecc0ffeeddf73b81c923c41386a2798b6623b8b7b40c1ad76c85fd4ed23db26"
@@ -8610,7 +8609,7 @@
   "mla_score_worker": "research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
   "mla_score_worker_archive": "research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
   "mla_score_worker_review": "research/tokenizer-evidence/mla-score-preparation-001/worker003-review.json",
-  "next_action": "Final LayerNorm bias pilot integration001 and pilot-only retention-boundary001 PASS. Six new finite campaign modules in research.final_ln_bias_campaign_v1; all804 bindings unchanged,798 accepted runtime predecessors preserved. Both real accepted generated endpoints were independently re-audited through the new parent acceptance route, including optimizer/EMA/RNG/clipping history/full validation and paired cache checks. Arm-specific88/87 EMA and44/43 AdamW inventories enforced. Finite20-update pilot configs and complete THREE-fresh-pair design at commonLR0.00125/zero LR-search/original strict gates tested; fixed-zero removes256 parameters. Independent final resource reviewer and guarded seed-census entrypoint prepared, neither executed. No active worker, scientific seed reservation, pilot/quality freeze or scientific quality result. Worker-retirement001 reclaimed1118318945B from exactly four obsolete successful generated weights after dependencies closed,43767 survivors unchanged. Accepted learned weights in old capacity-failed001 root were classified by acceptance; original failure/source/config/log/receipts remain immutable. Absent generated tensors resolve via worker-retirement001, never restore/rerun. Storage019 losslessly archived the three remaining closed EMA-horizon fresh RAWs, reclaimed353577916B,53111 survivors unchanged; exact restoration PASS. Resolve originals through storage-recovery-019/raw-completed.json and protected-raw-storage-019 archives. All191 historical RAWs via006\u2013017/019 remain protected/recoverable, NOT retired; H100/H200 originals and storage004 intact. H200 copy-only transparent-compression probe preserved bytes but gave no useful compression; closed. RAW probe002 stopped before archive creation on generic input-size predicate; separate003 exact three-file path/size/SHA input allowlist passed with unchanged512MiB kernel output cap,8GiBreserve/time/RSS limits. Original002 stays closed. campaign-capacity001 measured10290741248B free versus complete12381585408B, remaining deficit2090844160B. Recovery has been executed; do not repeat audits/probes/cleanup or freeze a partial panel. Only Macintosh HD is mounted; no separate volume available. Wake condition: actual free space at least12381585408B, or human supplies an external volume for verified protected-archive relocation. Check free space once per hour; unchanged checks stay silent and create no records/commits. On relevant state change, remeasure complete capacity, then fresh scientific seed census, freeze two finite20-update pilots, run both serially, paired inference and independent resource review; final quality source/freeze remains later. No stale capacity ban on concrete new independent work if human steering provides it. Retain learned final bias/beta2 .999/final affine LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW epsilon1e-6-versus1e-8 deferred. All earlier campaigns/fixtures remain closed; no permanently retired restoration, closed reruns or old score/seed pooling.",
+  "next_action": "Storage020 resolved the final-bias capacity blocker after explicit human aggressive-cleanup authorization. Exactly 2,857 unused external Qwen/temporary UV cache entries removed (3,189,305,344 allocated bytes); 79,753 retained study/environment files hash-verified unchanged. No study payloads removed; all191 protected RAW archives and H100/H200 originals intact. Recheck actual full requirement12,381,585,408B, then execute prepared fresh scientific seed census, freeze the two finite20-update final-LayerNorm learned/fixed-zero-bias resource pilots, run serially, paired inference and independent resource review. Pilot/quality freeze and scientific seeds remain absent; all804 campaign bindings unchanged. Final quality orchestration remains later, exactly3 fresh pairs at commonLR.00125/zeroLRsearch/original strict gates. Never repeat closed probes/cleanup or retired numerical fixtures; inspect actual processes before dispatch. No current worker. Retain learned final bias and adopted recipe.",
   "next_after_starter": "Readout-centering pilot001 COMPLETE via research.readout_centering_campaign_v2: both20-update layer/rms_bias arms independently accepted(20480targets,8H200snapshots,88EMA tensors),complete clipping histories; paired full/cache/reset inference batches1/8 and independent final003 resource review PASS,196608B cache/item. All729 campaign sources unchanged,717 runtime predecessors preserved. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/readout_centering_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118335248B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199630 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Final LayerNorm versus affine RMS WITH bias,epsilon1e-5/512parameters both,eight pre-branch RMSNorms fixed. Original final002 reviewer launch environment failure before audit stays closed; separate final003 uses the required strict environment without repeating training/inference. Original pilot integration001 import failure before numerical work/deletion stays closed; additive v2 explicit worker validation routing and separate integration002 passed without changing723 original bindings. Worker-retirement001 reclaimed1118323284B with41696survivors unchanged,original evidence immutable. Storage013 losslessly archived27 closed table/MLA/horizon selected/fresh RAWs,reclaimed2574573563B,50958other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-013/raw-completed.json and protected research_archives/protected-raw-storage-013/*.tar.zst;recoverable,NOT retired,never purge. Together006-013 preserve147 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11575418880B plus retainedpilots1118335248B conditionally yields12693754128B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW beta2 .95-versus-.999 deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Pilot observations are resource evidence,not scientific quality selection.",
   "no_paid_compute": true,
   "no_subagents": true,
@@ -8720,7 +8719,7 @@
   "session_hint": null,
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "status": "final_ln_bias_pilot_prepared_capacity_blocked",
+  "status": "final_ln_bias_pilot_prepared_capacity_ready",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",

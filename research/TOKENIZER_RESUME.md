@@ -8,28 +8,28 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: final-bias pilot integration/retention passed; pilot dispatch
-awaits complete-panel storage. No worker is active.**
+**Latest November2: final-bias pilot integration passed; storage020 cleared the
+capacity blocker. No training worker is active.**
+
+The human requested aggressive cleanup without impacting the study. Exactly2,857
+unused third-party Qwen-download and temporary UV cache entries were removed,
+recovering3,189,305,344 allocated bytes. All79,753 retained study/environment
+files hash-verified unchanged; all191 protected RAW archives and H100/H200
+originals survive. No study model/data/evidence was removed.
+
+Completion free13,427,970,048B exceeded the complete12,381,585,408B requirement
+including8GiB reserve. Recheck live capacity before every dispatch. The former
+hourly storage wait is resolved; do not repeat closed audits or cleanup.
 
 All804 campaign/runtime bindings remain unchanged. Two finite20-update pilot
-configs and the full three-fresh-pair fixed-LR design passed integration checks,
-including real retained worker tensor/cache re-audits,87/88 EMA and43/44 AdamW
-inventories. Independent reviewer/census entrypoints are prepared. No scientific
-seeds reserved or pilot/quality plan frozen; no new quality finding.
+configs and the complete three-fresh-pair fixed-LR design passed integration.
+Next execute the prepared fresh scientific seed census, freeze/run both resource
+pilots serially, paired inference and independent resource review. No scientific
+seeds reserved or pilot/quality plan frozen yet. Final quality source/freeze
+remains later. Retain learned final bias; AdamW epsilon ablation is deferred.
 
-Recovery executed: exact generated-worker retirement1,118,318,945B with43,767
-survivors unchanged; storage019 lossless archival353,577,916B with53,111 survivors
-unchanged and exact restoration. All191 historical RAWs remain recoverable;
-H100/H200 originals/storage004 intact. Original failures remain closed.
-
-The complete requirement is12,381,585,408B; measured free10,290,741,248B leaves
-2,090,844,160B missing. Only Macintosh HD is mounted. Wake when free space reaches
-the requirement or an external volume is supplied for verified archive relocation.
-Check once hourly; unchanged checks stay silent, with no repeated audits or commits.
-Then remeasure, fresh scientific census, freeze/run both finite pilots and paired
-inference plus independent resource review. Never launch a partial panel or relax
-reserve/guards. Read [preparation](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md).
-Retain learned final bias; AdamW epsilon change remains deferred.
+Read [preparation](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md) and
+[cleanup receipt](tokenizer-evidence/storage-recovery-020/completed.json).
 
 ## Findings to retain
 
