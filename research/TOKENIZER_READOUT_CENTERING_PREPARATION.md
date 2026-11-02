@@ -1,7 +1,7 @@
 # Tokenizer final-readout centering preparation
 
-Current status: quality001 has three independently accepted endpoints (slots00–02);
-slot03 layer, second arm of fresh pair two, is running.
+Current status: quality001 has four independently accepted endpoints (slots00–03);
+slot04 layer, first arm of fresh pair three, is running.
 All737 active source bindings immutable,729 predecessors unchanged. The complete
 six1200-update trajectory panel fits the measured retained-output allowance with
 8GiB reserve after exact completed-pilot retirement. No scientific quality result.
@@ -285,3 +285,12 @@ exceeded remaining-panel10,703,799,816B before slot03 dispatch. Paired slot03 la
 launched once: parent68013/worker68025, exec7182; config/initial metric/guard verified.
 Fresh199630012 remains in use;013/bootstrap004 unused. No campaign quality conclusion.
 Continue the frozen order and reconcile actual processes/anchors before dispatch.
+
+
+Slot03 independently accepted1200updates/1,228,800targets,41H200snapshots,
+88EMA tensors and complete clipping history; worker/parent guards finished cleanly.
+All four raw/H200 endpoints remain protected. Actual free10,437,251,072B exceeded
+remaining-panel10,144,537,952B before slot04 dispatch. Slot04 layer launched once:
+parent68419/worker68431, exec87973; config/initial metric/guard verified.
+Fresh199630013 now in use;bootstrap004 unused. No campaign quality conclusion.
+Continue the frozen order; all six accepted endpoints precede inference/statistics.
