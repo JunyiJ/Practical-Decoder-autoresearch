@@ -1,11 +1,10 @@
 # Tokenizer final-readout centering preparation
 
-Current status: full-model model001 and serialized model-resume001 PASS both
-layer_affine/rms_affine_bias arms. All710 source/config bindings unchanged,
-695 predecessors preserved. No scientific quality result, seed reservation,
-pilot/quality freeze or active worker. Next actual bounded worker/independent
-parent validation/inference integration; read capacity001 for the concrete recovery
-route after successful resume tensor dependencies close.
+Current status: quality001 FROZEN and first fresh slot00 layer running.
+All737 active source bindings immutable,729 predecessors unchanged. The complete
+six1200-update trajectory panel fits the measured retained-output allowance with
+8GiB reserve after exact completed-pilot retirement. No scientific quality result.
+Poll actual process/log/guard/anchors before each next dispatch; details below.
 
 The accepted incumbent has affine LayerNorm at the final readout, epsilon1e-5,
 256 learned scale and256 bias parameters. Read-only inspection of accepted
@@ -203,3 +202,38 @@ No scientific quality result, quality freeze or active worker.
 Evidence: pilot001-final003-review.json, pilot001-review.json, pilot-integration002.json,
 worker-retirement001/completed.json, campaign-capacity001.json and
 scientific-seed-census-001/result.json in tokenizer-evidence/readout-centering-preparation-001.
+
+
+## Readout-centering quality001 frozen and launched
+
+The complete six-trajectory panel is frozen at SHA`409de49f511b3d94733ff788ef0aec18a26291843b6957e0ed95e539bec9546c`.
+All737 active source bindings are immutable, including729 unchanged predecessors.
+Quality integration001 passed24 finite-contract/publication tests and independent
+actual pilot raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache audits.
+Pilot bundles cannot impersonate quality endpoints. Large worker/acceptance reports
+use the existing2MiB resources/events groups; metadata caps remain unchanged.
+
+Separate exact pilot retirement reclaimed1,118,335,248B and verified28,586 retained
+files unchanged under shared locks, process checks and durable journals. Original
+receipts are immutable; absent pilot tensors resolve through quality001-pilot-retirement.
+Freeze observed12,691,947,520B free, exceeding the complete12,381,585,408B requirement
+including8GiBreserve. Remaining full-panel capacity is rechecked at every dispatch.
+All selected/fresh bytes,147 recoverable historical RAW archives and H200 originals
+remain protected; permanently retired numerical tensors cannot be restored.
+
+Slot00 layer is running: initial parent65154/worker65165, exec session30518,
+configuration/initial metric/resource guard verified. These are launch observations;
+reconcile actual processes and anchors before any next dispatch. Fresh199630011 is
+in use;012/013 and bootstrap004 were unused at launch. No quality conclusion yet.
+Exactly three fresh pairs run layer/rms_bias,rms_bias/layer,layer/rms_bias,1200updates
+each, commonLR0.00125, equal zero LR-search budgets. Final LayerNorm versus affine
+RMS WITH bias,epsilon1e-5/512parameters each; eight pre-branch RMSNorms remain fixed.
+No screens, selection, rescue, retry or partial panel. Preserve every fresh raw/H200
+pair. After six independently accepted endpoints, run the prepared three inference
+pairs and independent final statistics using this exact freeze. The original strict
+gates and standard-recipe scope apply; retain final LayerNorm/adopted recipe pending
+final gates. AdamW beta2 .95-versus-.999 remains deferred.
+
+Evidence: tokenizer-evidence/readout-centering-preparation-001/quality001-freeze.json,
+quality001-preflight.json, quality-integration001-review.json, quality001-capacity.json
+and quality001-pilot-retirement/completed.json.

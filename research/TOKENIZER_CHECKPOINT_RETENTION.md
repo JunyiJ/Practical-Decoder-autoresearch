@@ -1008,3 +1008,26 @@ and protected-raw-storage-013/*.tar.zst; NOT retired, never purge.147 RAWs total
 are protected in storage006–013. All H200 originals/storage004 stay intact.
 New resource-pilot weights1,118,335,248B remain retained until actual quality
 integration closes dependencies and a NEW exact path/size/hash audit.
+
+
+Prospective readout quality001 pilot retirement: quality-integration001 passed24
+finite-contract/publication tests and independent actual retained pilot
+raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache audits. All737 sources
+are bound,729 predecessors unchanged. Quality configuration reads retained pilot
+metadata only; tensor dependencies are closed. Exactly four successful generated
+pilot weights1,118,335,248B are eligible for the separate exact path/size/hash audit,
+shared locks/process checks, durable journal and complete survivor verification.
+The inventory covers every research_runs/research_archives file including .pt.tmp,
+regardless of suffix; selected/fresh bytes and protected archives are excluded
+from retirement. All original receipts remain immutable. Actual complete capacity
+12,381,585,408B and unused seeds must pass before quality dispatch.
+
+
+Readout quality001 pilot-retirement COMPLETE: exactly1,118,335,248B from four
+successful completed-pilot weights retired after dependency closure and independent
+exact audit.28,586 retained files verified unchanged; original receipts immutable.
+Resolve absent pilot paths through readout-centering-preparation-001/quality001-pilot-retirement.
+Actual freeze free12,691,947,520B exceeds complete12,381,585,408B including8GiBreserve.
+The six fresh quality trajectories are now frozen and every resulting raw/H200 pair
+is protected; no quality cleanup.147 historical lossless RAW archives are recoverable,
+NOT retired; all H200 originals and storage004 remain intact.

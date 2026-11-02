@@ -8,18 +8,22 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: readout-centering resource pilots and independent final003
-review passed. Both20-update arms accepted; paired full/cache/reset inference
-passed batches1/8. All729 source bindings unchanged; no active worker or scientific
-quality result.**
+**Latest November2: readout-centering quality001 is frozen; first fresh slot00
+LayerNorm is running. All737 source bindings immutable,729 predecessors unchanged.
+No scientific quality conclusion yet.**
 
-Next: additive finite1200-step quality orchestration outside frozen sources,
-exactly three fresh pairs at commonLR0.00125 with zero LR-search and original
-strict gates. Re-audit actual retained pilot payload/cache, close dependencies,
-exact pilot retirement/capacity and unused-seed checks before quality freeze.
-Panel199630 pilot/eval used; all three fresh seeds and bootstrap remain unused.
-Worker retirement and lossless storage013 resolved capacity;147 protected RAWs
-remain recoverable, not retired, and all H200 originals stay in place.
+Exact freeze SHA`409de49f511b3d94733ff788ef0aec18a26291843b6957e0ed95e539bec9546c`.
+Initial parent65154/worker65165, exec session30518; config/initial metric/guard
+verified. Poll actual process/log/guard/anchors before dispatch; never duplicate.
+Complete exactly six1200-update trajectories in paired order layer/rms_bias,
+rms_bias/layer,layer/rms_bias at commonLR0.00125, zero LR-search and original strict
+gates. After all six accepted endpoints run three prepared inference pairs and
+independent final statistics with this freeze. Preserve every fresh raw/H200 pair.
+No screens/selection/rescue/retry/partial panel. Fresh199630011 now in use;012/013
+and bootstrap004 unused at launch. Exact pilot retirement reclaimed1,118,335,248B;
+28,586 survivors verified. Freeze free12,691,947,520B exceeded complete12,381,585,408B
+including8GiBreserve; recheck actual remaining-panel capacity each dispatch.
+147 historical RAWs remain recoverable in protected archives; H200 originals intact.
 Start with [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
 and the compact state index. Historical material below is superseded by this state.
 

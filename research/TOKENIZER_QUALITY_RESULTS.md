@@ -7951,3 +7951,20 @@ failure is closed; separate additive v2/integration002 passed. Worker retirement
 and lossless storage013 resolved capacity;147 historical RAWs remain recoverable,
 NOT retired, with all H200 originals intact. Details and exact evidence are in
 [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md).
+
+
+## Readout-centering quality001 frozen and launched
+
+All737 sources frozen,729 predecessors unchanged;24 finite-contract/publication
+tests and actual retained pilot tensor/validation/cache audits passed. Separate
+exact pilot retirement reclaimed1,118,335,248B with28,586 survivors verified.
+Freeze free12,691,947,520B exceeds complete12,381,585,408B including8GiBreserve.
+First fresh slot00 LayerNorm is running under exact freeze`409de49f511b3d94733ff788ef0aec18a26291843b6957e0ed95e539bec9546c`.
+No scientific result. Complete exactly three paired1200-update comparisons at common
+LR0.00125 with zero LR-search, then all three inference reviews and independent
+statistics. Candidate is affine RMS WITH bias, sameepsilon1e-5/512parameters;
+eight pre-branch RMSNorms fixed. Retain incumbent LayerNorm and adopted recipe pending
+the original strict gates. AdamW beta2 remains deferred. All fresh pairs and147
+losslessly archived RAWs stay protected. Current live state and exact next action
+are in [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
+and the resume index; current processes/anchors supersede launch snapshots.
