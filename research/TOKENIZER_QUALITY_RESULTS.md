@@ -8426,3 +8426,43 @@ deferred. No active worker or scientific quality result; all older campaigns clo
 Evidence: final-ln-bias-preparation-001/scientific-seed-census-001/result.json,
 pilot001-plan.json, pilot001-freeze.json, pilot001-accepted-00/01.json,
 pilot001-review.json, pilot001-final001-review.json and pilot001-evidence/.
+
+## November 2 — Final-bias quality001 frozen and first fresh trajectory launched
+
+Eight new modules in research/final_ln_bias_quality_v1 preserve all 804 pilot
+predecessors; all 812 active source bindings are frozen. The 24 finite-contract
+and publication tests passed. Independent real-pilot audits revalidated raw/H200,
+optimizer/EMA/RNG, arm-specific 88/87 gradient/EMA and 44/43 AdamW inventories,
+complete clipping histories, full validation and cache/reset behavior. A pilot
+bundle forged as a quality endpoint was rejected. Large reports use existing
+2MiB resource/event groups; no cap increased.
+
+After dependencies closed, the new independent quality001-pilot-retirement audit
+retired exactly four successful pilot weights totaling 1,118,330,973B and verified
+28,961 survivors unchanged. Original source/config/log/receipts remain immutable;
+absent pilot tensors resolve through that later manifest and cannot be restored.
+All selected/fresh checkpoints and 191 protected RAW archives remain protected.
+
+Freeze free 13,457,494,016B exceeded the complete 12,381,585,408B requirement,
+including metadata/publication overlap and 8GiB reserve. All three fresh seeds
+were unused at freeze. Exactly six 1200-update trajectories at common LR0.00125
+follow learned/zero, zero/learned, learned/zero order, with equal zero LR-search
+budgets, no screens/selection/rescue/retry/partial panel or pilot-loss selection.
+Each uses 1,228,800 targets and 41 H200 snapshots. Every fresh raw/H200 pair stays
+protected. Fixed-zero removes256 parameters and one final-bias AdamW/EMA entry;
+centering, learned scale, epsilon1e-5 and all eight pre-branch RMSNorms stay fixed.
+
+Slot00 learned is running; config, initial metric and guard verified. Launch
+snapshot parent2372/worker2384, exec34278 is not authoritative after this moment:
+poll actual processes/logs/guards/accepted anchors before any next dispatch.
+Fresh199850011 is now in use;012/013/bootstrap004 unused. No quality conclusion.
+After all six accepted endpoints, run all three paired inference reviews then
+the independently implemented final statistics review with the exact freeze.
+Keep learned final bias/adopted recipe pending original strict gates; AdamW
+epsilon remains deferred. No old score pooling, holdout scoring or closed reruns.
+
+Freeze SHA256: b52e303992677705891412ad410e03539ee28a1b0a2ae5810729b9a5186a7297.
+Evidence: quality-integration001-review.json, quality001-pilot-retirement/,
+quality001-capacity.json, quality001-seed-use.json, quality001-freeze.json,
+quality001-plan.json, quality001-preflight.json and quality001-launch.json under
+final-ln-bias-preparation-001.

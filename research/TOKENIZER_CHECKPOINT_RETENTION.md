@@ -1336,3 +1336,15 @@ until new quality integration closes tensor dependencies and an independent exac
 retirement audit passes. Current free space includes these retained pilots; the
 conditional post-retirement forecast fits the complete panel, but is not deletion
 or dispatch authorization. Preserve original receipts and all selected/fresh models.
+
+## Final-bias quality pilot retirement completed
+
+After the new quality integration re-audited real pilot payloads/cache and all
+24 finite contracts passed, quality001-pilot-retirement removed exactly four
+successful pilot weights (1,118,330,973B), verifying28,961 surviving research
+artifacts unchanged under shared locks and a durable journal. Original pilot
+receipts remain immutable; intentional absence resolves through the later
+manifest. Never restore or rerun these retired tensors. All quality fresh pairs,
+historical selected/fresh bytes, protected archives and H100/H200 originals remain
+protected. Actual free space passed the unchanged complete-panel requirement
+before quality freeze; charge retained outputs and recheck at each dispatch.

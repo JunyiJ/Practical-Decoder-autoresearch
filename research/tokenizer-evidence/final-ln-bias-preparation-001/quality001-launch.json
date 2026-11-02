@@ -1,0 +1,73 @@
+{
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/quality001-freeze.json",
+    "sha256": "b52e303992677705891412ad410e03539ee28a1b0a2ae5810729b9a5186a7297"
+  },
+  "slot": 0,
+  "arm": "learned",
+  "exec_session": 34278,
+  "parent_pid": 2372,
+  "worker_pid": 2384,
+  "initial_request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-bias-quality-v1-001/evidence/quality/00/request.json",
+    "sha256": "5872cdfc773dbb5f5f21e042c287ab90250027b2c5ec8ec8d3502e78bc34cc00"
+  },
+  "initial_config": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-bias-quality-v1-001/evidence/quality/00/config.json",
+    "sha256": "dffaa7451a129f904636287973362d779ceac3e10a2b32ab59fafe0957ab7e84"
+  },
+  "observed_process": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.final_ln_bias_quality_v1.quality_execution",
+      "worker",
+      "--slot",
+      "0",
+      "--freeze-sha256",
+      "b52e303992677705891412ad410e03539ee28a1b0a2ae5810729b9a5186a7297",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 94.316739959002,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 13455962112,
+      "log_bytes": 0,
+      "output_bytes": 6445
+    },
+    "output_limit_bytes": 603979776,
+    "parent_pid": 2372,
+    "pid": 2384,
+    "required_free_bytes": 12381585408,
+    "reserve_bytes": 8589934592,
+    "returncode": null,
+    "status": "running",
+    "timeout_seconds": 7200
+  },
+  "observed_guard": {
+    "elapsed_seconds": 93.671088958974,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 13455962112,
+      "mps_current_bytes": 611099392,
+      "mps_driver_bytes": 2493317120,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 731693056
+    },
+    "pid": 2384,
+    "reason": null,
+    "status": "watching"
+  },
+  "scope": "Initial dispatch observation only; actual progress/log/guard/anchors supersede saved PIDs. No quality conclusion."
+}

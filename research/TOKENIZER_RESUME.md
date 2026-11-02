@@ -8,28 +8,30 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November 2: both final-bias resource pilots and independent resource
-review passed. No worker is active; scientific quality testing remains ahead.**
+**Latest November 2: final-bias quality001 is frozen; slot00 learned is running.**
 
-Learned/fixed-zero arms completed 20 updates, 20,480 targets, 8 H200 snapshots,
-88/87 EMA tensors and 44/43 AdamW groups. Paired full/cache/reset inference passed
-at batches 1/8; cache is 196,608 bytes/item in both arms. All 804 source bindings
-remain unchanged. No pilot loss is a selection or adoption result.
+Exactly six 1200-update fresh trajectories at common LR0.00125 follow
+learned/zero, zero/learned, learned/zero, with zero LR-search and original strict
+gates. All 812 source bindings are frozen, preserving804 predecessors.
+24 finite-contract/publication tests and real pilot payload/cache re-audits passed.
 
-Next add finite quality orchestration in NEW research/final_ln_bias_quality_v1,
-re-audit actual pilot tensors/cache and six-trajectory contracts, then close
-dependencies and perform a NEW exact pilot-retirement audit before final freeze.
-Retained pilots total 1,118,330,973B. Independent review observed 12,324,999,168B
-free, conditionally 13,443,330,141B after retirement, versus the unchanged
-12,381,585,408B full requirement. Source work proceeds; remeasure before dispatch.
+Exact pilot retirement reclaimed1,118,330,973B with28,961 survivors unchanged;
+original receipts survive, absent pilots resolve through quality001-pilot-retirement.
+Freeze free13,457,494,016B exceeded complete12,381,585,408B including8GiB reserve.
+Retain every fresh raw/H200 pair and all191 historical protected RAW archives.
 
-Panel 199850 pilot001/eval003 used; fresh011/012/013/bootstrap004 unused. Final
-quality remains exactly three fresh pairs at common LR 0.00125, equal zero search
-budgets and original gates. Retain learned bias; AdamW epsilon change deferred.
-All 191 protected RAW archives and H100/H200 originals remain intact.
+Poll actual processes, logs, guards and accepted anchors before any dispatch.
+Initial slot00 parent2372/worker2384, exec34278 is only a launch snapshot.
+Fresh199850011 is now in use;012/013/bootstrap004 unused. No quality conclusion.
+After all six accepted endpoints, run three paired inference reviews and the
+independent final review. Retain learned final bias pending original gates.
+
+Execution module: research.final_ln_bias_quality_v1.quality_execution
+
+Freeze SHA256: b52e303992677705891412ad410e03539ee28a1b0a2ae5810729b9a5186a7297.
 
 Read [preparation](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md) and
-[independent review](tokenizer-evidence/final-ln-bias-preparation-001/pilot001-final001-review.json).
+[freeze](tokenizer-evidence/final-ln-bias-preparation-001/quality001-freeze.json).
 
 ## Findings to retain
 
