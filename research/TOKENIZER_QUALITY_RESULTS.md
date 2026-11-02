@@ -7630,3 +7630,16 @@ The generated standalone branch-scaling component passed12 CPU FP64/FP32 and MPS
 FP32 forward/all-gradient/causality cases, exact unit reference and identical shared
 initialization/RNG. This is not full-model integration or a quality result. See
 TOKENIZER_BRANCH_SCALE_PREPARATION.md and cooldown quality001-final-review.json.
+
+## Fixed branch scaling: full-model prerequisites, no quality result
+
+Both unit/fixed_half actual MLA models passed shared-initialization/RNG/group checks,
+exact unit-incumbent logits and independent complete-branch equations. Both have
+28,492,416 parameters/88 EMA tensors/196,608B cache per item. Four-update generated
+repeat/resume raw-model/optimizer/EMA/RNG errors were exactly zero. Final-step4 H200
+and CPU/MPS batch1/8 full/cache/reset checks passed; all639 bindings unchanged.
+Actual run_training and independent parent full validation/inference remain next.
+No scientific seed or pilot/quality plan reserved. No adopted-recipe change.
+Lossless storage008 preserved six cooldown RAWs, reclaimed653,238,031B and verified
+48,501 survivors plus exact restoration. All selected/fresh bytes remain protected.
+See TOKENIZER_BRANCH_SCALE_PREPARATION.md for scope and next executable action.

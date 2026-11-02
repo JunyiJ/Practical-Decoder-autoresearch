@@ -675,3 +675,21 @@ Cooldown quality001 pilot retirement completed: exactly1,118,328,144B reclaimed,
 28,023 other run/archive files verified unchanged. Original receipts now resolve
 absent pilot weights through quality001-pilot-retirement/completed.json. Every
 fresh quality trajectory remains protected; no quality cleanup command exists.
+
+Prospective storage-recovery-008 may losslessly archive only the six accepted RAW
+checkpoints from the terminally closed tokenizer-cooldown-quality-v1-001 panel.
+Every RAW byte remains protected and recoverable through the new exact manifest
+and protected-raw-storage-008 archives; these are NOT retired payloads. All H200
+files and original receipts remain unchanged. Copy-only compression feasibility,
+path/size/hash allowlists, shared lock/idle checks, durable journals, full survivor
+verification and an exact restoration check are required. This enables the next
+generated branch-scaling resume pair; it does not establish new-panel capacity.
+
+Storage-recovery-008 completed: six cooldown fresh RAW payloads are losslessly
+archived, NOT retired. Reclaimed653,238,031B;48,501 retained files verified unchanged;
+exact restoration passed. Original RAW paths resolve through its raw-completed.json
+and protected-raw-storage-008 archives. Together006/007/008 preserve66 archived RAWs;
+all H200 originals and the storage004 fixture archive remain intact. First sandbox
+probe failure was closed before compression; separate probe002 passed. New branch
+resume generated weights remain retained until downstream dependencies close and
+an independently executed exact numerical-retirement audit authorizes removal.
