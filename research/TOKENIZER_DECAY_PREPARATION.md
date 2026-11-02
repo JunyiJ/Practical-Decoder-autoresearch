@@ -225,3 +225,39 @@ read-only runners are quality001-fresh-inference002.py and
 quality001-final-review002.py. Keep original strict quality gates and the
 standard-recipe scope; no separately optimized LR claim. At closure reconsider
 both architecture and bounded HP questions.
+
+
+## Fixed-LR decay comparison closed without adoption
+
+All six fresh endpoints, three passing paired inference reviews and independent
+final statistics are complete. Both arms used common peak LR0.00125 with zero
+LR-search budgets; no screening or rescue was performed. Fresh H200 CE:
+
+| Seed | Decay0.00006 | Zero decay | Zero minus decay |
+|---|---:|---:|---:|
+|199080011|4.7141558584|4.7234604882|+0.0093046298|
+|199080012|4.7027188086|4.7109193908|+0.0082005822|
+|199080013|4.7300105276|4.7400008942|+0.0099903666|
+
+Zero decay worsened all three seeds. Mean delta+0.0091651929 nats/token and all
+three frozen gates fail. Conditional95% text intervals are wholly positive at
+all declared block sizes;2048/4096/8192 simultaneous upper bounds are
++0.0128724072/+0.0141141413/+0.0158320476. These are conditional reused-text
+intervals, not population-seed or holdout confidence. Retain decay0.00006 with
+the adopted D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/no product norm/no local
+mix/no warmup/H200 recipe. This supports retaining regularization in this fixed
+recipe, not a globally optimal decay or independently optimized-LR claim.
+
+All inference correctness/reset checks passed; both arms retain196,608B cache
+per item. Timing is descriptive and provides no alternate adoption route.
+Terminal STOP closes decay quality training/inference/final commands; all six
+fresh raw/H200 pairs and every historical selected/fresh model remain protected.
+Original pilot receipts resolve through exact pilot-retirement manifests. No
+holdout scoring, closed-fixture rerun or frozen-source edits occurred.
+
+At the boundary both architecture and bounded HP were reviewed. Select parallel
+separate-norm residual topology on the subword MLA/blockRMS backbone for
+prerequisites only; the negative character-MHA prior remains explicit. Defer
+cooldown start600-versus800 as a separate schedule question. Continue prospective
+fixed-common-LR comparisons with equal zero search budgets. Read
+TOKENIZER_PARALLEL_RESIDUAL_PREPARATION.md; no new seed/training plan is reserved.

@@ -1,0 +1,58 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T03:01:48.582749+00:00",
+  "question": "Does parallel attention/FFN residual composition with separate RMSNorms improve the adopted D256 MLA tokenizer recipe at fixed peak LR0.00125?",
+  "architecture_review": {
+    "selected": "Parallel separate-norm residual topology versus serial",
+    "rationale": "Return to the explicitly queued residual-topology architecture question after the completed decay HP comparison. Parallel composition removes the within-block attention-to-FFN dependency without adding matrices, norms or cache state. This tests a dependency-graph change on the adopted subword MLA/blockRMS backbone, not another FFN activation or learning-rate search.",
+    "prior": "The closed character MHA/LayerNorm study worsened every fresh seed and both widths; treat that as a negative prior, not a tokenizer result. Revisit only because tokenizer vocabulary/tables, attention compression, block normalization and1200-update horizon differ. No gain is assumed and no historical seed pooling."
+  },
+  "hp_review": {
+    "candidate": "Earlier linear cooldown start600 versus inherited800 at the same1200-update horizon and peak LR0.00125",
+    "decision": "Deferred distinct schedule question; changes LR exposure and time spent cooling. No evidence here isolates its benefit. Prioritize the queued residual architecture after the just-completed HP study; do not reopen no-warmup or decay campaigns."
+  },
+  "proposal": {
+    "arms": [
+      "serial",
+      "parallel_separate_norms"
+    ],
+    "equations": {
+      "serial": "u=x+A(N1(x)); y=u+F(N2(u))",
+      "parallel_separate_norms": "u=x+A(N1(x)); y=u+F(N2(x))"
+    },
+    "normalization": "Two distinct per-token affine RMSNorms per block, epsilon1e-5, gain1 and no bias; no shared normalization, extra norm or learned branch gain.",
+    "backbone": "D256 RoPE MLA score0.5/SwiGLU672/SiLU/blockRMS/no product norm/no local mix/no warmup/independent decay0.00006/H200",
+    "initialization": "Exactly identical shared parameter tensors and construction RNG. Initial functions/gradients are expected to differ because FFN consumes a different residual stream; do not require output equality across arms.",
+    "parameters": "Same shapes/count expected:28,492,416 parameters and88EMA tensors, subject to explicit full-model/optimizer verification.",
+    "cache": "No new temporal state projected; existing MLA cache shapes expected196608FP32 bytes per batch item over four layers, subject to actual full/cache/reset/causality and buffer accounting.",
+    "quality_design": "Prospective three fresh paired seeds at common LR0.00125 with equal zero search budgets,1200updates each and all original strict gates; standard-recipe comparison only. No rescue or interim stopping. Requires new full-model/worker/parent/inference prerequisites, fresh census, measured complete capacity and finite pilots before final quality freeze.",
+    "training_allowed": false,
+    "seeds_reserved": false,
+    "plan_frozen": false,
+    "parallelism": "Dependency graph only; no concurrent/fused-kernel or serving-speed claim."
+  },
+  "references": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality001-closure.json",
+      "sha256": "0597ff65346434af8173dd3652d0284bd883489407dee7ac1867ef91dd04fb01"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/PARALLEL_BLOCK_RESULTS.md",
+      "sha256": "1027cc4cd97cc49e6574dcaf0a223e8248873423ceb8d8b20c20b2f9891ddbc2"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/SCHEDULE_QUALITY_RESULTS.md",
+      "sha256": "09cab454d032bf600948056c0a3f3811b6f1aeafc15c7294e674a48022465404"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/local_mix_v1/runtime/models/blocks.py",
+      "sha256": "c7d647415e7070638297ddf8a9ffbb814467122cbcf9972c31fe23a2eee5d595"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/models/residual_topology.py",
+      "sha256": "cbcbe3dba3c726a7e88e6c025b69de37d21a053b43ca3773d9b77d90091c88fd"
+    }
+  ],
+  "next_action": "Prepare and freeze a narrow additive standalone composition component, then run generated CPU FP64/FP32 and MPS FP32 forward/all-gradient/causality checks against explicit serial/parallel equations with identical shared matrices. Next explicit full-model policy, optimizer-group, checkpoint/raw/EMA/RNG/resume/final-H200/full-cache-reset integration outside all556 frozen sources. No scientific seed or training panel yet.",
+  "closed_campaign_reopened": false
+}
