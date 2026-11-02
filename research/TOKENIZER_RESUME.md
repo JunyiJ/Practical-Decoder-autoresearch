@@ -8,27 +8,28 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: readout-centering quality001 CLOSED_NOT_ADOPTED. All six
-endpoints and three inference reviews passed; independent mean delta-0.0001240104,
-two seeds slightly improve/one worsens, all strict gates fail. Retain final LayerNorm.
-AdamW beta2 optimizer-component001 PASS; no active worker.**
+**Latest November2: AdamW beta2 model003 and model-resume001 PASS both .999/.95
+arms; all753 bindings unchanged. No active worker or scientific quality result.**
 
-Next: narrow additive full-model AdamW beta2 .95-versus-.999 policy, group/checkpoint
-identity and CPU/MPS raw/optimizer/EMA/RNG/clipping-history resume/H200/cache
-integration outside738 frozen bindings. Keep beta1 .9/epsilon1e-8/Muon/decay .00006
-and adopted model fixed. Four generated CPU cases passed independent arithmetic,
-exact ordering/resume and foreign-group rejection; this is no quality claim.
-No new scientific seeds or pilot/quality plan. Prospective exactly three fresh pairs
-at commonLR .00125/zero LR-search/original strict gates/no rescue. Read
-[TOKENIZER_ADAMW_BETA2_PREPARATION.md](TOKENIZER_ADAMW_BETA2_PREPARATION.md).
+Next: minimal additive actual training/output/worker and independent parent
+validation/inference adapters, re-audit retained resume payloads and close tensor
+dependencies, new exact retirement audit if needed, then actual complete worker-pair
+capacity recheck. Four successful generated weights1,118,319,956B remain retained.
+Read [TOKENIZER_ADAMW_BETA2_PREPARATION.md](TOKENIZER_ADAMW_BETA2_PREPARATION.md).
 
-Every prior quality command is terminally closed. Preserve all six readout raw/H200
-pairs3,355,571,184B, all153 historical RAW archives and H200 originals. Storage014
-exactly resolves archived clipping fresh RAWs, including imported slot00 in the
-original publication-failed root; recoverable, NOT retired. Closure free9.39GB is
-not new-panel capacity approval. Source/small numerical work proceeds with exact
-authorized recovery as needed. Current progress and actual processes supersede
-historical material below; no retired numerical restoration or closed-fixture rerun.
+Shared initialization/logits/RNG/groups match except declared beta2. Both four-update
+MPS repeats and serialized resumes match raw/optimizer/EMA/RNG/clipping history
+exactly; final H200 and CPU/MPS cache/reset pass. Original model001 missing-plan
+launch and model002 absolute CPU/MPS post-update parity failures remain closed.
+Separate model003 exact same-backend native update passes; added-beta2 backend
+discrepancy is2.98e-8. Absolute backend-update parity is not claimed.
+
+Storage015 recovered capacity through lossless text compression and16 closed GQA
+RAW archives; exact restoration and survivors passed. All169 historical RAW archives,
+H200 originals/storage004, every readout fresh pair and original evidence remain
+protected. No permanently retired restoration or closed reruns. Retain beta2 .999,
+final LayerNorm and adopted recipe. Prospective quality remains exactly three fresh
+pairs at commonLR .00125/zero LR-search/original strict gates. No seeds reserved.
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds

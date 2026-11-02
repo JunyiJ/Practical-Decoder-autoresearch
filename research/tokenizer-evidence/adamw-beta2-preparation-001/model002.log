@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/model002.py", line 75, in <module>
+    row['cpu_mps_update_max_abs']=max(close(p,g,3e-3,3e-5) for p,g in zip(cpu.parameters(),gpu.parameters()))
+                                  ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/model002.py", line 75, in <genexpr>
+    row['cpu_mps_update_max_abs']=max(close(p,g,3e-3,3e-5) for p,g in zip(cpu.parameters(),gpu.parameters()))
+                                      ~~~~~^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/model002.py", line 40, in close
+    a=a.detach().cpu();b=b.detach().cpu();torch.testing.assert_close(a,b,rtol=rtol,atol=atol);return float((a-b).abs().max())
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/testing/_comparison.py", line 1689, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 8 / 16384 (0.0%)
+Greatest absolute difference: 5.126930773258209e-05 at index (30, 147) (up to 3e-05 allowed)
+Greatest relative difference: 0.05988597497344017 at index (48, 238) (up to 0.003 allowed)

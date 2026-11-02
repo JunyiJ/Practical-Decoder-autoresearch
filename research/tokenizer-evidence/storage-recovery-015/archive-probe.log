@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-015/archive-probe.py", line 14, in <module>
+    started=time.monotonic();a.create_archive(archive,files);a.verify_archive(archive,files)
+                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-015/archive_codec.py", line 6, in create
+    assert not archive.exists() and shutil.disk_usage(a.ROOT).free>=a.RESERVE+max(v['size'] for v in files.values())+512*1024**2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

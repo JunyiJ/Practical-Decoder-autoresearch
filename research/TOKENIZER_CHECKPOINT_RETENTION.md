@@ -1064,3 +1064,26 @@ remain protected; no quality retirement. All153 historical RAW archives/storage0
 remain protected and H200 originals intact. Next beta2 component only reads an
 accepted readout control RAW; future full-model dependencies must be tracked before
 any lossless storage move. No new scientific panel capacity is implied by closure.
+
+
+Prospective storage015 preserves16 closed GQA selected/fresh RAWs losslessly,
+small-first to stay within compression overlap plus8GiBreserve. Original completed
+state/result/portable acceptance/final review, exact hashes, shared locks, durable
+journals and full survivor verification are required. All original RAW bytes remain
+recoverable/protected, NOT retired; H200 originals and153 earlier archives unchanged.
+The new beta2 generated resume requires9,781,116,928B; current capacity deficit is
+an execution constraint, and source/full-model in-memory work has proceeded.
+
+Storage015 also permits exact audited lossless APFS compression of historical text at original paths, with full readable-byte hashes preserved. No weights selected for transparent text compression. The first copy-only probe stopped before compression on actual capacity; original failure remains closed.
+
+
+Storage015 COMPLETE:1643 text files losslessly compressed at original paths,
+259,952,640B reclaimed/49,952 protected files verified;16 closed GQA selected/fresh
+RAWs losslessly archived,916,750,821B reclaimed/51,579 other files unchanged.
+Exact restoration PASS. Resolve original RAWs through storage-recovery-015/raw-completed.json
+and protected research_archives/protected-raw-storage-015/*.tar.zst. All169 RAWs
+remain recoverable, NOT retired; H200 originals/storage004 intact. Probe001 capacity
+failure before compression is closed; separate002 passed after text recovery.
+New beta2 generated resume weights1,118,319,956B remain retained until actual worker
+integration re-audits and closes dependencies, then a new exact retirement audit.
+Original failure source/log/config/receipts and all selected/fresh bytes stay protected.
