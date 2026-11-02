@@ -154,3 +154,41 @@ source bindings/data/capacity, census six distinct seeds (no screening seed),
 prepare/run0/run1/review finite pilots and complete independent resource review.
 Only accepted pilots permit final quality orchestration/freeze and the three
 fresh pairs. Keep all guards and confirmation requirements; no partial launch.
+
+
+## Lossless storage recovery and resource pilots complete
+
+The human-requested alternate recovery is complete. storage-recovery-004 used
+transparent APFS compression on1,842 historical text files, preserving original
+paths and bytes while reclaiming1,248,325,632 allocated bytes;44,832 protected
+files were verified unchanged. It also losslessly archived144 inactive generated
+pytest fixture trees:289,359 entries and all content/link identities were verified
+in research_archives/research-pytest-temp-004.tar.zst before exact loose-copy
+retirement. Their1,493,590,016 allocated bytes became a33,004,054-byte archive.
+This recovered approximately2.71GB of allocated payload space. Selected models,
+every fresh confirmation, original failure logs and unrelated software remained
+untouched. Resolve old /private/tmp fixture paths through the exact compressed
+manifest and protected archive; never rerun closed fixtures.
+
+capacity003 measured13,340,770,304B free against12,381,585,408B complete allowance,
+resolving the prior wait. All548 source bindings remained unchanged. The fresh
+199080 census passed: pilot001/evaluation003 have now been used as planned;
+fresh011/012/013 and bootstrap004 remain unused. No screening seed exists.
+
+Finite pilot001 is complete: both20-update decay/zero arms were independently
+accepted with20,480 targets,88EMA tensors and8H200 snapshots each. Paired
+full/cache/reset inference and separate final001 resource review passed. The
+pilot freeze is38678a3471e3667abc887ec89583b6b2c3db431ca2b8c5a8e910b421142654fc.
+No pilot-loss selection or scientific quality conclusion follows. No worker is
+active. Final review observed12,165,648,384B free with1,118,328,144B successful
+pilot weights retained. Their conditional sum13,283,976,528B exceeds the complete
+allowance; retirement still requires closed dependencies and a new exact audit.
+
+Next implement minimal additive decay_quality_v1 orchestration outside frozen
+sources, verify the real retained pilot payload/cache and finite six-trajectory
+contracts, close dependencies, independently audit successful-pilot retirement,
+remeasure capacity/unused seeds and freeze quality. Run exactly three fresh pairs
+at common LR0.00125 with zero LR-search budgets, then three inference reviews
+and independent statistics under original strict gates. No screens or rescue;
+this is a standard-recipe comparison. Preserve all selected/fresh models and the
+adopted recipe pending a valid final quality result.
