@@ -1,7 +1,7 @@
 # Tokenizer cooldown-onset preparation
 
-Current status: quality001 FROZEN; slots00-03 independently accepted;
-slot04 cooldown800 on the third fresh seed is running under the exact
+Current status: quality001 FROZEN; slots00-04 independently accepted;
+final slot05 paired cooldown600 on the third fresh seed is running under the exact
 freeze `1a13edadf74644b11c9aca9b9861d1875c156217533916592fabff04bee194d0`. The current
 progress record and accepted anchors supersede this launch snapshot. No scientific
 quality result exists yet. Six1,200-update trajectories form three fresh pairs at
