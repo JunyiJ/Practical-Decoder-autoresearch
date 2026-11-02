@@ -8,31 +8,28 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: final LayerNorm bias actual worker, independent acceptance and
-trained inference passed both generated arms. No active worker or quality result.**
+**Latest November2: final-bias pilot integration/retention passed; pilot dispatch
+awaits complete-panel storage. No worker is active.**
 
-Trainer-worker002 preserves accepted learned slot00 in original001 and runs only
-previously unstarted fixed-zero slot01. Original001 stopped at the inter-slot disk
-check before any slot01 updates; no retry, repeated updates or checkpoint copies.
-All798 runtime/acceptance sources remain unchanged. Both arms complete4 updates,
-4,096 targets,3 H200 snapshots;88/87 EMA tensors,44/43 AdamW groups. Independent
-full validation is exact and batch1/8 full/cache/reset inference passes.
+All804 campaign/runtime bindings remain unchanged. Two finite20-update pilot
+configs and the full three-fresh-pair fixed-LR design passed integration checks,
+including real retained worker tensor/cache re-audits,87/88 EMA and43/44 AdamW
+inventories. Independent reviewer/census entrypoints are prepared. No scientific
+seeds reserved or pilot/quality plan frozen; no new quality finding.
 
-Next implement finite20-update resource-pilot orchestration and the complete
-three-fresh-pair fixed-LR design outside frozen namespaces. Audit retained actual
-worker payloads/cache and finite contracts, close dependencies, fresh census and
-measured complete high-water plus serialization/metadata/8GiB reserve before
-finite pilots/final freeze. Read
-[TOKENIZER_FINAL_LN_BIAS_PREPARATION.md](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md).
-Both accepted generated worker pairs total1,118,318,945B and remain retained.
+Recovery executed: exact generated-worker retirement1,118,318,945B with43,767
+survivors unchanged; storage019 lossless archival353,577,916B with53,111 survivors
+unchanged and exact restoration. All191 historical RAWs remain recoverable;
+H100/H200 originals/storage004 intact. Original failures remain closed.
 
-Exact resume retirement reclaimed1,118,313,377B with43,535 survivors unchanged.
-Storage018 lossless text compression reclaimed86,827,008B, preserving501 original
-paths/hashes and52,410 other files; earlier pre-compression failures remain closed.
-Capacity005 cleared the remaining-arm requirement; use actual full-panel forecasts
-for the next stage. No stale capacity wait or lowered reserve. All188 historical
-RAWs remain recoverable via storage006–017; all H200 originals/storage004 intact.
-Retain learned final bias and adopted recipe; AdamW epsilon change deferred.
+The complete requirement is12,381,585,408B; measured free10,290,741,248B leaves
+2,090,844,160B missing. Only Macintosh HD is mounted. Wake when free space reaches
+the requirement or an external volume is supplied for verified archive relocation.
+Check once hourly; unchanged checks stay silent, with no repeated audits or commits.
+Then remeasure, fresh scientific census, freeze/run both finite pilots and paired
+inference plus independent resource review. Never launch a partial panel or relax
+reserve/guards. Read [preparation](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md).
+Retain learned final bias; AdamW epsilon change remains deferred.
 
 ## Findings to retain
 

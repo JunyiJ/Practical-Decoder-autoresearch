@@ -850,3 +850,13 @@ Next finite20-update pilots and complete three-fresh-pair design at commonLR.001
 zero LR-search and original gates, after real payload/finite-contract audits and
 full high-water forecast. Keep learned bias; AdamW epsilon ablation stays deferred.
 See TOKENIZER_FINAL_LN_BIAS_PREPARATION.md and trainer-worker002 evidence.
+
+## November 2 — Final-bias finite pilot path prepared
+
+Pilot integration/retention passed with804 unchanged bindings and explicit87/88
+EMA and43/44 AdamW inventories. Exactly three fresh pairs at commonLR.00125,
+zero LR-search,original gates remain prospective. No scientific seeds or freeze.
+Exact retirement and lossless recovery executed; complete-panel capacity still
+lacks2,090,844,160B at the recorded observation. Prepared pilots await the precise
+storage wake condition in TOKENIZER_FINAL_LN_BIAS_PREPARATION.md. No active worker
+or quality result. Keep learned final bias; epsilon ablation remains deferred.

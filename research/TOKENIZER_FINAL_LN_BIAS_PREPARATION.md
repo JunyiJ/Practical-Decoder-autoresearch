@@ -1,11 +1,11 @@
 # Final LayerNorm bias preparation
 
-Current status: trainer-worker002 and trained-inference002 passed both generated
-arms. All798 runtime/acceptance bindings unchanged,791 predecessors preserved.
-No active worker,scientific quality result,new scientific seeds or pilot/quality
-freeze. Next finite20-update resource-pilot orchestration and complete three-pair
-fixed-LR design; see latest completion/recovery below. Earlier stage notes are
-historical and original failed commands remain closed.
+Current status: finite pilot integration and retention tests passed;804 source
+bindings unchanged. Pilot dispatch is blocked by complete-panel storage capacity:
+10,290,741,248B observed versus12,381,585,408B required after executed recovery.
+No active worker, scientific seeds reserved, pilot/quality freeze or quality result.
+See latest capacity/recovery section and its precise hourly wake condition.
+Earlier stage notes are historical; original failed commands remain closed.
 
 Select final LayerNorm learned bias versus fixed zero bias. Keep centering,
 learned scale, epsilon1e-5 and all eight pre-branch RMSNorms unchanged. Both arms
@@ -150,3 +150,58 @@ Evidence: `final-ln-bias-preparation-001/worker-integration001.json`,
 `capacity004/005.json`, `trainer-worker001-closure.json`,
 `trainer-worker002-source-plan.json`, `trainer-worker002.json`,
 `trained-inference002.json`; `storage-recovery-018/compression003-completed.json`.
+
+## November 2 — Final-bias pilot integration passed; full-panel capacity blocked
+
+Finite pilot integration001 and pilot-only retention-boundary001 passed. The six
+additive campaign modules preserve all798 worker/runtime predecessors;804 total
+bindings are unchanged. Both actual accepted generated worker bundles passed
+independent acceptance, full-validation and paired cache re-audits under the new
+sources. Candidate87 versus control88 EMA tensors and43 versus44 AdamW groups
+are explicit. Tests cover finite20-update configs, shared non-bias settings,
+complete six-trajectory order, equal zero LR-search budgets, full1200-update
+clipping-history inventories, exact capacity boundaries, seed-shape rejections,
+CLI entry, and protected-fresh retention sentinels. The independent resource
+reviewer and guarded scientific census entrypoint are prepared but unexecuted.
+No scientific seeds reserved, pilot/quality plan frozen, training launched or
+quality claim. Learned final bias remains adopted; epsilon ablation deferred.
+
+After actual tensor/cache dependency closure, worker-retirement001 removed exactly
+four obsolete successful generated weights (1,118,318,945B), verifying43,767
+survivors unchanged. Original acceptance and failure evidence remain immutable;
+absent tensors resolve through the retirement manifest, never restore/rerun.
+The accepted learned endpoint in original failed001 was classified by acceptance.
+
+Storage019 losslessly archived the three remaining closed EMA-horizon fresh RAWs,
+reclaiming353,577,916B and verifying53,111 other files unchanged. Exact restoration
+passed. Original paths resolve through storage019/raw-completed.json and protected
+archives; all191 historical RAWs remain recoverable, NOT retired. H100/H200 original
+paths and storage004 are intact. A copy-only H200 transparent-compression probe
+kept bytes unchanged but did not achieve useful compression. RAW probe002 stopped
+before creating an archive on the generic small-input predicate. Separate003
+binds exactly three path/size/SHA inputs while retaining the same kernel512MiB
+compressed-output cap,8GiB reserve,time/RSS limits and one compressor thread.
+Its copy-only probe and subsequent archival/restoration passed;002 remains closed.
+
+The complete forecast remains12,381,585,408B: six560MiB RAW/H200 allowances,
+256MiB metadata including publication overlap/control/inference/statistics, and
+8GiB reserve. Both pilots retire only after their dependencies close, before fresh
+quality outputs. Measured generated sizes fit the caps; hardlink publication does
+not create a second whole payload. Size-based inventory includes incomplete writes
+and protected archives. After recovery, capacity001 measured10,290,741,248B free:
+**2,090,844,160B still missing**. Only Macintosh HD is mounted. No pilot was frozen
+or dispatched and no requirement was reduced.
+
+Wake when actual free space reaches12,381,585,408B, or the human supplies an
+external volume for verified protected-archive relocation. A short hourly disk
+check is sufficient; unchanged checks create no commits or repeated notifications.
+Then remeasure, perform a fresh scientific seed census, freeze/run both finite
+pilots, paired inference and independent resource review. Do not repeat completed
+audits, closed probes or fixture runs. This is a precise storage dependency, not
+an active research worker. No new independent source item is currently required
+before the prepared pilot path can run.
+
+Evidence: `final-ln-bias-preparation-001/pilot-integration001.json`,
+`retention-boundary001.json`, `worker-dependencies-closed001.json`,
+`worker-retirement001/completed.json`, `campaign-capacity001.json`;
+`storage-recovery-019/raw-completed.json`, `restoration-check.json`.

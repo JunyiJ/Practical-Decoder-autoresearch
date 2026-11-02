@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-019/archive-probe002.py", line 24, in <module>
+    started=time.monotonic();a.create_archive(archive,files);a.verify_archive(archive,files)
+                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-019/archive_codec.py", line 19, in create
+    assert max(v['size'] for v in files.values()) < CAP
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

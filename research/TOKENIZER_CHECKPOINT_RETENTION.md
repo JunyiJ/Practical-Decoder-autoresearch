@@ -1277,3 +1277,24 @@ stale mutable-results inventory and002 import-path failures changed no payloads
 and remain closed. All188 historical RAW archives via006–017 and H200 originals/
 storage004 remain protected. Current free space is not a new scientific-panel
 allowance; remeasure complete retained-output high-water before freeze/dispatch.
+
+## November 2 — Final-bias worker retirement and final loose RAW archival
+
+Pilot integration001 closed actual generated-worker tensor/cache dependencies.
+Worker-retirement001 removed exactly four successful generated weights,
+1,118,318,945B, with43,767 survivors unchanged. This includes the accepted learned
+endpoint inside capacity-failed001: classification followed acceptance, not root
+name. Original failure/acceptance sources/configs/logs/receipts remain immutable;
+absent tensors resolve by the new retirement manifest and must never be restored.
+
+Storage019 preserves all three closed EMA-horizon fresh RAWs in protected archives,
+reclaiming353,577,916B with53,111 survivors unchanged and exact restoration PASS.
+All191 historical RAWs via006–017/019 remain recoverable, NOT retired. H100/H200
+originals and storage004 intact. H200 transparent-copy probe gave no useful
+compression; RAW002 input-bound failure wrote no archive. Separate003 uses an
+exact three-file input allowlist with unchanged512MiB kernel output cap and all
+reserve/time/RSS guards. Original failures remain closed.
+
+Complete-panel storage still lacks2,090,844,160B at capacity001 observation.
+No additional deletion is implied. Wake on sufficient actual space or a human-
+supplied external volume for verified relocation preserving protected bytes.
