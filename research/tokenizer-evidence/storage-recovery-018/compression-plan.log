@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-018/compress.py", line 57, in <module>
+    idle();plan() if mode=='plan' else apply()
+           ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-018/compress.py", line 21, in plan
+    files=selected();assert files
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-018/compress.py", line 14, in selected
+    p=R/row['path'];assert p.is_file() and not p.is_symlink() and p.stat().st_size==row['size']
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

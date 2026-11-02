@@ -1256,3 +1256,24 @@ pairs at commonLR .00125,equal zero LR search,original strict gates,no rescue.
 Evidence: `final-ln-bias-preparation-001/model001-plan.json`, `model001.json`,
 `model-resume001-plan.json`, `model-resume001.json`, `capacity001/002/003.json`;
 `storage-recovery-017/raw-completed.json`, `restoration-check.json`.
+
+## November 2 — Final-bias resume retirement and lossless text recovery
+
+After worker-integration001 audited both real resume payloads/cache and closed
+dependencies, resume-retirement001 removed exactly four obsolete generated weights,
+1,118,313,377B, with43,535 survivors unchanged. Sources/configs/logs/receipts remain
+immutable and absent weights resolve via that later manifest. Never restore/rerun.
+
+The actual worker pair now totals1,118,318,945B and must remain until downstream
+pilot dependencies close and a NEW exact audit. Accepted learned weights remain
+in original trainer-prerequisite-001 despite its later prelaunch slot01 capacity
+failure; acceptance classification overrides the failed root name. Separate002
+imports them without copies/repeated updates and retains its accepted fixed-zero
+weights in trainer-prerequisite-002. No selected/fresh scientific weights retired.
+
+Storage018 compression003 losslessly compressed501 historical text files at their
+original paths/hashes, reclaiming86,827,008B;52,410 survivors unchanged. Original001
+stale mutable-results inventory and002 import-path failures changed no payloads
+and remain closed. All188 historical RAW archives via006–017 and H200 originals/
+storage004 remain protected. Current free space is not a new scientific-panel
+allowance; remeasure complete retained-output high-water before freeze/dispatch.

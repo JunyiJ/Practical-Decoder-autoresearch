@@ -8,29 +8,31 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: final LayerNorm bias full-model and serialized resume checks
-passed both arms. No active worker or scientific quality result.**
+**Latest November2: final LayerNorm bias actual worker, independent acceptance and
+trained inference passed both generated arms. No active worker or quality result.**
 
-Shared initialization/logits/RNG and unrelated optimizer groups match exactly.
-Removing only final bias changes28,492,416/88 to28,492,160/87 parameters/tensors;
-Muon44 groups remains fixed,AdamW44 becomes43. CPU/MPS gradients/cache/causality,
-foreign-policy rejection and four-update exact raw-model/optimizer/EMA/RNG/history
-repeat/resume passed. Final-step4 H200 has3 snapshots; batch1/8 inference passed.
-All791 source bindings unchanged,777 predecessors preserved.
+Trainer-worker002 preserves accepted learned slot00 in original001 and runs only
+previously unstarted fixed-zero slot01. Original001 stopped at the inter-slot disk
+check before any slot01 updates; no retry, repeated updates or checkpoint copies.
+All798 runtime/acceptance sources remain unchanged. Both arms complete4 updates,
+4,096 targets,3 H200 snapshots;88/87 EMA tensors,44/43 AdamW groups. Independent
+full validation is exact and batch1/8 full/cache/reset inference passes.
 
-Next implement actual trainer/output/worker and independent parent full-validation/
-inference adapters outside frozen sources. Re-audit retained successful resume
-payloads and close dependencies before exact retirement. Read
+Next implement finite20-update resource-pilot orchestration and the complete
+three-fresh-pair fixed-LR design outside frozen namespaces. Audit retained actual
+worker payloads/cache and finite contracts, close dependencies, fresh census and
+measured complete high-water plus serialization/metadata/8GiB reserve before
+finite pilots/final freeze. Read
 [TOKENIZER_FINAL_LN_BIAS_PREPARATION.md](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md).
-Capacity003 records the current worker-pair deficit and concrete lossless text
-recovery candidates; source work proceeds. No scientific seeds or panel reserved.
+Both accepted generated worker pairs total1,118,318,945B and remain retained.
 
-Storage017 preserves all six closed beta2 fresh RAWs losslessly, reclaiming
-651,815,376B;52,616 survivors unchanged and exact restoration passed. Resolve
-original paths via its raw-completed manifest and protected archives. All188
-historical RAWs remain recoverable,all H200 originals/storage004 intact. No
-permanently retired restoration or closed reruns. Beta2 .95 remains not adopted;
-retain .999 and the learned final LayerNorm bias. AdamW epsilon change deferred.
+Exact resume retirement reclaimed1,118,313,377B with43,535 survivors unchanged.
+Storage018 lossless text compression reclaimed86,827,008B, preserving501 original
+paths/hashes and52,410 other files; earlier pre-compression failures remain closed.
+Capacity005 cleared the remaining-arm requirement; use actual full-panel forecasts
+for the next stage. No stale capacity wait or lowered reserve. All188 historical
+RAWs remain recoverable via storage006–017; all H200 originals/storage004 intact.
+Retain learned final bias and adopted recipe; AdamW epsilon change deferred.
 
 ## Findings to retain
 

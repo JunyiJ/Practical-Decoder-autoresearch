@@ -1056,3 +1056,15 @@ pairs at commonLR .00125,equal zero LR search,original strict gates,no rescue.
 Evidence: `final-ln-bias-preparation-001/model001-plan.json`, `model001.json`,
 `model-resume001-plan.json`, `model-resume001.json`, `capacity001/002/003.json`;
 `storage-recovery-017/raw-completed.json`, `restoration-check.json`.
+
+## November 2 — Final-bias worker integration completed
+
+Final LayerNorm learned/fixed-zero bias now passes actual generated worker output,
+independent full validation and batch1/8 full/cache/reset inference. Arm-specific
+88/87 EMA and44/43 AdamW inventories are enforced. Original001 inter-slot capacity
+failure happened before slot01 launch; separate002 imported accepted slot00 with
+zero repeat updates/copies and completed only the unrun arm. No quality finding.
+Next finite20-update pilots and complete three-fresh-pair design at commonLR.00125,
+zero LR-search and original gates, after real payload/finite-contract audits and
+full high-water forecast. Keep learned bias; AdamW epsilon ablation stays deferred.
+See TOKENIZER_FINAL_LN_BIAS_PREPARATION.md and trainer-worker002 evidence.

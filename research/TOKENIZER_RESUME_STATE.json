@@ -47,7 +47,7 @@
   "active_run": null,
   "active_session": null,
   "active_worker": null,
-  "actual_free_bytes": 9200406528,
+  "actual_free_bytes": 8858079232,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
   "adamw_beta2_direction": "research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
@@ -8465,8 +8465,8 @@
   "ffn_structure_transport_review": "research/tokenizer-evidence/ffn-structure-preparation-001/transport-worker-inference001-review.json",
   "final_decision": "research/tokenizer-evidence/ffn-structure-preparation-001/quality001-final-review.json",
   "final_ln_bias_capacity": {
-    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/capacity003.json",
-    "sha256": "639bcffd1fbb770446c4fd7655c21b7bfd172758797e77f83b2c225568a80ed4"
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/capacity005.json",
+    "sha256": "995c268932e4349b6a74e2c1f79382b8eec1ec5f2da4c668a3578cf37542bd72"
   },
   "final_ln_bias_component": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/component001-result.json",
@@ -8484,6 +8484,27 @@
   "final_ln_bias_resume": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/model-resume001.json",
     "sha256": "16b5bd1ffae493d1e0b38d1cd2ad16d0285b108f1fe248086d20966dfa4d825b"
+  },
+  "final_ln_bias_resume_retirement": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/resume-retirement001/completed.json",
+    "sha256": "e48a1185749fe8295426b65e669178a7ab33f88593f304ebf170fbb06b8de039"
+  },
+  "final_ln_bias_retained_generated_worker_bytes": 1118318945,
+  "final_ln_bias_trained_inference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/trained-inference002.json",
+    "sha256": "9ecc0ffeeddf73b81c923c41386a2798b6623b8b7b40c1ad76c85fd4ed23db26"
+  },
+  "final_ln_bias_worker": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/trainer-worker002.json",
+    "sha256": "4a8d495c27b100dd2bd32c240f8cfc6ffbbe1303c808aa006f963f92798356b8"
+  },
+  "final_ln_bias_worker_failure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/trainer-worker001-closure.json",
+    "sha256": "b458f1f27393c22a91c932f97c2854efc3c0e3c61016c05e2239c918716d5beb"
+  },
+  "final_ln_bias_worker_integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/worker-integration001.json",
+    "sha256": "1b474f91e8f4b380864aa7b0f89dabe76281faf0a90dd444e26faf812282e2cf"
   },
   "first_action": "Final LayerNorm bias model001 and model-resume001 PASS learned/fixed-zero arms: identical shared initialization/logits/RNG and all unrelated optimizer groups;28492416/28492160parameters,88/87EMA tensors,44Muon groups both and44/43AdamW groups. Only final bias removed. Explicit actual readout equations,CPU/MPS gradients/cache/reset/causality and foreign bias-policy checkpoint/cache rejection passed. Both four-update MPS fresh repeat/serialized resume raw model/optimizer/EMA/RNG/clipping histories exact(maxerror0);capped-memory step2,final-step4 raw/H2003snapshots,CPU/MPS batch1/8 full/cache/reset passed. All791 bindings unchanged,777 predecessors preserved. No scientific quality result/new scientific seed/pilot or quality freeze/active worker. Next minimal additive actual run_training/output/worker and independent parent full-validation/inference adapters outside frozen sources,with explicit final-bias routing and arm-specific87/88 tensor and43/44AdamW acceptance. Re-audit retained successful resume raw/H200/optimizer/EMA/RNG/history/cache and close dependencies,then NEW exact generated-weight retirement and actual complete worker-pair capacity recheck. Four successful resume weights1118313377B remain retained. Read capacity003:free8625647616B versus9814671360B,conditional9743960993B after dependency closure/exact retirement leaves70710367B deficit.118112256B allocated historical text candidates inventoried for exact lossless original-path compression if still needed;not an allowlist or dispatch readiness. Source integration proceeds,no stale capacity wait;recheck actual capacity after recovery. Then fresh census,measured full retained-output high-water including metadata/serialization overlap/8GiBreserve,finite pilots/final THREE-fresh-pair quality freeze at commonLR0.00125/equal zero LR-search/original strict gates/no rescue. Final-bias ablation intentionally removes256 parameters,not parameter-matched;centering/scale/epsilon1e-5/eight pre-branch RMSNorms fixed. Never bypass learned-bias/final-LayerNorm guards. Storage017 losslessly archived6 closed beta2 fresh RAWs,reclaimed651815376B,52616survivors unchanged,exact restoration PASS. Original APFS copy-only probe preserved bytes but did not compress usefully;separate capped streaming archive probe passed with kernel output-limit test512MiB,unchanged8GiBreserve/time/RSS guards. Resolve beta2 RAWs via storage-recovery-017/raw-completed.json and protected-raw-storage-017/*.tar.zst;bytes recoverable,NOT retired.188 historical RAWs via storage006\u2013017 remain protected;all H200 original paths/storage004 intact. Retain learned final bias/beta2 .999/final affine LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. Beta2 quality001 CLOSED_NOT_ADOPTED mean+0.11006817407836185,all seeds worse/all gates failed;all previous campaigns/fixtures closed. No permanently retired tensor restoration,closed reruns or old score/seed pooling. AdamW epsilon1e-6-versus1e-8 deferred.",
   "free_bytes": 10067329024,
@@ -8570,7 +8591,7 @@
   "mla_score_worker": "research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
   "mla_score_worker_archive": "research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
   "mla_score_worker_review": "research/tokenizer-evidence/mla-score-preparation-001/worker003-review.json",
-  "next_action": "Final LayerNorm bias model001 and model-resume001 PASS learned/fixed-zero arms: identical shared initialization/logits/RNG and all unrelated optimizer groups;28492416/28492160parameters,88/87EMA tensors,44Muon groups both and44/43AdamW groups. Only final bias removed. Explicit actual readout equations,CPU/MPS gradients/cache/reset/causality and foreign bias-policy checkpoint/cache rejection passed. Both four-update MPS fresh repeat/serialized resume raw model/optimizer/EMA/RNG/clipping histories exact(maxerror0);capped-memory step2,final-step4 raw/H2003snapshots,CPU/MPS batch1/8 full/cache/reset passed. All791 bindings unchanged,777 predecessors preserved. No scientific quality result/new scientific seed/pilot or quality freeze/active worker. Next minimal additive actual run_training/output/worker and independent parent full-validation/inference adapters outside frozen sources,with explicit final-bias routing and arm-specific87/88 tensor and43/44AdamW acceptance. Re-audit retained successful resume raw/H200/optimizer/EMA/RNG/history/cache and close dependencies,then NEW exact generated-weight retirement and actual complete worker-pair capacity recheck. Four successful resume weights1118313377B remain retained. Read capacity003:free8625647616B versus9814671360B,conditional9743960993B after dependency closure/exact retirement leaves70710367B deficit.118112256B allocated historical text candidates inventoried for exact lossless original-path compression if still needed;not an allowlist or dispatch readiness. Source integration proceeds,no stale capacity wait;recheck actual capacity after recovery. Then fresh census,measured full retained-output high-water including metadata/serialization overlap/8GiBreserve,finite pilots/final THREE-fresh-pair quality freeze at commonLR0.00125/equal zero LR-search/original strict gates/no rescue. Final-bias ablation intentionally removes256 parameters,not parameter-matched;centering/scale/epsilon1e-5/eight pre-branch RMSNorms fixed. Never bypass learned-bias/final-LayerNorm guards. Storage017 losslessly archived6 closed beta2 fresh RAWs,reclaimed651815376B,52616survivors unchanged,exact restoration PASS. Original APFS copy-only probe preserved bytes but did not compress usefully;separate capped streaming archive probe passed with kernel output-limit test512MiB,unchanged8GiBreserve/time/RSS guards. Resolve beta2 RAWs via storage-recovery-017/raw-completed.json and protected-raw-storage-017/*.tar.zst;bytes recoverable,NOT retired.188 historical RAWs via storage006\u2013017 remain protected;all H200 original paths/storage004 intact. Retain learned final bias/beta2 .999/final affine LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. Beta2 quality001 CLOSED_NOT_ADOPTED mean+0.11006817407836185,all seeds worse/all gates failed;all previous campaigns/fixtures closed. No permanently retired tensor restoration,closed reruns or old score/seed pooling. AdamW epsilon1e-6-versus1e-8 deferred.",
+  "next_action": "Final LayerNorm bias trainer-worker002 COMPLETE: both generated four-update learned/fixed-zero arms independently accepted (4096 training targets,3 H200 snapshots,88/87 EMA tensors,44/43 AdamW and44 Muon groups); parent full validation exact and CPU/MPS CE agreement<2.9e-7. Complete clipping histories and explicit final-bias inventories checked; history/foreign-policy/group/coverage forgeries rejected in integration001. Trained-inference002 full/cache/reset PASS batches1/8,196608B cache/item. All798 runtime/acceptance bindings unchanged,791 predecessors preserved. Original trainer-worker001 stopped before slot01 launch after free space fell below remaining capacity by48685056B; slot00 accepted,slot01 pid null/no updates. Original STOP/source/log/config/receipts immutable. Separate frozen002 independently imported slot00 with ZERO repeat updates/copies, then ran only previously unstarted slot01. Accepted generated learned weights remain in original001 root and fixed-zero in002; classify by acceptance,not failed root name. No scientific quality result/new scientific seeds/pilot or quality freeze/active worker. Next minimal additive finite20-update resource-pilot orchestration and complete THREE-fresh-pair fixed-LR design outside798 frozen sources,using tested serial/acceptance/inference/retention primitives with explicit87/88 EMA and43/44 AdamW routing. Re-audit actual accepted worker raw/H200/optimizer/EMA/RNG/clipping history/cache and finite contracts,close dependencies,fresh scientific census,complete measured retained-output high-water including serialization overlap/metadata/8GiBreserve,exact authorized recovery if needed,finite pilots then final quality freeze. Learned versus fixed-zero final LayerNorm bias at commonLR0.00125,equal zero LR-search,original strict gates,no rescue/selection/partial panel. Candidate removes256 parameters;centering/scale/epsilon1e-5/eight pre-branch RMSNorms fixed. Resume-retirement001 reclaimed1118313377B with43535 survivors unchanged after dependency closure;original evidence immutable,never restore/rerun. New accepted generated worker weights1118318945B retained until pilot integration closes dependencies and a NEW exact audit. Storage018 compression003 losslessly compressed501 historical text files at original paths,reclaimed86827008B,52410 survivors unchanged;original001 stale mutable-results inventory and002 import-path failures remain closed,both before any compression. Actualfree9412763648B exceeded complete remaining9210691584B before002;capacity004/005 deficits resolved. Current free is not scientific-panel readiness;proactively inventory authorized lossless recovery if measured full high-water needs it,source work proceeds,no stale wait. Retain learned final bias/beta2 .999/final affine LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. Preserve188 historical lossless RAWs via storage006\u2013017 manifests/protected archives,NOT retired;all H200 originals/storage004 intact. All earlier campaigns/fixtures closed;no permanently retired tensor restoration,closed reruns or old score/seed pooling. AdamW epsilon1e-6-versus1e-8 deferred.",
   "next_after_starter": "Readout-centering pilot001 COMPLETE via research.readout_centering_campaign_v2: both20-update layer/rms_bias arms independently accepted(20480targets,8H200snapshots,88EMA tensors),complete clipping histories; paired full/cache/reset inference batches1/8 and independent final003 resource review PASS,196608B cache/item. All729 campaign sources unchanged,717 runtime predecessors preserved. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/readout_centering_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118335248B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199630 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Final LayerNorm versus affine RMS WITH bias,epsilon1e-5/512parameters both,eight pre-branch RMSNorms fixed. Original final002 reviewer launch environment failure before audit stays closed; separate final003 uses the required strict environment without repeating training/inference. Original pilot integration001 import failure before numerical work/deletion stays closed; additive v2 explicit worker validation routing and separate integration002 passed without changing723 original bindings. Worker-retirement001 reclaimed1118323284B with41696survivors unchanged,original evidence immutable. Storage013 losslessly archived27 closed table/MLA/horizon selected/fresh RAWs,reclaimed2574573563B,50958other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-013/raw-completed.json and protected research_archives/protected-raw-storage-013/*.tar.zst;recoverable,NOT retired,never purge. Together006-013 preserve147 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11575418880B plus retainedpilots1118335248B conditionally yields12693754128B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW beta2 .95-versus-.999 deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Pilot observations are resource evidence,not scientific quality selection.",
   "no_paid_compute": true,
   "no_subagents": true,
@@ -8610,8 +8631,8 @@
   "parallel_residual_seed_panel_status": "All pilot/evaluation/fresh/bootstrap roles consumed; no replacements",
   "parallel_residual_worker": "research/tokenizer-evidence/parallel-residual-preparation-001/trainer-worker003.json",
   "parallel_residual_worker_retirement": "research/tokenizer-evidence/parallel-residual-preparation-001/worker-retirement001/completed.json",
-  "pending_commit": true,
-  "pending_push": true,
+  "pending_commit": false,
+  "pending_push": false,
   "plan_sha256": "7572d9dd09bb4b9c6b064179ed3439ffc90b772e53b9addec6066cd58be06d94",
   "protected_raw_restoration": "research/tokenizer-evidence/storage-recovery-014/restoration-check.json",
   "protected_raw_storage_manifest": "research/tokenizer-evidence/storage-recovery-014/raw-completed.json",
@@ -8680,7 +8701,7 @@
   "session_hint": null,
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "status": "final_ln_bias_model_resume_passed",
+  "status": "final_ln_bias_worker_passed",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -8705,12 +8726,16 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/restoration-check.json",
     "sha256": "e1c356daa47b9ac6c926adf5de0748328dd641780bd60f330c071ecb09338dae"
   },
+  "storage_recovery_018": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-018/compression003-completed.json",
+    "sha256": "30ab4d6dfde379f2376ba794596505add1bf2a43ece5640c802b9552640cb856"
+  },
   "storage_recovery_latest": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-017/raw-completed.json",
     "sha256": "5d9f374ecb7e5b252a31c8d3afc1716b23c18a161b2d3b35f0d7f59ddaa704a5"
   },
   "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-terminal.json",
-  "updated_at": "2026-11-02T14:15:18.028239+00:00",
+  "updated_at": "2026-11-02T14:41:49.937259+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
