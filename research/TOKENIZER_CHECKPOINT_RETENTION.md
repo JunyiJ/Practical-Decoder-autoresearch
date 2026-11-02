@@ -549,3 +549,23 @@ the retirement operation's final independent re-audit. Keep original receipts,
 sources/logs/configs, selected/fresh models and all other artifacts. Use exact
 size/hash allowlists, shared locks, process checks, durable journals and retained
 file verification. Later manifests explain absent pilot paths; no pilot rerun.
+
+
+Parallel-residual resume-retirement002 permits exactly four successful generated
+four-update resume raw/H200 payloads (1,118,314,132B), conditional on both arms
+passing worker-integration002 real optimizer/EMA/RNG, full-validation and cached
+inference audits and resume-dependencies-closed002. Fresh worker source reads
+retained success/configuration JSON and creates new initialization/data; it does
+not load these tensors. Keep all original sources/configs/logs/receipts, selected
+models and every fresh confirmation. Apply only exact path/size/hash allowlists,
+shared worker lock/process checks, durable deletion journal and survivor
+verification. The later retirement manifest resolves absent payloads; no fixture
+rerun or restoration. Current human authorization covers these proved-obsolete
+successful numerical payloads after dependency closure.
+
+The first parallel-residual adapter audit failed before training/deletion because
+its read-only data view used the old serial-only model policy. Its source, plan,
+log and failure receipt remain closed. New worker_v2 routes the read-only data
+view to the already tested isolated runtime. The unused conditional cleanup001
+source is retained and must not execute; only the later002 audit can authorize
+its exact allowlist after successful002 dependency closure.

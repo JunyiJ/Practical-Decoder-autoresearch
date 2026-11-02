@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/parallel-residual-preparation-001/trainer-worker002.py", line 142, in <module>
+    try:worker(args) if args.worker else parent()
+                                         ~~~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/parallel-residual-preparation-001/trainer-worker002.py", line 106, in parent
+    process=run_process(writer,'pilots',slot,argv,c.ROOT,required_free_bytes=8*1024**3+(2-slot)*TRAJECTORY_CAP+16*1024**2,
+        output_limit_bytes=TRAJECTORY_CAP,timeout_seconds=600)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_process_v2.py", line 123, in run_process
+    observe(initial=True);save_control()
+    ~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_process_v2.py", line 88, in observe
+    raise RuntimeError('Insufficient disk for remaining allocations' if initial else 'Disk reserve crossed')
+RuntimeError: Insufficient disk for remaining allocations
