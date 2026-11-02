@@ -7643,3 +7643,15 @@ No scientific seed or pilot/quality plan reserved. No adopted-recipe change.
 Lossless storage008 preserved six cooldown RAWs, reclaimed653,238,031B and verified
 48,501 survivors plus exact restoration. All selected/fresh bytes remain protected.
 See TOKENIZER_BRANCH_SCALE_PREPARATION.md for scope and next executable action.
+
+## Fixed branch scaling: actual generated worker prerequisite complete
+
+Both4-update unit/fixed_half worker outputs independently accepted4,096targets,
+3H200 snapshots and88EMA tensors. Parent full validation matched exactly; CPU/MPS
+CE differences were below3.1e-7. Paired full/cache/reset inference passed batches1/8,
+196,608B cache/item both arms. All645 bindings unchanged. No scientific quality
+result or recipe change. Next finite20-update resource pilots and three-fresh-pair
+fixed-LR design after actual payload integration, census and full storage forecast.
+Exact obsolete generated resume retirement reclaimed1,118,314,644B with39,528
+survivors unchanged and enabled the complete worker pair; selected/fresh bytes and
+all original evidence remain protected. See TOKENIZER_BRANCH_SCALE_PREPARATION.md.

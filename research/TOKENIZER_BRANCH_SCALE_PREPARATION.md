@@ -1,9 +1,9 @@
 # Tokenizer fixed residual branch-scaling preparation
 
-Current status: full-model model001 and serialized model-resume001 PASS both
-unit/fixed_half arms. Actual worker/parent acceptance is next. No scientific seeds,
-resource pilot/quality plan or active worker. Cooldown quality001 remains closed;
-the adopted recipe and unit branch gains are unchanged.
+Current status: actual trainer-worker001 and independent parent acceptance plus
+trained-inference001 PASS both unit/fixed_half arms. Finite resource-pilot integration
+is next. No scientific seeds, pilot/quality freeze, quality result or active worker.
+The adopted recipe and unit branch gains remain unchanged.
 
 Compare unit gain with fixed0.5 scaling of both complete post-projection residual
 branches at unchanged depth: u=x+g*A(N1(x)); y=u+g*F(N2(u)), g=1 or0.5. Keep separate
@@ -91,3 +91,36 @@ remeasure complete worker-pair capacity. The four retained resume weights total
 route. Source work proceeds. Afterwards: census, full measured retained-output
 high-water plus serialization/metadata/8GiB reserve, finite resource pilots and a
 three-fresh-pair fixed-LR quality freeze. No LR screens/rescue or partial panel.
+
+## Actual worker and independent acceptance
+
+Actual trainer-worker001 completed both fresh generated four-update arms under
+strict bounded publication and process/resource guards. Each endpoint independently
+accepted4updates/4,096training targets/3H200 snapshots/88EMA tensors. Parent full
+validation exactly matched each child's report, and independent CPU/MPS CE differed
+by less than3.1e-7. Trained-inference001 passed paired full/cache/reset checks at
+batches1/8 with196,608B cache per item for both arms. All645 runtime/acceptance
+bindings remain unchanged, including639 predecessors. No scientific quality result,
+seed reservation, resource pilot/quality freeze or active worker.
+
+Worker-integration001 first re-audited both actual retained resume raw/H200 payloads,
+optimizer/EMA/RNG contracts, validation target coverage and foreign-gain rejection,
+plus paired inference. That closed the successful resume tensors' dependencies.
+Resume-retirement001 then retired only four obsolete generated payloads totaling
+1,118,314,644B with39,528 survivors unchanged. Original source/log/config/receipt
+bytes survive; absent tensors resolve through the completed manifest and cannot
+be restored or rerun. Exact policy-at-audit snapshots match the retirement and
+storage008 manifest hashes. Actual free10,996,101,120B exceeded the complete worker
+pair requirement9,814,671,360B, including8GiB reserve and all metadata allowance.
+Fresh worker raw/H200 payloads total1,118,319,636B and remain retained until tested
+pilot integration closes their dependencies and a new exact audit allows retirement.
+
+Next: minimal additive finite20-update resource-pilot orchestration and complete
+THREE-fresh-pair fixed-LR design outside all645 tested sources. Reuse tested serial,
+acceptance, inference and retention primitives; verify actual worker payloads/cache
+and finite contracts. Complete fresh scientific census and full measured retained-
+output high-water including serialization overlap/metadata/8GiB reserve. Execute
+exact authorized recovery if needed, then finite resource pilots and final quality
+freeze. Unit versus fixed0.5 complete serial branches at common LR0.00125, equal
+zero LR-search budgets, original strict gates, no screens/selection/rescue/partial
+panel. Source work proceeds; current free space is not scientific-panel readiness.

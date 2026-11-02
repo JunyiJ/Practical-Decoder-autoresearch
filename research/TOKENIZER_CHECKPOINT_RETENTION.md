@@ -693,3 +693,20 @@ all H200 originals and the storage004 fixture archive remain intact. First sandb
 probe failure was closed before compression; separate probe002 passed. New branch
 resume generated weights remain retained until downstream dependencies close and
 an independently executed exact numerical-retirement audit authorizes removal.
+
+Prospective branch-scale resume-retirement001 is limited to the four successful
+generated model-resume001 raw/H200 weights, exactly1,118,314,644B. It requires the
+new worker-integration001 real payload/optimizer/EMA/RNG/full-validation/cache audit
+and successful tensor-dependency closure. Fresh worker initialization reads only
+retained metadata and new generated input. Exact path/size/hash allowlists, shared
+locks/process checks, durable journals and survivor verification remain mandatory.
+Selected/fresh scientific weights and protected archives are never eligible.
+Retired generated payloads cannot be restored; original receipts remain immutable.
+
+Branch-scale resume-retirement001 completed: exactly four obsolete generated resume
+raw/H200 weights retired,1,118,314,644B reclaimed,39,528 survivors unchanged. Original
+metadata/receipts resolve absent tensors through its completed manifest; never
+restore or rerun them. Fresh generated trainer-worker001 weights1,118,319,636B
+remain retained until downstream tested pilot integration and a new exact audit.
+The policy-at-audit snapshots stored alongside this retirement and storage008 match
+the immutable manifest policy hashes; later policy additions do not alter them.
