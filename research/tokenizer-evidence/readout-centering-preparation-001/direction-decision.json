@@ -1,0 +1,56 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T09:38:11.449443+00:00",
+  "question": "Does removal of final-readout centering improve the retained 1200-update subword MLA recipe at fixed LR0.00125, with epsilon and both affine parameters matched?",
+  "architecture_review": {
+    "selected": "Final affine LayerNorm versus affine RMS with bias, epsilon1e-5 in both arms; all eight pre-branch RMSNorms unchanged",
+    "correction": "Previous deferred wording incorrectly called the incumbent final readout RMSNorm. Actual frozen contract requires affine LayerNorm epsilon1e-5; accepted-model read-only inspection is required in component001. No completed campaign implementation is changed.",
+    "rationale": "Isolates centering at the readout while keeping parameter count, scale, bias, initialization and epsilon equal. Earlier block LayerNorm negative results are an adverse prior at another placement, not evidence of a final-only gain; no scores or seeds pooled."
+  },
+  "hp_review": {
+    "candidate": "AdamW beta2 0.95 versus current0.999; beta1 0.9, Muon and independent decay unchanged",
+    "decision": "deferred",
+    "rationale": "Distinct bounded second-moment memory question. Actual factory inherits AdamW defaults; component001 will verify saved accepted optimizer groups. Changing adaptation timescale can help or hurt; no benefit assumed."
+  },
+  "proposal": {
+    "kinds": [
+      "layer_affine",
+      "rms_affine_bias"
+    ],
+    "epsilon": 1e-05,
+    "width": 256,
+    "affine_parameters_each": 512,
+    "weight_init": 1,
+    "bias_init": 0,
+    "pre_branch_norms_unchanged": true,
+    "peak_lr": 0.00125,
+    "steps": 1200,
+    "quality_design": "Exactly three fresh pairs at a common fixed LR; equal zero LR-search budgets, original strict gates, no screens/rescue/retry/partial panel. Standard-recipe scope only.",
+    "scientific_seeds_reserved": false,
+    "pilot_or_quality_frozen": false
+  },
+  "references": {
+    "clipping_closure": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/gradient-clip-preparation-001/quality002-closure.json",
+      "sha256": "d2ba419da6a80a77251abe9a453f8a0aee62569ea1bcb9fe8d26d9e97944f144"
+    },
+    "prior_deferred_wording": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/gradient-clip-preparation-001/direction-decision.json",
+      "sha256": "0f2fc73e4911628289c9510878fd2548c5c6b780f9ed49b2691289e7fe75470d"
+    },
+    "actual_final_contract": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/branch_scale_model_v1/runtime/models/block_norm.py",
+      "sha256": "5957a2b1727567409f42d0c0a28e824d075673ee266391f4f1fa439c6bc63e3b"
+    },
+    "optimizer_factory": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/optimizers.py",
+      "sha256": "399f869ad7dc3a6e838af5d10d4656c2255750208fe6011f5c72222f8a865730"
+    },
+    "local_adamw_default": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/optim/adamw.py",
+      "sha256": "39c5eaa04f83632285b114fd093eeb0006866e4adf59ad50cc28de12e63a8459"
+    }
+  },
+  "next_action": "Freeze/run standalone generated CPU FP64/FP32 and MPS FP32 forward/all-gradient/finite-difference/token-independence checks, with read-only accepted incumbent normalization and optimizer inspection. Then explicit additive full-model policy, grouping, checkpoint identity, raw/EMA/RNG resume and H200/full-cache-reset integration without bypassing existing final-LayerNorm/MLA guards.",
+  "closed_campaign_reopened": false
+}

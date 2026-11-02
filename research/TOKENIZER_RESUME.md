@@ -8,11 +8,17 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest: standalone FP32 block-normalizer spec passed66CPU tests and audit002.
-Attempt001's wrapper failure is preserved; spec/tests/tolerances did not change.
-Next resolve full-model/optimizer/checkpoint/cache integration and source
-applicability without editing frozen code. No full-model or MPS validation yet.
-Training remains capacity-gated; all old campaigns stay closed and SiLU retained.**
+**Latest November2: gradient clipping quality002 closed without adoption; mean
+clip0.5-minus1.0 +0.0041331496, all seeds worse/all gates failed. All six endpoints
+and three inference pairs passed. Retain clipping1.0. No active worker.**
+
+Next: explicit full-model final-readout centering integration outside695 frozen
+sources. The incumbent is affine LayerNorm epsilon1e-5 (earlier deferred wording
+was incorrect). Standalone matched-affine RMS comparison component002 passed24
+CPU/MPS cases; original component001 oracle failure remains preserved. No scientific
+seeds or pilot/quality plan reserved. Start with
+[TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
+and the compact state index. Historical material below is superseded by this state.
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds

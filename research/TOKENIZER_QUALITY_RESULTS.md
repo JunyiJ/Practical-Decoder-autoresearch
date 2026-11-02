@@ -7845,3 +7845,34 @@ weights are charged, leaving11,822,324,248B required versus12,381,995,008B measu
 All691 sources remain frozen. Prepared quality002-fresh-inference001.py and
 quality002-final-review001.py require all6 accepted endpoints and exact new freeze.
 Preserve original failure evidence and all historical protected archives.
+
+
+## Gradient-clipping quality002 closed without adoption
+
+All six fresh1200-update endpoints and three paired inference reviews passed.
+Independent final arithmetic and text bootstrap gave clip0.5-minus-clip1.0 mean
+**+0.004133149591824823 nats/token**. All three seeds worsened and all original
+quality gates failed. Retain clipping1.0 and the adopted unit-gain serial MLA recipe.
+
+| Seed | Clip1 H200 CE | Clip0.5 H200 CE | Delta | Clipped updates: 1 / 0.5 |
+|---|---:|---:|---:|---:|
+|199520011|4.6916474635|4.6962045766|+0.0045571131|30 / 966|
+|199520012|4.7300379660|4.7329504182|+0.0029124522|23 / 951|
+|199520013|4.6964113898|4.7013412733|+0.0049298835|34 / 962|
+
+Counts are descriptive coefficients below one out of1200 updates per trajectory,
+not selectors or causal mediation estimates. Simultaneous conditional text-bootstrap
+upper bounds at blocks2048/4096/8192 are +0.0058927768/+0.0065718466/+0.0067075439.
+These condition on the three trained seeds and reused validation text, not population
+seed uncertainty. Closed holdout; fixed standard-recipe scope, zero LR-search, no rescue.
+
+Terminal STOP closes all quality002 training/inference/final commands. Original
+quality001 publication failure stays closed and immutable. Slot00 was imported with
+zero repeat updates/copies; its original failed-root raw/H200 are protected accepted
+fresh artifacts, never obsolete failed payloads. All six pairs total3,355,566,960B;
+all691 frozen sources remained unchanged. Closure free9,629,437,952B is an
+observation, not new-panel readiness. Preserve114 historical lossless RAW archives,
+all H200 originals, selected/fresh bytes and the storage004 fixture archive.
+
+See [independent review](tokenizer-evidence/gradient-clip-preparation-001/quality002-final-review.json)
+and [closure](tokenizer-evidence/gradient-clip-preparation-001/quality002-closure.json).

@@ -1,8 +1,8 @@
 # Tokenizer global gradient-clipping preparation
 
-Current status: quality001 closed publication failure; quality002 frozen same-panel
-continuation has accepted slots00–04; final slot05 cliphalf is active on seed199520013.
-Follow new freeze/quality002 anchors; original STOP and all failures preserved.
+Current status: quality002 CLOSED_NOT_ADOPTED. All six fresh endpoints and three
+paired inference reviews passed; clip0.5 worsened all seeds (mean +0.0041331496).
+Retain clipping1.0. All prior commands are terminally closed; no active worker.
 
 Question: does global L2 gradient clipping0.5 versus incumbent1.0 improve the retained
 1200-update subword MLA recipe at common peak LR0.00125? Apply clipping after backward
@@ -18,12 +18,12 @@ No benefit or clipping frequency is assumed. Actual pre/post norm and coefficien
 measurement is required before scientific training. Do not choose thresholds from
 pilot loss or expand the finite comparison.
 
-At the boundary both architecture and bounded HP were reviewed. Defer a distinct
-matched-epsilon final-readout LayerNorm versus incumbent final RMSNorm question,
-keeping all pre-branch RMSNorms unchanged. Earlier block LayerNorm failed; this is
-an adverse prior, not evidence for the different placement. Centering and affine
-bias remain joint changes. That direction needs explicit policy/group/initialization/
-checkpoint/cache checks before use. See gradient-clip-preparation-001/direction-decision.json.
+The original deferred direction incorrectly described the final readout as RMSNorm.
+Correction from accepted H200/raw inspection: it is affine LayerNorm epsilon1e-5,
+with256 learned scale and256 bias parameters; all eight pre-branch norms are RMS.
+The original direction-decision.json is preserved as historical evidence. The new
+boundary question isolates final centering with scale, bias and epsilon matched.
+See TOKENIZER_READOUT_CENTERING_PREPARATION.md for the current next action.
 
 Generated optimizer-component001 tested prescribed norms0,.25,.5,.75,1,2 against an
 independent float64 global-norm/coefficient oracle. Maximum gradient error was
@@ -61,7 +61,7 @@ benefit estimate. Both parent full-validation reports recomputed exactly; CPU/MP
 CE differences3.0137e-7/2.6949e-7. Paired H200 cache/reset checks passed batches1/8.
 Timing is descriptive generated-fixture evidence, not a production advantage.
 
-Next executable action: minimal additive finite20-update resource-pilot orchestration
+Historical worker-stage next action (completed below): finite20-update resource-pilot orchestration
 and complete THREE-fresh-pair fixed-LR design outside frozen673 sources, reusing tested
 serial/acceptance/inference/retention primitives. Integrate/re-audit actual successful
 worker raw/H200/optimizer/EMA/RNG/clipping history/cache and finite contracts, close
@@ -190,3 +190,34 @@ weights are charged, leaving11,822,324,248B required versus12,381,995,008B measu
 All691 sources remain frozen. Prepared quality002-fresh-inference001.py and
 quality002-final-review001.py require all6 accepted endpoints and exact new freeze.
 Preserve original failure evidence and all historical protected archives.
+
+
+## Gradient-clipping quality002 closed without adoption
+
+All six fresh1200-update endpoints and three paired inference reviews passed.
+Independent final arithmetic and text bootstrap gave clip0.5-minus-clip1.0 mean
+**+0.004133149591824823 nats/token**. All three seeds worsened and all original
+quality gates failed. Retain clipping1.0 and the adopted unit-gain serial MLA recipe.
+
+| Seed | Clip1 H200 CE | Clip0.5 H200 CE | Delta | Clipped updates: 1 / 0.5 |
+|---|---:|---:|---:|---:|
+|199520011|4.6916474635|4.6962045766|+0.0045571131|30 / 966|
+|199520012|4.7300379660|4.7329504182|+0.0029124522|23 / 951|
+|199520013|4.6964113898|4.7013412733|+0.0049298835|34 / 962|
+
+Counts are descriptive coefficients below one out of1200 updates per trajectory,
+not selectors or causal mediation estimates. Simultaneous conditional text-bootstrap
+upper bounds at blocks2048/4096/8192 are +0.0058927768/+0.0065718466/+0.0067075439.
+These condition on the three trained seeds and reused validation text, not population
+seed uncertainty. Closed holdout; fixed standard-recipe scope, zero LR-search, no rescue.
+
+Terminal STOP closes all quality002 training/inference/final commands. Original
+quality001 publication failure stays closed and immutable. Slot00 was imported with
+zero repeat updates/copies; its original failed-root raw/H200 are protected accepted
+fresh artifacts, never obsolete failed payloads. All six pairs total3,355,566,960B;
+all691 frozen sources remained unchanged. Closure free9,629,437,952B is an
+observation, not new-panel readiness. Preserve114 historical lossless RAW archives,
+all H200 originals, selected/fresh bytes and the storage004 fixture archive.
+
+See [independent review](tokenizer-evidence/gradient-clip-preparation-001/quality002-final-review.json)
+and [closure](tokenizer-evidence/gradient-clip-preparation-001/quality002-closure.json).

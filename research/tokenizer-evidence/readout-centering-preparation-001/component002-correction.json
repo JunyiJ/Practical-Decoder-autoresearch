@@ -1,0 +1,15 @@
+{
+  "status": "new_harness_only_original_failure_closed",
+  "original_failure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-centering-preparation-001/component001-result.json",
+    "sha256": "59b38a896e41420cc8b36897f124a07b7335acb7fe96fca8ea6c5c4e51fcb096"
+  },
+  "failure": "CPU FP32 batch3 width7 incumbent native LayerNorm backward exceeded elementwise oracle bound: absolute9.871093956093091e-5 at a gradient of magnitude about0.317. Narrow generated sinusoidal rows have low variance and cancellation in centering backward.",
+  "basis": "The incumbent calls F.layer_norm and is not new normalization arithmetic. Keep independent CPU FP64 forward and finite differences unchanged; add exact native nn.LayerNorm parity for every forward and gradient tensor. Use tensorwise infinity-norm error for FP32 incumbent analytic-oracle comparison, same5e-5 coefficient, because a near-cancelled individual derivative is not a useful reduction-error scale. Candidate RMS keeps all original elementwise tolerance checks. Report absolute and normwise errors without suppressing failed evidence.",
+  "component_math_changed": false,
+  "candidate_tolerances_changed": false,
+  "resource_guards_changed": false,
+  "scientific_training": false,
+  "original_fixture_rerun": false,
+  "new_runner": "component002.py"
+}

@@ -435,3 +435,31 @@ serialized-resume cases; no full-model/MPS/EMA/H200/cache or quality claim. Next
 narrow additive full-model clipping instrumentation and identity integration,
 then real worker/validation/inference, full capacity/census/resource pilots before
 any quality freeze. See TOKENIZER_GRADIENT_CLIP_PREPARATION.md.
+
+
+## Clipping closed; corrected final-readout centering question
+
+Clipping0.5 worsened all three fresh seeds: mean+0.004133149591824823 nats/token,
+all original gates failed; all six endpoints and three inference pairs passed.
+Retain clipping1.0. Quality002 and original publication-failed quality001 stay
+closed, with every fresh raw/H200 protected, including imported slot00.
+
+Both architecture and bounded HP reviewed. Actual accepted H200/raw inspection
+corrected earlier deferred wording: the final readout already uses affine LayerNorm
+eps1e-5, not RMSNorm. Select centering removal only: compare incumbent LayerNorm
+with affine RMS plus bias, both512 parameters/eps1e-5; keep pre-branch RMSNorms fixed.
+No benefit assumed; prior block LayerNorm failures are adverse evidence at a distinct
+placement. Defer AdamW beta2 .95-versus-.999 with beta1 .9/Muon/decay unchanged;
+44 accepted AdamW groups confirm current betas(.9,.999). No seed or score pooling.
+
+Standalone component002 passed24 CPU FP64/FP32 and MPS FP32 cases with forward/all-
+gradient/finite-difference/token-independence checks. Original component001 FP32
+incumbent-oracle failure stays closed; separate002 adds exact native LayerNorm
+forward/all-gradient parity and a documented normwise FP32 control oracle. Candidate
+elementwise tolerances and all resource guards unchanged. No candidate full-model
+integration, scientific seed or pilot/quality freeze. Next explicit policy/grouping/
+identity/raw-EMA-RNG resume/H200/cache integration outside695 frozen sources; never
+bypass the existing final-LayerNorm/MLA guards. Then worker/validation/inference,
+fresh census, measured full high-water plus8GiBreserve and finite pilots before
+exactly three fresh quality pairs at fixedLR0.00125/equal zero LR-search/strict gates.
+See TOKENIZER_READOUT_CENTERING_PREPARATION.md.
