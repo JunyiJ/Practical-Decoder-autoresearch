@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/cooldown-preparation-001/worker-integration001.py", line 32, in <module>
+    idle();plan=read(reference(B/'worker-integration001-plan.json'));assert plan['runner']==reference(__file__)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/cooldown-preparation-001/worker-integration001.py", line 18, in reference
+    path=Path(path).resolve();assert path.is_file() and not path.is_symlink() and path.stat().st_size<=512*1024**2
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

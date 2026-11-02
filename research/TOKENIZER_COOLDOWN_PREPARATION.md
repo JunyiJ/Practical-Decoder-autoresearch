@@ -1,8 +1,8 @@
 # Tokenizer cooldown-onset preparation
 
-Current status: full-model model001 and serialized model-resume001 PASSED and
-are closed. No active
-worker, scientific seed reservation, pilot freeze or quality freeze exists.
+Current status: trainer-worker001 and trained-inference001 COMPLETE for both
+four-update generated arms. No active worker, scientific quality result, seed
+reservation or pilot/quality freeze exists. All earlier prerequisites stay closed.
 Parallel-residual quality001 is CLOSED_NOT_ADOPTED; serial remains adopted.
 
 Test linear cooldown beginning at zero-based update600 versus incumbent800 over
@@ -31,15 +31,19 @@ rejected. Source/plan/log/result/guard are immutable under
 This is toy-SGD evidence only, not actual Muon/AdamW/model/EMA/H200/cache evidence.
 No research corpus or scientific seed was used and no panel was launched.
 
-Next implement minimal additive actual run_training/output/worker and independent
-parent full-validation/inference adapters outside frozen sources. Re-audit retained
-resume payloads before closing their tensor dependencies; then exact authorized
-retirement if needed and remeasure the complete worker pair. After actual worker
-acceptance/inference: fresh scientific seed census, measured complete retained
-output high-water including serialization overlap/metadata and8GiB reserve,
-finite resource pilots, and final quality freeze. Prospective quality design is
-exactly three fresh pairs at common LR0.00125, zero LR-search budgets, no screens,
-selection, rescue or retries, original strict gates and standard-recipe scope.
+Next implement minimal additive finite20-update resource-pilot orchestration and
+the complete three-fresh-pair fixed-LR design outside609 frozen runtime/acceptance
+bindings. Reuse existing serial/acceptance/inference/retention primitives, verify
+actual successful worker payloads/cache and finite contracts, then close their
+tensor dependencies. Prospective pilot onsets13/10 are compressed20-update
+fixtures; actual1,200-update onset800/600 group rates were checked independently.
+Complete fresh scientific census and measured complete retained-output high-water
+including serialization overlap, metadata and8GiB reserve before finite pilot
+freeze, and require successful pilots before quality freeze. Quality remains
+exactly three fresh pairs at common LR0.00125, equal zero LR-search budgets,
+original strict gates, no screens/selection/rescue/retry; standard-recipe scope.
+Proactively audit authorized lossless recovery if the complete scientific panel
+needs more space; preserve every selected/fresh byte and existing protected archive.
 Do not weaken guards or start a partial panel to fit storage. Current free space
 is not readiness; source work proceeds while any necessary exact recovery is
 prepared. Preserve selected/fresh models, all original evidence and protected
@@ -62,7 +66,29 @@ run_training/output publication and independent parent full validation remain
 required. No scientific seed reservation, pilot/quality freeze or active worker.
 
 Capacity001 records actual free space and the complete next worker-pair requirement,
-including8GiB reserve and metadata. Four successful resume raw/H200 weights remain
-retained until real payload adapter audits close dependencies; only then may a new
-exact cleanup audit retire them. They provide a concrete conditional recovery route
-for the worker pair, not new scientific-panel readiness. Small source work proceeds.
+including8GiB reserve and metadata. At that point the four successful resume raw/H200 weights were retained pending
+real payload adapter audits and an exact cleanup audit. The completed retirement
+and worker launch below supersede that conditional recovery route; neither
+observation establishes scientific-panel readiness. Small source work proceeds.
+
+Actual trainer/parent/inference milestone: both four-update generated arms passed
+run_training with bounded raw/H200 publication and independent parent full validation
+(4,096 training targets,3H200 snapshots,88EMA tensors each). CPU/MPS validation CE
+differences were below3.1e-7. Trained-inference001 passed full/cache/reset checks
+at batches1/8,196,608B cache per item. Timings are descriptive correctness-fixture
+measurements, not scientific quality or an adoption route. All609 source/config
+bindings remained unchanged. Fresh scientific seeds have not been reserved.
+
+Adapter integration001 failed before numerical audit/deletion when plan construction
+referenced trainer-worker001-source-plan.json before publishing it. Original
+source/log/failure remain closed. Separately bound integration002 published plans
+in dependency order and passed real resume raw/H200/optimizer/EMA/RNG/full-validation/
+cache audits. After tensor dependencies closed, resume-retirement001 independently
+audited and retired exactly four obsolete successful weights(1,118,313,556B),
+verifying38,697 survivors unchanged. Original resume paths now resolve through
+that manifest; do not restore or rerun. Actual post-cleanup free10,033,377,280B
+exceeded the complete9,814,671,360B worker-pair requirement and enabled both workers.
+Current successful worker raw/H200 weights(1,118,318,420B) stay retained until
+pilot adapter dependencies close and a new exact audit. Current free space is not
+a scientific-panel guarantee. Original selected/fresh models and storage-recovery-
+004/006 protected archives remain untouched; small source work proceeds.

@@ -612,3 +612,16 @@ resolve through quality001-pilot-retirement; no restoration or pilot rerun.
 Every fresh quality pair remains protected. The storage-recovery-006 protected
 RAW archives are selected/fresh models, NOT retirement candidates; all those
 archives and every original H200 inference model remain preserved.
+
+Cooldown resume-retirement001 may retire exactly four successful generated
+model-resume001 raw/H200 weights (1,118,313,556B) only after the separately bound
+worker-integration002 independently re-audits actual optimizer/EMA/RNG, full
+validation and cache/reset inference and closes tensor dependencies. The first
+integration001 plan-publication ordering failure occurred before numerical
+audits or deletion and remains closed with its source/log/failure record.
+Prepared trainer-worker001 reads retained metadata, generates new input and
+initializes fresh weights; it does not load the retired payloads. Use exact
+path/size/hash manifests, shared locks/process checks, durable journals and
+survivor verification. Preserve every selected/fresh model, original receipts
+and protected storage-recovery-004/006 archives. Original resume paths resolve
+through the later retirement manifest; never restore or rerun the closed fixture.
