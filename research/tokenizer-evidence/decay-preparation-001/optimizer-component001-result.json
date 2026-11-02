@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "dtype": "torch.float64",
+      "decay": 6e-05,
+      "steps": 6,
+      "exact_manual_order": true,
+      "exact_serialized_resume": true,
+      "no_gradient_unchanged": true,
+      "cross_arm_rejected": true
+    },
+    {
+      "dtype": "torch.float64",
+      "decay": 0.0,
+      "steps": 6,
+      "exact_manual_order": true,
+      "exact_serialized_resume": true,
+      "no_gradient_unchanged": true,
+      "cross_arm_rejected": true
+    },
+    {
+      "dtype": "torch.float32",
+      "decay": 6e-05,
+      "steps": 6,
+      "exact_manual_order": true,
+      "exact_serialized_resume": true,
+      "no_gradient_unchanged": true,
+      "cross_arm_rejected": true
+    },
+    {
+      "dtype": "torch.float32",
+      "decay": 0.0,
+      "steps": 6,
+      "exact_manual_order": true,
+      "exact_serialized_resume": true,
+      "no_gradient_unchanged": true,
+      "cross_arm_rejected": true
+    }
+  ],
+  "shrinkage_only_1200_factor": 0.9305288857862962,
+  "analytical_factor": 0.9305288857862972,
+  "sources_unchanged": 533,
+  "scientific_seeds_used": false,
+  "corpus_used": false,
+  "full_model_tested": false,
+  "quality_result": false,
+  "checkpoints_on_disk": false,
+  "limitation": "Generated CPU optimizer composition only; actual model policy/grouping, MPS, raw/EMA/RNG/H200/cache integration and guarded worker acceptance remain required."
+}

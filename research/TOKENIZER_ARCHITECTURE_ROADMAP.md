@@ -481,3 +481,36 @@ reclaimed1,118,415,676B with27,372 retained files verified. The plan binds531
 sources, six equal-LR screens and all three fresh confirmation pairs, with
 strict original quality gates and closed test. No quality or adoption conclusion
 at launch. See TOKENIZER_LOCAL_MIX_PREPARATION.md for the exact freeze and routing.
+
+
+## Local mixing closed without adoption
+
+All twelve endpoints, three paired inference reviews and independent final
+statistics are complete. Both arms selected LR0.00125. Fresh none/causal3 CE:
+
+| Seed | None | Causal3 | Candidate minus control |
+|---|---:|---:|---:|
+|198970011|4.6991971921|4.6884827798|−0.0107144124|
+|198970012|4.7075981792|4.7101195406|+0.0025213615|
+|198970013|4.7005193711|4.6909489906|−0.0095703805|
+
+Mean delta−0.0059211438 misses the frozen−0.02 threshold; one seed worsens,
+and2048/4096-token simultaneous text bounds include zero. All three quality
+gates fail. Retain no local mixing with D256 MLA score0.5/SwiGLU672/SiLU/
+blockRMS/no product norm/no warmup/H200. The candidate also adds3072 parameters
+and8192 cache bytes per item; measured cache is196608 versus204800B. Timing
+is descriptive with two resident models, not a deployment or speed win.
+
+Terminal STOP closes training/boundary/inference/final commands. All selected
+02/03 and six fresh raw/H200 pairs remain protected. Losing screens resolve
+through the exact later retention manifest. Original evidence and all531 frozen
+sources are unchanged; holdout remains closed. See local-mix-preparation-001/
+quality001-final-review.json and quality001-closure.json for the independent
+bootstrap bounds, inference provenance and closure.
+
+At this boundary both parallel-residual topology and independent weight decay
+were reviewed. Select the previously deferred0.00006-versus0 decay question at
+common peak LR0.00125. Recent repeated LR selection and the user's concern
+about repeated screening motivate a prospective standard-recipe comparison
+with equal zero LR-search budgets, not a separately optimized best-LR claim.
+This does not alter any closed campaign. See TOKENIZER_DECAY_PREPARATION.md.

@@ -1,0 +1,46 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T00:44:43.409801+00:00",
+  "question": "Does removing independent per-update weight decay improve the adopted D256 MLA recipe at fixed peak LR0.00125?",
+  "architecture_review": {
+    "candidate": "Parallel attention/FFN residual composition with separate branch norms",
+    "decision": "Deferred distinct topology question; requires explicit branch-input/cache and shared-initialization contracts. Recent local mixing gave a small inconsistent gain; first isolate the previously deferred regularization hypothesis rather than another architecture-plus-LR search."
+  },
+  "hp_review": {
+    "selected": "Independent per-update decay0.00006 versus0",
+    "rationale": "Existing decay was carried through architecture rounds; its per-step shrinkage is independent of scheduled LR. Isolate whether that regularization helps this short1200-update recipe; neither improved nor worsened quality is assumed."
+  },
+  "proposal": {
+    "arms": [
+      6e-05,
+      0.0
+    ],
+    "peak_lr": 0.00125,
+    "warmup": "none",
+    "updates": 1200,
+    "cooldown_start": 800,
+    "h200": 200,
+    "local_mixing": "none",
+    "backbone": "D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/no product norm/no warmup/H200",
+    "scientific_design": "After numerical/full-model/worker prerequisites, new seed census, measured complete capacity and resource pilots: prospectively freeze only three fresh paired seeds at common fixed LR. No LR screens or retrospective LR rescue; full six trajectories, inference and original strict quality gates remain required.",
+    "scope": "Standard-recipe comparison, not separately optimized best-LR recipes. Equal zero LR-search budgets. Any later tuning is a separate question, not an extension of this panel.",
+    "training_allowed": false,
+    "seeds_reserved": false
+  },
+  "references": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/quality001-closure.json",
+      "sha256": "5aaf2b1724bd0c79da14820df08df6bd5706e8fd066db2782cd64319263984f8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/local-mix-preparation-001/direction-decision.json",
+      "sha256": "eaeef12df66c418ce6f26bde719ed08ec3fba7a20adbd9d51e787e39fd4b51fa"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/ffn_structure_v1/runtime/train/optimizers.py",
+      "sha256": "7f65d2f2d6cb5e836b4d9c2719f3664994d790decf1b65e53e85ec2b8b55affe"
+    }
+  ],
+  "next_action": "Generated real HybridOptimizer Muon/AdamW shrinkage/order/serialized-resume checks; then narrow full-model config/checkpoint/H200/cache integration outside frozen sources. No training freeze until real prerequisites and full capacity fit.",
+  "closed_campaign_reopened": false
+}
