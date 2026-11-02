@@ -1,8 +1,10 @@
 # AdamW second-moment beta2 preparation
 
-Current status: quality001 slots00–04 accepted;final slot05 beta95 running. All774 active sources
-unchanged,766 predecessors preserved. No scientific quality conclusion. Current
-process/progress/anchors supersede launch state. Exact freeze `b71b2e692637f3599b8c860f63abb081fcfd2d1278ac0e1db2a5a01c63b78a49`.
+Current status: quality001 CLOSED_NOT_ADOPTED. Six accepted endpoints and three
+paired inference reviews passed; beta2 .95 worsened every seed, mean delta
++0.11006817407836185. All original strict quality gates failed. Terminal STOP
+closes training, inference and final commands; retain beta2 .999. See
+[TOKENIZER_FINAL_LN_BIAS_PREPARATION.md](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md) for the next prerequisite.
 
 Select AdamW beta2 .95 versus incumbent .999. Keep beta1 .9, epsilon1e-8,
 Muon/group membership/width-scaled rates, independent per-update decay .00006,
@@ -17,7 +19,7 @@ without adoption. Final LayerNorm learned bias versus fixed zero bias is deferre
 No prior scores/seeds pooled. Prospective quality scope is exactly three fresh
 pairs at commonLR .00125, equal zero LR-search budgets, original strict gates,
 no screens/selection/rescue/retry/partial panel: standard recipes, not separately
-tuned optima. Pilot seeds/plan are now frozen and completed; no final quality plan frozen.
+tuned optima. Historical prospective design; the final quality panel is now complete and closed.
 
 The frozen component exercises actual Muon/AdamW with prescribed variable gradients
 on CPU FP64/FP32 at both beta2 values. Independent float64 first/second moments,
@@ -205,3 +207,37 @@ Evidence:`adamw-beta2-preparation-001/quality-integration001-review.json`,
 `quality001-plan.json`,`quality001-freeze.json`,`quality001-preflight.json`,
 `quality001-capacity.json`,`quality001-seed-use.json`,
 `quality001-pilot-retirement/completed.json`.
+
+## November2 — AdamW beta2 quality closed without adoption; next final-bias prerequisite
+
+All six1200-update endpoints independently accepted, with1,228,800 targets,
+41H200 snapshots,88EMA tensors,44AdamW/44Muon groups and complete clipping
+histories each. Three paired full/cache/reset inference reviews passed. Independent
+mean beta2 .95-minus-.999 CE delta is +0.11006817407836185; seed deltas are
++0.11153406596318402,+0.10669633482953769,+0.11197412144236384. Every seed
+worsens and all original strict gates fail. Retain beta2 .999; no adoption.
+This is three paired seeds on reused validation text, fixed commonLR .00125 and
+equal zero LR-search budgets; no holdout result or separately tuned optimum.
+
+Terminal STOP closes every beta2 quality command. All774 bound sources unchanged.
+Preserve all six fresh raw/H200 pairs3,355,577,712B,182 historical lossless RAW
+archives,all H200 originals/storage004 and original failure receipts. Closure free
+9,203,707,904B is an observation,not new-panel readiness. No deletion performed.
+
+Both architecture and bounded HP reviewed: select final LayerNorm learned bias
+versus fixed zero; defer AdamW epsilon1e-6 versus1e-8 at beta1 .9/beta2 .999.
+Keep centering,learned scale,epsilon1e-5 and eight pre-branch RMSNorms unchanged.
+The prospective candidate removes256 parameters; this is not parameter-matched.
+Standalone component001 passed24 CPU FP64/FP32 and MPS FP32 cases at batches1/3,
+widths7/256:explicit equations/gradients,exact native-control parity,initial function
+and RNG equality,bias-gradient sum,finite differences and causal independence.
+All777 source bindings unchanged,774 predecessors preserved. No candidate full-model,
+optimizer,EMA/cache or scientific quality claim; no scientific seeds or panel reserved.
+Next explicit full-model policy/optimizer/checkpoint/cache and repeat/resume integration
+outside frozen namespaces,then bounded workers,pilots and complete capacity review.
+Never bypass existing learned-bias/final-LayerNorm policies.
+
+Evidence: `adamw-beta2-preparation-001/quality001-final-review.json`,
+`quality001-closure.json`, `quality001-fresh-inference-pair{0,1,2}-review.json`;
+`final-ln-bias-preparation-001/direction-decision.json`, `component001-plan.json`,
+`component001-result.json`. See `TOKENIZER_FINAL_LN_BIAS_PREPARATION.md`.

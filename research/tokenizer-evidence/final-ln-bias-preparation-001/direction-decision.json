@@ -1,0 +1,47 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T13:48:39.003837+00:00",
+  "question": "Does removing only the learned final LayerNorm bias improve the retained subword MLA recipe?",
+  "architecture_review": {
+    "selected": "Final LayerNorm learned bias versus fixed zero bias",
+    "rationale": "Previously deferred, distinct from centering. Keep LayerNorm centering, learned scale, epsilon1e-5 and eight pre-branch RMSNorms unchanged. Both start with zero bias and identical initial function; the candidate removes256 trainable parameters. No benefit assumed."
+  },
+  "hp_review": {
+    "candidate": "AdamW epsilon1e-6 versus incumbent1e-8, with beta1 .9/beta2 .999 fixed",
+    "decision": "deferred",
+    "rationale": "A bounded denominator-floor question distinct from the just-closed beta2 adaptation study. Prioritize the pending architecture ablation; no old score or seed pooling."
+  },
+  "proposal": {
+    "final_bias": [
+      "learned",
+      "fixed_zero"
+    ],
+    "epsilon": 1e-05,
+    "width": 256,
+    "prospective_parameters": [
+      28492416,
+      28492160
+    ],
+    "peak_lr": 0.00125,
+    "steps": 1200,
+    "quality_design": "Exactly three fresh pairs, common LR, equal zero LR-search budgets, original strict gates; no screens, selection, rescue, retry or partial panel. Standard-recipe scope.",
+    "scientific_seeds_reserved": false,
+    "pilot_or_quality_frozen": false
+  },
+  "references": {
+    "beta2_closure": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/quality001-closure.json",
+      "sha256": "208b55b1b011dd0fe2128a8ba7af728c357225c057b24657b8a2d922dd2314f6"
+    },
+    "beta2_final": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/quality001-final-review.json",
+      "sha256": "dc70ef7209099f70c01166be39640e8fb6762404f3faf3df88cb5ba061cff6a7"
+    },
+    "prior_deferred": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
+      "sha256": "29d499676577979324d0097334299449bf08416eda81388b8a8552ab67d78486"
+    }
+  },
+  "next_action": "Freeze and run standalone generated final LayerNorm bias policy checks, explicit forward/gradient equations, native-control parity, bias-gradient sum, suffix causality and CPU finite differences. Then explicit additive full-model policy, optimizer membership, checkpoint/cache identity, raw/EMA/RNG resume and full-cache-reset integration outside frozen sources. Do not bypass existing learned-bias guards.",
+  "closed_campaign_reopened": false
+}
