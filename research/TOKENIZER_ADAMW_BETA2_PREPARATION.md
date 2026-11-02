@@ -1,6 +1,6 @@
 # AdamW second-moment beta2 preparation
 
-Current status: quality001 slot00 beta999 accepted;slot01 beta95 running. All774 active sources
+Current status: quality001 slots00/01 accepted;slot02 beta95 running. All774 active sources
 unchanged,766 predecessors preserved. No scientific quality conclusion. Current
 process/progress/anchors supersede launch state. Exact freeze `b71b2e692637f3599b8c860f63abb081fcfd2d1278ac0e1db2a5a01c63b78a49`.
 
