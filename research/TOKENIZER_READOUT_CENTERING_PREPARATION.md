@@ -1,7 +1,7 @@
 # Tokenizer final-readout centering preparation
 
-Current status: quality001 has four independently accepted endpoints (slots00–03);
-slot04 layer, first arm of fresh pair three, is running.
+Current status: quality001 has five independently accepted endpoints (slots00–04);
+final slot05 rms_bias, second arm of fresh pair three, is running.
 All737 active source bindings immutable,729 predecessors unchanged. The complete
 six1200-update trajectory panel fits the measured retained-output allowance with
 8GiB reserve after exact completed-pilot retirement. No scientific quality result.
@@ -294,3 +294,13 @@ remaining-panel10,144,537,952B before slot04 dispatch. Slot04 layer launched onc
 parent68419/worker68431, exec87973; config/initial metric/guard verified.
 Fresh199630013 now in use;bootstrap004 unused. No campaign quality conclusion.
 Continue the frozen order; all six accepted endpoints precede inference/statistics.
+
+
+Slot04 independently accepted1200updates/1,228,800targets,41H200snapshots,
+88EMA tensors and complete clipping history; worker/parent guards finished cleanly.
+All five raw/H200 endpoints remain protected. Actual free9,876,017,152B exceeded
+remaining-panel9,585,276,088B before final slot05 dispatch. Slot05 rms_bias launched
+once: parent68703/worker68715, exec66972; config/initial metric/guard verified.
+All three fresh seeds used/in use;bootstrap199630004 unused. No campaign conclusion.
+After six accepted endpoints, run the frozen three inference pairs and independent
+final review with the exact quality001 freeze. No additional training or rescue.

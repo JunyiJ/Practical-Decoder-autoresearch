@@ -8,12 +8,12 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: readout-centering quality001 is frozen; slots00–03 accepted; slot04
-LayerNorm is running. All737 source bindings immutable,729 predecessors unchanged.
+**Latest November2: readout-centering quality001 is frozen; slots00–04 accepted; final slot05
+RMS-with-bias is running. All737 source bindings immutable,729 predecessors unchanged.
 No scientific quality conclusion yet.**
 
 Exact freeze SHA`409de49f511b3d94733ff788ef0aec18a26291843b6957e0ed95e539bec9546c`.
-Initial slot04 parent68419/worker68431, exec session87973; config/initial metric/guard
+Initial slot05 parent68703/worker68715, exec session66972; config/initial metric/guard
 verified. Poll actual process/log/guard/anchors before dispatch; never duplicate.
 Complete exactly six1200-update trajectories in paired order layer/rms_bias,
 rms_bias/layer,layer/rms_bias at commonLR0.00125, zero LR-search and original strict
