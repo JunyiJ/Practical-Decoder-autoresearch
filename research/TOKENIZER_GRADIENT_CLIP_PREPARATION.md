@@ -1,8 +1,7 @@
 # Tokenizer global gradient-clipping preparation
 
-Current status: pilot001 and independent final001 resource review COMPLETE.
-Next new finite quality integration, exact pilot retirement and final quality freeze.
-No scientific quality result or active worker.
+Current status: quality001 FROZEN; first fresh clip1 trajectory dispatched.
+Follow actual process/log/guard/anchors; no duplicate worker or quality conclusion.
 
 Question: does global L2 gradient clipping0.5 versus incumbent1.0 improve the retained
 1200-update subword MLA recipe at common peak LR0.00125? Apply clipping after backward
@@ -134,3 +133,28 @@ exact pilot audit; no speculative deletion or partial scientific panel.
 Observed pilot clipping: clip1 clipped0/20 updates, pre-norm0.40428–0.82294;
 cliphalf clipped13/20, pre-norm0.40428–0.81842. These20-update observations
 are not full-horizon clipping-frequency estimates or threshold-selection evidence.
+
+
+## Gradient-clipping quality001 frozen and first trajectory dispatched
+
+New research/gradient_clip_quality_v1 passed23 finite-contract tests and actual
+pilot raw/H200/optimizer/EMA/RNG/clipping-history/full-validation/cache re-audits;
+pilot-to-quality forgery was rejected. All687 active sources frozen,679 predecessors
+unchanged. Exactly six1200-update trajectories use three paired fresh seeds at
+common LR0.00125, zero LR-search and original strict gates. No screens, selection,
+rescue, retry or partial panel. Every fresh raw/H200 pair remains protected.
+
+Complete per-update clipping histories are checked against raw/summary/metric
+records and when validating the accepted prefix. Final independent statistics
+also report per-pair clipping observations descriptively, never for selection.
+Prepared quality001-fresh-inference001.py and quality001-final-review001.py require
+the exact freeze and all six accepted endpoints. Freeze SHA:
+8574e2c338d9728748492329cda236657e2e8c1f0cbf4b78c926986380302d60
+
+Exact pilot retirement reclaimed1,118,333,904B with28,383 other files
+verified unchanged. Original receipts resolve absent weights through
+quality001-pilot-retirement/completed.json. Freeze free12,962,930,688B exceeded
+complete12,381,585,408B including8GiBreserve. Recheck remaining full-panel capacity
+each dispatch. Historical selected/fresh bytes and114 protected RAW archives
+remain intact. First fresh slot00 clip1 is dispatched; no paired quality result.
+Seeds199520011 now in use;012/013 and bootstrap004 unused at first launch.
