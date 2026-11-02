@@ -1,12 +1,11 @@
 # Tokenizer fixed residual branch-scaling preparation
 
-Current status: quality001 FROZEN; slots00–04 independently accepted and final slot05
-fixed_half running. Five of six endpoints accepted; no campaign quality conclusion.
-Exact freeze SHA8947d12c48e087d85d180ee7614900d120cf1f742849e278f6012808c61ddb45.
-All659 active sources bind651 unchanged predecessors. Exactly three fresh pairs,
-common LR0.00125, no LR screens/selection/rescue. Poll actual process/log/guard and
-accepted anchors before dispatch; never duplicate a worker. No quality conclusion.
-Adopted unit gains remain unchanged pending all six endpoints and final review.
+Current status: quality001 CLOSED_NOT_ADOPTED. All six endpoints and three paired
+inference reviews passed; fixed-half minus unit mean CE delta+0.024273102061827024.
+Every fresh seed worsened and all three original adoption gates failed. Terminal
+STOP closes all branch-scale quality training/inference/final commands. Retain unit
+gains and the incumbent recipe. All six fresh raw/H200 pairs remain protected.
+Next direction: TOKENIZER_GRADIENT_CLIP_PREPARATION.md; no active worker.
 
 Compare unit gain with fixed0.5 scaling of both complete post-projection residual
 branches at unchanged depth: u=x+g*A(N1(x)); y=u+g*F(N2(u)), g=1 or0.5. Keep separate
@@ -216,3 +215,42 @@ text-bound gates. Standard-recipe scope, no old score/seed pooling or holdout sc
 The adopted recipe remains unchanged until the separate final gate/adoption review.
 All protected historical selected/fresh RAW archives and original-path H200s remain
 preserved, including storage004 and75 RAWs in storage006/007/008/009.
+
+
+## Final quality result and closure
+
+All six fresh endpoints independently accepted1200updates/1,228,800targets/
+41H200 snapshots/88EMA tensors. All three paired inference reviews passed CPU/MPS
+full/cache/reset and retained196,608B cache/item. Independent final statistics and
+provenance review passed. Fixed half did not satisfy any adoption gate:
+
+| Fresh seed | Unit H200 CE | Fixed-half H200 CE | Half minus unit |
+|---|---:|---:|---:|
+|199410011|4.712135067433241|4.740863758615851|+0.0287286911826099|
+|199410012|4.723844898324018|4.748150799796942|+0.024305901472923885|
+|199410013|4.704536328905343|4.72432104243529|+0.019784713529946707|
+
+Independent mean delta+0.024273102061827024 nat/token. Simultaneous conditional
+text-bootstrap upper bounds were+0.02764039132848912,+0.027897883887647648,
++0.026513473821097925 for2048/4096/8192-token blocks. Mean improvement, every-seed
+improvement and simultaneous-bound gates all failed. These are three trained seeds
+on adaptively reused validation text, not population-seed or held-out inference.
+No pilot-loss selection, LR screening, rescue, retry or interim stop occurred.
+
+quality001-closure.json binds the independent final review, all anchors and three
+inference reviews. Terminal STOP closes every branch-scale quality command; no
+extension or reopening. All659 sources remain unchanged. All six fresh raw/H200
+pairs totaling3,354,994,032B are preserved, along with historical selected/fresh
+models and protected archives. Closure free9,355,235,328B is an observation, not
+next-panel readiness. Retain unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/
+serial/no product norm/no local mix/no warmup/decay0.00006/cooldown800/H200.
+
+Both architecture and bounded HP were reviewed. Select the previously deferred
+global clipping0.5-versus1.0 prerequisite; defer matched-epsilon final-readout
+LayerNorm versus final RMSNorm, leaving pre-branch norms unchanged. Earlier block
+LayerNorm evidence is adverse and no final-norm benefit is assumed. New clipping
+component001 passed four generated CPU FP64/FP32 real Muon/AdamW arithmetic/order/
+resume cases, no-gradient preservation, nonfinite rejection, threshold identity and
+unchanged RNG. Maximum gradient-oracle error2.2522872067387567e-8. This is not actual
+full-model clipping frequency, MPS/EMA/H200/cache or scientific quality evidence.
+See TOKENIZER_GRADIENT_CLIP_PREPARATION.md for next executable integration.

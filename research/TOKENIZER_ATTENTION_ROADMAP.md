@@ -415,3 +415,23 @@ The generated standalone branch-scaling component passed12 CPU FP64/FP32 and MPS
 FP32 forward/all-gradient/causality cases, exact unit reference and identical shared
 initialization/RNG. This is not full-model integration or a quality result. See
 TOKENIZER_BRANCH_SCALE_PREPARATION.md and cooldown quality001-final-review.json.
+
+
+## Branch-scale quality001 closed; retain unit gains
+
+All six fresh endpoints and three paired inference reviews completed. Independent
+fixed-half minus unit mean validation CE delta+0.024273102061827024 nat/token;
+seed deltas+0.0287286911826099,+0.024305901472923885,+0.019784713529946707.
+Every seed worsened and all original gates failed. Terminal STOP closes all branch
+quality commands. Preserve all six fresh raw/H200 pairs(3,354,994,032B), historical
+selected/fresh models and protected archives; all659 sources remain unchanged.
+Retain the incumbent unit-gain recipe. No LR screens/rescue or old score/seed pooling.
+
+Both architecture and bounded HP reviewed: select global norm clipping0.5-versus1.0;
+defer matched-epsilon final-readout LayerNorm versus final RMSNorm with pre-branch
+norms unchanged. No benefit or actual clipping frequency assumed. Frozen generated
+optimizer-component001 passed four CPU FP64/FP32 real Muon/AdamW clipping/order/
+serialized-resume cases; no full-model/MPS/EMA/H200/cache or quality claim. Next
+narrow additive full-model clipping instrumentation and identity integration,
+then real worker/validation/inference, full capacity/census/resource pilots before
+any quality freeze. See TOKENIZER_GRADIENT_CLIP_PREPARATION.md.

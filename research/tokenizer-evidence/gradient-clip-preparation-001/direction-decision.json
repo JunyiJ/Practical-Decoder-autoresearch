@@ -1,0 +1,49 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T07:42:42.787571+00:00",
+  "question": "Does global gradient-norm clipping0.5 versus incumbent1.0 improve the retained1200-update subword MLA recipe at common peakLR0.00125?",
+  "architecture_review": {
+    "candidate": "Matched-epsilon final readout LayerNorm versus incumbent final RMSNorm, leaving eight pre-branch RMSNorms unchanged",
+    "decision": "Deferred distinct normalization placement question",
+    "rationale": "Earlier block LayerNorm failed its gates. A final-only change acts directly on readout inputs and is a distinct placement, but centering and affine bias remain joint changes; no improvement assumed. Requires explicit final-normalization policy, epsilon, grouping, shared initialization and checkpoint/cache audits before any trial."
+  },
+  "hp_review": {
+    "selected": "Global norm threshold0.5 versus incumbent1.0 before Muon/AdamW and independent decay",
+    "rationale": "Previously deferred bounded HP question. Lower threshold changes only gradients affected by clipping, including their relative contribution across updates. Muon normalization and Adam moments mean gradient rescaling need not translate directly into update rescaling. No clipping frequency or benefit is assumed; actual full-model pre/post norm and coefficient instrumentation is required."
+  },
+  "proposal": {
+    "thresholds": [
+      1.0,
+      0.5
+    ],
+    "norm_type": 2.0,
+    "nonfinite": "error before update",
+    "order": "backward; global clip; schedule rates; independent decay; child Muon/AdamW steps; EMA update",
+    "same_parameter_groups": true,
+    "no_parameters_or_rng_added": true,
+    "peak_lr": 0.00125,
+    "decay": 6e-05,
+    "cooldown_start": 800,
+    "h200_start": 800,
+    "steps": 1200,
+    "quality_design": "Exactly three fresh pairs, fixed common LR and equal zero LR-search budgets, original strict gates; no screens/rescue/retry or partial panel. Standard-recipe scope only.",
+    "scientific_seeds_reserved": false,
+    "pilot_or_quality_frozen": false
+  },
+  "references": {
+    "branch_scale_closure": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/branch-scale-preparation-001/quality001-closure.json",
+      "sha256": "dd25acb8fec78386cd887e38509f8a87449321064c6c7631e5c666295bd3ebf4"
+    },
+    "adopted_unit_config": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/04/config.json",
+      "sha256": "40b9d1806bbde9bc6e74685ef68b68aae9b3e2dc9b977ac9490204ab895edab6"
+    },
+    "actual_training_order": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/train/train.py",
+      "sha256": "991d6fee3b969a69c4c19fa235dc8e2d8423e51500596fdc7cc850789cc33cb2"
+    }
+  },
+  "next_action": "Freeze and run generated CPU FP64/FP32 real Muon/AdamW clipping arithmetic, manual child order, nonfinite/no-gradient handling and serialized resume with threshold identity. Then narrow full-model CPU/MPS clipping instrumentation/group/checkpoint/raw-EMA-RNG resume/final-H200/cache integration outside frozen sources, actual bounded worker/parent validation/inference, fresh census, full measured output high-water plus8GiB reserve, finite pilots and final quality freeze.",
+  "closed_campaign_reopened": false
+}

@@ -758,3 +758,10 @@ quality001-pilot-retirement/completed.json. Never restore retired pilot identiti
 All six fresh trajectories retain their raw/H200 files; no quality cleanup
 or selection command exists. Historical selected/fresh archives remain recoverable,
 NOT retired. Recheck actual remaining full-panel capacity before each dispatch.
+
+
+Branch-scale quality001 CLOSED_NOT_ADOPTED after six accepted endpoints, three
+passing paired inference reviews and independent final statistics. Terminal STOP
+prevents further quality training/inference/final invocations. All six fresh raw/H200
+pairs totaling3,354,994,032B remain protected; no fresh retirement is authorized.
+All historical selected/fresh bytes and lossless archives remain protected.
