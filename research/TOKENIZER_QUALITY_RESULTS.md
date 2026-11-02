@@ -7676,3 +7676,20 @@ before pilot dispatch; final review free11,745,796,096B plus retainedpilots1,118
 conditionally yields12,864,125,392B, above12,381,585,408B. Fresh launch still requires
 new dependency closure, exact pilot audit and actual capacity remeasurement.
 See TOKENIZER_BRANCH_SCALE_PREPARATION.md for evidence and next executable action.
+
+
+## Fixed branch scaling: scientific panel frozen and first trajectory launched
+
+Quality-integration001 PASS21 finite-contract tests and both real pilot payload,
+optimizer/EMA/RNG/full-validation/cache audits; pilot-to-quality forgery rejected.
+All659 active sources frozen,651 predecessors unchanged. Exact pilot retirement
+reclaimed1,118,329,296B with28,203 retained files verified. Freeze actualfree
+12,776,476,672B exceeded complete12,381,585,408B including8GiB reserve.
+
+Quality001 is exactly three fresh pairs at common LR0.00125, unit versus fixed-half
+complete serial branches, with identical cooldown800/decay/H200 and zero LR-search
+budgets. First slot00 unit trajectory dispatched and actual process/config/metric
+verified. No paired quality result or adoption yet. Continue the frozen six endpoints,
+three paired inference reviews and independent original strict gates; no selection,
+rescue, retry or partial panel. Every fresh pair remains protected. See
+TOKENIZER_BRANCH_SCALE_PREPARATION.md and quality001-freeze.json for exact identity.

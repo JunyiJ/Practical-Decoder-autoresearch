@@ -747,3 +747,14 @@ retained. New quality-source integration must close actual tensor dependencies b
 any independent exact retirement audit. Preserve all original pilot evidence and every
 scientific selected/fresh model. No current pilot deletion is authorized by a mere
 capacity projection; execute the exact audited boundary only after dependencies close.
+
+
+Branch-scale quality001-pilot-retirement COMPLETE: new quality integration closed
+actual pilot tensor dependencies; independent re-audit of both raw/H200/optimizer/
+EMA/RNG/full-validation/cache bundles preceded exact four-file retirement totaling
+1,118,329,296B. Durable boundary journals and28,203 survivor checks passed. Original
+pilot receipts stay immutable; absent tensors resolve via branch-scale-preparation-001/
+quality001-pilot-retirement/completed.json. Never restore retired pilot identities.
+All six fresh trajectories retain their raw/H200 files; no quality cleanup
+or selection command exists. Historical selected/fresh archives remain recoverable,
+NOT retired. Recheck actual remaining full-panel capacity before each dispatch.

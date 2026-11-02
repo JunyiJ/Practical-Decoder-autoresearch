@@ -1,11 +1,11 @@
 # Tokenizer fixed residual branch-scaling preparation
 
-Current status: pilot001 COMPLETE. Both20-update unit/fixed_half resource pilots,
-independent parent acceptance, paired inference and independent final001 resource
-review PASS. All651 campaign sources remain frozen with645 unchanged predecessors.
-Next: additive six-trajectory quality orchestration, real pilot payload/cache audits,
-exact pilot retirement and final capacity/unused-seed checks before quality freeze.
-No scientific quality result or active worker. Adopted unit gains remain unchanged.
+Current status: quality001 FROZEN; first fresh slot00 unit trajectory dispatched.
+Exact freeze SHA8947d12c48e087d85d180ee7614900d120cf1f742849e278f6012808c61ddb45.
+All659 active sources bind651 unchanged predecessors. Exactly three fresh pairs,
+common LR0.00125, no LR screens/selection/rescue. Poll actual process/log/guard and
+accepted anchors before dispatch; never duplicate a worker. No quality conclusion.
+Adopted unit gains remain unchanged pending all six endpoints and final review.
 
 Compare unit gain with fixed0.5 scaling of both complete post-projection residual
 branches at unchanged depth: u=x+g*A(N1(x)); y=u+g*F(N2(u)), g=1 or0.5. Keep separate
@@ -174,3 +174,44 @@ original strict gates under standard-recipe scope. Final resource review recorde
 11,745,796,096B free; adding retained pilots conditionally gives12,864,125,392B.
 This conditional recovery is not deletion or quality-dispatch readiness. Source work
 proceeds; no stale capacity wait. No active worker or scientific quality result.
+
+
+## Frozen three-pair scientific quality campaign
+
+Additive research/branch_scale_quality_v1 passed21 finite-contract tests and real
+retained pilot raw/H200/optimizer/EMA/RNG/full-validation/cache audits. Pilot-to-quality
+forgery and changed source identity were rejected. Paired configurations differ only
+in fixed branch gain and output paths; both retain the identical cooldown800 schedule,
+decay0.00006 and common LR0.00125. All659 sources are frozen,651 predecessors unchanged.
+No closed fixture was rerun and no pilot loss selected a setting.
+
+Independent quality001-pilot-retirement re-audited the actual pilots/cache and then
+retired exactly four obsolete successful weights totaling1,118,329,296B, verifying
+28,203 other retained files. Original source/config/log/acceptance/inference receipts
+are immutable; absent pilot tensors resolve through quality001-pilot-retirement/
+completed.json. Never restore these permanently retired generated payloads.
+
+Final freeze measured12,776,476,672B free against complete12,381,585,408B including
+8GiB reserve, all six retained raw/H200 pairs, serialization and metadata. Actual
+remaining full-panel capacity is rechecked before every dispatch, charging existing
+outputs. The original seed census plus current recorded training configs confirmed
+fresh199410011/012/013 unused before launch; bootstrap199410004 remains unused.
+Pilot199410001 and eval199410003 were already used. First fresh seed011 is now in use.
+
+Quality root: research_runs/tokenizer-branch-scale-quality-v1-001. Freeze SHA:
+8947d12c48e087d85d180ee7614900d120cf1f742849e278f6012808c61ddb45.
+First slot00 launched via research.branch_scale_quality_v1.quality_execution with
+that exact argument; parent38433/worker38444 and initial config/metric verified,
+exec session17628. These are launch observations: actual current process/guard/log/
+anchor state and progress record supersede them. Never redispatch an existing slot.
+
+Continue exactly slots00–05 in frozen order unit/half,half/unit,unit/half, each1200
+updates at LR0.00125, no screens/selection/rescue/retry/partial panel. Preserve every
+fresh raw/H200 pair. After all six independent acceptances, execute all three pairs
+through prepared quality001-fresh-inference001.py, then quality001-final-review001.py,
+with the exact freeze argument. Both require all six endpoints. Independent statistics
+retain the original mean<-0.02, every-seed improvement and all simultaneous conditional
+text-bound gates. Standard-recipe scope, no old score/seed pooling or holdout scoring.
+The adopted recipe remains unchanged until the separate final gate/adoption review.
+All protected historical selected/fresh RAW archives and original-path H200s remain
+preserved, including storage004 and75 RAWs in storage006/007/008/009.
