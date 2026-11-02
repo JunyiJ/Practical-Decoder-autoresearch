@@ -1,0 +1,46 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T19:06:29.666923+00:00",
+  "question": "Does AdamW epsilon1e-6 versus1e-8 improve the retained tokenizer MLA recipe with betas(.9,.999) fixed?",
+  "architecture_review": {
+    "candidate": "Final LayerNorm learned scale versus fixed unit scale, learned bias retained",
+    "decision": "deferred",
+    "rationale": "Distinct from centering and bias, with identical initial function but removal of256 parameters; do not combine with the just-closed subthreshold bias result. Prioritize the previously deferred optimizer denominator-floor question."
+  },
+  "hp_review": {
+    "selected": "AdamW epsilon1e-6 versus incumbent1e-8",
+    "rationale": "Previously deferred bounded HP question; tests the denominator floor with fixed beta1.9/beta2.999, unchanged Muon and independent decay. No benefit or typical denominator magnitude assumed."
+  },
+  "proposal": {
+    "epsilon": [
+      1e-08,
+      1e-06
+    ],
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "independent_decay": 6e-05,
+    "peak_lr": 0.00125,
+    "steps": 1200,
+    "quality_design": "Exactly three fresh pairs; common LR; equal zero LR-search; original strict gates; no rescue, retry, selection or partial panel.",
+    "scientific_seeds_reserved": false,
+    "pilot_or_quality_frozen": false
+  },
+  "references": {
+    "closure": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/quality001-closure.json",
+      "sha256": "35cc9e37a10cb449f77c5314edf16880859d15ba1c01e24a21244114c618d97d"
+    },
+    "final_review": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/quality001-final-review.json",
+      "sha256": "baef755de528d6f9c1de8d8526085924949c4120ecba93b981f6fe896f6475c1"
+    },
+    "prior_deferred": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/direction-decision.json",
+      "sha256": "8a51d303053179c3f92b986e4f3172c7b8b8eed13ac246190f3392fa32ef75e4"
+    }
+  },
+  "next_action": "Freeze and run generated CPU FP64/FP32 real Muon/AdamW epsilon equations, independent moments/update oracle including tiny/zero gradients, unchanged prescribed-gradient moments/Muon, exact shrinkage order and serialized resume, and foreign epsilon rejection. Then additive full-model explicit epsilon/group/checkpoint identity and CPU/MPS repeat/resume/cache integration outside frozen sources.",
+  "closed_campaign_reopened": false
+}

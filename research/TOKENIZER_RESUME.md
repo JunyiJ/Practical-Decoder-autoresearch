@@ -8,30 +8,23 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November 2: final-bias quality001 is frozen; five endpoints accepted; final slot05 fixed-zero is running.**
+**Final-bias quality001 closed without adoption. AdamW epsilon component001 passed.**
 
-Exactly six 1200-update fresh trajectories at common LR0.00125 follow
-learned/zero, zero/learned, learned/zero, with zero LR-search and original strict
-gates. All 812 source bindings are frozen, preserving804 predecessors.
-24 finite-contract/publication tests and real pilot payload/cache re-audits passed.
+Removing final bias improved all three seeds, mean-0.00930456 nats/token, but
+missed the original0.02 mean threshold. Retain learned bias; all six fresh pairs
+are protected and all quality commands closed. Three inference reviews passed.
 
-Exact pilot retirement reclaimed1,118,330,973B with28,961 survivors unchanged;
-original receipts survive, absent pilots resolve through quality001-pilot-retirement.
-Freeze free13,457,494,016B exceeded complete12,381,585,408B including8GiB reserve.
-Retain every fresh raw/H200 pair and all191 historical protected RAW archives.
+No active worker or new scientific seed reservation. Next implement explicit
+full-model AdamW epsilon1e-6 versus1e-8 identity/group/checkpoint routing and
+CPU/MPS repeat/resume/EMA/RNG/clipping/cache checks outside frozen namespaces.
+Four generated CPU optimizer cases passed; all813 bindings unchanged. This is
+not full-model or quality evidence. Keep betas(.9,.999),Muon and recipe fixed.
+Read [epsilon preparation](TOKENIZER_ADAMW_EPSILON_PREPARATION.md).
+Final LayerNorm learned-scale-versus-fixed-unit scale is deferred.
 
-Poll actual processes, logs, guards and accepted anchors before any dispatch.
-Current slot05 parent4986/worker4997, exec80224 is only a launch snapshot.
-All three fresh seeds used/in use;bootstrap199850004 unused. No quality conclusion.
-After all six accepted endpoints, run three paired inference reviews and the
-independent final review. Retain learned final bias pending original gates.
-
-Execution module: research.final_ln_bias_quality_v1.quality_execution
-
-Freeze SHA256: b52e303992677705891412ad410e03539ee28a1b0a2ae5810729b9a5186a7297.
-
-Read [preparation](TOKENIZER_FINAL_LN_BIAS_PREPARATION.md) and
-[freeze](tokenizer-evidence/final-ln-bias-preparation-001/quality001-freeze.json).
+All191 protected RAW archives and H100/H200 originals remain intact. Free space
+at closure10,054,123,520B is not new-panel readiness; source integration proceeds,
+with complete measured capacity required before any future panel freeze.
 
 ## Findings to retain
 
