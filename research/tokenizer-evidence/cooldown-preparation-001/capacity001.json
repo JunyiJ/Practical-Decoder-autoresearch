@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-02T04:50:07.370396+00:00",
+  "free_bytes": 8933896192,
+  "prospective_worker_pair_requirement_bytes": 9814671360,
+  "worker_pair_capacity_pass": false,
+  "deficit_bytes": 880775168,
+  "successful_resume_weights_bytes": 1118313556,
+  "conditional_free_after_exact_dependency_closed_retirement": 10052209748,
+  "weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-resume-001/cooldown600/final.pt",
+      "size": 445082407,
+      "sha256": "aedfe72e803a4434bf84c3ae560f285191413ccb74a7feec341506bc887f5694"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-resume-001/cooldown600/h200.pt",
+      "size": 114074371,
+      "sha256": "b0f06f125155fdc1a2cefb9e2a3eee2a1537ce969c3e1185d84bce37d7ee22f4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-resume-001/cooldown800/final.pt",
+      "size": 445082407,
+      "sha256": "73284f64e58123fa246dabadd1e313eca5039a596b13c1cc39781c275e609b55"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-resume-001/cooldown800/h200.pt",
+      "size": 114074371,
+      "sha256": "44ee7c82be67020ec848d0086c2a6a6339ecd5065dc1f9616e0277a641a422f5"
+    }
+  ],
+  "action": "Implement actual worker/parent adapters and independently re-audit retained successful resume payloads first; after dependency closure apply a new exact retirement audit if needed, then remeasure complete worker-pair capacity. This is an inventory, not cleanup authorization or dispatch readiness.",
+  "scientific_panel_readiness": false
+}

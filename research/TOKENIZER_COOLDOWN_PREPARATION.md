@@ -1,6 +1,7 @@
 # Tokenizer cooldown-onset preparation
 
-Current status: generated schedule-component001 PASSED and is closed. No active
+Current status: full-model model001 and serialized model-resume001 PASSED and
+are closed. No active
 worker, scientific seed reservation, pilot freeze or quality freeze exists.
 Parallel-residual quality001 is CLOSED_NOT_ADOPTED; serial remains adopted.
 
@@ -30,10 +31,11 @@ rejected. Source/plan/log/result/guard are immutable under
 This is toy-SGD evidence only, not actual Muon/AdamW/model/EMA/H200/cache evidence.
 No research corpus or scientific seed was used and no panel was launched.
 
-Next implement narrow additive explicit full-model Muon/AdamW schedule group-rate,
-checkpoint identity and raw/EMA/RNG resume/final-H200/full-cache-reset integration
-outside frozen namespaces. Then actual bounded worker and independent parent
-validation/inference, fresh scientific seed census, measured complete retained
+Next implement minimal additive actual run_training/output/worker and independent
+parent full-validation/inference adapters outside frozen sources. Re-audit retained
+resume payloads before closing their tensor dependencies; then exact authorized
+retirement if needed and remeasure the complete worker pair. After actual worker
+acceptance/inference: fresh scientific seed census, measured complete retained
 output high-water including serialization overlap/metadata and8GiB reserve,
 finite resource pilots, and final quality freeze. Prospective quality design is
 exactly three fresh pairs at common LR0.00125, zero LR-search budgets, no screens,
@@ -42,3 +44,25 @@ Do not weaken guards or start a partial panel to fit storage. Current free space
 is not readiness; source work proceeds while any necessary exact recovery is
 prepared. Preserve selected/fresh models, all original evidence and protected
 storage-recovery-004/006 archives; archived RAW bytes are not retired.
+
+Full-model model001 passed both cooldown arms with identical initialization,
+logits, RNG and Muon/AdamW grouping:28,492,416 parameters and88EMA tensors.
+Both full1,200-update rate sequences match independently computed rates on real
+CPU/MPS optimizer groups; no scientific training updates were made. CPU/MPS
+all-gradient, full/cache/reset/causality checks passed;196,608B cache per item.
+Cross-schedule checkpoint identity and tampered independent decay were rejected.
+
+Serialized model-resume001 passed both fresh four-update generated arms. This
+short fixture uses cooldown onsets2/1; it does not execute600/800-update training.
+Fresh repeat and step2 resumed raw model/optimizer/EMA/RNG match exactly (maxerror0).
+Step2 serialization stays in capped memory. Final-step4 raw/H200 exports contain
+three H200 snapshots each; CPU/MPS batch1/8 full/cache/reset inference passed.
+All605 source/config bindings, including601 predecessors, are unchanged. Actual
+run_training/output publication and independent parent full validation remain
+required. No scientific seed reservation, pilot/quality freeze or active worker.
+
+Capacity001 records actual free space and the complete next worker-pair requirement,
+including8GiB reserve and metadata. Four successful resume raw/H200 weights remain
+retained until real payload adapter audits close dependencies; only then may a new
+exact cleanup audit retire them. They provide a concrete conditional recovery route
+for the worker pair, not new scientific-panel readiness. Small source work proceeds.
