@@ -1230,3 +1230,12 @@ zeroLRsearch,original gates,no rescue. Retain epsilon1e-8 and learned final bias
 Final LayerNorm learned-scale-versus-fixed-unit remains deferred.
 Evidence: adamw-epsilon-preparation-001/model001-failure.json,model002-plan.json,
 model002.json,model-resume002-plan.json,model-resume002.json,capacity001/002.json.
+
+## November 2 — AdamW epsilon worker integration completed
+
+Both generated four-update epsilon arms passed bounded trainer publication,
+independent full validation and paired full/cache/reset inference. All846 source
+bindings unchanged. No scientific quality claim,new seeds or active worker.
+Next finite resource-pilot integration and complete three-fresh-pair fixed-LR
+capacity/design; retain epsilon1e-8 and defer final LayerNorm scale ablation.
+See TOKENIZER_ADAMW_EPSILON_PREPARATION.md for exact retirement and next action.

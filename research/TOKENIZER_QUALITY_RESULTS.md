@@ -8572,3 +8572,41 @@ zeroLRsearch,original gates,no rescue. Retain epsilon1e-8 and learned final bias
 Final LayerNorm learned-scale-versus-fixed-unit remains deferred.
 Evidence: adamw-epsilon-preparation-001/model001-failure.json,model002-plan.json,
 model002.json,model-resume002-plan.json,model-resume002.json,capacity001/002.json.
+
+## November 2 — AdamW epsilon bounded worker and parent acceptance passed
+
+Both generated four-update eps8/eps6 workers passed independent parent acceptance:
+4,096 targets,3 H200 snapshots,88 EMA tensors,44 AdamW and44 Muon groups each.
+Actual betas(.9,.999),epsilon1e-8/1e-6 and zero child decay were checked. Parent
+full validation is exact; CPU/MPS CE differences are below2.9e-7. Complete
+clipping histories agree across raw/summary/metrics; independent missing-history,
+sequence,threshold,coefficient,nonfinite,foreign-epsilon/group and coverage
+forgeries were rejected. Trained full/cache/reset inference passed batches1/8,
+196,608 cache bytes/item. All846 runtime/acceptance bindings and839 predecessors
+remain unchanged. These are generated correctness tests,not a scientific quality
+comparison. No scientific seeds,pilot/quality freeze or active worker.
+
+After actual resume tensor/cache re-audits closed dependencies, new exact
+resume-retirement001 removed four obsolete successful generated weights totaling
+1,118,319,316B and verified44,529 survivors unchanged under shared locks and a
+durable journal. Original receipts remain immutable; absent tensors resolve via
+the later manifest,never restore/rerun. Live post-retirement free10,024,738,816B
+exceeded the complete9,814,671,360B worker-pair requirement. New accepted worker
+weights1,118,324,948B remain retained until pilot integration closes dependencies
+and a NEW exact retirement audit. All selected/fresh models and191 historical
+protected RAW archives remain intact. Large-file inventory found only the active
+worker's incomplete write,which disappeared on completion; no historical large
+incomplete writes or extra large unprotected archives were found.
+
+Next additive finite20-update pilot orchestration and full three-fresh-pair design
+outside frozen846 sources; actual worker tensor/full-validation/cache re-audits,
+finite contracts,dependency closure,fresh census and complete measured retained
+output high-water including serialization/metadata/8GiB reserve. Source work
+proceeds while authorized lossless recovery is inventoried for full capacity.
+Current free is not scientific-panel readiness. CommonLR.00125,zeroLRsearch,
+original strict gates,no rescue/selection/partial panel; keep adopted epsilon1e-8.
+Original model001 construction failure remains closed; corrected namespace v2
+passed without weakening class or numerical guards. Final LayerNorm scale
+ablation remains deferred. Evidence: adamw-epsilon-preparation-001/
+worker-integration001.json,resume-dependencies-closed001.json,resume-retirement001/,
+capacity003.json,trainer-worker001.json,trainer-worker001-evidence/,trained-inference001.json.

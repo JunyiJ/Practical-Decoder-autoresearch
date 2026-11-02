@@ -8,28 +8,29 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**AdamW epsilon model002 and serialized-resume002 passed both arms.**
+**AdamW epsilon trainer-worker001 and trained-inference001 completed.**
 
-No active worker or new scientific seed reservation. Epsilon1e-8 versus1e-6
-preserves shared initialization/logits/RNG and all groups except epsilon;
-28,492,416 parameters/88EMA tensors. Four-update repeat/resume raw model,
-optimizer,EMA,RNG and clipping histories match exactly; H200 and CPU/MPS
-cache/reset checks passed. Same-backend native updates are exact; absolute
-CPU/MPS post-update equality is not claimed. All839 bindings remain unchanged.
+Both generated four-update arms passed independent full validation and complete
+optimizer/EMA/RNG/clipping-history acceptance:4,096 targets,3 H200 snapshots,
+88EMA tensors,44AdamW/44Muon groups. CPU/MPS CE agreement below2.9e-7;
+full/cache/reset inference passes batches1/8 with196,608B cache/item. All846
+source bindings unchanged. No scientific quality claim,new seeds or active worker.
 
-Original model001 namespace/grouping type-check failure remains closed. Separate
-v2 uses namespace-local exact grouping without weakening guards or tolerances.
-Next actual trainer/output/worker and independent parent full-validation/inference
-adapters,then re-audit retained resume tensors/cache and close dependencies before
-NEW exact retirement. Four successful weights1,118,319,316B remain retained.
-Capacity002 free8,736,092,160B versus9,814,671,360B required;conditional recovery
-fits narrowly,so source integration proceeds and dispatch needs a live recheck.
+Next additive finite20-update resource-pilot orchestration and complete three-
+fresh-pair fixed-LR design outside frozen sources. Re-audit actual accepted worker
+payloads/cache and close dependencies before NEW exact retirement; then live full
+capacity/census and pilots. Source work proceeds; current free is not panel readiness.
 Read [epsilon preparation](TOKENIZER_ADAMW_EPSILON_PREPARATION.md).
 
-Final-bias quality001 is closed without adoption: mean improvement0.00930456
-missed the original0.02 threshold despite all seeds/text bounds improving. Keep
-learned bias and epsilon1e-8. All six fresh pairs,191 protected RAW archives and
-H100/H200 originals remain intact. Final LayerNorm scale ablation stays deferred.
+Exact resume retirement reclaimed1,118,319,316B with44,529 survivors unchanged;
+original evidence retained,never restore/rerun. New successful worker weights
+1,118,324,948B remain retained pending pilot dependencies and a NEW audit.
+All191 historical RAW archives and H100/H200 originals remain protected.
+
+Retain epsilon1e-8 and learned final bias. The completed final-bias quality study
+improved all seeds but missed the original0.02 mean gate; all six fresh pairs
+remain protected. Original epsilon model001 failed construction and stays closed;
+v2/model002/resume002 passed without relaxed guards. Final LayerNorm scale deferred.
 
 ## Findings to retain
 

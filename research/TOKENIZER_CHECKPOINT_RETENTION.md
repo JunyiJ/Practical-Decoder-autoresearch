@@ -1359,3 +1359,14 @@ Original model001 construction failure has no checkpoint payloads; preserve its
 source/config/log/guard/receipt. Original unlaunched resume001 stays unexecuted.
 All selected/fresh models,191 lossless historical RAW archives and H100/H200
 originals remain protected. Current free space is not scientific-panel readiness.
+
+## AdamW epsilon resume retirement completed; worker payloads retained
+
+After worker-integration001 re-audited both real resume bundles and closed tensor
+dependencies,resume-retirement001 permanently removed exactly four successful
+generated weights1,118,319,316B and verified44,529 survivors unchanged. Original
+sources/configs/logs/receipts stay immutable; resolve absent weights through
+adamw-epsilon-preparation-001/resume-retirement001/completed.json,never restore.
+The new accepted generated worker raw/H200 files1,118,324,948B remain retained
+pending pilot integration and a NEW exact audit. No selected/fresh bytes or
+protected archives were removed; closed final-bias fresh RAWs remain protected.
