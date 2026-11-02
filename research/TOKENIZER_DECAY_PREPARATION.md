@@ -65,3 +65,41 @@ capacity001 records the actual next worker-pair requirement and the concrete
 conditional recovery from these four successful numerical weights. Source work
 proceeds; no partial worker pair or guard relaxation. A new scientific panel
 still requires fresh census, complete measured high-water and finite pilots.
+
+
+## Actual worker and parent acceptance complete
+
+Additive decay validation, artifact acceptance and paired inference adapters
+passed read-only integration against both real serialized resume endpoints.
+Each endpoint retained88 EMA tensors/three snapshots; foreign-decay identities
+and incorrect validation coverage were rejected. CPU/MPS full-validation CE
+agreed within3.1e-7; batches1/8 full/cache/reset passed. All542 bound runtime
+and acceptance sources, including all predecessors, verified unchanged.
+
+The integration closed the four successful resume tensors' loading dependencies.
+Exact resume-retirement001 reclaimed1,118,313,364B and verified37,419 retained
+files unchanged under the shared lock and durable journal. Original sources,
+configs, logs and receipts survive; selected models and every fresh confirmation
+were untouched. Retired resume paths resolve through this later manifest and
+cannot be restored or used to rerun closed fixtures. Post-cleanup free space
+10,291,990,528B exceeded the complete9,814,671,360B worker-pair requirement,
+which charges both per-trajectory metadata allowances and16MiB shared metadata.
+This supersedes capacity001's preliminary smaller worker-pair allowance.
+
+Both fresh generated trainer-worker001 arms then passed actual run_training,
+bounded streaming publication, independent parent payload/optimizer/RNG/EMA
+acceptance and full validation: four updates/4096 targets,88 EMA tensors and
+three H200 snapshots each. CPU/MPS CE differences were below3.1e-7. The separate
+trained-inference001 passed paired full/cache/reset at batches1/8. Actual cache
+is196,608B per item in both arms; timings remain descriptive. No scientific
+quality conclusion or decay adoption follows from these generated fixtures.
+
+Next implement the minimal finite20-update resource-pilot orchestration and
+complete three-fresh-pair quality design at fixed common LR0.00125, with no LR
+screens or rescue. Re-audit the actual successful worker payloads through that
+bridge before closing their tensor dependencies. The four worker raw/H200 files
+currently occupy1,118,318,420B and remain retained; any later retirement needs a
+new exact audit. Fresh scientific census, complete measured retained-output
+high-water with8GiB reserve, finite pilots and a separate final quality freeze
+remain required. No scientific seeds or training panel are reserved/frozen,
+and no worker is active. Source work proceeds independently of future capacity.
