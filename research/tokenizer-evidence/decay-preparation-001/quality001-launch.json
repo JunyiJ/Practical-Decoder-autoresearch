@@ -1,0 +1,41 @@
+{
+  "status": "first_fresh_trajectory_dispatched",
+  "at": "2026-11-02T02:25:07.474477+00:00",
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality001-freeze.json",
+    "sha256": "fd4efb407ebb52a555b437eb93652454e57e22f3fd558adbab5df2d87a727f4f"
+  },
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-decay-quality-v2-001/evidence/quality/00/request.json",
+    "sha256": "dbbc8e831777308b7c982b02d599e0b1a193b8c22cfd8838072adaf200b73297"
+  },
+  "slot": 0,
+  "arm": "decay",
+  "seed": 199080011,
+  "peak_lr": 0.00125,
+  "expected_updates": 1200,
+  "exec_session": 39643,
+  "launcher_pid": 98276,
+  "worker_pid": 98287,
+  "guard_observation": {
+    "elapsed_seconds": 64.50764483300736,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 13287374848,
+      "mps_current_bytes": 663884288,
+      "mps_driver_bytes": 2493300736,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 721584128
+    },
+    "pid": 98287,
+    "reason": null,
+    "status": "watching"
+  },
+  "quality_adopted": false,
+  "next_action": "Decay quality001 FROZEN; first fresh slot00 dispatched via research.decay_quality_v2.quality_execution, exact freeze SHAfd4efb407ebb52a555b437eb93652454e57e22f3fd558adbab5df2d87a727f4f. Poll actual worker/process/log/guard/accepted anchors before any dispatch; never duplicate. Continue exactly six1200-update fresh trajectories (slots00-05) in frozen paired order decay/zero, zero/decay, decay/zero at common LR0.00125. Equal zero LR-search budgets; no screens, selection, rescue, retry, partial panel or pilot-loss selection. Preserve all six raw/H200 pairs. After all six accepted endpoints, run prepared quality001-fresh-inference002.py for all three pairs and quality001-final-review002.py with exact freeze; independent statistics/original strict gates, standard-recipe claim only. All556 active sources frozen,548 predecessors unchanged.21 finite-contract tests plus actual pilot optimizer/EMA/RNG/full-validation/cache re-audits passed. Integration001 metadata-size inventory failure before tests/numerical work is preserved closed;002 uses existing weight-aware hash bounds in additive v2. Exact successful pilot retirement reclaimed1118328144B with27655 retained files verified; original receipts immutable and absent pilot weights resolve via quality001-pilot-retirement. Freeze free13288779776B exceeded complete12381585408B including8GiB reserve; charge outputs and recheck actual remaining full-panel capacity each dispatch. Panel199080: pilot/eval used; fresh011 now in use,012/013 and bootstrap004 unused at launch. All historical selected/fresh weights and losslessly archived fixture identities remain protected. Retain adopted D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/no product norm/no local mix/no warmup/decay0.00006/H200 pending final gate; earlier campaigns closed. Keep one worker/fourthreads/all resource guards/closed holdout/no paidcompute/subagents. At campaign boundary review architecture and bounded HP. No stale storage blocker or speculative ledger scaffolding."
+}

@@ -534,3 +534,18 @@ after the retirement operation's last independent re-audit. Preserve original
 receipts/source/logs and every selected/fresh/failure artifact. Use the tested
 exact pilot boundary with global/run locks, durable journals and full survivor
 verification. Later manifest resolves absent pilot paths; no pilot rerun.
+
+
+Decay quality001-pilot-retirement is authorized for exactly both successful
+20-update pilot raw/H200 pairs,1,118,328,144B. Both accepted arms passed the
+separate quality-integration002 real optimizer/EMA/RNG/full-validation/cache
+bridge and21 finite fixed-LR contract tests. Integration001 failed before
+tests/numerical work because its inventory used a metadata-size hash helper;
+its original source/log remains closed. The separately bound v2 implementation
+uses weight-aware hash bounds. Quality requires exactly three fresh pairs at
+common LR0.00125, no screens or rescue; all fresh outputs remain protected.
+quality001-pilot-dependencies-closed records closure of pilot tensor use except
+the retirement operation's final independent re-audit. Keep original receipts,
+sources/logs/configs, selected/fresh models and all other artifacts. Use exact
+size/hash allowlists, shared locks, process checks, durable journals and retained
+file verification. Later manifests explain absent pilot paths; no pilot rerun.

@@ -1,0 +1,28 @@
+{
+  "status": "pilot_tensor_dependencies_closed_except_last_retirement_audit",
+  "integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality-integration002-review.json",
+    "sha256": "b055101b54028a301994ecc5150980d737b71c62f4e4ff910c2c9a30f7cf736e"
+  },
+  "pilot_final": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/pilot001-final001-review.json",
+    "sha256": "51e545d9d633151cc159680472f3e58f494039056179ad41a3c18a237639d312"
+  },
+  "final_sources": {
+    "quality001-freeze-build002.py": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality001-freeze-build002.py",
+      "sha256": "2fc76b36fb3c10f90365ab2edcd1e76a787fa5dc1ecd4f839d82c5890cd3b3d6"
+    },
+    "quality001-fresh-inference002.py": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality001-fresh-inference002.py",
+      "sha256": "2b364cb4c5c93b99158141ebe992073d2f76c26158859153b96935163b9e9415"
+    },
+    "quality001-final-review002.py": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality001-final-review002.py",
+      "sha256": "cf9315c4c838b7f8a5b1e69a16c3e9a77812ee12eef5dad1cc6d8d92b2624e3e"
+    }
+  },
+  "scope": "Quality configs use retained pilot plan/config JSON and new fresh weights. No later runner loads retired pilot tensors; original receipts remain immutable. Last independent parent payload/cache audit occurs inside exact retirement before unlink. All six fresh pairs and all historical selected/fresh weights remain protected.",
+  "exact_pilot_weight_bytes": 1118328144,
+  "quality_training_launched": false
+}

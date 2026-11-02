@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality-integration001.py", line 20, in <module>
+    req=dict(row['acceptance_request'],scope=a.SCOPE,sources=sources);requests[arm]=req;validation[arm]=row['validation'];root=Path(req['files']['config']['path']).parent;roots[str(root)]=inventory(root)
+                                                                                                                                                                                            ~~~~~~~~~^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/decay-preparation-001/quality-integration001.py", line 10, in inventory
+    def inventory(root):return {str(p.relative_to(root)):reference(p) for p in sorted(root.rglob('*')) if p.is_file()}
+                                                         ~~~~~~~~~^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/fixture_dispatch.py", line 35, in reference
+    return dict(path=str(path),sha256=c.file_sha(path,root=c.ROOT,max_bytes=2*1024**2))
+                                      ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/campaign_contract.py", line 56, in file_sha
+    before=path.stat();require(stat.S_ISREG(before.st_mode) and before.st_nlink==1 and before.st_size<=max_bytes,'Regular unaliased bounded file required')
+                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/campaign_rules.py", line 20, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Regular unaliased bounded file required

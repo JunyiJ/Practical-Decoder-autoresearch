@@ -192,3 +192,36 @@ at common LR0.00125 with zero LR-search budgets, then three inference reviews
 and independent statistics under original strict gates. No screens or rescue;
 this is a standard-recipe comparison. Preserve all selected/fresh models and the
 adopted recipe pending a valid final quality result.
+
+
+## Fixed-LR quality001 frozen; first fresh trajectory launched
+
+Additive decay_quality_v2 passed21 finite-contract tests and actual retained
+pilot raw/H200/optimizer/EMA/RNG/full-validation/cache re-audits. Both arms keep
+88EMA tensors and196,608B cache per item. Pilot-to-quality forgery was rejected.
+The initial integration001 inventory used a metadata-size hash helper on a real
+checkpoint and failed before tests/numerical work; its source/log/v1 namespace
+remain closed. Separately versioned002 uses the existing weight-aware helper.
+All548 predecessors remain unchanged;556 active sources are frozen.
+
+Exact pilot retirement reclaimed1,118,328,144B and verified27,655 other retained
+files. Original receipts/source/config/logs remain immutable; resolve absent
+pilot weights through quality001-pilot-retirement. Selected models, every
+historical fresh confirmation and the lossless fixture archive are untouched.
+Freeze free13,288,779,776B exceeded complete12,381,585,408B including8GiB reserve.
+The dispatcher charges outputs and rechecks remaining full-panel capacity.
+
+Freeze SHA: `fd4efb407ebb52a555b437eb93652454e57e22f3fd558adbab5df2d87a727f4f`. Root:
+`research_runs/tokenizer-decay-quality-v2-001`. Slot00, decay0.00006 with
+fresh seed199080011, is dispatched under the single-worker/four-thread guards.
+Exactly six1200-update trajectories follow decay/zero, zero/decay, decay/zero
+at common LR0.00125. No LR screens, selection, rescue or interim stopping.
+All six raw/H200 pairs remain protected. Fresh012/013 and bootstrap004 are
+unused at launch. No quality conclusion or adoption follows from launch.
+
+After all six independent acceptances, run all three prepared paired inference
+reviews and independent final statistics with the exact freeze argument. The
+read-only runners are quality001-fresh-inference002.py and
+quality001-final-review002.py. Keep original strict quality gates and the
+standard-recipe scope; no separately optimized LR claim. At closure reconsider
+both architecture and bounded HP questions.
