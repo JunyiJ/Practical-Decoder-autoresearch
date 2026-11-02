@@ -586,3 +586,12 @@ The prospective comparison retains common LR0.00125, three fresh pairs, equal
 zero LR-search budgets and original strict gates. No new scientific seeds or
 pilot/quality plan are reserved. See TOKENIZER_COOLDOWN_PREPARATION.md and
 [tokenizer evidence](tokenizer-evidence/parallel-residual-preparation-001/quality001-closure.json).
+
+Cooldown resource preparation has advanced to two independently accepted20-update
+pilots, passing paired inference and independent resource review. This is not a
+scientific quality result. The next finite comparison remains exactly three fresh
+pairs at common peakLR0.00125 with zero LR screening; cooldown600/800 also changes
+total LR exposure. Full quality source/freeze and exact pilot retirement remain
+required. All selected/fresh bytes remain protected, including the lossless
+storage-recovery-007 RAW archives. See TOKENIZER_COOLDOWN_PREPARATION.md for the
+current source, capacity, seed and next-action evidence.

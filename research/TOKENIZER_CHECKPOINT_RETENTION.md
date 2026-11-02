@@ -625,3 +625,38 @@ path/size/hash manifests, shared locks/process checks, durable journals and
 survivor verification. Preserve every selected/fresh model, original receipts
 and protected storage-recovery-004/006 archives. Original resume paths resolve
 through the later retirement manifest; never restore or rerun the closed fixture.
+
+Cooldown worker-retirement001 may retire exactly four successful generated-worker
+raw/H200 weights(1,118,318,420B) after pilot-integration001 and retention-boundary001
+pass and worker-dependencies-closed001 binds the exact obsolete tensors. All original
+worker/parent/inference/config/source/log evidence remains immutable. Use shared
+locks/process checks, exact path/size/hash audits, durable journals and survivor
+verification. The finite pilot initializes fresh weights from retained metadata;
+no selected/fresh scientific model or archive is eligible for this retirement.
+
+Storage-recovery-007 extends the authorized lossless representation change to
+exactly28 additional still-loose RAW checkpoints from accepted1200-update endpoints:
+20 from terminal-STOP local-mix/decay/parallel campaigns and8 activation selected/
+fresh endpoints bound by inference-recovery002-closed-review.json and its exact
+protected_original_checkpoints inventory. The older activation campaign uses that
+independently reviewed terminal recovery rather than a STOP file. Original paths/
+byte sizes/SHA256, acceptance, terminal closure and H200 identities bind every file. Use one-member single-thread Zstandard
+level9 archives after a copy-only probe; streamed verification and durable journal
+precede removing each duplicate loose RAW copy. All raw bytes remain recoverable,
+NOT retired. Preserve every H200 file and existing storage004/006 archive. New
+research_archives/protected-raw-storage-007 archives are permanently protected as
+selected/fresh models; materialize.py must restore exact bytes without training.
+Use shared worker locks/process checks, complete survivor verification,8GiB reserve
+and bounded per-file serialization overlap; no partial scientific panel.
+
+Storage-recovery-007 completed lossless archival of all28 audited RAW payloads,
+reclaiming3,157,718,460 logical bytes and verifying48,037 other files unchanged.
+The exact restoration check passed before removing only its owned temporary copy.
+The original RAW paths resolve through storage-recovery-007/raw-completed.json
+and protected research_archives/protected-raw-storage-007/*.tar.zst; these selected/
+fresh bytes remain recoverable and are NOT retired. All H200 original paths remain
+unchanged. Together storage-recovery-006/007 protect60 archived RAW checkpoints.
+Worker-retirement001 for cooldown separately retired exactly1,118,318,420B of
+obsolete generated prerequisite weights after real pilot integration closed their
+tensor dependencies, with38,877 survivors verified. Original sources/logs/configs/
+receipts remain; these retired generated tensors cannot be restored or rerun.

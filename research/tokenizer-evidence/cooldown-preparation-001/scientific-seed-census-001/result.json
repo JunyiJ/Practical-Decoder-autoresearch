@@ -1,0 +1,50 @@
+{
+  "audit_sha256": "9e3645320ee2811eb59cb2e719eb95764871aaf7581357708945d9bc371f0223",
+  "bytes_scanned": 4230727100,
+  "commit_before_census": "5bbf0d4312dd66e39cdad190c50f630ca8cd3f65",
+  "excluded": [
+    "research/tokenizer-evidence/cooldown-preparation-001/scientific-seed-census-001",
+    "__pycache__",
+    "binary checkpoints/archives",
+    "raw corpus and untracked external files outside declared roots"
+  ],
+  "file_count": 47660,
+  "holdout_scored": false,
+  "inventory_sha256": "58844853b59d3e68a88b4967caa36ac02b044c6073b77c9a0de7b740b33591d4",
+  "launch_permitted": false,
+  "matches": [],
+  "no_screen_seed": true,
+  "observed_at": "2026-11-02T05:13:53.147018+00:00",
+  "quality_plan_frozen": false,
+  "root_level_text_included": true,
+  "roots": [
+    "research",
+    "research_runs",
+    "research_state",
+    "src",
+    "tests"
+  ],
+  "scope": "No candidate whole-word integer appears in recorded repository research/config/source/log text. Cooldown800/cooldown600 arms share pilot and three prospective paired fresh seeds at a fixed LR; evaluation/bootstrap separate. Not a claim about unrelated external experiments; recheck new recorded inputs before launch.",
+  "seeds": {
+    "bootstrap": 199300004,
+    "evaluation": 199300003,
+    "fresh": [
+      199300011,
+      199300012,
+      199300013
+    ],
+    "pilot": 199300001
+  },
+  "status": "fresh_seeds_reserved",
+  "suffixes": [
+    ".ipynb",
+    ".json",
+    ".jsonl",
+    ".log",
+    ".md",
+    ".py",
+    ".txt",
+    ".yaml",
+    ".yml"
+  ]
+}

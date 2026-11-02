@@ -1,9 +1,11 @@
 # Tokenizer cooldown-onset preparation
 
-Current status: trainer-worker001 and trained-inference001 COMPLETE for both
-four-update generated arms. No active worker, scientific quality result, seed
-reservation or pilot/quality freeze exists. All earlier prerequisites stay closed.
-Parallel-residual quality001 is CLOSED_NOT_ADOPTED; serial remains adopted.
+Current status: pilot001 COMPLETE. Both20-update resource arms were independently
+accepted; paired full/cache/reset inference and independent final001 resource
+review passed. No scientific quality result, full quality freeze or active worker.
+Scientific panel199300 is reserved: pilot001/eval003 used, fresh011/012/013 and
+bootstrap004 unused. All prior prerequisites/campaigns remain closed; serial and
+cooldown800 remain adopted pending a complete quality comparison.
 
 Test linear cooldown beginning at zero-based update600 versus incumbent800 over
 1,200 updates. Both use peak LR0.00125 and final multiplier0.1, no warmup and
@@ -77,7 +79,7 @@ run_training with bounded raw/H200 publication and independent parent full valid
 differences were below3.1e-7. Trained-inference001 passed full/cache/reset checks
 at batches1/8,196,608B cache per item. Timings are descriptive correctness-fixture
 measurements, not scientific quality or an adoption route. All609 source/config
-bindings remained unchanged. Fresh scientific seeds have not been reserved.
+bindings remained unchanged. At that prerequisite milestone scientific seeds were not yet reserved.
 
 Adapter integration001 failed before numerical audit/deletion when plan construction
 referenced trainer-worker001-source-plan.json before publishing it. Original
@@ -92,3 +94,44 @@ Current successful worker raw/H200 weights(1,118,318,420B) stay retained until
 pilot adapter dependencies close and a new exact audit. Current free space is not
 a scientific-panel guarantee. Original selected/fresh models and storage-recovery-
 004/006 protected archives remain untouched; small source work proceeds.
+
+## Finite resource pilots and complete-panel recovery
+
+The additive cooldown_campaign_v1 package binds615 sources, including609 unchanged
+runtime/acceptance predecessors. Pilot-integration001 passed actual retained
+worker raw/H200/optimizer/EMA/RNG/full-validation/cache audits, both20-update
+schedule configurations and the complete six-trajectory/no-screen contract.
+Retention-boundary001 passed exact pilot-only deletion and protected-fresh checks.
+After dependencies closed, worker-retirement001 retired1,118,318,420B of obsolete
+generated weights and verified38,877 survivors. Original receipts remain immutable;
+absent generated weights resolve through that manifest, never restoration or retry.
+
+Lossless storage-recovery-007 archived28 accepted historical selected/fresh RAW
+checkpoints using exact allowlists, streamed member verification, shared lock,
+durable journal and48,037 unchanged survivors. It reclaimed3,157,718,460B; exact
+restoration passed. These RAW bytes remain protected and recoverable through
+storage-recovery-007/raw-completed.json and protected-raw-storage-007 archives,
+NOT retired. Every H200 remains at its original path; storage004/006 remain intact.
+
+Capacity002 measured13,130,375,168B free against the complete12,381,585,408B
+requirement: six560MiB weight allowances,256MiB metadata and8GiB reserve. Actual
+worker sizes and bounded same-inode temporary publication were included. Fresh
+census001 checked47,660 recorded files/4,230,727,100 bytes with no seed collisions.
+Pilot freeze measured13,118,279,680B free and bound both20-update arms at common
+LR0.00125, cooldown starts13/10 and H200start13/every1, yielding8snapshots.
+The actual1,200-update Muon/AdamW800/600 rates had already passed independently.
+
+Both pilots completed20,480 training targets with88EMA tensors and8H200snapshots.
+Independent parent full validation and paired full/cache/reset inference passed
+at batches1/8,196,608B cache per item. Final001 independently verified artifacts,
+rate identities, guards and resource projections. The pilot losses do not select
+any setting or support a quality conclusion. Final review observed11,972,616,192B
+free plus1,118,328,144B retained pilot weights, conditionally13,090,944,336B after
+future exact retirement; pilots stay retained until quality-source dependencies
+close and an independent audit authorizes those exact paths.
+
+Next: minimal additive research/cooldown_quality_v1 outside all615 frozen sources;
+verify actual pilot payload/cache and exactly six fresh trajectories, close tensor
+dependencies, audit pilot retirement, recheck actual capacity and unused fresh/
+bootstrap seeds, then freeze and run all three pairs with equal zero LR-search
+budgets and original strict gates. No screens, selection, rescue or partial panel.
