@@ -103,3 +103,54 @@ new exact audit. Fresh scientific census, complete measured retained-output
 high-water with8GiB reserve, finite pilots and a separate final quality freeze
 remain required. No scientific seeds or training panel are reserved/frozen,
 and no worker is active. Source work proceeds independently of future capacity.
+
+
+## Finite fixed-LR source ready; complete-capacity wake condition
+
+Additive decay_campaign_v1 specifies two20-update resource pilots followed by
+three fresh paired1200-update seeds at common LR0.00125. There are zero LR
+screens, no selection or rescue, and all six fresh endpoints remain protected.
+The original mean<−0.02, every-seed-improves and all three simultaneous text-bound
+gates remain unchanged. This is a standard-recipe effect, not separately tuned
+optima. The fresh order alternates decay/zero, zero/decay, decay/zero.
+
+The pilot-only retention boundary passed an actual disposable removal/recheck,
+including rejection of LR/fresh cleanup, incomplete/failed stages, wrong rate,
+selection, aliases and missing inference evidence. The finite pilot integration
+passed actual generated-worker raw/H200/optimizer/EMA parent re-audits with exact
+full-validation agreement, paired cache/reset checks, closed train/validation
+coverage, seed-contract and exact capacity-boundary checks. All542 predecessor
+sources remain unchanged;548 runtime/campaign sources are now bound. The fresh
+census entry is prepared, but no candidate prefix or scientific seeds have been
+reserved and no pilot or quality plan has been frozen.
+
+After those dependencies closed, exact worker-retirement001 reclaimed
+1,118,318,420B from four obsolete successful generated-worker weights and verified
+37,566 survivors unchanged. Keep original sources/configs/logs/receipts; use the
+later manifest for absent tensor paths. Selected models and all fresh pairs were
+untouched. Do not rerun closed worker or payload-integration fixtures.
+
+capacity002 records the complete maximum retained-output requirement:
+6×(448MiB raw+112MiB H200)+256MiB metadata+8GiB reserve =12,381,585,408B.
+The metadata allowance includes both pilots and all six quality trajectories,
+plus shared control/retention/inference/statistics. Actual worker serialization
+was measured within these caps. CheckpointWriter publishes a single streamed
+temporary through a same-inode hardlink/unlink, so no extra whole-payload disk
+copy is hidden. Pilots must be independently audited and retired before fresh
+training. The stored EMA accumulator does not grow with snapshot count.
+
+After recovery, observed free space was10,277,441,536B: a2,104,143,872B deficit.
+A current size-based inventory including .pt.tmp found no remaining large eligible
+numerical/failed/pilot/loser payload. Surviving large historical weights match
+retained selected/fresh evidence; new local-mix endpoints are exact selected02/03
+or fresh06–11. Small unknown payloads stay preserved and cannot close the gap.
+One actionable escalation was reported: free another3GB on this volume.
+
+Independent finite source/design/payload integration and known eligible recovery
+are complete. Wake when actual free>=12,381,585,408B or new eligible recovery or
+user-provided storage evidence arrives; check hourly, not every five minutes.
+No unchanged notifications/commits or speculative ledger work. Then reverify548
+source bindings/data/capacity, census six distinct seeds (no screening seed),
+prepare/run0/run1/review finite pilots and complete independent resource review.
+Only accepted pilots permit final quality orchestration/freeze and the three
+fresh pairs. Keep all guards and confirmation requirements; no partial launch.
