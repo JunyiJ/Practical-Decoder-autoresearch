@@ -1,0 +1,57 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-02T11:40:59.391798+00:00",
+  "question": "Does AdamW beta2 0.95 versus0.999 improve the retained1200-update subword MLA recipe at common peakLR0.00125, keeping Muon/beta1/epsilon/independent decay and model fixed?",
+  "architecture_review": {
+    "candidate": "Final LayerNorm learned bias versus fixed zero bias; centering, scale, epsilon and pre-branch normalizers otherwise unchanged",
+    "decision": "deferred",
+    "rationale": "A distinct architecture question from centering. The just-closed centering comparison gives no adoption evidence, and a further readout change is lower priority than the previously deferred optimizer timescale question. No gain assumed or old score/seed pooling."
+  },
+  "hp_review": {
+    "selected": "AdamW second-moment beta2 0.95 versus incumbent0.999",
+    "beta1": 0.9,
+    "epsilon": 1e-08,
+    "independent_decay": 6e-05,
+    "muon_unchanged": true,
+    "rationale": "A bounded change to second-moment adaptation. Verify recurrence, bias corrections, ordering and saved optimizer identity before full-model work. It can help or hurt; no quality claim follows from generated checks."
+  },
+  "proposal": {
+    "beta2": [
+      0.999,
+      0.95
+    ],
+    "peak_lr": 0.00125,
+    "steps": 1200,
+    "gradient_clip": 1.0,
+    "cooldown_start": 800,
+    "h200_start": 800,
+    "final_readout": "layer_affine",
+    "quality_design": "Exactly three fresh pairs, common fixed LR, equal zero LR-search budgets, original strict gates, no screens/rescue/retry/partial panel. Standard-recipe scope, not separately tuned optima.",
+    "scientific_seeds_reserved": false,
+    "pilot_or_quality_frozen": false
+  },
+  "references": {
+    "readout_closure": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-centering-preparation-001/quality001-closure.json",
+      "sha256": "56fe2c1f04243d624e5712d0b732957a9f2ed9f1ee0c4c11b515bae63b00f225"
+    },
+    "readout_final": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-centering-preparation-001/quality001-final-review.json",
+      "sha256": "a6297a3063774878adf59e27373cdc2cd9c619c9d17d99f981d0156b3d1be0ff"
+    },
+    "prior_deferred_beta2": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-centering-preparation-001/direction-decision.json",
+      "sha256": "076d8adaafa174f6bc360be09a827d427550a838b37151b1c2f484c8020d2d6f"
+    },
+    "accepted_incumbent": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-centering-quality-v1-001/evidence/quality/00/resource-events.jsonl",
+      "sha256": "2ed87ba6cb003d6bf29d7b1be072a1778657b5277db3adc14575a76fca239dd6"
+    },
+    "accepted_incumbent_raw": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-centering-quality-v1-001/evidence/quality/00/checkpoints/final_001200_1793616276945062000.pt",
+      "sha256": "5a4b3c6b67b227f109d05762fc1c43f34b52d10bfbe1959b37c4a98ba4e82681"
+    }
+  },
+  "next_action": "Freeze/run narrow generated real Muon/AdamW beta2 arithmetic, independent FP64 moment/update oracle, shrinkage-before-child ordering, gradient-absent preservation, exact serialized resume and foreign-beta2 rejection. Then explicit additive full-model optimizer policy/group/checkpoint identity and raw/EMA/RNG/H200/cache integration outside frozen sources; do not bypass existing fixed-default guards.",
+  "closed_campaign_reopened": false
+}

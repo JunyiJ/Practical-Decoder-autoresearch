@@ -1,11 +1,10 @@
 # Tokenizer final-readout centering preparation
 
-Current status: quality001 has five independently accepted endpoints (slots00–04);
-final slot05 rms_bias, second arm of fresh pair three, is running.
-All737 active source bindings immutable,729 predecessors unchanged. The complete
-six1200-update trajectory panel fits the measured retained-output allowance with
-8GiB reserve after exact completed-pilot retirement. No scientific quality result.
-Poll actual process/log/guard/anchors before each next dispatch; details below.
+Current status: quality001 CLOSED_NOT_ADOPTED. Six accepted endpoints and three
+passing inference reviews; mean RMS-with-bias minus LayerNorm-0.00012401040563668678,
+two seeds improve/one worsens, all strict gates fail. Terminal STOP closes all
+quality commands. Retain affine LayerNorm/adopted recipe and all fresh pairs.
+Next direction: TOKENIZER_ADAMW_BETA2_PREPARATION.md. No active worker.
 
 The accepted incumbent has affine LayerNorm at the final readout, epsilon1e-5,
 256 learned scale and256 bias parameters. Read-only inspection of accepted
@@ -304,3 +303,40 @@ once: parent68703/worker68715, exec66972; config/initial metric/guard verified.
 All three fresh seeds used/in use;bootstrap199630004 unused. No campaign conclusion.
 After six accepted endpoints, run the frozen three inference pairs and independent
 final review with the exact quality001 freeze. No additional training or rescue.
+
+
+## Readout-centering quality001 closed, not adopted
+
+All six1200-update endpoints were independently accepted, including1,228,800targets,
+41H200snapshots,88EMA tensors and complete clipping history per endpoint. All three
+paired full/cache/reset inference reviews passed. Independent statistics reproduced
+the frozen reduction, bootstrap and gates; all737 sources remained unchanged.
+
+| Fresh seed | LayerNorm H200 CE | RMS with bias H200 CE | RMS minus LayerNorm |
+| --- | --- | --- | --- |
+|199630011|4.723623907453187|4.722338028546402|-0.0012858789067847274|
+|199630012|4.732624464205026|4.732265809794470|-0.00035865441055628946|
+|199630013|4.705603105991945|4.706875608092376|+0.0012725021004309565|
+
+Mean delta is-0.00012401040563668678 nats/subword token. Two seeds improve slightly;
+one worsens. Mean<-0.02, every-seed improvement and simultaneous conditional-text
+upper-bound gates all fail. Upper bounds for2048/4096/8192-token blocks are
++0.0008101435587669836/+0.0008345895539876811/+0.0009522751174451204.
+Intervals concern reused validation text, not population seeds or held-out test.
+This fixed-common-LR/zero-search comparison does not establish separately tuned
+optima. No RMS-with-bias adoption, cost-only route, rescue or partial-panel decision.
+
+Terminal STOP closes all quality training/inference/final commands. Retain final
+affine LayerNorm and the adopted recipe. Preserve all six fresh raw/H200 pairs,
+3,355,571,184B, all original evidence and153 recoverable historical RAW archives.
+Storage014's clipping-import resolver remains protected; permanently retired
+numerical tensors cannot be restored. Closure free9,388,134,400B is an observation,
+not capacity approval for another panel.
+
+At this boundary both architecture and bounded HP were reviewed: select the
+previously deferred AdamW beta2 .95-versus-.999 with beta1 .9/epsilon1e-8/Muon and
+outer decay fixed. Defer final LayerNorm learned bias versus fixed zero bias.
+No gain assumed or prior score/seed pooling. Read TOKENIZER_ADAMW_BETA2_PREPARATION.md.
+
+Evidence: tokenizer-evidence/readout-centering-preparation-001/quality001-final-review.json,
+quality001-closure.json and quality001-fresh-inference-pair0/1/2-review.json.

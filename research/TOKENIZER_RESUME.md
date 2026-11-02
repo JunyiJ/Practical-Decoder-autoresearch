@@ -8,28 +8,27 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November2: readout-centering quality001 is frozen; slots00–04 accepted; final slot05
-RMS-with-bias is running. All737 source bindings immutable,729 predecessors unchanged.
-No scientific quality conclusion yet.**
+**Latest November2: readout-centering quality001 CLOSED_NOT_ADOPTED. All six
+endpoints and three inference reviews passed; independent mean delta-0.0001240104,
+two seeds slightly improve/one worsens, all strict gates fail. Retain final LayerNorm.
+AdamW beta2 optimizer-component001 PASS; no active worker.**
 
-Exact freeze SHA`409de49f511b3d94733ff788ef0aec18a26291843b6957e0ed95e539bec9546c`.
-Initial slot05 parent68703/worker68715, exec session66972; config/initial metric/guard
-verified. Poll actual process/log/guard/anchors before dispatch; never duplicate.
-Complete exactly six1200-update trajectories in paired order layer/rms_bias,
-rms_bias/layer,layer/rms_bias at commonLR0.00125, zero LR-search and original strict
-gates. After all six accepted endpoints run three prepared inference pairs and
-independent final statistics with this freeze. Preserve every fresh raw/H200 pair.
-No screens/selection/rescue/retry/partial panel. Fresh199630011/012 used;013 now in use;
-bootstrap004 unused. Exact pilot retirement reclaimed1,118,335,248B;
-28,586 survivors verified. Freeze free12,691,947,520B exceeded complete12,381,585,408B
-including8GiBreserve; recheck actual remaining-panel capacity each dispatch.
-153 historical RAWs remain recoverable in protected archives; H200 originals intact.
-Slot02 pre-dispatch capacity shortfall resolved by storage014: six closed clipping
-fresh RAWs losslessly archived,654,173,784B reclaimed,51,335 survivors unchanged
-and exact restoration passed. Actual free11,577,294,848B exceeded remaining
-11,263,061,680B before dispatch. Current readout endpoints remain loose/protected.
-Start with [TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md)
-and the compact state index. Historical material below is superseded by this state.
+Next: narrow additive full-model AdamW beta2 .95-versus-.999 policy, group/checkpoint
+identity and CPU/MPS raw/optimizer/EMA/RNG/clipping-history resume/H200/cache
+integration outside738 frozen bindings. Keep beta1 .9/epsilon1e-8/Muon/decay .00006
+and adopted model fixed. Four generated CPU cases passed independent arithmetic,
+exact ordering/resume and foreign-group rejection; this is no quality claim.
+No new scientific seeds or pilot/quality plan. Prospective exactly three fresh pairs
+at commonLR .00125/zero LR-search/original strict gates/no rescue. Read
+[TOKENIZER_ADAMW_BETA2_PREPARATION.md](TOKENIZER_ADAMW_BETA2_PREPARATION.md).
+
+Every prior quality command is terminally closed. Preserve all six readout raw/H200
+pairs3,355,571,184B, all153 historical RAW archives and H200 originals. Storage014
+exactly resolves archived clipping fresh RAWs, including imported slot00 in the
+original publication-failed root; recoverable, NOT retired. Closure free9.39GB is
+not new-panel capacity approval. Source/small numerical work proceeds with exact
+authorized recovery as needed. Current progress and actual processes supersede
+historical material below; no retired numerical restoration or closed-fixture rerun.
 
 Campaign closure observed October31,2026 at08:17 Los Angeles: **wide-hybrid005 completed and
 closed; hybrid not adopted**. All24 quality trajectories and3 inference seeds
