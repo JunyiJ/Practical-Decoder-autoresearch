@@ -1,0 +1,51 @@
+{
+  "status": "next_frozen_fresh_trajectory_dispatched",
+  "observed_at": "2026-11-02T05:38:31.308982+00:00",
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/cooldown-preparation-001/quality001-freeze.json",
+    "sha256": "1a13edadf74644b11c9aca9b9861d1875c156217533916592fabff04bee194d0"
+  },
+  "previous_accepted": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/cooldown-preparation-001/quality001-accepted-01.json",
+    "sha256": "4e3196144c99e19878c6c891a34d6816cf73dbf85b7c0be5d49ba6b1cf16f4bb"
+  },
+  "root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-quality-v1-001",
+  "slot": 2,
+  "arm": "cooldown600",
+  "parent_pid": 26886,
+  "worker_pid": 26904,
+  "exec_session": 45466,
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-quality-v1-001/evidence/quality/02/request.json",
+    "sha256": "01e5d546f096d34b7f4f5ec70b9a4f5b0e6652aa78d1e2b5961fe807260ba7ac"
+  },
+  "config": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-cooldown-quality-v1-001/evidence/quality/02/config.json",
+    "sha256": "223761005a8b11c6b83093dd82a1682ac8854a506428dbb5cb359c5f4b83837f"
+  },
+  "guard_snapshot": {
+    "elapsed_seconds": 43.25715650001075,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 11962449920,
+      "mps_current_bytes": 662465024,
+      "mps_driver_bytes": 2493300736,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 660111360
+    },
+    "pid": 26904,
+    "reason": null,
+    "status": "watching"
+  },
+  "accepted_prefix": 2,
+  "accepted_weight_bytes": 1118330064,
+  "remaining_requirement_bytes": 11263255344,
+  "observed_free_bytes": 11962433536,
+  "scientific_quality_result": false,
+  "next_action": "Poll actual process/log/guard/anchors; no duplicate. Once slot02 independently accepted and worker exited, continue frozen slots03-05, then all three inference reviews and independent final statistics."
+}

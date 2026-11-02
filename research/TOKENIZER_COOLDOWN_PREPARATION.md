@@ -1,13 +1,13 @@
 # Tokenizer cooldown-onset preparation
 
-Current status: quality001 FROZEN; slot00 independently accepted and paired
-slot01 cooldown600 is running under the exact
+Current status: quality001 FROZEN; slots00/01 independently accepted;
+slot02 cooldown600 on the second fresh seed is running under the exact
 freeze `1a13edadf74644b11c9aca9b9861d1875c156217533916592fabff04bee194d0`. The current
 progress record and accepted anchors supersede this launch snapshot. No scientific
 quality result exists yet. Six1,200-update trajectories form three fresh pairs at
 common peakLR0.00125, with zero LR-search budgets and original strict gates.
-Pilot/evaluation seeds are used; fresh199300011 is now in use,012/013 and
-bootstrap199300004 remain unused at launch. All earlier campaigns stay closed.
+Pilot/evaluation seeds are used; fresh199300011 is complete,012 is in use,013 and
+bootstrap199300004 remain unused. All earlier campaigns stay closed.
 
 Test linear cooldown beginning at zero-based update600 versus incumbent800 over
 1,200 updates. Both use peak LR0.00125 and final multiplier0.1, no warmup and
