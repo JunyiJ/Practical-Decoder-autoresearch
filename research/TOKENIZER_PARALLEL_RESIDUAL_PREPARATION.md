@@ -26,13 +26,24 @@ quality gates and all three paired inference reviews. This is a standard-recipe
 comparison, not separately tuned optima. No LR rescue, partial panels, relaxed
 guards or interim stopping. No scientific seeds, pilots or quality plan frozen.
 
-Next prepare a small standalone composition source and freeze its generated
-CPU FP64/FP32 and MPS FP32 forward/all-gradient/causality cases. Compare each arm
-against its own explicit equation using identical shared matrices. Then implement
-narrow explicit full-model/optimizer/checkpoint/raw-EMA-RNG resume/final-H200/
-full-cache-reset contracts outside the556 frozen sources, actual worker/parent
-validation/inference, fresh census, measured full-output capacity and pilots.
-Do not bypass existing serial-only model/checkpoint guards or reopen old fixtures.
+Standalone component001 passed all12 generated cases: serial and parallel,
+batches1/3, CPU FP64/FP32 and MPS FP32. Independent tokenwise equations agree
+with maximum forward error5.960464477539062e-7 and all-gradient error
+1.9073486328125e-6. CPU FP64 finite differences passed. Suffix perturbations
+leave prefix outputs unchanged and future-input gradients exactly zero.
+Shared matrices and construction RNG match exactly; the topology functions
+intentionally differ. Separate normalization and unknown-kind rejection passed.
+All556 predecessor sources remain unchanged. The frozen source/plan/result and
+guard are in parallel-residual-preparation-001/component001*. No corpus,
+scientific seed, checkpoint or training panel was used. This generic one-head
+composition check is not full-model MLA, optimizer or cache evidence.
+
+Next implement narrow explicit full-model policy/optimizer/checkpoint identity
+and CPU/MPS raw-EMA-RNG resume/final-H200/full-cache-reset integration outside
+the559 bound sources. Do not bypass existing serial-only model/checkpoint guards.
+Then actual worker/parent validation/inference, fresh census, complete measured
+retained-output high-water plus8GiB reserve and finite pilots before a final
+three-fresh-pair quality freeze. No numerical worker is active.
 
 Closure free space is only an observation; source and small numerical work can
 proceed. Recheck actual full retained-output high-water with8GiB reserve before
