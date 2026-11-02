@@ -8,7 +8,7 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**Latest November 2: final-bias quality001 is frozen; slot00 learned is running.**
+**Latest November 2: final-bias quality001 is frozen; one endpoint accepted; slot01 fixed-zero is running.**
 
 Exactly six 1200-update fresh trajectories at common LR0.00125 follow
 learned/zero, zero/learned, learned/zero, with zero LR-search and original strict
@@ -21,7 +21,7 @@ Freeze free13,457,494,016B exceeded complete12,381,585,408B including8GiB reserv
 Retain every fresh raw/H200 pair and all191 historical protected RAW archives.
 
 Poll actual processes, logs, guards and accepted anchors before any dispatch.
-Initial slot00 parent2372/worker2384, exec34278 is only a launch snapshot.
+Current slot01 parent2937/worker2948, exec60493 is only a launch snapshot.
 Fresh199850011 is now in use;012/013/bootstrap004 unused. No quality conclusion.
 After all six accepted endpoints, run three paired inference reviews and the
 independent final review. Retain learned final bias pending original gates.
