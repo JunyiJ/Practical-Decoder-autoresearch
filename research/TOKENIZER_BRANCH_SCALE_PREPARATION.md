@@ -1,6 +1,7 @@
 # Tokenizer fixed residual branch-scaling preparation
 
-Current status: quality001 FROZEN; first fresh slot00 unit trajectory dispatched.
+Current status: quality001 FROZEN; slot00 unit independently accepted and slot01
+fixed_half running. One of six endpoints accepted; no paired quality conclusion.
 Exact freeze SHA8947d12c48e087d85d180ee7614900d120cf1f742849e278f6012808c61ddb45.
 All659 active sources bind651 unchanged predecessors. Exactly three fresh pairs,
 common LR0.00125, no LR screens/selection/rescue. Poll actual process/log/guard and
