@@ -569,3 +569,34 @@ log and failure receipt remain closed. New worker_v2 routes the read-only data
 view to the already tested isolated runtime. The unused conditional cleanup001
 source is retained and must not execute; only the later002 audit can authorize
 its exact allowlist after successful002 dependency closure.
+
+
+Parallel-residual worker-retirement001 covers exactly the four successful
+generated worker raw/H200 tensors (1,118,319,188B), conditional on completed
+pilot-integration002 and retention-boundary001 and explicit tensor dependency
+closure. Serial paths belong to worker002's accepted prefix, independently
+revalidated/imported by worker003; parallel paths belong to worker003. Use exact
+accepted bindings, never a presumed uniform root. Preserve both prior failures,
+source/config/log/receipt evidence, selected models and every fresh confirmation.
+The finite pilot entry reads retained configuration metadata and creates fresh
+weights. Apply exact size/hash allowlists, worker locks/process checks, durable
+journals and survivor verification. Later manifest explains absent tensors;
+closed numerical fixtures are never restored or rerun.
+
+
+Storage-recovery-006 is a lossless representation change, not checkpoint
+retirement. Under the user's request to recover space while keeping selected
+models and every fresh confirmation, up to32 older accepted raw optimizer
+checkpoints from terminally closed campaigns may move into protected one-member
+Zstandard archives. Every H200 inference checkpoint stays at its original path.
+Every raw checkpoint's exact original byte stream, path, size and SHA256 remains
+bound in the manifest and verified archive before its duplicate loose copy is
+removed. These selected/fresh raw payloads are NOT retired and must never be
+purged; archive-backed loading/materialization resolves them through this exact
+manifest. Keep all original acceptance/configuration/log/source evidence.
+Use shared worker locks/process checks, exact accepted-checkpoint/closed-campaign
+bindings, complete protected-file census, durable journals, streamed member
+verification, fsync before removing duplicate loose copies, and survivor checks.
+A copy-only probe verified exact recovery and measured actual savings. No
+quantization, tensor rewriting, scientific rerun, or loss of selected/fresh bytes
+is permitted. Unrelated maintenance and all existing archives remain untouched.

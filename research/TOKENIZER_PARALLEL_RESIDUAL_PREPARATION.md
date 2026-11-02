@@ -24,7 +24,7 @@ Prospective quality design: exactly three fresh pairs at common LR0.00125,
 equal zero LR-search budgets,1200updates/cooldown800/H200800, original strict
 quality gates and all three paired inference reviews. This is a standard-recipe
 comparison, not separately tuned optima. No LR rescue, partial panels, relaxed
-guards or interim stopping. No scientific seeds, pilots or quality plan frozen.
+guards or interim stopping. The current resource-pilot status and remaining quality-freeze gate are below.
 
 Standalone component001 passed all12 generated cases: serial and parallel,
 batches1/3, CPU FP64/FP32 and MPS FP32. Independent tokenwise equations agree
@@ -52,9 +52,9 @@ interrupted step2 replay matched raw model/optimizer/EMA/RNG exactly (maxerror0)
 Step2 serialization stayed in capped memory; final-step4 raw/H200 exports have
 three H200 snapshots over88 tensors. CPU/MPS batch1/8 full/cache/reset inference
 passed. All572 bound sources remained unchanged, including559 predecessors.
-Original plans/logs/guards/results and final raw/H200 pairs remain retained.
-These generated fixtures are closed; no scientific seeds, pilot/quality plan,
-quality result or active worker exists.
+Original plans/logs/guards/results remain retained. The generated resume weights
+were later retired by exact resume-retirement002; resolve absent paths there.
+These generated fixtures remain closed and do not establish scientific quality.
 
 Actual generated worker pair and trained-inference003 are complete. Both arms
 passed bounded run_training publication and independent parent full validation:
@@ -84,18 +84,60 @@ and accepted it. No repeated serial updates or relaxed/partial-panel guards.
 Resolve accepted pair paths through trainer-worker003.json bindings: serial is
 in prerequisite002 and parallel in prerequisite003; do not assume one root.
 
-Next minimal additive finite20-update resource-pilot orchestration and complete
-three-fresh-pair fixed-LR design outside tested runtime/acceptance sources.
-Integrate actual accepted worker payloads/cache and finite contracts, then close
-their tensor dependencies. Fresh scientific seed census, complete measured
-retained-output high-water (serialization overlap, metadata,8GiB reserve), exact
-authorized recovery as needed and actual capacity recheck precede finite pilots
-and final quality freeze. Current free8,876,199,936B is an observation, not new-panel
-readiness. The successful worker raw/H200 weights (1,118,319,188B) remain retained
-until dependencies close and a new exact audit. Proactively inventory additional
-lossless recovery if the full panel still does not fit; no stale capacity wait or
-ban on source work. All earlier campaigns/fixtures remain closed; no active
-worker, scientific seeds or pilot/quality plan reserved.
+Finite20-update resource-pilot orchestration and the complete three-fresh-pair
+fixed-LR design are now tested in additive parallel_residual_campaign_v1.
+Pilot-integration001 failed before payload audit/training on a harness field-name
+mismatch (residual versus topology); source/plan/log/failure remain closed.
+Separate pilot002 entry and integration002 passed finite contracts and real
+worker raw/H200/optimizer/EMA/RNG/full-validation/cache re-audits. All591 campaign
+sources are frozen, including585 unchanged runtime/acceptance predecessors.
+Retention-boundary001 passed exact pilot retirement and rejected selection,
+fresh cleanup, incomplete/foreign plans and repeated execution. After dependency
+closure, worker-retirement001 retired exactly four obsolete generated weights
+(1,118,319,188B), verifying38,174 survivors; original002/003 receipts resolve
+through that later manifest. No selected/fresh scientific payload was retired.
+
+Storage-recovery-006 preserved32 older selected/fresh raw optimizer checkpoints
+in protected lossless one-member Zstandard archives and recovered3,474,600,510B.
+All original raw bytes are preserved, and every H200 model remains at its original
+path. Full streamed member verification preceded each duplicate loose-copy
+removal;47,303 other files were verified unchanged. An exact raw restoration to
+an owned temporary copy passed size/SHA verification, then only that temporary
+copy was removed. These raw checkpoints are NOT retired. Resolve their original
+paths through storage-recovery-006/raw-completed.json and its protected archives
+under research_archives/protected-raw-storage-006; materialize.py provides exact
+restoration without any training. Never purge these archives as obsolete payloads.
+The earlier storage-recovery-004 fixture archive remains protected.
+
+Capacity001 measured13,405,265,920B free against the complete12,381,585,408B
+requirement: six retained raw/H200 pairs, serialization accounting,256MiB metadata
+and8GiB reserve. Fresh census001 scanned46,955 files/4,165,631,841B with no seed
+collisions. Panel199190 is reserved: pilot001/eval003 are used; fresh011/012/013
+and bootstrap004 remain unused. No LR-screen seed exists.
+
+Both scientific resource pilots are COMPLETE: each20updates/20,480targets,
+8H200 snapshots and88EMA tensors, independently accepted. Paired full/cache/reset
+inference passed batches1/8,196,608B per item for both arms. Independent final001
+resource review passed, including original guards, output bounds and conservative
+1200-update timing projections. Pilot losses are not selection or quality evidence.
+Final review retained1,118,328,784B pilot weights and observed12,055,719,936B free;
+exact retirement after quality-source dependency closure would conditionally yield
+13,174,048,720B. Remeasure actual capacity before dispatch; current pilots stay
+retained until that new exact audit. No active worker or scientific quality result.
+
+Next minimal additive finite1200-update quality orchestration in NEW
+research/parallel_residual_quality_v1 outside all591 frozen campaign sources.
+Reuse tested fixed-LR three-pair serial/acceptance/inference/retention primitives;
+adapt serial/parallel_separate_norms,88EMA and196,608B cache identities. Verify
+actual retained pilot payload/cache and exactly six fresh-trajectory contracts.
+Close dependencies, independently audit exact successful-pilot retirement,
+recheck full capacity and unused fresh/bootstrap seeds, then final quality freeze,
+six fresh trajectories, three paired inference reviews and independent statistics.
+Common LR0.00125, equal zero search budgets, no screens/rescue/retry or pilot-loss
+selection; original strict gates and standard-recipe scope. All earlier campaigns
+and failed fixtures remain closed. Architecture/HP direction remains parallel
+residual topology with cooldown600-versus800 deferred; no boundary-quality result
+has appeared to revise that decision.
 
 Closure free space is only an observation; source and small numerical work can
 proceed. Recheck actual full retained-output high-water with8GiB reserve before
