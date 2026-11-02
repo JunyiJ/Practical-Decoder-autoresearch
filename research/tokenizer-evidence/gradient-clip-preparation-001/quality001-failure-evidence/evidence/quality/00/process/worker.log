@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gradient_clip_quality_v1/quality_execution.py", line 164, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gradient_clip_quality_v1/quality_execution.py", line 153, in main
+    if args.mode=='worker':worker(MetadataWriter(ROOT,(args.global_fd,args.campaign_fd)),args.slot,args.freeze_sha256,[sys.executable,'-m',MODULE,*sys.argv[1:]])
+                           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gradient_clip_quality_v1/quality_execution.py", line 121, in worker
+    writer.publish_json(base+'/worker.json',dict(kind=KIND,pid=os.getpid(),parent_pid=parent,request=reference(ROOT/base/'request.json'),acceptance_request=req,validation=validation,cache=cached,holdout_scored=False))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata_writer.py", line 120, in publish_json
+    if len(piece)>remaining:raise ValueError('JSON payload exceeds metadata group cap')
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: JSON payload exceeds metadata group cap

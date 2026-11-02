@@ -891,3 +891,34 @@ complete12,381,585,408B including8GiBreserve. Recheck remaining full-panel capac
 each dispatch. Historical selected/fresh bytes and114 protected RAW archives
 remain intact. First fresh slot00 clip1 is dispatched; no paired quality result.
 Seeds199520011 now in use;012/013 and bootstrap004 unused at first launch.
+
+
+## Publication failure closed; zero-update continuation quality002
+
+Original quality001 slot00 completed1200updates,1,228,800targets,41H200snapshots
+and both raw/H200 files, but worker.json publication exceeded the256KiB miscellaneous
+metadata group by6,295B. Its process receipt publication also failed. STOP and all
+partial files/source/log/config/weights remain immutable; no endpoint was accepted
+in the original root. The earlier test bounded history alone and missed aggregate
+metadata high-water. No training was repeated and no seed was replaced.
+
+Separate publication-recovery001 independently verified the actual final raw/H200,
+optimizer/EMA/RNG, all1200 clipping observations, full validation and cache. It
+exercised full report publication using existing2MiB resource-audit/resource-events
+groups; no guard or budget was raised. Additive v2 integration verified the same
+six scientific configs (only output paths differ for remaining slots), forbids
+slot00 training, rejects replacement seeds and re-audits actual retained artifacts.
+
+Quality002 frozen SHA d417380ed2581f917936efa85c6caee4ecb24bd8ef680d63864f864342761885
+imports slot00 with zero updates and zero weight copies. New691-source plan
+includes all687 unchanged quality001 sources. This continues exactly the original
+three fresh pairs at LR0.00125 with zero LR-search and original strict gates.
+Imported original raw/H200559,261,160B are protected fresh evidence, not obsolete
+failed weights. Remaining previously unrun slot01 cliphalf is active; no campaign
+quality conclusion. Follow quality002 anchors and the new freeze only.
+
+Complete12,381,585,408B allowance and8GiBreserve are unchanged; existing imported
+weights are charged, leaving11,822,324,248B required versus12,381,995,008B measured.
+All691 sources remain frozen. Prepared quality002-fresh-inference001.py and
+quality002-final-review001.py require all6 accepted endpoints and exact new freeze.
+Preserve original failure evidence and all historical protected archives.

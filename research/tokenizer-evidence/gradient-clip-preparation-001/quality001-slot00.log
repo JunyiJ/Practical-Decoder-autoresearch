@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gradient_clip_quality_v1/quality_execution.py", line 164, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gradient_clip_quality_v1/quality_execution.py", line 157, in main
+    try:result=run_once(writer,args.slot,args.freeze_sha256)
+               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gradient_clip_quality_v1/quality_execution.py", line 136, in run_once
+    process=run_process(writer,'quality',slot,argv,c.ROOT,required_free_bytes=required,output_limit_bytes=ALLOWANCES[spec['arm']],timeout_seconds=SECONDS,parent_check=check);idle()
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_process_v2.py", line 157, in run_process
+    if state['returncode']!=0:raise RuntimeError('Worker exited with code '+str(state['returncode']))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Worker exited with code 1
+Process evidence publication failed: ValueError('JSON payload exceeds metadata group cap')
