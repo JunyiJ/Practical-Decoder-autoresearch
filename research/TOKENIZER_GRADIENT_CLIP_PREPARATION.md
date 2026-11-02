@@ -1,7 +1,7 @@
 # Tokenizer global gradient-clipping preparation
 
 Current status: quality001 closed publication failure; quality002 frozen same-panel
-continuation imports slot00 with zero updates. Previously unrun slot01 is active.
+continuation has accepted slots00/01; slot02 cliphalf is active on fresh seed199520012.
 Follow new freeze/quality002 anchors; original STOP and all failures preserved.
 
 Question: does global L2 gradient clipping0.5 versus incumbent1.0 improve the retained
