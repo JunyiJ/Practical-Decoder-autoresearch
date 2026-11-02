@@ -7936,3 +7936,18 @@ and every selected/fresh byte. All earlier campaigns/fixtures remain closed.
 
 Evidence: tokenizer-evidence/readout-centering-preparation-001/trainer-worker001.json,
 trained-inference001.json, worker-integration001.json and resume-retirement001/completed.json.
+
+
+## Readout-centering resource pilots complete
+
+Both20-update layer/rms_bias arms passed independent acceptance, full/cache/reset
+inference batches1/8 and independent final003 resource review. All729 source
+bindings unchanged; no quality result or active worker. Exactly three fresh pairs
+at commonLR0.00125/equal zero LR-search/original strict gates remain prospective.
+Next additive quality orchestration, actual pilot re-audit/dependency closure,
+exact retirement and capacity/unused-seed recheck before freeze. AdamW beta2 remains
+deferred; retain final LayerNorm and adopted recipe. Import-only integration001
+failure is closed; separate additive v2/integration002 passed. Worker retirement
+and lossless storage013 resolved capacity;147 historical RAWs remain recoverable,
+NOT retired, with all H200 originals intact. Details and exact evidence are in
+[TOKENIZER_READOUT_CENTERING_PREPARATION.md](TOKENIZER_READOUT_CENTERING_PREPARATION.md).

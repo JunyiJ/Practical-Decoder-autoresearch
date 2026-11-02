@@ -149,3 +149,57 @@ and every selected/fresh byte. All earlier campaigns/fixtures remain closed.
 
 Evidence: tokenizer-evidence/readout-centering-preparation-001/trainer-worker001.json,
 trained-inference001.json, worker-integration001.json and resume-retirement001/completed.json.
+
+
+## Finite resource pilots complete; quality source preparation next
+
+Both20-update readout pilots passed independent parent acceptance and full/cache/
+reset paired inference at batches1/8:20,480 training targets,8 H200 snapshots and
+88 EMA tensors each,196,608B cache per item. Complete clipping histories were
+checked; pilot observations are descriptive resource evidence, not quality or
+LR selection. Independent final003 resource review passed all original time/RSS/
+MPS/disk/output guards and the conservative1200-step projection. All729 campaign
+sources remain unchanged, including717 accepted runtime/acceptance predecessors.
+
+Integration001 stopped at import before numerical work or deletion because a
+relative validation import had no campaign module. Original source/plan/log remain
+closed. Additive campaign_v2 explicitly imports the tested worker validation;
+separate integration002 passed finite six-trajectory contracts and actual worker
+raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache audits. Original723
+bindings remain unchanged. Retention-boundary002 passed exact pilot-only eligibility
+and protected-fresh rejection using new disposable inputs. No closed test reran. Final002 reviewer launch omitted two required MPS environment
+flags and stopped before audit. Original source/plan/log remain closed; separate
+final003 uses the prescribed environment, with no training/inference repeated.
+
+Worker-retirement001 then retired exactly1,118,323,284B of obsolete generated
+weights after dependency closure, with41,696 survivors unchanged. Original
+receipts stay immutable; absent tensors resolve through its later exact manifest.
+Storage013 preserved27 closed table/MLA/horizon selected/fresh RAWs in verified
+lossless archives, reclaiming2,574,573,563B and verifying50,958 other
+files unchanged; exact restoration passed. The copy-only probes separately measured
+18,501,652B saving on a tied-table RAW and108,837,823B on an MLA RAW; neither
+probe changed its original. All147 historical archived RAWs remain recoverable,
+NOT retired; all H200 originals and storage004 remain intact.
+
+The measured complete capacity allowance is12,381,585,408B: six retained fresh
+raw/H200 pairs,256MiB metadata and8GiB reserve. Same-inode streaming publication
+adds no full on-disk checkpoint copy; raw/H200 coexist within the bound. Fresh
+census scanned50,526 files/4,493,124,543B with no collisions. Panel199630 pilot001
+and evaluation003 are now used; fresh011/012/013 and bootstrap004 remain unused.
+Final review observed free11,575,418,880B with1,118,335,248B retained pilots,
+conditionally12,693,754,128B after future dependency closure and NEW exact audit.
+This is not permission to delete pilots now or assume future capacity.
+
+Next: additive research/readout_centering_quality_v1 outside729 frozen sources,
+exactly three fresh pairs at commonLR0.00125, equal zero LR-search budgets, original
+strict gates and no screens/selection/rescue/retry/partial panel. Verify actual
+pilot payload/cache and six-trajectory contracts, close dependencies, independently
+audit pilot retirement and remeasure complete capacity/unused seeds before final
+quality freeze. Final LayerNorm versus affine RMS WITH bias at epsilon1e-5 and
+512 parameters each; eight pre-branch RMSNorms unchanged. Retain incumbent LayerNorm
+and adopted recipe pending final gates; AdamW beta2 .95-versus-.999 deferred.
+No scientific quality result, quality freeze or active worker.
+
+Evidence: pilot001-final003-review.json, pilot001-review.json, pilot-integration002.json,
+worker-retirement001/completed.json, campaign-capacity001.json and
+scientific-seed-census-001/result.json in tokenizer-evidence/readout-centering-preparation-001.

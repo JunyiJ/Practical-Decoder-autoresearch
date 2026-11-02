@@ -981,3 +981,30 @@ resolve through tokenizer-evidence/readout-centering-preparation-001/resume-reti
 and completed.json. The separately trained worker001 weights1,118,323,284B remain
 retained pending pilot integration and a NEW exact audit. Selected/fresh bytes and
 120 losslessly archived historical RAWs remain protected, not retired.
+
+
+Prospective readout worker-retirement001: pilot integration002 re-audited both
+accepted generated worker raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache
+bundles and closed tensor dependencies. The new pilot config reads retained
+metadata only. Exactly four generated weights1,118,323,284B are eligible after
+independent path/size/hash audit, shared lock/process check, durable deletion journal
+and complete survivor verification. All selected/fresh/failed evidence and archives
+remain protected. No scientific panel dispatch until actual full capacity passes.
+
+
+Storage013 prospectively preserves27 closed table/MLA/horizon selected or fresh
+RAW checkpoints in lossless protected archives. Original acceptance/state/terminal
+reviews, exact hashes, shared locks, durable journals, complete survivor checks
+and exact restoration are required. Only duplicate loose RAW representations may
+be removed after archive verification. RAW bytes remain protected/recoverable,
+NOT retired; H200 originals and all previous archives remain unchanged.
+
+
+Readout worker-retirement001 COMPLETE:1,118,323,284B retired after dependencies
+closed,41,696 survivors unchanged. Storage013 COMPLETE:27 selected/fresh RAWs
+losslessly archived,2,574,573,563B saved,50,958 other files unchanged and
+exact restoration PASS. Original RAW paths resolve via storage-recovery-013/raw-completed.json
+and protected-raw-storage-013/*.tar.zst; NOT retired, never purge.147 RAWs total
+are protected in storage006–013. All H200 originals/storage004 stay intact.
+New resource-pilot weights1,118,335,248B remain retained until actual quality
+integration closes dependencies and a NEW exact path/size/hash audit.
