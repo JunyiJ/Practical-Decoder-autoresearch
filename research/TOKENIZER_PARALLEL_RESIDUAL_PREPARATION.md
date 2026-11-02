@@ -38,12 +38,36 @@ guard are in parallel-residual-preparation-001/component001*. No corpus,
 scientific seed, checkpoint or training panel was used. This generic one-head
 composition check is not full-model MLA, optimizer or cache evidence.
 
-Next implement narrow explicit full-model policy/optimizer/checkpoint identity
-and CPU/MPS raw-EMA-RNG resume/final-H200/full-cache-reset integration outside
-the559 bound sources. Do not bypass existing serial-only model/checkpoint guards.
-Then actual worker/parent validation/inference, fresh census, complete measured
-retained-output high-water plus8GiB reserve and finite pilots before a final
-three-fresh-pair quality freeze. No numerical worker is active.
+Full-model model001 passed both arms with identical shared initialization/RNG,
+28,492,416 parameters,88EMA tensors and identical Muon/AdamW group membership.
+The serial arm exactly matches adopted-model initial logits; parallel logits
+intentionally differ. CPU/MPS forward/gradient, uneven cached chunks/reset and
+causality passed. Both arms use196,608B cache per item. Foreign topology
+checkpoints/caches and a mutated block were rejected before use. The new named
+MLA separate-RMS policy is isolated under parallel_residual_v1/runtime; historical
+serial-only contracts remain unchanged.
+
+Serialized model-resume001 passed both four-update arms: fresh repeat and
+interrupted step2 replay matched raw model/optimizer/EMA/RNG exactly (maxerror0).
+Step2 serialization stayed in capped memory; final-step4 raw/H200 exports have
+three H200 snapshots over88 tensors. CPU/MPS batch1/8 full/cache/reset inference
+passed. All572 bound sources remained unchanged, including559 predecessors.
+Original plans/logs/guards/results and final raw/H200 pairs remain retained.
+These generated fixtures are closed; no scientific seeds, pilot/quality plan,
+quality result or active worker exists.
+
+Next minimal additive actual run_training/output/worker and independent parent
+full-validation/inference adapters, reusing tested primitives. Integrate and
+re-audit the successful resume payloads, then close their tensor dependencies.
+Before the complete worker pair, independently audit exact retirement of the
+four successful generated weights (1,118,314,132B) if needed, preserving source,
+configuration, logs and receipts. Observed free8,761,184,256B versus prospective
+worker-pair9,814,671,360B (8GiB reserve, per-arm metadata and16MiB shared allowance)
+has a concrete conditional recovery route: after eligible exact retirement,
+9,879,498,388B. This is not deletion or dispatch readiness; source integration
+proceeds and actual free space must be remeasured. Scientific-panel output
+high-water remains separate. Then worker validation/inference, fresh scientific
+census, finite resource pilots and final three-pair fixed-LR quality freeze.
 
 Closure free space is only an observation; source and small numerical work can
 proceed. Recheck actual full retained-output high-water with8GiB reserve before
