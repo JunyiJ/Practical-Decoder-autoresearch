@@ -1,6 +1,7 @@
 # Tokenizer final-readout centering preparation
 
-Current status: quality001 FROZEN and first fresh slot00 layer running.
+Current status: quality001 has one independently accepted endpoint (slot00 layer);
+paired slot01 rms_bias is running.
 All737 active source bindings immutable,729 predecessors unchanged. The complete
 six1200-update trajectory panel fits the measured retained-output allowance with
 8GiB reserve after exact completed-pilot retirement. No scientific quality result.
@@ -237,3 +238,13 @@ final gates. AdamW beta2 .95-versus-.999 remains deferred.
 Evidence: tokenizer-evidence/readout-centering-preparation-001/quality001-freeze.json,
 quality001-preflight.json, quality-integration001-review.json, quality001-capacity.json
 and quality001-pilot-retirement/completed.json.
+
+
+Quality001 slot00 independently accepted1200updates/1,228,800targets,41H200snapshots,
+88EMA tensors and complete clipping history. Both worker and parent guards finished
+without reason. Raw/H200559,261,864B remain protected. Actual free12,113,510,400B
+exceeded the remaining full-panel requirement11,822,323,544B before dispatch.
+Paired slot01 rms_bias launched once: parent65663/worker65675, exec32455; exact
+configuration, initial metric and worker guard verified. No paired quality conclusion.
+Current processes and accepted anchors supersede these observations; poll before
+every next dispatch. Sources, fixed order, LR and all gates remain frozen.
