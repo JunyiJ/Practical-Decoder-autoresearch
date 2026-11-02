@@ -43,10 +43,10 @@
   "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json",
   "active_campaign_root": null,
   "active_exec_session": null,
-  "active_parent_pid": null,
+  "active_parent_pid": 81253,
   "active_run": null,
-  "active_session": null,
-  "active_worker": null,
+  "active_session": 98811,
+  "active_worker": 81264,
   "actual_free_bytes": 9200406528,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
@@ -61,10 +61,27 @@
     "sha256": "b7d50137735025031840a88fa08f1a222a94b7f5fd41b4ebf030b2546d3d8a7b"
   },
   "adamw_beta2_preparation": "research/TOKENIZER_ADAMW_BETA2_PREPARATION.md",
+  "adamw_beta2_quality_accepted_count": 0,
+  "adamw_beta2_quality_freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/quality001-freeze.json",
+    "sha256": "b71b2e692637f3599b8c860f63abb081fcfd2d1278ac0e1db2a5a01c63b78a49"
+  },
+  "adamw_beta2_quality_integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/quality-integration001-review.json",
+    "sha256": "7f313046df0b814d60d7333f987caca544b315c0dff7a50ffcb91522104e43ba"
+  },
+  "adamw_beta2_quality_pilot_retirement": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/quality001-pilot-retirement/completed.json",
+    "sha256": "a393a554efa43922d0e1587e516095dbb35782603db3f50778d593e330b11726"
+  },
+  "adamw_beta2_quality_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-beta2-preparation-001/quality001-plan.json",
+    "sha256": "6f7b28a542593eccc0c5ace9df104dd3e0c5bff321bc6f09157e7f2a744b78aa"
+  },
   "adamw_beta2_resume": "research/tokenizer-evidence/adamw-beta2-preparation-001/model-resume001.json",
   "adamw_beta2_resume_retirement": "research/tokenizer-evidence/adamw-beta2-preparation-001/resume-retirement001/completed.json",
   "adamw_beta2_retained_generated_worker_bytes": 0,
-  "adamw_beta2_retained_resource_pilot_bytes": 1118337488,
+  "adamw_beta2_retained_resource_pilot_bytes": 0,
   "adamw_beta2_trained_inference": "research/tokenizer-evidence/adamw-beta2-preparation-001/trained-inference001.json",
   "adamw_beta2_worker": "research/tokenizer-evidence/adamw-beta2-preparation-001/trainer-worker001.json",
   "adamw_beta2_worker_integration": "research/tokenizer-evidence/adamw-beta2-preparation-001/worker-integration001.json",
@@ -8504,7 +8521,7 @@
   "mla_score_worker": "research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
   "mla_score_worker_archive": "research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
   "mla_score_worker_review": "research/tokenizer-evidence/mla-score-preparation-001/worker003-review.json",
-  "next_action": "AdamW beta2 pilot001 COMPLETE: both20-update beta999/beta95 arms independently accepted(20480targets,8H200snapshots,88EMA tensors),actual44 AdamW groups(.9,.999)/(.9,.95),epsilon1e-8,44Muon groups and complete clipping histories. Paired full/cache/reset inference batches1/8 and independent final001 resource review PASS,196608B cache/item. All766 campaign sources frozen,760 runtime predecessors unchanged. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/adamw_beta2_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118337488B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199740 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Beta1 .9/epsilon1e-8/Muon/model/schedule/H200 fixed; no assumed gain. Worker-retirement001 reclaimed1118325460B with42735survivors verified; original receipts immutable. Storage016 losslessly archived13 closed readout/wide selected/fresh RAWs,reclaimed2236324199B,52040other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-016/raw-completed.json and protected research_archives/protected-raw-storage-016/*.tar.zst;recoverable,NOT retired,never purge. Together006\u2013016 preserve182 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11507736576B plus retainedpilots1118337488B conditionally yields12626074064B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain beta2 .999/final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. Final LayerNorm learned-bias-versus-fixed-zero deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Original model001 missing-plan/model002 absolute CPU-MPS post-update failures remain closed;model003 passed exact same-backend native-step and differential beta2 checks,not absolute backend-update parity. Pilot observations are resource evidence,not scientific quality selection.",
+  "next_action": "AdamW beta2 quality001 FROZEN; first fresh slot00 beta999 trajectory dispatched via research.adamw_beta2_quality_v1.quality_execution,exact freeze SHAb71b2e692637f3599b8c860f63abb081fcfd2d1278ac0e1db2a5a01c63b78a49. Initial parent81253/worker81264,exec session98811;config/initial metric/guard verified. Poll actual process/log/guard/anchors before every dispatch; current progress/anchors supersede launch snapshots. Never duplicate. Continue exactly six1200-update trajectories slots00\u201305 in frozen paired order beta999/beta95,beta95/beta999,beta999/beta95 at commonLR0.00125. Equal zero LR-search:no screens/selection/rescue/retry/partial panel/pilot-loss selection. Preserve every fresh raw/H200 pair. After all six accepted endpoints run three pairs through quality001-fresh-inference001.py and independent quality001-final-review001.py with exact freeze. Original strict gates/standard-recipe scope. Only declared AdamW beta2 .999-versus-.95 changes;beta1 .9/epsilon1e-8/group membership/width rates/Muon/outer decay/model/schedule/H200 fixed. Actual44 AdamW/44Muon groups and complete1200-update clipping histories checked;observations descriptive only. All774 active sources frozen,766 predecessors unchanged.24 finite-contract/publication tests and real pilot raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache re-audits PASS;pilot-to-quality forgery rejected. Exact pilot retirement reclaimed1118337488B with28769retained files verified;original receipts immutable,absent pilots resolve via quality001-pilot-retirement. Freeze free12619821056B exceeded complete12381585408B including8GiBreserve;charge outputs/recheck actual remaining full-panel capacity each dispatch. Panel199740 pilot/eval used;fresh011 now in use,012/013/bootstrap004 unused at launch. No scientific quality conclusion. Keep historical selected/fresh bytes including182 losslessly archived RAWs through storage006\u2013016 manifests/protected archives;recoverable,NOT retired,never purge. All H200 original paths/storage004 fixture archive intact. No permanently retired tensor restoration or closed-fixture reruns. Retain beta2 .999/final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200 pending final gates. Final LayerNorm learned-bias-versus-fixed-zero deferred;all earlier campaigns closed,no old score/seed pooling. Original model001 missing-plan/model002 absolute CPU-MPS post-update failures remain closed;model003 exact native-step/differential beta2 checks passed,not absolute backend-update parity.",
   "next_after_starter": "Readout-centering pilot001 COMPLETE via research.readout_centering_campaign_v2: both20-update layer/rms_bias arms independently accepted(20480targets,8H200snapshots,88EMA tensors),complete clipping histories; paired full/cache/reset inference batches1/8 and independent final003 resource review PASS,196608B cache/item. All729 campaign sources unchanged,717 runtime predecessors preserved. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/readout_centering_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118335248B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199630 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Final LayerNorm versus affine RMS WITH bias,epsilon1e-5/512parameters both,eight pre-branch RMSNorms fixed. Original final002 reviewer launch environment failure before audit stays closed; separate final003 uses the required strict environment without repeating training/inference. Original pilot integration001 import failure before numerical work/deletion stays closed; additive v2 explicit worker validation routing and separate integration002 passed without changing723 original bindings. Worker-retirement001 reclaimed1118323284B with41696survivors unchanged,original evidence immutable. Storage013 losslessly archived27 closed table/MLA/horizon selected/fresh RAWs,reclaimed2574573563B,50958other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-013/raw-completed.json and protected research_archives/protected-raw-storage-013/*.tar.zst;recoverable,NOT retired,never purge. Together006-013 preserve147 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11575418880B plus retainedpilots1118335248B conditionally yields12693754128B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW beta2 .95-versus-.999 deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Pilot observations are resource evidence,not scientific quality selection.",
   "no_paid_compute": true,
   "no_subagents": true,
@@ -8614,7 +8631,7 @@
   "session_hint": null,
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "status": "adamw_beta2_pilots_passed_quality_integration_next",
+  "status": "adamw_beta2_quality_frozen_slot00_running",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -8633,7 +8650,7 @@
   },
   "storage_recovery_latest": "research/tokenizer-evidence/storage-recovery-014/raw-completed.json",
   "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-terminal.json",
-  "updated_at": "2026-11-02T12:41:48.924106+00:00",
+  "updated_at": "2026-11-02T12:49:55.794880+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
@@ -8671,5 +8688,5 @@
   },
   "warmup_trained_inference": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
   "warmup_worker": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
-  "worker_pid": null
+  "worker_pid": 81264
 }

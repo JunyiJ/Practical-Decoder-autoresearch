@@ -1,9 +1,8 @@
 # AdamW second-moment beta2 preparation
 
-Current status: pilot001 and independent final001 resource review COMPLETE.
-All766 campaign sources unchanged,760 runtime predecessors preserved. No active
-worker or scientific quality result. Resource pilot/evaluation seeds used; three
-fresh seeds and bootstrap remain unused. Final quality source/freeze is next.
+Current status: quality001 FROZEN,slot00 beta999 dispatched. All774 active sources
+unchanged,766 predecessors preserved. No scientific quality conclusion. Current
+process/progress/anchors supersede launch state. Exact freeze `b71b2e692637f3599b8c860f63abb081fcfd2d1278ac0e1db2a5a01c63b78a49`.
 
 Select AdamW beta2 .95 versus incumbent .999. Keep beta1 .9, epsilon1e-8,
 Muon/group membership/width-scaled rates, independent per-update decay .00006,
@@ -170,3 +169,39 @@ Evidence: `adamw-beta2-preparation-001/pilot-integration001.json`,
 `campaign-capacity001.json`, `scientific-seed-census-001/result.json`;
 `storage-recovery-016/raw-completed.json` and `restoration-check.json`.
 Retain beta2 .999 and the adopted recipe; final LayerNorm bias ablation deferred.
+
+## November2 — AdamW beta2 quality001 frozen and first fresh arm dispatched
+
+The additive `research/adamw_beta2_quality_v1` binds774 active sources and preserves
+all766 campaign predecessors.24 finite contract/publication tests passed, plus
+actual retained pilot raw/H200/optimizer/EMA/RNG/clipping-history/full-validation/
+cache re-audits. Pilot-to-quality forgery rejected. Declared44AdamW and44Muon
+group identities are checked at payload acceptance and each accepted prefix.
+
+Exact pilot retirement reclaimed1,118,337,488B with28,769
+retained research files verified unchanged. Original receipts remain immutable;
+absent pilot tensors resolve via `quality001-pilot-retirement/completed.json`.
+No permanently retired tensors may be restored or closed prerequisites rerun.
+
+Freeze SHA:`b71b2e692637f3599b8c860f63abb081fcfd2d1278ac0e1db2a5a01c63b78a49`.
+Observed free12,619,821,056B exceeded complete12,381,585,408B including8GiB
+reserve,serialization overlap and metadata. Every dispatch charges retained fresh
+outputs and rechecks the remaining full-panel capacity. All182 historical RAW
+archives remain lossless/protected,all H200 originals/storage004 remain intact.
+
+Exactly six1200-update trajectories:beta999/beta95,beta95/beta999,beta999/beta95,
+commonLR .00125,equal zero LR search,original strict gates,no rescue/selection/
+retry/partial panel. Only AdamW beta2 changes;beta1 .9,epsilon1e-8,Muon,grouping,
+width rates,outerdecay .00006,model,schedule and H200 remain fixed.
+Slot00 dispatched;initial parent81253/worker81264,exec98811. Current live
+progress/processes/anchors supersede these launch identifiers. Fresh199740011 is
+in use;fresh012/013 andbootstrap004 unused at launch. No quality conclusion yet.
+Next poll the actual worker,independently accept each endpoint,then dispatch only
+the next frozen slot. After all six:three paired inference reviews and independent
+statistics through the frozen `quality001-fresh-inference001.py` and
+`quality001-final-review001.py`. Retain beta2 .999 pending all original gates.
+
+Evidence:`adamw-beta2-preparation-001/quality-integration001-review.json`,
+`quality001-plan.json`,`quality001-freeze.json`,`quality001-preflight.json`,
+`quality001-capacity.json`,`quality001-seed-use.json`,
+`quality001-pilot-retirement/completed.json`.
