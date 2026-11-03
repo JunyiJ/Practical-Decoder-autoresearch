@@ -8696,3 +8696,12 @@ is historical: poll live process/log/guard/anchors before every dispatch. Never
 duplicate. After six accepted endpoints,run three frozen inference pairs and the
 independent final review with exact freeze. No quality conclusion yet;retain
 epsilon1e-8/adopted recipe pending gates. Final LayerNorm scale remains deferred.
+
+## Epsilon quality001 accepted prefix: slot00
+
+Slot00 eps8 independently accepted:1200updates/1,228,800targets/41H200snapshots,
+88EMA tensors,44AdamW/44Muon groups,complete clipping history. No paired quality
+conclusion. Slot01 eps6 launched serially after idle/guard/anchor and full remaining
+capacity checks; parent30325/worker30344,session80256,initial metric verified.
+Launch snapshots are historical; follow live processes and accepted anchors.
+Freeze and all860 sources unchanged; preserve every fresh raw/H200 pair.

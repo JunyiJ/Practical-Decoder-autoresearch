@@ -8,7 +8,7 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**AdamW epsilon quality001 frozen; slot00 eps8 launched.**
+**AdamW epsilon quality001: slot00 accepted; slot01 eps6 running.**
 
 24 finite-contract/publication tests and real retained pilot raw/H200/optimizer/
 EMA/RNG/clipping/full-validation/cache re-audits passed; pilot-to-quality forgery
@@ -312,3 +312,12 @@ This is planned recovery work, not an approved result or completed fix.
 Recovery preparation: [design and remaining prerequisites](activation_inference_recovery_v1/README.md).
 The state index first_action/next_after_starter now match current next_action;
 obsolete pilot-dispatch text is removed from these machine-readable entry fields.
+
+## Epsilon quality001 accepted prefix: slot00
+
+Slot00 eps8 independently accepted:1200updates/1,228,800targets/41H200snapshots,
+88EMA tensors,44AdamW/44Muon groups,complete clipping history. No paired quality
+conclusion. Slot01 eps6 launched serially after idle/guard/anchor and full remaining
+capacity checks; parent30325/worker30344,session80256,initial metric verified.
+Launch snapshots are historical; follow live processes and accepted anchors.
+Freeze and all860 sources unchanged; preserve every fresh raw/H200 pair.
