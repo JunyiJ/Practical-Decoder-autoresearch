@@ -8785,3 +8785,42 @@ checkpoint/cache policy integration on adopted epsilon1e-6,without bypassing
 existing learned-scale guards. Source/small numerical work proceeds.
 Evidence:quality001-final-review.json,quality001-closure.json,adopted recipe,
 final-ln-scale-preparation-001/direction-decision.json,component001-result.json.
+
+## Full-model scale integration passed; serialized resume reserve failure closed
+
+Model001 passed both learned/fixed-unit arms on adopted epsilon1e-6:identical
+shared initialization/logits/RNG and unrelated groups,28,492,416/28,492,160
+parameters,88/87parameter tensors,44/43AdamW and44Muon groups. Explicit readout
+equations,CPU/MPS gradients/cache/reset/causality and foreign scale checkpoints/
+caches passed. All878bindings unchanged. Only final scale removed; learned bias
+retained. No serialized H200/EMA acceptance or scientific quality claim yet.
+
+Original resume001 closed failed:disk_reserve guard exited90 at7.51s with
+8,491,757,568B free below8GiB. RSS2,812,198,912B/MPSpeak2,508,668,928B stayed
+within limits. Learned fresh repeat exact0 recorded; full resume/H200/both-arm
+acceptance was NOT completed. Initial free10,204,749,824B minus445,087,744B
+allocated payload implies1,267,904,512B extra filesystem consumption at guard.
+1GiB OS swap observed afterward; cause not proved. Source/config/log/guard/trace
+and failure receipt immutable; never retry closed001. New exact failed-retirement
+removed only445,084,647B obsolete generated payload;54976survivors unchanged.
+
+Separate resume002 source/plan is prepared,UNEXECUTED. It avoids retaining two
+full reference tensor trees by comparing dtype/shape/SHA256 byte identities and
+releases serialized bytes after decoding. No measured benefit claimed. Original
+numeric/RSS/MPS/time/8GiB guards unchanged; complete capacity forecast strengthened
+to11,049,021,440B with observed extra filesystem headroom. Measured
+9207844864B leaves1841176576B deficit after recovery. Check free hourly,
+quiet/no records when unchanged. Wake on actualfree>=11,049,021,440B or supplied
+external volume for verified protected-archive relocation. Then execute separate
+resume002,followed by actual worker/parent validation/inference; later full-panel
+capacity/census/pilots and original three-pair gates. New independent human work
+need not wait; no partial panel or relaxed guard. No worker active.
+
+Storage028 losslessly archived all6 newly closed ADOPTED epsilon fresh RAWs,
+reclaimed651099194B,54921survivors unchanged,exact restoration PASS.
+Resolve originals via storage-recovery-028/raw-completed.json and protected-raw-
+storage-028 archives. All203 archived RAWs are protected/recoverable,NOT retired;
+all H100/H200 originals/storage004 intact. Original027 stopped before archive
+creation/deletion when unrelated maintenance added a README; separate028 excludes
+named unrelated maintenance and reuses unchanged-input copy proof. Do not repeat
+closed recovery or numerical fixtures. Current adopted epsilon1e-6 remains.

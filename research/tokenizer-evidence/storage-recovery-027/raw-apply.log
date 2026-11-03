@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-027/archive_raw.py", line 76, in <module>
+    with a.session_lock(R/'research_state/tokenizer-worker-lock'),a.CpuPrerequisiteGuard(E/f'raw-{mode}-guard.json',R,timeout_seconds=900):idle();plan() if mode=='plan' else apply()
+                                                                                                                                                                              ~~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-027/archive_raw.py", line 51, in apply
+    assert set(map(str,all_paths()))=={r['path'] for r in protected}|selected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
