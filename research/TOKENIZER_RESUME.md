@@ -8,31 +8,33 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**AdamW epsilon pilot integration passed; scientific dispatch waits for capacity.**
+**Storage cleanup completed; AdamW epsilon resource pilots passed.**
 
-Both actual generated worker endpoints passed the new parent payload/full-validation/
-cache audits. Finite20-update pilot configuration,complete three-fresh-pair design
-and pilot-only retention tests passed; all852 bindings unchanged. No scientific
-seeds,pilot/quality freeze,result or active worker. Prepared census and independent
-resource-review entrypoints remain unexecuted.
+Human-authorized unused cache cleanup reclaimed2,174,640,128 allocated bytes
+from39,146 Google updater/Go/Gradle/npm-npx/Node download entries. All80,828
+study/environment survivors verified unchanged; zero study payloads removed.
+Root-owned npm content,active app updates,installed environments/models remain
+protected. Original022 ownership audit and023 read-only dependency-manifest lock
+error stopped before deletion; separate024 classified actual cache mutexes and
+passed. Future installs/builds may redownload dependencies. Do not repeat cleanup.
 
-Exact obsolete worker retirement reclaimed1,118,324,948B;44,725 survivors unchanged.
-Storage021 losslessly archived six closed final-bias fresh RAWs,reclaimed653,245,163B,
-verified54,107 survivors and exact restoration. All197 historical RAWs remain
-protected/recoverable,NOT retired; all H100/H200 originals intact. Never restore
-permanently retired generated weights or rerun closed fixtures.
+Actual free12,939,014,144B exceeded complete12,381,585,408B; old capacity wait is
+resolved. Fresh census199960 passed. Both20-update epsilon resource pilots passed
+independent acceptance:20,480targets,8H200snapshots,88EMA,44AdamW/44Muon groups,
+complete clipping histories. Paired full/cache/reset inference batches1/8 and
+independent final001 review PASS,196,608Bcache/item. All852 sources unchanged.
+These pilots provide resource/correctness evidence,no scientific quality result.
 
-Capacity001 measured10,678,415,360B free versus12,381,585,408B required including
-8GiB reserve:1,703,170,048B remains. Only Macintosh HD is mounted. Check free space
-hourly; unchanged checks stay silent and create no records or commits. Wake when
-actual free>=12,381,585,408B or a human supplies an external volume for verified
-protected-archive relocation. Do not repeat completed cleanup or launch partial
-panels. On relevant change remeasure capacity,run fresh census,freeze/run two
-finite20-update pilots serially,paired inference and independent resource review.
-New independent human work need not wait.
-
-Retain epsilon1e-8 and adopted recipe; final LayerNorm scale ablation deferred.
-See [epsilon preparation](TOKENIZER_ADAMW_EPSILON_PREPARATION.md) and the state index.
+Next NEW research/adamw_epsilon_quality_v1 finite1200-update orchestration and
+exactly three fresh pairs atLR.00125/zeroLRsearch/original gates/no rescue. Actual
+pilot tensor/cache re-audits and six-trajectory contracts must close dependencies
+before NEW exact retirement of1,118,336,976B. Final review free11,760,295,936B,
+conditionally12,878,632,912B after that audited retirement; remeasure before freeze.
+Pilot/eval199960001/003 used; fresh011/012/013/bootstrap004 unused. Retain epsilon1e-8
+and adopted recipe; final LayerNorm scale deferred. All197 historical RAW archives
+and H100/H200 originals preserved. No active worker. Source work proceeds.
+Evidence: storage-recovery-024/completed.json; adamw-epsilon-preparation-001/
+campaign-capacity002.json,scientific-seed-census-001/,pilot001-final001-review.json.
 
 ## Findings to retain
 

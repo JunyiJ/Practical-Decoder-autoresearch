@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-023/cleanup.py", line 134, in <module>
+    assert sys.argv[1:] in (['plan'],['apply']);main(sys.argv[1])
+                                                ~~~~^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-023/cleanup.py", line 108, in main
+    fd=os.open(p,os.O_RDWR|os.O_NOFOLLOW);fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB);locks.append(fd)
+PermissionError: [Errno 13] Permission denied: '/Users/junyi/go/pkg/mod/github.com/json-iterator/go@v1.1.12/Gopkg.lock'

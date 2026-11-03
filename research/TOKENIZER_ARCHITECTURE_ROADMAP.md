@@ -1249,3 +1249,10 @@ worker. Remaining full-panel gap1,703,170,048B at capacity001; hourly quiet wake
 check for free>=12,381,585,408B or supplied external volume. Next census/two resource
 pilots after capacity,not a partial panel. Retain epsilon1e-8; LayerNorm scale
 remains deferred. Details: TOKENIZER_ADAMW_EPSILON_PREPARATION.md.
+
+## Epsilon resource pilots completed after storage recovery
+
+Storage024 cleared capacity; both20-update resource pilots/inference/independent
+review passed. No quality result;852 sources unchanged. Next finite quality source
+and exact pilot re-audit/retirement before three fresh pairs. Retain epsilon1e-8;
+LayerNorm scale deferred. See TOKENIZER_ADAMW_EPSILON_PREPARATION.md.

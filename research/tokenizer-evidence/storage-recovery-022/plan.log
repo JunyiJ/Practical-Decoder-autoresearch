@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-022/cleanup.py", line 134, in <module>
+    assert sys.argv[1:] in (['plan'],['apply']);main(sys.argv[1])
+                                                ~~~~^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-022/cleanup.py", line 82, in main
+    inv=inventory()
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-022/cleanup.py", line 50, in inventory
+    assert v['uid']==os.getuid() and v['links']==1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

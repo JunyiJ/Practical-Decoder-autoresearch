@@ -1386,3 +1386,31 @@ storage-recovery-021/raw-completed.json and protected-raw-storage-021/*.tar.zst.
 These are FRESH models,NOT retired,never purge. All197 historical RAWs and H100/H200
 originals/storage004 remain protected. Current capacity wait authorizes no partial
 panel or additional deletion; do not repeat closed cleanup/probes.
+
+## Storage024 cleanup completed; epsilon resource pilots passed
+
+Human-authorized unused cache cleanup reclaimed2,174,640,128 allocated bytes
+from39,146 Google updater/Go/Gradle/npm-npx/Node download entries. All80,828
+study/environment survivors verified unchanged; zero study payloads removed.
+Root-owned npm content,active app updates,installed environments/models remain
+protected. Original022 ownership audit and023 read-only dependency-manifest lock
+error stopped before deletion; separate024 classified actual cache mutexes and
+passed. Future installs/builds may redownload dependencies. Do not repeat cleanup.
+
+Actual free12,939,014,144B exceeded complete12,381,585,408B; old capacity wait is
+resolved. Fresh census199960 passed. Both20-update epsilon resource pilots passed
+independent acceptance:20,480targets,8H200snapshots,88EMA,44AdamW/44Muon groups,
+complete clipping histories. Paired full/cache/reset inference batches1/8 and
+independent final001 review PASS,196,608Bcache/item. All852 sources unchanged.
+These pilots provide resource/correctness evidence,no scientific quality result.
+
+Next NEW research/adamw_epsilon_quality_v1 finite1200-update orchestration and
+exactly three fresh pairs atLR.00125/zeroLRsearch/original gates/no rescue. Actual
+pilot tensor/cache re-audits and six-trajectory contracts must close dependencies
+before NEW exact retirement of1,118,336,976B. Final review free11,760,295,936B,
+conditionally12,878,632,912B after that audited retirement; remeasure before freeze.
+Pilot/eval199960001/003 used; fresh011/012/013/bootstrap004 unused. Retain epsilon1e-8
+and adopted recipe; final LayerNorm scale deferred. All197 historical RAW archives
+and H100/H200 originals preserved. No active worker. Source work proceeds.
+Evidence: storage-recovery-024/completed.json; adamw-epsilon-preparation-001/
+campaign-capacity002.json,scientific-seed-census-001/,pilot001-final001-review.json.
