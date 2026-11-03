@@ -25,6 +25,25 @@ the same issue. Follow the latest human authorization over older local plans.
 
 ## Manage capacity before it stops experiments
 
+- Cleanup runs every 20 minutes through the existing maintenance schedule, and
+  also immediately within a research turn that detects a new or materially
+  changed storage blocker. Do not wait for the next scheduled tick once a
+  blocker is detected. Execute standing-authorized recovery before settling
+  into a capacity wait, aiming for the complete measured requirement plus
+  2 GiB extra headroom. Continue across eligible candidate classes; one small
+  batch or an exhausted single class is not completion.
+- Coordinate timer and research-triggered cleanup with nonblocking locks:
+  `research_state/external-cache-maintenance.lock` for external caches and
+  `research_state/tokenizer-worker-lock/.lock` for research payloads. Do not
+  duplicate an in-flight pass, stop workers, or bypass a busy research lock.
+  Independent external-cache cleanup may proceed while research is active.
+  Preserve the exact-manifest, hash, consumer-check and deletion-journal
+  safeguards, selected/fresh weights, and original evidence.
+- Once all available authorized options for a specific blocker are exhausted,
+  record its remaining byte deficit and wake conditions. Repeated observations
+  of that unchanged blocker do not trigger repeated broad scans. A new eligible
+  candidate, closed dependency, changed requirement, resolved access blocker,
+  or added storage triggers recovery again; partial cleanup is not success.
 - Forecast the complete retained-output high-water requirement before freezing
   a panel, including serialization overlap, metadata, and the existing reserve.
 - When capacity is insufficient, promptly inventory large research artifacts
