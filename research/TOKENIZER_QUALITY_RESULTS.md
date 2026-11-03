@@ -8672,3 +8672,27 @@ and adopted recipe; final LayerNorm scale deferred. All197 historical RAW archiv
 and H100/H200 originals preserved. No active worker. Source work proceeds.
 Evidence: storage-recovery-024/completed.json; adamw-epsilon-preparation-001/
 campaign-capacity002.json,scientific-seed-census-001/,pilot001-final001-review.json.
+
+## AdamW epsilon quality001 frozen and first fresh trajectory launched
+
+24 finite-contract/publication tests and real retained pilot raw/H200/optimizer/
+EMA/RNG/clipping/full-validation/cache re-audits passed; pilot-to-quality forgery
+rejected. All860 sources frozen,852 predecessors unchanged. New exact pilot
+retirement removed1,118,336,976B after dependencies closed,29144survivors unchanged.
+Original evidence immutable; absent pilots resolve quality001-pilot-retirement,
+never restore or rerun. All selected/fresh bytes and197 RAW archives protected.
+
+Full capacity passed:12677988352B free versus12,381,585,408B including8GiB
+reserve. Freeze SHA a82295c46e8fbfef432d943eca5c26f59fd79a5b02235047ad0c1e15045bb1c4.
+Exactly six1200-update fresh trajectories at commonLR.00125,equal zero LR-search,
+original strict gates,no rescue/selection/retry/partial panel. Paired order:
+eps8/eps6,eps6/eps8,eps8/eps6. Only AdamW epsilon changes; betas(.9,.999),
+44AdamW/44Muon groups,width rates,decay.00006,model/schedule/H200 fixed. Complete
+clipping histories required. All six fresh raw/H200 pairs remain retained.
+
+Slot00 eps8 launched,parent29771/worker29789,session25852; actual config/initial
+metric verified. Fresh199960011 in use;012/013/bootstrap004 unused. Launch snapshot
+is historical: poll live process/log/guard/anchors before every dispatch. Never
+duplicate. After six accepted endpoints,run three frozen inference pairs and the
+independent final review with exact freeze. No quality conclusion yet;retain
+epsilon1e-8/adopted recipe pending gates. Final LayerNorm scale remains deferred.

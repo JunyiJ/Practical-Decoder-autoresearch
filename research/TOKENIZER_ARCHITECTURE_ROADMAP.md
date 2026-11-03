@@ -1256,3 +1256,10 @@ Storage024 cleared capacity; both20-update resource pilots/inference/independent
 review passed. No quality result;852 sources unchanged. Next finite quality source
 and exact pilot re-audit/retirement before three fresh pairs. Retain epsilon1e-8;
 LayerNorm scale deferred. See TOKENIZER_ADAMW_EPSILON_PREPARATION.md.
+
+## Epsilon quality001 frozen
+
+24 contracts and actual pilot re-audits passed;860 sources unchanged. Full-panel
+capacity passed after exact pilot retirement. First fresh eps8 trajectory launched;
+no quality conclusion. Retain adopted recipe and defer LayerNorm scale until gates.
+See TOKENIZER_ADAMW_EPSILON_PREPARATION.md and live progress/anchors.
