@@ -8,7 +8,7 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**AdamW epsilon quality001: slots00–03 accepted; slot04 eps8 running.**
+**AdamW epsilon quality001: slots00–04 accepted; final slot05 eps6 running.**
 
 24 finite-contract/publication tests and real retained pilot raw/H200/optimizer/
 EMA/RNG/clipping/full-validation/cache re-audits passed; pilot-to-quality forgery
@@ -358,3 +358,13 @@ No campaign quality conclusion. Slot04 eps8 launched serially after idle/guard/
 anchor/full remaining-capacity checks; parent33619/worker33639,session73667,
 initial metric verified. Fresh199960011/012 used,013 in use,bootstrap004 unused.
 Freeze/all860 sources unchanged; preserve all fresh pairs and follow live anchors.
+
+## Epsilon quality001 accepted prefix: slots00–04
+
+Five endpoints independently accepted,each1200updates/1,228,800targets,41H200
+snapshots,88EMA tensors,44AdamW/44Muon groups and complete clipping histories.
+No campaign quality conclusion. Final slot05 eps6 launched serially after idle/
+guard/anchor/full remaining-capacity checks; parent35494/worker35515,session82088,
+initial metric verified. All three fresh seeds used/in use;bootstrap199960004
+unused. Exact freeze/all860 sources unchanged. Preserve every fresh pair. After
+all six endpoints,run all three frozen inference pairs and independent final review.
