@@ -1,0 +1,95 @@
+{
+  "observed_unix": 1793681573.976435,
+  "capacity_source": "research/tokenizer-evidence/adamw-epsilon-preparation-001/quality001-capacity.json",
+  "capacity_sha256": "a074884acba68116846124f356df88d954147cc98a48096afee91fc92a1c994e",
+  "whole_panel_required_bytes": 12381585408,
+  "formula": "6 * 587202560 weights + 268435456 metadata + 8589934592 reserve; serialization temporary publication within weight caps; deduct existing unique-inode weights only, retain full metadata allowance conservatively",
+  "existing_weights": [
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/01/checkpoints/final_001200_1793679909500109000.pt",
+      "size": 445187109,
+      "allocated_bytes": 453148672,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/01/checkpoints/h200.pt",
+      "size": 114075587,
+      "allocated_bytes": 117465088,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/00/checkpoints/final_001200_1793679460929124000.pt",
+      "size": 445187109,
+      "allocated_bytes": 453148672,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/00/checkpoints/h200.pt",
+      "size": 114075587,
+      "allocated_bytes": 117465088,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/02/checkpoints/final_001200_1793680716182177000.pt",
+      "size": 445187109,
+      "allocated_bytes": 453148672,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/02/checkpoints/h200.pt",
+      "size": 114075587,
+      "allocated_bytes": 117465088,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/04/checkpoints/final_001200_1793681514961882000.pt",
+      "size": 445187109,
+      "allocated_bytes": 445190144,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/04/checkpoints/h200.pt",
+      "size": 114075587,
+      "allocated_bytes": 114077696,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/03/checkpoints/final_001200_1793681150245207000.pt",
+      "size": 445187109,
+      "allocated_bytes": 445190144,
+      "nlink": 1
+    },
+    {
+      "path": "research_runs/tokenizer-adamw-epsilon-quality-v1-001/evidence/quality/03/checkpoints/h200.pt",
+      "size": 114075587,
+      "allocated_bytes": 114077696,
+      "nlink": 1
+    }
+  ],
+  "existing_unique_inode_weight_bytes": 2796313480,
+  "remaining_required_free_bytes": 9585271928,
+  "actual_free_bytes": 10020184064,
+  "mandatory_deficit_bytes": 0,
+  "margin_bytes": 434912136,
+  "preferred_extra_headroom_bytes": 2147483648,
+  "preferred_headroom_shortfall_bytes": 1712571512,
+  "memory_free_percent": 40,
+  "swap_used_bytes": 0,
+  "research_worker": "PID33639 slot04 live at initial/process checks; never stopped or signalled",
+  "resume_reconciliation": "Existing capacity_blocker_resolved=true and capacity_deficit_bytes=0 agree with fresh evidence. Concurrent resume/progress files left intact; current observation recorded here instead of overwriting worker state.",
+  "next_action": "Research owner continues active slot04, accepts it independently, then rechecks capacity before slot05. No competing experiment. Reconsider research cleanup only when shared worker lock can be acquired and exact dependencies/hashes are audited.",
+  "categories": {
+    "clang_homebrew": "228 verified cache files removed; exact manifest/journal/receipt",
+    "pip_uv_cargo_go_gradle_build": "pip/Homebrew build caches empty; uv/Cargo/Gradle caches absent; prior read-only Go failure not retried",
+    "npm": "71 root-owned files, 77713408 allocated bytes; no ownership/permission changes attempted",
+    "vscode": "196083712 allocated bytes belong to currently running commit bf9252a2fb45be6893dd8870c0bf37e2e1766d61; no specific unused entries established",
+    "codex_updater": "live Sparkle updater, pending payload protected",
+    "runtimes": "Codex runtime, dotslash extracted runtime, temporary installed figure environment preserved",
+    "other_apps": "browser/OS/Metal caches not verified disposable per-entry; no broad cache deletion",
+    "research": "active worker; fresh models protected; no research mutation or payload hashing needed because mandatory capacity is covered"
+  },
+  "wake_conditions": [
+    "Future authorized check after 20 minutes or a material free-space/panel change; do not restart paused automation",
+    "If mandatory deficit appears, audit closed obsolete research payloads under shared worker lock or provision storage; preferred headroom shortage alone does not authorize moving required data"
+  ]
+}
