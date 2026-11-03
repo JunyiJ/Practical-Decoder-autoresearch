@@ -1,0 +1,124 @@
+{
+  "observed_unix": 1793683064.655304,
+  "resume_sha256": "b1e375b4d3ab7ad540e2e0f51510bdf9ba24985dc820c117ba00e230728dc4ae",
+  "research_status": "final_ln_scale_component001_passed",
+  "active_run": null,
+  "actual_free_bytes": 9581559808,
+  "reserve_bytes": 8589934592,
+  "extra_headroom_bytes": 2147483648,
+  "no_active_panel_target_bytes": 10737418240,
+  "no_active_panel_target_deficit_bytes": 1155858432,
+  "next_panel_measured_requirement": null,
+  "next_panel_status": "Final-LayerNorm-scale component passed; full-model integration precedes measured worker/pilot/quality forecast. No new panel frozen. Do not treat predecessor capacity as new-panel readiness.",
+  "reference_scenario": {
+    "source": "research/tokenizer-evidence/adamw-epsilon-preparation-001/quality001-capacity.json",
+    "source_sha256": "a074884acba68116846124f356df88d954147cc98a48096afee91fc92a1c994e",
+    "description": "Planning scenario only: new six-trajectory panel using predecessor raw/H200 allowances; excludes unmeasured new integration outputs. No new-panel outputs yet to deduct. Previous six pairs are retained evidence, not new-panel credit.",
+    "required_free_bytes": 12381585408,
+    "required_with_extra_2gib_bytes": 14529069056,
+    "deficit_with_extra_2gib_bytes": 4947509248,
+    "formula": "6*(469762048 raw + 117440512 H200) + 268435456 metadata + 8589934592 reserve; temporary publication overlap within the frozen weight/metadata allowances"
+  },
+  "files_removed": 51,
+  "allocated_bytes_removed": 119410688,
+  "sum_observed_deletion_free_deltas": 118947840,
+  "memory_free_percent": 60,
+  "swap_used_bytes": 0,
+  "process_check": "No training/compiler/simulator processes at inspected times. Live Codex Sparkle updater preserved. No worker/app stopped, launched or signalled.",
+  "research_archive_audit": {
+    "index_sources": [
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-006/raw-plan.json",
+        "sha256": "7ea1a92029286e4c53638cc4d40ff76b76d128dbd316f3a029f9780cdd965d07",
+        "archives": 32
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-007/raw-plan.json",
+        "sha256": "9edbf52773877b05e657b0f51934023d6d66c532d4d7e59886c1a005fe0a1d11",
+        "archives": 28
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-008/raw-plan.json",
+        "sha256": "082e6c5e45809c35b6194f88845a872d3ed13e1d923a5332a8c64d33b7bae8fa",
+        "archives": 6
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-009/raw-plan.json",
+        "sha256": "fa4703d3577ae5f50a61f5e7a7b3b6eeb5a21705877462861dd0adeacadd1ae6",
+        "archives": 9
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-010/raw-plan.json",
+        "sha256": "f6ba71f374e8bb19c69abbbc4a836779bae8d5c53bc344955c3f00c36003e5a4",
+        "archives": 23
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-011/raw-plan.json",
+        "sha256": "12cbad9ccf8687d2d1e3bc0efc1eaeddd50173e932ba24aa01ec194e5382e74b",
+        "archives": 16
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-012/raw-plan.json",
+        "sha256": "337c316af2545d6c2c0bb598646af63de8a0b67c7d64b081991a8b26f0a3c524",
+        "archives": 6
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-013/raw-plan.json",
+        "sha256": "b91a935ce52d61e26807bda12a45be778a9831181eaefd388886da0ea5839d75",
+        "archives": 27
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-014/raw-plan.json",
+        "sha256": "a7449e908613d718a6bfc0e6562ce080398737ac111a7fbc95966541eb632631",
+        "archives": 6
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-015/raw-plan.json",
+        "sha256": "9155a5ac25c15fa7a9a35ad4a258efc7b7c3562159c8e6a94c9c8aa32647cc1b",
+        "archives": 16
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-016/raw-plan.json",
+        "sha256": "5e7d7d16b8bb2b9b49f3d5cdc1fcaf912f62d6ade3ffee47decfeb374e655061",
+        "archives": 13
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-017/raw-plan.json",
+        "sha256": "6d1fd13abdc21b644424d231b370d9bf9a7ceb74faa5a30ca99140528d6f30f5",
+        "archives": 6
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-019/raw-plan.json",
+        "sha256": "c5ad209d8d99df6cf2d63ef45a137bfb2730b1790f83ddd3323d46f32a3790c9",
+        "archives": 3
+      },
+      {
+        "path": "research/tokenizer-evidence/storage-recovery-021/raw-plan.json",
+        "sha256": "0e43b4377734897becef57c71f6825410f9a68eaf87dbda4eaf5225b72379144",
+        "archives": 6
+      }
+    ],
+    "indexed_archives": 197,
+    "unmapped_archives_over_100mib": 0,
+    "duplicate_original_raw_sha256_groups": 0,
+    "duplicate_h200_sha256_groups": 0,
+    "incomplete_pt_tmp_files": 0,
+    "scope": "Metadata and allocated-size inventory only, no wholesale payload hashing. Selected screens and fresh confirmations resolved via original archive acceptance/terminal mappings. No eligible research deletion established; all research payloads unchanged."
+  },
+  "categories": {
+    "completed_component_downloads": "38 byte-identical installed-copy download archives removed; 175 installed files rehashed unchanged; four caches without unique installed proof retained",
+    "compiler_caches": "13 unused simulator Metal/SDK stat-cache files removed; no compiler/simulator consumers",
+    "package_caches": "Prior Homebrew/pip/uv/Go/Gradle cleanup exhausted bulk downloads; m2/bun/rust download/build locations absent; npm root-owned77,713,408B inaccessible for ordinary deletion, no ownership/mode changes or repeat attempt",
+    "installers": "iTerm installed3.6.11 versus cached3.7.6: pending newer version protected. Codex updater live. Downloaded VS Code is running installed software. No personal downloads touched.",
+    "application_caches": "Active matching VS Code code-cache commit retained; browser profiles/WebStorage/session state excluded. Needed Codex/dotslash/uv runtimes and temporary installed figure environment retained. Python Metal cache preserved for research.",
+    "research": "All197 large protected archives map selected/fresh records; hashes in original manifests have no duplicates. No incomplete .pt.tmp. Fresh epsilon six pairs retained; no next-model integration outputs consumed."
+  },
+  "reconciliation": "No stale capacity blocker in current resume; prior panel closed/adopted, no active run. Preserve concurrent resume/progress files and frozen records; save scoped capacity observation here.",
+  "next_action": "Proceed with authorized final-scale source/small numerical work; measure complete retained high-water before any full panel. For extra headroom, provision an external APFS volume with at least6GiB available for a separately audited relocation of closed protected archives retaining recoverability and hashes; no eligible deletion here can provide that amount.",
+  "wake_conditions": [
+    "A new measured final-scale capacity forecast or newly closed obsolete payload dependencies",
+    "A supplied external storage destination",
+    "New completed disposable downloads/caches; existing20-minute schedule should use lightweight checks and skip unchanged exhausted inventories"
+  ],
+  "initial_compiler_audit_failure": "An unguarded helper import attempted an exclusive plan-file creation and failed FileExistsError; no deletion or overwrite occurred. Helpers were isolated in compiler-batch.py; new audit and apply completed. Prior closed cleanup script was not applied again."
+}
