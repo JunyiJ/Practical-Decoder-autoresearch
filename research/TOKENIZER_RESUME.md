@@ -8,29 +8,40 @@ supporting evidence; ignored local progress and live processes may be newer.
 
 ## Current execution and first action
 
-**AdamW epsilon quality001: slots00–04 accepted; final slot05 eps6 running.**
+**AdamW epsilon1e-6 adopted; final LayerNorm scale component passed.**
 
-24 finite-contract/publication tests and real retained pilot raw/H200/optimizer/
-EMA/RNG/clipping/full-validation/cache re-audits passed; pilot-to-quality forgery
-rejected. All860 sources frozen,852 predecessors unchanged. New exact pilot
-retirement removed1,118,336,976B after dependencies closed,29144survivors unchanged.
-Original evidence immutable; absent pilots resolve quality001-pilot-retirement,
-never restore or rerun. All selected/fresh bytes and197 RAW archives protected.
+All six1200-update fresh endpoints and all three paired inference reviews passed.
+Independent eps6-minus-eps8 deltas:-0.022838512805131144,-0.034333479511555944,
+-0.028255318629028782; mean-0.028475770315238624 nats/token. The original mean
+improvement>0.02,every-seed and all conditional text-bound gates passed. Upper
+bounds2048/4096/8192:-0.021995713638369736,-0.019390242512917873,
+-0.020417804237483028. Separate adoption audit confirmed paired config equality
+except epsilon/output paths,saved optimizer identities and all original gates.
+Adopt epsilon1e-6 with betas(.9,.999),Muons,width rates,decay.00006,model/schedule
+fixed. First frozen candidate is representative,not loss-selected. All six
+fresh raw/H200 pairs3,355,576,176B remain protected. No test scoring; conditional
+text intervals on reused validation are not seed-population/holdout confidence.
 
-Full capacity passed:12677988352B free versus12,381,585,408B including8GiB
-reserve. Freeze SHA a82295c46e8fbfef432d943eca5c26f59fd79a5b02235047ad0c1e15045bb1c4.
-Exactly six1200-update fresh trajectories at commonLR.00125,equal zero LR-search,
-original strict gates,no rescue/selection/retry/partial panel. Paired order:
-eps8/eps6,eps6/eps8,eps8/eps6. Only AdamW epsilon changes; betas(.9,.999),
-44AdamW/44Muon groups,width rates,decay.00006,model/schedule/H200 fixed. Complete
-clipping histories required. All six fresh raw/H200 pairs remain retained.
+New current recipe: adamw-epsilon-preparation-001/adopted-width256-mla-epsilon-recipe.json.
+Historical baseline files,frozen defaults and guards remain immutable; future
+code must explicitly bind this adopted recipe in an additive namespace. Terminal
+STOP closes all epsilon quality training,inference and final commands; no reruns.
 
-Slot00 eps8 launched,parent29771/worker29789,session25852; actual config/initial
-metric verified. Fresh199960011 in use;012/013/bootstrap004 unused. Launch snapshot
-is historical: poll live process/log/guard/anchors before every dispatch. Never
-duplicate. After six accepted endpoints,run three frozen inference pairs and the
-independent final review with exact freeze. No quality conclusion yet;retain
-epsilon1e-8/adopted recipe pending gates. Final LayerNorm scale remains deferred.
+Boundary review selects final LayerNorm learned scale versus fixed unit scale,
+keeping learned bias,centering,epsilon1e-5 and eight pre-branch RMSNorms fixed.
+AdamW beta1 .9-versus-.95 is deferred,with beta2 .999/adopted epsilon1e-6 fixed.
+Final-scale component001 passed24 CPU FP64/FP32/MPS FP32 generated cases:explicit
+forward/all-gradient equations,exact native parity,initial-function/shared-bias/
+RNG equality,bias-gradient sum,finite differences and exact suffix/future-gradient
+checks. Maxforward4.462275904337787e-7,maxgradient2.8988415756714403e-6;all863
+bindings unchanged. No full-model candidate or quality evidence. Candidate removes
+256 parameters,not parameter-matched. Next explicit full-model scale/group/
+checkpoint/cache policy integration on adopted epsilon1e-6,without bypassing
+existing learned-scale guards. Source/small numerical work proceeds.
+Evidence:quality001-final-review.json,quality001-closure.json,adopted recipe,
+final-ln-scale-preparation-001/direction-decision.json,component001-result.json.
+
+Read [final-scale preparation](TOKENIZER_FINAL_LN_SCALE_PREPARATION.md) and the state index. No worker active.
 
 ## Findings to retain
 

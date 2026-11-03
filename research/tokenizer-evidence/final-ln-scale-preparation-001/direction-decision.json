@@ -1,0 +1,27 @@
+{
+  "status": "selected_for_prerequisites_only",
+  "at": "2026-11-03T05:08:23.971592+00:00",
+  "architecture_review": {
+    "candidate": "Final LayerNorm learned scale versus fixed unit scale; learned bias retained",
+    "decision": "selected",
+    "rationale": "Previously deferred distinct architecture ablation; fixes scale at one with identical initial function,removes256 parameters. Keep centering,bias,epsilon1e-5 and eight pre-branch RMSNorms fixed."
+  },
+  "hp_review": {
+    "candidate": "AdamW beta1 .9 versus .95 with beta2 .999 and adopted epsilon1e-6 fixed",
+    "decision": "deferred",
+    "rationale": "Separate first-moment timescale question; do not combine with the newly adopted epsilon result."
+  },
+  "adopted_baseline": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/adopted-width256-mla-epsilon-recipe.json",
+    "sha256": "3d9b5d1e3cabebb676794399dd0728a454b4f046b836c3a70c1aad2477e55685"
+  },
+  "closure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/quality001-closure.json",
+    "sha256": "7862289d641da5f3716b4d6f90414032ba9628339f5508358368a800a4d89152"
+  },
+  "next_action": "Freeze/run generated CPU FP64/FP32 and MPS FP32 actual LayerNorm forward/gradient/native parity,initial-function/RNG/shared-bias equality,finite differences and causality. Then explicit full-model scale/group/checkpoint/cache identity outside frozen namespaces; never bypass learned-scale guards.",
+  "scientific_seeds_reserved": false,
+  "pilot_or_quality_frozen": false,
+  "no_assumed_quality_benefit": true,
+  "parameter_matched": false
+}
