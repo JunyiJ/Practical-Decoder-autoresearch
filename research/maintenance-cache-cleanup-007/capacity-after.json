@@ -1,0 +1,39 @@
+{
+  "observed_at": "2026-11-04T16:48:36.559716+00:00",
+  "status": "partial_reclamation_capacity_blocked",
+  "actual_free_bytes": 8562081792,
+  "current_integration_requirement_bytes": 11049021440,
+  "cleanup_target_bytes": 13196505088,
+  "requirement_deficit_bytes": 2486939648,
+  "cleanup_target_deficit_bytes": 4634423296,
+  "original_capacity_accounting": {
+    "actual_free": 10204749824,
+    "required": 9781116928,
+    "raw_cap": 469762048,
+    "h200_cap": 117440512,
+    "shared_metadata": 16777216
+  },
+  "additional_measured_filesystem_headroom_bytes": 1267904512,
+  "extra_cleanup_headroom_bytes": 2147483648,
+  "next_scientific_panel": "unmeasured/unfrozen; integration target is not proof it fits",
+  "classes": {
+    "conda": "5197420 KiB preliminary cache inventory; conda clean --tarballs --packages --dry-run --json reports 0 unused packages and 0 archives. Linked environment payloads preserved. No claimed reclamation.",
+    "snapshots": "No APFS Data snapshots and no Time Machine local snapshots.",
+    "npm": "77713408 allocated bytes blocked by root-owned 0755 parent directories; no chmod/chown or repeated deletion attempt.",
+    "components": "Four new completed CRX downloads deleted after every member matched installed files; 14 installed files reverified. Others lacking unique installed-copy proof preserved.",
+    "editors": "Current VS Code commit cache and loaded extensions preserved; obsolete extension names have no surviving installation.",
+    "updates": "iTerm cached3.7.6 newer than installed3.6.11 protected; Codex updater live.",
+    "runtimes": "Codex/dotslash/uv installed shared runtimes preserved; no new dependency closure.",
+    "containers": "OrbStack is now running two OpenClaw containers. Exact older image IDs inventoried; roughly8.3 GB Docker layer opportunity pending human confirmation they are unused. No images/containers/volumes/VM data removed. Build cache138.9MB shared with images, not counted as additional reclaimable allocation.",
+    "research": "No new acceptance/dependency closure; selected/fresh202 RAW remain protected under cleanup005 actual audit. Historical cleanup and compression operations not rerun."
+  },
+  "wake_conditions": [
+    "Human identifies inventoried container images as unused",
+    "New completed disposable download or verified obsolete payload",
+    "Cleared filesystem access blocker",
+    "Added storage or changed measured requirement"
+  ],
+  "concrete_option": "Confirm removal of the exact old Docker images in image-candidates.json; preserve both running container images, volumes and bind-mounted data. Supported Docker removal and fresh measurements required; physical recovery is not guaranteed equal to displayed image sizes.",
+  "resume_state": "Not overwritten; capacity remains blocked. See this fresh observation rather than older free-byte counts.",
+  "schedule": "unchanged"
+}
