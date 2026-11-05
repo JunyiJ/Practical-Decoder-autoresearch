@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-11-05T03:45:20.278334+00:00",
+  "status": "prepared_integration_capacity_target_met_scientific_panel_unmeasured",
+  "actual_free_bytes": 13666439168,
+  "required_bytes": 11049021440,
+  "cleanup_target_bytes": 13196505088,
+  "requirement_deficit_bytes": 0,
+  "cleanup_target_deficit_bytes": 0,
+  "surplus_above_target_bytes": 469934080,
+  "accounting": {
+    "arms": 2,
+    "per_arm_raw_cap_bytes": 469762048,
+    "per_arm_h200_cap_bytes": 117440512,
+    "shared_metadata_bytes": 16777216,
+    "reserve_bytes": 8589934592,
+    "extra_cleanup_headroom_bytes": 2147483648,
+    "additional_observed_filesystem_headroom_bytes": 1267904512
+  },
+  "docker_unique_layer_bytes_removed": 8515156486,
+  "vm_backing_allocated_before": 12144996352,
+  "vm_backing_allocated_after": 7152050176,
+  "vm_backing_allocation_reduction": 4992946176,
+  "host_free_before": 8677384192,
+  "host_free_increase": 4989054976,
+  "limitation": "Delayed automatic sparse-disk reclamation observed; Docker layer bytes are not host allocated bytes. APFS and concurrent writes affect free-space delta. No manual VM modification or restart.",
+  "next_scientific_panel": "Not measured or frozen; integration target is not a full scientific panel success claim.",
+  "next_action": "Freshly remeasure full generated-pair high-water, revalidate frozen bindings, and execute the separately prepared resume002 through the research continuation under its shared worker lock and original guards. Do not retry closed resume001. No experiment launched by this cleanup.",
+  "schedule": "unchanged; maintain every20min and recover inline on new blockers",
+  "resume_before_sha256": "cc7f45e01831a6144ac82fafbdbd7de398b7e97295299eb1b037cf2c839c10bb",
+  "automatic_sparse_reclamation_reference": "https://docs.orbstack.dev/faq#why-is-there-an-8-tb-data-file"
+}
