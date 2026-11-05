@@ -8904,3 +8904,64 @@ unit removes256 parameters. CommonLR.00125,zero LR-search,original strict gates,
 exactly3fresh pairs,no selection/rescue/partial panel. Beta1 ablation deferred.
 All202 selected/fresh RAW archives and actual H100/H200/storage004 preserved.
 Evidence:final-ln-scale-preparation-001/worker-terminal001-review.json.
+
+
+## Resource pilots completed through separate compact-receipt continuation
+
+Six final_ln_scale_campaign_v1 modules passed prospective20-update/two-arm and
+complete three-fresh-pair fixed-LR contract tests plus actual worker full-validation/
+optimizer/EMA/history/cache re-audits. Pilot-only retention rejects fresh targets.
+All894 bindings preserved888 predecessors. Worker-retirement001 then permanently
+retired only four dependency-closed generated weights1,118,318,689B;46,100 retained
+files verified unchanged. Original evidence immutable,never restore or rerun.
+Storage030 reclaimed24,190,976 allocatedB through184 newly closed metadata files.
+Full budget12,381,585,408B passed live before census/dispatch;extra2GiB target was
+not met after eligible recovery. Panel200070 census found no matches in54,914
+recorded files/5,100,919,969 readable bytes. No old score/seed pooling.
+
+Original pilot001 stopped on acceptance-receipt metadata cap after the learned
+worker completed20 updates and parent validation passed. Unit slot01 had no
+launch or updates. Original STOP/source/log/config/guard/accepted.json.tmp remain
+immutable. Never rerun its prepare/run/review commands. Separate v2 references
+the immutable worker and request SHA instead of duplicating its full source
+inventory. Real publication fixture150,155B fit unchanged262,144B group cap;
+foreign references/source bridges rejected. All898 sources preserve894 previous
+bindings. Separate frozen pilot002 imported the learned endpoint with ZERO
+repeat updates or weight copies,then ran only previously unstarted fixed-unit.
+Accepted learned RAW/H200 remain in original failed001 root,unit in002. Classify
+by actual acceptance,not failed-root name. Both are retained successful pilots.
+
+Both intended endpoints now have20 updates/20,480 targets/8H200 snapshots,
+88/87EMA,44/43AdamW,44Muon,adopted epsilon1e-6 and complete clipping histories.
+Parent validation and paired full/cache/reset batches1/8 passed. Independent
+final003 resource checks passed;1200-step conservative2x projections5800.67/
+5755.12seconds under7200,all RSS/MPS/time/reserve guards unchanged. Final001
+review stayed unexecuted after checking capacity; final002 review launch omitted
+strict environment flags and failed during startup before its guard/resource
+checks. Both sources/logs preserved;separate final003 used the full strict env.
+
+The full-capacity gate remains FALSE. Around1GiB extra filesystem consumption
+beyond new unit tensors was observed;cause unproved. Inline recovery031/032
+compressed367/2,568 previously uncompressed closed metadata/text files losslessly,
+reclaimed76,763,136/117,678,080 allocatedB,original paths/readable bytes unchanged.
+Twelve affected protected model/archive hashes verified after each operation.
+Closed updater/build/app/research classes rechecked;current verified options
+exhausted. Active updaters/shared runtimes/current and live Chrome versions,
+root-owned npm,containers/volumes/user data preserved;no apps/services stopped.
+Future exact pilot retirement would reclaim1,118,330,653B only after quality
+integration closes dependencies. Current precise deficits/options are recorded
+in campaign-capacity002.json; no partial panel or relaxed capacity gate.
+
+Next minimal NEW final_ln_scale_quality_v1 finite1200-step orchestration outside
+898 frozen sources,with compact receipts and cross-root pilot acceptance. Re-audit
+real pilot RAW/H200/optimizer/EMA/RNG/history/cache,six-trajectory and metadata
+contracts,close dependencies,then NEW exact pilot retirement. Recheck complete
+live capacity and fresh/bootstrap nonuse before quality freeze. Source work
+proceeds despite capacity; no idle wait ban. Fresh011/012/013 and bootstrap004
+remain reserved UNUSED,pilot001/eval003 used. Exactly3 fresh pairs/commonLR.00125,
+zeroLRsearch/original strict gates/no selection/rescue/retry/partial panel.
+No scale scientific quality result or active worker. Learned scale/bias and
+adopted epsilon1e-6 recipe retained;beta1 ablation deferred. All202 selected/fresh
+RAW archives and actual H100/H200/storage004 protected.
+Evidence:pilot002-terminal-review.json,pilot002-final003-review.json,
+pilot001-publication-failure-review.json,worker-retirement001/,storage030–032.

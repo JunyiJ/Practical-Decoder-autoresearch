@@ -1335,3 +1335,14 @@ all H100/H200 originals/storage004 intact. Original027 stopped before archive
 creation/deletion when unrelated maintenance added a README; separate028 excludes
 named unrelated maintenance and reuses unchanged-input copy proof. Do not repeat
 closed recovery or numerical fixtures. Current adopted epsilon1e-6 remains.
+
+
+Final-scale resource pair now numerically complete:20 updates/20,480 targets/
+8H200 snapshots per arm,88/87EMA and44/43AdamW,full validation/cache guards
+passed. Separate compact-receipt continuation imported completed learned control
+from original publication-failed root with zero repeat updates/copies;only the
+unstarted unit arm trained. Independent resource checks pass;full quality
+capacity remains blocked. Next finite quality-source integration outside898
+frozen sources proceeds before a new exact pilot retirement/capacity recheck.
+No scientific scale result;learned scale/bias/adopted epsilon1e-6 recipe retained,
+beta1 ablation deferred. Preserve original failures and all selected/fresh models.

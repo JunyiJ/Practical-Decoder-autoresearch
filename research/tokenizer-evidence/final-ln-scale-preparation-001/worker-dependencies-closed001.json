@@ -1,0 +1,39 @@
+{
+  "status": "generated_worker_tensor_dependencies_closed",
+  "integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot-integration001.json",
+    "sha256": "15584f20b55bb5d5c5f99a164e222170a50594d90b9f56e1e9d778088cb59e8d"
+  },
+  "worker": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/trainer-worker001.json",
+    "sha256": "01b8183b3fa42a4016442249fd8248b5b49c5f71ed94978315a8cc3d61c57a4a"
+  },
+  "cache": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot-integration001-cache.json",
+    "sha256": "008982b49bf8817a31f3d93ca93f23b0121f1361cdc0c3ba76b4322fb07f4109"
+  },
+  "eligible_successful_generated_weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-trainer-prerequisite-001/evidence/pilots/00/checkpoints/final_000004_1793852956406008000.pt",
+      "sha256": "42940b1643fa98ce605b407b2feee897f1cfcb249c82af6dee80baa9321c3b4f",
+      "size": 445087079
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-trainer-prerequisite-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "a5bbaea2dc12f7433e26aa97702abdde81e86c1ef578c29be7a4225e94287458",
+      "size": 114075843
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-trainer-prerequisite-001/evidence/pilots/01/checkpoints/final_000004_1793852995420847000.pt",
+      "sha256": "f017b017b25af7eff0f1f248174caa257f32a5f739c3714538d7a8e06b83a4aa",
+      "size": 445081329
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-trainer-prerequisite-001/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "6ef73a405f2f3192f7f66a1c19f003303108e972895e327fb1c7335fce594d8d",
+      "size": 114074438
+    }
+  ],
+  "retirement_requires_new_exact_audit": true,
+  "reason": "Actual optimizer/EMA/RNG/clipping/full-validation/cache accepted through additive894-source campaign route. Future pilots initialize fresh from retained configs; no selected/fresh weights eligible."
+}

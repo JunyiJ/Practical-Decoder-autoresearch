@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot002-final002-review.py", line 15, in <module>
+    plan=p.bind();review=read(reference(B/'pilot002-review.json'))
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_campaign_v2/pilot.py", line 73, in bind
+    c.verify_sources(plan['sources']);assert plan['environment']==data_contract.environment() and plan['data']==data_contract.bind_data()
+                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/campaign_contract.py", line 173, in environment
+    require(variables==dict(PYTORCH_ENABLE_MPS_FALLBACK='0',PYTORCH_MPS_FAST_MATH='0',OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',MKL_NUM_THREADS='4'),'Strict environment differs')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/campaign_rules.py", line 20, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Strict environment differs

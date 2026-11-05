@@ -1578,3 +1578,22 @@ payloads (1,118,318,689B) remain retained until pilot dependencies close and a N
 exact audit. All202 actual selected/fresh RAW archives,H100/H200/storage004 intact.
 See final-ln-scale-preparation-001/resume-retirement001/completed.json and
 worker-terminal001-review.json. Current free space is not scientific-panel readiness.
+
+
+## Final-scale worker retirement and imported pilot protection
+
+worker-retirement001 retired exactly four obsolete successful generated worker
+RAW/H200 files1,118,318,689B after actual pilot integration/acceptance/cache
+dependency closure,exact owner/inode/path/SHA checks,shared nonblocking lock,
+consumer checks,durable journal and46,100 unchanged survivors. All original
+receipts preserved;never restore or rerun. Storage030–032 only changed physical
+compression of closed metadata/text;all paths/readable bytes and affected
+protected payload hashes verified.
+
+New resource-pilot weights1,118,330,653B remain protected until quality preparation
+closes tensor dependencies and a NEW exact audit. Learned pilot is accepted via
+pilot002's independent import but stays in the original publication-failed001
+root;fixed-unit is in002. Root naming/STOP does not make accepted weights failed
+or obsolete. No repeated updates/copies for imported control. Original failed
+metadata/source/log/guards/partial receipt remain immutable. All202 actual
+selected/fresh RAW archives,H100/H200/storage004 intact.

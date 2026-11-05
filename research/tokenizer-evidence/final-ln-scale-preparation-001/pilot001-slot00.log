@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_campaign_v1/pilot.py", line 181, in <module>
+    elif args.mode=='run':run(args.slot)
+                          ~~~^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_campaign_v1/pilot.py", line 156, in run
+    writer.publish_json(basepath+'/accepted.json',dict(slot=slot,arm=ARMS[slot],plan=ref(B/'pilot001-plan.json'),acceptance_request=request,validation=result['validation'],acceptance=acceptance,process=ref(root/'process/process.json'),parent_guard=ref(root/'parent-guard.json')))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata_writer.py", line 120, in publish_json
+    if len(piece)>remaining:raise ValueError('JSON payload exceeds metadata group cap')
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: JSON payload exceeds metadata group cap

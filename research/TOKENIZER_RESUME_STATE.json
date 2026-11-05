@@ -301,10 +301,17 @@
   "capacity_blocker_resolved": true,
   "capacity_cleanup_target_bytes": 13196505088,
   "capacity_cleanup_target_deficit_bytes": 0,
-  "capacity_deficit_bytes": 0,
+  "capacity_deficit_bytes": 742809827,
   "capacity_poll_interval_seconds": null,
   "capacity_recovery_exhausted": false,
-  "capacity_wake_condition": null,
+  "capacity_wake_condition": {
+    "check_interval_seconds": 3600,
+    "cleanup_target_bytes": 14529069056,
+    "do_not_block": "Finite quality-source integration and actual retained-pilot re-audits remain executable.",
+    "minimum_free_bytes": 12381585408,
+    "source_work_available": true,
+    "stage": "quality_freeze_after_source_integration_dependency_closure_and_exact_pilot_retirement"
+  },
   "capacity_wake_free_bytes": null,
   "cleanup_target_deficit_bytes": 0,
   "closed_campaigns": [
@@ -8728,6 +8735,15 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-bias-preparation-001/worker-retirement001/completed.json",
     "sha256": "3fa42051a0749d1826540d89683aa9d2391389b8bdd1dfa8c773e955d3309066"
   },
+  "final_ln_scale_capacity_observation": {
+    "cleanup_target": 14529069056,
+    "conditional_deficit": 742809827,
+    "conditional_free": 11638775581,
+    "conditional_target_deficit": 2890293475,
+    "free": 10520444928,
+    "required": 12381585408,
+    "retained_pilots": 1118330653
+  },
   "final_ln_scale_component": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/component001-result.json",
     "sha256": "4d8422b2efe608bf18e125151c967f2efc014e00ea1ea771e26d1fe37262e1ae"
@@ -8746,6 +8762,29 @@
     "sha256": "8d76df05cd87a0e7f9aed26b0c3ac1c40a3571e3bb779ac68f4143ada7396a0c"
   },
   "final_ln_scale_model_source_count": 878,
+  "final_ln_scale_pilot001_status": "closed_failed_publication_control_imported_without_repeat",
+  "final_ln_scale_pilot002_status": "complete_resource_checks_passed_full_capacity_blocked",
+  "final_ln_scale_pilot_active_slot": null,
+  "final_ln_scale_pilot_freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot002-freeze.json",
+    "sha256": "c320e4e59201be70b9e549168f44e3aa7bfa31d817df3d5911d988827c974f12"
+  },
+  "final_ln_scale_pilot_integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot-integration001.json",
+    "sha256": "15584f20b55bb5d5c5f99a164e222170a50594d90b9f56e1e9d778088cb59e8d"
+  },
+  "final_ln_scale_pilot_publication_failure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot001-publication-failure-review.json",
+    "sha256": "b624d65ca69e81a98f1840f9151f6187727f78f9a6b90f6f51404804bc49c361"
+  },
+  "final_ln_scale_pilot_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot002-final003-review.json",
+    "sha256": "552f3cc87ad97df24b5a5c83bf2e79a3e91440d15e4e0243f5cc4ca6a4e2c534"
+  },
+  "final_ln_scale_pilot_terminal": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/pilot002-terminal-review.json",
+    "sha256": "078a50c74ee3969407c21b56a7ba2c53999c90c268802c3e5cd09d4ccb8de2c8"
+  },
   "final_ln_scale_preparation": "component001_passed",
   "final_ln_scale_resume": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/model-resume003.json",
@@ -8769,9 +8808,26 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/resume-retirement001/completed.json",
     "sha256": "02d6a00dbde3c1d0b011f0c5ba0ef3b29c28de3ad9b82ff52eb822ae1b9bcedb"
   },
-  "final_ln_scale_retained_worker_bytes": 1118318689,
+  "final_ln_scale_retained_pilot_bytes": 1118330653,
+  "final_ln_scale_retained_worker_bytes": 0,
   "final_ln_scale_runtime_source_count": 888,
-  "final_ln_scale_source_count": 863,
+  "final_ln_scale_scientific_seeds": {
+    "bootstrap": 200070004,
+    "evaluation": 200070003,
+    "fresh": [
+      200070011,
+      200070012,
+      200070013
+    ],
+    "pilot": 200070001
+  },
+  "final_ln_scale_seed_roles": {
+    "bootstrap": "reserved_unused",
+    "evaluation": "used",
+    "fresh": "reserved_unused",
+    "pilot": "used"
+  },
+  "final_ln_scale_source_count": 898,
   "final_ln_scale_state_digest_oracle": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/state-digest-oracle001.json",
     "sha256": "c812d0ae293306db688bea684bb4212ad33400362be12e365ec65f2e5e2d8a8b"
@@ -8791,6 +8847,10 @@
   "final_ln_scale_worker_integration": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/worker-integration001.json",
     "sha256": "ca0310688f8f79e4e69de432375db6463019c93500f33bc6540cca0bb6f47856"
+  },
+  "final_ln_scale_worker_retirement": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/worker-retirement001/completed.json",
+    "sha256": "c825eb985de497b4639dede928a81d64052a04e36eb69b1c0723b98f2260cf1f"
   },
   "final_ln_scale_worker_terminal": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/worker-terminal001-review.json",
@@ -8885,7 +8945,7 @@
   "mla_score_worker": "research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
   "mla_score_worker_archive": "research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
   "mla_score_worker_review": "research/tokenizer-evidence/mla-score-preparation-001/worker003-review.json",
-  "next_action": "Final LayerNorm scale trainer-worker001 COMPLETE: both generated four-update learned/fixed_unit arms independently accepted (4096 targets,3 H200 snapshots,88/87 EMA tensors,44/43 AdamW and44 Muon groups);parent full validation exact and CPU/MPS CE agreement below2.7e-7. Full clipping histories and explicit learned-bias/scale inventories checked; history,foreign-policy/group and coverage forgeries rejected. Trained-inference001 full/cache/reset PASS batches1/8,196608B cache/item. All888 runtime/acceptance bindings unchanged,881 predecessors preserved. Resume003 passed exact dtype/shape/SHA256 state-byte and scalar/RNG fresh-repeat/serialized-resume identities on both arms; raw/optimizer/EMA/history/final-H200 passed. Observed resume RSS2269659136B/MPS2501689344B;no controlled comparative memory-saving claim. Original resume001 disk-reserve failure remains closed/immutable. Prepared resume002 never launched:preflight caught obsolete terminal-print field names;separate003 changes only attempt paths and final reporter,all numerical/resource guards unchanged. No scientific quality result,new scientific seed,pilot/quality freeze or active worker. NEXT minimal additive finite20-update resource-pilot orchestration and complete THREE-fresh-pair fixed-LR design in NEW research/final_ln_scale_campaign_v1 outside888 frozen sources,using tested serial/acceptance/inference/retention primitives with explicit88/87 EMA and44/43 AdamW routing. Re-audit actual accepted worker raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache and finite contracts,close dependencies,fresh scientific census,complete measured retained-output high-water including serialization/metadata/8GiBreserve plus2GiB cleanup target,execute authorized recovery immediately if needed,then finite pilots/final quality freeze. Learned versus fixed-unit final LayerNorm scale at commonLR.00125,equal zeroLRsearch,original strict gates,no rescue/selection/partial panel;candidate removes256 parameters,learned bias/centering/epsilon1e-5/eight pre-branch RMSNorms fixed. Resume-retirement001 reclaimed1118312993 payload bytes from exactly four obsolete successful generated weights after dependency closure;45900 survivors unchanged. Original receipts immutable,absent tensors resolve later manifest,never restore/rerun. New accepted generated worker weights1118318689B retained until pilot integration closes dependencies and a NEW exact audit. Currentfree is not scientific-panel readiness;source work proceeds,no stale capacity wait. Separate maintenance008 removed only human-identified unused Docker images and resolved the old capacity wait before this turn;do not rerun closed maintenance/cleanup probes. Preserve202 selected/fresh RAW archives,all actual selected/fresh H100/H200 originals/storage004. Retain learned final scale and bias/adopted AdamW epsilon1e-6,betas(.9,.999),Muon/group membership/width rates,independent decay.00006,D256 MLA score.5,SwiGLU672/SiLU/blockRMS/unit gains/serial/no product norm/local mix/warmup/cooldown800/H200. AdamW beta1 .9-versus-.95 remains deferred. All prior campaigns/fixtures closed,no retired restoration/closed reruns/old score pooling.",
+  "next_action": "Final LayerNorm scale resource pair COMPLETE numerically: learned/fixed_unit each20 updates/20480targets/8H200 snapshots,88/87EMA,44/43AdamW and44Muon; full clipping history,parent full validation and paired batches1/8 cache/reset PASS. Independent pilot002-final003 resource review passes original time/RSS/MPS gates (conservative2x1200-step projections5800.67/5755.12seconds),but full-capacity gate FALSE. All898 sources unchanged,894 predecessors preserved. Original pilot001 CLOSED_FAILED accepted-receipt metadata group cap AFTER learned20-update worker and parent validation finished; slot01 never started. STOP/source/log/config/guard/partial accepted.json.tmp immutable. Separate v2 compact receipts reference immutable worker plus request SHA instead of duplicate source inventory; tested150155B within unchanged262144B group cap with reference/source forgeries rejected. Separate frozen pilot002 independently imported the learned endpoint with ZERO repeat updates/copies,then trained only previously unstarted fixed-unit slot01. Accepted learned weights stay in original failed001 root; classify by acceptance,never failed-root naming. Final002 review launch missed strict MPS env flags and stopped before resource checks/guard/payload work; separate final003 passed in full strict environment. Original final001 remains unexecuted after capacity precheck. No scientific quality result or active worker. Panel200070 pilot001/eval003 used;fresh011/012/013/bootstrap004 reserved UNUSED. NEXT minimal finite1200-update quality orchestration in NEW research/final_ln_scale_quality_v1 outside898 frozen sources. Exactly THREE fresh pairs/commonLR.00125/zeroLRsearch/original strict gates/no screens,selection,rescue,retry,partial panel. Verify actual cross-root pilot raw/H200/optimizer/EMA/RNG/clipping/full-validation/cache and six-trajectory/metadata contracts;close dependencies,then NEW exact pilot retirement audit1118330653B. Preserve every accepted pilot payload until then. Conditional future free after that retirement is11638775581B versus complete12381585408B;remaining mandatory deficit742809827B and cleanup target14529069056B deficit2890293475B. A new unit worker consumed about1GiB extra filesystem space beyond published weights;cause unproved. Capacity stays a hard live quality-freeze gate;source work proceeds,no stale wait. Inline recovery executed:worker-retirement001 permanently retired exactly4 obsolete successful generated weights1118318689B after dependency closure,46100 survivors unchanged. Storage030/031/032 losslessly compressed184/367/2568 closed metadata/text files,reclaimed24190976/76763136/117678080 allocatedB,all original paths/readable bytes preserved;12 affected protected model/archive hashes verified each. All verified current recovery classes checked/exhausted;do not rerun closed scripts/probes. Active/pending updaters,shared runtimes,Chrome live/current installation,root-owned npm,containers/volumes,personal data preserved;no app or service stopped. All202 selected/fresh RAW archives and actual H100/H200/storage004 intact. Additional local free space or human-provided externalAPFS volume>=6GiB enables verified protected-archive relocation. Retain learned final scale/bias/adopted epsilon1e-6/betas(.9,.999)/Muon/group membership/width rates/decay.00006/D256MLA score.5/SwiGLU672/SiLU/blockRMS/unit gains/serial/no product norm/local mix/warmup/cooldown800/H200. Fixed-unit removes256 parameters;centering,learned bias,epsilon1e-5,eight RMSNorms fixed. AdamW beta1 .9-versus-.95 deferred. All previous campaigns/fixtures closed;no retired restoration/closed reruns/old score pooling.",
   "next_after_starter": "Readout-centering pilot001 COMPLETE via research.readout_centering_campaign_v2: both20-update layer/rms_bias arms independently accepted(20480targets,8H200snapshots,88EMA tensors),complete clipping histories; paired full/cache/reset inference batches1/8 and independent final003 resource review PASS,196608B cache/item. All729 campaign sources unchanged,717 runtime predecessors preserved. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/readout_centering_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118335248B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199630 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Final LayerNorm versus affine RMS WITH bias,epsilon1e-5/512parameters both,eight pre-branch RMSNorms fixed. Original final002 reviewer launch environment failure before audit stays closed; separate final003 uses the required strict environment without repeating training/inference. Original pilot integration001 import failure before numerical work/deletion stays closed; additive v2 explicit worker validation routing and separate integration002 passed without changing723 original bindings. Worker-retirement001 reclaimed1118323284B with41696survivors unchanged,original evidence immutable. Storage013 losslessly archived27 closed table/MLA/horizon selected/fresh RAWs,reclaimed2574573563B,50958other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-013/raw-completed.json and protected research_archives/protected-raw-storage-013/*.tar.zst;recoverable,NOT retired,never purge. Together006-013 preserve147 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11575418880B plus retainedpilots1118335248B conditionally yields12693754128B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW beta2 .95-versus-.999 deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Pilot observations are resource evidence,not scientific quality selection.",
   "no_paid_compute": true,
   "no_subagents": true,
@@ -8996,7 +9056,7 @@
   "session_hint": null,
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
-  "status": "final_ln_scale_trainer_worker001_complete",
+  "status": "final_ln_scale_pilot002_complete_resource_passed_quality_source_pending_capacity_blocked",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -9069,12 +9129,24 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-029/capacity-and-class-review.json",
     "sha256": "99409768b9b36a1d0106115f3ee9b59e23f5cea252a7295ded16ea2a27e2afe4"
   },
+  "storage_recovery_030": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-030/completed.json",
+    "sha256": "804a4db707ec39e93a8ffdae64e554ac238f0f1c41cefd19956a90cf104bb082"
+  },
+  "storage_recovery_031": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-031/completed.json",
+    "sha256": "b683b085bd528dd5c39f408b8cf1151b627d1cc2794e9657a38e0fd173abf508"
+  },
+  "storage_recovery_032": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-032/completed.json",
+    "sha256": "acb08dcf8eb5349453788d0084d3283037d12926a9095055829892d2640c57e8"
+  },
   "storage_recovery_latest": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-029/completed.json",
     "sha256": "4e22914ccc7629981cc91b7264326820b147919614c312a92fac2bfb4cbb63bf"
   },
   "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-terminal.json",
-  "updated_at": "2026-11-05T04:33:28.058269+00:00",
+  "updated_at": "2026-11-05T06:03:34.134312+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
