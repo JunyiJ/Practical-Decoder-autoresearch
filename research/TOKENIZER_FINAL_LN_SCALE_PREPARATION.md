@@ -328,3 +328,39 @@ remain frozen;no rescue/retry/selection/partial-budget dispatch. Follow actual
 PIDs/process/log/STOP/anchors,then verify prefix2 before slot02. Seeds012/013
 and bootstrap004 remain unused. See quality001-prefix1-slot01-launch001.json,
 quality001-slot00-metadata-mirror001.json and post-slot00 cache recovery receipt.
+
+
+## First fresh pair accepted; remaining-budget wait before slot02
+
+Slots00/01 learned/fixed_unit each completed1200updates/1,228,800targets and
+41H200 snapshots. Independent parent acceptance checked88/87EMA,44/43AdamW,
+44Muon,epsilon1e-6,full clipping histories,RAW/H200/optimizer/EMA/RNG/full
+validation and exact cache replay;batch1/8 full/cache/reset passed. Clipped
+updates21/6 are descriptive only. Processes completed312.08/325.17sec cleanly;
+all guards passed. Shared-lock q.bind/q.state verified prefix2 and912sources.
+First4fresh RAW/H2001118519005B remain protected. Second endpoint15metadata
+files mirrored losslessly;0weightcopies. No full3pair result/bootstrap/adoption.
+
+Slot02(unit,seed200070012) remains ABSENT/unattempted. Actual remaining frozen
+requirement11263066403B includes original serialization/metadata/8GiBreserve
+minus only accepted actual weight bytes;no pilot credit. Coordinated013 recovered
+11,898,880allocatedB from new ended-worker compiler cache and reverified30
+retained entries. New inline034 compressed27 newly closed metadata files,
+reclaimed1,351,680allocatedB,original paths/readable bytes preserved;all4fresh
+and12historical protected payload hashes verified. Other eligible classes
+exhausted per013;no closed cleanup/probe rerun,app/worker stop or fresh retirement.
+Postrecovery free11019632640B leaves mandatory deficit243433763B;
+extra2GiB target13410550051B deficit2390917411B.
+
+No worker active. Wait at accepted prefix2,no STOP/failure/no attempted slot02.
+Unchanged heartbeat:one silent hourly free-space check only,no repeated records/
+commits/audits. Wake actualfree>=11263066403B or human-provided APFS>=6GiB for
+verified archive relocation;new eligible evidence/access/requirement/storage
+triggers inline recovery. Then recheck912bindings/prepared refs,strict env,
+accepted prefix/STOP and remaining capacity before first slot02 invocation.
+Seeds012/013/bootstrap004 remain unused;seed011 used. Exactly3pairs/common
+LR.00125/zero search/original strict gates retained;no interim selection or
+partial-budget launch. All202historical selected/fresh archives,H100/H200/
+storage004 and original failures/retirements remain protected.
+Evidence:quality001-prefix2-capacity001.json,quality001-slot01-metadata-mirror001,
+quality001-accepted-01.json,storage-recovery-034/completed.json.

@@ -1616,3 +1616,11 @@ original paths/readable bytes and12 protected archive/H200 hashes verified.
 No pilot-retirement credit remains. All202 selected/fresh archives,H100/H200/
 storage004 and original failure evidence protected. Future six quality RAW/H200
 pairs remain fully protected;no quality retirement command.
+
+
+Final-scale fresh quality001 slots00/01 independently accepted. All4fresh
+RAW/H200 payloads1,118,519,005B remain in original paths with exact SHA bindings;
+no fresh retirement/archive/removal permitted by this boundary. Metadata mirror
+uses0weightcopies;storage034 preserves original paths/readable bytes and verifies
+all4fresh plus12historical protected hashes. All202historical selected/fresh
+archives,H100/H200/storage004 and original failure/retirement evidence protected.
