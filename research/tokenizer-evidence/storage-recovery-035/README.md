@@ -1,0 +1,1 @@
+New accepted slot02 metadata:8files,376832allocatedB recovered. Exact original manifests/journals/guard/source retained;all6fresh plus12historical protected payload hashes verified. No tensors changed. Completed;never rerun. See final-ln-scale-preparation-001/quality002-ready001.json for revised complete capacity and remaining deficit.

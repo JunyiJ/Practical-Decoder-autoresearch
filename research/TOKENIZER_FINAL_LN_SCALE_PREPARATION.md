@@ -384,3 +384,59 @@ rerun attempted slot. On clean acceptance verify prefix3 andremaining budget
 before paired slot03learned,same seed. All4accepted fresh weights/historical
 selectedfresh/original evidence protected. All912frozen bindings unchanged.
 See quality001-slot02-wake001.json,quality001-prefix2-slot02-launch001.json.
+
+
+## Slot02 accepted; original slot03 entry closed before worker; continuation prepared
+
+Slot02 fixed_unit(seed200070012) completed335.45sec and passed independent
+parent acceptance:1200updates/1,228,800targets/41H200snapshots,87EMA,43AdamW/
+44Muon,epsilon1e-6,full clipping(10clipped updates,descriptive),RAW/H200/
+optimizer/EMA/RNG/full validation and exact batch1/8cache/reset checks.
+Accepted original prefix3 retains6fresh weights1,677,774,994B;15metadata
+files mirrored with0weightcopies. No full3pair quality result or adoption.
+
+The original slot03 ENTRY gate then failed before any worker/config/request.
+Passing preflight free10,705,199,104B fell to sampled10,703,740,928B below
+required10,703,810,414B. Zero optimizer updates. Source/log/entry guard/STOP
+and all3accepted endpoints remain immutable. Original quality001 execution
+is CLOSED_FAILED:never remove STOP,retry slot03 or rerun its freeze.
+Observed intercheck filesystem consumption1,458,176B has unproved cause.
+
+Separate final_ln_scale_quality_v3 preserves912 bindings and adds6(918total).
+It continues the SAME frozen scientific panel,not a new study or old-score
+pool. Actual independent tensor/cache integration re-audited all3retained
+endpoints under an explicit source bridge with0training/weightcopies.
+Acceptance implementation byte-identical;future configs differ only in output
+paths. V3 rejects slots0–2. New full floor12,383,043,584B includes measured
+1,458,176Bentry headroom;remaining floor10,705,268,590B credits accepted weights
+once. Original numerical/time/RSS/MPS/8GiBreserve/output guards unchanged.
+
+State-review001 failed on a metadata-fixture layout before binding/state
+checks;its source/log/guard/fixture retained. Separate corrected review002
+passed actual binding/state,missing-prefix/request/kind/extra-credit forgeries.
+All918runtime sources unchanged. Final prepared builder003 adds explicit
+original environment/data identity and capacity gates before new-root creation.
+Prepared quality002 inference/final-review sources keep all3pair gates.
+New execution ROOT v1-002/freeze/import anchors remain ABSENT/UNEXECUTED.
+
+Inline035 recovered376,832allocatedB. New sub4KiB036 tested5888files with
+ZERO savings;closed,never repeat. Ended read-only audit cache recovery removed
+6,455,296allocatedB and verified18retained bundle files. New037 recovered
+4,341,760allocatedB from17closed proof files. Total11,173,888allocatedB
+recovered;free-space changes are not attributed wholly to cleanup.
+All6fresh+12historical payload hashes verified and readable paths/bytes kept.
+Other eligible classes exhausted;no fresh deletion,app/worker stop or access bypass.
+
+Final readiness free10684551168B leaves deficit20717422B
+against new remaining10,705,268,590B. Target12,852,752,238B leaves
+2168201070B. No worker active. Unchanged heartbeat is one
+silent hourly free-space check only. Wake at new remaining floor or supplied
+APFS>=6GiB;new eligible evidence/access/requirement/storage triggers inline
+recovery. Then verify918/prepared refs/same-panel provenance and execute NEW
+quality002-freeze-build003.py once. It imports3endpoints metadata-only,then
+new v3 execution can train only the3scientifically never-started trajectories.
+Read new freeze SHA;never reuse old d00b8e... execution hash. Seeds013/bootstrap004
+unused. All202historical selected/fresh archives,H100/H200/storage004,original
+failures/retirements and current fresh weights protected;no interim selection.
+Evidence:quality001-slot03-entry-failure001.json,quality002-integration001.json,
+quality002-source-review002.json,quality002-ready001.json,storage035–037.

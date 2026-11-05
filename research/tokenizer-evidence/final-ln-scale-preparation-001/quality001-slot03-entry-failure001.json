@@ -1,0 +1,53 @@
+{
+  "status": "CLOSED_FAILED_ENTRY_CAPACITY_ZERO_WORKER_UPDATES",
+  "at": "2026-11-05T21:49:18.934556+00:00",
+  "original_freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-freeze.json",
+    "sha256": "d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce"
+  },
+  "preflight": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-prefix3-slot03-preflight001.json",
+    "sha256": "830b977fb301130682b93d56a1f995c7c9aa493a1a3871d38e6ebc0929df3d01"
+  },
+  "failed_entry_guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/control/entry-03-guard.json",
+    "sha256": "9816fcb9d4e52620683a4e01f6a8b9163fad5525bf666afc1af5ed5247369371"
+  },
+  "original_STOP": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/STOP",
+    "sha256": "81efddc58d2e63abf627b661d6d8b65365a2b7d38f853b1f44282b952b951272"
+  },
+  "log": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-slot03.log",
+    "sha256": "4b8a3ad1c67a756e3cfc1fbac7c351ce48082708df6123224269b5590d013ab0"
+  },
+  "accepted_prefix": 3,
+  "accepted_anchors": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-accepted-00.json",
+      "sha256": "71b9319b1e8187d65092339559de7c7e69d51c09ffbc0170d5a3f3a585a40096"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-accepted-01.json",
+      "sha256": "7d87e60e043f39772cda1e84b823c40b13834c89045ea2056ccb5e3239562f9c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-accepted-02.json",
+      "sha256": "fdc4afa9d7eebdf68c13373384968f0f3185ec194b56d1f35591903f8fcfdf09"
+    }
+  ],
+  "worker_spawned": false,
+  "optimizer_updates": 0,
+  "slot03_config_created": false,
+  "slot03_request_created": false,
+  "original_remaining_requirement": 10703810414,
+  "preflight_free": 10705199104,
+  "entry_guard_sample_free": 10703740928,
+  "observed_filesystem_consumption_between_checks": 1458176,
+  "causality": "Unproved;do not attribute the filesystem change to Python/MPS/OS swap or a specific writer.",
+  "future_measured_complete_floor": 10705268590,
+  "future_full_floor": 12383043584,
+  "future_cleanup_target": 12852752238,
+  "free_after": 10701275136,
+  "policy": "Original quality001 run and slot03 entry attempt are closed;never remove STOP,retry/restore/rerun. Retain all6 accepted fresh weights. New separate additive continuation must import exact3 accepted endpoints with0retraining/copies and train only the3 never-started trajectories after full new capacity/contracts pass. No new scientific seed,score pooling,rescue or selection."
+}

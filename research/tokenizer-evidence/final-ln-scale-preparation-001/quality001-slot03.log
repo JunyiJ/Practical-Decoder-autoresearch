@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_quality_v2/quality_execution.py", line 176, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_quality_v2/quality_execution.py", line 169, in main
+    try:result=run_once(writer,args.slot,args.freeze_sha256)
+               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_quality_v2/quality_execution.py", line 143, in run_once
+    required=max(8*1024**3,FULL_FREE-current['used_weights']);idle();require(shutil.disk_usage(ROOT).free>=required,'Remaining full-panel capacity required')
+                                                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/campaign_rules.py", line 20, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Remaining full-panel capacity required

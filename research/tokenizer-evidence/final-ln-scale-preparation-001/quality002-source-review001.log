@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-source-review001.py", line 42, in <module>
+    bound=ns['bind'](MetadataWriter(fixture,(g,f)),freeze['sha256']);assert bound==plan
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata_writer.py", line 47, in __init__
+    with self._serialized():snapshot(self.root)
+         ~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata_writer.py", line 56, in _serialized
+    before=snapshot(self.root)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata.py", line 80, in snapshot
+    name=str(path.relative_to(root));group=classify(name)
+                                           ~~~~~~~~^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/tokenizer_wide_hybrid_metadata.py", line 42, in classify
+    if len(parts)<4 or parts[0]!='evidence':raise ValueError('Undeclared v2 campaign output path')
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Undeclared v2 campaign output path
