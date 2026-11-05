@@ -9107,3 +9107,23 @@ partial-budget launch. All202historical selected/fresh archives,H100/H200/
 storage004 and original failures/retirements remain protected.
 Evidence:quality001-prefix2-capacity001.json,quality001-slot01-metadata-mirror001,
 quality001-accepted-01.json,storage-recovery-034/completed.json.
+
+
+## Slot02 capacity wake and second fresh pair started
+
+Coordinated maintenance014 reclaimed573,440allocatedB from a newly verified
+completed Chrome component download;other eligible classes remain exhausted.
+No duplicate closed cleanup or partial-budget dispatch. Wake recheck verified
+912bindings/preparedrefs/strict env/data/accepted prefix2/STOP andunused seeds
+012/013. Free11,285,217,280B passed complete remaining11,263,066,403B;extra2GiB
+target13,410,550,051B unmet after recovery. The slot02 wait is now resolved.
+
+Previously unstarted slot02 fixed_unit(seed200070012,pair1) launched under
+original7200sec/RSS4GiB/MPS6GiB/reserve8GiB/output guards,oneworker/fourthreads.
+First completed update/1024targets observed. Accepted prefix remains2;no
+slot02 acceptance/full3pair quality conclusion/adoption yet. Seed012 now used;
+013/bootstrap004 unused. Follow actualPIDs/logs/guards/STOP/anchors and never
+rerun attempted slot. On clean acceptance verify prefix3 andremaining budget
+before paired slot03learned,same seed. All4accepted fresh weights/historical
+selectedfresh/original evidence protected. All912frozen bindings unchanged.
+See quality001-slot02-wake001.json,quality001-prefix2-slot02-launch001.json.

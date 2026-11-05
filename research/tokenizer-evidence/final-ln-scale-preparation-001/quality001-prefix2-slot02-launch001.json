@@ -1,0 +1,91 @@
+{
+  "status": "accepted_prefix2_slot02_running",
+  "at": "2026-11-05T20:45:43.171601+00:00",
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-freeze.json",
+    "sha256": "d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce"
+  },
+  "wake": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-slot02-wake001.json",
+    "sha256": "d77b3069c527eeebb35943cf19ff55d112c986170272478dce99be30470b68f2"
+  },
+  "accepted_prefix": 2,
+  "accepted_weight_bytes": 1118519005,
+  "active_slot": 2,
+  "active_pair": 1,
+  "active_arm": "unit",
+  "scientific_seed": 200070012,
+  "parent_pid": 32572,
+  "worker_pid": 32601,
+  "exec_session_id": 42903,
+  "process_snapshot": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.final_ln_scale_quality_v2.quality_execution",
+      "worker",
+      "--slot",
+      "2",
+      "--freeze-sha256",
+      "d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 97.4125146670267,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 11276943360,
+      "log_bytes": 0,
+      "output_bytes": 6611
+    },
+    "output_limit_bytes": 603979776,
+    "parent_pid": 32572,
+    "pid": 32601,
+    "required_free_bytes": 11263066403,
+    "reserve_bytes": 8589934592,
+    "returncode": null,
+    "status": "running",
+    "timeout_seconds": 7200
+  },
+  "guard_snapshot": {
+    "elapsed_seconds": 96.52092675003223,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 11276943360,
+      "mps_current_bytes": 662477568,
+      "mps_driver_bytes": 2493300736,
+      "peak_observed_mps_driver_bytes": 2493300736,
+      "peak_rss_bytes": 623951872
+    },
+    "pid": 32601,
+    "reason": null,
+    "status": "watching"
+  },
+  "config": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/02/config.json",
+    "sha256": "5d9e2d57ef9db61376498357274ce527345c95ff15ca0f6dcb374df3b7bbc7d1"
+  },
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/02/request.json",
+    "sha256": "7e3cdd20562ec1d679bc90d64cf8d011b54bb9c806499fd9a4ba649fdb2473d1"
+  },
+  "first_observed_update": {
+    "metric_step": 0,
+    "completed_updates": 1,
+    "targets": 1024
+  },
+  "quality_adopted": false,
+  "full_quality_result": false,
+  "holdout_scored": false,
+  "scope": "Timestamped running-worker observation,not terminal acceptance. No slot02 retry;all fresh outputs protected."
+}
