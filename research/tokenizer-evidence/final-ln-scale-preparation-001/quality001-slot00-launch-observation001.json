@@ -1,0 +1,90 @@
+{
+  "status": "first_fresh_quality_worker_running",
+  "at": "2026-11-05T17:38:00.979212+00:00",
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-freeze.json",
+    "sha256": "d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce"
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/meta/quality-plan.json",
+    "sha256": "90c1cf54ecfbaae82549a5408acf702b788c6d71629639cbf491ee56dfacd562"
+  },
+  "slot": 0,
+  "pair": 0,
+  "arm": "learned",
+  "scientific_seed": 200070011,
+  "parent_pid": 28055,
+  "worker_pid": 28079,
+  "exec_session_id": 63704,
+  "process_snapshot": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.final_ln_scale_quality_v2.quality_execution",
+      "worker",
+      "--slot",
+      "0",
+      "--freeze-sha256",
+      "d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 84.4264637499582,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 12426764288,
+      "log_bytes": 0,
+      "output_bytes": 6609
+    },
+    "output_limit_bytes": 603979776,
+    "parent_pid": 28055,
+    "pid": 28079,
+    "required_free_bytes": 12381585408,
+    "reserve_bytes": 8589934592,
+    "returncode": null,
+    "status": "running",
+    "timeout_seconds": 7200
+  },
+  "worker_guard_snapshot": {
+    "elapsed_seconds": 83.65234025008976,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 12426764288,
+      "mps_current_bytes": 662459648,
+      "mps_driver_bytes": 2493317120,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 606175232
+    },
+    "pid": 28079,
+    "reason": null,
+    "status": "watching"
+  },
+  "config": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/00/config.json",
+    "sha256": "5d1d8459e37ade45c9fb9a75ab28e81db75b73f782a43f2cd315156b4037cea0"
+  },
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/00/request.json",
+    "sha256": "9d6514bea5a8b6ed51f1cea971bcbe2468bfb676a70a30b6d676a82e8200e639"
+  },
+  "first_observed_update": {
+    "metric_step": 0,
+    "completed_updates": 1,
+    "targets": 1024
+  },
+  "accepted_prefix": 0,
+  "quality_result": false,
+  "quality_adopted": false,
+  "holdout_scored": false,
+  "scope": "Mutable process/guard observations captured at this time, not terminal acceptance. One fresh trajectory advances under original guards; no claim that a full pair or the quality campaign has completed."
+}

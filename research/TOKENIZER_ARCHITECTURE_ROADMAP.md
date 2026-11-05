@@ -1358,3 +1358,10 @@ No new architecture/attention deviation or beta1 ablation. Current eligible
 recovery exhausted;one silent hourly capacity wake check only until new evidence.
 Wake>=12,381,585,408B or supplied externalAPFS>=6GiB;all202 selected/fresh archives
 and original failure evidence protected.
+
+
+Final-scale quality001 frozen after full mandatory capacity wake;912 bindings
+unchanged. Exactly3fresh pairs/commonLR.00125/zero search. First learned-scale
+trajectory active;no quality result/adoption yet. Follow actual process/anchor
+state and complete paired inference/final review before decisions. Learned
+scale/bias/epsilon1e-6 recipe and all historical selected/fresh evidence retained.

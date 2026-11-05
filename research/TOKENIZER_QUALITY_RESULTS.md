@@ -9004,3 +9004,43 @@ Then recheck912 bindings/prepared source refs,strict environment,fresh/bootstrap
 nonuse and complete live capacity before the new one-shot freeze. No partial
 panel,relaxed guard,closed retry or retired restoration. All202 selected/fresh
 RAW archives and actual H100/H200/storage004 preserved.
+
+
+## Quality001 frozen and first fresh learned-scale trajectory launched
+
+Coordinated external maintenance010–012 reclaimed823,345,152 allocatedB and
+exhausted verified remaining classes. Mandatory complete budget now fits; extra
+2GiB cleanup target remains unmet. No duplicate closed cleanup or relaxed guard.
+Wake001 rechecked912 sources,prepared source refs,strict environment,retirement
+proof and current process state. One-shot freeze builder then rechecked all226
+saved run configs for unused fresh seeds and froze exactly3fresh pairs at
+commonLR.00125/equal zero LRsearch/original strict gates. Freeze SHA
+d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce;
+free12,441,579,520B versus required12,381,585,408B. All six future RAW/H200 pairs
+remain protected;full serialization/metadata/reserve accounting unchanged.
+
+Slot00 learned-scale(seed200070011) launched under one local MPS worker/four
+threads,7200sec/RSS4GiB/MPS6GiB/reserve8GiB/output guards. First completed update
+and1024targets observed. Parent/worker PIDs and mutable guard/process snapshot
+are recorded in quality001-slot00-launch-observation001.json. This is active
+training,not endpoint acceptance or a scientific quality result. No holdout
+scoring/adoption. Seed200070011 now used;200070012/013 and bootstrap200070004
+remain unused. Follow actual processes/logs/STOP/anchors and never rerun slot00
+or the freeze builder. On clean parent acceptance proceed serially to slot01
+fixed_unit,same first-pair seed;check remaining complete budget before each
+new slot. No second worker,rescue,replacement seed,partial-budget dispatch or
+retired restoration. All912 bindings and original failure/retirement evidence
+preserved;learned-scale/epsilon1e-6 incumbent stays adopted pending full gates.
+
+
+Post-launch forward capacity pressure was detected after initialization/concurrent
+filesystem changes,cause unproved. New inline external-cache recovery001 acquired
+its independent nonblocking lock while the numerical research lock was busy.
+Package/build roots had no new eligible files;71root-owned npm files77,713,408
+allocatedB retain their normal administrator blocker. No app/worker stopped or
+research payload changed;other classes remain exhausted per maintenance012.
+Observed free12,229,713,920B is151,871,488B below the full forward projection before
+accepted-weight credit. The active slot00 guard remains healthy above8GiB and
+continues. Recompute actual remaining full budget after independent acceptance
+and before slot01;no below-budget next launch or stale freeze-time assumption.
+See quality001-active-capacity-recovery001/completed.json.
