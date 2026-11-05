@@ -222,3 +222,42 @@ adopted epsilon1e-6 recipe retained;beta1 ablation deferred. All202 selected/fre
 RAW archives and actual H100/H200/storage004 protected.
 Evidence:pilot002-terminal-review.json,pilot002-final003-review.json,
 pilot001-publication-failure-review.json,worker-retirement001/,storage030–032.
+
+
+## Finite final-scale quality source ready; exact pilot retirement verified
+
+New final_ln_scale_quality_v1 passed27 contracts and independent real pilot
+RAW/H200/optimizer/EMA/RNG/clipping/full-validation/cache re-audits. All906 sources
+preserve898 predecessors. Exactly3 fresh pairs at commonLR.00125,zero LRsearch,
+1200updates/41H200 snapshots per trajectory and original strict gates remain.
+Compact acceptance receipts resolve immutable worker/request SHA; full-horizon
+metadata publication stays within unchanged group caps. No quality training.
+
+After actual downstream closure, exact retirement removed only four accepted
+cross-root pilot tensors1,118,330,653B;46,372 survivors verified unchanged. The
+cleanup's final verifier then incorrectly parsed the intentionally truncated
+original accepted.json.tmp. Original source/log/guard/completed receipt and parser
+exception remain immutable,closed;never rerun cleanup or restore tensors. New
+additive final_ln_scale_quality_v2 verifies arbitrary evidence by exact bytes,
+parsing only complete declared JSON. Separate verification002 rehashed all46,372
+survivors and passed. All912 bindings preserve906; acceptance implementation is
+byte-identical and all6 configs/time/RSS/MPS/reserve guards unchanged.
+
+Prepared freeze/inference/final-review sources passed AST,compact-receipt mapping,
+independent nonconstant synthetic bootstrap and complete budget review. The
+bootstrap test uses separate synthetic seeds; fresh200070011/012/013 and
+bootstrap200070004 remain unused. All226 saved run config files checked. No
+quality freeze or scientific result; learned scale/bias/epsilon1e-6 recipe retained.
+
+Storage033 reclaimed22,908,928 allocatedB from124 newly closed metadata files,
+losslessly preserving paths/readable bytes;12 protected payload hashes verified.
+All current eligible classes exhausted. Actual post-retirement capacity is in
+quality-source-review002.json: no further conditional pilot credit. Mandatory
+12,381,585,408B gate and14,529,069,056B cleanup target remain. Prepared freeze
+builder UNEXECUTED. Next unchanged heartbeat: one silent hourly free-space check
+only. Wake at actualfree>=12,381,585,408B or external APFS>=6GiB for verified
+protected-archive relocation;new eligible evidence triggers inline recovery.
+Then recheck912 bindings/prepared source refs,strict environment,fresh/bootstrap
+nonuse and complete live capacity before the new one-shot freeze. No partial
+panel,relaxed guard,closed retry or retired restoration. All202 selected/fresh
+RAW archives and actual H100/H200/storage004 preserved.

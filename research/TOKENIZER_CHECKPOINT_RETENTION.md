@@ -1597,3 +1597,22 @@ root;fixed-unit is in002. Root naming/STOP does not make accepted weights failed
 or obsolete. No repeated updates/copies for imported control. Original failed
 metadata/source/log/guards/partial receipt remain immutable. All202 actual
 selected/fresh RAW archives,H100/H200/storage004 intact.
+
+
+## Cross-root scale pilots retired after quality integration
+
+quality001-pilot-retirement001 removed exactly four accepted successful pilot
+RAW/H200 tensors1,118,330,653B after real downstream integration,exact owner/
+inode/path/size/SHA/consumer checks,nonblocking shared and both root locks,durable
+journal and46,372 unchanged survivors. Original learned endpoint stayed in its
+publication-failed root until retirement;acceptance governed eligibility.
+The terminal verifier failed parsing original truncated accepted.json.tmp AFTER
+deletion/survivor checks and completed receipt. Original failure/receipt retained;
+separate verification002 checks exact partial bytes and rehashed all46,372
+survivors,PASS. Never rerun original cleanup/fixtures or restore retired tensors.
+Resolve missing pilot payloads through this manifest and verification002.
+Storage033 changed only physical closed-text compression,22,908,928B recovered;
+original paths/readable bytes and12 protected archive/H200 hashes verified.
+No pilot-retirement credit remains. All202 selected/fresh archives,H100/H200/
+storage004 and original failure evidence protected. Future six quality RAW/H200
+pairs remain fully protected;no quality retirement command.

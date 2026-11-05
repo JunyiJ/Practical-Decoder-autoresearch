@@ -1,0 +1,66 @@
+{
+  "status": "accepted_resource_pilot_tensor_dependencies_closed",
+  "integration": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality-integration001-review.json",
+    "sha256": "6e2fc06307b9ded9b3d1f2c2d6f26474bc74bf2d7d6ad3b501f2d4ade3800fd7"
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality-integration001-plan.json",
+    "sha256": "d3b961e67e5614e9d02a1d648659b8674286478c387e6c339400789042c5004a"
+  },
+  "eligible_successful_pilot_weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-001/evidence/pilots/00/checkpoints/final_000020_1793857015278142000.pt",
+      "sha256": "ff1aeacdc7d70ad6605125b5f90c51aee2da54e63ca5f495704f529e4fcf6359",
+      "size": 445093157,
+      "allocated": 453054464,
+      "role": "parent",
+      "arm": "learned",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-002/evidence/pilots/00/accepted.json",
+        "sha256": "66f05c6310ce605b92d68d1d82f357a7e55669cd10ed32865627fff55d255c8c"
+      }
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "2e43fd260136e75832ca6247904014e37a3a3e092110377eec13378bcfc9594a",
+      "size": 114075715,
+      "allocated": 117465088,
+      "role": "h200",
+      "arm": "learned",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-002/evidence/pilots/00/accepted.json",
+        "sha256": "66f05c6310ce605b92d68d1d82f357a7e55669cd10ed32865627fff55d255c8c"
+      }
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-002/evidence/pilots/01/checkpoints/final_000020_1793857526341694000.pt",
+      "sha256": "2386b8ecf13443aad4d3591835103b1e7e2ddea80e3367c01349fa11b183a8ab",
+      "size": 445087471,
+      "allocated": 445087744,
+      "role": "parent",
+      "arm": "unit",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-002/evidence/pilots/01/accepted.json",
+        "sha256": "69b78136cac5c7cb3fb446caf81c50c46caf0bf9e9ce992e37d8f5b7d713d55a"
+      }
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-002/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "721cf19eb910e8acee488309bb00ce96a1f244b52267bde38ffc95495cec6e14",
+      "size": 114074310,
+      "allocated": 114077696,
+      "role": "h200",
+      "arm": "unit",
+      "acceptance": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-pilot-002/evidence/pilots/01/accepted.json",
+        "sha256": "69b78136cac5c7cb3fb446caf81c50c46caf0bf9e9ce992e37d8f5b7d713d55a"
+      }
+    }
+  ],
+  "source_count": 906,
+  "predecessors_preserved": 898,
+  "quality_frozen": false,
+  "quality_training_launched": false,
+  "retention": "Only the four accepted successful resource-pilot tensors are obsolete after new finite quality/actual acceptance/cache integration. Keep original metadata/source/log/config/metrics/guards/STOP/failed partial receipt and all selected/fresh models. Cross-root import copied no weights and repeated no control training. No future quality code reads the obsolete pilot tensors after exact retirement; it resolves immutable acceptance and manifest evidence."
+}

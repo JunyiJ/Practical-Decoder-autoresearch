@@ -1128,3 +1128,15 @@ capacity remains blocked. Next finite quality-source integration outside898
 frozen sources proceeds before a new exact pilot retirement/capacity recheck.
 No scientific scale result;learned scale/bias/adopted epsilon1e-6 recipe retained,
 beta1 ablation deferred. Preserve original failures and all selected/fresh models.
+
+
+Final-scale finite quality source ready:27 contracts plus real pilot acceptance/
+cache audits passed;912 bindings preserve898 numerical/campaign predecessors.
+Cross-root pilot dependencies closed and exact four-file retirement independently
+verified,including preserved terminal parser failure. Complete3fresh-pair design
+retains commonLR.00125/zero search/all strict gates and adopted epsilon1e-6.
+Prepared freeze remains unexecuted for actual capacity;no scientific scale result.
+No new architecture/attention deviation or beta1 ablation. Current eligible
+recovery exhausted;one silent hourly capacity wake check only until new evidence.
+Wake>=12,381,585,408B or supplied externalAPFS>=6GiB;all202 selected/fresh archives
+and original failure evidence protected.
