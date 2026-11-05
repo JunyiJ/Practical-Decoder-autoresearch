@@ -301,3 +301,30 @@ accepted-weight credit. The active slot00 guard remains healthy above8GiB and
 continues. Recompute actual remaining full budget after independent acceptance
 and before slot01;no below-budget next launch or stale freeze-time assumption.
 See quality001-active-capacity-recovery001/completed.json.
+
+
+## First fresh learned endpoint independently accepted; paired unit arm active
+
+Slot00 completed1200updates/1,228,800targets in312.08sec and clean parent
+acceptance verified44AdamW/44Muon,88EMA,41H200 snapshots,epsilon1e-6,complete
+clipping history,RAW/H200/full-validation and exact cache replay. Both batches1/8
+passed full/cache/reset. The21clipped updates are descriptive,not selection.
+Shared-lock q.bind/q.state confirmed accepted prefix1. First fresh RAW/H200
+559,263,016B retained;15 metadata files mirrored losslessly with0weight copies.
+No paired quality result or adoption.
+
+Actual postacceptance remaining full budget11,822,322,392B fit. The completed
+consumer/dependency transition exposed4 newly regenerated disposable Metal-cache
+files;new exact recovery after all Python workers ended reclaimed12,394,496
+allocatedB,distinct identities from closed maintenance012. All6fresh bundle
+files verified unchanged;no research payload changed or worker/app stopped.
+Freeafter11,860,271,104B;extra2GiB target unmet after eligible recovery. This
+resolves the earlier forward projection shortfall for the next slot;remaining
+capacity must still be remeasured before every new endpoint.
+
+Slot01 fixed_unit on the same seed200070011 is active under original7200sec/
+RSS4GiB/MPS6GiB/reserve8GiB/output guards. Exactly3fresh pairs/zeroLRsearch
+remain frozen;no rescue/retry/selection/partial-budget dispatch. Follow actual
+PIDs/process/log/STOP/anchors,then verify prefix2 before slot02. Seeds012/013
+and bootstrap004 remain unused. See quality001-prefix1-slot01-launch001.json,
+quality001-slot00-metadata-mirror001.json and post-slot00 cache recovery receipt.

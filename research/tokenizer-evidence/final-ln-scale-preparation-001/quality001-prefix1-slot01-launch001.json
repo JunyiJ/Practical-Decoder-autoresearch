@@ -1,0 +1,110 @@
+{
+  "status": "prefix1_accepted_slot01_running",
+  "at": "2026-11-05T17:46:23.931653+00:00",
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-freeze.json",
+    "sha256": "d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce"
+  },
+  "accepted_slot": 0,
+  "accepted_anchor": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-accepted-00.json",
+    "sha256": "71b9319b1e8187d65092339559de7c7e69d51c09ffbc0170d5a3f3a585a40096"
+  },
+  "accepted_receipt": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/00/resource-events.jsonl",
+    "sha256": "e8d7d3b9bf68836526f8ad4e9c76214732082f65b6c6f2a52bbe077f1df7fbb8"
+  },
+  "accepted_audit": {
+    "clipping": {
+      "coefficient_below_one": 21,
+      "pre_norm_max": 1.2004547119140625,
+      "pre_norm_min": 0.27982038259506226,
+      "threshold": 1.0,
+      "updates": 1200
+    },
+    "completed_steps": 1200,
+    "ema_parameters": 88,
+    "ema_snapshots": 41,
+    "optimizer_groups": {
+      "adamw_groups": 44,
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "epsilon": 1e-06,
+      "muon_groups": 44
+    },
+    "tokens_processed": 1228800
+  },
+  "accepted_bundle_weight_bytes": 559263016,
+  "metadata_mirror": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-slot00-metadata-mirror001.json",
+    "sha256": "1ae28151a4a03a2cc1845c934eea901d991361d8f8df4f82c8a93d7bd8ecd5f0"
+  },
+  "next_active_slot": 1,
+  "active_arm": "unit",
+  "active_seed": 200070011,
+  "parent_pid": 28537,
+  "worker_pid": 28569,
+  "exec_session_id": 19090,
+  "process_snapshot": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.final_ln_scale_quality_v2.quality_execution",
+      "worker",
+      "--slot",
+      "1",
+      "--freeze-sha256",
+      "d00b8e7960322b7a139b4481c7ea238661831f440c46abaafb16c64401e6c1ce",
+      "--global-fd",
+      "3",
+      "--campaign-fd",
+      "4"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 79.70450691704173,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 11851976704,
+      "log_bytes": 0,
+      "output_bytes": 6613
+    },
+    "output_limit_bytes": 603979776,
+    "parent_pid": 28537,
+    "pid": 28569,
+    "required_free_bytes": 11822322392,
+    "reserve_bytes": 8589934592,
+    "returncode": null,
+    "status": "running",
+    "timeout_seconds": 7200
+  },
+  "guard_snapshot": {
+    "elapsed_seconds": 78.62367458303925,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 11851976704,
+      "mps_current_bytes": 871719936,
+      "mps_driver_bytes": 2493300736,
+      "peak_observed_mps_driver_bytes": 2493300736,
+      "peak_rss_bytes": 555696128
+    },
+    "pid": 28569,
+    "reason": null,
+    "status": "watching"
+  },
+  "remaining_requirement_before_slot01": 11822322392,
+  "free_after_new_cache_recovery": 11860271104,
+  "new_cache_recovery": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality001-post-slot00-cache-recovery001/completed.json",
+    "sha256": "2ce7fecd5bf0b281b2a3bbac15bcbdf4e9e5a80e5f8c09a9254e5b341033fd10"
+  },
+  "quality_result": false,
+  "quality_adopted": false,
+  "holdout_scored": false
+}
