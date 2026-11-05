@@ -1563,3 +1563,18 @@ Fresh clone identities and RNG preservation passed. This audits compact referenc
 semantics;no full-model repeat/resume or memory saving claimed. New concrete
 independent human work need not wait. Evidence:storage-recovery-029/,
 final-ln-scale-preparation-001/state-digest-oracle001.json.
+
+
+## Final-scale generated resume003 retirement
+
+NEW resume-retirement001 permanently retired only the four successful generated
+resume003 RAW/H200 tensors (1,118,312,993B) after actual downstream optimizer/EMA/
+RNG/history/full-validation/cache audit and dependency closure. Exact path/hash/
+owner/inode checks, nonblocking worker lock, consumer check, durable deletion
+journal and45,900 unchanged survivors passed. Original success/failure receipts
+remain immutable; absent tensors resolve via the later manifest,never restore or
+rerun closed fixtures. The newly accepted trainer-worker001 generated RAW/H200
+payloads (1,118,318,689B) remain retained until pilot dependencies close and a NEW
+exact audit. All202 actual selected/fresh RAW archives,H100/H200/storage004 intact.
+See final-ln-scale-preparation-001/resume-retirement001/completed.json and
+worker-terminal001-review.json. Current free space is not scientific-panel readiness.

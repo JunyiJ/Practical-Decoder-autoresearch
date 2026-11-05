@@ -8858,3 +8858,49 @@ Fresh clone identities and RNG preservation passed. This audits compact referenc
 semantics;no full-model repeat/resume or memory saving claimed. New concrete
 independent human work need not wait. Evidence:storage-recovery-029/,
 final-ln-scale-preparation-001/state-digest-oracle001.json.
+
+
+## Final-scale resume003 and actual worker acceptance complete
+
+Storage returned above the full integration target after maintenance008 removed
+only the human-identified unused Docker images. Live preflight free13,607,890,944B
+exceeded11,049,021,440B plus2GiB headroom. All original bindings matched; no worker
+was active. Prepared resume002 stayed unexecuted: preflight found its terminal
+print referenced removed max-error fields. Separate frozen003 changes only new
+attempt paths and the final reporter; numerical operations/tolerances/guards
+stayed identical. Both learned/fixed-unit arms passed exact dtype/shape/SHA256
+state-byte and scalar/RNG fresh-repeat and serialized-resume identities, complete
+clipping history, final raw/H200 export with3 snapshots and CPU/MPS batch1/8
+full/cache/reset. RSSpeak2,269,659,136B and MPSpeak2,501,689,344B were observed;
+no controlled comparative memory-saving claim. Original failed001 is immutable.
+
+Seven additive final_ln_scale_worker_v1 adapters now bind888 sources, preserving
+881 predecessors. Independent re-audit of the actual003 payloads passed optimizer,
+EMA/RNG/history, CPU/MPS full validation and paired cache checks. History/count,
+foreign-scale/group and coverage forgeries were rejected; learned bias and adopted
+epsilon1e-6 enforced. Then a NEW exact resume-retirement001 audit permanently
+retired four obsolete successful generated weights1,118,312,993B after dependency
+closure, nonblocking shared lock, no open consumers, exact owner/inode/path/hash
+checks and durable journal. All45,900 retained files verified unchanged. Missing
+generated weights resolve via that manifest; never restore or rerun.
+
+Actual serial trainer-worker001 accepted both four-update generated-text arms:
+4,096 targets,3H200 snapshots,88/87EMA tensors,44/43AdamW and44Muon groups,
+complete clipping histories. Parent full validation recomputation exact; CPU/MPS
+CE discrepancies2.4222548411501066e-7/2.6099441896576536e-7. Trained-inference001
+full/cache/reset passed batches1/8,196,608B cache/item; per-file overflow rejected.
+Metadata mirrored exactly; new worker RAW/H200 weights1,118,318,689B remain
+retained until pilot dependencies close and a NEW exact retirement audit.
+
+No scientific seed reservation,pilot/quality freeze or scale-quality claim. No
+active worker. Next minimal finite20-update pilot orchestration and complete
+three-fresh-pair design in NEW final_ln_scale_campaign_v1 outside888 frozen
+sources; re-audit actual worker tensors/cache/history, close dependencies and
+measure complete output high-water including serialization,metadata,8GiB reserve
+and2GiB cleanup target before census/pilots. Recover immediately on a new blocker;
+source integration proceeds. Learned/fixed-unit scale comparison retains learned
+bias, centering,epsilon1e-5,eight RMSNorms and adopted AdamW epsilon1e-6. Fixed
+unit removes256 parameters. CommonLR.00125,zero LR-search,original strict gates,
+exactly3fresh pairs,no selection/rescue/partial panel. Beta1 ablation deferred.
+All202 selected/fresh RAW archives and actual H100/H200/storage004 preserved.
+Evidence:final-ln-scale-preparation-001/worker-terminal001-review.json.
