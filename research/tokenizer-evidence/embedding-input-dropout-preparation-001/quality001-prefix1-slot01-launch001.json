@@ -1,0 +1,51 @@
+{
+  "status": "accepted_prefix1_slot01_running",
+  "observed_at": "2026-11-06T16:27:01.815361+00:00",
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-freeze.json",
+    "sha256": "d8bea1ca11ab6bb4963421100513aa0e39fd967e2af4198367c5d432b9bd9ac4"
+  },
+  "accepted": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/00/accepted.json",
+    "sha256": "bc20381e4a0a0109fe0c6fa7c2ad81bfb0fb838edc878db25362e9c237973ae4"
+  },
+  "accepted_anchor": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-accepted-00.json",
+    "sha256": "3a3e6a5fc966a32ed23de0272ac0a03cb965948b8f2c98ded9a0cea0b9f570e1"
+  },
+  "parent_acceptance_summary": {
+    "status": "accepted",
+    "step": 1200,
+    "targets": 1228800,
+    "ema_snapshots": 41,
+    "complete_raw_optimizer_ema_rng_sampler_clipping_h200_checked": true
+  },
+  "retained_original_weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/00/checkpoints/parent.pt",
+      "sha256": "5d9ff489f8bd4b7a41a93db1d6a8f44b82a7acbab610f9e9481ed3cb77e43b57",
+      "size": 445177063
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/00/checkpoints/h200.pt",
+      "sha256": "283bea9554b727f0eb555925234031a4d0a72e17c8d6c5a595e05c2d09188102",
+      "size": 114076355
+    }
+  ],
+  "metadata_mirror": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-slot00-metadata-mirror001.json",
+    "sha256": "200d1d014d9ef9abb787b54cd283ee9d6cf604d40ec9294f947fda4f845b39cc"
+  },
+  "weight_copies": 0,
+  "controller_pid": 84058,
+  "worker_pid": 84373,
+  "exec_session": 95353,
+  "active_slot": 1,
+  "arm": "input_feature_p10",
+  "screen_seed": 200090002,
+  "nominal_lr": 0.000625,
+  "full_quality_result_or_adoption": false,
+  "fresh_and_bootstrap_unused": true,
+  "free_observed": 105729699840,
+  "next_action": "Follow actual active controller and accepted anchors;never duplicate a worker or retry attempted slots. Complete all6screens then immutable selection/exact losing-screen retirement/all6fresh and final review under frozen gates."
+}
