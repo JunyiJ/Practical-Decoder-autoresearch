@@ -1,0 +1,198 @@
+{
+  "H200": {
+    "interval": 10,
+    "snapshots": 41,
+    "start": 800
+  },
+  "arms": {
+    "dense": {
+      "adam_groups": 44,
+      "hidden": 672,
+      "muon_groups": 44,
+      "parameters": 28492416
+    },
+    "moe": {
+      "adam_groups": 48,
+      "expert_hidden": 336,
+      "muon_groups": 80,
+      "parameters": 30560896
+    },
+    "wide": {
+      "adam_groups": 44,
+      "hidden": 1344,
+      "muon_groups": 44,
+      "parameters": 30556800
+    }
+  },
+  "candidate": "moe",
+  "category": "structural_exploration",
+  "closure": {
+    "all18accepted_before_final_statistics": true,
+    "all9fresh_H200_serving_cache_reset": true,
+    "independent_arithmetic_agreement_atol": 1e-12,
+    "separate_adoption_and_checkpoint_consumer_review_if_all_gates_pass": true
+  },
+  "controls": [
+    "dense",
+    "wide"
+  ],
+  "cooldown_start": 800,
+  "cost": {
+    "all18output_floor": 21771120640,
+    "capacity": {
+      "path": "research/tokenizer-evidence/post-prefix-boundary-001/quality-draft-capacity001.json",
+      "sha256": "d5427a72d74ef75450afe63bfc85aa5155680c41535264aa46f689d847a3f9c5"
+    },
+    "conservative_projected_seconds": 15806.9036319796,
+    "full_trajectories": 18,
+    "no_retirement_credit": true,
+    "projection_scope": "Pilot-basedestimateincluding2xsafetyandfixedprocess/parentoverhead,notguarantee;additionalfinalserving/statisticsnotyetmeasured.",
+    "target_plus_2GiB": 23918604288
+  },
+  "fixed_recipe": {
+    "activation": "silu_swiglu",
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_epsilon": 1e-06,
+    "aux_coefficient": 0.01,
+    "aux_excluded_from_validation": true,
+    "aux_reduction": "mean_four_layers",
+    "batch": 8,
+    "block_rms_epsilon": 1.1920928955078125e-07,
+    "context": 128,
+    "decay": 6e-05,
+    "expert_hidden": 336,
+    "final_bias": "learned",
+    "final_norm_epsilon": 1e-05,
+    "final_scale": "learned",
+    "head_dim": 32,
+    "heads": 8,
+    "layers": 4,
+    "mla_latent": 64,
+    "moe_experts": 4,
+    "native_vocab": 50257,
+    "no_capacity_dropping": true,
+    "no_noise": true,
+    "no_shared_experts": true,
+    "no_zloss": true,
+    "readout_scale": 4.0,
+    "router_forward_divisor": 4.0,
+    "router_init_multiplier": 2.0,
+    "score_scale": 0.5,
+    "top_k": 2,
+    "width": 256
+  },
+  "fresh": {
+    "order": [
+      [
+        "dense",
+        "wide",
+        "moe"
+      ],
+      [
+        "wide",
+        "moe",
+        "dense"
+      ],
+      [
+        "moe",
+        "dense",
+        "wide"
+      ]
+    ],
+    "recipes": "ImmutableperarmselectedLR;no reselection",
+    "shared_new_seeds": "UNASSIGNED",
+    "trajectories": 9
+  },
+  "gates": {
+    "all3seed_deltas_per_contrast_negative": true,
+    "all_simultaneous_conditional_text_upper_bounds_negative": true,
+    "blocks_tokens": [
+      2048,
+      4096,
+      8192
+    ],
+    "bootstrap_seed": "UNASSIGNED",
+    "contrasts": [
+      "moe_minus_dense",
+      "moe_minus_wide"
+    ],
+    "draws": 2000,
+    "linear_quantile": 0.9916666666666667,
+    "mean_per_contrast_below": -0.02,
+    "reinitialize_each_width": true,
+    "rng": "PCG64",
+    "same_indices_across_seeds_and_contrasts": true,
+    "scope": "Conditional on these trainedseeds and adaptivelyreusedvalidationtext,not holdout/populationseedconfidence."
+  },
+  "hypothesis": "Conditional FFN capacity may improve native-tokenizer MLA quality beyond both active-FFN-matched dense672 and stored-FFN-matched dense1344. Historical character width256 MoE losses are contrary evidence; new tokenizer/MLA/optimizer/schedule transfer is an unresolved condition,not predicted gain.",
+  "local_evidence": [
+    {
+      "path": "research/MOE_QUALITY_RESULTS.md",
+      "sha256": "ddd31ae386d7ab77e232da5269016f561b97f99e4952f025eb0ba97f34705c93"
+    },
+    {
+      "path": "research/TOKENIZER_MOE_PREPARATION.md",
+      "sha256": "deda6c49657f2353b39adee4faf853a7b16145c222a98f2f296bb479914e9360"
+    },
+    {
+      "path": "research/tokenizer-evidence/post-prefix-boundary-001/evidence-review.md",
+      "sha256": "5c4023d46c8917026a9957c948667a72c904bd9f38966e25a5833f866b5a9ba8"
+    },
+    {
+      "path": "research/tokenizer-evidence/post-prefix-boundary-001/prerequisite-close001.json",
+      "sha256": "8f7ca36c5cedb2b2fc061810b8cf4dcd428c76cce624931969440e0d3754668b"
+    }
+  ],
+  "main_budget": "Equal1200tokenupdates/1228800targets pertrajectory;same nativecodec/private samplerseed gives same sampledtextstream.Same scalar seeds preserve native non-FFN initialization butnotchanged-shapeFFNweights.Not equalFLOPs/walltime/active total parameter budgets.",
+  "new_scientific_seed_assigned": false,
+  "no_cost_only_adoption": true,
+  "no_extra_tuning": true,
+  "no_old_score_pooling": true,
+  "no_rescue_or_seed_substitution": true,
+  "no_wide_fallback": true,
+  "outcome_learning": {
+    "beats_both": "Qualifies independentadoption/consumerreview onlyafterallfrozengates.",
+    "beats_dense_only": "Insufficient routing-specific advantage understoredbudget;noadoption.",
+    "loses": "Retainincumbent;analyzeactualcurves/exposure/routing/stabilitywithoutautomaticrouter/horizonrescue.",
+    "resource_failure": "Implementation/resource evidence,notnegativequality."
+  },
+  "quality_root_created": false,
+  "remaining_gates": [
+    "NEWadditive1200training-worker-parent-controller;oldworkerrejects1200",
+    "Actualpilot1200historyserializationlayoutinsideexisting560/640/640MiBcaps",
+    "Finiteacceptedprefix/config/request/source/guard/LRselection/confirmation/adversarialcontracts",
+    "Independentnonconstantgrouping/bootstrap/quantiletests",
+    "Unusedscientificseedcensus,completeLIVEbudget,allprerequisite/source/data/runtimepinsbeforefreeze"
+  ],
+  "screen": {
+    "common_new_seed": "UNASSIGNED",
+    "order": "LRascending,dense-wide-moe",
+    "rates": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "selection": "MinimumcompleteH200MPSfullnativeCEwithinarm,lowerLRexactties,onlyafterall9screens",
+    "trajectories": 9
+  },
+  "status": "prospective_finite_design_not_scientific_freeze",
+  "target": {
+    "context": 128,
+    "cpu": "independentcorroboration",
+    "disjoint_target_windows": true,
+    "holdout_closed": true,
+    "metric": "nat_per_native_target_token",
+    "native_tokens": 34278,
+    "primary": "MPS_FP32_CE_then_CPU_FP64_aggregation",
+    "tail_retained": true,
+    "target_bytes": 111536,
+    "target_contract_sha256": "a826853819874af37dab506709d45d834f01dd8bd4351e703c0e667c237b1498",
+    "target_ids_sha256": "dad00eaab7c2076736432b83eb9f1cc404c87aa5e4820b5f7abebf384c7fcdaf"
+  },
+  "targets_per_trajectory": 1228800,
+  "training_quality_result": false,
+  "updates": 1200
+}
