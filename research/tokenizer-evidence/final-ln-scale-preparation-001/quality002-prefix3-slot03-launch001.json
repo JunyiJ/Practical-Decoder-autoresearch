@@ -1,0 +1,90 @@
+{
+  "accepted_prefix": 3,
+  "additional_cleanup_needed": false,
+  "arm": "learned",
+  "at": "2026-11-06T00:41:48.333700+00:00",
+  "attribution": "No claim that audited cache allocation accounts for total free-space change.",
+  "authorized_freeze_log": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-freeze-build003-authorized.log",
+    "sha256": "35a59d9837bc5d312d0f6d2ab49e086e51c4033c267e37ec53096e01108707f3"
+  },
+  "capacity_deficit": 0,
+  "cleanup_target": 12852752238,
+  "cleanup_target_deficit": 0,
+  "entry_guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-002/control/entry-03-guard.json",
+    "sha256": "3beddf8abb6b4655befc67bba3c412fae7d706a30cfa6ab54fddf8ba6c74dca6"
+  },
+  "exec_session": 6651,
+  "free_bytes": 20142325760,
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-freeze.json",
+    "sha256": "b76e9e1084b67c88be9e1f89260b5b5b6a1f280591ac16de59453ce637f3ff65"
+  },
+  "imported_training_updates": 0,
+  "initial_free_bytes": 20168568832,
+  "latest_metric": {
+    "accel_mem_kind": "mps_current_allocated",
+    "accel_mem_mb": 631.77001953125,
+    "averaging_snapshots": 0,
+    "base_learning_rate": 0.00125,
+    "clipping": {
+      "coefficient": 1.0,
+      "gradient_tensors": 88,
+      "post_norm": 0.4318249523639679,
+      "pre_norm": 0.4318249523639679,
+      "step": 301,
+      "threshold": 1.0
+    },
+    "cuda": null,
+    "device": "mps",
+    "elapsed_time_sec": 75.24148587498348,
+    "iter_time_sec": 0.235444208025001,
+    "lr_multiplier": 1.0,
+    "moe_usage": null,
+    "ppl": 214.85582509060495,
+    "rss_kind": "process_lifetime_peak",
+    "rss_mb": 604.28125,
+    "scheduled_learning_rate": 0.00125,
+    "step": 300,
+    "tokens_processed": 308224,
+    "train_aux_loss": null,
+    "train_ce_loss": 4.611984729766846,
+    "train_loss": 4.611984729766846,
+    "train_total_loss": 4.611984729766846,
+    "training_time_sec": 74.59107929933816,
+    "val_aux_loss": null,
+    "val_ce_loss": 5.369967222213745,
+    "val_loss": 5.369967222213745
+  },
+  "metadata_only_imports": 3,
+  "new_cleanup_records": [
+    "research/maintenance-cache-cleanup-017/completed.json",
+    "research/maintenance-cache-cleanup-018/completed.json"
+  ],
+  "original_STOP_preserved": true,
+  "parent_pid": 47987,
+  "preflight": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-preflight.json",
+    "sha256": "352321e5d7786ab4b1fa24bd482973cf54d2a92b795700ae5f33ec877656b757"
+  },
+  "remaining_requirement": 10705268590,
+  "retained_imported_weight_bytes": 1677774994,
+  "sandbox_preflight_failure": {
+    "log": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-freeze-build003.log",
+      "sha256": "a92ea15bcbd03b8e634c12e8b6599b8f7e094527c4ed78fab44940e13cc87cc3"
+    },
+    "scope": "Sandbox denied ps before any guard/root/freeze/training. Execution with ordinary process permissions then completed once;original log preserved."
+  },
+  "seed": 200070012,
+  "slot": 3,
+  "source_count": 918,
+  "status": "continuation_frozen_slot03_running",
+  "weight_copies": 0,
+  "worker_guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-final-ln-scale-quality-v1-002/control/worker-03-guard.json",
+    "sha256": "a0e15b84ece40fdae08c0969f4cc2746ed9ae1038a52d16f14b0dbdc15a72323"
+  },
+  "worker_pid": 48012
+}
