@@ -88,7 +88,9 @@ mandatory remaining budget passes. No new scientific quality trajectory yet.
 
 ## Prospective design, not yet frozen
 
-After worker contracts and measured20-update resource pilots pass, compare the
+Worker contracts and all three measured20-update resource pilots passed. The
+[finite scientific contracts](tokenizer-evidence/body-allocation-preparation-001/quality-contracts001.json)
+also pass independent nonconstant statistics/selection/resource-credit tests. Compare the
 three exact arms using the same finite LR allowance {.000625,.00125,.0025} and
 one prospective screening seed. Each arm selects its minimum full-validation
 H200 CE; ties choose lower LR. Then freeze those choices for three NEW shared
@@ -115,8 +117,20 @@ no credit exists until actual retirement. Selected and all fresh weights remain
 protected. Measure the complete live remaining budget before every unstarted
 slot, target another2GiB in cleanup, and recover inline on a new blocker.
 
-Next: finish the actual worker001 proofs, close their integration dependencies,
-derive and review the complete finite scientific/retention/resource contract,
-perform fresh seed census, then run pilots and the authorized comparison once
-all gates pass. No automatic beta1 study follows; choose the next improvement
+The strengthened scientific full high-water is16,167,530,496B, including another
+64MiB for prospective retirement shards and portable sidecars beyond the
+pilot forecast. Cleanup target18,315,014,144B. Live remaining preflight
+14,747,676,750B passed against15,090,638,848B free, after crediting only the
+three actual accepted pilot pairs1,419,853,746B once. No future retirement credit.
+
+Census001 reviewed55,707 recorded files. Scientific seeds are pilot200080001
+(used), screen200080002 (unused), evaluation200080003 (used), bootstrap200080004
+(unused), fresh200080011/012/013 (unused). No old final-scale seed reuse.
+
+Next: freeze the complete finite scientific/retention/resource contract,
+retire only six dependency-closed pilot payloads under the exact audit, then
+execute the authorized nine-trajectory LR screen and nine fresh trajectories
+serially with live complete remaining-budget checks. The controller stops on
+a scientific/resource failure without retries or replacement seeds; source and
+independent useful work continue after diagnosis. No automatic beta1 study follows; choose the next improvement
 from results, existing data and primary literature.

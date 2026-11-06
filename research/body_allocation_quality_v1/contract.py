@@ -1,5 +1,6 @@
 """Exact prospective screen/fresh slots and complete retained high-water."""
 from pathlib import Path
+import math
 from research.body_allocation_model_v1.contract import ROOT,config,plain,require
 from research.body_allocation_model_v1.evidence import reference
 from research.body_allocation_campaign_v1.rules import ARMS,LRS,WEIGHT_CAPS,DESIGN,FLOOR as PILOT_FLOOR,RESERVE
@@ -34,9 +35,16 @@ def fresh_specs(seeds,selection):
 
 def select(rows):
     require(type(rows) is list and len(rows)==9,'Complete nine-trajectory LR screen required')
+    require(sorted(r['slot'] for r in rows)==list(range(9)) and all(r['arm']==ARMS[r['slot']%3] and r['lr']==LRS[r['slot']//3]
+        and type(r['ce']) is float and math.isfinite(r['ce']) and r['ce']>=0 for r in rows),'Screen layout/finite CE differs')
     choices={};audits={}
     for arm in ARMS:
         values=[r for r in rows if r['arm']==arm];require(len(values)==3,'Three rates per arm required')
         require(sorted(r['lr'] for r in values)==list(LRS),'Exact equally bounded LR allowance required')
         best=min(values,key=lambda r:(r['ce'],r['lr']));choices[arm]=best['lr'];audits[arm]=dict(selected_slot=best['slot'],learning_rate=best['lr'],ce=best['ce'])
     return choices,audits
+
+def weight_credit(actual,expected):
+    require(type(actual) is dict and type(expected) is dict and actual==expected
+        and all(type(v) is int and v>0 for v in expected.values()),'Extra/unaccepted/duplicated weight credit forbidden')
+    return sum(expected.values())

@@ -4,14 +4,14 @@ from research.body_allocation_model_v1.contract import require
 
 def review(pairs,seed):
     require(type(pairs) is list and len(pairs)==3,'Exactly three fresh triplets required')
-    names=('incumbent','shallow','deeper');counts=None;totals={n:[] for n in names};sums={n:[] for n in names}
+    names=('incumbent','shallow','deeper');counts=None;identity=pairs[0]['incumbent']['target'];totals={n:[] for n in names};sums={n:[] for n in names}
     for pair in pairs:
         require(set(pair)==set(names),'All three arms required')
         for n in names:
             r=pair[n];c=r['target']['block_counts'];v=np.asarray(r['block_loss_sums'],dtype=np.float64)
             require(c==([2048]*16+[1510]) and len(v)==17 and np.isfinite(v).all() and (v>=0).all(),'Complete finite target blocks required')
             if counts is None:counts=np.asarray(c,dtype=np.float64)
-            require(r['target']==pair['incumbent']['target'],'Target identities differ across arms')
+            require(r['target']==identity,'Target identities differ across arms/seeds')
             require(abs(float(v.sum())-r['total_loss'])<1e-8 and r['ce']==r['total_loss']/34278,'Loss arithmetic differs')
             sums[n].append(v);totals[n].append(r['ce'])
     arrays={n:np.asarray(v) for n,v in sums.items()};result={}

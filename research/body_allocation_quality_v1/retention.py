@@ -16,7 +16,7 @@ def inventory(excluded):
     out=[]
     for name in ('research_runs','research_archives','research/tokenizer-evidence'):
         for p in (ROOT/name).rglob('*'):
-            if p.is_relative_to(excluded) or '__pycache__' in p.parts:continue
+            if p.is_relative_to(excluded) or p==Path(str(excluded)+'-guard.json') or '__pycache__' in p.parts:continue
             require(not p.is_symlink(),'Retained research symlink refused')
             if p.is_file():out.append(p)
     return sorted(set(out))
@@ -47,6 +47,7 @@ def retire(out,bindings,eligibility,*,kind,selected=()):
     for i in range(0,len(survivors),500):
         p=out/f'survivors-{i//500:03d}.json';publish(p,survivors[i:i+500]);shards.append(reference(p))
     manifest=dict(kind=kind,source=reference(__file__),eligibility=eligibility,delete=delete,survivors=shards,protected_selected_paths=sorted(selected),
+        excluded_own_current_audit=[str(out),str(out)+'-guard.json'],
         authorization='Human authorizes obsolete dependency-closed pilots and saved-selection losing screens, with exact path/size/hash/inode/consumer audit. Every selected/fresh/original source/log/config/metric/receipt remains protected.',
         limitation='Permanent exact retirement; original receipts resolve absent tensors through this later manifest. Never restore/rerun closed numerical fixtures or cleanup.')
     publish(out/'manifest.json',manifest)
