@@ -9234,3 +9234,50 @@ then frozen all3pair inference and independent final review. No further deletion
 needed;all fresh/selected/original evidence protected. Future exploration must
 follow the new binding evidence-grounding instructions and skill;the allocation
 percentage remains proposed and does not change this panel.
+
+
+## Final LayerNorm scale comparison closed without adoption
+
+The complete frozen three-pair panel is independently reviewed. Retain learned
+final LayerNorm scale and bias on the adopted AdamW epsilon1e-6 recipe. Fixed
+unit scale was worse in every fresh pair and failed all three adoption checks.
+
+| Fresh seed | Learned H200 CE | Fixed unit H200 CE | Unit minus learned |
+| --- | ---: | ---: | ---: |
+| 200070011 | 4.696498009 | 4.704931722 | +0.008433713 |
+| 200070012 | 4.701460936 | 4.730949601 | +0.029488665 |
+| 200070013 | 4.677164509 | 4.688754501 | +0.011589992 |
+
+Mean delta is +0.016504123 nat/token. Simultaneous conditional-text upper bounds
+are +0.034509329/+0.039776264/+0.044684203 at2048/4096/8192 tokens.
+Independent explicit grouping,PCG64 draws and NumPy linear quantiles agreed
+with the frozen arithmetic within1e-12. These intervals condition on the three
+trained seeds and reused validation text; they are not population-seed or
+holdout confidence. CommonLR.00125/zero LR-search compares these exact recipes,
+not separately tuned optima. Clipping counts are descriptive only.
+
+All six1200-update endpoints passed RAW/H200/optimizer/EMA/RNG/full clipping/
+full-validation acceptance. All three paired full/cache/reset checks passed
+for batches1/8;cache196,608B/item is identical. Inference timings are descriptive,
+with two resident models and allocation/loading excluded;no cost-only adoption
+route exists here. Only the256 final-scale parameters and their one AdamW/EMA
+entry differ;centering,learnedbias,epsilon1e-5,eightprebranchRMSNorms and all
+unrelated groups/recipe settings remain fixed.
+
+All918 source bindings/prepared refs remain unchanged;912originals preserved.
+Original quality001 entry failure/STOP stays immutable. Separate same-panel
+quality002 STOP now closes training/inference/final commands;never rerun them.
+All12fresh RAW/H200 payloads3,355,557,015B stay protected in original paths.
+No weights copied/deleted,no test scoring,no adoption. Bootstrap200070004 used
+by the final review;all three fresh seeds used. No active worker. Closure free
+16,777,682,944B is an observation,not readiness for a different future panel.
+
+The boundary review follows the evidence-grounded-research skill. A hash-bound
+read-only diagnostic examined existing curves and exposure;primary papers and
+contrary character-capacity/MoE and subword-horizon findings were reviewed.
+Next is actual body/vocabulary parameter and compute/shape feasibility,not an
+automatic beta1 tweak or an assumed larger-model benefit. No new scientific
+seeds,quality freeze or numerical campaign is admitted. The70/30 allocation
+remains proposed. See [boundary evidence](tokenizer-evidence/exploration-boundary-001/evidence-review.md)
+and [data diagnostic](tokenizer-evidence/exploration-boundary-001/analysis001.json). Final evidence:quality002-final-review.json,all three
+quality002-fresh-inference reviews and quality002-closure.json.

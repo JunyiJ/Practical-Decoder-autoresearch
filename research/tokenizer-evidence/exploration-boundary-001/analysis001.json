@@ -1,0 +1,280 @@
+{
+  "algebraic_parameter_scope": "Two untied 50257-by-256 tables, derived from the bound model geometry; not a measured FLOP fraction.",
+  "all_six_sampled_validation_curves_improve_at_every_saved_step": true,
+  "checkpoint_loads": 0,
+  "holdout_scored": false,
+  "incumbent_total_parameters": 28492416,
+  "learned_mean_late_validation_change": -0.0771244684855142,
+  "limitations": [
+    "Five sampled online observations per trajectory; no intermediate checkpoint selection or new quality scoring.",
+    "Training-batch CE and sampled validation CE use different observations; their gap is not a matched generalization estimate.",
+    "Sampled target exposure divided by train-token count is not literal epochs for the random-window sampler.",
+    "Current trajectories share one depth and width; these curves cannot identify an optimal shape or a causal bottleneck.",
+    "Historical character results are separate evidence, never pooled into subword CE or fresh seed confirmation."
+  ],
+  "observations": [
+    {
+      "anchor": {
+        "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-00.json",
+        "sha256": "c709f24656a0d0e84013cba50c93240f84453afa4d063f330af2bfc565a21391"
+      },
+      "arm": "learned",
+      "late_validation_change": -0.06518015861511195,
+      "metrics": {
+        "path": "research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/00/metrics.jsonl",
+        "sha256": "bf83438971a14e0f2d9c1bb5e29e9350db784ba3da83ebce82417f1a580347f2"
+      },
+      "observations": [
+        {
+          "sampled_validation_ce": 10.850800800323487,
+          "step": 0,
+          "train_ce": 10.88238525390625
+        },
+        {
+          "sampled_validation_ce": 5.492222452163697,
+          "step": 300,
+          "train_ce": 4.674717903137207
+        },
+        {
+          "sampled_validation_ce": 4.908241033554077,
+          "step": 600,
+          "train_ce": 4.239800453186035
+        },
+        {
+          "sampled_validation_ce": 4.794940948486328,
+          "step": 900,
+          "train_ce": 3.3595452308654785
+        },
+        {
+          "sampled_validation_ce": 4.729760789871216,
+          "step": 1199,
+          "train_ce": 3.0257174968719482
+        }
+      ],
+      "seed": 200070011,
+      "slot": 0
+    },
+    {
+      "anchor": {
+        "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-01.json",
+        "sha256": "0e1ad7a873c40c9669836e9a1e33cc3bd90a627546b4b2bd9d531efad8d64533"
+      },
+      "arm": "unit",
+      "late_validation_change": -0.06820363998413104,
+      "metrics": {
+        "path": "research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/01/metrics.jsonl",
+        "sha256": "c76b2e0023ce0998f762129e61371e0e696e2aa0021bd79685c0b5b26991cc1e"
+      },
+      "observations": [
+        {
+          "sampled_validation_ce": 10.851027011871338,
+          "step": 0,
+          "train_ce": 10.88238525390625
+        },
+        {
+          "sampled_validation_ce": 5.55019063949585,
+          "step": 300,
+          "train_ce": 4.801103591918945
+        },
+        {
+          "sampled_validation_ce": 4.945939636230468,
+          "step": 600,
+          "train_ce": 4.362404823303223
+        },
+        {
+          "sampled_validation_ce": 4.788542175292969,
+          "step": 900,
+          "train_ce": 3.5520036220550537
+        },
+        {
+          "sampled_validation_ce": 4.720338535308838,
+          "step": 1199,
+          "train_ce": 3.4086337089538574
+        }
+      ],
+      "seed": 200070011,
+      "slot": 1
+    },
+    {
+      "anchor": {
+        "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-02.json",
+        "sha256": "cc4c940628e077078e3b52f40c555acfc7c244dd15232ccf43801132ac37a991"
+      },
+      "arm": "unit",
+      "late_validation_change": -0.10723180770874041,
+      "metrics": {
+        "path": "research_runs/tokenizer-final-ln-scale-quality-v1-001/evidence/quality/02/metrics.jsonl",
+        "sha256": "34809fa05600fd4c2799df9d3cc051237ae89ba8201b3b220a0ea9f38cc127d3"
+      },
+      "observations": [
+        {
+          "sampled_validation_ce": 10.84093599319458,
+          "step": 0,
+          "train_ce": 10.87032699584961
+        },
+        {
+          "sampled_validation_ce": 5.446272277832032,
+          "step": 300,
+          "train_ce": 4.78706693649292
+        },
+        {
+          "sampled_validation_ce": 5.021964597702026,
+          "step": 600,
+          "train_ce": 4.335753440856934
+        },
+        {
+          "sampled_validation_ce": 4.8496809005737305,
+          "step": 900,
+          "train_ce": 4.312760353088379
+        },
+        {
+          "sampled_validation_ce": 4.74244909286499,
+          "step": 1199,
+          "train_ce": 3.661597490310669
+        }
+      ],
+      "seed": 200070012,
+      "slot": 2
+    },
+    {
+      "anchor": {
+        "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-03.json",
+        "sha256": "51aea190bea2f1ba5044d243e014f3b45641c9dc944ca2482df460a620030d03"
+      },
+      "arm": "learned",
+      "late_validation_change": -0.08819050788879412,
+      "metrics": {
+        "path": "research_runs/tokenizer-final-ln-scale-quality-v1-002/evidence/quality/03/metrics.jsonl",
+        "sha256": "131533051355d0be6e6673f9e439c5b6697caad4e85c40cfaa09e0e778b36333"
+      },
+      "observations": [
+        {
+          "sampled_validation_ce": 10.840717315673828,
+          "step": 0,
+          "train_ce": 10.87032699584961
+        },
+        {
+          "sampled_validation_ce": 5.369967222213745,
+          "step": 300,
+          "train_ce": 4.611984729766846
+        },
+        {
+          "sampled_validation_ce": 4.955428600311279,
+          "step": 600,
+          "train_ce": 4.185481071472168
+        },
+        {
+          "sampled_validation_ce": 4.821236038208008,
+          "step": 900,
+          "train_ce": 4.147562503814697
+        },
+        {
+          "sampled_validation_ce": 4.733045530319214,
+          "step": 1199,
+          "train_ce": 3.3743209838867188
+        }
+      ],
+      "seed": 200070012,
+      "slot": 3
+    },
+    {
+      "anchor": {
+        "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-04.json",
+        "sha256": "8fae56d56be86330f65ab13ce4118369d2cd6eee396e36403a9671054520a210"
+      },
+      "arm": "learned",
+      "late_validation_change": -0.07800273895263654,
+      "metrics": {
+        "path": "research_runs/tokenizer-final-ln-scale-quality-v1-002/evidence/quality/04/metrics.jsonl",
+        "sha256": "63c7d0f6731bc566714f4b007ba0a89bb97643930607c7d241e6692990226f0b"
+      },
+      "observations": [
+        {
+          "sampled_validation_ce": 10.835454177856445,
+          "step": 0,
+          "train_ce": 10.866561889648438
+        },
+        {
+          "sampled_validation_ce": 5.324748420715332,
+          "step": 300,
+          "train_ce": 4.773786544799805
+        },
+        {
+          "sampled_validation_ce": 4.939660835266113,
+          "step": 600,
+          "train_ce": 4.302288055419922
+        },
+        {
+          "sampled_validation_ce": 4.796754693984985,
+          "step": 900,
+          "train_ce": 3.655020236968994
+        },
+        {
+          "sampled_validation_ce": 4.7187519550323485,
+          "step": 1199,
+          "train_ce": 3.15486216545105
+        }
+      ],
+      "seed": 200070013,
+      "slot": 4
+    },
+    {
+      "anchor": {
+        "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-05.json",
+        "sha256": "55669002183ac18be73a5ebcab1c8a009da58a12fe4e1bc7842d3592f3f96cd9"
+      },
+      "arm": "unit",
+      "late_validation_change": -0.08194084167480398,
+      "metrics": {
+        "path": "research_runs/tokenizer-final-ln-scale-quality-v1-002/evidence/quality/05/metrics.jsonl",
+        "sha256": "720a0f3db0508a16b463c55a843154df635703f79b77e98298e9983017a8d965"
+      },
+      "observations": [
+        {
+          "sampled_validation_ce": 10.83564395904541,
+          "step": 0,
+          "train_ce": 10.866561889648438
+        },
+        {
+          "sampled_validation_ce": 5.417116737365722,
+          "step": 300,
+          "train_ce": 4.917868614196777
+        },
+        {
+          "sampled_validation_ce": 4.99981460571289,
+          "step": 600,
+          "train_ce": 4.4759626388549805
+        },
+        {
+          "sampled_validation_ce": 4.789961910247802,
+          "step": 900,
+          "train_ce": 3.8067376613616943
+        },
+        {
+          "sampled_validation_ce": 4.708021068572998,
+          "step": 1199,
+          "train_ce": 3.3945815563201904
+        }
+      ],
+      "seed": 200070013,
+      "slot": 5
+    }
+  ],
+  "plan": {
+    "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-plan.json",
+    "sha256": "d15be136c3ac75a70b29ad7afa2a091d2aaf7572307aecfffb0ffc1e592a5730"
+  },
+  "sampled_targets_per_trajectory": 1228800,
+  "sampled_targets_to_train_token_count": 4.590418696392815,
+  "source": {
+    "path": "research/tokenizer-evidence/exploration-boundary-001/analysis001.py",
+    "sha256": "380b52c41ae8f2f5cc39cd7de16e381f48a4c4760ad33172276c720ba7bbcec2"
+  },
+  "status": "readonly_existing_data_diagnostic",
+  "train_tokens": 267688,
+  "training_launched": false,
+  "unit_mean_late_validation_change": -0.08579209645589181,
+  "untied_vocabulary_table_parameters": 25731584,
+  "validation_targets": 34278,
+  "vocabulary_table_parameter_fraction": 0.9031029169305965
+}

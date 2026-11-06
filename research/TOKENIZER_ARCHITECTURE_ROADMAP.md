@@ -1404,3 +1404,17 @@ entry capacity before worker/updates;no full3pair quality decision. Separate
 and is prepared,not executed,until revised complete remaining capacity fits.
 No architecture/attention/HP change,seed substitution,source edit of912
 predecessors,interim selection or retired restoration;incumbent unchanged.
+
+
+## Final scale closed and evidence grounded exploration review
+
+All three fresh fixed-unit-minus-learned H200 deltas are positive;mean
++0.016504123 nat/token. The complete panel and independent statistics/inference
+review reject adoption. Retain learned final scale/bias and the adopted
+epsilon1e-6 recipe. Both original execution STOPs and all12fresh weights stay
+protected;918bindings unchanged. No numerical worker or next study is active.
+The next concrete work is actual parameter/compute/valid-shape feasibility,
+grounded in stored curves,prior capacity/MoE/horizon findings and primary papers.
+See [boundary evidence](tokenizer-evidence/exploration-boundary-001/evidence-review.md).
+The depth/width and MoE questions remain provisional;no numerical seeds or
+future quality protocol are frozen and the70/30 portfolio remains proposed.
