@@ -1,10 +1,9 @@
 # GPT2 vocabulary-capacity comparison
 
-Status: quality001 is FROZEN and RUNNING after all correctness/resource/source/
-state/seed/data/full-budget gates passed. The controller owns the serial panel. Firstnative/8Kscreen pair independently
-accepted;prefix2 observed,slot02nativeLR.00125 advancing.
-No complete scientific quality result or adoption exists;incumbent unchanged.
-Follow ACTUAL processes/guards/STOP/acceptance over launch snapshots.
+Status: all six learning-rate screens independently accepted. The original rule
+selected nativeLR.00125 and8KLR.0025;the three predeclared fresh pairs are now
+advancing under the existing controller. No complete quality result/adoption.
+Follow ACTUAL processes/guards/STOP/anchors over all launch snapshots.
 
 Root:`research_runs/tokenizer-gpt2-prefix-quality-v1-001`.
 Runner:`research.gpt2_prefix_quality_v1.execution`.
@@ -16,8 +15,8 @@ invoke partial-state gates as monitoring while a slot is active.
 The controller runs all six equal-allowance LR screens(.000625/.00125/.0025 per
 native/8K arm),immutable minimum-H200BPB/lowerLRtie selection,then three rotated
 fresh pairs and all-six serving/independent final statistics. Screen200100002 and
-evaluation200100003 are used;fresh200100011/012/013 andbootstrap200100004 remain
-unused until their frozen phases. No seed replacements,rescue or interim winner.
+evaluation200100003 andfresh200100011 are used;200100012/013 andbootstrap200100004
+remain unused until their frozen phases. No seed replacements,rescue or interim winner.
 
 The question is the complete smaller-vocabulary recipe under equal token updates.
 Evaluate the same111,475validation bytes in BPB;do not compare CE/token or claim
@@ -32,7 +31,7 @@ outputs. Full floor14,724,689,920B,target16,872,173,568B,actual~100.1GBfree at l
 controller recomputes complete remaining capacity before every unstarted slot.
 No storage blocker/cleanup is needed. All old STOPs/retirements remain immutable.
 
-Read [current launch evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review003.md),
+Read [current fresh-phase evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review004.md),
 [prior local/paper evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review002.md),
 and [the actual frozen plan](tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-plan.json).
 After actual terminal closure,read the final review without replaying commands;
