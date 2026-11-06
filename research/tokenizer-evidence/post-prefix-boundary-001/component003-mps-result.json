@@ -1,0 +1,104 @@
+{
+  "status": "mps_component_independent_cpu_fp64_oracle_passed",
+  "cases": [
+    {
+      "dim": 7,
+      "hidden": 5,
+      "batch": 1,
+      "tokens": 1,
+      "mode": "ordinary",
+      "maximum_absolute_error": 8.91315304341056e-08,
+      "counts": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "dim": 7,
+      "hidden": 5,
+      "batch": 1,
+      "tokens": 1,
+      "mode": "exact_tie_zero_route",
+      "maximum_absolute_error": 3.9302122500917136e-08,
+      "counts": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "dim": 7,
+      "hidden": 5,
+      "batch": 2,
+      "tokens": 17,
+      "mode": "ordinary",
+      "maximum_absolute_error": 5.118834938144801e-07,
+      "counts": [
+        14,
+        18,
+        17,
+        19
+      ]
+    },
+    {
+      "dim": 7,
+      "hidden": 5,
+      "batch": 2,
+      "tokens": 17,
+      "mode": "exact_tie_zero_route",
+      "maximum_absolute_error": 7.209284422771134e-07,
+      "counts": [
+        34,
+        34,
+        0,
+        0
+      ]
+    },
+    {
+      "dim": 256,
+      "hidden": 336,
+      "batch": 1,
+      "tokens": 8,
+      "mode": "ordinary",
+      "maximum_absolute_error": 7.202895093705308e-07,
+      "counts": [
+        4,
+        5,
+        5,
+        2
+      ]
+    },
+    {
+      "dim": 256,
+      "hidden": 336,
+      "batch": 1,
+      "tokens": 8,
+      "mode": "exact_tie_zero_route",
+      "maximum_absolute_error": 6.277311073166203e-07,
+      "counts": [
+        8,
+        8,
+        0,
+        0
+      ]
+    }
+  ],
+  "atol": 4e-05,
+  "rtol": 0.0004,
+  "predecessor_sources_unchanged": 1008,
+  "source": {
+    "research/tokenizer-evidence/post-prefix-boundary-001/component003-mps.py": "c8da8efdbd53ddd3f499c48cbe0575447c4126de57b30dc24de5f968729ad803"
+  },
+  "fixture_seed": 600451,
+  "scientific_seed": false,
+  "cpu_rng_unchanged": true,
+  "mps_rng_unchanged": true,
+  "corpus_loaded": false,
+  "weights_written": 0,
+  "full_model": false,
+  "optimizer_resume": false,
+  "quality_result": false
+}

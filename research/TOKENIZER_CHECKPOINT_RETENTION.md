@@ -1778,3 +1778,18 @@ Additive CPU component002 passes6FP64oracle cases;MPS/fullmodel/optimizer/transp
 and quality remain unproved. Original failed oracle001 preserved. No new quality
 seed/freeze,automaticvocabularyrescue or cost-only adoption. See
 [tokenizer evidence boundary](tokenizer-evidence/post-prefix-boundary-001/evidence-review.md).
+
+
+## MoE component and own model integration passed
+
+Additive MPScomponent003 and three-arm model001 pass under original guards.
+Dense672/dense1344/MoEtop2of4expert336 have28492416/30556800/30560896parameters,
+44/44,44/44,80/48Muon/AdamWgroups. Nativecontrol initialization/RNG/logits/
+gradients/twooptimizersteps exact;CPU-MPS gradients,causality/cache/resetB1/8,
+foreignweights rejection and dormant-expert skip/decay passed. Cache196608B/item
+unchanged. All1014sources preserve1004scientific predecessors. ZEROnewweightfiles,
+corpus scoring or qualityresults;all prior selected/fresh/current evidence protected.
+ModelproofpeakRSS3186769920B/MPS2283585536B;next realresume must respect4GiB/6GiB.
+Next own native-data/RAW-H200/per-parameter exposure/routecounter/EMA/RNG/sampler
+transport and complete real4update repeat/serialized2+2 proof,then workers/pilots.
+See TOKENIZER_MOE_CURRENT_PREPARATION.md and post-prefix-boundary-001/evidence-review002.md.
