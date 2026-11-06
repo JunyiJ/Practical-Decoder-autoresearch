@@ -1538,3 +1538,24 @@ Follow actual processes/guards/STOP/accepted anchors, not this launch snapshot.
 No quality result/adoption yet; keep incumbent and all current panel weights.
 Never rerun closed preparation, an attempted slot, old audit or retired payload.
 After study closure continue evidence-grounded model improvement as authorized.
+
+
+## Closed dropout panel; tokenizer-capacity structural preparation
+
+
+The input-feature-dropout panel is CLOSED_NOT_ADOPTED: all three fresh seeds
+worsened, mean candidate-minus-control CE +.014701832892. All12 endpoints and
+independent review passed execution checks; retain incumbent/dropout0. The terminal
+STOP closes all original commands. See [full results](TOKENIZER_EMBEDDING_INPUT_DROPOUT_RESULTS.md).
+
+Input spectra were close to a frequency-matched Gaussian null; exact-initial-input
+counterfactuals do not establish a low-rank or frozen-input gain. A separate8K GPT2
+merge-prefix component has6.96M parameters but17.8%more tokens and less raw context.
+Counts and cost are not quality. The original v1 MPS50257-row guard failure remains
+immutable; explicit model_v2 supplies its own8192-row reduction. Native/8K codec,
+common-byte metric, CPU/MPS equations/cache, real data/sampler and exact real
+repeat/serialized resume passed,987 bindings preserving972 original sources.
+Next: generated-worker/common111475byte CPU/MPS parent acceptance, real resource
+pilots, finite fair tuning/fresh design and complete retained-output budget.
+No new scientific seed/quality panel/adoption exists. See [mechanism, contrary
+results and papers](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review.md).

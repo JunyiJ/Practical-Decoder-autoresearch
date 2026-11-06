@@ -1312,3 +1312,19 @@ Follow actual processes/guards/STOP/accepted anchors, not this launch snapshot.
 No quality result/adoption yet; keep incumbent and all current panel weights.
 Never rerun closed preparation, an attempted slot, old audit or retired payload.
 After study closure continue evidence-grounded model improvement as authorized.
+
+
+## Closed dropout panel; tokenizer-capacity structural preparation
+
+
+The input-feature-dropout panel is CLOSED_NOT_ADOPTED: all three fresh seeds
+worsened, mean candidate-minus-control CE +.014701832892. All12 endpoints and
+independent review passed execution checks; retain incumbent/dropout0. The terminal
+STOP closes all original commands. See [full results](TOKENIZER_EMBEDDING_INPUT_DROPOUT_RESULTS.md).
+
+The tokenizer-capacity structural component preserves incumbent attention,
+context128 and196608-byte/item cache. Native/8K CPU/MPS equations, cache/reset,
+causality, data and real serialized resume checks passed. Common-byte evaluation
+must explicitly acknowledge different raw context per token. No attention change
+or quality result follows. Next is independent real worker acceptance, then
+resource/design/full-budget gates; see [boundary evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review.md).

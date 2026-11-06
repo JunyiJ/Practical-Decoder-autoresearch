@@ -1728,3 +1728,14 @@ all36recent model hashes. Total exact allocation reclaimed by this request is
 95,481,438,208B. This is not the observed free-space delta. No app/worker was stopped,
 no access bypass and no source/result/config/log was deleted. The full scientific
 capacity blocker is resolved; model improvement resumes under its original gates.
+
+
+Input-dropout quality001 is CLOSED_NOT_ADOPTED. Preserve16selected/fresh RAW/H200
+payloads4,474,027,344B and all original metadata/source/log/config/results/STOPs.
+Its exact quality001-loser-retirement001 removed8losing-screen tensors,
+2,237,013,672logical/2,282,962,944allocatedB after immutable LRselection,47,964
+survivors unchanged. Resolve missing losers via the later manifest;never restore
+or rerun them. Closure/mirror verify all original endpoints and copy no weights.
+New capacity/counterfactual diagnostics load originals read-only and write no
+weights. The prefix v1/v2component/data proofs also write no numerical payloads;
+no new retirement eligibility or cleanup requirement follows from them.

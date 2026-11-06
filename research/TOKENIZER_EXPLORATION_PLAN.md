@@ -241,3 +241,23 @@ retirement credits. Unchanged exhausted blocker:one silent hourly wake check,
 no repeated broad audits/closed probes. New eligible evidence triggers recovery.
 See [preparation](TOKENIZER_EMBEDDING_INPUT_DROPOUT_PREPARATION.md) and
 [boundary evidence](tokenizer-evidence/generalization-boundary-001/evidence-review.md).
+
+
+## Closed dropout panel; tokenizer-capacity structural preparation
+
+
+The input-feature-dropout panel is CLOSED_NOT_ADOPTED: all three fresh seeds
+worsened, mean candidate-minus-control CE +.014701832892. All12 endpoints and
+independent review passed execution checks; retain incumbent/dropout0. The terminal
+STOP closes all original commands. See [full results](TOKENIZER_EMBEDDING_INPUT_DROPOUT_RESULTS.md).
+
+Vocabulary-capacity is the next evidence-grounded structural preparation question:
+10653observed native IDs and vocabulary-dominated parameters motivate testing its
+compression/context/quality tradeoff. An8K lossless merge-prefix component is a
+single feasibility anchor, not an optimum selected by intrinsic metrics. Codec,
+common-byte metric, CPU/MPS model/data and exact real repeat/resume proofs passed;
+worker/resource/design/full-budget gates remain. No next scientific seed or panel
+is frozen. Preparation is not numerical quality exploration, and70/20/10 remains
+PROPOSED. Do not use CE/token across codecs, old scores as a new baseline, random
+quota runs or automatic dropout/rank/horizon grids. Read [local and primary-paper
+evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review.md).

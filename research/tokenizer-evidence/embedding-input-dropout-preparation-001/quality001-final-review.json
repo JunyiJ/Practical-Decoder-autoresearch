@@ -1,0 +1,87 @@
+{
+  "adopted": false,
+  "confirmation": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-confirmation-plan.json",
+    "sha256": "54ae1a6189570e8ca6177997538bc5f17cce9cbde8c1ffec4200dc0b44282424"
+  },
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-freeze.json",
+    "sha256": "d8bea1ca11ab6bb4963421100513aa0e39fd967e2af4198367c5d432b9bd9ac4"
+  },
+  "fresh_acceptances": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/06/accepted.json",
+      "sha256": "9c8adf07f15315870ad95983b3f39c3b090dd5bb1c08613545db477ee89f44c7"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/07/accepted.json",
+      "sha256": "90b25fbe536ce9862dc326cc4a5d42c20184297062ebfeeb82ef1fe9d13ba383"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/08/accepted.json",
+      "sha256": "7575a63f7dd2fb76c570c5cb37b32c803955c4752b102efeb3b4796e1703c5f6"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/09/accepted.json",
+      "sha256": "56afce50acdb4948b0b7f66fd154d6c37045e2588f768d5232a1efd44c22352a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/10/accepted.json",
+      "sha256": "4904961dda6a81debf1cf6e359156b50c487b2eb50baa4d6b1cc5b428033740c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/11/accepted.json",
+      "sha256": "e40f48128cf986a3ce96aa783f4360ba81ba3c42c50e9e9fc1812e29d256a851"
+    }
+  ],
+  "independent_bootstrap_agreement_atol": 1e-12,
+  "inference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-fresh-inference.json",
+    "sha256": "bfddc9e81c0117c3a9d9e6fe95b2ff844fdf972c9a60481bfd3aed902936d34a"
+  },
+  "next_action": "Separate evidence/adoption review if all strict gates pass; otherwise retain incumbent. Then choose next evidence-qualified improvement using actual curves/stability/cost and primary literature.",
+  "selection": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-selection.json",
+    "sha256": "f6d9672666f0a64cec076a5ea3e9ab0e487481e50b2ca0e4f0a11a13d7f044ba"
+  },
+  "statistics": {
+    "adoption_requires_separate_review": true,
+    "all_strict_gates_pass": false,
+    "bootstrap_seed": 200090004,
+    "candidate": "input_feature_p10",
+    "contrasts": {
+      "input_zero": {
+        "conditional_text_upper_bounds": [
+          {
+            "block_tokens": 2048,
+            "upper": 0.017432391492650995
+          },
+          {
+            "block_tokens": 4096,
+            "upper": 0.0178594678563678
+          },
+          {
+            "block_tokens": 8192,
+            "upper": 0.01806296393750365
+          }
+        ],
+        "deltas": [
+          0.012384021742692042,
+          0.016580617332885517,
+          0.015140859599055645
+        ],
+        "gates": {
+          "all_simultaneous_bounds_negative": false,
+          "every_seed_negative": false,
+          "mean_below_minus_point02": false
+        },
+        "mean_delta": 0.0147018328915444,
+        "passes": false
+      }
+    },
+    "draws": 2000,
+    "interpretation": "Conditional reused-text intervals given three trained seeds; not population-seed uncertainty or holdout confidence. No partial panel,rescue or cost-only adoption.",
+    "upper_quantile": 0.9833333333333333
+  },
+  "status": "complete_fresh_panel_reviewed"
+}

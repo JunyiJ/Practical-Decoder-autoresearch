@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/tokenizer-capacity-boundary-001/component001.py", line 61, in <module>
+    original.train();small.train();expected,loss=oracle(original,x,y,8192);actual,ce=small(x,y);torch.testing.assert_close(actual,expected,rtol=3e-5,atol=3e-5);torch.testing.assert_close(ce,loss,rtol=1e-6,atol=1e-6);loss.backward();ce.backward()
+                                                                                     ~~~~~^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gpt2_prefix_model_v1/model.py", line 68, in forward
+    x=self.transformer.wte(idx)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/model.py", line 40, in forward
+    if self.weight.device.type=='mps':return _Grouped.apply(self.weight,indices)
+                                             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/model.py", line 17, in forward
+    require(weight.dtype==torch.float32 and weight.ndim==2 and weight.shape[0]==50257
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        and weight.shape[1] in (192,256),'Explicit FP32 allocation embedding required')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/contract.py", line 15, in require
+    if not ok:raise ValueError(message)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Explicit FP32 allocation embedding required

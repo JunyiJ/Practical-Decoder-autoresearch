@@ -1,0 +1,67 @@
+{
+  "closure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-closure001.json",
+    "sha256": "ff36e47abbe80ae785008916d9b4ed3fd3e179a30d77e05ea12d91af0d074831"
+  },
+  "covariances": [
+    "uniform_all_vocabulary",
+    "uniform_train_observed",
+    "train_token_frequency"
+  ],
+  "environment": {
+    "flags": {
+      "MKL_NUM_THREADS": "4",
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+      "PYTORCH_MPS_FAST_MATH": "0"
+    },
+    "threads": 4,
+    "torch_version": "2.14.1"
+  },
+  "future_controls_required": "Native incumbent plus full-rank factorized control before any low-rank candidate;check changed initialization,projection optimizer membership/width rates and equal tuning. Factorization is distinct from tying input/output tables. No rank or numerical panel admitted here.",
+  "matrices": [
+    "transformer.wte.weight",
+    "lm_head.weight"
+  ],
+  "models": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/06/worker.json",
+      "sha256": "d96a3b2c526de302ded65505e3142b7360e036d4878cdd5bcc244ebd149cf5ed"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/07/worker.json",
+      "sha256": "a57285dd6e29b73bdc32b998385239aed510a7d2d4c605a865a3bb437fc159a5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/08/worker.json",
+      "sha256": "a89a694e583206ddc2c1722ae5892c49b4a823a0df00b553239a3b0984cbbab9"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/09/worker.json",
+      "sha256": "711081aaf8420aa706230212a95ef2a83b759adbd6b92dabd228c2db31ca5d3c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/10/worker.json",
+      "sha256": "3107731fda148fbfd9724abedff3e7feb0468f404797d4f3cd98a0f8ba8624fc"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/11/worker.json",
+      "sha256": "f069c3f59312e1ce1b0d106afb60f9aab2f406bbddb433313c10f89fee41c572"
+    }
+  ],
+  "null": "IIDGaussian on observed train IDs with same global matrix standard deviation;fixtureCPUgenerator713416 reset for every model. Same frequency weights expose concentration caused by Zipf counts alone.",
+  "prediction": "If train-weighted input covariance concentrates but no more than the same-frequency Gaussian,that does not establish learned low-rank structure. Uniform observed covariance and output matrix provide contrary controls. Neither concentration nor parameter savings alone admits a quality campaign.",
+  "ranks": [
+    64,
+    128,
+    192,
+    256
+  ],
+  "scope": "All three fresh control/candidate H200 pairs;train-only token census/weight geometry;existing immutable sampled curves. No quality seed,model construction,forward/scoring,holdout,training,weight output or source modification.",
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/input-capacity-boundary-001/analysis001.py",
+    "sha256": "85b74873ecf37c59b1c72b30e2ea20c68c90a2131b1262f1ac08b646f8a889e0"
+  },
+  "statistical_scope": "Descriptive census of these six trained checkpoints. No intervals,rank/arm selection or pooled quality inference. Train-stream frequency is not exact random-window sampler exposure."
+}

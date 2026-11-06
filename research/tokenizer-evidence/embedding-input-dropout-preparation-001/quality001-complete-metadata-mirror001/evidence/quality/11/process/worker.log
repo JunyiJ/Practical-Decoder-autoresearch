@@ -1,0 +1,9 @@
+/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/embedding_input_dropout_worker_v1/training.py:29: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  row=dict(step=i+1,targets=(i+1)*1024,train_ce=float(loss),validation_ce=sum(scores)/len(scores),lr_multiplier=multiplier,update_seconds=seconds)
+{"step": 1, "targets": 1024, "train_ce": 10.866776466369629, "validation_ce": 10.834339714050293, "lr_multiplier": 1.0, "update_seconds": 0.4618695409735665}
+{"step": 301, "targets": 308224, "train_ce": 5.507197380065918, "validation_ce": 5.471566820144654, "lr_multiplier": 1.0, "update_seconds": 0.2263170409714803}
+{"step": 601, "targets": 615424, "train_ce": 4.525578498840332, "validation_ce": 4.851223802566528, "lr_multiplier": 1.0, "update_seconds": 0.22369641601108015}
+{"step": 901, "targets": 922624, "train_ce": 3.297337055206299, "validation_ce": 4.771165752410889, "lr_multiplier": 0.7744360902255639, "update_seconds": 0.23847695800941437}
+{"step": 1200, "targets": 1228800, "train_ce": 3.9138741493225098, "validation_ce": 4.70281081199646, "lr_multiplier": 0.1, "update_seconds": 0.24246512504760176}
+Fresh bounded input-dropout worker with own-policy scoring completed

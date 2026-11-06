@@ -1,0 +1,1546 @@
+{
+  "caution": "Mask-on sampled trainCE and mask-off validationCE are not a same-distribution generalization gap. Covariance/reconstruction and frequency correlations do not establish a quality benefit from training with a bottleneck. Existing table-sharing negative/control changes and primary-paper applicability gaps must be reviewed before admission.",
+  "census_is_not_sampler_exposure": true,
+  "existing_curves": {
+    "input_feature_p10": [
+      {
+        "points": [
+          {
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.872901916503906,
+            "validation_ce": 10.830329036712646
+          },
+          {
+            "step": 301,
+            "targets": 308224,
+            "train_ce": 4.972163677215576,
+            "validation_ce": 5.445212888717651
+          },
+          {
+            "step": 601,
+            "targets": 615424,
+            "train_ce": 4.354978561401367,
+            "validation_ce": 4.932047986984253
+          },
+          {
+            "step": 901,
+            "targets": 922624,
+            "train_ce": 3.362834930419922,
+            "validation_ce": 4.775688409805298
+          },
+          {
+            "step": 1200,
+            "targets": 1228800,
+            "train_ce": 3.34761905670166,
+            "validation_ce": 4.641314125061035
+          }
+        ],
+        "seed": 200090011
+      },
+      {
+        "points": [
+          {
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.866056442260742,
+            "validation_ce": 10.822339534759521
+          },
+          {
+            "step": 301,
+            "targets": 308224,
+            "train_ce": 5.090619087219238,
+            "validation_ce": 5.361571359634399
+          },
+          {
+            "step": 601,
+            "targets": 615424,
+            "train_ce": 4.291598320007324,
+            "validation_ce": 4.833302974700928
+          },
+          {
+            "step": 901,
+            "targets": 922624,
+            "train_ce": 4.056563377380371,
+            "validation_ce": 4.7820182800292965
+          },
+          {
+            "step": 1200,
+            "targets": 1228800,
+            "train_ce": 3.4527981281280518,
+            "validation_ce": 4.663931465148925
+          }
+        ],
+        "seed": 200090012
+      },
+      {
+        "points": [
+          {
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.866776466369629,
+            "validation_ce": 10.834339714050293
+          },
+          {
+            "step": 301,
+            "targets": 308224,
+            "train_ce": 5.507197380065918,
+            "validation_ce": 5.471566820144654
+          },
+          {
+            "step": 601,
+            "targets": 615424,
+            "train_ce": 4.525578498840332,
+            "validation_ce": 4.851223802566528
+          },
+          {
+            "step": 901,
+            "targets": 922624,
+            "train_ce": 3.297337055206299,
+            "validation_ce": 4.771165752410889
+          },
+          {
+            "step": 1200,
+            "targets": 1228800,
+            "train_ce": 3.9138741493225098,
+            "validation_ce": 4.70281081199646
+          }
+        ],
+        "seed": 200090013
+      }
+    ],
+    "input_zero": [
+      {
+        "points": [
+          {
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.867780685424805,
+            "validation_ce": 10.830009937286377
+          },
+          {
+            "step": 301,
+            "targets": 308224,
+            "train_ce": 4.914429664611816,
+            "validation_ce": 5.403998470306396
+          },
+          {
+            "step": 601,
+            "targets": 615424,
+            "train_ce": 4.289059162139893,
+            "validation_ce": 4.910282707214355
+          },
+          {
+            "step": 901,
+            "targets": 922624,
+            "train_ce": 3.2488362789154053,
+            "validation_ce": 4.77278847694397
+          },
+          {
+            "step": 1200,
+            "targets": 1228800,
+            "train_ce": 3.197148323059082,
+            "validation_ce": 4.628432703018189
+          }
+        ],
+        "seed": 200090011
+      },
+      {
+        "points": [
+          {
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.86444091796875,
+            "validation_ce": 10.821934795379638
+          },
+          {
+            "step": 301,
+            "targets": 308224,
+            "train_ce": 5.028488636016846,
+            "validation_ce": 5.325915145874023
+          },
+          {
+            "step": 601,
+            "targets": 615424,
+            "train_ce": 4.220038414001465,
+            "validation_ce": 4.824402666091919
+          },
+          {
+            "step": 901,
+            "targets": 922624,
+            "train_ce": 3.9395408630371094,
+            "validation_ce": 4.767751979827881
+          },
+          {
+            "step": 1200,
+            "targets": 1228800,
+            "train_ce": 3.3135457038879395,
+            "validation_ce": 4.647319364547729
+          }
+        ],
+        "seed": 200090012
+      },
+      {
+        "points": [
+          {
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.865079879760742,
+            "validation_ce": 10.83401517868042
+          },
+          {
+            "step": 301,
+            "targets": 308224,
+            "train_ce": 5.444567680358887,
+            "validation_ce": 5.433278226852417
+          },
+          {
+            "step": 601,
+            "targets": 615424,
+            "train_ce": 4.448967456817627,
+            "validation_ce": 4.837707376480102
+          },
+          {
+            "step": 901,
+            "targets": 922624,
+            "train_ce": 3.20981502532959,
+            "validation_ce": 4.761936283111572
+          },
+          {
+            "step": 1200,
+            "targets": 1228800,
+            "train_ce": 3.7865428924560547,
+            "validation_ce": 4.691206741333008
+          }
+        ],
+        "seed": 200090013
+      }
+    ]
+  },
+  "existing_stability": {
+    "input_feature_p10": {
+      "clipped_updates": [
+        15,
+        20,
+        19
+      ],
+      "mean_last_saved_interval_sampled_validation_change": -0.10693868001302113,
+      "training_seconds": [
+        273.1978136670077,
+        274.16344499995466,
+        279.4347838750109
+      ]
+    },
+    "input_zero": {
+      "clipped_updates": [
+        20,
+        21,
+        21
+      ],
+      "mean_last_saved_interval_sampled_validation_change": -0.11183931032816563,
+      "training_seconds": [
+        274.88193033309653,
+        272.6073991250014,
+        273.8901475419989
+      ]
+    }
+  },
+  "fixture_seed": 713416,
+  "holdout_encoded_or_scored": false,
+  "no_model_construction_or_scoring": true,
+  "no_new_scientific_seed": true,
+  "no_training": true,
+  "original_data": {
+    "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+    "evaluation": "all validation targets except first, disjoint context128 windows, no padding; tail retained",
+    "holdout_scored": false,
+    "holdout_tokenized": false,
+    "output_bias_prior": {
+      "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "prior_sha256": "470924d478e490521ed589c1ec38131ffad17d564990bc18dbb213e1fc04d792",
+      "tokenizer": {
+        "implementation": "tiktoken",
+        "name": "gpt2",
+        "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+        "special_token_policy": "ordinary_text",
+        "special_tokens": {
+          "<|endoftext|>": 50256
+        },
+        "split_unit": "raw_text",
+        "version": "0.14.0",
+        "vocab_size": 50257,
+        "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+      },
+      "train_fraction": 0.8,
+      "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+      "val_fraction": 0.1,
+      "version": 2
+    },
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/data/raw/shakespeare.txt",
+    "raw_characters": 1115394,
+    "raw_train_end": 892315,
+    "raw_val_end": 1003854,
+    "statistical_block_target_counts": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      2048,
+      1510
+    ],
+    "tokenizer": {
+      "implementation": "tiktoken",
+      "name": "gpt2",
+      "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+      "special_token_policy": "ordinary_text",
+      "special_tokens": {
+        "<|endoftext|>": 50256
+      },
+      "split_unit": "raw_text",
+      "version": "0.14.0",
+      "vocab_size": 50257,
+      "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+    },
+    "train_fraction": 0.8,
+    "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+    "train_tokens": 267688,
+    "val_fraction": 0.1,
+    "validation_ids_sha256": "34f3f3178331aa7792460a4258c2769e47db74a1824ebdac86b348251d786818",
+    "validation_target_bytes": 111536,
+    "validation_target_ids_sha256": "dad00eaab7c2076736432b83eb9f1cc404c87aa5e4820b5f7abebf384c7fcdaf",
+    "validation_targets": 34278,
+    "validation_tokens": 34279,
+    "validation_window_target_counts": [
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      102
+    ]
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/input-capacity-boundary-001/plan.json",
+    "sha256": "873ecc3276bcfd831e5231c115bfae792c33b02413b20ee9e8506652ead9d00d"
+  },
+  "prospective_input_only_factorization_arithmetic": [
+    {
+      "extra_lookup_projection_MACs_per_token": 16384,
+      "input_parameters": 3232832,
+      "rank": 64,
+      "total_parameters": 18859456,
+      "untied_output_unchanged_parameters": 12865792
+    },
+    {
+      "extra_lookup_projection_MACs_per_token": 32768,
+      "input_parameters": 6465664,
+      "rank": 128,
+      "total_parameters": 22092288,
+      "untied_output_unchanged_parameters": 12865792
+    },
+    {
+      "extra_lookup_projection_MACs_per_token": 49152,
+      "input_parameters": 9698496,
+      "rank": 192,
+      "total_parameters": 25325120,
+      "untied_output_unchanged_parameters": 12865792
+    },
+    {
+      "extra_lookup_projection_MACs_per_token": 65536,
+      "input_parameters": 12931328,
+      "rank": 256,
+      "total_parameters": 28557952,
+      "untied_output_unchanged_parameters": 12865792
+    }
+  ],
+  "reports": [
+    {
+      "arm": "input_zero",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/06/checkpoints/h200.pt",
+        "sha256": "4575e226a11e78e226cc2fa1849165730c6f40d674fabe148b40177b00cc518f",
+        "size": 114076355
+      },
+      "matrices": {
+        "lm_head.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167996,
+              "192": 0.9235091193091547,
+              "256": 1.0,
+              "64": 0.6339158030971179
+            },
+            "effective_rank_entropy": 132.62879103860817,
+            "participation_rank": 49.449964611050994,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.783920853440266
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.9075149295992199,
+              "192": 0.9654050435830066,
+              "256": 1.0,
+              "64": 0.8004518313889225
+            },
+            "effective_rank_entropy": 55.67430316017089,
+            "participation_rank": 13.923379072007545,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.23013383975
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.6375190624901318,
+              "192": 0.8264761125061058,
+              "256": 1.0,
+              "64": 0.4338367777770828
+            },
+            "effective_rank_entropy": 144.24708086732883,
+            "participation_rank": 26.668284847932167,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 1.6444177734768912
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643421,
+              "192": 0.7988277679785156,
+              "256": 1.0,
+              "64": 0.3018513928763558
+            },
+            "effective_rank_entropy": 252.93599207205978,
+            "participation_rank": 249.9796470556573,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.970354379231823
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.7051209597213631,
+              "192": 0.8676943353889732,
+              "256": 1.0,
+              "64": 0.5018735104828852
+            },
+            "effective_rank_entropy": 165.13441937275752,
+            "participation_rank": 55.30094228984628,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 2.5397786757524843
+          }
+        },
+        "transformer.wte.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167999,
+              "192": 0.9235091193091549,
+              "256": 1.0,
+              "64": 0.6339158030971183
+            },
+            "effective_rank_entropy": 132.62879103860817,
+            "participation_rank": 49.449964611050945,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 218.68028731960254
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.8093223421302906,
+              "192": 0.923297552471295,
+              "256": 1.0,
+              "64": 0.6341367945793224
+            },
+            "effective_rank_entropy": 131.2752222750601,
+            "participation_rank": 46.17664369024954,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 217.20094033663463
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.5302110295671967,
+              "192": 0.7727996074223603,
+              "256": 1.0,
+              "64": 0.27352185626418013
+            },
+            "effective_rank_entropy": 255.35024898477138,
+            "participation_rank": 254.70543937015492,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.07393234086973
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643421,
+              "192": 0.7988277679785156,
+              "256": 1.0,
+              "64": 0.3018513928763559
+            },
+            "effective_rank_entropy": 252.93599207205955,
+            "participation_rank": 249.97964705565735,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.20244691109878
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657321635977934,
+              "192": 0.7987937817311555,
+              "256": 1.0,
+              "64": 0.301542444378573
+            },
+            "effective_rank_entropy": 252.94821430128474,
+            "participation_rank": 250.00749774060495,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 226.09203175111185
+          }
+        }
+      },
+      "seed": 200090011,
+      "slot": 6
+    },
+    {
+      "arm": "input_feature_p10",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/07/checkpoints/h200.pt",
+        "sha256": "715bb293f5d4295c55b9e70d641ad7fcd90b8ca2c4e7daa29a0b1171f1a9b875",
+        "size": 114076355
+      },
+      "matrices": {
+        "lm_head.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167997,
+              "192": 0.9235091193091546,
+              "256": 1.0,
+              "64": 0.6339158030971183
+            },
+            "effective_rank_entropy": 132.62879103860806,
+            "participation_rank": 49.44996461105097,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.7596683661493175
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.9081959471958415,
+              "192": 0.9656268483152509,
+              "256": 1.0,
+              "64": 0.8019618937114806
+            },
+            "effective_rank_entropy": 54.4110431056387,
+            "participation_rank": 13.478167593558629,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.11918289270172
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.6382237985153103,
+              "192": 0.8267732601443193,
+              "256": 1.0,
+              "64": 0.4351481880179165
+            },
+            "effective_rank_entropy": 142.7116892737552,
+            "participation_rank": 25.987088085087663,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 1.6335702164132435
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643422,
+              "192": 0.7988277679785158,
+              "256": 1.0,
+              "64": 0.3018513928763559
+            },
+            "effective_rank_entropy": 252.93599207205978,
+            "participation_rank": 249.97964705565724,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.9451567515730925
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.7057608298036417,
+              "192": 0.8676284226965897,
+              "256": 1.0,
+              "64": 0.5045341869756526
+            },
+            "effective_rank_entropy": 163.36784304415437,
+            "participation_rank": 53.69400744930804,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 2.475682316916569
+          }
+        },
+        "transformer.wte.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167996,
+              "192": 0.9235091193091548,
+              "256": 1.0,
+              "64": 0.633915803097118
+            },
+            "effective_rank_entropy": 132.62879103860806,
+            "participation_rank": 49.44996461105098,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 218.71131428244502
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.8077575560786616,
+              "192": 0.9226122310485112,
+              "256": 1.0,
+              "64": 0.6314859857963488
+            },
+            "effective_rank_entropy": 132.94197295526553,
+            "participation_rank": 47.606173117361394,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 215.43319185985354
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.5302034136241627,
+              "192": 0.7727950578191211,
+              "256": 1.0,
+              "64": 0.2735172854007303
+            },
+            "effective_rank_entropy": 255.3504863835924,
+            "participation_rank": 254.70590774746864,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.1061387415152
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643422,
+              "192": 0.7988277679785157,
+              "256": 1.0,
+              "64": 0.30185139287635593
+            },
+            "effective_rank_entropy": 252.93599207205955,
+            "participation_rank": 249.97964705565735,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.23468302146998
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.5656721409966635,
+              "192": 0.7987527286528612,
+              "256": 1.0,
+              "64": 0.3014810584105772
+            },
+            "effective_rank_entropy": 252.9541644691644,
+            "participation_rank": 250.018945496845,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 226.24398827638794
+          }
+        }
+      },
+      "seed": 200090011,
+      "slot": 7
+    },
+    {
+      "arm": "input_feature_p10",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/08/checkpoints/h200.pt",
+        "sha256": "49261c6ff2af0dc07a84a5667800c8547c45dfd3a2ff39f20146a9de698953d2",
+        "size": 114076355
+      },
+      "matrices": {
+        "lm_head.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167996,
+              "192": 0.9235091193091548,
+              "256": 1.0,
+              "64": 0.633915803097118
+            },
+            "effective_rank_entropy": 132.62879103860817,
+            "participation_rank": 49.449964611051016,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.754393494723137
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.9083460788076355,
+              "192": 0.9658925694709132,
+              "256": 1.0,
+              "64": 0.8020841216855089
+            },
+            "effective_rank_entropy": 54.75021514238219,
+            "participation_rank": 13.777526661397163,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.123523071450895
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.638787728975974,
+              "192": 0.8270458863092972,
+              "256": 1.0,
+              "64": 0.4356903311690357
+            },
+            "effective_rank_entropy": 142.2081729676862,
+            "participation_rank": 25.783668129836187,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 1.6321677604994456
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.565711954964342,
+              "192": 0.7988277679785156,
+              "256": 1.0,
+              "64": 0.3018513928763559
+            },
+            "effective_rank_entropy": 252.93599207205978,
+            "participation_rank": 249.9796470556573,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.939676313853445
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.7060809400101082,
+              "192": 0.8677306099092204,
+              "256": 1.0,
+              "64": 0.5051725537486331
+            },
+            "effective_rank_entropy": 162.5915434036543,
+            "participation_rank": 52.902416570494836,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 2.4718662871024684
+          }
+        },
+        "transformer.wte.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167997,
+              "192": 0.9235091193091547,
+              "256": 1.0,
+              "64": 0.6339158030971179
+            },
+            "effective_rank_entropy": 132.62879103860817,
+            "participation_rank": 49.44996461105102,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 218.8067801701044
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.805624154882108,
+              "192": 0.9211713458637348,
+              "256": 1.0,
+              "64": 0.6270549700677935
+            },
+            "effective_rank_entropy": 137.79128111591749,
+            "participation_rank": 55.012818890215236,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 211.8441885387437
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.5303462699048828,
+              "192": 0.7728470459071511,
+              "256": 1.0,
+              "64": 0.2736329112763905
+            },
+            "effective_rank_entropy": 255.3454610102834,
+            "participation_rank": 254.6956271711409,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.2057412592644
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643422,
+              "192": 0.7988277679785157,
+              "256": 1.0,
+              "64": 0.3018513928763559
+            },
+            "effective_rank_entropy": 252.93599207205955,
+            "participation_rank": 249.97964705565735,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.3338692971904
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.5656793416237712,
+              "192": 0.7986101127501598,
+              "256": 1.0,
+              "64": 0.3018735893538992
+            },
+            "effective_rank_entropy": 252.94422197853868,
+            "participation_rank": 249.9940213480586,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 226.16246941064867
+          }
+        }
+      },
+      "seed": 200090012,
+      "slot": 8
+    },
+    {
+      "arm": "input_zero",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/09/checkpoints/h200.pt",
+        "sha256": "c36631d1cedfc0661501040935d209b56de23d4541133a59b56bc78d1430b094",
+        "size": 114076355
+      },
+      "matrices": {
+        "lm_head.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167995,
+              "192": 0.9235091193091544,
+              "256": 1.0,
+              "64": 0.6339158030971179
+            },
+            "effective_rank_entropy": 132.62879103860806,
+            "participation_rank": 49.44996461105102,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.775178929929042
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.9076515256355676,
+              "192": 0.9656538303366429,
+              "256": 1.0,
+              "64": 0.8005425647883465
+            },
+            "effective_rank_entropy": 55.87314783346926,
+            "participation_rank": 14.177416535103573,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.231068415558214
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.6381469616193808,
+              "192": 0.8267494680367047,
+              "256": 1.0,
+              "64": 0.43440923451387436
+            },
+            "effective_rank_entropy": 143.72658557149578,
+            "participation_rank": 26.44999486424675,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 1.6427594254853646
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.565711954964342,
+              "192": 0.7988277679785156,
+              "256": 1.0,
+              "64": 0.3018513928763558
+            },
+            "effective_rank_entropy": 252.93599207205955,
+            "participation_rank": 249.97964705565735,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.9612717754141435
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.7052270923560761,
+              "192": 0.8677160234300079,
+              "256": 1.0,
+              "64": 0.5025494905920181
+            },
+            "effective_rank_entropy": 164.38967516977738,
+            "participation_rank": 54.472587279381514,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 2.5346557493377255
+          }
+        },
+        "transformer.wte.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167999,
+              "192": 0.9235091193091547,
+              "256": 1.0,
+              "64": 0.6339158030971181
+            },
+            "effective_rank_entropy": 132.62879103860794,
+            "participation_rank": 49.44996461105099,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 218.7759038710423
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.8072739261487548,
+              "192": 0.9218842111304367,
+              "256": 1.0,
+              "64": 0.6298108298761715
+            },
+            "effective_rank_entropy": 136.0713415537385,
+            "participation_rank": 53.31656108976823,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 213.6521925600145
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.5303559240722889,
+              "192": 0.7728539386328932,
+              "256": 1.0,
+              "64": 0.27363917863123344
+            },
+            "effective_rank_entropy": 255.34507673819024,
+            "participation_rank": 254.69486546896377,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.17367563385363
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643419,
+              "192": 0.7988277679785156,
+              "256": 1.0,
+              "64": 0.3018513928763558
+            },
+            "effective_rank_entropy": 252.93599207205955,
+            "participation_rank": 249.97964705565735,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.30178972209737
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657627520397399,
+              "192": 0.7986698793722867,
+              "256": 1.0,
+              "64": 0.3019359115238
+            },
+            "effective_rank_entropy": 252.93664463512425,
+            "participation_rank": 249.97932282283352,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 226.0112957725517
+          }
+        }
+      },
+      "seed": 200090012,
+      "slot": 9
+    },
+    {
+      "arm": "input_zero",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/10/checkpoints/h200.pt",
+        "sha256": "4cfd776eab923df3c9bacc5c0def5a096aaf89e53f95a30a1dc6965f37c02f4c",
+        "size": 114076355
+      },
+      "matrices": {
+        "lm_head.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167997,
+              "192": 0.9235091193091547,
+              "256": 1.0,
+              "64": 0.633915803097118
+            },
+            "effective_rank_entropy": 132.62879103860817,
+            "participation_rank": 49.44996461105102,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.808622078807633
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.9081458050678238,
+              "192": 0.9654960320069739,
+              "256": 1.0,
+              "64": 0.8008078436024205
+            },
+            "effective_rank_entropy": 55.41649206666802,
+            "participation_rank": 13.96123370346028,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.261890025110382
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.6384069253768442,
+              "192": 0.8268267992155032,
+              "256": 1.0,
+              "64": 0.43524417673347215
+            },
+            "effective_rank_entropy": 143.56415476723237,
+            "participation_rank": 26.41589602732366,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 1.6482331360465416
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643421,
+              "192": 0.7988277679785156,
+              "256": 1.0,
+              "64": 0.3018513928763558
+            },
+            "effective_rank_entropy": 252.93599207205978,
+            "participation_rank": 249.97964705565735,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.996018232677224
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.7058092106220775,
+              "192": 0.8678656552001188,
+              "256": 1.0,
+              "64": 0.5020990041680291
+            },
+            "effective_rank_entropy": 165.43197218386717,
+            "participation_rank": 56.04757392121384,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 2.5514144964159304
+          }
+        },
+        "transformer.wte.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167996,
+              "192": 0.9235091193091547,
+              "256": 1.0,
+              "64": 0.633915803097118
+            },
+            "effective_rank_entropy": 132.62879103860817,
+            "participation_rank": 49.44996461105098,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 218.63470546500167
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.8112095227834835,
+              "192": 0.9238639369887482,
+              "256": 1.0,
+              "64": 0.6355493179487965
+            },
+            "effective_rank_entropy": 130.68259936054486,
+            "participation_rank": 47.1282429095009,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 219.84457858894413
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.5301980304881387,
+              "192": 0.7728374972650852,
+              "256": 1.0,
+              "64": 0.27341365765696457
+            },
+            "effective_rank_entropy": 255.35209948577767,
+            "participation_rank": 254.70927098938589,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.02724590693276
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643421,
+              "192": 0.7988277679785158,
+              "256": 1.0,
+              "64": 0.3018513928763559
+            },
+            "effective_rank_entropy": 252.93599207205997,
+            "participation_rank": 249.97964705565724,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.15508869227153
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.5660394676318887,
+              "192": 0.7987405281871159,
+              "256": 1.0,
+              "64": 0.3025344427002124
+            },
+            "effective_rank_entropy": 252.90115687347236,
+            "participation_rank": 249.9032450454737,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 226.2695101053881
+          }
+        }
+      },
+      "seed": 200090013,
+      "slot": 10
+    },
+    {
+      "arm": "input_feature_p10",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-quality-v1-001/evidence/quality/11/checkpoints/h200.pt",
+        "sha256": "98c2bc82292cb665310eb84ad19ad1eb8f4fb6b9040f46cd7dce36901a29db4f",
+        "size": 114076355
+      },
+      "matrices": {
+        "lm_head.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167999,
+              "192": 0.9235091193091548,
+              "256": 1.0,
+              "64": 0.6339158030971181
+            },
+            "effective_rank_entropy": 132.62879103860806,
+            "participation_rank": 49.44996461105098,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.783686532930012
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.9087592634528101,
+              "192": 0.9657075496978014,
+              "256": 1.0,
+              "64": 0.8021597458103774
+            },
+            "effective_rank_entropy": 54.30588875062686,
+            "participation_rank": 13.55981222593394,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.147817205641184
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.6389812112152529,
+              "192": 0.8270721210544159,
+              "256": 1.0,
+              "64": 0.4363827105149358
+            },
+            "effective_rank_entropy": 142.06013663330577,
+            "participation_rank": 25.753283719542488,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 1.637141435377793
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643421,
+              "192": 0.7988277679785157,
+              "256": 1.0,
+              "64": 0.3018513928763559
+            },
+            "effective_rank_entropy": 252.93599207205997,
+            "participation_rank": 249.97964705565724,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 4.970110927048988
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.7065155820481036,
+              "192": 0.8678585430412427,
+              "256": 1.0,
+              "64": 0.5045423166586398
+            },
+            "effective_rank_entropy": 163.62126039554462,
+            "participation_rank": 54.365899048774615,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 2.4882928422707917
+          }
+        },
+        "transformer.wte.weight": {
+          "same_frequency_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.8101574972167997,
+              "192": 0.9235091193091548,
+              "256": 1.0,
+              "64": 0.6339158030971181
+            },
+            "effective_rank_entropy": 132.62879103860817,
+            "participation_rank": 49.44996461105099,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 218.6692553665726
+          },
+          "train_token_frequency": {
+            "best_rank_covariance_energy": {
+              "128": 0.8095719301905466,
+              "192": 0.9231559110221026,
+              "256": 1.0,
+              "64": 0.6327659733292891
+            },
+            "effective_rank_entropy": 132.4614775140264,
+            "participation_rank": 48.715944419599374,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 217.9685381408383
+          },
+          "uniform_all_vocabulary": {
+            "best_rank_covariance_energy": {
+              "128": 0.5301905752274235,
+              "192": 0.7728270333341284,
+              "256": 1.0,
+              "64": 0.2734066695770723
+            },
+            "effective_rank_entropy": 255.3525333041197,
+            "participation_rank": 254.71012188399285,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.06311413061917
+          },
+          "uniform_observed_gaussian": {
+            "best_rank_covariance_energy": {
+              "128": 0.5657119549643421,
+              "192": 0.7988277679785157,
+              "256": 1.0,
+              "64": 0.3018513928763558
+            },
+            "effective_rank_entropy": 252.93599207205978,
+            "participation_rank": 249.97964705565735,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 227.19098503333487
+          },
+          "uniform_train_observed": {
+            "best_rank_covariance_energy": {
+              "128": 0.5659452196402756,
+              "192": 0.798670658594862,
+              "256": 1.0,
+              "64": 0.3024763136562027
+            },
+            "effective_rank_entropy": 252.90882791316307,
+            "participation_rank": 249.91787391654145,
+            "tail_energy_interpretation": "Best centered squared reconstruction energy on this train-only covariance;not validation loss,model equivalence,trainability or causal regularization evidence.",
+            "trace": 226.43867461577588
+          }
+        }
+      },
+      "seed": 200090013,
+      "slot": 11
+    }
+  ],
+  "status": "completed_train_only_representation_capacity_analysis",
+  "summary": {
+    "input_feature_p10": {
+      "lm_head.weight": {
+        "same_frequency_gaussian": {
+          "mean_effective_rank": 132.62879103860809,
+          "mean_rank128_energy": 0.8101574972167997
+        },
+        "train_token_frequency": {
+          "mean_effective_rank": 54.48904899954925,
+          "mean_rank128_energy": 0.9084337631520957
+        },
+        "uniform_all_vocabulary": {
+          "mean_effective_rank": 142.3266662915824,
+          "mean_rank128_energy": 0.6386642462355124
+        },
+        "uniform_observed_gaussian": {
+          "mean_effective_rank": 252.93599207205983,
+          "mean_rank128_energy": 0.5657119549643421
+        },
+        "uniform_train_observed": {
+          "mean_effective_rank": 163.19354894778442,
+          "mean_rank128_energy": 0.7061191172872845
+        }
+      },
+      "transformer.wte.weight": {
+        "same_frequency_gaussian": {
+          "mean_effective_rank": 132.62879103860814,
+          "mean_rank128_energy": 0.8101574972167997
+        },
+        "train_token_frequency": {
+          "mean_effective_rank": 134.39824386173646,
+          "mean_rank128_energy": 0.8076512137171055
+        },
+        "uniform_all_vocabulary": {
+          "mean_effective_rank": 255.3494935659985,
+          "mean_rank128_energy": 0.530246752918823
+        },
+        "uniform_observed_gaussian": {
+          "mean_effective_rank": 252.93599207205963,
+          "mean_rank128_energy": 0.5657119549643422
+        },
+        "uniform_train_observed": {
+          "mean_effective_rank": 252.9357381202887,
+          "mean_rank128_energy": 0.5657655674202368
+        }
+      }
+    },
+    "input_zero": {
+      "lm_head.weight": {
+        "same_frequency_gaussian": {
+          "mean_effective_rank": 132.62879103860814,
+          "mean_rank128_energy": 0.8101574972167996
+        },
+        "train_token_frequency": {
+          "mean_effective_rank": 55.654647686769394,
+          "mean_rank128_energy": 0.9077707534342038
+        },
+        "uniform_all_vocabulary": {
+          "mean_effective_rank": 143.84594040201898,
+          "mean_rank128_energy": 0.6380243164954522
+        },
+        "uniform_observed_gaussian": {
+          "mean_effective_rank": 252.9359920720597,
+          "mean_rank128_energy": 0.5657119549643421
+        },
+        "uniform_train_observed": {
+          "mean_effective_rank": 164.98535557546737,
+          "mean_rank128_energy": 0.7053857542331722
+        }
+      },
+      "transformer.wte.weight": {
+        "same_frequency_gaussian": {
+          "mean_effective_rank": 132.62879103860809,
+          "mean_rank128_energy": 0.8101574972167997
+        },
+        "train_token_frequency": {
+          "mean_effective_rank": 132.67638772978114,
+          "mean_rank128_energy": 0.809268597020843
+        },
+        "uniform_all_vocabulary": {
+          "mean_effective_rank": 255.34914173624642,
+          "mean_rank128_energy": 0.5302549947092081
+        },
+        "uniform_observed_gaussian": {
+          "mean_effective_rank": 252.9359920720597,
+          "mean_rank128_energy": 0.565711954964342
+        },
+        "uniform_train_observed": {
+          "mean_effective_rank": 252.92867193662713,
+          "mean_rank128_energy": 0.5658447944231407
+        }
+      }
+    }
+  },
+  "train_observed_ids": 10653,
+  "train_tokens": 267688,
+  "validation_rescored": false,
+  "weight_outputs": 0
+}

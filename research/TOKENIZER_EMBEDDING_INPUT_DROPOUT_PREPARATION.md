@@ -1,10 +1,11 @@
 # Input embedding feature-dropout preparation
 
-Status: quality001 is now frozen and RUNNING after the direct human old-checkpoint
-cleanup request resolved capacity. Both prerequisite workers/resource pilots and
-finite source contracts passed. Initial slot00 is the control at LR.000625,
-screen seed200090002; follow actual controller/guards/accepted anchors. No quality
-result or adoption yet. Keep incumbent. Earlier capacity-wait sections are history.
+Status: quality001 is COMPLETE and CLOSED_NOT_ADOPTED. All12endpoints and the
+independent full review passed execution gates; dropout .1 loses on every fresh
+seed (mean+.014701832892nat/token). Keep incumbent/dropout0. The root terminal
+STOP closes every original command. Earlier launch/capacity sections are history.
+See [complete results](TOKENIZER_EMBEDDING_INPUT_DROPOUT_RESULTS.md) and current
+resume state for the next structural component/transport work.
 
 The [evidence review](tokenizer-evidence/generalization-boundary-001/evidence-review.md)
 separates measured local facts, literature and inference. Frequency controls

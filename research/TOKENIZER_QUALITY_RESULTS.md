@@ -9349,3 +9349,21 @@ Follow actual processes/guards/STOP/accepted anchors, not this launch snapshot.
 No quality result/adoption yet; keep incumbent and all current panel weights.
 Never rerun closed preparation, an attempted slot, old audit or retired payload.
 After study closure continue evidence-grounded model improvement as authorized.
+
+
+## Closed dropout panel; tokenizer-capacity structural preparation
+
+
+The input-feature-dropout panel is CLOSED_NOT_ADOPTED: all three fresh seeds
+worsened, mean candidate-minus-control CE +.014701832892. All12 endpoints and
+independent review passed execution checks; retain incumbent/dropout0. The terminal
+STOP closes all original commands. See [full results](TOKENIZER_EMBEDDING_INPUT_DROPOUT_RESULTS.md).
+
+The next structural feasibility question is vocabulary capacity. Lossless native/8K
+codec, common-byte metric, CPU/MPS model, actual data/sampler and real four-update
+repeat/serialized2+2 resume proofs passed. These are correctness results, not
+quality gains. The original v1 embedding-guard failure stays closed; explicit
+model_v2 passed. All987 current source bindings preserve972 frozen predecessors.
+Next: independent generated-worker/common-byte parent acceptance, resource pilots,
+then a finite design and full fresh-panel budget. No new scientific seed/panel.
+See [boundary evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review.md).
