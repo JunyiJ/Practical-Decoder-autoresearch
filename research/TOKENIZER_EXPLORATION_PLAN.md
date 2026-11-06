@@ -192,14 +192,32 @@ delete selected/fresh weights or use a partial panel to fund exploration.
 
 ## Next concrete action
 
-After final-scale closure, review existing depth/scaling and MoE evidence,
-analyze relevant collected curves/costs, and read the primary literature before
-prioritizing the depth/width feasibility design or refreshing the MoE capacity
-audit. Choose the most informative evidence-qualified feasible structural
-campaign, then freeze its full resource and scientific protocol. AdamW beta1
-remains in the local-tuning queue; it does not automatically displace this review.
+The completed structural body-allocation panel did not adopt the deeper model;
+keep the incumbent and its frozen negative result. Its equal LR screening and
+complete fresh confirmation count as structural exploration. The proposed
+allocation remains a proposal; diagnostics and preparation do not count as new
+numerical exploration or authorize quota-driven runs.
+
+The current [boundary review](tokenizer-evidence/exploration-boundary-002/evidence-review.md)
+uses original local curves, a train-only context census, contrary table/horizon
+results and primary papers. Fixed-weight context/locality diagnostics give no
+robust gain; a paper-inspired affine MLA core is correct but slower locally.
+Neither is adopted or a reason to launch an unqualified training panel.
+Next complete the bounded full train-split fit decomposition in
+`train-fit-diagnostic-001`, follow its actual guard/result without duplication,
+then use that evidence to rank a falsifiable next hypothesis. Any new scientific
+panel needs fresh seeds, equally bounded controls/tuning and a complete current
+resource forecast. No automatic beta1, MoE replay or longer-horizon study.
 
 See [architecture agenda](TOKENIZER_ARCHITECTURE_ROADMAP.md),
 [attention objectives](TOKENIZER_ATTENTION_ROADMAP.md),
 [quality protocol](TOKENIZER_QUALITY_PROTOCOL.md) and
 [retention contract](TOKENIZER_CHECKPOINT_RETENTION.md).
+
+Current boundary update: full train-fit decomposition completed, mean train CE
+3.612469291 versus recorded validation4.690826763. This gap alone does not prove
+overfitting or justify a regularizer. Next separate train/validation frequency
+shift from model-fit evidence and inspect original regularization results plus
+primary papers before admitting a fresh finite design. All diagnostics are
+closed, no numerical worker remains active, and no new panel budget is frozen.
+See boundary002/evidence-review.md for exact evidence and applicability limits.

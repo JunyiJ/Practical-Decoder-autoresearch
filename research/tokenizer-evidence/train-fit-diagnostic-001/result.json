@@ -1,0 +1,243 @@
+{
+  "status": "completed_train_split_fit_diagnostic",
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/plan.json",
+    "sha256": "902c2743916397dd99e11512395e45167564627e608d3770787f419dcc6b6087"
+  },
+  "reports": [
+    {
+      "seed": 200080011,
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/09/accepted.json",
+        "sha256": "0510b995d6aed0de01b58c066408c5474ea7894cb0c256ab20b9827eff93a1a3"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/09/checkpoints/h200.pt",
+        "sha256": "e8304b97331a55e1eb8d20d0d6d56a3e3c7f07af84b57e96bceb420ea853b88f",
+        "size": 114073667
+      },
+      "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+      "train_targets": 267687,
+      "train_target_ids_sha256": "4e423f1565dd7007ca12eba8b56c2d16748d44d7917aa506756183f66dcf659b",
+      "ce": 3.6155201957574006,
+      "recorded_validation128_ce": 4.684805582387639,
+      "validation_minus_train_ce": 1.0692853866302388,
+      "frequency_strata": [
+        {
+          "min_occurrences": 1,
+          "max_occurrences": 5,
+          "targets": 14686,
+          "total_loss": 118621.48116455227,
+          "ce": 8.077181067993482
+        },
+        {
+          "min_occurrences": 6,
+          "max_occurrences": 50,
+          "targets": 43443,
+          "total_loss": 269843.2572402698,
+          "ce": 6.21143238819303
+        },
+        {
+          "min_occurrences": 51,
+          "max_occurrences": 500,
+          "targets": 76170,
+          "total_loss": 305255.68973435916,
+          "ce": 4.007557958964936
+        },
+        {
+          "min_occurrences": 501,
+          "max_occurrences": 267688,
+          "targets": 133388,
+          "total_loss": 274107.32650253014,
+          "ce": 2.0549624141791627
+        }
+      ],
+      "within_segment_strata": [
+        {
+          "first_offset": 0,
+          "last_offset": 31,
+          "targets": 66944,
+          "ce": 3.6763872728073688
+        },
+        {
+          "first_offset": 32,
+          "last_offset": 63,
+          "targets": 66919,
+          "ce": 3.6115224484899735
+        },
+        {
+          "first_offset": 64,
+          "last_offset": 95,
+          "targets": 66912,
+          "ce": 3.5912633762413004
+        },
+        {
+          "first_offset": 96,
+          "last_offset": 127,
+          "targets": 66912,
+          "ce": 3.582878994639772
+        }
+      ]
+    },
+    {
+      "seed": 200080012,
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/14/accepted.json",
+        "sha256": "3b71b3870690caa3684161c2b1845e81ecbdd93c356c78814d66c4b4d08dd60a"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/14/checkpoints/h200.pt",
+        "sha256": "302c7dff663e7641e288b883404c63b0bb0fbfd8547782c8ed5af359a45c69f3",
+        "size": 114073667
+      },
+      "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+      "train_targets": 267687,
+      "train_target_ids_sha256": "4e423f1565dd7007ca12eba8b56c2d16748d44d7917aa506756183f66dcf659b",
+      "ce": 3.625528454458478,
+      "recorded_validation128_ce": 4.699310882226529,
+      "validation_minus_train_ce": 1.0737824277680508,
+      "frequency_strata": [
+        {
+          "min_occurrences": 1,
+          "max_occurrences": 5,
+          "targets": 14686,
+          "total_loss": 118929.42389475554,
+          "ce": 8.09814952299847
+        },
+        {
+          "min_occurrences": 6,
+          "max_occurrences": 50,
+          "targets": 43443,
+          "total_loss": 269492.80290760286,
+          "ce": 6.203365396211193
+        },
+        {
+          "min_occurrences": 51,
+          "max_occurrences": 500,
+          "targets": 76170,
+          "total_loss": 306556.5155971919,
+          "ce": 4.024635888108072
+        },
+        {
+          "min_occurrences": 501,
+          "max_occurrences": 267688,
+          "targets": 133388,
+          "total_loss": 275528.0929890763,
+          "ce": 2.0656137957618097
+        }
+      ],
+      "within_segment_strata": [
+        {
+          "first_offset": 0,
+          "last_offset": 31,
+          "targets": 66944,
+          "ce": 3.681884488940886
+        },
+        {
+          "first_offset": 32,
+          "last_offset": 63,
+          "targets": 66919,
+          "ce": 3.6166284631694077
+        },
+        {
+          "first_offset": 64,
+          "last_offset": 95,
+          "targets": 66912,
+          "ce": 3.607494324018864
+        },
+        {
+          "first_offset": 96,
+          "last_offset": 127,
+          "targets": 66912,
+          "ce": 3.5960805210632487
+        }
+      ]
+    },
+    {
+      "seed": 200080013,
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/16/accepted.json",
+        "sha256": "a15da45790a909d1943ad21b146a73b2900bffead2849e5d7b5eb236b772ee20"
+      },
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/16/checkpoints/h200.pt",
+        "sha256": "867cc9b58e55b0e63a9a4d1f2aaf82e052f2f3b46433b54bb2d02858b5b800fd",
+        "size": 114073667
+      },
+      "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+      "train_targets": 267687,
+      "train_target_ids_sha256": "4e423f1565dd7007ca12eba8b56c2d16748d44d7917aa506756183f66dcf659b",
+      "ce": 3.596359223617911,
+      "recorded_validation128_ce": 4.688363823415573,
+      "validation_minus_train_ce": 1.092004599797662,
+      "frequency_strata": [
+        {
+          "min_occurrences": 1,
+          "max_occurrences": 5,
+          "targets": 14686,
+          "total_loss": 118083.60208996385,
+          "ce": 8.040555773523346
+        },
+        {
+          "min_occurrences": 6,
+          "max_occurrences": 50,
+          "targets": 43443,
+          "total_loss": 268699.47820598586,
+          "ce": 6.185104118177517
+        },
+        {
+          "min_occurrences": 51,
+          "max_occurrences": 500,
+          "targets": 76170,
+          "total_loss": 304097.74705381086,
+          "ce": 3.992355875722868
+        },
+        {
+          "min_occurrences": 501,
+          "max_occurrences": 267688,
+          "targets": 133388,
+          "total_loss": 271817.7841428472,
+          "ce": 2.037797883938939
+        }
+      ],
+      "within_segment_strata": [
+        {
+          "first_offset": 0,
+          "last_offset": 31,
+          "targets": 66944,
+          "ce": 3.6563205678471205
+        },
+        {
+          "first_offset": 32,
+          "last_offset": 63,
+          "targets": 66919,
+          "ce": 3.5900764920194996
+        },
+        {
+          "first_offset": 64,
+          "last_offset": 95,
+          "targets": 66912,
+          "ce": 3.5735630312545528
+        },
+        {
+          "first_offset": 96,
+          "last_offset": 127,
+          "targets": 66912,
+          "ce": 3.56544878470069
+        }
+      ]
+    }
+  ],
+  "mean_train_ce": 3.61246929127793,
+  "mean_recorded_validation128_ce": 4.69082676267658,
+  "mean_validation_minus_train_ce": 1.0783574713986506,
+  "training": false,
+  "adopted": false,
+  "new_scientific_seed": false,
+  "validation_rescored": false,
+  "holdout_scored": false,
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/guard.json",
+    "sha256": "275b0c408697a469652b13c08246703a2cdd7764b233ee8a51d410167f182afd"
+  }
+}

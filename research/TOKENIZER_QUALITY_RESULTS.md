@@ -9281,3 +9281,22 @@ seeds,quality freeze or numerical campaign is admitted. The70/30 allocation
 remains proposed. See [boundary evidence](tokenizer-evidence/exploration-boundary-001/evidence-review.md)
 and [data diagnostic](tokenizer-evidence/exploration-boundary-001/analysis001.json). Final evidence:quality002-final-review.json,all three
 quality002-fresh-inference reviews and quality002-closure.json.
+
+## Structural body allocation: complete, not adopted
+
+The equally tuned 4×256 H672 incumbent, 4×192 H1024 shallow control and 7×192
+H504 candidate all selected nominal LR .00125, then completed three fresh seeds
+each. All 18 screening/fresh endpoints and the independent inference/statistical
+review passed original execution gates. Deeper-minus-incumbent mean CE is
++0.007499234 (two seeds worse); deeper-minus-shallow is −0.015588741 and misses
+the frozen −0.02 threshold. Keep the incumbent. No shallow fallback or cost-only
+adoption. Conditional text bounds do not supply population-seed/holdout confidence.
+The holdout stays closed. See [full results](TOKENIZER_BODY_ALLOCATION_RESULTS.md).
+
+All 939 scientific bindings remain unchanged. Terminal STOP closes the original
+commands; all 24 selected/fresh weights remain protected. Subsequent fixed-weight
+context diagnostics are not a new trained-model result: global256 CE 4.707065
+worsens from native128 4.690827; local128-at256 restores 4.690096, an inconsistent
+0.000731 mean gain over native128. No context change is adopted. See the
+[evidence boundary](tokenizer-evidence/exploration-boundary-002/evidence-review.md)
+for negative evidence, primary-paper applicability and the next bounded question.

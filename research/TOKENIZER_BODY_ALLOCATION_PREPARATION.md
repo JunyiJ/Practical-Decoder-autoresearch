@@ -191,3 +191,26 @@ Selected recipes,every fresh endpoint and original source/log/config/metric/rece
 remain protected; never restore/rerun retired members or closed cleanup.
 See quality001-selection.json,quality001-confirmation-plan.json,
 quality001-loser-retirement001/completed.json and quality001-prefix16-metadata-mirror001.json.
+
+## Complete panel closed without adoption
+
+All 18 trajectories and the independent all-panel inference/statistical review
+completed. The nine fresh endpoints passed every original acceptance/resource
+gate. Deeper-minus-incumbent mean CE is +0.007499234 nat/token, with two seeds
+worse; deeper-minus-shallow is −0.015588741 and misses the predeclared −0.02
+threshold. Keep the incumbent. No fallback, retrospective gate or cost-only
+adoption. All 939 scientific bindings stayed unchanged.
+
+The terminal STOP closes every original command. A separate read-only closure
+verified all 18 acceptances and all 24 selected/fresh RAW/H200 payloads totaling
+5,680,488,904 bytes in their original paths. Final slots 16/17 contributed 20
+losslessly mirrored metadata files and zero weight copies. Preserve all original
+failure/retirement evidence; never restore retired members or rerun commands.
+See [results](TOKENIZER_BODY_ALLOCATION_RESULTS.md), quality001-closure001.json,
+and quality001-complete-metadata-mirror001.json. The previous capacity floor is
+historical, not a forecast for the next panel.
+
+The authorized improvement loop proceeds through the evidence-grounded
+[boundary review](tokenizer-evidence/exploration-boundary-002/evidence-review.md).
+Fixed-weight context/locality diagnostics are separate from this closed study,
+assign no scientific seeds and do not adopt or train a model.

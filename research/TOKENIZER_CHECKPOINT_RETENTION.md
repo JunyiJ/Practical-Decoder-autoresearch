@@ -1664,3 +1664,13 @@ selection and dependency closure. All47,266 survivors rehashed unchanged.
 Original metadata/failure/evidence and every selected/fresh weight preserved.
 Resolve absent losing payloads via that manifest/completed receipt; never
 restore or rerun closed members/cleanup. All current fresh endpoints protected.
+
+Body-allocation quality001 is CLOSED_NOT_ADOPTED. Preserve all 24 current
+selected/fresh RAW/H200 payloads (5,680,488,904 logical bytes), all original
+sources/logs/configs/metrics/acceptances/guards and terminal STOP. The independent
+quality001-closure001 reverified those retained hashes and all 18 trajectories.
+The final 20 metadata files were mirrored without any weight copies. Closed
+losing screens and prerequisite payloads resolve through their exact retirement
+manifests; never restore or rerun them. New fixed-weight context diagnostics
+load retained H200s read-only and produce no weight payloads or new retirement
+eligibility. Historical selected/fresh and original failure evidence stay protected.

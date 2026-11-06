@@ -1,0 +1,127 @@
+{
+  "adopted": false,
+  "confirmation": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-confirmation-plan.json",
+    "sha256": "b6da45300e02cf3a66474758a63f60ad0138565194571ba6281997a3e2f5d71d"
+  },
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-freeze.json",
+    "sha256": "de119b0483f59ab43fadce3172b553d48960f77cd4710e5a07a39dfc541cb591"
+  },
+  "fresh_acceptances": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/09/accepted.json",
+      "sha256": "0510b995d6aed0de01b58c066408c5474ea7894cb0c256ab20b9827eff93a1a3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/10/accepted.json",
+      "sha256": "3af008c27b28aa86ad2b68b7cca5eac66a61ad56c491ba69bb0a7b17d584ad57"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/11/accepted.json",
+      "sha256": "421bc2c5628b1de620e6af053b8786d27933d4435b05d6cd2e15c9b4e639caba"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/12/accepted.json",
+      "sha256": "729815fa10b51bd0f3c103f74d482111b478d609484c9afded091a09909294b1"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/13/accepted.json",
+      "sha256": "c927a61ac706e39b6cfd36e35aa04c58ed55077fecb7f2091421ab5c12f6e062"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/14/accepted.json",
+      "sha256": "3b71b3870690caa3684161c2b1845e81ecbdd93c356c78814d66c4b4d08dd60a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/15/accepted.json",
+      "sha256": "e9d1fc45cd5b8d4b92de3bb2fa6cbdcb0424eb8433701e95a410e5c042d29cc1"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/16/accepted.json",
+      "sha256": "a15da45790a909d1943ad21b146a73b2900bffead2849e5d7b5eb236b772ee20"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/17/accepted.json",
+      "sha256": "79dfdf696b5b147761c3143573daff19890bb430e7a64268d54472289d7bd56e"
+    }
+  ],
+  "independent_bootstrap_agreement_atol": 1e-12,
+  "inference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-fresh-inference.json",
+    "sha256": "b764ba4fca632de1bd582497c3171d22530628201577693de5a840cce6ab5d8b"
+  },
+  "next_action": "Separate evidence/adoption review if all strict gates pass; otherwise retain incumbent. Then choose next evidence-qualified improvement using actual curves/stability/cost and primary literature.",
+  "selection": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-selection.json",
+    "sha256": "e9ba816ccd4e73c131e1474db911326563dfb3d4f8e6a23e51fa8d80bc13938e"
+  },
+  "statistics": {
+    "adoption_requires_separate_review": true,
+    "all_strict_gates_pass": false,
+    "bootstrap_seed": 200080004,
+    "candidate": "deeper",
+    "contrasts": {
+      "incumbent": {
+        "conditional_text_upper_bounds": [
+          {
+            "block_tokens": 2048,
+            "upper": 0.011706365134353719
+          },
+          {
+            "block_tokens": 4096,
+            "upper": 0.01043052544642117
+          },
+          {
+            "block_tokens": 8192,
+            "upper": 0.009425924840011627
+          }
+        ],
+        "deltas": [
+          0.006609951078943688,
+          -0.0015432740470791018,
+          0.01743102447670175
+        ],
+        "gates": {
+          "all_simultaneous_bounds_negative": false,
+          "every_seed_negative": false,
+          "mean_below_minus_point02": false
+        },
+        "mean_delta": 0.007499233836188779,
+        "passes": false
+      },
+      "shallow": {
+        "conditional_text_upper_bounds": [
+          {
+            "block_tokens": 2048,
+            "upper": -0.009154800792247045
+          },
+          {
+            "block_tokens": 4096,
+            "upper": -0.008227080824096969
+          },
+          {
+            "block_tokens": 8192,
+            "upper": -0.006828517013941764
+          }
+        ],
+        "deltas": [
+          -0.018866422985282405,
+          -0.009370879793657139,
+          -0.018528921007315624
+        ],
+        "gates": {
+          "all_simultaneous_bounds_negative": true,
+          "every_seed_negative": true,
+          "mean_below_minus_point02": false
+        },
+        "mean_delta": -0.015588741262085056,
+        "passes": false
+      }
+    },
+    "draws": 2000,
+    "interpretation": "Conditional reused-text intervals given three trained seeds; not population-seed uncertainty or holdout confidence. No shallow fallback or cost-only adoption.",
+    "upper_quantile": 0.9916666666666667
+  },
+  "status": "complete_fresh_panel_reviewed"
+}

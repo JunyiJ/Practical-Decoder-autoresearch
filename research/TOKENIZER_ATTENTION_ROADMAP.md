@@ -1228,3 +1228,38 @@ unchanged; new model/worker inventories924/930. Fifteen dependency-closed
 generated prerequisite payloads permanently retired after exact audit;46,801
 survivors unchanged, all selected/fresh/original evidence preserved. No closed
 fixture/cleanup rerun or retired restoration.
+
+
+## Structural closure and next evidence boundary
+
+The completed body-allocation panel is CLOSED_NOT_ADOPTED: deeper-minus-incumbent
+mean CE +0.007499234 and deeper-minus-shallow −0.015588741 fail the original
+adoption contract. Keep the incumbent and preserve all selected/fresh weights.
+All 939 scientific bindings and terminal evidence are immutable. See
+[results](TOKENIZER_BODY_ALLOCATION_RESULTS.md).
+
+Train-only context census and fixed-weight diagnostics now bound the next
+direction. Plain256 conditioning worsens native128-trained weights; local128
+attention within256 mostly restores the baseline, with a small inconsistent
+gain. This lowers context-training priority; no new training panel/seed/floor
+is admitted. The next bounded question is affine MLA absorption correctness and
+attention-core cost at actual head32/latent64 geometry, grounded in the original
+local decode measurements and DeepSeek-V2 equations, including bias and prefill
+tradeoffs. This is serving engineering, not numerical quality exploration.
+Read [boundary002](tokenizer-evidence/exploration-boundary-002/evidence-review.md)
+before choosing the next scientific campaign; no automatic beta1 or random quota.
+
+The subsequent affine MLA-core oracle/profile also completed: CPU/MPS equations
+pass, but this implementation is slower in all six measured attention-core
+cases. No serving integration/adoption is justified by these measurements.
+Current next evidence is the bounded full train-split fit decomposition across
+all three retained incumbents; follow train-fit-diagnostic-001 actual guard and
+result. This is existing-data analysis, not training or a new quality panel.
+
+Current boundary update: full train-fit decomposition completed, mean train CE
+3.612469291 versus recorded validation4.690826763. This gap alone does not prove
+overfitting or justify a regularizer. Next separate train/validation frequency
+shift from model-fit evidence and inspect original regularization results plus
+primary papers before admitting a fresh finite design. All diagnostics are
+closed, no numerical worker remains active, and no new panel budget is frozen.
+See boundary002/evidence-review.md for exact evidence and applicability limits.

@@ -41,12 +41,12 @@
   "activation_source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
   "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json",
-  "active_campaign_root": "research_runs/tokenizer-body-allocation-quality-v1-001",
-  "active_exec_session": 33117,
-  "active_parent_pid": 62055,
-  "active_run": "research_runs/tokenizer-body-allocation-quality-v1-001",
+  "active_campaign_root": null,
+  "active_exec_session": null,
+  "active_parent_pid": null,
+  "active_run": null,
   "active_session": null,
-  "active_worker": 64957,
+  "active_worker": null,
   "actual_free_bytes": 16773115904,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
@@ -301,26 +301,31 @@
   "body_allocation_geometry_review": "research/tokenizer-evidence/exploration-boundary-001/geometry-review.md",
   "body_allocation_model_checks": "research/tokenizer-evidence/body-allocation-preparation-001/modelchecks001-cpu.json; modelchecks001-mps.json",
   "body_allocation_proposed_source_namespace": "research/body_allocation_model_v1",
-  "body_allocation_quality_accepted_count": 16,
+  "body_allocation_quality_accepted_count": 18,
+  "body_allocation_quality_adopted": false,
   "body_allocation_quality_capacity": {
-    "cleanup_target_at_entry": 13624318604,
-    "current_slot": 16,
-    "current_slot_entry_required_free": 11476834956,
-    "latest_live_free_bytes": 11956666368,
-    "scope": "Entry budget passed before current in-flight output. Recompute exact accepted-only requirement after parent acceptance; no in-flight or future retirement credit."
+    "future_panel_requires_new_forecast": true,
+    "historical_full_floor_bytes": 16167530496,
+    "latest_observed_free_bytes": 10941517824,
+    "status": "closed_complete_no_remaining_panel_work"
   },
+  "body_allocation_quality_closure": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-closure001.json",
+  "body_allocation_quality_complete_mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-complete-metadata-mirror001.json",
   "body_allocation_quality_confirmation": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-confirmation-plan.json",
-  "body_allocation_quality_current_slot": 16,
+  "body_allocation_quality_current_slot": null,
+  "body_allocation_quality_final_review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-final-review.json",
   "body_allocation_quality_freeze": "research/tokenizer-evidence/body-allocation-preparation-001/quality001-freeze.json",
   "body_allocation_quality_freeze_sha256": "de119b0483f59ab43fadce3172b553d48960f77cd4710e5a07a39dfc541cb591",
-  "body_allocation_quality_fresh_accepted_count": 7,
-  "body_allocation_quality_frozen": false,
-  "body_allocation_quality_latest_anchor": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-accepted-15.json",
+  "body_allocation_quality_fresh_accepted_count": 9,
+  "body_allocation_quality_frozen": true,
+  "body_allocation_quality_latest_anchor": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-accepted-17.json",
   "body_allocation_quality_loser_retirement": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-loser-retirement001/completed.json",
   "body_allocation_quality_pilot_retirement": "research/tokenizer-evidence/body-allocation-preparation-001/quality001-pilot-retirement001/completed.json",
   "body_allocation_quality_plan": "research/tokenizer-evidence/body-allocation-preparation-001/quality001-plan.json",
   "body_allocation_quality_prefix6_mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-prefix6-metadata-mirror001.json",
   "body_allocation_quality_recovery": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-prefix6-wake001.json",
+  "body_allocation_quality_retained_payloads": 24,
+  "body_allocation_quality_retained_weight_bytes": 5680488904,
   "body_allocation_quality_scientific_sources": {
     "pilot": 3,
     "quality": 6,
@@ -334,12 +339,14 @@
   },
   "body_allocation_quality_selection": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-selection.json",
   "body_allocation_quality_slot00_mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-slot00-metadata-mirror001.json",
+  "body_allocation_quality_status": "CLOSED_NOT_ADOPTED",
   "body_allocation_resource_pilot_review": "research/tokenizer-evidence/body-allocation-preparation-001/pilot001-review.json",
   "body_allocation_scientific_quality_frozen": true,
   "body_allocation_scientific_seed_status": {
-    "bootstrap": "unused",
+    "bootstrap": "used",
     "evaluation": "used",
     "fresh": "all_three_used",
+    "future_assigned": null,
     "pilot": "used",
     "screen": "used"
   },
@@ -369,11 +376,11 @@
   "capacity_wake": null,
   "capacity_wake_condition": {
     "future_panel_requires_new_forecast": true,
-    "latest_free": 16773275648,
-    "status": "closed_complete_no_remaining_panel_work"
+    "latest_free": 10941517824,
+    "status": "no_current_capacity_blocker_or_new_panel_budget"
   },
   "capacity_wake_free_bytes": null,
-  "cleanup_target_deficit_bytes": 4008624128,
+  "cleanup_target_deficit_bytes": 0,
   "closed_campaigns": [
     "tokenizer-wide-hybrid-001",
     "tokenizer-wide-hybrid-002",
@@ -390,8 +397,42 @@
     "tokenizer-local-mix-quality-v3-001",
     "tokenizer-decay-quality-v2-001"
   ],
-  "commit_pending": true,
+  "commit_pending": false,
   "completed": 6,
+  "context_extension_proofs": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/context-extension-preparation-001/correctness001-cpu.json",
+      "sha256": "dc095b0d5929b9d23f4445c1dc61bfc90dd93ea158dcbd0aebe483478693f311"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/context-extension-preparation-001/correctness002-mps.json",
+      "sha256": "e3646a83d3132db4de7e6c224a4aa9280d517179012e07b53a34d39f002bb755"
+    }
+  ],
+  "context_information_diagnostics": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/context-information-001/result.json",
+      "sha256": "7ee2ef857cbe8abfac468aaca49db6645e9f95d5613d556eafec5047a6dbef5f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/context-information-002/result.json",
+      "sha256": "ceb1ca17bb18098e36fcff6eb349e441fd4c91e071c1f9010a2d33f40bdea9dd"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/context-information-003/result.json",
+      "sha256": "682a08a52d745b62daf97ed40fc4517f16e8d73a0777f8c7ab6ff2c11ae4feeb"
+    }
+  ],
+  "context_locality_proofs": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/context-locality-preparation-001/correctness001-cpu.json",
+      "sha256": "c907c1b0e2298057b77de5010201585ecc0e724727e9a749efcad97eb6549a34"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/context-locality-preparation-001/correctness001-mps.json",
+      "sha256": "98414a1b60b8e760c59a927939d2df2b0cbf269082a9032ada07bd0e0392bc90"
+    }
+  ],
   "continuous_improvement_authorized": true,
   "controller_pid": null,
   "cooldown_capacity": "research/tokenizer-evidence/cooldown-preparation-001/capacity001.json",
@@ -408,7 +449,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/adopted-width256-mla-epsilon-recipe.json",
     "sha256": "3d9b5d1e3cabebb676794399dd0728a454b4f046b836c3a70c1aad2477e55685"
   },
-  "current_research_phase": "parallel_residual_preparation",
+  "current_research_phase": "evidence_grounded_generalization_data_analysis",
   "dataset_cache_cleanup": "research/tokenizer-evidence/dataset-cache-cleanup-001/completed.json",
   "decay_capacity": "research/tokenizer-evidence/decay-preparation-001/capacity003.json",
   "decay_capacity_check_interval_seconds": null,
@@ -8585,6 +8626,9 @@
   },
   "exploration_allocation_plan": "research/TOKENIZER_EXPLORATION_PLAN.md",
   "exploration_allocation_status": "proposed",
+  "exploration_boundary002": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/exploration-boundary-002/evidence-review.md",
+  "exploration_boundary002_analysis": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/exploration-boundary-002/analysis001.json",
+  "exploration_boundary002_completion": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/exploration-boundary-002/continuation-completed001.json",
   "exploration_boundary_review": "research/tokenizer-evidence/exploration-boundary-001/evidence-review.md",
   "exploration_evidence_grounding_required": true,
   "exploration_evidence_rule": "Local facts,prior learnings,collected data and relevant primary papers;explicit mechanism and falsifiable prediction;no random quota-driven runs.",
@@ -8992,7 +9036,7 @@
   "initial_required_free_bytes": 30631412484,
   "last_implementation_commit": "6dc57c74",
   "last_launch_record_commit": "e025eef8",
-  "last_observed_free_bytes": 10520444928,
+  "last_observed_free_bytes": 10941517824,
   "latest_archive_retention_audit": "research/maintenance-cache-cleanup-005/archive-audit.json",
   "latest_archive_retirement": "research/maintenance-cache-cleanup-005/completed.json",
   "latest_capacity_observation": {
@@ -9058,6 +9102,10 @@
     "research_archives",
     "research_state"
   ],
+  "mla_absorption_core_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/mla-absorption-core-001/review001-mps.json",
+    "sha256": "143832dc90a20c13340110aff9ae82ad77048fc02ce6abd7435e6bb9a10810f5"
+  },
   "mla_score_capacity_review": "research/tokenizer-evidence/mla-score-preparation-001/capacity003.json",
   "mla_score_closure": "research/tokenizer-evidence/mla-score-preparation-001/quality001-closure.json",
   "mla_score_component": "research/tokenizer-evidence/mla-score-preparation-001/component001.json",
@@ -9089,13 +9137,13 @@
   "mla_score_worker": "research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
   "mla_score_worker_archive": "research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
   "mla_score_worker_review": "research/tokenizer-evidence/mla-score-preparation-001/worker003-review.json",
-  "next_action": "Structural quality001 SCREEN COMPLETE, all9screen endpoints independently accepted. Frozen per-arm minimum-H200 selection chooses nominalLR.00125 for incumbent/shallow/deeper;selected screen slots03/04/05 retained. Complete original fresh confirmation frozen in quality001-confirmation-plan.json, no extra tuning. Exact12losing-screen RAW/H200 payloads2,840,244,452logical/2,954,346,496allocatedB permanently retired after immutable selection/dependency closure;47,266survivors unchanged. ALL selected/fresh/original evidence preserved,never restore/rerun cleanup. Fresh confirmation now 7/9 accepted (prefix16), current slot16 is RUNNING controller62055/worker64957/execsession33117. Follow actual state, never duplicate. All completed endpoints1200updates/1,228,800targets/41H200 snapshots plus independent RAW/H200/optimizer/EMA/RNG/sampler/clipping/full-validation/cache PASS. All3 fresh seeds200080011/012/013 USED;bootstrap200080004 still UNUSED. No complete three-triplet quality result,interim adoption or model choice. Frozen939bindings unchanged. Let controller complete final unstarted endpoints and original all-panel inference/independent stats,then separate adoption review if strict gates pass;continue evidence-grounded model improvement until human pause/stop.",
+  "next_action": "Continue authorized model improvement until human pause/stop. Body-allocation quality001 CLOSED_NOT_ADOPTED; never rerun any original command or clear terminal STOP. All18 endpoints/9fresh and independent all-panel review passed execution gates but candidate failed adoption;retain incumbent. All939 frozen bindings unchanged;24selected/fresh weights5680488904B protected. Completed context/locality and affine-absorption diagnostics give no adoption: local128-at256 only +0.000730849 mean conditional gain,one seed worse;absorbed core slower in every measured case. Full train-fit now complete: trainCE3.612469291 vs recorded val4.690826763,gap1.078357471,not proof of overfitting. NEXT concrete bounded work: separate original train/validation unigram/frequency-shift contribution using saved data identities without model rescoring/holdout;review original dropout/regularization configs/outcomes and applicable primary papers. Then rank a falsifiable mechanism with contrary evidence/equal bounded controls/fresh confirmation and complete live budget before a NEW training design. No automatic beta1/context/horizon/regularization launch. No active numerical worker/controller/session or frozen future-panel budget;~10.94GB free is an observation,not a new capacity guarantee.",
   "next_after_starter": "Readout-centering pilot001 COMPLETE via research.readout_centering_campaign_v2: both20-update layer/rms_bias arms independently accepted(20480targets,8H200snapshots,88EMA tensors),complete clipping histories; paired full/cache/reset inference batches1/8 and independent final003 resource review PASS,196608B cache/item. All729 campaign sources unchanged,717 runtime predecessors preserved. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/readout_centering_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118335248B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199630 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Final LayerNorm versus affine RMS WITH bias,epsilon1e-5/512parameters both,eight pre-branch RMSNorms fixed. Original final002 reviewer launch environment failure before audit stays closed; separate final003 uses the required strict environment without repeating training/inference. Original pilot integration001 import failure before numerical work/deletion stays closed; additive v2 explicit worker validation routing and separate integration002 passed without changing723 original bindings. Worker-retirement001 reclaimed1118323284B with41696survivors unchanged,original evidence immutable. Storage013 losslessly archived27 closed table/MLA/horizon selected/fresh RAWs,reclaimed2574573563B,50958other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-013/raw-completed.json and protected research_archives/protected-raw-storage-013/*.tar.zst;recoverable,NOT retired,never purge. Together006-013 preserve147 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11575418880B plus retainedpilots1118335248B conditionally yields12693754128B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW beta2 .95-versus-.999 deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Pilot observations are resource evidence,not scientific quality selection.",
   "next_direction_status": "three_arm_body_allocation_model_prerequisites_not_numerically_admitted",
   "no_paid_compute": true,
   "no_subagents": true,
   "numerical_worker_active": false,
-  "observed_at": "2026-11-02T11:44:14.215374+00:00",
+  "observed_at": "2026-11-06T08:08:03.069663+00:00",
   "observed_at_los_angeles": "2026-11-01T10:59:38.176144-08:00",
   "observed_process_records": [],
   "obsolete_failed_cleanup_reviews": [
@@ -9203,7 +9251,7 @@
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "source_work_available": true,
-  "status": "body_allocation_quality001_prefix16_fresh_confirmation_running",
+  "status": "model_improvement_boundary002_diagnostics_complete",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -9293,7 +9341,11 @@
     "sha256": "4e22914ccc7629981cc91b7264326820b147919614c312a92fac2bfb4cbb63bf"
   },
   "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-terminal.json",
-  "updated_at": "2026-11-06T03:12:06.667644+00:00",
+  "train_fit_diagnostic": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/result.json",
+    "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
+  },
+  "updated_at": "2026-11-06T08:08:03.069663+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
