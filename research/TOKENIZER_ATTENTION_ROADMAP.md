@@ -1328,3 +1328,9 @@ causality, data and real serialized resume checks passed. Common-byte evaluation
 must explicitly acknowledge different raw context per token. No attention change
 or quality result follows. Next is independent real worker acceptance, then
 resource/design/full-budget gates; see [boundary evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review.md).
+
+
+The native/8K real workers and resource pilots passed complete CPU/MPS common-byte
+validation/cache/reset atB1/8 with unchanged attention/context128/cache196608B/item.
+No attention change or quality gain is claimed. Full scientific runtime gates
+are next;see TOKENIZER_GPT2_PREFIX_PREPARATION.md.

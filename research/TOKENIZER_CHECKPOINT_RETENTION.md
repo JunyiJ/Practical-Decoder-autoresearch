@@ -1739,3 +1739,12 @@ or rerun them. Closure/mirror verify all original endpoints and copy no weights.
 New capacity/counterfactual diagnostics load originals read-only and write no
 weights. The prefix v1/v2component/data proofs also write no numerical payloads;
 no new retirement eligibility or cleanup requirement follows from them.
+
+
+Native/8K generated-worker and resource-pilot pairs are terminally complete.
+Eight original RAW/H200 payloads1,375,190,568B remain protected pending exact new
+downstream dependency closure;none deleted/copied. prerequisite-close001 verified
+all original guard/acceptance/source/payload bindings and losslessly mirrored46
+closed metadata files. Never rerun those commands or restore older retired weights.
+The draft quality budget keeps all12new endpoints and gives no prior-payload or
+future-retirement credit. No cleanup is required at current~100.2GBfree.

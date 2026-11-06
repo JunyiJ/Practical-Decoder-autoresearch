@@ -1,0 +1,6 @@
+/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gpt2_prefix_worker_v1/training.py:30: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  row=dict(step=i+1,targets=(i+1)*1024,train_ce=float(loss),validation_ce=sum(scores)/len(scores),lr_multiplier=multiplier,update_seconds=seconds)
+{"step": 1, "targets": 1024, "train_ce": 10.859911918640137, "validation_ce": 10.836630249023438, "lr_multiplier": 1.0, "update_seconds": 0.5056830830872059}
+{"step": 20, "targets": 20480, "train_ce": 10.276573181152344, "validation_ce": 10.279927349090576, "lr_multiplier": 0.1, "update_seconds": 0.23066804104018956}
+Fresh bounded GPT2-prefix worker completed;parent common-byte acceptance remains required

@@ -1,0 +1,201 @@
+{
+  "adoption_quality_gates": {
+    "all_six_fresh_serving_cache_correctness_required": true,
+    "bootstrap": {
+      "draws": 2000,
+      "engine": "PCG64",
+      "linear_quantile": 0.9833333333333333,
+      "new_seed": "UNASSIGNED until census/freeze",
+      "pcg64_reinitialized_each_block_size": true,
+      "raw_byte_block_sizes": [
+        4096,
+        8192,
+        16384
+      ],
+      "same_indices_across_paired_seeds": true,
+      "scope": "Conditional on trained seeds/reused validation text,not holdout or population-seed confidence. Uniform-within-token byte loss allocation is explicit bookkeeping."
+    },
+    "downstream_codec_checkpoint_consumer_integration_required_before_adoption": true,
+    "every_three_seed_delta_negative": true,
+    "mean_candidate_minus_native_bpb_strictly_below": -0.01,
+    "no_cost_only_adoption": true,
+    "practical_gate_basis": {
+      "chosen_bpb": 0.01,
+      "converted_at_new_common_native_target_boundary_bpb": 0.008866993319709929,
+      "interpretation": "Rounded slightly stricter BPB practical gate,declared before any scientific score;not tuned from pilot losses.",
+      "original_local_practical_gate_nats_per_native_token": 0.02
+    },
+    "separate_adoption_review": true,
+    "simultaneous_conditional_text_upper_bounds_all_negative": true
+  },
+  "anchor": "One8192pretrainedGPT2merge-prefix anchor fixed before any generated-worker/pilot losses. Other census vocab sizes were intrinsic controls,not model searches. No tokenizer training or normalization.",
+  "budget": {
+    "cleanup_target_deficit": 0,
+    "complete_all_output_floor": 14724689920,
+    "entry_headroom": 1458176,
+    "external_headroom": 1267904512,
+    "first_launch_entry_margin": 1458176,
+    "first_wake": 14726148096,
+    "keep_ALL_six_screens_and_six_fresh_endpoints": true,
+    "mandatory_deficit": 0,
+    "maximum_new_weight_bytes": 4529848320,
+    "metadata": 268435456,
+    "no_deletion_or_old_worker_or_pilot_or_hardlink_credit": true,
+    "observed_free": 100191657984,
+    "reserve": 8589934592,
+    "serialization": "Atomic streaming tmp is within per-trajectory allowance;exclusive link/unlink publication does not duplicate allocated payload. Actual four/twenty-update artifacts fit caps with full state;full-horizon config/history sizing/source contracts still required before freeze.",
+    "sidecars": 67108864,
+    "target_plus_2GiB": 16872173568,
+    "weight_caps_per_trajectory": {
+      "native": 587202560,
+      "prefix8192": 167772160
+    }
+  },
+  "classification": "evidence_grounded_structural_exploration_when_numerical_quality_executes;preparation_not_numerical_quality_exploration",
+  "confirmation": {
+    "fresh_paired_seeds": 3,
+    "no_replacements_or_old_score_pooling": true,
+    "order": [
+      "native,prefix8192",
+      "prefix8192,native",
+      "native,prefix8192"
+    ],
+    "seed_status": "UNASSIGNED pending exact new seed census and future freeze",
+    "trajectories": 6
+  },
+  "initialization": "Exact native construction and post-construction RNG with identical body/overlap-ID embedding/readout rows;untied tables/native readoutscale4. Native50257vs8192parameters28492416vs6955136,88learnedtensors.",
+  "local_basis": [
+    {
+      "path": "research/tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review.md",
+      "sha256": "c31075d16e0631115f497e728813139e4af1c36ae79ad69c059b0dc670a7eea6"
+    },
+    {
+      "path": "research/tokenizer-evidence/tokenizer-capacity-boundary-001/prerequisite-close001.json",
+      "sha256": "b5fb65c05d41df814952d1b2a3c9a36d009e7572209df06d45970c49bd5a480d"
+    },
+    {
+      "path": "research/tokenizer-evidence/tokenizer-capacity-boundary-001/statistics-contracts001.json",
+      "sha256": "18e3103923aac186f4dfee20ce34590aed7fbb424207e55f2046715c7e333783"
+    },
+    {
+      "path": "research/tokenizer-evidence/input-capacity-boundary-001/evidence-review.md",
+      "sha256": "88aa0e5dd86a71215218699d4691d5f80e1ebc03d45052b4b773455980e64bc7"
+    },
+    {
+      "path": "research/TOKENIZER_EMBEDDING_INPUT_DROPOUT_RESULTS.md",
+      "sha256": "831823e9b64dff20a42f82d0c0332f312a891eecde867e2e26c0046726d1c690"
+    }
+  ],
+  "mechanism": "Test the complete smaller-vocabulary recipe effect:long-tail output/input capacity and lexical sample sharing versus finer segmentation,shorter raw context and fewer sampled raw bytes. Not isolated parameter-count causality or intrinsic-metric quality prediction.",
+  "next_action": "Implement/prove these finite full-quality runtime gates,then prepare/freeze/run the complete panel once under existing human authorization. No redundant consent needed. No quality freeze/root/seed currently exists;do not replay any closed proof,worker,pilot or prior study.",
+  "primary_target": {
+    "different_raw_context_acknowledged": true,
+    "forced_unicode_prefix_bytes": 64,
+    "native_targets": 34257,
+    "prefix8192_targets": 39963,
+    "primary_unit": "bits_per_byte_of_declared_deterministic_token_coding;not sum_over_all_tokenizations",
+    "raw_bytes": 111475,
+    "sha256": "ad7da8cdcacc24b5312461c23f2d00aead59d544fcc2fad4fb2de40da4964fe8"
+  },
+  "projected_resource_cost": {
+    "additional_final_inference_guard_seconds": 600,
+    "additional_independent_final_review_guard_seconds": 120,
+    "not_a_guarantee": true,
+    "per1200_trajectory": {
+      "native": 761.13770516566,
+      "prefix8192": 322.904626367148
+    },
+    "twelve_trajectory_conservative_seconds": 6504.253989196848
+  },
+  "remaining_required_gates": [
+    "Additive genuine1200worker/training/parent-acceptance schema;preserve all995prior sources and original live guards.",
+    "New full controller bind/state with exact accepted-prefix and no-extra-weight credit/partial/foreignseed forgeries rejected.",
+    "Immutable selection/confirmation derived only from all six screens;all six fresh reports required before review.",
+    "All-six fresh serving/cache review and separate independent nonconstant grouping/bootstrap implementation.",
+    "Actual unused scientific seed census,strict original data/environment/resource identities and complete budget before NEW freeze/root."
+  ],
+  "resource_axis": {
+    "actual_twenty_update_exposure": {
+      "native": {
+        "actual_saved_samplers_match": true,
+        "mean_sampled_target_bytes_per_token": 3.30283203125,
+        "per_update_target_bytes": [
+          3112,
+          3514,
+          3080,
+          3210,
+          3353,
+          3496,
+          3576,
+          3210,
+          3445,
+          3058,
+          3401,
+          3494,
+          3530,
+          3658,
+          3414,
+          3311,
+          3529,
+          3240,
+          3464,
+          3547
+        ],
+        "sampled_training_target_bytes": 67642,
+        "scope": "Repeated sampled target-token UTF8 byte lengths,not unique corpus coverage or literal epochs. Target-byte context/exposure differs across tokenizers;no equal-byte/FLOP/time claim.",
+        "training_target_tokens": 20480
+      },
+      "prefix8192": {
+        "actual_saved_samplers_match": true,
+        "mean_sampled_target_bytes_per_token": 2.8330078125,
+        "per_update_target_bytes": [
+          2986,
+          2931,
+          3019,
+          2764,
+          2846,
+          2902,
+          2933,
+          2859,
+          2727,
+          2746,
+          2765,
+          2936,
+          3123,
+          3042,
+          2873,
+          2929,
+          2840,
+          2757,
+          3039,
+          3003
+        ],
+        "sampled_training_target_bytes": 58020,
+        "scope": "Repeated sampled target-token UTF8 byte lengths,not unique corpus coverage or literal epochs. Target-byte context/exposure differs across tokenizers;no equal-byte/FLOP/time claim.",
+        "training_target_tokens": 20480
+      }
+    },
+    "batch": 8,
+    "context": 128,
+    "description": "Equal optimizer updates and target TOKEN count,not equal raw bytes/FLOPs/time. Both nominal LR allowances equal. Log/replay actual sampled target byte exposure and actual costs;do not claim raw-example equality.",
+    "targets_per_update": 1024,
+    "updates": 1200
+  },
+  "screening": {
+    "arms": [
+      "native",
+      "prefix8192"
+    ],
+    "learning_rates": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "order": "LRascending,native then8K at each LR",
+    "selection": "Minimum complete H200common-byte BPB within arm;lowerLRexacttie. No inter-arm per-token CE selection.",
+    "shared_screen_seed": "UNASSIGNED until a new census",
+    "trajectories": 6
+  },
+  "status": "prepared_finite_design_NOT_FROZEN_no_scientific_seed_assigned",
+  "unchanged_recipe": "4x256MLA/SwiGLU672,learnedfinalscale/bias,AdamW epsilon1e-6/betas(.9,.999),Muon44/AdamW44,widthrates,decay.00006,MLAscore.5,SiLU,blockRMS/unit serial branches/no product norm,original warmup/cooldown800/H200interval10;41snapshots. Only explicit tokenizer/vocab tables differ,including normalization and actual raw context/exposure effects."
+}

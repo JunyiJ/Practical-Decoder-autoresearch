@@ -1559,3 +1559,20 @@ Next: generated-worker/common111475byte CPU/MPS parent acceptance, real resource
 pilots, finite fair tuning/fresh design and complete retained-output budget.
 No new scientific seed/quality panel/adoption exists. See [mechanism, contrary
 results and papers](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review.md).
+
+
+## Native/8K prerequisites and resource pilots complete
+
+Both four-update workers and twenty-update resource pilots independently passed
+RAW/H200/optimizer/EMA/RNG/sampler/clipping,complete CPU/MPS common111475-byte
+validation and cache/resetB1/8. Conservative1200-update projections761.14/322.90s
+pass original7200s guards. This is not a tokenizer quality result. Actual equal
+20480-token pilots sampled67642/native versus58020/8K bytes;raw exposure differs.
+Independent nonconstant common-byte grouping/LRselection/bootstrap contracts pass.
+All995current sources preserve972 original frozen bindings. Both roots have
+terminal STOP;no numerical worker or scientific seed/panel/freeze is active.
+
+Next implement/prove the full1200 quality worker/controller/all-six-fresh serving
+and independent review,then unused-seed census/full LIVE budget and complete panel.
+See [current preparation](TOKENIZER_GPT2_PREFIX_PREPARATION.md) and
+[evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review002.md).
