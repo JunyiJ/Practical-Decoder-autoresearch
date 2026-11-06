@@ -1,7 +1,11 @@
-# MoE scientific comparison running
+# MoE fresh confirmation running
 
 QUALITY001 is FROZEN and RUNNING,source commitc1393f9d,1035immutablebindings.
-Read [current launch evidence](tokenizer-evidence/post-prefix-boundary-001/evidence-review006.md),
+All9LRscreens independently accepted. Each arm selectedLR.00125 under the
+original immutable rule;all9fresh endpoints now run in the frozen rotation.
+No complete fresh-quality result/adoption.
+Read [current evidence](tokenizer-evidence/post-prefix-boundary-001/evidence-review007.md),
+[screen phase audit](tokenizer-evidence/post-prefix-boundary-001/quality001-screen-phase001.json),
 [launch receipt](tokenizer-evidence/post-prefix-boundary-001/quality001-launch001.json)
 and [original freeze](tokenizer-evidence/post-prefix-boundary-001/quality001-freeze.json).
 Full source/state/serialization/independentstatistics gates and unused-seed/LIVE

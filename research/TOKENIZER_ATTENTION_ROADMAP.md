@@ -1428,3 +1428,15 @@ cleanup needed. Keep ALLscreens/fresh and allprior protected payloads/evidence.
 Never replayprepare/attemptedslots/closedproofs or editfrozenruntime. Follow actual
 process/guard/anchor/STOP. See current TOKENIZER_MOE_QUALITY_PREPARATION.md and
 post-prefix-boundary-001/evidence-review006.md,quality001-launch001.json.
+
+
+## MoE screens accepted; fresh confirmation active
+
+All9screens accepted1200updates/1228800targets/41H200 with full independent
+state/nativeCPU-MPSvalidation/cache acceptance. Immutable per-arm LRselection
+chose.00125 for all3arms,best of finite3rates ononescreenseed,notanoptimum/winner.
+All18screenweights5277886622B protected;99closedmetadatafiles mirroredZEROweights.
+Read-only audit verified1035sources/anchors/guards/hashes and every resolved fresh
+config. All9fresh required before serving/independentfinalstats. Noqualityresult/
+adoption/cleanup/retirement. See post-prefix-boundary-001/evidence-review007.md
+and quality001-screen-phase001.json. Originalfreeze/recipe/guards unchanged.
