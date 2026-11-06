@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/maintenance-inline-input-dropout-002/recovery.py", line 23, in <module>
+    consumers();assert row(p)==r;log.write(json.dumps(dict(event='intent_remove_exact_unused_compiler_cache',file=r))+'\n');log.flush();os.fsync(log.fileno());p.unlink();fd=os.open(p.parent,os.O_RDONLY);os.fsync(fd);os.close(fd);log.write(json.dumps(dict(event='removed',path=str(p)))+'\n');log.flush();os.fsync(log.fileno())
+    ~~~~~~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/maintenance-inline-input-dropout-002/recovery.py", line 13, in consumers
+    p=subprocess.run(['lsof','-nP',*map(str,P)],capture_output=True,text=True);assert p.returncode==1 and not p.stdout.strip() and not p.stderr.strip()
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

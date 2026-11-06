@@ -1,0 +1,464 @@
+{
+  "kind": "read_only_historical_dropout_evidence",
+  "rows": [
+    {
+      "iteration": 3,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-003/evidence.json",
+      "sha256": "f183795e62798935f74502968dfa0e271eccea4f50c5df96377336e6bf4f1ee0",
+      "suite_spec_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-003/suite-spec.json",
+      "suite_spec_sha256": "3080830258ad27501bd8eef9b02a12af415710a0aa90cc8a02aae2d696126825",
+      "hypothesis": "Setting only model.attn_dropout=0.05 will improve width-64 final validation CE sufficiently to satisfy the registered criterion by reducing reliance on individual attention links. Applying the same setting at widths 128 and 256 tests whether this benefit transfers within the retained Muon/AdamW hybrid muP family.",
+      "holdout_consumed": false,
+      "selection": {
+        "local_outcome": "contradicted",
+        "mean_delta": 0.011296444469028074,
+        "paired_deltas": [
+          0.013493998845418353,
+          0.012408542633056685,
+          0.007986791928609183
+        ],
+        "selected_by": "small_width_validation_only",
+        "winner": "baseline"
+      },
+      "comparisons": [
+        {
+          "complete": true,
+          "mean_delta": 0.011296444469028074,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.642529026667277,
+              "candidate": 1.6560230255126953,
+              "delta": 0.013493998845418353,
+              "seed": 11
+            },
+            {
+              "baseline": 1.646415102481842,
+              "candidate": 1.6588236451148988,
+              "delta": 0.012408542633056685,
+              "seed": 22
+            },
+            {
+              "baseline": 1.6486575762430826,
+              "candidate": 1.6566443681716918,
+              "delta": 0.007986791928609183,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.0029171739322441078,
+          "stage": "local",
+          "target": "width-64",
+          "width": 64
+        },
+        {
+          "complete": true,
+          "mean_delta": -0.0006783154275681694,
+          "missing_seeds": [],
+          "outcome": "mixed",
+          "pairs": [
+            {
+              "baseline": 1.5613153179486592,
+              "candidate": 1.559313130378723,
+              "delta": -0.002002187569936087,
+              "seed": 11
+            },
+            {
+              "baseline": 1.555158253510793,
+              "candidate": 1.5514564077059427,
+              "delta": -0.0037018458048503344,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5617077032725015,
+              "candidate": 1.5653767903645834,
+              "delta": 0.003669087092081913,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.003859681467397649,
+          "stage": "transfer",
+          "target": "width-128",
+          "width": 128
+        },
+        {
+          "complete": true,
+          "mean_delta": -0.0026581168174743355,
+          "missing_seeds": [],
+          "outcome": "mixed",
+          "pairs": [
+            {
+              "baseline": 1.5211326678593953,
+              "candidate": 1.5170939922332765,
+              "delta": -0.004038675626118815,
+              "seed": 11
+            },
+            {
+              "baseline": 1.5156078298886617,
+              "candidate": 1.5139869054158528,
+              "delta": -0.0016209244728089267,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5361195047696432,
+              "candidate": 1.533804754416148,
+              "delta": -0.002314750353495265,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.0012449118668692743,
+          "stage": "transfer",
+          "target": "width-256",
+          "width": 256
+        }
+      ],
+      "records_complete": true,
+      "scope": "final-budget validation CE in nats/character; equal tokens, not equal compute"
+    },
+    {
+      "iteration": 10,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-010/evidence.json",
+      "sha256": "2d27cd6e5c25d4bfe3baf2a6dc512557c51d0ec4df396b245e4fe47775bcaec4",
+      "suite_spec_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-010/suite-spec.json",
+      "suite_spec_sha256": "35d4c19331a8566d7a2763d7b0580ffaa979c81a4b4f45069c117b3e58c7cad0",
+      "hypothesis": "Enabling 5% dropout on attention-output and MLP-output residual branches, while keeping attention-probability dropout disabled, will reduce feature co-adaptation enough to satisfy the registered width-64 final-validation improvement criterion. Applying the identical configuration at widths 128 and 256 tests whether any local benefit transfers.",
+      "holdout_consumed": false,
+      "selection": {
+        "local_outcome": "contradicted",
+        "mean_delta": 0.014124956395891028,
+        "paired_deltas": [
+          0.018901582558949803,
+          0.011787136395772224,
+          0.011686150232951054
+        ],
+        "selected_by": "small_width_validation_only",
+        "winner": "baseline"
+      },
+      "comparisons": [
+        {
+          "complete": true,
+          "mean_delta": 0.014124956395891028,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.6426617980003357,
+              "candidate": 1.6615633805592855,
+              "delta": 0.018901582558949803,
+              "seed": 11
+            },
+            {
+              "baseline": 1.646694831053416,
+              "candidate": 1.6584819674491882,
+              "delta": 0.011787136395772224,
+              "seed": 22
+            },
+            {
+              "baseline": 1.648420480887095,
+              "candidate": 1.660106631120046,
+              "delta": 0.011686150232951054,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.004136987754089144,
+          "stage": "local",
+          "target": "width-64",
+          "width": 64
+        },
+        {
+          "complete": true,
+          "mean_delta": 0.011067708333333407,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.561237064997355,
+              "candidate": 1.575576110680898,
+              "delta": 0.01433904568354305,
+              "seed": 11
+            },
+            {
+              "baseline": 1.5551857034365335,
+              "candidate": 1.5621609886487324,
+              "delta": 0.006975285212198923,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5618761857350667,
+              "candidate": 1.573764979839325,
+              "delta": 0.011888794104258249,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.0037499171260501215,
+          "stage": "transfer",
+          "target": "width-128",
+          "width": 128
+        },
+        {
+          "complete": true,
+          "mean_delta": 0.005574769443935794,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.522949230670929,
+              "candidate": 1.519343380133311,
+              "delta": -0.0036058505376179717,
+              "seed": 11
+            },
+            {
+              "baseline": 1.5151548981666565,
+              "candidate": 1.5239038745562234,
+              "delta": 0.008748976389566954,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5358962774276734,
+              "candidate": 1.5474774599075318,
+              "delta": 0.011581182479858398,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.008075777688170296,
+          "stage": "transfer",
+          "target": "width-256",
+          "width": 256
+        }
+      ],
+      "records_complete": true,
+      "scope": "final-budget validation CE in nats/character; equal tokens, not equal compute"
+    },
+    {
+      "iteration": 14,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-014/evidence.json",
+      "sha256": "6c402bf70715e13499b98dec1a615877f2599f6d80658267d9650a8073dfcc78",
+      "suite_spec_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-014/suite-spec.json",
+      "suite_spec_sha256": "18801827edc6c1ca7447e961b6a99fc03bb9f216230fa327d7d1bd725dcaf3df",
+      "hypothesis": "Setting attention-probability dropout to 0.01 will provide enough attention-link regularization, with less optimization disruption than the previously tested 0.05 setting, to pass the registered width-64 final-validation improvement criterion. This is a low-confidence hypothesis; unchanged application at widths 128 and 256 tests conditional transfer.",
+      "holdout_consumed": false,
+      "selection": {
+        "local_outcome": "contradicted",
+        "mean_delta": 2.8804937998468578e-05,
+        "paired_deltas": [
+          0.0022759199142456943,
+          -0.00151206254959102,
+          -0.0006774425506592685
+        ],
+        "selected_by": "small_width_validation_only",
+        "winner": "baseline"
+      },
+      "comparisons": [
+        {
+          "complete": true,
+          "mean_delta": 2.8804937998468578e-05,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.6438013394673665,
+              "candidate": 1.6460772593816122,
+              "delta": 0.0022759199142456943,
+              "seed": 11
+            },
+            {
+              "baseline": 1.646577235062917,
+              "candidate": 1.645065172513326,
+              "delta": -0.00151206254959102,
+              "seed": 22
+            },
+            {
+              "baseline": 1.6480580886205038,
+              "candidate": 1.6473806460698446,
+              "delta": -0.0006774425506592685,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.001990299455612179,
+          "stage": "local",
+          "target": "width-64",
+          "width": 64
+        },
+        {
+          "complete": true,
+          "mean_delta": -0.005591073301103459,
+          "missing_seeds": [],
+          "outcome": "supported",
+          "pairs": [
+            {
+              "baseline": 1.560981563727061,
+              "candidate": 1.5564678271611532,
+              "delta": -0.004513736565907811,
+              "seed": 11
+            },
+            {
+              "baseline": 1.5540154496828715,
+              "candidate": 1.5476977944374084,
+              "delta": -0.006317655245463127,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5627615253130596,
+              "candidate": 1.5568196972211201,
+              "delta": -0.005941828091939438,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.0009517364882586686,
+          "stage": "transfer",
+          "target": "width-128",
+          "width": 128
+        },
+        {
+          "complete": true,
+          "mean_delta": -0.00048107173707749123,
+          "missing_seeds": [],
+          "outcome": "mixed",
+          "pairs": [
+            {
+              "baseline": 1.520561397075653,
+              "candidate": 1.5125616709391276,
+              "delta": -0.007999726136525442,
+              "seed": 11
+            },
+            {
+              "baseline": 1.5148412982622783,
+              "candidate": 1.5132274627685547,
+              "delta": -0.0016138354937236254,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5355406999588013,
+              "candidate": 1.5437110463778179,
+              "delta": 0.008170346419016594,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.008144334037178961,
+          "stage": "transfer",
+          "target": "width-256",
+          "width": 256
+        }
+      ],
+      "records_complete": true,
+      "scope": "final-budget validation CE in nats/character; equal tokens, not equal compute"
+    },
+    {
+      "iteration": 17,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-017/evidence.json",
+      "sha256": "adeacaf8a636a35523ff9013cdcc5e14f62545e6dae078f56f3eb7be4f63efda",
+      "suite_spec_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/continuous-20261023-005/iteration-017/suite-spec.json",
+      "suite_spec_sha256": "f1f2e6f4cf0ff1f1eb9dd6c1d7443fd69a2cff5bdefb6029836e1360d25c31af",
+      "hypothesis": "Enabling 1% dropout on attention-output and MLP-output residual branches, while retaining zero attention-probability dropout, will improve width-64 final validation CE enough to pass the registered criterion. The conjecture is that weaker residual perturbation can reduce co-adaptation without the fitting penalty observed at 5%. Confidence is low; unchanged transfer to widths 128 and 256 remains a separate test.",
+      "holdout_consumed": false,
+      "selection": {
+        "local_outcome": "contradicted",
+        "mean_delta": 0.007772465546925789,
+        "paired_deltas": [
+          0.0081700046857196,
+          0.010601373513539514,
+          0.004546018441518251
+        ],
+        "selected_by": "small_width_validation_only",
+        "winner": "baseline"
+      },
+      "comparisons": [
+        {
+          "complete": true,
+          "mean_delta": 0.007772465546925789,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.6430563052495322,
+              "candidate": 1.6512263099352518,
+              "delta": 0.0081700046857196,
+              "seed": 11
+            },
+            {
+              "baseline": 1.6466347932815553,
+              "candidate": 1.6572361667950948,
+              "delta": 0.010601373513539514,
+              "seed": 22
+            },
+            {
+              "baseline": 1.6479748566945394,
+              "candidate": 1.6525208751360576,
+              "delta": 0.004546018441518251,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.0030471887514917913,
+          "stage": "local",
+          "target": "width-64",
+          "width": 64
+        },
+        {
+          "complete": true,
+          "mean_delta": 0.0030128386285569833,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.560917647679647,
+              "candidate": 1.5665983517964681,
+              "delta": 0.0056807041168212,
+              "seed": 11
+            },
+            {
+              "baseline": 1.5549975633621216,
+              "candidate": 1.558393132686615,
+              "delta": 0.003395569324493364,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5622044245402018,
+              "candidate": 1.5621666669845582,
+              "delta": -3.775755564361383e-05,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.0028783785477367687,
+          "stage": "transfer",
+          "target": "width-128",
+          "width": 128
+        },
+        {
+          "complete": true,
+          "mean_delta": 0.004704564147525329,
+          "missing_seeds": [],
+          "outcome": "contradicted",
+          "pairs": [
+            {
+              "baseline": 1.5217960913976034,
+              "candidate": 1.527522345383962,
+              "delta": 0.005726253986358509,
+              "seed": 11
+            },
+            {
+              "baseline": 1.5138067126274108,
+              "candidate": 1.5236212650934855,
+              "delta": 0.009814552466074655,
+              "seed": 22
+            },
+            {
+              "baseline": 1.5363258242607116,
+              "candidate": 1.5348987102508544,
+              "delta": -0.0014271140098571777,
+              "seed": 33
+            }
+          ],
+          "sample_std_delta": 0.0056900486715056875,
+          "stage": "transfer",
+          "target": "width-256",
+          "width": 256
+        }
+      ],
+      "records_complete": true,
+      "scope": "final-budget validation CE in nats/character; equal tokens, not equal compute"
+    }
+  ],
+  "checkpoint_loads": false,
+  "retraining": false,
+  "no_score_pooling": true
+}

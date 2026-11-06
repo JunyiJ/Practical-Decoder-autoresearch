@@ -1489,3 +1489,23 @@ shift from model-fit evidence and inspect original regularization results plus
 primary papers before admitting a fresh finite design. All diagnostics are
 closed, no numerical worker remains active, and no new panel budget is frozen.
 See boundary002/evidence-review.md for exact evidence and applicability limits.
+
+
+## Input-only regularization preparation
+
+Frequency-composition controls and actual old dropout evidence were reviewed
+with primary supporting/contrary papers. One new input-feature dropout site
+(.1 versus .0) is qualified for correctness/resource preparation, as local
+regularization rather than structural exploration. Original residual/attention
+dropout losses are not erased. CPU/MPS model proofs, exact stochastic real-data
+repeat/serialized resume, additive RNG/config preflight and finite worker-route
+checks passed. Independent generated workers/pilots and scientific quality are
+not yet executed; no scientific seed/freeze/adoption. All958bindings preserve
+the939scientific+6prior diagnostic sources. Keep incumbent and closed holdout.
+
+The prepared next numerical pair awaits actualfree>=11,051,937,792B after inline
+recovery. The full future all-output planning bound is separate, with no future
+retirement credits. Unchanged exhausted blocker:one silent hourly wake check,
+no repeated broad audits/closed probes. New eligible evidence triggers recovery.
+See [preparation](TOKENIZER_EMBEDDING_INPUT_DROPOUT_PREPARATION.md) and
+[boundary evidence](tokenizer-evidence/generalization-boundary-001/evidence-review.md).
