@@ -134,3 +134,26 @@ serially with live complete remaining-budget checks. The controller stops on
 a scientific/resource failure without retries or replacement seeds; source and
 independent useful work continue after diagnosis. No automatic beta1 study follows; choose the next improvement
 from results, existing data and primary literature.
+
+
+## Scientific execution launched
+
+[quality001-freeze.json](tokenizer-evidence/body-allocation-preparation-001/quality001-freeze.json)
+SHA256 `de119b0483f59ab43fadce3172b553d48960f77cd4710e5a07a39dfc541cb591`
+freezes the complete original design. Run root
+`research_runs/tokenizer-body-allocation-quality-v1-001`, controller
+`research.body_allocation_quality_v1.execution run-all`. The first screen
+incumbent/LR.000625/seed200080002 has actual completed updates. No accepted
+scientific endpoint or quality/adoption conclusion yet at this launch record.
+The controller continues the finite screen, selection, exact losing-screen
+retirement, fresh panel and independent inference/statistics serially.
+
+Six pilot payloads1,419,853,746logical/1,476,706,304allocatedB were permanently
+retired after actual acceptance and finite downstream source closure;46,983
+survivors rehashed unchanged. See quality001-pilot-retirement001/manifest.json
+and completed.json. Original pilot STOP/source/log/config/metric/receipts stay
+immutable; never rerun or restore those pilots. Post-retirement free16,545,169,408B
+passed the strengthened16,167,530,496B floor. Extra2GiB target remains unmet
+after eligible cleanup; the full mandatory budget and original guards remain.
+All selected/fresh historical weights stay protected. Screen/evaluation/pilot
+seeds are used; fresh200080011/012/013 andbootstrap200080004 remain unused.

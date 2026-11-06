@@ -1,0 +1,53 @@
+{
+  "phase": "LR screen; fresh selection algorithm and seeds already fixed",
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-plan.json",
+    "sha256": "43754ddefe492694958d1d76ec7f5895048948c9f6c0398d897819beb9474b44"
+  },
+  "scientific_design": {
+    "arms": [
+      "incumbent",
+      "shallow",
+      "deeper"
+    ],
+    "blocks": [
+      2048,
+      4096,
+      8192
+    ],
+    "bootstrap_generator": "PCG64",
+    "candidate": "deeper",
+    "comparisons": [
+      "deeper-minus-incumbent",
+      "deeper-minus-shallow"
+    ],
+    "compute_axis": "Equal sampled targets and equally bounded family LR tuning; measured time/memory/cache reported separately, not equal training FLOPs.",
+    "cost_only_adoption": false,
+    "diagnostic_only": "shallow",
+    "draws": 2000,
+    "every_seed_negative": true,
+    "fresh_seeds": 3,
+    "fresh_trajectories": 9,
+    "holdout_scored": false,
+    "learning_rates": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "mean_delta_threshold": -0.02,
+    "no_retirement_credit_until_actual": true,
+    "parametrization": "Native same constructor scheme, inherited width rates and UNIT residual branches; no claim of shared weights or optimal depth transfer.",
+    "quantile": "linear",
+    "replacement_seeds": false,
+    "rescue": false,
+    "retained_high_water": "Pilot plus all screens: four endpoint pairs per arm. After exact dependency-closed pilot/loser retirement: one selected plus three fresh pairs per arm.",
+    "retry_failed_attempt": false,
+    "screens_per_arm": 3,
+    "selected_and_fresh_protected": true,
+    "selection": "For each arm select minimum full-validation H200 CE over its three rates; lower LR breaks exact ties.",
+    "simultaneous_scope": "Bonferroni over two contrasts and three block lengths, conditional on these trained seeds and reused validation text.",
+    "steps": 1200,
+    "targets": 1228800,
+    "upper_quantile": 0.9916666666666667
+  }
+}
