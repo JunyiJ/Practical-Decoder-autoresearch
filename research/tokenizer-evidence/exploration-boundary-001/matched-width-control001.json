@@ -1,0 +1,30 @@
+{
+  "adam_groups": 44,
+  "adam_parameters": 19304960,
+  "checkpoint_loads": 0,
+  "complete_panel_capacity_measured": false,
+  "component_ffn_parameter_count_crosschecked": true,
+  "estimated_cache_bytes_per_item": 163840,
+  "ffn_width": 1024,
+  "forward_matmul_flops_per_token": 25393536,
+  "full_model_supported": false,
+  "heads": 6,
+  "input_geometry": {
+    "path": "research/tokenizer-evidence/exploration-boundary-001/geometry001.json",
+    "sha256": "45915faad5e6e51d3942347a68c8f62412c8beeeb05a531a89df8a7098e17f61"
+  },
+  "latent_rank": 48,
+  "layers": 4,
+  "matching_rule": "Nearest multiple-of8 FFN width to the actual incumbent non-embedding parameter count;integer search8..2048,ties lower width.",
+  "muon_groups": 44,
+  "muon_parameters": 2752512,
+  "nonembedding_parameters": 2758784,
+  "parameter_tensors": 88,
+  "persistent_buffer_bytes": 65536,
+  "raw_plus_h200_tensor_payload_bytes": 430270640,
+  "status": "algebraic_width_matched_control_not_full_runtime",
+  "table_parameters": 19298688,
+  "total_parameters": 22057472,
+  "training_launched": false,
+  "width": 192
+}

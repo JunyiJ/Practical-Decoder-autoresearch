@@ -118,6 +118,12 @@ future attention proposal needs a new, explicit scope or mechanism and fresh
 controls, not the old trial replay. Likewise, old character-model failures are
 priors rather than proof about a new subword design.
 
+The first [geometry audit](tokenizer-evidence/exploration-boundary-001/geometry-review.md)
+derives a seven-layer,width192 candidate and a four-layer,width192 FFN1024
+control to separate body allocation from narrower vocabulary tables. This
+updates the provisional depth question using actual counts; it is not a quality
+screen, measured performance gain or numerical admission.
+
 ## Give different families a fair chance
 
 Before screening a new family, declare either a common fixed-recipe question or

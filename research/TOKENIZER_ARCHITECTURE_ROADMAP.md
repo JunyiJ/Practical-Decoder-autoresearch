@@ -1418,3 +1418,21 @@ grounded in stored curves,prior capacity/MoE/horizon findings and primary papers
 See [boundary evidence](tokenizer-evidence/exploration-boundary-001/evidence-review.md).
 The depth/width and MoE questions remain provisional;no numerical seeds or
 future quality protocol are frozen and the70/30 portfolio remains proposed.
+
+
+## Body allocation geometry audit completed
+
+A real CPU incumbent/optimizer inventory independently matches28,492,416
+parameters,88tensors,44Muon/44AdamW and196,608cacheB/item;all918frozen bindings
+unchanged. No forward/training/checkpoint I/O/MPS or new scientific seed.
+Derived7x192H504 nearly matches incumbent body capacity but narrows vocabulary
+tables;its projected cache is45.83% larger despite fewer total parameters.
+A4x192H1024 control nearly matches body/vocabulary capacity and forward matmul
+work with the deeper candidate,so the next prototype can test allocation rather
+than confuse it with reduced table width. These are component projections,not
+measured speed/quality or a complete panel budget. Old guards correctly reject
+the new geometry;none was bypassed. Primary depth-transfer papers and contrary
+local branch/depth/MoE results reviewed with applicability limits.
+Next:isolated model/component contracts and correctness prerequisites outside
+918sources,keeping unit gains;no numerical study/seed/freeze admitted.
+See [geometry review](tokenizer-evidence/exploration-boundary-001/geometry-review.md).
