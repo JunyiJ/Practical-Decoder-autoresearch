@@ -1371,3 +1371,18 @@ ModelproofpeakRSS3186769920B/MPS2283585536B;next realresume must respect4GiB/6Gi
 Next own native-data/RAW-H200/per-parameter exposure/routecounter/EMA/RNG/sampler
 transport and complete real4update repeat/serialized2+2 proof,then workers/pilots.
 See TOKENIZER_MOE_CURRENT_PREPARATION.md and post-prefix-boundary-001/evidence-review002.md.
+
+
+## Three-arm real-data transport passed
+
+New MoE resume001 passed exact4-update freshrepeat and serialized2+2 for dense672,
+dense1344 andMoEtop2expert336,including RAW/H200/optimizer/EMA/clipping/routing/
+private samplers/CPU-MPS RNG.62forgeries rejectedbeforemutation;additionalreal
+dormantfixture validates24absentoptimizer slotsatglobalstep1.EMAlearned88/88/128,
+3snapshots;nointegercountersaveraged.All1019bindings preserve1004scientificsources.
+Guard41.37s/RSS2155413504/MPS2652717056Bpassedoriginallimits.ZEROweightfiles,
+noholdout/qualityseed/result.Noactiveworker.TerminalSTOP-resume001 closesproof;
+neverrerun/edit.No newretirementeligibility.Alloriginalevidence/weightsprotected.
+Nextnewthree-armgeneratedworkerswithindependentfull34278targetCPU-MPSvalidation/
+cache,thenactual20-updatepilots/fullscientificgates.SeeTOKENIZER_MOE_WORKER_PREPARATION.md
+andpost-prefix-boundary-001/evidence-review003.md;oldcurrentpreparationishistorical.
