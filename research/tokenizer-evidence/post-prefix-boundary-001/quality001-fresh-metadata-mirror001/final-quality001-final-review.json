@@ -1,0 +1,217 @@
+{
+  "adopted": false,
+  "confirmation": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-confirmation-plan.json",
+    "sha256": "58700638b6992c6f82658351c26b10ca3b0674b6d6e027856aa4c328e5042823"
+  },
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-freeze.json",
+    "sha256": "6caf4aeb2a65a3548211e44ef801e788049c9dd0351fdfa8708bacf107ec8d2b"
+  },
+  "fresh_acceptances": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/09/accepted.json",
+      "sha256": "fb9b3efa485225df6baf7c083a61a2c483b11995f5c7c22ccea5d400a8f68e4e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/10/accepted.json",
+      "sha256": "a8614f91d9720c842e0619081367f767948e1ee2a35ba904a5633e86bc176638"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/11/accepted.json",
+      "sha256": "1374174ec5a935cd7b84c19ef1cd74b6f58e0d6a4a6bf88d702d007a93dbb301"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/12/accepted.json",
+      "sha256": "0f7e4f4eda91f161508fb20d3401b6747408443b48c4fc01ca98b4deb92ef40b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/13/accepted.json",
+      "sha256": "de651a75393337bb4973f2932adb740c1323b01926346224da9bce25c05a7d0b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/14/accepted.json",
+      "sha256": "f9311fb80186dde437492e6af712d6d6c7cf0110aa97c722b785259357027b58"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/15/accepted.json",
+      "sha256": "375715b4be434fea7d844f848fec92acb44c806f9de38163bc9a945cc492c712"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/16/accepted.json",
+      "sha256": "13b8831b25ee56d22f3faf0acb3fc363e89cd818219fee4b519f9030b315cbff"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/17/accepted.json",
+      "sha256": "ff3c7ea10b32a5e937f24c0ab457128e30fa519f937dc2328d96809765167200"
+    }
+  ],
+  "independent_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-independent-final-review.json",
+    "sha256": "8866fbff63ac1fb9894dc3a91e4535156c0ac03d6701fe7342bd038d19ec307b"
+  },
+  "inference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-fresh-inference.json",
+    "sha256": "74c3631e0195177636a8b22e1dd3b0675078d570b0c4bbe9fc7dd68274410d9f"
+  },
+  "next_action": "Separate evidence/adoption/checkpoint consumer review only if all strict quality gates pass;otherwise retain incumbent.Then continue evidence-qualified RSI.",
+  "selection": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-selection.json",
+    "sha256": "f658a6482c271ca524283c6eef18ba7925681bc7745c86b42bb2ecdd8ad9e98d"
+  },
+  "statistics": {
+    "contrasts": {
+      "dense": {
+        "candidate_minus_control_ce": [
+          0.006246235707623023,
+          0.008165892407276549,
+          0.006015109780952204
+        ],
+        "intervals": {
+          "2048": {
+            "draw_seed": 200110004,
+            "draws": 2000,
+            "pcg64_reinitialized_each_width": true,
+            "quantile": 0.9916666666666667,
+            "same_indices_across_seeds_and_contrasts": true,
+            "token_counts": [
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              1510
+            ],
+            "upper": 0.012649923924333832
+          },
+          "4096": {
+            "draw_seed": 200110004,
+            "draws": 2000,
+            "pcg64_reinitialized_each_width": true,
+            "quantile": 0.9916666666666667,
+            "same_indices_across_seeds_and_contrasts": true,
+            "token_counts": [
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              1510
+            ],
+            "upper": 0.014212852928371033
+          },
+          "8192": {
+            "draw_seed": 200110004,
+            "draws": 2000,
+            "pcg64_reinitialized_each_width": true,
+            "quantile": 0.9916666666666667,
+            "same_indices_across_seeds_and_contrasts": true,
+            "token_counts": [
+              8192,
+              8192,
+              8192,
+              8192,
+              1510
+            ],
+            "upper": 0.017728733891485444
+          }
+        },
+        "mean_ce_delta": 0.0068090792986172585
+      },
+      "wide": {
+        "candidate_minus_control_ce": [
+          0.011333934864714453,
+          0.015262499581907433,
+          0.008459031868381327
+        ],
+        "intervals": {
+          "2048": {
+            "draw_seed": 200110004,
+            "draws": 2000,
+            "pcg64_reinitialized_each_width": true,
+            "quantile": 0.9916666666666667,
+            "same_indices_across_seeds_and_contrasts": true,
+            "token_counts": [
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              2048,
+              1510
+            ],
+            "upper": 0.017737929127948544
+          },
+          "4096": {
+            "draw_seed": 200110004,
+            "draws": 2000,
+            "pcg64_reinitialized_each_width": true,
+            "quantile": 0.9916666666666667,
+            "same_indices_across_seeds_and_contrasts": true,
+            "token_counts": [
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              4096,
+              1510
+            ],
+            "upper": 0.016413822369628028
+          },
+          "8192": {
+            "draw_seed": 200110004,
+            "draws": 2000,
+            "pcg64_reinitialized_each_width": true,
+            "quantile": 0.9916666666666667,
+            "same_indices_across_seeds_and_contrasts": true,
+            "token_counts": [
+              8192,
+              8192,
+              8192,
+              8192,
+              1510
+            ],
+            "upper": 0.01828867932360391
+          }
+        },
+        "mean_ce_delta": 0.011685155438334404
+      }
+    },
+    "gates": {
+      "all_six_simultaneous_conditional_text_upper_bounds_negative": false,
+      "both_mean_ce_below_minus_point02": false,
+      "every_paired_seed_delta_negative": false
+    },
+    "practical_threshold": -0.02,
+    "quality_gates_pass": false,
+    "scope": "Conditional on trained seeds and reused34278native validation targets;not holdout or population-seed confidence. Both controls required;no wide fallback or cost-only adoption. Separate adoption/consumer review required."
+  },
+  "status": "complete_fresh_panel_reviewed"
+}

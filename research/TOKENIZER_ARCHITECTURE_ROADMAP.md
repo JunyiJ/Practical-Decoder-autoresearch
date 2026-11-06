@@ -1696,3 +1696,19 @@ Read-only audit verified1035sources/anchors/guards/hashes and every resolved fre
 config. All9fresh required before serving/independentfinalstats. Noqualityresult/
 adoption/cleanup/retirement. See post-prefix-boundary-001/evidence-review007.md
 and quality001-screen-phase001.json. Originalfreeze/recipe/guards unchanged.
+
+
+## Native MoE quality closed; gradient diagnostic prerequisite
+
+All18endpoints/all9serving/independentstatistics passed;MoE losesall3freshseeds
+againstbothcontrols,means+.006809079299/+.011685155438,ALLadoptiongatesFALSE.
+Keepnativeincumbent;no widefallback. RootterminalSTOP closesoriginalcommands.
+All36weights10555774716Bprotected,106newclosedmetadata0weightcopies. No cleanup.
+Savedmetadataanalysisfindsno unusedexperts/missingparameterupdates;mostlossblocks
+positive. Noautomaticrouter/expert/horizonrescue. New boundedraw-gradient-noise
+diagnostic reviewedhistoricalbatchcontraryresults/McCandlish1812.06162v1caveats;
+no qualitypanel orbatchoptimum admitted. GeneratedFP64/FP32momentcomponent passes
+6cases/30forgeries,error3.55e-15;1038bindings preserve1035scientificsources.
+Nextownfixed-weightMPSgradient-samplingintegration andfull3endpointtrain-only
+probeaftergates,notqualityexploration. See TOKENIZER_MOE_RESULTS.md and
+post-moe-boundary-001/evidence-review.md. No numericalworkercurrentlyactive.

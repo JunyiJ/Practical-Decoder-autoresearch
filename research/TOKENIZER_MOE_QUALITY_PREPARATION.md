@@ -1,25 +1,18 @@
-# MoE fresh confirmation running
+# MoE study closed without adoption
 
-QUALITY001 is FROZEN and RUNNING,source commitc1393f9d,1035immutablebindings.
-All9LRscreens independently accepted. Each arm selectedLR.00125 under the
-original immutable rule;all9fresh endpoints now run in the frozen rotation.
-No complete fresh-quality result/adoption.
-Read [current evidence](tokenizer-evidence/post-prefix-boundary-001/evidence-review007.md),
-[screen phase audit](tokenizer-evidence/post-prefix-boundary-001/quality001-screen-phase001.json),
-[launch receipt](tokenizer-evidence/post-prefix-boundary-001/quality001-launch001.json)
-and [original freeze](tokenizer-evidence/post-prefix-boundary-001/quality001-freeze.json).
-Full source/state/serialization/independentstatistics gates and unused-seed/LIVE
-preflight passed. Original audit001 harness failure remains CLOSED_FAILED;
-separate002passed without runtime edits/training/rescoring.
+All18endpoints andall9freshserving/independentstatistics passed. All3qualitygates
+FALSE:MoE meanCE+.006809079299versusdense,+.011685155438versuswide,all3seedsworse.
+Keepnativeincumbent.No widedensefallback/cost-onlyadoption. RootterminalSTOP closes
+ALLoriginalcommands;controller444/session42476 exited0.No numericalworkeractive.
+See [results](TOKENIZER_MOE_RESULTS.md),[closure](tokenizer-evidence/post-prefix-boundary-001/quality001-closure001.json)
+and [next boundary](tokenizer-evidence/post-moe-boundary-001/evidence-review.md).
 
-The sole serial controller advances9LRscreens then9fresh endpoints,1200updates/
-1228800targets/41H200 each. Immutable independent per-arm minimumH200MPSCE/lowerLR
-ties;three-way rotated fresh order. All18accepted before all9fresh serving and
-separate independent statistics against BOTHdense controls. No quality result or
-adoption yet. Keep incumbent. Never duplicate worker/controller,rerun prepare or
-attempted slots,clearSTOP,edit1035sources or call state/advance on a livepartialslot.
-Follow actualprocesses/metrics/guards/acceptanceanchors/STOP. Healthy monitoringquiet.
+All1035frozen scientificbindings unchanged.All36weights10555774716Bprotected,
+106newfresh/finalmetadatafiles mirroredZEROweights,earlier99screenmirrorsintact.
+All12prerequisiteweights/evidenceprotected;no cleanup/retirement. All200110*rolesUSED.
+No originaltraining/scoring/bootstrap/review/proofrerun orSTOPclearing permitted.
 
-Full retained-outputfloor21771120640B,target23918604288B passes~92GBfree.
-Alloutputs retained,including allscreens. No cleanup/retirement required. All prior
-weights/source/failure/acceptance/log/config/metric/STOP/retirement evidence intact.
+Saved-record analysiscompleted.Newgradient-moment component/proofpassed6CPUcases,
+30transactionalforgeries,maxerror3.55e-15;1038currentbindings. Nextownfixedweight
+native-dense gradient-samplingintegration fortraining-only diagnostic;not a batch
+qualitypanel. No qualityseed/freeze/newmodelresult. See nextboundary/actualplan.
