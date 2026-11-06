@@ -157,3 +157,21 @@ passed the strengthened16,167,530,496B floor. Extra2GiB target remains unmet
 after eligible cleanup; the full mandatory budget and original guards remain.
 All selected/fresh historical weights stay protected. Screen/evaluation/pilot
 seeds are used; fresh200080011/012/013 andbootstrap200080004 remain unused.
+
+
+## Six screens accepted; capacity recovered before screen seven
+
+Slots00–05 passed independent full acceptance. Original controller exited
+cleanly before unattempted06 because actual free13,315,923,968B was below
+remaining13,327,286,044B. No STOP, trial failure, repeated update or relaxed gate.
+External recovery004/005 plus new lossless storage038 reclaimed63,270,912
+allocatedB;237 closed metadata files retain original paths/readable bytes,
+24 protected payload hashes unchanged. No weight deleted or app stopped.
+Actual free13,386,407,936B passed the unchanged remaining gate, and the same
+freeze continued at previously unstarted06(LR.0025 incumbent). Three LR screens
+and all nine fresh endpoints remain. No selection/adoption yet. Extra2GiB
+headroom remains unmet after currently eligible recovery classes were exhausted;
+new eligible evidence/blockers still trigger inline recovery. Root-owned npm
+parent directories require administrator access; unused Keynote/admin and all
+selected/fresh/pending updater/shared-runtime protections remain. See
+quality001-prefix6-wake001.json and quality001-prefix6-metadata-mirror001.json.
