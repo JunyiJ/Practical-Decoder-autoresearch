@@ -1,8 +1,9 @@
 # Input embedding feature-dropout preparation
 
-Status: model and stochastic checkpoint correctness passed; finite generated
-worker pair is prepared and **unexecuted**. No scientific panel, pilot, new
-scientific seed, quality result or adoption exists. Keep the incumbent.
+Status: both four-update generated workers and both 20-update resource pilots
+are independently accepted. Finite scientific quality-source contracts passed.
+No scientific quality root, plan, freeze, screen/fresh trajectory or adoption
+exists. Keep the incumbent. The complete scientific storage gate still applies.
 
 The [evidence review](tokenizer-evidence/generalization-boundary-001/evidence-review.md)
 separates measured local facts, literature and inference. Frequency controls
@@ -40,70 +41,125 @@ structural exploration. The proposed portfolio allocation stays proposed.
   not reused. CPU/MPS full-validation CE agreement awaits actual worker artifacts.
 
 Source sets are additive: 947 component-proof bindings, 950 transport, 952 RNG
-preflight, 958 worker bindings. Every original 939 scientific and six prior
-inference-diagnostic sources is preserved. Do not edit these namespaces or rerun
-closed proofs. New work belongs outside them. All time/RSS/MPS/disk/output guards,
-closed holdout and single local worker/four-thread constraints remain.
+preflight, 958 original worker bindings, 963 corrected scorer/parent bindings,
+966 resource-pilot bindings and 972 total quality-source bindings. All original
+939 scientific and six prior diagnostic sources are preserved. These namespaces
+are immutable after their completed reviews. New fixes need additive sources.
 
-## Next concrete execution and resources
+## Actual worker acceptance and original failure
 
-Prepared source: `tokenizer-evidence/embedding-input-dropout-preparation-001/worker001-build-run001.py`.
-Future root: `research_runs/tokenizer-embedding-input-dropout-worker-v1-001`.
-Both are new; the root/plan/anchors are absent. Do not invoke this builder below
-its measured-entry wake condition. It executes only the two four-update real
-workers and independent parent RAW/H200/optimizer/EMA/RNG/clipping/full-validation/
-cache acceptance, including CPU/MPS full CE. It uses fixture seeds 600406/600407,
-not scientific quality seeds. No repeated updates, retries or scientific claims.
+The original `worker001-build-run001.py` was executed once. Its control worker
+completed four updates, then parent scoring failed because an inherited scorer
+expected an attribute configuration while the new model has an explicit policy
+dictionary. Its STOP/source/log/guard remain CLOSED_FAILED; this is an interface
+failure, not a negative quality result. Never rerun it or repeat those updates.
 
-The pair floor is **11,050,479,616 bytes**: two inherited incumbent 560 MiB
-RAW/H200 caps, 16 MiB metadata, 8 GiB reserve, measured external headroom
-1,267,904,512 and entry headroom 1,458,176. The first-launch wake is
-**11,051,937,792 bytes**, adding one measured entry margin before staging. After
-an actual accepted endpoint, credit only its retained published bytes once.
-Extra cleanup target is 13,197,963,264 bytes; this target does not replace the
-mandatory gate. No root/freeze/config/request is created below the gate.
+The additive five-file `embedding_input_dropout_worker_v2` scorer adapts the
+policy guard while preserving numerical scoring and acceptance arithmetic.
+`worker002-import001.json` independently accepted the existing control artifacts
+with zero retraining or weight copies. The separate worker002 context imported
+only that metadata and trained only the previously unstarted .1 arm. Both passed
+RAW/H200/optimizer/EMA/RNG/samplers/full clipping/full 34,278-target validation and
+cache/reset batches1/8. CPU/MPS CE differences were below2.75e-7. Worker002 is
+terminally complete; original worker001 STOP remains unchanged.
 
-The conservative **full all-output planning bound is 19,590,082,560 bytes**;
-cleanup target **21,737,566,208 bytes**. It counts all 16 future 560 MiB pairs:
-2 generated workers +2 resource pilots +6 LR screens +6 fresh endpoints, plus
-256 MiB metadata/64 MiB portable sidecars, existing reserve and measured external/
-entry headroom. This uses original tested per-slot caps, not measured future
-training output or a claim of panel readiness. Atomic `.tmp` publication counts
-within that slot cap; no second disk serialization copy is planned. Actual
-writer/serialization changes require a new forecast. The earlier rough estimate
-counted prospective losing-screen retirement too early; the final bound takes
-**no future deletion credit**. Existing retirement code is tied to old roots and
-three-arm counts; never bypass it for the new study. New tested stage-retention
-contracts and actual dependency closure may lower a later forecast, not today.
+`pilot-integration001.json` closed actual generated tensor dependencies after
+12 finite-config/forgery checks. The NEW exact `generated-retirement001` removed
+four obsolete payloads, 1,118,325,460 logical /1,118,330,880 allocated bytes, after
+full consumer, identity and47,759-survivor checks. Original receipts resolve the
+absent tensors through that later manifest; never restore or rerun them.
 
-Current recovery: new external001 removed 8 unused regenerated compiler caches;
-external002 removed one more then stopped because its consumer check included
-that deleted path. Its source/manifest/journal/error are immutable. Separate003
-verified and removed only the remaining three, preserving that failure.
-Storage039 losslessly compressed 36 newly closed metadata files with all paths/
-readable bytes unchanged and 48 protected payload hashes verified. Total exact
-allocation reclaimed is 29,896,704 bytes; this is not the observed free-space
-delta. All current external/app/research classes were checked: root-owned npm and
-unused Keynote remain normally access-blocked; active/pending updaters, live app
-caches, required/shared runtimes/containers, unmatched downloads and personal data
-are preserved. Size-based research inventory found no large incomplete write;
-all selected/fresh archives and original storage004 remain protected. No new
-obsolete checkpoint payload was produced by these in-memory fixtures.
+## Actual resource pilots and finite design contracts
 
-After source integration is exhausted, the unchanged blocker needs only one
-short hourly free-space check. Wake for the **worker pair** at the smaller
-11,051,937,792-byte condition, not the future full-study bound. New eligible proof,
-access, dependency closure, changed measured requirement or added storage triggers
-inline recovery. Do not repeatedly scan/commit/audit closed cleanup. A supplied
-external APFS volume with 16 GiB free can support verified protected-archive
-relocation toward the current conservative all-output target; do not delete or
-move protected bytes without that verified relocation protocol.
+Both original20-update pilots are independently accepted, with20,480 targets,
+eight H200 snapshots and88 EMA tensors each. Full checkpoint/optimizer/RNG/
+clipping/validation/cache checks passed. CPU/MPS CE differences were below2.82e-7.
+Conservative full-run projections are1,083.22 seconds for .0 and1,118.07 for .1,
+under the original7,200-second limit. These feasibility measurements are not a
+scientific quality result. The pilot root terminal STOP closes all pilot commands.
 
-After both actual worker acceptances: audit their full artifacts and close
-finite20-update pilot integration, retain generated payloads until a new exact
-retirement audit, then measured pilots/full-budget/finite tuning/fresh design.
-The proposed .000625/.00125/.0025 equal LR allowance and three fresh pairs remain
-unfrozen. No scientific seed is assigned. Only a fully confirmed mean <−.02,
-all seeds negative and simultaneous conditional-text upper bounds negative can
-permit a separate adoption review. No rescue, extra dropout sites/rates, partial
-panel, cost-only adoption or old-score pooling.
+`quality-contracts001.json` passed exact six-screen/six-fresh configuration,
+minimum/tie LR selection, partial/nonfinite/extra-weight-credit rejection, exact
+pilot/loser scope and selected/fresh/duplicate rejection. Both complete1,200-mask
+RNG histories match an independent transactional replay. Independent nonconstant
+synthetic grouping/bootstrap/quantiles agree within1e-12. Actual accepted pilot
+RAW/H200/optimizer/EMA/RNG/clipping reports closed pilot tensor dependencies,
+without new training or model rescoring. This proof uses no quality seeds.
+
+## Prospective scientific comparison and complete budget
+
+Prepared runner: `research.embedding_input_dropout_quality_v1.execution`.
+Future root: `research_runs/tokenizer-embedding-input-dropout-quality-v1-001`.
+Only after actual source/proof/environment/data/process/nonuse checks AND the
+complete live capacity pass, invoke `prepare` once, read the resulting new freeze,
+then `run-all` once. If any root/plan/freeze/attempt exists, inspect its actual
+state instead of rerunning preparation or an attempted slot.
+
+The design is exactly six1200-update screens: both arms at nominalLR .000625,
+.00125 and.0025, one common screen seed200090002. Select minimum complete H200
+validation CE independently per arm, lower LR on exact ties. Then run exactly
+three shared fresh seed pairs200090011/012/013 with rotated arm order, same
+1,228,800 sampled targets and41 H200 snapshots each. Pilot200090001 and
+evaluation200090003 are used; screen/fresh/bootstrap200090004 remain unused.
+No extra rates/sites, rescue, replacement seed, old-score pooling or partial panel.
+
+Adoption requires candidate-minus-control mean CE<−.02, every paired seed delta
+negative, and negative simultaneous conditional-text upper bounds at blocks2048,
+4096 and8192 (2,000PCG64 draws, linear quantile1−.05/3). Only after all12accepted
+endpoints execute all-six-fresh serving/cache review and independent final
+statistics, then a separate adoption review if all gates pass. These intervals
+condition on three trained seeds and reused validation text; they are not
+population-seed or holdout confidence. Holdout remains closed.
+
+The tested stage high-water is8 inherited560MiB RAW/H200 pair caps:2pilots+
+6screens, or after exact stage retirement2selected+6fresh. It includes256MiB
+metadata,64MiB portable sidecars,8GiB reserve,1,267,904,512B measured external
+headroom and1,458,176B entry headroom. Full floor **14,892,462,080B**; cleanup
+target **17,039,945,728B**. A further measured entry margin makes the first-launch
+wake **14,893,920,256B** after pilot retirement. Subtract only actual retained
+accepted current-panel weights once. No planned retirement/hardlink credit.
+This tested stage contract supersedes the earlier rough16-pair19,590,082,560B
+all-output planning cap; it does not relax any original resource guard.
+
+The standalone NEW exact `quality001-pilot-retirement001` closes and retires only
+the four audited successful pilot payloads. Its manifest/completion and later
+capacity record govern actual deletion, survivor checks and current wake. The
+original pilot STOP is preserved. All selected/fresh historical models remain
+protected. The only future eligible scientific deletions are the four actual
+losing screen pairs after immutable complete LR selection and full audit.
+
+Current inline recovery includes newly regenerated compiler caches and newly
+closed metadata, under coordinated locks and exact journals. Original failed
+cleanup002 and all completed cleanup/proof namespaces stay closed. No app or
+worker is stopped, no permission bypass, and selected/fresh/original evidence is
+preserved. After eligible recovery and independent work are exhausted, only one
+silent hourly wake check remains for an unchanged deficit. New eligible proof,
+access, dependency closure, changed requirement or added storage triggers inline
+recovery. A supplied external APFS volume can support verified protected-archive
+relocation; derive its exact required capacity from the current deficit, rather
+than reusing the obsolete16GiB option. Never delete protected archive bytes.
+
+
+## Current reconciled capacity
+
+`quality001-ready-capacity001.json` verifies all972source hashes,225saved numerical
+configs with no screen/fresh seed use, no active worker and absent quality
+root/plan/freeze. After exact pilot retirement (47,898survivors unchanged), new
+external004/005 and lossless storage040, actual observed free was11,109,249,024B.
+Launch wake14,893,920,256B leaves **3,784,671,232B**; cleanup target17,039,945,728B
+leaves5,930,696,704B. This is an observation, not a guarantee that free space stays
+constant. Storage040 compressed237closed metadata files, reclaimed38,359,040B and
+reverified48protected model hashes, preserving all readable bytes and paths.
+Total exact allocation reclaimed this continuation is2,304,946,176B, including
+both generated/pilot retirements; it is not the observed free-space delta.
+
+All currently authorized eligible classes are exhausted. Normal root-owned npm/
+unused-Keynote access blockers, live app caches/updaters/shared runtimes/containers,
+unmatched downloads and personal data remain preserved. No additional obsolete
+research payload has a closed dependency beyond the exact retired allowlists.
+One short silent hourly check suffices while unchanged. Additional local space or
+a human-provided external APFS volume with at least8GiBfree enables verified
+protected-archive relocation toward complete budget+2GiB. No extra audit/closed
+probe reruns or below-budget quality freeze. The old11.05GBprerequisite wake is
+resolved and must not launch any closed builder. Current next action is the new
+quality `prepare` then `run-all` only after the full live gate passes.

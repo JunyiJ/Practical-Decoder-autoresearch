@@ -9304,19 +9304,27 @@ for negative evidence, primary-paper applicability and the next bounded question
 
 ## Input-only regularization preparation
 
-Frequency-composition controls and actual old dropout evidence were reviewed
-with primary supporting/contrary papers. One new input-feature dropout site
-(.1 versus .0) is qualified for correctness/resource preparation, as local
-regularization rather than structural exploration. Original residual/attention
-dropout losses are not erased. CPU/MPS model proofs, exact stochastic real-data
-repeat/serialized resume, additive RNG/config preflight and finite worker-route
-checks passed. Independent generated workers/pilots and scientific quality are
-not yet executed; no scientific seed/freeze/adoption. All958bindings preserve
-the939scientific+6prior diagnostic sources. Keep incumbent and closed holdout.
+Input-only feature dropout .1 versus .0 remains evidence-grounded local
+regularization/exploitation, with contrary residual/attention-dropout results
+preserved. Both generated workers and both20-update resource pilots are now
+independently accepted, including stochastic RNG/optimizer/EMA/clipping/full
+validation/cache. Original worker001 parent scorer-interface failure remains
+closed; a separate additive adapter imported the control with zero repeated
+updates or weight copies and trained only the previously unstarted candidate.
+Conservative full-run projections1,083/1,118sec pass original guards.
 
-The prepared next numerical pair awaits actualfree>=11,051,937,792B after inline
-recovery. The full future all-output planning bound is separate, with no future
-retirement credits. Unchanged exhausted blocker:one silent hourly wake check,
-no repeated broad audits/closed probes. New eligible evidence triggers recovery.
-See [preparation](TOKENIZER_EMBEDDING_INPUT_DROPOUT_PREPARATION.md) and
-[boundary evidence](tokenizer-evidence/generalization-boundary-001/evidence-review.md).
+Finite six-screen/three-fresh-pair source contracts passed, including independent
+full-horizon RNG replay and nonconstant bootstrap/grouping. All972bindings preserve
+939scientific+6prior diagnostic sources. Pilot/evaluation200090001/003 are used;
+screen200090002,fresh011/012/013 andbootstrap004 remain unused. No scientific
+quality root/plan/freeze/result/adoption exists. Keep incumbent and closed holdout.
+
+The tested stage high-water is8x560MiB pairs plus metadata,sidecars,8GiBreserve
+and measured external/entry headroom:14,892,462,080B, first-launch wake
+14,893,920,256B after actual pilot retirement; cleanup target17,039,945,728B.
+No future deletion credit. This replaces the untested rough16-pair planning cap.
+Actual generated/pilot retirement and new cache/metadata recovery are audited;
+all selected/fresh/original evidence is preserved. See the latest capacity record
+and [preparation](TOKENIZER_EMBEDDING_INPUT_DROPOUT_PREPARATION.md). After exhausted
+unchanged recovery,one silent hourly wake check;new eligible evidence triggers
+inline recovery. No below-budget freeze or partial panel.

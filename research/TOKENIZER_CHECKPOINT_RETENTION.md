@@ -1674,3 +1674,18 @@ losing screens and prerequisite payloads resolve through their exact retirement
 manifests; never restore or rerun them. New fixed-weight context diagnostics
 load retained H200s read-only and produce no weight payloads or new retirement
 eligibility. Historical selected/fresh and original failure evidence stay protected.
+
+
+Input-feature-dropout generated-retirement001 removed exactly four accepted,
+dependency-closed prerequisite tensors:1,118,325,460logical/1,118,330,880allocatedB;
+47,759 survivors unchanged. Separate quality001-pilot-retirement001 removed exactly
+four accepted20-update resource-pilot tensors after actual quality-source contract
+closure:1,118,327,892logical/1,118,330,880allocatedB;47,898 survivors unchanged.
+Both exact manifests/completions are in embedding-input-dropout-preparation-001.
+Original worker001 failed-parent STOP, worker002 completion STOP, pilot STOP and
+all source/log/config/metrics/guard/acceptance evidence remain immutable. Never
+restore retired tensors or rerun closed commands. Portable metadata mirror copied
+48files with zero weight copies. All historical selected/fresh weights remain
+protected. Future quality retention permits only four actual losing-screen pairs
+after immutable complete per-arm LR selection; both selected pairs and every
+fresh pair stay protected. No conditional deletion credit in current free space.

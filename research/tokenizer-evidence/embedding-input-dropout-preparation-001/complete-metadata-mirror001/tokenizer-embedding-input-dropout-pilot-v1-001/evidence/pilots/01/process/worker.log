@@ -1,0 +1,6 @@
+/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/embedding_input_dropout_worker_v1/training.py:29: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  row=dict(step=i+1,targets=(i+1)*1024,train_ce=float(loss),validation_ce=sum(scores)/len(scores),lr_multiplier=multiplier,update_seconds=seconds)
+{"step": 1, "targets": 1024, "train_ce": 10.869153022766113, "validation_ce": 10.828720951080323, "lr_multiplier": 1.0, "update_seconds": 3.459703000029549}
+{"step": 20, "targets": 20480, "train_ce": 10.309813499450684, "validation_ce": 10.292166233062744, "lr_multiplier": 0.1, "update_seconds": 0.23524124990217388}
+Fresh bounded input-dropout worker with own-policy scoring completed

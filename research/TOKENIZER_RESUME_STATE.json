@@ -42,12 +42,14 @@
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
   "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json",
   "active_campaign_root": null,
+  "active_controller_pid": null,
   "active_exec_session": null,
   "active_parent_pid": null,
   "active_run": null,
   "active_session": null,
   "active_worker": null,
-  "actual_free_bytes": 16773115904,
+  "active_worker_pid": null,
+  "actual_free_bytes": 11109249024,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
   "adamw_beta2_direction": "research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
@@ -517,38 +519,40 @@
   "ema_horizon_shadow_result": "research/tokenizer-evidence/ema-horizon-preparation-001/shadow-prerequisite-001-result.json",
   "ema_pilot_retirement": "research/tokenizer-evidence/mla-score-preparation-001/ema-pilot-retention/completed.json",
   "embedding_input_dropout_capacity": {
+    "actual_retained_panel_weight_bytes": 0,
     "all_current_recovery_classes_exhausted": true,
-    "concrete_storage_option": "Human-provided external APFS volume with16GiBfree for verified protected-archive relocation,or local free>=worker-pair wake for the next bounded prerequisite.",
+    "capacity_pass": false,
+    "cleanup_target": 17039945728,
+    "concrete_storage_option": "Provide external APFS volume with at least8GiB free for verified protected-archive relocation toward current complete budget+2GiB,or add sufficient local free space. Protected source bytes are verified before and after relocation;never delete them unverified.",
     "entry_headroom": 1458176,
-    "exact_allocation_reclaimed": 29896704,
+    "exact_allocation_reclaimed_this_continuation": 2304946176,
     "external_headroom": 1267904512,
-    "full_all_output_bound": 19590082560,
-    "full_bound_deficit": 8620392448,
-    "full_cleanup_target": 21737566208,
-    "full_future_pair_count": 16,
-    "full_retained_weight_cap": 9395240960,
-    "full_study_not_frozen": true,
-    "full_target_deficit": 10767876096,
-    "immutable_archive_scope": "All body24/finalscale12/historical202selectedfresh RAWarchives,H100/H200/storage004 protected; no tensor deleted/restored/copied.",
-    "kind": "prospective_all_output_bound_and_next_finite_pair_wake",
+    "free_bytes": 11109249024,
+    "future_deletion_credit": 0,
+    "kind": "tested_stage_high_water_scientific_comparison_not_frozen",
+    "mandatory_deficit": 3784671232,
     "metadata": 268435456,
-    "next": "One silent hourly wake check after independent work is exhausted;new eligible proof/access/dependency/requirement/storage triggers inline recovery. On pair wake,recheck actual processes/958bindings/prepared builder/proof refs/strict env/absence of root+plan,then execute builder ONCE.",
-    "no_future_retirement_credit": true,
-    "no_root_or_freeze_or_worker_created": true,
-    "observed_free": 10969690112,
-    "original_incumbent_pair_cap": 587202560,
-    "portable_sidecars": 67108864,
-    "recovery": {
-      "external001": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/maintenance-inline-input-dropout-001/completed.json",
-      "external002_closed_partial_error": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/maintenance-inline-input-dropout-002/recovery.log",
-      "external003": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/maintenance-inline-input-dropout-003/completed.json",
-      "storage039": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-039/completed.json"
+    "old_rough16pair_forecast_superseded_by_tested_stage_contract": true,
+    "old_worker_pair_wait_resolved": true,
+    "peak_weight_caps": 4697620480,
+    "readiness": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-ready-capacity001.json",
+      "sha256": "223acd26355c342091a5a158dda952064a630685cdfefdda483fc908fa87b9d7"
     },
+    "required_free": 14892462080,
     "reserve": 8589934592,
-    "worker_pair_cleanup_target": 13197963264,
-    "worker_pair_entry_wake": 11051937792,
-    "worker_pair_floor": 11050479616,
-    "worker_pair_wake_deficit": 82247680
+    "sidecars": 67108864,
+    "stage_peak_pairs": 8,
+    "target_deficit": 5930696704,
+    "wake_free": 14893920256
+  },
+  "embedding_input_dropout_generated_retirement": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/generated-retirement001/completed.json",
+    "sha256": "ded545ce3d32a70f0e80bf8a0af35a88347528ff748ff3a89a2b948ddbe80012"
+  },
+  "embedding_input_dropout_metadata_mirror": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/complete-metadata-mirror001.json",
+    "sha256": "0cd03b5a1ed213962b8a1919abe3bed4c41898ddbba71e066abafa2c87d76e73"
   },
   "embedding_input_dropout_model_checks": {
     "correctness001-cpu.json": {
@@ -572,14 +576,54 @@
       "sha256": "98731a26c2ffbb1bb149f5f341896336caf9cc0db6b418bd03f427acd4637923"
     }
   },
+  "embedding_input_dropout_pilot_retirement": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-pilot-retirement001/completed.json",
+    "sha256": "70876ec9669aca62b9d8714e68c985ee83a1c9b89cd7779afca5d2cf96ce2eb1"
+  },
+  "embedding_input_dropout_pilot_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/pilot001-review.json",
+    "sha256": "ebaa3a6ac4cbd813e39559c41ffee8a2b7e0d25f395fd33bd37c2327aa13a555"
+  },
   "embedding_input_dropout_preparation": "research/TOKENIZER_EMBEDDING_INPUT_DROPOUT_PREPARATION.md",
   "embedding_input_dropout_quality_adopted": false,
+  "embedding_input_dropout_quality_contracts": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality-contracts001.json",
+    "sha256": "636fc4e993295a7082e07ae9c387699f9f38263b3930f7e87aaf891008ebb56b"
+  },
   "embedding_input_dropout_quality_frozen": false,
-  "embedding_input_dropout_scientific_seeds_assigned": false,
-  "embedding_input_dropout_source_count": 958,
-  "embedding_input_dropout_worker_prepared": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/worker001-build-run001.py",
-  "embedding_input_dropout_worker_root": "research_runs/tokenizer-embedding-input-dropout-worker-v1-001",
-  "embedding_input_dropout_worker_status": "UNEXECUTED",
+  "embedding_input_dropout_quality_ready": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/quality001-ready-capacity001.json",
+    "sha256": "223acd26355c342091a5a158dda952064a630685cdfefdda483fc908fa87b9d7"
+  },
+  "embedding_input_dropout_scientific_seeds_assigned": true,
+  "embedding_input_dropout_seed_status": {
+    "bootstrap_unused": 200090004,
+    "evaluation": 200090003,
+    "fresh_unused": [
+      200090011,
+      200090012,
+      200090013
+    ],
+    "pilot": 200090001,
+    "screen_unused": 200090002,
+    "used": [
+      200090001,
+      200090003
+    ]
+  },
+  "embedding_input_dropout_source_count": 972,
+  "embedding_input_dropout_worker_failure_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-embedding-input-dropout-worker-v1-001",
+  "embedding_input_dropout_worker_import": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/worker002-import001.json",
+    "sha256": "97f6cc5c62b0fad3a4da2515a82a5b497b13fe399e7438c7dfb088a7bc727f22"
+  },
+  "embedding_input_dropout_worker_prepared": null,
+  "embedding_input_dropout_worker_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/worker002-review.json",
+    "sha256": "8fd91af5a716d7cfb9f27c7e9a3a2cb7ca1491b1a216544f734a01349a4f45a9"
+  },
+  "embedding_input_dropout_worker_root": null,
+  "embedding_input_dropout_worker_status": "worker001_closed_parent_interface_failure;worker002_same_prerequisite_pair_complete_no_repeated_updates",
   "evidence_commit_before_handoff": "2df4d55943cc0be349566751872569e0fe3f8a68",
   "evidence_sha256": {
     "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/block-norm-preparation-001/quality001-record.py": "acd03767713eafe6fb69adb932454e65e46be52d28e0594b037c424a30cf689d",
@@ -9206,7 +9250,7 @@
   "mla_score_worker": "research/tokenizer-evidence/mla-score-preparation-001/trainer-worker001.json",
   "mla_score_worker_archive": "research/tokenizer-evidence/mla-score-preparation-001/worker-archive001/completed.json",
   "mla_score_worker_review": "research/tokenizer-evidence/mla-score-preparation-001/worker003-review.json",
-  "next_action": "Input-only embedding-feature dropout0vs.1 is evidence-grounded local regularization,not random exploration. ModelCPU/MPS947bindingsPASS(exactzero-controlinit/RNG/logits/gradients/twooptimizersteps,maskoracle/cache/causality/foreignrejection);950-source real4update repeat/serialized2+2resumePASSbotharms;952-source additive metadata preflight rejects10RNG/config/sampler forgeries;958-source finiteworker routes+parentmaskRNGoraclePASS18configs. All original939+6sources unchanged. NO actual generated worker/pilot/scientificqualitypanel/newscientificseed or active numerical job. Next prepared worker001-build-run001.py is UNEXECUTED,root/plan absent. After exhausted inline recovery001/closedpartial002/completion003/storage039,first-launch wake actualfree>=11051937792B(complete pair floor11050479616B plus measured entry margin). Only hourly silent wake check while unchanged,no repeated records/scans/closedprobes. On wakeverify958sources/proofs/builder/strict env/process/rootabsence,then execute builderONCE for two4update independent accepted workers. This smaller prerequisite gate is distinct from conservative fullfuture16pairalloutputbound19590082560B,target21737566208B,no prospective retirement credit. New eligible evidence/access/dependency/changed requirement/storage triggers recovery inline. ExternalAPFS16GiBfree enables verified protectedarchive relocation. After actual generatedacceptance complete pilotintegration/dependencyclosure/exactretirement,20updatepilots and fullfresh design/budget;do not stop at preparation or ask redundant consent. No scientificadoption/seed/qualityfreeze;keepincumbent,closedholdout,all selected/fresh/original evidence. Never rerun body/oldfixtures/cleanup or clearSTOP.",
+  "next_action": "One short silent hourly free-space check while unchanged. On free>=14893920256B or new eligible/access/dependency/storage/requirement evidence, revalidate actual processes/STOP/972refs/proofs/data/environment/quality seed nonuse. If root/plan/freeze still absent and complete live budget passes, invoke new quality_v1.execution prepare ONCE then run-all using new freeze. Never rerun closed worker/pilot/proof/cleanup or restore tensors. Current observed launch deficit3784671232B,extra2GiBtargetdeficit5930696704B after all eligible recovery. ExternalAPFS8GiBfree enables verified protected-archive relocation; all historicalselected/fresh protected. Both20updatepilots accepted;finitequalitycontractsPASS972sources. Keep incumbent;no scientificqualityresult/adoption.",
   "next_after_starter": "Readout-centering pilot001 COMPLETE via research.readout_centering_campaign_v2: both20-update layer/rms_bias arms independently accepted(20480targets,8H200snapshots,88EMA tensors),complete clipping histories; paired full/cache/reset inference batches1/8 and independent final003 resource review PASS,196608B cache/item. All729 campaign sources unchanged,717 runtime predecessors preserved. No scientific quality result or active worker. Next minimal additive finite1200-update quality orchestration in NEW research/readout_centering_quality_v1 outside frozen sources. Exactly THREE fresh pairs at commonLR0.00125,equal zero LR-search,no screens/selection/rescue/retry/partial panel,original strict gates,standard-recipe scope. Verify actual retained pilot raw/H200/optimizer/EMA/RNG/clipping history/full-validation/cache and six-trajectory contracts,close dependencies,independently audit exact successful-pilot retirement1118335248B,remeasure complete12381585408B capacity and unused fresh/bootstrap seeds,then final quality freeze/six trajectories/three inference pairs/independent statistics. Panel199630 pilot001/eval003 used;fresh011/012/013/bootstrap004 unused. Final LayerNorm versus affine RMS WITH bias,epsilon1e-5/512parameters both,eight pre-branch RMSNorms fixed. Original final002 reviewer launch environment failure before audit stays closed; separate final003 uses the required strict environment without repeating training/inference. Original pilot integration001 import failure before numerical work/deletion stays closed; additive v2 explicit worker validation routing and separate integration002 passed without changing723 original bindings. Worker-retirement001 reclaimed1118323284B with41696survivors unchanged,original evidence immutable. Storage013 losslessly archived27 closed table/MLA/horizon selected/fresh RAWs,reclaimed2574573563B,50958other files unchanged,exact restoration PASS. Resolve original RAWs via storage-recovery-013/raw-completed.json and protected research_archives/protected-raw-storage-013/*.tar.zst;recoverable,NOT retired,never purge. Together006-013 preserve147 archived RAWs;all H200 originals/storage004 fixture archive intact. Final review free11575418880B plus retainedpilots1118335248B conditionally yields12693754128B;no deletion until dependency closure/new exact audit,actual capacity recheck before dispatch. Source work proceeds,no stale wait. Retain final LayerNorm/clip1/unit gains/D256 MLA score0.5/SwiGLU672/SiLU/blockRMS/serial/no product norm/local mix/warmup/decay0.00006/cooldown800/H200. AdamW beta2 .95-versus-.999 deferred. All previous campaigns/fixtures closed;no old score/seed pooling. Pilot observations are resource evidence,not scientific quality selection.",
   "next_direction_status": "three_arm_body_allocation_model_prerequisites_not_numerically_admitted",
   "no_paid_compute": true,
@@ -9313,6 +9357,8 @@
   "readout_centering_worker": "research/tokenizer-evidence/readout-centering-preparation-001/trainer-worker001.json",
   "readout_centering_worker_integration": "research/tokenizer-evidence/readout-centering-preparation-001/worker-integration001.json",
   "readout_centering_worker_retirement": "research/tokenizer-evidence/readout-centering-preparation-001/worker-retirement001/completed.json",
+  "required_free_bytes": 14892462080,
+  "required_wake_free_bytes": 14893920256,
   "reserve_bytes": 8589934592,
   "schema_version": 1,
   "selected_fresh_failure_weights_protected": true,
@@ -9320,7 +9366,7 @@
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "source_work_available": false,
-  "status": "embedding_input_dropout_correctness_complete_worker_pair_capacity_wait",
+  "status": "embedding_input_dropout_pilots_complete_scientific_capacity_wait",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -9405,13 +9451,16 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-032/completed.json",
     "sha256": "acb08dcf8eb5349453788d0084d3283037d12926a9095055829892d2640c57e8"
   },
-  "storage_recovery_latest": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-039/completed.json",
+  "storage_recovery_latest": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/storage-recovery-040/completed.json",
+    "sha256": "bae63062c9700e81dfef66de8bb73039b9127932a4d9605835704a8900b8e442"
+  },
   "terminal_receipt": "research/tokenizer-evidence/wide-hybrid-preparation-001/campaign005-inference-v2-terminal.json",
   "train_fit_diagnostic": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/result.json",
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
-  "updated_at": "2026-11-06T08:56:24.057077+00:00",
+  "updated_at": "2026-11-06T10:46:38.173344+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/worker001-build-run001.py", line 54, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/embedding-input-dropout-preparation-001/worker001-build-run001.py", line 45, in main
+    row=launch(writer,reference(PLAN),spec,required);worker=checked(row['worker']);used+=sum(worker[n]['size'] for n in ('parent','h200'))
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/embedding_input_dropout_worker_v1/dispatch.py", line 37, in launch
+    result=accept(summary,OmegaConf.create(config),binding,compare_cpu=plan['compare_cpu'])
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/embedding_input_dropout_worker_v1/validation.py", line 78, in accept
+    parent_report=dict(binding=copy.deepcopy(binding),**score(m,data));validate_report(parent_report,binding,data)
+                                                        ~~~~~^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_worker_v1/validation.py", line 60, in score
+    require(model.cfg.block_size==128,'Context128 required')
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'block_size'
