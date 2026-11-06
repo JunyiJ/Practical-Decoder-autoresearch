@@ -1,9 +1,10 @@
 # Input embedding feature-dropout preparation
 
-Status: both four-update generated workers and both 20-update resource pilots
-are independently accepted. Finite scientific quality-source contracts passed.
-No scientific quality root, plan, freeze, screen/fresh trajectory or adoption
-exists. Keep the incumbent. The complete scientific storage gate still applies.
+Status: quality001 is now frozen and RUNNING after the direct human old-checkpoint
+cleanup request resolved capacity. Both prerequisite workers/resource pilots and
+finite source contracts passed. Initial slot00 is the control at LR.000625,
+screen seed200090002; follow actual controller/guards/accepted anchors. No quality
+result or adoption yet. Keep incumbent. Earlier capacity-wait sections are history.
 
 The [evidence review](tokenizer-evidence/generalization-boundary-001/evidence-review.md)
 separates measured local facts, literature and inference. Frequency controls
@@ -163,3 +164,36 @@ protected-archive relocation toward complete budget+2GiB. No extra audit/closed
 probe reruns or below-budget quality freeze. The old11.05GBprerequisite wake is
 resolved and must not launch any closed builder. Current next action is the new
 quality `prepare` then `run-all` only after the full live gate passes.
+
+
+## Human cleanup resolved capacity; quality001 launched
+
+The latest direct permission to delete old checkpoints authorizes the exact
+superseded historical202RAW archives+202H200 and3H100 retirement. All original
+acceptance/failure/terminal/config/log/result records remain. Recent body24 and
+final-scale12 payloads, including all three incumbent models, remain unchanged.
+First retirement audit001 closed before any deletion on a cross-root acceptance
+path mismatch; separate002 verified the exact imported original hashes and retired
+404payloads, with47,576survivors/36recent payloads/972sources unchanged. Separate003
+retired3obsolete H100s from the closed EMA study with47,755survivors unchanged.
+Never restore those weights or rerun any closed audit/study/materializer.
+
+With45disposable cache files and lossless197-file metadata compression, this
+request reclaimed95,481,438,208allocatedB. Observed free exceeded106GB; allocation
+reclaimed is not the observed free-space delta. See TOKENIZER_CHECKPOINT_RETENTION.md
+for the narrow current policy exception and exact manifests. Earlier external-APFS
+and3.78GBdeficit wake instructions are resolved, not current blockers.
+
+`quality001-preflight001.json` verifies all972bindings, original corpus/tokenizer/
+train/validation IDs with closed holdout, actual prerequisite hashes,225saved
+configs without scientific quality-seed use and complete live budget plus2GiB.
+Scientific prepare executed ONCE, producing freeze
+`d8bea1ca11ab6bb4963421100513aa0e39fd967e2af4198367c5d432b9bd9ac4`.
+`quality001-launch001.json` records controller84058/worker84081/session95353 and
+first completed update. Snapshots can stale: inspect actual processes/control/
+guards/STOP/accepted prefix; never duplicate a live controller or attempted slot.
+The frozen two-arm/six-screen/three-fresh-pair design and all original gates stay
+unchanged. Screen200090002 is now USED; fresh200090011/012/013 and bootstrap200090004
+remain unused until their phases. Controller serially completes the study; only
+complete-panel inference/statistics can support a separate adoption review. After
+closure continue evidence-grounded model improvement under human authorization.

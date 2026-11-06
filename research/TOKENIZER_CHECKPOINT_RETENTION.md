@@ -1689,3 +1689,42 @@ restore retired tensors or rerun closed commands. Portable metadata mirror copie
 protected. Future quality retention permits only four actual losing-screen pairs
 after immutable complete per-arm LR selection; both selected pairs and every
 fresh pair stay protected. No conditional deletion credit in current free space.
+
+
+## November 6 direct human old-checkpoint permission
+
+The latest request, “clean up disk space as much as possible - ok to delete old
+checkpoint directly”, supersedes historical retain-all selected/fresh weight rules
+for the exact superseded historical payloads in these new audits. It does not
+change scientific gates or authorize deleting current/upcoming work or records.
+
+`human-old-checkpoint-retirement-001` is CLOSED_FAILED before manifest/deletion:
+one original gradient-clip v1 endpoint was accepted in the later v2 root. Preserve
+that source/log/guard. Separate002 verifies the exact original RAW/H200 identities
+inside that imported acceptance, revalidates all original terminal/archive records
+and deletes202archived RAW payloads plus202matching historical H200s. It reclaims
+95,104,139,264allocatedB;47,576retained survivors,36recent model payloads and all972
+source bindings verify unchanged. Original metadata and historical selection/fresh
+results remain intact; only those superseded weights are permanently retired.
+
+Separate003 retires exactly three obsolete H100 exports from the closed,
+not-adopted EMA-horizon panel,342,233,088allocatedB, with47,755survivors unchanged.
+Their original acceptances, closure, STOP and source/log/config/results remain.
+All earlier receipts now resolve missing historical weights through002/003 exact
+manifests/completions. Never restore them or rerun an old study/materializer/audit.
+
+The24latest body-allocation and12final-scale RAW/H200 payloads, including all
+three current incumbent models, remain in original paths. Original storage004/
+small diagnostic archives, data/tokenizers and synthetic evidence fixtures remain.
+The new input-dropout panel and every selected/fresh endpoint it produces remain
+protected. Future old-checkpoint retirement still requires actual consumer and
+dependency closure, an exact allowlist, shared lock, journal and retained-evidence
+verification; no inference from age, filename or concluded status alone.
+
+External human-disk-cleanup001 separately removed45exact unopened disposable cache
+files (3,280,896allocatedB). Storage041 losslessly compressed197newly closed audit
+metadata files (31,784,960allocatedB), preserving readable paths/bytes and verifying
+all36recent model hashes. Total exact allocation reclaimed by this request is
+95,481,438,208B. This is not the observed free-space delta. No app/worker was stopped,
+no access bypass and no source/result/config/log was deleted. The full scientific
+capacity blocker is resolved; model improvement resumes under its original gates.

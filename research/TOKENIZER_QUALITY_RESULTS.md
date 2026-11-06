@@ -9328,3 +9328,24 @@ all selected/fresh/original evidence is preserved. See the latest capacity recor
 and [preparation](TOKENIZER_EMBEDDING_INPUT_DROPOUT_PREPARATION.md). After exhausted
 unchanged recovery,one silent hourly wake check;new eligible evidence triggers
 inline recovery. No below-budget freeze or partial panel.
+
+
+## Current input-dropout quality execution after human cleanup
+
+Direct human permission to delete old checkpoints enabled exact retirement of
+202superseded historical RAWarchives+202H200+3obsolete H100 payloads, preserving
+all original records,36recent body/final-scale payloads and972frozen sources.
+Cache recovery and transparent compression bring total reclaimed allocation to
+95,481,438,208B; observed free exceeds106GB. The capacity blocker is RESOLVED.
+See current retention exceptions and human-old-checkpoint-retirement-002/003.
+
+Actual source/data/environment/nonuse/full-budget preflight passed. Scientific
+quality001 is frozen under SHA
+d8bea1ca11ab6bb4963421100513aa0e39fd967e2af4198367c5d432b9bd9ac4.
+One controller is running the unchanged six equal-LR screens, per-arm selection,
+exact losing-screen retirement, three fresh pairs and independent complete-panel
+review. Initial slot00 control/LR.000625/screen200090002 has completed an update.
+Follow actual processes/guards/STOP/accepted anchors, not this launch snapshot.
+No quality result/adoption yet; keep incumbent and all current panel weights.
+Never rerun closed preparation, an attempted slot, old audit or retired payload.
+After study closure continue evidence-grounded model improvement as authorized.
