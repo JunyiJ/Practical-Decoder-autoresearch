@@ -1,0 +1,72 @@
+{
+  "accepted_endpoints": 0,
+  "adopted": false,
+  "arm": "dense",
+  "cleanup_target": 23918604288,
+  "complete_panel_floor": 21771120640,
+  "config": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/00/config.json",
+    "sha256": "9bfe141520e83c9ab416fd9b802ad9b1834458a03789189a7156ba43007c30ec"
+  },
+  "controller_pid": 444,
+  "exec_session": 42476,
+  "free_bytes": 92281057280,
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-freeze.json",
+    "sha256": "6caf4aeb2a65a3548211e44ef801e788049c9dd0351fdfa8708bacf107ec8d2b"
+  },
+  "holdout_scored": false,
+  "last_sampled_metric_observation": {
+    "lr_multiplier": 1.0,
+    "step": 301,
+    "targets": 308224,
+    "train_aux_loss": null,
+    "train_ce": 5.6357221603393555,
+    "train_total_loss": 5.6357221603393555,
+    "update_seconds": 0.23846670903731138,
+    "validation_ce": 5.669094753265381
+  },
+  "lr": 0.000625,
+  "next_action": "Follow actual serial controller/session42476,processes,guards,original accepted anchors and STOP. Never rerun prepare/attempted slots or invoke state/advance against a live partial slot. After18accepted close all9fresh serving/independent stats;separate adoption only if all strict gates pass. Then continue evidence-qualified RSI.",
+  "observed_at": "2026-11-06T21:43:52.159948+00:00",
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-plan.json",
+    "sha256": "b7e7778d72bc8cfffe2386e5ac77b1af95fbdb50e2c98ceb4293e7f8137ab323"
+  },
+  "prefix0_preflight": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/quality001-prefix0-preflight001.json",
+    "sha256": "d56f01c9a39ebfd5d58aae8a5f54ee45f43e75e0b0386f1526fe5d9ddcb53345"
+  },
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/00/request.json",
+    "sha256": "7c40be4e62a612bdd9d7baae944448b37bcd152ea4b39c87c38f5a82c922825f"
+  },
+  "root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001",
+  "sampled_worker_guard_observation": {
+    "elapsed_seconds": 95.73581425007433,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 92281073664,
+      "mps_current_bytes": 662475776,
+      "mps_driver_bytes": 2493317120,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 716128256
+    },
+    "pid": 475,
+    "reason": null,
+    "status": "watching"
+  },
+  "scientific_quality_result": false,
+  "seed": 200110002,
+  "slot": 0,
+  "source_commit": "c1393f9d3e71119ba15cca45be0511e8859d9341",
+  "sources": 1035,
+  "status": "original_frozen_moe_scientific_controller_and_slot00_advancing",
+  "weight_deletion": false,
+  "worker_pid": 475
+}

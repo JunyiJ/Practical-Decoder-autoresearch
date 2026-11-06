@@ -1672,3 +1672,15 @@ all12prerequisite hashes/fullbudget preflight passes92.29GBfree vs23.92GBtarget.
 Next NEWfreeze/readseal/prefix0/run-all once. No gain/adoption or cleanup.
 All prior weights/evidence protected. See TOKENIZER_MOE_QUALITY_PREPARATION.md
 and post-prefix-boundary-001/evidence-review005.md.
+
+
+## MoE finite scientific study frozen and running
+
+QUALITY001freeze6caf4aeb2a65a3548211e44ef801e788049c9dd0351fdfa8708bacf107ec8d2b
+binds1035sources,9screens+9fresh,all1200updates/41H200. Newcensus/preflight/prefix0
+passed;one serial controller/worker actually advances slot00dense. No quality
+result/selection/adoption. Fullfloor21.771GB/target23.919GB covered~92GBfree;no
+cleanup needed. Keep ALLscreens/fresh and allprior protected payloads/evidence.
+Never replayprepare/attemptedslots/closedproofs or editfrozenruntime. Follow actual
+process/guard/anchor/STOP. See current TOKENIZER_MOE_QUALITY_PREPARATION.md and
+post-prefix-boundary-001/evidence-review006.md,quality001-launch001.json.

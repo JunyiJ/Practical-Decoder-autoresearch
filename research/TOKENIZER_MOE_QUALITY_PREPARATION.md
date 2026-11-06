@@ -1,16 +1,21 @@
-# MoE scientific runtime ready
+# MoE scientific comparison running
 
-Full1200runtime/state/selection/fresh/statistics/layout gates and final live
-source/data/unused-seed/capacity preflight passed. No quality result or adoption.
-See [current evidence](tokenizer-evidence/post-prefix-boundary-001/evidence-review005.md),
-[gate resolution](tokenizer-evidence/post-prefix-boundary-001/quality-contracts001.json),
-[successful proof002](tokenizer-evidence/post-prefix-boundary-001/quality-contracts002.json)
-and [live preflight](tokenizer-evidence/post-prefix-boundary-001/quality001-preflight001.json).
-Failed audit001 is preserved CLOSED_FAILED; separate002 corrects harness only.
-All1035sources immutable. All prerequisite/pilot commands closed; no worker active.
+QUALITY001 is FROZEN and RUNNING,source commitc1393f9d,1035immutablebindings.
+Read [current launch evidence](tokenizer-evidence/post-prefix-boundary-001/evidence-review006.md),
+[launch receipt](tokenizer-evidence/post-prefix-boundary-001/quality001-launch001.json)
+and [original freeze](tokenizer-evidence/post-prefix-boundary-001/quality001-freeze.json).
+Full source/state/serialization/independentstatistics gates and unused-seed/LIVE
+preflight passed. Original audit001 harness failure remains CLOSED_FAILED;
+separate002passed without runtime edits/training/rescoring.
 
-Next commit/push, freeze new9screen+9fresh native three-arm study once,read its
-seal and bind prefix0,then run-all once. MoE must beat BOTHdense controls under
-all predeclared gates. Keep all outputs;no rescue,partial panel or cost-only
-adoption. Complete floor21771120640B,target23918604288B passes92291497984Bfree.
-No cleanup needed. No scientific RNG draw/trajectory has started yet.
+The sole serial controller advances9LRscreens then9fresh endpoints,1200updates/
+1228800targets/41H200 each. Immutable independent per-arm minimumH200MPSCE/lowerLR
+ties;three-way rotated fresh order. All18accepted before all9fresh serving and
+separate independent statistics against BOTHdense controls. No quality result or
+adoption yet. Keep incumbent. Never duplicate worker/controller,rerun prepare or
+attempted slots,clearSTOP,edit1035sources or call state/advance on a livepartialslot.
+Follow actualprocesses/metrics/guards/acceptanceanchors/STOP. Healthy monitoringquiet.
+
+Full retained-outputfloor21771120640B,target23918604288B passes~92GBfree.
+Alloutputs retained,including allscreens. No cleanup/retirement required. All prior
+weights/source/failure/acceptance/log/config/metric/STOP/retirement evidence intact.
