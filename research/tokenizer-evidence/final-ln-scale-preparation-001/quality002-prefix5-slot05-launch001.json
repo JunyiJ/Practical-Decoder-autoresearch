@@ -1,0 +1,65 @@
+{
+  "accepted04": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-04.json",
+    "sha256": "8fae56d56be86330f65ab13ce4118369d2cd6eee396e36403a9671054520a210"
+  },
+  "accepted_prefix": 5,
+  "active_slot": 5,
+  "arm": "unit",
+  "at": "2026-11-06T00:57:07.331371+00:00",
+  "cleanup_target": 11734226206,
+  "exec_session": 4907,
+  "first_metric": {
+    "accel_mem_kind": "mps_current_allocated",
+    "accel_mem_mb": 631.765869140625,
+    "averaging_snapshots": 0,
+    "base_learning_rate": 0.00125,
+    "clipping": {
+      "coefficient": 1.0,
+      "gradient_tensors": 87,
+      "post_norm": 0.43988120555877686,
+      "pre_norm": 0.43988120555877686,
+      "step": 1,
+      "threshold": 1.0
+    },
+    "cuda": null,
+    "device": "mps",
+    "elapsed_time_sec": 0.7875164999859408,
+    "iter_time_sec": 0.7873905838932842,
+    "lr_multiplier": 1.0,
+    "moe_usage": null,
+    "ppl": 50799.61013582089,
+    "rss_kind": "process_lifetime_peak",
+    "rss_mb": 562.34375,
+    "scheduled_learning_rate": 0.00125,
+    "step": 0,
+    "tokens_processed": 1024,
+    "train_aux_loss": null,
+    "train_ce_loss": 10.866561889648438,
+    "train_loss": 10.866561889648438,
+    "train_total_loss": 10.866561889648438,
+    "training_time_sec": 0.7873905838932842,
+    "val_aux_loss": null,
+    "val_ce_loss": 10.83564395904541,
+    "val_loss": 10.83564395904541
+  },
+  "free_bytes": 18973388800,
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-freeze.json",
+    "sha256": "b76e9e1084b67c88be9e1f89260b5b5b6a1f280591ac16de59453ce637f3ff65"
+  },
+  "metadata_files_mirrored": 15,
+  "original_STOP_preserved": true,
+  "parent_pid": 49212,
+  "preflight": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-prefix5-preflight001.json",
+    "sha256": "0d6ca1767c61e8850ab6004056a18f9b5650a169955704521d1362aaf3d60c8b"
+  },
+  "remaining_requirement": 9586742558,
+  "retained_weight_bytes": 2796301026,
+  "seed": 200070013,
+  "source_count": 918,
+  "status": "accepted_prefix5_slot05_running",
+  "weight_copies": 0,
+  "worker_pid": 49243
+}

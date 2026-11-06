@@ -11,6 +11,45 @@ its architecture, training regime or comparison assumptions limit progress.
 Small normalization and optimizer ablations remain useful, but they cannot
 substitute for exploration of a different model family or interacting choices.
 
+Human clarification on November 5: exploration must be grounded in facts,
+past learnings, already collected data and research papers. The evidence rules
+below apply immediately; the numerical percentage remains a proposed allocation.
+
+## Ground every exploration in evidence
+
+Before selecting a new scientific direction, use the
+`evidence-grounded-research` skill and review the measurements behind the current
+incumbent and relevant closed studies. Analyze existing loss curves, seed
+variation, stability, capacity and inference measurements where they bear on
+the question. Identify a measured bottleneck or an unresolved assumption before
+choosing a new architecture or parameter grid.
+
+Read the relevant primary papers, including their ablations and limitations;
+save direct references to the exact version and supporting or conflicting
+sections. Compare their data, scale, training budget and architecture with ours.
+Paper results are external evidence for a hypothesis, not a claim that their
+gains transfer here. Mark local observations, published results and our own
+mechanistic inference separately. An exact precedent is not required, but a
+missing precedent must be acknowledged rather than replaced with invented support.
+
+Each candidate needs a short note in its existing boundary/design record:
+
+1. Local evidence paths, relevant prior successes and failures, and what the
+   collected data actually show, including uncertainty and contradictory results.
+2. Primary-paper references, the specific supporting/conflicting result, and
+   the applicability gap in our setting.
+3. A mechanism, a falsifiable prediction, and why either outcome teaches us
+   something that the existing studies do not establish.
+4. Discriminating controls, bounded tuning/selection rules, full fresh
+   confirmation, and the complete resource cost.
+
+Choose among qualified candidates by the bottleneck addressed, evidence,
+expected information and feasible cost. Novelty alone is insufficient. The
+exploration quota never requires random experiments: if no candidate has a
+sound basis, carry its reserved allocation forward and do the bounded data
+analysis or literature work needed to qualify one. Do not count that preparation
+as numerical exploration or silently spend the reserve on more local tuning.
+
 ## Reserve 30 percent for exploration
 
 | Allocation | Share of numerical experiment time | What qualifies |
@@ -52,16 +91,19 @@ exploration proposal must identify a materially different mechanism or a
 specific assumption it can overturn, state what observation would discriminate
 it, and explain how it differs from closed studies.
 
-Keep at least three mechanism families in the candidate queue. Rank them by
-the value of resolving the question, distance from recent work, feasibility and
-estimated total cost. Choose the most informative feasible candidate, not the
-one with the most flattering old validation score. An infeasible MoE panel does
-not block a feasible depth allocation study or all independent source work.
+Keep at least three mechanism families under consideration. A queue entry is
+not qualified for training until it passes the evidence review above. Rank it
+by the value of resolving the question, its evidence and applicability limits,
+distance from recent work, feasibility and estimated total cost. An infeasible
+MoE panel does not block a different evidence-qualified candidate or useful
+independent analysis.
 
 ## Initial exploration queue
 
-These are ordered questions for prospective designs. Exact shapes, seeds,
-budgets and gates require a separate finite protocol before any training.
+These are provisional investigation questions, not a fixed launch order. Their
+local-data and literature reviews can change their priority or remove them.
+Exact shapes, seeds, budgets and gates require a separate finite protocol before
+any training. None is admitted merely to fill the exploration percentage.
 
 | Priority | Question and candidate | Discriminating comparison |
 | --- | --- | --- |
@@ -144,11 +186,12 @@ delete selected/fresh weights or use a partial panel to fund exploration.
 
 ## Next concrete action
 
-After final-scale closure, write the bounded depth/width feasibility design and
-refresh the existing MoE capacity audit. Choose the first feasible structural
-campaign using the rule above, then freeze its complete resources and scientific
-protocol. AdamW beta1 remains in the local-tuning queue; it no longer advances
-automatically ahead of the first structural exploration campaign.
+After final-scale closure, review existing depth/scaling and MoE evidence,
+analyze relevant collected curves/costs, and read the primary literature before
+prioritizing the depth/width feasibility design or refreshing the MoE capacity
+audit. Choose the most informative evidence-qualified feasible structural
+campaign, then freeze its full resource and scientific protocol. AdamW beta1
+remains in the local-tuning queue; it does not automatically displace this review.
 
 See [architecture agenda](TOKENIZER_ARCHITECTURE_ROADMAP.md),
 [attention objectives](TOKENIZER_ATTENTION_ROADMAP.md),

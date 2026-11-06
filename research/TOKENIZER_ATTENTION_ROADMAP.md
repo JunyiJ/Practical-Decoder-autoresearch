@@ -16,6 +16,9 @@ reserves numerical time for distinct mechanisms and interaction/transfer tests.
 Attention refinements remain one part of that portfolio; another multiplier or
 normalization change does not satisfy its structural exploration allocation.
 The current frozen final-scale comparison finishes unchanged.
+Exploration candidates must be justified by local measurements, prior studies
+and a relevant primary-paper review, with explicit applicability gaps and a
+falsifiable mechanism; novelty or a quota alone does not justify training.
 
 ## Adoption objective
 

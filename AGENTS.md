@@ -87,3 +87,26 @@ the same issue. Follow the latest human authorization over older local plans.
 - Approval-review timeouts are execution failures, not missing human consent.
   Try permitted independent work and report the exact blocked action rather
   than asking again for permission already granted.
+
+
+## Ground exploration in evidence
+
+- Exploration must follow facts, past learnings, already collected data and
+  relevant primary research papers. Do not choose arbitrary novelty or random
+  parameter changes merely to meet an exploration percentage.
+- When selecting a direction or designing a new scientific campaign, use
+  [evidence-grounded-research](/Users/junyi/.codex/skills/evidence-grounded-research/SKILL.md).
+  Inspect original local results, curves and acceptance/failure evidence; read
+  the relevant paper versions and supporting or conflicting sections.
+- Record the local evidence paths, literature references and applicability
+  limits, the hypothesized mechanism, a falsifiable prediction, discriminating
+  controls, expected learning from either outcome and the complete cost.
+  Separate measured local facts, external reported results and our inference.
+- Include contrary findings and scope limits. Resource/implementation failures
+  are not negative quality results; published gains are not local gains. A
+  previously losing family needs a new evidence-based rationale, not a replay
+  of a closed attempt or pooling of old scores into fresh confirmation.
+- An exploration quota reserves budget for qualified hypotheses, not random
+  runs. If none qualifies, carry the allocation forward and complete a concrete
+  existing-data analysis or literature question. Do not count preparation as
+  numerical exploration, silently relabel local tuning, or change frozen panels.

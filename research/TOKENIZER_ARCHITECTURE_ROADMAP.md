@@ -22,6 +22,10 @@ and a refreshed MoE capacity audit. Small final-normalizer and optimizer ablatio
 count as local improvement. Future finite experiments still require exact designs,
 fresh confirmation and full capacity; the current frozen panel stays unchanged.
 This plan is a proposed future scheduling policy, not a new experiment freeze.
+The human further requires exploration grounded in local facts, past learnings,
+collected measurements and primary papers. Every candidate must pass the plan's
+evidence review; the provisional queue can be reranked or rejected by that review.
+The percentage is not permission for random experiments.
 
 ## Scheduling and decisions
 
