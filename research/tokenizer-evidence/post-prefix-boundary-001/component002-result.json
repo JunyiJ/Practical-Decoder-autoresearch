@@ -1,0 +1,107 @@
+{
+  "status": "cpu_component_equations_gradients_and_route_accounting_passed",
+  "cases": [
+    {
+      "dim": 7,
+      "hidden": 5,
+      "tokens": 1,
+      "router_scale": 1.0,
+      "mode": "ordinary",
+      "maximum_error": 2.220446049250313e-16,
+      "assignment_counts": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "dim": 7,
+      "hidden": 5,
+      "tokens": 1,
+      "router_scale": 1.0,
+      "mode": "tie_and_zero_route",
+      "maximum_error": 1.1102230246251565e-16,
+      "assignment_counts": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "dim": 7,
+      "hidden": 5,
+      "tokens": 17,
+      "router_scale": 1.0,
+      "mode": "ordinary",
+      "maximum_error": 3.3306690738754696e-16,
+      "assignment_counts": [
+        11,
+        5,
+        7,
+        11
+      ]
+    },
+    {
+      "dim": 7,
+      "hidden": 5,
+      "tokens": 17,
+      "router_scale": 1.0,
+      "mode": "tie_and_zero_route",
+      "maximum_error": 2.220446049250313e-16,
+      "assignment_counts": [
+        17,
+        17,
+        0,
+        0
+      ]
+    },
+    {
+      "dim": 256,
+      "hidden": 336,
+      "tokens": 8,
+      "router_scale": 4.0,
+      "mode": "ordinary",
+      "maximum_error": 1.1102230246251565e-15,
+      "assignment_counts": [
+        4,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "dim": 256,
+      "hidden": 336,
+      "tokens": 8,
+      "router_scale": 4.0,
+      "mode": "tie_and_zero_route",
+      "maximum_error": 6.661338147750939e-16,
+      "assignment_counts": [
+        8,
+        8,
+        0,
+        0
+      ]
+    }
+  ],
+  "source_bindings": {
+    "research/tokenizer-evidence/post-prefix-boundary-001/component002.py": "285587434bb1c3612336ff691f75653a580e55d1a44bf2808b3e2f8b2977d310",
+    "research/tokenizer_moe_component_v1/__init__.py": "72f1158a083875bdfd6278f776ae01cf7e9d147ad0fd3504c34617cdc18c7219",
+    "research/tokenizer_moe_component_v1/component.py": "8de0b53de0086a16cc8a73f13b1d4fa2b78ad1736caa43ff62d3f66b677cabb1"
+  },
+  "predecessor_sources_unchanged": 1004,
+  "fixture_seed": 600450,
+  "scientific_seed": false,
+  "oracle_predecessor": "component001-failure.json",
+  "global_cpu_rng_unchanged": true,
+  "full_model": false,
+  "optimizer_or_resume_proved": false,
+  "mps_proved": false,
+  "quality_panel": false,
+  "corpus_loaded": false,
+  "holdout_opened": false,
+  "weight_files_written": 0,
+  "limitations": "Component oracle only;not a full model,parameter grouping,resource pilot or quality result. Dormant expert None gradients match mathematical zero;optimizer skip/decay semantics remain unproved."
+}

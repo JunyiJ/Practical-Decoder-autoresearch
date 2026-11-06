@@ -1,0 +1,9 @@
+/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gpt2_prefix_quality_v1/training.py:30: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  row=dict(step=i+1,targets=(i+1)*1024,train_ce=float(loss),validation_ce=sum(scores)/len(scores),lr_multiplier=multiplier,update_seconds=seconds)
+{"step": 1, "targets": 1024, "train_ce": 10.854948043823242, "validation_ce": 10.831818103790283, "lr_multiplier": 1.0, "update_seconds": 0.5056408749660477}
+{"step": 301, "targets": 308224, "train_ce": 5.035730838775635, "validation_ce": 5.298132658004761, "lr_multiplier": 1.0, "update_seconds": 0.23565895901992917}
+{"step": 601, "targets": 615424, "train_ce": 3.574638843536377, "validation_ce": 4.984804296493531, "lr_multiplier": 1.0, "update_seconds": 0.23612604208756238}
+{"step": 901, "targets": 922624, "train_ce": 3.7530651092529297, "validation_ce": 4.73049030303955, "lr_multiplier": 0.7744360902255639, "update_seconds": 0.22173841705080122}
+{"step": 1200, "targets": 1228800, "train_ce": 3.4128639698028564, "validation_ce": 4.63575439453125, "lr_multiplier": 0.1, "update_seconds": 0.21783737500663847}
+Full native/8K trajectory completed;independent parent acceptance required

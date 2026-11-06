@@ -1,0 +1,13 @@
+{
+  "status": "CLOSED_FAILED_CPU_ORACLE_PRECISION",
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-prefix-boundary-001/component001.py",
+    "sha256": "21718d4768b636137b05eaa2957754502c1aedfd74d8e6d6891fd0a609b62b48"
+  },
+  "guard": "component001-guard.json",
+  "error": "AssertionError (7,ordinary,3.07934144849753e-08)",
+  "cause": "Independent oracle divided integer count tensors before FP64 promotion;Torch true division produced FP32 route fractions. Candidate explicitly casts to FP64 before division.",
+  "quality_result": false,
+  "weights_written": 0,
+  "next_action": "Separate oracle002 promotes integer counts through Python int arithmetic before multiplication;do not rerun001 or edit component implementation."
+}

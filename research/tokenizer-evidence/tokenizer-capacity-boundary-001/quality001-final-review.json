@@ -1,0 +1,148 @@
+{
+  "adopted": false,
+  "confirmation": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-confirmation-plan.json",
+    "sha256": "22b1dd1ce95748c4a76c9e086ca8d27b243956d758d599a1b02278c6dcc51b11"
+  },
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-freeze.json",
+    "sha256": "46f96b0b2911843d8272299c6a7f79df85570542687f253a3558a331fd1dcfbb"
+  },
+  "fresh_acceptances": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/06/accepted.json",
+      "sha256": "e9f7f87a6ab66c27d9d664523d372a7f7bf1cea84d770d57e805d9ecff21a585"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/07/accepted.json",
+      "sha256": "a256b522ae61a9f63ad5e2d596993e42ca8983ac3d85c3d51ddc1f2935f8255e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/08/accepted.json",
+      "sha256": "b02ddd3891ebbe81c68c1079c42c77a4a54977c393b83be1bb5205fe6edca7c2"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/09/accepted.json",
+      "sha256": "319b0a4054ae460fe7c4edcb31d6b1f3b6e7f40831ae87cc7aca4e6267c45eb6"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/10/accepted.json",
+      "sha256": "5a4df37543528bd5db4612be6243a1974932bb1f8bda808047c5c126e14726b0"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/11/accepted.json",
+      "sha256": "2a6833550565b177514decc01d111dc0ccea836a5bd8495b1e1754aeff56f7cf"
+    }
+  ],
+  "independent_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-independent-final-review.json",
+    "sha256": "e1c6a49649fdee3ccfcd98c095de38eaa9ea3e143931817b896c8d4a59feefdb"
+  },
+  "inference": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-fresh-inference.json",
+    "sha256": "d08fbd10a53d34bc7d7fc820a363676b8b02cb7ed78c731064e692c6aa3282c8"
+  },
+  "next_action": "Separate evidence/adoption/codec-checkpoint consumer review only if all strict quality gates pass;otherwise retain incumbent.Then continue evidence-qualified RSI.",
+  "selection": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-selection.json",
+    "sha256": "cc4921c13f56042dbcaabd41c3a14e68cd94eb33a08868dc673449834757c63e"
+  },
+  "statistics": {
+    "candidate_minus_native_bpb": [
+      0.025322182125997905,
+      0.027920271447600266,
+      0.01799459545224221
+    ],
+    "gates": {
+      "all_simultaneous_conditional_text_upper_bounds_negative": false,
+      "every_fresh_delta_negative": false,
+      "mean_bpb_below_minus_point01": false
+    },
+    "intervals": {
+      "16384": {
+        "blocks": 7,
+        "draw_seed": 200100004,
+        "draws": 2000,
+        "pcg64_reinitialized_each_width": true,
+        "quantile": 0.9833333333333333,
+        "raw_byte_counts": [
+          16384,
+          16384,
+          16384,
+          16384,
+          16384,
+          16384,
+          13171
+        ],
+        "upper": 0.030227165353941102
+      },
+      "4096": {
+        "blocks": 28,
+        "draw_seed": 200100004,
+        "draws": 2000,
+        "pcg64_reinitialized_each_width": true,
+        "quantile": 0.9833333333333333,
+        "raw_byte_counts": [
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          4096,
+          883
+        ],
+        "upper": 0.031805215817688914
+      },
+      "8192": {
+        "blocks": 14,
+        "draw_seed": 200100004,
+        "draws": 2000,
+        "pcg64_reinitialized_each_width": true,
+        "quantile": 0.9833333333333333,
+        "raw_byte_counts": [
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          8192,
+          4979
+        ],
+        "upper": 0.03271198983961023
+      }
+    },
+    "mean_bpb_delta": 0.02374568300861346,
+    "practical_threshold": -0.01,
+    "quality_gates_pass": false,
+    "scope": "Conditional on these trained seeds and reused111475validation bytes;not holdout or population-seed confidence. Deterministic token coding likelihood;uniform-within-token raw-byte loss allocation is bookkeeping. No cost-only adoption;separate adoption/serving-consumer review required."
+  },
+  "status": "complete_fresh_panel_reviewed"
+}

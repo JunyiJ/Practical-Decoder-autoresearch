@@ -1,0 +1,33 @@
+{
+  "primary": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-primary-statistics.json",
+    "sha256": "ef7bcf89cfc8dfc59f607238f90a59919ffb145eefd0bba388d48640318d4148"
+  },
+  "result": {
+    "adopted": false,
+    "atol": 1e-12,
+    "deltas": [
+      0.025322182125997905,
+      0.027920271447600266,
+      0.01799459545224221
+    ],
+    "gates": {
+      "all_simultaneous_conditional_text_upper_bounds_negative": false,
+      "every_fresh_delta_negative": false,
+      "mean_bpb_below_minus_point01": false
+    },
+    "mean": 0.02374568300861346,
+    "quality_gates_pass": false,
+    "scope": "Conditional trained-seed/reused-validation-text inference only;not holdout or population-seed confidence. Separate adoption/consumer integration review required.",
+    "status": "independent_complete_panel_statistics_agreed",
+    "upper_bounds": {
+      "16384": 0.030227165353941106,
+      "4096": 0.031805215817688914,
+      "8192": 0.032711989839610225
+    }
+  },
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/gpt2_prefix_quality_v1/final_review.py",
+    "sha256": "5d4800520786b96f74abd3a4347f24bf1e7ef5f5e2d61472256a50b781859fc8"
+  }
+}

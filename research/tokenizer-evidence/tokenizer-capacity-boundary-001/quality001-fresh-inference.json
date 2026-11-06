@@ -1,0 +1,343 @@
+{
+  "all_six_fresh": true,
+  "holdout_scored": false,
+  "rows": [
+    {
+      "arm": "native",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/06/checkpoints/h200.pt",
+        "sha256": "de91757b7fe7cbd3a60b1cc003d3fbef6418e585b4f49003a79bc3f91340e10b",
+        "size": 114077827
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.19843483401928097,
+            0.24930445791687816,
+            0.21334425010718405,
+            0.20815762493293732,
+            0.20539770799223334
+          ],
+          "full128_seconds": [
+            0.008796375012025237,
+            0.01068170799408108,
+            0.010494583053514361,
+            0.010557333007454872,
+            0.010444708983413875
+          ],
+          "median_decode32_seconds": 0.20815762493293732,
+          "median_full128_seconds": 0.010494583053514361
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.20632066705729812,
+            0.20736916607711464,
+            0.22451129206456244,
+            0.20220729091670364,
+            0.2058481660205871
+          ],
+          "full128_seconds": [
+            0.03299195901490748,
+            0.0352697919588536,
+            0.040249125100672245,
+            0.034926666994579136,
+            0.03824075008742511
+          ],
+          "median_decode32_seconds": 0.20632066705729812,
+          "median_full128_seconds": 0.0352697919588536
+        }
+      ],
+      "seed": 200100011,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/06/worker.json",
+        "sha256": "9a419c71c7cb730f7746a9be446947d57406c8a5d149729ed19f72eab208bef1"
+      }
+    },
+    {
+      "arm": "prefix8192",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/07/checkpoints/h200.pt",
+        "sha256": "41de1732d0885cc78647b9d6619ce7e1a2309b211a91d288cd83ed5ff09665c4",
+        "size": 27928707
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.19570370798464864,
+            0.2391205420717597,
+            0.19710491702426225,
+            0.1976738340454176,
+            0.1960330830188468
+          ],
+          "full128_seconds": [
+            0.006514208042062819,
+            0.00740562507417053,
+            0.006712957983836532,
+            0.006807291996665299,
+            0.006585499970242381
+          ],
+          "median_decode32_seconds": 0.19710491702426225,
+          "median_full128_seconds": 0.006712957983836532
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.18788324994966388,
+            0.180695042014122,
+            0.1724444170249626,
+            0.21576891595032066,
+            0.18220616597682238
+          ],
+          "full128_seconds": [
+            0.01842383306939155,
+            0.018373083090409636,
+            0.018346874974668026,
+            0.019152792054228485,
+            0.018096999963745475
+          ],
+          "median_decode32_seconds": 0.18220616597682238,
+          "median_full128_seconds": 0.018373083090409636
+        }
+      ],
+      "seed": 200100011,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/07/worker.json",
+        "sha256": "3bca25651041c0a5310bb07d5775847f52fec151c972f8cefe4dd82df0482a1e"
+      }
+    },
+    {
+      "arm": "prefix8192",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/08/checkpoints/h200.pt",
+        "sha256": "a3cee230c62beb970193fd2b681d1388763a23b74279aaa7177a5b98492db395",
+        "size": 27928707
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.19641566695645452,
+            0.19291166693437845,
+            0.1957329160068184,
+            0.19510533404536545,
+            0.2438890419434756
+          ],
+          "full128_seconds": [
+            0.0069839999778196216,
+            0.006611917051486671,
+            0.006696666940115392,
+            0.006588582997210324,
+            0.006482083932496607
+          ],
+          "median_decode32_seconds": 0.1957329160068184,
+          "median_full128_seconds": 0.006611917051486671
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.17983629100490361,
+            0.2216835420113057,
+            0.17831862496677786,
+            0.17647987499367446,
+            0.18298512499313802
+          ],
+          "full128_seconds": [
+            0.018476750003173947,
+            0.018541583907790482,
+            0.018431207980029285,
+            0.018181415973231196,
+            0.018244707956910133
+          ],
+          "median_decode32_seconds": 0.17983629100490361,
+          "median_full128_seconds": 0.018431207980029285
+        }
+      ],
+      "seed": 200100012,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/08/worker.json",
+        "sha256": "c070d700c4fc402f23757bc285991e3748827c40770c69aa10e54e28acabbf6a"
+      }
+    },
+    {
+      "arm": "native",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/09/checkpoints/h200.pt",
+        "sha256": "08a3654716f0bb5f72c8e2c15c517e7adeb148cf3a6315a4e560de6c965d9186",
+        "size": 114077827
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.21214629197493196,
+            0.2573507499182597,
+            0.20486583397723734,
+            0.21591770800296217,
+            0.20653237507212907
+          ],
+          "full128_seconds": [
+            0.010325915995053947,
+            0.010215291986241937,
+            0.011326791951432824,
+            0.01030616695061326,
+            0.010310625075362623
+          ],
+          "median_decode32_seconds": 0.21214629197493196,
+          "median_full128_seconds": 0.010310625075362623
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.20157208398450166,
+            0.20708333293441683,
+            0.23919604101683944,
+            0.20090683398302644,
+            0.21031524997670203
+          ],
+          "full128_seconds": [
+            0.03340187494177371,
+            0.03893366700503975,
+            0.03865654196124524,
+            0.035531583009287715,
+            0.03556887502782047
+          ],
+          "median_decode32_seconds": 0.20708333293441683,
+          "median_full128_seconds": 0.03556887502782047
+        }
+      ],
+      "seed": 200100012,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/09/worker.json",
+        "sha256": "5a40d9994634a20b3ff7e5e550b889ff1f7bfa00ce61e29c95bee99b21022093"
+      }
+    },
+    {
+      "arm": "native",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/10/checkpoints/h200.pt",
+        "sha256": "09e1e8f7354a300ed5e4b3a9843b4760b22f1064b414d60d4004febd9a0068d5",
+        "size": 114077827
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.21108933293726295,
+            0.25723200000356883,
+            0.21350624994374812,
+            0.21192545804660767,
+            0.21210229094140232
+          ],
+          "full128_seconds": [
+            0.010421833954751492,
+            0.010358582949265838,
+            0.010505582904443145,
+            0.010448249988257885,
+            0.010261291987262666
+          ],
+          "median_decode32_seconds": 0.21210229094140232,
+          "median_full128_seconds": 0.010421833954751492
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.20812020800076425,
+            0.2092176249716431,
+            0.248669208958745,
+            0.2092400409746915,
+            0.2012389999581501
+          ],
+          "full128_seconds": [
+            0.03604383300989866,
+            0.03672729094978422,
+            0.03769833396654576,
+            0.03732350002974272,
+            0.0388009580783546
+          ],
+          "median_decode32_seconds": 0.2092176249716431,
+          "median_full128_seconds": 0.03732350002974272
+        }
+      ],
+      "seed": 200100013,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/10/worker.json",
+        "sha256": "2f38339552964c260ef8345943f5e65d5da2608ecc11398bb933364f4c84265a"
+      }
+    },
+    {
+      "arm": "prefix8192",
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/11/checkpoints/h200.pt",
+        "sha256": "ad0c4a13b04e821516375d9ad155940eb11066125637aea452908716a490f450",
+        "size": 27928707
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.19529075000900775,
+            0.19886237499304116,
+            0.23509687499608845,
+            0.19243874994572252,
+            0.19464395905379206
+          ],
+          "full128_seconds": [
+            0.0066738330060616136,
+            0.006527125020511448,
+            0.011960542062297463,
+            0.006956291967071593,
+            0.0065534160239622
+          ],
+          "median_decode32_seconds": 0.19529075000900775,
+          "median_full128_seconds": 0.0066738330060616136
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.18015508400276303,
+            0.18001666595228016,
+            0.18538120796438307,
+            0.18556345801334828,
+            0.22163187491241843
+          ],
+          "full128_seconds": [
+            0.01846804202068597,
+            0.018313667038455606,
+            0.018377749947831035,
+            0.018374125007539988,
+            0.021349457907490432
+          ],
+          "median_decode32_seconds": 0.18538120796438307,
+          "median_full128_seconds": 0.018377749947831035
+        }
+      ],
+      "seed": 200100013,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/11/worker.json",
+        "sha256": "918b6ea423daec1841fe8412c3e07dd4827193051dc0469d6f02002d70fba381"
+      }
+    }
+  ],
+  "selection": false
+}
