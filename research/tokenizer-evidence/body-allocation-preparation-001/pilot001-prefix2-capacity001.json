@@ -1,0 +1,46 @@
+{
+  "kind": "remaining_complete_budget_after_accepted_retention",
+  "full_floor": 16100421632,
+  "accepted_weight_bytes": 989614356,
+  "weights": [
+    {
+      "slot": 0,
+      "kind": "parent",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-pilot-v1-001/evidence/pilots/00/checkpoints/parent.pt",
+      "size": 445083303,
+      "sha256": "73e5f609e843368d32c5d37bed46a29c913eb3c5834c964238209c7a9aaefc08"
+    },
+    {
+      "slot": 0,
+      "kind": "h200",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-pilot-v1-001/evidence/pilots/00/checkpoints/h200.pt",
+      "size": 114073667,
+      "sha256": "2dcee506741e0daa82b964b6b26568d9eae2a935f79f9b4a8a8b51e4b520176c"
+    },
+    {
+      "slot": 1,
+      "kind": "parent",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-pilot-v1-001/evidence/pilots/01/checkpoints/parent.pt",
+      "size": 342123687,
+      "sha256": "b43f66694aa11c29087ff6267f78a7936425105b1fc8c493b5d34e65bb79c3d8"
+    },
+    {
+      "slot": 1,
+      "kind": "h200",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-pilot-v1-001/evidence/pilots/01/checkpoints/h200.pt",
+      "size": 88333699,
+      "sha256": "fc86b531f1cc5eeb27be372ee5fa1fc16aa62653108585cd565b4f1744cd9865"
+    }
+  ],
+  "capacity": {
+    "free_bytes": 15573069824,
+    "required_free": 15110807276,
+    "cleanup_target": 17258290924,
+    "mandatory_deficit": 0,
+    "target_deficit": 1685221100,
+    "capacity_pass": true
+  },
+  "unstarted_slot02": true,
+  "no_stop": true,
+  "reason": "Subtract actual accepted retained output exactly once from the original future-allocation floor; it already consumes measured free space. No retired/pilot future credit or hardlink credit."
+}

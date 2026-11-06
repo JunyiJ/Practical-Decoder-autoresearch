@@ -1436,3 +1436,21 @@ local branch/depth/MoE results reviewed with applicability limits.
 Next:isolated model/component contracts and correctness prerequisites outside
 918sources,keeping unit gains;no numerical study/seed/freeze admitted.
 See [geometry review](tokenizer-evidence/exploration-boundary-001/geometry-review.md).
+
+
+## Body allocation correctness and resource gates passed
+
+All three explicit geometries passed CPU/MPS equations, gradients, causality,
+cache/reset and exact serialized optimizer/EMA/RNG resume. Three real-data
+workers were independently accepted; full CPU/MPS CE differences<2.8e-7.
+The three20-update pilots also pass original time/RSS/MPS/output gates;
+conservative full-run projections1103.42/681.26/736.10seconds. No scientific
+quality result or adoption. The human authorizes the structural comparison
+after these gates and complete budget pass, then continued evidence-grounded
+improvement until a pause/stop. Equal bounded LR tuning and three fresh shared
+seeds are next; only deeper is the adoption candidate against BOTH controls.
+See [preparation](TOKENIZER_BODY_ALLOCATION_PREPARATION.md). All918originals
+unchanged; new model/worker inventories924/930. Fifteen dependency-closed
+generated prerequisite payloads permanently retired after exact audit;46,801
+survivors unchanged, all selected/fresh/original evidence preserved. No closed
+fixture/cleanup rerun or retired restoration.

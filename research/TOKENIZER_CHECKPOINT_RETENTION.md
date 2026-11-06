@@ -1643,3 +1643,14 @@ receipt evidence,202historical selected/fresh RAWarchives,H100/H200/storage004
 stay intact. No future exploration allocation changes this retention boundary.
 Final endpoint15metadata files mirrored with0weightcopies. See final-scale
 quality002-closure.json and quality002-slot05-metadata-mirror001.json.
+
+
+Body-allocation generated-retirement001 permanently removed exactly15 successful
+four-update prerequisite payloads (nine resume, six real-worker),3,968,846,875
+logical/4,112,142,336 allocated bytes, after actual downstream integration closure.
+All46,801 retained survivors rehashed unchanged. Original receipts resolve absent
+tensors through body-allocation-preparation-001/generated-retirement001/manifest.json
+and completed.json; terminal STOPs prevent restoration/retry. All selected/fresh
+and original failure/source/log/config/metric/receipt evidence remain protected.
+The three accepted20-update structural pilots remain retained until a NEW
+quality-integration closure and exact audit; no conditional retirement credit.

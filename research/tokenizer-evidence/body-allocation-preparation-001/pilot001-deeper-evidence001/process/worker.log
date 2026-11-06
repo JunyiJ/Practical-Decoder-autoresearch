@@ -1,0 +1,6 @@
+/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_worker_v1/training.py:29: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  row=dict(step=i+1,targets=(i+1)*1024,train_ce=float(loss),validation_ce=sum(scores)/len(scores),lr_multiplier=multiplier,update_seconds=seconds)
+{"step": 1, "targets": 1024, "train_ce": 10.856220245361328, "validation_ce": 10.81667652130127, "lr_multiplier": 1.0, "update_seconds": 1.0051949160406366}
+{"step": 20, "targets": 20480, "train_ce": 9.908169746398926, "validation_ce": 10.020592498779298, "lr_multiplier": 0.1, "update_seconds": 0.21389333298429847}
+Fresh bounded body-allocation worker completed

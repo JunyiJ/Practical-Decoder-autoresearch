@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "mode": "cpu",
+  "cases": [
+    {
+      "case": "incumbent_exact_init_rng_logits_all_gradients_groups_two_updates",
+      "passed": true
+    },
+    {
+      "arm": "incumbent",
+      "forward_error": 7.152557373046875e-07,
+      "max_gradient_error": 1.4901161193847656e-08,
+      "cache_batches": [
+        1,
+        8
+      ],
+      "cache_reset": true,
+      "atomic_foreign_cache_rejection": true,
+      "alias_rejection": true,
+      "forward_and_gradient_causality": true,
+      "foreign_checkpoint_rejected": true,
+      "parameters": 28492416
+    },
+    {
+      "arm": "shallow",
+      "forward_error": 8.940696716308594e-07,
+      "max_gradient_error": 1.862645149230957e-08,
+      "cache_batches": [
+        1,
+        8
+      ],
+      "cache_reset": true,
+      "atomic_foreign_cache_rejection": true,
+      "alias_rejection": true,
+      "forward_and_gradient_causality": true,
+      "foreign_checkpoint_rejected": true,
+      "parameters": 22057472
+    },
+    {
+      "arm": "deeper",
+      "forward_error": 7.748603820800781e-07,
+      "max_gradient_error": 1.862645149230957e-08,
+      "cache_batches": [
+        1,
+        8
+      ],
+      "cache_reset": true,
+      "atomic_foreign_cache_rejection": true,
+      "alias_rejection": true,
+      "forward_and_gradient_causality": true,
+      "foreign_checkpoint_rejected": true,
+      "parameters": 22029632
+    }
+  ],
+  "sources": {
+    "research/body_allocation_model_v1/__init__.py": "16472421b6d23e56b0ba9cdae36053bedbe009dfd304d65f4d71db6fbc8781a9",
+    "research/body_allocation_model_v1/contract.py": "2349b96940b78823dbff795e20e10a578ae0ee39a7f001bd3bcd8e551f28469a",
+    "research/body_allocation_model_v1/model.py": "977eb4a4b8e04ad966248e7f12ab5c21df7df54540b10624bb8ee4e024cd752d",
+    "research/body_allocation_model_v1/optimizer.py": "e56365bbd01ffb8811585caffcf493a72a4a640feb96141a56178697d5fcb876"
+  },
+  "training_launched": false,
+  "scientific_seeds_assigned": false,
+  "holdout_scored": false
+}
