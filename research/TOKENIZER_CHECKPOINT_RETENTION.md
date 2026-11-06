@@ -1654,3 +1654,13 @@ and completed.json; terminal STOPs prevent restoration/retry. All selected/fresh
 and original failure/source/log/config/metric/receipt evidence remain protected.
 The three accepted20-update structural pilots remain retained until a NEW
 quality-integration closure and exact audit; no conditional retirement credit.
+
+
+Body-allocation quality001 LR screen complete: frozen selection retains only
+03/04/05 as the three selected recipe pairs (nominalLR.00125 each). Exact
+quality001-loser-retirement001 removed12obsolete RAW/H200 payloads from
+00/01/02/06/07/08,2,840,244,452logical/2,954,346,496allocatedB after actual
+selection and dependency closure. All47,266 survivors rehashed unchanged.
+Original metadata/failure/evidence and every selected/fresh weight preserved.
+Resolve absent losing payloads via that manifest/completed receipt; never
+restore or rerun closed members/cleanup. All current fresh endpoints protected.

@@ -1,0 +1,125 @@
+{
+  "audits": {
+    "deeper": {
+      "ce": 4.686197118655958,
+      "learning_rate": 0.00125,
+      "selected_slot": 5
+    },
+    "incumbent": {
+      "ce": 4.684315356832437,
+      "learning_rate": 0.00125,
+      "selected_slot": 3
+    },
+    "shallow": {
+      "ce": 4.702640630186224,
+      "learning_rate": 0.00125,
+      "selected_slot": 4
+    }
+  },
+  "choices": {
+    "deeper": 0.00125,
+    "incumbent": 0.00125,
+    "shallow": 0.00125
+  },
+  "diagnostic_control_not_fallback": "shallow",
+  "kind": "frozen_per_arm_LR_selection",
+  "no_extra_screen": true,
+  "no_fresh_seed_used": true,
+  "only_adoption_candidate": "deeper",
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/body-allocation-preparation-001/quality001-plan.json",
+    "sha256": "43754ddefe492694958d1d76ec7f5895048948c9f6c0398d897819beb9474b44"
+  },
+  "rows": [
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/00/accepted.json",
+        "sha256": "053972fa1ec6113f1740942e7d085bce9f87307fd200bee951d0f7e1fd7dc6a4"
+      },
+      "arm": "incumbent",
+      "ce": 4.885314217004612,
+      "lr": 0.000625,
+      "slot": 0
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/01/accepted.json",
+        "sha256": "e6f524f74263a1d0c3e824dcf856b08adec855fe6ebdcd0a3f73700dc2bab722"
+      },
+      "arm": "shallow",
+      "ce": 4.886207702546243,
+      "lr": 0.000625,
+      "slot": 1
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/02/accepted.json",
+        "sha256": "1927d259a5218bd910d36ef7e5163f1b374d8cef9e78fc7d240e3340b1013acb"
+      },
+      "arm": "deeper",
+      "ce": 4.878149419639233,
+      "lr": 0.000625,
+      "slot": 2
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/03/accepted.json",
+        "sha256": "903b29591ecfdafe2b1a59f0dc964b426c213751527b1c60e433e251a22943c7"
+      },
+      "arm": "incumbent",
+      "ce": 4.684315356832437,
+      "lr": 0.00125,
+      "slot": 3
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/04/accepted.json",
+        "sha256": "d563b736db5b27868946bbee24aa374562fd6b470544dd5b0dfad62e36e312c0"
+      },
+      "arm": "shallow",
+      "ce": 4.702640630186224,
+      "lr": 0.00125,
+      "slot": 4
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/05/accepted.json",
+        "sha256": "c90813d8252030ed88190f53c5decc0afd72b0ad1c24a5a82dce3e5fc505ad22"
+      },
+      "arm": "deeper",
+      "ce": 4.686197118655958,
+      "lr": 0.00125,
+      "slot": 5
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/06/accepted.json",
+        "sha256": "ff161198ec4f801fd73c3fac07387a9f6bc44716fc65137284d46a891ddd07de"
+      },
+      "arm": "incumbent",
+      "ce": 4.763030882979586,
+      "lr": 0.0025,
+      "slot": 6
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/07/accepted.json",
+        "sha256": "7ea984ae39e6adb277ae1c0c19ac0576ef305d7148a008d3a9ad297c544c8b21"
+      },
+      "arm": "shallow",
+      "ce": 4.744875267892433,
+      "lr": 0.0025,
+      "slot": 7
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-body-allocation-quality-v1-001/evidence/quality/08/accepted.json",
+        "sha256": "ab50ae318a34322e088a458e904742277983af63633c45a768492791010d7936"
+      },
+      "arm": "deeper",
+      "ce": 4.7352596029030165,
+      "lr": 0.0025,
+      "slot": 8
+    }
+  ]
+}

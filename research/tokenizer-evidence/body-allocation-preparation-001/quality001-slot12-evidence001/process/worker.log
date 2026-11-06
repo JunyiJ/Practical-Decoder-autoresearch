@@ -1,0 +1,9 @@
+/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_worker_v1/training.py:29: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  row=dict(step=i+1,targets=(i+1)*1024,train_ce=float(loss),validation_ce=sum(scores)/len(scores),lr_multiplier=multiplier,update_seconds=seconds)
+{"step": 1, "targets": 1024, "train_ce": 10.84326457977295, "validation_ce": 10.808499908447265, "lr_multiplier": 1.0, "update_seconds": 0.38293800002429634}
+{"step": 301, "targets": 308224, "train_ce": 4.90042781829834, "validation_ce": 5.369984912872314, "lr_multiplier": 1.0, "update_seconds": 0.1870203330181539}
+{"step": 601, "targets": 615424, "train_ce": 4.026284694671631, "validation_ce": 4.827087450027466, "lr_multiplier": 1.0, "update_seconds": 0.18802716699428856}
+{"step": 901, "targets": 922624, "train_ce": 3.6434178352355957, "validation_ce": 4.843325185775757, "lr_multiplier": 0.7744360902255639, "update_seconds": 0.19099991698749363}
+{"step": 1200, "targets": 1228800, "train_ce": 3.7091026306152344, "validation_ce": 4.611481428146362, "lr_multiplier": 0.1, "update_seconds": 0.20210312504786998}
+Fresh bounded body-allocation worker completed
