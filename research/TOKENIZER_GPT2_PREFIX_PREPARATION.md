@@ -1,29 +1,40 @@
-# GPT2 vocabulary-capacity comparison preparation
+# GPT2 vocabulary-capacity comparison
 
-Status: native/8K model,data,real serialized resume,generated workers and resource
-pilots PASS. Independent common-byte selection/grouping/bootstrap contracts PASS.
-A finite design is prepared;no scientific quality root,freeze or new seed exists.
-No worker/controller is active. Incumbent remains unchanged.
+Status: quality001 is FROZEN and RUNNING after all correctness/resource/source/
+state/seed/data/full-budget gates passed. The controller owns the serial panel. Firstnative/8Kscreen pair independently
+accepted;prefix2 observed,slot02nativeLR.00125 advancing.
+No complete scientific quality result or adoption exists;incumbent unchanged.
+Follow ACTUAL processes/guards/STOP/acceptance over launch snapshots.
 
-Read [current evidence and next executable gates](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review002.md)
-and [finite design/cost](tokenizer-evidence/tokenizer-capacity-boundary-001/quality-design001.json).
-The next implementation is the additive1,200-update quality worker/controller,
-all-six-fresh serving review and independent final review. Existing prerequisite
-workers reject1,200updates and are immutable;do not bypass them. After full
-source/adversarial/seed/resource gates,execute the finite comparison under the
-human's existing authorization. No redundant permission is needed.
+Root:`research_runs/tokenizer-gpt2-prefix-quality-v1-001`.
+Runner:`research.gpt2_prefix_quality_v1.execution`.
+Freeze SHA:`46f96b0b2911843d8272299c6a7f79df85570542687f253a3558a331fd1dcfbb`.
+All1004source bindings preserve995proven predecessors and are immutable. Never
+rerun prepare/attempted slots/closed proofs,duplicate a controller,clear STOP or
+invoke partial-state gates as monitoring while a slot is active.
 
-The scientific question is the complete smaller-vocabulary recipe effect at an
-equal token-update budget. Evaluate the same111,475validation bytes in BPB;do not
-compare CE/token,claim equal raw context/exposure/compute,or infer a quality gain
-from short pilots or compression. Exactly six bounded LR screens then three new
-fresh pairs are proposed. Practical meanBPB<-.01,allseed deltas negative and all
-three simultaneous conditional-text bounds negative;no cost-only adoption.
-Separate adoption/consumer integration review is required if every gate passes.
+The controller runs all six equal-allowance LR screens(.000625/.00125/.0025 per
+native/8K arm),immutable minimum-H200BPB/lowerLRtie selection,then three rotated
+fresh pairs and all-six serving/independent final statistics. Screen200100002 and
+evaluation200100003 are used;fresh200100011/012/013 andbootstrap200100004 remain
+unused until their frozen phases. No seed replacements,rescue or interim winner.
 
-All995current source bindings preserve the original972 and closed failure source.
-Both generated and pilot roots are terminal;all eight original payloads totaling
-1,375,190,568B stay protected pending exact downstream closure.46closed metadata
-files mirrored with ZEROweights. All previous selected/fresh/original evidence
-remains protected. Current free~100.2GB exceeds the complete draft14,724,689,920B
-floor and16,872,173,568B extra-headroom target;recheck actual capacity before freeze.
+The question is the complete smaller-vocabulary recipe under equal token updates.
+Evaluate the same111,475validation bytes in BPB;do not compare CE/token or claim
+equal raw context/exposure/compute. Practical meanBPBdelta<-.01,allseed deltas
+negative and allthree simultaneous conditional-text bounds negative;no cost-only
+adoption. A separate adoption/consumer integration review is required if all pass.
+
+Both real worker/resource pairs and independent arithmetic/source/state contracts
+passed. All eight prerequisite RAW/H200 files1,375,190,568B remain protected;
+46closed metadata files mirrored with ZEROweights. Keep ALLnew screen/fresh
+outputs. Full floor14,724,689,920B,target16,872,173,568B,actual~100.1GBfree at launch;
+controller recomputes complete remaining capacity before every unstarted slot.
+No storage blocker/cleanup is needed. All old STOPs/retirements remain immutable.
+
+Read [current launch evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review003.md),
+[prior local/paper evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review002.md),
+and [the actual frozen plan](tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-plan.json).
+After actual terminal closure,read the final review without replaying commands;
+perform separate adoption review only if strict gates pass,then continue grounded
+RSI under the human's authorization. Proposed70/20/10 remains proposed.

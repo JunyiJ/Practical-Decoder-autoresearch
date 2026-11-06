@@ -1,0 +1,90 @@
+{
+  "accepted_prefix": 0,
+  "active_arm": "native",
+  "active_slot": 0,
+  "completed_target_count_observed": 615424,
+  "completed_update_observed": 601,
+  "config": {
+    "path": "research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/00/config.json",
+    "sha256": "c18332dca5969502b9212e8ba34ceac133a5ac424bd79e840ceab1944c845c8b"
+  },
+  "controller_pid": 92108,
+  "evaluation_seed": 200100003,
+  "exec_session_hint": 73995,
+  "first_metric": {
+    "lr_multiplier": 1.0,
+    "step": 1,
+    "targets": 1024,
+    "train_ce": 10.804109573364258,
+    "update_seconds": 0.5994516659993678,
+    "validation_ce": 10.830409240722656
+  },
+  "free_bytes": 100133171200,
+  "freeze": {
+    "path": "research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-freeze.json",
+    "sha256": "46f96b0b2911843d8272299c6a7f79df85570542687f253a3558a331fd1dcfbb"
+  },
+  "latest_metric_snapshot": {
+    "lr_multiplier": 1.0,
+    "step": 601,
+    "targets": 615424,
+    "train_ce": 4.613043785095215,
+    "update_seconds": 0.24299700011033565,
+    "validation_ce": 5.275130796432495
+  },
+  "mutable_control_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/control/process-quality-00.json",
+  "mutable_worker_guard_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-quality-v1-001/control/worker-quality-00-guard.json",
+  "next_action": "Observe ACTUAL active controller/process/guard/STOP/anchors. It advances all12trajectories,immutable selection,all3freshpairs and independent finalreview. Never duplicate it or run prepare/advance/state against an active partial slot. After clean closure separate adoption/consumer review if everygatepasses;otherwisekeepincumbent.Thencontinue evidence-qualified RSI.",
+  "no_quality_result_or_adoption": true,
+  "observed_at": "2026-11-06T19:18:57.872166+00:00",
+  "observed_guard": {
+    "elapsed_seconds": 189.70429729204625,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 100133199872,
+      "mps_current_bytes": 663261440,
+      "mps_driver_bytes": 2493300736,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 578699264
+    },
+    "pid": 92134,
+    "reason": null,
+    "status": "watching"
+  },
+  "peak_lr": 0.000625,
+  "plan": {
+    "path": "research/tokenizer-evidence/tokenizer-capacity-boundary-001/quality001-plan.json",
+    "sha256": "01739ed70824840b80efec736f7eefb07fd5adb6e01dd7c01b675ba718bb034e"
+  },
+  "process_launch": {
+    "path": "research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/00/process/launch.json",
+    "sha256": "ffba292d42948faae16f3887db3a067eda6fc321eef9e5f4661feeaa22d3d6bc"
+  },
+  "request": {
+    "path": "research_runs/tokenizer-gpt2-prefix-quality-v1-001/evidence/quality/00/request.json",
+    "sha256": "d97d6fc161643ee7f429236e37d49a6e32b49c33b766a2bf08d4c4b14cff5fb8"
+  },
+  "scientific_category": "evidence-grounded_structural_exploration",
+  "screen_seed": 200100002,
+  "seeds": {
+    "bootstrap_unused": 200100004,
+    "fresh_unused": [
+      200100011,
+      200100012,
+      200100013
+    ],
+    "used": [
+      200100002,
+      200100003
+    ]
+  },
+  "source_bindings": 1004,
+  "source_implementation_commit": "4c56e9a2115072488639c3732c4f033c8329c40a",
+  "status": "frozen_scientific_controller_active_first_native_screen",
+  "worker_pid": 92134
+}

@@ -1576,3 +1576,14 @@ Next implement/prove the full1200 quality worker/controller/all-six-fresh servin
 and independent review,then unused-seed census/full LIVE budget and complete panel.
 See [current preparation](TOKENIZER_GPT2_PREFIX_PREPARATION.md) and
 [evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review002.md).
+
+
+## Native/8K full scientific comparison launched
+
+All full-source/state/serialization/seed/data/resource gates passed;quality001 is
+frozen with1004bindings and NEW freeze46f96b0b2911843d8272299c6a7f79df85570542687f253a3558a331fd1dcfbb.
+Controller serially runs six equal-LR screens and three fresh pairs,then all-six
+fresh serving and independent final statistics. No complete quality result or
+adoption yet. Keep incumbent and every current screen/fresh payload. Follow
+actual processes/guards/STOP/anchors;never duplicate the controller or rerun an
+attempted slot. See [launch evidence](tokenizer-evidence/tokenizer-capacity-boundary-001/evidence-review003.md).

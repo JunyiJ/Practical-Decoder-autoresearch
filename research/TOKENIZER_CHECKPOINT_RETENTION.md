@@ -1748,3 +1748,10 @@ all original guard/acceptance/source/payload bindings and losslessly mirrored46
 closed metadata files. Never rerun those commands or restore older retired weights.
 The draft quality budget keeps all12new endpoints and gives no prior-payload or
 future-retirement credit. No cleanup is required at current~100.2GBfree.
+
+
+Native/8K quality001 now retains ALL6screen+6fresh RAW/H200 pairs. The complete
+budget counts every new output with zero old worker/pilot,conditional retirement
+or hardlink credit. No current study cleanup is authorized by an interim score.
+Previous eight prerequisite files1,375,190,568B and all recent selected/fresh
+models/original evidence remain protected. No app/worker stops or tensor deletion.
