@@ -11,6 +11,12 @@ This attention work is one part of the [architecture agenda](TOKENIZER_ARCHITECT
 which includes MoE, activations, normalization, residuals, depth and readout.
 Attention parameter refinements must not indefinitely displace those families.
 
+The November 5 [exploration allocation proposal](TOKENIZER_EXPLORATION_PLAN.md)
+reserves numerical time for distinct mechanisms and interaction/transfer tests.
+Attention refinements remain one part of that portfolio; another multiplier or
+normalization change does not satisfy its structural exploration allocation.
+The current frozen final-scale comparison finishes unchanged.
+
 ## Adoption objective
 
 Treat quality and inference cost as separate measured objectives. GQA/MLA need

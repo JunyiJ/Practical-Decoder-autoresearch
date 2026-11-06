@@ -10,6 +10,19 @@ The running, frozen LR transfer experiment finishes unchanged to establish a
 reviewed subword baseline. Choose subsequent architecture or hyperparameter
 experiments from evidence, while ensuring meaningful architectural exploration.
 
+## Exploration allocation proposed November 5
+
+The human requested an explicit exploration percentage to prevent increasingly
+local tuning. The [exploration allocation plan](TOKENIZER_EXPLORATION_PLAN.md)
+proposes 70% incumbent improvement, 20% structural exploration and 10% interaction
+or transfer exploration, measured by numerical experiment time including each
+candidate's confirmation costs. It proposes structural exploration immediately
+after the current final-scale panel closes, starting with depth/width feasibility
+and a refreshed MoE capacity audit. Small final-normalizer and optimizer ablations
+count as local improvement. Future finite experiments still require exact designs,
+fresh confirmation and full capacity; the current frozen panel stays unchanged.
+This plan is a proposed future scheduling policy, not a new experiment freeze.
+
 ## Scheduling and decisions
 
 The proposed architecture sequence is inference-aware GQA/MLA, followed by the Kimi

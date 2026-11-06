@@ -461,3 +461,18 @@ verify prefix4 and actual remaining budget before previously unstarted04/05.
 Every fresh payload and original evidence protected. Source configs/recipe,
 3pairs/commonLR.00125/zero-search/gates unchanged. Evidence:
 quality002-preflight.json,quality002-prefix3-slot03-launch001.json.
+
+
+## Second fresh pair accepted and final pair started
+
+Slot03 learned(seed200070012) completed329.43sec and independently passed all
+original tensor/optimizer/EMA/RNG/clipping/full-validation/cache/reset/resource
+checks. Accepted prefix4 retains8fresh weights2,237,038,010B;15closed metadata
+files mirrored with0weightcopies. All918 sourcebindings remain unchanged.
+Actualfree19,566,567,424B passed complete remaining10,146,005,574B and
+2GiBtarget12,293,489,222B. Previouslyunstarted04learned(seed200070013) is active
+under the unchanged NEW quality002 freeze and strictguards. No complete3pair
+quality/bootstrap/adoption yet. On cleanparentacceptance,verify prefix5 and
+remainingcapacity before final05unit on the same seed. Allfresh/original evidence
+protected;noadditionalcleanupneeded. Future exploration allocation is separately
+proposed in TOKENIZER_EXPLORATION_PLAN.md and does not change this frozenpanel.

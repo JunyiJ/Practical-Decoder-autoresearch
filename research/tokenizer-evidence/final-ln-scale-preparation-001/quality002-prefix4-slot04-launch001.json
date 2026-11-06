@@ -1,0 +1,69 @@
+{
+  "accepted03": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-accepted-03.json",
+    "sha256": "51aea190bea2f1ba5044d243e014f3b45641c9dc944ca2482df460a620030d03"
+  },
+  "accepted_prefix": 4,
+  "active_slot": 4,
+  "at": "2026-11-06T00:50:21.624589+00:00",
+  "cleanup_target": 12293489222,
+  "exec_session": 48362,
+  "exploration_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_EXPLORATION_PLAN.md",
+    "sha256": "ffbc81f7b8fd6e64a2bbddc6f9b5446b8a9215acc89dd0577790815e262968ef"
+  },
+  "exploration_plan_status": "proposed_future_allocation_no_new_experiment_frozen",
+  "first_metric": {
+    "accel_mem_kind": "mps_current_allocated",
+    "accel_mem_mb": 631.77001953125,
+    "averaging_snapshots": 0,
+    "base_learning_rate": 0.00125,
+    "clipping": {
+      "coefficient": 1.0,
+      "gradient_tensors": 88,
+      "post_norm": 0.494745671749115,
+      "pre_norm": 0.494745671749115,
+      "step": 301,
+      "threshold": 1.0
+    },
+    "cuda": null,
+    "device": "mps",
+    "elapsed_time_sec": 71.88319504191168,
+    "iter_time_sec": 0.236096040927805,
+    "lr_multiplier": 1.0,
+    "moe_usage": null,
+    "ppl": 205.35669047621457,
+    "rss_kind": "process_lifetime_peak",
+    "rss_mb": 583.03125,
+    "scheduled_learning_rate": 0.00125,
+    "step": 300,
+    "tokens_processed": 308224,
+    "train_aux_loss": null,
+    "train_ce_loss": 4.773786544799805,
+    "train_loss": 4.773786544799805,
+    "train_total_loss": 4.773786544799805,
+    "training_time_sec": 71.4180986948777,
+    "val_aux_loss": null,
+    "val_ce_loss": 5.324748420715332,
+    "val_loss": 5.324748420715332
+  },
+  "free_bytes": 19549605888,
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-freeze.json",
+    "sha256": "b76e9e1084b67c88be9e1f89260b5b5b6a1f280591ac16de59453ce637f3ff65"
+  },
+  "metadata_files_mirrored": 15,
+  "original_STOP_preserved": true,
+  "parent_pid": 48619,
+  "preflight": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-prefix4-preflight001.json",
+    "sha256": "97e76418c04eebb6e83d91d98056be1d3ffff5afbef09f0a1ca59b980d111733"
+  },
+  "remaining_requirement": 10146005574,
+  "retained_weight_bytes": 2237038010,
+  "seed": 200070013,
+  "source_count": 918,
+  "status": "accepted_prefix4_slot04_running",
+  "weight_copies": 0,
+  "worker_pid": 48649
+}
