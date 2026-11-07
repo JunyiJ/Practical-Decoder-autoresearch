@@ -1,4 +1,34 @@
-# Single readout projection: quality panel frozen, launch pending push
+# Single readout projection: quality panel frozen and running
+
+Originalprepare completed once; freezef93aec6d is committed/pushed. FreezeSHA
+4e856e657f66e8e0849678c0e419bd8e3c6da6e4f3c25a4a809f7d37d6049be2.
+Read projection-quality-preparation-001/projection-quality001-plan/freeze and
+projection-quality-launch001.json. ONEoriginalrun-allcontroller48758/execsession2476
+and firstworker48781/native slot00/LR.000625/screen210870100001 were observed with
+completedupdate1/1024targets and healthy guard. This is HISTORICAL initial evidence;
+follow actual current PIDs/requests/control/guards/logs/STOP/acceptedanchors.
+
+All1161runtime/1164admission-proof sourcebindings immutable. Controllerowns ALL
+serialtransitions. NEVERduplicatecontroller/worker,rerunprepare/attemptedslots/closed
+proofs,clearSTOP/edit frozen sources or invoke livepartial bind/state/advance for
+monitoring. Boundedpollsession2476 ifavailable,else actualdurableprocess/control.
+Healthyadvancing/pendingDONT_NOTIFY/no repeatedrecords/commits/audits. Notifyonly
+completion/failure/materialphase/actionableblocker. Sourcecensus-unused receipt is
+historical beforeexecution; new sharedscreen/evaluationroles nowUSED byscreens,
+remainingfresh/bootstrap/derivedroles followactualrequests and theirfrozenphases.
+No completequalityendpoint/freshresult/adoption/bootstrap existed atlaunch. Native
+incumbent and closedholdout unchanged. Completebudget/forecast/all18screens+fresh/
+all9serving/independentstats/strictBOTHcontrolgates are inprotocol/resourcepreflight.
+
+At cleanterminalclosure read originalfinal/independent/primary/inference/selection/
+confirmation/ALL18anchors/STOP withoutreplay. Separateadoption/checkpointconsumer
+review ONLYifALLstrictgatespass,else retainincumbent. Thencontinueevidence-grounded
+RSI untilhumanpause/stop. NewmaterialcapacitywaitbeforeUNATTEMPTEDslot/noSTOP triggers
+INLINEauthorizedrecovery tofullremaining+2GiB beforesamefreezeunattemptedresume;
+guardfailure/closedSTOP nevercleared/retried/replaced. Allold/currentweightsprotected.
+
+## Freeze preparation (closed historical step)
+
 
 Original scientificprepare completed ONCE with no training. Immutable
 projection-quality-preparation-001/projection-quality001-plan.json and

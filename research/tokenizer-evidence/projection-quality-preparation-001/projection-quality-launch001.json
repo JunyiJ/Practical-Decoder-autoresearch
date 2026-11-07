@@ -1,0 +1,63 @@
+{
+  "accepted_quality_endpoints_at_observation": 0,
+  "admission_commit": "3a844ded",
+  "admission_proof_source_bindings": 1164,
+  "arm": "native",
+  "controller_exec_session": 2476,
+  "controller_pid": 48758,
+  "first_completed_training_update": {
+    "lr_multiplier": 1.0,
+    "step": 1,
+    "targets": 1024,
+    "train_ce": 10.889965057373047,
+    "update_seconds": 0.3950566250132397,
+    "validation_ce": 10.870325088500977
+  },
+  "first_worker_pid": 48781,
+  "free_bytes": 46835486720,
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/projection-quality001-freeze.json",
+    "sha256": "4e856e657f66e8e0849678c0e419bd8e3c6da6e4f3c25a4a809f7d37d6049be2"
+  },
+  "freeze_commit": "f93aec6d59caf221082ab954ba92e6e25c8b48fb",
+  "holdout_closed": true,
+  "limitation": "Historical initial observation only; follow ACTUAL processes/control/requests/guards/logs/STOP/anchors. Onecontroller owns allserialtransitions. HealthyadvancingpendingDONT_NOTIFY/no repeatedrecords-commits-audits. Neverduplicate/replayprepare-attemptedslots-closedproofs/STOPclear/sourceedits/livepartialbind-state-advance monitoring.",
+  "native_incumbent_unchanged": true,
+  "observed_at": "2026-11-07T11:21:40.721516+00:00",
+  "original_slot": 0,
+  "peak_lr": 0.000625,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/projection-quality001-plan.json",
+    "sha256": "396b9b721055dc7ddf695cc7a94aa03097deee168a0d1097016ec2ee6b1309aa"
+  },
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-quality-v1-001/evidence/quality/00/request.json",
+    "sha256": "f29b8c1baaa7a02e25f43d62d07e44fd1b7ef217680deb08430f0f02f08f1614"
+  },
+  "root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-quality-v1-001",
+  "runner": "research.readout_projection_quality_v1.execution run-all",
+  "runtime_source_bindings": 1161,
+  "scientific_result_or_adoption_or_bootstrap_yet": false,
+  "seed": 210870100001,
+  "status": "original_projection_quality_controller_started",
+  "worker_guard_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-quality-v1-001/control/worker-quality-00-guard.json",
+  "worker_guard_snapshot": {
+    "elapsed_seconds": 112.37467970896978,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 46835519488,
+      "mps_current_bytes": 662023936,
+      "mps_driver_bytes": 2493317120,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 725975040
+    },
+    "pid": 48781,
+    "reason": null,
+    "status": "watching"
+  }
+}
