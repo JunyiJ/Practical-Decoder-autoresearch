@@ -1,3 +1,36 @@
+# Original TOP model-math proof CLOSED_FAILED; separate byte-input applicability next
+
+The original admitted outer entry (pid 80142/session 32335) exited 1 at its
+unchanged exact-zero MPS native primary-logit gate: 244,530/301,542 coordinates
+failed, maximum absolute difference 2.384185791015625e-7. No retry, source edit,
+reference-mode, tolerance or backend rescue. This is an incomplete correctness
+qualification, not negative scientific quality. Native/holdout/future_two unchanged.
+Initializer 62092160001 is USED EXCLUSIVE to that original fixture; unused receipt
+historical. All original sources/plans/commands/guards/STOPs are closed.
+
+Independent complete review rejected 68/126 files. FIRST saved-partial closure
+reconciled 936 comparisons, 5,030,580 dense coordinates, 415,140,047 mask-only
+parameter coordinates, 45 saved CPU transactions and all 1,274 execution pins.
+Only the original MPS primary predicate is false. CPU results remain partial;
+remaining MPS cases and final RNG/count acceptance were not reached. No missing
+output reconstruction, numerical replay or model acceptance. All evidence retained.
+Outer time 24.793s / RSS 2,494,087,168B / peak MPS 1,150,877,696B; resources passed.
+Three new sources preserve 1,266 => 1,269 future bindings; closed model-proof
+1,236/scientific runtime 1,211 unchanged. Zero tensor/weight files or retirement.
+
+Read [failure review](tokenizer-evidence/future-token-preparation-001/top-model-math001-failure-review.md),
+[completed021](tokenizer-evidence/future-token-preparation-001/continuation-completed021.json),
+[new byte-composition preparation](TOKENIZER_BYTE_COMPOSITION_PREPARATION.md) and
+[next bounded metadata source work](tokenizer-evidence/byte-composition-boundary-001/next-source-handoff001.md).
+Evidence-grounded boundary rejects uniform low-rank/frozen/adaptive-input replay.
+The separate enabled question is raw-byte composition at unchanged GPT2 IDs/output.
+Three source versions read; public assets stat'ed only, contents/hashes unverified.
+Next prepare a NEW read-only stdlib metadata parser/plan and independent review
+before inspection; no model, Torch, tokenizer functions, corpus, scoring, oracle,
+RNG, component test, scientific roles, panel/freeze/launch or local-gain claim.
+Free ~35GB covers current 10,739,515,392B notes/reserve/headroom requirement;
+no capacity block or cleanup trigger. Earlier entries are historical.
+
 # TOP initializer census accepted unused; outer guard SOURCE prepared only
 
 Four NEW sources preserve1262=>1266 future bindings; closedmodelproof1236/
