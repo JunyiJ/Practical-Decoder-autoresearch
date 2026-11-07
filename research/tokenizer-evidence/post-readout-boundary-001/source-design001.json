@@ -1,0 +1,116 @@
+{
+  "algebra": {
+    "gradient": "g_logits=(softmax(logits)-onehot)/N;g_W=g_logits^T*h/4;g_h=g_logits*W/4;g_u=g_h forlinear or g_h*(1-h^2) fortanh;g_A=g_u^T*z;g_z=g_u*A. Native g_z=g_h.",
+    "linear_absorbable": "For learned W,A, linear logits=(WA)z/4 can be absorbed into another W; equivalence of represented maps is not equivalence of optimizer dynamics.",
+    "rank": "Native/linear/tanh logits all have rank<=256 over contexts,normalizedlogprobs<=257; no highrank-family claim.",
+    "tanh_norm": "Pointwise |tanh(u)|<=|u| implies ||tanh(Az)||<=||Az||. This operation changes amplitude and derivatives jointly; linear control does not identify a cause beyond the declared nonlinear transform.",
+    "uniform_variance": "Var(A_ij)=1/(3D);for fixed z independent of newA,E||Az||^2=||z||^2/3."
+  },
+  "all_arms_genuine_cross_entropy": true,
+  "arms": [
+    "native",
+    "linear_projection1",
+    "tanh_projection1"
+  ],
+  "candidate": "tanh_projection1",
+  "component": {
+    "bounds": {
+      "D": 8,
+      "N": 16,
+      "V": 31,
+      "elements_per_tensor": 4096
+    },
+    "cases": "Native/linear/tanh discrimination;zero/identity/signed/saturatingfinite A;single/multiple targets;normalizedLP-targetCE agreement;linear algebra absorption forward only;invalidshape/device/dtype/autocast/kind/targets/nonfinite transactionallyreject",
+    "failure": "Original command closes/no retry/source rescue/tolerancechange; newtinyguards doNOTadmitactualD256/V50257states",
+    "fixtures": "NEWdistinct literal inputs,no randomfixtures/model/corpus/qualityseeds; independentmath.fsum/stablelogsumexp forward and analyticgradients; CPU64/CPU32/MPS32;input/globalCPU-MPSRNG unchanged",
+    "guards": {
+      "cpu_seconds": 120,
+      "metadata_bytes": 2097152,
+      "mps_bytes": 6442450944,
+      "mps_seconds": 600,
+      "reserve_bytes": 8589934592,
+      "rss_bytes": 4294967296
+    },
+    "namespace": "research/readout_projection_v1",
+    "tolerances": {
+      "cpu64_forward_atol": 1e-11,
+      "cpu64_grad_atol": 1e-10,
+      "fp32_atol": 4e-06,
+      "fp32_rtol": 4e-05
+    }
+  },
+  "equations": {
+    "linear_projection1": "u=Az;logits=Wu/4",
+    "native": "logits=Wz/4",
+    "tanh_projection1": "u=Az;h=tanh(u);logits=Wh/4",
+    "z": "Unchanged native final affine LayerNorm feature z"
+  },
+  "future_quality": "NOTfrozen/admitted; if allgates qualify, prospectively equal finite LRallowance and3freshpairedseeds againstnativeANDmatchedlinear; candidateonlytanh mean<-.02vsEACH/all3negativeeach/all6simultaneousconditionaltextuppernegative;nofallback/oldscorepool/gridrescue;allretainedoutput/timebudget beforefreeze",
+  "holdout_scored": false,
+  "initializers": {
+    "A": "One biasfree independentUniform(-1/16,1/16) via NEWprivate audited generator AFTERnative construction; pairedlinear/tanhshare A exactly",
+    "identity_antithetic_or_initializer_grid": false,
+    "native": "Genuine nativechild first,TRUEcfg/common88order/weights/CPUdrawsexact under preserved caller RNG",
+    "private_derivation": "First8SHA256bytes of UTF8(domain+decimalinitializerbase),bigendian mod2**63; newrolecensus before anyactualconstruction",
+    "private_domain": "readout_projection_model_v1:projection:",
+    "roles_assigned": false
+  },
+  "inventory": {
+    "A_shape": [
+      256,
+      256
+    ],
+    "extra_A_elements": 65536,
+    "native_adamw": 44,
+    "native_muon": 44,
+    "native_params": 28492416,
+    "native_tensors": 88,
+    "projected_adamw": 44,
+    "projected_muon": 45,
+    "projected_params": 28557952,
+    "projected_tensors": 89
+  },
+  "model_optimizer_scoring_calls": 0,
+  "next_action": "Implement smallest additive generated functional projection component and independent scalar forward/backward oracle. Pinnewsource,reviewscope/resources beforefirstexecute; preserve1127predecessorbindings. No fullmodel/pilot/quality consumer yet.",
+  "no_router_or_mixture": true,
+  "optimizer": {
+    "A": "Explicit matrixMuon nominaleta/2 with match_rms_adamw for BOTHlinear/tanh; no claim of optimality or transfer law",
+    "common88": "Preserve source inherited native grouping/order/AdamW9,.999epsilon1e-6/independentdecay.00006",
+    "new_own_signature_config_cache_weights_resume_contracts_required": true
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/source-design001-plan.json",
+    "sha256": "176c6f8a19a91331a048b81a6eb5292fb27797456c856daf6ae53aa8bfc1bb31"
+  },
+  "resources": {
+    "dense_fp32_B8T128V_array_bytes": 205852672,
+    "each_projected_A_fp32_bytes": 262144,
+    "fullmodel_optimizer_ema_memory_unqualified": true,
+    "fullpanel_time_retention_budget_not_admitted": true,
+    "fullstate_serialization_unqualified": true,
+    "no_probability_mix_NxV_terms": true,
+    "old_pilot_time_not_new_forecast": true,
+    "one_shared_vocab_projection_per_forward": true
+  },
+  "scientific_seed_use": false,
+  "shared_untied_biasfree_head": true,
+  "source_inputs": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/model.py",
+      "sha256": "977eb4a4b8e04ad966248e7f12ab5c21df7df54540b10624bb8ee4e024cd752d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/readout_mixture_model_v1/model.py",
+      "sha256": "ced2767e49e86aa8c2c9c894a819fddec3c867df28b16ee842f51149089c00da"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/readout_mixture_model_v1/optimizer.py",
+      "sha256": "b14fdc0248dbaa02a48b7ac077d8d797f0af0de15fce04330b8caa213c44285e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/readout_mixture_model_v1/contract.py",
+      "sha256": "813c093d4d2e51bc5f01e630073e842f0324d7e517f8c26ead798f2468f4086f"
+    }
+  ],
+  "status": "source_design_complete_admit_tiny_component_only"
+}

@@ -1469,3 +1469,21 @@ Muon-Adamnoise/qualitygain. Signalcorrection58.6–69.4percent andsharedprobeinp
 leavecohortstabilityunresolved. NextNEW4cohort×32draw×3fixedendpointdiagnostic
 afternewroles/source/budgetgates,notqualitypanel. Alloldcommands/STOPsclosed.
 SeeTOKENIZER_GRADIENT_DIAGNOSTIC_PREPARATION.md andpost-moe-boundary-001/evidence-review002.md.
+
+
+## Readout mixture quality closed; single-projection component question
+
+All18original endpoints/all9fresh serving/independentstatistics passed. MoS−native
+mean−.033083090568 butMoS−matchedMoC−.001065236022/one seed worse/allMoC upper
+boundspositive,so ALLjoint adoptiongatesFALSE. Keepnative,noMoC/raw/costfallback.
+All36quality10185974784B+12prereq3363747904Bprotected;253metadata1609606B mirrored
+ZEROweights/deletions/replay,originalSTOP/sourcesimmutable. Existingmetadata
+shows RAWdirectionsagree,averagingeffectsizesdiffer,clippingnotmechanism.
+
+Evidence-grounded boundary ranks local readout projection vs matchedlinear ahead
+of unqualified EMA/scale/optimizer rescues or arbitrary broad novelty. ONEbounded
+source/design derivation is complete; ONLYa new tiny generated functional
+component admitted. No fullmodel/panel/role/budget/training. Native remains;
+proposed broad/interaction allocation carries forward. See
+TOKENIZER_READOUT_MIXTURE_RESULTS.md,TOKENIZER_READOUT_PROJECTION_PREPARATION.md
+and tokenizer-evidence/post-readout-boundary-001/evidence-review.md.

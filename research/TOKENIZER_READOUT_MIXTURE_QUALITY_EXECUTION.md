@@ -1,4 +1,13 @@
-# Readout quality admission and execution
+# Readout quality closed without adoption
+
+All18original trajectories/all9fresh serving/independent statistics are complete.
+MoS-versus-BOTH-controls joint quality gates fail; retainnative/noMoC-raw-costfallback.
+RootSTOPcomplete_finite_scientific_panel closesALLoriginalcommands;controller32259/
+session33166exited0.Noactiveworker. All36qualityweights10185974784B protected.
+Read TOKENIZER_READOUT_MIXTURE_RESULTS.md and readout-quality001-closure001/completed.json.
+Next only the tiny projection component in TOKENIZER_READOUT_PROJECTION_PREPARATION.md.
+
+The following admission/launch/screen-phase text is HISTORICAL execution evidence.
 
 Complete generated component/model/resume/scorer/full-quality contracts and real
 four/twenty-update prerequisites are closed and immutable. The distinct serving

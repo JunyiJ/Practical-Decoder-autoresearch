@@ -1,0 +1,677 @@
+{
+  "adopted": false,
+  "all_fresh_arms_and_seeds_retained": true,
+  "bootstrap_draws": 0,
+  "closure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality001-closure001/completed.json",
+    "sha256": "c2be0f94d7769b354ccf1d544213beb78e8b6c998b6eb80732ac1eb48475fbe4"
+  },
+  "complete_pairs": {
+    "2107301011": {
+      "context_mix2": {
+        "clipped": 36,
+        "h200": 4.63348201337986,
+        "raw": 4.637790452680946
+      },
+      "native": {
+        "clipped": 30,
+        "h200": 4.674383257619452,
+        "raw": 4.662458257167901
+      },
+      "probability_mix2": {
+        "clipped": 36,
+        "h200": 4.634855035671737,
+        "raw": 4.639256059331123
+      }
+    },
+    "2107301012": {
+      "context_mix2": {
+        "clipped": 33,
+        "h200": 4.648191370313964,
+        "raw": 4.660631514471604
+      },
+      "native": {
+        "clipped": 17,
+        "h200": 4.6713812166210955,
+        "raw": 4.6629716908808705
+      },
+      "probability_mix2": {
+        "clipped": 34,
+        "h200": 4.646369906216889,
+        "raw": 4.656841625701909
+      }
+    },
+    "2107301013": {
+      "context_mix2": {
+        "clipped": 33,
+        "h200": 4.66463774174079,
+        "raw": 4.686989132487048
+      },
+      "native": {
+        "clipped": 26,
+        "h200": 4.69660021483355,
+        "raw": 4.696298153524028
+      },
+      "probability_mix2": {
+        "clipped": 31,
+        "h200": 4.661890475480819,
+        "raw": 4.680728243225651
+      }
+    }
+  },
+  "contrasts": {
+    "MoC-minus-native": {
+      "h200": {
+        "all_negative": true,
+        "deltas": [
+          -0.04090124423959196,
+          -0.02318984630713139,
+          -0.03196247309276057
+        ],
+        "mean": -0.03201785454649464
+      },
+      "raw": {
+        "all_negative": true,
+        "deltas": [
+          -0.02466780448695527,
+          -0.0023401764092660926,
+          -0.00930902103698017
+        ],
+        "mean": -0.012105667311067178
+      }
+    },
+    "MoS-minus-MoC": {
+      "h200": {
+        "all_negative": false,
+        "deltas": [
+          0.0013730222918768575,
+          -0.001821464097075065,
+          -0.002747266259970793
+        ],
+        "mean": -0.0010652360217230001
+      },
+      "raw": {
+        "all_negative": false,
+        "deltas": [
+          0.0014656066501768095,
+          -0.0037898887696954375,
+          -0.00626088926139623
+        ],
+        "mean": -0.0028617237936382858
+      }
+    },
+    "MoS-minus-native": {
+      "h200": {
+        "all_negative": true,
+        "deltas": [
+          -0.0395282219477151,
+          -0.025011310404206455,
+          -0.03470973935273136
+        ],
+        "mean": -0.03308309056821764
+      },
+      "raw": {
+        "all_negative": true,
+        "deltas": [
+          -0.02320219783677846,
+          -0.00613006517896153,
+          -0.0155699102983764
+        ],
+        "mean": -0.014967391104705463
+      }
+    }
+  },
+  "corpus_scoring_calls": 0,
+  "elapsed_seconds": 0.031786165898665786,
+  "h200_minus_raw": {
+    "context_mix2": {
+      "clipped_counts": [
+        36,
+        33,
+        33
+      ],
+      "deltas": [
+        -0.004308439301086153,
+        -0.012440144157640276,
+        -0.022351390746258026
+      ],
+      "mean": -0.013033324734994819
+    },
+    "native": {
+      "clipped_counts": [
+        30,
+        17,
+        26
+      ],
+      "deltas": [
+        0.011925000451550538,
+        0.008409525740225021,
+        0.0003020613095223723
+      ],
+      "mean": 0.006878862500432644
+    },
+    "probability_mix2": {
+      "clipped_counts": [
+        36,
+        34,
+        31
+      ],
+      "deltas": [
+        -0.004401023659386105,
+        -0.010471719485019904,
+        -0.01883776774483259
+      ],
+      "mean": -0.011236836963079533
+    }
+  },
+  "holdout_scored": false,
+  "incumbent_unchanged": true,
+  "input_metadata": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/09/accepted.json",
+      "sha256": "e2af8a64d111053ab8a4e1a31c21f3ecb7beb8e22d0c54d2100f076753b8b7f5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/09/worker.json",
+      "sha256": "993ca11936f7bb92ddcd67a9080d0aadfb43f4894c1c146f0fc3c861039fb12c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/10/accepted.json",
+      "sha256": "26c6ec5fc5c288cf5f1a8bbaa92a5c8b0fadb96eb07b8ffd6b704ff824037e0b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/10/worker.json",
+      "sha256": "56be03188a8921af9b00e806c2d8e4031a28c12d8f74befa791affee126d4a1a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/11/accepted.json",
+      "sha256": "125485e2babba4c87ed997ba6c2646938f67d1f361fd5039e8a898b1950db4af"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/11/worker.json",
+      "sha256": "86d65c90fac121a5844dc21a29a8d0c9cceaf4275fd569ca0db8b6bed1bf8bab"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/12/accepted.json",
+      "sha256": "419aea40157b750b30bb8c8a0c7de9d33763264216037551e99a34e2d92d0715"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/12/worker.json",
+      "sha256": "1851ae4380d67964cc6d5ea9abf708c83be385812cdee94be76e33d64283326b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/13/accepted.json",
+      "sha256": "f9d687defba4d20a50c4f810ce24abeaec12c6ee3bde2e1ff315cc07f6058d56"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/13/worker.json",
+      "sha256": "5cc9db8b9ed0179b6e39ce7093cc31def85b8641780c23a624f6e37399cacc7a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/14/accepted.json",
+      "sha256": "46b553b5e076afa77df05ae2bd8c309fe3f8d3c31a4506c9267139bc2613b77d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/14/worker.json",
+      "sha256": "7e133ea7ecfee37ffca39a07ad289275285112eacd71d899004666ac39cc32ed"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/15/accepted.json",
+      "sha256": "88e4ff4cb3f727304e8e9a3349dfd5c5478ce7d0883d812710739bfe70597a40"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/15/worker.json",
+      "sha256": "e57b73cf0a8514b7c73b89b4d932aef79207d09bb11e96bb80486d3c01cf5a88"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/16/accepted.json",
+      "sha256": "40cd5bc00a92929cbfcca959412150d49a334ebb8c57973bb56bf30911c19f9a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/16/worker.json",
+      "sha256": "fa6a04282b8c1185928ffee8af4ba65fc312e77459869cde5c8e67b4ab75b00c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/17/accepted.json",
+      "sha256": "dda81bf3bd9f43557be43ff202f46fea4527721620924b0efffbe8528560b9e6"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/17/worker.json",
+      "sha256": "38b951627f0a0526fd12197eca19243692738762e3c715a192ea89f6e14bcd96"
+    }
+  ],
+  "limits": "Descriptive existing full-panel metadata only. RAW is not an alternative selector; five sampled online points and clipping are not mechanism/EMA/horizon/overfitting/conditioning diagnoses. MoC-minus-native is descriptive, not a fallback selection or new confidence test. No retrospective quality gate changes.",
+  "model_checkpoint_tensor_loads": 0,
+  "new_quality_seeds": 0,
+  "optimizer_updates": 0,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality001-existing-analysis001/plan.json",
+    "sha256": "c1b852cca411ed7114b43f130a28e3b977190655fc34b24996a4b2d7e2a96961"
+  },
+  "seed_order": [
+    2107301011,
+    2107301012,
+    2107301013
+  ],
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality001-existing-analysis001.py",
+    "sha256": "fe70e97381b1da55710d35fb5f77f2acb55ed4d67dac0eaeb736a819bfc36335"
+  },
+  "sparse_online_curves": [
+    {
+      "arm": "native",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.851210594177246,
+          "update_seconds": 0.389521999983117,
+          "validation_ce": 10.83799934387207
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.532812118530273,
+          "update_seconds": 0.22491774999070913,
+          "validation_ce": 5.432990550994873
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.263294219970703,
+          "update_seconds": 0.23053504200652242,
+          "validation_ce": 4.623640060424805
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.944944381713867,
+          "update_seconds": 0.23726666695438325,
+          "validation_ce": 4.7808380126953125
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.6857595443725586,
+          "update_seconds": 0.22383195802103728,
+          "validation_ce": 4.190665245056152
+        }
+      ],
+      "seed": 2107301011
+    },
+    {
+      "arm": "context_mix2",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.833150863647461,
+          "update_seconds": 0.46687308291438967,
+          "validation_ce": 10.820859909057617
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.352334976196289,
+          "update_seconds": 0.2298302500275895,
+          "validation_ce": 5.302536964416504
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.2474822998046875,
+          "update_seconds": 0.23131733294576406,
+          "validation_ce": 4.536787986755371
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.961974620819092,
+          "update_seconds": 0.2279806250007823,
+          "validation_ce": 4.736090660095215
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.6005477905273438,
+          "update_seconds": 0.23405149998143315,
+          "validation_ce": 4.179229259490967
+        }
+      ],
+      "seed": 2107301011
+    },
+    {
+      "arm": "probability_mix2",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.833574295043945,
+          "update_seconds": 0.6269551670411602,
+          "validation_ce": 10.82111930847168
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.352544784545898,
+          "update_seconds": 0.29943175008520484,
+          "validation_ce": 5.3026533126831055
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.252521514892578,
+          "update_seconds": 0.29777637508232147,
+          "validation_ce": 4.54083251953125
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.969186305999756,
+          "update_seconds": 0.292547499993816,
+          "validation_ce": 4.740216255187988
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.610048294067383,
+          "update_seconds": 0.3076358330436051,
+          "validation_ce": 4.191375255584717
+        }
+      ],
+      "seed": 2107301011
+    },
+    {
+      "arm": "context_mix2",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.833494186401367,
+          "update_seconds": 0.39438195805996656,
+          "validation_ce": 10.812468528747559
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.172698974609375,
+          "update_seconds": 0.22811250004451722,
+          "validation_ce": 5.328555107116699
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.123739242553711,
+          "update_seconds": 0.22985300002619624,
+          "validation_ce": 4.584206581115723
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.3504638671875,
+          "update_seconds": 0.22346983395982534,
+          "validation_ce": 4.783510208129883
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.6902356147766113,
+          "update_seconds": 0.2276439170818776,
+          "validation_ce": 4.196582794189453
+        }
+      ],
+      "seed": 2107301012
+    },
+    {
+      "arm": "probability_mix2",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.833810806274414,
+          "update_seconds": 0.6026301659876481,
+          "validation_ce": 10.812618255615234
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.174939155578613,
+          "update_seconds": 0.2959971249802038,
+          "validation_ce": 5.327080249786377
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.128701210021973,
+          "update_seconds": 0.29777008295059204,
+          "validation_ce": 4.587213516235352
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.3480522632598877,
+          "update_seconds": 0.31248670897912234,
+          "validation_ce": 4.769439697265625
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.697549819946289,
+          "update_seconds": 0.29680370807182044,
+          "validation_ce": 4.208436012268066
+        }
+      ],
+      "seed": 2107301012
+    },
+    {
+      "arm": "native",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.874042510986328,
+          "update_seconds": 0.46171175001654774,
+          "validation_ce": 10.829136848449707
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.32543420791626,
+          "update_seconds": 0.2285089580109343,
+          "validation_ce": 5.444756984710693
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.179815769195557,
+          "update_seconds": 0.23283004201948643,
+          "validation_ce": 4.619156360626221
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.358893871307373,
+          "update_seconds": 0.2301315419608727,
+          "validation_ce": 4.79137659072876
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.6657910346984863,
+          "update_seconds": 0.22228862496558577,
+          "validation_ce": 4.193044662475586
+        }
+      ],
+      "seed": 2107301012
+    },
+    {
+      "arm": "probability_mix2",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.829721450805664,
+          "update_seconds": 0.5338009590050206,
+          "validation_ce": 10.809188842773438
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.300328254699707,
+          "update_seconds": 0.2958068329608068,
+          "validation_ce": 5.337088108062744
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.458248138427734,
+          "update_seconds": 0.297789917094633,
+          "validation_ce": 4.615713119506836
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.722929000854492,
+          "update_seconds": 0.29318208305630833,
+          "validation_ce": 4.793470859527588
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.820063591003418,
+          "update_seconds": 0.30005958303809166,
+          "validation_ce": 4.19964599609375
+        }
+      ],
+      "seed": 2107301013
+    },
+    {
+      "arm": "native",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.870332717895508,
+          "update_seconds": 0.4966698329662904,
+          "validation_ce": 10.86625862121582
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.4723944664001465,
+          "update_seconds": 0.2185817089630291,
+          "validation_ce": 5.4709062576293945
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.475358009338379,
+          "update_seconds": 0.22290404210798442,
+          "validation_ce": 4.663822174072266
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.6927428245544434,
+          "update_seconds": 0.2285193749703467,
+          "validation_ce": 4.817242622375488
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.874892234802246,
+          "update_seconds": 0.22257408301811665,
+          "validation_ce": 4.220495223999023
+        }
+      ],
+      "seed": 2107301013
+    },
+    {
+      "arm": "context_mix2",
+      "points": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 1,
+          "targets": 1024,
+          "train_ce": 10.829225540161133,
+          "update_seconds": 0.6172587090404704,
+          "validation_ce": 10.809078216552734
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 301,
+          "targets": 308224,
+          "train_ce": 4.3016886711120605,
+          "update_seconds": 0.22865045897196978,
+          "validation_ce": 5.334188461303711
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 601,
+          "targets": 615424,
+          "train_ce": 4.4559326171875,
+          "update_seconds": 0.22543945792131126,
+          "validation_ce": 4.614941120147705
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 901,
+          "targets": 922624,
+          "train_ce": 3.7011141777038574,
+          "update_seconds": 0.22097012505400926,
+          "validation_ce": 4.792383193969727
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1200,
+          "targets": 1228800,
+          "train_ce": 3.837888479232788,
+          "update_seconds": 0.22208183305338025,
+          "validation_ce": 4.2316179275512695
+        }
+      ],
+      "seed": 2107301013
+    }
+  ],
+  "status": "complete_closed_fresh_readout_metadata_analysis"
+}
