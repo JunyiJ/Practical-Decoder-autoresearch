@@ -1,0 +1,2619 @@
+{
+  "actual_model_integration_or_quality_admission": false,
+  "adoption": false,
+  "cases": 99,
+  "input_grad_slots_global_cpu_mps_rng_preserved": true,
+  "invalids": 89,
+  "no_models_optimizers_checkpoints_corpus_rng_draws_quality_roles": true,
+  "rows": [
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.806255641895632e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.551115123125783e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.0816681711721685e-17
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.734723475976807e-18
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.0816681711721685e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.734723475976807e-18
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.0816681711721685e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.9898639947466563e-17
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.6543612251060553e-24
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.271806125530277e-25
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.1359030627651384e-25
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.3881317890172014e-21
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.6543612251060553e-24
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.776263578034403e-21
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.3881317890172014e-21
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3552527156068805e-20
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.7763568394002505e-15
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.440892098500626e-16
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.105427357601002e-15
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.1102230246251565e-16
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.6645352591003757e-15
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.1102230246251565e-16
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.881784197001252e-16
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.0816681711721685e-17
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-16
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.551115123125783e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.734723475976807e-17
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.168404344971009e-19
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.168404344971009e-19
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.673617379884035e-19
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.734723475976807e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.0842021724855044e-19
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.469446951953614e-18
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.0408340855860843e-17
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.0408340855860843e-17
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "native_swiglu",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3877787807814457e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.7755575615628914e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.938893903907228e-18
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_silu",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.17722569465651e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.499728160050175e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.297323101196902e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.450272136913291e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.34854954559583e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.278184444015068e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.5998835672936806e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.874421934477404e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.2752074285415915e-08
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.323354553669727e-10
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.059812299892716e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3154347914753894e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.1709586761907715e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.6793903004352906e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.44746950326136e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.503962021204735e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.587392798960366e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.0321772880850233e-08
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.323354553669727e-10
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.059812299892716e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3154347914753894e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.1709586761907715e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.6793903004352906e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.569807649292603e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.377414901199586e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.1985515416832477e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.959133809827158e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.2204493166137327e-16
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3665023719376017e-21
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.2489988016645452e-16
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.67385306740928e-13
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.440892297023973e-16
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.163336342344337e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.482703251101343e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.973521594564545e-13
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.3200445351148096e-17
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.17722569465651e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.278184444015068e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.297323101196902e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.518782313946758e-07
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.9587133892894357e-07
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.850463054926422e-06
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3706129164958725e-07
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.434939434640796e-07
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.49580540362993e-08
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.440287419387289e-07
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.179131663621497e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.754354841045142e-08
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.815794352521554e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.409124736818985e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.8640129800795435e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.4901540204846917e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.017649900793895e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.7425036691331997e-08
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.377592465245385e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.890441273637137e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.832547787439692e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.429268535803942e-10
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.261927715101585e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.762527413051167e-10
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3411764008403049e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.370865667295391e-10
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.451388890489792e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.618755015759149e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.4000458842543537e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.535729792592429e-10
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.4400655737323298e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.864301899303424e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.2320696471678225e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.7309910137208728e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.869618299927712e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.58054576318667e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.1032938425409355e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.9463498446569147e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.64081163565178e-09
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.17722569465651e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.078668510570926e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3188914432804566e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.730887848136689e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.623259247133916e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.903562629745892e-08
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.0985159748798665e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.975133088644615e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.700230951814603e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "mixed_d8",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "all_zero_x",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.70512406550661e-10
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.9681254213171906e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.2730406347138956e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.2954311987576368e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.0666439918816106e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.378792077876838e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.156993355074027e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.263872307933096e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.053970615429229e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_negative_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.70512406550661e-10
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.9681254213171906e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.2730406347138956e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.2954311987576368e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.0666439918816106e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.870772534777302e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.153719734116383e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.3711526070678843e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.505801563085669e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "strict_positive_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.2204493166137327e-16
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3665023719376017e-21
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.2489988016645452e-16
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.821213448140843e-13
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.3306689415265716e-16
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.163336342344337e-17
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.482703251101343e-17
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.973521594564545e-13
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.3200445351148096e-17
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "relu_kink_triplet",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.17722569465651e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.903562629745892e-08
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_down",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3188914432804566e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "zero_up",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.518782313946758e-07
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.388181939456558e-07
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.850463054926422e-06
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3706129164958725e-07
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.79805159925395e-07
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.49580540362993e-08
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.6082198156807124e-07
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.722029530226159e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.510717919823051e-08
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "signed_large",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 192
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 5.543105016658778e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.46052125580421e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.1406979083528057e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.4901540204846917e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.663821371291398e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.906561508668858e-08
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.940500336614306e-08
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.269043523882134e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.707775583400746e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "boundary_n16_d6",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 108
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.429268535803942e-10
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.261927715101585e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.762527413051167e-10
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 4.0985382622482636e-10
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 8.370865667295391e-10
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.451388890489792e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 7.618755015759149e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.707962935115219e-10
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 9.535729792592429e-10
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "small_d2",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 12
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.3741783475018643e-09
+        },
+        "ggate": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.864301899303424e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.2320696471678225e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.7309910137208728e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 1.7141562249495257e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "native_swiglu",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.58054576318667e-09
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 6.1032938425409355e-09
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 2.9463498446569147e-09
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 3.292813841038189e-09
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_silu",
+      "matrix_parameters": 48
+    },
+    {
+      "case": "minimum_n1_d4",
+      "comparisons": {
+        "gdown": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gup": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "gx": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        },
+        "output": {
+          "all_elements_pass": true,
+          "maximum_absolute_error": 0.0
+        }
+      },
+      "device": "mps",
+      "dtype": "torch.float32",
+      "kind": "ungated_relu_squared",
+      "matrix_parameters": 48
+    }
+  ],
+  "source_bindings": 1178,
+  "status": "accepted_tiny_three_equation_forward_analytic_backward"
+}

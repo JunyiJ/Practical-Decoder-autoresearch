@@ -1,4 +1,33 @@
-# Ungated squared-ReLU: tiny-component source preparation next
+# Ungated squared-ReLU: tiny component accepted; actual model source next
+
+Original tokenizer-evidence/post-projection-boundary-001/relu-squared-component001
+is CLOSED_ACCEPTED/no replay or retry. PlanSHA
+f0699f1609bc706eea13c4a270d91d6cd23d224aac6f3adf62a3be237c19069b.
+All99 NEW literal comparisons (11families x3arms xCPU64/CPU32/MPS32) passed
+independent scalar math.fsum/stable-sigmoid forward and analytic input/up/down/
+native-gate gradients, including zero derivative at the ReLU-squared kink.
+All89 transactional kind/type/shape/dtype/device/autocast/nonfinite/overflow
+rejections passed. Caller inputs/nonzero gradslots/globalCPU-MPSRNG preserved;
+1178 source bindings preserve1175 predecessors. No models, optimizer, checkpoints,
+corpus, RNG draws, quality roles or tensor serialization. All four guards finished.
+
+FP64 maximum forward2.66453525910e-15/gradient7.10542735760e-15; FP32 maxima
+forward6.43493943464e-7/gradient2.85046305493e-6. All original fixed elementwise
+predicates passed: CPU64 forwardatol1e-11/gradatol1e-10/rtol1e-10; FP32
+forwardatol4e-6/gradatol4e-5/rtol4e-4. Whole1.838612s/RSS376274944B/MPS9125888B
+under600s/4GiB6GiB/reserve8GiB/2MiBmetadata. Independent metadata-only review
+agrees, with no numerical replay. Tiny D<=8 success does not admit D256 models.
+
+CURRENT NEXT: SOURCE implementation/review ONLY, following
+tokenizer-evidence/post-projection-boundary-001/actual-model-source-design001.md.
+Own exact model/optimizer/cache identities; genuine native common construction
+first, then privately paired ungated FFNs. No actual-model construction/roles,
+generated proof, full-state/resume, real corpus/scorer, pilot, quality budget or
+launch admitted. Those need separate new source/correctness/resource/role gates.
+Native/holdout unchanged. All earlier closed sources/commands stay immutable.
+
+The remainder records the historical pre-execution design; its NEXT wording is
+superseded by the completed tiny gate and current source-only action above.
 
 Read tokenizer-evidence/post-projection-boundary-001/evidence-review.md and
  direction001.json. Primer2109.08668v1 section3/Figure6/A.7/A.8 and

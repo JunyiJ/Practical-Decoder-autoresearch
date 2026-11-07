@@ -1,0 +1,25 @@
+{
+  "case": "strict_negative_up",
+  "comparisons": {
+    "gdown": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 6.378792077876838e-09
+    },
+    "gup": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 8.156993355074027e-09
+    },
+    "gx": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 2.263872307933096e-09
+    },
+    "output": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 8.053970615429229e-09
+    }
+  },
+  "device": "mps",
+  "dtype": "torch.float32",
+  "kind": "ungated_silu",
+  "matrix_parameters": 192
+}

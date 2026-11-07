@@ -1,0 +1,30 @@
+{
+  "actual_host_preflight": {
+    "active_research_commands": [],
+    "free_bytes": 42262233088,
+    "mps_available": true,
+    "mps_built": true,
+    "no_tensors_models_or_rng_calls": true,
+    "threads": 4,
+    "torch": "2.14.1"
+  },
+  "admission": "ONLY new tiny functional original command;no actual model/pilot/scientific campaign admitted",
+  "equation_review": "Torch linear output-major matrices; native SiLU(g)*u, ungated SiLU(u) and relu(u)^2. No additional gate for squared arm. Each3D^2 matrix elements. No Module/optimizer/rescale/norm/dropout.",
+  "harness_review": "11 NEW literal families across CPU64/CPU32/MPS32; all99 forward and active gradients use fixed pre-execution elementwise allclose; all four even widths/N1 andN16; negative/positive/zero/kink/saturation; caller values and nonzero gradslots/globalCPU-MPSRNG unchanged; CPU transfer precedes FP64 reporting;89 transactional invalids; exclusive bounded fsync metadata; source identities before/end; nonblocking shared worker lock; original command closes on failure.",
+  "literature_and_local_direction": "research/tokenizer-evidence/post-projection-boundary-001/evidence-review.md;direction001.json",
+  "new_sources": {
+    "research/relu_squared_component_v1.py": "851fec4a10cd9c85241a28dd87f5c2066353e44be6a2c8d0c6544d2863c1012f",
+    "research/relu_squared_oracle_v1.py": "62e02ee4398d7c4c530067c45cbd5590bfb3088c1b89de1f877845bca221e8d9",
+    "research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001.py": "2769f3ba39128e7aa0b25c1e1c2d928ba77b7454226fbec701b59531f37a6de6"
+  },
+  "no_storage_block": true,
+  "numeric_results_observed_before_tolerance_freeze": false,
+  "oracle_review": "Independent scalar math.fsum dot/reduction, stable scalar sigmoid; SiLU derivative s*(1+u*(1-s)); squared derivative2max(u,0); chain rule down/up/gate/input with attached native branches; no Torch imports.",
+  "plan_sha256": "f0699f1609bc706eea13c4a270d91d6cd23d224aac6f3adf62a3be237c19069b",
+  "preserved_predecessors": 1175,
+  "resource_qualified": true,
+  "source_bindings": 1178,
+  "source_static_ast_parse": true,
+  "status": "source_scope_and_resource_qualified_before_first_execution",
+  "time": "2026-11-07T12:54:04.486768+00:00"
+}

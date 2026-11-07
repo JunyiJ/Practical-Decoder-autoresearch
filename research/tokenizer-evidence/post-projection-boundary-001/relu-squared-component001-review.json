@@ -1,0 +1,153 @@
+{
+  "admission": "Tiny isolated functional gate only;actual D256 model/state/scoring/pilots/quality unqualified",
+  "comparisons": 99,
+  "guards": {
+    "cpu-float32-guard.json": {
+      "elapsed_seconds": 0.01848312490619719,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42261504000,
+        "peak_rss_bytes": 221790208
+      },
+      "pid": 53521,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-float64-guard.json": {
+      "elapsed_seconds": 0.03407037502620369,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42261659648,
+        "peak_rss_bytes": 221626368
+      },
+      "pid": 53521,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-oracle-guard.json": {
+      "elapsed_seconds": 0.007284458028152585,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42261815296,
+        "peak_rss_bytes": 218136576
+      },
+      "pid": 53521,
+      "reason": null,
+      "status": "finished"
+    },
+    "mps-guard.json": {
+      "elapsed_seconds": 1.838612333056517,
+      "limits": {
+        "mps_driver_limit_bytes": 6442450944,
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "observation": {
+        "free_bytes": 42260615168,
+        "mps_current_bytes": 2816,
+        "mps_driver_bytes": 9125888,
+        "peak_observed_mps_driver_bytes": 9125888,
+        "peak_rss_bytes": 376274944
+      },
+      "pid": 53521,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "holdout_closed": true,
+  "invalids": 89,
+  "maximum_errors": {
+    "cpu-torch.float32": {
+      "gdown": 6.518782313946758e-07,
+      "ggate": 2.9587133892894357e-07,
+      "gup": 2.850463054926422e-06,
+      "gx": 1.3706129164958725e-07,
+      "output": 6.434939434640796e-07
+    },
+    "cpu-torch.float64": {
+      "gdown": 1.7763568394002505e-15,
+      "ggate": 4.440892098500626e-16,
+      "gup": 7.105427357601002e-15,
+      "gx": 1.1102230246251565e-16,
+      "output": 2.6645352591003757e-15
+    },
+    "mps-torch.float32": {
+      "gdown": 6.518782313946758e-07,
+      "ggate": 3.388181939456558e-07,
+      "gup": 2.850463054926422e-06,
+      "gx": 1.3706129164958725e-07,
+      "output": 5.79805159925395e-07
+    }
+  },
+  "native_incumbent_unchanged": true,
+  "no_torch_imports_tensors_models_checkpoints_corpus_scoring_or_numerical_replay": true,
+  "original": {
+    "STOP": {
+      "bytes": 75,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/STOP",
+      "sha256": "7f215f9020af06383a54a6402ed1521dce5cd1a260ba9f517a4b700780f60535"
+    },
+    "attempt.json": {
+      "bytes": 139,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/attempt.json",
+      "sha256": "63bbeae5bd7e4c85cbb9070822f0f28c9ab6e83722abebfc9c75cb8aed7ec289"
+    },
+    "cpu-float32-guard.json": {
+      "bytes": 262,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/cpu-float32-guard.json",
+      "sha256": "4c605ae1a2b1f3f3c59f1901de6924746c729f264e9c1d8c354e9189398b0c3a"
+    },
+    "cpu-float64-guard.json": {
+      "bytes": 262,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/cpu-float64-guard.json",
+      "sha256": "e98eb6ff0838dab232f86468f6ba1b126f650f01e675d11c3501139124508a35"
+    },
+    "cpu-oracle-guard.json": {
+      "bytes": 263,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/cpu-oracle-guard.json",
+      "sha256": "99e1f812fa52af2b1f249c4fac93a0e7facdf3b06a20943a0f4e9c07dee5c653"
+    },
+    "invalids.json": {
+      "bytes": 2988,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/invalids.json",
+      "sha256": "217c9510f0a62f1a988ab02315f5f08de7ab0f2bc173f53f808647bbec3bb4e6"
+    },
+    "mps-guard.json": {
+      "bytes": 397,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/mps-guard.json",
+      "sha256": "ce66be0784edddf452d225ac7b4b07f5de7b83069b54700d8ed24153b296bdbe"
+    },
+    "plan.json": {
+      "bytes": 149631,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/plan.json",
+      "sha256": "f0699f1609bc706eea13c4a270d91d6cd23d224aac6f3adf62a3be237c19069b"
+    },
+    "result.json": {
+      "bytes": 69093,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/result.json",
+      "sha256": "ebb80edaff2fda4b785397ac5bb4525584712fef102f2ba039c264782e355bc8"
+    },
+    "source-review.json": {
+      "bytes": 2236,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-component001/source-review.json",
+      "sha256": "4c3da831de49bf9b3e0be7dad56e06b73cbcc0ab5917de5089246903b73fc86a"
+    }
+  },
+  "preserved_predecessors": 1175,
+  "source_bindings": 1178,
+  "status": "accepted_independent_metadata_only_tiny_component_review",
+  "time": "2026-11-07T12:55:28.066753+00:00"
+}

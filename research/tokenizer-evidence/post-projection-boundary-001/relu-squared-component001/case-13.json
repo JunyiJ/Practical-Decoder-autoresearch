@@ -1,0 +1,29 @@
+{
+  "case": "relu_kink_triplet",
+  "comparisons": {
+    "gdown": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 1.6543612251060553e-24
+    },
+    "ggate": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 8.271806125530277e-25
+    },
+    "gup": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 4.1359030627651384e-25
+    },
+    "gx": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 3.3881317890172014e-21
+    },
+    "output": {
+      "all_elements_pass": true,
+      "maximum_absolute_error": 1.6543612251060553e-24
+    }
+  },
+  "device": "cpu",
+  "dtype": "torch.float64",
+  "kind": "native_swiglu",
+  "matrix_parameters": 192
+}
