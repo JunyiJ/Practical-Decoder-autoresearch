@@ -1,4 +1,58 @@
-# Ungated squared-ReLU: serialized-state/scorer sources prepared, untested
+# Ungated squared-ReLU: serialized state/scorer proof accepted
+
+Original post-projection-boundary-001/relu-squared-resume-seed-census001 and
+relu-squared-resume001 are CLOSED_ACCEPTED/no replay/retry/source-tolerance/seed
+or output-cap rescue. Read original plans/source reviews/results/allguards/STOPs,
+relu-squared-resume001-review.json/review-guard,archive-closure and
+continuation-completed005.json. Next handoff:real-prerequisite-worker-source-design001.
+Census64921textfiles5671169908B/zero matches/88.266986s/RSS137641984B passed
+120sCPU/4GiB/reserve8GiB/32MiBmetadata,NO Torch/model/optimizer/RNG calls.
+All six roles NOW USED only this original generated fixture: initializer62086780001,
+privateungated8900458232535156190,train62086780002,eval62086780003,
+globalCPU62086780004,globalMPS62086780005. Prior-unused receipt historical;
+never reuse for NEW trajectories/censuses. All1191 bindings preserve1189.
+
+All3 arms24 actual generated updates (each uninterrupted4 versus2+2 CPUarchive
+restore into fresh SAME-MPS destination), finalall88/84 exposure4/EMA3(start2,
+interval1)/complete RAW-H200/private train-evalsamplers/globalCPU-MPS RNG counters/
+scheduledLR/clip1/history/batch+explicitglobaldraw traces EXACT. RAW/H200 CPU
+weights_only roundtrips and resumedH200 from retained controlRAW EXACT. Frozen
+optimizer SAMEbackend guard preserved via validated CPU moment staging/deepclone.
+Retained-parent actualkind/config/initializer/horizon/model-EMA and producerlive/
+consumerexport content checks passed. H200 cannot resume optimizer. This is not
+CPU-update/MPS-update equivalence or old optimizer-response rescue.
+
+All179 checks passed (176rejections plus3valid pair cases):111state(37/arm)+30H200(10/arm)+14nontensorIO+12scorereport+
+12NEWownpairedreport metadata cases. New275generated per-target CE/fullnormalized
+gather maxerror0; CPU-MPS max2.86102294922e-6 below fixed3e-5/rtol0. New34278
+literal binary-fraction losses/math.fsum/windows268/tail102/block/CE/111536-byte
+arithmetic exact. These are NOT actual physical codec/corpus validation losses.
+Own FFN-policy paired publisher now tested only on metadata; publicphysical
+caller acceptance remains unqualified. Whole68.824600s/RSS2353102848B/
+MPS2504818688B under600s/4GiB6GiB/reserve8GiB;36CPUphaseguards finished. Caller
+CPU-MPS RNG restored/all1191sources unchanged. No real corpus/holdout/qualityseed,
+worker/pilot/scientificpanel or quality/adoption claim.
+
+ALL9 original archives3012754027B underresearch_runs/tokenizer-relu-squared-resume-v1-001
+PROTECTED at original paths, including3prefixRAW/3finalRAW/3H200/all controls.
+Actual serialization counters matched each published archive size; capsunchanged.
+ONE-TIME metadata/source/stream-SHA/path-size-inode-device-singlelink closure
+complete, zero Tensor/model/scoring/numerical replay or weightcopies/deletions.
+RootA/STOP complete_accepted_generated_serialized_ffn_resume_fixture closes only
+this generated fixture, creates NOretirementeligibility. TinyIO literal/alias/
+symlink/partial/reserved.tmp entries are NONTENSOR evidence, not failed numerical
+weights; preserve them. Do not repeat closed weight/metadata audits unchanged.
+
+CURRENT NEXT: SOURCE implementation/review of NEW own real4/twenty worker,
+independent parent acceptance and one serial controller. New audited roles and
+complete source/correctness/resource gates before real-model/corpus calls.
+Exercise own public physical FULL34278 CPUANDMPS RAW/H200 scorer plus durable
+both-report publication BEFORE3e-5 rejection and new CPU/MPS H200cache/reset B1B8.
+All3 four-update results accepted BEFORE20construction; worker rejects1200.
+No realworker/pilot/census/qualitybudget or launch admitted now. Native unchanged.
+
+The following source-only and earlier records are historical; the completed
+serialized proof and current real-prerequisite SOURCE next action supersede them.
 
 Five NEW additive relu_squared_resume_v1/{__init__,contract,data,checkpoint,
 scoring}.py files are pinned by post-projection-boundary-001/

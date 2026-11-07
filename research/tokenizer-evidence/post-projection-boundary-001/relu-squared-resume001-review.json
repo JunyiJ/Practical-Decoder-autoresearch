@@ -1,0 +1,698 @@
+{
+  "EMA_snapshots_final": 3,
+  "accepted_scope": "SAME-MPS uninterrupted4 versus2+2 freshdestination fromCPUweights_only archive;momentstaging+frozenSAMEbackenddeepclone,fullRAW/H200/EMA/samplers/globalRNG/schedule/clipping/exposure,retainedparentmodel-EMAcontent+newownpairmetadata unitcases",
+  "actual_generated_optimizer_steps": 24,
+  "all88_or84_exposures": 4,
+  "all_original_elementwise_predicates_passed": true,
+  "archive_closure": {
+    "bytes": 9111,
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume001-archive-closure.json",
+    "sha256": "a2f0faefc07bf0970fa89d667a8b06b66d8fa9e87abd1275522a8ebc1f1c5de5"
+  },
+  "census_guard": {
+    "elapsed_seconds": 88.26698583399411,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 42192613376,
+      "peak_rss_bytes": 137641984
+    },
+    "pid": 56982,
+    "reason": null,
+    "status": "finished"
+  },
+  "complete_RAW_H200_samplers_global_CPU_MPS_RNG_LR_clipping_traces_exact": true,
+  "explicit_global_rng_counter_draw_traces_exact": true,
+  "free_bytes": 39193395200,
+  "generated_targets_per_arm": 275,
+  "guards": {
+    "cpu-construction-native_swiglu-destination.json": {
+      "elapsed_seconds": 0.1067656670929864,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41204412416,
+        "peak_rss_bytes": 1195442176
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-native_swiglu-full.json": {
+      "elapsed_seconds": 0.13178112509194762,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42209103872,
+        "peak_rss_bytes": 343523328
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-native_swiglu-prefix.json": {
+      "elapsed_seconds": 0.10450416593812406,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41649557504,
+        "peak_rss_bytes": 1195098112
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-ungated_relu_squared-destination.json": {
+      "elapsed_seconds": 0.11278795800171793,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39194238976,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-ungated_relu_squared-full.json": {
+      "elapsed_seconds": 0.11274879204574972,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40198610944,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-ungated_relu_squared-prefix.json": {
+      "elapsed_seconds": 0.11107979097869247,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39639302144,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-ungated_silu-destination.json": {
+      "elapsed_seconds": 0.12731300003360957,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40199639040,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-ungated_silu-full.json": {
+      "elapsed_seconds": 0.11108741594944149,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41203937280,
+        "peak_rss_bytes": 1389527040
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-construction-ungated_silu-prefix.json": {
+      "elapsed_seconds": 0.10930975002702326,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40644878336,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-io-fixtures.json": {
+      "elapsed_seconds": 0.006817416986450553,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42209148928,
+        "peak_rss_bytes": 226525184
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-pair-fixtures.json": {
+      "elapsed_seconds": 0.0034488749224692583,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42209116160,
+        "peak_rss_bytes": 228179968
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-native_swiglu-control-h200.json": {
+      "elapsed_seconds": 0.09223191603086889,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41649561600,
+        "peak_rss_bytes": 1194983424
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-native_swiglu-control-raw.json": {
+      "elapsed_seconds": 0.40139300003647804,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41763651584,
+        "peak_rss_bytes": 973062144
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-native_swiglu-inference-h200.json": {
+      "elapsed_seconds": 0.09483929199632257,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41204006912,
+        "peak_rss_bytes": 1330839552
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-native_swiglu-resume-prefix.json": {
+      "elapsed_seconds": 0.38284466601908207,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41204408320,
+        "peak_rss_bytes": 1195720704
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_relu_squared-control-h200.json": {
+      "elapsed_seconds": 0.10145320801530033,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39639310336,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_relu_squared-control-raw.json": {
+      "elapsed_seconds": 0.38700741599313915,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39753392128,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_relu_squared-inference-h200.json": {
+      "elapsed_seconds": 0.09689029096625745,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39194103808,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_relu_squared-resume-prefix.json": {
+      "elapsed_seconds": 0.3836895830463618,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39194234880,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_silu-control-h200.json": {
+      "elapsed_seconds": 0.0940716250333935,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40644886528,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_silu-control-raw.json": {
+      "elapsed_seconds": 0.38698924996424466,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40758722560,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_silu-inference-h200.json": {
+      "elapsed_seconds": 0.09522379096597433,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40198672384,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-read-ungated_silu-resume-prefix.json": {
+      "elapsed_seconds": 0.3803462910000235,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40199630848,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-scorer-math.json": {
+      "elapsed_seconds": 0.006226166966371238,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39194087424,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-scorer-native_swiglu.json": {
+      "elapsed_seconds": 0.038144874968566,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41203945472,
+        "peak_rss_bytes": 1389445120
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-scorer-ungated_relu_squared.json": {
+      "elapsed_seconds": 0.026783791952766478,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39194095616,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-scorer-ungated_silu.json": {
+      "elapsed_seconds": 0.03672441700473428,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40198619136,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-native_swiglu-final-raw.json": {
+      "elapsed_seconds": 0.4689082499826327,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41763647488,
+        "peak_rss_bytes": 925155328
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-native_swiglu-h200.json": {
+      "elapsed_seconds": 0.11540758307091892,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41649565696,
+        "peak_rss_bytes": 1194983424
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-native_swiglu-prefix-raw.json": {
+      "elapsed_seconds": 0.4545419999631122,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 41204404224,
+        "peak_rss_bytes": 1195442176
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-ungated_relu_squared-final-raw.json": {
+      "elapsed_seconds": 0.45806112501304597,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39753396224,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-ungated_relu_squared-h200.json": {
+      "elapsed_seconds": 0.10945591703057289,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39639314432,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-ungated_relu_squared-prefix-raw.json": {
+      "elapsed_seconds": 0.7951149590080604,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 39194370048,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-ungated_silu-final-raw.json": {
+      "elapsed_seconds": 0.4402416660450399,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40758722560,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-ungated_silu-h200.json": {
+      "elapsed_seconds": 0.11232949991244823,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40644890624,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-write-ungated_silu-prefix-raw.json": {
+      "elapsed_seconds": 0.49387483298778534,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 40199643136,
+        "peak_rss_bytes": 1389920256
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    },
+    "mps-guard.json": {
+      "elapsed_seconds": 68.82460045802873,
+      "limits": {
+        "mps_driver_limit_bytes": 6442450944,
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "observation": {
+        "free_bytes": 39194050560,
+        "mps_current_bytes": 0,
+        "mps_driver_bytes": 14368768,
+        "peak_observed_mps_driver_bytes": 2504818688,
+        "peak_rss_bytes": 2353102848
+      },
+      "pid": 57569,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "holdout_closed": true,
+  "limitations": [
+    "No CPU-update/MPS-update equivalence or old optimizer-response rescue.",
+    "No physicalcodec/publicscorer/realcorpus/holdout/pilot/quality/adoption tested;275generatedIDs+34278literal losses are not real validation.",
+    "All original census/proof commands closed/no replay/retry/source-tolerance-seed-outputcap rescue."
+  ],
+  "native_incumbent_unchanged": true,
+  "negative_cases": {
+    "H200": 30,
+    "IO": 14,
+    "own_pair_metadata": 12,
+    "report": 12,
+    "state": 111,
+    "total": 179
+  },
+  "no_torch_imports_tensor_loads_models_scoring_optimizer_or_rng_calls_in_review": true,
+  "original": {
+    "STOP": {
+      "bytes": 103,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume001/STOP",
+      "sha256": "8751fc16e067bedede5435b4d1e4697bdde1ff0ce776c14e06fc7a73db816284"
+    },
+    "attempt.json": {
+      "bytes": 760,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume001/attempt.json",
+      "sha256": "e9a173f2a7e942ace7c3d5670d7dd083cfc9020d208547f76a26f72b2b3b08da"
+    },
+    "plan.json": {
+      "bytes": 156001,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume001/plan.json",
+      "sha256": "a5d1cda07087548a53838c705bfa03689925e4e8422ce883761e6287f3fdf3fc"
+    },
+    "result.json": {
+      "bytes": 18387,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume001/result.json",
+      "sha256": "2d52143b22bffe4cc4fbb2dd6438ec0951ec9e3366f968165dc63b8b009d2414"
+    },
+    "source-review.json": {
+      "bytes": 7534,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume001/source-review.json",
+      "sha256": "3fdd488b216ef1386a0a1e036e6aa6dcd87e7ae0ef6e42eab523fa8902cc4a86"
+    }
+  },
+  "original_census": {
+    "STOP": {
+      "bytes": 95,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume-seed-census001/STOP",
+      "sha256": "3f4e32f19602dcba507efc2737e9e7ca662620d5cbc16df9def62f084b2a24c2"
+    },
+    "attempt.json": {
+      "bytes": 104,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume-seed-census001/attempt.json",
+      "sha256": "0e98310e70ba14c8a217c1b2491e77167b75922e39a340220ca0eb2a77c2b459"
+    },
+    "guard.json": {
+      "bytes": 260,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume-seed-census001/guard.json",
+      "sha256": "72a0800ba8da889a8737d6f84e79e5a0fdd2b9e6325e9f94129908a8a3b642ea"
+    },
+    "inventory.jsonl": {
+      "bytes": 12444742,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume-seed-census001/inventory.jsonl",
+      "sha256": "205002732e232b0ba913e9111100ea6a1ff01a537f442b9a36566224bc36cf24"
+    },
+    "plan.json": {
+      "bytes": 150219,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume-seed-census001/plan.json",
+      "sha256": "421ddca27f483abc138e8b26445213e4fb632e810e18c37df50295554bb51eb8"
+    },
+    "result.json": {
+      "bytes": 984,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume-seed-census001/result.json",
+      "sha256": "5f1b6356f5ddbb18ff35fd1c65b25bfd9ddecb05a84b58b9e2a53621129d6f55"
+    },
+    "source-review.json": {
+      "bytes": 2854,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-resume-seed-census001/source-review.json",
+      "sha256": "3b81f926066796e4fcaeef90d26d61487028b03ad964b03b22e3f09fd7fe35da"
+    }
+  },
+  "per_target_CPU_MPS_max_error": 2.86102294921875e-06,
+  "per_target_gather_max_error": 0,
+  "preserved_predecessors": 1189,
+  "roles_now_USED_only_this_original_generated_fixture": {
+    "eval": 62086780003,
+    "global_cpu": 62086780004,
+    "global_mps": 62086780005,
+    "initializer": 62086780001,
+    "private_ungated": 8900458232535156190,
+    "train": 62086780002
+  },
+  "scorer_math": {
+    "independent_math_fsum_exact": true,
+    "literal_loss_math_only": true,
+    "literal_sha256": "9e4a2fea6b2a64260baa2ce64672f54aea41f8b63a02b34c94c6c3292359af73",
+    "rejected_reports": 12,
+    "report_sha256": "8aa60009ab185866e62645af8e674419daa7581e8c68b69ab996b1ce464e52dc",
+    "tail": 102,
+    "targets": 34278,
+    "windows": 268
+  },
+  "source_bindings": 1191,
+  "state_source_identity_bindings": 1189,
+  "status": "closed_accepted_generated_serialized_ffn_state_scorer_pair_fixture_only",
+  "streamed_original_weight_SHA_only": true,
+  "timestamp": "2026-11-07T14:09:50.719769+00:00"
+}

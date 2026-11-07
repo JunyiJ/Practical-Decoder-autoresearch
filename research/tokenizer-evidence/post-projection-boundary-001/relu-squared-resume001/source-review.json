@@ -1,0 +1,152 @@
+{
+  "actual_host_preflight": "Torch2.14.1/git5c4886908584029761b579af026dcfb627c84070/threads4/MPSbuiltavailable/zeroactiveworkers/noTensor-model-RNGcalls",
+  "actual_serialized_size_policy": "Full9archiveuppercaps reserved BEFOREmodelconstruction;count actual torch.save bytes inside admitted command before EACHpublication and requireexactpublishedsize,never relax cap/retry.",
+  "admission": "ONEoriginalgeneratedSAME-MPSserializedRAW-H200/EMA-sampler-globalRNG-LR-clipping/scorer-literal/pairmetadatafixture ONLY;no realcorpus-pilot-scientificquality",
+  "bindings": 1191,
+  "census_guard": {
+    "elapsed_seconds": 88.26698583399411,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 42192613376,
+      "peak_rss_bytes": 137641984
+    },
+    "pid": 56982,
+    "reason": null,
+    "status": "finished"
+  },
+  "census_roles": {
+    "eval": 62086780003,
+    "global_cpu": 62086780004,
+    "global_mps": 62086780005,
+    "initializer": 62086780001,
+    "private_ungated": 8900458232535156190,
+    "train": 62086780002
+  },
+  "complete_resource_forecast": {
+    "actual_serialization_bytes_counted_before_each_publication": true,
+    "census_rss_bytes": 268435456,
+    "census_work_seconds": 100,
+    "floor_with_reserve": 12257853440,
+    "free_bytes": 42206683136,
+    "metadata_highwater_bytes": 44040192,
+    "new_working_allocations_included": {
+      "largest_serialized_tensor_chunk": 51463168,
+      "live_or_saved_EMA_panel": 113969664,
+      "optimizer_loader_deepclone": 216929280,
+      "optimizer_moment_staging": 216929280,
+      "retained_parent_CPU_read_upper": 536870912
+    },
+    "no_old_output_or_future_deletion_credit": true,
+    "phase_release": "Sequential arms;discard uninterrupted model/state before prefix;discard prefix model before destination;release prefix payload afterresume;release optimizer/EMA before CPU scorer;gc+MPS empty_cache at boundaries. Parent reads occur outside training graph;no retained duplicate weight file.",
+    "prior_resource_evidence": {
+      "MPS_bytes": 2512191488,
+      "RSS_bytes": 2263564288,
+      "path": "research/tokenizer-evidence/post-readout-boundary-001/projection-resume001/mps-guard.json",
+      "sha256": "1ef4ed4b6fa9e23db882674b304c25b483691fcdd02996476ac6e1f2f1112d1b",
+      "whole_seconds": 46.30367725004908
+    },
+    "proof_mps_bytes": 5368709120,
+    "proof_rss_bytes": 3758096384,
+    "proof_work_seconds": 240,
+    "retained_H200_bytes": 402653184,
+    "retained_RAW_bytes": 3221225472,
+    "serialization_tmp_within_final_archive_cap_single_allocation": true,
+    "source_only_H200_tensor_subtotal_bytes": 114035200,
+    "source_only_RAW_tensor_subtotal_bytes": 444934320,
+    "target_with_extra2GiB": 14405337088,
+    "uncertainty": "Historical same-geometry source pattern only;newmomentstage+clone+parentCPUread/counter/extra rejects requireadditionalbudget;forecasts are not guard relaxation or promises",
+    "weights_retained_all9": true
+  },
+  "fixed_predicates": {
+    "complete_resume_and_traces_exact": 0,
+    "literal_aggregation_exact": 0,
+    "own_pair_absolute_CE_tolerance": 3e-05,
+    "per_target_CE_normalized_gather_atol": 3e-05,
+    "per_target_CE_normalized_gather_rtol": 0,
+    "per_target_CPU_MPS_atol": 3e-05,
+    "per_target_CPU_MPS_rtol": 0,
+    "raw_h200_roundtrip_exact": 0
+  },
+  "holdout_closed": true,
+  "native_incumbent_unchanged": true,
+  "no_numeric_result_observed_from_this_source": true,
+  "plan_sha256": "a5d1cda07087548a53838c705bfa03689925e4e8422ce883761e6287f3fdf3fc",
+  "preserved_predecessors": 1189,
+  "scope": {
+    "EMA_interval": 1,
+    "EMA_snapshots_final": 3,
+    "EMA_start": 2,
+    "actual_generated_optimizer_steps": 24,
+    "arms": [
+      "native_swiglu",
+      "ungated_silu",
+      "ungated_relu_squared"
+    ],
+    "branches": [
+      "uninterrupted4",
+      "prefix2_plus_restored2"
+    ],
+    "clip_threshold": 1.0,
+    "generated_scoring_ids": "(arange(276)*89+31)%50257",
+    "generated_train_literal": "(arange(6144)*59+83)%50257",
+    "generated_val_literal": "(arange(3072)*73+83)%50257",
+    "generated_windows": [
+      128,
+      128,
+      19
+    ],
+    "global_stream_draws_per_update": {
+      "cpu": 3,
+      "mps": 7
+    },
+    "h200_rejections_per_arm": 10,
+    "horizon": 4,
+    "literal_target_bytes": 111536,
+    "no_optimizer_cpu_update_vs_mps_update_equivalence_claim": true,
+    "non_tensor_IO_rejections": 14,
+    "own_pair_metadata_cases": 12,
+    "parameter_tensors": [
+      88,
+      84,
+      84
+    ],
+    "parameters_per_arm": 28492416,
+    "pre_restore_scramble_draws": {
+      "cpu": 11,
+      "mps": 13
+    },
+    "real_corpus_holdout_quality_seed_calls": 0,
+    "retained_archives": {
+      "finalH200": 3,
+      "finalRAW": 3,
+      "prefixRAW": 3
+    },
+    "sampler_and_global_draw_traces_exact": true,
+    "score_report_rejections": 12,
+    "scored_targets": 275,
+    "scorer_math_literal": "(((i*7)%37)+5)/128",
+    "scorer_math_targets": 34278,
+    "serialized_counter_compared_to_publication_bytes": true,
+    "state_rejections_per_arm": 37,
+    "targets_per_branch": 4096,
+    "total_rejections_or_pair_cases": 179
+  },
+  "source_scope_review": [
+    "All1189predecessors unchanged/newproof+newcensus only;no old fixture or trajectory replay/failed checkpoint reconstruction.",
+    "New literal sampler/scorer/loss/IO/pairmetadata inputs;new6roles only;RNGcounters explicitlyadvance perupdate;global_cpu role deliberately used ONLY as wrong MPS seed in invalid-state probe with caller stream restored/no draw or model fromcounterexample.",
+    "SAME-MPS uninterrupted4 versus CPUweights_only prefix restore2+2 freshdestination;completeRAW/H200/optimizer-EMA-samplers-globalRNG-LR-clipping-history/exposure+batch/globaldrawtrace exacthash comparisons.",
+    "Own retainedparent CPUload/content validation/producer liveEMA mismatch/exportweight mismatch/prefixhorizon/actualarchivekind rejects;source SAMEbackend optimizer preflight preserved viaCPUarchive staging+deepclone.",
+    "37state+10H200rejections perarm;model/optimizer/EMA/samplers/globalRNG/cacheepoch livehashes unchanged under invalidinputs. IO14/scorereport12/NEWownpairconsumer12 validated separately.",
+    "Count real torch.save streamingbytes toboundedcounter before each of9publications,thenrequirepublishedbytesmatch. EachCPUphase120s;all9files singlelinks/hashes retained;aliases/temp shareoneallocation. TinyIOhardlink+symlink areexplicitNONTENSORfixtures,nevermodelaliases.",
+    "Source8MiBmetadata cap includesnestedpairJSON/rootSTOP/IOliterals,pluscensus32/preparation2=42MiB;all9weights6RAW512+3H200128MiB reserved andalloldweights retainedzero credit.",
+    "Per-targetCPU-MPS andindependentnormalizedLP-gather absolute3e-5/rtol0;full34278newliteralFP64binaryfraction/math.fsum/window/block/CE/111536byte denominators exact;NOTpublicphysicalscorer/corpus/quality.",
+    "Ownpairedpublicationpolicy cases finiteequal/inside/exactboundary/outside/target-policy/type-nonfinite-cap/suffix-provenance-overwrite/inputpreservation;BOTHfinitepairreportsdurable beforeunchanged3e-5 rejection;notcheckpointacceptance.",
+    "No source/tolerance/seed rescue or retry after attempts;callerglobalCPU-MPSrng restored infinally;all1191sourcebindings unchanged;MPSnormalhostadmission/oneworkerlock/no paidcompute/subagents."
+  ],
+  "status": "qualified_original_generated_serialized_proof_before_first_model_construction",
+  "time": "2026-11-07T14:05:01.139818+00:00"
+}

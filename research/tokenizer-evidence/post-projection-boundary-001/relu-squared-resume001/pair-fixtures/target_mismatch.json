@@ -1,0 +1,50 @@
+{
+  "absolute_ce_tolerance": 3e-05,
+  "accepted": false,
+  "canonical_coverage_pass": true,
+  "ce_pass": true,
+  "cpu": {
+    "ce": 0.25,
+    "literal_values": [
+      0.0625,
+      0.1875,
+      0.4375
+    ],
+    "target": {
+      "context": 128,
+      "first_target_offset": 1,
+      "holdout_scored": false,
+      "literal_fixture": "new_ffn_pair_metadata_not_physical_codec",
+      "policy": "relu_squared_native_distribution_validation_v1",
+      "tail_retained": true,
+      "target_bytes": 111536,
+      "targets": 34278
+    }
+  },
+  "cpu_mps_ce_difference": 0.0,
+  "kind": "relu_squared_validation_pair_record_v1",
+  "mps": {
+    "ce": 0.25,
+    "literal_values": [
+      0.0625,
+      0.1875,
+      0.4375
+    ],
+    "target": {
+      "context": 128,
+      "first_target_offset": 1,
+      "holdout_scored": false,
+      "literal_fixture": "distinct_new_ffn_literal_target",
+      "policy": "relu_squared_native_distribution_validation_v1",
+      "tail_retained": true,
+      "target_bytes": 111536,
+      "targets": 34278
+    }
+  },
+  "physical_scorer_or_checkpoint_acceptance": false,
+  "provenance": {
+    "no_model_or_corpus": true,
+    "scope": "new_ffn_state_pair_consumer_fixture"
+  },
+  "target_equal": false
+}

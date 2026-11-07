@@ -78,3 +78,29 @@ Frozen projection pair-helper policy cannot accept this family; an own3e-5/
 are not archive measurements or a future numerical budget. No weights/corpus/
 RNG/model calls. Next is new generated serialized proof/census source and full
 resource admission. Native incumbent and holdout stay unchanged.
+
+## Generated serialized-state/scorer proof: accepted, no quality result
+
+Original relu-squared-resume001, new six-role census, independent metadata review
+and one-time archive closure are complete. All3 arms24 generated updates (each
+uninterrupted4 versus2+2 CPUarchive-restored fresh SAME-MPS destination) matched
+complete RAW/H200/optimizer/EMA/private samplers/global CPU-MPS RNG counters/LR/
+clipping/history/exposure/batch+globaldraw traces exactly. Finalexposure4all88/84,
+EMA3. All179 state/H200/IO/report/pair checks passed. New275 per-target CE versus
+fullnormalizedgather error0; CPU-MPS max2.86102294922e-6<3e-5. New34278 literal
+binary-fraction/math.fsum/window/block/CE/111536byte arithmetic exact, not physical
+validation losses. Own pair publisher tested on metadata only. Whole68.824600s/
+RSS2353102848B/MPS2504818688B passed600s/4GiB/6GiB/reserve8GiB;36CPU guards done.
+All1191source bindings/globalCPU-MPS RNG preserved. No quality or transport claim.
+
+All9 original model archives3012754027B protected at original paths:3prefixRAW,
+3finalRAW,3H200 including controls. Counted serialization sizes matched bounded
+publications; one-time original receipt/source/path-size-inode-device-singlelink/
+streamhash closure passed with zero Tensor/model/scoring/trajectory replay,
+weightcopies/deletions. No retirement eligibility; tinyIO aliases/.tmp are metadata
+fixtures, preserve originals. Usedroles62086780001-5/private8900458232535156190
+never reused. Old failed metadata source-review001 remains closed, unchanged.
+
+No real corpus/holdout/publicphysicalscorer/4-20worker/pilot/scientificquality
+ran. Next is NEW own real4/twenty worker/acceptance/controller SOURCE and separate
+new-role/resource admission. Native incumbent and holdout unchanged.
