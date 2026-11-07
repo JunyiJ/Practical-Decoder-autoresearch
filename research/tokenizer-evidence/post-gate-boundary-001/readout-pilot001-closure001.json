@@ -1,0 +1,438 @@
+{
+  "status": "complete_all_three_twenty_update_readout_pilot_closure",
+  "at": "2026-11-07T05:44:36.695981+00:00",
+  "implementation_commit": "8fef82e478fec3903b8c7a44c8bde62193dea6ad",
+  "execution_bindings": 1112,
+  "worker_bindings": 1109,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-plan.json",
+    "sha256": "f52810f62570fdb956733deb2c40aa9b1380a20a18b73e5b65617c22e5b82faf",
+    "bytes": 304969
+  },
+  "review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-review.json",
+    "sha256": "1086d6459214be7a6269ac8af2219cbd646ea8942a8d1dd40158038a59d3472b",
+    "bytes": 252408
+  },
+  "root_stop": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/STOP",
+    "sha256": "be7588dcc7ae2c450d152c3302705571d40e4e4f8a9fb0f4c15063c8ded7f704",
+    "bytes": 338
+  },
+  "preserved_role_failure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot-role-failure001.json",
+    "sha256": "3125f2d13dfa26d551fe9fea94e95998563bb82283d5f9aa0ab4bbf0766c8f09",
+    "bytes": 1537
+  },
+  "successful_census": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot-seed-census002/result.json",
+    "sha256": "86cb73a9253a45b3cb8c4952d82114f6ef1061ff846e9568654991834647fdb1",
+    "bytes": 917
+  },
+  "weights": [
+    {
+      "arm": "native",
+      "kind": "parent",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/checkpoints/parent.pt",
+      "bytes": 445174823,
+      "allocated_bytes": 453144576,
+      "dev": 16777234,
+      "inode": 93885579,
+      "sha256": "ddd585b993b0f6d9f432b21a7b9e5afe9dacba707fd8ba2b320066f0f3d67381"
+    },
+    {
+      "arm": "native",
+      "kind": "h200",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/checkpoints/h200.pt",
+      "bytes": 114076547,
+      "allocated_bytes": 117465088,
+      "dev": 16777234,
+      "inode": 93885687,
+      "sha256": "9ec820ab4139388a0a7da9e69d7f8cf9920192c6eef89d001e713ff868a4c133"
+    },
+    {
+      "arm": "context_mix2",
+      "kind": "parent",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/checkpoints/parent.pt",
+      "bytes": 446761041,
+      "allocated_bytes": 453144576,
+      "dev": 16777234,
+      "inode": 93885903,
+      "sha256": "4e45bf62b6c74a73f3753166bbeaf23efd97d35db0e110662f9936a693b3c2cf"
+    },
+    {
+      "arm": "context_mix2",
+      "kind": "h200",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/checkpoints/h200.pt",
+      "bytes": 114603834,
+      "allocated_bytes": 117465088,
+      "dev": 16777234,
+      "inode": 93886051,
+      "sha256": "9cf4c19a9660010c3bf86d32d5ad416d77c79ff046988d581607654b9fcf3e91"
+    },
+    {
+      "arm": "probability_mix2",
+      "kind": "parent",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/checkpoints/parent.pt",
+      "bytes": 446761041,
+      "allocated_bytes": 453144576,
+      "dev": 16777234,
+      "inode": 93886290,
+      "sha256": "3b5b6c4f08087c33aff88427b1b1c4815eac605d1e2fd0d3298dc760d23e1832"
+    },
+    {
+      "arm": "probability_mix2",
+      "kind": "h200",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/checkpoints/h200.pt",
+      "bytes": 114603834,
+      "allocated_bytes": 117465088,
+      "dev": 16777234,
+      "inode": 93886451,
+      "sha256": "ec6f1a32e538cf2d140ddf26207618a8e37d646d0483977fda0a9089c5f1a938"
+    }
+  ],
+  "retained_pilot_weight_bytes": 1681981120,
+  "prior_prerequisite_weight_bytes": 1681766784,
+  "all_prerequisite_files": 12,
+  "all_prerequisite_weight_bytes": 3363747904,
+  "mirrored_metadata": [
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/STOP",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/STOP",
+      "bytes": 338,
+      "sha256": "be7588dcc7ae2c450d152c3302705571d40e4e4f8a9fb0f4c15063c8ded7f704"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/parent-pilots-00-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/parent-pilots-00-guard.json",
+      "bytes": 400,
+      "sha256": "d025bce8445ad4c96a64a1f2c5cb580c564dc81a2293d275980ba5581dd460c7"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/parent-pilots-01-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/parent-pilots-01-guard.json",
+      "bytes": 400,
+      "sha256": "a0cfcddbb1aae5d112355a385105dae8b79cea0b965ff67c270fa13e1d337fc0"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/parent-pilots-02-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/parent-pilots-02-guard.json",
+      "bytes": 400,
+      "sha256": "2f2d3b7b39b52c303c20169e7b3df80e47b5d4777e0ab2c378b89fd508123c2c"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/process-pilots-00.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/process-pilots-00.json",
+      "bytes": 789,
+      "sha256": "e38fb1aea66fa672d4b33a04f900e9286003dd7aa9626717a383882d76df2ca6"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/process-pilots-01.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/process-pilots-01.json",
+      "bytes": 789,
+      "sha256": "ed3686f072c234ea745f3dba22119d305fc3dbb747a55466a1026bda8ba25869"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/process-pilots-02.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/process-pilots-02.json",
+      "bytes": 789,
+      "sha256": "7c01e2710d6fc9ee2ffe53f707d4b9a5f85f6b77f8c07bdb862f9629ce480bad"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/worker-pilots-00-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/worker-pilots-00-guard.json",
+      "bytes": 402,
+      "sha256": "e904412996b47dc37cb3788961afa2e209df7585135254291976bfa0b082b8d3"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/worker-pilots-01-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/worker-pilots-01-guard.json",
+      "bytes": 400,
+      "sha256": "807d48d6525415385dad89e20228f2102e4d19ae2215af1a5453ef39dbf341f8"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/control/worker-pilots-02-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/control/worker-pilots-02-guard.json",
+      "bytes": 400,
+      "sha256": "b4da83bf2a06d555cafb91c111e1dd56a0ed90881422675b18839667c751bf2f"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/accepted.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/accepted.json",
+      "bytes": 37549,
+      "sha256": "2eccd8ffdc41dd2bba08aae086f841c9200ef9ca8cd7605d3a9ff4940891a633"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/config.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/config.json",
+      "bytes": 4720,
+      "sha256": "e729a8ecb0d95dc946c3ff702087fa2323323d0cf18baf1cdb4ffd5318e9ae7a"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/cpu-cache-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/cpu-cache-guard.json",
+      "bytes": 263,
+      "sha256": "f11bf0b79ebf59114377f1bb679217ee28ae87790060926d34adec68fd7b01b4"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/cpu-h200-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/cpu-h200-guard.json",
+      "bytes": 262,
+      "sha256": "249ae3150a4ecc66df8a6fcb6484ee11fc0c3b00b4e2099bd7eb046ab09828e7"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/cpu-raw-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/cpu-raw-guard.json",
+      "bytes": 262,
+      "sha256": "472898e34763a09ec6eb5bf895c61b67f7fd5a0aefe2db5a0af88565b3899dd4"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/metrics.jsonl",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/metrics.jsonl",
+      "bytes": 794,
+      "sha256": "244b47acc6793c2c3c2ffa57c8846a33e93780f2d371048c16e1b8fb1a06bce7"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/process/launch.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/process/launch.json",
+      "bytes": 692,
+      "sha256": "f4d52296413ea287a94aba0cc9da627a2cf9631c4239a38fe47aa37b50a2b412"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/process/process.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/process/process.json",
+      "bytes": 789,
+      "sha256": "626967f42fef4a503709aaebc2a6ce994503e277b5d275054c0ea98a9018ac32"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/process/worker.log",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/process/worker.log",
+      "bytes": 794,
+      "sha256": "244b47acc6793c2c3c2ffa57c8846a33e93780f2d371048c16e1b8fb1a06bce7"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/request.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/request.json",
+      "bytes": 5072,
+      "sha256": "c27e115f23abff3213ed7bc4cb2c71314e92403dd412154ac29276c9e2af2a91"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/worker.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/00/worker.json",
+      "bytes": 14325,
+      "sha256": "01e3686030d21d51cd74c78cf389cfc5c57ee54f623d917b57fb42cbdca471c1"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/accepted.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/accepted.json",
+      "bytes": 37610,
+      "sha256": "b875621e418b5894b3e03b9f64382c5be0f45b215bc8de322af772ebcc4c2942"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/config.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/config.json",
+      "bytes": 4726,
+      "sha256": "f6f40ba7540153880f5c1ba59bd6382e584ba91e40c6485afe8b12018eb9be41"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/cpu-cache-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/cpu-cache-guard.json",
+      "bytes": 263,
+      "sha256": "bff690a28d4829bd987da0e9eee91b5baae087bfba308102471286c2f2bb6914"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/cpu-h200-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/cpu-h200-guard.json",
+      "bytes": 261,
+      "sha256": "65133597f944aff351ef5d4f21d4964d0f2a463bbc02d3e15d7553a664583451"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/cpu-raw-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/cpu-raw-guard.json",
+      "bytes": 261,
+      "sha256": "2abd174d2d4d6090fafcebdddddb933539814717e40cc06a9a6892b102e4cc39"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/metrics.jsonl",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/metrics.jsonl",
+      "bytes": 796,
+      "sha256": "1d9fcd1dd3b6688591346e149368bb5199261931c4bc045102e2d40bc518c8eb"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/process/launch.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/process/launch.json",
+      "bytes": 692,
+      "sha256": "1a7ed0e4f9d7c0e91786a83b46906f9b483964bb2c3f09e34490a4cb4f6ce53e"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/process/process.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/process/process.json",
+      "bytes": 790,
+      "sha256": "552742bf9ec4293da47c6c0c25ff3b675e8ae4658f575b6e3495293cfa175dff"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/process/worker.log",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/process/worker.log",
+      "bytes": 796,
+      "sha256": "1d9fcd1dd3b6688591346e149368bb5199261931c4bc045102e2d40bc518c8eb"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/request.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/request.json",
+      "bytes": 5084,
+      "sha256": "18fac38187cfb3f7441427bc6697dd1f481d9064d921f633f68e087816774493"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/worker.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/01/worker.json",
+      "bytes": 14407,
+      "sha256": "dce322a06de35ab18dcf2f77eca794f38f8274b6d3f44d61eab45c86f64c3f1a"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/accepted.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/accepted.json",
+      "bytes": 37593,
+      "sha256": "6cc2421336f6beca1474cf30906c466fc4f737a2c29a8dabb5516bd2d496ee6c"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/config.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/config.json",
+      "bytes": 4730,
+      "sha256": "d1cc20b24bd77ec9152e0776f62d41415f34dd7fd9714ca825e5d5fef0ee6c73"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/cpu-cache-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/cpu-cache-guard.json",
+      "bytes": 262,
+      "sha256": "ef4f2d34532f9d8a8afe63889280c1915480e2b899cb2501966844fa87dc9497"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/cpu-h200-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/cpu-h200-guard.json",
+      "bytes": 261,
+      "sha256": "384a6528307db8c0aeaee0f7b78c128377704007d396b4cb94aaa6ecc1804446"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/cpu-raw-guard.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/cpu-raw-guard.json",
+      "bytes": 262,
+      "sha256": "07d771f7cd8e7cd7f14d4060263cc0ed24051512d658f25cf2085baa241e3f57"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/metrics.jsonl",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/metrics.jsonl",
+      "bytes": 796,
+      "sha256": "11d00e771578680f8886f74482b583d566175968ab62ff9419c28b413a588060"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/process/launch.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/process/launch.json",
+      "bytes": 692,
+      "sha256": "0da1835d6e1b45db8d38fd14ee27f9af9713ec33b0eaa6e3f53a2640fb15e78d"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/process/process.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/process/process.json",
+      "bytes": 789,
+      "sha256": "f8b8e8fb5616eb04973c83e415108605e33756f09c5a9b4823ee8cacb903d2f6"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/process/worker.log",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/process/worker.log",
+      "bytes": 796,
+      "sha256": "11d00e771578680f8886f74482b583d566175968ab62ff9419c28b413a588060"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/request.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/request.json",
+      "bytes": 5092,
+      "sha256": "378f05e83e2b46ff4e7b79988aabaed5450fd4217f7edb9270af3286430e007d"
+    },
+    {
+      "source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/worker.json",
+      "mirror": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot001-metadata-mirror001/evidence/pilots/02/worker.json",
+      "bytes": 14401,
+      "sha256": "b28306c83216b6b23afbf37b6129eeb4a3ffd2a2a96e6cb93abd613b0e81d436"
+    }
+  ],
+  "metadata_files": 43,
+  "metadata_bytes": 201989,
+  "weights_mirrored": 0,
+  "deletions": 0,
+  "stats": [
+    {
+      "arm": "native",
+      "serialized": {
+        "h200": 114076547,
+        "pair": 559251370,
+        "raw": 445174823
+      },
+      "clipped_updates": 0,
+      "max_cpu_mps_ce_difference": 2.8038770594207563e-07,
+      "worker_seconds": 34.146374957985245,
+      "acceptance_seconds": 16.536193249979988,
+      "training_seconds": 5.39349691697862,
+      "sum_update_seconds": 5.110188544145785,
+      "max_update_seconds": 0.924968249979429,
+      "working_1200_training_publication_validation_projection": 1155.5342796391342,
+      "projection_scope": "1200 times observed max pilot update + observed five-sample evaluation residual + measured serialization/fixed overhead + complete RAW/H200 acceptance. Assumes five sample evaluations; not a promise, stability evidence or serving/statistics forecast."
+    },
+    {
+      "arm": "context_mix2",
+      "serialized": {
+        "h200": 114603834,
+        "pair": 561364875,
+        "raw": 446761041
+      },
+      "clipped_updates": 0,
+      "max_cpu_mps_ce_difference": 2.932135370059541e-07,
+      "worker_seconds": 39.91743320901878,
+      "acceptance_seconds": 15.745810583932325,
+      "training_seconds": 4.9537409578915685,
+      "sum_update_seconds": 4.637305126641877,
+      "max_update_seconds": 0.43064929195679724,
+      "working_1200_training_publication_validation_projection": 567.8050890144659,
+      "projection_scope": "1200 times observed max pilot update + observed five-sample evaluation residual + measured serialization/fixed overhead + complete RAW/H200 acceptance. Assumes five sample evaluations; not a promise, stability evidence or serving/statistics forecast."
+    },
+    {
+      "arm": "probability_mix2",
+      "serialized": {
+        "h200": 114603834,
+        "pair": 561364875,
+        "raw": 446761041
+      },
+      "clipped_updates": 0,
+      "max_cpu_mps_ce_difference": 2.896245305805678e-07,
+      "worker_seconds": 48.34722058405168,
+      "acceptance_seconds": 23.568779665976763,
+      "training_seconds": 6.630577125004493,
+      "sum_update_seconds": 6.241741088684648,
+      "max_update_seconds": 0.6207464579492807,
+      "working_1200_training_publication_validation_projection": 810.5700087004807,
+      "projection_scope": "1200 times observed max pilot update + observed five-sample evaluation residual + measured serialization/fixed overhead + complete RAW/H200 acceptance. Assumes five sample evaluations; not a promise, stability evidence or serving/statistics forecast."
+    }
+  ],
+  "target_contract_sha256": "b7e73bba4636a2459feb5ea4f70ab2890e4e20565f7f2a0ed7f1b0af296026c2",
+  "max_rss_bytes": 2422292480,
+  "max_mps_driver_bytes": 2569945088,
+  "updates": 60,
+  "training_targets": 61440,
+  "all_updates_unclipped": true,
+  "working_18_training_publication_validation_projection": 15203.456264124485,
+  "fresh_serving_stats_complete_forecast_qualified": false,
+  "budget": {
+    "original24chain_floor": 26845642752,
+    "actual_retained_prerequisite_credit_once": 3363747904,
+    "remaining24chain_floor": 23481894848,
+    "remaining24chain_target": 25629378496,
+    "own18quality_floor": 22919774208,
+    "own18quality_target": 25067257856,
+    "stricter_remaining_target": 25629378496,
+    "free_bytes": 63557410816
+  },
+  "numerical_checkpoint_load_scoring_replay": false,
+  "no_quality_or_adoption_claim": true,
+  "no_retirement_eligibility": true,
+  "next_action": "Minimal additive full-quality namespace and1200state/history/41EMA/counting-stream/selection/fresh/statistics contracts, source/resource review and distinct fixture plan. Accepted20pilot tensors may be read-only fixture inputs under NEW explicit layout-proof contract, never trained1200 endpoint claims. Complete fresh serving/time budget and NEWscientific-role audit before freeze. Native incumbent unchanged.",
+  "elapsed_seconds": 1.2818470830097795
+}
