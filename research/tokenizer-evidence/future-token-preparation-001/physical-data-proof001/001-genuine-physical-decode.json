@@ -1,0 +1,53 @@
+{
+  "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "decode_generator_calls": 0,
+  "encoder_inputs": [
+    {
+      "characters": 892315,
+      "no_positional_options": true,
+      "ordinary_special_policy": true,
+      "utf8_sha256": "8564bb90b6305620187b212d62ee40694e1b3639401878b3fdc4ec395016ec4a"
+    },
+    {
+      "characters": 111539,
+      "no_positional_options": true,
+      "ordinary_special_policy": true,
+      "utf8_sha256": "ef3b6eb3897a96dde32bc0b42686ea22f84dbf93746e611936b431d2a9524fac"
+    }
+  ],
+  "expected_inputs": [
+    {
+      "characters": 892315,
+      "utf8_sha256": "8564bb90b6305620187b212d62ee40694e1b3639401878b3fdc4ec395016ec4a"
+    },
+    {
+      "characters": 111539,
+      "utf8_sha256": "ef3b6eb3897a96dde32bc0b42686ea22f84dbf93746e611936b431d2a9524fac"
+    }
+  ],
+  "holdout_BPE_calls": 0,
+  "label": "genuine-physical-decode",
+  "model_or_score_calls": 0,
+  "passed": true,
+  "predicates": {
+    "corpus_prepost_SHA": true,
+    "exact_train_val_text_inputs": true,
+    "exactly_two_encoder_calls": true,
+    "full_primary_target_IDs": true,
+    "global_CPU_RNG_preserved": true,
+    "metadata_contract": true,
+    "no_decode_generator": true,
+    "no_holdout_retained": true,
+    "no_other_or_holdout_encoder_input": true,
+    "offline_cache_only": true,
+    "ordinary_special_policy": true,
+    "original_codec": true,
+    "physical_target_bytes": true,
+    "train_IDs": true,
+    "val_IDs": true
+  },
+  "target_IDs_sha256": "dad00eaab7c2076736432b83eb9f1cc404c87aa5e4820b5f7abebf384c7fcdaf",
+  "target_bytes": 111536,
+  "train_IDs_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+  "validation_IDs_sha256": "34f3f3178331aa7792460a4258c2769e47db74a1824ebdac86b348251d786818"
+}

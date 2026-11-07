@@ -1,3 +1,41 @@
+# Physical CPU data-view proof CLOSED_ACCEPTED; next consumer evidence boundary
+
+Original physical-data-proof001 exited0,4.804469042s/RSS274,202,624B under120sCPU/
+4GiB/reserve8GiB. Genuine GPT2 decoder observed ONLY original train/val encoder
+inputs, zero decode-generator/holdout-BPE calls, original ID/target digests and
+measured111536 target bytes. Six View calls/30 anchors, exact sequence/positions/
+offsets, private-state prefix restore/caller+globalCPU RNG preservation and24
+rejection transactions passed.37 original saved reports/six stored actual-expected
+batch pairs reconciled read-only, no codec/sampler/RNG/oracle replay. No models,
+optimizer,MPS APIs,scores,checkpoints,tensorfiles,quality gain or adoption.
+
+Source gate passed.015649375s/RSS29,130,752B. Fresh two-role census65,606files/
+5,754,931,978B/0matches passed61.584455875s/RSS137,396,224B. Train62090710001/
+val62090710002 NOW USED exclusively by this original physical fixture, never
+reusable for new trajectories/proofs/censuses. Original unused receipt historical.
+Read original physical-data-proof001/census/source-gate plans/results/guards/STOPs,
+[acceptance](tokenizer-evidence/future-token-preparation-001/physical-data-proof001-acceptance.json)
+and [completed continuation](tokenizer-evidence/future-token-preparation-001/continuation-completed006.json).
+
+Acceptance covers this finite physical CPU data-view and in-memory private-state
+consumer ONLY. Original model/index failures remain separately closed/unqualified;
+no replay/rescue or acceptance substitution. No complete RAW/H200/model/globalCPU-
+MPS RNG/optimizer/EMA/LR/clipping resume, realworker/fullhorizon/physical CE scorer/
+scientific cohort/budget/fresh selection/confirmation/adoption admitted.
+
+Next [post-data consumer evidence boundary](tokenizer-evidence/future-token-preparation-001/post-physical-data-consumer-boundary-handoff001.md):
+use evidence-grounded-research to choose a distinct useful supervision/existing-
+data/literature question with actual evidence and interpretation. A TRAIN-ONLY
+offset-information analysis is a candidate for review, not an admitted probe.
+Do not recapture the failed model fixture or add checkpoint/ledger scaffolding
+without a real unmet consumer. Main continuation stays active; no global CE wait.
+
+All1248futurebindings preserve1245predecessors plusnewproof/census/reviewer;
+oldscientificruntime1211/closedmodelproof1236 unchanged. All original commands/
+sources closed/no replay/retry/rescue, all weights/evidence protections preserved,
+no new retirement. Native/holdout unchanged; no numericalworkeractive. Earlier
+entries historical.
+
 # Physical train/val data-view SOURCE prepared; runtime proof source is next
 
 New future_token_data_v1.py (9990B) separates pinned metadata/genuine train/val

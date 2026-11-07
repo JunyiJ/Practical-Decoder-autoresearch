@@ -1,0 +1,48 @@
+{
+  "census_source": "research/tokenizer-evidence/future-token-preparation-001/physical-data-seed-census001.py",
+  "complete_target_bytes": 10777395200,
+  "forecast": {
+    "rss_bytes": 134217728,
+    "seconds": 2
+  },
+  "future_source_bindings": 1248,
+  "kind": "NEW_static_physical_data_runtime_proof_and_census_source_gate",
+  "known_codec_cache_hashes": [
+    "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+  ],
+  "limits": {
+    "CPU_seconds": 120,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "no_Torch_tiktoken_sampler_corpus_RNG_proof_function_execution": true,
+  "no_retry_replay": true,
+  "plans": [
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/physical-data-proof001/plan.json",
+      "sha256": "7fd47569b6fc4f42728e1d0d539a48b6286d7854075d83f15b26f5e4061d6703"
+    },
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/physical-data-seed-census001/plan.json",
+      "sha256": "168ac879ab3986bc1eefb1647efc5d03e19f311f3e135251a9879b898893abb1"
+    }
+  ],
+  "proof_source": "research/tokenizer-evidence/future-token-preparation-001/physical-data-proof001.py",
+  "sources": {
+    ".venv/lib/python3.13/site-packages/tiktoken/__init__.py": "18437b6f0b99172cee1250a8de94e9acf6372f25ee3122144683b9e34811ab86",
+    ".venv/lib/python3.13/site-packages/tiktoken/_tiktoken.cpython-313-darwin.so": "9e87c1da8b3990ab5ef2fe725a32f0658b29f230fd13b1bc49c6b1096b7b6879",
+    ".venv/lib/python3.13/site-packages/tiktoken/core.py": "3c136f06b05992855dc329216dfa1fa5b6718cccd3d79f658262de8f871f45f0",
+    ".venv/lib/python3.13/site-packages/tiktoken/load.py": "43c3cfb29dc48a74e70e0c85bb01cfd96a3de069a98de8778ccab7f72a2836cc",
+    ".venv/lib/python3.13/site-packages/tiktoken/registry.py": "edf92d65b27529c9bcb15c968047c8cbe6717d4bdc5eea4b50d5ca3df486c105",
+    ".venv/lib/python3.13/site-packages/tiktoken_ext/openai_public.py": "954392738e60d0fb6dca1dad80872efc47c8e2733babecbbf0a23970ed66c2cb",
+    "research/future_token_data_v1.py": "8a22fc758796a86f62e5988c2729b4abad634e12bc9a99d7398b0eb16f8d5b33",
+    "research/future_token_sampling_v1.py": "f1c246dc16994bc735e2f2bc2673e89988503f7273a20c6c3e304b5f1a02ee9a",
+    "research/recorded_role_scan_v1.py": "d3e17f4ce39ef7a230778e363d98dbf67b1f591387d82d1c50eee02d1922808d",
+    "research/tokenizer-evidence/future-token-preparation-001/physical-data-proof-source001.py": "91b46567c27109d93ffe6298c5090c484932456a9fa048eb19b82ae759fd70bb",
+    "research/tokenizer-evidence/future-token-preparation-001/physical-data-proof001.py": "f7fd4920dc59147a5231e14bbbac7829ad8cffe3a079f7dd9446a5c2c4c30d58",
+    "research/tokenizer-evidence/future-token-preparation-001/physical-data-seed-census001.py": "aa9af0b455514a5be09ba93c36d61c1b3f5f8b97803832be553591a56025a982",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "label": "final-case-counters-and-RNG",
+  "negative_labels": [
+    "foreign-decoded",
+    "role-bool",
+    "role-alias",
+    "role-negative",
+    "role-overflow",
+    "decoded-physical-contract",
+    "decoded-train-length",
+    "decoded-train-ID-type",
+    "decoded-val-ID-identity",
+    "state-kind",
+    "state-signature",
+    "state-dataset-identity",
+    "sampler-state-kind",
+    "missing-private-stream",
+    "wrong-private-role",
+    "second-private-stream-preflight",
+    "split-holdout",
+    "split-test",
+    "split-none",
+    "split-bool",
+    "mutable-view-identity",
+    "owned-physical-ID-mutation",
+    "mutable-owned-role",
+    "missing-view-state"
+  ],
+  "passed": true,
+  "predicates": {
+    "actual_sampler_counters": true,
+    "caller_CPU_RNG_preserved": true,
+    "caller_prefix_preserved": true,
+    "decoded_preserved": true,
+    "negative_count": true,
+    "unique_case_labels": true,
+    "views_final_state_exact": true
+  }
+}
