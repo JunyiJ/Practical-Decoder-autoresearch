@@ -1,0 +1,57 @@
+{
+  "coverage": "Exact Cartesian set of 8 new literal fixtures x3 arms xCPU64/CPU32/MPS32, all original elementwise predicates and targetCE/fullgather gradients passed. Values and gradient slots unchanged for positive and invalid cases; complete global CPU/MPS RNG unchanged.",
+  "distinct_invalid_rejections": 43,
+  "elapsed_seconds": 1.706134375068359,
+  "fullmodel_admitted": false,
+  "guard_statuses": {
+    "cpu-guard.json": "finished",
+    "mps-guard.json": "finished"
+  },
+  "holdout_scored": false,
+  "limitation": "Only tiny N<=16 D<=8 V<=31 functional generated states; no D256/V50257 model/config/optimizer/cache/checkpoint/resume/scorer/worker/pilot/quality admission.",
+  "maxima": {
+    "torch.float32": {
+      "forward": 1.3755845724716664e-06,
+      "gradient": 5.878000663983585e-07
+    },
+    "torch.float64": {
+      "forward": 3.552713678800501e-15,
+      "gradient": 2.9976021664879227e-15
+    }
+  },
+  "method": "Separate read-only metadata and source/calculus review of original receipts; zero numerical replay, model/tensor/corpus/scoring/bootstrap/seed/RNG calls. No subagent.",
+  "original_command_closed_no_retry_no_replay": true,
+  "originals": {
+    "STOP": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-component001/STOP",
+      "sha256": "ac7483cf75bfca8af78444e6318da1a393b0b963ad6cce0ae778de0ffd81561d"
+    },
+    "attempt.json": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-component001/attempt.json",
+      "sha256": "979d9cb8c6556a589cbde2a0de199e0d4c75d71df0d06dae6d51f406322f0da1"
+    },
+    "cpu-guard.json": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-component001/cpu-guard.json",
+      "sha256": "bd01beddb78f0467ab1a984f3dca68575a4599bc66dd9575c8a8a7369aed2878"
+    },
+    "mps-guard.json": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-component001/mps-guard.json",
+      "sha256": "31a516e9b775306194a778baf886c2d4783b06ed51a2222bcb6825d2978e52c0"
+    },
+    "plan.json": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-component001/plan.json",
+      "sha256": "82dc68741165eb65959884a3aef9c064053bd6dd82ea099ed254f3cc320dd9a2"
+    },
+    "result.json": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-component001/result.json",
+      "sha256": "3ca588978d03e3143bc8cd27b1b52e2da113e4ca83f7657adcc2f8af1e569c3d"
+    }
+  },
+  "peak_mps_driver_bytes": 11255808,
+  "peak_rss_bytes": 387989504,
+  "positive_cases": 72,
+  "predecessor_sources_preserved": 1127,
+  "quality_result": false,
+  "sources_preserved": 1130,
+  "status": "accepted_generated_single_projection_component_only"
+}

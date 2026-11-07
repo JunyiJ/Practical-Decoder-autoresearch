@@ -1,4 +1,26 @@
-# Single readout projection: tiny component admitted only
+# Single readout projection: tiny component complete
+
+The original projection-component001 command is CLOSED and accepted. See
+post-readout-boundary-001/projection-component001-review.json and
+continuation-completed002.json. All72 new literal CPU64/CPU32/MPS32 forward and
+analyticgradient cases and43 distinct invalid-input rejections passed. FP64
+maximum forward/gradient errors were3.553e-15/2.998e-15; FP32 maxima were
+1.376e-6/5.878e-7, with all original elementwise tolerance predicates passed.
+Inputs/caller gradient slots/globalCPU-MPSRNG unchanged;1130 source bindings
+preserve1127 predecessors. Guards finished:1.706s numerical body, RSS387989504B,
+MPS11255808B, reserve8GiB maintained. Zero models/optimizersteps/corpus/checkpoints/
+qualityseeds/RNGdraws/tensorfiles. Never replay/retry/edit this closed command.
+
+Next executable work is source-only preparation of the smallest genuine actual
+model/config/optimizer/cache integration and finite generated proof. Read the
+accepted component and original native/common88 sources, specify complete
+memory/time/output guards, and audit NEW unused initializer/private-context roles
+before ANY actual construction. Pin and review new source before execution.
+Tiny success does not admit actualD256/V50257 model states, model numerical proof,
+resume/scoring/workers/pilots or a quality panel. Keep native incumbent/holdout
+unchanged. No numerical worker is active and no storage blocker exists.
+
+## Original admitted component scope (historical)
 
 Read TOKENIZER_READOUT_MIXTURE_RESULTS.md and post-readout-boundary-001/
 evidence-review.md/source-design001.json. Old MoS panel CLOSED_NOT_ADOPTED: beats

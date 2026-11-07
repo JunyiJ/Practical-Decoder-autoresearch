@@ -1,0 +1,38 @@
+{
+  "admission": "Tiny generated component only; no actual D256/V50257 model or optimizer integration, no training or quality result.",
+  "cases": "8 NEW literal fixtures x3 kinds xCPU64/CPU32/MPS32=72; zero/identity/signed/saturated/sharp/one-dimensional/N16D8V31, normalization, gathered CE and all gradients, discriminator and forward-only linear absorption. Invalid kind/type/shape/dtype/nonfinite/target/device/autocast rejection checks caller values/gradient slots.",
+  "failure": "Original command closes; no retry/source rescue/tolerance changes.",
+  "fixed_tolerances": {
+    "cpu64_forward_atol": 1e-11,
+    "cpu64_grad_atol": 1e-10,
+    "fp32_atol": 4e-06,
+    "fp32_rtol": 4e-05
+  },
+  "forecast": {
+    "metadata_bytes": 1000000,
+    "mps_bytes": 67108864,
+    "rss_bytes": 536870912,
+    "seconds": 30
+  },
+  "guard_limits": {
+    "cpu_seconds": 120,
+    "metadata_bytes": 2097152,
+    "mps_bytes": 6442450944,
+    "mps_seconds": 600,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "independence": "Oracle uses literal scalar math.fsum/stable logsumexp and analytic gradients, no torch/component/autograd/matrix calls. Components use functional linear/tanh/genuine cross_entropy. No model/optimizer/data/checkpoint API.",
+  "input_and_rng": "Positive/invalid cases check caller values and gradient slots; complete command checks global CPU/MPS RNG before/after. No RNG draws or scientific role.",
+  "new_sources": {
+    "research/readout_projection_v1/__init__.py": "aefc05fac8b3f9dca1d1ea6d307a9b5e5cc7251d5c5cdd31b70330067244f561",
+    "research/readout_projection_v1/component.py": "1afa06974737e46899e3b43d0472a45d8a0058d01b1b31d9c5734ea992840f73",
+    "research/tokenizer-evidence/post-readout-boundary-001/projection-component001.py": "b3362f3f55fcfc27cd070575c5c8ea4b2e321d8de431fa89cadf137bbb5d98bb"
+  },
+  "preserved_predecessors": 1127,
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-component001.py",
+    "sha256": "b3362f3f55fcfc27cd070575c5c8ea4b2e321d8de431fa89cadf137bbb5d98bb"
+  },
+  "status": "passed_source_and_independent_calculus_review_before_first_execution"
+}
