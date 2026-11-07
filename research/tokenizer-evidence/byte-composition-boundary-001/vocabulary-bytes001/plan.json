@@ -1,0 +1,140 @@
+{
+  "accepted_physical_metadata_provenance": "Original physical-data-proof001 metadata only; no codec/data fixture replay",
+  "assets": [
+    {
+      "identity": {
+        "device": 16777234,
+        "inode": 93355018,
+        "mtime_ns": 1793900136116802318,
+        "nlink": 1,
+        "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6c7ea1a7e38e3a7f062df639a5b80947f075ffe6",
+        "size": 1042301,
+        "uid": 501
+      },
+      "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6c7ea1a7e38e3a7f062df639a5b80947f075ffe6",
+      "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+    },
+    {
+      "identity": {
+        "device": 16777234,
+        "inode": 93355017,
+        "mtime_ns": 1793900135451353752,
+        "nlink": 1,
+        "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6d1cbeee0f20b3d9449abfede4726ed8212e3aee",
+        "size": 456318,
+        "uid": 501
+      },
+      "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6d1cbeee0f20b3d9449abfede4726ed8212e3aee",
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    }
+  ],
+  "environment": {
+    "MKL_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": ".",
+    "interpreter": ".venv/bin/python",
+    "version": "3.13.12"
+  },
+  "forecast": {
+    "RSS_bytes": 268435456,
+    "cost": "Two public assets 1498619B + exact source/metadata pins, <=8MiB total input; complete 50256 regular-ID length vector/UTF8-ID list/histogram and symbolic buffers <=2MiB whole output; no tensor/weight files.",
+    "seconds": 30,
+    "unmeasured": true
+  },
+  "kind": "original_NEW_read_only_public_GPT2_vocabulary_byte_metadata_v1",
+  "limits": {
+    "entry_bytes": 10739515392,
+    "input_bytes": 8388608,
+    "output_bytes": 2097152,
+    "reserve_bytes": 8589934592,
+    "rss_limit_bytes": 4294967296,
+    "timeout_seconds": 120
+  },
+  "native_descriptor": {
+    "implementation": "tiktoken",
+    "name": "gpt2",
+    "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+    "special_token_policy": "ordinary_text",
+    "special_tokens": {
+      "<|endoftext|>": 50256
+    },
+    "split_unit": "raw_text",
+    "version": "0.14.0",
+    "vocab_size": 50257,
+    "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+  },
+  "native_descriptor_path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-plan.json",
+  "new_roles": 0,
+  "no_Torch_tokenizer_model_corpus_scoring_RNG_calls": true,
+  "no_model_component_or_quality_admission": true,
+  "no_replay_no_retry": true,
+  "no_unseen_full_binding_list_claim": true,
+  "predecessor_future_bindings": 1269,
+  "prospective_future_bindings": 1271,
+  "scope": "public_vocabulary_metadata_only",
+  "source_and_metadata_pins": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/vocabulary-bytes001.py",
+      "sha256": "a2722f312c803682ce23bc689ac40e723913ab4060c35d2347bf6b65a38a4d82",
+      "size": 12596
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/vocabulary-review001.py",
+      "sha256": "8916e23456999045f264072f889b412b256a2bf00036fcd90acd2173374c0e28",
+      "size": 12911
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+      "size": 62
+    },
+    {
+      "path": "src/research/__init__.py",
+      "sha256": "4b0d5f73d0329af534851579ea1721ef64c05167516bc212b2e520aa0dd96423",
+      "size": 63
+    },
+    {
+      "path": "src/research/cpu_prerequisite_guard.py",
+      "sha256": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+      "size": 3982
+    },
+    {
+      "path": "src/data/loaders.py",
+      "sha256": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+      "size": 7960
+    },
+    {
+      "path": "research/gpt2_prefix_tokenizer_v1/codec.py",
+      "sha256": "23a04a78fd289685e4ae746409d95bb24a952d58b8e3508461a9491ebfce2704",
+      "size": 3034
+    },
+    {
+      "path": ".venv/lib/python3.13/site-packages/tiktoken_ext/openai_public.py",
+      "sha256": "954392738e60d0fb6dca1dad80872efc47c8e2733babecbbf0a23970ed66c2cb",
+      "size": 5613
+    },
+    {
+      "path": ".venv/lib/python3.13/site-packages/tiktoken/load.py",
+      "sha256": "43c3cfb29dc48a74e70e0c85bb01cfd96a3de069a98de8778ccab7f72a2836cc",
+      "size": 5887
+    },
+    {
+      "path": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-plan.json",
+      "sha256": "d15be136c3ac75a70b29ad7afa2a091d2aaf7572307aecfffb0ffc1e592a5730",
+      "size": 125117
+    },
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/physical-data-proof001/plan.json",
+      "sha256": "7fd47569b6fc4f42728e1d0d539a48b6286d7854075d83f15b26f5e4061d6703",
+      "size": 5090
+    },
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/physical-data-proof001-acceptance.json",
+      "sha256": "80d4f7704f46b90db53faeaa8eb3ded81397e7eccc13109f98a4ad259bba164b",
+      "size": 1240
+    }
+  ],
+  "source_gate_required_first": "research/tokenizer-evidence/byte-composition-boundary-001/vocabulary-source001"
+}

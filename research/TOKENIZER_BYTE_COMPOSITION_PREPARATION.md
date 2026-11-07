@@ -1,3 +1,56 @@
+# Byte composer component SOURCE implemented; finite math proof next
+
+research/byte_composer_v1.py is written and its original AST gate passed. It has
+never been imported or executed. The source-cost/control plan independently passed:
+259x15 lookup, six tanh convolution widths, 525 pooled features, one highway and a
+256 projection; 725,235 parameters in 18 tensors are SOURCE predicates only.
+Read [component review](tokenizer-evidence/byte-composition-boundary-001/component-source001-review.md),
+[completed002](tokenizer-evidence/byte-composition-boundary-001/continuation-completed002.json) and
+[next independent finite math proof](tokenizer-evidence/byte-composition-boundary-001/next-source-handoff003.md).
+
+The exact vocabulary inspection passed, including native hash, maximum128 bytes
+and344 invalid standalone UTF8 pieces. No tokenizer/corpus/Torch/model/oracle/RNG
+calls. Five new sources total44,165B, future1,274 preserves1,269; scientificruntime
+1,211/closedmodelproof1,236 unchanged. All original gates/commands/plans/sources
+closed/no replay/retry. No initializer role assigned, model or quality launch.
+
+Next implement the actual-shape independent scalar/analytic-gradient proof and
+necessary admission, then ORIGINAL functional test once after complete fixed
+correctness/resource gates. No unrelated preparation stages. The complete future
+output envelope31,675,383,808B is UNFROZEN; currentfree~34.95GB covers it. Planned
+full-model RSS3,893,252,348B is unmeasured and has only~383MiB margin, so it does
+not admit execution. Current SOURCE/proof planning requirement remains notes+
+reserve/headroom10,739,515,392B; no capacity deficit/cleanup trigger. All evidence/
+assets/older weights retained; native/holdout/future_two unchanged. Earlier entries
+are historical.
+
+# Original public vocabulary metadata accepted; source-cost/control design next
+
+The independent source gate, original read-only public-vocabulary inspection and
+saved-metadata reviewer all exited 0. All 50,256 regular IDs match ordered public
+merge ranks and the unchanged native vocabulary hash. Maximum token length is
+128 bytes; 344 tokens are invalid standalone UTF-8, so raw-byte composition must
+preserve bytes. NUL is ordinary input, distinct from any padding. Special ID
+50,256 stays separate; ordinary literal text and GPT2 output identity are unchanged.
+
+Read [measured metadata review](tokenizer-evidence/byte-composition-boundary-001/vocabulary-bytes001-review.md),
+[completed001](tokenizer-evidence/byte-composition-boundary-001/continuation-completed001.json) and
+[next source-cost/control design](tokenizer-evidence/byte-composition-boundary-001/next-source-handoff002.md).
+Original parser/gates/plans/guards/STOPs are closed/no replay/retry; no asset reparse.
+No tokenizer functions, corpus, Torch, model, scoring, oracle, RNG, tensor/weight
+files or roles. Two sources add 25,507B; future 1,271 preserves 1,269, old closed
+model-proof 1,236/scientific runtime 1,211 unchanged. Metadata ran 0.171s / 59.5MB
+RSS; all fixed guards passed, original output 169,926B below 2MiB.
+
+Exact byte lookup is feasible. Next complete minimal component/API, discriminating
+same-composer nonlexical control, initialization/grouping and FULL cost on paper/
+source math before component/model code. Max-length and padding/byte-position
+working sets are explicit; fewer table weights do not imply faster training.
+No component/model/science execution, quality budget/freeze/launch or gain admitted.
+Free ~34.96GB covers 10,739,515,392B notes/reserve/headroom; no storage deficit or
+cleanup trigger. All public assets/current evidence/older protected weights retained.
+Native/holdout/future_two unchanged; TOP stays closed failed. Earlier text historical.
+
 # Byte-composed inputs at fixed GPT2 targets: applicability/source question only
 
 The original TOP finite proof is CLOSED_FAILED; its independent complete review

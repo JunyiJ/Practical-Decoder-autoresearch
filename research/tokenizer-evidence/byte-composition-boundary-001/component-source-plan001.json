@@ -1,0 +1,136 @@
+{
+  "architecture": {
+    "begin_code": 257,
+    "byte_codes": [
+      0,
+      255
+    ],
+    "byte_dimension": 15,
+    "convolution": "ordinary unfolded FP32 matrix multiplication; tanh; valid-window masked amax",
+    "end_code": 258,
+    "filter_channels": [
+      25,
+      50,
+      75,
+      100,
+      125,
+      150
+    ],
+    "filter_widths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "highway_gate": "sigmoid",
+    "highway_gate_bias": -2,
+    "highway_hidden": "ReLU",
+    "highway_layers": 1,
+    "invalid_window_sentinel": -2,
+    "learned_symbols": 259,
+    "lookup": "ordinary small-table embedding, fixed zero padding through mask; no native grouped-embedding reuse",
+    "max_code_length_with_boundaries": 130,
+    "max_tokens": 1024,
+    "no_valid_windows_feature": 0,
+    "output_width": 256,
+    "padding_code": 256,
+    "pooled_width": 525,
+    "projection": "525 to 256, no bias",
+    "special_code": 259,
+    "state_cache_optimizer_model_adapters": false
+  },
+  "complete_future_output_envelope_UNFROZEN": {
+    "H200_cap_each": 134217728,
+    "RAW_cap_each": 536870912,
+    "all_metadata_bytes": 536870912,
+    "eighteen_quality_RAW_H200_bytes": 12079595520,
+    "entry_target_bytes": 31675383808,
+    "extra_headroom_bytes": 2147483648,
+    "generated_state_archives_bytes": 3623878656,
+    "no_roles_LR_values_freeze_launch_or_retirement": true,
+    "real_four_twenty_archives_bytes": 4026531840,
+    "reserve_bytes": 8589934592,
+    "serialization_overlap_bytes": 671088640,
+    "time_charge_rule": "Primary math <=600s; 3 generated-state arms <=600s each; 6 real prerequisites <=600s each; prospective 18 full trajectories <=7200s each; 9 fresh serving <=600s whole; census/statistics each <=120s. These are planning ceilings, no new measured runtime or launch budget."
+  },
+  "construction_plan": {
+    "initialization": "Q/convolution/highway weights and ordinary biases uniform[-.05,.05]; transform-gate bias uniform[-2.05,-1.95]; new projection uniform[-1/sqrt(525),+1/sqrt(525)]",
+    "model_later": "Genuine native CPU child draws first; own tree retains common body/readout, removes input table registration and replaces with composer; own true identity/config, no fake cfg/count bypass. Not implemented.",
+    "no_global_RNG_draws_or_temporary_Linear_initializers": true,
+    "paired_composers_identical_private_initialization": true,
+    "private_CPU_initializer_unassigned": true
+  },
+  "control": {
+    "arms": [
+      "native",
+      "nonlexical_code_same_composer",
+      "raw_byte_composer"
+    ],
+    "code_rule": "Per-byte-length eight-round balanced Feistel permutation on 8*L bits, two 4*L-bit halves, SHAKE256 round function domain/one future private initializer/length/round/right, masked to 4*L bits. Apply to ordinal within sorted regular IDs of that byte length; encode exact L bytes. Length-specific domains; special remains shared symbol. All seeds and actual codes unassigned.",
+    "collision_argument": "Each round invertible; same-length distinct ordinals remain distinct; distinct lengths disjoint. For L=1 all 256 slots occupied and permuted.",
+    "global_byte_permutation_rejected": true,
+    "no_rng_or_code_generation_now": true,
+    "round_function_calls": 402048,
+    "scope_limit": "Length/architecture/parameter/init matched; longer-code byte marginals are not exactly matched. Tests utility of lexical byte coding against this nonlexical coding, not isolated substring-sharing causality."
+  },
+  "evidence": {
+    "local": "input-capacity-boundary-001/result.json and accepted vocabulary-bytes001/result.json",
+    "not_upstream_reproduction_or_local_gain": true,
+    "paper": "https://arxiv.org/pdf/1508.06615v4",
+    "sections": "Model equations 5-8; Table 2 Small; Table 7 highway ablation"
+  },
+  "kind": "byte_composer_source_cost_control_design_v1",
+  "next_component_contract": {
+    "first_API": "component constructor(private seed) and forward only; own parameter validation, serialization/load reject. No target/objective/model/optimizer/cache/scorer/worker adapters",
+    "input": "canonical padded int64 codes[N,L] and int64 lengths[N], 1<=N<=1024, 3<=length<=130, L<=130; starts BOS257, ends EOS258, interior ordinary bytes0..255 or sole special259; all positions after length pad256",
+    "output": "FP32 [N,256], one per input token independently; no sequence context across tokens",
+    "preflight": "All types/shapes/devices/layout/code ranges/lengths/boundaries/special/padding/finite FP32 parameters/autocast validated before differentiable lookup; CPU32/MPS32 only",
+    "required_later_proof": "New independent literal scalar convolution/tanh/pooling/highway/projection forward and all-parameter analytic gradients incl ties, padding and all widths; every constructible backend-specific invalid preservation transaction; fresh exclusive initializer census and complete sources/resources/guards/STOP before any functional import. No old fixture or reference-mode rescue.",
+    "short_tokens": "Widths exceeding actual boundary-inclusive length contribute fixed zero; all other valid-window tanh values pooled, invalid windows masked to -2; amax equal-share tie derivative must be explicit in future oracle"
+  },
+  "no_Torch_model_RNG_or_numerical_execution_admission": true,
+  "optimizer_plan": {
+    "full_finite_gradient_preflight_before_any_mutation": true,
+    "independent_decay": 6e-05,
+    "native_common_policy_unchanged": true,
+    "new_adam": "byte table plus six convolution and two highway biases: AdamW eta, betas(.9,.999), eps1e-6",
+    "new_matrices": "six flattened convolution matrices, two highway matrices and projection: Muon at eta/2 with match_rms_adamw",
+    "not_implemented": true
+  },
+  "parameters": {
+    "byte_table": 3885,
+    "component_parameter_tensors": 18,
+    "component_total": 725235,
+    "convolution_with_bias": 34650,
+    "highway": 552300,
+    "projection": 134400,
+    "prospective_model_AdamW_groups": 52,
+    "prospective_model_Muon_groups": 53,
+    "prospective_model_parameter_tensors": 105,
+    "prospective_model_total": 16351859
+  },
+  "scope": "admit_minimal_component_SOURCE_ONLY_after_independent_review",
+  "working_set_forecast_UNMEASURED": {
+    "MPS_forecast": 3356381436,
+    "RSS_forecast": 3893252348,
+    "body_allowance": 536870912,
+    "byte_embeddings": 7987200,
+    "category_sum": 3356381436,
+    "conv_saved_and_backward": 544768000,
+    "extra_host_clone_allowance": 536870912,
+    "five_parameter_copies": 327037180,
+    "hard_MPS": 6442450944,
+    "hard_RSS": 4294967296,
+    "highway_projection_allowance": 67108864,
+    "lookup_and_ids": 67108864,
+    "max_gradient_or_index_allowance": 4300800,
+    "not_execution_admission": true,
+    "runtime_allowance": 268435456,
+    "six_vocab_tensors": 1235116032,
+    "unfold_patches": 163430400,
+    "warnings": "Only ~383MiB RSS margin; backend workspace/allocator unknown. Implemented harness/lifetimes must be pinned before execution. No fallback to truncation/recompute/detach or tolerance changes.",
+    "workspace_allowance": 134217728
+  }
+}

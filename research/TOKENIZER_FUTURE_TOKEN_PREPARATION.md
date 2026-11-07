@@ -1,3 +1,14 @@
+# Current frontier: byte composer SOURCE implemented; TOP remains closed failed
+
+The separate byte-input direction now has accepted full public vocabulary metadata
+and an implemented, never-executed component source. Read
+[TOKENIZER_BYTE_COMPOSITION_PREPARATION.md](TOKENIZER_BYTE_COMPOSITION_PREPARATION.md)
+and [finite proof handoff](tokenizer-evidence/byte-composition-boundary-001/next-source-handoff003.md).
+Next is its independent forward/gradient proof, not TOP replay or an unrelated
+literature stage. Future sources1,274; closedmodelproof1,236/scientificruntime1,211
+unchanged. No trained quality gain or native change. Earlier TOP records below
+remain closed historical evidence.
+
 # Original TOP model-math proof CLOSED_FAILED; separate byte-input applicability next
 
 The original admitted outer entry (pid 80142/session 32335) exited 1 at its
