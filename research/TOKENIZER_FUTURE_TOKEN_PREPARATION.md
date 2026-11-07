@@ -1,3 +1,31 @@
+# TOP source trace complete; own target component SOURCE prepared only
+
+Bounded read-only author trace read12 source/config versions132603B. Current
+Flame labels shift once; current FLA distance0..W-1 means physical future1..W,
+nearest occurrence per type. Flame pins a different older FLA gitlink; no claim
+of historical paper-run reproduction. Padding/tail/fused-kernel behavior remains
+unqualified. Read [trace](tokenizer-evidence/future-token-preparation-001/top-source-trace001.md)
+and exact commit/blob [provenance](tokenizer-evidence/future-token-preparation-001/top-source-trace001-provenance.json).
+
+New research/top_proximity_targets_v1.py is an explicit independent future-only
+sparse target contract, no model/kernel/scorer dependencies, padding/OOV/partial
+tail rejected, immutable rows and Python-float proximity masses. AST parse only;
+NO import, function/oracle execution or runtime acceptance. It is a local contract,
+not a reproduction or rescue of the closed future-token model/index/CE fixtures.
+
+Next complete NEW standalone stdlib proof/reviewer sources, all concrete mutation
+payloads and once-only pins/guard/attempt/STOP plan BEFORE execution. [Source plan](tokenizer-evidence/future-token-preparation-001/top-target-component-source-plan001.json)
+contains12 literal positives/25 rejection labels/37 unique IDs, exact expected
+rows, independent Decimal80 mass oracle specification and complete CPU/output
+forecast. Harness/reviewer not yet implemented or admitted; no seed roles/census.
+
+[Completed008](tokenizer-evidence/future-token-preparation-001/continuation-completed008.json)
+records1249futurebindings preserving1248 predecessors; closedmodelproof1236 and
+scientificruntime1211 unchanged. Zero new corpus/Torch/model/RNG/Triton/tests/
+scoring/weights/deletions/retirement. TOP model/science/quality still unqualified;
+extra head cost and original contrary evidence remain. Native/holdout unchanged,
+no numerical worker launched. Earlier entries historical.
+
 # Post-data evidence boundary complete; TOP target/caller SOURCE review next
 
 TRAIN-ONLY offset entropy/ambiguity counts were rejected: no outcome discriminates
