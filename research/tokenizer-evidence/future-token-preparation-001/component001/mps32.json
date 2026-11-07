@@ -1,0 +1,275 @@
+{
+  "exact_literal_alignment_and_output_storage": true,
+  "input_gradslot_preservation": true,
+  "rows": [
+    {
+      "arm": "native_next",
+      "auxiliary_abs_error": 0.0,
+      "case": "one_position",
+      "forward_abs_error": 1.3307664703532396e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        6.068549146531765e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 1.1309031386766226,
+      "primary_abs_error": 1.3307664703532396e-07,
+      "training_loss": 1.1309030055999756
+    },
+    {
+      "arm": "duplicate_next",
+      "auxiliary_abs_error": 1.534804983105431e-07,
+      "case": "one_position",
+      "forward_abs_error": 1.4327857256191123e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        3.034274573265883e-08,
+        4.034873246627768e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 1.1206000091919637,
+      "primary_abs_error": 1.3307664703532396e-07,
+      "training_loss": 1.1205998659133911
+    },
+    {
+      "arm": "future_two",
+      "auxiliary_abs_error": 1.534804983105431e-07,
+      "case": "one_position",
+      "forward_abs_error": 1.4327857256191123e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        3.034274573265883e-08,
+        4.034873246627768e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 1.1206000091919637,
+      "primary_abs_error": 1.3307664703532396e-07,
+      "training_loss": 1.1205998659133911
+    },
+    {
+      "arm": "native_next",
+      "auxiliary_abs_error": 0.0,
+      "case": "two_batches",
+      "forward_abs_error": 7.462727369400568e-08,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        1.1907146352241327e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 2.5749114305995637,
+      "primary_abs_error": 7.462727369400568e-08,
+      "training_loss": 2.57491135597229
+    },
+    {
+      "arm": "duplicate_next",
+      "auxiliary_abs_error": 1.4176012319566667e-07,
+      "case": "two_batches",
+      "forward_abs_error": 3.356642475083049e-08,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        5.953573176120663e-09,
+        5.197918106353283e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 2.4525789878874327,
+      "primary_abs_error": 7.462727369400568e-08,
+      "training_loss": 2.4525790214538574
+    },
+    {
+      "arm": "future_two",
+      "auxiliary_abs_error": 6.22872633471161e-08,
+      "case": "two_batches",
+      "forward_abs_error": 1.2537929450218144e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        5.953573176120663e-09,
+        6.239025338028448e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 2.650495654554099,
+      "primary_abs_error": 7.462727369400568e-08,
+      "training_loss": 2.6504955291748047
+    },
+    {
+      "arm": "native_next",
+      "auxiliary_abs_error": 0.0,
+      "case": "flat_heads",
+      "forward_abs_error": 1.7506582672410786e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        2.7093020327217943e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 2.3978952727983707,
+      "primary_abs_error": 1.7506582672410786e-07,
+      "training_loss": 2.397895097732544
+    },
+    {
+      "arm": "duplicate_next",
+      "auxiliary_abs_error": 1.7506582672410786e-07,
+      "case": "flat_heads",
+      "forward_abs_error": 1.7506582672410786e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        1.3546510163608971e-09,
+        1.3546510163608971e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 2.3978952727983707,
+      "primary_abs_error": 1.7506582672410786e-07,
+      "training_loss": 2.397895097732544
+    },
+    {
+      "arm": "future_two",
+      "auxiliary_abs_error": 1.7506582672410786e-07,
+      "case": "flat_heads",
+      "forward_abs_error": 1.7506582672410786e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        1.3546510163608971e-09,
+        1.3546510163608971e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 2.3978952727983707,
+      "primary_abs_error": 1.7506582672410786e-07,
+      "training_loss": 2.397895097732544
+    },
+    {
+      "arm": "native_next",
+      "auxiliary_abs_error": 0.0,
+      "case": "signed_heads",
+      "forward_abs_error": 3.2093537782884596e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        1.2524581254058642e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 5.06122335102571,
+      "primary_abs_error": 3.2093537782884596e-07,
+      "training_loss": 5.061223030090332
+    },
+    {
+      "arm": "duplicate_next",
+      "auxiliary_abs_error": 3.009507443252346e-08,
+      "case": "signed_heads",
+      "forward_abs_error": 9.299842762544586e-08,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        6.262290627029321e-09,
+        6.143130809599384e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 4.313832190021592,
+      "primary_abs_error": 3.2093537782884596e-07,
+      "training_loss": 4.3138322830200195
+    },
+    {
+      "arm": "future_two",
+      "auxiliary_abs_error": 1.0614411394271883e-07,
+      "case": "signed_heads",
+      "forward_abs_error": 4.519583249873449e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        6.262290627029321e-09,
+        5.066679700793664e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 5.206689332878735,
+      "primary_abs_error": 3.2093537782884596e-07,
+      "training_loss": 5.20668888092041
+    },
+    {
+      "arm": "native_next",
+      "auxiliary_abs_error": 0.0,
+      "case": "sharp_targets",
+      "forward_abs_error": 4.85922679177575e-09,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        1.7538752700163585e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 0.010986221751612575,
+      "primary_abs_error": 4.85922679177575e-09,
+      "training_loss": 0.010986226610839367
+    },
+    {
+      "arm": "duplicate_next",
+      "auxiliary_abs_error": 3.231188561159115e-07,
+      "case": "sharp_targets",
+      "forward_abs_error": 1.0837273478614406e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        8.769376350081792e-09,
+        1.262067240992426e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 4.529162038456963,
+      "primary_abs_error": 4.85922679177575e-09,
+      "training_loss": 4.5291619300842285
+    },
+    {
+      "arm": "future_two",
+      "auxiliary_abs_error": 3.4509011821726165e-08,
+      "case": "sharp_targets",
+      "forward_abs_error": 2.0149780594058697e-08,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        8.769376350081792e-09,
+        1.262067240992426e-08
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 0.02916203845696322,
+      "primary_abs_error": 4.85922679177575e-09,
+      "training_loss": 0.029162058606743813
+    },
+    {
+      "arm": "native_next",
+      "auxiliary_abs_error": 0.0,
+      "case": "shifted_heads",
+      "forward_abs_error": 2.6254493334931794e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        6.969702842640757e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 4.621660495088879,
+      "primary_abs_error": 2.6254493334931794e-07,
+      "training_loss": 4.621660232543945
+    },
+    {
+      "arm": "duplicate_next",
+      "auxiliary_abs_error": 1.6639997379996885e-08,
+      "case": "shifted_heads",
+      "forward_abs_error": 3.7431782118346746e-09,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        3.4848514213203785e-09,
+        3.596732522925805e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 4.042626861500747,
+      "primary_abs_error": 2.6254493334931794e-07,
+      "training_loss": 4.042626857757568
+    },
+    {
+      "arm": "future_two",
+      "auxiliary_abs_error": 9.611285722854745e-08,
+      "case": "shifted_heads",
+      "forward_abs_error": 1.5520254059708805e-07,
+      "forward_pass": true,
+      "gradient_abs_max": [
+        3.4848514213203785e-09,
+        3.596732522925805e-09
+      ],
+      "gradient_elementwise_pass": true,
+      "oracle": 4.5634601948340805,
+      "primary_abs_error": 2.6254493334931794e-07,
+      "training_loss": 4.563460350036621
+    }
+  ],
+  "tolerance": [
+    3e-05,
+    4e-06,
+    4e-05
+  ]
+}

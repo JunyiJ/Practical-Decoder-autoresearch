@@ -1865,3 +1865,27 @@ Unrelated evidence-qualified source/literature work remains authorized. Carry
 broad/interaction allocation forward; do not count this review as numerical
 exploration. Runtime1211/future1224 sources unchanged; native/holdout unchanged,
 no numerical worker active. Unchanged heartbeats need no audit, record or commit.
+
+
+## Human-directed new objective direction: auxiliary future-token supervision
+
+The human directed active research beyond the closed CE diagnostic branch.
+Selected a new two-token auxiliary objective against BOTH native next-token and
+matched duplicate-next auxiliary-head controls. Evidence review read original
+train-fit/dropout/context/table findings and Gloeckle2404.19737v1 sections2/3.1/
+3.5/3.7/4.1/5.1-5.2, including small-model regressions and scope limits. No local
+gain, free compute or inference-speed claim. This is a new training-representation
+question; all CE and closed-study protections remain unchanged.
+
+The new tiny objective/target component passed54 CPU64/CPU32/MPS32 comparisons and
+81 invalid rejections, unchanged fixed predicates and caller input/gradslot/RNG
+preservation. Guard1.2985s/RSS417906688B/MPS11354112B passed; command CLOSED/no replay.
+No model/corpus/checkpoint/quality seed/RNG draws/weight outputs or deletions.
+Future1226 bindings preserve1224; old scientific runtime1211 remains immutable.
+
+Next actual-model SOURCE integration with copied training-only final block/norm,
+shared single readout and sequential head backward; then new fixture-role census
+and generated proof after full source/case/resource gates. The main continuation
+advances this source work instead of global CE-wait status. No full model/training
+or quality freeze is yet admitted. See TOKENIZER_FUTURE_TOKEN_PREPARATION.md and
+future-token-preparation-001/evidence-review001.md/actual-model-source-handoff001.md.

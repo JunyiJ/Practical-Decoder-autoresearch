@@ -1,0 +1,14 @@
+{
+  "no_torch_or_component_or_harness_imports_in_source_review": true,
+  "plan_sha256": "f47e829967a5969728c8a8d2348bbea023e0fe279d50759c66320670508123e9",
+  "source_review": [
+    "Genuine F.cross_entropy only; no replacement arithmetic, native model or scorer imports. Explicit right-two sequences with all IDs validated; no wrap or padding. Caller owns split boundaries; causal origins of supplied logits are unproved.",
+    "Three arms have identical primary reporting; duplicate-next and future-two have identical 0.5 weights and auxiliary-logit interface, differing only target offset. Full model will require native and duplicate-head controls.",
+    "Independent scalar math.fsum shifted LSE/analytic gradients for every actual coordinate and native/0.5 coefficients; six new literal families B1-2/T1-9/V3-23. Exact hardcoded alignment/storage check.",
+    "26 typed/shape/range/device/nonfinite/missing-aux/native-extra-aux/bounds rejections plus autocast each backend, checking original inputs/gradslots. No CPU64-to-MPS conversion; outputs transfer CPU before FP64 comparisons.",
+    "All measurements/pairs published before numeric rejection. Fixed CE3e-5 and gradient4e-6/4e-5 unchanged; CPU64 strict oracle separate. Global CPU/MPS RNG finally restored and asserted. No random seed/generator/draw calls found by AST.",
+    "Nonblocking shared worker flock and 120s CPU/600s MPS/4GiB RSS/6GiB MPS/8GiB reserve/2MiB metadata gates;1GiB RSS+256MiB MPS/30s forecast. Complete metadata+reserve+extra2GiB fits35.13GB. No tensor files or deletion need.",
+    "No old source/weight audits, tests, numerical cases or campaigns replayed. 1224 predecessors remain untouched. Two new sources1226 future bindings, not changed scientific runtime1211. Tiny success cannot admit real model or full quality."
+  ],
+  "status": "qualified_source_cases_fixed_predicates_resources_before_first_execution"
+}

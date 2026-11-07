@@ -1,0 +1,128 @@
+{
+  "arms": [
+    "native_next",
+    "duplicate_next",
+    "future_two"
+  ],
+  "case_source": "Exact fresh literal formulas and sharp/shift controls in pinned cases(); no old numerical cases",
+  "cases": [
+    {
+      "batch": 1,
+      "name": "one_position",
+      "positions": 1,
+      "scale": 1,
+      "vocab": 3
+    },
+    {
+      "batch": 2,
+      "name": "two_batches",
+      "positions": 3,
+      "scale": 2,
+      "vocab": 7
+    },
+    {
+      "batch": 2,
+      "name": "flat_heads",
+      "positions": 5,
+      "scale": 0,
+      "vocab": 11
+    },
+    {
+      "batch": 1,
+      "name": "signed_heads",
+      "positions": 7,
+      "scale": 4,
+      "vocab": 17
+    },
+    {
+      "batch": 2,
+      "name": "sharp_targets",
+      "positions": 4,
+      "scale": 8,
+      "vocab": 19
+    },
+    {
+      "batch": 1,
+      "name": "shifted_heads",
+      "positions": 9,
+      "scale": 3,
+      "vocab": 23
+    }
+  ],
+  "comparisons": 54,
+  "equations": {
+    "duplicate": "0.5*(mean CE(primary,y[t+1])+mean CE(aux,y[t+1]))",
+    "future": "0.5*(mean CE(primary,y[t+1])+mean CE(aux,y[t+2]))",
+    "inference": "Only native next-token primary CE; auxiliary is training-only; no model implementation yet",
+    "native": "mean CE(primary,y[t+1])"
+  },
+  "execution_sources": {
+    "research/block_norm_v1/mps_guard.py": "3978e8b9411e206a62f86fed913e857cb979b18db2f2bbec787be95d6d1e17c4",
+    "research/future_token_objective_v1.py": "6b27a9af3de7c5fecb15552a89fea1cb19d9105d595ca60f4ac58dbf22f774fc",
+    "research/tokenizer-evidence/future-token-preparation-001/component001.py": "00aa9ac5de7b8f2292b077a540b3c9677a00beac851a8cd86e2eaefa2129a085",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+    "src/research/memory_guard.py": "a6617b8c0147607c8f3c4cf0d43ba278589b1e9f14c1422aaf6440de3524eefd"
+  },
+  "forecast": {
+    "cpu_phase_seconds": 10,
+    "free_bytes": 35132022784,
+    "metadata_bytes": 2097152,
+    "mps_bytes": 268435456,
+    "retained_tensor_bytes": 0,
+    "rss_bytes": 1073741824,
+    "whole_seconds": 30
+  },
+  "future_source_bindings": 1226,
+  "kind": "new_tiny_future_token_objective_component_v1",
+  "limits": {
+    "cpu_phase_seconds": 120,
+    "entry_with_extra_headroom_bytes": 10739515392,
+    "metadata_bytes": 2097152,
+    "mps_bytes": 6442450944,
+    "mps_whole_seconds": 600,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "negative_counts": {
+    "cpu32": 27,
+    "cpu64": 27,
+    "mps32": 27
+  },
+  "new_sources": [
+    "research/future_token_objective_v1.py",
+    "research/tokenizer-evidence/future-token-preparation-001/component001.py"
+  ],
+  "no_closed_CE_replay_or_rescue": true,
+  "no_models_optimizer_corpus_weights_scoring_bootstrap_seed_roles_rng_draws": true,
+  "no_retry_or_postoutcome_source_case_tolerance_rescue": true,
+  "predecessor": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/ce-error-budget001/plan.json",
+    "predecessors_untouched_not_reaudited": true,
+    "sha256": "0804c883b9a145540a03c59e5967bddcfb019be74aa512fd891adc2587eb9bdb",
+    "source_count": 1224
+  },
+  "predicates": {
+    "all_gradients_elementwise": true,
+    "cpu64": {
+      "forward_atol": 1e-11,
+      "gradient_atol": 1e-12,
+      "gradient_rtol": 1e-10
+    },
+    "cpu_mps": {
+      "forward_atol": 3e-05,
+      "forward_rtol": 0.0,
+      "gradient_atol": 4e-06,
+      "gradient_rtol": 4e-05
+    },
+    "exact_alignment_and_output_storage": true,
+    "fp32": {
+      "forward_atol": 3e-05,
+      "gradient_atol": 4e-06,
+      "gradient_rtol": 4e-05
+    },
+    "input_populated_gradslot_cpu_mps_rng_unchanged": true
+  },
+  "scope": "Target alignment and supplied-logit objective gradients only, not actual model causality/state/quality",
+  "torch_git": "5c4886908584029761b579af026dcfb627c84070",
+  "torch_version": "2.14.1"
+}
