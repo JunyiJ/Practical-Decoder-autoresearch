@@ -1,0 +1,33 @@
+{
+  "complete_arms": 0,
+  "completed_real_updates_before_failure": 4,
+  "correction_scope": "New additive harness checks persistent RoPE buffers in state_dict and reconstructible nonpersistent causal masks separately. Runtime/model/optimizer/transport unchanged. New fixture roles, fresh root; original command remains closed.",
+  "exception": "KeyError('transformer.h.0.attn.causal_mask')",
+  "full_validation_scored": false,
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-resume001/guard.json",
+    "sha256": "9bbac428a9fc212c764ce7ae624c7131ec4b7cd9adff24e819a527f67acf4f64"
+  },
+  "no_retry": true,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-resume001/plan.json",
+    "sha256": "4d238d822c2b75ad6233ceb3a9043c0dae2cd1d018cb6b8824af3049e68a4522"
+  },
+  "quality_result": false,
+  "roles_used": [
+    600520,
+    600521,
+    600522
+  ],
+  "sampled_validation_target_evaluations": 4096,
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-resume001.py",
+    "sha256": "44e7d1c35f2096ac50d69dfcde00dfcfe5bcfc385d6931d9433ff2f33710994f"
+  },
+  "status": "closed_harness_nonpersistent_buffer_lookup_failure",
+  "terminal": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-resume001/STOP",
+    "sha256": "9a3a7a0ad466fe13b7b1152a27be532836d399bade3410f05de4e44d9f616a90"
+  },
+  "training_target_evaluations": 4096
+}

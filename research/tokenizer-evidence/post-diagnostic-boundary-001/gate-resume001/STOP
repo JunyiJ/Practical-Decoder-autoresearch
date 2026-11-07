@@ -1,0 +1,7 @@
+{
+  "error": "KeyError('transformer.h.0.attn.causal_mask')",
+  "no_retry": true,
+  "quality_result": false,
+  "status": "closed_failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-resume001.py\", line 133, in main\n    m,o,e,d,s=start(cfg);history=[];stream=advance(m,o,e,d,s,0,4,history);repeats.append(endpoint(m,o,e,d,cfg,history,stream))\n                                                                                         ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-resume001.py\", line 72, in endpoint\n    for n,t in m.named_buffers():require(torch.equal(hp['model_state'][n],t),'H200 changed nonlearned buffer')\n                                                     ~~~~~~~~~~~~~~~~~^^^\nKeyError: 'transformer.h.0.attn.causal_mask'\n"
+}
