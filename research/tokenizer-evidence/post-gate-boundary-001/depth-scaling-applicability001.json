@@ -1,0 +1,371 @@
+{
+  "decision": "Reject immediate depth-times-scaling numerical panel: no new local bottleneck or validated Muon depth prescription sufficient to justify replaying losing depth/branch family. Does not prove all depth designs fail. No further optimizer instrumentation admitted.",
+  "derivation": [
+    "Changing d192 to256 changes width LR scales from1/sqrt(3) to1/2,readout divisor3 to4,table sizes and attention geometry;old body comparisons are not pure depth.",
+    "For a hypothetical fixed positive scalar beta multiplying an otherwise identical gradient history,Adam normalized update beta*m/(beta*sqrt(v)+epsilon)=m/(sqrt(v)+epsilon/beta),beforedecay;branch scaling is not exactly an LR change at finite epsilon. Actual changed forward trajectories do not share gradient histories.",
+    "Idealized zero-epsilon exact-arithmetic normalization can cancel a positive scalar in Muon momentum/normalization,but matrix-coupled Newton-Schulz/BF16/finite eps,shape RMS matching,clipping and changed trajectories prevent importing an entrywise Adam depth rule as a local theorem. This is an applicability limit,not a new optimizer proof or backend defect.",
+    "Bordelon vision/SGD-Adam transfer and TPVI multilayer-branch/training-time caveats do not imply a small4-to7layer MLA/SwiGLU/Muon gain. Native fixed-halfcomplete-branch losses and later gate results are adverse local evidence."
+  ],
+  "fixed_half_original_acceptance_and_curves": [
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/00/accepted.json",
+        "sha256": "13979a6e4f1d6d5f56183630ab6ed20775748f6471c6a55b8b9ed4b31b5ddb3c"
+      },
+      "completed_steps": 1200,
+      "curve": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 0,
+          "train_ce_loss": 10.873092651367188,
+          "val_ce_loss": 10.862798976898194
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 300,
+          "train_ce_loss": 4.676922798156738,
+          "val_ce_loss": 5.335559129714966
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 600,
+          "train_ce_loss": 4.112064361572266,
+          "val_ce_loss": 4.9328094005584715
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 900,
+          "train_ce_loss": 3.6239724159240723,
+          "val_ce_loss": 4.822299003601074
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1199,
+          "train_ce_loss": 3.407378911972046,
+          "val_ce_loss": 4.750212335586548
+        }
+      ],
+      "gain_kind": "unit",
+      "h200_ce": 4.712135067433241,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/00/metrics.jsonl",
+        "sha256": "4fdcd1af58e06682e659e662f47a907f2bc7dd97d75f5b95e294c1d1352a5d50"
+      },
+      "seed": 199410011,
+      "slot": 0
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/01/accepted.json",
+        "sha256": "dd56346f4eae1e9de88252ec926bdd59ff0bac0f2fe9de1755a897d7e6403f7a"
+      },
+      "completed_steps": 1200,
+      "curve": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 0,
+          "train_ce_loss": 10.868261337280273,
+          "val_ce_loss": 10.866143894195556
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 300,
+          "train_ce_loss": 4.769510746002197,
+          "val_ce_loss": 5.418434286117554
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 600,
+          "train_ce_loss": 4.18536376953125,
+          "val_ce_loss": 4.9588463306427
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 900,
+          "train_ce_loss": 3.6641578674316406,
+          "val_ce_loss": 4.845415735244751
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1199,
+          "train_ce_loss": 3.4969139099121094,
+          "val_ce_loss": 4.778333902359009
+        }
+      ],
+      "gain_kind": "fixed_half",
+      "h200_ce": 4.740863758615851,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/01/metrics.jsonl",
+        "sha256": "cf16b55bf21c8dffa155c709d06df7feccd244e83c225a1a7ff8ebc7397dc822"
+      },
+      "seed": 199410011,
+      "slot": 1
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/02/accepted.json",
+        "sha256": "e7dac747d8359f5648591d08f566f3d8898367ca7c2768b0b836ee50fca6dc82"
+      },
+      "completed_steps": 1200,
+      "curve": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 0,
+          "train_ce_loss": 10.870851516723633,
+          "val_ce_loss": 10.830438041687012
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 300,
+          "train_ce_loss": 4.7249555587768555,
+          "val_ce_loss": 5.428906059265136
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 600,
+          "train_ce_loss": 4.289178848266602,
+          "val_ce_loss": 4.942491912841797
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 900,
+          "train_ce_loss": 3.8558642864227295,
+          "val_ce_loss": 4.848437118530273
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1199,
+          "train_ce_loss": 3.9985146522521973,
+          "val_ce_loss": 4.771585607528687
+        }
+      ],
+      "gain_kind": "fixed_half",
+      "h200_ce": 4.748150799796942,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/02/metrics.jsonl",
+        "sha256": "5ce46a81838cd35bbdd55ac24663a10c64a2a2fb6a1d66c7df28366b74a56e15"
+      },
+      "seed": 199410012,
+      "slot": 2
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/03/accepted.json",
+        "sha256": "a1043c29dcb8457318213fa5660a4ad0d63045bc90140071f54866caaa1f30ed"
+      },
+      "completed_steps": 1200,
+      "curve": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 0,
+          "train_ce_loss": 10.867118835449219,
+          "val_ce_loss": 10.813882541656493
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 300,
+          "train_ce_loss": 4.662373065948486,
+          "val_ce_loss": 5.352561712265015
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 600,
+          "train_ce_loss": 4.2245659828186035,
+          "val_ce_loss": 4.915757942199707
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 900,
+          "train_ce_loss": 3.827388286590576,
+          "val_ce_loss": 4.814311170578003
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1199,
+          "train_ce_loss": 3.946521043777466,
+          "val_ce_loss": 4.74921989440918
+        }
+      ],
+      "gain_kind": "unit",
+      "h200_ce": 4.723844898324018,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/03/metrics.jsonl",
+        "sha256": "e0190070cd990475b97299563f5991078afd80ff1a228c930e57ad8193968ba6"
+      },
+      "seed": 199410012,
+      "slot": 3
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/04/accepted.json",
+        "sha256": "0f6c88b449529315c5927898e434a914a5e4e9700d14b0fa6a66d34ecb2e4146"
+      },
+      "completed_steps": 1200,
+      "curve": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 0,
+          "train_ce_loss": 10.873584747314453,
+          "val_ce_loss": 10.841631889343262
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 300,
+          "train_ce_loss": 4.766141891479492,
+          "val_ce_loss": 5.322301006317138
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 600,
+          "train_ce_loss": 4.444530487060547,
+          "val_ce_loss": 4.96909236907959
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 900,
+          "train_ce_loss": 3.609982490539551,
+          "val_ce_loss": 4.766950798034668
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1199,
+          "train_ce_loss": 3.9195303916931152,
+          "val_ce_loss": 4.74310531616211
+        }
+      ],
+      "gain_kind": "unit",
+      "h200_ce": 4.704536328905343,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/04/metrics.jsonl",
+        "sha256": "e729feea03bf5e2c9a952e4a754c71f023d02ad0798ea8128bfdaea45b9ff7cb"
+      },
+      "seed": 199410013,
+      "slot": 4
+    },
+    {
+      "accepted": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/05/accepted.json",
+        "sha256": "3900c7ef4a053488103d1a9753bba212750d46c41923a136f2d4529a7d748faa"
+      },
+      "completed_steps": 1200,
+      "curve": [
+        {
+          "lr_multiplier": 1.0,
+          "step": 0,
+          "train_ce_loss": 10.874812126159668,
+          "val_ce_loss": 10.85341739654541
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 300,
+          "train_ce_loss": 4.864466667175293,
+          "val_ce_loss": 5.395996379852295
+        },
+        {
+          "lr_multiplier": 1.0,
+          "step": 600,
+          "train_ce_loss": 4.4850263595581055,
+          "val_ce_loss": 5.000122547149658
+        },
+        {
+          "lr_multiplier": 0.7744360902255639,
+          "step": 900,
+          "train_ce_loss": 3.6642701625823975,
+          "val_ce_loss": 4.796003675460815
+        },
+        {
+          "lr_multiplier": 0.1,
+          "step": 1199,
+          "train_ce_loss": 3.993788957595825,
+          "val_ce_loss": 4.761546564102173
+        }
+      ],
+      "gain_kind": "fixed_half",
+      "h200_ce": 4.72432104243529,
+      "metrics": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-branch-scale-quality-v1-001/evidence/quality/05/metrics.jsonl",
+        "sha256": "acaef853fe70c99a19171fbd92fec8e1a48ca5704a14edc51062627b61b32703"
+      },
+      "seed": 199410013,
+      "slot": 5
+    }
+  ],
+  "local_source_facts": {
+    "adam_groups_4_7_layers": [
+      44,
+      74
+    ],
+    "body_geometries": {
+      "deeper": [
+        7,
+        192,
+        504
+      ],
+      "incumbent": [
+        4,
+        256,
+        672
+      ],
+      "shallow": [
+        4,
+        192,
+        1024
+      ]
+    },
+    "body_residual_equations": [
+      "u=x+A(RMS1(x))",
+      "y=u+SwiGLU(RMS2(u))"
+    ],
+    "hidden_matrix_lr": "eta/sqrt(d/64),Muon match_rms_adamw",
+    "muon_groups_4_7_layers": [
+      44,
+      77
+    ],
+    "no_explicit_depth_lr_or_branch_factor": true,
+    "non_matrix_and_table_lr": "eta,AdamW beta(.9,.999) eps1e-6",
+    "readout": "logits=lm_head(final_affine_LN(x))/(d/64);head initial weights multiplied sqrt(d/64)",
+    "unit_branch_gain_all_geometries": true
+  },
+  "metadata_execution_seconds": 0.015033666975796223,
+  "model_or_checkpoint_loads": 0,
+  "new_scoring": false,
+  "observed_at": "2026-11-07T04:21:14.048814+00:00",
+  "optimizer_steps": 0,
+  "output_cap_bytes": 2097152,
+  "quality_seed_use": false,
+  "source_evidence": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/model.py",
+      "sha256": "977eb4a4b8e04ad966248e7f12ab5c21df7df54540b10624bb8ee4e024cd752d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/contract.py",
+      "sha256": "2349b96940b78823dbff795e20e10a578ae0ee39a7f001bd3bcd8e551f28469a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/optimizer.py",
+      "sha256": "e56365bbd01ffb8811585caffcf493a72a4a640feb96141a56178697d5fcb876"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/adamw_beta2_model_v1/runtime/train/_grouping.py",
+      "sha256": "7f65d2f2d6cb5e836b4d9c2719f3664994d790decf1b65e53e85ec2b8b55affe"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/final_ln_scale_model_v1/runtime/train/optimizers.py",
+      "sha256": "8e7cfac392b9fb4d883c2914b79259abf0a6537a66c9a0f73f99ef4ace6bf54b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/branch_scale_model_v1/runtime/models/residual_gain.py",
+      "sha256": "b8056bb64433bbe974caf64ee80003c3ceb6325787afcfb793f845c24f2cf620"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_BODY_ALLOCATION_RESULTS.md",
+      "sha256": "d9b3ad1d5fb8035e23022169414a31967801fea2d196b8a842330a92f49c0801"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_BRANCH_SCALE_PREPARATION.md",
+      "sha256": "aeb51a8400705586ab2b15bca64cfd4bbb14cb4e7bc9be042c31b68431eb4188"
+    }
+  ],
+  "status": "complete_applicability_derivation_reject_immediate_depth_scaling_panel"
+}

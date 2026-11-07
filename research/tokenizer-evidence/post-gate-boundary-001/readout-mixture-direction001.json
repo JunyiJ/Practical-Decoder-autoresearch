@@ -1,0 +1,53 @@
+{
+  "category": "structural_exploration_if_future_quality_panel_runs",
+  "cost_before_any_training": "Two native-size vocab projections/normalizations per token versus one;no second independent vocabulary table is required. B8x128x50257 FP32 dense logits are205852672bytes each;two are411705344bytes BEFORE autograd/temporaries. PeakRSS4GiB/MPS6GiB not yet qualified. MatchedMoC/MoS projection parameters/RAWoptimizer/H200full-state output sizes must be derived,then actual pilots.",
+  "falsifiable_prediction": "After equal bounded finite tuning,the probability mixture improves complete native H200 CE versus EACH native and matched feature-mixture control;otherwise retain native. Exact gates must be frozen before any numerical quality execution.",
+  "hypothesis_inference": "A two-component mixture of next-token probabilities may improve complete native CE by changing the readout probability family,with the same untied vocabulary matrix and unchanged native backbone. A matched mixture-of-contexts control distinguishes probability mixing from added projections/gating.",
+  "immediate_work_bound": "One source/algebra/shape-resource feasibility document <=120s CPU/2MiBmetadata;zero models/optimizersteps/corpus/scoring/checkpoints/qualityseeds. Thenqualifyorrejectcomponentdesign;no automaticcampaign or consentneededwithinstandingauthorization.",
+  "incumbent_changed": false,
+  "literature": {
+    "actually_read": [
+      "2.1 Property1-2/Proposition1/Corollary1",
+      "2.2 high-rank hypothesis and uncertainty",
+      "2.3 expressivity-generalization caveat",
+      "2.4 probability mixture equation",
+      "2.5 mixture-of-contexts equation2",
+      "3 Tables1-2 andmatched-MoC/hyperparameter ablationTable4",
+      "3 Table5rankanalysis"
+    ],
+    "external_result": "The paper motivates probability-space mixtures and reports language-model gains plus a matched feature-mixture control. Those word-level recurrent-model results do not establish local gain.",
+    "limits": "AWD-LSTM/PTB/WT2/word vocab/regularization and optimization differ from shallow nativeBPEMLA/SwiGLU/Muon. True local conditional rank unknown;extra projections/nonlinearity/compute could hurt. No local rank claim follows from paper.",
+    "url": "https://arxiv.org/html/1711.03953v1",
+    "version": "arXiv1711.03953v1"
+  },
+  "local_basis": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_MLA_GATE_RESULTS.md",
+      "sha256": "6b80809070672d36fa89799936aff013026e1ac95c9edc3428d067318d0a93c5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_MOE_RESULTS.md",
+      "sha256": "e564c7425809d592202477f2a2a4feb628f12ded832b04da8f22ff3224bbddab"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_TABLE_RESULTS.md",
+      "sha256": "a814d5a497e4f92c14aac0128576e9094597150d9c32cffa629667a443fcb29d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/body_allocation_model_v1/model.py",
+      "sha256": "977eb4a4b8e04ad966248e7f12ab5c21df7df54540b10624bb8ee4e024cd752d"
+    }
+  ],
+  "local_fact": "Native logits H*W^T/4 with H width256 and untied W[50257,256] have rank<=256 over any set of contexts;log-prob matrix rank<=257 after row normalization. This is an algebraic model-family bound,NOT a measurement of true conditional distribution rank or a diagnosed local quality bottleneck. Gate/MoE internal changes keep this readout family.",
+  "new_quality_panel_admitted": false,
+  "novel_information": "Separates readout-family expressivity from body-only changes;does not repeat routedFFNMoE,attention gating,tabletying or vocabulary reduction. Native untied table,token IDs,data,context and cache semantics remain prospective controls.",
+  "preparation_counts_as_numerical_exploration": false,
+  "prospective_comparison_allowance": "If design qualifies:3arms x3LRscreens plus3sharedfreshseeds x3arms=18retainedpairs with serving/independentstats;no partialpanel,no oldscorepool,no extraLR. Not frozen or launched. Full7200s trajectory guard ceiling would be129600s plus5400s fresh serving and120s stats,prerequisites additional;this is a ceiling,NOT a forecast. Measure actual pilots and retained-output highwater beforefreeze.",
+  "prospective_controls": [
+    "unchanged native single-softmax",
+    "K2 matched mixture-of-contexts before one softmax",
+    "K2 mixture of separately normalized softmax probabilities using shared untied head"
+  ],
+  "status": "select_bounded_readout_family_design_and_resource_feasibility_only",
+  "why_two": "Smallest nontrivial probability mixture;no mixture-count search. Exact context parametrization/initialization/norm-width/optimizer policies must be designed prospectively,not chosen from quality scores."
+}
