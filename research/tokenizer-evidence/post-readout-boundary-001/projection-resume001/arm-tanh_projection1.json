@@ -1,0 +1,79 @@
+{
+  "all_per_target_predicates_passed": true,
+  "archive_references": [
+    {
+      "bytes": 445880161,
+      "kind": "raw_native_readout_projection_v1",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-resume-v1-001/tanh_projection1-prefix-raw.pt",
+      "sha256": "4ceec3f002b6b67e4f12e9c995271f7e31435ef834cf6b78dc45121853f9a861"
+    },
+    {
+      "bytes": 445888993,
+      "kind": "raw_native_readout_projection_v1",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-resume-v1-001/tanh_projection1-final-raw.pt",
+      "sha256": "7c179829a28e35262706dd67e5beb167be47c2e281eb65d7f82cf1f4c0c05c33"
+    },
+    {
+      "bytes": 114338368,
+      "kind": "h200_native_readout_projection_v1",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-resume-v1-001/tanh_projection1-h200.pt",
+      "sha256": "7f4e52dfb11bd6e2f3003a8eea3de4516cb6cabe2c56b0097e98a8c8c51d09a8"
+    }
+  ],
+  "arm": "tanh_projection1",
+  "ema_snapshots": 3,
+  "exact_h200_sha256": "02c9841553c2b21aac9aca09b4a8f877f8307ef376f407aaf45d0a606bbb461a",
+  "exact_serialized_resume": true,
+  "full_private_batch_trace_exact": true,
+  "full_raw_sha256": "80af3902b6ce5d27952b5fffcbb9b2b8c097efb900a119e5e8eb9dd6516cc8fa",
+  "generated_scored_targets": 259,
+  "h200_forgeries": [
+    "kind",
+    "parent_kind",
+    "parent_hash",
+    "parent_size",
+    "snapshots",
+    "optimizer_resume"
+  ],
+  "optimizer_steps": 8,
+  "parameter_tensors": 89,
+  "per_parameter_exposure": 4,
+  "prefix_raw_sha256": "849afe248322bc9933e25dbcc14452da437cd986f0c47261f972af13ff3cef16",
+  "real_corpus_scoring": false,
+  "scorer_cpu_mps_max_error": 1.9073486328125e-06,
+  "state_forgeries": [
+    "kind",
+    "initializer",
+    "architecture",
+    "cfg",
+    "source_identity",
+    "step",
+    "clipping_missing",
+    "exposure",
+    "optimizer_kind",
+    "scheduled_lr",
+    "adam_step",
+    "missing_moment",
+    "moment_shape",
+    "moment_dtype",
+    "moment_nonfinite",
+    "second_moment_negative",
+    "ema_count",
+    "ema_shape",
+    "model_shape",
+    "rope_values",
+    "cpu_rng",
+    "mps_rng",
+    "sampler_inventory",
+    "sampler_encoding",
+    "private_initializer",
+    "clipping_coefficient",
+    "ema_names",
+    "ordered_model_inventory",
+    "adam_epsilon",
+    "sampler_seed",
+    "incomplete_raw"
+  ],
+  "target_only_full_gather_max_error": 0.0,
+  "targets_per_branch": 4096
+}

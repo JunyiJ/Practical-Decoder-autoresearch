@@ -1,4 +1,37 @@
-# Single readout projection: complete-state/scorer sources prepared
+# Single readout projection: serialized state/scorer proof accepted
+
+NEW projection-resume-seed-census001 and projection-resume001 are CLOSED_ACCEPTED.
+Read post-readout-boundary-001/projection-resume001-review.json,
+projection-resume001-archive-closure.json,continuation-completed006.json and all
+original plan/result/guard/STOP receipts. Census63359textfiles/5598118105B/0matches
+passed88.644s/RSS134545408B. All6roles nowUSED generated-only; never reuse them.
+
+All24 generated updates and serialized4vs2+2 complete RAW/H200/EMA3/all88or89
+exposure4/private samplers/globalCPU-MPSRNG/clipping/LR/fulltrace comparisons exact.
+All137 rejections passed:93state/18H200/14smallIO/12score reports. Generated259
+per-target CE/fullgather exact0, CPU-MPSmax3.815e-6<3e-5; NEW34278literal-loss
+math.fsum/windows/tail/blocks/denominators exact. Not real corpus validation losses.
+Guard46.304s/RSS2263564288B/MPS2512191488B and all35CPU phase guards passed.
+1143bindings preserve1141 predecessors; caller globalCPU-MPSRNG restored.
+
+Retain all9 original prefixRAW/finalRAW/H200 archives3016484885B under
+research_runs/tokenizer-readout-projection-resume-v1-001. One-time separate receipt
+review revalidated exact path/size/hash/inode/device/singlelinks without tensor or
+numerical replay. RootSTOP closes this generated fixture and creates NOretirement
+eligibility. Five tiny IO fixture entries, including a known hardlink/symlink and
+64B/23B .tmp, contain no model tensors; preserve them as evidence. Never replay/
+retry/edit closed census/proof sources, clearSTOP or rescue old optimizer response.
+
+Next: SOURCE/admission preparation of smallest own real4-update worker and
+three-arm20-update pilot, reading preserved reference workers without replay.
+Bind own state/scorer/FULL34278 CPUANDMPS/111536bytes/cache/independent acceptance.
+Keep finite4/20 guards rejecting1200. Forecast full retained-output/serialization/
+metadata/reserve/time for all3four+all3twenty workers before freeze, with no credit
+for these retained9proofarchives. Pin/review NEWsource and unused initializer/
+private/train-eval/global role census before execution. No realworker/pilot/quality
+admitted yet. Native incumbent/holdout unchanged; no active worker/storage blocker.
+
+## Complete-state/scorer source preparation (closed historical step)
 
 Five additive files in readout_projection_resume_v1 are SOURCE-prepared. Read
 post-readout-boundary-001/resume-scorer-design001.md,

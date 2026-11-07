@@ -1,0 +1,79 @@
+{
+  "all_per_target_predicates_passed": true,
+  "archive_references": [
+    {
+      "bytes": 445092583,
+      "kind": "raw_native_readout_projection_v1",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-resume-v1-001/native-prefix-raw.pt",
+      "sha256": "24921eca2b0f14c73df629460ceb5540c08e8d6bf6bce3fcd9897fb72d767422"
+    },
+    {
+      "bytes": 445101351,
+      "kind": "raw_native_readout_projection_v1",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-resume-v1-001/native-final-raw.pt",
+      "sha256": "0300a4b93ba01ec6662bc2cc5307b25622646d8ef2fbaf3c3560d8819420a20d"
+    },
+    {
+      "bytes": 114075907,
+      "kind": "h200_native_readout_projection_v1",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-resume-v1-001/native-h200.pt",
+      "sha256": "c5d58491f6f5ec22614192e1eaf827e39f7cfed326b4374f02d105f9b2f875f2"
+    }
+  ],
+  "arm": "native",
+  "ema_snapshots": 3,
+  "exact_h200_sha256": "0719703d41d1acafba15102cfefde7fadd48a2268794b65b77763e2a72b95b9d",
+  "exact_serialized_resume": true,
+  "full_private_batch_trace_exact": true,
+  "full_raw_sha256": "9cf65d2c337b7d09346a5098e73c0a4116ef77924a349ecdfd0a53c974aca673",
+  "generated_scored_targets": 259,
+  "h200_forgeries": [
+    "kind",
+    "parent_kind",
+    "parent_hash",
+    "parent_size",
+    "snapshots",
+    "optimizer_resume"
+  ],
+  "optimizer_steps": 8,
+  "parameter_tensors": 88,
+  "per_parameter_exposure": 4,
+  "prefix_raw_sha256": "593c2735e3e3f5d73f028c8c698dabfadac9df7b769ece3ea7571ce762a68f54",
+  "real_corpus_scoring": false,
+  "scorer_cpu_mps_max_error": 2.86102294921875e-06,
+  "state_forgeries": [
+    "kind",
+    "initializer",
+    "architecture",
+    "cfg",
+    "source_identity",
+    "step",
+    "clipping_missing",
+    "exposure",
+    "optimizer_kind",
+    "scheduled_lr",
+    "adam_step",
+    "missing_moment",
+    "moment_shape",
+    "moment_dtype",
+    "moment_nonfinite",
+    "second_moment_negative",
+    "ema_count",
+    "ema_shape",
+    "model_shape",
+    "rope_values",
+    "cpu_rng",
+    "mps_rng",
+    "sampler_inventory",
+    "sampler_encoding",
+    "private_initializer",
+    "clipping_coefficient",
+    "ema_names",
+    "ordered_model_inventory",
+    "adam_epsilon",
+    "sampler_seed",
+    "incomplete_raw"
+  ],
+  "target_only_full_gather_max_error": 0.0,
+  "targets_per_branch": 4096
+}
