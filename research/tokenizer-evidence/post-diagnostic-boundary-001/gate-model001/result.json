@@ -1,0 +1,105 @@
+{
+  "adopted": false,
+  "common_initial_weights_and_rng_exact": true,
+  "corpus_loaded": false,
+  "global_cpu_mps_rng_unchanged": true,
+  "initializer_role_used": 600511,
+  "native_control_exact": {
+    "gradients": true,
+    "initialization": true,
+    "logits": true,
+    "rng": true,
+    "two_mps_optimizer_steps": true
+  },
+  "quality_result": false,
+  "quality_seed_assigned": false,
+  "rows": [
+    {
+      "adam_groups": 44,
+      "all_perparameter_exposures_one": true,
+      "arm": "none",
+      "cache": [
+        {
+          "batch": 1,
+          "bytes_per_item": 196608,
+          "maxerror": 2.682209014892578e-07
+        },
+        {
+          "batch": 8,
+          "bytes_per_item": 196608,
+          "maxerror": 6.854534149169922e-07
+        }
+      ],
+      "cpu_mps_ce_error": 0.0,
+      "cpu_mps_gradient_maxerror": 1.3131648302078247e-07,
+      "cpu_mps_logit_maxerror": 8.940696716308594e-07,
+      "gate_muon_groups": 0,
+      "learned_gradients": 88,
+      "muon_groups": 44,
+      "one_generated_mps_step": true,
+      "parameters": 28492416,
+      "transactional_weights_optimizer_rejections": 4
+    },
+    {
+      "adam_groups": 44,
+      "all_perparameter_exposures_one": true,
+      "arm": "static_half",
+      "cache": [
+        {
+          "batch": 1,
+          "bytes_per_item": 196608,
+          "maxerror": 2.384185791015625e-07
+        },
+        {
+          "batch": 8,
+          "bytes_per_item": 196608,
+          "maxerror": 7.152557373046875e-07
+        }
+      ],
+      "cpu_mps_ce_error": 9.5367431640625e-07,
+      "cpu_mps_gradient_maxerror": 1.424923539161682e-07,
+      "cpu_mps_logit_maxerror": 1.0728836059570312e-06,
+      "gate_muon_groups": 0,
+      "learned_gradients": 88,
+      "muon_groups": 44,
+      "one_generated_mps_step": true,
+      "parameters": 28492416,
+      "transactional_weights_optimizer_rejections": 4
+    },
+    {
+      "adam_groups": 44,
+      "all_perparameter_exposures_one": true,
+      "arm": "sigmoid_elementwise_zero",
+      "cache": [
+        {
+          "batch": 1,
+          "bytes_per_item": 196608,
+          "maxerror": 2.384185791015625e-07
+        },
+        {
+          "batch": 8,
+          "bytes_per_item": 196608,
+          "maxerror": 5.960464477539062e-07
+        }
+      ],
+      "cpu_mps_ce_error": 9.5367431640625e-07,
+      "cpu_mps_gradient_maxerror": 1.424923539161682e-07,
+      "cpu_mps_logit_maxerror": 1.0728836059570312e-06,
+      "gate_muon_groups": 4,
+      "learned_gradients": 92,
+      "muon_groups": 48,
+      "one_generated_mps_step": true,
+      "parameters": 28754560,
+      "transactional_weights_optimizer_rejections": 4
+    }
+  ],
+  "scope": "Generated token own-model proof only. Real native-data/RAW-H200/EMA/optimizer perparameter transport/replay,serialized resource layouts,workers,pilots and quality remain unproved.",
+  "source_bindings": 1062,
+  "source_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-model001/plan.json",
+    "sha256": "7658568b22a586fa6d92513cebc427d74175d21081fe47b0c817b247257e67b5"
+  },
+  "static_learned_zero_common_gradients_exact": true,
+  "status": "own_native_mla_gate_model_optimizer_gradient_and_cache_integration_passed",
+  "tensor_files_written": 0
+}

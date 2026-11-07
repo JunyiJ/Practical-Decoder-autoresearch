@@ -1,0 +1,109 @@
+{
+  "arms": [
+    "none",
+    "static_half",
+    "sigmoid_elementwise_zero"
+  ],
+  "candidate": "sigmoid_elementwise_zero",
+  "complete_retained_budget": {
+    "all_new_pairs_retained": 24,
+    "caps_not_serialization_proof": true,
+    "entry": 1458176,
+    "explanation": "Three4updategeneratedworkers+three20updatepilots+18qualitytrajectories;all originaloutputs kept,no futuredeletion credit.",
+    "external_allowance": 1267904512,
+    "free_bytes": 80640270336,
+    "full_floor": 25227227136,
+    "inline_capacity_pass": {
+      "deleted_bytes": 0,
+      "external_lock_acquired": true,
+      "inventory_or_deletion_needed": false,
+      "target_already_covered": true,
+      "trigger": "New prospective full retained-output requirement"
+    },
+    "metadata_allowance": 536870912,
+    "new_weight_caps": 14763950080,
+    "pair_caps": {
+      "none": 587202560,
+      "sigmoid_elementwise_zero": 671088640,
+      "static_half": 587202560
+    },
+    "pairs_per_arm": 8,
+    "reserve": 8589934592,
+    "sidecar_allowance": 67108864,
+    "target": 27374710784
+  },
+  "component_next": "StandaloneelementwisegateCPUFP64scalaroutput/gradientoracle,FP32CPU/MPS,zeroinit/staticidentity,querylocalprefix/biasplacement,malformedinputs andnative-shape checks. No corpus/GPT/optimizersteps/tensorfiles/seed.",
+  "controls": "Static half acts on weighted values before concat/output,biasunchanged;learned gatezero matchesstatic initially. Controls are not candidates.",
+  "direction": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/direction001.json",
+    "sha256": "6d4235ee04b49389753c1e2c4da5497159c74f64c0c1a2345837600ead6552d3"
+  },
+  "finite_quality_design": {
+    "adoption": "Candidate-minusEACHcontrolmean<-.02nat/native-token,all3pairedseednegativepercontrast,all6simultaneousconditionaltextuppersnegative. No fallback,reselect,rescue or partialpanel.",
+    "cooldown_start": 800,
+    "fresh_endpoints": 9,
+    "h200_interval": 10,
+    "h200_snapshots": 41,
+    "h200_start": 800,
+    "new_seed_roles": "UNASSIGNED;verifyunusedbeforefuturefreeze",
+    "rotations": [
+      [
+        "none",
+        "static_half",
+        "sigmoid_elementwise_zero"
+      ],
+      [
+        "static_half",
+        "sigmoid_elementwise_zero",
+        "none"
+      ],
+      [
+        "sigmoid_elementwise_zero",
+        "none",
+        "static_half"
+      ]
+    ],
+    "screen_lrs": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "screens": 9,
+    "selection": "Onlyafterall9accepted,mincompleteH200MPSnativeCEperarm,lowerLRexacttie;immutableperarmselection.",
+    "serving": "All9freshH200full/cache/resetB1/8 afterall18accepted,separateindependentstatistics;no speedadoptionroute.",
+    "shared_fresh_seeds": 3,
+    "statistics": "2000PCG64draws,reinitializeeach2048/4096/8192native-targetblockwidth,sameindicesacrossseeds/contrasts,linearquantile1-.05/6. Conditionaltrainedseeds/reusedvalidationtext,notpopulationseed/holdoutconfidence.",
+    "steps": 1200,
+    "targets": 1228800
+  },
+  "formula": "Y[B,H,T,D] * sigmoid(linear(X[B,T,C],W[C,C])).view(B,T,H,D).transpose(1,2);C=H*D=256,H8,D32.",
+  "full_model_next": "NEWownnative-model/config/optimizer/weights/cachepolicy outsideall1054sources;no oldMHApolicy masquerade orfrozenvalidator bypass. Then data/RAW-H200/EMA/perparamstep/RNG/samplers/fullstate/replay/serialization,generatedworkers,pilots/fullbudget/source/stat/seedgates beforefreeze.",
+  "geometry": {
+    "added_parameters": 262144,
+    "batch": 8,
+    "context": 128,
+    "ffn": 672,
+    "gated_parameters": 28754560,
+    "head_dim": 32,
+    "heads": 8,
+    "latent": 64,
+    "layers": 4,
+    "vocab": 50257,
+    "width": 256
+  },
+  "initialization": "Wzero without RNGdraws;genuine native construction before adding gate;exactsharednon-gateweights/RNG required.",
+  "no_new_numerical_quality_permission_from_preparation": true,
+  "optimizer": "Gate4matrices use existing body Muon widthLRfactor.5 andshapeadjustmatch_rms_adamw;48Muon/44AdamW versus44/44. No newoptimaltransferclaim. CommonAdamW.9/.999eps1e-6,independentdecay.00006,score.5,learnedfinalscale/bias.",
+  "parameterization_controls": "No temperature,bias,gateinitgrid,sharedexperts,norm/context/horizon/batch/dropoutchange.",
+  "status": "prospective_not_frozen_prerequisites_only",
+  "time_forecast": {
+    "component_model_resume_allowance_seconds": 2400,
+    "final_serving_allowance_seconds": 5400,
+    "generated_worker_pilot_allowance_seconds": 3600,
+    "independent_stats_allowance_seconds": 120,
+    "parent_validation_allowance_seconds": 2160,
+    "quality_trajectories_seconds": 15925.350000000002,
+    "scope": "Prospectiveconservativeplanningforecast,not measuredgatingruntime orpromise;replace with completeactualnewlayout/resourcepilot evidencebeforeanyfreeze.",
+    "total_conservative_seconds": 29605.350000000002
+  }
+}

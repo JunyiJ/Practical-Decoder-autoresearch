@@ -1,0 +1,211 @@
+{
+  "adopted": false,
+  "corpus_loaded": false,
+  "global_cpu_mps_rng_unchanged": true,
+  "language_models_constructed": 0,
+  "max_absolute_error": 1.3667227793945358e-08,
+  "native_shape_cases": [
+    {
+      "batch": 1,
+      "device": "cpu",
+      "four_layer_added_parameters": 262144,
+      "gate_parameters": 65536,
+      "tokens": 128,
+      "weight_gradient_maxerror": 4.193006025395886e-11
+    },
+    {
+      "batch": 8,
+      "device": "cpu",
+      "four_layer_added_parameters": 262144,
+      "gate_parameters": 65536,
+      "tokens": 128,
+      "weight_gradient_maxerror": 2.555811074388646e-10
+    },
+    {
+      "batch": 1,
+      "device": "mps",
+      "four_layer_added_parameters": 262144,
+      "gate_parameters": 65536,
+      "tokens": 128,
+      "weight_gradient_maxerror": 4.193006025395886e-11
+    },
+    {
+      "batch": 8,
+      "device": "mps",
+      "four_layer_added_parameters": 262144,
+      "gate_parameters": 65536,
+      "tokens": 128,
+      "weight_gradient_maxerror": 2.555811074388646e-10
+    }
+  ],
+  "optimizer_steps": 0,
+  "parameter_free_control_cases": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "exact": true,
+      "kind": "none"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "exact": true,
+      "kind": "static_half"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "exact": true,
+      "kind": "none"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "exact": true,
+      "kind": "static_half"
+    },
+    {
+      "device": "mps",
+      "dtype": "torch.float32",
+      "exact": true,
+      "kind": "none"
+    },
+    {
+      "device": "mps",
+      "dtype": "torch.float32",
+      "exact": true,
+      "kind": "static_half"
+    }
+  ],
+  "quality_result": false,
+  "rejections_before_mutation": 22,
+  "scientific_seeds_assigned": false,
+  "scope": "Standalone query-local gate math only;full MLA/model/optimizer/checkpoint/cache/data/quality integration remains unproved.",
+  "small_oracle_cases": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        0.0,
+        0.0,
+        0.0,
+        4.336808689942018e-19
+      ],
+      "query_local_partition": true,
+      "weight_case": "zero"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        2.7755575615628914e-17,
+        4.336808689942018e-19,
+        1.3877787807814457e-17,
+        4.336808689942018e-19
+      ],
+      "query_local_partition": true,
+      "weight_case": "ordinary"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        1.3877787807814457e-17,
+        1.0408340855860843e-17,
+        1.3877787807814457e-17,
+        4.336808689942018e-19
+      ],
+      "query_local_partition": true,
+      "weight_case": "saturated"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        0.0,
+        0.0,
+        0.0,
+        1.428089181198383e-10
+      ],
+      "query_local_partition": true,
+      "weight_case": "zero"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        6.587924802903267e-09,
+        2.49523928862877e-10,
+        5.389644189279785e-09,
+        1.3520095156274725e-10
+      ],
+      "query_local_partition": true,
+      "weight_case": "ordinary"
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        8.800702167022223e-09,
+        1.3667227793945358e-08,
+        6.943765729072737e-09,
+        2.1735337921852116e-10
+      ],
+      "query_local_partition": true,
+      "weight_case": "saturated"
+    },
+    {
+      "device": "mps",
+      "dtype": "torch.float32",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        0.0,
+        0.0,
+        0.0,
+        1.428089181198383e-10
+      ],
+      "query_local_partition": true,
+      "weight_case": "zero"
+    },
+    {
+      "device": "mps",
+      "dtype": "torch.float32",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        9.511517004567871e-09,
+        3.7051933396425873e-10,
+        9.560132602226545e-09,
+        1.3520095156274725e-10
+      ],
+      "query_local_partition": true,
+      "weight_case": "ordinary"
+    },
+    {
+      "device": "mps",
+      "dtype": "torch.float32",
+      "inputs_and_parameter_values_unchanged": true,
+      "output_x_y_w_maxerrors": [
+        8.681739188665105e-09,
+        1.3667227793945358e-08,
+        6.943765729072737e-09,
+        1.2110916436380847e-10
+      ],
+      "query_local_partition": true,
+      "weight_case": "saturated"
+    }
+  ],
+  "source_bindings": 1057,
+  "source_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-component001/plan.json",
+    "sha256": "cc3c7d13ad5c10db851fb79736035f2dff1deb03b7f1af6d2f045766c70c3341"
+  },
+  "status": "elementwise_gate_scalar_output_gradient_and_native_cpu_mps_contracts_passed",
+  "tensor_files": 0,
+  "zero_initialization_rng_draws": 0
+}
