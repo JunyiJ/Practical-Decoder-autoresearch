@@ -1,0 +1,22 @@
+{"arm": "native_swiglu", "step": 1, "ema_snapshots": 0}
+{"arm": "native_swiglu", "step": 301, "ema_snapshots": 0}
+{"arm": "native_swiglu", "step": 601, "ema_snapshots": 0}
+{"arm": "native_swiglu", "step": 901, "ema_snapshots": 11}
+{"arm": "native_swiglu", "step": 1200, "ema_snapshots": 41}
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/full-state001.py", line 205, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/full-state001.py", line 198, in main
+    try:result=arm_proof(arg.arm,plan)
+               ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/full-state001.py", line 171, in arm_proof
+    mps_losses=torch.cat(S.window_losses(model,ids));torch.testing.assert_close(cpu_losses,mps_losses,atol=3e-5,rtol=0.)
+                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/testing/_comparison.py", line 1689, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 85 / 281 (30.2%)
+Greatest absolute difference: 0.0002193450927734375 at index (6,) (up to 3e-05 allowed)
+Greatest relative difference: 1.2777828889093334e-05 at index (13,) (up to 0.0 allowed)

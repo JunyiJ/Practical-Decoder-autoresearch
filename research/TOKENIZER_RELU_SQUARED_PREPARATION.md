@@ -1,3 +1,58 @@
+# Full-horizon generated FFN prerequisite: closed failed incomplete
+
+New bounded scanner and25 fixture-role census passed. The new CPU fixture passed
+18full1200configs,102rejections and6synthetic selection/statistics panels with
+independent arithmetic. Original commands are CLOSED/no replay/retry. Read
+relu-squared-quality-preparation-001/role-scan001,full-proof-census001,
+full-config-statistics001 and their exact plans/source reviews/attempts/guards/STOPs.
+Current1220sourcebindings preserve1213 predecessors; scientific runtime1211 unchanged.
+
+The original three-arm generated-state controller63009/session90532 EXITED1.
+Nativeworker63010 completed1200 actual generated B8T128updates/41EMA then failed
+full-state001.py:171 CPU/MPS per-target CE at fixedatol3e-5/rtol0:85of281 targets,
+maximum0.0002193450927734375 atindex6. MPSguard318.764355s/RSS2965929984B/
+MPS2510094336B passed resource limits but reportsfixture_exception;all4CPUguards
+finished. BothactualrootSTOP andoriginalchainSTOP areclosed_failed/no_retry.
+Other2armsUNATTEMPTED;no acceptedarmresult/fullchain,physicalcorpus/holdout/
+qualityranking/adoption. Pre-failure local checks do not create accepted receipts;
+25targetCE/gather backward andfinalsource/RNG assertions were not reached.
+Do NOT retry arms, edit frozen sources, relax tolerance or rescue backend/LR/
+initializer/EMA/horizon/normalizer. Do not reconstruct missing loss arrays/receipts.
+
+ALL2nativeRAW/H200563465898B protected at original paths. New one-time metadata
+closure .292376s/RSS36634624B checked1220sources and FIRST independent archive
+stream hashes/path-size-device-inode-singlelinks;originalproducer refs were local
+only,so this is not a comparison with persisted producer weight hashes. Mirrored
+32originalmetadata13376705B;ZEROtensor/model/scoring/trajectory/census replay,
+weightcopies/deletions. ClosureNOretirementeligibility;neverrepeatunchangedaudits.
+All25fixture roles/derivedcontexts are USED or exclusively reserved-retired to
+this originalfixture;neverreuse. Future25scientificrolesremainUNASSIGNED.
+
+Read post-full-state-failure-evidence001.md andcontinuation-completed002.json.
+Evidence-grounded boundary retrieved/read arXiv1909.03469v1§2/§3Thm3.2,3.4/
+§4Algorithm4.1,Thm4.2-4.4 andPyTorch2.14numericalaccuracyintro/batched-slice.
+Savedmax/count do not determine signedmeanCE orlocalize anoperator;no oldprojection
+rootcause orFFNqualityclaim. Neither literature norpossiblecancellation waives
+this failedpredicate. Nativeincumbent/holdoutunchanged/no numericalworkeractive.
+
+NEXT executable independent work: SOURCE preparation of NEWliteralV50257 genuine
+CE plusindependentmath.fsum shifted-LSE/analyticgradient oracle;max6rows,known
+targets,declaredcommonshift/targetmargin/knowninputperturbationcontrols. Outside
+1220frozenbindings;no trainedstates/logits/oldtinyV31/forward001-002/primitive
+replay,models/optimizer/corpus/checkpoint/roles/RNGdraws. Pin/review exactnewcases/
+allfixedpredicates/resourcesBEFOREexecution. Hypothesis same-inputoutput arithmetic
+may itself exceed3e-5;passnarrows onlydeclaredliterals,failestablishes capability
+onlythere;neither diagnoses/reopens thismodel. No fullqualityadmission/budgetfreeze.
+
+~35.14GBfree/noblock/cleanupneed. ALLnew2weights/allprior selected-fresh-screen-
+prereq-failed-partialweights/sources/logs/STOPs preserved. Nexttiny SOURCE forecast
+512MiBRSS/128MiBMPS/2MiBmetadata+8GiBreserve+extra2GiBtarget10739515392Bfits;
+NOTgateadmission. Oldprospectivefullpaneltarget25637683200BnowHISTORICAL/unfrozen,
+notcurrentcapacityblock/credit. Newpanelrequiresfreshcompleteimplementedconsumer-
+output-working-time-resourceforecast. Carrybroad/interactionallocationforward;
+preparation/diagnosticnotnumericalqualityexploration. Older sections below are
+historical stages; alloriginalclosed evidence remains immutable.
+
 # Full-horizon FFN design and scientific namespace: SOURCE ONLY
 
 Evidence-grounded boundary read original contrary FFN/activation results,
