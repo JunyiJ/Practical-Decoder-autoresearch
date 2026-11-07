@@ -1,0 +1,380 @@
+{
+  "adopted": false,
+  "closed_metadata_mirror": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/cohort-metadata-mirror001/completion.json",
+    "sha256": "48e8fbc6ce72e1b308f8c152744c3e9c8575e316fcd28aaf9aa47f8e2ad07104"
+  },
+  "gradients_replayed": false,
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-cohorts-v1-001/guard.json",
+    "sha256": "2f1011307010eb2211ba7f1c1b1ffe7588d4faf76512140f8143f6c2946bdfd5"
+  },
+  "holdout_encoded": false,
+  "max_scalar_identity_error": 6.938893903907228e-17,
+  "models_loaded": 0,
+  "optimizer_steps": 0,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-cohorts-v1-001/plan.json",
+    "sha256": "771d46ed85d187e010aa8ddd471c8a7979e3cb095339fae011a92cce972aeeea"
+  },
+  "quality_result": false,
+  "result": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-cohorts-v1-001/result.json",
+    "sha256": "12650b674b586123c8a28725bd395f365d042a7d2921c8c6bf3fee72a16aa479"
+  },
+  "rows": [
+    {
+      "cohorts": [
+        {
+          "cohort": 0,
+          "draws": 32,
+          "noise_correction_fraction": 0.8640410148575687,
+          "ratio_in_independent_B8_draw_units": 203.3650990147994,
+          "seed": 600501,
+          "signal_squared_unbiased": 0.0036014685357623547,
+          "trace_sample_covariance": 0.7324130053739959
+        },
+        {
+          "cohort": 1,
+          "draws": 32,
+          "noise_correction_fraction": 0.9200636693911884,
+          "ratio_in_independent_B8_draw_units": 368.3186005197061,
+          "seed": 600502,
+          "signal_squared_unbiased": 0.0020126649341133847,
+          "trace_sample_covariance": 0.7413019318477283
+        },
+        {
+          "cohort": 2,
+          "draws": 32,
+          "noise_correction_fraction": 0.7562602321035232,
+          "ratio_in_independent_B8_draw_units": 99.28756245304751,
+          "seed": 600503,
+          "signal_squared_unbiased": 0.006994758989552558,
+          "trace_sample_covariance": 0.6944925700192152
+        },
+        {
+          "cohort": 3,
+          "draws": 32,
+          "noise_correction_fraction": 0.7745576578053185,
+          "ratio_in_independent_B8_draw_units": 109.94316688018742,
+          "seed": 600504,
+          "signal_squared_unbiased": 0.006673670358619693,
+          "trace_sample_covariance": 0.7337244539410851
+        }
+      ],
+      "combined": {
+        "draws": 128,
+        "noise_correction_fraction": 0.4801947505387026,
+        "ratio_in_independent_B8_draw_units": 118.24607029777671,
+        "signal_squared_unbiased": 0.0061243412816567614,
+        "trace_sample_covariance": 0.7241792897183613
+      },
+      "combined_groups": {
+        "body": {
+          "mean_gradient_squared_norm": 0.011091013614525509,
+          "parameters": 86,
+          "ratio_in_independent_B8_draw_units": 116.8897521172452,
+          "signal_squared_unbiased": 0.0057970973892757394,
+          "trace_sample_covariance": 0.6776212768319705
+        },
+        "input": {
+          "mean_gradient_squared_norm": 1.130763480108739e-05,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 132.9400961825784,
+          "signal_squared_unbiased": 5.546779800090453e-06,
+          "trace_sample_covariance": 0.0007373894401276078
+        },
+        "readout": {
+          "mean_gradient_squared_norm": 0.0006796707332548629,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 142.43405257402142,
+          "signal_squared_unbiased": 0.00032169711258093125,
+          "trace_sample_covariance": 0.04582062344626325
+        }
+      },
+      "first_probe_reported_separately": {
+        "draws": 32,
+        "groups": {
+          "body": {
+            "mean_gradient_squared_norm": 0.029966505715591996,
+            "parameters": 86,
+            "ratio_in_independent_B8_draw_units": 68.22886100402802,
+            "signal_squared_unbiased": 0.00956738581375684,
+            "trace_sample_covariance": 0.652771836858725
+          },
+          "input": {
+            "mean_gradient_squared_norm": 3.207817855828988e-05,
+            "parameters": 1,
+            "ratio_in_independent_B8_draw_units": 68.65251115288065,
+            "signal_squared_unbiased": 1.019847097809738e-05,
+            "trace_sample_covariance": 0.00070015064256616
+          },
+          "readout": {
+            "mean_gradient_squared_norm": 0.001839376853240122,
+            "parameters": 1,
+            "ratio_in_independent_B8_draw_units": 92.86544143100039,
+            "signal_squared_unbiased": 0.0004713879086889665,
+            "trace_sample_covariance": 0.043775646225636976
+          }
+        },
+        "mean_gradient_squared_norm": 0.03183796074739041,
+        "mean_online_train_ce": 3.5506281927227974,
+        "noise_correction_fraction": 0.6843713618106785,
+        "ratio_in_independent_B8_draw_units": 69.38496995575429,
+        "raw": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/09/checkpoints/parent.pt",
+          "sha256": "3402af2ebd8c7439f176abe6e979b2d4e40b682bd0e6325ce8758f8d6a1557bf",
+          "size": 449436903
+        },
+        "signal_squared_unbiased": 0.010048972193423909,
+        "slot": 9,
+        "trace_sample_covariance": 0.6972476337269281
+      },
+      "raw": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/09/checkpoints/parent.pt",
+        "sha256": "3402af2ebd8c7439f176abe6e979b2d4e40b682bd0e6325ce8758f8d6a1557bf",
+        "size": 449436903
+      },
+      "slot": 9
+    },
+    {
+      "cohorts": [
+        {
+          "cohort": 0,
+          "draws": 32,
+          "noise_correction_fraction": 0.6943494737267654,
+          "ratio_in_independent_B8_draw_units": 72.69473221647188,
+          "seed": 600501,
+          "signal_squared_unbiased": 0.01011026755687066,
+          "trace_sample_covariance": 0.734963192683596
+        },
+        {
+          "cohort": 1,
+          "draws": 32,
+          "noise_correction_fraction": 0.5652009876475975,
+          "ratio_in_independent_B8_draw_units": 41.597223293746026,
+          "seed": 600502,
+          "signal_squared_unbiased": 0.018382838185500024,
+          "trace_sample_covariance": 0.7646750247750456
+        },
+        {
+          "cohort": 2,
+          "draws": 32,
+          "noise_correction_fraction": 0.5892507999130265,
+          "ratio_in_independent_B8_draw_units": 45.90642073855337,
+          "seed": 600503,
+          "signal_squared_unbiased": 0.015688309780765304,
+          "trace_sample_covariance": 0.7201941494725741
+        },
+        {
+          "cohort": 3,
+          "draws": 32,
+          "noise_correction_fraction": 0.6570031775740542,
+          "ratio_in_independent_B8_draw_units": 61.29532493528833,
+          "seed": 600504,
+          "signal_squared_unbiased": 0.012135104706559874,
+          "trace_sample_covariance": 0.7438251861123342
+        }
+      ],
+      "combined": {
+        "draws": 128,
+        "noise_correction_fraction": 0.27700645294840925,
+        "ratio_in_independent_B8_draw_units": 49.04169078962235,
+        "signal_squared_unbiased": 0.015087290345410991,
+        "trace_sample_covariance": 0.7399062279729004
+      },
+      "combined_groups": {
+        "body": {
+          "mean_gradient_squared_norm": 0.020133554438505476,
+          "parameters": 86,
+          "ratio_in_independent_B8_draw_units": 47.10825104823052,
+          "signal_squared_unbiased": 0.014717153262063505,
+          "trace_sample_covariance": 0.6932993505845724
+        },
+        "input": {
+          "mean_gradient_squared_norm": 1.9649382495905362e-05,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 56.8674203358469,
+          "signal_squared_unbiased": 1.3604998408625435e-05,
+          "trace_sample_covariance": 0.0007736811631718308
+        },
+        "readout": {
+          "mean_gradient_squared_norm": 0.0007146039304478944,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 128.5527955584019,
+          "signal_squared_unbiased": 0.00035653208493886134,
+          "trace_sample_covariance": 0.04583319622515623
+        }
+      },
+      "first_probe_reported_separately": {
+        "draws": 32,
+        "groups": {
+          "body": {
+            "mean_gradient_squared_norm": 0.036484084441310766,
+            "parameters": 86,
+            "ratio_in_independent_B8_draw_units": 44.36318685238229,
+            "signal_squared_unbiased": 0.015288658714294117,
+            "trace_sample_covariance": 0.6782536232645328
+          },
+          "input": {
+            "mean_gradient_squared_norm": 4.10093805514732e-05,
+            "parameters": 1,
+            "ratio_in_independent_B8_draw_units": 43.01129680096356,
+            "signal_squared_unbiased": 1.749470057995698e-05,
+            "trace_sample_covariance": 0.000752469759088519
+          },
+          "readout": {
+            "mean_gradient_squared_norm": 0.002019555769404618,
+            "parameters": 1,
+            "ratio_in_independent_B8_draw_units": 68.514173400361,
+            "signal_squared_unbiased": 0.0006429519582629893,
+            "trace_sample_covariance": 0.044051321956532115
+          }
+        },
+        "mean_gradient_squared_norm": 0.038544649591266855,
+        "mean_online_train_ce": 3.5506801307201385,
+        "noise_correction_fraction": 0.58621739872424,
+        "ratio_in_independent_B8_draw_units": 45.33529612250181,
+        "raw": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/14/checkpoints/parent.pt",
+          "sha256": "c77e63df47e7d06dcbde0003177ff9d7fc527e97c239b858c7f60a0b57b0e01d",
+          "size": 449436903
+        },
+        "signal_squared_unbiased": 0.01594910537313706,
+        "slot": 14,
+        "trace_sample_covariance": 0.7230574149801534
+      },
+      "raw": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/14/checkpoints/parent.pt",
+        "sha256": "c77e63df47e7d06dcbde0003177ff9d7fc527e97c239b858c7f60a0b57b0e01d",
+        "size": 449436903
+      },
+      "slot": 14
+    },
+    {
+      "cohorts": [
+        {
+          "cohort": 0,
+          "draws": 32,
+          "noise_correction_fraction": 0.7226367438544593,
+          "ratio_in_independent_B8_draw_units": 83.37216733282314,
+          "seed": 600501,
+          "signal_squared_unbiased": 0.009455745699136833,
+          "trace_sample_covariance": 0.7883460126850588
+        },
+        {
+          "cohort": 1,
+          "draws": 32,
+          "noise_correction_fraction": 0.9035434666549519,
+          "ratio_in_independent_B8_draw_units": 299.75565086429486,
+          "seed": 600502,
+          "signal_squared_unbiased": 0.002605640798207267,
+          "trace_sample_covariance": 0.7810555533851801
+        },
+        {
+          "cohort": 2,
+          "draws": 32,
+          "noise_correction_fraction": 0.7861243186901786,
+          "ratio_in_independent_B8_draw_units": 117.61962858060818,
+          "seed": 600503,
+          "signal_squared_unbiased": 0.006498270417426379,
+          "trace_sample_covariance": 0.7643241529140443
+        },
+        {
+          "cohort": 3,
+          "draws": 32,
+          "noise_correction_fraction": 0.7176700204026816,
+          "ratio_in_independent_B8_draw_units": 81.34255060564577,
+          "seed": 600504,
+          "signal_squared_unbiased": 0.00957193324515438,
+          "trace_sample_covariance": 0.7786054643878333
+        }
+      ],
+      "combined": {
+        "draws": 128,
+        "noise_correction_fraction": 0.4268067999449404,
+        "ratio_in_independent_B8_draw_units": 95.31039514722893,
+        "signal_squared_unbiased": 0.008151930974665926,
+        "trace_sample_covariance": 0.7769637624083445
+      },
+      "combined_groups": {
+        "body": {
+          "mean_gradient_squared_norm": 0.013502938765769405,
+          "parameters": 86,
+          "ratio_in_independent_B8_draw_units": 93.72829992293477,
+          "signal_squared_unbiased": 0.007795018329276005,
+          "trace_sample_covariance": 0.7306138158711553
+        },
+        "input": {
+          "mean_gradient_squared_norm": 1.4945967083212605e-05,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 97.45742710549669,
+          "signal_squared_unbiased": 8.485343823940817e-06,
+          "trace_sample_covariance": 0.0008269597771867888
+        },
+        "readout": {
+          "mean_gradient_squared_norm": 0.0007040756356284997,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 130.65275469345454,
+          "signal_squared_unbiased": 0.00034842730156598085,
+          "trace_sample_covariance": 0.04552298676000241
+        }
+      },
+      "first_probe_reported_separately": {
+        "draws": 32,
+        "groups": {
+          "body": {
+            "mean_gradient_squared_norm": 0.03114557252143766,
+            "parameters": 86,
+            "ratio_in_independent_B8_draw_units": 71.20420985421121,
+            "signal_squared_unbiased": 0.009657147921522863,
+            "trace_sample_covariance": 0.6876295871972735
+          },
+          "input": {
+            "mean_gradient_squared_norm": 3.441339148847485e-05,
+            "parameters": 1,
+            "ratio_in_independent_B8_draw_units": 71.54741919834842,
+            "signal_squared_unbiased": 1.0635016653787926e-05,
+            "trace_sample_covariance": 0.0007609079947099815
+          },
+          "readout": {
+            "mean_gradient_squared_norm": 0.0017819269342554318,
+            "parameters": 1,
+            "ratio_in_independent_B8_draw_units": 102.25354462082421,
+            "signal_squared_unbiased": 0.00042473114625927815,
+            "trace_sample_covariance": 0.043430265215876916
+          }
+        },
+        "mean_gradient_squared_norm": 0.03296191284718157,
+        "mean_online_train_ce": 3.478570878505707,
+        "noise_correction_fraction": 0.6938128520869838,
+        "ratio_in_independent_B8_draw_units": 72.511244897486,
+        "raw": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/16/checkpoints/parent.pt",
+          "sha256": "4652a201978090f47950de32f36f408c37dcf5768e8549fbe9c28f4eedde1d07",
+          "size": 449436903
+        },
+        "signal_squared_unbiased": 0.01009251408443593,
+        "slot": 16,
+        "trace_sample_covariance": 0.7318207604078605
+      },
+      "raw": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/16/checkpoints/parent.pt",
+        "sha256": "4652a201978090f47950de32f36f408c37dcf5768e8549fbe9c28f4eedde1d07",
+        "size": 449436903
+      },
+      "slot": 16
+    }
+  ],
+  "scope": "All cohorts kept. Descriptive sampling variation only;biased endpoint raw-gradient ratios are not optimal batch,preconditioned update noise or quality evidence.",
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/cohort-review001.py",
+    "sha256": "ff47f61b8a42e6c32ceee13e773e9f65734dd071b634ff9e75522aa605e88a7f"
+  },
+  "status": "complete_training_free_gradient_cohorts_independently_reviewed",
+  "terminal": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-cohorts-v1-001/STOP",
+    "sha256": "4072909eade9f24be07e8ac7012d9152499c70140c835cb29cb8c4bd57670723"
+  },
+  "validation_encoded": false
+}

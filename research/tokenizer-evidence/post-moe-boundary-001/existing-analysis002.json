@@ -1,0 +1,168 @@
+{
+  "bootstrap_draws": 0,
+  "cohort_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/cohort-review001.json",
+    "sha256": "1e0327451d00b0a41f0c02a08f4ca261d27a076dfc24c78a7efbcaca4529087f"
+  },
+  "gradient_calls": 0,
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/existing-analysis002-guard.json",
+    "sha256": "ab0f99adfc9636068b527b3fd6fb658a8a542b1e99f77557402878f8364a9abd"
+  },
+  "holdout_encoded": false,
+  "models_loaded": 0,
+  "optimizer_steps": 0,
+  "pairs": [
+    {
+      "shared_input_gradient_norm_correlation": 0.6286148708923736,
+      "shared_input_train_ce_correlation": 0.5772225475781168,
+      "slots": [
+        9,
+        14
+      ]
+    },
+    {
+      "shared_input_gradient_norm_correlation": 0.7244178151127656,
+      "shared_input_train_ce_correlation": 0.5922365730494247,
+      "slots": [
+        9,
+        16
+      ]
+    },
+    {
+      "shared_input_gradient_norm_correlation": 0.631237308067543,
+      "shared_input_train_ce_correlation": 0.6056547520632469,
+      "slots": [
+        14,
+        16
+      ]
+    }
+  ],
+  "quality_result": false,
+  "rows": [
+    {
+      "cohort_mean_train_ce": [
+        3.5064756646752357,
+        3.528058260679245,
+        3.451222613453865,
+        3.5356293097138405
+      ],
+      "combined_ratio": 118.24607029777671,
+      "combined_signal": 0.0061243412816567614,
+      "corrected_signal_spread": {
+        "descriptive_sample_cv": 0.5014707515170348,
+        "max": 0.006994758989552558,
+        "max_over_min": 3.4753718172338885,
+        "min": 0.0020126649341133847
+      },
+      "covariance_spread": {
+        "descriptive_sample_cv": 0.02898550075449356,
+        "max": 0.7413019318477283,
+        "max_over_min": 1.0674008101011332,
+        "min": 0.6944925700192152
+      },
+      "norm_ce_correlation": 0.6378802638444886,
+      "perdraw_squared_norm": {
+        "max": 1.4165707798903704,
+        "mean": 0.730303631000018,
+        "median": 0.7064905332214231,
+        "top1_fraction": 0.015153915095204072,
+        "top8_fraction": 0.09162208548907087
+      },
+      "ratio_spread": {
+        "descriptive_sample_cv": 0.637740582188151,
+        "max": 368.3186005197061,
+        "max_over_min": 3.7096146931181004,
+        "min": 99.28756245304751
+      },
+      "scope": "Descriptive finite shared-input cohorts at fixed endpoints;no confidence interval or causal attribution.",
+      "slot": 9,
+      "undefined_cohort_ratios": 0
+    },
+    {
+      "cohort_mean_train_ce": [
+        3.4392134770751,
+        3.529994882643223,
+        3.414099469780922,
+        3.545760288834572
+      ],
+      "combined_ratio": 49.04169078962235,
+      "combined_signal": 0.015087290345410991,
+      "corrected_signal_spread": {
+        "descriptive_sample_cv": 0.2614288927587105,
+        "max": 0.018382838185500024,
+        "max_over_min": 1.8182345899449073,
+        "min": 0.01011026755687066
+      },
+      "covariance_spread": {
+        "descriptive_sample_cv": 0.025102973488027983,
+        "max": 0.7646750247750456,
+        "max_over_min": 1.0617623391345883,
+        "min": 0.7201941494725741
+      },
+      "norm_ce_correlation": 0.6780286576193939,
+      "perdraw_squared_norm": {
+        "max": 1.190057743362437,
+        "mean": 0.7549935183183114,
+        "median": 0.7384224621444282,
+        "top1_fraction": 0.0123144449514323,
+        "top8_fraction": 0.0858659712038616
+      },
+      "ratio_spread": {
+        "descriptive_sample_cv": 0.25846426850847787,
+        "max": 72.69473221647188,
+        "max_over_min": 1.7475861718731893,
+        "min": 41.597223293746026
+      },
+      "scope": "Descriptive finite shared-input cohorts at fixed endpoints;no confidence interval or causal attribution.",
+      "slot": 14,
+      "undefined_cohort_ratios": 0
+    },
+    {
+      "cohort_mean_train_ce": [
+        3.480086036026478,
+        3.4838996306061745,
+        3.489583693444729,
+        3.4965082183480263
+      ],
+      "combined_ratio": 95.31039514722893,
+      "combined_signal": 0.008151930974665926,
+      "corrected_signal_spread": {
+        "descriptive_sample_cv": 0.4658600109740313,
+        "max": 0.00957193324515438,
+        "max_over_min": 3.673542896526667,
+        "min": 0.002605640798207267
+      },
+      "covariance_spread": {
+        "descriptive_sample_cv": 0.012932058497845055,
+        "max": 0.7883460126850588,
+        "max_over_min": 1.0314288900585298,
+        "min": 0.7643241529140443
+      },
+      "norm_ce_correlation": 0.6258054129269879,
+      "perdraw_squared_norm": {
+        "max": 1.5034168503168364,
+        "mean": 0.7851156933830102,
+        "median": 0.7558735813170052,
+        "top1_fraction": 0.014960144399215818,
+        "top8_fraction": 0.0946075075961957
+      },
+      "ratio_spread": {
+        "descriptive_sample_cv": 0.7157683335228027,
+        "max": 299.75565086429486,
+        "max_over_min": 3.6851026754438854,
+        "min": 81.34255060564577
+      },
+      "scope": "Descriptive finite shared-input cohorts at fixed endpoints;no confidence interval or causal attribution.",
+      "slot": 16,
+      "undefined_cohort_ratios": 0
+    }
+  ],
+  "scope": "Separate covariance from bias-corrected denominator variability using all existing cohorts. Correlation is descriptive under shared sampled inputs;not evidence of causal batch benefit. No old-probe pooling or diagnostic replay.",
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/existing-analysis002.py",
+    "sha256": "72d180979a6aa9b0cd512082f80f82800250825703412c0be19170c26fc8a278"
+  },
+  "status": "closed_complete_existing_cohort_scalar_analysis",
+  "validation_encoded": false
+}
