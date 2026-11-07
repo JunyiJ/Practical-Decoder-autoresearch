@@ -1,0 +1,42 @@
+{
+  "audit_completed_at": "2026-11-07T01:49:17.800971+00:00",
+  "audit_pattern": "(?<![0-9A-Za-z_])60053[6-7](?![0-9A-Za-z_])",
+  "classification": "All four potential matches are the fractional parts of two elapsed_seconds observations, repeated in their audits. No exact integer or seed-role use; no prior occurrence of 600537.",
+  "no_prior_matches": false,
+  "no_prior_seed_roles": true,
+  "potential_match_contexts": [
+    "elapsed_seconds:139.600536",
+    "elapsed_seconds:909.600536"
+  ],
+  "potential_match_files": [
+    {
+      "classification": "fractional digits in elapsed_seconds, not an integer seed or seed-role assignment",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-002/evidence/quality/02/resource-audit.json",
+      "sha256": "bd6b7048ef82b60306c5626f9ef2d2d4efdd58d8cb5e4e734dd0a4d98ec71937"
+    },
+    {
+      "classification": "fractional digits in elapsed_seconds, not an integer seed or seed-role assignment",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-002/evidence/quality/02/resource-events.jsonl",
+      "sha256": "ac3e726d31dbd701e1d436970fc2b94ae0e0311cb058d5b4b6d3048178dfa74f"
+    },
+    {
+      "classification": "fractional digits in elapsed_seconds, not an integer seed or seed-role assignment",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/15/resource-audit.json",
+      "sha256": "3c5a1744ccd68a5cd4cc5b5e92351b43a71cf58ee9cd0a3723b091a5620be59d"
+    },
+    {
+      "classification": "fractional digits in elapsed_seconds, not an integer seed or seed-role assignment",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/15/resource-events.jsonl",
+      "sha256": "e756a9279093a4128dd8e6c36a991a2d4eecc0ea309d2389938ce34f849bc7af"
+    }
+  ],
+  "prior_seed_role_matches": [],
+  "rg_exit_code": 0,
+  "roles": {
+    "pilot_model_and_private_train": 600536,
+    "pilot_private_evaluation": 600537
+  },
+  "scientific_seeds": false,
+  "scope": "rg --hidden --no-ignore research research_runs research_state src tests, py/json/jsonl/yaml/yml/md/log",
+  "status": "unused_fixture_seed_roles_audited"
+}

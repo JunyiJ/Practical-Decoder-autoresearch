@@ -1,0 +1,18 @@
+{
+  "audit_completed_at": "2026-11-07T01:43:33.298035+00:00",
+  "audit_pattern": "(?<![0-9A-Za-z_])60053[0-4](?![0-9A-Za-z_])",
+  "exit_code": 1,
+  "no_prior_matches": true,
+  "note": "An initial digits-only boundary also matched substrings inside hexadecimal SHA256 fields (e.g. ...45351b600532d0c...); exact alphanumeric-delimited roles exclude hash substrings. No seed role assignment is inferred from embedded digest digits.",
+  "prior_exact_role_matches": [],
+  "roles": {
+    "source_config_private_evaluation": 600532,
+    "source_config_private_train": 600531,
+    "source_generated_initializer": 600530,
+    "worker_model_and_private_train": 600533,
+    "worker_private_evaluation": 600534
+  },
+  "scientific_seeds": false,
+  "scope": "rg --hidden --no-ignore research research_runs research_state src tests, py/json/jsonl/yaml/yml/md/log",
+  "status": "unused_fixture_roles_audited"
+}
