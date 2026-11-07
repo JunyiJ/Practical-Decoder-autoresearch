@@ -1,0 +1,176 @@
+{
+  "status": "complete_closed_metadata_review",
+  "at": "2026-11-07T04:56:22.728146+00:00",
+  "sources": 1094,
+  "source_hashes_unchanged": true,
+  "evidence": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/STOP",
+      "sha256": "9d8d2cdf5c2660883c252d47b86dff4f3b33edfb321e5f8e040b8f29ac471746",
+      "bytes": 83
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/arm-context_mix2.json",
+      "sha256": "d65a303be5942324bf54eae5e155bb0966bb6e957a3f6286b9f98e3bddbbd885",
+      "bytes": 687
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/arm-native.json",
+      "sha256": "c0a1006bdeb051c540a1f477e8b2b3ef9ee619c570b8eca46c720cab60098437",
+      "bytes": 679
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/arm-probability_mix2.json",
+      "sha256": "22d447a79bc626f56838fe090a6e1355749c8bd821a01acf23eab04797830c91",
+      "bytes": 692
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/attempt.json",
+      "sha256": "23dfac6837f9ada6a9c145ab745546bb484cc5b19819f96f04eb19051556db1a",
+      "bytes": 201
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-context_mix2-guard.json",
+      "sha256": "9fdb6c9b415f8da181b74c5560b9fe682a042f34419d7cead0c6b54edc2e7cb7",
+      "bytes": 263
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-native-guard.json",
+      "sha256": "1aed80aacbec1b90f24fdb2a745a0b137118d86e76c9bbf9384e2e7bea092228",
+      "bytes": 263
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-native-reference-guard.json",
+      "sha256": "49425aabaa1c910f070cc51d0ccf3fb7370baed3ff52b731e4522d9d96a193ff",
+      "bytes": 262
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-probability_mix2-guard.json",
+      "sha256": "3efd4f0a57f3e212755c8a667ceab086f7cf9af4cab535d0eea9eb9caac770fd",
+      "bytes": 262
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/mps-guard.json",
+      "sha256": "86ead3411bb41ccaa21e6778733c52b3cd7c3fe2366819c14ca58697d239fa86",
+      "bytes": 401
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/plan.json",
+      "sha256": "135d320592d4abaa494ed624876174dde8d3da22c924a31e38eb7ef4ff30f52f",
+      "bytes": 138466
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/result.json",
+      "sha256": "241d1b4ef77a87543a327ff6d1937b3024cb756b23e62d8a52ed4cf6ad6104cf",
+      "bytes": 2698
+    }
+  ],
+  "guards": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-context_mix2-guard.json",
+      "sha256": "9fdb6c9b415f8da181b74c5560b9fe682a042f34419d7cead0c6b54edc2e7cb7",
+      "elapsed_seconds": 0.19218154100235552,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 67074813952,
+        "peak_rss_bytes": 2810347520
+      },
+      "pid": 24901,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-native-guard.json",
+      "sha256": "1aed80aacbec1b90f24fdb2a745a0b137118d86e76c9bbf9384e2e7bea092228",
+      "elapsed_seconds": 0.24361329106613994,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 67075833856,
+        "peak_rss_bytes": 1175093248
+      },
+      "pid": 24901,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-native-reference-guard.json",
+      "sha256": "49425aabaa1c910f070cc51d0ccf3fb7370baed3ff52b731e4522d9d96a193ff",
+      "elapsed_seconds": 0.16899775003548712,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 67075833856,
+        "peak_rss_bytes": 443203584
+      },
+      "pid": 24901,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/cpu-probability_mix2-guard.json",
+      "sha256": "3efd4f0a57f3e212755c8a667ceab086f7cf9af4cab535d0eea9eb9caac770fd",
+      "elapsed_seconds": 0.1906540000345558,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 67074506752,
+        "peak_rss_bytes": 2898477056
+      },
+      "pid": 24901,
+      "reason": null,
+      "status": "finished"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-model001/mps-guard.json",
+      "sha256": "86ead3411bb41ccaa21e6778733c52b3cd7c3fe2366819c14ca58697d239fa86",
+      "elapsed_seconds": 17.29865170805715,
+      "limits": {
+        "mps_driver_limit_bytes": 6442450944,
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "observation": {
+        "free_bytes": 67074363392,
+        "mps_current_bytes": 0,
+        "mps_driver_bytes": 1348157440,
+        "peak_observed_mps_driver_bytes": 2489122816,
+        "peak_rss_bytes": 2899492864
+      },
+      "pid": 24901,
+      "reason": null,
+      "status": "finished"
+    }
+  ],
+  "rows_reconciled": 3,
+  "adversarial_rejections": 60,
+  "all_parameter_exposure": 2,
+  "synthetic_optimizer_steps_including_reference": 8,
+  "max_cpu_mps_ce_error": 9.5367431640625e-07,
+  "max_cpu_mps_gradient_error": 3.390014171600342e-07,
+  "max_cache_error": 1.9073486328125e-06,
+  "max_target_full_gradient_error": 2.2817403078079224e-08,
+  "native_same_mps_control_exact": true,
+  "numerical_replay": false,
+  "torch_import": false,
+  "checkpoint_load": false,
+  "independent_scalar_metadata_checks": true,
+  "subagent_used": false,
+  "limitation": "Closed source-bound assertions reviewed; elementwise gradient predicates were enforced by original harness, not reconstructed from scalar maxima. This is not optimizer CPU/MPS transport, full resume, corpus scorer, training stability or quality evidence.",
+  "next_action": "Smallest additive own full-state resume/private-sampler/EMA/RNG/exposure preflight and tagged-distribution full-native scorer integration; source/resource review and fresh initializer-role audit before new actual-model fixture. No old proof replay or quality panel admitted.",
+  "elapsed_seconds": 0.023057791986502707
+}
