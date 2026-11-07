@@ -1,0 +1,89 @@
+{
+  "architecture": {
+    "B": 8,
+    "D": 256,
+    "FFN_hidden": 672,
+    "T": 128,
+    "V": 50257,
+    "augmented_parameters": 41358208,
+    "extra_readout_parameters": 12865792,
+    "head_dim": 32,
+    "heads": 8,
+    "latent_q_kv": 64,
+    "layers": 4,
+    "native_parameters": 28492416,
+    "rotary_dim": 32
+  },
+  "attention_qualified_namespace_owner": false,
+  "hard_limits": {
+    "MPS_bytes": 6442450944,
+    "RSS_bytes": 4294967296,
+    "fallback": 0,
+    "fast_math": 0,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592,
+    "threads": 4
+  },
+  "head_schedule": "One body graph, two ordinary readout loss graphs, L=.5*NTP+.5*aux, one autograd accumulation; NOT sequential-detach/chunked/fused/recomputed-body. Future exact calls/cases must be prospectively gated.",
+  "inference": {
+    "CPU_transfer_allowance": 268435456,
+    "FP32_native_weight_bytes": 113969664,
+    "cache_bytes_B8": 1572864,
+    "cache_bytes_per_item": 196608,
+    "policy": "Primary-only H200 export omits auxiliary table, retains parent RAW provenance; one loaded native inference model, original cached/noncached head only. UNIMPLEMENTED/unqualified.",
+    "serving_working_allowance": 1073741824
+  },
+  "no_quality_panel_or_role_budget": true,
+  "retention": {
+    "H200_temporary_overlap": 134217728,
+    "augmented_RAW_archives": 4,
+    "entry_target": 16376659968,
+    "extra_headroom_bytes": 2147483648,
+    "largest_RAW_temporary_overlap": 805306368,
+    "native_RAW_archives": 2,
+    "primary_only_H200_archives": 3,
+    "reserve_bytes": 8589934592,
+    "retained_archive_cap_total": 4697620480,
+    "scope": "Prospective generated model/state consumer ENVELOPE, not a frozen panel or instruction to create archives. Future exact proof requires its own plan.",
+    "total_output_overlap": 5639241728,
+    "whole_metadata_cap": 2097152
+  },
+  "state_staging": {
+    "CPU_archive_staging_allowance": 2147483648,
+    "H200_primary_only_prospective_cap": 134217728,
+    "RAW_augmented_prospective_cap": 805306368,
+    "RAW_native_prospective_cap": 536870912,
+    "all_parameter_two_moment_RAW_payload_upper_before_other_data": 661731328,
+    "metadata_and_nonparameter_RAW_allowance": 8388608,
+    "model_destination_moments_and_EMA_allowance": 1610612736,
+    "planned_MPS_highwater": 2684354560,
+    "planned_RSS_highwater": 4026531840,
+    "policy": "No activation graph during serialization or restore. One model at a time during forward/backward. CPU state clone and fresh destination allowed only in distinct graph-free phase; no triple model/reference residency."
+  },
+  "status": "COMPLETE_CATEGORY_PROSPECTIVE_ENVELOPE_CONDITIONAL_NOT_RUNTIME_ADMISSION",
+  "time": {
+    "expected_total_seconds": 420,
+    "forecast_forward_backward_seconds": 180,
+    "forecast_graph_free_state_serialization_seconds": 120,
+    "forecast_inference_reporting_seconds": 90,
+    "forecast_startup_CPU_seconds": 30,
+    "hard_CPU_phase_seconds": 120,
+    "hard_MPS_total_seconds": 600,
+    "no_exact_implemented_runtime_call_counts_yet": true,
+    "not_measured_TOP_timing": true
+  },
+  "training_graph": {
+    "body_graph_allowance": 536870912,
+    "category_sum": 2943084032,
+    "five_full_FP32_parameter_copies": 827164160,
+    "host_report_clone_extra_allowance": 536870912,
+    "planned_MPS_highwater": 3758096384,
+    "planned_RSS_highwater": 4026531840,
+    "runtime_allocator_allowance": 268435456,
+    "six_vocab_tensors_allowance": 1235116032,
+    "small_buffers_inputs_rng_allowance": 8388608,
+    "sparse_Python_and_staging_allowance": 67108864,
+    "vocabulary_FP32_tensor": 205852672
+  },
+  "uncertainty": "Backend autograd saves/workspaces, allocator caches and CPU/MPS unified RSS accounting are estimates/allowances, not mathematical maxima or speed measurements. Source-only envelope does not admit numerical execution. Future implemented harness negative fixtures, full exact call counts, pins, roles when needed, guards, source review and once-only admission must be complete before any run."
+}

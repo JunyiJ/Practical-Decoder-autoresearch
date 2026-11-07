@@ -1,3 +1,30 @@
+# Body graph and prospective category cost prepared; attention owner next
+
+Read6 NEW source versions26,592B: selected local-mix blocks/FFN SwiGLU, ordinary
+RMSNorm/final LayerNorm delegates, final-scale attention path and sole physical
+MLA source. MLA graph read has explicit scores/softmax, no fused attention call.
+Actual attention namespace chain remains unresolved at epsilon initializer;
+operator graph cost is conditional, not a hidden runtime-selection claim.
+
+Prospective schedule now one shared h + two joint readout losses/one backward.
+Complete category forecast covers graph/state/CPU staging/export/serialization/
+retained overlap/inference/time: planned RSS3.75GiB/MPS3.5GiB vs hard4/6GiB;
+420s estimate vs hard120sCPU-phase/600sMPS; prospective small generated consumer
+entry16,376,659,968B incl8GiB reserve+2GiB extra, currently covered. No measured
+TOP maxima/timing, runtime call plan or numerical admission. These are independent
+NEW prospective archive caps, not relaxed old gates. No quality panel forecast.
+
+Read [body review](tokenizer-evidence/future-token-preparation-001/top-body-cost-source001.md),
+[provenance](tokenizer-evidence/future-token-preparation-001/top-body-cost-source001-provenance.json),
+[forecast](tokenizer-evidence/future-token-preparation-001/top-body-cost-source001-forecast.json),
+[completed015](tokenizer-evidence/future-token-preparation-001/continuation-completed015.json).
+Next [attention owner SOURCE boundary](tokenizer-evidence/future-token-preparation-001/top-attention-owner-source-handoff001.md)
+starts at epsilon attention/__init__.py; no prior24source/proof/audit repeats.
+Only after identity/design may minimal independent TOP source plan be prepared;
+no model code/runtime/roles/science/adoption yet. Future1255/modelproof1236/
+scientificruntime1211 unchanged, no new executables/weights/deletions/numerical
+exploration. Native/holdout/future_two panel unchanged; no worker launched.
+
 # Native GPT owner resolved statically; actual body and full cost next
 
 Read6NEWpackage source versions1,198B. Remaining models path chain now reads
