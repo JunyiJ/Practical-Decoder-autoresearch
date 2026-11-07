@@ -1,0 +1,130 @@
+{
+  "adopted": false,
+  "backend_calls": 0,
+  "failure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response-mps-failure001.json",
+    "sha256": "3ee544629aa09f6cf4f87cfb2f61fad33d49ee0aacb5e5c2a09e90de77af7800"
+  },
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-optimizer-precision-localization-v1-001/guard.json",
+    "sha256": "f9d8eedcf12807b925295da49c22b2b248810fd37c41e0737bc34f2437cae2d3"
+  },
+  "max_review_error": 0.0,
+  "metadata_mirror": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/mps-precision-metadata-mirror001/completion.json",
+    "sha256": "2e58f6089b2a2a291663f10a1f7fb6450a888f2067ea64f9fafca4afe20a66c5"
+  },
+  "models_loaded": 0,
+  "optimizer_steps": 0,
+  "original_transport_still_closed_failed": true,
+  "primitive_summary": [
+    {
+      "cpu_mps": {
+        "addmm": [
+          2.384185791015625e-07,
+          2.9802322387695312e-08
+        ],
+        "matmul": 0.0,
+        "norm": 5.960464477539063e-08,
+        "normalized": 2.9802322387695312e-08
+      },
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        4
+      ]
+    },
+    {
+      "cpu_mps": {
+        "addmm": [
+          0.0,
+          0.001953125
+        ],
+        "matmul": 0.0,
+        "norm": 0.0,
+        "normalized": 0.0
+      },
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        4
+      ]
+    },
+    {
+      "cpu_mps": {
+        "addmm": [
+          2.384185791015625e-07,
+          2.9802322387695312e-08
+        ],
+        "matmul": 1.4901161193847656e-08,
+        "norm": 0.0,
+        "normalized": 0.0
+      },
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        4
+      ]
+    },
+    {
+      "cpu_mps": {
+        "addmm": [
+          0.0078125,
+          0.00390625
+        ],
+        "matmul": 0.0,
+        "norm": 0.0,
+        "normalized": 0.0
+      },
+      "dtype": "torch.bfloat16",
+      "shape": [
+        3,
+        4
+      ]
+    }
+  ],
+  "quality_result": false,
+  "result": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-optimizer-precision-localization-v1-001/result.json",
+    "sha256": "8f9f813042a1492f63d0afcb06dfa0cee10ea7fd3d97b159ce53fad28b063627"
+  },
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-precision-review001.py",
+    "sha256": "0a95f57d5bee21ad64265eeac468c7bdb5b29e1d4245530c8c5cb1fa32d01bc4"
+  },
+  "source_bindings": 1054,
+  "source_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-optimizer-precision-localization-v1-001/plan.json",
+    "sha256": "87c2f5e2d21ba7b45f9e3ba30979477fa8ae77b4c97d147c50d3208582933df8"
+  },
+  "status": "failed_transport_and_distinct_primitive_metadata_independently_reviewed",
+  "terminal": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-optimizer-precision-localization-v1-001/STOP",
+    "sha256": "e7df55e707f9ead9907e71859022b28e6c3300b39efcf6cce7dc3ca4e8f3aff7"
+  },
+  "trace_summary": [
+    {
+      "first": "iteration1/polynomial",
+      "maximum": 0.25,
+      "shape": [
+        2,
+        4
+      ]
+    },
+    {
+      "first": "iteration1/polynomial",
+      "maximum": 0.109375,
+      "shape": [
+        3,
+        4
+      ]
+    }
+  ],
+  "transport_acceptance": false,
+  "vector_errors": {
+    "first": 0.0,
+    "norm": 0.0,
+    "quotient": 0.0,
+    "second": 0.0
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "actual_endpoint_consumer_admitted": false,
+  "adopted": false,
+  "controls": [
+    "FP32 versus BF16",
+    "CPU versus strict MPS on identical distinct inputs",
+    "norm/normalization/mm/addmm",
+    "four scalar fused/staged precision models all reported,no winner-based acceptance",
+    "fresh five-stage matrix-iteration trace",
+    "FP32 vector moment/arithmetic controls",
+    "source/globalRNG/input immutability/finite outputs/metadata budget"
+  ],
+  "cost": {
+    "conservative_mps_bytes": 1683038208,
+    "conservative_rss_bytes": 987922432,
+    "conservative_seconds": 60,
+    "forecast": "Failed target-device attempt measured450052096BRSS/17268736Bdriver;allow512MiBRSS and~1.55GiBdriver. Not a guarantee.",
+    "full_floor_bytes": 9861394432,
+    "metadata_cap_bytes": 2097152,
+    "mps_limit_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "rss_limit_bytes": 4294967296,
+    "target_bytes": 12008878080,
+    "timeout_seconds": 600
+  },
+  "failure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response-mps-failure001.json",
+    "sha256": "3ee544629aa09f6cf4f87cfb2f61fad33d49ee0aacb5e5c2a09e90de77af7800"
+  },
+  "local_basis": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response-mps-failure001.json",
+      "sha256": "3ee544629aa09f6cf4f87cfb2f61fad33d49ee0aacb5e5c2a09e90de77af7800"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response-review001.json",
+      "sha256": "80ee57b0f2be88ae6a1d686c933f18048c26efcec9341cf6689cb6b4ee6dd0f3"
+    }
+  ],
+  "new_information": "Distinct primitive inputs/shapes2x4 and3x4,vectorlength5;no original54 optimizer cases,no optimizer object or optimizer step,no real data/model. Localize precision without rerunning or relaxing the closed transport proof.",
+  "no_model_raw_corpus": true,
+  "no_old_kernel_or_proof_execution": true,
+  "no_rng_draws": true,
+  "no_transport_acceptance_or_tolerance_change": true,
+  "optimizer_steps": 0,
+  "prediction": "Descriptive primitive results may match different fused versus staged coefficient/intermediate rounding models on CPU and MPS. If none matches,the specific rounding mechanism remains unresolved.",
+  "primary_source": {
+    "actually_read": "use_metal_mm lines497-548;addmm_out_mps_impl lines1116-1204",
+    "git_version": "5c4886908584029761b579af026dcfb627c84070",
+    "inference": "The MPSGraph branch constructs scalar constants in the input dtype and represents matrix multiply,scaling and addition separately. This motivates testing staged bf16 arithmetic;branch conditions matter and no whole-backend equivalence is assumed.",
+    "url": "https://raw.githubusercontent.com/pytorch/pytorch/5c4886908584029761b579af026dcfb627c84070/aten/src/ATen/native/mps/operations/LinearAlgebra.mm"
+  },
+  "quality_result": false,
+  "question": "Which BF16 primitive arithmetic boundaries differ across CPU/MPS on distinct generated inputs,compared with FP32 controls and scalar precision models?",
+  "root": "research_runs/tokenizer-optimizer-precision-localization-v1-001",
+  "source_bindings_before": 1053,
+  "status": "finite_generated_primitive_localization_not_transport_rescue"
+}
