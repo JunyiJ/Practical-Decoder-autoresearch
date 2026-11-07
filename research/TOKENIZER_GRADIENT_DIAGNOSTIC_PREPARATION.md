@@ -1,23 +1,24 @@
-# Fixed-weight gradient cohorts complete
+# Generated CPU optimizer-response proof complete
 
-Four independent cohorts × 32 B8 draws × three fixed RAW dense controls completed
-393216 training-target evaluations. All 1047 source bindings are immutable. No
-optimizer updates, validation/holdout encoding, bootstrap or tensor writes occurred.
-Independent scalar review passed; models, source, files and global RNG were unchanged.
-The cohort root is terminal and all its commands are closed. No worker is active.
+The tiny synthetic clipping/Muon/Adam response passed all 54 predeclared cases
+against independent scalar arithmetic. Maximum parameter error1.49e-8;23 invalid
+state/gradient/output-budget cases rejected. No model, RAW, corpus, new seed,
+MPS API or actual-model update was used. Global CPU RNG and caller state were
+unchanged. The CPU proof and terminal review are closed;1050 bindings immutable.
+No numerical worker is active. Keep the native dense incumbent.
 
-Combined raw noise/signal ratios are 118.25 / 49.04 / 95.31 in B8-draw units.
-Cohort ratios vary about 1.75–3.71×, primarily through corrected-signal variation.
-These biased endpoint ratios do not establish an optimal batch or quality gain.
-Keep the native dense incumbent. No batch-training panel is admitted.
+The earlier cohort ratio instability is unchanged. Correctness of the generated
+response does not establish a batch size or quality gain. No batch-training panel
+or actual endpoint response measurement is admitted.
 
-See [current evidence](tokenizer-evidence/post-moe-boundary-001/evidence-review003.md),
-[independent review](tokenizer-evidence/post-moe-boundary-001/cohort-review001.json),
-[existing scalar analysis](tokenizer-evidence/post-moe-boundary-001/existing-analysis002.json)
-and [next generated prerequisite](tokenizer-evidence/post-moe-boundary-001/optimizer-response-design001.json).
+See [current evidence](tokenizer-evidence/post-moe-boundary-001/evidence-review004.md),
+[CPU result](tokenizer-evidence/post-moe-boundary-001/optimizer-response001/result.json),
+[terminal review](tokenizer-evidence/post-moe-boundary-001/optimizer-response-review001.json)
+and [next generated device prerequisite](tokenizer-evidence/post-moe-boundary-001/optimizer-response-mps-design001.json).
 
-Next: NEW additive tiny generated fixed-state clipping/Muon/Adam response proof,
-with independent arithmetic and actual installed optimizer equations. No real
-checkpoint/model/corpus consumer or quality campaign is admitted yet. Preserve
-all current and earlier sources, STOPs, weights and original evidence; never rerun
-closed component, integration, probe, cohort, review or analysis commands.
+Next: NEW additive tiny generated CPU/MPS response-transport component/proof,
+with independent scalar equations, genuine device responses, full source/runtime/
+resource guards and a new explicit synthetic-state/device policy. Preserve the
+successful CPU-only guard and all1050 predecessors. No model/checkpoint/corpus
+consumer or quality campaign is admitted yet. Never rerun closed proof/review,
+cohort, integration, component, diagnostic or analysis commands.

@@ -447,10 +447,10 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/adopted-width256-mla-epsilon-recipe.json",
     "sha256": "3d9b5d1e3cabebb676794399dd0728a454b4f046b836c3a70c1aad2477e55685"
   },
-  "current_capacity_note": "No storage blocker. Next generated CPU proof metadata-only floor 9861394432B / target 12008878080B fits measured ~80.6GB free. Actual-model response diagnostic and future quality panels are not admitted;forecast separately before freeze.",
-  "current_numerical_source_count": 1047,
-  "current_phase": "generated_optimizer_response_preparation",
-  "current_research_phase": "generated_optimizer_response_preparation",
+  "current_capacity_note": "No storage blocker. Next generated CPU/MPS proof metadata floor9861394432B,target12008878080B fits actual~80.6GB free. No actual endpoint-state consumer/measurement or quality panel is admitted;forecast separately before freeze.",
+  "current_numerical_source_count": 1050,
+  "current_phase": "generated_optimizer_response_mps_preparation",
+  "current_research_phase": "generated_optimizer_response_mps_preparation",
   "dataset_cache_cleanup": "research/tokenizer-evidence/dataset-cache-cleanup-001/completed.json",
   "decay_capacity": "research/tokenizer-evidence/decay-preparation-001/capacity003.json",
   "decay_capacity_check_interval_seconds": null,
@@ -9308,9 +9308,9 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Implement NEW additive generated fixed-state optimizer-response component/proof outside all1047 immutable bindings. Verify global clipping, actual Muon momentum/Nesterov/bfloat16 Newton-Schulz/RMS LR and AdamW moment/bias/epsilon equations against genuine installed optimizers on tiny deterministic matrices/vectors, using cloned synthetic state and independent arithmetic; reject malformed/foreign/mutating inputs transactionally. No corpus, real RAW load, model gradients, actual-model update, quality panel, new fixture/scientific seed or old command replay. Only after that proof review whether a separately designed fixed-state endpoint response diagnostic is justified.",
+  "next_action": "Implement a NEW additive tiny generated CPU/MPS optimizer-response transport component/proof outside all1050 immutable bindings. Give the new namespace its own explicit synthetic-state/device guard;never edit,monkeypatch or bypass CPU v1 policy. Compare all54 same deterministic cases plus missing-gradient controls against independent scalar equations and CPU on strict MPS, including actual perparameter Adam steps,global clipping,Muon bfloat16 Newton-Schulz,independent decay,cloned caller state and globalCPU/MPSRNG preservation. Use a fresh root,all source/prerequisite/runtime/LIVE gates,600s/4GiBRSS/6GiBMPS/8GiBreserve/2MiBmetadata guard. No corpus,model,RAW load,actual-model optimizer update,new seed,quality panel or old closed proof execution. Actual endpoint-state consumer/measurement remains unadmitted pending separate full-state correctness and resource design.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
-  "next_direction_status": "generated_fixed_state_optimizer_response_prerequisite_only_no_real_endpoint_or_quality_campaign",
+  "next_direction_status": "generated_cpu_mps_optimizer_response_transport_prerequisite_only_no_actual_endpoint_or_quality_campaign",
   "no_paid_compute": true,
   "no_subagents": true,
   "numerical_worker_active": true,
@@ -9428,7 +9428,7 @@
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "source_work_available": true,
-  "status": "gradient_cohorts_complete_ratio_instability_optimizer_response_proof_next",
+  "status": "generated_cpu_optimizer_response_proof_complete_mps_transport_next",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -9664,7 +9664,7 @@
   },
   "tokenizer_capacity_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gpt2-prefix-worker-v1-001",
   "tokenizer_capacity_worker_status": "terminal_prerequisite_pair_complete",
-  "tokenizer_current_source_count": 1047,
+  "tokenizer_current_source_count": 1050,
   "tokenizer_gradient_cohort_closure": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/continuation-completed003.json",
     "sha256": "e69cadb2d77aecd6a4b365b8af73baabd59d41b3d040a3d7e5eb0a621074efa4"
@@ -9699,7 +9699,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/gradient-model001.json",
     "sha256": "684dd351f3f82ae8e04c48efb8d433d8bcb6c6c28b7149ade713f257b8268c93"
   },
-  "tokenizer_gradient_phase": "generated_optimizer_response_preparation",
+  "tokenizer_gradient_phase": "generated_optimizer_response_mps_preparation",
   "tokenizer_gradient_source_plan": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/gradient-model001-plan.json",
     "sha256": "db97f9e3e88a78ac5d78b9ef0fd7f3e96e4be969cce8adb879939e84c2a5d6c2"
@@ -9806,9 +9806,25 @@
     "sha256": "8cf553b04de14693d9d7c1469bea1c40fdd8c2f58a70baf775d9426c3ae13ad1"
   },
   "tokenizer_moe_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
+  "tokenizer_optimizer_response_closure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/continuation-completed004.json",
+    "sha256": "f438ee06778c97c55c87ec3df2261b08af10c28a5cd45a8b0929b64679064f76"
+  },
   "tokenizer_optimizer_response_design": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response-design001.json",
     "sha256": "714a614f0d3b050d15a811c65557330810c9c70ebe35c76688e1d0ce88d48a0b"
+  },
+  "tokenizer_optimizer_response_mps_design": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response-mps-design001.json",
+    "sha256": "e029548723250fcb63819c3a3bcab51bbd93d8bf9dcdd402bf75905ed2c60eb7"
+  },
+  "tokenizer_optimizer_response_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response-review001.json",
+    "sha256": "80ee57b0f2be88ae6a1d686c933f18048c26efcec9341cf6689cb6b4ee6dd0f3"
+  },
+  "tokenizer_optimizer_response_source_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/optimizer-response001/plan.json",
+    "sha256": "822e0aab52999901de609e79f9dc821cec4e40d3d02e40e338d84849670e0fc6"
   },
   "tokenizer_post_moe_boundary": {
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/evidence-review.md",
@@ -9818,7 +9834,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/result.json",
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
-  "updated_at": "2026-11-07T00:31:09.890607+00:00",
+  "updated_at": "2026-11-07T00:46:10.483742+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
