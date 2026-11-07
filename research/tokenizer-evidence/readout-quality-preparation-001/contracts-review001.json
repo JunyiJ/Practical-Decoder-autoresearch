@@ -1,0 +1,128 @@
+{
+  "status": "closed_full_quality_contract_metadata_review_passed",
+  "at": "2026-11-07T06:06:17.158726+00:00",
+  "runtime_bindings": 1122,
+  "proof_bindings": 1124,
+  "source_hashes_unchanged": true,
+  "result": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality-contracts001.json",
+    "sha256": "c40fd104eef83bb27bbd5e51de41871eff65a12cf0e112ff852ff28d0ffc601e"
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality-contracts001-plan.json",
+    "sha256": "58551479320e063868763ff9917c1017c7c6269893fba53a9f1f1d80d93ec8fa"
+  },
+  "terminal": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/STOP-readout-quality-contracts001",
+    "sha256": "af9c39d28f92d75a2083ce487a313cc3380dce23e611a9b3fb667ea8a10d10c9"
+  },
+  "guards": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality-contracts001-guard.json",
+      "sha256": "e590ed945df76b1e7be93b09db83f31c8cd0161386382d986170fbe8f881ee97",
+      "record": {
+        "elapsed_seconds": 28.453963792067952,
+        "limits": {
+          "mps_driver_limit_bytes": 6442450944,
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 600
+        },
+        "observation": {
+          "free_bytes": 63489744896,
+          "mps_current_bytes": 0,
+          "mps_driver_bytes": 475136,
+          "peak_observed_mps_driver_bytes": 475136,
+          "peak_rss_bytes": 1382252544
+        },
+        "pid": 30266,
+        "reason": null,
+        "status": "finished"
+      }
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality-contracts001-cpu-guard.json",
+      "sha256": "f50a9a53b6c8e349a32599ac6540490da972126698298fd48cf9ea60b97368e5",
+      "record": {
+        "elapsed_seconds": 28.45098733296618,
+        "limits": {
+          "reserve_bytes": 8589934592,
+          "rss_limit_bytes": 4294967296,
+          "timeout_seconds": 120
+        },
+        "observation": {
+          "free_bytes": 63489744896,
+          "peak_rss_bytes": 1382252544
+        },
+        "pid": 30266,
+        "reason": null,
+        "status": "finished"
+      }
+    }
+  ],
+  "layouts": [
+    {
+      "actual_pilot_state_checked": true,
+      "additional_ancestry_path_headroom_bytes": 4096,
+      "arm": "native",
+      "cap": 587202560,
+      "fixture_values_NOT_trained_full_horizon": true,
+      "full_fixture_schema_validated": true,
+      "full_history_layout_counted_bytes": 564426474,
+      "h200_counted_bytes": 114076291,
+      "margin_bytes": 22776086,
+      "raw_counted_bytes": 450350183
+    },
+    {
+      "actual_pilot_state_checked": true,
+      "additional_ancestry_path_headroom_bytes": 4096,
+      "arm": "context_mix2",
+      "cap": 671088640,
+      "fixture_values_NOT_trained_full_horizon": true,
+      "full_fixture_schema_validated": true,
+      "full_history_layout_counted_bytes": 566623883,
+      "h200_counted_bytes": 114603642,
+      "margin_bytes": 104464757,
+      "raw_counted_bytes": 452020241
+    },
+    {
+      "actual_pilot_state_checked": true,
+      "additional_ancestry_path_headroom_bytes": 4096,
+      "arm": "probability_mix2",
+      "cap": 671088640,
+      "fixture_values_NOT_trained_full_horizon": true,
+      "full_fixture_schema_validated": true,
+      "full_history_layout_counted_bytes": 566623883,
+      "h200_counted_bytes": 114603642,
+      "margin_bytes": 104464757,
+      "raw_counted_bytes": 452020241
+    }
+  ],
+  "rejected_cases": 36,
+  "positive_prefixes": [
+    0,
+    1,
+    9,
+    18
+  ],
+  "nonconstant_bootstrap_independent_agreement": 1e-12,
+  "tiny_text_pt_or_tmp_files": 84,
+  "tiny_text_bytes": 3958,
+  "tiny_text_files_NOT_checkpoints": true,
+  "generated_roles_used": {
+    "generated_bootstrap": 600700006,
+    "generated_evaluation": 600700002,
+    "generated_fresh0": 600700003,
+    "generated_fresh1": 600700004,
+    "generated_fresh2": 600700005,
+    "generated_screen": 600700001
+  },
+  "scientific_roles_assigned": false,
+  "no_weight_files_or_training_or_scoring": true,
+  "numerical_replay": false,
+  "torch_import": false,
+  "model_checkpoint_loads": 0,
+  "limitation": "This review reconciles original source-bound assertions; it does not recreate discarded tensors/bootstrap draws. Full fixture tensors remain20update values, not1200trained endpoints.",
+  "next_action": "Distinct bounded three-pilot-H200 serving-consumer timing probe with recorded checkpoint initializer metadata, separate pinned plan and guards; no corpus/training/qualityseed. Preserve allnine-fresh requirement in frozen benchmark. Then complete cost/resource preflight and NEWscientific-role census before any scientific freeze.",
+  "elapsed_seconds": 0.03954541706480086
+}

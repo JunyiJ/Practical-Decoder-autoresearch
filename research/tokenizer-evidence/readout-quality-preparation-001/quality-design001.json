@@ -1,0 +1,81 @@
+{
+  "basis": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-mixture-direction001.json",
+    "sha256": "afc8c93b3c4fdab649b79557b3c30c2bda324842efd79644f76089dea3179ce1"
+  },
+  "design": {
+    "arms": [
+      "native",
+      "context_mix2",
+      "probability_mix2"
+    ],
+    "candidate": "probability_mix2",
+    "category": "Evidence-grounded structural exploration",
+    "confidence_scope": "Conditional on trained seeds and reused validation text;not holdout or population-seed confidence.",
+    "control_fallback": false,
+    "controls": [
+      "native",
+      "context_mix2"
+    ],
+    "cost_only_adoption": false,
+    "draws": 2000,
+    "ema_snapshots": 41,
+    "every_seed_negative": true,
+    "extra_tuning": false,
+    "fresh_order": [
+      "native,context_mix2,probability_mix2",
+      "context_mix2,probability_mix2,native",
+      "probability_mix2,native,context_mix2"
+    ],
+    "fresh_trajectories": 9,
+    "fresh_triples": 3,
+    "full_weight_high_water": 11576279040,
+    "generator": "PCG64",
+    "holdout_scored": false,
+    "keep_all_screens_and_fresh": true,
+    "learning_rates": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "mean_ce_delta_threshold": -0.02,
+    "native_token_blocks": [
+      2048,
+      4096,
+      8192
+    ],
+    "old_payload_or_future_retirement_or_hardlink_credit": false,
+    "pcg64_reinitialized_each_width": true,
+    "quantile": "linear",
+    "rescue": false,
+    "resource_axis": "Equal native token targets/updates,sampling seeds and finite LR allowance;not equal FLOPs,time or total active/stored parameters.",
+    "same_indices_across_seeds_and_contrasts": true,
+    "screen_trajectories": 9,
+    "seed_replacement": false,
+    "selection": "Minimum complete H200 MPS native CE independently per arm;lower LR exact tie.",
+    "separate_adoption_consumer_review": true,
+    "steps": 1200,
+    "target_bytes": 111536,
+    "target_contract_sha256": "b7e73bba4636a2459feb5ea4f70ab2890e4e20565f7f2a0ed7f1b0af296026c2",
+    "target_ids_sha256": "dad00eaab7c2076736432b83eb9f1cc404c87aa5e4820b5f7abebf384c7fcdaf",
+    "target_tokens": 34278,
+    "targets": 1228800,
+    "upper_quantile": 0.9916666666666667
+  },
+  "exact_model_design": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-mixture-design001.json",
+    "sha256": "6ba8214d571ddafcb093996a838fc945cb674c6063152932366fc5bb1575c56f"
+  },
+  "quality_only_floor": 22919774208,
+  "quality_seeds_assigned": false,
+  "remaining": "Fullcontracts proof/independent review/measured freshserving complete forecast/scientific role audit",
+  "remaining_chain_floor": 23481894848,
+  "scientific_freeze": false,
+  "scientific_preparation": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_READOUT_MIXTURE_SCIENTIFIC_PREPARATION.md",
+    "sha256": "f1466d7e8b202ba7b6a4287d6ba9e0d4ced30d85f2c4487debf4ee019a4a8131"
+  },
+  "status": "prospective_full_quality_design_not_admitted",
+  "stricter_floor": 23481894848,
+  "target": 25629378496
+}
