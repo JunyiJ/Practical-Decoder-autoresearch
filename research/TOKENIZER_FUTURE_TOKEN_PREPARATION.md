@@ -1,3 +1,27 @@
+# Native namespace trace002 advanced; actual GPT owner remains unresolved
+
+Read6 NEW source versions11,260B. Static path extensions now trace final-scale
+models -> epsilon -> final-bias -> beta2 -> readout-centering (next initializer
+unread). No imports/functions. FFN-structure GPT candidate was read: embeddings,
+block loop, final normalization once, ordinary untied lm_head/width_mult,
+default mean integer CE, same cached/noncached next-token projection. It returns
+no final hidden state. Its selection as actual forwarding owner is UNCONFIRMED;
+another physical block-norm GPT exists. No unseen-code/body-causality claim.
+
+This clarifies candidate hidden API and shared-graph lifetime costs, but complete
+model cost and model source remain unadmitted. Earlier all-parameter moment
+bounds do not prove exact serialized size or actual512MiB-cap failure. No
+model/runtime/scientific roles/panel/weights/deletions/executable additions.
+Read [trace002](tokenizer-evidence/future-token-preparation-001/top-native-forward-source002.md),
+[provenance](tokenizer-evidence/future-token-preparation-001/top-native-forward-source002-provenance.json),
+[completed013](tokenizer-evidence/future-token-preparation-001/continuation-completed013.json).
+
+Next [remaining NEW package-chain source](tokenizer-evidence/future-token-preparation-001/top-native-forward-source003-handoff.md)
+starts at readout_centering_model_v1/runtime/models/__init__.py. Preserve source
+bound; do not repeat prior12sources or closed proofs. Future1255/modelproof1236/
+scientificruntime1211 unchanged. Native/holdout/future_two panel unchanged; no
+numerical worker active. Earlier entries historical.
+
 # TOP consumer source boundary: optimizer constraints resolved; GPT owner next
 
 Read6actual incumbent wrapper/optimizer/trainer sources53,825B within the bound.
