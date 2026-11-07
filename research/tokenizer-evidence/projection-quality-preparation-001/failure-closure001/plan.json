@@ -1,0 +1,22 @@
+{
+  "absent_scientific_outputs": [
+    "projection-quality001-selection.json",
+    "projection-quality001-confirmation-plan.json",
+    "projection-quality001-fresh-inference.json",
+    "projection-quality001-primary-statistics.json",
+    "projection-quality001-independent-final-review.json",
+    "projection-quality001-final-review.json"
+  ],
+  "actual_process_check": "ps -p 48758,50942 returned no processes after original session2476 EXITED1",
+  "kind": "one_time_failed_projection_panel_read_only_closure_v1",
+  "limits": {
+    "cpu_seconds": 120,
+    "metadata_bytes": 8388608,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "next_action": "Evidence-grounded source-only review of forward-validation observability and CPU/MPS numerical assumptions,without rescoring or retrying this closed panel.",
+  "root_stop_sha256": "12c14336abf3a560b291a1943f14b54b7e57d87b05878876b355bbf8040d0151",
+  "scope": "Read original metadata,verify1164frozen source hashes,stream16original archive hashes,mirror metadata only;no tensor/model/scoring/census/bootstrap/RNG calls;no deletion or source/STOP edit",
+  "source_sha256": "81e7305375e67df30f1ad4cefeb6114c7a808fda82b5850133a4c9b830628830"
+}

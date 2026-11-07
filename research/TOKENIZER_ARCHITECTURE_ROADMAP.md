@@ -1769,3 +1769,22 @@ Full-quality source review001helper wording failure is preserved; distinct002
 finished remaining metadata checks with unchangedsources and no numerical replay.
 Read TOKENIZER_READOUT_PROJECTION_QUALITY_PROTOCOL.md and
 projection-quality-preparation-001/continuation-completed001.json.
+
+
+## Single-projection QUALITY001 incomplete validation failure
+
+Original controller48758/session2476 EXITED1 at linear_projection1 LR.0025 slot07
+RAW CPU/MPS CE/coverage acceptance, after its worker completed1200updates. Slots
+00-06 accepted; slots08-17 unattempted. RootSTOP/no_retry is final; no LR choice,
+fresh confirmation/statistics/adoption or negative quality conclusion. All1164
+frozen sources/16original4520794083B weights preserved. No active numerical worker.
+
+Missing failing CPU/MPS reports prevent exact discrepancy/root-cause recovery;
+never rescore/replay this closed study. Separate future-only paired-report helper
+passed12new literal metadata cases, saving both reports before unchanged3e-5
+rejection; not worker/scorer/runtime admission. Next source/design new bounded
+normalization/readout forward-sensitivity diagnostic versus scalarFP64 oracle,
+no old model/checkpoint/scoring/optimizer rescue. Evidence/limits in
+TOKENIZER_READOUT_PROJECTION_RESULTS.md and projection-quality-preparation-001/
+post-failure-evidence-review001.md. Native/holdout unchanged; carry broad/interaction
+allocation forward. Earlier preparation and launch sections are historical.

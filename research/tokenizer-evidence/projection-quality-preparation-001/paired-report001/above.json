@@ -1,0 +1,48 @@
+{
+  "absolute_ce_tolerance": 3e-05,
+  "accepted": false,
+  "canonical_coverage_pass": true,
+  "ce_pass": false,
+  "cpu": {
+    "ce": 0.0,
+    "literal_values": [
+      0.125,
+      0.375
+    ],
+    "target": {
+      "context": 128,
+      "first_target_offset": 1,
+      "holdout_scored": false,
+      "literal_fixture": "new_metadata_only_not_physical_codec_validation",
+      "policy": "readout_projection_native_distribution_validation_v1",
+      "tail_retained": true,
+      "target_bytes": 111536,
+      "targets": 34278
+    }
+  },
+  "cpu_mps_ce_difference": 3.0001e-05,
+  "kind": "projection_validation_pair_record_v1",
+  "mps": {
+    "ce": 3.0001e-05,
+    "literal_values": [
+      0.125,
+      0.375
+    ],
+    "target": {
+      "context": 128,
+      "first_target_offset": 1,
+      "holdout_scored": false,
+      "literal_fixture": "new_metadata_only_not_physical_codec_validation",
+      "policy": "readout_projection_native_distribution_validation_v1",
+      "tail_retained": true,
+      "target_bytes": 111536,
+      "targets": 34278
+    }
+  },
+  "physical_scorer_or_checkpoint_acceptance": false,
+  "provenance": {
+    "no_model_or_corpus": true,
+    "scope": "new_literal_report_fixture"
+  },
+  "target_equal": true
+}

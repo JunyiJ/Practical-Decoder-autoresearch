@@ -1,4 +1,37 @@
-# Single readout projection: quality panel frozen and running
+# Single readout projection: quality panel closed incomplete
+
+Original QUALITY001 is CLOSED_FAILED_INCOMPLETE at slot07 linear_projection1,
+LR.0025. Controller48758/session2476 EXITED1; worker50942 EXITED0 after1200updates.
+Only slots00-06 independently accepted; slots08-17 unattempted. RootSTOP is final,
+no_retry:true. No selection/fresh/serving/statistics/adoption. Native incumbent
+and closed holdout unchanged. No numerical worker active.
+
+Read projection-quality-preparation-001/failure-closure001/{review,guard,STOP},
+post-failure-evidence-review001.md and continuation-completed003.json. Failure was
+RAW CPU/MPS combined CE/coverage comparison before H200 scoring. Exact two report
+values/failing operand were NOTpersisted; never reconstruct by rescoring/replay.
+All1164 frozen sources and16original archives4520794083B preserved, including
+failed slot07. One-time closure2.049s/RSS25100288B mirrored111metadata680210B;
+ZEROtensor/model/scoring/training/census/RNG/deletion/weightcopy calls. Do not
+repeat that closed audit for unchanged state. Old campaign/proofs remain closed.
+
+NEW future-only research/projection_validation_pair_v1.py durably saves both
+caller-validated finite score reports before unchanged3e-5 rejection, with
+separate CE/target/coverage booleans. No frozen source imports it. NEWliteral
+paired-report001 passed12cases in.003773s/RSS23740416B/120sCPU4GiB/reserve8GiB/
+2MiBmetadata; zeroTorch/models/tensors/corpus/checkpoints/seeds/RNG. Its original
+command is CLOSED/no replay/retry. It fixes future diagnostic visibility ONLY;
+not numerical root cause, full worker integration, a new panel or quality gain.
+
+Next SOURCE/design bounded NEWliteral D256 normalization/readout forward
+sensitivity versus independent scalar FP64 oracle, with source/scope/resource
+review before any execution. No actual model/optimizer/trained checkpoint/corpus/
+quality-role use. No frozen tolerance/LR/init/EMA/horizon/backend rescue, STOPclear,
+replacement of failed slot, or partial-panel adoption. Broad/interaction budget
+carried forward. Current~42.23GBfree/no storageblock; old fullpanel floor is
+historical after closure, not a new requirement. Preserve every original output.
+
+## Original launch (closed historical step)
 
 Originalprepare completed once; freezef93aec6d is committed/pushed. FreezeSHA
 4e856e657f66e8e0849678c0e419bd8e3c6da6e4f3c25a4a809f7d37d6049be2.
