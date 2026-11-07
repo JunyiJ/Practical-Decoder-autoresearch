@@ -40,3 +40,14 @@ the failed trained checkpoint's cause. Read-only metadata analysis completed;
 no rescore/model/checkpoint replay. A separate anchor-subtracted LN formulation
 is SOURCEONLY and untested;no frozenmodel uses it. See continuation-completed004
 and anchored-normalization-source-design001.md for limitations/next gate.
+
+
+## Anchor functional gate complete; no model integration
+
+All66new CPU64/CPU32/MPS32comparisons and24rejections passed the fixed functional
+oracle/gradient contract, with unchanged RNG/inputs/sources. Yet same-case MPS
+input-gradient error increased from.0000427267185046 to.000364302458053.
+Both passed tolerance; MPSoriginal shiftpairs were already exact. Honor the
+predeclared worse-error rejection: no anchor model integration or follow-up rescue.
+This does not repair or explain the closed QUALITY001 failure. See
+anchored-norm001-review.json and continuation-completed005.json.

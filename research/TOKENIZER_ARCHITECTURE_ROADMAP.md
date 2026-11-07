@@ -1803,3 +1803,21 @@ at unchangedepsilon/affine; actualruntime/gradients UNTESTED. Next NEWliteral
 independentforward+analyticgradient functional gate requires source/resource
 admission first. No actualmodel/scorer/optimizer/checkpoint/quality integration.
 Read TOKENIZER_READOUT_PROJECTION_PREPARATION.md and continuation-completed004.
+
+
+## Anchor rejected for model integration; squared-ReLU source question
+
+The new66comparison/24rejection functional anchor gate passed its fixed contract,
+but worse same-case MPSinput-gradient error rejects actual-model integration.
+Do not promote a CPU-only improvement as a universal kernel upgrade or replay
+closed diagnostics. Native and failed projection panel remain unchanged.
+
+A source/literature boundary reviewed old table/localmix/FFN/activation evidence
+and actually read Primer2109.08668v1 section3/Figure6/A.7/A.8 andGLUVariants
+2002.05202v1 section2/3.1/Table1. Next tiny SOURCEpreparation only: two-matrix
+ungatedReLU-squared versusSwiGLU andmatched-budgetungatedSiLU. It preserves
+quadratic positive-branch self-interaction without independent gating; it is
+not a squared independent GLU gate. PriorungatedSiLUnegative remains contrary,
+unpooled;publishedgainsnotlocal. LOCALFFNfollowup/carrybroad-interactionforward.
+No actualmodel/scientificroles/panelbudget. Read TOKENIZER_RELU_SQUARED_PREPARATION.md
+and post-projection-boundary-001/evidence-review.md/direction001.json.

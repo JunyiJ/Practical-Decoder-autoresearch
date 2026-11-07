@@ -1,4 +1,33 @@
-# Forward-numerics diagnostic partial; anchor formulation SOURCE ONLY
+# Anchor functional gate complete; model integration rejected
+
+NEWanchored-norm001 passed66CPU64/CPU32/MPS32comparisons (33anchored forward/all
+analyticx-gamma-betagradients +33descriptiveoriginalcontrols) and24invalidcases.
+Originalfixedpredicates/input-gradslots/globalCPU-MPSRNG/all1175sourcebindings
+passed. Guard.490121s/RSS354107392B/MPS11370496B/600s/4GiB6GiB/reserve8GiB;
+all3CPUguardsfinished. No models/optimizer/checkpoints/corpus/RNGdraws. Read
+projection-quality-preparation-001/anchored-norm001/result-guards-STOP,
+anchored-norm001-review.json/review-guard,continuation-completed005.json.
+AlloriginalcommandsCLOSED/no replay/retry/source/tolerance rescue.
+
+DoNOTintegrateanchorintoactualmodels. The predeclared worse-error rule rejects
+integration: SAME MPSnarrow_gain8_low inputgradientmax .000364302458053 versus
+original.0000427267185046,bothwithinfixedtolerance. MPSoriginalalreadyexacton
+shiftpairs. CPUimprovementdoesnotestablishauniversalkernelupgrade. Do notsplit
+CPU/MPSkernels,tunepivot/replayorlaunchmodels torescueanchor. Nativeunchanged,
+quality001andforward001/002failuresstillclosed;no missingresultreconstruction.
+
+Evidence-groundednextdirection: research/TOKENIZER_RELU_SQUARED_PREPARATION.md
+andtokenizer-evidence/post-projection-boundary-001/evidence-review.md/direction001.
+Next SOURCE/tinycomponent preparation ONLY forungatedReLU-squared vsnativeSwiGLU
+andmatchedmatrix-budgetungatedSiLU. Primeractualtwo-matrixequationdiffersfrom
+squaringanindependentgatedbranch(cubic);oldungatedSiLUnegativeiscontrarycontrol,
+NOToldscorepoolingorreplay. TinyD<=8/N<=16/NEWliteral/no models-RNG-seeds-corpus.
+Pin/reviewcomponent+independentscalarforward/analyticbackward sources/scope/resource
+limitsbeforefirstexecution. Noactualmodel/scientificroles/fullpanelqualitybudget
+admitted. LOCALFFNfollowup;carrybroad/interactionallocationsforward. No worker;
+current~42.27GBfree/noblock/cleanupneed. Alloriginalweights/evidencepreserved.
+
+## Earlier forward diagnostic and source preparation (closed historical step)
 
 Read projection-quality-preparation-001/forward-sensitivity001/entry-failure-STOP,
 forward-sensitivity002/{failure-review,mps-guard,STOP},forward-sensitivity002-

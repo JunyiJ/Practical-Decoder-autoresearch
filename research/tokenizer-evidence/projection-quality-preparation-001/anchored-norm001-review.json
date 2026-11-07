@@ -1,0 +1,89 @@
+{
+  "counts": {
+    "all_comparisons": 66,
+    "descriptive_original": 33,
+    "gated_anchor": 33,
+    "invalids": 24
+  },
+  "decision": "Honor predeclared worse-error rejection;MPSoriginal alreadyexact onshiftpairs;anchor worsenssame-case MPSgx;no universal precisionimprovement/no furtheranchorintegration or rescue",
+  "failed_quality_root_cause_identified": false,
+  "fixed_elementwise_predicates_all_anchor_pass": true,
+  "global_cpu_mps_rng_inputs_grad_slots_preserved": true,
+  "guards": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/anchored-norm001/cpu-float32-guard.json",
+      "sha256": "c68cfa59a572b2cacd88ae49fa1fce76e076aa916d1d161cc4260d94ddf73fab"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/anchored-norm001/cpu-oracle-guard.json",
+      "sha256": "88c76a7f86ab678e921dd617f0f42fd860c3d780af7e08a50e09bf5c64451ff4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/anchored-norm001/cpu-float64-guard.json",
+      "sha256": "aa463a0e1391e749a27c0ae14f2241414afbd513a97998b0c372c3b865864594"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/anchored-norm001/mps-guard.json",
+      "sha256": "1b508327c25a6908a41b92f2a3edb0392ad5d55ca8cae68a848c0d4b95a59b00"
+    }
+  ],
+  "holdout_closed": true,
+  "model_integration_admitted": false,
+  "native_incumbent_unchanged": true,
+  "original_STOP": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/anchored-norm001/STOP",
+    "sha256": "c8f81fe2b09f63148f9c26a66c704327251b71811baae99e9443bb81f250b83f"
+  },
+  "original_result": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/anchored-norm001/result.json",
+    "sha256": "c09f872e37cb9bf2428d5632754ddcb5ab54fd88ea6131c469dbf9e591eceabf"
+  },
+  "review_no_tensor_model_scoring_or_fixture_replay": true,
+  "same_case_contrary": {
+    "anchor_gx_max": 0.0003643024580526344,
+    "both_within_fixed_tolerance": true,
+    "case": "narrow_gain8_low",
+    "device": "mps",
+    "original_gx_max": 4.2726718504582095e-05
+  },
+  "source_bindings_preserved": 1175,
+  "stage_maxima": {
+    "cpu_torch.float32_anchored": {
+      "gbeta": 0.0,
+      "ggamma": 2.3385541839116009e-07,
+      "gx": 0.00029823037186638146,
+      "output": 5.654484596107068e-07
+    },
+    "cpu_torch.float32_original": {
+      "gbeta": 0.0,
+      "ggamma": 0.021951281748274987,
+      "gx": 1.3792521436012066,
+      "output": 0.03648470234158396
+    },
+    "cpu_torch.float64_anchored": {
+      "gbeta": 0.0,
+      "ggamma": 4.440892098500626e-16,
+      "gx": 8.668621376273222e-13,
+      "output": 5.551115123125783e-17
+    },
+    "cpu_torch.float64_original": {
+      "gbeta": 0.0,
+      "ggamma": 3.4473944532376066e-11,
+      "gx": 2.4072619453363586e-09,
+      "output": 5.156763904778927e-10
+    },
+    "mps_torch.float32_anchored": {
+      "gbeta": 0.0,
+      "ggamma": 1.6216255716017258e-07,
+      "gx": 0.0003643024580526344,
+      "output": 5.654484596107068e-07
+    },
+    "mps_torch.float32_original": {
+      "gbeta": 0.0,
+      "ggamma": 1.6216255716017258e-07,
+      "gx": 4.2726718504582095e-05,
+      "output": 5.654484596107068e-07
+    }
+  },
+  "status": "functional_gate_accepted_model_integration_rejected_contrary_MPS_gradient_evidence"
+}

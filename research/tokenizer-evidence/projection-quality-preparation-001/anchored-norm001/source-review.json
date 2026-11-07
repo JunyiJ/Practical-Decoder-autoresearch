@@ -1,0 +1,18 @@
+{
+  "all_numeric_reporting_transfers_to_CPU_before_FP64": true,
+  "bounds_and_invalids_reviewed": 24,
+  "capacity_pass": true,
+  "derivation": "dx=inv*(v-mean(v)-c*inv^2*mean(v*c)),v=upstream*gamma;dgamma=sum(upstream*normalized),dbeta=sum(upstream);biasedvariance/epsilon1e-5;anchor chain attached/Jones=0",
+  "new_files": [
+    "research/anchored_layer_norm_oracle_v1.py",
+    "research/tokenizer-evidence/projection-quality-preparation-001/anchored-norm001.py"
+  ],
+  "new_literal_formulas_no_old001_002cases": true,
+  "no_predecessor_edits_or_actual_model_admission": true,
+  "plan_sha256": "4c814dff8f6eb80b9e5b3f7c6e50ba390f8a59662f19bb96f5c457a8ccd57dbf",
+  "preserved_predecessors": 1173,
+  "source_bindings": 1175,
+  "source_only_ast_no_import_or_numerical_call": true,
+  "status": "passed_source_only_analytic_scope_resource_review_before_first_execution",
+  "strict_resource_and_shared_lock_reviewed": true
+}

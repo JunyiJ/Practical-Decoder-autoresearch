@@ -1,0 +1,54 @@
+{
+  "actual_source_algebra_only": {
+    "equal_runtime_not_established": true,
+    "matrix_parameters_per_layer": 516096,
+    "native_hidden": 672,
+    "ungated_hidden": 1008,
+    "width": 256
+  },
+  "anchor_integration": "REJECTED_CONTRARY_SAME_CASE_MPS_INPUT_GRADIENT_ERROR",
+  "candidate": "ungated_squared_relu",
+  "classification": "LOCAL FFN architecture followup;carry broad and interaction allocations forward;preparation not numerical exploration",
+  "controls": [
+    "native_swiglu",
+    "ungated_silu"
+  ],
+  "equations": {
+    "candidate": "W_down max(W_up x,0)^2",
+    "native": "W_down(SiLU(W_gate x)*W_up x)",
+    "ungated_silu": "W_down SiLU(W_up x)"
+  },
+  "evidence_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/evidence-review.md",
+    "sha256": "d5abc248852c2ebce4f1734a762546e98b59873a72cfa3ff7d5863bc90a57cb7"
+  },
+  "forecast_tiny_only": {
+    "cpu_guard_seconds": 120,
+    "extra2GiB_target": 10739515392,
+    "floor": 8592031744,
+    "metadata_bytes": 2097152,
+    "mps_bytes": 33554432,
+    "mps_guard_seconds": 600,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 536870912,
+    "working_seconds": 10
+  },
+  "holdout_closed": true,
+  "native_incumbent_unchanged": true,
+  "next_tiny_source_scope": {
+    "derivative_squared_relu": "2*max(u,0),including0at0",
+    "gated_hidden_at_D8": 8,
+    "independent_scalar_forward_and_analytic_backward_required": true,
+    "literal_only_no_rng": true,
+    "matrix_parameters_at_D8": 192,
+    "maximum_rows": 16,
+    "maximum_width": 8,
+    "source_scope_resource_plan_review_before_first_execute": true,
+    "ungated_hidden_at_D8": 12
+  },
+  "no_actual_model_scientific_roles_panel_or_quality_budget_admitted": true,
+  "no_old_score_pooling_replay_or_rescue": true,
+  "not_admitted": "Squaring the independently gated branch would be cubic and is not the selected paper question",
+  "status": "source_and_tiny_component_preparation_only",
+  "time": "2026-11-07T12:41:47.710461+00:00"
+}
