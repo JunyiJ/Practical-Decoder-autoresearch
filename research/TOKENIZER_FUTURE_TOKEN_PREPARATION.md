@@ -1,3 +1,59 @@
+# CPU sampler integration CLOSED_ACCEPTED; physical data-view source next
+
+The separately admitted original sampling-runtime001 CPU command exited0. Exact
+all-token gathers/offsets/private streams/prefix restore/caller-input and globalCPU
+RNG preservation plus29 rejection transactions passed.13 actual sampler calls/
+62 anchors plus42 independent reference anchors;48 saved reports reconciled
+read-only, without sampler/RNG replay. Guard.875244708s/RSS209,862,656B under
+120sCPU/4GiB/8GiB reserve; zero MPS/model/corpus/tokenizer/scoring/checkpoint calls.
+Read original sampling-runtime001 plans/admission/result/guard/STOP and
+[completed continuation](tokenizer-evidence/future-token-preparation-001/continuation-completed004.json).
+
+The NEW two-role census passed65,525 text files/5,741,797,485B/0matches in
+60.786160875s/RSS137,330,688B. Source gate passed.012663416s/RSS25,952,256B.
+Train62090290001/val62090290002 NOW USED exclusively by this original CPU fixture;
+old unused receipt historical, NEVERreuse. All original commands/sources closed,
+no retry/replay/source-case-role rescue. No numerical worker active.
+
+Acceptance covers finite synthetic CPU sampler integration only. The original
+pure-index source review remains CLOSED_FAILED before index-oracle execution,
+and model-proof001 remains CLOSED_FAILED. No acceptance substitution or model
+qualification. Next [standalone physical train/val data-view SOURCE](tokenizer-evidence/future-token-preparation-001/physical-data-source-handoff001.md),
+with original raw split/codec/ID identities and own T+2 interface, no model imports
+or scoring. Separate NEW roles/source/resource/case gates before any corpus/RNG
+proof. Full physical scorer/serializedstate/real4/20/fullscience remain unqualified.
+
+All1243futurebindings preserve1238 predecessors plusfive new test/census/reviewer
+sources. Frozen sampler/model/index bytes unchanged; oldscientificruntime1211.
+No weights/deletions/retirement/qualitygain/adoption; native/holdout unchanged.
+Earlier entries historical.
+
+# Index source gate CLOSED_FAILED; independent CPU sampler proof sources prepared
+
+Original sampling-index-source-review001 exited1 before extracting/executing any
+function: the durable14-positive/44-negative plan has57 distinct report labels
+because starts_string appears twice. Review CPU guard.005180584s/RSS23,363,584B;
+original STOP/no_retry/no_replay preserved. The index oracle is UNEXECUTED, with
+no admission or acceptance. No case renaming, source edit, checker retry or
+successor index replay. This preparation error is not a numeric/quality finding.
+See [original failure review](tokenizer-evidence/future-token-preparation-001/sampling-index001-preparation-failure.md).
+
+The separately preplanned CPU sampler draw/gather/private-state question now has
+complete NEW source/case/resource plans in sampling-runtime001.py and
+sampling-seed-census001.py. New1793/419-ID literals,13 planned sampler calls/62
+actual anchor draws/42 independent reference anchor draws, prefix-restored stream
+comparison and29 rejection transactions. These sources were AST-compiled only;
+no Torch/sampler/generator/RNG/model/corpus execution. Two private-role proposals
+are bound only in the census plan; neither audited nor drawn, no scientific roles.
+No source/census/runtime admission yet. Next [new static integration-source gate](tokenizer-evidence/future-token-preparation-001/sampling-runtime-source-handoff001.md).
+
+This independent data integration test does not replace or accept the failed
+pure-index or model proofs. All1242futurebindings preserve1238 predecessors plus
+two index-review sources and two new runtime/census sources. Frozen sampler and
+closed model proof bytes unchanged; old scientific runtime1211 unchanged. No
+weights, checkpoints, deletions, retirement, quality result or adoption. No
+numerical worker active; native/holdout unchanged. Earlier entries historical.
+
 # Generated model proof CLOSED_FAILED; independent T+2 sampler source prepared
 
 Original model-proof001/launch001 exited1 at a negative-dtype fixture attempting

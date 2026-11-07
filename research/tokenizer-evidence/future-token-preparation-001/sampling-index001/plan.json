@@ -1,0 +1,1242 @@
+{
+  "complete_target_bytes": 10741743616,
+  "execution_sources": {
+    "research/future_token_sampling_v1.py": "f1c246dc16994bc735e2f2bc2673e89988503f7273a20c6c3e304b5f1a02ee9a",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-index-source-review001.py": "f42736c936b3f2ab9d750fea5f8552dbb1f6d733f0bfdda6744d68d51fdd2f4a",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-index001.py": "35708be45846544f5a140ec2273373438195297d1083ae9d9e94437d6ce6b657",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387"
+  },
+  "extracted_AST_sha256": "dd1243385c601a1e6244c254a4dddb9d2c45d221ab962ab83b3fbee7e03bd37f",
+  "extraction_policy": "exec_only_reviewed_require_and_positions_function_declarations_in_minimal_builtin_namespace;never_import_sampler_module_or_execute_class",
+  "forecast": {
+    "free_bytes": 35145842688,
+    "integer_coordinates": 14560,
+    "largest_live_layout_integers": 2080,
+    "retained_metadata_bytes": 2097152,
+    "rss_bytes": 134217728,
+    "seconds": 2
+  },
+  "future_source_bindings": 1240,
+  "kind": "new_finite_pure_integer_future_token_layout_oracle",
+  "limits": {
+    "CPU_seconds": 120,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "metadata_cap_bytes": 2097152,
+  "negative_cases": [
+    {
+      "length": true,
+      "name": "length_bool_true",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": false,
+      "name": "length_bool_false",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031.0,
+      "name": "length_float",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": "1031",
+      "name": "length_string",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": null,
+      "name": "length_none",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 0,
+      "name": "length_zero",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": -1,
+      "name": "length_negative",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 16777217,
+      "name": "length_overflow",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_none",
+      "split": null,
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_bool",
+      "split": true,
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_empty",
+      "split": "",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_test",
+      "split": "test",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_holdout",
+      "split": "holdout",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_case",
+      "split": "Train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_trailing",
+      "split": "train ",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_none",
+      "split": "train",
+      "starts": null
+    },
+    {
+      "length": 1031,
+      "name": "starts_scalar",
+      "split": "train",
+      "starts": 29
+    },
+    {
+      "length": 1031,
+      "name": "starts_string",
+      "split": "train",
+      "starts": "29,517"
+    },
+    {
+      "length": 1031,
+      "name": "starts_dict",
+      "split": "train",
+      "starts": {
+        "left": 29,
+        "right": 517
+      }
+    },
+    {
+      "length": 1031,
+      "name": "starts_set",
+      "split": "train",
+      "starts": {
+        "as_set": [
+          29,
+          517
+        ]
+      }
+    },
+    {
+      "length": 1031,
+      "name": "starts_iterator",
+      "split": "train",
+      "starts": {
+        "as_iterator": [
+          29,
+          517
+        ]
+      }
+    },
+    {
+      "length": 1031,
+      "name": "starts_subclass",
+      "split": "train",
+      "starts": {
+        "as_subclass": [
+          29,
+          517
+        ]
+      }
+    },
+    {
+      "length": 1031,
+      "name": "starts_empty",
+      "split": "train",
+      "starts": []
+    },
+    {
+      "length": 1031,
+      "name": "starts_one",
+      "split": "train",
+      "starts": [
+        29
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_three",
+      "split": "train",
+      "starts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_nested",
+      "split": "train",
+      "starts": [
+        [
+          29
+        ],
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_bool",
+      "split": "train",
+      "starts": [
+        true,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_float",
+      "split": "train",
+      "starts": [
+        29.0,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_string",
+      "split": "train",
+      "starts": [
+        "29",
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_none_item",
+      "split": "train",
+      "starts": [
+        null,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_negative",
+      "split": "train",
+      "starts": [
+        -1,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_past_last",
+      "split": "train",
+      "starts": [
+        29,
+        518
+      ]
+    },
+    {
+      "length": 513,
+      "name": "train_short513",
+      "split": "train",
+      "starts": [
+        0,
+        0
+      ]
+    },
+    {
+      "length": 514,
+      "name": "train_min_first_past",
+      "split": "train",
+      "starts": [
+        1,
+        0
+      ]
+    },
+    {
+      "length": 514,
+      "name": "train_min_second_past",
+      "split": "train",
+      "starts": [
+        0,
+        1
+      ]
+    },
+    {
+      "length": 129,
+      "name": "val_short129",
+      "split": "val",
+      "starts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "length": 130,
+      "name": "val_min_past",
+      "split": "val",
+      "starts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "length": 130,
+      "name": "val_starts_seven",
+      "split": "val",
+      "starts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "length": 130,
+      "name": "val_starts_nine",
+      "split": "val",
+      "starts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "length": 130,
+      "name": "val_starts_bool",
+      "split": "val",
+      "starts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_overflow",
+      "split": "train",
+      "starts": [
+        29,
+        9223372036854775808
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "split_list",
+      "split": [
+        "train"
+      ],
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": [
+        1031
+      ],
+      "name": "length_list",
+      "split": "train",
+      "starts": [
+        29,
+        517
+      ]
+    },
+    {
+      "length": 1031,
+      "name": "starts_bool_object",
+      "split": "train",
+      "starts": true
+    }
+  ],
+  "no_Torch_NumPy_sampler_RNG_model_corpus_checkpoint_scorer_calls": true,
+  "no_retry_replay_or_source_case_rescue": true,
+  "positive_cases": [
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          256,
+          385
+        ],
+        [
+          384,
+          513
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          256,
+          385
+        ],
+        [
+          384,
+          513
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        128,
+        256,
+        384,
+        0,
+        128,
+        256,
+        384
+      ],
+      "length": 514,
+      "name": "train_min514",
+      "split": "train",
+      "starts": [
+        0,
+        0
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          256,
+          385
+        ],
+        [
+          384,
+          513
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          129,
+          258
+        ],
+        [
+          257,
+          386
+        ],
+        [
+          385,
+          514
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        128,
+        256,
+        384,
+        1,
+        129,
+        257,
+        385
+      ],
+      "length": 515,
+      "name": "train_edges515",
+      "split": "train",
+      "starts": [
+        0,
+        1
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          1,
+          130
+        ],
+        [
+          129,
+          258
+        ],
+        [
+          257,
+          386
+        ],
+        [
+          385,
+          514
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          129,
+          258
+        ],
+        [
+          257,
+          386
+        ],
+        [
+          385,
+          514
+        ]
+      ],
+      "expected_row_starts": [
+        1,
+        129,
+        257,
+        385,
+        1,
+        129,
+        257,
+        385
+      ],
+      "length": 515,
+      "name": "train_last515",
+      "split": "train",
+      "starts": [
+        1,
+        1
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          5,
+          134
+        ],
+        [
+          133,
+          262
+        ],
+        [
+          261,
+          390
+        ],
+        [
+          389,
+          518
+        ],
+        [
+          527,
+          656
+        ],
+        [
+          655,
+          784
+        ],
+        [
+          783,
+          912
+        ],
+        [
+          911,
+          1040
+        ]
+      ],
+      "expected_row_starts": [
+        5,
+        133,
+        261,
+        389,
+        527,
+        655,
+        783,
+        911
+      ],
+      "length": 1041,
+      "name": "train_separated1041",
+      "split": "train",
+      "starts": [
+        5,
+        527
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          527,
+          656
+        ],
+        [
+          655,
+          784
+        ],
+        [
+          783,
+          912
+        ],
+        [
+          911,
+          1040
+        ],
+        [
+          5,
+          134
+        ],
+        [
+          133,
+          262
+        ],
+        [
+          261,
+          390
+        ],
+        [
+          389,
+          518
+        ]
+      ],
+      "expected_row_starts": [
+        527,
+        655,
+        783,
+        911,
+        5,
+        133,
+        261,
+        389
+      ],
+      "length": 1041,
+      "name": "train_reverse1041",
+      "split": "train",
+      "starts": [
+        527,
+        5
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          63,
+          192
+        ],
+        [
+          191,
+          320
+        ],
+        [
+          319,
+          448
+        ],
+        [
+          447,
+          576
+        ],
+        [
+          191,
+          320
+        ],
+        [
+          319,
+          448
+        ],
+        [
+          447,
+          576
+        ],
+        [
+          575,
+          704
+        ]
+      ],
+      "expected_row_starts": [
+        63,
+        191,
+        319,
+        447,
+        191,
+        319,
+        447,
+        575
+      ],
+      "length": 777,
+      "name": "train_overlapping777",
+      "split": "train",
+      "starts": [
+        63,
+        191
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          257,
+          386
+        ],
+        [
+          385,
+          514
+        ],
+        [
+          513,
+          642
+        ],
+        [
+          641,
+          770
+        ],
+        [
+          1151,
+          1280
+        ],
+        [
+          1279,
+          1408
+        ],
+        [
+          1407,
+          1536
+        ],
+        [
+          1535,
+          1664
+        ]
+      ],
+      "expected_row_starts": [
+        257,
+        385,
+        513,
+        641,
+        1151,
+        1279,
+        1407,
+        1535
+      ],
+      "length": 1665,
+      "name": "train_tuple1665",
+      "split": "train",
+      "starts": {
+        "as_tuple": [
+          257,
+          1151
+        ]
+      }
+    },
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          256,
+          385
+        ],
+        [
+          384,
+          513
+        ],
+        [
+          16776702,
+          16776831
+        ],
+        [
+          16776830,
+          16776959
+        ],
+        [
+          16776958,
+          16777087
+        ],
+        [
+          16777086,
+          16777215
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        128,
+        256,
+        384,
+        16776702,
+        16776830,
+        16776958,
+        16777086
+      ],
+      "length": 16777216,
+      "name": "train_max_length",
+      "split": "train",
+      "starts": [
+        0,
+        16776702
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          0,
+          129
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "length": 130,
+      "name": "val_min130",
+      "split": "val",
+      "starts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          0,
+          129
+        ],
+        [
+          1,
+          130
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "length": 131,
+      "name": "val_edges131",
+      "split": "val",
+      "starts": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          127,
+          256
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          255,
+          384
+        ],
+        [
+          511,
+          640
+        ],
+        [
+          700,
+          829
+        ],
+        [
+          969,
+          1098
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        1,
+        127,
+        128,
+        255,
+        511,
+        700,
+        969
+      ],
+      "length": 1099,
+      "name": "val_spread1099",
+      "split": "val",
+      "starts": [
+        0,
+        1,
+        127,
+        128,
+        255,
+        511,
+        700,
+        969
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          969,
+          1098
+        ],
+        [
+          700,
+          829
+        ],
+        [
+          511,
+          640
+        ],
+        [
+          255,
+          384
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          127,
+          256
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          0,
+          129
+        ]
+      ],
+      "expected_row_starts": [
+        969,
+        700,
+        511,
+        255,
+        128,
+        127,
+        1,
+        0
+      ],
+      "length": 1099,
+      "name": "val_reverse1099",
+      "split": "val",
+      "starts": [
+        969,
+        700,
+        511,
+        255,
+        128,
+        127,
+        1,
+        0
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          1,
+          130
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          512,
+          641
+        ],
+        [
+          1048576,
+          1048705
+        ],
+        [
+          8388608,
+          8388737
+        ],
+        [
+          16777085,
+          16777214
+        ],
+        [
+          16777086,
+          16777215
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        1,
+        128,
+        512,
+        1048576,
+        8388608,
+        16777085,
+        16777086
+      ],
+      "length": 16777216,
+      "name": "val_max_length",
+      "split": "val",
+      "starts": [
+        0,
+        1,
+        128,
+        512,
+        1048576,
+        8388608,
+        16777085,
+        16777086
+      ]
+    },
+    {
+      "expected_endpoints": [
+        [
+          0,
+          129
+        ],
+        [
+          7,
+          136
+        ],
+        [
+          128,
+          257
+        ],
+        [
+          256,
+          385
+        ],
+        [
+          384,
+          513
+        ],
+        [
+          512,
+          641
+        ],
+        [
+          638,
+          767
+        ],
+        [
+          639,
+          768
+        ]
+      ],
+      "expected_row_starts": [
+        0,
+        7,
+        128,
+        256,
+        384,
+        512,
+        638,
+        639
+      ],
+      "length": 769,
+      "name": "val_tuple769",
+      "split": "val",
+      "starts": {
+        "as_tuple": [
+          0,
+          7,
+          128,
+          256,
+          384,
+          512,
+          638,
+          639
+        ]
+      }
+    }
+  ],
+  "predecessor_bindings": 1238,
+  "predicates": "exact equality of ALL1040 indices per case/literal row endpoints/all1024 input and offset1/offset2 streams;all44 ValueError and caller-input preservation",
+  "sampler_source": "research/future_token_sampling_v1.py",
+  "scope_limit": "pure_position_arithmetic_only_not_private_generator_state_physical_data_split_model_or_quality_acceptance"
+}

@@ -1,0 +1,44 @@
+{
+  "census_source": "research/tokenizer-evidence/future-token-preparation-001/sampling-seed-census001.py",
+  "forecast": {
+    "rss_bytes": 134217728,
+    "seconds": 2
+  },
+  "future_source_bindings": 1243,
+  "kind": "NEW_independent_CPU_sampler_integration_static_source_gate_not_index_review_retry",
+  "limits": {
+    "CPU_seconds": 120,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "no_case_extraction_or_Torch_sampler_rng_model_execution": true,
+  "no_retry_replay_or_closed_source_case_rescue": true,
+  "plans": [
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/sampling-runtime001/plan.json",
+      "sha256": "324f5a042d20bac312018195a10645bf3cd50feb9b8a51f4bf959fd73bba4fba"
+    },
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/sampling-seed-census001/plan.json",
+      "sha256": "092f124dad00fe4da87f6658267c01f2a1492ac5cd1974c6c43c121d56342103"
+    }
+  ],
+  "runtime_source": "research/tokenizer-evidence/future-token-preparation-001/sampling-runtime001.py",
+  "sources": {
+    "research/future_token_sampling_v1.py": "f1c246dc16994bc735e2f2bc2673e89988503f7273a20c6c3e304b5f1a02ee9a",
+    "research/recorded_role_scan_v1.py": "d3e17f4ce39ef7a230778e363d98dbf67b1f591387d82d1c50eee02d1922808d",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-runtime-source-review001.py": "bc173e0eab906fda07e273d3a79fc743b4568fce6eb3b24383ea0375860807c8",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-runtime001.py": "dce6c0a7664ddc83a7136752573dea62840fb539eef845e9f2103f9b8287dbc5",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-seed-census001.py": "c900775bbc403045646adf0190434b0133705f8ba6bb41f3c72e58ec64e2341a",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387"
+  },
+  "syntax_sources": [
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-runtime001.py",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-seed-census001.py",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-runtime-source-review001.py",
+    "research/future_token_sampling_v1.py",
+    "src/research/cpu_prerequisite_guard.py",
+    "research/recorded_role_scan_v1.py"
+  ]
+}

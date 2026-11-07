@@ -1,0 +1,46 @@
+{
+  "actual_sampler_anchor_draws": 62,
+  "draw_calls": {
+    "restored_continuation": 4,
+    "uninterrupted": 9
+  },
+  "negative_cases": [
+    "split-holdout",
+    "split-test",
+    "split-none",
+    "split-bool",
+    "split-foreign",
+    "state-kind",
+    "state-signature",
+    "missing-generators",
+    "counter-negative",
+    "counter-bool",
+    "counter-missing",
+    "generator-dtype",
+    "generator-shape",
+    "generator-noncontiguous",
+    "generator-role",
+    "second-stream-preflight",
+    "extra-stream",
+    "invalid-generator-format",
+    "mutable-signature",
+    "owned-token-identity",
+    "owned-token-range",
+    "mutable-role",
+    "mutable-counter",
+    "constructor-dtype",
+    "constructor-rank",
+    "constructor-short-train",
+    "constructor-short-val",
+    "constructor-role-type",
+    "constructor-role-alias"
+  ],
+  "no_models_MPS_corpus_tokenizer_holdout_checkpoints_or_quality_calls": true,
+  "reference_anchor_draws": 42,
+  "roles": {
+    "train": 62090290001,
+    "val": 62090290002
+  },
+  "scope": "CPU_private_sampler_only;closed_index_and_model_proofs_remain_unqualified",
+  "status": "complete_original_CPU_sampler_draw_gather_state_proof"
+}

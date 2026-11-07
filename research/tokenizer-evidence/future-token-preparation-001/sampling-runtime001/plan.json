@@ -1,0 +1,114 @@
+{
+  "census_directory": "research/tokenizer-evidence/future-token-preparation-001/sampling-seed-census001",
+  "census_plan_sha256": "092f124dad00fe4da87f6658267c01f2a1492ac5cd1974c6c43c121d56342103",
+  "complete_target_bytes": 10775298048,
+  "data": {
+    "train_formula": "(67*i+31)%50257",
+    "train_length": 1793,
+    "val_formula": "(71*i+43)%50257",
+    "val_length": 419
+  },
+  "environment": {
+    "MKL_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+    "PYTORCH_MPS_FAST_MATH": "0"
+  },
+  "execution_sources": {
+    "research/future_token_sampling_v1.py": "f1c246dc16994bc735e2f2bc2673e89988503f7273a20c6c3e304b5f1a02ee9a",
+    "research/tokenizer-evidence/future-token-preparation-001/sampling-runtime001.py": "dce6c0a7664ddc83a7136752573dea62840fb539eef845e9f2103f9b8287dbc5",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387"
+  },
+  "forecast": {
+    "MPS_bytes": 0,
+    "free_bytes": 35143331840,
+    "metadata_bytes": 2097152,
+    "private_state_allowance_bytes": 2097152,
+    "rss_bytes": 805306368,
+    "seconds": 6,
+    "tensor_files": 0,
+    "token_tensor_bytes_per_sampler": 17696
+  },
+  "future_source_bindings": 1242,
+  "kind": "new_independent_CPU_sampler_draw_gather_private_state_integration_SOURCE_PREPARED_ONLY",
+  "limits": {
+    "CPU_seconds": 120,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "no_models_MPS_numerics_corpus_tokenizer_holdout_checkpoints_quality_or_adoption": true,
+  "no_replay_retry_or_role_source_case_rescue": true,
+  "planned": {
+    "actual_anchor_draws": 62,
+    "actual_sampler_calls": 13,
+    "final_calls_each": {
+      "train": 5,
+      "val": 4
+    },
+    "independent_reference_private_generators": 2,
+    "negative_cases": 29,
+    "negative_labels": [
+      "split-holdout",
+      "split-test",
+      "split-none",
+      "split-bool",
+      "split-foreign",
+      "state-kind",
+      "state-signature",
+      "missing-generators",
+      "counter-negative",
+      "counter-bool",
+      "counter-missing",
+      "generator-dtype",
+      "generator-shape",
+      "generator-noncontiguous",
+      "generator-role",
+      "second-stream-preflight",
+      "extra-stream",
+      "invalid-generator-format",
+      "mutable-signature",
+      "owned-token-identity",
+      "owned-token-range",
+      "mutable-role",
+      "mutable-counter",
+      "constructor-dtype",
+      "constructor-rank",
+      "constructor-short-train",
+      "constructor-short-val",
+      "constructor-role-type",
+      "constructor-role-alias"
+    ],
+    "reference_anchor_draws": 42,
+    "resumed_calls": 4,
+    "samplers": 2,
+    "uninterrupted_calls": 9
+  },
+  "predecessor_bindings": 1240,
+  "predicates": "exact ALL sequence/position/anchor tensors, offset0/1/2 every1024 entries, private RNG/counters/resume states/caller input ownership;all29 rejection transactions exact",
+  "schedules": {
+    "continuation": [
+      "val",
+      "train",
+      "train",
+      "val"
+    ],
+    "prefix": [
+      "train",
+      "val",
+      "train",
+      "val",
+      "train"
+    ]
+  },
+  "scope": "independent_CPU_private_sampler_integration;not_replacement_or_acceptance_of_closed_index_or_model_proofs;no_model_or_science_admission",
+  "separation": {
+    "index_source_gate": "CLOSED_FAILED duplicate labels;original14/44 oracle UNEXECUTED",
+    "no_original_index_cases_or_model_inputs_reused": true,
+    "prior_plan": "sampling-source-handoff001.md planned sampler draw/state question BEFORE current index-review failure"
+  },
+  "source_case_resource_review_and_census_and_fresh_admission_required": true,
+  "torch_git": "5c4886908584029761b579af026dcfb627c84070",
+  "torch_version": "2.14.1"
+}
