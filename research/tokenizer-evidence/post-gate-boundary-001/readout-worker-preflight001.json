@@ -1,0 +1,118 @@
+{
+  "status": "worker_source_census_scope_resources_reviewed_launch_admitted",
+  "at": "2026-11-07T05:23:46.319656+00:00",
+  "bindings": 1109,
+  "source_gate": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-worker-source001/result.json",
+    "sha256": "191c481b7443faaa976c41b65f284b1d28c038b70451cbfc6469e1747f9fe688"
+  },
+  "source_guard": {
+    "elapsed_seconds": 0.10791849996894598,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 67025883136,
+      "peak_rss_bytes": 214450176
+    },
+    "pid": 27267,
+    "reason": null,
+    "status": "finished"
+  },
+  "census_guard": {
+    "elapsed_seconds": 71.45011408394203,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 67027636224,
+      "peak_rss_bytes": 655015936
+    },
+    "pid": 26674,
+    "reason": null,
+    "status": "finished"
+  },
+  "census": {
+    "files": 61895,
+    "bytes": 5504282528,
+    "roles": {
+      "backbone_initializer": 600570,
+      "private_context_initializer": 7832783640945608940,
+      "private_evaluation": 600572,
+      "private_train_and_global_rng": 600571
+    }
+  },
+  "scope": "Only original three-arm four-update real-data prerequisites; twenty-update config contracts tested but pilots need separate fresh roles/plan. No quality panel.",
+  "protected_predecessors_unchanged": true,
+  "model_optimizer_corpus_calls_during_gate": 0,
+  "source_gate_numerical_replay": false,
+  "limits": {
+    "worker_seconds": 600,
+    "parent_seconds": 600,
+    "cpu_score_seconds": 120,
+    "rss_bytes": 4294967296,
+    "mps_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "metadata_bytes": 67108864
+  },
+  "output_bounds": [
+    {
+      "all_adam_payload_and_8MiB_overhead_bound": 578236928,
+      "arm": "native",
+      "pair_cap": 587202560,
+      "parameters": 28492416,
+      "remaining_margin": 8965632,
+      "steps": 4
+    },
+    {
+      "all_adam_payload_and_8MiB_overhead_bound": 578236928,
+      "arm": "native",
+      "pair_cap": 587202560,
+      "parameters": 28492416,
+      "remaining_margin": 8965632,
+      "steps": 20
+    },
+    {
+      "all_adam_payload_and_8MiB_overhead_bound": 580868608,
+      "arm": "context_mix2",
+      "pair_cap": 671088640,
+      "parameters": 28624000,
+      "remaining_margin": 90220032,
+      "steps": 4
+    },
+    {
+      "all_adam_payload_and_8MiB_overhead_bound": 580868608,
+      "arm": "context_mix2",
+      "pair_cap": 671088640,
+      "parameters": 28624000,
+      "remaining_margin": 90220032,
+      "steps": 20
+    },
+    {
+      "all_adam_payload_and_8MiB_overhead_bound": 580868608,
+      "arm": "probability_mix2",
+      "pair_cap": 671088640,
+      "parameters": 28624000,
+      "remaining_margin": 90220032,
+      "steps": 4
+    },
+    {
+      "all_adam_payload_and_8MiB_overhead_bound": 580868608,
+      "arm": "probability_mix2",
+      "pair_cap": 671088640,
+      "parameters": 28624000,
+      "remaining_margin": 90220032,
+      "steps": 20
+    }
+  ],
+  "requires_actual_counted_written_pair_match": true,
+  "requires_full_native_cpu_and_mps_validation": true,
+  "requires_h200_cache_reset_B1_B8": true,
+  "no_retry": true,
+  "no_source_rescue": true,
+  "retirements_authorized": false
+}
