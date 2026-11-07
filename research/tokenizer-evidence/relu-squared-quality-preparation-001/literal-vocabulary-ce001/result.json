@@ -1,0 +1,72 @@
+{
+  "caller_CPU_MPS_RNG_unchanged": true,
+  "forward_oracle_max": {
+    "cpu32": 2.7842204301922746e-05,
+    "cpu64": 2.814415367424772e-13,
+    "mps32": 9.400133027526181e-07
+  },
+  "negative_counts": {
+    "cpu32": 25,
+    "cpu64": 24,
+    "mps32": 24
+  },
+  "no_closed_fixture_replay_or_failed_model_cause_or_quality_adoption_claim": true,
+  "no_models_optimizer_corpus_checkpoints_seeds_rng_draws": true,
+  "pairs": {
+    "cpu32_CE": [
+      10.824905395507812,
+      11.725439071655273,
+      0.041360486298799515,
+      32.000099182128906,
+      11.725439071655273,
+      11.725439071655273
+    ],
+    "fixed_CE_atol": 3e-05,
+    "fixed_CE_rtol": 0.0,
+    "gradient_max": 2.664327621459961e-05,
+    "mps32_CE": [
+      10.824905395507812,
+      11.725436210632324,
+      0.04133269190788269,
+      32.0001106262207,
+      11.725436210632324,
+      11.725436210632324
+    ],
+    "names": [
+      "flat50257",
+      "dyadic_period257",
+      "correct_peak14",
+      "wrong_peak20_target_minus12",
+      "period257_plus768",
+      "period257_minus768"
+    ],
+    "per_row_abs_ce_error": [
+      0.0,
+      2.86102294921875e-06,
+      2.779439091682434e-05,
+      1.1444091796875e-05,
+      2.86102294921875e-06,
+      2.86102294921875e-06
+    ],
+    "perturb_cpu32_CE": 11.72568416595459,
+    "perturb_mps32_CE": 11.72568130493164
+  },
+  "predicates": {
+    "CPU_MPS_gradient": false,
+    "CPU_MPS_same_input_CE": true,
+    "cpu32_common_shift": true,
+    "cpu32_oracle": false,
+    "cpu32_perturbation": true,
+    "cpu32_slice": true,
+    "cpu64_common_shift": true,
+    "cpu64_oracle": true,
+    "cpu64_perturbation": true,
+    "cpu64_slice": true,
+    "mps32_common_shift": true,
+    "mps32_oracle": true,
+    "mps32_perturbation": true,
+    "mps32_slice": true
+  },
+  "source_pins_unchanged": true,
+  "status": "fixed_numerical_predicate_failed"
+}

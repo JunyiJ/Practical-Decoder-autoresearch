@@ -1,0 +1,63 @@
+{
+  "MPSguard": {
+    "elapsed_seconds": 0.7352664170321077,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 35119616000,
+      "mps_current_bytes": 0,
+      "mps_driver_bytes": 44843008,
+      "peak_observed_mps_driver_bytes": 44843008,
+      "peak_rss_bytes": 478543872
+    },
+    "pid": 65628,
+    "reason": "AssertionError('Fixed prespecified numerical predicate failed;see durable result/pairs before rejection')",
+    "status": "fixture_exception"
+  },
+  "all3CPUguards_finished": true,
+  "failed_gradient_rows": [
+    {
+      "backend": "cpu32",
+      "ce": 0.041360486298799515,
+      "forward_abs_error": 2.7842204301922746e-05,
+      "forward_pass": true,
+      "gradient_abs_max": 2.6695281533428705e-05,
+      "gradient_elementwise_pass": false,
+      "oracle_ce": 0.04133264409449759,
+      "part": "six",
+      "row": 2,
+      "target": 32003
+    }
+  ],
+  "false_predicates": [
+    "CPU_MPS_gradient",
+    "cpu32_oracle"
+  ],
+  "input_and_gradslot_and_global_RNG_preservation_original_assertions_recorded": true,
+  "limits": "Reconciles reported elementwise gradient flags and max errors; does not recompute unavailable full gradient tensors/coordinates or locate trained model failure. CPU32 singleton and six-row periodic both agree within fixed forward tolerance; no kernel identity inferred.",
+  "maximum_errors": {
+    "cpu32": {
+      "forward": 2.7842204301922746e-05,
+      "gradient": 2.6695281533428705e-05
+    },
+    "cpu64": {
+      "forward": 2.814415367424772e-13,
+      "gradient": 2.7000623958883807e-13
+    },
+    "mps32": {
+      "forward": 9.400133027526181e-07,
+      "gradient": 7.47033193082558e-08
+    }
+  },
+  "no_tensor_model_optimizer_corpus_checkpoint_oracle_backend_rng_scoring_replay": true,
+  "no_weights_or_deletions": true,
+  "original_metadata_files": 23,
+  "rejection_count": 73,
+  "same_input_CPU_MPS_CE_max": 2.779439091682434e-05,
+  "source_bindings": 1223,
+  "status": "closed_failed_literal_CE_probe_independent_metadata_reconciled"
+}

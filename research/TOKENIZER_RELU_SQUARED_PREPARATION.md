@@ -1,3 +1,45 @@
+# Literal full-vocabulary CE diagnostic: closed failed, all measurements retained
+
+Original literal-vocabulary-ce001 planSHA
+d5f9b82bfe006ffd3d8a6ff8efb9f8b6184fe65490f100b09ad591141c15cd24,
+worker65628/session74887 EXITED1/STOPclosed_failed/no_retry. NEW6literalV50257rows+
+knownperturbation+singleton (8rows/backend) tested CPU64/CPU32/MPS32 against independent
+math.fsumLSE/analyticgradient. All SAME-INPUT CPU/MPS CE comparisons passed3e-5/rtol0,
+max2.779439091682434e-5; allcommonshift/slice/perturbation predicates passed.
+But CPU32 correct_peak14 rowgradientFAILED fixedatol4e-6/rtol4e-5: maxerror
+2.6695281533428705e-5, andCPU-MPSgradient predicateFALSE/max2.664327621459961e-5.
+CPU32forwardoraclemax2.7842204301922746e-5passed3e-5. CPU64forward/gradmax
+2.814415367424772e-13/2.7000623958883807e-13 andMPS32max9.400133027526181e-7/
+7.47033193082558e-8 allpassed. No genericbackendranking/modelrootcause/qualityclaim.
+
+All73invalidrejections/actualcallerinputs-populatedgradslots/globalCPU-MPSRNG/
+1222sourcepins passed. Allbackendmeasurements/pairs were durable BEFORErejection;
+no missinglossreconstruction. Whole.735266417s/RSS478543872B/MPS44843008B/600s4GiB6GiB/
+reserve8GiB reportsfixture_exception atfinalnumericalassert;all3CPUguardsfinished.
+No models/optimizer/corpus/checkpoints/qualityroles/seed-RNGdraws. Twoadditivesources
+preserve1220=>1222;independentmetadatareviewsource=>1223IMMUTABLE. Review.054293333s/
+RSS21790720B checked23originalmetadata and1223sources/no numericalororaclereplay.
+No retry/source-tolerance-literal-backendrescue. No oldfullstate/model/fixture reopened.
+
+Read relu-squared-quality-preparation-001/literal-vocabulary-ce001/{plan,source-review,
+attempt,oracle,allbackendrows-invalids,paired-comparison,result,allguards,STOP},
+literal-vocabulary-ce001-review001/{plan,review-source001,review,guard,STOP},
+post-literal-ce-evidence001.md andcontinuation-completed003.json. Retrieved actual
+officialTorch5c488690 sources LossNLL.cpp/CPUlogsoftmaxheader+kernel/MPSActivation.mm.
+Sources support different reduction paths, NOT actualbinarydispatch orspecific
+operatorlocalization;MPSGraphinternalaccumulationopaque. ExistingarXiv1909.03469v1
+boundary remains applicable, notpermissiontochange CE/precision/backend or3e-5.
+
+NEXT bounded independent work: SOURCE/LITERATURE trace of pinnedCPUmap_reduce_all+
+ARMvector exp/log/reduction,derive an errorbudget from savedscalarCE data without
+recreating logits/gradientcoordinates/oldoracle/backend/modelcalls. Separate possible
+FP32roundoff from actualdispatch/cause. No furthernumericalfixture/source replacement/
+scientificpaneladmitted. ~35.12GBfree/noblock/no newweights-deletions;metadata2MiB+
+reserve8GiB+extra2GiBtarget10739515392B fits. All1223sources/allpriorweights-evidence
+protected. Native/holdoutunchanged/no numericalworkeractive;carrybroad/interaction
+allocationforward. Preparation/diagnosticnotnumericalqualityexploration. All prior
+entries below are historical stages with immutable original evidence.
+
 # Full-horizon generated FFN prerequisite: closed failed incomplete
 
 New bounded scanner and25 fixture-role census passed. The new CPU fixture passed
