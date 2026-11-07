@@ -1,0 +1,62 @@
+{
+  "GPT_source_owner": {
+    "bytes": 10493,
+    "path": "research/ffn_structure_v1/runtime/models/gpt.py",
+    "sha256": "9f5a6f5ffd97639535c77151acd7763bbab0f8c36365abe158d7588b63b909af"
+  },
+  "GPT_source_record_reused_without_reread_or_rehash": true,
+  "max_source_bytes": 246,
+  "model_source_and_complete_cost_admitted": false,
+  "new_edges": [
+    "readout_centering->branch_scale",
+    "branch_scale->local_mix",
+    "local_mix->ffn_norm",
+    "ffn_norm->mla_score",
+    "mla_score->ffn_structure",
+    "ffn_structure local-first then append block_norm fallback"
+  ],
+  "next_body_sources": [
+    "research/local_mix_v1/runtime/models/blocks.py",
+    "research/ffn_structure_v1/runtime/models/mlp.py"
+  ],
+  "no_research_import_function_or_numerical_execution": true,
+  "reading_limit_seconds": 600,
+  "selection_scope": "ordinary static overlay path order, no runtime import or sys.modules/profile claim",
+  "source_plus_notes_limit_bytes": 524288,
+  "source_version_limit": 6,
+  "source_versions": 6,
+  "sources": [
+    {
+      "bytes": 201,
+      "path": "research/readout_centering_model_v1/runtime/models/__init__.py",
+      "sha256": "cb847c49122c7da8cc9134c3ffb85423d0d23a30af19cbaf23c289dfbef7b663"
+    },
+    {
+      "bytes": 186,
+      "path": "research/branch_scale_model_v1/runtime/models/__init__.py",
+      "sha256": "644cd2c50e83526a777c19b95f354a97b8946d2eab93ee16e0d7e3ecdc801e04"
+    },
+    {
+      "bytes": 195,
+      "path": "research/local_mix_v1/runtime/models/__init__.py",
+      "sha256": "c85ada1dc7e605567b16d807824d666c7cad2035998509aabc2ef20b1e2dff88"
+    },
+    {
+      "bytes": 177,
+      "path": "research/ffn_norm_v1/runtime/models/__init__.py",
+      "sha256": "9ada1d55c609145dae5040b4609525d851f5c5817fc1e7b0538b6f4bb16923c4"
+    },
+    {
+      "bytes": 193,
+      "path": "research/mla_score_v1/runtime/models/__init__.py",
+      "sha256": "846e4cac5cde77ce544f4c709e9a834cc971155abdb2225f5efde1397753ff45"
+    },
+    {
+      "bytes": 246,
+      "path": "research/ffn_structure_v1/runtime/models/__init__.py",
+      "sha256": "653b3d6de5f4120310eb6a4bc59ccae6b41c2848e1d0d63fd1e915ec1debbbff"
+    }
+  ],
+  "status": "static_GPT_physical_owner_resolved_body_and_full_cost_pending",
+  "total_source_bytes": 1198
+}

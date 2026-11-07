@@ -1,3 +1,26 @@
+# Native GPT owner resolved statically; actual body and full cost next
+
+Read6NEWpackage source versions1,198B. Remaining models path chain now reads
+readout-centering -> branch-scale -> local-mix -> FFN-norm -> MLA-score ->
+FFN-structure local directory, then appended block-norm fallback. First matching
+GPT is the previously read FFN-structure definition; no import/reread/runtime
+profiling claim. Its block-loop/final norm/untied lm_head-width_mult/mean CE/same
+cache projection/no-hidden-return source facts now have resolved static ownership.
+
+Relative imports still search the whole overlay: actual blocks first at
+local_mix_v1/runtime/models/blocks.py; mlp first at FFN-structure mlp.py. Their
+bodies and complete shared graph/state/serialization/time cost are next. No
+model source/fixture/roles/scientific panel budget/adoption admitted. Read
+[trace003](tokenizer-evidence/future-token-preparation-001/top-native-forward-source003.md),
+[provenance](tokenizer-evidence/future-token-preparation-001/top-native-forward-source003-provenance.json),
+[completed014](tokenizer-evidence/future-token-preparation-001/continuation-completed014.json),
+[next body/cost source work](tokenizer-evidence/future-token-preparation-001/top-body-cost-source-handoff001.md).
+
+No repeated prior18source/proof/audit reads, numerical/research-function calls,
+new executables/weights/deletions. Future1255/modelproof1236/scientificruntime1211
+unchanged. Native/holdout/future_two panel unchanged; no numerical worker active.
+Earlier entries historical.
+
 # Native namespace trace002 advanced; actual GPT owner remains unresolved
 
 Read6 NEW source versions11,260B. Static path extensions now trace final-scale
