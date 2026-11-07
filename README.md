@@ -1,3 +1,5 @@
+> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](research/RESEARCH_RESUMED_2026-11-07.md). Byte-input model proof implementation is active; numerical entry is not yet qualified. Older pause banners below are historical.
+
 > **Research paused by the human on 2026-11-07.** Start with the [stop and restart handoff](research/RESEARCH_HANDOFF_2026-11-07.md). Current byte-input model integration is source-only; no quality gain or adoption. Automatic research is paused. New explicit human authorization is required to resume. Older active/launch wording below is historical.
 
 # Practical-Decoder

@@ -1,3 +1,5 @@
+> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](RESEARCH_RESUMED_2026-11-07.md). Byte-input model proof implementation is active; numerical entry is not yet qualified. Older pause banners below are historical.
+
 > **Current research status: HUMAN-PAUSED, 2026-11-07.** Read [the current handoff](RESEARCH_HANDOFF_2026-11-07.md). It supersedes all older active/continue banners. No automatic research or validation until a new explicit human resume instruction.
 
 # Bounded MLE experiment harness

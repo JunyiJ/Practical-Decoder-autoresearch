@@ -1,3 +1,5 @@
+> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](RESEARCH_RESUMED_2026-11-07.md). Byte-input model proof implementation is active; numerical entry is not yet qualified. Older pause banners below are historical.
+
 # Human-paused checkpoint — 2026-11-07
 
 Read [the current handoff](RESEARCH_HANDOFF_2026-11-07.md) and [compact state index](TOKENIZER_RESUME_STATE.json). Current work ended after byte-input model/codebook SOURCE integration and its original static gates. The byte component finite math proof passed; the integrated language model is unexecuted and unqualified. Native unchanged; TOP and byte composition unadopted. No worker runs. Research automations are PAUSED. Resume requires new explicit human authorization, then the next item is independent full codebook/actual-model proof SOURCES, not training. All older capacity/active/next-action sections below are historical.
