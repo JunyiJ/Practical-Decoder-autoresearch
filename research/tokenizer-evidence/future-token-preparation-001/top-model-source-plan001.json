@@ -1,0 +1,182 @@
+{
+  "future_binding_counts": {
+    "after_four_model_source_files": 1259,
+    "after_new_static_reviewer_source": 1260,
+    "closed_modelproof_runtime": 1236,
+    "current": 1255,
+    "scientific_runtime": 1211
+  },
+  "identity": "Own immutable spec/model/output/optimizer identity separate from true unmodified native child cfg. No old future_token_model_v1 imports or source edits, fake cfg, checkpoints or reused proof cases/roles.",
+  "inference": {
+    "initial_source_scope": "primary_logits(ids) delegates genuine native child uncached forward; no auxiliary projection. Cache/checkpoint/load/resume/export/scorer/worker adapter is explicitly outside this first source slice. Reject unsupported cache/state entry rather than exposing an untagged new adapter.",
+    "later_required": "Before full consumer/runtime science, NEW own cache/model-epoch/load/export/primary-only H200 parent identity proofs, actual native factory delegation, complete RAW/EMA/optimizer/samplers/RNG/LR/clipping and physical scorer qualification. Prior native acceptance does not substitute."
+  },
+  "initialization": "Build genuine native child with exact canonical cfg FIRST in every arm. Native owns all88 parameters. Augmented arm then registers ONE nn.Parameter copied from the resulting native.lm_head.weight with separate storage, no random temporary nn.Linear, no private/global seed API. Caller initializer roles are future harness responsibility, UNASSIGNED.",
+  "native_config": {
+    "attention_logit_scale": 0.5,
+    "attention_logit_scale_width_policy": "tokenizer_mha_gqa_score_v1",
+    "attention_width_policy": "mla_quarter_head32",
+    "attn_dropout": 0.0,
+    "attn_type": "mla",
+    "base_width": 64,
+    "block_normalization": {
+      "affine": true,
+      "bias": false,
+      "dtype": "float32",
+      "epsilon": 1.1920928955078125e-07,
+      "kind": "rms_incumbent",
+      "placement": "pre_attention_and_pre_ffn",
+      "policy": "tokenizer_block_norm_fp32_v1",
+      "width": 256
+    },
+    "block_size": 128,
+    "depth_width_policy": "depth4_unscaled",
+    "dim": 256,
+    "dropout": 0.0,
+    "embedding_backward": {
+      "cpu_backward": "native_reference",
+      "dtype": "float32",
+      "forward": "native_dense_embedding",
+      "max_gradient_tokens": 1024,
+      "mps_autograd_order": 1,
+      "mps_backward": "unique_membership_matmul_index_copy",
+      "padding_idx": null,
+      "policy": "tokenizer_grouped_mps_embedding_backward_v1",
+      "scale_grad_by_freq": false,
+      "sparse": false,
+      "version": 1,
+      "vocab_size": 50257,
+      "width": 256
+    },
+    "ffn": "swiglu",
+    "ffn_bias": false,
+    "ffn_width_policy": "swiglu_21_8",
+    "final_ln_bias_kind": "learned",
+    "final_ln_bias_policy": "mla4_final_ln_bias_v1",
+    "final_ln_scale_kind": "learned",
+    "final_ln_scale_policy": "mla4_final_ln_scale_v1",
+    "mlp_type": "dense",
+    "n_heads": 8,
+    "n_layers": 4,
+    "norm_type": "rmsnorm",
+    "output_bias_kind": "none",
+    "output_bias_prior": {
+      "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "prior_sha256": "470924d478e490521ed589c1ec38131ffad17d564990bc18dbb213e1fc04d792",
+      "tokenizer": {
+        "implementation": "tiktoken",
+        "name": "gpt2",
+        "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+        "special_token_policy": "ordinary_text",
+        "special_tokens": {
+          "<|endoftext|>": 50256
+        },
+        "split_unit": "raw_text",
+        "version": "0.14.0",
+        "vocab_size": 50257,
+        "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+      },
+      "train_fraction": 0.8,
+      "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+      "val_fraction": 0.1,
+      "version": 2
+    },
+    "output_bias_width_policy": "tokenizer_attention_no_output_bias",
+    "parameterization": "mup",
+    "readout_norm_epsilon": 1e-05,
+    "readout_norm_kind": "layer_affine",
+    "readout_norm_width_policy": "mla4_final_ln_scale_v1",
+    "residual_gain_kind": "unit",
+    "residual_gain_width_policy": "mla4_fixed_complete_branch_gain_v1",
+    "rope": 1,
+    "tokenizer_architecture_policy": "tokenizer_mla_final_ln_scale_v1",
+    "vocab_size": 50257
+  },
+  "native_config_basis": {
+    "changes_to_recipe_model": {
+      "final_ln_scale_kind": "learned",
+      "final_ln_scale_policy": "mla4_final_ln_scale_v1",
+      "readout_norm_width_policy": "mla4_final_ln_scale_v1",
+      "tokenizer_architecture_policy": "tokenizer_mla_final_ln_scale_v1"
+    },
+    "final_scale_decision": "research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-final-review.json",
+    "final_scale_decision_sha256": "ae8ae1218019f5c90b4a9e05839697ee1228964d91faabfc17da293606be4741",
+    "reason": "Explicit learned-scale namespace for unchanged retained learned-scale function; no training roles/paths/seeds copied.",
+    "recipe": "research/tokenizer-evidence/adamw-epsilon-preparation-001/adopted-width256-mla-epsilon-recipe.json",
+    "recipe_sha256": "3d9b5d1e3cabebb676794399dd0728a454b4f046b836c3a70c1aad2477e55685"
+  },
+  "native_constructor_import": "research.final_ln_scale_model_v1.runtime.models.gpt.GPT",
+  "new_source_proof_remaining": "After implementation: complete NEW independent model/head/optimizer proof and reviewer SOURCES with unique new literals/roles/census if needed/finite API rejections/full cost/pins/once-only attempt-lock-guards-STOP BEFORE ANY Torch/model/target/objective/oracle/RNG execution. Never recapture closed future_two/index/CE failed scopes. No scientific roles/budget/quality launch.",
+  "new_static_reviewer_required": true,
+  "no_model_code_written_or_functional_execution_yet": true,
+  "objective_import": "research.top_proximity_objective_v1.sparse_proximity_ce",
+  "optimizer": {
+    "adamw": "base LR, betas(.9,.999),eps1e-6,childweight_decay0",
+    "decay": "Independent.00006 once per parameter with gradient before child steps, unchanged LR/schedule handled by caller. Finite full-gradient preflight before any step; no optimizer response probes or new ledgers.",
+    "grouping": "Use validated native child unprefixed canonical names to classify 2D transformer.h.* matrices, then explicit auxiliary weight in AdamW; bind exact object coverage/order/shapes/trainability and own model identity. Never pass outer prefixed names through inherited44group validator or append a group to evade it.",
+    "groups_augmented": {
+      "AdamW": 45,
+      "Muon": 44
+    },
+    "groups_native": {
+      "AdamW": 44,
+      "Muon": 44
+    },
+    "initial_source_scope": "build/zero_grad/step/param_groups own wrapper only; no serialized optimizer loader, EMA/resume/scorer or scientific worker. Persistence requires later separately admitted adapter.",
+    "muon": "lr/2 at width_mult4, adjust_lr_fn match_rms_adamw; inherited algorithm unchanged",
+    "parameter_counts_augmented": 41358208,
+    "parameter_counts_native": 28492416
+  },
+  "prospective_resources": {
+    "attention_and_cache_static_owner_now_resolved": true,
+    "forecast": "research/tokenizer-evidence/future-token-preparation-001/top-body-cost-source001-forecast.json",
+    "forecast_is_not_measured_bound_or_runtime_admission": true,
+    "grouped_embedding_additional_workspace": "At1024 tokens: membership FP32<=4194304B, comparison bool<=1048576B, summed<=1048576B, dense gradient51463168B, plusuniqueIDs<=8192B; <=57762816B explicit scratch covered by existing512MiB body allowance. Not measured allocator/autograd maximum.",
+    "hard_MPS_bytes": 6442450944,
+    "hard_RSS_bytes": 4294967296,
+    "planned_MPS_bytes": 3758096384,
+    "planned_RSS_bytes": 4026531840,
+    "prospective_consumer_entry_bytes": 16376659968,
+    "sha256": "1db1d42c7b6196aa1bcdf00ee114296bd73c6ef64104954c3267ce797efd96fc",
+    "source_preparation_only": "<=2MiB new notes/source metadata, no tensor or weight files; next static review120sCPU/4GiBRSS/reserve8GiB; actual implemented runtime proof must separately pin all calls/cases/negative fixtures/roles/full costs before execution."
+  },
+  "source_files": [
+    "research/top_proximity_model_v1/__init__.py",
+    "research/top_proximity_model_v1/contract.py",
+    "research/top_proximity_model_v1/model.py",
+    "research/top_proximity_model_v1/optimizer.py"
+  ],
+  "spec": {
+    "D": 256,
+    "V": 50257,
+    "explicit_context_window_ordinary_ints": true,
+    "max_batch": 8,
+    "max_context": 128,
+    "max_window": 128,
+    "weights_are_source_contract_not_tuned_optimum_or_scientific_freeze": true,
+    "weights_augmented": [
+      0.5,
+      0.5
+    ],
+    "weights_native": [
+      1.0,
+      0.0
+    ]
+  },
+  "static_gate_only": "AST/literal/source-only, never imports model/optimizer/target/objective/Torch or executes extracted functions",
+  "status": "INDEPENDENT_TOP_MINIMAL_MODEL_SOURCE_PLAN_COMPLETE_SOURCE_WORK_ONLY_NO_IMPORT_OR_RUNTIME",
+  "target_source_import": "research.top_proximity_targets_v1",
+  "training": {
+    "api": "forward_train(raw_ids,context); exact B x(context+window) ordinary int64 CPU/MPS raw IDs, B1..8/T1..128/W1..128/V50257 bounds; input device equals FP32 model device; reject padding/OOV/partial-tail/bool/autocast/config mutation before graph or target staging.",
+    "body": "One explicit training hidden path through genuine child grouped input embedding/input scale, all4 child blocks in original order, same final norm; require fixed rope/serial/unit/SwiGLU/non-MoE/non-logit-z/value-residual-none identity. Native arm delegates native forward. Augmented primary logits native lm_head(h)/native.width_mult and aux F.linear(h,aux_weight)/same width_mult. No hook, duplicate body, detach or sequential head backward.",
+    "input": "Only first T IDs enter embedding/body; next-token labels raw[:,1:T+1]. Extra W IDs are detached training targets, never forwarded to native body; at most1024 embedding-gradient tokens.",
+    "loss": "Native primary CE; augmented .5*primary+.5*aux, each reduction over ALL B*T. Objective module never backward or edits caller grad slots; caller performs ONE joint backward, full-model clipping, scheduled step/EMA later.",
+    "outputs": "Own tagged loss breakdown/distribution metadata with raw primary logits and auxiliary logits only for training; reject silent native-distribution masquerade.",
+    "targets": "Native and copied-next use genuine integer-target mean CE for primary; copied-next auxiliary same labels. future_proximity preflights every full sequence and calls accepted own target rows/probabilities for NEW consumer inputs, flatten B*T immutable target rows, then accepted sparse objective. No old proof/oracle/case replay; represented weights cast once/no renormalization."
+  },
+  "variants": [
+    "native",
+    "copied_readout_next",
+    "future_proximity"
+  ]
+}

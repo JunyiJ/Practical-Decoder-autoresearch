@@ -1,3 +1,31 @@
+# Native attention/cache source resolved; minimal TOP model SOURCE plan prepared
+
+Read6 NEW source versions11,914B. Missing physical FFN-norm attention path resolves
+through parent runtime.__path__ -> MLA-score -> FFN-structure -> base block-norm
+attention package, whose initializer has no path changes. MLA owner matches the
+body already read. Cache factory is local-mix overlay: KV64/rotary32, per-layer
+signature/position/reset; no FFN history for incumbent. Grouped embedding source
+also read: first-order MPS backward/max1024 gradient input tokens, unchanged.
+Future target tail must stay outside embedding; its57,762,816B scratch arithmetic
+fits the existing prospective body allowance, not an allocator measurement.
+
+Prepared [minimal source plan](tokenizer-evidence/future-token-preparation-001/top-model-source-plan001.json):
+4new modules for own spec/native child+copied training readout/joint loss/explicit
+optimizer grouping, initial uncached primary inference, no serialized/cache/
+scorer/worker adapters. Native cfg derives from adopted epsilon recipe plus
+explicit retained learned-scale namespace; old seeds/paths not copied. Next
+implement those SOURCE files plus NEW static reviewer source ONLY, no imports or
+functional calls. Exact new proof/cases/roles-if-needed/pins/resources/guards must
+precede later runtime. No closed-proof successor or scientific panel admission.
+
+Read [review/next work](tokenizer-evidence/future-token-preparation-001/top-attention-owner-source002.md),
+[provenance](tokenizer-evidence/future-token-preparation-001/top-attention-owner-source002-provenance.json),
+[completed017](tokenizer-evidence/future-token-preparation-001/continuation-completed017.json).
+Currentfuture1255/modelproof1236/scientific1211 unchanged; prospective4files1259+
+reviewer1260 are not yet added/accepted. Zero model execution/new roles/corpus/
+scoring/weights/deletions/numerical exploration. Currentfree covers16.38GB future
+consumer envelope; no storage blocker. Native/holdout/future_two panel unchanged.
+
 # Attention namespace trace001 partial: next unread FFN-norm edge
 
 Read6 NEW attention initializers: epsilon -> final-bias -> beta2 ->

@@ -1,0 +1,49 @@
+{
+  "MLA_owner": "research/block_norm_v1/runtime/attention/mla.py",
+  "MLA_source_reused_from_prior_read_without_reread": true,
+  "cache_factory_owner": "research/local_mix_v1/runtime/attention/cache.py",
+  "grouped_embedding_owner": "research/block_norm_v1/runtime/models/grouped_embedding.py",
+  "initial_missing_path": "research/ffn_norm_v1/runtime/attention/__init__.py",
+  "max_source_bytes": 6516,
+  "model_code_or_runtime_executed": false,
+  "prior30sources_not_repeated": true,
+  "reading_limit_seconds": 600,
+  "resolution": "parent runtime.__path__ via mla_score and ffn_structure ->block_norm runtime local attention package; no imports",
+  "selection_scope": "ordinary static path search, not runtime import/sys.modules/kernel profile",
+  "source_plus_notes_limit_bytes": 524288,
+  "source_version_limit": 6,
+  "sources": [
+    {
+      "bytes": 170,
+      "path": "research/ffn_norm_v1/runtime/__init__.py",
+      "sha256": "efa6e69c8ce84704c81a8672ee7a8813c0464b3bd3cb4e44d914a20de8de603a"
+    },
+    {
+      "bytes": 186,
+      "path": "research/mla_score_v1/runtime/__init__.py",
+      "sha256": "d31c1b119490c214fedf337a265272ddeed5152129b15d0fb92a91fb4bfceaae"
+    },
+    {
+      "bytes": 239,
+      "path": "research/ffn_structure_v1/runtime/__init__.py",
+      "sha256": "38bddf624cde324522cdde2e881fb07f91e1259af33dbe879d0863fa903f6d81"
+    },
+    {
+      "bytes": 55,
+      "path": "research/block_norm_v1/runtime/attention/__init__.py",
+      "sha256": "d4b73c2244f2e465ea8e727c9c057a0f8e186ffe4002aabedfd2c2c6142c9907"
+    },
+    {
+      "bytes": 6516,
+      "path": "research/local_mix_v1/runtime/attention/cache.py",
+      "sha256": "242efa471543602c9c95109378eb91af2a5daadbf95f9d196be9db5c820de942"
+    },
+    {
+      "bytes": 4748,
+      "path": "research/block_norm_v1/runtime/models/grouped_embedding.py",
+      "sha256": "beb408e79aef6983f8ef8748cfcb1a94c4ae645f89e34aa8c2b152587d634825"
+    }
+  ],
+  "status": "attention_MLA_cache_factory_and_grouped_embedding_static_sources_resolved_SOURCE_plan_prepared_ONLY",
+  "total_source_bytes": 11914
+}
