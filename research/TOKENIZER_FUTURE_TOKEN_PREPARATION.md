@@ -1,3 +1,28 @@
+# Physical train/val data-view SOURCE prepared; runtime proof source is next
+
+New future_token_data_v1.py (9990B) separates pinned metadata/genuine train/val
+BPE decoding from explicitly role-bound private CPU sampler construction. Own
+Decoded/View identities, sequence8x130+positions interface and in-memory state
+preflight; no model, oldworker/validator, fakecfg, historical(x,y), scorer or
+checkpoint I/O. Frozen sampler implementation unchanged.
+
+Original physical-data-source001 static review exited0 in.010754625s/RSS24,264,704B
+under120sCPU/4GiB/8GiB reserve/2MiBmetadata. It inspected AST and original metadata
+ONLY: exact encode slices text[:a]/text[a:b], inherited JSON-ID digest options,
+physical token/target counts and T+2 eligibility, lazy generator boundary/own state
+identity. No module/function/extracted function/Torch/tiktoken/corpus/sampler/RNG
+execution. This is SOURCE-ONLY acceptance, not physical decode/data runtime proof.
+Read original plan/review/guard/STOP and [completed continuation](tokenizer-evidence/future-token-preparation-001/continuation-completed005.json).
+
+Next [complete NEW physical proof/census source preparation](tokenizer-evidence/future-token-preparation-001/physical-data-proof-source-handoff001.md),
+with new exact cases/roles/resource gates BEFORE any corpus/RNG call. No roles
+proposed here. All1245futurebindings preserve1243predecessors plusdata source and
+reviewer; oldscientificruntime1211/closedmodelproof1236 unchanged. All commands/
+sources closed/no replay/retry/source rescue. Earlier CPU sampler accepted only
+in its finite scope; failed index/model proofs remain unqualified and closed.
+No weights/deletions/retirement/scoring/qualitygain/adoption; native/holdout unchanged,
+no numericalworker active. Earlier entries historical.
+
 # CPU sampler integration CLOSED_ACCEPTED; physical data-view source next
 
 The separately admitted original sampling-runtime001 CPU command exited0. Exact
