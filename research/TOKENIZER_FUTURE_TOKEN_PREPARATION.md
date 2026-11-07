@@ -1,3 +1,37 @@
+# Actual-model source prepared; generated runtime proof is next
+
+Five new files in research/future_token_model_v1 implement exact native/duplicate-
+next/future-two identities, genuine native child first, independent copied training
+head, primary-only inference/cache, own weight/optimizer preflight and sequential
+head backward. Shared W is registered once; the helper clips/steps zero times,
+leaving one complete clip/update to its eventual caller. Source bytes30348.
+No model, tensor, optimizer, RNG, corpus, scoring or checkpoint code was executed.
+
+Original metadata source review001 is CLOSED_FAILED at a combined call-filter/
+constructor-count assertion. Its substring filter can matchtorch.random namespace;
+individual failed operands were not persisted and were not reconstructed. All
+original source/plan/attempt/guard/STOP/failure-review preserved, no retry/edit.
+A DISTINCT semantic-AST review002 inspects complete call names/order and independent
+literal-dimension algebra WITHOUT executing extracted functions. It passed on
+BYTE-IDENTICAL five implementations in.012319583s/RSS23871488B/120sCPU4GiB/
+8GiBreserve/2MiBmetadata. This is source-only acceptance, NOT runtime qualification.
+Read future-token-preparation-001/model-source001 andmodel-source002 originals.
+
+Source algebra matches projected28,492,416/88/44Muon44AdamW native versus
+29,183,008/111/55Muon56AdamW auxiliary. Actual construction/gradients/updates/cache/
+loads/RNG remain UNTESTED. All1233futurebindings preserve1226 predecessors, five
+implementations and bothsavedreviewers; old scientific runtime1211 unchanged.
+No fixture or scientific role values assigned. Prior tiny component stays closed.
+
+Next executable work: [complete generated-proof and census source preparation](tokenizer-evidence/future-token-preparation-001/generated-proof-source-handoff001.md),
+including exact native and seq/joint comparisons, fullB8 sequential backward,
+primary cache/causality/own-state rejections and COMPLETE allocation-lifetime/time/
+retained-output forecast before any construction. New initializer census first;
+no old roles/cases/replay or naive full-batch joint allocation. Do not wait on CE.
+No real corpus worker/scientific budget/freeze/quality gain/adoption yet. Current
+~35.14GBfree coversmetadata-only requirement; no storage block or cleanup need.
+Native/holdout unchanged; no numerical worker active. Earlier entries historical.
+
 # Auxiliary future-token direction: tiny objective accepted
 
 Human steering: keep improving through a different evidence-grounded direction
