@@ -9,8 +9,13 @@ full retained-output/time budget and independent review.
 
 Admission preserves1122runtime/1126execution-and-proof source bindings. No
 scientific root or freeze had been created when continuation-completed002.json
-was recorded. Next execute original research.readout_mixture_quality_v1.execution
-prepare once, then a single run-all controller after recording the exact freeze.
+was recorded. Original prepare has now completed once, and one run-all controller
+started after the freeze was committed and pushed as a3c00287. Original freeze
+SHA256 a3dab0ebb168c50d2dedcc98642d0419aa847ff9b4036115176b6c5d51ac251b.
+Launch002 records controller32259/execsession33166 and first worker32282/native
+slot00 with a completed first training update and healthy original guard. Those
+are historical launch observations: follow actual durable controls/logs/guards/
+STOP/anchors, never assume the same PID/slot remains current.
 Never duplicate controllers/workers, rerun attempted slots, edit frozen sources,
 clear STOP, use live bind/state/advance for partial-slot monitoring or relax gates.
 Use the explicit project.venv, four threads, strict MPS, original memory/time/disk

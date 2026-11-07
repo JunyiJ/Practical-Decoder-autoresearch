@@ -1,0 +1,91 @@
+{
+  "accepted_at_observation": 0,
+  "all_admission_bindings": 1126,
+  "arm": "native",
+  "at_unix": 1794032806.4204328,
+  "controller_exec_session": 33166,
+  "controller_pid": 32259,
+  "freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality001-freeze.json",
+    "sha256": "a3dab0ebb168c50d2dedcc98642d0419aa847ff9b4036115176b6c5d51ac251b"
+  },
+  "freeze_commit": "a3c00287",
+  "incumbent_unchanged": true,
+  "launch_admission": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality-launch001.json",
+    "sha256": "bc79b8be139e52acc7c377eeca0633e303d8fe3e6a5521c244d912466b4e5c8e"
+  },
+  "monitoring": "One-time actual-start observation only. Later follow actual control/process/guard/STOP/anchors; no live partial-slot bind/state/advance, no duplicate controller/worker or repeated healthy records.",
+  "no_holdout": true,
+  "observed_process": {
+    "argv": [
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "-m",
+      "research.readout_mixture_quality_v1.worker",
+      "--root",
+      "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001",
+      "--stage",
+      "quality",
+      "--slot",
+      "0",
+      "--global-fd",
+      "3",
+      "--run-fd",
+      "4",
+      "--request-sha",
+      "db96d541536533abc421cf4227829706ca8a17b3a9898b7ec8cbfecdbfb89a8f"
+    ],
+    "capture_kind": "bounded_pipe_v2",
+    "elapsed_seconds": 66.44217275001574,
+    "error": null,
+    "log_limit_bytes": 4194304,
+    "log_truncated": false,
+    "observation": {
+      "free_bytes": 63532965888,
+      "log_bytes": 157,
+      "output_bytes": 10391
+    },
+    "output_limit_bytes": 597688320,
+    "parent_pid": 32259,
+    "pid": 32282,
+    "required_free_bytes": 23481894848,
+    "reserve_bytes": 8589934592,
+    "returncode": null,
+    "status": "running",
+    "timeout_seconds": 7200
+  },
+  "observed_training_step": 1,
+  "observed_training_targets": 1024,
+  "observed_worker_guard": {
+    "elapsed_seconds": 65.56739004096016,
+    "limits": {
+      "mps_driver_limit_bytes": 6442450944,
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "free_bytes": 63532957696,
+      "mps_current_bytes": 662023936,
+      "mps_driver_bytes": 2493317120,
+      "peak_observed_mps_driver_bytes": 2493317120,
+      "peak_rss_bytes": 702447616
+    },
+    "pid": 32282,
+    "reason": null,
+    "status": "watching"
+  },
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality001-plan.json",
+    "sha256": "358f72b08bcd5cc10f01a0141bacf65340cfe26299b24325711651fa3b59060d"
+  },
+  "request": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-quality-v1-001/evidence/quality/00/request.json",
+    "sha256": "db96d541536533abc421cf4227829706ca8a17b3a9898b7ec8cbfecdbfb89a8f"
+  },
+  "root_stop_present": false,
+  "slot": 0,
+  "source_bindings": 1122,
+  "status": "original_readout_quality_controller_and_first_worker_observed_advancing",
+  "worker_pid": 32282
+}
