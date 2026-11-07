@@ -1,0 +1,308 @@
+{
+  "case_names": [
+    "short_nul",
+    "byte_extremes",
+    "mixed_special_padding",
+    "repeated_valid_max",
+    "zero_relu_and_max_ties",
+    "maximum_128_bytes"
+  ],
+  "census_plan_sha256": "5e6aaff2d331dd38a47f0757c02162e48a718a21ed10082f99bf1ac608084ec1",
+  "expected_files": [
+    "plan.json",
+    "attempt.json",
+    "whole-guard.json",
+    "result.json",
+    "STOP",
+    "short_nul-oracle-guard.json",
+    "byte_extremes-oracle-guard.json",
+    "mixed_special_padding-oracle-guard.json",
+    "repeated_valid_max-oracle-guard.json",
+    "zero_relu_and_max_ties-oracle-guard.json",
+    "maximum_128_bytes-oracle-guard.json",
+    "cpu-short_nul.json",
+    "cpu-short_nul-guard.json",
+    "cpu-byte_extremes.json",
+    "cpu-byte_extremes-guard.json",
+    "cpu-mixed_special_padding.json",
+    "cpu-mixed_special_padding-guard.json",
+    "cpu-repeated_valid_max.json",
+    "cpu-repeated_valid_max-guard.json",
+    "cpu-zero_relu_and_max_ties.json",
+    "cpu-zero_relu_and_max_ties-guard.json",
+    "cpu-maximum_128_bytes.json",
+    "cpu-maximum_128_bytes-guard.json",
+    "cpu-invalid-guard.json",
+    "cpu-invalid-codes_list.json",
+    "cpu-invalid-lengths_list.json",
+    "cpu-invalid-codes_float.json",
+    "cpu-invalid-codes_bool.json",
+    "cpu-invalid-codes_int32.json",
+    "cpu-invalid-lengths_float.json",
+    "cpu-invalid-codes_rank1.json",
+    "cpu-invalid-codes_rank3.json",
+    "cpu-invalid-empty_batch.json",
+    "cpu-invalid-batch_1025.json",
+    "cpu-invalid-columns_2.json",
+    "cpu-invalid-columns_131.json",
+    "cpu-invalid-lengths_rank2.json",
+    "cpu-invalid-lengths_count.json",
+    "cpu-invalid-code_negative.json",
+    "cpu-invalid-code_260.json",
+    "cpu-invalid-length_2.json",
+    "cpu-invalid-length_past_end.json",
+    "cpu-invalid-begin_wrong.json",
+    "cpu-invalid-end_wrong.json",
+    "cpu-invalid-bad_padding.json",
+    "cpu-invalid-interior_pad.json",
+    "cpu-invalid-interior_begin.json",
+    "cpu-invalid-interior_end.json",
+    "cpu-invalid-mixed_special.json",
+    "cpu-invalid-special_length.json",
+    "cpu-invalid-codes_foreign_device.json",
+    "cpu-invalid-lengths_foreign_device.json",
+    "cpu-invalid-autocast.json",
+    "cpu-invalid-parameter_nan.json",
+    "cpu-invalid-parameter_inf.json",
+    "cpu-invalid-parameter_shape.json",
+    "cpu-invalid-parameter_replaced.json",
+    "cpu-invalid-parameter_frozen.json",
+    "cpu-invalid-parameter_alias.json",
+    "cpu-invalid-extra_parameter.json",
+    "cpu-invalid-extra_buffer.json",
+    "cpu-invalid-identity_changed.json",
+    "cpu-invalid-parameter_float16.json",
+    "cpu-invalid-parameter_noncontiguous.json",
+    "cpu-invalid-parameter_missing.json",
+    "cpu-invalid-parameter_device.json",
+    "cpu-invalid-hidden_module.json",
+    "cpu-invalid-default_mps.json",
+    "cpu-invalid-lengths_bool.json",
+    "cpu-invalid-lengths_int32.json",
+    "cpu-invalid-state_export.json",
+    "cpu-invalid-state_load.json",
+    "cpu-invalid-seed_bool.json",
+    "cpu-invalid-seed_float.json",
+    "cpu-invalid-seed_negative.json",
+    "cpu-invalid-seed_upper.json",
+    "cpu-invalid-codes_sparse.json",
+    "cpu-invalid-codes_meta.json",
+    "cpu-invalid-parameter_float64.json",
+    "cpu-invalid-default_float64.json",
+    "cpu-invalid-codes_float64.json",
+    "cpu-invalid-lengths_sparse.json",
+    "cpu-invalid-parameter_sparse.json",
+    "cpu-invalid-parameter_meta.json",
+    "cpu-invalid-lengths_meta.json",
+    "mps-short_nul.json",
+    "mps-short_nul-guard.json",
+    "mps-byte_extremes.json",
+    "mps-byte_extremes-guard.json",
+    "mps-mixed_special_padding.json",
+    "mps-mixed_special_padding-guard.json",
+    "mps-repeated_valid_max.json",
+    "mps-repeated_valid_max-guard.json",
+    "mps-zero_relu_and_max_ties.json",
+    "mps-zero_relu_and_max_ties-guard.json",
+    "mps-maximum_128_bytes.json",
+    "mps-maximum_128_bytes-guard.json",
+    "mps-invalid-guard.json",
+    "mps-invalid-codes_list.json",
+    "mps-invalid-lengths_list.json",
+    "mps-invalid-codes_float.json",
+    "mps-invalid-codes_bool.json",
+    "mps-invalid-codes_int32.json",
+    "mps-invalid-lengths_float.json",
+    "mps-invalid-codes_rank1.json",
+    "mps-invalid-codes_rank3.json",
+    "mps-invalid-empty_batch.json",
+    "mps-invalid-batch_1025.json",
+    "mps-invalid-columns_2.json",
+    "mps-invalid-columns_131.json",
+    "mps-invalid-lengths_rank2.json",
+    "mps-invalid-lengths_count.json",
+    "mps-invalid-code_negative.json",
+    "mps-invalid-code_260.json",
+    "mps-invalid-length_2.json",
+    "mps-invalid-length_past_end.json",
+    "mps-invalid-begin_wrong.json",
+    "mps-invalid-end_wrong.json",
+    "mps-invalid-bad_padding.json",
+    "mps-invalid-interior_pad.json",
+    "mps-invalid-interior_begin.json",
+    "mps-invalid-interior_end.json",
+    "mps-invalid-mixed_special.json",
+    "mps-invalid-special_length.json",
+    "mps-invalid-codes_foreign_device.json",
+    "mps-invalid-lengths_foreign_device.json",
+    "mps-invalid-autocast.json",
+    "mps-invalid-parameter_nan.json",
+    "mps-invalid-parameter_inf.json",
+    "mps-invalid-parameter_shape.json",
+    "mps-invalid-parameter_replaced.json",
+    "mps-invalid-parameter_frozen.json",
+    "mps-invalid-parameter_alias.json",
+    "mps-invalid-extra_parameter.json",
+    "mps-invalid-extra_buffer.json",
+    "mps-invalid-identity_changed.json",
+    "mps-invalid-parameter_float16.json",
+    "mps-invalid-parameter_noncontiguous.json",
+    "mps-invalid-parameter_missing.json",
+    "mps-invalid-parameter_device.json",
+    "mps-invalid-hidden_module.json",
+    "mps-invalid-default_mps.json",
+    "mps-invalid-lengths_bool.json",
+    "mps-invalid-lengths_int32.json",
+    "mps-invalid-state_export.json",
+    "mps-invalid-state_load.json",
+    "mps-invalid-seed_bool.json",
+    "mps-invalid-seed_float.json",
+    "mps-invalid-seed_negative.json",
+    "mps-invalid-seed_upper.json"
+  ],
+  "kind": "original_NEW_independent_component_source",
+  "limits": {
+    "CPU_seconds": 120,
+    "RSS_bytes": 4294967296,
+    "output_bytes": 2097152,
+    "reserve_bytes": 8589934592
+  },
+  "mode": "source",
+  "no_replay": true,
+  "no_retry": true,
+  "numerical_plan_sha256": "b264739ffb3ccba95a8b3232b5e09fdad7ce568c03503a418584e689e208f6b7",
+  "output_shapes": {
+    "byte_extremes": [
+      1,
+      256
+    ],
+    "maximum_128_bytes": [
+      1,
+      256
+    ],
+    "mixed_special_padding": [
+      2,
+      256
+    ],
+    "repeated_valid_max": [
+      1,
+      256
+    ],
+    "short_nul": [
+      1,
+      256
+    ],
+    "zero_relu_and_max_ties": [
+      2,
+      256
+    ]
+  },
+  "pins": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/component_oracle001.py",
+      "sha256": "3a523fcf8e150854c488701e8793b85dc2d4401660397063803f45d959f99754",
+      "size": 7000
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/component-math001.py",
+      "sha256": "91e35775a6096ca1673e8bad7bd7ae3e7f05cf1316fb04bec21f19f551464824",
+      "size": 20577
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/component-census001.py",
+      "sha256": "fd3a5651c268399c6effe5f4e3e419b8a45c9578576fe123cc11eff8ea0476fa",
+      "size": 6813
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/component-proof-review001.py",
+      "sha256": "438c1e522b390036b35cf2862b5dee4b4c7ba67d42ac02b3974ac5535e3bc652",
+      "size": 12017
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_composer_v1.py",
+      "sha256": "3a4c32293b2d5ef0477194526d15372660cd6469d81588d594c67098f5b0f208",
+      "size": 7962
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/cpu_prerequisite_guard.py",
+      "sha256": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+      "size": 3982
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/__init__.py",
+      "sha256": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+      "size": 62
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/__init__.py",
+      "sha256": "4b0d5f73d0329af534851579ea1721ef64c05167516bc212b2e520aa0dd96423",
+      "size": 63
+    }
+  ],
+  "shapes": {
+    "byte_weight": [
+      259,
+      15
+    ],
+    "filter_biases.0": [
+      25
+    ],
+    "filter_biases.1": [
+      50
+    ],
+    "filter_biases.2": [
+      75
+    ],
+    "filter_biases.3": [
+      100
+    ],
+    "filter_biases.4": [
+      125
+    ],
+    "filter_biases.5": [
+      150
+    ],
+    "filters.0": [
+      25,
+      15
+    ],
+    "filters.1": [
+      50,
+      30
+    ],
+    "filters.2": [
+      75,
+      45
+    ],
+    "filters.3": [
+      100,
+      60
+    ],
+    "filters.4": [
+      125,
+      75
+    ],
+    "filters.5": [
+      150,
+      90
+    ],
+    "highway_bias": [
+      525
+    ],
+    "highway_weight": [
+      525,
+      525
+    ],
+    "projection_weight": [
+      256,
+      525
+    ],
+    "transform_bias": [
+      525
+    ],
+    "transform_weight": [
+      525,
+      525
+    ]
+  }
+}

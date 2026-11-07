@@ -1,3 +1,39 @@
+# Corrected byte-composer finite proof CLOSED_ACCEPTED; actual model SOURCE next
+
+The human authorized one harness-only correction/fresh proof. Original001 remains
+closed failed: RNG-state bytes matched but an MPS returned-copy storage address
+changed; all first CPU numerical coordinates passed. Corrected002 used a fresh
+initializer, identical component/oracle/cases/tolerances and only excluded RNG-copy
+addresses. Its sole run84084/session6829 EXIT0; independent saved review84255 EXIT0.
+All12 CPU/MPS cases, all8,702,820 parameter-gradient coordinates and113 invalid
+preservation transactions passed original fixed gates. Final RNG restoration passed.
+
+Read [accepted finite review](tokenizer-evidence/byte-composition-boundary-001/component-math002-review.md),
+[completed003](tokenizer-evidence/byte-composition-boundary-001/continuation-completed003.json),
+[human exception](tokenizer-evidence/byte-composition-boundary-001/human-harness-exception001.json),
+[next actual model/codebook SOURCE](tokenizer-evidence/byte-composition-boundary-001/next-source-handoff004.md).
+Whole24.406s/RSS632,143,872B; all20 CPU phase guards finished. MPS final observed
+43,761,664B is not a recorded peak. Exactly150 files/45,956,471B under256MiB;
+no weight/tensor files. Max forward/gradient errors CPU4.067e-11/1.884e-11 and
+MPS5.288e-11/9.356e-12 for these literals only. Independent review checked all
+8,706,916 saved coordinates including outputs; no Torch/component/oracle replay.
+
+Both62092310001/62092370001 now USED EXCLUSIVE to their respective001/002 fixtures;
+never reuse. All original/corrected sources/plans/commands/guards/STOPs CLOSED;
+one-time human exception exhausted. Eight new sources92,907B preserve1,274=>1,282
+future project bindings; corrected execution1,288 includes6 selected runtime
+entries, closedmodelproof1,236/scientificruntime1,211 unchanged. No trained model,
+optimizer/state/cache/scorer/quality qualification or adoption. TOP is separate
+and still unadopted; native/holdout/future_two unchanged. No worker remains.
+
+Next write the smallest actual model-math and codebook/control sources, with own
+identity/config/grouping and static-first admission; no more unrelated literature
+or metadata frameworks. Full source/runtime/case/role/resource gates precede any
+new functional call. Free~34.53GB covers current10,739,515,392B notes requirement
+and UNFROZEN31,675,383,808B future output forecast; no storage block/cleanup trigger.
+All original evidence/assets/older weights protected; zero copies/deletions/
+retirement. Earlier source-only and failed entries below are historical.
+
 # Byte composer component SOURCE implemented; finite math proof next
 
 research/byte_composer_v1.py is written and its original AST gate passed. It has

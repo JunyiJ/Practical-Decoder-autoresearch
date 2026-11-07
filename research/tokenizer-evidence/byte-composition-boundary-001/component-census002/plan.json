@@ -1,0 +1,113 @@
+{
+  "anticipated_inventory_metadata_only": {
+    "all_class_inventory_upper_bytes": 22960568,
+    "candidate_files": 66572,
+    "no_content_or_role_scan": true,
+    "scope": {
+      "/Users/junyi/.codex/automations": {
+        "candidate_files": 5,
+        "logical_bytes_all_classes": 639624,
+        "present": true
+      },
+      "configs": {
+        "present": false
+      },
+      "research": {
+        "candidate_files": 25887,
+        "logical_bytes_all_classes": 2753521222,
+        "present": true
+      },
+      "research_runs": {
+        "candidate_files": 31400,
+        "logical_bytes_all_classes": 79167142462,
+        "present": true
+      },
+      "research_state": {
+        "candidate_files": 8725,
+        "logical_bytes_all_classes": 2198524402,
+        "present": true
+      },
+      "scripts": {
+        "present": false
+      },
+      "src": {
+        "candidate_files": 241,
+        "logical_bytes_all_classes": 2365461,
+        "present": true
+      },
+      "tests": {
+        "candidate_files": 308,
+        "logical_bytes_all_classes": 2431593,
+        "present": true
+      }
+    }
+  },
+  "exclude": [
+    "research/tokenizer-evidence/byte-composition-boundary-001/component-census002",
+    "research/tokenizer-evidence/byte-composition-boundary-001/component-math002/plan.json"
+  ],
+  "explicit_human_exception": {
+    "instruction": "Authorize the harness-only correction and one fresh proof",
+    "only_semantic_change": "Exclude ephemeral RNG-state-copy allocation addresses from state equality; retain exact state bytes/shape/dtype/device/layout checks. Original component, numerical cases and all tolerances unchanged.",
+    "original_fixture_preserved": "component-math001",
+    "proposal_patch": "research/tokenizer-evidence/byte-composition-boundary-001/component-rng-copy-identity-fix001.patch",
+    "proposal_patch_sha256": "8975d900a78ba556174848d6a9adce5b0b71fe69b1de53fcc028a5f1719f4e07"
+  },
+  "forecast": {
+    "RSS_bytes": 268435456,
+    "history_stream_bytes": 7516192768,
+    "seconds": 110
+  },
+  "history_roots": [
+    "research",
+    "research_runs",
+    "research_state",
+    "src",
+    "tests",
+    "configs",
+    "scripts",
+    "/Users/junyi/.codex/automations"
+  ],
+  "initializer": 62092370001,
+  "kind": "NEW_exclusive_corrected_component_proof_initializer_text_census",
+  "limits": {
+    "CPU_seconds": 120,
+    "RSS_bytes": 4294967296,
+    "max_candidate_files": 75000,
+    "max_streamed_bytes": 8589934592,
+    "output_bytes": 33554432,
+    "reserve_bytes": 8589934592
+  },
+  "no_model_numerical_execution_admission": true,
+  "no_replay": true,
+  "no_retry": true,
+  "role_status": "PROPOSED_EXCLUSIVE_COMPONENT_MATH002_NOT_DRAWN",
+  "scope": "Declared project history roots, regular root files and automation texts only; no .git/.venv/data/tokenizer/personal/session history; no symlinks/__pycache__; NUL binary prefix classifications do not hash full binary payloads; no universal unused claim.",
+  "sources": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/component-census002.py",
+      "sha256": "3ab102319cd74bb4dbfba90db7bfd1be6d9d11a09116a31eb53024df0d005329",
+      "size": 6813
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/component-proof-review002.py",
+      "sha256": "7c8530b9a025a15f4dcc2bd1afabb33c4f496420645244ebaa01286c9ca35340",
+      "size": 13013
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/cpu_prerequisite_guard.py",
+      "sha256": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+      "size": 3982
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/__init__.py",
+      "sha256": "5964328a4dd85bf124922974955be82f49cc7d9eeb9ab4b5d803247e5b959830",
+      "size": 62
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/__init__.py",
+      "sha256": "4b0d5f73d0329af534851579ea1721ef64c05167516bc212b2e520aa0dd96423",
+      "size": 63
+    }
+  ]
+}

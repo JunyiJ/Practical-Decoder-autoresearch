@@ -1,0 +1,15 @@
+--- ORIGINAL_FROZEN/component-math001.py
++++ PROPOSED_NEW_FIXTURE/component-math001.py
+@@ -107,7 +107,11 @@
+ 
+ 
+ def rng_snapshot():
+-    return {'cpu': tensor_digest(T.random.get_rng_state()), 'mps': tensor_digest(T.mps.get_rng_state())}
++    # These APIs return state copies: preserve bytes, shape and dtype, not copy allocation addresses.
++    result = {'cpu': tensor_digest(T.random.get_rng_state()), 'mps': tensor_digest(T.mps.get_rng_state())}
++    for state in result.values():
++        state.pop('storage_ptr', None)
++    return result
+ 
+ 
+ def snapshot(module, codes, lengths):

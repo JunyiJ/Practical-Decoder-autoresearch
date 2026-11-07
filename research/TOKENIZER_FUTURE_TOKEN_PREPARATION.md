@@ -1,3 +1,14 @@
+# Current frontier: byte-composer finite proof accepted; TOP remains unadopted
+
+Read [byte-composition preparation](TOKENIZER_BYTE_COMPOSITION_PREPARATION.md) and
+[next actual model/codebook source](tokenizer-evidence/byte-composition-boundary-001/next-source-handoff004.md).
+The human-authorized corrected component proof passed CPU/MPS/all18parameter
+forward-gradient checks and113transactions; source/runtime/independent saved
+review complete. This is finite component qualification, not language-model
+quality or adoption. Original failed evidence preserved. Future1,282 project/
+corrected execution1,288selected pins; old closedmodelproof1,236/scientificruntime
+1,211 unchanged. All earlier TOP and component source-only entries historical.
+
 # Current frontier: byte composer SOURCE implemented; TOP remains closed failed
 
 The separate byte-input direction now has accepted full public vocabulary metadata
