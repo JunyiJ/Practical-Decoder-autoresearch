@@ -1,3 +1,5 @@
+> **Current research status: HUMAN-PAUSED, 2026-11-07.** Read [the current handoff](RESEARCH_HANDOFF_2026-11-07.md). It supersedes all older active/continue banners. No automatic research or validation until a new explicit human resume instruction.
+
 # Bounded MLE experiment harness
 
 > **Current status — human-stopped on 2026-10-27.** Read [the research handoff](RESEARCH_HANDOFF.md) before acting. It supersedes historical continue/launch/preparation status below. Research, prerequisite model validation and automated iteration require a new explicit human instruction. Campaign006 remains permanently stopped.

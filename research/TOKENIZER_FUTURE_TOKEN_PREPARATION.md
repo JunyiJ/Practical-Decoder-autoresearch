@@ -1,3 +1,7 @@
+# Current status: human-paused after separate byte-input model SOURCE completion
+
+See [2026-11-07 stop handoff](RESEARCH_HANDOFF_2026-11-07.md). TOP remains closed failed and unadopted. Byte component finite math passed; five new byte-input model/codebook modules passed source-only gates and remain unexecuted. No quality gain/native change. Research paused; new explicit human authorization required before any continuation. Next source item is [the independent real model/codebook proof](tokenizer-evidence/byte-composition-boundary-001/next-source-handoff005.md). Historical entries below do not authorize execution.
+
 # Current frontier: byte-composer finite proof accepted; TOP remains unadopted
 
 Read [byte-composition preparation](TOKENIZER_BYTE_COMPOSITION_PREPARATION.md) and

@@ -1,0 +1,167 @@
+{
+  "codebook_hash_traffic_training_UNMEASURED": {
+    "1200_step_bytes": 189609609600,
+    "not_measured_time": true,
+    "three_validations_per_step_bytes": 158008008,
+    "tradeoff": "Exact whole-codebook immutable-identity validation; transfers/time must be charged by implemented harness before runtime. Source may be slow; no caching/version-only bypass."
+  },
+  "codebook_math": "Own stdlib build from supplied exact public encoder/merge bytes; no file reads/tokenizer imports; verify public hashes/merge equality/native hash. Nonlexical per-length 8-round balanced Feistel on8Lbits/SHAKE256 round function; inverse all tokens verifies ordinals and unique length-matched codes. Special shared. No code/key execution now.",
+  "codebook_round_calls_each_nonlexical_build": 804096,
+  "codes": {
+    "begin": 257,
+    "bytes": [
+      0,
+      255
+    ],
+    "end": 258,
+    "factory_owned_frozen_identity": true,
+    "int64_code_table_bytes": 52267280,
+    "int64_lengths_bytes": 402056,
+    "model_holds_no_extra_Codebook_payload_or_displaced_table": true,
+    "packed_u16_codes_bytes": 13066820,
+    "packed_u16_lengths_bytes": 100514,
+    "pad": 256,
+    "regular_IDs": 50256,
+    "special": 259,
+    "total_IDs": 50257,
+    "width": 130
+  },
+  "component": "research.byte_composer_v1.ByteComposer UNCHANGED finite component accepted only",
+  "counts": {
+    "composed_AdamW": 52,
+    "composed_Muon": 53,
+    "composed_parameters": 16351859,
+    "composed_tensors": 105,
+    "native_AdamW": 44,
+    "native_Muon": 44,
+    "native_parameters": 28492416,
+    "native_tensors": 88
+  },
+  "first_API": [
+    "forward_train(inputs,labels)",
+    "uncached primary_logits(inputs)",
+    "build_optimizer(model,Python_float_baseLR)/zero_grad/step"
+  ],
+  "future_project_bindings_before": 1282,
+  "initializer_roles": "UNASSIGNED; no construction/key generation before later new exclusive role census",
+  "kind": "NEW_byte_input_model_math_SOURCE_plan_v1",
+  "native_config": {
+    "attention_logit_scale": 0.5,
+    "attention_logit_scale_width_policy": "tokenizer_mha_gqa_score_v1",
+    "attention_width_policy": "mla_quarter_head32",
+    "attn_dropout": 0.0,
+    "attn_type": "mla",
+    "base_width": 64,
+    "block_normalization": {
+      "affine": true,
+      "bias": false,
+      "dtype": "float32",
+      "epsilon": 1.1920928955078125e-07,
+      "kind": "rms_incumbent",
+      "placement": "pre_attention_and_pre_ffn",
+      "policy": "tokenizer_block_norm_fp32_v1",
+      "width": 256
+    },
+    "block_size": 128,
+    "depth_width_policy": "depth4_unscaled",
+    "dim": 256,
+    "dropout": 0.0,
+    "embedding_backward": {
+      "cpu_backward": "native_reference",
+      "dtype": "float32",
+      "forward": "native_dense_embedding",
+      "max_gradient_tokens": 1024,
+      "mps_autograd_order": 1,
+      "mps_backward": "unique_membership_matmul_index_copy",
+      "padding_idx": null,
+      "policy": "tokenizer_grouped_mps_embedding_backward_v1",
+      "scale_grad_by_freq": false,
+      "sparse": false,
+      "version": 1,
+      "vocab_size": 50257,
+      "width": 256
+    },
+    "ffn": "swiglu",
+    "ffn_bias": false,
+    "ffn_width_policy": "swiglu_21_8",
+    "final_ln_bias_kind": "learned",
+    "final_ln_bias_policy": "mla4_final_ln_bias_v1",
+    "final_ln_scale_kind": "learned",
+    "final_ln_scale_policy": "mla4_final_ln_scale_v1",
+    "mlp_type": "dense",
+    "n_heads": 8,
+    "n_layers": 4,
+    "norm_type": "rmsnorm",
+    "output_bias_kind": "none",
+    "output_bias_prior": {
+      "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "prior_sha256": "470924d478e490521ed589c1ec38131ffad17d564990bc18dbb213e1fc04d792",
+      "tokenizer": {
+        "implementation": "tiktoken",
+        "name": "gpt2",
+        "pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}++| ?\\p{N}++| ?[^\\s\\p{L}\\p{N}]++|\\s++$|\\s+(?!\\S)|\\s",
+        "special_token_policy": "ordinary_text",
+        "special_tokens": {
+          "<|endoftext|>": 50256
+        },
+        "split_unit": "raw_text",
+        "version": "0.14.0",
+        "vocab_size": 50257,
+        "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+      },
+      "train_fraction": 0.8,
+      "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+      "val_fraction": 0.1,
+      "version": 2
+    },
+    "output_bias_width_policy": "tokenizer_attention_no_output_bias",
+    "parameterization": "mup",
+    "readout_norm_epsilon": 1e-05,
+    "readout_norm_kind": "layer_affine",
+    "readout_norm_width_policy": "mla4_final_ln_scale_v1",
+    "residual_gain_kind": "unit",
+    "residual_gain_width_policy": "mla4_fixed_complete_branch_gain_v1",
+    "rope": 1,
+    "tokenizer_architecture_policy": "tokenizer_mla_final_ln_scale_v1",
+    "vocab_size": 50257
+  },
+  "native_first": "Genuine Native(C.native_config()) first; native retained only for native arm; composed own blocks/finalnorm/readout + composer, no registered/hidden displaced input parameter",
+  "native_holdout_future_two_unchanged": true,
+  "no_TOP_auxiliary_loss": true,
+  "optimizer": "Canonical unprefixed common names; native transformer.h.*2D and composed6conv+2highway+projection2D at eta/2 Muon match_rms_adamw; all other parameters AdamW(.9,.999)eps1e-6 eta; child decay0; independent .00006 once; complete finite gradients and group options preflight",
+  "preflight": "Full same-device FP32 param/buffer/inventory/object/semantic/config/codebook digest before graph; codebook and buffer hashes streamed 1MiB chunks CPU-before-byteview, no giant Python list; ordinary constant buffers own _apply migration binding refresh plus unchanged expected hashes",
+  "proof_remaining": "New independent full codebook/Feistel and actual-model forward/grad/update/causality/preflight proof SOURCES and roles/resources/pins/static-first admission before ANY function/import. No closed fixture replay; no current roles assigned.",
+  "prospective_after_5modules_and_reviewer": 1288,
+  "prospective_resources": {
+    "MPS_forecast_UNMEASURED": 3356381436,
+    "RSS_forecast_UNMEASURED": 3893252348,
+    "complete_future_output_envelope_UNFROZEN": 31675383808,
+    "hard_MPS": 6442450944,
+    "hard_RSS": 4294967296,
+    "lookup_allowance": 67108864,
+    "no_numerical_or_science_execution_admission": true,
+    "notes_entry_target_bytes": 10739515392,
+    "reserve_bytes": 8589934592,
+    "source_review_CPU_seconds": 120,
+    "source_review_metadata_bytes": 2097152
+  },
+  "source_files": [
+    "research/byte_input_model_v1/__init__.py",
+    "research/byte_input_model_v1/codebook.py",
+    "research/byte_input_model_v1/contract.py",
+    "research/byte_input_model_v1/model.py",
+    "research/byte_input_model_v1/optimizer.py"
+  ],
+  "truthful_config": "Own model config declares replacement input; native initializer recipe retained as nested provenance; old Native validator never called on composed tree",
+  "unsupported": [
+    "general/cache forward",
+    "state/export/load",
+    "EMA/scorer/worker adapters",
+    "optimizer ledgers"
+  ],
+  "variants": [
+    "native",
+    "nonlexical_codes",
+    "raw_bytes"
+  ]
+}

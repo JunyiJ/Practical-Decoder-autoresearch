@@ -1,3 +1,5 @@
+> **Research paused by the human on 2026-11-07.** Start with the [stop and restart handoff](research/RESEARCH_HANDOFF_2026-11-07.md). Current byte-input model integration is source-only; no quality gain or adoption. Automatic research is paused. New explicit human authorization is required to resume. Older active/launch wording below is historical.
+
 # Practical-Decoder
 
 > **Current tokenizer continuation:** start with the [resume guide](research/TOKENIZER_RESUME.md) and [compact state index](research/TOKENIZER_RESUME_STATE.json). These distinguish active tokenizer work from historical stopped campaigns. Check live state before dispatch.

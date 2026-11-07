@@ -1,3 +1,5 @@
+> **Latest stop checkpoint: 2026-11-07.** Read [the current tokenizer research handoff](RESEARCH_HANDOFF_2026-11-07.md). Both tokenizer iteration and the historical campaigns below are paused. This older handoff remains preserved for earlier learnings.
+
 # Research handoff — stopped by the human on 2026-10-27
 
 > **Current tokenizer continuation:** start with the [resume guide](TOKENIZER_RESUME.md) and [compact state index](TOKENIZER_RESUME_STATE.json). These distinguish active tokenizer work from historical stopped campaigns. Check live state before dispatch.

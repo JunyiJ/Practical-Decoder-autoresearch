@@ -1,0 +1,114 @@
+{
+  "TOP_and_byte_composition_adopted": false,
+  "accepted_component_checkpoint": "6f70761d6448a13c0f5a7b60d7bfd7bcf71c71e5",
+  "active_worker": null,
+  "closed_model_proof_bindings": 1236,
+  "closed_sources_plans_commands_no_replay_retry": true,
+  "codebooks_generated": 0,
+  "completed_at": "2026-11-07T23:17:28.507833+00:00",
+  "git_note": "All new research source/evidence/docs are committed in the commit containing this record. Human AGENTS.md edit and unrelated local maintenance artifacts preserved outside this commit.",
+  "handoff": "research/RESEARCH_HANDOFF_2026-11-07.md",
+  "human_instruction": "Stop the iteration after current work - check all work into github in a way that next research could pick it up easily",
+  "independent_maintenance_schedule": "unchanged",
+  "native_holdout_unchanged": true,
+  "new_roles": 0,
+  "new_sources": [
+    {
+      "bytes": 351,
+      "path": "research/byte_input_model_v1/__init__.py",
+      "sha256": "671927ef5ed860aaf56cea00b0db81ecf50c406f15f8ef7e4e0cd621a348d564"
+    },
+    {
+      "bytes": 8267,
+      "path": "research/byte_input_model_v1/codebook.py",
+      "sha256": "ee836c785ea4cb4440522df8f022d6a6e713a84d8a910eb2d3496b9123788c90"
+    },
+    {
+      "bytes": 5137,
+      "path": "research/byte_input_model_v1/contract.py",
+      "sha256": "bb0f5da39e0491e48979dacffe286f1750da74798e02dfb52ccb905f9f827fa9"
+    },
+    {
+      "bytes": 12795,
+      "path": "research/byte_input_model_v1/model.py",
+      "sha256": "6a9ceca96f3f31baa9c16d7a640fa9645526146e7a8f5e2af41dbd2e4ad79c3f"
+    },
+    {
+      "bytes": 4904,
+      "path": "research/byte_input_model_v1/optimizer.py",
+      "sha256": "96cadab3f658843a44b9ac482cc6a0de9e844f59407356a4645f52d6bca714fa"
+    },
+    {
+      "bytes": 9381,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/model-source-review001.py",
+      "sha256": "bcaeb779f1e7abce33bf2fbe9c6760ecfc3392304d6222f89be47e87d7836151"
+    }
+  ],
+  "next_action": "Wait for new explicit human resume. Then write independent full codebook and actual-model finite proof SOURCES per next-source-handoff005.md; no direct numerical launch.",
+  "next_handoff": "research/tokenizer-evidence/byte-composition-boundary-001/next-source-handoff005.md",
+  "no_candidate_module_import_or_function_execution": true,
+  "older_research_heartbeats": "PAUSED",
+  "plan_review": {
+    "guard": {
+      "elapsed_seconds": 0.0009030839428305626,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 34390441984,
+        "peak_rss_bytes": 21053440
+      },
+      "pid": 87636,
+      "reason": null,
+      "status": "finished"
+    },
+    "plan_sha256": "543545ba2241ea09649941fff0e2bb613818d687be4ec3c76767fbcefb29f808"
+  },
+  "predecessor_future_project_bindings": 1282,
+  "process_reconciliation": {
+    "matching_research_python_workers": 0,
+    "observed_at": "2026-11-07T23:17:28.507833+00:00",
+    "read_only_ps_exit_code": 0
+  },
+  "prospective_future_project_bindings": 1288,
+  "quality_gain_measured": false,
+  "research_heartbeat": "PAUSED",
+  "resume_requires_new_explicit_human_instruction": true,
+  "scientific_runtime_bindings": 1211,
+  "source_review": {
+    "guard": {
+      "elapsed_seconds": 0.02636566699948162,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 34389401600,
+        "peak_rss_bytes": 24100864
+      },
+      "pid": 88009,
+      "reason": null,
+      "status": "finished"
+    },
+    "plan_sha256": "8b6781c4774a768faf89fe098440d73830c81cae153f332df842a8b4e6cb0ad0",
+    "review": {
+      "accepted": true,
+      "no_model_component_codebook_Torch_import_or_extracted_functions": true,
+      "roles": "UNASSIGNED",
+      "scope": "Admits new codebook/actual-model finite proof SOURCES only, no functional execution/science",
+      "source_files": [
+        "research/byte_input_model_v1/__init__.py",
+        "research/byte_input_model_v1/codebook.py",
+        "research/byte_input_model_v1/contract.py",
+        "research/byte_input_model_v1/model.py",
+        "research/byte_input_model_v1/optimizer.py"
+      ],
+      "status": "complete_NEW_byte_input_model_SOURCE_only"
+    }
+  },
+  "status": "HUMAN_PAUSED_AFTER_BYTE_INPUT_MODEL_SOURCE_COMPLETE",
+  "weight_tensor_files_copies_deletions_retirement": 0
+}
