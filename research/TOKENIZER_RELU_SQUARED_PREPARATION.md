@@ -1,3 +1,33 @@
+# Full-horizon applicability review complete; await new evidence
+
+The bounded decision in [full-horizon-applicability001.md](tokenizer-evidence/relu-squared-quality-preparation-001/full-horizon-applicability001.md)
+maps actual full-worker/parent/serving requirements to accepted generated and real4/20
+scopes. No new numerical test qualifies at this boundary. Runtime1211/future1224
+bindings remain unchanged; no new implementation or numerical admission.
+
+The trained native281-target per-target CPU/MPS CE failure and literal CPU32
+same-input gradient counterexample are distinct. The literal forward comparison
+passed3e-5; neither failure identifies the other or measures full physical34278
+signed mean CE. Short accepted states/scores do not qualify1200/41H200, cache57/71,
+whole-nine fresh serving83/45, real selection/statistics or complete consumer cost.
+Reached local checks in a failed command are not independent accepted receipts.
+No replay, replacement seed/literal, contract substitution or arithmetic rescue.
+
+Read the requirement map, considered-question decisions and three precise wake
+conditions in the note and continuation-completed005.json. Reconsider only new
+applicable primary/independent evidence with a discriminating prediction, original
+evidence from a separately justified new study, or human scientific steering.
+These trigger a new boundary review, not automatic execution. Unrelated qualified
+source/literature work remains authorized; standing consent is not the blocker.
+On unchanged heartbeats stay quiet: no repeated audits/scans/records/commits.
+
+Metadata-only review added zero numerical experiment time; carry broad/interaction
+allocation forward. No workers, models/tensors/checkpoint/corpus/scoring/oracle/
+RNG calls, source/weight audits, new roles/freeze/launch/adoption or deletions.
+Current free35,135,705,088B covers metadata2MiB+8GiBreserve+2GiBheadroom; no storage
+block/recovery. All sources/weights/evidence protected; native/holdout unchanged.
+Prior entries below are historical, not current executable next actions.
+
 # CE source/error-budget analysis complete; no new numerical admission
 
 NEWce-error-budget001.py/plan0804c883b9a145540a03c59e5967bddcfb019be74aa512fd891adc2587eb9bdb

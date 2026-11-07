@@ -1846,3 +1846,22 @@ No Torch/NumPy/model/corpus/RNG/bootstrap or other numerical execution. Forecast
 target25637683200B fits~35.73GB, butactualfullhorizon state/history/EMA41/selection/
 statistics/serving/resources/census still need NEW sources/cases/admission. No25
 scientific role values, quality freeze or launch. Next full-horizon-proof-handoff001.
+
+
+## Full-horizon FFN applicability decision completed
+
+Accepted real4/20 state/public physical scoring remains useful within its scope.
+The generated1200 native per-target CE failure and fixed-literal CPU32 gradient
+counterexample establish different failed contracts; neither identifies the
+other or certifies the full physical mean CE. Full-state, cache57/71, whole-nine
+fresh serving and actual scientific selection/confirmation remain unqualified.
+The bounded applicability review admits no further numerical test from present
+evidence. No replay, seed/literal replacement, predicate substitution or rescue.
+
+See TOKENIZER_RELU_SQUARED_PREPARATION.md and
+tokenizer-evidence/relu-squared-quality-preparation-001/full-horizon-applicability001.md
+for the consumer-by-consumer map and precise new-evidence/steering wake triggers.
+Unrelated evidence-qualified source/literature work remains authorized. Carry
+broad/interaction allocation forward; do not count this review as numerical
+exploration. Runtime1211/future1224 sources unchanged; native/holdout unchanged,
+no numerical worker active. Unchanged heartbeats need no audit, record or commit.
