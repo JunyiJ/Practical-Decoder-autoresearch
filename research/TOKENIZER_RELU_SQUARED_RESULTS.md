@@ -1,3 +1,69 @@
+# Real FFN four/twenty prerequisites: closed accepted
+
+Original relu-squared-worker-seed-census001/source001 and single
+relu-squared-worker001 controller60077/session80229 EXITED0. Both actual roots
+research_runs/tokenizer-relu-squared-worker-v1-001 and
+research_runs/tokenizer-relu-squared-pilot-v1-001 have original successful STOPs.
+All3 four-update arms independently accepted BEFORE any20 construction. All
+commands CLOSED/no replay/retry/source-tolerance-role/backend/horizon rescue.
+Runtime1200 bindings preserve1198; NEW one-time closure source adds1201 for
+future binding. Existing real4/20 worker still rejects1200 intentionally.
+
+Read post-projection-boundary-001/relu-squared-worker001-admission.json,
+relu-squared-worker001-plan/review, relu-squared-pilot001-plan/review,
+relu-squared-prerequisite-chain001-completed.json, chain001-closure001/{plan,
+source-review,review-source001,attempt,review,guard,STOP,originals} and
+continuation-completed007.json. All12 original RAW/H200 checkpoints3355182476B
+PROTECTED original paths, including controls/both horizons. ONE-TIME closure
+1.502973s/RSS28459008B checked original receipts/36guards/1201sources and streamed
+all12 path-size-SHA-device-inode-singlelinks, mirrored104 metadata files783158B,
+ZERO weight copies/deletions/Tensorloads/models/corpus/scoring/numerical replay.
+Closure and root STOPs create NOretirementeligibility; never repeat closed audits
+merely to log unchanged state. Prior9 FFN proof3012754027B and all older weights
+and source/log/config/metric/guard/STOP/failure/retirement evidence protected.
+
+NEW census:65003 recorded text files5684404504B/zero prior matches,
+107.556670s/RSS137707520B under120sCPU/4GiB/reserve8GiB/32MiB metadata;no Torch/
+model/optimizer/RNG/corpusloader calls. PlanSHA3fdf5abbc15ad9f7a935942aff62de6de9f1b65afb05bc3ce6a875d28939fcdb.
+NEW source gate6 valid4/20 configs/54 config+6 role+1 counter-overflow rejections,
+NEW1641B literal-three-float Counter-vs-BytesIO/boundary checks passed .230319s/
+RSS225181696B/120sCPU4GiB/reserve8GiB/2MiB metadata. No models/optimizer/corpus/
+checkpoint files/MPS numerical/private-generator seeding;CPU RNG unchanged.
+GateplanSHAf73899a80ae70f922f5ef66b00272cc001a4c766776d55a3f68cef995f6d00d1.
+All12 roles NOW USED only original prerequisites: four initializer62087200001,
+train62087200002,eval62087200003,globalCPU62087200004,globalMPS62087200005,
+privateungated5364259164274135228;twenty initializer62087200011,
+train62087200012,eval62087200013,globalCPU62087200014,globalMPS62087200015,
+privateungated8055743263947594481. Check original census receipt for exact values;
+prior-unused receipt historical, never reuse roles for new trajectories/censuses.
+
+NativeSwiGLU/ungatedSiLU/ungatedReLU-squared each4AND20 =>72 actual updates/
+73728 targets. Full88/84 parameter exposure4/20, scheduled LR,clip1,private train/
+eval samplers,separate globalCPU-MPS RNG,complete own RAW/H200/EMA3or8/ancestry
+independently accepted. LR.00125 prerequisite-only, NOTselector. GENUINE OWN
+public physicalGPT2 FULL34278targets/34279IDs/111536B/windows268/tail102/
+context128/first1/block2048 actually exercised for RAW/H200 CPUANDMPS. Both
+caller-validated reports durably published BEFORE fixed3e-5 comparison. Max CE
+gap2.82363050275e-7; H20041/87 full/cache/resetB1B8 CPUANDMPS/cache196608Bitem,
+max LPgap1.90734863281e-6;fixed elementwise3e-5atol/rtol unchanged. All24CPU+6worker+
+6parent guards finished. MaxRSS2792112128B/MPS2553167872B under4GiB/6GiB/reserve8;
+max worker47.854000s/parent17.961159s under600s;CPU phases max3.509674s under120.
+Short pilot losses/clipping NOTselection/quality/mechanism/adoption/old failed
+projection QUALITY001 cause. No1200 trajectory/scientific panel/holdout calls.
+
+Current free~35.74GB; no storage block, cleanup need or deletion credit. Completed
+six-run output/metadata/reserve/headroom target15000928256B is HISTORICAL now,
+not a new fullquality budget. Future panel needs NEW implemented full remaining
+working/staging-clone/retained-output/.tmp/metadata/time forecast before freeze.
+No fullquality budget/role assignment/launch admitted. Native incumbent/holdout
+unchanged;no numerical worker active. Preparation/correctness not exploration;
+broad/interaction allocation carried forward.
+
+CURRENT NEXT: evidence-grounded full-horizon scientific design and SOURCE only
+per full-horizon-boundary-handoff001.md. No new1200worker/scientific panel admitted.
+The source-preparation and earlier current-state entries below are historical;
+the accepted original numerical evidence above supersedes their untested scope.
+
 # Real four/twenty FFN worker SOURCE preparation complete
 
 The NEW relu_squared_worker_v1/{__init__,training,validation,dispatch,execution}
