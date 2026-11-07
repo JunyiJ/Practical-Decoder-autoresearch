@@ -1,3 +1,34 @@
+# NEW TOP finite proof SOURCE prepared; static gate complete only
+
+NEW top-model-math001.py32,087B + independent AST reviewer11,037B preserve1260
+sources=>1262; closedmodelproof1236/scientificruntime1211 unchanged. Original
+source gate78627 EXIT0/.008559333s/RSS25919488B under120sCPU4GiB/reserve8GiB/2MiB.
+No Torch/model/target/objective/oracle imports or extracted-function execution.
+No tensors/models/seed roles/RNG draws/updates/numerical worker or quality launch.
+
+Source specifies10 NEW actualD256/V50257 arm/backend cases,89 concrete invalid
+transactions,4 augmented finite updates and4 tail-only pairs; all UNEXECUTED.
+Independent native initialization/primary output, represented-weight scalar
+oracle, one shared finalnorm graph/summed head gradients/all parameter gradients,
+populated-grad/input/config/group/RNG preservation and own first-Adam-head update.
+Full coordinate predicates/masks plus declared dense and digest evidence publish
+before assertions. Source is B<=2/T<=3/W1or4 only, not full-batch/state/cache/science.
+
+Read [source review](tokenizer-evidence/future-token-preparation-001/top-model-proof-source001-review.md),
+[completed019](tokenizer-evidence/future-token-preparation-001/continuation-completed019.json),
+[next census/admission SOURCE work](tokenizer-evidence/future-token-preparation-001/top-model-census-source-handoff001.md).
+Initializer UNASSIGNED/runtime plan absent. Before runtime: NEW exclusive role
+census, exact full pins, independent runtime/report admission source and an outer
+pre-Torch startup/whole-process guard (inner MPS guard starts after Torch import).
+Original source gate/sources/plan/command/guard/STOP CLOSED/no replay/retry/rescue.
+
+NEW prospective math slice512MiB JSON cap/192MiB forecast/no tensor files;
+11274289152B entry versus current source notes10739515392B, both covered by free
+35068424192B and below existing unfrozen state envelope16376659968B. No storage deficit
+or cleanup trigger. Native/holdout/future_two panel unchanged; no numerical
+exploration/roles/scientific freeze/adoption/weights/copies/deletions/retirement.
+Earlier sections are historical.
+
 # TOP model-math SOURCE prepared; original static gate complete only
 
 FourNEW top_proximity_model_v1 files19,492B plusNEW8117B AST reviewer source;

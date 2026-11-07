@@ -1,0 +1,206 @@
+{
+  "exclusive_initializer_census": null,
+  "future_source_bindings": 1262,
+  "initializer": null,
+  "kind": "NEW_TOP_model_math_proof_SOURCE_only",
+  "no_replay": true,
+  "no_retry": true,
+  "numerical_design": {
+    "arms": [
+      [
+        "native",
+        "repeated_tail_001"
+      ],
+      [
+        "copied_readout_next",
+        "repeated_tail_001"
+      ],
+      [
+        "future_proximity",
+        "unit_nearest_001"
+      ],
+      [
+        "future_proximity",
+        "repeated_tail_001"
+      ],
+      [
+        "future_proximity",
+        "changed_tail_001"
+      ]
+    ],
+    "backends": [
+      "cpu",
+      "mps"
+    ],
+    "call_counts": {
+      "CPU_phase_guards": 10,
+      "EMA_calls": 0,
+      "autograd_grad_calls": 32,
+      "child_steps": 8,
+      "full_clips": 4,
+      "independent_body_graphs": 8,
+      "independent_native_constructions": 10,
+      "independent_native_primary_forwards": 10,
+      "independent_scalar_calls": 18,
+      "invalid_optimizer_constructions": 10,
+      "numerical_model_transactions": 89,
+      "own_model_constructions": 10,
+      "own_optimizer_constructions": 10,
+      "own_steps": 4,
+      "positive_training_forwards": 10,
+      "serialization_calls": 0,
+      "total_native_initializations": 20,
+      "uncached_primary_calls": 10,
+      "whole_MPS_guards": 1
+    },
+    "cases": [
+      [
+        "unit_nearest_001",
+        1,
+        1,
+        [
+          [
+            40001,
+            1117
+          ]
+        ]
+      ],
+      [
+        "repeated_tail_001",
+        3,
+        4,
+        [
+          [
+            2107,
+            41,
+            2107,
+            913,
+            41,
+            49999,
+            2107
+          ],
+          [
+            87,
+            50003,
+            87,
+            111,
+            50003,
+            111,
+            209
+          ]
+        ]
+      ],
+      [
+        "changed_tail_001",
+        3,
+        4,
+        [
+          [
+            2107,
+            41,
+            2107,
+            112,
+            41,
+            112,
+            41
+          ],
+          [
+            87,
+            50003,
+            87,
+            208,
+            209,
+            208,
+            209
+          ]
+        ]
+      ]
+    ],
+    "entry_target_bytes": 11274289152,
+    "expected_reports": {
+      "arms": 10,
+      "tail_pairs": 4,
+      "transactions": 89,
+      "updates": 4
+    },
+    "output_contract": "Prospective NEW512MiB total JSON evidence cap,192MiB forecast; no tensor files. Full dense logit/oracle/hidden coordinate vectors and bool8 masks zlib/base64; parameter init/gradient/update full-coordinate masks+both vector SHA+first64 violating coordinates. Max-error never acceptance gate. Model-parameter arrays not serialized. CPU transfer before FP64. Nonfinite scalar diagnostics encoded explicitly. Publish before assertion. No expanding after failure.",
+    "remaining_admission": [
+      "NEW exclusive initializer role census SOURCE/plan/reviewer and original accepted receipt; no role assigned now",
+      "Complete exact runtime transitive/source/version pins and NEW independent admission review source; current static review not numerical admission",
+      "Original once-only numerical plan with accepted new census, proper initial MPS approval, full entry capacity, shared nonblocking worker lock and source/CPU/MPS/output guards",
+      "No old copied-block/shared-W proof successor, missing-output recapture, cache/state/scorer/worker adapter or scientific panel"
+    ],
+    "resources": {
+      "CPU_phase_seconds": 120,
+      "MPS_bytes": 6442450944,
+      "MPS_whole_seconds": 600,
+      "RSS_bytes": 4294967296,
+      "extra_bytes": 2147483648,
+      "forecast_output_bytes": 201326592,
+      "forecast_seconds": 360,
+      "output_bytes": 536870912,
+      "planned_MPS_bytes": 3221225472,
+      "planned_RSS_bytes": 3758096384,
+      "reserve_bytes": 8589934592,
+      "tensor_files": 0,
+      "threads": 4
+    },
+    "scope": "Actual D256/V50257 FP32 model math on NEW B<=2/T<=3/W1or4 literals only; no B8T128/W128/full-state/cache/scorer/quality qualification",
+    "tolerances": {
+      "exact": [
+        0.0,
+        0.0
+      ],
+      "head_update": [
+        4e-05,
+        0.0004
+      ],
+      "hidden_gradient": [
+        4e-05,
+        0.0004
+      ],
+      "logit_gradient": [
+        4e-06,
+        4e-05
+      ],
+      "logits": [
+        4e-05,
+        0.0004
+      ],
+      "loss": [
+        3e-05,
+        0.0
+      ],
+      "parameter_gradient": [
+        4e-05,
+        0.0004
+      ]
+    }
+  },
+  "numerical_execution_admitted": false,
+  "predecessor_source_bindings": 1260,
+  "proof_source": "research/tokenizer-evidence/future-token-preparation-001/top-model-math001.py",
+  "runtime_plan": null,
+  "source_gate_forecast": {
+    "RSS_bytes": 134217728,
+    "seconds": 10
+  },
+  "source_gate_limits": {
+    "CPU_seconds": 120,
+    "RSS_bytes": 4294967296,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592
+  },
+  "sources": {
+    "research/block_norm_v1/mps_guard.py": "3978e8b9411e206a62f86fed913e857cb979b18db2f2bbec787be95d6d1e17c4",
+    "research/tokenizer-evidence/future-token-preparation-001/top-model-math001.py": "f51dd0375c18f1b4930475bb060e2a96aa463d3fe133d58f20a6c889323be197",
+    "research/tokenizer-evidence/future-token-preparation-001/top-model-proof-source001.py": "8fd969f2dd23ce4c14d7667056859881f5f9a4839c6866d435ae02c2f235431e",
+    "research/top_proximity_model_v1/__init__.py": "e776204f7402bd0a8cb71fb554df2fa2be6a07e0e7bc36b616d510c9ff04880c",
+    "research/top_proximity_model_v1/contract.py": "f79d40340559eef9573ac272517ffe536b6108eb7a1f900c782232c1f1134739",
+    "research/top_proximity_model_v1/model.py": "5bb3efc51a18fc8c17a05772e8da976a70d4b577a2ddf70fc988cbf1273255ea",
+    "research/top_proximity_model_v1/optimizer.py": "1c7725f96910b47016c5bf8fdc19a7eda4b2f62f290770fa8b7c9e2f7f600006",
+    "research/top_proximity_objective_v1.py": "d425365fad2836f267f641632779213406c8802403d0700c7db7db216efe5de5",
+    "research/top_proximity_targets_v1.py": "2701754018192acb6c1defd33c58a2fc9dcba247546d9a872fed536770a8ade9",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387"
+  }
+}
