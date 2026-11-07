@@ -1,3 +1,33 @@
+# Supplied-logit proximity objective SOURCE prepared; functional proof source next
+
+New top_proximity_objective_v1.py3657B/SHAd425365fad2836f267f641632779213406c8802403d0700c7db7db216efe5de5
+implements explicit sparse weighted log-softmax loss/mean over all B*T positions.
+Positive Python-float masses/unique IDs/full rows preflighted before staging;
+masses cast once to logits dtype/device without renormalization. Represented
+weights use gradient(m*softmax-w)/N, no assumption of exact FP32 sum1. No backward,
+grad-slot writes, model/config/state/scorer/worker/corpus dependencies or mixing.
+
+Original AST/literal-source gate pid74857 exited0,.002676833s/RSS22855680B under
+120sCPU/4GiB/reserve8GiB/2MiB metadata. It inspected10 NEW literal fixture designs,
+41 negative-family IDs/51 unique design IDs and exact source policy. ZERO Torch/
+objective/target/scalar-oracle imports or execution. No functional or gradient
+qualification. Read [source review](tokenizer-evidence/future-token-preparation-001/top-objective-source001-review.md),
+[design/cases](tokenizer-evidence/future-token-preparation-001/top-objective-literal-source-plan001.json)
+and [completed010](tokenizer-evidence/future-token-preparation-001/continuation-completed010.json).
+
+Next complete NEW [functional proof/reviewer SOURCES](tokenizer-evidence/future-token-preparation-001/top-objective-proof-source-handoff001.md):
+independent represented-weight scalar LSE/analytic-gradient oracle, W1 genuine CE
+all-gradient agreement, concrete backend-specific negatives/preservation and
+complete new implemented costs/pins/once-only gates BEFORE any Torch/function/
+oracle calls. Backend counts/harness are not yet implemented or frozen. No
+model/full-vocabulary/physical scoring/science/roles/budget/launch/adoption.
+
+Future1253bindings preserve1251 plusobjective/reviewer; closedmodelproof1236 and
+scientificruntime1211 unchanged. Accepted target proof remains closed in finite
+Python math scope; all model/index/CE failures remain closed/unqualified/no
+replay-rescue-substitution. No weights/copies/deletions/retirement; native/holdout
+unchanged, no numerical worker launched. Earlier entries historical.
+
 # TOP target component CLOSED_ACCEPTED; supplied-logit objective SOURCE next
 
 Original literal TOP target proof pid74406 exited0,.110010500s/RSS25608192B;

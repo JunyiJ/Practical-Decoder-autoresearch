@@ -1,0 +1,35 @@
+{
+  "case_plan": "research/tokenizer-evidence/future-token-preparation-001/top-objective-literal-source-plan001.json",
+  "case_plan_sha256": "fc09574f2a9ed0e2e6fddb87f8b3974fc6a2b38ecdde9a77467911501a414f64",
+  "closed_model_proof_bindings": 1236,
+  "complete_target_bytes": 10739515392,
+  "forecast": {
+    "RSS_bytes": 134217728,
+    "output": "plan-attempt-review-guard-STOP pluscase JSON and64KiB notes/headroom<2MiB",
+    "seconds": 10,
+    "working": "Python+AST+JSON+source hashes under128MiB;no tensor allocation/functional execution"
+  },
+  "future_bindings": 1253,
+  "kind": "original_TOP_supplied_logit_objective_SOURCE_only_gate",
+  "limits": {
+    "CPU_seconds": 120,
+    "RSS_bytes": 4294967296,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592
+  },
+  "no_functional_or_model_admission": true,
+  "no_replay": true,
+  "no_retry": true,
+  "objective_source": "research/top_proximity_objective_v1.py",
+  "predecessor_bindings": 1251,
+  "prepared_at": "2026-11-07T19:36:25.804434+00:00",
+  "scientific_runtime_bindings": 1211,
+  "scope": "AST_and_literal_metadata_ONLY_no_Torch_import_or_objective_or_oracle_function_calls",
+  "sources": {
+    "research/tokenizer-evidence/future-token-preparation-001/top-objective-source001.py": "42e133dc7531514e26d4ae2df7110bdc60ae7968cc8ea393886a8397a32c25d2",
+    "research/top_proximity_objective_v1.py": "d425365fad2836f267f641632779213406c8802403d0700c7db7db216efe5de5",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387"
+  },
+  "wrapper_reference": ".venv/lib/python3.13/site-packages/torch/nn/functional.py",
+  "wrapper_reference_sha256": "95ff403085bb179477a01df63acfddf59dfac0fb58829e99a9c8b5c2fe98899b"
+}
