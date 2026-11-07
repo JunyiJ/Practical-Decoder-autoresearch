@@ -1,4 +1,35 @@
-# Single readout projection: actual-model source prepared
+# Single readout projection: generated actual-model proof accepted
+
+Original NEW projection-model-seed-census001 and projection-model001 are CLOSED
+and accepted. Read post-readout-boundary-001/projection-model001-review.json,
+continuation-completed004.json and their original plan/result/guard/STOP receipts.
+Census63324textfiles/5585494400B/0matches passed74.690s/RSS134463488B. Both new
+initializer/private-projection roles are now USED by this generated proof only;
+the prior-unused receipt is historical. No new trajectory may reuse them.
+
+All8 generated optimizer updates,3 separate B8/T128 backwards, common88 native
+constructor/config/order/weights/CPUdraws, shared exact private A,88/89 full gradient
+and2-update exposure, exact same-MPS native control, all102 transactional
+rejections and B1/B8 full/cache/reset128 with raw logits AND normalized logprobs
+passed. CPU-MPS maximum forward/CE/gradient errors6.855e-7/9.537e-7/1.281e-7;
+targetCE/fullgather CE and all gradients agreed exactly; cache raw/logprob maxima
+7.153e-7/1.907e-6; causality exact0. All original elementwise predicates passed.
+Global CPU-MPSRNG/source1136bindings preserved. Model guard25.572s/RSS2859433984B/
+MPS2468151296B passed600s/4GiB/6GiB/reserve8GiB; all4CPU phase guards finished.
+ZERO corpus/quality/holdout scoring or tensorfiles. No quality or adoption claim.
+Never replay/retry/edit these closed commands; all old campaigns remain closed.
+
+Next executable work is smallest own complete RAW/H200 state/resume and native-
+target scorer SOURCE preparation. Inspect existing accepted reference contracts
+without replay; specify synthetic4 versus2+2 complete optimizer/EMA/private samplers/
+globalCPU-MPSRNG/clipping/exposure and literal scorer/forgery gates. Pin/review NEW
+sources/unused role census and full retained-output/serialization-overlap/time/
+memory budget BEFORE execution. In-memory own optimizer/weight load checks here
+do not qualify serialized complete state, CPU-MPS optimizer transport or resume.
+No corpus/worker/pilot/quality admission follows. Native incumbent and holdout stay
+unchanged. No numerical worker or new storage blocker exists.
+
+## Actual-model source preparation (closed historical step)
 
 Four additive actual-model files are prepared in readout_projection_model_v1;
 see post-readout-boundary-001/model-integration-design001.md,

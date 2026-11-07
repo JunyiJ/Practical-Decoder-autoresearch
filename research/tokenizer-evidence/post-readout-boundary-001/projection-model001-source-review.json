@@ -1,0 +1,40 @@
+{
+  "design": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/model-integration-design001.md",
+    "sha256": "3cd420731cad6dc052535af20884030f3b04b0eef17740e597c51b3e0fe53e96"
+  },
+  "first_census_admitted": true,
+  "fixed_tolerances": {
+    "cache_raw_and_logprob_atol": 3e-05,
+    "cache_raw_and_logprob_rtol": 3e-05,
+    "cpu_mps_ce_atol": 3e-05,
+    "elementwise_forward_gradient_atol": 4e-05,
+    "elementwise_forward_gradient_rtol": 0.0004,
+    "same_mps_native_and_causality": 0
+  },
+  "forecast": {
+    "census_guard_seconds": 120,
+    "census_output_cap_bytes": 33554432,
+    "each_cpu_phase_guard_seconds": 120,
+    "model_output_cap_bytes": 8388608,
+    "mps_bytes": 3758096384,
+    "mps_limit_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 3758096384,
+    "rss_limit_bytes": 4294967296,
+    "whole_model_guard_seconds": 600,
+    "whole_model_seconds": 60
+  },
+  "free_bytes": 53278728192,
+  "memory_release_review": "One MPS model at a time; native reference snapshots and loop aliases explicitly deleted after native control; all optimizer/CPUgradient/reference graphs released before B8stress. Raw/logprob cache arrays held only for one B1/B8 phase; no tensor files.",
+  "model_execution_conditional": "Only after original census accepts both NEW roles, exact source/evidence/plan/runtime/resource admission revalidation and actual idle-process check. No quality/worker/pilot/resume/EMA/scorer admission.",
+  "new_sources": {
+    "research/tokenizer-evidence/post-readout-boundary-001/projection-model-seed-census001.py": "8e85f0fe2b07dbc24bd6ee6cebc82baf630031e8708604507796f839076acaa4",
+    "research/tokenizer-evidence/post-readout-boundary-001/projection-model001.py": "fdb5223a8f564aec58d6f6ec26bbfd4df06618894fe94a3d318cd22c21b7ce9d"
+  },
+  "no_retry_source_rescue_or_tolerance_change": true,
+  "preserved_predecessors": 1134,
+  "source_bindings": 1136,
+  "static_scope": "New streaming numeric-boundary recorded-text census excludes only its own prospective root/source, hashes scanned text, skips binary payload interpretation and preserves exact new match path/offset on failure. Proof reads audited role from the successful census, uses NEW arithmetic IDs and genuine unchanged native reference;8generated updates+3B8T128backwards/all88or89exposure/CPU-MPSforwardCEgrad/fullgathergrad/exactnativecontrol/rawANDnormalizedcacheB1B8/reset/causality/34transactionalrejections perarm=102. No old proofs invoked.",
+  "status": "new_sources_reviewed_before_first_census_or_model_execution"
+}
