@@ -1,4 +1,50 @@
-# Single readout projection: four/twenty worker sources prepared
+# Single readout projection: real four/twenty prerequisites accepted
+
+All three four-update workers and all three twenty-update pilots are
+CLOSED_ACCEPTED. Read post-readout-boundary-001/projection-worker001-source-review,
+projection-worker001-admission,projection-worker001-review,projection-pilot001-review,
+projection-prerequisite-chain001-completed.json and projection-prerequisite-chain001-
+closure001/review/guard/STOP,continuation-completed008.json. Original controller45680/
+execsession84275 EXITED0; both original rootsSTOPcomplete. No active numerical worker.
+All1151sources and original census/source-gate/worker/pilot commands are closed and
+immutable: no replay/retry/source/tolerance rescue,clearSTOP or repeated unchanged audit.
+
+NEW eight-role census63430textfiles5610924703B/0matches passed93.962s/RSS134807552B.
+All eight phase initializer/privateprojection/train-global/eval roles nowUSED for
+these prerequisites only; prior-unused receipt is historical, never reuse for NEW
+trajectories/census. Source gate passed six finiteconfigs/30invalidcases and1641B
+NEW literal counter vsBytesIO/overflow in.129s/RSS223707136B, no model/corpus calls.
+
+Actual real-data chain:72optimizerupdates/73728targets total, all88or89 parameter
+exposures4/20, EMA3/8, complete ownRAW-H200/optimizer/samplers/globalCPU-MPSRNG/LR/
+clipping and exact ancestry independently accepted. FULL34278native targets/34279IDs/
+111536bytes/windows268/tail102 through own public physicalcodec/target scorer on
+CPUANDMPS for BOTH RAW/H200. MaxCPU-MPSCE2.89485420524e-7<3e-5. All H200cache/reset
+B1B8 CPUANDMPS passed/cache196608B/item/maxLPdiff1.90734863281e-6. All18CPUphaseguards
+and all6worker/all6parent guards finished. MaxRSS2419982336B/MPS2553167872B passed4/6GiB
+and reserve8GiB; maxworker46.662s/maxparent16.707s. These are finite prerequisite
+correctness/resource results, not1200-horizon forecasts, quality gains or adoption.
+
+Retain ALL12 original four/twentyRAW-H200 archives3359496280B, controls included,
+plus ALL9 generated proof archives3016484885B. One-time read-only closure checked
+all original receipts/1151sourcehashes and streamed exact12weight path/size/SHA/
+device/inode/singlelinks; mirrored397682B closed metadata, ZEROweights copied/deleted
+or tensor/model/corpus/scoring calls. Both rootSTOPs/closure create NOretirement
+eligibility. Do not repeat this closed artifact audit merely to record state.
+
+Next: evidence-grounded full-quality design/SOURCE preparation of smallest own1200/
+fullhistory/EMA41 contract, exact selection/fresh/all9serving/separate independent
+statistics, using accepted pilots and original reference sources WITHOUTreplay.
+Forecast COMPLETE all18 retained outputs/serialization/metadata/reserve/time plus
+mandatory consumers BEFORE freeze; ZEROcredit for current12prereq/9proof archives.
+Pin/review new bounded contract/consumer proofs and unused scientific roles before
+execution. Existing4/20worker must KEEP REJECTING1200. No fullquality/adoption/
+oldoptimizertransport rescue admitted by pilot success. Currentfree~46.88GB/no
+storage block; completed4/20floor12853444608B/target15000928256B is HISTORICAL.
+Native incumbent and closed holdout unchanged.
+
+## Four/twenty worker source preparation (closed historical step)
+
 
 Eight additive sources are SOURCE-prepared only. Read post-readout-boundary-001/
 worker-pilot-design001.md,worker-pilot-source-preparation001/plan/result/guard/STOP
