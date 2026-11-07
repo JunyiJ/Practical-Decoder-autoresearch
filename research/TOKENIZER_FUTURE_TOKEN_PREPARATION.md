@@ -1,3 +1,35 @@
+# TOP target component CLOSED_ACCEPTED; supplied-logit objective SOURCE next
+
+Original literal TOP target proof pid74406 exited0,.110010500s/RSS25608192B;
+source gate pid74384 passed.007473458s/RSS24657920B. Both guards finished under
+120sCPU/4GiB/reserve8GiB. All12 positive cases/25 rejection transactions passed:
+141 exact sparse rows/3993 elementwise masses versus independent Decimal80,
+input preservation/immutable ownership/W1 one-hot/repeats/last-offset inclusion.
+Max absolute mass error6.938893903907228e-18; mass sums exact in saved checks;
+far-offset128 mass6.991989996645917e-56/relative error0 passed the fixed gate.
+
+All37 original saved reports reconciled read-only, no target/harness/Decimal
+oracle replay. Original plans/sources/cases/guards/STOP commands CLOSED/no retry
+or rescue. [Review](tokenizer-evidence/future-token-preparation-001/top-target-component001-review.md),
+[acceptance](tokenizer-evidence/future-token-preparation-001/top-target-component001-acceptance.json)
+and [completed009](tokenizer-evidence/future-token-preparation-001/continuation-completed009.json)
+retain exact original evidence. Target implementation SHA270175... unchanged.
+
+Acceptance is finite Python sparse target math ONLY, valid literals V31/T,W<=128.
+Zero Torch/model/optimizer/MPS/tokenizer/corpus/sampler/RNG/scoring/checkpoint/
+tensor/weight calls, no roles/census. It does not qualify full-vocabulary neural
+loss, gradient, causality, state, workers, model science or upstream reproduction.
+Original future-token model/index/CE failures remain closed/unqualified; no
+acceptance substitution. Future1251bindings preserve1249 plusproof/reviewer;
+closedmodelproof1236/scientificruntime1211 unchanged. No weights/deletions/retirement.
+
+Next smallest [supplied-logit proximity objective SOURCE](tokenizer-evidence/future-token-preparation-001/top-objective-source-handoff001.md):
+explicit represented target masses, mean reduction, independent scalar forward/
+analytic-gradient oracle and W1 genuine-CE identity. New source/cases/fullcost
+before any functional execution; no model/state/scorer adapters or oldproof
+recapture. Native/holdout unchanged; no worker remains active. Earlier entries
+historical; preparation is not numerical quality exploration.
+
 # TOP source trace complete; own target component SOURCE prepared only
 
 Bounded read-only author trace read12 source/config versions132603B. Current
