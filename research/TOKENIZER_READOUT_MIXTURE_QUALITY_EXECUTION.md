@@ -21,14 +21,21 @@ clear STOP, use live bind/state/advance for partial-slot monitoring or relax gat
 Use the explicit project.venv, four threads, strict MPS, original memory/time/disk
 guards and durable process/control/log/acceptance evidence.
 
-All9equal-LR screens must finish before per-arm completeH200MPSnativeCE selection
-among3tested rates; this is not an optimum. Then all9original fresh slots run at
-the selected rates. Keep all18pairs and12prerequisite files. All18independent
+All9equal-LR screens are now independently accepted. The immutable selection
+chooses nativeLR.00125 and MoC/MoSLR.0025 by minimum completeH200MPSnativeCE
+within each arm among3tested rates on ONEscreen seed; these are not optima or
+quality winners. The original9fresh slots09–17 are resolved without changes to
+seeds/rotations, and the controller started fresh slot09. One-time
+readout-quality001-screen-phase001.json reconciles original acceptance/metadata
+hashes, exact selected score rows and all1126source hashes without model,
+checkpoint, scoring, bootstrap or census replay. All9screen pairs5092987392B
+remain protected. Keep all18pairs and12prerequisite files. All18independent
 acceptances, all9fresh serving and separate statistics are required. The native
 incumbent remains unchanged unless every strict quality gate passes and a
 separate adoption/checkpoint-consumer review accepts integration. Holdout closed.
 
-The current complete remaining target is25629378496B, including8GiBreserve,
+The original complete target before current-quality credit is25629378496B,
+including8GiBreserve,
 serialization/metadata and2GiBextra headroom. Working forecast with explicit
 margins is19518.447seconds, not a promise or guard ceiling. Before each unstarted
 slot, credit actual independently accepted retained CURRENTquality bytes once.
