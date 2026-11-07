@@ -41,3 +41,26 @@ model/tensor/optimizer/RNG construction or generated numerical gate occurred.
 Next is NEW generated-proof/census source and full resource admission. Source
 inventory is not a measured model result; all runtime/state/quality claims remain
 unqualified. Existing tiny numerical results above are unchanged and closed.
+
+## Generated actual-model correctness proof: accepted, no quality result
+
+Original relu-squared-model001 and its new role census are closed accepted,
+with independent metadata review. Eight actual generated updates (native reference2
+plus3arms2 each), three fullB8T128 backwards and168 transactional rejections passed.
+All88native/84ungated gradient/update exposures, common76 values/order/native CPU
+draws, paired ungated initial FFN weights and genuine-native exact same-MPS losses/
+parameters/optimizer moments passed. All three arms actually have28492416 elements.
+
+CPU/MPS maxima: logits8.34465026855e-7,CE9.53674316406e-7,grad1.11293047667e-7.
+CE/fullnormalizedgather maximum9.53674316406e-7 with allgradienterror exact0.
+Cache maxima raw9.53674316406e-7/logprob1.90734863281e-6; causalityexact0.
+All original fixed predicates passed. Full128/prefill96/decode32/B1B8/reset twice,
+cache196608B/item, own same-backend in-memory loads and stale/foreign/malformed
+transactional checks passed. Whole54.894766s/RSS2842836992B/MPS2466054144B and all
+four CPU guards finished within limits. All1184 source bindings/globalCPU-MPSRNG
+unchanged. Read-only scalar logsumexp warning retained in review; no edit/retry.
+
+No tensor files, real corpus/holdout/scoring/quality roles ran. This does not prove
+serialized complete RAW/H200/EMA/samplers/RNG/resume or CPU-MPS optimizer transport.
+Synthetic losses do not rank arms or establish quality. Native unchanged. Next
+is own serialized-state/data/scorer SOURCE preparation with separate future gates.

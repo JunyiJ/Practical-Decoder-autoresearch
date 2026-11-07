@@ -1,0 +1,115 @@
+{
+  "actual_host_preflight": "Torch2.14.1 git5c4886908584029761b579af026dcfb627c84070/4threads/MPSbuiltavailable/zeroactiveworkers/no tensors-model-RNG calls",
+  "admission": "One original generated model/optimizer/cache correctness command ONLY;no serialized state/resume/real scoring/pilots/quality/holdout",
+  "census_guard": {
+    "elapsed_seconds": 75.9523535410408,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 120
+    },
+    "observation": {
+      "free_bytes": 42236743680,
+      "peak_rss_bytes": 136396800
+    },
+    "pid": 54726,
+    "reason": null,
+    "status": "finished"
+  },
+  "census_roles": {
+    "initializer": 62086420001,
+    "private_ungated": 2838275271801234716
+  },
+  "census_status": "accepted_original_unused_role_census",
+  "census_text_bytes": 5657975388,
+  "census_text_files": 64879,
+  "fixed_predicates_before_numerics": {
+    "cache_atol": 3e-05,
+    "cache_rtol": 3e-05,
+    "ce_full_normalized_gather_atol": 3e-05,
+    "cpu_mps_ce_atol": 3e-05,
+    "forward_atol": 4e-05,
+    "forward_rtol": 0.0004,
+    "gradient_atol": 4e-05,
+    "gradient_rtol": 0.0004,
+    "native_same_mps_and_causality_atol": 0,
+    "native_same_mps_and_causality_rtol": 0,
+    "normalized_logprob_logsumexp_atol": 3e-05
+  },
+  "full_resource_forecast": {
+    "all_reference_gradient_optimizer_state_released_before_full_geometry": true,
+    "census_rss_bytes": 268435456,
+    "census_seconds": 100,
+    "floor_with_reserve": 8633974784,
+    "free_bytes": 42250850304,
+    "full_B8T128_FP32_logits_bytes": 205852672,
+    "gradients_bytes": 113969664,
+    "model_bytes": 113969664,
+    "native_baseline_cpu_parameters_and_moments_bytes": 330898944,
+    "no_old_output_or_future_deletion_credit": true,
+    "optimizer_load_clone_bytes": 216929280,
+    "optimizer_moments_bytes": 216929280,
+    "prior_resource_evidence": {
+      "mps_peak_bytes": 2468151296,
+      "path": "research/tokenizer-evidence/post-readout-boundary-001/projection-model001/mps-guard.json",
+      "rss_bytes": 2859433984,
+      "sha256": "651137c2526f9a15972bb1bbe693b1ba3e9785eabda100e0bffdb269c7a8700a",
+      "whole_seconds": 25.57242654194124
+    },
+    "proof_mps_bytes": 5368709120,
+    "proof_rss_bytes": 3758096384,
+    "proof_seconds": 180,
+    "retained_metadata_high_water_bytes": 44040192,
+    "serialized_tensor_bytes": 0,
+    "target_with_extra2GiB": 10781458432,
+    "uncertainty": "Same geometry historical generated proof is a forecast basis only;new grouping and moment preflights/clone/extra rejects add cost;hardguards unchanged"
+  },
+  "native_incumbent_unchanged": true,
+  "new_role_scope": "Only this original generated proof;not quality/scientific reuse",
+  "no_prior_numeric_results_from_this_source": true,
+  "plan_sha256": "1b519c9e68a8c279313264854ba5eb3b782300fcdbd1b0800c53e862bad4875e",
+  "preserved_predecessors": 1182,
+  "review": [
+    "Only new generated inputs/initializer namespace;no old numerical fixture replay or failed checkpoint scoring.",
+    "Independent genuine native TRUE-config reference2updates;own native same-MPS losses/parameters/optimizer moments exact0.",
+    "Common76 parameters+RoPE values/order and native CPU-draw digest exact before training;paired ungated FFN weights exact and fan-in bounds checked.",
+    "All88/84 gradients,allFFNmatrixnonzero-grad+changed,perparameter2updates,exact optimizer grouping/LR/decay/epsilon.",
+    "CPU-MPS forward/CE/allgrad;targetCE/fullnormalizedgather/allgrad;fullB8T128backward;full128/prefill96/decode32/B1B8/twicereset/causality.",
+    "56transactional rejects/arm;model/epoch/gradient-slots/cache/optimizer snapshot hashes unchanged. Includes load signature/groups/moments/IDs/step/exposure/gradient preflight,weights/RoPE,caches/reset,IDs/targets/config/distribution/autocast.",
+    "Release baseline and small gradients before full batch;release optimizer/current/saved/forged moments includingloadclone before full batch;CPU transfer precedes any diagnostic precision conversion.",
+    "One original census first,then bind its original result/STOP/guard before one original proof;both commandsclose onfailure/no retry/source-tolerance-seed rescue.",
+    "No serialized RAW/H200/EMA/sampler/RNG resume,real physical scorer,pilot,quality panel/budget,adoption or CPU-MPS optimizer transport claim."
+  ],
+  "scope": {
+    "arms": [
+      "native_swiglu",
+      "ungated_silu",
+      "ungated_relu_squared"
+    ],
+    "cache_batches": [
+      1,
+      8
+    ],
+    "cache_bytes_per_item": 196608,
+    "cache_context": 128,
+    "causality_suffix_delta": 211,
+    "corpus_scoring_or_quality_seed_draws": 0,
+    "decode": 32,
+    "full_B8T128_backwards": 3,
+    "generated_ids": "x=(arange(B*T)*71+47)%50257;y=(x*23+19)%50257",
+    "initializer_roles": "NEW census admitted initializer and own derived ungated role only;no quality roles",
+    "invalids_per_arm": 56,
+    "invalids_total": 168,
+    "own_steps_per_arm": 2,
+    "prefill": 96,
+    "reference_steps": 2,
+    "resets": 2,
+    "serialized_weights_or_tensorfiles": 0,
+    "total_optimizer_steps": 8,
+    "update_batch": 2,
+    "update_context": 8
+  },
+  "source_bindings": 1184,
+  "status": "qualified_original_generated_model_proof_before_first_model_construction",
+  "time": "2026-11-07T13:22:39.853800+00:00"
+}

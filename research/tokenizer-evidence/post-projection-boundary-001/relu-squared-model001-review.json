@@ -1,0 +1,207 @@
+{
+  "actual_generated_optimizer_steps": 8,
+  "all_gradients_and_perparameter_exposure": true,
+  "census_counts": {
+    "bytes": 5657975388,
+    "files": 64879,
+    "prior_matches": 0
+  },
+  "full_B8T128_backwards": 3,
+  "guards": {
+    "cpu-native-reference.json": {
+      "elapsed_seconds": 0.2155415409943089,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42236358656,
+        "peak_rss_bytes": 445202432
+      },
+      "pid": 55227,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-native_swiglu.json": {
+      "elapsed_seconds": 0.2838865000521764,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42236235776,
+        "peak_rss_bytes": 1075249152
+      },
+      "pid": 55227,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-ungated_relu_squared.json": {
+      "elapsed_seconds": 0.18680437502916902,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42236149760,
+        "peak_rss_bytes": 2842836992
+      },
+      "pid": 55227,
+      "reason": null,
+      "status": "finished"
+    },
+    "cpu-ungated_silu.json": {
+      "elapsed_seconds": 0.18508833402302116,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 42236289024,
+        "peak_rss_bytes": 2820521984
+      },
+      "pid": 55227,
+      "reason": null,
+      "status": "finished"
+    },
+    "mps-guard.json": {
+      "elapsed_seconds": 54.894765541073866,
+      "limits": {
+        "mps_driver_limit_bytes": 6442450944,
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "observation": {
+        "free_bytes": 42235822080,
+        "mps_current_bytes": 0,
+        "mps_driver_bytes": 10174464,
+        "peak_observed_mps_driver_bytes": 2466054144,
+        "peak_rss_bytes": 2842836992
+      },
+      "pid": 55227,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "holdout_closed": true,
+  "initializer_pairing_scope": "Pinned original assertions passed:common76 values/order/native CPU draw digest;nativefull88 initialstate;pairedungatedFFNweights/fan-inbounds;nonzeroFFNgrads+changedallmatrices.",
+  "maxima": {
+    "cache_logprob_max_error": 1.9073486328125e-06,
+    "cache_raw_max_error": 9.5367431640625e-07,
+    "causality_error": 0.0,
+    "cpu_mps_ce_error": 9.5367431640625e-07,
+    "cpu_mps_forward_max_error": 8.344650268554688e-07,
+    "cpu_mps_gradient_max_error": 1.1129304766654968e-07,
+    "target_full_gather_error": 9.5367431640625e-07,
+    "target_full_gradient_max_error": 0.0
+  },
+  "native_incumbent_unchanged": true,
+  "no_actual_serialized_state_real_scorer_pilot_or_campaign_admission": true,
+  "no_quality_ordering_from_generated_losses": true,
+  "no_torch_imports_tensors_models_scoring_rng_or_numerical_replay_in_this_review": true,
+  "original": {
+    "STOP": {
+      "bytes": 116,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/STOP",
+      "sha256": "0b83b79b4bbede68cc0ab3d177ce2e50167cd393934703b9de13681310ff8f57"
+    },
+    "attempt.json": {
+      "bytes": 536,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/attempt.json",
+      "sha256": "20d64391e4363db61b058e3964516b7d3a77e7e3ba272adf846f083861ae4200"
+    },
+    "cpu-native-reference.json": {
+      "bytes": 261,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/cpu-native-reference.json",
+      "sha256": "7cfb31aa0bd31ab1f3e8f8a23d919abcfc55c8f0e1b02eb8131c53bf612c4498"
+    },
+    "cpu-native_swiglu.json": {
+      "bytes": 262,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/cpu-native_swiglu.json",
+      "sha256": "8ee4dc334ca55615b95f8a84179ffcf506a7738082cb1e1b405ea488084f1f91"
+    },
+    "cpu-ungated_relu_squared.json": {
+      "bytes": 263,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/cpu-ungated_relu_squared.json",
+      "sha256": "47f127e283655d8add1c5a392fc45e5098c9adb286a252ea5c6edbc008e2960e"
+    },
+    "cpu-ungated_silu.json": {
+      "bytes": 263,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/cpu-ungated_silu.json",
+      "sha256": "17fc56c4efb1759d53e5b2865587987ec509aa2d3195a8d7a3cad69c8ad839a5"
+    },
+    "mps-guard.json": {
+      "bytes": 400,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/mps-guard.json",
+      "sha256": "cb2765d8e3a1038b82981961f20a869318252e44d43e964eb422623c2fb63cb0"
+    },
+    "plan.json": {
+      "bytes": 153589,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/plan.json",
+      "sha256": "1b519c9e68a8c279313264854ba5eb3b782300fcdbd1b0800c53e862bad4875e"
+    },
+    "result.json": {
+      "bytes": 8412,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/result.json",
+      "sha256": "53289dfec4d1592681a95519b7f05e3c42234fe45fe0ad9ef97eeaed83a35106"
+    },
+    "source-review.json": {
+      "bytes": 5320,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model001/source-review.json",
+      "sha256": "1619269186e3ee78c31f7606d7ad140279f3ff2e6b5029920b14d9fb83d8a103"
+    }
+  },
+  "original_census": {
+    "STOP": {
+      "bytes": 97,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model-seed-census001/STOP",
+      "sha256": "3f390aa87008bc13c54cf919b47e6a5529d9d202213bcdb9a0e2ea44deb588bb"
+    },
+    "attempt.json": {
+      "bytes": 104,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model-seed-census001/attempt.json",
+      "sha256": "9478180254be48c6fa12d6e961aeadb7ee2984f5bad46b27ce633b4c9a000d85"
+    },
+    "guard.json": {
+      "bytes": 259,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model-seed-census001/guard.json",
+      "sha256": "ecd03f19dea1731b1376a0f6a405d5ba71e0caa7fa9302a23a10d7c996988c6a"
+    },
+    "inventory.jsonl": {
+      "bytes": 12436788,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model-seed-census001/inventory.jsonl",
+      "sha256": "47cd954315839bee138c254589b497b3a4e1d572cb197a88a2c81b248b2f0d13"
+    },
+    "plan.json": {
+      "bytes": 149050,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model-seed-census001/plan.json",
+      "sha256": "f04d8ad244c43b8c08768192a859ee35c5f7626c1e40120375dc865bc9f2a547"
+    },
+    "result.json": {
+      "bytes": 883,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model-seed-census001/result.json",
+      "sha256": "8fd3173db957ca384be4f3580c9ba5531221be5a1da96fd0dd0421d67512cb66"
+    },
+    "source-review.json": {
+      "bytes": 770,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-model-seed-census001/source-review.json",
+      "sha256": "19f1d7242ceb5e49b97e4ff7527332e31edf3fe2b13318ffd325a31ee163d83d"
+    }
+  },
+  "preserved_predecessors": 1182,
+  "retained_warning": "Original runtime line181 warns on read-only requires-grad scalar conversion for logsumexp normalization diagnostic. Preserved;no source edit/retry. CE/fullgather gradients exact0 under original fixed predicates.",
+  "roles_now_used_only_original_generated_proof": {
+    "initializer": 62086420001,
+    "private_ungated": 2838275271801234716
+  },
+  "source_bindings": 1184,
+  "status": "closed_accepted_independent_metadata_review_generated_ffn_model_scope_only",
+  "time": "2026-11-07T13:25:36.438196+00:00",
+  "transactional_rejections": 168,
+  "valid_load_scope": "Own weights and optimizer in-memory SAMEbackend only;optimizer clone included;cache stale-after-step/optload/weightload and reset passed. No CPU serialized archive/resume/optimizer transport proof."
+}

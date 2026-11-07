@@ -1,4 +1,50 @@
-# Ungated squared-ReLU: actual model source pinned, runtime unqualified
+# Ungated squared-ReLU: generated actual-model proof accepted
+
+Original post-projection-boundary-001/relu-squared-model-seed-census001 and
+relu-squared-model001 are CLOSED_ACCEPTED/no replay/retry/source-tolerance rescue.
+Read plans/source reviews/results/guards/STOPs, relu-squared-model001-review.json,
+continuation-completed003.json and serialized-state-source-design001.md.
+Census64879 textfiles5657975388B/zero prior matches/75.952354s/RSS136396800B,
+no Torch/model/optimizer/RNG calls. Initializer62086420001 and derived private
+ungated2838275271801234716 are NOW USED by this original generated proof only;
+prior-unused receipt is historical, never reuse for new trajectories/censuses.
+All1184 source bindings preserve1182 predecessors; model/census commands closed.
+
+Actual D256/V50257 three-arm proof passed: genuine native reference2 generated
+B2T8 updates plus own3arms2 each=8 updates total,all88/84 gradients/exposures2,
+all FFN matrix gradients nonzero and weights changed. Common76 non-FFN parameter
+values/order/RoPE/native CPU draws exact; paired ungated FFN weights identical.
+Own native initial full88 state and same-MPS losses/parameters/optimizer moments
+exact versus genuine native reference. Actual all-arm28492416 elements; native
+88tensors/44Muon44AdamW,ungated84/40Muon44AdamW. Equal counts do not imply runtime
+or optimizer equivalence. Three additional fullB8T128 backwards had no extra step.
+
+CPU/MPS forwardmax8.34465026855e-7/CE9.53674316406e-7/grad1.11293047667e-7;
+targetCE/fullnormalizedgather CEmax9.53674316406e-7 and allgradienterror exact0.
+Cache rawmax9.53674316406e-7/logprob1.90734863281e-6; causalityexact0.
+Full128/prefill96/decode32/B1B8/two resets/cache196608B/item and all168
+transactional rejections (56/arm) passed under all original fixed elementwise
+predicates. Own optimizer/weight loads were IN-MEMORY SAME-backend; not serialized
+RAW/H200/EMA/samplers/globalRNG/resume or CPU-MPS optimizer-transport proof.
+Whole54.894766s/RSS2842836992B/MPS2466054144B under600s/4GiB6GiB/reserve8GiB;
+four CPU guards finished. Caller CPU/MPS RNG/all1184 source bindings unchanged.
+Original read-only requires-grad scalar logsumexp warning is retained in review;
+no source change/retry. ZERO tensorfiles/corpus/holdout/quality-role calls.
+Independent metadata review agrees without numerical replay. Generated losses
+are not quality evidence or a ranking; no adoption or failed QUALITY001 cause.
+
+CURRENT NEXT: SOURCE implementation/review ONLY for NEW relu_squared_resume_v1
+own complete RAW/H200/data/scorer contracts per serialized-state-source-design001.
+CPU archive moment preflight/device staging must precede the frozen same-backend
+optimizer loader, budgeting its deep clone. New source/cases/fixed predicates/
+roles/census/full working-retained-output-time/reserve/headroom gates precede any
+serialized numerical proof. Real physical scorer/4-20 worker/pilots/fullquality
+remain unqualified; no new quality budget/launch. Native/holdout unchanged; no
+worker active. All old weights/evidence remain protected; no deletions/copies.
+
+The following source-only and tiny-gate sections are historical; the completed
+actual generated proof and current serialized-state SOURCE action above supersede
+their unqualified/NEXT wording. Original pinned sources are never edited.
 
 Four NEW additive sources in relu_squared_model_v1/{__init__,contract,model,
 optimizer}.py are pinned by tokenizer-evidence/post-projection-boundary-001/
