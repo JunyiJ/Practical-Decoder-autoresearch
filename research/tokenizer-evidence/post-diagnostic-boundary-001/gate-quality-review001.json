@@ -1,0 +1,191 @@
+{
+  "adopted": false,
+  "design": {
+    "arms": [
+      "none",
+      "static_half",
+      "sigmoid_elementwise_zero"
+    ],
+    "candidate": "sigmoid_elementwise_zero",
+    "category": "Evidence-grounded structural exploration",
+    "confidence_scope": "Conditional on trained seeds and reused validation text;not holdout or population-seed confidence.",
+    "control_fallback": false,
+    "controls": [
+      "none",
+      "static_half"
+    ],
+    "cost_only_adoption": false,
+    "draws": 2000,
+    "ema_snapshots": 41,
+    "every_seed_negative": true,
+    "extra_tuning": false,
+    "fresh_order": [
+      "none,static_half,sigmoid_elementwise_zero",
+      "static_half,sigmoid_elementwise_zero,none",
+      "sigmoid_elementwise_zero,none,static_half"
+    ],
+    "fresh_trajectories": 9,
+    "fresh_triples": 3,
+    "full_weight_high_water": 11072962560,
+    "generator": "PCG64",
+    "holdout_scored": false,
+    "keep_all_screens_and_fresh": true,
+    "learning_rates": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "mean_ce_delta_threshold": -0.02,
+    "native_token_blocks": [
+      2048,
+      4096,
+      8192
+    ],
+    "old_payload_or_future_retirement_or_hardlink_credit": false,
+    "pcg64_reinitialized_each_width": true,
+    "quantile": "linear",
+    "rescue": false,
+    "resource_axis": "Equal native token targets/updates,sampling seeds and finite LR allowance;not equal FLOPs,time or total active/stored parameters.",
+    "same_indices_across_seeds_and_contrasts": true,
+    "screen_trajectories": 9,
+    "seed_replacement": false,
+    "selection": "Minimum complete H200 MPS native CE independently per arm;lower LR exact tie.",
+    "separate_adoption_consumer_review": true,
+    "steps": 1200,
+    "target_bytes": 111536,
+    "target_contract_sha256": "de78a14fa439a1952c6d0af7372901f8751f77f3dd12b385ff02ec510aa769ad",
+    "target_ids_sha256": "dad00eaab7c2076736432b83eb9f1cc404c87aa5e4820b5f7abebf384c7fcdaf",
+    "target_tokens": 34278,
+    "targets": 1228800,
+    "upper_quantile": 0.9916666666666667
+  },
+  "free_bytes": 77250781184,
+  "layout_rows": [
+    {
+      "actual_pilot_state_checked": true,
+      "additional_ancestry_path_headroom_bytes": 4096,
+      "arm": "none",
+      "cap": 587202560,
+      "fixture_values_NOT_trained_full_horizon": true,
+      "full_fixture_schema_validated": true,
+      "full_history_layout_counted_bytes": 563473322,
+      "h200_counted_bytes": 114074755,
+      "margin_bytes": 23729238,
+      "raw_counted_bytes": 449398567
+    },
+    {
+      "actual_pilot_state_checked": true,
+      "additional_ancestry_path_headroom_bytes": 4096,
+      "arm": "static_half",
+      "cap": 587202560,
+      "fixture_values_NOT_trained_full_horizon": true,
+      "full_fixture_schema_validated": true,
+      "full_history_layout_counted_bytes": 563473578,
+      "h200_counted_bytes": 114074755,
+      "margin_bytes": 23728982,
+      "raw_counted_bytes": 449398823
+    },
+    {
+      "actual_pilot_state_checked": true,
+      "additional_ancestry_path_headroom_bytes": 4096,
+      "arm": "sigmoid_elementwise_zero",
+      "cap": 671088640,
+      "fixture_values_NOT_trained_full_horizon": true,
+      "full_fixture_schema_validated": true,
+      "full_history_layout_counted_bytes": 567909318,
+      "h200_counted_bytes": 115124855,
+      "margin_bytes": 103179322,
+      "raw_counted_bytes": 452784463
+    }
+  ],
+  "models_or_contracts_or_statistics_replayed": false,
+  "prerequisite_weight_bytes": 3363688308,
+  "prerequisite_weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-worker-v1-001/evidence/pilots/00/checkpoints/parent.pt",
+      "sha256": "270a41b014842103a04df69d77d463a079f050eed6aa04532afea2526c9645f8",
+      "size": 445107431
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-worker-v1-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "5aa8536fa2cc62526a4453995faee73384da61330550cbd72a1acf459bb623a5",
+      "size": 114077379
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-worker-v1-001/evidence/pilots/01/checkpoints/parent.pt",
+      "sha256": "bfc5701af8eccb765e53f4311e148b8aa1e245d73607aa5e66c3ddb7f1837ac9",
+      "size": 445107687
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-worker-v1-001/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "7912f7cce44c0538618dbb5f3793dd79438a440e7abb17cff8be2861dc01ef91",
+      "size": 114077379
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-worker-v1-001/evidence/pilots/02/checkpoints/parent.pt",
+      "sha256": "2fb02d86929d3130f345758a2a4bc83884f1d25b911b8da871db29c8f1e10983",
+      "size": 448258895
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-worker-v1-001/evidence/pilots/02/checkpoints/h200.pt",
+      "sha256": "41113af4b6bec66a2c5a6f3e4c1b9251e5fb5487ef3565098d07c4ff35380d83",
+      "size": 115127543
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-pilot-v1-001/evidence/pilots/00/checkpoints/parent.pt",
+      "sha256": "bfa2506703c9f88f8994874453e792508a676e28d8aa15e4aff8bad519657be2",
+      "size": 445164967
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-pilot-v1-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "8470cf5b8b3ae19cc144c875bfb9bd07521688e8c16c2a651aaebd3e2c8bce7d",
+      "size": 114077379
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-pilot-v1-001/evidence/pilots/01/checkpoints/parent.pt",
+      "sha256": "eff90febac8b2e90ef5721012ea18a03438fb8c1f213096aa0bec42a3626dc38",
+      "size": 445165159
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-pilot-v1-001/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "56f82cc3bb19c85d2e45bfacc158dfa21b99dd611a6fc4267cc0c801d343b28e",
+      "size": 114077379
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-pilot-v1-001/evidence/pilots/02/checkpoints/parent.pt",
+      "sha256": "8e0053e29634e369b52a031a206c393d6f2af14670168380c912ae618b81a66c",
+      "size": 448319567
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-pilot-v1-001/evidence/pilots/02/checkpoints/h200.pt",
+      "sha256": "1ae889f63572bf0c405d4c63b25f62a378894c084b00299028364e9dcc59be64",
+      "size": 115127543
+    }
+  ],
+  "production_freeze_exists": false,
+  "proof": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality-contracts001.json",
+    "sha256": "a64df105b188be82a270e0ec295f9a544db13fe73e2f70288b0d9a5cf9833d0c"
+  },
+  "proof_guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality-contracts001-guard.json",
+    "sha256": "b5fc5b92dbb3965122b4b68792e5d206aefc6c429cc1092a4280f43bb7715200"
+  },
+  "proof_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality-contracts001-plan.json",
+    "sha256": "b37d6325632f49fa68c6277ea883a43e522f4ded2be3f6f87649c1916cf1eb31"
+  },
+  "quality_floor": 21536239616,
+  "quality_result": false,
+  "quality_target": 23683723264,
+  "scientific_seeds_assigned": false,
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality-review001.py",
+    "sha256": "25e694294d92268c9f4d10de2c107e468b02d3e41d327d4f61ee83aeb21d5a68"
+  },
+  "source_bindings": 1084,
+  "source_invariant": true,
+  "status": "full_gate_quality_correctness_independently_reviewed",
+  "tiny_text_pt_bytes": 3909,
+  "tiny_text_pt_files": 82
+}

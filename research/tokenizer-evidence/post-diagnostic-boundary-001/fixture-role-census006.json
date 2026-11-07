@@ -1,0 +1,48 @@
+{
+  "audit_completed_at": "2026-11-07T02:06:26.605078+00:00",
+  "audit_scope": "rg --hidden --no-ignore research research_runs research_state src tests; py/json/jsonl/yaml/yml/md/log",
+  "complete_alphanumeric_boundary_scan_exit_code": 0,
+  "complete_exact_integer_boundary_scan_exit_code": 1,
+  "generated_contract_metadata_and_synthetic_statistics_only": true,
+  "generated_contract_roles": {
+    "bootstrap": 600540,
+    "evaluation": 600542,
+    "fresh": [
+      600543,
+      600544,
+      600545
+    ],
+    "screen": 600541
+  },
+  "initializer": 600546,
+  "no_prior_seed_roles": true,
+  "potential_match_contexts": [
+    "elapsed_seconds:564.600541",
+    "elapsed_seconds:54.600542"
+  ],
+  "potential_match_files": [
+    {
+      "classification": "fractional digits of elapsed_seconds,not an integer seed role",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/15/resource-audit.json",
+      "sha256": "3c5a1744ccd68a5cd4cc5b5e92351b43a71cf58ee9cd0a3723b091a5620be59d"
+    },
+    {
+      "classification": "fractional digits of elapsed_seconds,not an integer seed role",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/15/resource-events.jsonl",
+      "sha256": "e756a9279093a4128dd8e6c36a991a2d4eecc0ea309d2389938ce34f849bc7af"
+    },
+    {
+      "classification": "fractional digits of elapsed_seconds,not an integer seed role",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/20/resource-audit.json",
+      "sha256": "e3f364cd825f62f919074c873261ae53ef1d31dd8bba1506bae3e278bfd65571"
+    },
+    {
+      "classification": "fractional digits of elapsed_seconds,not an integer seed role",
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-wide-hybrid-005/evidence/quality/20/resource-events.jsonl",
+      "sha256": "8b61cd9791fcf96acaeee8cc4dd8e0be8f3e3dc009fceb56575f46599cffa865"
+    }
+  ],
+  "prior_integer_or_seed_role_matches": [],
+  "scientific_seeds": false,
+  "status": "unused_generated_contract_roles_audited"
+}
