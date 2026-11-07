@@ -1788,3 +1788,18 @@ no old model/checkpoint/scoring/optimizer rescue. Evidence/limits in
 TOKENIZER_READOUT_PROJECTION_RESULTS.md and projection-quality-preparation-001/
 post-failure-evidence-review001.md. Native/holdout unchanged; carry broad/interaction
 allocation forward. Earlier preparation and launch sections are historical.
+
+
+## Isolated normalization/readout diagnostic remains incomplete
+
+NEWforward-sensitivity002 retained54CPU64/CPU32rows but stopped on a reporting
+FP64-on-MPS cast before firstMPSrow publication;001 had failed before entry.
+Bothclosed/no replay/rescue. Read-only CPUmetadata shows mathematicaltranslation
+invariance can fail for NEWnarrow-spread/large-offset functional literals, not
+observed trained features. NoMPScomparison/quality/root-cause claim follows.
+
+Newanchor-centered LayerNorm SOURCEONLY is real-arithmetic/Jacobian equivalent
+at unchangedepsilon/affine; actualruntime/gradients UNTESTED. Next NEWliteral
+independentforward+analyticgradient functional gate requires source/resource
+admission first. No actualmodel/scorer/optimizer/checkpoint/quality integration.
+Read TOKENIZER_READOUT_PROJECTION_PREPARATION.md and continuation-completed004.

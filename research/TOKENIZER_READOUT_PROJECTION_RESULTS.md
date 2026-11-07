@@ -23,3 +23,20 @@ A separate future-only report-publication helper passed12NEWliteral metadata
 cases while keeping3e-5 unchanged. Both reports survive a rejected comparison.
 No frozen campaign imports it; this is an observability fix, not a numerical
 root-cause result or admission for renewed training. Holdout remains closed.
+
+
+## New isolated forward diagnostic: partial CPU results only
+
+forward-sensitivity001 entry failed before any numerical attempt. Distinct
+host-admitted002 completed54CPU64/CPU32cases, then failed when its reporting
+expression tried FP64 conversion on MPS. No MPS row/result/finalRNG assertion was
+published. Both original commands remain closed, immutable and unretried.
+
+The saved CPU32 narrow-spread/+1024offset literals showed loss of mathematical
+translation invariance, amplified by affine gain. Maximum feature/logit/per-target
+NLLerrors versus independent scalar were.0522135439/.00680060710/.00111393853.
+These synthetic D256/V31 measurements do not establish MPS behavior or identify
+the failed trained checkpoint's cause. Read-only metadata analysis completed;
+no rescore/model/checkpoint replay. A separate anchor-subtracted LN formulation
+is SOURCEONLY and untested;no frozenmodel uses it. See continuation-completed004
+and anchored-normalization-source-design001.md for limitations/next gate.

@@ -1,0 +1,22 @@
+{
+  "attempted_first_mps_case": {
+    "arm": "native",
+    "case": "regular_norm",
+    "stage": "error differences computed,CE scalar publication failed;no published error row"
+  },
+  "cause": "Reporting conversion requests FP64 on MPS before CPU transfer;source defect,not measured MPS numerical disagreement",
+  "cpu_oracle_and_CPU64_CPU32_guards": "finished",
+  "cpu_rows_complete": 54,
+  "error": "TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework does not support float64",
+  "expression": "float(result['nll'].double().mean().cpu())",
+  "final_caller_rng_and_source_recheck": "NOT_REACHED",
+  "first_failure_source_line": 86,
+  "mps_guard": "fixture_exception",
+  "mps_rows_persisted": 0,
+  "next_action": "Read-only existing54CPUrow analysis only;no MPS/scoring reconstruction or fixture retry. Future source design independent of closed commands.",
+  "no_models_optimizers_checkpoints_corpus_quality_roles": true,
+  "numerical_threshold_changed": false,
+  "original_command_closed_no_retry_source_or_tolerance_rescue": true,
+  "original_command_exit_code": 1,
+  "status": "CLOSED_FAILED_REPORTING_DTYPE_MPS_INCOMPLETE"
+}

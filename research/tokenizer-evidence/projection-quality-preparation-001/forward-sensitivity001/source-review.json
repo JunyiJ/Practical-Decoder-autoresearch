@@ -1,0 +1,23 @@
+{
+  "capacity_pass": true,
+  "exact_fp32_literal_quantization_asserted_before_backend_comparisons": true,
+  "free_bytes": 42271039488,
+  "inputs": "new dyadic formulas/no RNG or old fixtures",
+  "max_parameter_like_array_bytes": 524288,
+  "no_source_import_or_numerical_execution": true,
+  "oracle_independent": true,
+  "output_overlap": "none,no tensor files or serialization",
+  "plan_sha256": "93e147b5c47cea5843f06ffe610e5da9071cf1682bbb346feba0826242ec1b7c",
+  "preserved_predecessors": 1167,
+  "resource_floor": 8594128896,
+  "resource_target": 10741612544,
+  "scalar_translation_control_exact": true,
+  "scope_limit": "isolated final norm/readout D256,V31 only;not actual trained model/full50257vocab/scorer/gradient/optimizer/inference gate",
+  "source_bindings": 1170,
+  "status": "passed_source_scope_and_resource_review_before_first_execution",
+  "three_additive_files": [
+    "research/readout_forward_sensitivity_v1.py",
+    "research/readout_forward_sensitivity_oracle_v1.py",
+    "research/tokenizer-evidence/projection-quality-preparation-001/forward-sensitivity001.py"
+  ]
+}

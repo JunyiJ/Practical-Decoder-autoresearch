@@ -1,4 +1,41 @@
-# Single readout projection: quality panel closed incomplete
+# Forward-numerics diagnostic partial; anchor formulation SOURCE ONLY
+
+Read projection-quality-preparation-001/forward-sensitivity001/entry-failure-STOP,
+forward-sensitivity002/{failure-review,mps-guard,STOP},forward-sensitivity002-
+analysis001/{result,guard,STOP},anchored-normalization-source-design001.md and
+continuation-completed004.json. Original QUALITY001 stays CLOSED_FAILED_INCOMPLETE;
+all old sources/STOPs/weights are protected. Native/holdout unchanged; no worker.
+
+NEW001 sandbox entry failed BEFOREattempt/tensors at thread/MPS predicate. Host
+preflight MPSavailable/fourthreads passed. Distinct002 same-byte numerical body/
+newplan-output completed27CPU64+27CPU32rows and scalar translation controls, then
+FAILED at reporting .double().mean().cpu() on first MPSloss. FP64 cast occurred
+on MPS beforeCPUtransfer. NoMPSrow/result/finalRNGcheck published. Both commands
+CLOSED/no retry/sourceedit/rescue; never claim81cases or MPSnumerical agreement.
+
+Read-only54CPUmetadata analysis/source-only preparation completed.031497s/
+RSS21643264B/120sCPU4GiB/reserve8GiB/2MiB;ZERO Torch/tensors/model/scoring/RNG.
+CPU32narrow+1024commonoffset changes output despite exactscalartranslationcontrol;
+maxfeature/logit/per-targetNLLerrors .05221354/.006800607/.001113939 at synthetic
+gains. Regularnormfeatureerror2.35e-7. These syntheticV31functional observations
+are NOTtrainedactivationranges/MPScomparison/failedcheckpointcause/qualitygain.
+
+New research/anchored_layer_norm_v1.py SOURCEONLY computes
+F.layer_norm(x-x[:, :1],(256,),gamma,beta,1e-5) with strictboundedfunctional scope,
+no Module/model/optimizer/state/RNG. Algebra realforward and Jacobian equivalent;
+finite-precision/gradient/overflow/runtime UNTESTED. All1173sources now preserved.
+No frozen model imports it, no epsilon/precision/tolerance/backend/quality rescue.
+
+Next implement/pin/review NEWindependent scalar forward+analyticbackward oracle
+and NEWliteral functional fixture sources, including CPUtransferBEFOREanyFP64
+metadata conversion. Mustreviewallsource/scope/cases/resources/exactplanSHA BEFORE
+execution. Use actualhostMPS admission undernormalapproval, no newrandomrolesif
+no draws/models. No old001/002numericalfixture/reconstruction or actualmodel/
+checkpoint/scorer/optimizer/quality admission. Prospective4MiBmetadata+8GiBreserve/
+extra2GiBtarget10741612544Bfits~42.28GBfree;no storageblock/cleanup. Carrybroad/
+interactionallocationforward;this is correctness work,notqualityexploration.
+
+## Original failed quality closure (closed historical step)
 
 Original QUALITY001 is CLOSED_FAILED_INCOMPLETE at slot07 linear_projection1,
 LR.0025. Controller48758/session2476 EXITED1; worker50942 EXITED0 after1200updates.
