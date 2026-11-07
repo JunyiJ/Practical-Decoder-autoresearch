@@ -1,4 +1,34 @@
-# Single readout projection: generated actual-model proof accepted
+# Single readout projection: complete-state/scorer sources prepared
+
+Five additive files in readout_projection_resume_v1 are SOURCE-prepared. Read
+post-readout-boundary-001/resume-scorer-design001.md,
+resume-scorer-source-preparation001/plan/result/guard/STOP and
+continuation-completed005.json. Source-only review preserves1141bindings including
+all1136 predecessors. ZERO Torch imports, model/tensor/optimizer/RNG/corpus/
+serialization calls. Runtime/serialized-state/scorer correctness remains untested.
+
+Own RAW/H200/config/optimizer/private-projection/scorer identities, complete
+preflight-before-mutation, persisted RAW ancestry, private samplers and globalRNG,
+schedule/EMA/clipping/exposure are prepared. New archive APIs stream exclusive
+bounded .tmp publication without overwrite and verify retained hash/size/singlelink
+before/after weights-only CPU reads. Fixed RAW512MiB/H200128MiB limits; optional
+smaller caps permit small negative I/O fixtures and cannot raise those limits.
+No in-memory-parent exception; H200 is inference-only. Public native-target scorer
+retains FULL34278/34279IDs/111536bytes. No real corpus scoring has run here.
+
+Next: implement/pin/review NEW six-role census and serialized4vs2+2/scorer proof
+before ANY new construction/execution. Planned24generatedupdates, complete RAW,
+H200/EMA3/private samplers/globalCPU-MPSRNG/trace/clipping/all88or89exposure exact;
+NEW259generated targets plus34278literal-loss arithmetic and forgeries. Retain
+prefix RAW/final RAW/H200 perarm:9archives capped3456MiB plus42MiB metadata and
+8GiBreserve floor12257853440B/plus2GiBtarget14405337088B, currently covered.
+Streaming .tmp stays within its final slot; no copy/retirement credit. Forecast
+180s/RSS3.5GiB/MPS3.5GiB; enforce600swhole/120sCPUphase/4GiB/6GiB/reserve8GiB.
+No roles assigned, serialized files produced, numerical worker, quality freeze,
+real worker/pilot/scorer/resume admission or new storage blocker in this step.
+Keep native incumbent and holdout unchanged.
+
+## Accepted generated actual-model proof (closed)
 
 Original NEW projection-model-seed-census001 and projection-model001 are CLOSED
 and accepted. Read post-readout-boundary-001/projection-model001-review.json,
@@ -19,15 +49,9 @@ MPS2468151296B passed600s/4GiB/6GiB/reserve8GiB; all4CPU phase guards finished.
 ZERO corpus/quality/holdout scoring or tensorfiles. No quality or adoption claim.
 Never replay/retry/edit these closed commands; all old campaigns remain closed.
 
-Next executable work is smallest own complete RAW/H200 state/resume and native-
-target scorer SOURCE preparation. Inspect existing accepted reference contracts
-without replay; specify synthetic4 versus2+2 complete optimizer/EMA/private samplers/
-globalCPU-MPSRNG/clipping/exposure and literal scorer/forgery gates. Pin/review NEW
-sources/unused role census and full retained-output/serialization-overlap/time/
-memory budget BEFORE execution. In-memory own optimizer/weight load checks here
-do not qualify serialized complete state, CPU-MPS optimizer transport or resume.
-No corpus/worker/pilot/quality admission follows. Native incumbent and holdout stay
-unchanged. No numerical worker or new storage blocker exists.
+In-memory own optimizer/weight load checks do not qualify serialized complete
+state, CPU-MPS optimizer transport or resume. No corpus/worker/pilot/quality
+admission follows. Native incumbent and holdout stay unchanged.
 
 ## Actual-model source preparation (closed historical step)
 
