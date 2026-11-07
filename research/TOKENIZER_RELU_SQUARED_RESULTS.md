@@ -1,3 +1,46 @@
+# Real four/twenty FFN worker SOURCE preparation complete
+
+The NEW relu_squared_worker_v1/{__init__,training,validation,dispatch,execution}
+and relu-squared-worker001.py serial controller are SOURCE-ONLY complete.
+Read post-projection-boundary-001/real-worker-source001/{plan,review-source001,
+attempt,review,scalar-accounting,guard,STOP} and continuation-completed006.json.
+All1198 source bindings preserve1191 predecessors; six implementation files
+37640B plus one saved reviewer. AST/compile and15 static invariant checks passed
+without importing Torch/worker modules or constructing tensors/models/optimizers/
+RNGs/corpus/checkpoints/scoring/serialization. Guard .048683375s/RSS25657344B
+under120sCPU/4GiB/reserve8GiB/2MiBmetadata. No new roles or numerical admission.
+All new runtime paths remain UNTESTED. Original review command CLOSED/no replay.
+
+Own worker source enforces exactly4/20, LR.00125 prerequisite-only, full88/84
+gradient exposure/schedule/clip1/EMA/private sampler and separate global CPU/MPS
+roles. Independent acceptance uses own hash-bound RAW/H200 reads, physical own
+FULL34278-target/34279-ID/111536B public scorer on CPUANDMPS, caller validation
+then durable own pair publisher BEFORE fixed3e-5 rejection. H200 cache/reset
+B1/B8 uses NEW41-prefill/87-decode partition, fixed3e-5 atol/rtol,196608B/item.
+Controller requires all3 four-update acceptances before20 construction and
+requires future new census/sourcegate. No old runner or foreign model relabel.
+
+Prospective implemented accounting ONLY: six640MiB pairs/ALL12 endpoints
+4026531840B;two64MiB root metadata allowances plus96MiB external evidence and
+2MiB entry,8GiB reserve =>floor12853444608B/extra2GiB target15000928256B.
+Serial working estimate3294603792B includes parent512MiB CPUread/live-savedEMA/
+momentstaging+loaderdeepclone/CPU-model+RAW-H200 copies/three fullB8 LP arrays/
+768MiB runtime margin; MPSforecast3.5GiB. Worker180s/parent240s/six-run2640s
+are conservative forecasts, NOT measured new runtime/serialized archive sizes.
+Per-file RAW512MiB/H200128MiB caps unchanged; one-allocation.tmp inside pair
+allowance, failed partial stops chain. Current~39.18GB free covers target; no
+storage blocker/cleanup/deletion/old-output credit. Future gate must qualify
+these bounds before any real call. All prior archives and evidence protected.
+
+CURRENT NEXT: twelve-role census/sourcegate SOURCE/cases/admission preparation
+per real-prerequisite-gates-handoff001.md. No numeric roles proposed/assigned,
+census/sourcegate/realworker/pilot/quality budget or launch admitted here.
+Native incumbent/holdout unchanged; no numerical worker active. Source/correctness
+preparation is not numerical exploration; broad/interaction allocation carried.
+
+The previous serialized-proof/preparation records below are historical current
+states. Their original closed results, sources, roles and protections remain.
+
 # Tiny functional FFN gate: accepted, no quality result
 
 Original tokenizer-evidence/post-projection-boundary-001/relu-squared-component001
