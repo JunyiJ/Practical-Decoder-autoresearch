@@ -1,0 +1,89 @@
+{
+  "binary": {
+    "bytes": 386016816,
+    "device": 16777234,
+    "inode": 85992718,
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/lib/libtorch_cpu.dylib",
+    "sha256": "886a21732227bea91a64dcc355bdea98808fab5014a84891de2fe3a081744079"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/otool",
+        "-hv",
+        "-L",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/lib/libtorch_cpu.dylib"
+      ],
+      "elapsed_seconds": 0.36258787498809397,
+      "returncode": 0,
+      "selected_lines": [
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/lib/libtorch_cpu.dylib:",
+        "Mach header",
+        "      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags",
+        "MH_MAGIC_64    ARM64        ALL  0x00       DYLIB    28       4032   NOUNDEFS DYLDLINK TWOLEVEL WEAK_DEFINES BINDS_TO_WEAK NO_REEXPORTED_DYLIBS MH_HAS_TLV_DESCRIPTORS",
+        "\t@rpath/libtorch_cpu.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "\ttime stamp 1 Wed Dec 31 16:00:01 1969",
+        "\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5026.5.4, weak)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders (compatibility version 1.0.0, current version 129.5.1, weak)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/System/Library/Frameworks/MetalPerformanceShadersGraph.framework/Versions/A/MetalPerformanceShadersGraph (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/System/Library/Frameworks/Metal.framework/Versions/A/Metal (compatibility version 1.0.0, current version 373.2.0, weak)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit (compatibility version 1.0.0, current version 275.0.0, weak)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t@loader_path/libc10.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate (compatibility version 1.0.0, current version 4.0.0)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t@loader_path/libomp.dylib (compatibility version 5.0.0, current version 5.0.0)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5026.5.4)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2100.43.0)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969",
+        "\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0, weak)",
+        "\ttime stamp 2 Wed Dec 31 16:00:02 1969"
+      ],
+      "stderr": "",
+      "total_stdout_lines": 30
+    },
+    {
+      "argv": [
+        "/usr/bin/nm",
+        "-nm",
+        "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/lib/libtorch_cpu.dylib"
+      ],
+      "elapsed_seconds": 1.244963416014798,
+      "returncode": 0,
+      "selected_lines": [
+        "0000000002336cec (__TEXT,__text) non-external __ZN2at6native12_GLOBAL__N_131log_softmax_lastdim_kernel_implERKNS_6TensorES4_",
+        "0000000002337b34 (__TEXT,__text) non-external (was a private external) __ZN2at6native7DEFAULT36serial_vec_log_softmax_lastdim_rangeIdEEvPKT_PS3_xxxx",
+        "000000000233810c (__TEXT,__text) non-external __ZN2at8internal15invoke_parallelIZNS_12parallel_forIZNS_6native12_GLOBAL__N_124_vec_log_softmax_lastdimIdEEvPKT_PS6_xxEUlxxE_EEvxxxRS7_EUlxxE_EEvxxxSB_.omp_outlined",
+        "0000000002338288 (__TEXT,__text) non-external (was a private external) __ZN2at6native7DEFAULT36serial_vec_log_softmax_lastdim_rangeIfEEvPKT_PS3_xxxx",
+        "0000000002338a60 (__TEXT,__text) non-external __ZN2at8internal15invoke_parallelIZNS_12parallel_forIZNS_6native12_GLOBAL__N_124_vec_log_softmax_lastdimIfEEvPKT_PS6_xxEUlxxE_EEvxxxRS7_EUlxxE_EEvxxxSB_.omp_outlined",
+        "0000000002338bdc (__TEXT,__text) non-external (was a private external) __ZN2at6native7DEFAULT36serial_vec_log_softmax_lastdim_rangeIN3c108BFloat16EEEvPKT_PS5_xxxx",
+        "00000000023398b8 (__TEXT,__text) non-external __ZN2at8internal15invoke_parallelIZNS_12parallel_forIZNS_6native12_GLOBAL__N_124_vec_log_softmax_lastdimIN3c108BFloat16EEEvPKT_PS8_xxEUlxxE_EEvxxxRS9_EUlxxE_EEvxxxSD_.omp_outlined",
+        "0000000002339a34 (__TEXT,__text) non-external (was a private external) __ZN2at6native7DEFAULT36serial_vec_log_softmax_lastdim_rangeIN3c104HalfEEEvPKT_PS5_xxxx",
+        "000000000233a634 (__TEXT,__text) non-external __ZN2at8internal15invoke_parallelIZNS_12parallel_forIZNS_6native12_GLOBAL__N_124_vec_log_softmax_lastdimIN3c104HalfEEEvPKT_PS8_xxEUlxxE_EEvxxxRS9_EUlxxE_EEvxxxSD_.omp_outlined",
+        "0000000004c61694 (__TEXT,__text) external _Sleef_expf4_u10advsimd",
+        "0000000004c61b94 (__TEXT,__text) external _Sleef_logf4_u10advsimd",
+        "0000000004c6b8ec (__TEXT,__text) external _Sleef_logf4_u10",
+        "0000000004c6bcc4 (__TEXT,__text) external _Sleef_expf4_u10",
+        "0000000012f97a20 (__DATA,__data) external __ZN2at6native12DispatchStubIPFvRKNS_6TensorES4_ENS0_48log_softmax_lastdim_kernel_DECLARE_DISPATCH_typeEE7DEFAULTE",
+        "000000001304d5f0 (__DATA,__common) external __ZN2at6native26log_softmax_lastdim_kernelE"
+      ],
+      "stderr": "",
+      "total_stdout_lines": 430434
+    }
+  ],
+  "kind": "one_time_read_only_static_installed_binary_inspection",
+  "no_binary_changes_copies_or_deletions": true,
+  "no_dlopen_torch_tensor_backend_model_oracle_calls": true,
+  "no_saved_inspector_source_hash_claim": true,
+  "original_tool_arguments_retained": true,
+  "runtime_dispatch_not_profiled": true
+}

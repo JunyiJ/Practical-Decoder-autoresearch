@@ -1,0 +1,75 @@
+{
+  "CPU32_report": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/literal-vocabulary-ce001/cpu32-six.json",
+    "sha256": "382690f02e19bcb6af57695e50552fc85547c6d61c59d558955039aadbcf04f8"
+  },
+  "MPS32_report": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/literal-vocabulary-ce001/mps32-six.json",
+    "sha256": "8e7c91276241052ad7e2f4464a7cfebdf04d258d62dd7c0ae06a3a55d2cc1a0e"
+  },
+  "allowed_operations": "Read saved scalar rows/selected installed headers; exact rational gamma and scalar log/expm1 interpretations only. NO tensor/oldlogit/gradient-coordinate reconstruction/oracle replay/backend/model/corpus/scoring.",
+  "cases_and_assumptions": {
+    "V": 50257,
+    "conditional_NEON_width": 4,
+    "conditional_horizontal_path_adds": 2,
+    "no_gate_tolerance_or_source_replacement": true,
+    "roundoff": "2**-24,normal FP32 round-to-nearest/nooverflow/noharmfulunderflow/no reassociation assumption",
+    "unknown": "shifted exp/log errors and actual dispatch not measured; all bounds conditional"
+  },
+  "forecast": {
+    "RSS_bytes": 134217728,
+    "Tensor_bytes": 0,
+    "complete_extra2GiB_target_bytes": 10739515392,
+    "free_bytes": 35111542784,
+    "seconds": 2
+  },
+  "kind": "bounded_saved_scalar_and_conditional_source_analysis",
+  "limits": {
+    "CPU_seconds": 120,
+    "RSS_bytes": 4294967296,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592
+  },
+  "local_headers": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/include/ATen/cpu/vec/functional_base.h",
+      "sha256": "ea4d0a4dd6fabde61b05a18c8c4a976bd97ae577afdee127402c9097f569cea6"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/include/ATen/cpu/vec/vec.h",
+      "sha256": "19a80d5ef54eaa3456780ea4bc35058fc0bb538984a46bc3d064ec3c6cda19ea"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/include/ATen/cpu/vec/vec128/vec128.h",
+      "sha256": "9d761ca4442e416de9c2d5316084ba45419e5c5652b86d29248d8bfd3472e4db"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/include/ATen/cpu/vec/vec128/vec128_float_neon.h",
+      "sha256": "89c3f859ddd256359989faf3d16df8729a84c9f065c167e65aba1cd5b06c8552"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/include/ATen/Config.h",
+      "sha256": "9d994c2086ed4339d4a1655f8c5f5b52200021e5e7ea703974252ab18f1fc64f"
+    }
+  ],
+  "new_future_binding_count": 1224,
+  "new_source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/ce-error-budget001.py",
+    "sha256": "c3bf369360c78b98e2fc24231bc86ef5eb0eea4a1934fd45490d28f0bc312410"
+  },
+  "original_result": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/literal-vocabulary-ce001/result.json",
+    "sha256": "73cfc517d48535d6d72a2ee257e755a3b668b62528771130c067fb6716aabccf"
+  },
+  "predecessor_manifest": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/literal-vocabulary-ce001-review001/plan.json",
+    "sha256": "57f9ef3e9c31b882ad709bfceebe9106d7bd03df5acdce50fd044fa5cdb1f860"
+  },
+  "predecessor_source_count": 1223,
+  "predecessors_untouched_not_reaudited": true,
+  "primary_urls": [
+    "https://raw.githubusercontent.com/pytorch/pytorch/5c4886908584029761b579af026dcfb627c84070/aten/src/ATen/cpu/vec/functional_base.h",
+    "https://raw.githubusercontent.com/pytorch/pytorch/5c4886908584029761b579af026dcfb627c84070/aten/src/ATen/cpu/vec/vec128/vec128_float_neon.h",
+    "https://arxiv.org/pdf/1909.03469v1"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "additional_error_terms": [
+    "actual log implementation rounding",
+    "target-minus-maximum subtraction rounding",
+    "final subtraction rounding",
+    "backward exp/subtraction rounding",
+    "actual binary dispatch/build flags"
+  ],
+  "arithmetic_scope": "Exact rational gamma plus approximate scalar log/expm1; no directed-rounding claim, no full CE/gradient certificate.",
+  "conclusions": {
+    "NEON_or_SLEEF_actual_binary_selection_not_measured": true,
+    "literal_and_trained_model_failures_remain_closed_not_qualified": true,
+    "long_FP32_reduction_consistent_with_but_not_identified_as_literal_cause": true,
+    "no_universal_3e_minus5_certificate": true,
+    "ordinary_exp_is_not_fexp_u20_in_read_logsoftmax_source": true
+  },
+  "conditional_gamma_budgets": {
+    "conditional_NEON4": {
+      "approximate": 0.0007495533757042348,
+      "exact_rational": "6283/8382325",
+      "k": 12566,
+      "log_normalizer_addition_only_abs_allowance": 0.0007498344312886336
+    },
+    "hypothetical_balanced_tree_not_executed_or_proposed": {
+      "approximate": 9.536752259018191e-07,
+      "exact_rational": "1/1048575",
+      "k": 16,
+      "log_normalizer_addition_only_abs_allowance": 9.536756806503264e-07
+    },
+    "serial_general": {
+      "approximate": 0.0030044909535265223,
+      "exact_rational": "3141/1045435",
+      "k": 50256,
+      "log_normalizer_addition_only_abs_allowance": 0.0030090134973711677
+    }
+  },
+  "conditional_horizontal_additions_per_path": 2,
+  "conditional_lane_additions": [
+    12564,
+    12563,
+    12563,
+    12563
+  ],
+  "conditional_lane_terms": [
+    12565,
+    12564,
+    12564,
+    12564
+  ],
+  "conditional_vector_width": 4,
+  "ideal_CE_normalizer_error_symbol": "abs(log(1+relative_normalizer_error)) <= -log(1-rho),rho<1",
+  "local_header_pins_unchanged": true,
+  "mapped_exp_error_symbol": "eta: relative error INCLUDING shifted-input subtraction and exp; not measured or certified",
+  "metadata_inputs": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/literal-vocabulary-ce001/cpu32-six.json",
+    "sha256": "382690f02e19bcb6af57695e50552fc85547c6d61c59d558955039aadbcf04f8"
+  },
+  "no_predecessor_weight_or_source_audit_repetition": true,
+  "no_torch_numpy_model_optimizer_tensor_oracle_backend_corpus_seed_rng_calls": true,
+  "relative_normalizer_symbol": "rho=(1+eta)*(1+gamma_k)-1",
+  "saved_scalar_interpretations": [
+    {
+      "actual_gradient_coordinates_or_intermediate_sum_reconstructed": false,
+      "backend": "cpu32",
+      "recorded_gradient_abs_max": 2.6695281533428705e-05,
+      "recorded_max_fits_hypothetical_bound": true,
+      "relative_error_of_effective_exp_CE_scalar": 2.7842591899690125e-05,
+      "saved_CE": 0.041360486298799515,
+      "saved_oracle_CE": 0.04133264409449759,
+      "saved_signed_CE_error": 2.7842204301922746e-05,
+      "uniform_log_normalizer_only_gradient_abs_upper": 2.7841816711349686e-05
+    },
+    {
+      "actual_gradient_coordinates_or_intermediate_sum_reconstructed": false,
+      "backend": "mps32",
+      "recorded_gradient_abs_max": 5.200531882909587e-08,
+      "recorded_max_fits_hypothetical_bound": false,
+      "relative_error_of_effective_exp_CE_scalar": 4.781338624146519e-08,
+      "saved_CE": 0.04133269190788269,
+      "saved_oracle_CE": 0.04133264409449759,
+      "saved_signed_CE_error": 4.781338509840527e-08,
+      "uniform_log_normalizer_only_gradient_abs_upper": 4.781338395534539e-08
+    }
+  ],
+  "status": "completed_existing_scalar_conditional_source_error_budget",
+  "unit_roundoff_exact": "1/16777216",
+  "vocabulary": 50257
+}

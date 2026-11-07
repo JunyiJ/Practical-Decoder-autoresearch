@@ -1,3 +1,43 @@
+# CE source/error-budget analysis complete; no new numerical admission
+
+NEWce-error-budget001.py/plan0804c883b9a145540a03c59e5967bddcfb019be74aa512fd891adc2587eb9bdb
+completed saved-scalar conditional analysis in.000865916s/RSS21381120B/120sCPU4GiB/
+reserve8GiB/2MiBmetadata. NoTorch/NumPy/tensors/models/oracles/backends/corpus/RNG
+calls or oldsource/weight audit replay. One additive source extends1223=>1224
+bindings; allpredecessors preserved. Original command CLOSED/no replay/retry.
+
+PinnedCPUmap_reduce_all+installedNEONheader use fourFP32lanes. ForV50257, conditional
+lane counts12565/12564/12564/12564 give longest12566additions inclhorizontal pair.
+gamma=6283/8382325≈.0007495533757, conditional addition-only logallowance≈.0007498344313.
+This worst-case allowance cannot certify3e-5 or prove a failure;unknownexp/log/
+subtraction/backward terms remain. SavedCPU scalarDelta2.78422043e-5 is compatible
+with a hypotheticaluniformnormalizer-only gradientenvelope2.78418167e-5;recorded
+MPSgradientmax exceeds its analogous4.78133840e-8 envelope. Normalizer-only model
+is incomplete; no operator/failedtrainedmodel causal attribution or tolerancewaiver.
+
+One boundedSTATICotool/nm+floatfunctiondisassembly found installedARM64libtorch_cpu
+386016816B/SHA886a21732227bea91a64dcc355bdea98808fab5014a84891de2fe3a081744079;
+DEFAULTfloatfunction0x2338288..0x2338a60 contains4laneFP32adds anddirectSLEEFexp/log
+calls. NoTorch/dlopen/kernel execution orbinarychange/copy;actualstopped-rundispatch/
+intermediates NOTprofiled. Actuallyretrieved/readTorchpinnedfunctional_base+NEONheader,
+arXiv1909.03469v1§3-4 andSLEEF2001.09258v1§1/5.5-5.6/6.1-6.3. SLEEFpaperempirical
+1ULPaccuracy is not a fullpipelinecertificate orvalidationofthisinstalledbinary.
+
+Read relu-squared-quality-preparation-001/ce-error-budget001/{plan,source-review,
+attempt,result,guard,STOP},ce-kernel-static001/{inspection,float-function-disassembly,
+completed}.json,ce-error-budget-evidence001.md andcontinuation-completed004.json.
+Allpreviousnativefullstate/literalCEfailuresstayCLOSED/norescue. No newnumerical
+fixture/model/scientificroles/qualitybudgetfreeze/launch/adoption admitted.
+
+NEXT independentwork: oneevidence-grounded applicabilitydecision mappingactualfrozen
+fullhorizonworker/acceptance/servingrequirements toacceptedshortproofs andtwodistinct
+failures;identifyunsupportedclaims andwhetherNEWdiscriminatingquestion qualifies
+withoutclosedfixturereplay/predicatewaiver. No repeatedaudits/ledgerinstrumentation.
+If nonequalifies,recordprecisenew-evidencewakeconditions/carryallocationforward.
+~35.11GBfree/noblock/newweights/deletions;metadata2MiB+reserve8GiB+extra2GiBcovered.
+All1224sources/allpriorweights/evidenceprotected. Native/holdoutunchanged/no numerical
+workeractive;analysisnotnumericalqualityexploration. Priorentriesbelowhistorical.
+
 # Literal full-vocabulary CE diagnostic: closed failed, all measurements retained
 
 Original literal-vocabulary-ce001 planSHA
