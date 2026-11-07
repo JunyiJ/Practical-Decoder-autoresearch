@@ -1,3 +1,37 @@
+# TOP initializer census accepted unused; outer guard SOURCE prepared only
+
+Four NEW sources preserve1262=>1266 future bindings; closedmodelproof1236/
+scientificruntime1211 unchanged. Original source gate79089 EXIT0/.002915167s/
+RSS22675456B, original stdlib text census79106 EXIT0/61.089231958s/RSS142114816B
+under120sCPU4GiBRSS8GiBreserve32MiB.65,970 text files5,769,786,120B/0 prior matches;
+410 binary classifications/66,380 total paths; inventory20,747,246B. FIRST saved
+metadata reconciliation passed.161541542s/RSS40042496B/no underlying history rescan.
+Initializer62092160001 RESERVED EXCLUSIVE this original TOP_MODEL_MATH001 fixture,
+UNUSED/NOT DRAWN, never reusable for another census/trajectory/scientific role.
+
+Pre-Torch outer-entry SOURCE + independent AST gate79564 EXIT0/.001630500s/
+RSS21626880B: elapsed/RSS/reserve/whole512MiB output guard before Torch/proof import,
+inner shared lock preserved, independent runtime-admission-plan/pin checks and
+separate outer attempt/guard/STOP/error propagation. Outer and math proof NEVER
+imported/executed. Numerical plan ABSENT/no model admission. All new commands/
+sources/plans/guards/STOPs CLOSED/no replay/retry/edit rescue. No Torch/model/
+target/objective/oracle/RNG/seed calls, tensor files, numerical exploration or
+quality launch. Native/holdout/future_two panel unchanged.
+
+Read [review](tokenizer-evidence/future-token-preparation-001/top-model-initializer-outer001-review.md),
+[completed020](tokenizer-evidence/future-token-preparation-001/continuation-completed020.json),
+[next independent report/runtime admission SOURCE work](tokenizer-evidence/future-token-preparation-001/top-model-runtime-source-handoff001.md).
+Resolve exact current transitive binding composition/full pins (count1266 is not
+4914 tracked Python paths), independent saved-report reconciliation/runtime review
+and NEW immutable numerical plan/source gate before any functional call. Proper
+INITIAL MPS approval if later admitted; no direct inner entry or old-output recapture.
+
+Free>35.03GB covers remainingnotes10739515392B, prospective math11274289152B and
+unfrozen state16376659968B; no capacity deficit/cleanup trigger. All new source/
+metadata/older protected weights preserved; zero copies/deletions/retirement.
+Earlier entries historical; previous UNASSIGNED role instruction superseded only
+by this original accepted unused exclusive receipt.
+
 # NEW TOP finite proof SOURCE prepared; static gate complete only
 
 NEW top-model-math001.py32,087B + independent AST reviewer11,037B preserve1260
