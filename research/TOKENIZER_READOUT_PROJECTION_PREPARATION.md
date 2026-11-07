@@ -1,4 +1,24 @@
-# Single readout projection: quality contract/serving admission passed
+# Single readout projection: quality panel frozen, launch pending push
+
+Original scientificprepare completed ONCE with no training. Immutable
+projection-quality-preparation-001/projection-quality001-plan.json and
+projection-quality001-freeze.json bind1161runtime/1164admission-proof sources,
+ALL9equalLRscreens plusoriginal9fresh slots/rotations/strictBOTHcontrolgates.
+FreezeSHA4e856e657f66e8e0849678c0e419bd8e3c6da6e4f3c25a4a809f7d37d6049be2.
+Admission/proofsource commit3a844ded is pushed. Rootresearch_runs/tokenizer-readout-
+projection-quality-v1-001 has no attempted worker/STOP/accepted quality endpoint.
+
+Next commit/push THISfreeze, thenstartONEoriginal
+research.readout_projection_quality_v1.execution run-all controller. Controller
+owns all serialtransitions; neverduplicate/rerunprepare/attemptedslots/closedproofs/
+clearSTOP/edit1164sources or invoke livepartial bind/state/advanceformonitoring.
+Follow actualprocesses/requests/guards/logs/STOP/anchors; originalfirstslotnative
+LR.000625/screen210870100001/eval210870100002,not an interimwinner. No qualityresult/
+adoption/bootstrap exists. Nativeincumbent/holdoutunchanged. Forecast7.87hdescriptive;
+free~46.84GBcoverstarget25637683200B. Alloriginalprotectedweights/evidence retained.
+
+## Quality contract/serving admission passed (closed historical step)
+
 
 NEW combined16-role census, full-quality contract consumer and distinct3-pilot
 serving consumer are CLOSED_ACCEPTED. Read projection-quality-preparation-001/

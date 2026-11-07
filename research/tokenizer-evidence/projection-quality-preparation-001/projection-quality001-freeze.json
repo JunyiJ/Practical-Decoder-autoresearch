@@ -1,0 +1,66 @@
+{
+  "design": {
+    "arms": [
+      "native",
+      "linear_projection1",
+      "tanh_projection1"
+    ],
+    "candidate": "tanh_projection1",
+    "category": "LOCAL readout architecture followup in incumbent-improvement allocation; broad/interaction allocation carried forward",
+    "confidence_scope": "Conditional on trained seeds and reused validation text;not holdout or population-seed confidence.",
+    "control_fallback": false,
+    "controls": [
+      "native",
+      "linear_projection1"
+    ],
+    "cost_only_adoption": false,
+    "draws": 2000,
+    "ema_snapshots": 41,
+    "every_seed_negative": true,
+    "extra_tuning": false,
+    "fresh_order": [
+      "native,linear_projection1,tanh_projection1",
+      "linear_projection1,tanh_projection1,native",
+      "tanh_projection1,native,linear_projection1"
+    ],
+    "fresh_trajectories": 9,
+    "fresh_triples": 3,
+    "full_weight_high_water": 12079595520,
+    "generator": "PCG64",
+    "holdout_scored": false,
+    "keep_all_screens_and_fresh": true,
+    "learning_rates": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "mean_ce_delta_threshold": -0.02,
+    "native_token_blocks": [
+      2048,
+      4096,
+      8192
+    ],
+    "old_payload_or_future_retirement_or_hardlink_credit": false,
+    "pcg64_reinitialized_each_width": true,
+    "quantile": "linear",
+    "rescue": false,
+    "resource_axis": "Equal native token targets/updates,sampling seeds and finite LR allowance;not equal FLOPs,time or total active/stored parameters.",
+    "same_indices_across_seeds_and_contrasts": true,
+    "screen_trajectories": 9,
+    "seed_replacement": false,
+    "selection": "Minimum complete H200 MPS native CE independently per arm;lower LR exact tie.",
+    "separate_adoption_consumer_review": true,
+    "steps": 1200,
+    "target_bytes": 111536,
+    "target_contract_sha256": "61945b178404c035a322de7b7513e6ec4399b06a2275a036931f785018dccd2a",
+    "target_ids_sha256": "dad00eaab7c2076736432b83eb9f1cc404c87aa5e4820b5f7abebf384c7fcdaf",
+    "target_tokens": 34278,
+    "targets": 1228800,
+    "upper_quantile": 0.9916666666666667
+  },
+  "phase": "Original nine-screen selection rule plus three fresh triples already declared;all weights retained.",
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/projection-quality-preparation-001/projection-quality001-plan.json",
+    "sha256": "396b9b721055dc7ddf695cc7a94aa03097deee168a0d1097016ec2ee6b1309aa"
+  }
+}
