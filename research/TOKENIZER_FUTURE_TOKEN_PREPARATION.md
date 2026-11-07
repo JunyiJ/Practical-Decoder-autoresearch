@@ -1,3 +1,30 @@
+# Post-data evidence boundary complete; TOP target/caller SOURCE review next
+
+TRAIN-ONLY offset entropy/ambiguity counts were rejected: no outcome discriminates
+trained positive/negative transfer, and sparse/short context estimates cannot
+certify neural128-context information. No corpus analysis was admitted or run.
+Read [boundary review](tokenizer-evidence/future-token-preparation-001/post-data-consumer-review001.md).
+
+A read-only source/algebra audit clarifies duplicate-next: at symmetric heads,
+shared gradients equal native but each private head gradient is halved, changing
+total gradient norm/global clipping. Conditional branch symmetry does not make
+it a second native trajectory or a runtime proof. BOTH prospective controls and
+all quality gates remain necessary; no optimizer/source/tolerance change.
+
+New primary TOP evidence (arXiv2508.19228v2, explicit applicability limits) ranks
+a distinct SOURCE question next. Published pseudocode/naive/Triton target windows
+and documented caller shifts need reconciliation, especially repeated tokens and
+empty targets. Additional D256/V50257 output matrix would add12,865,792 parameters;
+paper fusion/overhead claims do not qualify our MPS cost. No TOP implementation,
+model or scientific experiment is admitted. Next [bounded source trace](tokenizer-evidence/future-token-preparation-001/top-target-source-handoff001.md).
+
+[Completed007](tokenizer-evidence/future-token-preparation-001/continuation-completed007.json)
+records source/literature reasoning only, ZERO new corpus/model/RNG/tests/scoring/
+weights/deletions/retirement. Bindings1248/closedmodelproof1236/scientificruntime1211
+unchanged. Data-view acceptance is still finite CPU scope only; original model/
+index/CE failures remain closed/no replay/rescue/acceptance substitution. Native
+and holdout unchanged; no numerical worker launched. Earlier entries historical.
+
 # Physical CPU data-view proof CLOSED_ACCEPTED; next consumer evidence boundary
 
 Original physical-data-proof001 exited0,4.804469042s/RSS274,202,624B under120sCPU/
