@@ -1,4 +1,49 @@
-# Single readout projection: real four/twenty prerequisites accepted
+# Single readout projection: full-quality sources prepared only
+
+Ten additive files in readout_projection_quality_v1 are SOURCE-prepared, preserving
+all1151 predecessors=>1161bindings. Read TOKENIZER_READOUT_PROJECTION_QUALITY_PROTOCOL.md
+and projection-quality-preparation-001/quality-design001.json,prerequisite-closure001.json,
+source-preparation001-failure-review.json,source-preparation002/plan/result/guard/STOP,
+continuation-completed001.json. No new Torch imports/model/tensor/optimizer/corpus/
+serialization/RNG/bootstrap calls or weights. No scientific roles/proof/runtime
+admission/freeze/quality launch. All1161source hashes stay immutable.
+
+Source-only review001 stopped on helper error-message wording (Full versus actual
+Complete CPU/MPS), after source/syntax/runbody/arithmetic/count/capacity/CPUstats
+checks passed. Originalplan/attempt/fixture_exception guard/closed_failedSTOP retained;
+never retry or edit that closed command. Distinct002 checked remaining metadata
+predicates under120sCPU4GiB/reserve8GiB/2MiB in.00371s/RSS22708224B, unchanged sources,
+ZERO numerical/census/resource-fixture replay. This was no model/quality failure.
+
+Own full numerical update body matches accepted4/20 byte-for-byte except7200guard
+and quality recordkind; old4/20 module STILLREJECTS1200. Exact prospective18quality
+trajectories/1200updates/41H200/all88or89exposure/FULL34278nativeCPUANDMPS/111536bytes,
+new own61945...target contract, equal three-rate screens and three fresh paired
+roles/rotations, ONLYtanhcandidate versus nativeANDlinear/strictallgates/no fallback.
+Both primary and independent statistics have120s guards. Read protocol for full
+source/state/selection/serving/forgery/resources and evidence/applicability limits.
+
+Prospective complete18pair caps12079595520B+512MiBrootmetadata+128MiBnewsidecars+
+8GiBreserve+2GiBexternal+2MiBentry=>floor23490199552B/extra2GiBtarget25637683200B.
+No credit for retained12prereq3359496280B/9proof3016484885B/oldstudies/deletions.
+Currentfree~46.88GB covers; no storage block/cleanup. Conservative complete remaining
+proxy28656.280s(~7.96h) includes25%training margin/coldmaxupdates/allvalidation/
+publication and all consumers/gates. Projectionfullcontract/serving costs UNMEASURED;
+actual new proofs must replace proxies before freeze. No qualitygain/stabilityclaim.
+
+Next IMPLEMENT/pin/review NEW combined16-role census (6generatedfixture+6scientific+
+4derived scientificprojection), own full-quality contract consumer proof and distinct
+three-pilot serving consumer. No values assigned now. Observe actual planSHA before
+first execution; census passes before new proofs/models. Fullcontract uses accepted
+20CPUtensor values+SYNTHETIC1200history/exposure/EMA41 schema/count, isolated prefix
+0/1/9/18+forgeries+NEWnonconstant independent statistics; no training/corpus/quality
+seed draws/weight writes. Serving uses actual3ownpilotH200/full128/prefill96/decode32/
+B1B8/reset/2warm5measured; no training/corpus/qualityseed/weight writes. Scope/resource/
+source/unused-role/admission gates remain mandatory. Preserve all old proof sources,
+STOPs/archives/retirements. Native incumbent and closed holdout unchanged; no worker.
+
+## Real four/twenty prerequisites accepted (closed historical step)
+
 
 All three four-update workers and all three twenty-update pilots are
 CLOSED_ACCEPTED. Read post-readout-boundary-001/projection-worker001-source-review,

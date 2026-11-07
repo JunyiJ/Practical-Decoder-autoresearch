@@ -1743,3 +1743,29 @@ component admitted. No fullmodel/panel/role/budget/training. Native remains;
 proposed broad/interaction allocation carries forward. See
 TOKENIZER_READOUT_MIXTURE_RESULTS.md,TOKENIZER_READOUT_PROJECTION_PREPARATION.md
 and tokenizer-evidence/post-readout-boundary-001/evidence-review.md.
+
+
+## Single-projection prerequisites accepted; full-quality source preparation
+
+All three real4-update workers and all three20-update pilots independently passed
+complete ownRAW/H200/optimizer/EMA3or8/all88or89exposure/samplers/globalCPU-MPSRNG/
+clipping/LR/FULL34278nativeCPUANDMPS/cache-resetB1B8. All12original3359496280B and
+9generated3016484885B archives remain protected; rootSTOPs/one-time closure create
+no retirement eligibility. No quality outcome follows from72short updates.
+
+Ten additive full-quality source files now preserve1151predecessors=>1161bindings.
+Prospective18trajectory matchednative/linear/tanh design keeps tanh asONLYcandidate,
+equal finite three-rate tuning/threefreshpairedroles/allstrictBOTHcontrolgates.
+Native/holdout unchanged. LOCALincumbent-improvement allocation; broad/interaction
+allocation carried forward. Protocol records contrary pilot curves and actual
+arXiv1711.03953v1 sections2.3-2.5/Table4 applicability limits; published gains are
+not local gains. No scientificrole/freeze/runtime/quality launch admitted.
+
+Next implement/pin/review NEW16-role census/full1200state-layout-contract consumer/
+three-pilot serving consumer before any new proof execution, then update complete
+retained-output/time budget from actual guards before scientific admission.
+Prospective target25637683200B fits~46.88GBfree; no storage block/cleanup needed.
+Full-quality source review001helper wording failure is preserved; distinct002
+finished remaining metadata checks with unchangedsources and no numerical replay.
+Read TOKENIZER_READOUT_PROJECTION_QUALITY_PROTOCOL.md and
+projection-quality-preparation-001/continuation-completed001.json.

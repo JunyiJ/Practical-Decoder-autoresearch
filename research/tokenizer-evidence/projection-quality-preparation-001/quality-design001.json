@@ -1,0 +1,344 @@
+{
+  "adoption": "ONLYtanh candidate:meanCEdelta<-.02versusEACHnativeANDlinear/all3pairedseednegativeeach/all6simultaneousconditional-textuppernegative. No linear/raw/costfallback;separateadoption/checkpointconsumerreview onlyafterallstrictgates.",
+  "allocation": "LOCAL readout architecture followup in incumbent-improvement allocation; broad/interaction allocation carried forward. Preparation/pilots not numerical exploration.",
+  "arms": [
+    "native",
+    "linear_projection1",
+    "tanh_projection1"
+  ],
+  "bootstrap": {
+    "block_widths": [
+      2048,
+      4096,
+      8192
+    ],
+    "draws": 2000,
+    "generator": "PCG64",
+    "quantile": "linear",
+    "reinitialize_each_width": true,
+    "scope": "Conditional on trainedseeds/reusedvalidationtext;not holdout/populationseedconfidence.",
+    "shared_indices_across_seeds_and_contrasts": true,
+    "upper_quantile": 0.9916666666666667
+  },
+  "budget": {
+    "H200_cap_each_bytes": 134217728,
+    "RAW_cap_each_bytes": 536870912,
+    "archive_retirement_eligible": false,
+    "complete_floor_bytes": 23490199552,
+    "current12prerequisite_and9proof_archive_credit": 0,
+    "entry_bytes": 2097152,
+    "external_capacity_headroom_bytes": 2147483648,
+    "extra2GiB_target_bytes": 25637683200,
+    "free_bytes": 46871785472,
+    "full_quality_weight_caps_bytes": 12079595520,
+    "metadata_includes": "New16-role census32MiB,fullcontract synthetic metadata64MiB,pilot serving8MiB,sourceprep2MiB,remaining22MiB design/resource/selection/stats/receipts; total new sidecars128MiB. Existing evidence/weights already retained, no credit.",
+    "new_preparation_sidecars_bytes": 134217728,
+    "pair_cap_each_bytes": 671088640,
+    "quality_root_metadata_bytes": 536870912,
+    "reserve_bytes": 8589934592,
+    "retain_quality_RAW_H200_files": 36,
+    "scientific_freeze": false,
+    "serialization": "Bounded streaming.tmp occupies final archive slot; no RAM archive copy/duplicate allocation. Final RAW and one H200 average only;41 averaging snapshots are updates to one retained average, not41 copied models. Full1200schema/count still untested."
+  },
+  "candidate": "tanh_projection1",
+  "controls": [
+    "native",
+    "linear_projection1"
+  ],
+  "ema_interval": 10,
+  "ema_snapshots": 41,
+  "ema_start": 800,
+  "evidence": {
+    "accepted_pilot_curves": [
+      {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/00/worker.json",
+        "sha256": "52fe4de3534eae90972a3f66eff89635712ce9ac59f0ae30101a8be6958674ac"
+      },
+      {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/01/worker.json",
+        "sha256": "17a5f2272cd3ffc27284e6ec9b9e1884f245f08b1dc502b1ce08e39965cc3750"
+      },
+      {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/02/worker.json",
+        "sha256": "d2454bd1ad10ae60d06c4c21ac5f0acdfeba6374e4f6420de8d452ae0c769c23"
+      }
+    ],
+    "accepted_projection_closure": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/projection-prerequisite-chain001-closure001/review.json",
+      "sha256": "5c5d210584500fbf0b02fa205c1c989f5816d7ff3f0719a663f68754c13a5c53"
+    },
+    "closed_mixture_results": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/TOKENIZER_READOUT_MIXTURE_RESULTS.md",
+      "sha256": "12cc4889270d51376c06d5884dc4bb16d26985c29b7d705dfa47557bc1088137"
+    },
+    "prior_direction": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/direction001.json",
+      "sha256": "648dcb3f35fab92b07c2d0dae885d62c5ccbd2de69da7d9bf2f239e35b080d0f"
+    }
+  },
+  "forecast": {
+    "all18_training_publication_validation_base_seconds": 22239.50403091754,
+    "census_allowance_seconds": 120,
+    "complete_remaining_chain_proxy_seconds": 28656.279815894726,
+    "controller_hash_margin_seconds": 300,
+    "current_projection_serving_proxy_measured": false,
+    "fixed_cost_includes_original20_training_too": true,
+    "fixed_worker_plus_parent_seconds": 63.31695249991026,
+    "limits": "Conservative local serial/cold-start extrapolation, not stability/promise/quality gain or cost adoption. New contract and actual three-pilot serving consumer must pass and update forecasts before freeze; no old numerical replay.",
+    "per_update_max_seconds": 0.9768425410147756,
+    "pilot_originals": [
+      {
+        "H200_bytes": 114076355,
+        "RAW_bytes": 445174567,
+        "accepted": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/00/accepted.json",
+          "sha256": "2393d70ce2427e6577e74b4b30cfae7eeffb23b2f299a960185ef82b44261421"
+        },
+        "arm": "native",
+        "clipped_updates": 0,
+        "online_curve": [
+          {
+            "lr_multiplier": 1.0,
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.862313270568848,
+            "update_seconds": 0.9768425410147756,
+            "validation_ce": 10.839839935302734
+          },
+          {
+            "lr_multiplier": 1.0,
+            "step": 6,
+            "targets": 6144,
+            "train_ce": 10.733572006225586,
+            "update_seconds": 0.21921524999197572,
+            "validation_ce": 10.677766799926758
+          },
+          {
+            "lr_multiplier": 1.0,
+            "step": 11,
+            "targets": 11264,
+            "train_ce": 10.566978454589844,
+            "update_seconds": 0.2202596659772098,
+            "validation_ce": 10.532509803771973
+          },
+          {
+            "lr_multiplier": 0.7,
+            "step": 16,
+            "targets": 16384,
+            "train_ce": 10.397550582885742,
+            "update_seconds": 0.22755299997515976,
+            "validation_ce": 10.39432430267334
+          },
+          {
+            "lr_multiplier": 0.1,
+            "step": 20,
+            "targets": 20480,
+            "train_ce": 10.329333305358887,
+            "update_seconds": 0.23199291701894253,
+            "validation_ce": 10.286185264587402
+          }
+        ],
+        "parent_guard": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/control/parent-pilots-00-guard.json",
+          "sha256": "4d31d7ee932ba37d7e1b18ad470309ffc2a6ceb82e490a281cca62955d0054f2"
+        },
+        "parent_wall_seconds": 16.01896045799367,
+        "training_seconds": 5.609974707942456,
+        "update_max_seconds": 0.9768425410147756,
+        "worker": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/00/worker.json",
+          "sha256": "52fe4de3534eae90972a3f66eff89635712ce9ac59f0ae30101a8be6958674ac"
+        },
+        "worker_guard": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/control/worker-pilots-00-guard.json",
+          "sha256": "dab0dfa7217b44354b913ae786a4a1309633a502eb493265167e7609b2397e8c"
+        },
+        "worker_wall_seconds": 34.34088204102591
+      },
+      {
+        "H200_bytes": 114338816,
+        "RAW_bytes": 445962593,
+        "accepted": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/01/accepted.json",
+          "sha256": "4db9a0f6231f2f19816490bda7251b0bf5acf962688524359f18c470a959ccd4"
+        },
+        "arm": "linear_projection1",
+        "clipped_updates": 0,
+        "online_curve": [
+          {
+            "lr_multiplier": 1.0,
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.832685470581055,
+            "update_seconds": 0.9412541249766946,
+            "validation_ce": 10.81343936920166
+          },
+          {
+            "lr_multiplier": 1.0,
+            "step": 6,
+            "targets": 6144,
+            "train_ce": 10.756413459777832,
+            "update_seconds": 0.2232965420698747,
+            "validation_ce": 10.724863052368164
+          },
+          {
+            "lr_multiplier": 1.0,
+            "step": 11,
+            "targets": 11264,
+            "train_ce": 10.678216934204102,
+            "update_seconds": 0.22217762493528426,
+            "validation_ce": 10.640289306640625
+          },
+          {
+            "lr_multiplier": 0.7,
+            "step": 16,
+            "targets": 16384,
+            "train_ce": 10.547101974487305,
+            "update_seconds": 0.2681652089813724,
+            "validation_ce": 10.55091667175293
+          },
+          {
+            "lr_multiplier": 0.1,
+            "step": 20,
+            "targets": 20480,
+            "train_ce": 10.496971130371094,
+            "update_seconds": 0.2468352500582114,
+            "validation_ce": 10.480063438415527
+          }
+        ],
+        "parent_guard": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/control/parent-pilots-01-guard.json",
+          "sha256": "d279339143960e4b5d93dfd8af8625be0558e29b0892d0e8b58010cf55851d26"
+        },
+        "parent_wall_seconds": 16.410800916026346,
+        "training_seconds": 5.709996665944345,
+        "update_max_seconds": 0.9412541249766946,
+        "worker": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/01/worker.json",
+          "sha256": "17a5f2272cd3ffc27284e6ec9b9e1884f245f08b1dc502b1ce08e39965cc3750"
+        },
+        "worker_guard": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/control/worker-pilots-01-guard.json",
+          "sha256": "09ba310debe32d0cf7f6202dab387bb3bbed747a4655bb647153583d0a4a163e"
+        },
+        "worker_wall_seconds": 40.82453262503259
+      },
+      {
+        "H200_bytes": 114338816,
+        "RAW_bytes": 445962593,
+        "accepted": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/02/accepted.json",
+          "sha256": "99dedb4369d25203e1a18ff76e9147a8aeaba73ae3721d5a2ecbd9c1a8d3d7fb"
+        },
+        "arm": "tanh_projection1",
+        "clipped_updates": 0,
+        "online_curve": [
+          {
+            "lr_multiplier": 1.0,
+            "step": 1,
+            "targets": 1024,
+            "train_ce": 10.828784942626953,
+            "update_seconds": 0.40484866697806865,
+            "validation_ce": 10.813674926757812
+          },
+          {
+            "lr_multiplier": 1.0,
+            "step": 6,
+            "targets": 6144,
+            "train_ce": 10.766636848449707,
+            "update_seconds": 0.22391470905859023,
+            "validation_ce": 10.742361068725586
+          },
+          {
+            "lr_multiplier": 1.0,
+            "step": 11,
+            "targets": 11264,
+            "train_ce": 10.706792831420898,
+            "update_seconds": 0.2219362499890849,
+            "validation_ce": 10.677817344665527
+          },
+          {
+            "lr_multiplier": 0.7,
+            "step": 16,
+            "targets": 16384,
+            "train_ce": 10.605527877807617,
+            "update_seconds": 0.2249229580629617,
+            "validation_ce": 10.609299659729004
+          },
+          {
+            "lr_multiplier": 0.1,
+            "step": 20,
+            "targets": 20480,
+            "train_ce": 10.56902027130127,
+            "update_seconds": 0.2510274579981342,
+            "validation_ce": 10.555061340332031
+          }
+        ],
+        "parent_guard": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/control/parent-pilots-02-guard.json",
+          "sha256": "fe95107f799aaeab6b5735d0db6d0fbdb8f00fe2a220fb823010bbd130faf63d"
+        },
+        "parent_wall_seconds": 16.6546714999713,
+        "training_seconds": 5.212442792020738,
+        "update_max_seconds": 0.40484866697806865,
+        "worker": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/evidence/pilots/02/worker.json",
+          "sha256": "d2454bd1ad10ae60d06c4c21ac5f0acdfeba6374e4f6420de8d452ae0c769c23"
+        },
+        "worker_guard": {
+          "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-projection-pilot-v1-001/control/worker-pilots-02-guard.json",
+          "sha256": "9aad6f32087567e434a3953d90c7a0f7f2b4c30074f1044959f062cba8eb8cfd"
+        },
+        "worker_wall_seconds": 46.66228099993896
+      }
+    ],
+    "prospective_contract_working_seconds": 60,
+    "prospective_pilot_consumer_proxy_seconds": 54.07502233190462,
+    "scientific_budget_frozen": false,
+    "scientific_panel_with_consumers_proxy_seconds": 28302.20479356282,
+    "serving9_proxy_seconds": 135.9227802499663,
+    "serving_proxy_original_guard": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/readout-quality001-fresh-inference-guard.json",
+      "sha256": "0935a43b7785e685edf4aee4ad0fac0fa9ee3619f41248796ad7b58906d6d294"
+    },
+    "source_preparation_allowance_seconds": 120,
+    "statistics_proxy_original": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/quality-resource-preflight001.json",
+      "sha256": "c23b6f980f9c95e5974d2d0cc025760adbb3717e60f23c21707b6972aef53e02"
+    },
+    "statistics_proxy_seconds": 66.90197466593236,
+    "training_margin_factor": 1.25,
+    "training_with_margin_seconds": 27799.380038646923
+  },
+  "fresh": "Original9=3NEWpairedroles*3arms at selectedperarmLRs. Rotations native-linear-tanh/linear-tanh-native/tanh-native-linear. All18acceptedbeforeall9freshH200serving,separateprimary+independentstats.",
+  "holdout_closed": true,
+  "learning_rates": [
+    0.000625,
+    0.00125,
+    0.0025
+  ],
+  "literature": {
+    "limits": "RNN/word data/regularization/optimizer mismatch; mixedMoC PTB/WT2 result; externalgain not localgain. All currentheads logitrank<=256/logprobrank<=257.",
+    "retrieved_and_read_this_boundary": true,
+    "sections": [
+      "2.3",
+      "2.4",
+      "2.5",
+      "3/Table4"
+    ],
+    "url": "https://arxiv.org/html/1711.03953v1",
+    "version": "1711.03953v1"
+  },
+  "native_incumbent_unchanged": true,
+  "native_target_bytes": 111536,
+  "native_targets": 34278,
+  "own_target_contract_sha256": "61945b178404c035a322de7b7513e6ec4399b06a2275a036931f785018dccd2a",
+  "physical_target_ids_sha256": "dad00eaab7c2076736432b83eb9f1cc404c87aa5e4820b5f7abebf384c7fcdaf",
+  "proof_sources_implemented": false,
+  "quality_runtime_admitted": false,
+  "scientific_roles_assigned": false,
+  "screening": "All9=3arms*3rates,one shared NEW screen initializer role,equal allowance,ascendingLR/native-linear-tanh. MinimumCOMPLETEH200MPSnativeCE withinEACHarm/lowerLRexacttie only afterall9accepted. Finite choices not optima;no grid extension.",
+  "status": "prospective_projection_quality_source_design_not_frozen",
+  "steps": 1200,
+  "targets_each": 1228800
+}
