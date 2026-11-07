@@ -1,4 +1,40 @@
-# Single readout projection: serialized state/scorer proof accepted
+# Single readout projection: four/twenty worker sources prepared
+
+Eight additive sources are SOURCE-prepared only. Read post-readout-boundary-001/
+worker-pilot-design001.md,worker-pilot-source-preparation001/plan/result/guard/STOP
+and continuation-completed007.json. Source-only AST/config/state/scorer/grouping/
+publication/lock/serial dependency/resource review passed0.048s/RSS23543808B under
+120sCPU/4GiBRSS/reserve8GiB/2MiBmetadata. All1151bindings preserve1143 predecessors.
+ZERO Torch imports/model/tensor/optimizer/corpus/serialization/RNG calls. New
+census/config-counter gate/worker/pilot runtime are UNTESTED and were not executed.
+
+Own worker keeps4/20horizon guard REJECTING1200. Bind FULL34278native CPUANDMPS/
+111536bytes/ownRAW-H200/all88or89exposure/clipping/LR/EMA/private-globalRNG/cache/
+independent acceptance. One serial controller uses separate three-slot four and
+ twenty roots, preserving the generic three-pilot-slot guard; all three four-update
+acceptances/cleanSTOP are required before twenty-update construction. Retain all
+12newRAW-H200 files. Sourcecount1151includes ownworker5+builder+sourcegate+census.
+
+Complete six-run cap4026531840B+two64MiB rootmetadata+96MiB whole external evidence+
+2MiBentry+8GiBreserve gives floor12853444608B/extra2GiBtarget15000928256B. Currentfree
+~50.33GB covers; no storage block/cleanup needed. Existing9generatedproofarchives
+3016484885B retained with ZEROcredit. Six-run working forecast1162.992s, complete
+census/sourcegate/sourceprep+sixrun forecast1522.992s, strict600s eachworker AND
+parent/120sCPUphases/RSS4GiB/MPS6GiB/fourthreads. These are prior-based forecasts,
+not1200-step forecasts, quality outcomes or stability evidence.
+
+Next: review pinned1151sources and exact admission scope; propose NEW eight
+four/twenty initializer/privateprojection/train-global/eval roles, pin a new120s/
+32MiB recorded-text census and observe actual planSHA before one execution.
+Only successful census permits new finite-config/tiny-counter gate; pin/review
+its plan and observe actualSHA before running. Then separately review successful
+guards/STOPs/runtime/source/budget before the serial six-run chain. Standing human
+permission covers correctly gated finite work; no redundant consent is needed.
+No scientific roles/fullquality panel admitted, no active numerical worker.
+Native incumbent/closed holdout and all prior archives/sources/STOPs unchanged.
+
+## Serialized state/scorer proof accepted (closed historical step)
+
 
 NEW projection-resume-seed-census001 and projection-resume001 are CLOSED_ACCEPTED.
 Read post-readout-boundary-001/projection-resume001-review.json,

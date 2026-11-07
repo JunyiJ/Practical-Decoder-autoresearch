@@ -1,0 +1,136 @@
+{
+  "bindings_preserved": 1151,
+  "design": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/worker-pilot-design001.md",
+    "sha256": "bb8867e40f296991839248c461cfb08dc80cb3c0bbe5a29672e948e9a80b22ea"
+  },
+  "elapsed_seconds": 0.04759879200719297,
+  "finite_next_chain": {
+    "complete_floor_bytes": 12853444608,
+    "complete_six_run_seconds": 1162.9920030003414,
+    "cpu_phase_guard_seconds": 120,
+    "current_proof_archive_credit": 0,
+    "entry_bytes": 2097152,
+    "external_complete_metadata_bytes": 100663296,
+    "extra2GiB_target_bytes": 15000928256,
+    "h200_archives": 6,
+    "h200_cap_bytes": 134217728,
+    "including_census_sourcegate_sourceprep_seconds": 1522.9920030003414,
+    "not_admitted_by_source_preparation": true,
+    "pair_cap_bytes": 671088640,
+    "parent_guard_seconds": 600,
+    "raw_archives": 6,
+    "raw_cap_bytes": 536870912,
+    "reserve_bytes": 8589934592,
+    "retained_weight_caps_bytes": 4026531840,
+    "roles_assigned": false,
+    "roles_needed": 8,
+    "root_metadata_bytes": 134217728,
+    "scientific_panel": false,
+    "worker_guard_seconds": 600,
+    "working_mps_bytes": 3758096384,
+    "working_rss_bytes": 3758096384
+  },
+  "model_tensor_optimizer_rng_corpus_serialization_calls": 0,
+  "new_sources": [
+    {
+      "lines": 1,
+      "path": "research/readout_projection_worker_v1/__init__.py",
+      "sha256": "266566510d608b42d80ec685e34770f75b09437032ee3f026fbfd043e33a1488",
+      "syntax": "parsed_without_import",
+      "top_level_functions": []
+    },
+    {
+      "lines": 41,
+      "path": "research/readout_projection_worker_v1/dispatch.py",
+      "sha256": "c5d71d11d89574730ffaa307f48492dc0ef1c901e8843bd1f8517814350a9d84",
+      "syntax": "parsed_without_import",
+      "top_level_functions": [
+        "launch"
+      ]
+    },
+    {
+      "lines": 71,
+      "path": "research/readout_projection_worker_v1/execution.py",
+      "sha256": "afe750a47bdd71c940d36b5b5917687805fcac93a9d75801639e713aba4b3c08",
+      "syntax": "parsed_without_import",
+      "top_level_functions": [
+        "checked",
+        "sources",
+        "idle",
+        "worker"
+      ]
+    },
+    {
+      "lines": 74,
+      "path": "research/readout_projection_worker_v1/training.py",
+      "sha256": "3dcd79c67e047c2824da3cdc65c2b95409bc3a8163bbb254c743ad82a9aa1e6d",
+      "syntax": "parsed_without_import",
+      "top_level_functions": [
+        "validate_config",
+        "save",
+        "run"
+      ]
+    },
+    {
+      "lines": 99,
+      "path": "research/readout_projection_worker_v1/validation.py",
+      "sha256": "5e3ae30ef0bb5367eeddf0b58fbcd287548add7e0af1aa27dcfb86b6fb772bdd",
+      "syntax": "parsed_without_import",
+      "top_level_functions": [
+        "verify_artifact",
+        "cache_check",
+        "accept"
+      ]
+    },
+    {
+      "lines": 159,
+      "path": "research/tokenizer-evidence/post-readout-boundary-001/projection-worker001.py",
+      "sha256": "f045b61c75622be7aa3a7f6e5b9d56ae92d4c5d29a3352a2e53bd6364b280087",
+      "syntax": "parsed_without_import",
+      "top_level_functions": [
+        "publish",
+        "specs",
+        "metadata_bound",
+        "retained_credit",
+        "forecast",
+        "main"
+      ]
+    },
+    {
+      "lines": 98,
+      "path": "research/tokenizer-evidence/post-readout-boundary-001/projection-worker-source001.py",
+      "sha256": "7b4ac0b449beb4d9aa49b68796c64128e8c945231c6f710ccf304cf9e4342486",
+      "syntax": "parsed_without_import",
+      "top_level_functions": [
+        "publish",
+        "main"
+      ]
+    },
+    {
+      "lines": 117,
+      "path": "research/tokenizer-evidence/post-readout-boundary-001/projection-worker-seed-census001.py",
+      "sha256": "0abcd00aed7e343374fcee9b321197e2bfda1d6e98fcb807ed806d8b71d3d22a",
+      "syntax": "parsed_without_import",
+      "top_level_functions": [
+        "sha",
+        "publish",
+        "main"
+      ]
+    }
+  ],
+  "next_action": "Review pinned1151sources and exact finite admission scope; propose and audit NEW eight initializer/private/train-global/eval roles under the new120s32MiB census with observed exact planSHA. After successful census, pin/review/run NEW config/counter gate with observed exactSHA; separately review successful guards/STOPs/budget/runtime before serial all3four then all3twenty. No source/proof replay, quality admission or old transport rescue.",
+  "numerical_census_source_gate_worker_pilot_admitted": false,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/worker-pilot-source-preparation001/plan.json",
+    "sha256": "09a2c37f4c01bc3934b8d4b5cea4d4f90edde9efdf4e735ade18fe20549aef7c"
+  },
+  "predecessors_preserved": 1143,
+  "quality_panel_admitted": false,
+  "roles_assigned": false,
+  "serialized_files_written": 0,
+  "source_only_review_checks": 18,
+  "source_review": "Own finite4/20 config/execution/state/scorer identities; exact per-archive+pair counting, full CPU+MPS native validation and cache, private/global RNG/exposure/clipping/EMA acceptance, two-root serial dependency closure, immutable source/census guards, eight-role stream audit, exact current-chain retained-byte credits and complete six-run output/time budget. Runtime behavior is untested.",
+  "status": "own_projection_four_twenty_worker_sources_prepared_only",
+  "torch_imported": false
+}
