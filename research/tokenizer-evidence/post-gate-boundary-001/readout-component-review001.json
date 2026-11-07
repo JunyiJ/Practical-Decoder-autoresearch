@@ -1,0 +1,84 @@
+{
+  "counts": {
+    "distinct_device_autocast_invalid": 16,
+    "forward_gradient_cases": 63,
+    "original_invalid": 21
+  },
+  "distinct_device_proof": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-device-rejections002/plan.json",
+      "sha256": "c01ac1f94bc26bb169ceb4b9169d3a5038fedbb9d7025099891d6919fc3fb840"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-device-rejections002/result.json",
+      "sha256": "fcc4ceac854a0ddd5b99517f26bdcb1bdb0325dc34fbb0b8ca2f8055a1e713f3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-device-rejections002/STOP",
+      "sha256": "a6568743f4c17985d16d22c32aa9637fac3d8e72108f7f84bda179e37ad5fda4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-device-rejections002/cpu-guard.json",
+      "sha256": "3f323f208a8787b1e32dcd9f5d2f565685d340c58213e3669915f8a153d26bba"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-device-rejections002/mps-guard.json",
+      "sha256": "22159c88504a3d4004ab84fdf8db425b804c934da374b0e042f68b298cd85971"
+    }
+  ],
+  "full_model_or_quality_accepted": false,
+  "global_rng_and_inputs_preserved": true,
+  "launch_failure": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-component-launch001.json",
+    "sha256": "f76c7c5075feb8a2782a2fd5f24b8f591721c27a49cfe91eb18b058627691b5c"
+  },
+  "max_errors": {
+    "torch.float32": {
+      "forward_max_error": 1.2139235465724596e-06,
+      "gradient_max_error": 1.2647712459568083e-06
+    },
+    "torch.float64": {
+      "forward_max_error": 1.7763568394002505e-15,
+      "gradient_max_error": 7.39881246547558e-15
+    }
+  },
+  "model_optimizer_corpus_checkpoint_calls": 0,
+  "next_action": "Additive genuine-native readout model/optimizer/cache/weight-consumer integration with explicit distribution kind;do not relax tinyD8/V31 guard for actual tensors. Audit new initializer roles before any model construction. Own full generated CPU/MPS loss/gradient/causality/cache/state/grouping/resource proof required before real workers.",
+  "numerical_replay": false,
+  "observed_at": "2026-11-07T04:39:07.025595+00:00",
+  "positive_proof": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-component001/plan.json",
+      "sha256": "73371159b03f2eb9aabef153af0b9309f3e8515c54e494cafacce698752f82bb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-component001/result.json",
+      "sha256": "5a36f3e8e4f31d29d32bbd8b544f087f67629d239c926e2ba817a4c2fff0543a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-component001/STOP",
+      "sha256": "65d370e8669eaa5c98ff4033dc4d31cf71e2d6edaa09910d52ab667ba592ec3e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-component001/cpu-guard.json",
+      "sha256": "7e57017d2a858f1103900d48d6d87b4f1fae57148332864796917954029e1c88"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-component001/mps-guard.json",
+      "sha256": "8fc8595f52669ff80ed2e4e22406b037d4bf47cc82a6ac992434ca673c59641a"
+    }
+  ],
+  "predecessor_positive_sources": 1087,
+  "preimport_failure_not_numerical_quality_failure": true,
+  "preserved_original_scientific_sources": 1084,
+  "quality_seed_use": false,
+  "review_seconds": 0.02579029102344066,
+  "source_and_scalar_calculus_review": "Native/MoC genuineCE and MoS targetlogsumexp agree with independent analytic z/W/A/R gradients;normalization/fullgather/permutation/identicalcontexts/discriminatingcase covered. Own tiny model/device bounds enforced. Missing mixeddevice/autocast adversaries were a review coverage gap,closed ONLY by distinctN2D2V3 adversaries;originalharness unchanged,notreplayed.",
+  "source_bindings": 1088,
+  "status": "closed_generated_component_and_distinct_device_adversaries_metadata_reviewed",
+  "verified_runtime_entry": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-component-launch002.json",
+    "sha256": "ef9828e72e31ba22f7c544e9b1b80d2ca2951f4287b7abfc2139c30904b00e0e"
+  },
+  "weight_files": 0
+}

@@ -1,0 +1,644 @@
+{
+  "actual_model_updates": 0,
+  "corpus_or_checkpoint_loads": 0,
+  "global_cpu_mps_rng_unchanged": true,
+  "inputs_unchanged": true,
+  "invalid_cases_rejected": 21,
+  "optimizer_calls": 0,
+  "quality_seeds_used": false,
+  "rows": [
+    {
+      "case": "ordinary",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 6.938893903907228e-18,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 5.204170427930421e-18,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 4.440892098500626e-16,
+      "gradient_max_error": 2.949029909160572e-17,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 6.938893903907228e-18,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 3.469446951953614e-18,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 4.440892098500626e-16,
+      "gradient_max_error": 3.122502256758253e-17,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 6.938893903907228e-18,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 6.763253151964577e-16,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 4.440892098500626e-16,
+      "gradient_max_error": 7.39881246547558e-15,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 6.938893903907228e-18,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 5.551115123125783e-17,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 4.440892098500626e-16,
+      "gradient_max_error": 1.3877787807814457e-16,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 1.7763568394002505e-15,
+      "gradient_max_error": 3.552713678800501e-15,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 1.7763568394002505e-15,
+      "gradient_max_error": 9.992007221626409e-16,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 1.7763568394002505e-15,
+      "gradient_max_error": 1.7763568394002505e-15,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 2.220446049250313e-16,
+      "gradient_max_error": 6.938893903907228e-18,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 4.440892098500626e-16,
+      "gradient_max_error": 6.938893903907228e-18,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 4.440892098500626e-16,
+      "gradient_max_error": 4.2558549277297664e-17,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 0.0,
+      "gradient_max_error": 0.0,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 1.1102230246251565e-16,
+      "gradient_max_error": 3.469446951953614e-18,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "forward_max_error": 0.0,
+      "gradient_max_error": 1.3877787807814457e-17,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.474200443940532e-07,
+      "gradient_max_error": 4.989559015955436e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 8.053523847806332e-08,
+      "gradient_max_error": 1.8983016551905874e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.501934603354016e-07,
+      "gradient_max_error": 1.6719060091235916e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.474200443940532e-07,
+      "gradient_max_error": 4.989559015955436e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.0326380817105019e-07,
+      "gradient_max_error": 3.1431268768256082e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.7491457482421424e-07,
+      "gradient_max_error": 1.197823704373463e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.474200443940532e-07,
+      "gradient_max_error": 4.989559015955436e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 8.815340613033129e-08,
+      "gradient_max_error": 4.062885172392838e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 8.815340568624208e-08,
+      "gradient_max_error": 4.062885167188668e-09,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.474200443940532e-07,
+      "gradient_max_error": 4.989559015955436e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.6212578102248187e-07,
+      "gradient_max_error": 4.420640556390687e-08,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.6168695848861603e-07,
+      "gradient_max_error": 5.387658316702293e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.2139235465724596e-06,
+      "gradient_max_error": 5.294557361423813e-07,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 4.946541629635703e-07,
+      "gradient_max_error": 4.477235000521773e-07,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.776841496389466e-07,
+      "gradient_max_error": 1.2647712459568083e-06,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.474200443940532e-07,
+      "gradient_max_error": 4.989559015955436e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.35526676126841e-08,
+      "gradient_max_error": 3.5851154336907776e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 2.5222912092282e-07,
+      "gradient_max_error": 1.788139413945918e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.0930892968552541e-08,
+      "gradient_max_error": 8.737981865847289e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 8.571804821499995e-09,
+      "gradient_max_error": 2.3731572332263973e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "forward_max_error": 7.60510243669188e-08,
+      "gradient_max_error": 5.379696249759036e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.279775547987867e-08,
+      "gradient_max_error": 4.010293118417163e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 5.662715185650313e-08,
+      "gradient_max_error": 4.685748591221062e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "ordinary",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.8545130808789168e-07,
+      "gradient_max_error": 1.992071355788605e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.279775547987867e-08,
+      "gradient_max_error": 4.010293118417163e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 2.2247309772183144e-07,
+      "gradient_max_error": 2.624788133370748e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "zero_router",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.8357194386808828e-07,
+      "gradient_max_error": 2.827638210817912e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.279775547987867e-08,
+      "gradient_max_error": 4.010293118417163e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.502651729712312e-07,
+      "gradient_max_error": 3.5035853836185016e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_router",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 8.815340568624208e-08,
+      "gradient_max_error": 3.5035853870879485e-09,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.279775547987867e-08,
+      "gradient_max_error": 4.010293118417163e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.6212578102248187e-07,
+      "gradient_max_error": 1.1970636756841735e-07,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "saturated_context",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 2.580730629198058e-07,
+      "gradient_max_error": 1.1003618996530129e-07,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 7.654531470890902e-07,
+      "gradient_max_error": 7.253631086889811e-07,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.714913211666953e-07,
+      "gradient_max_error": 5.614105456075436e-07,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "sharp_vocabulary",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 6.693112206690444e-07,
+      "gradient_max_error": 1.2647712459568083e-06,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 9.279775547987867e-08,
+      "gradient_max_error": 4.010293118417163e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 2.0303398251542149e-07,
+      "gradient_max_error": 5.391907344221014e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "identical_contexts",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 2.5222912092282e-07,
+      "gradient_max_error": 3.278255533330683e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 7.053553774394317e-08,
+      "gradient_max_error": 8.737981865847289e-09,
+      "kind": "native",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 8.571804821499995e-09,
+      "gradient_max_error": 9.4323568469723e-09,
+      "kind": "context_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    },
+    {
+      "case": "one_dimensional",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "forward_max_error": 1.3865786696598548e-07,
+      "gradient_max_error": 7.193158503733532e-08,
+      "kind": "probability_mix2",
+      "normalized": true,
+      "target_full_gradient_agreement": true
+    }
+  ],
+  "sources_unchanged": true,
+  "status": "complete_generated_readout_component_proof",
+  "tensor_files": 0
+}
