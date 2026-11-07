@@ -1,4 +1,45 @@
-# Single readout projection: full-quality sources prepared only
+# Single readout projection: quality contract/serving admission passed
+
+NEW combined16-role census, full-quality contract consumer and distinct3-pilot
+serving consumer are CLOSED_ACCEPTED. Read projection-quality-preparation-001/
+harness-source-preparation001/result/guard/STOP,projection-quality-seed-census001/
+plan/result/guard/STOP,projection-quality-contracts001.json and original proof
+plan/guards/STOP,serving-probe001/plan/result/guard/STOP,quality-resource-preflight001,
+admission-independent-review001/result/guard/STOP,continuation-completed002.json.
+All1164bindings preserve1161runtime/predecessors; all sources/closed commands immutable.
+
+Census63666textfiles5625973771B/0matches passed50.296s/RSS135299072B. Generatedfixture
+six nowUSED; scientificten RESERVED_UNUSED, not drawn/constructed by these proofs.
+Contract57listed rejection/control cases passed, including full1200history/EMA41/
+all88or89exposure/schema, individual512MiBRAW/128MiBH200/pair640MiB counts, prefix
+0/1/9/18/extra2GiB/selection/fresh/forgeries/newnonconstant independentstats1e-12.
+PilotCPUtensorvalues inSYNTHETIC1200metadata are NOTtrained1200weights. Paircounts
+564426602/565509089/565509089B allwithin strictcaps/8MiB+4096ancestrymargin. Whole
+39.970s/RSS1336557568B/MPS475136B; no training/corpus/scoring/weights/qualityseed draws.
+
+Distinctactual3pilotH200serving passed full128/prefill96/decode32/B1B8/reset/2warm+
+5measured/unchangedhashes/callerCPU-MPSRNG:17.227s/RSS2032074752B/MPS1161543680B.
+This does NOTreplace mandatory futureALL9fresh benchmark. No training/weight writes.
+94tinyASCII .pt/.tmp locator fixtures4972B are NOTmodelweights; exactlossless text
+archive committed/local originals preserved. Never delete/replay them bysuffix.
+
+Independent metadata/resource review passed without models/tensors/corpus/scoring/
+bootstrap/census replay. Fullqualityfloor23490199552B/extra2GiBtarget25637683200B
+covered by~46.84GBfree; no storage block/cleanup. Remaining scientificforecast now
+28322.678s(~7.87h), trainingwith25%margin27799.380s +NEWserving9proxy133.362s +NEW
+completecontractCPUstatsproxy89.937s +controller300s. Workingextrapolation,notpromise/
+stability/qualitygain. Strict7200sworkerANDparent/600sfreshserving/120seachstatsCPU/
+4GiBRSS6GiBMPS/reserve8GiB/outputguards remain. Allcurrent12prereq+9proof archives
+protected/ZEROcapacitycredit. No scientificroot/freeze was created in this record.
+
+Next commit/push admitted sources/evidence, originalprepareONCE, separatefreeze
+commit/push, then ONEoriginalrun-allcontroller. No duplicate/attempted-slot replay/
+STOPclear/livepartial bind/state/advance monitoring. Follow actual requests/guards/
+logs/STOP/anchors. Nativeincumbent/holdout unchanged until ALLstrictfreshgates AND
+separate adoption/checkpoint-consumer review. No fallback or oldoptimizer rescue.
+
+## Full-quality source preparation (closed historical step)
+
 
 Ten additive files in readout_projection_quality_v1 are SOURCE-prepared, preserving
 all1151 predecessors=>1161bindings. Read TOKENIZER_READOUT_PROJECTION_QUALITY_PROTOCOL.md
