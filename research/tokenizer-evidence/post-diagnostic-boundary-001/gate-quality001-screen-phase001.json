@@ -1,0 +1,189 @@
+{
+  "adoption": false,
+  "all_nine_selection_h200_records_exactly_equal_original_acceptance": true,
+  "checkpoint_tensor_loads": 0,
+  "choices": {
+    "none": 0.00125,
+    "sigmoid_elementwise_zero": 0.00125,
+    "static_half": 0.00125
+  },
+  "confirmation_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-confirmation-plan.json",
+    "sha256": "46cd6dd67d16e4459c3c67c47bbb47cc285a1a9e2d9d103e9e66a10dd8b4c3e1"
+  },
+  "fresh_schedule": [
+    {
+      "arm": "none",
+      "lr": 0.00125,
+      "seed": 200120011,
+      "slot": 9
+    },
+    {
+      "arm": "static_half",
+      "lr": 0.00125,
+      "seed": 200120011,
+      "slot": 10
+    },
+    {
+      "arm": "sigmoid_elementwise_zero",
+      "lr": 0.00125,
+      "seed": 200120011,
+      "slot": 11
+    },
+    {
+      "arm": "static_half",
+      "lr": 0.00125,
+      "seed": 200120012,
+      "slot": 12
+    },
+    {
+      "arm": "sigmoid_elementwise_zero",
+      "lr": 0.00125,
+      "seed": 200120012,
+      "slot": 13
+    },
+    {
+      "arm": "none",
+      "lr": 0.00125,
+      "seed": 200120012,
+      "slot": 14
+    },
+    {
+      "arm": "sigmoid_elementwise_zero",
+      "lr": 0.00125,
+      "seed": 200120013,
+      "slot": 15
+    },
+    {
+      "arm": "none",
+      "lr": 0.00125,
+      "seed": 200120013,
+      "slot": 16
+    },
+    {
+      "arm": "static_half",
+      "lr": 0.00125,
+      "seed": 200120013,
+      "slot": 17
+    }
+  ],
+  "interpretation": "All nine screens independently accepted; within-arm minimum complete H200 MPS CE among three tested LRs on one screen seed. No optimum, interim winner or fresh-panel quality conclusion. Fresh phase active under original controller.",
+  "kind": "completed_screen_phase_metadata_reconciliation",
+  "metadata_references_checked": true,
+  "next_action": "Monitor existing controller only through session or durable process/guard/log/STOP/anchors; keep all screen/fresh weights. Complete all nine fresh trajectories, serving and final independent statistics before any adoption review.",
+  "numerical_replay": false,
+  "observed_at": "2026-11-07T03:17:46.012495+00:00",
+  "original_freeze": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-freeze.json",
+    "sha256": "220816f43f7780222c93b4632d59e7dddc82077063135703d1aba418e2122e19"
+  },
+  "screen_rows": [
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-00.json",
+        "sha256": "fc0ecd3e9a754d42232696e943c9f731a0de29ab4395bbdd888b8623dd4e04ba"
+      },
+      "arm": "none",
+      "complete_h200_mps_ce": 4.909583617546028,
+      "peak_lr": 0.000625,
+      "slot": 0
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-01.json",
+        "sha256": "5164158f7581e6d50d859c05bbb6039c82c490f89edfce1abc040c81198fa5fd"
+      },
+      "arm": "static_half",
+      "complete_h200_mps_ce": 4.927932023733931,
+      "peak_lr": 0.000625,
+      "slot": 1
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-02.json",
+        "sha256": "96cb6d2c5b2c0e5b8dfd722c2aa9d0508e36b9023c255c73c1610b1bd6648cd3"
+      },
+      "arm": "sigmoid_elementwise_zero",
+      "complete_h200_mps_ce": 4.919163107662979,
+      "peak_lr": 0.000625,
+      "slot": 2
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-03.json",
+        "sha256": "fd814d6ba8a557bc5fa46662b0f5a19018e9c8f9c0bfaf02557b084d201adfbe"
+      },
+      "arm": "none",
+      "complete_h200_mps_ce": 4.682576142503024,
+      "peak_lr": 0.00125,
+      "slot": 3
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-04.json",
+        "sha256": "1bc27c4187ccc91de0bb8a1e4f1966d7e5af0e73286b5977ce51c9e052ef5975"
+      },
+      "arm": "static_half",
+      "complete_h200_mps_ce": 4.693861976266481,
+      "peak_lr": 0.00125,
+      "slot": 4
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-05.json",
+        "sha256": "4f991f870810cf46586971cc4eed64f699f414ba5041961a722ce5f4ce142896"
+      },
+      "arm": "sigmoid_elementwise_zero",
+      "complete_h200_mps_ce": 4.687942570133174,
+      "peak_lr": 0.00125,
+      "slot": 5
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-06.json",
+        "sha256": "7cba28c6a437d735608b1a45d1a83c2e70e7e1602b850aa4ac0e4f4a5ed570f3"
+      },
+      "arm": "none",
+      "complete_h200_mps_ce": 4.765050216058967,
+      "peak_lr": 0.0025,
+      "slot": 6
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-07.json",
+        "sha256": "318b8259f4bfdbd66576fb02eb1d458359e518e6a99eb6bbfec8ef1894d1f0f2"
+      },
+      "arm": "static_half",
+      "complete_h200_mps_ce": 4.75977508130359,
+      "peak_lr": 0.0025,
+      "slot": 7
+    },
+    {
+      "anchor": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-accepted-08.json",
+        "sha256": "7e46efd9111d343b2bb9439bb14c9e3768cc2b63c40f8fb7e9164d4211afa690"
+      },
+      "arm": "sigmoid_elementwise_zero",
+      "complete_h200_mps_ce": 4.778379427383634,
+      "peak_lr": 0.0025,
+      "slot": 8
+    }
+  ],
+  "selection": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-selection.json",
+    "sha256": "c24aa64c37bf8abab6dea6d5bc1669b88dacfb084a880931f7442697627e6de1"
+  },
+  "snapshot": {
+    "accepted_count": 10,
+    "accepted_fresh_slots": [
+      9
+    ],
+    "active_slot": 10,
+    "controller_pid": 15959,
+    "free_bytes": 71586979840,
+    "root_stop_absent": true,
+    "session": 6668,
+    "worker_pid": 19229
+  },
+  "source_hash_bindings_checked": 1084
+}
