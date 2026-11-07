@@ -1,4 +1,50 @@
-# Ungated squared-ReLU: generated actual-model proof accepted
+# Ungated squared-ReLU: serialized-state/scorer sources prepared, untested
+
+Five NEW additive relu_squared_resume_v1/{__init__,contract,data,checkpoint,
+scoring}.py files are pinned by post-projection-boundary-001/
+serialized-state-source002/sources.json. All1189 bindings preserve1184
+predecessors. Read review/scalar-accounting/guard/STOP, serialized-proof-handoff001
+and continuation-completed004.json. No Torch imports, tensors/models/optimizer/RNG
+construction, corpus/checkpoint reads, scoring, serialization or numerical tests
+ran during this SOURCE preparation. Every new runtime path remains UNTESTED.
+
+Own complete RAW/H200 FFN/config/initializer-privateungated identities, explicit
+sampler/globalCPU/globalMPS roles, schedule/clipping/EMA/RNG/source/runtime/data
+preflight and native physical scorer sources are implemented. CPU archive moments
+are validated then staged before the frozen SAME-backend optimizer loader; its
+deep clone remains unchanged. H200 checks retained actual RAW file kind/config/
+initializer/horizon/model/EMA; live producer and loaded export tensors must agree
+with that parent. Canonical.pt/exclusive bounded.tmp/fsync/nooverwrite/CPU
+weights_only/hash-before-after code is untested; no archives were written.
+
+SOURCE finding: frozen projection_validation_pair_v1 has projection-specific
+POLICY. An own scoring.publish_pair_then_require was added with matchedFFNpolicy,
+unchanged3e-5,512KiB and BOTH finite caller-validated reports fsynced BEFORE pair
+rejection. Its NEW metadata/consumer tests are required; no foreign relabeling.
+Own public scorer source retains physicalGPT2 FULL34278 targets/34279IDs/111536B/
+context128/first1/windows268/tail102/block2048 and transfers toCPU beforeFP64.
+Neither physical codec/scoring nor the new pair consumer has executed.
+
+Original source-review001 CLOSED_FAILED on ast.literal_eval(512*1024) BinOp in
+metadata review, BEFORE window arithmetic/source-manifest publication. Original
+guard/failure receipt/STOP preserved; no implementation change or numerical call.
+Distinct metadata-only review002 used AST structure checks on identical sources,
+checked resume validation-stage-load-RNG ordering and source-only scalar windows/
+byte accounting. It does not retry a model/test or establish runtime correctness.
+RAW tensor subtotal444934320B/H200114035200B excludes RNG/metadata/serialization;
+RAW512MiB/H200128MiB caps are not measured archive sizes or future proof admission.
+
+CURRENT NEXT: implement/pin/review NEW generated serialized-state/scorer/pair-
+metadata proof and NEW six-role census sources/plans per serialized-proof-handoff001.
+No roles assigned now. Qualify new literals/fixed predicates, complete working
+peak including parentCPUread/EMA/momentstaging/deepclone, all retained archives/
+.tmp/metadata/time/reserve8GiB+extra2GiB BEFORE execution. Same-MPS uninterrupted
+versus CPU-archive resume is not CPU-update/MPS-update equivalence or old-failure
+rescue. No models/serialization/census/proof/real4-20worker/pilot/qualitybudget or
+launch admitted now. Native/holdout unchanged; all old evidence/weights protected.
+
+The following generated-model and earlier preparation records are historical;
+current next action is the serialized-proof source/resource/role admission above.
 
 Original post-projection-boundary-001/relu-squared-model-seed-census001 and
 relu-squared-model001 are CLOSED_ACCEPTED/no replay/retry/source-tolerance rescue.

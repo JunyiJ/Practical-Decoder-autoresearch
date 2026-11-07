@@ -64,3 +64,17 @@ No tensor files, real corpus/holdout/scoring/quality roles ran. This does not pr
 serialized complete RAW/H200/EMA/samplers/RNG/resume or CPU-MPS optimizer transport.
 Synthetic losses do not rank arms or establish quality. Native unchanged. Next
 is own serialized-state/data/scorer SOURCE preparation with separate future gates.
+
+## Serialized state/scorer source preparation: runtime untested
+
+Five own relu_squared_resume_v1 sources add to1189bindings preserving1184.
+Source-review001 failed on its AST literal evaluator before runtime or window
+arithmetic; unchanged implementation passed distinct metadata-only review002.
+Original failure preserved; no model/test replay. Own state/RNG/moment-staging/
+retained-parent/H200/data/scorer/paired-publication paths have NOT executed.
+Frozen projection pair-helper policy cannot accept this family; an own3e-5/
+512KiB/exclusive-fsync-before-rejection consumer requires new tests. Scalar RAW
+444934320B/H200114035200B tensor estimates exclude metadata/serialization and
+are not archive measurements or a future numerical budget. No weights/corpus/
+RNG/model calls. Next is new generated serialized proof/census source and full
+resource admission. Native incumbent and holdout stay unchanged.
