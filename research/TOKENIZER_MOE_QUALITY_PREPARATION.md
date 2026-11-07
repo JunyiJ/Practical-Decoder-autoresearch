@@ -16,3 +16,9 @@ Saved-record analysiscompleted.Newgradient-moment component/proofpassed6CPUcases
 30transactionalforgeries,maxerror3.55e-15;1038currentbindings. Nextownfixedweight
 native-dense gradient-samplingintegration fortraining-only diagnostic;not a batch
 qualitypanel. No qualityseed/freeze/newmodelresult. See nextboundary/actualplan.
+
+
+Fixed-weightgradientintegration/firstprobe nowCOMPLETE,nooptimizerupdates.
+Next bounded independentcohortstabilitydiagnosticbeforeanybatchtrainingquestion.
+SeeTOKENIZER_GRADIENT_DIAGNOSTIC_PREPARATION.md andpost-moe-boundary-001/evidence-review002.md.
+OriginalMoEresultandSTOPunchanged;keepincumbent.

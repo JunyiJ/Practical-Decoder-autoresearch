@@ -1878,3 +1878,16 @@ no qualitypanel orbatchoptimum admitted. GeneratedFP64/FP32momentcomponent passe
 Nextownfixed-weightMPSgradient-samplingintegration andfull3endpointtrain-only
 probeaftergates,notqualityexploration. See TOKENIZER_MOE_RESULTS.md and
 post-moe-boundary-001/evidence-review.md. No numericalworkercurrentlyactive.
+
+
+## Fixed-weight gradient diagnostic completed; cohort stability next
+
+Newtrain-onlyloader/ownRAWweightconsumer/complete88gradientCPU-MPSintegration
+passed;1043bindingspreserveall1038predecessors. Firstprobe32privateB8draws×3RAW
+controls completed98304targets,ZEROoptimizersteps/validation/holdout/weightfiles.
+Models/files/globalRNGunchanged;27.43s/RSS2122596352/MPS2528002048Bpassed. Raw
+noise/signalratios69.38/45.34/72.51arebiaseddraw-unitstatistics,notoptimalbatch/
+Muon-Adamnoise/qualitygain. Signalcorrection58.6–69.4percent andsharedprobeinput
+leavecohortstabilityunresolved. NextNEW4cohort×32draw×3fixedendpointdiagnostic
+afternewroles/source/budgetgates,notqualitypanel. Alloldcommands/STOPsclosed.
+SeeTOKENIZER_GRADIENT_DIAGNOSTIC_PREPARATION.md andpost-moe-boundary-001/evidence-review002.md.

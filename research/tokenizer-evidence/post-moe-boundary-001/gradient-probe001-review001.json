@@ -1,0 +1,155 @@
+{
+  "adopted": false,
+  "closed_metadata_mirror": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/gradient-probe001-metadata-mirror001/completion.json",
+    "sha256": "d93161d40d986786014fdac2b296f02fa2f79d393ca3b99d7516d53567211a2a"
+  },
+  "files": 7,
+  "gradients_replayed": false,
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-diagnostic-v1-001/guard.json",
+    "sha256": "9e49e7d66d985796eff3f47360d5a11e34ca74fc85b678dce239e7d0e0c6795a"
+  },
+  "holdout_encoded": false,
+  "max_scalar_identity_error": 2.7755575615628914e-17,
+  "model_loaded": false,
+  "next_action": "Raw-gradient variation is high at3fixedRAWendpoints,not anoptimalbatch orqualitygain. Because N32signal subtracts a large noise correction and ratios arebiased,admitonlyNEW independently sampled cohort-stability diagnostic before batch-training feasibility. Preserve original32draws/STOP/source;newroots/seeds/source/gates required,no old diagnostic replay.",
+  "optimizer_steps": 0,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-diagnostic-v1-001/plan.json",
+    "sha256": "736d0c937001b1221ab44ef285507e84a3b3ca0fd8592cb9faa8015debe694f6"
+  },
+  "quality_result": false,
+  "result": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-diagnostic-v1-001/result.json",
+    "sha256": "f76c3e6136bd53cc8f6a7df342520b4121097f38455452fda285d52549c49d44"
+  },
+  "rows": [
+    {
+      "draws": 32,
+      "groups": {
+        "body": {
+          "mean_gradient_squared_norm": 0.029966505715591996,
+          "parameters": 86,
+          "ratio_in_independent_B8_draw_units": 68.22886100402802,
+          "signal_squared_unbiased": 0.00956738581375684,
+          "trace_sample_covariance": 0.652771836858725
+        },
+        "input": {
+          "mean_gradient_squared_norm": 3.207817855828988e-05,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 68.65251115288065,
+          "signal_squared_unbiased": 1.019847097809738e-05,
+          "trace_sample_covariance": 0.00070015064256616
+        },
+        "readout": {
+          "mean_gradient_squared_norm": 0.001839376853240122,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 92.86544143100039,
+          "signal_squared_unbiased": 0.0004713879086889665,
+          "trace_sample_covariance": 0.043775646225636976
+        }
+      },
+      "mean_gradient_squared_norm": 0.03183796074739041,
+      "mean_online_train_ce": 3.5506281927227974,
+      "noise_correction_fraction": 0.6843713618106785,
+      "ratio_in_independent_B8_draw_units": 69.38496995575429,
+      "raw": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/09/checkpoints/parent.pt",
+        "sha256": "3402af2ebd8c7439f176abe6e979b2d4e40b682bd0e6325ce8758f8d6a1557bf",
+        "size": 449436903
+      },
+      "signal_squared_unbiased": 0.010048972193423909,
+      "slot": 9,
+      "trace_sample_covariance": 0.6972476337269281
+    },
+    {
+      "draws": 32,
+      "groups": {
+        "body": {
+          "mean_gradient_squared_norm": 0.036484084441310766,
+          "parameters": 86,
+          "ratio_in_independent_B8_draw_units": 44.36318685238229,
+          "signal_squared_unbiased": 0.015288658714294117,
+          "trace_sample_covariance": 0.6782536232645328
+        },
+        "input": {
+          "mean_gradient_squared_norm": 4.10093805514732e-05,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 43.01129680096356,
+          "signal_squared_unbiased": 1.749470057995698e-05,
+          "trace_sample_covariance": 0.000752469759088519
+        },
+        "readout": {
+          "mean_gradient_squared_norm": 0.002019555769404618,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 68.514173400361,
+          "signal_squared_unbiased": 0.0006429519582629893,
+          "trace_sample_covariance": 0.044051321956532115
+        }
+      },
+      "mean_gradient_squared_norm": 0.038544649591266855,
+      "mean_online_train_ce": 3.5506801307201385,
+      "noise_correction_fraction": 0.58621739872424,
+      "ratio_in_independent_B8_draw_units": 45.33529612250181,
+      "raw": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/14/checkpoints/parent.pt",
+        "sha256": "c77e63df47e7d06dcbde0003177ff9d7fc527e97c239b858c7f60a0b57b0e01d",
+        "size": 449436903
+      },
+      "signal_squared_unbiased": 0.01594910537313706,
+      "slot": 14,
+      "trace_sample_covariance": 0.7230574149801534
+    },
+    {
+      "draws": 32,
+      "groups": {
+        "body": {
+          "mean_gradient_squared_norm": 0.03114557252143766,
+          "parameters": 86,
+          "ratio_in_independent_B8_draw_units": 71.20420985421121,
+          "signal_squared_unbiased": 0.009657147921522863,
+          "trace_sample_covariance": 0.6876295871972735
+        },
+        "input": {
+          "mean_gradient_squared_norm": 3.441339148847485e-05,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 71.54741919834842,
+          "signal_squared_unbiased": 1.0635016653787926e-05,
+          "trace_sample_covariance": 0.0007609079947099815
+        },
+        "readout": {
+          "mean_gradient_squared_norm": 0.0017819269342554318,
+          "parameters": 1,
+          "ratio_in_independent_B8_draw_units": 102.25354462082421,
+          "signal_squared_unbiased": 0.00042473114625927815,
+          "trace_sample_covariance": 0.043430265215876916
+        }
+      },
+      "mean_gradient_squared_norm": 0.03296191284718157,
+      "mean_online_train_ce": 3.478570878505707,
+      "noise_correction_fraction": 0.6938128520869838,
+      "ratio_in_independent_B8_draw_units": 72.511244897486,
+      "raw": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-quality-v1-001/evidence/quality/16/checkpoints/parent.pt",
+        "sha256": "4652a201978090f47950de32f36f408c37dcf5768e8549fbe9c28f4eedde1d07",
+        "size": 449436903
+      },
+      "signal_squared_unbiased": 0.01009251408443593,
+      "slot": 16,
+      "trace_sample_covariance": 0.7318207604078605
+    }
+  ],
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-moe-boundary-001/gradient-probe001-review001.py",
+    "sha256": "4593464b482f933efc1705718ceb6e971bf720abaa67784ee2ee11169b66e71c"
+  },
+  "sources": 1043,
+  "status": "complete_training_free_gradient_diagnostic_independently_reviewed",
+  "terminal": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-gradient-noise-diagnostic-v1-001/STOP",
+    "sha256": "6e1321bb64f6ea042f5671bf8778588b7d43ce79ad9ade246b5bca56cdb135d3"
+  },
+  "validation_encoded": false,
+  "weight_copies": 0
+}
