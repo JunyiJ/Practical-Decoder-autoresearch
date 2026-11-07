@@ -1,0 +1,673 @@
+{
+  "all_nine_fresh": true,
+  "holdout_scored": false,
+  "rows": [
+    {
+      "arm": "none",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/09/checkpoints/h200.pt",
+        "sha256": "5cd54649a0647596579ae9b1e09c661ca38fa6ea89ebacfd59e23f7703acc21c",
+        "size": 114077379
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.20382720802444965,
+            0.20485516695771366,
+            0.26503879099618644,
+            0.2041085830423981,
+            0.20791512506548315
+          ],
+          "full128_seconds": [
+            0.010248040896840394,
+            0.010383290937170386,
+            0.010327958036214113,
+            0.010541750001721084,
+            0.010411375085823238
+          ],
+          "median_decode32_seconds": 0.20485516695771366,
+          "median_full128_seconds": 0.010383290937170386
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.21966787509154528,
+            0.20265158405527472,
+            0.19834341702517122,
+            0.2424422079930082,
+            0.20631662500090897
+          ],
+          "full128_seconds": [
+            0.03570025006774813,
+            0.039528666995465755,
+            0.039523666026070714,
+            0.037373666069470346,
+            0.03778900008182973
+          ],
+          "median_decode32_seconds": 0.20631662500090897,
+          "median_full128_seconds": 0.03778900008182973
+        }
+      ],
+      "seed": 200120011,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/09/worker.json",
+        "sha256": "598bcab89c23d128d55ea12b2b3de62d2cd7f0c9f85ff50f00263b0cfed54b1f"
+      }
+    },
+    {
+      "arm": "static_half",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 5.7220458984375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/10/checkpoints/h200.pt",
+        "sha256": "6e88a536cd211053dd94d65d40e2bde2e9c8ff7337dde7ca21a84fabec1ea357",
+        "size": 114077379
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.3128002079902217,
+            0.2802730000112206,
+            0.27041349990759045,
+            0.32196533295791596,
+            0.2715312500949949
+          ],
+          "full128_seconds": [
+            0.0145745420595631,
+            0.013293709023855627,
+            0.013444207957945764,
+            0.013571082963608205,
+            0.013911457965150476
+          ],
+          "median_decode32_seconds": 0.2802730000112206,
+          "median_full128_seconds": 0.013571082963608205
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.2919298749184236,
+            0.3469321670709178,
+            0.29910591698717326,
+            0.28994383406825364,
+            0.360313875018619
+          ],
+          "full128_seconds": [
+            0.045079999952577055,
+            0.04363645799458027,
+            0.046437624958343804,
+            0.04479691700544208,
+            0.044956875033676624
+          ],
+          "median_decode32_seconds": 0.29910591698717326,
+          "median_full128_seconds": 0.044956875033676624
+        }
+      ],
+      "seed": 200120011,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/10/worker.json",
+        "sha256": "5da7b6c10a59422a2eebb514028214ac6abef2f63c4b8f0990313874ee10a626"
+      }
+    },
+    {
+      "arm": "sigmoid_elementwise_zero",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 5.7220458984375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.198883056640625e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/11/checkpoints/h200.pt",
+        "sha256": "ead5152398795b49204edc664c77c16afff7fc110ff84107c5ca4d2fe938679b",
+        "size": 115127543
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.3474830830236897,
+            0.31835712504107505,
+            0.3378947909222916,
+            0.31384720792993903,
+            0.3038484159624204
+          ],
+          "full128_seconds": [
+            0.01663404202554375,
+            0.01475320803001523,
+            0.014641750021837652,
+            0.028944166959263384,
+            0.01441791607066989
+          ],
+          "median_decode32_seconds": 0.31835712504107505,
+          "median_full128_seconds": 0.01475320803001523
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.5662000000011176,
+            0.3803441249765456,
+            0.47806104097981006,
+            0.3694065409945324,
+            0.40598737506661564
+          ],
+          "full128_seconds": [
+            0.055908665992319584,
+            0.04751233395654708,
+            0.0537905830424279,
+            0.05386241595260799,
+            0.047867916990071535
+          ],
+          "median_decode32_seconds": 0.40598737506661564,
+          "median_full128_seconds": 0.0537905830424279
+        }
+      ],
+      "seed": 200120011,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/11/worker.json",
+        "sha256": "affdf7e318305ae169f5ddc1c6d20e11144011531ad19b8104caba85c6a7fc86"
+      }
+    },
+    {
+      "arm": "static_half",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 7.152557373046875e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 7.152557373046875e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/12/checkpoints/h200.pt",
+        "sha256": "25849e57e68f82a3b045c48539bd5ab7ec12b7cd80bfc40220ab78cdac7a9674",
+        "size": 114077379
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.31063950003590435,
+            0.32023250008933246,
+            0.3933333338936791,
+            0.3114926250418648,
+            0.30430712492670864
+          ],
+          "full128_seconds": [
+            0.01929829199798405,
+            0.014542332966811955,
+            0.01425374997779727,
+            0.01500387501437217,
+            0.0144038749858737
+          ],
+          "median_decode32_seconds": 0.3114926250418648,
+          "median_full128_seconds": 0.014542332966811955
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.4244962079683319,
+            0.3190088749397546,
+            0.46633970900438726,
+            0.3482567500323057,
+            0.39175095793325454
+          ],
+          "full128_seconds": [
+            0.051081249956041574,
+            0.04862437502015382,
+            0.047287499997764826,
+            0.044683750020340085,
+            0.04641158308368176
+          ],
+          "median_decode32_seconds": 0.39175095793325454,
+          "median_full128_seconds": 0.047287499997764826
+        }
+      ],
+      "seed": 200120012,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/12/worker.json",
+        "sha256": "fe085e2a2865252f971b56ee9d3d4108cbc2eb20c61c44f8895d478ff565e177"
+      }
+    },
+    {
+      "arm": "sigmoid_elementwise_zero",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/13/checkpoints/h200.pt",
+        "sha256": "eb256ad0280416649c6fc7ac1851f081e27e97e0b741085c650c7a543213bb2a",
+        "size": 115127543
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.40022516704630107,
+            0.3623632499948144,
+            0.42882170795928687,
+            0.34951325005386025,
+            0.3585806250339374
+          ],
+          "full128_seconds": [
+            0.0164750840049237,
+            0.016435917001217604,
+            0.014950665994547307,
+            0.017753291060216725,
+            0.019327667076140642
+          ],
+          "median_decode32_seconds": 0.3623632499948144,
+          "median_full128_seconds": 0.0164750840049237
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.35560254205483943,
+            0.35521633294411004,
+            0.4072884999914095,
+            0.4097937080077827,
+            0.5155130829662085
+          ],
+          "full128_seconds": [
+            0.06750408397056162,
+            0.04724633402656764,
+            0.048764541978016496,
+            0.04759625007864088,
+            0.04713308403734118
+          ],
+          "median_decode32_seconds": 0.4072884999914095,
+          "median_full128_seconds": 0.04759625007864088
+        }
+      ],
+      "seed": 200120012,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/13/worker.json",
+        "sha256": "076e91b3e3b90200b8cd00e605223566051c1e15b21dfe3a6795fdc02fed378c"
+      }
+    },
+    {
+      "arm": "none",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/14/checkpoints/h200.pt",
+        "sha256": "e90a8191940410ea12b95000709240869d994a42b52a29695495b3c63c3c372e",
+        "size": 114077379
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.25949133303947747,
+            0.22377704200334847,
+            0.22887541609816253,
+            0.2662462079897523,
+            0.22018729092087597
+          ],
+          "full128_seconds": [
+            0.013878208003006876,
+            0.016161374980583787,
+            0.010887000011280179,
+            0.011757500004023314,
+            0.013368000043556094
+          ],
+          "median_decode32_seconds": 0.22887541609816253,
+          "median_full128_seconds": 0.013368000043556094
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.22765124996658415,
+            0.24164020793978125,
+            0.267050625057891,
+            0.3141424579080194,
+            0.2426293749595061
+          ],
+          "full128_seconds": [
+            0.049930916051380336,
+            0.03680833405815065,
+            0.04082474997267127,
+            0.03657545801252127,
+            0.04404033406171948
+          ],
+          "median_decode32_seconds": 0.2426293749595061,
+          "median_full128_seconds": 0.04082474997267127
+        }
+      ],
+      "seed": 200120012,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/14/worker.json",
+        "sha256": "a06fc36a4bd98590a2c15f232329f18405c36bb254523927c2ffb01b2cfffcc2"
+      }
+    },
+    {
+      "arm": "sigmoid_elementwise_zero",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.198883056640625e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/15/checkpoints/h200.pt",
+        "sha256": "c1a431dbc6c3489c78854b771c1a79210ce78e8420d6e030215ea17f35cf6d48",
+        "size": 115127543
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.35219124995637685,
+            0.3900994999567047,
+            0.3592311670072377,
+            0.37259095802437514,
+            0.35870945802889764
+          ],
+          "full128_seconds": [
+            0.014349165954627097,
+            0.015596625045873225,
+            0.015111709013581276,
+            0.015200374997220933,
+            0.03306883294135332
+          ],
+          "median_decode32_seconds": 0.3592311670072377,
+          "median_full128_seconds": 0.015200374997220933
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.38336433400399983,
+            0.35377379099372774,
+            0.36692762502934784,
+            0.5484447500202805,
+            0.3842735419748351
+          ],
+          "full128_seconds": [
+            0.048686791909858584,
+            0.06552695797290653,
+            0.048442707979120314,
+            0.04516949993558228,
+            0.04615820792969316
+          ],
+          "median_decode32_seconds": 0.38336433400399983,
+          "median_full128_seconds": 0.048442707979120314
+        }
+      ],
+      "seed": 200120013,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/15/worker.json",
+        "sha256": "0af0f18f07156e40103d1e77c26993a8aee90defb74f23f9574a33dc359e8148"
+      }
+    },
+    {
+      "arm": "none",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/16/checkpoints/h200.pt",
+        "sha256": "4b053e3d392bd0fd8fe9b13d0a27b87e69565ad82aa48d9b2c1cb14db7af7d34",
+        "size": 114077379
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.22692458296660334,
+            0.27473724994342774,
+            0.2401615830603987,
+            0.2220880420645699,
+            0.23475870804395527
+          ],
+          "full128_seconds": [
+            0.015606625005602837,
+            0.010246583027765155,
+            0.0256500409450382,
+            0.01032566698268056,
+            0.012435958022251725
+          ],
+          "median_decode32_seconds": 0.23475870804395527,
+          "median_full128_seconds": 0.012435958022251725
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.24252208299003541,
+            0.25954054202884436,
+            0.2696879169670865,
+            0.257061833050102,
+            0.2839569170027971
+          ],
+          "full128_seconds": [
+            0.03528812504373491,
+            0.04096770903561264,
+            0.0353840000461787,
+            0.03809266700409353,
+            0.03268708405084908
+          ],
+          "median_decode32_seconds": 0.25954054202884436,
+          "median_full128_seconds": 0.0353840000461787
+        }
+      ],
+      "seed": 200120013,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/16/worker.json",
+        "sha256": "7209b1c021298f889f39f0ddb201f8de5012170f0ec94d37d1c4f4308b1648ca"
+      }
+    },
+    {
+      "arm": "static_half",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.198883056640625e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_logit_difference": 6.67572021484375e-06,
+          "reset_maximum_logit_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/17/checkpoints/h200.pt",
+        "sha256": "55eddeb927e7449b0fb867f35de2413a9e37405375a3408f2caf9de356433334",
+        "size": 114077379
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.36612741695716977,
+            0.3003932910505682,
+            0.30578470800537616,
+            0.3708846248919144,
+            0.3135721660219133
+          ],
+          "full128_seconds": [
+            0.016279458068311214,
+            0.019927207962609828,
+            0.013439084053970873,
+            0.013639833079650998,
+            0.014628082979470491
+          ],
+          "median_decode32_seconds": 0.3135721660219133,
+          "median_full128_seconds": 0.014628082979470491
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.3593484170269221,
+            0.38207554107066244,
+            0.3464292079443112,
+            0.3930624999338761,
+            0.34544991701841354
+          ],
+          "full128_seconds": [
+            0.04400733299553394,
+            0.051509125041775405,
+            0.04730420804116875,
+            0.04586462490260601,
+            0.045842082938179374
+          ],
+          "median_decode32_seconds": 0.3593484170269221,
+          "median_full128_seconds": 0.04586462490260601
+        }
+      ],
+      "seed": 200120013,
+      "timing_scope": "One resident model, 2 warm repeats and 5 measured repeats; init/loading/cache allocation excluded. Descriptive local timing, not a quality/adoption gate.",
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-mla-gate-quality-v1-001/evidence/quality/17/worker.json",
+        "sha256": "d83a0c8dfee3ab4d81182d318c0aef9913fd535c7558810766585dddd0e02548"
+      }
+    }
+  ],
+  "selection": false
+}

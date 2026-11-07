@@ -1,0 +1,50 @@
+{
+  "primary": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-diagnostic-boundary-001/gate-quality001-primary-statistics.json",
+    "sha256": "e67157647e3bd7ddf89ee1a1e38aea07ba1f4bcde454de418cc951a2b2c7f8db"
+  },
+  "result": {
+    "adopted": false,
+    "atol": 1e-12,
+    "contrasts": {
+      "none": {
+        "deltas": [
+          0.005350018294362399,
+          0.004329075638979564,
+          0.008195404313209314
+        ],
+        "mean": 0.005958166082183758,
+        "upper": {
+          "2048": 0.008041514653946277,
+          "4096": 0.008369734938210934,
+          "8192": 0.007117054423926695
+        }
+      },
+      "static_half": {
+        "deltas": [
+          -0.0074687873241655045,
+          -0.01009229862425674,
+          -0.009757613283661367
+        ],
+        "mean": -0.009106233077361204,
+        "upper": {
+          "2048": -0.00823568685011123,
+          "4096": -0.008203263652523229,
+          "8192": -0.008275884413223477
+        }
+      }
+    },
+    "gates": {
+      "all_six_simultaneous_conditional_text_upper_bounds_negative": false,
+      "both_mean_ce_below_minus_point02": false,
+      "every_paired_seed_delta_negative": false
+    },
+    "quality_gates_pass": false,
+    "scope": "Conditional on trained seeds/reused validation text;not holdout or population-seed confidence.",
+    "status": "independent_complete_panel_statistics_agreed"
+  },
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer_mla_gate_quality_v1/final_review.py",
+    "sha256": "47dbd18d0c044899ad0dcd1a7c88003b204e37c8d18b7014ee583185bd646bba"
+  }
+}
