@@ -1,0 +1,65 @@
+{
+  "literal_rejection_labels": [
+    "autocast",
+    "cache_alias",
+    "cache_dtype",
+    "cache_epoch",
+    "cache_foreign_owner",
+    "cache_grad_mode",
+    "cache_position",
+    "cache_signature",
+    "distribution_dtype",
+    "distribution_kind",
+    "distribution_shape",
+    "evaluation_backward",
+    "float_IDs",
+    "foreign_cache_owner",
+    "foreign_weight_kind",
+    "foreign_weight_signature",
+    "incompatible_distribution",
+    "joint_full_batch_bound",
+    "missing_weight",
+    "mutable_config",
+    "negative_ID",
+    "nonfinite_learned_parameter",
+    "offset_without_cache",
+    "optimizer_decay",
+    "optimizer_epsilon",
+    "optimizer_exposure",
+    "optimizer_signature",
+    "out_of_range_ID",
+    "populated_gradient_slot",
+    "sequence_dtype",
+    "sequence_too_long",
+    "step_missing_gradients",
+    "target_dtype",
+    "target_range",
+    "target_shape",
+    "weight_RoPE_value"
+  ],
+  "negative_cases_each_arm": 39,
+  "new_execution_sources": {
+    "research/future_token_model_v1/__init__.py": "13e2fab9b014536d934ded965134f63521fc67c1657f2183d8e2792df7f4ae65",
+    "research/future_token_model_v1/backward.py": "0738632fb578944d5bbcf8bf13c6d703d3eba5285518acda54ca6b6aff0fbc13",
+    "research/future_token_model_v1/contract.py": "1fba6dff578d5911280b09044e38b66b1eea7a599bd4906953126f62bd9379c0",
+    "research/future_token_model_v1/model.py": "5200f303c0e53b5721d88b82cc6c007efb51180cac7fa821d5047f11dac7be92",
+    "research/future_token_model_v1/optimizer.py": "a19454c476513ecc035cdaf1534fdf4dd6a9e9ad375e3fdf2c2be5ac44bbde7d",
+    "research/tokenizer-evidence/future-token-preparation-001/model-proof001.py": "f4c4f6535299ecc7ac5b78d53ac7871593fcadcbedb60c068da505893fac5d03",
+    "research/tokenizer-evidence/future-token-preparation-001/model-seed-census001.py": "8ff9c440dcaff55a6b378e1dcd0bbe38296ad31567bb10178a683536aa3831cf",
+    "research/tokenizer-evidence/future-token-preparation-001/proof-source-review001.py": "0f112148eb8e8ec2bf9f991c98589153226a211289580a9098b550925e2c8e2d"
+  },
+  "next": "Run new census once; independent result/resource admission before generated model proof",
+  "no_quality_or_numerical_admission": true,
+  "no_torch_numpy_model_optimizer_rng_census_or_fixture_execution": true,
+  "proof_and_census_plan_pins": [
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/model-proof001/plan.json",
+      "sha256": "a8967c46531c70f2d6994fb28badab98785a13d9528104574ab0041facc5a80e"
+    },
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/model-seed-census001/plan.json",
+      "sha256": "27bed44f87420b8adbeac6303d901e50becceabb0bcb8c744df3f54b7cc82cea"
+    }
+  ],
+  "status": "complete_static_generated_proof_and_census_source_review_runtime_unqualified"
+}

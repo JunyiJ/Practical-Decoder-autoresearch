@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/future-token-preparation-001/model-proof001.py", line 508, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/future-token-preparation-001/model-proof001.py", line 490, in main
+    common,draw=native_pair(census['initializer']);paired=None
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/future-token-preparation-001/model-proof001.py", line 193, in native_pair
+    roundtrip_and_invalids(m,mo)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/future-token-preparation-001/model-proof001.py", line 316, in roundtrip_and_invalids
+    for label,value in [('weight_dtype',weights[name].double()),('weight_shape',weights[name][:-1]),('weight_nonfinite',torch.full_like(weights[name],float('nan')))]:
+                                        ~~~~~~~~~~~~~~~~~~~~^^
+TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.

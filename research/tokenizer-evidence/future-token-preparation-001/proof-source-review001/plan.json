@@ -1,0 +1,59 @@
+{
+  "census_source": "research/tokenizer-evidence/future-token-preparation-001/model-seed-census001.py",
+  "forecast": {
+    "rss_bytes": 134217728,
+    "seconds": 2
+  },
+  "future_source_bindings": 1236,
+  "kind": "original_static_source_review_new_generated_future_token_proof_and_census",
+  "limits": {
+    "CPU_seconds": 120,
+    "metadata_bytes": 2097152,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296
+  },
+  "negative_cases_each_arm": 39,
+  "new_execution_sources": {
+    "research/future_token_model_v1/__init__.py": "13e2fab9b014536d934ded965134f63521fc67c1657f2183d8e2792df7f4ae65",
+    "research/future_token_model_v1/backward.py": "0738632fb578944d5bbcf8bf13c6d703d3eba5285518acda54ca6b6aff0fbc13",
+    "research/future_token_model_v1/contract.py": "1fba6dff578d5911280b09044e38b66b1eea7a599bd4906953126f62bd9379c0",
+    "research/future_token_model_v1/model.py": "5200f303c0e53b5721d88b82cc6c007efb51180cac7fa821d5047f11dac7be92",
+    "research/future_token_model_v1/optimizer.py": "a19454c476513ecc035cdaf1534fdf4dd6a9e9ad375e3fdf2c2be5ac44bbde7d",
+    "research/tokenizer-evidence/future-token-preparation-001/model-proof001.py": "f4c4f6535299ecc7ac5b78d53ac7871593fcadcbedb60c068da505893fac5d03",
+    "research/tokenizer-evidence/future-token-preparation-001/model-seed-census001.py": "8ff9c440dcaff55a6b378e1dcd0bbe38296ad31567bb10178a683536aa3831cf",
+    "research/tokenizer-evidence/future-token-preparation-001/proof-source-review001.py": "0f112148eb8e8ec2bf9f991c98589153226a211289580a9098b550925e2c8e2d"
+  },
+  "new_sources": {
+    "research/tokenizer-evidence/future-token-preparation-001/model-proof001.py": "f4c4f6535299ecc7ac5b78d53ac7871593fcadcbedb60c068da505893fac5d03",
+    "research/tokenizer-evidence/future-token-preparation-001/model-seed-census001.py": "8ff9c440dcaff55a6b378e1dcd0bbe38296ad31567bb10178a683536aa3831cf",
+    "research/tokenizer-evidence/future-token-preparation-001/proof-source-review001.py": "0f112148eb8e8ec2bf9f991c98589153226a211289580a9098b550925e2c8e2d"
+  },
+  "no_numerical_or_quality_admission": true,
+  "no_replay_retry": true,
+  "no_torch_numpy_model_optimizer_rng_or_census_execution": true,
+  "predicates": {
+    "body_forward_gradient_atol": 4e-05,
+    "body_forward_gradient_rtol": 0.0004,
+    "cache_raw_logprob_atol": 3e-05,
+    "cache_raw_logprob_rtol": 3e-05,
+    "native_reference_and_causality_atol": 0.0,
+    "native_reference_and_causality_rtol": 0.0,
+    "primary_CE_atol": 3e-05,
+    "primary_CE_fullgather_gradient_atol": 0.0,
+    "primary_CE_fullgather_gradient_rtol": 0.0,
+    "primary_CE_rtol": 0.0,
+    "seq_joint_gradient_update_atol": 4e-06,
+    "seq_joint_gradient_update_rtol": 4e-05
+  },
+  "proof_source": "research/tokenizer-evidence/future-token-preparation-001/model-proof001.py",
+  "reviewed_plans": [
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/model-proof001/plan.json",
+      "sha256": "a8967c46531c70f2d6994fb28badab98785a13d9528104574ab0041facc5a80e"
+    },
+    {
+      "path": "research/tokenizer-evidence/future-token-preparation-001/model-seed-census001/plan.json",
+      "sha256": "27bed44f87420b8adbeac6303d901e50becceabb0bcb8c744df3f54b7cc82cea"
+    }
+  ]
+}

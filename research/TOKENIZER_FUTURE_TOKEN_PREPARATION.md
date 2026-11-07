@@ -1,3 +1,29 @@
+# Generated model proof CLOSED_FAILED; independent T+2 sampler source prepared
+
+Original model-proof001/launch001 exited1 at a negative-dtype fixture attempting
+MPS FP64 conversion (proof line316). Preserve original sources/plans/logs/guards/
+STOPs/partial rows, no replay/retry/source-case-role-backend-tolerance rescue.
+The source review and one-role census passed, but no accepted model result exists.
+Two native generated updates occurred; auxiliary models/fullB8 phases were not
+reached. Native partial flags are not complete model qualification or quality.
+The initializer is now USED/exclusive to this closed fixture, never reusable.
+See [failure review](tokenizer-evidence/future-token-preparation-001/model-proof001-failure-review.md)
+and [completed continuation](tokenizer-evidence/future-token-preparation-001/continuation-completed003.json).
+
+Independent source work implements split-local paired512 sampling with two right
+targets in research/future_token_sampling_v1.py. Train anchors must fit514 IDs;
+each supplies four130-ID rows, giving all1024 shared input positions. Private CPU
+streams/state preflight are source-only and require separate new proofs/roles.
+No sampler/model/RNG/corpus execution occurred for this source. Next executable:
+[new deterministic index oracle preparation](tokenizer-evidence/future-token-preparation-001/sampling-source-handoff001.md),
+then separately admitted sampler runtime proof. This does not retry or qualify
+the failed model proof; model/corpus/full science admission remains absent.
+
+All1238 future sources preserve1233 predecessors plus proof/census/reviewer/
+launcher/sampler; failed proof runtime1236 and old scientific runtime1211 remain
+unchanged. No tensor files/checkpoints/copies/deletions/retirement or quality gain.
+Native/holdout unchanged; no numerical worker active. Earlier entries historical.
+
 # Actual-model source prepared; generated runtime proof is next
 
 Five new files in research/future_token_model_v1 implement exact native/duplicate-

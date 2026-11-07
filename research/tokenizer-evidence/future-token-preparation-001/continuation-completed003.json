@@ -1,0 +1,146 @@
+{
+  "census": {
+    "guard_sha256": "afb26df4b33070088dd8a783029c90ee758df8afbf4a2bc0c1cf48ac4cf8612b",
+    "original_unused_receipt_now_historical": true,
+    "result_sha256": "3bb4e39611eef99a730f4eef8224e841c857d477c5b34ed6312c8f632908bcdd"
+  },
+  "checkpoints": 0,
+  "closed_proof_runtime_bindings": 1236,
+  "completed_at": "2026-11-07T17:58:40.495272+00:00",
+  "deletions": 0,
+  "failure": {
+    "actual_optimizer_steps": 2,
+    "auxiliary_models_constructed": 0,
+    "child_pid": 70677,
+    "error": "MPS float64 conversion in construction of negative-dtype fixture",
+    "execsession": 4230,
+    "final_source_RNG_assert_reached": false,
+    "full_B8_backwards": 0,
+    "line": 316,
+    "log_sha256": "7cc7ef9b43f566bccaf1213e741fae01771f1686d17f716069ade7ca878e2bc4",
+    "planned_steps": 6,
+    "proof_STOP_sha256": "b91a011e5a62dfcbbda71bf2b94c83da853440f036354df7e921841ccbf51f15",
+    "result_exists": false
+  },
+  "free_bytes_observed": 35152556032,
+  "future_source_bindings": 1238,
+  "initializer_usage": "USED_exclusive_original_failed_generated_fixture_never_reuse",
+  "next_action": "Prepare/pin/review NEW pure integer split-local paired512 T+2 index oracle per sampling-source-handoff001.md; no model/RNG calls or replay of failed proof. Then distinct sampler-role census/runtime proof only after full gates; model/corpus/scientific admission remains absent.",
+  "no_accepted_generated_model_result": true,
+  "no_numerical_worker_active": true,
+  "old_scientific_runtime_bindings": 1211,
+  "original_new_execution_sources_unchanged": {
+    "research/future_token_model_v1/__init__.py": "13e2fab9b014536d934ded965134f63521fc67c1657f2183d8e2792df7f4ae65",
+    "research/future_token_model_v1/backward.py": "0738632fb578944d5bbcf8bf13c6d703d3eba5285518acda54ca6b6aff0fbc13",
+    "research/future_token_model_v1/contract.py": "1fba6dff578d5911280b09044e38b66b1eea7a599bd4906953126f62bd9379c0",
+    "research/future_token_model_v1/model.py": "5200f303c0e53b5721d88b82cc6c007efb51180cac7fa821d5047f11dac7be92",
+    "research/future_token_model_v1/optimizer.py": "a19454c476513ecc035cdaf1534fdf4dd6a9e9ad375e3fdf2c2be5ac44bbde7d",
+    "research/tokenizer-evidence/future-token-preparation-001/model-proof001.py": "f4c4f6535299ecc7ac5b78d53ac7871593fcadcbedb60c068da505893fac5d03",
+    "research/tokenizer-evidence/future-token-preparation-001/model-seed-census001.py": "8ff9c440dcaff55a6b378e1dcd0bbe38296ad31567bb10178a683536aa3831cf",
+    "research/tokenizer-evidence/future-token-preparation-001/proof-source-review001.py": "0f112148eb8e8ec2bf9f991c98589153226a211289580a9098b550925e2c8e2d"
+  },
+  "partial_flags_only_not_recomputed": true,
+  "quality_gain_or_adoption": false,
+  "sampler_source": {
+    "bytes": 8173,
+    "path": "research/future_token_sampling_v1.py",
+    "scope": "source_AST_compiled_only_no_function_or_Torch_sampler_execution",
+    "sha256": "f1c246dc16994bc735e2f2bc2673e89988503f7273a20c6c3e304b5f1a02ee9a"
+  },
+  "saved_partial_predicate_groups": {
+    "native-exact-backward.json": {
+      "all_reported_passed": true,
+      "count": 89
+    },
+    "native-exact-forward.json": {
+      "all_reported_passed": true,
+      "count": 2
+    },
+    "native-exact-initial-state.json": {
+      "all_reported_passed": true,
+      "count": 96
+    },
+    "native-exact-one-update.json": {
+      "all_reported_passed": true,
+      "count": 1498
+    },
+    "native_next-actual-step-reset-cache.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-actual-step-stale-cache.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-groups.json": {
+      "all_reported_passed": true,
+      "count": 4
+    },
+    "native_next-inventory.json": {
+      "all_reported_passed": true,
+      "count": 6
+    },
+    "native_next-own-load-roundtrip.json": {
+      "all_reported_passed": true,
+      "count": 1608
+    },
+    "native_next-reject-cache_grad_mode.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-float_IDs.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-foreign_cache_owner.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-foreign_weight_kind.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-foreign_weight_signature.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-joint_full_batch_bound.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-missing_weight.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-negative_ID.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-offset_without_cache.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-out_of_range_ID.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-target_dtype.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-target_range.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-reject-target_shape.json": {
+      "all_reported_passed": true,
+      "count": 1
+    },
+    "native_next-stale-after-load.json": {
+      "all_reported_passed": true,
+      "count": 1
+    }
+  },
+  "status": "closed_failed_generated_model_proof_preserved_independent_sampler_source_prepared",
+  "tensor_files": 0
+}
