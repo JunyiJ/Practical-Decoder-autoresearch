@@ -1,3 +1,32 @@
+# Supplied-logit proximity objective CLOSED_ACCEPTED finite component only
+
+Original new proof passed30 positives/116 rejection transactions/10 CPU-MPS loss
+pairs, all156 distinct saved reports. Independent scalar represented-weight LSE/
+analytic-gradient oracle passed all2838 coordinates; six genuine one-hot CE
+comparisons passed all612 coordinates. CPU64 max loss/grad1.776e-15/2.220e-16;
+CPU32 max9.774e-7/8.684e-8; MPS32 max5.384e-7/5.289e-8. CPU-MPS scalar max
+9.537e-7 < fixed3e-5. All original elementwise tolerances/input-target-grad-slot/
+global CPU-MPS RNG preservation passed. FP32 mass sums span .9999999925494194..
+1.0000000298023224; represented-mass derivative used, no renormalization.
+
+Static gate passed first without Torch/functions. Original whole guard1.052379458s/
+RSS402128896B/MPS11288576B; all4 CPU guards finished under120s, hard4GiB/6GiB/
+reserve8GiB/2MiB retained JSON. Read-only reconciliation of saved arrays/masks/pins
+accepted; no numerical replay. [Review](tokenizer-evidence/future-token-preparation-001/top-objective-component001-review.md),
+[acceptance](tokenizer-evidence/future-token-preparation-001/top-objective-component001-acceptance.json),
+[completed011](tokenizer-evidence/future-token-preparation-001/continuation-completed011.json).
+All original sources/plans/cases/commands/guards/STOPs CLOSED/no retry/no rescue.
+Objective source unchanged. Future1255 preserves1253; closed-modelproof1236 and
+scientificruntime1211 unchanged. No model/corpus/optimizer/scoring/seedroles/
+checkpoint/weights/deletions. Literal B2/T8/V31/support4 acceptance is not actual
+vocabulary/model causality/state/quality/upstream reproduction qualification.
+
+Next [bounded actual-consumer source/design boundary](tokenizer-evidence/future-token-preparation-001/top-consumer-design-handoff001.md)
+resolves independent TOP head/loss/control applicability and complete prospective
+cost before any model source/execution. No closed future-token/index/CE successor
+recapture, scientific roles/panel freeze/adoption. Native/holdout/future_two panel
+unchanged; no numerical worker remains active. Earlier entries historical.
+
 # Supplied-logit proximity objective SOURCE prepared; functional proof source next
 
 New top_proximity_objective_v1.py3657B/SHAd425365fad2836f267f641632779213406c8802403d0700c7db7db216efe5de5

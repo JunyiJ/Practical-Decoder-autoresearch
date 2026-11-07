@@ -1,0 +1,123 @@
+{
+  "genuine_CE_gradient_coordinates": 612,
+  "gradient_coordinates": 2838,
+  "guards": {
+    "CPU32-guard.json": {
+      "elapsed_seconds": 0.09320437500718981,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 35078828032,
+        "peak_rss_bytes": 253067264
+      },
+      "pid": 75457,
+      "reason": null,
+      "status": "finished"
+    },
+    "CPU64-guard.json": {
+      "elapsed_seconds": 0.11988825001753867,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 35079118848,
+        "peak_rss_bytes": 252444672
+      },
+      "pid": 75457,
+      "reason": null,
+      "status": "finished"
+    },
+    "mps-guard.json": {
+      "elapsed_seconds": 1.052379458094947,
+      "limits": {
+        "mps_driver_limit_bytes": 6442450944,
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 600
+      },
+      "observation": {
+        "free_bytes": 35078451200,
+        "mps_current_bytes": 0,
+        "mps_driver_bytes": 11272192,
+        "peak_observed_mps_driver_bytes": 11288576,
+        "peak_rss_bytes": 402128896
+      },
+      "pid": 75457,
+      "reason": null,
+      "status": "finished"
+    },
+    "oracle-guard.json": {
+      "elapsed_seconds": 0.0008659170707687736,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 35079393280,
+        "peak_rss_bytes": 217743360
+      },
+      "pid": 75457,
+      "reason": null,
+      "status": "finished"
+    },
+    "startup-guard.json": {
+      "elapsed_seconds": 0.7943607079796493,
+      "limits": {
+        "reserve_bytes": 8589934592,
+        "rss_limit_bytes": 4294967296,
+        "timeout_seconds": 120
+      },
+      "observation": {
+        "free_bytes": 35079405568,
+        "peak_rss_bytes": 206127104
+      },
+      "pid": 75457,
+      "reason": null,
+      "status": "finished"
+    }
+  },
+  "max_CPU_MPS_loss_gap": 9.5367431640625e-07,
+  "max_oracle_errors": {
+    "CPU32": {
+      "gradient": 8.68425538147477e-08,
+      "loss": 9.774362634829004e-07
+    },
+    "CPU64": {
+      "gradient": 2.220446049250313e-16,
+      "loss": 1.7763568394002505e-15
+    },
+    "MPS32": {
+      "gradient": 5.289412674525096e-08,
+      "loss": 5.383714154483243e-07
+    }
+  },
+  "metadata_bytes_at_review": 293052,
+  "negative": 116,
+  "no_replay": true,
+  "no_retry": true,
+  "paired": 10,
+  "positive": 30,
+  "proof_plan_sha256": "715edc898d8a7e5b7b08436006b546d19971304b86aa4ae57d1a9f5be756ca2a",
+  "quality_gain_or_model_qualification": false,
+  "represented_FP32_mass_sum_range": [
+    0.9999999925494194,
+    1.0000000298023224
+  ],
+  "review_scope": "Saved JSON arrays/masks/predicates and exact source pins ONLY; no objective/target/harness/scalar-oracle/Torch/model/scoring replay. Review code supplied via original tool stdin, no filesystem executed-source hash claim.",
+  "sources": {
+    "research/block_norm_v1/mps_guard.py": "3978e8b9411e206a62f86fed913e857cb979b18db2f2bbec787be95d6d1e17c4",
+    "research/tokenizer-evidence/future-token-preparation-001/top-objective-component001.py": "599760910ca5dedc5f07c2f369dc1f574197bb2b28364bfbc9b58a65056f920b",
+    "research/tokenizer-evidence/future-token-preparation-001/top-objective-proof-source001.py": "43ae45a7e8562a04f6f7f11e0e49da20e77b38516814de8713829f43300a20ea",
+    "research/top_proximity_objective_v1.py": "d425365fad2836f267f641632779213406c8802403d0700c7db7db216efe5de5",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+    "src/research/memory_guard.py": "a6617b8c0147607c8f3c4cf0d43ba278589b1e9f14c1422aaf6440de3524eefd"
+  },
+  "status": "CLOSED_ACCEPTED_finite_supplied_logit_objective_ONLY",
+  "unique_reports": 156
+}
