@@ -1,0 +1,62 @@
+{
+  "elapsed_seconds": 0.037789624999277294,
+  "generated_proof_admitted": false,
+  "model_imports_constructions_tensor_optimizer_corpus_checkpoint_rng_calls": 0,
+  "new_sources": [
+    {
+      "path": "research/readout_projection_model_v1/__init__.py",
+      "sha256": "22ec7c7fa8c09c535d92c599890f96a22e8f4399d323216cb3d17ab97e980649",
+      "syntax": "parsed_without_import",
+      "top_level_definitions": []
+    },
+    {
+      "path": "research/readout_projection_model_v1/contract.py",
+      "sha256": "5cbd13ecb2174dbf18b0904582751163d4cf70db9fae0f13683a46c65168d737",
+      "syntax": "parsed_without_import",
+      "top_level_definitions": [
+        "projection_seed",
+        "model_config",
+        "signature"
+      ]
+    },
+    {
+      "path": "research/readout_projection_model_v1/model.py",
+      "sha256": "735113d6e1b2d104d7b5d15196e654f6fd0ba9b77c09da0552406cf43b2abce1",
+      "syntax": "parsed_without_import",
+      "top_level_definitions": [
+        "Distribution",
+        "Projection",
+        "Cache",
+        "GPT",
+        "load_weights"
+      ]
+    },
+    {
+      "path": "research/readout_projection_model_v1/optimizer.py",
+      "sha256": "e0bc31fc2e549ee3a5ddda56c5627fd32af45dd2f6afa716590c1760f515e43b",
+      "syntax": "parsed_without_import",
+      "top_level_definitions": [
+        "Optimizer",
+        "build_optimizer"
+      ]
+    }
+  ],
+  "next_action": "Implement/pin/review NEW initializer-role census and finite generated actual-model proof exactly within integration-design001. Observe exact new plan SHA; census must pass before any construction. Preserve all closed proofs and1134sourcebindings.",
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-readout-boundary-001/model-source-preparation001/plan.json",
+    "sha256": "a093b242d5abd27627cb0a556ba0f1747ad59d2b0dc091a2a62019335e851070"
+  },
+  "predecessors_preserved": 1130,
+  "quality_panel_admitted": false,
+  "scientific_roles_assigned": false,
+  "source_review": "Same native common88 constructor/config preserved; own config/logit/weight/optimizer/cache identity, one biasfree privateA after native child, exact A Muoneta/2, common AdamW.9,.999epsilon1e-6 independentdecay.00006. Runtime invariance and consumer rejection claims remain pending NEW generated proof.",
+  "sources_preserved": 1134,
+  "static_checks": {
+    "genuine_cross_entropy": true,
+    "native_constructor_precedes_projection_registration": true,
+    "private_projection_no_nnLinear_constructor": true,
+    "single_shared_head_and_literal_divisor": true
+  },
+  "status": "actual_model_source_prepared_static_review_only",
+  "torch_imported": false
+}

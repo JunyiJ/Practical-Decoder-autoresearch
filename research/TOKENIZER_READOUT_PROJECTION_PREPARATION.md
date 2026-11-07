@@ -1,4 +1,26 @@
-# Single readout projection: tiny component complete
+# Single readout projection: actual-model source prepared
+
+Four additive actual-model files are prepared in readout_projection_model_v1;
+see post-readout-boundary-001/model-integration-design001.md,
+model-source-preparation001/result.json/guard.json/STOP and
+continuation-completed003.json. Source-only AST/calculus/identity review preserved
+1134bindings including all1130 predecessors, without importing Torch or constructing
+a model. Own genuine native child, one private A, config/logit/weight/optimizer/cache
+identities and source grouping are prepared. Runtime correctness remains untested.
+
+Next: implement/pin/review NEW unused initializer/private-projection role census
+and the finite generated actual-model integration proof. Observe exact plan hashes;
+the census must pass before ANY model construction. Scope:8 generated small updates
+including independent same-MPS native control, all88/89 gradient/update exposure,
+CPU-MPS and fullgather agreement,3 separate B8/T128 backwards, B1/B8 cached/reset128
+and transactional invalid consumers. Forecast60s/RSS3.5GiB/MPS3.5GiB is provisional;
+enforce120sCPUphase/600sMPS/4GiBRSS/6GiBMPS/reserve8GiB. Complete next-chain cap
+42MiB/zero tensorfiles plus8GiB reserve gives floor8633974784B; with2GiB headroom
+target10781458432B, covered by current free space. No cleanup or storage blocker.
+No actual-model numerical execution, new role, scientific worker/pilot/quality
+panel or training-state/resume admission follows from this source-only review.
+
+## Accepted tiny component (closed)
 
 The original projection-component001 command is CLOSED and accepted. See
 post-readout-boundary-001/projection-component001-review.json and
@@ -11,11 +33,6 @@ preserve1127 predecessors. Guards finished:1.706s numerical body, RSS387989504B,
 MPS11255808B, reserve8GiB maintained. Zero models/optimizersteps/corpus/checkpoints/
 qualityseeds/RNGdraws/tensorfiles. Never replay/retry/edit this closed command.
 
-Next executable work is source-only preparation of the smallest genuine actual
-model/config/optimizer/cache integration and finite generated proof. Read the
-accepted component and original native/common88 sources, specify complete
-memory/time/output guards, and audit NEW unused initializer/private-context roles
-before ANY actual construction. Pin and review new source before execution.
 Tiny success does not admit actualD256/V50257 model states, model numerical proof,
 resume/scoring/workers/pilots or a quality panel. Keep native incumbent/holdout
 unchanged. No numerical worker is active and no storage blocker exists.
