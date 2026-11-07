@@ -1,0 +1,266 @@
+{
+  "caller_cpu_mps_rng_preserved": true,
+  "corpus_loaded": false,
+  "elapsed_seconds": 19.53751116595231,
+  "fresh_serving_replaced": false,
+  "holdout_scored": false,
+  "input_hashes_unchanged": true,
+  "limitation": "Pilot artifact consumer cost with generated IDs; serial local timings are descriptive, not stable bounds or quality/adoption evidence.",
+  "optimizer_updates": 0,
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/serving-probe001/plan.json",
+    "sha256": "d00975ca77962f365be6ea10e2cfdaa33aff566dc0ace7c96568278ad1eead1e"
+  },
+  "rows": [
+    {
+      "arm": "native",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_log_probability_difference": 1.9073486328125e-06,
+          "reset_maximum_log_probability_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_log_probability_difference": 1.9073486328125e-06,
+          "reset_maximum_log_probability_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/checkpoints/h200.pt",
+        "sha256": "9ec820ab4139388a0a7da9e69d7f8cf9920192c6eef89d001e713ff868a4c133",
+        "size": 114076547
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.26383383304346353,
+            0.2651220839470625,
+            0.2793389579746872,
+            0.24962641694583,
+            0.25796099996659905
+          ],
+          "full128_seconds": [
+            0.01376474997960031,
+            0.015915750060230494,
+            0.012834707973524928,
+            0.011530166026204824,
+            0.01934862497728318
+          ],
+          "median_decode32_seconds": 0.26383383304346353,
+          "median_full128_seconds": 0.01376474997960031
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.2588675000006333,
+            0.21902245795354247,
+            0.2349369591102004,
+            0.23633058299310505,
+            0.3055084999650717
+          ],
+          "full128_seconds": [
+            0.0424814170692116,
+            0.044553791056387126,
+            0.056982959038577974,
+            0.04791574995033443,
+            0.046252000029198825
+          ],
+          "median_decode32_seconds": 0.23633058299310505,
+          "median_full128_seconds": 0.046252000029198825
+        }
+      ],
+      "overhead": {
+        "cache_and_input_allocation_seconds": 0.004091251059435308,
+        "cache_check_seconds": 1.3271222909679636,
+        "checkpoint_load_seconds": 0.25707391696050763,
+        "construction_seconds": 0.28164470801129937,
+        "final_hash_seconds": 0.04106454097200185,
+        "initial_hash_seconds": 0.04377191700041294,
+        "protocol_wall_seconds": 4.932906166999601
+      },
+      "wall_seconds": 6.980041667004116,
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/worker.json",
+        "sha256": "01e3686030d21d51cd74c78cf389cfc5c57ee54f623d917b57fb42cbdca471c1"
+      }
+    },
+    {
+      "arm": "context_mix2",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_log_probability_difference": 1.9073486328125e-06,
+          "reset_maximum_log_probability_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_log_probability_difference": 1.9073486328125e-06,
+          "reset_maximum_log_probability_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/checkpoints/h200.pt",
+        "sha256": "9cf4c19a9660010c3bf86d32d5ad416d77c79ff046988d581607654b9fcf3e91",
+        "size": 114603834
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.3065345840295777,
+            0.25713945901952684,
+            0.2610151660628617,
+            0.26119587500579655,
+            0.29612520802766085
+          ],
+          "full128_seconds": [
+            0.012887249933555722,
+            0.011773291043937206,
+            0.011737250024452806,
+            0.011497624916955829,
+            0.013858833000995219
+          ],
+          "median_decode32_seconds": 0.26119587500579655,
+          "median_full128_seconds": 0.011773291043937206
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.25507841701619327,
+            0.23503962496761233,
+            0.2647916249698028,
+            0.22410558292176574,
+            0.23456779203843325
+          ],
+          "full128_seconds": [
+            0.050509833032265306,
+            0.051258624996989965,
+            0.04347000003326684,
+            0.04644991608802229,
+            0.04700829100329429
+          ],
+          "median_decode32_seconds": 0.23503962496761233,
+          "median_full128_seconds": 0.04700829100329429
+        }
+      ],
+      "overhead": {
+        "cache_and_input_allocation_seconds": 0.003748333896510303,
+        "cache_check_seconds": 0.5784002499422058,
+        "checkpoint_load_seconds": 0.25451475009322166,
+        "construction_seconds": 0.1665199160343036,
+        "final_hash_seconds": 0.04211779194884002,
+        "initial_hash_seconds": 0.04768541699741036,
+        "protocol_wall_seconds": 4.670841124956496
+      },
+      "wall_seconds": 5.819770875037648,
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/worker.json",
+        "sha256": "dce322a06de35ab18dcf2f77eca794f38f8274b6d3f44d61eab45c86f64c3f1a"
+      }
+    },
+    {
+      "arm": "probability_mix2",
+      "cache_reset_checks": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_log_probability_difference": 1.9073486328125e-06,
+          "reset_maximum_log_probability_difference": 0.0,
+          "tokens": 128
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "device": "mps:0",
+          "maximum_log_probability_difference": 1.9073486328125e-06,
+          "reset_maximum_log_probability_difference": 0.0,
+          "tokens": 128
+        }
+      ],
+      "h200": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/checkpoints/h200.pt",
+        "sha256": "ec6f1a32e538cf2d140ddf26207618a8e37d646d0483977fda0a9089c5f1a938",
+        "size": 114603834
+      },
+      "measurements": [
+        {
+          "batch": 1,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.27023145800922066,
+            0.312454583006911,
+            0.25388787500560284,
+            0.25735416705720127,
+            0.26855837495531887
+          ],
+          "full128_seconds": [
+            0.025639958097599447,
+            0.02484783297404647,
+            0.023020541993901134,
+            0.02277416700962931,
+            0.02677741600200534
+          ],
+          "median_decode32_seconds": 0.26855837495531887,
+          "median_full128_seconds": 0.02484783297404647
+        },
+        {
+          "batch": 8,
+          "cache_bytes_per_item": 196608,
+          "decode32_after_prefill96_seconds": [
+            0.24749583296943456,
+            0.24838725000154227,
+            0.24400604097172618,
+            0.30772725003771484,
+            0.26532750006299466
+          ],
+          "full128_seconds": [
+            0.08667670900467783,
+            0.08577837503980845,
+            0.08747316699009389,
+            0.08632029092404991,
+            0.08855975000187755
+          ],
+          "median_decode32_seconds": 0.24838725000154227,
+          "median_full128_seconds": 0.08667670900467783
+        }
+      ],
+      "overhead": {
+        "cache_and_input_allocation_seconds": 0.0034673339687287807,
+        "cache_check_seconds": 0.618553499924019,
+        "checkpoint_load_seconds": 0.28385741694364697,
+        "construction_seconds": 0.1749407909810543,
+        "final_hash_seconds": 0.0415787500096485,
+        "initial_hash_seconds": 0.046967041096650064,
+        "protocol_wall_seconds": 5.289998042047955
+      },
+      "wall_seconds": 6.51864687493071,
+      "worker": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/worker.json",
+        "sha256": "b28306c83216b6b23afbf37b6129eeb4a3ffd2a2a96e6cb93abd613b0e81d436"
+      }
+    }
+  ],
+  "scientific_roles_used": false,
+  "sources_unchanged": true,
+  "status": "passed_distinct_three_pilot_serving_consumer_probe",
+  "weight_files_written": 0
+}

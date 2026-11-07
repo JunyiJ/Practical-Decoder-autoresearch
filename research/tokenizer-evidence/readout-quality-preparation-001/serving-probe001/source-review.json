@@ -1,0 +1,47 @@
+{
+  "forecast": {
+    "metadata_bytes": 2097152,
+    "mps_bytes": 3500000000,
+    "rss_bytes": 3400000000,
+    "seconds": 300
+  },
+  "guards": {
+    "mps_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "seconds": 600
+  },
+  "inputs": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/00/checkpoints/h200.pt",
+      "sha256": "9ec820ab4139388a0a7da9e69d7f8cf9920192c6eef89d001e713ff868a4c133",
+      "size": 114076547
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/01/checkpoints/h200.pt",
+      "sha256": "9cf4c19a9660010c3bf86d32d5ad416d77c79ff046988d581607654b9fcf3e91",
+      "size": 114603834
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-readout-mixture-pilot-v1-001/evidence/pilots/02/checkpoints/h200.pt",
+      "sha256": "ec6f1a32e538cf2d140ddf26207618a8e37d646d0483977fda0a9089c5f1a938",
+      "size": 114603834
+    }
+  ],
+  "numerical_execution": false,
+  "preserved_predecessors": 1124,
+  "review": [
+    "Exact3accepted20pilotH200read-only;no9freshrowduplication or benchmark guard changes",
+    "Own normalized log_probs/full128/prefill96decode32;B1B8;2warm5measured;original cache checks/tolerances",
+    "Complete hash/load/construction/cache/protocol overhead measured;one resident model",
+    "Recorded initializer metadata reconstruction under CPUfork;no newtrajectory/qualityseed",
+    "No corpus/tokenizer/scoring/training/optimizer/weightwrites;guardSTOP/no retry",
+    "ASTparsed and pre-execution source+input references pinned"
+  ],
+  "source": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/readout-quality-preparation-001/serving-probe001.py",
+    "sha256": "962c6971b85d7cc415a8680a00ef20469ed1ab7914c7eed4ee753b31b20cd512"
+  },
+  "source_bindings": 1125,
+  "status": "passed_distinct_three_pilot_serving_source_scope_resource_review"
+}
