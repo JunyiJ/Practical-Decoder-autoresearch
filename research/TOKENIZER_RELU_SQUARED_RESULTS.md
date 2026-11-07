@@ -1,3 +1,65 @@
+# Full-horizon FFN design and scientific namespace: SOURCE ONLY
+
+Evidence-grounded boundary read original contrary FFN/activation results,
+incumbent config/current roadmaps, accepted real4/twenty curves/cost/receipts,
+and retrieved Primer2109.08668v1§3/Fig6/§4/A.7/A.8 andGLUVariants2002.05202v1
+§2eq4-6/§3.1Table1/§3.2. Read relu-squared-quality-preparation-001/
+evidence-review001.md,quality-design-source001.json,full-horizon-source001
+(failedreview evidence),full-horizon-source002/{plan,source-review,review-source002,
+attempt,review,guard,STOP},continuation-completed001.json,
+full-horizon-proof-handoff001.md. Published gains are not local; old ungatedSiLU
++.007388630366808/two worse and GELUgate+.001550755925793/two worse remain contrary,
+unpooled. Early pilot losses/clipping are not final quality or mechanism evidence.
+
+Ten NEW additive relu_squared_quality_v1 modules64197B implement prospective own
+full1200worker/independent acceptance/serial dispatch-controller/config/selection/
+statistics/independent final arithmetic/fresh serving. Runtime1211 preserves1201
+predecessors; saved reviewers=>1213 current bindings. ALLsources immutable.
+Original source001 CLOSED_FAILED on its wrong RAWkey substring test BEFORE
+scalar accounting; actual code already exact RAWema.snapshots==summary.ema_snapshots
+==41. Guard.044880s/RSS28049408B/no numerical import/call;failure/source/STOP
+preserved. DISTINCT source002 uses structural AST exact matching on BYTEIDENTICAL
+implementations and passes20staticchecks/scalarforecast in.069909s/RSS28409856B,
+under120sCPU/4GiB/reserve8GiB/2MiBmetadata. No oldreview retry/source rescue.
+ZERO Torch/NumPy/worker imports,tensors/models/optimizer/corpus/checkpoint/RNG/
+scoring/bootstrap/serialization/numerical calls. EVERY new runtime path UNTESTED.
+Source-only success does not admit new gates, roles, quality budget/freeze/launch.
+
+Prospective question: only two-matrix ungatedReLU-squared candidate versus BOTH
+nativeSwiGLU672 and matchedungatedSiLU1008. No extra gate/bias/dropout/normalizer/
+rescale/conv/router;common native-first/private-paired init/ownstate/MuonAdamW
+remain. Nine equal finite LR screens{.000625,.00125,.0025},onecohort;minimumcomplete
+H200MPSCE perarm/lowerLRtie/noextension/notoptima. Nine fresh runs/three NEWcohorts,
+rotatedarms;screen scores excluded.25 distinct future roles (4cohorts x6 initializer/
+privateungated/train/eval/globalCPU/globalMPS +bootstrap), NONE values proposed.
+Strict mean<-.02 versusEACHcontrol/all3negativeeach/ALL6conditional-text uppers<0,
+blocks2048/4096/8192/2000PCG64/sharedindices/linearquantile1-.05/6;not holdout or
+population-seed confidence. No control/RAW/cost/partialpanel fallback or automatic
+adoption. Genuine own physicaltarget fingerprint6dcd972d01877136396b4a7c1bd11be02097623b7becbd77c58c469ec2c060d1;
+both validated CPU/MPS reports durable BEFORE3e-5 rejection. NEWparentcache57/71;
+NEWfreshserving83/45 B1B8/196608Bitem/2warm5measured/RNGfinally,all9preflight.
+
+SOURCE complete forecast: all36studyweights18x640MiB=12079595520B plus NEW3
+prerequisitepairs2013265920B,512MiBrootmeta/128MiBsidecars/128MiBconsumerworkspace/
+8GiBreserve/2MiBentry=>floor23490199552B/extra2GiBtarget25637683200B. This is NEW
+own accounting, not credit from an older equal-number floor or retired weights.
+Working3311381008B/MPS3.5GiB;worker852.431s/parent65.922s/all9serving240s/
+primary120+independent120+closure120 =>17130.354s totalforecast. All consumers/
+actualfullhistory serialization/resources still UNQUALIFIED. Fullworkers7200s,
+proof/freshserving600s,CPU120s/RSS4GiB/MPS6GiB/reserve8GiB unchanged. ~35.73GB
+free covers forecast;no storageblock/cleanup/deletion credit. If proof outputs
+need more than3pairs, expand forecast BEFOREexecution;no hidden/partial budget.
+
+NEXT: NEW genuine fullhorizon state/config/selection-statistics/serving/resource
+proof and fixture-role census SOURCE/CASES/ADMISSION per handoff. No fake1200step
+counts/borrowed weights/old fixtures/bootstrap/census replay. No new numerical
+worker active. All12real FFN3355182476B/all9generatedFFN3012754027B and all older
+selected/fresh/screens/prerequisites/source/log/config/guard/STOP/failed/partial/
+retirement evidence protected. No new weight/deletion/retirement eligibility.
+Native incumbent/holdout unchanged. This is LOCAL FFN followup, not broad or
+interaction credit; preparation is not numerical exploration. Prior current
+entries below are historical stages, and retain their original closed evidence.
+
 # Real FFN four/twenty prerequisites: closed accepted
 
 Original relu-squared-worker-seed-census001/source001 and single

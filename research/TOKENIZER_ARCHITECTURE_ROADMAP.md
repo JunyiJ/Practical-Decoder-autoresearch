@@ -1821,3 +1821,28 @@ not a squared independent GLU gate. PriorungatedSiLUnegative remains contrary,
 unpooled;publishedgainsnotlocal. LOCALFFNfollowup/carrybroad-interactionforward.
 No actualmodel/scientificroles/panelbudget. Read TOKENIZER_RELU_SQUARED_PREPARATION.md
 and post-projection-boundary-001/evidence-review.md/direction001.json.
+
+## Squared-ReLU full-horizon design and source boundary
+
+The own FFN tiny/generated/serialized and real4/twenty prerequisites are closed
+accepted; all12 real RAW/H2003355182476B and9generated3012754027B are protected.
+These establish declared correctness/cost, not final quality or an explanation
+for the old incomplete projection panel. No old fixtures, roles or scores replay.
+
+The next evidence-grounded boundary re-read original contrary ungatedSiLU and
+gated activation results, incumbent/current roadmaps and Primer2109.08668v1
+§3/Fig6/§4/A.7/A.8 plusGLUVariants2002.05202v1§2/3.1/Table1/3.2. Prospective
+nine equal finite LR screens followed bynine fresh runs compare ungatedReLU²
+against BOTH genuine nativeSwiGLU and matchedungatedSiLU. OnlyReLU² is candidate;
+all strict two-control quality gates remain. No cost/control/partial fallback.
+This is LOCALFFN followup; broad/interaction allocation carried, no preparation
+counted as numerical exploration. Read TOKENIZER_RELU_SQUARED_PREPARATION.md and
+relu-squared-quality-preparation-001/evidence-review001.md/quality-design-source001.
+
+Ten new own scientific source modules64197B are STATIC-only reviewed. Runtime1211
+plusbothmetadatareviewers=>1213bindings immutable. Source001 wrong-key string
+check failed; source002 structural AST review passed byte-identical implementations.
+No Torch/NumPy/model/corpus/RNG/bootstrap or other numerical execution. Forecast
+target25637683200B fits~35.73GB, butactualfullhorizon state/history/EMA41/selection/
+statistics/serving/resources/census still need NEW sources/cases/admission. No25
+scientific role values, quality freeze or launch. Next full-horizon-proof-handoff001.

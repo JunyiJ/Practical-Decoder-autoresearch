@@ -1,0 +1,98 @@
+{
+  "category": "LOCAL FFN followup;carry broad/interaction allocation forward;preparation not numerical exploration",
+  "comparison": {
+    "arms": [
+      "native_swiglu",
+      "ungated_silu",
+      "ungated_relu_squared"
+    ],
+    "blocks": [
+      2048,
+      4096,
+      8192
+    ],
+    "candidate": "ungated_relu_squared",
+    "confidence": "conditional trainedseeds/reusedvaltext,not holdout/populationseed",
+    "draws": 2000,
+    "ema_snapshots": 41,
+    "fresh_runs": 9,
+    "fresh_triples": 3,
+    "gates": "mean<-.02 againstEACHcontrol,all3negativeeach,ALL6conditionalupperboundsnegative",
+    "generator": "PCG64",
+    "lrs": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "quantile": 0.9916666666666667,
+    "role_schema": "4cohorts x6distinct initializer/private_ungated/train/eval/globalCPU/globalMPS roles +1bootstrap =25;no numbers assigned",
+    "screens": 9,
+    "selector": "Independent per-arm minimum complete H200MPSCE;lowerLRexacttie;no gridextension or screen-scorepooling",
+    "steps_each": 1200,
+    "targets_each": 1228800
+  },
+  "evidence_review": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/relu-squared-quality-preparation-001/evidence-review001.md",
+    "sha256": "2e00d29ac17df58096b9e7990298d6b186d360be0eed06fd294a6f5b2b134f76"
+  },
+  "hypothesis": "Two-matrix ungatedReLU-squared beats BOTH fresh nativeSwiGLU and matched ungatedSiLU under equal finite allowance;strict all-control gates required.",
+  "literature": [
+    {
+      "sections": "3SquaredReLU/Figure6discussion;4comparator;A.7/A.8",
+      "url": "https://arxiv.org/html/2109.08668v1"
+    },
+    {
+      "sections": "2eq4-6;3.1/Table1;3.2",
+      "url": "https://arxiv.org/html/2002.05202v1"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/ffn-structure-preparation-001/quality001-final-review.json",
+      "sha256": "53e3872f4fce6e49e9c33c840b7881f67a025c0a5ed31b80ed95ff54e35b99c6"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/activation-preparation-001/inference-recovery002-closed-review.json",
+      "sha256": "6180dc10f79eb2211d07a2e6ddb474a03076326f17d8c5a02e90112301fb0ff3"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-worker001-review.json",
+      "sha256": "87d0cce63a4d83fb4bd14ea15bbe533b7ff1c522804980d5daacfa4051db545c"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-pilot001-review.json",
+      "sha256": "07f25d7aa74f28213fb84045678f2792a465b7c00a3cd9018a5edf2cd9c5d645"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-projection-boundary-001/relu-squared-prerequisite-chain001-closure001/review.json",
+      "sha256": "fdfeb06a5101a640228a208bb50a7b63a4632d99e92761d160219e23f5e798c6"
+    }
+  ],
+  "no_quality_freeze_or_gate_or_role_assignment_or_launch_admitted": true,
+  "prospective_cost": {
+    "all36_weights_bytes": 12079595520,
+    "closure_margin_seconds": 120.0,
+    "complete_panel_seconds": 17130.353904906,
+    "consumer_workspace": 134217728,
+    "entry": 2097152,
+    "floor": 23490199552,
+    "h200_cap": 134217728,
+    "independent_stats_seconds": 120.0,
+    "mps_bytes": 3758096384,
+    "new_prerequisite_3pair_allowance": 2013265920,
+    "no_old_payload_deletion_or_hardlink_credit": true,
+    "not_measured_or_execution_qualified": true,
+    "pair_cap": 671088640,
+    "parent_seconds": 65.92231799999999,
+    "primary_stats_seconds": 120.0,
+    "raw_cap": 536870912,
+    "reserve": 8589934592,
+    "root_metadata": 536870912,
+    "sidecar_metadata": 134217728,
+    "target": 25637683200,
+    "whole9_serving_seconds": 240.0,
+    "worker_seconds": 852.430676717,
+    "working_bytes": 3311381008
+  },
+  "status": "SOURCE_DESIGN_ONLY_NOT_SCIENTIFIC_FREEZE"
+}
