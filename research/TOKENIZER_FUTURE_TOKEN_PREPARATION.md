@@ -1,3 +1,21 @@
+# Attention namespace trace001 partial: next unread FFN-norm edge
+
+Read6 NEW attention initializers: epsilon -> final-bias -> beta2 ->
+readout-centering -> branch-scale -> local-mix -> FFN-norm(next UNREAD).
+No local MLA file in these directories; local-mix cache.py exists but was NOT
+read. Static MLA/cache ownership remains incomplete; no unseen-source/import/
+runtime/qualification claim. Existing joint-head/cost forecast stays conditional.
+
+Read [source review and exact next action](tokenizer-evidence/future-token-preparation-001/top-attention-owner-source001.md),
+[provenance](tokenizer-evidence/future-token-preparation-001/top-attention-owner-source001-provenance.json),
+[completed016](tokenizer-evidence/future-token-preparation-001/continuation-completed016.json).
+Continue NEW source from FFN-norm attention/__init__.py; no prior30source or
+closed proof/audit repeats. Resolve MLA then cache source if slots remain before
+minimal independent TOP source plan. No model code/runtime/roles/panel admission.
+Future1255/modelproof1236/scientificruntime1211 unchanged; no new executables,
+numerical work, weights/deletions or capacity blocker. Native/holdout/future_two
+panel unchanged; no numerical worker launched. Earlier entries historical.
+
 # Body graph and prospective category cost prepared; attention owner next
 
 Read6 NEW source versions26,592B: selected local-mix blocks/FFN SwiGLU, ordinary
