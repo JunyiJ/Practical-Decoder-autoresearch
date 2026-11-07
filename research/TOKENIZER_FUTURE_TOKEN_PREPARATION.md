@@ -1,3 +1,33 @@
+# TOP consumer source boundary: optimizer constraints resolved; GPT owner next
+
+Read6actual incumbent wrapper/optimizer/trainer sources53,825B within the bound.
+Inherited optimizer enforces exact44AdamW groups (43fixed-unit); adding a readout
+cannot use that wrapper unchanged. Prefixing the native model also defeats its
+transformer.h.* hidden-Muon name rule. Trainer order is full loss backward,
+complete-model clip, scheduled step, EMA. New head needs explicit identity and
+group registration; no fake cfg or appended-group bypass is admitted.
+
+A distinct conditional TOP design shares all4blocks/final h and adds a full
+independent readout, with a NEW copied-readout-next control plus fresh native.
+Written represented-mass gradients and copied-readout clipping algebra are
+resolved conditionally; no numerical calls. This differs from the old copied
+block/shared-W future_two design and does not rescue its closed proof.
+
+The six-file bound ended before the actual GPT forwarding definition. Physical
+runtime/models/gpt.py is absent at its imported path; package source resolution
+must be traced before claiming hidden-state access, forward multiplier, CE mean
+or inference projection. Full graph/state/serialization/time cost remains
+unadmitted; known structural terms are recorded as partial accounting only.
+No model source/fixture/roles/panel/adoption admitted. Read [review](tokenizer-evidence/future-token-preparation-001/top-consumer-design001.md),
+[provenance](tokenizer-evidence/future-token-preparation-001/top-consumer-design001-provenance.json),
+[completed012](tokenizer-evidence/future-token-preparation-001/continuation-completed012.json).
+
+Next [NEW-source native package/GPT trace](tokenizer-evidence/future-token-preparation-001/top-native-forward-source-handoff001.md)
+continues that explicit unresolved question; do not reread the six sources or
+replay closed proofs. Future1255/closedmodelproof1236/scientificruntime1211
+unchanged, zero new executable files/numerical exploration/weights/deletions.
+Native/holdout/future_two prospective panel unchanged; no numerical worker.
+
 # Supplied-logit proximity objective CLOSED_ACCEPTED finite component only
 
 Original new proof passed30 positives/116 rejection transactions/10 CPU-MPS loss
