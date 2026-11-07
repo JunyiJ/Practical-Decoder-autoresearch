@@ -1,0 +1,142 @@
+{
+  "status": "exact_design_qualified_for_tiny_generated_component_only",
+  "observed_at": "2026-11-07T04:27:06.605107+00:00",
+  "direction": "readout-mixture-direction001.json",
+  "arms": [
+    "native",
+    "context_mix2",
+    "probability_mix2"
+  ],
+  "backbone": "Genuine native GPT2V50257/4xD256 MLA64/head32x8/SwiGLU672SiLU/context128B8/final learned affine LN/block RMS; one untied shared head W[V,D]; divisor4. Native common construction/initial weights and CPU draws exact.",
+  "equations": [
+    "z=final_affine_LN(backbone_hidden)",
+    "h_k=tanh(A_k z), A[2,256,256], no bias",
+    "log_pi=log_softmax(Rz), R[2,256], no bias",
+    "native nll=F.cross_entropy(Wz/4,target)",
+    "context_mix2: hbar=sum_k softmax(Rz)_k h_k; nll=F.cross_entropy(W hbar/4,target)",
+    "probability_mix2 target nll=-logsumexp_k(log_pi_k-F.cross_entropy(W h_k/4,target,reduction=none)); mean ALL targets",
+    "full distribution logp=logsumexp_k(log_pi_k+log_softmax(W h_k/4)); probability mixing is never logit averaging"
+  ],
+  "initialization": {
+    "contexts": "Two independent standard linear Uniform[-1/sqrt256,+1/sqrt256] matrices via ONE private CPU generator after genuine native construction; create Parameters with torch.empty and explicit generator fills, avoiding default global-RNG construction followed by overwriting.",
+    "gate": "R zero initialized without RNG; pi initially1/2. Independent A maps break symmetry; component/integration must check genuine nonzero gradients before numerical quality use.",
+    "roles": "No initializer or quality seed assigned/used now. Future private initializer uses an explicit domain-separated derived seed from an audited trajectory-initializer role; exact derivation/census frozen before use. Native/global CPU-MPS RNG and private samplers must be invariant to extra parameter construction.",
+    "no_grid": true
+  },
+  "optimizer": {
+    "native": {
+      "parameters": 28492416,
+      "tensors": 88,
+      "muon_groups": 44,
+      "adamw_groups": 44
+    },
+    "mixture": {
+      "parameters": 28624000,
+      "tensors": 91,
+      "muon_groups": 46,
+      "adamw_groups": 45,
+      "context_elements": 131072,
+      "router_elements": 512,
+      "extra_FP32_parameter_bytes": 526336,
+      "context_rule": "Two width-to-width context maps use explicit new policy: matrix Muon eta/sqrt(D/64)=eta/2, match_rms_adamw. Not claimed optimal or paper-equivalent.",
+      "router_rule": "Fixed2-output R uses router-style AdamW nominal eta,betas(.9,.999),eps1e-6. All learned parameters retain independent decay.00006.",
+      "additional_pair_tensor_bytes": 2107392,
+      "accounting": "Context model+EMA+Muonmomentum+H200=16B/element; router model+EMA+Adamfirst/second+H200=20B/element. Excludes history/serialization/temporaries; counting-stream proof required."
+    }
+  },
+  "contracts": {
+    "model": "NEW own readout_model/backbone_template config and namespace. Construct a genuine unmodified native child and validate it. Own outer forward/parameter grouping verifies nested backbone prefix, unchanged common88 order plus A/R. Never fake legacy cfg.model, disable validators or edit frozen1084 sources.",
+    "loss": "Own tagged logits/log-probability result and per-target NLL contract. Native/MoC use actual F.cross_entropy; MoS uses stable target-only mixture. Do not feed probability mixtures to an old logit scorer or apply second softmax.",
+    "scorer": "Own complete34278-native-target CPU AND MPS validation,111536bytes/original target IDs, own policy/hash before use. MPS primary; holdout closed.",
+    "transport": "Own RAW/H200 arm/distribution/context-init/grouping/target identity; complete optimizer/EMA/RNG/private samplers/clipping/ALL88or91 exposure. Transactional foreign-arm rejection. No gate/MoE checkpoint masquerade.",
+    "inference": "Native cache196608B/item remains body-owned; readout acts on current hidden only. Own full/cache/resetB1/8, normalized probabilities and serving consumer. No generic old logits API shortcut."
+  },
+  "resources": {
+    "logits_FP32_each": 205852672,
+    "two_components": 411705344,
+    "conservative_extra_three_dense_arrays": 617558016,
+    "training": "Two per-component CE vectors plus target logsumexp, avoiding a full mixture N×V tensor during training. Autograd still retains per-component softmax state; actual full-model peak must be measured.",
+    "limits": "One local worker/four threads,RSS4GiB/MPS6GiB/reserve8GiB,strict fallback0/fastmath0. Tiny component does not qualify full-model memory.",
+    "axis": "Equal native updates/targets/seed roles and finite LR allowance, not equal FLOPs/time. MoS needs two vocabulary projections; actual pilots required."
+  },
+  "complete_prospective_retention": {
+    "parts_bytes": {
+      "six_prerequisite_pairs": 3858759680,
+      "eighteen_quality_pairs": 11576279040,
+      "metadata": 536870912,
+      "sidecars": 67108864,
+      "prerequisite_metadata": 67108864,
+      "reserve": 8589934592,
+      "external_growth_envelope": 2147483648,
+      "entry": 2097152
+    },
+    "floor_bytes": 26845642752,
+    "target_plus_2GiB": 28993126400,
+    "capacity_observation": {
+      "observed_at": "2026-11-07T04:27:06.605107+00:00",
+      "free_bytes": 66994397184,
+      "external_nonblocking_lock_acquired": true,
+      "deletions": 0,
+      "inventory_needed": false
+    },
+    "covered": true,
+    "keep_all_24_chain_pairs": true,
+    "old_payload_or_future_deletion_credit": false,
+    "scope": "Conservative concept envelope, NOT serialization acceptance, frozen scientific budget or preflight. New target covered; zero deletions/inventory needed."
+  },
+  "future_quality_not_admitted": {
+    "screens": 9,
+    "fresh": 9,
+    "steps": 1200,
+    "training_targets": 1228800,
+    "h200_snapshots": 41,
+    "LRs": [
+      0.000625,
+      0.00125,
+      0.0025
+    ],
+    "fresh_shared_seeds": 3,
+    "serving_rows": 9,
+    "candidate_only": "probability_mix2",
+    "mean_delta_vs_EACH_control_less_than": -0.02,
+    "every_seed_negative": true,
+    "bounds": "2contrasts×2048/4096/8192 native targets;2000PCG64 shared indices;linear1-.05/6;NEW audited unused roles before freeze",
+    "guard_ceiling_seconds": 140520,
+    "ceiling_not_forecast": true,
+    "forecast": "Actual full-state four-update workers/twenty-update pilots, counting-stream1200 layout/statistical contracts and independent review before freeze. No partial panel or old-score pooling."
+  },
+  "tiny_component_admission": {
+    "scope": "Pure functions of literal z,W,A,R,target only. No model/optimizer/corpus/checkpoints/actual training/quality seeds/RNG draws.",
+    "bounds": {
+      "K": 2,
+      "N_max": 16,
+      "D_max": 8,
+      "V_max": 31,
+      "each_tensor_elements_max": 4096
+    },
+    "oracle": "Independent Python math.fsum/stable logsumexp forward AND analytic gradients for z,W,A,R. MoS responsibility r_k=pi_k*p_k(y)/p(y);dlogits_k=r_k*(p_k-onehot);dgate=pi-r. Propagate shared W/divisor4, tanh and context maps explicitly. MoC uses weighted context derivative and softmax gate chain.",
+    "cases": [
+      "CPU FP64 then CPU/MPS FP32 forward/gradient",
+      "signed nonconstant cases, unequal/extreme finite gate/logits",
+      "identical contexts MoS=MoC, component permutation invariance",
+      "sum exp(full logp)=1; gather full logp equals target-only NLL",
+      "at least one generated case discriminates MoS from MoC",
+      "invalid shapes/device/dtype/K/targets/nonfinite rejected before mutation",
+      "inputs/global CPU-MPS RNG unchanged"
+    ],
+    "tolerances": {
+      "CPU64_forward_atol": 1e-11,
+      "CPU64_gradient_atol": 1e-10,
+      "FP32_forward_atol": 0.000004,
+      "FP32_gradient_atol": 0.000004,
+      "FP32_rtol": 0.00004
+    },
+    "guards": "120s CPU/600s MPS;4GiB RSS/6GiB MPS/8GiB reserve/2MiB metadata. On guard/STOP failure close original command, no retry/rescue/tolerance change.",
+    "source": "Smallest NEW functional namespace plus own literal-oracle harness outside1084 frozen sources; pin exact source before first numerical execution.",
+    "next": "Implement minimal component and independent literal oracle; source/resource review then finite guarded proof. Full model/runtime/quality remain unqualified."
+  },
+  "numerical_updates": 0,
+  "checkpoint_loads": 0,
+  "new_scoring": false,
+  "new_quality_panel_admitted": false
+}
