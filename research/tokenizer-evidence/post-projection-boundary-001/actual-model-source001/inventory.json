@@ -1,0 +1,931 @@
+{
+  "arms": {
+    "native_swiglu": {
+      "adam_source_derived": 44,
+      "muon_source_derived": 44,
+      "optimizer_moment_elements_source_derived": 54232320,
+      "ordered_parameter_shapes": {
+        "lm_head.weight": [
+          50257,
+          256
+        ],
+        "transformer.h.0.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.0.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.0.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.0.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.0.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.0.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.0.attn.out.bias": [
+          256
+        ],
+        "transformer.h.0.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.0.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.0.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.ln1.weight": [
+          256
+        ],
+        "transformer.h.0.ln2.weight": [
+          256
+        ],
+        "transformer.h.0.mlp.linear_down.weight": [
+          256,
+          672
+        ],
+        "transformer.h.0.mlp.linear_gate.weight": [
+          672,
+          256
+        ],
+        "transformer.h.0.mlp.linear_up.weight": [
+          672,
+          256
+        ],
+        "transformer.h.1.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.1.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.1.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.1.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.1.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.1.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.1.attn.out.bias": [
+          256
+        ],
+        "transformer.h.1.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.1.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.1.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.ln1.weight": [
+          256
+        ],
+        "transformer.h.1.ln2.weight": [
+          256
+        ],
+        "transformer.h.1.mlp.linear_down.weight": [
+          256,
+          672
+        ],
+        "transformer.h.1.mlp.linear_gate.weight": [
+          672,
+          256
+        ],
+        "transformer.h.1.mlp.linear_up.weight": [
+          672,
+          256
+        ],
+        "transformer.h.2.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.2.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.2.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.2.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.2.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.2.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.2.attn.out.bias": [
+          256
+        ],
+        "transformer.h.2.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.2.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.2.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.ln1.weight": [
+          256
+        ],
+        "transformer.h.2.ln2.weight": [
+          256
+        ],
+        "transformer.h.2.mlp.linear_down.weight": [
+          256,
+          672
+        ],
+        "transformer.h.2.mlp.linear_gate.weight": [
+          672,
+          256
+        ],
+        "transformer.h.2.mlp.linear_up.weight": [
+          672,
+          256
+        ],
+        "transformer.h.3.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.3.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.3.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.3.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.3.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.3.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.3.attn.out.bias": [
+          256
+        ],
+        "transformer.h.3.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.3.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.3.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.ln1.weight": [
+          256
+        ],
+        "transformer.h.3.ln2.weight": [
+          256
+        ],
+        "transformer.h.3.mlp.linear_down.weight": [
+          256,
+          672
+        ],
+        "transformer.h.3.mlp.linear_gate.weight": [
+          672,
+          256
+        ],
+        "transformer.h.3.mlp.linear_up.weight": [
+          672,
+          256
+        ],
+        "transformer.ln_f.bias": [
+          256
+        ],
+        "transformer.ln_f.weight": [
+          256
+        ],
+        "transformer.wte.weight": [
+          50257,
+          256
+        ]
+      },
+      "parameters_source_derived": 28492416,
+      "tensors_source_derived": 88
+    },
+    "ungated_relu_squared": {
+      "adam_source_derived": 44,
+      "muon_source_derived": 40,
+      "optimizer_moment_elements_source_derived": 54232320,
+      "ordered_parameter_shapes": {
+        "lm_head.weight": [
+          50257,
+          256
+        ],
+        "transformer.h.0.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.0.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.0.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.0.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.0.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.0.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.0.attn.out.bias": [
+          256
+        ],
+        "transformer.h.0.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.0.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.0.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.ln1.weight": [
+          256
+        ],
+        "transformer.h.0.ln2.weight": [
+          256
+        ],
+        "transformer.h.0.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.0.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.h.1.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.1.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.1.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.1.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.1.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.1.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.1.attn.out.bias": [
+          256
+        ],
+        "transformer.h.1.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.1.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.1.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.ln1.weight": [
+          256
+        ],
+        "transformer.h.1.ln2.weight": [
+          256
+        ],
+        "transformer.h.1.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.1.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.h.2.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.2.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.2.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.2.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.2.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.2.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.2.attn.out.bias": [
+          256
+        ],
+        "transformer.h.2.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.2.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.2.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.ln1.weight": [
+          256
+        ],
+        "transformer.h.2.ln2.weight": [
+          256
+        ],
+        "transformer.h.2.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.2.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.h.3.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.3.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.3.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.3.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.3.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.3.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.3.attn.out.bias": [
+          256
+        ],
+        "transformer.h.3.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.3.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.3.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.ln1.weight": [
+          256
+        ],
+        "transformer.h.3.ln2.weight": [
+          256
+        ],
+        "transformer.h.3.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.3.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.ln_f.bias": [
+          256
+        ],
+        "transformer.ln_f.weight": [
+          256
+        ],
+        "transformer.wte.weight": [
+          50257,
+          256
+        ]
+      },
+      "parameters_source_derived": 28492416,
+      "tensors_source_derived": 84
+    },
+    "ungated_silu": {
+      "adam_source_derived": 44,
+      "muon_source_derived": 40,
+      "optimizer_moment_elements_source_derived": 54232320,
+      "ordered_parameter_shapes": {
+        "lm_head.weight": [
+          50257,
+          256
+        ],
+        "transformer.h.0.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.0.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.0.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.0.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.0.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.0.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.0.attn.out.bias": [
+          256
+        ],
+        "transformer.h.0.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.0.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.0.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.0.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.0.ln1.weight": [
+          256
+        ],
+        "transformer.h.0.ln2.weight": [
+          256
+        ],
+        "transformer.h.0.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.0.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.h.1.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.1.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.1.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.1.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.1.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.1.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.1.attn.out.bias": [
+          256
+        ],
+        "transformer.h.1.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.1.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.1.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.1.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.1.ln1.weight": [
+          256
+        ],
+        "transformer.h.1.ln2.weight": [
+          256
+        ],
+        "transformer.h.1.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.1.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.h.2.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.2.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.2.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.2.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.2.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.2.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.2.attn.out.bias": [
+          256
+        ],
+        "transformer.h.2.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.2.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.2.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.2.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.2.ln1.weight": [
+          256
+        ],
+        "transformer.h.2.ln2.weight": [
+          256
+        ],
+        "transformer.h.2.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.2.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.h.3.attn.dkv.bias": [
+          64
+        ],
+        "transformer.h.3.attn.dkv.weight": [
+          64,
+          256
+        ],
+        "transformer.h.3.attn.dq.bias": [
+          64
+        ],
+        "transformer.h.3.attn.dq.weight": [
+          64,
+          256
+        ],
+        "transformer.h.3.attn.kr.bias": [
+          32
+        ],
+        "transformer.h.3.attn.kr.weight": [
+          32,
+          256
+        ],
+        "transformer.h.3.attn.out.bias": [
+          256
+        ],
+        "transformer.h.3.attn.out.weight": [
+          256,
+          256
+        ],
+        "transformer.h.3.attn.qr.bias": [
+          256
+        ],
+        "transformer.h.3.attn.qr.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uk.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uk.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uq.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uq.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.attn.uv.bias": [
+          256
+        ],
+        "transformer.h.3.attn.uv.weight": [
+          256,
+          64
+        ],
+        "transformer.h.3.ln1.weight": [
+          256
+        ],
+        "transformer.h.3.ln2.weight": [
+          256
+        ],
+        "transformer.h.3.mlp.linear_down.weight": [
+          256,
+          1008
+        ],
+        "transformer.h.3.mlp.linear_up.weight": [
+          1008,
+          256
+        ],
+        "transformer.ln_f.bias": [
+          256
+        ],
+        "transformer.ln_f.weight": [
+          256
+        ],
+        "transformer.wte.weight": [
+          50257,
+          256
+        ]
+      },
+      "parameters_source_derived": 28492416,
+      "tensors_source_derived": 84
+    }
+  },
+  "kind": "source_only_scalar_shape_accounting_not_constructed_inventory",
+  "no_torch_imports_models_rng_or_optimizer_construction": true
+}

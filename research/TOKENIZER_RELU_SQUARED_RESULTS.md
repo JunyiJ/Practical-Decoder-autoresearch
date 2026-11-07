@@ -32,3 +32,12 @@ TOKENIZER_RELU_SQUARED_PREPARATION.md. Actual D256/V50257 model construction,
 generated correctness/state/resume/scoring/cache/pilots and any quality campaign
 need separate new source, correctness, resource and role gates. Old contrary FFN
 results remain unpooled. No full-model/scientific-panel budget is qualified.
+
+Actual model SOURCE preparation is now complete and pinned at
+post-projection-boundary-001/actual-model-source001. Four new sources add to1182
+bindings preserving1178 predecessors. Static AST/scalar shape accounting agrees
+with28492416 elements in each arm and88native/84ungated parameter tensors. No
+model/tensor/optimizer/RNG construction or generated numerical gate occurred.
+Next is NEW generated-proof/census source and full resource admission. Source
+inventory is not a measured model result; all runtime/state/quality claims remain
+unqualified. Existing tiny numerical results above are unchanged and closed.

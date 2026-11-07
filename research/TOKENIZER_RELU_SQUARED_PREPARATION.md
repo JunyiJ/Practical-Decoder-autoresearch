@@ -1,4 +1,36 @@
-# Ungated squared-ReLU: tiny component accepted; actual model source next
+# Ungated squared-ReLU: actual model source pinned, runtime unqualified
+
+Four NEW additive sources in relu_squared_model_v1/{__init__,contract,model,
+optimizer}.py are pinned by tokenizer-evidence/post-projection-boundary-001/
+actual-model-source001/sources.json. All1182 bindings preserve1178 predecessors.
+Read its source-only review/inventory/guard/STOP. Static AST and scalar shape
+accounting completed without importing Torch, constructing tensors/models or
+optimizers, drawing RNG, reading checkpoints/corpus or replaying any old fixture.
+This is SOURCE preparation, not actual-model correctness or quality evidence.
+
+Source-derived inventory: all arms28492416 parameter elements; native_swiglu
+88tensors/44Muon44AdamW; both ungated84/40Muon44AdamW. Every FFN has516096 matrix
+elements. Genuine native TRUE-config construction is first inside an isolated
+CPU initializer scope; an own tree retains common modules/native FFNs or replaces
+only ungated FFNs via paired private up/down initialization. No old validator is
+called with a foreign layout. Own signatures, ordered shape/type/storage checks,
+cache instance/epoch/position/reset checks, genuine CE/native logits, weight/RoPE
+preflight and full optimizer moment/exposure preflight are implemented in source.
+Optimizer load clones moments after preflight; its later resource budget must
+include that clone. None of this runtime behavior has executed or passed a gate.
+
+CURRENT NEXT: implement/review NEW generated actual-model proof and new-role
+census sources/plans; choose new literal generated IDs, independent genuine-native
+reference and fixed CPU/MPS/gradient/cache predicates BEFORE execution. Fully
+qualify actual working peak, optimizer-load clone, metadata, retained outputs,
+serialization, time, reserve8GiB and extra2GiB headroom. Census must admit new
+initializer/private roles before ANY model/RNG construction. No numeric roles
+assigned now. No generated proof, serialized state/resume, physical scorer,
+real4/20 pilot, quality panel/budget or adoption is admitted. Native and holdout
+unchanged. All1182 source bindings and closed commands remain immutable.
+
+The following tiny-gate and earlier preparation sections are historical; current
+next action is the new generated-proof source/resource/role admission above.
 
 Original tokenizer-evidence/post-projection-boundary-001/relu-squared-component001
 is CLOSED_ACCEPTED/no replay or retry. PlanSHA
