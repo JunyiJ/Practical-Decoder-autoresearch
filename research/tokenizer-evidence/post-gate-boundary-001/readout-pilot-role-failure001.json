@@ -1,0 +1,25 @@
+{
+  "status": "closed_failed_proposed_pilot_role_reuse_detected",
+  "at": "2026-11-07T05:35:26.627816+00:00",
+  "plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot-seed-census001/plan.json",
+    "sha256": "d571725269b5969e10096d71070bce4fe7555c6b8e1a274d3dcbbb55cf62d0f1"
+  },
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot-seed-census001/guard.json",
+    "sha256": "c76a2c6bcae399f6fe1f9851084489b42da11e3d80198f3f11c956c76f9c7f3f"
+  },
+  "terminal": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot-seed-census001/STOP",
+    "sha256": "056db35be7a24e5119cf00a859fa5365789c431ada6aaee0f9cc071087ff4e9b"
+  },
+  "inventory": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/post-gate-boundary-001/readout-pilot-seed-census001/inventory.jsonl",
+    "sha256": "ce256e36d5f29306c16cb3beb7b1a9faf28079695360e91f4343fa97dd84a800"
+  },
+  "reason": "At least one proposed role occurred in prior text; individual matches were not published before assertion. Do not infer exact role or rerun old census to reconstruct.",
+  "numerical_model_optimizer_rng_calls": 0,
+  "no_retry": true,
+  "no_source_changes": true,
+  "recovery": "Distinct new census002/new role namespace, binding this original failure; no reuse of rejected proposals."
+}
