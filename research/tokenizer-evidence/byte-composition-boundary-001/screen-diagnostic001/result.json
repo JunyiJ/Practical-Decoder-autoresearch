@@ -1,0 +1,221 @@
+{
+  "global_raw_minus_native_ce": 0.14320218788484324,
+  "holdout_encoded": false,
+  "holdout_scored": false,
+  "inputs": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/plan.json",
+      "sha256": "cd0dcc19ae94e09e3d14aa071043f6c89b498e482e942bc0bfeb65bda15d8ddd"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/00/acceptance.json",
+      "sha256": "ea8f3a3379e4a9b32de407f0ce3656aa5b0b078f512935033d9e2814c13a86ff"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/00/review.json",
+      "sha256": "346dc91fef8766706c9530894d9f957d142732e8e786022b6a12cef0bf6cd2ca"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/00/validation.json",
+      "sha256": "dd1dd3c337bed31f47b5cc218ae1b3648a46cb4c50ebc4cba0417ff9c6a3786d"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/01/acceptance.json",
+      "sha256": "32a47d5813e435d3e0e1ba9e24d4061cefdd3ad942fba04e916dc75c299ac9ff"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/01/review.json",
+      "sha256": "d2b2abc682c34f7ccb2e4355187bc68e275511a71556c02139499d22e08b2f80"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/01/validation.json",
+      "sha256": "267715515cf122bd4d857ce72b1c4c4e248dca2c128bd8886d90c07f7b0f4dcc"
+    },
+    {
+      "path": "data/raw/shakespeare.txt",
+      "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
+    }
+  ],
+  "kind": "post_aggregate_exploratory_first_rate_saved_loss_stratification",
+  "learning_rate": 0.000625,
+  "limitations": [
+    "One rate and one paired screening bundle; no rate selection or fresh confirmation.",
+    "Exploratory after aggregate result was known; no confirmatory subgroup claim or confidence interval.",
+    "Frequency and length correlate with difficulty, context and token identity; no causal attribution.",
+    "Preceding input is the last token of the model context, not the whole context.",
+    "Keep the complete frozen scientific panel and adoption criteria unchanged."
+  ],
+  "no_model_execution": true,
+  "no_new_losses": true,
+  "paired_screen_bundle": true,
+  "preceding_input_byte_length": [
+    {
+      "bin": "2-3",
+      "contribution_to_global_delta": 0.0909825228885456,
+      "native_ce": 5.173650217208733,
+      "raw_byte_ce": 5.486584084314249,
+      "raw_lower_loss_fraction": 0.3872165362231587,
+      "raw_minus_native_ce": 0.31293386710551535,
+      "targets": 9966
+    },
+    {
+      "bin": "4-7",
+      "contribution_to_global_delta": 0.042339013379239544,
+      "native_ce": 5.438162271618813,
+      "raw_byte_ce": 5.55403426368377,
+      "raw_lower_loss_fraction": 0.47281437125748504,
+      "raw_minus_native_ce": 0.11587199206495595,
+      "targets": 12525
+    },
+    {
+      "bin": "1",
+      "contribution_to_global_delta": 0.01949969310060459,
+      "native_ce": 3.9451614190556876,
+      "raw_byte_ce": 4.010251542738863,
+      "raw_lower_loss_fraction": 0.4352906806894537,
+      "raw_minus_native_ce": 0.065090123683175,
+      "targets": 10269
+    },
+    {
+      "bin": "8+",
+      "contribution_to_global_delta": -0.009619041483546508,
+      "native_ce": 5.041838115078737,
+      "raw_byte_ce": 4.824630273199285,
+      "raw_lower_loss_fraction": 0.6027667984189723,
+      "raw_minus_native_ce": -0.21720784187945139,
+      "targets": 1518
+    }
+  ],
+  "preceding_input_frequency": [
+    {
+      "bin": "10-99",
+      "contribution_to_global_delta": 0.09237481663327426,
+      "native_ce": 4.588982079270106,
+      "raw_byte_ce": 5.048350128676079,
+      "raw_lower_loss_fraction": 0.42216741621935294,
+      "raw_minus_native_ce": 0.4593680494059735,
+      "targets": 6893
+    },
+    {
+      "bin": "100-999",
+      "contribution_to_global_delta": 0.04728471549035663,
+      "native_ce": 4.673740508789385,
+      "raw_byte_ce": 4.858197715751767,
+      "raw_lower_loss_fraction": 0.4090133151246159,
+      "raw_minus_native_ce": 0.1844572069623813,
+      "targets": 8787
+    },
+    {
+      "bin": "1000+",
+      "contribution_to_global_delta": 0.027051501228818102,
+      "native_ce": 4.833851021707899,
+      "raw_byte_ce": 4.896525665785049,
+      "raw_lower_loss_fraction": 0.4364988171679621,
+      "raw_minus_native_ce": 0.06267464407714951,
+      "targets": 14795
+    },
+    {
+      "bin": "1-9",
+      "contribution_to_global_delta": 0.002285285649131161,
+      "native_ce": 5.901448219271085,
+      "raw_byte_ce": 5.928972822742947,
+      "raw_lower_loss_fraction": 0.5302178496134926,
+      "raw_minus_native_ce": 0.027524603471861534,
+      "targets": 2846
+    },
+    {
+      "bin": "0",
+      "contribution_to_global_delta": -0.02579413111673693,
+      "native_ce": 7.134372587612555,
+      "raw_byte_ce": 6.21047370943125,
+      "raw_lower_loss_fraction": 0.7262277951933125,
+      "raw_minus_native_ce": -0.9238988781813046,
+      "targets": 957
+    }
+  ],
+  "target_byte_length": [
+    {
+      "bin": "4-7",
+      "contribution_to_global_delta": 0.07587118482560509,
+      "native_ce": 6.682174222858192,
+      "raw_byte_ce": 6.889799360448173,
+      "raw_lower_loss_fraction": 0.4022034168928628,
+      "raw_minus_native_ce": 0.20762513758998014,
+      "targets": 12526
+    },
+    {
+      "bin": "1",
+      "contribution_to_global_delta": -0.058214524211641035,
+      "native_ce": 1.9465407785973463,
+      "raw_byte_ce": 1.7522202546002061,
+      "raw_lower_loss_fraction": 0.5323790047716428,
+      "raw_minus_native_ce": -0.1943205239971401,
+      "targets": 10269
+    },
+    {
+      "bin": "2-3",
+      "contribution_to_global_delta": 0.12231822440705999,
+      "native_ce": 4.897722023814483,
+      "raw_byte_ce": 5.318477076120073,
+      "raw_lower_loss_fraction": 0.3985950827897642,
+      "raw_minus_native_ce": 0.4207550523055898,
+      "targets": 9965
+    },
+    {
+      "bin": "8+",
+      "contribution_to_global_delta": 0.003227302863819192,
+      "native_ce": 10.108176448913746,
+      "raw_byte_ce": 10.18105226417461,
+      "raw_lower_loss_fraction": 0.4538866930171278,
+      "raw_minus_native_ce": 0.07287581526086578,
+      "targets": 1518
+    }
+  ],
+  "target_frequency": [
+    {
+      "bin": "100-999",
+      "contribution_to_global_delta": 0.028729667824329657,
+      "native_ce": 4.682456938922278,
+      "raw_byte_ce": 4.7945183355634216,
+      "raw_lower_loss_fraction": 0.38746017296313157,
+      "raw_minus_native_ce": 0.11206139664114383,
+      "targets": 8788
+    },
+    {
+      "bin": "1000+",
+      "contribution_to_global_delta": -0.06734265890784957,
+      "native_ce": 2.4717716092142603,
+      "raw_byte_ce": 2.31574784023533,
+      "raw_lower_loss_fraction": 0.5401824940858398,
+      "raw_minus_native_ce": -0.1560237689789299,
+      "targets": 14795
+    },
+    {
+      "bin": "10-99",
+      "contribution_to_global_delta": 0.18155754342611305,
+      "native_ce": 6.791505431351525,
+      "raw_byte_ce": 7.694498680562248,
+      "raw_lower_loss_fraction": 0.2517411491584446,
+      "raw_minus_native_ce": 0.9029932492107231,
+      "targets": 6892
+    },
+    {
+      "bin": "1-9",
+      "contribution_to_global_delta": 0.02556293582031528,
+      "native_ce": 10.439323176318965,
+      "raw_byte_ce": 10.74721014541551,
+      "raw_lower_loss_fraction": 0.41672522839072385,
+      "raw_minus_native_ce": 0.307886969096545,
+      "targets": 2846
+    },
+    {
+      "bin": "0",
+      "contribution_to_global_delta": -0.025305300278065188,
+      "native_ce": 14.214515838503464,
+      "raw_byte_ce": 13.308125992180038,
+      "raw_lower_loss_fraction": 0.8861024033437827,
+      "raw_minus_native_ce": -0.9063898463234259,
+      "targets": 957
+    }
+  ]
+}

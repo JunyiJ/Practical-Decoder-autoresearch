@@ -256,3 +256,17 @@ The controller automatically advanced to nonlexical-code slot02 at LR.000625,
 PID45576 under session22743/controller PID17021. Actual updates were observed,
 with no guard failures. Verify live state before acting; do not relaunch from
 these recorded IDs. Two of18trajectories are accepted; the incumbent is unchanged.
+
+## Existing first-rate losses: exploratory diagnostic
+
+[Screen diagnostic001](tokenizer-evidence/byte-composition-boundary-001/screen-diagnostic001/analysis.md)
+stratifies already saved native/raw-byte losses at LR.000625, after verifying
+accepted bindings and original train/validation IDs. The overall raw-byte loss
+increase is+.143202nat/token. Targets seen10–99times in training contribute
++.181558to that increase, offset partly by unseen and very frequent target groups.
+Loss after an input token absent from training improves by-.923899nat/token,
+which is consistent with shared input composition helping unseen tokens but is
+not causal or confirmatory evidence. The pending nonlexical control is already
+the discriminating comparison; no added model run is warranted. Fixed diagnostic
+bins, all counts and exact additive contributions are saved. Preserve the full
+scientific gates and complete all original screens/confirmations.
