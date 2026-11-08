@@ -1,0 +1,152 @@
+{
+  "kind": "optimizer_state_aggregation_live_device_argument_recovery",
+  "runner_sha256": "1af6046744f57493fe844985ac5de767c7f805cbf7db0e9457561b803932c2c2",
+  "basis": "Existing warmed step profile: five _validate_state calls cost0.14735s cumulative. Current model-v5 optimizer method is unchanged. Aggregation may reduce scalar device waits; not kernel attribution.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/recipe.json",
+      "size": 14411,
+      "sha256": "faa482ec5f71607451760a7159d922b305264a3f459872ca22d8930cfed3dc19"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-source001/source-map.json",
+      "size": 2262,
+      "sha256": "f287a52d58f497e974478788ea7ebe83dce6e7a881ea4ef4f77c6b33ff3b233d"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/hash-baseline-profile001/result.json",
+      "size": 340777,
+      "sha256": "88180d535f6ea21c621120b83abace6e5f003a19118ae6ad8f970b25a134a9ea"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime001/run.py",
+      "size": 13953,
+      "sha256": "ec35ccb2260399f1fb7b532ddc11b15544f14eac764a1f75f13f1a6920b91df6"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime001/plan.json",
+      "size": 3285,
+      "sha256": "a8abf4e5032f1a2c993568d64a2f7a5588f0ce8e50a37613853ef10d93c5fe75"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime001/failure.json",
+      "size": 1862,
+      "sha256": "bfba0e8b98017c9fd8e94923488f30f9e4e7d888f536ce3c4deb323575f476f9"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime001/guard.json",
+      "size": 490,
+      "sha256": "71cb7904ef155c63c2aeed7d0f131c2bfff120c273ef1c1ccd294e4d05e657d9"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime001/STOP",
+      "size": 779,
+      "sha256": "5e0d62764e122dcd6de1cbb3138285bd27f1dd5ec38c5cf4a3ff36eba57d13ad"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime001/cpu.json",
+      "size": 3914,
+      "sha256": "fdf12687a94e4c7edfa0a0ede60370326879b8925b6f0dd4be9d4a8638abd522"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime002/run.py",
+      "size": 14011,
+      "sha256": "bac86deba309cd4c6f236e68b295321d2d91b9867c9883a48932cab4a28e2335"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime002/plan.json",
+      "size": 5790,
+      "sha256": "5197fa79e5e9cf4552f7a4c7f1f377bbb06b950f2bf446dc00bbf66ff620f314"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime002/failure.json",
+      "size": 1907,
+      "sha256": "8a7d08aeee7a404f4d9e1f296952be86e9041ac2843e8524c63acdc95423dc4a"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime002/guard.json",
+      "size": 477,
+      "sha256": "bac303ae33b801b9f57e40758c37b6b4accd1487a1c216e3ee01b1a9ab7b58de"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime002/STOP",
+      "size": 552,
+      "sha256": "53e8b0ec198271caeae2aa39e9187de558af4bf541f727eb251bff7875eef3ae"
+    }
+  ],
+  "state": "Accepted first-fresh slot10 RAW at1200updates, verified by receipt and existing numerical validator. CPU transport changes backend metadata only. Each implementation owns separate cloned optimizer state and shares the same model for read-only checks. No update succeeds or is requested on a valid state.",
+  "invalid_cases": [
+    "nan_momentum",
+    "inf_exp_avg",
+    "minus_inf_exp_avg_sq",
+    "negative_exp_avg_sq",
+    "nan_cpu_step",
+    "wrong_cpu_step",
+    "wrong_shape",
+    "missing_field",
+    "parameter_alias",
+    "foreign_key"
+  ],
+  "fixed_checks": "Both CPU/MPS implementations accept lazy empty and saved populated state, reject all ten fixed corruptions through step() before any parameter/state/gradient mutation, and accept exact restoration. Global RNG unchanged.",
+  "timing": "Two warmups and seven alternating paired calls per backend, separately state-only and complete optimizer validation. Explicit MPS synchronization boundaries; preserve all samples.",
+  "prospective_gate": "Correctness required; MPS state-only median candidate/reference<=0.8, complete-validation median<=0.95, and at least5/7 complete-validation paired wins. No adoption before integrated exact numerical comparison.",
+  "resource_budget": {
+    "timeout_seconds": 160.5057494159555,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 2097152,
+    "free_bytes": 15474053120
+  },
+  "roles": "Historical identity reconstruction and read-only saved-state evaluation only; no new training, sampler roles or quality scoring.",
+  "interpretation_limits": [
+    "Single local validator microbenchmark, not training throughput or quality gain.",
+    "Multi-fault first-error ordering may differ; all original predicates and failure-before-mutation retained.",
+    "Standalone subclass intentionally unqualified for exact-type training/checkpoint consumers.",
+    "No replay, weakened gates or replacement of unfavorable cases."
+  ],
+  "recovery": {
+    "classification": "Harness checkpoint transport metadata",
+    "evidence": "Original CPU row finished with20 rejection checks. The original RAW backend is mps:0; MPS payload was rewritten to mps and failed the exact numerical backend predicate before any MPS timing.",
+    "correction": "Transport backend metadata uses the actual model parameter device string. All numerical values, implementations, fixed cases, order and thresholds unchanged. Copy CPU result byte-for-byte; execute only unfinished MPS phase.",
+    "exact_runner_replacements": [
+      [
+        "timeout_seconds=180",
+        "timeout_seconds=164.32180483289994"
+      ],
+      [
+        "            cases = []\n            for backend in ('cpu', 'mps'):",
+        "            cases = [read(OUT/'cpu.json')]\n            for backend in ('mps',):"
+      ],
+      [
+        "payload = dict(raw['numerical'], backend=backend)",
+        "payload = dict(raw['numerical'], backend=str(next(model.parameters()).device))"
+      ]
+    ],
+    "original_elapsed_charged_seconds": 15.678195167100057,
+    "no_training_roles_needed": true
+  },
+  "recovery_second": {
+    "classification": "Harness direct private-validator argument",
+    "evidence": "Full reference/candidate validate() and saved-state equality passed on MPS. Direct state-only warmup passed torch.device(mps), which differs from the actual mps:0 state device. No MPS measured calls or invalid-state cases ran.",
+    "correction": "Use the actual parameter device in the direct _validate_state call, matching ordinary validate(). Complete inspection found no remaining torch.device(backend) arguments.",
+    "exact_runner_replacements": [
+      [
+        "timeout_seconds=164.32180483289994",
+        "timeout_seconds=160.5057494159555"
+      ],
+      [
+        "optimizer._validate_state(torch.device(backend))",
+        "optimizer._validate_state(next(model.parameters()).device)"
+      ]
+    ],
+    "charged_previous_elapsed_seconds": 19.494250584044494,
+    "cpu_row_carried_unchanged": true
+  }
+}

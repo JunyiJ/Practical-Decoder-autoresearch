@@ -1,0 +1,33 @@
+{
+  "original": {
+    "path": "research/byte_input_model_v5/optimizer.py",
+    "size": 8342,
+    "sha256": "40a23c3b33afdac68069ef99c1c483d72c25f7bc55b0b0c6d46a47f2e6024a08"
+  },
+  "candidate": {
+    "path": "research/byte_input_batched_optimizer_state_v1.py",
+    "size": 3865,
+    "sha256": "8ca336b73a3574322f935a54ad6570c9effc99204043199f8c4b6c8f95394e4e"
+  },
+  "method": "_validate_state",
+  "exact_replacements": [
+    [
+      "        storages = {p.untyped_storage().data_ptr() for _, p in self._items}",
+      "        finite_checks, nonnegative_checks = [], []\n        storages = {p.untyped_storage().data_ptr() for _, p in self._items}"
+    ],
+    [
+      "                              tuple(value.shape) == (() if scalar else tuple(parameter.shape)) and\n                              bool(torch.isfinite(value).all()), 'Finite correctly shaped child state')",
+      "                              tuple(value.shape) == (() if scalar else tuple(parameter.shape)),\n                              'Finite correctly shaped child state')"
+    ],
+    [
+      "                    if scalar:\n                        C.require(value.item() == self._steps, 'Exact completed Adam step')\n                    elif name == 'exp_avg_sq':\n                        C.require(bool((value >= 0).all()), 'Nonnegative Adam second moment')",
+      "                    if scalar:\n                        C.require(bool(torch.isfinite(value).all()), 'Finite correctly shaped child state')\n                        C.require(value.item() == self._steps, 'Exact completed Adam step')\n                    else:\n                        finite_checks.append(torch.isfinite(value).all())\n                        if name == 'exp_avg_sq':\n                            nonnegative_checks.append((value >= 0).all())"
+    ],
+    [
+      "                    storages.add(address)\n",
+      "                    storages.add(address)\n        if finite_checks:\n            C.require(bool(torch.stack(finite_checks).all()), 'Finite correctly shaped child state')\n        if nonnegative_checks:\n            C.require(bool(torch.stack(nonnegative_checks).all()), 'Nonnegative Adam second moment')\n"
+    ]
+  ],
+  "reverse_mapping_exact": true,
+  "runtime_qualified": false
+}

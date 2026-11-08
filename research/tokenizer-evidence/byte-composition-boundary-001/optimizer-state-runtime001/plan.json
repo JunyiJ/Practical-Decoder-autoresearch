@@ -1,0 +1,59 @@
+{
+  "kind": "optimizer_state_aggregation_read_only_comparison",
+  "runner_sha256": "ec35ccb2260399f1fb7b532ddc11b15544f14eac764a1f75f13f1a6920b91df6",
+  "basis": "Existing warmed step profile: five _validate_state calls cost0.14735s cumulative. Current model-v5 optimizer method is unchanged. Aggregation may reduce scalar device waits; not kernel attribution.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/recipe.json",
+      "size": 14411,
+      "sha256": "faa482ec5f71607451760a7159d922b305264a3f459872ca22d8930cfed3dc19"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-source001/source-map.json",
+      "size": 2262,
+      "sha256": "f287a52d58f497e974478788ea7ebe83dce6e7a881ea4ef4f77c6b33ff3b233d"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/hash-baseline-profile001/result.json",
+      "size": 340777,
+      "sha256": "88180d535f6ea21c621120b83abace6e5f003a19118ae6ad8f970b25a134a9ea"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "state": "Accepted first-fresh slot10 RAW at1200updates, verified by receipt and existing numerical validator. CPU transport changes backend metadata only. Each implementation owns separate cloned optimizer state and shares the same model for read-only checks. No update succeeds or is requested on a valid state.",
+  "invalid_cases": [
+    "nan_momentum",
+    "inf_exp_avg",
+    "minus_inf_exp_avg_sq",
+    "negative_exp_avg_sq",
+    "nan_cpu_step",
+    "wrong_cpu_step",
+    "wrong_shape",
+    "missing_field",
+    "parameter_alias",
+    "foreign_key"
+  ],
+  "fixed_checks": "Both CPU/MPS implementations accept lazy empty and saved populated state, reject all ten fixed corruptions through step() before any parameter/state/gradient mutation, and accept exact restoration. Global RNG unchanged.",
+  "timing": "Two warmups and seven alternating paired calls per backend, separately state-only and complete optimizer validation. Explicit MPS synchronization boundaries; preserve all samples.",
+  "prospective_gate": "Correctness required; MPS state-only median candidate/reference<=0.8, complete-validation median<=0.95, and at least5/7 complete-validation paired wins. No adoption before integrated exact numerical comparison.",
+  "resource_budget": {
+    "timeout_seconds": 180,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 2097152,
+    "free_bytes": 15474053120
+  },
+  "roles": "Historical identity reconstruction and read-only saved-state evaluation only; no new training, sampler roles or quality scoring.",
+  "interpretation_limits": [
+    "Single local validator microbenchmark, not training throughput or quality gain.",
+    "Multi-fault first-error ordering may differ; all original predicates and failure-before-mutation retained.",
+    "Standalone subclass intentionally unqualified for exact-type training/checkpoint consumers.",
+    "No replay, weakened gates or replacement of unfavorable cases."
+  ]
+}

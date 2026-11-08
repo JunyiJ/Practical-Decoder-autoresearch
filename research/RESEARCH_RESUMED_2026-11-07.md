@@ -41,7 +41,8 @@ unchanged. It performed zero training updates and zero new quality evaluations.
 Accepted model, resume, averaging, inference and cache proofs were reused.
 
 [Measured costs](tokenizer-evidence/byte-composition-boundary-001/cost-analysis002/analysis.md)
-remain material: first-fresh raw-byte training updates take4.1538x native;
+describe the original pre-optimization implementation: first-fresh raw-byte
+training updates took4.1538x native;
 cached32-token decoding takes1.9010x at batch1 and1.9921x at batch8.
 The model has42.61% fewer trainable parameters, but no speed, memory or equal-time
 quality advantage is claimed. Timing scope and variability remain in that record.
@@ -68,8 +69,8 @@ panel without rewriting the original failure or its scientific rules.
 ## Current implementation improvement and next executable action
 
 The [hash-only recipe](tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json)
-was the first adopted equivalent implementation; the current batched-finite
-recipe is recorded below.
+was the first adopted equivalent implementation; subsequent implementations
+and the current optimizer-state recipe are recorded below.
 It keeps the same mathematical model, parameter count, first-fresh checkpoint,
 artifact formats and quality evidence. The loader is
 `research.byte_input_checkpoint_consumer_v2.load`, with the recipe's implementation,
@@ -115,7 +116,7 @@ validation is a plausible remaining overhead. Data checks used only0.0153seconds
 The profile does not attribute GPU kernels or establish sustained throughput.
 
 The [batched-finite implementation](tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/README.md)
-is now adopted. The active recipe is
+was adopted before the optimizer-state change below. Its historical recipe is
 [finite-batch-adoption001/recipe.json](tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/recipe.json),
 using checkpoint_consumer_v3 with bound implementation/plan/acceptance receipts.
 It retains the same selected weights, mathematical model and scientific evidence.
@@ -137,11 +138,36 @@ exactly. This is local short-recipe timing, not a confidence interval or1200-ste
 throughput claim. Integration roles62100800001/2 and timing roles62100900001/2 are
 reserved/closed. The public loader succeeded on MPS in1.3249seconds.
 
-Next inspect the unchanged optimizer._validate_state path, using the existing
-profile, for a bounded finite/nonnegative aggregation comparison. Preserve every
-state/ownership/structural check and failure-before-mutation behavior. No worker
-is active. Do not weaken the closed cropping gate, replay the quality panel, or
-retry timing until it becomes favorable.
+The current [optimizer-state implementation](tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/README.md)
+is adopted via [optimizer-state-adoption001/recipe.json](tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/recipe.json).
+It keeps model-v5, cache-v3 and selected-checkpoint loader-v3 unchanged and uses
+optimizer-v6/state-v5/training-v5/inference-v4 for training and export. The recipe
+separately binds these training sources; its existing model loader receipt remains
+valid. All original state checks remain; only device Boolean aggregation changes.
+
+The read-only saved-state comparison passed 40 fixed invalid-state rejection
+transactions before mutation. MPS state validation fell from 51.963 to 13.139 ms,
+and complete optimizer validation from 99.584 to 58.066 ms. CPU had no meaningful
+gain. Two device-name harness failures remain closed and preserved; completed
+CPU evidence was copied unchanged and only the unfinished MPS work continued.
+
+A prospectively frozen training comparison passed exact CPU update-one/update-two
+states and restore-at-one continuation to two. Twenty MPS paired updates matched
+all histories and complete final states exactly. Four warmup pairs and 16 measured
+pairs yielded **17.73% lower median latency**, 15/16 wins, and improvements in both
+averaging phases. All prospective timing gates passed. CPU roles 62101000001/2 and
+MPS roles 62101100001/2 are closed/reserved. This is short local timing, not a
+1,200-step speed claim or a new quality result. Separate speedups must not be multiplied.
+
+The new training/export consumers also restored the original accepted RAW exactly,
+reproduced its H200 export exactly and loaded its H200 parameters exactly, with
+no new updates or weight files. Total numerical work was 45 updates; no quality
+panel or holdout was scored. Full details, costs and failure lineage are linked above.
+
+No worker is active. Next refresh one warmed-step profile under the current adopted
+stack, with fresh sampler roles, before choosing the next optimization. The old
+profile predates both validation changes. Preserve closed cropping failures and
+scientific gates; do not repeat full quality tests for unchanged model math.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current

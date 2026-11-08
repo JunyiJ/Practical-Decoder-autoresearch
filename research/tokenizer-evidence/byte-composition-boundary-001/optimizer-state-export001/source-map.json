@@ -1,0 +1,24 @@
+{
+  "original": {
+    "path": "research/byte_input_inference_v3.py",
+    "size": 10006,
+    "sha256": "5d417a7ce6a82c418ed97338c6abb80ba86f4f8156b62edf03d8e19b863aa785"
+  },
+  "candidate": {
+    "path": "research/byte_input_inference_v4.py",
+    "size": 10006,
+    "sha256": "10e4a484cc02e7375bcaad813104c58fe28d5e1e8d8b6fff6741adf23f766942"
+  },
+  "exact_replacements": [
+    [
+      "from research import byte_input_training_v4 as training",
+      "from research import byte_input_training_v5 as training"
+    ],
+    [
+      "from research import byte_input_state_v4 as numerical",
+      "from research import byte_input_state_v5 as numerical"
+    ]
+  ],
+  "changes_only_typed_training_state_imports": true,
+  "runtime_qualified": false
+}

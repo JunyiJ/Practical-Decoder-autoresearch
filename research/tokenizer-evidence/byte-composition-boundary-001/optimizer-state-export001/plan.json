@@ -1,0 +1,49 @@
+{
+  "kind": "optimizer_state_saved_artifact_interoperation",
+  "runner_sha256": "af1e79189577ec81b35c79400d566e023cc88f798ce14c5311f113ab603dbd23",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-export001/source-map.json",
+      "size": 741,
+      "sha256": "e248b92520a81e95bd65b0b8ef5ccf373c88c7189092cdf9c14c85400e86d6bc"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/recipe.json",
+      "size": 14411,
+      "sha256": "faa482ec5f71607451760a7159d922b305264a3f459872ca22d8930cfed3dc19"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-integration-source001/source-map.json",
+      "size": 8657,
+      "sha256": "874211fda402b856730b1f587694d97a43be5f517b1a1ffc73e04e02f1b57e16"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-training001/result.json",
+      "size": 4299,
+      "sha256": "a85c6ca9a3ef685900ef625f80e8d9491393efe79a0f48fc7d4cb66e8ccec8df"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-training001/guard.json",
+      "size": 404,
+      "sha256": "cb915035b5132c61e7a74f327345c40b739d831055984e61512850a48e7e9d33"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "fixed_checks": "Restore accepted RAW in new training-v5/optimizer-v6, capture and compare complete state exactly to saved RAW including41averages and1200steps. Export H200 in memory through inference-v4 and compare exactly with original saved H200. Load original H200 through inference-v4 and compare every parameter. Restore caller RNG after intentional checkpoint restoration.",
+  "source_change": "Only inference training-v5/state-v5 imports; model-v5 and cache-v3 unchanged. Existing public selected-checkpoint loader-v3 stays valid.",
+  "roles": "Historical identity and saved samplers only; no new sampling, optimizer updates, quality scoring or weight files.",
+  "resource_budget": {
+    "timeout_seconds": 90,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 4194304,
+    "free_bytes": 15476551680
+  },
+  "acceptance": "All exact predicates pass; any scientific/numerical difference closes this attempt without tolerance relaxation."
+}

@@ -1,0 +1,76 @@
+{
+  "pairs": [
+    {
+      "original": {
+        "path": "research/byte_input_model_v5/optimizer.py",
+        "size": 8342,
+        "sha256": "40a23c3b33afdac68069ef99c1c483d72c25f7bc55b0b0c6d46a47f2e6024a08"
+      },
+      "candidate": {
+        "path": "research/byte_input_optimizer_v6.py",
+        "size": 8832,
+        "sha256": "ae81966497d1a6168ac428a033df33ba995b19d2e92a66980ba21be4a308e3ff"
+      },
+      "exact_replacements": [
+        [
+          "from .model import ByteInputModel",
+          "from research.byte_input_model_v5.model import ByteInputModel"
+        ],
+        [
+          "    def _validate_state(self, device):\n        # Child state is inspected without defaultdict indexing: validation itself\n        # must neither allocate lazy state nor change an invalid transaction.\n        storages = {p.untyped_storage().data_ptr() for _, p in self._items}\n        storages.update(b.untyped_storage().data_ptr() for b in self.model.buffers())\n        storages.update(p.grad.untyped_storage().data_ptr() for _, p in self._items\n                        if p.grad is not None and p.grad.layout == torch.strided\n                        and p.grad.device.type != 'meta')\n        for index, child in enumerate(self._optimizers):\n            C.require(not child._optimizer_step_pre_hooks and not child._optimizer_step_post_hooks,\n                      'No optimizer step hooks')\n            C.require(type(child.state) is defaultdict and child.state.default_factory is dict,\n                      'Original lazy state mapping type')\n            parameters = [group['params'][0] for group in child.param_groups]\n            expected_ids = {id(p) for p in parameters}\n            C.require(all(id(p) in expected_ids for p in child.state), 'No foreign state keys')\n            if self._steps == 0:\n                C.require(not child.state, 'No state before first update')\n                continue\n            C.require(len(child.state) == len(parameters), 'Complete child state after update')\n            fields = {'momentum_buffer'} if index == 0 else {'step', 'exp_avg', 'exp_avg_sq'}\n            for parameter in parameters:\n                state = child.state.get(parameter)\n                C.require(type(state) is dict and set(state) == fields, 'Exact child state fields')\n                for name, value in state.items():\n                    scalar = name == 'step'\n                    C.require(type(value) is torch.Tensor and value.layout == torch.strided and\n                              value.dtype == torch.float32 and not value.requires_grad and\n                              value.is_contiguous() and\n                              value.device == (torch.device('cpu') if scalar else device) and\n                              tuple(value.shape) == (() if scalar else tuple(parameter.shape)) and\n                              bool(torch.isfinite(value).all()), 'Finite correctly shaped child state')\n                    if scalar:\n                        C.require(value.item() == self._steps, 'Exact completed Adam step')\n                    elif name == 'exp_avg_sq':\n                        C.require(bool((value >= 0).all()), 'Nonnegative Adam second moment')\n                    address = value.untyped_storage().data_ptr()\n                    C.require(address not in storages, 'No state/parameter/buffer/gradient aliases')\n                    storages.add(address)\n",
+          "    def _validate_state(self, device):\n        # Child state is inspected without defaultdict indexing: validation itself\n        # must neither allocate lazy state nor change an invalid transaction.\n        finite_checks, nonnegative_checks = [], []\n        storages = {p.untyped_storage().data_ptr() for _, p in self._items}\n        storages.update(b.untyped_storage().data_ptr() for b in self.model.buffers())\n        storages.update(p.grad.untyped_storage().data_ptr() for _, p in self._items\n                        if p.grad is not None and p.grad.layout == torch.strided\n                        and p.grad.device.type != 'meta')\n        for index, child in enumerate(self._optimizers):\n            C.require(not child._optimizer_step_pre_hooks and not child._optimizer_step_post_hooks,\n                      'No optimizer step hooks')\n            C.require(type(child.state) is defaultdict and child.state.default_factory is dict,\n                      'Original lazy state mapping type')\n            parameters = [group['params'][0] for group in child.param_groups]\n            expected_ids = {id(p) for p in parameters}\n            C.require(all(id(p) in expected_ids for p in child.state), 'No foreign state keys')\n            if self._steps == 0:\n                C.require(not child.state, 'No state before first update')\n                continue\n            C.require(len(child.state) == len(parameters), 'Complete child state after update')\n            fields = {'momentum_buffer'} if index == 0 else {'step', 'exp_avg', 'exp_avg_sq'}\n            for parameter in parameters:\n                state = child.state.get(parameter)\n                C.require(type(state) is dict and set(state) == fields, 'Exact child state fields')\n                for name, value in state.items():\n                    scalar = name == 'step'\n                    C.require(type(value) is torch.Tensor and value.layout == torch.strided and\n                              value.dtype == torch.float32 and not value.requires_grad and\n                              value.is_contiguous() and\n                              value.device == (torch.device('cpu') if scalar else device) and\n                              tuple(value.shape) == (() if scalar else tuple(parameter.shape)),\n                              'Finite correctly shaped child state')\n                    if scalar:\n                        C.require(bool(torch.isfinite(value).all()), 'Finite correctly shaped child state')\n                        C.require(value.item() == self._steps, 'Exact completed Adam step')\n                    else:\n                        finite_checks.append(torch.isfinite(value).all())\n                        if name == 'exp_avg_sq':\n                            nonnegative_checks.append((value >= 0).all())\n                    address = value.untyped_storage().data_ptr()\n                    C.require(address not in storages, 'No state/parameter/buffer/gradient aliases')\n                    storages.add(address)\n        if finite_checks:\n            C.require(bool(torch.stack(finite_checks).all()), 'Finite correctly shaped child state')\n        if nonnegative_checks:\n            C.require(bool(torch.stack(nonnegative_checks).all()), 'Nonnegative Adam second moment')\n"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_state_v4.py",
+        "size": 12894,
+        "sha256": "d6da245b0f4a5b6c00cdb2a3aa9123bd63e9b8d5ad6aa96a6a39b7d9746b8b65"
+      },
+      "candidate": {
+        "path": "research/byte_input_state_v5.py",
+        "size": 12938,
+        "sha256": "ab2f1adfaca7b57c86c331dbb1ec634dd76211a1b3390d936d14d219e7c18004"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v5 import ByteInputModel, ByteInputOptimizer",
+          "from research.byte_input_model_v5 import ByteInputModel\nfrom research.byte_input_optimizer_v6 import ByteInputOptimizer"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_training_v4.py",
+        "size": 20156,
+        "sha256": "b6235fb65a3ba736876aba3dfb344a5ac457d38256a9e89db15bd58d567ca60a"
+      },
+      "candidate": {
+        "path": "research/byte_input_training_v5.py",
+        "size": 20200,
+        "sha256": "929d0c1a1f18debb8b95c6a08c23e920db9bf035c7de79d573930f121cc6eb07"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v5 import ByteInputModel, ByteInputOptimizer",
+          "from research.byte_input_model_v5 import ByteInputModel\nfrom research.byte_input_optimizer_v6 import ByteInputOptimizer"
+        ],
+        [
+          "from research import byte_input_state_v4 as numerical",
+          "from research import byte_input_state_v5 as numerical"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    }
+  ],
+  "prototype": {
+    "path": "research/byte_input_batched_optimizer_state_v1.py",
+    "size": 3865,
+    "sha256": "8ca336b73a3574322f935a54ad6570c9effc99204043199f8c4b6c8f95394e4e"
+  },
+  "model_inference_cache_unchanged": true,
+  "runtime_qualified": false
+}

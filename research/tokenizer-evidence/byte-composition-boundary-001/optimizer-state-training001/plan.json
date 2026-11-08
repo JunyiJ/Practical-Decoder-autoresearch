@@ -1,0 +1,72 @@
+{
+  "kind": "optimizer_state_exact_training_resume_and_warmed_throughput",
+  "runner_sha256": "d93b662f7b6e1859944e8d4a9540f71c53d906c05fd4d408d6372eae7e6f4973",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/recipe.json",
+      "size": 14411,
+      "sha256": "faa482ec5f71607451760a7159d922b305264a3f459872ca22d8930cfed3dc19"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-integration-source001/source-map.json",
+      "size": 8657,
+      "sha256": "874211fda402b856730b1f587694d97a43be5f517b1a1ffc73e04e02f1b57e16"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime003/result.json",
+      "size": 8604,
+      "sha256": "b6bbd6d0f150dae5a93d694e27094ffc41bc50c2f3314b22c7918e19ca80d695"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime003/guard.json",
+      "size": 420,
+      "sha256": "e412016db631ed0774913b83a4e93d3701aabac97f6034f4f44311b1d159ec5e"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "basis": "Read-only actual-state comparison preserved40 fixed rejection cases. MPS state-only median51.963ms to13.139ms and whole optimizer validation99.584ms to58.066ms; CPU showed no meaningful gain. Test actual training to determine whether validator gain matters.",
+  "implementations": {
+    "reference": {
+      "training": "byte_input_training_v4",
+      "optimizer": "byte_input_model_v5"
+    },
+    "batched": {
+      "training": "byte_input_training_v5",
+      "optimizer": "byte_input_optimizer_v6"
+    }
+  },
+  "fresh_sampler_roles": {
+    "cpu": {
+      "train_sampler": 62101000001,
+      "validation_sampler": 62101000002
+    },
+    "mps": {
+      "train_sampler": 62101100001,
+      "validation_sampler": 62101100002
+    }
+  },
+  "roles_audit": "Before preparation, rg over research and research_state JSON/Python/Markdown found no62101000001/2 or62101100001/2. Roles reserved and close with this attempt; historical initialization identities solely reconstruct accepted H200.",
+  "correctness": "Same model-v5, H200 and inference-v3. CPU two paired updates with complete exact states after1/2, including first averaging; candidate restored at1 must produce same state at2. MPS20 paired updates with all histories and complete final state exactly equal. No tolerance.",
+  "timing": "MPS alternating order,4 warmup pairs plus16 measured. CPU correctness timings descriptive only. Same20-update recipe and eight averaging snapshots as earlier finite-batch comparison, but fresh samplers and different implementation contrast.",
+  "prospective_gate": "All correctness checks; median MPS per-pair candidate/reference<=.95, at least12/16 faster, neither pre-averaging5-12 nor averaging13-20 median regresses. No retry or altered cases.",
+  "resource_budget": {
+    "timeout_seconds": 180,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 8388608,
+    "free_bytes": 15477796864
+  },
+  "interpretation_limits": [
+    "One short local paired trajectory; not a1200-step throughput or statistical confidence claim.",
+    "Identical model/inference/cache sources retain prior numerical evidence; no quality or holdout evaluation.",
+    "CPU resume adds one numerical update; total45.",
+    "Earlier optimizer-state harness failures remain preserved; CPU microbenchmark outcomes unchanged.",
+    "Combined benefit with prior optimizations is not measured by multiplying separate timing ratios."
+  ]
+}
