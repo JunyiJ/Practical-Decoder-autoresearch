@@ -245,13 +245,21 @@ the other screens. Its CE is 0.06022540785476593 lower than the control's middle
 screen. All three control rates are measured, but no rate selection is frozen
 until all nine screens are complete.
 
-Seven of 18 trajectories are accepted. The controller automatically started
-slot07, native at LR 0.0025, PID 44827; its process and first updates were observed.
-Complete the two remaining screens before selecting any arm's rate, then run all
-three original fresh paired bundles. Recheck the live session and current slot
-before acting on these recorded process IDs.
+The [slot07 native baseline at LR 0.0025](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/07/acceptance.json)
+is accepted after all 1,200 updates, 41 averaging snapshots and 34,278 validation
+targets. Full validation CE is 4.771981672719794 and BPB 2.1157956263898243.
+Its finished guard recorded 931.604 seconds and 1,296,924,672 bytes peak RSS;
+the retained RAW/H200 pair totals 563,319,826 bytes. Final sampler hashes match
+the other screens. Its CE is 0.07633963437929125 higher than native at the middle
+rate. Preserve this measured unfavorable rate comparison; no case or gate changes.
 
-Follow the existing live controller (session22743, PID17021) through slot07
+Eight of 18 trajectories are accepted. The controller automatically started
+slot08, real bytes at LR 0.0025, PID 50412; its process and first updates were
+observed. This is the last screen. Complete it before freezing all three rate
+choices, then run all three original fresh paired bundles. Recheck the live
+session and current slot before acting on these recorded process IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot08
 and subsequent saved slot acceptances, complete
 screen selection, fresh confirmation and final statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
