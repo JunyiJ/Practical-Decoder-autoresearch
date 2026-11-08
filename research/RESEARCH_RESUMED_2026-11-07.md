@@ -1,3 +1,19 @@
+# Current work: output-anchored shared-table quality comparison
+
+November8 human request to try weight sharing is now executing under
+[the new fixed protocol](OUTPUT_ANCHORED_TYING_PROTOCOL.md) and
+[plan](tokenizer-evidence/output-anchored-tying-001/plan.json).
+The24-update CPU/MPS preflight passed: native outputs/allgradients exact, shared
+initial predictions and summed gradients exact, canonical optimizer/H200 ownership,
+and saved-weight roundtrip verified. Nine fresh1200-update quality trajectories
+are running through session99348; inspect live state before interacting.
+The byte bulk-hash-adoption001 model remains incumbent. This new MLA experiment
+preserves native output initialization/coordinates; the old scaled GQA tying
+experiment remains closed negative. No quality outcome is known yet.
+
+The sections below describe completed historical work; their process statements
+are historical. Current status is in TOKENIZER_RESUME_STATE.json.
+
 # Active research: byte-input quality improvement adopted
 
 The authorized autonomous research goal remains active. The byte-input quality
