@@ -65,7 +65,7 @@
   "active_parent_pid": 63565,
   "active_run": "01",
   "active_session": 53076,
-  "active_worker": "research.byte_context_transform_run_v3 worker 4",
+  "active_worker": "research.byte_context_transform_run_v3 worker 5",
   "active_worker_pid": 61923,
   "actual_free_bytes": 13684592640,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
@@ -460,7 +460,7 @@
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-plan.json",
     "sha256": "e5d26b5af0cf473f62abe4d25b0555127a52c5531b38b9a7b3faf46f0517586c"
   },
-  "byte_context_transform_quality_accepted_count": 4,
+  "byte_context_transform_quality_accepted_count": 5,
   "byte_context_transform_recovery_plan": {
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/quality-plan.json",
     "sha256": "2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef"
@@ -832,7 +832,7 @@
   "current_capacity_note": "No current execution blocker. Next training-context proof has no frozen output/memory envelope yet; calculate complete costs including EMA snapshots, serialization and staging before admission. No quality panel is admitted. Observed free bytes: 19241639936",
   "current_frontier": "research/byte_input_pilot_v2",
   "current_numerical_source_count": 1054,
-  "current_phase": "second_bundle_nonlinear_running_after_linear_control_accepted",
+  "current_phase": "second_bundle_baseline_running",
   "current_research_handoff": "research/RESEARCH_RESUMED_2026-11-07.md",
   "current_research_phase": "byte_input_training_context_proof_preparation",
   "dataset_cache_cleanup": "research/tokenizer-evidence/dataset-cache-cleanup-001/completed.json",
@@ -9793,7 +9793,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Poll live v3 dispatcher exec53076/PID70581 and slot04 tanh worker74506 in quality-recovery002. Prior exec99662 is terminal exit1 after completed slot02 training failed CPU/MPS target CE. Numerical-diagnostic002 isolated CPU native CE reference error on identical logits; cpu-reference-recovery001 verified stable FP32 CPU reference on all34278targets for each completed slot00..02, reproducing old native CPU reports exactly and preserving original MPS primary scores byte-for-byte. All original numerical limits pass. No training repeated. Current v3 plan 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef imports completed0..2 and runs only original unattempted3..8. Do not restart on observation timeout. On full completion run PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef. First-seed tanh loses to byte, so all-seeds-negative adoption criterion cannot pass; complete frozen panel without tuning or control substitution. After panel and review release lock, run separately admitted inference check: PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.fp32_rmsnorm_inference_check_v1 run e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf. Public inference repair remains unqualified/unadopted. Preserve all original failures and historical restrictions; incumbent unchanged. Slot03 completed and passed the integrated CPU reference checks: CE4.654480826, max target error2.288819e-5. First-bundle analysis is saved in first-bundle-analysis001; it is descriptive only and admits no new training. After the complete panel, compare late fitting and averaging effects across all original bundles before selecting a new hypothesis.",
+  "next_action": "Follow live v3 dispatcher exec53076/PID70581 and slot05 byte-baseline worker78432 in quality-recovery002; slots00..04 are accepted. Slot04 tanh H200 CE4.643983486 beats paired linear4.654480826 by.010497340; its observed sampler digest matches slot03. Maximum target CPU/MPS error1.239777e-5 and mean4.078890e-8 pass unchanged limits. Its H200-minus-final-online gap+.039426659 repeats the first nonlinear run\u2019s late-fitting/averaging pattern, still descriptive. Plan 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef keeps all original roles, training and MPS scores; only CPU verification CE was repaired after full-split evidence. No training repeated. Do not restart on observation timeout. After all nine complete run PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef. First-seed tanh loses to byte, so adoption criterion cannot pass; complete and characterize the frozen panel without tuning or endpoint/control substitution. Then run the separate inference check once the shared lock is free: PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.fp32_rmsnorm_inference_check_v1 run e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf. Compare all original bundles\u2019 late fitting/averaging against first-bundle-analysis001 before choosing any new hypothesis. Preserve original failures and historical restrictions. Public inference repair is unqualified/unadopted; incumbent unchanged.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "scoring_corrected_resource_binding_corrected_continue_original_cases",
   "no_paid_compute": true,
@@ -10467,7 +10467,7 @@
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
   "training_current_source_version": 6,
-  "updated_at": "2026-11-08T20:47:53.778684+00:00",
+  "updated_at": "2026-11-08T20:59:21.966570+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
@@ -10506,5 +10506,5 @@
   "warmup_trained_inference": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
   "warmup_worker": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
   "worker_kind": null,
-  "worker_pid": 74506
+  "worker_pid": 78432
 }

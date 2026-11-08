@@ -18,10 +18,13 @@ No training was repeated and no checkpoint was rewritten.
 The new `quality-recovery002` plan imports slots00..02 and runs only original
 unattempted slots03..08. Plan SHA:
 `2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
-Dispatcher PID70581 / exec53076 and slot04 tanh worker74506 are live; 48 updates
-were observed. Four runs are accepted. Slot03 completed with H200 CE4.654480826,
-mean CPU/MPS error1.992096e-8 and max target error2.288819e-5, passing the
-original limits in a newly trained run of the corrected executor.
+Dispatcher PID70581 / exec53076 and slot05 byte-baseline worker78432 are live;
+66 updates were observed. Five runs are accepted. Slot04 tanh finished with
+H200 CE4.643983486 versus its paired linear control4.654480826 (delta−.010497340).
+Their observed sampler digests match. Slot04 mean CPU/MPS error4.078890e-8 and
+max target error1.239777e-5 pass unchanged limits. Its H200-minus-final-online
+gap+.039426659 repeats the first tanh run’s positive gap; this is descriptive,
+not permission to switch endpoints. The second paired byte baseline is pending.
 Prior exec99662 is terminal failed. Do not restart on an observation
 timeout or resume a superseded dispatcher. The source/count-derived sampler
 limitation applies explicitly to slots00 and02; slot01's observed digest is kept.
