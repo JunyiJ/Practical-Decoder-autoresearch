@@ -1,0 +1,120 @@
+{
+  "acceptance": "Exact output and all18 parameter-gradient equality for every fixed CPU/MPS case; original and candidate must both reject malformed discarded padding without mutation. Any mismatch fails transparent integration. Record all cases and error magnitudes without relaxing the gate.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json",
+      "sha256": "ebb07a2f0e42a5bc87a9c36083ce27dd8c954b19feed970adff88d8dd68090e2",
+      "size": 14101
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-analysis001/result.json",
+      "sha256": "7e26afcf98ececa70dfd68c29f738015cafb1b9d3aa270ac5c984277b624f7a2",
+      "size": 3085
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/source-map.json",
+      "sha256": "0b5b3c535c76d4b0a61692ae2a4d76b070c0146cbc3040e8c55a6918d7937e1b",
+      "size": 679
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v2.py",
+      "sha256": "3178d0df7e663a1c6650ff71aa3c8b0e82b7863f3ffbcae6240967942db6253f",
+      "size": 2225
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime002/source-map.json",
+      "sha256": "0b5b3c535c76d4b0a61692ae2a4d76b070c0146cbc3040e8c55a6918d7937e1b",
+      "size": 679
+    }
+  ],
+  "contrary_risk": "Changed matrix/reduction shapes can alter floating-point outputs or gradients despite mathematical equivalence. Invalid padding must be rejected before cropping.",
+  "devices": [
+    "cpu",
+    "mps"
+  ],
+  "execution_recovery": {
+    "category": "reporting",
+    "correction": "Serialize the CPU NumPy array with tobytes directly; NumPy handles logical singleton layout. Preserve completed CPU case files byte-for-byte and execute only unpublished remaining cases.",
+    "failed_action": "Fingerprinting a one-element token-ID tensor with stride256 via a different-element-size Tensor.view(uint8). PyTorch considers singleton tensors contiguous, so contiguous() did not normalize that stride.",
+    "numerical_case_changes": [],
+    "original_elapsed_seconds": 3.854609875008464,
+    "original_failure": [
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/run.py",
+        "sha256": "0617d0a3b36e607212c2623ed8833b4986883b83b4481d1d5e6e9035ebd34e5f",
+        "size": 10438
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/plan.json",
+        "sha256": "6f41d2fb572c8f99c346a1b81f134d33f62b34a02a22540cc84fe4ce31b7a871",
+        "size": 3880
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/failure.json",
+        "sha256": "a78ae27ea51f0ac5e9ce62fbc844026313517bc54dfdd2dc60ae51eb1f86526c",
+        "size": 1046
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/guard.json",
+        "sha256": "449610c7546ddc6e543a6a60831aeee7b3aa8c9e312de97ba4bda1023477b4d9",
+        "size": 509
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/STOP",
+        "sha256": "2ecd34d34f8088e5a8e94280338842d2fc714ab541e3ab492423e34266492b0a",
+        "size": 58
+      }
+    ],
+    "scientific_result_already_observed": "Both completed CPU cases had exact outputs but nonexact gradients; these failures remain binding. No transparent adoption is possible even if remaining cases pass.",
+    "tolerance_changes": []
+  },
+  "fixed_cases": [
+    "first1024 training IDs",
+    "1024-token window centered on first longest training code, clipped to valid start",
+    "first regular token at code lengths3,4,5,6",
+    "first maximum-length vocabulary token",
+    "special token50256"
+  ],
+  "interpretation_limits": [
+    "Engineering equivalence experiment, not a quality campaign or exploration allocation.",
+    "Training and vocabulary inputs only; validation may be encoded by the existing data loader but is not scored, and holdout is not encoded or scored.",
+    "A failed exact criterion is a numerical result, not a harness error; no transparent adoption or tolerance change follows.",
+    "Reduced component time is not end-to-end model speed or equal-time quality evidence.",
+    "All cases fixed before execution; no favorable seed/case replacement or old-fixture replay."
+  ],
+  "kind": "actual_input_padding_removal_component_comparison",
+  "local_basis": "Training code lengths average5.3334, maximum18; fixed width130. Existing exact paired-sampler work analysis predicts91.90% fewer filter-forward multiply-adds when cropping to batch maximum, but does not measure runtime or numerical behavior.",
+  "mechanism": "After unchanged full-input validation, retain max(6,maximum actual code length) columns. This retains every mathematically eligible convolution/pooling window, including boundary symbols and the general length130 vocabulary case.",
+  "preserved_completed_cases": [
+    {
+      "name": "cpu-first_longest_training_window1024.json",
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/cpu-first_longest_training_window1024.json",
+      "sha256": "0a37005d842eff5ebc45ff92e5fe13e257e68d389772c4f8630c492c3fa7ff52",
+      "size": 11815
+    },
+    {
+      "name": "cpu-training_prefix1024.json",
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/cpu-training_prefix1024.json",
+      "sha256": "438b78aa8a4eb4a9f02bd3a32f1ca5214970a7078e944766ba228e9d83ffb345",
+      "size": 11877
+    }
+  ],
+  "remaining_timeout_seconds": 116.14539012499154,
+  "resource_budget": {
+    "metadata_upper_bytes": 4194304,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_bytes": 0,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 120
+  },
+  "roles": "Historical adopted composer identity reconstructed only to install all saved weights; deterministic inputs and upstream, no fresh training initializer/sampler roles or optimizer updates.",
+  "runner_sha256": "c33b0bf8aab8cd49e68a6a12c1c1b9dfd843894f442e3fe635634e4880aac6ae",
+  "timing": "Three alternating paired forward+backward repeats after first comparison/warmup on the first1024 training IDs only; repeated within-implementation outputs/gradients must remain exact. Timings exclude input preparation, tensor copying and fingerprint reporting.",
+  "upstream": "Deterministic coordinate ((index modulo17)-8)/8, no random draw."
+}

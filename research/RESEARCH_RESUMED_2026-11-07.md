@@ -97,10 +97,30 @@ transfers unchanged algorithms to model-v4/state-v3/training-v3/inference-v2/cac
 It is a historical preparation record; subsequent runtime and adoption evidence
 above supplies qualification. No exact-type guards were weakened.
 
-Next inspect the existing padding-analysis001 measurements and optimized
-composition path, then define a bounded actual-input padding reduction comparison
-outside frozen namespaces with fixed numerical criteria. No worker is currently
-active. Do not replay the quality panel or closed fixtures.
+The subsequent [padding comparison002](tokenizer-evidence/byte-composition-boundary-001/padding-runtime002/README.md)
+is closed not adopted:14/16 fixed cases failed exact numerical equality. Maximum
+output difference4.84e-8 and gradient difference9.06e-6 remain numerical results,
+not harness defects. Component timing improved roughly10x, which does not justify
+transparent adoption. The original singleton-serialization failure001 is preserved;
+recovery reused both completed negative CPU records byte-for-byte and kept all
+cases/criteria fixed. No quality or optimizer update was performed by that check.
+
+A [warmed-step profile](tokenizer-evidence/byte-composition-boundary-001/hash-baseline-profile001/README.md)
+of the adopted baseline used three numerical updates, fresh sampler roles
+62100700001/2 and no quality evaluation. One profiled MPS step took1.1216seconds.
+Six model.validate calls used0.3943seconds cumulative, including0.1966seconds
+nested hashing; these overlapping times must not be added. Repeated scalar
+validation is a plausible remaining overhead. Data checks used only0.0153seconds.
+The profile does not attribute GPU kernels or establish sustained throughput.
+
+Next execute a bounded actual-model CPU/MPS validation timing and nonfinite
+rejection/restoration comparison for the isolated
+[batched-finite candidate](byte_input_batched_finite_v1.py). It preserves every
+parameter predicate and all other checks, combining finite Boolean results before
+one host read. Its exact method/source mapping is in finite-batch-source001;
+runtime correctness and speed are not yet established. No worker is currently
+active. The adopted direct-hash recipe remains unchanged. Do not replay the quality
+panel, weaken the failed cropping gate, or replay closed fixtures.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current

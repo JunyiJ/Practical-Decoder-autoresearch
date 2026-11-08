@@ -1,0 +1,64 @@
+{
+  "acceptance": "Exact output and all18 parameter-gradient equality for every fixed CPU/MPS case; original and candidate must both reject malformed discarded padding without mutation. Any mismatch fails transparent integration. Record all cases and error magnitudes without relaxing the gate.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json",
+      "sha256": "ebb07a2f0e42a5bc87a9c36083ce27dd8c954b19feed970adff88d8dd68090e2",
+      "size": 14101
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-analysis001/result.json",
+      "sha256": "7e26afcf98ececa70dfd68c29f738015cafb1b9d3aa270ac5c984277b624f7a2",
+      "size": 3085
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime001/source-map.json",
+      "sha256": "0b5b3c535c76d4b0a61692ae2a4d76b070c0146cbc3040e8c55a6918d7937e1b",
+      "size": 679
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v2.py",
+      "sha256": "3178d0df7e663a1c6650ff71aa3c8b0e82b7863f3ffbcae6240967942db6253f",
+      "size": 2225
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    }
+  ],
+  "contrary_risk": "Changed matrix/reduction shapes can alter floating-point outputs or gradients despite mathematical equivalence. Invalid padding must be rejected before cropping.",
+  "devices": [
+    "cpu",
+    "mps"
+  ],
+  "fixed_cases": [
+    "first1024 training IDs",
+    "1024-token window centered on first longest training code, clipped to valid start",
+    "first regular token at code lengths3,4,5,6",
+    "first maximum-length vocabulary token",
+    "special token50256"
+  ],
+  "interpretation_limits": [
+    "Engineering equivalence experiment, not a quality campaign or exploration allocation.",
+    "Training and vocabulary inputs only; validation may be encoded by the existing data loader but is not scored, and holdout is not encoded or scored.",
+    "A failed exact criterion is a numerical result, not a harness error; no transparent adoption or tolerance change follows.",
+    "Reduced component time is not end-to-end model speed or equal-time quality evidence.",
+    "All cases fixed before execution; no favorable seed/case replacement or old-fixture replay."
+  ],
+  "kind": "actual_input_padding_removal_component_comparison",
+  "local_basis": "Training code lengths average5.3334, maximum18; fixed width130. Existing exact paired-sampler work analysis predicts91.90% fewer filter-forward multiply-adds when cropping to batch maximum, but does not measure runtime or numerical behavior.",
+  "mechanism": "After unchanged full-input validation, retain max(6,maximum actual code length) columns. This retains every mathematically eligible convolution/pooling window, including boundary symbols and the general length130 vocabulary case.",
+  "resource_budget": {
+    "metadata_upper_bytes": 4194304,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_bytes": 0,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 120
+  },
+  "roles": "Historical adopted composer identity reconstructed only to install all saved weights; deterministic inputs and upstream, no fresh training initializer/sampler roles or optimizer updates.",
+  "runner_sha256": "0617d0a3b36e607212c2623ed8833b4986883b83b4481d1d5e6e9035ebd34e5f",
+  "timing": "Three alternating paired forward+backward repeats after first comparison/warmup on the first1024 training IDs only; repeated within-implementation outputs/gradients must remain exact. Timings exclude input preparation, tensor copying and fingerprint reporting.",
+  "upstream": "Deterministic coordinate ((index modulo17)-8)/8, no random draw."
+}

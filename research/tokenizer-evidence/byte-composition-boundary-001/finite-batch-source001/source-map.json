@@ -1,0 +1,38 @@
+{
+  "basis": "hash-baseline-profile001 found six model.validate calls costing0.3943s cumulative of a1.1216s profiled step, including0.1966s nested hashing; model.validate self time0.1424s may include scalar synchronization waits. Profiling is not kernel attribution.",
+  "candidate": {
+    "path": "research/byte_input_batched_finite_v1.py",
+    "sha256": "49d93576bc6ff617e17280fd879e8515be3b2cf565c57af051a10faba1d03f6d",
+    "size": 4719
+  },
+  "exact_replacements": [
+    [
+      "        addresses = []\n",
+      "        addresses = []\n        finite_checks = []\n"
+    ],
+    [
+      " and p.is_leaf and p.requires_grad\n                      and bool(torch.isfinite(p).all()),",
+      " and p.is_leaf and p.requires_grad,"
+    ],
+    [
+      "            addresses.append(p.untyped_storage().data_ptr())\n",
+      "            finite_checks.append(torch.isfinite(p).all())\n            addresses.append(p.untyped_storage().data_ptr())\n"
+    ],
+    [
+      "        buffers = tuple(self.named_buffers())\n",
+      "        C.require(bool(torch.stack(finite_checks).all()), 'Finite dense trainable FP32 parameters')\n        buffers = tuple(self.named_buffers())\n"
+    ]
+  ],
+  "limitations": [
+    "Unexecuted source candidate.",
+    "All hashes, structural checks, canonical coverage, exact-type consumers and math remain unchanged.",
+    "May not improve elapsed time; measure complete validate with poisoned parameters and valid model states on CPU/MPS before integration."
+  ],
+  "method": "ByteInputModel.validate",
+  "original": {
+    "path": "research/byte_input_model_v4/model.py",
+    "sha256": "5251e8d1c528ad9fe6cc7fb5d5adbd7d4820f4ea481aac7dc005f91b4fe5edd1",
+    "size": 12840
+  },
+  "prediction": "Combining105 per-parameter Boolean finite predicates into one same-device conjunction preserves all acceptance/rejection semantics and avoids repeated host-visible scalar reads."
+}

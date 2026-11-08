@@ -1,0 +1,49 @@
+{
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json",
+      "sha256": "ebb07a2f0e42a5bc87a9c36083ce27dd8c954b19feed970adff88d8dd68090e2",
+      "size": 14101
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/padding-runtime002/result.json",
+      "sha256": "4fb25f4a5c4d1552f8d44491930958eedafaba194eae072d22f8e3cdee365aee",
+      "size": 4492
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v2.py",
+      "sha256": "3178d0df7e663a1c6650ff71aa3c8b0e82b7863f3ffbcae6240967942db6253f",
+      "size": 2225
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    }
+  ],
+  "design": "Same adopted H200, fresh optimizer, original1200-step recipe at LR.0025 on MPS. Two warmup numerical updates, cProfile around the third Context.step, synchronize timing boundaries. No model hooks or source changes.",
+  "fresh_sampler_roles": {
+    "train_sampler": 62100700001,
+    "validation_sampler": 62100700002
+  },
+  "interpretation_limits": [
+    "One instrumented early-training step; not a quality evaluation, scientific campaign or sustained-throughput benchmark.",
+    "cProfile measures Python-visible wall time, including synchronization waits and instrumentation; it is not GPU-kernel attribution.",
+    "Cumulative times overlap and cannot be summed. Compare self time or disjoint call paths carefully.",
+    "Fresh optimizer/early-stage profile has no averaging snapshot; later training and serving may differ.",
+    "No holdout scored, no checkpoint output, no source/model/guard mutation, no repeat of closed fixtures."
+  ],
+  "kind": "adopted_hash_baseline_warmed_step_profile",
+  "purpose": "After padding removal failed exact numerical equivalence, measure remaining overhead in the adopted unchanged implementation rather than infer the next optimization from static counts.",
+  "resource_budget": {
+    "metadata_upper_bytes": 4194304,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_bytes": 0,
+    "numerical_updates": 3,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 60
+  },
+  "role_audit": "Exact rg search over research/research_state JSON,JSONL,Python,Markdown returned no occurrences before freeze. Model initializer roles reconstruct only accepted checkpoint identity; three numerical profiling updates use fresh paired sampler roles.",
+  "runner_sha256": "01b5cd3d03befb0f5cb4513760707abb7722b6b85d9b1dd7d7299f495061d4bb"
+}

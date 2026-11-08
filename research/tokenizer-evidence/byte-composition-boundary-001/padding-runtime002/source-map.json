@@ -1,0 +1,16 @@
+{
+  "before": "        # Local minimum-width padding allows unused wide filters to have genuine\n",
+  "candidate": {
+    "path": "research/byte_composer_trim_v1.py",
+    "sha256": "a0e0039daa4a850cf8ad0a9b644ffdc1dfc78ad3e8853d7db03919dbe86526d8",
+    "size": 8166
+  },
+  "exact_insertion": "        # Validate every original position above before removing trailing padding.\n        codes = codes[:, :max(6, int(lengths.max().item()))].contiguous()\n",
+  "original": {
+    "path": "research/byte_composer_v2.py",
+    "sha256": "8e74a52d6bcfff46705caa0b6602fb860e71ab73eaf3c9115f00a343e0014988",
+    "size": 8009
+  },
+  "original_unchanged": true,
+  "runtime_qualified": false
+}
