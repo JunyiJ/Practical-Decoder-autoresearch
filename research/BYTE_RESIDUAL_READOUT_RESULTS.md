@@ -1,6 +1,6 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. Four of nine fresh quality runs have completed and passed numerical
+The new zero-gated residual readout passed its implementation pilot. Five of nine fresh quality runs have completed and passed numerical
 acceptance. The first complete seed fails the mandatory candidate-improvement
 criterion against byte. The second seed is active; the frozen remaining runs and
 independent final review continue. No model is adopted. The selected byte model and its corrected public
@@ -55,8 +55,8 @@ Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
 scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot04 residual-tanh on the second seed, PID16977, at226 updates;
-live logs supersede this snapshot. Slots00–03 are terminal and must not be replayed.
+worker was slot05 byte on the second seed, PID21059;
+live logs supersede this snapshot. Slots00–04 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 
@@ -167,3 +167,32 @@ while LR falls, so an LR-multiplied coefficient needs explicit unit conversion.
 The bound arithmetic is separate from this panel and executes no models or new
 scores. No coefficient sweep, old-study replay or new scientific budget follows
 from that review; the complete current panel still determines the next decision.
+
+## Second-seed nonlinear result (five of nine complete)
+
+Slot04 residual-tanh completed1200 updates and41 H200 snapshots. H200 CE is
+4.607495661696009 and final-online CE is4.672503246509761. Its693.624second
+guard finished normally. Acceptance/result/guard hashes, both checkpoint
+size/hash records, all34278 CPU/MPS target losses, aggregate means and numerical
+errors were independently checked from saved files for publication. Mean/max
+CPU/MPS CE differences are1.38916e-8/2.59876e-5, within unchanged limits.
+Whole-panel checkpoint reconstruction and independent final review remain pending.
+
+The matched second-seed residual-linear H200 is4.682758260745633, so nonlinear
+minus linear is-.0752625990; final-online difference is-.1184836368. This agrees
+in direction with the first seed's-.0778389161 H200 difference. Common initial
+weights, initial branch matrix, initializer/sampler roles and terminal training
+sampler hashes match between the second-seed branches. These are descriptive
+paired results, not a completed three-seed uncertainty analysis.
+
+Nonlinear last100 sampled training CE is3.1500290442 versus linear3.0800014544
+(difference+.0700275898), despite better validation. The unrestricted nonlinear
+scalar ends at-1.237150. Its negative sign is allowed by the frozen implementation;
+it is not a numerical failure or a reason to alter the experiment.
+
+The second-seed byte baseline is still running. Neither this branch comparison
+nor a comparison with another seed's baseline establishes a gain over byte.
+The first bundle's mandatory candidate-versus-byte condition remains failed.
+No tuning, changed endpoint, fallback adoption or replacement seed follows from
+these results. After slot05 completes, execute the existing completed-bundle
+analysis for two bundles once, then let slots06–08 and automatic review finish.
