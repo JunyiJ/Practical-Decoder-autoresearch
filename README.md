@@ -1,4 +1,4 @@
-> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](research/RESEARCH_RESUMED_2026-11-07.md). Byte-input training, export/scoring/cache consumers and all three20-update resource pilots passed. Scientific comparison design and full-cost admission are next. No real-data quality gain is established. Older pause banners below are historical.
+> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](research/RESEARCH_RESUMED_2026-11-07.md). The admitted byte-input comparison is running:18 trajectories of1200updates, with balanced tuning and three fresh confirmation seeds. Capacity recovery is complete. No quality gain or adoption is established. Older pause banners below are historical.
 
 > **Research paused by the human on 2026-11-07.** Start with the [stop and restart handoff](research/RESEARCH_HANDOFF_2026-11-07.md). Current byte-input model integration is source-only; no quality gain or adoption. Automatic research is paused. New explicit human authorization is required to resume. Older active/launch wording below is historical.
 

@@ -1,4 +1,4 @@
-# Active research: resource pilots accepted; scientific comparison next
+# Active research: full byte-input quality comparison launched
 
 The human authorized continuous autonomous research and recovery on November 7,
 2026. The native incumbent is unchanged. Byte composition has no measured
@@ -9,7 +9,9 @@ real-data quality gain and has not been adopted.
 The [independent state review003](tokenizer-evidence/byte-composition-boundary-001/state-review003/review.json)
 accepted all six B8T128/V50257 native/raw-byte/nonlexical cases on CPU and MPS,
 234 rejection transactions, complete tensor digests covering 1,126,737,138
-coordinates, and all 12 retained checkpoint archives. The proof verifies empty
+coordinates, and all 12 checkpoint archives at acceptance. Those obsolete
+numerical RAW payloads were subsequently retired in the exact audit below;
+original evidence and accepted review receipts remain. The proof verifies empty
 optimizer state, complete capture/read/restore, changed LR and training mode,
 exact CPU/MPS RNG draws, and a genuine next forward/backward/update after restore.
 All logits, losses, gradients, parameters, optimizer state and RNG matched
@@ -34,8 +36,9 @@ composer parameter had no same-shaped peer. Checkpoint002 fixed only that
 fixture with fresh roles, then exposed nonrepeatable MPS byte-embedding gradients.
 Restored state/RNG/forward matched, but `composer.byte_weight` next gradients did
 not. It completed all CPU cases and native MPS; nonlexical MPS was not reached.
-Both attempts remain closed failed, with sources, plans, snapshots and archives
-preserved. No thresholds or unfavorable seeds were changed into passing results.
+Both attempts remain closed failed, with original sources, plans, failure logs
+and diagnostic snapshots preserved. Their obsolete RAW payloads were later
+retired under current human authorization; see the exact audit below. No thresholds or unfavorable seeds were changed into passing results.
 
 The [isolated diagnosis](tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/result.json)
 reproduced native MPS accumulation differences for a mixed-magnitude upstream.
@@ -125,29 +128,58 @@ and [reviewer diagnosis](tokenizer-evidence/byte-composition-boundary-001/pilot-
 preserve both failures. A separate pre-admission wrong CLI hash is recorded in
 `pilot-launch-correction001.json`; it caused no attempt or role consumption.
 
+## Full scientific comparison launched
+
+The original [quality protocol](tokenizer-evidence/byte-composition-boundary-001/quality001/protocol.md)
+and machine-readable plan freeze18 trajectories: nine balanced learning-rate
+screens followed by three fresh paired bundles across native, raw-byte and
+nonlexical-code arms. Each trajectory runs1200updates and retains final RAW and
+H200 weights. All three rates are selected before confirmation begins. Raw bytes
+must improve fresh mean CE by more than.02nat/token, improve every seed and pass
+all predeclared conditional-text bounds. Lexical-content support is a separate
+contrast against nonlexical codes. Holdout remains unencoded and unscored.
+
+[Admission](tokenizer-evidence/byte-composition-boundary-001/quality001/admission/review.json)
+completed in87.122s, accepting source/resource bindings, unused-role census and
+synthetic selection/statistics checks. It did not train or establish quality.
+The actual controller was then launched once:PID17021, exec session22743;
+initial native screen slot00 PID17022, LR.000625. Real updates and the first
+non-mutating diagnostic evaluation were observed. These PIDs identify the launch,
+not a permanent assertion of liveness; query the session/process and latest slot
+before acting. Do not restart from a stale progress index.
+
+The complete retained-output cap is10GiB, initial free requirement20GiB including
+8GiB reserve and2GiB extra headroom. Pilot-based conservative runtime forecast is
+22.66hours; hard controller budget36h20m, with7200s per slot,4GiB RSS and6GiB
+sampled MPS allocation. These are estimates and guardrails, not guarantees.
+The source implements the actual1200-step experiment; accepted prerequisites
+are reused rather than replayed.
+
+## Completed capacity recovery and retained evidence
+
+[Exact recovery](tokenizer-evidence/byte-composition-boundary-001/capacity-recovery001/result.json)
+retired38 obsolete numerical RAW payloads totaling9,992,314,882bytes:14 failed
+checkpoint fixtures,12 accepted state fixtures and12 four-step training fixtures.
+Dependencies were closed; shared lock, process/consumer checks, exact size/SHA
+allowlists and durable deletion journals preceded deletion. Current human
+permission supersedes older self-authored retain-all/failed-payload labels only
+for these audited files. Original source/log/config/metrics/receipts and oracle
+arrays, selected/fresh scientific weights and latest20-step pilot parents remain.
+15,293 evidence files were verified retained. Historical manifests describe
+original acceptance; deleted-payload saved reviews must not be replayed.
+Free space rose to22,613,397,504bytes and the20GiB requirement was satisfied.
+The storage blocker is resolved; do not repeat broad unchanged cleanup scans.
+
 ## Next executable action
 
-Use the [updated evidence question](tokenizer-evidence/byte-composition-boundary-001/quality-evidence001/evidence.md)
-and measured pilot costs to prepare the complete three-arm scientific comparison.
-Keep practical native-relative gains distinct from evidence for lexical byte
-content versus the nonlexical control. Fix balanced tuning, independent fresh
-confirmation, outcome/statistical rules, source/roles and the complete retained
-output/time/memory budget before scientific dispatch. The earlier18-trajectory
-forecast is unfrozen. Preserve1200updates, existing data/H200/holdout boundaries;
-reuse the accepted primitives and implement only needed full-horizon worker glue.
+Follow the existing live controller through its saved slot acceptances, complete
+screen selection, fresh confirmation and final statistical report. The controller
+stops on an entered-slot failure; preserve its evidence and diagnose the exact
+failure before any separately identified correction. Never replace an unfavorable
+seed or alter scientific gates. The controller does not adopt automatically:
+independently review the complete panel before changing the incumbent.
 
-No worker is active at this checkpoint. The autonomous goal remains active;
-research automations are unchanged. Approximately12.64GB is free. All completed
-runs fit their frozen guards; no currently admitted execution is blocked. The
-scientific panel's complete resource envelope is not yet frozen. If its concrete
-requirement exceeds available space, immediately perform standing-authorized exact
-cleanup through dependency/hash/consumer checks and a deletion journal; do not
-shrink confirmations or repeat unchanged scans. Original failures and scientific
-selected/fresh weights remain subject to the human's current retention policy.
-
-[Consumer acceptance](tokenizer-evidence/byte-composition-boundary-001/inference-acceptance001/acceptance.json)
-and [pilot acceptance](tokenizer-evidence/byte-composition-boundary-001/pilot-acceptance002/acceptance.json)
-link exact local payload manifests. Keep the latest20-update RAW/H200 parents for
-quality-worker integration. Binary checkpoints/oracle arrays remain local; Git
-contains sources, plans, metadata, logs and receipts. A clone alone cannot repeat
-the saved-data reviews. No quality gain or adoption is established.
+The ignored live progress file and quality001 slot/guard/STOP records are the
+continuation anchors. Binary checkpoints/oracle arrays remain local; Git contains
+sources, plans, metadata, logs and receipts. No quality gain or adoption is
+established. The broader autonomous research goal remains active.
