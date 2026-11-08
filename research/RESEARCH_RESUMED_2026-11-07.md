@@ -236,13 +236,22 @@ ranking reversed between the first two rates, illustrating learning-rate
 sensitivity. These rates use the same screening bundle, not independent fresh
 confirmations. No rate is selected and no final quality gain is established.
 
-Six of 18 trajectories are accepted. The controller automatically started slot06,
-nonlexical codes at LR 0.0025, PID 21496; its process and first updates were
-observed. Complete the three remaining screens before selecting any arm's rate,
-then run all three original fresh paired bundles. Recheck the live session and
-current slot before acting on these recorded process IDs.
+The [slot06 control at LR 0.0025](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/06/acceptance.json)
+is also accepted: all 1,200 updates, 41 averaging snapshots and 34,278 validation
+targets. Full validation CE is 4.662835553613667 and BPB 2.0674025483605565.
+Its finished guard recorded 3,835.412 seconds and 909,885,440 bytes peak RSS;
+the retained RAW/H200 pair totals 318,299,422 bytes. Final sampler hashes match
+the other screens. Its CE is 0.06022540785476593 lower than the control's middle-rate
+screen. All three control rates are measured, but no rate selection is frozen
+until all nine screens are complete.
 
-Follow the existing live controller (session22743, PID17021) through slot06
+Seven of 18 trajectories are accepted. The controller automatically started
+slot07, native at LR 0.0025, PID 44827; its process and first updates were observed.
+Complete the two remaining screens before selecting any arm's rate, then run all
+three original fresh paired bundles. Recheck the live session and current slot
+before acting on these recorded process IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot07
 and subsequent saved slot acceptances, complete
 screen selection, fresh confirmation and final statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
