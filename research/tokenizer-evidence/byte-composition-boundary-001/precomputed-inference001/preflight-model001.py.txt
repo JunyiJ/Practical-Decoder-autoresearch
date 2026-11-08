@@ -1,0 +1,196 @@
+"""Materialize the adopted byte composer's vocabulary for FP32 inference.
+
+An independent snapshot owns its transformer, readout and embedding table; it
+retains neither the composer nor the codebook. No training or quality selection.
+Like the current public consumer, this uses ordinary no-grad RMSNorm semantics.
+It does not incorporate the separately proposed default-epsilon repair.
+"""
+import copy
+import hashlib
+import os
+from pathlib import Path
+
+import torch
+from torch import nn
+from torch.nn import functional as F
+from omegaconf import OmegaConf
+
+from research.byte_input_model_v6 import ByteInputModel
+from research.byte_input_model_v3.contract import native_config, native_model, require
+from research.final_ln_scale_model_v1.runtime.models.gpt import GPT as Native
+from research.final_ln_scale_model_v1.runtime.attention.cache import build_caches
+
+KIND = 'byte_precomputed_fp32_inference_v1'
+FILE_CAP = 128 * 1024**2
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for chunk in iter(lambda: stream.read(1024**2), b''): h.update(chunk)
+    return h.hexdigest()
+
+
+def tensor_bytes(model):
+    """Unique live tensor storage, including nonpersistent buffers."""
+    tensors = (*model.parameters(), *model.buffers())
+    return sum(s.nbytes() for s in {t.untyped_storage().data_ptr(): t.untyped_storage()
+                                   for t in tensors}.values())
+
+
+class PrecomputedModel(nn.Module):
+    def __init__(self, blocks, final_norm, readout, table, source):
+        super().__init__()
+        self.blocks, self.final_norm, self.readout = blocks, final_norm, readout
+        self.register_buffer('embedding_table', table)
+        self.source = copy.deepcopy(source)
+        self.requires_grad_(False)
+        self.train(False)
+        self.validate()
+
+    def train(self, mode=True):
+        require(mode is False, 'Precomputed snapshots are inference-only')
+        return super().train(False)
+
+    def versions(self):
+        return tuple((n, id(t), t.data_ptr(), t._version, t.device, t.dtype, tuple(t.shape))
+                     for n, t in (*self.named_parameters(), *self.named_buffers()))
+
+    def validate(self):
+        require(not self.training and all(not m.training for m in self.modules()), 'Eval only')
+        require(not hasattr(self, 'composer') and not hasattr(self, 'code_ids'), 'No retained composer/codebook')
+        t = self.embedding_table
+        require(tuple(t.shape) == (50257, 256) and t.dtype == torch.float32
+                and t.device.type in ('cpu', 'mps') and t.is_contiguous(), 'Complete FP32 vocabulary table')
+        require(len(self.blocks) == 4, 'Four original transformer blocks')
+        for value in (*self.parameters(), *self.buffers()):
+            require(value.device == t.device and value.dtype == torch.float32
+                    and not value.requires_grad and bool(torch.isfinite(value).all()), 'Finite frozen FP32 snapshot')
+        return t.device
+
+    def _ids(self, ids):
+        require(not self.training and not torch.is_inference_mode_enabled()
+                and not torch.is_autocast_enabled(self.embedding_table.device.type), 'Ordinary FP32 no-grad inference')
+        require(type(ids) is torch.Tensor and ids.dtype == torch.int64
+                and ids.device == self.embedding_table.device and ids.ndim == 2
+                and 1 <= ids.shape[0] <= 8 and 1 <= ids.shape[1] <= 128
+                and bool(((ids >= 0) & (ids < 50257)).all()), 'Bounded same-device token IDs')
+
+    def _forward(self, ids, caches=None, start_pos=0):
+        self._ids(ids)
+        hidden = F.embedding(ids.contiguous(), self.embedding_table)
+        for i, block in enumerate(self.blocks):
+            hidden, aux = block(hidden, None if caches is None else caches[i], start_pos)
+            require(aux is None, 'No auxiliary objective')
+        logits = self.readout(self.final_norm(hidden)) / 4.
+        require(tuple(logits.shape) == (*ids.shape, 50257) and logits.dtype == torch.float32
+                and bool(torch.isfinite(logits).all()), 'Finite primary logits')
+        return logits
+
+    @torch.no_grad()
+    def forward(self, ids):
+        return self._forward(ids)
+
+
+@torch.no_grad()
+def precompute(model, source, chunk_size=256):
+    """Compute every ID once, on the source device; leave the source untouched."""
+    require(type(model) is ByteInputModel and model.spec.variant == 'raw_bytes'
+            and not model.training, 'Adopted real-byte eval model required')
+    require(type(chunk_size) is int and 1 <= chunk_size <= 1024, 'Bounded composer chunk')
+    device = model.validate()
+    before = tuple((n, t._version) for n, t in (*model.ordered_parameters(), *model.named_buffers()))
+    table = torch.empty((50257, 256), dtype=torch.float32, device=device)
+    for lo in range(0, 50257, chunk_size):
+        hi = min(lo + chunk_size, 50257)
+        table[lo:hi].copy_(model.composer(model.code_ids[lo:hi], model.code_lengths[lo:hi]))
+    result = PrecomputedModel(copy.deepcopy(model.blocks), copy.deepcopy(model.final_norm),
+                              copy.deepcopy(model.readout), table, source)
+    require(before == tuple((n, t._version) for n, t in (*model.ordered_parameters(), *model.named_buffers())),
+            'Source changed during conversion')
+    model.validate()
+    return result
+
+
+class Session:
+    """One immutable snapshot and four ordinary MLA KV caches; B1 or B8."""
+    def __init__(self, model, batch):
+        require(type(model) is PrecomputedModel and type(batch) is int and batch in (1, 8), 'Own snapshot and B1/B8')
+        self.model, self.batch, self.position = model, batch, 0
+        self.device = model.validate()
+        self.caches = build_caches(OmegaConf.create(dict(model=native_model())), self.device,
+                                   batch_size=batch, dtype=torch.float32)
+        self._layers = tuple(self.caches)
+        self._tensors = tuple(t for c in self.caches for t in (c.c_cache, c.r_cache))
+        self._state = model.versions()
+        self.check()
+
+    def check(self):
+        require(not self.model.training and self.model.versions() == self._state, 'Snapshot mutated during session')
+        require(type(self.position) is int and 0 <= self.position <= 128
+                and len(self.caches) == 4 and all(a is b for a, b in zip(self.caches, self._layers)), 'Original cache layers')
+        for i, c in enumerate(self.caches):
+            require(c.position == self.position and c.layer_index == i and c.attn_type == 'mla', 'Aligned MLA cache')
+            for j, (t, width) in enumerate(((c.c_cache, 64), (c.r_cache, 32))):
+                require(t is self._tensors[2*i+j] and tuple(t.shape) == (self.batch, 128, width)
+                        and t.dtype == torch.float32 and t.device == self.device and not t.requires_grad, 'Original cache tensor')
+
+    @torch.no_grad()
+    def logits(self, ids, start_pos):
+        self.check()
+        require(type(start_pos) is int and start_pos == self.position, 'Contiguous cache position')
+        self.model._ids(ids)
+        require(ids.shape[0] == self.batch and self.position + ids.shape[1] <= 128, 'Cache batch/context bound')
+        value = self.model._forward(ids, self.caches, start_pos)
+        self.position += ids.shape[1]
+        self.check()
+        return value
+
+    @torch.no_grad()
+    def reset(self):
+        self.check(); self.model.validate()
+        for cache in self.caches: cache.reset()
+        self.position = 0
+        self.check()
+
+    @property
+    def storage_bytes(self):
+        self.check()
+        return sum(t.numel()*t.element_size() for t in self._tensors)
+
+
+def save(model, path):
+    """Exclusive CPU export; checkpoint/source receipts stay in the envelope."""
+    model.validate()
+    path = Path(path)
+    tmp = path.with_suffix(path.suffix + '.tmp')
+    require(not path.exists() and not tmp.exists(), 'Never overwrite an artifact')
+    value = dict(kind=KIND, source=copy.deepcopy(model.source), native_model=native_model(),
+                 state={n: t.detach().cpu().contiguous().clone() for n, t in model.state_dict().items()})
+    require(sum(t.numel()*t.element_size() for t in value['state'].values()) < FILE_CAP-1024**2, 'Bounded export')
+    with tmp.open('xb') as stream:
+        torch.save(value, stream); stream.flush(); os.fsync(stream.fileno())
+    require(tmp.stat().st_size <= FILE_CAP, 'Export size cap')
+    os.link(tmp, path); tmp.unlink()
+    return dict(path=str(path.resolve()), size=path.stat().st_size, sha256=sha(path), kind=KIND)
+
+
+def load(receipt, expected_source, backend):
+    """Load independently of the byte model/codebook; receipt must be trusted."""
+    path = Path(receipt['path'])
+    require(backend in ('cpu', 'mps') and receipt['kind'] == KIND and not path.is_symlink()
+            and 0 < receipt['size'] <= FILE_CAP and path.stat().st_size == receipt['size']
+            and sha(path) == receipt['sha256'], 'Exact trusted precomputed artifact')
+    value = torch.load(path, map_location='cpu', weights_only=True)
+    require(set(value) == {'kind', 'source', 'native_model', 'state'} and value['kind'] == KIND
+            and value['source'] == expected_source and value['native_model'] == native_model(), 'Bound artifact identity')
+    with torch.random.fork_rng(devices=[]):
+        torch.manual_seed(0)  # Construction only; every persistent weight is replaced.
+        native = Native(native_config())
+    table = value['state']['embedding_table']
+    result = PrecomputedModel(native.transformer.h, native.transformer.ln_f, native.lm_head,
+                              table, expected_source)
+    result.load_state_dict(value['state'], strict=True)
+    result.to(backend).eval(); result.validate()
+    require(path.stat().st_size == receipt['size'] and sha(path) == receipt['sha256'], 'Unchanged artifact')
+    return result

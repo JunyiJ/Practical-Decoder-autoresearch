@@ -1,0 +1,366 @@
+{
+  "timings": [
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "workload": "full128",
+      "current_ms": 25.69179201964289,
+      "precomputed_ms": 9.730374906212091,
+      "speedup": 2.640370208473742
+    },
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "workload": "prefill96",
+      "current_ms": 20.967249991372228,
+      "precomputed_ms": 8.284208015538752,
+      "speedup": 2.5309902832043565
+    },
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "workload": "decode32",
+      "current_ms": 113.93208301160485,
+      "precomputed_ms": 70.37700002547354,
+      "speedup": 1.6188823475050966
+    },
+    {
+      "backend": "cpu",
+      "batch": 8,
+      "workload": "full128",
+      "current_ms": 179.66966703534126,
+      "precomputed_ms": 59.82174992095679,
+      "speedup": 3.0034171061986816
+    },
+    {
+      "backend": "cpu",
+      "batch": 8,
+      "workload": "prefill96",
+      "current_ms": 137.71966705098748,
+      "precomputed_ms": 47.415124950930476,
+      "speedup": 2.904551389319599
+    },
+    {
+      "backend": "cpu",
+      "batch": 8,
+      "workload": "decode32",
+      "current_ms": 264.54083307180554,
+      "precomputed_ms": 158.2791249966249,
+      "speedup": 1.671356428571655
+    },
+    {
+      "backend": "mps",
+      "batch": 1,
+      "workload": "full128",
+      "current_ms": 26.25916595570743,
+      "precomputed_ms": 9.294165996834636,
+      "speedup": 2.8253386010805763
+    },
+    {
+      "backend": "mps",
+      "batch": 1,
+      "workload": "prefill96",
+      "current_ms": 22.68454199656844,
+      "precomputed_ms": 8.861250011250377,
+      "speedup": 2.559970880831463
+    },
+    {
+      "backend": "mps",
+      "batch": 1,
+      "workload": "decode32",
+      "current_ms": 540.1357500813901,
+      "precomputed_ms": 252.4187909439206,
+      "speedup": 2.139839700766933
+    },
+    {
+      "backend": "mps",
+      "batch": 8,
+      "workload": "full128",
+      "current_ms": 147.40616595372558,
+      "precomputed_ms": 41.13370901905,
+      "speedup": 3.583585566899845
+    },
+    {
+      "backend": "mps",
+      "batch": 8,
+      "workload": "prefill96",
+      "current_ms": 108.50283305626363,
+      "precomputed_ms": 30.000499915331602,
+      "speedup": 3.6167008337355675
+    },
+    {
+      "backend": "mps",
+      "batch": 8,
+      "workload": "decode32",
+      "current_ms": 601.7562500201166,
+      "precomputed_ms": 273.9615839673206,
+      "speedup": 2.1964986524968286
+    }
+  ],
+  "memory": [
+    {
+      "backend": "cpu",
+      "arm": "current",
+      "model_tensor_bytes": 118207844,
+      "loaded": {
+        "current_rss_bytes": 582500352,
+        "mps_current_bytes": null,
+        "mps_driver_bytes": null,
+        "process_peak_rss_bytes": 583548928
+      },
+      "observations": [
+        {
+          "batch": 1,
+          "cache_bytes": 196608,
+          "current_rss_bytes": 654196736,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 654196736,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 654213120,
+          "logits_bytes": 19298688,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 654213120,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 654229504,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 654229504,
+          "stage": "decode_logits_live"
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 1572864,
+          "current_rss_bytes": 1195180032,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 1195180032,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 1195180032,
+          "logits_bytes": 154389504,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 1195180032,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 1195180032,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 1195180032,
+          "stage": "decode_logits_live"
+        }
+      ]
+    },
+    {
+      "backend": "cpu",
+      "arm": "precomputed",
+      "model_tensor_bytes": 114100736,
+      "loaded": {
+        "current_rss_bytes": 538198016,
+        "mps_current_bytes": null,
+        "mps_driver_bytes": null,
+        "process_peak_rss_bytes": 538198016
+      },
+      "observations": [
+        {
+          "batch": 1,
+          "cache_bytes": 196608,
+          "current_rss_bytes": 594100224,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 594100224,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 594100224,
+          "logits_bytes": 19298688,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 594100224,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 594100224,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 594100224,
+          "stage": "decode_logits_live"
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 1572864,
+          "current_rss_bytes": 913260544,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 913260544,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 913260544,
+          "logits_bytes": 154389504,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 913260544,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 917176320,
+          "mps_current_bytes": null,
+          "mps_driver_bytes": null,
+          "process_peak_rss_bytes": 917176320,
+          "stage": "decode_logits_live"
+        }
+      ]
+    },
+    {
+      "backend": "mps",
+      "arm": "current",
+      "model_tensor_bytes": 118207844,
+      "loaded": {
+        "current_rss_bytes": 763150336,
+        "mps_current_bytes": 119360512,
+        "mps_driver_bytes": 1091010560,
+        "process_peak_rss_bytes": 763150336
+      },
+      "observations": [
+        {
+          "batch": 1,
+          "cache_bytes": 196608,
+          "current_rss_bytes": 789053440,
+          "mps_current_bytes": 119558144,
+          "mps_driver_bytes": 1103839232,
+          "process_peak_rss_bytes": 789053440,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 789217280,
+          "logits_bytes": 19298688,
+          "mps_current_bytes": 138956800,
+          "mps_driver_bytes": 1112227840,
+          "process_peak_rss_bytes": 789217280,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 789463040,
+          "mps_current_bytes": 119759360,
+          "mps_driver_bytes": 1112227840,
+          "process_peak_rss_bytes": 789463040,
+          "stage": "decode_logits_live"
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 1572864,
+          "current_rss_bytes": 449855488,
+          "mps_current_bytes": 120941568,
+          "mps_driver_bytes": 1138442240,
+          "process_peak_rss_bytes": 817692672,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 502284288,
+          "logits_bytes": 154389504,
+          "mps_current_bytes": 276130816,
+          "mps_driver_bytes": 1146830848,
+          "process_peak_rss_bytes": 817692672,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 502530048,
+          "mps_current_bytes": 122579968,
+          "mps_driver_bytes": 1146830848,
+          "process_peak_rss_bytes": 817692672,
+          "stage": "decode_logits_live"
+        }
+      ]
+    },
+    {
+      "backend": "mps",
+      "arm": "precomputed",
+      "model_tensor_bytes": 114100736,
+      "loaded": {
+        "current_rss_bytes": 669810688,
+        "mps_current_bytes": 116032512,
+        "mps_driver_bytes": 1091010560,
+        "process_peak_rss_bytes": 669810688
+      },
+      "observations": [
+        {
+          "batch": 1,
+          "cache_bytes": 196608,
+          "current_rss_bytes": 683655168,
+          "mps_current_bytes": 116230144,
+          "mps_driver_bytes": 1103839232,
+          "process_peak_rss_bytes": 683655168,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 683655168,
+          "logits_bytes": 19298688,
+          "mps_current_bytes": 135628800,
+          "mps_driver_bytes": 1103839232,
+          "process_peak_rss_bytes": 683655168,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 1,
+          "current_rss_bytes": 683720704,
+          "mps_current_bytes": 116431360,
+          "mps_driver_bytes": 1103839232,
+          "process_peak_rss_bytes": 683720704,
+          "stage": "decode_logits_live"
+        },
+        {
+          "batch": 8,
+          "cache_bytes": 1572864,
+          "current_rss_bytes": 414498816,
+          "mps_current_bytes": 117613568,
+          "mps_driver_bytes": 1129005056,
+          "process_peak_rss_bytes": 710508544,
+          "stage": "idle_with_cache"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 414498816,
+          "logits_bytes": 154389504,
+          "mps_current_bytes": 272802816,
+          "mps_driver_bytes": 1137393664,
+          "process_peak_rss_bytes": 710508544,
+          "stage": "prefill_logits_live"
+        },
+        {
+          "batch": 8,
+          "current_rss_bytes": 414892032,
+          "mps_current_bytes": 119677952,
+          "mps_driver_bytes": 1137393664,
+          "process_peak_rss_bytes": 710508544,
+          "stage": "decode_logits_live"
+        }
+      ]
+    }
+  ],
+  "source_checkpoint_bytes": 65445293,
+  "precomputed_checkpoint_bytes": 114067075,
+  "tensor_saving_bytes": 4107108,
+  "accepted": true
+}

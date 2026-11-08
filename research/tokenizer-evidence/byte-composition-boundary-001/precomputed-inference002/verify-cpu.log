@@ -1,0 +1,17 @@
+verify-cpu full vocabulary and full validation passed
+verify-cpu 1 full128 speedup 2.685
+verify-cpu 1 prefill96 speedup 2.513
+verify-cpu 1 decode32 speedup 1.597
+verify-cpu 8 full128 speedup 3.023
+verify-cpu 8 prefill96 speedup 3.038
+verify-cpu 8 decode32 speedup 1.543
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_benchmark_v2.py", line 366, in <module>
+    else:worker(args.phase,args.backend,args.plan_sha)
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_benchmark_v2.py", line 286, in worker
+    assert rng==(digest(torch.random.get_rng_state()),digest(torch.mps.get_rng_state()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

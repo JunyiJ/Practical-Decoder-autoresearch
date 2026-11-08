@@ -1,0 +1,79 @@
+{
+  "acceptance": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/10/acceptance.json",
+    "sha256": "b99ce722298ef00369cc0b45dc9cc75f42b73b2d44878d6e24ca347150006278",
+    "size": 733
+  },
+  "atol": 3e-05,
+  "backends": [
+    "cpu",
+    "mps"
+  ],
+  "batches": [
+    1,
+    8
+  ],
+  "checkpoint": {
+    "kind": "byte_input_h200_inference_v1",
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/byte-input-quality-v1-001/10/h200.pt",
+    "sha256": "1e7b746e0a8f7eadfdb6a7064424d4cc03b9f372681e85be9b4782a689533077",
+    "size": 65445293
+  },
+  "context": 128,
+  "decode": 32,
+  "full_validation_targets": 34278,
+  "greedy_steps": 16,
+  "headroom": 2147483648,
+  "holdout": false,
+  "implementation": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/implementation.json",
+    "sha256": "0d265f099e65d6c082dae220381f5704fe4497c94c2de4673e752b047ec42f08",
+    "size": 3697
+  },
+  "independent_chunk": 1024,
+  "kind": "byte_precomputed_benchmark_v4",
+  "max_ce_atol": 0.0003,
+  "mean_ce_atol": 3e-05,
+  "memory_scope": "Fresh process per backend/arm; current RSS, process high-water RSS, MPS current/driver and tensor storage separately",
+  "mps_limit": 6442450944,
+  "no_training": true,
+  "original_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/quality001/plan.json",
+    "sha256": "cd0dcc19ae94e09e3d14aa071043f6c89b498e482e942bc0bfeb65bda15d8ddd",
+    "size": 1404829
+  },
+  "output_cap": 167772160,
+  "platform": "macOS-26.3-arm64-arm-64bit-Mach-O",
+  "prefill": 96,
+  "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "recipe": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/recipe.json",
+    "sha256": "17b6dbc53c51ae987b01d016d7aab079ebcb93e77135ecb7501900c8364dd845",
+    "size": 16345
+  },
+  "repeats": 7,
+  "reserve": 8589934592,
+  "rss_limit": 4294967296,
+  "rtol": 0.0003,
+  "semantics": "Existing public no-grad FP32 behavior; no RMSNorm epsilon correction",
+  "sources": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_inference_v3.py",
+      "sha256": "b344cd0cfd2770e547d2415021217ac697022ed0e426e682c0bcc258c6a3c532",
+      "size": 10299
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_benchmark_v4.py",
+      "sha256": "df67f0fdd9549dac762cffa70d5efa4c98ef720eea6bff918ae552597169d7e2",
+      "size": 20580
+    }
+  ],
+  "table_chunk": 256,
+  "threads": 4,
+  "timing_scope": "Paired alternating order; synchronize MPS; setup/reset excluded from steady-state latency; full logits retained until sync",
+  "torch_version": "2.14.1",
+  "total_seconds": 2700,
+  "vocabulary": 50257,
+  "warmups": 2,
+  "worker_seconds": 900
+}

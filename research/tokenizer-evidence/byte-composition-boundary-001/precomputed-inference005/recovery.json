@@ -1,0 +1,6 @@
+{
+  "previous_attempt": "precomputed-inference004",
+  "reason": "Sandbox makes MPS unavailable. Attempt004 raised unsupported-OS runtime error on the first MPS allocation, before model execution. Host probe confirms actual macOS26.3 and working MPS.",
+  "correction": "Run guarded workers through approved host execution. Explicit availability assertion and main-thread MPS initialization protect the monitor. No model-v3 changes, tolerance changes, or CPU rerun.",
+  "prior_failures_preserved": true
+}

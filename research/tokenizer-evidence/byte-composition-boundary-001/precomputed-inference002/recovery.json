@@ -1,0 +1,8 @@
+{
+  "reason": "The inherited normalizer explicitly requires Parameter.requires_grad=True in checked_forward, including no-grad inference. V1 disabled those flags and therefore stopped on first full-model comparison. This is an implementation-contract failure, not a numerical discrepancy.",
+  "prior_attempt": "research/tokenizer-evidence/byte-composition-boundary-001/precomputed-inference001",
+  "correction": "V2 retains original requires_grad flags, requires absent gradients, and disables autograd through all public inference entrypoints. No frozen source, checkpoint, tolerance, case or scientific result changes.",
+  "authorization": "User requested implementation and verification of precomputed embeddings and measured tradeoffs.",
+  "prior_artifact_preserved": true,
+  "prior_sources_preserved": true
+}

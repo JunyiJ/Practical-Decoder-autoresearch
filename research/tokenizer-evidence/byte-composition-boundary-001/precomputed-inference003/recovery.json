@@ -1,0 +1,9 @@
+{
+  "prior_attempt": "precomputed-inference002",
+  "reason": "Full CPU vocabulary/validation/cache/greedy and timing checks passed, but final RNG preservation failed. The compiled loader used torch.manual_seed inside CPU-only fork_rng, changing MPS RNG as well.",
+  "correction": "Seed torch.random.default_generator directly inside the existing CPU fork_rng. This preserves MPS RNG without changing any temporary CPU initialization or loaded parameter.",
+  "sources_preserved": true,
+  "failed_evidence_preserved": true,
+  "cases_and_tolerances_unchanged": true,
+  "authorization": "User requested complete implementation, verification and measurements."
+}

@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_benchmark_v1.py", line 366, in <module>
+    else:worker(args.phase,args.backend,args.plan_sha)
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_benchmark_v1.py", line 194, in worker
+    a=_logits(model,ids);b=loaded(ids)
+                           ~~~~~~^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_inference_v1.py", line 95, in forward
+    return self._forward(ids)
+           ~~~~~~~~~~~~~^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_inference_v1.py", line 86, in _forward
+    hidden, aux = block(hidden, None if caches is None else caches[i], start_pos)
+                  ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/local_mix_v1/runtime/models/blocks.py", line 145, in forward
+    self._normalize(self.ln1, x), cache=cache, start_pos=start_pos,
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/local_mix_v1/runtime/models/blocks.py", line 133, in _normalize
+    return checked_forward(self.block_norm_spec, module, x)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/spec.py", line 85, in checked_forward
+    validate(spec,module)
+    ~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/spec.py", line 78, in validate
+    require(all(type(p) is nn.Parameter and p.shape==(256,) and p.dtype==torch.float32
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        and p.requires_grad for p in parameters.values()),'Normalizer FP32 parameter contract differs')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/spec.py", line 17, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Normalizer FP32 parameter contract differs

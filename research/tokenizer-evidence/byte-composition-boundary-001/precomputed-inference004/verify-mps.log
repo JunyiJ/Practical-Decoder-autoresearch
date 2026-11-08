@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_benchmark_v4.py", line 376, in <module>
+    else:worker(args.phase,args.backend,args.plan_sha)
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_precomputed_benchmark_v4.py", line 115, in worker
+    probe = torch.empty(1, device='mps')
+RuntimeError: The MPS backend is supported on macOS 14.0+. Current OS version can be queried using `sw_vers`

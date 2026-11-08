@@ -1,0 +1,17 @@
+{
+  "previous": "precomputed-inference003",
+  "failed_pid": 97166,
+  "signal": "SIGSEGV",
+  "faulting_thread": 4,
+  "top_frames": [
+    "_platform_memset",
+    "at::mps::MPSStream::MPSStream(c10::Stream)",
+    "at::mps::getDefaultMPSStream()",
+    "at::mps::HeapAllocator::MPSHeapAllocatorImpl::MPSHeapAllocatorImpl()",
+    "at::mps::MPSAllocator::getDriverAllocatedMemory() const",
+    "torch::mps::MPSModule_driverAllocatedMemory"
+  ],
+  "diagnosis": "The guard thread called driver_allocated_memory before MPS initialization on the main thread. No MPS model comparison had begun.",
+  "correction": "Perform a one-element MPS allocation and synchronize on the main thread before creating the guard. No changes to model-v3, scoring, timing cases, limits or tolerances.",
+  "original_failure_preserved": true
+}

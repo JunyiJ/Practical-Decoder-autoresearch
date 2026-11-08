@@ -1,0 +1,82 @@
+{
+  "backend": "mps",
+  "baseline_memory": {
+    "current_rss_bytes": 224116736,
+    "mps_current_bytes": 0,
+    "mps_driver_bytes": 8863744,
+    "process_peak_rss_bytes": 224116736
+  },
+  "buffers_bytes": 52800408,
+  "completed": true,
+  "final_memory": {
+    "current_rss_bytes": 502530048,
+    "mps_current_bytes": 119360512,
+    "mps_driver_bytes": 1130053632,
+    "process_peak_rss_bytes": 817692672
+  },
+  "load_seconds": 1.0018836659146473,
+  "loaded_memory": {
+    "current_rss_bytes": 763150336,
+    "mps_current_bytes": 119360512,
+    "mps_driver_bytes": 1091010560,
+    "process_peak_rss_bytes": 763150336
+  },
+  "model_tensor_bytes": 118207844,
+  "observations": [
+    {
+      "batch": 1,
+      "cache_bytes": 196608,
+      "current_rss_bytes": 789053440,
+      "mps_current_bytes": 119558144,
+      "mps_driver_bytes": 1103839232,
+      "process_peak_rss_bytes": 789053440,
+      "stage": "idle_with_cache"
+    },
+    {
+      "batch": 1,
+      "current_rss_bytes": 789217280,
+      "logits_bytes": 19298688,
+      "mps_current_bytes": 138956800,
+      "mps_driver_bytes": 1112227840,
+      "process_peak_rss_bytes": 789217280,
+      "stage": "prefill_logits_live"
+    },
+    {
+      "batch": 1,
+      "current_rss_bytes": 789463040,
+      "mps_current_bytes": 119759360,
+      "mps_driver_bytes": 1112227840,
+      "process_peak_rss_bytes": 789463040,
+      "stage": "decode_logits_live"
+    },
+    {
+      "batch": 8,
+      "cache_bytes": 1572864,
+      "current_rss_bytes": 449855488,
+      "mps_current_bytes": 120941568,
+      "mps_driver_bytes": 1138442240,
+      "process_peak_rss_bytes": 817692672,
+      "stage": "idle_with_cache"
+    },
+    {
+      "batch": 8,
+      "current_rss_bytes": 502284288,
+      "logits_bytes": 154389504,
+      "mps_current_bytes": 276130816,
+      "mps_driver_bytes": 1146830848,
+      "process_peak_rss_bytes": 817692672,
+      "stage": "prefill_logits_live"
+    },
+    {
+      "batch": 8,
+      "current_rss_bytes": 502530048,
+      "mps_current_bytes": 122579968,
+      "mps_driver_bytes": 1146830848,
+      "process_peak_rss_bytes": 817692672,
+      "stage": "decode_logits_live"
+    }
+  ],
+  "parameters_bytes": 65407436,
+  "phase": "memory-current",
+  "plan_sha256": "e3e209e3583ad14a75926f046c992f3b0bc27519257d779da0c9aec662779fe7"
+}
