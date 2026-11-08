@@ -66,11 +66,19 @@ precomputation for fixed weights does not remove training-time work.
 ## Decision from this review
 
 Do not launch an adapter as an automatic response to the unfavorable panel.
-The completed frequency analysis identifies rare targets as a concrete next
-question, without establishing a causal gradient mechanism. Inspect the accepted
-paired input/output table geometry by training frequency next, without new
-training, scoring or initializer replay. Interpret geometry descriptively and
-account for coordinate/scale differences before proposing a new model.
+The completed frequency analysis identified rare targets as a concrete question.
+The subsequent [accepted-weight geometry analysis](tokenizer-evidence/shared-table-geometry-001/analysis.md)
+finished in 1.942 seconds without training or scoring. Shared vectors are closer
+to matched output vectors than matched input vectors in all frequency bins.
+However, unseen and very frequent rows show larger role mismatches and input
+norm inflation than rare rows. A simple rare-specific endpoint-distortion
+explanation is weakened. Cross-model endpoint geometry cannot establish gradient
+conflict or functional damage. These results do not justify an automatic adapter.
+
+Next examine whether context-side output transformations have a justified new
+application to the byte incumbent, using original mixture evidence and contrary
+primary literature. This is an applicability question, not a selected model or
+a replay of the closed native projection study.
 
 A later proposal would need fresh matched controls, a direct byte-incumbent
 comparison, equal bounded tuning, independent confirmation and a full retained

@@ -11,11 +11,15 @@ weight files, fixed protocol, independent statistics and saved-loss frequency
 analysis. Targets seen1–9times in training contribute67.9% of the net sharing
 penalty; this is exploratory evidence, not a causal or subgroup significance claim.
 
-Next useful work is a small read-only analysis of the accepted paired tables by
-training frequency before any new model selection. The
-[projection evidence review](SHARED_TABLE_PROJECTION_EVIDENCE.md) includes contrary
-literature and historical closed-study restrictions. No adapter or new quality
-panel is selected. Do not replay or rescue the completed sharing comparison.
+The [accepted-weight geometry analysis](tokenizer-evidence/shared-table-geometry-001/analysis.md)
+is complete: 1.942 seconds, no training or scoring. Shared vectors are closer to
+matched output vectors, but rare targets do not show the largest role mismatch.
+This weakens a simple rare-specific distortion explanation and does not justify
+an automatic adapter. Next examine context-side transformation applicability to
+the byte incumbent using original mixture evidence and contrary primary literature.
+The [projection evidence review](SHARED_TABLE_PROJECTION_EVIDENCE.md) retains
+historical closed-study restrictions. No new candidate or quality panel is selected.
+Do not replay or rescue the completed sharing comparison.
 
 The autonomous research goal remains active. Historical sections below retain
 their original evidence; current status is in TOKENIZER_RESUME_STATE.json.
