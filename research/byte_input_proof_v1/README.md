@@ -1,15 +1,18 @@
-# Byte-input integration proof: current recovery004 sources
+# Byte-input integration proof: accepted original004
 
 Read [the current research handoff](../RESEARCH_RESUMED_2026-11-07.md).
 The intended proof covers real D256/V50257, B8T128, native/raw-byte/nonlexical
-arms, CPU/MPS, complete coordinate comparisons and357 invalid transactions.
-No real corpus or holdout is used. Full model acceptance is still missing.
+arms, CPU/MPS, complete coordinate comparisons and 357 invalid transactions.
+No real corpus or holdout was used. Independent saved review004 accepted all
+5,392 records / 1,412,427,220 coordinates with all six cases complete.
+See `../tokenizer-evidence/byte-composition-boundary-001/model-acceptance004/acceptance.json`.
 
 Current sources are `entry004.py`, `driver004.py`, `model_reference002.py`,
 `admission004.py`, `saved_review004.py`, and unchanged `cases.py`,
 `codebook_reference.py`, `coordinates.py`, `transactions.py` and candidate
-`research/byte_input_model_v2`. They need a new frozen plan, fresh exclusive
-roles and complete admission before execution. Do not call old numerical entries.
+`research/byte_input_model_v2`. They executed once under a frozen plan with fresh exclusive roles and complete
+admission. Original004 is now closed accepted. Do not call any old numerical
+entry, repeat the proof, or reuse its roles.
 
 Original002 failed a native optimizer differential because it supplied unequal
 but close gradients to the BF16 Muon transformation. New003 retained independent
@@ -38,7 +41,10 @@ CPU/MPS RNG before and after rejection. RNG-copy addresses are excluded.
 
 Large `.coordinates.gz` payloads remain local under exact tracked manifests.
 Do not delete or replay them to save space. Source/evidence changes are pushed
-without binary model weights. The16GiB output cap,4GiB RSS,6GiB MPS,8GiB reserve,
+without binary model weights. The 16GiB output cap,4GiB RSS,6GiB MPS,8GiB reserve,
 2GiB extra headroom, one-hour runtime and shared nonblocking lock remain fixed.
-Before the next run, reconcile live processes, freeze all source/runtime/assets,
-qualify fresh roles, and verify the complete retained-output requirement.
+Next: prepare the separate numerical checkpoint proof for
+`research/byte_input_state_v1.py`, whose source-only review passed. No numerical
+state qualification exists yet. Reconcile live processes, freeze all new
+source/runtime/assets, qualify fresh roles, and verify the complete retained
+output, serialization-overlap and memory requirements before admission.

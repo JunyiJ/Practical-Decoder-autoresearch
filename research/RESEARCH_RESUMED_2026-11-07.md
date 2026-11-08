@@ -1,80 +1,81 @@
-# Active research: byte-input full-model proof recovery
+# Active research: full-model proof accepted; checkpoint proof next
 
-The human explicitly resumed research on November 7, 2026 and authorized
-bounded autonomous correction of new setup, harness and implementation defects.
-Historical closed experiments and scientific comparisons remain fixed. The
-native incumbent is unchanged; byte composition is unadopted and has no measured
-real-data quality improvement.
+The human resumed autonomous research on November 7, 2026. The native incumbent
+remains unchanged. Byte composition has no measured real-data quality gain and
+has not been adopted.
 
-Start with [current machine-readable progress](tokenizer-evidence/byte-composition-boundary-001/model-proof-recovery001.json)
-and [the proof source guide](byte_input_proof_v1/README.md).
+The [independent saved review004](tokenizer-evidence/byte-composition-boundary-001/model-saved-review004/review.json)
+accepted all 5,392 records and 1,412,427,220 coordinates from the complete actual
+D256/V50257, B8T128 integration proof. Native, raw-byte and nonlexical-code arms
+passed on CPU and MPS, including all 357 invalid-call preservation transactions.
+The proof covers initialization, codebooks, forward/loss, every gradient,
+causality, two optimizer updates with identical input gradients, and complete
+optimizer state. The second update reuses fixed gradients to isolate state
+behavior; it is not a second training step. Numerical tolerances remain
+4e-6 + 4e-5*abs(reference), with exact gates where specified by the frozen plan.
+No corpus, holdout or quality comparison ran.
 
-## What the new numerical evidence establishes
+The numerical worker finished in 559.704 seconds, with peak RSS 2,915,385,344
+bytes under the 4 GiB limit. Recorded output was 6,132,301,517 bytes under 16 GiB.
+The guard enforced the 6 GiB MPS driver limit; its final 26,951,680-byte MPS
+observation is not a peak measurement. Independent streaming review took 29.621
+seconds and 65,617,920 bytes peak RSS. All workers terminated successfully.
 
-- The complete public-byte codebooks and nonlexical control mappings passed in
-  the attempted proofs, including full vocabulary rows and exhaustive small
-  Feistel domains. The full-domain claim remains the separate XOR inverse argument.
-- Fresh model proof003 completed the genuine native CPU B8T128 case: all forward,
-  loss, initialization and gradient comparisons; two updates with identical
-  gradient inputs; complete optimizer state; causality; and all62 invalid-call
-  preservation checks. This verifies the tested native CPU integration scope,
-  including the new optimizer-state rejection checks, not all model variants.
-- Proof003 then failed one raw-byte highway-bias gradient coordinate. The full
-  three-arm CPU/MPS proof is incomplete and unqualified. No MPS model case ran.
+## Preserved failures and recoveries
 
-[Independent saved review003](tokenizer-evidence/byte-composition-boundary-001/model-saved-review003/review.json)
-reconciled1,004 records/406,261,069 coordinates and confirmed that failure.
-The run exited1 after104.154s; peak RSS3,003,629,568B stayed below4GiB.
+Original002 failed 18 native CPU optimizer-update coordinates. The independent
+gradients were within tolerance, but 13 coordinates crossed BF16 rounding
+boundaries before Muon orthogonalization. The
+[saved-array diagnosis](tokenizer-evidence/byte-composition-boundary-001/model-update-diagnosis001/result.json)
+identified the confounded comparison. Subsequent attempts retained the original
+independent gradient gates, then recorded identical optimizer inputs before
+comparing updates and state. Original002 remains closed failed.
 
-## Preserved failures and exact recoveries
+Original003 passed the complete native CPU case, then failed one raw-byte
+highway-bias gradient coordinate. The
+[bounded primitive diagnostic](tokenizer-evidence/byte-composition-boundary-001/component-arithmetic-diagnosis001/result.json)
+found two near-zero ReLU branch differences caused by Conv1d/separate-bias
+reference arithmetic. Independently assembled explicit windows using the
+declared fused FP32 linear primitive reproduced every preactivation exactly.
+Reference002 uses that assembly without copied masks, excluded coordinates,
+weight shifts or tolerance changes. It shares native blocks, qualified numerical
+primitives and library optimizer kernels; acceptance is an integration proof,
+not an independent re-proof of those kernels. Original003 remains closed failed.
 
-The original model-math002 update comparison failed18 coordinates in the native
-CPU dkv matrix (max7.812e-6). The two gradients differed by only3.347e-10, but13
-coordinates crossed BF16 rounding boundaries. Muon casts to BF16 before its
-orthogonalization. That comparison confounded update correctness with sensitivity
-to different gradient inputs. [Saved-data diagnosis](tokenizer-evidence/byte-composition-boundary-001/model-update-diagnosis001/result.json)
-did not rerun the model or optimizer. Fresh003 preserved the independent gradient
-gates, then supplied exactly equal gradients for the update/state comparison.
-Native CPU passed. Original002 remains closed failed, never reinterpreted as pass.
-
-The next failure was different: raw-byte CPU highway-bias unit382 differed by
-1.34085e-5. A new diagnostic on saved initial arrays found two near-zero ReLU
-branch differences between the declared fused FP32 arithmetic and the algebraic
-Conv1d/separate-bias reference. The failed unit's preactivation was +1.177e-9 in
-the declared path and0 in the alternative. Independently assembled explicit
-windows with the declared fused linear primitive reproduced every preactivation
-exactly. [Primitive diagnostic](tokenizer-evidence/byte-composition-boundary-001/component-arithmetic-diagnosis001/result.json)
-preserves all preactivation arrays and scope limits. It called no historical
-model/reference function, full body, backward, optimizer or initializer.
-
-The prepared reference002 derives windows by explicit slicing/stacking and uses
-the declared fused FP32 linear operations. It does not copy masks, omit failing
-coordinates, move weights away from a kink, or relax tolerances. Its independence
-is indexing/assembly and explicit CE/grouping logic; it shares qualified numerical
-primitives, native blocks and optimizer kernels. The earlier independent byte
-component math proof remains applicable only in its established finite scope.
+Fresh004 used separately censused exclusive roles and passed unchanged cases
+and gates. All original plans, sources, guards, failures, coordinates and reviews
+remain closed. Never rerun an old entry or reuse its roles.
 
 ## Next executable action
 
-Prepare and freeze model-math004 for entry004/driver004/model_reference002, with
-three new exclusive initializer/code-key roles and admission004. Keep D256,
-V50257, B8T128, all three arms, CPU/MPS, 357 rejection transactions and the exact
-4e-6 +4e-5*abs(reference) numerical gates. Keep exact initialization, codebook,
-causality and matched-gradient input gates. Then execute once and reconcile saved
-coordinates using saved_review004. No004 roles are assigned or drawn yet and
-004 is not numerically admitted. Never rerun002/003 or reuse their roles.
+The new [numerical checkpoint adapter](byte_input_state_v1.py) covers model
+parameters, named optimizer state, immutable-buffer identity, source/runtime
+binding and CPU/MPS RNG. It validates the complete payload before changing a
+fresh destination and provides bounded exclusive serialization with hash-bound
+reads. [Source review001](tokenizer-evidence/byte-composition-boundary-001/state-source001/review.json)
+passed without importing Torch or the adapter. No adapter numerical call has
+been admitted or executed. It is not a complete training checkpoint: sampler,
+data identity, schedule, clipping history and H200 work remain separate.
 
-No worker is active at this checkpoint. Existing paused automations remain
-unchanged; the active autonomous goal owns continuation. Observed free space
-32,098,246,656B exceeds the prospective proof requirement27,917,287,424B
-(16GiB output +8GiB reserve +2GiB headroom). No storage blocker or cleanup was
-triggered. Full training/state/cache/scorer and scientific-panel work remains
-later, after actual-model qualification.
+Prepare a bounded all-three-arm CPU/MPS serialization, restore and next-update
+proof, including invalid-payload preservation and exact RNG continuation. Freeze
+complete retained-output and memory costs (including staging and serialization),
+all source/runtime/assets and new exclusive roles, then perform static admission
+before numerical import. Do not reduce cases or guards to fit storage. Current
+model proof acceptance does not admit a training panel or establish model quality.
 
-The1,205 original coordinate payloads remain local and protected, totaling about
-2.14GB. Exact gzip hashes and metadata are tracked in the
-[002 manifest](tokenizer-evidence/byte-composition-boundary-001/model-update-diagnosis001/local-coordinate-manifest.json)
-and [003 manifest](tokenizer-evidence/byte-composition-boundary-001/model-gradient-diagnosis001/local-coordinate-manifest.json).
-Git contains sources, plans, guards, complete per-record metadata, rejection
-snapshots, diagnoses and reviews; it does not contain those large arrays or
-trained weights. A clone alone cannot reproduce their saved-data review.
+No worker is active at this checkpoint; the active autonomous goal owns the next
+continuation. Paused automations remain unchanged. After this proof approximately
+25.75 GB was free; no current execution is blocked. The next proof's complete
+requirement must be measured before freeze. Future scientific-panel capacity is
+unqualified and must be remeasured and recovered when its actual requirement is
+known.
+
+The [acceptance receipt](tokenizer-evidence/byte-composition-boundary-001/model-acceptance004/acceptance.json)
+and [local coordinate manifest](tokenizer-evidence/byte-composition-boundary-001/model-acceptance004/local-coordinate-manifest.json)
+bind all 5,392 retained payloads. Earlier manifests preserve the failed
+[002](tokenizer-evidence/byte-composition-boundary-001/model-update-diagnosis001/local-coordinate-manifest.json)
+and [003](tokenizer-evidence/byte-composition-boundary-001/model-gradient-diagnosis001/local-coordinate-manifest.json)
+arrays. Git contains sources and complete evidence metadata, not these large
+coordinate arrays or binary model weights. A clone alone cannot repeat the
+saved-array review.

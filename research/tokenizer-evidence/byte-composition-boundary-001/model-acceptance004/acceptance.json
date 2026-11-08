@@ -1,0 +1,146 @@
+{
+  "accepted": true,
+  "cases": [
+    {
+      "backend": "cpu",
+      "forward_shape": [
+        8,
+        128,
+        50257
+      ],
+      "parameter_elements": 28492416,
+      "parameter_tensors": 88,
+      "rejected": 62,
+      "scope": "implementation_only_no_quality",
+      "tolerances": [
+        4e-06,
+        4e-05
+      ],
+      "updates": 2,
+      "variant": "native"
+    },
+    {
+      "backend": "cpu",
+      "forward_shape": [
+        8,
+        128,
+        50257
+      ],
+      "parameter_elements": 16351859,
+      "parameter_tensors": 105,
+      "rejected": 62,
+      "scope": "implementation_only_no_quality",
+      "tolerances": [
+        4e-06,
+        4e-05
+      ],
+      "updates": 2,
+      "variant": "nonlexical_codes"
+    },
+    {
+      "backend": "cpu",
+      "forward_shape": [
+        8,
+        128,
+        50257
+      ],
+      "parameter_elements": 16351859,
+      "parameter_tensors": 105,
+      "rejected": 62,
+      "scope": "implementation_only_no_quality",
+      "tolerances": [
+        4e-06,
+        4e-05
+      ],
+      "updates": 2,
+      "variant": "raw_bytes"
+    },
+    {
+      "backend": "mps",
+      "forward_shape": [
+        8,
+        128,
+        50257
+      ],
+      "parameter_elements": 28492416,
+      "parameter_tensors": 88,
+      "rejected": 57,
+      "scope": "implementation_only_no_quality",
+      "tolerances": [
+        4e-06,
+        4e-05
+      ],
+      "updates": 2,
+      "variant": "native"
+    },
+    {
+      "backend": "mps",
+      "forward_shape": [
+        8,
+        128,
+        50257
+      ],
+      "parameter_elements": 16351859,
+      "parameter_tensors": 105,
+      "rejected": 57,
+      "scope": "implementation_only_no_quality",
+      "tolerances": [
+        4e-06,
+        4e-05
+      ],
+      "updates": 2,
+      "variant": "nonlexical_codes"
+    },
+    {
+      "backend": "mps",
+      "forward_shape": [
+        8,
+        128,
+        50257
+      ],
+      "parameter_elements": 16351859,
+      "parameter_tensors": 105,
+      "rejected": 57,
+      "scope": "implementation_only_no_quality",
+      "tolerances": [
+        4e-06,
+        4e-05
+      ],
+      "updates": 2,
+      "variant": "raw_bytes"
+    }
+  ],
+  "coordinate_count": 1412427220,
+  "free_bytes": 25748099072,
+  "guard": {
+    "elapsed_seconds": 559.7039993330836,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 3600
+    },
+    "observation": {
+      "free_bytes": 25755078656,
+      "mps_driver_bytes": 26951680,
+      "output_bytes": 6132301517,
+      "peak_rss_bytes": 2915385344
+    },
+    "pid": 95808,
+    "reason": null,
+    "status": "finished"
+  },
+  "incumbent_unchanged": true,
+  "manifest_sha256": "1da14cce68192787ec7a685a70d73b77a3b3f963308e43cc142e29fa61a1cfec",
+  "measured_at": "2026-11-08T00:23:59.714118+00:00",
+  "next_action": "Prepare and admit a fresh bounded serialization/restore/next-update proof for byte_input_state_v1, preserving all three arms and both backends; state source only is reviewed.",
+  "no_replay": true,
+  "plan_sha256": "cb31746925ec87ccd67ab7b79ea571045d5a9ded1d2b43eef9cb78ec2fb4c76c",
+  "quality_gain_measured": false,
+  "records": 5392,
+  "rejection_transactions": 357,
+  "review": "research/tokenizer-evidence/byte-composition-boundary-001/model-saved-review004/review.json",
+  "review_sha256": "81e47d182e24c588d59f6fc57098239ca80205aa01534f6ecbd866e58d1ec1ae",
+  "scope": "Finite full-size integration proof only, no corpus quality or adoption",
+  "state_numerically_qualified": false,
+  "state_source_review": "research/tokenizer-evidence/byte-composition-boundary-001/state-source001/review.json"
+}
