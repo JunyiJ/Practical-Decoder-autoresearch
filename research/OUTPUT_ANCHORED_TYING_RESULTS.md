@@ -17,7 +17,7 @@ full-validation diagnostics and export; these are descriptive single-run costs.
 
 The shared-minus-native delta is−0.007894846nat/token. Shared-minus-matched is
 +0.017936859: sharing is worse than the matched control on this seed, despite
-using45.15% fewer parameters. The initialization/coordinate control itself improves
+using45.16% fewer parameters. The initialization/coordinate control itself improves
 native CE by0.025831705. This does not establish the cause of historical GQA losses,
 because the new architecture and recipe differ as declared in the protocol.
 
