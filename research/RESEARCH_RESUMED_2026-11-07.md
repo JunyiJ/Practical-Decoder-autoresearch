@@ -1,3 +1,50 @@
+# Current work: byte-context quality recovery active
+
+This continuation completed the first baseline training, diagnosed a genuine
+runtime inference defect, verified the correction on the full original split,
+and resumed the original unattempted comparisons. No model has been adopted.
+
+Original controller54382 exited1 after slot00 finished1,200 updates. Mean
+CPU/MPS error1.84e-5 passed3e-5, but maximum target error.003434 failed.0003.
+All original weights/logs/reports remain immutable. Two new saved-weight
+diagnostics isolated the error to RMSNorm in block0, not byte composition or
+final LayerNorm. The installed PyTorch2.14.1 MPS no-grad fused RMSNorm defaults
+to double epsilon; its training/composite path uses the intended FP32 epsilon.
+The scoped scorer enables forward graphs, detaches losses, and calls no backward.
+
+Full-split recovery passed the ORIGINAL limits: mean error2.126655e-5 and maximum
+error.0002725124. CPU target scores are bit-identical, weights/gradient slots/RNG
+unchanged, zero new training. See
+[recovery decision](tokenizer-evidence/byte-context-transform-001/recovery-decision.md).
+The completed baseline is imported into quality-recovery001, plan SHA
+badc7b0daa9ff8455444d08fc5b7dcc6717033122077500253a66ae86cefd3cd.
+Its original terminal sampler digest was not published before failure; a clearly
+labeled expected state is derived from the frozen seed/call count, not claimed
+as recovered runtime state. The independent reviewer checks this limitation.
+
+A second, narrow resource-accounting defect was caught during slot01: v2 assigned
+ORIGINAL_WEIGHTS to the new folder, omitting old weights and double-counting new
+ones. Its source stays frozen. A [bound resource wrapper](tokenizer-evidence/byte-context-transform-001/resource-recovery-decision.md)
+corrects that constant for remaining workers. The current scientific worker was
+not interrupted. Old dispatcher61922 is stopped; wrapper PID63565/exec99662 will
+terminate only that dispatcher after worker61923 is terminal, then continue
+original slots02..08. Resource-plan SHA
+7092e2d46b9e9991ee05d91f26741c201b12b02c883ca4e3728f6df43a9da2e2.
+
+At this handoff, slot01 linear worker61923 had completed600updates. Poll exec99662
+and actual records; do not resume obsolete dispatcher61922/exec29733 or restart
+from a timeout. After completion, run
+`PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_resource_recovery_v1 review`.
+The three arms, roles, .0025 LR,1,200 updates,H200, strict .02 comparisons and
+statistical/numerical tolerances remain fixed. No training has been repeated.
+The full18-weight cap1.5GiB, reserve8GiB plus2GiB headroom and10-hour allowance
+remain; original elapsed costs are carried. No storage blocker exists.
+
+The broader autonomous goal remains active. The public incumbent inference path
+has not yet been changed; qualify a scoped fix separately when appropriate.
+Historical studies and failed fixtures remain closed. Previous sections below
+are historical, not the current worker state.
+
 # Current work: fresh byte-context transform comparison running
 
 The previous goal turn made progress by completing and preserving the sharing
