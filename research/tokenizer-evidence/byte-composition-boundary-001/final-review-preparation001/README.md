@@ -37,6 +37,41 @@ The reader takes the shared nonblocking worker lock, uses the existing CPU guard
 with a 300-second deadline, 1 GiB RSS limit and 8 GiB disk reserve, and creates a
 fresh sibling guard receipt. It only writes the review after guard completion.
 Inspect that receipt and the saved evidence before any adoption. The complete
-18-run review has not executed; the last screen is still training.
+18-run review has not executed; all nine screens and four fresh trajectories are
+accepted, with the second fresh code control currently training.
 
 Reviewer source SHA256: 088039e6783a322f9baf7ebaa00f617233199405975e7dcbb18ffb80a628c58a
+
+## Adoption consumer inspection
+
+The current incumbent is recorded in
+`research/tokenizer-evidence/adamw-epsilon-preparation-001/adopted-width256-mla-epsilon-recipe.json`.
+Its adoption implementation,
+`research/tokenizer-evidence/adamw-epsilon-preparation-001/quality001-adopt001.py`,
+provides an existing convention: retain historical evidence and choose the first
+fresh candidate in frozen order as a representative, never the lowest-loss seed.
+If this panel is eligible after independent review, that convention would choose
+raw-byte slot10. This is an operational artifact choice identified during
+inspection, not an additional scientific gate or a claim that adoption occurred.
+
+The byte model requires its own qualified model, training and inference sources:
+`research/byte_input_model_v3/`, `research/byte_input_training_v2.py`, and
+`research/byte_input_inference_v1.py`. Relabeling a native configuration would not
+reconstruct it. A future adoption record must bind these admitted sources, the
+original recipe and codebook, the accepted parent/export receipts, and the final
+panel/review evidence, preserving the width-256 MLA scope. The unqualified
+`research/byte_input_direct_hash_v1.py` optimization is not part of this model.
+
+The accepted inference loader requires an independently supplied typed identity
+and parent. `training.Context._identity` retains tuple model/codebook signatures;
+JSON converts these to lists. A standalone consumer therefore must reconstruct
+the typed identity from the admitted plan and codebook contract, not blindly pass
+JSON lists or trust the export's self-description. This is an inspected API
+requirement, not a demonstrated inference defect or a reason to repeat accepted
+model tests. Existing per-run inference/cache checks remain the numerical evidence.
+
+This inspection added no training, inference, seed, quality comparison or test
+suite. Read-only inspection mistakes (a Boolean sliced as text and package/file
+path assumptions) were corrected by string conversion and exact file discovery;
+their original tool failures remain in the conversation. Frozen sources and the
+active controller were unchanged.
