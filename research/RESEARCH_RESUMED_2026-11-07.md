@@ -1,3 +1,35 @@
+# Current work: weight/clipping analysis complete; representation question next
+
+The bounded all-nine-run RAW/H200 analysis passed in0.985seconds with no model
+execution, training, rescoring or disk weight copies. All source/weight hashes and
+CPU RNG were preserved. [Results](tokenizer-evidence/byte-context-transform-001/weight-dynamics001/analysis.md)
+show tanh's relative output movement is smaller than both controls and its total
+transform movement smaller than linear, despite its worse averaging outcome.
+Transformer movement is similar; composer movement somewhat larger. A uniform
+larger-displacement explanation is unsupported. Tanh's late clip multiplier is
+.757 versus.468 byte/.428 linear, so stronger global clipping is also unsupported.
+
+The output table's absolute scale is larger for tanh (RAW RMS.16996 versus.14159
+byte/.13106 linear), and its transform has a larger orthogonal component despite
+less total movement than linear. These are parameter-space observations, not
+proof of loss causality. No new quality campaign or adoption follows.
+
+Next execute a separately frozen, bounded CPU feature diagnostic on every run
+and RAW/H200 endpoint using the first two fixed training windows (starts0,128;
+length128). Measure feature amplitudes, saturation and analytic local transform
+sensitivity, without labels, logits, quality scores or training. This can test
+whether the earlier two-window tanh attenuation observation generalizes and
+whether bounded feature amplitude accompanies the larger readout scale. Use the
+qualified normalization scope, exact old role reconstruction, shared lock and
+resource guard; preserve every historical quality restriction. No activation,
+initialization or averaging sweep is admitted. The existing Glorot/SWA literature
+review supplies motivation and important differences from this local setting.
+
+Public corrected inference remains adopted. No worker is running and no capacity
+blocker exists (last free12.18GB). The autonomous goal remains active.
+
+All sections below are historical snapshots, not current process state.
+
 # Current work: corrected public inference adopted; return to evidence analysis
 
 The selected checkpoint now loads through research.byte_input_corrected_inference_v1.
