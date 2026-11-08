@@ -210,3 +210,15 @@ inference receipts and saved-review bindings are retained. The controller
 accepted the slot and automatically launched raw-byte slot01 at the same rate,
 PID22816 under the existing session22743/controller PID17021. Query the live
 session and latest slots before acting; these process IDs describe this handoff.
+
+## Serialization overhead measured independently
+
+[CPU serialization analysis001](tokenizer-evidence/byte-composition-boundary-001/serialization-analysis001/analysis.md)
+completed in2.381s without model/GPU/checkpoint execution. Replacing Python-byte
+lists with direct contiguous NumPy bytes preserved all four finite SHA256 cases
+and byte-mutation detection; the52.3MB int64 code-ID shape hashed14.69x faster
+by median of three alternating-order CPU trials. This is a component timing,
+not an integrated training speedup. It identifies a narrow later optimization;
+pinned scientific sources and the ongoing raw-byte run are unchanged. Preserve
+full content checks in any later integration; do not infer end-to-end gain or
+reopen closed scientific attempts from this result.
