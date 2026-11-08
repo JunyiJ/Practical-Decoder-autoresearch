@@ -282,17 +282,30 @@ is accepted at the selected LR 0.00125: all 1,200 updates, 41 averaging snapshot
 1,228,800 sampled targets and 34,278 validation targets. Full validation CE is
 4.6734148945894 and BPB 2.0720932041303604. The finished guard recorded 927.673
 seconds and 1,131,331,584 bytes peak RSS. Both retained RAW/H200 hashes were
-verified; the pair totals 563,319,826 bytes. This is the fresh0 baseline, not yet
-a completed fresh paired contrast. Do not compare it with screening scores as
-confirmation or pool those scores into the fresh panel.
+verified; the pair totals 563,319,826 bytes. Keep screening scores separate from
+the fresh panel; no pooling or replacement of unfavorable comparisons.
 
-Ten of 18 trajectories are accepted. The original controller automatically
-started slot10, real bytes at LR 0.0025 on fresh0, PID 79635. The process and
-actual updates were observed. Complete the remaining eight original fresh
+The [first fresh real-byte confirmation, slot10](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/10/acceptance.json)
+is accepted at selected LR 0.0025: all 1,200 updates, 41 averaging snapshots,
+1,228,800 sampled targets and 34,278 validation targets. Full validation CE is
+4.573299025850737 and BPB 2.0277039478973724. Its finished guard recorded
+3,822.640 seconds and 910,868,480 bytes peak RSS. Both retained RAW/H200 hashes
+were verified; the pair totals 318,299,358 bytes.
+
+Fresh0 real-byte-minus-native CE is -0.10011586873866296 nat/token. Final
+train/validation sampler hashes and complete validation target identities match.
+This is one accepted fresh paired improvement. It does not satisfy the full
+three-bundle criterion by itself; the code-control contrast, remaining fresh
+bundles, conditional-text bounds and final independent review remain pending.
+No overall quality gain or adoption decision is established.
+
+Eleven of 18 trajectories are accepted. The original controller automatically
+started slot11, nonlexical codes at LR 0.0025 on fresh0, PID 3362. The process and
+actual updates were observed. Complete the remaining seven original fresh
 trajectories; recheck the live session and current slot before acting on recorded
 process IDs.
 
-Follow the existing live controller (session22743, PID17021) through slot10
+Follow the existing live controller (session22743, PID17021) through slot11
 and the remaining fresh confirmation slots, saved acceptances and final
 statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
