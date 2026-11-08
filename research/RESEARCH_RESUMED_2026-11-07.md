@@ -1,18 +1,24 @@
-# Current work: output-anchored shared-table quality comparison
+# Current result: shared-table comparison completed without adoption
 
-November8 human request to try weight sharing is now executing under
-[the new fixed protocol](OUTPUT_ANCHORED_TYING_PROTOCOL.md) and
-[plan](tokenizer-evidence/output-anchored-tying-001/plan.json).
-The24-update CPU/MPS preflight passed: native outputs/allgradients exact, shared
-initial predictions and summed gradients exact, canonical optimizer/H200 ownership,
-and saved-weight roundtrip verified. Nine fresh1200-update quality trajectories
-are running through session99348; inspect live state before interacting.
-The byte bulk-hash-adoption001 model remains incumbent. This new MLA experiment
-preserves native output initialization/coordinates; the old scaled GQA tying
-experiment remains closed negative. No quality outcome is known yet.
+Allnine fresh output-anchored MLA table-sharing trajectories and the independent
+saved-result review are complete. Shared mean CE4.681936 is nearly native4.683425,
+but worse than matched4.665970 on every seed. The quality gates fail. The byte
+bulk-hash-adoption001 incumbent remains unchanged. No numerical worker is active.
 
-The sections below describe completed historical work; their process statements
-are historical. Current status is in TOKENIZER_RESUME_STATE.json.
+[Complete results](OUTPUT_ANCHORED_TYING_RESULTS.md) and
+[closure](tokenizer-evidence/output-anchored-tying-001/closure.json) bind all18retained
+weight files, fixed protocol, independent statistics and saved-loss frequency
+analysis. Targets seen1–9times in training contribute67.9% of the net sharing
+penalty; this is exploratory evidence, not a causal or subgroup significance claim.
+
+Next useful work is a small read-only analysis of the accepted paired tables by
+training frequency before any new model selection. The
+[projection evidence review](SHARED_TABLE_PROJECTION_EVIDENCE.md) includes contrary
+literature and historical closed-study restrictions. No adapter or new quality
+panel is selected. Do not replay or rescue the completed sharing comparison.
+
+The autonomous research goal remains active. Historical sections below retain
+their original evidence; current status is in TOKENIZER_RESUME_STATE.json.
 
 # Active research: byte-input quality improvement adopted
 

@@ -58,16 +58,16 @@
   "active_byte_prototype_adopted": false,
   "active_byte_runtime": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/active-byte-runtime001/result.json",
   "active_byte_shape_diagnostic": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/result.json",
-  "active_campaign_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/output-anchored-tying-001",
-  "active_controller_pid": 41096,
-  "active_direction": "output_anchored_table_sharing",
-  "active_exec_session": 99348,
+  "active_campaign_root": null,
+  "active_controller_pid": null,
+  "active_direction": "shared_table_evidence_analysis",
+  "active_exec_session": null,
   "active_parent_pid": null,
-  "active_run": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/output-anchored-tying-001",
+  "active_run": null,
   "active_session": null,
-  "active_worker": "research.output_anchored_tying_run_v1",
-  "active_worker_pid": 50767,
-  "actual_free_bytes": 19322376192,
+  "active_worker": null,
+  "active_worker_pid": null,
+  "actual_free_bytes": 13684592640,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
   "adamw_beta2_direction": "research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
@@ -761,7 +761,7 @@
   "current_capacity_note": "No current execution blocker. Next training-context proof has no frozen output/memory envelope yet; calculate complete costs including EMA snapshots, serialization and staging before admission. No quality panel is admitted. Observed free bytes: 19241639936",
   "current_frontier": "research/byte_input_pilot_v2",
   "current_numerical_source_count": 1054,
-  "current_phase": "fresh_fixed_recipe_quality_running",
+  "current_phase": "fresh_sharing_quality_complete_independently_reviewed",
   "current_research_handoff": "research/RESEARCH_RESUMED_2026-11-07.md",
   "current_research_phase": "byte_input_training_context_proof_preparation",
   "dataset_cache_cleanup": "research/tokenizer-evidence/dataset-cache-cleanup-001/completed.json",
@@ -9717,7 +9717,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Continue existing session99348/controller through final bundle, slots06-08. Six1200-update trajectories complete, shared loses to matched on both seeds and loses to native on second; neither every-seed-negative gate can pass. Complete frozen panel without early stop or changed gates. Once terminal, run independent research.output_anchored_tying_review_v1 under shared lock, then no-model research.output_anchored_tying_frequency_v1 on accepted saved losses. Review results, update records, commit/push. Byte incumbent unchanged. No historical-score pooling, holdout, LR reselection or retry-to-win. Literature review finds simple linear projected tying is not automatically supported; do not launch adapter from intuition.",
+  "next_action": "Nine fresh output-anchored tying trajectories completed and independent review/frequency analysis passed. Closed not adopted: tied mean4.681936 vs native4.683425 (delta-.001489; two losing seeds), matched4.665970 (delta+.015966; allthree losing seeds). Rare1-9training-occurrence targets account for67.9% of net shared-minus-matched penalty; descriptive only. No numerical worker active. Next inspect accepted matched input/output and paired shared table geometry by original training-frequency groups, using saved weights without new training/rescoring/initializer replay, to discriminate representation questions before choosing a new hypothesis. Read SHARED_TABLE_PROJECTION_EVIDENCE.md and closed projection restrictions. Do not retry or retune completed sharing panel, swap to RAW, adopt a control fallback, or pool historical scores. Byte bulk-hash-adoption001 remains incumbent.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "measured_serialization_overhead_actual_buffer_integration_next",
   "no_paid_compute": true,
@@ -9749,8 +9749,9 @@
   },
   "optimizer_state_training_result": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-training001/result.json",
   "optimizer_state_validation_result": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime003/result.json",
-  "output_anchored_tying_active_slot": 6,
+  "output_anchored_tying_active_slot": null,
   "output_anchored_tying_adopted": false,
+  "output_anchored_tying_closure": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/output-anchored-tying-001/closure.json",
   "output_anchored_tying_completed_bundles": [
     {
       "matched": 4.6487449194779735,
@@ -9761,9 +9762,15 @@
       "matched": 4.687428544826637,
       "native": 4.695631470023113,
       "tied": 4.69651067713932
+    },
+    {
+      "matched": 4.661737710058163,
+      "native": 4.680066265539839,
+      "tied": 4.682615304203011
     }
   ],
-  "output_anchored_tying_completed_count": 6,
+  "output_anchored_tying_completed_count": 9,
+  "output_anchored_tying_final_review": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/output-anchored-tying-001/final-review.json",
   "output_anchored_tying_first_bundle": {
     "every_seed_negative_matched_gate_already_not_met": true,
     "matched_ce": 4.6487449194779735,
@@ -9773,6 +9780,7 @@
     "tied_minus_native": -0.007894845652419491
   },
   "output_anchored_tying_frequency_analysis": "research/output_anchored_tying_frequency_v1.py",
+  "output_anchored_tying_frequency_result": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/output-anchored-tying-001/frequency-diagnostic001/result.json",
   "output_anchored_tying_latest_result": {
     "arm": "native",
     "ce": 4.674576624273824,
@@ -9780,11 +9788,39 @@
     "slot": 0,
     "updates": 1200
   },
+  "output_anchored_tying_means": {
+    "matched": 4.665970391454258,
+    "native": 4.683424786612259,
+    "tied": 4.681935919987912
+  },
   "output_anchored_tying_pilot_passed": true,
   "output_anchored_tying_plan": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/output-anchored-tying-001/plan.json",
   "output_anchored_tying_plan_sha256": "cc34e2b43349f2281b4a13303080b689bb34fb0ebe4060934a573dfc105921b6",
   "output_anchored_tying_projection_review": "research/SHARED_TABLE_PROJECTION_EVIDENCE.md",
   "output_anchored_tying_reviewer": "research/output_anchored_tying_review_v1.py",
+  "output_anchored_tying_roles_closed": [
+    62101700001,
+    62101700002,
+    62101700003,
+    62101700004,
+    62101700005,
+    62101800001,
+    62101800002,
+    62101800003,
+    62101800004,
+    62101800005,
+    62101900001,
+    62101900002,
+    62101900003,
+    62101900004,
+    62101900005,
+    62102000001,
+    62102000002,
+    62102000003,
+    62102000004,
+    62102000005,
+    62102000006
+  ],
   "parallel_residual_capacity": "research/tokenizer-evidence/parallel-residual-preparation-001/capacity001.json",
   "parallel_residual_component": "research/tokenizer-evidence/parallel-residual-preparation-001/component001-result.json",
   "parallel_residual_direction": "research/tokenizer-evidence/parallel-residual-preparation-001/direction-decision.json",
@@ -9926,7 +9962,7 @@
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "source_work_available": true,
   "state_current_source_version": 6,
-  "status": "ACTIVE_OUTPUT_ANCHORED_TYING_QUALITY",
+  "status": "ACTIVE_OUTPUT_ANCHORED_TYING_NOT_ADOPTED",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -10349,7 +10385,7 @@
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
   "training_current_source_version": 6,
-  "updated_at": "2026-11-08T19:05:05.988796+00:00",
+  "updated_at": "2026-11-08T19:21:14.508905+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
@@ -10388,5 +10424,5 @@
   "warmup_trained_inference": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
   "warmup_worker": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
   "worker_kind": null,
-  "worker_pid": 50767
+  "worker_pid": null
 }

@@ -1,17 +1,18 @@
 # Can a shared table serve input and output differently?
 
-Evidence review on November8 while output-anchored-tying-001 remains in progress.
-This answers a literature/applicability question; it does not change the active
-panel, select a new candidate or authorize replay of a closed projection study.
+Evidence review on November8, reconciled after output-anchored-tying-001 completed
+without adoption. This answers a literature/applicability question; it does not
+select a new candidate or authorize replay of a closed projection study.
 
 ## Local observations and restrictions
 
-The first new fresh bundle has tied-minus-matched CE+0.017936859, versus
-tied-minus-native−0.007894846. The matched control itself improves native by
-0.025831705. Source: immutable result/validation/complete records in
-`tokenizer-evidence/output-anchored-tying-001/{00,01,02}/`. This is a prefix,
-not a complete-panel estimate. It does not establish gradient conflict, a
-representational bottleneck, or the cause of the historical GQA tying loss.
+The complete fresh panel has tied-minus-matched mean CE+0.015965529, worse on
+allthree seeds, versus tied-minus-native−0.001488867, with two losing seeds.
+The matched control improves native by0.017454395. Sources: immutable records in
+`tokenizer-evidence/output-anchored-tying-001/`, final.json and final-review.json.
+The saved-loss analysis attributes67.9% of the net shared-minus-matched penalty
+to targets seen1–9times in training. This does not establish gradient conflict,
+a representational bottleneck, or the cause of the historical GQA tying loss.
 
 `TOKENIZER_READOUT_MIXTURE_RESULTS.md` records a complete contrary result:
 MoS improved native by0.033083091nat but improved matched MoC by only0.001065236,
@@ -64,14 +65,15 @@ precomputation for fixed weights does not remove training-time work.
 
 ## Decision from this review
 
-Do not launch an adapter as an automatic response to the first unfavorable seed.
-Finish the current fixed panel and inspect its saved per-target losses and clipping
-curves first. Frequency-stratified existing-loss analysis can check whether the
-penalty is concentrated in rare targets; it cannot establish a causal gradient
-mechanism. This costs no new training and addresses the shared-learning rationale.
+Do not launch an adapter as an automatic response to the unfavorable panel.
+The completed frequency analysis identifies rare targets as a concrete next
+question, without establishing a causal gradient mechanism. Inspect the accepted
+paired input/output table geometry by training frequency next, without new
+training, scoring or initializer replay. Interpret geometry descriptively and
+account for coordinate/scale differences before proposing a new model.
 
 A later proposal would need fresh matched controls, a direct byte-incumbent
 comparison, equal bounded tuning, independent confirmation and a full retained
 output/runtime forecast. Neither the old incomplete projection panel nor this
 literature review supplies a local quality gain or a fresh campaign admission.
-The current nine-run protocol and byte incumbent remain unchanged.
+The closed nine-run protocol and byte incumbent remain unchanged.
