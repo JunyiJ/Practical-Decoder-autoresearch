@@ -1,0 +1,37 @@
+{
+  "status": "original_controller_stopped_numerical_validation_failure",
+  "plan_sha256": "e5d26b5af0cf473f62abe4d25b0555127a52c5531b38b9a7b3faf46f0517586c",
+  "slot": 0,
+  "updates_completed": 1200,
+  "slots_accepted": 0,
+  "slots_unattempted": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/byte-context-transform-001/00/h200.pt",
+      "size": 65439661,
+      "sha256": "9ccfb869e9cd1fd27845677bcfa1c91c4ed29938743c8b5886ac86047406ecf4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/byte-context-transform-001/00/raw.pt",
+      "size": 65439725,
+      "sha256": "19d16863f2d61d90669f1b4aa741d6644bb03012b68d11024c7d6c8170542156"
+    }
+  ],
+  "failure": "06d7b81271e1754670eadb0a459b01255aa68bfe4bac073178c14f265ef5d8dc",
+  "numerical": {
+    "max_target_ce_error": 0.0034341812133789062,
+    "mean_ce_error": 1.839996021057999e-05
+  },
+  "classification": "Numerical consistency failure after completed baseline training; not a quality result and not yet a diagnosed implementation defect.",
+  "recovery": "Read-only stage localization on saved new slot00 H200 weights, fixed first/worst validation blocks; no retraining, no tolerance change, no old closed fixture replay.",
+  "adopted": false
+}
