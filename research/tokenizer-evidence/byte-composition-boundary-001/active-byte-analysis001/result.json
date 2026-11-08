@@ -1,0 +1,1487 @@
+{
+  "kind": "fixed_training_byte_row_analysis",
+  "sources": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/active-byte-analysis001/analyze.py",
+      "size": 3068,
+      "sha256": "a68ccaf25e96cda2ecbeee36a785faa45ec31fa7ced594872e3153af4435508a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/quality001/plan.json",
+      "size": 1404829,
+      "sha256": "cd0dcc19ae94e09e3d14aa071043f6c89b498e482e942bc0bfeb65bda15d8ddd"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/data/raw/shakespeare.txt",
+      "size": 1115394,
+      "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_embedding_v1.py",
+      "size": 2469,
+      "sha256": "03e0d62804f77cea4be5eabc34f1f9e0e2e6cd6a52b5e7f2bb63fcae40ddd950"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_composer_v2.py",
+      "size": 8009,
+      "sha256": "8e74a52d6bcfff46705caa0b6602fb860e71ab73eaf3c9115f00a343e0014988"
+    }
+  ],
+  "train_tokens": 267688,
+  "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+  "all_training_active_rows": [
+    10,
+    32,
+    33,
+    36,
+    38,
+    39,
+    44,
+    45,
+    46,
+    51,
+    58,
+    59,
+    63,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    256,
+    257
+  ],
+  "prefix1024_active_rows": [
+    10,
+    32,
+    33,
+    39,
+    44,
+    45,
+    46,
+    58,
+    59,
+    63,
+    65,
+    66,
+    67,
+    69,
+    70,
+    72,
+    73,
+    76,
+    77,
+    78,
+    79,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    89,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    121,
+    122,
+    256,
+    257
+  ],
+  "nonoverlapping_windows": [
+    {
+      "start": 0,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 1024,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 2048,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 3072,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 4096,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 5120,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 6144,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 7168,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 8192,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 9216,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 10240,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 11264,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 12288,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 13312,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 14336,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 15360,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 16384,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 17408,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 18432,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 19456,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 20480,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 21504,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 22528,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 23552,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 24576,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 25600,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 26624,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 27648,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 28672,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 29696,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 30720,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 31744,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 32768,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 33792,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 34816,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 35840,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 36864,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 37888,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 38912,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 39936,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 40960,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 41984,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 43008,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 44032,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 45056,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 46080,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 47104,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 48128,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 49152,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 50176,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 51200,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 52224,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 53248,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 54272,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 55296,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 56320,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 57344,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 58368,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 59392,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 60416,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 61440,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 62464,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 63488,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 64512,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 65536,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 66560,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 67584,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 68608,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 69632,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 70656,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 71680,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 72704,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 73728,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 74752,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 75776,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 76800,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 77824,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 78848,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 79872,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 80896,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 81920,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 82944,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 83968,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 84992,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 86016,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 87040,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 88064,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 89088,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 90112,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 91136,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 92160,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 93184,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 94208,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 95232,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 96256,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 97280,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 98304,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 99328,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 100352,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 101376,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 102400,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 103424,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 104448,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 105472,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 106496,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 107520,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 108544,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 109568,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 110592,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 111616,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 112640,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 113664,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 114688,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 115712,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 116736,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 117760,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 118784,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 119808,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 120832,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 121856,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 122880,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 123904,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 124928,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 125952,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 126976,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 128000,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 129024,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 130048,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 131072,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 132096,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 133120,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 134144,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 135168,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 136192,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 137216,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 138240,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 139264,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 140288,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 141312,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 142336,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 143360,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 144384,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 145408,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 146432,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 147456,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 148480,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 149504,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 150528,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 151552,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 152576,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 153600,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 154624,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 155648,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 156672,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 157696,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 158720,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 159744,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 160768,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 161792,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 162816,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 163840,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 164864,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 165888,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 166912,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 167936,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 168960,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 169984,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 171008,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 172032,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 173056,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 174080,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 175104,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 176128,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 177152,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 178176,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 179200,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 180224,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 181248,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 182272,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 183296,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 184320,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 185344,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 186368,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 187392,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 188416,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 189440,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 190464,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 191488,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 192512,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 193536,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 194560,
+      "tokens": 1024,
+      "active_rows": 63
+    },
+    {
+      "start": 195584,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 196608,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 197632,
+      "tokens": 1024,
+      "active_rows": 61
+    },
+    {
+      "start": 198656,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 199680,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 200704,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 201728,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 202752,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 203776,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 204800,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 205824,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 206848,
+      "tokens": 1024,
+      "active_rows": 62
+    },
+    {
+      "start": 207872,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 208896,
+      "tokens": 1024,
+      "active_rows": 63
+    },
+    {
+      "start": 209920,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 210944,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 211968,
+      "tokens": 1024,
+      "active_rows": 63
+    },
+    {
+      "start": 212992,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 214016,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 215040,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 216064,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 217088,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 218112,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 219136,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 220160,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 221184,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 222208,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 223232,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 224256,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 225280,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 226304,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 227328,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 228352,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 229376,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 230400,
+      "tokens": 1024,
+      "active_rows": 50
+    },
+    {
+      "start": 231424,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 232448,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 233472,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 234496,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 235520,
+      "tokens": 1024,
+      "active_rows": 60
+    },
+    {
+      "start": 236544,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 237568,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 238592,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 239616,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 240640,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 241664,
+      "tokens": 1024,
+      "active_rows": 55
+    },
+    {
+      "start": 242688,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 243712,
+      "tokens": 1024,
+      "active_rows": 51
+    },
+    {
+      "start": 244736,
+      "tokens": 1024,
+      "active_rows": 53
+    },
+    {
+      "start": 245760,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 246784,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 247808,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 248832,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 249856,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 250880,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 251904,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 252928,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 253952,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 254976,
+      "tokens": 1024,
+      "active_rows": 57
+    },
+    {
+      "start": 256000,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 257024,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 258048,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 259072,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 260096,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 261120,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 262144,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 263168,
+      "tokens": 1024,
+      "active_rows": 54
+    },
+    {
+      "start": 264192,
+      "tokens": 1024,
+      "active_rows": 59
+    },
+    {
+      "start": 265216,
+      "tokens": 1024,
+      "active_rows": 58
+    },
+    {
+      "start": 266240,
+      "tokens": 1024,
+      "active_rows": 56
+    },
+    {
+      "start": 267264,
+      "tokens": 424,
+      "active_rows": 50
+    }
+  ],
+  "complete_window_summary": {
+    "count": 261,
+    "minimum": 50,
+    "median": 58,
+    "maximum": 63
+  },
+  "original_gradient_rows": 259,
+  "original_position_chunk": 2048,
+  "padded_width": 130,
+  "no_model_execution": true,
+  "no_random_draws": true,
+  "validation_encoded": false,
+  "holdout_encoded": false,
+  "limits": [
+    "Nonoverlapping1024-token windows describe input sparsity; not expected counts under the two-block sampler.",
+    "Row-count reductions are arithmetic opportunity, not runtime or numerical-equivalence evidence.",
+    "No padded positions or chunks are removed; pad and begin both map to row256 with the existing mask."
+  ]
+}

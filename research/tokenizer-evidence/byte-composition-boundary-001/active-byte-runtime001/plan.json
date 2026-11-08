@@ -1,0 +1,60 @@
+{
+  "kind": "active_byte_rows_exact_gradient_comparison",
+  "runner_sha256": "0d00d4687426c8d5f1b3c9c84beb29f3db0f77643b4c3aaa817b0650175bf9b7",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/recipe.json",
+      "size": 16345,
+      "sha256": "17b6dbc53c51ae987b01d016d7aab079ebcb93e77135ecb7501900c8364dd845"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-analysis001/result.json",
+      "size": 24516,
+      "sha256": "e9a9d70f0f30092e53b37245a3d6f7aaba2987041ebd337a6c843476070df15b"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-source001/source-map.json",
+      "size": 1652,
+      "sha256": "a5f71f605002009a029a665b5e27de15ecc7952e60b46e68f327a68cdbb907c8"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-baseline-profile001/result.json",
+      "size": 313881,
+      "sha256": "b76a30199b07208a84a7133f2e9a80d9f8687b1c824f075b01eaec5b4b9222ab"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "basis": "Unchanged deterministic byte backward measured0.195s. Training prefix uses54/259 rows;261 complete nonoverlapping windows have median58 rows. Compact GEMM may avoid absent rows, but changing output matrix shape can change floating-point rounding. Exact equality is an empirical gate.",
+  "fixed_cases": [
+    "prefix_masked",
+    "richest_window_masked",
+    "prefix_dense_upstream",
+    "all_rows_2049_control",
+    "single_row_full_bound",
+    "four_rows_chunk_edge",
+    "singleton"
+  ],
+  "comparison": "CPU and MPS forward and all259x15 gradients on accepted byte weights; CPU path unchanged. Fixed upstream ((q*37+11)%1009-504)/997, amplified128 at q%257==0, with original padding mask for two real cases. Full-density upstream and chunk/singleton/all-row controls expose reduction differences. No skipped padding positions or changed2048chunk/order.",
+  "timing": "Initial pair warmup then7 alternating paired embedding forward+backward timings on prefix_masked; exact repeats checked outside timer. Candidate timing includes CPU unique and transfer. Selection separately timed seven times for diagnosis.",
+  "prospective_gate": "Every CPU/MPS output/gradient and repeat must be bit-exact; MPS median per-pair latency ratio<=0.8 and at least5/7 faster. Numerical failure closes candidate even if faster. No tolerance, altered cases or retry.",
+  "roles": "Historical accepted byte weights and fixed existing training inputs only; no random draws, sampler roles, optimizer updates or quality scores.",
+  "resource_budget": {
+    "timeout_seconds": 90,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 2097152,
+    "free_bytes": 15461466112
+  },
+  "interpretation_limits": [
+    "Primitive comparison with fixed stress upstream, not full-model gradients or training throughput.",
+    "Active-row counts are descriptive, not actual paired-sampler expectations.",
+    "A numerical difference is not a harness failure or a quality-loss measurement.",
+    "Closed padding-cropping fixtures and scientific panels are untouched."
+  ]
+}

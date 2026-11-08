@@ -186,10 +186,22 @@ a short local comparison; combined improvement versus native is unmeasured.
 The public loader succeeded and original RAW capture/H200 export/load remained
 exact. This continuation used 48 numerical updates including profiling, about
 82 guarded seconds, zero quality evaluations and zero new weight archives.
-No worker is active. Next quantify active byte rows and selection overhead for
-the unchanged deterministic embedding backward, then test an isolated candidate
-that avoids absent rows while retaining 2048-position chunks and ordered sums.
-Keep the exact numerical gate and closed padding/quality studies unchanged.
+The [active-row gradient prototype](tokenizer-evidence/byte-composition-boundary-001/active-byte-runtime001/README.md)
+is closed not adopted. Existing-data analysis found54 active byte rows in the
+first1024tokens and median58 across261 complete nonoverlapping windows. The new
+comparison kept every2048-position chunk and its order, and tested seven fixed
+cases on CPU/MPS. All forwards and CPU gradients were exact. MPS gradients differed
+in the one-row full-bound case (14coordinates,max1.67847e-4) and four-row chunk-edge
+case (48coordinates,max2.28882e-5). Real-input cases, all-row control and singleton
+were exact. A59.75% lower representative primitive latency does not override the
+numerical failure. The adopted bulk-hash model remains unchanged. No training
+update, quality score or weight archive was produced by this check.
+
+No worker is active. Next assess saved evidence for a new implementation rationale
+that preserves the failing small-row domain, chunk order and exactness gate. Do
+not replay this closed prototype or treat its numerical differences as a harness
+problem. The current user discussion concerns how the byte composer differs from
+character tokenization; the GPT-2 tokenizer and output vocabulary remain unchanged.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current

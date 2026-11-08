@@ -1,0 +1,33 @@
+{
+  "original": {
+    "path": "research/byte_embedding_v1.py",
+    "size": 2469,
+    "sha256": "03e0d62804f77cea4be5eabc34f1f9e0e2e6cd6a52b5e7f2bb63fcae40ddd950"
+  },
+  "candidate": {
+    "path": "research/byte_embedding_active_rows_v1.py",
+    "size": 2741,
+    "sha256": "9bb9cf3f1b8b04e6c96e87d6157beb4116bab46e63bcd62096f3728e0f5dcbd2"
+  },
+  "exact_replacements": [
+    [
+      "KIND = 'rsi_byte_embedding_grouped_mps_v1'",
+      "KIND = 'rsi_byte_embedding_active_rows_mps_v1'"
+    ],
+    [
+      "        result = torch.zeros((259, 15), dtype=torch.float32, device=rows.device)\n        vocabulary = torch.arange(259, device=rows.device)",
+      "        vocabulary = torch.unique(indices.detach().to('cpu'), sorted=True).to(rows.device)\n        compact = torch.zeros((vocabulary.numel(), 15), dtype=torch.float32, device=rows.device)"
+    ],
+    [
+      "            result.add_(membership.T @ gradients[start:start+CHUNK])\n        return result, None",
+      "            compact.add_(membership.T @ gradients[start:start+CHUNK])\n        result = torch.zeros((259, 15), dtype=torch.float32, device=rows.device)\n        result.index_copy_(0, vocabulary, compact)\n        return result, None"
+    ],
+    [
+      "MPS sums every fixed\nrow in ordered 2048-position chunks, without repeated-index atomic scatter.",
+      "This isolated candidate sums active\nrows in ordered 2048-position chunks, without repeated-index atomic scatter.\nIt is not qualified or adopted; exact-gradient comparison is required."
+    ]
+  ],
+  "chunk_and_accumulation_order_preserved": true,
+  "cpu_path_and_guards_unchanged": true,
+  "runtime_qualified": false
+}
