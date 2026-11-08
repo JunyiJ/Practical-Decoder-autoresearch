@@ -1,3 +1,34 @@
+# Current work: feature diagnostic complete; review a concrete new hypothesis
+
+The fixed-training-window feature diagnostic passed all36 cases in8.746seconds,
+with unchanged weights, semantics and RNG and no labels/logits/losses/backward,
+training or validation/holdout scoring. [Analysis](tokenizer-evidence/byte-context-transform-001/feature-diagnostic001/analysis.md)
+shows tanh amplitude and local map gain below both controls in all12 paired
+seed/endpoint/window comparisons. Feature RMS is~.91 versusbyte1.90–1.98; local
+map gain~.29–.31 versusidentity1. Saturation is~66–68%. This supports a bounded
+representation/sensitivity question, not causal proof of the quality loss.
+Averaging actually increases tanh feature RMS slightly, which rules against the
+simplest amplitude-shrinkage explanation. The earlier displacement/clipping
+analysis remains valid. A read-only scalar-conversion warning is documented;
+no execution or numerical failure occurred and no rerun is needed.
+
+The next useful action is candidate review rather than further generic probing
+of the same failed recipe: inspect closed local branch-scale/readout/residual
+studies and relevant primary literature for an identity-preserving residual
+readout with a zero initial gate. Such a path would preserve the baseline
+feature and Jacobian at initialization, unlike the failed replacement map.
+This is a proposed hypothesis only. A matched linear residual control, new
+roles, fixed selection criteria and a complete cost forecast are prerequisites
+to any genuinely new study. Do not reopen the closed plain-transform panel or
+launch an arbitrary activation/initialization/averaging sweep.
+
+Public inference corrections are already fixed, verified and adopted. No worker
+is running and no capacity blocker exists (last free12.17GB). The autonomous
+research goal remains active. The latest human question about bugs was answered:
+current work was a scientific diagnostic, not a new unresolved software bug.
+
+All sections below are historical snapshots, not current process state.
+
 # Current work: weight/clipping analysis complete; representation question next
 
 The bounded all-nine-run RAW/H200 analysis passed in0.985seconds with no model
