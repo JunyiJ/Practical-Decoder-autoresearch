@@ -319,14 +319,23 @@ This is one complete paired bundle, not all-seed acceptance, a conditional-text
 confidence result, or an isolated causal proof of lexical sharing. Do not pool
 screening scores or alter the remaining original comparisons.
 
-Twelve of 18 trajectories are accepted. The original controller automatically
-started slot12, real bytes at LR 0.0025 on fresh1, PID 26862. The process and actual
-updates were observed. The original rotated order for this second bundle is
-real bytes, code control, then native. Complete all six remaining original
+The [second fresh real-byte confirmation, slot12](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/12/acceptance.json)
+is accepted at selected LR 0.0025 on fresh1: all 1,200 updates, 41 averaging
+snapshots, 1,228,800 sampled targets and 34,278 validation targets. Full validation
+CE is 4.583503197906659 and BPB 2.03222826171238. Its finished guard recorded
+3,849.814 seconds and 921,157,632 bytes peak RSS. Both retained RAW/H200 hashes
+were verified; the pair totals 318,299,358 bytes. Its paired code control and
+native baseline are pending. Do not substitute fresh0 or screening scores for
+these comparators or call this a second paired improvement yet.
+
+Thirteen of 18 trajectories are accepted. The original controller automatically
+started slot13, nonlexical codes at LR 0.0025 on fresh1, PID 50354. The process and
+actual updates were observed. The original rotated order for this second bundle
+is real bytes, code control, then native. Complete all five remaining original
 trajectories; recheck the live session and current slot before acting on recorded
 process IDs.
 
-Follow the existing live controller (session22743, PID17021) through slot12
+Follow the existing live controller (session22743, PID17021) through slot13
 and the remaining fresh confirmation slots, saved acceptances and final
 statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
