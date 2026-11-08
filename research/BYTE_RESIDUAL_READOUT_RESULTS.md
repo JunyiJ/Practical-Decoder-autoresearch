@@ -1,6 +1,6 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. Three of nine fresh quality runs have completed and passed numerical
+The new zero-gated residual readout passed its implementation pilot. Four of nine fresh quality runs have completed and passed numerical
 acceptance. The first complete seed fails the mandatory candidate-improvement
 criterion against byte. The second seed is active; the frozen remaining runs and
 independent final review continue. No model is adopted. The selected byte model and its corrected public
@@ -55,8 +55,8 @@ Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
 scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot03 residual-linear on the second seed, PID12868, at238 updates;
-live logs supersede this snapshot. Slots00–02 are terminal and must not be replayed.
+worker was slot04 residual-tanh on the second seed, PID16977, at226 updates;
+live logs supersede this snapshot. Slots00–03 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 
@@ -143,3 +143,27 @@ It reads only completed records, uses the same final100 training window as the
 prior pair analysis, records all input hashes and performs no model execution or
 new scoring. The first seed is descriptive; full means, uncertainty and independent
 review remain pending. The selected byte model is unchanged.
+
+## Second-seed linear control (four of nine complete)
+
+Bundle62102700000 residual-linear completed1200 updates/41 H200 snapshots, with
+H200 CE4.682758260745633 and final-online CE4.790987. Its684.692second guard
+finished normally; mean/max CPU/MPS differences6.40071e-8/2.45571e-5 pass the fixed
+limits. Both checkpoint hashes and complete target-loss coverage were verified
+for publication. The learned unrestricted scalar ended at-1.007271. Its sign is
+not a quality criterion.
+
+The matched nonlinear and byte controls for this seed are still pending, so no
+new paired quality conclusion is drawn from this individual score. The fixed
+order is linear, nonlinear, byte for the second seed. The first seed's failed
+mandatory candidate-improvement condition remains recorded.
+
+While training continued, `BYTE_READOUT_REGULARIZATION_REVIEW.md` checked prior
+closed decay/dropout/bias evidence, primary weight-decay papers and the actual
+local shrinkage convention. Removing decay and input dropout had negative fresh
+results in their original recipes; stronger output-specific decay has not been
+established by those outcomes. Our independent per-update decay stays constant
+while LR falls, so an LR-multiplied coefficient needs explicit unit conversion.
+The bound arithmetic is separate from this panel and executes no models or new
+scores. No coefficient sweep, old-study replay or new scientific budget follows
+from that review; the complete current panel still determines the next decision.
