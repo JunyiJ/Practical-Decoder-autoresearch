@@ -1,0 +1,5 @@
+{
+  "error": "CalledProcessError(1, ['.venv/bin/python', 'research/tokenizer-evidence/byte-composition-boundary-001/control-structure001/analyze.py'])",
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/control-structure001/analyze.py\", line 141, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/control-structure001/analyze.py\", line 119, in main\n    assert all(len(sequence)==lengths[t]-2 for t,sequence in enumerate(sequences))\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

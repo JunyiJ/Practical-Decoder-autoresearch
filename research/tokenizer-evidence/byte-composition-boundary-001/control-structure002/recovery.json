@@ -1,0 +1,17 @@
+{
+  "classification": "analysis_implementation_reader_defect",
+  "exact_correction": {
+    "after": "sequences = [bytes(list(packed[t*130+1:t*130+lengths[t]-1])) for t in range(50256)]",
+    "before": "sequences = [bytes(packed[t*130+1:t*130+lengths[t]-1]) for t in range(50256)]"
+  },
+  "explanation": "bytes(array_H) copies the two-byte buffer representation; bytes(list(array_H)) converts the integer values to individual bytes.",
+  "failed_action": "Convert packed uint16 content values into one-byte-per-symbol sequences.",
+  "new_attempt": "control-structure002",
+  "new_random_roles": false,
+  "new_training": false,
+  "original_attempt": "control-structure001",
+  "original_failure_sha256": "c5ec847c4eeffb479f12ee96e311dde91e23d7feace5a25e58599abc019447cd",
+  "original_source_sha256": "069be43b9b9219e90aee06eb7cbc57128c0c3549f63a4d6643a7d9befe4a73ca",
+  "scientific_result": false,
+  "unchanged_requirements": "Retain exact codebook identities, lengths, native tokenizer agreement, groups, widths, metrics, source/data hashes and all assertions."
+}

@@ -189,6 +189,15 @@ shows that both composition models improve after unseen inputs, with an
 additional real-byte advantage. This exploratory observation is not a new
 acceptance criterion or a causal proof of lexical sharing.
 
+The [training-only control-structure analysis](tokenizer-evidence/byte-composition-boundary-001/control-structure002/analysis.md)
+quantifies an existing interpretation limit: 97.644% of training-weighted
+three-byte content fragments recur across token types for real bytes, versus
+0.682% for the screening code control. Byte frequency concentration also differs.
+These measurements do not alter the control or imply learned filter behavior;
+they limit causal explanations of any eventual code-relative gain. The analysis
+took 2.952 seconds without a model or GPU. Its original packed-byte reader failure
+and exact one-expression correction are preserved separately.
+
 Slot02 completed all1200updates,41averaging snapshots and1,228,800sampled
 targets; its finished guard recorded3795.112seconds. Its acceptance binds the
 full validation, inference and saved-state review. The controller automatically
