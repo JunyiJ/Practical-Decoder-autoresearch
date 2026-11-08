@@ -295,17 +295,38 @@ were verified; the pair totals 318,299,358 bytes.
 Fresh0 real-byte-minus-native CE is -0.10011586873866296 nat/token. Final
 train/validation sampler hashes and complete validation target identities match.
 This is one accepted fresh paired improvement. It does not satisfy the full
-three-bundle criterion by itself; the code-control contrast, remaining fresh
-bundles, conditional-text bounds and final independent review remain pending.
-No overall quality gain or adoption decision is established.
+three-bundle criterion by itself; the remaining fresh bundles, conditional-text
+bounds and final independent review remain pending. No overall quality gain or
+adoption decision is established.
 
-Eleven of 18 trajectories are accepted. The original controller automatically
-started slot11, nonlexical codes at LR 0.0025 on fresh0, PID 3362. The process and
-actual updates were observed. Complete the remaining seven original fresh
+The [first fresh code-control confirmation, slot11](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/11/acceptance.json)
+is accepted at selected LR 0.0025: all 1,200 updates, 41 averaging snapshots,
+1,228,800 sampled targets and 34,278 validation targets. Full validation CE is
+4.641407008058075 and BPB 2.057901585013273. Its finished guard recorded
+3,840.059 seconds and 911,081,472 bytes peak RSS. Both retained RAW/H200 hashes
+were verified; the pair totals 318,299,422 bytes.
+
+The first fresh bundle is now complete, with matching final train/validation
+sampler hashes and complete target identities across all three arms:
+
+| Fresh bundle | Native CE | Real-byte CE | Code-control CE | Bytes minus native | Bytes minus codes |
+|---|---:|---:|---:|---:|---:|
+| fresh0 | 4.673415 | 4.573299 | 4.641407 | -0.100116 | -0.068108 |
+
+Fresh0 real-byte-minus-code CE is -0.06810798220733805 nat/token; code-minus-native
+is -0.032007886531324914. Real bytes improve over both comparators in this bundle.
+This is one complete paired bundle, not all-seed acceptance, a conditional-text
+confidence result, or an isolated causal proof of lexical sharing. Do not pool
+screening scores or alter the remaining original comparisons.
+
+Twelve of 18 trajectories are accepted. The original controller automatically
+started slot12, real bytes at LR 0.0025 on fresh1, PID 26862. The process and actual
+updates were observed. The original rotated order for this second bundle is
+real bytes, code control, then native. Complete all six remaining original
 trajectories; recheck the live session and current slot before acting on recorded
 process IDs.
 
-Follow the existing live controller (session22743, PID17021) through slot11
+Follow the existing live controller (session22743, PID17021) through slot12
 and the remaining fresh confirmation slots, saved acceptances and final
 statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
