@@ -1,0 +1,93 @@
+{
+  "admissible_block_starts": 267176,
+  "block_max_counts": {
+    "10": 52,
+    "11": 7663,
+    "12": 49434,
+    "13": 92541,
+    "14": 76755,
+    "15": 25887,
+    "16": 11772,
+    "17": 1024,
+    "18": 2048
+  },
+  "code_length_counts": {
+    "3": 78287,
+    "4": 30170,
+    "5": 43085,
+    "6": 39375,
+    "7": 37069,
+    "8": 17845,
+    "9": 9836,
+    "10": 6461,
+    "11": 3048,
+    "12": 1551,
+    "13": 632,
+    "14": 235,
+    "15": 62,
+    "16": 26,
+    "17": 2,
+    "18": 4
+  },
+  "code_length_includes_boundaries": true,
+  "expected_batch_trimmed_filter_forward_macs": 357169101.54471445,
+  "expected_paired_batch_width": 14.067339215450849,
+  "fixed_width_filter_forward_macs": 4408320000,
+  "holdout_encoded": false,
+  "inputs": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/quality001/plan.json",
+      "sha256": "cd0dcc19ae94e09e3d14aa071043f6c89b498e482e942bc0bfeb65bda15d8ddd",
+      "size": 1404829
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/data/raw/shakespeare.txt",
+      "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "size": 1115394
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_composer_v2.py",
+      "sha256": "8e74a52d6bcfff46705caa0b6602fb860e71ab73eaf3c9115f00a343e0014988",
+      "size": 8009
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_model_v3/codebook.py",
+      "sha256": "ee836c785ea4cb4440522df8f022d6a6e713a84d8a910eb2d3496b9123788c90",
+      "size": 8267
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/data/loaders.py",
+      "sha256": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e",
+      "size": 7960
+    }
+  ],
+  "kind": "exact_training_byte_length_and_paired_sampler_analysis",
+  "limits": [
+    "Exact arithmetic work counts, not timings, FLOP-equivalent hardware utilization or quality predictions.",
+    "Filter linear products only; excludes activations, pooling, highway, projection, decoder, backward and validation.",
+    "Expectation over frozen sampler support, not a replay or observation of scientific seed sequences.",
+    "Cropping is not implemented or qualified; no running source or scientific contract changed."
+  ],
+  "max_training_code_length": 18,
+  "no_model_execution": true,
+  "no_quality_scores_used": true,
+  "no_random_draws": true,
+  "ordered_start_pairs": 71383014976,
+  "padded_width": 130,
+  "paired_max_counts": {
+    "10": 2704,
+    "11": 59518521,
+    "12": 3206486976,
+    "13": 19141087899,
+    "14": 28870241925,
+    "15": 12394100199,
+    "16": 6079484592,
+    "17": 541933568,
+    "18": 1090158592
+  },
+  "train_ids_sha256": "a41661e1634891819bb28a06227e211273be209098c878aecb034ae5864f834d",
+  "training_tokens": 267688,
+  "trimmed_to_fixed_filter_mac_ratio": 0.08102159134198843,
+  "validation_encoded": false,
+  "weighted_mean_code_length": 5.333414273333134
+}

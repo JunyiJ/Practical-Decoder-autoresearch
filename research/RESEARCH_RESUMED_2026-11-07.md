@@ -222,3 +222,15 @@ not an integrated training speedup. It identifies a narrow later optimization;
 pinned scientific sources and the ongoing raw-byte run are unchanged. Preserve
 full content checks in any later integration; do not infer end-to-end gain or
 reopen closed scientific attempts from this result.
+
+## Padding work quantified from existing training data
+
+[Padding analysis001](tokenizer-evidence/byte-composition-boundary-001/padding-analysis001/analysis.md)
+reconstructed the exact original267,688training IDs without encoding validation
+or holdout and without model/sampler execution. Code lengths including boundaries
+average5.3334 and peak at18, versus the fixed130positions processed. Exact
+paired-block support gives an expected batch maximum14.0673. Cropping only unused
+trailing padding would remove91.90% of the six filter banks' forward multiply-add
+count under this distribution, not91.90% of total runtime. No cropped model has
+been implemented or qualified; current scientific sources remain unchanged.
+This is the second evidence-backed implementation target after direct-byte hashing.
