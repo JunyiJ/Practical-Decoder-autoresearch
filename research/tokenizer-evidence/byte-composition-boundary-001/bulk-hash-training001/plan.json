@@ -1,0 +1,76 @@
+{
+  "kind": "bulk_buffer_hash_exact_training_cache_resume_and_warmed_throughput",
+  "runner_sha256": "d8ae5a41b4eb9838421e46dfa636cd19d94746890f4ccf6fe82dc16abb09622a",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/recipe.json",
+      "size": 15839,
+      "sha256": "634c7a4f47a645bc96dfb2c34d85fcb1331d481231b1048502fde64f93056011"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-integration-source001/source-map.json",
+      "size": 5633,
+      "sha256": "0abe83f659a5d29eed7e4fc962a63239ba885e2368430607365fb8bfbb9792c1"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-runtime001/result.json",
+      "size": 28780,
+      "sha256": "8cd853ae11dfc20222dc8c64a484fa3dd356324919ce0ff41dd21159ed514db5"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-runtime001/guard.json",
+      "size": 403,
+      "sha256": "5e9f1ab005dbdf9d731f3729f0f06ef121922472bb1dbca5af21b856d6fbe65d"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "basis": "Current profile measured0.206869s in84 buffer digests. Actual-buffer prototype preserved all14 digest values and72 mutation/rejection checks; complete MPS validation1.394x faster, CPU1.024x. Test actual training and typed consumers without changing math.",
+  "implementations": {
+    "reference": {
+      "training": "byte_input_training_v5",
+      "optimizer": "byte_input_optimizer_v6",
+      "inference": "byte_input_inference_v4",
+      "cache": "byte_input_cache_v3"
+    },
+    "batched": {
+      "training": "byte_input_training_v6",
+      "optimizer": "byte_input_model_v6",
+      "inference": "byte_input_inference_v5",
+      "cache": "byte_input_cache_v4"
+    }
+  },
+  "fresh_sampler_roles": {
+    "cpu": {
+      "train_sampler": 62101300001,
+      "validation_sampler": 62101300002
+    },
+    "mps": {
+      "train_sampler": 62101400001,
+      "validation_sampler": 62101400002
+    }
+  },
+  "roles_audit": "Exact pre-preparation rg over research/research_state JSON,Python,Markdown found no62101300001/2 or62101400001/2. Reserve and close all four roles with this attempt.",
+  "correctness": "Same H200 with model-v5 reference and model-v6 candidate. CPU/MPS cached B1/B8 logits for96prefix+32continuation and reset exact. CPU two paired updates and complete states after1/2, with first averaging; candidate restored at1 must match state2. MPS20 paired histories and complete final state exactly equal. No tolerance.",
+  "timing": "MPS alternating order,4 warmup pairs plus16 measured. CPU correctness timings descriptive only. Same20-update recipe and eight averaging snapshots as earlier finite-batch comparison, but fresh samplers and different implementation contrast.",
+  "prospective_gate": "All correctness checks; median MPS per-pair candidate/reference<=.95, at least12/16 faster, neither pre-averaging5-12 nor averaging13-20 median regresses. No retry or altered cases.",
+  "resource_budget": {
+    "timeout_seconds": 180,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 8388608,
+    "free_bytes": 15462346752
+  },
+  "interpretation_limits": [
+    "One local short paired trajectory, not1200-step throughput or confidence interval.",
+    "All buffer bytes and exact SHA256 retained; only transfer and Python byte-copy strategy changes.",
+    "No quality scoring or holdout; existing scientific evidence remains unchanged.",
+    "45 numerical updates including CPU resume.",
+    "Do not multiply previous separate speedups; combined performance against native is unmeasured."
+  ]
+}

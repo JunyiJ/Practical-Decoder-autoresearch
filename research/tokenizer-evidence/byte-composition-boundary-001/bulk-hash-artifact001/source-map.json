@@ -1,0 +1,27 @@
+{
+  "original": {
+    "path": "research/byte_input_inference_v4.py",
+    "size": 10006,
+    "sha256": "10e4a484cc02e7375bcaad813104c58fe28d5e1e8d8b6fff6741adf23f766942"
+  },
+  "candidate": {
+    "path": "research/byte_input_inference_v5.py",
+    "size": 10006,
+    "sha256": "2d2179f5a102ca2727333c32f83a9774368b2168dcf69cc77589530d321d25be"
+  },
+  "exact_replacements": [
+    [
+      "from research import byte_input_training_v5 as training",
+      "from research import byte_input_training_v6 as training"
+    ],
+    [
+      "from research import byte_input_state_v5 as numerical",
+      "from research import byte_input_state_v6 as numerical"
+    ],
+    [
+      "from research.byte_input_model_v5 import ByteInputModel, Spec",
+      "from research.byte_input_model_v6 import ByteInputModel, Spec"
+    ]
+  ],
+  "reverse_mapping_exact": true
+}

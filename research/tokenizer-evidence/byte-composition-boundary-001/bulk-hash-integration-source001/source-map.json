@@ -1,0 +1,151 @@
+{
+  "pairs": [
+    {
+      "original": {
+        "path": "research/byte_input_model_v5/__init__.py",
+        "size": 416,
+        "sha256": "4c82c81ea7d4d8014783e8e1803788c5dc8b7a003bb719890788f2995eea393b"
+      },
+      "candidate": {
+        "path": "research/byte_input_model_v6/__init__.py",
+        "size": 416,
+        "sha256": "4c82c81ea7d4d8014783e8e1803788c5dc8b7a003bb719890788f2995eea393b"
+      },
+      "exact_replacements": [],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_model_v5/model.py",
+        "size": 12969,
+        "sha256": "f8ea081d9b4dea8c860a6058cb16d95e9960a80cd34a418431ecaa66b78fca56"
+      },
+      "candidate": {
+        "path": "research/byte_input_model_v6/model.py",
+        "size": 12862,
+        "sha256": "25c0baa141dffbd81f1c3159d328fc2567e581ff6c0d1e6caeaa7ce243fb02e3"
+      },
+      "exact_replacements": [
+        [
+          "    def _buffer_digest(self, tensor):\n        result = hashlib.sha256()\n        flat = tensor.detach().reshape(-1)\n        for start in range(0, flat.numel(), 131072):\n            part = flat[start:start+131072].to(device='cpu').contiguous()\n            result.update(part.view(torch.uint8).numpy().tobytes())\n        return result.hexdigest()\n",
+          "    def _buffer_digest(self, tensor):\n        result = hashlib.sha256()\n        flat = tensor.detach().reshape(-1).to(device='cpu').contiguous()\n        result.update(memoryview(flat.numpy()).cast('B'))\n        return result.hexdigest()\n"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_optimizer_v6.py",
+        "size": 8832,
+        "sha256": "ae81966497d1a6168ac428a033df33ba995b19d2e92a66980ba21be4a308e3ff"
+      },
+      "candidate": {
+        "path": "research/byte_input_model_v6/optimizer.py",
+        "size": 8804,
+        "sha256": "8615085ae60c33299f56a7c0adea12f7953a9ebf9cc874da61427ad8b6122791"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v5.model import ByteInputModel",
+          "from .model import ByteInputModel"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_state_v5.py",
+        "size": 12938,
+        "sha256": "ab2f1adfaca7b57c86c331dbb1ec634dd76211a1b3390d936d14d219e7c18004"
+      },
+      "candidate": {
+        "path": "research/byte_input_state_v6.py",
+        "size": 12894,
+        "sha256": "1a5719aa351dbc85584762015c7f740178e31a752c90f751204c872cf7b45caf"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v5 import ByteInputModel\nfrom research.byte_input_optimizer_v6 import ByteInputOptimizer",
+          "from research.byte_input_model_v6 import ByteInputModel, ByteInputOptimizer"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_training_v5.py",
+        "size": 20200,
+        "sha256": "929d0c1a1f18debb8b95c6a08c23e920db9bf035c7de79d573930f121cc6eb07"
+      },
+      "candidate": {
+        "path": "research/byte_input_training_v6.py",
+        "size": 20156,
+        "sha256": "c6cc7416c2572d01452fdf624c484b19547ec62ee2c67cc086fa9def080d8f19"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v5 import ByteInputModel\nfrom research.byte_input_optimizer_v6 import ByteInputOptimizer",
+          "from research.byte_input_model_v6 import ByteInputModel, ByteInputOptimizer"
+        ],
+        [
+          "from research import byte_input_state_v5 as numerical",
+          "from research import byte_input_state_v6 as numerical"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_inference_v4.py",
+        "size": 10006,
+        "sha256": "10e4a484cc02e7375bcaad813104c58fe28d5e1e8d8b6fff6741adf23f766942"
+      },
+      "candidate": {
+        "path": "research/byte_input_inference_v5.py",
+        "size": 10006,
+        "sha256": "2d2179f5a102ca2727333c32f83a9774368b2168dcf69cc77589530d321d25be"
+      },
+      "exact_replacements": [
+        [
+          "from research import byte_input_training_v5 as training",
+          "from research import byte_input_training_v6 as training"
+        ],
+        [
+          "from research import byte_input_state_v5 as numerical",
+          "from research import byte_input_state_v6 as numerical"
+        ],
+        [
+          "from research.byte_input_model_v5 import ByteInputModel, Spec",
+          "from research.byte_input_model_v6 import ByteInputModel, Spec"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_cache_v3.py",
+        "size": 4534,
+        "sha256": "645d08a0b5671b56c4a93467bf2e0e8f6bbd3841aa418945d5c0218d64f3867e"
+      },
+      "candidate": {
+        "path": "research/byte_input_cache_v4.py",
+        "size": 4534,
+        "sha256": "0a639c99fc78a692515c46482d57752fc61424ab1b2d218aa104e79f0a7de8f9"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v5 import ByteInputModel",
+          "from research.byte_input_model_v6 import ByteInputModel"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    }
+  ],
+  "prototype": {
+    "path": "research/byte_input_bulk_hash_v1.py",
+    "size": 794,
+    "sha256": "4f4c13839e74ec38b98fbda1e674cdc21f997b35020245745db7316b4e6f7671"
+  },
+  "runtime_qualified": false,
+  "model_math_and_optimizer_arithmetic_unchanged": true
+}

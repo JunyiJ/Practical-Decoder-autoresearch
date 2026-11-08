@@ -1,0 +1,63 @@
+{
+  "kind": "bulk_hash_public_loader_and_saved_artifact_interoperation",
+  "runner_sha256": "7e3dee94418041b77a8f671218f1211a3c455084ebb31bd4b4c0f0b5130be11c",
+  "implementation_record": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/implementation.json",
+    "size": 3697,
+    "sha256": "0d265f099e65d6c082dae220381f5704fe4497c94c2de4673e752b047ec42f08"
+  },
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-artifact001/source-map.json",
+      "size": 845,
+      "sha256": "9794dfb478ce71039a8608b939e3e84af96e80227409c574efc0f458f47091b1"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-integration-source001/source-map.json",
+      "size": 5633,
+      "sha256": "0abe83f659a5d29eed7e4fc962a63239ba885e2368430607365fb8bfbb9792c1"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/implementation.json",
+      "size": 3697,
+      "sha256": "0d265f099e65d6c082dae220381f5704fe4497c94c2de4673e752b047ec42f08"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/recipe.json",
+      "size": 15839,
+      "sha256": "634c7a4f47a645bc96dfb2c34d85fcb1331d481231b1048502fde64f93056011"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-training001/result.json",
+      "size": 4478,
+      "sha256": "9b1925f2c993320e5bde55f7e4c012770b1bab98a4a700126b29b36508adfaaf"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-training001/guard.json",
+      "size": 404,
+      "sha256": "4a11c3729c95a1824c46291ef5ff06e22938f02ee01ff3ffb4b66241296d668b"
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v4.py",
+      "size": 2184,
+      "sha256": "c444e382a0df7e0d886c22a31a611f5e62c7f03174480a262cc2e0aee3e2ff3a"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "fixed_checks": "Load accepted H200 through public consumer-v4, restore accepted1200-step RAW in model-v6/training-v6, capture complete state exactly including41averages; reproduce H200 export in memory exactly and load every saved parameter through inference-v5. Caller RNG restored.",
+  "roles": "Historical identities and saved sampler states only; no new draws, training updates or quality scoring.",
+  "resource_budget": {
+    "timeout_seconds": 90,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 4194304,
+    "free_bytes": 15459897344
+  },
+  "acceptance": "Exact complete equality and successful public loading, otherwise close without relaxing criteria."
+}

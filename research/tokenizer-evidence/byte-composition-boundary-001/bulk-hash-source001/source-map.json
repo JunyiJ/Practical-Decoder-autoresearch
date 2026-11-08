@@ -1,0 +1,17 @@
+{
+  "original": {
+    "path": "research/byte_input_model_v5/model.py",
+    "size": 12969,
+    "sha256": "f8ea081d9b4dea8c860a6058cb16d95e9960a80cd34a418431ecaa66b78fca56"
+  },
+  "candidate": {
+    "path": "research/byte_input_bulk_hash_v1.py",
+    "size": 794,
+    "sha256": "4f4c13839e74ec38b98fbda1e674cdc21f997b35020245745db7316b4e6f7671"
+  },
+  "method": "_buffer_digest",
+  "original_method": "    def _buffer_digest(self, tensor):\n        result = hashlib.sha256()\n        flat = tensor.detach().reshape(-1)\n        for start in range(0, flat.numel(), 131072):\n            part = flat[start:start+131072].to(device='cpu').contiguous()\n            result.update(part.view(torch.uint8).numpy().tobytes())\n        return result.hexdigest()\n",
+  "candidate_method": "    def _buffer_digest(self, tensor):\n        result = hashlib.sha256()\n        flat = tensor.detach().reshape(-1).to(device='cpu').contiguous()\n        result.update(memoryview(flat.numpy()).cast('B'))\n        return result.hexdigest()\n",
+  "only_hash_transfer_and_buffer_protocol_changed": true,
+  "runtime_qualified": false
+}

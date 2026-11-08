@@ -1,0 +1,47 @@
+{
+  "kind": "current_adopted_optimizer_stack_warmed_step_profile",
+  "runner_sha256": "01cc528c063f308a8cdc483b6d55e2482bc1e6f0ca6af0ec81788280cec687c5",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/recipe.json",
+      "size": 15839,
+      "sha256": "634c7a4f47a645bc96dfb2c34d85fcb1331d481231b1048502fde64f93056011"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/implementation.json",
+      "size": 5389,
+      "sha256": "a9116493b3bd7ebba06e9dc5f594462eb6c01dbcb87bd5f3fca7c92380591296"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-training001/result.json",
+      "size": 4299,
+      "sha256": "a85c6ca9a3ef685900ef625f80e8d9491393efe79a0f48fc7d4cb66e8ccec8df"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "fresh_sampler_roles": {
+    "train_sampler": 62101200001,
+    "validation_sampler": 62101200002
+  },
+  "roles_audit": "Exact rg search of research and research_state JSON/Python/Markdown before preparation found no62101200001/2. Reserve and close these roles for this profile.",
+  "fixed_execution": "Accepted slot10 H200, adopted model-v5/optimizer-v6/training-v5, original1200-step recipe. Two warmup steps then cProfile third step, all on MPS. No averaging snapshots at this early step.",
+  "resource_budget": {
+    "timeout_seconds": 60,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 2097152,
+    "free_bytes": 15467520000
+  },
+  "interpretation_limits": [
+    "One early warmed update with profiling overhead; not sustained throughput or a paired comparison.",
+    "Python cumulative times overlap and include device waits; do not add them or claim GPU kernel attribution.",
+    "Three numerical updates, no quality scoring or saved weights.",
+    "The old profile predates two adopted validator optimizations; this run measures the new stack using fresh samplers."
+  ]
+}

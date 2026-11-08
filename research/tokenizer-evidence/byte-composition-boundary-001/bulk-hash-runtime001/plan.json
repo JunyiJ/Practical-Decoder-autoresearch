@@ -1,0 +1,57 @@
+{
+  "kind": "bulk_transfer_zero_copy_hash_actual_buffer_comparison",
+  "runner_sha256": "15711902a900a74c672692bfe779f48a7601f61ef68beccbc85c7b4b45219258",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/recipe.json",
+      "size": 15839,
+      "sha256": "634c7a4f47a645bc96dfb2c34d85fcb1331d481231b1048502fde64f93056011"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/optimizer-baseline-profile001/result.json",
+      "size": 313881,
+      "sha256": "b76a30199b07208a84a7133f2e9a80d9f8687b1c824f075b01eaec5b4b9222ab"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-source001/source-map.json",
+      "size": 1110,
+      "sha256": "63cc87a957ea09ca0f7e910d3a709113ab369f1e8b6b5ba7f5c25f32a5bdff5a"
+    },
+    {
+      "path": "research/byte_input_bulk_hash_v1.py",
+      "size": 794,
+      "sha256": "4f4c13839e74ec38b98fbda1e674cdc21f997b35020245745db7316b4e6f7671"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "basis": "Current warmed-step profile attributes0.206869s cumulative to84 buffer digest calls, including378 SHA updates and NumPy byte copies. Full-buffer transfer and buffer protocol may reduce overhead while retaining exact SHA256 bytes. No arithmetic change.",
+  "fixed_checks": "Same accepted H200 weights, all14 actual model buffers on CPU/MPS: exact digests, center mutation and full-validator rejection/restoration for both implementations. Additional code_ids mutations at0,131071,131072,last cover old chunk boundaries and final tail. Unchanged RNG and equal model weights at exit.",
+  "backends": [
+    "cpu",
+    "mps"
+  ],
+  "paired_repeats": 7,
+  "prospective_gate": "All exact checks pass; MPS complete-validator candidate median<=90% of reference and at least5/7 paired wins. CPU timings descriptive. Passing only admits integration, not adoption or training-speed claims.",
+  "resource_budget": {
+    "timeout_seconds": 90,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 2097152,
+    "largest_cpu_transfer_bytes": 52267280,
+    "free_bytes": 15463813120
+  },
+  "roles": "Historical identities solely reconstruct accepted weights; no training or sampler roles.",
+  "interpretation_limits": [
+    "Single local microbenchmark, not training/inference throughput.",
+    "NumPy-compatible registered buffer inventory only: bool,FP32,int64; no claim for arbitrary tensors.",
+    "Larger transient CPU transfer replaces many smaller copies; retain4GiB RSS guard.",
+    "No content checks, codebook rows or padding bytes are skipped.",
+    "Existing exact-type consumers reject the isolated subclass pending integration."
+  ]
+}

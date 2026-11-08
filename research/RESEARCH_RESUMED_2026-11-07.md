@@ -70,7 +70,7 @@ panel without rewriting the original failure or its scientific rules.
 
 The [hash-only recipe](tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json)
 was the first adopted equivalent implementation; subsequent implementations
-and the current optimizer-state recipe are recorded below.
+and the current bulk-hash recipe are recorded below.
 It keeps the same mathematical model, parameter count, first-fresh checkpoint,
 artifact formats and quality evidence. The loader is
 `research.byte_input_checkpoint_consumer_v2.load`, with the recipe's implementation,
@@ -138,7 +138,7 @@ exactly. This is local short-recipe timing, not a confidence interval or1200-ste
 throughput claim. Integration roles62100800001/2 and timing roles62100900001/2 are
 reserved/closed. The public loader succeeded on MPS in1.3249seconds.
 
-The current [optimizer-state implementation](tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/README.md)
+The preceding [optimizer-state implementation](tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/README.md)
 is adopted via [optimizer-state-adoption001/recipe.json](tokenizer-evidence/byte-composition-boundary-001/optimizer-state-adoption001/recipe.json).
 It keeps model-v5, cache-v3 and selected-checkpoint loader-v3 unchanged and uses
 optimizer-v6/state-v5/training-v5/inference-v4 for training and export. The recipe
@@ -164,10 +164,32 @@ reproduced its H200 export exactly and loaded its H200 parameters exactly, with
 no new updates or weight files. Total numerical work was 45 updates; no quality
 panel or holdout was scored. Full details, costs and failure lineage are linked above.
 
-No worker is active. Next refresh one warmed-step profile under the current adopted
-stack, with fresh sampler roles, before choosing the next optimization. The old
-profile predates both validation changes. Preserve closed cropping failures and
-scientific gates; do not repeat full quality tests for unchanged model math.
+The refreshed [profile](tokenizer-evidence/byte-composition-boundary-001/optimizer-baseline-profile001/README.md)
+measured 0.206869 s cumulative buffer hashing and 0.195348 s deterministic byte-
+embedding backward in one early warmed update. Its three-update roles 62101200001/2
+are closed. Profile times overlap, include device waits and are not kernel timings.
+
+The current [bulk-hash implementation](tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/README.md)
+is adopted via [bulk-hash-adoption001/recipe.json](tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/recipe.json).
+It uses model-v6 with the existing optimizer improvements, state-v6/training-v6/
+inference-v5/cache-v4 and checkpoint_consumer_v4. Complete-buffer CPU transfer and
+the buffer protocol replace small transfer chunks and Python byte copies, while
+preserving every content check and original SHA256 digest.
+
+All 72 real-buffer mutation checks passed. Complete MPS model validation fell
+from 46.693 to 33.494 ms. The integrated CPU/MPS cache, CPU update/resume and MPS
+20-pair final-state comparisons were exact. The warmed timing gate passed with
+**8.62% lower median latency**, 16/16 wins and no averaging-phase regression.
+CPU roles 62101300001/2 and MPS roles 62101400001/2 are closed/reserved. This remains
+a short local comparison; combined improvement versus native is unmeasured.
+
+The public loader succeeded and original RAW capture/H200 export/load remained
+exact. This continuation used 48 numerical updates including profiling, about
+82 guarded seconds, zero quality evaluations and zero new weight archives.
+No worker is active. Next quantify active byte rows and selection overhead for
+the unchanged deterministic embedding backward, then test an isolated candidate
+that avoids absent rows while retaining 2048-position chunks and ordered sums.
+Keep the exact numerical gate and closed padding/quality studies unchanged.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current
