@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-11-08T21:43:49.268199+00:00",
+  "action": "frozen v3 independent review before guard entry",
+  "exception": "BlockingIOError: [Errno 35] Resource temporarily unavailable",
+  "classification": "transient shared-lock contention",
+  "no_guard_or_review_started": true,
+  "followup": "lsof reported no lock holder; completed dispatcher and worker absent; retry original nonblocking entry without changing review or results"
+}

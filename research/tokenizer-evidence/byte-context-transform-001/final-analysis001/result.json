@@ -1,0 +1,662 @@
+{
+  "bundles": [
+    {
+      "bundle": 62102200000,
+      "comparable_averaging_gap_difference": null,
+      "comparable_final_online_tanh_minus_byte": null,
+      "h200_ce": {
+        "byte": 4.550480417682879,
+        "linear": 4.643989454412734,
+        "tanh": 4.6163556829136025
+      },
+      "last100_tanh_minus_byte": 0.7238204216957094,
+      "linear_minus_byte": 0.09350903672985478,
+      "tanh_minus_byte": 0.06587526523072373,
+      "tanh_minus_linear": -0.027633771499131043
+    },
+    {
+      "bundle": 62102300000,
+      "comparable_averaging_gap_difference": 0.07551477109178428,
+      "comparable_final_online_tanh_minus_byte": 0.001474463775470447,
+      "h200_ce": {
+        "byte": 4.566994250781102,
+        "linear": 4.6544808259995305,
+        "tanh": 4.643983485648357
+      },
+      "last100_tanh_minus_byte": 0.6753501176834109,
+      "linear_minus_byte": 0.08748657521842862,
+      "tanh_minus_byte": 0.07698923486725473,
+      "tanh_minus_linear": -0.01049734035117389
+    },
+    {
+      "bundle": 62102400000,
+      "comparable_averaging_gap_difference": 0.05597730749522878,
+      "comparable_final_online_tanh_minus_byte": -0.003865640484310262,
+      "h200_ce": {
+        "byte": 4.571279232906005,
+        "linear": 4.656344813649762,
+        "tanh": 4.623390899916924
+      },
+      "last100_tanh_minus_byte": 0.6719257402420045,
+      "linear_minus_byte": 0.08506558074375636,
+      "tanh_minus_byte": 0.052111667010918516,
+      "tanh_minus_linear": -0.03295391373283785
+    }
+  ],
+  "cost": {
+    "final_review_seconds": 2.35062675003428,
+    "online_scoring_fraction_of_original_guards": 0.10239595753379652,
+    "online_scoring_seconds": 619.4208135455847,
+    "original_guard_seconds": 6049.270190584823,
+    "prior_charged_seconds": 2151.1096180408495,
+    "recovery_controller_seconds": 4056.702415500069,
+    "total_charged_execution_seconds": 6210.162660290953,
+    "training_fraction_of_original_guards": 0.8437180775889869,
+    "training_seconds": 5103.878616016591
+  },
+  "inputs": {
+    "research/tokenizer-evidence/byte-context-transform-001/00/guard.json": "ac4bdedb48ad90b30893aa628e9e03c34b02ae2656a424f26c09eeaf816d71e9",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery001/01/guard.json": "7ce947b81b1325407de5ab4877ee5569e752130fa53d87329c25017bac6742dd",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery001/02/guard.json": "7073dc6a38845c7edaeb537eb59b511b5c52997a76be25abb05dbe01c2fca121",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/00/acceptance.json": "e4ae56b4e0feef1b7cbb055beaf101d65fbf480a5d80b903921d271cb967e54e",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/00/curve-1200.json": "0f24877cbdd393a3ea70019404849797f662b8045e26d32be23829f5f3fbb967",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/00/curve-300.json": "8cbf3780d33ba6ae1cd7abd99427362e18aa01b411205febf99b5babc5100a84",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/00/curve-600.json": "11b448200f4810878b322bd9501a4e00088591352c56d7328407c23b6e30fc11",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/00/curve-900.json": "2c4ea53e10dcea260b59da7f29f7ef322877471c38f23d1bcb2211f326db698a",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/00/result.json": "97524d2ef45a36ad9544dd79ef3fd166966de6ca4c9e924af76a73d1c12aca9e",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/00/training.jsonl": "9ac94d063826bce76690bbb85a7faa5da27604cabf9530aef471ad92d62edfc1",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/01/acceptance.json": "c77ebee0588e4707f950f9e78bf521182c3b1bafd58a0b551a795b43b19eac9a",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/01/curve-1200.json": "da5c488add3dacc7adabeed1692bb602a8532f405edecf97f4f342ba6bd9d188",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/01/curve-300.json": "0565d8ded4c7119ee23b0cadf50dd69c39e200307bb0f777786eafd2c8831619",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/01/curve-600.json": "eaefacb585d86737d69bc18111e6cecb35b1dba0bf055b46d633171f9dc2efb4",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/01/curve-900.json": "37f4fe7d89bad556dc78f05b3f5f0dc321956f64e3f399e1a4900e844ebc27b4",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/01/result.json": "dd2b9932620fd7ea457003df2999c13ca23eaca85164950011e04771ae631400",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/01/training.jsonl": "9bee1f3de01b4395c4914afd502dd94e59f5d6c974c5e852f8109f74802233a0",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/02/acceptance.json": "8f04b95024c0bd2310a261d132dc1c93be3685bab64216fa956bbcf78303d05c",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/02/curve-1200.json": "4dcfe0ba14dd7df8cb1076fb00c6c1133b8e2e82b7756624ec0ac51271284cfb",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/02/curve-300.json": "42952263bd8b09ecea3554b681951cdad86f5d1cf8b7c0aa22f15bbb1f159246",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/02/curve-600.json": "664723074557f6b21d8477d93b594255f89aefb47aee43775f12af0a1572a25b",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/02/curve-900.json": "b9f7f1b38835fa272f63844ad544c7c1c16bbe9e083b747419a7939ae7f92bfc",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/02/result.json": "8c04e38d8e0d6e8b988eaa13b0c4dfb7968abf5a676ccf7cb2e3d0496c583094",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/02/training.jsonl": "9383044ceda64275b494e345ea16689d476b64f2a9023dbce7ae8ca96ad27b91",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/acceptance.json": "1102065d29604f667516fdbe94e2ac75046ad9ce15b81e3599814ad8619f240f",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/curve-1200.json": "9517f6c45ca44890d92ea90b20576ec19519bef59ddd5dae26b9d6cac5343aeb",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/curve-300.json": "9cd75d3569ca1cb31b92362c03f52022c486a3aedaa207cdb8ccb38bc5b19fe0",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/curve-600.json": "5386bdfb9f61096e8adbfef8f59eefdb2e97bdb955ee8c49e43d3b560f9d47de",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/curve-900.json": "78c3b83229f0cdb11133cbacf25192c866478fa9416be7e8fdba99c36d1556eb",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/guard.json": "89277e366a5d6a0686c7ff131e16129050dbcaf0d065a6b8c9ef17c76c1acd32",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/result.json": "9cba2dcc68ec3b0348889f72080c9427253feb793bb657f675ba8f30f608b68e",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/03/training.jsonl": "b474fdd255e21b329c281ae1717c4b9504cb0c96734771715954c4f462c9aafc",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/acceptance.json": "d5067db3cb3d3bb4ed2fc2d50bae7ba13d74b81d85237696913366158dbdc864",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/curve-1200.json": "f3689b77e434d1486f01db429cca1ba3638deecd7c2ce0903aa1f534fa44fa02",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/curve-300.json": "b7bd5abe750701b21999c25eb6bfb0393abdd0d5ea262c3949222e6b8c5ea5e9",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/curve-600.json": "bbe4672b0a34b37b2239ec68a6f2f226ce7025335c6a4b4112c989f470a2d803",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/curve-900.json": "d1a1417626182e2bd1eac807a205a3816c2484c259f093c9ed9ed5b0bd7d5c6e",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/guard.json": "801dddc609dbe17bb8a254a49eeec949a3d1707b407192b7535b2b0d50dce2d9",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/result.json": "8ab72bcd578328a50fe63dfc16bf8112308a6384a022b706e01368901a004c4d",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/04/training.jsonl": "5d7b712f531a6223807b33fd3ebfa5ad74a4cc25dc8daa75ff663e97a629b4a8",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/acceptance.json": "83a2a2e5e9903e1b9880b028e3fe905c9074ab3fe5e096b9137b91780b68bee8",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/curve-1200.json": "9faa202b1a4d21e25971bdcc8e24973172ecf2550b20dda73927d7431695180d",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/curve-300.json": "b5008309c36065fa64457116b7cc6e180e99a303f1c85ca3c16a9befedc61c8f",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/curve-600.json": "5749060a104fed65faab02c1c72bb2739a2e78813b287b716343051fb91a7b31",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/curve-900.json": "923705e0a35a7682d7624cce16c1db5f2383c01971704db1be7f88f9cead1c92",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/guard.json": "0d12f61c8c944193373b8982fcd9188b7516006f86c08f116f1950243694ced1",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/result.json": "06160508b26ae18a237ea1b8e770af7c05737f509110332518764db44137fa76",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/05/training.jsonl": "d7df02fd50b61a1f3b18c4a58f3bc46445e2b9ec34e605863ef16159ccf8b0db",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/acceptance.json": "9ce4080e8d60d666cc43093f908d9d24199ad80acf9f0d866b1e71e02f988358",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/curve-1200.json": "cca43383252b024b0283df7b79eb76b97f1d88a5bc5411875bf59917a8bd2131",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/curve-300.json": "fd0ec03b8a8dace1240234dbe4a289c96b35da408639a2b93306ec6834887732",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/curve-600.json": "31cfc97c330e850c5f30b235642ad1578fa8d58307b6f389f629fce44d6bd7c2",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/curve-900.json": "74476de29d59e93a84b536a43e5818707e4e57ed069453992fce92c02e1a324b",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/guard.json": "395dac1a43bbfa8c0487bb54c2b3607e95e864da268a29fe5c3211a027c6b6f5",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/result.json": "26a54bdb469ad22abd178f88fb9b3b33689b0f8761b44ba777378f8babaf2320",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/06/training.jsonl": "1226630a528e97da9447053a45afcffd54abf6135a32e7afa419b88e01c588fb",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/acceptance.json": "babe7a9bd050849f8056d2c36e93a352cd829c5ecb37ecdf3ab3cc1a7c4ff2d4",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/curve-1200.json": "0060e70d1af46fc0e5f1df1233f1d83dba878eb76e90e74f0add3acccb1ddae8",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/curve-300.json": "57cdb8a695174cf66bfa54902b899d6b91bed4d6df1987dbc3cfee31fa83f681",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/curve-600.json": "1868c1a7c4bbcfecbfb027877ff7de6a8259858f8419a08c91a9d480bec51422",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/curve-900.json": "8297cc7faac07a22f9ee1aab240ffcf6a0271bccf38aa26c227037e532f9a4f1",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/guard.json": "c3360043f02698aa61b90669ff94da7b268128352c14f64101a7515d72f87eb9",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/result.json": "99ee3c77c76ae543f4d904d7c880b6ef418ce6c78c3bf4d00d6b3f7bd7cd6d2c",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/07/training.jsonl": "e9d6057e41808503ec365b5b9e6f1ab9e4128dd2182b1df281485e24310bcefc",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/acceptance.json": "9c7473e6c44d2d3cc7238d0eb518cbfc1c8cef94eefcc3afadd2c5fab8d404f7",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/curve-1200.json": "4863473553a940834c4d9908b8cda5549c228485bd48e73ae9cd7ff296337a5d",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/curve-300.json": "c0cd5075174dd8244fd62b1e9b9470553bed46f241032dde60735c234e5d8540",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/curve-600.json": "867ff64d59b0a05a00e03b84b8b8806ffe773bf0703954fb7dfff7f8ac22fc85",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/curve-900.json": "0d0e2524b31107d743a2b8a82775d4c90179e9e0920b9c811d961d94819e4c3d",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/guard.json": "e9e3a494478fb7a197b3aec426cf549ec5e25d28eb5d826464ac05dc4a9d491f",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/result.json": "7fe582c172e305b2a60c8d4ac89940630bdcd01487cbec8481239745dfd2e46a",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/08/training.jsonl": "34f636e3169d3f96579d9f8f83ed84aab6c244d625853e396d9cad0de8ccef3e",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/controller-complete.json": "450c920e61d3bb207cadafbf7d7d12df65a755e69c0b26bab639a83554838689",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/final-review-guard.json": "38a03208c1d4c4049bf0486c0f91cf9b008c75f552818b635f04e6448c2af3b4",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/final-review.json": "aaad9977174437c3d3922b6e54a86b1fc42cf700180d51522501ac1d13442b5a",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/final.json": "586d064f939ebf076780430e8ffd6e78fa9c34c6d401b4ed9d090d4c7cfc7ebc",
+    "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/quality-plan.json": "2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef"
+  },
+  "kind": "byte_context_final_descriptive_analysis_v1",
+  "limitations": [
+    "Descriptive training/averaging analysis is not a causal test or a new significance claim.",
+    "Use the frozen independent review for the primary contrasts and uncertainty.",
+    "Online final scores do not replace the predefined saved/reloaded H200 endpoint.",
+    "Slot00 online curve used the original no-grad RMSNorm path; no corrected RAW comparison is claimed.",
+    "Slots00/02 have source/count-derived terminal sampler evidence, not published runtime digests.",
+    "Measured execution cost excludes human/agent engineering wall time and is not a deployment benchmark."
+  ],
+  "no_adoption": true,
+  "no_model_execution": true,
+  "no_selection_change": true,
+  "no_training": true,
+  "primary_means": {
+    "byte": 4.562917967123329,
+    "linear": 4.651605031354008,
+    "tanh": 4.627910022826295
+  },
+  "quality_success": false,
+  "rows": [
+    {
+      "arm": "byte",
+      "bundle": 62102200000,
+      "h200_ce": 4.550480417682879,
+      "h200_minus_final_online": -0.04219692470973513,
+      "online_score_caveat": "Original no-grad RMSNorm path; diagnostic only",
+      "online_scoring_seconds": 68.38164475013036,
+      "online_validation": [
+        {
+          "ce": 5.193325630455611,
+          "seconds": 17.483102875063196,
+          "step": 300
+        },
+        {
+          "ce": 4.795883112535942,
+          "seconds": 17.009631875087507,
+          "step": 600
+        },
+        {
+          "ce": 4.651497122303463,
+          "seconds": 16.97695679194294,
+          "step": 900
+        },
+        {
+          "ce": 4.592677342392614,
+          "seconds": 16.91195320803672,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 666.3893780839862,
+      "sampler_evidence": "source/count-derived",
+      "slot": 0,
+      "training_update_seconds": 562.5486127936747,
+      "training_windows": [
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 300,
+          "mean_training_loss": 4.86698621749878
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 600,
+          "mean_training_loss": 4.147036657333374
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 900,
+          "mean_training_loss": 3.695785415172577
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.241068148612976
+        }
+      ]
+    },
+    {
+      "arm": "linear",
+      "bundle": 62102200000,
+      "h200_ce": 4.643989454412734,
+      "h200_minus_final_online": -0.08497254887941086,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 68.84671233303379,
+      "online_validation": [
+        {
+          "ce": 5.2322540304964145,
+          "seconds": 17.215998625033535,
+          "step": 300
+        },
+        {
+          "ce": 4.814384601110616,
+          "seconds": 17.32423154101707,
+          "step": 600
+        },
+        {
+          "ce": 4.755510616306837,
+          "seconds": 17.077736958977766,
+          "step": 900
+        },
+        {
+          "ce": 4.7289620032921444,
+          "seconds": 17.22874520800542,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 667.2712659579702,
+      "sampler_evidence": "observed",
+      "slot": 1,
+      "training_update_seconds": 562.3010283031035,
+      "training_windows": [
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 300,
+          "mean_training_loss": 4.947959156036377
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 600,
+          "mean_training_loss": 4.179768080711365
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 900,
+          "mean_training_loss": 3.720992739200592
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.1969805550575257
+        }
+      ]
+    },
+    {
+      "arm": "tanh",
+      "bundle": 62102200000,
+      "h200_ce": 4.6163556829136025,
+      "h200_minus_final_online": 0.024025973191328376,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 68.37269904220011,
+      "online_validation": [
+        {
+          "ce": 5.4643708482368165,
+          "seconds": 17.24867104110308,
+          "step": 300
+        },
+        {
+          "ce": 5.019564567791943,
+          "seconds": 17.045129875070415,
+          "step": 600
+        },
+        {
+          "ce": 4.72336061801661,
+          "seconds": 17.0659493340645,
+          "step": 900
+        },
+        {
+          "ce": 4.592329709722274,
+          "seconds": 17.012948791962117,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 666.4172683330253,
+      "sampler_evidence": "source/count-derived",
+      "slot": 2,
+      "training_update_seconds": 562.2201462474186,
+      "training_windows": [
+        {
+          "clipped_fraction": 0.88,
+          "end_step": 300,
+          "mean_training_loss": 5.267667841911316
+        },
+        {
+          "clipped_fraction": 0.99,
+          "end_step": 600,
+          "mean_training_loss": 4.532644209861755
+        },
+        {
+          "clipped_fraction": 0.99,
+          "end_step": 900,
+          "mean_training_loss": 4.195044686794281
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.9648885703086854
+        }
+      ]
+    },
+    {
+      "arm": "linear",
+      "bundle": 62102300000,
+      "h200_ce": 4.6544808259995305,
+      "h200_minus_final_online": -0.07373474341146125,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 69.0604017918231,
+      "online_validation": [
+        {
+          "ce": 5.199295058929817,
+          "seconds": 17.292708582943305,
+          "step": 300
+        },
+        {
+          "ce": 4.876741606349872,
+          "seconds": 17.046863582916558,
+          "step": 600
+        },
+        {
+          "ce": 4.784233896655759,
+          "seconds": 17.45729454199318,
+          "step": 900
+        },
+        {
+          "ce": 4.728215569410992,
+          "seconds": 17.263535083970055,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 669.4143910839921,
+      "sampler_evidence": "observed",
+      "slot": 3,
+      "training_update_seconds": 564.0667124545434,
+      "training_windows": [
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 300,
+          "mean_training_loss": 4.93123302936554
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 600,
+          "mean_training_loss": 4.167214496135712
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 900,
+          "mean_training_loss": 3.7664750027656555
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.176647379398346
+        }
+      ]
+    },
+    {
+      "arm": "tanh",
+      "bundle": 62102300000,
+      "h200_ce": 4.643983485648357,
+      "h200_minus_final_online": 0.03942665935973899,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 69.08039708400611,
+      "online_validation": [
+        {
+          "ce": 5.455190318077389,
+          "seconds": 17.43137129198294,
+          "step": 300
+        },
+        {
+          "ce": 4.991237377162957,
+          "seconds": 17.06906712509226,
+          "step": 600
+        },
+        {
+          "ce": 4.762028695943423,
+          "seconds": 17.32059316697996,
+          "step": 900
+        },
+        {
+          "ce": 4.604556826288618,
+          "seconds": 17.259365499950945,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 670.3370430000359,
+      "sampler_evidence": "observed",
+      "slot": 4,
+      "training_update_seconds": 564.8611782945227,
+      "training_windows": [
+        {
+          "clipped_fraction": 0.74,
+          "end_step": 300,
+          "mean_training_loss": 5.247778596878052
+        },
+        {
+          "clipped_fraction": 0.97,
+          "end_step": 600,
+          "mean_training_loss": 4.493510072231293
+        },
+        {
+          "clipped_fraction": 0.95,
+          "end_step": 900,
+          "mean_training_loss": 4.187798261642456
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.858213620185852
+        }
+      ]
+    },
+    {
+      "arm": "byte",
+      "bundle": 62102300000,
+      "h200_ce": 4.566994250781102,
+      "h200_minus_final_online": -0.03608811173204529,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 68.29133545805234,
+      "online_validation": [
+        {
+          "ce": 5.126252894479789,
+          "seconds": 17.106125583988614,
+          "step": 300
+        },
+        {
+          "ce": 4.785870475121477,
+          "seconds": 16.996574457967654,
+          "step": 600
+        },
+        {
+          "ce": 4.658118279059186,
+          "seconds": 16.993153083021753,
+          "step": 900
+        },
+        {
+          "ce": 4.603082362513147,
+          "seconds": 17.195482333074324,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 667.9501994589809,
+      "sampler_evidence": "observed",
+      "slot": 5,
+      "training_update_seconds": 563.3521839784225,
+      "training_windows": [
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 300,
+          "mean_training_loss": 4.872536602020264
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 600,
+          "mean_training_loss": 4.129176132678985
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 900,
+          "mean_training_loss": 3.7148790192604064
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.182863502502441
+        }
+      ]
+    },
+    {
+      "arm": "tanh",
+      "bundle": 62102400000,
+      "h200_ce": 4.623390899916924,
+      "h200_minus_final_online": 0.019843423935050453,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 68.30731100111734,
+      "online_validation": [
+        {
+          "ce": 5.444264463521344,
+          "seconds": 17.028299584053457,
+          "step": 300
+        },
+        {
+          "ce": 4.95971195324167,
+          "seconds": 16.938765999977477,
+          "step": 600
+        },
+        {
+          "ce": 4.679593637449119,
+          "seconds": 17.174534042016603,
+          "step": 900
+        },
+        {
+          "ce": 4.603547475981873,
+          "seconds": 17.165711375069804,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 669.3274788749404,
+      "sampler_evidence": "observed",
+      "slot": 6,
+      "training_update_seconds": 564.9818590824725,
+      "training_windows": [
+        {
+          "clipped_fraction": 0.67,
+          "end_step": 300,
+          "mean_training_loss": 5.269511895179749
+        },
+        {
+          "clipped_fraction": 0.94,
+          "end_step": 600,
+          "mean_training_loss": 4.530167415142059
+        },
+        {
+          "clipped_fraction": 0.98,
+          "end_step": 900,
+          "mean_training_loss": 4.220259492397308
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.830033736228943
+        }
+      ]
+    },
+    {
+      "arm": "byte",
+      "bundle": 62102400000,
+      "h200_ce": 4.571279232906005,
+      "h200_minus_final_online": -0.036133883560178326,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 69.54523287608754,
+      "online_validation": [
+        {
+          "ce": 5.1531049888402665,
+          "seconds": 17.664212542003952,
+          "step": 300
+        },
+        {
+          "ce": 4.758909988422931,
+          "seconds": 17.500515792053193,
+          "step": 600
+        },
+        {
+          "ce": 4.6259907602175785,
+          "seconds": 17.287147292052396,
+          "step": 900
+        },
+        {
+          "ce": 4.607413116466184,
+          "seconds": 17.093357249978,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 685.6051972919377,
+      "sampler_evidence": "observed",
+      "slot": 7,
+      "training_update_seconds": 579.1969547384651,
+      "training_windows": [
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 300,
+          "mean_training_loss": 4.9190405035018925
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 600,
+          "mean_training_loss": 4.184003348350525
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 900,
+          "mean_training_loss": 3.788804636001587
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.1581079959869385
+        }
+      ]
+    },
+    {
+      "arm": "linear",
+      "bundle": 62102400000,
+      "h200_ce": 4.656344813649762,
+      "h200_minus_final_online": -0.09087309093165619,
+      "online_score_caveat": null,
+      "online_scoring_seconds": 69.53507920913398,
+      "online_validation": [
+        {
+          "ce": 5.182466278333436,
+          "seconds": 18.1107599590905,
+          "step": 300
+        },
+        {
+          "ce": 4.801465833933937,
+          "seconds": 17.380791958072223,
+          "step": 600
+        },
+        {
+          "ce": 4.730889836344728,
+          "seconds": 17.192400833009742,
+          "step": 900
+        },
+        {
+          "ce": 4.747217904581418,
+          "seconds": 16.851126458961517,
+          "step": 1200
+        }
+      ],
+      "original_guard_seconds": 686.5579684999539,
+      "sampler_evidence": "observed",
+      "slot": 8,
+      "training_update_seconds": 580.3499401239678,
+      "training_windows": [
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 300,
+          "mean_training_loss": 4.943054876327515
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 600,
+          "mean_training_loss": 4.182525742053985
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 900,
+          "mean_training_loss": 3.790473918914795
+        },
+        {
+          "clipped_fraction": 1.0,
+          "end_step": 1200,
+          "mean_training_loss": 3.100492036342621
+        }
+      ]
+    }
+  ],
+  "source_sha256": "699a60846733e951fe7629f43d1060dd8f7ee7aab92cf5eb0303853f82ca8b07"
+}

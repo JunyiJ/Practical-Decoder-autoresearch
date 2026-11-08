@@ -58,16 +58,16 @@
   "active_byte_prototype_adopted": false,
   "active_byte_runtime": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/active-byte-runtime001/result.json",
   "active_byte_shape_diagnostic": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/result.json",
-  "active_campaign_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-context-transform-001/quality-recovery001",
-  "active_controller_pid": 70581,
-  "active_direction": "byte_context_transform",
-  "active_exec_session": 53076,
-  "active_parent_pid": 63565,
-  "active_run": "01",
-  "active_session": 53076,
-  "active_worker": "research.byte_context_transform_run_v3 worker 8",
-  "active_worker_pid": 61923,
-  "actual_free_bytes": 13684592640,
+  "active_campaign_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-context-transform-001",
+  "active_controller_pid": null,
+  "active_direction": "public_inference_correctness_integration",
+  "active_exec_session": null,
+  "active_parent_pid": null,
+  "active_run": null,
+  "active_session": null,
+  "active_worker": null,
+  "active_worker_pid": null,
+  "actual_free_bytes": 12244107264,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
   "adamw_beta2_direction": "research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
@@ -448,6 +448,8 @@
       }
     ]
   },
+  "byte_context_transform_final_analysis": "research/tokenizer-evidence/byte-context-transform-001/final-analysis001/result.json",
+  "byte_context_transform_final_review": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/final-review.json",
   "byte_context_transform_first_bundle_analysis": {
     "path": "research/tokenizer-evidence/byte-context-transform-001/first-bundle-analysis001/result.json",
     "sha256": "66903f5e2889180f292467e7f62f74309f1aabe071296638d871093a74eeb72a"
@@ -460,7 +462,8 @@
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-plan.json",
     "sha256": "e5d26b5af0cf473f62abe4d25b0555127a52c5531b38b9a7b3faf46f0517586c"
   },
-  "byte_context_transform_quality_accepted_count": 8,
+  "byte_context_transform_quality_accepted_count": 9,
+  "byte_context_transform_quality_status": "closed_negative_independently_reviewed",
   "byte_context_transform_recovery_plan": {
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/quality-plan.json",
     "sha256": "2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef"
@@ -469,6 +472,7 @@
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery001/resource-recovery001/plan.json",
     "sha256": "7092e2d46b9e9991ee05d91f26741c201b12b02c883ca4e3728f6df43a9da2e2"
   },
+  "byte_context_transform_results": "research/BYTE_CONTEXT_TRANSFORM_RESULTS.md",
   "byte_context_transform_scoring_correction": {
     "path": "research/tokenizer-evidence/byte-context-transform-001/scoring-recovery001/result.json",
     "sha256": "ffd98c28f9a01dd1fc8531c9e0dd61ae97645ea5a63aa0e1291bf298f44f019a"
@@ -9553,7 +9557,9 @@
     "path": "research/tokenizer-evidence/byte-context-transform-001/inference-epsilon001/plan.json",
     "sha256": "e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf"
   },
-  "fp32_rmsnorm_inference_repair_status": "source_and_prospective_check_frozen_not_executed_not_adopted",
+  "fp32_rmsnorm_inference_repair_qualification": "research/tokenizer-evidence/byte-context-transform-001/inference-epsilon003/acceptance.json",
+  "fp32_rmsnorm_inference_repair_results": "research/FP32_RMSNORM_INFERENCE_RESULTS.md",
+  "fp32_rmsnorm_inference_repair_status": "qualified_on_new_baseline_not_publicly_integrated_not_adopted",
   "free_bytes": 97505046528,
   "frequency_shift_analysis": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/generalization-boundary-001/frequency001.json",
   "generalization_boundary": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/generalization-boundary-001/evidence-review.md",
@@ -9793,7 +9799,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Follow live v3 dispatcher exec53076/PID70581 and final slot08 linear worker91678 in quality-recovery002; slots00..07 are accepted. Tanh-minus-byte H200 deltas for all three seeds are+.065875265,+.076989235,+.052111667: all favor byte. Slot07 H200 CE4.571279233; max CPU/MPS target error2.050400e-5 and mean2.052775e-8 pass unchanged limits. In the later two pairs final-online tanh-minus-byte is+.001474464 and\u2212.003865640, while averaged gaps are much larger; descriptive averaging interaction, not endpoint rescue. Plan 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef preserves all original roles, training, controls and primary MPS scoring. Do not restart on observation timeout. After controller completes all nine, run PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef. On accepted review run .venv/bin/python -m research.byte_context_final_analysis_v1, then publish complete results/closure without adoption or changed criteria. Its source is prepared but execution awaits review. Execute the independent inference qualification after the shared lock is free: PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.fp32_rmsnorm_inference_check_v1 run e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf. Preserve original failures and historical restrictions. Public inference repair is unqualified/unadopted; incumbent unchanged. Use full learning-dynamics evidence and primary literature before admitting any new hypothesis.",
+  "next_action": "Integrate the qualified FP32 RMSNorm scope into a new public consumer/inference/cache namespace around adopted model-v6/inference-v5/cache-v4, preserving frozen sources and selected checkpoint identity. Use the verified stable FP32 CPU CE reference in public scoring. Freeze a bounded entrypoint proof on the selected checkpoint: uncached/cached CPU/MPS equivalence, reset/replay, complete weight/RNG preservation and actual public loading; no historical quality reselection or rescore. Byte-context panel is closed negative: nine accepted, independent review passed, means byte4.562917967/linear4.651605031/tanh4.627910023. Its complete curves/cost analysis and results are published. Scoped inference attempt003 passed, plan b70056237858f91b76f5c0e88bcc74750d8d2b03251d6f88dfbba87bdc3a6672; attempts001/002 remain failed and preserved. Total qualification execution125.300961s of600. No worker is running, no capacity blocker, incumbent unchanged. After public correctness integration, use the all-seed learning evidence and primary literature before admitting another scientific hypothesis; do not replay closed transform or tying panels.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "scoring_corrected_resource_binding_corrected_continue_original_cases",
   "no_paid_compute": true,
@@ -10044,7 +10050,7 @@
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "source_work_available": true,
   "state_current_source_version": 6,
-  "status": "ACTIVE_BYTE_CONTEXT_CPU_REFERENCE_RECOVERY_RUNNING",
+  "status": "ACTIVE_PUBLIC_INFERENCE_CORRECTION_INTEGRATION",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -10467,7 +10473,7 @@
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
   "training_current_source_version": 6,
-  "updated_at": "2026-11-08T21:34:03.892427+00:00",
+  "updated_at": "2026-11-08T21:51:36.397501+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
@@ -10506,5 +10512,5 @@
   "warmup_trained_inference": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
   "warmup_worker": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
   "worker_kind": null,
-  "worker_pid": 91678
+  "worker_pid": null
 }

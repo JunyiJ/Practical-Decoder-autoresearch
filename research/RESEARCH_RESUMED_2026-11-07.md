@@ -1,3 +1,34 @@
+# Current work: quality panel closed; inference scope qualified
+
+All nine byte-context runs completed and passed the independent saved-result
+review. Mean H200 CE: byte4.562917967, linear4.651605031, tanh4.627910023.
+Tanh loses to byte on every seed; its comparison against linear also fails the
+uncertainty gate. Neither transform is adopted. The fixed panel is closed;
+no horizon, seed, control, endpoint or tolerance changed. Full results and
+all-seed learning/cost analysis are in [BYTE_CONTEXT_TRANSFORM_RESULTS.md](BYTE_CONTEXT_TRANSFORM_RESULTS.md).
+Total charged panel execution was6,210.163seconds; training itself5,103.879seconds.
+
+The separately specified RMSNorm inference check is now qualified on the new
+slot00H200 weights. Its third complete attempt passed full CPU/MPS scoring,
+B1/B8 cache equivalence, exact reset/replay, scoped exit, invalid inputs and
+unchanged weights/semantics/RNG. Two prior failures remain preserved: an invalid
+MPS float64 test construction, and an unrelated report-generator source edit.
+The first was corrected with a representable rejected dtype; the second with an
+explicit narrow source exclusion and a full rerun. No numerical tolerance or
+model implementation changed. Total check execution125.300961seconds of600.
+Accepted plan b70056237858f91b76f5c0e88bcc74750d8d2b03251d6f88dfbba87bdc3a6672.
+See [inference qualification](FP32_RMSNORM_INFERENCE_RESULTS.md).
+
+No worker is running. The next concrete work is public consumer integration of
+this qualified scope around the adopted model-v6/inference-v5/cache-v4 path,
+plus the verified stable FP32 CPU CE reference. Use a new source namespace and
+qualify actual public loading and uncached/cached execution on the selected
+checkpoint without reopening historical quality comparisons. The incumbent
+recipe remains unchanged until this integration is verified. No capacity blocker
+exists (last observed free12.24GB). The autonomous goal remains active.
+
+All sections below are historical snapshots, not current process state.
+
 # Current work: CPU reference repaired; third bundle running
 
 The first nonlinear candidate completed all 1,200 updates, then failed the fixed
