@@ -267,6 +267,14 @@ failure before any separately identified correction. Never replace an unfavorabl
 seed or alter scientific gates. The controller does not adopt automatically:
 independently review the complete panel before changing the incumbent.
 
+A [small final saved-data reviewer](byte_input_quality_final_review_v1.py) is now
+prepared outside the frozen sources. Its [preparation note](tokenizer-evidence/byte-composition-boundary-001/final-review-preparation001/README.md)
+records subsecond synthetic arithmetic checks and the bounded execution command.
+It reuses accepted per-run numerical reviews, independently reconstructs full-panel
+selection and bootstrap decisions from saved target losses, and verifies retained
+weight/evidence hashes. Run only after successful full-panel termination and shared
+lock availability. It has not accepted a panel or changed the incumbent.
+
 The ignored live progress file and quality001 slot/guard/STOP records are the
 continuation anchors. Binary checkpoints/oracle arrays remain local; Git contains
 sources, plans, metadata, logs and receipts. No quality gain or adoption is
