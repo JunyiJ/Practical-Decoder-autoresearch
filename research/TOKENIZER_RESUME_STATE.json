@@ -46,10 +46,10 @@
   "active_direction": "byte_input_composition",
   "active_exec_session": 22743,
   "active_parent_pid": 17021,
-  "active_run": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/15",
+  "active_run": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/16",
   "active_session": 22743,
   "active_worker": "research.byte_input_quality_v1.entry",
-  "active_worker_pid": 80074,
+  "active_worker_pid": 3732,
   "actual_free_bytes": 19322376192,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
@@ -402,7 +402,8 @@
     11,
     12,
     13,
-    14
+    14,
+    15
   ],
   "byte_input_quality_admission": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/admission/review.json",
   "byte_input_quality_adopted": false,
@@ -416,7 +417,7 @@
   "byte_input_quality_gain_established": false,
   "byte_input_quality_guard_observation": null,
   "byte_input_quality_last_observed_step": null,
-  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/14/acceptance.json",
+  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/15/acceptance.json",
   "byte_input_quality_original_accepted_slots": [
     0,
     1,
@@ -439,6 +440,10 @@
   "byte_input_quality_plan_sha256": "cd0dcc19ae94e09e3d14aa071043f6c89b498e482e942bc0bfeb65bda15d8ddd",
   "byte_input_quality_recovered_slots": [
     14
+  ],
+  "byte_input_quality_recovery_execution_accepted_slots": [
+    14,
+    15
   ],
   "byte_input_quality_recovery_plan": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/plan.json",
   "byte_input_quality_recovery_plan_sha256": "d41ab762478c90a353ac6319b0e3801d9b562eab5869f5a54687e86de26c3f29",
@@ -498,7 +503,7 @@
   "capacity_cleanup_target_bytes": null,
   "capacity_cleanup_target_deficit_bytes": 0,
   "capacity_deficit_bytes": 0,
-  "capacity_last_observed_at": "2026-11-08T14:20:40.199066+00:00",
+  "capacity_last_observed_at": "2026-11-08T15:23:14.274181+00:00",
   "capacity_poll_interval_seconds": null,
   "capacity_recovery_exhausted": false,
   "capacity_wake": null,
@@ -9345,7 +9350,7 @@
   "initial_required_free_bytes": 30631412484,
   "last_implementation_commit": "6dc57c74",
   "last_launch_record_commit": "e025eef8",
-  "last_observed_free_bytes": 16707624960,
+  "last_observed_free_bytes": 16393719808,
   "latest_archive_retention_audit": "research/maintenance-cache-cleanup-005/archive-audit.json",
   "latest_archive_retirement": "research/maintenance-cache-cleanup-005/completed.json",
   "latest_capacity_observation": {
@@ -9529,7 +9534,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Follow recovery controller session72451 / PID79938 and fresh2 code-control slot15 PID80074, then original unused slots16\u201317. Original controller session22743 is terminal failed and must not restart. Original slots00\u201313 accepted; slot14 recovered with zero training updates and explicit original failure lineage. After successful recovery STOP and shared-lock release, run the prepared independent reader research.byte_input_quality_recovery_final_review_v1 in a fresh recovery-final-review001 output directory. Preserve all original scientific gates, weights and failures; no adoption before complete independent review.",
+  "next_action": "Follow recovery controller session72451 / PID79938 and fresh2 native baseline slot16 PID3732 at LR0.00125, then final raw-byte slot17 at LR0.0025. Slots00\u201315 have accepted results: original00\u201313, saved-state postprocessing recovery14, and newly trained original case15. Fresh2 code-control CE is4.661347133272396; its paired native and raw-byte results are pending. After successful recovery STOP and shared-lock release, run prepared research.byte_input_quality_recovery_final_review_v1 in a fresh recovery-final-review001 directory. Preserve original failed controller/session22743, all weights, gates, roles and execution lineage; no adoption before full independent review.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "readout_tiny_component_qualified_fullmodel_integration_next",
   "no_paid_compute": true,
@@ -10107,7 +10112,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/result.json",
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
-  "updated_at": "2026-11-08T14:27:21.104966+00:00",
+  "updated_at": "2026-11-08T15:23:14.274181+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",

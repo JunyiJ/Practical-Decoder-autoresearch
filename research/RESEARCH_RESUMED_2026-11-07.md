@@ -45,15 +45,25 @@ The second fresh bundle is complete, with matching sampler and target identities
 Exact deltas are-0.10988153886683083 and-0.0922542469708203nat/token. This is two
 complete fresh bundles, not full-panel acceptance or an adoption decision.
 
-The recovery controller **session72451 / PID79938** is live and automatically
-started slot15, nonlexical codes on fresh2 at LR0.0025, **PID80074**. Its active
-root is `research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001`.
-Recheck the live handle and current attempt before using these recorded PIDs.
-Slots00–13 are original acceptances; slot14 is separately accepted postprocessing
-recovery. Only the three never-entered original fresh2 trajectories15–17 remain.
-They use the unchanged frozen numerical driver and original reserved roles.
+[Slot15, the final-bundle code control](tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/15/acceptance.json),
+is accepted at LR0.0025 on fresh2: all1,200 updates,41 averaging snapshots,
+1,228,800 sampled targets and34,278 validation targets. Full CE is4.661347133272396
+and BPB2.0667426142987186. The corrected guard finished in3,825.427seconds with
+914,980,864bytes peak RSS and no failure. Both retained RAW/H200 hashes verified;
+the pair totals318,299,422bytes. This was the first execution of original slot15,
+using the unchanged frozen numerical driver and reserved fresh2 roles. Its paired
+native and raw-byte results remain pending; no cross-bundle substitution or
+partial-panel quality decision is made.
 
-Next: follow this controller through slots15–17 and final statistics. The
+The recovery controller **session72451 / PID79938** is live and automatically
+started slot16, native on fresh2 at LR0.00125, **PID3732**. Its active root is
+`research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001`.
+Recheck the live handle and current attempt before using these recorded PIDs.
+Sixteen trajectories have accepted results: originals00–13, separately accepted
+saved-state postprocessing recovery14, and the newly trained original case15.
+Only original slots16–17 remain; both retain the frozen driver and reserved roles.
+
+Next: follow this controller through slots16–17 and final statistics. The
 [additive independent final reader](tokenizer-evidence/byte-composition-boundary-001/recovery-final-review-preparation001/README.md)
 is now prepared for originals00–13 and recovered14–17. It verifies immutable
 failure/recovery lineage and unchanged scientific rules while importing the
