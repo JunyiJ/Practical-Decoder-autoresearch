@@ -356,6 +356,21 @@ continuation anchors. Binary checkpoints/oracle arrays remain local; Git contain
 sources, plans, metadata, logs and receipts. No quality gain or adoption is
 established. The broader autonomous research goal remains active.
 
+## Complete-run cost evidence
+
+[Cost analysis002](tokenizer-evidence/byte-composition-boundary-001/cost-analysis002/analysis.md)
+uses the selected screens and first complete fresh bundle separately, verifying
+saved acceptance bindings without model execution. In fresh0, real bytes have
+4.1538 times native training-update cost, 1.9010/1.9921 times cached next-32-token
+decode time at batch1/8, and 3.1369 times batch8 prefill time. Smaller parameters
+and archives do not imply lower runtime or sampled training driver allocation.
+Five-repeat min/median/max timings and source/evidence hashes are retained;
+variable full-forward timings are not discarded. This is descriptive cost
+analysis, not an equal-wall-time quality comparison or a new adoption gate.
+Continue the original panel and final review, then the already prepared focused
+implementation investigation after shared-lock release. No extra training was
+launched and no frozen source changed.
+
 ## Existing-data cost analysis
 
 [Cost analysis001](tokenizer-evidence/byte-composition-boundary-001/cost-analysis001/analysis.md)
