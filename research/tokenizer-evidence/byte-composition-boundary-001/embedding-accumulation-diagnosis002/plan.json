@@ -1,0 +1,152 @@
+{
+  "allocation_forecast": "One 186MiB serialized composed checkpoint loaded transiently; retain only 15540B weight. One 8MiB output/upstream/gradient and 2.2MiB membership matrix. NumPy float64 oracle ~16MiB, fixed 259 rows. <1GiB additional above runtime. 32MiB retained output cap +8GiB reserve +2GiB extra headroom;180s;4GiB RSS;6GiB MPS;no fallback.",
+  "archive": {
+    "kind": "byte_input_numerical_checkpoint_v1",
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/byte-input-state-math002/mps-raw_bytes-step1.pt",
+    "sha256": "1a32d1fe445ef3cb85317a7d0f42556a4b641517ed105d590f1ef355ac432af4",
+    "size": 182441479
+  },
+  "assets": [
+    {
+      "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6c7ea1a7e38e3a7f062df639a5b80947f075ffe6",
+      "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783",
+      "size": 1042301
+    },
+    {
+      "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6d1cbeee0f20b3d9449abfede4726ed8212e3aee",
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "size": 456318
+    }
+  ],
+  "atol": 4e-06,
+  "classification": "Implementation/backend reproducibility diagnosis; checkpoint content and RNG restored exactly, forward exact, only byte_weight gradient hash differs",
+  "grouped_trials": 3,
+  "kind": "new_mixed_magnitude_MPS_byte_embedding_accumulation_diagnosis",
+  "no_model_or_optimizer": true,
+  "no_replay": true,
+  "pins": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/analyze.py",
+      "sha256": "75541c023175c1ee638955f64a22be239e91c0aa51ce282998d274bb373b812e",
+      "size": 6184
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/cpu_prerequisite_guard.py",
+      "sha256": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+      "size": 3982
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_proof_v1/codebook_reference.py",
+      "sha256": "6e75b6471001a2838162ae2ceae0a216fc49cbc0cfa621c988461968e511efb1",
+      "size": 5056
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_proof_v1/cases.py",
+      "sha256": "a32bbb0b1412473de6395aa71aaa8cb454559c1d055dade4f2024c40de19b689",
+      "size": 2734
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/STOP",
+      "sha256": "cb7040858bce3cb9318d2bff0e573c5aa768e14460516d8b50a2ca6c68725502",
+      "size": 155
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/guard.json",
+      "sha256": "23cba1a2b23ea51ddf7137ac74379cd8ac65056054571fd535bf5329c18a31cb",
+      "size": 399
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/mps-raw_bytes-restore.json",
+      "sha256": "07cc71a25c6166d311ca86d4e911a3f8f9519b1a144bb542d60b3e5af1bc3896",
+      "size": 201415
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/mps-raw_bytes-rng.json",
+      "sha256": "3014a8f291da22ae2d4a97c3eb0ff9847c36e1bfa58e7e65cb7cadd98665eda3",
+      "size": 819
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/mps-raw_bytes-control-next-forward.json",
+      "sha256": "c137601d7af6bfdb46cf5f3b5d69d59e2df6c3df9076558308165924bc077570",
+      "size": 408
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/mps-raw_bytes-restored-next-forward.json",
+      "sha256": "c137601d7af6bfdb46cf5f3b5d69d59e2df6c3df9076558308165924bc077570",
+      "size": 408
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/mps-raw_bytes-control-next-gradients.json",
+      "sha256": "1207709f1f63cadb0a916a67d96c7028c4e30a6f79d5cce455c6f9b206cfb726",
+      "size": 23781
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/mps-raw_bytes-restored-next-gradients.json",
+      "sha256": "9d8daff86b0c59831b09d9bcf59afaaddc76c1a4f0d35a835c0f7c9abe1b9da6",
+      "size": 23781
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/state-math002/mps-raw_bytes-archive-step1.json",
+      "sha256": "811c72386e8f38927cf6372b0751191ac9cee4572396e56f60317b51ecf98304",
+      "size": 268
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/version.py",
+      "sha256": "a3fcf46a2c44d102a5565f1f4735ccbb10055a423ff083610ceb81bb9e3abfa8",
+      "size": 309
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/nn/functional.py",
+      "sha256": "95ff403085bb179477a01df63acfddf59dfac0fb58829e99a9c8b5c2fe98899b",
+      "size": 278980
+    },
+    {
+      "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6c7ea1a7e38e3a7f062df639a5b80947f075ffe6",
+      "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783",
+      "size": 1042301
+    },
+    {
+      "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6d1cbeee0f20b3d9449abfede4726ed8212e3aee",
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "size": 456318
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/result.json",
+      "sha256": "0adc802b805e53c31ed222018af792b4fb0bddcb62eb6895b8b8e7b82d2c6c00",
+      "size": 956
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/STOP",
+      "sha256": "d4c0d57b7c51be00b3436d8532e27837b66953c6ba47dea83a715cc636db95f9",
+      "size": 71
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/plan.json",
+      "sha256": "678a2bf2328a4d32540621c6a8c91658ef34e3167839653cea819c1ddac4976f",
+      "size": 6950
+    }
+  ],
+  "rationale": "Original primitive diagnosis001 integer-scaled binary-fraction upstream had exact FP32 sums (both native/grouped matched FP64 exactly), so it did not discriminate accumulation-order rounding. New fixed sin/cos upstream spans 23 powers of two, retains native/grouped repeats and unchanged error gates; no model or optimizer rerun and no random roles. Original001 remains a completed exact-sum control.",
+  "repeated_native_primitive_trials": 3,
+  "roles": "none; deterministic arithmetic upstream and retained saved values",
+  "rtol": 4e-05,
+  "runtime": {
+    "identity": {
+      "executable": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/bin/python",
+      "machine": "arm64",
+      "packages": {
+        "hydra-core": "1.3.7",
+        "numpy": "2.5.4",
+        "omegaconf": "2.3.1",
+        "tiktoken": "0.14.0",
+        "torch": "2.14.1"
+      },
+      "platform": "macOS-26.3-arm64-arm-64bit-Mach-O",
+      "python": "3.13.12 (main, Feb  3 2026, 17:53:27) [Clang 17.0.0 (clang-1700.6.3.2)]"
+    },
+    "scope": "Installed runtime identity and selected entry sources only; no compiled binary/kernel re-audit or profile",
+    "torch_git": "5c4886908584029761b579af026dcfb627c84070",
+    "torch_version": "2.14.1",
+    "torch_version_source": ".venv/lib/python3.13/site-packages/torch/version.py"
+  }
+}

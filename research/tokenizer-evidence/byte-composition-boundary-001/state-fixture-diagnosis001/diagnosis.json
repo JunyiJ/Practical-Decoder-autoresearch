@@ -1,0 +1,60 @@
+{
+  "classification": "test_harness",
+  "correction": "Choose the smallest actual equal-shape pair from the full frozen parameter inventory. Inject storage alias between them; preserve same rejection predicate, cases, gates, model and adapter.",
+  "evidence": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/state-math001/STOP",
+      "sha256": "d84f897d2adb4f4c9e079be578d1280113d180570a3061354a5130c259477457",
+      "size": 101
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/state-math001/guard.json",
+      "sha256": "4f8c8b723f83d02e51e610017a396916a7afedb2af74d525641ac845f7bc7731",
+      "size": 340
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/state-math001/cpu-native-complete.json",
+      "sha256": "d3f565c0167b0197eb19631d45fcf3378c482b8d0e42e16aa03e48c526fa7cca",
+      "size": 284
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/state-math001/cpu-raw_bytes-step1-gradients.json",
+      "sha256": "5845dea93e1659079d7de88db8b7cb6b4912d0e5ac4c36f5dc0f30c0ff890684",
+      "size": 23571
+    }
+  ],
+  "failed_action": "Construct raw-byte parameter_alias rejection before adapter call",
+  "mechanism": "Composer filter_biases.0 has a unique 25-element shape. Original fixture required its same-shaped peer; assertion fired before restore_pristine.",
+  "native_cpu_complete": {
+    "backend": "cpu",
+    "exact": true,
+    "io_rejections": 5,
+    "nonpristine_rejections": 1,
+    "parameters": 88,
+    "payload_rejections": 33,
+    "scope": "Numerical state only; no sampler/schedule/clipping/H200/training-worker qualification",
+    "shape": [
+      8,
+      128,
+      50257
+    ],
+    "steps": 2,
+    "variant": "native"
+  },
+  "new_roles_required": true,
+  "no_adapter_defect_or_quality_result": true,
+  "no_numerical_calls": true,
+  "original_closed": true,
+  "pair_shape": [
+    32
+  ],
+  "same_shape_peers": [],
+  "shape": [
+    25
+  ],
+  "smallest_parameter": "composer.filter_biases.0",
+  "valid_alias_pair": [
+    "transformer.h.0.attn.kr.bias",
+    "transformer.h.1.attn.kr.bias"
+  ]
+}

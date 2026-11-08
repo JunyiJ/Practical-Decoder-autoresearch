@@ -1,0 +1,68 @@
+{
+  "arrays": [
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/arrays.npz",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/arrays.npz"
+  ],
+  "forecast": "32MiB output cap;~1GiB runtime/allocation upper;4GiB RSS,6GiB MPS,8GiB reserve+2GiB entry headroom,180s,4threads,no fallback",
+  "kind": "new_standalone_byte_embedding_autograd_proof",
+  "no_replay": true,
+  "pins": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-primitive001/prove.py",
+      "sha256": "0c864e9adc94d136bb15749e1a0fd7acc7d424d0724c8638da6bcc7a8c0f093e",
+      "size": 5083
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_embedding_v1.py",
+      "sha256": "03e0d62804f77cea4be5eabc34f1f9e0e2e6cd6a52b5e7f2bb63fcae40ddd950",
+      "size": 2469
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/src/research/cpu_prerequisite_guard.py",
+      "sha256": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387",
+      "size": 3982
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/arrays.npz",
+      "sha256": "1f946acb9edba4822e94e02f5d1e0fd06bd9b38e9ebdb1c4320d83a7adef3a9e",
+      "size": 154059
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/arrays.npz",
+      "sha256": "e53931703c4ab1d3cc7345ae453c6f90d3970fe5799fee0189d478bc53197813",
+      "size": 770008
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/result.json",
+      "sha256": "0adc802b805e53c31ed222018af792b4fb0bddcb62eb6895b8b8e7b82d2c6c00",
+      "size": 956
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/STOP",
+      "sha256": "d4c0d57b7c51be00b3436d8532e27837b66953c6ba47dea83a715cc636db95f9",
+      "size": 71
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis001/guard.json",
+      "sha256": "0893dfe441769a05f2dc5f658934e80daa7892daddf68d55c58dfe1d4ce64b19",
+      "size": 314
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/result.json",
+      "sha256": "1936186d47a9b15f7a2cef7e85093a4780564f9583f5ee715860224dcd3dcccf",
+      "size": 1105
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/STOP",
+      "sha256": "d4c0d57b7c51be00b3436d8532e27837b66953c6ba47dea83a715cc636db95f9",
+      "size": 71
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/guard.json",
+      "sha256": "170ada6e088967413b661b17113b65493022a4090390afb2a37bd795cdaee944",
+      "size": 314
+    }
+  ],
+  "required": "Two retained upstream controls,CPU/MPS,three repeats each,exact forward and repeat gradients,all3885 gradient coordinates versus independent float64 sum,14 invalid transactions,caller RNG preserved",
+  "roles": "No initialization/sampler draws; retained weights and deterministic diagnostic arrays"
+}

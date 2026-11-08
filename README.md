@@ -1,4 +1,4 @@
-> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](research/RESEARCH_RESUMED_2026-11-07.md). The full-size CPU/MPS byte-input integration proof passed; checkpoint source is reviewed but numerically unqualified. No real-data quality gain is established. Older pause banners below are historical.
+> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](research/RESEARCH_RESUMED_2026-11-07.md). The model-v2 integration proof passed. Exact checkpoint continuation exposed MPS byte-gradient nondeterminism; a fixed-order primitive is verified and new model-v3 integration awaits its checkpoint proof. No real-data quality gain is established. Older pause banners below are historical.
 
 > **Research paused by the human on 2026-11-07.** Start with the [stop and restart handoff](research/RESEARCH_HANDOFF_2026-11-07.md). Current byte-input model integration is source-only; no quality gain or adoption. Automatic research is paused. New explicit human authorization is required to resume. Older active/launch wording below is historical.
 

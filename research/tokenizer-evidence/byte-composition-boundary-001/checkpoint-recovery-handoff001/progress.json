@@ -1,0 +1,117 @@
+{
+  "classification": "implementation_backend_reproducibility",
+  "current_composer_source": "research/byte_composer_v2.py",
+  "current_model_and_state_numerically_executed": false,
+  "current_model_source": "research/byte_input_model_v3",
+  "current_state_source": "research/byte_input_state_v2.py",
+  "diagnosis002": {
+    "arrays_sha256": "e53931703c4ab1d3cc7345ae453c6f90d3970fe5799fee0189d478bc53197813",
+    "caller_rng_preserved": true,
+    "forward_repeat_exact": true,
+    "gradient_shape": [
+      259,
+      15
+    ],
+    "grouped": {
+      "changed_coordinates": [
+        0,
+        0
+      ],
+      "maximum_reference_error": [
+        3.596484620532747e-09,
+        3.596484620532747e-09,
+        3.596484620532747e-09
+      ],
+      "maximum_repeat_difference": [
+        0.0,
+        0.0
+      ],
+      "reference_pass": [
+        true,
+        true,
+        true
+      ],
+      "repeat_exact": true
+    },
+    "native": {
+      "changed_coordinates": [
+        251,
+        259
+      ],
+      "maximum_reference_error": [
+        7.958322344875368e-09,
+        7.798448101691002e-09,
+        8.20483815264228e-09
+      ],
+      "maximum_repeat_difference": [
+        3.4924596548080444e-09,
+        5.238689482212067e-09
+      ],
+      "reference_pass": [
+        true,
+        true,
+        true
+      ],
+      "repeat_exact": false
+    },
+    "no_model_optimizer_or_historical_fixture_call": true,
+    "raw_shape": [
+      1024,
+      130,
+      15
+    ],
+    "roles": "No initializer or sampler draws; saved weights and explicit arithmetic upstream.",
+    "scope": "Isolated full-size byte lookup backward with saved weights and new deterministic upstream. Cannot quantify historical gradient error, whose full values were not saved. No real-data quality conclusion.",
+    "trials": 3
+  },
+  "free_bytes": 22211301376,
+  "incumbent_unchanged": true,
+  "measured_at": "2026-11-08T00:49:34.611287+00:00",
+  "next_action": "Prepare new checkpoint proof namespace bound to model_v3/state_v2 and accepted primitive/source-composition review. Keep all six B8T128 CPU/MPS cases, 234 rejections, empty-state/LR/mode/archive gates and exact next forward/gradient/update/RNG equality. Freeze complete source/runtime/assets, fresh exclusive roles and full cost; admission then original execution and independent review. Do not rerun closed001/002 or relabel model-v2 acceptance as new checkpoint qualification.",
+  "next_capacity": "Same checkpoint evidence envelope remains 8GiB total output +8GiB reserve +2GiB headroom =19327352832B; observed free space covers it. Include extra ~2.2MiB grouped-reduction workspace in refreshed phase forecast. Future full training/quality panel remains unfrozen and unqualified.",
+  "no_numerical_worker_active": true,
+  "no_old_worker_replay": true,
+  "original_state001_guard": {
+    "elapsed_seconds": 51.68341766600497,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 3600
+    },
+    "observation": {
+      "free_bytes": 24757436416,
+      "mps_driver_bytes": 475136,
+      "output_bytes": 1058110789,
+      "peak_rss_bytes": 3407364096
+    },
+    "pid": 1532,
+    "reason": "AssertionError()",
+    "status": "fixture_exception"
+  },
+  "original_state002_guard": {
+    "elapsed_seconds": 187.35242500004824,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 3600
+    },
+    "observation": {
+      "free_bytes": 22217285632,
+      "mps_driver_bytes": 1392197632,
+      "output_bytes": 2522921644,
+      "peak_rss_bytes": 3349708800
+    },
+    "pid": 3114,
+    "reason": "AssertionError('Complete next forward/loss/gradient bitwise equality')",
+    "status": "fixture_exception"
+  },
+  "previous_turn_progress": true,
+  "primitive_review": "research/tokenizer-evidence/byte-composition-boundary-001/embedding-recovery-review001/review.json",
+  "primitive_review_sha256": "08a59a108ddb4b8a7127a5843f65e0208b887edfddb293f565a6b4e62a1547fd",
+  "primitive_source": "research/byte_embedding_v1.py",
+  "quality_gain": false,
+  "state_attempt001": "Closed failed: composer alias rejection fixture assumed unique smallest shape had a peer; fixed in separately identified attempt002.",
+  "state_attempt002": "Closed failed: native CPU/raw CPU/nonlexical CPU/native MPS complete. Raw MPS restored state/RNG/forward exact, only composer.byte_weight next gradient differs. Nonlexical MPS not reached; no full checkpoint acceptance.",
+  "status": "ACTIVE_RESEARCH_MPS_EMBEDDING_RECOVERY",
+  "worker_pid": null
+}
