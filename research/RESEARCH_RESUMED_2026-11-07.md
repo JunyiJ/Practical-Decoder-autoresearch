@@ -1,3 +1,35 @@
+# Current work: fresh byte-context transform comparison running
+
+The previous goal turn made progress by completing and preserving the sharing
+geometry analysis. The new evidence review selected a bounded context-side
+transformation question on the adopted byte model; see
+[protocol](BYTE_CONTEXT_TRANSFORM_PROTOCOL.md) and
+[admission](tokenizer-evidence/byte-context-transform-001/quality-admission.md).
+
+The 32-update CPU/MPS pilot passed in 55.675 seconds. The baseline's gradients,
+updates, optimizer state and EMA match the official v6 baseline exactly on each
+backend. Linear/tanh analytic gradients and serialized-weight checks passed.
+This is implementation evidence, not a quality result.
+
+A fresh fixed .0025 panel is now active: byte, linear, tanh across three paired
+bundles, 1,200 updates each, rotated order, unchanged strict gain against both
+controls. Plan SHA e5d26b5af0cf473f62abe4d25b0555127a52c5531b38b9a7b3faf46f0517586c.
+Controller exec session54382/PID57142 started slot00 worker57144; 45 updates were
+observed before this handoff. No quality trajectory was accepted at that time.
+Use live session and per-slot records to determine subsequent status. No restart
+based on an observation timeout. No numerical or scientific failure has occurred.
+
+Conservative full forecast: 18,838 seconds (~5.23 hours), bounded by 10 hours total
+and one hour per trajectory. Retained output cap1.5GiB plus reserve8GiB and extra
+headroom2GiB fits the measured13.73GB free. No capacity recovery is needed.
+The independent reviewer is frozen before outcomes. After all nine complete,
+run it against the exact plan SHA; only then consider acceptance and consumer
+qualification. The byte incumbent remains unchanged; no new model is adopted.
+
+The autonomous goal remains active. Do not repeat the closed sharing experiment,
+reopen old failed projection fixtures, or pool their scores into this panel.
+Historical sections below retain their original evidence.
+
 # Current result: shared-table comparison completed without adoption
 
 Allnine fresh output-anchored MLA table-sharing trajectories and the independent
