@@ -1,8 +1,9 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. Two of nine fresh quality runs have completed and passed numerical
-acceptance. The nonlinear residual run is active. There is no measured
-candidate quality improvement or adoption yet. The selected byte model and its corrected public
+The new zero-gated residual readout passed its implementation pilot. Three of nine fresh quality runs have completed and passed numerical
+acceptance. The first complete seed fails the mandatory candidate-improvement
+criterion against byte. The second seed is active; the frozen remaining runs and
+independent final review continue. No model is adopted. The selected byte model and its corrected public
 inference recipe remain unchanged.
 
 The pilot used three arms on both CPU and MPS, four updates each (24 total).
@@ -54,8 +55,8 @@ Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
 scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot02 residual-tanh PID9138 at246 updates; live logs supersede this
-snapshot. Slots00–01 are terminal and must not be replayed.
+worker was slot03 residual-linear on the second seed, PID12868, at238 updates;
+live logs supersede this snapshot. Slots00–02 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 
@@ -100,3 +101,45 @@ The bound descriptive calculation is
 It uses completed saved logs and scores only, checks paired initializer hashes
 and observed terminal sampler state, and performs no new model execution or
 validation scoring. Independent whole-panel review remains pending.
+
+## First complete fresh bundle (three of nine)
+
+Bundle62102600000 has complete1200-update/41-snapshot results for all three arms.
+The nonlinear endpoint passed CPU/MPS mean/max differences3.53812e-8/1.71661e-5,
+exact checkpoint readback and publication hashes. Its guard finished normally
+in663.748seconds. All three common initial weight inventories and observed
+terminal sampler identities match, so the comparisons retain the intended pairing.
+
+| Arm | H200 CE (primary) | Final online CE | Last100 sampled training CE |
+|---|---:|---:|---:|
+| Byte | 4.585407 | 4.630511 | 3.243986 |
+| Residual linear | 4.720631 | 4.835059 | 3.072804 |
+| Residual tanh | 4.642792 | 4.702486 | 3.156087 |
+
+Tanh minus byte H200 is+.0573847643; tanh minus linear is-.0778389161. The
+nonlinear candidate therefore fails this seed's mandatory improvement against
+byte. If these accepted scores are upheld by final review, the frozen all-seed
+gate cannot pass. The remaining six trajectories still execute as specified;
+there is no post-outcome early-stop rule, tuning, seed replacement or fallback.
+
+Both added branches fit the last100 paired training batches better than byte,
+but both final-online and H200 validation scores are worse. This does not
+support inadequate late training fit as the sole explanation for this seed.
+It does not establish overfitting or an optimizer effect as a causal mechanism.
+H200 improves all three endpoints: by.045104 for byte,.114429 for linear and
+.059695 for tanh. The observed unfavorable ordering holds at both endpoints;
+there is no reason to replace H200 with final-online weights. Tanh's learned
+scalar ended at1.230024 (an unrestricted residual scale, not a probability).
+
+The first three guarded jobs took2,009.903seconds. Actual training updates used
+1,697.136seconds (84.44%); scheduled online evaluation used203.420seconds (10.12%).
+The remaining109.347seconds covers endpoint checks, serialization and other job
+overhead. These are measured execution times, excluding engineering time and
+the earlier55.323second pilot; they are not deployment performance claims.
+
+Reproducible saved-log analysis: `byte_residual_readout_analysis_v1.py`, output
+`tokenizer-evidence/byte-residual-readout-001/quality001/analysis-1-bundles001/result.json`.
+It reads only completed records, uses the same final100 training window as the
+prior pair analysis, records all input hashes and performs no model execution or
+new scoring. The first seed is descriptive; full means, uncertainty and independent
+review remain pending. The selected byte model is unchanged.
