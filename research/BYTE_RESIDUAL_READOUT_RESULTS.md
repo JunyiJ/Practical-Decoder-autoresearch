@@ -323,3 +323,23 @@ the automatic independent review follow. The review reconstructs the fixed
 statistics from saved per-target losses and checks saved weights/receipts; it
 requires no new training or validation scoring. Do not rerun either completed
 bundle analysis. The three-bundle analysis is due once after final review accepts.
+
+## Prepared follow-up using saved frequency groups
+
+`BYTE_RESIDUAL_FREQUENCY_PROTOCOL.md` and `byte_residual_readout_frequency_v1.py`
+prepare the next bounded existing-data question: whether the penalty is dominated
+by rare targets or also affects common ones. The prior tying diagnostic supplies
+fixed training-frequency bins and target/preceding-input views, not pooled scores.
+The current panel's complete three-seed losses, accepted final review and
+three-bundle analysis are required before execution. This avoids a partial
+subgroup conclusion or a repeated diagnostic after every new seed.
+
+The implementation reconstructs and hashes only the original train/validation
+token IDs, reads accepted saved losses, checks complete coverage and verifies
+that group contributions reconstruct every global contrast. Limits are120seconds
+CPU,1GiB RSS and1MiB output, with10GiB free reserve plus the output allowance at
+entry. It uses the shared nonblocking research lock, performs no model execution
+or checkpoint loading, and keeps holdout tokens closed. Source syntax was checked;
+no diagnostic execution, numerical acceptance or subgroup result is claimed yet.
+The training controller remains active. Execute this analysis once after all nine
+runs, final review and three-bundle analysis finish; retain failures if any.

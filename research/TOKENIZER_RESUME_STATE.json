@@ -757,6 +757,22 @@
   "byte_input_training_source": "research/byte_input_training_v4.py",
   "byte_input_training_source_review": "research/tokenizer-evidence/byte-composition-boundary-001/training-source002/review.json",
   "byte_readout_regularization_review": "research/BYTE_READOUT_REGULARIZATION_REVIEW.md",
+  "byte_residual_readout_frequency_analysis": {
+    "no_model_execution": true,
+    "numerical_exploration_credit": false,
+    "output": "research/tokenizer-evidence/byte-residual-readout-frequency-001",
+    "prerequisites": [
+      "completed nine-run controller",
+      "accepted independent final review",
+      "completed three-bundle analysis",
+      "available shared research lock"
+    ],
+    "protocol": "research/BYTE_RESIDUAL_FREQUENCY_PROTOCOL.md",
+    "protocol_sha256": "01f1e8fbc17aa3813222878dacd3dc7904a64a2361b312a8e4e8a63183b92f32",
+    "source": "research/byte_residual_readout_frequency_v1.py",
+    "source_sha256": "0e3355154ef673fe93faa2442a8852e20c2922a8d8ba56517519d1a336066c15",
+    "status": "PREPARED_NOT_EXECUTED"
+  },
   "byte_residual_readout_pilot": {
     "acceptance": "research/tokenizer-evidence/byte-residual-readout-001/pilot/acceptance.json",
     "passed": true,
@@ -778,7 +794,7 @@
     "first_control_pair_analysis": "research/tokenizer-evidence/byte-residual-readout-001/quality001/first-control-pair-analysis.json",
     "last_completed_h200_ce": 4.641951823823287,
     "last_completed_slot": 6,
-    "last_observed_active_updates": 119,
+    "last_observed_active_updates": 533,
     "launch_observed_slot": 0,
     "launch_observed_updates": 17,
     "launch_worker_pid": 1330,
@@ -9837,7 +9853,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Observe existing controller PID1329 / exec session64971 and third-seed slot07 byte PID29393, then slot08 linear and automatic final review; do not restart. Slots00\u201306 are complete, with slot06 checkpoint hashes and full CPU/MPS score errors independently checked for publication. Third-seed nonlinear H200 CE4.641951823823287 has no completed matched controls yet. First two bundles fail mandatory improvement versus byte. Verify newly completed evidence; execute three-bundle analysis once only after final review accepts. No retuning, changed endpoint, replacement seed, fallback adoption or current-panel early stop. Keep selected byte recipe unchanged.",
+  "next_action": "Observe existing controller PID1329 / exec session64971 and third-seed slot07 byte PID29393, then slot08 linear and automatic final review; do not restart. Seven runs are accepted, no third-seed matched comparison yet. Verify new completions, then execute three-bundle saved-log analysis once after accepted final review. Subsequently execute prepared byte_residual_readout_frequency_v1 once under the available shared lock using all three completed seeds; source syntax checked, not numerically executed. No model construction/rescoring/holdout in that diagnostic. Keep current panel, negative results and selected byte model unchanged; no tuning or fallback adoption.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "feature_probe_complete_review_residual_candidate_before_admission",
   "no_paid_compute": true,
@@ -10515,7 +10531,7 @@
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
   "training_current_source_version": 6,
-  "updated_at": "2026-11-08T23:48:01.405372+00:00",
+  "updated_at": "2026-11-08T23:51:41.952976+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
