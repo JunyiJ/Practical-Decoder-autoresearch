@@ -1,0 +1,117 @@
+{
+  "inputs": [
+    {
+      "path": "research/byte_input_training_v2.py",
+      "sha256": "a1acf274121a256c6f574484ff0bb6501d0784ca70bf28232ba863d230da0c98",
+      "size": 20156
+    },
+    {
+      "path": "research/byte_input_state_v2.py",
+      "sha256": "3d7cda76953e7443d52a2ad3b30f89195170460b213b60ea66a2303f0227636f",
+      "size": 12894
+    },
+    {
+      "path": "research/byte_input_model_v3/optimizer.py",
+      "sha256": "e4b84e864fd8c34338be7d9be3bb8e94cadeead50ff0d0a0303c17b6967e49cc",
+      "size": 8315
+    },
+    {
+      "path": "research/byte_input_model_v3/model.py",
+      "sha256": "2a4187c9bf101b3886fa3f36894ffc809d47078812ca789257a2eb3238d6b460",
+      "size": 12795
+    },
+    {
+      "path": "research/byte_input_model_v3/contract.py",
+      "sha256": "18335038bc8de7fd46364b1f8f4feaab7fbc99523c358311f46097c7f63b8e93",
+      "size": 5137
+    },
+    {
+      "path": "research/byte_composer_v2.py",
+      "sha256": "8e74a52d6bcfff46705caa0b6602fb860e71ab73eaf3c9115f00a343e0014988",
+      "size": 8009
+    },
+    {
+      "path": "research/byte_embedding_v1.py",
+      "sha256": "03e0d62804f77cea4be5eabc34f1f9e0e2e6cd6a52b5e7f2bb63fcae40ddd950",
+      "size": 2469
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/pilot-math002/native-complete.json",
+      "sha256": "555b404b9ee5be1de59b28f813e97a2a1c396f6998f10befb707e2d21a2e134a",
+      "size": 66416
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/pilot-math002/raw_bytes-complete.json",
+      "sha256": "06280b3efc082f45db3efad2bd97cd2be97cea68ed5402aec93f937629f45a47",
+      "size": 75424
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/pilot-math002/nonlexical_codes-complete.json",
+      "sha256": "73b459485bd1a94938c036ae096771f731b95776e3ba3ccd9402986dc472182e",
+      "size": 75423
+    }
+  ],
+  "kind": "saved_pilot_and_static_source_cost_analysis",
+  "limits": [
+    "Static byte counts are logical reads/conversions, not measured hardware traffic or elapsed cost.",
+    "Pilot timings include validation and implementation overhead; no kernel-level attribution.",
+    "Driver observations are step-end samples, not allocator peaks or total machine memory.",
+    "Parameter-plus-codebook accounting excludes optimizer, activation and other buffers.",
+    "No equal-wall-time quality comparison, long-run throughput estimate or adoption result."
+  ],
+  "no_new_training": true,
+  "no_quality_scores_used": true,
+  "pilot_rows": [
+    {
+      "h200_archive_bytes": 114002715,
+      "max_mps_driver_bytes": 2501689344,
+      "max_update_seconds": 0.8612192498985678,
+      "mean_update_seconds": 0.7531462562503293,
+      "observed_driver_ratio_to_native": 1.0,
+      "parameters": 28492416,
+      "raw_archive_bytes": 445076407,
+      "targets_per_second": 1359.6296755137091,
+      "update_ratio_to_native": 1.0,
+      "validation_seconds": 3.8132793749682605,
+      "variant": "native"
+    },
+    {
+      "h200_archive_bytes": 65445293,
+      "max_mps_driver_bytes": 3623665664,
+      "max_update_seconds": 3.329712082981132,
+      "mean_update_seconds": 3.124640695861308,
+      "observed_driver_ratio_to_native": 1.4484874681546391,
+      "parameters": 16351859,
+      "raw_archive_bytes": 247978545,
+      "targets_per_second": 327.7176801020106,
+      "update_ratio_to_native": 4.148783413487149,
+      "validation_seconds": 8.499450084054843,
+      "variant": "raw_bytes"
+    },
+    {
+      "h200_archive_bytes": 65445357,
+      "max_mps_driver_bytes": 3623665664,
+      "max_update_seconds": 3.373063875013031,
+      "mean_update_seconds": 3.1392317875346634,
+      "observed_driver_ratio_to_native": 1.4484874681546391,
+      "parameters": 16351859,
+      "raw_archive_bytes": 247978545,
+      "targets_per_second": 326.19445434584463,
+      "update_ratio_to_native": 4.168156930320386,
+      "validation_seconds": 8.402696416014805,
+      "variant": "nonlexical_codes"
+    }
+  ],
+  "static": {
+    "codebook_bytes_hashed_across_composed_updates_lower_bound": 4550630630400,
+    "codebook_bytes_hashed_per_update_lower_bound": 316016016,
+    "composed_updates_in_frozen_panel": 14400,
+    "composer_parameters": 725235,
+    "dense_i64_codebook_bytes": 52669336,
+    "displaced_embedding_parameters": 12865792,
+    "fp32_parameter_bytes_saved": 48562228,
+    "full_model_validation_calls_per_update_lower_bound": 6,
+    "parameter_reduction_fraction": 0.42609784301899845,
+    "parameters_plus_extra_codebook_byte_delta": 4107108
+  }
+}

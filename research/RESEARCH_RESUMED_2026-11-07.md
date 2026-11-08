@@ -183,3 +183,14 @@ The ignored live progress file and quality001 slot/guard/STOP records are the
 continuation anchors. Binary checkpoints/oracle arrays remain local; Git contains
 sources, plans, metadata, logs and receipts. No quality gain or adoption is
 established. The broader autonomous research goal remains active.
+
+## Existing-data cost analysis
+
+[Cost analysis001](tokenizer-evidence/byte-composition-boundary-001/cost-analysis001/analysis.md)
+separates measured pilot throughput/storage from static implementation work.
+The composed path rehashes52,669,336codebook bytes at least six times per update;
+its dense int64 codebook also offsets the FP32 parameter-storage saving in a
+parameters-plus-codebook accounting. These are source-derived costs, not a
+profiled attribution of the4.15x slowdown. The running equal-exposure comparison
+and all accepted requirements remain unchanged. A later direct-byte serialization
+profile can target this concrete overhead without another quality sweep.
