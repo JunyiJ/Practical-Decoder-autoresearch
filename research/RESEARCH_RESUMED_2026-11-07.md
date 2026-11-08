@@ -268,6 +268,15 @@ is 0.12657085299860693 lower than native and 0.09376436827177148 lower than the
 code control. These are tuning observations from the single screening bundle,
 not fresh confirmation, conditional-text inference, or an adoption decision.
 
+The [selected-rate saved-loss analysis](tokenizer-evidence/byte-composition-boundary-001/screen-diagnostic003/analysis.md)
+reuses the original frequency/length bins without additional model execution.
+Real bytes improve over native after all five preceding-input frequency groups;
+unseen inputs account for about 21% of the net screening gain. However, real
+bytes still lose on unseen prediction targets (+0.382529 nat/token) and targets
+appearing 1–9 times (+0.018928). These selected-screen observations limit claims
+about rare-token prediction; they are exploratory, not fresh confirmation or new
+acceptance endpoints. The analysis took 0.477 seconds and left the panel unchanged.
+
 The [first fresh native confirmation, slot09](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/09/acceptance.json)
 is accepted at the selected LR 0.00125: all 1,200 updates, 41 averaging snapshots,
 1,228,800 sampled targets and 34,278 validation targets. Full validation CE is
