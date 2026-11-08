@@ -65,7 +65,7 @@
   "active_parent_pid": 63565,
   "active_run": "01",
   "active_session": 99662,
-  "active_worker": "research.byte_context_transform_run_v2 worker1; subsequent workers via resource wrapper",
+  "active_worker": "research.byte_context_resource_recovery_v1 worker 2",
   "active_worker_pid": 61923,
   "actual_free_bytes": 13684592640,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
@@ -452,7 +452,7 @@
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-plan.json",
     "sha256": "e5d26b5af0cf473f62abe4d25b0555127a52c5531b38b9a7b3faf46f0517586c"
   },
-  "byte_context_transform_quality_accepted_count": 1,
+  "byte_context_transform_quality_accepted_count": 2,
   "byte_context_transform_recovery_plan": {
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery001/quality-plan.json",
     "sha256": "badc7b0daa9ff8455444d08fc5b7dcc6717033122077500253a66ae86cefd3cd"
@@ -820,7 +820,7 @@
   "current_capacity_note": "No current execution blocker. Next training-context proof has no frozen output/memory envelope yet; calculate complete costs including EMA snapshots, serialization and staging before admission. No quality panel is admitted. Observed free bytes: 19241639936",
   "current_frontier": "research/byte_input_pilot_v2",
   "current_numerical_source_count": 1054,
-  "current_phase": "linear_control_running_with_resource_dispatch_recovery",
+  "current_phase": "nonlinear_candidate_running_after_first_linear_control",
   "current_research_handoff": "research/RESEARCH_RESUMED_2026-11-07.md",
   "current_research_phase": "byte_input_training_context_proof_preparation",
   "dataset_cache_cleanup": "research/tokenizer-evidence/dataset-cache-cleanup-001/completed.json",
@@ -9776,7 +9776,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Poll live resource dispatcher exec99662/PID63565. Current untouched slot01 linear worker61923 reached600updates; old dispatcher61922 is SIGSTOPed, exec29733, and the wrapper will terminate only that stopped dispatcher after worker61923 becomes terminal, then execute untouched original slots02..08. Original run54382 is terminal failed. Slot00 was trained once and imported after corrected full scoring passed unchanged3e-5/.0003 limits. New no-backward scorer avoids installed MPS no-grad RMSNorm double-epsilon defect; training/model/source/roles/gates unchanged. Resource wrapper corrects duplicate new-weight-root binding without editing frozen sources. Do not restart on observation timeout. Follow actual worker/acceptance/failure records; do not resume obsolete dispatcher. After final.json and successful controller completion run PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_resource_recovery_v1 review. It covers numerical/scientific/source/artifact checks and supplemental resource receipts. Preserve all original failures. No new model adopted; byte bulk-hash incumbent unchanged. Future public-inference qualification may need same RMSNorm workaround, but no historical closed fixture replay.",
+  "next_action": "Follow live resource dispatcher exec99662/PID63565 and current slot02 tanh worker65917. Slots00 and01 are accepted; slot01 completed once, passed unchanged numerical limits, and its observed sampler digest matches slot00 source/count-derived expected digest. The obsolete stopped dispatcher61922 was terminated only after worker61923 completed; it must not be resumed. The corrected wrapper now runs original slots02..08 with unchanged model, roles, training, scorer and criteria. Do not restart on observation timeout. After final.json and successful controller completion run PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_resource_recovery_v1 review. Preserve original scoring failure and resource-counter defect evidence. No new model adopted; incumbent unchanged. Public-inference correction requires separate qualification, without replaying closed historical fixtures.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "scoring_corrected_resource_binding_corrected_continue_original_cases",
   "no_paid_compute": true,
@@ -10450,7 +10450,7 @@
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
   "training_current_source_version": 6,
-  "updated_at": "2026-11-08T20:11:34.665888+00:00",
+  "updated_at": "2026-11-08T20:17:47.607134+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
@@ -10489,5 +10489,5 @@
   "warmup_trained_inference": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
   "warmup_worker": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
   "worker_kind": null,
-  "worker_pid": null
+  "worker_pid": 65917
 }

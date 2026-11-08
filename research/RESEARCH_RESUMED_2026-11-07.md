@@ -26,14 +26,23 @@ A second, narrow resource-accounting defect was caught during slot01: v2 assigne
 ORIGINAL_WEIGHTS to the new folder, omitting old weights and double-counting new
 ones. Its source stays frozen. A [bound resource wrapper](tokenizer-evidence/byte-context-transform-001/resource-recovery-decision.md)
 corrects that constant for remaining workers. The current scientific worker was
-not interrupted. Old dispatcher61922 is stopped; wrapper PID63565/exec99662 will
-terminate only that dispatcher after worker61923 is terminal, then continue
-original slots02..08. Resource-plan SHA
+not interrupted. Worker61923 completed successfully, and wrapper PID63565/exec99662
+terminated only the obsolete stopped dispatcher61922. The wrapper now runs
+original slots02..08 with the corrected resource roots. Resource-plan SHA
 7092e2d46b9e9991ee05d91f26741c201b12b02c883ca4e3728f6df43a9da2e2.
 
-At this handoff, slot01 linear worker61923 had completed600updates. Poll exec99662
-and actual records; do not resume obsolete dispatcher61922/exec29733 or restart
-from a timeout. After completion, run
+At this handoff, slots00 and01 are accepted. The first linear control finished
+1,200 updates and scored H200 CE4.6439894544 versus baseline4.5504804177
+(lower is better), a single-seed difference of +.0935090367. This is a partial
+result, not the full-panel conclusion. Its CPU/MPS mean error2.8808344e-5 and
+maximum target error.0002630055 pass the unchanged limits. Its observed sampler
+digest matches the baseline's explicitly source/count-derived expected state.
+The completed slot01 resource receipt verifies274,028,002 retained bytes, well
+below the1.5GiB cap; the original defective guard counter remains preserved.
+
+Slot02 tanh worker65917 is active (160 updates observed). Poll exec99662
+and actual records; dispatcher61922 has been superseded and must not be resumed.
+Do not restart from an observation timeout. After completion, run
 `PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_resource_recovery_v1 review`.
 The three arms, roles, .0025 LR,1,200 updates,H200, strict .02 comparisons and
 statistical/numerical tolerances remain fixed. No training has been repeated.
