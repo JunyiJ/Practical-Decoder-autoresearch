@@ -42,6 +42,18 @@ and successful controller termination; current progress is in the research hando
 
 Reviewer source SHA256: 088039e6783a322f9baf7ebaa00f617233199405975e7dcbb18ffb80a628c58a
 
+## Recovery layout requires an additive reviewer
+
+The original controller later closed failed on slot14's output-inventory race.
+`../guard-recovery001/README.md` preserves the failure and separately qualified
+recovery. `../quality-recovery001` routes original accepted slots00–13, recovered
+postprocessing of the exact slot14 RAW, and previously unused slots15–17. The
+entrypoint above requires the original successful STOP, so it must not be run
+as though the original controller completed successfully. Reuse its accepted
+arithmetic implementation in a separate final reader that explicitly verifies
+this routing, immutable failure lineage, unchanged scientific gates and resource
+accounting. That adapter remains to be implemented and reviewed before adoption.
+
 ## Adoption consumer inspection
 
 The current incumbent is recorded in

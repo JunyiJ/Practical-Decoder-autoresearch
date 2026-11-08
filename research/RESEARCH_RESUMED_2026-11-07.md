@@ -4,6 +4,62 @@ The human authorized continuous autonomous research and recovery on November 7,
 2026. The native incumbent is unchanged. Byte composition has not established a
 real-data quality gain confirmed on fresh seeds and has not been adopted.
 
+## Current execution: guard recovery and final fresh bundle
+
+The original quality001 controller is **closed failed**, not live. After slot14
+completed all1,200 updates, the output-inventory guard raised FileNotFoundError
+during checkpoint publication and hard-exited91. The original controller/session
+22743 terminated. Original failure records, step logs, diagnostics and RAW weights
+are retained without relabeling the original guard as passed.
+
+[Guard recovery001](tokenizer-evidence/byte-composition-boundary-001/guard-recovery001/README.md)
+records the new deterministic filesystem reproduction, bounded inventory-rescan
+correction and read-only RAW audit. The original guard can stat a temporary after
+its writer removes that hard link. The correction preserves output accounting,
+limits and failure on persistent errors. The RAW audit matched all1,200 step logs,
+41 averages, original identity and the other fresh1 sampler states.
+
+The [separate recovery plan](tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/plan.json)
+has SHA256`d41ab762478c90a353ac6319b0e3801d9b562eab5869f5a54687e86de26c3f29`.
+It changes no scientific case, seed, learning rate, horizon, comparison or gate.
+Its slot14 restores the exact retained RAW, exports existing averages and executes
+the original post-training suffix, with **zero additional training updates**.
+Original failed elapsed time is charged to its original wall limit; storage and
+total campaign limits include retained originals and the recovery.
+
+[Recovered slot14 acceptance](tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/14/acceptance.json)
+binds native fresh1 LR0.00125, complete RAW/H200/optimizer/history/full-validation
+and inference checks. Its new postprocessing guard finished in21.266seconds,
+peak RSS1,286,946,816bytes. Original RAW hash
+`9b08f859de55955ae10177c4c9c16a2da33a36fffdb381df8f9e5e63296e814a` and new H200
+hash`3876df4fe77757a6b1d92673a98359695533972901c6180a2e6a8117d414e1db` verified.
+The pair totals563,319,890bytes. Full CE is4.69338473677349 and BPB2.0809474092909417.
+The original slot14 terminal guard failure remains visible in its recovery lineage.
+
+The second fresh bundle is complete, with matching sampler and target identities:
+
+| Bundle | Native CE | Real-byte CE | Code-control CE | Bytes minus native | Bytes minus codes |
+|---|---:|---:|---:|---:|---:|
+| fresh1 | 4.693385 | 4.583503 | 4.675757 | -0.109882 | -0.092254 |
+
+Exact deltas are-0.10988153886683083 and-0.0922542469708203nat/token. This is two
+complete fresh bundles, not full-panel acceptance or an adoption decision.
+
+The recovery controller **session72451 / PID79938** is live and automatically
+started slot15, nonlexical codes on fresh2 at LR0.0025, **PID80074**. Its active
+root is `research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001`.
+Recheck the live handle and current attempt before using these recorded PIDs.
+Slots00–13 are original acceptances; slot14 is separately accepted postprocessing
+recovery. Only the three never-entered original fresh2 trajectories15–17 remain.
+They use the unchanged frozen numerical driver and original reserved roles.
+
+Next: follow this controller through slots15–17 and final statistics. Adapt the
+prepared independent saved-data reviewer to route originals00–13 and recovered
+14–17, and explicitly verify immutable failure/recovery lineage and unchanged
+scientific rules. Its existing arithmetic proof remains reusable, but the old
+original-root entrypoint cannot accept this recovered panel. Do not run it as if
+quality001 had ended successfully. No incumbent change before independent review.
+
 ## Accepted integrated recovery
 
 The [independent state review003](tokenizer-evidence/byte-composition-boundary-001/state-review003/review.json)
@@ -343,20 +399,17 @@ not a second complete three-way bundle or full lexical-content acceptance. The
 matching native baseline is still pending; do not substitute another bundle's
 native score, pool screens, or compute a partial-panel adoption decision.
 
-Fourteen of 18 trajectories are accepted. The original controller automatically
+At that milestone fourteen of 18 trajectories were accepted. The original controller automatically
 started slot14, native at LR 0.00125 on fresh1, PID 74101. Both controller and
 worker processes and actual updates were observed. The original rotated order
 for this bundle is real bytes, code control, then native. Complete the four
 remaining original trajectories; recheck the live session and current slot
 before acting on recorded process IDs.
 
-Follow the existing live controller (session22743, PID17021) through slot14
-and the remaining fresh confirmation slots, saved acceptances and final
-statistical report. The controller
-stops on an entered-slot failure; preserve its evidence and diagnose the exact
-failure before any separately identified correction. Never replace an unfavorable
-seed or alter scientific gates. The controller does not adopt automatically:
-independently review the complete panel before changing the incumbent.
+The original controller subsequently stopped on slot14's guard failure. Follow
+the recovery controller and current action at the top of this handoff; never
+restart session22743 or its closed controller. Never replace an unfavorable seed
+or alter scientific gates. Neither controller adopts automatically.
 
 A [small final saved-data reviewer](byte_input_quality_final_review_v1.py) is now
 prepared outside the frozen sources. Its [preparation note](tokenizer-evidence/byte-composition-boundary-001/final-review-preparation001/README.md)
