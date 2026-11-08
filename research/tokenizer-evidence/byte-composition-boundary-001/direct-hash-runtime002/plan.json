@@ -1,0 +1,106 @@
+{
+  "acceptance": "Exact original and changed digests for every real buffer on CPU/MPS; both complete validators reject every individually changed buffer and accept its restoration; no tolerance or speed threshold.",
+  "backends": [
+    "cpu",
+    "mps"
+  ],
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/adoption001/recipe.json",
+      "sha256": "1846059b5c55d6c371abfa71ed3893f3f4698c1e98ebff2389ba1602addfb466",
+      "size": 12215
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/serialization-analysis001/result.json",
+      "sha256": "97fe8077e9437ed7399bac564d822785c1e667c39f3ce2a5effa82fc7127e57f",
+      "size": 2568
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cost-analysis002/result.json",
+      "sha256": "951c4c4dd01abfbb4c8fdd9221213f857a3c8451b5292391486210f5354f8af3",
+      "size": 26044
+    },
+    {
+      "path": "research/byte_input_direct_hash_v1.py",
+      "sha256": "3d3fbc588bcf3552657f0e4a0bf8ef559f28e64b96519655f1f84bede0cdcc03",
+      "size": 1019
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v1.py",
+      "sha256": "fa2bb6b4023c6232a6e4a0927c73adfa34dfd2fca157a769cec2663e293e16ba",
+      "size": 4550
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    }
+  ],
+  "execution_recovery": {
+    "category": "test_harness",
+    "correction": "Flip the Boolean sentinel with logical_not_; preserve add_(1) for integer/float buffers.",
+    "failed_action": "flat[index].add_(1) on a Boolean attention buffer",
+    "new_training_roles_required": false,
+    "original_failure": [
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime001/run.py",
+        "sha256": "6522fe76b19a6bddf1bf304f07adc68d80f75af20ebdfdaa3b877848a185f8b3",
+        "size": 8566
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime001/plan.json",
+        "sha256": "5525e8d11486dfe8ddcd12ec06d1b1e4ff2b6287c1eb6e7193c80cb6213ab0d1",
+        "size": 3205
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime001/failure.json",
+        "sha256": "c770dc40f8cf5aa9d04d6bbe9c86018352072c36072c24856b13d5010ab3382a",
+        "size": 620
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime001/guard.json",
+        "sha256": "8a6a80ccf3fa1c05e2035ecb3518a03e1f939144072442d4abb8d1b458e7dead",
+        "size": 487
+      },
+      {
+        "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime001/STOP",
+        "sha256": "be1622f49a16074655427a0e96dbb8ce3bf486716776b87a1ae8a3ed6a10d508",
+        "size": 72
+      }
+    ],
+    "reason": "Only historical accepted checkpoint reconstruction; zero training or sampled quality cases in either attempt.",
+    "unchanged": [
+      "checkpoint",
+      "model sources",
+      "CPU/MPS cases",
+      "all buffers",
+      "midpoint sentinel",
+      "paired timing repeats",
+      "exact digest/rejection gates",
+      "resource limits"
+    ]
+  },
+  "initialization": "Historical slot10 identity reconstruction solely to install all accepted saved parameters; no training initialization role, sampling or quality search.",
+  "interpretation_limits": [
+    "Engineering equivalence check, not a scientific quality campaign or exploration allocation.",
+    "Three alternated timing repeats on one local machine; descriptive, not a latency confidence interval.",
+    "No forward/backward/update or optimizer/checkpoint/cache integration qualification.",
+    "Original exact-type consumers still reject the subclass; do not weaken or patch them.",
+    "No published performance claim; rationale is directly measured local serialization overhead."
+  ],
+  "kind": "actual_buffer_direct_hash_engineering_comparison",
+  "local_basis": "Synthetic 52.3MB code-ID serialization/hashing was 14.69x faster; accepted full-run raw-byte updates cost 4.1538x native. These observations do not prove model-level speedup.",
+  "mechanism": "Remove Python integer/list construction while retaining every byte, chunk boundary, host transfer, SHA256 and validation call.",
+  "novelty": "Actual adopted-checkpoint model buffers, MPS transfers and inherited complete validation; earlier component study only used synthetic CPU buffers.",
+  "paired_repeats": 3,
+  "prediction": "All actual-buffer hashes and changed-buffer rejection remain exact, with lower descriptive hashing/validation time.",
+  "resource_budget": {
+    "metadata_upper_bytes": 1048576,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_bytes": 0,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 120
+  },
+  "runner_sha256": "c8ace7eb8cd4c0aab5a5aa9c04992c09e3ffb008b7a21e96e2c3696179ba485d"
+}

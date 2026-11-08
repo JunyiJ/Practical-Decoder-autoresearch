@@ -65,15 +65,30 @@ match both fresh2 controls. All7,199,511,764 retained weight bytes remain presen
 The subsequent independent review and additive adoption closure complete this
 panel without rewriting the original failure or its scientific rules.
 
-## Next executable action
+## Current implementation improvement and next executable action
 
-Use the existing [direct-hash integration plan](tokenizer-evidence/byte-composition-boundary-001/serialization-integration001/README.md)
-for a bounded actual-buffer CPU/MPS digest equality, mutation-rejection and timing
-comparison in a fresh evidence namespace under the released shared lock. The
-candidate is outside frozen sources and remains unqualified for training. Reuse
-the accepted serialization component evidence; do not replay closed fixtures,
-weaken exact-type consumer guards, or launch another quality sweep. Integrate
-only after exact behavior is demonstrated. No new scientific campaign is frozen.
+[Actual-buffer comparison002](tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime002/README.md)
+passed all14 real buffers on CPU/MPS, exact hashes and individual content-mutation
+rejection/restoration. Full model validation medians improved10.71x on CPU and
+5.36x on MPS in three alternating paired repeats. This is a validator timing
+result, not a training-speed or new quality gain. It performs zero training,
+forward/backward or scoring calls and leaves the adopted recipe unchanged.
+
+Attempt001's Boolean add_(1) mutation harness error remains closed failed with
+original traceback and guard. Attempt002 flips Boolean sentinels instead; all
+other cases and requirements are unchanged. Its plan binds the failure evidence.
+
+[Integrated source map](tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-source001/source-map.json)
+binds seven new files: model-v4, state-v3, training-v3, inference-v2 and cache-v2.
+Only direct-byte serialization and imports routing the new exact types differ;
+shared identity/codebook definitions and artifact formats remain unchanged.
+Frozen originals and their exact-type guards were not modified. Exact reverse
+diff and syntax checks passed; the integrated sources remain runtime unqualified.
+
+Next execute one bounded differential saved-checkpoint loading,
+forward/gradient/update and cache comparison, plus descriptive timing, under the
+shared lock. Reuse accepted model/state/cache and buffer evidence. No worker is
+currently active. No new quality campaign or closed-fixture replay is warranted.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current
