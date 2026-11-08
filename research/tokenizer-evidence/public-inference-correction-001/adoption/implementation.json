@@ -1,0 +1,93 @@
+{
+  "acceptance": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/public-inference-correction-001/acceptance.json",
+    "sha256": "51f47a2214de69099912aa6047190a78b9494949bdee67d4e49f7ab21a12e96b",
+    "size": 188
+  },
+  "cases": [
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "full_vs_training": {
+        "max_absolute_error": 0.0,
+        "max_gate_ratio": 0.0
+      },
+      "max_cache_gate_ratio": 0.1725427359342575,
+      "max_loss_error_vs_fp64": 7.095183320871001e-07
+    },
+    {
+      "backend": "cpu",
+      "batch": 8,
+      "full_vs_training": {
+        "max_absolute_error": 0.0,
+        "max_gate_ratio": 0.0
+      },
+      "max_cache_gate_ratio": 0.12083953619003296,
+      "max_loss_error_vs_fp64": 8.073403883201991e-07
+    },
+    {
+      "backend": "mps",
+      "batch": 1,
+      "full_vs_training": {
+        "max_absolute_error": 9.059906005859375e-06,
+        "max_gate_ratio": 0.11245997250080109
+      },
+      "max_cache_gate_ratio": 0.10780029743909836,
+      "max_loss_error_vs_fp64": 6.294110495019822e-07
+    },
+    {
+      "backend": "mps",
+      "batch": 8,
+      "full_vs_training": {
+        "max_absolute_error": 1.2993812561035156e-05,
+        "max_gate_ratio": 0.29974934458732605
+      },
+      "max_cache_gate_ratio": 0.15409928560256958,
+      "max_loss_error_vs_fp64": 9.089275092577509e-07
+    }
+  ],
+  "guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/public-inference-correction-001/guard.json",
+    "sha256": "8b794c0c4c66d24e991033472ac5006108b2764565a73ffb95f5a56aa9422c4e",
+    "size": 309
+  },
+  "kind": "qualified_byte_input_corrected_inference_v1",
+  "no_quality_claim": true,
+  "numerical": {
+    "1": {
+      "max_target_ce_error": 7.62939453125e-06,
+      "mean_ce_error": 3.147185907437233e-07
+    },
+    "8": {
+      "max_target_ce_error": 7.62939453125e-06,
+      "mean_ce_error": 5.4549985861740424e-08
+    }
+  },
+  "result": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/public-inference-correction-001/result.json",
+    "sha256": "9d95875d123915960e8789f3545989cf9f5e29b26e57c36d3468d2cde30478d9",
+    "size": 634
+  },
+  "source_inventory": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/public-inference-correction-001/plan.json",
+    "sha256": "6a2a4e276b7b2938c5d552a8eba22231a6c30d67f5eb34181eea5c6d5ca3caac",
+    "size": 812737
+  },
+  "sources": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_corrected_inference_v1.py",
+      "sha256": "1a7181318298b916e7110298f990fa07335214a2d5f4a3465df72173cc300679",
+      "size": 4520
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/fp32_rmsnorm_inference_v1.py",
+      "sha256": "ebf9e9bd9c6f06a9c3b2cfb809c41351c167fddfb79e7d1484783f88ef9039f4",
+      "size": 2004
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_context_cpu_reference_v1.py",
+      "sha256": "e4fdcb58b1a84b0a028582bc6c42913915357aade41aadbc58642b94cef9602c",
+      "size": 2230
+    }
+  ]
+}

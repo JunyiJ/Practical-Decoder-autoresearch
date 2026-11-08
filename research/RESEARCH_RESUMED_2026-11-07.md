@@ -1,3 +1,26 @@
+# Current work: corrected public inference adopted; return to evidence analysis
+
+The selected checkpoint now loads through research.byte_input_corrected_inference_v1.
+Its Consumer automatically corrects declared FP32 RMSNorm epsilon for uncached
+and cached logits, and uses the verified stable FP32 CPU token-loss reduction.
+The complete selected-checkpoint proof passed in11.462seconds with exact weights,
+unchanged RNG/semantics, B1/B8 cache reset/replay and invalid-operation rejection.
+No validation/holdout quality was rescored, no model was trained and no checkpoint
+was copied. See [public inference results](PUBLIC_INFERENCE_CORRECTION_RESULTS.md)
+and the [adopted recipe](tokenizer-evidence/public-inference-correction-001/adoption/recipe.json).
+Historical sources/recipes and all scientific outcomes remain immutable.
+
+No worker is running. The next evidence-grounded action is a bounded descriptive
+analysis of RAW versus H200 parameter movement across all nine completed
+byte-context runs, grouped by output table, composer, Transformer and transform.
+The all-seed training/averaging pattern motivates this question; it does not
+justify an initialization, activation or averaging sweep. Use existing saved
+weights only, preserve fixed endpoints and closed comparisons, and consult the
+existing primary-literature applicability review before choosing a new hypothesis.
+No capacity blocker exists (last free12.21GB). The autonomous goal remains active.
+
+All sections below are historical snapshots, not current process state.
+
 # Current work: quality panel closed; inference scope qualified
 
 All nine byte-context runs completed and passed the independent saved-result
