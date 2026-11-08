@@ -1,8 +1,8 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. A separate
-fixed nine-run quality comparison is now executing; there is no measured quality
-improvement or adoption yet. The selected byte model and its corrected public
+The new zero-gated residual readout passed its implementation pilot. The first of nine fresh quality runs has completed and passed numerical
+acceptance. The matched residual-linear run is active. There is no measured
+candidate quality improvement or adoption yet. The selected byte model and its corrected public
 inference recipe remain unchanged.
 
 The pilot used three arms on both CPU and MPS, four updates each (24 total).
@@ -53,5 +53,21 @@ quality result still requires a qualified consumer before adoption.
 Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
-scientific cases fixed. The last published launch observation was slot00 at17
-updates, controller PID1329/worker PID1330; live logs supersede this snapshot.
+scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
+worker was slot01 residual-linear PID5409 at116 updates; live logs supersede this
+snapshot. Slot00 is terminal and must not be replayed.
+
+## First completed control (one of nine)
+
+Fresh bundle62102600000 byte baseline completed1200 updates and41 H200 snapshots
+in681.732seconds of guarded execution. H200 CE is4.585406921383447 across all
+34,278 validation targets. Mean CPU/MPS CE difference is3.903656e-8; maximum
+per-target difference2.789497e-5, passing3e-5/3e-4 limits. RAW/H200 checkpoints
+were exactly read back and their hashes rechecked for publication. Observed
+terminal sampler state and unchanged global RNG are retained. Peak RSS was
+820,772,864bytes; all guards finished normally.
+
+The last online CE was4.630511; this is diagnostic and does not replace the
+predeclared H200 endpoint. This single control cannot establish a candidate
+advantage, and it is not pooled with older baseline scores. All nine fresh runs
+and the automatic independent panel review remain required.
