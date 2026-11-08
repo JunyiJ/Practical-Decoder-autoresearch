@@ -1,86 +1,87 @@
-# Active research: deterministic byte-embedding recovery
+# Active research: numerical checkpoint accepted; training context next
 
-The human authorized autonomous research and recovery on November 7, 2026.
-The native incumbent is unchanged. Byte composition has no measured real-data
-quality gain and has not been adopted.
+The human authorized continuous autonomous research and recovery on November 7,
+2026. The native incumbent is unchanged. Byte composition has no measured
+real-data quality gain and has not been adopted.
 
-The prior model-v2 finite integration proof remains accepted: six full-size
-B8T128/V50257 CPU/MPS cases, 357 rejection transactions and 1,412,427,220 checked
-coordinates. Its [saved review](tokenizer-evidence/byte-composition-boundary-001/model-saved-review004/review.json)
-and all original sources/evidence remain closed and preserved.
+## Accepted integrated recovery
 
-## New checkpoint evidence and failure
+The [independent state review003](tokenizer-evidence/byte-composition-boundary-001/state-review003/review.json)
+accepted all six B8T128/V50257 native/raw-byte/nonlexical cases on CPU and MPS,
+234 rejection transactions, complete tensor digests covering 1,126,737,138
+coordinates, and all 12 retained checkpoint archives. The proof verifies empty
+optimizer state, complete capture/read/restore, changed LR and training mode,
+exact CPU/MPS RNG draws, and a genuine next forward/backward/update after restore.
+All logits, losses, gradients, parameters, optimizer state and RNG matched
+uninterrupted execution bit-for-bit. Full byte-embedding gradient values are
+also saved, allowing a future mismatch to be measured directly.
 
-Checkpoint attempt001 completed native CPU, then stopped while constructing a
-raw-byte alias-rejection fixture: the smallest composer parameter has no
-same-shaped peer. The adapter was not called for that failing fixture. A
-[saved-inventory diagnosis](tokenizer-evidence/byte-composition-boundary-001/state-fixture-diagnosis001/diagnosis.json)
-justified selecting an actual same-shaped pair. Separately identified attempt002
-used fresh roles, unchanged model/state sources, all six cases, all 234 rejection
-requirements and exact resume gates.
+The worker finished in 237.268 seconds. Peak RSS was 3,394,977,792 bytes under
+4 GiB; total recorded output was 2,911,379,673 bytes under 8 GiB. The sampled
+6 GiB MPS guard passed; its final 1,375,420,416-byte observation is not a peak.
+Independent review took 1.940 seconds and 46,727,168 bytes peak RSS.
 
-Attempt002 completed native/raw-byte/nonlexical CPU and native MPS. In raw-byte
-MPS, saved parameters, optimizer state, training mode, LR and RNG restored
-exactly. Next RNG draws, logits and loss also matched. Exactly one next-gradient
-tensor differed: `composer.byte_weight`. The exact gate failed and the worker
-stopped after 187.352 seconds; peak RSS was 3,349,708,800 bytes under 4 GiB.
-Nonlexical MPS was not reached. This is not full checkpoint acceptance and is
-not a negative scientific quality result. All failure snapshots and archives
-remain retained. Original001 and002 must never be replayed.
+This qualifies the finite numerical checkpoint scope for model-v3/state-v2.
+Its mathematical predecessors are the preserved model-v2 independent finite
+integration proof and the independently checked fixed-order embedding primitive
+with an exact source-composition review. It is not a fresh independent oracle
+for the entire model, a complete training-resume proof, or quality evidence.
 
-## Isolated diagnosis and implemented recovery
+## Preserved failures
 
-A new lookup-only primitive diagnosis used retained weights and explicit
-upstream arrays, without calling a historical model, backward fixture or
-optimizer. The first small binary-fraction upstream had exactly representable
-sums and was repeatable in both paths; it is retained as an exact-sum control.
-A separately identified mixed-magnitude upstream reproduced native MPS lookup
-nondeterminism: 251 and 259 of 3,885 gradient coordinates differed across repeats,
-with maximum repeat difference 5.23869e-9. All remained within the numerical
-reference-error bound; the failure concerns exact continuation, not that bound.
-The historical model-gradient error magnitude is unknown because that proof
-saved full gradient digests rather than gradient values.
+Checkpoint001 failed constructing a raw-byte alias rejection: the smallest
+composer parameter had no same-shaped peer. Checkpoint002 fixed only that
+fixture with fresh roles, then exposed nonrepeatable MPS byte-embedding gradients.
+Restored state/RNG/forward matched, but `composer.byte_weight` next gradients did
+not. It completed all CPU cases and native MPS; nonlexical MPS was not reached.
+Both attempts remain closed failed, with sources, plans, snapshots and archives
+preserved. No thresholds or unfavorable seeds were changed into passing results.
 
-A fixed-order grouped reduction was exactly repeatable in the isolated test.
-The new [embedding primitive](byte_embedding_v1.py) keeps native forward/CPU
-semantics and reduces MPS gradients in ordered 2048-position chunks. Its own
-CPU/MPS autograd proof passed two upstream cases, three repeats per backend,
-exact forward and repeated-gradient checks, 14 invalid-input transactions and
-all 46,620 gradient coordinates against independently reconstructed float64 sums.
-Maximum mixed-case MPS reference error was 3.59649e-9. The original primitive
-proof001 failed constructing an unsupported MPS FP64 rejection input; proof002
-uses supported FP16 to test the same FP32-only requirement and preserves001.
-
-[Independent saved-array and source-delta review](tokenizer-evidence/byte-composition-boundary-001/embedding-recovery-review001/review.json)
-accepted the primitive and the exact integration edits. New
-[composer-v2](byte_composer_v2.py), [model-v3](byte_input_model_v3/model.py) and
-[state-v2](byte_input_state_v2.py) sources use the primitive with distinct
-identities. Parameter initialization, shapes, codebooks, native body, readout,
-loss and optimizer arithmetic are unchanged. These integrated sources have not
-been numerically imported or called. Primitive acceptance does not establish
-full model-v3 checkpoint correctness.
+The [isolated diagnosis](tokenizer-evidence/byte-composition-boundary-001/embedding-accumulation-diagnosis002/result.json)
+reproduced native MPS accumulation differences for a mixed-magnitude upstream.
+An exact-sum control remained repeatable. Fixed-order grouped reduction passed
+independent float64-error and exact-repeatability checks. The accepted
+[primitive/source review](tokenizer-evidence/byte-composition-boundary-001/embedding-recovery-review001/review.json)
+binds the new embedding, composer-v2, model-v3 and state-v2 sources. Fresh003
+then passed the unchanged complete checkpoint requirements. All original
+entries, roles and evidence remain closed; never replay them.
 
 ## Next executable action
 
-Prepare a fresh checkpoint proof for model-v3/state-v2, bound to the accepted
-primitive/source-composition review. Preserve six B8T128 CPU/MPS cases, 234
-rejections, empty-state and changed-LR/mode coverage, complete archives, and
-exact next forward/gradient/update/RNG equality. Freeze source/runtime/assets,
-fresh exclusive roles and complete cost, admit statically, then execute once
-and review independently. Do not reopen original proofs or relax exact gates.
+The new [training-context source](byte_input_training_v2.py) adds the remaining
+RAW resume state: original native train/validation identity and paired sampling,
+private sampler RNG, the fixed cooldown schedule, per-parameter clipping history,
+and canonical H200 tail-averaging state. It reuses the frozen numerical helpers
+and preserves the 88 native / 105 composed parameter inventories. Restore validates
+all fields and stages allocations before committing into a fresh context. Own
+bounded RAW serialization cannot overwrite an existing artifact.
 
-No worker is active at this checkpoint. The active autonomous goal owns the
-next continuation; paused research automations remain unchanged. About 22.22 GB
-is free. The next checkpoint envelope of 8 GiB output + 8 GiB reserve + 2 GiB headroom
-requires 19,327,352,832 bytes and is covered. Refresh the memory forecast for the
-~2.2 MiB grouped-reduction workspace. No current storage blocker exists. A future
-full training/quality panel remains unfrozen and needs its own complete forecast
-and authorized capacity recovery if necessary.
+[Static source review002](tokenizer-evidence/byte-composition-boundary-001/training-source002/review.json)
+passed without importing the adapter or reading/encoding corpus data. Source-v1
+and its review are preserved: static inspection then identified a missing sampler
+destination check, which v2 adds before any draw or restore. No training-context
+numerical call has occurred in either version.
 
-Full training resume still needs sampler/data identity, schedule, clipping
-history, H200 averaging and worker integration. Quality and adoption remain
-unproven. The [current progress receipt](tokenizer-evidence/byte-composition-boundary-001/checkpoint-recovery-handoff001/progress.json)
-and [local payload manifest](tokenizer-evidence/byte-composition-boundary-001/checkpoint-recovery-handoff001/local-payload-manifest.json)
-bind the retained checkpoint/diagnostic files. Git contains source and evidence
-metadata; binary checkpoints and diagnostic arrays remain local. A clone alone
-cannot perform every saved-array review.
+Prepare a bounded full-size CPU/MPS training-context resume fixture across all
+three arms. Check private next sampled IDs, clipping/exposure, cooldown and EMA
+boundaries, complete serialization, exact continued trajectory, and rejected
+payload preservation. Preserve the established fixture recipes and scientific
+1200-step horizon; do not count the fixture as exploration or quality selection.
+Freeze complete source/runtime/data identity, fresh five-role assignments, and
+all memory/retained-output/serialization costs before admission. H200 inference
+export, cache/scorer/worker integration and scientific quality remain later.
+
+No worker is active at this checkpoint. The active autonomous goal owns the next
+continuation; paused research automations remain unchanged. Approximately 19.25 GB
+is free. No execution is currently blocked. The next training fixture does not
+yet have a frozen resource envelope; include EMA, staging, retained archives,
+metadata, 8 GiB reserve and 2 GiB headroom before admission. Future scientific-panel
+capacity is also unqualified; execute authorized recovery if its complete
+requirement exceeds available space.
+
+The [acceptance receipt](tokenizer-evidence/byte-composition-boundary-001/state-acceptance003/acceptance.json)
+and [archive manifest](tokenizer-evidence/byte-composition-boundary-001/state-acceptance003/local-archive-manifest.json)
+bind 2,783,501,284 bytes of accepted checkpoint payloads. Earlier failed archives
+and diagnostic arrays remain protected under their original manifests. Git
+contains sources and complete evidence metadata, not binary checkpoints or
+large diagnostic arrays. A clone alone cannot perform every saved-data review.
