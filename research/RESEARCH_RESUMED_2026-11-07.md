@@ -234,3 +234,25 @@ trailing padding would remove91.90% of the six filter banks' forward multiply-ad
 count under this distribution, not91.90% of total runtime. No cropped model has
 been implemented or qualified; current scientific sources remain unchanged.
 This is the second evidence-backed implementation target after direct-byte hashing.
+
+## Second complete scientific screen accepted
+
+[Slot01 acceptance](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/01/acceptance.json)
+binds the complete raw-byte1200-update run at LR.000625. Its41H200 snapshots,
+1,228,800sampled targets, complete validation, cache/serving receipts and saved
+RAW/H200/optimizer review passed. Native and raw-byte final train/validation
+sampler hashes match. The guard finished in3708.092s with917,602,304bytes peak
+RSS; update time averaged3.027185s, totaling3632.622s. Retained raw/H200 weights
+for this slot total318,299,358bytes. The completed run satisfies its limits.
+
+At this one screening rate, raw-byte CE is5.039635859268829nat/token versus
+native4.896433671383986, a worse delta of+.143202187884843. Raw-byte BPB is
+2.2344678250956105. Preserve this unfavorable observation as scientific evidence;
+it is not an implementation failure. It neither selects a learning rate nor
+settles the overall hypothesis: complete all nine screens and the predeclared
+fresh confirmations. No tolerance, seed, control or horizon changed.
+
+The controller automatically advanced to nonlexical-code slot02 at LR.000625,
+PID45576 under session22743/controller PID17021. Actual updates were observed,
+with no guard failures. Verify live state before acting; do not relaunch from
+these recorded IDs. Two of18trajectories are accepted; the incumbent is unchanged.
