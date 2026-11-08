@@ -1,8 +1,8 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. Five of nine fresh quality runs have completed and passed numerical
-acceptance. The first complete seed fails the mandatory candidate-improvement
-criterion against byte. The second seed is active; the frozen remaining runs and
+The new zero-gated residual readout passed its implementation pilot. Six of nine fresh quality runs have completed and passed numerical
+acceptance. Both complete seeds fail the mandatory candidate-improvement
+criterion against byte. The third seed is active; the frozen remaining runs and
 independent final review continue. No model is adopted. The selected byte model and its corrected public
 inference recipe remain unchanged.
 
@@ -55,8 +55,8 @@ Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
 scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot05 byte on the second seed, PID21059;
-live logs supersede this snapshot. Slots00–04 are terminal and must not be replayed.
+worker was slot06 residual-tanh on the third seed, PID25154;
+live logs supersede this snapshot. Slots00–05 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 
@@ -196,3 +196,73 @@ The first bundle's mandatory candidate-versus-byte condition remains failed.
 No tuning, changed endpoint, fallback adoption or replacement seed follows from
 these results. After slot05 completes, execute the existing completed-bundle
 analysis for two bundles once, then let slots06–08 and automatic review finish.
+
+## Two complete fresh bundles (six of nine complete)
+
+Slot05 byte completed1200 updates/41 snapshots in686.011seconds of guarded
+execution. Its primary H200 CE is4.5507617862864445 and final-online CE is
+4.588576756595113. Acceptance/result/guard bindings, RAW/H200 sizes and hashes,
+all34278 saved CPU/MPS losses and aggregate errors were checked. Mean/max CE
+errors3.64361e-8/1.71661e-5 pass unchanged limits. The existing analysis helper
+ran once for two completed bundles, checking all six receipts, training histories,
+score coverage and within-seed initialization/terminal-sampler pairing without
+model execution, new scoring, bootstrap or holdout access.
+
+| Second-seed arm | H200 CE | Final online CE | Last100 sampled training CE |
+|---|---:|---:|---:|
+| Byte | 4.550762 | 4.588577 | 3.250633 |
+| Residual linear | 4.682758 | 4.790987 | 3.080001 |
+| Residual tanh | 4.607496 | 4.672503 | 3.150029 |
+
+Nonlinear minus byte H200 is+.0567338754 on the second seed, versus+.0573847643
+on the first. Linear minus byte is+.1319964745 versus+.1352236804. Nonlinear
+beats linear on both seeds but loses to byte on both. The descriptive two-seed
+mean differences are+.0570593198 nonlinear-versus-byte and+.1336100774
+linear-versus-byte; these are not the frozen full-panel estimates or confidence
+bounds. The mandatory all-seed candidate-improvement criterion is already failed,
+subject to the independent final review, without changing any threshold.
+
+Both branches again achieve lower late sampled training loss but worse validation
+at both online and averaged endpoints. This repeats the first seed's pattern;
+it does not establish a causal overfitting, clipping or optimizer explanation.
+Averaging improves second-seed byte by.037815, linear by.108229 and nonlinear
+by.065008, preserving their ordering. Changing the endpoint has no support here.
+
+All six completed jobs used4074.231seconds of guarded execution:3439.360seconds
+of training updates and414.047seconds of scheduled evaluation. The balance is
+endpoint verification, serialization and other worker overhead; pilot and
+engineering costs are excluded. Analysis evidence is
+`tokenizer-evidence/byte-residual-readout-001/quality001/analysis-2-bundles001/result.json`.
+
+The controller automatically started third-seed slot06 residual-tanh (PID25154),
+then will run slot07 byte and slot08 linear before independent final review.
+After all nine and review finish, execute the existing three-bundle analysis
+once. Current source, seeds, controls, H200 endpoint and acceptance criteria
+remain fixed. The selected byte model and inference recipe are unchanged.
+
+## Prospective lesson about experiment duration
+
+The first completed bundle already violates the all-seed improvement condition,
+so remaining seeds cannot turn this recipe into an adoption success if the
+accepted scores survive review. This follows from the fixed conjunction of
+criteria, not a statistical significance test. Finishing this panel still
+measures reproducibility and the full predeclared contrasts; it has no admitted
+early-stop rule and remains unchanged.
+
+Before a future panel is frozen, explicitly decide whether its purpose requires
+all seeds after a mandatory failure. For an adoption-only question, a prospective
+rule could independently verify a completed matched bundle and close the recipe
+as scientifically rejected when an all-seed condition fails. Successful adoption
+would still require the entire fresh confirmation panel and all original gates.
+A stopped negative panel would report only observed bundles, with no full-panel
+mean, bootstrap claim, missing-seed imputation or claim that an entire model
+family cannot work. Execution/numerical failures require recovery and must not
+trigger scientific rejection. No fallback arm or replacement seed is allowed.
+
+For scale only, this panel's first three guarded jobs took2009.903seconds;
+six more at that measured average project about67minutes, excluding pilot and
+final-review costs. That is potential future avoided execution, not time saved
+in this panel, a promised speedup or a reason to stop it now. A future admission
+must choose and freeze either that rejection rule or justified full-panel
+mechanism/variability measurement before seeing outcomes. This process lesson
+admits no new campaign, source change or numerical budget.
