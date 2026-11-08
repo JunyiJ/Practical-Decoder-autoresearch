@@ -1,0 +1,76 @@
+{
+  "kind": "qualified_byte_input_direct_hash_implementation_v1",
+  "limitations": [
+    "No new quality claim or long-run throughput measurement.",
+    "Loader supports raw-byte original-plan checkpoints on CPU/MPS.",
+    "Historical frozen modules/controllers and prior adopted recipe remain unchanged."
+  ],
+  "runtime_evidence": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-runtime001/result.json",
+    "sha256": "2225e764b98f05b83850f45d2ebe548f9b296dcddb9deee28efdfe5b861aafa9",
+    "size": 2733
+  },
+  "runtime_guard": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-runtime001/guard.json",
+    "sha256": "d737fa23c479b9308a1f597e2ad57ee3512c838c1a65df18803de506df85c744",
+    "size": 404
+  },
+  "runtime_plan": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-runtime001/plan.json",
+    "sha256": "70786b201429545aad5d14a758a664e35468a3739b7c8ebdf13f338686278635",
+    "size": 3809
+  },
+  "scope": "Raw-byte D256 model: exact hash-only source composition, CPU/MPS real-buffer checks, saved-checkpoint loading, cached B1/B8 logits, B8T128 outputs/all gradients and two complete training-context updates including initial H200 snapshot. Reuses unchanged historical mathematical/state/cache algorithms and formats.",
+  "source_map": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-source001/source-map.json",
+    "sha256": "aa335641b883b9b9b76ba77b7182ee4e3bc19c0d90af2f41e1ac324e23848e1e",
+    "size": 5391
+  },
+  "sources": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_model_v4/__init__.py",
+      "sha256": "4c82c81ea7d4d8014783e8e1803788c5dc8b7a003bb719890788f2995eea393b",
+      "size": 416
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_model_v4/model.py",
+      "sha256": "5251e8d1c528ad9fe6cc7fb5d5adbd7d4820f4ea481aac7dc005f91b4fe5edd1",
+      "size": 12840
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_model_v4/optimizer.py",
+      "sha256": "40a23c3b33afdac68069ef99c1c483d72c25f7bc55b0b0c6d46a47f2e6024a08",
+      "size": 8342
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_state_v3.py",
+      "sha256": "8189694d44b246973b6bc2182cfc1ae1208a707ff8f6f88d3949d2b70f38ac36",
+      "size": 12894
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_training_v3.py",
+      "sha256": "b2d1350e302ac93db2af63b12ea7139cdbeaa3cce606ddd1061a06c3ec8f03ad",
+      "size": 20156
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_inference_v2.py",
+      "sha256": "7bf38499c492bbaee727dcecb27c3b79461311ba9c6d801aa5020294916729fe",
+      "size": 10006
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_cache_v2.py",
+      "sha256": "a1970584f3162eb4e22c9209a392827cd462e26e1435ea06b87a1332bf400679",
+      "size": 4534
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_checkpoint_consumer_v1.py",
+      "sha256": "fa2bb6b4023c6232a6e4a0927c73adfa34dfd2fca157a769cec2663e293e16ba",
+      "size": 4550
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_input_checkpoint_consumer_v2.py",
+      "sha256": "3178d0df7e663a1c6650ff71aa3c8b0e82b7863f3ffbcae6240967942db6253f",
+      "size": 2225
+    }
+  ]
+}

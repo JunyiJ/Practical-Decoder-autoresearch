@@ -8,7 +8,7 @@ currently running. The original failed controller remains closed failed.
 
 ## Current result and adoption
 
-[Adopted recipe](tokenizer-evidence/byte-composition-boundary-001/adoption001/recipe.json)
+[Scientific adoption recipe](tokenizer-evidence/byte-composition-boundary-001/adoption001/recipe.json)
 and [closure](tokenizer-evidence/byte-composition-boundary-001/adoption001/closure.json)
 bind the exact model, plan, checkpoint consumer, first fresh raw-byte representative
 (slot10), source inventory, independent review and loading integration. The
@@ -67,28 +67,40 @@ panel without rewriting the original failure or its scientific rules.
 
 ## Current implementation improvement and next executable action
 
-[Actual-buffer comparison002](tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime002/README.md)
-passed all14 real buffers on CPU/MPS, exact hashes and individual content-mutation
-rejection/restoration. Full model validation medians improved10.71x on CPU and
-5.36x on MPS in three alternating paired repeats. This is a validator timing
-result, not a training-speed or new quality gain. It performs zero training,
-forward/backward or scoring calls and leaves the adopted recipe unchanged.
+The [optimized recipe](tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json)
+is now the active equivalent implementation of the adopted raw-byte model.
+It keeps the same mathematical model, parameter count, first-fresh checkpoint,
+artifact formats and quality evidence. The loader is
+`research.byte_input_checkpoint_consumer_v2.load`, with the recipe's implementation,
+plan and acceptance receipts under the shared lock and CPU/MPS resource guards.
+Original sources, scientific gates and prior recipes remain unchanged.
 
-Attempt001's Boolean add_(1) mutation harness error remains closed failed with
-original traceback and guard. Attempt002 flips Boolean sentinels instead; all
-other cases and requirements are unchanged. Its plan binds the failure evidence.
+[Integrated differential evidence](tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-runtime001/README.md)
+matched CPU/MPS cached B1/B8 logits, B8T128 outputs and all105 gradients, plus
+initial/step1/step2 complete captured and validated training-context states.
+The two updates include optimizer allocation and the first averaging snapshot.
+Eight numerical updates total took place; no quality evaluation or weight archive
+was added. Fresh sampler roles62100600001/2 are now reserved/closed, not reusable.
+The integration guard finished in62.3996seconds with2,888,744,960bytes peak RSS.
+A separate public-loader call succeeded on MPS in1.2761seconds with unchanged RNG.
 
-[Integrated source map](tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-source001/source-map.json)
-binds seven new files: model-v4, state-v3, training-v3, inference-v2 and cache-v2.
-Only direct-byte serialization and imports routing the new exact types differ;
-shared identity/codebook definitions and artifact formats remain unchanged.
-Frozen originals and their exact-type guards were not modified. Exact reverse
-diff and syntax checks passed; the integrated sources remain runtime unqualified.
+CPU's two-step total improved1.777x and MPS's2.576x. On MPS, the original took
+3.1601/3.2952seconds and optimized1.3449/1.1607seconds for steps1/2. This is
+short-fixture timing, not sustained throughput or an equal-time quality result.
+The earlier full-panel cost record applies to the previous implementation.
+[Real-buffer evidence002](tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime002/README.md)
+provides the separate14-buffer CPU/MPS exact hash and mutation checks; its
+Boolean-mutation harness failure001 remains preserved.
 
-Next execute one bounded differential saved-checkpoint loading,
-forward/gradient/update and cache comparison, plus descriptive timing, under the
-shared lock. Reuse accepted model/state/cache and buffer evidence. No worker is
-currently active. No new quality campaign or closed-fixture replay is warranted.
+The exact [source map](tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-source001/source-map.json)
+transfers unchanged algorithms to model-v4/state-v3/training-v3/inference-v2/cache-v2.
+It is a historical preparation record; subsequent runtime and adoption evidence
+above supplies qualification. No exact-type guards were weakened.
+
+Next inspect the existing padding-analysis001 measurements and optimized
+composition path, then define a bounded actual-input padding reduction comparison
+outside frozen namespaces with fixed numerical criteria. No worker is currently
+active. Do not replay the quality panel or closed fixtures.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current

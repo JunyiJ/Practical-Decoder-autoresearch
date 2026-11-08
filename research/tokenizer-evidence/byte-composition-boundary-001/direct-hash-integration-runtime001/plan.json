@@ -1,0 +1,77 @@
+{
+  "acceptance": "All outputs, gradients and complete state fingerprints exactly equal within each backend. No tolerance, score gate, seed replacement or timing threshold. All original exact-type consumers preserved.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/adoption001/recipe.json",
+      "sha256": "1846059b5c55d6c371abfa71ed3893f3f4698c1e98ebff2389ba1602addfb466",
+      "size": 12215
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-integration-source001/source-map.json",
+      "sha256": "aa335641b883b9b9b76ba77b7182ee4e3bc19c0d90af2f41e1ac324e23848e1e",
+      "size": 5391
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-runtime002/result.json",
+      "sha256": "50cde8fe23bbb3bfc03c90ad134da25c906ae2038b2f79832b09006b53cfc8b6",
+      "size": 21691
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v1.py",
+      "sha256": "fa2bb6b4023c6232a6e4a0927c73adfa34dfd2fca157a769cec2663e293e16ba",
+      "size": 4550
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    }
+  ],
+  "design": "Each arm loads the same adopted H200. Compare cached B1/B8 prefix96+continuation32 logits and reset, fixed-prefix B8T128 full logits/loss/all105 gradients, then two actual Context.step updates from the saved weights with fresh paired samplers. Compare complete initial/step1/step2 captured and validated parameter/optimizer/averaging/sampler/schedule/history/global-RNG state. Step2 includes the first averaged snapshot under the unchanged four-step fixture recipe.",
+  "fresh_sampler_roles": {
+    "train_sampler": 62100600001,
+    "validation_sampler": 62100600002
+  },
+  "implementations": {
+    "direct_bytes": {
+      "cache": "byte_input_cache_v2",
+      "inference": "byte_input_inference_v2",
+      "model": "byte_input_model_v4",
+      "training": "byte_input_training_v3"
+    },
+    "reference": {
+      "cache": "byte_input_cache_v1",
+      "inference": "byte_input_inference_v1",
+      "model": "byte_input_model_v3",
+      "training": "byte_input_training_v2"
+    }
+  },
+  "interpretation_limits": [
+    "Implementation differential, not fresh model-quality confirmation or exploration allocation.",
+    "Two training-step timings per arm: first includes lazy optimizer state and second includes initial averaging. Descriptive timings only, not sustained throughput or confidence intervals.",
+    "No disk checkpoint write/resume replay, full validation scoring, new scientific campaign or generalization claim. Unchanged algorithms retain prior proofs through the exact source map.",
+    "Only the adopted raw-byte model and CPU/MPS path are admitted here; no native/nonlexical quality reruns."
+  ],
+  "kind": "hash_only_integrated_engineering_differential",
+  "orders": {
+    "cpu": [
+      "reference",
+      "direct_bytes"
+    ],
+    "mps": [
+      "direct_bytes",
+      "reference"
+    ]
+  },
+  "resource_budget": {
+    "metadata_upper_bytes": 16777216,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_archives": 0,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 180,
+    "total_numerical_updates": 8
+  },
+  "role_audit": "Exact rg search over research and research_state JSON/JSONL/Python/Markdown returned no prior occurrence for either sampler role before this plan. Historical model/composer identity is reconstructed only to load the fixed accepted slot10 checkpoint; one fresh sampled numerical trajectory is mirrored across implementations and backends.",
+  "runner_sha256": "6e6da21bf0cabbe98ce9e601264effb2821ee18951af90179dc89cb8c6918427"
+}
