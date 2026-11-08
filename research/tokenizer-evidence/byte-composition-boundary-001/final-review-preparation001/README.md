@@ -37,8 +37,8 @@ The reader takes the shared nonblocking worker lock, uses the existing CPU guard
 with a 300-second deadline, 1 GiB RSS limit and 8 GiB disk reserve, and creates a
 fresh sibling guard receipt. It only writes the review after guard completion.
 Inspect that receipt and the saved evidence before any adoption. The complete
-18-run review has not executed; all nine screens and four fresh trajectories are
-accepted, with the second fresh code control currently training.
+18-run review has not executed. It waits for all original fresh confirmations
+and successful controller termination; current progress is in the research handoff.
 
 Reviewer source SHA256: 088039e6783a322f9baf7ebaa00f617233199405975e7dcbb18ffb80a628c58a
 

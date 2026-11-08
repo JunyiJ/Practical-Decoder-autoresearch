@@ -324,18 +324,33 @@ is accepted at selected LR 0.0025 on fresh1: all 1,200 updates, 41 averaging
 snapshots, 1,228,800 sampled targets and 34,278 validation targets. Full validation
 CE is 4.583503197906659 and BPB 2.03222826171238. Its finished guard recorded
 3,849.814 seconds and 921,157,632 bytes peak RSS. Both retained RAW/H200 hashes
-were verified; the pair totals 318,299,358 bytes. Its paired code control and
-native baseline are pending. Do not substitute fresh0 or screening scores for
-these comparators or call this a second paired improvement yet.
+were verified; the pair totals 318,299,358 bytes. At its acceptance both paired
+comparators were pending. The completed code control is recorded below; the
+native baseline remains pending. Do not substitute fresh0 or screening scores
+for that comparator or call this a second complete three-way bundle yet.
 
-Thirteen of 18 trajectories are accepted. The original controller automatically
-started slot13, nonlexical codes at LR 0.0025 on fresh1, PID 50354. The process and
-actual updates were observed. The original rotated order for this second bundle
-is real bytes, code control, then native. Complete all five remaining original
-trajectories; recheck the live session and current slot before acting on recorded
-process IDs.
+The [second fresh code-control confirmation, slot13](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/13/acceptance.json)
+is accepted at LR 0.0025 on fresh1: all 1,200 updates, 41 averaging snapshots,
+1,228,800 sampled targets and 34,278 validation targets. Full validation CE is
+4.67575744487748 and BPB 2.0731318413243067. The finished guard recorded
+3,825.896 seconds and 910,999,552 bytes peak RSS. Both retained RAW/H200 hashes
+were verified; the pair totals 318,299,422 bytes.
 
-Follow the existing live controller (session22743, PID17021) through slot13
+Fresh1 real-byte-minus-code CE is -0.0922542469708203 nat/token. Final train and
+validation sampler hashes and complete validation target identities match across
+slots12/13. This is the second fresh paired improvement over the code control,
+not a second complete three-way bundle or full lexical-content acceptance. The
+matching native baseline is still pending; do not substitute another bundle's
+native score, pool screens, or compute a partial-panel adoption decision.
+
+Fourteen of 18 trajectories are accepted. The original controller automatically
+started slot14, native at LR 0.00125 on fresh1, PID 74101. Both controller and
+worker processes and actual updates were observed. The original rotated order
+for this bundle is real bytes, code control, then native. Complete the four
+remaining original trajectories; recheck the live session and current slot
+before acting on recorded process IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot14
 and the remaining fresh confirmation slots, saved acceptances and final
 statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
