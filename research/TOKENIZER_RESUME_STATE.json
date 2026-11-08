@@ -59,13 +59,13 @@
   "active_byte_runtime": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/active-byte-runtime001/result.json",
   "active_byte_shape_diagnostic": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/result.json",
   "active_campaign_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-context-transform-001/quality-recovery001",
-  "active_controller_pid": 63565,
+  "active_controller_pid": 70581,
   "active_direction": "byte_context_transform",
-  "active_exec_session": 99662,
+  "active_exec_session": 53076,
   "active_parent_pid": 63565,
   "active_run": "01",
-  "active_session": 99662,
-  "active_worker": "research.byte_context_resource_recovery_v1 worker 2",
+  "active_session": 53076,
+  "active_worker": "research.byte_context_transform_run_v3 worker 3",
   "active_worker_pid": 61923,
   "actual_free_bytes": 13684592640,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
@@ -407,6 +407,10 @@
   "bulk_hash_validation_result": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-runtime001/result.json",
   "byte_component_accepted_review": "research/tokenizer-evidence/byte-composition-boundary-001/component-math002-review.md",
   "byte_context_transform_adopted": false,
+  "byte_context_transform_cpu_reference_correction": {
+    "path": "research/tokenizer-evidence/byte-context-transform-001/cpu-reference-recovery001/result.json",
+    "sha256": "a935ddf9214816265c00a3658eb24b5c4b3d9840edd3be38ed91969a0e69db75"
+  },
   "byte_context_transform_failure": {
     "adopted": false,
     "classification": "Numerical consistency failure after completed baseline training; not a quality result and not yet a diagnosed implementation defect.",
@@ -452,10 +456,10 @@
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-plan.json",
     "sha256": "e5d26b5af0cf473f62abe4d25b0555127a52c5531b38b9a7b3faf46f0517586c"
   },
-  "byte_context_transform_quality_accepted_count": 2,
+  "byte_context_transform_quality_accepted_count": 3,
   "byte_context_transform_recovery_plan": {
-    "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery001/quality-plan.json",
-    "sha256": "badc7b0daa9ff8455444d08fc5b7dcc6717033122077500253a66ae86cefd3cd"
+    "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery002/quality-plan.json",
+    "sha256": "2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef"
   },
   "byte_context_transform_resource_plan": {
     "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery001/resource-recovery001/plan.json",
@@ -464,6 +468,10 @@
   "byte_context_transform_scoring_correction": {
     "path": "research/tokenizer-evidence/byte-context-transform-001/scoring-recovery001/result.json",
     "sha256": "ffd98c28f9a01dd1fc8531c9e0dd61ae97645ea5a63aa0e1291bf298f44f019a"
+  },
+  "byte_context_transform_slot02_failure": {
+    "path": "research/tokenizer-evidence/byte-context-transform-001/quality-recovery001/slot02-failure-preservation.json",
+    "sha256": "a339a5f1d05624733e37a92550f6a5675333749a34bcbe79828cf82e0292f7bc"
   },
   "byte_input_cache_qualified": true,
   "byte_input_cache_review": "research/tokenizer-evidence/byte-composition-boundary-001/cache-review001/review.json",
@@ -820,7 +828,7 @@
   "current_capacity_note": "No current execution blocker. Next training-context proof has no frozen output/memory envelope yet; calculate complete costs including EMA snapshots, serialization and staging before admission. No quality panel is admitted. Observed free bytes: 19241639936",
   "current_frontier": "research/byte_input_pilot_v2",
   "current_numerical_source_count": 1054,
-  "current_phase": "nonlinear_candidate_running_after_first_linear_control",
+  "current_phase": "second_bundle_linear_running_after_cpu_reference_fix",
   "current_research_handoff": "research/RESEARCH_RESUMED_2026-11-07.md",
   "current_research_phase": "byte_input_training_context_proof_preparation",
   "dataset_cache_cleanup": "research/tokenizer-evidence/dataset-cache-cleanup-001/completed.json",
@@ -9781,7 +9789,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Follow live resource dispatcher exec99662/PID63565 and current slot02 tanh worker65917. Slots00 and01 are accepted; slot01 completed once, passed unchanged numerical limits, and its observed sampler digest matches slot00 source/count-derived expected digest. The obsolete stopped dispatcher61922 was terminated only after worker61923 completed; it must not be resumed. The corrected wrapper now runs original slots02..08 with unchanged model, roles, training, scorer and criteria. Do not restart on observation timeout. After final.json and successful controller completion run PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_resource_recovery_v1 review. Preserve original scoring failure and resource-counter defect evidence. No new model adopted; incumbent unchanged. Public-inference correction requires separate qualification, without replaying closed historical fixtures. After the quality panel and its independent review are terminal and the shared lock is free, run the separately admitted correction check: PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.fp32_rmsnorm_inference_check_v1 run e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf. This uses only the new slot00 H200 weights, no training or historical replay. Its implementation is not active in the scientific panel or the public consumer.",
+  "next_action": "Poll live v3 dispatcher exec53076/PID70581 and slot03 linear worker70585 in quality-recovery002. Prior exec99662 is terminal exit1 after completed slot02 training failed CPU/MPS target CE. Numerical-diagnostic002 isolated CPU native CE reference error on identical logits; cpu-reference-recovery001 verified stable FP32 CPU reference on all34278targets for each completed slot00..02, reproducing old native CPU reports exactly and preserving original MPS primary scores byte-for-byte. All original numerical limits pass. No training repeated. Current v3 plan 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef imports completed0..2 and runs only original unattempted3..8. Do not restart on observation timeout. On full completion run PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef. First-seed tanh loses to byte, so all-seeds-negative adoption criterion cannot pass; complete frozen panel without tuning or control substitution. After panel and review release lock, run separately admitted inference check: PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.fp32_rmsnorm_inference_check_v1 run e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf. Public inference repair remains unqualified/unadopted. Preserve all original failures and historical restrictions; incumbent unchanged.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "scoring_corrected_resource_binding_corrected_continue_original_cases",
   "no_paid_compute": true,
@@ -10032,7 +10040,7 @@
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "source_work_available": true,
   "state_current_source_version": 6,
-  "status": "ACTIVE_BYTE_CONTEXT_QUALITY_RECOVERY_RUNNING",
+  "status": "ACTIVE_BYTE_CONTEXT_CPU_REFERENCE_RECOVERY_RUNNING",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -10455,7 +10463,7 @@
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
   "training_current_source_version": 6,
-  "updated_at": "2026-11-08T20:24:36.608050+00:00",
+  "updated_at": "2026-11-08T20:36:38.328821+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
@@ -10494,5 +10502,5 @@
   "warmup_trained_inference": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
   "warmup_worker": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
   "worker_kind": null,
-  "worker_pid": 65917
+  "worker_pid": 70585
 }

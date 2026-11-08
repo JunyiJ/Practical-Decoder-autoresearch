@@ -1,3 +1,46 @@
+# Current work: CPU reference repaired; second bundle running
+
+The first nonlinear candidate completed all 1,200 updates, then failed the fixed
+maximum per-target CPU/MPS CE limit (.000364233 > .000300). The original failed
+guard, both reports, logs and RAW/H200 weights remain preserved. A 2.477-second
+saved-weight diagnostic isolated the discrepancy to native CPU cross-entropy:
+identical logits gave CPU error up to .000364087 versus CPU64, while MPS was
+within 8.9e-7. Transformer and context-transform differences were much smaller.
+
+The separately frozen full-split CPU-reference verification took 55.144 seconds.
+An explicit shifted FP32 reduction agreed with CPU64 within 1.94e-6 across all
+three completed checkpoints. Every original CPU report reproduced exactly;
+all original MPS quality reports remain byte-identical. Corrected CPU/MPS maximum
+errors are 1.91e-5, 3.06e-5 and 1.75e-5, passing unchanged limits. See the
+[recovery decision](tokenizer-evidence/byte-context-transform-001/cpu-reference-recovery-decision.md).
+No training was repeated and no checkpoint was rewritten.
+
+The new `quality-recovery002` plan imports slots00..02 and runs only original
+unattempted slots03..08. Plan SHA:
+`2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
+Dispatcher PID70581 / exec53076 and slot03 linear worker70585 are live; 14 updates
+were observed. Prior exec99662 is terminal failed. Do not restart on an observation
+timeout or resume a superseded dispatcher. The source/count-derived sampler
+limitation applies explicitly to slots00 and02; slot01's observed digest is kept.
+
+First-bundle unchanged H200 losses: byte4.550480418, linear4.643989454,
+tanh4.616355683. Tanh loses to byte, so the all-seeds-negative adoption criterion
+cannot pass. Complete the fixed panel to characterize its outcome, without
+changing roles, controls, endpoints, tolerances or learning rate. The retained
+output cap remains1.5GiB; 2,151.110 seconds of prior guarded execution are charged
+to the original10-hour allowance. Current free space is13.31GB; no cleanup is needed.
+
+After full completion, run:
+`PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
+The independent reviewer covers imported evidence, original primary-score identity,
+fixed comparisons, numerical checks and corrected resource accounting.
+
+The public [RMSNorm inference repair](FP32_RMSNORM_INFERENCE_REPAIR.md) remains
+prepared but unqualified and unadopted. After the panel/review release the shared
+lock, execute its existing bound plan e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf.
+The byte incumbent is unchanged and the autonomous goal remains active.
+All sections below are historical snapshots, not current process state.
+
 # Current work: byte-context quality recovery active
 
 This continuation completed the first baseline training, diagnosed a genuine
