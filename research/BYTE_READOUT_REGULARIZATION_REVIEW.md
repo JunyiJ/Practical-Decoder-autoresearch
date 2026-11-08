@@ -85,3 +85,25 @@ support than resolving this recipe question. That ranking is provisional until
 the complete residual panel closes. All historical negative results, source
 snapshots and restrictions remain intact; no old commands were replayed. This
 completed review supplies applicability limits, not an additional model gain.
+
+## Output-regularization paper scope check
+
+[Press and Wolf, EACL2017 final proceedings, pp.157–163](https://aclanthology.org/E17-2025.pdf),
+§3 and §4.2/Tables6–7: their projection regularization penalizes an added matrix
+P before the output embedding, with coefficient.15. It is not direct decoupled
+decay of the existing output table. Table6's small LSTM improves on PTB with
+projection regularization alone and more with tying; Table7 shows untied
+projection regularization worsens text8 test perplexity195.3→199.0 and has mixed
+validation/test behavior on other datasets. Section4.2 reports no benefit for
+large models with dropout. These word-level recurrent models and norm penalty
+do not establish a coefficient or a head-only decay benefit for our byte-composed
+Transformer with Muon/AdamW.
+
+Local inference: this reference does not fill the missing evidence for stronger
+output-table decay, and its mixed findings do not justify a projection rescue.
+The closed tying/plain-transform studies remain closed. The newly inspected
+first two residual bundles show a validation penalty before cooldown begins;
+see the time-course section of `BYTE_RESIDUAL_READOUT_RESULTS.md`. That narrows
+an endpoint-only explanation without identifying the correct regularizer.
+Complete the current panel before selecting a new intervention. No new test,
+coefficient, seed, architecture, training source or scientific budget is admitted.

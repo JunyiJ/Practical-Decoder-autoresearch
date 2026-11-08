@@ -266,3 +266,38 @@ in this panel, a promised speedup or a reason to stop it now. A future admission
 must choose and freeze either that rejection rule or justified full-panel
 mechanism/variability measurement before seeing outcomes. This process lesson
 admits no new campaign, source change or numerical budget.
+
+## When the validation penalty appears (two completed seeds)
+
+Existing saved curves permit a narrower diagnosis than the final training versus
+validation gap alone. Each entry below is arm minus matched byte online validation
+CE; positive means worse. All16 comparisons are positive. The last100 sampled
+training-loss differences at those same four endpoints are negative for both
+branches on both seeds. No model execution or new score was needed.
+
+| Update | Seed1 linear | Seed1 nonlinear | Seed2 linear | Seed2 nonlinear |
+|---|---:|---:|---:|---:|
+| 300 | +0.002906 | +0.008125 | +0.007843 | +0.009030 |
+| 600 | +0.068392 | +0.032036 | +0.054507 | +0.015243 |
+| 900 | +0.116962 | +0.068199 | +0.113015 | +0.053060 |
+| 1200 | +0.204548 | +0.071975 | +0.202410 | +0.083926 |
+
+The recipe starts cooldown and weight averaging at update800
+(`byte_input_training_v6.py:40–43`, called by this panel's `objects`). The penalty
+is already present at300 and600, so neither cooldown nor checkpoint averaging
+can be its sole origin. The early nonlinear differences are small and have no
+new uncertainty analysis; these observations do not establish a causal mechanism.
+There are no measurements between the four scheduled validation endpoints.
+
+Absolute nonlinear validation CE continues falling at every measured endpoint
+in both seeds, as does byte CE. Thus, the nonlinear model is still improving
+while losing ground relative to byte; its penalty is not equivalent to an
+observed late increase in its own validation loss. Linear validation CE does
+increase from900 to1200 on both seeds. This distinction argues against assigning
+one generic explanation to both branches. It supplies no permission to pick a
+better-looking checkpoint, change training length or rescue a closed arm.
+
+Derived by subtracting paired `curves[].ce` entries and checking the saved
+`train_window_ending_*` values in the two-bundle analysis. Bound input SHA256:
+`2a1f57375c4b4376edc5a16483d1f7211321c2170a74287bdc0d5d45e80ba394`.
+The third seed and final review remain pending; no full-panel claim follows.
