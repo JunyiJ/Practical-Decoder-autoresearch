@@ -41,15 +41,15 @@
   "activation_source_sha256": "7a4c02946a31820a7b1ff36b8cc4be42659a4fc4a62424cbc4ea5f32d6cbc487",
   "activation_state_review": "research/tokenizer-evidence/activation-preparation-001/state-prerequisite-review.json",
   "activation_worker_review": "research/tokenizer-evidence/activation-preparation-001/worker-prerequisite-review.json",
-  "active_campaign_root": "research/tokenizer-evidence/byte-composition-boundary-001/quality001",
-  "active_controller_pid": 17021,
-  "active_direction": "byte_input_composition",
-  "active_exec_session": 22743,
-  "active_parent_pid": 17021,
-  "active_run": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/17",
-  "active_session": 22743,
-  "active_worker": "research.byte_input_quality_v1.entry",
-  "active_worker_pid": 9248,
+  "active_campaign_root": null,
+  "active_controller_pid": null,
+  "active_direction": "byte_input_implementation_efficiency",
+  "active_exec_session": null,
+  "active_parent_pid": null,
+  "active_run": null,
+  "active_session": null,
+  "active_worker": null,
+  "active_worker_pid": null,
   "actual_free_bytes": 19322376192,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
@@ -247,7 +247,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/worker-retirement001/completed.json",
     "sha256": "f1a30a8215cd819ae60ac54bcd88a8bb8f5f7a1e5e528f55768e16d375006f7c"
   },
-  "adopted_recipe": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/adamw-epsilon-preparation-001/adopted-width256-mla-epsilon-recipe.json",
+  "adopted_recipe": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/adoption001/recipe.json",
   "block_norm_artifact_acceptance": "research/tokenizer-evidence/block-norm-preparation-001/artifact-acceptance-decision.json",
   "block_norm_cache_numerical_review": "research/tokenizer-evidence/block-norm-preparation-001/cache-numerical-prerequisite-001-review.json",
   "block_norm_campaign_contract": "research/tokenizer-evidence/block-norm-preparation-001/campaign-contract-decision.json",
@@ -375,8 +375,9 @@
   "byte_input_capacity_recovery": "research/tokenizer-evidence/byte-composition-boundary-001/capacity-recovery001/result.json",
   "byte_input_checkpoint_consumer": "research/byte_input_checkpoint_consumer_v1.py",
   "byte_input_checkpoint_consumer_preparation": "research/tokenizer-evidence/byte-composition-boundary-001/checkpoint-consumer-preparation001/README.md",
+  "byte_input_checkpoint_consumer_runtime": "research/tokenizer-evidence/byte-composition-boundary-001/checkpoint-consumer-runtime001/result.json",
   "byte_input_checkpoint_consumer_sha256": "fa2bb6b4023c6232a6e4a0927c73adfa34dfd2fca157a769cec2663e293e16ba",
-  "byte_input_checkpoint_consumer_status": "typed_metadata_prepared_runtime_loading_integration_pending",
+  "byte_input_checkpoint_consumer_status": "actual_mps_loading_qualified_fixed_fresh_slot10",
   "byte_input_complete_run_cost_analysis": "research/tokenizer-evidence/byte-composition-boundary-001/cost-analysis002/analysis.md",
   "byte_input_inference_qualified": true,
   "byte_input_inference_review": "research/tokenizer-evidence/byte-composition-boundary-001/inference-review001/review.json",
@@ -408,21 +409,104 @@
     13,
     14,
     15,
-    16
+    16,
+    17
   ],
   "byte_input_quality_admission": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/admission/review.json",
-  "byte_input_quality_adopted": false,
+  "byte_input_quality_adopted": true,
+  "byte_input_quality_adopted_recipe": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/adoption001/recipe.json",
+  "byte_input_quality_closure": "research/tokenizer-evidence/byte-composition-boundary-001/adoption001/closure.json",
+  "byte_input_quality_contrasts": {
+    "native": {
+      "bounds": [
+        {
+          "block_tokens": 2048,
+          "upper": -0.08501690877840701
+        },
+        {
+          "block_tokens": 4096,
+          "upper": -0.08693589891478941
+        },
+        {
+          "block_tokens": 8192,
+          "upper": -0.08613959683864693
+        }
+      ],
+      "deltas": [
+        -0.10011586873866238,
+        -0.10988153886683111,
+        -0.08901285075474048
+      ],
+      "gates": {
+        "all_bounds_negative": true,
+        "every_seed_negative": true,
+        "mean_below_threshold": true
+      },
+      "mean_delta": -0.099670086120078,
+      "passes": true,
+      "threshold": -0.02
+    },
+    "nonlexical_codes": {
+      "bounds": [
+        {
+          "block_tokens": 2048,
+          "upper": -0.06760834125465276
+        },
+        {
+          "block_tokens": 4096,
+          "upper": -0.06676001767936325
+        },
+        {
+          "block_tokens": 8192,
+          "upper": -0.06529568034751747
+        }
+      ],
+      "deltas": [
+        -0.06810798220733723,
+        -0.09225424697082038,
+        -0.07724404804922665
+      ],
+      "gates": {
+        "all_bounds_negative": true,
+        "every_seed_negative": true,
+        "mean_below_threshold": true
+      },
+      "mean_delta": -0.07920209240912808,
+      "passes": true,
+      "threshold": 0.0
+    }
+  },
   "byte_input_quality_controller": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/controller-attempt.json",
+  "byte_input_quality_controller_exit_code": 0,
   "byte_input_quality_execution_recovery": "research/tokenizer-evidence/byte-composition-boundary-001/guard-recovery001/README.md",
+  "byte_input_quality_final_review": "research/tokenizer-evidence/byte-composition-boundary-001/recovery-final-review001/review.json",
   "byte_input_quality_final_review_preparation": "research/tokenizer-evidence/byte-composition-boundary-001/recovery-final-review-preparation001/README.md",
-  "byte_input_quality_final_review_status": "additive_recovery_reader_prepared_metadata_checked_full_panel_pending",
+  "byte_input_quality_final_review_status": "accepted_complete_recovered_panel_both_original_gates_pass",
   "byte_input_quality_final_reviewer": "research/byte_input_quality_recovery_final_review_v1.py",
   "byte_input_quality_final_reviewer_sha256": "152188b55971b1d68ede3a42aca8b0330b03468ab62c1c9347489e8009b54200",
   "byte_input_quality_first_rate_analysis": "research/tokenizer-evidence/byte-composition-boundary-001/screen-diagnostic002/analysis.md",
-  "byte_input_quality_gain_established": false,
-  "byte_input_quality_guard_observation": null,
-  "byte_input_quality_last_observed_step": null,
-  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/16/acceptance.json",
+  "byte_input_quality_gain_established": true,
+  "byte_input_quality_guard_observation": {
+    "elapsed_seconds": 3846.42585916596,
+    "limits": {
+      "reserve_bytes": 8589934592,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7200
+    },
+    "observation": {
+      "charged_output_bytes": 7736382676,
+      "free_bytes": 15526100992,
+      "metadata_allowance_bytes": 536870912,
+      "mps_driver_bytes": 47923200,
+      "peak_rss_bytes": 910147584,
+      "retained_weight_bytes": 7199511764
+    },
+    "pid": 9248,
+    "reason": null,
+    "status": "finished"
+  },
+  "byte_input_quality_last_observed_step": 1200,
+  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/17/acceptance.json",
   "byte_input_quality_original_accepted_slots": [
     0,
     1,
@@ -446,10 +530,12 @@
   "byte_input_quality_recovered_slots": [
     14
   ],
+  "byte_input_quality_recovery_controller_stop": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/STOP",
   "byte_input_quality_recovery_execution_accepted_slots": [
     14,
     15,
-    16
+    16,
+    17
   ],
   "byte_input_quality_recovery_plan": "research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/plan.json",
   "byte_input_quality_recovery_plan_sha256": "d41ab762478c90a353ac6319b0e3801d9b562eab5869f5a54687e86de26c3f29",
@@ -461,6 +547,8 @@
     "raw_bytes": 0.0025
   },
   "byte_input_quality_selection": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/selection.json",
+  "byte_input_quality_status": "closed_adopted",
+  "byte_input_quality_uncertainty": "Conditional on three trained seed bundles and reused validation text; not population-seed confidence or holdout evidence.",
   "byte_input_resource_costs": [
     {
       "max_update_seconds": 0.8612192498985678,
@@ -587,7 +675,7 @@
   "current_capacity_note": "No current execution blocker. Next training-context proof has no frozen output/memory envelope yet; calculate complete costs including EMA snapshots, serialization and staging before admission. No quality panel is admitted. Observed free bytes: 19241639936",
   "current_frontier": "research/byte_input_pilot_v2",
   "current_numerical_source_count": 1054,
-  "current_phase": "byte_input_quality001_screen",
+  "current_phase": "byte_input_quality_closed_adopted",
   "current_research_handoff": "research/RESEARCH_RESUMED_2026-11-07.md",
   "current_research_phase": "byte_input_training_context_proof_preparation",
   "dataset_cache_cleanup": "research/tokenizer-evidence/dataset-cache-cleanup-001/completed.json",
@@ -9540,9 +9628,9 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Follow recovery controller session72451 / PID79938 and final original fresh2 raw-byte trajectory slot17 PID9248 at LR0.0025. Slots00\u201316 have accepted results; paired fresh2 raw-byte score is pending. After successful full recovery STOP and shared-lock release, run prepared research.byte_input_quality_recovery_final_review_v1 in a fresh recovery-final-review001 directory. If practical eligibility passes, qualify one bounded slot10 loading integration through prepared research.byte_input_checkpoint_consumer_v1 before publishing an adopted recipe. Reuse accepted model/checkpoint/cache proofs; preserve original failure lineage and all scientific gates. No adoption from metadata preparation or partial scores.",
+  "next_action": "The 18-run byte-input panel is closed and adopted after independent final review and actual MPS loading of fixed representative slot10. No worker is active. Next execute the bounded actual-buffer CPU/MPS digest, content-mutation rejection and descriptive-timing comparison for the already prepared direct-byte-hash candidate, under the shared lock and a fresh evidence namespace; reuse component results. Then integrate only if exact behavior is preserved. No new quality sweep or historical replay.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
-  "next_direction_status": "readout_tiny_component_qualified_fullmodel_integration_next",
+  "next_direction_status": "measured_serialization_overhead_actual_buffer_integration_next",
   "no_paid_compute": true,
   "no_subagents": true,
   "numerical_worker_active": true,
@@ -9696,7 +9784,7 @@
   "session_id_hint": null,
   "source_sha256": "73325667bc47f62f43d322b3351c3fe65f94ddace930c333be3fb80e4fd1bcfa",
   "source_work_available": true,
-  "status": "ACTIVE_BYTE_INPUT_QUALITY_RECOVERY_CONFIRMATION",
+  "status": "ACTIVE_BYTE_INPUT_ADOPTED_EFFICIENCY_NEXT",
   "storage_reclaimed_allocated_bytes": 1594634240,
   "storage_recovery004": [
     "research/tokenizer-evidence/storage-recovery-004/compression-completed.json",
@@ -10118,7 +10206,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/result.json",
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
-  "updated_at": "2026-11-08T15:46:19.566223+00:00",
+  "updated_at": "2026-11-08T16:45:43.943987+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",

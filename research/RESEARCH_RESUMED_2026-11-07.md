@@ -1,100 +1,83 @@
-# Active research: full byte-input quality comparison launched
+# Active research: byte-input quality improvement adopted
 
-The human authorized continuous autonomous research and recovery on November 7,
-2026. The native incumbent is unchanged. Byte composition has not established a
-real-data quality gain confirmed on fresh seeds and has not been adopted.
+The authorized autonomous research goal remains active. The byte-input quality
+panel is now closed: all 18 trajectories and 21,600 updates are accepted, the
+independent complete-panel review passed, and the fixed representative checkpoint
+loaded successfully through the plan-derived consumer on MPS. No worker is
+currently running. The original failed controller remains closed failed.
 
-## Current execution: guard recovery and final fresh bundle
+## Current result and adoption
 
-The original quality001 controller is **closed failed**, not live. After slot14
-completed all1,200 updates, the output-inventory guard raised FileNotFoundError
-during checkpoint publication and hard-exited91. The original controller/session
-22743 terminated. Original failure records, step logs, diagnostics and RAW weights
-are retained without relabeling the original guard as passed.
+[Adopted recipe](tokenizer-evidence/byte-composition-boundary-001/adoption001/recipe.json)
+and [closure](tokenizer-evidence/byte-composition-boundary-001/adoption001/closure.json)
+bind the exact model, plan, checkpoint consumer, first fresh raw-byte representative
+(slot10), source inventory, independent review and loading integration. The
+representative was specified before final outcomes and was not selected by loss.
+Historical incumbent recipes and all frozen source namespaces remain unchanged.
 
-[Guard recovery001](tokenizer-evidence/byte-composition-boundary-001/guard-recovery001/README.md)
-records the new deterministic filesystem reproduction, bounded inventory-rescan
-correction and read-only RAW audit. The original guard can stat a temporary after
-its writer removes that hard link. The correction preserves output accounting,
-limits and failure on persistent errors. The RAW audit matched all1,200 step logs,
-41 averages, original identity and the other fresh1 sampler states.
-
-The [separate recovery plan](tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/plan.json)
-has SHA256`d41ab762478c90a353ac6319b0e3801d9b562eab5869f5a54687e86de26c3f29`.
-It changes no scientific case, seed, learning rate, horizon, comparison or gate.
-Its slot14 restores the exact retained RAW, exports existing averages and executes
-the original post-training suffix, with **zero additional training updates**.
-Original failed elapsed time is charged to its original wall limit; storage and
-total campaign limits include retained originals and the recovery.
-
-[Recovered slot14 acceptance](tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/14/acceptance.json)
-binds native fresh1 LR0.00125, complete RAW/H200/optimizer/history/full-validation
-and inference checks. Its new postprocessing guard finished in21.266seconds,
-peak RSS1,286,946,816bytes. Original RAW hash
-`9b08f859de55955ae10177c4c9c16a2da33a36fffdb381df8f9e5e63296e814a` and new H200
-hash`3876df4fe77757a6b1d92673a98359695533972901c6180a2e6a8117d414e1db` verified.
-The pair totals563,319,890bytes. Full CE is4.69338473677349 and BPB2.0809474092909417.
-The original slot14 terminal guard failure remains visible in its recovery lineage.
-
-The second fresh bundle is complete, with matching sampler and target identities:
-
-| Bundle | Native CE | Real-byte CE | Code-control CE | Bytes minus native | Bytes minus codes |
+| Fresh bundle | Native CE | Real-byte CE | Code-control CE | Bytes minus native | Bytes minus codes |
 |---|---:|---:|---:|---:|---:|
+| fresh0 | 4.673415 | 4.573299 | 4.641407 | -0.100116 | -0.068108 |
 | fresh1 | 4.693385 | 4.583503 | 4.675757 | -0.109882 | -0.092254 |
+| fresh2 | 4.673116 | 4.584103 | 4.661347 | -0.089013 | -0.077244 |
 
-Exact deltas are-0.10988153886683083 and-0.0922542469708203nat/token. This is two
-complete fresh bundles, not full-panel acceptance or an adoption decision.
+Mean differences are -0.099670086120078 nat/token versus native and
+-0.07920209240912808 versus codes. Every fresh seed difference is negative;
+all three frozen conditional-text bootstrap upper bounds are negative for both
+contrasts. The original primary threshold of -0.02 is passed. The independent
+review reproduced the saved statistics within the unchanged 1e-12 tolerance.
+These findings are conditional on three trained bundles and reused validation
+text, not population-seed confidence or holdout evidence. The code control does
+not isolate morphology or match all n-gram sharing statistics.
 
-[Slot15, the final-bundle code control](tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/15/acceptance.json),
-is accepted at LR0.0025 on fresh2: all1,200 updates,41 averaging snapshots,
-1,228,800 sampled targets and34,278 validation targets. Full CE is4.661347133272396
-and BPB2.0667426142987186. The corrected guard finished in3,825.427seconds with
-914,980,864bytes peak RSS and no failure. Both retained RAW/H200 hashes verified;
-the pair totals318,299,422bytes. This was the first execution of original slot15,
-using the unchanged frozen numerical driver and reserved fresh2 roles. At its
-acceptance both paired results were pending. The native result is recorded below;
-the raw-byte result remains pending. No cross-bundle substitution or partial-panel
-quality decision is made.
+The [final review](tokenizer-evidence/byte-composition-boundary-001/recovery-final-review001/review.json)
+finished in 4.1218 seconds, peak RSS65,273,856 bytes, under its original 300-second
+and 1GiB limits. It verified all original/recovery acceptance routes, the 36
+retained checkpoint hashes, source/asset bindings, selection and fixed gates.
+The [actual consumer integration](tokenizer-evidence/byte-composition-boundary-001/checkpoint-consumer-runtime001/result.json)
+loaded all105 parameter tensors (16,351,859 parameters) on MPS in3.3347 seconds;
+its guard finished in4.3377 seconds, peak RSS716,357,632 bytes. CPU/MPS RNG was
+unchanged. It performed zero training updates and zero new quality evaluations.
+Accepted model, resume, averaging, inference and cache proofs were reused.
 
-[Slot16, the final-bundle native baseline](tokenizer-evidence/byte-composition-boundary-001/quality-recovery001/slots/16/acceptance.json),
-is accepted at LR0.00125 on fresh2: all1,200 updates,41 averaging snapshots,
-1,228,800 sampled targets and34,278 validation targets. Full CE is4.6731159359779095
-and BPB2.0719606522125105. The guard finished in936.774seconds with1,282,080,768bytes
-peak RSS and no failure. Both RAW/H200 hashes verified; the pair totals563,319,826bytes.
-Its final train/validation sampler hashes and complete validation target identity
-match the code control. The paired byte-model result remains pending; neither
-control is a fallback adoption candidate, and no partial-panel decision is made.
+[Measured costs](tokenizer-evidence/byte-composition-boundary-001/cost-analysis002/analysis.md)
+remain material: first-fresh raw-byte training updates take4.1538x native;
+cached32-token decoding takes1.9010x at batch1 and1.9921x at batch8.
+The model has42.61% fewer trainable parameters, but no speed, memory or equal-time
+quality advantage is claimed. Timing scope and variability remain in that record.
 
-The recovery controller **session72451 / PID79938** is live and automatically
-started final slot17, real bytes on fresh2 at LR0.0025, **PID9248**. Its active root
-is `research/tokenizer-evidence/byte-composition-boundary-001/quality-recovery001`.
-Recheck the live handle and current attempt before using these recorded PIDs.
-Seventeen trajectories have accepted results: originals00–13, separately accepted
-saved-state postprocessing recovery14, and original fresh2 controls15–16. Only
-original slot17 remains; it retains the frozen numerical driver and reserved roles.
+## Preserved execution failure and successful recovery
 
-Next: follow this controller through slot17 and final statistics. The
-[additive independent final reader](tokenizer-evidence/byte-composition-boundary-001/recovery-final-review-preparation001/README.md)
-is now prepared for originals00–13 and recovered14–17. It verifies immutable
-failure/recovery lineage and unchanged scientific rules while importing the
-previously checked arithmetic unchanged. Its new actual-metadata audit and three
-in-memory rejection cases completed in0.610333seconds without model/weight loads
-or bootstrap draws. The original missing terminal RSS observation remains explicit.
-After successful complete recovery-controller termination and shared-lock release,
-run the new reader's documented command in a fresh recovery-final-review001 folder.
-The old original-root entrypoint cannot accept this recovered panel. No incumbent
-change before independent review; no full-panel review has executed yet.
+Original quality001 session22743/PID17021 failed after slot14 completed all1,200
+updates: the output inventory raced checkpoint temporary-file publication and
+raised FileNotFoundError. Its exact historical disappearing path is unproven;
+a separate deterministic fixture reproduced the race. Original source, logs,
+RAW receipt and failed guard remain immutable, with its missing final RSS sample
+explicitly recorded. See [recovery evidence](tokenizer-evidence/byte-composition-boundary-001/guard-recovery001/README.md).
 
-The [plan-derived checkpoint caller](tokenizer-evidence/byte-composition-boundary-001/checkpoint-consumer-preparation001/README.md)
-is prepared for the previously recorded first-fresh raw-byte representative,
-slot10. It reconstructs typed identity from the frozen plan and codebook and
-delegates loading to the unchanged qualified inference API. A1.717086-second
-metadata check matched the accepted artifact identity and preserved CPU RNG;
-no model or checkpoint tensor payload was loaded. If the full panel is eligible
-after independent review, perform one bounded runtime loading integration through
-this caller under the released shared lock, then bind that evidence and the
-consumer source into the adopted recipe. Runtime integration remains pending;
-metadata preparation does not authorize adoption or another quality sweep.
+The separate frozen recovery plan restored slot14's verified saved RAW and
+completed the identical post-training suffix with zero new updates. Only unused
+original slots15–17 trained. Recovery controller session72451/PID79938 exited0
+with complete_recovered_quality_panel_pending_independent_review. Its final
+slot17 guard finished in3846.4259 seconds with910,147,584-byte peak RSS; all1,200
+updates,41 averages and34,278 validation targets passed. Its sampler identities
+match both fresh2 controls. All7,199,511,764 retained weight bytes remain present.
+The subsequent independent review and additive adoption closure complete this
+panel without rewriting the original failure or its scientific rules.
+
+## Next executable action
+
+Use the existing [direct-hash integration plan](tokenizer-evidence/byte-composition-boundary-001/serialization-integration001/README.md)
+for a bounded actual-buffer CPU/MPS digest equality, mutation-rejection and timing
+comparison in a fresh evidence namespace under the released shared lock. The
+candidate is outside frozen sources and remains unqualified for training. Reuse
+the accepted serialization component evidence; do not replay closed fixtures,
+weaken exact-type consumer guards, or launch another quality sweep. Integrate
+only after exact behavior is demonstrated. No new scientific campaign is frozen.
+
+The remaining sections preserve earlier prerequisite and execution history;
+statements about pending work below describe those historical stages. The current
+state and next action above supersede them.
 
 ## Accepted integrated recovery
 
@@ -220,7 +203,7 @@ and [reviewer diagnosis](tokenizer-evidence/byte-composition-boundary-001/pilot-
 preserve both failures. A separate pre-admission wrong CLI hash is recorded in
 `pilot-launch-correction001.json`; it caused no attempt or role consumption.
 
-## Full scientific comparison launched
+## Frozen scientific comparison (now completed)
 
 The original [quality protocol](tokenizer-evidence/byte-composition-boundary-001/quality001/protocol.md)
 and machine-readable plan freeze18 trajectories: nine balanced learning-rate
@@ -262,7 +245,7 @@ original acceptance; deleted-payload saved reviews must not be replayed.
 Free space rose to22,613,397,504bytes and the20GiB requirement was satisfied.
 The storage blocker is resolved; do not repeat broad unchanged cleanup scans.
 
-## Next executable action
+## Historical execution progression before completed adoption
 
 A minimal [direct-byte-hash candidate](byte_input_direct_hash_v1.py) now exists
 outside the frozen sources. Its only overridden method uses the already
