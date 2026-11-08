@@ -34,15 +34,21 @@ def run():
     assert final['completed'] and final['trajectories'] == 9 and final['updates'] == 10800
     assert not final['adopted'] and not final['holdout_scored'] and final['byte_incumbent_unchanged']
     for path, digest in plan['sources'].items(): assert sha(ROOT/path) == digest, path
+    expected_data = read(ROOT/'research/tokenizer-evidence/final-ln-scale-preparation-001/quality002-plan.json')['data']
     receipts = []; rows = []; scores = []; cost = []; buffer_hashes = None
     buffers = {f'transformer.h.{i}.freq_{part}' for i in range(4) for part in ('cos','sin')}
     for index, spec in enumerate(plan['specs']):
         out = BASE/f'{index:02d}'
         receipt = read(out/'complete.json'); row = read(out/'result.json')
+        assert read(out/'attempt.json')['plan_sha256'] == PLAN_SHA
+        config = read(out/'config.json')
+        assert config['spec'] == spec and config['data'] == expected_data
         assert receipt['accepted'] and receipt['result_sha256'] == sha(out/'result.json')
         assert receipt['guard_sha256'] == sha(out/'guard.json')
         guard = read(out/'guard.json')
         assert guard['status'] == 'finished' and guard['reason'] is None
+        assert guard['limits'] == dict(rss_limit_bytes=4*1024**3,reserve_bytes=8*1024**3,timeout_seconds=7200)
+        assert guard['elapsed_seconds'] < 7200
         assert guard['observation']['peak_rss_bytes'] < 4*1024**3
         assert guard['observation']['mps_driver_bytes'] < 6*1024**3
         assert guard['observation']['free_bytes'] >= 8*1024**3
@@ -113,6 +119,8 @@ def run():
         assert result['passes'] == stored['passes']
         rebuilt[candidate+'_vs_'+control] = result
     assert final['quality_success'] == all(rebuilt['tied_vs_'+a]['passes'] for a in ('native','matched'))
+    for arm in ('native','matched','tied'):
+        assert abs(final['means'][arm]-math.fsum(r['ce'] for r in rows if r['spec']['arm']==arm)/3) < 1e-12
     return dict(accepted=True, plan_sha256=PLAN_SHA, final_sha256=sha(BASE/'final.json'),
                 reviewer_sha256=sha(Path(__file__)), receipts=receipts, comparisons=rebuilt,
                 costs=cost, quality_success=final['quality_success'], adopted=False,
