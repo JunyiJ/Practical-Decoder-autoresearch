@@ -194,3 +194,19 @@ parameters-plus-codebook accounting. These are source-derived costs, not a
 profiled attribution of the4.15x slowdown. The running equal-exposure comparison
 and all accepted requirements remain unchanged. A later direct-byte serialization
 profile can target this concrete overhead without another quality sweep.
+
+## First complete scientific screen accepted
+
+[Slot00 acceptance](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/00/acceptance.json)
+binds a complete native1200-update run at LR.000625:1,228,800sampled targets,
+41H200 snapshots, full34,278-target validation and saved RAW/H200 review.
+Validation CE is4.896433671383986nat/token and2.170975007311271bits/byte.
+This is one screening observation, not a selected rate, fresh confirmation,
+comparison gain or adoption. All nine screens must complete before selection.
+
+Its guard finished in912.551s, peak RSS1,298,251,776bytes; raw/H200 archives total
+563,319,826bytes and remain local. Full metadata, curves, validation losses,
+inference receipts and saved-review bindings are retained. The controller
+accepted the slot and automatically launched raw-byte slot01 at the same rate,
+PID22816 under the existing session22743/controller PID17021. Query the live
+session and latest slots before acting; these process IDs describe this handoff.
