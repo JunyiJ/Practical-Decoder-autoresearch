@@ -1,7 +1,7 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. The first of nine fresh quality runs has completed and passed numerical
-acceptance. The matched residual-linear run is active. There is no measured
+The new zero-gated residual readout passed its implementation pilot. Two of nine fresh quality runs have completed and passed numerical
+acceptance. The nonlinear residual run is active. There is no measured
 candidate quality improvement or adoption yet. The selected byte model and its corrected public
 inference recipe remain unchanged.
 
@@ -54,8 +54,8 @@ Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
 scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot01 residual-linear PID5409 at116 updates; live logs supersede this
-snapshot. Slot00 is terminal and must not be replayed.
+worker was slot02 residual-tanh PID9138 at246 updates; live logs supersede this
+snapshot. Slots00–01 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 
@@ -71,3 +71,32 @@ The last online CE was4.630511; this is diagnostic and does not replace the
 predeclared H200 endpoint. This single control cannot establish a candidate
 advantage, and it is not pooled with older baseline scores. All nine fresh runs
 and the automatic independent panel review remain required.
+
+## First linear-control result (two of nine complete)
+
+On the same fresh bundle62102600000, residual-linear H200 CE is4.720630601738156,
++.13522368035470933 worse than byte. Its1200-update run and41 H200 snapshots
+completed in664.423seconds, with mean/max CPU/MPS differences1.13525e-8/2.67029e-5.
+Both checkpoints passed exact readback and publication hash checks. The numerical
+acceptance is a correctness result; the positive loss difference is unfavorable
+quality evidence, not an implementation failure.
+
+Matched late-training analysis (steps1101..1200) finds mean sampled CE3.072804
+for residual-linear versus3.243986 for byte, a-.171182 difference. Despite fitting
+these paired training batches better, its final online validation CE is4.835059
+versus4.630511 (+.204548), and its H200 score is also worse. Thus inadequate late
+training fit is not a sufficient explanation for this one-seed loss. This does
+not identify a causal mechanism or establish a population-seed effect.
+
+The gate ended at.992853. Both arms clipped every one of their final100 updates;
+mean pre-clip norms were2.602183 versus2.146819. Differences in parameterization
+and optimizer dynamics remain possible explanations, not demonstrated causes.
+Preserving the baseline at initialization did not guarantee a quality gain for
+this linear control. There is no retuning, changed endpoint or fallback adoption.
+The nonlinear candidate and remaining fresh seeds continue unchanged.
+
+The bound descriptive calculation is
+`tokenizer-evidence/byte-residual-readout-001/quality001/first-control-pair-analysis.json`.
+It uses completed saved logs and scores only, checks paired initializer hashes
+and observed terminal sampler state, and performs no new model execution or
+validation scoring. Independent whole-panel review remains pending.
