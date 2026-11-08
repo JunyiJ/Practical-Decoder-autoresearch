@@ -1,0 +1,11 @@
+BACKENDS=('cpu','mps')
+VARIANTS=('native','raw_bytes','nonlexical_codes')
+HORIZON=4
+BOUNDARY=2
+REJECTIONS=('extra_field','kind','identity_recipe','identity_roles','identity_data','numerical_kind',
+ 'history_missing','history_negative_loss','history_count','history_names','history_coefficient',
+ 'scheduled_lr','ema_step','ema_spec','ema_snapshots','ema_names','ema_panel_missing',
+ 'ema_parameter_missing','ema_shape','ema_dtype','ema_nonfinite','ema_alias',
+ 'sampler_missing','sampler_shape','sampler_dtype','sampler_swapped','sampler_alias')
+LIVE_REJECTIONS=('sampler_device','sampler_seed','ema_coefficient','schedule_base')
+IO_REJECTIONS=('wrong_hash','wrong_size','wrong_kind','overwrite')

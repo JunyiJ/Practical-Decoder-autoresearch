@@ -1,4 +1,4 @@
-# Active research: numerical checkpoint accepted; training context next
+# Active research: training resume accepted; inference consumers next
 
 The human authorized continuous autonomous research and recovery on November 7,
 2026. The native incumbent is unchanged. Byte composition has no measured
@@ -46,42 +46,53 @@ binds the new embedding, composer-v2, model-v3 and state-v2 sources. Fresh003
 then passed the unchanged complete checkpoint requirements. All original
 entries, roles and evidence remain closed; never replay them.
 
+## Accepted complete training context
+
+The [training-context proof](tokenizer-evidence/byte-composition-boundary-001/training-math001/result.json)
+and [independent saved review](tokenizer-evidence/byte-composition-boundary-001/training-review001/review.json)
+accepted all six native/raw-byte/nonlexical CPU/MPS cases: 36 actual updates and
+222 invalid transactions. Each four-step trajectory saves at step 2, then matches
+uninterrupted and resumed steps 3–4 exactly, including private sampled IDs, global
+RNG, clipping/exposure history, schedule, optimizer and averaging state. All
+malformed payload and live-context checks preserve state on rejection.
+
+The independent reviewer reconstructs final EMA from saved steps 2, 3 and 4 in
+FP64 across 122,392,268 coordinates. Maximum observed absolute error is
+3.572e-7, within the unchanged 4e-6 + 4e-5*abs(reference) gate. This uses the
+original real train/validation identity and paired sampling, without holdout
+scoring. It qualifies the four-update fixture, not 1200-step quality, inference
+export, cached scoring or the campaign worker.
+
+The worker took 387.480 seconds, peaked at 3,562,684,416 bytes RSS, and retained
+4,393,040,580 recorded output bytes, within its frozen 4 GiB RSS / 7 GiB output
+envelope. The sampled 6 GiB MPS guard passed; its final observation is not a peak.
+Admission took 81.148 seconds. Independent review took 6.443 seconds and peaked
+at 1,246,756,864 bytes RSS. The 222 rejection checks are not training runs.
+
+[Acceptance](tokenizer-evidence/byte-composition-boundary-001/training-acceptance001/acceptance.json)
+and the [local payload manifest](tokenizer-evidence/byte-composition-boundary-001/training-acceptance001/local-payload-manifest.json)
+bind the original evidence. All entries and role assignments are closed, with
+no replay. Reuse accepted checks; do not expand validation without a concrete
+consumer requirement or demonstrated defect. Original failures remain intact.
+
 ## Next executable action
 
-The new [training-context source](byte_input_training_v2.py) adds the remaining
-RAW resume state: original native train/validation identity and paired sampling,
-private sampler RNG, the fixed cooldown schedule, per-parameter clipping history,
-and canonical H200 tail-averaging state. It reuses the frozen numerical helpers
-and preserves the 88 native / 105 composed parameter inventories. Restore validates
-all fields and stages allocations before committing into a fresh context. Own
-bounded RAW serialization cannot overwrite an existing artifact.
+Implement and qualify the smallest averaged-weight export/load/scoring consumer
+path needed by the fixed quality comparison. Reuse the accepted model-v3,
+state-v2 and training-v2 evidence. Forecast complete retained output, temporary
+serialization overlap, memory, 8 GiB reserve and 2 GiB extra headroom before
+admitting new numerical work. Do not repeat the full training-resume suite for
+an unrelated consumer change. No quality gain or adoption is claimed.
 
-[Static source review002](tokenizer-evidence/byte-composition-boundary-001/training-source002/review.json)
-passed without importing the adapter or reading/encoding corpus data. Source-v1
-and its review are preserved: static inspection then identified a missing sampler
-destination check, which v2 adds before any draw or restore. No training-context
-numerical call has occurred in either version.
+No numerical worker is active at this checkpoint; both worker PIDs exited.
+The autonomous goal remains active, and research automations remain unchanged.
+Approximately 14.81 GB is free. No currently frozen execution is capacity-blocked;
+the next consumer fixture and scientific panel do not yet have frozen resource
+envelopes. Execute authorized recovery if a concrete requirement exceeds free
+space. Earlier failed payloads remain present; any retirement must follow current
+human authorization, dependency closure, exact hashes and a durable journal.
 
-Prepare a bounded full-size CPU/MPS training-context resume fixture across all
-three arms. Check private next sampled IDs, clipping/exposure, cooldown and EMA
-boundaries, complete serialization, exact continued trajectory, and rejected
-payload preservation. Preserve the established fixture recipes and scientific
-1200-step horizon; do not count the fixture as exploration or quality selection.
-Freeze complete source/runtime/data identity, fresh five-role assignments, and
-all memory/retained-output/serialization costs before admission. H200 inference
-export, cache/scorer/worker integration and scientific quality remain later.
-
-No worker is active at this checkpoint. The active autonomous goal owns the next
-continuation; paused research automations remain unchanged. Approximately 19.25 GB
-is free. No execution is currently blocked. The next training fixture does not
-yet have a frozen resource envelope; include EMA, staging, retained archives,
-metadata, 8 GiB reserve and 2 GiB headroom before admission. Future scientific-panel
-capacity is also unqualified; execute authorized recovery if its complete
-requirement exceeds available space.
-
-The [acceptance receipt](tokenizer-evidence/byte-composition-boundary-001/state-acceptance003/acceptance.json)
-and [archive manifest](tokenizer-evidence/byte-composition-boundary-001/state-acceptance003/local-archive-manifest.json)
-bind 2,783,501,284 bytes of accepted checkpoint payloads. Earlier failed archives
-and diagnostic arrays remain protected under their original manifests. Git
-contains sources and complete evidence metadata, not binary checkpoints or
-large diagnostic arrays. A clone alone cannot perform every saved-data review.
+Git contains source and evidence metadata; binary checkpoints and middle-step
+arrays remain local under the manifest. A clone alone cannot repeat saved-data
+reviews. Historical source, failure evidence and scientific restrictions remain
+unchanged.
