@@ -52,7 +52,9 @@ entrypoint above requires the original successful STOP, so it must not be run
 as though the original controller completed successfully. Reuse its accepted
 arithmetic implementation in a separate final reader that explicitly verifies
 this routing, immutable failure lineage, unchanged scientific gates and resource
-accounting. That adapter remains to be implemented and reviewed before adoption.
+accounting. The additive reader is now prepared in
+`../recovery-final-review-preparation001/README.md`; use its documented command
+after successful full-panel termination. It has not yet accepted a full panel.
 
 ## Adoption consumer inspection
 

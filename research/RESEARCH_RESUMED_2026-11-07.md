@@ -53,12 +53,17 @@ Slots00–13 are original acceptances; slot14 is separately accepted postprocess
 recovery. Only the three never-entered original fresh2 trajectories15–17 remain.
 They use the unchanged frozen numerical driver and original reserved roles.
 
-Next: follow this controller through slots15–17 and final statistics. Adapt the
-prepared independent saved-data reviewer to route originals00–13 and recovered
-14–17, and explicitly verify immutable failure/recovery lineage and unchanged
-scientific rules. Its existing arithmetic proof remains reusable, but the old
-original-root entrypoint cannot accept this recovered panel. Do not run it as if
-quality001 had ended successfully. No incumbent change before independent review.
+Next: follow this controller through slots15–17 and final statistics. The
+[additive independent final reader](tokenizer-evidence/byte-composition-boundary-001/recovery-final-review-preparation001/README.md)
+is now prepared for originals00–13 and recovered14–17. It verifies immutable
+failure/recovery lineage and unchanged scientific rules while importing the
+previously checked arithmetic unchanged. Its new actual-metadata audit and three
+in-memory rejection cases completed in0.610333seconds without model/weight loads
+or bootstrap draws. The original missing terminal RSS observation remains explicit.
+After successful complete recovery-controller termination and shared-lock release,
+run the new reader's documented command in a fresh recovery-final-review001 folder.
+The old original-root entrypoint cannot accept this recovered panel. No incumbent
+change before independent review; no full-panel review has executed yet.
 
 ## Accepted integrated recovery
 
