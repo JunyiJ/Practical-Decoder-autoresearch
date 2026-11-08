@@ -46,10 +46,10 @@
   "active_direction": "byte_input_composition",
   "active_exec_session": 22743,
   "active_parent_pid": 17021,
-  "active_run": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/08",
+  "active_run": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/09",
   "active_session": 22743,
   "active_worker": "research.byte_input_quality_v1.entry",
-  "active_worker_pid": 50412,
+  "active_worker_pid": 74008,
   "actual_free_bytes": 19322376192,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
@@ -394,7 +394,8 @@
     4,
     5,
     6,
-    7
+    7,
+    8
   ],
   "byte_input_quality_admission": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/admission/review.json",
   "byte_input_quality_adopted": false,
@@ -406,9 +407,16 @@
   "byte_input_quality_gain_established": false,
   "byte_input_quality_guard_observation": null,
   "byte_input_quality_last_observed_step": null,
-  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/07/acceptance.json",
+  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/08/acceptance.json",
   "byte_input_quality_plan": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/plan.json",
   "byte_input_quality_plan_sha256": "cd0dcc19ae94e09e3d14aa071043f6c89b498e482e942bc0bfeb65bda15d8ddd",
+  "byte_input_quality_screening_complete": true,
+  "byte_input_quality_selected_rates": {
+    "native": 0.00125,
+    "nonlexical_codes": 0.0025,
+    "raw_bytes": 0.0025
+  },
+  "byte_input_quality_selection": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/selection.json",
   "byte_input_resource_costs": [
     {
       "max_update_seconds": 0.8612192498985678,
@@ -9488,7 +9496,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Follow existing controller session22743 / PID17021 and final real-byte screen slot08 PID50412 at LR 0.0025. Slots00\u201307 accepted. Native at LR 0.0025 scored CE 4.771981672719794, worse than its middle rate. Finish the last screen, verify the frozen joint rate selection, then follow all original fresh paired confirmations. Keep the gates, seeds and trajectories unchanged.",
+  "next_action": "Follow existing controller session22743 / PID17021 and fresh0 native confirmation slot09 PID74008 at selected LR 0.00125. All nine screens are accepted and selection is frozen: native 0.00125, raw_bytes 0.0025, nonlexical_codes 0.0025. Selected screening raw-minus-native CE is -0.12657085299860693; this is not confirmation. Complete all nine original fresh trajectories, then the final statistics and prepared independent saved-data review. Keep gates, seeds and trajectories unchanged.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "readout_tiny_component_qualified_fullmodel_integration_next",
   "no_paid_compute": true,
@@ -10066,7 +10074,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/result.json",
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
-  "updated_at": "2026-11-08T08:30:37.985624+00:00",
+  "updated_at": "2026-11-08T09:24:47.609119+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",

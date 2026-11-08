@@ -1,8 +1,8 @@
 # Active research: full byte-input quality comparison launched
 
 The human authorized continuous autonomous research and recovery on November 7,
-2026. The native incumbent is unchanged. Byte composition has no measured
-real-data quality gain and has not been adopted.
+2026. The native incumbent is unchanged. Byte composition has not established a
+real-data quality gain confirmed on fresh seeds and has not been adopted.
 
 ## Accepted integrated recovery
 
@@ -183,8 +183,8 @@ active panel and does not claim an integrated speedup.
 The first rate's three screens (slots00–02, LR.000625) are accepted. Full
 validation CE is4.896433671 for native,5.039635859 for real bytes and5.098909072
 for nonlexical codes. Real bytes improve over the code control by.059273213
-nat/token but lose to native by.143202188. No rate is selected and no gain is
-established. The [fixed-bin saved-loss comparison](tokenizer-evidence/byte-composition-boundary-001/screen-diagnostic002/analysis.md)
+nat/token but lose to native by.143202188. Those initial screens did not select
+a rate or establish a confirmed gain. The [fixed-bin saved-loss comparison](tokenizer-evidence/byte-composition-boundary-001/screen-diagnostic002/analysis.md)
 shows that both composition models improve after unseen inputs, with an
 additional real-byte advantage. This exploratory observation is not a new
 acceptance criterion or a causal proof of lexical sharing.
@@ -223,18 +223,19 @@ targets. Its full validation CE is 4.695642038340503 and BPB 2.081948249007118.
 Its finished guard recorded 926.216 seconds and 1,294,925,824 bytes peak RSS;
 the retained RAW/H200 pair totals 563,319,826 bytes.
 
-The two complete screening rates now give the following full validation scores:
+The complete screening panel gives the following full validation scores:
 
 | Learning rate | Native | Real bytes | Nonlexical codes | Bytes minus native |
 |---|---:|---:|---:|---:|
 | 0.000625 | 4.896434 | 5.039636 | 5.098909 | +0.143202 |
 | 0.00125 | 4.695642 | 4.637746 | 4.723061 | -0.057896 |
+| 0.0025 | 4.771982 | 4.569071 | 4.662836 | -0.202910 |
 
 At LR 0.00125, raw-minus-native CE is -0.0578962441721842 nat/token. Final
 train/validation sampler hashes match across all six completed screens. The
 ranking reversed between the first two rates, illustrating learning-rate
 sensitivity. These rates use the same screening bundle, not independent fresh
-confirmations. No rate is selected and no final quality gain is established.
+confirmations. All rates are now selected below; no confirmed quality gain is established.
 
 The [slot06 control at LR 0.0025](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/06/acceptance.json)
 is also accepted: all 1,200 updates, 41 averaging snapshots and 34,278 validation
@@ -242,8 +243,7 @@ targets. Full validation CE is 4.662835553613667 and BPB 2.0674025483605565.
 Its finished guard recorded 3,835.412 seconds and 909,885,440 bytes peak RSS;
 the retained RAW/H200 pair totals 318,299,422 bytes. Final sampler hashes match
 the other screens. Its CE is 0.06022540785476593 lower than the control's middle-rate
-screen. All three control rates are measured, but no rate selection is frozen
-until all nine screens are complete.
+screen. Selection was deferred until all nine screens were complete, as required.
 
 The [slot07 native baseline at LR 0.0025](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/07/acceptance.json)
 is accepted after all 1,200 updates, 41 averaging snapshots and 34,278 validation
@@ -253,15 +253,29 @@ the retained RAW/H200 pair totals 563,319,826 bytes. Final sampler hashes match
 the other screens. Its CE is 0.07633963437929125 higher than native at the middle
 rate. Preserve this measured unfavorable rate comparison; no case or gate changes.
 
-Eight of 18 trajectories are accepted. The controller automatically started
-slot08, real bytes at LR 0.0025, PID 50412; its process and first updates were
-observed. This is the last screen. Complete it before freezing all three rate
-choices, then run all three original fresh paired bundles. Recheck the live
-session and current slot before acting on these recorded process IDs.
+The [slot08 real-byte screen at LR 0.0025](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/08/acceptance.json)
+is accepted after all 1,200 updates, 41 averaging snapshots and 34,278 validation
+targets. Full validation CE is 4.569071185341896 and BPB 2.0258294129407908.
+Its finished guard recorded 3,827.581 seconds and 915,505,152 bytes peak RSS;
+the retained RAW/H200 pair totals 318,299,358 bytes, with both hashes verified.
+All nine screens have matching final train/validation sampler hashes.
 
-Follow the existing live controller (session22743, PID17021) through slot08
-and subsequent saved slot acceptances, complete
-screen selection, fresh confirmation and final statistical report. The controller
+The controller froze the [complete rate selection](tokenizer-evidence/byte-composition-boundary-001/quality001/selection.json)
+before starting fresh confirmation: native LR 0.00125, real bytes LR 0.0025,
+and nonlexical codes LR 0.0025. Each is the minimum complete validation CE for
+that arm under the original rule. At the selected rates, real-byte screening CE
+is 0.12657085299860693 lower than native and 0.09376436827177148 lower than the
+code control. These are tuning observations from the single screening bundle,
+not fresh confirmation, conditional-text inference, or an adoption decision.
+
+Nine of 18 trajectories are accepted. The original controller automatically
+started slot09, native at LR 0.00125 on fresh0, PID 74008. The process and actual
+updates were observed. Follow all nine original fresh confirmation trajectories;
+recheck the live session and current slot before acting on recorded process IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot09
+and the remaining fresh confirmation slots, saved acceptances and final
+statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
 failure before any separately identified correction. Never replace an unfavorable
 seed or alter scientific gates. The controller does not adopt automatically:
