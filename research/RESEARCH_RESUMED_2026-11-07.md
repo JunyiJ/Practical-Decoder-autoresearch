@@ -18,14 +18,15 @@ No training was repeated and no checkpoint was rewritten.
 The new `quality-recovery002` plan imports slots00..02 and runs only original
 unattempted slots03..08. Plan SHA:
 `2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
-Dispatcher PID70581 / exec53076 and slot07 byte-baseline worker86202 are live;
-65 updates were observed. Seven runs are accepted. Slot06 tanh completed with
-H200 CE4.623390900, mean CPU/MPS error4.108156e-8 and maximum target error1.811981e-5,
-passing unchanged limits. All three nonlinear runs are now complete. Their
-H200-minus-final-online gaps are+.024025973,+.039426659,+.019843424. This consistent
-averaging penalty is descriptive and does not permit switching the endpoint.
-Only original slots07byte and08linear remain. Both completed paired bundles
-favor the byte baseline; no new model is adopted.
+Dispatcher PID70581 / exec53076 and final slot08 linear worker91678 are live;
+144 updates were observed. Eight runs are accepted. Slot07 byte completed with
+H200 CE4.571279233, mean CPU/MPS error2.052775e-8 and maximum target error2.050400e-5,
+passing unchanged limits. All three paired byte/tanh comparisons favor byte:
+tanh-minus-byte H200 deltas are+.065875265,+.076989235,+.052111667.
+In the later two pairs, final-online differences are only+.001474464 and−.003865640;
+the larger averaged gaps identify an interaction worth analyzing, not permission
+to switch endpoints. The first baseline online curve retains its old-scorer caveat.
+Only original slot08linear remains. No new model is adopted.
 Prior exec99662 is terminal failed. Do not restart on an observation
 timeout or resume a superseded dispatcher. The source/count-derived sampler
 limitation applies explicitly to slots00 and02; slot01's observed digest is kept.
@@ -35,12 +36,16 @@ tanh4.616355683. Tanh loses to byte, so the all-seeds-negative adoption criterio
 cannot pass. Complete the fixed panel to characterize its outcome, without
 changing roles, controls, endpoints, tolerances or learning rate. The retained
 output cap remains1.5GiB; 2,151.110 seconds of prior guarded execution are charged
-to the original10-hour allowance. Latest measured free space is12.77GB; no cleanup is needed.
+to the original10-hour allowance. Latest measured free space is12.63GB; no cleanup is needed.
 
 After full completion, run:
 `PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
 The independent reviewer covers imported evidence, original primary-score identity,
 fixed comparisons, numerical checks and corrected resource accounting.
+On accepted review, run `.venv/bin/python -m research.byte_context_final_analysis_v1`
+to derive all paired learning curves, averaging differences and charged execution
+cost from saved evidence. This analysis source is prepared; no premature panel
+analysis or new model execution has occurred.
 
 The [first-bundle analysis](tokenizer-evidence/byte-context-transform-001/first-bundle-analysis001/analysis.md)
 is complete using immutable logs/reports only. Tanh's late training loss remains
