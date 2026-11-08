@@ -1,0 +1,132 @@
+{
+  "classification": "saved-coordinate gradient failure with independent component branch-distance diagnostic",
+  "failed_gradient_coordinates": 1,
+  "failed_units": [
+    {
+      "actual": 0.0006710184970870614,
+      "nearest_preactivation64_distance": 4.927953753397496e-09,
+      "nearest_row": 514,
+      "nearest_token": 25186,
+      "reference": 0.0006576100131496787,
+      "unit": 382
+    }
+  ],
+  "fp32_accumulation_surrogate_sign_disagreements": [],
+  "gradient_max_abs": 1.3408483937382698e-05,
+  "inputs": [
+    {
+      "data_sha256": "efadfc58da85b03e29f42dc0ecedbdf1e498c753e66d5df007673d4d2546c527",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-gradient-composer.highway_bias.json",
+      "metadata_sha256": "094d80b35ce7b35f872d3ba09247cebfdfc0766a8ff9662ae7a5974955af05c7"
+    },
+    {
+      "data_sha256": "eb1d49d14254b7bd05456782c75e473ad750667498f6b15e8167893998cb275f",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/codebook-raw_bytes-rows.json",
+      "metadata_sha256": "b45bc9ef01e5128e268a9367c53ae4c42fb21cba4ff5db19e1950ea70cbf343d"
+    },
+    {
+      "data_sha256": "8371f53d5dc77315d0ad18c72d7008a7f52b0c4f765d1dd8d7c77d5617176900",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/codebook-raw_bytes-lengths.json",
+      "metadata_sha256": "609af2d9a2843a0ccc8df10685359de11fa8cb5f9290abf89dd3afa026d5115a"
+    },
+    {
+      "data_sha256": "2a7e0b2d472ad7fdf4a70f5a6d4374bde427fe59053e9f9f88ae44c422a421fe",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.byte_weight.json",
+      "metadata_sha256": "a6755a50d0db8e51abfc49fcc9e40526aaf140640959c85875e9be711f66c80d"
+    },
+    {
+      "data_sha256": "6d9b1290ab6367560c7ab11025f95ded4dd0cc040b259dbfe8b127e56829677f",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filters.0.json",
+      "metadata_sha256": "17f346fbe6f441ae67497a576675a69379212b03beea39200f0a76bbaa8e9864"
+    },
+    {
+      "data_sha256": "ef601493da9d263a509cb4c72d85934ba3283391295ccc80e1b292252fb7cb78",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filters.1.json",
+      "metadata_sha256": "ed8322725dfa33c01b4378a52ba7b7c0b9939170778a0d1185b17cef84a73be7"
+    },
+    {
+      "data_sha256": "9b25146fcccd4da8f522e4e4c3349cec13e43b433955850a94ddd4e32b2fd430",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filters.2.json",
+      "metadata_sha256": "99f100583f344a59786f5950b9472058e9796dc1c9f1390a7b84332530cec8ea"
+    },
+    {
+      "data_sha256": "2dafe551b2ab1ff35437dfc36ca3703d6a860d13e9d3ef6966e76ee0cb3d99a6",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filters.3.json",
+      "metadata_sha256": "9a50a41f1f97fb882d7872d021f2cc7a89c1f495835120749f2b2356ac713553"
+    },
+    {
+      "data_sha256": "a2bf23fd9a32d4f2e32482196e98469e18e7682be858d708fc22511ead947886",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filters.4.json",
+      "metadata_sha256": "3340fd0c85613eaa602a50996e13c73652c8dc65bf90c37e4d6e1351ef93e941"
+    },
+    {
+      "data_sha256": "b14455ac9992e3dd6d4bc8e68d66ec14e93932708cca26deb0c9a093e9a91846",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filters.5.json",
+      "metadata_sha256": "59e96a10117e6fe83a3f65c86ec97a14c19cac7a0abf4bb011ebb2b9a4a49679"
+    },
+    {
+      "data_sha256": "afb8afe07c46cf756696255a6debe07939179fb4a774c874005cbd1a8e18f64d",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filter_biases.0.json",
+      "metadata_sha256": "e4a49d8df47cdfb427a481eacb8a3be7876e656046df96d652bc111f8e8b6c5e"
+    },
+    {
+      "data_sha256": "1384e4cbeb20aa8a6e17d4d3ba623d736932de856ff2b000fd5f140954033099",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filter_biases.1.json",
+      "metadata_sha256": "8f69444d54e9d5875da03a14db6a14cf9cfdf4ba9272df9f102301aabdd84616"
+    },
+    {
+      "data_sha256": "69620b52b3ef135b947d2ef1a8f65a986591ee49f329790113a5d197485f6e0e",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filter_biases.2.json",
+      "metadata_sha256": "4390d59d145efdadd476311ff8f892e59e97399195fad52d4063498f66c853d2"
+    },
+    {
+      "data_sha256": "2c6e4b048e222174e92c8d184f786aa4bd24d2d8ef1a4c72a4edc9947a3476c8",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filter_biases.3.json",
+      "metadata_sha256": "7a8d9e7850d9183c0e35b4c1eb6dc54c308a268ff6cb9d4ed77f629552e7f950"
+    },
+    {
+      "data_sha256": "8b9adf802446f4613c8c24d0530f6aaa743c4732a700c58786c7a8390aa99ddd",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filter_biases.4.json",
+      "metadata_sha256": "afb87e21f49bc23958b5ee92c2fd88cabec003b34838b2db1f6677ec375e1c7d"
+    },
+    {
+      "data_sha256": "ebd0dd157ac31b3538bb4551a142a94c8189e714b626493ceeee04bff56b5591",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.filter_biases.5.json",
+      "metadata_sha256": "3863dbc391ffdcba973f9068adf0e7d0115bf2fc0871d1d810aa123877f89f12"
+    },
+    {
+      "data_sha256": "8bcb1edbaf320ecb9067140824be79ac3494b7d109cb29896b909fa29d13af2f",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.highway_weight.json",
+      "metadata_sha256": "0cb0ca46ef293e9ad13078c84a9a7a151c4d92f74dd6b09bdd986c5eddbe3c5a"
+    },
+    {
+      "data_sha256": "e601adb7d4e05fa59a97462ad716315c37b4757703e7dff6fc57c134b822d96e",
+      "metadata": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math003/cpu-raw_bytes-initial-composer.highway_bias.json",
+      "metadata_sha256": "cf6982dd385384e6b4535c82e019099dc2b74c2bc2afae4eb2bbac9cd51e99f4"
+    }
+  ],
+  "min_absolute_preactivation64": 2.719026045983064e-09,
+  "near_zero_preactivations": [
+    {
+      "preactivation64": 2.719026045983064e-09,
+      "row": 24,
+      "token": 1176,
+      "unit": 75
+    },
+    {
+      "preactivation64": -4.927953753397496e-09,
+      "row": 514,
+      "token": 25186,
+      "unit": 382
+    },
+    {
+      "preactivation64": -4.36732342208937e-08,
+      "row": 912,
+      "token": 44688,
+      "unit": 418
+    }
+  ],
+  "no_quality_conclusion": true,
+  "scope": "Existing saved initial weights/codes and gradient coordinates only. NumPy FP64 component arithmetic and two reporting surrogates; not installed Torch fused kernels, no full model/reference/optimizer call, no original output recapture.",
+  "unchanged_gradient_gate_failed": true
+}

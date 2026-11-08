@@ -1,48 +1,80 @@
-# Research resumed by the human, November 7, 2026
+# Active research: byte-input full-model proof recovery
 
-The new AUTONOMY AND CONTINUATION instruction explicitly resumes research and
-authorizes bounded autonomous correction of new execution, harness and
-implementation defects. The earlier stop handoff remains historical evidence.
-Closed experiments, used roles, scientific comparisons and acceptance criteria
-remain fixed. No quality improvement or adoption is claimed by this continuation.
+The human explicitly resumed research on November 7, 2026 and authorized
+bounded autonomous correction of new setup, harness and implementation defects.
+Historical closed experiments and scientific comparisons remain fixed. The
+native incumbent is unchanged; byte composition is unadopted and has no measured
+real-data quality improvement.
 
-The current work is the independent full-codebook and actual-model proof
-specified by the previous handoff. Read
-[the proof source guide](byte_input_proof_v1/README.md) and
-[the current progress record](tokenizer-evidence/byte-composition-boundary-001/resume-model-proof001/progress.json).
+Start with [current machine-readable progress](tokenizer-evidence/byte-composition-boundary-001/model-proof-recovery001.json)
+and [the proof source guide](byte_input_proof_v1/README.md).
 
-Source inspection established that `byte_input_model_v1/optimizer.py` never
-reads the child optimizer state. Its preflight could therefore accept corrupted
-momentum/Adam state before mutating parameters. New `byte_input_model_v2` adds
-state/ownership/alias/step validation before decay and either child step.
-All five original v1 source hashes were reverified unchanged. This is a source
-finding and prepared correction; numerical rejection/update verification is
-still pending. It does not reopen any old fixture.
+## What the new numerical evidence establishes
 
-Independent reference sources now implement public byte reconstruction, the
-length-specific Feistel mapping, Conv1d-based byte composition, explicit primary
-CE, and expected optimizer grouping/decay. Streaming coordinate recording and
-saved-evidence review avoid giant Python lists and preserve full comparisons.
-Prospective cases cover D256/V50257, B8T128, three arms, CPU/MPS and invalid
-transactions. No candidate/reference function has been called.
+- The complete public-byte codebooks and nonlexical control mappings passed in
+  the attempted proofs, including full vocabulary rows and exhaustive small
+  Feistel domains. The full-domain claim remains the separate XOR inverse argument.
+- Fresh model proof003 completed the genuine native CPU B8T128 case: all forward,
+  loss, initialization and gradient comparisons; two updates with identical
+  gradient inputs; complete optimizer state; causality; and all62 invalid-call
+  preservation checks. This verifies the tested native CPU integration scope,
+  including the new optimizer-state rejection checks, not all model variants.
+- Proof003 then failed one raw-byte highway-bias gradient coordinate. The full
+  three-arm CPU/MPS proof is incomplete and unqualified. No MPS model case ran.
 
-The original source consistency gate passed in 0.028 seconds with 27,770,880B
-peak RSS. It compiled syntax, checked source pins and static ordering, and
-calculated a conservative 12,692,784,780B uncompressed coordinate bound. The
-prospective 16GiB proof output cap plus 8GiB reserve and 2GiB headroom requires
-27,917,287,424B; observed free space was 34,376,445,952B. No storage deficit or
-cleanup trigger was found. Runtime graph/allocator/time costs remain unqualified;
-this arithmetic does not admit a numerical run or a scientific panel.
+[Independent saved review003](tokenizer-evidence/byte-composition-boundary-001/model-saved-review003/review.json)
+reconciled1,004 records/406,261,069 coordinates and confirmed that failure.
+The run exited1 after104.154s; peak RSS3,003,629,568B stayed below4GiB.
 
-Next complete the actual driver, invalid-transaction implementations and guarded
-once-only entry. Then qualify new exclusive initializer/code-key roles, complete
-source/runtime pins, implemented live memory/time/output forecasts, and independent
-static admission before any candidate/reference import. The genuine B8T128
-forward/backward remains required. No roles have been assigned or drawn. The
-original source-consistency gate is closed and must not be replayed.
+## Preserved failures and exact recoveries
 
-No research worker is running at this checkpoint. Existing paused research
-automations remain unchanged; the current autonomous goal owns continuation.
-Independent maintenance changes and the human's unstaged AGENTS.md edits are
-excluded from this work. Native incumbent, holdout, TOP and all historical
-failed studies remain unchanged.
+The original model-math002 update comparison failed18 coordinates in the native
+CPU dkv matrix (max7.812e-6). The two gradients differed by only3.347e-10, but13
+coordinates crossed BF16 rounding boundaries. Muon casts to BF16 before its
+orthogonalization. That comparison confounded update correctness with sensitivity
+to different gradient inputs. [Saved-data diagnosis](tokenizer-evidence/byte-composition-boundary-001/model-update-diagnosis001/result.json)
+did not rerun the model or optimizer. Fresh003 preserved the independent gradient
+gates, then supplied exactly equal gradients for the update/state comparison.
+Native CPU passed. Original002 remains closed failed, never reinterpreted as pass.
+
+The next failure was different: raw-byte CPU highway-bias unit382 differed by
+1.34085e-5. A new diagnostic on saved initial arrays found two near-zero ReLU
+branch differences between the declared fused FP32 arithmetic and the algebraic
+Conv1d/separate-bias reference. The failed unit's preactivation was +1.177e-9 in
+the declared path and0 in the alternative. Independently assembled explicit
+windows with the declared fused linear primitive reproduced every preactivation
+exactly. [Primitive diagnostic](tokenizer-evidence/byte-composition-boundary-001/component-arithmetic-diagnosis001/result.json)
+preserves all preactivation arrays and scope limits. It called no historical
+model/reference function, full body, backward, optimizer or initializer.
+
+The prepared reference002 derives windows by explicit slicing/stacking and uses
+the declared fused FP32 linear operations. It does not copy masks, omit failing
+coordinates, move weights away from a kink, or relax tolerances. Its independence
+is indexing/assembly and explicit CE/grouping logic; it shares qualified numerical
+primitives, native blocks and optimizer kernels. The earlier independent byte
+component math proof remains applicable only in its established finite scope.
+
+## Next executable action
+
+Prepare and freeze model-math004 for entry004/driver004/model_reference002, with
+three new exclusive initializer/code-key roles and admission004. Keep D256,
+V50257, B8T128, all three arms, CPU/MPS, 357 rejection transactions and the exact
+4e-6 +4e-5*abs(reference) numerical gates. Keep exact initialization, codebook,
+causality and matched-gradient input gates. Then execute once and reconcile saved
+coordinates using saved_review004. No004 roles are assigned or drawn yet and
+004 is not numerically admitted. Never rerun002/003 or reuse their roles.
+
+No worker is active at this checkpoint. Existing paused automations remain
+unchanged; the active autonomous goal owns continuation. Observed free space
+32,098,246,656B exceeds the prospective proof requirement27,917,287,424B
+(16GiB output +8GiB reserve +2GiB headroom). No storage blocker or cleanup was
+triggered. Full training/state/cache/scorer and scientific-panel work remains
+later, after actual-model qualification.
+
+The1,205 original coordinate payloads remain local and protected, totaling about
+2.14GB. Exact gzip hashes and metadata are tracked in the
+[002 manifest](tokenizer-evidence/byte-composition-boundary-001/model-update-diagnosis001/local-coordinate-manifest.json)
+and [003 manifest](tokenizer-evidence/byte-composition-boundary-001/model-gradient-diagnosis001/local-coordinate-manifest.json).
+Git contains sources, plans, guards, complete per-record metadata, rejection
+snapshots, diagnoses and reviews; it does not contain those large arrays or
+trained weights. A clone alone cannot reproduce their saved-data review.

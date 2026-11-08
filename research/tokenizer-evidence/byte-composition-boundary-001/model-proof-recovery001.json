@@ -1,0 +1,54 @@
+{
+  "status": "ACTIVE_RESEARCH_FULL_MODEL_PROOF_RECOVERY",
+  "updated_at": "2026-11-08T00:00:11.973443+00:00",
+  "worker_pid": null,
+  "last_numerical": {
+    "attempt": "model-math003",
+    "pid": 93455,
+    "session": 59048,
+    "exit_code": 1,
+    "elapsed_seconds": 104.15399850008544,
+    "peak_rss_bytes": 3003629568
+  },
+  "evidence": {
+    "original_failed_update": "model-math002/STOP",
+    "original_update_review": "model-saved-review001/review.json",
+    "update_diagnosis": "model-update-diagnosis001/result.json",
+    "fresh_failed_gradient": "model-math003/STOP",
+    "gradient_review": "model-saved-review003/review.json",
+    "gradient_diagnosis": "model-gradient-diagnosis001/result.json",
+    "primitive_diagnosis": "component-arithmetic-diagnosis001/result.json"
+  },
+  "established": [
+    "Full public byte-codebook rows and length-specific control mappings passed in each attempted proof.",
+    "New003 native CPU full-size forward/gradients, two same-gradient optimizer updates/states, causality and all62 invalid-preservation cases completed. This is implementation scope, not model quality.",
+    "Original002 update test used unequal gradients crossing BF16 rounding boundaries; original failure retained. New003 matched-gradient harness resolved the native CPU update comparison without changing tolerance.",
+    "New003 raw-byte CPU forward passed; highway-bias unit382 gradient failed. New saved-data component diagnostic found two FP32 ReLU branch disagreements, including unit382; explicit-window fused primitive preactivations matched the declared computation exactly."
+  ],
+  "not_established": [
+    "Complete three-arm CPU/MPS model proof",
+    "MPS model correctness or memory qualification",
+    "Training/state/cache/scorer prerequisites",
+    "Any new real-data quality gain or adoption"
+  ],
+  "next_action": "Freeze new model-math004 using entry004/driver004/model_reference002 and admission004. Assign and census three fresh exclusive roles; preserve candidate, full B8T128 cases and 4e-6/4e-5 gates. Source arithmetic correction uses explicit stacked windows and the declared fused FP32 linear primitive. Then execute original004 once and independently reconcile all saved coordinates with saved_review004. Never rerun002/003 or reuse their roles.",
+  "new004_roles": "UNASSIGNED",
+  "numerical004_admitted": false,
+  "source_correction": "model_reference002.py independently derives explicit windows and honors fused FP32 primitive semantics; original reference preserved.",
+  "fixed_limits": {
+    "rss": 4294967296,
+    "mps": 6442450944,
+    "output": 17179869184,
+    "reserve": 8589934592
+  },
+  "free_bytes": 32098246656,
+  "prospective_proof_entry_bytes": 27917287424,
+  "entry_deficit": 0,
+  "protected_local_arrays": [
+    "research/tokenizer-evidence/byte-composition-boundary-001/model-update-diagnosis001/local-coordinate-manifest.json",
+    "research/tokenizer-evidence/byte-composition-boundary-001/model-gradient-diagnosis001/local-coordinate-manifest.json"
+  ],
+  "no_cleanup_performed": true,
+  "no_quality_gain": true,
+  "adopted": false
+}

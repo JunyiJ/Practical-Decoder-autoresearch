@@ -1,0 +1,257 @@
+{
+  "bfloat16_gradient_disagreements": 13,
+  "bfloat16_nesterov_surrogate_disagreements": 8,
+  "classification": "unequal-gradient optimizer differential; precision sensitivity is a test-harness confound",
+  "failed_update_coordinates": 18,
+  "gradient_exact_equal_coordinates": 615,
+  "gradient_max_abs": 3.346940502524376e-10,
+  "gradient_norm_actual": 0.010561400197353799,
+  "gradient_rounding_examples": [
+    {
+      "actual": -0.00010991089948220178,
+      "actual_bf16": -0.00010967254638671875,
+      "index": 127,
+      "reference": -0.00010991097951773554,
+      "reference_bf16": -0.00011014938354492188
+    },
+    {
+      "actual": 1.3520127239985413e-08,
+      "actual_bf16": 1.3504177331924438e-08,
+      "index": 1894,
+      "reference": 1.3580360835874217e-08,
+      "reference_bf16": 1.3562384992837906e-08
+    },
+    {
+      "actual": 2.1276088091326528e-07,
+      "actual_bf16": 2.123415470123291e-07,
+      "index": 1927,
+      "reference": 2.128602574202887e-07,
+      "reference_bf16": 2.1327286958694458e-07
+    },
+    {
+      "actual": -1.1851731329670656e-07,
+      "actual_bf16": -1.1874362826347351e-07,
+      "index": 4483,
+      "reference": -1.1847947689602734e-07,
+      "reference_bf16": -1.1827796697616577e-07
+    },
+    {
+      "actual": -1.096129409461355e-07,
+      "actual_bf16": -1.0943040251731873e-07,
+      "index": 7687,
+      "reference": -1.0970832420298393e-07,
+      "reference_bf16": -1.0989606380462646e-07
+    },
+    {
+      "actual": -4.787158900398936e-07,
+      "actual_bf16": -4.805624485015869e-07,
+      "index": 11372,
+      "reference": -4.786892873198667e-07,
+      "reference_bf16": -4.76837158203125e-07
+    },
+    {
+      "actual": 5.320419660392872e-08,
+      "actual_bf16": 5.3318217396736145e-08,
+      "index": 12307,
+      "reference": 5.318833373735288e-08,
+      "reference_bf16": 5.3085386753082275e-08
+    },
+    {
+      "actual": -7.954070611049247e-07,
+      "actual_bf16": -7.972121238708496e-07,
+      "index": 13320,
+      "reference": -7.952838814162533e-07,
+      "reference_bf16": -7.934868335723877e-07
+    },
+    {
+      "actual": 2.0190971099509625e-06,
+      "actual_bf16": 2.0116567611694336e-06,
+      "index": 13460,
+      "reference": 2.0191566818539286e-06,
+      "reference_bf16": 2.0265579223632812e-06
+    },
+    {
+      "actual": 4.04248545748942e-08,
+      "actual_bf16": 4.0512531995773315e-08,
+      "index": 13741,
+      "reference": 4.0358720809763327e-08,
+      "reference_bf16": 4.0279701352119446e-08
+    },
+    {
+      "actual": -3.2194857890743833e-09,
+      "actual_bf16": -3.2159732654690742e-09,
+      "index": 14570,
+      "reference": -3.1593549998376602e-09,
+      "reference_bf16": -3.157765604555607e-09
+    },
+    {
+      "actual": 2.0802028302568942e-05,
+      "actual_bf16": 2.086162567138672e-05,
+      "index": 15688,
+      "reference": 2.08019555429928e-05,
+      "reference_bf16": 2.0742416381835938e-05
+    },
+    {
+      "actual": 4.573769629701019e-08,
+      "actual_bf16": 4.563480615615845e-08,
+      "index": 16134,
+      "reference": 4.575931100703201e-08,
+      "reference_bf16": 4.586763679981232e-08
+    }
+  ],
+  "gradient_total_coordinates": 16384,
+  "inference": "The original test does not isolate wrapper update correctness from sensitivity to independently computed CE gradients. No local model-quality inference.",
+  "inputs": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math002/cpu-native-gradient-transformer.h.0.attn.dkv.weight.json",
+      "sha256": "a5c3861eba76a0e91630618b669a65605a0fdef8951908e24c30209a5880ed73"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math002/cpu-native-update1-transformer.h.0.attn.dkv.weight.json",
+      "sha256": "bb4c93493ddd222da1b52c319c6e08fb399ff9e38f6e1503e565d0903d384fff"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/model-math002/cpu-native-initial-transformer.h.0.attn.dkv.weight.json",
+      "sha256": "1ba7eab17c0ea63ef920d61ca2d918757bf3d0a752511656749f8a57e9b5eab2"
+    }
+  ],
+  "limitations": "No claim to have reproduced the failed update or proven its entire cause; no old model, gradients, optimizer or failure was rerun.",
+  "no_candidate_or_optimizer_execution": true,
+  "recovery": "Keep independent forward/loss/gradient comparisons unchanged. In a separately identified fresh proof, copy the actual already-checked gradients to reference leaves immediately before update tests. Compare identical-input updates and states under unchanged tolerances; preserve this failed original.",
+  "shape": [
+    64,
+    256
+  ],
+  "supported_fact": "Both optimizer arms received different gradients; installed Muon source casts its input to BF16 before Newton-Schulz. Saved gradients cross BF16 rounding boundaries.",
+  "update_failure_examples": [
+    {
+      "actual": 0.022275540977716446,
+      "index": 38,
+      "initial_actual": 0.02264408767223358,
+      "initial_reference": 0.02264408767223358,
+      "reference": 0.022281398996710777,
+      "threshold": 4.891255959868431e-06
+    },
+    {
+      "actual": 0.02034812606871128,
+      "index": 296,
+      "initial_actual": 0.02057885378599167,
+      "initial_reference": 0.02057885378599167,
+      "reference": 0.020353009924292564,
+      "threshold": 4.814120396971703e-06
+    },
+    {
+      "actual": 0.01832624338567257,
+      "index": 391,
+      "initial_actual": 0.018727757036685944,
+      "initial_reference": 0.018727757036685944,
+      "reference": 0.018334055319428444,
+      "threshold": 4.7333622127771375e-06
+    },
+    {
+      "actual": -0.018774857744574547,
+      "index": 500,
+      "initial_actual": -0.018556244671344757,
+      "initial_reference": -0.018556244671344757,
+      "reference": -0.018769973888993263,
+      "threshold": 4.75079895555973e-06
+    },
+    {
+      "actual": 0.014037290588021278,
+      "index": 505,
+      "initial_actual": 0.01430182158946991,
+      "initial_reference": 0.01430182158946991,
+      "reference": 0.014043150469660759,
+      "threshold": 4.56172601878643e-06
+    },
+    {
+      "actual": 0.019423553720116615,
+      "index": 2903,
+      "initial_actual": 0.019063368439674377,
+      "initial_reference": 0.019063368439674377,
+      "reference": 0.019429411739110947,
+      "threshold": 4.777176469564438e-06
+    },
+    {
+      "actual": 0.018279336392879486,
+      "index": 3482,
+      "initial_actual": 0.01800893247127533,
+      "initial_reference": 0.01800893247127533,
+      "reference": 0.018273476511240005,
+      "threshold": 4.7309390604496e-06
+    },
+    {
+      "actual": 0.013429451733827591,
+      "index": 6845,
+      "initial_actual": 0.013115786015987396,
+      "initial_reference": 0.013115786015987396,
+      "reference": 0.013423592783510685,
+      "threshold": 4.536943711340427e-06
+    },
+    {
+      "actual": -0.015238888561725616,
+      "index": 8199,
+      "initial_actual": -0.01560896635055542,
+      "initial_reference": -0.01560896635055542,
+      "reference": -0.01523302961140871,
+      "threshold": 4.609321184456348e-06
+    },
+    {
+      "actual": -0.029117560014128685,
+      "index": 8203,
+      "initial_actual": -0.02931072562932968,
+      "initial_reference": -0.02931072562932968,
+      "reference": -0.029111700132489204,
+      "threshold": 5.164468005299569e-06
+    },
+    {
+      "actual": 0.010875629261136055,
+      "index": 8281,
+      "initial_actual": 0.011073559522628784,
+      "initial_reference": 0.011073559522628784,
+      "reference": 0.010870746336877346,
+      "threshold": 4.434829853475094e-06
+    },
+    {
+      "actual": 0.022052118554711342,
+      "index": 8383,
+      "initial_actual": 0.02221263200044632,
+      "initial_reference": 0.02221263200044632,
+      "reference": 0.022047236561775208,
+      "threshold": 4.881889462471009e-06
+    },
+    {
+      "actual": -0.026375027373433113,
+      "index": 8394,
+      "initial_actual": -0.02609729766845703,
+      "initial_reference": -0.02609729766845703,
+      "reference": -0.026380887255072594,
+      "threshold": 5.0552354902029035e-06
+    },
+    {
+      "actual": -0.01467311754822731,
+      "index": 8422,
+      "initial_actual": -0.014544107019901276,
+      "initial_reference": -0.014544107019901276,
+      "reference": -0.014677999541163445,
+      "threshold": 4.587119981646538e-06
+    },
+    {
+      "actual": 0.0212713535875082,
+      "index": 8427,
+      "initial_actual": 0.02157733589410782,
+      "initial_reference": 0.02157733589410782,
+      "reference": 0.02126549370586872,
+      "threshold": 4.850619748234749e-06
+    },
+    {
+      "actual": 0.038274526596069336,
+      "index": 11197,
+      "initial_actual": 0.03858739137649536,
+      "initial_reference": 0.03858739137649536,
+      "reference": 0.038280386477708817,
+      "threshold": 5.531215459108352e-06
+    }
+  ],
+  "update_max_abs": 7.811933755874634e-06
+}
