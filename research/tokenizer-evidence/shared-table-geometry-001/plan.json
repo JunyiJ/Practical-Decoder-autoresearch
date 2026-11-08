@@ -1,0 +1,79 @@
+{
+  "config_sha256": "5ff75a0723a8f0ed16005b3f911b6aa26d1c9ba340e8cb459121931050067a50",
+  "hypothesis": "If forced role sharing is associated with unusual rare-token endpoint disagreement, matched input/output alignment and shared-to-matched role distances should be unusually poor in1-9frequency targets. Report every bin and seed; absence of such a pattern weakens this geometric explanation. No geometry outcome can establish a causal gradient mechanism or qualify a new model.",
+  "kind": "new_read_only_shared_table_geometry_v1",
+  "limitations": [
+    "Within-model role comparisons are endpoint geometry, not gradients or causal errors.",
+    "Cross-model coordinates may evolve differently despite shared initialization; cosine distance is not a functional equivalence test.",
+    "Input norms are divided by k=1/sqrt192 in both matched and shared models; compare matching roles and report scaling explicitly.",
+    "Unweighted vocabulary rows include many tokens never appearing in validation; separate target-weighted summaries prevent silently equating these populations.",
+    "Exploratory analysis after overall quality and frequency losses are known; no subgroup hypothesis test or new adoption gate."
+  ],
+  "new_random_roles": [],
+  "pairs": [
+    {
+      "initializer": 62101800001,
+      "matched": {
+        "exact_readback": true,
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-anchored-tying-001/01/h200.pt",
+        "sha256": "a7739419fe0b721215a91da9c2b3e8010398850d68faff94bf98562271a33bfc",
+        "size": 114064835
+      },
+      "tied": {
+        "exact_readback": true,
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-anchored-tying-001/02/h200.pt",
+        "sha256": "7bcbd28fe5bf5c4bc9ee7d619eea253366e6df980632340504bf635c247d3654",
+        "size": 62601414
+      }
+    },
+    {
+      "initializer": 62101900001,
+      "matched": {
+        "exact_readback": true,
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-anchored-tying-001/03/h200.pt",
+        "sha256": "d0bce39c31ee0dc3be969abcb9ca26809f7ebf7d51563d6fbe54dad1fbddc60e",
+        "size": 114064835
+      },
+      "tied": {
+        "exact_readback": true,
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-anchored-tying-001/04/h200.pt",
+        "sha256": "cc3a41cb42307194ff8d76b13e3fe5c25900d66ac4401fef3d8a33847efced53",
+        "size": 62601414
+      }
+    },
+    {
+      "initializer": 62102000001,
+      "matched": {
+        "exact_readback": true,
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-anchored-tying-001/08/h200.pt",
+        "sha256": "ea00e83b8bd4a1559187e1b222dd1a0c45b0f8c9b585fbc01c1f92e1d35e27d5",
+        "size": 114064835
+      },
+      "tied": {
+        "exact_readback": true,
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/output-anchored-tying-001/06/h200.pt",
+        "sha256": "f85e3ea42a3979d30a46a5b3b885e749de2dee175b29f21d3d6a56f3a97c5187",
+        "size": 62601414
+      }
+    }
+  ],
+  "panel_plan_sha256": "cc34e2b43349f2281b4a13303080b689bb34fb0ebe4060934a573dfc105921b6",
+  "resources": {
+    "cpu_threads": 4,
+    "estimated_rss_bytes": 1073741824,
+    "estimated_seconds": 15,
+    "free_bytes": 13700763648,
+    "metadata_cap_bytes": 4194304,
+    "new_weight_bytes": 0,
+    "reserve_bytes": 8589934592,
+    "rss_limit_bytes": 2147483648,
+    "timeout_seconds": 120
+  },
+  "review_sha256": "59c707560caa44105f5f26d7651d58f93439ea53eba850785cca9ccb10ebf70b",
+  "scientific_panel_changed": false,
+  "scope": "Allthree accepted matched/shared H200 pairs; original training-frequency bins; FP64 CPU row norms/angles in1024-row chunks; unweighted vocabulary-type and validation-target-weighted summaries. No model construction, initializer replay, training, inference or new scoring.",
+  "sources": {
+    "research/shared_table_geometry_v1.py": "716d4a464ca6f608ed63dec8027afe01edea19109ee451a2e2896a524d9886d0",
+    "src/research/cpu_prerequisite_guard.py": "0404ddd2eb8a3e0e6c34deded6fbfb3398e363ac8d553e87a664f4d858436387"
+  }
+}
