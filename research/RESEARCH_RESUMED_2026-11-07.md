@@ -18,8 +18,11 @@ No training was repeated and no checkpoint was rewritten.
 The new `quality-recovery002` plan imports slots00..02 and runs only original
 unattempted slots03..08. Plan SHA:
 `2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
-Dispatcher PID70581 / exec53076 and slot03 linear worker70585 are live; 14 updates
-were observed. Prior exec99662 is terminal failed. Do not restart on an observation
+Dispatcher PID70581 / exec53076 and slot04 tanh worker74506 are live; 48 updates
+were observed. Four runs are accepted. Slot03 completed with H200 CE4.654480826,
+mean CPU/MPS error1.992096e-8 and max target error2.288819e-5, passing the
+original limits in a newly trained run of the corrected executor.
+Prior exec99662 is terminal failed. Do not restart on an observation
 timeout or resume a superseded dispatcher. The source/count-derived sampler
 limitation applies explicitly to slots00 and02; slot01's observed digest is kept.
 
@@ -34,6 +37,15 @@ After full completion, run:
 `PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
 The independent reviewer covers imported evidence, original primary-score identity,
 fixed comparisons, numerical checks and corrected resource accounting.
+
+The [first-bundle analysis](tokenizer-evidence/byte-context-transform-001/first-bundle-analysis001/analysis.md)
+is complete using immutable logs/reports only. Tanh's late training loss remains
+higher, its H200 score is worse than its final online score, and two saved-weight
+windows have mean local tanh derivatives near.15–.16. These are limited,
+descriptive findings, not causal evidence for an initialization or EMA change.
+Primary literature and contrary applicability limits are recorded. Actual
+training consumed84.35% of the first three guarded runs; scheduled online scoring
+consumed10.28%. No further model experiment is selected by this analysis.
 
 The public [RMSNorm inference repair](FP32_RMSNORM_INFERENCE_REPAIR.md) remains
 prepared but unqualified and unadopted. After the panel/review release the shared
