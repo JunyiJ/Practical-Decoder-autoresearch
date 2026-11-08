@@ -217,13 +217,32 @@ finished in 3,793.685 seconds with 916,193,280 bytes peak RSS. Its retained RAW/
 pair totals 318,299,422 bytes. All saved-result acceptance checks passed.
 
 At LR 0.00125, raw-minus-control CE is -0.08531516730011468 nat/token with matching
-final train/validation sampler hashes. This is one paired screening comparison,
-not fresh confirmation or a tuned native-relative gain. Five of 18 trajectories
-are accepted; no rate has been selected. The controller automatically started
-slot05, native at LR 0.00125, PID 15903. Its process and first updates were observed.
-Recheck the live session and current slot before acting on these recorded IDs.
+final train/validation sampler hashes. The subsequent [slot05 native baseline](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/05/acceptance.json)
+is now accepted after all 1,200 updates, 41 averaging snapshots and 34,278 validation
+targets. Its full validation CE is 4.695642038340503 and BPB 2.081948249007118.
+Its finished guard recorded 926.216 seconds and 1,294,925,824 bytes peak RSS;
+the retained RAW/H200 pair totals 563,319,826 bytes.
 
-Follow the existing live controller (session22743, PID17021) through slot05
+The two complete screening rates now give the following full validation scores:
+
+| Learning rate | Native | Real bytes | Nonlexical codes | Bytes minus native |
+|---|---:|---:|---:|---:|
+| 0.000625 | 4.896434 | 5.039636 | 5.098909 | +0.143202 |
+| 0.00125 | 4.695642 | 4.637746 | 4.723061 | -0.057896 |
+
+At LR 0.00125, raw-minus-native CE is -0.0578962441721842 nat/token. Final
+train/validation sampler hashes match across all six completed screens. The
+ranking reversed between the first two rates, illustrating learning-rate
+sensitivity. These rates use the same screening bundle, not independent fresh
+confirmations. No rate is selected and no final quality gain is established.
+
+Six of 18 trajectories are accepted. The controller automatically started slot06,
+nonlexical codes at LR 0.0025, PID 21496; its process and first updates were
+observed. Complete the three remaining screens before selecting any arm's rate,
+then run all three original fresh paired bundles. Recheck the live session and
+current slot before acting on these recorded process IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot06
 and subsequent saved slot acceptances, complete
 screen selection, fresh confirmation and final statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
