@@ -67,8 +67,9 @@ panel without rewriting the original failure or its scientific rules.
 
 ## Current implementation improvement and next executable action
 
-The [optimized recipe](tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json)
-is now the active equivalent implementation of the adopted raw-byte model.
+The [hash-only recipe](tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json)
+was the first adopted equivalent implementation; the current batched-finite
+recipe is recorded below.
 It keeps the same mathematical model, parameter count, first-fresh checkpoint,
 artifact formats and quality evidence. The loader is
 `research.byte_input_checkpoint_consumer_v2.load`, with the recipe's implementation,
@@ -113,14 +114,34 @@ nested hashing; these overlapping times must not be added. Repeated scalar
 validation is a plausible remaining overhead. Data checks used only0.0153seconds.
 The profile does not attribute GPU kernels or establish sustained throughput.
 
-Next execute a bounded actual-model CPU/MPS validation timing and nonfinite
-rejection/restoration comparison for the isolated
-[batched-finite candidate](byte_input_batched_finite_v1.py). It preserves every
-parameter predicate and all other checks, combining finite Boolean results before
-one host read. Its exact method/source mapping is in finite-batch-source001;
-runtime correctness and speed are not yet established. No worker is currently
-active. The adopted direct-hash recipe remains unchanged. Do not replay the quality
-panel, weaken the failed cropping gate, or replay closed fixtures.
+The [batched-finite implementation](tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/README.md)
+is now adopted. The active recipe is
+[finite-batch-adoption001/recipe.json](tokenizer-evidence/byte-composition-boundary-001/finite-batch-adoption001/recipe.json),
+using checkpoint_consumer_v3 with bound implementation/plan/acceptance receipts.
+It retains the same selected weights, mathematical model and scientific evidence.
+Sources are model-v5/state-v4/training-v4/inference-v3/cache-v3. All finite/content/
+structural checks remain, with105 parameter predicates aggregated before one host
+Boolean read. The prior hash-only recipe remains immutable historical evidence.
+
+The fixed validator comparison passed20 invalid-state rejections/restorations.
+MPS validation median fell68.080ms to46.628ms; CPU timing was essentially unchanged.
+The integrated exact output/gradient/cache/state comparison passed, but its two
+MPS updates showed no overall gain (0.9944x). That contrary result remains preserved.
+
+A separate prospective warmed/interleaved comparison completed20 paired updates,
+four warmups plus16 measurements, with fresh roles62100900001/2. Median candidate/
+reference latency0.919603 (8.04% lower),15/16 paired wins, and phase medians below1
+passed the predeclared5%/12wins/no-phase-regression gate. All20 paired histories
+and full final parameter/optimizer/averaging/sampler/scheduler/RNG states matched
+exactly. This is local short-recipe timing, not a confidence interval or1200-step
+throughput claim. Integration roles62100800001/2 and timing roles62100900001/2 are
+reserved/closed. The public loader succeeded on MPS in1.3249seconds.
+
+Next inspect the unchanged optimizer._validate_state path, using the existing
+profile, for a bounded finite/nonnegative aggregation comparison. Preserve every
+state/ownership/structural check and failure-before-mutation behavior. No worker
+is active. Do not weaken the closed cropping gate, replay the quality panel, or
+retry timing until it becomes favorable.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current

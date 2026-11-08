@@ -1,0 +1,72 @@
+{
+  "basis": "Complete validation improved1.46x on MPS, but the separate two-update integration comparison showed0.994x total (no speedup). Preserve both observations. This different timing design tests warmed interleaved execution instead of treating startup-inclusive sequential timings as sustained throughput.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json",
+      "sha256": "ebb07a2f0e42a5bc87a9c36083ce27dd8c954b19feed970adff88d8dd68090e2",
+      "size": 14101
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-integration-source001/source-map.json",
+      "sha256": "1526cdeed3482dc7bec207ebe050529b63b2e47c4a5f477286dbd6f9757694e7",
+      "size": 13063
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-integration-runtime001/result.json",
+      "sha256": "5be944f2cadf2132c426f349f20993d400133ca5af8f470893d2f290303500da",
+      "size": 2622
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-runtime001/result.json",
+      "sha256": "af1a1b58119e1a9556b5f459be00770623e6a2c07871d1cdf2043a9a9127215d",
+      "size": 4642
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v1.py",
+      "sha256": "fa2bb6b4023c6232a6e4a0927c73adfa34dfd2fca157a769cec2663e293e16ba",
+      "size": 4550
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    }
+  ],
+  "design": "Two simultaneous MPS contexts from the same accepted H200, LR.0025 and unchanged20-update fixture recipe. Alternate per-pair order through all20 updates; first4pairs warmup, next16 measured. Match every step history and complete final parameter/optimizer/averaging/sampler/scheduler/RNG state. Check before/with averaging phases separately.",
+  "fresh_sampler_roles": {
+    "train_sampler": 62100900001,
+    "validation_sampler": 62100900002
+  },
+  "implementations": {
+    "batched": {
+      "inference": "byte_input_inference_v3",
+      "model": "byte_input_model_v5",
+      "training": "byte_input_training_v4"
+    },
+    "reference": {
+      "inference": "byte_input_inference_v2",
+      "model": "byte_input_model_v4",
+      "training": "byte_input_training_v3"
+    }
+  },
+  "interpretation_limits": [
+    "One local paired numerical trajectory, not independent trained seeds or a formal throughput confidence interval.",
+    "New prospective warmed/interleaved question; do not replace or pool earlier unfavorable two-step measurements.",
+    "Twenty-update fixture has different averaging cadence from1200-step quality training; report both phases and limit scope.",
+    "No new model-quality evaluation, holdout scoring, checkpoint output, or frozen scientific comparison change.",
+    "If this prospective timing gate fails, leave the adopted baseline unchanged rather than retrying until a favorable timing appears."
+  ],
+  "kind": "interleaved_warmed_finite_batch_training_comparison",
+  "prospective_gate": "All exact histories/endpoints pass; median of16 candidate/reference latency ratios <=.95, at least12/16 faster, and neither phase median above1.0. No threshold change, seed search or repeated timing trial after seeing this result.",
+  "resource_budget": {
+    "metadata_upper_bytes": 4194304,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_bytes": 0,
+    "numerical_updates": 40,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 180
+  },
+  "role_audit": "Exact rg search across research/research_state JSON/JSONL/Python/Markdown found neither role before freeze. Historical model/composer roles only reconstruct accepted weights; new matched numerical trajectory for this timing question.",
+  "runner_sha256": "5c90deae753f21819ddac67970f8d0459f54e59c3d99765ee445e1cda25ffc6a"
+}

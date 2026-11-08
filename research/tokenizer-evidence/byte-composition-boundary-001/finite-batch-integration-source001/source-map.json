@@ -1,0 +1,145 @@
+{
+  "component_evidence": {
+    "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-runtime001/result.json",
+    "sha256": "af1a1b58119e1a9556b5f459be00770623e6a2c07871d1cdf2043a9a9127215d",
+    "size": 4642
+  },
+  "kind": "batched_finite_additive_integration",
+  "pairs": [
+    {
+      "candidate": {
+        "path": "research/byte_input_model_v5/__init__.py",
+        "sha256": "4c82c81ea7d4d8014783e8e1803788c5dc8b7a003bb719890788f2995eea393b",
+        "size": 416
+      },
+      "exact_replacements": [],
+      "original": {
+        "path": "research/byte_input_model_v4/__init__.py",
+        "sha256": "4c82c81ea7d4d8014783e8e1803788c5dc8b7a003bb719890788f2995eea393b",
+        "size": 416
+      }
+    },
+    {
+      "candidate": {
+        "path": "research/byte_input_model_v5/model.py",
+        "sha256": "f8ea081d9b4dea8c860a6058cb16d95e9960a80cd34a418431ecaa66b78fca56",
+        "size": 12969
+      },
+      "exact_replacements": [
+        [
+          "    def validate(self):\n        C.require(C.signature(self.spec) == self._identity and\n                  C.same_typed(self.config, C.model_config(self.spec)), 'Changed own model identity/config')\n        C.require(C.same_typed(OmegaConf.to_container(self._native_cfg, resolve=True), C.native_model()),\n                  'Changed true native initializer recipe')\n        expected_modules = {'native'} if self.spec.variant == 'native' else {'blocks', 'final_norm', 'readout', 'composer'}\n        C.require(set(self._modules) == expected_modules and not self._parameters,\n                  'Foreign root module/hidden parameter')\n        modules = tuple(self.named_modules())\n        C.require(len(modules) == len(self._own_module_bindings) and\n                  all(n == old and m is original for (n, m), (old, original) in zip(modules, self._own_module_bindings)),\n                  'Foreign or replaced common/composer modules')\n        for _, module in modules:\n            C.require(module.training == self.training and not module._forward_hooks and\n                      not module._forward_pre_hooks and not module._backward_hooks and\n                      not module._backward_pre_hooks, 'Consistent mode and no hooks required')\n        C.require(C.same_typed(self._semantic_inventory(), self._own_semantics), 'Changed body/composer scalar policy')\n        items = self.ordered_parameters()\n        tensors, elements, _, _ = C.counts(self.spec.variant)\n        C.require(len(items) == tensors and sum(p.numel() for _, p in items) == elements and\n                  tuple((n, tuple(p.shape)) for n, p in items) == self._own_parameter_inventory,\n                  'Exact full own parameter inventory')\n        C.require(len(items) == len(self._own_parameter_bindings) and\n                  all(n == old and p is original for (n, p), (old, original) in zip(items, self._own_parameter_bindings)),\n                  'Replaced/reordered parameter objects')\n        registered = tuple(self.parameters())\n        C.require(len(registered) == tensors and {id(p) for p in registered} == {id(p) for _, p in items},\n                  'Registered and canonical coverage differ')\n        device = items[0][1].device\n        C.require(device.type in ('cpu', 'mps') and not torch.is_autocast_enabled('cpu')\n                  and not torch.is_autocast_enabled('mps'), 'CPU/MPS FP32 without autocast required')\n        addresses = []\n        for _, p in items:\n            C.require(type(p) is nn.Parameter and p.device == device and p.dtype == torch.float32\n                      and p.layout == torch.strided and p.is_leaf and p.requires_grad\n                      and bool(torch.isfinite(p).all()), 'Finite dense trainable FP32 parameters')\n            addresses.append(p.untyped_storage().data_ptr())\n        buffers = tuple(self.named_buffers())\n        C.require(tuple((n, tuple(x.shape), x.dtype) for n, x in buffers) == self._own_buffer_inventory and\n                  len(buffers) == len(self._own_buffer_bindings) and\n                  all(n == old and x is original for (n, x), (old, original) in zip(buffers, self._own_buffer_bindings)),\n                  'Foreign/replaced buffer identity or inventory')\n        for name, value in buffers:\n            C.require(value.device == device and value.layout == torch.strided and value.is_contiguous(),\n                      'Own same-device constant buffers')\n            C.require(self._buffer_digest(value) == self._own_expected_buffer_hashes[name], 'Codebook bytes differ or common buffer mutated')\n            addresses.append(value.untyped_storage().data_ptr())\n        C.require(len(set(addresses)) == len(addresses), 'Aliased parameter/buffer storage')\n        if self.spec.variant == 'native':\n            C.require(type(self.native) is Native, 'Genuine native child only')\n        else:\n            C.require(type(self.composer) is ByteComposer and len(self.blocks) == 4, 'Qualified component and four native blocks')\n            self.composer.validate()\n        return device\n",
+          "    def validate(self):\n        C.require(C.signature(self.spec) == self._identity and\n                  C.same_typed(self.config, C.model_config(self.spec)), 'Changed own model identity/config')\n        C.require(C.same_typed(OmegaConf.to_container(self._native_cfg, resolve=True), C.native_model()),\n                  'Changed true native initializer recipe')\n        expected_modules = {'native'} if self.spec.variant == 'native' else {'blocks', 'final_norm', 'readout', 'composer'}\n        C.require(set(self._modules) == expected_modules and not self._parameters,\n                  'Foreign root module/hidden parameter')\n        modules = tuple(self.named_modules())\n        C.require(len(modules) == len(self._own_module_bindings) and\n                  all(n == old and m is original for (n, m), (old, original) in zip(modules, self._own_module_bindings)),\n                  'Foreign or replaced common/composer modules')\n        for _, module in modules:\n            C.require(module.training == self.training and not module._forward_hooks and\n                      not module._forward_pre_hooks and not module._backward_hooks and\n                      not module._backward_pre_hooks, 'Consistent mode and no hooks required')\n        C.require(C.same_typed(self._semantic_inventory(), self._own_semantics), 'Changed body/composer scalar policy')\n        items = self.ordered_parameters()\n        tensors, elements, _, _ = C.counts(self.spec.variant)\n        C.require(len(items) == tensors and sum(p.numel() for _, p in items) == elements and\n                  tuple((n, tuple(p.shape)) for n, p in items) == self._own_parameter_inventory,\n                  'Exact full own parameter inventory')\n        C.require(len(items) == len(self._own_parameter_bindings) and\n                  all(n == old and p is original for (n, p), (old, original) in zip(items, self._own_parameter_bindings)),\n                  'Replaced/reordered parameter objects')\n        registered = tuple(self.parameters())\n        C.require(len(registered) == tensors and {id(p) for p in registered} == {id(p) for _, p in items},\n                  'Registered and canonical coverage differ')\n        device = items[0][1].device\n        C.require(device.type in ('cpu', 'mps') and not torch.is_autocast_enabled('cpu')\n                  and not torch.is_autocast_enabled('mps'), 'CPU/MPS FP32 without autocast required')\n        addresses = []\n        finite_checks = []\n        for _, p in items:\n            C.require(type(p) is nn.Parameter and p.device == device and p.dtype == torch.float32\n                      and p.layout == torch.strided and p.is_leaf and p.requires_grad, 'Finite dense trainable FP32 parameters')\n            finite_checks.append(torch.isfinite(p).all())\n            addresses.append(p.untyped_storage().data_ptr())\n        C.require(bool(torch.stack(finite_checks).all()), 'Finite dense trainable FP32 parameters')\n        buffers = tuple(self.named_buffers())\n        C.require(tuple((n, tuple(x.shape), x.dtype) for n, x in buffers) == self._own_buffer_inventory and\n                  len(buffers) == len(self._own_buffer_bindings) and\n                  all(n == old and x is original for (n, x), (old, original) in zip(buffers, self._own_buffer_bindings)),\n                  'Foreign/replaced buffer identity or inventory')\n        for name, value in buffers:\n            C.require(value.device == device and value.layout == torch.strided and value.is_contiguous(),\n                      'Own same-device constant buffers')\n            C.require(self._buffer_digest(value) == self._own_expected_buffer_hashes[name], 'Codebook bytes differ or common buffer mutated')\n            addresses.append(value.untyped_storage().data_ptr())\n        C.require(len(set(addresses)) == len(addresses), 'Aliased parameter/buffer storage')\n        if self.spec.variant == 'native':\n            C.require(type(self.native) is Native, 'Genuine native child only')\n        else:\n            C.require(type(self.composer) is ByteComposer and len(self.blocks) == 4, 'Qualified component and four native blocks')\n            self.composer.validate()\n        return device\n"
+        ]
+      ],
+      "original": {
+        "path": "research/byte_input_model_v4/model.py",
+        "sha256": "5251e8d1c528ad9fe6cc7fb5d5adbd7d4820f4ea481aac7dc005f91b4fe5edd1",
+        "size": 12840
+      }
+    },
+    {
+      "candidate": {
+        "path": "research/byte_input_model_v5/optimizer.py",
+        "sha256": "40a23c3b33afdac68069ef99c1c483d72c25f7bc55b0b0c6d46a47f2e6024a08",
+        "size": 8342
+      },
+      "exact_replacements": [],
+      "original": {
+        "path": "research/byte_input_model_v4/optimizer.py",
+        "sha256": "40a23c3b33afdac68069ef99c1c483d72c25f7bc55b0b0c6d46a47f2e6024a08",
+        "size": 8342
+      }
+    },
+    {
+      "candidate": {
+        "path": "research/byte_input_state_v4.py",
+        "sha256": "d6da245b0f4a5b6c00cdb2a3aa9123bd63e9b8d5ad6aa96a6a39b7d9746b8b65",
+        "size": 12894
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v4 import",
+          "from research.byte_input_model_v5 import"
+        ]
+      ],
+      "original": {
+        "path": "research/byte_input_state_v3.py",
+        "sha256": "8189694d44b246973b6bc2182cfc1ae1208a707ff8f6f88d3949d2b70f38ac36",
+        "size": 12894
+      }
+    },
+    {
+      "candidate": {
+        "path": "research/byte_input_training_v4.py",
+        "sha256": "b6235fb65a3ba736876aba3dfb344a5ac457d38256a9e89db15bd58d567ca60a",
+        "size": 20156
+      },
+      "exact_replacements": [
+        [
+          "from research import byte_input_state_v3 as numerical",
+          "from research import byte_input_state_v4 as numerical"
+        ],
+        [
+          "from research.byte_input_model_v4 import",
+          "from research.byte_input_model_v5 import"
+        ]
+      ],
+      "original": {
+        "path": "research/byte_input_training_v3.py",
+        "sha256": "b2d1350e302ac93db2af63b12ea7139cdbeaa3cce606ddd1061a06c3ec8f03ad",
+        "size": 20156
+      }
+    },
+    {
+      "candidate": {
+        "path": "research/byte_input_inference_v3.py",
+        "sha256": "5d417a7ce6a82c418ed97338c6abb80ba86f4f8156b62edf03d8e19b863aa785",
+        "size": 10006
+      },
+      "exact_replacements": [
+        [
+          "from research import byte_input_training_v3 as training",
+          "from research import byte_input_training_v4 as training"
+        ],
+        [
+          "from research import byte_input_state_v3 as numerical",
+          "from research import byte_input_state_v4 as numerical"
+        ],
+        [
+          "from research.byte_input_model_v4 import",
+          "from research.byte_input_model_v5 import"
+        ]
+      ],
+      "original": {
+        "path": "research/byte_input_inference_v2.py",
+        "sha256": "7bf38499c492bbaee727dcecb27c3b79461311ba9c6d801aa5020294916729fe",
+        "size": 10006
+      }
+    },
+    {
+      "candidate": {
+        "path": "research/byte_input_cache_v3.py",
+        "sha256": "645d08a0b5671b56c4a93467bf2e0e8f6bbd3841aa418945d5c0218d64f3867e",
+        "size": 4534
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v4 import",
+          "from research.byte_input_model_v5 import"
+        ]
+      ],
+      "original": {
+        "path": "research/byte_input_cache_v2.py",
+        "sha256": "a1970584f3162eb4e22c9209a392827cd462e26e1435ea06b87a1332bf400679",
+        "size": 4534
+      }
+    }
+  ],
+  "prototype": {
+    "path": "research/byte_input_batched_finite_v1.py",
+    "sha256": "49d93576bc6ff617e17280fd879e8515be3b2cf565c57af051a10faba1d03f6d",
+    "size": 4719
+  },
+  "runtime_qualified": false,
+  "source_changes": "Only the checked complete validate override and imports routing new exact classes. All mathematical computations, content hashing, guards and artifact formats retained."
+}

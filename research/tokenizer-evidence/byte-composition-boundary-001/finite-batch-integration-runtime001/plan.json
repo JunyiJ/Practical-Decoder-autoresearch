@@ -1,0 +1,78 @@
+{
+  "acceptance": "Every compared output, gradient and complete state fingerprint exactly equal within each backend. No tolerance or favorable seed replacement. Prospective validation gain already passed in finite-batch-runtime001; end-to-end timings remain descriptive.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json",
+      "sha256": "ebb07a2f0e42a5bc87a9c36083ce27dd8c954b19feed970adff88d8dd68090e2",
+      "size": 14101
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-integration-source001/source-map.json",
+      "sha256": "1526cdeed3482dc7bec207ebe050529b63b2e47c4a5f477286dbd6f9757694e7",
+      "size": 13063
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-runtime001/result.json",
+      "sha256": "af1a1b58119e1a9556b5f459be00770623e6a2c07871d1cdf2043a9a9127215d",
+      "size": 4642
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v1.py",
+      "sha256": "fa2bb6b4023c6232a6e4a0927c73adfa34dfd2fca157a769cec2663e293e16ba",
+      "size": 4550
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    }
+  ],
+  "design": "Same accepted H200 per arm. Compare B1/B8 cached prefix96+continuation32 outputs/reset, B8T128 fixed-prefix logits/loss/all105 gradients, and complete captured/validated initial, step1 and step2 contexts under the four-step recipe with first averaged snapshot at step2. Eight numerical updates total, no quality scoring.",
+  "fresh_sampler_roles": {
+    "train_sampler": 62100800001,
+    "validation_sampler": 62100800002
+  },
+  "implementations": {
+    "direct_bytes": {
+      "cache": "byte_input_cache_v3",
+      "inference": "byte_input_inference_v3",
+      "model": "byte_input_model_v5",
+      "training": "byte_input_training_v4"
+    },
+    "reference": {
+      "cache": "byte_input_cache_v2",
+      "inference": "byte_input_inference_v2",
+      "model": "byte_input_model_v4",
+      "training": "byte_input_training_v3"
+    }
+  },
+  "interpretation_limits": [
+    "New integrated implementation and fresh sampler roles, not replay of the closed direct-hash comparison.",
+    "Two training-step timings per arm include optimizer allocation and initial averaging; not sustained throughput or confidence intervals.",
+    "No scientific quality campaign, disk checkpoint replay, holdout scoring or new quality claim.",
+    "Original exact-type guards, mathematical algorithms, content checks and formats remain unchanged through source mapping."
+  ],
+  "kind": "batched_finite_integrated_engineering_differential",
+  "labels": "direct_bytes is retained as the harness candidate key; both implementations already use direct-byte hashing. The only candidate change is aggregated parameter-finiteness predicates and exact class import routing.",
+  "orders": {
+    "cpu": [
+      "reference",
+      "direct_bytes"
+    ],
+    "mps": [
+      "direct_bytes",
+      "reference"
+    ]
+  },
+  "resource_budget": {
+    "metadata_upper_bytes": 16777216,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_archives": 0,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 180,
+    "total_numerical_updates": 8
+  },
+  "role_audit": "Exact rg search over research/research_state JSON,JSONL,Python,Markdown returned no occurrences before freeze. Historical model/composer roles reconstruct accepted weights; fresh numerical sampler trajectory mirrored across implementations and backends.",
+  "runner_sha256": "56c5cd83430ccd35afdb8cf7f884d239079a05bfa9c2feda93e1ba8f37e7210f"
+}

@@ -1,0 +1,50 @@
+{
+  "basis": "One warmed adopted MPS step spent0.3943s in six model.validate calls, including0.1966s nested hashing and0.1424s exclusive model.validate time. Aggregate same-device finite predicates to reduce potential scalar synchronization; profile does not establish kernel attribution.",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/direct-hash-adoption001/recipe.json",
+      "sha256": "ebb07a2f0e42a5bc87a9c36083ce27dd8c954b19feed970adff88d8dd68090e2",
+      "size": 14101
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/finite-batch-source001/source-map.json",
+      "sha256": "06f78df71144c5d68e47c982fed2dfe281405402416b3cfb6987dce02b9fc8a3",
+      "size": 1903
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/hash-baseline-profile001/result.json",
+      "sha256": "88180d535f6ea21c621120b83abace6e5f003a19118ae6ad8f970b25a134a9ea",
+      "size": 340777
+    },
+    {
+      "path": "research/byte_input_checkpoint_consumer_v1.py",
+      "sha256": "fa2bb6b4023c6232a6e4a0927c73adfa34dfd2fca157a769cec2663e293e16ba",
+      "size": 4550
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e",
+      "size": 2492
+    }
+  ],
+  "fixed_checks": "Same accepted slot10 weights on CPU/MPS. Both implementations must accept valid states, reject NaN/+Inf/-Inf at canonical parameter indices0/52/104, reject a frozen final parameter and mutated codebook, and accept restoration with all saved parameter bytes and RNG unchanged.",
+  "interpretation_limits": [
+    "Complete-validator timing only, not training or inference throughput.",
+    "Five paired repeats on one machine are descriptive, not a confidence interval.",
+    "Exact source mapping preserves all other predicates and model math; existing exact-type consumers reject this subclass pending integration.",
+    "Do not omit content or finite checks, relax rejection criteria, replace cases or repeat closed fixtures."
+  ],
+  "kind": "batched_parameter_finite_validation_comparison",
+  "prospective_integration_gate": "All correctness checks pass, and MPS median candidate latency at most90% of baseline with at least4/5 paired candidate calls faster. CPU timing reported without a speed claim. This is a local engineering filter, not a formal confidence test.",
+  "resource_budget": {
+    "metadata_upper_bytes": 1048576,
+    "mps_driver_bytes": 6442450944,
+    "new_weight_bytes": 0,
+    "reserve_bytes": 8589934592,
+    "rss_bytes": 4294967296,
+    "timeout_seconds": 90
+  },
+  "roles": "Historical model/composer identities solely reconstruct accepted weights; no new sampler/initializer search, optimizer step or quality evaluation.",
+  "runner_sha256": "4d6bb04c12f4875b99d307019641b87a9016d7ba1492319d7d2f40a2ebaa62d1",
+  "timing": "Two warmup complete validates, then five alternating paired complete validates per backend with synchronized MPS boundaries. Preserve every timing."
+}
