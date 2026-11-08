@@ -1,0 +1,192 @@
+{
+  "pairs": [
+    {
+      "original": {
+        "path": "research/byte_embedding_v1.py",
+        "size": 2469,
+        "sha256": "03e0d62804f77cea4be5eabc34f1f9e0e2e6cd6a52b5e7f2bb63fcae40ddd950"
+      },
+      "candidate": {
+        "path": "research/byte_embedding_active_rows_guarded_v1.py",
+        "size": 3705,
+        "sha256": "1fad4ac9ece54f7ef4bc96e0a894bf14d787c3992c69e2a1385adb89c4417f5a"
+      },
+      "exact_replacements": [
+        [
+          "        result = torch.zeros((259, 15), dtype=torch.float32, device=rows.device)\n        vocabulary = torch.arange(259, device=rows.device)",
+          "        active = torch.unique(indices.detach().to('cpu'), sorted=True).to(rows.device)\n        # Current-runtime diagnostic supports compact full chunks with M>=N=15.\n        # Keep the original full-row computation for every other shape.\n        if 15 <= active.numel() < 259 and indices.numel() >= CHUNK:\n            compact = torch.zeros((active.numel(), 15), dtype=torch.float32, device=rows.device)\n            full_end = (indices.numel() // CHUNK) * CHUNK\n            for start in range(0, full_end, CHUNK):\n                membership = (indices[start:start+CHUNK, None] == active[None, :]).float()\n                compact.add_(membership.T @ gradients[start:start+CHUNK])\n            result = torch.zeros((259, 15), dtype=torch.float32, device=rows.device)\n            result.index_copy_(0, active, compact)\n            if full_end < indices.numel():\n                vocabulary = torch.arange(259, device=rows.device)\n                membership = (indices[full_end:, None] == vocabulary[None, :]).float()\n                result.add_(membership.T @ gradients[full_end:])\n            return result, None\n        result = torch.zeros((259, 15), dtype=torch.float32, device=rows.device)\n        vocabulary = torch.arange(259, device=rows.device)"
+        ],
+        [
+          "KIND = 'rsi_byte_embedding_grouped_mps_v1'",
+          "KIND = 'rsi_byte_embedding_guarded_active_rows_mps_v1'"
+        ],
+        [
+          "MPS sums every fixed\nrow in ordered 2048-position chunks, without repeated-index atomic scatter.",
+          "This isolated candidate compacts supported full\nchunks and retains the original full-row computation for small active sets and\npartial chunks. It is unqualified until exact comparison. No atomic scatter is used."
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_composer_v2.py",
+        "size": 8009,
+        "sha256": "8e74a52d6bcfff46705caa0b6602fb860e71ab73eaf3c9115f00a343e0014988"
+      },
+      "candidate": {
+        "path": "research/byte_composer_v3.py",
+        "size": 8029,
+        "sha256": "a918c5f0323c26edd144551c208b0af64f5aa7893db9ad6c47ad57f4dfa9915c"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_embedding_v1 import embedding",
+          "from research.byte_embedding_active_rows_guarded_v1 import embedding"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_model_v6/__init__.py",
+        "size": 416,
+        "sha256": "4c82c81ea7d4d8014783e8e1803788c5dc8b7a003bb719890788f2995eea393b"
+      },
+      "candidate": {
+        "path": "research/byte_input_model_v7/__init__.py",
+        "size": 416,
+        "sha256": "4c82c81ea7d4d8014783e8e1803788c5dc8b7a003bb719890788f2995eea393b"
+      },
+      "exact_replacements": [],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_model_v6/model.py",
+        "size": 12862,
+        "sha256": "25c0baa141dffbd81f1c3159d328fc2567e581ff6c0d1e6caeaa7ce243fb02e3"
+      },
+      "candidate": {
+        "path": "research/byte_input_model_v7/model.py",
+        "size": 12862,
+        "sha256": "f46d7e5ec36a3c4a6b29b9dca099b4db3b90dfad0dedf0798c8753d190de4978"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_composer_v2 import ByteComposer",
+          "from research.byte_composer_v3 import ByteComposer"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_model_v6/optimizer.py",
+        "size": 8804,
+        "sha256": "8615085ae60c33299f56a7c0adea12f7953a9ebf9cc874da61427ad8b6122791"
+      },
+      "candidate": {
+        "path": "research/byte_input_model_v7/optimizer.py",
+        "size": 8804,
+        "sha256": "8615085ae60c33299f56a7c0adea12f7953a9ebf9cc874da61427ad8b6122791"
+      },
+      "exact_replacements": [],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_state_v6.py",
+        "size": 12894,
+        "sha256": "1a5719aa351dbc85584762015c7f740178e31a752c90f751204c872cf7b45caf"
+      },
+      "candidate": {
+        "path": "research/byte_input_state_v7.py",
+        "size": 12894,
+        "sha256": "9d155f2612f80858b6b4c48e4904441970ab3d9d98b0e0c50a701f9f60517a26"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v6 import ByteInputModel, ByteInputOptimizer",
+          "from research.byte_input_model_v7 import ByteInputModel, ByteInputOptimizer"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_training_v6.py",
+        "size": 20156,
+        "sha256": "c6cc7416c2572d01452fdf624c484b19547ec62ee2c67cc086fa9def080d8f19"
+      },
+      "candidate": {
+        "path": "research/byte_input_training_v7.py",
+        "size": 20156,
+        "sha256": "c1ac0bab25f62adb0ee45531a795dea6fd94faf81ffb8ae6a92b658c1ebf8593"
+      },
+      "exact_replacements": [
+        [
+          "from research import byte_input_state_v6 as numerical",
+          "from research import byte_input_state_v7 as numerical"
+        ],
+        [
+          "from research.byte_input_model_v6 import ByteInputModel, ByteInputOptimizer",
+          "from research.byte_input_model_v7 import ByteInputModel, ByteInputOptimizer"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_inference_v5.py",
+        "size": 10006,
+        "sha256": "2d2179f5a102ca2727333c32f83a9774368b2168dcf69cc77589530d321d25be"
+      },
+      "candidate": {
+        "path": "research/byte_input_inference_v6.py",
+        "size": 10006,
+        "sha256": "eeceb1df68587bbf569f956307245892192326ab3b1f83ecd4f469ce9e253f4f"
+      },
+      "exact_replacements": [
+        [
+          "from research import byte_input_training_v6 as training",
+          "from research import byte_input_training_v7 as training"
+        ],
+        [
+          "from research import byte_input_state_v6 as numerical",
+          "from research import byte_input_state_v7 as numerical"
+        ],
+        [
+          "from research.byte_input_model_v6 import ByteInputModel, Spec",
+          "from research.byte_input_model_v7 import ByteInputModel, Spec"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    },
+    {
+      "original": {
+        "path": "research/byte_input_cache_v4.py",
+        "size": 4534,
+        "sha256": "0a639c99fc78a692515c46482d57752fc61424ab1b2d218aa104e79f0a7de8f9"
+      },
+      "candidate": {
+        "path": "research/byte_input_cache_v5.py",
+        "size": 4534,
+        "sha256": "7d0b40d5d6fd9825299e4e03a053b86bb28c5efe43b467d43685eb74d7d03ed2"
+      },
+      "exact_replacements": [
+        [
+          "from research.byte_input_model_v6 import ByteInputModel",
+          "from research.byte_input_model_v7 import ByteInputModel"
+        ]
+      ],
+      "reverse_mapping_exact": true
+    }
+  ],
+  "primitive_evidence": {
+    "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-guarded-runtime001/result.json",
+    "size": 265725,
+    "sha256": "09be8ea06f41815c73eb1d0485d23f254c8a720c8b5c26304277dfcb8c0c728d"
+  },
+  "runtime_qualified": false,
+  "forward_optimizer_artifact_math_unchanged": true
+}

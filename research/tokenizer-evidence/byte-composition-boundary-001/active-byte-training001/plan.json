@@ -1,0 +1,81 @@
+{
+  "kind": "guarded_active_rows_full_model_gradient_training_cache_resume_comparison",
+  "runner_sha256": "04050c6cd36aa142ebfd04a524a48822d896a059992f5cb0a456db96174a0a2f",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/recipe.json",
+      "size": 16345,
+      "sha256": "17b6dbc53c51ae987b01d016d7aab079ebcb93e77135ecb7501900c8364dd845"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-integration-source001/source-map.json",
+      "size": 8034,
+      "sha256": "27f9a1f3feb4b0cdd4df6c402c16ca243acbdb9b0cfcc0f77171e4ea65026866"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-guarded-runtime001/result.json",
+      "size": 265725,
+      "sha256": "09be8ea06f41815c73eb1d0485d23f254c8a720c8b5c26304277dfcb8c0c728d"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-guarded-runtime001/guard.json",
+      "size": 402,
+      "sha256": "a6c9732929c284fa440e24284e8d284fc4737a6c355adface7814dfc05e13581"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/result.json",
+      "size": 2282,
+      "sha256": "7178b0b5710a02680c8c02260ee1d885aaf55da77295cc65a4ac10937588f6f2"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "basis": "New shape-guarded primitive passed281 exact CPU/MPS comparisons including original failed inputs, boundary counts, and every active count1..259 with full-plus-tail inputs. Representative component median ratio0.417041,7/7wins. No claim yet about actual neural upstream or training.",
+  "implementations": {
+    "reference": {
+      "training": "byte_input_training_v6",
+      "optimizer": "byte_input_model_v6",
+      "inference": "byte_input_inference_v5",
+      "cache": "byte_input_cache_v4"
+    },
+    "batched": {
+      "training": "byte_input_training_v7",
+      "optimizer": "byte_input_model_v7",
+      "inference": "byte_input_inference_v6",
+      "cache": "byte_input_cache_v5"
+    }
+  },
+  "fresh_sampler_roles": {
+    "cpu": {
+      "train_sampler": 62101500001,
+      "validation_sampler": 62101500002
+    },
+    "mps": {
+      "train_sampler": 62101600001,
+      "validation_sampler": 62101600002
+    }
+  },
+  "roles_audit": "Exact search across research/research_state JSON,Python,Markdown before preparation found no62101500001/2 or62101600001/2. Reserve/close roles with this comparison.",
+  "correctness": "Same accepted H200. CPU/MPS cached B1/B8 96prefix+32continuation/reset; B8T128 full logits/loss/all105 parameter gradients; CPU update1/2 complete states plus restored1->2; MPS20 histories and full final state all bit-exact. Gradient-only passes do not update weights.",
+  "timing": "MPS alternating order,4 warmup pairs plus16 measured. CPU correctness timings descriptive only. Same20-update recipe and eight averaging snapshots as earlier finite-batch comparison, but fresh samplers and different implementation contrast.",
+  "prospective_gate": "All correctness checks; median MPS per-pair candidate/reference<=.95, at least12/16 faster, neither pre-averaging5-12 nor averaging13-20 median regresses. No retry or altered cases.",
+  "resource_budget": {
+    "timeout_seconds": 180,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 8388608,
+    "free_bytes": 15440617472
+  },
+  "interpretation_limits": [
+    "New implementation; original failed compact prototype remains closed.",
+    "Shape rule is qualified only through recorded runtime/source/cases; no universal future-backend guarantee.",
+    "One short local warmed trajectory, not1200-step speed, confidence interval or quality gain.",
+    "45 actual updates plus four full-model gradient-only passes; no quality evaluation or new weights.",
+    "Do not multiply separate earlier speedups."
+  ]
+}

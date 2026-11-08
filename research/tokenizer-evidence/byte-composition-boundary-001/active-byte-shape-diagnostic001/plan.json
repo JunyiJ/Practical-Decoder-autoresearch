@@ -1,0 +1,56 @@
+{
+  "kind": "separate_matrix_shape_and_stride_numerical_diagnostic",
+  "runner_sha256": "4845dbe11bd02264597e990e33aeb03002306ad7ed9d3ab350773595577987fd",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/source-notes.json",
+      "size": 1266,
+      "sha256": "c481aad5e91853ec50dfb410cec9be3ee6629c768a694fb236ff8d659fd66fa0"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-runtime001/result.json",
+      "size": 14348,
+      "sha256": "58e171afee10d4fff3fb3966c888b59321e3a3afd9f938c2bb162a4483e4a50c"
+    },
+    {
+      "path": "research/byte_embedding_v1.py",
+      "size": 2469,
+      "sha256": "03e0d62804f77cea4be5eabc34f1f9e0e2e6cd6a52b5e7f2bb63fcae40ddd950"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "torch_version": "2.14.1",
+  "torch_commit": "5c4886908584029761b579af026dcfb627c84070",
+  "reduction_lengths": [
+    1,
+    17,
+    2048
+  ],
+  "patterns": [
+    "balanced",
+    "amplified"
+  ],
+  "fixed_design": "Every output-row count1..259 for each K and pattern. Full259-row reference vs compact allocation vs prefix view preserving original259leading stride. Logical matrix entries identical. One-hot rows cycle modulo count. Upstream ((q*29+7)%1021-510)/1009, optionally multiplied16 at q%101==0. Full empty-row bytes must be zero.",
+  "rationale": "Separate output-shape changes from memory-layout changes following a closed exact-gradient failure. K=2048 matches original chunk, K=1 isolates tail/scalar behavior, K=17 is a new nonaligned short reduction. Full row-count coverage avoids choosing a favorable cutoff after looking.",
+  "prospective_analysis": "Report all1554 cases and3108 comparisons, every mismatching row count per K/pattern and maximum error. No pass threshold, tolerance, implementation adoption, timing claim or adaptive rerun. This diagnostic cannot qualify a fallback threshold by itself.",
+  "resource_budget": {
+    "timeout_seconds": 180,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 8388608,
+    "free_bytes": 15439265792
+  },
+  "roles": "Deterministic synthetic matrix products; no model, initializer, sampler roles or random draws.",
+  "interpretation_limits": [
+    "Not a replay of the closed active-row candidate or training comparison.",
+    "Shape/stride evidence for this installed runtime and fixed operands only; no proof for arbitrary gradients.",
+    "No scientific quality conclusion or adoption follows from this diagnostic.",
+    "Explicit one-row dispatch distinction is source-supported; other backend kernel behavior is not directly traced."
+  ]
+}

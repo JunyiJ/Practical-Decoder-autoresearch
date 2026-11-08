@@ -1,0 +1,80 @@
+{
+  "kind": "new_shape_guarded_active_row_gradient_comparison",
+  "runner_sha256": "e3fd1b69d192d52fecdcae939c965c28e73b0cbf2979c9b40c66bd95e3b097f2",
+  "bindings": [
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/bulk-hash-adoption001/recipe.json",
+      "size": 16345,
+      "sha256": "17b6dbc53c51ae987b01d016d7aab079ebcb93e77135ecb7501900c8364dd845"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-analysis001/result.json",
+      "size": 24516,
+      "sha256": "e9a9d70f0f30092e53b37245a3d6f7aaba2987041ebd337a6c843476070df15b"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-guarded-source001/source-map.json",
+      "size": 2459,
+      "sha256": "0fc1cd91a5ad6b124272ae59de9bc289b3b2c9930f6e99c5f8d77a412adfbd37"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/result.json",
+      "size": 2282,
+      "sha256": "7178b0b5710a02680c8c02260ee1d885aaf55da77295cc65a4ac10937588f6f2"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/plan.json",
+      "size": 2901,
+      "sha256": "81a4804fa48176c1bb1e0be5e9587abdb97ea2fcc3d297a52d2e9b8ca2e2f237"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-runtime001/result.json",
+      "size": 14348,
+      "sha256": "58e171afee10d4fff3fb3966c888b59321e3a3afd9f938c2bb162a4483e4a50c"
+    },
+    {
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/active-byte-runtime001/STOP",
+      "size": 64,
+      "sha256": "1a740c0d6464effd2349dc8cebe9129d8c4bf23ef7ea0b602a986a4e5047b16e"
+    },
+    {
+      "path": "research/byte_input_quality_recovery_v1/guard.py",
+      "size": 2492,
+      "sha256": "2c4912ee3233b1824c177b39bbf1d422a4a2969b601b04913ea0ab81ce67919e"
+    }
+  ],
+  "basis": "New algorithm after closed prototype failure: complete diagnostic across all output counts1..259 found differences only1..14 for K2048; same-stride views also differ. K17 mismatch only1; K1 exact. Candidate compacts only complete2048 chunks with15..258 active rows, preserving the original full-row computation for all other shapes. CPU and guards unchanged.",
+  "fixed_cases": [
+    "prefix_masked",
+    "richest_window_masked",
+    "prefix_dense_upstream",
+    "all_rows_2049_control",
+    "single_row_full_bound",
+    "four_rows_chunk_edge",
+    "singleton",
+    "boundary_count14_full_plus_tail",
+    "boundary_count15_full_plus_tail",
+    "boundary_count16_full_plus_tail",
+    "boundary_count63_full_plus_tail"
+  ],
+  "comparison": "CPU and MPS forward and all259x15 gradients on accepted byte weights; CPU path unchanged. Fixed upstream ((q*37+11)%1009-504)/997, amplified128 at q%257==0, with original padding mask for two real cases. Full-density upstream and chunk/singleton/all-row controls expose reduction differences. No skipped padding positions or changed2048chunk/order.",
+  "timing": "Initial pair warmup then7 alternating paired embedding forward+backward timings on prefix_masked; exact repeats checked outside timer. Candidate timing includes CPU unique and transfer. Selection separately timed seven times for diagnosis.",
+  "prospective_gate": "All original and added281 forward/gradient comparisons and representative repeats bit-exact; representative MPS median ratio<=.8 and at least5/7 wins. No relaxed tolerances, dropped failing inputs or rerun of the closed v1 prototype. Passing permits integrated composer/model tests only.",
+  "roles": "Historical accepted byte weights and fixed existing training inputs only; no random draws, sampler roles, optimizer updates or quality scores.",
+  "resource_budget": {
+    "timeout_seconds": 90,
+    "rss_bytes": 4294967296,
+    "mps_driver_bytes": 6442450944,
+    "reserve_bytes": 8589934592,
+    "new_weight_bytes": 0,
+    "metadata_upper_bytes": 2097152,
+    "free_bytes": 15439085568
+  },
+  "interpretation_limits": [
+    "A new shape-guarded implementation, not recovery or requalification of failed active-row-v1.",
+    "Historical failures remain closed and preserved; fallback preserves their domain and original arithmetic.",
+    "Diagnostic region is local empirical evidence, not a proof for all operands or future runtime versions.",
+    "Primitive-only results do not qualify a complete composer/model or training throughput."
+  ],
+  "added_coverage": "After all original seven cases plus four boundary cases on both backends, test every active count1..259 on MPS with2065 positions (one full2048 chunk plus17tail), high-ID rows and a different fixed stress upstream. All281 comparisons must be exact; failures are retained."
+}

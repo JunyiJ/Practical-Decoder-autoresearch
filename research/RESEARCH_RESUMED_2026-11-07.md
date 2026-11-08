@@ -197,11 +197,27 @@ were exact. A59.75% lower representative primitive latency does not override the
 numerical failure. The adopted bulk-hash model remains unchanged. No training
 update, quality score or weight archive was produced by this check.
 
-No worker is active. Next assess saved evidence for a new implementation rationale
-that preserves the failing small-row domain, chunk order and exactness gate. Do
-not replay this closed prototype or treat its numerical differences as a harness
-problem. The current user discussion concerns how the byte composer differs from
-character tokenization; the GPT-2 tokenizer and output vocabulary remain unchanged.
+A separate [shape/stride diagnostic](tokenizer-evidence/byte-composition-boundary-001/active-byte-shape-diagnostic001/README.md)
+found K2048 differences at output widths1–14, unchanged by retaining the original
+stride. A genuinely new guarded primitive retained original arithmetic for those
+small shapes and all partial chunks;281 primitive comparisons passed exactly.
+The [full-model comparison](tokenizer-evidence/byte-composition-boundary-001/active-byte-training001/README.md)
+then passed all105 gradients, cache, CPU resume and MPS20-pair state equality, but
+its2.96% median latency reduction missed the frozen5% gate. It is closed not adopted;
+no public loader or artifact qualification was attempted. The adopted bulk-hash
+implementation remains active. All new sampler roles are closed/reserved.
+
+Isolated primitive median saving was8.540ms. The old0.195s cProfile frame included
+device dependency waits and instrumentation and is not isolated kernel cost.
+Do not use the component percentage to overstate full-training gains.
+
+No worker is active. The user's input/output embedding discussion reveals that the
+42.61% parameter saving is relative to the untied native baseline. A tied version
+of that body would have15,626,624parameters versus16,351,859for the byte model;
+this is arithmetic, not quality evidence. Next inspect historical tying experiments
+and restrictions, then use the evidence-grounded research skill and primary sources
+to decide whether a genuinely new comparison is justified. Preserve closed studies
+and scientific gates; do not replay old tests or change unfavorable timing criteria.
 
 The remaining sections preserve earlier prerequisite and execution history;
 statements about pending work below describe those historical stages. The current

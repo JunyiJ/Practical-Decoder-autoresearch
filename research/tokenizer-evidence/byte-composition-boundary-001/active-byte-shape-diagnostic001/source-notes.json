@@ -1,0 +1,19 @@
+{
+  "installed_torch": "2.14.1",
+  "installed_git": "5c4886908584029761b579af026dcfb627c84070",
+  "primary_source": "https://raw.githubusercontent.com/pytorch/pytorch/5c4886908584029761b579af026dcfb627c84070/aten/src/ATen/native/mps/operations/LinearAlgebra.mm",
+  "source_findings": "Lines265\u2013287 gate an explicit GEMV path when an output dimension equals one. Lines943\u2013979 try that route before the general matrix-multiplication route. Lines481\u2013495 delegate the latter to MPSGraph. Lines497\u2013548 contain dtype/stride/size fallbacks; the half-precision case is not our FP32 fixture.",
+  "limits": "This explains a dispatch distinction, not the observed error magnitude or all four-row behavior. Apple MPSGraph kernel choices remain opaque. No kernel trace or universal exactness claim.",
+  "local_headers": [
+    {
+      "path": ".venv/lib/python3.13/site-packages/torch/include/ATen/native/mps/operations/GemmHeuristics.h",
+      "size": 2223,
+      "sha256": "fc86e93f238dbc405d243c5a76a0b26b40c09d371d8fb9c43f2d5cb3c8dd5831"
+    },
+    {
+      "path": ".venv/lib/python3.13/site-packages/torch/include/ATen/mps/MPSProfiler.h",
+      "size": 16855,
+      "sha256": "4f432a11a3584f6746c92848a68f8c509eee6f1840c4834c9ccc6e9a3e65ac0b"
+    }
+  ]
+}
