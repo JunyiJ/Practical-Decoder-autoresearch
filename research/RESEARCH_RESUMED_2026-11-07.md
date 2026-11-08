@@ -18,13 +18,14 @@ No training was repeated and no checkpoint was rewritten.
 The new `quality-recovery002` plan imports slots00..02 and runs only original
 unattempted slots03..08. Plan SHA:
 `2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
-Dispatcher PID70581 / exec53076 and slot06 tanh worker82339 are live;
-69 updates were observed. Six runs are accepted, completing two paired bundles.
-Second-bundle H200 losses: byte4.566994251, tanh4.643983486, linear4.654480826.
-Tanh-minus-byte is +.076989235; all three observed terminal sampler digests match.
-Slot05 mean CPU/MPS error3.538369e-8 and max target error1.716614e-5 pass unchanged
-limits. The third fixed bundle runs tanh06, byte07, linear08. Both completed
-bundles favor the byte baseline. No new model is adopted.
+Dispatcher PID70581 / exec53076 and slot07 byte-baseline worker86202 are live;
+65 updates were observed. Seven runs are accepted. Slot06 tanh completed with
+H200 CE4.623390900, mean CPU/MPS error4.108156e-8 and maximum target error1.811981e-5,
+passing unchanged limits. All three nonlinear runs are now complete. Their
+H200-minus-final-online gaps are+.024025973,+.039426659,+.019843424. This consistent
+averaging penalty is descriptive and does not permit switching the endpoint.
+Only original slots07byte and08linear remain. Both completed paired bundles
+favor the byte baseline; no new model is adopted.
 Prior exec99662 is terminal failed. Do not restart on an observation
 timeout or resume a superseded dispatcher. The source/count-derived sampler
 limitation applies explicitly to slots00 and02; slot01's observed digest is kept.
@@ -34,7 +35,7 @@ tanh4.616355683. Tanh loses to byte, so the all-seeds-negative adoption criterio
 cannot pass. Complete the fixed panel to characterize its outcome, without
 changing roles, controls, endpoints, tolerances or learning rate. The retained
 output cap remains1.5GiB; 2,151.110 seconds of prior guarded execution are charged
-to the original10-hour allowance. Latest measured free space is12.91GB; no cleanup is needed.
+to the original10-hour allowance. Latest measured free space is12.77GB; no cleanup is needed.
 
 After full completion, run:
 `PYTORCH_ENABLE_MPS_FALLBACK=0 .venv/bin/python -m research.byte_context_transform_review_v3 2f55b9e24888232ed6c2bbe5f41ae8b68bd6e9122eeca343de1973dcefb21aef`.
