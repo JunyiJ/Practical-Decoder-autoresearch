@@ -210,12 +210,20 @@ bytes peak RSS. The saved RAW/H200 pair totals318,299,358bytes.
 This is a reduction of.4018900651005106nat/token against the same real-byte
 arm at LR.000625, with matching final train/validation sampler hashes. It is
 within-arm screening evidence, not a selected-rate or fresh-confirmation gain
-over native. Four of18trajectories are accepted; no rate has been selected.
-The controller automatically started slot04, nonlexical codes at LR.00125,
-PID92730. Its process and first updates were observed. Recheck the live session
-and current slot before acting on these recorded process IDs.
+over native. The subsequent [slot04 control](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/04/acceptance.json)
+also completed all 1,200 updates, 41 averaging snapshots and 34,278 validation targets.
+Its full validation CE is 4.723060961468433 and BPB 2.0941052189230005; the guard
+finished in 3,793.685 seconds with 916,193,280 bytes peak RSS. Its retained RAW/H200
+pair totals 318,299,422 bytes. All saved-result acceptance checks passed.
 
-Follow the existing live controller (session22743, PID17021) through slot04
+At LR 0.00125, raw-minus-control CE is -0.08531516730011468 nat/token with matching
+final train/validation sampler hashes. This is one paired screening comparison,
+not fresh confirmation or a tuned native-relative gain. Five of 18 trajectories
+are accepted; no rate has been selected. The controller automatically started
+slot05, native at LR 0.00125, PID 15903. Its process and first updates were observed.
+Recheck the live session and current slot before acting on these recorded IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot05
 and subsequent saved slot acceptances, complete
 screen selection, fresh confirmation and final statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
