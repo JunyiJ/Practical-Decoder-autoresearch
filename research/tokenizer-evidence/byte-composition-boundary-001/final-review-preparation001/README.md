@@ -84,6 +84,13 @@ JSON lists or trust the export's self-description. This is an inspected API
 requirement, not a demonstrated inference defect or a reason to repeat accepted
 model tests. Existing per-run inference/cache checks remain the numerical evidence.
 
+The plan-derived caller is now prepared in
+`../checkpoint-consumer-preparation001/README.md`. Its representative metadata
+check passed without model construction or checkpoint tensor loading. Its single
+bounded runtime loading integration remains conditional on complete independent
+quality acceptance and shared-worker-lock release, before publishing an adopted
+recipe that uses the new caller.
+
 This inspection added no training, inference, seed, quality comparison or test
 suite. Read-only inspection mistakes (a Boolean sliced as text and package/file
 path assumptions) were corrected by string conversion and exact file discovery;

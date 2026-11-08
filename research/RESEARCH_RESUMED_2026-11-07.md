@@ -85,6 +85,17 @@ run the new reader's documented command in a fresh recovery-final-review001 fold
 The old original-root entrypoint cannot accept this recovered panel. No incumbent
 change before independent review; no full-panel review has executed yet.
 
+The [plan-derived checkpoint caller](tokenizer-evidence/byte-composition-boundary-001/checkpoint-consumer-preparation001/README.md)
+is prepared for the previously recorded first-fresh raw-byte representative,
+slot10. It reconstructs typed identity from the frozen plan and codebook and
+delegates loading to the unchanged qualified inference API. A1.717086-second
+metadata check matched the accepted artifact identity and preserved CPU RNG;
+no model or checkpoint tensor payload was loaded. If the full panel is eligible
+after independent review, perform one bounded runtime loading integration through
+this caller under the released shared lock, then bind that evidence and the
+consumer source into the adopted recipe. Runtime integration remains pending;
+metadata preparation does not authorize adoption or another quality sweep.
+
 ## Accepted integrated recovery
 
 The [independent state review003](tokenizer-evidence/byte-composition-boundary-001/state-review003/review.json)
