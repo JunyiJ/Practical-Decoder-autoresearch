@@ -66,7 +66,7 @@
   "active_run": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/output-anchored-tying-001",
   "active_session": null,
   "active_worker": "research.output_anchored_tying_run_v1",
-  "active_worker_pid": 43013,
+  "active_worker_pid": 46016,
   "actual_free_bytes": 19322376192,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
@@ -9717,7 +9717,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Monitor existing session99348/controller, never relaunch. New output-anchored MLA tying: nine1200-update runs, three fresh bundles x native/matched/tied at fixedLR.00125. CPU/MPS pilot passed24updates, native output/gradients exact, tied gradient equals matched input+output exactly, weight roundtrip exact. Gates fixed in OUTPUT_ANCHORED_TYING_PROTOCOL.md. Complete allnine, review saved artifacts/target losses/paired samplers and fresh statistics. Byte bulk-hash-adoption001 remains incumbent; old GQA tying failure remains closed. No historical-score pooling, holdout, seed replacement or LR reselection. Recorded worker PID is a snapshot; inspect current slot before acting.",
+  "next_action": "Continue existing session99348/controller through allnine fixed1200-update trajectories. First complete bundle: shared CE4.666682, native4.674577, matched4.648745; shared-minus-matched+.017937 means every-seed-negative gate cannot pass, but complete frozen panel with no early stopping/replacement seeds. Slots00-02 accepted; slot03 second-bundle matched is live at this snapshot. On terminal completion run research.output_anchored_tying_review_v1 under the shared lock, inspect all fresh outcomes, update results/indices and commit/push. Current byte bulk-hash-adoption001 stays incumbent. No historical-score pooling, holdout, LR reselection or retry-to-win.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "measured_serialization_overhead_actual_buffer_integration_next",
   "no_paid_compute": true,
@@ -9749,9 +9749,17 @@
   },
   "optimizer_state_training_result": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-training001/result.json",
   "optimizer_state_validation_result": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/byte-composition-boundary-001/optimizer-state-runtime003/result.json",
-  "output_anchored_tying_active_slot": 1,
+  "output_anchored_tying_active_slot": 3,
   "output_anchored_tying_adopted": false,
-  "output_anchored_tying_completed_count": 1,
+  "output_anchored_tying_completed_count": 3,
+  "output_anchored_tying_first_bundle": {
+    "every_seed_negative_matched_gate_already_not_met": true,
+    "matched_ce": 4.6487449194779735,
+    "native_ce": 4.674576624273824,
+    "tied_ce": 4.666681778621404,
+    "tied_minus_matched": 0.017936859143430794,
+    "tied_minus_native": -0.007894845652419491
+  },
   "output_anchored_tying_latest_result": {
     "arm": "native",
     "ce": 4.674576624273824,
@@ -10327,7 +10335,7 @@
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
   "training_current_source_version": 6,
-  "updated_at": "2026-11-08T18:42:51.974161+00:00",
+  "updated_at": "2026-11-08T18:52:20.585792+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
@@ -10366,5 +10374,5 @@
   "warmup_trained_inference": "research/tokenizer-evidence/warmup-preparation-001/trained-inference001.json",
   "warmup_worker": "research/tokenizer-evidence/warmup-preparation-001/trainer-worker001.json",
   "worker_kind": null,
-  "worker_pid": 43013
+  "worker_pid": 46016
 }
