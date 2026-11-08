@@ -201,10 +201,21 @@ and exact one-expression correction are preserved separately.
 Slot02 completed all1200updates,41averaging snapshots and1,228,800sampled
 targets; its finished guard recorded3795.112seconds. Its acceptance binds the
 full validation, inference and saved-state review. The controller automatically
-started slot03, real bytes at LR.00125, PID69790; its process and first updates
-were observed. Recheck that PID/session before acting on this historical note.
+started slot03, real bytes at LR.00125, PID69790. That run has now completed
+and is accepted: all1200updates,41averaging snapshots,1,228,800sampled targets
+and34,278validation targets. Its full validation CE is4.6377457941683184,
+BPB2.056278280301206. The finished guard recorded3766.939seconds and911,147,008
+bytes peak RSS. The saved RAW/H200 pair totals318,299,358bytes.
 
-Follow the existing live controller (session22743, PID17021) through slot03
+This is a reduction of.4018900651005106nat/token against the same real-byte
+arm at LR.000625, with matching final train/validation sampler hashes. It is
+within-arm screening evidence, not a selected-rate or fresh-confirmation gain
+over native. Four of18trajectories are accepted; no rate has been selected.
+The controller automatically started slot04, nonlexical codes at LR.00125,
+PID92730. Its process and first updates were observed. Recheck the live session
+and current slot before acting on these recorded process IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot04
 and subsequent saved slot acceptances, complete
 screen selection, fresh confirmation and final statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact

@@ -46,11 +46,11 @@
   "active_direction": "byte_input_composition",
   "active_exec_session": 22743,
   "active_parent_pid": 17021,
-  "active_run": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/03",
+  "active_run": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/04",
   "active_session": 22743,
   "active_worker": "research.byte_input_quality_v1.entry",
-  "active_worker_pid": 69790,
-  "actual_free_bytes": 21435334656,
+  "active_worker_pid": 92730,
+  "actual_free_bytes": 21113536512,
   "adamw_beta2_capacity": "research/tokenizer-evidence/adamw-beta2-preparation-001/capacity001.json",
   "adamw_beta2_component": "research/tokenizer-evidence/adamw-beta2-preparation-001/optimizer-component001-result.json",
   "adamw_beta2_direction": "research/tokenizer-evidence/adamw-beta2-preparation-001/direction-decision.json",
@@ -389,7 +389,8 @@
   "byte_input_quality_accepted_slots": [
     0,
     1,
-    2
+    2,
+    3
   ],
   "byte_input_quality_admission": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/admission/review.json",
   "byte_input_quality_adopted": false,
@@ -398,7 +399,7 @@
   "byte_input_quality_gain_established": false,
   "byte_input_quality_guard_observation": null,
   "byte_input_quality_last_observed_step": null,
-  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/02/acceptance.json",
+  "byte_input_quality_latest_acceptance": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/slots/03/acceptance.json",
   "byte_input_quality_plan": "research/tokenizer-evidence/byte-composition-boundary-001/quality001/plan.json",
   "byte_input_quality_plan_sha256": "cd0dcc19ae94e09e3d14aa071043f6c89b498e482e942bc0bfeb65bda15d8ddd",
   "byte_input_resource_costs": [
@@ -9480,7 +9481,7 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Follow existing controller session22743 / PID17021 and real-byte screen slot03 PID69790 at LR.00125. Slots00/01/02 accepted; all9 screens required before rate selection. At first rate bytes beat nonlexical codes but lose to native; unchanged gates, seeds and full-panel requirement.",
+  "next_action": "Follow existing controller session22743 / PID17021 and nonlexical-code screen slot04 PID92730 at LR.00125. Slots00\u201303 accepted; all9 screens required before any rate selection. Real-byte CE at .00125 is4.6377457941683184 versus5.039635859268829 at .000625; this is within-arm screening, not a tuned native comparison or fresh gain. Keep all frozen gates, seeds and trajectories.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
   "next_direction_status": "readout_tiny_component_qualified_fullmodel_integration_next",
   "no_paid_compute": true,
@@ -10058,7 +10059,7 @@
     "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/train-fit-diagnostic-001/result.json",
     "sha256": "306b3b624891b961713c78fbc2f05f23a5e6739ab2f9c55b403ec6cd0d3e2ee8"
   },
-  "updated_at": "2026-11-08T04:39:24.964791+00:00",
+  "updated_at": "2026-11-08T05:42:16.735257+00:00",
   "warmup_capacity": "research/tokenizer-evidence/warmup-preparation-001/capacity002.json",
   "warmup_component": "research/tokenizer-evidence/warmup-preparation-001/schedule-component001-result.json",
   "warmup_direction": "research/tokenizer-evidence/warmup-preparation-001/direction-decision.json",
