@@ -268,12 +268,22 @@ is 0.12657085299860693 lower than native and 0.09376436827177148 lower than the
 code control. These are tuning observations from the single screening bundle,
 not fresh confirmation, conditional-text inference, or an adoption decision.
 
-Nine of 18 trajectories are accepted. The original controller automatically
-started slot09, native at LR 0.00125 on fresh0, PID 74008. The process and actual
-updates were observed. Follow all nine original fresh confirmation trajectories;
-recheck the live session and current slot before acting on recorded process IDs.
+The [first fresh native confirmation, slot09](tokenizer-evidence/byte-composition-boundary-001/quality001/slots/09/acceptance.json)
+is accepted at the selected LR 0.00125: all 1,200 updates, 41 averaging snapshots,
+1,228,800 sampled targets and 34,278 validation targets. Full validation CE is
+4.6734148945894 and BPB 2.0720932041303604. The finished guard recorded 927.673
+seconds and 1,131,331,584 bytes peak RSS. Both retained RAW/H200 hashes were
+verified; the pair totals 563,319,826 bytes. This is the fresh0 baseline, not yet
+a completed fresh paired contrast. Do not compare it with screening scores as
+confirmation or pool those scores into the fresh panel.
 
-Follow the existing live controller (session22743, PID17021) through slot09
+Ten of 18 trajectories are accepted. The original controller automatically
+started slot10, real bytes at LR 0.0025 on fresh0, PID 79635. The process and
+actual updates were observed. Complete the remaining eight original fresh
+trajectories; recheck the live session and current slot before acting on recorded
+process IDs.
+
+Follow the existing live controller (session22743, PID17021) through slot10
 and the remaining fresh confirmation slots, saved acceptances and final
 statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
