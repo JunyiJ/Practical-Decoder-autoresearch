@@ -1,0 +1,56 @@
+{
+  "accepted": true,
+  "costs": [
+    {
+      "max_update_seconds": 0.8612192498985678,
+      "maximum_observed_step_mps_driver_bytes": 2501689344,
+      "mean_update_seconds": 0.7531462562503293,
+      "total_update_seconds": 15.062925125006586,
+      "validation_seconds": 3.8132793749682605,
+      "variant": "native"
+    },
+    {
+      "max_update_seconds": 3.329712082981132,
+      "maximum_observed_step_mps_driver_bytes": 3623665664,
+      "mean_update_seconds": 3.124640695861308,
+      "total_update_seconds": 62.49281391722616,
+      "validation_seconds": 8.499450084054843,
+      "variant": "raw_bytes"
+    },
+    {
+      "max_update_seconds": 3.373063875013031,
+      "maximum_observed_step_mps_driver_bytes": 3623665664,
+      "mean_update_seconds": 3.1392317875346634,
+      "total_update_seconds": 62.78463575069327,
+      "validation_seconds": 8.402696416014805,
+      "variant": "nonlexical_codes"
+    }
+  ],
+  "created_at": "2026-11-08T01:55:49.197034+00:00",
+  "entries_closed_no_replay": true,
+  "guard": {
+    "path": "research/tokenizer-evidence/byte-composition-boundary-001/pilot-math002/guard.json",
+    "sha256": "87a873cda3ecc4571f5957ba70d93bd27c8526f0c6bfcbf221d3dc17c9f6ccb6",
+    "size": 320
+  },
+  "next_action": "Prepare the complete scientific quality comparison and full retained-output/time cost using measured pilot costs. Reuse accepted primitives; preserve full1200-step horizon and fresh confirmations.",
+  "original_failed_updates": 20,
+  "plan": {
+    "path": "research/tokenizer-evidence/byte-composition-boundary-001/pilot-math002/plan.json",
+    "sha256": "927ef24ce3932118e652fe75f1023d08f6f8d6043106694fdd040c268bff8f64",
+    "size": 1381478
+  },
+  "preserved_failures": [
+    "pilot-launch-correction001.json",
+    "pilot-recovery001/recovery.json",
+    "pilot-review-recovery001/diagnosis.json"
+  ],
+  "quality_selected": false,
+  "review": {
+    "path": "research/tokenizer-evidence/byte-composition-boundary-001/pilot-review003/review.json",
+    "sha256": "0bc7e8a410ec7cf71b7f77b5b01d3f83b7e6b75c2eebf5fc13034f669616c666",
+    "size": 2976
+  },
+  "source": "research/byte_input_pilot_v2",
+  "updates": 60
+}

@@ -1,0 +1,8 @@
+{
+  "classification": "environment_or_execution_command_argument",
+  "failed_action": "Pilot static admission invoked with CLI plan digest 3 instead of the frozen SHA256.",
+  "observed": "Assertion at pre-entry digest check; exit1. Admission output directory remained empty. No attempt, guard, role census, candidate import, model construction or training occurred.",
+  "correction": "Invoke the unchanged entry with frozen plan SHA256 e0fa553652200cfc7fbd77ae2f51c366f4e2bb59c50ba3b1dfd208ef1723ff19. Source, roles, cases and criteria unchanged.",
+  "source": "research/byte_input_pilot_v1/admission.py",
+  "failed_digest": "3"
+}

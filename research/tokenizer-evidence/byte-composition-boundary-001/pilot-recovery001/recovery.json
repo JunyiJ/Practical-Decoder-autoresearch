@@ -1,0 +1,16 @@
+{
+  "cause": "training.write_new signature is (context, path); new worker supplied (path, captured_payload). The guard rejected before creating a weight archive.",
+  "classification": "implementation_worker_API_integration",
+  "correction": "New pilot_v2 calls training.write_new(c, path) directly. The writer captures/validates its own payload, so remove redundant capture. Static admission now checks this call shape.",
+  "error": "ValueError('Own training context')",
+  "failed_action": "Publish native final RAW after20 finite completed updates.",
+  "fresh_roles_required": "Original native training used its roles before failure; all five roles get a distinct new assignment. No seed was selected on loss. Original in-memory weights were not published and cannot be resumed.",
+  "native_updates_preserved": 20,
+  "new_attempt": "pilot-math002",
+  "original_archives": [],
+  "original_attempt": "pilot-math001",
+  "original_no_replay": true,
+  "original_preserved": true,
+  "source": "research/byte_input_pilot_v1/driver.py",
+  "unchanged": "Model/training/export/scorer/cache primitives, three arms,20-update horizon,LR.00125, data, resource guards, scientific comparisons and all acceptance criteria."
+}

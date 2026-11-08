@@ -1,0 +1,101 @@
+{
+  "accepted": true,
+  "result": {
+    "accepted": true,
+    "cases": 12,
+    "chunk_comparisons": 1584,
+    "coordinates": 694752768,
+    "invalid_transactions": 84,
+    "max_absolute_error": 1.3113021850585938e-06,
+    "max_gate_ratio": 0.026214148849248886,
+    "scope": "Cached/full128 FP32 logits with native inherited tolerance, B1/B8 CPU/MPS, exact reset replay and invalid-position preservation. Existing four-step H200 fixtures only; no timings, quality or worker qualification.",
+    "updates_executed": 0
+  },
+  "scope": "Saved complete-case/count/gate/replay-digest review. Numerical equality/tolerance checks were executed by the frozen worker against full model-v3 logits; this is not a separately rerun mathematical oracle.",
+  "source_rows": [
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/cpu-native-b1.json",
+      "sha256": "3ac781304100602173093fa193103c6335a268671d5a20ece8b2a29726bcfeae",
+      "variant": "native"
+    },
+    {
+      "backend": "cpu",
+      "batch": 8,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/cpu-native-b8.json",
+      "sha256": "6857fe6f8b7614b7c91ae488c0ad43c7b16e415d2e0c5a80d8ee4c317b9670bf",
+      "variant": "native"
+    },
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/cpu-raw_bytes-b1.json",
+      "sha256": "7e631c4812cf6f55c8fb33a27edd9997202ea272d13967712d3bfb659d7f6f09",
+      "variant": "raw_bytes"
+    },
+    {
+      "backend": "cpu",
+      "batch": 8,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/cpu-raw_bytes-b8.json",
+      "sha256": "7d16762b516f2a0bc727737f38e0633b68132842a39bd5d2d42950c2a98c5677",
+      "variant": "raw_bytes"
+    },
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/cpu-nonlexical_codes-b1.json",
+      "sha256": "867157e345b33ad88e5914c72952029e6f217d46a0f7b96899faf0e1f291d6fb",
+      "variant": "nonlexical_codes"
+    },
+    {
+      "backend": "cpu",
+      "batch": 8,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/cpu-nonlexical_codes-b8.json",
+      "sha256": "e8c028ea2c72f91e0126be48f13850d6c5ab29237583b3ebfdedbf05ae133c31",
+      "variant": "nonlexical_codes"
+    },
+    {
+      "backend": "mps",
+      "batch": 1,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/mps-native-b1.json",
+      "sha256": "0d5e5d53bca45acfa29bfd42e4094adfd096b0367caa97b2d383c7e7ff2e9d9f",
+      "variant": "native"
+    },
+    {
+      "backend": "mps",
+      "batch": 8,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/mps-native-b8.json",
+      "sha256": "3790e8163b9fb2ced416e2077065e9bc106fb2731a938696208cdc87143cf91b",
+      "variant": "native"
+    },
+    {
+      "backend": "mps",
+      "batch": 1,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/mps-raw_bytes-b1.json",
+      "sha256": "1adb72b9668350274e0a91b06868b2d683c6c32c7cc74cb4f66eee49385cd142",
+      "variant": "raw_bytes"
+    },
+    {
+      "backend": "mps",
+      "batch": 8,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/mps-raw_bytes-b8.json",
+      "sha256": "fd209f26ef2655565e90ef00bc565fd40b78e0b36ce45b13347a18b2909d241f",
+      "variant": "raw_bytes"
+    },
+    {
+      "backend": "mps",
+      "batch": 1,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/mps-nonlexical_codes-b1.json",
+      "sha256": "9e674e13d4678bebe677f934185d505e1e7392e95d3fc32bc66b871d75c11f41",
+      "variant": "nonlexical_codes"
+    },
+    {
+      "backend": "mps",
+      "batch": 8,
+      "path": "research/tokenizer-evidence/byte-composition-boundary-001/cache-math001/mps-nonlexical_codes-b8.json",
+      "sha256": "1c56eb4066f66da610bc84b2319887391ce06c0e930ced2f29fe7a8deb108c09",
+      "variant": "nonlexical_codes"
+    }
+  ]
+}

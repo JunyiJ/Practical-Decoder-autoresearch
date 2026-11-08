@@ -1,4 +1,4 @@
-# Active research: training resume accepted; inference consumers next
+# Active research: resource pilots accepted; scientific comparison next
 
 The human authorized continuous autonomous research and recovery on November 7,
 2026. The native incumbent is unchanged. Byte composition has no measured
@@ -75,24 +75,79 @@ bind the original evidence. All entries and role assignments are closed, with
 no replay. Reuse accepted checks; do not expand validation without a concrete
 consumer requirement or demonstrated defect. Original failures remain intact.
 
+## Accepted inference consumers and resource pilots
+
+[inference-review001](tokenizer-evidence/byte-composition-boundary-001/inference-review001/review.json)
+accepted all six existing-parent CPU/MPS exports and full-validation consumers.
+Every parent EMA weight matched exactly (122,392,268 coordinates), loaded logits
+matched the accepted direct model, and all205,668validation targets were covered.
+Independent FP64 CE checked2,148targets from first/block-boundary/tail windows;
+all target aggregation and byte accounting were independently checked. The run
+used zero new training updates, took100.092s, and peaked at1,414,561,792B RSS.
+Saved review took4.530s. Scope does not make the four-step scores quality evidence.
+
+[cache-review001](tokenizer-evidence/byte-composition-boundary-001/cache-review001/review.json)
+checks the complete saved coverage/gate/replay receipts:12 CPU/MPS B1/B8 cases,
+1584chunk comparisons covering694,752,768logit coordinates, full128 context,
+exact reset replay and84invalid transactions. The frozen worker compared cached
+outputs with accepted full model-v3 outputs under unchanged native cache gates.
+Maximum absolute difference1.3113e-6; maximum normalized gate ratio.026215.
+The run took52.502s and peaked at1,703,641,088B RSS. The saved review is not a new
+independent model-math oracle. Sources remain frozen and closed.
+
+[Resource pilot002](tokenizer-evidence/byte-composition-boundary-001/pilot-math002/result.json)
+and [saved review003](tokenizer-evidence/byte-composition-boundary-001/pilot-review003/review.json)
+accepted all three actual-corpus20-update MPS arms, complete RAW/H200 ancestry,
+20,480training targets per arm, eight EMA snapshots, full validation and cached
+correctness. The complete run took198.573s and peaked at1,202,176,000B RSS.
+Its final MPS guard observation is not a peak. Per-update observations reached
+3,623,665,664B MPS driver allocation, below6GiB. Saved review took1.990s.
+
+| Arm | Mean update seconds | Maximum update seconds | Full validation seconds |
+|---|---:|---:|---:|
+| Native |0.753146|0.861219|3.813279|
+| Raw bytes |3.124641|3.329712|8.499450|
+| Nonlexical codes |3.139232|3.373064|8.402696|
+
+These are implementation-inclusive short-pilot measurements, not steady-state
+1200-step guarantees or a quality ranking. Byte composition is about4.1x slower
+per observed update despite fewer parameters. Use this complete measured cost
+in the next scientific design; do not choose arms/rates/criteria from pilot CE.
+
+Original pilot001 completed20native updates but failed before weight publication:
+its driver passed `(path,payload)` to `training.write_new(context,path)`. Original
+source/roles/logs/STOP remain closed. New worker-v2 corrected only the call and
+removed redundant capture, then used distinct fresh roles for all three pilots.
+A later saved-only reviewer failed on spelling `mps` versus canonical `mps:0`;
+reviewer-v3 corrected that metadata expectation without replaying any training.
+[Recovery records](tokenizer-evidence/byte-composition-boundary-001/pilot-recovery001/recovery.json)
+and [reviewer diagnosis](tokenizer-evidence/byte-composition-boundary-001/pilot-review-recovery001/diagnosis.json)
+preserve both failures. A separate pre-admission wrong CLI hash is recorded in
+`pilot-launch-correction001.json`; it caused no attempt or role consumption.
+
 ## Next executable action
 
-Implement and qualify the smallest averaged-weight export/load/scoring consumer
-path needed by the fixed quality comparison. Reuse the accepted model-v3,
-state-v2 and training-v2 evidence. Forecast complete retained output, temporary
-serialization overlap, memory, 8 GiB reserve and 2 GiB extra headroom before
-admitting new numerical work. Do not repeat the full training-resume suite for
-an unrelated consumer change. No quality gain or adoption is claimed.
+Use the [updated evidence question](tokenizer-evidence/byte-composition-boundary-001/quality-evidence001/evidence.md)
+and measured pilot costs to prepare the complete three-arm scientific comparison.
+Keep practical native-relative gains distinct from evidence for lexical byte
+content versus the nonlexical control. Fix balanced tuning, independent fresh
+confirmation, outcome/statistical rules, source/roles and the complete retained
+output/time/memory budget before scientific dispatch. The earlier18-trajectory
+forecast is unfrozen. Preserve1200updates, existing data/H200/holdout boundaries;
+reuse the accepted primitives and implement only needed full-horizon worker glue.
 
-No numerical worker is active at this checkpoint; both worker PIDs exited.
-The autonomous goal remains active, and research automations remain unchanged.
-Approximately 14.81 GB is free. No currently frozen execution is capacity-blocked;
-the next consumer fixture and scientific panel do not yet have frozen resource
-envelopes. Execute authorized recovery if a concrete requirement exceeds free
-space. Earlier failed payloads remain present; any retirement must follow current
-human authorization, dependency closure, exact hashes and a durable journal.
+No worker is active at this checkpoint. The autonomous goal remains active;
+research automations are unchanged. Approximately12.64GB is free. All completed
+runs fit their frozen guards; no currently admitted execution is blocked. The
+scientific panel's complete resource envelope is not yet frozen. If its concrete
+requirement exceeds available space, immediately perform standing-authorized exact
+cleanup through dependency/hash/consumer checks and a deletion journal; do not
+shrink confirmations or repeat unchanged scans. Original failures and scientific
+selected/fresh weights remain subject to the human's current retention policy.
 
-Git contains source and evidence metadata; binary checkpoints and middle-step
-arrays remain local under the manifest. A clone alone cannot repeat saved-data
-reviews. Historical source, failure evidence and scientific restrictions remain
-unchanged.
+[Consumer acceptance](tokenizer-evidence/byte-composition-boundary-001/inference-acceptance001/acceptance.json)
+and [pilot acceptance](tokenizer-evidence/byte-composition-boundary-001/pilot-acceptance002/acceptance.json)
+link exact local payload manifests. Keep the latest20-update RAW/H200 parents for
+quality-worker integration. Binary checkpoints/oracle arrays remain local; Git
+contains sources, plans, metadata, logs and receipts. A clone alone cannot repeat
+the saved-data reviews. No quality gain or adoption is established.

@@ -1,4 +1,4 @@
-> **Research explicitly resumed on 2026-11-07.** Read [the current continuation](RESEARCH_RESUMED_2026-11-07.md). Byte-input model proof implementation is active; numerical entry is not yet qualified. Older pause banners below are historical.
+> **Current active state:** [continuation](RESEARCH_RESUMED_2026-11-07.md). Training resume, inference consumers and three20-update resource pilots are accepted. Scientific comparison remains unfrozen; no quality gain or adoption. Older source-only/pause entries below are historical.
 
 # Human-paused after actual model/codebook SOURCE integration — 2026-11-07
 
