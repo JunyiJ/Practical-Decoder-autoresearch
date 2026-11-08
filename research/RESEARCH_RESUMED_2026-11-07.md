@@ -172,6 +172,14 @@ The storage blocker is resolved; do not repeat broad unchanged cleanup scans.
 
 ## Next executable action
 
+A minimal [direct-byte-hash candidate](byte_input_direct_hash_v1.py) now exists
+outside the frozen sources. Its only overridden method uses the already
+CPU-measured serialization substitution; an AST check confirms the exact scope.
+It has no runtime or training-consumer qualification. The [integration note](tokenizer-evidence/byte-composition-boundary-001/serialization-integration001/README.md)
+records the inherited-source binding and the focused CPU/MPS comparison needed
+when resources are free. This adds no training or qualification run to the
+active panel and does not claim an integrated speedup.
+
 The first rate's three screens (slots00–02, LR.000625) are accepted. Full
 validation CE is4.896433671 for native,5.039635859 for real bytes and5.098909072
 for nonlexical codes. Real bytes improve over the code control by.059273213
