@@ -1,6 +1,6 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. Six of nine fresh quality runs have completed and passed numerical
+The new zero-gated residual readout passed its implementation pilot. Seven of nine fresh quality runs have completed and passed numerical
 acceptance. Both complete seeds fail the mandatory candidate-improvement
 criterion against byte. The third seed is active; the frozen remaining runs and
 independent final review continue. No model is adopted. The selected byte model and its corrected public
@@ -55,8 +55,8 @@ Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
 scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot06 residual-tanh on the third seed, PID25154;
-live logs supersede this snapshot. Slots00–05 are terminal and must not be replayed.
+worker was slot07 byte on the third seed, PID29393;
+live logs supersede this snapshot. Slots00–06 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 
@@ -301,3 +301,25 @@ Derived by subtracting paired `curves[].ce` entries and checking the saved
 `train_window_ending_*` values in the two-bundle analysis. Bound input SHA256:
 `2a1f57375c4b4376edc5a16483d1f7211321c2170a74287bdc0d5d45e80ba394`.
 The third seed and final review remain pending; no full-panel claim follows.
+
+## Third-seed nonlinear endpoint (seven of nine complete)
+
+Slot06 residual-tanh completed1200 updates and41 H200 snapshots, with H200 CE
+4.641951823823287 and final-online CE4.709929901022468. Its689.099second guard
+finished normally; training updates used582.173seconds. Publication verification
+checked acceptance/result/guard hashes, both retained checkpoint sizes and hashes,
+1200 sequential training records, full34278-target CPU/MPS coverage and recomputed
+numerical errors. Mean/max CPU/MPS CE differences2.05555e-8/2.03848e-5 pass the
+unchanged3e-5/3e-4 limits. Whole-panel independent review is still pending.
+
+The last100 sampled training CE is3.0761310244 and the unrestricted final scalar
+is-1.284479. No paired third-seed quality conclusion is available until its byte
+and linear controls complete. Cross-seed comparisons cannot replace those controls.
+The first two bundles' failed mandatory improvement conditions remain recorded;
+this accepted individual run changes neither the adoption decision nor the recipe.
+
+The controller automatically started slot07 byte, PID29393; slot08 linear and
+the automatic independent review follow. The review reconstructs the fixed
+statistics from saved per-target losses and checks saved weights/receipts; it
+requires no new training or validation scoring. Do not rerun either completed
+bundle analysis. The three-bundle analysis is due once after final review accepts.
