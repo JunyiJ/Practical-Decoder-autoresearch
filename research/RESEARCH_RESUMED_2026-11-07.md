@@ -172,7 +172,23 @@ The storage blocker is resolved; do not repeat broad unchanged cleanup scans.
 
 ## Next executable action
 
-Follow the existing live controller through its saved slot acceptances, complete
+The first rate's three screens (slots00–02, LR.000625) are accepted. Full
+validation CE is4.896433671 for native,5.039635859 for real bytes and5.098909072
+for nonlexical codes. Real bytes improve over the code control by.059273213
+nat/token but lose to native by.143202188. No rate is selected and no gain is
+established. The [fixed-bin saved-loss comparison](tokenizer-evidence/byte-composition-boundary-001/screen-diagnostic002/analysis.md)
+shows that both composition models improve after unseen inputs, with an
+additional real-byte advantage. This exploratory observation is not a new
+acceptance criterion or a causal proof of lexical sharing.
+
+Slot02 completed all1200updates,41averaging snapshots and1,228,800sampled
+targets; its finished guard recorded3795.112seconds. Its acceptance binds the
+full validation, inference and saved-state review. The controller automatically
+started slot03, real bytes at LR.00125, PID69790; its process and first updates
+were observed. Recheck that PID/session before acting on this historical note.
+
+Follow the existing live controller (session22743, PID17021) through slot03
+and subsequent saved slot acceptances, complete
 screen selection, fresh confirmation and final statistical report. The controller
 stops on an entered-slot failure; preserve its evidence and diagnose the exact
 failure before any separately identified correction. Never replace an unfavorable
