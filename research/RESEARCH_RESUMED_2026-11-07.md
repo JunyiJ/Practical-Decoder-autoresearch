@@ -50,7 +50,14 @@ The full18-weight cap1.5GiB, reserve8GiB plus2GiB headroom and10-hour allowance
 remain; original elapsed costs are carried. No storage blocker exists.
 
 The broader autonomous goal remains active. The public incumbent inference path
-has not yet been changed; qualify a scoped fix separately when appropriate.
+has not yet been changed. A separately scoped epsilon repair and bounded
+qualification are now source-prepared: [repair scope](FP32_RMSNORM_INFERENCE_REPAIR.md).
+The prospective plan is `byte-context-transform-001/inference-epsilon001/plan.json`,
+SHA e81386f597509df3e3929102b3c6e04cd486aad2ec6d52c55b4ffdf89f96b4bf.
+No runtime check has executed and the repair is not adopted. After the quality
+panel and independent review finish, use the free shared lock to run the bound
+check on the new baseline weights. It covers full-split scoring and B1/B8 cached
+decoding/reset with unchanged tolerances, no training, and a ten-minute cap.
 Historical studies and failed fixtures remain closed. Previous sections below
 are historical, not the current worker state.
 
