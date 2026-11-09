@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 32544,
-  "next_action": "Fresh paired byte confirmation slot05 running under PID58653/session32544. Review completion against slot04, including all paired batch hashes, first outputs and fixed final scores. Then continue slots06..09 unchanged; no adoption before all three paired bundles and frozen gates.",
+  "active_session": 92598,
+  "next_action": "Second fresh native confirmation slot06 running under PID50351/session92598. Review final guard, source bindings, checkpoint hashes, coverage and gradients after10240updates, then launch paired byte slot07. Continue slots08..09 unchanged; no adoption before all three paired bundles and frozen gates.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T03:56:52.575875+00:00",
-  "active_worker_pid": 58653,
+  "updated_at": "2026-11-09T05:53:58.672023+00:00",
+  "active_worker_pid": 50351,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
-  "active_slot": 5,
+  "active_slot": 6,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "First native confirmation completed: H200 CE5.19768, RAW5.20085. Original final completions remain repetitive, off-topic and factually unreliable; no architecture conclusion until all paired confirmations. Byte slot05 now running.",
+  "latest_learning": "First fresh pair passed: H200 byte5.148018/native5.197681 (delta-.049663), improvement on both sources; byte1.840x slower. Both models remain repetitive and unreliable in all preserved first-output bundles. Provisional single-pair evidence only. Second native confirmation slot06 running; finish remaining pairs unchanged.",
   "phase": "fresh_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -80,7 +80,26 @@
       "h200_ce": 5.19768092068592,
       "raw_ce": 5.2008541908060835,
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-04/review.json"
+    },
+    {
+      "slot": 5,
+      "arm": "raw_bytes",
+      "bundle": 1,
+      "lr": 0.0025,
+      "h200_ce": 5.148018397436136,
+      "raw_ce": 5.153779002086082,
+      "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-05/review.json"
     }
   ],
-  "confirmation_report": "research/GENERAL_RSI_CONFIRMATION_RESULTS.md"
+  "confirmation_report": "research/GENERAL_RSI_CONFIRMATION_RESULTS.md",
+  "completed_pairs": [
+    {
+      "bundle": 1,
+      "native_slot": 4,
+      "byte_slot": 5,
+      "h200_delta_byte_minus_native": -0.0496625232497836,
+      "raw_delta_byte_minus_native": -0.047075188720001826,
+      "guard_time_ratio_byte_over_native": 1.8402320327287962
+    }
+  ]
 }

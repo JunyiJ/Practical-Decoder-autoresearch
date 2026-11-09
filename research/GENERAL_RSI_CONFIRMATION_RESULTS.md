@@ -1,7 +1,8 @@
 # General-corpus confirmation results
 
-The frozen first paired bundle is incomplete: native slot04 is complete and
-byte slot05 is next. No architecture is adopted from one arm or one pair.
+The first frozen paired bundle (native slot04 / byte slot05) is complete.
+The second bundle starts with native slot06. No architecture is adopted from
+one pair.
 All three fresh pairs and the original gates remain required; test stays closed.
 
 ## First native confirmation (slot04)
@@ -47,3 +48,44 @@ Finish the matched byte run and remaining frozen pairs before interpreting
 relative quality. After the panel, use the complete curves and paired outputs
 to decide whether a separately justified exposure or equal-time study is useful;
 these examples do not justify modifying the active scientific contract.
+
+## First paired confirmation (slots04–05)
+
+| Final endpoint | Native CE | Byte CE | Byte minus native |
+| --- | ---: | ---: | ---: |
+| H200 (primary) | 5.197680920685920 | 5.148018397436136 | -0.049662523249784 |
+| RAW (secondary) | 5.200854190806084 | 5.153779002086082 | -0.047075188720002 |
+
+H200 FineWeb-Edu CE is5.182307517567118/native and5.136165433624663/byte
+(delta-0.046142083942455). Wikipedia is5.259255760393237/native and
+5.195492879247873/byte (delta-0.063762881145364). All10,240 paired training
+batch hashes and all108 document/source/target inventories match. Both runs
+finished within their guards, with342 EMA snapshots and unchanged source hashes.
+Byte guard time6975.039 seconds versus3790.304/native (1.840x); byte peakRSS
+862,142,464 bytes versus803,897,344/native. The byte model has16,351,859 parameters
+versus28,492,416/native. Equal-token quality here does not establish equal-time
+superiority. The remaining two paired bundles and fixed three-pair acceptance
+criteria are still required; no early adoption or bootstrap decision is made.
+
+The matched curves show why an early score is insufficient: at step2048 the
+full-validation RAW byte-minus-native delta was+0.006970, while the final RAW
+delta is-0.047075. The fixed8-document probe fluctuates across checkpoints
+(e.g. -0.052180 at4096 and+0.043432 at5120). These curves are diagnostic only;
+no intermediate checkpoint or training horizon was selected from them.
+
+All48 first byte outputs are retained alongside the48 native outputs. Byte
+H200 also reaches the64-token cap on16/16 outputs; RAW reaches it on15/16,
+with one off-topic EOT completion. Both final byte endpoints show repeated
+phrases, broken grammar, irrelevant continuation and incorrect factual links.
+For example, H200 greedy completes the library prompt with “ to be a member
+of the House of Representatives.” and loops on that institution. Its sampled
+plants continuation begins “ save the body.” and drifts into drug discussion.
+The Maya/cup scene turns into music/sports fragments. Lower CE in this pair
+therefore does not demonstrate coherent generation or instruction following.
+
+Current inference: byte-spelling sharing may transfer its prediction advantage
+to this corpus, but the one-pair result is provisional and its substantial
+runtime cost remains. Continue the remaining fresh pairs without changing
+seeds, endpoints, scoring, prompts or thresholds. After complete confirmation,
+use the full evidence to assess exposure and equal-time hypotheses under a
+new prospective contract. Keep the test payloads unopened.
