@@ -1,0 +1,64 @@
+{
+  "status": "completed",
+  "plan_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
+  "slot": {
+    "phase": "screen",
+    "arm": "raw_bytes",
+    "lr": 0.00125,
+    "horizon": 2048,
+    "roles": {
+      "native_initializer": 62110300101,
+      "composer_initializer": 62110300102,
+      "train_sampler": 62110300103,
+      "validation_sampler": 62110300104
+    },
+    "generation": false
+  },
+  "steps": 2048,
+  "ema_snapshots": 68,
+  "elapsed_seconds": 1387.5612213329878,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-panel-001/slot-01/raw.pt",
+        "size": 65441133,
+        "sha256": "55a87a0a8c720b96beba104a9b7ff404bb82b06ae48a48a2b19e9f4b1f886fb7"
+      },
+      "ce": 6.098340759535672,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 6.081888033896818
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 6.164238592054089
+        }
+      }
+    },
+    {
+      "endpoint": "h200",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-panel-001/slot-01/h200.pt",
+        "size": 65441133,
+        "sha256": "7eabbababd71a2dd9e56485a120e9e8233b3b220216c43ce2ff951e06afce878"
+      },
+      "ce": 6.128709949982178,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 6.110913632334863
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 6.199989249565093
+        }
+      }
+    }
+  ],
+  "optimizer_restart_qualified": true,
+  "test_opened": false
+}
