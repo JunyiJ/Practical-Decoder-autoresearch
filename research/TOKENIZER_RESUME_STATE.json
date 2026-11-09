@@ -756,6 +756,36 @@
   "byte_input_training_review": "research/tokenizer-evidence/byte-composition-boundary-001/training-review001/review.json",
   "byte_input_training_source": "research/byte_input_training_v4.py",
   "byte_input_training_source_review": "research/tokenizer-evidence/byte-composition-boundary-001/training-source002/review.json",
+  "byte_output_composition_feasibility": {
+    "evidence": {
+      "byte-output-chunk-pilot-001": {
+        "component_forward_vjp_seconds": 9.637466126005165,
+        "guard_seconds": 18.025842750095762,
+        "peak_rss_bytes": 1252540416,
+        "result_path": "research/tokenizer-evidence/byte-output-chunk-pilot-001/result.json",
+        "result_sha256": "140473cea327078426a804dd358512f35a12ba9506e8fab3cc52498bddb1b0ca",
+        "status": "COMPLETE"
+      },
+      "byte-output-chunk-pilot-002": {
+        "component_forward_vjp_seconds": 2.6660697910701856,
+        "guard_seconds": 7.384198416955769,
+        "peak_rss_bytes": 1450901504,
+        "result_path": "research/tokenizer-evidence/byte-output-chunk-pilot-002/result.json",
+        "result_sha256": "86da40106d7f15c1fda812cadef37c5662ba0f13362d927fafc0038d768e1e57",
+        "status": "COMPLETE"
+      },
+      "byte-output-composition-cost-001": {
+        "guard_seconds": 0.20460312499199063,
+        "peak_rss_bytes": 63029248,
+        "result_path": "research/tokenizer-evidence/byte-output-composition-cost-001/result.json",
+        "result_sha256": "7d965d01837464bbddcbbe2d7af194f48f8593704b4f0f898f040a1b9bf720cb",
+        "status": "COMPLETE"
+      }
+    },
+    "new_training_admitted": false,
+    "quality_claim": false,
+    "status": "COMPONENT_FEASIBLE_FULL_MODEL_UNQUALIFIED"
+  },
   "byte_output_moment_analysis": {
     "guard_seconds": 2.396643500076607,
     "new_training_admitted": false,
@@ -9888,9 +9918,9 @@
   "moe_generated_worker_root": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/tokenizer-moe-worker-v1-001",
   "moe_quality_panel_frozen": false,
   "moe_scientific_seed_assigned": false,
-  "next_action": "Derive complete-vocabulary output lexical-component forward/backward cost from the actual byte codebook/composer shapes; evaluate feasible literature-supported augmentation with an independent output path against both incumbent and matched nonlexical control. Read BYTE_OUTPUT_LEXICAL_REVIEW.md for supporting and contrary evidence. No implementation size, coefficient, seed or quality panel selected. If viable, freeze bounded correctness/resource pilot and complete fresh confirmation costs with prospective futility criteria; otherwise reject family. Moment diagnostic complete: epsilon already dominates unseen rows at selected RAW step1200; no optimizer change or replay justified. Adopted model unchanged, all closed studies remain closed, holdout closed, no training worker active.",
+  "next_action": "Specify minimal independent output lexical augmentation and matched nonlexical control on unchanged byte-input incumbent; prepare bounded full-model gradient/optimizer/averaging/inference integration and resource pilot using position-bounded exact chunk VJP. Read BYTE_OUTPUT_COMPOSITION_FEASIBILITY.md. Component pilot002 passed fixed CPU/MPS output/all-gradient checks plus1025-row boundary case; full50257-row forward+VJP2.6661s, about5.33hours extrapolated added work across six1200-step candidate/control runs before body/eval. No quality panel, coefficient, roles or adoption selected. Freeze full cost including serialization overlap/reserve, fresh confirmation and prospective futility rules before training. Old pilots and closed studies remain immutable; holdout closed; no worker active.",
   "next_after_starter": "Follow current next_action; old readout/body/dropout studies are closed and must not be replayed.",
-  "next_direction_status": "optimizer_diagnostics_complete_output_lexical_sharing_cost_qualification",
+  "next_direction_status": "output_composition_component_cost_and_exact_vjp_complete_full_model_pilot_required",
   "no_paid_compute": true,
   "no_subagents": true,
   "numerical_worker_active": true,
