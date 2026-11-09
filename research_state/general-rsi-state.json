@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 6240,
-  "next_action": "Slot02 is running under PID74643/session6240. Inspect actual guard/process/steps before any launch. After completion, review hashes,2048 updates and paired batches, then launch slot03 (byte LR.0025). After all four screens use the frozen LR selector; no architecture claim from screens.",
+  "active_session": 40468,
+  "next_action": "Slot03 is running under PID85076/session40468. Inspect actual guard/process/steps before any launch. After completion verify all paired batches, hashes, target counts and guards; run the frozen general_rsi_panel_v1 select command only after all four accepted screens. Then launch slot04 (first fresh native confirmation,10,240updates) under unchanged plan and measured whole-panel capacity.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T02:12:29.167421+00:00",
-  "active_worker_pid": 74643,
+  "updated_at": "2026-11-09T02:27:38.649698+00:00",
+  "active_worker_pid": 85076,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-001/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
-  "active_slot": 2,
+  "active_slot": 3,
   "completed_screens": [
     {
       "slot": 0,
@@ -43,7 +43,14 @@
       "lr": 0.00125,
       "h200_ce": 6.128709949982178,
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-01/review.json"
+    },
+    {
+      "slot": 2,
+      "arm": "native",
+      "lr": 0.0025,
+      "h200_ce": 5.993463649538651,
+      "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-02/review.json"
     }
   ],
-  "latest_learning": "At LR.00125 and2048 matched updates, byte H200 validation CE6.12871 versus native6.17785 (delta-.04914), with longer runtime. Single screen bundle only; second rate and3fresh confirmations remain. H200 remains primary."
+  "latest_learning": "Native LR.0025 improves screen H200 CE to5.99346 from6.17785 at.00125 (delta-.18438). Final byte LR screen is pending; do not compare a tuned native to untuned byte or adopt an architecture from screens."
 }
