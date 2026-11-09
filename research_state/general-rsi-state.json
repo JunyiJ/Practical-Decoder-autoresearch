@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_RESEARCH_DESIGN",
+  "status": "ACTIVE_READY_TO_LAUNCH",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Implement the prospective exposure comparison in a new worker namespace without modifying frozen panel001 sources. Bind the design, new seed roles, complete output/serialization forecast and source hashes before launch; verify changed scheduling/config paths, then launch one worker under the shared lock. No training worker is currently active. Test stays unopened.",
+  "next_action": "Launch frozen exposure slot00 (shortH10240) using general_rsi_exposure_worker_v1 after committing plan/preflight. Then review execution, endpoints and original outputs before paired long slot01. All six fresh runs required; test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T11:48:13.308836+00:00",
+  "updated_at": "2026-11-09T11:52:05.895732+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -26,8 +26,8 @@
   "document_scoring_qualified": true,
   "qualification": "research/tokenizer-evidence/general-rsi-qualification-001/result.json",
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
-  "panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
-  "panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
+  "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
+  "panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
   "active_slot": null,
   "completed_screens": [
     {
@@ -60,7 +60,7 @@
     }
   ],
   "latest_learning": "Byte passes all three fresh-pair equal-token quality gates: mean H200 delta -0.05260391; frozen99% upper -0.03809101; both sources improve.42.61% fewer parameters but~1.84x training wall time; first outputs remain incoherent. Saved curves still improve at endpoint.",
-  "phase": "exposure_design",
+  "phase": "exposure_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -70,7 +70,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-001/completed.json",
     "research/tokenizer-evidence/general-rsi-capacity-002/completed.json"
   ],
-  "capacity_status": "Full remaining-panel forecast restored after new 125346397-byte deficit; independently audited external cache cleanup recovered192466944 allocated bytes; research worker uninterrupted. Recompute full remaining requirement at next launch.",
+  "capacity_status": "Exposure full six-run high-water1394319870bytes plus10GiB reserve requires12131738110bytes; freeze free12757143552bytes. No cleanup required. Recheck at each launch.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -156,5 +156,8 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/GENERAL_RSI_EXPOSURE_DESIGN.md"
+  "next_design": "research/GENERAL_RSI_EXPOSURE_DESIGN.md",
+  "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
+  "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
+  "exposure_completed_slots": []
 }

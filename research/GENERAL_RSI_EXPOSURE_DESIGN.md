@@ -1,8 +1,9 @@
 # General RSI: prospective exposure comparison
 
-2026-11-09. Status: evidence and design selected; implementation/source/seed/resource
-bindings must be frozen before launch. This is new work after panel001, not an
-extension or replay of its completed scientific comparisons. No worker is active.
+2026-11-09. Scientific design for general-rsi-exposure-001. The immutable plan.json
+binds source, seed and resource contracts before launch; current worker status
+is recorded in research_state/general-rsi-state.json. This is new work after
+panel001, not an extension or replay of its completed scientific comparisons.
 
 ## Local evidence and uncertainty
 
@@ -106,3 +107,12 @@ launch. No historical test-suite replay: an additional numerical prerequisite
 is warranted only if a changed execution path invalidates existing qualification.
 This plan does not authorize modifying frozen panel001 sources or continuing its
 retired optimizer checkpoints.
+
+Fresh bundles use62110400101–104,62110400201–204,62110400301–304 for
+native initialization, composer initialization, training sampler and validation
+sampler respectively. Bootstrap seed62110400999. An exact pre-assignment search
+of research/research_state JSON/JSONL found no prior use. H10240 has342 EMA
+snapshots beginning6830; H20480 has683 beginning13660. Numerical qualification
+is inherited because the only training-core difference adds20480 to the accepted
+horizon tuple; the preflight verifies exact source equivalence after that one
+substitution and exercises both actual scheduling horizons without training.
