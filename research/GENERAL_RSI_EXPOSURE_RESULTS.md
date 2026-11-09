@@ -53,3 +53,20 @@ Free storage fell below the full remaining-panel forecast while training remaine
 Other inventoried large cache classes include updater payloads, shared runtime/application assets and OS speech assets; no deletion was inferred from size. Research payload retirement cannot run while PID24324 holds the shared lock. Eight obsolete, accepted LR-screen endpoint weights from the concluded original panel were audited against original receipts: 717,766,656 allocated bytes. All screen source/log/config/metric evidence and all fresh confirmation weights remain protected. The active exposure panel binds no screen weight path; it initializes fresh. The current human obsolete-checkpoint authorization supplies a narrow exception to the old retain-all wording.
 
 Next action: finish/review slot01, then remeasure capacity under a free research lock. If still deficient, execute the exact pending screen-retirement audit with process/consumer checks and durable deletion journal before slot02. Do not repeat the cache scan absent new eligible candidates or changed capacity. Evidence: `research/tokenizer-evidence/general-rsi-capacity-003/`.
+
+## First paired exposure result — 2026-11-09
+
+Slot01 completed 20,480 updates and 683 EMA snapshots in 13,547.23 guard seconds, peak RSS936,951,808 bytes. Review verified all5,094 source bindings, finite gradients/clipping, both endpoint hashes, all108 validation documents/100,416 targets, exact first10,240 paired training-batch hashes, and identical initialization generations. No failure or test access occurred.
+
+| Endpoint | Short H10240 | Long H20480 | Long minus short |
+| --- | ---: | ---: | ---: |
+| H200 primary | 5.1420324624 | 4.9439232062 | -0.1981092561 |
+| RAW secondary | 5.1466526438 | 4.9539531825 | -0.1926994613 |
+
+H200 source deltas: FineWeb-Edu -0.2059117529, Wikipedia -0.1668580435 nats/token. This first pair supports the exposure hypothesis; it does not satisfy the frozen three-pair adoption contract by itself. Horizon remains unselected; no early stopping, bootstrap decision, seed substitution or gate change follows this result. The second fresh pair is the next discriminating replication.
+
+All48 first generation records were read (16initial,16RAW,16H200); every record reached the64-token limit. Neither final endpoint shows reliable coherence. H200 greedy water begins “the water is cooled” after “When water is heated,” then loops; plants says “help prevent the spread of heat” and calls water a type of heat. Library and sunrise responses become repeated nouns, while Maya changes the cup to a ball and drifts into a race. Sampled plants drifts into aircraft; sampled Earth calls a planet a tropical winter storm. RAW likewise calls water a type of air and repeats library/sun phrases. Local grammatical fragments and topic words coexist with factual contradictions, broken grammar and lost narrative state. Lower teacher-forced CE has not established useful free-running prose. All first outputs remain preserved without rerolls.
+
+Capacity recovery003 completed after the worker exited: eight audited obsolete original LR-screen weights retired,717,766,656 allocated bytes,67protected evidence/model hashes verified. All twelve fresh architecture-confirmation endpoint weights, exposure endpoints, selected Shakespeare weights and original screen evidence remain. Actual free space12,360,585,216 exceeded remaining full-panel requirement11,869,973,578 including serialization overlap and10GiB reserve. This resolves the recorded deficit; original cache partial receipt remains unchanged. Exact audit, manifest, retirement journal and completion receipt are in `research/tokenizer-evidence/general-rsi-capacity-003/`.
+
+Slot02 (bundle2 short H10240) launched under PID4695/session46575 after exact codebook-asset verification, free research lock and full-capacity check. It retains the frozen seed roles, LR, evaluator and acceptance criteria. On completion review it before launching its paired H20480 slot03. No new generation pass is scheduled for this bundle.
