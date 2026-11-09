@@ -15,7 +15,7 @@
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T02:53:21.734048+00:00",
+  "updated_at": "2026-11-09T03:26:37.880814+00:00",
   "active_worker_pid": 3658,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -25,7 +25,7 @@
   "complete_restart_qualified": true,
   "document_scoring_qualified": true,
   "qualification": "research/tokenizer-evidence/general-rsi-qualification-001/result.json",
-  "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-001/completed.json",
+  "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "active_slot": 4,
@@ -65,5 +65,10 @@
   "selected_lrs": {
     "native": 0.0025,
     "raw_bytes": 0.0025
-  }
+  },
+  "capacity_recoveries": [
+    "research/tokenizer-evidence/general-rsi-capacity-001/completed.json",
+    "research/tokenizer-evidence/general-rsi-capacity-002/completed.json"
+  ],
+  "capacity_status": "Full remaining-panel forecast restored after new 125346397-byte deficit; independently audited external cache cleanup recovered192466944 allocated bytes; research worker uninterrupted. Recompute full remaining requirement at next launch."
 }
