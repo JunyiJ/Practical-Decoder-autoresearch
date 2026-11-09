@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-09T19:19:25.199439+00:00",
+  "status": "resolved_by_partial_cleanup_and_concurrent_capacity_change",
+  "free_bytes": 12098699264,
+  "required_free_bytes": 11869973578,
+  "deficit_bytes": 0,
+  "removed_allocated_bytes": 34635776,
+  "passes": [
+    "completed.json",
+    "codex-cache/completed.json",
+    "homebrew-cache/completed.json"
+  ],
+  "compiled_pass": "Admission assertion stopped before manifest or deletion because deficit had already resolved. No retry needed. Earlier Homebrew pass matched only load-path cache due nested directory layout; source correction kept separately.",
+  "next_action": "Continue active slot02; remeasure at completion before slot03. Recover again only for new deficit/candidate/state change."
+}

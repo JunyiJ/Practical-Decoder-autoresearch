@@ -1,0 +1,21 @@
+{
+  "status": "partial",
+  "before": {
+    "free_bytes": 11860619264,
+    "retained_panel_bytes": 261764532,
+    "required_free_bytes": 11869973578,
+    "deficit_bytes": 9354314
+  },
+  "after": {
+    "free_bytes": 11860979712,
+    "retained_panel_bytes": 261764532,
+    "required_free_bytes": 11869973578,
+    "deficit_bytes": 8993866
+  },
+  "removed_files": 1,
+  "removed_allocated_bytes": 442368,
+  "skipped_changed_or_open": [],
+  "protected_files_verified": 22,
+  "research_payloads_modified": false,
+  "note": "Full forecast includes serialization overlap and 10GiB reserve (8GiB floor +2GiB headroom); concurrent writes affect observed free delta."
+}
