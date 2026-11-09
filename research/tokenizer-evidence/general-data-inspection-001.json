@@ -1,0 +1,93 @@
+{
+  "manifest_sha256": "b1849a5fed1fb648f507e407e5794946bba64328f519e6b0d6c360fa4e2e4fa8",
+  "verified_files": [
+    "builder-source.py",
+    "fineweb_edu-card.md",
+    "train.bin",
+    "train.index.jsonl",
+    "train.jsonl.gz",
+    "val.bin",
+    "val.index.jsonl",
+    "val.jsonl.gz",
+    "wikipedia-card.md"
+  ],
+  "tokenizer_matches_selected_model": true,
+  "test_payload_opened": false,
+  "training_launched": false,
+  "splits": {
+    "train": {
+      "tokens": 10001163,
+      "documents": 9807,
+      "source_tokens": {
+        "fineweb_edu": 8001157,
+        "wikipedia": 2000006
+      },
+      "min_doc_tokens": 257,
+      "median_doc_tokens": 707,
+      "max_doc_tokens": 8158,
+      "contiguous_offsets": true,
+      "all_document_end_markers_valid": true
+    },
+    "val": {
+      "tokens": 100524,
+      "documents": 108,
+      "source_tokens": {
+        "fineweb_edu": 80439,
+        "wikipedia": 20085
+      },
+      "min_doc_tokens": 258,
+      "median_doc_tokens": 627.0,
+      "max_doc_tokens": 6287,
+      "contiguous_offsets": true,
+      "all_document_end_markers_valid": true
+    }
+  },
+  "train_validation_exact_normalized_hash_overlap": 0,
+  "training_documents_retokenized_exactly": [
+    0,
+    100,
+    426,
+    852,
+    1000,
+    1279,
+    1705,
+    2131,
+    2558,
+    2984,
+    3410,
+    3837,
+    4000,
+    4263,
+    4689,
+    5116,
+    5542,
+    5968,
+    6395,
+    6821,
+    7247,
+    7674,
+    8000,
+    8100,
+    8526,
+    8953,
+    9379,
+    9500,
+    9806
+  ],
+  "source_order": "Stored as FineWeb-Edu followed by Wikipedia; training must sample/shuffle across the full stream.",
+  "limitations": [
+    "No independent near-duplicate or passage-overlap rerun.",
+    "No test contents read or scored; test counts are manifest metadata.",
+    "Training-text spot inspection only; no comprehensive factual-quality audit.",
+    "New-domain training quality, throughput and memory are unmeasured."
+  ],
+  "budget_arithmetic": {
+    "old_train_tokens": 267688,
+    "size_ratio": 37.361267595110725,
+    "old_run_target_tokens": 1228800,
+    "old_run_fraction_of_new_corpus": 0.12286571071784351,
+    "updates_for_one_corpus_equivalent_at_1024_targets": 9767,
+    "note": "Token exposure, not guaranteed coverage under sampling with replacement."
+  },
+  "next_action": "A separately bounded data-loader and throughput pilot before choosing a full training budget. Autonomous iteration remains paused."
+}
