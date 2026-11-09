@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 46575,
-  "next_action": "Short exposure slot02 H10240 running under PID4695/session46575. On completion verify result/guard/endpoints and all10240updates/342EMA snapshots, then launch paired long slot03 with frozen bundle2 roles after capacity, tokenizer-asset and lock checks. No horizon adoption until all three pairs; test unopened.",
+  "active_session": 25656,
+  "next_action": "Long exposure slot03 H20480 running under PID92540/session25656. At completion verify all20480updates/683EMA snapshots, guard, endpoints and document coverage; compare first10240batch hashes with paired short slot02. Then launch frozen short slot04 after full capacity/asset/lock checks. Keep all three pairs and criteria fixed; test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T19:19:25.199439+00:00",
-  "active_worker_pid": 4695,
+  "updated_at": "2026-11-09T19:37:46.404219+00:00",
+  "active_worker_pid": 92540,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
   "panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
-  "active_slot": 2,
+  "active_slot": 3,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "First fresh exposure pair supports longer horizon: H200 delta long-short -0.1981092561 nats/token; both sources improve. Generation remains repetitive and factually unreliable. Two further frozen pairs required before horizon adoption.",
+  "latest_learning": "Second fresh short control accepted:H2005.1362259278, RAW5.1407658495; first-pair long advantage remains -0.1981092561. Replication of longer exposure is pending in slot03; no horizon adoption until all three pairs.",
   "phase": "exposure_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -72,7 +72,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-003/screen-retirement-completed.json",
     "research/tokenizer-evidence/general-rsi-capacity-004/reconciliation.json"
   ],
-  "capacity_status": "Recovery004 across Chrome/Codex/Homebrew removed34635776allocated bytes; concurrent capacity change resolved forecast deficit. Free12098699264 versus required11869973578. Compiled-cache follow-up did not pass deficit admission and deleted nothing. Active slot02 healthy; remeasure before slot03.",
+  "capacity_status": "Slot03 admission:free12007333888bytes versus full remaining-panel requirement11739091312; exact tokenizer asset hashes verified, prior worker exited and lock free. No new cleanup required.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -175,6 +175,13 @@
       "h200_ce": 4.943923206243317,
       "raw_ce": 4.953953182516312,
       "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-01/review.json"
+    },
+    {
+      "slot": 2,
+      "horizon": 10240,
+      "h200_ce": 5.136225927787609,
+      "raw_ce": 5.140765849511616,
+      "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-02/review.json"
     }
   ],
   "exposure_attempt": 1,
