@@ -1,7 +1,8 @@
 # General-corpus confirmation results
 
 The first frozen paired bundle (native slot04 / byte slot05) is complete.
-The second bundle (slots06–07) is also complete; third native slot08 is running. No architecture is adopted from
+The second bundle (slots06–07) and third native slot08 are complete; final byte
+slot09 is running. No architecture is adopted from
 one pair.
 All three fresh pairs and the original gates remain required; test stays closed.
 
@@ -129,3 +130,18 @@ bootstrap decision. No acceptance calculation is shortened or threshold changed.
 Third native slot08 is now running, followed by byte slot09. Final evaluation
 will report all three pairs, both source means, the fixed bootstrap bound and
 runtime/parameter tradeoffs, with test still unopened.
+
+## Third native confirmation (slot08)
+
+The third native seed completed10,240 updates and342 EMA snapshots:
+H200 CE5.201497910604506 and RAW5.204643604136522 over100,416 targets in108
+validation documents. H200 FineWeb-Edu5.184515231236275;
+Wikipedia5.269518358114966. Guard wall time3636.738 seconds; peakRSS891,994,112
+bytes. All source, update, finite-gradient/clipping, endpoint-hash and coverage
+checks passed slot08 review. Generation is not scheduled for this bundle.
+
+The three native H200 scores are5.197680920685920,5.195349189907856 and
+5.201497910604506. Final byte slot09 is now running with the third paired roles.
+Once complete, verify its paired batches and endpoint evidence, then compute
+the original three-pair mean/source gates and fixed10,000-resample document
+bootstrap. Do not substitute earlier pairs or screens for the last result.
