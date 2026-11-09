@@ -1,0 +1,88 @@
+{
+  "arms": [
+    {
+      "arm": "native",
+      "steps": 20,
+      "parameter_bytes": 113969664,
+      "optimizer_state_tensor_bytes": 216929456,
+      "median_update_seconds": 0.36020529200322926,
+      "training_seconds": 7.585844208020717,
+      "peak_mps_driver_observed_bytes": 2493300736,
+      "max_cpu_mps_logit_error": 9.5367431640625e-07,
+      "exact_saved_weights": true,
+      "checkpoint": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pilot-001/native.pt",
+        "size": 113996635,
+        "sha256": "d3507e26e07b4900b0c365020d0f3f886032e946bb69e212bb9fc1f976b460f9"
+      },
+      "batch_hashes": [
+        "597ed9c89fe08af5c9288d4ec0491504b00053f9a7129fa3d5d7ee3f6e2cbc04",
+        "d15c1f6d71fc28b13c3fcc18086bf31845e32116b69304d702128d354b2d4e34",
+        "d57dbb6cd7484cf74d6196ccc179bce1f610def5a0f601e8d3c080908c975d37",
+        "7fbdf1b4d9268c1dcde9f9d792f056ac958672d608ce80379a4f69039165f71d",
+        "80285a4d2de4ea308faca5d345b2742c56560c50c6609630313f961acd5ba7f7",
+        "9902f88ca03a3868d524ab8e1a3e889300c0a642a664cdfe68fe8ba289ee0e35",
+        "34871f2dd0db0c7d6becfc797270e712b2a1a2b412978f7ff2e357faafc09030",
+        "a3523529b6bf0af8949ea2a944dea9098956b50a3bfa8ec098348b12f85941ee",
+        "3361ee4e40dddad793fa6f0d72d214fa96cb6614513469a4dcc69c250670821e",
+        "b46504c992f79c6d77458f3a5efbba82e7cd5d470a43ad3fe8b65bb81c7d0b18",
+        "47c26a1f44227d75aee05a898494704d5af698a3f0275d4c5d7443825a71117a",
+        "355fdd2f404115c8c463ade12c7b735d1d107cf595eb1adcf03874d9e82edcaf",
+        "83a297f13a6ceeb5a451acb0a75897f0fd44533bc66c8aff8edcffadfcf2064a",
+        "ca69dceaf9ba0cfc22fb2181b4f3cee5fc72f6d98a60989157564689332321da",
+        "435171ed1a54a76318daf342e54c63c3007c8a29b82228d9b77b87490a44565a",
+        "3fb366acb4a02aa7000eddefd9cc15beb636aa89a44f6ea7cef4ca617e1f4bd7",
+        "9ad2d018e0c34ea2938527215986f81cb5745c3e981c6d7a5e9bd08c5dc8764b",
+        "dc7be9e0f3b612861a7d460c670d0ef3fc93c317ef55981c791725e4a6ff46e6",
+        "c65c2152a7ae65ffdca7aa36d662741c239f67a14344dbc8525c3fe7d9ca5469",
+        "8c670ae69b7fbfe87576d0214d924a0fa0f89eb5f6497c1af0d25b75887e75bc"
+      ],
+      "validation_sampler_unchanged": true
+    },
+    {
+      "arm": "raw_bytes",
+      "steps": 20,
+      "parameter_bytes": 65407436,
+      "optimizer_state_tensor_bytes": 116925932,
+      "median_update_seconds": 0.6476733750896528,
+      "training_seconds": 13.376029081060551,
+      "peak_mps_driver_observed_bytes": 3606888448,
+      "max_cpu_mps_logit_error": 2.1457672119140625e-06,
+      "exact_saved_weights": true,
+      "checkpoint": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pilot-001/raw_bytes.pt",
+        "size": 65439213,
+        "sha256": "1485a4cee538306f13220307dedc74fce0126352b28cb8e963a7d5a217bc6500"
+      },
+      "batch_hashes": [
+        "597ed9c89fe08af5c9288d4ec0491504b00053f9a7129fa3d5d7ee3f6e2cbc04",
+        "d15c1f6d71fc28b13c3fcc18086bf31845e32116b69304d702128d354b2d4e34",
+        "d57dbb6cd7484cf74d6196ccc179bce1f610def5a0f601e8d3c080908c975d37",
+        "7fbdf1b4d9268c1dcde9f9d792f056ac958672d608ce80379a4f69039165f71d",
+        "80285a4d2de4ea308faca5d345b2742c56560c50c6609630313f961acd5ba7f7",
+        "9902f88ca03a3868d524ab8e1a3e889300c0a642a664cdfe68fe8ba289ee0e35",
+        "34871f2dd0db0c7d6becfc797270e712b2a1a2b412978f7ff2e357faafc09030",
+        "a3523529b6bf0af8949ea2a944dea9098956b50a3bfa8ec098348b12f85941ee",
+        "3361ee4e40dddad793fa6f0d72d214fa96cb6614513469a4dcc69c250670821e",
+        "b46504c992f79c6d77458f3a5efbba82e7cd5d470a43ad3fe8b65bb81c7d0b18",
+        "47c26a1f44227d75aee05a898494704d5af698a3f0275d4c5d7443825a71117a",
+        "355fdd2f404115c8c463ade12c7b735d1d107cf595eb1adcf03874d9e82edcaf",
+        "83a297f13a6ceeb5a451acb0a75897f0fd44533bc66c8aff8edcffadfcf2064a",
+        "ca69dceaf9ba0cfc22fb2181b4f3cee5fc72f6d98a60989157564689332321da",
+        "435171ed1a54a76318daf342e54c63c3007c8a29b82228d9b77b87490a44565a",
+        "3fb366acb4a02aa7000eddefd9cc15beb636aa89a44f6ea7cef4ca617e1f4bd7",
+        "9ad2d018e0c34ea2938527215986f81cb5745c3e981c6d7a5e9bd08c5dc8764b",
+        "dc7be9e0f3b612861a7d460c670d0ef3fc93c317ef55981c791725e4a6ff46e6",
+        "c65c2152a7ae65ffdca7aa36d662741c239f67a14344dbc8525c3fe7d9ca5469",
+        "8c670ae69b7fbfe87576d0214d924a0fa0f89eb5f6497c1af0d25b75887e75bc"
+      ],
+      "validation_sampler_unchanged": true
+    }
+  ],
+  "paired_batches": true,
+  "common_body_initialization": true,
+  "validation_target_count": 100416,
+  "quality_selection": false,
+  "test_opened": false,
+  "full_training_resume_qualified": false
+}

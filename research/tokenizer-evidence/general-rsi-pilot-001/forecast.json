@@ -1,0 +1,102 @@
+{
+  "kind": "general_rsi_preliminary_full_panel_forecast_v1",
+  "runs": [
+    {
+      "run": 0,
+      "arm": "native",
+      "retained_prior_final_bytes": 0,
+      "final_raw_and_h200_bytes": 230090422,
+      "one_restart_bytes": 461646000,
+      "high_water_incremental_bytes": 1220491286
+    },
+    {
+      "run": 1,
+      "arm": "raw_bytes",
+      "retained_prior_final_bytes": 230090422,
+      "final_raw_and_h200_bytes": 132975578,
+      "one_restart_bytes": 264518020,
+      "high_water_incremental_bytes": 959210904
+    },
+    {
+      "run": 2,
+      "arm": "native",
+      "retained_prior_final_bytes": 363066000,
+      "final_raw_and_h200_bytes": 230090422,
+      "one_restart_bytes": 461646000,
+      "high_water_incremental_bytes": 1583557286
+    },
+    {
+      "run": 3,
+      "arm": "raw_bytes",
+      "retained_prior_final_bytes": 593156422,
+      "final_raw_and_h200_bytes": 132975578,
+      "one_restart_bytes": 264518020,
+      "high_water_incremental_bytes": 1322276904
+    },
+    {
+      "run": 4,
+      "arm": "native",
+      "retained_prior_final_bytes": 726132000,
+      "final_raw_and_h200_bytes": 230090422,
+      "one_restart_bytes": 461646000,
+      "high_water_incremental_bytes": 1946623286
+    },
+    {
+      "run": 5,
+      "arm": "raw_bytes",
+      "retained_prior_final_bytes": 956222422,
+      "final_raw_and_h200_bytes": 132975578,
+      "one_restart_bytes": 264518020,
+      "high_water_incremental_bytes": 1685342904
+    },
+    {
+      "run": 6,
+      "arm": "native",
+      "retained_prior_final_bytes": 1089198000,
+      "final_raw_and_h200_bytes": 230090422,
+      "one_restart_bytes": 461646000,
+      "high_water_incremental_bytes": 2309689286
+    },
+    {
+      "run": 7,
+      "arm": "raw_bytes",
+      "retained_prior_final_bytes": 1319288422,
+      "final_raw_and_h200_bytes": 132975578,
+      "one_restart_bytes": 264518020,
+      "high_water_incremental_bytes": 2048408904
+    },
+    {
+      "run": 8,
+      "arm": "native",
+      "retained_prior_final_bytes": 1452264000,
+      "final_raw_and_h200_bytes": 230090422,
+      "one_restart_bytes": 461646000,
+      "high_water_incremental_bytes": 2672755286
+    },
+    {
+      "run": 9,
+      "arm": "raw_bytes",
+      "retained_prior_final_bytes": 1682354422,
+      "final_raw_and_h200_bytes": 132975578,
+      "one_restart_bytes": 264518020,
+      "high_water_incremental_bytes": 2411474904
+    }
+  ],
+  "training_seconds_at_short_pilot_medians": 35090.30367350578,
+  "training_with_30pct_margin_plus_one_hour_eval_seconds": 49217.39477555752,
+  "incremental_peak_bytes": 2672755286,
+  "reserve_bytes": 10737418240,
+  "free_bytes_now": 13414297600,
+  "deficit_bytes": 0,
+  "already_retained_pilot_bytes": 179435848,
+  "assumptions": [
+    "Four screens then three paired confirmations, native then byte in each pair.",
+    "Two final FP32 inference endpoints retained for every run, RAW and H200.",
+    "Largest restart holds parameters, optimizer states, one EMA, plus16MiB metadata/RNG allowance.",
+    "Two restart generations coexist during atomic replacement. Completed-run restart retirement only after dependency closure and exact audited journaling; final endpoint weights remain.",
+    "64MiB future source/log/metric allowance. Existing pilot already consumes measured free space; not double-counted.",
+    "Checkpoint format, complete-resume qualification and full evaluator timing still required before scientific panel admission.",
+    "No new quality results used for this forecast."
+  ],
+  "panel_admitted": false
+}
