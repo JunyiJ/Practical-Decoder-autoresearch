@@ -1,8 +1,8 @@
 # Residual readout: implementation verified, fresh quality panel running
 
-The new zero-gated residual readout passed its implementation pilot. Seven of nine fresh quality runs have completed and passed numerical
-acceptance. Both complete seeds fail the mandatory candidate-improvement
-criterion against byte. The third seed is active; the frozen remaining runs and
+The new zero-gated residual readout passed its implementation pilot. Eight of nine fresh quality runs have completed and passed numerical
+acceptance. All three matched nonlinear/byte pairs fail the mandatory candidate-improvement
+criterion. The final third-seed linear control is active; the frozen remaining runs and
 independent final review continue. No model is adopted. The selected byte model and its corrected public
 inference recipe remain unchanged.
 
@@ -55,8 +55,8 @@ Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
 scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot07 byte on the third seed, PID29393;
-live logs supersede this snapshot. Slots00–06 are terminal and must not be replayed.
+worker was slot08 residual-linear on the third seed, PID33655;
+live logs supersede this snapshot. Slots00–07 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 
@@ -343,3 +343,34 @@ or checkpoint loading, and keeps holdout tokens closed. Source syntax was checke
 no diagnostic execution, numerical acceptance or subgroup result is claimed yet.
 The training controller remains active. Execute this analysis once after all nine
 runs, final review and three-bundle analysis finish; retain failures if any.
+
+## Third matched nonlinear/byte pair (eight of nine complete)
+
+Slot07 byte completed1200 updates/41 snapshots in693.248seconds of guarded
+execution, including586.072seconds of training updates. Its primary H200 CE is
+4.588101483877167; final-online CE is4.626186339399742. Saved acceptance, result
+and guard hashes, both checkpoint hashes/sizes, all1200 sequential training
+records and all34278 CPU/MPS target losses were checked for publication.
+Recomputed mean/max numerical errors2.63550e-8/1.71661e-5 pass fixed limits.
+Common initial weights, initializer/sampler roles and terminal training sampler
+hashes match the accepted third-seed nonlinear run.
+
+Nonlinear minus byte H200 is+.0538503399461 on this seed, after+.0573847642768
+and+.0567338754096 on the first two. Thus all three fresh matched comparisons
+lose to byte; the mandatory candidate-improvement condition fails on every seed,
+subject to final independent verification. The third-seed final-online penalty
+is+.0837435616227, while the last100 sampled training difference is-.0979814196.
+The better-training/worse-validation pattern repeats across all three pairs.
+
+The third seed had a small nonlinear advantage at online update300, reversed by
+600. This qualifies the earlier first-two-seed curve observation: no universal
+claim that every early checkpoint loses is warranted. The primary averaged
+endpoint, late online endpoint and training length remain fixed; no favorable
+intermediate checkpoint is selected.
+
+Slot08 residual-linear automatically started as PID33655. This final run is
+needed to finish the predeclared nonlinear-versus-linear contrast and full
+independent review. After controller completion and accepted review, run the
+three-bundle analysis once and then the prepared all-seed frequency diagnostic
+under the free shared lock. No further training is needed for either analysis.
+The selected byte model remains unchanged.
