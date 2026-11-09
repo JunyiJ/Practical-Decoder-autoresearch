@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 25656,
-  "next_action": "Long exposure slot03 H20480 running under PID92540/session25656. At completion verify all20480updates/683EMA snapshots, guard, endpoints and document coverage; compare first10240batch hashes with paired short slot02. Then launch frozen short slot04 after full capacity/asset/lock checks. Keep all three pairs and criteria fixed; test unopened.",
+  "active_session": 85171,
+  "next_action": "Short exposure slot04 H10240 running under PID65889/session85171. At completion verify all10240updates/342EMA snapshots, guard, endpoints and document coverage, then launch paired long slot05 after full capacity/asset/lock checks. Apply frozen three-pair decision only after all six runs; test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T22:14:00.967087+00:00",
-  "active_worker_pid": 92540,
+  "updated_at": "2026-11-09T23:18:00.663198+00:00",
+  "active_worker_pid": 65889,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
   "panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
-  "active_slot": 3,
+  "active_slot": 4,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Second fresh short control accepted:H2005.1362259278, RAW5.1407658495; first-pair long advantage remains -0.1981092561. Replication of longer exposure is pending in slot03; no horizon adoption until all three pairs.",
+  "latest_learning": "Second fresh exposure pair accepted: H200 delta -0.2056842069, supporting first pair -0.1981092561. Both sources improve; third pair still required before any horizon adoption.",
   "phase": "exposure_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -73,7 +73,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-004/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-005/reconciliation.json"
   ],
-  "capacity_status": "Recovery005 resolved new capacity deficit: removed 58228736 allocated bytes across audited Chrome/Codex, Homebrew and orphaned sparse HTTP caches; free11769331712 versus full requirement11739091312. All24 protected files verified per pass; slot03 continues unchanged.",
+  "capacity_status": "Slot04 admission:free12947005440bytes versus full remaining-panel requirement11608209046; exact tokenizer assets verified; prior worker exited and lock free. No cleanup required.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -183,6 +183,13 @@
       "h200_ce": 5.136225927787609,
       "raw_ce": 5.140765849511616,
       "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-02/review.json"
+    },
+    {
+      "slot": 3,
+      "horizon": 20480,
+      "h200_ce": 4.930541720880974,
+      "raw_ce": 4.940142704788402,
+      "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-03/review.json"
     }
   ],
   "exposure_attempt": 1,
@@ -195,6 +202,13 @@
       "long_slot": 1,
       "h200_delta": -0.1981092561399862,
       "raw_delta": -0.19269946131104998
+    },
+    {
+      "bundle": 2,
+      "short_slot": 2,
+      "long_slot": 3,
+      "h200_delta": -0.2056842069066347,
+      "raw_delta": -0.20062314472321408
     }
   ]
 }

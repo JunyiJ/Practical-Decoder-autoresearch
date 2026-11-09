@@ -88,3 +88,11 @@ This supplies the second fresh paired baseline, not a new horizon decision. The 
 Slot03 remained healthy while free storage fell below the frozen remaining-panel requirement of 11,739,091,312 bytes. Three exact audited passes reclaimed 58,228,736 allocated bytes from 837 unopened cache payloads. The first two passes were partial and are retained as such; the sparse-cache pass resolved the deficit. Chromium format references and structural checks are recorded in general-rsi-capacity-005/sparse-cache/format-evidence.json. No research payloads changed; each pass verified24 protected hashes. Final measured free space: 11,769,331,712 bytes. The10GiB reserve includes the8GiB floor and2GiB headroom.
 
 The exposure hypothesis is unchanged: first-pair longer training improved H200 CE, pending replication. Continue the existing slot03 worker, verify its endpoints and paired batch prefix at completion, then check full remaining capacity before slot04. No scientific criteria, seeds or training schedules changed.
+
+## Second exposure pair accepted — 2026-11-09T23:17:45.572561+00:00
+
+Slot03 completed20,480 updates and683 EMA snapshots. Full validation H200 CE=4.930541720881, RAW=4.940142704788. Relative to paired short slot02, H200 delta=-0.205684206907, RAW delta=-0.200623144723. H200 source deltas: FineWeb-Edu=-0.207088136858, Wikipedia=-0.200061069267. Guard finished without violation at13,083.660851 seconds; peak RSS988,200,960 bytes.
+
+Review verified5,094 frozen source bindings, all step/gradient/clipping records, both endpoint hashes,108-document/100,416-target scoring coverage and the identical first10,240 sampled batches. Final transient restart was retired only after endpoint verification. Generation was not scheduled for this pair; test remains unopened.
+
+Two of three fresh pairs support longer exposure, with H200 deltas -0.198109256140 and -0.205684206907. This supports the hypothesized prediction benefit; it does not yet meet the complete three-pair adoption contract or establish better prose/equal-time quality. Next execute frozen short slot04, then long slot05, retaining the same criteria. Admission check: free12,947,005,440 bytes versus remaining full-panel requirement11,608,209,046 bytes; remaining tranche67,893.859444 seconds exceeds both18,000-second slot ceilings. Exact tokenizer cache hashes verified.
