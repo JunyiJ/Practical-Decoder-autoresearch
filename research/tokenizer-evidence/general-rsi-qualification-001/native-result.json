@@ -1,0 +1,28 @@
+{
+  "arm": "native",
+  "checkpoint": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-qualification-001/native-step35.pt",
+    "size": 445009719,
+    "sha256": "4889e8dc87207783dd5f2eb39192c99f251237f08da8c5ab0cc1b3b100492399"
+  },
+  "save_seconds": 0.36287120799534023,
+  "restore_seconds": 0.5870167500106618,
+  "exact_restore_at35": true,
+  "exact_complete_state_at40": true,
+  "ema_snapshots": 2,
+  "full_validation_seconds": 25.934515542001463,
+  "full_validation_targets": 100416,
+  "fp64_cpu_oracle": [
+    {
+      "document": 0,
+      "count": 315,
+      "absolute_mean_ce_error": 2.5884174092993817e-07
+    },
+    {
+      "document": 85,
+      "count": 369,
+      "absolute_mean_ce_error": 2.534919492092058e-07
+    }
+  ],
+  "scientific_selection": false
+}
