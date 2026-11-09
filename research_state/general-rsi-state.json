@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 37868,
-  "next_action": "Slot00 is running under PID45823/session37868. Check its actual process, guard and steps before any launch; do not duplicate the worker. After successful result and finished guard, review and launch frozen slot01. Continue00..03 then select LR and run04..09. Preserve full-panel capacity, fixed roles and gates.",
+  "active_session": 33055,
+  "next_action": "Slot01 is running under PID56622/session33055. Inspect its actual guard/process/steps before starting anything. After successful completion, verify complete paired batch hashes against slot00 and review source/weight/target receipts; then launch frozen slot02. Select LR only after all four screens; keep H200 primary despite slot00 RAW being better.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T01:31:18.729756+00:00",
-  "active_worker_pid": 45823,
+  "updated_at": "2026-11-09T01:47:54.830103+00:00",
+  "active_worker_pid": 56622,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,5 +28,14 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-001/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
-  "active_slot": 0
+  "active_slot": 1,
+  "completed_screens": [
+    {
+      "slot": 0,
+      "arm": "native",
+      "lr": 0.00125,
+      "h200_ce": 6.177846965714656,
+      "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-00/review.json"
+    }
+  ]
 }
