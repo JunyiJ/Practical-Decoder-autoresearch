@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_RESEARCH_DESIGN",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 39114,
-  "next_action": "Final paired byte confirmation slot09 running under PID43489/session39114. At completion verify all10240 batch hashes against slot08, guard/source/checkpoint/coverage evidence. Then evaluate all three fresh pairs under the frozen mean/source/99% document-bootstrap gates, report resource and generation limitations, and select next evidence-grounded research step. Keep test unopened.",
+  "active_session": null,
+  "next_action": "Implement the prospective exposure comparison in a new worker namespace without modifying frozen panel001 sources. Bind the design, new seed roles, complete output/serialization forecast and source hashes before launch; verify changed scheduling/config paths, then launch one worker under the shared lock. No training worker is currently active. Test stays unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T09:51:25.050066+00:00",
-  "active_worker_pid": 43489,
+  "updated_at": "2026-11-09T11:48:13.308836+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
-  "active_slot": 9,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All three native confirmations passed, H200 scores5.197681/5.195349/5.201498. Two complete pairs favor byte by~.0496 but final paired byte slot09 is still running. Full three-pair gates remain pending; generation quality remains unreliable in preserved first-bundle outputs.",
-  "phase": "fresh_confirmation",
+  "latest_learning": "Byte passes all three fresh-pair equal-token quality gates: mean H200 delta -0.05260391; frozen99% upper -0.03809101; both sources improve.42.61% fewer parameters but~1.84x training wall time; first outputs remain incoherent. Saved curves still improve at endpoint.",
+  "phase": "exposure_design",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -116,6 +116,15 @@
       "h200_ce": 5.201497910604506,
       "raw_ce": 5.204643604136522,
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-08/review.json"
+    },
+    {
+      "slot": 9,
+      "arm": "raw_bytes",
+      "bundle": 3,
+      "lr": 0.0025,
+      "h200_ce": 5.142936364187565,
+      "raw_ce": 5.14877086204826,
+      "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-09/review.json"
     }
   ],
   "confirmation_report": "research/GENERAL_RSI_CONFIRMATION_RESULTS.md",
@@ -135,6 +144,17 @@
       "h200_delta_byte_minus_native": -0.04958765982234414,
       "raw_delta_byte_minus_native": -0.04611038627947561,
       "guard_time_ratio_byte_over_native": 1.835922513792748
+    },
+    {
+      "bundle": 3,
+      "native_slot": 8,
+      "byte_slot": 9,
+      "h200_delta_byte_minus_native": -0.05856154641694111,
+      "raw_delta_byte_minus_native": -0.05587274208826187,
+      "guard_time_ratio_byte_over_native": 1.8523338191289958
     }
-  ]
+  ],
+  "selected_general_architecture": "raw_bytes",
+  "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
+  "next_design": "research/GENERAL_RSI_EXPOSURE_DESIGN.md"
 }

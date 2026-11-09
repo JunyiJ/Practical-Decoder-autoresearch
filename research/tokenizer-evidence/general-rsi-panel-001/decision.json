@@ -1,0 +1,475 @@
+{
+  "plan_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
+  "analysis_source_sha256": "0cbf7f77351977ccb5cc6486e257751230b760bd19b27f72ea4b5c50df64275b",
+  "source_bindings_verified": 5089,
+  "all_six_executions_verified": true,
+  "all_three_10240_batch_pairs_verified": true,
+  "pairs": [
+    {
+      "native_slot": 4,
+      "byte_slot": 5,
+      "h200_delta": -0.0496625232497836,
+      "raw_delta": -0.047075188720001826,
+      "guard_time_ratio": 1.8402320327287962
+    },
+    {
+      "native_slot": 6,
+      "byte_slot": 7,
+      "h200_delta": -0.04958765982234414,
+      "raw_delta": -0.04611038627947561,
+      "guard_time_ratio": 1.835922513792748
+    },
+    {
+      "native_slot": 8,
+      "byte_slot": 9,
+      "h200_delta": -0.05856154641694111,
+      "raw_delta": -0.05587274208826187,
+      "guard_time_ratio": 1.8523338191289958
+    }
+  ],
+  "mean_h200_delta": -0.05260390982968967,
+  "mean_h200_ce": {
+    "native": 5.1981760070660945,
+    "raw_bytes": 5.145572097236404
+  },
+  "bootstrap": {
+    "seed": 62110300999,
+    "resamples": 10000,
+    "upper_quantile": 0.99,
+    "upper": -0.03809100760545189,
+    "native_upper": 0.06841433251375896,
+    "method": "NumPy PCG64 default_rng; average paired seed document loss sums, resample108 IDs, divide by resampled counts; linear quantile",
+    "scope": "Conditional on these validation documents and three seeds; not population-seed confidence"
+  },
+  "source_mean_deltas": {
+    "fineweb_edu": -0.048495072078462854,
+    "wikipedia": -0.06906097037510033
+  },
+  "byte_gates": {
+    "all_three_negative": true,
+    "mean_threshold": true,
+    "bootstrap_upper_negative": true,
+    "source_guard": true
+  },
+  "selected_architecture": "raw_bytes",
+  "curves": {
+    "4": {
+      "probe_curve": [
+        {
+          "step": 1024,
+          "probe_ce": 6.312691420153666
+        },
+        {
+          "step": 2048,
+          "probe_ce": 5.982100536368501
+        },
+        {
+          "step": 3072,
+          "probe_ce": 5.736862840231931
+        },
+        {
+          "step": 4096,
+          "probe_ce": 5.62003077654908
+        },
+        {
+          "step": 5120,
+          "probe_ce": 5.468265450493552
+        },
+        {
+          "step": 6144,
+          "probe_ce": 5.411768165248823
+        },
+        {
+          "step": 7168,
+          "probe_ce": 5.343847407341401
+        },
+        {
+          "step": 8192,
+          "probe_ce": 5.218128104045161
+        },
+        {
+          "step": 9216,
+          "probe_ce": 5.068167540949833
+        },
+        {
+          "step": 10240,
+          "probe_ce": 4.99917432149738
+        }
+      ],
+      "full_raw_2048": 6.043485110869066,
+      "full_raw_10240": 5.2008541908060835,
+      "training_first1024_mean": 6.80227534705773,
+      "training_last1024_mean": 4.885607078438625
+    },
+    "5": {
+      "probe_curve": [
+        {
+          "step": 1024,
+          "probe_ce": 6.313036067725866
+        },
+        {
+          "step": 2048,
+          "probe_ce": 5.974458347092585
+        },
+        {
+          "step": 3072,
+          "probe_ce": 5.731367110334418
+        },
+        {
+          "step": 4096,
+          "probe_ce": 5.567850925883718
+        },
+        {
+          "step": 5120,
+          "probe_ce": 5.511696961699309
+        },
+        {
+          "step": 6144,
+          "probe_ce": 5.411524928307571
+        },
+        {
+          "step": 7168,
+          "probe_ce": 5.316104806531159
+        },
+        {
+          "step": 8192,
+          "probe_ce": 5.192223208482739
+        },
+        {
+          "step": 9216,
+          "probe_ce": 5.031851901137515
+        },
+        {
+          "step": 10240,
+          "probe_ce": 4.945098502483243
+        }
+      ],
+      "full_raw_2048": 6.050455078784118,
+      "full_raw_10240": 5.153779002086082,
+      "training_first1024_mean": 6.87913933256641,
+      "training_last1024_mean": 4.939206219278276
+    },
+    "6": {
+      "probe_curve": [
+        {
+          "step": 1024,
+          "probe_ce": 6.3180327822326605
+        },
+        {
+          "step": 2048,
+          "probe_ce": 5.965094942878764
+        },
+        {
+          "step": 3072,
+          "probe_ce": 5.729876042358123
+        },
+        {
+          "step": 4096,
+          "probe_ce": 5.572732209727815
+        },
+        {
+          "step": 5120,
+          "probe_ce": 5.516239524669716
+        },
+        {
+          "step": 6144,
+          "probe_ce": 5.384502111344307
+        },
+        {
+          "step": 7168,
+          "probe_ce": 5.299125005162943
+        },
+        {
+          "step": 8192,
+          "probe_ce": 5.179437505675765
+        },
+        {
+          "step": 9216,
+          "probe_ce": 5.038556456204042
+        },
+        {
+          "step": 10240,
+          "probe_ce": 4.9687510875987275
+        }
+      ],
+      "full_raw_2048": 6.0607548667592805,
+      "full_raw_10240": 5.195755096272238,
+      "training_first1024_mean": 6.7965818657539785,
+      "training_last1024_mean": 4.890042627230287
+    },
+    "7": {
+      "probe_curve": [
+        {
+          "step": 1024,
+          "probe_ce": 6.349285079499187
+        },
+        {
+          "step": 2048,
+          "probe_ce": 5.9803856346922615
+        },
+        {
+          "step": 3072,
+          "probe_ce": 5.751342829944326
+        },
+        {
+          "step": 4096,
+          "probe_ce": 5.58232150654116
+        },
+        {
+          "step": 5120,
+          "probe_ce": 5.5010156016297325
+        },
+        {
+          "step": 6144,
+          "probe_ce": 5.371081140038015
+        },
+        {
+          "step": 7168,
+          "probe_ce": 5.284916987689797
+        },
+        {
+          "step": 8192,
+          "probe_ce": 5.134418441377109
+        },
+        {
+          "step": 9216,
+          "probe_ce": 4.994507275064581
+        },
+        {
+          "step": 10240,
+          "probe_ce": 4.907073009349402
+        }
+      ],
+      "full_raw_2048": 6.063121091644855,
+      "full_raw_10240": 5.149644709992763,
+      "training_first1024_mean": 6.868447803426534,
+      "training_last1024_mean": 4.946732248412445
+    },
+    "8": {
+      "probe_curve": [
+        {
+          "step": 1024,
+          "probe_ce": 6.278070393218171
+        },
+        {
+          "step": 2048,
+          "probe_ce": 5.8951587570526
+        },
+        {
+          "step": 3072,
+          "probe_ce": 5.721248072237314
+        },
+        {
+          "step": 4096,
+          "probe_ce": 5.694254348751529
+        },
+        {
+          "step": 5120,
+          "probe_ce": 5.446697077331134
+        },
+        {
+          "step": 6144,
+          "probe_ce": 5.460913097008835
+        },
+        {
+          "step": 7168,
+          "probe_ce": 5.398084691785144
+        },
+        {
+          "step": 8192,
+          "probe_ce": 5.229278673795979
+        },
+        {
+          "step": 9216,
+          "probe_ce": 5.120133396752521
+        },
+        {
+          "step": 10240,
+          "probe_ce": 5.017076976282204
+        }
+      ],
+      "full_raw_2048": 6.036671027711299,
+      "full_raw_10240": 5.204643604136522,
+      "training_first1024_mean": 6.810347378253937,
+      "training_last1024_mean": 4.923066582996398
+    },
+    "9": {
+      "probe_curve": [
+        {
+          "step": 1024,
+          "probe_ce": 6.3128137355863405
+        },
+        {
+          "step": 2048,
+          "probe_ce": 5.9703475785907685
+        },
+        {
+          "step": 3072,
+          "probe_ce": 5.7153167731032966
+        },
+        {
+          "step": 4096,
+          "probe_ce": 5.583715287068813
+        },
+        {
+          "step": 5120,
+          "probe_ce": 5.381094768053764
+        },
+        {
+          "step": 6144,
+          "probe_ce": 5.396104790720167
+        },
+        {
+          "step": 7168,
+          "probe_ce": 5.265528963852338
+        },
+        {
+          "step": 8192,
+          "probe_ce": 5.192294046676114
+        },
+        {
+          "step": 9216,
+          "probe_ce": 5.0745550444137155
+        },
+        {
+          "step": 10240,
+          "probe_ce": 4.9597335963203495
+        }
+      ],
+      "full_raw_2048": 6.036354121913107,
+      "full_raw_10240": 5.14877086204826,
+      "training_first1024_mean": 6.8735952926799655,
+      "training_last1024_mean": 4.96767331357114
+    }
+  },
+  "guard_seconds_by_slot": {
+    "4": 3790.3040711659705,
+    "5": 6975.038965541986,
+    "6": 3637.1911969999783,
+    "7": 6677.601205541054,
+    "8": 3636.7381094999146,
+    "9": 6736.452991541941
+  },
+  "test_opened": false,
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-04096.json": "4f2ea4b1d8ba24e6d403d33be14a2624921ba61450573f8ab94000f2b92bca14",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/latest.json": "dd76ef28e041205f242ea266d8e5b5db3884cb25e74c3a5217961371a288e190",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-09216.json": "c5054a96006313888044b1438091cc4319bd6a8b22188e3466986f449c8a43c5",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/result.json": "ecc3e7d090b0e60f9fb6270b2c39a03fc395467c005834fabfd60a17f2b98012",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/generation-initial.json": "799bef68c61de9091615d7d4a2d07edda7118eea693233d8d2c4a772f0940774",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/steps.jsonl": "38871b230eb705b3cd43298d29d4cdfd99bcf748bf36a3794ebc7a98076e1b11",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-05120.json": "31f295716a791e294dfd0d15e0b8a9808625e914fb5c4e0e8b23b676cf423913",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/guard-01.json": "cd85a5779db644714ed9c0b2b6895e35806286d997b9fbf97526201f65697511",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-06144.json": "d2bb7bc456086c05578e3569ef16e08d77f123591242fa0c918a4620ff0514a0",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-07168.json": "6e0a0337ccb601fdb63781878c7c610fa410b181ff724377856bb1fb9d603cf1",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-01024.json": "ccf4800b6a01a5ccfc9129e73aac5a2d116ea4611308b512b3d3dc18b3c260ea",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/raw-validation.json": "2c46022b8f7fd10ceaa5808445ce9ac97c2cf336102f1be2cf0fd1dead0e9a74",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/progress.json": "b5a0352fe783aa0ae4fd96ab3f50067f936ba4c6a439866494a40bad235be0fa",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/attempt-01.json": "54390a9200a0038a4998c19ca7a9f16d66179c61a9a853a804694a07eb044f80",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/generation-h200.json": "d8d19ba8e3bdab2b60acbbcf0766942cf4dc0ab1e311a547b1b58d59e37e24fb",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/generation-raw.json": "08e82718a3064eb06f6f07419d66e2a59c895ecd14729c498ef52e9e4d8690a4",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-02048.json": "dbf3c15e0868baeb3a1af681eae0d5b7f792e6dd0d7485b1fd92d94ad08bd35e",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/review.json": "eacad1abc47dbb809fa8e216b3f659fdee316f6c077dd418542c4e4a3f7bc0c1",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/h200-validation.json": "54392aaa87cf893a34f671a65ddbaff43ba749275fb52b54e5f88e8d85d30721",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-08192.json": "f0f01c7702c11a1655eb7e102283e7af994c56072e2ad6939dfb1edd1e3b49f7",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/deletion-journal.jsonl": "ea5f47e020e4546e400977f6cab66cd0d2acb3d8b97f22abe9b65780f68720ad",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/validation-03072.json": "b7033fe328288ec399df2e9dcf86e00b6224d1ec10a700a1031aa9108ef5b0e9",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-04096.json": "7bfd9c951493e5fce2e6df4d77e36379a6f16f1b63fc6afdcb5499da8b7ac5ee",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/latest.json": "32ef50a0c8c3411686a122894b559d053ab2189358b0f77e99ac2ebe7793e871",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-09216.json": "cdd3081aae8a11f56835f31817143521f6891dce99cd54ab09728f56ba70e2b0",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/result.json": "8bb41ade761d231bccfa2098498a19f4a11840458724b6b18191be2628cdfae4",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/generation-initial.json": "56fc697e56f0716a87cd16eb8df71cf306a402cdae2c448b4d1943741cc795f0",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/steps.jsonl": "db1450a6e2553df2016e260bb0789ac3f41f8700723cb9bc55a4ab6ba722a538",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-05120.json": "55fdd1f835872ebe918b83f041c1ceeb467db388493402fadf5662dd32ef9755",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/guard-01.json": "144f76196863a9a51e4367d42391b405b3c760ef326e03b2217170787da83a16",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-06144.json": "874a9d48a2dba153e54d2642818502a4914c623a6ab21d8633c5abf039240d1a",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-07168.json": "0cd5a57556672e9cc9ca7182333017b9980545e490211c05e882c77efa88856f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-01024.json": "eddcbc5eae25b5c4cc7080b40f4ecdd4e114018f44a24fc3924352ea7a8f3110",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/raw-validation.json": "99f57fb490ff3aa02744314dced6d591de42e2a2064f66e7a994f9c967615fea",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/progress.json": "6c5a43a004b67fe8f6b3b17e123cb5f98e2d3e4e0e2c74db88b810c9cb4b1d3f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/attempt-01.json": "b9a3a2c1fb7104f3e0a28a88885e50a13948cb785437ee3d57d32ec65e93b2c5",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/generation-h200.json": "2bfc63e7e8d48f14cb017efdcaa4a5477f515a6b585a351442eb81326908200f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/generation-raw.json": "b354fcecb2af0756b846efd386d3ba9b2a8f2aab81ae4723365b2c19db80ee26",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-02048.json": "f75e3c016e7fb1c7d3ec67594a8d9b513664323ff30620877067643f4109cb75",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/review.json": "9c7a97da57c86802c410b2687618c2be741225dffb744cd9980e37314cddc4d3",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/h200-validation.json": "b94779218eba9de4b1c3ae201ab3f37b384dab75b866d10ccdec8522840c9e2c",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-08192.json": "fc5d42ca33506c75cd6f57776b676d911817e54fb6af65910e8be57e04c8931d",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/deletion-journal.jsonl": "f52fdf6c296e9a341e274056447421e4aa78e12908d8b577a16f7844d6daee49",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/validation-03072.json": "b786619748a733a632fde25f66b56928575ec3a0449557d8f7b89a04a69ff3e7",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-04096.json": "99ca73cc850103104b359105f206d88f5abf9aa41e1327643139f4ac6e1ceb9d",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/latest.json": "3cee36dcdfc5c148cec619f3e4a31fc05875e46b1f021e1f327971c93bd58358",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-09216.json": "0c6b8e3c93f058aab76dd9a5e199f0b8d991bcbb88d3dae0b69548c0721d3786",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/result.json": "6131702f988690d7dd668528010832541ab5d0f761f68bc445c64c87f23dc4df",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/steps.jsonl": "7c19c25a084217f112d31af75d5a2a82be1ddb6cee87be08469b489ff8e67844",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-05120.json": "b46bc7c35fa41c68b66d9f73497c60079a00447f921d65ef9e33733ca0475552",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/guard-01.json": "7779b759b5d7b4b3bd4f3423c1b9b5ffaa3cebff52849f77fea2b22a3a0f70ba",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-06144.json": "8e3c2a16fbdcf54295da1a7bf95b58da233b87ae47b8d1abed86a5eea8c3a6f1",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-07168.json": "98fe9bccc0dbed7b726d3f79423dd47b8867d96f7a7feaf4ff7dabc73ea0ea17",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-01024.json": "98578223fc8a037504a590858e6fef80e1f05d15d4cef3fe812a0e2a97831d4a",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/raw-validation.json": "56084e801011f2c379bcafc01709ab3e250f8a9f8f1328cd8583eaf2f39cd419",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/progress.json": "9453ec41e6ce26a62b9004b670f813ab0f246623bcd1c7a659b66b05d52fc123",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/attempt-01.json": "f7fc2313582813f769c5c6aa990f1121b8b24cbc909ecc10e44aa109d1456e27",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-02048.json": "763289af3433f335f319015704984f02fa9ad31f3c434f998dbfa26e9845b8a7",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/review.json": "8f02b9acc854b759eb60bb0ad3104e9e466825be0ba2c9b6e75f286cdcae37c5",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/h200-validation.json": "182bbacceb1da443d69fc0b20c8ddc788cd35fc57c759d5f1690742bc018c4e8",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-08192.json": "f68492bee6d3d78573e6319d285d7a3f0e47dac4b8138df1b90ee1f3f3ab11b4",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/deletion-journal.jsonl": "e5c7efc2b3501ef4620dbc3c221eae9adb2e9146cb55271f69d29e166661285a",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-06/validation-03072.json": "f5329028455604d9bd5bca4eba315e778edeca7910ce0c3561ce8170a11085cd",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-04096.json": "94b4a0401cbb88d26030952ed3098a8195d30b0fd5cd8d54b86e7c2a0b3b025d",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/latest.json": "f93ac2d8ae28e34099eb0f24ea88c1916c41a0662155fc80307929bc1249cdb2",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-09216.json": "c914ad8d61ac35126096b760dcea0946eae312213be144e7ca0e17375c53d94f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/result.json": "75e4ae040632e282159b00f025ad408b025af6f0996bfe1d475e88db03a57ef1",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/steps.jsonl": "5d03c1d0f3c839d16cb19361cc7c9978fe33c434586167728e07cd4f42889199",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-05120.json": "cf824756a3d0c1a1314b174f7c956d19e19aebf48d5a9c3082187499a53315cf",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/guard-01.json": "99f3ce4980b9d6df28759c30743c268f828ea720b128a5c386926cbbc2ec40f8",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-06144.json": "3620f48ec69ae8beb5b4f454c69fa914a96b9885267a09a57b83277020029013",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-07168.json": "0f22483e66ecb6c789f6247010e99345c60077960d13a3a4c663659ad53115a5",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-01024.json": "2e06c8d9198e2ac12c78c600ff80ff2489352dab9432a69ada506db6298c9f2f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/raw-validation.json": "711d08c86ab32a5729327d769d4b930f4b04096fafce2d265beb373745ffc9ab",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/progress.json": "8aa677c194ecb4c85e14e3eaaa9077c87ef55302e095497b3d3d52b9b02b43ed",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/attempt-01.json": "669735aafbc4fcd8b4788aad5f89a42edaeb7b8fd4a496d8ccb74daedb5318ab",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-02048.json": "dfb6e2ba2cd34cd1be2e149fddee08e60ce50f9d22e065f971fe9c8b58c9d71a",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/review.json": "43a3718c47e1fcb36a8610c3c7a8956b27376549dcea7f376699d4b2f9b77f5e",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/h200-validation.json": "cda40a282db8a6a1482636eee75acdcb95e0a61605dd5f794fab036e54fa7898",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-08192.json": "8899366212bdaacaa83c01756ce20df55d113d19a03ca1b593df6650120f7832",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/deletion-journal.jsonl": "d9701bc6a9ef5428d3f2e718261a2139c6eca1ea303242935f456449597236aa",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-07/validation-03072.json": "742fd1e1a7a06d86758e2a77dc42e87fdd3e55287f4448790149865521ec9ef3",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-04096.json": "7066fb0c33da49ae2d4ecf4d7a72976bee6f517b1280583de0417f380eace58c",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/latest.json": "1800e68545302b27a479a9d96c69a741ded03a4c95aa09a05ea857e5ddfd1980",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-09216.json": "c9dc38624eb29f8a69a3d0101735036ad4f4a3ac60d8928d489d4030e3021969",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/result.json": "ae27d6b9893dc4383c8ce081c93928bc2a091bc0760aaed34eab71f8e538bbd8",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/steps.jsonl": "bbd3bed1c9cf278cdacf4300370e19f65ca2b8ed5a98305e4b5fb36b9d588cca",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-05120.json": "2136ba4e6898d1c654d48f2f57e9d5c8a5727dc9395cb5b085eb686cc5de8c05",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/guard-01.json": "94e76edef2b532d9c87246223944a169ecd8380ddb9b8a3ac9199d7791afc150",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-06144.json": "6f87fd36f3f480730f827eca431362cc40bea89f6f084fed6b6d41c2a79ea52f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-07168.json": "7845d9436273a8e0584c0f520d76244e4287db2382784842037411567b6974be",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-01024.json": "5091666e7e66672ba10667e72d072221fbe37b636501b1afdaa843b2012281ef",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/raw-validation.json": "20184f01a9d65e9473b22e6a7cf804554153412447adf79a74a48f2526196181",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/progress.json": "14463ff8ad8ec974b468110623d2536e1057f68250838df933ef87e8ee2c026f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/attempt-01.json": "80f3e5e7333c5ee0c8a8187ae4c7520fe66d61f0115f6043905a2b20ee1d4f3c",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-02048.json": "a12172d7cdcd3a101612c576466cd23bfef4e863a3f4b374ad36af119bc270c0",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/review.json": "72535c1d59463f72208ea27c34590f02ac6e6afcc5e836800c577977df3fe71b",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/h200-validation.json": "342e8bdec1daf93b17d9567ab94cb1936e397b1370881e5444525c93f96ff53e",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-08192.json": "218d94ff7d7c746d4b4175de00ff43b5821346ebbb306deabc636ae28876de10",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/deletion-journal.jsonl": "2247884288704485342b263c85a3cd44e642eeefa72b49b131c574791903d972",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-08/validation-03072.json": "2fb97a3821e28c163f218a2bf3489aa99d77f03291bdac48fb222eb3c1f9dc3f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-04096.json": "fecb20a9ba24e20e9b35e4b0b90ce4c912b8066779c481d7da37332b88d20ea6",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/latest.json": "b1d3389e2d7d26203c8e28bcccd57f3ecaacf958843b743cc92d52b88a5e3579",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-09216.json": "3220de6395e67617440bd74a3bc08d8eb4bae171a17921e34c3ddb48777ace7b",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/result.json": "27cbccd44926f46e1d2a339e9a1b994662d4232813b80d0331fa11e0adda1e0e",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/steps.jsonl": "6b8e5111ac2e82817d46acfa9b6538d2ea7cef946f3496c45e5fdc6f205788a3",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-05120.json": "db0a88eccfbc0a28a558c520adbe53c2e5d2347d38f62887258810d9de8485e6",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/guard-01.json": "840c70c740d0147fda0d58765fd6fcf3687bf25a3a5e8abfb13b5080d01a6f1a",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-06144.json": "c7ff07f1ee3939497aed3451ff5f1c36d8f50ee040ba5f6a6434937c30eb08db",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-07168.json": "9001b67fbfd93183786c06e9547c6956062afddc7b9e1cd881f3503f09498e1f",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-01024.json": "4938f793a3c91489f9ef5b767ec1bdb3e2c2d17539599d0c3144f6ba409c159b",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/raw-validation.json": "0d4eed03b362c5e58ab437e161cfa0763ee47f067ec7c3753c2b4b619d7fbeea",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/progress.json": "3bf6ee3ba90fa595e76ece90030a564897d6b1f2b7a1242b654088db51ef9bdc",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/attempt-01.json": "007be8cb5a922f2ac763e7aeb2581497f236ffe37e6aa92b8813dc849313faf3",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-02048.json": "0e026689b4066f65e8764365dda81b1cb9358c9f6edd28a2ac195d2a9dae3b79",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/h200-validation.json": "7eb329a2334ba92387205e6f281019e63bab4cc023a40e6467b58ba9dbc8e7e6",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-08192.json": "09fd4bf55daa691a213eddb92aa88a0f2a359f80991f592d15687f61a69bfc61",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/deletion-journal.jsonl": "313d55d3c8ce68d1b23bceb52c9dd05f32e9d4ec1e3528d70de9a70fd372dfe2",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-09/validation-03072.json": "aeb53260bd4f3616c216f161a29805582054d0e2a192a713b439b0905ab5964d"
+  }
+}

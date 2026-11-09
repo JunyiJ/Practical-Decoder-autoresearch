@@ -1,10 +1,27 @@
 # General-corpus confirmation results
 
-The first frozen paired bundle (native slot04 / byte slot05) is complete.
-The second bundle (slots06–07) and third native slot08 are complete; final byte
-slot09 is running. No architecture is adopted from
-one pair.
-All three fresh pairs and the original gates remain required; test stays closed.
+All six fresh confirmations completed and passed execution review. Raw-byte input
+composition passes every frozen adoption gate for equal-token validation quality.
+Mean H200 CE is **5.145572 byte versus 5.198176 native**, delta **−0.052604**
+nats/token (about5.12% lower perplexity). All three paired deltas are negative:
+−0.049663, −0.049588, −0.058562. The frozen one-sided99% document-bootstrap
+upper bound is **−0.038091** (10,000 resamples, seed62110300999).
+FineWeb-Edu mean delta is−0.048495 and Wikipedia−0.069061; both source guards pass.
+These bounds are conditional on this validation corpus and three seeds.
+
+The byte model has16,351,859 parameters versus28,492,416 (42.61% fewer), but
+requires about1.84× guard wall time. This establishes equal-token superiority,
+not equal-time superiority. First-bundle completions remain repetitive and
+unreliable; this is not a claim of coherent generation or instruction following.
+Test remains unopened. All fresh endpoints and original outputs remain retained.
+
+Reproducible analysis: `general_rsi_analysis_v1.py`; immutable numerical decision:
+`tokenizer-evidence/general-rsi-panel-001/decision.json`. All5089 source bindings,
+six execution guards,12 endpoint hashes,108-document inventories and30,720 paired
+batch hashes passed. An independent scalar resampling implementation agrees with
+the vectorized bootstrap upper bound within1e-12. The frozen panel explicitly
+sets upper quantile.99; no confidence threshold was changed after results.
+The sections below preserve chronological observations and their then-pending status.
 
 ## First native confirmation (slot04)
 
@@ -145,3 +162,25 @@ The three native H200 scores are5.197680920685920,5.195349189907856 and
 Once complete, verify its paired batches and endpoint evidence, then compute
 the original three-pair mean/source gates and fixed10,000-resample document
 bootstrap. Do not substitute earlier pairs or screens for the last result.
+
+## Third pair and next evidence
+
+Final byte slot09: H2005.142936364187565, RAW5.14877086204826;
+guard6736.453seconds, peakRSS985,153,536bytes,342 averaging snapshots.
+All10,240 batch hashes match native slot08. Paired H200 delta−0.0585615464;
+guard-time ratio1.852334. `slot-09/review.json` records the acceptance audit.
+
+Analysis of the same eight probe documents at every saved point shows continuing
+improvement. Three-seed mean RAW probe CE at steps8192/9216/10240:
+native5.208948/5.075619/4.995001; byte5.172979/5.033638/4.937302.
+Full RAW validation CE from step2048 to10240 falls6.046970→5.200418 for native
+and6.049977→5.150732 for byte. This curve combines exposure and scheduled LR
+decay; it cannot establish the isolated effect of either. Training batch means
+also fall, but differ in target distribution/context from validation and cannot
+be interpreted as an exact generalization gap.
+
+Next: prospectively test a doubled horizon on the adopted byte recipe with fresh
+paired controls and horizon-matched cooldowns. Existing results motivate the
+hypothesis but will not be pooled into the next confirmation. See
+`GENERAL_RSI_EXPOSURE_DESIGN.md` for evidence, contrary findings and full cost.
+No training worker is active after closure of this panel.
