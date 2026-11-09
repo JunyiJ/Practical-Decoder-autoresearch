@@ -1,7 +1,7 @@
 # General-corpus confirmation results
 
 The first frozen paired bundle (native slot04 / byte slot05) is complete.
-The second bundle starts with native slot06. No architecture is adopted from
+The second bundle has completed native slot06; paired byte slot07 is running. No architecture is adopted from
 one pair.
 All three fresh pairs and the original gates remain required; test stays closed.
 
@@ -89,3 +89,18 @@ runtime cost remains. Continue the remaining fresh pairs without changing
 seeds, endpoints, scoring, prompts or thresholds. After complete confirmation,
 use the full evidence to assess exposure and equal-time hypotheses under a
 new prospective contract. Keep the test payloads unopened.
+
+## Second native confirmation (slot06)
+
+The second fresh native seed completed10,240 updates and342 EMA snapshots:
+H200 CE5.195349189907856, RAW5.195755096272238, again over100,416 targets in108
+validation documents. H200 FineWeb-Edu5.178622907029208 and
+Wikipedia5.262342696758161. Guard wall time3637.191 seconds; peakRSS887,570,432
+bytes. Source bindings, all updates, finite gradients/clipping, endpoint
+hashes and document coverage passed the slot06 review. Generation is not
+scheduled for this bundle under the frozen protocol.
+
+Its H200 is0.002331730778064 lower than the first native seed, a descriptive
+between-seed difference. No matched second-pair effect exists until byte slot07
+finishes. Slot07 now runs with the same bundle2 sampler roles; bundle3 slots08–09
+remain next. Preserve the initial one-pair inference and all fixed gates.
