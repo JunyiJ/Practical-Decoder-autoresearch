@@ -1,0 +1,311 @@
+{
+  "format": "rsi-pretraining-corpus-v1",
+  "status": "complete",
+  "seed": 20261108,
+  "requested_tokens": {
+    "train": 10000000,
+    "val": 100000,
+    "test": 100000
+  },
+  "forecast_bytes": 1073741824,
+  "reserve_bytes": 2147483648,
+  "tokenizer": {
+    "name": "gpt2",
+    "vocab_size": 50257,
+    "eot": 50256,
+    "vocabulary_sha256": "bdc599f0a294cff99d60cf83aed3870857b30bc0d1d06164cae137831b55257c"
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "tiktoken": "0.14.0",
+    "pyarrow": "26.0.0",
+    "fsspec": "2026.7.0"
+  },
+  "builder_sha256": "9f10d9e91030225aba9dfafba4cb782cef29ec02346f8ac6f2b740bdb21c81a7",
+  "sources": {
+    "fineweb_edu": {
+      "repo": "HuggingFaceFW/fineweb-edu",
+      "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+      "prefix": "sample/10BT/",
+      "weight": 0.8,
+      "license": "ODC-By-1.0; Common Crawl terms; underlying content rights remain applicable",
+      "selected_shards": [
+        "sample/10BT/002_00000.parquet",
+        "sample/10BT/010_00000.parquet",
+        "sample/10BT/004_00000.parquet",
+        "sample/10BT/005_00000.parquet"
+      ],
+      "row_groups": [
+        {
+          "shard": "sample/10BT/002_00000.parquet",
+          "row_group": 560
+        },
+        {
+          "shard": "sample/10BT/010_00000.parquet",
+          "row_group": 11
+        },
+        {
+          "shard": "sample/10BT/004_00000.parquet",
+          "row_group": 688
+        },
+        {
+          "shard": "sample/10BT/005_00000.parquet",
+          "row_group": 643
+        },
+        {
+          "shard": "sample/10BT/002_00000.parquet",
+          "row_group": 9
+        },
+        {
+          "shard": "sample/10BT/010_00000.parquet",
+          "row_group": 389
+        },
+        {
+          "shard": "sample/10BT/004_00000.parquet",
+          "row_group": 355
+        },
+        {
+          "shard": "sample/10BT/005_00000.parquet",
+          "row_group": 207
+        },
+        {
+          "shard": "sample/10BT/002_00000.parquet",
+          "row_group": 381
+        },
+        {
+          "shard": "sample/10BT/010_00000.parquet",
+          "row_group": 263
+        },
+        {
+          "shard": "sample/10BT/004_00000.parquet",
+          "row_group": 30
+        }
+      ],
+      "card_sha256": "a0cc8998a20499432b28b6575f3046b714938eb8e11b8d59a1d25ddf3716061e"
+    },
+    "wikipedia": {
+      "repo": "wikimedia/wikipedia",
+      "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+      "prefix": "20231101.en/",
+      "weight": 0.2,
+      "license": "CC-BY-SA-3.0 / GFDL per pinned dataset card; retain article URLs",
+      "selected_shards": [
+        "20231101.en/train-00024-of-00041.parquet",
+        "20231101.en/train-00023-of-00041.parquet",
+        "20231101.en/train-00040-of-00041.parquet",
+        "20231101.en/train-00016-of-00041.parquet"
+      ],
+      "row_groups": [
+        {
+          "shard": "20231101.en/train-00024-of-00041.parquet",
+          "row_group": 26
+        },
+        {
+          "shard": "20231101.en/train-00023-of-00041.parquet",
+          "row_group": 99
+        },
+        {
+          "shard": "20231101.en/train-00040-of-00041.parquet",
+          "row_group": 123
+        },
+        {
+          "shard": "20231101.en/train-00016-of-00041.parquet",
+          "row_group": 139
+        },
+        {
+          "shard": "20231101.en/train-00024-of-00041.parquet",
+          "row_group": 132
+        },
+        {
+          "shard": "20231101.en/train-00023-of-00041.parquet",
+          "row_group": 119
+        }
+      ],
+      "card_sha256": "a0f2055ac612f924721e9981fa2a49a18adec1c67cc8026f6c97d12f17211b21"
+    }
+  },
+  "counts": {
+    "fineweb_edu": {
+      "train": 8001157,
+      "test": 80351,
+      "val": 80439
+    },
+    "wikipedia": {
+      "train": 2000006,
+      "test": 20853,
+      "val": 20085
+    }
+  },
+  "rejections": {
+    "fineweb_edu": {
+      "token_length": 1296,
+      "wikipedia_mirror_domain": 101,
+      "replacement_character": 7,
+      "upstream_quality": 183,
+      "not_prose": 147,
+      "character_length": 142,
+      "low_word_diversity": 1,
+      "duplicate_url": 49,
+      "repeated_trigrams": 5,
+      "html_residue": 5,
+      "cross_split_passage_overlap": 5,
+      "duplicate_text": 1,
+      "split_quota_full": 771
+    },
+    "wikipedia": {
+      "token_length": 484,
+      "character_length": 922,
+      "not_prose": 261,
+      "repeated_trigrams": 22,
+      "repeated_lines": 11,
+      "cross_split_passage_overlap": 1,
+      "split_quota_full": 1784
+    }
+  },
+  "tokens": {
+    "train": 10001163,
+    "test": 101204,
+    "val": 100524
+  },
+  "documents": {
+    "train": 9807,
+    "test": 107,
+    "val": 108
+  },
+  "unique_hostnames": 6779,
+  "top_hostnames": [
+    [
+      "en.wikipedia.org",
+      2040944
+    ],
+    [
+      "ukessays.com",
+      44276
+    ],
+    [
+      "journals.lww.com",
+      40464
+    ],
+    [
+      "enotes.com",
+      29061
+    ],
+    [
+      "hubpages.com",
+      17861
+    ],
+    [
+      "reference.com",
+      17757
+    ],
+    [
+      "theguardian.com",
+      17398
+    ],
+    [
+      "nytimes.com",
+      17309
+    ],
+    [
+      "newworldencyclopedia.org",
+      17072
+    ],
+    [
+      "britannica.com",
+      16499
+    ],
+    [
+      "cdc.gov",
+      14846
+    ],
+    [
+      "bookrags.com",
+      14306
+    ],
+    [
+      "slideplayer.com",
+      12489
+    ],
+    [
+      "pbs.org",
+      12310
+    ],
+    [
+      "everything2.com",
+      11895
+    ],
+    [
+      "db0nus869y26v.cloudfront.net",
+      11176
+    ],
+    [
+      "ibiblio.org",
+      10062
+    ],
+    [
+      "blekko.com",
+      10040
+    ],
+    [
+      "theconversation.com",
+      9857
+    ],
+    [
+      "rootsweb.ancestry.com",
+      9661
+    ]
+  ],
+  "elapsed_seconds": 28.71432614326477,
+  "free_bytes_after": 13582233600,
+  "files": {
+    "builder-source.py": {
+      "bytes": 15185,
+      "sha256": "9f10d9e91030225aba9dfafba4cb782cef29ec02346f8ac6f2b740bdb21c81a7"
+    },
+    "fineweb_edu-card.md": {
+      "bytes": 26354,
+      "sha256": "a0cc8998a20499432b28b6575f3046b714938eb8e11b8d59a1d25ddf3716061e"
+    },
+    "test.bin": {
+      "bytes": 202408,
+      "sha256": "38593930254acbf4465ca8d40f3e4b02da65fe245f43bde4b271d0643760c9cd"
+    },
+    "test.index.jsonl": {
+      "bytes": 24351,
+      "sha256": "d8773d1cc37d64eb8851f1eedf7035209a47d9e38a4256601b2ec00d5b451f6c"
+    },
+    "test.jsonl.gz": {
+      "bytes": 206485,
+      "sha256": "19b432dfa1b6a4286e6ad33637a231eb64e14c9a6208f0808e3c470cde502fae"
+    },
+    "train.bin": {
+      "bytes": 20002326,
+      "sha256": "9a6f107bdd79386161674eb181ce2b38986f212c0505ce89f8cf391bf3c6c6d0"
+    },
+    "train.index.jsonl": {
+      "bytes": 2255639,
+      "sha256": "235f25eafa4059d7a4cb4f15e4bbd3a4e59157d915d067937118ef6a88a7549d"
+    },
+    "train.jsonl.gz": {
+      "bytes": 19831355,
+      "sha256": "b40b9fba0654b890f46786d7aec8b8bfe8ba2194d225956dd83a2c4cf715fb73"
+    },
+    "val.bin": {
+      "bytes": 201048,
+      "sha256": "4e1ac95853436ce46e9abd4fd920bc34f2490ae3cf69d54cab1398cedc6cfdda"
+    },
+    "val.index.jsonl": {
+      "bytes": 24530,
+      "sha256": "294d5d662189fb8e504503b090fc8f6f20d82c7843b2ceba08321e242460995a"
+    },
+    "val.jsonl.gz": {
+      "bytes": 202387,
+      "sha256": "a0b15d7434e3d1cbcdaa01df54d4cfc73c6dac94c2d545481d8b18fc5d0c6d21"
+    },
+    "wikipedia-card.md": {
+      "bytes": 130835,
+      "sha256": "a0f2055ac612f924721e9981fa2a49a18adec1c67cc8026f6c97d12f17211b21"
+    }
+  },
+  "total_payload_bytes": 43122903
+}

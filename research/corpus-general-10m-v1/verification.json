@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "manifest_sha256": "b1849a5fed1fb648f507e407e5794946bba64328f519e6b0d6c360fa4e2e4fa8",
+  "checks": [
+    "all_payload_hashes_and_sizes",
+    "all_document_token_roundtrips",
+    "token_range_and_eot",
+    "complete_index_coverage",
+    "global_normalized_exact_text_and_url_uniqueness",
+    "retained_simhash_duplicate_threshold",
+    "deterministic_document_split",
+    "source_token_totals",
+    "cross_split_passage_audit",
+    "deterministic_train_val_batches",
+    "test_access_rejected"
+  ],
+  "passage_matches": {
+    "train": 0,
+    "val": 0,
+    "test": 0
+  },
+  "counts": {
+    "train": {
+      "documents": 9807,
+      "tokens": 10001163
+    },
+    "val": {
+      "documents": 108,
+      "tokens": 100524
+    },
+    "test": {
+      "documents": 107,
+      "tokens": 101204
+    }
+  },
+  "elapsed_seconds": 5.4623188972473145,
+  "limitation": "SimHash is approximate; no claim of complete semantic deduplication or factual verification."
+}
