@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 23472,
-  "next_action": "Fresh confirmation slot04 running under PID3658/session23472. Check actual guard/process/steps; no duplicate worker. After10,240updates and successful final evaluation/generation, review and launch slot05, its paired byte confirmation. Continue slots04..09 unchanged. No adoption before all three paired bundles and fixed gates.",
+  "active_session": 32544,
+  "next_action": "Fresh paired byte confirmation slot05 running under PID58653/session32544. Review completion against slot04, including all paired batch hashes, first outputs and fixed final scores. Then continue slots06..09 unchanged; no adoption before all three paired bundles and frozen gates.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T03:26:37.880814+00:00",
-  "active_worker_pid": 3658,
+  "updated_at": "2026-11-09T03:56:52.575875+00:00",
+  "active_worker_pid": 58653,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
-  "active_slot": 4,
+  "active_slot": 5,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All4screens passed; both arms select LR.0025. Tuned H200 CE byte5.97062/native5.99346 (delta-.02285), with byte~1.87x slower. Single screen bundle only; no architecture adoption. RAW beats H200 in all screens but frozen H200 remains primary.",
+  "latest_learning": "First native confirmation completed: H200 CE5.19768, RAW5.20085. Original final completions remain repetitive, off-topic and factually unreliable; no architecture conclusion until all paired confirmations. Byte slot05 now running.",
   "phase": "fresh_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -70,5 +70,17 @@
     "research/tokenizer-evidence/general-rsi-capacity-001/completed.json",
     "research/tokenizer-evidence/general-rsi-capacity-002/completed.json"
   ],
-  "capacity_status": "Full remaining-panel forecast restored after new 125346397-byte deficit; independently audited external cache cleanup recovered192466944 allocated bytes; research worker uninterrupted. Recompute full remaining requirement at next launch."
+  "capacity_status": "Full remaining-panel forecast restored after new 125346397-byte deficit; independently audited external cache cleanup recovered192466944 allocated bytes; research worker uninterrupted. Recompute full remaining requirement at next launch.",
+  "completed_confirmations": [
+    {
+      "slot": 4,
+      "arm": "native",
+      "bundle": 1,
+      "lr": 0.0025,
+      "h200_ce": 5.19768092068592,
+      "raw_ce": 5.2008541908060835,
+      "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-04/review.json"
+    }
+  ],
+  "confirmation_report": "research/GENERAL_RSI_CONFIRMATION_RESULTS.md"
 }
