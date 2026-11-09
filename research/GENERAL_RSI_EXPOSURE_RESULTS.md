@@ -45,3 +45,11 @@ match slot00 and that initial generated output matches exactly. Complete all
 three fresh pairs before applying frozen mean/source/bootstrap gates. No horizon
 has been selected. Test remains unopened. The actual active worker pointer is in
 `research_state/general-rsi-state.json`.
+
+## Capacity recovery during slot01 — 2026-11-09 17:07 UTC
+
+Free storage fell below the full remaining-panel forecast while training remained within its 10 GiB guard. Exact external-cache recovery003 removed 7,775 unopened Chromium payloads (64,864,256 allocated bytes), verified 16 protected files, and retained its manifest/journal. Receipt free space was 11,566,948,352 bytes versus 12,000,855,844 required: a 433,907,492-byte deficit. This is partial recovery, not a scientific failure or permission to launch slot02.
+
+Other inventoried large cache classes include updater payloads, shared runtime/application assets and OS speech assets; no deletion was inferred from size. Research payload retirement cannot run while PID24324 holds the shared lock. Eight obsolete, accepted LR-screen endpoint weights from the concluded original panel were audited against original receipts: 717,766,656 allocated bytes. All screen source/log/config/metric evidence and all fresh confirmation weights remain protected. The active exposure panel binds no screen weight path; it initializes fresh. The current human obsolete-checkpoint authorization supplies a narrow exception to the old retain-all wording.
+
+Next action: finish/review slot01, then remeasure capacity under a free research lock. If still deficient, execute the exact pending screen-retirement audit with process/consumer checks and durable deletion journal before slot02. Do not repeat the cache scan absent new eligible candidates or changed capacity. Evidence: `research/tokenizer-evidence/general-rsi-capacity-003/`.

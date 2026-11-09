@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 33992,
-  "next_action": "Long exposure slot01 H20480 running under PID24324/session33992. At completion review all20480updates/683EMA snapshots, guard, endpoints, document coverage and first generations; compare first10240batch hashes and initial generation with short slot00. Then launch next frozen short slot02 after capacity/asset/lock checks. Preserve all three fresh pairs and criteria; test unopened.",
+  "next_action": "Finish active long slot01; review endpoints, 20480updates, 683EMA snapshots, paired batch prefix and first generations. Before slot02 remeasure full retained-output forecast; if deficient, execute pending exact obsolete-screen audit under free research lock and verify retained evidence. Then check assets and launch frozen slot02.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T13:52:12.765309+00:00",
+  "updated_at": "2026-11-09T17:10:20.092773+00:00",
   "active_worker_pid": 24324,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -70,7 +70,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-001/completed.json",
     "research/tokenizer-evidence/general-rsi-capacity-002/completed.json"
   ],
-  "capacity_status": "At slot01 admission free12588122112bytes versus full remaining-panel requirement12000855844; exact codebook hashes verified; shared lock free. No cleanup needed.",
+  "capacity_status": "New capacity deficit: external cache recovery003 removed64864256allocated bytes; remaining deficit433907492bytes at receipt. Active worker remains above10GiB guard. Eight obsolete LR-screen weights audited717766656allocated bytes for retirement after worker lock release if needed; fresh confirmations and evidence protected.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -170,5 +170,6 @@
   ],
   "exposure_attempt": 1,
   "asset_recovery": "research/tokenizer-evidence/general-rsi-exposure-001/asset-recovery-001.json",
-  "exposure_report": "research/GENERAL_RSI_EXPOSURE_RESULTS.md"
+  "exposure_report": "research/GENERAL_RSI_EXPOSURE_RESULTS.md",
+  "capacity_pending_audit": "research/tokenizer-evidence/general-rsi-capacity-003/screen-retirement-audit.json"
 }
