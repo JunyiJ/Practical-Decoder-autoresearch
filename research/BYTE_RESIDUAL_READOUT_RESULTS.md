@@ -1,10 +1,107 @@
-# Residual readout: implementation verified, fresh quality panel running
+# Residual readout: complete, not adopted
 
-The new zero-gated residual readout passed its implementation pilot. Eight of nine fresh quality runs have completed and passed numerical
-acceptance. All three matched nonlinear/byte pairs fail the mandatory candidate-improvement
-criterion. The final third-seed linear control is active; the frozen remaining runs and
-independent final review continue. No model is adopted. The selected byte model and its corrected public
-inference recipe remain unchanged.
+All nine fresh runs and the independent saved-result review completed successfully.
+The scientific prediction failed: nonlinear residual readout loses to the existing
+byte model on every seed. The implementation is numerically accepted; the recipe
+is rejected for quality. The byte model and corrected public inference recipe
+remain selected. No worker remains active for this completed panel.
+
+## Final quality result
+
+Lower cross-entropy is better. All scores cover the same34278 validation targets;
+H200 remains the predeclared primary endpoint. Holdout was not scored.
+
+| Fresh seed | Byte | Residual linear | Residual nonlinear | Nonlinear−byte |
+|---|---:|---:|---:|---:|
+| 62102600000 | 4.585407 | 4.720631 | 4.642792 | +.057385 |
+| 62102700000 | 4.550762 | 4.682758 | 4.607496 | +.056734 |
+| 62102800000 | 4.588101 | 4.716058 | 4.641952 | +.053850 |
+| Mean | 4.574757 | 4.706482 | 4.630746 | +.055990 |
+
+| Candidate contrast | Mean delta | Upper2048 | Upper4096 | Upper8192 | Fixed gates |
+|---|---:|---:|---:|---:|---|
+| Nonlinear−byte | +.055990 | +.066289 | +.066801 | +.071110 | All fail |
+| Nonlinear−linear | −.075736 | −.060104 | −.056678 | −.056069 | All pass |
+
+Nonlinear improves over the matched linear parameterization, but that does not
+make either addition better than byte. Both required contrasts must pass; there
+is no fallback adoption. Bounds use the frozen conditional text bootstrap and
+quantile1−.05/6, conditioned on these three trained seeds and reused validation
+text. They are not seed-population confidence or untouched-test evidence.
+
+Both additions lower late sampled training loss but worsen validation. Mean
+last100 training CE is3.222910 byte,3.042842 linear,3.127416 nonlinear. H200 improves
+all three relative to their final online scores, preserving the unfavorable
+ordering. Third-seed early advantages reverse before the primary endpoint;
+none licenses checkpoint selection or a shorter retrospective horizon.
+The evidence rejects this fixed identity-preserving residual recipe. It does
+not establish one causal overfitting/optimizer/normalization mechanism or reject
+all possible nonlinear heads. This study is closed: no tuning, replay or rescue.
+
+## Saved-loss frequency finding
+
+The separately prepared all-seed diagnostic completed after the review, using
+prior fixed training-frequency bins. It reconstructs train/validation token IDs
+and uses saved losses only. All five target groups lose to byte on every seed
+for both branches. Nonlinear results are:
+
+| Training occurrences of target | Validation targets | Mean CE penalty | Contribution to overall penalty |
+|---|---:|---:|---:|
+| 0 | 957 | +0.503734 | +0.014064 |
+| 1-9 | 2846 | +0.139382 | +0.011573 |
+| 10-99 | 6892 | +0.074041 | +0.014887 |
+| 100-999 | 8788 | +0.036213 | +0.009284 |
+| 1000+ | 14795 | +0.014324 | +0.006183 |
+
+Unseen/1–9-occurrence targets are11.09% of targets and account for45.79% of the
+net penalty. Thus per-token damage is largest on rare targets, but the other
+frequency groups still contribute54.21%. The1–9 group alone contributes20.67%,
+unlike the earlier tying diagnostic's67.9%; here unseen targets also worsen.
+Historical scores were not pooled. Preceding-input frequency groups also lose,
+but that view includes only the final context token. These are exploratory
+attributions, not subgroup significance, causal gradients or a prescription
+for head decay, a new cutoff or a selective metric.
+
+The diagnostic used0.305seconds,87,932,928bytes peak RSS and12,852bytes output.
+Source/input/guard hashes, original group counts and weighted reconstruction of
+all global contrasts were checked. No model execution, new scoring, checkpoint
+loading, random draws, training or holdout tokenization was needed.
+
+## Cost, review and next decision
+
+Nine runs used10800 updates and6149.668seconds of guarded job execution:
+5193.338seconds training,623.690seconds scheduled evaluation, and332.640seconds
+endpoint checks/serialization/other overhead. About84.4% was training,10.1%
+scheduled evaluation and5.4% other worker work. Including the55.323second pilot,
+controller overhead and1.912second final review, measured controller total was
+6220.029seconds (103.67minutes), within the10hour ceiling. Engineering time is
+not included. The frequency diagnostic is separately charged as existing-data
+analysis, not numerical exploration.
+
+The reviewer checked all18 saved RAW/H200 weights,1200 updates and41 snapshots
+per run, original pairing, target coverage, source/asset identities and scalar
+statistics. It does not reconstruct every intermediate averaging snapshot or
+provide optimizer-resume proof. It accepted1,197,693,924 retained bytes at review,
+within the1,323,504,227-byte cap. No current capacity blocker remains.
+
+Final evidence: `quality001/final.json`, `quality001/final-review.json`,
+`quality001/controller-complete.json` and `quality001/analysis-3-bundles001/result.json`
+under `tokenizer-evidence/byte-residual-readout-001/`. Frequency evidence is
+`tokenizer-evidence/byte-residual-readout-frequency-001/result.json`.
+The final review SHA256 is
+`7cd7d9e3d6c4b1fa28279947c26efce5a70f3e4a4748456a985e1f1d8bc736d9`.
+
+Next research should qualify a genuinely new hypothesis on the unchanged byte
+incumbent using these results and the contrary literature/local evidence in
+`BYTE_READOUT_REGULARIZATION_REVIEW.md`. No stronger-decay or projection sweep
+is admitted by this loss pattern. The prospective stopping lesson below should
+inform the next panel's predeclared cost/decision contract. Research remains
+active at direction selection; this completed study has no running worker.
+
+## Historical pilot and execution record
+
+The following entries preserve the staged findings and pending states at the
+time they were recorded. The final decision and current state are above.
 
 The pilot used three arms on both CPU and MPS, four updates each (24 total).
 All initial common weights, baseline logits and common-parameter gradients
@@ -54,9 +151,8 @@ quality result still requires a qualified consumer before adoption.
 Observe the existing controller handle; do not restart it or replay completed
 slots. If an observation times out, inspect the same handle/process. Preserve
 failed evidence and recover only demonstrated execution defects, with the
-scientific cases fixed. The controller remains PID1329 (exec session64971). The last observed active
-worker was slot08 residual-linear on the third seed, PID33655;
-live logs supersede this snapshot. Slots00–07 are terminal and must not be replayed.
+scientific cases fixed. The historical controller was PID1329 (exec session64971); it exited successfully.
+All slots00–08 are terminal and must not be replayed.
 
 ## First completed control (one of nine)
 

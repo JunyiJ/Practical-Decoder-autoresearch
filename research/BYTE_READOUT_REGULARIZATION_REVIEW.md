@@ -107,3 +107,22 @@ see the time-course section of `BYTE_RESIDUAL_READOUT_RESULTS.md`. That narrows
 an endpoint-only explanation without identifying the correct regularizer.
 Complete the current panel before selecting a new intervention. No new test,
 coefficient, seed, architecture, training source or scientific budget is admitted.
+
+## Completed-panel update
+
+The residual panel is now closed and not adopted. Nonlinear minus byte H200
+mean is+.0559896599, unfavorable on all three seeds; nonlinear minus linear
+is-.0757358653 and passes that contrast's gates. Independent final review and
+all-seed saved-loss frequency analysis passed. Both branches lose in every
+fixed target-frequency bin on every seed. Unseen/1–9 targets account for45.79%
+of the nonlinear penalty on11.09% of target occurrences, leaving a broad loss
+outside that group. This differs from tying's concentrated1–9 contribution and
+unseen-target improvement. Do not transfer its mechanism or pool scores.
+
+The remaining head-versus-body decay question is still unqualified: neither
+this stratification nor the reviewed papers establishes which group's decay
+should change or predicts a gain at a supported coefficient. A new admission
+must supply that rationale and discriminating controls before implementation
+or training. More output transformations and endpoint changes remain unsupported
+by these completed local results. The next action is evidence-grounded direction
+selection on the unchanged byte incumbent, not continuation of this closed family.
