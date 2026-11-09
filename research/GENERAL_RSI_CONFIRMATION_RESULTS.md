@@ -1,7 +1,7 @@
 # General-corpus confirmation results
 
 The first frozen paired bundle (native slot04 / byte slot05) is complete.
-The second bundle has completed native slot06; paired byte slot07 is running. No architecture is adopted from
+The second bundle (slots06–07) is also complete; third native slot08 is running. No architecture is adopted from
 one pair.
 All three fresh pairs and the original gates remain required; test stays closed.
 
@@ -104,3 +104,28 @@ Its H200 is0.002331730778064 lower than the first native seed, a descriptive
 between-seed difference. No matched second-pair effect exists until byte slot07
 finishes. Slot07 now runs with the same bundle2 sampler roles; bundle3 slots08–09
 remain next. Preserve the initial one-pair inference and all fixed gates.
+
+## Second paired confirmation (slots06–07)
+
+| Final endpoint | Native CE | Byte CE | Byte minus native |
+| --- | ---: | ---: | ---: |
+| H200 (primary) | 5.195349189907856 | 5.145761530085512 | -0.049587659822344 |
+| RAW (secondary) | 5.195755096272238 | 5.149644709992763 | -0.046110386279476 |
+
+H200 source deltas (byte minus native): FineWeb-Edu
+-0.044134298156548, Wikipedia
+-0.071429919980520.
+All10,240 paired training batch hashes match, as do108 document target inventories.
+Both runs passed source, finite-gradient/clipping, checkpoint-hash and guard
+checks. Byte guard time6677.601 seconds versus
+3637.191/native (1.836x); byte peakRSS
+969,621,504 bytes. Generation was not scheduled for
+this pair; original first-bundle samples remain the qualitative evidence.
+
+The first two H200 paired deltas are-0.049662523249784 and
+-0.049587659822344. Their agreement strengthens the provisional transfer hypothesis;
+it does not replace the third fresh pair or the frozen three-pair/document
+bootstrap decision. No acceptance calculation is shortened or threshold changed.
+Third native slot08 is now running, followed by byte slot09. Final evaluation
+will report all three pairs, both source means, the fixed bootstrap bound and
+runtime/parameter tradeoffs, with test still unopened.
