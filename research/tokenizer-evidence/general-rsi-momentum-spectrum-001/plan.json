@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-10T21:50:46.926107+00:00",
+  "source_sha256": "8343b6ec6abc286b35ba0d3abbef7f82ffe3ec4b8e202fb332524ad43bc52214",
+  "receipts": {
+    "baseline": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-reuse-full-model-001/attempt-01/first-failure-baseline.pt",
+      "size": 182456003,
+      "sha256": "6a93e1cf0de77e3d024fbf5305590fb6e483e70f9ae47d05febaf5d35e75d8bb"
+    },
+    "reuse": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-reuse-full-model-001/attempt-01/first-failure-reuse.pt",
+      "size": 182456067,
+      "sha256": "e88d0f597b3895a36cef07353c1f0cc25898d9174a3df6d23f28bc1bbea93008"
+    }
+  },
+  "matrices": [
+    "composer.highway_weight",
+    "composer.transform_weight",
+    "composer.projection_weight",
+    "composer.filters.0",
+    "composer.filters.1",
+    "composer.filters.2",
+    "composer.filters.3",
+    "composer.filters.4",
+    "composer.filters.5"
+  ],
+  "scope": "All nine retained composer Muon momentum pairs. CPU FP64 SVD spectra, FP32 pair differences, CPU BF16 cast disagreement and quantization errors. No optimizer execution or training. No scientific selection or acceptance gate.",
+  "timeout_seconds": 120,
+  "rss_limit_bytes": 4294967296,
+  "reserve_bytes": 10737418240,
+  "output_cap_bytes": 8388608,
+  "forecast": {
+    "spectral_scalar_count": 3242,
+    "conservative_json_logs_source_bytes": 1048576,
+    "serialization_overlap_bytes": 1048576,
+    "free_bytes": 24684740608
+  }
+}
