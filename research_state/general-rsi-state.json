@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_ENGINEERING_PREPARATION",
+  "status": "ACTIVE_PANEL_ADMITTED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Integrate the qualified time context into a serial production worker with durable incomplete-update/replay accounting and the fixed generation protocol. Qualify these new boundaries, freeze matched-time EMA/roles/run order/source hashes/complete resource contract before any screen, then launch equal-time LR screening. Do not repeat old scoring or restart prerequisites.",
+  "next_action": "Launch frozen equal-time slot00 with worker_v2 supervisor. Review every endpoint, all-attempt time accounting and batch prefixes; then execute fixed slots01\u201303 and select LR within each arm before three fresh confirmation pairs. No test access.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T05:27:59.629950+00:00",
+  "updated_at": "2026-11-10T05:41:42.965548+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -26,8 +26,8 @@
   "document_scoring_qualified": true,
   "qualification": "research/tokenizer-evidence/general-rsi-qualification-001/result.json",
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
-  "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
-  "panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
+  "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
+  "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
   "active_slot": null,
   "completed_screens": [
     {
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Both native and raw-byte time-budget training contexts pass real-MPS clock/EMA and exact complete restart with recorded-clock replay. Native33 updates in12.158s and byte19 in12.461s; short engineering values, not scientific outcomes. Audited lost-work charge survives full restore.",
-  "phase": "equal_time_worker_integration",
+  "latest_learning": "Fixed generation and durable interval accounting passed on both arms;48 first engineering outputs retained. Assembled checkpoint publication/retirement/endpoints passed. Cumulative retry timeout defect repaired in launcher v2; qualified numerical core unchanged. Fresh equal-time panel frozen before scores.",
+  "phase": "equal_time_screen",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "New-panel prospective full-output forecast requires13672665808bytes free including10GiB reserve; measured28211662848bytes available. Fits before final admission; no cleanup required. Engineering payloads retained.",
+  "capacity_status": "Equal-time complete panel admitted: required19242701520bytes including retained finals, serialization overlap,256MiB metadata,5GiB failed-write allowance and10GiB reserve; measured27969593344bytes free. Two attempts/slot within current resource contract.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -249,5 +249,12 @@
   "selected_general_horizon": 20480,
   "equal_time_clock_qualification": "research/tokenizer-evidence/general-rsi-next-001/clock-check.json",
   "equal_time_mps_qualification": "research/tokenizer-evidence/general-rsi-time-qualification-001/review.json",
-  "equal_time_panel_launched": false
+  "equal_time_panel_launched": false,
+  "prior_exposure_panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
+  "prior_exposure_panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
+  "equal_time_io_qualification": "research/tokenizer-evidence/general-rsi-io-qualification-001/result.json",
+  "equal_time_worker_qualification": "research/tokenizer-evidence/general-rsi-worker-qualification-001/result.json",
+  "equal_time_cumulative_guard_qualification": "research/tokenizer-evidence/general-rsi-worker-qualification-001/cumulative-guard-check.json",
+  "equal_time_admission": "research/tokenizer-evidence/general-rsi-equal-time-001/admission.json",
+  "equal_time_completed_slots": []
 }

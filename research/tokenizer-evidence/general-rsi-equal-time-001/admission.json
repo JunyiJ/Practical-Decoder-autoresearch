@@ -1,0 +1,39 @@
+{
+  "plan_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "admitted_at": "2026-11-10T05:40:50.999085+00:00",
+  "all_new_prerequisites_passed": true,
+  "shared_lock_held": true,
+  "forecast": {
+    "final_pairs": 10,
+    "projected_outputs_bytes": 1794396880,
+    "active_restart_overlap_bytes": 1073741824,
+    "metadata_and_header_margin_bytes": 268435456,
+    "failed_write_allowance_bytes": 5368709120,
+    "incremental_peak_bytes": 8505283280,
+    "reserve_bytes": 10737418240,
+    "required_free_bytes": 19242701520,
+    "actual_free_bytes": 27969593344,
+    "measured_full_validation_seconds": {
+      "native": 25.934515542001463,
+      "raw_bytes": 62.354328499990515
+    },
+    "measured_generation_seconds": {
+      "native": 40.67081462498754,
+      "raw_bytes": 77.56223845807835
+    },
+    "predicted_total_updates": 112137.13714213273,
+    "cost_components_seconds": {
+      "training_seconds": 50400,
+      "endpoint_and_conservative_probe_scoring_seconds": 1765.7768808398396,
+      "generation_seconds": 354.6991592491977,
+      "checkpoint_io_seconds": 880.0,
+      "initialization_seconds": 300,
+      "end_records_and_step_logging_seconds": 1121.3713714213275
+    },
+    "estimated_total_seconds": 54821.84741151037,
+    "tranche_seconds": 72000,
+    "remaining_failure_and_variability_allowance_seconds": 17178.152588489633,
+    "assumptions": "Checkpoint allowance2s each versus measured native assembled average0.802s; probes pessimistically cost full validation. Initialization30s/run and outside-clock logging0.01s/update are conservative engineering estimates, not measured guarantees."
+  },
+  "scientific_scores_seen": false
+}

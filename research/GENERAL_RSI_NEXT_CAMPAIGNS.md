@@ -167,8 +167,21 @@ a prospective ten-pair forecast plus two512MiB restart slots,64MiB metadata/head
 margin and10GiB reserve. Available space exceeds that forecast. Recheck exact
 capacity at admission; this is not permission to omit any retained output.
 
-Next executable action: integrate durable recovery accounting and fixed generation
-into the production worker. Qualify incomplete-update/replay journaling and decoder
-boundaries, then freeze matched-time EMA half-life, fresh roles, source hashes,
-run order and complete panel resources before launching the first LR screen.
-The qualified document scoring and old restart fixtures need no repeat.
+The new durable journal and decoder integration passed in
+`general-rsi-io-qualification-001/`. All48 first engineering completions are retained
+and excluded from the future scientific panel. Generation preserved complete
+training state. A same-boot supervisor timestamp bounds an unfinished update;
+missing exit evidence rejects automatic recovery.
+
+The assembled worker passed publication, readback, exact audited retirement and
+endpoint checks in `general-rsi-worker-qualification-001/`. Source review found
+that the initial launcher reset the slot timeout on retry. Launcher v2 corrects
+that cumulative resource limit; AST equality confirms its tested execution and
+retirement functions are unchanged. Explicit remaining-budget checks passed.
+
+`GENERAL_RSI_EQUAL_TIME_DESIGN.md` and `general-rsi-equal-time-001/plan.json`
+now freeze the new panel before scientific scores. It has four 1,800-second
+screens and six 7,200-second confirmations. The admission includes all retained
+outputs, active serialization overlap,256MiB metadata,5GiB failed-write allowance
+and10GiB reserve. It fits actual free space. The20-hour tranche includes failures.
+Next action: run slot00, review it, and follow the frozen serial run order.

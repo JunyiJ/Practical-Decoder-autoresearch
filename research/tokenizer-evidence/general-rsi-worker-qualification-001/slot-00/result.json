@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "binding": "84ad6a00e621ed1385417af61ce12b87fc37ff61b856de527e18490ecc2c73f6",
+  "slot": {
+    "phase": "engineering",
+    "arm": "native",
+    "lr": 0.0025,
+    "budget_ns": 12000000000,
+    "roles": {
+      "native_initializer": 62110600001,
+      "composer_initializer": 62110600002,
+      "train_sampler": 62110600003,
+      "validation_sampler": 62110600004
+    }
+  },
+  "steps": 34,
+  "training_ns": 12126947335,
+  "overshoot_ns": 126947335,
+  "snapshots": 11,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 3.2063824159558862,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-worker-qualification-001/slot-00/raw.pt",
+        "size": 113998619,
+        "sha256": "d4bf209d954f659a4ef925a1b1520695e289f7682ba8c5b907040644073c1733"
+      },
+      "ce": 8.606817565393,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 8.585299676777336
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 8.693002812218992
+        }
+      },
+      "score_seconds": 21.217355791013688,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-worker-qualification-001/slot-00/time_ema.pt",
+        "size": 113998619,
+        "sha256": "43d1139bea3c745ac7c56ab788c230025b7b2c2d23e56f19fd322a5d3acbcf83"
+      },
+      "ce": 8.747418625803796,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 8.727062853972967
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 8.828949265306058
+        }
+      },
+      "score_seconds": 19.514489249908365,
+      "generation_seconds": 0
+    }
+  ],
+  "test_opened": false
+}

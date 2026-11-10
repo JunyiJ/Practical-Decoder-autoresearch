@@ -1,0 +1,13 @@
+{
+  "accepted": true,
+  "worker_sha256": "558e0be629f3d8eb03f24c1494b05a8f7344f69cea51611edbdcbfcc4bf92ad3",
+  "qualified_execute_and_retire_ast_identical": true,
+  "checks": [
+    "slot remaining",
+    "tranche remaining",
+    "slot exhausted",
+    "tranche exhausted",
+    "attempt cap"
+  ],
+  "reason": "Code review found v1 reset the per-slot timeout for each attempt; v2 enforces cumulative slot and tranche ceilings without changing qualified numerical or serialization code."
+}
