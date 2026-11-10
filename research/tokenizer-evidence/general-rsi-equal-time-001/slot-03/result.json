@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "binding": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "slot": {
+    "slot": 3,
+    "phase": "screen",
+    "arm": "raw_bytes",
+    "lr": 0.0025,
+    "budget_ns": 1800000000000,
+    "roles": {
+      "native_initializer": 62110700001,
+      "composer_initializer": 62110700002,
+      "train_sampler": 62110700003,
+      "validation_sampler": 62110700004
+    },
+    "timeout_seconds": 3600
+  },
+  "steps": 2975,
+  "training_ns": 1800479828599,
+  "overshoot_ns": 479828599,
+  "snapshots": 990,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 13.290948918322101,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-03/raw.pt",
+        "size": 65441261,
+        "sha256": "b3cdb2e2a2fb1b49ddbebe688896329928865c98437f169f068befff78143e9e"
+      },
+      "ce": 5.729353740470289,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.721908499399392
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.759174042584281
+        }
+      },
+      "score_seconds": 47.1946106669493,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-03/time_ema.pt",
+        "size": 65441261,
+        "sha256": "d78daf9980cdda2bbe34e92097ceb31f68af472e22ce625716c7419774f5ac8c"
+      },
+      "ce": 5.74257201061357,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.734524681873239
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.774803844608212
+        }
+      },
+      "score_seconds": 45.42534966696985,
+      "generation_seconds": 0
+    }
+  ],
+  "test_opened": false
+}
