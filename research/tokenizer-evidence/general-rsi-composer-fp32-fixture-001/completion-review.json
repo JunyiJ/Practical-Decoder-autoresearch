@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-10T22:06:41.783124+00:00",
+  "accepted_execution": true,
+  "qualified_component": false,
+  "classification": "fixed numerical accuracy gate failure; not quality evidence",
+  "decision": {
+    "passed": false,
+    "reason": "fixed_gradient_reference_gate",
+    "name": "composer.highway_weight",
+    "step": 2
+  },
+  "source_hashes_verified": true,
+  "failed_payload_verified": true,
+  "completed_zero_gradient_matrices": 9,
+  "not_reached": [
+    "remaining gradient patterns",
+    "independent repeat",
+    "midpoint serialization and replay",
+    "invalid-gradient and invalid-state rejection"
+  ],
+  "evidence": {
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/plan.json": {
+      "bytes": 2338,
+      "sha256": "99880b709245fae0a9acb40b1c0b9f7860b3a199419fb7349a45c9b1e8dddb84"
+    },
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/worker-01.log": {
+      "bytes": 24,
+      "sha256": "65d509f9a5029ded0396b9931b4146f1a32f29d8ce0b07e7c723bc8d338e0c18"
+    },
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/guard-01.json": {
+      "bytes": 262,
+      "sha256": "280fb683911b1002c11395c0a0d062e9bd3a1e9fa5e2d94f5d06586c9e8d9140"
+    },
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/attempt-01/failed-comparison.json": {
+      "bytes": 7964,
+      "sha256": "81e14656342fa8ea1194620d96c714026b5b72801f84a58370929fb327fde379"
+    },
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/attempt-01/decision.json": {
+      "bytes": 117,
+      "sha256": "c5bd4d981e09921dc71d58b08c2f7aa82a2438fb56a067119181d4571f69c514"
+    },
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/attempt-01/failure-matrix.pt": {
+      "bytes": 6617373,
+      "sha256": "12acbd2b6f2323bc80278dbf30068ffb2658f8b34bb1b4dbc1757afd52070f4e"
+    },
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/attempt-01/failure-matrix-receipt.json": {
+      "bytes": 261,
+      "sha256": "ebe969bf568abce40ad44938eb54dc4829a9811b47e8e5d7ebfc8614ce26bd21"
+    },
+    "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/attempt-01/step-01.json": {
+      "bytes": 6445,
+      "sha256": "06821d7163528219773436dbc6e3c3945c81b1b890e4ce7228a762f851bc810f"
+    }
+  },
+  "retained_bytes": 6634784,
+  "free_bytes": 24624562176,
+  "test_opened": false,
+  "next_action": "Close component without retry. Prepare fresh native horizon campaign from matched-document curve analysis."
+}
