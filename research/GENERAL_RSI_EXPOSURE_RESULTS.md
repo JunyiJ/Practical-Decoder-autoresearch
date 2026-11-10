@@ -110,3 +110,13 @@ The prior two completed pairs remain evidence for longer exposure; third-pair co
 All904 replayed updates (7,169–8,072) exactly match the preserved first attempt in batch hashes, losses, clipping records and LR ratios. The retained prefix through8,072 also matches these fields. Execution timing and MPS allocation are excluded from numerical equality; every original failure-archive hash was rechecked. Evidence: general-rsi-exposure-recovery-001/replay-verification.json and verify-replay.py.
 
 This verifies preservation of the observed trajectory across the real resource interruption; it is not a new quality result. The restarted slot04 continues to its unchanged endpoint. Next verify the completed endpoint and aggregate attempt time, then execute final paired slot05. Scientific hypothesis and three-pair acceptance criteria remain unchanged.
+
+## Third short control accepted — 2026-11-10T01:27:55.066103+00:00
+
+Slot04 completed10,240updates/342EMA snapshots. H200 CE5.128556815381, RAW5.132914282995. Review verified5,094 frozen source bindings, finite gradients/clipping, both endpoint hashes and108-document/100,416-target coverage. No generation was scheduled; test remains unopened.
+
+Attempt02 finished in2,141.015969guard seconds, peakRSS908,279,808bytes. Both attempts total7254.519826seconds, below18,000. All13 archived failure files remain byte-identical; the904-update exact replay receipt is retained. Failed work remains charged to the tranche. The failure is a resource interruption, not a scientific negative.
+
+Five of six frozen runs are accepted. Two complete pairs favor longer exposure; no final horizon decision until paired long slot05. Final-slot admission free11890716672bytes exceeds full remaining requirement11477326780bytes; remaining tranche60639.339618seconds exceeds the final18,000-second ceiling. Both tokenizer assets verified. Next launch slot05, then apply unchanged three-pair/bootstrap/source-wise gates.
+
+Final slot05 H20480 launched under PID58135/session55459 with unchanged bundle3 roles, own-horizon cooldown, optimizer and evaluator. Guard is watching without violation. Review this final pair and perform the frozen decision after completion; no new generation or test access.

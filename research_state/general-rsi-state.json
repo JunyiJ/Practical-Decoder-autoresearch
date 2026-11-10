@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 57801,
-  "next_action": "Slot04 attempt02 continues under PID35393/session57801; all904 replayed updates matched exactly. At completion review attempt02, verify aggregate slot guard time below18000s and unchanged failure archive, then launch frozen long slot05 after full capacity/assets/lock checks. Apply three-pair decision only after all six runs; test unopened.",
+  "active_session": 55459,
+  "next_action": "Final frozen long slot05 is active under PID58135/session55459. At completion review attempt01, verify matched10240-step batch prefix to slot04, then apply unchanged three-pair H200/bootstrap/source-wise adoption gates. Keep test unopened. Next campaign follows GENERAL_RSI_NEXT_CAMPAIGNS.md.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T01:10:22.756099+00:00",
-  "active_worker_pid": 35393,
+  "updated_at": "2026-11-10T01:28:25.378949+00:00",
+  "active_worker_pid": 58135,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
   "panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
-  "active_slot": 4,
+  "active_slot": 5,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Real disk-interrupted complete restart reproduced all904 replayed updates exactly in losses, clipping, LR and batch hashes. Two completed scientific pairs still favor longer exposure; third-pair endpoints pending.",
+  "latest_learning": "Third short control accepted at H200 CE5.128556815381 after exact904-update replay; aggregate attempt time7254.519826s stays within18000s. Two longer-training pairs favorable; final third long run pending.",
   "phase": "exposure_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -73,7 +73,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-004/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-005/reconciliation.json"
   ],
-  "capacity_status": "Slot04 recovery admission free12008804352 versus full requirement11608209046, including reserve and serialization overlap; capacity recovered after transient guard failure, no cleanup required now.",
+  "capacity_status": "Final-slot admission free11890716672 versus full requirement11477326780, including reserve and serialization overlap; no cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -190,9 +190,17 @@
       "h200_ce": 4.930541720880974,
       "raw_ce": 4.940142704788402,
       "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-03/review.json"
+    },
+    {
+      "slot": 4,
+      "horizon": 10240,
+      "h200_ce": 5.1285568153809376,
+      "raw_ce": 5.1329142829954675,
+      "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-04/review.json",
+      "recovery_review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-04/recovery-completion-review.json"
     }
   ],
-  "exposure_attempt": 2,
+  "exposure_attempt": 1,
   "asset_recovery": "research/tokenizer-evidence/general-rsi-exposure-001/asset-recovery-001.json",
   "exposure_report": "research/GENERAL_RSI_EXPOSURE_RESULTS.md",
   "exposure_completed_pairs": [
