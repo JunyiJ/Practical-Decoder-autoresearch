@@ -1,0 +1,86 @@
+{
+  "at": "2026-11-10T02:43:11.627161+00:00",
+  "classification": "resource_failure_not_scientific_negative",
+  "exit_code": 90,
+  "guard": {
+    "elapsed_seconds": 4352.798514707945,
+    "limits": {
+      "reserve_bytes": 10737418240,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 18000
+    },
+    "observation": {
+      "free_bytes": 10732765184,
+      "peak_rss_bytes": 864239616
+    },
+    "pid": 58135,
+    "reason": "disk_reserve",
+    "status": "failed"
+  },
+  "checkpoint": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-exposure-001/slot-05/restart-06144.pt",
+    "size": 183678211,
+    "sha256": "6671b203b6ee87c38207285a3b922d01505d48c9cfad540c1087ba17efb4355a"
+  },
+  "checkpoint_step": 6144,
+  "last_first_attempt_logged_step": 6705,
+  "replayed_updates": 561,
+  "original_files": {
+    "attempt-01.json": {
+      "size": 136,
+      "sha256": "66439e02a56c2456e9aa2831fec09a8bd551b7881961e8fb07d66fcbe54673e3"
+    },
+    "deletion-journal.jsonl": {
+      "size": 6625,
+      "sha256": "90a644f5f32b7aeeeb961aaa1a9ae503e85b5c44ce6e051607472f4509f6b0bb"
+    },
+    "guard-01.json": {
+      "size": 271,
+      "sha256": "ae2eaa378f52006df07654beee9d21d3b80bd5cdc4ee9602fb3a254991991431"
+    },
+    "latest.json": {
+      "size": 232,
+      "sha256": "6216da939bbe770404a48b9556d8e611d4986e3aed02f50e61efdcb929cb9d5b"
+    },
+    "progress.json": {
+      "size": 129,
+      "sha256": "235f238414efc291277338db84f4ff6bbededc03c511a721ec21779f2543c140"
+    },
+    "steps.jsonl": {
+      "size": 2356827,
+      "sha256": "f39b5dc861fe3e0c3cf27a7344e8eadecccc31355a97ab0ff0a26dbc4fc45961"
+    },
+    "validation-01024.json": {
+      "size": 1298,
+      "sha256": "212b1b8819796aa357016b4fc2abf5ebcf149628ee193ba0048e964963093098"
+    },
+    "validation-02048.json": {
+      "size": 13540,
+      "sha256": "0ac889748b1d6ea1ca36b0d92e9455ca1bdd6c5495d26bac3a781e37d6612329"
+    },
+    "validation-03072.json": {
+      "size": 1297,
+      "sha256": "03fe3d3e554ca2c9de7dcf1fa1dabcbbdcfa9fd57840751b80fbe7b97e5dc0f2"
+    },
+    "validation-04096.json": {
+      "size": 1295,
+      "sha256": "3d980a5e451befb14461386503d5fb078bc8a7ed1bb33e8bfc75ef27571335bf"
+    },
+    "validation-05120.json": {
+      "size": 1301,
+      "sha256": "cd92c11e0a7639be19e11441d5d60d90703fa72aed92d5b8df34e8858b562665"
+    },
+    "validation-06144.json": {
+      "size": 1297,
+      "sha256": "b6855b2f93d3f0d2da720ae392df1ecd03f19b5319c6b9fd7361f9460470808f"
+    }
+  },
+  "source_bindings_verified": 5094,
+  "canonical_log_policy": "Archive all first-attempt files unchanged; retain canonical steps1..6144 matching checkpoint history, replay6145..6705 with identical roles/optimizer/RNG/EMA; compare replay numerics to original before accepting endpoint. Original guard and attempt remain in slot directory.",
+  "root_cause_limits": "Guard observed free10732765184 below10737418240 reserve. No checkpoint write at failure (step6705); unrelated filesystem consumption cause not established. Initial inspected free10730217472 was747109308 below full requirement11477326780. A size-based research/cache inventory identified retained historical checkpoint families and excluded updater/shared-runtime payloads. Capacity subsequently recovered above the full requirement without deletion; external consumer not established.",
+  "required_free_bytes": 11477326780,
+  "free_bytes": 11501346816,
+  "failed_seconds_charged": 4352.798514707945,
+  "scientific_contract_changed": false,
+  "test_opened": false
+}
