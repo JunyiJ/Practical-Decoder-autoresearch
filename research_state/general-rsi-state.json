@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 18331,
-  "next_action": "Native horizon slot00 is running under supervisor60329 and worker60333. On completion verify supervisor exit and immutable outputs with general_rsi_native_horizon_review_v1, then launch slot01 under the same frozen plan. No additional worker while shared lock is held.",
+  "next_action": "Native horizon slot00 remains active. On immutable result/supervisor exit, run general_rsi_native_horizon_review_v1 and continue frozen serial order. After all six reviews, run general_rsi_native_horizon_analysis_v1 against the fixed plan; its11 synthetic weighting/gate/incomplete-panel checks passed. Prepare inherited generation aggregation separately. No second worker or unchanged-state commits.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T22:12:28.358083+00:00",
+  "updated_at": "2026-11-10T22:14:59.914942+00:00",
   "active_worker_pid": 60333,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -443,5 +443,7 @@
   "native_horizon_panel": "research/tokenizer-evidence/general-rsi-native-horizon-001/plan.json",
   "native_horizon_panel_sha256": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390",
   "native_horizon_admission": "research/tokenizer-evidence/general-rsi-native-horizon-001/admission.json",
-  "native_horizon_panel_launched": true
+  "native_horizon_panel_launched": true,
+  "native_horizon_analysis": "research/general_rsi_native_horizon_analysis_v1.py",
+  "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json"
 }

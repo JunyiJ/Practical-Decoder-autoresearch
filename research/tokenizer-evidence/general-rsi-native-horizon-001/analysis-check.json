@@ -1,0 +1,189 @@
+{
+  "qualified": true,
+  "plan_sha256": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390",
+  "seconds": 0.025452750036492944,
+  "source_sha256": {
+    "research/general_rsi_native_horizon_analysis_v1.py": "23d6634a5d9c1c4716c258876a95cc8f5cefbc305190a2cddedea24dd40cc9a6",
+    "research/general_rsi_native_horizon_analysis_check_v1.py": "9a78db9fd008d57342a42e5ed962dccf82a427c752a135616584ccd26f37fff8",
+    "research/general_rsi_equal_time_analysis_v1.py": "cb671dd3b137713b418674f81ff91118f41bf9c71ca2c7ab430e759cb7ab12df"
+  },
+  "checks": {
+    "clear_gain_passes": {
+      "paired_deltas": [
+        -0.04,
+        -0.04,
+        -0.04
+      ],
+      "mean_delta_long_minus_short": -0.04,
+      "bootstrap_upper_99": -0.04,
+      "source_deltas": {
+        "fineweb_edu": -0.04,
+        "wikipedia": -0.04
+      },
+      "gates": {
+        "all_three_deltas_negative": true,
+        "mean_threshold": true,
+        "bootstrap_upper_negative": true,
+        "source_guard": true
+      },
+      "longer_recipe_accepted": true,
+      "retained_recipe": "long"
+    },
+    "inclusive_mean_threshold": {
+      "paired_deltas": [
+        -0.02,
+        -0.02,
+        -0.02
+      ],
+      "mean_delta_long_minus_short": -0.02,
+      "bootstrap_upper_99": -0.02,
+      "source_deltas": {
+        "fineweb_edu": -0.02,
+        "wikipedia": -0.02
+      },
+      "gates": {
+        "all_three_deltas_negative": true,
+        "mean_threshold": true,
+        "bootstrap_upper_negative": true,
+        "source_guard": true
+      },
+      "longer_recipe_accepted": true,
+      "retained_recipe": "long"
+    },
+    "small_gain_rejected": {
+      "paired_deltas": [
+        -0.01,
+        -0.01,
+        -0.01
+      ],
+      "mean_delta_long_minus_short": -0.01,
+      "bootstrap_upper_99": -0.01,
+      "source_deltas": {
+        "fineweb_edu": -0.01,
+        "wikipedia": -0.01
+      },
+      "gates": {
+        "all_three_deltas_negative": true,
+        "mean_threshold": false,
+        "bootstrap_upper_negative": true,
+        "source_guard": true
+      },
+      "longer_recipe_accepted": false,
+      "retained_recipe": "short"
+    },
+    "zero_pair_rejected": {
+      "paired_deltas": [
+        -0.1,
+        -0.1,
+        0.0
+      ],
+      "mean_delta_long_minus_short": -0.06666666666666667,
+      "bootstrap_upper_99": -0.06666666666666667,
+      "source_deltas": {
+        "fineweb_edu": -0.06666666666666667,
+        "wikipedia": -0.06666666666666667
+      },
+      "gates": {
+        "all_three_deltas_negative": false,
+        "mean_threshold": true,
+        "bootstrap_upper_negative": true,
+        "source_guard": true
+      },
+      "longer_recipe_accepted": false,
+      "retained_recipe": "short"
+    },
+    "zero_bootstrap_bound_rejected": {
+      "paired_deltas": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_delta_long_minus_short": 0.0,
+      "bootstrap_upper_99": 0.0,
+      "source_deltas": {
+        "fineweb_edu": 0.0,
+        "wikipedia": 0.0
+      },
+      "gates": {
+        "all_three_deltas_negative": false,
+        "mean_threshold": false,
+        "bootstrap_upper_negative": false,
+        "source_guard": true
+      },
+      "longer_recipe_accepted": false,
+      "retained_recipe": "short"
+    },
+    "positive_sign_rejected": {
+      "paired_deltas": [
+        0.04,
+        0.04,
+        0.04
+      ],
+      "mean_delta_long_minus_short": 0.04,
+      "bootstrap_upper_99": 0.04,
+      "source_deltas": {
+        "fineweb_edu": 0.04,
+        "wikipedia": 0.04
+      },
+      "gates": {
+        "all_three_deltas_negative": false,
+        "mean_threshold": false,
+        "bootstrap_upper_negative": false,
+        "source_guard": true
+      },
+      "longer_recipe_accepted": false,
+      "retained_recipe": "short"
+    },
+    "source_regression_rejected": {
+      "paired_deltas": [
+        -0.0992039800995025,
+        -0.0992039800995025,
+        -0.0992039800995025
+      ],
+      "mean_delta_long_minus_short": -0.0992039800995025,
+      "bootstrap_upper_99": 0.06,
+      "source_deltas": {
+        "fineweb_edu": -0.1,
+        "wikipedia": 0.06
+      },
+      "gates": {
+        "all_three_deltas_negative": true,
+        "mean_threshold": true,
+        "bootstrap_upper_negative": false,
+        "source_guard": false
+      },
+      "longer_recipe_accepted": false,
+      "retained_recipe": "short"
+    },
+    "uncertain_document_bootstrap_rejected": {
+      "paired_deltas": [
+        -0.10000000000000002,
+        -0.10000000000000002,
+        -0.10000000000000002
+      ],
+      "mean_delta_long_minus_short": -0.10000000000000002,
+      "bootstrap_upper_99": 0.10000000000000002,
+      "source_deltas": {
+        "fineweb_edu": -0.20000000000000004,
+        "wikipedia": 0.10000000000000002
+      },
+      "gates": {
+        "all_three_deltas_negative": true,
+        "mean_threshold": true,
+        "bootstrap_upper_negative": false,
+        "source_guard": false
+      },
+      "longer_recipe_accepted": false,
+      "retained_recipe": "short"
+    },
+    "unequal_count_bootstrap_oracle": {
+      "passed": true,
+      "mean": -0.0784313725490196,
+      "resamples": 32
+    },
+    "nonfinite_and_zero_count_rejected": true,
+    "incomplete_panel_rejected_before_scores": true
+  },
+  "scientific_endpoint_scores_read": false,
+  "test_opened": false
+}
