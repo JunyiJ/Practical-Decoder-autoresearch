@@ -1,0 +1,90 @@
+{
+  "at": "2026-11-10T00:48:23.475370+00:00",
+  "classification": "resource_failure_not_scientific_negative",
+  "exit_code": 90,
+  "guard": {
+    "elapsed_seconds": 5113.503857166972,
+    "limits": {
+      "reserve_bytes": 10737418240,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 18000
+    },
+    "observation": {
+      "free_bytes": 10653904896,
+      "peak_rss_bytes": 989200384
+    },
+    "pid": 65889,
+    "reason": "disk_reserve",
+    "status": "failed"
+  },
+  "checkpoint": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-exposure-001/slot-04/restart-07168.pt",
+    "size": 249320817,
+    "sha256": "5bbffe29550d227a49ea55c4b496ed0572cb39f4a911df4b9d4749e2d2ff15cd"
+  },
+  "checkpoint_step": 7168,
+  "last_first_attempt_logged_step": 8072,
+  "replayed_updates": 904,
+  "original_files": {
+    "attempt-01.json": {
+      "size": 136,
+      "sha256": "109f440259d6b287d354b088c207b7bd5c3737fdc730911a188fde11b4b6ac18"
+    },
+    "deletion-journal.jsonl": {
+      "size": 7950,
+      "sha256": "e64dc99849437be41b6ed24c0ae94587f6973df414f00584c3658c302cc80ac7"
+    },
+    "guard-01.json": {
+      "size": 271,
+      "sha256": "1f9948fbc8262fc44cd2c6b6426aaedd08ed448bda59e8a05dce6dbd17b3b6ef"
+    },
+    "latest.json": {
+      "size": 232,
+      "sha256": "8bf814f163664138a9916fb1d02236ea8121bece868de93b8be2639a7a47066a"
+    },
+    "progress.json": {
+      "size": 130,
+      "sha256": "088682351c7f8fd995cbaf737db8ad1721554ac7d5c5cae570fab735b212edc1"
+    },
+    "steps.jsonl": {
+      "size": 2849699,
+      "sha256": "14949763db1fcd3c6dcea3e48ebccd76a30014c062e6b28c1d81fa5da27d1f91"
+    },
+    "validation-01024.json": {
+      "size": 1298,
+      "sha256": "212b1b8819796aa357016b4fc2abf5ebcf149628ee193ba0048e964963093098"
+    },
+    "validation-02048.json": {
+      "size": 13540,
+      "sha256": "0ac889748b1d6ea1ca36b0d92e9455ca1bdd6c5495d26bac3a781e37d6612329"
+    },
+    "validation-03072.json": {
+      "size": 1297,
+      "sha256": "03fe3d3e554ca2c9de7dcf1fa1dabcbbdcfa9fd57840751b80fbe7b97e5dc0f2"
+    },
+    "validation-04096.json": {
+      "size": 1295,
+      "sha256": "3d980a5e451befb14461386503d5fb078bc8a7ed1bb33e8bfc75ef27571335bf"
+    },
+    "validation-05120.json": {
+      "size": 1301,
+      "sha256": "cd92c11e0a7639be19e11441d5d60d90703fa72aed92d5b8df34e8858b562665"
+    },
+    "validation-06144.json": {
+      "size": 1297,
+      "sha256": "b6855b2f93d3f0d2da720ae392df1ecd03f19b5319c6b9fd7361f9460470808f"
+    },
+    "validation-07168.json": {
+      "size": 1300,
+      "sha256": "ff0e9c2f81d60c559ce8dcb88cd6588144d65e5567295b6c609f133ab63a1674"
+    }
+  },
+  "source_bindings_verified": 5094,
+  "canonical_log_policy": "Archive all first-attempt files unchanged; retain canonical steps1..7168 matching checkpoint history, replay7169..8072 with identical roles/optimizer/RNG/EMA; compare replay numerics to original before accepting endpoint. Original guard and attempt remain in slot directory.",
+  "root_cause_limits": "Guard observed free10653904896 below10737418240 reserve. No checkpoint write at failure (step8072); unrelated filesystem consumption cause not established. Capacity subsequently recovered without deletion in this turn.",
+  "required_free_bytes": 11608209046,
+  "free_bytes": 12007538688,
+  "failed_seconds_charged": 5113.503857166972,
+  "scientific_contract_changed": false,
+  "test_opened": false
+}

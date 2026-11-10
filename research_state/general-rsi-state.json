@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 85171,
-  "next_action": "Short exposure slot04 H10240 running under PID65889/session85171. At completion verify all10240updates/342EMA snapshots, guard, endpoints and document coverage, then launch paired long slot05 after full capacity/asset/lock checks. Apply frozen three-pair decision only after all six runs; test unopened.",
+  "active_session": 57801,
+  "next_action": "Slot04 attempt02 resumes complete step7168 checkpoint under PID35393/session57801 after disk-reserve hard exit90. At step8072 verify all904 replayed updates exactly against recovery001 archived first attempt (loss/clip/LR/batch hashes); preserve both attempts. At completion review attempt02, verify aggregate slot guard time below18000s, then launch frozen slot05 after full capacity/assets/lock check; test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-09T23:18:00.663198+00:00",
-  "active_worker_pid": 65889,
+  "updated_at": "2026-11-10T00:49:14.918575+00:00",
+  "active_worker_pid": 35393,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Second fresh exposure pair accepted: H200 delta -0.2056842069, supporting first pair -0.1981092561. Both sources improve; third pair still required before any horizon adoption.",
+  "latest_learning": "Scientific hypothesis unchanged: two completed exposure pairs favor longer training. Slot04 attempt01 failed only its disk reserve; exact checkpoint recovery in attempt02, initial replay matches. No negative-quality or adoption claim from interrupted run.",
   "phase": "exposure_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -73,7 +73,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-004/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-005/reconciliation.json"
   ],
-  "capacity_status": "Slot04 admission:free12947005440bytes versus full remaining-panel requirement11608209046; exact tokenizer assets verified; prior worker exited and lock free. No cleanup required.",
+  "capacity_status": "Slot04 recovery admission free12008804352 versus full requirement11608209046, including reserve and serialization overlap; capacity recovered after transient guard failure, no cleanup required now.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -192,7 +192,7 @@
       "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-03/review.json"
     }
   ],
-  "exposure_attempt": 1,
+  "exposure_attempt": 2,
   "asset_recovery": "research/tokenizer-evidence/general-rsi-exposure-001/asset-recovery-001.json",
   "exposure_report": "research/GENERAL_RSI_EXPOSURE_RESULTS.md",
   "exposure_completed_pairs": [
@@ -210,5 +210,6 @@
       "h200_delta": -0.2056842069066347,
       "raw_delta": -0.20062314472321408
     }
-  ]
+  ],
+  "exposure_recovery": "research/tokenizer-evidence/general-rsi-exposure-recovery-001/preparation.json"
 }
