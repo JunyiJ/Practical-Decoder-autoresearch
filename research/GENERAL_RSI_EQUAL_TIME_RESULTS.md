@@ -1,14 +1,20 @@
 # Equal Mac training-time comparison
 
-The panel is admitted under `tokenizer-evidence/general-rsi-equal-time-001/plan.json`.
-Slot00 is running (native LR0.00125), with supervisor session35392 and worker PID88895. No scientific endpoint has completed yet. Four LR screens receive30 minutes per
-arm/candidate. Three fresh confirmation pairs receive two hours per arm, with
-budget-matched cooldown and a shared127.184813977-second EMA half-life.
+Frozen authority: `tokenizer-evidence/general-rsi-equal-time-001/plan.json`.
+Four LR screens receive30 minutes per arm/candidate. Three fresh confirmation
+pairs then receive two hours per arm, with budget-matched cooldown and a shared
+127.184813977-second EMA half-life. Test remains unopened.
 
-Both MPS contexts, durable interval accounting, fixed generation, checkpoint
-publication and retirement are qualified. The48 first engineering completions
-are retained separately and cannot substitute for the144 scientific completions.
-All historical results and selected weights remain preserved. Test is unopened.
+| Slot | Arm | LR | Updates | Training seconds | Time-EMA CE | RAW CE |
+| --- | --- | --- | --- | --- | --- | --- |
+| 00 | Native | 0.00125 | 5,338 | 1,800.200685 | 5.6160593260 | 5.6100533674 |
 
-Next: finish and review slot00, native LR0.00125. Continue the frozen order only
-after each endpoint's execution review. No equal-time quality conclusion yet.
+Slot00 passed source/weight hashes, durable time accounting, validation coverage
+and resource guards. Total guarded wall time was1,866.154 seconds. Its0.201-second
+overshoot was within one update. Both final weights are retained; transient
+restarts were retired with exact audited receipts. This is a screen result only.
+There is no LR choice or equal-time architecture conclusion yet.
+
+Slot01, byte LR0.00125, is now running under worker PID90326 and supervisor session63005. Next: finish and review its paired sampler prefix and endpoint.
+The48 first engineering generations remain separate from the144 planned first
+scientific confirmation completions.

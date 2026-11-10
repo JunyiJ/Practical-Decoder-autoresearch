@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "binding": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "slot": {
+    "slot": 0,
+    "phase": "screen",
+    "arm": "native",
+    "lr": 0.00125,
+    "budget_ns": 1800000000000,
+    "roles": {
+      "native_initializer": 62110700001,
+      "composer_initializer": 62110700002,
+      "train_sampler": 62110700003,
+      "validation_sampler": 62110700004
+    },
+    "timeout_seconds": 3600
+  },
+  "steps": 5338,
+  "training_ns": 1800200684733,
+  "overshoot_ns": 200684733,
+  "snapshots": 1764,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 19.395268872729503,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-00/raw.pt",
+        "size": 113998619,
+        "sha256": "afecc0dd0a2b78b02db132563592f1adc618d605b192547b6af3679fb2968153"
+      },
+      "ce": 5.6100533674153725,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.589147819572321
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.693786015774487
+        }
+      },
+      "score_seconds": 19.379772957996465,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-00/time_ema.pt",
+        "size": 113998619,
+        "sha256": "1c409b1ba7ae72fc88a7cd8fb20d14c8a8d76354f46d5e291bd2c12794da9564"
+      },
+      "ce": 5.616059326013674,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.595529386052888
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.698287558274117
+        }
+      },
+      "score_seconds": 18.912595708970912,
+      "generation_seconds": 0
+    }
+  ],
+  "test_opened": false
+}

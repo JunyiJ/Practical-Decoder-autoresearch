@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 35392,
-  "next_action": "Monitor active equal-time slot00 native LR0.00125 to its1800-second training endpoint. Review all-attempt clock, coverage, weights and guard with general_rsi_equal_time_review_v1, then launch frozen slot01 byte LR0.00125. Keep all scientific rules and test access unchanged.",
+  "active_session": 63005,
+  "next_action": "Monitor active equal-time slot01 byte LR0.00125 to its1800-second training endpoint. Review clock, weights, coverage, guards and paired sampler prefix; then launch frozen slot02 native LR0.0025. No LR selection before all four screens.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T05:43:03.362672+00:00",
-  "active_worker_pid": 88895,
+  "updated_at": "2026-11-10T06:15:26.596291+00:00",
+  "active_worker_pid": 90326,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 0,
+  "active_slot": 1,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Fixed generation and durable interval accounting passed on both arms;48 first engineering outputs retained. Assembled checkpoint publication/retirement/endpoints passed. Cumulative retry timeout defect repaired in launcher v2; qualified numerical core unchanged. Fresh equal-time panel frozen before scores.",
+  "latest_learning": "First equal-time native LR0.00125 screen accepted:5338 updates in1800.200684733training seconds, time-EMA CE5.616059326014. LR and architecture decisions remain pending the frozen screen/confirmation panels.",
   "phase": "equal_time_screen",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Equal-time complete panel admitted: required19242701520bytes including retained finals, serialization overlap,256MiB metadata,5GiB failed-write allowance and10GiB reserve; measured27969593344bytes free. Two attempts/slot within current resource contract.",
+  "capacity_status": "Post-slot00 forecast: retained finals227997238bytes, remaining complete-panel requirement19014704282bytes including reserve/failure allowance; actual free27727171584bytes. Fits; no cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -256,5 +256,17 @@
   "equal_time_worker_qualification": "research/tokenizer-evidence/general-rsi-worker-qualification-001/result.json",
   "equal_time_cumulative_guard_qualification": "research/tokenizer-evidence/general-rsi-worker-qualification-001/cumulative-guard-check.json",
   "equal_time_admission": "research/tokenizer-evidence/general-rsi-equal-time-001/admission.json",
-  "equal_time_completed_slots": []
+  "equal_time_completed_slots": [
+    {
+      "slot": 0,
+      "phase": "screen",
+      "arm": "native",
+      "lr": 0.00125,
+      "steps": 5338,
+      "training_seconds": 1800.200684733,
+      "time_ema_ce": 5.616059326013674,
+      "raw_ce": 5.6100533674153725,
+      "review": "research/tokenizer-evidence/general-rsi-equal-time-001/slot-00/review.json"
+    }
+  ]
 }
