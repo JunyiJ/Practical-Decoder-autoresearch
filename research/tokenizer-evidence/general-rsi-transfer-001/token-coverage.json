@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-10T21:03:59.872570+00:00",
+  "source_sha256": "dd4b95e205960bfc6660fa0f596191f218cefc1ea4edb0164324ca0c1ab4f879",
+  "dataset_sha256": "95ba0fcaca25b9ef525c97fe98882ee73f6a62247caaf541b4a53d5579af42b9",
+  "training_tokens_sha256": "9a6f107bdd79386161674eb181ce2b38986f212c0505ce89f8cf391bf3c6c6d0",
+  "domains": {
+    "pg19_books": {
+      "targets": 102400,
+      "distinct_target_types": 11851,
+      "buckets": {
+        "unseen": {
+          "count": 341,
+          "fraction": 0.003330078125
+        },
+        "seen_1_to_9": {
+          "count": 1897,
+          "fraction": 0.018525390625
+        },
+        "seen_10_to_99": {
+          "count": 11852,
+          "fraction": 0.1157421875
+        },
+        "seen_at_least100": {
+          "count": 88310,
+          "fraction": 0.86240234375
+        }
+      }
+    },
+    "python_library_rst": {
+      "targets": 102400,
+      "distinct_target_types": 5473,
+      "buckets": {
+        "unseen": {
+          "count": 3378,
+          "fraction": 0.03298828125
+        },
+        "seen_1_to_9": {
+          "count": 4084,
+          "fraction": 0.0398828125
+        },
+        "seen_10_to_99": {
+          "count": 15020,
+          "fraction": 0.1466796875
+        },
+        "seen_at_least100": {
+          "count": 79918,
+          "fraction": 0.78044921875
+        }
+      }
+    }
+  },
+  "scope": "Post-launch descriptive diagnostic only. Full-corpus token counts do not measure actual sampled training exposure. Subword frequency is not semantic novelty or document contamination. Does not modify frozen transfer gates.",
+  "new_model_evaluations": 0,
+  "test_opened": false
+}

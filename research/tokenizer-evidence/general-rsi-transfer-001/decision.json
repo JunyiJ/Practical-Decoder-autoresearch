@@ -1,0 +1,131 @@
+{
+  "at": "2026-11-10T21:08:36.959878+00:00",
+  "protocol_sha256": "cf798226383b22b0bf115d5cea851438b19cddb01eda330f99f88dbc3bb61b89",
+  "dataset_sha256": "95ba0fcaca25b9ef525c97fe98882ee73f6a62247caaf541b4a53d5579af42b9",
+  "analysis_sha256": "babb574ab301948b1097094971a324ea9e888ee1030ab8689061f5e353d04666",
+  "attempt": 1,
+  "pairs": [
+    {
+      "bundle": 1,
+      "native_slot": 4,
+      "byte_slot": 5,
+      "domain_deltas_native_minus_byte": {
+        "pg19_books": 0.009379925286696178,
+        "python_library_rst": -0.021688037970759133
+      },
+      "macro_delta_native_minus_byte": -0.0061540563420314776
+    },
+    {
+      "bundle": 2,
+      "native_slot": 6,
+      "byte_slot": 7,
+      "domain_deltas_native_minus_byte": {
+        "pg19_books": -0.0029677133962735525,
+        "python_library_rst": -0.1482209956995968
+      },
+      "macro_delta_native_minus_byte": -0.07559435454793517
+    },
+    {
+      "bundle": 3,
+      "native_slot": 8,
+      "byte_slot": 9,
+      "domain_deltas_native_minus_byte": {
+        "pg19_books": -0.013075217458347943,
+        "python_library_rst": -0.1172518814422574
+      },
+      "macro_delta_native_minus_byte": -0.06516354945030267
+    }
+  ],
+  "mean_ce": {
+    "native": {
+      "pg19_books": 5.667410555984429,
+      "python_library_rst": 7.150089138862615
+    },
+    "raw_bytes": {
+      "pg19_books": 5.669631557840405,
+      "python_library_rst": 7.245809443900153
+    }
+  },
+  "directions": {
+    "native": {
+      "domains": {
+        "pg19_books": {
+          "mean_delta": -0.0022210018559751057,
+          "one_sided_adjusted_upper": 0.049613962352202,
+          "gates": {
+            "all_three_pairs_favor": false,
+            "mean_at_most_minus_0_02": false,
+            "adjusted_upper_negative": false
+          },
+          "accepted": false
+        },
+        "python_library_rst": {
+          "mean_delta": -0.09572030503753777,
+          "one_sided_adjusted_upper": 0.028495024157457895,
+          "gates": {
+            "all_three_pairs_favor": true,
+            "mean_at_most_minus_0_02": true,
+            "adjusted_upper_negative": false
+          },
+          "accepted": false
+        }
+      },
+      "accepted_both_domains": false,
+      "macro_mean_delta": -0.04897065344675644,
+      "macro_upper_99_descriptive": 0.010271485374508732
+    },
+    "raw_bytes": {
+      "domains": {
+        "pg19_books": {
+          "mean_delta": 0.0022210018559751057,
+          "one_sided_adjusted_upper": 0.05911790237805348,
+          "gates": {
+            "all_three_pairs_favor": false,
+            "mean_at_most_minus_0_02": false,
+            "adjusted_upper_negative": false
+          },
+          "accepted": false
+        },
+        "python_library_rst": {
+          "mean_delta": 0.09572030503753777,
+          "one_sided_adjusted_upper": 0.2766647974703478,
+          "gates": {
+            "all_three_pairs_favor": false,
+            "mean_at_most_minus_0_02": false,
+            "adjusted_upper_negative": false
+          },
+          "accepted": false
+        }
+      },
+      "accepted_both_domains": false,
+      "macro_mean_delta": 0.04897065344675644,
+      "macro_upper_99_descriptive": 0.126490430610633
+    }
+  },
+  "accepted_transfer_arm": null,
+  "guard_seconds": 536.7102702918928,
+  "guard_statuses": {
+    "loader-guard-01.json": "finished",
+    "build-guard-01.json": "finished",
+    "evaluation-guard-01.json": "finished"
+  },
+  "bootstrap": {
+    "generator": "numpy.PCG64",
+    "seed": 62111000999,
+    "replicates": 20000,
+    "sampling": "32 parent-document IDs with replacement independently within each of the two domains; same IDs paired across models; average three seed loss sums before resampling",
+    "domain_upper_quantile": 0.9975,
+    "quantile_method": "linear",
+    "multiplicity": "Bonferroni four one-sided domain/direction claims at familywise1%; macro99% interval descriptive only"
+  },
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-transfer-001/evaluation-attempt-01/slot-04.json": "cc15952c82d5250255964e34db7a5934a0c8a0decefefe50bc9e1e77cc348e7c",
+    "research/tokenizer-evidence/general-rsi-transfer-001/evaluation-attempt-01/slot-05.json": "366f2add770f4b07dc668323cfedce7d5ec98e8d7ccfdf8662f26aed7d0dbed4",
+    "research/tokenizer-evidence/general-rsi-transfer-001/evaluation-attempt-01/slot-06.json": "fb413981d28ff8e3b0ced275134ede4e068b6010ce870f6f53996db78103c475",
+    "research/tokenizer-evidence/general-rsi-transfer-001/evaluation-attempt-01/slot-07.json": "5fe3366541a47c4b7d0481d4aa9032d256c355e312ac4425b596899602093a2d",
+    "research/tokenizer-evidence/general-rsi-transfer-001/evaluation-attempt-01/slot-08.json": "2dd34e5fcc1a6ee201e99113d530cbe8fb1bb4e1adb5d9cf6042e10ce5cc28a7",
+    "research/tokenizer-evidence/general-rsi-transfer-001/evaluation-attempt-01/slot-09.json": "7a614bb7422871d8d8cbbb2c97a9371dfa78a9052b6cb883c7bf831ae3f73634"
+  },
+  "test_opened": false,
+  "scope": "Two selected excerpt domains, fixed six checkpoints and three seed pairs. No retraining, full-source benchmark, population-seed confidence or general generation claim."
+}

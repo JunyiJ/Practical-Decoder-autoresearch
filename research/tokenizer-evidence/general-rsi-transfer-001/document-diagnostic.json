@@ -1,0 +1,863 @@
+{
+  "at": "2026-11-10T21:08:41.938120+00:00",
+  "source_sha256": "913d6bb79bc0e431c2e05a8d979e7578903d591070ed10287e7c95155397fecc",
+  "decision_sha256": "fad1c83f27593d83a0306524747564e19d5399726bc31a764ddb5b5a427e4355",
+  "dataset_sha256": "95ba0fcaca25b9ef525c97fe98882ee73f6a62247caaf541b4a53d5579af42b9",
+  "train_sha256": "9a6f107bdd79386161674eb181ce2b38986f212c0505ce89f8cf391bf3c6c6d0",
+  "summary": {
+    "pg19_books": {
+      "parents": 32,
+      "parents_favor_native": 14,
+      "parents_favor_byte": 18,
+      "ties": 0,
+      "delta_min": -0.3970591860280068,
+      "delta_max": 0.35268308340261534,
+      "pearson_unseen_fraction_vs_native_minus_byte": 0.5599071001492186
+    },
+    "python_library_rst": {
+      "parents": 32,
+      "parents_favor_native": 15,
+      "parents_favor_byte": 17,
+      "ties": 0,
+      "delta_min": -1.2304171507683348,
+      "delta_max": 0.1693201792923107,
+      "pearson_unseen_fraction_vs_native_minus_byte": -0.3030802634695251
+    }
+  },
+  "documents": [
+    {
+      "document": 0,
+      "source": "pg19_books",
+      "name": "validation/53682.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0121875,
+      "mean_ce": {
+        "native": 5.596632800166165,
+        "raw_bytes": 5.579373930267466
+      },
+      "native_minus_byte": 0.017258869898698848
+    },
+    {
+      "document": 1,
+      "source": "pg19_books",
+      "name": "validation/55658.txt",
+      "count": 3200,
+      "unseen_fraction": 0.00125,
+      "below10_fraction": 0.0103125,
+      "mean_ce": {
+        "native": 5.580227230576084,
+        "raw_bytes": 5.590835419342548
+      },
+      "native_minus_byte": -0.0106081887664633
+    },
+    {
+      "document": 2,
+      "source": "pg19_books",
+      "name": "validation/5195.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0165625,
+      "mean_ce": {
+        "native": 5.771631736234024,
+        "raw_bytes": 5.732495201182464
+      },
+      "native_minus_byte": 0.03913653505156045
+    },
+    {
+      "document": 3,
+      "source": "pg19_books",
+      "name": "validation/44896.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0015625,
+      "below10_fraction": 0.00875,
+      "mean_ce": {
+        "native": 5.244998459954417,
+        "raw_bytes": 5.246193877084491
+      },
+      "native_minus_byte": -0.0011954171300745386
+    },
+    {
+      "document": 4,
+      "source": "pg19_books",
+      "name": "validation/58093.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.010625,
+      "mean_ce": {
+        "native": 5.165518641803341,
+        "raw_bytes": 5.154050695722568
+      },
+      "native_minus_byte": 0.011467946080772506
+    },
+    {
+      "document": 5,
+      "source": "pg19_books",
+      "name": "validation/7510.txt",
+      "count": 3200,
+      "unseen_fraction": 0.00125,
+      "below10_fraction": 0.015625,
+      "mean_ce": {
+        "native": 5.685516480274867,
+        "raw_bytes": 5.669954266928059
+      },
+      "native_minus_byte": 0.015562213346807852
+    },
+    {
+      "document": 6,
+      "source": "pg19_books",
+      "name": "validation/5321.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0134375,
+      "mean_ce": {
+        "native": 5.321934128322148,
+        "raw_bytes": 5.320835037878788
+      },
+      "native_minus_byte": 0.0010990904433603177
+    },
+    {
+      "document": 7,
+      "source": "pg19_books",
+      "name": "validation/37833.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.0125,
+      "mean_ce": {
+        "native": 5.701040601006632,
+        "raw_bytes": 5.656580955358223
+      },
+      "native_minus_byte": 0.04445964564840921
+    },
+    {
+      "document": 8,
+      "source": "pg19_books",
+      "name": "validation/35816.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0071875,
+      "mean_ce": {
+        "native": 5.592055100659878,
+        "raw_bytes": 5.573383757023453
+      },
+      "native_minus_byte": 0.01867134363642542
+    },
+    {
+      "document": 9,
+      "source": "pg19_books",
+      "name": "validation/36402.txt",
+      "count": 3200,
+      "unseen_fraction": 0.004375,
+      "below10_fraction": 0.0175,
+      "mean_ce": {
+        "native": 5.6781286677637155,
+        "raw_bytes": 5.7535457670067744
+      },
+      "native_minus_byte": -0.07541709924305895
+    },
+    {
+      "document": 10,
+      "source": "pg19_books",
+      "name": "validation/4024.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.0109375,
+      "mean_ce": {
+        "native": 5.450866067369934,
+        "raw_bytes": 5.420979074795809
+      },
+      "native_minus_byte": 0.029886992574125415
+    },
+    {
+      "document": 11,
+      "source": "pg19_books",
+      "name": "validation/28213.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0028125,
+      "below10_fraction": 0.0128125,
+      "mean_ce": {
+        "native": 5.371990593292042,
+        "raw_bytes": 5.371886302621763
+      },
+      "native_minus_byte": 0.0001042906702792834
+    },
+    {
+      "document": 12,
+      "source": "pg19_books",
+      "name": "validation/34100.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0128125,
+      "mean_ce": {
+        "native": 5.397159624911097,
+        "raw_bytes": 5.410814897977204
+      },
+      "native_minus_byte": -0.013655273066106588
+    },
+    {
+      "document": 13,
+      "source": "pg19_books",
+      "name": "validation/42067.txt",
+      "count": 3200,
+      "unseen_fraction": 0.05875,
+      "below10_fraction": 0.2471875,
+      "mean_ce": {
+        "native": 9.013463181455931,
+        "raw_bytes": 8.660780098053316
+      },
+      "native_minus_byte": 0.35268308340261534
+    },
+    {
+      "document": 14,
+      "source": "pg19_books",
+      "name": "validation/42142.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0015625,
+      "below10_fraction": 0.0115625,
+      "mean_ce": {
+        "native": 5.175443859113002,
+        "raw_bytes": 5.230540602210385
+      },
+      "native_minus_byte": -0.05509674309738344
+    },
+    {
+      "document": 15,
+      "source": "pg19_books",
+      "name": "validation/11155.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0159375,
+      "mean_ce": {
+        "native": 5.713109512737525,
+        "raw_bytes": 5.723607155890011
+      },
+      "native_minus_byte": -0.010497643152485914
+    },
+    {
+      "document": 16,
+      "source": "pg19_books",
+      "name": "validation/43423.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0003125,
+      "below10_fraction": 0.0153125,
+      "mean_ce": {
+        "native": 5.518431901326985,
+        "raw_bytes": 5.474974150178217
+      },
+      "native_minus_byte": 0.04345775114876815
+    },
+    {
+      "document": 17,
+      "source": "pg19_books",
+      "name": "validation/2383.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0003125,
+      "below10_fraction": 0.0090625,
+      "mean_ce": {
+        "native": 5.862852534154275,
+        "raw_bytes": 6.259911720182282
+      },
+      "native_minus_byte": -0.3970591860280068
+    },
+    {
+      "document": 18,
+      "source": "pg19_books",
+      "name": "validation/23956.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.016875,
+      "mean_ce": {
+        "native": 5.257705614678367,
+        "raw_bytes": 5.289310239316158
+      },
+      "native_minus_byte": -0.03160462463779101
+    },
+    {
+      "document": 19,
+      "source": "pg19_books",
+      "name": "validation/48677.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0071875,
+      "below10_fraction": 0.0828125,
+      "mean_ce": {
+        "native": 6.905830828032147,
+        "raw_bytes": 7.050688036666155
+      },
+      "native_minus_byte": -0.14485720863400786
+    },
+    {
+      "document": 20,
+      "source": "pg19_books",
+      "name": "validation/1925.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.01125,
+      "mean_ce": {
+        "native": 5.489493363849857,
+        "raw_bytes": 5.451580707240791
+      },
+      "native_minus_byte": 0.037912656609066175
+    },
+    {
+      "document": 21,
+      "source": "pg19_books",
+      "name": "validation/50355.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0034375,
+      "below10_fraction": 0.0115625,
+      "mean_ce": {
+        "native": 5.256481799494758,
+        "raw_bytes": 5.423802038241145
+      },
+      "native_minus_byte": -0.16732023874638635
+    },
+    {
+      "document": 22,
+      "source": "pg19_books",
+      "name": "validation/8545.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.01,
+      "mean_ce": {
+        "native": 5.5894999498547016,
+        "raw_bytes": 5.53286268218401
+      },
+      "native_minus_byte": 0.056637267670691216
+    },
+    {
+      "document": 23,
+      "source": "pg19_books",
+      "name": "validation/44912.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0065625,
+      "below10_fraction": 0.0190625,
+      "mean_ce": {
+        "native": 5.657946366910667,
+        "raw_bytes": 5.610136520033509
+      },
+      "native_minus_byte": 0.047809846877157725
+    },
+    {
+      "document": 24,
+      "source": "pg19_books",
+      "name": "validation/48461.txt",
+      "count": 3200,
+      "unseen_fraction": 0.00125,
+      "below10_fraction": 0.0159375,
+      "mean_ce": {
+        "native": 5.7962515843182345,
+        "raw_bytes": 5.7746988511997435
+      },
+      "native_minus_byte": 0.02155273311849104
+    },
+    {
+      "document": 25,
+      "source": "pg19_books",
+      "name": "validation/38214.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.0078125,
+      "mean_ce": {
+        "native": 5.753580149373156,
+        "raw_bytes": 5.684970316074517
+      },
+      "native_minus_byte": 0.06860983329863934
+    },
+    {
+      "document": 26,
+      "source": "pg19_books",
+      "name": "validation/49091.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.0075,
+      "mean_ce": {
+        "native": 5.129110716583455,
+        "raw_bytes": 5.1782203583081605
+      },
+      "native_minus_byte": -0.04910964172470589
+    },
+    {
+      "document": 27,
+      "source": "pg19_books",
+      "name": "validation/56719.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0090625,
+      "mean_ce": {
+        "native": 5.644541413756863,
+        "raw_bytes": 5.614318707063018
+      },
+      "native_minus_byte": 0.03022270669384497
+    },
+    {
+      "document": 28,
+      "source": "pg19_books",
+      "name": "validation/555.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.013125,
+      "mean_ce": {
+        "native": 5.721141942642494,
+        "raw_bytes": 5.655064851122595
+      },
+      "native_minus_byte": 0.06607709151989916
+    },
+    {
+      "document": 29,
+      "source": "pg19_books",
+      "name": "validation/1022.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0015625,
+      "below10_fraction": 0.0121875,
+      "mean_ce": {
+        "native": 5.604507434341649,
+        "raw_bytes": 5.608276185439124
+      },
+      "native_minus_byte": -0.003768751097474876
+    },
+    {
+      "document": 30,
+      "source": "pg19_books",
+      "name": "validation/4533.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0128125,
+      "mean_ce": {
+        "native": 5.277193728592514,
+        "raw_bytes": 5.285591609148638
+      },
+      "native_minus_byte": -0.008397880556124449
+    },
+    {
+      "document": 31,
+      "source": "pg19_books",
+      "name": "validation/48089.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.0090625,
+      "mean_ce": {
+        "native": 5.432851777950824,
+        "raw_bytes": 5.43794583915158
+      },
+      "native_minus_byte": -0.0050940612007561725
+    },
+    {
+      "document": 32,
+      "source": "python_library_rst",
+      "name": "Doc/library/curses.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0421875,
+      "below10_fraction": 0.06625,
+      "mean_ce": {
+        "native": 7.507046031804056,
+        "raw_bytes": 7.418829453192884
+      },
+      "native_minus_byte": 0.08821657861117238
+    },
+    {
+      "document": 33,
+      "source": "python_library_rst",
+      "name": "Doc/library/shutil.rst",
+      "count": 3200,
+      "unseen_fraction": 0.03125,
+      "below10_fraction": 0.055625,
+      "mean_ce": {
+        "native": 7.248512452525319,
+        "raw_bytes": 7.146626209417978
+      },
+      "native_minus_byte": 0.10188624310734085
+    },
+    {
+      "document": 34,
+      "source": "python_library_rst",
+      "name": "Doc/library/base64.rst",
+      "count": 3200,
+      "unseen_fraction": 0.031875,
+      "below10_fraction": 0.071875,
+      "mean_ce": {
+        "native": 7.806188763114041,
+        "raw_bytes": 7.749559751763009
+      },
+      "native_minus_byte": 0.056629011351032155
+    },
+    {
+      "document": 35,
+      "source": "python_library_rst",
+      "name": "Doc/library/urllib.request.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0371875,
+      "below10_fraction": 0.0909375,
+      "mean_ce": {
+        "native": 7.81686505962396,
+        "raw_bytes": 7.711518774765621
+      },
+      "native_minus_byte": 0.10534628485833863
+    },
+    {
+      "document": 36,
+      "source": "python_library_rst",
+      "name": "Doc/library/statistics.rst",
+      "count": 3200,
+      "unseen_fraction": 0.019375,
+      "below10_fraction": 0.051875,
+      "mean_ce": {
+        "native": 6.330494985930103,
+        "raw_bytes": 6.5150751710857735
+      },
+      "native_minus_byte": -0.18458018515567076
+    },
+    {
+      "document": 37,
+      "source": "python_library_rst",
+      "name": "Doc/library/lzma.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.06875,
+      "mean_ce": {
+        "native": 7.400906282743672,
+        "raw_bytes": 7.324610526004108
+      },
+      "native_minus_byte": 0.07629575673956435
+    },
+    {
+      "document": 38,
+      "source": "python_library_rst",
+      "name": "Doc/library/email.headerregistry.rst",
+      "count": 3200,
+      "unseen_fraction": 0.03,
+      "below10_fraction": 0.0725,
+      "mean_ce": {
+        "native": 7.478192436035606,
+        "raw_bytes": 7.480344878448329
+      },
+      "native_minus_byte": -0.0021524424127230546
+    },
+    {
+      "document": 39,
+      "source": "python_library_rst",
+      "name": "Doc/library/wsgiref.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.06,
+      "mean_ce": {
+        "native": 7.4498586635832424,
+        "raw_bytes": 7.379492589855605
+      },
+      "native_minus_byte": 0.07036607372763726
+    },
+    {
+      "document": 40,
+      "source": "python_library_rst",
+      "name": "Doc/library/__main__.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0296875,
+      "below10_fraction": 0.0815625,
+      "mean_ce": {
+        "native": 7.24147178560214,
+        "raw_bytes": 7.162444396293819
+      },
+      "native_minus_byte": 0.07902738930832154
+    },
+    {
+      "document": 41,
+      "source": "python_library_rst",
+      "name": "Doc/library/argparse.rst",
+      "count": 3200,
+      "unseen_fraction": 0.061875,
+      "below10_fraction": 0.126875,
+      "mean_ce": {
+        "native": 7.780230671936103,
+        "raw_bytes": 7.610910492643792
+      },
+      "native_minus_byte": 0.1693201792923107
+    },
+    {
+      "document": 42,
+      "source": "python_library_rst",
+      "name": "Doc/library/turtle.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.08125,
+      "mean_ce": {
+        "native": 7.100847484627933,
+        "raw_bytes": 7.281751463364732
+      },
+      "native_minus_byte": -0.18090397873679898
+    },
+    {
+      "document": 43,
+      "source": "python_library_rst",
+      "name": "Doc/library/http.server.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0265625,
+      "below10_fraction": 0.065625,
+      "mean_ce": {
+        "native": 7.017351464024977,
+        "raw_bytes": 7.174018131462314
+      },
+      "native_minus_byte": -0.15666666743733693
+    },
+    {
+      "document": 44,
+      "source": "python_library_rst",
+      "name": "Doc/library/collections.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0246875,
+      "below10_fraction": 0.055625,
+      "mean_ce": {
+        "native": 6.381201957767964,
+        "raw_bytes": 6.853294011301672
+      },
+      "native_minus_byte": -0.4720920535337072
+    },
+    {
+      "document": 45,
+      "source": "python_library_rst",
+      "name": "Doc/library/gc.rst",
+      "count": 3200,
+      "unseen_fraction": 0.036875,
+      "below10_fraction": 0.0690625,
+      "mean_ce": {
+        "native": 7.438133767361093,
+        "raw_bytes": 7.358781193781566
+      },
+      "native_minus_byte": 0.07935257357952707
+    },
+    {
+      "document": 46,
+      "source": "python_library_rst",
+      "name": "Doc/library/idle.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0084375,
+      "below10_fraction": 0.0553125,
+      "mean_ce": {
+        "native": 6.493858388205215,
+        "raw_bytes": 6.455573942199408
+      },
+      "native_minus_byte": 0.03828444600580738
+    },
+    {
+      "document": 47,
+      "source": "python_library_rst",
+      "name": "Doc/library/email.policy.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0253125,
+      "below10_fraction": 0.0725,
+      "mean_ce": {
+        "native": 7.281857381821222,
+        "raw_bytes": 7.368088181291047
+      },
+      "native_minus_byte": -0.08623079946982504
+    },
+    {
+      "document": 48,
+      "source": "python_library_rst",
+      "name": "Doc/library/multiprocessing.rst",
+      "count": 3200,
+      "unseen_fraction": 0.034375,
+      "below10_fraction": 0.083125,
+      "mean_ce": {
+        "native": 7.454594648433267,
+        "raw_bytes": 7.526864303375866
+      },
+      "native_minus_byte": -0.07226965494259918
+    },
+    {
+      "document": 49,
+      "source": "python_library_rst",
+      "name": "Doc/library/asyncio-sync.rst",
+      "count": 3200,
+      "unseen_fraction": 0.040625,
+      "below10_fraction": 0.0678125,
+      "mean_ce": {
+        "native": 7.323937491931332,
+        "raw_bytes": 7.5083855390168415
+      },
+      "native_minus_byte": -0.18444804708550944
+    },
+    {
+      "document": 50,
+      "source": "python_library_rst",
+      "name": "Doc/library/unittest.mock-examples.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.103125,
+      "mean_ce": {
+        "native": 7.2889069522341,
+        "raw_bytes": 7.321284307959625
+      },
+      "native_minus_byte": -0.032377355725524914
+    },
+    {
+      "document": 51,
+      "source": "python_library_rst",
+      "name": "Doc/library/asyncio-subprocess.rst",
+      "count": 3200,
+      "unseen_fraction": 0.03375,
+      "below10_fraction": 0.081875,
+      "mean_ce": {
+        "native": 7.735455104614764,
+        "raw_bytes": 7.650098257496332
+      },
+      "native_minus_byte": 0.08535684711843228
+    },
+    {
+      "document": 52,
+      "source": "python_library_rst",
+      "name": "Doc/library/zipapp.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0203125,
+      "below10_fraction": 0.059375,
+      "mean_ce": {
+        "native": 6.704103737782183,
+        "raw_bytes": 6.572730177907506
+      },
+      "native_minus_byte": 0.13137355987467725
+    },
+    {
+      "document": 53,
+      "source": "python_library_rst",
+      "name": "Doc/library/operator.rst",
+      "count": 3200,
+      "unseen_fraction": 0.065,
+      "below10_fraction": 0.1028125,
+      "mean_ce": {
+        "native": 5.69743885533011,
+        "raw_bytes": 6.927856006098445
+      },
+      "native_minus_byte": -1.2304171507683348
+    },
+    {
+      "document": 54,
+      "source": "python_library_rst",
+      "name": "Doc/library/readline.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0375,
+      "below10_fraction": 0.055,
+      "mean_ce": {
+        "native": 7.31929465987448,
+        "raw_bytes": 7.256765265471768
+      },
+      "native_minus_byte": 0.06252939440271188
+    },
+    {
+      "document": 55,
+      "source": "python_library_rst",
+      "name": "Doc/library/email.compat32-message.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0228125,
+      "below10_fraction": 0.07,
+      "mean_ce": {
+        "native": 7.246677636066501,
+        "raw_bytes": 7.379537684142416
+      },
+      "native_minus_byte": -0.13286004807591478
+    },
+    {
+      "document": 56,
+      "source": "python_library_rst",
+      "name": "Doc/library/queue.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0303125,
+      "below10_fraction": 0.0771875,
+      "mean_ce": {
+        "native": 7.585735601780979,
+        "raw_bytes": 7.530547333645615
+      },
+      "native_minus_byte": 0.055188268135364815
+    },
+    {
+      "document": 57,
+      "source": "python_library_rst",
+      "name": "Doc/library/smtplib.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0240625,
+      "below10_fraction": 0.0778125,
+      "mean_ce": {
+        "native": 7.493818639147697,
+        "raw_bytes": 7.476489840105642
+      },
+      "native_minus_byte": 0.017328799042054754
+    },
+    {
+      "document": 58,
+      "source": "python_library_rst",
+      "name": "Doc/library/pathlib.rst",
+      "count": 3200,
+      "unseen_fraction": 0.041875,
+      "below10_fraction": 0.0703125,
+      "mean_ce": {
+        "native": 7.522548770902165,
+        "raw_bytes": 7.448463340778253
+      },
+      "native_minus_byte": 0.07408543012391178
+    },
+    {
+      "document": 59,
+      "source": "python_library_rst",
+      "name": "Doc/library/threading.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0290625,
+      "below10_fraction": 0.0603125,
+      "mean_ce": {
+        "native": 7.122202924634135,
+        "raw_bytes": 7.283188170053763
+      },
+      "native_minus_byte": -0.1609852454196279
+    },
+    {
+      "document": 60,
+      "source": "python_library_rst",
+      "name": "Doc/library/stat.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0465625,
+      "below10_fraction": 0.0675,
+      "mean_ce": {
+        "native": 7.122378100886756,
+        "raw_bytes": 7.189543514141502
+      },
+      "native_minus_byte": -0.06716541325474612
+    },
+    {
+      "document": 61,
+      "source": "python_library_rst",
+      "name": "Doc/library/stdtypes.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0340625,
+      "below10_fraction": 0.0528125,
+      "mean_ce": {
+        "native": 5.122430023416043,
+        "raw_bytes": 6.266737660861303
+      },
+      "native_minus_byte": -1.1443076374452597
+    },
+    {
+      "document": 62,
+      "source": "python_library_rst",
+      "name": "Doc/library/logging.handlers.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0484375,
+      "below10_fraction": 0.0921875,
+      "mean_ce": {
+        "native": 6.844226766626428,
+        "raw_bytes": 7.182346046366146
+      },
+      "native_minus_byte": -0.33811927973971834
+    },
+    {
+      "document": 63,
+      "source": "python_library_rst",
+      "name": "Doc/library/exceptions.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0278125,
+      "below10_fraction": 0.065,
+      "mean_ce": {
+        "native": 7.446084953236084,
+        "raw_bytes": 7.354145590512199
+      },
+      "native_minus_byte": 0.0919393627238847
+    }
+  ],
+  "scope": "Post-result descriptive association, no hypothesis test, causal attribution or acceptance gate. Correlations use 32 selected parents per domain and average the same three model pairs; topic, markup, token identity and dependence may confound them. Full-corpus counts are not actual sampled training exposure. No new model evaluation; test unopened.",
+  "test_opened": false
+}
