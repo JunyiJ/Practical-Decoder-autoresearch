@@ -28,11 +28,25 @@ Time-EMA source CEs are4.961011621457 for FineWeb-Edu and5.034796162385 for
 Wikipedia. Guarded worker time was7,380.481886 seconds. All24 first generations
 and both final weights are retained. No failure or recovery charge occurred.
 
-The paired byte confirmation slot05 is running under PID99876 and supervisor
-session41607. This single native endpoint cannot
-resolve the throughput hypothesis. Review its paired byte result, then complete
-all three fresh pairs before applying the frozen decision rule. Each arm receives
-7,200 training seconds with budget-matched cooldown and a shared127.184813977-second
-EMA half-life. Generate24 first completions per final averaged model for144
-scientific completions total. The48 engineering completions remain excluded.
-Keep the original test unopened and all frozen gates unchanged.
+Paired byte confirmation slot05 also passed review. It completed11,919 updates
+in7,200.587296762 training seconds, with a0.587296762-second overshoot within one
+update. Time-EMA CE is5.078865061978 and RAW CE is5.083875641980. Guarded worker
+time was7,449.936635 seconds. Its24 first generations and both weights are retained.
+The paired training-sampler prefix matches. Neither arm needed failure recovery.
+
+| Fresh pair | Native time-EMA CE | Byte time-EMA CE | Byte minus native | RAW difference |
+| --- | --- | --- | --- | --- |
+| 1 | 4.975752952122 | 5.078865061978 | +0.103112109855 | +0.099177141401 |
+
+Native has lower loss on both sources: byte-minus-native differences are
++0.104245076918 for FineWeb-Edu and+0.098574255435 for Wikipedia. This first pair
+supports the throughput hypothesis at the confirmation horizon. Two further
+fresh pairs are required before applying the frozen acceptance rule. These
+results do not establish better generated text. All48 scientific first outputs
+remain unannotated until the complete144-output blind evaluation is assembled.
+
+Fresh native confirmation slot06, bundle2, is running under PID5479 and
+supervisor session5559. Each arm receives7,200
+training seconds with budget-matched cooldown and a shared127.184813977-second
+EMA half-life. Preserve all24 first completions per final averaged model and
+exclude the48 engineering completions. Keep test unopened and all gates fixed.
