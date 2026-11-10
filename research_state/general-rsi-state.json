@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 39592,
-  "next_action": "Slot05 attempt02 active under PID15837/session39592. After step6705 run general-rsi-exposure-recovery-002/verify-replay.py to verify all561 replayed updates; on completion review attempt02 and aggregate both guard times<18000s, then apply unchanged three-pair decision. Keep test unopened.",
+  "next_action": "Continue final slot05 attempt02 under PID15837/session39592. At completion review attempt02, verify aggregate attempt guard time<18000s and unchanged failure archive, matched10240-step batch prefix to slot04, then apply unchanged three-pair H200/bootstrap/source-wise decision. Next campaign follows GENERAL_RSI_NEXT_CAMPAIGNS.md; test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T02:44:04.102020+00:00",
+  "updated_at": "2026-11-10T02:52:33.384441+00:00",
   "active_worker_pid": 15837,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Final long slot05 suffered disk-reserve exit90 after6705updates. Complete restart6144 qualified; first36 replayed updates match exactly. Five endpoints accepted; no final scientific decision yet.",
+  "latest_learning": "All561 replayed final-run updates6145..6705 match exactly in losses, clipping, LR and batch hashes; original failure archive verified. Final long endpoint still pending; five of six runs accepted.",
   "phase": "exposure_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -220,7 +220,7 @@
     }
   ],
   "exposure_recovery": "research/tokenizer-evidence/general-rsi-exposure-recovery-002/preparation.json",
-  "exposure_replay_verification": null,
+  "exposure_replay_verification": "research/tokenizer-evidence/general-rsi-exposure-recovery-002/replay-verification.json",
   "human_followup_priorities": [
     "Finish frozen longer-training comparison unchanged",
     "Fresh native/byte comparison at equal Mac training time with budget-matched schedules",

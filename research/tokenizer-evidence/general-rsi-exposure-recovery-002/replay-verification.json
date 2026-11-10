@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-10T02:52:15.494027+00:00",
+  "passed": true,
+  "replay_start_step": 6145,
+  "replay_end_step": 6705,
+  "replay_updates": 561,
+  "canonical_prefix_records": 6705,
+  "exactly_equal_fields": [
+    "batch_sha256",
+    "clip",
+    "loss",
+    "lr_ratio",
+    "step"
+  ],
+  "excluded_execution_fields": [
+    "seconds",
+    "mps_driver_bytes"
+  ],
+  "original_steps_sha256": "f39b5dc861fe3e0c3cf27a7344e8eadecccc31355a97ab0ff0a26dbc4fc45961",
+  "resumed_prefix_sha256": "d350f74fb963044592473d8741bef8a79b7d2f70c807522eb90c4089f7e7c9cd",
+  "original_failure_archive_hashes_verified": true,
+  "conclusion": "All561 replayed numerical updates match exactly. Complete restart preserves this observed trajectory; endpoint acceptance and remaining third-pair confirmation are still pending.",
+  "test_opened": false
+}
