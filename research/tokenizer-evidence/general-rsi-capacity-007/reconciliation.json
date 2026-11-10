@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-10T03:24:25.078181+00:00",
+  "status": "partial",
+  "free_bytes": 11457064960,
+  "required_free_bytes": 11477326780,
+  "remaining_deficit_bytes": 20261820,
+  "removed_allocated_bytes": 5996544,
+  "removed_files": 77,
+  "protected_files_verified_each_pass": 29,
+  "active_worker_pid": 15837,
+  "research_payloads_modified": false,
+  "exhausted_classes": [
+    "Chromium dense HTTP/compiled caches in Chrome Default and Codex",
+    "orphaned unopened Chrome sparse payloads older than1h",
+    "Homebrew compilation/installed ripgrep bottle cache",
+    "VS Code CachedData self-identifying payloads"
+  ],
+  "excluded_classes": [
+    "pending updater payloads (Codex/iTerm)",
+    "shared Codex runtimes and dotslash DevTools",
+    "Apple managed service/model caches without demonstrated safe deletion basis",
+    "research payload retirement while shared research lock is busy"
+  ],
+  "wake_conditions": [
+    "free space reaches full requirement",
+    "new eligible regenerated external cache payload",
+    "research lock released, allowing exact obsolete-payload dependency audit"
+  ],
+  "next_action": "Keep the existing healthy worker under unchanged hard guard; no second worker or research payload cleanup while lock held. Recheck narrow free-space/guard state; do not repeat exhausted broad inventories. A storage addition/freeing of100MiB would cover the present deficit with margin; do not reduce scientific or reserve requirements."
+}
