@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 5559,
-  "next_action": "Monitor active fresh native confirmation slot06, bundle2, at LR0.0025 for7200 training seconds. Review clocks, weights, validation coverage and all24 first generations before paired byte slot07. No architecture conclusion before all three fresh pairs.",
+  "active_session": 9532,
+  "next_action": "Monitor active paired byte confirmation slot07, bundle2, at LR0.0025 for7200 training seconds. Review clocks, weights, coverage, sampler prefix and all24 first generations before native slot08. No architecture conclusion before all three fresh pairs.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T12:10:41.455597+00:00",
-  "active_worker_pid": 5479,
+  "updated_at": "2026-11-10T14:15:28.230070+00:00",
+  "active_worker_pid": 10501,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 6,
+  "active_slot": 7,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "First fresh equal-time pair accepted. Native time-EMA CE4.975752952122 versus byte5.078865061978, byte-minus-native +0.103112109855 nats/token. Both sources favor native; RAW direction agrees. Paired sampler prefix matches and48 first generations are retained. This supports the throughput hypothesis for one seed only; two fresh pairs remain before the frozen decision.",
+  "latest_learning": "Second native confirmation accepted: time-EMA CE4.971957701231, RAW4.982940323542 after7200.071226959 training seconds and21397 updates;24 first generations retained. Its paired byte result is pending. First complete pair favors native by0.103112109855 nats/token, supporting the throughput hypothesis provisionally; all three fresh pairs remain required.",
   "phase": "equal_time_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "After slot05: retained finals1076639408bytes; full remaining requirement18166062112bytes including serialization overlap, metadata, failure allowance and reserve; actual free26793254912bytes. Scientific guard time spent22399.024974s of72000s. No cleanup needed.",
+  "capacity_status": "After slot06: retained finals1304636774bytes; full remaining requirement17938064746bytes including serialization overlap, metadata, failure allowance and reserve; actual free26450501632bytes. Scientific guard time spent29781.379030s of72000s. No cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -325,6 +325,19 @@
       "time_ema_ce": 5.078865061977657,
       "raw_ce": 5.083875641979684,
       "review": "research/tokenizer-evidence/general-rsi-equal-time-001/slot-05/review.json",
+      "first_generations": 24
+    },
+    {
+      "slot": 6,
+      "phase": "confirmation",
+      "arm": "native",
+      "bundle": 2,
+      "lr": 0.0025,
+      "steps": 21397,
+      "training_seconds": 7200.071226959,
+      "time_ema_ce": 4.971957701231072,
+      "raw_ce": 4.982940323541918,
+      "review": "research/tokenizer-evidence/general-rsi-equal-time-001/slot-06/review.json",
       "first_generations": 24
     }
   ],

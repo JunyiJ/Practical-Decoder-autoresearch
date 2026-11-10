@@ -45,8 +45,17 @@ fresh pairs are required before applying the frozen acceptance rule. These
 results do not establish better generated text. All48 scientific first outputs
 remain unannotated until the complete144-output blind evaluation is assembled.
 
-Fresh native confirmation slot06, bundle2, is running under PID5479 and
-supervisor session5559. Each arm receives7,200
-training seconds with budget-matched cooldown and a shared127.184813977-second
-EMA half-life. Preserve all24 first completions per final averaged model and
-exclude the48 engineering completions. Keep test unopened and all gates fixed.
+Fresh native confirmation slot06, bundle2, passed review. It completed21,397
+updates in7,200.071226959 training seconds, with a0.071226959-second overshoot
+within one update. Time-EMA CE is4.971957701231 and RAW CE is4.982940323542.
+Time-EMA source CEs are4.962721805009 for FineWeb-Edu and5.008950085091 for
+Wikipedia. Guarded worker time was7,382.354056 seconds. Both weights and all24
+first generations are retained. No failure or recovery charge occurred.
+
+Paired byte confirmation slot07 is running under PID10501 and supervisor
+session9532. The second pair is incomplete, so the
+first pair remains the only paired evidence for the throughput hypothesis.
+All72 scientific first outputs remain unannotated until the complete144-output
+blind evaluation is assembled. Each arm receives7,200 training seconds with
+budget-matched cooldown and a shared127.184813977-second EMA half-life.
+Keep test unopened, exclude engineering completions and keep all gates fixed.
