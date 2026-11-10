@@ -69,7 +69,16 @@ before applying the frozen acceptance rule. These losses do not establish better
 generated text. All96 scientific first outputs remain unannotated until the
 complete144-output blind evaluation is assembled.
 
-Native confirmation slot08, bundle3, is running under PID16636 and supervisor
-session24781. Each arm receives7,200
-training seconds with budget-matched cooldown and the shared127.184813977-second
-EMA half-life. Keep test unopened and all comparisons and gates fixed.
+Native confirmation slot08, bundle3, passed review. It completed20,894 updates
+in7,200.275344664 training seconds, with a0.275344664-second overshoot within one
+update. Time-EMA CE is4.959187469075 and RAW CE is4.969185394402. Time-EMA source
+CEs are4.949277104587 for FineWeb-Edu and4.998881289636 for Wikipedia. Guarded
+worker time was7,390.726264 seconds. Both final weights and all24 first generations
+are retained. No failure or recovery charge occurred.
+
+The final paired byte confirmation slot09 is running under PID38648 and supervisor
+session76159. Two completed pairs support
+the throughput hypothesis, but the third pair remains incomplete. All120 scientific
+first outputs remain unannotated until the complete144-output blind evaluation.
+Each arm receives7,200 training seconds with budget-matched cooldown and the
+shared127.184813977-second EMA half-life. Keep test unopened and all gates fixed.
