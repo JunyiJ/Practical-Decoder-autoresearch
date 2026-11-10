@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "VALIDATION_ATTRIBUTION_COMPLETE",
+  "status": "COMPOSER_REUSE_COMPONENT_PASSED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Freeze a standalone within-batch composer reuse correctness/reproducibility and synchronized timing protocol, including deterministic gradient aggregation controls, fixed tolerances and practical benefit gate. Forecast complete64MiB output/failure/serialization allowance plus10GiB reserve and900s cumulative guard before launch; check actual workers and nonblocking lock. No production edits or quality training until component and subsequent full-model optimizer/restart qualifications pass. Preserve all historical decisions; no worker currently active.",
+  "next_action": "Qualify a separately identified full-model reuse execution path with actual optimizer updates, complete restart replay and synchronized whole-update timing before considering fresh quality confirmation. Preserve all frozen runtime sources and results; no numerical worker active.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T21:34:01.246498+00:00",
+  "updated_at": "2026-11-10T21:42:02.187123+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All648 original validation parent CEs reproduced exactly. Native advantage persists outside pure whitespace: -0.125862300191 nats/token over97816 targets, each pair favorable on FineWeb-Edu and Wikipedia. Whitespace slightly favors byte overall; transfer formatting explanation is domain-specific. Separately,384 exact historical batches average491.9505 distinct IDs/1024 positions (51.96% duplicate composer rows), motivating a bounded reuse engineering test, not a speed or quality claim.",
-  "phase": "composer_reuse_prototype_preparation",
+  "latest_learning": "Standalone reuse passed all six correctness/repeatability cases. Historical composer forward/backward median ratios were0.444708,0.497715,0.379275 (55.53% median reduction); all-unique0.999029. This is one private initializer and three fixed batches, not optimizer/restart or model-quality evidence.",
+  "phase": "composer_reuse_full_model_qualification_preparation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Original-validation diagnostic complete; retained 2212057 bytes within32MiB cap; free 25427361792 bytes exceeds10GiB reserve. No capacity blocker. All first token losses, checkpoints and generations retained.",
+  "capacity_status": "Composer component completed in37.35s, output below64MiB cap; free 25420681216 bytes. No capacity blocker.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -161,7 +161,7 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/GENERAL_RSI_COMPOSER_EFFICIENCY_BOUNDARY.md",
+  "next_design": "research/GENERAL_RSI_COMPOSER_REUSE_PROTOCOL.md",
   "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "exposure_completed_slots": [
@@ -430,5 +430,6 @@
   "validation_attribution_summary": "research/tokenizer-evidence/general-rsi-validation-attribution-001/summary.json",
   "validation_attribution_review": "research/tokenizer-evidence/general-rsi-validation-attribution-001/completion-review.json",
   "composer_efficiency_boundary": "research/GENERAL_RSI_COMPOSER_EFFICIENCY_BOUNDARY.md",
-  "composer_batch_reuse": "research/tokenizer-evidence/general-rsi-composer-efficiency-preparation-001/batch-reuse.json"
+  "composer_batch_reuse": "research/tokenizer-evidence/general-rsi-composer-efficiency-preparation-001/batch-reuse.json",
+  "composer_reuse_review": "research/tokenizer-evidence/general-rsi-composer-reuse-001/completion-review.json"
 }
