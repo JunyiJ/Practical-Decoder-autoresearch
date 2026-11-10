@@ -104,3 +104,9 @@ Attempt01 hard-exited90 after8,072 logged updates; the guard recorded10,653,904,
 All first-attempt files were archived byte-for-byte under general-rsi-exposure-recovery-001/attempt-01-original. The complete step7,168 checkpoint passed hash/size/deserialization/history and frozen-config checks; canonical steps after7,168 were removed only after that durable archive. Attempt02 restores the original optimizer, RNG, EMA and sampler state with unchanged frozen worker/source/seeds. Its first23 replayed updates exactly match original losses, clipping, LR and batch hashes. Check all904 replayed updates at step8,072; then require normal endpoint review and aggregate slot guard time below18,000 seconds. Failed time remains charged to the frozen30-hour tranche (remaining62,780.355587 seconds before restart).
 
 The prior two completed pairs remain evidence for longer exposure; third-pair confirmation is still pending. Next complete the restored control and final paired long run, keeping test unopened and all adoption gates fixed.
+
+## Complete replay verified — 2026-11-10T01:02Z
+
+All904 replayed updates (7,169–8,072) exactly match the preserved first attempt in batch hashes, losses, clipping records and LR ratios. The retained prefix through8,072 also matches these fields. Execution timing and MPS allocation are excluded from numerical equality; every original failure-archive hash was rechecked. Evidence: general-rsi-exposure-recovery-001/replay-verification.json and verify-replay.py.
+
+This verifies preservation of the observed trajectory across the real resource interruption; it is not a new quality result. The restarted slot04 continues to its unchanged endpoint. Next verify the completed endpoint and aggregate attempt time, then execute final paired slot05. Scientific hypothesis and three-pair acceptance criteria remain unchanged.

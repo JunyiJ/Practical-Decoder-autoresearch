@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 57801,
-  "next_action": "Slot04 attempt02 resumes complete step7168 checkpoint under PID35393/session57801 after disk-reserve hard exit90. At step8072 verify all904 replayed updates exactly against recovery001 archived first attempt (loss/clip/LR/batch hashes); preserve both attempts. At completion review attempt02, verify aggregate slot guard time below18000s, then launch frozen slot05 after full capacity/assets/lock check; test unopened.",
+  "next_action": "Slot04 attempt02 continues under PID35393/session57801; all904 replayed updates matched exactly. At completion review attempt02, verify aggregate slot guard time below18000s and unchanged failure archive, then launch frozen long slot05 after full capacity/assets/lock checks. Apply three-pair decision only after all six runs; test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T00:49:14.918575+00:00",
+  "updated_at": "2026-11-10T01:02:46.688891+00:00",
   "active_worker_pid": 35393,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Scientific hypothesis unchanged: two completed exposure pairs favor longer training. Slot04 attempt01 failed only its disk reserve; exact checkpoint recovery in attempt02, initial replay matches. No negative-quality or adoption claim from interrupted run.",
+  "latest_learning": "Real disk-interrupted complete restart reproduced all904 replayed updates exactly in losses, clipping, LR and batch hashes. Two completed scientific pairs still favor longer exposure; third-pair endpoints pending.",
   "phase": "exposure_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -211,5 +211,6 @@
       "raw_delta": -0.20062314472321408
     }
   ],
-  "exposure_recovery": "research/tokenizer-evidence/general-rsi-exposure-recovery-001/preparation.json"
+  "exposure_recovery": "research/tokenizer-evidence/general-rsi-exposure-recovery-001/preparation.json",
+  "exposure_replay_verification": "research/tokenizer-evidence/general-rsi-exposure-recovery-001/replay-verification.json"
 }
