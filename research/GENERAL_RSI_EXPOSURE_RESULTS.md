@@ -132,3 +132,9 @@ All12 first-attempt files are archived unchanged in general-rsi-exposure-recover
 All561 replayed updates6,145–6,705 match the original attempt exactly in loss, clipping, LR, step and sampled-batch hash. The full retained prefix through6,705 matches these numerical fields; timing and allocator bytes are excluded. All12 original failure-archive hashes verified again. Evidence: general-rsi-exposure-recovery-002/replay-verification.json. This confirms the observed restarted trajectory, not a new quality result.
 
 Slot05 attempt02 remains active and healthy past6,912updates. Capacity exceeds the full remaining requirement. Continue to the frozen endpoint, review both aggregate attempt time and paired sample prefix, then make the unchanged three-pair decision. Test unopened; no adoption claim yet.
+
+## Capacity recovery006 during final run — 2026-11-10T03:02:48.232116+00:00
+
+Free space fell below the full remaining-panel forecast while the worker remained above its hard reserve. Initial deficit32,406,460bytes grew to37,108,668 at cleanup admission. An external-cache-lock pass retired80 exact audited unopened Chromium cache payloads,104,435,712allocated bytes, with inode/hash/consumer checks and durable deletion journal. All29 selected/fresh/active model and evidence hashes verified unchanged. No research payloads modified.
+
+After cleanup, measured free11544244224bytes exceeds unchanged full requirement11477326780, including serialization overlap and10GiB reserve (8GiB floor plus2GiB headroom). Slot05 attempt02 continues unchanged. Original failure evidence and561-update exact replay verification remain intact. Next review the final endpoint and apply the frozen decision; no quality or hypothesis revision follows from cache maintenance.
