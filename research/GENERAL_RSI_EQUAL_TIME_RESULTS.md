@@ -1,84 +1,152 @@
-# Equal Mac training-time comparison
+# Equal Mac training-time comparison: complete
 
-All four screens passed review. The frozen rule selects LR0.0025 for both arms.
-`tokenizer-evidence/general-rsi-equal-time-001/selection.json` binds the choice to
-the original plan. No confirmed architecture decision has been made.
+Native passes all frozen validation-loss gates across three fresh paired seeds. At
+7,200 synchronized training seconds per arm, mean time-EMA CE is4.968966040810
+for native and5.091067701052 for byte. Native minus byte is−0.122101660243
+nats/token. The one-sided99% paired document-bootstrap upper bound is
+−0.105244791590. Both source means favor native. No test data was opened.
 
-| Slot | Arm | LR | Updates | Training seconds | Time-EMA CE | RAW CE |
-| --- | --- | --- | --- | --- | --- | --- |
-| 00 | Native | 0.00125 | 5,338 | 1,800.200685 | 5.6160593260 | 5.6100533674 |
-| 01 | Byte | 0.00125 | 2,975 | 1,800.220744 | 5.9043330308 | 5.8894565185 |
-| 02 | Native | 0.0025 | 5,339 | 1,800.299251 | 5.4689027207 | 5.4637743363 |
-| 03 | Byte | 0.0025 | 2,975 | 1,800.479829 | 5.7425720106 | 5.7293537405 |
+The adopted recipe retains all three native time-EMA checkpoints without
+best-seed selection. Both arms and all RAW checkpoints remain retained.
+Generation diagnostics show substantial repetition and drift in both arms.
+This is a validated loss result for this Mac, corpus, architecture size and budget.
+It is not evidence of reliable generation or broader-domain superiority.
 
-All screens passed source/weight hashes, durable time accounting, validation
-coverage and resource guards. Both paired sampler prefixes match. Each overshoot
-was within one update. All eight final weights are retained; transient restarts
-were retired with exact audited receipts. Guarded times were1,866.154,1,917.650,
-1,866.499 and1,918.304 seconds.
+## Protocol and execution
 
-Native leads by0.273669 nats/token at the selected screen LR. The result supports
-the throughput hypothesis for this screening horizon. It does not establish
-superiority at the longer confirmation horizon or better generated text.
+Frozen plan: `tokenizer-evidence/general-rsi-equal-time-001/plan.json`
+(SHA256 `4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d`).
+Two LRs received1,800 seconds per arm. The frozen within-arm screen selected
+LR0.0025 for both. Six fresh confirmations then received7,200 seconds each.
+All ten execution reviews passed; paired sampler prefixes match. All overshoots
+were within one update. No run required failure recovery.
 
-Fresh native confirmation slot04 passed execution review. It completed21,348
-updates in7,200.237572257 training seconds, with a0.237572257-second overshoot
-within one update. Time-EMA CE is4.975752952122 and RAW CE is4.984698500579.
-Time-EMA source CEs are4.961011621457 for FineWeb-Edu and5.034796162385 for
-Wikipedia. Guarded worker time was7,380.481886 seconds. All24 first generations
-and both final weights are retained. No failure or recovery charge occurred.
+Training time includes synchronized sampling, device transfer, forward/backward,
+clipping, optimizer, EMA and durable update-start/hash accounting. Checkpoint I/O,
+validation, generation, initialization and other logging are excluded from that
+clock and included in the separate guarded worker totals. Each schedule cools
+down over its own final third to0.1. EMA uses the frozen127.184813977-second
+half-life, initialized at the first update start at or beyond two thirds.
 
-Paired byte confirmation slot05 also passed review. It completed11,919 updates
-in7,200.587296762 training seconds, with a0.587296762-second overshoot within one
-update. Time-EMA CE is5.078865061978 and RAW CE is5.083875641980. Guarded worker
-time was7,449.936635 seconds. Its24 first generations and both weights are retained.
-The paired training-sampler prefix matches. Neither arm needed failure recovery.
+| Slot | Phase | Arm | LR | Updates | Training seconds | Time-EMA CE | RAW CE | Guard seconds |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 00 | screen | native | 0.00125 | 5,338 | 1800.200685 | 5.6160593260 | 5.6100533674 | 1866.154 |
+| 01 | screen | raw_bytes | 0.00125 | 2,975 | 1800.220744 | 5.9043330308 | 5.8894565185 | 1917.650 |
+| 02 | screen | native | 0.0025 | 5,339 | 1800.299251 | 5.4689027207 | 5.4637743363 | 1866.499 |
+| 03 | screen | raw_bytes | 0.0025 | 2,975 | 1800.479829 | 5.7425720106 | 5.7293537405 | 1918.304 |
+| 04 | confirmation | native | 0.0025 | 21,348 | 7200.237572 | 4.9757529521 | 4.9846985006 | 7380.482 |
+| 05 | confirmation | raw_bytes | 0.0025 | 11,919 | 7200.587297 | 5.0788650620 | 5.0838756420 | 7449.937 |
+| 06 | confirmation | native | 0.0025 | 21,397 | 7200.071227 | 4.9719577012 | 4.9829403235 | 7382.354 |
+| 07 | confirmation | raw_bytes | 0.0025 | 11,873 | 7200.600330 | 5.1067060895 | 5.1130765487 | 7447.069 |
+| 08 | confirmation | native | 0.0025 | 20,894 | 7200.275345 | 4.9591874691 | 4.9691853944 | 7390.726 |
+| 09 | confirmation | raw_bytes | 0.0025 | 11,681 | 7200.502229 | 5.0876319517 | 5.0953980789 | 7450.279 |
 
-| Fresh pair | Native time-EMA CE | Byte time-EMA CE | Byte minus native | RAW difference |
+Total guarded worker time: 52,069.453s of the72,000s tranche.
+Retained final weights: 1,794,399,184bytes. Free space at completion:
+25,606,782,976bytes. The shared lock was available and no training worker
+was active. No cleanup was needed.
+
+## Frozen acceptance result
+
+| Pair | Native time-EMA CE | Byte time-EMA CE | Byte minus native | RAW difference |
 | --- | --- | --- | --- | --- |
 | 1 | 4.975752952122 | 5.078865061978 | +0.103112109855 | +0.099177141401 |
-
-Native has lower loss on both sources: byte-minus-native differences are
-+0.104245076918 for FineWeb-Edu and+0.098574255435 for Wikipedia. This first pair
-supports the throughput hypothesis at the confirmation horizon. Two further
-fresh pairs are required before applying the frozen acceptance rule. These
-results do not establish better generated text. All48 scientific first outputs
-remain unannotated until the complete144-output blind evaluation is assembled.
-
-Fresh native confirmation slot06, bundle2, passed review. It completed21,397
-updates in7,200.071226959 training seconds, with a0.071226959-second overshoot
-within one update. Time-EMA CE is4.971957701231 and RAW CE is4.982940323542.
-Time-EMA source CEs are4.962721805009 for FineWeb-Edu and5.008950085091 for
-Wikipedia. Guarded worker time was7,382.354056 seconds. Both weights and all24
-first generations are retained. No failure or recovery charge occurred.
-
-Paired byte confirmation slot07 passed review. It completed11,873 updates in
-7,200.600329724 training seconds, with a0.600329724-second overshoot within one
-update. Time-EMA CE is5.106706089479 and RAW CE is5.113076548745. Guarded worker
-time was7,447.068883 seconds. Its sampler prefix matches native slot06. Both final
-weights and all24 first generations are retained. No failure or recovery charge occurred.
-
-| Fresh pair | Native time-EMA CE | Byte time-EMA CE | Byte minus native | RAW difference |
-| --- | --- | --- | --- | --- |
 | 2 | 4.971957701231 | 5.106706089479 | +0.134748388248 | +0.130136225203 |
+| 3 | 4.959187469075 | 5.087631951701 | +0.128444482625 | +0.126212684495 |
 
-Byte-minus-native source differences are+0.130096676867 for FineWeb-Edu
-and+0.153379811652 for Wikipedia. Both completed pairs support the
-throughput hypothesis at this horizon. The third fresh pair remains required
-before applying the frozen acceptance rule. These losses do not establish better
-generated text. All96 scientific first outputs remain unannotated until the
-complete144-output blind evaluation is assembled.
+All three deltas favor native, the mean exceeds the0.02 improvement threshold,
+and the99% upper bound excludes zero. Native-minus-byte source deltas are
+−0.119949133157 for FineWeb-Edu and−0.130723141723 for Wikipedia, within
+the0.05 source-regression guard. Mean RAW CE is4.978941406174 versus
+5.097450089874. RAW is a secondary endpoint.
 
-Native confirmation slot08, bundle3, passed review. It completed20,894 updates
-in7,200.275344664 training seconds, with a0.275344664-second overshoot within one
-update. Time-EMA CE is4.959187469075 and RAW CE is4.969185394402. Time-EMA source
-CEs are4.949277104587 for FineWeb-Edu and4.998881289636 for Wikipedia. Guarded
-worker time was7,390.726264 seconds. Both final weights and all24 first generations
-are retained. No failure or recovery charge occurred.
+The bootstrap resamples108 paired documents10,000 times with frozen PCG64
+seed62110700999, averages loss sums across the three seeds before resampling,
+and divides by sampled token counts. It is conditional on these documents and
+seeds, not a population-seed confidence statement. All100,416 validation targets
+and their per-document inventories agree across arms and endpoints.
 
-The final paired byte confirmation slot09 is running under PID38648 and supervisor
-session76159. Two completed pairs support
-the throughput hypothesis, but the third pair remains incomplete. All120 scientific
-first outputs remain unannotated until the complete144-output blind evaluation.
-Each arm receives7,200 training seconds with budget-matched cooldown and the
-shared127.184813977-second EMA half-life. Keep test unopened and all gates fixed.
+## First-generation evaluation
+
+All144 first outputs were retained:12 prompts ×2 fixed decoders ×6 models.
+Each uses at most64 new tokens and seed42 reset per prompt/decoder. No rerolls
+or decoder tuning occurred. Arm, seed and checkpoint labels were removed and
+rows shuffled with seed62110500998. All annotations were saved before unblinding.
+The annotator was the Codex assistant. These are exploratory agent ratings,
+not independent human validation. Consistency is not exhaustive factual accuracy.
+
+Each cell below covers36 outputs. Relevance and consistency are0/1/2 ordinal
+ratings;1 means partial relevance or ambiguous consistency. Semantic means give
+equal weight to prompts with assessable ratings. Unassessable outputs are excluded
+from means and shown separately; they are never passes.
+
+| Arm | Decoder | Repeat trigram fraction | Terminal loop | Mean content tokens | EOS | Token cap | Relevance mean | Consistency mean |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| native | greedy | 0.5076 | 41.7% | 64.00 | 0.0% | 100.0% | 0.9167 | 0.8788 |
+| native | T0.8/top-k40 | 0.0197 | 0.0% | 62.03 | 5.6% | 94.4% | 0.7500 | 0.9722 |
+| raw_bytes | greedy | 0.5421 | 33.3% | 64.00 | 0.0% | 100.0% | 0.6111 | 0.9697 |
+| raw_bytes | T0.8/top-k40 | 0.0237 | 0.0% | 64.00 | 0.0% | 100.0% | 0.7222 | 0.9722 |
+
+| Arm | Decoder | Relevance counts0/1/2/U | Consistency counts0/1/2/U | Consistency U fraction | Assessed consistency prompts |
+| --- | --- | --- | --- | --- | --- |
+| native | greedy | 4/31/1/0 | 5/25/2/4 | 11.1% | 11/12 |
+| native | temperature_0.8_top_k_40 | 9/27/0/0 | 1/34/0/1 | 2.8% | 12/12 |
+| raw_bytes | greedy | 15/20/1/0 | 2/30/1/3 | 8.3% | 11/12 |
+| raw_bytes | temperature_0.8_top_k_40 | 10/26/0/0 | 1/35/0/0 | 0.0% | 12/12 |
+
+Relevance has no unassessable ratings. All repetition metrics are assessable;
+no unexpected early stop occurred. Greedy output is highly repetitive in both
+arms. Sampling sharply reduces repeated trigrams but still produces fragmentary
+or drifting content. Native has higher descriptive relevance means, especially
+under greedy decoding, but terminal loops and consistency do not uniformly favor
+native. Only two of144 outputs received relevance2, and only three received
+consistency2. These diagnostics support neither reliable generation nor a broad
+generation-quality superiority claim. They were not used to change the CE gate.
+
+### Per-seed diagnostics
+
+| Arm | Decoder | Seed bundle | Repeat fraction | Loop fraction | Relevance mean | Consistency mean | Consistency U count |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| native | greedy | 1 | 0.5739 | 0.5000 | 1.0000 | 1.0000 | 2 |
+| native | greedy | 2 | 0.5134 | 0.3333 | 0.9167 | 0.8182 | 1 |
+| native | greedy | 3 | 0.4355 | 0.4167 | 0.8333 | 0.9091 | 1 |
+| native | temperature_0.8_top_k_40 | 1 | 0.0202 | 0.0000 | 0.6667 | 1.0000 | 1 |
+| native | temperature_0.8_top_k_40 | 2 | 0.0188 | 0.0000 | 0.7500 | 1.0000 | 0 |
+| native | temperature_0.8_top_k_40 | 3 | 0.0202 | 0.0000 | 0.8333 | 0.9167 | 0 |
+| raw_bytes | greedy | 1 | 0.4664 | 0.3333 | 0.7500 | 1.0000 | 1 |
+| raw_bytes | greedy | 2 | 0.5726 | 0.3333 | 0.4167 | 0.9091 | 1 |
+| raw_bytes | greedy | 3 | 0.5874 | 0.3333 | 0.6667 | 1.0000 | 1 |
+| raw_bytes | temperature_0.8_top_k_40 | 1 | 0.0215 | 0.0000 | 0.7500 | 1.0000 | 0 |
+| raw_bytes | temperature_0.8_top_k_40 | 2 | 0.0188 | 0.0000 | 0.6667 | 0.9167 | 0 |
+| raw_bytes | temperature_0.8_top_k_40 | 3 | 0.0309 | 0.0000 | 0.7500 | 1.0000 | 0 |
+
+Full lengths, termination, ordinal counts, pooled assessable means and prompt
+means for each seed are in `generation-evaluation/summary.json`. Every prompt,
+exact continuation, evidence quote and rationale is retained in `blind.json` and
+`annotations.json`; `mapping.json` links them to all original token-level outputs.
+
+## Interpretation and next action
+
+Measured: native completes20,894–21,397 updates in the same budget in which byte
+completes11,681–11,919. All paired loss and source results favor native. Inference:
+the extra updates enabled by native throughput outweigh byte’s equal-update
+advantage at this budget. This comparison includes the full native/byte parameter
+and implementation tradeoff; it does not isolate a parameter-count mechanism.
+The closed equal-update result favoring byte and longer-byte-training result
+remain valid for their different questions.
+
+Next: qualify a prospective broader-domain evaluation of all six time-EMA
+checkpoints, with no further training. Freeze source versions/licenses, domains,
+selection, token budget, exclusions, train/validation deduplication, aggregation
+and checkpoint hashes before scoring new text. Keep the original test unopened.
+This lower-cost transfer question comes before another model-size training panel.
+
+## Evidence
+
+All paths below are under `tokenizer-evidence/general-rsi-equal-time-001/`:
+- `decision.json`: frozen gates, paired deltas, bootstrap and bound evidence hashes.
+- `slot-00` through `slot-09`: original logs, clocks, validation, execution reviews and receipts.
+- `adopted-recipe.json`: all three native reference weights and all three byte transfer comparators.
+- `generation-evaluation/`: all144 blind ratings, mapping, metrics and complete summaries.
+- `analysis-checks.json`: signed/unequal-count bootstrap fixtures, prompt aggregation fixture and all144 original-output bindings.
+- `completion-resource.json`: measured retained payloads, free space and available lock.

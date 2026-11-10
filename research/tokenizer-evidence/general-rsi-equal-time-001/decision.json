@@ -1,0 +1,153 @@
+{
+  "at": "2026-11-10T20:35:26.970569+00:00",
+  "plan_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "analysis_source_sha256": "cb671dd3b137713b418674f81ff91118f41bf9c71ca2c7ab430e759cb7ab12df",
+  "all_ten_execution_reviews_bound": true,
+  "pairs": [
+    {
+      "bundle": 1,
+      "native_slot": 4,
+      "byte_slot": 5,
+      "time_ema_delta_byte_minus_native": 0.10311210985536245,
+      "raw_delta_byte_minus_native": 0.09917714140073564
+    },
+    {
+      "bundle": 2,
+      "native_slot": 6,
+      "byte_slot": 7,
+      "time_ema_delta_byte_minus_native": 0.13474838824815372,
+      "raw_delta_byte_minus_native": 0.13013622520304757
+    },
+    {
+      "bundle": 3,
+      "native_slot": 8,
+      "byte_slot": 9,
+      "time_ema_delta_byte_minus_native": 0.1284444826253459,
+      "raw_delta_byte_minus_native": 0.1262126844948872
+    }
+  ],
+  "mean_ce": {
+    "native": {
+      "raw": 4.978941406174403,
+      "time_ema": 4.968966040809509
+    },
+    "raw_bytes": {
+      "raw": 5.09745008987396,
+      "time_ema": 5.091067701052463
+    }
+  },
+  "mean_delta_byte_minus_native": 0.12210166024295382,
+  "directions": {
+    "raw_bytes": {
+      "candidate_minus_other": 0.12210166024295382,
+      "bootstrap_upper_99": 0.13915603091831819,
+      "source_deltas": {
+        "fineweb_edu": 0.11994913315706057,
+        "wikipedia": 0.13072314172335897
+      },
+      "gates": {
+        "all_three_deltas_negative": false,
+        "mean_threshold": false,
+        "bootstrap_upper_negative": false,
+        "source_guard": false
+      },
+      "accepted": false
+    },
+    "native": {
+      "candidate_minus_other": -0.12210166024295382,
+      "bootstrap_upper_99": -0.10524479158983902,
+      "source_deltas": {
+        "fineweb_edu": -0.11994913315706057,
+        "wikipedia": -0.13072314172335897
+      },
+      "gates": {
+        "all_three_deltas_negative": true,
+        "mean_threshold": true,
+        "bootstrap_upper_negative": true,
+        "source_guard": true
+      },
+      "accepted": true
+    }
+  },
+  "selected_equal_time_arm": "native",
+  "bootstrap": {
+    "seed": 62110700999,
+    "replicates": 10000,
+    "method": "PCG64 resample108documentIDs; average paired seed loss sums before resampling; sampled target-count denominator; linear99th percentile upper<0",
+    "upper_quantile": 0.99,
+    "scope": "Conditional on these108documents and three paired seeds; not population-seed confidence."
+  },
+  "guard_seconds_by_slot": {
+    "0": 1866.1540071659256,
+    "1": 1917.649575999938,
+    "2": 1866.4988595419563,
+    "3": 1918.3040109579451,
+    "4": 7380.4818856250495,
+    "5": 7449.936635083053,
+    "6": 7382.354056041921,
+    "7": 7447.068882792024,
+    "8": 7390.726263875142,
+    "9": 7450.278612083057
+  },
+  "tranche_guard_seconds": 52069.45278916601,
+  "training_seconds_by_slot": {
+    "0": 1800.200684733,
+    "1": 1800.220743781,
+    "2": 1800.299250848,
+    "3": 1800.479828599,
+    "4": 7200.237572257,
+    "5": 7200.587296762,
+    "6": 7200.071226959,
+    "7": 7200.600329724,
+    "8": 7200.275344664,
+    "9": 7200.502229176
+  },
+  "updates_by_slot": {
+    "0": 5338,
+    "1": 2975,
+    "2": 5339,
+    "3": 2975,
+    "4": 21348,
+    "5": 11919,
+    "6": 21397,
+    "7": 11873,
+    "8": 20894,
+    "9": 11681
+  },
+  "scope": "Final time-EMA loss at7200 synchronized training seconds per arm on this Mac and corpus. Includes budget-matched schedule and EMA; excludes checkpoint/evaluation/generation I/O from training clock. Not a generation-quality or transfer claim.",
+  "test_opened": false,
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-00/result.json": "c1a32eae0f4eecdbc2a8e9d37bd4f2652d710e658d617de2cdbb2a63f191055b",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-00/review.json": "d5995fbd0dfd0c2249a6a360d8763b8fd3713514dc6c8563d41420b65e5189fc",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-01/result.json": "027202415ca7e8ec2198bd75cf3965a3601abea7abdd0425b0ebc54c524a4b64",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-01/review.json": "0519ca1f8d1d2d48bf3e5beebe201b456e5b638275bafae31838fd79dbe1b4c8",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-02/result.json": "6275fa644d8031c274d29d0322513d7a204e2c7cf826c02141c8ae64871bd797",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-02/review.json": "1c30188a7bad663fbbc78c4d3de02b5d592a32e8fb77ef70bbe84df8aa90c29f",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-03/result.json": "90e83fd0588f40e103db066a0e3e88eaf54d1142f7a903da2b00a38266bc9d73",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-03/review.json": "5ffad2e6738259cf4e75d645cdd5b2e791a84f4520635604d53e32254ffd8f5d",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-04/result.json": "e92b201d5afbc48a10f4d76ca4101a62b5390de2eb222eaee246cd75454ae6bf",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-04/review.json": "cfaaae91e3be14d7054478a2c91f2c0c006605db9bad7b0433009d251f95ef2a",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-04/raw-validation.json": "c6ef4f17c7f437792108948eead05cffff581d5be8d19fe723625729d6d0b466",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-04/time_ema-validation.json": "99099800f32ab6f6356a13b7066bf0c0d25ec86c84545c037409442074bb7f1a",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-05/result.json": "b895e865e35e21c52f0b6ae1798f308f5d972cba89512569beb9130ac8e0ec05",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-05/review.json": "54a6acc1dbc29a46793823b674dba370828f9bb30cbc7f7e32cb05d5e4cb94b8",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-05/raw-validation.json": "fc03f7ee59195b1be69e334b7851f416c6ec64aeee7bfc8f2f8dfeb7dade195c",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-05/time_ema-validation.json": "ed61cfda9df75d06d46c31728965e4cea46afe2258cd455eb18d06b2e23e7483",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-06/result.json": "999ea7db499e0743822b6e572e48e999e6a6b8f3f4c6edb0bdd9ebf1add98cd8",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-06/review.json": "c7347d759662dae5ea84b0ef3281753073ab8f79910517a93beb0dcf1535b798",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-06/raw-validation.json": "bdbf3e6b42ab91d4ee6f4ad23b73d85c0bce104bb096cf3350125d557db5ef54",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-06/time_ema-validation.json": "3d77d55ea3df0a29e131688fe5eb1bd9827d03b4482375167c426ca2b26aa326",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-07/result.json": "23efa92a52902f48e0f421de9691eb9a4dcc8881c54ea98846af9bd2884bffb8",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-07/review.json": "8272ba2643ccfef3a334f18ac5de1119f8684ebfe252e099c7314903cfa1c565",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-07/raw-validation.json": "5b7788a216bd38684edf21bc76f4c568d089a01731561d824747506a534f3f9c",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-07/time_ema-validation.json": "348b08c89df240a1820e050999ea21a01f0b63a6c3b56189c0efd0abfcb5c956",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-08/result.json": "693b852a9d057fbc130084db91cb2bed3d809e7f8059939fd36290041f0c1652",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-08/review.json": "f2a2c8030038df03ad9d166639684ed992960cd6ecedb805ef522680b8f35cfd",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-08/raw-validation.json": "13f00e6dcdf6685df65438707ab6a112a96f28040555c6d181db19c162636d50",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-08/time_ema-validation.json": "bfe49006a2949ebe6df0373c541417f1c4017f25479d273496fa818400932b85",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-09/result.json": "ac97f3214aed11e4fca183217d28af6b665dd386c1641d076c9639906c6838f6",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-09/review.json": "923d69f32d22bab34d77bbbcf8a7c876438d28277f1a9c9b283156c3a794bb99",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-09/raw-validation.json": "769d4cbe39e32fa9320c614e7a376150476b863230a252cc4d01b0e8b636a3f6",
+    "research/tokenizer-evidence/general-rsi-equal-time-001/slot-09/time_ema-validation.json": "abdc338b4aeb938c8f22a8c723e2f6bdd9473fd393e70a741c54c600251c094f"
+  }
+}

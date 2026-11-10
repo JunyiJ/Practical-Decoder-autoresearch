@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "EQUAL_TIME_COMPLETE_TRANSFER_PREPARATION",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 76159,
-  "next_action": "Monitor final paired byte confirmation slot09, bundle3, at LR0.0025 for7200 training seconds. Review endpoint, sampler prefix, clocks, weights and24 first generations, then apply frozen statistical gates across all three pairs and assemble144 first generations for blind evaluation.",
+  "active_session": null,
+  "next_action": "Use final equal-time results and primary literature to freeze a broader-domain transfer evaluation of all six time-EMA checkpoints. Freeze source versions/licenses, domains, token budget, document selection, train/validation deduplication, aggregation, checkpoint hashes and full resources before scoring new text. No training worker is active.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T18:25:35.016516+00:00",
-  "active_worker_pid": 38648,
+  "updated_at": "2026-11-10T20:43:37.669847+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 9,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Third native confirmation accepted: time-EMA CE4.959187469075, RAW4.969185394402 after7200.275344664 training seconds and20894 updates. Both weights and24 first generations retained. Two complete pairs favor native at equal training time; the final paired byte run remains required before applying frozen gates. All120 scientific generations remain unannotated until complete blind evaluation.",
-  "phase": "equal_time_confirmation",
+  "latest_learning": "Equal-time native passed all frozen gates: mean time-EMA CE4.968966040810 vs byte5.091067701052, all three pairs favor native; native-minus-byte99% document-bootstrap upper bound-0.105244791590. All144 first generations were blindly rated; both arms show substantial repetition/drift and no broad generation superiority is established. All ten runs accepted without recovery. Prior equal-update/exposure conclusions remain scoped and preserved.",
+  "phase": "transfer_design",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "After slot08: retained finals1663516662bytes; full remaining requirement17579184858bytes including serialization overlap, metadata, failure allowance and reserve; actual free25821257728bytes. Scientific guard time spent44619.174177s of72000s. No cleanup needed.",
+  "capacity_status": "Equal-time complete: retained final weights1794399184bytes; measured free25606782976bytes. All planned final outputs retained; no active serialization. Guard total52069.452789s of72000s. No cleanup needed. Reforecast complete transfer outputs and10GiB reserve before admission.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -365,6 +365,18 @@
       "raw_ce": 4.969185394402346,
       "review": "research/tokenizer-evidence/general-rsi-equal-time-001/slot-08/review.json",
       "first_generations": 24
+    },
+    {
+      "slot": 9,
+      "arm": "raw_bytes",
+      "bundle": 3,
+      "phase": "confirmation",
+      "steps": 11681,
+      "training_seconds": 7200.502229176,
+      "time_ema_ce": 5.087631951700504,
+      "raw_ce": 5.095398078897233,
+      "review": "research/tokenizer-evidence/general-rsi-equal-time-001/slot-09/review.json",
+      "first_generations": 24
     }
   ],
   "equal_time_selection": "research/tokenizer-evidence/general-rsi-equal-time-001/selection.json",
@@ -378,22 +390,25 @@
       "native_slot": 4,
       "byte_slot": 5,
       "time_ema_delta_byte_minus_native": 0.10311210985536245,
-      "raw_delta_byte_minus_native": 0.09917714140073564,
-      "source_deltas_byte_minus_native": {
-        "fineweb_edu": 0.10424507691845708,
-        "wikipedia": 0.09857425543467002
-      }
+      "raw_delta_byte_minus_native": 0.09917714140073564
     },
     {
       "bundle": 2,
       "native_slot": 6,
       "byte_slot": 7,
       "time_ema_delta_byte_minus_native": 0.13474838824815372,
-      "raw_delta_byte_minus_native": 0.13013622520304757,
-      "source_deltas_byte_minus_native": {
-        "fineweb_edu": 0.130096676866847,
-        "wikipedia": 0.1533798116522771
-      }
+      "raw_delta_byte_minus_native": 0.13013622520304757
+    },
+    {
+      "bundle": 3,
+      "native_slot": 8,
+      "byte_slot": 9,
+      "time_ema_delta_byte_minus_native": 0.1284444826253459,
+      "raw_delta_byte_minus_native": 0.1262126844948872
     }
-  ]
+  ],
+  "equal_time_decision": "research/tokenizer-evidence/general-rsi-equal-time-001/decision.json",
+  "equal_time_adopted_recipe": "research/tokenizer-evidence/general-rsi-equal-time-001/adopted-recipe.json",
+  "selected_equal_time_arm": "native",
+  "equal_time_generation_evaluation": "research/tokenizer-evidence/general-rsi-equal-time-001/generation-evaluation/summary.json"
 }

@@ -1,0 +1,54 @@
+{
+  "kind": "validated_general_equal_mac_training_time_recipe",
+  "decision": "research/tokenizer-evidence/general-rsi-equal-time-001/decision.json",
+  "decision_sha256": "580ae7979f33cfbcaed52daa0c36e2acddaa761d05dbf75f320a1f6c34ffd3e0",
+  "architecture": "native",
+  "lr": 0.0025,
+  "training_budget_seconds": 7200,
+  "ema_half_life_ns": 127184813977,
+  "schedule": "constant first two thirds; linear final third to0.1, measured update-start clock",
+  "selection_scope": "Recipe accepted across all three fresh pairs on this Mac/corpus. Retain all three time-EMA references; no best-seed selection. Generation quality is not an acceptance claim.",
+  "references": [
+    {
+      "slot": 4,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-04/time_ema.pt",
+      "size": 113998683,
+      "sha256": "b6f1f1eeba7dc673fd2bdb64be33fb2a831363bfda9f4192f856752e175f869d"
+    },
+    {
+      "slot": 6,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-06/time_ema.pt",
+      "size": 113998683,
+      "sha256": "b4112a2001d87036fa8c1f8faf778c9a834a096e12b00e8cb2a6515c0e3e1d08"
+    },
+    {
+      "slot": 8,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-08/time_ema.pt",
+      "size": 113998683,
+      "sha256": "f0e844f77a97071527e3730b7dade7f28ba06a5a4b06b1241925f93d0cd5fd33"
+    }
+  ],
+  "other_arm_retained_for_transfer": [
+    {
+      "slot": 5,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-05/time_ema.pt",
+      "size": 65441261,
+      "sha256": "e02c77c35e6b603b53f86a2145fb55366cb966ab39ea07acbb7660b0c1b5b007"
+    },
+    {
+      "slot": 7,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-07/time_ema.pt",
+      "size": 65441261,
+      "sha256": "7e7908fb535fd38e1967788e1cf54290b72ece4ef5f87a3ad34e7df95ac1bb40"
+    },
+    {
+      "slot": 9,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-09/time_ema.pt",
+      "size": 65441261,
+      "sha256": "80f1a02a70c60de4c1707320d32d06bf48e8c41a6e495fd5d7cf184d2a8df24d"
+    }
+  ],
+  "generation_summary": "research/tokenizer-evidence/general-rsi-equal-time-001/generation-evaluation/summary.json",
+  "prior_equal_update_and_exposure_conclusions_preserved": true,
+  "test_opened": false
+}
