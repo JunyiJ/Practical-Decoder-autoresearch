@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-10T21:48:39.419760+00:00",
+  "decision": {
+    "passed": false,
+    "reason": "first_actual_optimizer_update_gate",
+    "training_updates_per_arm": 1
+  },
+  "guard": {
+    "elapsed_seconds": 6.245104749919847,
+    "limits": {
+      "reserve_bytes": 10737418240,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 900
+    },
+    "observation": {
+      "free_bytes": 25054244864,
+      "peak_rss_bytes": 1028358144
+    },
+    "pid": 59193,
+    "reason": null,
+    "status": "finished"
+  },
+  "failure_audit_guard": {
+    "elapsed_seconds": 0.3863350839819759,
+    "limits": {
+      "reserve_bytes": 10737418240,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 60
+    },
+    "observation": {
+      "free_bytes": 25052307456,
+      "peak_rss_bytes": 912228352
+    },
+    "pid": 59259,
+    "reason": null,
+    "status": "finished"
+  },
+  "retained_bytes_before_review": 365027293,
+  "files_sha256": {
+    "plan.json": "fc1a08bb09491a602602347f5a324530a44afbc2a6df81e47776d9c07730e1d8",
+    "torch-muon-runtime-excerpt.py.txt": "cdbf134da7014c35bf6a2209ea9b24b40ee479bdb484a4db535a83b29f9047a8",
+    "worker-01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "guard-01.json": "c072057ec26d0c41dd36e88493686192c0f20796350ca40d00541dbce4da12a6",
+    "failure-localization.json": "b169cceafbbed3e706099529e403fdcd77fd17bcdd1024fdd3956d00127d6518",
+    "failure-audit-guard.json": "f396ca1d08b268bb4ef352c658c07f8699ce478a2b7eeeb76cbc5291fb584516",
+    "attempt-01/initial-gradient-comparison.json": "50d2168dedf83d5bdc7ef277e4147bf44167419b3bab72dc2605132b16d6e17a",
+    "attempt-01/first-failure-baseline-receipt.json": "c2ef78142a570704f6c73d769182ca3c3e6d2a38512a7ac60aa0d74dd3a5b6b8",
+    "attempt-01/updates.json": "5676ee120efef738ac96415a74d16e6df104e1fc8a08c640be3915b6aa1fa82b",
+    "attempt-01/first-failure-reuse-receipt.json": "c9177e9cff1a78a94c4a3672f00f949c15bf307159473712530155120f4eb872",
+    "attempt-01/first-update-parameter-comparison.json": "9bbdd32ba8e324ac4d12a98bbe956cb9194e596062f535e7a1a59aed0017bdf2",
+    "attempt-01/decision.json": "6bd5a116f61100d980f4a57506211f1c71f5a46f6506899ed5c8276c1f338d9a"
+  },
+  "failure_payload_receipts": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-reuse-full-model-001/attempt-01/first-failure-baseline.pt",
+      "size": 182456003,
+      "sha256": "6a93e1cf0de77e3d024fbf5305590fb6e483e70f9ae47d05febaf5d35e75d8bb"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-reuse-full-model-001/attempt-01/first-failure-reuse.pt",
+      "size": 182456067,
+      "sha256": "e88d0f597b3895a36cef07353c1f0cc25898d9174a3df6d23f28bc1bbea93008"
+    }
+  ],
+  "free_bytes": 25052205056,
+  "worker_exited": true,
+  "test_opened": false,
+  "restart_and_timing_not_reached": true
+}
