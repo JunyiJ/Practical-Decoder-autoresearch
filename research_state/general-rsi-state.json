@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 63005,
-  "next_action": "Monitor active equal-time slot01 byte LR0.00125 to its1800-second training endpoint. Review clock, weights, coverage, guards and paired sampler prefix; then launch frozen slot02 native LR0.0025. No LR selection before all four screens.",
+  "active_session": 96547,
+  "next_action": "Monitor active equal-time slot02 native LR0.0025 to its1800-second training endpoint. Review clock, weights, coverage and guards, then launch frozen slot03 byte LR0.0025. Select per-arm LR only after all four accepted screens.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T06:15:26.596291+00:00",
-  "active_worker_pid": 90326,
+  "updated_at": "2026-11-10T06:50:12.657378+00:00",
+  "active_worker_pid": 91858,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 1,
+  "active_slot": 2,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "First equal-time native LR0.00125 screen accepted:5338 updates in1800.200684733training seconds, time-EMA CE5.616059326014. LR and architecture decisions remain pending the frozen screen/confirmation panels.",
+  "latest_learning": "At LR0.00125 and equal1800-second budgets, native time-EMA CE5.616059326014 versus byte5.904333030850. Native5338 updates versus byte2975. This supports the throughput hypothesis at one screen setting only; higher-LR screens and fresh confirmations remain frozen and required.",
   "phase": "equal_time_screen",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Post-slot00 forecast: retained finals227997238bytes, remaining complete-panel requirement19014704282bytes including reserve/failure allowance; actual free27727171584bytes. Fits; no cleanup needed.",
+  "capacity_status": "After two accepted screens: retained finals358879760bytes; full remaining requirement18883821760bytes including reserve/failure allowance; actual free27613519872bytes. Fits; no cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -267,6 +267,17 @@
       "time_ema_ce": 5.616059326013674,
       "raw_ce": 5.6100533674153725,
       "review": "research/tokenizer-evidence/general-rsi-equal-time-001/slot-00/review.json"
+    },
+    {
+      "slot": 1,
+      "phase": "screen",
+      "arm": "raw_bytes",
+      "lr": 0.00125,
+      "steps": 2975,
+      "training_seconds": 1800.220743781,
+      "time_ema_ce": 5.904333030849668,
+      "raw_ce": 5.889456518548026,
+      "review": "research/tokenizer-evidence/general-rsi-equal-time-001/slot-01/review.json"
     }
   ]
 }

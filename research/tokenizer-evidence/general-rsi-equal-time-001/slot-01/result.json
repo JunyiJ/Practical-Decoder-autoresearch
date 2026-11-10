@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "binding": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "slot": {
+    "slot": 1,
+    "phase": "screen",
+    "arm": "raw_bytes",
+    "lr": 0.00125,
+    "budget_ns": 1800000000000,
+    "roles": {
+      "native_initializer": 62110700001,
+      "composer_initializer": 62110700002,
+      "train_sampler": 62110700003,
+      "validation_sampler": 62110700004
+    },
+    "timeout_seconds": 3600
+  },
+  "steps": 2975,
+  "training_ns": 1800220743781,
+  "overshoot_ns": 220743781,
+  "snapshots": 987,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 13.061027749907225,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-01/raw.pt",
+        "size": 65441261,
+        "sha256": "cdd307d570c38605393b11880fc6230b76f322c9594975d4f614c6c0c8543be6"
+      },
+      "ce": 5.889456518548026,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.879627586347291
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.928824179701342
+        }
+      },
+      "score_seconds": 46.973637958057225,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-01/time_ema.pt",
+        "size": 65441261,
+        "sha256": "f4fb3b82582de2725407d74ad52b306551be0af3ec670d9035f0ca4adc404ad0"
+      },
+      "ce": 5.904333030849668,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.894424134036561
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.944020972955157
+        }
+      },
+      "score_seconds": 45.388607416069135,
+      "generation_seconds": 0
+    }
+  ],
+  "test_opened": false
+}

@@ -8,13 +8,19 @@ pairs then receive two hours per arm, with budget-matched cooldown and a shared
 | Slot | Arm | LR | Updates | Training seconds | Time-EMA CE | RAW CE |
 | --- | --- | --- | --- | --- | --- | --- |
 | 00 | Native | 0.00125 | 5,338 | 1,800.200685 | 5.6160593260 | 5.6100533674 |
+| 01 | Byte | 0.00125 | 2,975 | 1,800.220744 | 5.9043330308 | 5.8894565185 |
 
-Slot00 passed source/weight hashes, durable time accounting, validation coverage
-and resource guards. Total guarded wall time was1,866.154 seconds. Its0.201-second
-overshoot was within one update. Both final weights are retained; transient
-restarts were retired with exact audited receipts. This is a screen result only.
-There is no LR choice or equal-time architecture conclusion yet.
+Both slots passed source/weight hashes, durable time accounting, validation
+coverage and resource guards. The paired training sampler prefix matches.
+Guarded wall times were1,866.154 and1,917.650 seconds. Both overshoots were within
+one update. All four final weights are retained. Transient restarts were retired
+with exact audited receipts.
 
-Slot01, byte LR0.00125, is now running under worker PID90326 and supervisor session63005. Next: finish and review its paired sampler prefix and endpoint.
+Native leads by0.288274 nats/token at this single screen LR and used the time
+for more updates. This supports the throughput hypothesis at this setting only.
+The frozen LR0.0025 screens and three fresh confirmations remain required;
+no LR selection or confirmed architecture conclusion yet.
+
+Slot02, native LR0.0025, is running under worker PID91858 and supervisor session96547. Next: review its endpoint, then launch slot03 byte LR0.0025.
 The48 first engineering generations remain separate from the144 planned first
 scientific confirmation completions.
