@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "binding": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "slot": {
+    "slot": 2,
+    "phase": "screen",
+    "arm": "native",
+    "lr": 0.0025,
+    "budget_ns": 1800000000000,
+    "roles": {
+      "native_initializer": 62110700001,
+      "composer_initializer": 62110700002,
+      "train_sampler": 62110700003,
+      "validation_sampler": 62110700004
+    },
+    "timeout_seconds": 3600
+  },
+  "steps": 5339,
+  "training_ns": 1800299250848,
+  "overshoot_ns": 299250848,
+  "snapshots": 1767,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 19.332589792087674,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-02/raw.pt",
+        "size": 113998619,
+        "sha256": "33f8fba077f5c53fe7b545eabb389a619d23311ce7fe2aa88089996df50a62d1"
+      },
+      "ce": 5.463774336349639,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.445685702238781
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.536224446276059
+        }
+      },
+      "score_seconds": 19.159825208131224,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-02/time_ema.pt",
+        "size": 113998619,
+        "sha256": "dfe9cee0f4fe658831246d3b87aa68028f77bc873132c9c09cf858f9cbad9aa4"
+      },
+      "ce": 5.468902720684434,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.451350302939825
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.539205131981927
+        }
+      },
+      "score_seconds": 18.876917415997013,
+      "generation_seconds": 0
+    }
+  ],
+  "test_opened": false
+}
