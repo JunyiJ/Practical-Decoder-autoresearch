@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "TRANSFER_COMPLETE_NO_ACCEPTED_ARM",
+  "status": "TRANSFER_DIAGNOSIS_COMPLETE",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Use existing transfer parent scores and selected text to quantify influence and code/markup composition before qualifying a mechanism experiment. No training active. Do not add domains/seeds, change frozen gates or launch another size without a new evidence-grounded protocol.",
+  "next_action": "Freeze and run bounded original-validation per-token attribution for all six equal-time endpoints and all108 parents/100416targets; determine whether accepted native original-validation advantage persists outside whitespace. Match every original parent score, preserve decisions, keep test unopened. Forecast full32MiB outputs/retry/overlap plus10GiB reserve and900s cumulative guard before launch. Check actual processes and nonblocking lock. No training currently active.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T21:09:58.203956+00:00",
+  "updated_at": "2026-11-10T21:24:07.239123+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Transfer completed all six retained equal-time endpoints without failure. Neither arm passes frozen gates. Native-minus-byte mean CE: books -0.002221001856 (adjusted upper +0.049613962352), Python rawRST -0.095720305038 (upper +0.028495024157). Native wins 14/32 book and 15/32 Python parent means. Domain-specific rarity correlations have opposite signs and are descriptive only. Equal-time original-validation native adoption remains scoped; no broad transfer or generation superiority.",
-  "phase": "post_transfer_diagnosis",
+  "latest_learning": "All384 original transfer parent CEs reproduced exactly. Native transfer advantage localizes to whitespace-only targets: contributions -0.031913697279 books and -0.213445636226 Python. Every other nonempty category favors byte on all three pairs; descriptive only, frozen no-winner decision unchanged. Static max-pool audit found28 collision groups/109IDs, rare in training (204 occurrences), but this does not prove a causal loss effect. No new model adopted.",
+  "phase": "original_validation_attribution_preparation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Transfer complete; free 25399156736 bytes,10GiB reserve satisfied. All six score files, sources, selected/comparator weights and first generations retained. No current capacity blocker.",
+  "capacity_status": "Diagnostic complete without capacity failure; retained evidence 4597813 bytes within64MiB cap; free 25430663168 bytes exceeds10GiB reserve. All token losses, original/fixed audit versions, checkpoints and generation outputs retained.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -421,5 +421,9 @@
   "transfer_decision": "research/tokenizer-evidence/general-rsi-transfer-001/decision.json",
   "transfer_report": "research/GENERAL_RSI_TRANSFER_RESULTS.md",
   "transfer_completion_review": "research/tokenizer-evidence/general-rsi-transfer-001/completion-review.json",
-  "selected_transfer_arm": null
+  "selected_transfer_arm": null,
+  "transfer_diagnosis_report": "research/GENERAL_RSI_TRANSFER_DIAGNOSIS.md",
+  "transfer_attribution_summary": "research/tokenizer-evidence/general-rsi-transfer-diagnosis-001/attribution-summary.json",
+  "transfer_diagnosis_review": "research/tokenizer-evidence/general-rsi-transfer-diagnosis-001/completion-review.json",
+  "composer_collision_audit": "research/tokenizer-evidence/general-rsi-transfer-diagnosis-001/composer-collision-audit-v2.json"
 }

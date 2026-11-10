@@ -1,0 +1,9 @@
+{
+  "original_sha256": "5cc8384d5c97e2abc44812d1aaeeefdeffcd7a118e2258012d47c33e6a819969",
+  "corrected_sha256": "5912c4c24966e33577a33f02e86de99c6a18434ccd4f593e7babc639d96a7871",
+  "error": "v1 bytes(numpy uint16 slice) exported the backing uint16 buffer, adding zero bytes in the display-only raw_bytes_hex field. Fingerprints used integer tuples and counts used token IDs, so collision groups/counts were unaffected.",
+  "repair": "v2 converts each integer element to a byte; asserts hex-length equals twice byte length and token23031 is exactly six hyphens.",
+  "summary_exactly_unchanged": true,
+  "original_retained": true,
+  "scientific_outcome_changed": false
+}
