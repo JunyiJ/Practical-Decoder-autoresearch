@@ -52,10 +52,24 @@ Time-EMA source CEs are4.962721805009 for FineWeb-Edu and5.008950085091 for
 Wikipedia. Guarded worker time was7,382.354056 seconds. Both weights and all24
 first generations are retained. No failure or recovery charge occurred.
 
-Paired byte confirmation slot07 is running under PID10501 and supervisor
-session9532. The second pair is incomplete, so the
-first pair remains the only paired evidence for the throughput hypothesis.
-All72 scientific first outputs remain unannotated until the complete144-output
-blind evaluation is assembled. Each arm receives7,200 training seconds with
-budget-matched cooldown and a shared127.184813977-second EMA half-life.
-Keep test unopened, exclude engineering completions and keep all gates fixed.
+Paired byte confirmation slot07 passed review. It completed11,873 updates in
+7,200.600329724 training seconds, with a0.600329724-second overshoot within one
+update. Time-EMA CE is5.106706089479 and RAW CE is5.113076548745. Guarded worker
+time was7,447.068883 seconds. Its sampler prefix matches native slot06. Both final
+weights and all24 first generations are retained. No failure or recovery charge occurred.
+
+| Fresh pair | Native time-EMA CE | Byte time-EMA CE | Byte minus native | RAW difference |
+| --- | --- | --- | --- | --- |
+| 2 | 4.971957701231 | 5.106706089479 | +0.134748388248 | +0.130136225203 |
+
+Byte-minus-native source differences are+0.130096676867 for FineWeb-Edu
+and+0.153379811652 for Wikipedia. Both completed pairs support the
+throughput hypothesis at this horizon. The third fresh pair remains required
+before applying the frozen acceptance rule. These losses do not establish better
+generated text. All96 scientific first outputs remain unannotated until the
+complete144-output blind evaluation is assembled.
+
+Native confirmation slot08, bundle3, is running under PID16636 and supervisor
+session24781. Each arm receives7,200
+training seconds with budget-matched cooldown and the shared127.184813977-second
+EMA half-life. Keep test unopened and all comparisons and gates fixed.
