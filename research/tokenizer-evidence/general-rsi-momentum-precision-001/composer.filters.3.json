@@ -1,0 +1,69 @@
+{
+  "name": "composer.filters.3",
+  "pair_relative_spreads": {
+    "cpu_fp64": 3.741286260655906e-06,
+    "mps_fp32": 4.073564270841377e-06,
+    "mps_bf16": 0.0
+  },
+  "fp32_vs_fp64_relative_errors": {
+    "baseline": 1.290596526434499e-06,
+    "reuse": 1.307787319231306e-06
+  },
+  "bitwise_repeats": {
+    "cpu_fp64_baseline": true,
+    "cpu_fp64_reuse": true,
+    "mps_fp32_baseline": true,
+    "mps_fp32_reuse": true,
+    "mps_bf16_baseline": true,
+    "mps_bf16_reuse": true
+  },
+  "seconds": {
+    "cpu_fp64_baseline": [
+      0.00016424991190433502,
+      0.00013254210352897644,
+      0.00012991693802177906
+    ],
+    "cpu_fp64_reuse": [
+      0.00012629106640815735,
+      0.00012708385474979877,
+      0.000130208907648921
+    ],
+    "mps_fp32_baseline": [
+      0.03685229201801121,
+      0.0008670410607010126,
+      0.000925583066418767
+    ],
+    "mps_fp32_reuse": [
+      0.0015828341711312532,
+      0.0012620000634342432,
+      0.0014382500667124987
+    ],
+    "mps_bf16_baseline": [
+      0.008326125098392367,
+      0.0008369579445570707,
+      0.0007883328944444656
+    ],
+    "mps_bf16_reuse": [
+      0.0007700000423938036,
+      0.0010147499851882458,
+      0.0007900409400463104
+    ]
+  },
+  "outputs_sha256": "d152815335c04e843f6db96795b48bf85c1b67b584afe517430d165ae500279b",
+  "output_bytes": 193600,
+  "options": {
+    "lr": 0.00125,
+    "weight_decay": 0.0,
+    "momentum": 0.95,
+    "nesterov": true,
+    "ns_coefficients": [
+      3.4445,
+      -4.775,
+      2.0315
+    ],
+    "eps": 1e-07,
+    "ns_steps": 5,
+    "adjust_lr_fn": "match_rms_adamw"
+  },
+  "precision_reduces_spread_tenfold": false
+}

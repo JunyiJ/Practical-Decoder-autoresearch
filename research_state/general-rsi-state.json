@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "MOMENTUM_SPECTRUM_COMPLETE",
+  "status": "MOMENTUM_PRECISION_DIAGNOSTIC_COMPLETE",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Execute frozen no-training finite-polynomial precision controls on saved matrices: same MPS backend FP32/BF16 and CPU FP64 finite-polynomial reference, all first outputs retained. No retry of closed reuse v1.",
+  "next_action": "Freeze and execute a standalone actual-Nesterov composer-FP32 optimizer/state fixture against FP64 finite-polynomial references, fixed gradients, deterministic repeats and state serialization. Prospective240s/64MiB/10GiB reserve; exact complete forecast and lock/process checks required. No full-model or quality panel admitted; reuse v1 stays closed.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T21:52:36.384724+00:00",
+  "updated_at": "2026-11-10T21:55:00.026339+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All nine saved composer Muon momentum pairs analyzed. Only168 of719775 BF16-cast elements differ, but three failed matrices concentrate99% energy in1-2 singular directions and BF16 pair-relative differences exceed FP32 by~75-101x. This is saved momentum, not exact Nesterov input or causal optimizer replay.",
-  "phase": "saved_momentum_precision_map_diagnostic",
+  "latest_learning": "Saved-array finite-polynomial controls passed the fixed diagnostic gate: MPS FP32 reduces pair spread119-173x on all three failed matrices; all54 cases repeat bitwise, maximum FP32-vs-FP64 error3.112e-5. FP64 still amplifies input perturbations; saved momentum is not actual Nesterov input. Evidence supports a distinct composer-FP32 optimizer hypothesis, not rescue of closed reuse v1 or quality improvement.",
+  "phase": "composer_fp32_optimizer_component_preparation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Full-model candidate stopped at first-update numerical gate; retained 365027293 bytes within5GiB cap; free 25052205056 bytes exceeds10GiB reserve. No capacity blocker; failed payloads and immutable evidence retained.",
+  "capacity_status": "Matrix diagnostics complete; precision evidence retained 23083795 bytes within64MiB cap; free 24658280448 bytes. Next small fixture fits. Full scientific panel remains prospective and must include actual prerequisite outputs before admission; no current numerical worker or capacity blocker.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -161,7 +161,7 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/tokenizer-evidence/general-rsi-momentum-precision-001/plan.json",
+  "next_design": "research/GENERAL_RSI_MOMENTUM_PRECISION_RESULTS.md",
   "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "exposure_completed_slots": [
@@ -434,5 +434,7 @@
   "composer_reuse_review": "research/tokenizer-evidence/general-rsi-composer-reuse-001/completion-review.json",
   "composer_reuse_full_model_review": "research/tokenizer-evidence/general-rsi-reuse-full-model-001/completion-review.json",
   "composer_reuse_full_model_report": "research/GENERAL_RSI_REUSE_FULL_MODEL_RESULTS.md",
-  "momentum_spectrum_summary": "research/tokenizer-evidence/general-rsi-momentum-spectrum-001/summary.json"
+  "momentum_spectrum_summary": "research/tokenizer-evidence/general-rsi-momentum-spectrum-001/summary.json",
+  "momentum_precision_report": "research/GENERAL_RSI_MOMENTUM_PRECISION_RESULTS.md",
+  "momentum_precision_review": "research/tokenizer-evidence/general-rsi-momentum-precision-001/completion-review.json"
 }
