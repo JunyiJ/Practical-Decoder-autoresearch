@@ -1,0 +1,1602 @@
+{
+  "at": "2026-11-10T21:12:39.498051+00:00",
+  "source_sha256": "b1228b92c9d2cf6c8450b291adc0a6157f867fd367098b8c708dc0cf7d390a8c",
+  "input_sha256": {
+    "research/tokenizer-evidence/general-rsi-transfer-001/dataset.json": "95ba0fcaca25b9ef525c97fe98882ee73f6a62247caaf541b4a53d5579af42b9",
+    "research/tokenizer-evidence/general-rsi-transfer-001/decision.json": "fad1c83f27593d83a0306524747564e19d5399726bc31a764ddb5b5a427e4355",
+    "research/tokenizer-evidence/general-rsi-transfer-001/document-diagnostic.json": "6bb3654ec11184a5c22ac9669a284113b1f1284d2639a13b9feec7abc1c14423",
+    "data/raw/rsi-transfer-001/excerpts.bin": "baa5f6fd8f1f06c14adfb14b1d217b8d551edaaa808867bae8aa1220d835f6d4"
+  },
+  "summary": {
+    "pg19_books": {
+      "original_mean": -0.0022210018559754297,
+      "median_parent_delta": 0.006283518262066412,
+      "leave_one_parent_out_mean_min": -0.01366952073528481,
+      "leave_one_parent_out_mean_max": 0.010515713762477195,
+      "native_favoring_prefix_sensitivity": [
+        {
+          "k": 1,
+          "documents": [
+            17
+          ],
+          "contribution_to_original_mean": -0.012408099563375213,
+          "remaining_mean_for_sensitivity_only": 0.010515713762477195
+        },
+        {
+          "k": 2,
+          "documents": [
+            17,
+            21
+          ],
+          "contribution_to_original_mean": -0.017636857024199787,
+          "remaining_mean_for_sensitivity_only": 0.01644357884610598
+        },
+        {
+          "k": 3,
+          "documents": [
+            17,
+            21,
+            19
+          ],
+          "contribution_to_original_mean": -0.022163644794012533,
+          "remaining_mean_for_sensitivity_only": 0.022005674966109907
+        },
+        {
+          "k": 4,
+          "documents": [
+            17,
+            21,
+            19,
+            9
+          ],
+          "contribution_to_original_mean": -0.024520429145358125,
+          "remaining_mean_for_sensitivity_only": 0.02548505975929451
+        }
+      ],
+      "format_correlations": {
+        "grid_line_character_fraction": null,
+        "long_space_character_fraction": -0.6181461035675447,
+        "greek_placeholder_character_fraction": 0.5942318823703274,
+        "backtick_character_fraction": null,
+        "doctest_prompt_lines": null
+      }
+    },
+    "python_library_rst": {
+      "original_mean": -0.09572030503753773,
+      "median_parent_delta": 0.027806622523931068,
+      "leave_one_parent_out_mean_min": -0.10426999808043606,
+      "leave_one_parent_out_mean_max": -0.05911718098170556,
+      "native_favoring_prefix_sensitivity": [
+        {
+          "k": 1,
+          "documents": [
+            53
+          ],
+          "contribution_to_original_mean": -0.03845053596151046,
+          "remaining_mean_for_sensitivity_only": -0.05911718098170556
+        },
+        {
+          "k": 2,
+          "documents": [
+            53,
+            61
+          ],
+          "contribution_to_original_mean": -0.07421014963167483,
+          "remaining_mean_for_sensitivity_only": -0.02294416576625376
+        },
+        {
+          "k": 3,
+          "documents": [
+            53,
+            61,
+            44
+          ],
+          "contribution_to_original_mean": -0.08896302630460318,
+          "remaining_mean_for_sensitivity_only": -0.007456307567376057
+        },
+        {
+          "k": 4,
+          "documents": [
+            53,
+            61,
+            44,
+            62
+          ],
+          "contribution_to_original_mean": -0.09952925379646937,
+          "remaining_mean_for_sensitivity_only": 0.004353084295921882
+        }
+      ],
+      "format_correlations": {
+        "grid_line_character_fraction": -0.90406032636571,
+        "long_space_character_fraction": -0.9299536401652297,
+        "greek_placeholder_character_fraction": null,
+        "backtick_character_fraction": -0.4401611798132299,
+        "doctest_prompt_lines": 0.014474120602750587
+      }
+    }
+  },
+  "documents": [
+    {
+      "document": 0,
+      "source": "pg19_books",
+      "name": "validation/53682.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0121875,
+      "mean_ce": {
+        "native": 5.596632800166165,
+        "raw_bytes": 5.579373930267466
+      },
+      "native_minus_byte": 0.017258869898698848,
+      "format": {
+        "chars": 13411,
+        "lines": 215,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 1,
+      "source": "pg19_books",
+      "name": "validation/55658.txt",
+      "count": 3200,
+      "unseen_fraction": 0.00125,
+      "below10_fraction": 0.0103125,
+      "mean_ce": {
+        "native": 5.580227230576084,
+        "raw_bytes": 5.590835419342548
+      },
+      "native_minus_byte": -0.0106081887664633,
+      "format": {
+        "chars": 12717,
+        "lines": 248,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.008256664307619722,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 2,
+      "source": "pg19_books",
+      "name": "validation/5195.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0165625,
+      "mean_ce": {
+        "native": 5.771631736234024,
+        "raw_bytes": 5.732495201182464
+      },
+      "native_minus_byte": 0.03913653505156045,
+      "format": {
+        "chars": 11346,
+        "lines": 230,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 3,
+      "source": "pg19_books",
+      "name": "validation/44896.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0015625,
+      "below10_fraction": 0.00875,
+      "mean_ce": {
+        "native": 5.244998459954417,
+        "raw_bytes": 5.246193877084491
+      },
+      "native_minus_byte": -0.0011954171300745386,
+      "format": {
+        "chars": 12956,
+        "lines": 250,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 4,
+      "source": "pg19_books",
+      "name": "validation/58093.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.010625,
+      "mean_ce": {
+        "native": 5.165518641803341,
+        "raw_bytes": 5.154050695722568
+      },
+      "native_minus_byte": 0.011467946080772506,
+      "format": {
+        "chars": 12181,
+        "lines": 218,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 5,
+      "source": "pg19_books",
+      "name": "validation/7510.txt",
+      "count": 3200,
+      "unseen_fraction": 0.00125,
+      "below10_fraction": 0.015625,
+      "mean_ce": {
+        "native": 5.685516480274867,
+        "raw_bytes": 5.669954266928059
+      },
+      "native_minus_byte": 0.015562213346807852,
+      "format": {
+        "chars": 14139,
+        "lines": 224,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 6,
+      "source": "pg19_books",
+      "name": "validation/5321.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0134375,
+      "mean_ce": {
+        "native": 5.321934128322148,
+        "raw_bytes": 5.320835037878788
+      },
+      "native_minus_byte": 0.0010990904433603177,
+      "format": {
+        "chars": 13970,
+        "lines": 264,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 7,
+      "source": "pg19_books",
+      "name": "validation/37833.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.0125,
+      "mean_ce": {
+        "native": 5.701040601006632,
+        "raw_bytes": 5.656580955358223
+      },
+      "native_minus_byte": 0.04445964564840921,
+      "format": {
+        "chars": 12662,
+        "lines": 225,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 8,
+      "source": "pg19_books",
+      "name": "validation/35816.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0071875,
+      "mean_ce": {
+        "native": 5.592055100659878,
+        "raw_bytes": 5.573383757023453
+      },
+      "native_minus_byte": 0.01867134363642542,
+      "format": {
+        "chars": 12891,
+        "lines": 231,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 9,
+      "source": "pg19_books",
+      "name": "validation/36402.txt",
+      "count": 3200,
+      "unseen_fraction": 0.004375,
+      "below10_fraction": 0.0175,
+      "mean_ce": {
+        "native": 5.6781286677637155,
+        "raw_bytes": 5.7535457670067744
+      },
+      "native_minus_byte": -0.07541709924305895,
+      "format": {
+        "chars": 12880,
+        "lines": 273,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 10,
+      "source": "pg19_books",
+      "name": "validation/4024.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.0109375,
+      "mean_ce": {
+        "native": 5.450866067369934,
+        "raw_bytes": 5.420979074795809
+      },
+      "native_minus_byte": 0.029886992574125415,
+      "format": {
+        "chars": 11549,
+        "lines": 250,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 11,
+      "source": "pg19_books",
+      "name": "validation/28213.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0028125,
+      "below10_fraction": 0.0128125,
+      "mean_ce": {
+        "native": 5.371990593292042,
+        "raw_bytes": 5.371886302621763
+      },
+      "native_minus_byte": 0.0001042906702792834,
+      "format": {
+        "chars": 12772,
+        "lines": 239,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 12,
+      "source": "pg19_books",
+      "name": "validation/34100.txt",
+      "count": 3200,
+      "unseen_fraction": 0.001875,
+      "below10_fraction": 0.0128125,
+      "mean_ce": {
+        "native": 5.397159624911097,
+        "raw_bytes": 5.410814897977204
+      },
+      "native_minus_byte": -0.013655273066106588,
+      "format": {
+        "chars": 12700,
+        "lines": 266,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0030708661417322832,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 13,
+      "source": "pg19_books",
+      "name": "validation/42067.txt",
+      "count": 3200,
+      "unseen_fraction": 0.05875,
+      "below10_fraction": 0.2471875,
+      "mean_ce": {
+        "native": 9.013463181455931,
+        "raw_bytes": 8.660780098053316
+      },
+      "native_minus_byte": 0.35268308340261534,
+      "format": {
+        "chars": 7225,
+        "lines": 6,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.004152249134948097,
+        "greek_placeholder_character_fraction": 0.9847750865051903,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 14,
+      "source": "pg19_books",
+      "name": "validation/42142.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0015625,
+      "below10_fraction": 0.0115625,
+      "mean_ce": {
+        "native": 5.175443859113002,
+        "raw_bytes": 5.230540602210385
+      },
+      "native_minus_byte": -0.05509674309738344,
+      "format": {
+        "chars": 11665,
+        "lines": 314,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.005057865409344192,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 15,
+      "source": "pg19_books",
+      "name": "validation/11155.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0159375,
+      "mean_ce": {
+        "native": 5.713109512737525,
+        "raw_bytes": 5.723607155890011
+      },
+      "native_minus_byte": -0.010497643152485914,
+      "format": {
+        "chars": 12057,
+        "lines": 250,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 16,
+      "source": "pg19_books",
+      "name": "validation/43423.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0003125,
+      "below10_fraction": 0.0153125,
+      "mean_ce": {
+        "native": 5.518431901326985,
+        "raw_bytes": 5.474974150178217
+      },
+      "native_minus_byte": 0.04345775114876815,
+      "format": {
+        "chars": 12722,
+        "lines": 259,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 17,
+      "source": "pg19_books",
+      "name": "validation/2383.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0003125,
+      "below10_fraction": 0.0090625,
+      "mean_ce": {
+        "native": 5.862852534154275,
+        "raw_bytes": 6.259911720182282
+      },
+      "native_minus_byte": -0.3970591860280068,
+      "format": {
+        "chars": 8846,
+        "lines": 184,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.09179290074609993,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 18,
+      "source": "pg19_books",
+      "name": "validation/23956.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.016875,
+      "mean_ce": {
+        "native": 5.257705614678367,
+        "raw_bytes": 5.289310239316158
+      },
+      "native_minus_byte": -0.03160462463779101,
+      "format": {
+        "chars": 12980,
+        "lines": 237,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 19,
+      "source": "pg19_books",
+      "name": "validation/48677.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0071875,
+      "below10_fraction": 0.0828125,
+      "mean_ce": {
+        "native": 6.905830828032147,
+        "raw_bytes": 7.050688036666155
+      },
+      "native_minus_byte": -0.14485720863400786,
+      "format": {
+        "chars": 6783,
+        "lines": 163,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.12339672711189739,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 20,
+      "source": "pg19_books",
+      "name": "validation/1925.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.01125,
+      "mean_ce": {
+        "native": 5.489493363849857,
+        "raw_bytes": 5.451580707240791
+      },
+      "native_minus_byte": 0.037912656609066175,
+      "format": {
+        "chars": 12471,
+        "lines": 230,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0020848368214257075,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 21,
+      "source": "pg19_books",
+      "name": "validation/50355.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0034375,
+      "below10_fraction": 0.0115625,
+      "mean_ce": {
+        "native": 5.256481799494758,
+        "raw_bytes": 5.423802038241145
+      },
+      "native_minus_byte": -0.16732023874638635,
+      "format": {
+        "chars": 12632,
+        "lines": 232,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.018603546548448386,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 22,
+      "source": "pg19_books",
+      "name": "validation/8545.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.01,
+      "mean_ce": {
+        "native": 5.5894999498547016,
+        "raw_bytes": 5.53286268218401
+      },
+      "native_minus_byte": 0.056637267670691216,
+      "format": {
+        "chars": 13761,
+        "lines": 210,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 23,
+      "source": "pg19_books",
+      "name": "validation/44912.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0065625,
+      "below10_fraction": 0.0190625,
+      "mean_ce": {
+        "native": 5.657946366910667,
+        "raw_bytes": 5.610136520033509
+      },
+      "native_minus_byte": 0.047809846877157725,
+      "format": {
+        "chars": 13058,
+        "lines": 245,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 24,
+      "source": "pg19_books",
+      "name": "validation/48461.txt",
+      "count": 3200,
+      "unseen_fraction": 0.00125,
+      "below10_fraction": 0.0159375,
+      "mean_ce": {
+        "native": 5.7962515843182345,
+        "raw_bytes": 5.7746988511997435
+      },
+      "native_minus_byte": 0.02155273311849104,
+      "format": {
+        "chars": 12552,
+        "lines": 258,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0014340344168260039,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 25,
+      "source": "pg19_books",
+      "name": "validation/38214.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.0078125,
+      "mean_ce": {
+        "native": 5.753580149373156,
+        "raw_bytes": 5.684970316074517
+      },
+      "native_minus_byte": 0.06860983329863934,
+      "format": {
+        "chars": 13240,
+        "lines": 199,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 26,
+      "source": "pg19_books",
+      "name": "validation/49091.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.0075,
+      "mean_ce": {
+        "native": 5.129110716583455,
+        "raw_bytes": 5.1782203583081605
+      },
+      "native_minus_byte": -0.04910964172470589,
+      "format": {
+        "chars": 13215,
+        "lines": 231,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 27,
+      "source": "pg19_books",
+      "name": "validation/56719.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0090625,
+      "mean_ce": {
+        "native": 5.644541413756863,
+        "raw_bytes": 5.614318707063018
+      },
+      "native_minus_byte": 0.03022270669384497,
+      "format": {
+        "chars": 12700,
+        "lines": 215,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 28,
+      "source": "pg19_books",
+      "name": "validation/555.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0009375,
+      "below10_fraction": 0.013125,
+      "mean_ce": {
+        "native": 5.721141942642494,
+        "raw_bytes": 5.655064851122595
+      },
+      "native_minus_byte": 0.06607709151989916,
+      "format": {
+        "chars": 12138,
+        "lines": 221,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 1
+      }
+    },
+    {
+      "document": 29,
+      "source": "pg19_books",
+      "name": "validation/1022.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0015625,
+      "below10_fraction": 0.0121875,
+      "mean_ce": {
+        "native": 5.604507434341649,
+        "raw_bytes": 5.608276185439124
+      },
+      "native_minus_byte": -0.003768751097474876,
+      "format": {
+        "chars": 13143,
+        "lines": 228,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 30,
+      "source": "pg19_books",
+      "name": "validation/4533.txt",
+      "count": 3200,
+      "unseen_fraction": 0.000625,
+      "below10_fraction": 0.0128125,
+      "mean_ce": {
+        "native": 5.277193728592514,
+        "raw_bytes": 5.285591609148638
+      },
+      "native_minus_byte": -0.008397880556124449,
+      "format": {
+        "chars": 12092,
+        "lines": 310,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 31,
+      "source": "pg19_books",
+      "name": "validation/48089.txt",
+      "count": 3200,
+      "unseen_fraction": 0.0,
+      "below10_fraction": 0.0090625,
+      "mean_ce": {
+        "native": 5.432851777950824,
+        "raw_bytes": 5.43794583915158
+      },
+      "native_minus_byte": -0.0050940612007561725,
+      "format": {
+        "chars": 12629,
+        "lines": 267,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.0,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 32,
+      "source": "python_library_rst",
+      "name": "Doc/library/curses.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0421875,
+      "below10_fraction": 0.06625,
+      "mean_ce": {
+        "native": 7.507046031804056,
+        "raw_bytes": 7.418829453192884
+      },
+      "native_minus_byte": 0.08821657861117238,
+      "format": {
+        "chars": 10600,
+        "lines": 312,
+        "grid_line_character_fraction": 0.04452830188679245,
+        "long_space_character_fraction": 0.011981132075471699,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.015849056603773583,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 33,
+      "source": "python_library_rst",
+      "name": "Doc/library/shutil.rst",
+      "count": 3200,
+      "unseen_fraction": 0.03125,
+      "below10_fraction": 0.055625,
+      "mean_ce": {
+        "native": 7.248512452525319,
+        "raw_bytes": 7.146626209417978
+      },
+      "native_minus_byte": 0.10188624310734085,
+      "format": {
+        "chars": 9787,
+        "lines": 255,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.027791968938387656,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.011648104628588944,
+        "doctest_prompt_lines": 5,
+        "replacement_characters": 1
+      }
+    },
+    {
+      "document": 34,
+      "source": "python_library_rst",
+      "name": "Doc/library/base64.rst",
+      "count": 3200,
+      "unseen_fraction": 0.031875,
+      "below10_fraction": 0.071875,
+      "mean_ce": {
+        "native": 7.806188763114041,
+        "raw_bytes": 7.749559751763009
+      },
+      "native_minus_byte": 0.056629011351032155,
+      "format": {
+        "chars": 10366,
+        "lines": 288,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0013505691684352692,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.02421377580551804,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 35,
+      "source": "python_library_rst",
+      "name": "Doc/library/urllib.request.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0371875,
+      "below10_fraction": 0.0909375,
+      "mean_ce": {
+        "native": 7.81686505962396,
+        "raw_bytes": 7.711518774765621
+      },
+      "native_minus_byte": 0.10534628485833863,
+      "format": {
+        "chars": 11403,
+        "lines": 343,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.005261773217574322,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.01613610453389459,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 36,
+      "source": "python_library_rst",
+      "name": "Doc/library/statistics.rst",
+      "count": 3200,
+      "unseen_fraction": 0.019375,
+      "below10_fraction": 0.051875,
+      "mean_ce": {
+        "native": 6.330494985930103,
+        "raw_bytes": 6.5150751710857735
+      },
+      "native_minus_byte": -0.18458018515567076,
+      "format": {
+        "chars": 9204,
+        "lines": 239,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.08615819209039548,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.007062146892655367,
+        "doctest_prompt_lines": 45,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 37,
+      "source": "python_library_rst",
+      "name": "Doc/library/lzma.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.06875,
+      "mean_ce": {
+        "native": 7.400906282743672,
+        "raw_bytes": 7.324610526004108
+      },
+      "native_minus_byte": 0.07629575673956435,
+      "format": {
+        "chars": 10076,
+        "lines": 235,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0407899960301707,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.026200873362445413,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 38,
+      "source": "python_library_rst",
+      "name": "Doc/library/email.headerregistry.rst",
+      "count": 3200,
+      "unseen_fraction": 0.03,
+      "below10_fraction": 0.0725,
+      "mean_ce": {
+        "native": 7.478192436035606,
+        "raw_bytes": 7.480344878448329
+      },
+      "native_minus_byte": -0.0021524424127230546,
+      "format": {
+        "chars": 11318,
+        "lines": 265,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.03180773988337162,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.02915709489309065,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 39,
+      "source": "python_library_rst",
+      "name": "Doc/library/wsgiref.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.06,
+      "mean_ce": {
+        "native": 7.4498586635832424,
+        "raw_bytes": 7.379492589855605
+      },
+      "native_minus_byte": 0.07036607372763726,
+      "format": {
+        "chars": 10909,
+        "lines": 253,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.030800256668805575,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.01567513062608855,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 40,
+      "source": "python_library_rst",
+      "name": "Doc/library/__main__.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0296875,
+      "below10_fraction": 0.0815625,
+      "mean_ce": {
+        "native": 7.24147178560214,
+        "raw_bytes": 7.162444396293819
+      },
+      "native_minus_byte": 0.07902738930832154,
+      "format": {
+        "chars": 10687,
+        "lines": 323,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.038083653036399365,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.026948629175633947,
+        "doctest_prompt_lines": 7,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 41,
+      "source": "python_library_rst",
+      "name": "Doc/library/argparse.rst",
+      "count": 3200,
+      "unseen_fraction": 0.061875,
+      "below10_fraction": 0.126875,
+      "mean_ce": {
+        "native": 7.780230671936103,
+        "raw_bytes": 7.610910492643792
+      },
+      "native_minus_byte": 0.1693201792923107,
+      "format": {
+        "chars": 10293,
+        "lines": 268,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.040610123384824635,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.007966579228601962,
+        "doctest_prompt_lines": 42,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 42,
+      "source": "python_library_rst",
+      "name": "Doc/library/turtle.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.08125,
+      "mean_ce": {
+        "native": 7.100847484627933,
+        "raw_bytes": 7.281751463364732
+      },
+      "native_minus_byte": -0.18090397873679898,
+      "format": {
+        "chars": 8173,
+        "lines": 346,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.1063257065948856,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.004894163709776092,
+        "doctest_prompt_lines": 77,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 43,
+      "source": "python_library_rst",
+      "name": "Doc/library/http.server.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0265625,
+      "below10_fraction": 0.065625,
+      "mean_ce": {
+        "native": 7.017351464024977,
+        "raw_bytes": 7.174018131462314
+      },
+      "native_minus_byte": -0.15666666743733693,
+      "format": {
+        "chars": 10277,
+        "lines": 237,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.07940060328889754,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.021017806752943465,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 44,
+      "source": "python_library_rst",
+      "name": "Doc/library/collections.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0246875,
+      "below10_fraction": 0.055625,
+      "mean_ce": {
+        "native": 6.381201957767964,
+        "raw_bytes": 6.853294011301672
+      },
+      "native_minus_byte": -0.4720920535337072,
+      "format": {
+        "chars": 7746,
+        "lines": 223,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.15814613994319648,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.020526723470178157,
+        "doctest_prompt_lines": 24,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 45,
+      "source": "python_library_rst",
+      "name": "Doc/library/gc.rst",
+      "count": 3200,
+      "unseen_fraction": 0.036875,
+      "below10_fraction": 0.0690625,
+      "mean_ce": {
+        "native": 7.438133767361093,
+        "raw_bytes": 7.358781193781566
+      },
+      "native_minus_byte": 0.07935257357952707,
+      "format": {
+        "chars": 11338,
+        "lines": 321,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.029282060328100195,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.015523019932968778,
+        "doctest_prompt_lines": 12,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 46,
+      "source": "python_library_rst",
+      "name": "Doc/library/idle.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0084375,
+      "below10_fraction": 0.0553125,
+      "mean_ce": {
+        "native": 6.493858388205215,
+        "raw_bytes": 6.455573942199408
+      },
+      "native_minus_byte": 0.03828444600580738,
+      "format": {
+        "chars": 12064,
+        "lines": 253,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.005802387267904509,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.01881631299734748,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 47,
+      "source": "python_library_rst",
+      "name": "Doc/library/email.policy.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0253125,
+      "below10_fraction": 0.0725,
+      "mean_ce": {
+        "native": 7.281857381821222,
+        "raw_bytes": 7.368088181291047
+      },
+      "native_minus_byte": -0.08623079946982504,
+      "format": {
+        "chars": 10901,
+        "lines": 274,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.051738372626364555,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.026052655719658747,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 48,
+      "source": "python_library_rst",
+      "name": "Doc/library/multiprocessing.rst",
+      "count": 3200,
+      "unseen_fraction": 0.034375,
+      "below10_fraction": 0.083125,
+      "mean_ce": {
+        "native": 7.454594648433267,
+        "raw_bytes": 7.526864303375866
+      },
+      "native_minus_byte": -0.07226965494259918,
+      "format": {
+        "chars": 9512,
+        "lines": 276,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.07695542472666106,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.011774600504625737,
+        "doctest_prompt_lines": 47,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 49,
+      "source": "python_library_rst",
+      "name": "Doc/library/asyncio-sync.rst",
+      "count": 3200,
+      "unseen_fraction": 0.040625,
+      "below10_fraction": 0.0678125,
+      "mean_ce": {
+        "native": 7.323937491931332,
+        "raw_bytes": 7.5083855390168415
+      },
+      "native_minus_byte": -0.18444804708550944,
+      "format": {
+        "chars": 9170,
+        "lines": 343,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.09749182115594329,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.01504907306434024,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 50,
+      "source": "python_library_rst",
+      "name": "Doc/library/unittest.mock-examples.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0284375,
+      "below10_fraction": 0.103125,
+      "mean_ce": {
+        "native": 7.2889069522341,
+        "raw_bytes": 7.321284307959625
+      },
+      "native_minus_byte": -0.032377355725524914,
+      "format": {
+        "chars": 10022,
+        "lines": 277,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.06545599680702455,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.013570145679505088,
+        "doctest_prompt_lines": 55,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 51,
+      "source": "python_library_rst",
+      "name": "Doc/library/asyncio-subprocess.rst",
+      "count": 3200,
+      "unseen_fraction": 0.03375,
+      "below10_fraction": 0.081875,
+      "mean_ce": {
+        "native": 7.735455104614764,
+        "raw_bytes": 7.650098257496332
+      },
+      "native_minus_byte": 0.08535684711843228,
+      "format": {
+        "chars": 9500,
+        "lines": 292,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0571578947368421,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.02305263157894737,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 52,
+      "source": "python_library_rst",
+      "name": "Doc/library/zipapp.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0203125,
+      "below10_fraction": 0.059375,
+      "mean_ce": {
+        "native": 6.704103737782183,
+        "raw_bytes": 6.572730177907506
+      },
+      "native_minus_byte": 0.13137355987467725,
+      "format": {
+        "chars": 11560,
+        "lines": 294,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.006747404844290658,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.013927335640138408,
+        "doctest_prompt_lines": 10,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 53,
+      "source": "python_library_rst",
+      "name": "Doc/library/operator.rst",
+      "count": 3200,
+      "unseen_fraction": 0.065,
+      "below10_fraction": 0.1028125,
+      "mean_ce": {
+        "native": 5.69743885533011,
+        "raw_bytes": 6.927856006098445
+      },
+      "native_minus_byte": -1.2304171507683348,
+      "format": {
+        "chars": 8346,
+        "lines": 124,
+        "grid_line_character_fraction": 0.8046968607716272,
+        "long_space_character_fraction": 0.2028516654684879,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.038820992092020126,
+        "doctest_prompt_lines": 3,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 54,
+      "source": "python_library_rst",
+      "name": "Doc/library/readline.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0375,
+      "below10_fraction": 0.055,
+      "mean_ce": {
+        "native": 7.31929465987448,
+        "raw_bytes": 7.256765265471768
+      },
+      "native_minus_byte": 0.06252939440271188,
+      "format": {
+        "chars": 10726,
+        "lines": 324,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.024426626887935857,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.011187768040275966,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 55,
+      "source": "python_library_rst",
+      "name": "Doc/library/email.compat32-message.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0228125,
+      "below10_fraction": 0.07,
+      "mean_ce": {
+        "native": 7.246677636066501,
+        "raw_bytes": 7.379537684142416
+      },
+      "native_minus_byte": -0.13286004807591478,
+      "format": {
+        "chars": 9473,
+        "lines": 207,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.08371160139343398,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.028079805763749605,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 56,
+      "source": "python_library_rst",
+      "name": "Doc/library/queue.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0303125,
+      "below10_fraction": 0.0771875,
+      "mean_ce": {
+        "native": 7.585735601780979,
+        "raw_bytes": 7.530547333645615
+      },
+      "native_minus_byte": 0.055188268135364815,
+      "format": {
+        "chars": 10669,
+        "lines": 293,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.018183522354484956,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.01930827631455619,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 57,
+      "source": "python_library_rst",
+      "name": "Doc/library/smtplib.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0240625,
+      "below10_fraction": 0.0778125,
+      "mean_ce": {
+        "native": 7.493818639147697,
+        "raw_bytes": 7.476489840105642
+      },
+      "native_minus_byte": 0.017328799042054754,
+      "format": {
+        "chars": 10635,
+        "lines": 255,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.015420780441937001,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.03215796897038082,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 58,
+      "source": "python_library_rst",
+      "name": "Doc/library/pathlib.rst",
+      "count": 3200,
+      "unseen_fraction": 0.041875,
+      "below10_fraction": 0.0703125,
+      "mean_ce": {
+        "native": 7.522548770902165,
+        "raw_bytes": 7.448463340778253
+      },
+      "native_minus_byte": 0.07408543012391178,
+      "format": {
+        "chars": 9701,
+        "lines": 291,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0411297804350067,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.016493145036594166,
+        "doctest_prompt_lines": 23,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 59,
+      "source": "python_library_rst",
+      "name": "Doc/library/threading.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0290625,
+      "below10_fraction": 0.0603125,
+      "mean_ce": {
+        "native": 7.122202924634135,
+        "raw_bytes": 7.283188170053763
+      },
+      "native_minus_byte": -0.1609852454196279,
+      "format": {
+        "chars": 10210,
+        "lines": 268,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.06904995102840353,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.020470127326150833,
+        "doctest_prompt_lines": 5,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 60,
+      "source": "python_library_rst",
+      "name": "Doc/library/stat.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0465625,
+      "below10_fraction": 0.0675,
+      "mean_ce": {
+        "native": 7.122378100886756,
+        "raw_bytes": 7.189543514141502
+      },
+      "native_minus_byte": -0.06716541325474612,
+      "format": {
+        "chars": 9338,
+        "lines": 447,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.0208824159348897,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.007174983936603127,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 61,
+      "source": "python_library_rst",
+      "name": "Doc/library/stdtypes.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0340625,
+      "below10_fraction": 0.0528125,
+      "mean_ce": {
+        "native": 5.122430023416043,
+        "raw_bytes": 6.266737660861303
+      },
+      "native_minus_byte": -1.1443076374452597,
+      "format": {
+        "chars": 7005,
+        "lines": 125,
+        "grid_line_character_fraction": 0.6281227694503926,
+        "long_space_character_fraction": 0.244825124910778,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.026980728051391862,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 62,
+      "source": "python_library_rst",
+      "name": "Doc/library/logging.handlers.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0484375,
+      "below10_fraction": 0.0921875,
+      "mean_ce": {
+        "native": 6.844226766626428,
+        "raw_bytes": 7.182346046366146
+      },
+      "native_minus_byte": -0.33811927973971834,
+      "format": {
+        "chars": 9486,
+        "lines": 217,
+        "grid_line_character_fraction": 0.24551971326164876,
+        "long_space_character_fraction": 0.11227071473750791,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.023613746573898378,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    },
+    {
+      "document": 63,
+      "source": "python_library_rst",
+      "name": "Doc/library/exceptions.rst",
+      "count": 3200,
+      "unseen_fraction": 0.0278125,
+      "below10_fraction": 0.065,
+      "mean_ce": {
+        "native": 7.446084953236084,
+        "raw_bytes": 7.354145590512199
+      },
+      "native_minus_byte": 0.0919393627238847,
+      "format": {
+        "chars": 11473,
+        "lines": 302,
+        "grid_line_character_fraction": 0.0,
+        "long_space_character_fraction": 0.02771724919375926,
+        "greek_placeholder_character_fraction": 0.0,
+        "backtick_character_fraction": 0.016211975943519568,
+        "doctest_prompt_lines": 0,
+        "replacement_characters": 0
+      }
+    }
+  ],
+  "elapsed_seconds": 0.09608954098075628,
+  "resource": {
+    "projected_complete_outputs_bytes": 16777216,
+    "reserve_bytes": 10737418240,
+    "free_bytes_before": 25397678080,
+    "new_checkpoint_bytes": 0,
+    "new_model_evaluations": 0
+  },
+  "scope": "Post-result exploratory influence and literal format descriptors on all64 fixed excerpts. No acceptance changes, exclusions, bootstrap reruns or causal claims. Prefix removal is deliberately outcome-selected sensitivity, not a revised estimate or evidence to discard parents. Character descriptors include the first context token; loss excludes it. Markers are not parsed code/prose labels. Text may begin/end mid-line or mid-character. Shared source dependencies and multiple descriptive correlations are not controlled.",
+  "test_opened": false
+}
