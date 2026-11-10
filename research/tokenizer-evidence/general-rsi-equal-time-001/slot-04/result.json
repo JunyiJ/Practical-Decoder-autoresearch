@@ -1,0 +1,72 @@
+{
+  "status": "completed",
+  "binding": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "slot": {
+    "slot": 4,
+    "phase": "confirmation",
+    "arm": "native",
+    "lr": 0.0025,
+    "budget_ns": 7200000000000,
+    "roles": {
+      "native_initializer": 62110700101,
+      "composer_initializer": 62110700102,
+      "train_sampler": 62110700103,
+      "validation_sampler": 62110700104
+    },
+    "bundle": 1,
+    "timeout_seconds": 10800
+  },
+  "steps": 21348,
+  "training_ns": 7200237572257,
+  "overshoot_ns": 237572257,
+  "snapshots": 7038,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 91.01171196228825,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-04/raw.pt",
+        "size": 113998683,
+        "sha256": "3284bca47aa75ee8c517145539c1b2e147f80f0c54a5b1d9d7201e16b402349a"
+      },
+      "ce": 4.984698500578948,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 4.969586886960433
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.045224799088675
+        }
+      },
+      "score_seconds": 19.297771958168596,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-04/time_ema.pt",
+        "size": 113998683,
+        "sha256": "b6f1f1eeba7dc673fd2bdb64be33fb2a831363bfda9f4192f856752e175f869d"
+      },
+      "ce": 4.975752952122295,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 4.96101162145698
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.034796162384516
+        }
+      },
+      "score_seconds": 18.912416291888803,
+      "generation_seconds": 33.05540887499228
+    }
+  ],
+  "test_opened": false
+}

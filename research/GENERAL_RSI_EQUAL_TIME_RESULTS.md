@@ -21,9 +21,18 @@ Native leads by0.273669 nats/token at the selected screen LR. The result support
 the throughput hypothesis for this screening horizon. It does not establish
 superiority at the longer confirmation horizon or better generated text.
 
-Fresh native confirmation slot04 is running under worker PID94793 and
-supervisor session69399. Next: review its endpoint and all24 first generations. Three fresh native/byte pairs each
-receive7,200 training seconds per arm, with budget-matched cooldown and a shared
-127.184813977-second EMA half-life. Generate24 first completions from each final
-averaged model for144 scientific completions total. The48 engineering completions
-remain excluded. Keep the original test unopened and all frozen gates unchanged.
+Fresh native confirmation slot04 passed execution review. It completed21,348
+updates in7,200.237572257 training seconds, with a0.237572257-second overshoot
+within one update. Time-EMA CE is4.975752952122 and RAW CE is4.984698500579.
+Time-EMA source CEs are4.961011621457 for FineWeb-Edu and5.034796162385 for
+Wikipedia. Guarded worker time was7,380.481886 seconds. All24 first generations
+and both final weights are retained. No failure or recovery charge occurred.
+
+The paired byte confirmation slot05 is running under PID99876 and supervisor
+session41607. This single native endpoint cannot
+resolve the throughput hypothesis. Review its paired byte result, then complete
+all three fresh pairs before applying the frozen decision rule. Each arm receives
+7,200 training seconds with budget-matched cooldown and a shared127.184813977-second
+EMA half-life. Generate24 first completions per final averaged model for144
+scientific completions total. The48 engineering completions remain excluded.
+Keep the original test unopened and all frozen gates unchanged.

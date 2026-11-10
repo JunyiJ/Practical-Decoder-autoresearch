@@ -1,0 +1,18 @@
+{"event": "start", "id": "p11-temperature_0.8_top_k_40", "prompt": {"id": "p11", "text": "The museum opens at nine in the morning and closes at five in the afternoon. A visitor arrives at noon. The museum is", "consistency_reference": "Museum is open at noon under the stated hours."}, "decoder": "temperature_0.8_top_k_40", "seed": 42, "checkpoint": {"path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-04/time_ema.pt", "size": 113998683, "sha256": "b6f1f1eeba7dc673fd2bdb64be33fb2a831363bfda9f4192f856752e175f869d"}, "binding": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d", "torch_version": "2.14.1", "generator_source_sha256": "9931ebb62b183424d1039ae9020d4375304852a9bdbc9155646de8bfa1a41dd7", "cache_source_sha256": "0a639c99fc78a692515c46482d57752fc61424ab1b2d218aa104e79f0a7de8f9"}
+{"event": "token", "position": 0, "token": 5140}
+{"event": "token", "position": 1, "token": 319}
+{"event": "token", "position": 2, "token": 262}
+{"event": "token", "position": 3, "token": 2975}
+{"event": "token", "position": 4, "token": 11}
+{"event": "token", "position": 5, "token": 523}
+{"event": "token", "position": 6, "token": 340}
+{"event": "token", "position": 7, "token": 2499}
+{"event": "token", "position": 8, "token": 329}
+{"event": "token", "position": 9, "token": 514}
+{"event": "token", "position": 10, "token": 284}
+{"event": "token", "position": 11, "token": 423}
+{"event": "token", "position": 12, "token": 257}
+{"event": "token", "position": 13, "token": 1256}
+{"event": "token", "position": 14, "token": 13}
+{"event": "token", "position": 15, "token": 50256}
+{"event": "complete", "row": {"id": "p11-temperature_0.8_top_k_40", "prompt": {"id": "p11", "text": "The museum opens at nine in the morning and closes at five in the afternoon. A visitor arrives at noon. The museum is", "consistency_reference": "Museum is open at noon under the stated hours."}, "decoder": "temperature_0.8_top_k_40", "seed": 42, "generated_token_ids": [5140, 319, 262, 2975, 11, 523, 340, 2499, 329, 514, 284, 423, 257, 1256, 13, 50256], "continuation": " located on the road, so it works for us to have a lot.<|endoftext|>", "stop_reason": "eos", "checkpoint_sha256": "b6f1f1eeba7dc673fd2bdb64be33fb2a831363bfda9f4192f856752e175f869d", "metrics": {"generated_tokens_including_eos": 16, "content_tokens": 15, "trigram_opportunities": 13, "repeated_trigram_fraction": 0.0, "terminal_loop": false, "terminal_loop_phrase_lengths": [], "stopped_eos": true, "hit_token_cap": false, "empty_content": false, "unexpected_early_stop": false}}}
