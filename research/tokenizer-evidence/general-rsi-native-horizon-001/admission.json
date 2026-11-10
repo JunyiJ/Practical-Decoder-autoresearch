@@ -1,0 +1,35 @@
+{
+  "plan_sha256": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390",
+  "admitted_at": "2026-11-10T22:10:50.835165+00:00",
+  "shared_lock_held": true,
+  "new_binding_qualified": true,
+  "prior_numerical_qualifications_reused": true,
+  "scientific_scores_seen": false,
+  "forecast": {
+    "measured_weight_bytes": 113998683,
+    "final_weight_count": 12,
+    "per_weight_cap_bytes": 134217728,
+    "final_output_cap_bytes": 1610612736,
+    "active_restart_serialization_overlap_bytes": 1073741824,
+    "metadata_bytes": 268435456,
+    "failed_write_allowance_bytes": 5368709120,
+    "incremental_peak_bytes": 8321499136,
+    "reserve_bytes": 10737418240,
+    "required_free_bytes": 19058917376,
+    "actual_free_bytes": 24628568064,
+    "predicted_updates": 188038.80896074,
+    "checkpoint_count_allowance": 552,
+    "cost_components_seconds": {
+      "training_seconds": 64800,
+      "endpoint_and_conservative_probe_seconds": 622.4283730080351,
+      "generation_seconds": 244.02488774992526,
+      "checkpoint_seconds": 1656,
+      "initialization_seconds": 180,
+      "outside_clock_logging_seconds": 1880.3880896074
+    },
+    "estimated_seconds": 69382.84135036536,
+    "tranche_seconds": 100800,
+    "failure_and_variability_allowance_seconds": 31417.158649634643,
+    "assumptions": "All existing retained files excluded from free space. Final weights allocated at enforced128MiB caps. Restart pair512MiB each. Metadata includes preparation, all generations, logs and reviews. Checkpoint3s versus prior native mean about1.5s; initialization30s and logging0.01s/update are engineering allowances. Probes charged as full validation. Failures consume the same cumulative bounds."
+  }
+}

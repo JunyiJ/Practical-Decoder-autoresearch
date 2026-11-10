@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "COMPOSER_FP32_QUALIFICATION_FAILED_CLOSED",
+  "status": "NATIVE_HORIZON_PANEL_ADMITTED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Adapt the qualified time-budget worker to a separately bound native7200-vs14400-second campaign, verify only new plan/worker binding, finalize full cumulative runtime and storage admission, and freeze three fresh paired seed roles before launch. Reuse qualified restart/document/generation components. No scientific panel admitted yet.",
+  "next_action": "Launch native horizon slot00 under the frozen binding, then review each endpoint and follow six-slot serial order. Three fresh native7200/14400-second pairs; no LR search. Preserve all first generations and failures.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T22:06:41.783124+00:00",
+  "updated_at": "2026-11-10T22:11:12.072158+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Distinct composer-FP32 fixture failed its frozen rank-one direction accuracy gate (2.945274e-4 >1e-4), although parameter and momentum errors passed. No harness defect or quality regression established; no retry. Existing matched8-document curves improve for every native seed/source in final third, confounded with cooldown; support fresh complete native horizon comparison, not a claimed gain.",
-  "phase": "native_horizon_campaign_preparation",
+  "latest_learning": "New campaign binding passes AST equivalence after removing only old LR selection; qualified numerical context/restart/scoring/generation reused. Matched native curves motivate fresh complete horizon comparison. No new quality result yet.",
+  "phase": "native_horizon_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "No active worker or capacity blocker. Free 24624562176 bytes at component closure. Prospective complete native horizon requirement18816288836bytes including all12weights, restart serialization overlap, metadata,5GiB failure allowance and10GiB reserve; remeasure and include new adaptation outputs at admission.",
+  "capacity_status": "Native horizon full panel admitted: required19058917376bytes including capped outputs, serialization, metadata, failure allowance and10GiB reserve; available24628568064bytes. No cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -161,7 +161,7 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/GENERAL_RSI_NATIVE_EXPOSURE_BOUNDARY.md",
+  "next_design": "research/GENERAL_RSI_NATIVE_HORIZON_PROTOCOL.md",
   "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "exposure_completed_slots": [
@@ -439,5 +439,9 @@
   "momentum_precision_review": "research/tokenizer-evidence/general-rsi-momentum-precision-001/completion-review.json",
   "composer_fp32_report": "research/GENERAL_RSI_COMPOSER_FP32_RESULTS.md",
   "composer_fp32_review": "research/tokenizer-evidence/general-rsi-composer-fp32-fixture-001/completion-review.json",
-  "native_horizon_curve_analysis": "research/tokenizer-evidence/general-rsi-next-exposure-analysis-001/curves.json"
+  "native_horizon_curve_analysis": "research/tokenizer-evidence/general-rsi-next-exposure-analysis-001/curves.json",
+  "native_horizon_panel": "research/tokenizer-evidence/general-rsi-native-horizon-001/plan.json",
+  "native_horizon_panel_sha256": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390",
+  "native_horizon_admission": "research/tokenizer-evidence/general-rsi-native-horizon-001/admission.json",
+  "native_horizon_panel_launched": false
 }

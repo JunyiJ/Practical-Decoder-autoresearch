@@ -1,0 +1,23 @@
+{
+  "qualified": true,
+  "execute_ast_equal_after_removing_lr_selection": true,
+  "review_ast_equal_after_removing_lr_selection": true,
+  "identical_worker_functions": [
+    "put",
+    "replace",
+    "stop",
+    "stopped",
+    "boot",
+    "retire",
+    "remaining_guard_seconds",
+    "main"
+  ],
+  "new_horizon_schedule_checks": 8,
+  "cumulative_guard_checks": 5,
+  "scope": "No new numerical qualification. Original training, restart, scoring, generation and retirement paths retained. Changes only campaign paths, fixed LR binding, six-slot range, module dispatch and state labels.",
+  "sources": {
+    "research/general_rsi_native_horizon_worker_v1.py": "827a60b606a43a00bedc50231b4d2dc0c44954b8e1229c5e752efa6bf29f4a94",
+    "research/general_rsi_native_horizon_review_v1.py": "08b646ab2aed45f0c3f1b509042e296a0745f3ff3d406e7e57ba39ca4964e6c2",
+    "research/general_rsi_native_horizon_prepare_v1.py": "7d3d2a96931875b972a14ca4965b78de08e8202c1e33f7563bbb72a68d592eca"
+  }
+}
