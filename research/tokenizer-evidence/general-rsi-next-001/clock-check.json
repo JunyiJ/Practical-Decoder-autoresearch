@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-10T05:20:33.659425+00:00",
+  "classification": "synthetic_engineering_qualification_not_model_training",
+  "source_sha256": "ce254b4dac0ffd1f8fc177253a4ef38534ef8f32890472652d3d9868161b6385",
+  "passed": true,
+  "checks": [
+    "synchronization precedes and follows timed work",
+    "linear last-third cooldown boundaries",
+    "checkpoint clock roundtrip",
+    "uncheckpointed work explicitly charged",
+    "work exception charges elapsed duration",
+    "at most one update crosses budget; further update rejected",
+    "invalid clock state rejected"
+  ],
+  "remaining": [
+    "integrate both native and byte training updates including averaging",
+    "qualify real MPS timing and restart accounting",
+    "freeze averaging, seed roles, balanced LR screen and full retained-output forecast before launch"
+  ]
+}

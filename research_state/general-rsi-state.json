@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_ENGINEERING_PREPARATION",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 39592,
-  "next_action": "Continue final slot05 attempt02 under PID15837/session39592. At completion review attempt02, verify aggregate attempt guard time<18000s and unchanged failure archive, matched10240-step batch prefix to slot04, then apply unchanged three-pair H200/bootstrap/source-wise decision. Next campaign follows GENERAL_RSI_NEXT_CAMPAIGNS.md; test unopened.",
+  "active_session": null,
+  "next_action": "Integrate the qualified training-clock primitive with both arms and qualify real MPS timer/restart/averaging boundaries under a bounded engineering protocol. Then freeze/admit the complete equal-time LR screen and three fresh pairs with fixed generation evaluation. Reforecast actual capacity; test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T03:24:25.078181+00:00",
-  "active_worker_pid": 15837,
+  "updated_at": "2026-11-10T05:20:33.659425+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
   "panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
-  "active_slot": 5,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All561 replayed final-run updates6145..6705 match exactly in losses, clipping, LR and batch hashes; original failure archive verified. Final long endpoint still pending; five of six runs accepted.",
-  "phase": "exposure_confirmation",
+  "latest_learning": "Longer training passes all frozen gates: three deltas negative, mean H200 delta-0.200184293434, one-sided99% document-bootstrap upper-0.181210138250, both source means improve. This validates the longer recipe on this corpus, not coherence or equal-time superiority.",
+  "phase": "equal_time_prerequisites",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Capacity007 partial:77 audited cache payloads reclaimed5996544 allocated bytes; remaining full-forecast deficit20261820bytes. Existing worker healthy above hard reserve. Exhausted cache classes and wake conditions recorded; do not repeat broad scans or bypass busy research lock.",
+  "capacity_status": "Exposure panel complete; all12 endpoint weights retained and transient restarts retired. Current free28900585472bytes exceeds10GiB reserve. Prior exposure high-water deficit is obsolete after completion. New equal-time full-panel admission forecast and exact recovery remain prerequisites.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -200,6 +200,13 @@
       "raw_ce": 5.1329142829954675,
       "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-04/review.json",
       "recovery_review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-04/recovery-completion-review.json"
+    },
+    {
+      "slot": 5,
+      "horizon": 20480,
+      "h200_ce": 4.931797398125838,
+      "raw_ce": 4.940810110912028,
+      "review": "research/tokenizer-evidence/general-rsi-exposure-001/slot-05/review.json"
     }
   ],
   "exposure_attempt": 2,
@@ -219,6 +226,13 @@
       "long_slot": 3,
       "h200_delta": -0.2056842069066347,
       "raw_delta": -0.20062314472321408
+    },
+    {
+      "bundle": 3,
+      "short_slot": 4,
+      "long_slot": 5,
+      "h200_delta": -0.19675941725509993,
+      "raw_delta": -0.19210417208343955
     }
   ],
   "exposure_recovery": "research/tokenizer-evidence/general-rsi-exposure-recovery-002/preparation.json",
@@ -230,5 +244,8 @@
     "Then broader held-out domains or one additional size to test transfer"
   ],
   "post_exposure_plan": "research/GENERAL_RSI_NEXT_CAMPAIGNS.md",
-  "prospective_generation_protocol": "research/general-rsi-generation-eval-v1.json"
+  "prospective_generation_protocol": "research/general-rsi-generation-eval-v1.json",
+  "exposure_decision": "research/tokenizer-evidence/general-rsi-exposure-001/decision.json",
+  "selected_general_horizon": 20480,
+  "equal_time_clock_qualification": "research/tokenizer-evidence/general-rsi-next-001/clock-check.json"
 }
