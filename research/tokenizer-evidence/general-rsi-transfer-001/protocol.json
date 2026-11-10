@@ -1,0 +1,164 @@
+{
+  "kind": "general_rsi_transfer_protocol_v1",
+  "at": "2026-11-10T20:54:24.869509+00:00",
+  "hypothesis": "Native equal-time loss advantage transfers to both historical book excerpts and raw technical documentation; a reversal in either domain refutes the strong two-domain claim.",
+  "basis": "research/GENERAL_RSI_TRANSFER_BOUNDARY.md",
+  "source_metadata_sha256": {
+    "research/tokenizer-evidence/general-rsi-transfer-preparation-001/pg19_validation_objects.json": "74da1221dc4ecf23c1d7be9634cd07d6aded440bf5f96a5f6b4dc7fd55d088a0",
+    "research/tokenizer-evidence/general-rsi-transfer-preparation-001/cpython-library-tree.json": "68d9aaae0b040ac844d950cc3e07101588cd60229d524df38493414654055a79",
+    "research/tokenizer-evidence/general-rsi-transfer-preparation-001/source-audit.json": "ee0625c1b96174c3e7beb1a1a8bc6e0d967316111f43dbf704a542163c24875b",
+    "research/GENERAL_RSI_TRANSFER_BOUNDARY.md": "2b39138766bbea8daf62d56a13af114abc89292ac0c25388d314991f1d02191d"
+  },
+  "domains": [
+    "pg19_books",
+    "python_library_rst"
+  ],
+  "source_pools": {
+    "pg19_books": {
+      "metadata": "research/tokenizer-evidence/general-rsi-transfer-preparation-001/pg19_validation_objects.json",
+      "selection_pool": "all50 validation objects, pinned generation+MD5",
+      "license": "Apache-2.0 as declared by PG19 publisher",
+      "repository_revision": "b0e1f2925359688af19f8784c23c3deeda52d3ea"
+    },
+    "python_library_rst": {
+      "metadata": "research/tokenizer-evidence/general-rsi-transfer-preparation-001/cpython-library-tree.json",
+      "selection_pool": "all293 Doc/library/*.rst blobs",
+      "license": "PSF License2; examples dual PSF/0BSD",
+      "repository_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "format": "raw UTF-8 reStructuredText, including markup/code; no rendering or prose-only extraction"
+    }
+  },
+  "selection": {
+    "seed": 62111000001,
+    "order": "sort by SHA256(ASCII seed + newline + domain + newline + source name); ties by name",
+    "minimum_document_tokens": 3201,
+    "excerpt_tokens": 3201,
+    "targets_per_document": 3200,
+    "excerpt_start": "int(SHA256(ASCII seed + newline + domain + newline + source name + newline + window),16) modulo (full_token_count-3201+1)",
+    "documents_per_domain": 32,
+    "targets_per_domain": 102400,
+    "total_targets_per_model": 204800,
+    "underfill": "Reject whole panel if either domain has fewer than32 eligible documents. No smaller or substituted panel after scores.",
+    "one_window_per_parent": true,
+    "no_artificial_eot": "Do not append EOT at artificial excerpt boundaries. Score3200 real targets after one first context token.",
+    "tokenizer": "tiktoken gpt2 encode_ordinary; no special-token interpretation; original frozen vocabulary/assets"
+  },
+  "deduplication": {
+    "reference_splits": [
+      "train",
+      "val"
+    ],
+    "original_test_opened": false,
+    "unit": "selected fixed excerpt",
+    "rule": "Reject candidate excerpt if any contiguous32-token BLAKE2b-128 digest matches any within-document32-token span in original train or validation, or a previously selected excerpt in either domain. Never slide to another window after rejection.",
+    "serialization": "little-endian uint16 token IDs",
+    "order": "pg19_books then python_library_rst",
+    "index": "sorted unique16-byte digests; preserve index and bind its SHA256",
+    "limitations": "Exact token spans only. Shorter overlap, whitespace/case changes, paraphrases and overlaps outside the scored excerpt can remain. Hash matches conservatively exclude. Original test is not consulted."
+  },
+  "models": [
+    {
+      "arm": "native",
+      "slot": 4,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-04/time_ema.pt",
+      "size": 113998683,
+      "sha256": "b6f1f1eeba7dc673fd2bdb64be33fb2a831363bfda9f4192f856752e175f869d"
+    },
+    {
+      "arm": "raw_bytes",
+      "slot": 5,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-05/time_ema.pt",
+      "size": 65441261,
+      "sha256": "e02c77c35e6b603b53f86a2145fb55366cb966ab39ea07acbb7660b0c1b5b007"
+    },
+    {
+      "arm": "native",
+      "slot": 6,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-06/time_ema.pt",
+      "size": 113998683,
+      "sha256": "b4112a2001d87036fa8c1f8faf778c9a834a096e12b00e8cb2a6515c0e3e1d08"
+    },
+    {
+      "arm": "raw_bytes",
+      "slot": 7,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-07/time_ema.pt",
+      "size": 65441261,
+      "sha256": "7e7908fb535fd38e1967788e1cf54290b72ece4ef5f87a3ad34e7df95ac1bb40"
+    },
+    {
+      "arm": "native",
+      "slot": 8,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-08/time_ema.pt",
+      "size": 113998683,
+      "sha256": "f0e844f77a97071527e3730b7dade7f28ba06a5a4b06b1241925f93d0cd5fd33"
+    },
+    {
+      "arm": "raw_bytes",
+      "slot": 9,
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-equal-time-001/slot-09/time_ema.pt",
+      "size": 65441261,
+      "sha256": "80f1a02a70c60de4c1707320d32d06bf48e8c41a6e495fd5d7cf184d2a8df24d"
+    }
+  ],
+  "checkpoint_source_plan_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
+  "inference": {
+    "scorer": "research/general_rsi_training_v2.py:score",
+    "context": 128,
+    "dtype": "FP32",
+    "device": "mps",
+    "batch": "same sequential document chunks as qualified scorer",
+    "torch_version": "2.14.1",
+    "codebook_assets": [
+      {
+        "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6c7ea1a7e38e3a7f062df639a5b80947f075ffe6",
+        "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783",
+        "size": 1042301
+      },
+      {
+        "path": "/private/var/folders/kq/88lvc8ps3s5_4jpn83v68f8c0000gn/T/data-gym-cache/6d1cbeee0f20b3d9449abfede4726ed8212e3aee",
+        "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "size": 456318
+      }
+    ],
+    "model_source_bindings": "all sources from the frozen equal-time plan must still match",
+    "no_training": true,
+    "no_new_generations": true
+  },
+  "analysis": {
+    "delta": "candidate minus other",
+    "primary": "token-weighted CE within each domain; equal-domain mean across both domains",
+    "bootstrap": {
+      "generator": "numpy.PCG64",
+      "seed": 62111000999,
+      "replicates": 20000,
+      "sampling": "32 parent-document IDs with replacement independently within each of the two domains; same IDs paired across models; average three seed loss sums before resampling",
+      "domain_upper_quantile": 0.9975,
+      "quantile_method": "linear",
+      "multiplicity": "Bonferroni four one-sided domain/direction claims at familywise1%; macro99% interval descriptive only"
+    },
+    "transfer_acceptance": "For an arm: all three paired differences negative in each domain; each domain mean difference <=-0.02 nats/token; each domain adjusted upper bound <0. Require both domains. Symmetric rule; exact ties fail.",
+    "mixed_or_uncertain": "Retain in-distribution decision and report domain-specific evidence without claiming broad transfer.",
+    "scope": "Conditional on selected excerpts, domains, fixed checkpoints and three training seed pairs. No population-seed or general-competence claim."
+  },
+  "resource": {
+    "total_local_guard_seconds": 7200,
+    "rss_limit_bytes": 4294967296,
+    "mps_limit_bytes": 6442450944,
+    "reserve_bytes": 10737418240,
+    "incremental_peak_bytes": 1073741824,
+    "source_bytes_known": 24209536,
+    "source_and_license_cap_bytes": 33554432,
+    "overlap_index_retained_cap_bytes": 178257920,
+    "overlap_index_atomic_overlap_bytes": 178257920,
+    "excerpt_tokens_manifest_receipts_cap_bytes": 16777216,
+    "all_six_scores_and_analysis_cap_bytes": 16777216,
+    "failure_and_retry_retained_bytes": 134217728,
+    "remainder_unallocated_headroom_bytes": 536870912,
+    "new_weight_bytes": 0,
+    "max_score_attempts_per_checkpoint": 2,
+    "scoring_seconds_linear_estimate": 400.9141371594333,
+    "single_local_worker": true
+  },
+  "test_opened": false,
+  "admission": "Source/selection/analysis rules frozen now before new text processing; scoring requires successful acquisition+dedup+loader qualification and exact bound-data/resource admission."
+}

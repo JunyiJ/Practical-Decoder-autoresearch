@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "EQUAL_TIME_COMPLETE_TRANSFER_PREPARATION",
+  "status": "TRANSFER_ADMITTED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Freeze a two-domain PG-19 historical-book / CPython technical-documentation acquisition, selection and train/validation-overlap protocol using pinned metadata in general-rsi-transfer-preparation-001. Acquire within the complete byte envelope, qualify only the new loader/deduplication boundaries, bind dataset+analysis+resource contract, then score all six equal-time time-EMA checkpoints serially. No worker is active and no new text has been scored. Original test remains unopened.",
+  "next_action": "Launch the admitted six-checkpoint transfer evaluation serially. Both32-document domains, exclusion rules, source versions and multiplicity-adjusted gates are frozen; keep original test unopened.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T20:51:11.359520+00:00",
+  "updated_at": "2026-11-10T21:01:02.651549+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -60,7 +60,7 @@
     }
   ],
   "latest_learning": "Equal-time native passed all frozen gates: mean time-EMA CE4.968966040810 vs byte5.091067701052, all three pairs favor native; native-minus-byte99% document-bootstrap upper bound-0.105244791590. All144 first generations were blindly rated; both arms show substantial repetition/drift and no broad generation superiority is established. All ten runs accepted without recovery. Prior equal-update/exposure conclusions remain scoped and preserved.",
-  "phase": "transfer_design",
+  "phase": "transfer_evaluation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Equal-time complete: retained final weights1794399184bytes; measured free25606782976bytes. All planned final outputs retained; no active serialization. Guard total52069.452789s of72000s. No cleanup needed. Reforecast complete transfer outputs and10GiB reserve before admission.",
+  "capacity_status": "Transfer admitted: retained preparation181424039bytes; remaining full envelope892317785bytes plus10GiB reserve; free25402589184bytes. No new weights or generation output. All6models fit; no cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -413,5 +413,9 @@
   "equal_time_generation_evaluation": "research/tokenizer-evidence/general-rsi-equal-time-001/generation-evaluation/summary.json",
   "transfer_boundary": "research/GENERAL_RSI_TRANSFER_BOUNDARY.md",
   "transfer_local_basis": "research/tokenizer-evidence/general-rsi-transfer-preparation-001/local-basis.json",
-  "transfer_source_audit": "research/tokenizer-evidence/general-rsi-transfer-preparation-001/source-audit.json"
+  "transfer_source_audit": "research/tokenizer-evidence/general-rsi-transfer-preparation-001/source-audit.json",
+  "transfer_protocol": "research/tokenizer-evidence/general-rsi-transfer-001/protocol.json",
+  "transfer_protocol_sha256": "cf798226383b22b0bf115d5cea851438b19cddb01eda330f99f88dbc3bb61b89",
+  "transfer_dataset": "research/tokenizer-evidence/general-rsi-transfer-001/dataset.json",
+  "transfer_admission": "research/tokenizer-evidence/general-rsi-transfer-001/scoring-admission.json"
 }
