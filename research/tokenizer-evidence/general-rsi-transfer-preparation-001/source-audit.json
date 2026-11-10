@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-10T20:51:11.359520+00:00",
+  "metadata_files": {
+    "cpython-library-tree.json": {
+      "bytes": 84815,
+      "sha256": "68d9aaae0b040ac844d950cc3e07101588cd60229d524df38493414654055a79"
+    },
+    "local-basis.json": {
+      "bytes": 11369,
+      "sha256": "a76b04accf92c08f4af5d6a4f980ca5df0fca77116324e0921d6f4287cfabcc8"
+    },
+    "pg19_validation_objects.json": {
+      "bytes": 47135,
+      "sha256": "74da1221dc4ecf23c1d7be9634cd07d6aded440bf5f96a5f6b4dc7fd55d088a0"
+    },
+    "cpython_tag_object.json": {
+      "bytes": 2891,
+      "sha256": "8b73d24b8e504f847232b8a6ed5670c24f8d712dd45e41280d91dc9419ae37c9"
+    },
+    "cfr2025-title1-headers.txt": {
+      "bytes": 1818,
+      "sha256": "a468a4bf28b737348d31ecf6465c5e35f1e5d7a7e9f886e24da31f7ac7fbfb28"
+    },
+    "pg19_revision.json": {
+      "bytes": 5993,
+      "sha256": "98963b0184c5890b536657c21dc654efdf9262c7bde7a38d252e26cc8b959c13"
+    },
+    "cpython_tag.json": {
+      "bytes": 372,
+      "sha256": "88aa37ffd41f8663c44f216da38a2b7fd71cde8c635446e813169c66c378e870"
+    }
+  },
+  "pg19_repository_revision": "b0e1f2925359688af19f8784c23c3deeda52d3ea",
+  "pg19_bucket": "deepmind-gutenberg",
+  "pg19_prefix": "validation/",
+  "cpython_commit": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+  "new_text_scored": false,
+  "test_opened": false,
+  "data_acquisition_failures": [
+    {
+      "attempt": "system_python_metadata_001",
+      "error": "CERTIFICATE_VERIFY_FAILED: unable to get local issuer certificate",
+      "recovery": "curl with normal certificate verification succeeded"
+    },
+    {
+      "attempt": "guessed_bucket_metadata_001",
+      "bucket": "pg19",
+      "error": "HTTP401",
+      "recovery": "official PG19 README identifies public deepmind-gutenberg; metadata listing succeeded"
+    }
+  ]
+}
