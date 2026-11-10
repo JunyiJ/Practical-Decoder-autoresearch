@@ -1,0 +1,195 @@
+{
+  "source_sha256": "8343b6ec6abc286b35ba0d3abbef7f82ffe3ec4b8e202fb332524ad43bc52214",
+  "plan_sha256": "335ce32e7e9880b99cfa51c04eb6b6345689a2207e579579a2714120e3944950",
+  "torch_version": "2.14.1",
+  "matrices": 9,
+  "total_elements": 719775,
+  "fp32_unequal_elements": 568011,
+  "bf16_unequal_elements": 168,
+  "cases": [
+    {
+      "name": "composer.highway_weight",
+      "shape": [
+        525,
+        525
+      ],
+      "elements": 275625,
+      "first_update_parameter_gate_passed": false,
+      "first_update_parameter_max_abs_delta": 7.621943950653076e-05,
+      "fp32_pair_difference": {
+        "changed": 155415,
+        "max_abs": 3.8198777474462986e-11,
+        "relative_frobenius": 5.683424270764726e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 45,
+        "max_abs": 2.9802322387695312e-08,
+        "relative_frobenius": 5.7596089764424316e-05
+      }
+    },
+    {
+      "name": "composer.transform_weight",
+      "shape": [
+        525,
+        525
+      ],
+      "elements": 275625,
+      "first_update_parameter_gate_passed": false,
+      "first_update_parameter_max_abs_delta": 8.233613334596157e-05,
+      "fp32_pair_difference": {
+        "changed": 256638,
+        "max_abs": 1.8189894035458565e-12,
+        "relative_frobenius": 5.696495682939354e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 86,
+        "max_abs": 1.862645149230957e-09,
+        "relative_frobenius": 5.4418883750066786e-05
+      }
+    },
+    {
+      "name": "composer.projection_weight",
+      "shape": [
+        256,
+        525
+      ],
+      "elements": 134400,
+      "first_update_parameter_gate_passed": false,
+      "first_update_parameter_max_abs_delta": 9.632110595703125e-05,
+      "fp32_pair_difference": {
+        "changed": 125267,
+        "max_abs": 6.984919309616089e-10,
+        "relative_frobenius": 5.934348064936757e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 29,
+        "max_abs": 4.76837158203125e-07,
+        "relative_frobenius": 4.444213069536167e-05
+      }
+    },
+    {
+      "name": "composer.filters.0",
+      "shape": [
+        25,
+        15
+      ],
+      "elements": 375,
+      "first_update_parameter_gate_passed": true,
+      "first_update_parameter_max_abs_delta": 0.0,
+      "fp32_pair_difference": {
+        "changed": 259,
+        "max_abs": 1.4551915228366852e-11,
+        "relative_frobenius": 9.760551836274057e-08
+      },
+      "bf16_pair_difference": {
+        "changed": 0,
+        "max_abs": 0.0,
+        "relative_frobenius": 0.0
+      }
+    },
+    {
+      "name": "composer.filters.1",
+      "shape": [
+        50,
+        30
+      ],
+      "elements": 1500,
+      "first_update_parameter_gate_passed": true,
+      "first_update_parameter_max_abs_delta": 0.0,
+      "fp32_pair_difference": {
+        "changed": 1425,
+        "max_abs": 8.731149137020111e-11,
+        "relative_frobenius": 6.573001642507498e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 0,
+        "max_abs": 0.0,
+        "relative_frobenius": 0.0
+      }
+    },
+    {
+      "name": "composer.filters.2",
+      "shape": [
+        75,
+        45
+      ],
+      "elements": 3375,
+      "first_update_parameter_gate_passed": true,
+      "first_update_parameter_max_abs_delta": 0.0,
+      "fp32_pair_difference": {
+        "changed": 3159,
+        "max_abs": 1.2369127944111824e-10,
+        "relative_frobenius": 5.018086623826514e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 0,
+        "max_abs": 0.0,
+        "relative_frobenius": 0.0
+      }
+    },
+    {
+      "name": "composer.filters.3",
+      "shape": [
+        100,
+        60
+      ],
+      "elements": 6000,
+      "first_update_parameter_gate_passed": true,
+      "first_update_parameter_max_abs_delta": 0.0,
+      "fp32_pair_difference": {
+        "changed": 5454,
+        "max_abs": 5.820766091346741e-11,
+        "relative_frobenius": 3.5586001742407374e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 2,
+        "max_abs": 2.9103830456733704e-11,
+        "relative_frobenius": 4.851348666854968e-08
+      }
+    },
+    {
+      "name": "composer.filters.4",
+      "shape": [
+        125,
+        75
+      ],
+      "elements": 9375,
+      "first_update_parameter_gate_passed": true,
+      "first_update_parameter_max_abs_delta": 1.6376376152038574e-05,
+      "fp32_pair_difference": {
+        "changed": 8528,
+        "max_abs": 3.637978807091713e-11,
+        "relative_frobenius": 3.374642702510919e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 4,
+        "max_abs": 1.4901161193847656e-08,
+        "relative_frobenius": 2.4147904289792113e-05
+      }
+    },
+    {
+      "name": "composer.filters.5",
+      "shape": [
+        150,
+        90
+      ],
+      "elements": 13500,
+      "first_update_parameter_gate_passed": true,
+      "first_update_parameter_max_abs_delta": 1.6071833670139313e-05,
+      "fp32_pair_difference": {
+        "changed": 11866,
+        "max_abs": 2.1827872842550278e-11,
+        "relative_frobenius": 2.510905986034707e-07
+      },
+      "bf16_pair_difference": {
+        "changed": 2,
+        "max_abs": 7.450580596923828e-09,
+        "relative_frobenius": 7.853172006386762e-06
+      }
+    }
+  ],
+  "elapsed_seconds": 0.4101085418369621,
+  "new_training_updates": 0,
+  "test_opened": false,
+  "limitations": "Saved momentum is not the exact Nesterov input to Newton-Schulz. CPU BF16 casts are descriptive of these stored arrays, not replay of MPS optimizer arithmetic. Singular spectra do not establish causality or quality. One first-step paired case, all nine composer Muon matrices, no selection by result."
+}

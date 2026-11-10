@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-10T21:52:17.973572+00:00",
+  "source_sha256": "8d559ae5a084eec65c17330ac55a4339a753326668780cd4a5da81f3b192633c",
+  "receipts": {
+    "baseline": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-reuse-full-model-001/attempt-01/first-failure-baseline.pt",
+      "size": 182456003,
+      "sha256": "6a93e1cf0de77e3d024fbf5305590fb6e483e70f9ae47d05febaf5d35e75d8bb"
+    },
+    "reuse": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-reuse-full-model-001/attempt-01/first-failure-reuse.pt",
+      "size": 182456067,
+      "sha256": "e88d0f597b3895a36cef07353c1f0cc25898d9174a3df6d23f28bc1bbea93008"
+    }
+  },
+  "matrices": [
+    "composer.highway_weight",
+    "composer.transform_weight",
+    "composer.projection_weight",
+    "composer.filters.0",
+    "composer.filters.1",
+    "composer.filters.2",
+    "composer.filters.3",
+    "composer.filters.4",
+    "composer.filters.5"
+  ],
+  "failed_gate_matrices": [
+    "composer.highway_weight",
+    "composer.transform_weight",
+    "composer.projection_weight"
+  ],
+  "scope": "Fixed five-step original polynomial and normalization on saved momentum pairs; CPU FP64 reference versus MPS FP32 and BF16, three repeats each. No Nesterov reconstruction, optimizer step, parameters mutation or model training.",
+  "hypothesis_gate": "All three previously failed matrices must have >=10x smaller pair relative spread with MPS FP32 than MPS BF16. All nine matrices and both arms must be bitwise repeatable in each mode; MPS FP32 reference error relative to CPU FP64 finite polynomial <1e-4. This supports only a distinct prospective precision hypothesis.",
+  "timeout_seconds": 240,
+  "output_cap_bytes": 67108864,
+  "reserve_bytes": 10737418240,
+  "forecast": {
+    "first_output_raw_bytes": 23032800,
+    "serialization_overlap_bytes": 4410000,
+    "metadata_source_headers_allowance_bytes": 4194304,
+    "total_bytes": 31637104,
+    "free_bytes": 24682283008
+  },
+  "literature": [
+    {
+      "url": "https://kellerjordan.github.io/posts/muon/",
+      "sections": "Definition; eliminating alternatives; tuning coefficients; runtime analysis",
+      "scope": "Reports BF16 stability and speed; no local FP32 quality guarantee"
+    },
+    {
+      "url": "https://arxiv.org/html/2608.26288v1",
+      "sections": "2.2; Lemma5.2; section6",
+      "scope": "Finite spectral-map smoothing; different normalization and polynomial; not local quantization proof"
+    }
+  ]
+}

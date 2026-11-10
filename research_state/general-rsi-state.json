@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "COMPOSER_REUSE_FULL_MODEL_FAILED",
+  "status": "MOMENTUM_SPECTRUM_COMPLETE",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Perform bounded CPU-only analysis of retained paired composer momentum matrices: BF16 quantization disagreement and matrix spectra. Distinguish saved momentum from exact Nesterov update input. Consult primary optimizer analysis before qualifying any distinct precision-controlled hypothesis. Do not retry reuse v1 or relax its gate. No worker currently active.",
+  "next_action": "Execute frozen no-training finite-polynomial precision controls on saved matrices: same MPS backend FP32/BF16 and CPU FP64 finite-polynomial reference, all first outputs retained. No retry of closed reuse v1.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T21:48:39.419760+00:00",
+  "updated_at": "2026-11-10T21:52:36.384724+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Reuse v1 passed component correctness and reduced composer time55.53% median, but failed first actual Muon update: three composer matrices exceeded fixed parameter tolerance, max difference9.6321e-5 despite identical loss and max initial gradient difference2.794e-8. Noncomposer parameters are bitwise equal. Both complete failure states retained. Candidate closed; no retry, restart qualification, valid whole-update timing or quality claim.",
-  "phase": "composer_optimizer_sensitivity_existing_evidence_analysis",
+  "latest_learning": "All nine saved composer Muon momentum pairs analyzed. Only168 of719775 BF16-cast elements differ, but three failed matrices concentrate99% energy in1-2 singular directions and BF16 pair-relative differences exceed FP32 by~75-101x. This is saved momentum, not exact Nesterov input or causal optimizer replay.",
+  "phase": "saved_momentum_precision_map_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -161,7 +161,7 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/GENERAL_RSI_REUSE_FULL_MODEL_RESULTS.md",
+  "next_design": "research/tokenizer-evidence/general-rsi-momentum-precision-001/plan.json",
   "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "exposure_completed_slots": [
@@ -433,5 +433,6 @@
   "composer_batch_reuse": "research/tokenizer-evidence/general-rsi-composer-efficiency-preparation-001/batch-reuse.json",
   "composer_reuse_review": "research/tokenizer-evidence/general-rsi-composer-reuse-001/completion-review.json",
   "composer_reuse_full_model_review": "research/tokenizer-evidence/general-rsi-reuse-full-model-001/completion-review.json",
-  "composer_reuse_full_model_report": "research/GENERAL_RSI_REUSE_FULL_MODEL_RESULTS.md"
+  "composer_reuse_full_model_report": "research/GENERAL_RSI_REUSE_FULL_MODEL_RESULTS.md",
+  "momentum_spectrum_summary": "research/tokenizer-evidence/general-rsi-momentum-spectrum-001/summary.json"
 }
