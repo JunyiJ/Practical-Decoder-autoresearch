@@ -15,7 +15,7 @@
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T01:02:46.688891+00:00",
+  "updated_at": "2026-11-10T01:10:22.756099+00:00",
   "active_worker_pid": 35393,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -212,5 +212,13 @@
     }
   ],
   "exposure_recovery": "research/tokenizer-evidence/general-rsi-exposure-recovery-001/preparation.json",
-  "exposure_replay_verification": "research/tokenizer-evidence/general-rsi-exposure-recovery-001/replay-verification.json"
+  "exposure_replay_verification": "research/tokenizer-evidence/general-rsi-exposure-recovery-001/replay-verification.json",
+  "human_followup_priorities": [
+    "Finish frozen longer-training comparison unchanged",
+    "Fresh native/byte comparison at equal Mac training time with budget-matched schedules",
+    "Fixed repetition, relevance and consistency evaluation alongside validation CE",
+    "Then broader held-out domains or one additional size to test transfer"
+  ],
+  "post_exposure_plan": "research/GENERAL_RSI_NEXT_CAMPAIGNS.md",
+  "prospective_generation_protocol": "research/general-rsi-generation-eval-v1.json"
 }

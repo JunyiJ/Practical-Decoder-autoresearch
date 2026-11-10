@@ -1,0 +1,106 @@
+{
+  "kind": "general_rsi_generation_evaluation_v1",
+  "scope": "prospective_equal_mac_time_confirmation_only",
+  "prompts": [
+    {
+      "id": "p00",
+      "text": "The Earth rotates on its axis, which causes",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p01",
+      "text": "Plants use sunlight to",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p02",
+      "text": "When water is heated,",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p03",
+      "text": "A computer stores information using",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p04",
+      "text": "A fair experiment compares",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p05",
+      "text": "The purpose of a public library is",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p06",
+      "text": "Maya put the cup on the table. Then she picked up the cup and",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p07",
+      "text": "Question: Why does the sun rise in the morning?\nAnswer:",
+      "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."
+    },
+    {
+      "id": "p08",
+      "text": "Maya placed a red cup on the shelf and a blue cup on the table. She took the blue cup outside. The cup left on the shelf was",
+      "consistency_reference": "Red cup remains on shelf; blue cup was taken outside."
+    },
+    {
+      "id": "p09",
+      "text": "A box contains three pencils. Eli removes one pencil and adds two pencils. The box now contains",
+      "consistency_reference": "Four pencils remain."
+    },
+    {
+      "id": "p10",
+      "text": "Nora lent her bicycle to Sam on Monday. Sam returned it on Tuesday. On Wednesday, Nora rode",
+      "consistency_reference": "The bicycle was returned to Nora; no unsupported change of ownership."
+    },
+    {
+      "id": "p11",
+      "text": "The museum opens at nine in the morning and closes at five in the afternoon. A visitor arrives at noon. The museum is",
+      "consistency_reference": "Museum is open at noon under the stated hours."
+    }
+  ],
+  "decoders": [
+    "greedy",
+    "temperature_0.8_top_k_40"
+  ],
+  "seed": 42,
+  "seed_reset": "each prompt and decoder",
+  "max_new_tokens": 64,
+  "eos_token_id": 50256,
+  "rerolls": 0,
+  "endpoint": "final primary averaged weights in each of six confirmations",
+  "expected_completions": 144,
+  "metrics": {
+    "repetition": "Generated non-EOS token trigram duplicate occurrences / total trigram occurrences; null if fewer than3 tokens.",
+    "terminal_loop": "Generated non-EOS token suffix contains a phrase of length>=2 repeated consecutively at least3 times.",
+    "relevance": {
+      "0": "No meaningful continuation of the prompt topic or situation.",
+      "1": "At least one relevant proposition, with substantial drift or only a fragment.",
+      "2": "Meaningful continuation remains on the prompt topic/situation throughout.",
+      "unassessable": "Empty or uninterpretable; record separately, never count as a pass."
+    },
+    "consistency": {
+      "0": "Explicit contradiction of the prompt reference or of the completion itself.",
+      "1": "Partially interpretable or ambiguous claims prevent a clear consistency judgment.",
+      "2": "Interpretable substantive continuation with no identified contradiction.",
+      "unassessable": "No assessable proposition; not evidence of consistency or factual correctness."
+    }
+  },
+  "annotation": {
+    "blinding": "Remove arm, seed and checkpoint names; shuffle all rows with Python random.Random(62110500998) before rating; save mapping separately.",
+    "required": [
+      "relevance",
+      "consistency",
+      "evidence_quote",
+      "reason",
+      "annotator_identity"
+    ],
+    "limits": "Agent ratings are exploratory, not independent human validation; consistency is not exhaustive factual accuracy."
+  },
+  "aggregation": "Separate each decoder. Report per-seed and equal-weight prompt means over assessable outputs, counts and fraction unassessable, ordinal counts, lengths, EOS and truncation rates. No composite with CE; no adoption gate.",
+  "retention": "All first outputs, token IDs, prompt, seed, stop reason and source/checkpoint/runtime hashes retained."
+}
