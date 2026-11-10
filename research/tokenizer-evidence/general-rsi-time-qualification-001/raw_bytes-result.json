@@ -1,0 +1,307 @@
+{
+  "arm": "raw_bytes",
+  "steps": 19,
+  "snapshots": 7,
+  "training_ns": 12460632084,
+  "overshoot_ns": 460632084,
+  "actual_branch_wall_ns": 13089186958,
+  "checkpoint_io_ns": 359580459,
+  "restore_ns": 182925459,
+  "checkpoint_step": 13,
+  "checkpoint": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-time-qualification-001/raw_bytes-restart.pt",
+    "size": 247897649,
+    "sha256": "34941c6cb221182452c82136867ae2c8837906c7fced0870f3285b4924366444"
+  },
+  "exact_restore": true,
+  "exact_replayed_complete_state": true,
+  "lost_work_charge_roundtrip": true,
+  "history": [
+    {
+      "step": 1,
+      "loss": 10.847877502441406,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 2.4960739612579346,
+        "post_norm": 0.9999997019767761,
+        "coefficient": 0.4006290137767792,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "4f1d44310e722080ea0e5c523777ae8a31ad06ca18df1df526270a387e2bbaf3",
+      "begin_ns": 0,
+      "end_ns": 841325375
+    },
+    {
+      "step": 2,
+      "loss": 10.789422988891602,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.8711029291152954,
+        "post_norm": 0.999999463558197,
+        "coefficient": 0.5344438552856445,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "67b18c4e2aeb723ba36513fa6f91022257c79e13b04cd027d3923efb3835b90f",
+      "begin_ns": 841325375,
+      "end_ns": 1682177291
+    },
+    {
+      "step": 3,
+      "loss": 10.589653015136719,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.758724570274353,
+        "post_norm": 0.999999463558197,
+        "coefficient": 0.5685935616493225,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "d1138e4b3a27014cdc69424b357d350afd5f01cb20ac82cb5d0ab716e710390b",
+      "begin_ns": 1682177291,
+      "end_ns": 2330019958
+    },
+    {
+      "step": 4,
+      "loss": 10.444587707519531,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.9547258615493774,
+        "post_norm": 0.9999995827674866,
+        "coefficient": 0.5115804672241211,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "07e241bb7b755cc1afef2c6a97a6ce6f1a488b5bc6586f9374be73a499bf5146",
+      "begin_ns": 2330019958,
+      "end_ns": 2946801083
+    },
+    {
+      "step": 5,
+      "loss": 10.314922332763672,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.525929570198059,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.6553378105163574,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "f1184d364b65b30db7c8a2b52578220db1add7a3da3063faa121dd12b06727a6",
+      "begin_ns": 2946801083,
+      "end_ns": 3640000542
+    },
+    {
+      "step": 6,
+      "loss": 10.254135131835938,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.514134168624878,
+        "post_norm": 0.9999994039535522,
+        "coefficient": 0.6604430675506592,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "fc423947ef16f49a70c94fd80b307c2b56ba5169874ee1e853b60c025e3e3f8b",
+      "begin_ns": 3640000542,
+      "end_ns": 4314668500
+    },
+    {
+      "step": 7,
+      "loss": 10.107793807983398,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2821983098983765,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7799099683761597,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "09d390e25d2ece74a7498d875d807b78b0910087c9f7b9c223efb6b7e8ae5d6c",
+      "begin_ns": 4314668500,
+      "end_ns": 4929106792
+    },
+    {
+      "step": 8,
+      "loss": 9.91843032836914,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.496589183807373,
+        "post_norm": 0.9999994039535522,
+        "coefficient": 0.6681855916976929,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "7a11d1a79b68190da755e101ad029ed4cc439dbdcd7da7802534a476172dc92b",
+      "begin_ns": 4929106792,
+      "end_ns": 5547675500
+    },
+    {
+      "step": 9,
+      "loss": 9.866640090942383,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1838397979736328,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8447082042694092,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "fb849884b4ecd4c94eb58966b6e87907f0731d383b315ed2717daed2e82f033f",
+      "begin_ns": 5547675500,
+      "end_ns": 6195347208
+    },
+    {
+      "step": 10,
+      "loss": 9.769136428833008,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1676900386810303,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.8563909530639648,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "e07ae0d51c3cc15adf666eae877deca4f9ce1111321325d470e008f4f30421bd",
+      "begin_ns": 6195347208,
+      "end_ns": 6813898375
+    },
+    {
+      "step": 11,
+      "loss": 9.625060081481934,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3149268627166748,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.760498046875,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "5ada1407e1e399d3cccb5dc40886fd5ef5962d18e0610c4d1199b54b233b79f9",
+      "begin_ns": 6813898375,
+      "end_ns": 7424419792
+    },
+    {
+      "step": 12,
+      "loss": 9.422548294067383,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3953708410263062,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.716654896736145,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "ed9ffa334e7d791d31d404ef89860a9b38d268495edb3edd47cb3c9d0d8a036b",
+      "begin_ns": 7424419792,
+      "end_ns": 8051681083
+    },
+    {
+      "step": 13,
+      "loss": 9.520051956176758,
+      "lr_ratio": 0.9883717563249999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4794811010360718,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.6759122014045715,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "28416770476f242be82830998da9a92cda8518edf0b4e42fa601b147d188db15",
+      "begin_ns": 8051681083,
+      "end_ns": 8697841417
+    },
+    {
+      "step": 14,
+      "loss": 9.420040130615234,
+      "lr_ratio": 0.8429856811749998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.487937569618225,
+        "post_norm": 0.9999991059303284,
+        "coefficient": 0.6720708012580872,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "503dd8974cbceec9da125e322ea07b14e1016b3614c54ad7f76172e5abd72ee1",
+      "begin_ns": 8697841417,
+      "end_ns": 9371215667
+    },
+    {
+      "step": 15,
+      "loss": 9.145530700683594,
+      "lr_ratio": 0.6914764749249998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.390885829925537,
+        "post_norm": 0.9999994039535522,
+        "coefficient": 0.7189657688140869,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "858e56cbae9540132ca2db0c06f3d316d029df7a1a2538df0a037eef0ad97007",
+      "begin_ns": 9371215667,
+      "end_ns": 9993322626
+    },
+    {
+      "step": 16,
+      "loss": 8.95777702331543,
+      "lr_ratio": 0.55150240915,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2526543140411377,
+        "post_norm": 0.999998927116394,
+        "coefficient": 0.7983042597770691,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "c8d6a11f666241214be47a29adcd77ecf2cca666338a71ac1b12edf4e2233bf7",
+      "begin_ns": 9993322626,
+      "end_ns": 10607937417
+    },
+    {
+      "step": 17,
+      "loss": 9.120038986206055,
+      "lr_ratio": 0.4132140811749998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2377941608428955,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.8078881502151489,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "58e4fc6f03f128b0cd3d9392e3f8a05f36e7644266aa6c029d854bbfde0cd635",
+      "begin_ns": 10607937417,
+      "end_ns": 11225082084
+    },
+    {
+      "step": 18,
+      "loss": 8.8665132522583,
+      "lr_ratio": 0.2743565310999999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.0060710906982422,
+        "post_norm": 0.9999990463256836,
+        "coefficient": 0.9939646124839783,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "52abede2cc518b0d7acd3870e322e8b3969dee3172036ae1af9ae5febad3c81d",
+      "begin_ns": 11225082084,
+      "end_ns": 11835024834
+    },
+    {
+      "step": 19,
+      "loss": 9.133363723754883,
+      "lr_ratio": 0.1371194123499998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.820367157459259,
+        "post_norm": 0.820367157459259,
+        "coefficient": 1.0,
+        "gradient_tensors": 105
+      },
+      "batch_sha256": "0a79b68f854e00ba27ca7f4ee81443fe1f5d4888bb32b0d05363ea9798832444",
+      "begin_ns": 11835024834,
+      "end_ns": 12460632084
+    }
+  ],
+  "scientific_selection": false
+}

@@ -12,17 +12,15 @@ of any launched experiment. No new panel is admitted by this document alone.
 ## 1. Finish the six-run exposure comparison
 
 The frozen authority is `tokenizer-evidence/general-rsi-exposure-001/plan.json`.
-Four endpoints have been accepted. The two complete paired H200 differences
-(long minus short) are -0.1981092561 and -0.2056842069 nats/token. These are
-encouraging partial results, not the three-pair adoption decision.
-
-Slot04 attempt02 is completing the third short control after a disk-reserve
-failure. `tokenizer-evidence/general-rsi-exposure-recovery-001/` preserves the
-original failure and verifies all 904 replayed updates exactly. Review the
-completed endpoint, charge both attempts to the slot/tranche time ceilings,
-then run the already specified slot05 long control. Apply the existing
-three-pair, source-wise and bootstrap gates only after all six accepted results.
-Do not add new generation criteria to this comparison. Keep test unopened.
+All six endpoints are accepted. Three paired H200 differences (long minus short)
+are -0.1981092561, -0.2056842069 and -0.1967594173 nats/token. Mean loss changed
+from5.1356050685 to4.9354207751. The one-sided99% document-bootstrap upper bound
+is-0.1812101383, and both source means improved. All frozen gates passed.
+`general-rsi-exposure-001/decision.json` records the decision and
+`adopted-recipe.json` retains all three long-run averaged checkpoints without
+best-seed selection. Failure/replay evidence remains preserved. Test is unopened.
+The longer recipe is validated on this corpus; generation and equal-time
+superiority remain separate questions.
 
 ## 2. Native versus byte at equal Mac training time
 
@@ -153,7 +151,24 @@ fully specified; its exact cost and gate must follow the equal-time findings.
   tradeoffs. Broader transfer is a hypothesis, not implied by current CE.
   Their model/data scale differs substantially from our finite10M-token corpus.
 
-Next executable action remains the active exposure endpoint review and frozen
-slot05. Independent preparation may implement/qualify the new clock and scorer
-without editing bound sources or competing with the active MPS worker. After
-the exposure decision, finish new-panel qualification and admission, then run.
+## Current engineering boundary — 2026-11-10
+
+`general-rsi-time-qualification-001/review.json` accepts the new time-budget
+training context on both MPS arms. A12-second budget produced33 native updates
+(12.158s) and19 byte updates(12.461s), each with at most one-update overshoot.
+The complete optimizer/model/sampler/RNG/time-EMA state matches exactly after
+restore and replay with the original measured clock durations. Live clocks vary;
+this test does not assert numerical equality under different time schedules.
+Explicit lost-work charges survive capture/restore. Checkpoint I/O is excluded
+from the training clock and reported separately. No validation selection occurred.
+
+Measured restart payloads are445,008,055 and247,897,649bytes. The review records
+a prospective ten-pair forecast plus two512MiB restart slots,64MiB metadata/header
+margin and10GiB reserve. Available space exceeds that forecast. Recheck exact
+capacity at admission; this is not permission to omit any retained output.
+
+Next executable action: integrate durable recovery accounting and fixed generation
+into the production worker. Qualify incomplete-update/replay journaling and decoder
+boundaries, then freeze matched-time EMA half-life, fresh roles, source hashes,
+run order and complete panel resources before launching the first LR screen.
+The qualified document scoring and old restart fixtures need no repeat.

@@ -1,0 +1,35 @@
+{
+  "accepted_engineering": true,
+  "plan_sha256": "663998f0246956b09a7321b6db108aff980a299f00164cea90ee1667905a42be",
+  "result_sha256": "c5882e46733036528974fd0ab43941f93a4207259bf6bc759ccfcd01ba5e69c8",
+  "guard_sha256": "c8cf7a33a102f24ca937b7fc77a58c906d4c28f5089313775cf3e3e8f4d5cf1d",
+  "sources_verified": 5097,
+  "checkpoint_hashes_verified": true,
+  "live_worker_lock_free": true,
+  "measured_restart_bytes": {
+    "native": 445008055,
+    "raw_bytes": 247897649
+  },
+  "prospective_resource_forecast": {
+    "endpoint_pairs": 10,
+    "prior_measured_pair_bytes": {
+      "native": 227997110,
+      "raw_bytes": 130882266
+    },
+    "projected_all_endpoint_bytes": 1794396880,
+    "active_restart_and_serialization_overlap_cap_bytes": 1073741824,
+    "metadata_and_endpoint_header_margin_bytes": 67108864,
+    "incremental_peak_bytes": 2935247568,
+    "reserve_bytes": 10737418240,
+    "required_free_bytes": 13672665808,
+    "actual_free_bytes": 28211662848,
+    "fits": true,
+    "admitted": false
+  },
+  "limitations": [
+    "Short engineering timing does not select LR or architecture.",
+    "Exact replay uses recorded durations; live timing varies.",
+    "Production incomplete-update accounting/journaling and generation integration still required."
+  ],
+  "test_opened": false
+}
