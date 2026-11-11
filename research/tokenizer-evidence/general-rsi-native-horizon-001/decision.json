@@ -1,0 +1,121 @@
+{
+  "at": "2026-11-11T17:00:30.667933+00:00",
+  "plan_sha256": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390",
+  "analysis_source_sha256": "23d6634a5d9c1c4716c258876a95cc8f5cefbc305190a2cddedea24dd40cc9a6",
+  "bootstrap_source_sha256": "cb671dd3b137713b418674f81ff91118f41bf9c71ca2c7ab430e759cb7ab12df",
+  "all_six_execution_reviews_bound": true,
+  "pairs": [
+    {
+      "bundle": 1,
+      "short_slot": 0,
+      "long_slot": 1,
+      "time_ema_delta": -0.14224294127490733,
+      "raw_delta": -0.13584127670876622
+    },
+    {
+      "bundle": 2,
+      "short_slot": 2,
+      "long_slot": 3,
+      "time_ema_delta": -0.14657427527857259,
+      "raw_delta": -0.13955534042496787
+    },
+    {
+      "bundle": 3,
+      "short_slot": 4,
+      "long_slot": 5,
+      "time_ema_delta": -0.13552016907892117,
+      "raw_delta": -0.13224057923690236
+    }
+  ],
+  "decision": {
+    "paired_deltas": [
+      -0.14224294127490716,
+      -0.14657427527857264,
+      -0.1355201690789211
+    ],
+    "mean_delta_long_minus_short": -0.1414457952108003,
+    "bootstrap_upper_99": -0.12804194649065861,
+    "source_deltas": {
+      "fineweb_edu": -0.13835775200684863,
+      "wikipedia": -0.15381428407583544
+    },
+    "gates": {
+      "all_three_deltas_negative": true,
+      "mean_threshold": true,
+      "bootstrap_upper_negative": true,
+      "source_guard": true
+    },
+    "longer_recipe_accepted": true,
+    "retained_recipe": "long"
+  },
+  "mean_ce": {
+    "short": {
+      "raw": 4.983090909977363,
+      "time_ema": 4.976170978520879
+    },
+    "long": {
+      "raw": 4.847211844520484,
+      "time_ema": 4.834725183310078
+    }
+  },
+  "bootstrap": {
+    "seed": 62111022999,
+    "replicates": 10000,
+    "method": "PCG64 resample108documentIDs; average paired seed loss sums before resampling; sampled target-count denominator; linear99th percentile upper<0",
+    "upper_quantile": 0.99,
+    "scope": "Conditional on108documents and three paired seeds; not population-seed confidence."
+  },
+  "guard_seconds_by_slot": {
+    "0": 7392.568534665974,
+    "1": 14744.216563750058,
+    "2": 7401.811590458965,
+    "3": 14765.718974666903,
+    "4": 7406.452621083939,
+    "5": 14765.069256542018
+  },
+  "total_guard_seconds": 66475.83754116786,
+  "training_seconds_by_slot": {
+    "0": 7200.225786697,
+    "1": 14400.341240735,
+    "2": 7200.129974455,
+    "3": 14400.139115873,
+    "4": 7200.240503477,
+    "5": 14400.109626883
+  },
+  "updates_by_slot": {
+    "0": 20230,
+    "1": 40579,
+    "2": 20262,
+    "3": 42203,
+    "4": 21125,
+    "5": 42205
+  },
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-00/result.json": "40d552d6f8d25f17230f2554f5fcbccc37b6d8dfcba40c83e519af42c0d441af",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-00/review.json": "e3e9f236ef7dbe61a53731edd7bd1beae95a7f387bf57f9d1058e291f30eb7bf",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-00/raw-validation.json": "a5bff46170098b13269052fdfe92535ff1403c72bb00fbc319670b176d856ea9",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-00/time_ema-validation.json": "2bd9db5f28dfe4c25c65f66258b842ec86159b36dd65f50cc8e2ea9f0b3e8427",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/result.json": "f332a209d979e3c2f5633f7df5cf6efe5dbd4fb9451f9b2546ff0ee52dc3cd14",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/review.json": "3eea8146b8f1a3dc5435f5f29dc8a79e9c3cd9d156ba49daabbcf3bec028409a",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/raw-validation.json": "f2e2c91f4942d0864376936deed16a0e8def70679bf3a5ae749d02e4af9874e8",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/time_ema-validation.json": "b7f9bddfd26a5f365bdf44333d381638cbacf34bcfb7e44a371c9e03e687e723",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-02/result.json": "64ff7acaaa3d6ba3e445b5aa631af7d5fa4fd3764af9f494a4d36e3055126f01",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-02/review.json": "0bc03b5f0e70066b871f311380b36bf7106acbcb35f47f20529b7b3e15ffd82a",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-02/raw-validation.json": "d462c9acbcd0110e705d3ca2a3d0e42bf13c1c7d9f820bf6864dbe065aa4a284",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-02/time_ema-validation.json": "9a96e54d866ac5c0d1fc14d39bb7093e8efb2e0199d31fc089b0ed1976489a27",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-03/result.json": "07e4b495c65b4396ba23bc522a1e6a4791a3dc3a697cab2ea4c35df89bab62c1",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-03/review.json": "68a2a3a6c62539fe00a68eb22a56eb95f1d0fafefd789714a00e15888c0f3fef",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-03/raw-validation.json": "0bb39e7ea1dee6f04971a4c6a6de08a78e8ebbc555f9298b0d5a4e4159171c53",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-03/time_ema-validation.json": "8685b2d2e33243eeb63b6499deeef35ba42dcb9d539dabc1ace4524adb436e97",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-04/result.json": "247f92112cdf4d3c33fea17eaf9c767eb62e03e6c17f21f9f2c1136c3e83ce3b",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-04/review.json": "44f337327287b3f31d72925067e9beb86f41e709f8eba16f2817f4a44baf94a4",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-04/raw-validation.json": "38a5b68bb44583e25373c0c4f64702c754a7785d840f38409783fc7dc82d9f46",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-04/time_ema-validation.json": "7da06d4209fbe547aa68c03e18ab6a2422dbc1b41c6f8becbb0df394542b4beb",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/result.json": "2d4b48edc06ff6ebe402f08e1d096d1523c3d586d13c32c07ba62cf137c41858",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/review.json": "dc4585a1962ddf1ca26191b620f9ea1853327690c7af0ddbd6e6739da1fb13b9",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/raw-validation.json": "64416fed44ea64b90a939050482349cf9446a8e74cd6affed4bc54e0f1515eb4",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/time_ema-validation.json": "766e084c387343f3f87150b60b59ccaa6b3eb2567554bd3a12c63174c9f3fcd0"
+  },
+  "scope": "Native complete7200/14400-second horizon recipes, including their schedules. RAW secondary. No generation-quality, isolated exposure effect or transfer claim.",
+  "test_opened": false
+}

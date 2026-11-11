@@ -1,14 +1,14 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_PREPARATION",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 61573,
-  "next_action": "Native horizon slot05 (bundle3 long14400-second run) is active under supervisor74555 and worker74559. Initial74 sampler hashes match accepted slot04. Review its immutable result, apply the frozen three-pair decision and complete all144 first-generation ratings before qualifying the queued composer-FP32 quality study. No extra worker or unchanged-state commits.",
+  "active_session": null,
+  "next_action": "Audit installed optimizer policy and integrate composer-only FP32 outside frozen namespaces. Freeze bounded new integration/restart/timing fixture; then freeze fresh quality panel after complete measured admission.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
@@ -16,7 +16,7 @@
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
   "updated_at": "2026-11-11T12:51:26.873084+00:00",
-  "active_worker_pid": 74559,
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 5,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -60,7 +60,7 @@
     }
   ],
   "latest_learning": "Fresh native short bundle3 accepted at EMA CE4.978908467677734 and RAW4.987165520563606 after7200.240503477training seconds/21125updates. All120 first generations retained. The first two long-minus-short EMA deltas are -0.14224294127490733 and -0.14657427527857259. Adoption still requires the third matched long run and frozen gates.",
-  "phase": "native_horizon_confirmation",
+  "phase": "composer_fp32_quality_integration",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Before slot05 free22349234176bytes; remaining full-panel requirement17918930546bytes includes future retained outputs, serialization overlap, failed-write allowance and10GiB reserve. No cleanup needed.",
+  "capacity_status": "Native panel complete; twelve final weights retained and verified. Measure complete FP32 qualification/panel forecast before new numerical admission.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -161,7 +161,7 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/GENERAL_RSI_NATIVE_HORIZON_PROTOCOL.md",
+  "next_design": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_NEXT.md",
   "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "exposure_completed_slots": [
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "New slot05 result.json, failure/guard stop, supervisor exit, or human steering. Routine active training requires no notification or metadata commit.",
+  "wake_condition": "New integration result, resource change, or human steering.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -509,11 +509,23 @@
       "raw_ce": 4.987165520563606,
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-04/review.json"
+    },
+    {
+      "slot": 5,
+      "horizon": "long",
+      "bundle": 3,
+      "steps": 42205,
+      "training_seconds": 14400.109626883,
+      "worker_seconds": 14765.069256542018,
+      "time_ema_ce": 4.843388298598813,
+      "raw_ce": 4.854924941326703,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/review.json"
     }
   ],
   "queued_next_campaign": {
     "id": "general-rsi-composer-fp32-quality-001",
-    "status": "human_authorized_queued_after_native_horizon_completion",
+    "status": "active_integration_preparation_after_native_horizon_completion",
     "design": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_NEXT.md",
     "authorization": "Run the training-quality comparison after the current panel finishes. Keep the original failure recorded; do not use the 0.01% threshold as a quality veto.",
     "launch_condition": "All six native horizon slots reviewed, frozen decision and fixed generation evaluation completed; new optimizer integration/restart/timing checks and measured full resource admission passed.",
@@ -523,5 +535,11 @@
       "byte_composer_fp32"
     ],
     "preserve_original_failure": true
-  }
+  },
+  "native_horizon_decision": "research/tokenizer-evidence/general-rsi-native-horizon-001/decision.json",
+  "native_horizon_generation_evaluation": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-evaluation/summary.json",
+  "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
+  "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
+  "selected_native_horizon_seconds": 14400,
+  "latest_hypothesis": "Doubling native training time improves validation CE under horizon-matched schedules, but does not resolve weak generation. Composer FP32 training quality remains unmeasured; original failed arithmetic qualification stays unchanged."
 }
