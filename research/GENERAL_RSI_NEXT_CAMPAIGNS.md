@@ -1,5 +1,24 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## Latest human priority — 2026-11-10 Pacific
+
+The human explicitly authorized: "Yes, let's run that training-quality comparison
+after the current panel finishes. Keep the original failure recorded, but don't
+use the 0.01% threshold as a quality veto."
+
+Finish all six native-horizon slots, their frozen decision and fixed generation
+evaluation first. Then execute the separately identified composer FP32 training
+comparison in `GENERAL_RSI_COMPOSER_FP32_QUALITY_NEXT.md`, after its bounded
+integration checks and prospective resource admission. This is the next priority
+ahead of other optional research. Do not interrupt or change the active panel.
+Preserve the original FP32 and reuse failures and their frozen rules. The new
+authorization supersedes their prohibition on a subsequent FP32 quality study,
+but does not reclassify those failures or authorize a reuse arm. FP64 direction
+agreement, including the old 1e-4 threshold, is diagnostic in the new study.
+
+Sections below retain the earlier sequence and its historical prerequisites;
+completed studies must not be repeated. The active state identifies progress.
+
 The human requested this sequence: finish the existing longer-training comparison
 unchanged; compare native and byte at equal Mac training time with suitable
 schedules; add fixed generation measurements alongside validation loss; then

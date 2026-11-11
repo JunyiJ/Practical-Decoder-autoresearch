@@ -15,7 +15,7 @@
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-11T04:29:38.933014+00:00",
+  "updated_at": "2026-11-11T06:13:08.617659+00:00",
   "active_worker_pid": 12220,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -474,5 +474,18 @@
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/review.json"
     }
-  ]
+  ],
+  "queued_next_campaign": {
+    "id": "general-rsi-composer-fp32-quality-001",
+    "status": "human_authorized_queued_after_native_horizon_completion",
+    "design": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_NEXT.md",
+    "authorization": "Run the training-quality comparison after the current panel finishes. Keep the original failure recorded; do not use the 0.01% threshold as a quality veto.",
+    "launch_condition": "All six native horizon slots reviewed, frozen decision and fixed generation evaluation completed; new optimizer integration/restart/timing checks and measured full resource admission passed.",
+    "arithmetic_agreement_role": "diagnostic_only",
+    "arms": [
+      "existing_byte",
+      "byte_composer_fp32"
+    ],
+    "preserve_original_failure": true
+  }
 }
