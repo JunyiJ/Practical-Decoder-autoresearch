@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "NATIVE_HORIZON_SLOT_REVIEWED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 18331,
-  "next_action": "Wait for native horizon slot00 result or failure while worker60333 holds the shared lock. On completion, verify supervisor exit and run general_rsi_native_horizon_review_v1, then continue frozen six-slot order. CE analysis and inherited generation aggregation are implemented and checked. After six accepted endpoints, prepare blind annotations and aggregate all144 first outputs. No repeat prerequisites, broad scans or unchanged-state commits.",
+  "active_session": null,
+  "next_action": "Launch frozen native horizon slot01, the paired14400-second long run, under existing source/seed/resource binding. Do not evaluate adoption or annotate selected generations before the complete panel.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-10T22:19:26.793988+00:00",
-  "active_worker_pid": 60333,
+  "updated_at": "2026-11-11T00:18:30.076361+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 0,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Fresh native horizon panel launched after source/AST checks and complete capacity admission. Initial21 updates finite with MPS driver2493300736bytes. This is execution progress, not a quality result.",
+  "latest_learning": "Fresh native short seed1 accepted at EMA CE4.979162949764147 and RAW4.984561965659205 after7200.226s/20230updates. All24 first generations retained. Longer-horizon hypothesis remains untested until paired long endpoint and all three fresh pairs complete.",
   "phase": "native_horizon_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Native horizon full panel admitted: required19058917376bytes including capped outputs, serialization, metadata, failure allowance and10GiB reserve; available24628568064bytes. No cleanup needed.",
+  "capacity_status": "Before slot01 free24332275712bytes; conservative remaining full-panel requirement18830920010bytes includes all future output caps, overlap, failed-write allowance and10GiB reserve. No cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -448,5 +448,19 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "New slot result.json, failure/guard stop, supervisor exit, or human steering. Routine active training requires no notification or new metadata commit."
+  "wake_condition": "New slot result.json, failure/guard stop, supervisor exit, or human steering. Routine active training requires no notification or new metadata commit.",
+  "native_horizon_completed_slots": [
+    {
+      "slot": 0,
+      "horizon": "short",
+      "bundle": 1,
+      "steps": 20230,
+      "training_seconds": 7200.225786697,
+      "worker_seconds": 7392.568534665974,
+      "time_ema_ce": 4.979162949764147,
+      "raw_ce": 4.984561965659205,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-00/review.json"
+    }
+  ]
 }
