@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_SLOT_COMPLETED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 94358,
-  "next_action": "Allow quality slot02 byte_composer_fp32 bundle2 to finish10240updates. Review exact endpoint and all24 first generations, then launch paired existing-byte slot03. Keep all six slots and gates unchanged.",
+  "active_session": null,
+  "next_action": "Launch frozen slot03 existing-byte bundle2 to complete the second fresh pair. Keep all six slots and acceptance gates unchanged.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-11T21:02:50.424320+00:00",
-  "active_worker_pid": 46825,
+  "updated_at": "2026-11-11T22:56:38.957955+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "First pair accepted: H200 existing-byte 5.151609445086, FP32 5.142816762712; all10240 paired batch hashes equal, 48 first generations retained. FP32 training6405.5588s versus baseline6401.6143s. No quality or speed adoption claim.",
+  "latest_learning": "Slot02 FP32 bundle2 completed10240updates,342H200 snapshots and24first generations. H200 CE5.140645409123,RAW5.148660574515. Total72 first generations retained. Compare only with its frozen paired baseline slot03 once completed.",
   "phase": "composer_fp32_quality_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "New slot02 result.json, failure/guard stop, supervisor exit, materially changed capacity or human steering. No metadata commits or notifications for healthy unchanged training.",
+  "wake_condition": "Launch frozen slot03 after verified free lock and complete remaining resource admission.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -541,7 +541,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "First fresh pair H200 FP32-minus-existing-byte delta -0.008792682374 nats; small favorable observed difference, below the panel mean-gain criterion of 0.02. Two fresh pairs remain; no final quality decision.",
+  "latest_hypothesis": "First pair favors FP32 by0.008792682374 nats. Second FP32 endpoint accepted at H200 CE5.140645409123; its paired baseline remains unmeasured. No final quality decision.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -569,6 +569,18 @@
       "training_seconds": 6405.55877664,
       "worker_seconds": 6635.008877709042,
       "review": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/review.json",
+      "first_generations": 24
+    },
+    {
+      "slot": 2,
+      "arm": "byte_composer_fp32",
+      "bundle": 2,
+      "steps": 10240,
+      "h200_ce": 5.140645409123132,
+      "raw_ce": 5.148660574515326,
+      "training_seconds": 6399.496592052,
+      "worker_seconds": 6628.185473375022,
+      "review": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/review.json",
       "first_generations": 24
     }
   ],
