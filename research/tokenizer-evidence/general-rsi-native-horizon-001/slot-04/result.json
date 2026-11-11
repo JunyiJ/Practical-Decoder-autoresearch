@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "binding": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390",
+  "slot": {
+    "slot": 4,
+    "phase": "confirmation",
+    "arm": "native",
+    "horizon": "short",
+    "bundle": 3,
+    "lr": 0.0025,
+    "budget_ns": 7200000000000,
+    "roles": {
+      "native_initializer": 62111022301,
+      "composer_initializer": 62111022302,
+      "train_sampler": 62111022303,
+      "validation_sampler": 62111022304
+    },
+    "timeout_seconds": 10800
+  },
+  "steps": 21125,
+  "training_ns": 7200240503477,
+  "overshoot_ns": 240503477,
+  "snapshots": 6976,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 102.77194166346453,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-native-horizon-001/slot-04/raw.pt",
+        "size": 113998683,
+        "sha256": "9a30c6ea3eebdae23129acb26468169543f3fb57bd3ab0a4283a9c2c82491feb"
+      },
+      "ce": 4.987165520563606,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 4.972994427876533
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.04392476599163
+        }
+      },
+      "score_seconds": 22.165346957976,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-native-horizon-001/slot-04/time_ema.pt",
+        "size": 113998683,
+        "sha256": "4e364e40aec8cfdc67355a5de17afe96c8a7b64d5af38c92fc90f62b194fb95b"
+      },
+      "ce": 4.978908467677734,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 4.964899517955566
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.035018284544203
+        }
+      },
+      "score_seconds": 21.62589970813133,
+      "generation_seconds": 38.98459200002253
+    }
+  ],
+  "test_opened": false
+}

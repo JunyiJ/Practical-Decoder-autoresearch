@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_SLOT_COMPLETED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 51806,
-  "next_action": "Native horizon slot04 (bundle3 short7200-second run) is active under supervisor29594 and worker29597. Wait for immutable result or failure, review with general_rsi_native_horizon_review_v1, then proceed to slot05. No extra worker or unchanged-state commits.",
+  "active_session": null,
+  "next_action": "Launch frozen native horizon slot05, bundle3 long14400-second run, after shared-lock and process checks. Then apply the frozen three-pair decision and complete all144 first-generation ratings before the queued composer-FP32 quality study.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-11T10:46:36.186407+00:00",
-  "active_worker_pid": 29597,
+  "updated_at": "2026-11-11T12:50:41.320042+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Fresh native long bundle2 accepted at EMA CE4.823867242842183 and RAW4.83798990328431 after14400.139115873training seconds/42203updates. Pair2 EMA long-minus-short delta-0.14657427527857259; both sources improve and RAW agrees. Pair1 delta-0.14224294127490733. All96 first generations retained. Adoption still requires all three fresh pairs and frozen gates.",
+  "latest_learning": "Fresh native short bundle3 accepted at EMA CE4.978908467677734 and RAW4.987165520563606 after7200.240503477training seconds/21125updates. All120 first generations retained. The first two long-minus-short EMA deltas are -0.14224294127490733 and -0.14657427527857259. Adoption still requires the third matched long run and frozen gates.",
   "phase": "native_horizon_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Before slot04 free22664024064bytes; remaining full-panel requirement18146927912bytes includes future retained outputs, serialization overlap, failed-write allowance and10GiB reserve. No cleanup needed.",
+  "capacity_status": "Before slot05 free22349234176bytes; remaining full-panel requirement17918930546bytes includes future retained outputs, serialization overlap, failed-write allowance and10GiB reserve. No cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "New slot04 result.json, failure/guard stop, supervisor exit, or human steering. Routine active training requires no notification or metadata commit.",
+  "wake_condition": "Ready to launch slot05 under the frozen admission and shared worker lock.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -497,6 +497,18 @@
       "raw_ce": 4.83798990328431,
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-03/review.json"
+    },
+    {
+      "slot": 4,
+      "horizon": "short",
+      "bundle": 3,
+      "steps": 21125,
+      "training_seconds": 7200.240503477,
+      "worker_seconds": 7406.452621083939,
+      "time_ema_ce": 4.978908467677734,
+      "raw_ce": 4.987165520563606,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-04/review.json"
     }
   ],
   "queued_next_campaign": {
