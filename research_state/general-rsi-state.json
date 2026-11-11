@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_SLOT_COMPLETED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 77239,
-  "next_action": "Native horizon slot01 (paired14400-second long run) is active under supervisor77600 and worker77602. Wait for immutable result or failure, review with general_rsi_native_horizon_review_v1, then proceed to slot02. Initial26 sampler hashes match accepted slot00. No extra worker or unchanged-state commits.",
+  "active_session": null,
+  "next_action": "Launch frozen slot02, bundle2 short7200-second run, after accepted slot01 review and full remaining capacity check.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-11T00:19:21.547791+00:00",
-  "active_worker_pid": 77602,
+  "updated_at": "2026-11-11T04:28:43.604496+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Fresh native short seed1 accepted at EMA CE4.979162949764147 and RAW4.984561965659205 after7200.226s/20230updates. All24 first generations retained. Longer-horizon hypothesis remains untested until paired long endpoint and all three fresh pairs complete.",
+  "latest_learning": "Fresh native pair1 completed: 14400-second EMA CE 4.83692000848924 versus 7200-second 4.979162949764147, paired delta -0.14224294127490733. Both source losses improve; RAW agrees. Supports longer-horizon hypothesis in one seed only. Adoption remains undecided until all three fresh pairs and frozen bootstrap gates complete. All48 first generations retained.",
   "phase": "native_horizon_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "New slot01 result.json, failure/guard stop, supervisor exit, or human steering. Routine active training requires no notification or metadata commit.",
+  "wake_condition": "Launch slot02 now; thereafter new result, failure/guard stop, supervisor exit, or human steering.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -461,6 +461,18 @@
       "raw_ce": 4.984561965659205,
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-00/review.json"
+    },
+    {
+      "slot": 1,
+      "horizon": "long",
+      "bundle": 1,
+      "steps": 40579,
+      "training_seconds": 14400.341240735,
+      "worker_seconds": 14744.216563750058,
+      "time_ema_ce": 4.83692000848924,
+      "raw_ce": 4.848720688950439,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/review.json"
     }
   ]
 }
