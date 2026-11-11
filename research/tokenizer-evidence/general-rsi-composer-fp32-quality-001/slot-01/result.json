@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "binding": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
+  "slot": {
+    "slot": 1,
+    "phase": "confirmation",
+    "bundle": 1,
+    "arm": "byte_composer_fp32",
+    "lr": 0.0025,
+    "horizon": 10240,
+    "roles": {
+      "native_initializer": 62111118001,
+      "composer_initializer": 62111118002,
+      "train_sampler": 62111118003,
+      "validation_sampler": 62111118004
+    },
+    "timeout_seconds": 14400
+  },
+  "steps": 10240,
+  "training_ns": 6405558776640,
+  "lost_training_ns": 0,
+  "snapshots": 342,
+  "checkpoint_seconds_this_attempt": 11.53212087508291,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-composer-fp32-quality-001/slot-01/raw.pt",
+        "size": 65441197,
+        "sha256": "08b5e6262ef7fce40e59fc6961b8222822c4b2410409711093835bfc6b8ba8fd"
+      },
+      "ce": 5.146882136606758,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.131911919464945
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.2068421021243125
+        }
+      },
+      "score_seconds": 55.685734334168956,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "h200",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-composer-fp32-quality-001/slot-01/h200.pt",
+        "size": 65441197,
+        "sha256": "f2684623ea9f05625d4a9fda44db4b33eacbe4e2401f39bb3f35d4d6f24fc8de"
+      },
+      "ce": 5.1428167627121715,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.1267694893905285
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.207090643705458
+        }
+      },
+      "score_seconds": 54.39549074997194,
+      "generation_seconds": 88.86144366604276
+    }
+  ],
+  "test_opened": false
+}
