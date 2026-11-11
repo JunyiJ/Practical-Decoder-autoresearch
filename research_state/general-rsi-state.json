@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_SLOT_COMPLETED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 9963,
-  "next_action": "Native horizon slot02 (bundle2 short7200-second run) is active under supervisor12218 and worker12220. Wait for immutable result or failure, review with general_rsi_native_horizon_review_v1, then proceed to paired slot03. No extra worker or unchanged-state commits.",
+  "active_session": null,
+  "next_action": "Launch frozen slot03, bundle2 long14400-second run, after accepted slot02 review and full remaining capacity check.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-11T06:13:08.617659+00:00",
-  "active_worker_pid": 12220,
+  "updated_at": "2026-11-11T06:35:42.959294+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Fresh native pair1 completed: 14400-second EMA CE 4.83692000848924 versus 7200-second 4.979162949764147, paired delta -0.14224294127490733. Both source losses improve; RAW agrees. Supports longer-horizon hypothesis in one seed only. Adoption remains undecided until all three fresh pairs and frozen bootstrap gates complete. All48 first generations retained.",
+  "latest_learning": "Fresh native short bundle2 accepted at EMA CE4.970441518120755 and RAW4.977545243709278 after7200.130training seconds/20262updates. All72 first generations across completed slots retained. Pair1 longer-horizon improvement remains -0.14224294127490733; pair2 requires its matched long run before interpretation. Adoption still requires all three fresh pairs and frozen gates.",
   "phase": "native_horizon_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Before slot01 free24332275712bytes; conservative remaining full-panel requirement18830920010bytes includes all future output caps, overlap, failed-write allowance and10GiB reserve. No cleanup needed.",
+  "capacity_status": "Before slot03 free22809137152bytes; remaining full-panel requirement18374925278bytes includes future retained outputs, serialization overlap, failed-write allowance and10GiB reserve. No cleanup needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "New slot02 result.json, failure/guard stop, supervisor exit, or human steering. Routine active training requires no notification or metadata commit.",
+  "wake_condition": "Launch slot03 now; thereafter new result, failure/guard stop, supervisor exit, or human steering.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -473,6 +473,18 @@
       "raw_ce": 4.848720688950439,
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/review.json"
+    },
+    {
+      "slot": 2,
+      "horizon": "short",
+      "bundle": 2,
+      "steps": 20262,
+      "training_seconds": 7200.129974455,
+      "worker_seconds": 7401.811590458965,
+      "time_ema_ce": 4.970441518120755,
+      "raw_ce": 4.977545243709278,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-02/review.json"
     }
   ],
   "queued_next_campaign": {
