@@ -1,0 +1,27 @@
+{
+  "torch_version": "2.14.1",
+  "installed_muon_source": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/optim/_muon.py",
+  "installed_muon_sha256": "c17abbb8af4c935d125b189c38d3cbaec295f1cfd232d2712bdb75e13184b972",
+  "policy": {
+    "momentum": 0.95,
+    "nesterov": true,
+    "coefficients": [
+      3.4445,
+      -4.775,
+      2.0315
+    ],
+    "ns_steps": 5,
+    "norm": "Frobenius norm clamped at1e-7",
+    "lr": "base*.5*.2*sqrt(max(rows,columns))",
+    "child_weight_decay": 0.0,
+    "independent_decay": 6e-05,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-06
+  },
+  "change": "Nine composer Muon matrices only: replace pre-normalization BF16 cast by FP32 clone. Noncomposer Muon calls installed functional; AdamW unchanged. No batch reuse.",
+  "old_component_policy_difference": "None in normalization/momentum/coefficients/scaling; old component was isolated and omitted enclosing model independent decay. New integration retains enclosing decay.",
+  "original_failure_sha256": "81e14656342fa8ea1194620d96c714026b5b72801f84a58370929fb327fde379"
+}
