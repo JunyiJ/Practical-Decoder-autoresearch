@@ -1,0 +1,74 @@
+{
+  "at": "2026-11-12T17:42:17.127088+00:00",
+  "free_bytes": 21275488256,
+  "target_including_extra_2GiB": 21246838858,
+  "margin_over_target_bytes": 28649398,
+  "cache_deletions_verified": 6159,
+  "regenerated_cache_paths": [
+    "/Users/junyi/Library/Caches/Google/Chrome/Default/Code Cache/js/5704ce97aef500dc_0",
+    "/Users/junyi/Library/Caches/Google/Chrome/Default/Cache/Cache_Data/edc46a21f180f89c_0",
+    "/Users/junyi/Library/Caches/Google/Chrome/Default/Cache/Cache_Data/797cb3037c57a371_0",
+    "/Users/junyi/Library/Caches/Google/Chrome/Default/Cache/Cache_Data/d421d1e166145c94_0",
+    "/Users/junyi/Library/Caches/Codex/Default/Cache/Cache_Data/f44fab8e426fab64_0",
+    "/Users/junyi/Library/Caches/Codex/Default/Cache/Cache_Data/3ed91ad246e1d7a8_0"
+  ],
+  "verification_note": "First absence-only verification detected expected regeneration by running apps. All recreated paths have changed inode or ctime. No regenerated entries were deleted again.",
+  "previous_checkpoint_cleanup": {
+    "status": "completed",
+    "files_removed": 66,
+    "allocated_bytes_removed": 17519001600,
+    "before": {
+      "free_bytes": 11381538816,
+      "required_free_bytes": 11346444514,
+      "margin_bytes": 35094302,
+      "target_with_extra_2GiB": 13493928162,
+      "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json"
+    },
+    "after": {
+      "free_bytes": 28900712448,
+      "required_free_bytes": 11346444514,
+      "margin_bytes": 17554267934,
+      "target_with_extra_2GiB": 13493928162,
+      "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json"
+    },
+    "skipped": [],
+    "protected_hashes_verified": 1036,
+    "dependencies": {
+      "panel": "research/tokenizer-evidence/general-rsi-exposure-001/plan.json",
+      "panel_sha256": "f4bacb74f0b82627e1a5639890f53b5911d2d2bba05fa0c8b0276c17fde19ad6",
+      "next_plan_sha256": "662b0de21e4599e6bd7155ffcebb8a6ac59049c1bdb25e73dd9bc9d45c8ac7b8",
+      "candidate_study_references_in_active_plans": 0
+    },
+    "no_workers_stopped": true,
+    "completed_unix": 1794287943.973057
+  },
+  "training_progress": {
+    "pid": 72296,
+    "slot": 1,
+    "step": 24960,
+    "spent_ns": 8687099774260,
+    "budget_ns": 14400000000000,
+    "loss": 4.818865776062012
+  },
+  "progress_age_seconds": 43.04563593864441,
+  "guard": {
+    "elapsed_seconds": 8871.066248500021,
+    "limits": {
+      "reserve_bytes": 10737418240,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 22800
+    },
+    "observation": {
+      "free_bytes": 21275488256,
+      "peak_rss_bytes": 954335232
+    },
+    "pid": 72296,
+    "reason": null,
+    "status": "watching"
+  },
+  "locks": {
+    "research_state/external-cache-maintenance.lock": "available",
+    "research_state/tokenizer-worker-lock/.lock": "held"
+  },
+  "next_action": "Continue the unchanged active context-length slot01. Prior checkpoint cleanup is complete. Existing maintenance schedule can evict newly eligible caches; do not stop training or repeat broad scans without changed evidence."
+}
