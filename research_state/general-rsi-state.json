@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_SLOT_COMPLETED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 36373,
-  "next_action": "Monitor frozen slot03 alternating CE/pseudo continuation from parent03. On successful supervisor exit, review paired natural CE prefix against slot02, preserve the second-pair result, then advance to slot04. Complete all three pairs before decision.",
+  "active_session": null,
+  "next_action": "Launch frozen slot04 ordinary-CE control from third selected parent, then review and execute paired slot05. Complete frozen decision and all144 first-generation ratings.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T06:40:16.142561+00:00",
-  "active_worker_pid": 33937,
+  "updated_at": "2026-11-12T07:07:03.919451+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Slot02 second-parent CE control accepted:3506updates/1200.290195s, time-EMA CE4.8514456982, RAW4.8766929991. Three accepted runs retain72first outputs. First-pair candidate regression remains+0.1416496312; no new paired or full-panel conclusion.",
+  "latest_learning": "Slot03 accepted:3467updates/1200.328832s, time-EMA CE5.0067426033, RAW5.0480475979. Second candidate-minus-control deltas +0.1552969051 time-EMA and +0.1713545988 RAW. Both completed pairs regress;96first outputs retained. Full three-pair decision pending.",
   "phase": "native_pseudo_repetition_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Storage recovered: free21407010816bytes after audited cleanup; full incremental forecast19058917376 plus2GiB extra headroom fits. Recheck at admission; full worker/timing/seed freeze still required.",
+  "capacity_status": "Current panel remaining full requirement 18146924456bytes, actual free 20443299840bytes after four retained endpoints. Admission reserve and failure allowance unchanged.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -449,7 +449,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Next continuation can perform concrete training-span inventory and loss integration. No worker active; no unchanged scans or historical study reruns needed.",
+  "wake_condition": "Review each newly completed endpoint and advance the frozen serial panel. No repeated unchanged scans.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Targeting synthetic redundant copies while retaining ordinary CE may separate undesirable loops from useful natural repetition better than blanket repeat penalties. This remains an unvalidated new objective recipe; a prospective three-parent paired continuation comparison must test prediction quality.",
+  "latest_hypothesis": "The targeted pseudo-repetition recipe is challenged by valid validation-CE regressions in both completed pairs. Finish the frozen third pair and generation evaluation to determine the complete quality tradeoff without retuning.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -645,6 +645,7 @@
   "pseudo_repetition_completed_slots": [
     0,
     1,
-    2
+    2,
+    3
   ]
 }

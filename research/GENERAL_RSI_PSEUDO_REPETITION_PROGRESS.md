@@ -1,8 +1,8 @@
 # Pseudo-repetition continuation progress
 
 The frozen six-run panel is incomplete. No quality decision is available.
-The first pair challenges the targeted-objective hypothesis: the candidate
-regresses on validation CE. Complete all three pairs and the fixed generation
+The first two pairs challenge the targeted-objective hypothesis: the candidate
+regress on validation CE. Complete all three pairs and the fixed generation
 evaluation before the frozen decision. Test remains unopened.
 
 | Slot | Parent | Recipe | Updates | Training seconds | Time-EMA CE | RAW CE | First outputs |
@@ -10,6 +10,7 @@ evaluation before the frozen decision. Test remains unopened.
 |00|Native-horizon01|Ordinary CE|3,493|1,200.128546|4.8625809893|4.8875414003|24|
 |01|Native-horizon01|CE / pseudo|3,464|1,200.285049|5.0042306204|5.0462512488|24|
 |02|Native-horizon03|Ordinary CE|3,506|1,200.290195|4.8514456982|4.8766929991|24|
+|03|Native-horizon03|CE / pseudo|3,467|1,200.328832|5.0067426033|5.0480475979|24|
 
 Slot00 passed the bound execution review in
 `tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/review.json`.
@@ -33,5 +34,15 @@ weights and24 first outputs remain retained. Its paired candidate is pending.
 The remaining complete storage requirement is18,374,922,718bytes after accounting
 for retained endpoints, versus20,684,509,184 actual free bytes at this boundary.
 
-Next execute paired slot03 from parent03. Keep the frozen objective, roles,
-resources and acceptance rules unchanged.
+Slot03 passed execution review, including its1,734 ordinary-CE batch hashes
+against the paired control prefix. Its1,733 pseudo updates used1,160,520 valid
+penalty targets with no saturation. Guarded time was1,308.216052s with no
+failure or recovery charge. Both final weights and all24 first outputs remain
+retained. Second-pair candidate-minus-control deltas are+0.1552969051time-EMA
+and+0.1713545988RAW nats/token. Both completed pairs regress; this is valid
+quality evidence. The full three-pair decision and generation ratings remain pending.
+
+Remaining complete storage requirement is18,146,924,456bytes, compared with
+20,443,299,840actual free bytes after four accepted runs and96 first outputs.
+Next execute slot04 ordinary-CE control from parent05, then paired slot05.
+Keep the frozen objective, roles, resources and acceptance rules unchanged.

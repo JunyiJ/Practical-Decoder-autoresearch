@@ -12,8 +12,9 @@ ceiling. Storage19,058,917,376bytes plus2GiB headroom fits21,405,052,928 free by
 Slots00/01 completed and passed execution review, retaining48 first completions.
 The first candidate-minus-control time-EMA delta is+0.141650nats/token, a valid
 regression that challenges the hypothesis. It is not an implementation failure.
-Slot02 second-parent control also passed:time-EMA CE4.851446, with72 total first
-outputs retained across three runs. Next execute paired slot03 unchanged.
+Slots02/03 also passed, with a second candidate-minus-control time-EMA delta
+of+0.155297nats/token. Both completed pairs regress. Four accepted runs retain96
+first outputs. Next execute slot04 control and slot05 candidate unchanged.
 No full-panel quality decision or generation-rating conclusion is available.
 
 

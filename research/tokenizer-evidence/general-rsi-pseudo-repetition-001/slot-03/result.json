@@ -1,0 +1,81 @@
+{
+  "status": "completed",
+  "binding": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
+  "slot": {
+    "slot": 3,
+    "phase": "confirmation",
+    "arm": "native",
+    "recipe": "native_pseudo_repetition",
+    "bundle": 2,
+    "parent": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-native-horizon-001/slot-03/time_ema.pt",
+      "size": 113998683,
+      "sha256": "7f37f13b87a3c859a625980577b4725d0d421cbc05ffef0a5374a200310c0828",
+      "slot": 3,
+      "binding": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390"
+    },
+    "roles": {
+      "native_initializer": 62111205230201,
+      "composer_initializer": 62111205230202,
+      "train_sampler": 62111205230203,
+      "validation_sampler": 62111205230204
+    },
+    "pseudo_seed": 62111205230205,
+    "lr": 0.00025,
+    "budget_ns": 1200000000000,
+    "timeout_seconds": 2400
+  },
+  "steps": 3467,
+  "training_ns": 1200328832219,
+  "overshoot_ns": 328832219,
+  "snapshots": 1152,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 17.11525320704095,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-03/raw.pt",
+        "size": 113999131,
+        "sha256": "4ef53fb21a776e400a854312b587a3952c90d7a547eb990a77ee00a350d0f110"
+      },
+      "ce": 5.048047597887534,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.0308573070183735
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.116899588342146
+        }
+      },
+      "score_seconds": 22.117349250009283,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-03/time_ema.pt",
+        "size": 113999131,
+        "sha256": "dfab9abecada17b80b855fa4eb16d2cb4f2efc510f4d5e5f0d87e172b234675b"
+      },
+      "ce": 5.006742603340094,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 4.989885125604004
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.074261582804046
+        }
+      },
+      "score_seconds": 21.68486329098232,
+      "generation_seconds": 37.91772649995983
+    }
+  ],
+  "test_opened": false
+}
