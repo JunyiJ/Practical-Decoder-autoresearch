@@ -19,12 +19,16 @@ zero adds+0.035367nats/token, both positive in all three parents. See
 `GENERAL_RSI_PSEUDO_ACCUMULATED_RESULTS.md`. This supports accumulated effects;
 ordinary CE also drifts upward from parents, so it is not a model-improvement claim.
 
-The pinned released DITTO implementation accumulates mixed minibatches before one
-optimizer advance. Next design a minimal joint-gradient integration/diagnostic
-with explicit loss-normalization and clipping controls, fresh roles, and complete
-cost admission. Qualify only genuinely new accumulation/state-accounting needs.
-No worker, coefficient sweep, batch-reuse arm or new quality panel is active or
-admitted. Preserve all closed decisions, selected/fresh weights and first outputs.
+The joint-gradient integration is now qualified in all three arms: full CE,
+half CE, and half CE plus half pseudo before one clip/optimizer advance. All264
+parameter-gradient checks matched exactly, and all three complete save/restore/
+replay checks passed. See `GENERAL_RSI_JOINT_GRADIENT_INTEGRATION_RESULTS.md`.
+Measured update times are0.343/0.354/0.486seconds; total qualification111.703seconds.
+Next implement and freeze a fresh three-parent100-natural-update diagnostic with
+disjoint natural and synthetic repetition probes, explicit normalization/clipping
+contrasts, rotated order and full measured cost admission. No worker or quality
+panel is active. Preserve all closed decisions, selected/fresh weights and first
+outputs. Do not repeat the completed integration or add a batch-reuse arm.
 
 ## Completed priority — 2026-11-11 Pacific
 

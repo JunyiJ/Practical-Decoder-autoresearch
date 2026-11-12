@@ -1,0 +1,34 @@
+{
+  "admitted": true,
+  "created_unix": 1794473843.239082,
+  "plan_sha256": "b60d72721a0e71ec2d8db6d5950a5eb1ae64ebdcdab593b5d96cce600446b204",
+  "actual_free_bytes": 19920961536,
+  "required_free_bytes": 13220446208,
+  "extra_headroom_bytes": 2147483648,
+  "retained_restart_cap_bytes": 1610612736,
+  "failure_payload_cap_bytes": 268435456,
+  "serialization_overlap_bytes": 536870912,
+  "metadata_cap_bytes": 67108864,
+  "reserve_bytes": 10737418240,
+  "cost_components_seconds": {
+    "training": 72,
+    "replay": 24,
+    "context_loads": 70,
+    "checkpoint_io": 18,
+    "gradient_oracle": 6,
+    "bindings": 15,
+    "clones_and_digests": 30
+  },
+  "forecast_seconds": 235,
+  "ceiling_seconds": 600,
+  "measured_basis": "Prior integration checkpoint445033525bytes, native update0.348804s, pseudo update0.370253s. New mixture costs measured here. Overhead entries are allowances, not new measurements.",
+  "checks": {
+    "nonblocking_lock_acquired": true,
+    "no_worker_on_process_inspection": true,
+    "parent_hash_verified": true,
+    "new_source_ast_valid": true,
+    "source_hash_count": 5145
+  },
+  "cleanup_needed": false,
+  "existing_outputs": "Already deducted from free space; preserve all existing artifacts."
+}

@@ -1,0 +1,75 @@
+{
+  "qualified": true,
+  "plan_sha256": "b60d72721a0e71ec2d8db6d5950a5eb1ae64ebdcdab593b5d96cce600446b204",
+  "paired_natural_prefix": 50,
+  "full_restart_exact": true,
+  "gradient_accumulation_checked": true,
+  "retained_bytes": 1335087327,
+  "peak_mps_boundary_bytes": 2510077952,
+  "total_seconds": 111.70339879090898,
+  "test_opened": false,
+  "quality_result": false,
+  "validation_scored": false,
+  "reports": [
+    {
+      "arm": "ce_full",
+      "checkpoint": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-joint-integration-001/ce_full-restart.pt",
+        "size": 445024181,
+        "sha256": "a5280849c343865e1ac290cbc45909aee6051703bfdb293048a201327de554d2"
+      },
+      "steps": 70,
+      "component_counts": {
+        "ce": 70,
+        "pseudo": 0
+      },
+      "snapshots": 23,
+      "training_ns": 24029171623,
+      "mean_update_seconds": 0.3432738803285714,
+      "exact_full_restore_and_replay": true,
+      "replayed_updates": 22,
+      "bad_component_counts_rejected": true,
+      "saturated_targets": 0
+    },
+    {
+      "arm": "ce_half",
+      "checkpoint": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-joint-integration-001/ce_half-restart.pt",
+        "size": 445023861,
+        "sha256": "6b39314f8ddc6355cc5ed0b77ac529e7d49499fad41ab859582fb147a6086762"
+      },
+      "steps": 68,
+      "component_counts": {
+        "ce": 68,
+        "pseudo": 0
+      },
+      "snapshots": 22,
+      "training_ns": 24087370491,
+      "mean_update_seconds": 0.35422603663235297,
+      "exact_full_restore_and_replay": true,
+      "replayed_updates": 21,
+      "bad_component_counts_rejected": true,
+      "saturated_targets": 0
+    },
+    {
+      "arm": "ce_pseudo_mean",
+      "checkpoint": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-joint-integration-001/ce_pseudo_mean-restart.pt",
+        "size": 445039285,
+        "sha256": "ca3707de9dffafa91436ccb04790f0ad7232fe50c3b69a56e07df89ea5b1c3eb"
+      },
+      "steps": 50,
+      "component_counts": {
+        "ce": 50,
+        "pseudo": 50
+      },
+      "snapshots": 17,
+      "training_ns": 24300230791,
+      "mean_update_seconds": 0.48600461582,
+      "exact_full_restore_and_replay": true,
+      "replayed_updates": 16,
+      "bad_component_counts_rejected": true,
+      "saturated_targets": 0
+    }
+  ]
+}

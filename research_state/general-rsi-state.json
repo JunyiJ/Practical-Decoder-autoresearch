@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "PSEUDO_JOINT_GRADIENT_DESIGN_NEXT",
+  "status": "JOINT_GRADIENT_DIAGNOSTIC_PREPARATION_NEXT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Design minimal joint-gradient integration and diagnostic, explicitly controlling loss normalization and clipping. Preserve pseudo objective/coefficient, use fresh paired roles, qualify only new accumulation/state-accounting finite/restart/timing needs, and freeze complete resource admission before execution. Do not rerun closed panels or add a batch-reuse arm; no new quality panel admitted.",
+  "next_action": "Implement and freeze the fresh three-parent/three-arm 100-natural-update joint-gradient diagnostic. Keep full CE, half CE, half CE plus half pseudo, rotated order, probes1/10/25/50/100, disjoint training-only natural and synthetic repetition probes. Freeze seeds/inventories/aggregation and complete measured resource admission before scores. New integration is qualified; do not repeat it or any closed panel.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T08:44:48.537639+00:00",
+  "updated_at": "2026-11-12T09:00:48.474844+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -449,7 +449,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Joint-gradient design and minimal integration are executable next. No active worker or capacity blocker.",
+  "wake_condition": "Diagnostic implementation and preparation are executable. No active worker or capacity blocker.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Joint CE/pseudo gradients before clipping and one optimizer advance may reduce damage from separate normalized steps, but could still harm prediction or weaken repetition suppression. Local accumulated controls and pinned released-code gradient accumulation motivate a new bounded integration/diagnostic with normalization controls.",
+  "latest_hypothesis": "New joint-gradient accumulation and full restart passed. Whether one combined advance improves natural prediction while retaining repetition suppression is unresolved; compare joint-minus-half, joint-minus-full and half-minus-full with fixed disjoint prediction/repetition probes. No quality gain established.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -669,5 +669,10 @@
   "pseudo_accumulated_diagnostic_report": "research/GENERAL_RSI_PSEUDO_ACCUMULATED_RESULTS.md",
   "pseudo_accumulated_diagnostic_analysis": "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/analysis.json",
   "pseudo_accumulated_diagnostic_review": "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/completion-review.json",
-  "ditto_released_implementation_review": "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/released-implementation-review.json"
+  "ditto_released_implementation_review": "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/released-implementation-review.json",
+  "joint_gradient_integration_plan": "research/tokenizer-evidence/general-rsi-joint-integration-001/plan.json",
+  "joint_gradient_integration_plan_sha256": "b60d72721a0e71ec2d8db6d5950a5eb1ae64ebdcdab593b5d96cce600446b204",
+  "joint_gradient_integration_admission": "research/tokenizer-evidence/general-rsi-joint-integration-001/admission.json",
+  "joint_gradient_integration_report": "research/GENERAL_RSI_JOINT_GRADIENT_INTEGRATION_RESULTS.md",
+  "joint_gradient_integration_review": "research/tokenizer-evidence/general-rsi-joint-integration-001/completion-review.json"
 }

@@ -1,0 +1,4872 @@
+{
+  "arm": "ce_pseudo_mean",
+  "checkpoint": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-joint-integration-001/ce_pseudo_mean-restart.pt",
+    "size": 445039285,
+    "sha256": "ca3707de9dffafa91436ccb04790f0ad7232fe50c3b69a56e07df89ea5b1c3eb"
+  },
+  "steps": 50,
+  "component_counts": {
+    "ce": 50,
+    "pseudo": 50
+  },
+  "snapshots": 17,
+  "training_ns": 24300230791,
+  "mean_update_seconds": 0.48600461582,
+  "exact_full_restore_and_replay": true,
+  "replayed_updates": 16,
+  "bad_component_counts_rejected": true,
+  "history": [
+    {
+      "step": 1,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.8172407746315002,
+        "post_norm": 0.8172407746315002,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 0,
+      "end_ns": 560342667,
+      "loss": 2.0894512087106705,
+      "ce_loss": 4.031221866607666,
+      "pseudo_loss": 0.14768055081367493,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "d26a77fdf256fe7b9bc4d6eb8dd604237b62583b114245219f280970ec7fb3f6",
+      "pseudo_sha256": "52fa59e1a70f445a554a04bbf9ef6ffd29290a3f06d525edf425ce8402b280bc",
+      "pseudo_rows": [
+        {
+          "inventory_index": 253215,
+          "document": 8533,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        },
+        {
+          "inventory_index": 197045,
+          "document": 6345,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 9771,
+          "document": 294,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 231629,
+          "document": 7578,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 57856,
+          "document": 1827,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 125849,
+          "document": 3911,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 162369,
+          "document": 5121,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 159930,
+          "document": 5041,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 686,
+      "saturated_targets": 0
+    },
+    {
+      "step": 2,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7406957149505615,
+        "post_norm": 0.7406957149505615,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 560342667,
+      "end_ns": 1067611792,
+      "loss": 2.120335966348648,
+      "ce_loss": 4.073891639709473,
+      "pseudo_loss": 0.1667802929878235,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "60921c002685be4816227b11dd55190abed1ecf46f7c28bb7205095a9d12102f",
+      "pseudo_sha256": "d767cc256199ef9ab37338ab8731f2fe5d22d8387815f084d5ed45024fda7f55",
+      "pseudo_rows": [
+        {
+          "inventory_index": 88849,
+          "document": 2814,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 44471,
+          "document": 1398,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 175061,
+          "document": 5549,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        },
+        {
+          "inventory_index": 266945,
+          "document": 9083,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 132723,
+          "document": 4103,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 77597,
+          "document": 2462,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 23879,
+          "document": 760,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 266940,
+          "document": 9083,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 760,
+      "saturated_targets": 0
+    },
+    {
+      "step": 3,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.8449987173080444,
+        "post_norm": 0.8449987173080444,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 1067611792,
+      "end_ns": 1528793750,
+      "loss": 2.428300879895687,
+      "ce_loss": 4.689004898071289,
+      "pseudo_loss": 0.16759686172008514,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "8501edcf9c59c4d6f02cd8e301910db77c87a997a84dcb293d037168a91199ff",
+      "pseudo_sha256": "fc37d94a583269ba41a3b27093599347416f69829b9f1e7116688c7893bd78b1",
+      "pseudo_rows": [
+        {
+          "inventory_index": 249054,
+          "document": 8322,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        },
+        {
+          "inventory_index": 257332,
+          "document": 8745,
+          "length": 4,
+          "prefix": 16,
+          "copies": 28,
+          "penalty_targets": 108,
+          "padding": 1
+        },
+        {
+          "inventory_index": 173425,
+          "document": 5495,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 80229,
+          "document": 2549,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 225267,
+          "document": 7374,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 243329,
+          "document": 8045,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 144995,
+          "document": 4544,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 91999,
+          "document": 2920,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 686,
+      "saturated_targets": 0
+    },
+    {
+      "step": 4,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6626712679862976,
+        "post_norm": 0.6626712679862976,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 1528793750,
+      "end_ns": 2013662333,
+      "loss": 1.9772544503211975,
+      "ce_loss": 3.8128182888031006,
+      "pseudo_loss": 0.14169061183929443,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "dd91bbdf97ee38d580879862c61a63b37ee9d0feba1d128fb32b4c877e7ab4dc",
+      "pseudo_sha256": "2fa461ca7f430cd6c66f0df958ce3e1f4c9f9d6d44977a12c4be6844eb618a38",
+      "pseudo_rows": [
+        {
+          "inventory_index": 3010,
+          "document": 89,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 4267,
+          "document": 125,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 57488,
+          "document": 1816,
+          "length": 13,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 91,
+          "padding": 9
+        },
+        {
+          "inventory_index": 198608,
+          "document": 6404,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 265921,
+          "document": 9054,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 12882,
+          "document": 416,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 112187,
+          "document": 3524,
+          "length": 34,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 68,
+          "padding": 11
+        },
+        {
+          "inventory_index": 163682,
+          "document": 5153,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 624,
+      "saturated_targets": 0
+    },
+    {
+      "step": 5,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6809095740318298,
+        "post_norm": 0.6809095740318298,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 2013662333,
+      "end_ns": 2478547041,
+      "loss": 2.1832984499633312,
+      "ce_loss": 4.2460126876831055,
+      "pseudo_loss": 0.12058421224355698,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "b610dcdd7783d19cd65d198f56b4d41034bcdd35e3e363e7b2e98d1da1ff3817",
+      "pseudo_sha256": "56877258b8c4fb09c87800220d0c9d4a11f055635f81b7cef2a171301fab4664",
+      "pseudo_rows": [
+        {
+          "inventory_index": 197191,
+          "document": 6353,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 168455,
+          "document": 5309,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 165749,
+          "document": 5224,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 4795,
+          "document": 136,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 186891,
+          "document": 5973,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 16430,
+          "document": 526,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 200525,
+          "document": 6486,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 239969,
+          "document": 7875,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 644,
+      "saturated_targets": 0
+    },
+    {
+      "step": 6,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.8026876449584961,
+        "post_norm": 0.8026876449584961,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 2478547041,
+      "end_ns": 2943307249,
+      "loss": 2.257533438503742,
+      "ce_loss": 4.373973846435547,
+      "pseudo_loss": 0.14109303057193756,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "48c9ec3b89d596ac1614ca957f5ec87bb13b97fde8c6c8c1bc07c0e5af96b2b5",
+      "pseudo_sha256": "1891988136e921951fa9cb424db0d1fc7c8f461d0fdf91b70e6c732b9ea93ae0",
+      "pseudo_rows": [
+        {
+          "inventory_index": 203809,
+          "document": 6585,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 274153,
+          "document": 9322,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 21752,
+          "document": 695,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 31467,
+          "document": 1007,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 81975,
+          "document": 2611,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 251709,
+          "document": 8467,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 64008,
+          "document": 2014,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 35772,
+          "document": 1133,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 652,
+      "saturated_targets": 0
+    },
+    {
+      "step": 7,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7033383846282959,
+        "post_norm": 0.7033383846282959,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 2943307249,
+      "end_ns": 3472943791,
+      "loss": 2.12586809694767,
+      "ce_loss": 4.093199253082275,
+      "pseudo_loss": 0.15853694081306458,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "fc845bc8026b0f99d38c1080fa301ec79bc5c763fd9c45430633aa7cc62c3aae",
+      "pseudo_sha256": "b149a15573ad9649b234b0e0357dde40dbb672ce30b78a3a395c64f03560fa4b",
+      "pseudo_rows": [
+        {
+          "inventory_index": 58508,
+          "document": 1849,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 100618,
+          "document": 3179,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 226282,
+          "document": 7410,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 18952,
+          "document": 607,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 194443,
+          "document": 6248,
+          "length": 11,
+          "prefix": 16,
+          "copies": 10,
+          "penalty_targets": 99,
+          "padding": 3
+        },
+        {
+          "inventory_index": 153694,
+          "document": 4841,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 177100,
+          "document": 5618,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 130329,
+          "document": 4026,
+          "length": 32,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 64,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 657,
+      "saturated_targets": 0
+    },
+    {
+      "step": 8,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7129392027854919,
+        "post_norm": 0.7129392027854919,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 3472943791,
+      "end_ns": 4007513291,
+      "loss": 1.9555166065692902,
+      "ce_loss": 3.796780586242676,
+      "pseudo_loss": 0.11425262689590454,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "3803fae77483a7686cc4f6ecb3dd262c65c75bf35465c7f32bdd5c77d07271ac",
+      "pseudo_sha256": "2f448e3c8233f0d48114b456de7bb25cc7049025e3c2a2212069276ea036c502",
+      "pseudo_rows": [
+        {
+          "inventory_index": 217021,
+          "document": 7063,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 158272,
+          "document": 4992,
+          "length": 36,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 72,
+          "padding": 5
+        },
+        {
+          "inventory_index": 87140,
+          "document": 2747,
+          "length": 32,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 64,
+          "padding": 17
+        },
+        {
+          "inventory_index": 166111,
+          "document": 5237,
+          "length": 34,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 68,
+          "padding": 11
+        },
+        {
+          "inventory_index": 73145,
+          "document": 2299,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 208036,
+          "document": 6738,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 9889,
+          "document": 300,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 157211,
+          "document": 4952,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 618,
+      "saturated_targets": 0
+    },
+    {
+      "step": 9,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7581067085266113,
+        "post_norm": 0.7581067085266113,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 4007513291,
+      "end_ns": 4477514708,
+      "loss": 2.3917596600949764,
+      "ce_loss": 4.671946048736572,
+      "pseudo_loss": 0.11157327145338058,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "878eb8f6033e2ca746bc3c05d3c128700d4b362aacf5d7ea90107089ae41e40a",
+      "pseudo_sha256": "d7e689cd78a066ed9964c6949fc44f60781a0744091f3679304085b36ace9a07",
+      "pseudo_rows": [
+        {
+          "inventory_index": 283445,
+          "document": 9746,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 35322,
+          "document": 1122,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 275445,
+          "document": 9370,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 280292,
+          "document": 9604,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 239204,
+          "document": 7847,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 165407,
+          "document": 5206,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 15231,
+          "document": 485,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 718,
+          "document": 16,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 651,
+      "saturated_targets": 0
+    },
+    {
+      "step": 10,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6982510089874268,
+        "post_norm": 0.6982510089874268,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 4477514708,
+      "end_ns": 4940139083,
+      "loss": 2.231754794716835,
+      "ce_loss": 4.346095085144043,
+      "pseudo_loss": 0.11741450428962708,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "78ef3a19e3f3e1816994799007cad7e38d52993c0979b6ccdb64423915763cf3",
+      "pseudo_sha256": "b0a5e24587dd481855f157fe5afb195549465d020caa71959b62c9e266de604c",
+      "pseudo_rows": [
+        {
+          "inventory_index": 209363,
+          "document": 6777,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 256609,
+          "document": 8717,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 81451,
+          "document": 2599,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 155520,
+          "document": 4893,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 58854,
+          "document": 1857,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 181474,
+          "document": 5775,
+          "length": 36,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 72,
+          "padding": 5
+        },
+        {
+          "inventory_index": 140846,
+          "document": 4396,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 27555,
+          "document": 873,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 703,
+      "saturated_targets": 0
+    },
+    {
+      "step": 11,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7282946705818176,
+        "post_norm": 0.7282946705818176,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 4940139083,
+      "end_ns": 5400624792,
+      "loss": 2.431062303483486,
+      "ce_loss": 4.697063446044922,
+      "pseudo_loss": 0.16506116092205048,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "6874716a628f05db398149c646d23275b124145cea261ff9b3d1654ad7198f9b",
+      "pseudo_sha256": "3e2cbc96e5d2de318b65e9878df30575bd0d9e1650f1290583261b17efdcac3d",
+      "pseudo_rows": [
+        {
+          "inventory_index": 39251,
+          "document": 1243,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 204297,
+          "document": 6601,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 119708,
+          "document": 3744,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 148132,
+          "document": 4652,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 29603,
+          "document": 939,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 72532,
+          "document": 2276,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 57304,
+          "document": 1811,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 260614,
+          "document": 8856,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 658,
+      "saturated_targets": 0
+    },
+    {
+      "step": 12,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6719358563423157,
+        "post_norm": 0.6719358563423157,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 5400624792,
+      "end_ns": 5892014125,
+      "loss": 1.8701145388185978,
+      "ce_loss": 3.635234832763672,
+      "pseudo_loss": 0.10499424487352371,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "ba7403e4d8e58e09be3beb66fe817f26d4f97178a48adb234407e3fa6834283a",
+      "pseudo_sha256": "878c5c17d0cc0aa181df060b66fb9b49fbd275a36e6d473786c7b3e5937364f4",
+      "pseudo_rows": [
+        {
+          "inventory_index": 77701,
+          "document": 2464,
+          "length": 13,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 91,
+          "padding": 9
+        },
+        {
+          "inventory_index": 93353,
+          "document": 2963,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 241019,
+          "document": 7929,
+          "length": 6,
+          "prefix": 16,
+          "copies": 18,
+          "penalty_targets": 102,
+          "padding": 5
+        },
+        {
+          "inventory_index": 17412,
+          "document": 559,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 199336,
+          "document": 6437,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 103546,
+          "document": 3273,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 50737,
+          "document": 1591,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 198671,
+          "document": 6407,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 719,
+      "saturated_targets": 0
+    },
+    {
+      "step": 13,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6732934713363647,
+        "post_norm": 0.6732934713363647,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 5892014125,
+      "end_ns": 6387483791,
+      "loss": 2.166710041463375,
+      "ce_loss": 4.183900833129883,
+      "pseudo_loss": 0.14951924979686737,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "317bc2c2e34893cf29556e06f7bb822288468d5bdf4d22a2ab2185706057d3a9",
+      "pseudo_sha256": "d03f93cc846bfbe53f3fe2a75220d4fd5f198efe33f6fd81e19849024358a0fa",
+      "pseudo_rows": [
+        {
+          "inventory_index": 187632,
+          "document": 6003,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 105503,
+          "document": 3331,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 139589,
+          "document": 4358,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 142220,
+          "document": 4448,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 277137,
+          "document": 9445,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 213647,
+          "document": 6939,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 254947,
+          "document": 8636,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 254293,
+          "document": 8590,
+          "length": 32,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 64,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 674,
+      "saturated_targets": 0
+    },
+    {
+      "step": 14,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6895803213119507,
+        "post_norm": 0.6895803213119507,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 6387483791,
+      "end_ns": 6850351166,
+      "loss": 1.9856701418757439,
+      "ce_loss": 3.817871332168579,
+      "pseudo_loss": 0.15346895158290863,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "4c131c01683e5a4add96c8bef1e2a45d2687021db3df26b4c02640b398806938",
+      "pseudo_sha256": "3a7ffbc8a6c458cd4549e72d8ea4b84b53adf481c473c1e83a401f4439a9fb08",
+      "pseudo_rows": [
+        {
+          "inventory_index": 129972,
+          "document": 4015,
+          "length": 9,
+          "prefix": 16,
+          "copies": 12,
+          "penalty_targets": 99,
+          "padding": 5
+        },
+        {
+          "inventory_index": 243037,
+          "document": 8028,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        },
+        {
+          "inventory_index": 226899,
+          "document": 7425,
+          "length": 6,
+          "prefix": 16,
+          "copies": 18,
+          "penalty_targets": 102,
+          "padding": 5
+        },
+        {
+          "inventory_index": 54859,
+          "document": 1735,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 76222,
+          "document": 2429,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 104038,
+          "document": 3287,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 137916,
+          "document": 4288,
+          "length": 11,
+          "prefix": 16,
+          "copies": 10,
+          "penalty_targets": 99,
+          "padding": 3
+        },
+        {
+          "inventory_index": 72289,
+          "document": 2270,
+          "length": 32,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 64,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 718,
+      "saturated_targets": 0
+    },
+    {
+      "step": 15,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7830653786659241,
+        "post_norm": 0.7830653786659241,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 6850351166,
+      "end_ns": 7312153833,
+      "loss": 2.110659070312977,
+      "ce_loss": 4.116179466247559,
+      "pseudo_loss": 0.10513867437839508,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "4d92c04d41c57840a64492845f720a2c1e6d332c6156058ca1cdda580c198967",
+      "pseudo_sha256": "39228eee713b73e0aeb75b53be6e74258803a8ebbdc4bb0764d843bd7ed01422",
+      "pseudo_rows": [
+        {
+          "inventory_index": 73217,
+          "document": 2305,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 78543,
+          "document": 2498,
+          "length": 4,
+          "prefix": 16,
+          "copies": 28,
+          "penalty_targets": 108,
+          "padding": 1
+        },
+        {
+          "inventory_index": 70647,
+          "document": 2223,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 214935,
+          "document": 6977,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 236979,
+          "document": 7753,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 20436,
+          "document": 654,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 218131,
+          "document": 7100,
+          "length": 34,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 68,
+          "padding": 11
+        },
+        {
+          "inventory_index": 178127,
+          "document": 5658,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 656,
+      "saturated_targets": 0
+    },
+    {
+      "step": 16,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7317597270011902,
+        "post_norm": 0.7317597270011902,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 7312153833,
+      "end_ns": 7878980333,
+      "loss": 1.8714075461030006,
+      "ce_loss": 3.5479230880737305,
+      "pseudo_loss": 0.1948920041322708,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "8f972c7463101cea19cd1d6b89a9531e7971f0db02c55596b45c729f92f670b0",
+      "pseudo_sha256": "9f835b392ddec0f78ef4dcdd6db58e63d4c0f8dfd714b09dab1a189f182ad453",
+      "pseudo_rows": [
+        {
+          "inventory_index": 202327,
+          "document": 6533,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 49831,
+          "document": 1565,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 70509,
+          "document": 2218,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 182343,
+          "document": 5804,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 92278,
+          "document": 2924,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 105723,
+          "document": 3339,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 63249,
+          "document": 1985,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 270180,
+          "document": 9201,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 664,
+      "saturated_targets": 0
+    },
+    {
+      "step": 17,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6772286891937256,
+        "post_norm": 0.6772286891937256,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 7878980333,
+      "end_ns": 8353812916,
+      "loss": 2.2267272397875786,
+      "ce_loss": 4.318546295166016,
+      "pseudo_loss": 0.13490818440914154,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "65c6f7a682c4dc275660c45768b6391c056fee6ae85b3d72efc357f628a80c18",
+      "pseudo_sha256": "d78070e74c1c9adf0b77a7ac717295b56469f6a014914e8c4669e29833e50296",
+      "pseudo_rows": [
+        {
+          "inventory_index": 107278,
+          "document": 3384,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 13172,
+          "document": 425,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 167438,
+          "document": 5269,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 221940,
+          "document": 7232,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 24711,
+          "document": 793,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 263579,
+          "document": 8963,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 152727,
+          "document": 4814,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 192633,
+          "document": 6178,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 683,
+      "saturated_targets": 0
+    },
+    {
+      "step": 18,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7299787402153015,
+        "post_norm": 0.7299787402153015,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 8353812916,
+      "end_ns": 8818330749,
+      "loss": 2.2279547564685345,
+      "ce_loss": 4.348582744598389,
+      "pseudo_loss": 0.10732676833868027,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "640a4eb52c41faf89d8884a8874f2f8b1d21365b1d6b50d62dc1998fd84ea32d",
+      "pseudo_sha256": "f5a6f8a431e0dae002bd8fd172052539b21c7b37e08fbe9d13d5062efb3973d4",
+      "pseudo_rows": [
+        {
+          "inventory_index": 203198,
+          "document": 6567,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 12168,
+          "document": 389,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 139779,
+          "document": 4366,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 33678,
+          "document": 1077,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 79345,
+          "document": 2526,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 227398,
+          "document": 7431,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 39992,
+          "document": 1268,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 186668,
+          "document": 5962,
+          "length": 9,
+          "prefix": 16,
+          "copies": 12,
+          "penalty_targets": 99,
+          "padding": 5
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 691,
+      "saturated_targets": 0
+    },
+    {
+      "step": 19,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7332956194877625,
+        "post_norm": 0.7332956194877625,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 8818330749,
+      "end_ns": 9351330540,
+      "loss": 2.442226018756628,
+      "ce_loss": 4.768274307250977,
+      "pseudo_loss": 0.11617773026227951,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "3207843f79f34043f67ab57508bc0c631da5aadda4f524df4ad4a4487c6fa42b",
+      "pseudo_sha256": "e7c5b038d37722bc016ecdb00e37f64c2a6054765cbac286f7454d72127febf9",
+      "pseudo_rows": [
+        {
+          "inventory_index": 136139,
+          "document": 4239,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 260352,
+          "document": 8849,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 276961,
+          "document": 9433,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 100761,
+          "document": 3187,
+          "length": 27,
+          "prefix": 7,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 14
+        },
+        {
+          "inventory_index": 78276,
+          "document": 2489,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 91807,
+          "document": 2914,
+          "length": 13,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 91,
+          "padding": 9
+        },
+        {
+          "inventory_index": 9629,
+          "document": 291,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 56076,
+          "document": 1770,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 710,
+      "saturated_targets": 0
+    },
+    {
+      "step": 20,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6484788656234741,
+        "post_norm": 0.6484788656234741,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 9351330540,
+      "end_ns": 9815883290,
+      "loss": 1.7255912311375141,
+      "ce_loss": 3.3307340145111084,
+      "pseudo_loss": 0.12044844776391983,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "400534c4f785495d9967ead6784af143ef04e759dc699ab4b5a256ae175e4d67",
+      "pseudo_sha256": "16efbd6d63f13fa6480c96c52d82c665a999f2d7cce979db5711c68fc7f2f258",
+      "pseudo_rows": [
+        {
+          "inventory_index": 82640,
+          "document": 2630,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 239944,
+          "document": 7874,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 240457,
+          "document": 7904,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 61643,
+          "document": 1945,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 260872,
+          "document": 8862,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 156716,
+          "document": 4935,
+          "length": 13,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 91,
+          "padding": 9
+        },
+        {
+          "inventory_index": 37225,
+          "document": 1162,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 117747,
+          "document": 3681,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 671,
+      "saturated_targets": 0
+    },
+    {
+      "step": 21,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7254854440689087,
+        "post_norm": 0.7254854440689087,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 9815883290,
+      "end_ns": 10276584998,
+      "loss": 2.204142764210701,
+      "ce_loss": 4.237461090087891,
+      "pseudo_loss": 0.17082443833351135,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "ad30fd2d8f0a6da16e8a106c7b06a3a41ca87baadd41fd5a8427e94d3f928356",
+      "pseudo_sha256": "d35e021bd0d222c520b9b11ec879cace6184acacc830d9a0a2cd634b49aec724",
+      "pseudo_rows": [
+        {
+          "inventory_index": 49020,
+          "document": 1544,
+          "length": 6,
+          "prefix": 16,
+          "copies": 18,
+          "penalty_targets": 102,
+          "padding": 5
+        },
+        {
+          "inventory_index": 239058,
+          "document": 7844,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 85140,
+          "document": 2692,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 216067,
+          "document": 7027,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 34547,
+          "document": 1103,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 2983,
+          "document": 88,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 100097,
+          "document": 3162,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 70782,
+          "document": 2228,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 677,
+      "saturated_targets": 0
+    },
+    {
+      "step": 22,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6680367588996887,
+        "post_norm": 0.6680367588996887,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 10276584998,
+      "end_ns": 10752642914,
+      "loss": 1.9733726158738136,
+      "ce_loss": 3.826927661895752,
+      "pseudo_loss": 0.1198175698518753,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "051eebbca6178ca8520bcb40ece146c9b9ae9d4fb22f5a3e236ae868428437e4",
+      "pseudo_sha256": "27401945c5a4ca90348f8598903e912a4b335ad27e44f1e2369c2367dd3577ed",
+      "pseudo_rows": [
+        {
+          "inventory_index": 34216,
+          "document": 1088,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 50574,
+          "document": 1584,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 139366,
+          "document": 4350,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 21118,
+          "document": 679,
+          "length": 36,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 72,
+          "padding": 5
+        },
+        {
+          "inventory_index": 22768,
+          "document": 722,
+          "length": 36,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 72,
+          "padding": 5
+        },
+        {
+          "inventory_index": 46853,
+          "document": 1477,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        },
+        {
+          "inventory_index": 156156,
+          "document": 4917,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 164421,
+          "document": 5183,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 622,
+      "saturated_targets": 0
+    },
+    {
+      "step": 23,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7452959418296814,
+        "post_norm": 0.7452959418296814,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 10752642914,
+      "end_ns": 11256392289,
+      "loss": 2.247764401137829,
+      "ce_loss": 4.378171920776367,
+      "pseudo_loss": 0.11735688149929047,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "b3fd5f9eba92e15cb5a8039b256e1cfd10111a1ce5e877052b1a35cf6e82d348",
+      "pseudo_sha256": "383a5fa47b4d1ac9ad95a7876896436a7d09100226eee11e9d6b43fbe62bea5b",
+      "pseudo_rows": [
+        {
+          "inventory_index": 41293,
+          "document": 1302,
+          "length": 9,
+          "prefix": 16,
+          "copies": 12,
+          "penalty_targets": 99,
+          "padding": 5
+        },
+        {
+          "inventory_index": 77852,
+          "document": 2468,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 130224,
+          "document": 4022,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 173631,
+          "document": 5502,
+          "length": 34,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 68,
+          "padding": 11
+        },
+        {
+          "inventory_index": 126673,
+          "document": 3923,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        },
+        {
+          "inventory_index": 206927,
+          "document": 6702,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 164150,
+          "document": 5174,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 142924,
+          "document": 4471,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 655,
+      "saturated_targets": 0
+    },
+    {
+      "step": 24,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6498740911483765,
+        "post_norm": 0.6498740911483765,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 11256392289,
+      "end_ns": 11720758955,
+      "loss": 2.1825940385460854,
+      "ce_loss": 4.253507614135742,
+      "pseudo_loss": 0.11168046295642853,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "48746cd2997dd1c2e48c6362145c7e24b04979992db6d67bb0cea33753fcca42",
+      "pseudo_sha256": "920931705e94566ed0d273c65fdaba7b250f4013a80137d0dd6ea8b8b200b243",
+      "pseudo_rows": [
+        {
+          "inventory_index": 109744,
+          "document": 3450,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 211413,
+          "document": 6846,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 57894,
+          "document": 1828,
+          "length": 36,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 72,
+          "padding": 5
+        },
+        {
+          "inventory_index": 62881,
+          "document": 1976,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 235489,
+          "document": 7704,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 111288,
+          "document": 3493,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 32796,
+          "document": 1055,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 22902,
+          "document": 727,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 643,
+      "saturated_targets": 0
+    },
+    {
+      "step": 25,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7237964868545532,
+        "post_norm": 0.7237964868545532,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 11720758955,
+      "end_ns": 12230207080,
+      "loss": 2.0238995626568794,
+      "ce_loss": 3.8963446617126465,
+      "pseudo_loss": 0.15145446360111237,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "4bd6ceb77032352144d21d99e7494d63b3253ae04ba5d82460f15fd943befb90",
+      "pseudo_sha256": "0a1da2071006e39648fadc8aa419215df5c43ccfa1fc7b03fd4a85c7c13dd9c3",
+      "pseudo_rows": [
+        {
+          "inventory_index": 111057,
+          "document": 3487,
+          "length": 36,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 72,
+          "padding": 5
+        },
+        {
+          "inventory_index": 64018,
+          "document": 2014,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 221264,
+          "document": 7209,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 207592,
+          "document": 6720,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 245555,
+          "document": 8147,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 276258,
+          "document": 9400,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 58326,
+          "document": 1842,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 265505,
+          "document": 9033,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 653,
+      "saturated_targets": 0
+    },
+    {
+      "step": 26,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6944407224655151,
+        "post_norm": 0.6944407224655151,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 12230207080,
+      "end_ns": 12685374455,
+      "loss": 2.144005384296179,
+      "ce_loss": 4.199558258056641,
+      "pseudo_loss": 0.08845251053571701,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "a2bca3f5a9dbacb34011ba53966962aeec24b4ab9dbb4568d532c7f6543f7beb",
+      "pseudo_sha256": "d531f6adb2bea1e3191d9dd279c26e62cc7f71ce13b13bbec3bb2a9baed7f286",
+      "pseudo_rows": [
+        {
+          "inventory_index": 130593,
+          "document": 4036,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 210027,
+          "document": 6797,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 144251,
+          "document": 4516,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 190948,
+          "document": 6122,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 81135,
+          "document": 2588,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 274003,
+          "document": 9316,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 76831,
+          "document": 2447,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 243430,
+          "document": 8051,
+          "length": 11,
+          "prefix": 16,
+          "copies": 10,
+          "penalty_targets": 99,
+          "padding": 3
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 710,
+      "saturated_targets": 0
+    },
+    {
+      "step": 27,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6449447274208069,
+        "post_norm": 0.6449447274208069,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 12685374455,
+      "end_ns": 13151521330,
+      "loss": 1.8882078379392624,
+      "ce_loss": 3.660444736480713,
+      "pseudo_loss": 0.11597093939781189,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "ded8b7a0a9188a8bedc1d138ae449d76539135c4e82d60163e0b60ed8c2826bf",
+      "pseudo_sha256": "a41a548137aca00cc15d9883c353fd062a1ab7645b4f0c04aa4e63a948d676b6",
+      "pseudo_rows": [
+        {
+          "inventory_index": 193325,
+          "document": 6204,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 178939,
+          "document": 5689,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 151386,
+          "document": 4781,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 61050,
+          "document": 1925,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 283414,
+          "document": 9746,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 107149,
+          "document": 3382,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 271172,
+          "document": 9218,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 153085,
+          "document": 4822,
+          "length": 11,
+          "prefix": 16,
+          "copies": 10,
+          "penalty_targets": 99,
+          "padding": 3
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 668,
+      "saturated_targets": 0
+    },
+    {
+      "step": 28,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7400439977645874,
+        "post_norm": 0.7400439977645874,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 13151521330,
+      "end_ns": 13633299621,
+      "loss": 2.126124583184719,
+      "ce_loss": 4.127898216247559,
+      "pseudo_loss": 0.12435095012187958,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "430cda3e657719a9bde098fc3bb6b0def1bdd3657e7e47c39798ae8c84f3f58c",
+      "pseudo_sha256": "35be19b7b9c34d1b180169785204b9d50b907a4d396b9ceb028e481244d23b19",
+      "pseudo_rows": [
+        {
+          "inventory_index": 57569,
+          "document": 1820,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 229050,
+          "document": 7490,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 260326,
+          "document": 8849,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 224807,
+          "document": 7346,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 35087,
+          "document": 1118,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 211454,
+          "document": 6847,
+          "length": 13,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 91,
+          "padding": 9
+        },
+        {
+          "inventory_index": 216951,
+          "document": 7063,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 267115,
+          "document": 9083,
+          "length": 4,
+          "prefix": 16,
+          "copies": 28,
+          "penalty_targets": 108,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 708,
+      "saturated_targets": 0
+    },
+    {
+      "step": 29,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6583503484725952,
+        "post_norm": 0.6583503484725952,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 13633299621,
+      "end_ns": 14166953496,
+      "loss": 2.216291792690754,
+      "ce_loss": 4.316540718078613,
+      "pseudo_loss": 0.11604286730289459,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "c40e624bb1f394d5c285660ab1e9c3beaa3c5088676877d89f0e7d1d224a52e6",
+      "pseudo_sha256": "c0e4330075be04d548bfaa34dce2185a753a6f088b897d0efff2823ceb0cc543",
+      "pseudo_rows": [
+        {
+          "inventory_index": 266885,
+          "document": 9083,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 208068,
+          "document": 6740,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 64821,
+          "document": 2033,
+          "length": 9,
+          "prefix": 16,
+          "copies": 12,
+          "penalty_targets": 99,
+          "padding": 5
+        },
+        {
+          "inventory_index": 225787,
+          "document": 7389,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 101678,
+          "document": 3217,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 251035,
+          "document": 8425,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 272995,
+          "document": 9274,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 110568,
+          "document": 3476,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 693,
+      "saturated_targets": 0
+    },
+    {
+      "step": 30,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6698253154754639,
+        "post_norm": 0.6698253154754639,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 14166953496,
+      "end_ns": 14631536288,
+      "loss": 2.4063820019364357,
+      "ce_loss": 4.692880630493164,
+      "pseudo_loss": 0.11988337337970734,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "ed9154ae6755ccafe1974d62c7f9b6e60b95fcff11b776dbf55dbd7b138fbf06",
+      "pseudo_sha256": "16e4e1770af4c2cac8c450441353a44f92c497afd1e52f6eaf1cbf44e6e17fdf",
+      "pseudo_rows": [
+        {
+          "inventory_index": 83015,
+          "document": 2638,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 70021,
+          "document": 2197,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 63115,
+          "document": 1984,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 218350,
+          "document": 7108,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 136777,
+          "document": 4254,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 150373,
+          "document": 4740,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 147707,
+          "document": 4634,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 266540,
+          "document": 9077,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 642,
+      "saturated_targets": 0
+    },
+    {
+      "step": 31,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7014724016189575,
+        "post_norm": 0.7014724016189575,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 14631536288,
+      "end_ns": 15088750247,
+      "loss": 2.0581142008304596,
+      "ce_loss": 4.007633686065674,
+      "pseudo_loss": 0.10859471559524536,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "0c85c9f167dd103b46d05b4b4af20ba1f5d644f76b856d00e06a18820a4d2dc4",
+      "pseudo_sha256": "ccdc7ecb67f52ed4970c9cbf2d4ef2267fa0f70ed926dca85d7a3b42ed69daa8",
+      "pseudo_rows": [
+        {
+          "inventory_index": 216261,
+          "document": 7035,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 124426,
+          "document": 3874,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 172817,
+          "document": 5477,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 161270,
+          "document": 5082,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 178976,
+          "document": 5691,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 36410,
+          "document": 1147,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 152004,
+          "document": 4794,
+          "length": 32,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 64,
+          "padding": 17
+        },
+        {
+          "inventory_index": 100751,
+          "document": 3186,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 651,
+      "saturated_targets": 0
+    },
+    {
+      "step": 32,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7740784883499146,
+        "post_norm": 0.7740784883499146,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 15088750247,
+      "end_ns": 15547719414,
+      "loss": 2.213658533990383,
+      "ce_loss": 4.250065326690674,
+      "pseudo_loss": 0.17725174129009247,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "2d68a3fe8bff4833315260aea3754a60ae2fdd11930ebbde1f6c0fb673a57e79",
+      "pseudo_sha256": "568769187add68c40444e13360c13d90a01dc68fbf3c499957265c6d7fe9521d",
+      "pseudo_rows": [
+        {
+          "inventory_index": 28535,
+          "document": 904,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 64410,
+          "document": 2021,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 172782,
+          "document": 5476,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 88827,
+          "document": 2813,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 242004,
+          "document": 7978,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 1137,
+          "document": 29,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 188249,
+          "document": 6030,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 273989,
+          "document": 9315,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 672,
+      "saturated_targets": 0
+    },
+    {
+      "step": 33,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7364925742149353,
+        "post_norm": 0.7364925742149353,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 15547719414,
+      "end_ns": 16057376539,
+      "loss": 2.3505532294511795,
+      "ce_loss": 4.590571880340576,
+      "pseudo_loss": 0.11053457856178284,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "c8391d9fe18ec7fa00ff77dd80975ec67bea7729bf011af805f4167c9c3eef54",
+      "pseudo_sha256": "b9fe57b63b18dbcdd546dc5f31e874adc5658044c23c225bc4d8375a624726cf",
+      "pseudo_rows": [
+        {
+          "inventory_index": 201199,
+          "document": 6499,
+          "length": 6,
+          "prefix": 16,
+          "copies": 18,
+          "penalty_targets": 102,
+          "padding": 5
+        },
+        {
+          "inventory_index": 144512,
+          "document": 4526,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 161406,
+          "document": 5087,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 30550,
+          "document": 974,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 247877,
+          "document": 8257,
+          "length": 11,
+          "prefix": 16,
+          "copies": 10,
+          "penalty_targets": 99,
+          "padding": 3
+        },
+        {
+          "inventory_index": 243418,
+          "document": 8050,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 135437,
+          "document": 4216,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 120478,
+          "document": 3765,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 692,
+      "saturated_targets": 0
+    },
+    {
+      "step": 34,
+      "lr_ratio": 0.9935451393624998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6556214094161987,
+        "post_norm": 0.6556214094161987,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 16057376539,
+      "end_ns": 16520208914,
+      "loss": 2.2241096794605255,
+      "ce_loss": 4.353209972381592,
+      "pseudo_loss": 0.09500938653945923,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "e5c934fbdce050fbbb7e55385363eab58dc6cfb86dabc8ac67d3981c6613c0bc",
+      "pseudo_sha256": "a3f5e508da767dde248ea808850bfbc7a423510b5c1dcf37adc477e4d498393c",
+      "pseudo_rows": [
+        {
+          "inventory_index": 89487,
+          "document": 2837,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 87211,
+          "document": 2748,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 77833,
+          "document": 2467,
+          "length": 13,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 91,
+          "padding": 9
+        },
+        {
+          "inventory_index": 282859,
+          "document": 9721,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 70589,
+          "document": 2220,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 171028,
+          "document": 5410,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 165782,
+          "document": 5226,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 213004,
+          "document": 6910,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 632,
+      "saturated_targets": 0
+    },
+    {
+      "step": 35,
+      "lr_ratio": 0.9414764971749997,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7533825039863586,
+        "post_norm": 0.7533825039863586,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 16520208914,
+      "end_ns": 17032625539,
+      "loss": 2.2205585911870003,
+      "ce_loss": 4.351174354553223,
+      "pseudo_loss": 0.0899428278207779,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "a2d115ecce1b8291e2f57767518d0a1642d78c1d9d1e118c731ca2033aa46f42",
+      "pseudo_sha256": "82b6f58ad562dac9c1daa514eb88bae8b01d49b04a1c0bf88fae8c082be815eb",
+      "pseudo_rows": [
+        {
+          "inventory_index": 119963,
+          "document": 3753,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 266313,
+          "document": 9073,
+          "length": 13,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 91,
+          "padding": 9
+        },
+        {
+          "inventory_index": 253686,
+          "document": 8553,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 97183,
+          "document": 3078,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 86327,
+          "document": 2724,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 91424,
+          "document": 2904,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 195854,
+          "document": 6302,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 183383,
+          "document": 5837,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 674,
+      "saturated_targets": 0
+    },
+    {
+      "step": 36,
+      "lr_ratio": 0.8838296268625,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7075095772743225,
+        "post_norm": 0.7075095772743225,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 17032625539,
+      "end_ns": 17513122039,
+      "loss": 2.1190622821450233,
+      "ce_loss": 4.101561546325684,
+      "pseudo_loss": 0.1365630179643631,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "9a27bc8d53ff8d07c5c1e0b766fdc2472a43a2776961d06e9bebfe0abfc55b80",
+      "pseudo_sha256": "147ccbb1d59b6955d1a2ddb4c6ed4891344e8d3d2729fb8c1ad251ffe7d0a663",
+      "pseudo_rows": [
+        {
+          "inventory_index": 222928,
+          "document": 7271,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 38451,
+          "document": 1209,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 153056,
+          "document": 4822,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 97135,
+          "document": 3076,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 47218,
+          "document": 1486,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 119587,
+          "document": 3740,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 182457,
+          "document": 5809,
+          "length": 4,
+          "prefix": 16,
+          "copies": 28,
+          "penalty_targets": 108,
+          "padding": 1
+        },
+        {
+          "inventory_index": 256681,
+          "document": 8722,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 659,
+      "saturated_targets": 0
+    },
+    {
+      "step": 37,
+      "lr_ratio": 0.8297737706124998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.8041361570358276,
+        "post_norm": 0.8041361570358276,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 17513122039,
+      "end_ns": 17979962748,
+      "loss": 2.243934005498886,
+      "ce_loss": 4.331724166870117,
+      "pseudo_loss": 0.15614384412765503,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "b6a79a523159b19ecec2db6731ce433b96235966bfb37ecd827dd0a70eee2142",
+      "pseudo_sha256": "753dfa177802b5d714f064b7daa787d6b47a02e238b2c2b5f5b747575e8ea79f",
+      "pseudo_rows": [
+        {
+          "inventory_index": 29772,
+          "document": 949,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 74912,
+          "document": 2377,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 278067,
+          "document": 9503,
+          "length": 11,
+          "prefix": 16,
+          "copies": 10,
+          "penalty_targets": 99,
+          "padding": 3
+        },
+        {
+          "inventory_index": 264135,
+          "document": 8988,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 108319,
+          "document": 3415,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 82066,
+          "document": 2611,
+          "length": 6,
+          "prefix": 16,
+          "copies": 18,
+          "penalty_targets": 102,
+          "padding": 5
+        },
+        {
+          "inventory_index": 176132,
+          "document": 5581,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 79871,
+          "document": 2538,
+          "length": 8,
+          "prefix": 16,
+          "copies": 14,
+          "penalty_targets": 104,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 724,
+      "saturated_targets": 0
+    },
+    {
+      "step": 38,
+      "lr_ratio": 0.7772541908499999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.8093006610870361,
+        "post_norm": 0.8093006610870361,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 17979962748,
+      "end_ns": 18443349998,
+      "loss": 2.084848992526531,
+      "ce_loss": 4.0059285163879395,
+      "pseudo_loss": 0.16376946866512299,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "b637f3b3b2301b2fb0df679f554a851117f9d223e4c93deb8c94184f56ca39ab",
+      "pseudo_sha256": "0cc8e7d35a822d79c250f53bc1c3fef94813525a42530c2bd37538d386e3f0ef",
+      "pseudo_rows": [
+        {
+          "inventory_index": 116291,
+          "document": 3637,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 40216,
+          "document": 1274,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 162929,
+          "document": 5134,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 29355,
+          "document": 930,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 170898,
+          "document": 5405,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 156495,
+          "document": 4925,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 113741,
+          "document": 3561,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 276227,
+          "document": 9400,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 707,
+      "saturated_targets": 0
+    },
+    {
+      "step": 39,
+      "lr_ratio": 0.7251231252249997,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7448004484176636,
+        "post_norm": 0.7448004484176636,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 18443349998,
+      "end_ns": 18970646082,
+      "loss": 2.184582829475403,
+      "ce_loss": 4.231533050537109,
+      "pseudo_loss": 0.1376326084136963,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "757949fd4009869a25d8cc92a20114b2cbf3c97a9f334be3a631482ff593e4f5",
+      "pseudo_sha256": "58c8f0f624bde83785351b97be3191332a6166a1164b0a3d14916fff32537283",
+      "pseudo_rows": [
+        {
+          "inventory_index": 101842,
+          "document": 3218,
+          "length": 19,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 76,
+          "padding": 18
+        },
+        {
+          "inventory_index": 156029,
+          "document": 4910,
+          "length": 32,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 64,
+          "padding": 17
+        },
+        {
+          "inventory_index": 239080,
+          "document": 7845,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 270026,
+          "document": 9193,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 70732,
+          "document": 2226,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 100450,
+          "document": 3172,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 108800,
+          "document": 3424,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 264345,
+          "document": 8996,
+          "length": 34,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 68,
+          "padding": 11
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 651,
+      "saturated_targets": 0
+    },
+    {
+      "step": 40,
+      "lr_ratio": 0.6658023157749997,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6474074125289917,
+        "post_norm": 0.6474074125289917,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 18970646082,
+      "end_ns": 19455770582,
+      "loss": 2.10836673527956,
+      "ce_loss": 4.107894420623779,
+      "pseudo_loss": 0.10883904993534088,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "e6f8c3cbeb74691d497b292c284fa9290fc1cf288b835f88ab88c10885688021",
+      "pseudo_sha256": "dfc2a595cb16cdedfac5720c7210c27180cc70036ced454fcc616574692f4bbb",
+      "pseudo_rows": [
+        {
+          "inventory_index": 38648,
+          "document": 1220,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 163624,
+          "document": 5150,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 53602,
+          "document": 1701,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 31371,
+          "document": 1002,
+          "length": 10,
+          "prefix": 16,
+          "copies": 11,
+          "penalty_targets": 100,
+          "padding": 3
+        },
+        {
+          "inventory_index": 186379,
+          "document": 5953,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 179172,
+          "document": 5695,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 133683,
+          "document": 4142,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 93372,
+          "document": 2963,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 668,
+      "saturated_targets": 0
+    },
+    {
+      "step": 41,
+      "lr_ratio": 0.6112258095249999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7457674741744995,
+        "post_norm": 0.7457674741744995,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 19455770582,
+      "end_ns": 19917271749,
+      "loss": 1.8330871649086475,
+      "ce_loss": 3.5810470581054688,
+      "pseudo_loss": 0.08512727171182632,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "f1d53cce9974c92a84ca388cbfc7f8ad9685ae5c0521e14daa31e40d6451ffc3",
+      "pseudo_sha256": "b4597ce77c16f0cc6c60ef502c3d5b8ca905dd28e327e4e58b7a531e7dd457ad",
+      "pseudo_rows": [
+        {
+          "inventory_index": 178358,
+          "document": 5666,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 38194,
+          "document": 1200,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 233349,
+          "document": 7635,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 191063,
+          "document": 6123,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 104048,
+          "document": 3287,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 72538,
+          "document": 2276,
+          "length": 6,
+          "prefix": 16,
+          "copies": 18,
+          "penalty_targets": 102,
+          "padding": 5
+        },
+        {
+          "inventory_index": 269562,
+          "document": 9175,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 40621,
+          "document": 1286,
+          "length": 32,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 64,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 683,
+      "saturated_targets": 0
+    },
+    {
+      "step": 42,
+      "lr_ratio": 0.5593069282375,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.8230553269386292,
+        "post_norm": 0.8230553269386292,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 19917271749,
+      "end_ns": 20405475040,
+      "loss": 2.353328261524439,
+      "ce_loss": 4.607632160186768,
+      "pseudo_loss": 0.09902436286211014,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "6b5d0f6384d3bed5bdc8c6385977f38c2a51df343ccff2343445d09ca04d91ff",
+      "pseudo_sha256": "fb0eba60da3e9bc457a95f6bfbb7f800f587e1f031eb97c1b823e7cfa7bc21fa",
+      "pseudo_rows": [
+        {
+          "inventory_index": 219067,
+          "document": 7130,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 151875,
+          "document": 4792,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 132440,
+          "document": 4093,
+          "length": 34,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 68,
+          "padding": 11
+        },
+        {
+          "inventory_index": 273643,
+          "document": 9305,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 72311,
+          "document": 2271,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 268390,
+          "document": 9129,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 165556,
+          "document": 5212,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 174531,
+          "document": 5530,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 603,
+      "saturated_targets": 0
+    },
+    {
+      "step": 43,
+      "lr_ratio": 0.5043840579999999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6677418351173401,
+        "post_norm": 0.6677418351173401,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 20405475040,
+      "end_ns": 20895066207,
+      "loss": 2.078556939959526,
+      "ce_loss": 4.068480014801025,
+      "pseudo_loss": 0.08863386511802673,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "79b191efdbf3fb7b3804d5880d5de54b8993dde6b5cc53a7d4c330c4df1b2482",
+      "pseudo_sha256": "024406d5301546dcb9aaeb5f7f28d40909cbf751ce9f808c0f8ee7d1f14a6f3c",
+      "pseudo_rows": [
+        {
+          "inventory_index": 273341,
+          "document": 9287,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 257259,
+          "document": 8740,
+          "length": 4,
+          "prefix": 16,
+          "copies": 28,
+          "penalty_targets": 108,
+          "padding": 1
+        },
+        {
+          "inventory_index": 66022,
+          "document": 2074,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 54997,
+          "document": 1740,
+          "length": 5,
+          "prefix": 16,
+          "copies": 22,
+          "penalty_targets": 105,
+          "padding": 3
+        },
+        {
+          "inventory_index": 124219,
+          "document": 3864,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 42834,
+          "document": 1355,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 217779,
+          "document": 7086,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 122131,
+          "document": 3811,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 662,
+      "saturated_targets": 0
+    },
+    {
+      "step": 44,
+      "lr_ratio": 0.4493050517124999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6358133554458618,
+        "post_norm": 0.6358133554458618,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 20895066207,
+      "end_ns": 21381909498,
+      "loss": 2.0584180802106857,
+      "ce_loss": 3.98418927192688,
+      "pseudo_loss": 0.13264688849449158,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "ea506ea503b43a9af6f3e196857beedb226326c494c6cf2636453623a47805ce",
+      "pseudo_sha256": "f80ff59b1cd212220992ce17e7798ce6505d734fed7b014dada4f0f0db9f0246",
+      "pseudo_rows": [
+        {
+          "inventory_index": 191896,
+          "document": 6151,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 100030,
+          "document": 3160,
+          "length": 35,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 70,
+          "padding": 8
+        },
+        {
+          "inventory_index": 139012,
+          "document": 4330,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 238383,
+          "document": 7812,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 238728,
+          "document": 7824,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 123494,
+          "document": 3844,
+          "length": 33,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 66,
+          "padding": 14
+        },
+        {
+          "inventory_index": 130029,
+          "document": 4017,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 188315,
+          "document": 6035,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 610,
+      "saturated_targets": 0
+    },
+    {
+      "step": 45,
+      "lr_ratio": 0.3945351814749999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6622180342674255,
+        "post_norm": 0.6622180342674255,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 21381909498,
+      "end_ns": 21879568207,
+      "loss": 2.2398741245269775,
+      "ce_loss": 4.340513229370117,
+      "pseudo_loss": 0.1392350196838379,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "a52089b454329d1b539476037a3d4d8acbc7f6b53bcaa913f4e395a0ce3d3f67",
+      "pseudo_sha256": "c22b6da461dba43d0dea7bb5c6a35e3be9fe432bb7be8cdb782221f4611723b7",
+      "pseudo_rows": [
+        {
+          "inventory_index": 18615,
+          "document": 597,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 243814,
+          "document": 8078,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 61210,
+          "document": 1932,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 202542,
+          "document": 6540,
+          "length": 25,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 75,
+          "padding": 13
+        },
+        {
+          "inventory_index": 152343,
+          "document": 4803,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 152386,
+          "document": 4805,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 252154,
+          "document": 8480,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 118466,
+          "document": 3707,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 644,
+      "saturated_targets": 0
+    },
+    {
+      "step": 46,
+      "lr_ratio": 0.3385485767124997,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7025094628334045,
+        "post_norm": 0.7025094628334045,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 21879568207,
+      "end_ns": 22375676957,
+      "loss": 2.1193660870194435,
+      "ce_loss": 4.129965305328369,
+      "pseudo_loss": 0.10876686871051788,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "02a74e1b4ecb6d056ef2b74ff1b97ba84cab61fc080fc301300a2541470c2d3d",
+      "pseudo_sha256": "d1a13b7817a37b9e52b1e84b10c5a9a527c89511ee4237ac6e475999564ccba9",
+      "pseudo_rows": [
+        {
+          "inventory_index": 106156,
+          "document": 3351,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 118452,
+          "document": 3707,
+          "length": 28,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 84,
+          "padding": 1
+        },
+        {
+          "inventory_index": 49991,
+          "document": 1573,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 69486,
+          "document": 2177,
+          "length": 7,
+          "prefix": 16,
+          "copies": 16,
+          "penalty_targets": 105,
+          "padding": 1
+        },
+        {
+          "inventory_index": 115613,
+          "document": 3618,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 239282,
+          "document": 7850,
+          "length": 14,
+          "prefix": 16,
+          "copies": 8,
+          "penalty_targets": 98,
+          "padding": 1
+        },
+        {
+          "inventory_index": 283799,
+          "document": 9754,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 200779,
+          "document": 6490,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 743,
+      "saturated_targets": 0
+    },
+    {
+      "step": 47,
+      "lr_ratio": 0.2827363423374999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7209165692329407,
+        "post_norm": 0.7209165692329407,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 22375676957,
+      "end_ns": 22885035957,
+      "loss": 1.9740695357322693,
+      "ce_loss": 3.842698812484741,
+      "pseudo_loss": 0.10544025897979736,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "c3cbdaf726a0b0e74af43c4807a6d8321171ec8e2d687c04f9d62cf09592616f",
+      "pseudo_sha256": "9ae1f65aa60d5ec6c7c90508a5534a4a4ff02ecf0d606455ec78c78c5c6f1e6b",
+      "pseudo_rows": [
+        {
+          "inventory_index": 220529,
+          "document": 7177,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 78182,
+          "document": 2484,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 148642,
+          "document": 4677,
+          "length": 12,
+          "prefix": 16,
+          "copies": 9,
+          "penalty_targets": 96,
+          "padding": 5
+        },
+        {
+          "inventory_index": 87124,
+          "document": 2746,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 164438,
+          "document": 5183,
+          "length": 23,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 69,
+          "padding": 21
+        },
+        {
+          "inventory_index": 212960,
+          "document": 6907,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 37519,
+          "document": 1173,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 226910,
+          "document": 7426,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 626,
+      "saturated_targets": 0
+    },
+    {
+      "step": 48,
+      "lr_ratio": 0.22543345483749977,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.7239031791687012,
+        "post_norm": 0.7239031791687012,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 22885035957,
+      "end_ns": 23350037707,
+      "loss": 2.39050455018878,
+      "ce_loss": 4.668739318847656,
+      "pseudo_loss": 0.11226978152990341,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "8345e22b8149f88425ff30c23527b57f355bcf0863c1a78d8328520c34f7a313",
+      "pseudo_sha256": "276ebc8c0fb49010bb43e4fd1223751e1fe19ba6e3dfe0ab15bcc6036859e0c1",
+      "pseudo_rows": [
+        {
+          "inventory_index": 8385,
+          "document": 247,
+          "length": 22,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 88,
+          "padding": 3
+        },
+        {
+          "inventory_index": 21556,
+          "document": 688,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 149782,
+          "document": 4722,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 33401,
+          "document": 1075,
+          "length": 17,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 85,
+          "padding": 11
+        },
+        {
+          "inventory_index": 172784,
+          "document": 5476,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        },
+        {
+          "inventory_index": 139539,
+          "document": 4356,
+          "length": 29,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 58,
+          "padding": 26
+        },
+        {
+          "inventory_index": 104055,
+          "document": 3287,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 184113,
+          "document": 5856,
+          "length": 16,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 96,
+          "padding": 1
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 688,
+      "saturated_targets": 0
+    },
+    {
+      "step": 49,
+      "lr_ratio": 0.17312075796249993,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6281635165214539,
+        "post_norm": 0.6281635165214539,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 23350037707,
+      "end_ns": 23817953999,
+      "loss": 2.1726700589060783,
+      "ce_loss": 4.225740909576416,
+      "pseudo_loss": 0.11959920823574066,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "8b9c1d6dce2f6366996e226f210d837aaab8f9ae27a8bfee83c9789a19c8a6f5",
+      "pseudo_sha256": "5f06e91f3b0850084d112ef477aad4ac27069d8de0005df4557884b5cf7cd362",
+      "pseudo_rows": [
+        {
+          "inventory_index": 182001,
+          "document": 5785,
+          "length": 30,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 60,
+          "padding": 23
+        },
+        {
+          "inventory_index": 278731,
+          "document": 9537,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 77306,
+          "document": 2462,
+          "length": 15,
+          "prefix": 16,
+          "copies": 7,
+          "penalty_targets": 90,
+          "padding": 8
+        },
+        {
+          "inventory_index": 162255,
+          "document": 5115,
+          "length": 20,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 80,
+          "padding": 13
+        },
+        {
+          "inventory_index": 212039,
+          "document": 6872,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 96048,
+          "document": 3038,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 137687,
+          "document": 4281,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 165759,
+          "document": 5224,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 616,
+      "saturated_targets": 0
+    },
+    {
+      "step": 50,
+      "lr_ratio": 0.12048017511249987,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.6721579432487488,
+        "post_norm": 0.6721579432487488,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      },
+      "begin_ns": 23817953999,
+      "end_ns": 24300230791,
+      "loss": 2.1004227735102177,
+      "ce_loss": 4.092916488647461,
+      "pseudo_loss": 0.1079290583729744,
+      "ce_weight": 0.5,
+      "pseudo_weight": 0.5,
+      "batch_sha256": "dc0c80a01ef1eeb423be5007bd278113c75520d71bd40eb74e977fdfb152feae",
+      "pseudo_sha256": "24803908aff49db1e90fc9bb1e7bcff341fe456335cda647cacf68bd16261dea",
+      "pseudo_rows": [
+        {
+          "inventory_index": 168761,
+          "document": 5324,
+          "length": 11,
+          "prefix": 16,
+          "copies": 10,
+          "penalty_targets": 99,
+          "padding": 3
+        },
+        {
+          "inventory_index": 152674,
+          "document": 4812,
+          "length": 21,
+          "prefix": 16,
+          "copies": 5,
+          "penalty_targets": 84,
+          "padding": 8
+        },
+        {
+          "inventory_index": 116797,
+          "document": 3659,
+          "length": 26,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 78,
+          "padding": 9
+        },
+        {
+          "inventory_index": 169278,
+          "document": 5337,
+          "length": 27,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 81,
+          "padding": 5
+        },
+        {
+          "inventory_index": 192069,
+          "document": 6158,
+          "length": 24,
+          "prefix": 16,
+          "copies": 4,
+          "penalty_targets": 72,
+          "padding": 17
+        },
+        {
+          "inventory_index": 7271,
+          "document": 222,
+          "length": 18,
+          "prefix": 16,
+          "copies": 6,
+          "penalty_targets": 90,
+          "padding": 5
+        },
+        {
+          "inventory_index": 47604,
+          "document": 1504,
+          "length": 31,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 62,
+          "padding": 20
+        },
+        {
+          "inventory_index": 27830,
+          "document": 881,
+          "length": 34,
+          "prefix": 16,
+          "copies": 3,
+          "penalty_targets": 68,
+          "padding": 11
+        }
+      ],
+      "ce_targets": 1024,
+      "pseudo_targets": 634,
+      "saturated_targets": 0
+    }
+  ],
+  "saturated_targets": 0
+}

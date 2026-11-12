@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "rtol": 1e-05,
+  "atol": 1e-07,
+  "rows": [
+    {
+      "arm": "ce_full",
+      "tensors": 88,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "accumulation_before_optimizer": true,
+      "ce_hash": "d26a77fdf256fe7b9bc4d6eb8dd604237b62583b114245219f280970ec7fb3f6",
+      "pseudo_hash": null
+    },
+    {
+      "arm": "ce_half",
+      "tensors": 88,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "accumulation_before_optimizer": true,
+      "ce_hash": "d26a77fdf256fe7b9bc4d6eb8dd604237b62583b114245219f280970ec7fb3f6",
+      "pseudo_hash": null
+    },
+    {
+      "arm": "ce_pseudo_mean",
+      "tensors": 88,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "accumulation_before_optimizer": true,
+      "ce_hash": "d26a77fdf256fe7b9bc4d6eb8dd604237b62583b114245219f280970ec7fb3f6",
+      "pseudo_hash": "52fa59e1a70f445a554a04bbf9ef6ffd29290a3f06d525edf425ce8402b280bc"
+    }
+  ],
+  "scope": "New gradient-accumulation integration only; not arithmetic quality selection or an old FP32 qualification retry."
+}
