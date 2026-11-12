@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "BATCH_AVERAGING_INTEGRATION_NEXT",
+  "status": "CONTEXT_PREFIX_PREPARATION_NEXT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Implement serial averaging of independent natural gradients before one clip/optimizer advance. Qualify only the new accumulation integration, then freeze fresh paired1-versus8 batch roles, criterion and complete measured admission. No worker is active.",
+  "next_action": "Implement common-target prefix slicing for C16/48/96 on32 targets within the existing128-token limit. Qualify only new indexing, then freeze fresh source-balanced training spans and complete measured admission. No worker or quality panel is active.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T10:18:55.081341+00:00",
+  "updated_at": "2026-11-12T10:28:05.992207+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All24 updates/171 evaluations passed. Mean disjoint-probe deltas at1/16,1/4,1 are +0.000007517,+0.000039294,+0.000304667; all3 parents fail overshoot criterion. All72 own-batch comparisons improve. Smaller steps reduce harm without a model gain; independent-batch averaging is the next bounded hypothesis.",
+  "latest_learning": "All48 paired updates/51 probes passed. Eight-batch averaging fails all3 parent improvement criteria: mean delta from unchanged parent +0.000321208 versus single +0.000310653. No batch sweep. Selected EMA parents retained; next evidence-grounded question is ordinary-text prefix context use, with no eviction claim for prior short loops.",
   "phase": "evidence_grounded_mechanism_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Update-response diagnostic completed with no model serialization. Evidence1222010bytes at review, current free16926289920bytes. No capacity blocker. Next execution requires complete measured admission.",
+  "capacity_status": "Batch diagnostic completed without model serialization. Evidence1171556bytes at review; current free16930226176bytes. No capacity blocker. Next diagnostic needs full measured admission.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -717,5 +717,13 @@
   "update_response_analysis": "research/tokenizer-evidence/general-rsi-update-response-001/analysis.json",
   "update_response_review": "research/tokenizer-evidence/general-rsi-update-response-001/completion-review.json",
   "batch_averaging_boundary": "research/GENERAL_RSI_BATCH_AVERAGING_NEXT.md",
-  "batch_averaging_literature_review": "research/tokenizer-evidence/general-rsi-update-response-001/next-batch-boundary.json"
+  "batch_averaging_literature_review": "research/tokenizer-evidence/general-rsi-update-response-001/next-batch-boundary.json",
+  "batch_averaging_plan": "research/tokenizer-evidence/general-rsi-batch-averaging-001/plan.json",
+  "batch_averaging_plan_sha256": "f0eeb2c9b099f59894c01976d1ee0246a70ac8ce646e1c915e37ce76dc235ba9",
+  "batch_averaging_fixture_review": "research/tokenizer-evidence/general-rsi-batch-averaging-fixture-001/completion-review.json",
+  "batch_averaging_report": "research/GENERAL_RSI_BATCH_AVERAGING_RESULTS.md",
+  "batch_averaging_analysis": "research/tokenizer-evidence/general-rsi-batch-averaging-001/analysis.json",
+  "batch_averaging_review": "research/tokenizer-evidence/general-rsi-batch-averaging-001/completion-review.json",
+  "context_prefix_boundary": "research/GENERAL_RSI_CONTEXT_PREFIX_NEXT.md",
+  "context_prefix_literature_review": "research/tokenizer-evidence/general-rsi-batch-averaging-001/next-context-boundary.json"
 }

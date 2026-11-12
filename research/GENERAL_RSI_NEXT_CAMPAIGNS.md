@@ -61,11 +61,17 @@ The first-update response diagnostic is complete. All24 updates/171 evaluations
 pass. Mean disjoint-probe loss changes are positive at scales1/16,1/4 and1,
 so all three parents fail the frozen overshoot criterion. All72 update-batch
 comparisons improve. See `GENERAL_RSI_UPDATE_RESPONSE_RESULTS.md`. Reduced harm
-at smaller steps is not a useful model gain. Next implement and check only the
-new serial independent-batch gradient averaging path described in
-`GENERAL_RSI_BATCH_AVERAGING_NEXT.md`, then freeze fresh pairs and measured
-admission. No worker or new quality panel is active. Selected/fresh weights and
-all first outputs remain retained; test is unopened.
+at smaller steps is not a useful model gain.
+
+The independent-batch averaging diagnostic is also complete:48 updates and51
+probe evaluations passed. Eight-batch means remain above every unchanged parent,
+and the pooled paired difference is +0.000010555 nats/token. All three parents
+fail the frozen criterion. See `GENERAL_RSI_BATCH_AVERAGING_RESULTS.md`. Close
+this diagnostic without a larger-batch sweep. Next implement the common-target
+prefix ablation in `GENERAL_RSI_CONTEXT_PREFIX_NEXT.md`, within the current128-token
+limit. Prior loops fit within95 tokens, so this does not claim an eviction cause.
+No worker or quality panel is active. Selected/fresh weights and all first outputs
+remain retained; test is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 
