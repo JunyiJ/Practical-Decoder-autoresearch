@@ -2,12 +2,13 @@
 
 ## Current boundary — 2026-11-11 Pacific
 
-The completed native and FP32 panels remain closed. The bounded probability
-replay completed264 sequences and reproduced all2,304 original greedy choices.
-18/23 terminal loops gained mean probability across repeated copies; ordinary
-training-text repeats also gained probability. Next freeze the bounded context-
-order intervention in `GENERAL_RSI_REPETITION_PROBABILITY_RESULTS.md`, preserving
-positions and local context. No new training panel or decoder change is admitted.
+The completed native and FP32 panels remain closed. The context-order diagnostic
+completed562 conditions with exact intact replay. Earlier order supports both
+terminal loops and useful natural repeats. Next implement the training-only
+span inventory and targeted pseudo-repetition loss described in
+`GENERAL_RSI_PSEUDO_REPETITION_NEXT.md`, then qualify only the new integration
+and measured resources. No scientific training panel is admitted. The completed
+repetition diagnostics must not be repeated as prerequisites.
 
 ## Completed priority — 2026-11-11 Pacific
 
