@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-11-12T10:18:55.080067+00:00",
+  "local_evidence": {
+    "research/GENERAL_RSI_UPDATE_RESPONSE_RESULTS.md": "54ace009b0c0b300ee8b98c4c39397240818809aef59e4c59e4d67dfb0911930",
+    "research/tokenizer-evidence/general-rsi-update-response-001/analysis.json": "8e4d49de34066de429f35a280dd8896a0f2706b3ab330352b31181bbfba1870f",
+    "research/tokenizer-evidence/general-rsi-update-response-001/completion-review.json": "7402b53026cba984df94f1717d3f90033b3b1637b2977572edea8a1cca6a48e0",
+    "research/GENERAL_RSI_BATCH_AVERAGING_NEXT.md": "d7ce74618838b2f640da5374d23f467ace7c5b893c152e47f93a9573b6cd495d",
+    "research/WARMUP_QUALITY_RESULTS.md": "1d010602846d67391e72aac3b82f46f802b085cffe10ff9d369e9d2064910ea8",
+    "research/GENERAL_RSI_CONTINUATION_DECAY_RESULTS.md": "f12541ad6d1dfc14c9f31a311842bf16cd3b28cdfeee5593e8139a297e70dcc1",
+    "research/GENERAL_RSI_CONTINUATION_START_RESULTS.md": "2138a616a8aadb843aa5fe010ec8f460ab514d31839431c5f505fa83b075d06a"
+  },
+  "primary_literature": {
+    "url": "https://arxiv.org/html/1812.06162v1",
+    "version": "v1,14Dec2018",
+    "read_sections": [
+      "2.1",
+      "2.2, equations2.1-2.10",
+      "2.3",
+      "2.4"
+    ],
+    "applicability": "Independent batch gradient averaging; short-horizon and optimizer/conditioning limits; no local noise scale or quality gain inferred.",
+    "retrieval_note": "Initial guessedv4 HTML returned404; abstract confirmsv1 only, then actualv1 full text was read."
+  },
+  "decision": "Prepare one versus eight independent-batch gradient averaging before one update. No LR sweep, no batch reuse, no quality adoption.",
+  "new_panel_launched": false,
+  "test_opened": false
+}

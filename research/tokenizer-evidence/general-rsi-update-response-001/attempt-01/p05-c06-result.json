@@ -1,0 +1,74 @@
+{
+  "parent": 5,
+  "case": 6,
+  "pristine_optimizer_checked": true,
+  "initial_parameters_sha256": "8a8ceb3599306203378109afbe1369850a11f477cb9579777854a50fc02e1ca4",
+  "update": {
+    "step": 1,
+    "loss": 4.550458908081055,
+    "lr_ratio": 1.0,
+    "clip": {
+      "threshold": 1.0,
+      "pre_norm": 1.3561228513717651,
+      "post_norm": 0.9999992847442627,
+      "coefficient": 0.7373958230018616,
+      "gradient_tensors": 88
+    },
+    "batch_sha256": "b491003ce88fc37ce7e1818aa0c3394e94b3798813c271d63c7f8fb7339e8943",
+    "begin_ns": 0,
+    "end_ns": 359252208,
+    "objective": "ce",
+    "valid_loss_targets": 1024,
+    "saturated_targets": 0,
+    "alignment_sha256": null,
+    "pseudo_rows": []
+  },
+  "displacement": {
+    "Muon": {
+      "parameter_sq": 14617.270162259578,
+      "update_sq": 0.0013861342212720957,
+      "gradient_sq": 0.0,
+      "gradient_dot_update": 0.0,
+      "tensors": 44,
+      "update_norm": 0.03723082353738762,
+      "relative_update_norm": 0.00030794241113416156,
+      "gradient_update_cosine": null
+    },
+    "AdamW": {
+      "parameter_sq": 528774.1835668281,
+      "update_sq": 0.14991013011793053,
+      "gradient_sq": 0.0,
+      "gradient_dot_update": 0.0,
+      "tensors": 44,
+      "update_norm": 0.3871822957186066,
+      "relative_update_norm": 0.0005324518850047075,
+      "gradient_update_cosine": null
+    }
+  },
+  "batch_initial": {
+    "ce": 4.550458997914575,
+    "window_loss_sums": [
+      545.1405926421285,
+      528.5102183455601,
+      573.4346035569906,
+      551.4055054178461,
+      578.8023019805551,
+      619.4049215167761,
+      635.6262471703812,
+      627.3456232342869
+    ],
+    "window_targets": [
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128
+    ],
+    "targets": 1024
+  },
+  "exact_restoration": true,
+  "seconds": 6.986397291067988
+}

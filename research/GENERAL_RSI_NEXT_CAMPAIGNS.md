@@ -55,13 +55,17 @@ The RAW-versus-time-EMA starting-weight diagnostic is complete. All 600 updates/
 36 evaluations pass, including 528 exact loaded-tensor checks. RAW starts reduce
 relative drift by mean −0.007399 nats/token, but every endpoint still trails the
 unchanged EMA parent. See `GENERAL_RSI_CONTINUATION_START_RESULTS.md`. No model
-is adopted. Next implement the bounded first-update response diagnostic in
-`GENERAL_RSI_UPDATE_RESPONSE_NEXT.md`, checking only the new interpolation and
-batch-scoring operations before fresh roles and measured admission. This tests
-finite-step overshoot versus sampled-direction cost. The closed warmup negative
-and conflicting primary Adam explanations are recorded in that boundary.
-No worker or new quality panel is active. Selected/fresh weights and all first
-outputs remain retained; test is unopened.
+is adopted.
+
+The first-update response diagnostic is complete. All24 updates/171 evaluations
+pass. Mean disjoint-probe loss changes are positive at scales1/16,1/4 and1,
+so all three parents fail the frozen overshoot criterion. All72 update-batch
+comparisons improve. See `GENERAL_RSI_UPDATE_RESPONSE_RESULTS.md`. Reduced harm
+at smaller steps is not a useful model gain. Next implement and check only the
+new serial independent-batch gradient averaging path described in
+`GENERAL_RSI_BATCH_AVERAGING_NEXT.md`, then freeze fresh pairs and measured
+admission. No worker or new quality panel is active. Selected/fresh weights and
+all first outputs remain retained; test is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 

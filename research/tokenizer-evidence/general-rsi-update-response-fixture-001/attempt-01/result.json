@@ -1,0 +1,50 @@
+{
+  "plan_sha256": "bb680e8a6f87988a4a1257a65475925b711bc3caf6258ef5b088080d31af60ee",
+  "accepted": true,
+  "loaded_parent": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-native-horizon-001/slot-01/time_ema.pt",
+    "size": 113998683,
+    "sha256": "dcb9a0bc04905967d052f7fbdf92c5bee617d5f2a61b02d59e5d3f755aba2e93",
+    "slot": 1,
+    "binding": "cbdd5b605e3d06becf393e0ac3ac7f2761281279c376e1918f2fdf013122a390"
+  },
+  "endpoint_and_restoration_tensor_checks": 440,
+  "interior_independent_tensor_checks": 176,
+  "unequal_target_denominator_check": true,
+  "batch_starts": [
+    535366,
+    3804499
+  ],
+  "score": {
+    "ce": 3.848971514752975,
+    "window_loss_sums": [
+      539.1413938682526,
+      492.178903920576,
+      477.7379361856729,
+      463.5329656098038,
+      489.5618222099729,
+      439.88852311857045,
+      541.3962429026142,
+      497.90904329158366
+    ],
+    "window_targets": [
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128,
+      128
+    ],
+    "targets": 1024
+  },
+  "oracle_ce": 3.8489715712991672,
+  "absolute_ce_error": 5.654619217310142e-08,
+  "batch_score_seconds": 0.2814170829951763,
+  "peak_mps_bytes": 1103839232,
+  "optimizer_updates": 0,
+  "new_checkpoints": 0,
+  "validation_scored": false,
+  "test_opened": false
+}
