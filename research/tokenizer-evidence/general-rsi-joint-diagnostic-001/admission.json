@@ -1,0 +1,41 @@
+{
+  "admitted": true,
+  "created_unix": 1794474421.837984,
+  "plan_sha256": "2ba5d7076744010a54f119da32b63f795b0d8215af1e4d852726a3bef971ea63",
+  "actual_free_bytes": 18591932416,
+  "required_free_bytes": 10871635968,
+  "extra_headroom_bytes": 2147483648,
+  "metadata_cap_bytes": 67108864,
+  "serialization_bytes": 0,
+  "overlap_bytes": 67108864,
+  "cost_components_seconds": {
+    "training": 355.0513598342773,
+    "natural_scoring": 86.39829072275334,
+    "synthetic_scoring": 69.12,
+    "loads": 90,
+    "state_checks_and_digests": 30,
+    "bindings_and_inputs": 20,
+    "logging_and_overhead": 30
+  },
+  "forecast_seconds": 680.5696505570306,
+  "ceiling_seconds": 1200,
+  "remaining_margin_seconds": 519.4303494429694,
+  "measured_basis": "Qualified mean update costs and prior22.063626seconds/100416 natural targets. Synthetic scoring0.18s/batch and other overhead are conservative allowances, not new measurements.",
+  "checks": {
+    "shared_nonblocking_lock": true,
+    "no_worker_on_process_inspection": true,
+    "parent_hashes": 3,
+    "source_hashes": 5151,
+    "disjoint_input_inventories": 3,
+    "new_aggregation_oracle": {
+      "targets": 2,
+      "probability_sum": 1.0,
+      "previous_probability_sum": 0.6000000000000001,
+      "penalty_sum": 0.8675005677047231,
+      "saturated": 0
+    },
+    "new_source_ast_valid": true
+  },
+  "preparation_seconds": 1.2007059999741614,
+  "cleanup_needed": false
+}

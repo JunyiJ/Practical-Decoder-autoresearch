@@ -24,11 +24,21 @@ half CE, and half CE plus half pseudo before one clip/optimizer advance. All264
 parameter-gradient checks matched exactly, and all three complete save/restore/
 replay checks passed. See `GENERAL_RSI_JOINT_GRADIENT_INTEGRATION_RESULTS.md`.
 Measured update times are0.343/0.354/0.486seconds; total qualification111.703seconds.
-Next implement and freeze a fresh three-parent100-natural-update diagnostic with
-disjoint natural and synthetic repetition probes, explicit normalization/clipping
-contrasts, rotated order and full measured cost admission. No worker or quality
-panel is active. Preserve all closed decisions, selected/fresh weights and first
-outputs. Do not repeat the completed integration or add a batch-reuse arm.
+The fresh joint-gradient diagnostic is also complete:900 updates/45 probes,
+all execution checks passed. At100 natural updates, joint-minus-full CE is
++0.019226 and joint-minus-half CE+0.021136nats/token, both unfavorable in all
+three parents. Synthetic repetition probability and its previous-copy ratio fall.
+The frozen joint-benefit criterion fails. See `GENERAL_RSI_JOINT_DIAGNOSTIC_RESULTS.md`.
+The posthoc saved-window audit finds prediction costs in both sources and in
+windows with and without repeated trigrams. No quality model is adopted.
+
+Next audit CE-only continuation drift using existing100-update parent-relative
+probes and original1,200-second CE histories plus RAW/time-EMA endpoint validation.
+Keep training-window CE, online batch loss and validation distinct. Establish
+which early-drift/recovery explanations the retained evidence can resolve before
+choosing another intervention. No worker or training panel is active. Preserve
+all closed decisions, selected/fresh weights and first outputs. Do not repeat
+completed prerequisites, replay closed diagnostics or add a batch-reuse arm.
 
 ## Completed priority — 2026-11-11 Pacific
 
