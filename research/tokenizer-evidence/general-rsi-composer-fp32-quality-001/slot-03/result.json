@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "binding": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
+  "slot": {
+    "slot": 3,
+    "phase": "confirmation",
+    "bundle": 2,
+    "arm": "existing_byte",
+    "lr": 0.0025,
+    "horizon": 10240,
+    "roles": {
+      "native_initializer": 62111118101,
+      "composer_initializer": 62111118102,
+      "train_sampler": 62111118103,
+      "validation_sampler": 62111118104
+    },
+    "timeout_seconds": 14400
+  },
+  "steps": 10240,
+  "training_ns": 6461475125290,
+  "lost_training_ns": 0,
+  "snapshots": 342,
+  "checkpoint_seconds_this_attempt": 12.015531457029283,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-composer-fp32-quality-001/slot-03/raw.pt",
+        "size": 65441197,
+        "sha256": "0b6412e97828bf71bf1d562f86f7f706c684d125e8f0701fc5d537352b78e44d"
+      },
+      "ce": 5.150473871350331,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.139937139485628
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.192676470904528
+        }
+      },
+      "score_seconds": 56.554208541987464,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "h200",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-composer-fp32-quality-001/slot-03/h200.pt",
+        "size": 65441197,
+        "sha256": "7957efe013a91fa491f18d8126be184c4a15ef797a7aa4f5ffdcc5eb5e383430"
+      },
+      "ce": 5.142531945295292,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.1321119839151885
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.184266845940134
+        }
+      },
+      "score_seconds": 55.79336845804937,
+      "generation_seconds": 87.73421995807439
+    }
+  ],
+  "test_opened": false
+}
