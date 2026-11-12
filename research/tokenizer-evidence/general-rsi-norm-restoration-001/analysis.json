@@ -1,0 +1,175 @@
+{
+  "result_sha256": "c4593e9baac88b399ac916cb461cebc589358bdeaa81dbf5f109b86b561c98be",
+  "means": {
+    "raw": {
+      "effects": {
+        "readout": -0.07021905897213336,
+        "other": 0.6481694391419713,
+        "both": 0.7376515260617964
+      },
+      "residuals": {
+        "original": 0.1877030334007772,
+        "readout": 0.11748397442864385,
+        "other": 0.8358724725427485,
+        "both": 0.9253545594625736
+      }
+    },
+    "time_ema": {
+      "effects": {
+        "readout": -0.05842272279277635,
+        "other": 0.5124979087207097,
+        "both": 0.5636934084704107
+      },
+      "residuals": {
+        "original": 0.13723582455008643,
+        "readout": 0.07881310175731009,
+        "other": 0.6497337332707961,
+        "both": 0.7009292330204971
+      }
+    }
+  },
+  "paired_rows": [
+    {
+      "parent": 1,
+      "endpoint": "raw",
+      "parent_ce": 4.07541986638886,
+      "scores": {
+        "original": 4.231488458432921,
+        "readout": 4.169633128202914,
+        "other": 4.894710803176352,
+        "both": 5.006481712681307
+      },
+      "effects": {
+        "readout": -0.061855330230006444,
+        "other": 0.6632223447434313,
+        "both": 0.7749932542483862
+      },
+      "interaction": 0.17362623973496127,
+      "residuals": {
+        "original": 0.15606859204406032,
+        "readout": 0.09421326181405387,
+        "other": 0.8192909367874917,
+        "both": 0.9310618462924465
+      }
+    },
+    {
+      "parent": 1,
+      "endpoint": "time_ema",
+      "parent_ce": 4.07541986638886,
+      "scores": {
+        "original": 4.18384969265427,
+        "readout": 4.131635718548226,
+        "other": 4.70599277119868,
+        "both": 4.772004048056113
+      },
+      "effects": {
+        "readout": -0.05221397410604389,
+        "other": 0.5221430785444099,
+        "both": 0.5881543554018425
+      },
+      "interaction": 0.11822525096347647,
+      "residuals": {
+        "original": 0.10842982626540998,
+        "readout": 0.056215852159366086,
+        "other": 0.6305729048098199,
+        "both": 0.6965841816672524
+      }
+    },
+    {
+      "parent": 3,
+      "endpoint": "raw",
+      "parent_ce": 3.9215557605497153,
+      "scores": {
+        "original": 4.12500439087313,
+        "readout": 4.05022773888759,
+        "other": 4.714771387583301,
+        "both": 4.784989463470847
+      },
+      "effects": {
+        "readout": -0.07477665198554018,
+        "other": 0.5897669967101713,
+        "both": 0.659985072597717
+      },
+      "interaction": 0.14499472787308587,
+      "residuals": {
+        "original": 0.20344863032341465,
+        "readout": 0.12867197833787447,
+        "other": 0.793215627033586,
+        "both": 0.8634337029211316
+      }
+    },
+    {
+      "parent": 3,
+      "endpoint": "time_ema",
+      "parent_ce": 3.9215557605497153,
+      "scores": {
+        "original": 4.073197908342102,
+        "readout": 4.009514025192304,
+        "other": 4.543519030809321,
+        "both": 4.581078659776685
+      },
+      "effects": {
+        "readout": -0.06368388314979878,
+        "other": 0.4703211224672188,
+        "both": 0.5078807514345822
+      },
+      "interaction": 0.1012435121171622,
+      "residuals": {
+        "original": 0.15164214779238705,
+        "readout": 0.08795826464258827,
+        "other": 0.6219632702596058,
+        "both": 0.6595228992269693
+      }
+    },
+    {
+      "parent": 5,
+      "endpoint": "raw",
+      "parent_ce": 3.9618666839641428,
+      "scores": {
+        "original": 4.165458561798999,
+        "readout": 4.091433367098146,
+        "other": 4.856977537771311,
+        "both": 4.9434348131382855
+      },
+      "effects": {
+        "readout": -0.07402519470085345,
+        "other": 0.6915189759723113,
+        "both": 0.777976251339286
+      },
+      "interaction": 0.16048247006782823,
+      "residuals": {
+        "original": 0.20359187783485666,
+        "readout": 0.1295666831340032,
+        "other": 0.8951108538071679,
+        "both": 0.9815681291741427
+      }
+    },
+    {
+      "parent": 5,
+      "endpoint": "time_ema",
+      "parent_ce": 3.9618666839641428,
+      "scores": {
+        "original": 4.113502183556605,
+        "readout": 4.054131872434119,
+        "other": 4.658531708707105,
+        "both": 4.708547302131413
+      },
+      "effects": {
+        "readout": -0.05937031112248636,
+        "other": 0.5450295251505004,
+        "both": 0.5950451185748076
+      },
+      "interaction": 0.10938590454679353,
+      "residuals": {
+        "original": 0.15163549959246225,
+        "readout": 0.09226518846997589,
+        "other": 0.6966650247429627,
+        "both": 0.7466806181672698
+      }
+    }
+  ],
+  "all_readout_effects_negative": true,
+  "all_other_and_both_effects_positive": true,
+  "all_residuals_above_parent": true,
+  "scope": "Shared8192 training targets, descriptive six endpoint comparisons. No calibration metric, holdout improvement, decay causality, or model adoption established."
+}

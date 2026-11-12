@@ -39,14 +39,20 @@ probes regress. Raw parameter-group norms fall to83.3–83.5% of their parent no
 See `GENERAL_RSI_CE_DRIFT_RESULTS.md`. These are existing-score and weight audits;
 no validation was rerun. Norm shrinkage does not establish decay causality.
 
-Next implement and freeze the retained-weight norm-restoration inference control
-in `GENERAL_RSI_NORM_RESTORATION_NEXT.md`: separate readout and other-parameter
-scaling across27 conditions on64 shared fresh training windows. Bind mechanical
-factors and all conditions before scores, verify new transformation/restoration
-logic, then complete measured admission. Prior zero-decay training lost in all
-three seeds and remains closed. No new training panel or model adoption is
-admitted. No worker is active. Preserve selected/fresh weights, original decisions
-and first outputs. Test remains unopened.
+The retained-weight norm-restoration diagnostic is complete. All27 conditions
+passed. Readout-only scaling lowers training-window CE in all six endpoints,
+mean−0.070219 RAW and−0.058423 EMA, but every endpoint remains worse than its
+parent. Other-parameter and joint scaling harm every endpoint. See
+`GENERAL_RSI_NORM_RESTORATION_RESULTS.md`. No model is adopted.
+
+Next prepare the fresh paired continuation-decay attribution diagnostic in
+`GENERAL_RSI_CONTINUATION_DECAY_NEXT.md`. Its four arms separate readout and
+other-parameter shrinkage during actual learning, which static rescaling cannot
+identify. Qualify only the new group-policy integration and restart behavior,
+then freeze inputs and complete measured admission. Prior zero-decay fresh
+training remains a negative, closed study. No quality panel is admitted or
+worker active. Selected/fresh weights and first outputs remain retained; test
+is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 
