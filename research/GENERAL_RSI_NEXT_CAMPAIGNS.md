@@ -237,8 +237,15 @@ overlap, metadata, failure allowance,10GiB reserve and2GiB extra headroom.
 Slot00 context128 is complete and independently reviewed:42,152 updates,
 14,400.229957 training seconds, time-EMA CE4.844975685 and24 first outputs.
 All100,416 target IDs, score aggregates, schedule/EMA counts and retained
-endpoints pass. Next run paired slot01 context256, then review each completed
-slot before advancing the frozen order. No pair or quality decision is complete.
+endpoints pass. Paired slot01 context256 is also complete and reviewed:40,907
+updates,14,400.247076 training seconds, time-EMA CE4.747021581 and24 first outputs.
+The first native-context pair improves by0.097954103nats/token, with both sources
+improving. At common128 evaluation, the256 model has CE4.819585755, an improvement
+of0.025389930 over the128 control. These are descriptive one-pair findings, not
+a confirmed gain or causal decomposition. See
+`tokenizer-evidence/general-rsi-context-length-quality-001/pair-01-descriptive.json`.
+Next run frozen slot02 context256 bundle2, then review each completed slot before
+advancing. Two more fresh pairs and the fixed generation evaluation remain.
 Do not repeat completed prerequisites. Test remains unopened.
 
 ## Historical completed priority — 2026-11-11 Pacific

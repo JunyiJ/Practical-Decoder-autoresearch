@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "READY_FOR_NEXT_FROZEN_SLOT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 32901,
-  "next_action": "Slot01 context256 is actively training under the unchanged frozen plan and shared lock. After completion audit the paired sampler prefix, native/common128 target coverage, clock, endpoints and first generations before slot02. Finish all three pairs before the frozen decision. After all six slots, the frozen decision and fixed generation evaluation finish, follow the cross-size transfer priority in research/GENERAL_RSI_NEXT_CAMPAIGNS.md (2026-11-12): qualify local capacity, then freeze one focused finding-by-size comparison. Do not change the active panel or default to further same-size tuning.",
+  "active_session": null,
+  "next_action": "Launch frozen slot02 context256 bundle2 after complete remaining-resource and process/lock admission. Review each slot before advancing; finish all six slots, frozen decision, common128 and fixed generation evaluation. Then follow the cross-size transfer priority in GENERAL_RSI_NEXT_CAMPAIGNS.md; do not default to more same-size tuning.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T17:42:17.127088+00:00",
-  "active_worker_pid": 72296,
+  "updated_at": "2026-11-12T19:22:58.714412+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "New128 exactly matches historical initialization, logits and first update. New256 causal/prefix checks and all50 pilot updates pass, with exact full-state restart/replay and pre-mutation wrong-context rejection. Pilot means0.352604/0.348422seconds per update; no quality or sustained-speed gain claimed. One CPU-only audit-digest harness failure retained and repaired separately.",
+  "latest_learning": "First fresh context pair passed execution review. Native-context time-EMA CE256-minus-CE128 is -0.097954103346456; both sources improve. With common128 evaluation the difference is -0.025389929740664. All48 first outputs are retained. These are one-pair descriptive findings, not a confirmed panel gain.",
   "phase": "context_length_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Cache cleanup 2026-11-12 removed 258752512 allocated bytes from 6159 audited cache files. Measured 21275488256 bytes free versus 21246838858 required including reserve and extra 2GiB headroom for context-length panel after retained slot00 endpoints. Current training continues; earlier 66-checkpoint cleanup completed and reclaimed 17519001600 allocated bytes. Receipt: research/storage-cleanup-2026-11-12/reconciliation.json.",
+  "capacity_status": "Remaining full context panel fits: 21192704000 bytes free versus 21018841236 required including reserve and extra2GiB headroom after 455995244 retained endpoint bytes. Metadata forecast 272508462 below512MiB. See slot-02-resource-check.json.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Context128 control bundle1 completed the fixed four-hour recipe with time-EMA CE4.844975684690298. The paired256 arm is not yet measured; longer-context quality remains untested. All execution and identical-target audits pass. No adoption or change to frozen criteria.",
+  "latest_hypothesis": "The first pair supports the longer-context recipe hypothesis, including a smaller improvement when both models are evaluated at context128. Two fresh pairs remain necessary under the unchanged adoption criteria; no causal decomposition or cross-size claim is established.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -756,6 +756,19 @@
       "raw_ce": 4.8552666541986795,
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-00/review.json"
+    },
+    {
+      "slot": 1,
+      "arm": "context256",
+      "bundle": 1,
+      "steps": 40907,
+      "training_seconds": 14400.247076165,
+      "worker_seconds": 14815.850384708028,
+      "time_ema_ce": 4.747021581343842,
+      "raw_ce": 4.762436644603572,
+      "common128_time_ema_ce": 4.819585754949634,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/review.json"
     }
   ],
   "context_length_quality_design": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_DESIGN.md",
