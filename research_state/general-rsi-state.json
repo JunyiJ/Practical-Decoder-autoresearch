@@ -15,7 +15,7 @@
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T23:33:47.272042+00:00",
+  "updated_at": "2026-11-12T23:53:09.145778+00:00",
   "active_worker_pid": 58223,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Remaining full panel requires 20790843614 bytes including reserve and extra2GiB after 683992866 retained endpoint bytes. Measured free 20804136960; metadata forecast 275162502 bytes. See slot-03-resource-check.json.",
+  "capacity_status": "Active slot03 headroom restored by exact external-cache cleanup: 893 unopened cache objects, 56610816 allocated bytes removed, 49 protected hashes unchanged. Free 20507738112 versus remaining requirement 20457185381 including extra2GiB and already-written active outputs. See research/storage-cleanup-2026-11-12-active-context-001/cache-completed.json.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -788,5 +788,6 @@
   "context_length_integration_report": "research/GENERAL_RSI_CONTEXT_LENGTH_INTEGRATION_RESULTS.md",
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
   "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/launch-verification.json",
-  "post_current_experiment_priority": "Test which findings transfer across model sizes on this Mac mini; current context-length panel finishes unchanged. Authority: human request 2026-11-12 in Review RSI byte model."
+  "post_current_experiment_priority": "Test which findings transfer across model sizes on this Mac mini; current context-length panel finishes unchanged. Authority: human request 2026-11-12 in Review RSI byte model.",
+  "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-001/cache-completed.json"
 }
