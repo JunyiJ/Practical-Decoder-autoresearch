@@ -45,14 +45,16 @@ mean−0.070219 RAW and−0.058423 EMA, but every endpoint remains worse than it
 parent. Other-parameter and joint scaling harm every endpoint. See
 `GENERAL_RSI_NORM_RESTORATION_RESULTS.md`. No model is adopted.
 
-Next prepare the fresh paired continuation-decay attribution diagnostic in
-`GENERAL_RSI_CONTINUATION_DECAY_NEXT.md`. Its four arms separate readout and
-other-parameter shrinkage during actual learning, which static rescaling cannot
-identify. Qualify only the new group-policy integration and restart behavior,
-then freeze inputs and complete measured admission. Prior zero-decay fresh
-training remains a negative, closed study. No quality panel is admitted or
-worker active. Selected/fresh weights and first outputs remain retained; test
-is unopened.
+The new group-decay integration is qualified: three canonical updates match
+complete state exactly,352 tensor shrinkage checks pass, and all four policies
+restore/replay exactly. See `GENERAL_RSI_CONTINUATION_DECAY_INTEGRATION_RESULTS.md`.
+The fresh four-arm diagnostic is frozen and admitted in
+`general-rsi-continuation-decay-diagnostic-001/plan.json`. Next run its1,200
+updates/63 evaluations serially and review the fixed readout-removal contrast.
+This distinguishes decay during learning from static endpoint rescaling.
+Prior zero-decay fresh training remains a negative, closed study. No quality
+panel is admitted. Selected/fresh weights and first outputs remain retained;
+test is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 
