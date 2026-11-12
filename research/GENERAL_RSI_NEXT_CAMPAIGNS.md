@@ -45,16 +45,19 @@ mean−0.070219 RAW and−0.058423 EMA, but every endpoint remains worse than it
 parent. Other-parameter and joint scaling harm every endpoint. See
 `GENERAL_RSI_NORM_RESTORATION_RESULTS.md`. No model is adopted.
 
-The new group-decay integration is qualified: three canonical updates match
-complete state exactly,352 tensor shrinkage checks pass, and all four policies
-restore/replay exactly. See `GENERAL_RSI_CONTINUATION_DECAY_INTEGRATION_RESULTS.md`.
-The fresh four-arm diagnostic is frozen and admitted in
-`general-rsi-continuation-decay-diagnostic-001/plan.json`. Next run its1,200
-updates/63 evaluations serially and review the fixed readout-removal contrast.
-This distinguishes decay during learning from static endpoint rescaling.
-Prior zero-decay fresh training remains a negative, closed study. No quality
-panel is admitted. Selected/fresh weights and first outputs remain retained;
-test is unopened.
+The group-decay integration and fresh diagnostic are complete. All1,200 updates/
+63 evaluations pass. Removing readout decay lowers CE in all three pairs,
+mean−0.003509; removing both lowers it by−0.009567. Every arm still regresses
+from its parent, including no decay at mean+0.019654. See
+`GENERAL_RSI_CONTINUATION_DECAY_RESULTS.md`. No recipe is adopted.
+
+Next prepare the RAW-versus-time-EMA starting-weight diagnostic in
+`GENERAL_RSI_CONTINUATION_START_NEXT.md`, using the qualified no-decay policy
+as a mechanism control. Verify only the new RAW loader, then freeze fresh paired
+inputs and complete measured admission. Original optimizer restart states were
+retired; do not claim an exact warm-optimizer control or replay closed training.
+No worker or quality panel is active. Selected/fresh weights and all first
+outputs remain retained; test is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 
