@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CONTINUATION_START_DIAGNOSTIC_PREPARATION_NEXT",
+  "status": "UPDATE_RESPONSE_PREPARATION_NEXT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Prepare GENERAL_RSI_CONTINUATION_START_NEXT.md: bind retained RAW/time-EMA starting pairs, verify only the new RAW loader against exact original parameters, freeze fresh paired100-update streams and probes, and admit the complete600-update/36-evaluation diagnostic. Reuse qualified no-decay optimizer/restart/scorer. No quality panel or test access.",
+  "next_action": "Implement bounded first-update displacement response and check only exact interpolation/restoration and 1024-target scoring. Then freeze fresh roles, inputs, criterion and complete measured resource admission under the shared lock. No scientific worker is active.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T09:56:26.368029+00:00",
+  "updated_at": "2026-11-12T10:09:16.959196+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All1200 updates/63 evaluations passed. Removing readout decay improves CE in all3 pairs, mean -0.003508992; removing both improves -0.009566641. Every arm still regresses from its parent, no-decay mean +0.019654416. Decay is a partial short-horizon contributor; no recipe adopted.",
+  "latest_learning": "All600 updates/36 scores passed. RAW starts reduce own-start drift in all3 pairs, mean -0.007399052, but RAW/EMA final gaps to unchanged EMA parents remain +0.037049091/+0.019644686. Initial weights partly explain drift; no quality model adopted.",
   "phase": "evidence_grounded_mechanism_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Accumulated diagnostic completed without model serialization; outputs2664285bytes before review, free19923124224bytes. Existing selected/fresh weights and all evidence retained. New execution needs fresh complete admission; no capacity blocker.",
+  "capacity_status": "Start diagnostic completed without model serialization. Review evidence 1341014 bytes; current free 16935010304 bytes. No capacity blocker. New work requires complete measured admission.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -702,5 +702,12 @@
   "continuation_decay_diagnostic_report": "research/GENERAL_RSI_CONTINUATION_DECAY_RESULTS.md",
   "continuation_decay_diagnostic_analysis": "research/tokenizer-evidence/general-rsi-continuation-decay-diagnostic-001/analysis.json",
   "continuation_decay_diagnostic_review": "research/tokenizer-evidence/general-rsi-continuation-decay-diagnostic-001/completion-review.json",
-  "continuation_start_boundary": "research/GENERAL_RSI_CONTINUATION_START_NEXT.md"
+  "continuation_start_boundary": "research/GENERAL_RSI_CONTINUATION_START_NEXT.md",
+  "continuation_start_diagnostic_plan": "research/tokenizer-evidence/general-rsi-continuation-start-diagnostic-001/plan.json",
+  "continuation_start_diagnostic_plan_sha256": "ba556f9b2ed434f65fc639a795ca0fb4782241257680f04e303b6216adf0163c",
+  "continuation_start_diagnostic_report": "research/GENERAL_RSI_CONTINUATION_START_RESULTS.md",
+  "continuation_start_diagnostic_analysis": "research/tokenizer-evidence/general-rsi-continuation-start-diagnostic-001/analysis.json",
+  "continuation_start_diagnostic_review": "research/tokenizer-evidence/general-rsi-continuation-start-diagnostic-001/completion-review.json",
+  "update_response_boundary": "research/GENERAL_RSI_UPDATE_RESPONSE_NEXT.md",
+  "update_response_literature_review": "research/tokenizer-evidence/general-rsi-continuation-start-diagnostic-001/next-update-boundary.json"
 }

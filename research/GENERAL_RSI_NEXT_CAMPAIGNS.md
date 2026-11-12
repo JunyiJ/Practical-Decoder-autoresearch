@@ -51,12 +51,16 @@ mean−0.003509; removing both lowers it by−0.009567. Every arm still regresse
 from its parent, including no decay at mean+0.019654. See
 `GENERAL_RSI_CONTINUATION_DECAY_RESULTS.md`. No recipe is adopted.
 
-Next prepare the RAW-versus-time-EMA starting-weight diagnostic in
-`GENERAL_RSI_CONTINUATION_START_NEXT.md`, using the qualified no-decay policy
-as a mechanism control. Verify only the new RAW loader, then freeze fresh paired
-inputs and complete measured admission. Original optimizer restart states were
-retired; do not claim an exact warm-optimizer control or replay closed training.
-No worker or quality panel is active. Selected/fresh weights and all first
+The RAW-versus-time-EMA starting-weight diagnostic is complete. All 600 updates/
+36 evaluations pass, including 528 exact loaded-tensor checks. RAW starts reduce
+relative drift by mean −0.007399 nats/token, but every endpoint still trails the
+unchanged EMA parent. See `GENERAL_RSI_CONTINUATION_START_RESULTS.md`. No model
+is adopted. Next implement the bounded first-update response diagnostic in
+`GENERAL_RSI_UPDATE_RESPONSE_NEXT.md`, checking only the new interpolation and
+batch-scoring operations before fresh roles and measured admission. This tests
+finite-step overshoot versus sampled-direction cost. The closed warmup negative
+and conflicting primary Adam explanations are recorded in that boundary.
+No worker or new quality panel is active. Selected/fresh weights and all first
 outputs remain retained; test is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
