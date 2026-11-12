@@ -1,0 +1,50 @@
+{
+  "plan_sha256": "02911661652891a3da8972c59a76dd7852d0215ac4b5e871d11fd8c7debf1a68",
+  "accepted": true,
+  "checkpoint_step": 26,
+  "checkpoint_snapshots": 3,
+  "final_snapshots": 4,
+  "pilot_optimizer_updates": 28,
+  "original128_chunk_adapter_exact": true,
+  "synthetic_targets": 1665,
+  "train_document_targets": 653,
+  "per_token_ce_max_abs_vs_fp64": 1.4983223479703156e-06,
+  "full_active_ema_replay_exact": true,
+  "inference_parameters_exact": 176,
+  "wrong_context_inference_rejected": true,
+  "state_unchanged_after_evaluation_generation": true,
+  "first_outputs": 24,
+  "generated_tokens": 1474,
+  "generation_seconds": 59.041196666890755,
+  "training_document_evaluation_and_oracle_seconds": 1.1142132501117885,
+  "restart_io_seconds": 1.290205291006714,
+  "restart_receipts": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-integration-001/active-ema-restart.pt",
+      "size": 445008823,
+      "sha256": "6359d788d4640d3924a029e3a6df83505b576f0808e33f679f1adaec9a108c54"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-integration-001/active-ema-reference.pt",
+      "size": 445009079,
+      "sha256": "5dc29d27dc35116260a423791a6d226572514521cf2d32b2e330afdb08fc3610"
+    }
+  ],
+  "endpoint_receipts": {
+    "raw": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-integration-001/raw.pt",
+      "size": 113998811,
+      "sha256": "1327fe5e221f6380b2caf9262ccece7153cd3f0e585d7f9a502f2e2feb53073d"
+    },
+    "time_ema": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-integration-001/time_ema.pt",
+      "size": 113998811,
+      "sha256": "54a62836c427652adcb4542459adf92b5033a385e0a538670962771f4383c1f6"
+    }
+  },
+  "retained_bytes": 1118015524,
+  "peak_mps_bytes": 2501689344,
+  "validation_opened": false,
+  "test_opened": false,
+  "quality_adopted": false
+}

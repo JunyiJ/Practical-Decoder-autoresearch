@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CONTEXT_LENGTH_QUALITY_INTEGRATION_NEXT",
+  "status": "CONTEXT_LENGTH_QUALITY_ADMITTED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Implement separate configurable context/time-EMA endpoints, common-target document scoring and fixed uncached generation adapter. Qualify only changed paths with fresh engineering roles and complete measured admission. The24-step context pilot is complete; no worker or quality panel is active.",
+  "next_action": "Launch frozen context-length slot00, then review each completed slot before advancing the unchanged six-slot order. Test unopened. Do not repeat qualified prerequisites.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T10:49:11.373694+00:00",
+  "updated_at": "2026-11-12T11:04:47.143634+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -60,7 +60,7 @@
     }
   ],
   "latest_learning": "New128 exactly matches historical initialization, logits and first update. New256 causal/prefix checks and all50 pilot updates pass, with exact full-state restart/replay and pre-mutation wrong-context rejection. Pilot means0.352604/0.348422seconds per update; no quality or sustained-speed gain claimed. One CPU-only audit-digest harness failure retained and repaired separately.",
-  "phase": "evidence_grounded_mechanism_diagnostic",
+  "phase": "context_length_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Context pilot retained776020777 payload bytes. Current free16128536576bytes. Remaining changed-path integration prospective requirement15099494400bytes includes all output caps, overlap, reserve and extra headroom; remeasure before admission. No current capacity blocker.",
+  "capacity_status": "Capacity009 retired24 obsolete engineering payloads,6727436212bytes, and verified705 protected files. Full panel admitted with21735002112 free bytes against21474836480 required including reserve and extra headroom; exact forecast in context-length admission. No storage blocker.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Within-limit natural context is useful across all selected parents and both sources. The256 execution path is now qualified at short constant-LR updates without an observed large throughput penalty. Whether grouping longer contexts improves full-recipe prediction at equal training time remains untested. Qualify changed endpoint/evaluation paths before fresh paired quality admission.",
+  "latest_hypothesis": "Within-limit prefix evidence supports testing longer context. Changed256 active-EMA/restart/evaluation/generation paths pass integration. Whether context256 improves equal-time fresh-training quality remains untested; evaluate the frozen three-pair panel.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -739,5 +739,13 @@
   "context_length_pilot_plan": "research/tokenizer-evidence/general-rsi-context-length-pilot-001/plan.json",
   "context_length_pilot_review": "research/tokenizer-evidence/general-rsi-context-length-pilot-001/completion-review.json",
   "context_length_pilot_report": "research/GENERAL_RSI_CONTEXT_LENGTH_PILOT_RESULTS.md",
-  "context_length_quality_integration_boundary": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_INTEGRATION_NEXT.md"
+  "context_length_quality_integration_boundary": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_INTEGRATION_NEXT.md",
+  "context_length_quality_panel": "research/tokenizer-evidence/general-rsi-context-length-quality-001/plan.json",
+  "context_length_quality_panel_sha256": "60b4addc99cef4cb2825b792699275ac490cf240ff478a35391a03a55699838e",
+  "context_length_quality_admission": "research/tokenizer-evidence/general-rsi-context-length-quality-001/admission.json",
+  "context_length_quality_panel_launched": false,
+  "context_length_quality_completed_slots": [],
+  "context_length_quality_design": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_DESIGN.md",
+  "context_length_integration_report": "research/GENERAL_RSI_CONTEXT_LENGTH_INTEGRATION_RESULTS.md",
+  "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json"
 }

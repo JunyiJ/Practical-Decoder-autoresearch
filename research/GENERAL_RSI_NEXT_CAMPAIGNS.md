@@ -79,11 +79,22 @@ The isolated128/256 pilot is complete: all50 updates pass, complete256 restart
 and replay are exact, and wrong-context loading rejects before mutation. Mean
 update times are0.352604/0.348422seconds, without a sustained-speed claim. One
 CPU-digest harness failure and its separately identified repair remain retained.
-See `GENERAL_RSI_CONTEXT_LENGTH_PILOT_RESULTS.md`. Next integrate only the new
-context/active-EMA, identical-target evaluator and fixed-generation adapter in
-`GENERAL_RSI_CONTEXT_LENGTH_QUALITY_INTEGRATION_NEXT.md`. Do not repeat the pilot.
-Historical contracts stay unchanged. No worker or quality panel is active; test
-is unopened.
+See `GENERAL_RSI_CONTEXT_LENGTH_PILOT_RESULTS.md`. The changed active-EMA,
+identical-target evaluator and generation paths are now qualified:28 updates,
+exact complete restart/replay,176 exact exported tensors and24 first engineering
+outputs. See `GENERAL_RSI_CONTEXT_LENGTH_INTEGRATION_RESULTS.md`.
+
+The fresh six-run128/256 comparison is frozen in
+`tokenizer-evidence/general-rsi-context-length-quality-001/plan.json`, under
+`GENERAL_RSI_CONTEXT_LENGTH_QUALITY_DESIGN.md`. Three paired bundles each receive
+14,400 training seconds per arm. Adoption requires all pairs improve, mean
+CE256-minus-CE128 at most−0.02,99% bootstrap upper below zero and the fixed
+source guard. Quality beyond128 remains untested. Capacity009 recovered
+6,727,436,212 bytes from24 obsolete engineering payloads and verified705 protected
+files unchanged. Full admission includes all retained outputs, serialization
+overlap, metadata, failure allowance,10GiB reserve and2GiB extra headroom.
+Next launch slot00 and review each completed slot before advancing the frozen
+order. Do not repeat completed prerequisites. Test remains unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 

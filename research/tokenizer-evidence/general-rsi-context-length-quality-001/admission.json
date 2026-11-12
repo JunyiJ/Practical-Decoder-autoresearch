@@ -1,0 +1,35 @@
+{
+  "plan_sha256": "60b4addc99cef4cb2825b792699275ac490cf240ff478a35391a03a55699838e",
+  "admitted_at": "2026-11-12T11:01:37.026096+00:00",
+  "shared_lock_held": true,
+  "scientific_scores_seen": false,
+  "changed_context_paths_qualified": true,
+  "prior_closed_prerequisites_reused": true,
+  "forecast": {
+    "measured_weight_bytes": 113998811,
+    "measured_restart_bytes": 445009079,
+    "final_weight_count": 12,
+    "final_output_cap_bytes": 1610612736,
+    "active_restart_and_serialization_overlap_bytes": 1073741824,
+    "metadata_bytes": 536870912,
+    "failed_output_allowance_bytes": 5368709120,
+    "incremental_peak_bytes": 8589934592,
+    "reserve_bytes": 10737418240,
+    "extra_headroom_bytes": 2147483648,
+    "required_free_bytes": 21474836480,
+    "actual_free_bytes": 21735002112,
+    "predicted_updates": 247975.1095012539,
+    "cost_components_seconds": {
+      "training_seconds": 86400,
+      "endpoint_probe_upper_seconds": 5140.19162587559,
+      "generation_seconds": 531.3707700020168,
+      "checkpoint_seconds": 2196.0,
+      "initialization_seconds": 180,
+      "outside_clock_logging_seconds": 2479.7510950125393
+    },
+    "estimated_seconds": 96927.31349089016,
+    "tranche_seconds": 129600,
+    "failure_and_variability_allowance_seconds": 32672.686509109844,
+    "assumptions": "All existing files already charged in actual free space. Per-arm timing from24-update pilot; score upper bound charges30full108-document passes at per-target cost of two-context training-document scoring plus FP64 oracle. Six generation sets at1.5x measured uncached cost. Checkpoint allowance covers732writes.512MiB metadata covers paired token scores, step/interval logs, all first outputs and audits.5GiB failed-output allowance; no partial panel."
+  }
+}
