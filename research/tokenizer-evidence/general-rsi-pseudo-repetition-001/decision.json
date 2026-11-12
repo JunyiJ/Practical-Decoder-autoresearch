@@ -1,0 +1,145 @@
+{
+  "at": "2026-11-12T07:54:04.467822+00:00",
+  "plan_sha256": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
+  "analysis_source_sha256": "48b303f7816c80ce82be5a036ee3d3d3a182c86a806e4513662ceb00fe13143a",
+  "bootstrap_source_sha256": "cb671dd3b137713b418674f81ff91118f41bf9c71ca2c7ab430e759cb7ab12df",
+  "all_six_execution_reviews_bound": true,
+  "pairs": [
+    {
+      "bundle": 1,
+      "ce_slot": 0,
+      "pseudo_slot": 1,
+      "time_ema_delta": 0.14164963115375073,
+      "raw_delta": 0.15870984847557423
+    },
+    {
+      "bundle": 2,
+      "ce_slot": 2,
+      "pseudo_slot": 3,
+      "time_ema_delta": 0.15529690514956318,
+      "raw_delta": 0.1713545988366425
+    },
+    {
+      "bundle": 3,
+      "ce_slot": 4,
+      "pseudo_slot": 5,
+      "time_ema_delta": 0.13689841056861418,
+      "raw_delta": 0.1599897171151472
+    }
+  ],
+  "decision": {
+    "paired_deltas": [
+      0.14164963115375068,
+      0.15529690514956218,
+      0.13689841056861474
+    ],
+    "mean_delta_pseudo_minus_ce": 0.1446149822906425,
+    "source_deltas": {
+      "fineweb_edu": 0.14173412628655724,
+      "wikipedia": 0.15615362765761842
+    },
+    "directions": {
+      "native_pseudo_repetition": {
+        "candidate_minus_other": 0.1446149822906425,
+        "bootstrap_upper_99": 0.15968130122515042,
+        "source_deltas": {
+          "fineweb_edu": 0.14173412628655724,
+          "wikipedia": 0.15615362765761842
+        },
+        "gates": {
+          "all_three_deltas_negative": false,
+          "mean_threshold": false,
+          "bootstrap_upper_negative": false,
+          "source_guard": false
+        },
+        "accepted": false
+      },
+      "native_ce": {
+        "candidate_minus_other": -0.1446149822906425,
+        "bootstrap_upper_99": -0.1293893309360947,
+        "source_deltas": {
+          "fineweb_edu": -0.14173412628655724,
+          "wikipedia": -0.15615362765761842
+        },
+        "gates": {
+          "all_three_deltas_negative": true,
+          "mean_threshold": true,
+          "bootstrap_upper_negative": true,
+          "source_guard": true
+        },
+        "accepted": true
+      }
+    },
+    "selected_arm": "native_ce",
+    "outcome": "superiority"
+  },
+  "mean_ce": {
+    "native_ce": {
+      "raw": 4.885536170402098,
+      "time_ema": 4.861012204282782
+    },
+    "native_pseudo_repetition": {
+      "raw": 5.048887558544553,
+      "time_ema": 5.005627186573424
+    }
+  },
+  "bootstrap": {
+    "seed": 62111205230999,
+    "replicates": 10000,
+    "upper_quantile": 0.99,
+    "scope": "Conditional on108documents and three paired seeds; not population-seed confidence."
+  },
+  "guard_seconds_by_slot": {
+    "0": 1308.106422000099,
+    "1": 1308.8420681669377,
+    "2": 1307.6352233330254,
+    "3": 1308.2160523750354,
+    "4": 1306.7669259589165,
+    "5": 1308.6885927910917
+  },
+  "total_guard_seconds": 7848.255284625106,
+  "training_seconds_by_slot": {
+    "0": 1200.128546477,
+    "1": 1200.285049232,
+    "2": 1200.290195228,
+    "3": 1200.328832219,
+    "4": 1200.0897854,
+    "5": 1200.113959861
+  },
+  "updates_by_slot": {
+    "0": 3493,
+    "1": 3464,
+    "2": 3506,
+    "3": 3467,
+    "4": 3512,
+    "5": 3466
+  },
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/result.json": "95ee75f36ab010658bd2f4d277779a42e3ef4db1285e089654380abb8d5e973a",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/review.json": "f262f0d6e75d20611460573a0ad2345a0d3c1b42d67583b039c4c1a571e06f6f",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/raw-validation.json": "91bc6a504f85c8a5ceffeb8d8ee96270738d9370cd15cea60624a4da6a4be949",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/time_ema-validation.json": "03155f222450b433c3c9fcfca6261fd1c18b58ecb287791259e526274b831938",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-01/result.json": "f9513f94060cfb057386c8a24d8fb7379ef5baaaefa84f39396eef42e0594c12",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-01/review.json": "b1dba5d3771d362f40d237c118712fa78d73652eac31477152085010c3652655",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-01/raw-validation.json": "1370d257918b1e4ce147740d58ef2c0f550d08deb73709edf30af54aba7a855b",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-01/time_ema-validation.json": "4427db049c7213b0192dcc5b664eeb952cfd629692d2dcb779f6c658bd66db31",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/result.json": "8d42fd204489a3a8e97f30c8bd8cd13bb9414a08a31cefb7ce30405854346b05",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/review.json": "a704be53db4cc8b50c4014120e777b46645bf596ba8fdda97256f1c143dc2edc",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/raw-validation.json": "6ae47a942301b81bf7c02bdf02bc0d32c1d6f14cd258d1a53feeadae1fcc2a1e",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/time_ema-validation.json": "5756f5708e5b6db98bb1d5cfad2a7fbf61f262e2dd3be9a3c1941f6bcc1ba228",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-03/result.json": "4e8524f236efbd7f302ead9f58f506c5f03b944e7402740f14e4cf4216323a73",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-03/review.json": "ee941f7b3402e242b7799370615da08fce663d473cc8d782f51ed2f284fcc33c",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-03/raw-validation.json": "652ff20133386b87f428e7873881b42d04b1da9e99b8228e4264ee1d589b4479",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-03/time_ema-validation.json": "5fd4a3856598760e9b01e9f0a4485c27029fa173a0132163e8bb8edac09115ff",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/result.json": "5d6a7fd9d35acdccdde152acf07675cf6d520528afa0fbf26256f217b98f38fe",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/review.json": "c92cf20a2d754a164d42cefc3eb49b1667c153234c275f061d7480264a6414d7",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/raw-validation.json": "8685048b9329ba21c64f19346ec259b7e8a4dce456d588ff31a4b26ad93e9fdb",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/time_ema-validation.json": "167c081436d56aeee4c397bc37448f13056fb4309a5ee9a342bc6e11e3758fc3",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-05/result.json": "c67b9c64a2c418d9c1fdbb593a12a1b06713210240f3205684878f41b25d13f3",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-05/review.json": "974638e46eb733ebdaa2f5a7143bda7e93498208bfeab2974ef6885628741f1f",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-05/raw-validation.json": "4c5198ab0c7b31e7e3e03fb8e932247d0b59a3441e158ef87e443b7912333a83",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-05/time_ema-validation.json": "3fbdbf31914bb7b6ecff8a44ec39c443a42cf151bbdb893455a901fdc14ec307"
+  },
+  "scope": "Paired native continuation recipes from three selected parents at1200s each. Ordinary CE versus alternating CE/pseudo repetition; natural exposure differs. RAW secondary. No fresh-pretraining, semantic-generation or transfer claim.",
+  "test_opened": false
+}

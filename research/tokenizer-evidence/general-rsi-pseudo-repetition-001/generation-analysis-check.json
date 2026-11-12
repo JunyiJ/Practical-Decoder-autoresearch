@@ -1,0 +1,27 @@
+{
+  "reference": "research/general_rsi_fp32_quality_generation_analysis_v1.py",
+  "reference_sha256": "004ceb23e8a3ac2654fe682ee85f54c57d5be0f214660fd37ec548de81ddab4f",
+  "source": "research/general_rsi_pseudo_generation_analysis_v1.py",
+  "source_sha256": "772650bc786f5438458aa3b5fa8db673bcc2ef94f9478cccb88dd524f05357e5",
+  "changes": [
+    [
+      "general-rsi-composer-fp32-quality-001",
+      "general-rsi-pseudo-repetition-001"
+    ],
+    [
+      "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
+      "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7"
+    ],
+    [
+      "arm=plan['slots'][slot]['arm']",
+      "arm=plan['slots'][slot]['recipe']"
+    ],
+    [
+      "['existing_byte','byte_composer_fp32']",
+      "['native_ce','native_pseudo_repetition']"
+    ]
+  ],
+  "normalized_ast_equal": true,
+  "scope": "New panel namespace, binding and recipe labels only. Scoring, shuffle and aggregation unchanged; no model or decoder execution.",
+  "test_opened": false
+}

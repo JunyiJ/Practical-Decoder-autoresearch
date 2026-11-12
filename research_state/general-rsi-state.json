@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "COMPLETED_PSEUDO_REPETITION_BOUNDARY_REVIEW_NEXT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 15773,
-  "next_action": "Monitor final slot05 candidate. At completion run bound review including ordinary-CE prefix against slot04. Then compute frozen six-slot decision and complete fixed144 first-generation ratings; retain all negatives and outputs.",
+  "active_session": null,
+  "next_action": "Read primary-paper mixing/exposure ablations and compare with retained pseudo-repetition objective/probe logs. Write a bounded evidence-grounded mechanism/control boundary note; no new training panel is admitted. Do not rerun closed studies or score the original test.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T07:30:27.075353+00:00",
-  "active_worker_pid": 50382,
+  "updated_at": "2026-11-12T07:59:33.579491+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 5,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Slot04 third-parent CE control accepted:3512updates/1200.089785s, time-EMA CE4.8690099254, RAW4.8923741118. Five accepted runs retain120first outputs and10final weights. Both earlier candidate pairs regress; final paired and full-panel conclusions remain pending.",
-  "phase": "native_pseudo_repetition_confirmation",
+  "latest_learning": "All six accepted. Ordinary CE wins frozen gates: candidate mean time-EMA regression+0.1446149823 nats/token across three losing pairs; reverse99%upper\u22120.1293893309. Candidate reduces greedy terminal loops17/36\u21928/36 but relevance ratings fall. Retained12weights/144first outputs/144ratings. Natural CE exposure is49.35\u201349.58% of control. Fixed RAW probe gaps increase in all pairs; causal allocation remains unresolved.",
+  "phase": "evidence_grounded_boundary_review",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "After five accepted endpoints, remaining full requirement17918926258bytes fits20188889088actual free bytes; reserve and failure allowance unchanged.",
+  "capacity_status": "Completed pseudo panel retains12final weights/1367989380bytes plus all evidence and144first outputs. Current free19945472000bytes. Any new panel requires fresh complete measured admission.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -449,7 +449,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Review each newly completed endpoint and advance the frozen serial panel. No repeated unchanged scans.",
+  "wake_condition": "Next continuation can execute concrete primary-literature/control review. No training worker is active and no new campaign is admitted.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "The targeted pseudo-repetition recipe is challenged by valid validation-CE regressions in both completed pairs. Finish the frozen third pair and generation evaluation to determine the complete quality tradeoff without retuning.",
+  "latest_hypothesis": "Validation-improvement prediction for the frozen pseudo-repetition recipe is falsified at this setting. Reduced loops do not establish quality improvement. Direct penalty damage versus reduced ordinary-CE exposure remains unresolved; any new control needs literature-grounded discrimination, not a replay or arbitrary coefficient tuning.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -638,7 +638,7 @@
   "context_order_analysis": "research/tokenizer-evidence/general-rsi-context-order-001/analysis.json",
   "proposed_next_objective": "research/GENERAL_RSI_PSEUDO_REPETITION_NEXT.md",
   "pseudo_repetition_integration": "research/tokenizer-evidence/general-rsi-pseudo-integration-001/completion-review.json",
-  "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_INTEGRATION_RESULTS.md",
+  "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md",
   "pseudo_repetition_panel": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json",
   "pseudo_repetition_panel_sha256": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
   "pseudo_repetition_panel_launched": true,
@@ -647,6 +647,12 @@
     1,
     2,
     3,
-    4
-  ]
+    4,
+    5
+  ],
+  "pseudo_repetition_decision": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/decision.json",
+  "pseudo_repetition_generation_evaluation": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/generation-evaluation/summary.json",
+  "pseudo_repetition_completion_review": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/completion-review.json",
+  "pseudo_repetition_history_analysis": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/history-analysis.json",
+  "selected_native_continuation_recipe": "native_ce"
 }

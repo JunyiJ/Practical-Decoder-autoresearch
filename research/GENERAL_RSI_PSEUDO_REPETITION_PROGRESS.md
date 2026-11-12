@@ -1,9 +1,10 @@
 # Pseudo-repetition continuation progress
 
-The frozen six-run panel is incomplete. No quality decision is available.
-The first two pairs challenge the targeted-objective hypothesis: the candidates
-regress on validation CE. Complete all three pairs and the fixed generation
-evaluation before the frozen decision. Test remains unopened.
+All six runs passed execution review. Ordinary CE wins the frozen comparison.
+The candidate regresses in all three pairs. All12 final weights,144 first outputs
+and144 fixed identity-hidden agent ratings are retained. See
+`GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md` for the complete result and limits.
+Test remains unopened. The notes below retain the observed intermediate history.
 
 | Slot | Parent | Recipe | Updates | Training seconds | Time-EMA CE | RAW CE | First outputs |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -12,6 +13,7 @@ evaluation before the frozen decision. Test remains unopened.
 |02|Native-horizon03|Ordinary CE|3,506|1,200.290195|4.8514456982|4.8766929991|24|
 |03|Native-horizon03|CE / pseudo|3,467|1,200.328832|5.0067426033|5.0480475979|24|
 |04|Native-horizon05|Ordinary CE|3,512|1,200.089785|4.8690099254|4.8923741118|24|
+|05|Native-horizon05|CE / pseudo|3,466|1,200.113960|5.0059083360|5.0523638289|24|
 
 Slot00 passed the bound execution review in
 `tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/review.json`.
@@ -52,3 +54,10 @@ outputs and10 final weights. Remaining complete storage requirement is
 17,918,926,258bytes, versus20,188,889,088 actual free bytes at this boundary.
 Next execute final paired slot05 from parent05.
 Keep the frozen objective, roles, resources and acceptance rules unchanged.
+
+Final slot05 passed with1,733CE and1,733pseudo updates,1,157,619 valid pseudo
+targets and no saturation. Guarded time was1,308.688593s with no failure charge.
+Third-pair time-EMA delta+0.1368984106 confirms the same unfavorable direction.
+The frozen decision, all144 ratings and hash-bound completion review are complete.
+No training is active. Next execute the evidence-grounded mechanism/control review
+specified in the result report and active state; no new panel is admitted.

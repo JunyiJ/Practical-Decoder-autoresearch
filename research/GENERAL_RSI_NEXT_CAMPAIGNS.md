@@ -2,22 +2,23 @@
 
 ## Current boundary — 2026-11-11 Pacific
 
-The native and FP32 panels remain closed. The pseudo-repetition continuation
-panel is now frozen and admitted under `GENERAL_RSI_PSEUDO_REPETITION_PROTOCOL.md`
-and `tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json`. Three paired
-selected parents receive1,200s per arm, ordinary CE versus alternating CE/pseudo
-span updates. New roles, run order, symmetric quality gates and all144 first
-outputs are fixed. The complete forecast is8,561.53worker seconds under a14,400s
-ceiling. Storage19,058,917,376bytes plus2GiB headroom fits21,405,052,928 free bytes.
-Slots00/01 completed and passed execution review, retaining48 first completions.
-The first candidate-minus-control time-EMA delta is+0.141650nats/token, a valid
-regression that challenges the hypothesis. It is not an implementation failure.
-Slots02/03 also passed, with a second candidate-minus-control time-EMA delta
-of+0.155297nats/token. Both completed pairs regress. Four accepted runs retain96
-first outputs. Slot04 third-parent control also passed:time-EMA CE4.869010.
-Five accepted runs retain120 first outputs. Next execute final slot05 unchanged.
-No full-panel quality decision or generation-rating conclusion is available.
+The pseudo-repetition continuation panel is complete. All six execution reviews
+passed and all144 first outputs received fixed identity-hidden agent ratings.
+Ordinary CE wins the frozen validation rule: pseudo-minus-CE mean+0.144614982
+nats/token, all three pairs regressing, ordinary-CE99% upper bound−0.129389331.
+The candidate reduces greedy terminal loops17/36→8/36 but has lower descriptive
+relevance ratings. This is a valid negative for the complete recipe at this setting.
+See `GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md` and
+`tokenizer-evidence/general-rsi-pseudo-repetition-001/completion-review.json`.
+All12 final weights and144 first outputs remain retained; test is unopened.
 
+No training worker or new admitted panel is active. Next use the research skill
+for a concrete primary-literature/control review of the exposure-versus-penalty
+mechanism, using the retained objective logs and fixed probe curves. Candidate
+natural exposure was only49.35–49.58% of control; the result does not isolate that
+tradeoff from the penalty itself. Do not rerun this setting, retune after scores,
+or reopen native-horizon, composer-FP32, exposure, equal-time or transfer studies.
+A new candidate must supply a discriminating rationale and full fresh admission.
 
 ## Completed priority — 2026-11-11 Pacific
 

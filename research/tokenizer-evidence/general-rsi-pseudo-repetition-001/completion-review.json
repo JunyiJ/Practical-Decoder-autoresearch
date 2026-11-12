@@ -1,0 +1,132 @@
+{
+  "completed_at": "2026-11-12T07:58:57.068998+00:00",
+  "status": "completed_ordinary_ce_superiority",
+  "all_six_execution_reviews_accepted": true,
+  "retained_endpoint_count": 12,
+  "retained_endpoint_bytes": 1367989380,
+  "retained_weights": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-00/raw.pt",
+      "size": 113999067,
+      "sha256": "7aa0369b7d5618c52e31c30a202051e72795a2ddd26e72917b2d4a39565086f5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-00/time_ema.pt",
+      "size": 113999131,
+      "sha256": "9fa6d02c416741006b64ffd32a13599c51f818ba65834b045a91960792a9ee91"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-01/raw.pt",
+      "size": 113999131,
+      "sha256": "cd27bd4ab45ecf6a3bc0227575c2610e889fe9696f16fb7b660d920c920a916a"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-01/time_ema.pt",
+      "size": 113999131,
+      "sha256": "7b060ecb027312e8b2d0b43d2ff1f5180319e628d456e6ce7c3bf81ab477d19d"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-02/raw.pt",
+      "size": 113999067,
+      "sha256": "fe1f9e6bbe9cb8751b6206511c071ae404b5018ec23ab92144ac08cf9a73d91e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-02/time_ema.pt",
+      "size": 113999131,
+      "sha256": "ce9694e708211660392793044f5ce5c8966f23ee6f3f91a50aeb5701064ae865"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-03/raw.pt",
+      "size": 113999131,
+      "sha256": "4ef53fb21a776e400a854312b587a3952c90d7a547eb990a77ee00a350d0f110"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-03/time_ema.pt",
+      "size": 113999131,
+      "sha256": "dfab9abecada17b80b855fa4eb16d2cb4f2efc510f4d5e5f0d87e172b234675b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-04/raw.pt",
+      "size": 113999067,
+      "sha256": "0dc1046f2146bddcf5affe6fb500994efd9b6658bd48ed0c51537ae27dc33d18"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-04/time_ema.pt",
+      "size": 113999131,
+      "sha256": "dde12ff563a5c6473ea634129d44a930845b6a094f34451a4348f38941b49ff4"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-05/raw.pt",
+      "size": 113999131,
+      "sha256": "691923c8f3651eb4133a9ceb3401e3a8124aed1777f40b44d3d483abc92f1c6b"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-repetition-001/slot-05/time_ema.pt",
+      "size": 113999131,
+      "sha256": "d52958d98ac0cc3d8f19b7a20f32cd4c801b3ff63bffbaf3c662fb0497d4ec59"
+    }
+  ],
+  "first_generation_count": 144,
+  "semantic_rating_count": 144,
+  "rerolls": 0,
+  "decision": {
+    "paired_deltas": [
+      0.14164963115375068,
+      0.15529690514956218,
+      0.13689841056861474
+    ],
+    "mean_delta_pseudo_minus_ce": 0.1446149822906425,
+    "source_deltas": {
+      "fineweb_edu": 0.14173412628655724,
+      "wikipedia": 0.15615362765761842
+    },
+    "directions": {
+      "native_pseudo_repetition": {
+        "candidate_minus_other": 0.1446149822906425,
+        "bootstrap_upper_99": 0.15968130122515042,
+        "source_deltas": {
+          "fineweb_edu": 0.14173412628655724,
+          "wikipedia": 0.15615362765761842
+        },
+        "gates": {
+          "all_three_deltas_negative": false,
+          "mean_threshold": false,
+          "bootstrap_upper_negative": false,
+          "source_guard": false
+        },
+        "accepted": false
+      },
+      "native_ce": {
+        "candidate_minus_other": -0.1446149822906425,
+        "bootstrap_upper_99": -0.1293893309360947,
+        "source_deltas": {
+          "fineweb_edu": -0.14173412628655724,
+          "wikipedia": -0.15615362765761842
+        },
+        "gates": {
+          "all_three_deltas_negative": true,
+          "mean_threshold": true,
+          "bootstrap_upper_negative": true,
+          "source_guard": true
+        },
+        "accepted": true
+      }
+    },
+    "selected_arm": "native_ce",
+    "outcome": "superiority"
+  },
+  "total_guard_seconds": 7848.255284625106,
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/decision.json": "c7d771dea067281e29b49672490e2450c451cb08f7ee991f8c5a9c8b7d903eec",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/history-analysis.json": "eba566efba38566aed7e69f6930589b08a32c0614cf022cc1f52577c313a2713",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/generation-analysis-check.json": "06032fcd488bfd16afe5879ddadeb000eb9742a1ed5b91545cfdb54039ec1cd0",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/generation-evaluation/preparation.json": "b1ca0e5e2ff833141e3f13a7170bcdeaefb6dd3db5acbbb950b848bc59bb11fb",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/generation-evaluation/annotations.json": "dc8e3af81a2ad17ea191623eabab74255382cab12e7cbee66620cb8712ea5cfe",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/generation-evaluation/summary.json": "b8956f0e48c829001286f06f451f1d934065ba80002188aa05d3d6154be67aa0",
+    "research/GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md": "4844afd972dad97be735077cae6b041c32aec1ed2918de1685e83e0b26289cf9"
+  },
+  "annotation_limits": "Identity-hidden agent ratings; prior CE results and some earlier excerpts were visible. Not independent or fully naive human validation.",
+  "next_action": "Evidence-grounded literature/control review of exposure-versus-penalty mechanism using retained logs; no new training admitted.",
+  "test_opened": false
+}
