@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-12T08:04:05.192614+00:00",
+  "torch_version": "2.14.1",
+  "optimizer_source_path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/optim/_muon.py",
+  "optimizer_source_sha256": "c17abbb8af4c935d125b189c38d3cbaec295f1cfd232d2712bdb75e13184b972",
+  "local_sources": {
+    "research/general_rsi_pseudo_training_v1.py": "fcbf4ed59069d314c163b38cc0c581936f98929fbe3b721ff48adeb59ce913d7",
+    "research/byte_input_model_v6/optimizer.py": "8615085ae60c33299f56a7c0adea12f7953a9ebf9cc874da61427ad8b6122791"
+  },
+  "observed_implementation": [
+    "One optimizer instance advances on both ordinary CE and pseudo updates.",
+    "Muon momentum buffer lerps toward current gradient before Nesterov mixing.",
+    "Newton-Schulz input casts toBF16 and divides by matrix norm clamped byeps.",
+    "Each Muon update applies multiplicative weight decay before parameter addition."
+  ],
+  "inference": "Small pseudo loss or unclipped gradient does not establish small parameter displacement. A zero-gradient optimizer step advances momentum and decay, so it is not an identity control.",
+  "numerical_execution": false,
+  "test_opened": false
+}

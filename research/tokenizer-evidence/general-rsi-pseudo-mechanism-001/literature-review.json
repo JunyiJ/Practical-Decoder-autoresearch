@@ -1,0 +1,30 @@
+{
+  "retrieved_at": "2026-11-12T08:04:05.192614+00:00",
+  "sources": [
+    {
+      "url": "https://papers.nips.cc/paper_files/paper/2022/file/148c0aeea1c5da82f4fa86a09d4190da-Paper-Conference.pdf",
+      "version": "NeurIPS2022 conference paper",
+      "authors": "Xu et al.",
+      "sections": [
+        "3 Eq1 and mixing paragraph",
+        "4.1 setup",
+        "4.2 Table1",
+        "4.4 Figure5 discussion"
+      ],
+      "finding": "Equal mixture and10k fine-tuning updates from best validation MLE. Mixing study favors gamma0.5; optimal lambda varies by task. These sections do not provide the local equal-natural-count, equal-optimizer-state contrast.",
+      "limitations": "750M word-level model/context1536; published quality selection differs. Screenshot retrieval failed, so no new figure-axis values are transcribed. Appendix not present in this14-page file; no claim that all supplementary controls were inspected."
+    },
+    {
+      "url": "https://arxiv.org/pdf/1908.04319v2",
+      "version": "arXiv1908.04319v2,26Sep2019",
+      "authors": "Welleck et al.",
+      "sections": [
+        "6 Training",
+        "6.2/Table2"
+      ],
+      "finding": "Sequence fine-tuning uses1500totalupdates, half probability UL; baseline selected byvalidationPPL. TokenUL worsensPPL25.64\u219226.91 while sequenceUL reports25.42. These sections do not isolate local equal-natural-count optimizer-state effects.",
+      "limitations": "Different size, vocabulary, context, sequence construction, optimizer and selection. Findings are not local gain predictions."
+    }
+  ],
+  "test_opened": false
+}

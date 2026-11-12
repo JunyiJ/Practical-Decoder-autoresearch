@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "COMPLETED_PSEUDO_REPETITION_BOUNDARY_REVIEW_NEXT",
+  "status": "PSEUDO_MECHANISM_DIAGNOSTIC_DESIGN_NEXT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Read primary-paper mixing/exposure ablations and compare with retained pseudo-repetition objective/probe logs. Write a bounded evidence-grounded mechanism/control boundary note; no new training panel is admitted. Do not rerun closed studies or score the original test.",
+  "next_action": "Implement a bounded training-only common-state diagnostic with identity, explicit zero-gradient optimizer advance, pseudo-gradient and CE branches, using all three selected parents. Freeze fresh roles/input selection/exact branches and complete measured resource admission before execution. No quality panel is admitted.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T07:59:33.579491+00:00",
+  "updated_at": "2026-11-12T08:05:43.071009+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All six accepted. Ordinary CE wins frozen gates: candidate mean time-EMA regression+0.1446149823 nats/token across three losing pairs; reverse99%upper\u22120.1293893309. Candidate reduces greedy terminal loops17/36\u21928/36 but relevance ratings fall. Retained12weights/144first outputs/144ratings. Natural CE exposure is49.35\u201349.58% of control. Fixed RAW probe gaps increase in all pairs; causal allocation remains unresolved.",
-  "phase": "evidence_grounded_boundary_review",
+  "latest_learning": "Existing logs show adverse matched-natural-prefix loss at equal natural-update count and constantLR: mean deltas+0.1380888581,+0.1450513074,+0.1314525190 across1157/1158/1158batches. First-batch losses match exactly. Fewer CE batches alone does not explain trajectory divergence; extra optimizer steps remain a confound. Primary mixing studies do not establish the needed local optimizer-state contrast.",
+  "phase": "evidence_grounded_mechanism_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -449,7 +449,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Next continuation can execute concrete primary-literature/control review. No training worker is active and no new campaign is admitted.",
+  "wake_condition": "Concrete diagnostic implementation and cost admission are executable next. No active numerical worker; no unchanged scans or closed-study reruns.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Validation-improvement prediction for the frozen pseudo-repetition recipe is falsified at this setting. Reduced loops do not establish quality improvement. Direct penalty damage versus reduced ordinary-CE exposure remains unresolved; any new control needs literature-grounded discrimination, not a replay or arbitrary coefficient tuning.",
+  "latest_hypothesis": "Interleaved pseudo gradients and/or extra shared-optimizer momentum/decay steps adversely change natural prediction. A common-state identity/zero-gradient/pseudo-gradient/CE diagnostic can distinguish local effects before any further quality training. No gain is asserted.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -654,5 +654,7 @@
   "pseudo_repetition_generation_evaluation": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/generation-evaluation/summary.json",
   "pseudo_repetition_completion_review": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/completion-review.json",
   "pseudo_repetition_history_analysis": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/history-analysis.json",
-  "selected_native_continuation_recipe": "native_ce"
+  "selected_native_continuation_recipe": "native_ce",
+  "pseudo_mechanism_boundary": "research/GENERAL_RSI_PSEUDO_MECHANISM_BOUNDARY.md",
+  "pseudo_matched_prefix_analysis": "research/tokenizer-evidence/general-rsi-pseudo-mechanism-001/matched-prefix.json"
 }

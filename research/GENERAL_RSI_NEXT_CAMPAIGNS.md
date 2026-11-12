@@ -12,13 +12,13 @@ See `GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md` and
 `tokenizer-evidence/general-rsi-pseudo-repetition-001/completion-review.json`.
 All12 final weights and144 first outputs remain retained; test is unopened.
 
-No training worker or new admitted panel is active. Next use the research skill
-for a concrete primary-literature/control review of the exposure-versus-penalty
-mechanism, using the retained objective logs and fixed probe curves. Candidate
-natural exposure was only49.35–49.58% of control; the result does not isolate that
-tradeoff from the penalty itself. Do not rerun this setting, retune after scores,
-or reopen native-horizon, composer-FP32, exposure, equal-time or transfer studies.
-A new candidate must supply a discriminating rationale and full fresh admission.
+No training worker or new admitted panel is active. The completed boundary review
+is `GENERAL_RSI_PSEUDO_MECHANISM_BOUNDARY.md`. Matched natural-batch logs show
+candidate loss increases of0.131–0.145nats/token before cooldown despite equal
+natural-update count. Extra optimizer advances remain a confound. Next implement
+and prospectively admit the bounded common-state identity/zero-gradient/pseudo/CE
+diagnostic described there. No further quality training or coefficient sweep is
+admitted. Preserve all closed studies and their decisions.
 
 ## Completed priority — 2026-11-11 Pacific
 
