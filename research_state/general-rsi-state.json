@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "PSEUDO_REPETITION_PANEL_ADMITTED",
+  "status": "ACTIVE_SCIENTIFIC_WORKER",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": null,
-  "next_action": "Launch frozen pseudo-repetition slot00 native CE continuation under the qualified supervisor, then review each endpoint before the next slot. All six1200s runs, three selected parents, new roles and symmetric quality criteria are fixed.",
+  "active_session": 14372,
+  "next_action": "Monitor slot00 native CE continuation under frozen pseudo-repetition plan. On supervisor completion, run general_rsi_pseudo_review_v1 for slot00, then launch slot01 only after accepted execution. Preserve immutable sources, all first generations and cumulative budgets.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T05:26:16.531479+00:00",
-  "active_worker_pid": null,
+  "updated_at": "2026-11-12T05:27:05.304375+00:00",
+  "active_worker_pid": 9374,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": null,
+  "active_slot": 0,
   "completed_screens": [
     {
       "slot": 0,
@@ -641,5 +641,5 @@
   "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_INTEGRATION_RESULTS.md",
   "pseudo_repetition_panel": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json",
   "pseudo_repetition_panel_sha256": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
-  "pseudo_repetition_panel_launched": false
+  "pseudo_repetition_panel_launched": true
 }
