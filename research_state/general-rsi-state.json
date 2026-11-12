@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "PSEUDO_REPETITION_PAIR01_COMPLETE",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 37181,
-  "next_action": "Monitor frozen slot01 alternating CE/pseudo repetition. On successful supervisor completion, review slot01 and its natural CE prefix against slot00, then advance to slot02. No quality selection before all three pairs.",
+  "active_session": null,
+  "next_action": "Launch frozen slot02 ordinary CE continuation from native-horizon parent03. Preserve first-pair negative evidence and complete slots02..05 under fixed roles, criteria and budgets.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T05:49:51.718559+00:00",
-  "active_worker_pid": 17588,
+  "updated_at": "2026-11-12T06:13:57.506979+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Pseudo-repetition panel slot00 native CE continuation accepted:3493updates/1200.128546s, time-EMA CE4.8625809893, RAW4.8875414003, all24first outputs retained. No paired result or quality decision; hypothesis unchanged until complete confirmation.",
+  "latest_learning": "First pseudo-repetition pair completed with accepted execution and48retained first outputs. Candidate time-EMA CE5.0042306204 versus CEcontrol4.8625809893, delta+0.1416496312; RAWdelta+0.1587098485. This valid first-pair regression challenges the targeted-objective hypothesis but does not replace the frozen three-pair decision. Continue remaining pairs unchanged.",
   "phase": "native_pseudo_repetition_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -643,6 +643,7 @@
   "pseudo_repetition_panel_sha256": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
   "pseudo_repetition_panel_launched": true,
   "pseudo_repetition_completed_slots": [
-    0
+    0,
+    1
   ]
 }

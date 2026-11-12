@@ -9,10 +9,12 @@ selected parents receive1,200s per arm, ordinary CE versus alternating CE/pseudo
 span updates. New roles, run order, symmetric quality gates and all144 first
 outputs are fixed. The complete forecast is8,561.53worker seconds under a14,400s
 ceiling. Storage19,058,917,376bytes plus2GiB headroom fits21,405,052,928 free bytes.
-Slot00 completed and passed execution review:3,493updates, time-EMA CE4.862581,
-24first completions retained. Next run paired slot01 under the frozen alternating
-objective. No paired quality conclusion yet. No completed prerequisite or old
-scientific comparison is repeated.
+Slots00/01 completed and passed execution review, retaining48 first completions.
+The first candidate-minus-control time-EMA delta is+0.141650nats/token, a valid
+regression that challenges the hypothesis. It is not an implementation failure.
+Next execute slot02 from parent03 and complete the remaining pairs unchanged.
+No full-panel quality decision or generation-rating conclusion is available.
+
 
 ## Completed priority — 2026-11-11 Pacific
 
