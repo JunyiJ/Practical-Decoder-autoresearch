@@ -2,12 +2,12 @@
 
 ## Current boundary — 2026-11-11 Pacific
 
-The completed native and FP32 panels remain closed. A new existing-data analysis
-finds early repetition without context eviction. The next action is the bounded
-inference-only probability diagnostic in `GENERAL_RSI_REPETITION_BOUNDARY.md`,
-using all three native long-horizon checkpoints and retained outputs. No new
-training panel or decoder change is admitted. Objective/data interventions await
-this discriminating measurement and a complete prospective contract.
+The completed native and FP32 panels remain closed. The bounded probability
+replay completed264 sequences and reproduced all2,304 original greedy choices.
+18/23 terminal loops gained mean probability across repeated copies; ordinary
+training-text repeats also gained probability. Next freeze the bounded context-
+order intervention in `GENERAL_RSI_REPETITION_PROBABILITY_RESULTS.md`, preserving
+positions and local context. No new training panel or decoder change is admitted.
 
 ## Completed priority — 2026-11-11 Pacific
 

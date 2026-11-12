@@ -1,0 +1,3193 @@
+{
+  "plan_sha256": "fa739ce96da79ea7274559f3371f559f12c5ce4e0a672751c376e9b6ebb619d7",
+  "completion_sha256": "c36e7d0ca2576f15b7d91d3ea4b8c700ba2d999d4e20f66dbe66d648062b8485",
+  "rows_sha256": "f0c9735e7e9e68feaf84dcccbfb065464dded436ef14ea8fad70ea576662546a",
+  "analysis_source_sha256": "37fbd6b1ffb5bb98af3ff3093f9f0846bba0172a0f6905eda6980a31b75aeb5e",
+  "per_seed": {
+    "1": {
+      "loops": 9,
+      "positive": 7,
+      "negative": 2,
+      "mean": 0.16367353542895122,
+      "median": 0.03679674519942357,
+      "monotone_copy_means": 6,
+      "positive_aligned_tokens": 63,
+      "aligned_tokens": 87
+    },
+    "3": {
+      "loops": 7,
+      "positive": 7,
+      "negative": 0,
+      "mean": 0.09659010297670734,
+      "median": 0.04884384114008684,
+      "monotone_copy_means": 5,
+      "positive_aligned_tokens": 56,
+      "aligned_tokens": 79
+    },
+    "5": {
+      "loops": 7,
+      "positive": 4,
+      "negative": 3,
+      "mean": 0.017516573652367053,
+      "median": 0.013762956485152245,
+      "monotone_copy_means": 3,
+      "positive_aligned_tokens": 25,
+      "aligned_tokens": 46
+    }
+  },
+  "all_loops_descriptive": {
+    "loops": 23,
+    "positive": 18,
+    "negative": 5,
+    "mean": 0.09877428501148182,
+    "median": 0.03679674519942357,
+    "monotone_copy_means": 14,
+    "positive_aligned_tokens": 144,
+    "aligned_tokens": 212
+  },
+  "natural_reference": {
+    "1": {
+      "repeated_trigram_endpoints": 86,
+      "mean_log_probability_delta": 1.4476557285741491,
+      "positive": 79
+    },
+    "3": {
+      "repeated_trigram_endpoints": 86,
+      "mean_log_probability_delta": 1.3960910814890075,
+      "positive": 77
+    },
+    "5": {
+      "repeated_trigram_endpoints": 86,
+      "mean_log_probability_delta": 1.0638448053559417,
+      "positive": 77
+    }
+  },
+  "loop_rows": [
+    {
+      "slot": 1,
+      "id": "p01-greedy",
+      "period": 18,
+      "copy_mean_log_probabilities": [
+        -1.7704509264893002,
+        -1.2779598633448284,
+        -1.2364710751507018
+      ],
+      "third_minus_first_mean_log_probability": 0.5339798513385985,
+      "positive_aligned_tokens": 16,
+      "third_minus_first_per_token": [
+        1.457745984196663,
+        2.3281910866498947,
+        0.6432499885559082,
+        0.18769705295562744,
+        0.05296742916107178,
+        1.099212646484375,
+        0.1545330286026001,
+        0.04153439402580261,
+        0.3941195011138916,
+        0.747836709022522,
+        1.0061473846435547,
+        0.1616802215576172,
+        0.12332391738891602,
+        0.5235800743103027,
+        0.24833238124847412,
+        0.5530403554439545,
+        -0.06248137354850769,
+        -0.04907345771789551
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p02-greedy",
+      "period": 8,
+      "copy_mean_log_probabilities": [
+        -1.0949792005121708,
+        -1.0842632129788399,
+        -1.0719560720026493
+      ],
+      "third_minus_first_mean_log_probability": 0.023023128509521484,
+      "positive_aligned_tokens": 4,
+      "third_minus_first_per_token": [
+        -0.04920768737792969,
+        -0.016979634761810303,
+        0.03618729114532471,
+        0.04462242126464844,
+        -0.013345897197723389,
+        0.013929367065429688,
+        0.17780053615570068,
+        -0.008821368217468262
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p03-greedy",
+      "period": 6,
+      "copy_mean_log_probabilities": [
+        -0.5882099481920401,
+        -0.5805896390229464,
+        -0.5794332108149925
+      ],
+      "third_minus_first_mean_log_probability": 0.008776737377047539,
+      "positive_aligned_tokens": 3,
+      "third_minus_first_per_token": [
+        0.035799503326416016,
+        -0.020974963903427124,
+        -0.024419784545898438,
+        0.013037681579589844,
+        0.049698323011398315,
+        -0.00048033520579338074
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p05-greedy",
+      "period": 11,
+      "copy_mean_log_probabilities": [
+        -0.8881806304508989,
+        -0.8525652241977778,
+        -0.8119272406805645
+      ],
+      "third_minus_first_mean_log_probability": 0.07625338977033441,
+      "positive_aligned_tokens": 8,
+      "third_minus_first_per_token": [
+        -0.03760498762130737,
+        -0.019171953201293945,
+        0.008669927716255188,
+        0.1469970941543579,
+        0.48170191049575806,
+        0.09037971496582031,
+        -0.051939427852630615,
+        0.03464795649051666,
+        0.039545655250549316,
+        0.14250695705413818,
+        0.0030544400215148926
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p07-greedy",
+      "period": 3,
+      "copy_mean_log_probabilities": [
+        -0.6434826155503591,
+        -0.6466954549153646,
+        -0.6437561313311259
+      ],
+      "third_minus_first_mean_log_probability": -0.000273515780766805,
+      "positive_aligned_tokens": 2,
+      "third_minus_first_per_token": [
+        -0.009953141212463379,
+        0.0021587014198303223,
+        0.006973892450332642
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p08-greedy",
+      "period": 4,
+      "copy_mean_log_probabilities": [
+        -0.8892006482928991,
+        -0.8928588144481182,
+        -0.8998960689641535
+      ],
+      "third_minus_first_mean_log_probability": -0.010695420671254396,
+      "positive_aligned_tokens": 1,
+      "third_minus_first_per_token": [
+        -0.044810786843299866,
+        0.11703824996948242,
+        -0.11441051959991455,
+        -0.0005986262112855911
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p09-greedy",
+      "period": 13,
+      "copy_mean_log_probabilities": [
+        -1.838248604765305,
+        -1.7933243467257574,
+        -1.8014518595658815
+      ],
+      "third_minus_first_mean_log_probability": 0.03679674519942357,
+      "positive_aligned_tokens": 7,
+      "third_minus_first_per_token": [
+        0.180090069770813,
+        0.1846069097518921,
+        -0.12621808052062988,
+        0.2064533233642578,
+        0.39488229155540466,
+        -0.08219273388385773,
+        -0.3582099676132202,
+        -0.07096290588378906,
+        0.10389304161071777,
+        -0.003654003143310547,
+        0.0220034122467041,
+        0.09402847290039062,
+        -0.06636214256286621
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p10-greedy",
+      "period": 10,
+      "copy_mean_log_probabilities": [
+        -1.7544116109609604,
+        -1.375595247745514,
+        -1.2116320177912712
+      ],
+      "third_minus_first_mean_log_probability": 0.5427795931696892,
+      "positive_aligned_tokens": 10,
+      "third_minus_first_per_token": [
+        0.2704286575317383,
+        1.4755350351333618,
+        0.12841592729091644,
+        1.3829230070114136,
+        1.1452959775924683,
+        0.18328261375427246,
+        0.12163972854614258,
+        0.07093679904937744,
+        0.508028507232666,
+        0.1413096785545349
+      ]
+    },
+    {
+      "slot": 1,
+      "id": "p11-greedy",
+      "period": 14,
+      "copy_mean_log_probabilities": [
+        -1.2695601327078683,
+        -1.0786295618329729,
+        -1.0071388227599007
+      ],
+      "third_minus_first_mean_log_probability": 0.26242130994796753,
+      "positive_aligned_tokens": 12,
+      "third_minus_first_per_token": [
+        0.5295263230800629,
+        0.36765575408935547,
+        -0.0802564024925232,
+        1.1948542594909668,
+        0.29344016313552856,
+        0.05841362476348877,
+        0.04232776165008545,
+        -0.015702873468399048,
+        0.4224534034729004,
+        0.018796175718307495,
+        0.297992467880249,
+        0.20974120497703552,
+        0.04336404800415039,
+        0.2912924289703369
+      ]
+    },
+    {
+      "slot": 3,
+      "id": "p00-greedy",
+      "period": 15,
+      "copy_mean_log_probabilities": [
+        -1.3952422469854355,
+        -1.3144812556604544,
+        -1.2878293111920356
+      ],
+      "third_minus_first_mean_log_probability": 0.1074129357933998,
+      "positive_aligned_tokens": 10,
+      "third_minus_first_per_token": [
+        -0.08554506301879883,
+        0.2379775047302246,
+        0.49425947666168213,
+        0.050605207681655884,
+        -0.05209776759147644,
+        0.051766395568847656,
+        0.5432045459747314,
+        0.04487110674381256,
+        0.16298747062683105,
+        0.07307600975036621,
+        0.04015779495239258,
+        0.2655329704284668,
+        -0.17895948886871338,
+        -0.0009962543845176697,
+        -0.035645872354507446
+      ]
+    },
+    {
+      "slot": 3,
+      "id": "p02-greedy",
+      "period": 10,
+      "copy_mean_log_probabilities": [
+        -1.3082760661840438,
+        -1.2815850019454955,
+        -1.2687926143407822
+      ],
+      "third_minus_first_mean_log_probability": 0.03948345184326172,
+      "positive_aligned_tokens": 6,
+      "third_minus_first_per_token": [
+        0.02648913860321045,
+        0.20827364921569824,
+        0.041702985763549805,
+        0.15288403630256653,
+        -0.06063523888587952,
+        -0.0041800737380981445,
+        0.09575897455215454,
+        -0.04603630304336548,
+        -0.020237445831298828,
+        0.0008147954940795898
+      ]
+    },
+    {
+      "slot": 3,
+      "id": "p03-greedy",
+      "period": 13,
+      "copy_mean_log_probabilities": [
+        -1.0515969475874534,
+        -1.0138670859428554,
+        -1.0027531064473665
+      ],
+      "third_minus_first_mean_log_probability": 0.04884384114008684,
+      "positive_aligned_tokens": 10,
+      "third_minus_first_per_token": [
+        0.016033530235290527,
+        0.046545982360839844,
+        0.04694664478302002,
+        0.06498414278030396,
+        0.28510570526123047,
+        -0.03207297623157501,
+        -0.03263890743255615,
+        0.03250110149383545,
+        0.06996053457260132,
+        0.06247413158416748,
+        0.06618809700012207,
+        -0.025309383869171143,
+        0.03425133228302002
+      ]
+    },
+    {
+      "slot": 3,
+      "id": "p04-greedy",
+      "period": 11,
+      "copy_mean_log_probabilities": [
+        -1.151023962280967,
+        -1.1025757518681614,
+        -1.0857461365786465
+      ],
+      "third_minus_first_mean_log_probability": 0.06527782570232045,
+      "positive_aligned_tokens": 10,
+      "third_minus_first_per_token": [
+        0.16779839992523193,
+        0.02911621332168579,
+        0.057497501373291016,
+        -0.01848435401916504,
+        0.07024681568145752,
+        0.10327506065368652,
+        0.06632566452026367,
+        0.016409337520599365,
+        0.16392910480499268,
+        0.014995813369750977,
+        0.04694652557373047
+      ]
+    },
+    {
+      "slot": 3,
+      "id": "p06-greedy",
+      "period": 7,
+      "copy_mean_log_probabilities": [
+        -0.5934441845331874,
+        -0.5869822895952633,
+        -0.5914446551884923
+      ],
+      "third_minus_first_mean_log_probability": 0.001999529344694955,
+      "positive_aligned_tokens": 3,
+      "third_minus_first_per_token": [
+        -0.0025544166564941406,
+        0.07278066873550415,
+        0.013881489634513855,
+        -0.06418567895889282,
+        -0.02437448501586914,
+        0.03625434637069702,
+        -0.01780521869659424
+      ]
+    },
+    {
+      "slot": 3,
+      "id": "p07-greedy",
+      "period": 6,
+      "copy_mean_log_probabilities": [
+        -1.009540279706319,
+        -1.0068394144376118,
+        -1.0081563691298168
+      ],
+      "third_minus_first_mean_log_probability": 0.0013839105765024822,
+      "positive_aligned_tokens": 3,
+      "third_minus_first_per_token": [
+        -0.005210161209106445,
+        -0.0010004043579101562,
+        0.014072656631469727,
+        0.020685553550720215,
+        0.002702772617340088,
+        -0.022946953773498535
+      ]
+    },
+    {
+      "slot": 3,
+      "id": "p11-greedy",
+      "period": 17,
+      "copy_mean_log_probabilities": [
+        -1.397828700787881,
+        -1.0080408296164345,
+        -0.9860994743511957
+      ],
+      "third_minus_first_mean_log_probability": 0.41172922643668514,
+      "positive_aligned_tokens": 14,
+      "third_minus_first_per_token": [
+        0.00906836986541748,
+        -0.16520720720291138,
+        0.22247743606567383,
+        -0.007084280252456665,
+        -0.3745806813240051,
+        0.1053931713104248,
+        0.46405935287475586,
+        2.0067728757858276,
+        0.414195965975523,
+        1.081478238105774,
+        1.3160377815365791,
+        1.5542276501655579,
+        0.1520978808403015,
+        0.08722281455993652,
+        0.005479574203491211,
+        0.04424417018890381,
+        0.08351373672485352
+      ]
+    },
+    {
+      "slot": 5,
+      "id": "p00-greedy",
+      "period": 5,
+      "copy_mean_log_probabilities": [
+        -1.2096342086791991,
+        -1.2230542302131653,
+        -1.2375104188919068
+      ],
+      "third_minus_first_mean_log_probability": -0.02787621021270752,
+      "positive_aligned_tokens": 2,
+      "third_minus_first_per_token": [
+        -0.007265448570251465,
+        -0.10500907897949219,
+        0.022515416145324707,
+        -0.06726205348968506,
+        0.017640113830566406
+      ]
+    },
+    {
+      "slot": 5,
+      "id": "p02-greedy",
+      "period": 11,
+      "copy_mean_log_probabilities": [
+        -1.5766746185042642,
+        -1.545177161693573,
+        -1.5247719206593253
+      ],
+      "third_minus_first_mean_log_probability": 0.0519026978449388,
+      "positive_aligned_tokens": 8,
+      "third_minus_first_per_token": [
+        0.26791250705718994,
+        0.23795151710510254,
+        0.059019267559051514,
+        0.11039721965789795,
+        -0.0036649703979492188,
+        0.001812577247619629,
+        -0.12302660942077637,
+        -0.001188725233078003,
+        0.005473196506500244,
+        0.004949092864990234,
+        0.01129460334777832
+      ]
+    },
+    {
+      "slot": 5,
+      "id": "p04-greedy",
+      "period": 6,
+      "copy_mean_log_probabilities": [
+        -0.9123549039165179,
+        -0.9191192363699278,
+        -0.9254463128745556
+      ],
+      "third_minus_first_mean_log_probability": -0.013091408958037695,
+      "positive_aligned_tokens": 1,
+      "third_minus_first_per_token": [
+        -0.03871798515319824,
+        0.021176517009735107,
+        -0.0026623234152793884,
+        -0.006532728672027588,
+        -0.021191418170928955,
+        -0.0306205153465271
+      ]
+    },
+    {
+      "slot": 5,
+      "id": "p08-greedy",
+      "period": 11,
+      "copy_mean_log_probabilities": [
+        -1.7769109064882451,
+        -1.7187474857677112,
+        -1.6894707679748535
+      ],
+      "third_minus_first_mean_log_probability": 0.08744013851339166,
+      "positive_aligned_tokens": 8,
+      "third_minus_first_per_token": [
+        -0.0074269771575927734,
+        0.1499004364013672,
+        0.04823029041290283,
+        -0.00632023811340332,
+        0.39853036403656006,
+        0.03232306241989136,
+        0.0158463716506958,
+        0.16552114486694336,
+        0.13019609451293945,
+        -0.043080687522888184,
+        0.07812166213989258
+      ]
+    },
+    {
+      "slot": 5,
+      "id": "p09-greedy",
+      "period": 5,
+      "copy_mean_log_probabilities": [
+        -0.8387426972389221,
+        -0.8513585418462754,
+        -0.8597207099199295
+      ],
+      "third_minus_first_mean_log_probability": -0.020978012681007387,
+      "positive_aligned_tokens": 0,
+      "third_minus_first_per_token": [
+        -0.029846668243408203,
+        -0.04006612300872803,
+        -0.026479005813598633,
+        -0.0029454678297042847,
+        -0.005552798509597778
+      ]
+    },
+    {
+      "slot": 5,
+      "id": "p10-greedy",
+      "period": 5,
+      "copy_mean_log_probabilities": [
+        -0.8567383211106062,
+        -0.84609016738832,
+        -0.842975364625454
+      ],
+      "third_minus_first_mean_log_probability": 0.013762956485152245,
+      "positive_aligned_tokens": 3,
+      "third_minus_first_per_token": [
+        -0.07569083571434021,
+        -0.009370269253849983,
+        0.02467215061187744,
+        0.04261922836303711,
+        0.08658450841903687
+      ]
+    },
+    {
+      "slot": 5,
+      "id": "p11-greedy",
+      "period": 3,
+      "copy_mean_log_probabilities": [
+        -0.7105468114217123,
+        -0.6632601420084635,
+        -0.6790909568468729
+      ],
+      "third_minus_first_mean_log_probability": 0.03145585457483927,
+      "positive_aligned_tokens": 3,
+      "third_minus_first_per_token": [
+        0.04500609636306763,
+        0.021234631538391113,
+        0.028126835823059082
+      ]
+    }
+  ],
+  "natural_rows": [
+    {
+      "slot": 1,
+      "document": 2370,
+      "source": "fineweb_edu",
+      "first_endpoint": 26,
+      "repeat_endpoint": 33,
+      "log_probability_delta": 1.5862504243850708,
+      "rank_first": 4,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7010,
+      "source": "fineweb_edu",
+      "first_endpoint": 13,
+      "repeat_endpoint": 23,
+      "log_probability_delta": 5.717146396636963,
+      "rank_first": 182,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 2954,
+      "source": "fineweb_edu",
+      "first_endpoint": 6,
+      "repeat_endpoint": 27,
+      "log_probability_delta": 0.7261302471160889,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7085,
+      "source": "fineweb_edu",
+      "first_endpoint": 52,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 0.5034663677215576,
+      "rank_first": 5,
+      "rank_repeat": 3
+    },
+    {
+      "slot": 1,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 21,
+      "repeat_endpoint": 49,
+      "log_probability_delta": 2.7036564350128174,
+      "rank_first": 6,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 22,
+      "repeat_endpoint": 50,
+      "log_probability_delta": 0.5163834989070892,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 23,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 0.11120352149009705,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 429,
+      "source": "fineweb_edu",
+      "first_endpoint": 20,
+      "repeat_endpoint": 47,
+      "log_probability_delta": 1.2319766283035278,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 4505,
+      "source": "fineweb_edu",
+      "first_endpoint": 12,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 0.4322500228881836,
+      "rank_first": 2277,
+      "rank_repeat": 1447
+    },
+    {
+      "slot": 1,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 27,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 0.1055213212966919,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 28,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 2.1173951625823975,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 27,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.1647263467311859,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 393,
+      "source": "fineweb_edu",
+      "first_endpoint": 9,
+      "repeat_endpoint": 21,
+      "log_probability_delta": 0.1613624170422554,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 10,
+      "repeat_endpoint": 43,
+      "log_probability_delta": 3.887655735015869,
+      "rank_first": 7,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 11,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 4.269616484642029,
+      "rank_first": 15,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 12,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 2.5520379543304443,
+      "rank_first": 27,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 24,
+      "repeat_endpoint": 52,
+      "log_probability_delta": -1.678018569946289,
+      "rank_first": 51,
+      "rank_repeat": 286
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 14,
+      "log_probability_delta": 0.7612888738512993,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 15,
+      "log_probability_delta": 4.0498366355896,
+      "rank_first": 25,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 16,
+      "log_probability_delta": 1.3977205157279968,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 24,
+      "log_probability_delta": 2.641380786895752,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 28,
+      "log_probability_delta": 0.7483835853636265,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 29,
+      "log_probability_delta": 4.586879551410675,
+      "rank_first": 25,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 30,
+      "log_probability_delta": 1.693743646144867,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 35,
+      "log_probability_delta": 2.6668177768588066,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 39,
+      "log_probability_delta": 0.7748697083443403,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 4.627762317657471,
+      "rank_first": 25,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 1.8305081725120544,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8604,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.17850651312619448,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 34,
+      "repeat_endpoint": 53,
+      "log_probability_delta": 0.05704417824745178,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 40,
+      "repeat_endpoint": 61,
+      "log_probability_delta": 0.49312886595726013,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 41,
+      "repeat_endpoint": 62,
+      "log_probability_delta": -0.16715653240680695,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9740,
+      "source": "wikipedia",
+      "first_endpoint": 32,
+      "repeat_endpoint": 44,
+      "log_probability_delta": -0.13928412273526192,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8892,
+      "source": "wikipedia",
+      "first_endpoint": 44,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.12048143148422241,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8017,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 15,
+      "log_probability_delta": 0.18197476863861084,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8017,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 19,
+      "log_probability_delta": 0.47229909896850586,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7934,
+      "source": "wikipedia",
+      "first_endpoint": 28,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 0.017931871116161346,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 36,
+      "log_probability_delta": 4.819513261318207,
+      "rank_first": 34,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 1.4394782781600952,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 38,
+      "log_probability_delta": 3.0902364253997803,
+      "rank_first": 9,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 33,
+      "repeat_endpoint": 59,
+      "log_probability_delta": 0.5298423767089844,
+      "rank_first": 118,
+      "rank_repeat": 63
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 34,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 1.6175482645630836,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 35,
+      "repeat_endpoint": 61,
+      "log_probability_delta": 0.32936859130859375,
+      "rank_first": 74,
+      "rank_repeat": 48
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 62,
+      "log_probability_delta": 5.131974697113037,
+      "rank_first": 34,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 1.8315481543540955,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7878,
+      "source": "wikipedia",
+      "first_endpoint": 22,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 0.5536044836044312,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9715,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 32,
+      "log_probability_delta": 2.7630626186728477,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9715,
+      "source": "wikipedia",
+      "first_endpoint": 27,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 3.7385165691375732,
+      "rank_first": 59,
+      "rank_repeat": 4
+    },
+    {
+      "slot": 1,
+      "document": 9036,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 32,
+      "log_probability_delta": 0.10932816565036774,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 46,
+      "log_probability_delta": -0.17039155960083008,
+      "rank_first": 8,
+      "rank_repeat": 10
+    },
+    {
+      "slot": 1,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 47,
+      "log_probability_delta": 1.0094962269067764,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 48,
+      "log_probability_delta": 1.1166648864746094,
+      "rank_first": 3,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 25,
+      "log_probability_delta": 1.3207392618060112,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 26,
+      "log_probability_delta": 1.5541110038757324,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 27,
+      "log_probability_delta": 1.1353318989276886,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 28,
+      "log_probability_delta": 0.3025570958852768,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 34,
+      "log_probability_delta": 1.3141849897801876,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 35,
+      "log_probability_delta": 2.1184377670288086,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 36,
+      "log_probability_delta": 1.106017917394638,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 0.4538339078426361,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 48,
+      "log_probability_delta": 1.3030678443610668,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 49,
+      "log_probability_delta": 1.8168702125549316,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 50,
+      "log_probability_delta": 1.094980537891388,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 0.4452471658587456,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 1.330758860334754,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 58,
+      "log_probability_delta": 1.9103397727012634,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 59,
+      "log_probability_delta": 1.068441480398178,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 60,
+      "log_probability_delta": -0.13087701797485352,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 38,
+      "log_probability_delta": 3.1812361627817154,
+      "rank_first": 5,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 39,
+      "log_probability_delta": 1.6765625178813934,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 2.9189049005508423,
+      "rank_first": 4,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 5,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 0.4688568115234375,
+      "rank_first": 1059,
+      "rank_repeat": 704
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 6,
+      "repeat_endpoint": 42,
+      "log_probability_delta": 1.4173698425292969,
+      "rank_first": 50,
+      "rank_repeat": 15
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 7,
+      "repeat_endpoint": 43,
+      "log_probability_delta": 2.8276989459991455,
+      "rank_first": 32,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 8,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 1.4587359428405762,
+      "rank_first": 81,
+      "rank_repeat": 19
+    },
+    {
+      "slot": 1,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 9,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 4.337185859680176,
+      "rank_first": 69,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 1,
+      "document": 8905,
+      "source": "wikipedia",
+      "first_endpoint": 5,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 0.6424574851989746,
+      "rank_first": 38,
+      "rank_repeat": 26
+    },
+    {
+      "slot": 1,
+      "document": 8905,
+      "source": "wikipedia",
+      "first_endpoint": 27,
+      "repeat_endpoint": 54,
+      "log_probability_delta": 0.6579321026802063,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9401,
+      "source": "wikipedia",
+      "first_endpoint": 38,
+      "repeat_endpoint": 45,
+      "log_probability_delta": -0.006087064743041992,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9401,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 48,
+      "log_probability_delta": 0.48227977752685547,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8572,
+      "source": "wikipedia",
+      "first_endpoint": 43,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 0.21758675575256348,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9000,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 13,
+      "log_probability_delta": 1.775428146123886,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 9000,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 32,
+      "log_probability_delta": -0.48956727981567383,
+      "rank_first": 5,
+      "rank_repeat": 9
+    },
+    {
+      "slot": 1,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 16,
+      "repeat_endpoint": 25,
+      "log_probability_delta": 0.13993865251541138,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 1,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 26,
+      "log_probability_delta": 2.1905035972595215,
+      "rank_first": 1395,
+      "rank_repeat": 258
+    },
+    {
+      "slot": 1,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 2.444657325744629,
+      "rank_first": 1395,
+      "rank_repeat": 204
+    },
+    {
+      "slot": 3,
+      "document": 2370,
+      "source": "fineweb_edu",
+      "first_endpoint": 26,
+      "repeat_endpoint": 33,
+      "log_probability_delta": 0.015342235565185547,
+      "rank_first": 3,
+      "rank_repeat": 3
+    },
+    {
+      "slot": 3,
+      "document": 7010,
+      "source": "fineweb_edu",
+      "first_endpoint": 13,
+      "repeat_endpoint": 23,
+      "log_probability_delta": 5.1049559116363525,
+      "rank_first": 172,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 2954,
+      "source": "fineweb_edu",
+      "first_endpoint": 6,
+      "repeat_endpoint": 27,
+      "log_probability_delta": 0.5463576316833496,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7085,
+      "source": "fineweb_edu",
+      "first_endpoint": 52,
+      "repeat_endpoint": 63,
+      "log_probability_delta": -0.34681177139282227,
+      "rank_first": 13,
+      "rank_repeat": 27
+    },
+    {
+      "slot": 3,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 21,
+      "repeat_endpoint": 49,
+      "log_probability_delta": 3.786097526550293,
+      "rank_first": 3,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 22,
+      "repeat_endpoint": 50,
+      "log_probability_delta": 2.307982921600342,
+      "rank_first": 18,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 23,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 0.32140547037124634,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 429,
+      "source": "fineweb_edu",
+      "first_endpoint": 20,
+      "repeat_endpoint": 47,
+      "log_probability_delta": 0.27661943435668945,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 4505,
+      "source": "fineweb_edu",
+      "first_endpoint": 12,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 0.3486051559448242,
+      "rank_first": 1651,
+      "rank_repeat": 798
+    },
+    {
+      "slot": 3,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 27,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 0.932295024394989,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 28,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 3.4154438376426697,
+      "rank_first": 9,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 27,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.992906779050827,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 393,
+      "source": "fineweb_edu",
+      "first_endpoint": 9,
+      "repeat_endpoint": 21,
+      "log_probability_delta": -0.2000030279159546,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 10,
+      "repeat_endpoint": 43,
+      "log_probability_delta": 2.450047016143799,
+      "rank_first": 4,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 11,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 3.3605759739875793,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 12,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 1.9946982860565186,
+      "rank_first": 20,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 24,
+      "repeat_endpoint": 52,
+      "log_probability_delta": -0.9367375373840332,
+      "rank_first": 151,
+      "rank_repeat": 314
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 14,
+      "log_probability_delta": 1.1643423456698656,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 15,
+      "log_probability_delta": 3.2060201168060303,
+      "rank_first": 23,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 16,
+      "log_probability_delta": -0.30337393283843994,
+      "rank_first": 1,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 24,
+      "log_probability_delta": 3.438107203692198,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 28,
+      "log_probability_delta": 1.149335440248251,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 29,
+      "log_probability_delta": 3.642082452774048,
+      "rank_first": 23,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 30,
+      "log_probability_delta": 1.0244035124778748,
+      "rank_first": 1,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 35,
+      "log_probability_delta": 3.4473433289676905,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 39,
+      "log_probability_delta": 1.1759659880772233,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 4.102990508079529,
+      "rank_first": 23,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 1.4940983355045319,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8604,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.4968153680674732,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 34,
+      "repeat_endpoint": 53,
+      "log_probability_delta": 0.02568507194519043,
+      "rank_first": 6,
+      "rank_repeat": 12
+    },
+    {
+      "slot": 3,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 40,
+      "repeat_endpoint": 61,
+      "log_probability_delta": 0.3238784000277519,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 41,
+      "repeat_endpoint": 62,
+      "log_probability_delta": 0.8446292877197266,
+      "rank_first": 5,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9740,
+      "source": "wikipedia",
+      "first_endpoint": 32,
+      "repeat_endpoint": 44,
+      "log_probability_delta": -0.020153275690972805,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8892,
+      "source": "wikipedia",
+      "first_endpoint": 44,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.45932459831237793,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8017,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 15,
+      "log_probability_delta": 0.0062972307205200195,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8017,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 19,
+      "log_probability_delta": -0.12027984857559204,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7934,
+      "source": "wikipedia",
+      "first_endpoint": 28,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 0.10570494085550308,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 36,
+      "log_probability_delta": 3.5181870460510254,
+      "rank_first": 176,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 4.346704840660095,
+      "rank_first": 23,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 38,
+      "log_probability_delta": 4.65062940120697,
+      "rank_first": 18,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 33,
+      "repeat_endpoint": 59,
+      "log_probability_delta": 0.7074875831604004,
+      "rank_first": 121,
+      "rank_repeat": 57
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 34,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 4.610705375671387,
+      "rank_first": 11,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 35,
+      "repeat_endpoint": 61,
+      "log_probability_delta": 1.5323030948638916,
+      "rank_first": 17,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 62,
+      "log_probability_delta": 4.687627077102661,
+      "rank_first": 176,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 5.279028579592705,
+      "rank_first": 23,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7878,
+      "source": "wikipedia",
+      "first_endpoint": 22,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 0.5288137197494507,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9715,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 32,
+      "log_probability_delta": 2.875988468527794,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9715,
+      "source": "wikipedia",
+      "first_endpoint": 27,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 1.2924623414874077,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9036,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 32,
+      "log_probability_delta": -0.048181962221860886,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 0.7989311218261719,
+      "rank_first": 18,
+      "rank_repeat": 9
+    },
+    {
+      "slot": 3,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 47,
+      "log_probability_delta": 1.313116043806076,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 48,
+      "log_probability_delta": -0.07729136943817139,
+      "rank_first": 2,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 25,
+      "log_probability_delta": 0.30834316089749336,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 26,
+      "log_probability_delta": 0.5891187861561775,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 27,
+      "log_probability_delta": 0.22721882537007332,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 28,
+      "log_probability_delta": 0.3393276110291481,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 34,
+      "log_probability_delta": 0.3157927095890045,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 35,
+      "log_probability_delta": 0.5683485940098763,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 36,
+      "log_probability_delta": 0.2294611781835556,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 0.3964397553354502,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 48,
+      "log_probability_delta": 0.3213676232844591,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 49,
+      "log_probability_delta": 0.5669202953577042,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 50,
+      "log_probability_delta": 0.2213023081421852,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 0.4098371183499694,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.31826946698129177,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 58,
+      "log_probability_delta": 0.5879386439919472,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 59,
+      "log_probability_delta": 0.22799179702997208,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 0.374915923923254,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 38,
+      "log_probability_delta": 0.9213027209043503,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 39,
+      "log_probability_delta": 1.7991352640092373,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 1.8746805489063263,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 5,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 0.5458869934082031,
+      "rank_first": 35,
+      "rank_repeat": 18
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 6,
+      "repeat_endpoint": 42,
+      "log_probability_delta": 0.4568556547164917,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 7,
+      "repeat_endpoint": 43,
+      "log_probability_delta": 5.41283792257309,
+      "rank_first": 49,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 8,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 4.267972946166992,
+      "rank_first": 275,
+      "rank_repeat": 5
+    },
+    {
+      "slot": 3,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 9,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 3.760058879852295,
+      "rank_first": 53,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 8905,
+      "source": "wikipedia",
+      "first_endpoint": 5,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 0.07786750793457031,
+      "rank_first": 282,
+      "rank_repeat": 274
+    },
+    {
+      "slot": 3,
+      "document": 8905,
+      "source": "wikipedia",
+      "first_endpoint": 27,
+      "repeat_endpoint": 54,
+      "log_probability_delta": 0.8910083770751953,
+      "rank_first": 4,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 9401,
+      "source": "wikipedia",
+      "first_endpoint": 38,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 0.26387667655944824,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9401,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 48,
+      "log_probability_delta": 0.47693371772766113,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8572,
+      "source": "wikipedia",
+      "first_endpoint": 43,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 0.16428282856941223,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 9000,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 13,
+      "log_probability_delta": 4.137237071990967,
+      "rank_first": 21,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 3,
+      "document": 9000,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 32,
+      "log_probability_delta": -0.9244046211242676,
+      "rank_first": 153,
+      "rank_repeat": 310
+    },
+    {
+      "slot": 3,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 16,
+      "repeat_endpoint": 25,
+      "log_probability_delta": 0.048057883977890015,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 3,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 26,
+      "log_probability_delta": 1.138671875,
+      "rank_first": 3951,
+      "rank_repeat": 2026
+    },
+    {
+      "slot": 3,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 2.699467658996582,
+      "rank_first": 3951,
+      "rank_repeat": 699
+    },
+    {
+      "slot": 5,
+      "document": 2370,
+      "source": "fineweb_edu",
+      "first_endpoint": 26,
+      "repeat_endpoint": 33,
+      "log_probability_delta": 3.0208699703216553,
+      "rank_first": 9,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7010,
+      "source": "fineweb_edu",
+      "first_endpoint": 13,
+      "repeat_endpoint": 23,
+      "log_probability_delta": 5.65693998336792,
+      "rank_first": 235,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 2954,
+      "source": "fineweb_edu",
+      "first_endpoint": 6,
+      "repeat_endpoint": 27,
+      "log_probability_delta": -0.2816143035888672,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7085,
+      "source": "fineweb_edu",
+      "first_endpoint": 52,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 0.3703920841217041,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 21,
+      "repeat_endpoint": 49,
+      "log_probability_delta": 1.8031747341156006,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 22,
+      "repeat_endpoint": 50,
+      "log_probability_delta": 0.9523811340332031,
+      "rank_first": 17,
+      "rank_repeat": 6
+    },
+    {
+      "slot": 5,
+      "document": 6107,
+      "source": "fineweb_edu",
+      "first_endpoint": 23,
+      "repeat_endpoint": 51,
+      "log_probability_delta": -0.09774470329284668,
+      "rank_first": 2,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 5,
+      "document": 429,
+      "source": "fineweb_edu",
+      "first_endpoint": 20,
+      "repeat_endpoint": 47,
+      "log_probability_delta": 0.7789748907089233,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 4505,
+      "source": "fineweb_edu",
+      "first_endpoint": 12,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 2.4506683349609375,
+      "rank_first": 267,
+      "rank_repeat": 29
+    },
+    {
+      "slot": 5,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 27,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 0.6479750871658325,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 28,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 2.4270224571228027,
+      "rank_first": 13,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7714,
+      "source": "fineweb_edu",
+      "first_endpoint": 27,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.710195392370224,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 393,
+      "source": "fineweb_edu",
+      "first_endpoint": 9,
+      "repeat_endpoint": 21,
+      "log_probability_delta": 0.5004411935806274,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 10,
+      "repeat_endpoint": 43,
+      "log_probability_delta": 3.593421161174774,
+      "rank_first": 9,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 11,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 1.6146466732025146,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 12,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 1.5348124504089355,
+      "rank_first": 101,
+      "rank_repeat": 23
+    },
+    {
+      "slot": 5,
+      "document": 7280,
+      "source": "fineweb_edu",
+      "first_endpoint": 24,
+      "repeat_endpoint": 52,
+      "log_probability_delta": -0.4316425323486328,
+      "rank_first": 92,
+      "rank_repeat": 150
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 14,
+      "log_probability_delta": 0.20386266708374023,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 15,
+      "log_probability_delta": 2.9382961988449097,
+      "rank_first": 12,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 16,
+      "log_probability_delta": 0.44392967224121094,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 24,
+      "log_probability_delta": 0.980555534362793,
+      "rank_first": 4,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 28,
+      "log_probability_delta": -0.042869627475738525,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 29,
+      "log_probability_delta": 2.1665232181549072,
+      "rank_first": 12,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 30,
+      "log_probability_delta": 1.1758211553096771,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 35,
+      "log_probability_delta": 1.637866735458374,
+      "rank_first": 4,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 39,
+      "log_probability_delta": 0.1050882637500763,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 3.2437801361083984,
+      "rank_first": 12,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 5,
+      "document": 8630,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 1.224879652261734,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8604,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.17440895829349756,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 34,
+      "repeat_endpoint": 53,
+      "log_probability_delta": 0.41446781158447266,
+      "rank_first": 4,
+      "rank_repeat": 4
+    },
+    {
+      "slot": 5,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 40,
+      "repeat_endpoint": 61,
+      "log_probability_delta": 0.23742898181080818,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8305,
+      "source": "wikipedia",
+      "first_endpoint": 41,
+      "repeat_endpoint": 62,
+      "log_probability_delta": 0.9882628917694092,
+      "rank_first": 3,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9740,
+      "source": "wikipedia",
+      "first_endpoint": 32,
+      "repeat_endpoint": 44,
+      "log_probability_delta": -0.035031598061323166,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8892,
+      "source": "wikipedia",
+      "first_endpoint": 44,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.34092938899993896,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8017,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 15,
+      "log_probability_delta": 0.001805722713470459,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8017,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 19,
+      "log_probability_delta": -0.07808351516723633,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7934,
+      "source": "wikipedia",
+      "first_endpoint": 28,
+      "repeat_endpoint": 44,
+      "log_probability_delta": -0.0993821769952774,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 36,
+      "log_probability_delta": 0.8355579376220703,
+      "rank_first": 5668,
+      "rank_repeat": 3266
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 2.0971546173095703,
+      "rank_first": 22,
+      "rank_repeat": 3
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 38,
+      "log_probability_delta": 5.756312072277069,
+      "rank_first": 56,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 33,
+      "repeat_endpoint": 59,
+      "log_probability_delta": 0.4511737823486328,
+      "rank_first": 1290,
+      "rank_repeat": 903
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 34,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 3.018296241760254,
+      "rank_first": 181,
+      "rank_repeat": 15
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 35,
+      "repeat_endpoint": 61,
+      "log_probability_delta": 0.9231510162353516,
+      "rank_first": 809,
+      "rank_repeat": 347
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 62,
+      "log_probability_delta": 1.687575340270996,
+      "rank_first": 5668,
+      "rank_repeat": 1546
+    },
+    {
+      "slot": 5,
+      "document": 7996,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 2.7683846950531006,
+      "rank_first": 22,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7878,
+      "source": "wikipedia",
+      "first_endpoint": 22,
+      "repeat_endpoint": 63,
+      "log_probability_delta": 0.09480834007263184,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9715,
+      "source": "wikipedia",
+      "first_endpoint": 10,
+      "repeat_endpoint": 32,
+      "log_probability_delta": 3.5687271058559418,
+      "rank_first": 5,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9715,
+      "source": "wikipedia",
+      "first_endpoint": 27,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 1.6418462693691254,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9036,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 32,
+      "log_probability_delta": 0.09051843918859959,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 1.0905617475509644,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 47,
+      "log_probability_delta": 1.127585768699646,
+      "rank_first": 4,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9444,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 48,
+      "log_probability_delta": 0.26024365425109863,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 25,
+      "log_probability_delta": 0.5267386585474014,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 26,
+      "log_probability_delta": 0.3389003351330757,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 27,
+      "log_probability_delta": 0.30097831785678864,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 28,
+      "log_probability_delta": 0.19568952172994614,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 34,
+      "log_probability_delta": 0.5652733594179153,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 35,
+      "log_probability_delta": 0.3639410436153412,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 36,
+      "log_probability_delta": 0.31032339110970497,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 37,
+      "log_probability_delta": 0.20178336650133133,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 48,
+      "log_probability_delta": 0.5800541490316391,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 49,
+      "log_probability_delta": 0.33765773475170135,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 50,
+      "log_probability_delta": 0.31720349192619324,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 0.18216048181056976,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 57,
+      "log_probability_delta": 0.6123281940817833,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 18,
+      "repeat_endpoint": 58,
+      "log_probability_delta": 0.3713870607316494,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 19,
+      "repeat_endpoint": 59,
+      "log_probability_delta": 0.3226472921669483,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8507,
+      "source": "wikipedia",
+      "first_endpoint": 20,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 0.09959837794303894,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 2,
+      "repeat_endpoint": 38,
+      "log_probability_delta": 3.177838385105133,
+      "rank_first": 7,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 39,
+      "log_probability_delta": 0.595695972442627,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 40,
+      "log_probability_delta": 0.21504783630371094,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 5,
+      "repeat_endpoint": 41,
+      "log_probability_delta": 1.3254060745239258,
+      "rank_first": 130,
+      "rank_repeat": 35
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 6,
+      "repeat_endpoint": 42,
+      "log_probability_delta": 1.0643320083618164,
+      "rank_first": 2,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 7,
+      "repeat_endpoint": 43,
+      "log_probability_delta": 1.4636168479919434,
+      "rank_first": 76,
+      "rank_repeat": 15
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 8,
+      "repeat_endpoint": 44,
+      "log_probability_delta": 1.5243792533874512,
+      "rank_first": 137,
+      "rank_repeat": 26
+    },
+    {
+      "slot": 5,
+      "document": 7815,
+      "source": "wikipedia",
+      "first_endpoint": 9,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 1.268198013305664,
+      "rank_first": 13,
+      "rank_repeat": 2
+    },
+    {
+      "slot": 5,
+      "document": 8905,
+      "source": "wikipedia",
+      "first_endpoint": 5,
+      "repeat_endpoint": 46,
+      "log_probability_delta": 1.6534233093261719,
+      "rank_first": 1023,
+      "rank_repeat": 351
+    },
+    {
+      "slot": 5,
+      "document": 8905,
+      "source": "wikipedia",
+      "first_endpoint": 27,
+      "repeat_endpoint": 54,
+      "log_probability_delta": 0.974635124206543,
+      "rank_first": 4,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9401,
+      "source": "wikipedia",
+      "first_endpoint": 38,
+      "repeat_endpoint": 45,
+      "log_probability_delta": 0.23015308380126953,
+      "rank_first": 3,
+      "rank_repeat": 3
+    },
+    {
+      "slot": 5,
+      "document": 9401,
+      "source": "wikipedia",
+      "first_endpoint": 3,
+      "repeat_endpoint": 48,
+      "log_probability_delta": -0.09604597091674805,
+      "rank_first": 5,
+      "rank_repeat": 9
+    },
+    {
+      "slot": 5,
+      "document": 8572,
+      "source": "wikipedia",
+      "first_endpoint": 43,
+      "repeat_endpoint": 60,
+      "log_probability_delta": 0.04958691447973251,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 9000,
+      "source": "wikipedia",
+      "first_endpoint": 4,
+      "repeat_endpoint": 13,
+      "log_probability_delta": 3.910919427871704,
+      "rank_first": 81,
+      "rank_repeat": 3
+    },
+    {
+      "slot": 5,
+      "document": 9000,
+      "source": "wikipedia",
+      "first_endpoint": 11,
+      "repeat_endpoint": 32,
+      "log_probability_delta": -1.7213563919067383,
+      "rank_first": 406,
+      "rank_repeat": 2153
+    },
+    {
+      "slot": 5,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 16,
+      "repeat_endpoint": 25,
+      "log_probability_delta": 0.6136063635349274,
+      "rank_first": 1,
+      "rank_repeat": 1
+    },
+    {
+      "slot": 5,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 26,
+      "log_probability_delta": 1.1650629043579102,
+      "rank_first": 206,
+      "rank_repeat": 66
+    },
+    {
+      "slot": 5,
+      "document": 8829,
+      "source": "wikipedia",
+      "first_endpoint": 17,
+      "repeat_endpoint": 51,
+      "log_probability_delta": 1.7641382217407227,
+      "rank_first": 206,
+      "rank_repeat": 24
+    }
+  ],
+  "all_original_greedy_targets_match": 2304,
+  "excluded_generation_rows_without_terminal_loop": 49,
+  "new_generations": 0,
+  "test_opened": false,
+  "interpretation_limits": [
+    "Descriptive conditional replay, not fresh quality comparison.",
+    "Different positions and prefix lengths confound any causal effect of repetition.",
+    "Terminal-loop conditioning selects successes of repetition; early onset is not directly tested.",
+    "Natural windows differ from generated prefixes; no causal paired control or statistical population claim."
+  ]
+}
