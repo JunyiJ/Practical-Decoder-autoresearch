@@ -1,0 +1,23 @@
+{
+  "source_sha256": "5e0db7d8bfb487cfdbeb9c42e200cf6684d4671c07f732ec606e2134d9ae79d1",
+  "component_sha256": "9e961dfbbed8b61b3c70c1f05427f297c571c02097c17d8d8f4e62e086a5c44d",
+  "inventory_sha256": "5222234393bf9bbb5ec3727ba031fa25146c44e59a5f004b63d5c54a16f3da46",
+  "seed": 62111205080001,
+  "total_seconds": 180,
+  "rss_limit_bytes": 2147483648,
+  "output_cap_bytes": 67108864,
+  "reserve_bytes": 10737418240,
+  "checks": [
+    "full inventory document bounds and eligibility",
+    "detached scalar and gradient oracle, both signs",
+    "FP32 agreement with double oracle",
+    "masked/padding invariance",
+    "numerical saturation and invalid input rejection",
+    "sampler state roundtrip and global RNG isolation",
+    "real batch alignment/masks/counts"
+  ],
+  "free_bytes": 18207178752,
+  "test_opened": false,
+  "validation_opened": false,
+  "model_loads": 0
+}

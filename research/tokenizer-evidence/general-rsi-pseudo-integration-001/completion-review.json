@@ -1,0 +1,52 @@
+{
+  "accepted_engineering": true,
+  "plan_sha256": "b69ecf50c978564354d2a3ebec8875383167c08567ae014e9eb5e641e81e19a8",
+  "result_sha256": "8e2a37c5daf2d6def0430203bd4ec5039ead830e44f35e49b8a0e649db7d641e",
+  "guard_sha256": "af945d7e964c99830236a5ebfd7f20fc442f3db3661415b095c8c2b6c5d03c67",
+  "arms": [
+    {
+      "arm": "native_ce",
+      "steps": 69,
+      "objective_counts": {
+        "ce": 69,
+        "pseudo": 0
+      },
+      "training_ns": 24067458957,
+      "mean_update_seconds": 0.348803753,
+      "median_update_seconds": 0.336686084,
+      "restart": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-integration-001/native_ce-restart.pt",
+        "size": 445021621,
+        "sha256": "1d32d79a3fdc8a307d5ae1d5d3ad6e3dee6e3427bd4ce8eb245ad4027ef3c1ac"
+      },
+      "valid_pseudo_targets": 0,
+      "exact_full_restore_and_replay": true
+    },
+    {
+      "arm": "native_pseudo_repetition",
+      "steps": 65,
+      "objective_counts": {
+        "ce": 33,
+        "pseudo": 32
+      },
+      "training_ns": 24066445376,
+      "mean_update_seconds": 0.3702530057846154,
+      "median_update_seconds": 0.354631291,
+      "restart": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-integration-001/native_pseudo_repetition-restart.pt",
+        "size": 445033525,
+        "sha256": "1d6cdce11a5641dbcbd50c58ccb842c521d0559bce132c46f84a3665353d9f0a"
+      },
+      "valid_pseudo_targets": 21197,
+      "exact_full_restore_and_replay": true
+    }
+  ],
+  "paired_natural_prefix": 33,
+  "source_hashes_match": true,
+  "seed_audit": "Before launch, rg of62111205180001..005 across research/tokenizer-evidence JSON/JSONL found only this plan.",
+  "quality_result": false,
+  "test_opened": false,
+  "scientific_panel_admitted": false,
+  "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-008/completed.json",
+  "next_action": "Bind new Context into the qualified durable serial worker; freeze six paired continuation roles/order/bootstrap and measured full timing/resource admission before scientific training."
+}

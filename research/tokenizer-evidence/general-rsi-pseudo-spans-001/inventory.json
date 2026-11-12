@@ -1,0 +1,43 @@
+{
+  "kind": "punctuation_bounded_span_sampler_v1",
+  "source_sha256": "9e961dfbbed8b61b3c70c1f05427f297c571c02097c17d8d8f4e62e086a5c44d",
+  "inputs": {
+    "train.bin": "9a6f107bdd79386161674eb181ce2b38986f212c0505ce89f8cf391bf3c6c6d0",
+    "train.index.jsonl": "235f25eafa4059d7a4cb4f15e4bbd3a4e59157d915d067937118ef6a88a7549d"
+  },
+  "inventory_sha256": "3f7c621ac1fe17803867c52c239dd83805012e60809ab758e4b6011c9f5ab244",
+  "columns": [
+    "document_index",
+    "absolute_start",
+    "span_tokens",
+    "preceding_context_tokens"
+  ],
+  "segmentation": "Adjacent token-aligned endings in .!? after stripping closing quote/bracket bytes; following token starts ASCII whitespace or document ends. Discard unterminated tails and initial span without preceding context. Heuristic spans, not guaranteed sentences.",
+  "eligibility": "4..36 tokens inclusive;1..16 preceding tokens from same document; no EOT; at least3 complete copies in129 tokens.",
+  "sampling": "Uniform over eligible spans with replacement using dedicated CPU torch.Generator; no source reweighting. Ordinary-CE sampler independent.",
+  "packing": "Prefix plus floor((129-prefix)/span_length) complete copies; EOT padding to129. x=first128,y=last128. Penalize aligned targets in copies2..K only; prefix, first copy and padding masked.",
+  "corpus_documents": 9807,
+  "eligible_spans": 284735,
+  "eligible_documents": 9764,
+  "source_counts": {
+    "fineweb_edu": 238473,
+    "wikipedia": 46262
+  },
+  "length_quantiles": [
+    4.0,
+    14.0,
+    20.0,
+    27.0,
+    36.0
+  ],
+  "rejected": {
+    "first_span_no_preceding_context": 9803,
+    "too_short": 11366,
+    "too_long": 67263,
+    "unterminated_tail": 4433
+  },
+  "test_opened": false,
+  "validation_opened": false,
+  "model_scores": 0,
+  "seconds": 0.523396166972816
+}

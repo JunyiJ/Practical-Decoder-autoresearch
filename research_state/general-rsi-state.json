@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CONTEXT_ORDER_COMPLETE_NEXT_OBJECTIVE_PREPARATION",
+  "status": "PSEUDO_REPETITION_INTEGRATION_QUALIFIED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Implement the training-only sentence/span eligibility inventory and aligned pseudo-repetition loss described in GENERAL_RSI_PSEUDO_REPETITION_NEXT.md. Freeze segmentation, masks, reduction and scalar/gradient checks, then qualify only new sampler/phase restart and timing under a bounded fixture with measured admission. Do not repeat completed repetition diagnostics or launch scientific training before full resource/seed/acceptance freeze.",
+  "next_action": "Bind new Context into the qualified durable serial worker; freeze six paired continuation roles/order/bootstrap and measured full timing/resource admission before scientific training.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T05:07:17.950495+00:00",
+  "updated_at": "2026-11-12T05:21:53.095239+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "562 context-order conditions completed in54.395s with exact intact probability reproduction. Permuting earlier context reduced mean target log probability in22/23 terminal loops and237/258 natural endpoint cases. Only25/212 loop targets lost top1. Dependence on earlier order is not repetition-specific; no model improvement claimed.",
-  "phase": "native_pseudo_repetition_design_and_integration",
+  "latest_learning": "Training-only284735-span inventory and scalar/gradient/mask/sampler checks passed. New MPS integration passed exact full restart/replay in73.113s; native69CE updates, candidate33CE+32pseudo. No quality result. Audited12 obsolete accepted engineering payloads retired,4090694482bytes freed;702 protected files verified.",
+  "phase": "native_pseudo_repetition_panel_preparation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -73,9 +73,10 @@
     "research/tokenizer-evidence/general-rsi-capacity-004/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-005/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
-    "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
+    "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
+    "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "All six slots complete;12 final weights retained (785294364 bytes), with generation and failure evidence preserved. Free 18214084608 bytes. No new panel resource admission yet.",
+  "capacity_status": "Storage recovered: free21407010816bytes after audited cleanup; full incremental forecast19058917376 plus2GiB extra headroom fits. Recheck at admission; full worker/timing/seed freeze still required.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -635,5 +636,7 @@
   "context_order_plan": "research/tokenizer-evidence/general-rsi-context-order-001/plan.json",
   "context_order_report": "research/GENERAL_RSI_CONTEXT_ORDER_RESULTS.md",
   "context_order_analysis": "research/tokenizer-evidence/general-rsi-context-order-001/analysis.json",
-  "proposed_next_objective": "research/GENERAL_RSI_PSEUDO_REPETITION_NEXT.md"
+  "proposed_next_objective": "research/GENERAL_RSI_PSEUDO_REPETITION_NEXT.md",
+  "pseudo_repetition_integration": "research/tokenizer-evidence/general-rsi-pseudo-integration-001/completion-review.json",
+  "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_INTEGRATION_RESULTS.md"
 }

@@ -1,0 +1,11 @@
+{
+  "action": "pre-deletion receipt audit",
+  "error": "TypeError: string indices must be integers, not str",
+  "cause": "Historical time-qualification summary lists arm names; receipts are in per-arm result files.",
+  "files_deleted": 0,
+  "manifest_published": false,
+  "repair": "cleanup_v2.py reads the named per-arm result for string entries. Targets, authorization and safeguards unchanged.",
+  "intermediate_failed_commands": [
+    "Read-only schema inspection assumed mapping and raised AttributeError. No version2 script existed, so its invocation exited2 without executing."
+  ]
+}

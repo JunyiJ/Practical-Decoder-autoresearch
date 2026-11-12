@@ -2,13 +2,15 @@
 
 ## Current boundary — 2026-11-11 Pacific
 
-The completed native and FP32 panels remain closed. The context-order diagnostic
-completed562 conditions with exact intact replay. Earlier order supports both
-terminal loops and useful natural repeats. Next implement the training-only
-span inventory and targeted pseudo-repetition loss described in
-`GENERAL_RSI_PSEUDO_REPETITION_NEXT.md`, then qualify only the new integration
-and measured resources. No scientific training panel is admitted. The completed
-repetition diagnostics must not be repeated as prerequisites.
+The native and FP32 panels remain closed. The training-only pseudo-repetition
+inventory, aligned loss and new MPS integration passed. Both arms restored and
+replayed complete state exactly. See
+`GENERAL_RSI_PSEUDO_REPETITION_INTEGRATION_RESULTS.md`. Audited retirement of12
+obsolete accepted engineering payloads freed4,090,694,482bytes. Full storage
+forecast plus2GiB headroom now fits. Next bind the new Context into the qualified
+durable serial worker and freeze fresh paired scientific roles/order/bootstrap,
+complete timing and resource admission. No scientific panel is admitted yet.
+Do not repeat completed diagnostic or engineering prerequisites.
 
 ## Completed priority — 2026-11-11 Pacific
 

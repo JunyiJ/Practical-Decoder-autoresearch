@@ -1,0 +1,1400 @@
+{
+  "arm": "native_ce",
+  "checkpoint": {
+    "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-pseudo-integration-001/native_ce-restart.pt",
+    "size": 445021621,
+    "sha256": "1d32d79a3fdc8a307d5ae1d5d3ad6e3dee6e3427bd4ce8eb245ad4027ef3c1ac"
+  },
+  "steps": 69,
+  "objective_counts": {
+    "ce": 69,
+    "pseudo": 0
+  },
+  "snapshots": 23,
+  "training_ns": 24067458957,
+  "exact_full_restore_and_replay": true,
+  "history": [
+    {
+      "step": 1,
+      "loss": 4.2293314933776855,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2454891204833984,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8028967976570129,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "47c4c4906252df82cd1bf4d84b41da70df929686fe7db41fd9efe37e1c4091ef",
+      "begin_ns": 0,
+      "end_ns": 532380917,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 2,
+      "loss": 4.297428607940674,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2619576454162598,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7924190163612366,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "ab336781a884319c07e872ae9979826390674dac79421f20a906b5f2801b3c3f",
+      "begin_ns": 532380917,
+      "end_ns": 1031573334,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 3,
+      "loss": 3.457496404647827,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.201087474822998,
+        "post_norm": 0.9999991059303284,
+        "coefficient": 0.832578182220459,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "c34e6f6e4945feb6ff97f3a2cba4c6097f003746ef36a1221395c7aded95cf28",
+      "begin_ns": 1031573334,
+      "end_ns": 1401604000,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 4,
+      "loss": 4.704249858856201,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.337188720703125,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7478370666503906,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "54f7c1a32b24c6908478ffd42543618f63e941f5033a2f96ddc300a076ea0364",
+      "begin_ns": 1401604000,
+      "end_ns": 1734876209,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 5,
+      "loss": 3.546125888824463,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3168352842330933,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7593958973884583,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "8919b564079c56c88e1fafc1a7c9625523208ad000b1948956906d3509edc4d5",
+      "begin_ns": 1734876209,
+      "end_ns": 2090576751,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 6,
+      "loss": 4.173822402954102,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.5498837232589722,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.6452093124389648,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "4c002c3a77fdd984afbc2e948135db4ecbcb3a987f545e61fc6c043528b6e6fa",
+      "begin_ns": 2090576751,
+      "end_ns": 2424333292,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 7,
+      "loss": 3.6494293212890625,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1881810426712036,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8416219353675842,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "32cbcb94db8431aed9bc88f0a7b8b49d4136ae00c67e1379f1c359b071046d5d",
+      "begin_ns": 2424333292,
+      "end_ns": 2756843000,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 8,
+      "loss": 4.3509697914123535,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.276736855506897,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.7832461595535278,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "bd0153925be3192269c5c45972a85e343f00a73905c9d0e1c460ea68877a1a0b",
+      "begin_ns": 2756843000,
+      "end_ns": 3144293500,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 9,
+      "loss": 4.40002965927124,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2323890924453735,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8114314079284668,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "3d1dc98ab75332d5b033da6937a870ae75c16bb017d55bea8861243a253ebf30",
+      "begin_ns": 3144293500,
+      "end_ns": 3479763541,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 10,
+      "loss": 4.386346340179443,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4072972536087036,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7105814218521118,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "0309f1d5cdf0b79bc8efa9fa87b7e2a8e9ee4f99d5852ba8e01a67cae4141c60",
+      "begin_ns": 3479763541,
+      "end_ns": 3812167958,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 11,
+      "loss": 4.1773176193237305,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.305088758468628,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7662308216094971,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "497ec8b40dcd9b555998a0e965ca3a4d23136e306588fa1986220a3168a0c848",
+      "begin_ns": 3812167958,
+      "end_ns": 4144872208,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 12,
+      "loss": 4.253500938415527,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.305721640586853,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7658594846725464,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "81a4096b7cb480f1e7253c14009538cce4e054b15cecc1f1fa93f4c73e4c1605",
+      "begin_ns": 4144872208,
+      "end_ns": 4475691791,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 13,
+      "loss": 3.586876392364502,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1494011878967285,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8700175285339355,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "56cbfb6947925dde63031783c03de23ece3960f3dbff49bba0b91fcd7692f198",
+      "begin_ns": 4475691791,
+      "end_ns": 4807615291,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 14,
+      "loss": 4.539690971374512,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.339867115020752,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.746342122554779,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "8d030526b29bdfb945704ad332f6136aec64f2de69bf40cb20d737ae61a3e952",
+      "begin_ns": 4807615291,
+      "end_ns": 5183243791,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 15,
+      "loss": 4.126051902770996,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3635838031768799,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7333610653877258,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "e2f55d6ffbfafb41ff1f63229e93327223c2841b46c2bca33afc66f3b881510f",
+      "begin_ns": 5183243791,
+      "end_ns": 5516427624,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 16,
+      "loss": 4.104249954223633,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.524816632270813,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.6558161377906799,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "a38ecd74ad477b8c4edd4c3d96cb3a6b4ef3ba5ecbfa32ba4fdb33c1ee644dd3",
+      "begin_ns": 5516427624,
+      "end_ns": 5849805374,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 17,
+      "loss": 3.721742868423462,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4446367025375366,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.692215085029602,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "266cbfa402793f4c40feb7ebbe606cb1110cb37f9233e94508da694531dc3dc0",
+      "begin_ns": 5849805374,
+      "end_ns": 6182077291,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 18,
+      "loss": 3.9429354667663574,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2279874086380005,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.8143399357795715,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "d909ab853de6998bd22f8dfba8e9bf2c1154801ec9b5a613997a91cb3a745cf2",
+      "begin_ns": 6182077291,
+      "end_ns": 6514163541,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 19,
+      "loss": 4.237514495849609,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.317611813545227,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7589483261108398,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "e7914fe36df2d49210d95fd17520a8ff4beac317affba96a8f47fd17e9a227e6",
+      "begin_ns": 6514163541,
+      "end_ns": 6851467916,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 20,
+      "loss": 4.000554084777832,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2726595401763916,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7857555150985718,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "ade6f9b65e3129644f26847b3a25ed1ac9b876af3a6bdbc51bdb99ba94bc3900",
+      "begin_ns": 6851467916,
+      "end_ns": 7229728708,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 21,
+      "loss": 3.706866979598999,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1426981687545776,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.875120997428894,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "7867563be9fd1436750ac793ad8757081c4bbf0abe823cd74cfd202106a3d480",
+      "begin_ns": 7229728708,
+      "end_ns": 7559384791,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 22,
+      "loss": 3.720860481262207,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.202307939529419,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.831732988357544,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "e9b8ea3aa3e49a69526739c70e3ed5b3d545b16147922ab6c8d31010410514d8",
+      "begin_ns": 7559384791,
+      "end_ns": 7892805749,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 23,
+      "loss": 3.943645477294922,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2549718618392944,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7968299984931946,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "ba0fcf31d10655bc365d989747e0deab65f6928c1104bf25f074b681e3d5a1db",
+      "begin_ns": 7892805749,
+      "end_ns": 8224677583,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 24,
+      "loss": 4.509491920471191,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3525886535644531,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7393225431442261,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "c9e6751c126a3ef05a30a7ec2d0da3ba5af5c52736f0476eb61ff28551a28942",
+      "begin_ns": 8224677583,
+      "end_ns": 8558845042,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 25,
+      "loss": 3.5205554962158203,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.143447995185852,
+        "post_norm": 0.9999991059303284,
+        "coefficient": 0.8745471239089966,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "b08072521132e8d99de60d65e575790042e67ba2781fff46c976938815e645dc",
+      "begin_ns": 8558845042,
+      "end_ns": 8891538501,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 26,
+      "loss": 4.265971660614014,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.327012538909912,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7535718679428101,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "920d24569f279588772f4f242be1aa302d9119bacfd709638f785ccbdcf519db",
+      "begin_ns": 8891538501,
+      "end_ns": 9236150918,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 27,
+      "loss": 4.431811332702637,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3740499019622803,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7277750968933105,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "274157db3dc53836a79a5bd0e633d578a39f83c7e2c0ed203f5fa622fedbb21b",
+      "begin_ns": 9236150918,
+      "end_ns": 9565780293,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 28,
+      "loss": 4.2415876388549805,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.238415241241455,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8074829578399658,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "8c61f7eb9dd29b738ed8d279196ffa9afb040f38f0943e0c8d85e1b3424b7323",
+      "begin_ns": 9565780293,
+      "end_ns": 9901623876,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 29,
+      "loss": 4.144659042358398,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.305793285369873,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7658174633979797,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "7d8dcfa9705c8c067e35156b8d0d9ee8ff8eb8a9da9fe84de4526ee1a963622f",
+      "begin_ns": 9901623876,
+      "end_ns": 10236435001,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 30,
+      "loss": 4.390080451965332,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.448441505432129,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.690396785736084,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "1edd942899f2c5e87dd31515c23702a3c51329a1d0d4ab44a1f2ec4e32503130",
+      "begin_ns": 10236435001,
+      "end_ns": 10565726251,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 31,
+      "loss": 4.133262634277344,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2916921377182007,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7741777300834656,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "33a55875ad67ba23d46776ef18fac0ab10268d4af11af3b047b2593a5fa7b9e7",
+      "begin_ns": 10565726251,
+      "end_ns": 10902961793,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 32,
+      "loss": 4.218992233276367,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.206062912940979,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8291434645652771,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "47495b4d0b9ce13d13cd3af598d8ba7ec9e1240c26825fa4ac8b763bec654192",
+      "begin_ns": 10902961793,
+      "end_ns": 11259076543,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 33,
+      "loss": 3.8575472831726074,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2402235269546509,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.8063056468963623,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "7528c0241f43d203e1da97e513ebae0b084b72683ff2449d77b0e5d59654c98a",
+      "begin_ns": 11259076543,
+      "end_ns": 11593499626,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 34,
+      "loss": 4.290956497192383,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4201891422271729,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.7041310667991638,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "e8f611c0671ea2fe8d1f51aa4d6d0ceb79e99f195f9e5cc21739741a3dad88e1",
+      "begin_ns": 11593499626,
+      "end_ns": 11929513668,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 35,
+      "loss": 3.7197351455688477,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1274137496948242,
+        "post_norm": 0.9999991059303284,
+        "coefficient": 0.8869850635528564,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "db94c184929a1b1d30bc2ec565656ea0dbb77d257c66459dd5573400971e91cd",
+      "begin_ns": 11929513668,
+      "end_ns": 12285111710,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 36,
+      "loss": 4.131120681762695,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1783684492111206,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8486303091049194,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "83bffbfaaaf50c8bdf1ee65c71a5166c37681330a0ae4c9f59bc6282e7e793a9",
+      "begin_ns": 12285111710,
+      "end_ns": 12618850252,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 37,
+      "loss": 4.423409461975098,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3774281740188599,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7259901762008667,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "7e0158fa8779e25cd10cd4f494ba500a174eae22031949784885a6ef02b1a513",
+      "begin_ns": 12618850252,
+      "end_ns": 12950703002,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 38,
+      "loss": 4.027227401733398,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4700506925582886,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.6802482008934021,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "ecc7b24af98626ac31ca912f1929acf204010a7ad816694930919884ba34b257",
+      "begin_ns": 12950703002,
+      "end_ns": 13282709793,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 39,
+      "loss": 3.4589462280273438,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3325978517532349,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.7504134178161621,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "20954a9d8f062cd03dec57656ade387eb5fd722d80db3ccad967ca907c74ba6e",
+      "begin_ns": 13282709793,
+      "end_ns": 13614788709,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 40,
+      "loss": 4.391819953918457,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.256079912185669,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7961270809173584,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "c6083fe255986a3a8675e89cabd36b0a049c8f14f889d46b1e690b3fd03374b3",
+      "begin_ns": 13614788709,
+      "end_ns": 13949580834,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 41,
+      "loss": 4.502161979675293,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2237886190414429,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.8171339631080627,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "9ac543fabf61687e0b45d6b625b07898194db3aa99e2be2136fa95b6f93f7b46",
+      "begin_ns": 13949580834,
+      "end_ns": 14318086292,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 42,
+      "loss": 3.4870805740356445,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1902693510055542,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8401452898979187,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "61df700b410c9db900af2987ba663e51771a53fe13e19b382a177e674fdb798a",
+      "begin_ns": 14318086292,
+      "end_ns": 14652056958,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 43,
+      "loss": 3.8342599868774414,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4377413988113403,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.695534884929657,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "f8f53b1b346587fffa0570f8dac6bf352735c3f316e9f35491cde084087d94de",
+      "begin_ns": 14652056958,
+      "end_ns": 14987325999,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 44,
+      "loss": 4.361852645874023,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3227676153182983,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.7559901475906372,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "355b17c2b4e8ff0ec975718ab2a702352abb47ebf26097aa0148cc75d1620f3d",
+      "begin_ns": 14987325999,
+      "end_ns": 15357461749,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 45,
+      "loss": 4.325351715087891,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4915659427642822,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.670435905456543,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "7dfd70e7aa0b2bed18cf53f3e11be7ad04794d752f85aca1dbee6c00944343dc",
+      "begin_ns": 15357461749,
+      "end_ns": 15691192249,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 46,
+      "loss": 3.406390428543091,
+      "lr_ratio": 1.0,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3703761100769043,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.7297261357307434,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "6987dfccdc4be30d170eacfa2bb25d13475805b585b7ad64760ec52264f042ae",
+      "begin_ns": 15691192249,
+      "end_ns": 16023814874,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 47,
+      "loss": 3.9689221382141113,
+      "lr_ratio": 0.9973208266749999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.5156949758529663,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.6597629189491272,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "7e162bf4dca792c32d8bbedd3f2f7fe143044653a189c441c46098a83aeb227b",
+      "begin_ns": 16023814874,
+      "end_ns": 16360840457,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 48,
+      "loss": 4.266854286193848,
+      "lr_ratio": 0.9594054485874999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2248616218566895,
+        "post_norm": 0.9999991059303284,
+        "coefficient": 0.8164181113243103,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "d548fd05b468b19a01d9eee86ebdff04ad22a75b2a0316532c7d5bccdb8bdb59",
+      "begin_ns": 16360840457,
+      "end_ns": 16768822665,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 49,
+      "loss": 3.9673755168914795,
+      "lr_ratio": 0.9135074501875,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4105651378631592,
+        "post_norm": 0.9999994039535522,
+        "coefficient": 0.7089352607727051,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "57fc1cc54bc437d5c0666b4beceb631a12f13935469c1b37b4608f8ee21a4f23",
+      "begin_ns": 16768822665,
+      "end_ns": 17116333415,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 50,
+      "loss": 4.088892459869385,
+      "lr_ratio": 0.8744124908124999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.5242116451263428,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.6560764312744141,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "2b5e3bb95e49856e95343ee21534cc093eb33d64afac7d15856467bda86a372f",
+      "begin_ns": 17116333415,
+      "end_ns": 17465183790,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 51,
+      "loss": 4.236695766448975,
+      "lr_ratio": 0.8351668236249999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.6147592067718506,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.6192870140075684,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "ca581a784ce6f9cfbbf1b727932515515c863df71a760e3b0314691603bd65e4",
+      "begin_ns": 17465183790,
+      "end_ns": 17836942957,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 52,
+      "loss": 4.582393646240234,
+      "lr_ratio": 0.7933439173374999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3207859992980957,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7571243643760681,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "3cf1ddac706a1a7c991b27f572bda184ad4b3b77eb8d2f9df8f3f466f4d39a9b",
+      "begin_ns": 17836942957,
+      "end_ns": 18176832874,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 53,
+      "loss": 4.2724504470825195,
+      "lr_ratio": 0.755106301675,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3459012508392334,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7429960370063782,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "472baa7ef44b0ef2bb3cd982434c2a154925b0357fe0aeabe3822cb0dec7ca7f",
+      "begin_ns": 18176832874,
+      "end_ns": 18577088249,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 54,
+      "loss": 4.159719467163086,
+      "lr_ratio": 0.7100775719874999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3534590005874634,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.7388471364974976,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "a17ac8707ac6313bebe0f4bf4def396bb5cf556aa6a6f0ab1d0becd7f21decab",
+      "begin_ns": 18577088249,
+      "end_ns": 18921853249,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 55,
+      "loss": 3.8476452827453613,
+      "lr_ratio": 0.6712915094874998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2978488206863403,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7705051898956299,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "b8f9ac42051e76ab558730054a74cec5d4f8b01ca13fd18dfd37914c41b6f8df",
+      "begin_ns": 18921853249,
+      "end_ns": 19256686540,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 56,
+      "loss": 3.9023165702819824,
+      "lr_ratio": 0.6336227642499999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.154943823814392,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.8658422827720642,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "8929502dd005b0f3c5d6ce49914c16a59e4fe1f535717fc5144ca76e546fd4c5",
+      "begin_ns": 19256686540,
+      "end_ns": 19593458332,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 57,
+      "loss": 3.24019718170166,
+      "lr_ratio": 0.5957359376499999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 2.0697288513183594,
+        "post_norm": 0.9999995231628418,
+        "coefficient": 0.48315486311912537,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "94a9de29ada2b68e6b193fa1a08081f0721599e28d2aa3aaaadba164096bbcb5",
+      "begin_ns": 19593458332,
+      "end_ns": 19927389916,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 58,
+      "loss": 3.7317755222320557,
+      "lr_ratio": 0.55816863445,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.25444495677948,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7971646785736084,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "4c6474acde54a9b7fa8e26d9406e156eb3a4afc85a4b3278060d03313f15f142",
+      "begin_ns": 19927389916,
+      "end_ns": 20266057832,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 59,
+      "loss": 4.581398010253906,
+      "lr_ratio": 0.5200684938999998,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3838163614273071,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.722638726234436,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "aafba5c1acacb544ef6f67ae0e3450412f707acd9bb755afb9b6cafa3d121078",
+      "begin_ns": 20266057832,
+      "end_ns": 20638160873,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 60,
+      "loss": 3.4593863487243652,
+      "lr_ratio": 0.4782069017874997,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3025151491165161,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.7677448391914368,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "41c3bb5860ebb49ae9a14649ff178d662df70651725050823f4dff3202bf4af1",
+      "begin_ns": 20638160873,
+      "end_ns": 20985905873,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 61,
+      "loss": 3.856416702270508,
+      "lr_ratio": 0.43908558928749997,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1907917261123657,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.8397767543792725,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "94abdf7aba663abc2ad8a0c6f8a799f132bd7e58e7f179faf484748567b52db2",
+      "begin_ns": 20985905873,
+      "end_ns": 21333261914,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 62,
+      "loss": 4.083240985870361,
+      "lr_ratio": 0.4000080346749999,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2584149837493896,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7946498394012451,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "b39f1b5c46fbf1bfadc8fa5e46c38fdcb7b2d4788c5e8fcfa33d666c6c81ef65",
+      "begin_ns": 21333261914,
+      "end_ns": 21677976081,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 63,
+      "loss": 4.5227861404418945,
+      "lr_ratio": 0.36122769088749984,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4012433290481567,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.7136514186859131,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "72ea65aec7a44cda79a955874ff9ce2cb718321be3823244a1e165be2cb2a248",
+      "begin_ns": 21677976081,
+      "end_ns": 22014662165,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 64,
+      "loss": 3.173165798187256,
+      "lr_ratio": 0.32335050643749985,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.1952545642852783,
+        "post_norm": 0.9999992251396179,
+        "coefficient": 0.8366411924362183,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "8bfb4abf4890c838d3235ad19f8a1ba06aeae86ffd6b51544af1abd7ec5c6345",
+      "begin_ns": 22014662165,
+      "end_ns": 22353565040,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 65,
+      "loss": 4.5685038566589355,
+      "lr_ratio": 0.2852239329999997,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3085819482803345,
+        "post_norm": 0.9999991655349731,
+        "coefficient": 0.7641854286193848,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "469db16c571bf3c8616af8c15a7e45be3dbd49d5ba735ba4915f2e5b8867ef9c",
+      "begin_ns": 22353565040,
+      "end_ns": 22691656624,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 66,
+      "loss": 4.674598217010498,
+      "lr_ratio": 0.24718862979999978,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.2532826662063599,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7979040145874023,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "043bb97be074ddf4320ba5b126be609cdc49b96a2e81da4428fc3455df5a8c27",
+      "begin_ns": 22691656624,
+      "end_ns": 23031798999,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 67,
+      "loss": 4.831534385681152,
+      "lr_ratio": 0.20892261261249967,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.4244755506515503,
+        "post_norm": 0.9999994039535522,
+        "coefficient": 0.702012300491333,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "6b46587a21b6cf0dabb813df1c39576d5d2f69fd392993b727704e5f4a491661",
+      "begin_ns": 23031798999,
+      "end_ns": 23375038249,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 68,
+      "loss": 4.143369674682617,
+      "lr_ratio": 0.17030819698749988,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.357277750968933,
+        "post_norm": 0.9999993443489075,
+        "coefficient": 0.736768364906311,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "a2a6b79785bc98d5a12255943cd88881011d95c5a8865507e873073c28293e5f",
+      "begin_ns": 23375038249,
+      "end_ns": 23721847541,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    },
+    {
+      "step": 69,
+      "loss": 3.99255108833313,
+      "lr_ratio": 0.13129215163749974,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 1.3866323232650757,
+        "post_norm": 0.9999992847442627,
+        "coefficient": 0.7211712002754211,
+        "gradient_tensors": 88
+      },
+      "batch_sha256": "bd73e9643218ef86ef55cd23182b2bcc997b9e31f46f6c63c9771f09079dcb9c",
+      "begin_ns": 23721847541,
+      "end_ns": 24067458957,
+      "objective": "ce",
+      "valid_loss_targets": 1024,
+      "saturated_targets": 0,
+      "alignment_sha256": null,
+      "pseudo_rows": []
+    }
+  ],
+  "peak_driver_bytes": 2501689344,
+  "saturated_targets": 0
+}
