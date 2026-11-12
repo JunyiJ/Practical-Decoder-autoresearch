@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "CONTEXT_LENGTH_SLOT_REVIEWED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 48798,
-  "next_action": "Slot00 context128 is actively training under the frozen plan and shared lock. On worker completion, audit endpoint, clock, restart, token coverage and first-generation evidence before launching slot01. No duplicate worker or repeated prerequisite.",
+  "active_session": null,
+  "next_action": "Launch slot01 context256 with the frozen bundle1 roles after the accepted slot00 review and complete remaining-resource check. Finish all three pairs before a quality decision.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T11:06:11.429211+00:00",
-  "active_worker_pid": 82875,
+  "updated_at": "2026-11-12T15:13:45.838681+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 0,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Capacity009 retired24 obsolete engineering payloads,6727436212bytes, and verified705 protected files. Full panel admitted with21735002112 free bytes against21474836480 required including reserve and extra headroom; exact forecast in context-length admission. No storage blocker.",
+  "capacity_status": "Full remaining panel fits: 21435867136 free bytes versus 21246838858 required including reserve and extra headroom after accounting for retained slot00 endpoints. Slot00 metadata 37706394 bytes remains within the full512MiB allowance.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Within-limit prefix evidence supports testing longer context. Changed256 active-EMA/restart/evaluation/generation paths pass integration. Whether context256 improves equal-time fresh-training quality remains untested; evaluate the frozen three-pair panel.",
+  "latest_hypothesis": "Context128 control bundle1 completed the fixed four-hour recipe with time-EMA CE4.844975684690298. The paired256 arm is not yet measured; longer-context quality remains untested. All execution and identical-target audits pass. No adoption or change to frozen criteria.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -744,7 +744,20 @@
   "context_length_quality_panel_sha256": "60b4addc99cef4cb2825b792699275ac490cf240ff478a35391a03a55699838e",
   "context_length_quality_admission": "research/tokenizer-evidence/general-rsi-context-length-quality-001/admission.json",
   "context_length_quality_panel_launched": true,
-  "context_length_quality_completed_slots": [],
+  "context_length_quality_completed_slots": [
+    {
+      "slot": 0,
+      "arm": "context128",
+      "bundle": 1,
+      "steps": 42152,
+      "training_seconds": 14400.229956557,
+      "worker_seconds": 14781.356816292042,
+      "time_ema_ce": 4.844975684690298,
+      "raw_ce": 4.8552666541986795,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-00/review.json"
+    }
+  ],
   "context_length_quality_design": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_DESIGN.md",
   "context_length_integration_report": "research/GENERAL_RSI_CONTEXT_LENGTH_INTEGRATION_RESULTS.md",
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
