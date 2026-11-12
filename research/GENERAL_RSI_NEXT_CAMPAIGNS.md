@@ -67,11 +67,17 @@ The independent-batch averaging diagnostic is also complete:48 updates and51
 probe evaluations passed. Eight-batch means remain above every unchanged parent,
 and the pooled paired difference is +0.000010555 nats/token. All three parents
 fail the frozen criterion. See `GENERAL_RSI_BATCH_AVERAGING_RESULTS.md`. Close
-this diagnostic without a larger-batch sweep. Next implement the common-target
-prefix ablation in `GENERAL_RSI_CONTEXT_PREFIX_NEXT.md`, within the current128-token
-limit. Prior loops fit within95 tokens, so this does not claim an eviction cause.
-No worker or quality panel is active. Selected/fresh weights and all first outputs
-remain retained; test is unopened.
+this diagnostic without a larger-batch sweep.
+
+The natural-text prefix diagnostic is complete:1,152 sequences passed. Added
+prefix96 versus48 lowers CE in all three parents and both sources, mean−0.014213562.
+The frozen context-use criterion passes within the existing limit. See
+`GENERAL_RSI_CONTEXT_PREFIX_RESULTS.md`. This does not establish benefit beyond128
+or an eviction cause for prior short loops. Next implement the isolated128/256
+contract and matched1,024-target sampler under
+`GENERAL_RSI_CONTEXT_LENGTH_PILOT_NEXT.md`, then qualify only the new context path
+and measure complete pilot resources before admission. Historical contracts stay
+unchanged. No worker or quality panel is active; test is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 

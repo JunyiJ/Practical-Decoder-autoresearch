@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CONTEXT_PREFIX_PREPARATION_NEXT",
+  "status": "CONTEXT_LENGTH_IMPLEMENTATION_NEXT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Implement common-target prefix slicing for C16/48/96 on32 targets within the existing128-token limit. Qualify only new indexing, then freeze fresh source-balanced training spans and complete measured admission. No worker or quality panel is active.",
+  "next_action": "Implement an isolated native context128/context256 identity, wrapper and matched1024-target sampler without changing historical contracts. Qualify new context semantics/state and measure full pilot cost under the documented output/reserve forecast before pilot admission. No worker or quality panel is active.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T10:28:05.992207+00:00",
+  "updated_at": "2026-11-12T10:36:47.985359+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All48 paired updates/51 probes passed. Eight-batch averaging fails all3 parent improvement criteria: mean delta from unchanged parent +0.000321208 versus single +0.000310653. No batch sweep. Selected EMA parents retained; next evidence-grounded question is ordinary-text prefix context use, with no eviction claim for prior short loops.",
+  "latest_learning": "All1152 context sequences passed. CE96-minus48 improves in all3 parents and both sources, mean -0.014213562; CE48-minus16 mean -0.083984337. Criterion passes only for within-limit context use. No new model or beyond128 benefit established. Next: isolated context-length implementation/pilot.",
   "phase": "evidence_grounded_mechanism_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Batch diagnostic completed without model serialization. Evidence1171556bytes at review; current free16930226176bytes. No capacity blocker. Next diagnostic needs full measured admission.",
+  "capacity_status": "Prefix diagnostic completed without model outputs. Current free16924086272bytes. Prospective full new-length pilot ceiling requirement15099494400bytes; remeasure before admission and include failures/new actual sizes. No current capacity blocker.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Positive drift persists without explicit shrinkage. RAW versus averaged starting weights can distinguish a starting-point contribution under the qualified no-decay policy. Fresh optimizer state and gradient dynamics remain alternatives. Original optimizer restart states were retired; an exact warm-optimizer control is unavailable.",
+  "latest_hypothesis": "Useful context within the current128-token limit is supported across all three selected parents and both sources. Grouping paired training spans into256-token sequences may reduce missing-context loss, but any benefit beyond128 and its equal-time cost remain unmeasured. Next qualify the isolated new context path and complete restart/timing before designing fresh paired quality training.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -725,5 +725,13 @@
   "batch_averaging_analysis": "research/tokenizer-evidence/general-rsi-batch-averaging-001/analysis.json",
   "batch_averaging_review": "research/tokenizer-evidence/general-rsi-batch-averaging-001/completion-review.json",
   "context_prefix_boundary": "research/GENERAL_RSI_CONTEXT_PREFIX_NEXT.md",
-  "context_prefix_literature_review": "research/tokenizer-evidence/general-rsi-batch-averaging-001/next-context-boundary.json"
+  "context_prefix_literature_review": "research/tokenizer-evidence/general-rsi-batch-averaging-001/next-context-boundary.json",
+  "context_prefix_plan": "research/tokenizer-evidence/general-rsi-context-prefix-001/plan.json",
+  "context_prefix_plan_sha256": "2629d477da0ab7b26e763023fd8e662a18b34d0c68a8b03f728f2981ce143299",
+  "context_prefix_fixture_review": "research/tokenizer-evidence/general-rsi-context-prefix-fixture-001/completion-review.json",
+  "context_prefix_report": "research/GENERAL_RSI_CONTEXT_PREFIX_RESULTS.md",
+  "context_prefix_analysis": "research/tokenizer-evidence/general-rsi-context-prefix-001/analysis.json",
+  "context_prefix_review": "research/tokenizer-evidence/general-rsi-context-prefix-001/completion-review.json",
+  "context_length_pilot_boundary": "research/GENERAL_RSI_CONTEXT_LENGTH_PILOT_NEXT.md",
+  "context_length_source_audit": "research/tokenizer-evidence/general-rsi-context-prefix-001/next-length-source-audit.json"
 }

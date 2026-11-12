@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-11-12T10:36:47.983730+00:00",
+  "local_evidence": {
+    "research/GENERAL_RSI_CONTEXT_PREFIX_RESULTS.md": "1b2bfc6c9776c2d895916263169060af1402d0918b35f32d0a0b654f4f17c953",
+    "research/GENERAL_RSI_CONTEXT_LENGTH_PILOT_NEXT.md": "3eaa94d74c2eb892ae99d8c243b8e6a3efcbd3a300a2ecf7f7a703688fc1749e",
+    "research/tokenizer-evidence/general-rsi-context-prefix-001/analysis.json": "a925e26f9dc820d47e86cf2a6ac8aa17a36c681196cf4b674d310c43698eba3c",
+    "research/byte_input_model_v3/contract.py": "18335038bc8de7fd46364b1f8f4feaab7fbc99523c358311f46097c7f63b8e93",
+    "research/byte_input_model_v6/model.py": "25c0baa141dffbd81f1c3159d328fc2567e581ff6c0d1e6caeaa7ce243fb02e3",
+    "research/byte_input_model_v6/optimizer.py": "8615085ae60c33299f56a7c0adea12f7953a9ebf9cc874da61427ad8b6122791",
+    "research/ffn_structure_v1/runtime/models/gpt.py": "9f5a6f5ffd97639535c77151acd7763bbab0f8c36365abe158d7588b63b909af",
+    "research/readout_centering_model_v1/runtime/models/tokenizer_architecture.py": "e2abaf44c010f7ca9ddbbd85283ba78d6da0f94f42e1887925f1079eb2502e54",
+    "research/block_norm_v1/runtime/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "research/block_norm_v1/runtime/models/rope.py": "33bda2c5d2a4c312d65e2e294c5de944ff84d2c231bf40001f621a9399f6e5d3",
+    "research/block_norm_v1/runtime/models/grouped_embedding.py": "beb408e79aef6983f8ef8748cfcb1a94c4ae645f89e34aa8c2b152587d634825",
+    "research/final_ln_scale_model_v1/runtime/models/block_norm.py": "15608ad3d125040ba2ad3fcfc895782d19f7ae383006d39e586081b30d6a6aa3",
+    "research/final_ln_scale_model_v1/runtime/models/__init__.py": "8b92b45f2cef4261bd02b037be3ceabd5e3527bd011d17ea4cf095d9eebd32dc",
+    "research/block_norm_v1/runtime/data/loaders.py": "a0ed8185639ac1705fd33edf255a75041dbf60f926f7b43affa9be78e0cc905e"
+  },
+  "literature_basis": "research/tokenizer-evidence/general-rsi-batch-averaging-001/next-context-boundary.json",
+  "observed_contracts": [
+    "wrapper/signature length128",
+    "runtime architecture fixed128",
+    "MLA mask size from config",
+    "cached tensors fixed128",
+    "paired512 loader supports4x256 at1024 targets"
+  ],
+  "decision": "Implement isolated128/256 native contract and matched sampler, then qualify new context semantics and state under complete admission. No mutation of historical contracts.",
+  "pilot_required_free_bytes": 15099494400,
+  "quality_panel_admitted": false,
+  "test_opened": false
+}
