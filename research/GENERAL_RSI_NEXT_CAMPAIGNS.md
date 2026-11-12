@@ -73,11 +73,17 @@ The natural-text prefix diagnostic is complete:1,152 sequences passed. Added
 prefix96 versus48 lowers CE in all three parents and both sources, mean−0.014213562.
 The frozen context-use criterion passes within the existing limit. See
 `GENERAL_RSI_CONTEXT_PREFIX_RESULTS.md`. This does not establish benefit beyond128
-or an eviction cause for prior short loops. Next implement the isolated128/256
-contract and matched1,024-target sampler under
-`GENERAL_RSI_CONTEXT_LENGTH_PILOT_NEXT.md`, then qualify only the new context path
-and measure complete pilot resources before admission. Historical contracts stay
-unchanged. No worker or quality panel is active; test is unopened.
+or an eviction cause for prior short loops.
+
+The isolated128/256 pilot is complete: all50 updates pass, complete256 restart
+and replay are exact, and wrong-context loading rejects before mutation. Mean
+update times are0.352604/0.348422seconds, without a sustained-speed claim. One
+CPU-digest harness failure and its separately identified repair remain retained.
+See `GENERAL_RSI_CONTEXT_LENGTH_PILOT_RESULTS.md`. Next integrate only the new
+context/active-EMA, identical-target evaluator and fixed-generation adapter in
+`GENERAL_RSI_CONTEXT_LENGTH_QUALITY_INTEGRATION_NEXT.md`. Do not repeat the pilot.
+Historical contracts stay unchanged. No worker or quality panel is active; test
+is unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 

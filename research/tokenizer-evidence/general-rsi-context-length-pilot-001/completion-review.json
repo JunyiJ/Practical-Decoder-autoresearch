@@ -1,0 +1,44 @@
+{
+  "accepted": true,
+  "completed_at": "2026-11-12T10:47:42.214696+00:00",
+  "plan_sha256": "d6479a624c0506f4aa0e050b6571ade5b25b78600dcf615865fe011da40367a1",
+  "result_sha256": "e13c466736aba1ed038af0ba186b7b18c10bc61d5bc2492561a0004ee8aa7406",
+  "review_source_sha256": "009fbcfc2f9403eb9482cb31d81522736aee02ce729845fbd267fa0e40a2a37c",
+  "source_bindings_unchanged": 5214,
+  "optimizer_math_ast_equivalent": true,
+  "pilot_updates": 50,
+  "paired_draws": 24,
+  "full_restart_replay_exact": true,
+  "wrong_context_rejected_before_mutation": true,
+  "retained_receipts": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-pilot-001/c128-raw.pt",
+      "size": 113997147,
+      "sha256": "1f38e1a0a92b9beb800f914378bccd6c37583820a2be0953facca78516eb64f6"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-pilot-001/c256-step24.pt",
+      "size": 331011687,
+      "sha256": "5d69271de1e6e9525227cc6075bb97ad482b2a2701daa39ac0fcc4d6c2edeee9"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-pilot-001/c256-step25-reference.pt",
+      "size": 331011943,
+      "sha256": "872ed5b6ed5c40dcaa1de2620d40128a7409fae30c681bc8087118db0e8be2b7"
+    }
+  ],
+  "retained_bytes": 776020777,
+  "guard_seconds": 24.66079020802863,
+  "all_attempts_guard_seconds": 33.603963915025815,
+  "peak_rss_bytes": 1299709952,
+  "peak_mps_bytes": 2493300736,
+  "prior_harness_failures": 1,
+  "original_failed_attempt_unchanged": true,
+  "lock_reacquired": true,
+  "worker_exited": true,
+  "free_bytes": 16128651264,
+  "test_opened": false,
+  "validation_opened": false,
+  "quality_adopted": false,
+  "next_action": "Integrate the changed context path into time-EMA endpoints and identical-target evaluation; qualify only changed state/evaluation/generation paths before fresh panel admission."
+}

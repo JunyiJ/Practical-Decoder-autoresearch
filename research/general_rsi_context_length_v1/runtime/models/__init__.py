@@ -1,0 +1,2 @@
+from importlib import import_module
+__path__.extend(import_module('research.final_ln_scale_model_v1.runtime.models').__path__)

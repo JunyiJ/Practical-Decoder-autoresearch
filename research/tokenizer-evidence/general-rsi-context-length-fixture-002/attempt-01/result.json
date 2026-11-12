@@ -1,0 +1,79 @@
+{
+  "plan_sha256": "dacafaf550d6844311c3e8c1b4f466f60be0e2de043b2e7b7e290e344055a619",
+  "accepted": true,
+  "parameter_tensors_exact": 176,
+  "new128_logits_exact": true,
+  "new128_update_exact": true,
+  "new128_children_exact": true,
+  "short_prefix_max_abs": 0.0,
+  "causality_max_abs": 0.0,
+  "paired_draws_exact": 25,
+  "paired_batch_sha256": [
+    "9f39b6cf817a46b7a08f6f37f4352e6b76601e397a56e68f0e7b8aae73e9ef14",
+    "8e6a5b83af58999739ef28e511206bc7cfa8350c525687bc7c1d0b1f0e65a958",
+    "4f09c0b394b7d6a1e55cd15d58cd6dfc917e33a2c7e533ab91867e4f32d2aefc",
+    "8bb6c5ea420d4b925b705192369a0b674bab2bd0cc1c0364049f8fd5f045ef43",
+    "95a18c6f80f9829206a9ce31eae765941dc1e1b70342ab2f1c411623599ce7b5",
+    "8da39ea75ef94e881d7fcba022f21e00926c5ce8b4288e28adcdc39d6a2cc705",
+    "17f68e98c0ff17ea092c28b72a54ef409acda5ef86cc3b64e7993f9e82e20e4b",
+    "fec1e2af9ea0be94a4744b60fae6d889644038c3095a268e39b559fad5cd40a1",
+    "78597376f3066de3e232bea63e0c159a7a6e49a1e427f99236adada1d8267ba7",
+    "f6016d342da286456c536157aa402f8f73746e044d92a6826a0b803761b8382c",
+    "94e3341ce5ea5a6d2c22fc9ee0b1fe470fdf4fc81456f5db5237dbbdd394d5cd",
+    "8d6a9a71fccb6dd73330fca211325898ff1ea452285f586d157b17d1fbb6a357",
+    "4d821f0e0a67e68515d928f085cffa8ed0675205954ee3beedc33722f09c8bb1",
+    "5297e31025b80a097e3c833015dcb77c4e29b1b715dc47446ae2897b198a9418",
+    "3a287cd071ad41a8dfe9623fb84897f0f0b7bca197742f24c9b31c68ac5a5d9d",
+    "eb1a4c2cfd5144133431ecd85bd4447a74690347cf60a93ed72de3f0a1dedfee",
+    "d7863b53088e33d78418931bbd650ffca68a115a235736dc8643e7cd1f3734ea",
+    "436ed09f0b19d0c1c9c5ee715601e92b9d7823c05238554b0e70d38c03e20cbc",
+    "e7e62becce2fa73f82f39cc5a6e08629c442673e9d07ad6a5caf95176357e64c",
+    "401cccf773323001e38d7413b3efb5ce13e3961e99d654077795197189512c51",
+    "3df06e538d4e1444cc44f8ad2f41664b2eddf5e6e02b5cdff703d243163d1062",
+    "78ffbc5654708993cb8a8642775b7e68a33a2145b559416b7544fb57e2254c08",
+    "355fc1ced5c24cf4fccbaf491901be330e72e51842c8d6750eba97b47aac872a",
+    "c1cde5c3e407750575991d32d0949bb6e977d6bb9409cd5496548fb8e77dabac",
+    "21e80f405a3f0b0e83e99ad3b3f308b409790eca7bceb80da8f7ddb8eb32e160"
+  ],
+  "steps": {
+    "old128": {
+      "seconds": 0.587113874964416,
+      "loss": 10.880502700805664,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.3068894147872925,
+        "post_norm": 0.3068894147872925,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      }
+    },
+    "new128": {
+      "seconds": 0.4043077079113573,
+      "loss": 10.880502700805664,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.3068894147872925,
+        "post_norm": 0.3068894147872925,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      }
+    },
+    "new256": {
+      "seconds": 0.6057694579940289,
+      "loss": 10.879785537719727,
+      "clip": {
+        "threshold": 1.0,
+        "pre_norm": 0.3060920834541321,
+        "post_norm": 0.3060920834541321,
+        "coefficient": 1.0,
+        "gradient_tensors": 88
+      }
+    }
+  },
+  "parameter_bytes": 113969664,
+  "optimizer_tensor_bytes": 216929456,
+  "peak_mps_bytes": 2478620672,
+  "optimizer_updates": 3,
+  "validation_opened": false,
+  "test_opened": false
+}
