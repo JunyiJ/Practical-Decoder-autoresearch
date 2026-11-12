@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CE_CONTINUATION_DRIFT_ANALYSIS_NEXT",
+  "status": "NORM_RESTORATION_DIAGNOSTIC_PREPARATION_NEXT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Audit CE-only continuation drift from existing100-update parent-relative probe curves and original1,200-second CE histories plus RAW/time-EMA endpoint validation. Keep sampled training CE, online batch loss and validation separate; identify what early-drift/recovery explanations can be resolved before new training. No joint quality panel or coefficient sweep admitted.",
+  "next_action": "Implement and freeze the 27-condition retained-weight norm-restoration inference diagnostic in GENERAL_RSI_NORM_RESTORATION_NEXT.md. Bind all endpoint factors, 64 shared fresh training windows, conditions and qualified scorer before scores. Check only new factor application/restoration, then measure complete resource admission under the shared lock. No validation/test, generation, checkpoint output or new training panel admitted.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T09:16:41.603522+00:00",
+  "updated_at": "2026-11-12T09:30:51.568298+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Accumulated-state diagnostic completed1494updates/45probes across9trajectories in603.000s. At100matched naturalupdates, zero-minus-CE means+0.0183680698701 and pseudo-minus-zero+0.0353673992544, both positive in all3parents. Ordinary CE also drifts+0.0266278 from parents. Released DITTO code accumulates6mixed minibatches before a single optimizer step; our alternating recipe differs. No quality gain established.",
+  "latest_learning": "Retained 1,200-second CE-only continuations regress against selected parents in all three pairs: full-validation RAW mean +0.050810987 and time-EMA +0.026287021 nats/token. Both sources and all retained 400/800-second subset probes regress. Raw parameter-group norms fall to 83.3\u201383.5% of parent norms. Audit uses existing scores only; no new quality model adopted.",
   "phase": "evidence_grounded_mechanism_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -449,7 +449,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Existing-data CE continuation drift analysis is executable. No active worker or capacity blocker.",
+  "wake_condition": "Norm-restoration diagnostic preparation is executable. No active worker or capacity blocker.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Joint accumulation preserves synthetic suppression but retains prediction cost: at100 updates joint-minus-full CE+0.019226 and joint-minus-half+0.021136, positive in all3parents. Both joint and half controls are unclipped, so extra advance/clipping alone cannot explain this contrast. All CE controls also drift upward from selected averaged parents; audit existing longer-continuation evidence before another intervention.",
+  "latest_hypothesis": "Persistent continuation drift and radial weight shrinkage motivate a retained-weight functional sensitivity control. Fixed per-step decay is a candidate mechanism, not an established cause. Prior zero-decay fresh-training results were unfavorable; preserve them. Separate readout scaling from other parameter changes before any new training intervention.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -681,5 +681,10 @@
   "joint_gradient_diagnostic_report": "research/GENERAL_RSI_JOINT_DIAGNOSTIC_RESULTS.md",
   "joint_gradient_diagnostic_analysis": "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/analysis.json",
   "joint_gradient_diagnostic_review": "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/completion-review.json",
-  "joint_gradient_window_audit": "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/exploratory-window-audit.json"
+  "joint_gradient_window_audit": "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/exploratory-window-audit.json",
+  "ce_drift_report": "research/GENERAL_RSI_CE_DRIFT_RESULTS.md",
+  "ce_drift_analysis": "research/tokenizer-evidence/general-rsi-ce-drift-001/analysis.json",
+  "ce_drift_review": "research/tokenizer-evidence/general-rsi-ce-drift-001/completion-review.json",
+  "ce_drift_literature_boundary": "research/tokenizer-evidence/general-rsi-ce-drift-001/literature-and-boundary.json",
+  "norm_restoration_boundary": "research/GENERAL_RSI_NORM_RESTORATION_NEXT.md"
 }

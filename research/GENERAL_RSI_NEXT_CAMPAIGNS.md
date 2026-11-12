@@ -32,13 +32,21 @@ The frozen joint-benefit criterion fails. See `GENERAL_RSI_JOINT_DIAGNOSTIC_RESU
 The posthoc saved-window audit finds prediction costs in both sources and in
 windows with and without repeated trigrams. No quality model is adopted.
 
-Next audit CE-only continuation drift using existing100-update parent-relative
-probes and original1,200-second CE histories plus RAW/time-EMA endpoint validation.
-Keep training-window CE, online batch loss and validation distinct. Establish
-which early-drift/recovery explanations the retained evidence can resolve before
-choosing another intervention. No worker or training panel is active. Preserve
-all closed decisions, selected/fresh weights and first outputs. Do not repeat
-completed prerequisites, replay closed diagnostics or add a batch-reuse arm.
+The CE continuation drift audit is complete. All three 1,200-second controls
+regress against their starting parents on full validation: mean RAW+0.050811,
+time-EMA+0.026287nats/token. Both sources and all retained400/800-second subset
+probes regress. Raw parameter-group norms fall to83.3–83.5% of their parent norms.
+See `GENERAL_RSI_CE_DRIFT_RESULTS.md`. These are existing-score and weight audits;
+no validation was rerun. Norm shrinkage does not establish decay causality.
+
+Next implement and freeze the retained-weight norm-restoration inference control
+in `GENERAL_RSI_NORM_RESTORATION_NEXT.md`: separate readout and other-parameter
+scaling across27 conditions on64 shared fresh training windows. Bind mechanical
+factors and all conditions before scores, verify new transformation/restoration
+logic, then complete measured admission. Prior zero-decay training lost in all
+three seeds and remains closed. No new training panel or model adoption is
+admitted. No worker is active. Preserve selected/fresh weights, original decisions
+and first outputs. Test remains unopened.
 
 ## Completed priority — 2026-11-11 Pacific
 

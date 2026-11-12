@@ -1,0 +1,35 @@
+{
+  "local_evidence": {
+    "research/DECAY_QUALITY_RESULTS.md": "7c0cb343ef9df29d58da8a38e6f9f0659f9a5df04920b173e244d5b9c7908529",
+    "research/DECAY_QUALITY_PROTOCOL.md": "ef63726a064ce4c3ca346526d85e90ddd6c2752fadc85d9a4296591bdbb80150",
+    "research/tokenizer-evidence/decay-preparation-001/quality001-plan.json": "b903aea9e97aefba7088d7528499628a0c257cadadb7e91583e568e7c6d19d12",
+    "research/tokenizer-evidence/decay-preparation-001/quality001-closure.json": "0597ff65346434af8173dd3652d0284bd883489407dee7ac1867ef91dd04fb01",
+    "research/tokenizer-evidence/decay-preparation-001/quality001-accepted-00.json": "05f0d7b50894b962d59d0a5a0a089bc8afa83e52acae518a6503f84fc2e7886d",
+    "research_runs/tokenizer-decay-quality-v2-001/evidence/quality/00/accepted.json": "3e0709a6e5f488b5cc21c449cb6386c2727b5c10f09d818b197dfffa306d8302"
+  },
+  "papers": [
+    {
+      "url": "https://arxiv.org/html/1711.05101v3",
+      "version": "2019-01-04 v3",
+      "sections": [
+        "2 Eq1 and Algorithm2",
+        "B.1"
+      ],
+      "finding": "Schedule multiplier applies to both update and decay; budget affects decay choice. Their normalization is explicitly provisional.",
+      "limits": "Image experiments and Adam/SGD, not Muon with a pretrained general-text model."
+    },
+    {
+      "url": "https://arxiv.org/html/1803.05407v3",
+      "version": "2019-02-25 v3",
+      "sections": [
+        "3.1",
+        "3.2"
+      ],
+      "finding": "Averaging is a different point from trajectory proposals; pretrained-start SWA algorithm.",
+      "limits": "Equal-weight SGD SWA and image classifiers differ from time EMA and Muon/AdamW. No geometric-width claim for our model."
+    }
+  ],
+  "retrieval": "Full HTML read after PDF timeouts/OpenReview challenge. No graph coordinates inferred.",
+  "next_design": "research/GENERAL_RSI_NORM_RESTORATION_NEXT.md",
+  "new_training_admitted": false
+}

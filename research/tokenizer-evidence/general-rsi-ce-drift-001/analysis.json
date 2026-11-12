@@ -1,0 +1,738 @@
+{
+  "rows": [
+    {
+      "continuation_slot": 0,
+      "parent_slot": 1,
+      "parent_ce": 4.83692000848924,
+      "parent_subset_ce": 4.534680562817376,
+      "steps": 3493,
+      "training_seconds": 1200.128546477,
+      "endpoints": [
+        {
+          "endpoint": "raw",
+          "ce": 4.887541400345243,
+          "delta_from_parent": 0.05062139185600323,
+          "subset_ce": 4.603326649761901,
+          "subset_delta": 0.06864608694452556,
+          "source_deltas": {
+            "fineweb_edu": 0.04687654025411092,
+            "wikipedia": 0.06562058463929965
+          },
+          "geometry": {
+            "Muon": {
+              "parent_norm": 121.70582035353134,
+              "current_norm": 101.5931220576234,
+              "norm_ratio": 0.834743332426629,
+              "relative_displacement": 0.1873486778066368,
+              "cosine": 0.9953340382631186
+            },
+            "AdamW": {
+              "parent_norm": 747.8795334385413,
+              "current_norm": 622.796773750339,
+              "norm_ratio": 0.8327501233880452,
+              "relative_displacement": 0.194684485751372,
+              "cosine": 0.9940381109010445
+            }
+          }
+        },
+        {
+          "endpoint": "time_ema",
+          "ce": 4.8625809892578635,
+          "delta_from_parent": 0.025660980768623887,
+          "subset_ce": 4.569915623506509,
+          "subset_delta": 0.03523506068913296,
+          "source_deltas": {
+            "fineweb_edu": 0.023048891132301463,
+            "wikipedia": 0.03612314060498445
+          },
+          "geometry": {
+            "Muon": {
+              "parent_norm": 121.70582035353134,
+              "current_norm": 104.2579971559255,
+              "norm_ratio": 0.856639369038199,
+              "relative_displacement": 0.16685627750141968,
+              "cosine": 0.995745732045885
+            },
+            "AdamW": {
+              "parent_norm": 747.8795334385413,
+              "current_norm": 639.565770900677,
+              "norm_ratio": 0.855172179883212,
+              "relative_displacement": 0.17496645545590722,
+              "cosine": 0.9943647821563025
+            }
+          }
+        }
+      ],
+      "probes": [
+        {
+          "fraction": 1,
+          "step": 1162,
+          "seconds": 400.098474852,
+          "ce": 4.56999226729814,
+          "delta_from_parent_subset": 0.03531170448076448
+        },
+        {
+          "fraction": 2,
+          "step": 2331,
+          "seconds": 800.088062957,
+          "ce": 4.567053396411544,
+          "delta_from_parent_subset": 0.032372833594168426
+        }
+      ],
+      "online_step_bins": [
+        {
+          "step_range": [
+            1,
+            100
+          ],
+          "updates": 100,
+          "mean_online_ce": 4.079861357212066,
+          "median_gradient_norm": 1.2842600345611572,
+          "clipped": 100,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "step_range": [
+            101,
+            200
+          ],
+          "updates": 100,
+          "mean_online_ce": 4.137909212112427,
+          "median_gradient_norm": 1.2895616292953491,
+          "clipped": 100,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "step_range": [
+            201,
+            500
+          ],
+          "updates": 300,
+          "mean_online_ce": 4.17191876967748,
+          "median_gradient_norm": 1.2972703576087952,
+          "clipped": 300,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        }
+      ],
+      "online_time_bins": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 400,
+          "updates": 1162,
+          "mean_online_ce": 4.183546838169459,
+          "median_gradient_norm": 1.3050378561019897,
+          "clipped": 1162,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "start_seconds": 400,
+          "end_seconds": 800,
+          "updates": 1169,
+          "mean_online_ce": 4.219663394833345,
+          "median_gradient_norm": 1.3375248908996582,
+          "clipped": 1169,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "start_seconds": 800,
+          "end_seconds": 1201,
+          "updates": 1162,
+          "mean_online_ce": 4.247310428734285,
+          "median_gradient_norm": 1.359368920326233,
+          "clipped": 1162,
+          "first_lr_ratio": 0.9998018583467498,
+          "last_lr_ratio": 0.10050282930249976
+        }
+      ],
+      "independent_decay_only_factor": 0.810919664060902,
+      "decay_factor_scope": "Algebraic no-gradient shrinkage factor only; actual updates also include learned gradient terms."
+    },
+    {
+      "continuation_slot": 2,
+      "parent_slot": 3,
+      "parent_ce": 4.823867242842183,
+      "parent_subset_ce": 4.5012566334237,
+      "steps": 3506,
+      "training_seconds": 1200.290195228,
+      "endpoints": [
+        {
+          "endpoint": "raw",
+          "ce": 4.876692999050891,
+          "delta_from_parent": 0.05282575620870844,
+          "subset_ce": 4.587383992675385,
+          "subset_delta": 0.08612735925168558,
+          "source_deltas": {
+            "fineweb_edu": 0.05012217564787402,
+            "wikipedia": 0.063654363146469
+          },
+          "geometry": {
+            "Muon": {
+              "parent_norm": 120.37686075051325,
+              "current_norm": 100.46366690083526,
+              "norm_ratio": 0.8345762322964293,
+              "relative_displacement": 0.18782861155983868,
+              "cosine": 0.9952583334553673
+            },
+            "AdamW": {
+              "parent_norm": 729.5816996905384,
+              "current_norm": 608.0660670366983,
+              "norm_ratio": 0.8334447907542331,
+              "relative_displacement": 0.1949249593199588,
+              "cosine": 0.9938477616317538
+            }
+          }
+        },
+        {
+          "endpoint": "time_ema",
+          "ce": 4.851445698190531,
+          "delta_from_parent": 0.027578455348348463,
+          "subset_ce": 4.5489956840325725,
+          "subset_delta": 0.047739050608872624,
+          "source_deltas": {
+            "fineweb_edu": 0.02530523811707308,
+            "wikipedia": 0.036683335091242775
+          },
+          "geometry": {
+            "Muon": {
+              "parent_norm": 120.37686075051325,
+              "current_norm": 103.08502537701854,
+              "norm_ratio": 0.8563524977667191,
+              "relative_displacement": 0.16748094743508163,
+              "cosine": 0.9956704377722784
+            },
+            "AdamW": {
+              "parent_norm": 729.5816996905384,
+              "current_norm": 624.322166926833,
+              "norm_ratio": 0.8557261882961805,
+              "relative_displacement": 0.17541940632145428,
+              "cosine": 0.9941821136791151
+            }
+          }
+        }
+      ],
+      "probes": [
+        {
+          "fraction": 1,
+          "step": 1170,
+          "seconds": 400.28148375,
+          "ce": 4.53981959761748,
+          "delta_from_parent_subset": 0.03856296419378058
+        },
+        {
+          "fraction": 2,
+          "step": 2346,
+          "seconds": 800.018628971,
+          "ce": 4.542725960214451,
+          "delta_from_parent_subset": 0.041469326790751104
+        }
+      ],
+      "online_step_bins": [
+        {
+          "step_range": [
+            1,
+            100
+          ],
+          "updates": 100,
+          "mean_online_ce": 4.070964276790619,
+          "median_gradient_norm": 1.3236059546470642,
+          "clipped": 100,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "step_range": [
+            101,
+            200
+          ],
+          "updates": 100,
+          "mean_online_ce": 4.141214420795441,
+          "median_gradient_norm": 1.3214579820632935,
+          "clipped": 100,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "step_range": [
+            201,
+            500
+          ],
+          "updates": 300,
+          "mean_online_ce": 4.109977993965149,
+          "median_gradient_norm": 1.3231606483459473,
+          "clipped": 300,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        }
+      ],
+      "online_time_bins": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 400,
+          "updates": 1170,
+          "mean_online_ce": 4.139778572269994,
+          "median_gradient_norm": 1.3285208940505981,
+          "clipped": 1170,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "start_seconds": 400,
+          "end_seconds": 800,
+          "updates": 1176,
+          "mean_online_ce": 4.18383466041818,
+          "median_gradient_norm": 1.3586745262145996,
+          "clipped": 1176,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "start_seconds": 800,
+          "end_seconds": 1201,
+          "updates": 1160,
+          "mean_online_ce": 4.222488038909846,
+          "median_gradient_norm": 1.3850335478782654,
+          "clipped": 1160,
+          "first_lr_ratio": 0.9999580848152498,
+          "last_lr_ratio": 0.10017953551674974
+        }
+      ],
+      "independent_decay_only_factor": 0.8102873743790888,
+      "decay_factor_scope": "Algebraic no-gradient shrinkage factor only; actual updates also include learned gradient terms."
+    },
+    {
+      "continuation_slot": 4,
+      "parent_slot": 5,
+      "parent_ce": 4.843388298598813,
+      "parent_subset_ce": 4.5461185696320845,
+      "steps": 3512,
+      "training_seconds": 1200.0897854,
+      "endpoints": [
+        {
+          "endpoint": "raw",
+          "ce": 4.8923741118101605,
+          "delta_from_parent": 0.04898581321134721,
+          "subset_ce": 4.62389119166495,
+          "subset_delta": 0.07777262203286561,
+          "source_deltas": {
+            "fineweb_edu": 0.049933994940732696,
+            "wikipedia": 0.04518807646112055
+          },
+          "geometry": {
+            "Muon": {
+              "parent_norm": 120.90190305474756,
+              "current_norm": 100.9346846299515,
+              "norm_ratio": 0.8348477739365742,
+              "relative_displacement": 0.1876572156612306,
+              "cosine": 0.9952446583293975
+            },
+            "AdamW": {
+              "parent_norm": 727.1686073854042,
+              "current_norm": 605.8087996314905,
+              "norm_ratio": 0.8331063710378352,
+              "relative_displacement": 0.19567207978399076,
+              "cosine": 0.9937378468215089
+            }
+          }
+        },
+        {
+          "endpoint": "time_ema",
+          "ce": 4.86900992539995,
+          "delta_from_parent": 0.025621626801136443,
+          "subset_ce": 4.5938826902476935,
+          "subset_delta": 0.047764120615608974,
+          "source_deltas": {
+            "fineweb_edu": 0.026986068794720985,
+            "wikipedia": 0.020156649632733448
+          },
+          "geometry": {
+            "Muon": {
+              "parent_norm": 120.90190305474756,
+              "current_norm": 103.57473894367241,
+              "norm_ratio": 0.8566841077494954,
+              "relative_displacement": 0.1671963455554727,
+              "cosine": 0.9956721661295747
+            },
+            "AdamW": {
+              "parent_norm": 727.1686073854042,
+              "current_norm": 622.067063510856,
+              "norm_ratio": 0.8554646847964881,
+              "relative_displacement": 0.17606057216132617,
+              "cosine": 0.994092761566657
+            }
+          }
+        }
+      ],
+      "probes": [
+        {
+          "fraction": 1,
+          "step": 1171,
+          "seconds": 400.215458119,
+          "ce": 4.586012455684879,
+          "delta_from_parent_subset": 0.03989388605279487
+        },
+        {
+          "fraction": 2,
+          "step": 2349,
+          "seconds": 800.24253469,
+          "ce": 4.586548358456227,
+          "delta_from_parent_subset": 0.0404297888241425
+        }
+      ],
+      "online_step_bins": [
+        {
+          "step_range": [
+            1,
+            100
+          ],
+          "updates": 100,
+          "mean_online_ce": 4.149813714027405,
+          "median_gradient_norm": 1.3038491606712341,
+          "clipped": 100,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "step_range": [
+            101,
+            200
+          ],
+          "updates": 100,
+          "mean_online_ce": 4.153558819293976,
+          "median_gradient_norm": 1.3062710165977478,
+          "clipped": 100,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "step_range": [
+            201,
+            500
+          ],
+          "updates": 300,
+          "mean_online_ce": 4.133678799470266,
+          "median_gradient_norm": 1.3053818941116333,
+          "clipped": 300,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        }
+      ],
+      "online_time_bins": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 400,
+          "updates": 1171,
+          "mean_online_ce": 4.147428355799283,
+          "median_gradient_norm": 1.3099528551101685,
+          "clipped": 1171,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "start_seconds": 400,
+          "end_seconds": 800,
+          "updates": 1178,
+          "mean_online_ce": 4.210174029266085,
+          "median_gradient_norm": 1.3491966724395752,
+          "clipped": 1178,
+          "first_lr_ratio": 1.0,
+          "last_lr_ratio": 1.0
+        },
+        {
+          "start_seconds": 800,
+          "end_seconds": 1201,
+          "updates": 1163,
+          "mean_online_ce": 4.208609566643437,
+          "median_gradient_norm": 1.3742554187774658,
+          "clipped": 1163,
+          "first_lr_ratio": 0.9994542969475,
+          "last_lr_ratio": 0.10056473466174987
+        }
+      ],
+      "independent_decay_only_factor": 0.8099957146763306,
+      "decay_factor_scope": "Algebraic no-gradient shrinkage factor only; actual updates also include learned gradient terms."
+    }
+  ],
+  "short_training_probes": [
+    {
+      "campaign": "general-rsi-pseudo-accumulated-001",
+      "parent_slot": 1,
+      "initial_ce": 4.094134284350055,
+      "points": [
+        {
+          "n": 1,
+          "ce": 4.094495215181343,
+          "delta_from_parent": 0.0003609308312881865
+        },
+        {
+          "n": 10,
+          "ce": 4.097849602689223,
+          "delta_from_parent": 0.00371531833916805
+        },
+        {
+          "n": 25,
+          "ce": 4.10091974076051,
+          "delta_from_parent": 0.006785456410455026
+        },
+        {
+          "n": 50,
+          "ce": 4.109724316569398,
+          "delta_from_parent": 0.015590032219343186
+        },
+        {
+          "n": 100,
+          "ce": 4.121748558869751,
+          "delta_from_parent": 0.02761427451969567
+        }
+      ]
+    },
+    {
+      "campaign": "general-rsi-pseudo-accumulated-001",
+      "parent_slot": 3,
+      "initial_ce": 4.223133441408889,
+      "points": [
+        {
+          "n": 1,
+          "ce": 4.223237001841754,
+          "delta_from_parent": 0.00010356043286563477
+        },
+        {
+          "n": 10,
+          "ce": 4.227214257590781,
+          "delta_from_parent": 0.004080816181891933
+        },
+        {
+          "n": 25,
+          "ce": 4.233549310443587,
+          "delta_from_parent": 0.010415869034698488
+        },
+        {
+          "n": 50,
+          "ce": 4.236084081344757,
+          "delta_from_parent": 0.01295063993586787
+        },
+        {
+          "n": 100,
+          "ce": 4.249781040118686,
+          "delta_from_parent": 0.026647598709796938
+        }
+      ]
+    },
+    {
+      "campaign": "general-rsi-pseudo-accumulated-001",
+      "parent_slot": 5,
+      "initial_ce": 4.309979974394976,
+      "points": [
+        {
+          "n": 1,
+          "ce": 4.310137050712232,
+          "delta_from_parent": 0.00015707631725625504
+        },
+        {
+          "n": 10,
+          "ce": 4.315389399057295,
+          "delta_from_parent": 0.005409424662319751
+        },
+        {
+          "n": 25,
+          "ce": 4.3179858465102985,
+          "delta_from_parent": 0.008005872115322887
+        },
+        {
+          "n": 50,
+          "ce": 4.325514978869579,
+          "delta_from_parent": 0.015535004474603653
+        },
+        {
+          "n": 100,
+          "ce": 4.335601478008291,
+          "delta_from_parent": 0.02562150361331561
+        }
+      ]
+    },
+    {
+      "campaign": "general-rsi-joint-diagnostic-001",
+      "parent_slot": 1,
+      "initial_ce": 4.184808946077183,
+      "points": [
+        {
+          "n": 1,
+          "ce": 4.185296814082442,
+          "delta_from_parent": 0.00048786800525846274
+        },
+        {
+          "n": 10,
+          "ce": 4.189656294775322,
+          "delta_from_parent": 0.0048473486981386316
+        },
+        {
+          "n": 25,
+          "ce": 4.194757408859942,
+          "delta_from_parent": 0.009948462782759293
+        },
+        {
+          "n": 50,
+          "ce": 4.2021820427638055,
+          "delta_from_parent": 0.017373096686622347
+        },
+        {
+          "n": 100,
+          "ce": 4.213202680104356,
+          "delta_from_parent": 0.028393734027172712
+        }
+      ]
+    },
+    {
+      "campaign": "general-rsi-joint-diagnostic-001",
+      "parent_slot": 3,
+      "initial_ce": 4.162935958826639,
+      "points": [
+        {
+          "n": 1,
+          "ce": 4.163289996378198,
+          "delta_from_parent": 0.0003540375515598271
+        },
+        {
+          "n": 10,
+          "ce": 4.168718371052892,
+          "delta_from_parent": 0.005782412226253086
+        },
+        {
+          "n": 25,
+          "ce": 4.174448130478421,
+          "delta_from_parent": 0.01151217165178231
+        },
+        {
+          "n": 50,
+          "ce": 4.179838559475585,
+          "delta_from_parent": 0.016902600648946553
+        },
+        {
+          "n": 100,
+          "ce": 4.1903596936031615,
+          "delta_from_parent": 0.027423734776522934
+        }
+      ]
+    },
+    {
+      "campaign": "general-rsi-joint-diagnostic-001",
+      "parent_slot": 5,
+      "initial_ce": 4.079077778228742,
+      "points": [
+        {
+          "n": 1,
+          "ce": 4.079596626001019,
+          "delta_from_parent": 0.0005188477722768425
+        },
+        {
+          "n": 10,
+          "ce": 4.083792265454399,
+          "delta_from_parent": 0.004714487225657038
+        },
+        {
+          "n": 25,
+          "ce": 4.089864697258738,
+          "delta_from_parent": 0.010786919029996511
+        },
+        {
+          "n": 50,
+          "ce": 4.0971311169566516,
+          "delta_from_parent": 0.018053338727909818
+        },
+        {
+          "n": 100,
+          "ce": 4.109231225844038,
+          "delta_from_parent": 0.03015344761529626
+        }
+      ]
+    }
+  ],
+  "mean_full_validation_delta": {
+    "raw": 0.05081098709201962,
+    "time_ema": 0.02628702097270293
+  },
+  "source_bindings": {
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
+    "research/general_rsi_ce_drift_analysis_v1.py": "5e4eee107bf767251ebf92bad2d789f8993e6856a8eb88f4bd947d9702701f55",
+    "research/general_rsi_pseudo_training_v1.py": "fcbf4ed59069d314c163b38cc0c581936f98929fbe3b721ff48adeb59ce913d7",
+    "research/general_rsi_pseudo_worker_v1.py": "999b0163dffe4a3e6a11c2d00fb3ef53dfb965812f3e17598522fb7abb010cb7",
+    "research/byte_input_model_v6/optimizer.py": "8615085ae60c33299f56a7c0adea12f7953a9ebf9cc874da61427ad8b6122791",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/review.json": "f262f0d6e75d20611460573a0ad2345a0d3c1b42d67583b039c4c1a571e06f6f",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/result.json": "95ee75f36ab010658bd2f4d277779a42e3ef4db1285e089654380abb8d5e973a",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-01/time_ema-validation.json": "b7f9bddfd26a5f365bdf44333d381638cbacf34bcfb7e44a371c9e03e687e723",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/steps-01.jsonl": "eaf58e750f3962907b8b17ef201c0d22c12e1c636d9da33bd4bcd7bf75372e14",
+    "research_runs/general-rsi-native-horizon-001/slot-01/time_ema.pt": "dcb9a0bc04905967d052f7fbdf92c5bee617d5f2a61b02d59e5d3f755aba2e93",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/raw-validation.json": "91bc6a504f85c8a5ceffeb8d8ee96270738d9370cd15cea60624a4da6a4be949",
+    "research_runs/general-rsi-pseudo-repetition-001/slot-00/raw.pt": "7aa0369b7d5618c52e31c30a202051e72795a2ddd26e72917b2d4a39565086f5",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/time_ema-validation.json": "03155f222450b433c3c9fcfca6261fd1c18b58ecb287791259e526274b831938",
+    "research_runs/general-rsi-pseudo-repetition-001/slot-00/time_ema.pt": "9fa6d02c416741006b64ffd32a13599c51f818ba65834b045a91960792a9ee91",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/probe-1.json": "de2a4240225a2f8a8334af4610b40622e4cf70b9d2a4e5cbc2bc84cd94f30b86",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/probe-2.json": "f818c2824e35183a4057e85657512a2b125a0a30d3c673deae1a0d03d4a75863",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/review.json": "a704be53db4cc8b50c4014120e777b46645bf596ba8fdda97256f1c143dc2edc",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/result.json": "8d42fd204489a3a8e97f30c8bd8cd13bb9414a08a31cefb7ce30405854346b05",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-03/time_ema-validation.json": "8685b2d2e33243eeb63b6499deeef35ba42dcb9d539dabc1ace4524adb436e97",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/steps-01.jsonl": "802924debca0a633cd464016e1b16a37181da791b1bb68b6200e42af00305502",
+    "research_runs/general-rsi-native-horizon-001/slot-03/time_ema.pt": "7f37f13b87a3c859a625980577b4725d0d421cbc05ffef0a5374a200310c0828",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/raw-validation.json": "6ae47a942301b81bf7c02bdf02bc0d32c1d6f14cd258d1a53feeadae1fcc2a1e",
+    "research_runs/general-rsi-pseudo-repetition-001/slot-02/raw.pt": "fe1f9e6bbe9cb8751b6206511c071ae404b5018ec23ab92144ac08cf9a73d91e",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/time_ema-validation.json": "5756f5708e5b6db98bb1d5cfad2a7fbf61f262e2dd3be9a3c1941f6bcc1ba228",
+    "research_runs/general-rsi-pseudo-repetition-001/slot-02/time_ema.pt": "ce9694e708211660392793044f5ce5c8966f23ee6f3f91a50aeb5701064ae865",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/probe-1.json": "8ac2263ef26c08c0a33474cd7a5f4622f5562951a386bbb83209eec04fcd2ec7",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-02/probe-2.json": "1062bc32e73cdcc589a05e83e51a6af192d131154b50de99638d25ed61ead130",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/review.json": "c92cf20a2d754a164d42cefc3eb49b1667c153234c275f061d7480264a6414d7",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/result.json": "5d6a7fd9d35acdccdde152acf07675cf6d520528afa0fbf26256f217b98f38fe",
+    "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/time_ema-validation.json": "766e084c387343f3f87150b60b59ccaa6b3eb2567554bd3a12c63174c9f3fcd0",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/steps-01.jsonl": "30e4b41da04c2535fe2a4e7ea8e560107bd5cbea247413bc78681c7a25905e28",
+    "research_runs/general-rsi-native-horizon-001/slot-05/time_ema.pt": "b881688af63094b0caf371619027a5cc082bef493c75dc613fdcfb1db95621d2",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/raw-validation.json": "8685048b9329ba21c64f19346ec259b7e8a4dce456d588ff31a4b26ad93e9fdb",
+    "research_runs/general-rsi-pseudo-repetition-001/slot-04/raw.pt": "0dc1046f2146bddcf5affe6fb500994efd9b6658bd48ed0c51537ae27dc33d18",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/time_ema-validation.json": "167c081436d56aeee4c397bc37448f13056fb4309a5ee9a342bc6e11e3758fc3",
+    "research_runs/general-rsi-pseudo-repetition-001/slot-04/time_ema.pt": "dde12ff563a5c6473ea634129d44a930845b6a094f34451a4348f38941b49ff4",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/probe-1.json": "4d474460578e7479df16a5300d69c397bd39052f0973a28505886079217ea0d5",
+    "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-04/probe-2.json": "ad4ca193dd35985203cff336ad9da545f3e71e155932435fce9f050e2affb0c6",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p01-initial.json": "4c85c86e6059980240abef04d794ca5a0c6ca674314ec802c12e7b8f47ae6ff7",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p01-ce-n001.json": "6462b87f6b5404185eb86cb67aebe81713c186d08ac04b6c8453f7640c364da0",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p01-ce-n010.json": "d0823235ce3a436bbc3d5f81a24006602ca4c22572b73afe6b0344b7b8e1f8ec",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p01-ce-n025.json": "366d5dcda83e55992290774d10e723e8e2c1ac2222465ee22d48e44eef043394",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p01-ce-n050.json": "8337d27369910771db884b456d929b40fbc759ad8a214d6c25d4abb52cb38136",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p01-ce-n100.json": "a1db59b47f4e32ee0303f919a4299003fd0bf5fa7ada940af882131e4f591527",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p03-initial.json": "227c5eb65870c829a316f2c644f70bbf9832286986349cfbdb82f7847e438275",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p03-ce-n001.json": "37623e61ed39624a6a6366811588083265e36e4d41c718c0037c94c592dc45d0",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p03-ce-n010.json": "70734ee1fcdea482639c7fbe74941cd7d63e5d802e544c43a3fc9bb9fbd1c715",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p03-ce-n025.json": "5353643fc2818cb462e696d44d8e6b03a1a8e7c090ab4c58f4e6fd0c9d475c15",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p03-ce-n050.json": "fc138e11414fe6dd87e8a2abfceaf8dfd5ee08ecef47a04921c2983d2a4981b6",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p03-ce-n100.json": "8128bc06f7d877777db5e5ba15efd03f7a9913b78e43594dbc761dde4a99fc75",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p05-initial.json": "4e79ac19f32bb5d9298e0005f0d6474a1b2591437d3325c14c91f6284f95b392",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p05-ce-n001.json": "2aec1ff465c9d0c61f42b4c68f7e405d865ed3119eaa7c22392494e4cd8ec273",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p05-ce-n010.json": "149bb7dd2b0a769181cc80d1916eb0ed2180728d4a04294cd0b9f89b04343f62",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p05-ce-n025.json": "97a96857765c7ca0f436375cbed160194af9315f4e7480e7d5f90c4da8df6815",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p05-ce-n050.json": "7a43c49284fe819d2e1c9e4598e5bca109d1ec5741c9ba34352160b70a689126",
+    "research/tokenizer-evidence/general-rsi-pseudo-accumulated-001/attempt-01/p05-ce-n100.json": "3f7a1f319ebb50ac50f166ee89c19eaebc39996bc6ed0eaa6510fbd597175e32",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p01-initial.json": "0a3afa34d04584e60d53a5fcf8d08a34ec90d5b38d809b29947c65482589d536",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p01-ce_full-n001.json": "13ceb4f7f88332937ccfba8e4d1cfe6ddca1f695d2f5872b946cdef27bd791a1",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p01-ce_full-n010.json": "038e002eacbf01c423febfe734f8328720a5df528d6e0b01d165fcf97daa8fd6",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p01-ce_full-n025.json": "6222a3af39a0f778ea605c57c37bdba65632e366f4b0c5d208296df87aaf1ff0",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p01-ce_full-n050.json": "b35882bc4b66e12d8efde1cb33ebca742340ec669763a8d043ea89bb44dc1a73",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p01-ce_full-n100.json": "40358ce1098d252fb4b33639e0c85e15ff6e9dfb5ff060d2289cec850259b5ea",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p03-initial.json": "771af10cbd7cfcf18de2ffbfc1b79693604577801e576c355a9b477cb18e478f",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p03-ce_full-n001.json": "b2d30eb844972a0b29de280de42a516074bde66d0f54a6b597922c2c4ec746a5",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p03-ce_full-n010.json": "ffdb8282592eab8fa562bc446dbcfde790344c9430f41f5ab9dfcd24db682f7e",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p03-ce_full-n025.json": "0f158ace3f399a1661990d5626c0abd8c298e7e3c90920a4fd73241cb154d4fa",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p03-ce_full-n050.json": "4757da1bf171f1b42a25d2864333d88e4ed7d9c031dcdb89093bc01de0e7286f",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p03-ce_full-n100.json": "02f0c36e2b7fe00f2a9239a3ff1a683fde4172f77f4352beadde3b31e2fbcfda",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p05-initial.json": "1b5960e85013064c4ad97741cb81d9c06fe3e189b33bafe275fb7d915c5ba3b2",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p05-ce_full-n001.json": "a00d853c2f6d6cc03908f1cffd0ad28f3204f79620fba309f11951a993f81166",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p05-ce_full-n010.json": "3f422552b078a642fb9eba3b5833243588d3994ca96e9e4d2c565945d68e2239",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p05-ce_full-n025.json": "2b007bac6fba781074cefc89c69f2ade11a9f63506607e1dc6a44b3fd9313628",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p05-ce_full-n050.json": "4ac73484fa20f2a9e8e999997e5152f74a78e4be6cf8cb8e259b157ead8c9931",
+    "research/tokenizer-evidence/general-rsi-joint-diagnostic-001/attempt-01/p05-ce_full-n100.json": "e397bd81442e911e21e6eec4ea53a800ebebf44af562c58d92279f7b36302272"
+  },
+  "total_seconds": 2.6576470418367535,
+  "model_scores_computed": 0,
+  "test_opened": false,
+  "quality_decision_changed": false
+}

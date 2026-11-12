@@ -1,0 +1,49 @@
+{
+  "created_unix": 1794475271.6388931,
+  "kind": "existing_evidence_audit",
+  "model_scores": 0,
+  "test_opened": false,
+  "subjects": [
+    0,
+    2,
+    4
+  ],
+  "online_step_bins": [
+    [
+      1,
+      100
+    ],
+    [
+      101,
+      200
+    ],
+    [
+      201,
+      500
+    ]
+  ],
+  "online_time_bins_seconds": [
+    [
+      0,
+      400
+    ],
+    [
+      400,
+      800
+    ],
+    [
+      800,
+      1201
+    ]
+  ],
+  "forecast_seconds": 90,
+  "ceiling_seconds": 180,
+  "rss_limit_bytes": 2147483648,
+  "reserve_bytes": 10737418240,
+  "metadata_cap_bytes": 33554432,
+  "serialization_bytes": 0,
+  "overlap_bytes": 33554432,
+  "free_bytes": 18579656704,
+  "lock_acquired": true,
+  "interpretation": "Descriptive audit. Separate fixed validation subset/full validation, sampled training probes and online minibatch losses. Weight geometry does not identify causes. No old quality decision changes."
+}
