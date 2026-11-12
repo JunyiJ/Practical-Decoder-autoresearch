@@ -1,0 +1,46 @@
+{
+  "plan_sha256": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
+  "at": "2026-11-12T05:25:49.535166+00:00",
+  "scientific_scores_seen": false,
+  "shared_lock_held": true,
+  "forecast": {
+    "measured": {
+      "native_ce": {
+        "mean_update_seconds": 0.348803753,
+        "restart_bytes": 445021621
+      },
+      "native_pseudo_repetition": {
+        "mean_update_seconds": 0.3702530057846154,
+        "restart_bytes": 445033525
+      }
+    },
+    "measured_full_validation_seconds": 22.063625833950937,
+    "measured_generation_seconds": 39.259700666880235,
+    "measured_final_weight_bytes": 113998683,
+    "final_weight_count": 12,
+    "final_output_cap_bytes": 1610612736,
+    "active_restart_serialization_overlap_bytes": 1073741824,
+    "metadata_bytes": 268435456,
+    "failed_write_allowance_bytes": 5368709120,
+    "incremental_peak_bytes": 8321499136,
+    "reserve_bytes": 10737418240,
+    "required_free_bytes": 19058917376,
+    "extra_headroom_bytes": 2147483648,
+    "actual_free_bytes": 21405052928,
+    "predicted_updates": 20044.070958722812,
+    "checkpoint_count_allowance": 72,
+    "cost_components_seconds": {
+      "training_seconds": 7200,
+      "endpoint_and_conservative_probe_seconds": 529.5270200148225,
+      "generation_seconds": 235.5582040012814,
+      "checkpoint_seconds": 216,
+      "initialization_seconds": 180,
+      "outside_clock_logging_seconds": 200.44070958722813
+    },
+    "estimated_seconds": 8561.525933603332,
+    "tranche_seconds": 14400,
+    "failure_and_variability_allowance_seconds": 5838.474066396668,
+    "assumptions": "All retained payloads already deducted from actual free space.12 endpoint caps enforced128MiB; active restart and write overlap512MiB each. New measured restart445033525bytes leaves >91MB for longer history. Metadata256MiB covers steps, all generations, receipts, manifests. Checkpoint3s versus old native measured<2.1s mean; initialization30s and logging.01s/update are allowances. Two probes charged as full validation. All attempts share cumulative budgets."
+  },
+  "all_six_runs_admitted": true
+}

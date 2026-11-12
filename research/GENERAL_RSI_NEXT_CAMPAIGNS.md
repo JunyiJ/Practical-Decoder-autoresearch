@@ -2,15 +2,15 @@
 
 ## Current boundary — 2026-11-11 Pacific
 
-The native and FP32 panels remain closed. The training-only pseudo-repetition
-inventory, aligned loss and new MPS integration passed. Both arms restored and
-replayed complete state exactly. See
-`GENERAL_RSI_PSEUDO_REPETITION_INTEGRATION_RESULTS.md`. Audited retirement of12
-obsolete accepted engineering payloads freed4,090,694,482bytes. Full storage
-forecast plus2GiB headroom now fits. Next bind the new Context into the qualified
-durable serial worker and freeze fresh paired scientific roles/order/bootstrap,
-complete timing and resource admission. No scientific panel is admitted yet.
-Do not repeat completed diagnostic or engineering prerequisites.
+The native and FP32 panels remain closed. The pseudo-repetition continuation
+panel is now frozen and admitted under `GENERAL_RSI_PSEUDO_REPETITION_PROTOCOL.md`
+and `tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json`. Three paired
+selected parents receive1,200s per arm, ordinary CE versus alternating CE/pseudo
+span updates. New roles, run order, symmetric quality gates and all144 first
+outputs are fixed. The complete forecast is8,561.53worker seconds under a14,400s
+ceiling. Storage19,058,917,376bytes plus2GiB headroom fits21,405,052,928 free bytes.
+Next launch slot00 and require its execution review before slot01. No completed
+prerequisite or old scientific comparison is repeated.
 
 ## Completed priority — 2026-11-11 Pacific
 
