@@ -244,8 +244,12 @@ improving. At common128 evaluation, the256 model has CE4.819585755, an improveme
 of0.025389930 over the128 control. These are descriptive one-pair findings, not
 a confirmed gain or causal decomposition. See
 `tokenizer-evidence/general-rsi-context-length-quality-001/pair-01-descriptive.json`.
-Next run frozen slot02 context256 bundle2, then review each completed slot before
-advancing. Two more fresh pairs and the fixed generation evaluation remain.
+Slot02 context256 bundle2 is complete and reviewed:41,557 updates,
+14,400.252615 training seconds, time-EMA CE4.732647420 and common128 CE4.805204094.
+All24 first outputs are retained. Its paired128 control is pending; this adds no
+paired quality conclusion. Next run frozen slot03 context128 bundle2, then
+review each completed slot before advancing. Two pairs and the fixed generation
+evaluation remain incomplete. After the panel, follow the cross-size priority above.
 Do not repeat completed prerequisites. Test remains unopened.
 
 ## Historical completed priority — 2026-11-11 Pacific
