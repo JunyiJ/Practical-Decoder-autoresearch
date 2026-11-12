@@ -1,0 +1,2885 @@
+{
+  "kind": "common_state_pseudo_update_analysis_v1",
+  "sources": {
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/plan.json": "301aba9d8ff542de0a9d87067bf8058b367ef1beb9667bd8046ea75727fdbcd8",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/admission.json": "30ceee86e8fd89f1e7dfac64cf5672a2d7da88e61e90d3c92511c26fa493600b",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/result.json": "4065afe36def5a83dab09f03de66a0aa7632d6e12e77f5f351fcffdc66d24ac1",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/guard.json": "7254f786e0c34bf3c3c1a6b5a7646ba3552a6a01929feeea7008edb289f8816d",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/parent-01.json": "2af394020bc9b915571b7f99f59097ae4a58d15a7df1e37e0de46fd745a4bc81",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c00-identity.json": "073e606aceba0f0f6645c424adaac9ba482ade06dbc7efaed3c6eb7c5d08e748",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c00-zero.json": "3982e5de5c800b7a5f72a4224c7a0bc5f3f9520c69cb7b0879ecd54a98bc25b0",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c00-pseudo.json": "8b704314970853b7c8bb687f8fe6cbf09ef8e8be8ec0ac950f04984032b97c81",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c00-ce.json": "86e313ded3e9d57cfc539d607f3db43d5120382a3a7ad05169e75974f8554eac",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c01-identity.json": "5cf104b564187240571815d311505009d2fdd83e1bbb2aa088877e89b74b575d",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c01-zero.json": "81dd00586b23712944e895619b9ccc00a2876e239548c1a053fa4d84e4a00f58",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c01-pseudo.json": "ba0cb7a4e47c9139e0834a004aebc76fb6e7ecd09f3b892ca01432694f942cf7",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c01-ce.json": "772376354bd73e094288b0c7da072ad0dade203b352a4295a786fdf289cc86d4",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c02-identity.json": "76cc795b117d845134fe4a24187d5ddea9b68e5531ab251f1cd39c65e66e1eb8",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c02-zero.json": "8d774114e2a23b68840c27418489e2d15451ac5f954c9cca720b640a817400ac",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c02-pseudo.json": "bdaa930c8aaaff1598429bd82d9f4d9c740d5321484dde6a210974f06edea341",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c02-ce.json": "a9442b9a5a37e5ecf7023470bae3c31d2aabb2a09605afdbf1ce08fcadc56500",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c03-identity.json": "6720ef30bfb709958b08309fb89d315e6fbfc95a90da6c367eb272c81271290f",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c03-zero.json": "abcea0c0474601f3d0fdee8aded0a63b920f8ac4b7f208fc52b97969ddac61b9",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c03-pseudo.json": "2c651c928fd8556d1d2ed27a864ca887a813a6c46e7e3a2999c5f798ad7f1ea0",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c03-ce.json": "ad9058dca4cc143144b7f643b117f7ef5f0368e71ca160161890651a7dc75ad4",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c04-identity.json": "f7ea7aad2e179063cfa64b7fe518cf7374ab5627a1fffd5b941d25baacd26707",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c04-zero.json": "1676d3f2ad900ea9d62e294b6eba191573cf4082777242a18e73f572ece1175f",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c04-pseudo.json": "3dd7822adc888df1d15253883b75d2fda773f754212154baac828b2c29162ef9",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c04-ce.json": "ac43edb9702d0909b3c1df3577315bf7b2f29fce81c4db27693215e4b3b1b5c1",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c05-identity.json": "4e626a33846b211a69a87d78a46e4e73c8177f8d4abbbf30e9c37e6fb4838b1b",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c05-zero.json": "c8c2fd5dee72a48dd995877e7ecf59d82e27ae61e2fcbce022c2115fa01ee96d",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c05-pseudo.json": "f5635a2afc0195ad2afd797ba875a104d897083ac356f669354f669e6a8f1ba3",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c05-ce.json": "c674baa56c4b7b9e672b95eb28f62caca448b112fa943333914ee9985eb7230a",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c06-identity.json": "e50187d2fd15edcb4ed98b8433e77304e7b3039df8e45d4f5116f910a8e8dfe5",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c06-zero.json": "25e651456b09f4b8aeb2ab93e26d6568f5fff3badd875af10b209be07ab7740a",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c06-pseudo.json": "0e3e66a9d8ba9c28334c79b68b5fb119e66c32c080ef0a284b59ece082e45807",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c06-ce.json": "6750c8cd8db1d4f70d93d5caa52ce53b7774348b2d706c457555e61ab57819d3",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c07-identity.json": "d0e57e55b00b35978bf27aeb161fde8585ac0fd55539f64d354799d5e92d9059",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c07-zero.json": "b418e2da16c1707361eec1f4058db3062cd15e3c6f0c2fa870144985b745e06f",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c07-pseudo.json": "838b083fe21fa677bfc67b53ffe2ffbd6d352f3f709189449fd2c6dc65f70cf2",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p01-c07-ce.json": "a6b74914bfda4fd059a7425926e2a021bf09fa45f2815142b6bebe8c70ee5740",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/parent-03.json": "33d8bc1231e0761f1dd91e272f07d5aa3ecdc18d9331fd0724091e2a862c0f8b",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c00-identity.json": "d00d2ae9ab91b38128b65691564d4153e9c521c5eeee739f825ef7a80a0dcb30",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c00-zero.json": "acb729917c61ec605238701f24d7d51a1bb5f9ea3eb97dac1ab1ca0203545ae8",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c00-pseudo.json": "1625f3c7118dd97e277f234e1f7317d644c71d53906ba55daded9286c679c42e",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c00-ce.json": "b71af70da20e7008b2c365954cb0c292284f6876039c59f826023e0798804a97",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c01-identity.json": "87c7f8d5cc51c76acf18e65213c6a1bf3d6a0ac869ab496e4d2bd27bcc22a785",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c01-zero.json": "cf4912d9ca7ae0a527c10601506bba45f809dd679f4b06af26b0f10c216c6629",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c01-pseudo.json": "9ce6ecb045f134a2422749b0793d7b9fcd29a9ef0c37a00bc1aa2fe0201cf4a0",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c01-ce.json": "c482c46e6a7207ab36cb0899d1a7f8ad43ec85fb5446d641731a5a5c35591884",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c02-identity.json": "3c5f4e8cf6a50405ecc50413f4b133e5d4d674b77113049840788e2fa06b91a1",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c02-zero.json": "a2d9538844f4eb2b9233329d111dbfb9f3b9183d223ba141992c0b35c2248096",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c02-pseudo.json": "33f9aa18732de777577e302f4657142c6e0cf48bebd5e745c308c39f0136d48a",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c02-ce.json": "9bd6fe59db46c9d756c66fbc04126ac583dcb0ba9e8819659b0383d93e88fdec",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c03-identity.json": "39d39084d3b29db72735ab67014adc1d72bc5f5fa34cdd0a965d02721514e74c",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c03-zero.json": "b8482aeed758ebd5769afc6e7713ad283ba43d48da23175691c164a685ab5778",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c03-pseudo.json": "6f2c24e3f16b3b735639fbe6df1611f312c2c570532605a4229fe57ce511f14b",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c03-ce.json": "e218c048b002e3a88d6f14582dd09fdc40feb3d107949a2531b07edbe4724a0b",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c04-identity.json": "5379d62d4c24207dad4c42db15f22bc387bf103e4f1c45c8399dd7db56c1de13",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c04-zero.json": "0bd97548d6b8463cac0c75d0ecdde18b50223d71f1e0b94ce3dc01aeff0f5b1d",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c04-pseudo.json": "7d967094c0609044e84225f84d8ec9316b5eefe8deecabf279e180ae140d02d3",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c04-ce.json": "1a14f7342b7ecee449620fea9855dc5642a719dad127c8ac65f077c7dd3ddd4c",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c05-identity.json": "65ea3b6bb2db170899ddea4718e6356f200375f937d3d47914d2febdd3094be2",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c05-zero.json": "8ba212e891c2c6211def46c47eadaa15d362ff87bac06c2a84b1953f5ee56f15",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c05-pseudo.json": "d1b8ad12659e2e748c0b40c10d3c27140de2a08591f8d5a61e0f5c50c685ba3c",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c05-ce.json": "38924dd147a24534d0362a368c128df9c9d7ad019796b59e2a564db43d2a8e0c",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c06-identity.json": "f46f3b387ee9a166565bf0f73fcd1e6c855bd44c08a1cd122357ada57403ac1e",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c06-zero.json": "1360860a0f3315497baf63a3619bfedafaa9eaa406383f3ae34a8d44e27d5c00",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c06-pseudo.json": "2e57c188d1babd6004a6df5daeac272093d54dc415875d6c39454661f4a295c6",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c06-ce.json": "a043cb3a7996db7f6e26f045f1907de6afa6cb9360c3ffda8f47c35e55b3ff05",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c07-identity.json": "80fdc8767789b84e2850c2c293adad0ce6f78cbf0b9d5c52b7f70481639417fe",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c07-zero.json": "46a0a226a2245a3d6985a87fe166ffee60e10ec23992a17796302b85989b0b89",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c07-pseudo.json": "13d5ee608f64c381f65016195a1943011bda327472a6b8013dfc6358f491a0ea",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p03-c07-ce.json": "2c98bea41cf854da610dca0db1650da07479a0751dec8bbe78638f04afc28440",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/parent-05.json": "41828a6cd4920d89c576d0eedeae2187d78aee37f1a028c6b25bda89d990ecfe",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c00-identity.json": "cb6311a73a8a45120795d84439c43036aacec8a27a405d608d14bd98ad80eefc",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c00-zero.json": "c778b6049332a2a8dc5ffd6a550a20c4402254e95df9b02f274a62bb77cf8de5",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c00-pseudo.json": "5bba51f59900cbc2deec814f5d82f0fa7dc2771beb383949264f0c435ec5b7d9",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c00-ce.json": "3b4af61481752da391f2af560df32a4097a7e504054fce1c265b93d17a16097d",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c01-identity.json": "773e90f38cb2c7e778e8523f3c3c9ce182e66a9541f6a680cce834bb0fe970e1",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c01-zero.json": "082f1e5326148c2346525b3a5b21eaeeb69aa677a730f32399dead31641bdc80",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c01-pseudo.json": "304cf20dc63babfc8b01091d165202c372ade57e623cdb920b93410b6908277f",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c01-ce.json": "6d364710762861cbb8c950d257b24dda4fadbf612708cc32675da5ab2acf9985",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c02-identity.json": "4b606156f87a58082dac9cd213be288d0024ca7b7335b3d3fe3b5b5feac3ba5d",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c02-zero.json": "3cfed8b4a552a91dfb26e350cf20f070e55d66b3f14d6cd25d6ffda35de5569b",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c02-pseudo.json": "deb538c4463b619783b85c6d15ababe3ce07399077c2df113b7fde9cc4724419",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c02-ce.json": "83d8c878c8b1c31e921f2059437a2a6bdb68ae977b726cd3bb917bcb3bce7805",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c03-identity.json": "72f29419d1f50057874cdb87a509a40bc231da483d3cbdc0c7825afeb31e1392",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c03-zero.json": "45da41fb257a2a39072bd3c22dbf065069bc3b3796af65f809c2291a40c45786",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c03-pseudo.json": "674eaceb0affe206f7b854b8345d4187ee8bfc2d8a24a1e6d40d56837d970876",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c03-ce.json": "2f3f88611fe6d76e6c9e2d50e815af7394c8847009cf942062138d6fa71e1692",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c04-identity.json": "5fddc9c8ce524608abfd1a3c7ce7c857b5d31c1faa64dcc0a9c86672f0b9b553",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c04-zero.json": "ec517f6c9c606e7c3c92590bb142535c983b8566c13566ecbe2078a624570a62",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c04-pseudo.json": "cb86e700d18a57f6986bae567ccfd2ff0c70465161a517330b4b82226e34bfa6",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c04-ce.json": "8174c812e5febef0388abcce398c804aa1039bb3fdc4403bf6b5dcafb15ca4dc",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c05-identity.json": "37173352f457ed5df560591123139864db8e7baa72027aeb3c8ba2aabe9e4026",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c05-zero.json": "589eac8e56164a696073a9a5befeb26cf9e4bf4eccc2d21d04e9923e774dd40f",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c05-pseudo.json": "b4b713739434d09b1f40213062435e70f30705ce749adbc2e3451011f05189b9",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c05-ce.json": "10957eeb3f0d9f1ac257e4b75156e619364fa02c023f0f80090555dcd333a9e0",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c06-identity.json": "2bcd973058bdd86506e0eabc6f7b91a0e44f8f0862485f42f0cc65b9e1da0861",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c06-zero.json": "54a573c3e6963becc69d771781cfff2fbbbac5932566cd1a99c15e1a8f49e76f",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c06-pseudo.json": "ef7a364009d692782f3edea67c2fbdea78bb0fb98f7d58a1d1ea3c3e098c1f72",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c06-ce.json": "f226dca0a2e26025de51a41ac705a60f08d5386f2bb83656eca5136ffb05c8a8",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c07-identity.json": "15465510308ec8a3055bb9454f82d967f672670b20d664bc625229c4987e1479",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c07-zero.json": "79212c096c96a0db00b332a5a0a606c7dbb13d88468255f569a2fbecedf536d7",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c07-pseudo.json": "fe82ad8c32b59dd75f8f6ea78b9694849603a348bcb483bb18f199e8e8ac70cd",
+    "research/tokenizer-evidence/general-rsi-pseudo-update-001/attempt-01/p05-c07-ce.json": "8afbc2410921f01576448e61f8fe359c0d441695a7696649b3802c003c6a857c"
+  },
+  "analysis_source_sha256": "2caa4550d570165edb19c0109361e48ce81ef46266937ddfd22236dedde8e64a",
+  "parents": [
+    {
+      "parent_slot": 1,
+      "baseline": 4.270182609244959,
+      "contrasts": {
+        "pseudo-zero": {
+          "count": 8,
+          "mean": -0.0001495911746682843,
+          "minimum": -0.0004012448673975655,
+          "maximum": 9.061339817151293e-06,
+          "positive": 1,
+          "negative": 7,
+          "zero": 0,
+          "values": [
+            -0.0002036787319319444,
+            9.061339817151293e-06,
+            -6.991254303656547e-05,
+            -0.00010132519031458287,
+            -8.270367363394371e-05,
+            -0.00024049416450466765,
+            -0.00010643156634415618,
+            -0.0004012448673975655
+          ]
+        },
+        "zero-identity": {
+          "count": 8,
+          "mean": 0.00038165973051818014,
+          "minimum": 0.00038165973051818014,
+          "maximum": 0.00038165973051818014,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.00038165973051818014,
+            0.00038165973051818014,
+            0.00038165973051818014,
+            0.00038165973051818014,
+            0.00038165973051818014,
+            0.00038165973051818014,
+            0.00038165973051818014,
+            0.00038165973051818014
+          ]
+        },
+        "pseudo-identity": {
+          "count": 8,
+          "mean": 0.00023206855584989583,
+          "minimum": -1.9585136879385345e-05,
+          "maximum": 0.00039072107033533143,
+          "positive": 7,
+          "negative": 1,
+          "zero": 0,
+          "values": [
+            0.00017798099858623573,
+            0.00039072107033533143,
+            0.0003117471874816147,
+            0.00028033454020359727,
+            0.00029895605688423643,
+            0.0001411655660135125,
+            0.00027522816417402396,
+            -1.9585136879385345e-05
+          ]
+        },
+        "ce-identity": {
+          "count": 8,
+          "mean": 0.0003835771393623233,
+          "minimum": 0.00011024646109092373,
+          "maximum": 0.0005421563920862127,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.000343675202397975,
+            0.00042306374906075916,
+            0.0003754459533453769,
+            0.00033670829135701297,
+            0.0005421563920862127,
+            0.00011024646109092373,
+            0.0004370552947250417,
+            0.0005002657708352842
+          ]
+        }
+      },
+      "movement": {
+        "identity": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          }
+        },
+        "zero": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.037632004721171564,
+              "minimum": 0.037632004721171564,
+              "maximum": 0.037632004721171564,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.037632004721171564,
+                0.037632004721171564,
+                0.037632004721171564,
+                0.037632004721171564,
+                0.037632004721171564,
+                0.037632004721171564,
+                0.037632004721171564,
+                0.037632004721171564
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00030922293515926855,
+              "minimum": 0.00030922293515926855,
+              "maximum": 0.00030922293515926855,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00030922293515926855,
+                0.00030922293515926855,
+                0.00030922293515926855,
+                0.00030922293515926855,
+                0.00030922293515926855,
+                0.00030922293515926855,
+                0.00030922293515926855,
+                0.00030922293515926855
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.23116297790782278,
+              "minimum": 0.23116297790782278,
+              "maximum": 0.23116297790782278,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.23116297790782278,
+                0.23116297790782278,
+                0.23116297790782278,
+                0.23116297790782278,
+                0.23116297790782278,
+                0.23116297790782278,
+                0.23116297790782278,
+                0.23116297790782278
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0003091151652655256,
+              "minimum": 0.0003091151652655256,
+              "maximum": 0.0003091151652655256,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0003091151652655256,
+                0.0003091151652655256,
+                0.0003091151652655256,
+                0.0003091151652655256,
+                0.0003091151652655256,
+                0.0003091151652655256,
+                0.0003091151652655256,
+                0.0003091151652655256
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          }
+        },
+        "pseudo": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.03720120813445571,
+              "minimum": 0.037118823007212524,
+              "maximum": 0.03736904776212201,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.03736904776212201,
+                0.03723124413067702,
+                0.037172518756232426,
+                0.03717086744328562,
+                0.03722324536373059,
+                0.037118823007212524,
+                0.03713867804255689,
+                0.037185240569828575
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0003056830709934372,
+              "minimum": 0.00030500611075577876,
+              "maximum": 0.0003070622125695386,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0003070622125695386,
+                0.00030592987737488843,
+                0.00030544732979899836,
+                0.00030543376092750024,
+                0.00030586415134697264,
+                0.00030500611075577876,
+                0.00030516925997815927,
+                0.0003055518651956613
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.3329095129313957,
+              "minimum": 0.19133868201841708,
+              "maximum": 0.42692083662443336,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.19133868201841708,
+                0.39002328588278967,
+                0.31761439611445597,
+                0.39113374777799953,
+                0.35318236759846117,
+                0.42692083662443336,
+                0.329730328647971,
+                0.26333245878663786
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.0053200857043786435,
+              "minimum": -0.00620100833086992,
+              "maximum": -0.004074689938840791,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.004074689938840791,
+                -0.0054413795747234725,
+                -0.0053524755546558046,
+                -0.006050596720713758,
+                -0.005334662504790039,
+                -0.00620100833086992,
+                -0.005375159607343126,
+                -0.004730713403092234
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.24948316477682192,
+              "minimum": -0.260275246709057,
+              "maximum": -0.23402174031447495,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.2492763899788556,
+                -0.23402174031447495,
+                -0.25549512254356904,
+                -0.260275246709057,
+                -0.24115329891166007,
+                -0.2556786367790528,
+                -0.25204928853499553,
+                -0.24791559444291042
+              ]
+            }
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.23903840298531648,
+              "minimum": 0.23555674406931,
+              "maximum": 0.24302124932600133,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.2389758479183676,
+                0.23834128447311753,
+                0.24302124932600133,
+                0.23694744373081716,
+                0.23780990688214143,
+                0.24127625873877015,
+                0.24037848874400652,
+                0.23555674406931
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0003196463210171895,
+              "minimum": 0.0003149905859987183,
+              "maximum": 0.0003249722526000528,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00031956267129077954,
+                0.00031871412198576003,
+                0.0003249722526000528,
+                0.0003168502538382325,
+                0.00031800355460451403,
+                0.0003226388207562484,
+                0.0003214383070632104,
+                0.0003149905859987183
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.19554982115357716,
+              "minimum": 0.12076620277001839,
+              "maximum": 0.2520128843636861,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.12076620277001839,
+                0.2282025834260242,
+                0.20597198976689207,
+                0.219962897317494,
+                0.1776554737383801,
+                0.2520128843636861,
+                0.19283763708081156,
+                0.16698890076531084
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.007508543446780793,
+              "minimum": -0.008605471754121392,
+              "maximum": -0.005953152502858968,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.005953152502858968,
+                -0.007777279452378676,
+                -0.008095354329956764,
+                -0.007985656662555317,
+                -0.007586441158252013,
+                -0.008605471754121392,
+                -0.007522425169839705,
+                -0.0065425665442835085
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.07140190763085542,
+              "minimum": -0.0756865752625105,
+              "maximum": -0.06796867485669099,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.07168367981554066,
+                -0.06830746219141695,
+                -0.07339855854164294,
+                -0.07185945028513796,
+                -0.0756865752625105,
+                -0.07104748695069613,
+                -0.07126337314320724,
+                -0.06796867485669099
+              ]
+            }
+          }
+        },
+        "ce": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.03808344107047042,
+              "minimum": 0.0379265015764913,
+              "maximum": 0.038249612313801334,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.03805470511108451,
+                0.0379819816326206,
+                0.038064993563816214,
+                0.03819380259093384,
+                0.0379265015764913,
+                0.038166255626058375,
+                0.038249612313801334,
+                0.03802967614895718
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.000312932396666889,
+              "minimum": 0.00031164282170721827,
+              "maximum": 0.00031429782909555106,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0003126962727141056,
+                0.00031209870243762886,
+                0.00031278081313589593,
+                0.0003138392394869618,
+                0.00031164282170721827,
+                0.00031361288552584184,
+                0.00031429782909555106,
+                0.0003124906092319087
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.6041484836152275,
+              "minimum": 0.5599043433271504,
+              "maximum": 0.6403740083502053,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.6184197798257173,
+                0.5599043433271504,
+                0.6348294268922392,
+                0.585791959813889,
+                0.611198267810263,
+                0.5904222502883052,
+                0.5922478326140508,
+                0.6403740083502053
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.011969658102288267,
+              "minimum": -0.01250355360931191,
+              "maximum": -0.011560023465910464,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.01160901888545837,
+                -0.011582287385692223,
+                -0.01250355360931191,
+                -0.012006717688294328,
+                -0.011560023465910464,
+                -0.012047332466556777,
+                -0.012112152004823986,
+                -0.012336179312258087
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.40449529266515427,
+              "minimum": -0.4122675713515928,
+              "maximum": -0.38792294743902606,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.38792294743902606,
+                -0.40753020130408235,
+                -0.4122675713515928,
+                -0.41073309423776116,
+                -0.3898745388015478,
+                -0.41079957253998184,
+                -0.4114741292106585,
+                -0.4053602864365837
+              ]
+            }
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.32055439625408083,
+              "minimum": 0.31477247915801965,
+              "maximum": 0.32780127858175423,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.32780127858175423,
+                0.32430095072997134,
+                0.317834482215839,
+                0.32460440464278334,
+                0.31477247915801965,
+                0.3194175203230313,
+                0.31960011871717714,
+                0.3161039356640707
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00042865092875807656,
+              "minimum": 0.0004209192483874716,
+              "maximum": 0.0004383415861836434,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0004383415861836434,
+                0.00043366088673868795,
+                0.00042501381227407625,
+                0.0004340666706027752,
+                0.0004209192483874716,
+                0.00042713067843731404,
+                0.00042737485219426454,
+                0.00042269969524637963
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.39585195465481676,
+              "minimum": 0.35962623404098715,
+              "maximum": 0.44009619155247537,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.3815806695874068,
+                0.44009619155247537,
+                0.3651713297549678,
+                0.41420842728553603,
+                0.3888021543156526,
+                0.40957817649195055,
+                0.4077524542095577,
+                0.35962623404098715
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.025354668818600924,
+              "minimum": -0.02630649958311443,
+              "maximum": -0.02338987842707768,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.024394610310018293,
+                -0.024866826713801343,
+                -0.02630649958311443,
+                -0.02612539457471056,
+                -0.02338987842707768,
+                -0.025628761482726557,
+                -0.026264004354916135,
+                -0.025861375102442394
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.12596735039461873,
+              "minimum": -0.13696629702470492,
+              "maximum": -0.11558416526366293,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.1204730925441081,
+                -0.11558416526366293,
+                -0.13696629702470492,
+                -0.12505440219744482,
+                -0.11916998332719277,
+                -0.12537197902315803,
+                -0.12869323497745389,
+                -0.13642564879922434
+              ]
+            }
+          }
+        }
+      },
+      "cases": [
+        {
+          "case": 0,
+          "contrasts": {
+            "pseudo-zero": -0.0002036787319319444,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": 0.00017798099858623573,
+            "ce-identity": 0.000343675202397975
+          }
+        },
+        {
+          "case": 1,
+          "contrasts": {
+            "pseudo-zero": 9.061339817151293e-06,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": 0.00039072107033533143,
+            "ce-identity": 0.00042306374906075916
+          }
+        },
+        {
+          "case": 2,
+          "contrasts": {
+            "pseudo-zero": -6.991254303656547e-05,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": 0.0003117471874816147,
+            "ce-identity": 0.0003754459533453769
+          }
+        },
+        {
+          "case": 3,
+          "contrasts": {
+            "pseudo-zero": -0.00010132519031458287,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": 0.00028033454020359727,
+            "ce-identity": 0.00033670829135701297
+          }
+        },
+        {
+          "case": 4,
+          "contrasts": {
+            "pseudo-zero": -8.270367363394371e-05,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": 0.00029895605688423643,
+            "ce-identity": 0.0005421563920862127
+          }
+        },
+        {
+          "case": 5,
+          "contrasts": {
+            "pseudo-zero": -0.00024049416450466765,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": 0.0001411655660135125,
+            "ce-identity": 0.00011024646109092373
+          }
+        },
+        {
+          "case": 6,
+          "contrasts": {
+            "pseudo-zero": -0.00010643156634415618,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": 0.00027522816417402396,
+            "ce-identity": 0.0004370552947250417
+          }
+        },
+        {
+          "case": 7,
+          "contrasts": {
+            "pseudo-zero": -0.0004012448673975655,
+            "zero-identity": 0.00038165973051818014,
+            "pseudo-identity": -1.9585136879385345e-05,
+            "ce-identity": 0.0005002657708352842
+          }
+        }
+      ]
+    },
+    {
+      "parent_slot": 3,
+      "baseline": 4.094556989149414,
+      "contrasts": {
+        "pseudo-zero": {
+          "count": 8,
+          "mean": 2.0685868487024806e-05,
+          "minimum": -0.00015966144491841305,
+          "maximum": 0.0001259441208851797,
+          "positive": 6,
+          "negative": 2,
+          "zero": 0,
+          "values": [
+            9.969331237869028e-06,
+            6.186636695559855e-05,
+            1.452462106499297e-05,
+            -5.888594309055861e-05,
+            0.0001259441208851797,
+            5.0003755081462486e-05,
+            -0.00015966144491841305,
+            0.00012172614068006737
+          ]
+        },
+        "zero-identity": {
+          "count": 8,
+          "mean": 0.00025767793665920635,
+          "minimum": 0.00025767793665920635,
+          "maximum": 0.00025767793665920635,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.00025767793665920635,
+            0.00025767793665920635,
+            0.00025767793665920635,
+            0.00025767793665920635,
+            0.00025767793665920635,
+            0.00025767793665920635,
+            0.00025767793665920635,
+            0.00025767793665920635
+          ]
+        },
+        "pseudo-identity": {
+          "count": 8,
+          "mean": 0.00027836380514623116,
+          "minimum": 9.80164917407933e-05,
+          "maximum": 0.00038362205754438605,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.0002676472678970754,
+            0.0003195443036148049,
+            0.0002722025577241993,
+            0.00019879199356864774,
+            0.00038362205754438605,
+            0.00030768169174066884,
+            9.80164917407933e-05,
+            0.0003794040773392737
+          ]
+        },
+        "ce-identity": {
+          "count": 8,
+          "mean": 0.00040673498553411847,
+          "minimum": 0.00017492716262168528,
+          "maximum": 0.0006194021252099446,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.000488210292584057,
+            0.0006194021252099446,
+            0.0005561163391654134,
+            0.00021536073154848623,
+            0.00029225562214918455,
+            0.00017492716262168528,
+            0.0004063674467325029,
+            0.0005012401642616737
+          ]
+        }
+      },
+      "movement": {
+        "identity": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          }
+        },
+        "zero": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.037811824828564905,
+              "minimum": 0.037811824828564905,
+              "maximum": 0.037811824828564905,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.037811824828564905,
+                0.037811824828564905,
+                0.037811824828564905,
+                0.037811824828564905,
+                0.037811824828564905,
+                0.037811824828564905,
+                0.037811824828564905,
+                0.037811824828564905
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0003141306499977302,
+              "minimum": 0.0003141306499977302,
+              "maximum": 0.0003141306499977302,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0003141306499977302,
+                0.0003141306499977302,
+                0.0003141306499977302,
+                0.0003141306499977302,
+                0.0003141306499977302,
+                0.0003141306499977302,
+                0.0003141306499977302,
+                0.0003141306499977302
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.2393165096291876,
+              "minimum": 0.2393165096291876,
+              "maximum": 0.2393165096291876,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.2393165096291876,
+                0.2393165096291876,
+                0.2393165096291876,
+                0.2393165096291876,
+                0.2393165096291876,
+                0.2393165096291876,
+                0.2393165096291876,
+                0.2393165096291876
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00032804710787667074,
+              "minimum": 0.00032804710787667074,
+              "maximum": 0.00032804710787667074,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00032804710787667074,
+                0.00032804710787667074,
+                0.00032804710787667074,
+                0.00032804710787667074,
+                0.00032804710787667074,
+                0.00032804710787667074,
+                0.00032804710787667074,
+                0.00032804710787667074
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          }
+        },
+        "pseudo": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.037319353084081484,
+              "minimum": 0.03717557993949749,
+              "maximum": 0.037427248576559956,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.03731156198727422,
+                0.03732327476210361,
+                0.03732352822950083,
+                0.037427248576559956,
+                0.037413951512127286,
+                0.037368461822138724,
+                0.03717557993949749,
+                0.03721121784344974
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00031003932486593636,
+              "minimum": 0.00030884489556861586,
+              "maximum": 0.00031093569210919307,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00030997459849223296,
+                0.00031007190513075456,
+                0.0003100740108709192,
+                0.00031093569210919307,
+                0.0003108252236112501,
+                0.00031044730728615625,
+                0.00030884489556861586,
+                0.0003091409658583687
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.28961412738138553,
+              "minimum": 0.1675139158210607,
+              "maximum": 0.6746551785648246,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.2525611927111401,
+                0.20974560167074263,
+                0.20432313492268378,
+                0.1675139158210607,
+                0.2066549546475537,
+                0.2825111594739791,
+                0.6746551785648246,
+                0.3189478812390996
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.004927831003729932,
+              "minimum": -0.007575438214714074,
+              "maximum": -0.0039533668567689525,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.0049196012430683484,
+                -0.004373130897515723,
+                -0.0043705354972107535,
+                -0.0039533668567689525,
+                -0.004366255826817986,
+                -0.004484243284536405,
+                -0.007575438214714074,
+                -0.005380076209207211
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.25274022991261313,
+              "minimum": -0.26236334675916073,
+              "maximum": -0.22576995221231516,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.26236334675916073,
+                -0.25583873776699656,
+                -0.2590557217302068,
+                -0.2580796553016928,
+                -0.25671585272869535,
+                -0.22576995221231516,
+                -0.2480898971413195,
+                -0.25600867566051827
+              ]
+            }
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.24492500083164914,
+              "minimum": 0.24176121845354195,
+              "maximum": 0.25019490834176156,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.243989388354318,
+                0.24511201112375985,
+                0.24176121845354195,
+                0.244295430682886,
+                0.24712719421020138,
+                0.2442090986302635,
+                0.25019490834176156,
+                0.24271075685646093
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0003357350409882227,
+              "minimum": 0.0003313982333826906,
+              "maximum": 0.00034295885484105133,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00033445253453784286,
+                0.00033599138847367256,
+                0.0003313982333826906,
+                0.00033487204717794504,
+                0.00033875373439110816,
+                0.00033475370607300516,
+                0.00034295885484105133,
+                0.00033269982902846555
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.17310608833302352,
+              "minimum": 0.11497955273841885,
+              "maximum": 0.3253437691317318,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.15501738963153572,
+                0.14988804366424363,
+                0.14741210584204498,
+                0.11497955273841885,
+                0.13929988014098305,
+                0.16182190367168606,
+                0.3253437691317318,
+                0.191086061843544
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.00724466735478559,
+              "minimum": -0.010455277717002604,
+              "maximum": -0.006098238526277857,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.006981861103568555,
+                -0.006567925098403366,
+                -0.006806633374590481,
+                -0.006098238526277857,
+                -0.0066526454012233414,
+                -0.006797473208315145,
+                -0.010455277717002604,
+                -0.007597284408903369
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.07187857808820017,
+              "minimum": -0.07361710857982318,
+              "maximum": -0.0691937727529928,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.07267918635435833,
+                -0.06921179335368391,
+                -0.07332957161465672,
+                -0.07361710857982318,
+                -0.07212709910828456,
+                -0.0691937727529928,
+                -0.07326319581870862,
+                -0.07160689712309322
+              ]
+            }
+          }
+        },
+        "ce": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.038198983380431144,
+              "minimum": 0.03807076507857052,
+              "maximum": 0.038328487523053456,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.03818123233809346,
+                0.03807076507857052,
+                0.038131742305733296,
+                0.038231914321477434,
+                0.03827463912472139,
+                0.03825023735945858,
+                0.03812284899234102,
+                0.038328487523053456
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.000317347060951217,
+              "minimum": 0.0003162818571773262,
+              "maximum": 0.0003184229471504097,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0003171995899816736,
+                0.0003162818571773262,
+                0.00031678843986913095,
+                0.0003176206425083836,
+                0.00031797558888494435,
+                0.00031777286546659966,
+                0.0003167145565712681,
+                0.0003184229471504097
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.5824524749830642,
+              "minimum": 0.5371286335959834,
+              "maximum": 0.6059549490349607,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.6059549490349607,
+                0.5371286335959834,
+                0.5762460220998894,
+                0.5971011382312416,
+                0.5911851024096891,
+                0.6004205899440017,
+                0.5620952934047979,
+                0.5894880711439496
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.011849265912112715,
+              "minimum": -0.012620048872173693,
+              "maximum": -0.010438258552143583,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.012620048872173693,
+                -0.010438258552143583,
+                -0.01232342111462583,
+                -0.012494893390645669,
+                -0.011854793232915661,
+                -0.012290326033728958,
+                -0.011026565820521517,
+                -0.011745820280146807
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.40622816592860833,
+              "minimum": -0.42573628856074525,
+              "maximum": -0.37410825648019375,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.4246106929135845,
+                -0.37410825648019375,
+                -0.42573628856074525,
+                -0.42294370090313066,
+                -0.402829380269285,
+                -0.41466891552324847,
+                -0.38578909820027396,
+                -0.3991389945784049
+              ]
+            }
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.32345880321232523,
+              "minimum": 0.3192429149647086,
+              "maximum": 0.3289276541909118,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.3192429149647086,
+                0.32580581421454646,
+                0.3279366240369051,
+                0.32385670921632453,
+                0.31998871120173744,
+                0.3289276541909118,
+                0.32009506225697115,
+                0.32181693561649666
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0004433865639920359,
+              "minimum": 0.0004376075646705733,
+              "maximum": 0.0004508830829313837,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0004376075646705733,
+                0.0004466037685744794,
+                0.0004495246117739019,
+                0.00044393200030155334,
+                0.00043862987733509314,
+                0.0004508830829313837,
+                0.0004387756598226579,
+                0.00044113594652664444
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.41754796314434417,
+              "minimum": 0.39404543554633975,
+              "maximum": 0.4628720202833211,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.39404543554633975,
+                0.4628720202833211,
+                0.4237547123214041,
+                0.4028993296202872,
+                0.4088150967356134,
+                0.3995798998296288,
+                0.4379051246264807,
+                0.4105120861916785
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.025724741030233197,
+              "minimum": -0.02758440297457751,
+              "maximum": -0.023473038059701683,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.025782902874510405,
+                -0.023495040401130436,
+                -0.026544100528877772,
+                -0.026622273776606184,
+                -0.025491072861369604,
+                -0.02758440297457751,
+                -0.023473038059701683,
+                -0.026805096765091983
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.12332227518806754,
+              "minimum": -0.13266653430902883,
+              "maximum": -0.10599537146321676,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.12865817727410564,
+                -0.10599537146321676,
+                -0.12434285120289895,
+                -0.12950721803069612,
+                -0.1245919532985025,
+                -0.13266653430902883,
+                -0.11081544998358443,
+                -0.1300006459425071
+              ]
+            }
+          }
+        }
+      },
+      "cases": [
+        {
+          "case": 0,
+          "contrasts": {
+            "pseudo-zero": 9.969331237869028e-06,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 0.0002676472678970754,
+            "ce-identity": 0.000488210292584057
+          }
+        },
+        {
+          "case": 1,
+          "contrasts": {
+            "pseudo-zero": 6.186636695559855e-05,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 0.0003195443036148049,
+            "ce-identity": 0.0006194021252099446
+          }
+        },
+        {
+          "case": 2,
+          "contrasts": {
+            "pseudo-zero": 1.452462106499297e-05,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 0.0002722025577241993,
+            "ce-identity": 0.0005561163391654134
+          }
+        },
+        {
+          "case": 3,
+          "contrasts": {
+            "pseudo-zero": -5.888594309055861e-05,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 0.00019879199356864774,
+            "ce-identity": 0.00021536073154848623
+          }
+        },
+        {
+          "case": 4,
+          "contrasts": {
+            "pseudo-zero": 0.0001259441208851797,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 0.00038362205754438605,
+            "ce-identity": 0.00029225562214918455
+          }
+        },
+        {
+          "case": 5,
+          "contrasts": {
+            "pseudo-zero": 5.0003755081462486e-05,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 0.00030768169174066884,
+            "ce-identity": 0.00017492716262168528
+          }
+        },
+        {
+          "case": 6,
+          "contrasts": {
+            "pseudo-zero": -0.00015966144491841305,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 9.80164917407933e-05,
+            "ce-identity": 0.0004063674467325029
+          }
+        },
+        {
+          "case": 7,
+          "contrasts": {
+            "pseudo-zero": 0.00012172614068006737,
+            "zero-identity": 0.00025767793665920635,
+            "pseudo-identity": 0.0003794040773392737,
+            "ce-identity": 0.0005012401642616737
+          }
+        }
+      ]
+    },
+    {
+      "parent_slot": 5,
+      "baseline": 4.118818875232018,
+      "contrasts": {
+        "pseudo-zero": {
+          "count": 8,
+          "mean": -0.00012806654563468634,
+          "minimum": -0.0003110150670302403,
+          "maximum": 3.288094988995738e-05,
+          "positive": 1,
+          "negative": 7,
+          "zero": 0,
+          "values": [
+            -0.0001987016924456242,
+            -4.496375929896601e-05,
+            -0.00024095663995815642,
+            -0.0003110150670302403,
+            3.288094988995738e-05,
+            -2.0469458030802912e-05,
+            -0.0002021009605233104,
+            -3.920573768034785e-05
+          ]
+        },
+        "zero-identity": {
+          "count": 8,
+          "mean": 0.0005573222225017105,
+          "minimum": 0.0005573222225017105,
+          "maximum": 0.0005573222225017105,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.0005573222225017105,
+            0.0005573222225017105,
+            0.0005573222225017105,
+            0.0005573222225017105,
+            0.0005573222225017105,
+            0.0005573222225017105,
+            0.0005573222225017105,
+            0.0005573222225017105
+          ]
+        },
+        "pseudo-identity": {
+          "count": 8,
+          "mean": 0.00042925567686702415,
+          "minimum": 0.0002463071554714702,
+          "maximum": 0.0005902031723916679,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.0003586205300560863,
+            0.0005123584632027445,
+            0.00031636558254355407,
+            0.0002463071554714702,
+            0.0005902031723916679,
+            0.0005368527644709076,
+            0.0003552212619784001,
+            0.0005181164848213626
+          ]
+        },
+        "ce-identity": {
+          "count": 8,
+          "mean": 0.0005924654754365655,
+          "minimum": 0.00035519786790061403,
+          "maximum": 0.0008332425295414225,
+          "positive": 8,
+          "negative": 0,
+          "zero": 0,
+          "values": [
+            0.0006138576383900585,
+            0.0004696439606881597,
+            0.0006194740914775565,
+            0.0005245142695873284,
+            0.000760742010225357,
+            0.00035519786790061403,
+            0.0008332425295414225,
+            0.0005630514356820271
+          ]
+        }
+      },
+      "movement": {
+        "identity": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          }
+        },
+        "zero": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.037822365066572515,
+              "minimum": 0.037822365066572515,
+              "maximum": 0.037822365066572515,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.037822365066572515,
+                0.037822365066572515,
+                0.037822365066572515,
+                0.037822365066572515,
+                0.037822365066572515,
+                0.037822365066572515,
+                0.037822365066572515,
+                0.037822365066572515
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00031285418397511704,
+              "minimum": 0.00031285418397511704,
+              "maximum": 0.00031285418397511704,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00031285418397511704,
+                0.00031285418397511704,
+                0.00031285418397511704,
+                0.00031285418397511704,
+                0.00031285418397511704,
+                0.00031285418397511704,
+                0.00031285418397511704,
+                0.00031285418397511704
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.23229188321611727,
+              "minimum": 0.23229188321611727,
+              "maximum": 0.23229188321611727,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.23229188321611727,
+                0.23229188321611727,
+                0.23229188321611727,
+                0.23229188321611727,
+                0.23229188321611727,
+                0.23229188321611727,
+                0.23229188321611727,
+                0.23229188321611727
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.000319472055256761,
+              "minimum": 0.000319472055256761,
+              "maximum": 0.000319472055256761,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.000319472055256761,
+                0.000319472055256761,
+                0.000319472055256761,
+                0.000319472055256761,
+                0.000319472055256761,
+                0.000319472055256761,
+                0.000319472055256761,
+                0.000319472055256761
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "maximum": 0.0,
+              "positive": 0,
+              "negative": 0,
+              "zero": 8,
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "gradient_update_cosine": null
+          }
+        },
+        "pseudo": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.037339683361966705,
+              "minimum": 0.037228598198755604,
+              "maximum": 0.03760783501242115,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.03730812428069844,
+                0.03760783501242115,
+                0.03733585405535153,
+                0.037271614672008284,
+                0.037320935896431685,
+                0.03735342294751811,
+                0.037291081832548846,
+                0.037228598198755604
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00030886159941441145,
+              "minimum": 0.000307942739421733,
+              "maximum": 0.000311079661813123,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00030860055305732066,
+                0.000311079661813123,
+                0.0003088299246475328,
+                0.00030829855756301706,
+                0.00030870652653567325,
+                0.00030897524875437936,
+                0.00030845958352251245,
+                0.000307942739421733
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.25392823190750086,
+              "minimum": 0.12957905937729683,
+              "maximum": 0.4781335133735171,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.23243645883836536,
+                0.12957905937729683,
+                0.24605557841713582,
+                0.2206147344844493,
+                0.2189762255515032,
+                0.22068201151601533,
+                0.4781335133735171,
+                0.2849482737017238
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.004863206451853294,
+              "minimum": -0.0066234425022093785,
+              "maximum": -0.003143259534826563,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.004985834634738259,
+                -0.003143259534826563,
+                -0.005157891371306051,
+                -0.004485725020020947,
+                -0.004622425776489635,
+                -0.004669020196423056,
+                -0.0066234425022093785,
+                -0.0052180525788124614
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.2617888064552345,
+              "minimum": -0.2785027535294148,
+              "maximum": -0.2321851806457995,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.27719304556801283,
+                -0.2321851806457995,
+                -0.2785027535294148,
+                -0.2562342513603989,
+                -0.26467866622767794,
+                -0.2660797845730909,
+                -0.25686456421896997,
+                -0.26257220551851135
+              ]
+            }
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.23950767610184945,
+              "minimum": 0.23527106577527335,
+              "maximum": 0.24468976681832433,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.2415225871148409,
+                0.23527106577527335,
+                0.24069530413995882,
+                0.23690296765933233,
+                0.24062218086412152,
+                0.23888891691904232,
+                0.24468976681832433,
+                0.237468619523902
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00032939596715413555,
+              "minimum": 0.0003235693382180997,
+              "maximum": 0.00033652291945568863,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0003321670831895631,
+                0.0003235693382180997,
+                0.0003310293172521343,
+                0.0003258137001030678,
+                0.0003309287504871857,
+                0.0003285449849110045,
+                0.00033652291945568863,
+                0.0003265916436163405
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.14858651466807957,
+              "minimum": 0.08792131891429311,
+              "maximum": 0.24908297049181854,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.11904060161865423,
+                0.08792131891429311,
+                0.13936307081359586,
+                0.1451704350844868,
+                0.129970101771024,
+                0.13793107781016886,
+                0.24908297049181854,
+                0.18021254084059518
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.006774009794865941,
+              "minimum": -0.009146636231585093,
+              "maximum": -0.004653033015483766,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.006892296847980305,
+                -0.004653033015483766,
+                -0.007003089542133639,
+                -0.0062515997000068425,
+                -0.006745684016187846,
+                -0.006323239030707617,
+                -0.009146636231585093,
+                -0.007176499974842426
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.07396598566494443,
+              "minimum": -0.0827101227624705,
+              "maximum": -0.06669918342908325,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.0827101227624705,
+                -0.06669918342908325,
+                -0.07793781178749157,
+                -0.06925985393691349,
+                -0.07776221197622138,
+                -0.07127094757306411,
+                -0.07489857964816239,
+                -0.07118917420614879
+              ]
+            }
+          }
+        },
+        "ce": {
+          "Muon": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.038216333956070075,
+              "minimum": 0.03805064531176833,
+              "maximum": 0.0383584732976486,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.03824186597801713,
+                0.03827538170064394,
+                0.03805064531176833,
+                0.03812652564594433,
+                0.038293188676222036,
+                0.0383584732976486,
+                0.038288468890283256,
+                0.03809612214803297
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00031611296526016884,
+              "minimum": 0.0003147424432022349,
+              "maximum": 0.00031728869521893894,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.0003163241577616801,
+                0.00031660138881358,
+                0.0003147424432022349,
+                0.00031537010040946155,
+                0.0003167486822682263,
+                0.00031728869521893894,
+                0.0003167096417487925,
+                0.0003151186126584364
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.5934612946818252,
+              "minimum": 0.5725402880018384,
+              "maximum": 0.615415434743275,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.615415434743275,
+                0.5725402880018384,
+                0.5834633460425778,
+                0.6133025702288517,
+                0.5984400592065979,
+                0.5884299262004805,
+                0.5866876765467436,
+                0.5894110564842368
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.01272777935104923,
+              "minimum": -0.013478499557870876,
+              "maximum": -0.011909754379711014,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.013478499557870876,
+                -0.012901411143329234,
+                -0.012122068335169598,
+                -0.013035911803369464,
+                -0.01220395806027144,
+                -0.013196132470905193,
+                -0.012974499057767017,
+                -0.011909754379711014
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.4323082569297823,
+              "minimum": -0.44928123660461966,
+              "maximum": -0.4072048061269195,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.44928123660461966,
+                -0.4454660993284947,
+                -0.4170690015118157,
+                -0.43659302183374765,
+                -0.41197308749680783,
+                -0.4484747300907308,
+                -0.44240407244512275,
+                -0.4072048061269195
+              ]
+            }
+          },
+          "AdamW": {
+            "update_norm": {
+              "count": 8,
+              "mean": 0.3215663702624777,
+              "minimum": 0.31296067756710116,
+              "maximum": 0.3265433542059832,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.3251685835055252,
+                0.32181630694450475,
+                0.31296067756710116,
+                0.3161016431053192,
+                0.3265433542059832,
+                0.32500124160298777,
+                0.32294535563033294,
+                0.32199379953806756
+              ]
+            },
+            "relative_update_norm": {
+              "count": 8,
+              "mean": 0.00044225165247651857,
+              "minimum": 0.00043041620521837136,
+              "maximum": 0.00044909652052527556,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.00044720579229533795,
+                0.0004425953915016869,
+                0.00043041620521837136,
+                0.000434735989026967,
+                0.00044909652052527556,
+                0.00044697564623601794,
+                0.00044414817715718443,
+                0.0004428394978513075
+              ]
+            },
+            "gradient_sq": {
+              "count": 8,
+              "mean": 0.40653926088895476,
+              "minimum": 0.38458516579830077,
+              "maximum": 0.4274603235402916,
+              "positive": 8,
+              "negative": 0,
+              "zero": 0,
+              "values": [
+                0.38458516579830077,
+                0.4274603235402916,
+                0.4165371466462229,
+                0.38669799118802667,
+                0.4015604499739946,
+                0.41157058380537964,
+                0.41331282249471174,
+                0.41058960366471
+              ]
+            },
+            "gradient_dot_update": {
+              "count": 8,
+              "mean": -0.026743807586611483,
+              "minimum": -0.028550149835958858,
+              "maximum": -0.024767040481280516,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.028550149835958858,
+                -0.026039263671900556,
+                -0.02590070765869589,
+                -0.027177571777578256,
+                -0.026548613890911343,
+                -0.027213668055988183,
+                -0.027753445320578246,
+                -0.024767040481280516
+              ]
+            },
+            "gradient_update_cosine": {
+              "count": 8,
+              "mean": -0.13054555631360273,
+              "minimum": -0.14158053476537244,
+              "maximum": -0.12003907243437405,
+              "positive": 0,
+              "negative": 8,
+              "zero": 0,
+              "values": [
+                -0.14158053476537244,
+                -0.12375784759564039,
+                -0.12823157833689092,
+                -0.13826044173162927,
+                -0.12829966897084694,
+                -0.1305208518432213,
+                -0.1336744548308465,
+                -0.12003907243437405
+              ]
+            }
+          }
+        }
+      },
+      "cases": [
+        {
+          "case": 0,
+          "contrasts": {
+            "pseudo-zero": -0.0001987016924456242,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.0003586205300560863,
+            "ce-identity": 0.0006138576383900585
+          }
+        },
+        {
+          "case": 1,
+          "contrasts": {
+            "pseudo-zero": -4.496375929896601e-05,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.0005123584632027445,
+            "ce-identity": 0.0004696439606881597
+          }
+        },
+        {
+          "case": 2,
+          "contrasts": {
+            "pseudo-zero": -0.00024095663995815642,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.00031636558254355407,
+            "ce-identity": 0.0006194740914775565
+          }
+        },
+        {
+          "case": 3,
+          "contrasts": {
+            "pseudo-zero": -0.0003110150670302403,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.0002463071554714702,
+            "ce-identity": 0.0005245142695873284
+          }
+        },
+        {
+          "case": 4,
+          "contrasts": {
+            "pseudo-zero": 3.288094988995738e-05,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.0005902031723916679,
+            "ce-identity": 0.000760742010225357
+          }
+        },
+        {
+          "case": 5,
+          "contrasts": {
+            "pseudo-zero": -2.0469458030802912e-05,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.0005368527644709076,
+            "ce-identity": 0.00035519786790061403
+          }
+        },
+        {
+          "case": 6,
+          "contrasts": {
+            "pseudo-zero": -0.0002021009605233104,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.0003552212619784001,
+            "ce-identity": 0.0008332425295414225
+          }
+        },
+        {
+          "case": 7,
+          "contrasts": {
+            "pseudo-zero": -3.920573768034785e-05,
+            "zero-identity": 0.0005573222225017105,
+            "pseudo-identity": 0.0005181164848213626,
+            "ce-identity": 0.0005630514356820271
+          }
+        }
+      ]
+    }
+  ],
+  "pooled_descriptive_contrasts": {
+    "pseudo-zero": {
+      "count": 24,
+      "mean": -8.565728393864862e-05,
+      "minimum": -0.0004012448673975655,
+      "maximum": 0.0001259441208851797,
+      "positive": 8,
+      "negative": 16,
+      "zero": 0,
+      "values": [
+        -0.0002036787319319444,
+        9.061339817151293e-06,
+        -6.991254303656547e-05,
+        -0.00010132519031458287,
+        -8.270367363394371e-05,
+        -0.00024049416450466765,
+        -0.00010643156634415618,
+        -0.0004012448673975655,
+        9.969331237869028e-06,
+        6.186636695559855e-05,
+        1.452462106499297e-05,
+        -5.888594309055861e-05,
+        0.0001259441208851797,
+        5.0003755081462486e-05,
+        -0.00015966144491841305,
+        0.00012172614068006737,
+        -0.0001987016924456242,
+        -4.496375929896601e-05,
+        -0.00024095663995815642,
+        -0.0003110150670302403,
+        3.288094988995738e-05,
+        -2.0469458030802912e-05,
+        -0.0002021009605233104,
+        -3.920573768034785e-05
+      ]
+    },
+    "zero-identity": {
+      "count": 24,
+      "mean": 0.0003988866298930323,
+      "minimum": 0.00025767793665920635,
+      "maximum": 0.0005573222225017105,
+      "positive": 24,
+      "negative": 0,
+      "zero": 0,
+      "values": [
+        0.00038165973051818014,
+        0.00038165973051818014,
+        0.00038165973051818014,
+        0.00038165973051818014,
+        0.00038165973051818014,
+        0.00038165973051818014,
+        0.00038165973051818014,
+        0.00038165973051818014,
+        0.00025767793665920635,
+        0.00025767793665920635,
+        0.00025767793665920635,
+        0.00025767793665920635,
+        0.00025767793665920635,
+        0.00025767793665920635,
+        0.00025767793665920635,
+        0.00025767793665920635,
+        0.0005573222225017105,
+        0.0005573222225017105,
+        0.0005573222225017105,
+        0.0005573222225017105,
+        0.0005573222225017105,
+        0.0005573222225017105,
+        0.0005573222225017105,
+        0.0005573222225017105
+      ]
+    },
+    "pseudo-identity": {
+      "count": 24,
+      "mean": 0.00031322934595438373,
+      "minimum": -1.9585136879385345e-05,
+      "maximum": 0.0005902031723916679,
+      "positive": 23,
+      "negative": 1,
+      "zero": 0,
+      "values": [
+        0.00017798099858623573,
+        0.00039072107033533143,
+        0.0003117471874816147,
+        0.00028033454020359727,
+        0.00029895605688423643,
+        0.0001411655660135125,
+        0.00027522816417402396,
+        -1.9585136879385345e-05,
+        0.0002676472678970754,
+        0.0003195443036148049,
+        0.0002722025577241993,
+        0.00019879199356864774,
+        0.00038362205754438605,
+        0.00030768169174066884,
+        9.80164917407933e-05,
+        0.0003794040773392737,
+        0.0003586205300560863,
+        0.0005123584632027445,
+        0.00031636558254355407,
+        0.0002463071554714702,
+        0.0005902031723916679,
+        0.0005368527644709076,
+        0.0003552212619784001,
+        0.0005181164848213626
+      ]
+    },
+    "ce-identity": {
+      "count": 24,
+      "mean": 0.00046092586677766906,
+      "minimum": 0.00011024646109092373,
+      "maximum": 0.0008332425295414225,
+      "positive": 24,
+      "negative": 0,
+      "zero": 0,
+      "values": [
+        0.000343675202397975,
+        0.00042306374906075916,
+        0.0003754459533453769,
+        0.00033670829135701297,
+        0.0005421563920862127,
+        0.00011024646109092373,
+        0.0004370552947250417,
+        0.0005002657708352842,
+        0.000488210292584057,
+        0.0006194021252099446,
+        0.0005561163391654134,
+        0.00021536073154848623,
+        0.00029225562214918455,
+        0.00017492716262168528,
+        0.0004063674467325029,
+        0.0005012401642616737,
+        0.0006138576383900585,
+        0.0004696439606881597,
+        0.0006194740914775565,
+        0.0005245142695873284,
+        0.000760742010225357,
+        0.00035519786790061403,
+        0.0008332425295414225,
+        0.0005630514356820271
+      ]
+    }
+  },
+  "total_seconds": 247.6528979158029,
+  "guard": {
+    "elapsed_seconds": 247.64819137495942,
+    "limits": {
+      "reserve_bytes": 10737418240,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 600
+    },
+    "observation": {
+      "free_bytes": 19939561472,
+      "peak_rss_bytes": 2046558208
+    },
+    "pid": 59800,
+    "reason": null,
+    "status": "finished"
+  },
+  "peak_mps_boundary_bytes": 2497495040,
+  "complete": true,
+  "original_quality_decision_changed": false,
+  "test_opened": false,
+  "validation_scored": false,
+  "limitations": "Three parent states each seeded by one CE update, eight correlated cases per state, shared8192-target training evaluation per parent. No bootstrap, population inference, final quality claim or model adoption. Identity/zero repeat the same deterministic operation; their eight cases are not independent replicates."
+}

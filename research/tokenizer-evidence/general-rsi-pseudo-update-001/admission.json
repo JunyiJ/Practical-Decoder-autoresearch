@@ -1,0 +1,32 @@
+{
+  "plan_sha256": "301aba9d8ff542de0a9d87067bf8058b367ef1beb9667bd8046ea75727fdbcd8",
+  "admitted": true,
+  "created_unix": 1794471385.061909,
+  "actual_free_bytes": 19943452672,
+  "required_free_bytes": 10770972672,
+  "extra_headroom_bytes": 2147483648,
+  "existing_retained_outputs": "Already deducted from free bytes. No cleanup required.",
+  "checkpoint_serialization_bytes": 0,
+  "components_seconds": {
+    "updates_75": 27.825,
+    "evaluation_99_passes": 178.19647327458654,
+    "model_loads": 30,
+    "restore_96": 96,
+    "complete_state_digests": 90,
+    "displacement_and_gradient_copies": 30,
+    "input_and_source_binding": 15
+  },
+  "forecast_seconds": 467.0214732745865,
+  "failure_and_variability_allowance_seconds": 132.97852672541347,
+  "ceiling_seconds": 600,
+  "cost_evidence": "Original pseudo integration mean update0.370253s; full document scorer22.063626s/100416targets. Other components are explicit conservative allowances, not measured diagnostic timings. Same-source/binding read34MB. Full state~445MB, two CPU clones plus gradient114MB and streamed FP64 largest matrix~310MB alongside MPS state; prior peakRSS2.386GB/MPS2.502GB. RSS4GiB/MPS6GiB guarded. No new prerequisite is rerun.",
+  "checks": {
+    "source_hashes": 5135,
+    "parents": 3,
+    "inputs_frozen": true,
+    "nonblocking_lock_acquired": true,
+    "no_training_worker_on_process_inspection": true,
+    "source_ast_valid": true
+  },
+  "preparation_seconds": 1.0655638750176877
+}

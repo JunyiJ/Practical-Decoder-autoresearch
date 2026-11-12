@@ -12,13 +12,16 @@ See `GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md` and
 `tokenizer-evidence/general-rsi-pseudo-repetition-001/completion-review.json`.
 All12 final weights and144 first outputs remain retained; test is unopened.
 
-No training worker or new admitted panel is active. The completed boundary review
-is `GENERAL_RSI_PSEUDO_MECHANISM_BOUNDARY.md`. Matched natural-batch logs show
-candidate loss increases of0.131–0.145nats/token before cooldown despite equal
-natural-update count. Extra optimizer advances remain a confound. Next implement
-and prospectively admit the bounded common-state identity/zero-gradient/pseudo/CE
-diagnostic described there. No further quality training or coefficient sweep is
-admitted. Preserve all closed studies and their decisions.
+The common-state optimizer diagnostic is now complete. All96 branches restored
+exact state and all24 identity evaluations matched exactly. Pseudo-minus-zero
+parent means have mixed signs; zero advances and ordinary CE controls both raise
+immediate loss on the fixed training windows. This limits a first-step explanation.
+See `GENERAL_RSI_PSEUDO_UPDATE_RESULTS.md` and its completion review. Next design
+and prospectively admit a bounded accumulated-state CE/CE+zero/CE+pseudo diagnostic,
+using fresh paired natural prefixes and fixed training-only evaluation boundaries.
+The first100 natural updates are motivated by the existing onset logs. No worker,
+coefficient sweep, batch-reuse arm or new quality panel is active or admitted.
+Preserve all closed studies, selected/fresh weights and first outputs.
 
 ## Completed priority — 2026-11-11 Pacific
 
