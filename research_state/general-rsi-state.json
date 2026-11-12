@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "ACTIVE_SLOT_COMPLETED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 93416,
-  "next_action": "Monitor slot04 ordinary-CE control from third parent. At completion run bound review, retain all outputs and advance paired slot05 unchanged. Then complete frozen decision and144 first-generation ratings.",
+  "active_session": null,
+  "next_action": "Launch final frozen slot05 pseudo-repetition candidate from parent05, review paired prefix and all endpoint evidence, then compute frozen decision and rate all144 first generations.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T07:08:07.526029+00:00",
-  "active_worker_pid": 42377,
+  "updated_at": "2026-11-12T07:29:55.036691+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Slot03 accepted:3467updates/1200.328832s, time-EMA CE5.0067426033, RAW5.0480475979. Second candidate-minus-control deltas +0.1552969051 time-EMA and +0.1713545988 RAW. Both completed pairs regress;96first outputs retained. Full three-pair decision pending.",
+  "latest_learning": "Slot04 third-parent CE control accepted:3512updates/1200.089785s, time-EMA CE4.8690099254, RAW4.8923741118. Five accepted runs retain120first outputs and10final weights. Both earlier candidate pairs regress; final paired and full-panel conclusions remain pending.",
   "phase": "native_pseudo_repetition_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Current panel remaining full requirement 18146924456bytes, actual free 20443299840bytes after four retained endpoints. Admission reserve and failure allowance unchanged.",
+  "capacity_status": "After five accepted endpoints, remaining full requirement17918926258bytes fits20188889088actual free bytes; reserve and failure allowance unchanged.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -646,6 +646,7 @@
     0,
     1,
     2,
-    3
+    3,
+    4
   ]
 }

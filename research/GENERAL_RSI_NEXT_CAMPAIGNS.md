@@ -14,7 +14,8 @@ The first candidate-minus-control time-EMA delta is+0.141650nats/token, a valid
 regression that challenges the hypothesis. It is not an implementation failure.
 Slots02/03 also passed, with a second candidate-minus-control time-EMA delta
 of+0.155297nats/token. Both completed pairs regress. Four accepted runs retain96
-first outputs. Next execute slot04 control and slot05 candidate unchanged.
+first outputs. Slot04 third-parent control also passed:time-EMA CE4.869010.
+Five accepted runs retain120 first outputs. Next execute final slot05 unchanged.
 No full-panel quality decision or generation-rating conclusion is available.
 
 
