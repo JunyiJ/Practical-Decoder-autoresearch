@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CAMPAIGN_COMPLETE_NEXT_DIRECTION_REVIEW",
+  "status": "REPETITION_DIAGNOSTIC_PREPARATION",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Use evidence-grounded-research to inspect retained generation repetition/termination evidence and relevant primary literature, then rank justified new model/objective/data hypotheses with falsifiable controls and complete costs. Do not repeat closed studies or launch before a fresh prospective contract and admission.",
+  "next_action": "Implement and freeze the inference-only probability diagnostic in GENERAL_RSI_REPETITION_BOUNDARY.md: all72 long native outputs plus64 fixed training windows across all3 retained time-EMA models (264 sequences). Qualify new token indexing and original greedy reproduction, admit600s/64MiB under shared lock, preserve failures; no new generations or training.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T04:48:08.434070+00:00",
+  "updated_at": "2026-11-12T04:55:21.161346+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "FP32 quality study complete: paired H200 deltas -0.008792682374,-0.001886536172,+0.002484492832; mean -0.002731575238;99% upper +0.002311392588. Neither direction passes. All144 outputs rated and retained. No validated generation improvement or equivalence claim.",
-  "phase": "post_composer_fp32_quality_evidence_review",
+  "latest_learning": "All36 long native greedy outputs repeat a trigram;35 repeat by token32;median first repeat18. All144 native outputs fit within95 total tokens, so context128 eviction is absent. Centered64-token training windows have duplicate-trigram means0.013283 FineWeb-Edu and0.024906 Wikipedia, with no terminal loops in9807 windows. Descriptive, not prompt-matched or causal.",
+  "phase": "post_fp32_repetition_mechanism_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Next authorized continuation can perform the concrete evidence/literature boundary review. No worker is active and no unchanged-process polling is needed.",
+  "wake_condition": "Next authorized continuation can implement and execute the bounded repetition probability diagnostic after source/input freeze and measured admission. No training worker active; no unchanged-process polling needed.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -541,7 +541,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Reduced composer rounding sensitivity did not yield validated quality superiority at the frozen setting. RAW preserves the same mixed paired ordering, so H200 does not hide a consistent gain. Weak continuations and greedy repetition remain observed bottlenecks; select any new hypothesis from retained evidence and primary literature.",
+  "latest_hypothesis": "Early repetition may be reinforced by repeated context or reflect stable high-ranked predictions. Existing outputs cannot distinguish these mechanisms. Low training-window loop rates do not rule out learning from legitimate repetition. Prioritize bounded probability replay before objective/data intervention.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -626,5 +626,7 @@
   "composer_fp32_quality_history_analysis": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/history-analysis.json",
   "composer_fp32_quality_report": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_RESULTS.md",
   "composer_fp32_quality_completion_review": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/completion-review.json",
-  "selected_composer_fp32_quality_arm": null
+  "selected_composer_fp32_quality_arm": null,
+  "repetition_boundary": "research/GENERAL_RSI_REPETITION_BOUNDARY.md",
+  "repetition_boundary_analysis": "research/tokenizer-evidence/general-rsi-repetition-boundary-001/analysis.json"
 }

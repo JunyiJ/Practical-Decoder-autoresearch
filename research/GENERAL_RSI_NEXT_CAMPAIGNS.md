@@ -1,5 +1,14 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## Current boundary — 2026-11-11 Pacific
+
+The completed native and FP32 panels remain closed. A new existing-data analysis
+finds early repetition without context eviction. The next action is the bounded
+inference-only probability diagnostic in `GENERAL_RSI_REPETITION_BOUNDARY.md`,
+using all three native long-horizon checkpoints and retained outputs. No new
+training panel or decoder change is admitted. Objective/data interventions await
+this discriminating measurement and a complete prospective contract.
+
 ## Completed priority — 2026-11-11 Pacific
 
 The native-horizon panel, frozen decision and144 generation ratings are complete.
