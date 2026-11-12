@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ANALYSIS_PENDING",
+  "status": "CAMPAIGN_COMPLETE_NEXT_DIRECTION_REVIEW",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Apply frozen three-pair quality decision and evaluate all144 retained first outputs blind to arm/seed. No further training authorized by this panel.",
+  "next_action": "Use evidence-grounded-research to inspect retained generation repetition/termination evidence and relevant primary literature, then rank justified new model/objective/data hypotheses with falsifiable controls and complete costs. Do not repeat closed studies or launch before a fresh prospective contract and admission.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T04:41:53.990703+00:00",
+  "updated_at": "2026-11-12T04:48:08.434070+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 5,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All six endpoints accepted. Third H200 FP32-minus-existing delta +0.002484492832 nats; all10240 paired batch hashes match. All144 first generations retained.",
-  "phase": "composer_fp32_quality_confirmation",
+  "latest_learning": "FP32 quality study complete: paired H200 deltas -0.008792682374,-0.001886536172,+0.002484492832; mean -0.002731575238;99% upper +0.002311392588. Neither direction passes. All144 outputs rated and retained. No validated generation improvement or equivalence claim.",
+  "phase": "post_composer_fp32_quality_evidence_review",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "After slot04: retained final bytes 654411970. Free 18430394368 versus full remaining requirement 17599199038, including serialization overlap, failure allowance and10GiB reserve. No cleanup required.",
+  "capacity_status": "All six slots complete;12 final weights retained (785294364 bytes), with generation and failure evidence preserved. Free 18214084608 bytes. No new panel resource admission yet.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Complete full-panel analysis and blind generation ratings.",
+  "wake_condition": "Next authorized continuation can perform the concrete evidence/literature boundary review. No worker is active and no unchanged-process polling is needed.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -525,7 +525,7 @@
   ],
   "queued_next_campaign": {
     "id": "general-rsi-composer-fp32-quality-001",
-    "status": "active_scientific_panel",
+    "status": "completed_inconclusive",
     "design": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_NEXT.md",
     "authorization": "Run the training-quality comparison after the current panel finishes. Keep the original failure recorded; do not use the 0.01% threshold as a quality veto.",
     "launch_condition": "All six native horizon slots reviewed, frozen decision and fixed generation evaluation completed; new optimizer integration/restart/timing checks and measured full resource admission passed.",
@@ -541,7 +541,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "FP32 has two small favorable paired deltas and one small unfavorable delta. All-three direction criterion fails; calculate remaining frozen gates and separate generation diagnostics.",
+  "latest_hypothesis": "Reduced composer rounding sensitivity did not yield validated quality superiority at the frozen setting. RAW preserves the same mixed paired ordering, so H200 does not hide a consistent gain. Weak continuations and greedy repetition remain observed bottlenecks; select any new hypothesis from retained evidence and primary literature.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -620,5 +620,11 @@
       "first_generations": 24
     }
   ],
-  "composer_fp32_quality_panel_launched": true
+  "composer_fp32_quality_panel_launched": true,
+  "composer_fp32_quality_decision": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/decision.json",
+  "composer_fp32_quality_generation_evaluation": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/generation-evaluation/summary.json",
+  "composer_fp32_quality_history_analysis": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/history-analysis.json",
+  "composer_fp32_quality_report": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_RESULTS.md",
+  "composer_fp32_quality_completion_review": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/completion-review.json",
+  "selected_composer_fp32_quality_arm": null
 }

@@ -1,0 +1,183 @@
+{
+  "at": "2026-11-12T04:47:13.514746+00:00",
+  "plan_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
+  "source_sha256": "7cd9b7b1387aa333c1b97a5185420c948bae60479f4132dba36e7f903bdf4e7d",
+  "post_hoc": true,
+  "scientific_decision_unchanged": true,
+  "pairs": [
+    {
+      "bundle": 1,
+      "training_loss_delta_windows": [
+        {
+          "first_step": 1,
+          "last_step": 3413,
+          "mean_train_loss_delta": -0.0018107274254151463
+        },
+        {
+          "first_step": 3414,
+          "last_step": 6826,
+          "mean_train_loss_delta": -0.002482875155592258
+        },
+        {
+          "first_step": 6827,
+          "last_step": 10240,
+          "mean_train_loss_delta": -0.0014783979230410325
+        }
+      ],
+      "raw_eight_document_probes": {
+        "3413": {
+          "targets": 8586,
+          "existing_ce": 5.710767202453992,
+          "fp32_ce": 5.67207849309988,
+          "delta": -0.03868870935411195
+        },
+        "6826": {
+          "targets": 8586,
+          "existing_ce": 5.327826357425378,
+          "fp32_ce": 5.314742438669226,
+          "delta": -0.013083918756152002
+        }
+      },
+      "raw_minus_h200_ce": {
+        "existing_byte": 0.0038344871891649035,
+        "byte_composer_fp32": 0.004065373894586166
+      }
+    },
+    {
+      "bundle": 2,
+      "training_loss_delta_windows": [
+        {
+          "first_step": 1,
+          "last_step": 3413,
+          "mean_train_loss_delta": 0.0005331602468191617
+        },
+        {
+          "first_step": 3414,
+          "last_step": 6826,
+          "mean_train_loss_delta": -0.00097912656502957
+        },
+        {
+          "first_step": 6827,
+          "last_step": 10240,
+          "mean_train_loss_delta": 6.286575560969222e-05
+        }
+      ],
+      "raw_eight_document_probes": {
+        "3413": {
+          "targets": 8586,
+          "existing_ce": 5.6408866719875785,
+          "fp32_ce": 5.634591130422193,
+          "delta": -0.006295541565385143
+        },
+        "6826": {
+          "targets": 8586,
+          "existing_ce": 5.346530742916928,
+          "fp32_ce": 5.386979184849194,
+          "delta": 0.04044844193226549
+        }
+      },
+      "raw_minus_h200_ce": {
+        "existing_byte": 0.007941926055039517,
+        "byte_composer_fp32": 0.00801516539219449
+      }
+    },
+    {
+      "bundle": 3,
+      "training_loss_delta_windows": [
+        {
+          "first_step": 1,
+          "last_step": 3413,
+          "mean_train_loss_delta": 6.489623790956683e-05
+        },
+        {
+          "first_step": 3414,
+          "last_step": 6826,
+          "mean_train_loss_delta": -0.0001110186717952412
+        },
+        {
+          "first_step": 6827,
+          "last_step": 10240,
+          "mean_train_loss_delta": 0.0005573020319388356
+        }
+      ],
+      "raw_eight_document_probes": {
+        "3413": {
+          "targets": 8586,
+          "existing_ce": 5.734980673619021,
+          "fp32_ce": 5.73475185949222,
+          "delta": -0.00022881412680142432
+        },
+        "6826": {
+          "targets": 8586,
+          "existing_ce": 5.335827306246882,
+          "fp32_ce": 5.314165852262422,
+          "delta": -0.021661453984459733
+        }
+      },
+      "raw_minus_h200_ce": {
+        "existing_byte": 0.005571408553627144,
+        "byte_composer_fp32": 0.006326513143775081
+      }
+    }
+  ],
+  "slots": {
+    "0": {
+      "clipped_fraction": 0.43818359375,
+      "pre_norm_median": 0.9791561663150787,
+      "pre_norm_p99": 1.7977279365062717,
+      "mean_update_seconds": 0.6251576500851562
+    },
+    "1": {
+      "clipped_fraction": 0.4318359375,
+      "pre_norm_median": 0.9753817021846771,
+      "pre_norm_p99": 1.7957362985610965,
+      "mean_update_seconds": 0.62554284928125
+    },
+    "2": {
+      "clipped_fraction": 0.60390625,
+      "pre_norm_median": 1.0333373546600342,
+      "pre_norm_p99": 1.815211193561558,
+      "mean_update_seconds": 0.6249508390675781
+    },
+    "3": {
+      "clipped_fraction": 0.6166015625,
+      "pre_norm_median": 1.0371155738830566,
+      "pre_norm_p99": 1.8250657224655151,
+      "mean_update_seconds": 0.6310034302041015
+    },
+    "4": {
+      "clipped_fraction": 0.6076171875,
+      "pre_norm_median": 1.0341662168502808,
+      "pre_norm_p99": 1.7628231394290925,
+      "mean_update_seconds": 0.6290020766446289
+    },
+    "5": {
+      "clipped_fraction": 0.58251953125,
+      "pre_norm_median": 1.027500867843628,
+      "pre_norm_p99": 1.7737655627727513,
+      "mean_update_seconds": 0.628662804530664
+    }
+  },
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-00/steps-01.jsonl": "c7bab5cd985e77667b33d8b38a9300f67aaa8ce8f5bf1df628030c9377cd20d4",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/steps-01.jsonl": "1ac3e8079e8a7566a3c5f5bcff614f4b7fff8935ce9088cd37d7c16ec1f73cf9",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/steps-01.jsonl": "9244d9a379bb43f5ad6dc2194d4ad8e71df8d1ae44b9dc5c3414acc9e099f89f",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/steps-01.jsonl": "087ed011b148354ecb5be1a3ff8fef0a5522f726bf2be5ba18fcb197d80f2ebf",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/steps-01.jsonl": "96683882a621c3d9cee92dcf0288acb5e2545817fe7bcc8fe4857504ba531690",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-05/steps-01.jsonl": "6bf83d05086880ec5eef4c2b8c58bf2a78943b56510af09e227d49696aa7e501",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-00/probe-3413.json": "1a4582aba3aafbb5f0b386a00a54a20e2ccb6ec1da320378d0e1163ba0ae308a",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/probe-3413.json": "041ce8ad8460d012c104e9a8acf687c982961963b3ef31e809f582a21f9448ff",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-00/probe-6826.json": "459a04aeffecc3345b14571e31373baf3a23eb623d26e12e8fe25a8239ef1c51",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/probe-6826.json": "03b17ad8bba900021af70e4147aa570637301a13fd81e2092b1290538562581c",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/probe-3413.json": "486b7aeddbbc4617fcfc3f072cd7f7aafca2eff3d19deb62a9e64d8975a9b6c7",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/probe-3413.json": "30b4e352fb6a5e24e90e839181cbb7cd6eab0e13b5d3bbf5ffee4a03783cc485",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/probe-6826.json": "b88caedfebbdf6c3968ed065090b31d1b5ec37278ee3b78d9c1098e50d821216",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/probe-6826.json": "39095a48befaea87403e8fd3ad8b7261547c263eb309926f1d1150690fb97204",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/probe-3413.json": "de657d9e1e9ca6a0403d5070a0aa71121b8ef67965a8b952b7ad462445a40cb7",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-05/probe-3413.json": "701908fa4620e93cd46dd3efce5b10c1ac6dbe41f1e502bdea6d62cb841d708a",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/probe-6826.json": "eaf15e3947084fe976471b299268abd3bd1a4a5ed5a9d96260a503b509e6e2a2",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-05/probe-6826.json": "460a8565223e7d162df24cf7efb6611966d9d3b93ad7a30714dceccc5e2a68ee"
+  },
+  "limits": "Training losses are correlated optimization diagnostics. Eight-document intermediate RAW probes are not full validation endpoints and cannot be compared directly to full H200 CE. No new gate, seed selection or statistical significance claim.",
+  "test_opened": false
+}

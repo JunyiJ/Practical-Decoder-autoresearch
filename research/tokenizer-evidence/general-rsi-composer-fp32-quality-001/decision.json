@@ -1,0 +1,145 @@
+{
+  "at": "2026-11-12T04:43:06.955185+00:00",
+  "plan_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
+  "analysis_source_sha256": "7994a22cdafde5d2f308eb26b465e8e9e4d7573ab5469172d71ec22d0bfa6280",
+  "bootstrap_source_sha256": "cb671dd3b137713b418674f81ff91118f41bf9c71ca2c7ab430e759cb7ab12df",
+  "all_six_execution_reviews_bound": true,
+  "pairs": [
+    {
+      "bundle": 1,
+      "existing_slot": 0,
+      "fp32_slot": 1,
+      "h200_delta": -0.00879268237426789,
+      "raw_delta": -0.008561795668846628
+    },
+    {
+      "bundle": 2,
+      "existing_slot": 3,
+      "fp32_slot": 2,
+      "h200_delta": -0.0018865361721598362,
+      "raw_delta": -0.0018132968350048628
+    },
+    {
+      "bundle": 3,
+      "existing_slot": 4,
+      "fp32_slot": 5,
+      "h200_delta": 0.0024844928318170645,
+      "raw_delta": 0.0032395974219650014
+    }
+  ],
+  "decision": {
+    "paired_deltas": [
+      -0.008792682374268177,
+      -0.001886536172160229,
+      0.002484492831816545
+    ],
+    "mean_delta_fp32_minus_existing": -0.002731575238203954,
+    "source_deltas": {
+      "fineweb_edu": -0.003968287325823865,
+      "wikipedia": 0.0022218074299552703
+    },
+    "directions": {
+      "byte_composer_fp32": {
+        "candidate_minus_other": -0.002731575238203954,
+        "bootstrap_upper_99": 0.0023113925881138647,
+        "source_deltas": {
+          "fineweb_edu": -0.003968287325823865,
+          "wikipedia": 0.0022218074299552703
+        },
+        "gates": {
+          "all_three_deltas_negative": false,
+          "mean_threshold": false,
+          "bootstrap_upper_negative": false,
+          "source_guard": true
+        },
+        "accepted": false
+      },
+      "existing_byte": {
+        "candidate_minus_other": 0.002731575238203954,
+        "bootstrap_upper_99": 0.007577924014863509,
+        "source_deltas": {
+          "fineweb_edu": 0.003968287325823865,
+          "wikipedia": -0.0022218074299552703
+        },
+        "gates": {
+          "all_three_deltas_negative": false,
+          "mean_threshold": false,
+          "bootstrap_upper_negative": false,
+          "source_guard": true
+        },
+        "accepted": false
+      }
+    },
+    "selected_arm": null,
+    "outcome": "inconclusive; no equivalence claim"
+  },
+  "mean_ce": {
+    "existing_byte": {
+      "raw": 5.148134160996577,
+      "h200": 5.1423515537306335
+    },
+    "byte_composer_fp32": {
+      "raw": 5.145755662635948,
+      "h200": 5.13961997849243
+    }
+  },
+  "bootstrap": {
+    "seed": 62111118999,
+    "replicates": 10000,
+    "upper_quantile": 0.99,
+    "scope": "Conditional on108documents and three paired seeds; not population-seed confidence."
+  },
+  "guard_seconds_by_slot": {
+    "0": 6628.979290083051,
+    "1": 6635.008877709042,
+    "2": 6628.185473375022,
+    "3": 6692.472024457995,
+    "4": 6672.326960500097,
+    "5": 6668.0981619588565
+  },
+  "total_guard_seconds": 39925.070788084064,
+  "training_seconds_by_slot": {
+    "0": 6401.614336872,
+    "1": 6405.55877664,
+    "2": 6399.496592052,
+    "3": 6461.47512529,
+    "4": 6440.981264841,
+    "5": 6437.507118394
+  },
+  "updates_by_slot": {
+    "0": 10240,
+    "1": 10240,
+    "2": 10240,
+    "3": 10240,
+    "4": 10240,
+    "5": 10240
+  },
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-00/result.json": "e2dc25d390b0bfacd4e185889cc09e7f3f726ae6e73bd747909ada3b8d7148a8",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-00/review.json": "583d10a25ffecc46ed6c2c8a5509fadaebf6f3ab3c2e7f50c9b112bba2a79242",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-00/raw-validation.json": "08ed8fedc92a466da8d0b80ec5cb5fb1198ce01b4753f7843f3a5ca956d2ce5d",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-00/h200-validation.json": "36694c4cc462e786d73d82f69d49b51c0f00c92b9354b35d95b86d70bf8d8d26",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/result.json": "809a84b75408918eb21d4ef55a26c588f729e555b60b4b36b367d362f23eaf8f",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/review.json": "5db62cde8b2acdbf7cf892d377d0d652eeb73798f221e40e11729fab0c216a36",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/raw-validation.json": "7ca5b74c2fcb34e11b57d6519dff85ff6fa34840642f5908a3f381718b981094",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-01/h200-validation.json": "535666501cc6c4720ed10b51add65e8f6c7a01f6bffde7f791ae45544f3958e7",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/result.json": "5ba5f4543d0fcc7cf42ce73e9dd7256bb9f4503c79ae548f4ce7013ae4a4d151",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/review.json": "04549053cf33af0fe945a857506b37022a5acd4eefcb5f7920f03493c468b64c",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/raw-validation.json": "a045b9ab121fa15b8329976a0121193013d09d09d6a61b28ef598b8d3bd1c1bb",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-02/h200-validation.json": "4b6c1c2cfae95c7b9d428bd0ba4e3f41bac3d982442db821361c781d6087acf0",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/result.json": "bdf6af118a29a6a320d26f1adae8ba5e093be64efaf2301f217a014512a819c8",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/review.json": "04cfe414f2146ad31af1e9016545ee4f4efedd7909661179391a2d0e91794b72",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/raw-validation.json": "5e1771be82930b88708079ac8de12c33853c57f8703bc9f72af544e85f6deaa3",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/h200-validation.json": "4b6390203c89e2a1e585e2cfcc07bec2e34e352273a13a9ba9bfd2041b6d3cd6",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/result.json": "ed1ee841a5bdbf797dae756dc26af0420897a17ea32a199ee9a49c749a8e35c9",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/review.json": "4e7c3b96247469a1123220cfed6547fdf4dfd1e704be813e25a00fa6dd2a4035",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/raw-validation.json": "31bd65081e102f4785f28d2d40a0426b10b50c6213ae8120182f2034d4151e78",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/h200-validation.json": "76cb476002a93fd59b48800ab7e023b414070fde71b83da3e06f9db7cb2c706b",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-05/result.json": "42602dc318681671df048d2fe18f85ec49f09d5a489ff5ddd5702e5c613e93de",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-05/review.json": "cebf9ee9610aa5d308526d1698a833a3d206c3bb17aa8e35da58b0cea063b1d4",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-05/raw-validation.json": "e01a10ef88820780cb4bf9352bef8b5ae0796a65710f21b662b1866129547c1c",
+    "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-05/h200-validation.json": "7d9d42e8819128d02cb8c498270a744c2ae6e4ec47d916ede6ab2602b8dc15b9"
+  },
+  "scope": "Composer Muon FP32 versus existing BF16 arithmetic at10240matched updates and fixed LR.0025 on this model/corpus. RAW secondary. No native superiority, equal-time advantage, equivalence or transfer claim.",
+  "test_opened": false
+}

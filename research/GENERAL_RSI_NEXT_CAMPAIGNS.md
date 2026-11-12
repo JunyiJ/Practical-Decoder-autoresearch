@@ -1,5 +1,23 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## Completed priority — 2026-11-11 Pacific
+
+The native-horizon panel, frozen decision and144 generation ratings are complete.
+The separately authorized composer FP32 quality panel also completed all six
+runs and144 blind generation ratings. Its frozen result is inconclusive:
+mean H200 FP32-minus-existing CE−0.002731575nats/token, one-sided99% upper
++0.002311393, with two favorable pairs and one unfavorable pair. Neither
+superiority direction passes. This does not establish equivalence. The original
+failed numerical qualification is unchanged and its0.01% threshold was not used
+as a quality veto. See `GENERAL_RSI_COMPOSER_FP32_QUALITY_RESULTS.md` and
+`tokenizer-evidence/general-rsi-composer-fp32-quality-001/completion-review.json`.
+
+No panel in the historical sequence below remains to be rerun. Next use the
+research skill for an evidence-grounded boundary review of retained generation
+failures and relevant primary literature, then rank justified new hypotheses.
+No new training panel is admitted. State records the next executable action;
+all selected and fresh checkpoints and original first outputs remain retained.
+
 ## Latest human priority — 2026-11-10 Pacific
 
 The human explicitly authorized: "Yes, let's run that training-quality comparison
