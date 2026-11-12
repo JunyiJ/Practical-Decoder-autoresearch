@@ -9,6 +9,7 @@ evaluation before the frozen decision. Test remains unopened.
 |---|---|---|---:|---:|---:|---:|---:|
 |00|Native-horizon01|Ordinary CE|3,493|1,200.128546|4.8625809893|4.8875414003|24|
 |01|Native-horizon01|CE / pseudo|3,464|1,200.285049|5.0042306204|5.0462512488|24|
+|02|Native-horizon03|Ordinary CE|3,506|1,200.290195|4.8514456982|4.8766929991|24|
 
 Slot00 passed the bound execution review in
 `tokenizer-evidence/general-rsi-pseudo-repetition-001/slot-00/review.json`.
@@ -26,5 +27,11 @@ remain retained. The candidate-minus-control deltas are+0.1416496312time-EMA and
 +0.1587098485RAW nats/token. These are descriptive first-pair results, not the
 complete three-pair decision. Do not repair or retune a valid quality regression.
 
-Next execute slot02 ordinary CE from selected parent03, then paired slot03.
-Keep the frozen objective, roles, resources and acceptance rules unchanged.
+Slot02 passed execution review with3,506CE updates/3,590,144 natural targets.
+Guarded time was1,307.635223s with no failure or recovery charge. Both final
+weights and24 first outputs remain retained. Its paired candidate is pending.
+The remaining complete storage requirement is18,374,922,718bytes after accounting
+for retained endpoints, versus20,684,509,184 actual free bytes at this boundary.
+
+Next execute paired slot03 from parent03. Keep the frozen objective, roles,
+resources and acceptance rules unchanged.
