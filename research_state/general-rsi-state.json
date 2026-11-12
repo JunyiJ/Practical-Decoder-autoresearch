@@ -8,7 +8,7 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 32901,
-  "next_action": "Slot01 context256 is actively training under the unchanged frozen plan and shared lock. After completion audit the paired sampler prefix, native/common128 target coverage, clock, endpoints and first generations before slot02. Finish all three pairs before the frozen decision.",
+  "next_action": "Slot01 context256 is actively training under the unchanged frozen plan and shared lock. After completion audit the paired sampler prefix, native/common128 target coverage, clock, endpoints and first generations before slot02. Finish all three pairs before the frozen decision. After all six slots, the frozen decision and fixed generation evaluation finish, follow the cross-size transfer priority in research/GENERAL_RSI_NEXT_CAMPAIGNS.md (2026-11-12): qualify local capacity, then freeze one focused finding-by-size comparison. Do not change the active panel or default to further same-size tuning.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
@@ -761,5 +761,6 @@
   "context_length_quality_design": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_DESIGN.md",
   "context_length_integration_report": "research/GENERAL_RSI_CONTEXT_LENGTH_INTEGRATION_RESULTS.md",
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
-  "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/launch-verification.json"
+  "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/launch-verification.json",
+  "post_current_experiment_priority": "Test which findings transfer across model sizes on this Mac mini; current context-length panel finishes unchanged. Authority: human request 2026-11-12 in Review RSI byte model."
 }

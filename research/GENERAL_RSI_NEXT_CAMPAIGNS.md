@@ -1,6 +1,147 @@
 # General RSI: human-directed continuation, 2026-11-09
 
-## Current boundary — 2026-11-12 Pacific
+## Latest human priority — cross-size transfer, 2026-11-12 Pacific
+
+The human requested: "update the RSI research plan and tell the other thread to
+focus on testing which findings transfer across model sizes on my Mac mini,
+after finishing the current experiment."
+
+This section takes precedence over the older next-action sections below. Finish
+all six slots of `general-rsi-context-length-quality-001`, execution reviews,
+frozen decision, common128 evaluation and fixed first-generation evaluation
+unchanged. Do not interrupt the worker or change its sources, seed roles,
+schedules, endpoints or criteria. `GENERAL_RSI_PLAN.md` is hash-bound into that
+experiment and remains unchanged. This live continuation plan carries the new
+research priority. Existing findings and closed campaigns stay closed.
+
+After that completion, the objective is to identify which measured effects
+persist, weaken or reverse as model size increases within local Mac capacity.
+A lower score from another adjustment at D256/four blocks is no longer the
+default objective. Local cross-size evidence is a step toward LLM relevance,
+not proof of billion-parameter or GPU-cluster transfer. Continue autonomously
+within the existing local authority, one MPS worker, no paid remote compute or
+subagents. Preparation that reads existing evidence may proceed during training;
+new accelerator qualification waits for the shared worker lock.
+
+### Evidence and first question
+
+- Equal-token byte composition improves CE by0.052604nats/token with42.61% fewer
+  parameters, but costs about1.84x guard time. Equal7200-second training instead
+  favors native by0.122102nats/token across three fresh pairs. Original records:
+  `tokenizer-evidence/general-rsi-panel-001/decision.json` and
+  `tokenizer-evidence/general-rsi-equal-time-001/decision.json`; readable reports:
+  `GENERAL_RSI_CONFIRMATION_RESULTS.md`, `GENERAL_RSI_EQUAL_TIME_RESULTS.md`.
+- The native model has28,492,416 parameters. Its two50257x256 vocabulary tables
+  contain25,731,584 parameters, about90.3% of the total. This unusually large
+  vocabulary-table share is a concrete reason to test a larger transformer body.
+  Byte composition still consumes GPT-2 token IDs and retains an independent
+  output table; it is not tokenizer-free BLT.
+- Books/Python transfer was inconclusive. Python mean differences were sensitive
+  to formatting-heavy excerpts. Preserve `GENERAL_RSI_TRANSFER_RESULTS.md` and
+  `GENERAL_RSI_TRANSFER_DIAGNOSIS.md`; do not relabel them broad-domain success.
+- Composer-only FP32 superiority was inconclusive. Repetition suppression lost
+  its quality comparison; recent fresh-optimizer continuation diagnostics did
+  not beat their parents. Preserve `GENERAL_RSI_COMPOSER_FP32_QUALITY_RESULTS.md`,
+  `GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md`, and
+  `GENERAL_RSI_BATCH_AVERAGING_RESULTS.md`. Do not make more local precision,
+  repetition or continuation sweeps the next default activity.
+- Added prefix96 versus48 improves common-target CE by0.014214nats/token in the
+  retained models (`GENERAL_RSI_CONTEXT_PREFIX_RESULTS.md`). The ongoing128/256
+  panel will determine whether that rationale produces a complete-recipe gain.
+  Its final outcome must be included before selecting the next comparison.
+
+Default first hypothesis: byte/native quality and cost tradeoffs depend on the
+ratio of vocabulary/composer work to transformer-body work. At fixed vocabulary,
+a growing body should dilute the fractional input-parameter saving. Whether
+byte's equal-token loss advantage persists, and whether its runtime penalty
+shrinks, are separate falsifiable predictions, not assumed scaling laws.
+Measure each ratio rather than inferring it from total parameter count.
+If the completed context panel supplies a stronger, cheaper discriminating
+cross-size question, rank context128/256 against this hypothesis explicitly and
+select ONE finding first. Do not combine context and input-representation changes
+in the same contrast or launch an all-factor grid.
+
+### Literature basis and limits
+
+Primary sources reviewed for this boundary:
+
+- Hoffmann et al., [2203.15556v1](https://arxiv.org/html/2203.15556v1),
+  sections1 and3, AppendixB: model size, training tokens and schedule horizon
+  jointly determine comparisons. Their much larger, largely non-repeated data
+  regime does not supply an optimal token ratio for our finite10M-token corpus.
+- Yang et al., [2203.03466v1](https://arxiv.org/html/2203.03466v1), sections3–6.1:
+  standard-parameterization optima can shift with width; specific optimization
+  hyperparameters transfer under muP, with explicit limits and no general
+  regularization-transfer guarantee. Our mixed Muon/AdamW implementation is not
+  qualified muP. Do not assume unchanged LR is equally suitable at every size,
+  and do not bundle an unqualified parameterization change into this study.
+- Pagnoni et al., [2412.09871v1](https://arxiv.org/html/2412.09871v1), sections3,
+  5.1 and5.3: byte-module overhead and relative quality can change with scale and
+  training budget. Their dynamic-patch encoder/decoder and400M–8B experiments
+  differ from our token-input composer. These are a rationale for measuring an
+  interaction, not evidence that our architecture inherits their gains.
+
+### Bounded next execution sequence
+
+1. After current-panel completion, inventory retained measurements and calculate
+   parameter allocation for candidate sizes without training. Choose a declared
+   width/depth scaling path that meaningfully changes body share, rather than
+   adding vocabulary parameters. Target three feasible sizes including the
+   reference; at least two with one larger body are needed for a cross-size
+   comparison. If only two fit the measured cost, call it two-size replication,
+   not a scaling law. Never claim broad extrapolation from a narrow size range.
+2. Qualify only newly required shapes, initialization, numerical execution,
+   complete restart and scoring. Run a bounded engineering timing/memory pilot
+   under the shared lock, with no validation-based arm selection. Measure both
+   arms at each candidate size. Do not rerun historical prerequisites or build
+   general infrastructure without a demonstrated need.
+3. Freeze a new prospective protocol before scientific scores. Use fresh paired
+   seeds and at least three pairs per size for a confirmed quality claim. Keep
+   corpus, tokenizer, output head, context, packing, precision and optimizer
+   family controlled except the declared finding and size axis. State the
+   initialization mapping and shared sampler policy. Use equally bounded LR
+   screening if needed, with separate screen/confirmation roles; otherwise state
+   that the result concerns transfer of a fixed recipe, not each size's optimum.
+   Historical scores provide context and planning anchors, never fresh pairs.
+4. For byte/native, use equal-token endpoints as the primary mechanism contrast,
+   with complete horizon-matched schedules and fixed averaging. Declare whether
+   token exposure is common across sizes; report distinct corpus size, sampled
+   targets and reuse explicitly. Do not infer compute optimality. Report loss
+   curves against tokens, estimated training FLOPs and synchronized Mac time,
+   with operator assumptions and uncounted work stated. Intermediate curve
+   points are descriptive, not replacements for terminal matched-budget runs.
+   Any equal-time endpoint claim needs its own prospective schedule/endpoint
+   contract. A context-first protocol must define the analogous matched-target
+   and native/common-context controls before launch.
+5. Predeclare the within-size effect and change of effect across sizes, practical
+   thresholds, seed-level results, uncertainty and multiplicity handling. Do not
+   call a nonsignificant interaction equivalence, a one-seed winner transfer, or
+   separate significance tests proof that two effects differ. Use a small,
+   prospectively frozen, deduplicated broader-domain evaluation selected without
+   model scores. Keep the original test unopened. Existing validation is a
+   development set; repeated reuse is not independent external confirmation.
+   Generation diagnostics remain separate from prediction-loss decisions.
+6. Admit the WHOLE selected comparison only after forecasting screening, fresh
+   confirmation, evaluation, generation if required, replay/failure time,
+   all retained endpoints, optimizer/averaging state, atomic serialization
+   overlap and metadata. Preserve10GiB reserve plus2GiB extra headroom and
+   current memory guards. Reuse the existing36-hour tranche ceiling as the
+   initial planning bound; record any justified prospective revision before
+   scientific results. Never shrink a launched confirmation or run only a
+   convenient arm to fit. Apply standing-authorized cleanup safeguards when
+   needed. Record measured infeasibility and the smallest concrete capacity
+   remedy if no meaningful cross-size panel fits; do not revert silently to
+   same-size tuning or repeat unchanged capacity scans.
+
+Success means an interpretable cross-size result, including a vanished or
+reversed benefit. Report local measurements, external evidence and inference
+separately. Keep Mac throughput conclusions distinct from hardware-independent
+compute estimates. Do not claim larger-LLM transfer until evidence beyond the
+local tested range exists. Commit/push substantive source and evidence, update
+state, and continue the next executable item under this priority without asking
+again for authorization already given.
+
+## Current experiment boundary — 2026-11-12 Pacific
 
 The pseudo-repetition continuation panel is complete. All six execution reviews
 passed and all144 first outputs received fixed identity-hidden agent ratings.
@@ -100,7 +241,7 @@ endpoints pass. Next run paired slot01 context256, then review each completed
 slot before advancing the frozen order. No pair or quality decision is complete.
 Do not repeat completed prerequisites. Test remains unopened.
 
-## Completed priority — 2026-11-11 Pacific
+## Historical completed priority — 2026-11-11 Pacific
 
 The native-horizon panel, frozen decision and144 generation ratings are complete.
 The separately authorized composer FP32 quality panel also completed all six
@@ -118,7 +259,7 @@ failures and relevant primary literature, then rank justified new hypotheses.
 No new training panel is admitted. State records the next executable action;
 all selected and fresh checkpoints and original first outputs remain retained.
 
-## Latest human priority — 2026-11-10 Pacific
+## Historical human priority — 2026-11-10 Pacific
 
 The human explicitly authorized: "Yes, let's run that training-quality comparison
 after the current panel finishes. Keep the original failure recorded, but don't
