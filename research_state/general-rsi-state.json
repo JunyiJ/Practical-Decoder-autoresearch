@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "READY_NEXT_FROZEN_SLOT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 61502,
-  "next_action": "Allow quality slot04 existing-byte bundle3 to finish10240updates. Review exact endpoint and all24 first generations, then launch paired FP32 slot05. Keep all six slots and gates unchanged.",
+  "active_session": null,
+  "next_action": "Launch frozen slot05 FP32 bundle3. After its review, apply the frozen three-pair decision and evaluate all144 retained first generations.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T00:52:25.886915+00:00",
-  "active_worker_pid": 27199,
+  "updated_at": "2026-11-12T02:47:54.073668+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Second pair accepted: H200 existing-byte 5.142531945295, FP32 5.140645409123. All10240 paired batch hashes equal,96 first generations retained. Third pair remains unmeasured.",
+  "latest_learning": "Third baseline accepted: H200 CE 5.132913270810168, RAW CE 5.1384846793637955. Five runs and120 first generations retained; paired FP32 slot05 remains required.",
   "phase": "composer_fp32_quality_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -75,7 +75,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-006/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json"
   ],
-  "capacity_status": "Slot00 complete; retained final bytes130882394. Free19981688832 versus full remaining requirement18122728614, including serialization overlap, failure allowance and10GiB reserve. No cleanup required.",
+  "capacity_status": "After slot04: retained final bytes 654411970. Free 18430394368 versus full remaining requirement 17599199038, including serialization overlap, failure allowance and10GiB reserve. No cleanup required.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -448,7 +448,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "New slot04 result.json, failure/guard stop, supervisor exit, materially changed capacity or human steering. No metadata commits or notifications for healthy unchanged training.",
+  "wake_condition": "Launch final frozen slot05 after completed review and full capacity admission.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -541,7 +541,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Two fresh H200 FP32-minus-existing-byte deltas are -0.008792682374 and -0.001886536172 nats. Both favor FP32 slightly; third pair and frozen panel gates remain required. No final quality decision.",
+  "latest_hypothesis": "First two fresh H200 FP32-minus-existing-byte deltas are -0.008792682374 and -0.001886536172 nats. Final paired FP32 endpoint remains unmeasured. No final quality decision.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -593,6 +593,18 @@
       "training_seconds": 6461.47512529,
       "worker_seconds": 6692.472024457995,
       "review": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-03/review.json",
+      "first_generations": 24
+    },
+    {
+      "slot": 4,
+      "arm": "existing_byte",
+      "bundle": 3,
+      "steps": 10240,
+      "h200_ce": 5.132913270810168,
+      "raw_ce": 5.1384846793637955,
+      "training_seconds": 6440.981264841,
+      "worker_seconds": 6672.326960500097,
+      "review": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/slot-04/review.json",
       "first_generations": 24
     }
   ],
