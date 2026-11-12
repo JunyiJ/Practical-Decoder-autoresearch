@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "PSEUDO_REPETITION_SLOT00_ACCEPTED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 14372,
-  "next_action": "Monitor slot00 native CE continuation under frozen pseudo-repetition plan. On supervisor completion, run general_rsi_pseudo_review_v1 for slot00, then launch slot01 only after accepted execution. Preserve immutable sources, all first generations and cumulative budgets.",
+  "active_session": null,
+  "next_action": "Launch frozen slot01 alternating CE/pseudo repetition from the same parent and paired roles. Require accepted execution review before slot02; preserve all endpoints and first generations.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-12T05:27:05.304375+00:00",
-  "active_worker_pid": 9374,
+  "updated_at": "2026-11-12T05:49:07.383896+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Training-only284735-span inventory and scalar/gradient/mask/sampler checks passed. New MPS integration passed exact full restart/replay in73.113s; native69CE updates, candidate33CE+32pseudo. No quality result. Audited12 obsolete accepted engineering payloads retired,4090694482bytes freed;702 protected files verified.",
+  "latest_learning": "Pseudo-repetition panel slot00 native CE continuation accepted:3493updates/1200.128546s, time-EMA CE4.8625809893, RAW4.8875414003, all24first outputs retained. No paired result or quality decision; hypothesis unchanged until complete confirmation.",
   "phase": "native_pseudo_repetition_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -641,5 +641,8 @@
   "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_INTEGRATION_RESULTS.md",
   "pseudo_repetition_panel": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json",
   "pseudo_repetition_panel_sha256": "e5daf4f5e92855039f87f9653ceb8f071e71660faec832989ca51a4b582e6ab7",
-  "pseudo_repetition_panel_launched": true
+  "pseudo_repetition_panel_launched": true,
+  "pseudo_repetition_completed_slots": [
+    0
+  ]
 }
