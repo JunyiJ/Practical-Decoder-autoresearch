@@ -1,6 +1,6 @@
 # General RSI: human-directed continuation, 2026-11-09
 
-## Current boundary — 2026-11-11 Pacific
+## Current boundary — 2026-11-12 Pacific
 
 The pseudo-repetition continuation panel is complete. All six execution reviews
 passed and all144 first outputs received fixed identity-hidden agent ratings.
@@ -12,16 +12,19 @@ See `GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md` and
 `tokenizer-evidence/general-rsi-pseudo-repetition-001/completion-review.json`.
 All12 final weights and144 first outputs remain retained; test is unopened.
 
-The common-state optimizer diagnostic is now complete. All96 branches restored
-exact state and all24 identity evaluations matched exactly. Pseudo-minus-zero
-parent means have mixed signs; zero advances and ordinary CE controls both raise
-immediate loss on the fixed training windows. This limits a first-step explanation.
-See `GENERAL_RSI_PSEUDO_UPDATE_RESULTS.md` and its completion review. Next design
-and prospectively admit a bounded accumulated-state CE/CE+zero/CE+pseudo diagnostic,
-using fresh paired natural prefixes and fixed training-only evaluation boundaries.
-The first100 natural updates are motivated by the existing onset logs. No worker,
-coefficient sweep, batch-reuse arm or new quality panel is active or admitted.
-Preserve all closed studies, selected/fresh weights and first outputs.
+The common-state and accumulated-state optimizer diagnostics are complete.
+The latter reviewed all1,494updates/45probes across nine fresh trajectories. At
+100matched natural updates, zero-minus-CE mean loss is+0.018368 and pseudo-minus-
+zero adds+0.035367nats/token, both positive in all three parents. See
+`GENERAL_RSI_PSEUDO_ACCUMULATED_RESULTS.md`. This supports accumulated effects;
+ordinary CE also drifts upward from parents, so it is not a model-improvement claim.
+
+The pinned released DITTO implementation accumulates mixed minibatches before one
+optimizer advance. Next design a minimal joint-gradient integration/diagnostic
+with explicit loss-normalization and clipping controls, fresh roles, and complete
+cost admission. Qualify only genuinely new accumulation/state-accounting needs.
+No worker, coefficient sweep, batch-reuse arm or new quality panel is active or
+admitted. Preserve all closed decisions, selected/fresh weights and first outputs.
 
 ## Completed priority — 2026-11-11 Pacific
 

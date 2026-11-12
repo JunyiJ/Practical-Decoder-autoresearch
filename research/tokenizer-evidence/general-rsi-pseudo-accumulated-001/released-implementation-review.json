@@ -1,0 +1,50 @@
+{
+  "retrieved_at": "2026-11-12T08:36:33.103977+00:00",
+  "repository_commit": "35f5a22cd94a1b35c0a57b1ccb1b74186d2bab1d",
+  "files": [
+    {
+      "url": "https://github.com/Jxu-Thu/DITTO/blob/35f5a22cd94a1b35c0a57b1ccb1b74186d2bab1d/runs/DITTO.sh",
+      "path": "runs/DITTO.sh",
+      "lines": "8-18",
+      "sha256": "bf961617d0906015d6eed7666125ffd8ac0598ac03e15aabae51aac0e4f45263",
+      "bytes": 1111,
+      "finding": "The released fine-tuning script selects NAG, clipping0.1, update-freq6, sequence-level train rate0.5, rep_reduce_gamma0.5 and reset optimizer/scheduler. It loads a validation-selected checkpoint."
+    },
+    {
+      "url": "https://github.com/Jxu-Thu/DITTO/blob/35f5a22cd94a1b35c0a57b1ccb1b74186d2bab1d/fairseq/custom/language_modeling_pealize_rep.py",
+      "path": "fairseq/custom/language_modeling_pealize_rep.py",
+      "lines": "74-102",
+      "sha256": "98af6872dd23b3d3738f96c421166a08b3b51cf4cb54eff99da0991dcd8567e6",
+      "bytes": 5319,
+      "finding": "Each task train_step chooses pseudo loss with probability0.5, falling back to CE on invalid pseudo construction. The task calls backward but not optimizer.step."
+    },
+    {
+      "url": "https://github.com/Jxu-Thu/DITTO/blob/35f5a22cd94a1b35c0a57b1ccb1b74186d2bab1d/fairseq/trainer.py",
+      "path": "fairseq/trainer.py",
+      "lines": "219-269,323-345",
+      "sha256": "c2745bc9ee4244b41bafd82eb6786fb8161d84c7629d6b4d53f0e4d063a40d70",
+      "bytes": 20362,
+      "finding": "Trainer clears gradients before looping over grouped samples, calls task backward per sample, normalizes by sample size, clips once, and steps once after the group."
+    },
+    {
+      "url": "https://github.com/Jxu-Thu/DITTO/blob/35f5a22cd94a1b35c0a57b1ccb1b74186d2bab1d/fairseq_cli/train.py",
+      "path": "fairseq_cli/train.py",
+      "lines": "104-121",
+      "sha256": "a5ceff02c4bae09b859d41ed8493abb39da430e991efb722584b53aa1cdd94cf",
+      "bytes": 12342,
+      "finding": "update_freq groups minibatches with GroupedIterator and passes each group to trainer.train_step."
+    }
+  ],
+  "inference": "The released update-freq6 fine-tuning recipe can combine natural and pseudo gradients before one optimizer advance. This differs from our frozen strict alternating pure-gradient steps. It motivates studying joint-gradient updates if the local accumulated-state controls support it. It does not show a local improvement or reproduce the released model.",
+  "scope": "Read-only source review during the already frozen accumulated-state diagnostic. No active-plan changes, training, code execution from the repository or external datasets. Different NAG optimizer, precision, context1536, model size and sample-size weighting remain important gaps.",
+  "supplement": {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/148c0aeea1c5da82f4fa86a09d4190da-Supplemental-Conference.pdf",
+    "sections": [
+      "C equations1-3 and Table1",
+      "D.1 narrative"
+    ],
+    "finding": "The supplement confirms detached preceding-copy anchors. Its margin variant can over-penalize repetition and has worse reported generation quality; MSE is also weaker. This argues against an ungrounded stronger penalty or alternative-loss sweep.",
+    "limitation": "Previous review lacked this supplement; it is now retrieved. No new figure-coordinate estimates or exhaustive supplementary-control claim. Published table outcomes are not local results."
+  },
+  "test_opened": false
+}
