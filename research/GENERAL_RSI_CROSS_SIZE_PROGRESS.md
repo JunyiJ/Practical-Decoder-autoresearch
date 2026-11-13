@@ -27,5 +27,7 @@ panel directory. Remaining-panel admission passes:20,636,422,622bytes required,
 output, restart, serialization, metadata and failure allowances. The conservative
 total forecast is49.314hours against the frozen54-hour tranche.
 
-Next: launch fixed slot02, depth8 byte bundle1, after live admission checks.
+Slot02, depth8 byte bundle1, is running after live full-panel admission. Its
+initial sampler prefix matches the depth4 bundle1 runs exactly. Review at exit,
+then admit fixed slot03, depth8 native bundle1.
 Do not repeat prerequisites or reopen the test.
