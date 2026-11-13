@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-13T12:49:46.969283+00:00",
+  "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
+  "source_commit": "897f7331169d773005851a2831621a504f12cfbb",
+  "worker": {
+    "pid": 38197,
+    "command": "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m research.general_rsi_cross_size_worker_v1 5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080 0"
+  },
+  "shared_lock_busy": true,
+  "guard_snapshot": {
+    "elapsed_seconds": 78.65979112498462,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 6657
+    },
+    "observation": {
+      "free_bytes": 21536124928,
+      "peak_rss_bytes": 988119040
+    },
+    "pid": 38197,
+    "reason": null,
+    "status": "watching"
+  },
+  "completed_steps_at_inspection": 220,
+  "step_log_prefix_bytes": 73803,
+  "step_log_prefix_sha256": "4add0130dc4253a175acfab622340921b49a4ba1bd349106d1fa90743ef15580",
+  "latest_update": {
+    "step": 220,
+    "loss": 7.113637447357178,
+    "lr_ratio": 1.0,
+    "clip": {
+      "threshold": 1.0,
+      "pre_norm": 0.5024871826171875,
+      "post_norm": 0.5024871826171875,
+      "coefficient": 1.0,
+      "gradient_tensors": 88
+    },
+    "batch_sha256": "e06dc3113ec633e5fdf4c87381eab9970f1e83b7bad0161967eedb09e3e815c7",
+    "seconds": 0.3374783331528306,
+    "mps_bytes": 2493300736
+  },
+  "free_bytes": 21536124928,
+  "complete_remaining_requirement_bytes": 20995302382,
+  "capacity_margin_bytes": 540822546,
+  "worker_internal_admission_passed": true,
+  "external_audit_failure": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/prelaunch-audit-failure-01.json",
+  "sources_verified": 5117,
+  "test_opened": false
+}

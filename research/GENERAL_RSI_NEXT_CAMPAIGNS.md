@@ -162,8 +162,9 @@ seed roles/order, within-size rules, direct interaction and multiplicity handlin
 The full forecast is51.226hours including probes, measured generation, completed
 engineering and30% margin, under the prospective54-hour tranche. Full storage
 admission passes with658MB beyond the required12GiB reserve/headroom and all
-projected outputs. Next execute slot00, depth4 native bundle1, then review and
-follow fixed18-slot order. No scientific score is yet available. See
+projected outputs. Slot00, depth4 native bundle1, is now running under the
+shared lock. Let it finish unchanged, review execution, then follow fixed18-slot
+order. No terminal scientific score is yet available. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 

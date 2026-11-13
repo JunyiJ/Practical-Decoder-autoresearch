@@ -1,0 +1,10 @@
+{
+  "classification": "read_only_process_audit_false_positive_and_shell_fail_open",
+  "original_failed_predicate": "('Python' in l or 'python' in l.split(maxsplit=2)[1].lower()) and any(s in l for s in ('-m research.general_rsi','train.py'))",
+  "original_action": "Optional prelaunch process/lock/capacity receipt audit before worker command",
+  "failure": "AssertionError: wrapper zsh PID38197 matched Python text embedded in its own script argument. Optional receipt was not written. Shell continued to worker command because it did not stop on error.",
+  "impact": "Worker independently acquired nonblocking lock and checked all bound sources, prior reviews, full storage and stop flag before initialization. Exactly one worker is now running. Earlier process inspection found no worker. No scientific change or restart.",
+  "repair": "Match executable token instead of full argument text for verification. Future combined launch shells must fail closed. Active worker left unchanged.",
+  "worker_pid": 38197,
+  "test_opened": false
+}
