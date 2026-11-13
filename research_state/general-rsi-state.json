@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "READY_FOR_FINAL_CONTEXT_SLOT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 74682,
-  "next_action": "Let frozen slot04 context128 bundle3 finish, audit its execution, then run slot05 context256 bundle3 after full remaining-resource recheck. Finish frozen decision, common128 and all144 first-generation ratings, then select one cross-size comparison under GENERAL_RSI_NEXT_CAMPAIGNS.md.",
+  "active_session": null,
+  "next_action": "Launch frozen slot05 context256 bundle3 after post-publication capacity and process/lock checks. Review its execution, then complete the frozen three-pair decision, common128 analysis and all144 fixed first-generation ratings before the cross-size boundary.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T03:44:54.555300+00:00",
-  "active_worker_pid": 52111,
+  "updated_at": "2026-11-13T07:53:35.872462+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Second pair passed execution review: native-context256-minus128 CE -0.095261659806; common128 difference -0.022704986068. Both sources improve. Four of six runs and96 first outputs complete; third pair and frozen panel decision pending.",
+  "latest_learning": "Five of six context runs passed execution review. Slot04 context128 bundle3:41881 updates, time-EMA CE4.822170970826,24 retained first outputs. The first two paired benefits remain provisional; third-pair comparison awaits slot05. All120 first outputs are retained.",
   "phase": "context_length_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Exact recovery004 retired nine obsolete generated proof archives, 3016503296 allocated bytes, with354 protected files unchanged. Full remaining admission restored: free22946603008 versus required20562845992 bytes including10GiB reserve plus2GiB extra, all endpoints, restart overlap, metadata and failure allowance.",
+  "capacity_status": "Full final-slot admission passes: free22763323392 versus required20334848370 bytes, including10GiB reserve plus2GiB extra, all retained endpoints, restart/serialization overlap, metadata and failure allowance. No cleanup is needed.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -794,6 +794,18 @@
       "raw_ce": 4.843682226967733,
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/review.json"
+    },
+    {
+      "slot": 4,
+      "arm": "context128",
+      "bundle": 3,
+      "steps": 41881,
+      "training_seconds": 14400.032264558,
+      "worker_seconds": 14788.658345333999,
+      "time_ema_ce": 4.822170970825668,
+      "raw_ce": 4.835318737072952,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-04/review.json"
     }
   ],
   "context_length_quality_design": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_DESIGN.md",

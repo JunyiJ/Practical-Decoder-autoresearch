@@ -251,9 +251,13 @@ and reviewed:41,582 updates,14,400.227427 training seconds and time-EMA
 CE4.827909080. The second native-context pair improves by0.095261660nats/token,
 with both sources improving. At common128, the256 model improves by0.022704986.
 Both completed pairs support the context hypothesis, but adoption still awaits
-the third pair and the frozen decision. All96 first outputs are retained.
-Next run frozen slots04/05 bundle3, reviewing each before advancing, then finish
-the fixed generation evaluation. After the panel, follow the cross-size priority above.
+the third pair and the frozen decision. Slot04 context128 bundle3 is complete
+and reviewed:41,881 updates,14,400.032265 training seconds and time-EMA
+CE4.822170971. All120 first outputs are retained. Its paired context256 run is
+still pending, so this endpoint adds no paired conclusion.
+Next run frozen slot05 bundle3, review its execution, then finish the frozen
+three-pair decision, common128 analysis and all144 fixed generation ratings.
+After the panel, follow the cross-size priority above.
 Do not repeat completed prerequisites. Test remains unopened.
 
 ## Historical completed priority — 2026-11-11 Pacific
