@@ -35,6 +35,8 @@ retained outputs, restart, serialization, metadata and failure allowances. The
 conservative total forecast is46.154hours against the frozen54-hour tranche.
 
 The native endpoint improves with depth in bundle1. The depth16 byte contrast
-and primary16-minus-4 interaction remain unresolved. Next, admit fixed slot05,
-depth16 byte bundle1, after live full-panel checks.
+and primary16-minus-4 interaction remain unresolved. Fixed slot05, depth16 byte bundle1,
+is running after live full-panel admission. Its initial sampler prefix matches
+the earlier bundle1 runs exactly. Review at exit, then admit fixed slot06,
+depth8 native bundle2.
 Do not repeat prerequisites or reopen the test.
