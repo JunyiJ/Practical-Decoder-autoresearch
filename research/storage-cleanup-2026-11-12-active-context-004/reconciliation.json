@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-13T03:22:03.344820+00:00",
+  "initial_observed_deficit_bytes": 1389750619,
+  "free_bytes": 19705704448,
+  "target_including_extra_2GiB": 20313353529,
+  "remaining_deficit_bytes": 607649081,
+  "active_written_bytes": 477490085,
+  "research_lock_busy": true,
+  "progress": {
+    "pid": 58223,
+    "slot": 3,
+    "step": 38784,
+    "spent_ns": 13419605793281,
+    "budget_ns": 14400000000000,
+    "loss": 4.597815990447998
+  },
+  "cache_recovery": "cache-completed.json",
+  "pending_exact_manifest": "projection-manifest.json",
+  "projected_recovery_bytes": 3016503296,
+  "reason": "New storage decline exceeds regenerated eligible cache recovery. Read-only audit identifies nine accepted generated proof archives whose downstream projection quality study is terminal no-retry. Pending payload retirement must wait for shared research lock.",
+  "excluded": "Pending updater payloads, application runtimes without verified dependency closure, selected/fresh scientific endpoints, failures, original evidence and active work.",
+  "next_action": "After slot03 completes and releases the lock, execute projection_archives.py execute with process/consumer/hash rechecks, reconcile actual full capacity, review slot03 and proceed to frozen slot04. Do not repeat broad scans while this precise wake condition is pending."
+}

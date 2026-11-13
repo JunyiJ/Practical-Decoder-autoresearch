@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 84266,
-  "next_action": "Let frozen slot03 context128 bundle2 finish, audit its complete execution evidence, then continue slots04/05 unchanged after full remaining-resource checks. Finish the frozen decision, common128 analysis and fixed generation evaluation, then prioritize one evidence-grounded cross-size comparison under GENERAL_RSI_NEXT_CAMPAIGNS.md.",
+  "next_action": "Let frozen slot03 finish unchanged. At the shared-lock gap, execute audited projection-archive recovery004, remeasure complete remaining capacity, and review slot03. Continue slots04/05 with frozen sources, roles, schedules and gates. Finish decision/common128/generation evaluation, then select the authorized cross-size comparison.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T01:42:49.121355+00:00",
+  "updated_at": "2026-11-13T03:22:03.344820+00:00",
   "active_worker_pid": 58223,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Active slot03 headroom restored by exact external-cache cleanup: 680 unopened cache objects, 34926592 allocated bytes removed,49 protected hashes unchanged. Free 20468764672 versus remaining target 20441654094 including extra2GiB and already-written active outputs. See research/storage-cleanup-2026-11-12-active-context-003/cache-completed.json.",
+  "capacity_status": "Active slot03 remains healthy above its 10GiB guard. External cache recovery004 removed 6078464 allocated bytes but extra-headroom deficit remains 607649081 bytes. Nine obsolete generated projection proof archives are exactly audited for 3016503296 allocated bytes; retirement waits for shared research lock after slot03 completion.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -789,5 +789,11 @@
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
   "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/launch-verification.json",
   "post_current_experiment_priority": "Test which findings transfer across model sizes on this Mac mini; current context-length panel finishes unchanged. Authority: human request 2026-11-12 in Review RSI byte model.",
-  "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-003/cache-completed.json"
+  "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-004/reconciliation.json",
+  "pending_capacity_recovery": {
+    "manifest": "research/storage-cleanup-2026-11-12-active-context-004/projection-manifest.json",
+    "command": ".venv/bin/python research/storage-cleanup-2026-11-12-active-context-004/projection_archives.py execute",
+    "wake_condition": "slot03 worker exits and shared research lock becomes free; recheck no consumers and exact hashes before deleting",
+    "projected_bytes": 3016503296
+  }
 }
