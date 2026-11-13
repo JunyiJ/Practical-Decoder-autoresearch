@@ -162,14 +162,15 @@ seed roles/order, within-size rules, direct interaction and multiplicity handlin
 The full forecast is51.226hours including probes, measured generation, completed
 engineering and30% margin, under the prospective54-hour tranche. Full storage
 admission passes with658MB beyond the required12GiB reserve/headroom and all
-projected outputs. Slots00–03, the first fresh depth4 and depth8 pairs, passed
-execution reviews. Byte-minus-native H200CE differences are-0.049465058 and-0.018119530,
-with1.840× and1.648×training time. These are descriptive one-bundle results;
-confirmation and the primary16-minus-4 interaction remain unresolved. Slot04, depth16 native bundle1, also passed execution review with
-H200CE5.064510033 and6259.661training seconds. All ten endpoints and120first
-outputs are retained. Its byte contrast remains unresolved. Fixed slot05,
-depth16 byte bundle1, is running after live full-panel admission. Let it finish
-unchanged, then review and admit fixed slot06, depth8 native bundle2. See
+projected outputs. Slots00–05, the first fresh paired bundle across all three depths, passed
+execution reviews. Byte-minus-native H200CE differences are-0.049465058,
+-0.018119530 and-0.013540404 at depths4/8/16, with1.840×,1.648× and1.441×
+training time. The descriptive16-minus-4 interaction is+0.035924654.
+The first bundle supports dilution of the quality advantage and runtime penalty,
+but the two larger-size gains are below0.02. Three-bundle confirmation and the
+frozen interaction decision remain unresolved. All12endpoints and144first
+outputs are retained. Admit fixed slot06, depth8 native bundle2, after live
+full-panel checks. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 
