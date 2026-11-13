@@ -162,11 +162,12 @@ seed roles/order, within-size rules, direct interaction and multiplicity handlin
 The full forecast is51.226hours including probes, measured generation, completed
 engineering and30% margin, under the prospective54-hour tranche. Full storage
 admission passes with658MB beyond the required12GiB reserve/headroom and all
-projected outputs. Slot00, depth4 native bundle1, completed10,240updates and
-passed execution review. H200CE is5.196423356; both endpoints and24first outputs
-are retained. The byte/native effect remains unresolved. Slot01, depth4 byte
-bundle1, is now running under the shared lock. Let it finish unchanged, then
-review and follow the remaining fixed order. See
+projected outputs. Slots00–01, the first fresh depth4 pair, completed10,240updates each and
+passed execution reviews. H200CE is5.196423356 native and5.146958298 byte, a
+descriptive difference of−0.049465058 with1.840×training time. All four endpoints
+and48first outputs are retained. Confirmation and the cross-size interaction
+remain unresolved. Next launch fixed slot02, depth8 byte bundle1, after live
+admission checks, then review and follow the remaining fixed order. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 

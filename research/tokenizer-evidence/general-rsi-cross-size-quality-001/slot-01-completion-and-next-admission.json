@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-13T15:47:30.015606+00:00",
+  "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
+  "accepted_execution_review_sha256": "1accc7e45bf19a6c6a7dc0c6be9e50a1509480cb382ab35e40ad86cc57cc0f6f",
+  "worker_exit": 0,
+  "process_absent": true,
+  "shared_lock_available": true,
+  "completed_slots": [
+    0,
+    1
+  ],
+  "retained_final_bytes": 358879760,
+  "free_bytes": 21252657152,
+  "remaining_full_requirement_bytes": 20636422622,
+  "margin_bytes": 616234530,
+  "spent_worker_seconds": 10335.392430792097,
+  "conservative_total_seconds_with_remaining_slot_ceilings": 177531.08749062518,
+  "tranche_seconds": 194400,
+  "next_slot": 2,
+  "test_opened": false,
+  "preflight_attempt_01": {
+    "outcome": "failed_closed_before_any_launch_or_record_write",
+    "reason": "Process inventory included the auditing Python process itself, PID99169.",
+    "repair": "Exclude only os.getpid() from Python process inventory; all other Python processes still block admission. No scientific source or execution changed."
+  }
+}

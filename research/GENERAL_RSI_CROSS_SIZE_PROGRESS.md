@@ -1,18 +1,31 @@
 # Cross-size execution progress
 
-Slot00, depth4 native bundle1, completed10,240updates and342EMA snapshots.
-Execution review passed. Synchronized training took3,464.333seconds; the complete
-worker took3,615.742seconds. PeakRSS was1,021,296,640bytes and peakMPS allocation
-2,512,175,104bytes. Both final weights and all24first completions are retained.
+The first fresh depth4 pair, bundle1, completed10,240updates per arm and342EMA
+snapshots. Both execution reviews passed. All four final weights and48first
+completions are retained. Each endpoint covers100,416development targets and
+32,768broader-probe targets. Semantic ratings remain pending.
 
-Final development CE is5.196423356 forH200 and5.200483851 forRAW, on100,416targets.
-Both endpoints also cover all32,768frozen broader-probe targets. This is one
-baseline run, so it provides no byte/native or cross-size quality conclusion.
-The body/composer dilution hypothesis remains unresolved. Keep all fixed roles,
-gates, schedules and scientific comparisons unchanged.
+| Measure | Native slot00 | Byte slot01 |
+| --- | ---: | ---: |
+| H200 development CE | 5.196423356 | 5.146958298 |
+| RAW development CE | 5.200483851 | 5.154076443 |
+| Synchronized training seconds | 3464.333 | 6375.625 |
+| Complete worker seconds | 3615.742 | 6719.651 |
+| Peak RSS bytes | 1021296640 | 1267777536 |
+| Peak MPS bytes | 2512175104 | 3640442880 |
 
-Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
-and `slot-00-completion-and-next-admission.json` in the same panel directory.
-Slot01, depth4 byte bundle1, is now running after full remaining-panel admission
-and the shared-lock check. Its initial sampler prefix matches the paired native
-run exactly. Do not rerun any completed prerequisite or reopen the test.
+The descriptive H200 byte-minus-native difference is-0.049465058, with1.840×
+training time and42.61%fewer parameters. This first pair is consistent with the
+prior equal-token result. It does not establish fresh confirmation or the
+cross-size interaction. The body/composer dilution hypothesis remains unresolved.
+Keep all fixed roles, gates, schedules and comparisons unchanged.
+
+Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`,
+`slot-01/review.json` and `slot-01-completion-and-next-admission.json` in the same
+panel directory. Remaining-panel admission passes:20,636,422,622bytes required,
+21,252,657,152bytes available, including12GiB reserve/headroom and the full retained
+output, restart, serialization, metadata and failure allowances. The conservative
+total forecast is49.314hours against the frozen54-hour tranche.
+
+Next: launch fixed slot02, depth8 byte bundle1, after live admission checks.
+Do not repeat prerequisites or reopen the test.

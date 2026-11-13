@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "READY_NEXT_FROZEN_SLOT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 56568,
-  "next_action": "Let frozen cross-size slot01 depth4 byte bundle1 finish unchanged. At exit verify process/lock/logs, run general_rsi_cross_size_review_v1 for slot1, reconcile and commit evidence. Then admit fixed slot02 depth8 byte bundle1. Keep all sources, roles and scientific criteria frozen.",
+  "active_session": null,
+  "next_action": "Launch frozen slot02 depth8 byte bundle1 after live process/lock/source/full-panel admission checks. Review at exit and continue fixed slot03 depth8 native bundle1. Keep all roles, sources and criteria unchanged.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T13:53:37.732771+00:00",
-  "active_worker_pid": 59720,
+  "updated_at": "2026-11-13T15:47:57.524432+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Cross-size slot00 depth4 native completed10240updates with342EMA snapshots; H200CE5.196423356,RAW5.200483851. Execution, full development/broader target coverage and24first outputs verified. Byte/native quality interaction remains unresolved until paired runs complete.",
+  "latest_learning": "First fresh depth4 pair completed and passed execution review. H200 byte-native CE difference -0.049465058151; byte/native synchronized training time ratio 1.840361. Both arms retain RAW/H200 and24first outputs each. One paired seed is descriptive only; confirmation and cross-size interaction remain unresolved.",
   "phase": "cross_size_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -862,6 +862,19 @@
       "training_seconds": 3464.3331806983333,
       "worker_seconds": 3615.741726000095,
       "review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json",
+      "first_outputs": 24
+    },
+    {
+      "slot": 1,
+      "depth": 4,
+      "arm": "raw_bytes",
+      "bundle": 1,
+      "steps": 10240,
+      "h200_ce": 5.14695829822751,
+      "raw_ce": 5.154076443328158,
+      "training_seconds": 6375.625238290755,
+      "worker_seconds": 6719.650704792002,
+      "review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-01/review.json",
       "first_outputs": 24
     }
   ],
