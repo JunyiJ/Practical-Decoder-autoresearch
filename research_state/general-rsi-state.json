@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CROSS_SIZE_BOUNDARY_PREPARATION",
+  "status": "CROSS_SIZE_IMPLEMENTATION_PENDING",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Rank completed context finding against default byte/native cross-size question. Calculate candidate parameter allocations and qualify only newly required execution shapes before full prospective admission.",
+  "next_action": "Implement isolated fixed-width depth wrapper, verify exact depth4 parity and parameter inventory, then freeze bounded new8/16-depth execution/restart/scoring/timing/memory qualification. Scientific roles and full measured admission remain pending.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T12:10:08.023140+00:00",
+  "updated_at": "2026-11-13T12:13:55.321319+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Longer context improves the complete native recipe at this scale, including a smaller gain at common128. Whether byte quality/runtime tradeoffs or context gains persist with a larger transformer body remains untested.",
+  "latest_hypothesis": "Growing the body dilutes fixed input-parameter savings; byte runtime overhead may shrink while its equal-token quality advantage may persist, vanish or reverse. The completed context effect ranks second because its matched full-horizon three-size test costs at least72 training hours.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -831,5 +831,8 @@
   "context_length_quality_decision": "research/tokenizer-evidence/general-rsi-context-length-quality-001/decision.json",
   "context_length_quality_generation_evaluation": "research/tokenizer-evidence/general-rsi-context-length-quality-001/generation-evaluation/summary.json",
   "context_length_quality_completion_review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/completion-review.json",
-  "context_length_quality_report": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_RESULTS.md"
+  "context_length_quality_report": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_RESULTS.md",
+  "cross_size_boundary": "research/GENERAL_RSI_CROSS_SIZE_BOUNDARY.md",
+  "cross_size_allocation": "research/tokenizer-evidence/general-rsi-cross-size-boundary-001/allocation.json",
+  "selected_cross_size_question": "Existing byte/native equal-token quality, parameter saving and runtime penalty across D256 depths4/8/16"
 }

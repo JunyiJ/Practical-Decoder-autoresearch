@@ -1,0 +1,1350 @@
+{
+  "at": "2026-11-13T12:12:08.176488+00:00",
+  "source_sha256": "2fc25eef5b93495a9101db35985e13aaab7bdd960f095ad1dc172725fbfc6ed4",
+  "input_sha256": {
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-04/result.json": "ecc3e7d090b0e60f9fb6270b2c39a03fc395467c005834fabfd60a17f2b98012",
+    "research_runs/general-rsi-panel-001/slot-04/h200.pt": "5f155c2169af3486bc46afa7d5e21cf90bf580d452c5a78ad676476375af6ebb",
+    "research/tokenizer-evidence/general-rsi-panel-001/slot-05/result.json": "8bb41ade761d231bccfa2098498a19f4a11840458724b6b18191be2628cdfae4",
+    "research_runs/general-rsi-panel-001/slot-05/h200.pt": "4acd09e5ac1408f547f5f54a25063a4d0c172581d16dd942156f939cf5134e89"
+  },
+  "baseline_parameter_inventory": {
+    "native": {
+      "transformer.wte.weight": {
+        "shape": [
+          50257,
+          256
+        ],
+        "elements": 12865792
+      },
+      "transformer.h.0.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.0.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.0.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.0.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.0.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.0.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.0.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.0.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.h.1.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.1.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.1.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.1.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.1.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.1.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.1.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.1.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.h.2.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.2.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.2.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.2.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.2.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.2.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.2.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.2.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.h.3.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.3.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.3.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.3.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.3.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.3.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.3.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.3.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.ln_f.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.ln_f.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "lm_head.weight": {
+        "shape": [
+          50257,
+          256
+        ],
+        "elements": 12865792
+      }
+    },
+    "raw_bytes": {
+      "transformer.h.0.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.0.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.0.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.0.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.0.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.0.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.0.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.0.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.0.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.0.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.h.1.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.1.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.1.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.1.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.1.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.1.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.1.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.1.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.1.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.1.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.h.2.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.2.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.2.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.2.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.2.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.2.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.2.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.2.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.2.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.2.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.h.3.ln1.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.ln2.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.dkv.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.dkv.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.3.attn.uk.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.uk.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.uv.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.uv.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.dq.weight": {
+        "shape": [
+          64,
+          256
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.dq.bias": {
+        "shape": [
+          64
+        ],
+        "elements": 64
+      },
+      "transformer.h.3.attn.uq.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.uq.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.qr.weight": {
+        "shape": [
+          256,
+          64
+        ],
+        "elements": 16384
+      },
+      "transformer.h.3.attn.qr.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.attn.kr.weight": {
+        "shape": [
+          32,
+          256
+        ],
+        "elements": 8192
+      },
+      "transformer.h.3.attn.kr.bias": {
+        "shape": [
+          32
+        ],
+        "elements": 32
+      },
+      "transformer.h.3.attn.out.weight": {
+        "shape": [
+          256,
+          256
+        ],
+        "elements": 65536
+      },
+      "transformer.h.3.attn.out.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.h.3.mlp.linear_gate.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.3.mlp.linear_up.weight": {
+        "shape": [
+          672,
+          256
+        ],
+        "elements": 172032
+      },
+      "transformer.h.3.mlp.linear_down.weight": {
+        "shape": [
+          256,
+          672
+        ],
+        "elements": 172032
+      },
+      "transformer.ln_f.weight": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "transformer.ln_f.bias": {
+        "shape": [
+          256
+        ],
+        "elements": 256
+      },
+      "lm_head.weight": {
+        "shape": [
+          50257,
+          256
+        ],
+        "elements": 12865792
+      },
+      "composer.byte_weight": {
+        "shape": [
+          259,
+          15
+        ],
+        "elements": 3885
+      },
+      "composer.highway_weight": {
+        "shape": [
+          525,
+          525
+        ],
+        "elements": 275625
+      },
+      "composer.highway_bias": {
+        "shape": [
+          525
+        ],
+        "elements": 525
+      },
+      "composer.transform_weight": {
+        "shape": [
+          525,
+          525
+        ],
+        "elements": 275625
+      },
+      "composer.transform_bias": {
+        "shape": [
+          525
+        ],
+        "elements": 525
+      },
+      "composer.projection_weight": {
+        "shape": [
+          256,
+          525
+        ],
+        "elements": 134400
+      },
+      "composer.filters.0": {
+        "shape": [
+          25,
+          15
+        ],
+        "elements": 375
+      },
+      "composer.filters.1": {
+        "shape": [
+          50,
+          30
+        ],
+        "elements": 1500
+      },
+      "composer.filters.2": {
+        "shape": [
+          75,
+          45
+        ],
+        "elements": 3375
+      },
+      "composer.filters.3": {
+        "shape": [
+          100,
+          60
+        ],
+        "elements": 6000
+      },
+      "composer.filters.4": {
+        "shape": [
+          125,
+          75
+        ],
+        "elements": 9375
+      },
+      "composer.filters.5": {
+        "shape": [
+          150,
+          90
+        ],
+        "elements": 13500
+      },
+      "composer.filter_biases.0": {
+        "shape": [
+          25
+        ],
+        "elements": 25
+      },
+      "composer.filter_biases.1": {
+        "shape": [
+          50
+        ],
+        "elements": 50
+      },
+      "composer.filter_biases.2": {
+        "shape": [
+          75
+        ],
+        "elements": 75
+      },
+      "composer.filter_biases.3": {
+        "shape": [
+          100
+        ],
+        "elements": 100
+      },
+      "composer.filter_biases.4": {
+        "shape": [
+          125
+        ],
+        "elements": 125
+      },
+      "composer.filter_biases.5": {
+        "shape": [
+          150
+        ],
+        "elements": 150
+      }
+    }
+  },
+  "per_block_parameters": 690080,
+  "composer_parameters": 725235,
+  "candidate_sizes": [
+    {
+      "width": 256,
+      "depth": 4,
+      "body_parameters": 2760320,
+      "other_parameters": 512,
+      "native_parameters": 28492416,
+      "byte_parameters": 16351859,
+      "native_body_fraction": 0.09687911337529256,
+      "vocabulary_table_fraction": 0.9031029169305965,
+      "parameter_saving_fraction": 0.42609784301899845,
+      "native_fp32_weight_bytes": 113969664,
+      "byte_fp32_weight_bytes": 65407436
+    },
+    {
+      "width": 256,
+      "depth": 8,
+      "body_parameters": 5520640,
+      "other_parameters": 512,
+      "native_parameters": 31252736,
+      "byte_parameters": 19112179,
+      "native_body_fraction": 0.17664501437570138,
+      "vocabulary_table_fraction": 0.823338603058625,
+      "parameter_saving_fraction": 0.3884638132162253,
+      "native_fp32_weight_bytes": 125010944,
+      "byte_fp32_weight_bytes": 76448716
+    },
+    {
+      "width": 256,
+      "depth": 16,
+      "body_parameters": 11041280,
+      "other_parameters": 512,
+      "native_parameters": 36773376,
+      "byte_parameters": 24632819,
+      "native_body_fraction": 0.3002520084095624,
+      "vocabulary_table_fraction": 0.6997340684738872,
+      "parameter_saving_fraction": 0.3301452931599209,
+      "native_fp32_weight_bytes": 147093504,
+      "byte_fp32_weight_bytes": 98531276
+    }
+  ],
+  "planned_confirmation": {
+    "pairs_per_size": 3,
+    "arms": 2,
+    "sizes": 3,
+    "runs": 18,
+    "updates_per_run": 10240,
+    "targets_per_update": 1024,
+    "targets_per_run": 10485760,
+    "all_run_targets": 188743680,
+    "lr_screen_runs": 0,
+    "fixed_recipe_scope": true
+  },
+  "storage_planning_bytes": {
+    "all_36_confirmation_endpoints": 3834266712,
+    "active_restart_and_serialization_overlap": 1342177280,
+    "metadata": 536870912,
+    "engineering_artifacts": 1073741824,
+    "failed_attempt_allowance": 2147483648,
+    "reserve": 10737418240,
+    "extra_headroom": 2147483648
+  },
+  "storage_total_bytes": 21819442264,
+  "free_bytes": 22509068288,
+  "old_reference_max_guard_seconds": {
+    "native": 3790.3040711659705,
+    "raw_bytes": 6975.038965541986
+  },
+  "conservative_depth_linear_envelope_seconds": 293893.86490212724,
+  "initial_tranche_seconds": 129600,
+  "admitted": false,
+  "pending": "New-depth construction/initialization, numerical execution, full restart, scorer, timing/memory and serialization qualification; prospective broader evaluation and interaction contract; complete measured admission.",
+  "test_opened": false
+}

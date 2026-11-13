@@ -142,6 +142,17 @@ local tested range exists. Commit/push substantive source and evidence, update
 state, and continue the next executable item under this priority without asking
 again for authorization already given.
 
+### Selected cross-size question — 2026-11-13
+
+The completed context finding was ranked against the default. Select byte/native
+equal-token transfer first, with candidate D256 depths4/8/16. The body grows4×
+and its native parameter share rises9.69%→30.03%; arithmetic byte savings fall
+42.61%→33.01%. The runtime and quality interactions remain unmeasured.
+`GENERAL_RSI_CROSS_SIZE_BOUNDARY.md` records evidence, contrary results,
+literature, controls and complete preliminary cost. No scientific panel is
+admitted. Next implement the isolated depth wrapper and exact depth4 parity,
+then qualify only new8/16-depth execution and measure both arms under the lock.
+
 ## Current experiment boundary — 2026-11-12 Pacific
 
 The pseudo-repetition continuation panel is complete. All six execution reviews
