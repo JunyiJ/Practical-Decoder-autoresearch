@@ -1,0 +1,192 @@
+{
+  "policy": "dense_matrix_fwd_bwd_plus_muon_v1",
+  "sources": {
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-cross-size-boundary-001/allocation.json": "3416ff4fdcbd3069ee70861c67370bffbc322a70b143ce84d6bf5dbb62f4db7d",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_v1/model.py": "cb5b21e2da1865b8a470aaf91ed1d0a60bce7957d1f0b4a06387f22558469743",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_v1/optimizer.py": "6707ee771c1fc45ec2c0bd42acdd3c69d69ca9b77d3a4001d0d2ad80fcdef23e",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/byte_composer_v2.py": "8e74a52d6bcfff46705caa0b6602fb860e71ab73eaf3c9115f00a343e0014988",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/optim/_muon.py": "c17abbb8af4c935d125b189c38d3cbaec295f1cfd232d2712bdb75e13184b972",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_flops_v1.py": "170b0f9ef2c9b35e93493df4fd210fd4f54241c48dc81cedd37b589a947d4f7b"
+  },
+  "torch_version": "2.14.1",
+  "per_block_matrix_shapes": {
+    "transformer.h.0.attn.dkv.weight": [
+      64,
+      256
+    ],
+    "transformer.h.0.attn.uk.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.uv.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.dq.weight": [
+      64,
+      256
+    ],
+    "transformer.h.0.attn.uq.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.qr.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.kr.weight": [
+      32,
+      256
+    ],
+    "transformer.h.0.attn.out.weight": [
+      256,
+      256
+    ],
+    "transformer.h.0.mlp.linear_gate.weight": [
+      672,
+      256
+    ],
+    "transformer.h.0.mlp.linear_up.weight": [
+      672,
+      256
+    ],
+    "transformer.h.0.mlp.linear_down.weight": [
+      256,
+      672
+    ]
+  },
+  "composer_matrix_shapes": {
+    "composer.highway_weight": [
+      525,
+      525
+    ],
+    "composer.transform_weight": [
+      525,
+      525
+    ],
+    "composer.projection_weight": [
+      256,
+      525
+    ],
+    "composer.filters.0": [
+      25,
+      15
+    ],
+    "composer.filters.1": [
+      50,
+      30
+    ],
+    "composer.filters.2": [
+      75,
+      45
+    ],
+    "composer.filters.3": [
+      100,
+      60
+    ],
+    "composer.filters.4": [
+      125,
+      75
+    ],
+    "composer.filters.5": [
+      150,
+      90
+    ]
+  },
+  "rows": [
+    {
+      "depth": 4,
+      "arm": "native",
+      "forward_matrix_flops": {
+        "body_linear": 5637144576,
+        "attention_dense": 805306368,
+        "output_head": 26349142016,
+        "composer": 0
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 98374778880,
+      "muon_newton_schulz_matrix_flops_per_update": 15184691200,
+      "estimated_accounted_flops_per_update": 113559470080,
+      "estimated_accounted_flops_per_run": 1162848973619200
+    },
+    {
+      "depth": 4,
+      "arm": "raw_bytes",
+      "forward_matrix_flops": {
+        "body_linear": 5637144576,
+        "attention_dense": 805306368,
+        "output_head": 26349142016,
+        "composer": 10220851200
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 129037332480,
+      "muon_newton_schulz_matrix_flops_per_update": 24787275110,
+      "estimated_accounted_flops_per_update": 153824607590,
+      "estimated_accounted_flops_per_run": 1575163981721600
+    },
+    {
+      "depth": 8,
+      "arm": "native",
+      "forward_matrix_flops": {
+        "body_linear": 11274289152,
+        "attention_dense": 1610612736,
+        "output_head": 26349142016,
+        "composer": 0
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 117702131712,
+      "muon_newton_schulz_matrix_flops_per_update": 30369382400,
+      "estimated_accounted_flops_per_update": 148071514112,
+      "estimated_accounted_flops_per_run": 1516252304506880
+    },
+    {
+      "depth": 8,
+      "arm": "raw_bytes",
+      "forward_matrix_flops": {
+        "body_linear": 11274289152,
+        "attention_dense": 1610612736,
+        "output_head": 26349142016,
+        "composer": 10220851200
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 148364685312,
+      "muon_newton_schulz_matrix_flops_per_update": 39971966310,
+      "estimated_accounted_flops_per_update": 188336651622,
+      "estimated_accounted_flops_per_run": 1928567312609280
+    },
+    {
+      "depth": 16,
+      "arm": "native",
+      "forward_matrix_flops": {
+        "body_linear": 22548578304,
+        "attention_dense": 3221225472,
+        "output_head": 26349142016,
+        "composer": 0
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 156356837376,
+      "muon_newton_schulz_matrix_flops_per_update": 60738764800,
+      "estimated_accounted_flops_per_update": 217095602176,
+      "estimated_accounted_flops_per_run": 2223058966282240
+    },
+    {
+      "depth": 16,
+      "arm": "raw_bytes",
+      "forward_matrix_flops": {
+        "body_linear": 22548578304,
+        "attention_dense": 3221225472,
+        "output_head": 26349142016,
+        "composer": 10220851200
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 187019390976,
+      "muon_newton_schulz_matrix_flops_per_update": 70341348710,
+      "estimated_accounted_flops_per_update": 257360739686,
+      "estimated_accounted_flops_per_run": 2635373974384640
+    }
+  ],
+  "assumptions": [
+    "One multiply-add=2FLOPs; forward+two reverse matmuls=3xforward for trainable dense inputs and weights.",
+    "1024targets as8x128; full dense attention scores64wide and values32wide.",
+    "Native input lookup is not a dense vocabulary matmul. Composer processes all1024occurrences at padded130positions.",
+    "Muon5Newton-Schulz steps: each4*m*m*n+2*m*m*m FLOPs after orienting m<=n; internalBF16 unchanged.",
+    "Raw/H200 averaging, norm/activation/bias/softmax/CE/embedding scatter/clipping/AdamW/decay/reductions/copies and data/validation/generation/checkpoint work are uncounted. This is an explicitly partial operator estimate, not total hardware instructions or a6NT proxy.",
+    "Curves use cumulative successful updates times this estimate; failures/replays separately charged. Mac synchronized time includes the uncounted update work."
+  ],
+  "test_opened": false
+}

@@ -1,0 +1,3 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_integration_v1.py\", line 70, in main\n    first=execute(p,0,binding,1,out,weights,engineering_data=TrainScoreCase,pause_at=30)\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_worker_v1.py\", line 50, in execute\n    else:data=engineering_data(ctx);broader=data\n              ~~~~~~~~~~~~~~~~^^^^^\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_pilot_v1.py\", line 33, in __init__\n    self.tokens=data.view.train_data[:259].clone()\n                ^^^^^^^^^\nAttributeError: 'Context' object has no attribute 'view'\n"
+}

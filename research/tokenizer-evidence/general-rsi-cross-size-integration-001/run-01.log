@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_integration_v1.py", line 82, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_integration_v1.py", line 70, in main
+    first=execute(p,0,binding,1,out,weights,engineering_data=TrainScoreCase,pause_at=30)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_worker_v1.py", line 50, in execute
+    else:data=engineering_data(ctx);broader=data
+              ~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_pilot_v1.py", line 33, in __init__
+    self.tokens=data.view.train_data[:259].clone()
+                ^^^^^^^^^
+AttributeError: 'Context' object has no attribute 'view'

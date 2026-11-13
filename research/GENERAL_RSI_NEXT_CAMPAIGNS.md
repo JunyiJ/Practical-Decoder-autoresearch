@@ -145,22 +145,27 @@ again for authorization already given.
 ### Selected cross-size question — 2026-11-13
 
 The completed context finding was ranked against the default. Select byte/native
-equal-token transfer first, with candidate D256 depths4/8/16. The body grows4×
-and its native parameter share rises9.69%→30.03%; arithmetic byte savings fall
-42.61%→33.01%. The runtime and quality interactions remain unmeasured.
+equal-token transfer first, at D256 depths4/8/16. The body grows4× and its native
+parameter share rises9.69%→30.03%; arithmetic byte savings fall42.61%→33.01%.
 `GENERAL_RSI_CROSS_SIZE_BOUNDARY.md` records evidence, contrary results,
-literature, controls and complete preliminary cost. No scientific panel is
-admitted. The isolated wrapper now passes exact CPU depth4 parity and all six
-MPS engineering cells. Four new-depth restart/replays pass with active EMA;
-short-pilot byte/native time ratios fall1.909→1.421. Fresh broader dataset002
-contains16 parents and32,768 targets; its failed first filter remains preserved.
-See `GENERAL_RSI_CROSS_SIZE_ENGINEERING_RESULTS.md`. The measured full forecast
-with30% margin is49.615hours, so the prospective tranche is54hours, before any
-scientific outcomes. Remaining complete storage planning fits with683MB above
-its12GiB reserve/headroom requirement at review. Next freeze fresh scientific
-roles, quality/interaction criteria and FLOP accounting; integrate/qualify only
-the new endpoint loader and serial worker paths, then refresh full admission.
-No worker is active. Do not repeat completed depth qualification.
+literature, controls and cost. ExactCPU depth4 parity and all sixMPS engineering
+cells pass. Four new-depth full-state replays pass with activeEMA. Short-pilot
+byte/native time ratios fall1.909→1.421. This is not sustained runtime evidence.
+Fresh broader dataset002 contains16parents and32,768targets. Its original failed
+filter remains preserved. See `GENERAL_RSI_CROSS_SIZE_ENGINEERING_RESULTS.md`.
+
+The new endpoint/worker integration002 passes after preserving001's pre-training
+data-adapter failure. All24first engineering outputs remain retained. The
+scientific protocol is frozen in `general-rsi-cross-size-quality-001/plan.json`
+and `GENERAL_RSI_CROSS_SIZE_QUALITY_DESIGN.md`:18fresh equal-token runs, fixed
+seed roles/order, within-size rules, direct interaction and multiplicity handling.
+The full forecast is51.226hours including probes, measured generation, completed
+engineering and30% margin, under the prospective54-hour tranche. Full storage
+admission passes with658MB beyond the required12GiB reserve/headroom and all
+projected outputs. Next execute slot00, depth4 native bundle1, then review and
+follow fixed18-slot order. No scientific score is yet available. See
+`GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
+qualification or change bound sources, roles, schedules or criteria.
 
 ## Current experiment boundary — 2026-11-12 Pacific
 
