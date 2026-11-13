@@ -15,7 +15,7 @@
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T01:03:20.247714+00:00",
+  "updated_at": "2026-11-13T01:42:49.121355+00:00",
   "active_worker_pid": 58223,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Transient active slot03 headroom deficit recovered before cache deletion. Audited cleanup then removed 669 unopened cache objects (22171648 allocated bytes), with49 protected hashes unchanged. Afterward free 20489838592 versus full remaining target 20447121864 including extra2GiB and already-written active outputs. See research/storage-cleanup-2026-11-12-active-context-002/reconciliation.json.",
+  "capacity_status": "Active slot03 headroom restored by exact external-cache cleanup: 680 unopened cache objects, 34926592 allocated bytes removed,49 protected hashes unchanged. Free 20468764672 versus remaining target 20441654094 including extra2GiB and already-written active outputs. See research/storage-cleanup-2026-11-12-active-context-003/cache-completed.json.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -789,5 +789,5 @@
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
   "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/launch-verification.json",
   "post_current_experiment_priority": "Test which findings transfer across model sizes on this Mac mini; current context-length panel finishes unchanged. Authority: human request 2026-11-12 in Review RSI byte model.",
-  "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-002/reconciliation.json"
+  "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-003/cache-completed.json"
 }
