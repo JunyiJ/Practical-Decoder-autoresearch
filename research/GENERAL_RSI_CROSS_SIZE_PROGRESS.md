@@ -13,5 +13,6 @@ gates, schedules and scientific comparisons unchanged.
 
 Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
 and `slot-00-completion-and-next-admission.json` in the same panel directory.
-Next execute slot01, depth4 byte bundle1, after the full remaining-panel admission
-and shared-lock check. Do not rerun any completed prerequisite or reopen the test.
+Slot01, depth4 byte bundle1, is now running after full remaining-panel admission
+and the shared-lock check. Its initial sampler prefix matches the paired native
+run exactly. Do not rerun any completed prerequisite or reopen the test.
