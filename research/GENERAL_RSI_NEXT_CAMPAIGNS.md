@@ -165,10 +165,10 @@ admission passes with658MB beyond the required12GiB reserve/headroom and all
 projected outputs. Slots00–03, the first fresh depth4 and depth8 pairs, passed
 execution reviews. Byte-minus-native H200CE differences are-0.049465058 and-0.018119530,
 with1.840× and1.648×training time. These are descriptive one-bundle results;
-confirmation and the primary16-minus-4 interaction remain unresolved. All eight
-endpoints and96first outputs are retained. Slot04, depth16 native
-bundle1, is running after live full-panel admission. Let it finish unchanged,
-then review and admit fixed slot05, depth16 byte bundle1. See
+confirmation and the primary16-minus-4 interaction remain unresolved. Slot04, depth16 native bundle1, also passed execution review with
+H200CE5.064510033 and6259.661training seconds. All ten endpoints and120first
+outputs are retained. Its byte contrast remains unresolved. Admit fixed slot05,
+depth16 byte bundle1, after live full-panel checks. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 
