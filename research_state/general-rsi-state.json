@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "CROSS_SIZE_SLOT_REVIEWED",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 14615,
-  "next_action": "Let frozen cross-size slot00 finish without interruption. At worker exit inspect process/lock/log/result and run general_rsi_cross_size_review_v1 for slot0. Commit completed evidence, then launch fixed slot01 only after its full-panel admission; no duplicate worker or source changes.",
+  "active_session": null,
+  "next_action": "Launch fixed slot01 depth4 raw_bytes bundle1 after source/process/lock/admission recheck. No changes to panel roles, sources, horizon or gates. Review every completed slot before the next.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T12:49:46.979928+00:00",
-  "active_worker_pid": 38197,
+  "updated_at": "2026-11-13T13:52:24.041392+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 0,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "New depth endpoint/worker integration passed:6loader shapes,40updates,exact step30 restart,RAW/H200 loading and24first outputs. Initial data-adapter failure preserved. Fresh18-run protocol frozen, including direct interaction and partial operatorFLOPs. No scientific scores yet.",
+  "latest_learning": "Cross-size slot00 depth4 native completed10240updates with342EMA snapshots; H200CE5.196423356,RAW5.200483851. Execution, full development/broader target coverage and24first outputs verified. Byte/native quality interaction remains unresolved until paired runs complete.",
   "phase": "cross_size_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Cross-size full admission passed: required20995302382bytes, free21653663744bytes, margin658361362bytes, including10GiB reserve plus2GiB extra and complete retained-output/failure forecast.",
+  "capacity_status": "After slot00: free21392105472bytes versus remaining full requirement20767305272bytes; margin624800200bytes. Retained endpoints227997110bytes credited once.12GiB reserve/headroom and all future outputs/failure allowance preserved.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -850,6 +850,20 @@
   "cross_size_panel": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/plan.json",
   "cross_size_panel_sha256": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
   "cross_size_panel_launched": true,
-  "cross_size_completed_slots": [],
+  "cross_size_completed_slots": [
+    {
+      "slot": 0,
+      "depth": 4,
+      "arm": "native",
+      "bundle": 1,
+      "steps": 10240,
+      "h200_ce": 5.196423356378019,
+      "raw_ce": 5.200483851020696,
+      "training_seconds": 3464.3331806983333,
+      "worker_seconds": 3615.741726000095,
+      "review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json",
+      "first_outputs": 24
+    }
+  ],
   "cross_size_launch_verification": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/launch-verification.json"
 }
