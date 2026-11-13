@@ -1,0 +1,183 @@
+{
+  "at": "2026-11-13T12:03:32.981899+00:00",
+  "plan_sha256": "60b4addc99cef4cb2825b792699275ac490cf240ff478a35391a03a55699838e",
+  "analysis_source_sha256": "fb9833daaed4538b9dc0cc520f1b278d1f7a90c9d0405b12454c1be26de7b9fe",
+  "bootstrap_source_sha256": "cb671dd3b137713b418674f81ff91118f41bf9c71ca2c7ab430e759cb7ab12df",
+  "all_six_execution_reviews_bound": true,
+  "pairs": [
+    {
+      "bundle": 1,
+      "short_slot": 0,
+      "long_slot": 1,
+      "time_ema_delta": -0.09795410334645638,
+      "raw_delta": -0.09283000959510712
+    },
+    {
+      "bundle": 2,
+      "short_slot": 3,
+      "long_slot": 2,
+      "time_ema_delta": -0.09526165980574053,
+      "raw_delta": -0.09577627712192704
+    },
+    {
+      "bundle": 3,
+      "short_slot": 4,
+      "long_slot": 5,
+      "time_ema_delta": -0.09391998855196082,
+      "raw_delta": -0.09358109370347911
+    }
+  ],
+  "decision": {
+    "paired_deltas": [
+      -0.09795410334645664,
+      -0.09526165980573992,
+      -0.09391998855196024
+    ],
+    "mean_delta_256_minus_128": -0.09571191723471893,
+    "bootstrap_upper_99": -0.08390852134650154,
+    "source_deltas": {
+      "fineweb_edu": -0.09065741898395376,
+      "wikipedia": -0.11595661628974763
+    },
+    "gates": {
+      "all_three_deltas_negative": true,
+      "mean_threshold": true,
+      "bootstrap_upper_negative": true,
+      "source_guard": true
+    },
+    "context256_accepted": true,
+    "retained_recipe": "context256"
+  },
+  "common128": {
+    "raw": {
+      "pairs": [
+        {
+          "control_slot": 0,
+          "candidate_slot": 1,
+          "control_ce": 4.8552666541986795,
+          "candidate_ce": 4.833804787954006,
+          "delta": -0.021461866244673722
+        },
+        {
+          "control_slot": 3,
+          "candidate_slot": 2,
+          "control_ce": 4.843682226967733,
+          "candidate_ce": 4.819383876673769,
+          "delta": -0.024298350293963544
+        },
+        {
+          "control_slot": 4,
+          "candidate_slot": 5,
+          "control_ce": 4.835318737072952,
+          "candidate_ce": 4.816159221764386,
+          "delta": -0.019159515308565744
+        }
+      ],
+      "mean_delta": -0.021639910615734337,
+      "scope": "Fixed secondary contrast; cannot rescue primary gate or isolate causal mechanisms."
+    },
+    "time_ema": {
+      "pairs": [
+        {
+          "control_slot": 0,
+          "candidate_slot": 1,
+          "control_ce": 4.844975684690298,
+          "candidate_ce": 4.819585754949634,
+          "delta": -0.025389929740663675
+        },
+        {
+          "control_slot": 3,
+          "candidate_slot": 2,
+          "control_ce": 4.827909080012106,
+          "candidate_ce": 4.8052040939442815,
+          "delta": -0.022704986067824784
+        },
+        {
+          "control_slot": 4,
+          "candidate_slot": 5,
+          "control_ce": 4.822170970825668,
+          "candidate_ce": 4.803603085807016,
+          "delta": -0.01856788501865214
+        }
+      ],
+      "mean_delta": -0.022220933609046867,
+      "scope": "Fixed secondary contrast; cannot rescue primary gate or isolate causal mechanisms."
+    }
+  },
+  "mean_ce": {
+    "context128": {
+      "raw": 4.844755872746455,
+      "time_ema": 4.831685245176025
+    },
+    "context256": {
+      "raw": 4.750693412606284,
+      "time_ema": 4.735973327941305
+    }
+  },
+  "bootstrap": {
+    "seed": 62111211010099,
+    "replicates": 10000,
+    "method": "PCG64 resample108documentIDs; average paired seed loss sums before resampling; sampled target-count denominator; linear99th percentile upper<0",
+    "upper_quantile": 0.99,
+    "scope": "Conditional on108documents and three paired seeds; not population-seed confidence."
+  },
+  "guard_seconds_by_slot": {
+    "0": 14781.356816292042,
+    "1": 14815.850384708028,
+    "2": 14810.578470291803,
+    "3": 14790.021144167054,
+    "4": 14788.658345333999,
+    "5": 14817.059926624876
+  },
+  "total_guard_seconds": 88803.5250874178,
+  "training_seconds_by_slot": {
+    "0": 14400.229956557,
+    "1": 14400.247076165,
+    "2": 14400.252614969,
+    "3": 14400.227427476,
+    "4": 14400.032264558,
+    "5": 14400.268615462
+  },
+  "updates_by_slot": {
+    "0": 42152,
+    "1": 40907,
+    "2": 41557,
+    "3": 41582,
+    "4": 41881,
+    "5": 41617
+  },
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-00/result.json": "6e45bcb97d97b7df14dbcb569e0f3e4447620d4fdf2bc262fbff4e01b4b6ac99",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-00/review.json": "9f9f94bef5f66988cae82abb3c2d38403139c4698e1904355b69d7aab163b7ce",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-00/raw-validation.json": "156ba55aa5a70a6cac7b10e27be8df8f715a29a59a3db636c37da23324ea42be",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-00/time_ema-validation.json": "9af8fc27e50c37c122e84d290028be7b37633f24c32f96b8e724aedfeeecf39d",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/result.json": "527219ce2929ce55ba8ff15d1fcb9fbc73a2b34288f94e1891905d2c42567ba3",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/review.json": "75fe84302498398dd0c633c4fa038350fc37c8760f5571d7b70a369ff83f7565",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/raw-validation.json": "09ca23c2e707eb2a267e41b0509502971bce0ea11da58f6740d3f53cfdf4da12",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/time_ema-validation.json": "86a957654aed35ed0151554fd7afe210fad620cebc2d68c45025096fca6d2391",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-02/result.json": "005980d179944a752da9d653f6d29bfa61d9d00fae3071c8085bd4ba116bf41c",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-02/review.json": "71442e1e33aca55d9af67e7e59dc78b9d914a69ce06b51b0a4ece3637db3af23",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-02/raw-validation.json": "98dfc3f7be3588e4243d973eeb59c78fdb34b12e6207e5a3a65f981ab79c8de8",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-02/time_ema-validation.json": "9394325c609d6e4a408951c135a1e6d42fc0d8175204f9a91d5cec80351090a8",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/result.json": "053d2c9e7b2517e02dbcf0c24629b35cc0785c163c77c99673ec82fc81e7826b",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/review.json": "d5ccfb6c90863857ec941ead7adcb4dfdc4db694c2416f7dcbf607c92d33caef",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/raw-validation.json": "38d73fed77debf3a70edc42ce6419a8d9a05cc94e87f53ab75db8ab96460e752",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-03/time_ema-validation.json": "00f158ae8f692a32206b88363394f1548313f25aba2b10a0c9ed8ff5b008a045",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-04/result.json": "15baf140287bf4fd9854d0412c8294d766c1cf70b052bc8e4a4689a091c836be",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-04/review.json": "1eb328e2263c3672ffc914fd9147155eea0eb49efdcb49e0589e8133f3c6326d",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-04/raw-validation.json": "163a2baee87f71e921d63c9da8d09c2eca578de9343fdc5351fd1689ffc98e01",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-04/time_ema-validation.json": "ea7c48891300eb8842d8224ed581ad39730262430c81d26eaaabca2f5f13d7db",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/result.json": "d641d25c29c0a86d5b6f5d1a291ce6ea377e8132254bbe36bae5ad5e53d569e5",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/review.json": "014653bd5c6114c93f0a394d79735748f5ede0eee7e52cefcd84706777bbeb7d",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/raw-validation.json": "e1a2ef441d1c080946be1ce9c52f2e2efc57bb24aa87346230f08719035bd777",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/time_ema-validation.json": "283a3154dc492d693fc0c5cb88ea7361fd54f171e41a46b97111177bbd53166c",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/raw-common128-validation.json": "34cb12674fa4cdfcf2d7c5176b87d462713df1961b3f118061cda9f18caab102",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-02/raw-common128-validation.json": "3a1955fbf36b995a66cb963cdae8b4347ef1b2281b1070e1b8ed25bbfa3cfb78",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/raw-common128-validation.json": "01b9cceb3014efbe01c4c02d4ebac61a379790bfd3d0ac4c9d7afe309d4bfb1c",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-01/time_ema-common128-validation.json": "80f14ea41424e542e8abefd3e990c8365b4e2741677d2452ffc9c2330263e031",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-02/time_ema-common128-validation.json": "e114d181cace1351d0e387b1bca72dee3821566b736aead350f252f9e53df47f",
+    "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/time_ema-common128-validation.json": "7d63379357c6fd026b384b0b95a6ba125abef3e41a2f9e43bde60c6e2d837b4a"
+  },
+  "scope": "Native complete context128/context256 recipes at equal14400-second training time. RAW and common128 secondary. No isolated training-context effect, long-prompt ability or size-transfer claim.",
+  "test_opened": false
+}

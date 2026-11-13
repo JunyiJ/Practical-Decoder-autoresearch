@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "CROSS_SIZE_BOUNDARY_PREPARATION",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 42528,
-  "next_action": "Let frozen slot05 context256 bundle3 finish without interruption. Review execution, then complete the frozen three-pair decision, common128 analysis and all144 fixed first-generation ratings before selecting one evidence-grounded cross-size comparison.",
+  "active_session": null,
+  "next_action": "Rank completed context finding against default byte/native cross-size question. Calculate candidate parameter allocations and qualify only newly required execution shapes before full prospective admission.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T07:54:39.160972+00:00",
-  "active_worker_pid": 42604,
+  "updated_at": "2026-11-13T12:10:08.023140+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 5,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Five of six context runs passed execution review. Slot04 context128 bundle3:41881 updates, time-EMA CE4.822170970826,24 retained first outputs. The first two paired benefits remain provisional; third-pair comparison awaits slot05. All120 first outputs are retained.",
+  "latest_learning": "All six context runs pass. Context256 accepted: mean CE difference -0.095711917, 99% upper -0.083908521; common128 mean -0.022220934. All144 first outputs rated; generation remains mixed and repetitive.",
   "phase": "context_length_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -542,7 +542,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Both completed pairs support a benefit from longer training context at native and common128 evaluation. The common128 gains suggest a benefit beyond added evaluation prefix, without a causal decomposition or confirmed panel claim. Finish the third fresh pair under unchanged gates.",
+  "latest_hypothesis": "Longer context improves the complete native recipe at this scale, including a smaller gain at common128. Whether byte quality/runtime tradeoffs or context gains persist with a larger transformer body remains untested.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -806,6 +806,19 @@
       "raw_ce": 4.835318737072952,
       "first_generations": 24,
       "review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-04/review.json"
+    },
+    {
+      "slot": 5,
+      "arm": "context256",
+      "bundle": 3,
+      "steps": 41617,
+      "training_seconds": 14400.268615462,
+      "worker_seconds": 14817.059926624876,
+      "time_ema_ce": 4.728250982273707,
+      "raw_ce": 4.741737643369473,
+      "common128_time_ema_ce": 4.803603085807016,
+      "first_generations": 24,
+      "review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/review.json"
     }
   ],
   "context_length_quality_design": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_DESIGN.md",
@@ -813,5 +826,10 @@
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
   "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/launch-verification.json",
   "post_current_experiment_priority": "Test which findings transfer across model sizes on this Mac mini; current context-length panel finishes unchanged. Authority: human request 2026-11-12 in Review RSI byte model.",
-  "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-004/projection-completed.json"
+  "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-004/projection-completed.json",
+  "selected_native_context": 256,
+  "context_length_quality_decision": "research/tokenizer-evidence/general-rsi-context-length-quality-001/decision.json",
+  "context_length_quality_generation_evaluation": "research/tokenizer-evidence/general-rsi-context-length-quality-001/generation-evaluation/summary.json",
+  "context_length_quality_completion_review": "research/tokenizer-evidence/general-rsi-context-length-quality-001/completion-review.json",
+  "context_length_quality_report": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_RESULTS.md"
 }

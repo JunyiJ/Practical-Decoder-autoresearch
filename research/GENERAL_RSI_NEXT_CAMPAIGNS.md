@@ -46,9 +46,10 @@ new accelerator qualification waits for the shared worker lock.
   `GENERAL_RSI_BATCH_AVERAGING_RESULTS.md`. Do not make more local precision,
   repetition or continuation sweeps the next default activity.
 - Added prefix96 versus48 improves common-target CE by0.014214nats/token in the
-  retained models (`GENERAL_RSI_CONTEXT_PREFIX_RESULTS.md`). The ongoing128/256
-  panel will determine whether that rationale produces a complete-recipe gain.
-  Its final outcome must be included before selecting the next comparison.
+  retained models (`GENERAL_RSI_CONTEXT_PREFIX_RESULTS.md`). The completed128/256
+  panel accepts256: mean native-context CE difference−0.095711917 and common128
+  difference−0.022220934. Generation remains weak. See
+  `GENERAL_RSI_CONTEXT_LENGTH_QUALITY_RESULTS.md`.
 
 Default first hypothesis: byte/native quality and cost tradeoffs depend on the
 ratio of vocabulary/composer work to transformer-body work. At fixed vocabulary,
@@ -234,31 +235,17 @@ source guard. Quality beyond128 remains untested. Capacity009 recovered
 6,727,436,212 bytes from24 obsolete engineering payloads and verified705 protected
 files unchanged. Full admission includes all retained outputs, serialization
 overlap, metadata, failure allowance,10GiB reserve and2GiB extra headroom.
-Slot00 context128 is complete and independently reviewed:42,152 updates,
-14,400.229957 training seconds, time-EMA CE4.844975685 and24 first outputs.
-All100,416 target IDs, score aggregates, schedule/EMA counts and retained
-endpoints pass. Paired slot01 context256 is also complete and reviewed:40,907
-updates,14,400.247076 training seconds, time-EMA CE4.747021581 and24 first outputs.
-The first native-context pair improves by0.097954103nats/token, with both sources
-improving. At common128 evaluation, the256 model has CE4.819585755, an improvement
-of0.025389930 over the128 control. These are descriptive one-pair findings, not
-a confirmed gain or causal decomposition. See
-`tokenizer-evidence/general-rsi-context-length-quality-001/pair-01-descriptive.json`.
-Slot02 context256 bundle2 is complete and reviewed:41,557 updates,
-14,400.252615 training seconds, time-EMA CE4.732647420 and common128 CE4.805204094.
-All24 first outputs are retained. Paired slot03 context128 bundle2 is complete
-and reviewed:41,582 updates,14,400.227427 training seconds and time-EMA
-CE4.827909080. The second native-context pair improves by0.095261660nats/token,
-with both sources improving. At common128, the256 model improves by0.022704986.
-Both completed pairs support the context hypothesis, but adoption still awaits
-the third pair and the frozen decision. Slot04 context128 bundle3 is complete
-and reviewed:41,881 updates,14,400.032265 training seconds and time-EMA
-CE4.822170971. All120 first outputs are retained. Its paired context256 run is
-still pending, so this endpoint adds no paired conclusion.
-Next run frozen slot05 bundle3, review its execution, then finish the frozen
-three-pair decision, common128 analysis and all144 fixed generation ratings.
-After the panel, follow the cross-size priority above.
-Do not repeat completed prerequisites. Test remains unopened.
+All six runs and execution reviews are complete. Context256 passes the frozen
+CE gate: paired differences−0.097954103,−0.095261660,−0.093919989; mean−0.095711917,
+99% upper−0.083908521. Both source means improve. Common128 EMA mean difference
+is−0.022220934. All144 first outputs received identity-hidden agent ratings;
+generation results are mixed and greedy terminal loops rise14/36→16/36.
+See `GENERAL_RSI_CONTEXT_LENGTH_QUALITY_RESULTS.md` and the panel's
+`completion-review.json`. All12 final weights and144 first outputs remain
+retained. The original test is unopened. No worker is active at panel closure.
+Next rank this completed finding against byte/native and select one cross-size
+comparison under the latest priority above. No scientific cross-size training
+is admitted yet. Do not repeat completed prerequisites.
 
 ## Historical completed priority — 2026-11-11 Pacific
 

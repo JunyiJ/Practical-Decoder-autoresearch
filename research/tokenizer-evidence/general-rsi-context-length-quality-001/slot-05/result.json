@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "binding": "60b4addc99cef4cb2825b792699275ac490cf240ff478a35391a03a55699838e",
+  "slot": {
+    "slot": 5,
+    "phase": "confirmation",
+    "arm": "context256",
+    "context": 256,
+    "bundle": 3,
+    "lr": 0.0025,
+    "budget_ns": 14400000000000,
+    "roles": {
+      "native_initializer": 62111211010031,
+      "composer_initializer": 62111211010032,
+      "train_sampler": 62111211010033,
+      "validation_sampler": 62111211010034
+    },
+    "timeout_seconds": 22800
+  },
+  "steps": 41617,
+  "training_ns": 14400268615462,
+  "overshoot_ns": 268615462,
+  "snapshots": 13806,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 244.54455571295694,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-quality-001/slot-05/raw.pt",
+        "size": 113998811,
+        "sha256": "4e8214450ba1b142500dd0bce8e61bebbb870183e04cd7395435812e4b0bc991"
+      },
+      "ce": 4.741737643369473,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "loss_sum": 380427.8063280709,
+          "ce": 4.734397868532629
+        },
+        "wikipedia": {
+          "count": 20062,
+          "loss_sum": 95718.52086851816,
+          "ce": 4.771135523303666
+        }
+      },
+      "score_seconds": 14.707831332925707,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-context-length-quality-001/slot-05/time_ema.pt",
+        "size": 113998811,
+        "sha256": "29f3485f096d388fa46896d7a883b0a0fd6327fbe8aa69eb5806a3a6663de469"
+      },
+      "ce": 4.728250982273707,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "loss_sum": 379323.2044742754,
+          "ce": 4.720651174481363
+        },
+        "wikipedia": {
+          "count": 20062,
+          "loss_sum": 95468.84616172116,
+          "ce": 4.758690367945427
+        }
+      },
+      "score_seconds": 14.29797724983655,
+      "generation_seconds": 63.065247874939814
+    }
+  ],
+  "test_opened": false
+}
