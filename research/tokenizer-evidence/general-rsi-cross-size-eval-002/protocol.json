@@ -1,0 +1,34 @@
+{
+  "kind": "cross_size_fresh_parent_eval_v2",
+  "at": "2026-11-13T12:26:25.650881+00:00",
+  "sources": {
+    "research/general_rsi_cross_size_eval_data_v2.py": "9d177e6e208bd6dcda0167f389c2ce1e9ceefd555737d44aa3bd293bc607de95",
+    "research/general_rsi_transfer_data_v1.py": "3a14654e09792942861f34fdc4e400b34400269b7ae2b51eaf3b4743831ed1e9",
+    "research/tokenizer-evidence/general-rsi-transfer-001/protocol.json": "cf798226383b22b0bf115d5cea851438b19cddb01eda330f99f88dbc3bb61b89",
+    "research/tokenizer-evidence/general-rsi-transfer-001/acquisition.jsonl": "6cdaaed072874400b485c530e629c6ce6a5fa5af8711b5757dd15e2b7708ecf6",
+    "data/raw/rsi-transfer-001/index.json": "2bc409fced24c8ef74bedcdd712681acccd132e62edc2c4f5b0dca01883db078",
+    "research/tokenizer-evidence/general-rsi-transfer-001/overlap-index.json": "654072e5cab7aec3da24fb0eccab85ac4e4d921874db89906eefcf2644b98894",
+    "research/tokenizer-evidence/general-rsi-transfer-preparation-001/pg19_validation_objects.json": "74da1221dc4ecf23c1d7be9634cd07d6aded440bf5f96a5f6b4dc7fd55d088a0",
+    "research/tokenizer-evidence/general-rsi-transfer-preparation-001/cpython-library-tree.json": "68d9aaae0b040ac844d950cc3e07101588cd60229d524df38493414654055a79"
+  },
+  "selection_seed": 62111312020201,
+  "roles_audit": "Inherited selection seed from rejected dataset001; no seed change or model scores",
+  "domains": [
+    "pg19_books",
+    "python_library_prose"
+  ],
+  "documents_per_domain": 8,
+  "tokens_per_document": 2049,
+  "targets_per_domain": 16384,
+  "tokenizer": "tiktoken gpt2 encode_ordinary",
+  "tokenizer_version": "0.14.0",
+  "parent_exclusion": "Exclude all64 parents from old transfer data/index.json, regardless of old scores; no model scores read.",
+  "repair_of": "research/tokenizer-evidence/general-rsi-cross-size-eval-001/failure-01.json",
+  "python_preprocessing": "Split blank-line paragraphs and strip line indentation. Exclude directive/prompt/table starts. Retain text inside Sphinx roles, inline double-backtick literals and emphasis. Require at least200 characters, alphabetic first character, sentence punctuation at end, alphabetic+whitespace ratio at least.85; reject remaining markup. Join paragraphs with blank lines. Fixed2049-token windows and8 parents/domain unchanged.",
+  "selection": "Domains in listed order. Sort remaining parents by SHA256(seed newline domain newline original source name), name tie-break. Deterministic2049-token window at hash(... newline window) modulo eligible offsets. No EOT added.",
+  "dedup": "Reject any32-token exact BLAKE2b128 span matching original train/val within-document index or any previously selected excerpt in either domain. No alternative window after rejection. Original test never consulted.",
+  "underfill": "Reject whole dataset if either domain lacks8 accepted fresh parents. No model scoring before complete fixed manifest.",
+  "limits": "Exact32-token overlap only; paraphrases/shorter overlaps remain possible. PG19 historical books and mechanically filtered Python prose are narrow domain probes. Filtered paragraph joins are artificial. Existing source pools were selected historically, but these parents have not entered prior model evaluation.",
+  "model_scores_used": 0,
+  "test_opened": false
+}

@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "CROSS_SIZE_IMPLEMENTATION_PENDING",
+  "status": "CROSS_SIZE_PANEL_PREPARATION",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Implement isolated fixed-width depth wrapper, verify exact depth4 parity and parameter inventory, then freeze bounded new8/16-depth execution/restart/scoring/timing/memory qualification. Scientific roles and full measured admission remain pending.",
+  "next_action": "Freeze fresh scientific seed roles, within-size and interaction criteria, FLOP accounting and dataset002 bindings. Integrate/qualify only new endpoint loading and serial worker paths; refresh full18-run admission under prospective54h tranche. Do not repeat completed depth qualification.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T12:13:55.321319+00:00",
+  "updated_at": "2026-11-13T12:30:27.940526+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All six context runs pass. Context256 accepted: mean CE difference -0.095711917, 99% upper -0.083908521; common128 mean -0.022220934. All144 first outputs rated; generation remains mixed and repetitive.",
+  "latest_learning": "CPU depth4 parity and all6 MPS engineering cells pass;4 new-depth full-state restart/replays exact with active EMA.240 MPS updates; peakRSS1.898GB/MPS4.119GB. Byte/native short-pilot time ratio falls1.909 to1.421. Fresh16-parent broader evaluation built after preserving and repairing initial filter underfill. No scientific quality scores yet.",
   "phase": "context_length_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -834,5 +834,13 @@
   "context_length_quality_report": "research/GENERAL_RSI_CONTEXT_LENGTH_QUALITY_RESULTS.md",
   "cross_size_boundary": "research/GENERAL_RSI_CROSS_SIZE_BOUNDARY.md",
   "cross_size_allocation": "research/tokenizer-evidence/general-rsi-cross-size-boundary-001/allocation.json",
-  "selected_cross_size_question": "Existing byte/native equal-token quality, parameter saving and runtime penalty across D256 depths4/8/16"
+  "selected_cross_size_question": "Existing byte/native equal-token quality, parameter saving and runtime penalty across D256 depths4/8/16",
+  "cross_size_cpu_fixture": "research/tokenizer-evidence/general-rsi-cross-size-fixture-001/attempt-01/result.json",
+  "cross_size_pilot": "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/plan.json",
+  "cross_size_pilot_sha256": "7c23912ba0c2dfe52daa334d4d56e3f905f6446dab6168e309909ca090d0ca02",
+  "cross_size_engineering_review": "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/completion-review.json",
+  "cross_size_engineering_report": "research/GENERAL_RSI_CROSS_SIZE_ENGINEERING_RESULTS.md",
+  "cross_size_broader_eval_failure": "research/tokenizer-evidence/general-rsi-cross-size-eval-001/failure-01.json",
+  "cross_size_broader_eval": "research/tokenizer-evidence/general-rsi-cross-size-eval-002/dataset.json",
+  "cross_size_prospective_tranche_seconds": 194400
 }

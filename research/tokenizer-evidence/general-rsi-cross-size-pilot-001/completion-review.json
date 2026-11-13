@@ -1,0 +1,111 @@
+{
+  "at": "2026-11-13T12:29:07.494459+00:00",
+  "accepted_engineering": true,
+  "source_sha256": "aa425e9f815c90e28ff8a35033fd28e85504852a39af9291e8c67daab65c5494",
+  "sources_verified": 5099,
+  "cpu_depth4_parity_passed": true,
+  "new_depths": [
+    8,
+    16
+  ],
+  "all_four_new_depth_arm_restart_replays_exact": true,
+  "all_six_training_only_scorer_checks_pass": true,
+  "optimizer_updates": 240,
+  "peak_rss_bytes": 1898151936,
+  "peak_mps_bytes": 4118593536,
+  "retained_endpoint_bytes": 626847232,
+  "retained_endpoints_hash_verified": 6,
+  "exact_transient_prefixes_retired": 4,
+  "timing": [
+    {
+      "depth": 4,
+      "arm": "native",
+      "median_seconds": 0.33043158310465515,
+      "p95_seconds": 0.3841142293997109,
+      "three_run_training_forecast_seconds": 11799.989127159119
+    },
+    {
+      "depth": 4,
+      "arm": "raw_bytes",
+      "median_seconds": 0.6308410000056028,
+      "p95_seconds": 0.6780806205701082,
+      "three_run_training_forecast_seconds": 20830.636663913723
+    },
+    {
+      "depth": 8,
+      "arm": "native",
+      "median_seconds": 0.42723025009036064,
+      "p95_seconds": 0.47262848760001364,
+      "three_run_training_forecast_seconds": 14519.147139072418
+    },
+    {
+      "depth": 8,
+      "arm": "raw_bytes",
+      "median_seconds": 0.7389560420997441,
+      "p95_seconds": 0.7953554962063208,
+      "three_run_training_forecast_seconds": 24433.320843458176
+    },
+    {
+      "depth": 16,
+      "arm": "native",
+      "median_seconds": 0.6161614588927478,
+      "p95_seconds": 0.6518109166761861,
+      "three_run_training_forecast_seconds": 20023.631360292435
+    },
+    {
+      "depth": 16,
+      "arm": "raw_bytes",
+      "median_seconds": 0.8753736668732017,
+      "p95_seconds": 0.9248233659425751,
+      "three_run_training_forecast_seconds": 28410.573801755905
+    }
+  ],
+  "forecast_seconds_before_margin": {
+    "training": 120017.29893565178,
+    "scoring": 12049.177376982083,
+    "generation": 1728,
+    "checkpoint_and_replay": 3600
+  },
+  "forecast_with_30_percent_margin_seconds": 178612.81920642403,
+  "prospective_tranche_seconds": 194400,
+  "tranche_revision_reason": "Measured full18-run forecast exceeds initial36h.54h covers49.615h forecast before scientific outcomes; no run/seed shortened or dropped.",
+  "storage_remaining_planning_bytes": 21192595032,
+  "free_bytes": 21875994624,
+  "storage_remaining_planning_fits": true,
+  "shared_lock_available": true,
+  "worker_exit_verified": "exec session23415 exit0; process inspection found no research worker",
+  "evidence_sha256": {
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/plan.json": "7c23912ba0c2dfe52daa334d4d56e3f905f6446dab6168e309909ca090d0ca02",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/result.json": "a9b7e36defa9a411f69350114527296f78985ef46c441d1e0443a6d92fea5714",
+    "research/tokenizer-evidence/general-rsi-cross-size-fixture-001/attempt-01/result.json": "cfdc501fe918384d221a8bac753f617f7109607dad8c00525cd2afa7776b1b8e",
+    "research/tokenizer-evidence/general-rsi-cross-size-fixture-001/attempt-01/guard.json": "9ce8de0a7e78e782c23103776533d34fdc736e2a67e7b278e8448a92b1338d25",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d4-native/review.json": "4b2198732be63b2af892841595d3f2b9bef9db31df399de3cb151f96d04d4f1a",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d4-native/guard.json": "762af66df924f317f5f0fade472f776c206670e459ae2c9580647edea6b9989e",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d4-native/updates.jsonl": "c0e10a29132996656843378a36e5222a64bcde631f15adfc753332a277ac554f",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d4-raw_bytes/review.json": "e506810cfdb95e1bd2b5599d18d682e59ab58321ecf457bc5d438b6c9d9d6bf7",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d4-raw_bytes/guard.json": "4d4459a87dbdc0fdc1424f218cc1f7aae15aca48217b395ebb5c44439a3e4cff",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d4-raw_bytes/updates.jsonl": "30f75d45661f7ea5562e0cad1abc5c3c167f0f5b2f181a05ae00d47009a9ec52",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-native/review.json": "7a95ef61dfb928a9942e84fd56eafc795ad6455e7ade829d352b6c49eba521d0",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-native/guard.json": "c457f298f2fcc6a6bb708025e87c47f3548e7933bb2a17a4d93d369e47306a3d",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-native/updates.jsonl": "69e35b37be1b7a0ae863052b5d47606213da7a86250eec25ce8ee1b7e49a0b46",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-native/replay.jsonl": "983453a05f511ae1f9095cb5d93c7b96aed6bd2e64262bc9b9460711373a1c0f",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-raw_bytes/review.json": "268d553f0da85c73ce6496c15fd6588ac00e8a8cb065f55fb10d187db56ebf03",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-raw_bytes/guard.json": "87a97d937a56bbcf5b9301bee4a471ad6c3cc0c826787cf4160a313fb4ef29b7",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-raw_bytes/updates.jsonl": "8f8fe324675f751d94a3fe855cb12f4893f6a277fa721fde63a1818a00716d52",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d8-raw_bytes/replay.jsonl": "7e9600aec54a619d1c06c95ecb91f389b97c7eafb082960f86b0e1c117205011",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-native/review.json": "733a4b9f03301e52435716be9e4a146d3c2fab8d0bdf4031f7c3d962ef01c2e1",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-native/guard.json": "f8e9329bc9a1ccb373d6fb6849efcfa4d2499412c31f3b3680d264842381085a",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-native/updates.jsonl": "218db25c5ae7599a79d7eada6cedfcf49a8f5798ee30f7edf4e6070012f69ecd",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-native/replay.jsonl": "b6a38f414ced85887bf257db2572bb54ffa4f0efa9ccf2314be2d9c6665fbd53",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-raw_bytes/review.json": "2e446255670ab08db8e2e75f1f88a039ec9fe37eda34624c850d1f553139ba7f",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-raw_bytes/guard.json": "18d31629ccc247e2792548e0c4e72e7848b6e8986472dff139697edbfee8adfb",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-raw_bytes/updates.jsonl": "e438da519d867e4bb298189e4b7c735e5ffe0783206654b87dfd8327c80ab8bd",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/d16-raw_bytes/replay.jsonl": "0217ef959641fdb8eccd9d7fa6074cf861778bfa5c9d0ac67c205aeb9a804e7d",
+    "research/tokenizer-evidence/general-rsi-cross-size-pilot-001/attempt-01/deletion-journal.jsonl": "71ad5a1fec641aad81829cdb0bb8ae7bc7ead6299fd88f10b96b4e8b74c913d4",
+    "research/tokenizer-evidence/general-rsi-cross-size-eval-002/dataset.json": "d31cb453eb1126e16d5d4a6e9094823698324fb0484b085927693e523d6996c0",
+    "research/tokenizer-evidence/general-rsi-cross-size-eval-002/protocol.json": "63e237784a3ce826340f94f6793cf0221a89a9dfdb0dc52273d30d9404886887"
+  },
+  "scientific_training_admitted": false,
+  "next_required": "Freeze fresh scientific roles, interaction/quality criteria, FLOP accounting and broader-evaluation bindings. Integrate/qualify only new endpoint loader and complete serial worker paths; refresh complete resource admission.",
+  "test_opened": false
+}

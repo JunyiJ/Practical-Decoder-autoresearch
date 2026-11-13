@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_eval_data_v1.py", line 76, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_eval_data_v1.py", line 75, in main
+    fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);build()
+                                                  ~~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_cross_size_eval_data_v1.py", line 64, in build
+    put(OUT/(domain+'-selection.json'),[r for r in decisions if r['domain']==domain]);assert accepted==p['documents_per_domain'],f'underfilled {domain}: {accepted}'
+                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: underfilled python_library_prose: 0
