@@ -36,5 +36,7 @@ available. This includes12GiB reserve/headroom and all retained outputs, restart
 serialization, metadata and failure allowances. The conservative total forecast
 is48.073hours against the frozen54-hour tranche.
 
-Next: launch fixed slot03, depth8 native bundle1, after live admission checks.
+Slot03, depth8 native bundle1, is running after live full-panel admission. Its
+initial sampler prefix matches the paired byte run exactly. Review at exit,
+then admit fixed slot04, depth16 native bundle1.
 Do not repeat prerequisites or reopen the test.

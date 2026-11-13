@@ -168,8 +168,9 @@ descriptive difference of−0.049465058 with1.840×training time. All four endpo
 and48first outputs are retained. Confirmation and the cross-size interaction
 remain unresolved. Slot02, depth8 byte bundle1, also passed execution review.
 Its H200CE is5.102819586; both endpoints and24first outputs are retained. The
-depth8 comparison awaits its native pair. Next launch fixed slot03, depth8
-native bundle1, after live full-panel admission checks. See
+depth8 comparison awaits its native pair. Slot03, depth8 native
+bundle1, is running after live full-panel admission. Let it finish unchanged,
+then review and admit fixed slot04, depth16 native bundle1. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 
