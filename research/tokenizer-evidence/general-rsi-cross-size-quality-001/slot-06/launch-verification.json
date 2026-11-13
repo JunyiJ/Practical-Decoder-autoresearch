@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-13T23:56:38.633519+00:00",
+  "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
+  "worker": {
+    "pid": 43204,
+    "command": "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m research.general_rsi_cross_size_worker_v1 5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080 6"
+  },
+  "shared_lock_busy": true,
+  "guard_snapshot": {
+    "elapsed_seconds": 198.6763733329717,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 7836
+    },
+    "observation": {
+      "free_bytes": 20000108544,
+      "peak_rss_bytes": 965607424
+    },
+    "pid": 43204,
+    "reason": null,
+    "status": "watching"
+  },
+  "completed_steps_at_inspection": 438,
+  "bundle": 2,
+  "roles": {
+    "native_initializer": 62111312034201,
+    "composer_initializer": 62111312034202,
+    "train_sampler": 62111312034203,
+    "validation_sampler": 62111312034204
+  },
+  "fresh_sampler_prefix_differs_from_bundle1": true,
+  "step_log_prefix_bytes": 147474,
+  "step_log_prefix_sha256": "d56b486adf1965dedd5e5866ecfcd89d530350d2de2fcae725134db1fbe819ac",
+  "admission_sha256": "7ca9c3d45ce7eecf785e27fe0e4457cfb3d1d01f88cdd35cec49799e5688ca17",
+  "source_commit": "5fce0000d8f1ee40da1f7316749a536021f90976",
+  "test_opened": false
+}

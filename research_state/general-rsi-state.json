@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "READY_FOR_NEXT_SCIENTIFIC_SLOT",
+  "status": "ACTIVE_SCIENTIFIC_WORKER",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": null,
-  "next_action": "Admit and launch fixed cross-size slot06 depth8 native bundle2 after live shared-lock, process, source and full-panel resource checks. Keep all sources, roles, schedules and criteria frozen.",
+  "active_session": 5300,
+  "next_action": "Let fixed cross-size slot06 depth8 native bundle2 finish unchanged. Review execution, then admit slot07 depth8 raw_bytes bundle2 after live shared-lock, process, source and full-panel resource checks.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-13T23:52:39.215079+00:00",
-  "active_worker_pid": null,
+  "updated_at": "2026-11-13T23:56:38.633519+00:00",
+  "active_worker_pid": 43204,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 5,
+  "active_slot": 6,
   "completed_screens": [
     {
       "slot": 0,
@@ -930,5 +930,5 @@
       "first_outputs": 24
     }
   ],
-  "cross_size_launch_verification": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-05/launch-verification.json"
+  "cross_size_launch_verification": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-06/launch-verification.json"
 }
