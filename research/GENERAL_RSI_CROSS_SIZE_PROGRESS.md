@@ -1,42 +1,35 @@
 # Cross-size execution progress
 
-The first fresh depth4 pair, bundle1, completed10,240updates per arm and342EMA
-snapshots. Both execution reviews passed. All four final weights and48first
-completions are retained. Each endpoint covers100,416development targets and
-32,768broader-probe targets. Semantic ratings remain pending.
+The first fresh depth4 and depth8 pairs, bundle1, passed execution review.
+Each run completed10,240updates and342EMA snapshots. All eight final weights and
+96first outputs are retained. Every endpoint covers100,416development targets
+and32,768broader-probe targets. Semantic ratings remain pending.
 
-| Measure | Native slot00 | Byte slot01 |
-| --- | ---: | ---: |
-| H200 development CE | 5.196423356 | 5.146958298 |
-| RAW development CE | 5.200483851 | 5.154076443 |
-| Synchronized training seconds | 3464.333 | 6375.625 |
-| Complete worker seconds | 3615.742 | 6719.651 |
-| Peak RSS bytes | 1021296640 | 1267777536 |
-| Peak MPS bytes | 2512175104 | 3640442880 |
+| Depth | Native H200 CE | Byte H200 CE | Byte minus native | Byte/native training time | Parameter saving |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 4 | 5.196423356 | 5.146958298 | -0.049465058 | 1.840× | 42.61% |
+| 8 | 5.120939116 | 5.102819586 | -0.018119530 | 1.648× | 38.85% |
 
-The descriptive H200 byte-minus-native difference is-0.049465058, with1.840×
-training time and42.61%fewer parameters. This first pair is consistent with the
-prior equal-token result. It does not establish fresh confirmation or the
-cross-size interaction. The body/composer dilution hypothesis remains unresolved.
-Keep all fixed roles, gates, schedules and comparisons unchanged.
+These are descriptive results from one paired seed bundle. The depth8 difference
+of-0.018119530 is below the frozen0.02practical magnitude threshold. The descriptive
+8-minus-4 interaction is+0.031345528. The smaller byte quality advantage and runtime
+penalty are consistent with dilution as the body grows, but fresh confirmation
+and the primary16-minus-4 interaction remain unresolved. Two sizes at one bundle
+do not establish a scaling law. Keep all fixed comparisons and criteria unchanged.
 
-Slot02, depth8 byte bundle1, also passed execution review after10,240updates
-and342EMA snapshots. H200 development CE is5.102819586 and RAW is5.111235728.
-Synchronized training took7,275.498seconds; complete worker time was7,663.806seconds.
-Peak RSS was1,407,188,992bytes and peak MPS allocation was3,715,940,352bytes.
-Both endpoints cover all frozen development and broader targets. Its24first
-outputs are retained, bringing the panel total to72. Semantic ratings remain
-pending. The depth8 byte/native comparison awaits its fixed native pair.
+| Slot | Arm | Depth | Training seconds | Worker seconds | RAW CE |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 00 | native | 4 | 3464.333 | 3615.742 | 5.200483851 |
+| 01 | raw_bytes | 4 | 6375.625 | 6719.651 | 5.154076443 |
+| 02 | raw_bytes | 8 | 7275.498 | 7663.806 | 5.111235728 |
+| 03 | native | 8 | 4414.755 | 4611.317 | 5.126989868 |
 
-Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`,
-`slot-01/review.json`, `slot-02/review.json` and
-`slot-02-completion-and-next-admission.json` in the same panel directory.
-Remaining-panel admission passes:20,483,403,348bytes required and21,081,903,104bytes
-available. This includes12GiB reserve/headroom and all retained outputs, restart,
-serialization, metadata and failure allowances. The conservative total forecast
-is48.073hours against the frozen54-hour tranche.
+Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
+through `slot-03/review.json`, plus `slot-03-completion-and-next-admission.json`.
+Remaining-panel admission passes: 20,233,269,766bytes required and
+20,797,624,320bytes available. This includes12GiB reserve/headroom and all
+retained outputs, restart, serialization, metadata and failure allowances. The
+conservative total forecast is47.177hours against the frozen54-hour tranche.
 
-Slot03, depth8 native bundle1, is running after live full-panel admission. Its
-initial sampler prefix matches the paired byte run exactly. Review at exit,
-then admit fixed slot04, depth16 native bundle1.
+Next: launch fixed slot04, depth16 native bundle1, after live admission checks.
 Do not repeat prerequisites or reopen the test.
