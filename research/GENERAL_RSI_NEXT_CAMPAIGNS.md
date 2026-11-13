@@ -246,10 +246,14 @@ a confirmed gain or causal decomposition. See
 `tokenizer-evidence/general-rsi-context-length-quality-001/pair-01-descriptive.json`.
 Slot02 context256 bundle2 is complete and reviewed:41,557 updates,
 14,400.252615 training seconds, time-EMA CE4.732647420 and common128 CE4.805204094.
-All24 first outputs are retained. Its paired128 control is pending; this adds no
-paired quality conclusion. Next run frozen slot03 context128 bundle2, then
-review each completed slot before advancing. Two pairs and the fixed generation
-evaluation remain incomplete. After the panel, follow the cross-size priority above.
+All24 first outputs are retained. Paired slot03 context128 bundle2 is complete
+and reviewed:41,582 updates,14,400.227427 training seconds and time-EMA
+CE4.827909080. The second native-context pair improves by0.095261660nats/token,
+with both sources improving. At common128, the256 model improves by0.022704986.
+Both completed pairs support the context hypothesis, but adoption still awaits
+the third pair and the frozen decision. All96 first outputs are retained.
+Next run frozen slots04/05 bundle3, reviewing each before advancing, then finish
+the fixed generation evaluation. After the panel, follow the cross-size priority above.
 Do not repeat completed prerequisites. Test remains unopened.
 
 ## Historical completed priority — 2026-11-11 Pacific
