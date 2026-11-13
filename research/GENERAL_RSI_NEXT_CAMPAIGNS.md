@@ -166,9 +166,10 @@ projected outputs. Slots00–01, the first fresh depth4 pair, completed10,240upd
 passed execution reviews. H200CE is5.196423356 native and5.146958298 byte, a
 descriptive difference of−0.049465058 with1.840×training time. All four endpoints
 and48first outputs are retained. Confirmation and the cross-size interaction
-remain unresolved. Slot02, depth8 byte bundle1, is running after live full-panel
-admission. Let it finish unchanged, then review and admit fixed slot03, depth8
-native bundle1. See
+remain unresolved. Slot02, depth8 byte bundle1, also passed execution review.
+Its H200CE is5.102819586; both endpoints and24first outputs are retained. The
+depth8 comparison awaits its native pair. Next launch fixed slot03, depth8
+native bundle1, after live full-panel admission checks. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 

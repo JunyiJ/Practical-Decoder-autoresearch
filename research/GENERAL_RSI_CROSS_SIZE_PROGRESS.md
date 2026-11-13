@@ -20,14 +20,21 @@ prior equal-token result. It does not establish fresh confirmation or the
 cross-size interaction. The body/composer dilution hypothesis remains unresolved.
 Keep all fixed roles, gates, schedules and comparisons unchanged.
 
-Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`,
-`slot-01/review.json` and `slot-01-completion-and-next-admission.json` in the same
-panel directory. Remaining-panel admission passes:20,636,422,622bytes required,
-21,252,657,152bytes available, including12GiB reserve/headroom and the full retained
-output, restart, serialization, metadata and failure allowances. The conservative
-total forecast is49.314hours against the frozen54-hour tranche.
+Slot02, depth8 byte bundle1, also passed execution review after10,240updates
+and342EMA snapshots. H200 development CE is5.102819586 and RAW is5.111235728.
+Synchronized training took7,275.498seconds; complete worker time was7,663.806seconds.
+Peak RSS was1,407,188,992bytes and peak MPS allocation was3,715,940,352bytes.
+Both endpoints cover all frozen development and broader targets. Its24first
+outputs are retained, bringing the panel total to72. Semantic ratings remain
+pending. The depth8 byte/native comparison awaits its fixed native pair.
 
-Slot02, depth8 byte bundle1, is running after live full-panel admission. Its
-initial sampler prefix matches the depth4 bundle1 runs exactly. Review at exit,
-then admit fixed slot03, depth8 native bundle1.
+Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`,
+`slot-01/review.json`, `slot-02/review.json` and
+`slot-02-completion-and-next-admission.json` in the same panel directory.
+Remaining-panel admission passes:20,483,403,348bytes required and21,081,903,104bytes
+available. This includes12GiB reserve/headroom and all retained outputs, restart,
+serialization, metadata and failure allowances. The conservative total forecast
+is48.073hours against the frozen54-hour tranche.
+
+Next: launch fixed slot03, depth8 native bundle1, after live admission checks.
 Do not repeat prerequisites or reopen the test.
