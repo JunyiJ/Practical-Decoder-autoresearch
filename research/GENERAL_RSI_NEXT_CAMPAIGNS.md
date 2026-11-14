@@ -185,13 +185,14 @@ and the frozen panel decisions remain pending. Slots12–13 complete the third
 depth16 pair: byte-minus-native H200 CE is+0.001170895.
 All three depth16 differences are−0.013540404, +0.006673365 and+0.001170895.
 Their descriptive mean is-0.001898715. Neither arm meets the frozen
-all-seed sign requirement; this does not establish equivalence. The third depth4/8
-pairs and frozen panel inference remain pending. Slot14 depth4 native bundle3
-passed execution review with H200 CE 5.186970006; its paired byte slot15
-remains pending. Fifteen runs,30endpoints and360first outputs are retained.
-Full-panel capacity passes. Fixed slot15, depth4 byte bundle3, is running under
-the shared lock after verified admission and paired sampling. Review it and the
-completed depth4 pairs before admitting fixed slot16, depth8 byte bundle3.
+all-seed sign requirement; this does not establish equivalence. The third depth8
+pair and frozen panel inference remain pending. Slots14–15 complete depth4:
+all three pairs favor byte, with descriptive mean-0.050335183.
+The third16-minus4 interaction is+0.041593841; all three are positive,
+supporting dilution descriptively. Full-panel multiplicity-adjusted inference
+remains pending. Sixteen runs,32endpoints and384first outputs are retained.
+Full-panel capacity passes. Admit fixed slot16, depth8 byte bundle3, after live
+capacity and execution checks, then paired fixed slot17 depth8 native bundle3.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.

@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "READY_NEXT_FIXED_SLOT",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 87967,
-  "next_action": "Let fixed slot15 depth4 byte bundle3 finish unchanged. Review execution and the completed depth4 pairs and third16-minus4 contrast, then admit fixed slot16 depth8 byte bundle3 after complete resource and execution checks. Finish all18 runs before frozen panel analysis and generation ratings.",
+  "active_session": null,
+  "next_action": "Admit fixed slot16 depth8 byte bundle3 after live shared-lock, process, source and full-panel resource checks, then fixed slot17 depth8 native bundle3. Finish every frozen run before panel analysis and generation ratings.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-14T16:58:13.364536+00:00",
-  "active_worker_pid": 9180,
+  "updated_at": "2026-11-14T18:55:06.720584+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Slot14 depth4 native bundle3 passed execution review: H200 CE 5.186970006319, RAW CE 5.189700599346, training 3522.446746 seconds. Paired byte slot15 is pending, so the third depth4 contrast and third size interaction remain unresolved. Preserve the completed mixed-sign depth16 result and the first two bundles' descriptive dilution evidence. Fifteen runs,30 endpoints and360 first outputs retained.",
+  "latest_learning": "Slot15 depth4 byte bundle3 passed execution review: H200 CE 5.146547061152, RAW CE 5.150935323776. All three depth4 pairs favor byte with mean delta -0.050335183249. Third-pair delta -0.040422945167, third16-minus4 interaction +0.041593840595. All three interactions are positive, supporting dilution descriptively; frozen multiplicity-adjusted inference remains pending. Sixteen runs,32 endpoints and384 first outputs retained. Complete the remaining depth8 pair before frozen panel analysis and generation ratings.",
   "phase": "cross_size_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Slot15 launch admission: free 18160218112 bytes versus full remaining requirement 17768140832 bytes; margin 392077280 bytes. Retained final endpoints 3227161550 bytes credited once. Twelve GiB reserve/headroom and all future outputs, serialization, metadata and failure allowances remain included.",
+  "capacity_status": "After slot15: free 17996165120 bytes versus remaining full requirement 17637258182 bytes; margin 358906938 bytes. Retained final endpoints 3358044200 bytes credited once. Twelve GiB reserve/headroom and all future outputs, serialization, metadata and failure allowances remain included.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -1044,6 +1044,19 @@
       "training_seconds": 3522.4467460678425,
       "worker_seconds": 3677.575040291995,
       "review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-14/review.json",
+      "first_outputs": 24
+    },
+    {
+      "slot": 15,
+      "depth": 4,
+      "arm": "raw_bytes",
+      "bundle": 3,
+      "steps": 10240,
+      "h200_ce": 5.146547061152128,
+      "raw_ce": 5.1509353237761655,
+      "training_seconds": 6460.94661212177,
+      "worker_seconds": 6803.634715625085,
+      "review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-15/review.json",
       "first_outputs": 24
     }
   ],
