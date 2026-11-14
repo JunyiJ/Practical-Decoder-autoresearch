@@ -1,6 +1,78 @@
 # General RSI: human-directed continuation, 2026-11-09
 
-## Current boundary — attribution complete, context transfer selected, 2026-11-14 Pacific
+## Latest human direction — two-depth context study, 2026-11-14 Pacific
+
+The human explicitly requested: "finish the analysis, then run the two-depth
+context study at4 and16 layers. Make sure the full experiment fits the Mac's
+storage and memory before starting."
+
+This prospectively replaces the three-depth preparation below. The saved-results
+analysis is already complete and accepted in
+`tokenizer-evidence/general-rsi-cross-size-attribution-001/verification.json`.
+Use its report and evidence without repeating the analysis or closed experiments.
+The weakening byte effect occurs in100/108 document means and both sources;
+its timing and causal mechanism remain unresolved. That conclusion supports the
+selected context-transfer question and does not authorize a byte rescue sweep.
+
+### Execute this scope after qualification
+
+- Native input/output tables, D256, depths **4 and16 only**, contexts **128 and256**.
+  Three fresh paired bundles at each depth:12 scientific runs and24 RAW/time-EMA
+  endpoints. Keep14400 synchronized training seconds per run, totaling48 training
+  hours. Exclude depth8 prospectively, without examining new scientific scores.
+- Inherit the qualified corpus/tokenizer,1024 targets per update, paired flattened
+  sampling, optimizer/precision, endpoint-aligned cooldown and physical-time EMA.
+  This tests transfer of the fixed recipe, not each depth's optimized recipe.
+  Keep initialization matching explicit and fresh reference controls at depth4;
+  historical context scores must not enter fresh confirmation.
+- Preserve native-context primary scoring on identical target inventories and
+  common128 secondary scoring. Freeze within-depth quality criteria and the
+  depth16-minus4 interaction directly, including multiplicity control, source
+  guards, seeds and run order before scientific scores. Do not infer an interaction
+  from separate significance tests or equivalence from an unresolved result.
+- Retain fixed first generations as a separate diagnostic, all original evidence,
+  selected/fresh endpoints and failures. Keep original test unopened. Any reused
+  broader probe is development evidence. This is two-depth transfer evidence,
+  not a scaling law or proof of larger-LLM behavior.
+
+### Full-experiment admission is required before the first scientific run
+
+- Qualify only newly combined depth/context behavior. Reuse established parity,
+  initialization and scoring checks where unchanged. Measure both contexts at
+  both selected depths, including backward/optimizer/EMA execution, complete
+  restart, scoring, generation and checkpoint serialization/readback. Use one
+  local MPS worker under the nonblocking shared lock.
+- Verify measured peak RSS and MPS allocation remain within existing4GiB/6GiB
+  guards, and assess unified-memory headroom with macOS and other running apps.
+  Include initialization, validation/generation and serialization peaks, not just
+  steady-state training. A parameter-size estimate alone is not memory admission.
+- Forecast all12 runs, screening only if explicitly justified prospectively,
+  all24 retained endpoints, active full optimizer/EMA restart and atomic-write
+  overlap, metadata/logs, engineering artifacts and failed-write/replay allowances.
+  Preserve10GiB disk reserve PLUS2GiB extra headroom throughout. Count existing
+  retained files through actual free space; do not double-count reclaimed files.
+- `tokenizer-evidence/general-rsi-context-transfer-two-depth-planning-001/forecast.json`
+  records a provisional revision of the previous conservative planning envelope.
+  Only the final-endpoint count is reduced. Storage currently fits that estimate;
+  memory and final scientific admission remain pending. Refresh with measured
+  new-shape sizes/timing and a current disk check before launch, then record the
+  full source-bound resource admission. Recheck remaining requirements at run
+  boundaries. Prior three-depth estimates and cleanup receipts remain evidence.
+- Planning time is48 training hours plus30% overhead/failure allowance and1 hour
+  engineering,63.4 hours total. Replace or conservatively justify these allowances
+  from measurements before freezing the tranche. Report actual time separately.
+- If the complete study does not fit, execute standing-authorized exact audited
+  cleanup, then remeasure. Do not start a partial panel, stop workers, drop fresh
+  pairs, weaken guards or shorten frozen runs to hide a deficit. If recovery is
+  exhausted, record the remaining deficit and a concrete storage/memory remedy.
+
+The next action is the minimal combined-shape qualification for depths4/16,
+followed by full admission, protocol freeze and serial execution. The human has
+authorized running this study once those conditions pass; no further permission
+is required. Update active state to this scope. The historical three-depth
+selection and costs below are superseded, not current execution instructions.
+
+## Historical three-depth preparation boundary — 2026-11-14 Pacific
 
 The bounded existing-data attribution is complete and independently checked.
 Weakening is positive in100/108 document means and both sources. Removing the

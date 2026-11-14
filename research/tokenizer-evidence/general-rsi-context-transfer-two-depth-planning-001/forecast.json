@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-14T22:56:33.304020+00:00",
+  "authority": "Explicit human request 2026-11-14: after completed analysis, run context128/256 at depths4 and16; full Mac storage and memory must fit before launch.",
+  "depths": [
+    4,
+    16
+  ],
+  "contexts": [
+    128,
+    256
+  ],
+  "fresh_pairs_per_depth": 3,
+  "scientific_runs": 12,
+  "retained_endpoints": 24,
+  "training_seconds_per_run": 14400,
+  "training_seconds": 172800,
+  "planning_total_seconds": 228240.0,
+  "components_bytes": {
+    "final_endpoints": 3183089664,
+    "active_restart_and_atomic_overlap": 1310965760,
+    "metadata": 1073741824,
+    "engineering_endpoints": 1073741824,
+    "failed_attempt_allowance": 2147483648,
+    "reserve": 10737418240,
+    "extra_headroom": 2147483648
+  },
+  "total_required_free_bytes": 21673924608,
+  "observed_free_bytes": 23915204608,
+  "margin_bytes": 2241280000,
+  "storage_planning_fits": true,
+  "memory_qualified": false,
+  "scientific_training_admitted": false,
+  "prior_planning_path": "research/tokenizer-evidence/general-rsi-cross-size-attribution-001/context-transfer-planning-cost-v2.json",
+  "prior_planning_sha256": "deefa174a25ab40b5e0b575cf65ebe65ad3b59c641a591fe44f58ee87d2f6450",
+  "accounting": "Prospective two-depth revision, no scientific scores. Retain prior conservative restart/overlap, metadata, engineering, failed-write,10GiB reserve and2GiB headroom allowances; reduce only final endpoints to the12-run inventory. Time allowance is provisional30percent plus1 engineering hour. Measured new-shape memory, serialization, scoring and worker times must replace assumptions or justify conservative bounds before complete admission. Existing files are already charged through measured free space. No scientific launch based on this estimate alone."
+}
