@@ -1,0 +1,14 @@
+{"event": "start", "id": "p11-temperature_0.8_top_k_40", "prompt": {"id": "p11", "text": "The museum opens at nine in the morning and closes at five in the afternoon. A visitor arrives at noon. The museum is", "consistency_reference": "Museum is open at noon under the stated hours."}, "decoder": "temperature_0.8_top_k_40", "seed": 42, "checkpoint": {"path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-cross-size-quality-001/slot-11/h200.pt", "size": 113998555, "sha256": "0ce6c47ed435a7b8fdf8a557378337c1fd207baad10ed25a1b7388f986360d30"}, "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080", "torch_version": "2.14.1", "generator_source_sha256": "426496d1347b6aafb7bcd5062eb65368dfba2ca01a97977ec485cbd06171a3e1", "context": 128, "depth": 4, "inference": "uncached_full_prefix"}
+{"event": "token", "position": 0, "token": 5140}
+{"event": "token", "position": 1, "token": 319}
+{"event": "token", "position": 2, "token": 262}
+{"event": "token", "position": 3, "token": 7022}
+{"event": "token", "position": 4, "token": 286}
+{"event": "token", "position": 5, "token": 968}
+{"event": "token", "position": 6, "token": 1971}
+{"event": "token", "position": 7, "token": 422}
+{"event": "token", "position": 8, "token": 8857}
+{"event": "token", "position": 9, "token": 32115}
+{"event": "token", "position": 10, "token": 13}
+{"event": "token", "position": 11, "token": 50256}
+{"event": "complete", "row": {"id": "p11-temperature_0.8_top_k_40", "prompt": {"id": "p11", "text": "The museum opens at nine in the morning and closes at five in the afternoon. A visitor arrives at noon. The museum is", "consistency_reference": "Museum is open at noon under the stated hours."}, "decoder": "temperature_0.8_top_k_40", "seed": 42, "generated_token_ids": [5140, 319, 262, 7022, 286, 968, 1971, 422, 8857, 32115, 13, 50256], "continuation": " located on the island of New York from Philadelphia Township.<|endoftext|>", "stop_reason": "eos", "checkpoint_sha256": "0ce6c47ed435a7b8fdf8a557378337c1fd207baad10ed25a1b7388f986360d30", "metrics": {"generated_tokens_including_eos": 12, "content_tokens": 11, "trigram_opportunities": 9, "repeated_trigram_fraction": 0.0, "terminal_loop": false, "terminal_loop_phrase_lengths": [], "stopped_eos": true, "hit_token_cap": false, "empty_content": false, "unexpected_early_stop": false}}}
