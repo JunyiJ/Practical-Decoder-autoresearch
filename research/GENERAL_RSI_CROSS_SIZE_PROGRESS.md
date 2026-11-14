@@ -52,8 +52,10 @@ Slot08, depth16 byte bundle2, passed execution review. Its H200 CE is5.061700673
 and RAW CE is5.066292152. The second depth16 contrast remains unpaired until
 slot09 completes, so this result does not resolve the dilution hypothesis.
 All18final endpoints and216first outputs are retained. Fixed slot09, depth16
-native bundle2, is next after live full-panel checks. Do not repeat prerequisites
-or reopen the test.
+native bundle2, is running after full-panel admission. The sole worker holds
+the shared lock and its sampler prefix matches slot08. Review its completion
+and the second depth16 pair before admitting slot10, depth4 byte bundle2.
+Do not repeat prerequisites or reopen the test.
 
 Storage recovery at 2026-11-14T05:03:32.738770+00:00: a new free-space decline left a projected full-panel
 deficit. Exact external-cache cleanup removed2525files and recovered114,556,928

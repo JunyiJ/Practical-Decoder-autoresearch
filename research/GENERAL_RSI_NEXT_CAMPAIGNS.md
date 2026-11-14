@@ -177,8 +177,9 @@ remain pending. Slot08, depth16 byte bundle2, passed execution review with
 H200 CE5.061700673. Its paired native slot09 remains pending. Nine runs,18final
 endpoints and216first outputs are retained. Exact three-parent cleanup recovered
 1.354GB and full-panel capacity passes, preserving12GiB reserve/headroom.
-Admit fixed slot09, depth16 native bundle2, after live capacity and execution
-checks. See
+Fixed slot09, depth16 native bundle2, is running after live full-panel admission.
+Review its completion and the second depth16 pair before admitting slot10,
+depth4 byte bundle2, after fresh capacity and execution checks. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 
