@@ -1,0 +1,10 @@
+{"event": "start", "id": "p01-temperature_0.8_top_k_40", "prompt": {"id": "p01", "text": "Plants use sunlight to", "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."}, "decoder": "temperature_0.8_top_k_40", "seed": 42, "checkpoint": {"path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-cross-size-quality-001/slot-12/h200.pt", "size": 147203543, "sha256": "d68abbcdbaa74f61de4c85adfbdba40e5a2d3c7c22dd3db15d86d8b4c476bf0c"}, "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080", "torch_version": "2.14.1", "generator_source_sha256": "426496d1347b6aafb7bcd5062eb65368dfba2ca01a97977ec485cbd06171a3e1", "context": 128, "depth": 16, "inference": "uncached_full_prefix"}
+{"event": "token", "position": 0, "token": 4439}
+{"event": "token", "position": 1, "token": 262}
+{"event": "token", "position": 2, "token": 4252}
+{"event": "token", "position": 3, "token": 287}
+{"event": "token", "position": 4, "token": 262}
+{"event": "token", "position": 5, "token": 9260}
+{"event": "token", "position": 6, "token": 13}
+{"event": "token", "position": 7, "token": 50256}
+{"event": "complete", "row": {"id": "p01-temperature_0.8_top_k_40", "prompt": {"id": "p01", "text": "Plants use sunlight to", "consistency_reference": "Check prompt facts and internally stated claims; do not infer truth from fluency."}, "decoder": "temperature_0.8_top_k_40", "seed": 42, "generated_token_ids": [4439, 262, 4252, 287, 262, 9260, 13, 50256], "continuation": " produce the sun in the soil.<|endoftext|>", "stop_reason": "eos", "checkpoint_sha256": "d68abbcdbaa74f61de4c85adfbdba40e5a2d3c7c22dd3db15d86d8b4c476bf0c", "metrics": {"generated_tokens_including_eos": 8, "content_tokens": 7, "trigram_opportunities": 5, "repeated_trigram_fraction": 0.0, "terminal_loop": false, "terminal_loop_phrase_lengths": [], "stopped_eos": true, "hit_token_cap": false, "empty_content": false, "unexpected_early_stop": false}}}
