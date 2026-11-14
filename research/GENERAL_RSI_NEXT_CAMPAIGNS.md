@@ -171,8 +171,9 @@ but the two larger-size gains are below0.02. Three-bundle confirmation and the
 frozen interaction decision remain unresolved. All12endpoints and144first
 outputs from bundle1 are retained. Slot06, depth8 native bundle2, also passed
 execution review with H200 CE5.124055823. Seven runs,14endpoints and168first
-outputs are now retained. Its paired byte result remains pending. Admit fixed
-slot07, depth8 byte bundle2, after live full-panel resource and execution checks. See
+outputs are now retained. Fixed slot07, depth8 byte bundle2, is running after
+full-panel admission. Review its completed execution and pair, then admit
+slot08, depth16 byte bundle2, after live resource and execution checks. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 
