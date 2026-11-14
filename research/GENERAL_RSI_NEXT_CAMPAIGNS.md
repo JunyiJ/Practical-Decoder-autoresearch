@@ -190,10 +190,11 @@ pair and frozen panel inference remain pending. Slots14–15 complete depth4:
 all three pairs favor byte, with descriptive mean-0.050335183.
 The third16-minus4 interaction is+0.041593841; all three are positive,
 supporting dilution descriptively. Full-panel multiplicity-adjusted inference
-remains pending. Sixteen runs,32endpoints and384first outputs are retained.
-Full-panel capacity passes. Fixed slot16, depth8 byte bundle3, is running under
-the shared lock after verified admission and bundle3 sampling. Review it before
-admitting the final paired slot17 depth8 native bundle3.
+remains pending. Slot16 depth8 byte bundle3 passed execution review with H200
+CE 5.094401930. Its final paired native slot17 remains pending.
+Seventeen runs,34endpoints and408first outputs are retained. Full-panel capacity
+passes. Admit final fixed slot17, depth8 native bundle3, after live capacity and
+execution checks, then complete the frozen analysis and generation ratings.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
