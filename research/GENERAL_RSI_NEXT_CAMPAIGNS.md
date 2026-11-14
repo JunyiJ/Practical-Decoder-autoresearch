@@ -173,13 +173,14 @@ outputs from bundle1 are retained. Slots06–07 complete the second depth8 pair:
 byte-minus-native H200 CE is-0.030494703 with1.603× training time. Both depth8
 pairs favor byte, with magnitudes straddling0.02. Eight runs,16endpoints and
 192first outputs are retained. The third pair and other second-bundle sizes
-remain pending. Slot08, depth16 byte bundle2, passed execution review with
-H200 CE5.061700673. Its paired native slot09 remains pending. Nine runs,18final
-endpoints and216first outputs are retained. Exact three-parent cleanup recovered
-1.354GB and full-panel capacity passes, preserving12GiB reserve/headroom.
-Fixed slot09, depth16 native bundle2, is running after live full-panel admission.
-Review its completion and the second depth16 pair before admitting slot10,
-depth4 byte bundle2, after fresh capacity and execution checks. See
+remain pending. Slots08–09 complete the second depth16 pair: H200 byte-minus-
+native CE is+0.006673365, versus-0.013540404 in bundle1. Training ratios are
+1.440740× and1.440717×. Mixed signs preclude either arm meeting the frozen
+all-seed sign rule at depth16. The full interaction and other sizes remain
+pending. Ten runs,20endpoints and240first outputs are retained. Full-panel
+capacity passes after the completed audited cleanup. Admit fixed slot10, depth4
+byte bundle2, after fresh capacity and execution checks. Continue every frozen
+run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 

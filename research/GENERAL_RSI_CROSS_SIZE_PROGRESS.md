@@ -1,8 +1,8 @@
 # Cross-size execution progress
 
 The first paired seed bundle across depths4/8/16 passed execution review.
-Nine runs have now passed execution review. Each completed10,240updates and
-342EMA snapshots. All18 final weights and216first outputs are retained. Every endpoint covers100,416development targets
+Ten runs have now passed execution review. Each completed10,240updates and
+342EMA snapshots. All20 final weights and240first outputs are retained. Every endpoint covers100,416development targets
 and32,768broader-probe targets. Semantic ratings remain pending.
 
 | Depth | Native H200 CE | Byte H200 CE | Byte minus native | Byte/native training time | Parameter saving |
@@ -33,29 +33,36 @@ population-seed estimate. Keep all fixed comparisons and criteria unchanged.
 | 06 | native | 8 | 4449.442 | 4663.488 | 5.127501022 |
 | 07 | raw_bytes | 8 | 7133.353 | 7467.710 | 5.097987630 |
 | 08 | raw_bytes | 16 | 9125.205 | 9603.407 | 5.066292152 |
+| 09 | native | 16 | 6333.691 | 6613.158 | 5.059108271 |
 
 The second depth8 pair also favors byte. Native H200 CE is5.124055823 and
 byte H200 CE is5.093561120, a difference of-0.030494703. Byte training takes
 1.603× native time, compared with1.648× in bundle1. Both depth8 differences
 favor byte, but their magnitudes straddle0.02. The third pair and second-bundle
-depths4/16 remain pending. This supports a recurring depth8 benefit without
+depth4 remain pending. This supports a recurring depth8 benefit without
 resolving the frozen quality, transfer or cross-size interaction criteria.
 
-Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
-through `slot-07/review.json`, plus `slot-07-completion-and-next-admission.json`.
-Remaining-panel admission passes: 19,338,417,174bytes required and
-19,518,595,072bytes available. This includes12GiB reserve/headroom and all
-retained outputs, restart, serialization, metadata and failure allowances. The
-conservative total forecast is42.749hours against the frozen54-hour tranche.
+The second depth16 pair reverses the first pair's direction. Native H200 CE is
+5.055027309 and byte H200 CE is5.061700673, a byte-minus-native difference of
++0.006673365. RAW also favors native by0.007183881. Byte training takes1.440740×
+native time, close to1.440717× in bundle1. The first H200 difference was
+-0.013540404. These mixed seed signs preclude either arm from meeting the frozen
+every-seed sign requirement at depth16. A consistent larger-size byte quality
+benefit is therefore unsupported by these paired results. The full three-bundle
+interaction and remaining size decisions are pending. Keep all runs and gates
+unchanged. These are execution-reviewed descriptive results, not a completed
+panel decision or scaling law.
 
-Slot08, depth16 byte bundle2, passed execution review. Its H200 CE is5.061700673
-and RAW CE is5.066292152. The second depth16 contrast remains unpaired until
-slot09 completes, so this result does not resolve the dilution hypothesis.
-All18final endpoints and216first outputs are retained. Fixed slot09, depth16
-native bundle2, is running after full-panel admission. The sole worker holds
-the shared lock and its sampler prefix matches slot08. Review its completion
-and the second depth16 pair before admitting slot10, depth4 byte bundle2.
-Do not repeat prerequisites or reopen the test.
+Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
+through `slot-09/review.json`, plus `slot-09-completion-and-next-admission.json`.
+Remaining-panel admission passes: 18846717438bytes required and19339694080bytes available,
+a492976642byte margin. This includes12GiB reserve/headroom and all retained
+outputs, restart, serialization, metadata and failure allowances. Conservative
+total time is40.566hours against the frozen54-hour tranche.
+
+All20final endpoints and240first outputs are retained. Fixed slot10, depth4
+byte bundle2, is next after live full-panel checks. Do not repeat prerequisites
+or reopen the test.
 
 Storage recovery at 2026-11-14T05:03:32.738770+00:00: a new free-space decline left a projected full-panel
 deficit. Exact external-cache cleanup removed2525files and recovered114,556,928
