@@ -66,8 +66,20 @@ outputs, restart, serialization, metadata and failure allowances. Conservative
 total time is39.534hours against the frozen54-hour tranche.
 
 All22final endpoints and264first outputs are retained. Fixed slot11, depth4
-native bundle2, is next after live full-panel checks. Do not repeat prerequisites
-or reopen the test.
+native bundle2, is running under the shared lock. Its sampler prefix matches
+paired slot10 exactly. Live launch admission passed with19248902144bytes free
+against18715834788bytes required, a533067356byte margin. After execution review,
+evaluate the second depth4 contrast and second cross-size interaction, then
+admit fixed slot12, depth16 native bundle3. Do not repeat prerequisites or reopen
+the test.
+
+Slot11 preflight attempt01 failed before training because its receipt basename
+still named slot10. Exclusive creation preserved the existing slot10 receipt;
+no scientific run started. Attempt02 changed only the receipt basename, passed
+the complete admission checks and launched slot11 with unchanged bound sources,
+roles and schedules. Both preflight sources and the original failure are retained
+in `tokenizer-evidence/general-rsi-cross-size-quality-001/prelaunch-11-failure-01/`.
+Live verification is in `slot-11/launch-verification.json` under the same panel.
 
 Storage recovery at 2026-11-14T05:03:32.738770+00:00: a new free-space decline left a projected full-panel
 deficit. Exact external-cache cleanup removed2525files and recovered114,556,928

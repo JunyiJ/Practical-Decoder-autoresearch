@@ -179,8 +179,9 @@ native CE is+0.006673365, versus-0.013540404 in bundle1. Training ratios are
 all-seed sign rule at depth16. The full interaction and other sizes remain
 pending. Slot10 depth4 byte bundle2 passed execution review with H200 CE
 5.146265301; its paired native slot11 remains pending. Eleven runs,22endpoints
-and264first outputs are retained. Full-panel capacity passes. Admit fixed
-slot11, depth4 native bundle2, after fresh capacity and execution checks.
+and264first outputs are retained. Full-panel capacity passes. Fixed slot11,
+depth4 native bundle2, is running under the shared lock after verified admission.
+Review it before admitting slot12, depth16 native bundle3.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
