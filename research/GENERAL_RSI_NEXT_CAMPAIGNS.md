@@ -193,8 +193,9 @@ supporting dilution descriptively. Full-panel multiplicity-adjusted inference
 remains pending. Slot16 depth8 byte bundle3 passed execution review with H200
 CE 5.094401930. Its final paired native slot17 remains pending.
 Seventeen runs,34endpoints and408first outputs are retained. Full-panel capacity
-passes. Admit final fixed slot17, depth8 native bundle3, after live capacity and
-execution checks, then complete the frozen analysis and generation ratings.
+passes. Final fixed slot17, depth8 native bundle3, is running under the shared
+lock with sampling verified against paired slot16. Review it and reconcile all18
+runs before the frozen analysis and generation ratings.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
