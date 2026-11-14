@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
+  "slot": {
+    "slot": 10,
+    "bundle": 2,
+    "arm": "raw_bytes",
+    "depth": 4,
+    "horizon": 10240,
+    "lr": 0.0025,
+    "timeout_seconds": 10571,
+    "roles": {
+      "native_initializer": 62111312034201,
+      "composer_initializer": 62111312034202,
+      "train_sampler": 62111312034203,
+      "validation_sampler": 62111312034204
+    },
+    "extra_group_seeds": [
+      62111312034205,
+      62111312034206,
+      62111312034207
+    ]
+  },
+  "steps": 10240,
+  "snapshots": 342,
+  "training_seconds": 6507.494617997203,
+  "executed_targets": 10485760,
+  "checkpoint_seconds_this_attempt": 14.208153835032135,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-cross-size-quality-001/slot-10/raw.pt",
+        "size": 65441325,
+        "sha256": "80900b9abdf0f98af2017a91552699c65cfb04720be79f981d520f07cb05536c"
+      },
+      "ce": 5.150909192376371,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.140072964065407
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.1943113601412625
+        }
+      },
+      "broader_ce": 6.000579830788631,
+      "score_seconds": 71.66302704205737
+    },
+    {
+      "endpoint": "h200",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-cross-size-quality-001/slot-10/h200.pt",
+        "size": 65441325,
+        "sha256": "6cc898c7f07c82c973661fd120eef76338b87e5abb345ffce622b3e889d1105a"
+      },
+      "ce": 5.146265301339164,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.136132217052401
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.186851177860876
+        }
+      },
+      "broader_ce": 6.0084719448827,
+      "score_seconds": 71.90226016705856,
+      "generation_seconds": 155.3237604999449
+    }
+  ],
+  "scientific_training": true,
+  "test_opened": false
+}

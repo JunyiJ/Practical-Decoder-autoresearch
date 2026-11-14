@@ -1,8 +1,8 @@
 # Cross-size execution progress
 
 The first paired seed bundle across depths4/8/16 passed execution review.
-Ten runs have now passed execution review. Each completed10,240updates and
-342EMA snapshots. All20 final weights and240first outputs are retained. Every endpoint covers100,416development targets
+Eleven runs have now passed execution review. Each completed10,240updates and
+342EMA snapshots. All22 final weights and264first outputs are retained. Every endpoint covers100,416development targets
 and32,768broader-probe targets. Semantic ratings remain pending.
 
 | Depth | Native H200 CE | Byte H200 CE | Byte minus native | Byte/native training time | Parameter saving |
@@ -34,6 +34,7 @@ population-seed estimate. Keep all fixed comparisons and criteria unchanged.
 | 07 | raw_bytes | 8 | 7133.353 | 7467.710 | 5.097987630 |
 | 08 | raw_bytes | 16 | 9125.205 | 9603.407 | 5.066292152 |
 | 09 | native | 16 | 6333.691 | 6613.158 | 5.059108271 |
+| 10 | raw_bytes | 4 | 6507.495 | 6856.893 | 5.150909192 |
 
 The second depth8 pair also favors byte. Native H200 CE is5.124055823 and
 byte H200 CE is5.093561120, a difference of-0.030494703. Byte training takes
@@ -53,18 +54,20 @@ interaction and remaining size decisions are pending. Keep all runs and gates
 unchanged. These are execution-reviewed descriptive results, not a completed
 panel decision or scaling law.
 
-Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
-through `slot-09/review.json`, plus `slot-09-completion-and-next-admission.json`.
-Remaining-panel admission passes: 18846717438bytes required and19339694080bytes available,
-a492976642byte margin. This includes12GiB reserve/headroom and all retained
-outputs, restart, serialization, metadata and failure allowances. Conservative
-total time is40.566hours against the frozen54-hour tranche.
+Slot10, depth4 byte bundle2, passed execution review. H200 CE is5.146265301
+and RAW CE is5.150909192. Its paired native slot11 is pending. The unpaired
+result does not resolve the second depth4 contrast or cross-size interaction.
 
-All20final endpoints and240first outputs are retained. Fixed slot10, depth4
-byte bundle2, is running after full-panel admission. The sole worker holds the
-shared lock and its sampler prefix matches bundle2. Review completion before
-admitting slot11, depth4 native bundle2. Do not repeat prerequisites or reopen
-the test.
+Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
+through `slot-10/review.json`, plus `slot-10-completion-and-next-admission.json`.
+Remaining-panel admission passes: 18715834788bytes required and19251154944bytes available,
+a535320156byte margin. This includes12GiB reserve/headroom and all retained
+outputs, restart, serialization, metadata and failure allowances. Conservative
+total time is39.534hours against the frozen54-hour tranche.
+
+All22final endpoints and264first outputs are retained. Fixed slot11, depth4
+native bundle2, is next after live full-panel checks. Do not repeat prerequisites
+or reopen the test.
 
 Storage recovery at 2026-11-14T05:03:32.738770+00:00: a new free-space decline left a projected full-panel
 deficit. Exact external-cache cleanup removed2525files and recovered114,556,928
