@@ -189,8 +189,9 @@ all-seed sign requirement; this does not establish equivalence. The third depth4
 pairs and frozen panel inference remain pending. Slot14 depth4 native bundle3
 passed execution review with H200 CE 5.186970006; its paired byte slot15
 remains pending. Fifteen runs,30endpoints and360first outputs are retained.
-Full-panel capacity passes. Admit fixed slot15, depth4 byte bundle3, after live
-capacity and execution checks.
+Full-panel capacity passes. Fixed slot15, depth4 byte bundle3, is running under
+the shared lock after verified admission and paired sampling. Review it and the
+completed depth4 pairs before admitting fixed slot16, depth8 byte bundle3.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
