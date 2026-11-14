@@ -1,8 +1,8 @@
 # Cross-size execution progress
 
 The first paired seed bundle across depths4/8/16 passed execution review.
-Thirteen runs have now passed execution review. Each completed10,240updates and
-342EMA snapshots. All26 final weights and312first outputs are retained. Every endpoint covers100,416development targets
+Fourteen runs have now passed execution review. Each completed10,240updates and
+342EMA snapshots. All28 final weights and336first outputs are retained. Every endpoint covers100,416development targets
 and32,768broader-probe targets. Semantic ratings remain pending.
 
 | Depth | Native H200 CE | Byte H200 CE | Byte minus native | Byte/native training time | Parameter saving |
@@ -37,6 +37,7 @@ population-seed estimate. Keep all fixed comparisons and criteria unchanged.
 | 10 | raw_bytes | 4 | 6507.495 | 6856.893 | 5.150909192 |
 | 11 | native | 4 | 3527.550 | 3678.337 | 5.209806629 |
 | 12 | native | 16 | 6316.000 | 6595.571 | 5.057882101 |
+| 13 | raw_bytes | 16 | 9195.614 | 9675.243 | 5.059178935 |
 
 The second depth8 pair also favors byte. Native H200 CE is5.124055823 and
 byte H200 CE is5.093561120, a difference of-0.030494703. Byte training takes
@@ -65,23 +66,27 @@ bundles descriptively support dilution of byte's quality advantage and runtime
 penalty. The mixed signs at depth16 remain. The third bundle and frozen
 multiplicity-adjusted quality and interaction decisions remain pending.
 
-Slot12, depth16 native bundle3, passed execution review. H200 CE is5.054405951
-and RAW CE is5.057882101. Paired byte slot13 is pending. This unpaired
-result does not resolve the third depth16 contrast or the full interaction.
+Slots12–13 complete the third depth16 pair. Native H200 CE is5.054405951
+and byte H200 CE is5.055576847, a byte-minus-native difference of
++0.001170895. RAW difference is+0.001296834.
+Byte training takes1.455924× native time. All three depth16 pairs
+are now complete. Their H200 differences are−0.013540404, +0.006673365 and
++0.001170895, with descriptive mean-0.001898715.
+Neither arm meets the frozen every-seed sign requirement. The descriptive mean
+also falls below the0.02practical threshold in magnitude. These findings do not
+establish equivalence. The third depth4/8 pairs, full interaction and frozen
+multiplicity-adjusted inference remain pending. Keep all runs and criteria fixed.
 
 Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
-through `slot-12/review.json`, plus `slot-12-completion-and-next-admission.json`.
-Remaining-panel admission passes: 18193430592bytes required and18628456448bytes available,
-a435025856byte margin. This includes12GiB reserve/headroom and all retained
+through `slot-13/review.json`, plus `slot-13-completion-and-next-admission.json`.
+Remaining-panel admission passes: 17996137942bytes required and18415464448bytes available,
+a419326506byte margin. This includes12GiB reserve/headroom and all retained
 outputs, restart, serialization, metadata and failure allowances. Conservative
-total time is37.700hours against the frozen54-hour tranche.
+total time is36.539hours against the frozen54-hour tranche.
 
-All26final endpoints and312first outputs are retained. Fixed slot13, depth16
-byte bundle3, is running under the shared lock. Its sampler prefix matches
-paired slot12 exactly. Live admission passed with18627198976bytes free against
-18193430592bytes required, a433768384byte margin. After execution review, admit
-fixed slot14 depth4 native bundle3. Finish all remaining runs unchanged before
-the frozen analysis and generation ratings.
+All28final endpoints and336first outputs are retained. Fixed slot14, depth4
+native bundle3, is next after live full-panel checks. Finish all remaining runs
+unchanged before the frozen analysis and generation ratings.
 
 Slot11 preflight attempt01 failed before training because its receipt basename
 still named slot10. Exclusive creation preserved the existing slot10 receipt;

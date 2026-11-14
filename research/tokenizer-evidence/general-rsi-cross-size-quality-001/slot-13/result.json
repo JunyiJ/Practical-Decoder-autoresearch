@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
+  "slot": {
+    "slot": 13,
+    "bundle": 3,
+    "arm": "raw_bytes",
+    "depth": 16,
+    "horizon": 10240,
+    "lr": 0.0025,
+    "timeout_seconds": 13855,
+    "roles": {
+      "native_initializer": 62111312034301,
+      "composer_initializer": 62111312034302,
+      "train_sampler": 62111312034303,
+      "validation_sampler": 62111312034304
+    },
+    "extra_group_seeds": [
+      62111312034305,
+      62111312034306,
+      62111312034307
+    ]
+  },
+  "steps": 10240,
+  "snapshots": 342,
+  "training_seconds": 9195.614262936637,
+  "executed_targets": 10485760,
+  "checkpoint_seconds_this_attempt": 19.893506792839617,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-cross-size-quality-001/slot-13/raw.pt",
+        "size": 98646325,
+        "sha256": "2c39bcfafbf6851f5d779bf5c116c47c185cee84de3f649b5c197a1f7e57229b"
+      },
+      "ce": 5.05917893506645,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.042791089577009
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.124816904185111
+        }
+      },
+      "broader_ce": 6.044025088719891,
+      "score_seconds": 98.69558804202825
+    },
+    {
+      "endpoint": "h200",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-cross-size-quality-001/slot-13/h200.pt",
+        "size": 98646325,
+        "sha256": "e999a66a870260f47b080520d433d8748cf926037fabe57fb9f58d6ac920db1d"
+      },
+      "ce": 5.055576846512214,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "ce": 5.039753845207571
+        },
+        "wikipedia": {
+          "count": 20062,
+          "ce": 5.118952454469214
+        }
+      },
+      "broader_ce": 6.037732230294708,
+      "score_seconds": 98.25308708311059,
+      "generation_seconds": 216.9009270418901
+    }
+  ],
+  "scientific_training": true,
+  "test_opened": false
+}

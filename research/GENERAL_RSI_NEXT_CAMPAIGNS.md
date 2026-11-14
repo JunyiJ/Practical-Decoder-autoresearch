@@ -181,12 +181,14 @@ pending. Slots10–11 complete the second depth4 pair with byte-minus-native
 H200 CE -0.061117546 and1.844763× training time. The second bundle's
 16-minus-4 interaction is+0.067790911; its runtime-penalty ratio16/4 is0.780989.
 Both completed bundles descriptively support dilution. Third-bundle confirmation
-and the frozen panel decisions remain pending. Slot12 depth16 native bundle3
-passed execution review with H200 CE 5.054405951; its paired byte slot13
-remains pending. Thirteen runs,26endpoints and312first outputs are retained.
-Full-panel capacity passes. Fixed slot13, depth16 byte bundle3, is running under
-the shared lock after verified admission and paired sampling. Review it before
-admitting fixed slot14, depth4 native bundle3.
+and the frozen panel decisions remain pending. Slots12–13 complete the third
+depth16 pair: byte-minus-native H200 CE is+0.001170895.
+All three depth16 differences are−0.013540404, +0.006673365 and+0.001170895.
+Their descriptive mean is-0.001898715. Neither arm meets the frozen
+all-seed sign requirement; this does not establish equivalence. The third depth4/8
+pairs and frozen panel inference remain pending. Fourteen runs,28endpoints and
+336first outputs are retained. Full-panel capacity passes. Admit fixed slot14,
+depth4 native bundle3, after live capacity and execution checks.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
