@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "READY_RESEARCH_BOUNDARY",
+  "status": "READY_ENGINEERING",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Existing-data document and learning-curve attribution before ranking one fresh cross-size hypothesis; no new training selected.",
+  "next_action": "Implement isolated native D256 depth4/8/16 context128/256 wrapper and verify parity with both qualified paths. Then qualify only newly combined shapes, initialization, time-EMA restart/scoring/timing/memory under the shared lock before freezing scientific admission.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-14T22:38:34.949616+00:00",
+  "updated_at": "2026-11-14T22:52:30.726472+00:00",
   "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "All18 runs accepted. Frozen byte superiority at depths4 and8: mean CE differences -0.050335183249 and -0.027171280144. Depth16 unresolved: -0.001898714638, mixed signs. Confirmed weakening interaction +0.048436468611. Python prose byte benefit persists descriptively; H200 books uncertain. All432 first outputs rated, with weak/mixed generation. All36 weights retained.",
-  "phase": "cross_size_complete",
+  "latest_learning": "Posthoc weakening is widespread:100/108 H200 documents, both sources, remaining interaction+0.042366 after removing10 largest contributors. RAW agrees. Two-document probe fluctuates and underestimates terminal interaction, so onset/cause remains unresolved.",
+  "phase": "cross_size_context_transfer_preparation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Completed panel retains 3761197056 endpoint bytes. Free 18032898048 bytes versus conservative remaining allowance 17234105326, margin 798792722. No active worker;12GiB reserve/headroom and metadata/failure allowance preserved.",
+  "capacity_status": "Audited22 obsolete accepted engineering payloads retired;5833396224 allocated bytes recovered;242 protected files verified. Free23926366208 versus revised complete planning requirement23199221760 leaves727144448bytes beyond all allowances and10GiB reserve+2GiB headroom. No capacity blocker; new combined-shape RAM/timing and final admission pending.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -162,7 +162,7 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/GENERAL_RSI_NEXT_CAMPAIGNS.md",
+  "next_design": "research/GENERAL_RSI_CROSS_SIZE_ATTRIBUTION_RESULTS.md",
   "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "exposure_completed_slots": [
@@ -449,7 +449,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Next continuation can perform bounded existing-data attribution. No training is currently active; no capacity wait.",
+  "wake_condition": "Next continuation: concrete combined depth/context source integration and bounded parity qualification. No training worker is active; do not repeat completed attribution or broad cleanup scans.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -524,13 +524,13 @@
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/review.json"
     }
   ],
-  "queued_next_campaign": "post_cross_size_existing_data_attribution",
+  "queued_next_campaign": "general-rsi-cross-size-context-transfer-preparation",
   "native_horizon_decision": "research/tokenizer-evidence/general-rsi-native-horizon-001/decision.json",
   "native_horizon_generation_evaluation": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-evaluation/summary.json",
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Measured quality and runtime effects weaken as body depth increases at fixed vocabulary,width and token budget. Fixed input-cost dilution explains parameter/runtime direction; quality mechanism remains unresolved between representation, finite-token exposure, unchanged optimization and schedule. Next inspect existing paired documents and curves; do not infer a scaling law.",
+  "latest_hypothesis": "Native context256 benefit may transfer to depths8/16 under the accepted14400-second fixed recipe. Select context transfer ahead of unsupported byte optimizer/schedule rescue. Common128 controls distinguish available inference context from short-context weight effects.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -624,7 +624,7 @@
   "context_order_plan": "research/tokenizer-evidence/general-rsi-context-order-001/plan.json",
   "context_order_report": "research/GENERAL_RSI_CONTEXT_ORDER_RESULTS.md",
   "context_order_analysis": "research/tokenizer-evidence/general-rsi-context-order-001/analysis.json",
-  "proposed_next_objective": "Attribute the completed cross-size interaction using existing documents and curves before ranking one new cross-size comparison.",
+  "proposed_next_objective": "Test native context128/256 recipe transfer across D256 depths4/8/16 with fresh paired controls.",
   "pseudo_repetition_integration": "research/tokenizer-evidence/general-rsi-pseudo-integration-001/completion-review.json",
   "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md",
   "pseudo_repetition_panel": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json",
@@ -1081,5 +1081,11 @@
   "cross_size_descriptive_results": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/descriptive-results.json",
   "cross_size_generation_evaluation": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/generation-evaluation/summary.json",
   "cross_size_completion_review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/completion-review.json",
-  "cross_size_report": "research/GENERAL_RSI_CROSS_SIZE_QUALITY_RESULTS.md"
+  "cross_size_report": "research/GENERAL_RSI_CROSS_SIZE_QUALITY_RESULTS.md",
+  "cross_size_attribution": "research/tokenizer-evidence/general-rsi-cross-size-attribution-001/analysis.json",
+  "cross_size_attribution_review": "research/tokenizer-evidence/general-rsi-cross-size-attribution-001/verification.json",
+  "cross_size_attribution_report": "research/GENERAL_RSI_CROSS_SIZE_ATTRIBUTION_RESULTS.md",
+  "cross_size_context_planning_cost": "research/tokenizer-evidence/general-rsi-cross-size-attribution-001/context-transfer-planning-cost-v2.json",
+  "cross_size_context_capacity_recovery": "research/storage-cleanup-2026-11-14-context-transfer-001/completed.json",
+  "cross_size_context_scientific_admitted": false
 }

@@ -1,0 +1,25 @@
+{
+  "question": "Native context128 versus256 at D256 depths4/8/16, fresh3 paired bundles per size, equal14400 training seconds per run",
+  "scientific_runs": 18,
+  "retained_endpoints": 36,
+  "components_bytes": {
+    "final_endpoints": 4708386816,
+    "active_restart_and_atomic_overlap": 1310965760,
+    "metadata": 1073741824,
+    "engineering_endpoints": 1073741824,
+    "failed_attempt_allowance": 2147483648,
+    "reserve": 10737418240,
+    "extra_headroom": 2147483648
+  },
+  "total_required_free_bytes": 23199221760,
+  "observed_free_bytes": 23926366208,
+  "training_seconds": 259200,
+  "planning_total_seconds": 340560.0,
+  "accounting": "Planning upper envelope, not admission. 30% covers scoring/generation/serialization/failure timing, plus3600 engineering seconds. Endpoints4B/parameter plus2MiB/container. Largest restart16B/parameter covers parameter+two optimizer tensors+EMA, plus64MiB auxiliary state; two copies cover atomic overlap. Full partial-FLOP totals depend on measured update counts and context shapes and must be frozen before launch.",
+  "scientific_training_admitted": false,
+  "deficit_bytes": 0,
+  "prior_cost": "context-transfer-planning-cost.json",
+  "revision_reason": "Completed six-run context panel metadata measures250979857bytes. Three size groups exceed512MiB by naive extrapolation; use1GiB before any admission.",
+  "margin_bytes": 727144448,
+  "capacity_recovery": "research/storage-cleanup-2026-11-14-context-transfer-001/completed.json"
+}

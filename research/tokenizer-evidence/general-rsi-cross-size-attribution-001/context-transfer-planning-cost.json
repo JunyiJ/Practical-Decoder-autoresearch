@@ -1,0 +1,21 @@
+{
+  "question": "Native context128 versus256 at D256 depths4/8/16, fresh3 paired bundles per size, equal14400 training seconds per run",
+  "scientific_runs": 18,
+  "retained_endpoints": 36,
+  "components_bytes": {
+    "final_endpoints": 4708386816,
+    "active_restart_and_atomic_overlap": 1310965760,
+    "metadata": 536870912,
+    "engineering_endpoints": 1073741824,
+    "failed_attempt_allowance": 2147483648,
+    "reserve": 10737418240,
+    "extra_headroom": 2147483648
+  },
+  "total_required_free_bytes": 22662350848,
+  "observed_free_bytes": 18077536256,
+  "training_seconds": 259200,
+  "planning_total_seconds": 340560.0,
+  "accounting": "Planning upper envelope, not admission. 30% covers scoring/generation/serialization/failure timing, plus3600 engineering seconds. Endpoints4B/parameter plus2MiB/container. Largest restart16B/parameter covers parameter+two optimizer tensors+EMA, plus64MiB auxiliary state; two copies cover atomic overlap. Full partial-FLOP totals depend on measured update counts and context shapes and must be frozen before launch.",
+  "scientific_training_admitted": false,
+  "deficit_bytes": 4584814592
+}

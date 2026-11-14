@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-14T22:52:03.072260+00:00",
+  "accepted": true,
+  "input_hashes_verified": 237,
+  "frozen_delta_recomputation_max_tolerance": 2e-14,
+  "all_document_counts_and_leave_out_values_verified": true,
+  "final_same_document_probe": {
+    "raw": {
+      "targets": 4503,
+      "interaction": 0.007183275050513291
+    },
+    "h200": {
+      "targets": 4503,
+      "interaction": 0.0109839328506108
+    }
+  },
+  "cleanup": {
+    "files_removed": 22,
+    "skipped": [],
+    "allocated_bytes_removed": 5833396224,
+    "protected_files_verified": 242,
+    "free_before": 18092982272,
+    "free_after": 23926472704,
+    "required_free_bytes": 22662350848,
+    "margin_bytes": 1264121856,
+    "reserve_10GiB_plus_extra_2GiB_included": true,
+    "manifest_sha256": "0a6375a3cd5ccaaad568d44a6b7e0d7af4dd47b5294c007894e9a41abeef7773",
+    "scientific_training_admitted": false
+  },
+  "test_opened": false,
+  "scientific_updates": 0,
+  "source_sha256": "3d66feb1540b973f40ca2a51267657d8365537bab4d25610d992b62b9f21471b",
+  "analysis_sha256": "46842bf9ea58be6a9bdb502437018fbff3c793c272d571c0628f386a06eba6b0",
+  "report_sha256": "94ad0ec2c0b085f4ca01997f8380307df844f914502a171dd1b2e6becf3e1618",
+  "planning_cost_sha256": "deefa174a25ab40b5e0b575cf65ebe65ad3b59c641a591fe44f58ee87d2f6450",
+  "revised_capacity": {
+    "question": "Native context128 versus256 at D256 depths4/8/16, fresh3 paired bundles per size, equal14400 training seconds per run",
+    "scientific_runs": 18,
+    "retained_endpoints": 36,
+    "components_bytes": {
+      "final_endpoints": 4708386816,
+      "active_restart_and_atomic_overlap": 1310965760,
+      "metadata": 1073741824,
+      "engineering_endpoints": 1073741824,
+      "failed_attempt_allowance": 2147483648,
+      "reserve": 10737418240,
+      "extra_headroom": 2147483648
+    },
+    "total_required_free_bytes": 23199221760,
+    "observed_free_bytes": 23926366208,
+    "training_seconds": 259200,
+    "planning_total_seconds": 340560.0,
+    "accounting": "Planning upper envelope, not admission. 30% covers scoring/generation/serialization/failure timing, plus3600 engineering seconds. Endpoints4B/parameter plus2MiB/container. Largest restart16B/parameter covers parameter+two optimizer tensors+EMA, plus64MiB auxiliary state; two copies cover atomic overlap. Full partial-FLOP totals depend on measured update counts and context shapes and must be frozen before launch.",
+    "scientific_training_admitted": false,
+    "deficit_bytes": 0,
+    "prior_cost": "context-transfer-planning-cost.json",
+    "revision_reason": "Completed six-run context panel metadata measures250979857bytes. Three size groups exceed512MiB by naive extrapolation; use1GiB before any admission.",
+    "margin_bytes": 727144448,
+    "capacity_recovery": "research/storage-cleanup-2026-11-14-context-transfer-001/completed.json"
+  }
+}

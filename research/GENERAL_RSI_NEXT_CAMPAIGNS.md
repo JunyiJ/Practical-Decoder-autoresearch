@@ -1,5 +1,45 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## Current boundary — attribution complete, context transfer selected, 2026-11-14 Pacific
+
+The bounded existing-data attribution is complete and independently checked.
+Weakening is positive in100/108 document means and both sources. Removing the
+10 largest positive contributors leaves+0.042366 H200 interaction. RAW agrees.
+The two-document intermediate probe fluctuates and has a much smaller terminal
+interaction; it cannot locate full-development onset or isolate cooldown.
+
+Select native context128 versus256 at D256 depths4/8/16 for preparation, with
+three fresh pairs per size and the inherited14,400-second training budget.
+The accepted depth4 context result is a planning anchor only. New depth4 pairs
+are reference controls for the new interaction, not pooled old confirmations.
+No byte/context factorial, optimizer sweep or exposure replay is selected.
+Read `GENERAL_RSI_CROSS_SIZE_ATTRIBUTION_RESULTS.md` for ranking, mechanisms,
+contrary evidence, exact primary-paper versions, predictions and scope.
+
+Planning cost is72 training hours and94.6 hours including allowances. Revised
+complete storage need is23,199,221,760 free bytes, including36 endpoints,
+optimizer/EMA serialization overlap,1GiB metadata,1GiB engineering,2GiB failure,
+10GiB reserve and2GiB extra headroom. Audited retirement of22 obsolete accepted
+engineering payloads recovered5,833,396,224 allocated bytes and verified242
+protected files. Free23,926,366,208 leaves727,144,448bytes beyond the requirement.
+The first cleanup preparation failed on a historical review-schema mismatch,
+changed no files, and is retained separately from the repaired successful audit.
+Scientific and failed payloads, selected/fresh weights and first outputs remain.
+
+Next executable action: implement an isolated combined native depth/context
+wrapper. Verify parity against both qualified paths, independent block draws,
+new context256 shapes at depths8/16, complete time-EMA restart and endpoint
+loading/scoring, then measure timing and memory under the shared lock. Qualify
+only these demonstrated new requirements. Freeze fresh roles, quality and
+interaction criteria, accounting and measured full admission before training.
+There is no active worker and scientific training is not yet admitted.
+
+Attribution/review: `tokenizer-evidence/general-rsi-cross-size-attribution-001/`.
+Cleanup: `storage-cleanup-2026-11-14-context-transfer-001/completed.json`.
+Do not repeat the completed attribution, evaluations or unchanged capacity scans.
+The prior boundaries below remain historical evidence.
+
+
 ## Latest execution boundary — cross-size panel complete, 2026-11-14 Pacific
 
 The context-length panel and cross-size equal-token panel are both complete.
