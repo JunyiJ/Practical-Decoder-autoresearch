@@ -1,6 +1,6 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "READY_ENGINEERING",
+  "status": "ACTIVE_SCIENTIFIC_WORKER",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
@@ -8,15 +8,15 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Implement isolated native D256 depth4/8/16 context128/256 wrapper and verify parity with both qualified paths. Then qualify only newly combined shapes, initialization, time-EMA restart/scoring/timing/memory under the shared lock before freezing scientific admission.",
+  "next_action": "Let active frozen slot00 finish unchanged. Review complete execution, clock, endpoint and first-generation evidence, then launch slot01 and continue all12 in fixed order. No other accelerator worker.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-14T22:52:30.726472+00:00",
-  "active_worker_pid": null,
+  "updated_at": "2026-11-14T23:16:37.198791+00:00",
+  "active_worker_pid": 20596,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": null,
+  "active_slot": 0,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Posthoc weakening is widespread:100/108 H200 documents, both sources, remaining interaction+0.042366 after removing10 largest contributors. RAW agrees. Two-document probe fluctuates and underestimates terminal interaction, so onset/cause remains unresolved.",
-  "phase": "cross_size_context_transfer_preparation",
+  "latest_learning": "All four combined depth/context shapes pass exact CPU parity, complete active-time-EMA restart and endpoint/scoring/generation checks. Original CPU-oracle MPS RNG harness failure retained and separately repaired. No new scientific quality result.",
+  "phase": "two_depth_context_transfer_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Audited22 obsolete accepted engineering payloads retired;5833396224 allocated bytes recovered;242 protected files verified. Free23926366208 versus revised complete planning requirement23199221760 leaves727144448bytes beyond all allowances and10GiB reserve+2GiB headroom. No capacity blocker; new combined-shape RAM/timing and final admission pending.",
+  "capacity_status": "Complete12-run admission passed: free21724610560 required20674353861 margin1050256699 bytes after10GiB reserve plus2GiB headroom. RSS/MPS and observed unified-memory headroom qualified.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -813,7 +813,7 @@
   "context_length_integration_report": "research/GENERAL_RSI_CONTEXT_LENGTH_INTEGRATION_RESULTS.md",
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
   "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/launch-verification.json",
-  "post_current_experiment_priority": "Context-length and cross-size equal-token panels completed. Continue the human-authorized cross-size priority with bounded existing-data attribution and evidence-grounded selection of one fresh comparison.",
+  "post_current_experiment_priority": "Human directed two-depth context128/256 transfer at4/16 layers. Attribution complete; no repeat.",
   "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-004/projection-completed.json",
   "selected_native_context": 256,
   "context_length_quality_decision": "research/tokenizer-evidence/general-rsi-context-length-quality-001/decision.json",
@@ -1085,7 +1085,23 @@
   "cross_size_attribution": "research/tokenizer-evidence/general-rsi-cross-size-attribution-001/analysis.json",
   "cross_size_attribution_review": "research/tokenizer-evidence/general-rsi-cross-size-attribution-001/verification.json",
   "cross_size_attribution_report": "research/GENERAL_RSI_CROSS_SIZE_ATTRIBUTION_RESULTS.md",
-  "cross_size_context_planning_cost": "research/tokenizer-evidence/general-rsi-cross-size-attribution-001/context-transfer-planning-cost-v2.json",
+  "cross_size_context_planning_cost": "research/tokenizer-evidence/general-rsi-context-transfer-two-depth-planning-001/forecast.json",
   "cross_size_context_capacity_recovery": "research/storage-cleanup-2026-11-14-context-transfer-001/completed.json",
-  "cross_size_context_scientific_admitted": false
+  "cross_size_context_scientific_admitted": true,
+  "cross_size_context_depths": [
+    4,
+    16
+  ],
+  "cross_size_context_cpu_fixture": "research/tokenizer-evidence/general-rsi-depth-context-fixture-002/attempt-01/result.json",
+  "cross_size_context_integration": "research/tokenizer-evidence/general-rsi-depth-context-integration-003/plan.json",
+  "cross_size_context_integration_failure": "research/tokenizer-evidence/general-rsi-depth-context-integration-002/attempt-01/failure.json",
+  "depth_context_quality_panel": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json",
+  "depth_context_quality_panel_sha256": "b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c",
+  "depth_context_quality_admission": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/admission.json",
+  "depth_context_quality_design": "research/GENERAL_RSI_DEPTH_CONTEXT_QUALITY_DESIGN.md",
+  "depth_context_engineering_review": "research/tokenizer-evidence/general-rsi-depth-context-integration-003/completion-review.json",
+  "depth_context_engineering_report": "research/GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md",
+  "depth_context_quality_completed_slots": [],
+  "depth_context_quality_panel_launched": true,
+  "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-00/launch-verification.json"
 }

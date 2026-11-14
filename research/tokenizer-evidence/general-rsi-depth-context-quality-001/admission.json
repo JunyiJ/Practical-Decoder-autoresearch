@@ -1,0 +1,31 @@
+{
+  "accepted": true,
+  "plan_sha256": "b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c",
+  "free_bytes": 21724610560,
+  "required_free_bytes": 20674353861,
+  "margin_bytes": 1050256699,
+  "forecast_seconds": 187636.13198312538,
+  "science_tranche_seconds": 224640,
+  "total_with_engineering_envelope_seconds": 191236.13198312538,
+  "full_comparison_ceiling_seconds": 228240,
+  "engineering_result_sha256": "2642acfa4a73e612e79de77f92b97c4847eb9d297f0b94759c1c4f24599d3c72",
+  "memory": {
+    "physical_bytes": 17179869184,
+    "max_observed_rss_bytes": 1756102656,
+    "max_observed_mps_driver_bytes": 2736570368,
+    "host_extra_allowance_bytes": 268435456,
+    "minimum_observed_free_inactive_speculative_bytes": 2326298624,
+    "required_headroom_bytes": 1073741824,
+    "maximum_pressure_level": 2,
+    "current": {
+      "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                               88952.\nPages active:                            233472.\nPages inactive:                          269070.\nPages speculative:                         6543.\nPages throttled:                              0.\nPages wired down:                        167018.\nPages purgeable:                           4911.\n\"Translation faults\":               33907452650.\nPages copy-on-write:                  291028340.\nPages zero filled:                   7236343479.\nPages reactivated:                   1453128600.\nPages purged:                         214390853.\nFile-backed pages:                       194473.\nAnonymous pages:                         314612.\nPages stored in compressor:              933366.\nPages occupied by compressor:            249090.\nDecompressions:                      1153122520.\nCompressions:                        1254896304.\nPageins:                             4145369960.\nPageouts:                               1544380.\nSwapins:                                 889663.\nSwapouts:                               1204527.\n",
+      "swap": "vm.swapusage: total = 5120.00M  used = 3485.62M  free = 1634.38M  (encrypted)\n",
+      "pressure": "kern.memorystatus_vm_pressure_level: 1\n",
+      "physical": "hw.memsize: 17179869184\n"
+    },
+    "interpretation": "Free+inactive+speculative is a reclaimable-page proxy, not guaranteed free RAM; combined-path pressure/peaks were measured. RSS and driver counts overlap and are not added. Current pressure must be normal. Continuous RSS/disk and per-update MPS guards remain enforced."
+  },
+  "measured_max_restart_bytes": 544808527,
+  "retained_failed_harness_payloads_charged_through_actual_free_space": true,
+  "scientific_scores_used": 0
+}

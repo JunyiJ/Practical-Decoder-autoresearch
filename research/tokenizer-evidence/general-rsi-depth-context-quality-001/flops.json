@@ -1,0 +1,117 @@
+{
+  "policy": "dense_matrix_fwd_bwd_plus_muon_v1",
+  "sources": {
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/tokenizer-evidence/general-rsi-cross-size-boundary-001/allocation.json": "3416ff4fdcbd3069ee70861c67370bffbc322a70b143ce84d6bf5dbb62f4db7d",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_depth_context_v1/model.py": "861ddd65454c4073a7fa62c3c3bef671f61406b1a67f5e8bc3e389c0208c4970",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_depth_context_v1/optimizer.py": "60b9aa0e49e1a1318ae3bdcc4f11716682eb8a3703d9f93a535463284f75920c",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_context_length_v1/runtime/attention/__init__.py": "6fb1e6380b850948785d66fc73c4330e3a810559ed3aa1e2a87e8daa35728a53",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/block_norm_v1/runtime/attention/mla.py": "ffdecd5daa65205047f893539b04c43dc26ee4ccf2b98fdcc4c5ceabbce0e9c4",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/.venv/lib/python3.13/site-packages/torch/optim/_muon.py": "c17abbb8af4c935d125b189c38d3cbaec295f1cfd232d2712bdb75e13184b972",
+    "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_depth_context_flops_v1.py": "8386640de137145718b6f616c0c598612e4a85bf74ba746b137ba8c8b1c81148"
+  },
+  "torch_version": "2.14.1",
+  "per_block_matrix_shapes": {
+    "transformer.h.0.attn.dkv.weight": [
+      64,
+      256
+    ],
+    "transformer.h.0.attn.uk.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.uv.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.dq.weight": [
+      64,
+      256
+    ],
+    "transformer.h.0.attn.uq.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.qr.weight": [
+      256,
+      64
+    ],
+    "transformer.h.0.attn.kr.weight": [
+      32,
+      256
+    ],
+    "transformer.h.0.attn.out.weight": [
+      256,
+      256
+    ],
+    "transformer.h.0.mlp.linear_gate.weight": [
+      672,
+      256
+    ],
+    "transformer.h.0.mlp.linear_up.weight": [
+      672,
+      256
+    ],
+    "transformer.h.0.mlp.linear_down.weight": [
+      256,
+      672
+    ]
+  },
+  "rows": [
+    {
+      "depth": 4,
+      "context": 128,
+      "forward_matrix_flops": {
+        "body_linear": 5637144576,
+        "attention_dense": 805306368,
+        "output_head": 26349142016
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 98374778880,
+      "muon_newton_schulz_matrix_flops_per_update": 15184691200,
+      "estimated_accounted_flops_per_update": 113559470080
+    },
+    {
+      "depth": 4,
+      "context": 256,
+      "forward_matrix_flops": {
+        "body_linear": 5637144576,
+        "attention_dense": 1610612736,
+        "output_head": 26349142016
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 100790697984,
+      "muon_newton_schulz_matrix_flops_per_update": 15184691200,
+      "estimated_accounted_flops_per_update": 115975389184
+    },
+    {
+      "depth": 16,
+      "context": 128,
+      "forward_matrix_flops": {
+        "body_linear": 22548578304,
+        "attention_dense": 3221225472,
+        "output_head": 26349142016
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 156356837376,
+      "muon_newton_schulz_matrix_flops_per_update": 60738764800,
+      "estimated_accounted_flops_per_update": 217095602176
+    },
+    {
+      "depth": 16,
+      "context": 256,
+      "forward_matrix_flops": {
+        "body_linear": 22548578304,
+        "attention_dense": 6442450944,
+        "output_head": 26349142016
+      },
+      "estimated_forward_backward_matrix_flops_per_update": 166020513792,
+      "muon_newton_schulz_matrix_flops_per_update": 60738764800,
+      "estimated_accounted_flops_per_update": 226759278592
+    }
+  ],
+  "assumptions": [
+    "Multiply-add=2FLOPs; forward+two reverse matmuls=3xforward.",
+    "1024targets as8x128 or4x256; full masked attention scores64wide and values32wide. Native input lookup is not a dense vocabulary matmul.",
+    "Muon5Newton-Schulz steps each4*m*m*n+2*m*m*m after orienting m<=n; internalBF16 unchanged.",
+    "EMA,norm/activation/bias/softmax/CE/embedding scatter/clipping/AdamW/decay/reductions/copies and data/validation/generation/checkpoint work excluded. Partial operator estimate, not total hardware telemetry or6NT proxy.",
+    "Multiply by actual successful updates for curves; charge failures/replays separately. Synchronized Mac time includes uncounted update operations."
+  ],
+  "test_opened": false
+}

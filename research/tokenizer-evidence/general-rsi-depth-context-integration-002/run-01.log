@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_depth_context_integration_v2.py", line 150, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_depth_context_integration_v2.py", line 148, in main
+    result=execute(p,binding,a);assert all(sha(ROOT/f)==h for f,h in p['sources'].items());put(a/'result.json',result)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_depth_context_integration_v2.py", line 128, in execute
+    result=shape(p,binding,out,s);put(out/'review.json',result)
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_depth_context_integration_v2.py", line 115, in shape
+    assert len(rows)==24 and digest({n:q.detach().cpu().clone() for n,q in model.ordered_parameters()})==modelbefore and digest(ctx.capture())==before
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

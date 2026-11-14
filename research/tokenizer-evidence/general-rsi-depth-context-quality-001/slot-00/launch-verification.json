@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-14T23:16:37.198791+00:00",
+  "worker_pid": 20596,
+  "shared_lock_busy": true,
+  "plan_sha256": "b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c",
+  "slot": 0,
+  "depth": 4,
+  "context": 128,
+  "bundle": 1,
+  "observed_updates": 125,
+  "last_observed_step": {
+    "step": 125,
+    "loss": 7.662148952484131,
+    "lr_ratio": 1.0,
+    "clip": {
+      "threshold": 1.0,
+      "pre_norm": 0.3928927481174469,
+      "post_norm": 0.3928927481174469,
+      "coefficient": 1.0,
+      "gradient_tensors": 88
+    },
+    "batch_sha256": "f071b59592f25c8f935f3f180691cbf0897c540afbf30994d0baeacf21a453be",
+    "begin_ns": 45729941250,
+    "end_ns": 46110944209,
+    "mps_driver_bytes": 2493300736
+  },
+  "guard_snapshot": {
+    "elapsed_seconds": 47.398195082787424,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 21600
+    },
+    "observation": {
+      "free_bytes": 21609357312,
+      "peak_rss_bytes": 869498880
+    },
+    "pid": 20596,
+    "reason": null,
+    "status": "watching"
+  },
+  "initial_checkpoint": {
+    "receipt": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-00/restart-a01-s000000.pt",
+      "size": 114028943,
+      "sha256": "3195eb62f7735a05617a6e7d868fdb873871508eff6cf985e159fabcf54d7447"
+    },
+    "attempt": 1,
+    "step": 0,
+    "spent_ns": 0
+  },
+  "scientific_training_started": true,
+  "test_opened": false
+}
