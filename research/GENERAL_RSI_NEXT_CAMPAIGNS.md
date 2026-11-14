@@ -1,5 +1,43 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## Latest execution boundary — cross-size panel complete, 2026-11-14 Pacific
+
+The context-length panel and cross-size equal-token panel are both complete.
+Do not relaunch their slots, prerequisites, common128 scoring or first outputs.
+All18 cross-size execution reviews passed; all36 RAW/H200 endpoints and432
+first outputs are retained. Frozen decisions accept byte superiority at depths4
+and8, leave depth16 unresolved, and confirm a weakening16-minus4 interaction.
+The mean CE differences are−0.050335,−0.027171 and−0.001899 respectively;
+the interaction is+0.048436. Byte/native training-time geometric means fall
+from1.840 to1.634 to1.446. These are finite-budget depth comparisons, not a
+scaling law or population-seed inference.
+
+The fresh Python-prose probe descriptively favors byte at all three depths;
+H200 book intervals include zero. Generation remains weak and mixed despite
+all432 fixed exploratory agent ratings being complete. Preserve older transfer
+negatives, original numerical failures and all selected/fresh weights.
+Full results and limits: `GENERAL_RSI_CROSS_SIZE_QUALITY_RESULTS.md`.
+Completion audit: `tokenizer-evidence/general-rsi-cross-size-quality-001/completion-review.json`.
+There is no active training worker and no unresolved capacity blocker.
+
+Next executable action: use the existing108 paired development-document scores
+and fixed-probe/training curves to locate the weakening effect by source and
+individual document, and inspect whether it emerges before the common cooldown.
+This is bounded posthoc attribution, with no new quality gate or test access.
+Then apply evidence-grounded-research to rank ONE next cross-size hypothesis
+against the completed context-length finding. Revisit relevant primary-paper
+sections and distinguish representation from finite-token, optimizer and
+schedule explanations. No new training direction is selected yet; qualify only
+new requirements and freeze the complete fresh comparison and resource contract
+before any launch. Do not replay closed equal-time, precision, exposure,
+transfer or prerequisite studies without a demonstrated new requirement.
+
+The earlier sequence below records the human priority and its execution history.
+Its instructions to finish those two panels are satisfied and superseded by
+this completion. The human cross-size research priority and all restrictions
+remain in force.
+
+
 ## Latest human priority — cross-size transfer, 2026-11-12 Pacific
 
 The human requested: "update the RSI research plan and tell the other thread to

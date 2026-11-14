@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "READY_RESEARCH_BOUNDARY",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 93794,
-  "next_action": "Let final fixed slot17 depth8 native bundle3 finish unchanged. Review execution and reconcile all18 runs, then run frozen panel analysis and fixed generation ratings. Preserve all endpoints, first outputs and original failures.",
+  "active_session": null,
+  "next_action": "Existing-data document and learning-curve attribution before ranking one fresh cross-size hypothesis; no new training selected.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-14T21:11:02.990687+00:00",
-  "active_worker_pid": 95367,
+  "updated_at": "2026-11-14T22:38:34.949616+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 17,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Slot16 depth8 byte bundle3 passed execution review: H200 CE 5.094401930200, RAW CE 5.098851223987, training 7395.728679 seconds. Final paired native slot17 is pending, so the third depth8 contrast remains unresolved. Completed depth4 and depth16 findings remain unchanged. Seventeen runs,34 endpoints and408 first outputs retained.",
-  "phase": "cross_size_confirmation",
+  "latest_learning": "All18 runs accepted. Frozen byte superiority at depths4 and8: mean CE differences -0.050335183249 and -0.027171280144. Depth16 unresolved: -0.001898714638, mixed signs. Confirmed weakening interaction +0.048436468611. Python prose byte benefit persists descriptively; H200 books uncertain. All432 first outputs rated, with weak/mixed generation. All36 weights retained.",
+  "phase": "cross_size_complete",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Slot17 launch admission: free 17803399168 bytes versus full remaining requirement 17484238908 bytes; margin 319160260 bytes. Retained final endpoints 3511063474 bytes credited once. Twelve GiB reserve/headroom and all future outputs, serialization, metadata and failure allowances remain included.",
+  "capacity_status": "Completed panel retains 3761197056 endpoint bytes. Free 18032898048 bytes versus conservative remaining allowance 17234105326, margin 798792722. No active worker;12GiB reserve/headroom and metadata/failure allowance preserved.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -162,7 +162,7 @@
   ],
   "selected_general_architecture": "raw_bytes",
   "decision": "research/tokenizer-evidence/general-rsi-panel-001/decision.json",
-  "next_design": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_PROTOCOL.md",
+  "next_design": "research/GENERAL_RSI_NEXT_CAMPAIGNS.md",
   "prior_panel": "research/tokenizer-evidence/general-rsi-panel-001/plan.json",
   "prior_panel_sha256": "ab70714782ccc514809a70832c8ca650c884ca03719eb39616df37e1c3d876b2",
   "exposure_completed_slots": [
@@ -449,7 +449,7 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Active slot04 worker completion, failure, human steering, or materially changed resource condition.",
+  "wake_condition": "Next continuation can perform bounded existing-data attribution. No training is currently active; no capacity wait.",
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -524,25 +524,13 @@
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/review.json"
     }
   ],
-  "queued_next_campaign": {
-    "id": "general-rsi-composer-fp32-quality-001",
-    "status": "completed_inconclusive",
-    "design": "research/GENERAL_RSI_COMPOSER_FP32_QUALITY_NEXT.md",
-    "authorization": "Run the training-quality comparison after the current panel finishes. Keep the original failure recorded; do not use the 0.01% threshold as a quality veto.",
-    "launch_condition": "All six native horizon slots reviewed, frozen decision and fixed generation evaluation completed; new optimizer integration/restart/timing checks and measured full resource admission passed.",
-    "arithmetic_agreement_role": "diagnostic_only",
-    "arms": [
-      "existing_byte",
-      "byte_composer_fp32"
-    ],
-    "preserve_original_failure": true
-  },
+  "queued_next_campaign": "post_cross_size_existing_data_attribution",
   "native_horizon_decision": "research/tokenizer-evidence/general-rsi-native-horizon-001/decision.json",
   "native_horizon_generation_evaluation": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-evaluation/summary.json",
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Growing the body dilutes fixed input-parameter savings; byte runtime overhead may shrink while its equal-token quality advantage may persist, vanish or reverse. The completed context effect ranks second because its matched full-horizon three-size test costs at least72 training hours.",
+  "latest_hypothesis": "Measured quality and runtime effects weaken as body depth increases at fixed vocabulary,width and token budget. Fixed input-cost dilution explains parameter/runtime direction; quality mechanism remains unresolved between representation, finite-token exposure, unchanged optimization and schedule. Next inspect existing paired documents and curves; do not infer a scaling law.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -636,7 +624,7 @@
   "context_order_plan": "research/tokenizer-evidence/general-rsi-context-order-001/plan.json",
   "context_order_report": "research/GENERAL_RSI_CONTEXT_ORDER_RESULTS.md",
   "context_order_analysis": "research/tokenizer-evidence/general-rsi-context-order-001/analysis.json",
-  "proposed_next_objective": "research/GENERAL_RSI_PSEUDO_REPETITION_NEXT.md",
+  "proposed_next_objective": "Attribute the completed cross-size interaction using existing documents and curves before ranking one new cross-size comparison.",
   "pseudo_repetition_integration": "research/tokenizer-evidence/general-rsi-pseudo-integration-001/completion-review.json",
   "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md",
   "pseudo_repetition_panel": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json",
@@ -825,7 +813,7 @@
   "context_length_integration_report": "research/GENERAL_RSI_CONTEXT_LENGTH_INTEGRATION_RESULTS.md",
   "context_length_integration_review": "research/tokenizer-evidence/general-rsi-context-length-integration-001/completion-review.json",
   "context_length_quality_launch_verification": "research/tokenizer-evidence/general-rsi-context-length-quality-001/slot-05/launch-verification.json",
-  "post_current_experiment_priority": "Test which findings transfer across model sizes on this Mac mini; current context-length panel finishes unchanged. Authority: human request 2026-11-12 in Review RSI byte model.",
+  "post_current_experiment_priority": "Context-length and cross-size equal-token panels completed. Continue the human-authorized cross-size priority with bounded existing-data attribution and evidence-grounded selection of one fresh comparison.",
   "context_length_active_capacity_recovery": "research/storage-cleanup-2026-11-12-active-context-004/projection-completed.json",
   "selected_native_context": 256,
   "context_length_quality_decision": "research/tokenizer-evidence/general-rsi-context-length-quality-001/decision.json",
@@ -1071,9 +1059,27 @@
       "worker_seconds": 7790.704810791882,
       "review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-16/review.json",
       "first_outputs": 24
+    },
+    {
+      "slot": 17,
+      "depth": 8,
+      "arm": "native",
+      "bundle": 3,
+      "steps": 10240,
+      "h200_ce": 5.1273015382328415,
+      "raw_ce": 5.131433734740361,
+      "training_seconds": 4479.28301251377,
+      "worker_seconds": 4690.090528083034,
+      "review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-17/review.json",
+      "first_outputs": 24
     }
   ],
   "cross_size_launch_verification": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-17/launch-verification.json",
   "cross_size_active_capacity_recovery": "research/storage-cleanup-2026-11-13-active-cross-size-001/projection-parent-completed.json",
-  "cross_size_prelaunch_recovery": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/prelaunch-11-failure-01/failure.json"
+  "cross_size_prelaunch_recovery": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/prelaunch-11-failure-01/failure.json",
+  "cross_size_decision": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/decision.json",
+  "cross_size_descriptive_results": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/descriptive-results.json",
+  "cross_size_generation_evaluation": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/generation-evaluation/summary.json",
+  "cross_size_completion_review": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/completion-review.json",
+  "cross_size_report": "research/GENERAL_RSI_CROSS_SIZE_QUALITY_RESULTS.md"
 }

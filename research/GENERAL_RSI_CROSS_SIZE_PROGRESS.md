@@ -1,5 +1,19 @@
 # Cross-size execution progress
 
+All18 runs passed execution review. The panel is complete, with36 endpoints and432
+first outputs retained. Frozen analysis accepts byte superiority at depths4 and8,
+leaves depth16 unresolved, and confirms weakening of the byte advantage from
+4 to16 blocks. All432 identity-hidden exploratory agent ratings are complete.
+There is no active training worker. See `GENERAL_RSI_CROSS_SIZE_QUALITY_RESULTS.md`
+and `tokenizer-evidence/general-rsi-cross-size-quality-001/completion-review.json`.
+
+Next: bounded existing-data document and curve attribution, then evidence-grounded
+ranking of one fresh cross-size question. No further training is selected here.
+The chronological notes below preserve the evidence available at each earlier
+stage; their pending-run descriptions are superseded by this completion.
+
+## Historical staged progress
+
 The first paired seed bundle across depths4/8/16 passed execution review.
 Seventeen runs have now passed execution review. Each completed10,240updates and
 342EMA snapshots. All34 final weights and408first outputs are retained. Every endpoint covers100,416development targets
