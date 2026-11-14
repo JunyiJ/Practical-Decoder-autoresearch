@@ -47,5 +47,7 @@ Remaining-panel admission passes: 19,338,417,174bytes required and
 retained outputs, restart, serialization, metadata and failure allowances. The
 conservative total forecast is42.749hours against the frozen54-hour tranche.
 
-Next, admit fixed slot08, depth16 byte bundle2, after live full-panel checks.
-Do not repeat prerequisites or reopen the test.
+Slot08, depth16 byte bundle2, is running after full-panel admission. The single
+worker holds the shared lock and its sampler prefix matches bundle2. Review
+its completed execution, then admit fixed slot09, depth16 native bundle2, after
+live full-panel checks. Do not repeat prerequisites or reopen the test.

@@ -173,8 +173,9 @@ outputs from bundle1 are retained. Slots06–07 complete the second depth8 pair:
 byte-minus-native H200 CE is-0.030494703 with1.603× training time. Both depth8
 pairs favor byte, with magnitudes straddling0.02. Eight runs,16endpoints and
 192first outputs are retained. The third pair and other second-bundle sizes
-remain pending. Admit fixed slot08, depth16 byte bundle2, after live full-panel
-resource and execution checks. See
+remain pending. Fixed slot08, depth16 byte bundle2, is running after full-panel
+admission. Review its completed execution, then admit slot09, depth16 native
+bundle2, after live resource and execution checks. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 
