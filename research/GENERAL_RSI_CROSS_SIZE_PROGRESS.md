@@ -72,8 +72,10 @@ outputs, restart, serialization, metadata and failure allowances. Conservative
 total time is38.707hours against the frozen54-hour tranche.
 
 All24final endpoints and288first outputs are retained. Fixed slot12, depth16
-native bundle3, is next after live full-panel checks. Finish all third-bundle
-runs unchanged before the frozen analysis and generation ratings.
+native bundle3, is running under the shared lock. Its live admission passed with
+18994065408bytes free against18487837678bytes required, a506227730byte margin.
+After execution review, admit paired slot13 depth16 byte bundle3. Finish all
+third-bundle runs unchanged before the frozen analysis and generation ratings.
 
 Slot11 preflight attempt01 failed before training because its receipt basename
 still named slot10. Exclusive creation preserved the existing slot10 receipt;

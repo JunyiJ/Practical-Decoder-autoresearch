@@ -182,8 +182,9 @@ H200 CE -0.061117546 and1.844763× training time. The second bundle's
 16-minus-4 interaction is+0.067790911; its runtime-penalty ratio16/4 is0.780989.
 Both completed bundles descriptively support dilution. Third-bundle confirmation
 and the frozen panel decisions remain pending. Twelve runs,24endpoints and288first
-outputs are retained. Full-panel capacity passes. Admit fixed slot12, depth16
-native bundle3, after live capacity and execution checks.
+outputs are retained. Full-panel capacity passes. Fixed slot12, depth16 native
+bundle3, is running under the shared lock after verified admission. Review it
+before admitting paired slot13, depth16 byte bundle3.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.

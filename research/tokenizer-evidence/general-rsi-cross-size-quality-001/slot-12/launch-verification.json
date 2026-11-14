@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-14T11:07:58.035999+00:00",
+  "binding": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
+  "worker": {
+    "pid": 93188,
+    "command": "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m research.general_rsi_cross_size_worker_v1 5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080 12"
+  },
+  "exec_session": 19697,
+  "shared_lock_busy": true,
+  "guard_snapshot": {
+    "elapsed_seconds": 39.33067737496458,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 10221
+    },
+    "observation": {
+      "free_bytes": 18846793728,
+      "peak_rss_bytes": 912326656
+    },
+    "pid": 93188,
+    "reason": null,
+    "status": "watching"
+  },
+  "completed_steps_at_inspection": 57,
+  "paired_sampler_prefix_exact": null,
+  "sampler_comparison_slot": null,
+  "sampler_note": "First run of fresh bundle3; paired-stream equality will be checked against subsequent runs by frozen execution review.",
+  "step_log_prefix_bytes": 19088,
+  "step_log_prefix_sha256": "5deff74ab9ecab88bbc129a8f59b89ffce7148e8c65131e493652d27bac2876b",
+  "admission_sha256": "d1a1975c6e8bac092c3ee2675300034f5285278141520aa01d82823c451a7984",
+  "source_commit": "83564ad3a5ccc1adb023b89f027d9244d25aa683",
+  "frozen_slot": {
+    "slot": 12,
+    "bundle": 3,
+    "arm": "native",
+    "depth": 16,
+    "horizon": 10240,
+    "lr": 0.0025,
+    "timeout_seconds": 10221,
+    "roles": {
+      "native_initializer": 62111312034301,
+      "composer_initializer": 62111312034302,
+      "train_sampler": 62111312034303,
+      "validation_sampler": 62111312034304
+    },
+    "extra_group_seeds": [
+      62111312034305,
+      62111312034306,
+      62111312034307
+    ]
+  },
+  "test_opened": false
+}
