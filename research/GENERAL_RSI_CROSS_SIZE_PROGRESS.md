@@ -1,8 +1,8 @@
 # Cross-size execution progress
 
 The first paired seed bundle across depths4/8/16 passed execution review.
-Eight runs have now passed execution review. Each completed10,240updates and
-342EMA snapshots. All16 final weights and192first outputs are retained. Every endpoint covers100,416development targets
+Nine runs have now passed execution review. Each completed10,240updates and
+342EMA snapshots. All18 final weights and216first outputs are retained. Every endpoint covers100,416development targets
 and32,768broader-probe targets. Semantic ratings remain pending.
 
 | Depth | Native H200 CE | Byte H200 CE | Byte minus native | Byte/native training time | Parameter saving |
@@ -32,6 +32,7 @@ population-seed estimate. Keep all fixed comparisons and criteria unchanged.
 | 05 | raw_bytes | 16 | 9018.402 | 9432.577 | 5.058856420 |
 | 06 | native | 8 | 4449.442 | 4663.488 | 5.127501022 |
 | 07 | raw_bytes | 8 | 7133.353 | 7467.710 | 5.097987630 |
+| 08 | raw_bytes | 16 | 9125.205 | 9603.407 | 5.066292152 |
 
 The second depth8 pair also favors byte. Native H200 CE is5.124055823 and
 byte H200 CE is5.093561120, a difference of-0.030494703. Byte training takes
@@ -47,11 +48,12 @@ Remaining-panel admission passes: 19,338,417,174bytes required and
 retained outputs, restart, serialization, metadata and failure allowances. The
 conservative total forecast is42.749hours against the frozen54-hour tranche.
 
-Slot08, depth16 byte bundle2, is running after full-panel admission. The single
-worker holds the shared lock and its sampler prefix matches bundle2. Review
-its completed execution, then complete the pending audited cleanup before
-admitting fixed slot09, depth16 native bundle2, after live full-panel checks.
-Do not repeat prerequisites or reopen the test.
+Slot08, depth16 byte bundle2, passed execution review. Its H200 CE is5.061700673
+and RAW CE is5.066292152. The second depth16 contrast remains unpaired until
+slot09 completes, so this result does not resolve the dilution hypothesis.
+All18final endpoints and216first outputs are retained. Fixed slot09, depth16
+native bundle2, is next after live full-panel checks. Do not repeat prerequisites
+or reopen the test.
 
 Storage recovery at 2026-11-14T05:03:32.738770+00:00: a new free-space decline left a projected full-panel
 deficit. Exact external-cache cleanup removed2525files and recovered114,556,928
@@ -68,3 +70,12 @@ Latest human cleanup authorization narrowly supersedes older retain-all wording.
 Execute the exact manifest after slot08 releases the shared lock, then remeasure
 capacity before slot09. Do not repeat unchanged inventories. Scientific hypotheses
 and frozen criteria are unchanged. Evidence: `storage-cleanup-2026-11-13-active-cross-size-001/reconciliation.json`.
+
+Recovery completed at 2026-11-14T06:05:58.164650+00:00. The exact three-parent deletion journal confirms
+1,353,510,912allocated bytes removed, zero skips and312protected hashes verified.
+This resolves the preceding pending cleanup. Remaining-panel admission passes:
+19669118976bytes free versus19141124524bytes required, a527994452byte margin after the
+12GiB reserve/headroom and all output/failure allowances. No transient restart
+credit is used. Conservative total time is41.568hours against54hours.
+Evidence: `storage-cleanup-2026-11-13-active-cross-size-001/projection-parent-completed.json`
+and `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-08-completion-and-next-admission.json`.
