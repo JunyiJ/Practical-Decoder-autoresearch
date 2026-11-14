@@ -1,8 +1,8 @@
 # Cross-size execution progress
 
 The first paired seed bundle across depths4/8/16 passed execution review.
-Seven runs have now passed execution review. Each completed10,240updates and
-342EMA snapshots. All14 final weights and168first outputs are retained. Every endpoint covers100,416development targets
+Eight runs have now passed execution review. Each completed10,240updates and
+342EMA snapshots. All16 final weights and192first outputs are retained. Every endpoint covers100,416development targets
 and32,768broader-probe targets. Semantic ratings remain pending.
 
 | Depth | Native H200 CE | Byte H200 CE | Byte minus native | Byte/native training time | Parameter saving |
@@ -31,20 +31,21 @@ population-seed estimate. Keep all fixed comparisons and criteria unchanged.
 | 04 | native | 16 | 6259.661 | 6538.401 | 5.070047314 |
 | 05 | raw_bytes | 16 | 9018.402 | 9432.577 | 5.058856420 |
 | 06 | native | 8 | 4449.442 | 4663.488 | 5.127501022 |
+| 07 | raw_bytes | 8 | 7133.353 | 7467.710 | 5.097987630 |
 
-Slot06 starts the second seed bundle. Its depth8 native H200 CE is
-5.124055823, descriptively0.003116707 above bundle1 native. Its paired byte
-result is pending, so this does not update the within-size or interaction decision.
+The second depth8 pair also favors byte. Native H200 CE is5.124055823 and
+byte H200 CE is5.093561120, a difference of-0.030494703. Byte training takes
+1.603× native time, compared with1.648× in bundle1. Both depth8 differences
+favor byte, but their magnitudes straddle0.02. The third pair and second-bundle
+depths4/16 remain pending. This supports a recurring depth8 benefit without
+resolving the frozen quality, transfer or cross-size interaction criteria.
 
 Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
-through `slot-06/review.json`, plus `slot-06-completion-and-next-admission.json`.
-Remaining-panel admission passes: 19,491,436,448bytes required and
-19,795,152,896bytes available. This includes12GiB reserve/headroom and all
+through `slot-07/review.json`, plus `slot-07-completion-and-next-admission.json`.
+Remaining-panel admission passes: 19,338,417,174bytes required and
+19,518,595,072bytes available. This includes12GiB reserve/headroom and all
 retained outputs, restart, serialization, metadata and failure allowances. The
-conservative total forecast is44.045hours against the frozen54-hour tranche.
+conservative total forecast is42.749hours against the frozen54-hour tranche.
 
-Slot07, depth8 byte bundle2, is running after full-panel admission. The single
-worker holds the shared lock and its sampler prefix matches the paired native
-run. Review its completed execution and pair, then admit fixed slot08, depth16
-byte bundle2, after live full-panel checks. Do not repeat prerequisites or reopen
-the test.
+Next, admit fixed slot08, depth16 byte bundle2, after live full-panel checks.
+Do not repeat prerequisites or reopen the test.
