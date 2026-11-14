@@ -191,8 +191,9 @@ all three pairs favor byte, with descriptive mean-0.050335183.
 The third16-minus4 interaction is+0.041593841; all three are positive,
 supporting dilution descriptively. Full-panel multiplicity-adjusted inference
 remains pending. Sixteen runs,32endpoints and384first outputs are retained.
-Full-panel capacity passes. Admit fixed slot16, depth8 byte bundle3, after live
-capacity and execution checks, then paired fixed slot17 depth8 native bundle3.
+Full-panel capacity passes. Fixed slot16, depth8 byte bundle3, is running under
+the shared lock after verified admission and bundle3 sampling. Review it before
+admitting the final paired slot17 depth8 native bundle3.
 Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
