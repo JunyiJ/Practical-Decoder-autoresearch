@@ -174,8 +174,11 @@ byte-minus-native H200 CE is-0.030494703 with1.603× training time. Both depth8
 pairs favor byte, with magnitudes straddling0.02. Eight runs,16endpoints and
 192first outputs are retained. The third pair and other second-bundle sizes
 remain pending. Fixed slot08, depth16 byte bundle2, is running after full-panel
-admission. Review its completed execution, then admit slot09, depth16 native
-bundle2, after live resource and execution checks. See
+admission. A later storage decline requires the audited cleanup in
+`storage-cleanup-2026-11-13-active-cross-size-001/reconciliation.json`. Let slot08
+finish unchanged. Review execution, execute the exact three-parent retirement
+when the shared lock is free, then admit slot09, depth16 native bundle2, only
+after measured full-panel capacity and execution checks pass. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 

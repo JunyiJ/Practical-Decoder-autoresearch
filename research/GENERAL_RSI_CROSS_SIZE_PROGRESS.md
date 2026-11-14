@@ -49,5 +49,22 @@ conservative total forecast is42.749hours against the frozen54-hour tranche.
 
 Slot08, depth16 byte bundle2, is running after full-panel admission. The single
 worker holds the shared lock and its sampler prefix matches bundle2. Review
-its completed execution, then admit fixed slot09, depth16 native bundle2, after
-live full-panel checks. Do not repeat prerequisites or reopen the test.
+its completed execution, then complete the pending audited cleanup before
+admitting fixed slot09, depth16 native bundle2, after live full-panel checks.
+Do not repeat prerequisites or reopen the test.
+
+Storage recovery at 2026-11-14T05:03:32.738770+00:00: a new free-space decline left a projected full-panel
+deficit. Exact external-cache cleanup removed2525files and recovered114,556,928
+allocated bytes, with71protected hashes verified. Free space is now18279223296bytes
+against19088137381bytes remaining after one250279793byte current-restart credit.
+The remaining deficit is808914085bytes. The12GiB reserve/headroom,
+serialization overlap, future endpoints, metadata and failure allowance remain
+included. The active worker stays above its reserve and remains untouched.
+Three obsolete accepted projection-screen parents are audited for retirement,
+covering1,353,510,912allocated bytes. The study is closed with no selection,
+adoption or fresh confirmation. All H200 weights, failed-slot payloads and
+original failure/source/log/config/metric/receipt evidence remain preserved.
+Latest human cleanup authorization narrowly supersedes older retain-all wording.
+Execute the exact manifest after slot08 releases the shared lock, then remeasure
+capacity before slot09. Do not repeat unchanged inventories. Scientific hypotheses
+and frozen criteria are unchanged. Evidence: `storage-cleanup-2026-11-13-active-cross-size-001/reconciliation.json`.

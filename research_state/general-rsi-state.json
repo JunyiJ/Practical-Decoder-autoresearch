@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 23122,
-  "next_action": "Let fixed cross-size slot08 depth16 raw_bytes bundle2 finish unchanged. Review execution, then admit slot09 depth16 native bundle2 after live shared-lock, process, source and full-panel resource checks.",
+  "next_action": "Let fixed slot08 depth16 raw_bytes bundle2 finish unchanged. When its process closes and shared lock is free, review execution and run python3 research/storage-cleanup-2026-11-13-active-cross-size-001/projection_parents.py execute under normal filesystem approvals. Then remeasure the complete remaining-panel requirement and admit slot09 depth16 native bundle2 only if it passes. Do not repeat the broad inventory while this exact audit is pending.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-14T03:24:31.181347+00:00",
+  "updated_at": "2026-11-14T05:03:32.738770+00:00",
   "active_worker_pid": 57893,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "After slot07: free 19518595072 bytes versus remaining full requirement 19338417174 bytes; margin 180177898 bytes. Retained final endpoints 1656885208 bytes credited once. The 12GiB reserve/headroom and future outputs/failure allowance are preserved.",
+  "capacity_status": "Active slot08: free 18279223296 bytes, remaining requirement 19088137381 bytes after one current restart credit of 250279793 bytes, deficit 808914085 bytes. External cleanup recovered 114556928 allocated bytes. Exact retirement of three obsolete closed-study screen parents (1353510912 allocated bytes) is audited and pending shared-lock release. Twelve GiB reserve/headroom remains included; no next-run admission until measured recovery passes.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -956,5 +956,6 @@
       "first_outputs": 24
     }
   ],
-  "cross_size_launch_verification": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-08/launch-verification.json"
+  "cross_size_launch_verification": "research/tokenizer-evidence/general-rsi-cross-size-quality-001/slot-08/launch-verification.json",
+  "cross_size_active_capacity_recovery": "research/storage-cleanup-2026-11-13-active-cross-size-001/reconciliation.json"
 }

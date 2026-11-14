@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-14T05:03:32.738770+00:00",
+  "status": "external_cleanup_complete_research_cleanup_audited_pending_busy_lock",
+  "worker_pid": 57893,
+  "worker_session": 23122,
+  "lock": "busy",
+  "sources_verified": 5117,
+  "plan_sha256": "5db6e40f41fe52af3479e2358fa615a69b9d9050411d3637f814a5c9f0dab080",
+  "free_bytes": 18279223296,
+  "required_free_bytes_with_active_restart_credit": 19088137381,
+  "remaining_deficit_bytes": 808914085,
+  "required_free_bytes_without_active_restart_credit": 19338417174,
+  "retained_final_bytes": 1656885208,
+  "active_restart_bytes": 250279793,
+  "reserve_includes_10GiB_plus_2GiB": true,
+  "cache_removed_files": 2525,
+  "cache_allocated_bytes_removed": 114556928,
+  "pending_retirement_allocated_bytes": 1353510912,
+  "pending_manifest_sha256": "f8cc769301e1e489d59f4a73340cfb659c169e60cd203171c7039d5ec0e8fec1",
+  "wake_condition": "slot08 process completion and nonblocking shared research lock available; or new failure/material capacity change",
+  "next_action": "Let fixed slot08 depth16 raw_bytes bundle2 finish unchanged. When its process closes and shared lock is free, review execution and run python3 research/storage-cleanup-2026-11-13-active-cross-size-001/projection_parents.py execute under normal filesystem approvals. Then remeasure the complete remaining-panel requirement and admit slot09 depth16 native bundle2 only if it passes. Do not repeat the broad inventory while this exact audit is pending."
+}
