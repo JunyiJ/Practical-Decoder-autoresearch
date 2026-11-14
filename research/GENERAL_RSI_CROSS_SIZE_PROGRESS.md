@@ -1,8 +1,8 @@
 # Cross-size execution progress
 
 The first paired seed bundle across depths4/8/16 passed execution review.
-Each run completed10,240updates and342EMA snapshots. All12 final weights and
-144first outputs are retained. Every endpoint covers100,416development targets
+Seven runs have now passed execution review. Each completed10,240updates and
+342EMA snapshots. All14 final weights and168first outputs are retained. Every endpoint covers100,416development targets
 and32,768broader-probe targets. Semantic ratings remain pending.
 
 | Depth | Native H200 CE | Byte H200 CE | Byte minus native | Byte/native training time | Parameter saving |
@@ -30,15 +30,18 @@ population-seed estimate. Keep all fixed comparisons and criteria unchanged.
 | 03 | native | 8 | 4414.755 | 4611.317 | 5.126989868 |
 | 04 | native | 16 | 6259.661 | 6538.401 | 5.070047314 |
 | 05 | raw_bytes | 16 | 9018.402 | 9432.577 | 5.058856420 |
+| 06 | native | 8 | 4449.442 | 4663.488 | 5.127501022 |
+
+Slot06 starts the second seed bundle. Its depth8 native H200 CE is
+5.124055823, descriptively0.003116707 above bundle1 native. Its paired byte
+result is pending, so this does not update the within-size or interaction decision.
 
 Evidence: `tokenizer-evidence/general-rsi-cross-size-quality-001/slot-00/review.json`
-through `slot-05/review.json`, plus `slot-05-completion-and-next-admission.json`.
-Remaining-panel admission passes: 19,741,570,030bytes required and
-20,129,320,960bytes available. This includes12GiB reserve/headroom and all
+through `slot-06/review.json`, plus `slot-06-completion-and-next-admission.json`.
+Remaining-panel admission passes: 19,491,436,448bytes required and
+19,795,152,896bytes available. This includes12GiB reserve/headroom and all
 retained outputs, restart, serialization, metadata and failure allowances. The
-conservative total forecast is44.926hours against the frozen54-hour tranche.
+conservative total forecast is44.045hours against the frozen54-hour tranche.
 
-Slot06, depth8 native bundle2, is running after full-panel admission. The single
-worker holds the shared lock and has passed launch verification. Next, review
-its completed execution and admit fixed slot07, depth8 byte bundle2, after live
-full-panel checks. Do not repeat prerequisites or reopen the test.
+Next, admit fixed slot07, depth8 byte bundle2, after live full-panel checks.
+Do not repeat prerequisites or reopen the test.
