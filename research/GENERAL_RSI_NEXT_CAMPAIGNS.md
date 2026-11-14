@@ -178,9 +178,10 @@ native CE is+0.006673365, versus-0.013540404 in bundle1. Training ratios are
 1.440740× and1.440717×. Mixed signs preclude either arm meeting the frozen
 all-seed sign rule at depth16. The full interaction and other sizes remain
 pending. Ten runs,20endpoints and240first outputs are retained. Full-panel
-capacity passes after the completed audited cleanup. Admit fixed slot10, depth4
-byte bundle2, after fresh capacity and execution checks. Continue every frozen
-run unchanged. See
+capacity passes after the completed audited cleanup. Fixed slot10, depth4 byte
+bundle2, is running after live full-panel admission. Review completion before
+admitting slot11, depth4 native bundle2, after fresh capacity and execution
+checks. Continue every frozen run unchanged. See
 `GENERAL_RSI_CROSS_SIZE_INTEGRATION_RESULTS.md`. Do not repeat completed depth
 qualification or change bound sources, roles, schedules or criteria.
 

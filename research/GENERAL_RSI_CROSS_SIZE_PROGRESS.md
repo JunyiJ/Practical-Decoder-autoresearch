@@ -61,8 +61,10 @@ outputs, restart, serialization, metadata and failure allowances. Conservative
 total time is40.566hours against the frozen54-hour tranche.
 
 All20final endpoints and240first outputs are retained. Fixed slot10, depth4
-byte bundle2, is next after live full-panel checks. Do not repeat prerequisites
-or reopen the test.
+byte bundle2, is running after full-panel admission. The sole worker holds the
+shared lock and its sampler prefix matches bundle2. Review completion before
+admitting slot11, depth4 native bundle2. Do not repeat prerequisites or reopen
+the test.
 
 Storage recovery at 2026-11-14T05:03:32.738770+00:00: a new free-space decline left a projected full-panel
 deficit. Exact external-cache cleanup removed2525files and recovered114,556,928
