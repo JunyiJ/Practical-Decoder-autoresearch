@@ -8,15 +8,15 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Finish frozen slot03, review execution, then admit and launch slot04 depth16/context128 bundle2.",
+  "next_action": "Finish frozen slot04, review execution, then admit and launch slot05 depth16/context256 bundle2.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-15T12:59:50.096769+00:00",
-  "active_worker_pid": 69556,
+  "updated_at": "2026-11-15T16:00:48.381362+00:00",
+  "active_worker_pid": 83013,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 3,
+  "active_slot": 4,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Three of12 frozen depth/context runs passed execution review, preserving six endpoints and72 first outputs. First depth4 pair favors context256 descriptively. Depth16/context256 EMA CE4.705582296; paired context128 is active. Full three-bundle decisions remain pending.",
+  "latest_learning": "Four of12 runs passed execution review, retaining eight endpoints and96 first outputs. First-bundle native EMA context256-minus128 deltas: depth4 -0.102457786, depth16 -0.089280530; direct depth16-minus4 contrast +0.013177255 nats/token. Descriptive only; all three paired bundles remain required.",
   "phase": "two_depth_context_transfer_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "External cache recovery019 restored full remaining-study forecast during slot03: free19786289152 required19524866376 margin261422776 bytes, including10GiB reserve plus2GiB headroom. Active worker remains guarded and unchanged.",
+  "capacity_status": "Slot04 full remaining-study admission passed: free19676602368 required19629544445 margin47057923 bytes, including10GiB reserve plus2GiB headroom. Normal host pressure, reclaimable-page proxy6291292160 bytes. Active worker guards RSS4GiB/MPS6GiB remain unchanged.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -530,7 +530,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "The first fresh depth4 pair supports the context256 recipe direction. The first depth16/context256 endpoint is accepted; transfer remains unresolved until its paired context128 result and all three fresh bundles at both depths complete. Exposure, optimizer and schedule uncertainty remain.",
+  "latest_hypothesis": "The first fresh pair at both depths supports the direction of the context256 recipe benefit. Full transfer and interaction remain unresolved pending three paired bundles per depth. Representation, exposure, optimizer and schedule effects remain entangled.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -1104,9 +1104,10 @@
   "depth_context_quality_completed_slots": [
     0,
     1,
-    2
+    2,
+    3
   ],
   "depth_context_quality_panel_launched": true,
-  "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-03/launch-verification.json",
+  "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-04/launch-verification.json",
   "depth_context_active_capacity_recovery": "research/maintenance-cache-cleanup-019/research-reconciliation.json"
 }

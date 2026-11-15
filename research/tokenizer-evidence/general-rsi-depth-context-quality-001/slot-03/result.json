@@ -1,0 +1,83 @@
+{
+  "status": "completed",
+  "binding": "b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c",
+  "slot": {
+    "slot": 3,
+    "phase": "confirmation",
+    "arm": "context128",
+    "depth": 16,
+    "context": 128,
+    "bundle": 1,
+    "lr": 0.0025,
+    "budget_ns": 14400000000000,
+    "timeout_seconds": 21600,
+    "roles": {
+      "native_initializer": 62111423050101,
+      "composer_initializer": 62111423050102,
+      "train_sampler": 62111423050103,
+      "validation_sampler": 62111423050104
+    },
+    "extra_group_seeds": [
+      62111423050105,
+      62111423050106,
+      62111423050107
+    ]
+  },
+  "steps": 23710,
+  "training_ns": 14400324782061,
+  "overshoot_ns": 324782061,
+  "snapshots": 7826,
+  "recovery_charges": [],
+  "checkpoint_seconds_this_attempt": 244.65411628573202,
+  "endpoints": [
+    {
+      "endpoint": "raw",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-03/raw.pt",
+        "size": 147203671,
+        "sha256": "d9ad0ca2bca38630f6e4702d5513eefe593d108c59a9cab73074b657f1486593"
+      },
+      "ce": 4.801574994407696,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "loss_sum": 385011.24509334785,
+          "ce": 4.7914384485320936
+        },
+        "wikipedia": {
+          "count": 20062,
+          "loss_sum": 97143.70954509533,
+          "ce": 4.842174735574486
+        }
+      },
+      "score_seconds": 40.59368058317341,
+      "generation_seconds": 0
+    },
+    {
+      "endpoint": "time_ema",
+      "weights": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-03/time_ema.pt",
+        "size": 147203671,
+        "sha256": "1adfec313b595934424b22b42723d0306f8cac112591f6ad813bef40474528a9"
+      },
+      "ce": 4.79486282587217,
+      "count": 100416,
+      "sources": {
+        "fineweb_edu": {
+          "count": 80354,
+          "loss_sum": 384472.0348290135,
+          "ce": 4.784728013901156
+        },
+        "wikipedia": {
+          "count": 20062,
+          "loss_sum": 97008.91069376632,
+          "ce": 4.835455622259312
+        }
+      },
+      "score_seconds": 40.118110709125176,
+      "generation_seconds": 108.16727558313869
+    }
+  ],
+  "test_opened": false
+}

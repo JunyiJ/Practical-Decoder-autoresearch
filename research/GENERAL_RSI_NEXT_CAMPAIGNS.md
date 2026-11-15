@@ -76,17 +76,18 @@ selection and costs below are superseded, not current execution instructions.
 
 All four combined shapes passed qualification and complete12-run admission.
 See `GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md` and the frozen
-`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00/01,
-the first depth4 context128/256 pair, and slot02 depth16/context256 passed
-execution review. Six endpoints and72 first outputs are retained. The native-context EMA delta is−0.102457786 and
-common128 delta−0.027679425 nats/token. This one-pair result is descriptive only.
-Slot02 EMA CE is4.705582296. Its depth16 context contrast remains pending.
-Slot03, depth16/context128 bundle1, is running under the shared lock after renewed
-remaining-study admission. Next review slot03, then admit frozen slot04
-depth16/context128 bundle2. See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`.
-Preserve all12-run sources, roles, criteria and schedules. Review each completed
-slot before the next launch. Original RNG-harness failures and first outputs remain
-retained. Full three-bundle quality and depth-transfer decisions remain pending.
+`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00–03,
+the first context128/256 pair at each depth, passed execution review. Eight
+endpoints and96 first outputs are retained. Native-context EMA delta256-minus128
+is−0.102457786 at depth4 and−0.089280530 at depth16. Common128 deltas are
+−0.027679425 and−0.010491601. The first-bundle depth16-minus4 interaction is
++0.013177255 nats/token. These are descriptive only. Full three-bundle quality,
+interaction and transfer conclusions remain pending.
+Slot04, depth16/context128 bundle2, is active after renewed remaining-study admission.
+Next review slot04, then admit frozen slot05 depth16/context256 bundle2.
+See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`. Preserve all12-run sources,
+roles, criteria and schedules. Review each completed slot before the next launch.
+Original RNG-harness failures and first outputs remain retained.
 
 ## Historical three-depth preparation boundary — 2026-11-14 Pacific
 
