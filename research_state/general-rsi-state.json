@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Finish frozen slot05, review execution, then admit and launch slot06 depth4/context256 bundle2.",
+  "next_action": "Keep slot05 running under unchanged guards. Review its completed execution before any next launch. Do not launch slot06 until full remaining-study admission passes.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-15T20:10:52.273263+00:00",
+  "updated_at": "2026-11-15T20:20:52.581893+00:00",
   "active_worker_pid": 10221,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Slot05 full remaining-seven-run admission passed: free19344519168 required19335137103 margin9382065 bytes, including10GiB reserve plus2GiB headroom. Host pressure normal; reclaimable-page proxy6020136960bytes. RSS4GiB/MPS6GiB guards remain active.",
+  "capacity_status": "Recovery023 removed23826432allocated bytes. Full remaining-study forecast still short by275888236bytes: free18661433344 required18937321580. Slot05 active under unchanged RSS4GiB/MPS6GiB and12GiB disk guards. No next launch until full admission passes.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -1110,5 +1110,5 @@
   ],
   "depth_context_quality_panel_launched": true,
   "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-05/launch-verification.json",
-  "depth_context_active_capacity_recovery": "research/maintenance-cache-cleanup-022/research-reconciliation.json"
+  "depth_context_active_capacity_recovery": "research/maintenance-cache-cleanup-023/research-reconciliation.json"
 }

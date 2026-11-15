@@ -161,3 +161,25 @@ Slot04 remains active in endpoint evaluation under the shared lock.
 The scientific hypothesis and protocol are unchanged. Next review slot04,
 then admit frozen slot05. Evidence: `maintenance-cache-cleanup-022/` exact
 manifests, deletion journals, receipts and `research-reconciliation.json`.
+
+## Active-run capacity shortfall — 2026-11-15 20:22 UTC
+
+A new298209324byte deficit triggered exact external-cache recovery023.
+Aged dense Chromium candidates were exhausted. The package-cache audit first
+stopped before manifest creation or deletion at its identity safeguard. A
+separate repair excluded non-owned or linked entries before selection and
+retired11 verified unopened cached wheel payloads,23826432allocated bytes.
+Homebrew compiled-cache and bottle-payload candidates were exhausted.
+Installed runtimes, user state and research payloads were preserved.
+
+Final free space18661433344bytes versus18937321580required leaves
+275888236bytes unmet. All ten prior endpoints retain their recorded
+sizes. Slot05 remains the sole worker under its shared lock and unchanged
+hard guards. This resource condition is not a scientific quality result.
+No next launch until complete remaining-study admission passes. A512MiB
+storage addition/freeing covers this observed deficit with churn margin.
+Wake on changed capacity, new eligible cache or a closed consumer dependency;
+lock release enables exact research-payload audit. Do not repeat unchanged
+broad scans. Hypothesis and frozen criteria remain unchanged. Evidence:
+`maintenance-cache-cleanup-023/research-reconciliation.json`, original audit
+failure, separate repair, manifests and deletion journal.
