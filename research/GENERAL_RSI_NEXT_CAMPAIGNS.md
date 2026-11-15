@@ -76,13 +76,15 @@ selection and costs below are superseded, not current execution instructions.
 
 All four combined shapes passed qualification and complete12-run admission.
 See `GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md` and the frozen
-`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slot00,
-depth4/context128 bundle1, passed execution review. Its two endpoints and24 first
-outputs are retained. Slot01, depth4/context256 bundle1, is running under the shared
-lock after renewed remaining-study admission. See GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md. Preserve its sources
-and all12-run roles/criteria/schedules. Complete execution review before each
-next slot. The original RNG-harness failure and all first outputs are retained.
-No new scientific quality result is available yet.
+`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00/01,
+the first depth4 context128/256 pair, passed execution review. Four endpoints and
+48 first outputs are retained. The native-context EMA delta is−0.102457786 and
+common128 delta−0.027679425 nats/token. This one-pair result is descriptive only.
+Slot02, depth16/context256 bundle1, is running under the shared lock after renewed
+remaining-study admission. See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`.
+Preserve all12-run sources, roles, criteria and schedules. Review each completed
+slot before the next launch. Original RNG-harness failures and first outputs remain
+retained. Full three-bundle quality and depth-transfer decisions remain pending.
 
 ## Historical three-depth preparation boundary — 2026-11-14 Pacific
 

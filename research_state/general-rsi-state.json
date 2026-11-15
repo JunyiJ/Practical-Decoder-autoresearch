@@ -8,15 +8,15 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": null,
-  "next_action": "Let frozen slot01 depth4/context256 bundle1 finish unchanged. Review complete execution and first outputs, then launch slot02 depth16/context256 bundle1. Continue all twelve slots serially; defer quality decisions until the full panel.",
+  "next_action": "Finish frozen slot02, review execution, then admit and launch slot03 depth16/context128 bundle1. Preserve all twelve runs, sources, paired roles, criteria and schedules.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-14T23:16:37.198791+00:00",
-  "active_worker_pid": 36405,
+  "updated_at": "2026-11-15T07:37:08.374173+00:00",
+  "active_worker_pid": 56215,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 1,
+  "active_slot": 2,
   "completed_screens": [
     {
       "slot": 0,
@@ -530,7 +530,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Native context256 benefit may transfer from depth4 to depth16 under the fixed14400-second recipe. Slot00 context128 passed execution review; one unpaired endpoint cannot assess this prediction. Preserve the twelve-run paired protocol and common128 secondary control.",
+  "latest_hypothesis": "The first fresh depth4 pair favors context256: native-context EMA delta -0.102457786, common128 delta -0.027679425 nats/token. This is descriptive one-bundle evidence, not the frozen three-bundle decision or depth transfer. Preserve the hypothesis that the context recipe transfers to depth16 and complete the full panel.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -1102,8 +1102,9 @@
   "depth_context_engineering_review": "research/tokenizer-evidence/general-rsi-depth-context-integration-003/completion-review.json",
   "depth_context_engineering_report": "research/GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md",
   "depth_context_quality_completed_slots": [
-    0
+    0,
+    1
   ],
   "depth_context_quality_panel_launched": true,
-  "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-01/launch-verification.json"
+  "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-02/launch-verification.json"
 }
