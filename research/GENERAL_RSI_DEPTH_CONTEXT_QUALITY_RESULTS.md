@@ -114,3 +114,19 @@ All eight completed endpoints remain at their recorded sizes. Slot04 continues
 under its shared lock. Research payloads, frozen sources and the scientific
 hypothesis are unchanged. Next review slot04, then admit frozen slot05. Evidence:
 `maintenance-cache-cleanup-020/completed.json` and `research-reconciliation.json`.
+
+## Active-run storage recovery — 2026-11-15 19:34 UTC
+
+A new358254byte shortfall against the full remaining-study forecast triggered
+external-cache recovery021. The independent cache lock, exact path/size/hash
+audit, consumer checks and durable deletion journal protected active work.
+504 unopened Chromium cache payloads older than one hour were retired.
+Allocated bytes removed:22372352. Observed free-space gain:22085632bytes.
+All eligible entries in the two audited roots were exhausted below the256MiB cap.
+
+Reconciliation: free19101962240bytes against19080079982required, margin21882258bytes,
+including10GiB reserve plus2GiB headroom and remaining-output allowances.
+All eight completed endpoints retain their recorded sizes. Slot04 continues
+under the shared lock. The scientific hypothesis and protocol are unchanged.
+Next review slot04, then admit frozen slot05. Evidence:
+`maintenance-cache-cleanup-021/completed.json` and `research-reconciliation.json`.
