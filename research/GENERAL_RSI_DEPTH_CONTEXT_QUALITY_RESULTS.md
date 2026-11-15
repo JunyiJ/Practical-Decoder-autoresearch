@@ -130,3 +130,22 @@ All eight completed endpoints retain their recorded sizes. Slot04 continues
 under the shared lock. The scientific hypothesis and protocol are unchanged.
 Next review slot04, then admit frozen slot05. Evidence:
 `maintenance-cache-cleanup-021/completed.json` and `research-reconciliation.json`.
+
+## Active-run storage recovery — 2026-11-15 20:06 UTC
+
+A new11496878byte shortfall triggered recovery022. Exact audits retired377
+unopened disposable cache payloads across Chrome, Code and Codex, including
+validated orphan sparse Chrome payloads. Homebrew compiled-cache candidates
+were exhausted. Total allocated bytes removed:34746368. Each pass used the
+independent maintenance lock, hash and consumer checks, and a durable journal.
+
+During recovery, slot04 finished training and wrote both endpoints. The final
+forecast counts those new files once: free18796359680bytes against
+18785021056required, margin11338624bytes, including
+10GiB reserve plus2GiB headroom and remaining-output allowances. Earlier
+per-pass deficits use the trigger forecast and are superseded by this measured
+reconciliation. All eight prior endpoints retain their recorded sizes.
+Slot04 remains active in endpoint evaluation under the shared lock.
+The scientific hypothesis and protocol are unchanged. Next review slot04,
+then admit frozen slot05. Evidence: `maintenance-cache-cleanup-022/` exact
+manifests, deletion journals, receipts and `research-reconciliation.json`.

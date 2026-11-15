@@ -1,0 +1,127 @@
+{
+  "at": "2026-11-15T20:06:40.585558+00:00",
+  "reason": "New full-forecast deficit11496878bytes at20:03UTC. Exhausted eligible dense Chromium entries across Code, Chrome and Codex; checked Homebrew compiled caches; recovered orphan sparse Chrome entries. All passes use independent nonblocking maintenance lock, exact hashes and consumer checks.",
+  "guard": {
+    "elapsed_seconds": 14803.807703166967,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 21600
+    },
+    "observation": {
+      "free_bytes": 18796503040,
+      "peak_rss_bytes": 1022640128
+    },
+    "pid": 83013,
+    "reason": null,
+    "status": "watching"
+  },
+  "shared_lock": "held",
+  "workers": [
+    "83013 /opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m research.general_rsi_depth_context_worker_v1 run b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c 4 --attempt 1"
+  ],
+  "free_bytes": 18796359680,
+  "required_remaining_free_bytes": 18785021056,
+  "margin_bytes": 11338624,
+  "retained_endpoint_bytes": 1339216758,
+  "active_payload_bytes": 550116047,
+  "prior_retained_endpoint_size_checks": [
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-00/raw.pt",
+      "size": 113998683,
+      "sha256": "65e3c1aeb5bba52872f47ed705a80242eada2c289a6195c3456994b697de0d37"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-00/time_ema.pt",
+      "size": 113998683,
+      "sha256": "0f2e06c9569aa7b1b76e9f0c3d190420186d474c0cbbecc69aa0135838b298aa"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-01/raw.pt",
+      "size": 113998683,
+      "sha256": "aa9b7f15093a7946c0c2022d889af69f6f9f0038e5339c8ecf8a566b9d8ece3f"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-01/time_ema.pt",
+      "size": 113998683,
+      "sha256": "681534165d3a916f4fd54bef14211ec7a0a78412a7b72f1109cb76d5cb6c7fd5"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-02/raw.pt",
+      "size": 147203671,
+      "sha256": "18c85735dc0b86726a2d577af9d372a3c7d60c24b0b184c6871e658475bbbc1e"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-02/time_ema.pt",
+      "size": 147203671,
+      "sha256": "82b606b8f6508503a2b664815e2b05e3cea6c40a6510931a7da5e5c60e0a55d8"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-03/raw.pt",
+      "size": 147203671,
+      "sha256": "d9ad0ca2bca38630f6e4702d5513eefe593d108c59a9cab73074b657f1486593"
+    },
+    {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-03/time_ema.pt",
+      "size": 147203671,
+      "sha256": "1adfec313b595934424b22b42723d0306f8cac112591f6ad813bef40474528a9"
+    }
+  ],
+  "passes": {
+    "research/maintenance-cache-cleanup-022/completed.json": {
+      "status": "completed",
+      "removed_files": 279,
+      "skipped_changed_or_open": [],
+      "allocated_bytes_removed": 9310208,
+      "free_before": 19067883520,
+      "free_after": 19077070848,
+      "observed_free_delta": 9187328,
+      "required_remaining_bytes": 19079458222,
+      "cleanup_target_bytes": 19079458222,
+      "cleanup_target_deficit": 2387374,
+      "note": "APFS accounting and concurrent application/research writes affect free-space delta; cache misses regenerate from originals."
+    },
+    "research/maintenance-cache-cleanup-022/codex-cache/completed.json": {
+      "status": "completed",
+      "removed_files": 68,
+      "skipped_changed_or_open": [],
+      "allocated_bytes_removed": 2203648,
+      "free_before": 18929729536,
+      "free_after": 18931519488,
+      "observed_free_delta": 1789952,
+      "required_remaining_bytes": 19079458222,
+      "cleanup_target_bytes": 19079458222,
+      "cleanup_target_deficit": 147938734,
+      "note": "APFS accounting and concurrent application/research writes affect free-space delta; cache misses regenerate from originals."
+    },
+    "research/maintenance-cache-cleanup-022/homebrew-compiled/completed.json": {
+      "status": "completed",
+      "removed_files": 0,
+      "skipped_changed_or_open": [],
+      "allocated_bytes_removed": 0,
+      "free_before": 18778456064,
+      "free_after": 18777378816,
+      "observed_free_delta": -1077248,
+      "required_remaining_bytes": 19079458222,
+      "cleanup_target_bytes": 19079458222,
+      "cleanup_target_deficit": 302079406,
+      "note": "APFS accounting and concurrent application/research writes affect free-space delta; cache misses regenerate from originals."
+    },
+    "research/maintenance-cache-cleanup-022/sparse-cache/completed.json": {
+      "status": "completed",
+      "removed_files": 30,
+      "skipped_changed_or_open": [],
+      "allocated_bytes_removed": 23232512,
+      "free_before": 18772496384,
+      "free_after": 18795540480,
+      "observed_free_delta": 23044096,
+      "required_remaining_bytes": 19079458222,
+      "cleanup_target_bytes": 19079458222,
+      "cleanup_target_deficit": 283917742,
+      "note": "APFS accounting and concurrent application/research writes affect free-space delta; cache misses regenerate from originals."
+    }
+  },
+  "scientific_protocol_changed": false,
+  "note": "Per-pass required_remaining_bytes uses trigger forecast. This reconciliation counts newly written endpoints once and supersedes those static deficits.",
+  "next_action": "Finish frozen slot04, review execution, then admit and launch slot05 depth16/context256 bundle2."
+}
