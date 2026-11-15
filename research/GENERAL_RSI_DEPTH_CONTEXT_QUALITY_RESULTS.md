@@ -67,3 +67,19 @@ slot03 unchanged, review execution, then admit and run frozen slot04
 depth16/context128 bundle2.
 Complete all12 runs before the predeclared within-depth and interaction decisions.
 Two depths provide transfer evidence, not a scaling law.
+
+## Active-run storage recovery — 2026-11-15 12:59 UTC
+
+A new1,216,840byte shortfall against the conservative remaining-study forecast
+triggered standing-authorized external-cache cleanup. The active worker stayed
+above its12GiB disk guard and was not interrupted. Under the independent cache
+lock,4949 unopened Chromium cache payloads older than one hour were retired
+using exact path/size/hash and consumer checks with a durable deletion journal.
+Allocated bytes removed:269025280. The immediate observed free-space gain was
+269680640bytes. All research payloads and frozen sources were preserved.
+
+Reconciliation: free19786289152bytes against19524866376required, a261422776byte
+margin including the full reserve and allowances. Slot03 remains active. Evidence:
+`maintenance-cache-cleanup-019/manifest.json`, `deletion-journal.jsonl`,
+`completed.json` and `research-reconciliation.json`. The scientific hypothesis
+and next frozen run are unchanged.
