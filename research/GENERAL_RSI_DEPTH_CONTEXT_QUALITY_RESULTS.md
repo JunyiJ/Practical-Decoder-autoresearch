@@ -1,8 +1,8 @@
 # Two-depth context transfer: execution results
 
-## Status — 2026-11-15 16:00 UTC
+## Status — 2026-11-15 20:10 UTC
 
-Four of12 runs passed execution review. Slot04 is active: depth16, context128,
+Five of12 runs passed execution review. Slot05 is active: depth16, context256,
 bundle2. The frozen plan, roles, schedules and quality criteria remain unchanged.
 The first pair at each depth is descriptive evidence. Full within-depth and
 interaction decisions remain pending all three paired bundles at both depths.
@@ -13,6 +13,7 @@ interaction decisions remain pending all three paired bundles at both depths.
 | 01 | 4 | 256 | 1 | 41430 | 14400.102752 | 4.752460614 | 4.736637785 |
 | 02 | 16 | 256 | 1 | 22876 | 14400.167426 | 4.715277211 | 4.705582296 |
 | 03 | 16 | 128 | 1 | 23710 | 14400.324782 | 4.801574994 | 4.794862826 |
+| 04 | 16 | 128 | 2 | 23531 | 14400.451095 | 4.820412777 | 4.810480072 |
 
 For bundle1 at depth4, native-context EMA delta256-minus128 is−0.102457786
 nats/token. Both sources improve: FineWeb−0.092971985 and Wikipedia−0.140451107.
@@ -29,7 +30,7 @@ Slot02 common128 EMA CE is4.784371225, giving a common128 delta of−0.010491601
 The first-bundle depth16-minus4 interaction is+0.013177255 nats/token. These are
 descriptive contrasts only. They do not establish transfer, an interaction, or
 equivalence. The three fresh paired bundles per depth and frozen multiplicity
-rules remain required. Eight endpoints and96 first outputs are retained.
+rules remain required. Ten endpoints and120 first outputs are retained.
 
 Each slot scored all108 development documents and100416 targets. Both finite FP32
 endpoints, both fixed probes, clock accounting, EMA count, paired-stream evidence,
@@ -48,6 +49,11 @@ Peak RSS was1073545216bytes. Its7565 EMA snapshots and22876 updates passed
 clock and checkpoint review. Slot03 elapsed14872.130seconds, including
 244.654seconds checkpoint work. Peak RSS was1020903424bytes and MPS driver
 allocation2744958976bytes. Its7826 EMA snapshots and23710 updates passed review.
+Slot04 elapsed14880.742seconds, including249.502seconds checkpoint work.
+Peak RSS was1022640128bytes and MPS driver allocation2744958976bytes.
+Its7842 EMA snapshots and23531 updates passed review. Bundle2 depth16
+context128 EMA CE is4.810480072. Its paired context256 endpoint is pending,
+so this slot adds no completed paired contrast.
 RSS4GiB/MPS6GiB guards remain enforced.
 
 Slot02 admission measured20432351232 free bytes against20218359129 required for
@@ -65,20 +71,26 @@ Slot04 admission measured19676602368 free bytes against19629544445 required
 for all eight remaining runs and allowances, a47057923byte margin. Eight retained
 endpoints total1044809416bytes. Host pressure was normal, with a6291292160byte
 reclaimable-page proxy. Remaining tranche time was165294.676seconds against
-115200 training seconds. The bundle2 depth16/context128 worker holds the shared
+115200 training seconds.
+Slot05 admission measured19344519168 free bytes against19335137103 required
+for all seven remaining runs and allowances, a9382065byte margin. Ten retained
+endpoints total1339216758bytes. Host pressure was normal, with a6020136960byte
+reclaimable-page proxy. Remaining tranche time was150413.933seconds against
+100800 training seconds. The bundle2 depth16/context256 worker holds the shared
 lock, with its initial checkpoint verified and no other training worker active.
 No roles, criteria, schedules or source bindings changed.
 
 Evidence: `tokenizer-evidence/general-rsi-depth-context-quality-001/slot-00/review.json`
-and `slot-01/review.json`, `slot-02/review.json`, `slot-03/review.json`, results,
-score files and first-generation journals; slot04 `continuation-admission.json` and
+and `slot-01/review.json`, `slot-02/review.json`, `slot-03/review.json`,
+`slot-04/review.json`, results,
+score files and first-generation journals; slot05 `continuation-admission.json` and
 `launch-verification.json`.
 
 The first fresh pair at each depth supports the direction of the context256
 recipe's benefit. Full transfer and interaction conclusions remain unresolved.
 Representation, exposure, optimizer and schedule effects remain entangled.
-Next finish slot04 unchanged, review execution, then admit and run frozen slot05
-depth16/context256 bundle2.
+Next finish slot05 unchanged, review execution, then admit and run frozen slot06
+depth4/context256 bundle2.
 Complete all12 runs before the predeclared within-depth and interaction decisions.
 Two depths provide transfer evidence, not a scaling law.
 

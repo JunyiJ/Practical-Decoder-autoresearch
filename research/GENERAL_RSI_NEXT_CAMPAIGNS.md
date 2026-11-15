@@ -76,15 +76,16 @@ selection and costs below are superseded, not current execution instructions.
 
 All four combined shapes passed qualification and complete12-run admission.
 See `GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md` and the frozen
-`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00–03,
-the first context128/256 pair at each depth, passed execution review. Eight
-endpoints and96 first outputs are retained. Native-context EMA delta256-minus128
+`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00–04
+passed execution review. Ten endpoints and120 first outputs are retained.
+The first context128/256 pair at each depth is complete. Native-context EMA delta256-minus128
 is−0.102457786 at depth4 and−0.089280530 at depth16. Common128 deltas are
 −0.027679425 and−0.010491601. The first-bundle depth16-minus4 interaction is
 +0.013177255 nats/token. These are descriptive only. Full three-bundle quality,
 interaction and transfer conclusions remain pending.
-Slot04, depth16/context128 bundle2, is active after renewed remaining-study admission.
-Next review slot04, then admit frozen slot05 depth16/context256 bundle2.
+Slot04 depth16/context128 bundle2 EMA CE is4.810480072. Its paired run,
+slot05 depth16/context256 bundle2, is active after full remaining-study admission.
+Next review slot05, then admit frozen slot06 depth4/context256 bundle2.
 See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`. Preserve all12-run sources,
 roles, criteria and schedules. Review each completed slot before the next launch.
 Original RNG-harness failures and first outputs remain retained.
