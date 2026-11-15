@@ -77,7 +77,9 @@ selection and costs below are superseded, not current execution instructions.
 All four combined shapes passed qualification and complete12-run admission.
 See `GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md` and the frozen
 `tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slot00,
-depth4/context128 bundle1, is running under the shared lock. Preserve its sources
+depth4/context128 bundle1, passed execution review. Its two endpoints and24 first
+outputs are retained. Slot01, depth4/context256 bundle1, is running under the shared
+lock after renewed remaining-study admission. See GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md. Preserve its sources
 and all12-run roles/criteria/schedules. Complete execution review before each
 next slot. The original RNG-harness failure and all first outputs are retained.
 No new scientific quality result is available yet.
