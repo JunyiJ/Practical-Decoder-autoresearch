@@ -1,0 +1,35 @@
+{
+  "verified_at": "2026-11-16T17:00:00.566159+00:00",
+  "slot": 10,
+  "binding": "b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c",
+  "pid": 48074,
+  "shared_lock": "held",
+  "sole_training_worker_verified": true,
+  "guard": {
+    "elapsed_seconds": 13.12189691606909,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 21600
+    },
+    "observation": {
+      "free_bytes": 18015002624,
+      "peak_rss_bytes": 981598208
+    },
+    "pid": 48074,
+    "reason": null,
+    "status": "watching"
+  },
+  "initial_checkpoint": {
+    "receipt": {
+      "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-10/restart-a01-s000000.pt",
+      "size": 147272335,
+      "sha256": "da32dded897a042ccf4048aa38987ce111f55402c56308a02a4c1500502b1969"
+    },
+    "attempt": 1,
+    "step": 0,
+    "spent_ns": 0
+  },
+  "continuation_admission_sha256": "8748dd68f31c3d30b18cfd8b533b853e7987d2961d76418b00ccf4dbb91dac93",
+  "next_action": "Finish frozen slot10, review execution, then admit and launch slot11 depth16/context128 bundle3."
+}
