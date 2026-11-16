@@ -94,15 +94,17 @@ Slot10 depth16/context256 bundle3 is active after full remaining-study admission
 Both remaining runs and allowances fit with39505975bytes beyond the complete
 requirement. Host memory pressure was normal at launch. Prior exact cleanup
 of obsolete pseudo-repetition engineering restarts remains documented.
-Cache recovery026 partially recovered a new forecast shortfall:12 eligible entries,
-270336allocated bytes. Reconciliation still lacks4,358,778bytes against the full
-remaining requirement. Browser/package/Homebrew/Conda payload classes are exhausted.
-The active worker remains healthy; all5269 bound sources and20 endpoints verified.
-See `maintenance-cache-cleanup-026/research-reconciliation.json`. Prior evidence remains.
-Next finish and review slot10, then use the released lock for exact obsolete-payload
-recovery if needed. Launch frozen slot11 depth16/context128 bundle3 only after full
-admission passes. Wake on sufficient free space, new eligible candidates or lock release.
-A concrete external option is64MiB additional usable storage for deficit and churn.
+At20:43UTC, swap allocation grew from5120 to6144MiB. Cache recovery027
+removed45 exact audited entries,5832704allocated bytes. Reconciliation still lacks
+1,076,469,690bytes against the full remaining requirement. The worker stays healthy;
+all5269 bound sources and20 endpoints verified. See
+`maintenance-cache-cleanup-027/research-reconciliation.json`. Prior evidence remains.
+Historical joint-integration restarts are already retired. ReLU twenty-update pilots
+have no demonstrated closure of their full-horizon prerequisite consumers.
+Next finish and review slot10. After lock release, audit remaining obsolete payloads
+against original acceptance and closed dependencies. Launch frozen slot11 only after
+full admission passes. Wake on sufficient free space, new eligible candidates or lock
+release. An external option is1.25GiB additional usable storage for deficit and churn.
 See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`. Preserve all12-run sources,
 roles, criteria and schedules. Review each completed slot before the next launch.
 Original RNG-harness failures and first outputs remain retained.

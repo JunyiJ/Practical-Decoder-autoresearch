@@ -324,3 +324,25 @@ eligible candidates, sufficient free space or worker lock release; do not repeat
 unchanged broad scans. An external option is64MiB additional usable storage.
 Evidence: `maintenance-cache-cleanup-026/research-reconciliation.json`, both exact
 cleanup manifests/journals, and `remaining-cache-inventory.json`.
+
+## Swap growth and partial recovery — 2026-11-16 20:45 UTC
+
+Host swap allocation grew from5120 to6144MiB, causing a new1,081,230,074byte
+forecast deficit. Exact cache recovery027 retired45 newly eligible unopened
+Chromium entries,5832704allocated bytes. All eligible entries were exhausted.
+The other cache classes retain their prior exhaustion evidence. The active
+research lock remains held, so research payloads were not removed.
+
+Reconciliation measured16502829056free bytes against17579298746required,
+a1,076,469,690byte shortfall. The12GiB reserve/headroom and all remaining endpoint,
+serialization and failure allowances remain in the requirement. All5269 bound
+sources and20 retained endpoints passed hash verification; worker48074 stays healthy.
+
+A targeted check of existing candidate evidence found the joint-integration
+restarts already absent. ReLU twenty-update pilot acceptance and STOP are valid,
+but closure of their full-horizon prerequisite consumers is not established.
+Those payloads remain preserved. Finish/review slot10, then audit remaining obsolete
+engineering/pilot payloads under the released lock. Slot11 requires full admission.
+The hypothesis and scientific protocol are unchanged. A concrete external option
+is1.25GiB additional usable storage. Evidence:
+`maintenance-cache-cleanup-027/research-reconciliation.json` and exact manifest/journal.
