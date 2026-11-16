@@ -79,8 +79,8 @@ Final-run cleanup and execution are owned by this RSI chat. Follow the durable
 
 All four combined shapes passed qualification and complete12-run admission.
 See `GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md` and the frozen
-`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00–09
-passed execution review. Twenty endpoints and240 first outputs are retained.
+`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00–10
+passed execution review. Twenty-two endpoints and264 first outputs are retained.
 The first context128/256 pair at each depth is complete. Native-context EMA delta256-minus128
 is−0.102457786 at depth4 and−0.089280530 at depth16. Common128 deltas are
 −0.027679425 and−0.010491601. The first-bundle depth16-minus4 interaction is
@@ -93,24 +93,22 @@ common128 delta−0.010002451. Its depth16-minus4 interaction is+0.001701404.
 All three depth4 pairs and both completed depth16 pairs favor context256 descriptively.
 Bundle3 depth4 native-context EMA delta is-0.103233901; common128 delta is-0.025523193.
 Full decisions remain pending the third depth16 pair and frozen multiplicity rules.
-Slot10 depth16/context256 bundle3 is active after full remaining-study admission.
-Both remaining runs and allowances fit with39505975bytes beyond the complete
-requirement. Host memory pressure was normal at launch. Prior exact cleanup
-of obsolete pseudo-repetition engineering restarts remains documented.
-At20:43UTC, swap allocation grew from5120 to6144MiB. Cache recovery027
-removed45 exact audited entries,5832704allocated bytes. Reconciliation still lacks
-1,076,469,690bytes against the full remaining requirement. The worker stays healthy;
-all5269 bound sources and20 endpoints verified. See
-`maintenance-cache-cleanup-027/research-reconciliation.json`. Prior evidence remains.
-Historical joint-integration restarts are already retired. ReLU twenty-update pilots
-have no demonstrated closure of their full-horizon prerequisite consumers.
-Next finish and review slot10. After lock release, audit remaining obsolete payloads
-against original acceptance and closed dependencies. Launch frozen slot11 only after
-full admission passes. Wake on sufficient free space, new eligible candidates or lock
-release. An external option is1.25GiB additional usable storage for deficit and churn.
-See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`. Preserve all12-run sources,
-roles, criteria and schedules. Review each completed slot before the next launch.
-Original RNG-harness failures and first outputs remain retained.
+Slot10 completed and passed execution review: RAW CE4.709962556, time-EMA
+CE4.703559781 and common128 EMA CE4.782998467. Its paired reference is pending.
+After lock release, final-run cleanup retired11 exact obsolete accepted fixture
+payloads and recovered1289719808allocated bytes. It verified44863 retained files,
+including all scientific endpoints and original RNG-failure payloads. See
+`storage-cleanup-2026-11-16-final-run-001/completed.json` and its exact manifest.
+
+Final slot11 depth16/context128 bundle3 is active. Full remaining storage/time
+admission passed with74415333bytes beyond the complete17834332955byte requirement,
+which already includes12GiB reserve. Memory pressure was normal and the reclaimable
+page proxy5104041984bytes. The initial checkpoint, sole worker and held lock passed
+verification. All frozen roles, schedules, guards and scientific criteria remain.
+Next finish slot11, review execution, then complete frozen joint statistics, blind
+first-generation ratings and the full-panel audit. Do not issue early quality,
+interaction or transfer conclusions. Prior capacity recovery records remain
+historical evidence; the final-run launch blocker is resolved.
 
 ## Historical three-depth preparation boundary — 2026-11-14 Pacific
 

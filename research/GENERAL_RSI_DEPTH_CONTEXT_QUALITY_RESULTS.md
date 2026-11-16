@@ -1,9 +1,9 @@
 # Two-depth context transfer: execution results
 
-## Status — 2026-11-16 17:00 UTC
+## Status — 2026-11-16 21:21 UTC
 
-Ten of12 runs passed execution review. Slot10 is active: depth16, context256,
-bundle3. The frozen plan, roles, schedules and quality criteria remain unchanged.
+Eleven of12 runs passed execution review. Final slot11 is active: depth16,
+context128, bundle3. The frozen plan, roles, schedules and quality criteria remain unchanged.
 All three depth4 pairs and the first two depth16 pairs are descriptive evidence. Full within-depth and
 interaction decisions remain pending all three paired bundles at both depths.
 
@@ -19,6 +19,7 @@ interaction decisions remain pending all three paired bundles at both depths.
 | 07 | 4 | 128 | 2 | 41678 | 14400.006258 | 4.857361887 | 4.847266345 |
 | 08 | 4 | 128 | 3 | 41876 | 14400.102661 | 4.846172457 | 4.831474207 |
 | 09 | 4 | 256 | 3 | 41390 | 14400.096636 | 4.741443764 | 4.728240306 |
+| 10 | 16 | 256 | 3 | 22294 | 14400.662006 | 4.709962556 | 4.703559781 |
 
 For bundle1 at depth4, native-context EMA delta256-minus128 is−0.102457786
 nats/token. Both sources improve: FineWeb−0.092971985 and Wikipedia−0.140451107.
@@ -35,7 +36,7 @@ Slot02 common128 EMA CE is4.784371225, giving a common128 delta of−0.010491601
 The first-bundle depth16-minus4 interaction is+0.013177255 nats/token. These are
 descriptive contrasts only. They do not establish transfer, an interaction, or
 equivalence. The three fresh paired bundles per depth and frozen multiplicity
-rules remain required. Twenty endpoints and240 first outputs are retained.
+rules remain required. Twenty-two endpoints and264 first outputs are retained.
 
 For bundle2 at depth16, native-context EMA delta256-minus128 is−0.080701359
 nats/token. Both sources improve: FineWeb−0.079991771 and Wikipedia−0.083543460.
@@ -346,3 +347,34 @@ engineering/pilot payloads under the released lock. Slot11 requires full admissi
 The hypothesis and scientific protocol are unchanged. A concrete external option
 is1.25GiB additional usable storage. Evidence:
 `maintenance-cache-cleanup-027/research-reconciliation.json` and exact manifest/journal.
+
+## Run11 review and final-run admission — 2026-11-16 21:21 UTC
+
+Slot10 passed execution review with7354 EMA snapshots,24 first outputs and121
+exact transient retirements. Its common128 EMA CE is4.782998467. The paired
+context128 endpoint is pending. Elapsed time was14962.205seconds, including
+274.994seconds checkpoint work. Peak RSS was981598208bytes and peak MPS driver
+allocation2744958976bytes. There were no replay charges or scientific failures.
+
+After the worker exited0 and released the shared lock, exact cleanup retired eight
+accepted short combined-shape003 inference payloads and three accepted byte-pilot
+H200 inference payloads. Their downstream consumers initialize fresh or read the
+retained metadata. All source, acceptance, failure and first-output evidence stays
+intact. All original002 RNG-failure payloads, pilot RAW parents, selected/fresh
+models and22 scientific endpoints remain retained. The manifest, consumer closure,
+exact deletion journal and44863 retained-file hash checks are in
+`storage-cleanup-2026-11-16-final-run-001/`. Recovered allocation was1289719808bytes.
+
+Final-run admission measured17908748288bytes free against17834332955 required,
+including the10GiB reserve plus2GiB headroom, remaining endpoints, restart atomic
+overlap, metadata and failure allowances. Host pressure was normal. The reclaimable
+page proxy was5104041984bytes and the remaining science tranche61226.548seconds.
+Slot11 depth16/context128 bundle3 launched with frozen roles and14400 training
+seconds. Its initial checkpoint hash, sole-worker ownership and held lock passed
+verification. RSS4GiB/MPS6GiB guards remain active through all phases.
+
+The hypothesis remains unresolved: the completed pairs favor context256, with
+smaller common128 differences, but exposure, representation, optimizer and schedule
+uncertainty remain. Complete the final pair before the frozen multiplicity-adjusted
+within-depth and interaction tests, blind generation ratings and full-panel audit.
+This can establish transfer/replication across two depths, not a scaling law.
