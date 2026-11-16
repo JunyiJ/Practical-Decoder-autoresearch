@@ -273,3 +273,19 @@ plus30% overhead. Slot06 launched with unchanged roles, sources, criteria and
 schedule. The prior capacity blocker is resolved. Evidence:
 `storage-cleanup-2026-11-16-pseudo-engineering-001/manifest.json`,
 `deletion-journal.jsonl`, `completed.json`, and slot06 admission/launch verification.
+
+## Active-run storage recovery — 2026-11-16 17:49 UTC
+
+A new1,915,110byte shortfall against the full remaining-study forecast triggered
+standing-authorized cache recovery024. Under the independent cache lock,1516
+unopened Chromium SimpleCache payloads older than one hour were retired after
+exact path/size/hash and consumer checks, with a durable deletion journal.
+Allocated bytes removed:65818624. All eligible entries were exhausted below
+the256MiB batch cap. The active worker was not interrupted.
+
+Reconciliation measured17791811584free bytes against17730124006required,
+a61687578byte margin including10GiB reserve plus2GiB headroom.
+All5269 bound sources and20 retained endpoints passed hash verification.
+The hypothesis, frozen protocol and next action remain unchanged: finish slot10,
+review execution, then admit slot11 depth16/context128 bundle3. Evidence:
+`maintenance-cache-cleanup-024/completed.json` and `research-reconciliation.json`.

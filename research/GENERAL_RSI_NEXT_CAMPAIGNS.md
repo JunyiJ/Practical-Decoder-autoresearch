@@ -94,6 +94,10 @@ Slot10 depth16/context256 bundle3 is active after full remaining-study admission
 Both remaining runs and allowances fit with39505975bytes beyond the complete
 requirement. Host memory pressure was normal at launch. Prior exact cleanup
 of obsolete pseudo-repetition engineering restarts remains documented.
+Cache recovery024 resolved a new1,915,110byte forecast shortfall by retiring
+1516 exact audited cache entries. The worker remained active and all5269 bound
+sources and20 retained endpoints passed hash verification. See the recovery
+receipt and reconciliation in `maintenance-cache-cleanup-024/`.
 Next review slot10, then admit frozen slot11 depth16/context128 bundle3.
 See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`. Preserve all12-run sources,
 roles, criteria and schedules. Review each completed slot before the next launch.
