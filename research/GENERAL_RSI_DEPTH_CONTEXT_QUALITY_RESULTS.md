@@ -1,8 +1,8 @@
 # Two-depth context transfer: execution results
 
-## Status — 2026-11-15 20:10 UTC
+## Status — 2026-11-16 00:22 UTC
 
-Five of12 runs passed execution review. Slot05 is active: depth16, context256,
+Six of12 runs passed execution review. Slot06 is active: depth4, context256,
 bundle2. The frozen plan, roles, schedules and quality criteria remain unchanged.
 The first pair at each depth is descriptive evidence. Full within-depth and
 interaction decisions remain pending all three paired bundles at both depths.
@@ -14,6 +14,7 @@ interaction decisions remain pending all three paired bundles at both depths.
 | 02 | 16 | 256 | 1 | 22876 | 14400.167426 | 4.715277211 | 4.705582296 |
 | 03 | 16 | 128 | 1 | 23710 | 14400.324782 | 4.801574994 | 4.794862826 |
 | 04 | 16 | 128 | 2 | 23531 | 14400.451095 | 4.820412777 | 4.810480072 |
+| 05 | 16 | 256 | 2 | 22550 | 14400.381925 | 4.737805592 | 4.729778713 |
 
 For bundle1 at depth4, native-context EMA delta256-minus128 is−0.102457786
 nats/token. Both sources improve: FineWeb−0.092971985 and Wikipedia−0.140451107.
@@ -30,7 +31,14 @@ Slot02 common128 EMA CE is4.784371225, giving a common128 delta of−0.010491601
 The first-bundle depth16-minus4 interaction is+0.013177255 nats/token. These are
 descriptive contrasts only. They do not establish transfer, an interaction, or
 equivalence. The three fresh paired bundles per depth and frozen multiplicity
-rules remain required. Ten endpoints and120 first outputs are retained.
+rules remain required. Twelve endpoints and144 first outputs are retained.
+
+For bundle2 at depth16, native-context EMA delta256-minus128 is−0.080701359
+nats/token. Both sources improve: FineWeb−0.079991771 and Wikipedia−0.083543460.
+Slot05 common128 EMA CE is4.805153779, giving a common128 delta of−0.005326292.
+Both completed depth16 pairs favor context256 descriptively. No early quality
+gate or interaction inference is made; the third pair and remaining depth4 pairs
+remain required.
 
 Each slot scored all108 development documents and100416 targets. Both finite FP32
 endpoints, both fixed probes, clock accounting, EMA count, paired-stream evidence,
@@ -52,8 +60,10 @@ allocation2744958976bytes. Its7826 EMA snapshots and23710 updates passed review.
 Slot04 elapsed14880.742seconds, including249.502seconds checkpoint work.
 Peak RSS was1022640128bytes and MPS driver allocation2744958976bytes.
 Its7842 EMA snapshots and23531 updates passed review. Bundle2 depth16
-context128 EMA CE is4.810480072. Its paired context256 endpoint is pending,
-so this slot adds no completed paired contrast.
+context128 EMA CE is4.810480072.
+Slot05 elapsed14941.763seconds, including261.439seconds checkpoint work.
+Peak RSS was997965824bytes and MPS driver allocation2744958976bytes.
+Its7373 EMA snapshots and22550 updates passed review, with no recovery charge.
 RSS4GiB/MPS6GiB guards remain enforced.
 
 Slot02 admission measured20432351232 free bytes against20218359129 required for
@@ -76,21 +86,26 @@ Slot05 admission measured19344519168 free bytes against19335137103 required
 for all seven remaining runs and allowances, a9382065byte margin. Ten retained
 endpoints total1339216758bytes. Host pressure was normal, with a6020136960byte
 reclaimable-page proxy. Remaining tranche time was150413.933seconds against
-100800 training seconds. The bundle2 depth16/context256 worker holds the shared
+100800 training seconds. That run has completed and passed execution review.
+Slot06 admission measured19386142720 free bytes against19040729761 required
+for all six remaining runs and allowances, a345412959byte margin. Twelve retained
+endpoints total1633624100bytes. Host pressure was normal, with a5092720640byte
+reclaimable-page proxy. Remaining tranche time was135472.170seconds against
+86400 training seconds. The bundle2 depth4/context256 worker holds the shared
 lock, with its initial checkpoint verified and no other training worker active.
 No roles, criteria, schedules or source bindings changed.
 
 Evidence: `tokenizer-evidence/general-rsi-depth-context-quality-001/slot-00/review.json`
 and `slot-01/review.json`, `slot-02/review.json`, `slot-03/review.json`,
-`slot-04/review.json`, results,
-score files and first-generation journals; slot05 `continuation-admission.json` and
+`slot-04/review.json`, `slot-05/review.json`, results,
+score files and first-generation journals; slot06 `continuation-admission.json` and
 `launch-verification.json`.
 
 The first fresh pair at each depth supports the direction of the context256
 recipe's benefit. Full transfer and interaction conclusions remain unresolved.
 Representation, exposure, optimizer and schedule effects remain entangled.
-Next finish slot05 unchanged, review execution, then admit and run frozen slot06
-depth4/context256 bundle2.
+Next finish slot06 unchanged, review execution, then admit and run frozen slot07
+depth4/context128 bundle2.
 Complete all12 runs before the predeclared within-depth and interaction decisions.
 Two depths provide transfer evidence, not a scaling law.
 
@@ -183,3 +198,21 @@ lock release enables exact research-payload audit. Do not repeat unchanged
 broad scans. Hypothesis and frozen criteria remain unchanged. Evidence:
 `maintenance-cache-cleanup-023/research-reconciliation.json`, original audit
 failure, separate repair, manifests and deletion journal.
+
+## Capacity restored at run boundary — 2026-11-16 00:21 UTC
+
+After slot05 finished, the released research lock enabled an exact obsolete-payload
+audit. Two accepted pseudo-repetition engineering restart files had no remaining
+consumer. Their six-run scientific panel and downstream uses are complete.
+Retirement removed890056704 allocated bytes, with original receipt hashes,
+open-consumer checks, a durable deletion journal and5905 retained-file hash checks.
+All scientific endpoints, selected weights, frozen bindings, first outputs and
+original RNG-harness failure payloads remain. This narrow retirement supersedes
+the historical retain-both wording for these two engineering files only.
+
+The measured full remaining-study storage requirement passed after recovery.
+Memory pressure was normal at launch and the time allowance covers six full runs
+plus30% overhead. Slot06 launched with unchanged roles, sources, criteria and
+schedule. The prior capacity blocker is resolved. Evidence:
+`storage-cleanup-2026-11-16-pseudo-engineering-001/manifest.json`,
+`deletion-journal.jsonl`, `completed.json`, and slot06 admission/launch verification.
