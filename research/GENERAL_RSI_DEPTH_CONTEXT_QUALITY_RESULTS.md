@@ -289,3 +289,19 @@ All5269 bound sources and20 retained endpoints passed hash verification.
 The hypothesis, frozen protocol and next action remain unchanged: finish slot10,
 review execution, then admit slot11 depth16/context128 bundle3. Evidence:
 `maintenance-cache-cleanup-024/completed.json` and `research-reconciliation.json`.
+
+## Active-run storage recovery — 2026-11-16 19:29 UTC
+
+A new3,209,318byte shortfall against the full remaining-study forecast triggered
+standing-authorized cache recovery025. Under the independent cache lock,866
+unopened Chromium SimpleCache payloads older than one hour were retired after
+exact path/size/hash and consumer checks, with a durable deletion journal.
+Allocated bytes removed:30441472. All eligible entries were exhausted below
+the256MiB batch cap. The active worker was not interrupted.
+
+Reconciliation measured17755058176free bytes against17728051302required,
+a27006874byte margin including10GiB reserve plus2GiB headroom.
+All5269 bound sources and20 retained endpoints passed hash verification.
+The hypothesis, frozen protocol and next action remain unchanged: finish slot10,
+review execution, then admit slot11 depth16/context128 bundle3. Evidence:
+`maintenance-cache-cleanup-025/completed.json` and `research-reconciliation.json`.
