@@ -1,0 +1,22 @@
+{
+  "accepted": true,
+  "at": "2026-11-16T08:39:25.501184+00:00",
+  "slot": 8,
+  "plan_sha256": "b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c",
+  "prior_review_sha256": "a4fbbded45cfb9f48514cbd55ac3b3102c27490783280d8bed4d28b20a00e3d8",
+  "free_bytes": 18752978944,
+  "required_remaining_free_bytes": 18584735029,
+  "retained_endpoint_bytes": 2089618832,
+  "margin_bytes": 168243915,
+  "remaining_science_tranche_seconds": 105830.0837573742,
+  "remaining_training_seconds": 57600,
+  "host": {
+    "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                4392.\nPages active:                            324253.\nPages inactive:                          300511.\nPages speculative:                        22691.\nPages throttled:                              0.\nPages wired down:                        146589.\nPages purgeable:                           1796.\n\"Translation faults\":               37130035604.\nPages copy-on-write:                  313940097.\nPages zero filled:                   7991169951.\nPages reactivated:                   1694903551.\nPages purged:                         247818384.\nFile-backed pages:                       300006.\nAnonymous pages:                         347449.\nPages stored in compressor:              949105.\nPages occupied by compressor:            215605.\nDecompressions:                      1405635915.\nCompressions:                        1531646237.\nPageins:                             4268013136.\nPageouts:                               1731538.\nSwapins:                                1101215.\nSwapouts:                               1460491.\n",
+    "pressure": "kern.memorystatus_vm_pressure_level: 1\n",
+    "swap": "vm.swapusage: total = 5120.00M  used = 4156.44M  free = 963.56M  (encrypted)\n",
+    "physical": "hw.memsize: 17179869184\n"
+  },
+  "reclaimable_page_proxy_bytes": 5367300096,
+  "required_headroom_plus_host_extra_bytes": 1342177280,
+  "scope": "All remaining four runs, retained endpoints, optimizer/EMA restart atomic overlap, metadata, engineering and failure allowances; reserve10GiB plus2GiB. Reuse accepted four-shape qualification with RSS4GiB/MPS6GiB guards. No scientific criteria changed."
+}
