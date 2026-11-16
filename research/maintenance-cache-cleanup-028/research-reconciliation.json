@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-16T22:49:44.465466+00:00",
+  "trigger": "New approximately820MB free-space decrease with unchanged6144MiB swap allocation; cause not established. Active checkpoint allocation explicitly accounted.",
+  "free_bytes": 16722681856,
+  "required_remaining_bytes": 17434848376,
+  "remaining_deficit_bytes": 712166520,
+  "resolved": false,
+  "source_bindings_verified": 5269,
+  "retained_endpoints_hash_verified": 22,
+  "retained_endpoint_bytes": 2840020906,
+  "active_payload_bytes": 399484579,
+  "active_worker_pid": 41967,
+  "active_slot": 11,
+  "process": "41967 41963 125584 01:29:12 /opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m research.general_rsi_depth_context_worker_v1 run b99578af06d57549cee6f9ffad19acc0cdeeb89d5f9c5c3a03fcf8ee26dafe1c 11 --attempt 1",
+  "guard": {
+    "elapsed_seconds": 5350.343505125027,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 21600
+    },
+    "observation": {
+      "free_bytes": 16722681856,
+      "peak_rss_bytes": 976994304
+    },
+    "pid": 41967,
+    "reason": null,
+    "status": "watching"
+  },
+  "allocated_bytes_removed": 60026880,
+  "removed_files": 918,
+  "reserve_bytes": 12884901888,
+  "prior_exhausted_cache_classes": "research/maintenance-cache-cleanup-026/research-reconciliation.json",
+  "research_payload_cleanup": "Shared research lock held by final worker. No research payload deletion or worker interruption. Exact eligible final-run fixture cleanup already completed.",
+  "wake_conditions": [
+    "New eligible cache or verified unused installation",
+    "Available space again covers dynamic remaining forecast",
+    "Final worker completes or fails"
+  ],
+  "next_action": "Leave final frozen run and guards active. Review final execution and perform frozen analysis after completion. Do not repeat unchanged broad scans or capacity notifications.",
+  "test_opened": false,
+  "scientific_protocol_changed": false
+}

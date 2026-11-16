@@ -378,3 +378,16 @@ smaller common128 differences, but exposure, representation, optimizer and sched
 uncertainty remain. Complete the final pair before the frozen multiplicity-adjusted
 within-depth and interaction tests, blind generation ratings and full-panel audit.
 This can establish transfer/replication across two depths, not a scaling law.
+
+## Active-run capacity recovery — 2026-11-16 22:49 UTC
+
+At22:49UTC, a new free-space decrease left a712166520byte deficit against the
+full remaining forecast after active-checkpoint accounting. Exact external-cache
+recovery028 removed918 unused entries and recovered60026880allocated bytes.
+Free space was16722681856bytes, above the12GiB reserve. The final worker remains
+healthy under its guards and holds the shared research lock. All5269 sources and22
+retained endpoints passed hash verification. No research payload was deleted and
+no scientific criterion changed. See `maintenance-cache-cleanup-028/research-reconciliation.json`.
+Leave the final run active. Reassess on new eligible capacity, sufficient free space,
+or completion/failure; do not repeat unchanged broad scans. About0.8GiB of additional
+usable space would cover the current deficit with modest churn headroom.

@@ -110,6 +110,18 @@ first-generation ratings and the full-panel audit. Do not issue early quality,
 interaction or transfer conclusions. Prior capacity recovery records remain
 historical evidence; the final-run launch blocker is resolved.
 
+At22:49UTC, a new free-space decrease left a712166520byte deficit against the
+full remaining forecast after active-checkpoint accounting. Exact external-cache
+recovery028 removed918 unused entries and recovered60026880allocated bytes.
+Free space was16722681856bytes, above the12GiB reserve. The final worker remains
+healthy under its guards and holds the shared research lock. All5269 sources and22
+retained endpoints passed hash verification. No research payload was deleted and
+no scientific criterion changed. See `maintenance-cache-cleanup-028/research-reconciliation.json`.
+Leave the final run active. Reassess on new eligible capacity, sufficient free space,
+or completion/failure; do not repeat unchanged broad scans. About0.8GiB of additional
+usable space would cover the current deficit with modest churn headroom.
+
+
 ## Historical three-depth preparation boundary — 2026-11-14 Pacific
 
 The bounded existing-data attribution is complete and independently checked.
