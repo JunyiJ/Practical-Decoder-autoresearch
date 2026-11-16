@@ -94,12 +94,15 @@ Slot10 depth16/context256 bundle3 is active after full remaining-study admission
 Both remaining runs and allowances fit with39505975bytes beyond the complete
 requirement. Host memory pressure was normal at launch. Prior exact cleanup
 of obsolete pseudo-repetition engineering restarts remains documented.
-Cache recovery025 resolved a new3,209,318byte forecast shortfall by retiring
-866 exact audited cache entries. Reconciliation left27,006,874bytes beyond the
-complete requirement. The worker remained active and all5269 bound sources and20
-retained endpoints passed hash verification. See the recovery receipt and
-reconciliation in `maintenance-cache-cleanup-025/`. Prior recoveries remain retained.
-Next review slot10, then admit frozen slot11 depth16/context128 bundle3.
+Cache recovery026 partially recovered a new forecast shortfall:12 eligible entries,
+270336allocated bytes. Reconciliation still lacks4,358,778bytes against the full
+remaining requirement. Browser/package/Homebrew/Conda payload classes are exhausted.
+The active worker remains healthy; all5269 bound sources and20 endpoints verified.
+See `maintenance-cache-cleanup-026/research-reconciliation.json`. Prior evidence remains.
+Next finish and review slot10, then use the released lock for exact obsolete-payload
+recovery if needed. Launch frozen slot11 depth16/context128 bundle3 only after full
+admission passes. Wake on sufficient free space, new eligible candidates or lock release.
+A concrete external option is64MiB additional usable storage for deficit and churn.
 See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md`. Preserve all12-run sources,
 roles, criteria and schedules. Review each completed slot before the next launch.
 Original RNG-harness failures and first outputs remain retained.

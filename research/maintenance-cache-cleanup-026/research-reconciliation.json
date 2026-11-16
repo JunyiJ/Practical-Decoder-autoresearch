@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-16T20:00:16.868225+00:00",
+  "trigger_deficit_bytes": 2332154,
+  "free_bytes": 17575862272,
+  "required_remaining_bytes": 17580221050,
+  "margin_bytes": -4358778,
+  "remaining_deficit_bytes": 4358778,
+  "resolved": false,
+  "source_bindings_verified": 5269,
+  "retained_endpoints_hash_verified": 20,
+  "active_slot": 10,
+  "active_worker_pid": 48074,
+  "guard": {
+    "elapsed_seconds": 10830.091345333029,
+    "limits": {
+      "reserve_bytes": 12884901888,
+      "rss_limit_bytes": 4294967296,
+      "timeout_seconds": 21600
+    },
+    "observation": {
+      "free_bytes": 17575862272,
+      "peak_rss_bytes": 981598208
+    },
+    "pid": 48074,
+    "reason": null,
+    "status": "watching"
+  },
+  "allocated_bytes_removed": 270336,
+  "removed_files": 12,
+  "exhausted_classes": [
+    "Aged unopened Chromium SimpleCache entries",
+    "Eligible pip wheel bodies and SHA512-addressed npm cache payloads",
+    "Homebrew bottle/Bootsnap payloads and Conda package cache"
+  ],
+  "exclusions": [
+    "Homebrew API metadata retained",
+    "Research payload cleanup prohibited while shared worker lock held",
+    "No new verified unused application candidate"
+  ],
+  "wake_conditions": [
+    "Free space covers the dynamic full remaining-study requirement",
+    "New eligible cache or verified unused application",
+    "Worker lock release enables exact obsolete-payload audit"
+  ],
+  "external_option": "Free or add at least64MiB of usable storage for the current shortfall and churn margin.",
+  "test_opened": false,
+  "scientific_protocol_changed": false,
+  "next_action": "Continue slot10 unchanged under existing guards; review completion, then recover capacity if needed and admit frozen slot11 only after full remaining-study admission passes."
+}

@@ -8,14 +8,14 @@
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
   "active_session": 91525,
-  "next_action": "Finish frozen slot10 depth16/context256 bundle3, review execution, then admit and launch slot11 depth16/context128 bundle3.",
+  "next_action": "Continue slot10 unchanged under existing guards; review completion, then recover capacity if needed and admit frozen slot11 only after full remaining-study admission passes.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-16T19:29:49.820968+00:00",
+  "updated_at": "2026-11-16T20:00:16.868225+00:00",
   "active_worker_pid": 48074,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Cache recovery025 resolved the new3209318byte full-study shortfall. Removed866 exact audited cache entries,30441472allocated bytes. Free17755058176, remaining requirement17728051302, margin27006874, including10GiB reserve plus2GiB headroom and all remaining allowances. Slot10 worker48074 remains active. All5269 bound sources and20 retained endpoints verified.",
+  "capacity_status": "Partial cache recovery026 removed12 exact audited entries,270336allocated bytes. Full remaining-study requirement17580221050 exceeds free17575862272 by4358778bytes. Eligible browser/package/Homebrew/Conda payload classes exhausted. Active slot10 worker48074 remains healthy; research payload cleanup awaits lock release. All5269 sources and20 endpoints verified. Do not launch slot11 until complete admission passes.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -449,7 +449,11 @@
   "native_horizon_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/analysis-check.json",
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
-  "wake_condition": "Next continuation: concrete combined depth/context source integration and bounded parity qualification. No training worker is active; do not repeat completed attribution or broad cleanup scans.",
+  "wake_condition": [
+    "Free space covers the dynamic full remaining-study requirement",
+    "New eligible cache or verified unused application",
+    "Worker lock release enables exact obsolete-payload audit"
+  ],
   "native_horizon_completed_slots": [
     {
       "slot": 0,
@@ -1115,5 +1119,5 @@
   ],
   "depth_context_quality_panel_launched": true,
   "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-10/launch-verification.json",
-  "depth_context_active_capacity_recovery": "research/maintenance-cache-cleanup-025/completed.json"
+  "depth_context_active_capacity_recovery": "research/maintenance-cache-cleanup-026/research-reconciliation.json"
 }

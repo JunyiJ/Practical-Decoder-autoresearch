@@ -305,3 +305,22 @@ All5269 bound sources and20 retained endpoints passed hash verification.
 The hypothesis, frozen protocol and next action remain unchanged: finish slot10,
 review execution, then admit slot11 depth16/context128 bundle3. Evidence:
 `maintenance-cache-cleanup-025/completed.json` and `research-reconciliation.json`.
+
+## Partial active-run storage recovery — 2026-11-16 20:00 UTC
+
+A new2,332,154byte forecast deficit triggered exact cache recovery026. It removed
+12 eligible unopened Chromium entries,270336allocated bytes. No eligible pip/npm
+payloads remained. Targeted Homebrew/Conda inventory found only retained Homebrew
+API/manifest metadata and no Conda payloads. Research cleanup cannot acquire the
+shared lock while slot10 runs. No worker was interrupted.
+
+After concurrent writes, free17575862272bytes remained4,358,778bytes below the
+17580221050byte full forecast, including10GiB reserve plus2GiB headroom.
+All5269 bound sources and20 retained endpoints passed hash verification.
+The scientific hypothesis and protocol are unchanged. Finish and review slot10,
+then audit obsolete payloads under the released lock if capacity still falls short.
+Launch slot11 only after complete remaining-study admission passes. Wake on new
+eligible candidates, sufficient free space or worker lock release; do not repeat
+unchanged broad scans. An external option is64MiB additional usable storage.
+Evidence: `maintenance-cache-cleanup-026/research-reconciliation.json`, both exact
+cleanup manifests/journals, and `remaining-cache-inventory.json`.
