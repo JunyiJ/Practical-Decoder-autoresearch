@@ -7,16 +7,16 @@
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 28617,
-  "next_action": "Finish frozen slot08 depth4/context128 bundle3 under unchanged guards. Review execution, then admit and launch slot09 depth4/context256 bundle3.",
+  "active_session": 84938,
+  "next_action": "Finish frozen slot09 depth4/context256 bundle3, review execution, then admit and launch slot10 depth16/context256 bundle3. Preserve all bound sources, roles, criteria and schedules.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-16T08:40:46.510108+00:00",
-  "active_worker_pid": 59065,
+  "updated_at": "2026-11-16T12:50:29.913939+00:00",
+  "active_worker_pid": 52127,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 8,
+  "active_slot": 9,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Eight of12 runs passed execution review, retaining16 endpoints and192 first outputs. Bundle2 depth4 native-context EMA delta256-minus128 is-0.082402763, common128 delta-0.010002451. Bundle2 depth16-minus4 interaction is+0.001701404, descriptive only. Slot08 is active. All three fresh pairs per depth remain required.",
+  "latest_learning": "Nine of12 runs passed execution review, retaining18 endpoints and216 first outputs. Slot08 depth4/context128 bundle3 completed14400.102661408 training seconds with RAW CE4.846172457 and time-EMA CE4.831474207. Its paired context256 slot09 is active. No new paired contrast or quality conclusion is available.",
   "phase": "two_depth_context_transfer_confirmation",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -76,7 +76,7 @@
     "research/tokenizer-evidence/general-rsi-capacity-007/reconciliation.json",
     "research/tokenizer-evidence/general-rsi-capacity-008/completed.json"
   ],
-  "capacity_status": "Slot08 full remaining-study admission passed: free18752978944 required18584735029 margin168243915, including10GiB reserve plus2GiB headroom and all four remaining runs. Memory pressure normal at launch with5367300096byte reclaimable-page proxy. Sole worker59065 holds research lock. Prior capacity blocker remains resolved.",
+  "capacity_status": "Slot09 full remaining-study admission passed: free18499842048 required18356737663 margin143104385, including10GiB reserve plus2GiB headroom and all three remaining runs. Memory pressure normal at launch with5340446720byte reclaimable-page proxy. Sole worker52127 holds research lock. Prior capacity blocker remains resolved.",
   "completed_confirmations": [
     {
       "slot": 4,
@@ -530,7 +530,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Both completed fresh pairs at each depth support the context256 direction, with smaller common128 contrasts. The first two bundle interactions are+0.013177255 and+0.001701404 nats/token, descriptive only. Transfer, interaction and equivalence remain unresolved pending all three fresh pairs and frozen multiplicity rules; representation, exposure, optimizer and schedule effects remain entangled.",
+  "latest_hypothesis": "Both completed fresh pairs at each depth support the context256 direction, with smaller common128 contrasts. The first two bundle interactions are+0.013177255 and+0.001701404 nats/token, descriptive only. Slot08 adds the third depth4 reference; its paired slot09 remains pending. Transfer, interaction and equivalence remain unresolved pending all three fresh pairs and frozen multiplicity rules; representation, exposure, optimizer and schedule effects remain entangled.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -1109,9 +1109,10 @@
     4,
     5,
     6,
-    7
+    7,
+    8
   ],
   "depth_context_quality_panel_launched": true,
-  "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-08/launch-verification.json",
+  "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-09/launch-verification.json",
   "depth_context_active_capacity_recovery": "research/storage-cleanup-2026-11-16-pseudo-engineering-001/completed.json"
 }
