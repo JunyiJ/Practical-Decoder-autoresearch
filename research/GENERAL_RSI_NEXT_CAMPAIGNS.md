@@ -74,6 +74,9 @@ selection and costs below are superseded, not current execution instructions.
 
 ## Two-depth execution update — 2026-11-15 Pacific
 
+Final-run cleanup and execution are owned by this RSI chat. Follow the durable
+`GENERAL_RSI_FINAL_RUN_HANDOFF.md` after slot10 finishes publication and exits.
+
 All four combined shapes passed qualification and complete12-run admission.
 See `GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md` and the frozen
 `tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00–09
