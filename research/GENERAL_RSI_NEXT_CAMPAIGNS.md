@@ -70,7 +70,26 @@ Qualification, admission and all12 runs are complete. Follow the TOP completion
 section below for current conclusions and the next boundary-review action. The
 historical three-depth selection and costs remain superseded.
 
-## TOP: two-depth study complete — 2026-11-17 01:41 UTC
+## TOP: saved context-position analysis complete — 2026-11-17 UTC
+
+The new analysis uses only the just-completed two-depth panel. It does not repeat
+the closed cross-size byte attribution or prior context panel. The first32 targets
+after a common128 reset explain66.74%/67.06% of the same256-weight EMA evaluation
+benefit at depths4/16; later96 positions also improve. All shared-prefix losses
+match exactly. Independent ordered-vector verification matches all36 bound score
+files and all position summaries. No new training, scoring or generation occurred.
+See `GENERAL_RSI_DEPTH_CONTEXT_POSITION_RESULTS.md` and its boundary/evidence.
+
+Native-context quality gates and the unresolved depth interaction remain unchanged.
+This is a posthoc descriptive decomposition, not an identified causal allocation.
+No new context, recurrence or optimizer training is admitted. Next bounded review:
+check how global clipping affects the qualified mixed Muon/AdamW implementation,
+using original source, closed optimizer evidence and primary papers before selecting
+any diagnostic. Do not infer effective update magnitude from clipping counts alone.
+Publication still awaits the explicit public-disclosure authorization already
+requested after automatic approval review rejection. Do not retry unchanged pushes.
+
+## Completed two-depth study — 2026-11-17 01:41 UTC
 
 All12 runs and24 RAW/time-EMA endpoints passed review. All288 first outputs are
 retained and rated. The independent completion audit verified5269 frozen sources,
