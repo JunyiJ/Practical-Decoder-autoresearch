@@ -1,5 +1,38 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## TOP: four-condition fixed-weight extension queued — 2026-11-16 Pacific
+
+The human requested A reset128, B rolling128, C rolling256 and D rolling256 with
+only the oldest128 subword tokens shuffled. All four use the same six saved
+context256-trained time-EMA models and72876 full-history validation targets.
+The existing B/C worker43123 and supervisor43122 remain unchanged and active.
+A's saved common128 scores passed original-audit hash and matched-position
+coverage checks. No repeat A scoring or B/C execution is needed.
+
+`GENERAL_RSI_ROLLING_FOUR_CONDITION_DESIGN.md` freezes this extension separately.
+D uses one SHA256/PCG64 target-keyed permutation shared across models, preserving
+recent128 tokens exactly. The new joint family has12 contrasts: B-A, C-B, C-D,
+D-B at each depth and their direct depth differences. Preserve the original B/C
+three-contrast analysis as a separate frozen result. No quality effects were
+inspected to choose the extension or shuffle seed. Subword shuffle sensitivity
+is not uniquely semantic sequence sensitivity or reasoning.
+
+`general_rsi_rolling_four_queue_v1.py` waits for the original scorer and analysis
+to exit successfully. It then qualifies the new shuffled-input path on synthetic
+and training inputs, checks current memory/storage and complete measured D cost,
+and serially scores D only if admission passes. The provisional additional
+forecast is5256.3seconds including50% margin and600seconds overhead. Reserve512MiB
+combined B/C+D output/failure/atomic allowance beyond12GiB disk reserve. Preserve
+RSS4GiB/MPS6GiB and host headroom guards; no second MPS worker or training.
+Evidence: `tokenizer-evidence/general-rsi-rolling-four-001/`.
+
+Next: let the unchanged B/C worker finish, then the queued D qualification and
+scoring. On completion review all four target inventories, A/B same-input control,
+independent permutation/input hashes, bootstrap, endpoint/source hashes and guards.
+Write results, reconcile state and publish authorized source/evidence. Do not
+close the monitor after B/C alone; no new campaign follows automatically.
+
+
 ## TOP: rolling-history saved-model diagnostic active — 2026-11-16 Pacific
 
 The human authorized rolling128 versus rolling256 scoring on saved models, with

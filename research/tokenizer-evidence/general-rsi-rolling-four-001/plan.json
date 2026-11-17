@@ -1,0 +1,151 @@
+{
+  "kind": "four_condition_saved_model_extension_v1",
+  "at": "2026-11-17T06:01:27.486740+00:00",
+  "sources": {
+    "research/general_rsi_rolling_four_v1.py": "5b10fe955098f014a4084e628720b60bf29f2eb4c0412df0b639c156ae1c9906",
+    "research/GENERAL_RSI_ROLLING_FOUR_CONDITION_DESIGN.md": "200e0c990adb19f33fbba8f2770e47d4981846e298d42f95f5c58d6c3c91a036",
+    "research/tokenizer-evidence/general-rsi-rolling-context-001/plan.json": "cb30e215969efbe78f525bdab83e63a6dd69025a6059372e3df0a6d76d773ba5",
+    "research/tokenizer-evidence/general-rsi-rolling-context-001/admission.json": "5352f2ed5530300e551102a3bad51278eabcb4908ef357abfdc93b556bb7689f",
+    "research/tokenizer-evidence/general-rsi-rolling-context-001/qualification-01/result.json": "9336adb9596efe6b89ab200fd785dfd15f2fb76ce89a0d64d6ab99e1f21f1119",
+    "research/tokenizer-evidence/general-rsi-depth-context-quality-001/completion-review.json": "1fdccfd31ad6913cb02a3b64f3f9e2757972effefa03c88f6128d09b8841b925",
+    "research/general_rsi_rolling_four_analysis_v1.py": "6531046342697c9bb36fbbed134de1c10e9e4226019b197c10baec3f18464384",
+    "research/general_rsi_rolling_four_queue_v1.py": "72bb43516d705b556a2222273b0a46eceddcdbd93a7c1a5085bdc1f684075e6d",
+    "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-01/time_ema-common128-validation.json": "23879c06b14cd9e11a839a901d97e9b30d1413ae553720691a72873c28a0250e",
+    "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-06/time_ema-common128-validation.json": "b5cd33fe4b40e1c8ed318adfbc827375f10afe51ee6153311a22f5c65408c443",
+    "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-09/time_ema-common128-validation.json": "b93f1a9997ce9b17988c9f02533bfff814c1b5b836cb578540d2c5623867d3a8",
+    "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-02/time_ema-common128-validation.json": "0940d340be60b46b5bd838936db69b2f015fc7862e2149dfd12ef8535d19e898",
+    "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-05/time_ema-common128-validation.json": "e7e884e9efcaaefe97b23211836ee439183a665149976dda9bca4bbc1a59677a",
+    "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-10/time_ema-common128-validation.json": "fd2fa92ca007cf3788a85b5e99c82455dc5c78829424cd237cc153f25c20b1da"
+  },
+  "base_plan_sha256": "cb30e215969efbe78f525bdab83e63a6dd69025a6059372e3df0a6d76d773ba5",
+  "endpoints": [
+    {
+      "depth": 4,
+      "bundle": 1,
+      "slot": 1,
+      "receipt": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-01/time_ema.pt",
+        "size": 113998683,
+        "sha256": "681534165d3a916f4fd54bef14211ec7a0a78412a7b72f1109cb76d5cb6c7fd5"
+      }
+    },
+    {
+      "depth": 4,
+      "bundle": 2,
+      "slot": 6,
+      "receipt": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-06/time_ema.pt",
+        "size": 113998683,
+        "sha256": "c6ab010a34ba2e9e2ea9449718ec1396ed512869f38592ed307631c0b19e50db"
+      }
+    },
+    {
+      "depth": 4,
+      "bundle": 3,
+      "slot": 9,
+      "receipt": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-09/time_ema.pt",
+        "size": 113998683,
+        "sha256": "65b7a549eb510718750f4ad054d2a73eab61e5ad3106e55914fecf50a12f0970"
+      }
+    },
+    {
+      "depth": 16,
+      "bundle": 1,
+      "slot": 2,
+      "receipt": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-02/time_ema.pt",
+        "size": 147203671,
+        "sha256": "82b606b8f6508503a2b664815e2b05e3cea6c40a6510931a7da5e5c60e0a55d8"
+      }
+    },
+    {
+      "depth": 16,
+      "bundle": 2,
+      "slot": 5,
+      "receipt": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-05/time_ema.pt",
+        "size": 147203671,
+        "sha256": "224e4dd2e32956e8da6fe2338dcf820ddeb9791907902f77d3ab7877242f0fa6"
+      }
+    },
+    {
+      "depth": 16,
+      "bundle": 3,
+      "slot": 10,
+      "receipt": {
+        "path": "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research_runs/general-rsi-depth-context-quality-001/slot-10/time_ema.pt",
+        "size": 147203671,
+        "sha256": "309bcf83468e1791d4ad4c3c9a83a36634e607e4c1f4ce3a9982247122f969f4"
+      }
+    }
+  ],
+  "saved_a": [
+    {
+      "depth": 4,
+      "bundle": 1,
+      "path": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-01/time_ema-common128-validation.json",
+      "sha256": "23879c06b14cd9e11a839a901d97e9b30d1413ae553720691a72873c28a0250e",
+      "matched_targets": 72876
+    },
+    {
+      "depth": 4,
+      "bundle": 2,
+      "path": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-06/time_ema-common128-validation.json",
+      "sha256": "b5cd33fe4b40e1c8ed318adfbc827375f10afe51ee6153311a22f5c65408c443",
+      "matched_targets": 72876
+    },
+    {
+      "depth": 4,
+      "bundle": 3,
+      "path": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-09/time_ema-common128-validation.json",
+      "sha256": "b93f1a9997ce9b17988c9f02533bfff814c1b5b836cb578540d2c5623867d3a8",
+      "matched_targets": 72876
+    },
+    {
+      "depth": 16,
+      "bundle": 1,
+      "path": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-02/time_ema-common128-validation.json",
+      "sha256": "0940d340be60b46b5bd838936db69b2f015fc7862e2149dfd12ef8535d19e898",
+      "matched_targets": 72876
+    },
+    {
+      "depth": 16,
+      "bundle": 2,
+      "path": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-05/time_ema-common128-validation.json",
+      "sha256": "e7e884e9efcaaefe97b23211836ee439183a665149976dda9bca4bbc1a59677a",
+      "matched_targets": 72876
+    },
+    {
+      "depth": 16,
+      "bundle": 3,
+      "path": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-10/time_ema-common128-validation.json",
+      "sha256": "fd2fa92ca007cf3788a85b5e99c82455dc5c78829424cd237cc153f25c20b1da",
+      "matched_targets": 72876
+    }
+  ],
+  "target_count": 72876,
+  "document_count": 108,
+  "numpy_version": "2.5.4",
+  "shuffle_seed_label": 621116220001,
+  "bootstrap_seed": 621116220002,
+  "bootstrap_resamples": 100000,
+  "interval_quantiles": [
+    0.0004166666666666667,
+    0.9995833333333334
+  ],
+  "contrasts": [
+    "B_minus_A",
+    "C_minus_B",
+    "C_minus_D",
+    "D_minus_B"
+  ],
+  "family_contrasts": 12,
+  "max_seconds": 43200,
+  "qualification_seconds": 600,
+  "reserve_bytes": 12884901888,
+  "combined_allowance_bytes": 536870912,
+  "provisional_forecast_seconds": 5256.329428156467,
+  "test_opened": false,
+  "training": false
+}
