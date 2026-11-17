@@ -1,5 +1,22 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## Current publication status — 2026-11-16 Pacific
+
+The human explicitly authorized publishing completed-study evidence to the public
+JunyiJ/Practical-Decoder-autoresearch repository without weights or credentials.
+The three previously blocked commits through d2192d78d are now pushed to
+`codex/tokenizer-quality`; the remote tip was verified. The audit covered all77
+changed file versions across73 paths, containing source/reports/metrics/logs only.
+No weight payloads or credential-pattern matches were found. Receipt:
+`tokenizer-evidence/general-rsi-completed-study-publication-001/receipt.json`.
+Earlier publication-block statements below and in immutable reports are historical
+and superseded. Do not request the same authorization or repeat unchanged pushes.
+The completed scientific findings remain unchanged. No training worker is active.
+The human now asks which test would separate segment-reset benefit from useful
+history beyond128 tokens; that question is under design review, not a new
+scientific launch or permission to reopen the completed training panel.
+
+
 ## Latest human direction — two-depth context study, 2026-11-14 Pacific
 
 The human explicitly requested: "finish the analysis, then run the two-depth
