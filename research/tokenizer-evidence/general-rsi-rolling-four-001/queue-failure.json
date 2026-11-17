@@ -1,0 +1,5 @@
+{
+  "error": "AssertionError(('score', 1))",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_rolling_four_queue_v1.py\", line 52, in main\n    bindings(plan);run_stage('score','ROLLING_FOUR_SCORING');bindings(plan);run_stage('analysis','ROLLING_FOUR_ANALYZING')\n                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_rolling_four_queue_v1.py\", line 21, in run_stage\n    put(OUT/f'{mode}-exit.json',dict(returncode=code));assert code==0,(mode,code)\n                                                              ^^^^^^^\nAssertionError: ('score', 1)\n",
+  "launched": true
+}

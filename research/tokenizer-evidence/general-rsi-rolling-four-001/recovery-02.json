@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-17T06:41:05.742784+00:00",
+  "classification": "pre_model_host_memory_admission_failure",
+  "original_failure": "scoring-01/failure.json",
+  "original_D_scored_targets": 0,
+  "original_D_model_loaded": false,
+  "exact_condition": "pressure==1 and free+inactive+speculative >=1.25GiB",
+  "limitation": "Original launcher asserted before saving host snapshot; cannot identify which conjunct failed from retained evidence. Do not infer precise pressure or headroom retrospectively.",
+  "recovery": "Reassess actual host state and rerun the unchanged D scorer in scoring-02 only after the same guards pass. Persist observation before assert. Reuse accepted numerical qualification; no numerical/scientific change.",
+  "analysis_change": "v2 changes only D input paths from scoring-01 to scoring-02 and docstring; original v1 and all failure artifacts remain intact.",
+  "sources": {
+    "research/tokenizer-evidence/general-rsi-rolling-four-001/scoring-01/failure.json": "15d2f4fab81d1777940964a08bcfdfbdfb8aa5e45f959236c631c678d5bde6cd",
+    "research/tokenizer-evidence/general-rsi-rolling-four-001/scoring-01/guard.json": "1efeacc463958513a465e795d081a154dc97fd608b641740ecb4b6ded236886c",
+    "research/tokenizer-evidence/general-rsi-rolling-four-001/score.log": "5f7908da3c6e78f24e21bfdf5c635e30e827d914ef78f460d8d03b8957a354ea",
+    "research/tokenizer-evidence/general-rsi-rolling-four-001/score-exit.json": "b9f87d4ceb14f54a8787da14c5985aa499e13197fe39c8f0f4ecf87e7a01957e",
+    "research/tokenizer-evidence/general-rsi-rolling-four-001/queue-failure.json": "5f937086b38c70bc8208bca2412f6abc583df857aad8119546c9566e25d928c4",
+    "research/tokenizer-evidence/general-rsi-rolling-four-001/qualification-01/result.json": "c83ecf369ca8e51306272528a3338bba9c1ad79be4f62225b9830c510d089e4b",
+    "research/tokenizer-evidence/general-rsi-rolling-four-001/admission.json": "3c495c7f8b8ddc5c30dbc3015b0784166350a6f8a7b9514a6719d0a8cd0c40df",
+    "research/general_rsi_rolling_four_v1.py": "5b10fe955098f014a4084e628720b60bf29f2eb4c0412df0b639c156ae1c9906",
+    "research/general_rsi_rolling_four_analysis_v1.py": "6531046342697c9bb36fbbed134de1c10e9e4226019b197c10baec3f18464384",
+    "research/general_rsi_rolling_four_analysis_v2.py": "53ae7c74c9f6cf85127da23f69889f237549addb8c38b1c68828706bb68b69e7",
+    "research/general_rsi_rolling_four_recovery_v1.py": "f54b8ee1f536065e5a2f116445241e80483374512633809a575e0497234dc1e2"
+  },
+  "criteria_changed": false,
+  "weights_changed": false,
+  "permutations_changed": false,
+  "test_opened": false
+}

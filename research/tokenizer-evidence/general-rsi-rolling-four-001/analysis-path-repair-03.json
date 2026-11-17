@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-17T06:42:23.198419+00:00",
+  "classification": "demonstrated_analysis_wrapper_path_defect",
+  "scoring_worker_pid": 72989,
+  "affected_v2_lines": [
+    27,
+    93
+  ],
+  "evidence": "v2 changes per-document D folder to scoring-02 but leaves completion and timing reads at nonexistent scoring-01/result.json. Original scoring01 failed before model load and produced no result.",
+  "repair": "v3 changes the remaining two OUT paths to scoring-02; leaves all BC scoring-01 paths and all numerical criteria intact. AST comparison to original v1 after only D-directory substitution passes.",
+  "active_worker_unchanged": true,
+  "criteria_unchanged": true,
+  "original_v2_and_its_eventual_failure_preserved": true,
+  "sources": {
+    "research/general_rsi_rolling_four_analysis_v1.py": "6531046342697c9bb36fbbed134de1c10e9e4226019b197c10baec3f18464384",
+    "research/general_rsi_rolling_four_analysis_v2.py": "53ae7c74c9f6cf85127da23f69889f237549addb8c38b1c68828706bb68b69e7",
+    "research/general_rsi_rolling_four_analysis_v3.py": "0257995b12fda9f2b9fcea140a4388d3859ee0da89749c5d2de7509c06f31111",
+    "research/general_rsi_rolling_four_analysis_recovery_v1.py": "021f31617bd8d5bfdbfd2abdb6d3859e6e5ed7daf573cf410265aa2cf016c70f"
+  }
+}

@@ -1,5 +1,35 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## TOP: D scoring active after preserved launch failure — 2026-11-16 Pacific
+
+B/C completed normally in4524.28guard seconds. All648 saved document-score hashes
+and its original three-contrast analysis passed. This does not finish A/B/C/D.
+D qualification and full admission passed, forecast5158.37seconds including margin,
+RSS953303040/MPS1194016768bytes, minimum host reclaimable proxy3119677440bytes.
+The initial D worker then failed its combined pre-model condition (normal pressure
+and >=1.25GiB proxy). No D model loaded or target scored. The original launcher
+asserted before writing its host snapshot, so the exact failed conjunct is unknown.
+Preserve `rolling-four-001/scoring-01/`, score log and queue failure unchanged.
+
+Fresh observed host state passed the same criteria. Separate D scoring-02 worker
+72989 is active with unchanged frozen weights, shuffle, scorer and scientific rules.
+Its launcher saves host observations before assertions. Qualification is reused,
+not replayed. Evidence: `tokenizer-evidence/general-rsi-rolling-four-001/recovery-02.json`.
+
+A source review found two remaining stale D result-file references in recovery
+analysis v2 (completion and timing still pointed to failed scoring-01). Preserve
+v2 and its eventual failure without editing the active worker's bound files.
+Analysis v3 changes those references to scoring-02. AST comparison against frozen
+v1 with only D directory substitutions passes. Queue73470 waits for worker72989
+to exit, verifies complete D scoring and the exact expected path failure, then runs
+v3 under the existing CPU/disk/lock guards. See `analysis-path-repair-03.json`.
+
+Next: monitor scoring-02 and the queued CPU analysis, then review/report all four
+conditions and reconcile source/evidence. Do not rerun scores or qualification,
+relax criteria, interrupt the worker, or classify either wrapper/resource issue
+as a scientific negative. Test and first outputs remain untouched.
+
+
 ## TOP: four-condition fixed-weight extension queued — 2026-11-16 Pacific
 
 The human requested A reset128, B rolling128, C rolling256 and D rolling256 with

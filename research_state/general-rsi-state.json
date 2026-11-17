@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ROLLING_CONTEXT_SCORING",
+  "status": "ROLLING_FOUR_SCORING",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": "general-rsi-rolling-context-001",
-  "next_action": "Preserve active B/C worker43123 and its bound analysis. Separate four-condition queue waits for both to finish, then qualifies and admits D before scoring the six endpoints serially. A reuses hash-verified saved common128 token losses on the identical target subset. Review the integrated twelve-contrast family after D completes; no training.",
+  "active_session": "general-rsi-rolling-four-001/scoring-02",
+  "next_action": "Preserve active D scoring-02 worker72989. Analysis recovery queue73470 waits for it to exit, retains the expected v2 stale-path failure, then runs v3 with only D input-directory corrections verified by AST against frozen v1. Review all four conditions after final analysis; no training or scoring replay.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-17T06:02:33.326325+00:00",
-  "active_worker_pid": 43123,
+  "updated_at": "2026-11-17T06:43:23.840757+00:00",
+  "active_worker_pid": 72989,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,7 +59,7 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "The rolling scorer passed full-logit and scalar-window parity at both depths, with unchanged saved weights. Peak RSS940621824/MPS1204502528 bytes; full six-model evaluation forecast7518.6seconds including margin. One scoring worker is active; scientific effects are not yet available.",
+  "latest_learning": "B/C finished4524.28guard seconds; matched-score hashes and original three-contrast bootstrap passed. D numerical qualification passed. First D launch stopped at the combined pre-model host-memory condition without retaining that host snapshot. Current unchanged condition passes and scoring-02 worker72989 is active. A separate v3 analysis path repair is queued after scoring; v2 and its failure remain preserved.",
   "phase": "saved_model_rolling_history_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
@@ -1156,5 +1156,7 @@
   "depth_context_clipping_verification": "research/tokenizer-evidence/general-rsi-depth-context-clipping-review-001/verification.json",
   "rolling_context_plan": "research/tokenizer-evidence/general-rsi-rolling-context-001/plan.json",
   "rolling_four_condition_plan": "research/tokenizer-evidence/general-rsi-rolling-four-001/plan.json",
-  "rolling_four_condition_status": "queued_after_unchanged_B_C"
+  "rolling_four_condition_status": "scoring_D_attempt02",
+  "rolling_four_analysis_repair": "research/tokenizer-evidence/general-rsi-rolling-four-001/analysis-path-repair-03.json",
+  "rolling_four_analysis_queue_pid": 73470
 }
