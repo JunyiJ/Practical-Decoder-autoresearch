@@ -70,7 +70,25 @@ Qualification, admission and all12 runs are complete. Follow the TOP completion
 section below for current conclusions and the next boundary-review action. The
 historical three-depth selection and costs remain superseded.
 
-## TOP: saved context-position analysis complete — 2026-11-17 UTC
+## TOP: bounded clipping review complete — 2026-11-17 UTC
+
+Qualified source and all384968 saved updates were reviewed. Final-third clipping
+is70–79% at depth4 and1.3–1.8% at depth16. Coefficients vary over time. Muon
+normalization and AdamW moment ratios prevent interpreting those rates as
+proportional update sizes. No vector/moment counterfactual or quality mechanism
+is identified. The earlier cliphalf negative and smaller-update negative remain
+closed. Retain clipping1.0; no optimizer, precision or schedule sweep is admitted.
+See `GENERAL_RSI_DEPTH_CONTEXT_CLIPPING_REVIEW.md` and its analysis/verification.
+
+The full two-depth study and its bounded position/clipping interpretation are
+complete. No worker or admitted next training campaign exists. Await the already
+requested explicit public-disclosure authorization; do not repeat the rejected
+push. Reopen evidence-grounded selection only on new human direction or a concrete
+new evidence-backed hypothesis. Do not create metadata-only commits, repeat
+unchanged scans or call this research actively training. All endpoints, first
+outputs, failures and frozen primary decisions remain preserved; test stays closed.
+
+## Completed saved context-position analysis — 2026-11-17 UTC
 
 The new analysis uses only the just-completed two-depth panel. It does not repeat
 the closed cross-size byte attribution or prior context panel. The first32 targets
