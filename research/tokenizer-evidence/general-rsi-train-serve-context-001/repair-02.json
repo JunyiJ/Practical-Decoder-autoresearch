@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-17T17:14:55.251932+00:00",
+  "classification": "host_admission_failure_and_retained_view_reference",
+  "failure": "Attempt01 completed first d4/train128 qualification, then pre-load pressure==1 failed with pressure2 and2913943552-byte host proxy. No validation targets scored.",
+  "implementation_evidence": "ExtendedView.__exit__ restored buffers but the local view still owned model and original buffers. del m did not release this reference; released record retained1118519296 MPS driver bytes. Explicitly delete view before gc/empty_cache in qualification and scoring.",
+  "repair": "Delete view reference. Save per-model qualification measurements. Wait for the same pressure1 and >=1.25GiB admission before loads; no guard relaxation. Qualification02 is separate.",
+  "scientific_criteria_unchanged": true,
+  "weights_unchanged": true,
+  "positional_policy_unchanged": true,
+  "sources": {
+    "research/general_rsi_train_serve_context_v1.py": "70402bb41b0141832a8606d8538f85189a67ff6d1ffa01a0bf13a5ab8f33317f",
+    "research/general_rsi_train_serve_context_v2.py": "1c837cbbec8be92244652535eafeb116b06034374221d79252e49bf8678fd398",
+    "research/general_rsi_train_serve_supervisor_v2.py": "67e7812e2400db4cc86d49d98e00216666243992b66566978c938b73bf856cf0",
+    "research/general_rsi_train_serve_analysis_v1.py": "270b0dfcc45fcc054f97dad35f21a84d5363072dea783ae563b70cfad000529f",
+    "research/tokenizer-evidence/general-rsi-train-serve-context-001/qualification-01.log": "8d9d524e3b43c5752fbd806177bb1268c19128b911fc4dd5e27a92b1947e3deb",
+    "research/tokenizer-evidence/general-rsi-train-serve-context-001/qualification-01/failure.json": "b298ca6e142d7165860521063389e767bd51d076c38af8101df60ff6a60585fd",
+    "research/tokenizer-evidence/general-rsi-train-serve-context-001/qualification-01/guard.json": "6a73830e2a8e4d9134c4ea58fbd203f26fe1c5d2dd93e7944b13763a43105736",
+    "research/tokenizer-evidence/general-rsi-train-serve-context-001/qualification-01/launch.json": "ca30de78ee5543fc15d4fb51e45266539094fb525d3351858ac3ccf9f05b49cd",
+    "research/tokenizer-evidence/general-rsi-train-serve-context-001/qualification-01/memory.jsonl": "80619bedabb5933515d88baedde535d51a06c6b46799536e77c0e97a313483c6"
+  }
+}

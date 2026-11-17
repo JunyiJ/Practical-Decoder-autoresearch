@@ -1,5 +1,41 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## TOP: training versus serving context diagnostic active — 2026-11-17 Pacific
+
+The human requested trained128/trained256 fixed weights at rolling128/256/512.
+`GENERAL_RSI_TRAIN_SERVE_CONTEXT_DESIGN.md` freezes all12 time-EMA models,
+depths4/16, three paired bundles, and identical51,457 targets in65 documents with
+full512 history. Reuse the12 existing train256 h128/h256 cells on this subset;
+score24 new cells. No training, generation, original-test access or positional tuning.
+
+The separate inference view extends deterministic RoPE/mask buffers to512 with
+the original formula, exact native prefixes and restored original buffers on exit.
+Qualification01 passed the first model but stopped at pressure2 before loading
+the next. It also exposed a retained view reference after model release. Preserve
+all original evidence. Repair02 deletes the view reference and waits for unchanged
+normal-pressure admission, without altering science or numerical/resource guards.
+Qualification02 passed all four depth/training shapes, original-path/batching/
+scalar/full-logit/float64-CE parity, causal-prefix and weight/buffer controls.
+Driver memory after release fell to44.8–63.7MB. See engineering-review.json.
+
+Full measured forecast25,004.72seconds includes50% margin and600seconds overhead.
+Admission free17,648,783,360bytes exceeds12GiB reserve plus512MiB full output,
+metadata, atomic/failure allowance. No optimizer, EMA or weight copies are created.
+Supervisor99397 and scorer99460 run serially under the shared lock. Preserve them
+and all bound sources. The supervisor runs the frozen36-contrast analysis next.
+
+User-priority contrasts compare train256/serve128 with train128/serve256 and512,
+and train256/serve256 with train128/serve512. Report six cell CEs per depth,
+training effects, serving increments and interactions with paired document
+bootstrap. Old72,876-target results/intervals remain separate and unchanged.
+Hypothesis remains unresolved: longer training may help short serving, while
+longer serving may recover benefit or degrade via direct RoPE extrapolation.
+
+Next: monitor existing worker, then independently review matched targets, reused
+scores, endpoint/source hashes, bootstrap and guards; report and publish evidence.
+Delete this diagnostic's monitor on delivery. No new campaign follows automatically.
+
+
 ## TOP: four-condition diagnostic complete and reviewed — 2026-11-16 Pacific
 
 All six saved context256-trained EMA models completed A/B/C/D comparison on

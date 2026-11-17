@@ -1,0 +1,4 @@
+{
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_train_serve_context_v1.py\", line 232, in main\n    if args.mode=='qualify':qualify(plan,out)\n                            ~~~~~~~^^^^^^^^^^\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_train_serve_context_v1.py\", line 133, in qualify\n    m=load(e,out);before=base.parameter_digest(m);references={};errors=[];ce_errors=[];seconds={}\n  File \"/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_train_serve_context_v1.py\", line 120, in load\n    assert int(h['host']['pressure'])==1 and h['host']['reclaimable_proxy_bytes']>=1.25*2**30\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

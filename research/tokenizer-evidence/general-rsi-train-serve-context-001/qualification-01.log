@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_train_serve_context_v1.py", line 237, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_train_serve_context_v1.py", line 232, in main
+    if args.mode=='qualify':qualify(plan,out)
+                            ~~~~~~~^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_train_serve_context_v1.py", line 133, in qualify
+    m=load(e,out);before=base.parameter_digest(m);references={};errors=[];ce_errors=[];seconds={}
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_train_serve_context_v1.py", line 120, in load
+    assert int(h['host']['pressure'])==1 and h['host']['reclaimable_proxy_bytes']>=1.25*2**30
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
