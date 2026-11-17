@@ -14,7 +14,7 @@ The weakening byte effect occurs in100/108 document means and both sources;
 its timing and causal mechanism remain unresolved. That conclusion supports the
 selected context-transfer question and does not authorize a byte rescue sweep.
 
-### Execute this scope after qualification
+### Frozen scope (completed; retained as protocol history)
 
 - Native input/output tables, D256, depths **4 and16 only**, contexts **128 and256**.
   Three fresh paired bundles at each depth:12 scientific runs and24 RAW/time-EMA
@@ -35,7 +35,7 @@ selected context-transfer question and does not authorize a byte rescue sweep.
   broader probe is development evidence. This is two-depth transfer evidence,
   not a scaling law or proof of larger-LLM behavior.
 
-### Full-experiment admission is required before the first scientific run
+### Historical admission requirements (passed before launch)
 
 - Qualify only newly combined depth/context behavior. Reuse established parity,
   initialization and scoring checks where unchanged. Measure both contexts at
@@ -66,61 +66,41 @@ selected context-transfer question and does not authorize a byte rescue sweep.
   pairs, weaken guards or shorten frozen runs to hide a deficit. If recovery is
   exhausted, record the remaining deficit and a concrete storage/memory remedy.
 
-The next action is the minimal combined-shape qualification for depths4/16,
-followed by full admission, protocol freeze and serial execution. The human has
-authorized running this study once those conditions pass; no further permission
-is required. Update active state to this scope. The historical three-depth
-selection and costs below are superseded, not current execution instructions.
+Qualification, admission and all12 runs are complete. Follow the TOP completion
+section below for current conclusions and the next boundary-review action. The
+historical three-depth selection and costs remain superseded.
 
-## Two-depth execution update — 2026-11-15 Pacific
+## TOP: two-depth study complete — 2026-11-17 01:41 UTC
 
-Final-run cleanup and execution are owned by this RSI chat. Follow the durable
-`GENERAL_RSI_FINAL_RUN_HANDOFF.md` after slot10 finishes publication and exits.
+All12 runs and24 RAW/time-EMA endpoints passed review. All288 first outputs are
+retained and rated. The independent completion audit verified5269 frozen sources,
+all endpoint hashes and the three joint bootstrap intervals. No worker is active.
 
-All four combined shapes passed qualification and complete12-run admission.
-See `GENERAL_RSI_DEPTH_CONTEXT_ENGINEERING_RESULTS.md` and the frozen
-`tokenizer-evidence/general-rsi-depth-context-quality-001/plan.json`. Slots00–10
-passed execution review. Twenty-two endpoints and264 first outputs are retained.
-The first context128/256 pair at each depth is complete. Native-context EMA delta256-minus128
-is−0.102457786 at depth4 and−0.089280530 at depth16. Common128 deltas are
-−0.027679425 and−0.010491601. The first-bundle depth16-minus4 interaction is
-+0.013177255 nats/token. These are descriptive only. Full three-bundle quality,
-interaction and transfer conclusions remain pending.
-Bundle2 depth16 native-context EMA delta256-minus128 is−0.080701359;
-common128 delta is−0.005326292. These remain descriptive pending all fresh pairs.
-Bundle2 depth4 native-context EMA delta256-minus128 is−0.082402763, with
-common128 delta−0.010002451. Its depth16-minus4 interaction is+0.001701404.
-All three depth4 pairs and both completed depth16 pairs favor context256 descriptively.
-Bundle3 depth4 native-context EMA delta is-0.103233901; common128 delta is-0.025523193.
-Full decisions remain pending the third depth16 pair and frozen multiplicity rules.
-Slot10 completed and passed execution review: RAW CE4.709962556, time-EMA
-CE4.703559781 and common128 EMA CE4.782998467. Its paired reference is pending.
-After lock release, final-run cleanup retired11 exact obsolete accepted fixture
-payloads and recovered1289719808allocated bytes. It verified44863 retained files,
-including all scientific endpoints and original RNG-failure payloads. See
-`storage-cleanup-2026-11-16-final-run-001/completed.json` and its exact manifest.
+Native-context EMA mean delta256-minus128 is−0.096031 at depth4 and−0.089993 at
+depth16. Both pass the frozen three-pair quality and source rules. The direct
+interaction is+0.006039, interval[−0.006058,+0.017831], unresolved, not equivalent.
+Common128 EMA mean deltas are−0.021068/−0.012125. RAW agrees descriptively.
+Generation remains weak and repetitive. Agent ordinal ratings are exploratory,
+with broader factual/category flags in some consistency judgments, not independent
+human validation. See `GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md` and
+`tokenizer-evidence/general-rsi-depth-context-quality-001/completion-review.json`.
 
-Final slot11 depth16/context128 bundle3 is active. Full remaining storage/time
-admission passed with74415333bytes beyond the complete17834332955byte requirement,
-which already includes12GiB reserve. Memory pressure was normal and the reclaimable
-page proxy5104041984bytes. The initial checkpoint, sole worker and held lock passed
-verification. All frozen roles, schedules, guards and scientific criteria remain.
-Next finish slot11, review execution, then complete frozen joint statistics, blind
-first-generation ratings and the full-panel audit. Do not issue early quality,
-interaction or transfer conclusions. Prior capacity recovery records remain
-historical evidence; the final-run launch blocker is resolved.
+Actual training48.000762h; supervised49.535994h. Final-run capacity recovery and the
+original RNG failure/repair remain preserved. All endpoints are now materialized.
+Completion free space16724758528bytes covers256MiB publication allowance plus12GiB
+reserve. The earlier remaining-training deficit is superseded by completion.
+No additional cleanup, qualification, shortened panel or repeated scientific run
+is needed. The original test remains unopened.
 
-At22:49UTC, a new free-space decrease left a712166520byte deficit against the
-full remaining forecast after active-checkpoint accounting. Exact external-cache
-recovery028 removed918 unused entries and recovered60026880allocated bytes.
-Free space was16722681856bytes, above the12GiB reserve. The final worker remains
-healthy under its guards and holds the shared research lock. All5269 sources and22
-retained endpoints passed hash verification. No research payload was deleted and
-no scientific criterion changed. See `maintenance-cache-cleanup-028/research-reconciliation.json`.
-Leave the final run active. Reassess on new eligible capacity, sufficient free space,
-or completion/failure; do not repeat unchanged broad scans. About0.8GiB of additional
-usable space would cover the current deficit with modest churn headroom.
-
+Next executable research action: use evidence-grounded-research for a new boundary
+review of these completed findings and relevant original primary-paper versions.
+No new campaign is selected yet. Publication of the completed-study source and
+evidence is blocked by automatic approval review, which requires explicit human
+authorization for the named public JunyiJ/Practical-Decoder-autoresearch repository.
+Preserve the local commit and do not retry the same push without that authorization. Preserve representation, exposure, optimizer and
+schedule uncertainty. Two depths establish recipe transfer, not a scaling law.
+Do not replay closed studies or start batch-reuse/output-lexical arms. Avoid repeated
+completion checks or metadata-only commits while there is no new evidence.
 
 ## Historical three-depth preparation boundary — 2026-11-14 Pacific
 

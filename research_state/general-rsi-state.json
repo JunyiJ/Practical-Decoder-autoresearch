@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "ACTIVE_SCIENTIFIC_WORKER",
+  "status": "DEPTH_CONTEXT_STUDY_COMPLETE",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": 46366,
-  "next_action": "Finish frozen slot11 depth16/context128 bundle3, review execution, then run prespecified joint statistics, blind first-generation ratings and full-panel audit. Preserve frozen sources, criteria, failures and all first outputs. No additional scientific training or protocol changes.",
+  "active_session": null,
+  "next_action": "Publish the completed-study local commit after explicit public-disclosure authorization required by automatic approval review. Independent next research action remains an evidence-grounded boundary review; no repeat training or qualification.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-16T22:49:44.465466+00:00",
-  "active_worker_pid": 41967,
+  "updated_at": "2026-11-17T01:45:13.476533+00:00",
+  "active_worker_pid": null,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -28,7 +28,7 @@
   "capacity_recovery": "research/tokenizer-evidence/general-rsi-capacity-002/completed.json",
   "panel": "research/tokenizer-evidence/general-rsi-equal-time-001/plan.json",
   "panel_sha256": "4f51d54569d8b649c9609d25d42ba5bbaefdfd390db99b3283d5efc1c2c1165d",
-  "active_slot": 11,
+  "active_slot": null,
   "completed_screens": [
     {
       "slot": 0,
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Eleven of12 runs passed execution review, retaining22 endpoints and264 first outputs. Slot10 depth16/context256 bundle3 completed14400.662005719 training seconds, RAW CE4.709962556 and time-EMA CE4.703559781, common128 EMA CE4.782998467. Its paired context128 reference is now active. No early quality, transfer or interaction decision.",
-  "phase": "two_depth_context_transfer_confirmation",
+  "latest_learning": "All12 two-depth runs passed review, retaining24 endpoints and288 first outputs. Context256 native-context EMA improves CE by0.096031/0.089993 nats per token at depths4/16 under frozen criteria. The direct interaction is unresolved; common128 gains are smaller. Training48.000762h, supervised49.535994h. No active worker. Generation remains weak and agent ratings exploratory.",
+  "phase": "two_depth_context_transfer_complete",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -450,9 +450,8 @@
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
   "wake_condition": [
-    "Free space covers dynamic full remaining-study requirement",
-    "New eligible cache or verified unused application",
-    "Worker lock release enables exact obsolete-payload audit"
+    "A concrete evidence-grounded boundary review using completed results and primary-paper versions",
+    "New human direction or new relevant evidence; no repeated scans of completed study"
   ],
   "native_horizon_completed_slots": [
     {
@@ -528,13 +527,13 @@
       "review": "research/tokenizer-evidence/general-rsi-native-horizon-001/slot-05/review.json"
     }
   ],
-  "queued_next_campaign": "general-rsi-cross-size-context-transfer-preparation",
+  "queued_next_campaign": null,
   "native_horizon_decision": "research/tokenizer-evidence/general-rsi-native-horizon-001/decision.json",
   "native_horizon_generation_evaluation": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-evaluation/summary.json",
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "All three fresh depth4 pairs and both completed depth16 pairs favor context256, with smaller common128 contrasts. The first two bundle interactions are+0.013177255 and+0.001701404 nats/token, descriptive only. Transfer, interaction and equivalence remain unresolved pending the third depth16 pair and frozen multiplicity rules. Representation, exposure, optimizer and schedule effects remain entangled.",
+  "latest_hypothesis": "Context256 native-context CE benefit transfers at D256 depths4 and16 under the frozen recipe: means -0.096031/-0.089993. Direct interaction +0.006039 is unresolved, not equivalence. Common128 retains smaller -0.021068/-0.012125 gains. Generation remains weak. Representation, exposure, optimizer, clipping and schedule remain entangled.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -628,7 +627,7 @@
   "context_order_plan": "research/tokenizer-evidence/general-rsi-context-order-001/plan.json",
   "context_order_report": "research/GENERAL_RSI_CONTEXT_ORDER_RESULTS.md",
   "context_order_analysis": "research/tokenizer-evidence/general-rsi-context-order-001/analysis.json",
-  "proposed_next_objective": "Test native context128/256 recipe transfer across D256 depths4/8/16 with fresh paired controls.",
+  "proposed_next_objective": "Evidence-grounded boundary review after completed two-depth context transfer study; no next scientific panel selected.",
   "pseudo_repetition_integration": "research/tokenizer-evidence/general-rsi-pseudo-integration-001/completion-review.json",
   "pseudo_repetition_report": "research/GENERAL_RSI_PSEUDO_REPETITION_RESULTS.md",
   "pseudo_repetition_panel": "research/tokenizer-evidence/general-rsi-pseudo-repetition-001/plan.json",
@@ -1116,10 +1115,31 @@
     7,
     8,
     9,
-    10
+    10,
+    11
   ],
   "depth_context_quality_panel_launched": true,
   "depth_context_quality_launch_verification": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/slot-11/launch-verification.json",
   "depth_context_active_capacity_recovery": "research/maintenance-cache-cleanup-028/research-reconciliation.json",
-  "final_run_execution_handoff": "research/GENERAL_RSI_FINAL_RUN_HANDOFF.md"
+  "final_run_execution_handoff": "research/GENERAL_RSI_FINAL_RUN_HANDOFF.md",
+  "depth_context_quality_decision": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/decision.json",
+  "depth_context_quality_generation_evaluation": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/generation-evaluation/summary.json",
+  "depth_context_quality_secondary_accounting": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/secondary-accounting.json",
+  "depth_context_quality_completion_review": "research/tokenizer-evidence/general-rsi-depth-context-quality-001/completion-review.json",
+  "depth_context_quality_report": "research/GENERAL_RSI_DEPTH_CONTEXT_QUALITY_RESULTS.md",
+  "depth_context_capacity_resolution": {
+    "status": "completed_all_outputs_retained",
+    "free_bytes": 16724758528,
+    "remaining_publication_allowance_bytes": 268435456,
+    "reserve_bytes": 12884901888,
+    "prior_deficit_is_historical": true
+  },
+  "publication_status": {
+    "status": "blocked_by_automatic_approval_review",
+    "destination": "https://github.com/JunyiJ/Practical-Decoder-autoresearch",
+    "branch": "codex/tokenizer-quality",
+    "scope": "Completed two-depth study source, reports, slot11 logs/metrics and first outputs, annotations and audit evidence; no weights or credentials",
+    "reason": "Automatic approval review rejected public disclosure twice. Connected GitHub confirmed ownership and public visibility, but reviewer requires direct human authorization of this payload and public destination.",
+    "next_action": "Obtain explicit human authorization to publish this completed-study evidence to the named public repository, then push without force. Do not repeat push attempts on unchanged authorization."
+  }
 }

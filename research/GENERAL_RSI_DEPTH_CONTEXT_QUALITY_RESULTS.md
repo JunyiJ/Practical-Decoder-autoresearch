@@ -1,4 +1,182 @@
-# Two-depth context transfer: execution results
+# Two-depth context transfer: completed results
+
+All12 frozen runs passed execution review. Native context256 improves development
+CE at both D256 depths4 and16 under the fixed14400-second recipe. The direct
+context-by-depth interaction remains unresolved. This establishes two-depth
+transfer of this recipe, not a scaling law or equivalence of effects.
+
+## Frozen primary decision
+
+Delta is CE256 minus CE128 in nats/token. Negative favors context256.
+Intervals use100000 shared paired document bootstrap draws, averaging the three
+fresh bundles before resampling108 documents. Bonferroni controls the three
+prospective contrasts at family alpha0.01. Each marginal interval is99.6667%.
+These intervals are conditional on the three bundles, not population-seed intervals.
+
+| Contrast | Three paired deltas | Mean | Adjusted interval | Decision |
+| --- | --- | --- | --- | --- |
+| delta4 | -0.102458, -0.082403, -0.103234 | -0.096031 | [-0.111309, -0.081081] | context256_superior |
+| delta16 | -0.089281, -0.080701, -0.099996 | -0.089993 | [-0.106336, -0.074394] | context256_superior |
+| delta16_minus_delta4 | +0.013177, +0.001701, +0.003238 | +0.006039 | [-0.006058, +0.017831] | unresolved_not_equivalent |
+
+Both depths pass all three same-sign pairs, the0.02 practical threshold,
+interval exclusion of zero, and the0.05 source-regression guard. Source mean
+deltas are FineWeb−0.089423/Wikipedia−0.122499 at depth4 and
+FineWeb−0.084345/Wikipedia−0.112613 at depth16. The interaction mean+0.006039
+is below the practical threshold and its interval crosses zero. It provides no
+supported strengthening or weakening claim.
+
+## Secondary evaluation and learning curves
+
+All contrasts below are descriptive. They cannot rescue or change the primary gate.
+
+| Evaluation | Depth4 mean delta | Depth16 mean delta | Depth16-minus4 |
+| --- | --- | --- | --- |
+| raw native | -0.094650 | -0.090435 | +0.004215 |
+| time_ema common128 | -0.021068 | -0.012125 | +0.008943 |
+| raw common128 | -0.021065 | -0.013247 | +0.007818 |
+
+All six common128 EMA paired deltas favor context256. The benefit is smaller
+than native-context evaluation. A training-associated difference remains at a
+common evaluation context, but these comparisons do not isolate its mechanism.
+Evaluation context contributes substantially to the observed native contrast.
+Exposure, optimizer, clipping, representation and schedule effects remain entangled.
+
+The retained eight-document RAW probe has8586 targets. Three-bundle mean CE:
+
+| Depth/context | One-third | Two-thirds | Final RAW on same subset |
+| --- | --- | --- | --- |
+| 4/128 | 5.055398 | 4.929287 | 4.521360 |
+| 4/256 | 5.018723 | 4.785194 | 4.407049 |
+| 16/128 | 5.196691 | 4.923946 | 4.513580 |
+| 16/256 | 5.097182 | 4.776178 | 4.372308 |
+
+This subset favors context256 at both intermediate times on average. It cannot
+establish full-development onset or isolate the final-third cooldown. The saved
+120-second training-loss bins descend in every arm through the final phase.
+Depth4 clips every update in the final bin; depth16 clips about2.7–5.6%.
+This measured difference reinforces the fixed-recipe scope. It is not evidence
+that either depth uses its optimal optimizer or clipping setting.
+
+## Fixed first-output diagnostics
+
+All288 first completions are retained and rated. There were no rerolls or output
+selection. Each group below contains36 outputs:12 prompts across three bundles.
+Greedy and temperature0.8/top-k40 each use the frozen seed42 and64-token cap.
+
+| Depth/context | Decoder | Mean repeated-trigram fraction | Terminal loops | Relevance counts0/1/2/U | Consistency counts0/1/2/U |
+| --- | --- | --- | --- | --- | --- |
+| 4/128 | greedy | 0.5797 | 20/36 | 9/26/1/0 | 7/24/1/4 |
+| 4/128 | sampled | 0.0309 | 1/36 | 12/24/0/0 | 5/31/0/0 |
+| 4/256 | greedy | 0.6344 | 22/36 | 9/27/0/0 | 8/19/4/5 |
+| 4/256 | sampled | 0.0372 | 0/36 | 8/28/0/0 | 6/30/0/0 |
+| 16/128 | greedy | 0.5995 | 19/36 | 6/30/0/0 | 10/20/3/3 |
+| 16/128 | sampled | 0.0197 | 0/36 | 13/21/2/0 | 5/31/0/0 |
+| 16/256 | greedy | 0.6183 | 18/36 | 8/28/0/0 | 8/23/3/2 |
+| 16/256 | sampled | 0.0336 | 0/36 | 12/22/2/0 | 3/32/0/1 |
+
+Only5/288 outputs received relevance2. Greedy outputs often loop; sampled outputs
+repeat less but usually drift or make ambiguous claims. One output stopped at EOS;
+287 reached the64-token cap. No unexpected early stop occurred. Improved CE does
+not establish usable reasoning, factual reliability or instruction following.
+
+Ratings were manually assigned by the primary Codex agent using identity-hidden
+text. The agent knew aggregate loss results from execution reviews. This is not
+independent human validation. The saved quotes and reasons make judgments auditable.
+Some consistency0 annotations flag obvious physical/category errors in addition
+to literal prompt or internal contradictions. Treat those ordinal summaries as
+exploratory broader consistency diagnostics, not a strictly literal contradiction
+benchmark or exhaustive fact check. No rating was changed after joining identities.
+Unassessable is separate and never a pass. Per-prompt equal-weight means, assessable
+counts and per-bundle summaries are in the generation evidence. No CE composite or
+new adoption rule was created from these diagnostics.
+
+## Exposure, compute and time
+
+| Depth/context | Parameters | Mean sampled targets/run | Mean nominal corpus passes | Mean accounted PFLOPs/run |
+| --- | --- | --- | --- | --- |
+| 4/128 | 28492416 | 42533546.7 | 4.253 | 4.7169 |
+| 4/256 | 28492416 | 41732778.7 | 4.173 | 4.7265 |
+| 16/128 | 36773376 | 24020992.0 | 2.402 | 5.0926 |
+| 16/256 | 36773376 | 23115093.3 | 2.311 | 5.1187 |
+
+At equal synchronized time, context256/context128 sampled-target ratios are
+1.0091/0.9464/0.9884 at depth4 and0.9648/0.9583/0.9637 at depth16. The sampler
+can revisit or miss positions; nominal passes are not distinct-data coverage.
+The partial operator estimate counts dense forward/backward matrix work and
+Muon Newton–Schulz matrix work. It excludes EMA, normalization, activation,
+softmax/CE, embedding scatter, clipping, AdamW, copies, evaluation and generation.
+It is neither total hardware telemetry nor a6NT proxy. Actual updates, tokens,
+partial FLOPs and training time are retained together for every curve bin.
+
+Totals:384968 updates,394207232 sampled targets,172802.742052 synchronized
+training seconds (48.000762h),178329.579083 supervised seconds (49.535994h).
+The2.742052 seconds above48h are final-update overshoot. Checkpoint work totals
+3037.574780s, native endpoint scoring589.203132s and generation1037.604558s.
+The remaining862.454563 supervised seconds include untimed common128 scoring,
+probes, initialization, export work outside the checkpoint timer and supervision.
+Do not assign that remainder to any one operation. Run sums exclude between-run
+waits, cleanup and this analysis. Qualified engineering time is separately
+651.198172s. There were no failed scientific attempts or replay charges.
+
+## Execution and preservation audit
+
+Final slot11 depth16/context128 bundle3 completed23133 updates and
+14400.242093207 training seconds, RAW CE4.812361150 and EMA CE4.803556180.
+It retained7660 EMA snapshots and passed execution review at01:29UTC.
+
+All24 finite FP32 CPU endpoints passed per-run review and their hashes were
+rechecked at completion. They occupy3134428248 bytes. All5269 bound sources are
+unchanged. All12 reviews verified schedules, time-EMA counts, paired sampling,
+100416 development targets, probes and24 first outputs each. All1452 transient
+restart retirements have exact deletion journals. Original RNG-harness failure002,
+its payloads and first outputs remain separate from accepted repair003. Selected
+Shakespeare weights and fresh confirmations remain protected. The original test
+remains unopened.
+
+Observed scientific peak RSS was1073545216 bytes and MPS driver allocation
+2753347584 bytes, below4GiB/6GiB limits. These counts overlap and must not be added.
+Storage and host pressure histories, including capacity recovery, remain evidence.
+The final worker exited0 and the completion audit acquired the shared lock.
+No training worker is active.
+
+Completion audit reimplemented the bootstrap using per-draw document frequencies;
+all three intervals agree within1e-12 and all primary decisions agree. Generation
+aggregation replayed exactly. The first audit attempt hit a sandbox denial reading
+macOS swap state after writing secondary analysis. Its source, output and failure
+receipt remain preserved. The separately identified retry verified identical
+numerical output and completed the read-only memory snapshot. This is an execution
+failure, not a negative scientific result.
+
+At completion audit, free space was16724758528 bytes. All endpoints already exist;
+remaining publication allowance is256MiB, with12GiB reserve retained and no active
+optimizer or atomic checkpoint overlap. The earlier full-study forecast deficit
+is historical and does not block completed-panel analysis. No additional cleanup
+or training is required for this study.
+
+## Conclusion and next action
+
+The prediction that the context256 recipe transfers from depth4 to depth16 is
+supported under the frozen native-context criterion. An interaction was not
+resolved. Common128 retains smaller gains. Generation quality remains weak.
+These findings apply to this finite corpus, tokenizer, native representation,
+D256 architecture and fixed time/optimizer/schedule recipe. They do not establish
+scaling behavior, larger-model generality, optimized depth-specific recipes,
+equivalence, or a causal explanation of the context benefit.
+
+This study is complete. Do not rerun it or pool historical confirmations into it.
+The next research action is an evidence-grounded boundary review of the completed
+results and primary-paper versions before selecting any new campaign. No new
+training panel is selected here. Preserve all fresh endpoints and first outputs.
+
+Evidence: `tokenizer-evidence/general-rsi-depth-context-quality-001/` contains the
+frozen `plan.json`, `decision.json`, `secondary-accounting.json`,
+`generation-evaluation/`, and `completion-review.json`. The analysis source is
+`general_rsi_depth_context_completion_v1.py`. Source-bound first-attempt provenance
+is retained in `completion-audit-attempt01.py` and its failure receipt.
+
+## Historical execution notes (superseded by completed results above)
+
 
 ## Status — 2026-11-16 21:21 UTC
 

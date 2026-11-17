@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-17T01:40:37.431387+00:00",
+  "stage": "host snapshot after secondary output and numerical verification",
+  "failure": "Sandbox rejected sysctl vm.swapusage with Operation not permitted; exit1. No completion-review.json was written.",
+  "source_sha256": "53082f3054a2ec6d503986dd6cc56d0e222c1537f8e1bcffd6312241e6e7b361",
+  "secondary_output_sha256": "4bab40004dcb67ba81f2b86c278dddd24af737b8490bca096a9db3194e1bc311",
+  "repair": "Preserve first secondary output; verify exact numerical replay excluding source provenance, then retry same read-only host snapshot with filesystem approval. No training, scoring, generation or rating repeated.",
+  "scientific_negative": false
+}
