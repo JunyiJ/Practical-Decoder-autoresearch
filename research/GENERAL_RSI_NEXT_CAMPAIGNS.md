@@ -1,5 +1,30 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## TOP: training versus serving diagnostic complete — 2026-11-17 Pacific
+
+All12 saved models completed the frozen36-cell rolling128/256/512 comparison on
+identical51,457 targets in65 validation documents. Independent review accepted
+all12 endpoint hashes,5309 source bindings,780 score files, exact reuse and all
+100000 frequency-bootstrap draws. Report: `GENERAL_RSI_TRAIN_SERVE_CONTEXT_RESULTS.md`.
+
+Train256/serve128 minus train128/serve256 is -0.355812/-0.208524 at depth4/16;
+versus train128/serve512 it is -0.749300/-0.594173. All three paired signs agree
+and frozen36-family adjusted intervals exclude zero. Training256 also improves
+common rolling128 by -0.056787/-0.044343. Serving256 helps trained256 models,
+but extending beyond the training context degrades CE at both depths. Preserve
+mixed-sign/unresolved interaction contrasts and all prior study intervals.
+
+Updated hypothesis: longer-context training retains value under shorter serving;
+direct unscaled RoPE extrapolation does not substitute for that training here.
+Equal-time exposure/optimizer/schedule uncertainty, reused development/models and
+two-depth scope remain. This is not a reasoning or scaling-law result.
+
+Scoring finished in15328.30seconds, all guards passed, and weights/buffers remained
+unchanged. Qualification01 failure and repair02 remain preserved. No training,
+generations or original-test access occurred. The monitor has been deleted.
+Next: await human direction. No new campaign is authorized by this completion.
+
+
 ## TOP: training versus serving context diagnostic active — 2026-11-17 Pacific
 
 The human requested trained128/trained256 fixed weights at rolling128/256/512.
