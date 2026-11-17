@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_rolling_four_queue_v1.py", line 60, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_rolling_four_queue_v1.py", line 52, in main
+    bindings(plan);run_stage('score','ROLLING_FOUR_SCORING');bindings(plan);run_stage('analysis','ROLLING_FOUR_ANALYZING')
+                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junyi/Documents/ChatGPT/LLM-pretraining-RSI/research/general_rsi_rolling_four_queue_v1.py", line 21, in run_stage
+    put(OUT/f'{mode}-exit.json',dict(returncode=code));assert code==0,(mode,code)
+                                                              ^^^^^^^
+AssertionError: ('score', 1)

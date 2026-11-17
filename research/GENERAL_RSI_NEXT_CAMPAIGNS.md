@@ -1,5 +1,30 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## TOP: four-condition diagnostic complete and reviewed — 2026-11-16 Pacific
+
+All six saved context256-trained EMA models completed A/B/C/D comparison on
+identical72,876 validation targets. Report: `GENERAL_RSI_ROLLING_FOUR_RESULTS.md`.
+B-A is -0.148101/-0.153323 nats at depth4/16. C-B is -0.025454/-0.029234.
+C-D is -0.027315/-0.035020. All are negative in all three bundles at each depth
+with the frozen twelve-contrast adjusted intervals below zero. D-B is unresolved
+at depth4 (+0.001861) and adverse at depth16 (+0.005786, interval above zero).
+
+Updated hypothesis: avoiding resets explains a large gain, but older context adds
+predictive value even without resets. Shuffling its subword order removes the
+supported benefit. This does not isolate semantic structure or establish reasoning;
+word/syntax disruption and distribution shift remain alternative explanations.
+Two depths do not establish a scaling law. Original B/C intervals remain unchanged.
+
+Independent review passed all endpoint/source/score hashes, matched targets,
+permutation/input reconstructions, identical-input controls and100,000 bootstrap
+frequency checks. All workers exited. Successful guards passed. Both original
+host-admission and analysis-path failures remain preserved separately from repairs.
+No training, generations or original-test access occurred. Weights stay intact.
+
+The obsolete monitor has been deleted. The requested diagnostic is complete.
+Next: await human direction; no new campaign.
+
+
 ## TOP: D scoring active after preserved launch failure — 2026-11-16 Pacific
 
 B/C completed normally in4524.28guard seconds. All648 saved document-score hashes
