@@ -1,5 +1,32 @@
 # General RSI: human-directed continuation, 2026-11-09
 
+## TOP: rolling-history saved-model diagnostic active — 2026-11-16 Pacific
+
+The human authorized rolling128 versus rolling256 scoring on saved models, with
+no training. `GENERAL_RSI_ROLLING_CONTEXT_DESIGN.md` prospectively fixes six
+context256-trained time-EMA endpoints (three bundles at depths4/16), all72876
+validation targets with full256-token preceding histories, exact stride-one
+recomputation and three multiplicity-adjusted document-bootstrap contrasts.
+The first255 scored targets per document are excluded identically from both
+conditions. No test access, new generation, model adaptation or cache reuse.
+
+Numerical qualification passed at both depths. Last-position projection matches
+the full-logit/scalar reference, CE matches float64 logsumexp within1e-5, and
+weights remain identical. Peak RSS940621824bytes and MPS1204502528bytes. Minimum
+observed host reclaimable-page proxy3580772352bytes; this includes other apps
+and is not guaranteed free RAM. Full forecast7518.6seconds includes50% margin
+and600seconds overhead. Free16680898560bytes exceeds12GiB reserve+256MiB output,
+failure and atomic/log allowance. No cleanup or additional permission is needed.
+
+Supervisor43122 and scoring worker43123 launched under the shared lock. The first
+document target inventory and live guard were checked. Preserve bound sources
+and the active worker. The supervisor runs analysis after all six endpoints.
+Evidence: `tokenizer-evidence/general-rsi-rolling-context-001/`.
+Next: review final score/analysis hashes, aligned target coverage, bootstrap and
+resource guards; report findings and reconcile state. Do not rerun the completed
+training study or infer the new diagnostic's result before scoring completes.
+
+
 ## Current publication status — 2026-11-16 Pacific
 
 The human explicitly authorized publishing completed-study evidence to the public

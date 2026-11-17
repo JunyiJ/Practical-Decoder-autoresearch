@@ -1,22 +1,22 @@
 {
   "campaign": "general-rsi-v1",
-  "status": "DEPTH_CONTEXT_STUDY_COMPLETE",
+  "status": "ROLLING_CONTEXT_SCORING",
   "human_authorization": "go ahead - form a new RSI research plan with the new data and re-enable the research",
   "authorized_at": "2026-11-09T01:13:44.941253+00:00",
   "plan": "research/GENERAL_RSI_PLAN.md",
   "plan_sha256": "bf483adc8df943b316994403971d66c60ebb215d208c64886b3135bbe51ddb0d",
   "dataset": "data/raw/rsi-general-10m-v1",
   "pilot": "research/tokenizer-evidence/general-rsi-pilot-001",
-  "active_session": null,
-  "next_action": "Completed study evidence published with explicit human authorization. Assess the requested next diagnostic separating segment resets from information beyond128 tokens using retained fixed weights and matched rolling-window targets. No new numerical protocol or training campaign admitted.",
+  "active_session": "general-rsi-rolling-context-001",
+  "next_action": "Serial saved-model rolling128/256 evaluation is active. Preserve worker and bound sources. Supervisor runs the frozen analysis after all six endpoints finish. Review results and reconcile state on completion. No training.",
   "historical_campaigns_reopened": false,
   "scientific_panel_launched": true,
   "test_opened": false,
   "native_goal_status": "paused; tool cannot resume; scheduled continuation is the active mechanism",
   "automation_id": "tokenizer-quality-research-continuation",
   "current_thread_id": "01a1b856-8bce-7021-8760-03aefbadd090",
-  "updated_at": "2026-11-17T05:12:56.551900+00:00",
-  "active_worker_pid": null,
+  "updated_at": "2026-11-17T05:21:38.047680+00:00",
+  "active_worker_pid": 43123,
   "pilot_status": "passed",
   "pilot_result": "research/tokenizer-evidence/general-rsi-pilot-001/result.json",
   "forecast": "research/tokenizer-evidence/general-rsi-pilot-001/forecast.json",
@@ -59,8 +59,8 @@
       "review": "research/tokenizer-evidence/general-rsi-panel-001/slot-03/review.json"
     }
   ],
-  "latest_learning": "Qualified-source and all384968-step review confirms time-varying clipping coefficients and normalized/history-dependent Muon/AdamW updates. Final-third clipping70\u201379% at depth4 versus1.3\u20131.8% at depth16 does not identify update-size or quality effects. Earlier cliphalf and smaller-update negatives remain closed. Retain clipping1; no new optimizer panel justified.",
-  "phase": "two_depth_context_transfer_complete",
+  "latest_learning": "The rolling scorer passed full-logit and scalar-window parity at both depths, with unchanged saved weights. Peak RSS940621824/MPS1204502528 bytes; full six-model evaluation forecast7518.6seconds including margin. One scoring worker is active; scientific effects are not yet available.",
+  "phase": "saved_model_rolling_history_diagnostic",
   "selection": "research/tokenizer-evidence/general-rsi-panel-001/selection.json",
   "selected_lrs": {
     "native": 0.0025,
@@ -450,8 +450,8 @@
   "native_horizon_generation_analysis": "research/general_rsi_native_horizon_generation_analysis_v1.py",
   "native_horizon_generation_analysis_check": "research/tokenizer-evidence/general-rsi-native-horizon-001/generation-analysis-check.json",
   "wake_condition": [
-    "Explicit authorization to publish the completed-study and bounded-analysis source/evidence to the named public repository",
-    "New human direction or a concrete new evidence-backed hypothesis requiring research selection"
+    "Rolling scoring/analysis completion or demonstrated failure",
+    "New human stop or direction"
   ],
   "native_horizon_completed_slots": [
     {
@@ -533,7 +533,7 @@
   "native_horizon_report": "research/GENERAL_RSI_NATIVE_HORIZON_RESULTS.md",
   "native_horizon_completion_review": "research/tokenizer-evidence/general-rsi-native-horizon-001/completion-review.json",
   "selected_native_horizon_seconds": 14400,
-  "latest_hypothesis": "Frozen context256 transfer remains supported at depths4/16, with unresolved depth interaction and smaller common128 gains. Saved-score benefits concentrate near context resets and persist later. Clipping coefficients vary over time, but scalar clipping rates do not identify effective mixed-optimizer updates or justify a new threshold. No new scientific hypothesis is admitted.",
+  "latest_hypothesis": "Supplying tokens129\u2013256 of preceding history may add predictive value after both conditions retain the complete recent128 tokens. Compare identical full-history targets under the same saved context256-trained EMA weights at depths4/16, three bundles each. This is a reused-development diagnostic, not a new training or adoption panel.",
   "composer_fp32_quality_panel": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/plan.json",
   "composer_fp32_quality_panel_sha256": "bcf4b43bf68e5137f5a04fe36c24a7baa99a7a2c552c474ba2225e4507e82f79",
   "composer_fp32_quality_admission": "research/tokenizer-evidence/general-rsi-composer-fp32-quality-001/admission.json",
@@ -1153,5 +1153,6 @@
   "depth_context_position_report": "research/GENERAL_RSI_DEPTH_CONTEXT_POSITION_RESULTS.md",
   "depth_context_clipping_review": "research/GENERAL_RSI_DEPTH_CONTEXT_CLIPPING_REVIEW.md",
   "depth_context_clipping_analysis": "research/tokenizer-evidence/general-rsi-depth-context-clipping-review-001/analysis.json",
-  "depth_context_clipping_verification": "research/tokenizer-evidence/general-rsi-depth-context-clipping-review-001/verification.json"
+  "depth_context_clipping_verification": "research/tokenizer-evidence/general-rsi-depth-context-clipping-review-001/verification.json",
+  "rolling_context_plan": "research/tokenizer-evidence/general-rsi-rolling-context-001/plan.json"
 }
